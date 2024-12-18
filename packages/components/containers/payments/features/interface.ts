@@ -1,9 +1,11 @@
+import type { ReactNode } from 'react';
+
 import type { IconName } from '@proton/components/components/icon/Icon';
 import type { PLANS } from '@proton/payments';
 import type { Audience } from '@proton/shared/lib/interfaces';
 
 export interface PlanCardFeatureDefinition {
-    text: string | string[];
+    text: string | string[] | ReactNode;
     subtext?: string;
     included: boolean;
     hideInDowngrade?: boolean;

@@ -4,57 +4,31 @@ import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Button, CircleLoader, Href, InlineLinkButton, Vr } from '@proton/atoms';
-import type { Breakpoints, IconSize } from '@proton/components';
+import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
 import {
     Alert3ds,
+    type Breakpoints,
     CurrencySelector,
     Icon,
     PayPalButton,
     Price,
+    SkeletonLoader,
     StyledPayPalButton,
     Toggle,
-    VpnLogo,
     getCheckoutRenewNoticeText,
     isBlackFridayPeriod as getIsBlackFridayPeriod,
     isCyberWeekPeriod as getIsCyberWeekPeriod,
     useApi,
     useModalState,
 } from '@proton/components';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
-import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
-import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
-import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import {
-    get2FAAuthenticator,
-    getDarkWebMonitoring,
-    getHideMyEmailAliases,
-    getItems,
-    getLoginsAndNotes,
-    getPassAppFeature,
-    getPasswordHealth,
-} from '@proton/components/containers/payments/features/pass';
-import {
-    getAdvancedVPNCustomizations,
-    getAllPlatforms,
-    getBandwidth,
     getCountries,
     getNetShield,
-    getNoAds,
-    getPrioritySupport,
     getProtectDevices,
-    getRefundable,
     getStreaming,
-    getVPNAppFeature,
-    getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
-import {
-    getBillingAddressStatus,
-    getTotalBillingText,
-} from '@proton/components/containers/payments/subscription/helpers';
+import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -66,7 +40,6 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/payments';
 import {
-    ADDON_NAMES,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type PlanIDs,
@@ -79,10 +52,8 @@ import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
-    BRAND_NAME,
     CYCLE,
     DEFAULT_CYCLE,
-    PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
@@ -95,11 +66,10 @@ import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import type { Cycle, CycleMapping, Plan, StrictPlan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Cycle, CycleMapping, Plan, StrictPlan } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
-import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
-import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
+import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -111,188 +81,28 @@ import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
-import FreeLogo from '../single-signup-v2/FreeLogo';
-import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
-import bundle from '../single-signup-v2/bundle.svg';
-import { getFreeSubscriptionData, getFreeTitle, getSubscriptionMapping } from '../single-signup-v2/helper';
+import { getFreeSubscriptionData, getSubscriptionMapping } from '../single-signup-v2/helper';
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import { getPaymentMethod } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
-import AddonSummary from './AddonSummary';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
 import GiftCodeSummary from './GiftCodeSummary';
 import Guarantee from './Guarantee';
 import type { Background } from './Layout';
 import Layout from './Layout';
+import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummary';
-import SaveLabel2 from './SaveLabel2';
 import StepLabel from './StepLabel';
 import UpsellModal from './UpsellModal';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
-import VpnProLogo from './VpnProLogo';
 import swissFlag from './flag.svg';
+import { getPlanInformation } from './getPlanInformation';
 import type { getUpsellShortPlan } from './helper';
 import { getBillingCycleText, getOffText } from './helper';
 import type { Measure, VPNSignupModel } from './interface';
 import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
-import getAddonsPricing from './planCustomizer/getAddonsPricing';
-
-const getPlanInformation = ({
-    selectedPlan,
-    vpnServersCountData,
-    mode,
-}: {
-    selectedPlan: Plan;
-    vpnServersCountData: VPNServersCountData;
-    mode: 'pricing' | 'signup' | 'vpn-pass-promotion';
-}) => {
-    const iconSize: IconSize = 7;
-    const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
-
-    if (selectedPlan.Name === PLANS.FREE) {
-        const freeServers = getFreeServers(vpnServersCountData.free.servers, vpnServersCountData.free.countries);
-        return {
-            logo: <FreeLogo size={iconImgSize} app={APPS.PROTONVPN_SETTINGS} />,
-            title: getFreeTitle(BRAND_NAME),
-            features: [getCountries(freeServers), getNoAds(), getBandwidth()],
-        };
-    }
-
-    if (selectedPlan.Name === PLANS.VPN || selectedPlan.Name === PLANS.VPN2024) {
-        const plusServers = getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries);
-        const pricingMode = mode === 'pricing' || mode === 'vpn-pass-promotion';
-        return {
-            logo: <VpnLogo variant="glyph-only" size={iconSize} />,
-            title: selectedPlan.Title,
-            features: [
-                pricingMode ? getCountries(plusServers) : undefined,
-                getVPNSpeed('highest'),
-                pricingMode ? getStreaming(true) : undefined,
-                getProtectDevices(VPN_CONNECTIONS),
-                getAllPlatforms(),
-                getNetShield(true),
-                mode === 'signup' ? getStreaming(true) : undefined,
-                getPrioritySupport(),
-                getAdvancedVPNCustomizations(true),
-                pricingMode ? getRefundable() : undefined,
-            ].filter(isTruthy),
-        };
-    }
-
-    if (selectedPlan.Name === PLANS.BUNDLE) {
-        return {
-            logo: (
-                <div>
-                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={selectedPlan.Title} />
-                </div>
-            ),
-            title: selectedPlan.Title,
-            features: [
-                getMailAppFeature(),
-                getCalendarAppFeature(),
-                getDriveAppFeature(),
-                getVPNAppFeature({ serversCount: vpnServersCountData }),
-                getPassAppFeature(),
-            ],
-        };
-    }
-
-    if (selectedPlan.Name === PLANS.VPN_PASS_BUNDLE) {
-        return {
-            logo: (
-                <div>
-                    <img src={bundleVpnPass} width={iconImgSize} height={iconImgSize} alt={selectedPlan.Title} />
-                </div>
-            ),
-            title: selectedPlan.Title,
-            features: [],
-            bundle: [
-                {
-                    title: `${VPN_APP_NAME} Plus`,
-                    features: [
-                        getVPNSpeed('highest'),
-                        getProtectDevices(VPN_CONNECTIONS),
-                        getNetShield(true),
-                        getAdvancedVPNCustomizations(true),
-                    ],
-                },
-                {
-                    title: `${PASS_APP_NAME} Plus`,
-                    features: [
-                        getLoginsAndNotes('paid'),
-                        getHideMyEmailAliases('unlimited'),
-                        get2FAAuthenticator(true),
-                        getItems(),
-                        getDarkWebMonitoring(),
-                        getPasswordHealth(),
-                    ],
-                },
-            ],
-        };
-    }
-
-    const serversInNCountries = c('new_plans: feature').ngettext(
-        msgid`Servers in ${vpnServersCountData.paid.countries}+ country`,
-        `Servers in ${vpnServersCountData.paid.countries}+ countries`,
-        vpnServersCountData.paid.countries
-    );
-
-    if (selectedPlan.Name === PLANS.VPN_PRO) {
-        return {
-            logo: <VpnProLogo size={iconSize} />,
-            title: selectedPlan.Title,
-            features: [
-                {
-                    text: c('new_plans: feature').t`Advanced network security`,
-                    included: true,
-                },
-                {
-                    text: serversInNCountries,
-                    included: true,
-                },
-                {
-                    text: c('new_plans: feature').t`24/7 support`,
-                    included: true,
-                },
-                {
-                    text: c('new_plans: feature').t`Centralized settings and billings`,
-                    included: true,
-                },
-            ],
-        };
-    }
-
-    if (selectedPlan.Name === PLANS.VPN_BUSINESS) {
-        return {
-            logo: <VpnLogo variant="glyph-only" size={iconSize} />,
-            title: selectedPlan.Title,
-            features: [
-                {
-                    text: c('new_plans: feature').t`Advanced network security`,
-                    included: true,
-                },
-                {
-                    text: serversInNCountries,
-                    included: true,
-                },
-                {
-                    text: c('new_plans: feature').t`Dedicated servers and IP`,
-                    included: true,
-                },
-                {
-                    text: c('new_plans: feature').t`24/7 support`,
-                    included: true,
-                },
-                {
-                    text: c('new_plans: feature').t`Centralized settings and billings`,
-                    included: true,
-                },
-            ],
-        };
-    }
-};
 
 const getYears = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} year`, `${n} years`, n);
 const getMonths = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} month`, `${n} months`, n);
@@ -319,7 +129,7 @@ const getBundleTitle = (a: string, b: string) => {
 const getPlanTitle = (selected: string) => {
     return c('vpn_2step: info').t`Your ${selected} plan`;
 };
-const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
+const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
     return (
         <div className="flex items-center text-center flex-column md:flex-row justify-center">
             <div className="md:mr-4 text-center">{left}</div>
@@ -367,12 +177,10 @@ const Step1 = ({
     model,
     setModel,
     upsellShortPlan,
-    vpnServersCountData,
     hideFreePlan,
     upsellImg,
     measure,
     className,
-    loading,
     currencyUrlParam,
 }: {
     activeBreakpoint: Breakpoints;
@@ -384,7 +192,6 @@ const Step1 = ({
     isB2bPlan: boolean;
     background?: Background;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
-    vpnServersCountData: VPNServersCountData;
     onComplete: (data: {
         accountData: SignupCacheResult['accountData'];
         subscriptionData: SignupCacheResult['subscriptionData'];
@@ -397,7 +204,6 @@ const Step1 = ({
     upsellImg: ReactElement;
     measure: Measure;
     className?: string;
-    loading: boolean;
     currencyUrlParam?: Currency;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -416,10 +222,13 @@ const Step1 = ({
     const [changingCurrency, withChangingCurrency] = useLoading();
     const { getAvailableCurrencies } = useCurrencies();
 
-    const { plansMap } = model;
+    const disablePayButton = Object.keys(model.optimistic).length > 0 || loadingPaymentDetails;
+
+    const { vpnServersCountData, plansMap } = model;
+    const initialLoading = model.loadingDependencies;
 
     useEffect(() => {
-        if (loading) {
+        if (initialLoading) {
             return;
         }
 
@@ -427,7 +236,7 @@ const Step1 = ({
             step: 'plan_username_payment',
             flow: isB2bPlan ? 'b2b' : 'b2c',
         });
-    }, [loading]);
+    }, [initialLoading]);
 
     const hasBeenCountedRef = useRef<HasBeenCountedState>({
         plan: false,
@@ -469,6 +278,10 @@ const Step1 = ({
     };
 
     const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
+        if (model.loadingDependencies) {
+            return;
+        }
+
         const newCurrency = optimistic.currency || options.currency;
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
@@ -553,14 +366,14 @@ const Step1 = ({
         void handleOptimistic({ planIDs });
     };
 
-    const handleChangeCurrency = async (currency: Currency) => {
+    const handleChangeCurrency = (currency: Currency) => {
         handleUpdate('plan');
         void measure({
             event: TelemetryAccountSignupEvents.currencySelect,
             dimensions: { currency: currency },
         });
 
-        void withChangingCurrency(
+        withChangingCurrency(
             onCurrencyChange(currency)
                 .then(() => {
                     metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
@@ -579,15 +392,7 @@ const Step1 = ({
         );
     };
 
-    const handleChangeCycle = async ({
-        cycle,
-        mode,
-        planIDs,
-    }: {
-        cycle: Cycle;
-        mode?: 'upsell';
-        planIDs?: PlanIDs;
-    }) => {
+    const handleChangeCycle = ({ cycle, mode, planIDs }: { cycle: Cycle; mode?: 'upsell'; planIDs?: PlanIDs }) => {
         if (mode === 'upsell') {
             void measure({
                 event: TelemetryAccountSignupEvents.interactUpsell,
@@ -673,7 +478,7 @@ const Step1 = ({
     };
 
     const validatePayment = () => {
-        if (loadingSignup || loadingPaymentDetails) {
+        if (loadingSignup || loadingPaymentDetails || disablePayButton) {
             return false;
         }
         return true;
@@ -687,6 +492,7 @@ const Step1 = ({
         currency: options.currency,
         api: silentApi,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
+        paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
@@ -844,7 +650,13 @@ const Step1 = ({
         viewportWidth['>=large'] &&
             [PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
                 left: <Icon size={6} className={iconColorClassName} name="servers" />,
-                text: getVpnServers(vpnServersCountData.paid.servers),
+                text: model.loadingDependencies ? (
+                    <>
+                        <SkeletonLoader width="3em" /> {c('VPN Plan Feature').t`servers`}
+                    </>
+                ) : (
+                    getVpnServers(vpnServersCountData.paid.servers)
+                ),
             },
     ].filter(isTruthy);
 
@@ -857,7 +669,12 @@ const Step1 = ({
     let step = 1;
     const padding = 'sm:p-11';
 
-    const planInformation = getPlanInformation({ selectedPlan: options.plan, vpnServersCountData, mode });
+    const planInformation = getPlanInformation({
+        loading: model.loadingDependencies,
+        selectedPlan: options.plan,
+        vpnServersCountData,
+        mode,
+    });
 
     const upsellToCycle = (() => {
         if (options.plan.Name === PLANS.BUNDLE && getHas2024OfferCoupon(options.checkResult.Coupon?.Code)) {
@@ -901,13 +718,6 @@ const Step1 = ({
     };
 
     const upsellToVPNPassBundle = mode === 'vpn-pass-promotion';
-
-    const addonsPricing = getAddonsPricing({
-        currentPlan: options.plan,
-        plansMap: model.plansMap,
-        planIDs: options.planIDs,
-        cycle: options.cycle,
-    });
 
     const coupon = (() => {
         const {
@@ -972,7 +782,8 @@ const Step1 = ({
     const isCyberWeekPeriod = getIsCyberWeekPeriod();
     const isBlackFridayPeriod = getIsBlackFridayPeriod();
 
-    const renewalNotice = !hasSelectedFree && (
+    const showRenewalNotice = !hasSelectedFree;
+    const renewalNotice = showRenewalNotice && (
         <div className="w-full text-sm color-norm opacity-70 text-center">
             <div className="mx-auto w-full md:w-7/10">
                 *
@@ -1060,12 +871,105 @@ const Step1 = ({
         withLoadingSignup(run()).catch(noop);
     };
 
+    const getUpsellToggle = () => {
+        const hasUpsellVPNPassBundleToggle = upsellToVPNPassBundle || options.planIDs[PLANS.VPN_PASS_BUNDLE];
+
+        if (hasUpsellVPNPassBundleToggle) {
+            const hasPlanSelected = !!options.planIDs[PLANS.VPN_PASS_BUNDLE] && options.cycle === CYCLE.YEARLY;
+            return (
+                <VPNPassUpsellToggle
+                    view={hasPlanSelected && !toggleUpsell?.from ? 'included' : undefined}
+                    checked={hasPlanSelected}
+                    currency={options.currency}
+                    cycle={toggleUpsell?.from || options.cycle}
+                    onChange={() => {
+                        handleUpsellVPNPassBundle();
+                    }}
+                />
+            );
+        }
+
+        if (getHas2024OfferCoupon(options.checkResult.Coupon?.Code) && options.cycle === CYCLE.MONTHLY) {
+            return null;
+        }
+        const toCycle = toggleUpsell?.to || upsellToCycle;
+        if (!toCycle) {
+            return null;
+        }
+        const subscriptionMapping = getSubscriptionMapping({
+            subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
+            planName: options.plan.Name,
+            planIDs: options.planIDs,
+        });
+        if (!subscriptionMapping) {
+            if (model.loadingDependencies) {
+                return (
+                    <div className="p-2 flex gap-1 items-center">
+                        <Toggle checked={false} id="toggle-upsell-plan" className="mx-1" />
+                        <label htmlFor="toggle-upsell-plan" className="flex-1 text-sm">
+                            <SkeletonLoader
+                                width="100%"
+                                className="h-custom"
+                                style={{ '--h-custom': '2em' }}
+                                index={0}
+                            />
+                        </label>
+                    </div>
+                );
+            }
+            return null;
+        }
+        const toCycleCheckout = getCheckoutForCycle(options.planIDs, subscriptionMapping, toCycle);
+        if (!toCycleCheckout) {
+            return null;
+        }
+        const billingCycle = getBillingCycleText(toCycle);
+        if (!billingCycle) {
+            return null;
+        }
+        const label = getOffText(`${toCycleCheckout.discountPercent}%`, billingCycle);
+
+        return (
+            <div className="p-2 flex gap-1 items-center">
+                <Toggle
+                    checked={!!toggleUpsell}
+                    id="toggle-upsell-plan"
+                    className="mx-1"
+                    onChange={(event) => {
+                        if (loadingSignup || loadingPaymentDetails) {
+                            return;
+                        }
+                        if (event.target.checked && upsellToCycle) {
+                            setToggleUpsell({
+                                from: options.cycle,
+                                to: upsellToCycle,
+                            });
+                            handleChangeCycle({
+                                cycle: upsellToCycle,
+                                mode: 'upsell',
+                            });
+                        } else if (toggleUpsell) {
+                            handleChangeCycle({
+                                cycle: toggleUpsell.from,
+                                mode: 'upsell',
+                            });
+                            setToggleUpsell(undefined);
+                        }
+                    }}
+                />
+                <label htmlFor="toggle-upsell-plan" className="flex-1 text-sm">
+                    {label}
+                </label>
+            </div>
+        );
+    };
+
     const hasSomeVpnPlan = getIsVpnPlan(options.plan.Name);
 
     const showCycleAndSelectors =
         !hasSelectedFree && (mode === 'pricing' || mode === 'vpn-pass-promotion') && checkoutMappingPlanIDs;
 
-    const currencySelector = (
+    const currencySelector = model.loadingDependencies ? null : (
         <CurrencySelector
             currencies={getAvailableCurrencies({
                 status: model.paymentMethodStatusExtended,
@@ -1076,9 +980,13 @@ const Step1 = ({
             mode="select-two"
             currency={options.currency}
             loading={changingCurrency}
-            onSelect={(currency) => withLoadingPaymentDetails(handleChangeCurrency(currency)).catch(noop)}
+            onSelect={(currency) => handleChangeCurrency(currency)}
         />
     );
+
+    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue);
+    const loadingPaymentsForm = model.loadingDependencies;
+
     return (
         <Layout
             hasDecoration
@@ -1132,7 +1040,7 @@ const Step1 = ({
                     >
                         {features.map(({ left, text }, i, arr) => {
                             return (
-                                <Fragment key={text}>
+                                <Fragment key={typeof text === 'string' ? text : i}>
                                     <FeatureItem left={left} text={text} />
                                     {i !== arr.length - 1 && (
                                         <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
@@ -1168,15 +1076,14 @@ const Step1 = ({
                             <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                 <CycleSelector
                                     mode={mode}
+                                    loading={model.loadingDependencies}
                                     onGetTheDeal={({ cycle, planIDs }) => {
                                         handleUpdate('plan');
                                         setToggleUpsell(undefined);
-                                        withLoadingPaymentDetails(
-                                            handleChangeCycle({
-                                                cycle,
-                                                planIDs,
-                                            })
-                                        ).catch(noop);
+                                        handleChangeCycle({
+                                            cycle,
+                                            planIDs,
+                                        });
                                         accountDetailsRef.current?.scrollInto('email');
                                     }}
                                     upsell={(() => {
@@ -1204,13 +1111,11 @@ const Step1 = ({
                                     onChangeCycle={({ cycle, upsellFrom, planIDs }) => {
                                         handleUpdate('plan');
                                         setToggleUpsell(undefined);
-                                        return withLoadingPaymentDetails(
-                                            handleChangeCycle({
-                                                planIDs,
-                                                cycle,
-                                                mode: upsellFrom !== undefined ? 'upsell' : undefined,
-                                            })
-                                        ).catch(noop);
+                                        handleChangeCycle({
+                                            planIDs,
+                                            cycle,
+                                            mode: upsellFrom !== undefined ? 'upsell' : undefined,
+                                        });
                                     }}
                                     checkoutMapping={checkoutMappingPlanIDs}
                                 />
@@ -1418,7 +1323,7 @@ const Step1 = ({
                                                 <div className="border-bottom border-weak my-6" />
                                             </>
                                         )}
-                                        {options.checkResult.AmountDue ? (
+                                        {renderingPaymentsWrapper ? (
                                             <PaymentWrapper
                                                 {...paymentFacade}
                                                 disabled={loadingSignup}
@@ -1430,10 +1335,14 @@ const Step1 = ({
                                                 )}
                                             />
                                         ) : (
-                                            <div className="mb-4">{c('Info')
-                                                .t`No payment is required at this time.`}</div>
+                                            <div className="mb-4">
+                                                {c('Info').t`No payment is required at this time.`}
+                                            </div>
                                         )}
                                         {(() => {
+                                            if (loadingPaymentsForm) {
+                                                return;
+                                            }
                                             if (
                                                 paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.PAYPAL &&
                                                 options.checkResult.AmountDue > 0
@@ -1484,10 +1393,7 @@ const Step1 = ({
                                                         type="submit"
                                                         size="large"
                                                         loading={loadingSignup}
-                                                        disabled={
-                                                            Object.keys(model.optimistic).length > 0 ||
-                                                            loadingPaymentDetails
-                                                        }
+                                                        disabled={disablePayButton}
                                                         color="norm"
                                                         data-testid="pay"
                                                         fullWidth
@@ -1519,372 +1425,76 @@ const Step1 = ({
                                     style={viewportWidth['>=large'] ? { '--w-custom': '18.75rem' } : undefined}
                                 >
                                     <div className="border rounded-xl border-weak px-3 py-4">
-                                        <div className="flex flex-column gap-3">
-                                            <div className="color-weak text-semibold mx-3">{c('Info').t`Summary`}</div>
-                                            {(() => {
-                                                if (!planInformation) {
-                                                    return null;
-                                                }
-
-                                                const pricePerMonth = getSimplePriceString(
-                                                    options.currency,
-                                                    actualCheckout.withDiscountPerMonth
-                                                );
-
-                                                const regularPrice = getSimplePriceString(
-                                                    options.currency,
-                                                    actualCheckout.withoutDiscountPerMonth
-                                                );
-                                                const free = hasSelectedFree;
-
-                                                const hasUpsellVPNPassBundleToggle =
-                                                    upsellToVPNPassBundle || options.planIDs[PLANS.VPN_PASS_BUNDLE];
-
-                                                const getToggle = () => {
-                                                    if (hasUpsellVPNPassBundleToggle) {
-                                                        const hasPlanSelected =
-                                                            !!options.planIDs[PLANS.VPN_PASS_BUNDLE] &&
-                                                            options.cycle === CYCLE.YEARLY;
-                                                        return (
-                                                            <VPNPassUpsellToggle
-                                                                view={
-                                                                    hasPlanSelected && !toggleUpsell?.from
-                                                                        ? 'included'
-                                                                        : undefined
-                                                                }
-                                                                checked={hasPlanSelected}
-                                                                currency={options.currency}
-                                                                cycle={toggleUpsell?.from || options.cycle}
-                                                                onChange={() => {
-                                                                    handleUpsellVPNPassBundle();
-                                                                }}
-                                                            />
-                                                        );
-                                                    }
-
-                                                    if (
-                                                        getHas2024OfferCoupon(options.checkResult.Coupon?.Code) &&
-                                                        options.cycle === CYCLE.MONTHLY
-                                                    ) {
-                                                        return null;
-                                                    }
-                                                    const toCycle = toggleUpsell?.to || upsellToCycle;
-                                                    if (!toCycle) {
-                                                        return null;
-                                                    }
-                                                    const subscriptionMapping = getSubscriptionMapping({
-                                                        subscriptionDataCycleMapping:
-                                                            model.subscriptionDataCycleMapping,
-                                                        planName: options.plan.Name,
-                                                        planIDs: options.planIDs,
-                                                    });
-                                                    if (!subscriptionMapping) {
-                                                        return null;
-                                                    }
-                                                    const toCycleCheckout = getCheckoutForCycle(
-                                                        options.planIDs,
-                                                        subscriptionMapping,
-                                                        toCycle
-                                                    );
-                                                    if (!toCycleCheckout) {
-                                                        return null;
-                                                    }
-                                                    const billingCycle = getBillingCycleText(toCycle);
-                                                    if (!billingCycle) {
-                                                        return null;
-                                                    }
-                                                    const label = getOffText(
-                                                        `${toCycleCheckout.discountPercent}%`,
-                                                        billingCycle
-                                                    );
-
-                                                    return (
-                                                        <div className="p-2 flex gap-1 items-center">
-                                                            <Toggle
-                                                                checked={!!toggleUpsell}
-                                                                id="toggle-upsell-plan"
-                                                                className="mx-1"
-                                                                onChange={(event) => {
-                                                                    if (loadingSignup || loadingPaymentDetails) {
-                                                                        return;
-                                                                    }
-                                                                    if (event.target.checked && upsellToCycle) {
-                                                                        setToggleUpsell({
-                                                                            from: options.cycle,
-                                                                            to: upsellToCycle,
-                                                                        });
-                                                                        withLoadingPaymentDetails(
-                                                                            handleChangeCycle({
-                                                                                cycle: upsellToCycle,
-                                                                                mode: 'upsell',
-                                                                            })
-                                                                        ).catch(noop);
-                                                                    } else if (toggleUpsell) {
-                                                                        withLoadingPaymentDetails(
-                                                                            handleChangeCycle({
-                                                                                cycle: toggleUpsell.from,
-                                                                                mode: 'upsell',
-                                                                            })
-                                                                        ).catch(noop);
-                                                                        setToggleUpsell(undefined);
-                                                                    }
-                                                                }}
-                                                            />
-                                                            <label
-                                                                htmlFor="toggle-upsell-plan"
-                                                                className="flex-1 text-sm"
-                                                            >
-                                                                {label}
-                                                            </label>
-                                                        </div>
-                                                    );
-                                                };
-
-                                                const upsell = getToggle();
-                                                const editedPlanInformation =
-                                                    mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
-                                                        ? getPlanInformation({
-                                                              selectedPlan: plansMap[PLANS.VPN2024],
-                                                              vpnServersCountData,
-                                                              mode,
-                                                          }) || planInformation
-                                                        : planInformation;
-
-                                                return (
-                                                    <div
-                                                        className={clsx(
-                                                            'rounded-xl flex flex-column gap-1',
-                                                            upsell ? 'border border-weak' : ''
-                                                        )}
-                                                    >
-                                                        <div className="p-2 flex gap-2">
-                                                            <div>
-                                                                <div
-                                                                    className="inline-block border border-weak rounded-lg p-2"
-                                                                    title={editedPlanInformation.title}
-                                                                >
-                                                                    {editedPlanInformation.logo}
-                                                                </div>
-                                                            </div>
-                                                            <div className="flex-1">
-                                                                <div className="flex gap-2">
-                                                                    <div className="text-rg text-bold flex-1">
-                                                                        {editedPlanInformation.title}
-                                                                    </div>
-                                                                    {!isB2bPlan && (
-                                                                        <div className="text-rg text-bold">
-                                                                            {pricePerMonth}
-                                                                        </div>
-                                                                    )}
-                                                                </div>
-                                                                <div className="flex-1 flex items-center gap-2">
-                                                                    <div className="flex-1 text-sm">
-                                                                        <span className="color-weak mr-1">
-                                                                            {getBilledText(options.cycle)}
-                                                                        </span>
-                                                                        {actualCheckout.discountPercent > 0 && (
-                                                                            <SaveLabel2
-                                                                                className="text-sm inline-block"
-                                                                                highlightPrice
-                                                                            >
-                                                                                {`− ${actualCheckout.discountPercent}%`}
-                                                                            </SaveLabel2>
-                                                                        )}
-                                                                    </div>
-
-                                                                    {free && (
-                                                                        <div className="flex-1 text-sm color-weak">
-                                                                            {c('Info').t`Free forever`}
-                                                                        </div>
-                                                                    )}
-
-                                                                    {!isB2bPlan &&
-                                                                        actualCheckout.discountPercent > 0 && (
-                                                                            <span className="inline-flex">
-                                                                                <span className="text-sm color-weak text-strike text-ellipsis">
-                                                                                    {regularPrice}
-                                                                                </span>
-                                                                                <span className="text-sm color-weak ml-1">{` ${c(
-                                                                                    'Suffix'
-                                                                                ).t`/month`}`}</span>
-                                                                            </span>
-                                                                        )}
-
-                                                                    {free && (
-                                                                        <span className="text-sm color-weak ml-1">{` ${c(
-                                                                            'Suffix'
-                                                                        ).t`/month`}`}</span>
-                                                                    )}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        {upsell && (
-                                                            <>
-                                                                <div className="border-top border-weak" />
-                                                                {upsell}
-                                                            </>
-                                                        )}
-                                                    </div>
-                                                );
+                                        <PaymentSummary
+                                            model={model}
+                                            options={options}
+                                            actualCheckout={actualCheckout}
+                                            loadingPaymentDetails={disablePayButton}
+                                            onBillingAddressChange={handleChangeBillingAddress}
+                                            showInclusiveTax={paymentFacade.showInclusiveTax}
+                                            showTaxCountry={paymentFacade.showTaxCountry}
+                                            isB2bPlan={isB2bPlan}
+                                            upsellToggle={getUpsellToggle()}
+                                            planInformation={(() => {
+                                                return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
+                                                    ? getPlanInformation({
+                                                          selectedPlan: plansMap[PLANS.VPN2024],
+                                                          vpnServersCountData,
+                                                          mode,
+                                                          loading: model.loadingDependencies,
+                                                      }) || planInformation
+                                                    : planInformation;
                                             })()}
+                                            giftCode={
+                                                <GiftCodeSummary
+                                                    coupon={coupon}
+                                                    onApplyCode={async (code) => {
+                                                        const checkResult = await getSubscriptionPrices(
+                                                            getPaymentsApi(silentApi),
+                                                            options.planIDs,
+                                                            options.currency,
+                                                            options.cycle,
+                                                            model.subscriptionData.billingAddress,
+                                                            code
+                                                        );
 
-                                            {addonsPricing.length > 0 ? (
-                                                <>
-                                                    <div className="mx-3 mt-1 flex flex-column gap-2">
-                                                        {(() => {
-                                                            return addonsPricing.map(
-                                                                ({ addonPricePerCycle, cycle, value, addon }) => {
-                                                                    if (
-                                                                        addon.Name === ADDON_NAMES.MEMBER_VPN_PRO ||
-                                                                        addon.Name === ADDON_NAMES.MEMBER_VPN_BUSINESS
-                                                                    ) {
-                                                                        return (
-                                                                            <AddonSummary
-                                                                                key={addon.Name}
-                                                                                label={c('Checkout summary').t`Users`}
-                                                                                numberOfItems={value}
-                                                                                currency={options.currency}
-                                                                                price={addonPricePerCycle / cycle}
-                                                                                subline={
-                                                                                    <>
-                                                                                        /{' '}
-                                                                                        {c('Checkout summary').t`month`}
-                                                                                    </>
-                                                                                }
-                                                                            />
-                                                                        );
-                                                                    }
+                                                        setModel((old) => ({
+                                                            ...old,
+                                                            subscriptionData: {
+                                                                ...model.subscriptionData,
+                                                                checkResult,
+                                                            },
+                                                        }));
 
-                                                                    if (addon.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
-                                                                        return (
-                                                                            <AddonSummary
-                                                                                key={addon.Name}
-                                                                                label={c('Checkout summary').t`Servers`}
-                                                                                numberOfItems={value}
-                                                                                currency={options.currency}
-                                                                                price={addonPricePerCycle / cycle}
-                                                                            />
-                                                                        );
-                                                                    }
-                                                                }
-                                                            );
-                                                        })()}
-                                                    </div>
-                                                    <div className="mx-3 border-bottom border-weak" />
-                                                </>
-                                            ) : null}
+                                                        setCouponCode(code);
 
-                                            {isB2bPlan && (
-                                                <>
-                                                    <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
-                                                        <span>
-                                                            {getTotalBillingText(options.cycle, options.planIDs)}
-                                                        </span>
-                                                        <span>
-                                                            <Price currency={options.currency}>
-                                                                {options.checkResult.Amount}
-                                                            </Price>
-                                                        </span>
-                                                    </div>
-                                                    <div className="mx-3 border-bottom border-weak" />
-                                                </>
-                                            )}
+                                                        if (!checkResult.Coupon) {
+                                                            throw new Error(c('Notification').t`Invalid code`);
+                                                        }
+                                                    }}
+                                                    onRemoveCode={async () => {
+                                                        const checkResult = await getSubscriptionPrices(
+                                                            getPaymentsApi(silentApi),
+                                                            options.planIDs,
+                                                            options.currency,
+                                                            options.cycle,
+                                                            model.subscriptionData.billingAddress
+                                                        );
 
-                                            {isB2bPlan && (
-                                                <>
-                                                    <div className="mx-3">
-                                                        <GiftCodeSummary
-                                                            coupon={coupon}
-                                                            onApplyCode={async (code) => {
-                                                                const checkResult = await getSubscriptionPrices(
-                                                                    getPaymentsApi(silentApi),
-                                                                    options.planIDs,
-                                                                    options.currency,
-                                                                    options.cycle,
-                                                                    model.subscriptionData.billingAddress,
-                                                                    code
-                                                                );
+                                                        setModel((old) => ({
+                                                            ...old,
+                                                            subscriptionData: {
+                                                                ...model.subscriptionData,
+                                                                checkResult,
+                                                            },
+                                                        }));
 
-                                                                setModel((old) => ({
-                                                                    ...old,
-                                                                    subscriptionData: {
-                                                                        ...model.subscriptionData,
-                                                                        checkResult,
-                                                                    },
-                                                                }));
-
-                                                                setCouponCode(code);
-
-                                                                if (!checkResult.Coupon) {
-                                                                    throw new Error(c('Notification').t`Invalid code`);
-                                                                }
-                                                            }}
-                                                            onRemoveCode={async () => {
-                                                                const checkResult = await getSubscriptionPrices(
-                                                                    getPaymentsApi(silentApi),
-                                                                    options.planIDs,
-                                                                    options.currency,
-                                                                    options.cycle,
-                                                                    model.subscriptionData.billingAddress
-                                                                );
-
-                                                                setModel((old) => ({
-                                                                    ...old,
-                                                                    subscriptionData: {
-                                                                        ...model.subscriptionData,
-                                                                        checkResult,
-                                                                    },
-                                                                }));
-
-                                                                setCouponCode(undefined);
-                                                            }}
-                                                        />
-                                                    </div>
-                                                    <div className="mx-3 border-bottom border-weak" />
-                                                </>
-                                            )}
-
-                                            <div className="mx-3 flex flex-column gap-2">
-                                                {paymentFacade.showTaxCountry && (
-                                                    <WrappedTaxCountrySelector
-                                                        onBillingAddressChange={handleChangeBillingAddress}
-                                                        statusExtended={paymentFacade.statusExtended}
-                                                    />
-                                                )}
-                                                <div
-                                                    className={clsx(
-                                                        'text-bold',
-                                                        'flex justify-space-between text-rg gap-2'
-                                                    )}
-                                                >
-                                                    <span>
-                                                        {isB2bPlan
-                                                            ? c('Info').t`Amount due`
-                                                            : getTotalBillingText(options.cycle, options.planIDs)}
-                                                    </span>
-                                                    <span>
-                                                        {loadingPaymentDetails ? (
-                                                            <CircleLoader />
-                                                        ) : (
-                                                            <>
-                                                                <Price currency={options.currency}>
-                                                                    {options.checkResult.AmountDue}
-                                                                </Price>
-                                                                *
-                                                            </>
-                                                        )}
-                                                    </span>
-                                                </div>
-
-                                                {paymentFacade.showInclusiveTax && (
-                                                    <InclusiveVatText
-                                                        tax={options.checkResult?.Taxes?.[0]}
-                                                        currency={options.currency}
-                                                        className="text-sm color-weak"
-                                                    />
-                                                )}
-                                            </div>
-                                        </div>
+                                                        setCouponCode(undefined);
+                                                    }}
+                                                />
+                                            }
+                                            hasSelectedFree={hasSelectedFree}
+                                        />
                                     </div>
                                 </div>
                             </div>

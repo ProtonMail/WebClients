@@ -276,9 +276,11 @@ const SignupContainer = ({
 
             await startUnAuthFlow().catch(noop);
 
-            getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
+            getVPNServersCountData(silentApi)
+                .then((vpnServersCountData) => setModelDiff({ vpnServersCountData }))
+                .catch(noop);
 
-            const [{ Domains: domains }, referralData, plansResult] = await Promise.all([
+            const [{ Domains: domains }, referralData, plansResult, paymentStatus] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 referrer
                     ? await silentApi(checkReferrer(referrer))
@@ -289,9 +291,8 @@ const SignupContainer = ({
                           .catch(() => undefined)
                     : undefined,
                 getPlans({ api: silentApi }),
+                getPaymentStatus({ api: silentApi }),
             ]);
-
-            const paymentStatus = await getPaymentStatus({ api: silentApi });
 
             const { plans: Plans, freePlan } = plansResult;
 

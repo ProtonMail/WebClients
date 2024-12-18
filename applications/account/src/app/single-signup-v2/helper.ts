@@ -639,6 +639,82 @@ export const runAfterScroll = (el: Element, done: () => void) => {
 };
 
 export type SubscriptionDataCycleMapping = Partial<{ [key in PLANS]: CycleMapping<SubscriptionData> }>;
+export const getPlanCardSubscriptionDataMapping = ({
+    result,
+    plansMap,
+}: {
+    result: SubscriptionData[];
+    plansMap: PlansMap;
+}): SubscriptionDataCycleMapping => {
+    return result.reduce<SubscriptionDataCycleMapping>((acc, subscriptionData) => {
+        const plan = !hasPlanIDs(subscriptionData.planIDs)
+            ? FREE_PLAN
+            : getPlanFromPlanIDs(plansMap, subscriptionData.planIDs);
+        if (!plan) {
+            return acc;
+        }
+        let cycleMapping = acc[plan.Name as unknown as keyof typeof acc];
+        if (!cycleMapping) {
+            cycleMapping = {};
+            acc[plan.Name as unknown as keyof typeof acc] = cycleMapping;
+        }
+        cycleMapping[subscriptionData.cycle] = subscriptionData;
+        return acc;
+    }, {});
+};
+
+export const getOptimisticPlanCardSubscriptionData = ({
+    planIDs,
+    plansMap,
+    cycle,
+    billingAddress,
+    currency,
+}: {
+    cycle: CYCLE;
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    billingAddress: BillingAddress;
+    currency: Currency;
+}): SubscriptionData => {
+    return {
+        planIDs,
+        currency,
+        cycle,
+        checkResult: {
+            ...getOptimisticCheckResult({ planIDs, plansMap, cycle, currency }),
+            Currency: currency,
+            PeriodEnd: 0,
+        },
+        billingAddress,
+    };
+};
+
+export const getOptimisticPlanCardsSubscriptionData = ({
+    planIDs,
+    plansMap,
+    cycles,
+    billingAddress,
+}: {
+    cycles: CYCLE[];
+    planIDs: PlanIDs[];
+    plansMap: PlansMap;
+    billingAddress: BillingAddress;
+}): SubscriptionDataCycleMapping => {
+    const result = planIDs.flatMap((planIDs) =>
+        cycles
+            .map((cycle) => [planIDs, cycle] as const)
+            .map(([planIDs, cycle]): SubscriptionData => {
+                // make sure that the plan and all its addons exist
+                const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
+                // we extract the currency of the currently selected plan in plansMap.
+                const currency = plansMap[plansToCheck[0]]?.Currency ?? DEFAULT_CURRENCY;
+                return getOptimisticPlanCardSubscriptionData({ billingAddress, planIDs, cycle, plansMap, currency });
+            })
+    );
+
+    return getPlanCardSubscriptionDataMapping({ result, plansMap });
+};
+
 export const getPlanCardSubscriptionData = async ({
     planIDs,
     plansMap,
@@ -675,17 +751,13 @@ export const getPlanCardSubscriptionData = async ({
                     // Also always exclude Enterprise (price never shown).
                     // In addition, if the selected plan doesn't exist, then we don't do the live check call.
                     if (!coupon || planIDs[PLANS.ENTERPRISE] || !plansExist) {
-                        return {
-                            planIDs,
-                            currency,
-                            cycle,
-                            checkResult: {
-                                ...getOptimisticCheckResult({ planIDs, plansMap, cycle, currency }),
-                                Currency: currency,
-                                PeriodEnd: 0,
-                            },
+                        return getOptimisticPlanCardSubscriptionData({
                             billingAddress,
-                        };
+                            planIDs,
+                            cycle,
+                            plansMap,
+                            currency,
+                        });
                     }
 
                     const subscriptionData = await getSubscriptionData(paymentsApi, {
@@ -702,21 +774,7 @@ export const getPlanCardSubscriptionData = async ({
         )
     );
 
-    return result.reduce<SubscriptionDataCycleMapping>((acc, subscriptionData) => {
-        const plan = !hasPlanIDs(subscriptionData.planIDs)
-            ? FREE_PLAN
-            : getPlanFromPlanIDs(plansMap, subscriptionData.planIDs);
-        if (!plan) {
-            return acc;
-        }
-        let cycleMapping = acc[plan.Name as unknown as keyof typeof acc];
-        if (!cycleMapping) {
-            cycleMapping = {};
-            acc[plan.Name as unknown as keyof typeof acc] = cycleMapping;
-        }
-        cycleMapping[subscriptionData.cycle] = subscriptionData;
-        return acc;
-    }, {});
+    return getPlanCardSubscriptionDataMapping({ result, plansMap });
 };
 
 export const swapCurrency = (
