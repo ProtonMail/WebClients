@@ -3,24 +3,25 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useUserSettings } from '@proton/account/index';
 import { Button } from '@proton/atoms';
 import {
     LabelStack,
+    Loader,
     OnboardingStep,
     type OnboardingStepRenderCallback,
     Toggle,
     useActiveBreakpoint,
     useApi,
+    useEventManager,
     useShortDomainAddress,
 } from '@proton/components';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { ADDRESS_TYPE, BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import aliasesIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_aliases.svg';
@@ -101,58 +102,53 @@ const FeatureItem = ({ checked, description, icon, id, isActivated, onToggle, ti
     );
 };
 
-const getIsAutoDeleteEnabled = (mailSettings: MailSettings | undefined) =>
-    Boolean(mailSettings?.AutoDeleteSpamAndTrashDays);
-
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {
-    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
     const api = useApi();
-    const {
-        shortDomainAddress,
-        createShortDomainAddress,
-        loadingDependencies: loadingDependency,
-    } = useShortDomainAddress();
+    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const [addresses, addressesLoading] = useAddresses();
+    const [userSettings, userSettingsLoading] = useUserSettings();
+    const [mailSettings, mailSettingsLoading] = useMailSettings();
+    const { call } = useEventManager();
+    const { shortDomainAddress, createShortDomainAddress, loadingDependencies, hasShortDomain } =
+        useShortDomainAddress();
     const features = useGetFeatures(shortDomainAddress);
-    const [addresses] = useAddresses();
-    const isAliasEnabled = Boolean(addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM));
 
-    const [mailSettings] = useMailSettings();
-    const isAutoDeleteEnabled = getIsAutoDeleteEnabled(mailSettings);
+    const [checkedFeatures, setCheckedFeatures] = useState<Record<FeatureID, boolean>>({
+        aliases: true,
+        autoDelete: true,
+        monitoring: true,
+    });
 
-    const [userSettings] = useUserSettings();
-    const isMonitoringEnabled = userSettings.BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED;
-
-    const initialCheckedItems = {
-        aliases: isAliasEnabled,
-        autoDelete: isAutoDeleteEnabled,
-        monitoring: isMonitoringEnabled,
+    const activeFeatures: Record<FeatureID, boolean> = {
+        aliases: addresses ? hasShortDomain(addresses) : false,
+        autoDelete: Boolean(mailSettings?.AutoDeleteSpamAndTrashDays),
+        monitoring: userSettings.BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED,
     };
 
-    const hasAllItemsActivated = isAliasEnabled && isAutoDeleteEnabled && isMonitoringEnabled;
+    const loadingDeps = addressesLoading || userSettingsLoading || mailSettingsLoading || loadingDependencies;
+    const hasAllItemsActivated = Object.values(activeFeatures).every(Boolean);
 
-    const [checkedItems, setCheckedItems] = useState<Record<FeatureID, boolean>>(initialCheckedItems);
+    const handleToggleFeature = (id: FeatureID) => (isChecked: boolean) =>
+        setCheckedFeatures((prev) => ({ ...prev, [id]: isChecked }));
 
-    const handleItemSelect = (id: FeatureID) => (isChecked: boolean) =>
-        setCheckedItems((prev) => ({ ...prev, [id]: isChecked }));
-
-    const hasNoItemsChecked = !Object.values(checkedItems).some(Boolean);
+    const hasNoItemsChecked = !Object.values(checkedFeatures).some(Boolean);
 
     const handleNext = () => {
         const promises: Promise<any>[] = [
             sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.premium_features, {
-                feature_auto_delete: checkedItems.autoDelete ? 'yes' : 'no',
-                feature_dark_web_monitoring: checkedItems.monitoring ? 'yes' : 'no',
-                feature_short_domain: checkedItems.aliases ? 'yes' : 'no',
+                feature_auto_delete: checkedFeatures.autoDelete ? 'yes' : 'no',
+                feature_dark_web_monitoring: checkedFeatures.monitoring ? 'yes' : 'no',
+                feature_short_domain: checkedFeatures.aliases ? 'yes' : 'no',
             }),
         ];
 
-        if (checkedItems.aliases && !isAliasEnabled) {
+        if (checkedFeatures.aliases && !activeFeatures.aliases) {
             promises.push(createShortDomainAddress({ setDefault: true }));
         }
-        if (checkedItems.autoDelete && !isAutoDeleteEnabled) {
+        if (checkedFeatures.autoDelete && !activeFeatures.autoDelete) {
             promises.push(api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)));
         }
-        if (checkedItems.monitoring && !isMonitoringEnabled) {
+        if (checkedFeatures.monitoring && !activeFeatures.monitoring) {
             promises.push(api(enableBreachAlert()));
         }
 
@@ -163,6 +159,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
                     traceInitiativeError('mail-onboarding', result.reason);
                 }
             });
+            void call();
         });
 
         onNext();
@@ -176,22 +173,32 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
                 className="mb-16"
             >
                 <div className="flex flex-column gap-4">
-                    {features.map(({ id, title, description, icon }) => (
-                        <FeatureItem
-                            checked={checkedItems[id]}
-                            description={description}
-                            icon={icon}
-                            id={id}
-                            isActivated={initialCheckedItems[id]}
-                            key={id}
-                            onToggle={handleItemSelect(id)}
-                            title={title}
+                    {loadingDeps ? (
+                        <Loader
+                            size="medium"
+                            className="min-h-custom mx-auto flex"
+                            style={{
+                                '--min-h-custom': '17rem',
+                            }}
                         />
-                    ))}
+                    ) : (
+                        features.map(({ id, title, description, icon }) => (
+                            <FeatureItem
+                                checked={checkedFeatures[id]}
+                                description={description}
+                                icon={icon}
+                                id={id}
+                                isActivated={activeFeatures[id]}
+                                key={id}
+                                onToggle={handleToggleFeature(id)}
+                                title={title}
+                            />
+                        ))
+                    )}
                 </div>
             </OnboardingContent>
             <footer>
-                <Button size="large" fullWidth color="norm" onClick={handleNext} disabled={loadingDependency}>
+                <Button size="large" fullWidth color="norm" onClick={handleNext} disabled={loadingDeps}>
                     {hasAllItemsActivated || hasNoItemsChecked
                         ? c('Onboarding modal').t`Start using ${BRAND_NAME}`
                         : c('Onboarding modal').t`Activate selected`}
