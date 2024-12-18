@@ -9,7 +9,7 @@ import {
 } from '@proton/pass/lib/password/constants';
 import { generatePassword } from '@proton/pass/lib/password/generator';
 import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/types';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
@@ -61,14 +61,65 @@ export const getCharsGroupedByColor = (password: string) => {
         ));
 };
 
+const getRandomPasswordWithB2BPolicy = (
+    config: GeneratePasswordConfig<'random'>,
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
+): GeneratePasswordConfig => {
+    return {
+        type: 'random',
+        options: {
+            length: Math.max(policy?.RandomPasswordMinLength ?? 0, config.options.length),
+            useDigits: policy?.RandomPasswordMustIncludeNumbers ?? config.options.useDigits,
+            useSpecialChars: policy?.RandomPasswordMustIncludeSymbols ?? config.options.useSpecialChars,
+            useUppercase: policy?.RandomPasswordMustIncludeUppercase ?? config.options.useUppercase,
+        },
+    };
+};
+
+const getMemorablePasswordWithB2BPolicy = (
+    config: GeneratePasswordConfig<'memorable'>,
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
+): GeneratePasswordConfig => {
+    return {
+        type: 'memorable',
+        options: {
+            wordCount: Math.max(policy?.MemorablePasswordMinWords ?? 0, config.options.wordCount),
+            capitalize: policy?.MemorablePasswordMustCapitalize ?? config.options.capitalize,
+            extraNumbers: policy?.MemorablePasswordMustIncludeNumbers ?? config.options.extraNumbers,
+            seperator: config.options.seperator,
+        },
+    };
+};
+
+export const getConfigWithB2BPolicy = (
+    config: GeneratePasswordConfig,
+    policy?: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
+): GeneratePasswordConfig => {
+    if (!policy) return config;
+
+    if (config.type === 'random') {
+        // If the current config type is not allowed by policy, create new config, else update the current config
+        return policy.RandomPasswordAllowed === false
+            ? getMemorablePasswordWithB2BPolicy(DEFAULT_MEMORABLE_PW_OPTIONS, policy)
+            : getRandomPasswordWithB2BPolicy(config, policy);
+    }
+
+    return policy.MemorablePasswordAllowed === false
+        ? getRandomPasswordWithB2BPolicy(DEFAULT_RANDOM_PW_OPTIONS, policy)
+        : getMemorablePasswordWithB2BPolicy(config, policy);
+};
+
 type UsePasswordGeneratorOptions = {
     initial: MaybeNull<GeneratePasswordConfig>;
     onConfigChange: (options: GeneratePasswordConfig) => void;
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
 };
 
-export const usePasswordGenerator = ({ initial, onConfigChange }: UsePasswordGeneratorOptions) => {
+export const usePasswordGenerator = ({ initial, onConfigChange, policy }: UsePasswordGeneratorOptions) => {
     const { core } = usePassCore();
-    const [config, setConfig] = useState<GeneratePasswordConfig>(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS);
+    const [config, setConfig] = useState<GeneratePasswordConfig>(
+        getConfigWithB2BPolicy(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS, policy)
+    );
     const generator = useCallback(generatePassword(core), [core]);
     const [password, setPassword] = useState('');
 
@@ -108,6 +159,7 @@ export const usePasswordGenerator = ({ initial, onConfigChange }: UsePasswordGen
         setPassword,
         setPasswordOptions,
         regeneratePassword,
+        policy,
     };
 };
 
