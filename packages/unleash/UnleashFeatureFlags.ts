@@ -57,6 +57,7 @@ enum AccountFlag {
     LumoInProductSwitcher = 'LumoInProductSwitcher',
     LumoAddonAvailable = 'LumoAddonAvailable',
     LumoSignupAvailable = 'LumoSignupAvailable',
+    PassB2BPasswordGenerator = 'PassB2BPasswordGenerator',
 }
 
 enum PaymentsFlag {
