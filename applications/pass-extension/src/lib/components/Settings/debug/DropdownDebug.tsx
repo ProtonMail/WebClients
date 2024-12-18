@@ -80,6 +80,7 @@ export const DropdownDebug: FC = () => {
                         config: DEFAULT_RANDOM_PW_OPTIONS,
                         domain: 'proton.me',
                         copy: false,
+                        policy: null,
                     }}
                     width={DROPDOWN_WIDTH}
                 >

@@ -1,3 +1,5 @@
+import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+
 export enum SeperatorOptions {
     HYPHEN = '-',
     SPACE = ' ',
@@ -11,6 +13,7 @@ export enum SeperatorOptions {
 export type PasswordAutosuggestOptions = {
     config: GeneratePasswordConfig;
     copy: boolean;
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
 };
 
 export type MemorablePasswordOptions = {
