@@ -4,7 +4,6 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Address, Key } from '@proton/shared/lib/interfaces';
 import type { AttachmentFullMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -111,11 +110,6 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
 };
 
 const waitForAutoSave = async (spy: jest.Mock) => {
-    // Something is causing a race condition. I have not been able to figure out what.
-    // I had been hoping to await a proper event, but nothing I have tried works.
-    // I despise random waits, but if removed the tests fail, and if kept they pass.
-    await wait(100);
-
     await waitForSpyCall({ spy });
 };
 
