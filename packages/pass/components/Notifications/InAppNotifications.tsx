@@ -11,12 +11,16 @@ import noop from '@proton/utils/noop';
 import { InAppNotificationBanner } from './InAppNotificationBanner';
 import { InAppNotificationModal } from './InAppNotificationModal';
 
-// Mapper function to prevent hot-reload pre-initialization errors
-const getNotificationComponent = (displayType?: InAppNotificationDisplayType) =>
-    ({
-        [InAppNotificationDisplayType.BANNER]: InAppNotificationBanner,
-        [InAppNotificationDisplayType.MODAL]: InAppNotificationModal,
-    })[displayType!] ?? noop;
+const getNotificationComponent = (displayType?: InAppNotificationDisplayType) => {
+    switch (displayType) {
+        case InAppNotificationDisplayType.BANNER:
+            return InAppNotificationBanner;
+        case InAppNotificationDisplayType.MODAL:
+            return InAppNotificationModal;
+        default:
+            return noop;
+    }
+};
 
 export const InAppNotifications: FC = withFeatureFlag(() => {
     const notification = useSelector(selectNextNotification(getEpoch()));
