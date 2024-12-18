@@ -4,6 +4,7 @@ import { electronicFormatIBAN } from 'ibantools';
 
 import type { DirectDebitBankAccount, DirectDebitCustomer, DirectDebitCustomerNameType } from '@proton/chargebee/lib';
 import { useLoading } from '@proton/hooks';
+import { SepaEmailNotProvidedError } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type AmountAndCurrency,
@@ -21,7 +22,7 @@ import {
 } from '@proton/payments';
 import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/shared/lib/api/payments';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
@@ -31,7 +32,6 @@ export interface Props {
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
     onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
-    user: User | undefined;
     onBeforeSepaPayment?: () => Promise<boolean>;
 }
 
@@ -48,7 +48,7 @@ type Overrides = {};
 export type ChargebeeDirectDebitProcessorHook = Omit<PaymentProcessorHook, keyof Overrides> & {
     bankAccount: DirectDebitBankAccount;
     setBankAccount: React.Dispatch<React.SetStateAction<DirectDebitBankAccount>>;
-    customer: DirectDebitCustomer;
+    customer: DirectDebitCustomerWithoutEmail;
     setCompanyName: (company: string) => void;
     setFirstName: (firstName: string) => void;
     setLastName: (lastName: string) => void;
@@ -60,8 +60,10 @@ export type ChargebeeDirectDebitProcessorHook = Omit<PaymentProcessorHook, keyof
     getFetchedPaymentToken: () => ChargebeeFetchedPaymentToken | null;
 } & Overrides;
 
+type DirectDebitCustomerWithoutEmail = Omit<DirectDebitCustomer, 'email'>;
+
 export const useSepaDirectDebit = (
-    { amountAndCurrency, onChargeable, selectedPlanName, user, onBeforeSepaPayment }: Props,
+    { amountAndCurrency, onChargeable, selectedPlanName, onBeforeSepaPayment }: Props,
     { api, forceEnableChargebee, handles, verifyPayment, events }: Dependencies
 ): ChargebeeDirectDebitProcessorHook => {
     const fetchedPaymentTokenRef = useRef<ChargebeeFetchedPaymentToken | null>(null);
@@ -69,8 +71,7 @@ export const useSepaDirectDebit = (
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlanName);
 
-    const [customer, setCustomer] = useState<DirectDebitCustomer>({
-        email: user?.Email ?? '',
+    const [customer, setCustomer] = useState<DirectDebitCustomerWithoutEmail>({
         company: '',
         firstName: '',
         lastName: '',
@@ -96,10 +97,7 @@ export const useSepaDirectDebit = (
             const payload: CreatePaymentIntentDirectDebitData = {
                 ...amountAndCurrency,
                 Payment: {
-                    Type: 'sepa_direct_debit',
-                    Details: {
-                        Email: customer.email,
-                    },
+                    Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                 },
             };
 
@@ -107,12 +105,19 @@ export const useSepaDirectDebit = (
             forceEnableChargebee();
 
             const paymentIntent = convertPaymentIntentData(bePaymentIntentData);
+            const sepaEmail = bePaymentIntentData?.Details?.Email;
+            if (!sepaEmail) {
+                throw new SepaEmailNotProvidedError();
+            }
 
             const formattedIban = electronicFormatIBAN(bankAccount.iban) ?? '';
 
             await handles.submitDirectDebit({
                 paymentIntent,
-                customer,
+                customer: {
+                    ...customer,
+                    email: sepaEmail,
+                },
                 bankAccount: {
                     ...bankAccount,
                     iban: formattedIban,
@@ -222,7 +227,7 @@ export const useSepaDirectDebit = (
         reset,
         getFetchedPaymentToken,
         meta: {
-            type: 'sepa_direct_debit',
+            type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
         },
     };
 };
