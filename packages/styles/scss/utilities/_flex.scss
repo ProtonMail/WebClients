@@ -17,8 +17,7 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			flex-#{$direction}:
-				(
+			flex-#{$direction}: (
 					flex-direction: $direction,
 				)
 		)
@@ -32,8 +31,7 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			justify-#{$justify}:
-				(
+			justify-#{$justify}: (
 					justify-content: #{dash-join($prefix, $justify)},
 				)
 		)
@@ -45,8 +43,7 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			flex-#{$wrap}:
-				(
+			flex-#{$wrap}: (
 					flex-wrap: #{$wrap},
 				)
 		)
@@ -59,8 +56,7 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			order-#{$i}:
-				(
+			order-#{$i}: (
 					order: #{$i},
 				)
 		)
@@ -71,8 +67,7 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			order-#{$order}:
-				(
+			order-#{$order}: (
 					order: #{$order},
 				)
 		)
@@ -86,13 +81,14 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			items-#{$align}:
-				(
+			items-#{$align}: (
 					align-items: #{dash-join($prefix, $align)},
 				),
-			self-#{$align}:
-				(
+			self-#{$align}: (
 					align-self: #{dash-join($prefix, $align)},
+				),
+			content-#{$align}: (
+					align-content: #{dash-join($prefix, $align)},
 				)
 		)
 	);
