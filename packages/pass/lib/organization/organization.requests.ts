@@ -1,6 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
-import type { MaybeNull, OrganizationGetResponse } from '@proton/pass/types';
+import type { MaybeNull, OrganizationGetResponse, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { logger } from '@proton/pass/utils/logger';
 import { getOrganization as coreGetOrganization } from '@proton/shared/lib/api/organization';
@@ -41,3 +41,14 @@ export const getOrganization = async (): Promise<MaybeNull<OrganizationState>> =
         organization,
     };
 };
+
+export const setPasswordGeneratorPolicySettings = async (
+    settings: OrganizationUpdatePasswordPolicyRequest
+): Promise<OrganizationGetResponse> =>
+    (
+        await api({
+            url: 'pass/v1/organization/settings/password_policy',
+            method: 'put',
+            data: settings,
+        })
+    ).Organization!;
