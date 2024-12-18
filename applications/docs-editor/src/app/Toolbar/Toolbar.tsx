@@ -86,7 +86,7 @@ import './Toolbar.scss'
 import ToolbarTooltip from './ToolbarTooltip'
 import { CLEAR_FORMATTING_COMMAND, SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
 import { INSERT_FILE_COMMAND } from '../Commands/Events'
-import { EditorUserMode } from '../EditorUserMode'
+import { EditorUserMode } from '../Lib/EditorUserMode'
 import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
 import { EditorEvent, TooltipKey, useTooltipOnce } from '@proton/docs-shared'
@@ -95,13 +95,13 @@ import { EditorSystemMode } from '@proton/docs-shared'
 import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { SpotlightIllustration } from '../Icons/SpotlightIllustration'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
-import { useApplication } from '../ApplicationProvider'
 import { isHTMLElement } from '../Utils/guard'
 import { stepFontSize } from './stepFontSize'
 import { isMobile } from './isMobile'
 import type { ToolbarItems } from './ToolbarItems'
 import { OverflowMenuItem } from './OverflowMenuItem'
 import { ToolbarItem } from './ToolbarItem'
+import { useEditorStateValues } from '../Lib/useEditorStateValues'
 
 export default function DocumentEditorToolbar({
   userMode,
@@ -123,9 +123,9 @@ export default function DocumentEditorToolbar({
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
 
-  const { isSuggestionsFeatureEnabled } = useApplication()
+  const { suggestionsEnabled } = useEditorStateValues()
 
-  const canShowSuggestionsButton = isSuggestionsFeatureEnabled
+  const canShowSuggestionsButton = suggestionsEnabled
 
   const isEditable = useLexicalEditable()
 

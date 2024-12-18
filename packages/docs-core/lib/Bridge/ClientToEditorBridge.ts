@@ -22,15 +22,15 @@ export class ClientToEditorBridge {
     private editorFrame: HTMLIFrameElement,
     private readonly editorController: EditorOrchestratorInterface,
     private readonly eventBus: InternalEventBusInterface,
-    private readonly syncedEditorState?: SyncedEditorState,
+    private readonly syncedEditorState: SyncedEditorState,
   ) {
     this.editorRequestHandler = new EditorToClientRequestHandler(this.editorFrame, this.editorController, this.eventBus)
 
-    this.syncedEditorState?.subscribeToAnyProperty((property, value) => {
+    this.syncedEditorState.subscribeToAnyProperty((property, value) => {
       void this.editorInvoker.syncProperty(property, value)
     })
 
-    this.syncedEditorState?.subscribeToAnyEvent((event) => {
+    this.syncedEditorState.subscribeToAnyEvent((event) => {
       void this.editorInvoker.syncEvent(event)
     })
 

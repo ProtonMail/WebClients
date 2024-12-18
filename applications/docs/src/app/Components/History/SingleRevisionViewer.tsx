@@ -1,10 +1,11 @@
 import type { EditorInvoker } from '@proton/docs-core'
 import type { YjsState } from '@proton/docs-shared'
-import { EditorSystemMode, InternalEventBus } from '@proton/docs-shared'
+import { EditorSystemMode, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'
 import { EditorFrame } from '../EditorFrame'
 import { useCallback } from 'react'
 import { ClientToEditorBridge } from '@proton/docs-core'
 import type { EditorOrchestratorInterface } from '@proton/docs-core'
+import { useApplication } from '../../Containers/ApplicationProvider'
 
 export function SingleRevisionViewer({
   state,
@@ -13,13 +14,15 @@ export function SingleRevisionViewer({
   state: YjsState
   onEditorInvokerRef: (editorInvoker: EditorInvoker) => void
 }) {
+  const { logger } = useApplication()
+
   const onFrameReady = useCallback(
     async (frame: HTMLIFrameElement) => {
       const orchestrator = {
         provideEditorInvoker: () => {},
       } as unknown as EditorOrchestratorInterface
 
-      const bridge = new ClientToEditorBridge(frame, orchestrator, new InternalEventBus())
+      const bridge = new ClientToEditorBridge(frame, orchestrator, new InternalEventBus(), new SyncedEditorState())
 
       bridge.logger.setEnabled(false)
 
@@ -43,5 +46,5 @@ export function SingleRevisionViewer({
     [onEditorInvokerRef, state],
   )
 
-  return <EditorFrame systemMode={EditorSystemMode.Revision} onFrameReady={onFrameReady} />
+  return <EditorFrame systemMode={EditorSystemMode.Revision} onFrameReady={onFrameReady} logger={logger} />
 }
