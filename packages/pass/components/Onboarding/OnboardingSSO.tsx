@@ -11,22 +11,23 @@ import type { SpotlightModalProps } from '@proton/pass/components/Onboarding/Wit
 import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { oneOf } from '@proton/pass/utils/fp/predicates';
 
 import './OnboardingModal.scss';
 
 export const OnboardingSSO: FC<SpotlightModalProps> = ({ acknowledge, onClose }) => {
     const { lock } = useLockSetup();
     const online = useConnectivity();
-    const hasPasswordLockMethod = lock.mode === LockMode.PASSWORD;
+    const lockModeIsNotPreferred = oneOf(LockMode.PASSWORD, LockMode.NONE)(lock.mode);
 
     useEffect(() => {
-        // Only display the modal if the Lock Mode is Password
-        if (!hasPasswordLockMethod) pipe(onClose, acknowledge)();
+        // Only display the modal if the Lock Mode is Password or None
+        if (!lockModeIsNotPreferred) pipe(onClose, acknowledge)();
     }, []);
 
     return (
         online &&
-        hasPasswordLockMethod && (
+        lockModeIsNotPreferred && (
             <PassModal open size="medium" className="pass-onboarding-modal">
                 <ModalTwoHeader
                     title={c('Title').t`Change your lock method`}
