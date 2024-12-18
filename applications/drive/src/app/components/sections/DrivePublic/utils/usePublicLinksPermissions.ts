@@ -2,7 +2,7 @@ import { type DecryptedLink, usePublicSessionUser } from '../../../../store';
 import { useAnonymousUploadAuthStore } from '../../../../zustand/upload/anonymous-auth.store';
 
 export const usePublicLinksPermissions = (linksInput: DecryptedLink | DecryptedLink[]) => {
-    const { hasUploadToken } = useAnonymousUploadAuthStore();
+    const hasUploadToken = useAnonymousUploadAuthStore((state) => state.hasUploadToken);
     const { userAddressEmail } = usePublicSessionUser();
 
     const links = Array.isArray(linksInput) ? linksInput : [linksInput];

@@ -21,7 +21,7 @@ export function usePublicActions() {
     const { createNotification } = useNotifications();
     const publicLinksListing = usePublicLinksListing();
     const linksState = useLinksState();
-    const { removeUploadTokens } = useAnonymousUploadAuthStore();
+    const removeUploadTokens = useAnonymousUploadAuthStore((state) => state.removeUploadTokens);
     const { user } = usePublicSessionUser();
 
     const publicLink = usePublicLinkActions();
