@@ -15,10 +15,13 @@ import type {
 } from '../interfaces';
 import type { SimpleMap } from '../interfaces/utils';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
-import type { PrimaryAddressKeys} from './getPrimaryKey';
-import { getPrimaryAddressKeysForSigningByVersion } from './getPrimaryKey';
+import { type PrimaryAddressKeysForSigning, getPrimaryAddressKeysForSigning } from './getPrimaryKey';
 
-export const getSignedKeyListSignature = async (data: string, signingKeys: PrimaryAddressKeys, date?: Date) => {
+export const getSignedKeyListSignature = async (
+    data: string,
+    signingKeys: PrimaryAddressKeysForSigning,
+    date?: Date
+) => {
     const signature = await CryptoProxy.signMessage({
         textData: data,
         stripTrailingSpaces: true,
@@ -63,7 +66,7 @@ export const getSignedKeyListWithDeferredPublish = async (
         )
     ).filter(isTruthy);
     const data = JSON.stringify(transformedKeys);
-    const signingKeys = getPrimaryAddressKeysForSigningByVersion(keys);
+    const signingKeys = getPrimaryAddressKeysForSigning(keys, true);
     if (!signingKeys.length) {
         throw new Error('Missing primary signing key');
     }
@@ -91,20 +94,8 @@ export const getSignedKeyList = async (
     address: Address,
     keyTransparencyVerify: KeyTransparencyVerify
 ): Promise<SignedKeyList> => {
-    const activeKeysWithoutForwarding = {
-        v4: (
-            await Promise.all(
-                keys.v4.map(async (key) => {
-                    const result = await CryptoProxy.isE2EEForwardingKey({ key: key.privateKey });
-                    return result ? false : key;
-                })
-            )
-        ).filter(isTruthy),
-        v6: keys.v6, // forwarding not supported by v6 keys
-    };
-
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-        activeKeysWithoutForwarding,
+        keys,
         address,
         keyTransparencyVerify
     );

@@ -92,11 +92,11 @@ const useGetVerificationPreferences = () => {
                 internalKeysOnly: true,
             });
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
-            const { publicKeys } = splitKeys(await getUserKeys());
+            const { publicKeys: contactVerificationKeys } = splitKeys(await getUserKeys());
             const { pinnedKeys, isContactSignatureVerified: pinnedKeysVerified } = await getPublicKeysVcardHelper(
                 api,
                 email,
-                publicKeys,
+                contactVerificationKeys,
                 isInternal,
                 contactEmailsMap
             );
@@ -106,7 +106,12 @@ const useGetVerificationPreferences = () => {
                     .map(({ publicKey }) => publicKey!.getFingerprint())
             );
             const pinnedKeysFingerprints = new Set(pinnedKeys.map((key) => key.getFingerprint()));
-            const apiPublicKeys = apiKeys.filter(({ publicKey }) => !!publicKey).map(({ publicKey }) => publicKey!);
+            const apiPublicKeys = apiKeys
+                .filter(({ publicKey }) => !!publicKey)
+                .map(({ publicKey }) => publicKey)
+                // for verification, the order of the keys does not currently matter, but we put v6 keys first as ideally v6 signatures should take precedence
+                .sort((publicKeyA, publicKeyB) => publicKeyB.getVersion() - publicKeyA.getVersion());
+
             let verifyingKeys: PublicKeyReference[] = [];
             if (pinnedKeys.length) {
                 verifyingKeys = getVerifyingKeys(pinnedKeys, compromisedKeysFingerprints);

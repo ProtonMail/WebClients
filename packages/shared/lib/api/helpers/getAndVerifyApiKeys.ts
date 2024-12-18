@@ -31,11 +31,12 @@ interface ApiAddressKey {
     PublicKey: string;
     Flags: number;
     Source: API_KEY_SOURCE;
+    Primary: 1 | 0;
 }
 
 const importKeys = async (keys: ApiAddressKey[], checkCompatibility?: boolean): Promise<ProcessedApiKey[]> => {
     const promises = await Promise.all(
-        keys.map(async ({ PublicKey: armoredKey, Flags, Source }) => {
+        keys.map(async ({ PublicKey: armoredKey, Flags, Source, Primary }) => {
             const publicKey = await CryptoProxy.importPublicKey({ armoredKey, checkCompatibility }).catch(() => null);
 
             if (!publicKey) {
@@ -47,6 +48,7 @@ const importKeys = async (keys: ApiAddressKey[], checkCompatibility?: boolean): 
                 flags: Flags,
                 publicKey: publicKey,
                 source: Source,
+                primary: Primary,
             };
         })
     );

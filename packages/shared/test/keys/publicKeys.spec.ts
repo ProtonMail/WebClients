@@ -13,6 +13,7 @@ describe('get contact public key model', () => {
             publicKeys: [],
             SignedKeyList: null,
         },
+        preferV6Keys: false,
     };
 
     it('should mark valid key as capable of encryption', async () => {
@@ -59,7 +60,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -76,7 +77,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [],
@@ -93,7 +94,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -128,7 +129,7 @@ describe('get contact public key model', () => {
             apiKeysConfig: {
                 ...publicKeyConfig,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.PROTON }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, primary: 1, source: API_KEY_SOURCE.PROTON }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -142,14 +143,17 @@ describe('get contact public key model', () => {
 });
 
 describe('sortApiKeys', () => {
-    const generateFakeKey = (fingerprint: string) =>
+    const generateFakeKey = (fingerprint: string, version: 4 | 6 = 4) =>
         ({
+            getVersion() {
+                return version;
+            },
             getFingerprint() {
                 return fingerprint;
             },
         }) as PublicKeyReference;
-    it('sort keys as expected', () => {
-        const fingerprints = [
+    it('sort keys as expected - without v6 keys', () => {
+        const fingerprintsV4 = [
             'trustedObsoleteNotCompromised',
             'notTrustedObsoleteCompromised',
             'trustedNotObsoleteNotCompromised',
@@ -159,8 +163,11 @@ describe('sortApiKeys', () => {
             'notTrustedNotObsoleteNotCompromised',
             'notTrustedObsoleteNotCompromised',
         ];
-        const sortedKeys = sortApiKeys({
-            keys: fingerprints.map(generateFakeKey),
+
+        const commonOptions = {
+            keys: fingerprintsV4.map((fp) => generateFakeKey(fp)),
+            // this is expected to always be populated; it's empty here to test the other ordering conditions
+            primaryKeyFingerprints: new Set([]),
             obsoleteFingerprints: new Set([
                 'trustedObsoleteNotCompromised',
                 'trustedObsoleteCompromised',
@@ -179,8 +186,17 @@ describe('sortApiKeys', () => {
                 'trustedObsoleteNotCompromised',
                 'trustedNotObsoleteNotCompromised',
             ]),
+        };
+        const sortedKeysWithV4Preferred = sortApiKeys({
+            ...commonOptions,
+            preferV6Keys: false,
         });
-        expect(sortedKeys.map((key) => key.getFingerprint())).toEqual([
+        const sortedKeysWithV6Preferred = sortApiKeys({
+            ...commonOptions,
+            preferV6Keys: true,
+        });
+        expect(sortedKeysWithV4Preferred).toEqual(sortedKeysWithV6Preferred);
+        expect(sortedKeysWithV4Preferred.map((key) => key.getFingerprint())).toEqual([
             'trustedNotObsoleteNotCompromised',
             'trustedObsoleteNotCompromised',
             'trustedNotObsoleteCompromised',
@@ -191,16 +207,96 @@ describe('sortApiKeys', () => {
             'notTrustedObsoleteCompromised',
         ]);
     });
+
+    it('sort keys as expected - with v6 keys', () => {
+        const fingerprintsV4 = [
+            'trustedObsoleteNotCompromised',
+            'notTrustedObsoleteCompromised',
+            'trustedNotObsoleteNotCompromised',
+            'notTrustedNotObsoleteCompromised',
+            'trustedNotObsoleteCompromised',
+            'trustedObsoleteCompromised',
+            'notTrustedNotObsoleteNotCompromisedPrimary',
+            'notTrustedObsoleteNotCompromised',
+        ];
+        const fingerprintsV6 = [
+            'notTrustedNotObsoleteNotCompromisedPrimaryV6',
+            'notTrustedNotObsoleteNotCompromisedV6',
+        ];
+        const commonOptions = {
+            keys: [
+                ...fingerprintsV4.map((fp) => generateFakeKey(fp)),
+                ...fingerprintsV6.map((fp) => generateFakeKey(fp, 6)),
+            ],
+            primaryKeyFingerprints: new Set([
+                'notTrustedNotObsoleteNotCompromisedPrimary',
+                'notTrustedNotObsoleteNotCompromisedPrimaryV6',
+            ]),
+            obsoleteFingerprints: new Set([
+                'trustedObsoleteNotCompromised',
+                'trustedObsoleteCompromised',
+                'notTrustedObsoleteNotCompromised',
+                'notTrustedObsoleteCompromised',
+            ]),
+            compromisedFingerprints: new Set([
+                'trustedObsoleteCompromised',
+                'trustedNotObsoleteCompromised',
+                'notTrustedObsoleteCompromised',
+                'notTrustedNotObsoleteCompromised',
+            ]),
+            trustedFingerprints: new Set([
+                'trustedObsoleteCompromised',
+                'trustedNotObsoleteCompromised',
+                'trustedObsoleteNotCompromised',
+                'trustedNotObsoleteNotCompromised',
+            ]),
+        };
+        const sortedKeysWithV4Preferred = sortApiKeys({
+            ...commonOptions,
+            preferV6Keys: false,
+        });
+        const sortedKeysWithV6Preferred = sortApiKeys({
+            ...commonOptions,
+            preferV6Keys: true,
+        });
+        expect(sortedKeysWithV4Preferred.map((key) => key.getFingerprint())).toEqual([
+            'trustedNotObsoleteNotCompromised',
+            'trustedObsoleteNotCompromised',
+            'trustedNotObsoleteCompromised',
+            'trustedObsoleteCompromised',
+            'notTrustedNotObsoleteNotCompromisedPrimary',
+            'notTrustedNotObsoleteNotCompromisedPrimaryV6',
+            'notTrustedNotObsoleteNotCompromisedV6',
+            'notTrustedObsoleteNotCompromised',
+            'notTrustedNotObsoleteCompromised',
+            'notTrustedObsoleteCompromised',
+        ]);
+        expect(sortedKeysWithV6Preferred.map((key) => key.getFingerprint())).toEqual([
+            'trustedNotObsoleteNotCompromised',
+            'trustedObsoleteNotCompromised',
+            'trustedNotObsoleteCompromised',
+            'trustedObsoleteCompromised',
+            'notTrustedNotObsoleteNotCompromisedPrimaryV6',
+            'notTrustedNotObsoleteNotCompromisedPrimary',
+            'notTrustedNotObsoleteNotCompromisedV6',
+            'notTrustedObsoleteNotCompromised',
+            'notTrustedNotObsoleteCompromised',
+            'notTrustedObsoleteCompromised',
+        ]);
+    });
 });
 
 describe('sortPinnedKeys', () => {
-    const generateFakeKey = (fingerprint: string) =>
+    const generateFakeKey = (fingerprint: string, version: 4 | 6 = 4) =>
         ({
+            getVersion() {
+                return version;
+            },
             getFingerprint() {
                 return fingerprint;
             },
         }) as PublicKeyReference;
-    it('sort keys as expected', () => {
+    it('sort keys as expected - without v6 keys', () => {
         const fingerprints = [
             'cannotEncryptObsoleteNotCompromised',
             'canEncryptObsoleteCompromised',
@@ -211,8 +307,8 @@ describe('sortPinnedKeys', () => {
             'canEncryptNotObsoleteNotCompromised',
             'canEncryptObsoleteNotCompromised',
         ];
-        const sortedKeys = sortPinnedKeys({
-            keys: fingerprints.map(generateFakeKey),
+        const commonOptions = {
+            keys: fingerprints.map((fp) => generateFakeKey(fp)),
             obsoleteFingerprints: new Set([
                 'canEncryptObsoleteNotCompromised',
                 'canEncryptObsoleteCompromised',
@@ -231,8 +327,90 @@ describe('sortPinnedKeys', () => {
                 'canEncryptObsoleteNotCompromised',
                 'canEncryptNotObsoleteNotCompromised',
             ]),
+        };
+
+        const sortedKeysWithV4Preferred = sortPinnedKeys({
+            ...commonOptions,
+            preferV6Keys: false,
         });
-        expect(sortedKeys.map((key) => key.getFingerprint())).toEqual([
+        const sortedKeysWithV6Preferred = sortPinnedKeys({
+            ...commonOptions,
+            preferV6Keys: true,
+        });
+        expect(sortedKeysWithV4Preferred).toEqual(sortedKeysWithV6Preferred);
+
+        expect(sortedKeysWithV4Preferred.map((key) => key.getFingerprint())).toEqual([
+            'canEncryptNotObsoleteNotCompromised',
+            'canEncryptObsoleteNotCompromised',
+            'canEncryptNotObsoleteCompromised',
+            'canEncryptObsoleteCompromised',
+            'cannotEncryptNotObsoleteNotCompromised',
+            'cannotEncryptObsoleteNotCompromised',
+            'cannotEncryptNotObsoleteCompromised',
+            'cannotEncryptObsoleteCompromised',
+        ]);
+    });
+
+    it('sort keys as expected - with v6 keys', () => {
+        const fingerprintsV4 = [
+            'cannotEncryptObsoleteNotCompromised',
+            'canEncryptObsoleteCompromised',
+            'cannotEncryptNotObsoleteNotCompromised',
+            'canEncryptNotObsoleteCompromised',
+            'cannotEncryptNotObsoleteCompromised',
+            'cannotEncryptObsoleteCompromised',
+            'canEncryptNotObsoleteNotCompromised',
+            'canEncryptObsoleteNotCompromised',
+        ];
+        const fingerprintsV6 = ['canEncryptNotObsoleteNotCompromisedV6'];
+        const commonOptions = {
+            keys: [
+                ...fingerprintsV4.map((fp) => generateFakeKey(fp)),
+                ...fingerprintsV6.map((fp) => generateFakeKey(fp, 6)),
+            ],
+            obsoleteFingerprints: new Set([
+                'canEncryptObsoleteNotCompromised',
+                'canEncryptObsoleteCompromised',
+                'cannotEncryptObsoleteNotCompromised',
+                'cannotEncryptObsoleteCompromised',
+            ]),
+            compromisedFingerprints: new Set([
+                'canEncryptObsoleteCompromised',
+                'canEncryptNotObsoleteCompromised',
+                'cannotEncryptObsoleteCompromised',
+                'cannotEncryptNotObsoleteCompromised',
+            ]),
+            encryptionCapableFingerprints: new Set([
+                'canEncryptObsoleteCompromised',
+                'canEncryptNotObsoleteCompromised',
+                'canEncryptObsoleteNotCompromised',
+                'canEncryptNotObsoleteNotCompromised',
+                'canEncryptNotObsoleteNotCompromisedV6',
+            ]),
+        };
+
+        const sortedKeysWithV4Preferred = sortPinnedKeys({
+            ...commonOptions,
+            preferV6Keys: false,
+        });
+        const sortedKeysWithV6Preferred = sortPinnedKeys({
+            ...commonOptions,
+            preferV6Keys: true,
+        });
+
+        expect(sortedKeysWithV4Preferred.map((key) => key.getFingerprint())).toEqual([
+            'canEncryptNotObsoleteNotCompromised',
+            'canEncryptNotObsoleteNotCompromisedV6',
+            'canEncryptObsoleteNotCompromised',
+            'canEncryptNotObsoleteCompromised',
+            'canEncryptObsoleteCompromised',
+            'cannotEncryptNotObsoleteNotCompromised',
+            'cannotEncryptObsoleteNotCompromised',
+            'cannotEncryptNotObsoleteCompromised',
+            'cannotEncryptObsoleteCompromised',
+        ]);
+        expect(sortedKeysWithV6Preferred.map((key) => key.getFingerprint())).toEqual([
+            'canEncryptNotObsoleteNotCompromisedV6',
             'canEncryptNotObsoleteNotCompromised',
             'canEncryptObsoleteNotCompromised',
             'canEncryptNotObsoleteCompromised',
