@@ -2,8 +2,8 @@
 	--banner-background-color: var(--background-norm);
 	--banner-accent-color: var(--text-norm);
 	--banner-text-color: var(--text-norm);
-	--banner-text-color-mix: color-mix(in srgb, var(--background-invert) 10%, var(--banner-text-color));
-	--banner-text-color-fallback: var(--banner-text-color-mix, --banner-text-color);
+	--banner-text-color-mix: color-mix(in srgb, var(--background-invert) 24%, var(--banner-text-color));
+	--banner-text-color-fallback: var(--banner-text-color-mix, var(--banner-text-color));
 	--link-norm: var(--banner-accent-color);
 
 	container-type: inline-size;
