@@ -61,11 +61,11 @@ enum AccountFlag {
 }
 
 enum PaymentsFlag {
-    AllowDowncycling = 'AllowDowncycling',
     SepaPayments = 'SepaPayments',
     IpAddonDowngrade = 'IpAddonDowngrade',
     RegionalCurrenciesBatch2 = 'RegionalCurrenciesBatch2',
     TransactionsView = 'TransactionsView',
+    ScheduledDowncycling = 'ScheduledDowncycling',
 }
 
 enum CalendarFeatureFlag {
