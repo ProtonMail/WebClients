@@ -1,6 +1,3 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { Editor } from './Editor'
-import { c } from 'ttag'
 import type {
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
@@ -14,54 +11,54 @@ import {
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
 } from '@proton/docs-shared'
-import { ApplicationProvider } from './ApplicationProvider'
-import useEffectOnce from '@proton/hooks/useEffectOnce'
-import locales from './locales'
 
-import type { EditorState } from 'lexical'
-import { type LexicalEditor, type SerializedEditorState } from 'lexical'
-import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
-import { exportDataFromEditorState } from './Conversion/Exporter/ExportDataFromEditorState'
-import { ThemeStyles } from './Theme'
-import debounce from '@proton/utils/debounce'
-import { loadLocales } from '@proton/account/bootstrap'
-import Icons from '@proton/icons/Icons'
-import clsx from '@proton/utils/clsx'
-import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
-import { EditorUserMode } from './EditorUserMode'
+import { bootstrapEditorApp } from '../Lib/Bootstrap'
+import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms/index'
-import { useBridge } from './useBridge'
-import { removeCommentThreadMarks } from './Tools/removeCommentThreadMarks'
-import { rejectAllSuggestions } from './Plugins/Suggestions/rejectAllSuggestions'
+import { Editor } from './Editor'
+import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
+import { EditorUserMode } from '../Lib/EditorUserMode'
+import { exportDataFromEditorState } from '../Conversion/Exporter/ExportDataFromEditorState'
+import { loadLocales } from '@proton/account/bootstrap'
 import { PreviewModeEditor } from './PreviewModeEditor'
-import { NotificationsChildren, NotificationsProvider } from '@proton/components'
-import { reportErrorToSentry } from './Utils/errorMessage'
-import * as config from './config'
-import { bootstrapEditorApp } from './Bootstrap'
+import { rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestions'
+import { removeCommentThreadMarks } from '../Tools/removeCommentThreadMarks'
+import { reportErrorToSentry } from '../Utils/errorMessage'
+import { SHOW_ALL_COMMENTS_COMMAND } from '../Commands'
+import { type LexicalEditor, type SerializedEditorState } from 'lexical'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { useSyncedState } from '../Hooks/useSyncedState'
+import * as config from '../config'
+import clsx from '@proton/utils/clsx'
+import debounce from '@proton/utils/debounce'
+import locales from '../locales'
 import noop from '@proton/utils/noop'
+import type { EditorState } from 'lexical'
+import type { useBridge } from '../Lib/useBridge'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
+import { useEditorStateValues } from '../Lib/useEditorStateValues'
+import { useEditorState } from './EditorStateProvider'
 
-type Props = {
+type AppProps = {
   systemMode: EditorSystemMode
+  bridgeState: ReturnType<typeof useBridge>
 }
 
-export function App({ systemMode }: Props) {
-  const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = useBridge({
-    systemMode,
-  })
+export function App({ systemMode, bridgeState }: AppProps) {
+  const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
+  const { suggestionsEnabled } = useSyncedState()
+  const { editorState } = useEditorState()
+  const { userMode } = useEditorStateValues()
 
   const [editorError, setEditorError] = useState<Error | undefined>(undefined)
   const [editorHidden, setEditorHidden] = useState(true)
   const [editingLocked, setEditingLocked] = useState(true)
-  const [userMode, setUserMode] = useState<EditorUserMode>(
-    systemMode === EditorSystemMode.Edit ? EditorUserMode.Edit : EditorUserMode.Preview,
-  )
 
-  const [isSuggestionsFeatureEnabled, setIsSuggestionsFeatureEnabled] = useState(false)
   useEffect(() => {
-    if (userMode === EditorUserMode.Suggest && !isSuggestionsFeatureEnabled) {
-      setUserMode(EditorUserMode.Edit)
+    if (userMode === EditorUserMode.Suggest && !suggestionsEnabled) {
+      editorState.userMode = EditorUserMode.Edit
     }
-  }, [userMode, isSuggestionsFeatureEnabled])
+  }, [userMode, suggestionsEnabled, editorState])
 
   const [showTreeView, setShowTreeView] = useState(false)
 
@@ -287,10 +284,6 @@ export function App({ systemMode }: Props) {
       async toggleDebugTreeView() {
         setShowTreeView((show) => !show)
       },
-
-      async handleIsSuggestionsFeatureEnabled(enabled) {
-        setIsSuggestionsFeatureEnabled(enabled)
-      },
     }
 
     bridge.setClientRequestHandler(requestHandler)
@@ -300,7 +293,7 @@ export function App({ systemMode }: Props) {
 
   const onUserModeChange = useCallback(
     (mode: EditorUserMode) => {
-      const canSwitchToSuggestionMode = isSuggestionsFeatureEnabled
+      const canSwitchToSuggestionMode = suggestionsEnabled
       if (mode === EditorUserMode.Suggest && !canSwitchToSuggestionMode) {
         return
       }
@@ -309,9 +302,9 @@ export function App({ systemMode }: Props) {
         return
       }
 
-      setUserMode(mode)
+      editorState.userMode = mode
     },
-    [isSuggestionsFeatureEnabled, application],
+    [application, editorState, suggestionsEnabled],
   )
 
   useEffect(() => {
@@ -411,47 +404,36 @@ export function App({ systemMode }: Props) {
         gridTemplateColumns: '3fr var(--comments-width)',
       }}
     >
-      <ThemeStyles />
-      <ApplicationProvider
-        application={application}
-        isSuggestionMode={isSuggestionMode}
-        isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
-      >
-        <NotificationsProvider>
-          {isPreviewMode && clonedEditorState && (
-            <PreviewModeEditor
-              clonedEditorState={clonedEditorState}
-              role={application.getRole()}
-              onUserModeChange={onUserModeChange}
-            />
-          )}
-          <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
-            <Editor
-              clientInvoker={bridge.getClientInvoker()}
-              docMap={docMap}
-              docState={docState}
-              documentId={editorConfig.current.documentId}
-              editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
-              hidden={editorHidden}
-              isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
-              lexicalError={editorError}
-              logger={application.logger}
-              onEditorError={onEditorError}
-              onEditorLoadResult={onEditorLoadResult}
-              onUserModeChange={onUserModeChange}
-              role={application.getRole()}
-              setEditorRef={setEditorRef}
-              showTreeView={showTreeView}
-              systemMode={systemMode}
-              userMode={userMode}
-              userAddress={editorConfig.current.userAddress}
-            />
-          </div>
-          <NotificationsChildren />
-        </NotificationsProvider>
-      </ApplicationProvider>
-      <Icons />
+      {isPreviewMode && clonedEditorState && (
+        <PreviewModeEditor
+          clonedEditorState={clonedEditorState}
+          role={application.getRole()}
+          onUserModeChange={onUserModeChange}
+        />
+      )}
+      <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
+        <Editor
+          clientInvoker={bridge.getClientInvoker()}
+          docMap={docMap}
+          docState={docState}
+          documentId={editorConfig.current.documentId}
+          editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+          editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+          hidden={editorHidden}
+          isSuggestionsFeatureEnabled={suggestionsEnabled}
+          lexicalError={editorError}
+          logger={application.logger}
+          onEditorError={onEditorError}
+          onEditorLoadResult={onEditorLoadResult}
+          onUserModeChange={onUserModeChange}
+          role={application.getRole()}
+          setEditorRef={setEditorRef}
+          showTreeView={showTreeView}
+          systemMode={systemMode}
+          userMode={userMode}
+          userAddress={editorConfig.current.userAddress}
+        />
+      </div>
     </div>
   )
 }

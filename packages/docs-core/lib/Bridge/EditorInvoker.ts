@@ -122,10 +122,6 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('toggleDebugTreeView', [])
   }
 
-  async handleIsSuggestionsFeatureEnabled(enabled: boolean): Promise<void> {
-    return this.invokeEditorMethod('handleIsSuggestionsFeatureEnabled', [enabled])
-  }
-
   async initializeEditor(
     documentId: string,
     userAddress: string,
@@ -153,7 +149,7 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     args: ParamsExcludingFunctions<Parameters<ClientRequiresEditorMethods[K]>>,
   ): Promise<ReturnType<ClientRequiresEditorMethods[K]>> {
     if (!this.editorFrame.contentWindow) {
-      throw new Error('Editor frame contentWindow is not ready')
+      throw new Error(`Attempting to invoke ${functionName} before editor contentWindow is ready`)
     }
 
     const messageId = GenerateUUID()

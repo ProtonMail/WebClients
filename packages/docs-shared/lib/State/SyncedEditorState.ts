@@ -12,11 +12,14 @@ export type SyncedEditorEvent = {
 export interface SyncedEditorStateValues {
   contactEmails: ContactEmail[]
   userName: string
+  /** Whether the suggestions feature flag is enabled and killswitch is off */
+  suggestionsEnabled: boolean
 }
 
 const DefaultValues: SyncedEditorStateValues = {
   contactEmails: [],
   userName: '',
+  suggestionsEnabled: true,
 }
 
 /**

@@ -1,6 +1,6 @@
 import type { InitialConfigType } from '@lexical/react/LexicalComposer'
-import { AllNodes } from './AllNodes'
-import DocumentEditorTheme from './Theme/Theme'
+import { AllNodes } from '../AllNodes'
+import DocumentEditorTheme from '../Theme/Theme'
 
 /**
  * ShouldBootstrap refers to whether Lexical should initialize
