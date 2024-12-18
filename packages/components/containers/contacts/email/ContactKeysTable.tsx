@@ -28,6 +28,7 @@ import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 interface Props {
     model: ContactPublicKeyModelWithApiKeySource;
     setModel: Dispatch<SetStateAction<ContactPublicKeyModelWithApiKeySource | undefined>>;
+    supportV6Keys: boolean;
 }
 
 type LocalKeyModel = {
@@ -37,7 +38,7 @@ type LocalKeyModel = {
     algo: string;
     creationTime: Date;
     expirationTime: any;
-    isPrimary?: boolean;
+    isUsedForSending?: boolean;
     isWKD: boolean;
     isKOO: boolean;
     isExpired: boolean;
@@ -47,12 +48,12 @@ type LocalKeyModel = {
     isCompromised: boolean;
     supportsEncryption: boolean;
     isUploaded: boolean;
-    canBePrimary?: boolean;
+    canBeUsedForSending?: boolean;
     canBeTrusted: boolean;
     canBeUntrusted: boolean;
 };
 
-const ContactKeysTable = ({ model, setModel }: Props) => {
+const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
     const [keys, setKeys] = useState<LocalKeyModel[]>([]);
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -104,20 +105,28 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                 const supportsEncryption = model.encryptionCapableFingerprints.has(fingerprint);
                 const isObsolete = model.obsoleteFingerprints.has(fingerprint);
                 const isCompromised = model.compromisedFingerprints.has(fingerprint);
-                const isPrimary = model.encrypt && index === 0 && supportsEncryption && !isObsolete && !isCompromised;
+                // model.encrypt is undefined for internal contacts without pinned keys;
+                // encryption status depends on whether mail e2ee is enabled
+                const encryptionEnabled = model.isPGPInternal
+                    ? model.isInternalWithDisabledE2EEForMail === false
+                    : model.encrypt;
+                const isUsedForSending =
+                    encryptionEnabled && index === 0 && supportsEncryption && !isObsolete && !isCompromised;
                 const isWKD = !!model.apiKeysSourceMap[API_KEY_SOURCE.WKD]?.has(fingerprint);
                 const isKOO = !!model.apiKeysSourceMap[API_KEY_SOURCE.KOO]?.has(fingerprint);
                 const isUploaded = index >= totalApiKeys;
-                const canBePrimary =
+                const canBeUsedForSending =
                     // the option is only relevant if no API keys are present:
                     // if the key was manually uploaded in the past, but now API keys are also present, the uploaded key can no longer be used for sending
                     // (the user will be prompted to trust one of the API keys when sending)
                     model.isPGPExternalWithoutExternallyFetchedKeys &&
-                    !isPrimary &&
+                    !isUsedForSending &&
                     isUploaded &&
-                    model.encrypt &&
+                    encryptionEnabled &&
                     supportsEncryption;
-                const canBeTrusted = !isTrusted && !isUploaded && !isCompromised;
+                // v6 keys can only be trusted if the user has opted into v6 support because older mobile clients do not support encrypting to these keys
+                const canBeTrusted =
+                    !isTrusted && !isUploaded && !isCompromised && (publicKey.getVersion() !== 6 || supportV6Keys);
                 const canBeUntrusted = isTrusted && !isUploaded;
                 return {
                     publicKey,
@@ -126,7 +135,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     algo,
                     creationTime,
                     expirationTime,
-                    isPrimary,
+                    isUsedForSending,
                     isWKD,
                     isKOO,
                     isExpired,
@@ -136,7 +145,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     isObsolete,
                     isCompromised,
                     isUploaded,
-                    canBePrimary,
+                    canBeUsedForSending,
                     canBeTrusted,
                     canBeUntrusted,
                 };
@@ -187,7 +196,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         algo,
                         creationTime,
                         expirationTime,
-                        isPrimary,
+                        isUsedForSending,
                         isWKD,
                         isKOO,
                         publicKey,
@@ -199,7 +208,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         isObsolete,
                         isCompromised,
                         isUploaded,
-                        canBePrimary,
+                        canBeUsedForSending,
                         canBeTrusted,
                         canBeUntrusted,
                     }) => {
@@ -234,7 +243,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 },
                             },
                         ];
-                        if (canBePrimary) {
+                        if (canBeUsedForSending) {
                             list.push({
                                 text: c('Action').t`Use for sending`,
                                 onClick: () => {
@@ -360,7 +369,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '-'),
                             !viewportWidth['<=small'] && algo,
                             <Fragment key={fingerprint}>
-                                {isPrimary ? (
+                                {isUsedForSending ? (
                                     <Badge
                                         type="primary"
                                         data-testid="primary-key-label"

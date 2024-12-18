@@ -26,10 +26,11 @@ import SignEmailsSelect from './SignEmailsSelect';
 interface Props {
     model: ContactPublicKeyModelWithApiKeySource;
     setModel: Dispatch<SetStateAction<ContactPublicKeyModelWithApiKeySource | undefined>>;
+    supportV6Keys: boolean;
     mailSettings?: MailSettings;
 }
 
-const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
+const ContactPGPSettings = ({ model, setModel, mailSettings, supportV6Keys }: Props) => {
     const { createNotification } = useNotifications();
 
     const hasApiKeys = !!model.publicKeys.apiKeys.length; // internal or WKD keys
@@ -246,7 +247,9 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                     <Label>{c('Label').t`Public keys`}</Label>
                 </Row>
             )}
-            {(hasApiKeys || hasPinnedKeys) && <ContactKeysTable model={model} setModel={setModel} />}
+            {(hasApiKeys || hasPinnedKeys) && (
+                <ContactKeysTable model={model} setModel={setModel} supportV6Keys={supportV6Keys} />
+            )}
         </>
     );
 };
