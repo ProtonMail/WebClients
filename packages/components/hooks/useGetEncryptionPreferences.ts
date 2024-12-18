@@ -43,8 +43,8 @@ const useGetEncryptionPreferences = () => {
 
     const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
         async ({ email, lifetime, contactEmailsMap, intendedForEmail = true }) => {
-            // In the context of email sending, we want to use v6/PQC keys if available.
-            // This is not always done for now (e.g. on calendar sharing) for performance reason.
+            // In the context of email sending, we want to use v6/PQC keys if available, for security.
+            // This is not always done for now (e.g. on calendar sharing) for performance reasons.
             const preferV6Keys = intendedForEmail;
 
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
