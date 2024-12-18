@@ -1,5 +1,5 @@
 import { type FC, useCallback, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -11,6 +11,7 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { usePasswordGenerator } from '@proton/pass/hooks/usePasswordGenerator';
 import { passwordOptionsEdit } from '@proton/pass/store/actions';
+import { selectOrganizationPasswordGeneratorPolicy } from '@proton/pass/store/selectors';
 
 import { usePasswordContext } from './PasswordContext';
 import { PasswordGenerator } from './PasswordGenerator';
@@ -26,10 +27,12 @@ type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
 export const PasswordGeneratorModal: FC<Props> = ({ onSubmit, actionLabel, ...props }) => {
     const dispatch = useDispatch();
     const { config, history } = usePasswordContext();
+    const policy = useSelector(selectOrganizationPasswordGeneratorPolicy);
 
     const passwordGenerator = usePasswordGenerator({
         initial: config,
         onConfigChange: (next) => dispatch(passwordOptionsEdit(next)),
+        policy,
     });
 
     const handleActionClick = useCallback(() => onSubmit?.(passwordGenerator.password), [passwordGenerator, onSubmit]);

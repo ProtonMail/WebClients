@@ -110,7 +110,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
                         contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD }),
                         (res) => {
                             if (res.type === 'error') throw new Error(res.error);
-                            return { action, domain, config: res.config, copy: res.copy };
+                            return { action, domain, config: res.config, copy: res.copy, policy: res.policy };
                         }
                     );
                 }
