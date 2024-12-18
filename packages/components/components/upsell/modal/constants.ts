@@ -2,6 +2,7 @@ import { isArray } from 'card-validator/dist/lib/is-array';
 import { c } from 'ttag';
 
 import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
 import { PLANS } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
@@ -41,6 +42,16 @@ export type UpsellFeatureName =
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
 const domain2 = 'proton.me';
+
+const getTextFromFeature = (feature: PlanCardFeatureDefinition) => {
+    if (isArray(feature.text)) {
+        return feature.text.join(' ');
+    }
+    if (typeof feature.text === 'string') {
+        return feature.text;
+    }
+    return '';
+};
 
 /**
  * Default upsell features
@@ -139,7 +150,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFea
         });
         return {
             icon: 'envelopes',
-            getText: () => (isArray(feature.text) ? feature.text.join(' ') : feature.text),
+            getText: () => getTextFromFeature(feature),
             getTooltip: () => feature.tooltip ?? '',
         };
     },
@@ -154,7 +165,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFea
         });
         return {
             icon: 'storage',
-            getText: () => (isArray(feature.text) ? feature.text.join(' ') : feature.text),
+            getText: () => getTextFromFeature(feature),
             getTooltip: () => feature.tooltip ?? '',
         };
     },
