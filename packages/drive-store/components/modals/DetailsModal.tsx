@@ -70,7 +70,7 @@ export function RevisionDetailsModal({
     useEffect(() => {
         const ac = new AbortController();
         void withIsLoading(
-            getRevisionDecryptedXattrs(ac.signal, revision.xAttr, revision.signatureAddress).then((decryptedXattrs) => {
+            getRevisionDecryptedXattrs(ac.signal, revision.xAttr, revision.signatureEmail).then((decryptedXattrs) => {
                 if (!decryptedXattrs) {
                     return;
                 }
@@ -85,7 +85,7 @@ export function RevisionDetailsModal({
         return () => {
             ac.abort();
         };
-    }, [revision.xAttr, revision.signatureAddress]);
+    }, [revision.xAttr, revision.signatureEmail]);
 
     useEffect(() => {
         const ac = new AbortController();
@@ -111,7 +111,8 @@ export function RevisionDetailsModal({
                     loading={isSignatureLoading}
                     signatureIssues={signatureIssues}
                     signatureNetworkError={signatureNetworkError}
-                    signatureAddress={revision.signatureAddress}
+                    signatureEmail={revision.signatureEmail}
+                    isAnonymous={!revision.signatureEmail}
                     isFile
                     name={name}
                     className="mb-4"
@@ -219,7 +220,8 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     loading={isSignatureIssuesLoading}
                     signatureIssues={signatureIssues}
                     signatureNetworkError={signatureNetworkError}
-                    signatureAddress={link.activeRevision?.signatureAddress || link.signatureAddress}
+                    signatureEmail={link.isFile ? link.activeRevision?.signatureEmail : link.signatureEmail}
+                    isAnonymous={link.isAnonymous}
                     corruptedLink={link.corruptedLink}
                     isFile={link.isFile}
                     name={link.name}
@@ -233,9 +235,9 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         <FileNameDisplay text={`/${c('Info').t`Shared with me`}`} />
                     </DetailsRow>
                 )}
-                {link.signatureAddress && (
+                {link.signatureEmail && (
                     <DetailsRow label={c('Title').t`Uploaded by`}>
-                        <UserNameCell signatureEmail={link.signatureAddress} />
+                        <UserNameCell signatureEmail={link.signatureEmail} />
                     </DetailsRow>
                 )}
                 {link.parentLinkId && !isSharedWithMeLink && (
@@ -279,9 +281,9 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         )}
                     </>
                 )}
-                {link.activeRevision?.signatureAddress && (
+                {link.activeRevision?.signatureEmail && (
                     <DetailsRow label={c('Title').t`Last edited by`} dataTestId={'drive:last-edited-by'}>
-                        {link.activeRevision?.signatureAddress}
+                        {link.activeRevision?.signatureEmail}
                     </DetailsRow>
                 )}
                 <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>

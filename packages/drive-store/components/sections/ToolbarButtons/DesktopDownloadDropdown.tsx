@@ -29,7 +29,7 @@ const DesktopDownloadDropdown = ({ className }: Props) => {
                 onClick={toggle}
                 hasCaret
                 shape="ghost"
-                size="small"
+                size="medium"
                 className={className}
                 data-testid="toolbar-dropdown-button"
             >

@@ -143,6 +143,7 @@ export function useLinkInner(
 ) {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
+
     // Cache certain API errors in order to avoid sending multiple requests to
     // the same failing link. For example, trying to fetch the same missing
     // parent link for multiple descendants (when processing already outdated
@@ -215,7 +216,7 @@ export function useLinkInner(
             const options = {
                 isPaid: userIsPaid,
                 createTime: encryptedLink.createTime,
-                addressMatchingDefaultShare: encryptedLink.signatureAddress === email,
+                addressMatchingDefaultShare: encryptedLink.signatureEmail === email,
             };
             integrityMetrics.signatureVerificationError(encryptedLink.linkId, shareType, verificationKey, options);
         });
@@ -302,12 +303,12 @@ export function useLinkInner(
                 : getSharePrivateKey(abortSignal, shareId);
             const [parentPrivateKey, addressPublicKey] = await Promise.all([
                 parentPrivateKeyPromise,
-                encryptedLink.signatureAddress ? getVerificationKey(encryptedLink.signatureAddress) : [],
+                encryptedLink.signatureEmail ? getVerificationKey(encryptedLink.signatureEmail) : [],
             ]);
 
             try {
                 // Fallback to parent NodeKey in case if we don't have addressPublicKey (Anonymous upload)
-                const publicKeys = encryptedLink.signatureAddress ? addressPublicKey : [parentPrivateKey];
+                const publicKeys = encryptedLink.signatureEmail ? addressPublicKey : [parentPrivateKey];
                 const {
                     decryptedPassphrase,
                     sessionKey: passphraseSessionKey,
@@ -410,7 +411,7 @@ export function useLinkInner(
             }
 
             if (encryptedLink.contentKeyPacketSignature) {
-                const publicKeys = [privateKey, ...(await getVerificationKey(encryptedLink.signatureAddress))];
+                const publicKeys = [privateKey, ...(await getVerificationKey(encryptedLink.signatureEmail))];
                 const { verified } = await CryptoProxy.verifyMessage({
                     binaryData: sessionKey.data,
                     verificationKeys: publicKeys,
@@ -458,7 +459,7 @@ export function useLinkInner(
 
             const [privateKey, addressPrivateKey] = await Promise.all([
                 getLinkPrivateKey(abortSignal, shareId, linkId),
-                getVerificationKey(encryptedLink.signatureAddress),
+                getVerificationKey(encryptedLink.signatureEmail),
             ]);
             // In the past we had misunderstanding what key is used to sign
             // hash key. Originally it meant to be node key, which web used
@@ -531,16 +532,13 @@ export function useLinkInner(
                             const privateKey = !encryptedLink.parentLinkId
                                 ? await getSharePrivateKey(abortSignal, shareId)
                                 : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId);
-                            const signatureAddress =
-                                encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress;
-                            const publicKey = signatureAddress
-                                ? await getVerificationKey(signatureAddress)
-                                : privateKey;
+                            const signatureEmail = encryptedLink.nameSignatureEmail || encryptedLink.signatureEmail;
+                            const publicKey = signatureEmail ? await getVerificationKey(signatureEmail) : privateKey;
                             const { data, verified } = await decryptSigned({
                                 armoredMessage: encryptedLink.name,
                                 privateKey,
-                                // nameSignatureAddress is missing for some old files.
-                                // Fallback to signatureAddress might result in failed
+                                // nameSignatureEmail is missing for some old files.
+                                // Fallback to signatureEmail might result in failed
                                 // signature check, but no one reported it so far so
                                 // we should be good. Important is that user can access
                                 // the file and the verification do not hard fail.
@@ -561,10 +559,9 @@ export function useLinkInner(
                     : undefined;
                 // Files have signature address on the revision.
                 // Folders have signature address on the link itself.
-                const signatureAddress =
-                    revision?.signatureAddress ||
-                    encryptedLink.activeRevision?.signatureAddress ||
-                    encryptedLink.signatureAddress;
+                const signatureEmail = encryptedLink.isFile
+                    ? revision?.signatureEmail || encryptedLink.activeRevision?.signatureEmail
+                    : encryptedLink.signatureEmail;
                 const xattrPromise = !encryptedLink.xAttr
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
@@ -580,7 +577,7 @@ export function useLinkInner(
                                   encryptedLink.xAttr,
                                   privateKey,
 
-                                  signatureAddress ? await getVerificationKey(signatureAddress) : privateKey
+                                  signatureEmail ? await getVerificationKey(signatureEmail) : privateKey
                               )
                           )
                           .then(({ xattrs, verified }) => ({
@@ -609,7 +606,6 @@ export function useLinkInner(
                     if (nameResult.reason instanceof Error && isIgnoredErrorForReporting(nameResult.reason)) {
                         return generateCorruptDecryptedLink(encryptedLink, '�');
                     }
-
                     sendErrorReport(
                         new EnrichedError(
                             nameResult.reason instanceof Error
@@ -627,7 +623,6 @@ export function useLinkInner(
                             'Decryption error'
                         )
                     );
-
                     handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, '�');
                 }
@@ -669,7 +664,6 @@ export function useLinkInner(
                             'Decryption error'
                         )
                     );
-
                     handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, name);
                 }
@@ -704,6 +698,7 @@ export function useLinkInner(
                 return {
                     ...encryptedLink,
                     ...(sharingInfo ? { sharedOn: sharingInfo.sharedOn, sharedBy: sharingInfo.sharedBy } : undefined),
+                    isAnonymous: !signatureEmail,
                     encryptedName: encryptedLink.name,
                     name: displayName,
                     fileModifyTime: fileModifyTime,

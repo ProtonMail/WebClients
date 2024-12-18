@@ -30,7 +30,7 @@ function makeDownloadLink(name: string, size = 2 * FILE_CHUNK_SIZE): LinkDownloa
         name,
         mimeType: 'text/plain',
         size,
-        signatureAddress: 'address',
+        signatureEmail: 'address',
     };
 }
 

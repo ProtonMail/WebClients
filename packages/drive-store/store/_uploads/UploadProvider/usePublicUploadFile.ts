@@ -67,7 +67,7 @@ interface FileRevision {
 
 export default function usePublicUploadFile() {
     const isPaidUser = useIsPaid();
-    const { setUploadToken } = useAnonymousUploadAuthStore();
+    const setUploadToken = useAnonymousUploadAuthStore((state) => state.setUploadToken);
     const { request: publicDebouncedRequest, user } = usePublicSession();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
@@ -107,7 +107,7 @@ export default function usePublicUploadFile() {
             }
             if (!shareKeysCache) {
                 const defaultShare = await getDefaultShare();
-                shareKeysCache = await getShareCreatorKeys(abortSignal, defaultShare.shareId);
+                shareKeysCache = await getShareCreatorKeys(abortSignal, defaultShare);
             }
 
             return shareKeysCache;
@@ -284,7 +284,7 @@ export default function usePublicUploadFile() {
             linkId: string,
             clientUid?: string
         ) => {
-            await deleteLinks(abortSignal, { token, parentLinkId, links: [{ linkId }] });
+            await deleteLinks(abortSignal, { token, parentLinkId, linkIds: [linkId] });
             return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
         };
 
@@ -602,7 +602,7 @@ export default function usePublicUploadFile() {
                                 await deleteLinks(new AbortController().signal, {
                                     token,
                                     parentLinkId,
-                                    links: [{ linkId: createdFileRevision.fileID }],
+                                    linkIds: [createdFileRevision.fileID],
                                 });
                             } else {
                                 log(`Deleting revision`);

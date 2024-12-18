@@ -56,7 +56,7 @@ const PortalPreview = (
             <SignatureIcon
                 isFile={link.isFile}
                 signatureIssues={link.signatureIssues}
-                isAnonymous={!link.activeRevision?.signatureAddress && !link.signatureAddress}
+                isAnonymous={link.isAnonymous}
                 className="ml-2 color-danger"
             />
         );
@@ -70,7 +70,7 @@ const PortalPreview = (
         return (
             <SignatureAlertBody
                 signatureIssues={link.signatureIssues}
-                signatureAddress={link.activeRevision?.signatureAddress || link.signatureAddress}
+                signatureEmail={link.isFile ? link.activeRevision?.signatureEmail : link.signatureEmail}
                 isFile={link.isFile}
                 name={link.name}
             />
