@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { orderAddress, setupAddress } from '@proton/shared/lib/api/addresses';
-import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { type Address, type ApiResponse } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -27,7 +27,8 @@ const useShortDomainAddress = () => {
     return {
         loadingDependencies: loadingProtonDomains || loadingUser,
         shortDomainAddress: shortDomain,
-        hasShortDomain: (addresses: Address[]) => addresses.some(({ Email }) => Email === shortDomain),
+        hasShortDomain: (addresses: Address[]) =>
+            Boolean(addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM)),
         createShortDomainAddress: async ({
             setDefault,
             addressSignature,
