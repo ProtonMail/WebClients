@@ -195,7 +195,7 @@ const SubscriptionCheckout = ({
             }
         >
             <div className="mb-4 flex flex-column">
-                <span>
+                <span className="relative">
                     <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
                     {discountPercent !== 0 && !loading && (
                         <Badge
