@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Icon from '@proton/components/components/icon/Icon';
 import OrderableHandle from '@proton/components/components/orderable/OrderableHandle';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
@@ -156,6 +157,7 @@ const ContactEditProperty = (
                                             onGroupEdit={onGroupEdit}
                                             onLimitReached={onLimitReached}
                                             onUpgrade={onUpgrade}
+                                            disabled={!validateEmailAddress(vCardProperty.value || '')}
                                         >
                                             <Icon name="users" alt={c('Action').t`Contact group`} />
                                         </ContactGroupDropdown>
