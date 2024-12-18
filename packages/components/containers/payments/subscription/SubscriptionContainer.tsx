@@ -221,7 +221,7 @@ const SubscriptionContainer = ({
     allowedAddonTypes,
     paymentsStatus,
 }: SubscriptionContainerProps) => {
-    const allowDowncycling = useFlag('AllowDowncycling');
+    const scheduledDowncycling = useFlag('ScheduledDowncycling');
     const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const defaultMaximumCycle = getMaximumCycleForApp(app);
@@ -323,7 +323,7 @@ const SubscriptionContainer = ({
             minimumCycle,
             maximumCycle,
             currency,
-            allowDowncycling,
+            allowDowncycling: scheduledDowncycling,
         });
 
         const model: Model = {
@@ -575,7 +575,7 @@ const SubscriptionContainer = ({
             currency: selectedPlanCurrency,
             planIDs,
             plansMap,
-            allowDowncycling,
+            allowDowncycling: scheduledDowncycling,
         });
 
     const runAdditionalChecks = async (

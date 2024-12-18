@@ -211,9 +211,9 @@ describe('useCheckoutModifiers', () => {
         expect(result.current.isProration).toEqual(false);
     });
 
-    it('should return isScheduledSubscription === false if checkResult is undefined', () => {
+    it('should return isScheduledChargedImmediately === false if checkResult is undefined', () => {
         const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
-        expect(result.current.isScheduledSubscription).toEqual(false);
+        expect(result.current.isScheduledChargedImmediately).toEqual(false);
     });
 
     it('should return isProration true when user has trial', () => {
@@ -224,11 +224,11 @@ describe('useCheckoutModifiers', () => {
     });
 
     describe('custom billings', () => {
-        it('should return isScheduledSubscription === false if UnusedCredit !== 0', () => {
+        it('should return isScheduledChargedImmediately === false if UnusedCredit !== 0', () => {
             checkResult.Proration = 0;
             checkResult.UnusedCredit = -20;
             const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
-            expect(result.current.isScheduledSubscription).toEqual(false);
+            expect(result.current.isScheduledChargedImmediately).toEqual(false);
         });
 
         it('should return isProration === false if UnusedCredit !== 0', () => {
@@ -276,8 +276,8 @@ describe('useCheckoutModifiers', () => {
         checkResult.optimistic = true;
         const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
         expect(result.current.isProration).toEqual(false);
-        expect(result.current.isScheduledSubscription).toEqual(false);
+        expect(result.current.isScheduledChargedImmediately).toEqual(false);
         expect(result.current.isCustomBilling).toEqual(false);
-        expect(result.current.isAddonDowngrade).toEqual(false);
+        expect(result.current.isScheduledChargedLater).toEqual(false);
     });
 });
