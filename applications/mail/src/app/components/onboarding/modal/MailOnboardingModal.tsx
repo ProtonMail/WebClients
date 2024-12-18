@@ -6,15 +6,20 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { OnboardingModal } from '@proton/components/index';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import {
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
+import isTruthy from '@proton/utils/isTruthy';
+
+import GetMobileAppStep from 'proton-mail/components/onboarding/modal/steps/GetMobileAppStep';
 
 import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
 import ActivatePremiumFeaturesStep from './steps/ActivatePremiumFeaturesStep';
-import GetTheAppsStep from './steps/GetTheAppsStep';
+import GetDesktopAppStep from './steps/GetDesktopAppStep';
 import NewOnboardingOrganizationStep from './steps/NewOnboardingOrganizationStep';
 import NewOnboardingThemes from './steps/NewOnboardingThemes';
 import OnboardingWelcomeStep from './steps/OnboardingWelcomeStep';
@@ -52,6 +57,7 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
     const [sendMailOnboardingTelemetry, loadingTelemetryDeps] = useMailOnboardingTelemetry();
     const { isLoading, isB2B, isMailPaidPlan } = useUserInfos();
     const displayPremiumFeaturesSteps = isMailPaidPlan && !isB2B;
+    const displayGetDesktopAppStep = !isMobile() && !isElectronApp;
 
     const handleDone = () => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_onboarding_modals, {});
@@ -87,7 +93,7 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
                 organizationStep: NewOnboardingOrganizationStep,
             }}
         >
-            {[OnboardingWelcomeStep, GetTheAppsStep]}
+            {[OnboardingWelcomeStep, displayGetDesktopAppStep && GetDesktopAppStep, GetMobileAppStep].filter(isTruthy)}
         </OnboardingModal>
     );
 };
