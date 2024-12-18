@@ -52,7 +52,7 @@ interface Link {
         id: string;
         size: number;
         // Address used for signature checks of blocks and xattributes.
-        signatureAddress: string;
+        signatureEmail: string;
         // Thumbnails URL is not part of all requests, because that would be
         // too heavy for API. For example, events do not include it.
         thumbnail?: {
@@ -67,8 +67,8 @@ interface Link {
         }[];
         photo?: Photo;
     };
-    signatureAddress?: string; // Addresss used for key signatures.
-    nameSignatureAddress?: string; // Address used for name signature.
+    signatureEmail?: string; // Email used for key signatures.
+    nameSignatureEmail?: string; // Email used for name signature.
     // If there is no issue, the value should be undefined.
     signatureIssues?: SignatureIssues;
     volumeId: string;
@@ -155,4 +155,5 @@ export interface DecryptedLink extends Link {
     corruptedLink?: boolean;
     sharedOn?: number;
     sharedBy?: string;
+    isAnonymous?: boolean;
 }

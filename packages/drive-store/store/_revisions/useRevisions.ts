@@ -15,16 +15,14 @@ const useRevisions = (shareId: string, linkId: string) => {
     const getRevisionDecryptedXattrs = async (
         abortSignal: AbortSignal,
         revisionEncryptedXattr: string | undefined,
-        revisionSignatureAddress: string
+        revisionSignatureEmail: string | undefined
     ) => {
         if (!revisionEncryptedXattr) {
             return;
         }
         try {
             const privateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
-            const publicKeys = revisionSignatureAddress
-                ? await getVerificationKey(revisionSignatureAddress)
-                : privateKey;
+            const publicKeys = revisionSignatureEmail ? await getVerificationKey(revisionSignatureEmail) : privateKey;
             const { xattrs, verified } = await decryptExtendedAttributes(
                 revisionEncryptedXattr,
                 privateKey,

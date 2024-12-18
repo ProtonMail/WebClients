@@ -25,7 +25,10 @@ import { validateLinkName } from './validation';
  */
 export function usePublicLinkActions() {
     const { preventLeave } = usePreventLeave();
-    const { setUploadToken } = useAnonymousUploadAuthStore();
+    const { getUploadToken, setUploadToken } = useAnonymousUploadAuthStore((state) => ({
+        getUploadToken: state.getUploadToken,
+        setUploadToken: state.setUploadToken,
+    }));
     const { request: publicDebouncedRequest, getAddressKeyInfo } = usePublicSession();
     const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
     const { getSharePrivateKey } = useShare();
@@ -152,10 +155,6 @@ export function usePublicLinkActions() {
             getAddressKeyInfo(abortSignal),
         ]);
 
-        if (!addressKeyInfo) {
-            throw new Error('Cannot rename while anonymous');
-        }
-
         if (meta.corruptedLink) {
             throw new Error('Cannot rename corrupted file');
         }
@@ -182,6 +181,9 @@ export function usePublicLinkActions() {
             )
         );
 
+        const signingKeys = addressKeyInfo?.privateKey || parentPrivateKey;
+        const authorizationToken = !addressKeyInfo ? getUploadToken(linkId) : undefined;
+
         const [Hash, { message: encryptedName }] = await Promise.all([
             parentHashKey
                 ? generateLookupHash(newName, parentHashKey).catch((e) =>
@@ -200,7 +202,7 @@ export function usePublicLinkActions() {
                 textData: newName,
                 stripTrailingSpaces: true,
                 sessionKey,
-                signingKeys: addressKeyInfo.privateKey,
+                signingKeys,
             }).catch((e) =>
                 Promise.reject(
                     new EnrichedError('Failed to encrypt link name during rename', {
@@ -218,9 +220,10 @@ export function usePublicLinkActions() {
             publicDebouncedRequest(
                 queryPublicRenameLink(token, linkId, {
                     Name: encryptedName,
-                    NameSignatureEmail: addressKeyInfo.address.Email,
+                    NameSignatureEmail: addressKeyInfo?.address.Email,
                     Hash,
                     OriginalHash: meta.hash,
+                    AuthorizationToken: authorizationToken,
                 })
             )
         );

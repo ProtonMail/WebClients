@@ -6,8 +6,7 @@ export interface DriveFileRevision {
     size: number;
     state: number;
     manifestSignature: string;
-    signatureAddress: string;
-    signatureEmail: string;
+    signatureEmail?: string;
     blocs: DriveFileBlock[];
     thumbnails: Thumbnail[];
     xAttr?: string;

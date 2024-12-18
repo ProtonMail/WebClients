@@ -106,22 +106,19 @@ export default function useDownload() {
                       queryFileRevision(shareId, linkId, revisionId),
                       abortSignal
                   ).then(({ Revision }) => Revision.SignatureAddress)
-                : link.activeRevision?.signatureAddress;
+                : link.activeRevision?.signatureEmail;
 
         if (!sessionKey) {
             throw new Error('Session key missing on file link');
         }
 
-        const isAnonymous = !revisionSignatureAddress;
-
-        const addressPublicKeys = !isAnonymous ? await getVerificationKey(revisionSignatureAddress) : undefined;
+        const addressPublicKeys = !link.isAnonymous ? await getVerificationKey(revisionSignatureAddress) : undefined;
 
         return [
             {
                 privateKey: privateKey,
                 sessionKeys: sessionKey,
                 addressPublicKeys,
-                isAnonymous,
             },
             link.signatureIssues,
         ];
