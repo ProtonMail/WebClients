@@ -18,6 +18,8 @@ import { sendErrorReport, getRefreshError } from '@proton/drive-store'
 
 import locales from '../../locales'
 import { extendStore, setupStore } from '../../ReduxStore/store'
+import { getDecryptedPersistedState } from '@proton/account/persist/helper'
+import type { DocsState } from '../../ReduxStore/rootReducer'
 
 const getAppContainer = () =>
   import(/* webpackChunkName: "MainContainer" */ './UserAppRootContainer')
@@ -49,7 +51,21 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     const user = sessionResult.session?.User
     extendStore({ config, api, authentication, unleashClient, history })
-    const store = setupStore()
+
+    const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
+    await unleashPromise
+
+    let persistedState = await getDecryptedPersistedState<Partial<DocsState>>({
+      authentication,
+      user,
+    })
+
+    const persistedStateEnabled = unleashClient.isEnabled('PersistedState')
+    if (persistedState?.state && !persistedStateEnabled) {
+      persistedState = undefined
+    }
+
+    const store = setupStore({ preloadedState: persistedState?.state, persist: persistedStateEnabled })
     const dispatch = store.dispatch
 
     if (user) {
@@ -80,9 +96,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const userPromise = loadUser()
     const preloadPromise = loadPreload()
     const evPromise = bootstrap.eventManager({ api: silentApi })
-    const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
 
-    await unleashPromise
     // Needs unleash to be loaded.
     await bootstrap.loadCrypto({ appName, unleashClient })
     const [MainContainer, userData, eventManager] = await Promise.all([appContainerPromise, userPromise, evPromise])
