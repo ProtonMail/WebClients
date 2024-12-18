@@ -44,8 +44,8 @@
         "minimist": "^1.2.8",
         "ttag": "^1.8.7",
         "ttag-cli": "^1.10.12",
-        "update-electron-app": "^3.0.0",
-        "zod": "^3.23.8"
+        "update-electron-app": "^3.1.0",
+        "zod": "^3.24.1"
     },
     "devDependencies": {
         "@doyensec/electronegativity": "^1.10.3",
@@ -60,10 +60,10 @@
         "@electron-forge/plugin-webpack": "^7.3.0",
         "@electron-forge/publisher-github": "^7.3.0",
         "@electron/fuses": "^1.7.0",
-        "@sentry/electron": "^5.7.0",
+        "@sentry/electron": "^5.8.0",
         "@types/jest": "^29.5.14",
         "@types/lodash": "^4.17.13",
-        "@types/node": "^22.10.1",
+        "@types/node": "^22.10.2",
         "@typescript-eslint/eslint-plugin": "^7.18.0",
         "@typescript-eslint/parser": "^7.18.0",
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
