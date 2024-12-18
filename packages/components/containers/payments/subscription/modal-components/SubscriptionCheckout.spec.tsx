@@ -51,8 +51,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={true}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -79,8 +79,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={true}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -107,8 +107,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -135,8 +135,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={true}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={true}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -177,8 +177,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={true}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -226,8 +226,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -275,8 +275,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -304,8 +304,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -330,8 +330,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -356,8 +356,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -382,8 +382,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -408,8 +408,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -434,8 +434,8 @@ describe('SubscriptionCheckout', () => {
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
-                isScheduledSubscription={false}
-                isAddonDowngrade={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}

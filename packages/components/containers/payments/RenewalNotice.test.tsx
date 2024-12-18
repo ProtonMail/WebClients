@@ -229,7 +229,7 @@ describe('<RenewalNotice />', () => {
                 <RenewalNotice
                     cycle={12}
                     isCustomBilling={false}
-                    isScheduledSubscription={false}
+                    isScheduledChargedImmediately={false}
                     subscription={undefined}
                     {...getProps()}
                 />
@@ -245,7 +245,7 @@ describe('<RenewalNotice />', () => {
                 <RenewalNotice
                     cycle={renewCycle}
                     isCustomBilling={false}
-                    isScheduledSubscription={false}
+                    isScheduledChargedImmediately={false}
                     subscription={undefined}
                     {...getProps()}
                 />
@@ -263,7 +263,7 @@ describe('<RenewalNotice />', () => {
                 <RenewalNotice
                     cycle={renewCycle}
                     isCustomBilling={true}
-                    isScheduledSubscription={false}
+                    isScheduledChargedImmediately={false}
                     subscription={
                         {
                             // the backend returns seconds, not milliseconds
@@ -284,7 +284,7 @@ describe('<RenewalNotice />', () => {
                 <RenewalNotice
                     cycle={renewCycle}
                     isCustomBilling={false}
-                    isScheduledSubscription={true}
+                    isScheduledChargedImmediately={true}
                     subscription={
                         {
                             // the backend returns seconds, not milliseconds
@@ -302,7 +302,7 @@ describe('<RenewalNotice />', () => {
             );
         });
 
-        it('should user the end of current subscription period if addon downgrade is enabled', () => {
+        it('should use the end of current subscription period if "ScheduledChargedLater" is enabled', () => {
             // while addon downgrading also schedules subscription, it doesn't charge user immediately.
             // User will be charged when the scheduled subscription starts.
             // That's significant difference from scheduled subscription that charges user immediately.
@@ -559,19 +559,19 @@ describe('<RenewalNotice />', () => {
                     {...getProps()}
                     cycle={CYCLE.YEARLY}
                     isCustomBilling={false}
-                    isScheduledSubscription={false}
-                    isAddonDowngrade={true}
+                    isScheduledChargedImmediately={false}
+                    isScheduledChargedLater={true}
                     isProration={false}
                     planIDs={{ bundlepro2024: 1, '1domain-bundlepro2024': 5, '1member-bundlepro2024': 5 }}
                     subscription={subscription}
                 />
             );
 
-            // end of the current subscription, NOT upcoming that will be created when user accepts the terms of AddonDowngrade subscription
+            // end of the current subscription, NOT upcoming that will be created when user accepts the terms of ScheduledChargedLater subscription
             const expectedDateString = '06/12/2025';
 
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}.`
+                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every 12 months. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change.`
             );
         });
     });
