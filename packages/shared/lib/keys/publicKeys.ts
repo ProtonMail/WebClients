@@ -177,7 +177,7 @@ export const getContactPublicKeyModel = async ({
     const encryptionCapableFingerprints = new Set<string>();
     const obsoleteFingerprints = new Set<string>();
     const compromisedFingerprints = new Set<string>();
-    const primaryKeyFingerprints = new Set<string>(); // either one and two keys expected (v4 + maybe v6)
+    const primaryKeyFingerprints = new Set<string>(); // either one or two keys expected (v4 + maybe v6)
 
     // prepare keys retrieved from the API
     const isInternalUser = getIsInternalUser(apiKeysConfig);

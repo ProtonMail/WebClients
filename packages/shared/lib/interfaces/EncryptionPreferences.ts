@@ -69,7 +69,7 @@ export interface PublicKeyConfigs {
     apiKeysConfig: ApiKeysConfig;
     pinnedKeysConfig: PinnedKeysConfig;
     mailSettings: MailSettings;
-    /** whether to pick v6/PQC keys over v4 ones if available; doing so may come with a performance hit. */
+    /** whether to pick v6/PQC keys over v4 ones if available, for security; doing so may come with a performance hit. */
     preferV6Keys: boolean;
 }
 
