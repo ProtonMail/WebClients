@@ -101,8 +101,8 @@ const SubscriptionCheckout = ({
     showTaxCountry,
     onBillingAddressChange,
     subscription,
-    isScheduledSubscription,
-    isAddonDowngrade,
+    isScheduledChargedImmediately,
+    isScheduledChargedLater,
     isProration,
     isCustomBilling,
     paymentNeeded,
@@ -186,8 +186,8 @@ const SubscriptionCheckout = ({
                           currency,
                           subscription,
                           isCustomBilling,
-                          isScheduledSubscription,
-                          isAddonDowngrade,
+                          isScheduledChargedImmediately,
+                          isScheduledChargedLater,
                           isProration,
                           coupon: checkResult.Coupon,
                       })
@@ -320,7 +320,7 @@ const SubscriptionCheckout = ({
                 />
             )}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
-            {(isScheduledSubscription || isAddonDowngrade) && (
+            {(isScheduledChargedImmediately || isScheduledChargedLater) && (
                 <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />
             )}
 

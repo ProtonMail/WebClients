@@ -9,9 +9,9 @@ type Props = {
     subscription: SubscriptionModel | undefined;
 } & CheckoutModifiers;
 
-export const RenewalEnableNote = ({ subscription, isScheduledSubscription, isAddonDowngrade }: Props) => {
+export const RenewalEnableNote = ({ subscription, isScheduledChargedImmediately, isScheduledChargedLater }: Props) => {
     // todo: check if we can display it on ANY subscription modification.
-    const subscriptionWillRenewIfChanged = isScheduledSubscription || isAddonDowngrade;
+    const subscriptionWillRenewIfChanged = isScheduledChargedImmediately || isScheduledChargedLater;
     const { renewDisabled } = subscriptionExpires(subscription);
 
     const displayNote = !!subscription && renewDisabled && subscriptionWillRenewIfChanged;

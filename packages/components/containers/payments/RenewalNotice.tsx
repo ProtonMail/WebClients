@@ -62,8 +62,8 @@ export const getBlackFridayRenewalNoticeText = ({
 const getRegularRenewalNoticeText = ({
     cycle,
     isCustomBilling,
-    isScheduledSubscription,
-    isAddonDowngrade,
+    isScheduledChargedImmediately,
+    isScheduledChargedLater,
     subscription,
 }: RenewalNoticeProps) => {
     let unixRenewalTime: number = +addMonths(new Date(), cycle) / 1000;
@@ -73,11 +73,9 @@ const getRegularRenewalNoticeText = ({
     // downgrade then user pays nothing now, and the scheduled subscription will still be created.
     // The payment happens when the upcoming subscription becomes the current one. So the next billing date is still
     // the end of the current subscription.
-    if ((isCustomBilling || isAddonDowngrade) && subscription) {
+    if ((isCustomBilling || isScheduledChargedLater) && subscription) {
         unixRenewalTime = subscription.PeriodEnd;
-    }
-
-    if (isScheduledSubscription && subscription) {
+    } else if (isScheduledChargedImmediately && subscription) {
         const periodEndMilliseconds = subscription.PeriodEnd * 1000;
         unixRenewalTime = +addMonths(periodEndMilliseconds, cycle) / 1000;
     }
@@ -87,6 +85,21 @@ const getRegularRenewalNoticeText = ({
             {unixRenewalTime}
         </Time>
     );
+
+    if (isScheduledChargedLater && subscription) {
+        const autoRenewNote =
+            cycle === CYCLE.MONTHLY
+                ? c('Info').jt`Your scheduled plan starts on ${renewalTime} and will auto-renew every month.`
+                : // translator: cycle is greater than 1; typically 12 or 24 months.
+                  c('Info').jt`Your scheduled plan starts on ${renewalTime} and will auto-renew every ${cycle} months.`;
+
+        return [
+            autoRenewNote,
+            ' ',
+            c('Info')
+                .jt`Your next billing date is ${renewalTime}. Please contact support if you require an immediate plan change.`,
+        ];
+    }
 
     const start =
         cycle === CYCLE.MONTHLY
