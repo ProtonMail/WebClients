@@ -177,8 +177,9 @@ export default function useShare() {
      * TODO: Change this function name as it doesn't fetch creator key but your own member keys for that share
      * Also share.adressId can be null
      */
-    const getShareCreatorKeys = async (abortSignal: AbortSignal, shareId: string) => {
-        const share = await getShareWithKey(abortSignal, shareId);
+    const getShareCreatorKeys = async (abortSignal: AbortSignal, shareIdOrShare: string | ShareWithKey) => {
+        const share =
+            typeof shareIdOrShare === 'string' ? await getShareWithKey(abortSignal, shareIdOrShare) : shareIdOrShare;
         const keys = await driveCrypto.getOwnAddressAndPrimaryKeys(share.addressId);
 
         return keys;

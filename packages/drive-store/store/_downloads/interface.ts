@@ -18,9 +18,10 @@ export interface LinkDownload {
 
     createTime?: number;
     revisionId?: string;
-    signatureAddress?: string;
+    signatureEmail?: string;
     signatureIssues?: SignatureIssues;
     buffer?: Uint8Array[];
+    isAnonymous?: boolean;
 }
 
 export type DownloadControls = {
@@ -101,7 +102,7 @@ export type ChildrenLinkMeta = Pick<
     | 'mimeType'
     | 'size'
     | 'fileModifyTime'
-    | 'signatureAddress'
+    | 'signatureEmail'
     | 'signatureIssues'
     | 'createTime'
 >;
@@ -126,7 +127,6 @@ export type DecryptFileKeys = {
     privateKey: PrivateKeyReference;
     sessionKeys?: SessionKey;
     addressPublicKeys?: PublicKeyReference[];
-    isAnonymous?: boolean;
 };
 
 export type InitDownloadCallback = (

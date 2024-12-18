@@ -136,8 +136,8 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
 
                 // Backend should not return signature address,
                 // as it is not supported in a public context
-                delete encryptedLink.nameSignatureAddress;
-                delete encryptedLink.signatureAddress;
+                delete encryptedLink.nameSignatureEmail;
+                delete encryptedLink.signatureEmail;
 
                 return encryptedLink;
             });

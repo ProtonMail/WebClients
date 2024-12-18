@@ -39,6 +39,7 @@ export interface FileBrowserBaseItem {
     isInvitation?: boolean;
     isBookmark?: boolean;
     itemRowStyle?: React.CSSProperties;
+    isAnonymous?: boolean;
 }
 
 export enum HeaderCellsPresets {
