@@ -1,19 +1,48 @@
+import { useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Checkbox, Info, Label } from '@proton/components';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import { REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
+import useFlag from '@proton/unleash/useFlag';
 
 import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {
     files: File[];
-    onSelect: (action: ATTACHMENT_DISPOSITION) => void;
+    onSelect: (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => void;
     onClose: () => void;
+    mailSettings?: MailSettings;
 }
 
-const ComposerInsertImageModal = ({ files, onSelect, onClose }: Props) => {
+const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings }: Props) => {
+    const removeImageMetadataFeatureFlag = useFlag('RemoveImageMetadata');
+    const [removeImageMetadata, setRemoveImageMetadata] = useState(
+        mailSettings?.RemoveImageMetadata === REMOVE_IMAGE_METADATA.ENABLED
+    );
     const actions = (
         <>
+            {removeImageMetadataFeatureFlag && mailSettings ? (
+                <Label htmlFor="remove-image-metadata-checkbox" className="w-full flex flex-nowrap mb-3 items-center">
+                    <Checkbox
+                        id="remove-image-metadata-checkbox"
+                        className="mr-2"
+                        checked={removeImageMetadata}
+                        onChange={(event) => setRemoveImageMetadata(event.target.checked)}
+                    />
+                    <span className="flex-1 flex flex-nowrap items-center gap-2">
+                        <span>{c('Label').t`Remove metadata`}</span>
+                        <Info
+                            buttonClass="content-center"
+                            title={c('Tooltip')
+                                .t`This ensures no one can see location, device, and other information that could be used to identify or track you.`}
+                        />
+                    </span>
+                </Label>
+            ) : null}
             <Button
                 color="norm"
                 fullWidth
@@ -38,7 +67,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose }: Props) => {
             onCancel={onClose}
             submitActions={actions}
         >
-            <p className="text-left">{c('Info')
+            <p className="text-left mb-0">{c('Info')
                 .t`You can add it as an attachment or display it inline in your mail body.`}</p>
         </ComposerInnerModal>
     );
