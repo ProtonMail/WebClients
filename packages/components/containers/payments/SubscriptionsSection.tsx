@@ -94,12 +94,19 @@ const SubscriptionsSection = () => {
     ].filter(isTruthy);
 
     const latestSubscription = upcoming ?? current;
-    // That's the case for AddonDowngrade subscription mode. If user with addons decreases the number of addons
-    // then in might fall under the AddonDowngrade subscription mode. In this case, user doesn't immediately.
-    // The upcoming subscription will be created, it will have the same cycle as the current subscription
-    // and user will be charged  at the beginning of the upcoming subscription.
-    // see PAY-2060 and PAY-2080
-    const isUpcomingSubscriptionUnpaid = !!current && !!upcoming && current.Cycle === upcoming.Cycle;
+
+    // Two possible cases here: addon downgrade (for example, Scribe) and scheduled downcycling.
+    // 1. Addon downgrade: user decreases the number of addons,
+    //     then the upcoming subscription will have the same cycle as the current subscription
+    // "current.Cycle === upcoming.Cycle" checks that
+    //
+    // 2. Scheduled downcycling: user changes, for example, from 12 months to 1 month,
+    //     then the upcoming subscription will have a lower cycle than the current subscription
+    // "current.Cycle > upcoming.Cycle" checks that
+    //
+    // In both cases, the upcoming subscription will be unpaid until it starts.
+    // see PAY-2060, PAY-2080, and PAY-3027.
+    const isUpcomingSubscriptionUnpaid = !!current && !!upcoming && current.Cycle >= upcoming.Cycle;
 
     const { renewAmount, renewCurrency, renewLength } = (() => {
         const latestPlanIDs = getPlanIDs(latestSubscription);
