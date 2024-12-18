@@ -533,7 +533,6 @@ export const usePaymentFacade = (
         {
             amountAndCurrency,
             selectedPlanName,
-            user,
             onBeforeSepaPayment,
             onChargeable: (params) => {
                 return onChargeable(
@@ -544,7 +543,7 @@ export const usePaymentFacade = (
                         sourceType: params.type,
                         context: paymentContext.getOperationsData(),
                         paymentsVersion: 'v5',
-                        paymentProcessorType: 'sepa_direct_debit',
+                        paymentProcessorType: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                     }
                 );
             },
