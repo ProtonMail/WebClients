@@ -6,6 +6,7 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
+import { sanitizeLexicalState } from '../../Utils/SanitizeLexicalState'
 
 interface CommentViewerProps {
   content: string
@@ -20,7 +21,7 @@ export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className
       reportErrorToSentry(error)
     },
     theme: DocumentEditorTheme,
-    editorState: content,
+    editorState: sanitizeLexicalState(content),
     editable: false,
   }
 
