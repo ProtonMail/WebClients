@@ -52,24 +52,25 @@ export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>
      * NB: the fake timers are re-enabled before returning.
      */
     disableFakeTimers?: boolean;
-}) =>
-    act(async () => {
-        if (disableFakeTimers) {
+}) => {
+    if (disableFakeTimers) {
+        act(() => {
             jest.runOnlyPendingTimers();
             jest.useRealTimers();
-        }
+        });
+    }
 
-        try {
-            await waitFor(
-                async () => (callTimes ? expect(spy).toHaveBeenCalledTimes(callTimes) : expect(spy).toHaveBeenCalled()),
-                { timeout: 10000 }
-            );
-        } finally {
-            if (disableFakeTimers) {
-                jest.useFakeTimers();
-            }
+    try {
+        await waitFor(
+            async () => (callTimes ? expect(spy).toHaveBeenCalledTimes(callTimes) : expect(spy).toHaveBeenCalled()),
+            { timeout: 10000 }
+        );
+    } finally {
+        if (disableFakeTimers) {
+            jest.useFakeTimers();
         }
-    });
+    }
+};
 
 export const waitForEventManagerCall = async () => {
     // Hard override of the typing as event manager is mocked

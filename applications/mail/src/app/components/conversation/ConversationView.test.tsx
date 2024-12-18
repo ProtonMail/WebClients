@@ -266,15 +266,15 @@ describe('ConversationView', () => {
             await act(async () => {
                 jest.advanceTimersByTime(5000);
             });
-            await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: false });
+            await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: true });
             await act(async () => {
                 jest.advanceTimersByTime(5000);
             });
-            await waitForSpyCall({ spy: getSpy, callTimes: 3, disableFakeTimers: false });
+            await waitForSpyCall({ spy: getSpy, callTimes: 3, disableFakeTimers: true });
             await act(async () => {
                 jest.advanceTimersByTime(5000);
             });
-            await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: false });
+            await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: true });
 
             screen.getByText('Network error', { exact: false });
             screen.getByText('Try again');
