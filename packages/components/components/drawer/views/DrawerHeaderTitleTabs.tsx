@@ -1,6 +1,8 @@
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import clsx from '@proton/utils/clsx';
 
+import './DrawerHeaderTitleTabs.scss';
+
 interface Props {
     title: string;
     options: SelectedDrawerOption[];
@@ -9,8 +11,8 @@ interface Props {
 
 const DrawerHeaderTitleTabs = ({ title, options, onClickOption }: Props) => {
     return (
-        <div className="tabs tabs--underline mb-3">
-            <nav className="tabs-container mt-2 pt-0.5">
+        <div className="drawer-contact-tabs tabs tabs--underline relative">
+            <nav className="tabs-container">
                 <ul className="tabs-list unstyled flex flex-nowrap relative m-0 p-0">
                     {options.map((option, index) => {
                         const selected = option.text === title;
