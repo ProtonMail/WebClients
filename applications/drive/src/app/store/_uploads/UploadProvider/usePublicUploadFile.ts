@@ -67,7 +67,7 @@ interface FileRevision {
 
 export default function usePublicUploadFile() {
     const isPaidUser = useIsPaid();
-    const { setUploadToken } = useAnonymousUploadAuthStore();
+    const setUploadToken = useAnonymousUploadAuthStore((state) => state.setUploadToken);
     const { request: publicDebouncedRequest, user } = usePublicSession();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
