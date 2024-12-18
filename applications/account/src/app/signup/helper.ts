@@ -1,7 +1,8 @@
 import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
-import type { BillingAddress, PaymentsApi } from '@proton/payments';
+import type { BillingAddress, PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import { PLANS, type PlanIDs } from '@proton/payments';
 import { type Currency } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
@@ -65,4 +66,28 @@ export const getOptimisticDomains = () => {
         secondLevelDomain = 'proton.me';
     }
     return [secondLevelDomain, 'protonmail.com'];
+};
+
+export const getOptimisticPaymentMethods = (): PaymentMethodStatusExtended => {
+    const defaultValue = {
+        VendorStates: {
+            Card: false,
+            Paypal: false,
+            Apple: false,
+            Cash: false,
+            Bitcoin: false,
+        },
+        CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
+        State: DEFAULT_TAX_BILLING_ADDRESS.State,
+    };
+
+    return {
+        ...defaultValue,
+        VendorStates: {
+            ...defaultValue.VendorStates,
+            // We guess that card and PayPal are active by default
+            Card: true,
+            Paypal: true,
+        },
+    };
 };
