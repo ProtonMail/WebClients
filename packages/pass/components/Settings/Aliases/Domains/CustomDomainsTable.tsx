@@ -28,7 +28,9 @@ export const CustomDomainsTable: FC = () => {
                     <TableRow>
                         <TableHeaderCell className="w-1/2">{c('Title').t`Domain`}</TableHeaderCell>
                         <TableHeaderCell>{c('Title').t`Aliases`}</TableHeaderCell>
-                        <TableHeaderCell>{c('Title').t`Status`}</TableHeaderCell>
+                        <TableHeaderCell className="w-1/5">
+                            <span className="ml-4">{c('Title').t`Status`}</span>
+                        </TableHeaderCell>
                         <TableHeaderCell>{c('Title').t`Actions`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>
@@ -49,7 +51,13 @@ export const CustomDomainsTable: FC = () => {
                                                 }
 
                                                 const statusLabel = getDomainStatusLabel(domain);
-                                                return statusLabel && <Badge type="light">{statusLabel}</Badge>;
+                                                return (
+                                                    statusLabel && (
+                                                        <Badge type="light" className="m-0">
+                                                            {statusLabel}
+                                                        </Badge>
+                                                    )
+                                                );
                                             })()}
                                         </div>
                                     </TableCell>
