@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useLoading from '@proton/hooks/useLoading';
@@ -6,6 +6,7 @@ import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/consta
 import { type DesktopVersion, VersionFileSchema } from '@proton/shared/lib/desktop/DesktopVersion';
 import { getLatestRelease } from '@proton/shared/lib/desktop/getLatestRelease';
 import { getInboxDesktopInfo, hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
+import { isDebianBased, isFedoraOrRedHatBased, isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronOnLinux, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
 
@@ -85,6 +86,32 @@ const useInboxDesktopVersion = () => {
     const [macosApp, setMacosApp] = useState<DesktopVersion>(initialMacosClient);
     const [linuxApp, setLinuxApp] = useState<DesktopVersion>(initialLinuxClients);
 
+    const desktopAppLink = useMemo(() => {
+        const isMacOS = isMac();
+        const isWindow = isWindows();
+        const isDebianBasedOS = isDebianBased();
+        const isFedoraOrRedHatBasedOS = isFedoraOrRedHatBased();
+
+        const isWindowsAppOK = windowsApp && windowsApp.File[0]?.Url && windowsApp.Version;
+        const isMacosAppOK = macosApp && macosApp.File[0]?.Url && macosApp.Version;
+        const isLinuxAppOK = linuxApp && linuxApp.Version && linuxApp.File.every((file) => file.Url);
+
+        if (isWindowsAppOK && isWindow) {
+            return windowsApp.File[0]?.Url;
+        }
+        if (isMacosAppOK && isMacOS) {
+            return macosApp.File[0]?.Url;
+        }
+        if (isLinuxAppOK && isDebianBasedOS) {
+            return linuxApp.File.find((file) => file.Url.includes('.deb'))?.Url;
+        }
+        if (isLinuxAppOK && isFedoraOrRedHatBasedOS) {
+            return linuxApp.File.find((file) => file.Url.includes('.rpm'))?.Url;
+        }
+
+        return undefined;
+    }, [windowsApp, macosApp, linuxApp]);
+
     useEffect(() => {
         const fetchDesktopVersion = async () => {
             const promises = [fetchDesktopClient(WINDOWS), fetchDesktopClient(MACOS), fetchDesktopClient(LINUX)];
@@ -132,7 +159,7 @@ const useInboxDesktopVersion = () => {
         }
     }, [currentEnvironment]);
 
-    return { windowsApp, macosApp, linuxApp, loading };
+    return { windowsApp, macosApp, linuxApp, loading, desktopAppLink };
 };
 
 export default useInboxDesktopVersion;
