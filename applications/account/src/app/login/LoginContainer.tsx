@@ -35,7 +35,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronPass } from '@proton/shared/lib/helpers/desktop';
-import useFlag from '@proton/unleash/useFlag';
 
 import type { Paths } from '../content/helper';
 import Text from '../public/Text';
@@ -116,7 +115,6 @@ const LoginContainer = ({
     const { isElectronDisabled } = useIsInboxElectronApp();
     const loginFormRef = useRef<LoginFormRef>();
     const searchParams = new URLSearchParams(location.search);
-    const globalSSOEnabled = useFlag('GlobalSSO');
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useMetaTags(metaTags);
@@ -255,7 +253,7 @@ const LoginContainer = ({
                                     externalSSO={{
                                         enabled:
                                             APP_NAME === APPS.PROTONACCOUNT &&
-                                            (getIsVPNApp(toApp) || (globalSSOEnabled && getIsPassApp(toApp))),
+                                            (getIsVPNApp(toApp) || getIsPassApp(toApp)),
                                         options: state?.externalSSO,
                                     }}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
