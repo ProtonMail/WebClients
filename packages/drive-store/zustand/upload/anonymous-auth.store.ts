@@ -1,39 +1,49 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import type { AnonymousUploadTokenState } from './types';
+import type { AnonymousUploadTokenState, TokenData } from './types';
 
 const TOKEN_EXPIRACY = 59 * 60 * 1000; // 59 minutes (1h token - 1 min to be safe)
+
+const hasExpired = (timestamp: number) => Date.now() - timestamp > TOKEN_EXPIRACY;
+
 export const useAnonymousUploadAuthStore = create<AnonymousUploadTokenState>()(
     devtools(
-        (set) => ({
-            uploadTokens: new Map(),
+        (set, get) => ({
+            _uploadTokens: new Map<string, TokenData>(),
+            hasUploadToken: (linkId: string): boolean => {
+                const state = get();
+                const data = state._uploadTokens.get(linkId);
+                if (data && hasExpired(data.timestamp)) {
+                    useAnonymousUploadAuthStore.getState().removeUploadTokens([linkId]);
+                    return false;
+                }
+                return !!data;
+            },
+            getUploadToken: (linkId: string): string | undefined => {
+                const state = get();
+                const data = state._uploadTokens.get(linkId);
+                if (data && hasExpired(data.timestamp)) {
+                    useAnonymousUploadAuthStore.getState().removeUploadTokens([linkId]);
+                    return undefined;
+                }
+                return data?.token;
+            },
             setUploadToken: ({ linkId, authorizationToken }) => {
                 set((state) => ({
-                    ...state,
-                    uploadTokens: new Map(state.uploadTokens).set(linkId, authorizationToken),
+                    _uploadTokens: new Map(state._uploadTokens).set(linkId, {
+                        token: authorizationToken,
+                        timestamp: Date.now(),
+                    }),
                 }));
-
-                // Remove after 1 hour (Token expiracy)
-                setTimeout(() => {
-                    set((state) => {
-                        const newMap = new Map(state.uploadTokens);
-                        newMap.delete(linkId);
-                        return {
-                            ...state,
-                            uploadTokens: newMap,
-                        };
-                    });
-                }, TOKEN_EXPIRACY);
             },
             removeUploadTokens: (linkIds: string | string[]) => {
                 set((state) => {
-                    const newMap = new Map(state.uploadTokens);
+                    const newMap = new Map(state._uploadTokens);
                     const ids = Array.isArray(linkIds) ? linkIds : [linkIds];
                     ids.forEach((id) => newMap.delete(id));
                     return {
-                        ...state,
-                        uploadTokens: newMap,
+                        _uploadTokens: newMap,
                     };
                 });
             },

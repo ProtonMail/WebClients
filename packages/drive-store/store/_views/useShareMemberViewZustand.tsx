@@ -40,7 +40,11 @@ const useShareMemberViewZustand = (rootShareId: string, linkId: string) => {
     const [isShared, setIsShared] = useState<boolean>(false);
 
     // Zustand store hooks - key difference with useShareMemberView.tsx
-    const { members, setMembers } = useMembersStore();
+    const { members, setMembers } = useMembersStore((state) => ({
+        members: state.members,
+        setMembers: state.setMembers,
+    }));
+
     const {
         invitations,
         externalInvitations,
@@ -51,7 +55,17 @@ const useShareMemberViewZustand = (rootShareId: string, linkId: string) => {
         removeExternalInvitations,
         updateExternalInvitations,
         addMultipleInvitations,
-    } = useInvitationsStore();
+    } = useInvitationsStore((state) => ({
+        invitations: state.invitations,
+        externalInvitations: state.externalInvitations,
+        setInvitations: state.setInvitations,
+        setExternalInvitations: state.setExternalInvitations,
+        removeInvitations: state.removeInvitations,
+        updateInvitationsPermissions: state.updateInvitationsPermissions,
+        removeExternalInvitations: state.removeExternalInvitations,
+        updateExternalInvitations: state.updateExternalInvitations,
+        addMultipleInvitations: state.addMultipleInvitations,
+    }));
 
     const existingEmails = useMemo(() => {
         const membersEmail = members.map((member) => member.email);

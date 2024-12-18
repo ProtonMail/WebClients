@@ -55,7 +55,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         // to simple boolean property.
         isFile: link.Type === LinkType.FILE,
         name: link.Name,
-        nameSignatureAddress: link.NameSignatureEmail,
+        nameSignatureEmail: link.NameSignatureEmail,
         mimeType: link.MIMEType,
         size: isDocument ? link.DocumentProperties?.Size || link.Size : link.Size,
         hash: link.Hash,
@@ -63,7 +63,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
             ? {
                   id: link.FileProperties.ActiveRevision.ID,
                   size: link.FileProperties.ActiveRevision.Size,
-                  signatureAddress: link.FileProperties.ActiveRevision.SignatureEmail,
+                  signatureEmail: link.FileProperties.ActiveRevision.SignatureEmail,
                   thumbnail: link.FileProperties.ActiveRevision.ThumbnailURLInfo
                       ? {
                             bareUrl: link.FileProperties.ActiveRevision.ThumbnailURLInfo.BareURL,
@@ -131,7 +131,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         nodeHashKey: link.FolderProperties?.NodeHashKey,
         contentKeyPacket: link.FileProperties?.ContentKeyPacket,
         contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
-        signatureAddress: link.SignatureEmail,
+        signatureEmail: link.SignatureEmail,
         xAttr: link.XAttr,
         volumeId: link.VolumeID,
     };
@@ -298,7 +298,6 @@ export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): D
         size: revision.Size,
         state: revision.State,
         manifestSignature: revision.ManifestSignature,
-        signatureAddress: revision.SignatureAddress,
         signatureEmail: revision.SignatureEmail,
         blocs: revision.Blocks,
         thumbnails: revision.Thumbnails,

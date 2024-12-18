@@ -8,13 +8,12 @@ interface DownloadConfig {
 }
 
 const SECURITY_HEADERS = {
-    'Content-Security-Policy': "default-src 'none'",
+    'Content-Security-Policy': "default-src 'none'; frame-ancestors 'self'",
     'X-Content-Security-Policy': "default-src 'none'",
     'X-WebKit-CSP': "default-src 'none'",
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Strict-Transport-Security': 'max-age=31536000',
     'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'deny',
     'X-XSS-Protection': '1; mode=block',
     'X-Permitted-Cross-Domain-Policies': 'none',
 };
@@ -46,52 +45,6 @@ function createDownloadStream(port: MessagePort) {
         },
     });
 }
-
-const CACHE_NAME = 'webpack-cache-v1';
-let CACHE_FILES: Set<string> = new Set();
-
-const fetchAndCacheAssets = () => {
-    /*
-        Response is a JSON in such format:
-        {
-            "pre.js": "/assets/static/pre.cb365dbf.js?v=5.0.999.999",
-            "index.css": "/assets/static/index.8cbd8c36.css?v=5.0.999.999",
-            "index.js": "/assets/static/index.ee53b6bf.js?v=5.0.999.999",
-        }
-    */
-    void fetch('/assets/offline.json')
-        .then((response) => response.json())
-        .then((manifest) => {
-            const filesToCache = Object.values(manifest)
-                .filter((path) => typeof path === 'string')
-                .map((path) => (path.startsWith('/') ? path : `/${path}`));
-
-            void caches.open(CACHE_NAME).then(async (cache) => {
-                CACHE_FILES = new Set([...filesToCache]);
-
-                const existingFiles = await cache.keys();
-                const existingUrls = new Set();
-
-                for (const file of existingFiles) {
-                    const url = new URL(file.url);
-                    const manifestUrl = file.url.split(url.origin)[1];
-
-                    if (!CACHE_FILES.has(manifestUrl)) {
-                        // Delete files not in new manifest
-                        void cache.delete(file);
-                    } else {
-                        // Keep track of existing files that are still needed
-                        existingUrls.add(manifestUrl);
-                    }
-                }
-
-                const newFilesToCache = filesToCache.filter((file) => !existingUrls.has(file));
-                if (newFilesToCache.length) {
-                    return cache.addAll(newFilesToCache);
-                }
-            });
-        });
-};
 
 /**
  * Service worker that listens for client-generated file data
@@ -134,19 +87,6 @@ class DownloadServiceWorker {
      */
     onFetch = (event: FetchEvent) => {
         const url = new URL(event.request.url);
-
-        /** If request intercepted is an url from the webpack assets manifest, return the cache version if available */
-        const maybeManifestUrl = event.request.url.split(url.origin)[1];
-        if (maybeManifestUrl && CACHE_FILES.has(maybeManifestUrl)) {
-            return event.respondWith(
-                caches.match(event.request).then((response) => {
-                    if (response) {
-                        return response;
-                    }
-                    return fetch(event.request);
-                })
-            );
-        }
 
         // Our service worker is registered on the global scope
         // We currently only care about the /sw/* scope
@@ -196,11 +136,6 @@ class DownloadServiceWorker {
      * and generates a unique download link for the app to call to download file.
      */
     onMessage = (event: ExtendableMessageEvent) => {
-        if (event.data?.action === 'cache_assets') {
-            fetchAndCacheAssets();
-            return;
-        }
-
         if (event.data?.action !== 'start_download') {
             return;
         }
