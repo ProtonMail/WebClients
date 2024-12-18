@@ -19,6 +19,7 @@ import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyRequest }
 import { BitField, type Maybe } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 import GenericError from '../error/GenericError';
 import SubSettingsSection from '../layout/SubSettingsSection';
@@ -46,6 +47,7 @@ const PassPolicies = () => {
     const handleError = useErrorHandler();
 
     const policies = getPolicies();
+    const showPasswordGenerator = useFlag('PassB2BPasswordGenerator');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
     const touched = useRef<keyof OrganizationSettings>();
@@ -143,21 +145,23 @@ const PassPolicies = () => {
                             </SettingsLayout>
                         </div>
 
-                        <SubSettingsSection
-                            id="password-generator"
-                            title={c('Title').t`Password generator rules`}
-                            className="container-section-sticky-section"
-                        >
-                            <div className="color-weak mb-4">
-                                {c('Description')
-                                    .t`You can enforce the password rules that organization members will use when they generate a password in ${PASS_APP_NAME}.`}
-                            </div>
-                            <PasswordGeneratorPolicyForm
-                                config={organizationSettings.Settings.PasswordPolicy}
-                                onSubmit={handleSubmitPasswordGenerator}
-                                loading={loading}
-                            />
-                        </SubSettingsSection>
+                        {showPasswordGenerator && (
+                            <SubSettingsSection
+                                id="password-generator"
+                                title={c('Title').t`Password generator rules`}
+                                className="container-section-sticky-section"
+                            >
+                                <div className="color-weak mb-4">
+                                    {c('Description')
+                                        .t`You can enforce the password rules that organization members will use when they generate a password in ${PASS_APP_NAME}.`}
+                                </div>
+                                <PasswordGeneratorPolicyForm
+                                    config={organizationSettings.Settings.PasswordPolicy}
+                                    onSubmit={handleSubmitPasswordGenerator}
+                                    loading={loading}
+                                />
+                            </SubSettingsSection>
+                        )}
                     </>
                 )}
             </SettingsSection>
