@@ -35,13 +35,13 @@ describe('appPlatforms', () => {
     };
 
     it('should not change order if no platform is preferred', async () => {
-        await checkOrder([DESKTOP_PLATFORMS.WINDOWS, DESKTOP_PLATFORMS.MACOS]);
+        await checkOrder([DESKTOP_PLATFORMS.WINDOWS_X64, DESKTOP_PLATFORMS.WINDOWS_ARM, DESKTOP_PLATFORMS.MACOS]);
     });
 
     it('should order by preferred platform', async () => {
         mockIsMac.mockReturnValue(true);
 
-        await checkOrder([DESKTOP_PLATFORMS.MACOS, DESKTOP_PLATFORMS.WINDOWS]);
+        await checkOrder([DESKTOP_PLATFORMS.MACOS, DESKTOP_PLATFORMS.WINDOWS_X64, DESKTOP_PLATFORMS.WINDOWS_ARM]);
     });
 });
 
@@ -89,6 +89,6 @@ describe('fetchDesktopDownloads', () => {
             }
         });
 
-        expect(mockConsoleWarn).toHaveBeenCalledTimes(appPlatforms.length - 1);
+        expect(mockConsoleWarn).toHaveBeenCalledTimes(1);
     });
 });

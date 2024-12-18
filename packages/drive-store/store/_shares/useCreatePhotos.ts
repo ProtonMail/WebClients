@@ -15,10 +15,7 @@ export function useCreatePhotos() {
     const createPhotosShare = async () => {
         const abortController = new AbortController();
         const defaultShare = await getDefaultShare();
-        const { address, privateKey, addressKeyID } = await getShareCreatorKeys(
-            abortController.signal,
-            defaultShare.shareId
-        );
+        const { address, privateKey, addressKeyID } = await getShareCreatorKeys(abortController.signal, defaultShare);
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
         const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey, folderPrivateKey);
 
