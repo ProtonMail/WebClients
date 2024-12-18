@@ -6,7 +6,7 @@ import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shar
 import { AnonymousUserEmail, CommentThreadState, UserAvatar } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
-import { useApplication } from '../../ApplicationProvider'
+import { useApplication } from '../../Containers/ApplicationProvider'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { CommentsComposer } from './CommentsComposer'
 import { useCommentsContext } from './CommentsContext'
@@ -34,8 +34,8 @@ export function CommentsPanelListComment({
 }): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
-  const { application, isSuggestionsFeatureEnabled } = useApplication()
-  const { userName } = useSyncedState()
+  const { application } = useApplication()
+  const { userName, suggestionsEnabled } = useSyncedState()
   const { displayNameForEmail } = useContactEmails()
 
   const { userAddress, controller, markNodeMap, removeMarkNode, awarenessStates, showConfirmModal } =
@@ -176,7 +176,7 @@ export function CommentsPanelListComment({
               {comment.createTime.milliseconds !== comment.modifyTime.milliseconds && ' • Edited'}
             </span>
           </div>
-          {isSuggestionComment && isSuggestionsFeatureEnabled && thread.state === CommentThreadState.Active && (
+          {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadState.Active && (
             <>
               <Tooltip title={c('Action').t`Decline suggestion`} onClick={rejectSuggestion}>
                 <Button

@@ -6,7 +6,7 @@ import type { Provider } from '@lexical/yjs'
 import { useMemo } from 'react'
 
 import { useYjsReadonly } from './useYjsReadonly'
-import type { EditorLoadResult } from '../../EditorLoadResult'
+import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import type { LoggerInterface } from '@proton/utils/logs'
 
 type Props = {
