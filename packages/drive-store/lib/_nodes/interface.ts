@@ -18,8 +18,8 @@ export type DecryptedNode = {
     createTime: DecryptedLink['createTime'];
     mimeType: DecryptedLink['mimeType'];
 
-    signatureAddress?: DecryptedLink['signatureAddress'];
-    nameSignatureAddress?: DecryptedLink['nameSignatureAddress'];
+    signatureAddress?: DecryptedLink['signatureEmail'];
+    nameSignatureAddress?: DecryptedLink['nameSignatureEmail'];
 
     /**
      * If present, this node's metadata could be corrupted / undecryptable in some way.
