@@ -4,9 +4,10 @@ import {
     type AmountAndCurrency,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
+    PAYMENT_METHOD_TYPES,
     PLANS,
+    SepaEmailNotProvidedError,
 } from '@proton/payments';
-import { buildUser } from '@proton/testing/builders';
 import { apiMock } from '@proton/testing/index';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';
@@ -27,9 +28,6 @@ it('should render', () => {
     const onProcessPaymentToken = jest.fn();
     const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
-    const user = buildUser({
-        Email: 'test@proton.me',
-    });
 
     const dependencies: Dependencies = {
         api: apiMock,
@@ -47,7 +45,6 @@ it('should render', () => {
                 onProcessPaymentToken,
                 onProcessPaymentTokenFailed,
                 selectedPlanName,
-                user,
             },
             dependencies
         )
@@ -66,9 +63,6 @@ it('should fetch payment token', async () => {
     const onProcessPaymentToken = jest.fn();
     const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
-    const user = buildUser({
-        Email: 'test@proton.me',
-    });
 
     const dependencies: Dependencies = {
         api: apiMock,
@@ -86,7 +80,6 @@ it('should fetch payment token', async () => {
                 onProcessPaymentToken,
                 onProcessPaymentTokenFailed,
                 selectedPlanName,
-                user,
             },
             dependencies
         )
@@ -120,7 +113,7 @@ it('should fetch payment token', async () => {
         v: 5,
         chargeable: true,
         authorized: true,
-        type: 'sepa_direct_debit',
+        type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
     });
 });
 
@@ -134,9 +127,6 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
     const onProcessPaymentToken = jest.fn();
     const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
-    const user = buildUser({
-        Email: 'test@proton.me',
-    });
 
     const dependencies: Dependencies = {
         api: apiMock,
@@ -157,7 +147,7 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
                 onProcessPaymentToken,
                 onProcessPaymentTokenFailed,
                 selectedPlanName,
-                user,
+
                 onBeforeSepaPayment,
             },
             dependencies
@@ -194,9 +184,6 @@ it('should verify payment token', async () => {
     const onProcessPaymentToken = jest.fn();
     const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
-    const user = buildUser({
-        Email: 'test@proton.me',
-    });
 
     const dependencies: Dependencies = {
         api: apiMock,
@@ -219,7 +206,6 @@ it('should verify payment token', async () => {
                 onProcessPaymentToken,
                 onProcessPaymentTokenFailed,
                 selectedPlanName,
-                user,
             },
             dependencies
         )
@@ -248,7 +234,7 @@ it('should verify payment token', async () => {
         PaymentToken: 'token',
         v: 5,
         chargeable: true,
-        type: 'sepa_direct_debit',
+        type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
     });
 });
 
@@ -262,9 +248,6 @@ it('should not verify token if amount is 0', async () => {
     const onProcessPaymentToken = jest.fn();
     const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
-    const user = buildUser({
-        Email: 'test@proton.me',
-    });
 
     const dependencies: Dependencies = {
         api: apiMock,
@@ -282,7 +265,6 @@ it('should not verify token if amount is 0', async () => {
                 onProcessPaymentToken,
                 onProcessPaymentTokenFailed,
                 selectedPlanName,
-                user,
             },
             dependencies
         )
@@ -310,7 +292,7 @@ it('should not verify token if amount is 0', async () => {
         Currency: 'EUR',
         v: 5,
         chargeable: true,
-        type: 'sepa_direct_debit',
+        type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
     });
 });
 
@@ -324,9 +306,6 @@ it('should reset token if verification fails', async () => {
     const onProcessPaymentToken = jest.fn();
     const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
-    const user = buildUser({
-        Email: 'test@proton.me',
-    });
 
     const dependencies: Dependencies = {
         api: apiMock,
@@ -347,7 +326,6 @@ it('should reset token if verification fails', async () => {
                 onProcessPaymentToken,
                 onProcessPaymentTokenFailed,
                 selectedPlanName,
-                user,
             },
             dependencies
         )
@@ -394,9 +372,6 @@ it('automatically sets customer name type to company if plan is B2B', () => {
                 {
                     amountAndCurrency,
                     selectedPlanName,
-                    user: buildUser({
-                        Email: 'test@proton.me',
-                    }),
                 },
                 dependencies
             ),
@@ -410,4 +385,77 @@ it('automatically sets customer name type to company if plan is B2B', () => {
     });
 
     expect(result.current.customer.customerNameType).toBe('company');
+});
+
+it('should throw an error when email is not provided', async () => {
+    const amountAndCurrency: AmountAndCurrency = {
+        Amount: 500,
+        Currency: 'EUR',
+    };
+
+    const onChargeable = jest.fn();
+    const onProcessPaymentToken = jest.fn();
+    const onProcessPaymentTokenFailed = jest.fn();
+    const selectedPlanName = PLANS.MAIL;
+
+    const dependencies: Dependencies = {
+        api: apiMock,
+        events: {} as ChargebeeIframeEvents,
+        handles: getMockedIframeHandles(),
+        forceEnableChargebee: jest.fn(),
+        verifyPayment: jest.fn(),
+    };
+
+    const { result } = renderHook(() =>
+        useSepaDirectDebit(
+            {
+                amountAndCurrency,
+                onChargeable,
+                onProcessPaymentToken,
+                onProcessPaymentTokenFailed,
+                selectedPlanName,
+            },
+            dependencies
+        )
+    );
+
+    result.current.setBankAccount({ iban: 'DE89370400440532013000' });
+    result.current.setCustomerNameType('individual');
+    result.current.setFirstName('Arthur');
+    result.current.setLastName('Morgan');
+    result.current.setEmail('arthur.morgan@example.com');
+    result.current.setCountryCode('DE');
+    result.current.setAddressLine1('address line 1');
+
+    await waitFor(() => {
+        expect(result.current.bankAccount).toEqual({ iban: 'DE89370400440532013000' });
+    });
+
+    expect(result.current.fetchingToken).toBe(false);
+    expect(result.current.getFetchedPaymentToken()).toBe(null);
+
+    mockPostV5Token({
+        data: {
+            ID: 'id',
+            Status: 'inited',
+            Amount: 1000,
+            GatewayAccountID: 'gatewayAccountID',
+            ExpiresAt: 1000,
+            PaymentMethodType: 'card',
+            CreatedAt: 1000,
+            ModifiedAt: 1000,
+            UpdatedAt: 1000,
+            ResourceVersion: 1,
+            Object: 'payment_intent',
+            CustomerID: 'customerID',
+            CurrencyCode: 'EUR',
+            Gateway: 'gateway',
+            ReferenceID: 'referenceID',
+        },
+    });
+
+    await expect(result.current.fetchPaymentToken()).rejects.toThrow(SepaEmailNotProvidedError);
+
+    expect(result.current.fetchingToken).toBe(false);
+    expect(result.current.getFetchedPaymentToken()).toEqual(null);
 });

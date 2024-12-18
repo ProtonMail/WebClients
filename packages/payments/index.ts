@@ -1,6 +1,7 @@
 export { getPaymentMethodStatus, queryPaymentMethodStatus } from './core/api';
 export { DEFAULT_TAX_BILLING_ADDRESS, type BillingAddress, type BillingAddressProperty } from './core/billing-address';
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
+export { SepaEmailNotProvidedError, DisplayablePaymentError } from './core/errors';
 export {
     ADDON_NAMES,
     AddonKey,
