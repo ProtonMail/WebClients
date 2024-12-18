@@ -1246,7 +1246,7 @@ export type OrganizationSettingsGetResponse = {
     /** Bitfield with allowed ways to export data. 0 means anyone can export. 1 means only admins can export data */
     ExportMode: number;
     /** Organization password policy */
-    PasswordPolicy?: undefined | null;
+    PasswordPolicy: OrganizationUpdatePasswordPolicyRequest | null; /* FIX OPENAPI */
 };
 
 export type ItemIDLastUseTime = {
