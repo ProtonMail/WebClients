@@ -96,7 +96,6 @@ const ComposerActions = ({
 }: Props) => {
     const [user] = useUser();
     const dispatch = useMailDispatch();
-
     const { viewportWidth } = useActiveBreakpoint();
     const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight, !viewportWidth['<=small']);
     const disabled = opening;
@@ -121,7 +120,6 @@ const ComposerActions = ({
     const assistantUpsellModal = useModalStateObject();
     const { initAssistant, hasCompatibleHardware, hasCompatibleBrowser, openedAssistants, downloadPaused } =
         useAssistant(composerID);
-
     const { displayAssistantModal } = useComposerAssistantProvider();
 
     const isAssistantOpened = useMemo(() => {

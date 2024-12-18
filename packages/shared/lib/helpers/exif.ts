@@ -40,10 +40,7 @@ async function removeExifMetadata(file: File): Promise<File> {
         case 'image/jpeg':
         case 'image/webp':
         case 'image/png':
-        case 'image/tiff':
-        case 'image/heic':
             return removeImageMetadata(file);
-        case 'image/gif': // Not yet supported
         default:
             // Unsupported file type for metadata removal
             return file;
