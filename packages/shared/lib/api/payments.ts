@@ -442,10 +442,7 @@ export type CreatePaymentIntentSavedCardData = AmountAndCurrency & {
 
 export type CreatePaymentIntentDirectDebitData = AmountAndCurrency & {
     Payment: {
-        Type: 'sepa_direct_debit';
-        Details: {
-            Email: string;
-        };
+        Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
     };
 };
 
@@ -477,6 +474,9 @@ export type BackendPaymentIntent = {
     CurrencyCode: Currency;
     Gateway: string;
     ReferenceID: string;
+    Details?: {
+        Email: string;
+    };
 };
 
 export type FetchPaymentIntentV5Response = {

@@ -9,7 +9,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import CountriesDropdown from '@proton/components/containers/payments/CountriesDropdown';
 import { extractIBAN } from '@proton/payments';
-import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { type ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
 import { ChargebeeIframe } from './ChargebeeIframe';
@@ -24,7 +24,7 @@ export interface DirectDebitProps extends ChargebeeWrapperProps {
 export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebitProps) => {
     const { validator } = formErrors ?? {};
 
-    const { email, company, firstName, lastName } = directDebit.customer;
+    const { company, firstName, lastName } = directDebit.customer;
     const iban = directDebit.bankAccount.iban;
     const electronicIban = electronicFormatIBAN(iban) ?? '';
 
@@ -56,47 +56,25 @@ export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebi
 
     return (
         <div>
-            <Label htmlFor="sepa-customer-email" className="field-two-label field-two-label-container flex pt-3">{c(
-                'Label'
-            ).t`Email`}</Label>
-            <InputFieldTwo
-                placeholder={c('Label').t`Email`}
-                value={email}
-                onValue={directDebit.setEmail}
-                id="sepa-customer-email"
-                disableChange={loading}
-                autoComplete="off"
-                name="sepa-customer-email"
-                error={validator?.([requiredValidator(email), emailValidator(email)])}
-                dense={true}
-                data-protonpass-ignore={true}
-            />
-
             {directDebit.customer.customerNameType === 'company' ? (
-                <>
-                    <Label htmlFor="company-name" className="field-two-label field-two-label-container flex pt-3">{c(
-                        'Label'
-                    ).t`Company name`}</Label>
-                    <InputFieldTwo
-                        placeholder={c('Label').t`Company name`}
-                        value={company}
-                        onValue={directDebit.setCompanyName}
-                        id="company-name"
-                        disableChange={loading}
-                        autoComplete="off"
-                        name="company-name"
-                        error={validator?.([requiredValidator(company)])}
-                        dense={true}
-                        data-protonpass-ignore={true}
-                    />
-                </>
+                <InputFieldTwo
+                    placeholder={c('Label').t`Company name`}
+                    value={company}
+                    onValue={directDebit.setCompanyName}
+                    id="company-name"
+                    disableChange={loading}
+                    autoComplete="off"
+                    name="company-name"
+                    error={validator?.([requiredValidator(company)])}
+                    dense={true}
+                    data-protonpass-ignore={true}
+                    label={c('Label').t`Company name`}
+                />
             ) : (
                 <div className="md:flex md:flew-row">
                     <div className="sm:w-full md:w-1/2 md:pr-1">
-                        <Label htmlFor="first-name" className="field-two-label field-two-label-container flex pt-3">{c(
-                            'Label'
-                        ).t`First name`}</Label>
                         <InputFieldTwo
+                            label={c('Label').t`First name`}
                             placeholder={c('Label').t`Thomas`}
                             value={firstName}
                             onValue={directDebit.setFirstName}
@@ -110,10 +88,8 @@ export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebi
                         />
                     </div>
                     <div className="sm:w-full md:w-1/2 md:pl-1">
-                        <Label htmlFor="last-name" className="field-two-label field-two-label-container flex pt-3">{c(
-                            'Label'
-                        ).t`Last name`}</Label>
                         <InputFieldTwo
+                            label={c('Label').t`Last name`}
                             placeholder={c('Label').t`Anderson`}
                             value={lastName}
                             onValue={directDebit.setLastName}
@@ -132,7 +108,7 @@ export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebi
                 color="weak"
                 shape="underline"
                 size="small"
-                className="text-sm color-weak"
+                className="text-sm color-weak mb-3"
                 onClick={() =>
                     directDebit.setCustomerNameType(
                         directDebit.customer.customerNameType === 'individual' ? 'company' : 'individual'
@@ -143,9 +119,8 @@ export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebi
                     ? c('Payment.Sepa.Action').t`Use company name`
                     : c('Payment.Sepa.Action').t`Use personal name`}
             </Button>
-            <Label htmlFor="iban" className="field-two-label field-two-label-container flex pt-3">{c('Label')
-                .t`IBAN`}</Label>
             <InputFieldTwo
+                label={c('Label').t`IBAN`}
                 placeholder={'XX00 0000 0000 0000 0000 00'}
                 value={iban}
                 onValue={(iban: string) => {
@@ -175,10 +150,10 @@ export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebi
                         data-testid="country"
                         id="country"
                         disabled={loading}
+                        className="mb-3"
                     />
-                    <Label htmlFor="address" className="field-two-label field-two-label-container flex pt-3">{c('Label')
-                        .t`Address`}</Label>
                     <InputFieldTwo
+                        label={c('Label').t`Address`}
                         placeholder={c('Label').t`Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva`}
                         value={directDebit.customer.addressLine1}
                         onValue={directDebit.setAddressLine1}
@@ -192,7 +167,10 @@ export const SepaDirectDebit = ({ directDebit, formErrors, ...rest }: DirectDebi
                         aria-describedby="address-decription"
                     />
                     <span id="address-decription" className="text-sm color-weak">
-                        {c('Payments.Sepa').t`Street address, postal code, and city`}
+                        {
+                            // translator: this is a note right below the address field in SEPA payment method. This note explains to the user which information should be provided in the text field.
+                            c('Payments.Sepa').t`Street address, postal code, and city`
+                        }
                     </span>
                 </>
             )}

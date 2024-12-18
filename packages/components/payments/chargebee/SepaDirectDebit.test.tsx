@@ -2,7 +2,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments';
 import { apiMock } from '@proton/testing';
-import { buildUser } from '@proton/testing/builders';
 
 import { useSepaDirectDebit } from '../react-extensions/useSepaDirectDebit';
 import { ChargebeeIframe } from './ChargebeeIframe';
@@ -33,7 +32,6 @@ const TestComponent = () => {
             },
             onChargeable: jest.fn(),
             selectedPlanName: PLANS.VPN2024,
-            user: buildUser(),
             onBeforeSepaPayment: jest.fn(),
         },
         {
@@ -83,7 +81,6 @@ describe('SepaDirectDebit', () => {
 
     it('renders SepaDirectDebit component', () => {
         render(<TestComponent />);
-        expect(screen.getByLabelText('Email')).toBeInTheDocument();
         expect(screen.getByLabelText('First name')).toBeInTheDocument();
         expect(screen.getByLabelText('Last name')).toBeInTheDocument();
         expect(screen.getByLabelText('IBAN')).toBeInTheDocument();
@@ -109,9 +106,6 @@ describe('SepaDirectDebit', () => {
     it('handles input changes', () => {
         render(<TestComponent />);
 
-        const emailInput = screen.getByLabelText('Email');
-        fireEvent.change(emailInput, { target: { value: 'newemail@example.com' } });
-
         const firstNameInput = screen.getByLabelText('First name');
         fireEvent.change(firstNameInput, { target: { value: 'Jane' } });
 
@@ -123,7 +117,6 @@ describe('SepaDirectDebit', () => {
 
         // We can't directly check if the hook methods were called because we're using the real hook.
         // Instead, we can check if the input values have changed.
-        expect(emailInput).toHaveValue('newemail@example.com');
         expect(firstNameInput).toHaveValue('Jane');
         expect(lastNameInput).toHaveValue('Smith');
         expect(ibanInput).toHaveValue('DE89370400440532013000');
