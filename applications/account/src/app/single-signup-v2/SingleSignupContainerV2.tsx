@@ -524,8 +524,10 @@ const SingleSignupContainerV2 = ({
 
             const paymentsApi = getPaymentsApi(silentApi, chargebeeEnabled?.result);
 
-            const { plans, freePlan } = await getPlans({ api: silentApi });
-            const paymentMethodStatus = await getPaymentStatus({ api: silentApi });
+            const [{ plans, freePlan }, paymentMethodStatus] = await Promise.all([
+                getPlans({ api: silentApi }),
+                getPaymentStatus({ api: silentApi }),
+            ]);
 
             const currency = getPreferredCurrency({
                 status: paymentMethodStatus,
