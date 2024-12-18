@@ -31,6 +31,7 @@ export interface ProcessedApiKey {
     flags: KEY_FLAG;
     publicKey: PublicKeyReference;
     source: API_KEY_SOURCE;
+    primary: 0 | 1;
 }
 
 export interface ApiKeysConfig {
@@ -68,6 +69,8 @@ export interface PublicKeyConfigs {
     apiKeysConfig: ApiKeysConfig;
     pinnedKeysConfig: PinnedKeysConfig;
     mailSettings: MailSettings;
+    /** whether to pick v6/PQC keys over v4 ones if available, for security; doing so may come with a performance hit. */
+    preferV6Keys: boolean;
 }
 
 export interface ContactPublicKeyModel {
@@ -86,6 +89,7 @@ export interface ContactPublicKeyModel {
     obsoleteFingerprints: Set<string>; // Keys that are not allowed to encrypt, because they are marked as obsolete.
     encryptionCapableFingerprints: Set<string>; // Keys that are capable of encryption (regardless of whether they are allowed to encrypt).
     compromisedFingerprints: Set<string>; // Keys that are not allowed to encrypt nor sign, because they are marked as compromised
+    primaryKeyFingerprints: Set<string>; // either one or two keys (one v4 and maybe one v6)
     isPGPExternal: boolean;
     isPGPInternal: boolean;
     isPGPExternalWithExternallyFetchedKeys: boolean; // Keys from e.g. WKD or keys.openpgp.org (KOO)
