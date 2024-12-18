@@ -3,6 +3,25 @@
 // overrides for mobile app settings, not meant to follow taxonomy (it's temporary)
 
 .mobile-settings {
+	--background-weak: rgb(244 245 248 / 1);
+	--interaction-norm: rgb(92 63 217 / 1);
+	--text-weak: rgb(152 155 162 / 1);
+	--interaction-weak-pressed: rgb(233 234 236 / 1);
+
+	// dark mode
+	.lite-layout--et-dark & {
+		--background-weak: rgb(30 30 43 / 1);
+		--text-weak: rgb(117 117 125 / 1);
+		--background-norm: rgb(43 43 56 / 1);
+		--text-norm: rgb(164 164 171 / 1);
+		--interaction-weak-pressed: rgb(80 80 91 / 1);
+		--interaction-norm: rgb(146 146 249 / 1);
+	}
+
+	.text-lg {
+		font-size: rem(17);
+	}
+
 	background-color: var(--background-weak);
 	padding: 1rem;
 	min-block-size: 100vh;
@@ -74,6 +93,7 @@
 			display: flex;
 			min-inline-size: 0;
 			padding-inline-end: 1em;
+			max-inline-size: 100%;
 		}
 
 		&-right {
@@ -250,6 +270,10 @@
 		&:last-child {
 			border-end-start-radius: var(--border-radius-xl);
 			border-end-end-radius: var(--border-radius-xl);
+		}
+
+		&:has(.mobile-settings-button:active) {
+			background: var(--interaction-weak-pressed);
 		}
 	}
 

@@ -21,7 +21,7 @@ const MobileSectionAction = ({ children, stackContent = false, onClick, coloredL
                     type="button"
                     onClick={onClick}
                     className={clsx([
-                        'text-no-decoration expand-click-area text-left',
+                        'text-no-decoration expand-click-area text-left mobile-settings-button',
                         !coloredLink && 'color-inherit',
                     ])}
                 >
