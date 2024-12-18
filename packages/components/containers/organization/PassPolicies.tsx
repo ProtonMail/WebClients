@@ -12,14 +12,17 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import type { OrganizationGetResponse } from '@proton/pass/types';
+import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import { BitField, type Maybe } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import GenericError from '../error/GenericError';
+import SubSettingsSection from '../layout/SubSettingsSection';
+import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm';
 
 const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
     {
@@ -39,6 +42,7 @@ const getPolicies = (): { setting: keyof OrganizationSettings; label: string; to
 const PassPolicies = () => {
     const { organization } = usePassBridge();
     const [loading, withLoading] = useLoading(true);
+    const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
 
     const policies = getPolicies();
@@ -60,14 +64,31 @@ const PassPolicies = () => {
     const handleToggle = async (checked: boolean, setting: keyof OrganizationSettings) => {
         touched.current = setting;
         const value = checked ? BitField.ACTIVE : BitField.DISABLED;
-        withLoading(organization.settings.set(setting, value).then(setOrganizationSettings)).catch(handleError);
+        withLoading(
+            organization.settings.set(setting, value).then((orgSettings) => {
+                setOrganizationSettings(orgSettings);
+                createNotification({ text: c('Info').t`Setting successfully saved` });
+            })
+        ).catch(handleError);
     };
 
     const handleLockChange = async (ttl: number) => {
         touched.current = 'ForceLockSeconds';
-        withLoading(organization.settings.set('ForceLockSeconds', ttl).then(setOrganizationSettings)).catch(
-            handleError
-        );
+        withLoading(
+            organization.settings.set('ForceLockSeconds', ttl).then((orgSettings) => {
+                setOrganizationSettings(orgSettings);
+                createNotification({ text: c('Info').t`Setting successfully saved` });
+            })
+        ).catch(handleError);
+    };
+
+    const handleSubmitPasswordGenerator = async (config: OrganizationUpdatePasswordPolicyRequest) => {
+        withLoading(
+            organization.settings.setPasswordGeneratorPolicy(config).then((orgSettings) => {
+                setOrganizationSettings(orgSettings);
+                createNotification({ text: c('Info').t`Password generator rules successfully saved` });
+            })
+        ).catch(handleError);
     };
 
     return (
@@ -78,41 +99,65 @@ const PassPolicies = () => {
                 </SettingsParagraph>
                 {organizationSettings && (
                     <>
-                        <ul className="unstyled relative">
+                        <div className="mb-10">
                             {policies.map(({ setting, label, tooltip }) => (
-                                <li key={setting} className="mb-4 flex items-center flex-nowrap gap-4">
-                                    <Toggle
-                                        checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
-                                        id={`${setting}-toggle`}
-                                        onChange={({ target }) => handleToggle(target.checked, setting)}
-                                        disabled={loading || !organizationSettings.CanUpdate}
-                                        loading={touched.current === setting && loading}
-                                    />
-                                    <label htmlFor={`${setting}-toggle`}>
-                                        <span className="mr-1">{label}</span>
-                                        {tooltip && <Info title={tooltip} />}
-                                    </label>
-                                </li>
+                                <SettingsLayout className="pb-4">
+                                    <SettingsLayoutLeft>
+                                        <label htmlFor={`${setting}-toggle`}>
+                                            <span className="text-semibold mr-1">{label}</span>
+                                            {tooltip && <Info title={tooltip} />}
+                                        </label>
+                                    </SettingsLayoutLeft>
+                                    <SettingsLayoutRight isToggleContainer>
+                                        <Toggle
+                                            checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
+                                            id={`${setting}-toggle`}
+                                            onChange={({ target }) => handleToggle(target.checked, setting)}
+                                            disabled={loading || !organizationSettings.CanUpdate}
+                                            loading={touched.current === setting && loading}
+                                        />
+                                    </SettingsLayoutRight>
+                                </SettingsLayout>
                             ))}
-                        </ul>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label className="text-semibold" htmlFor="pass-lock-select" id="label-pass-lock-select">
-                                    <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
-                                    <Info
-                                        title={c('Info')
-                                            .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
+                            <SettingsLayout className="pb-4">
+                                <SettingsLayoutLeft>
+                                    <label
+                                        className="text-semibold"
+                                        htmlFor="pass-lock-select"
+                                        id="label-pass-lock-select"
+                                    >
+                                        <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
+                                        />
+                                    </label>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight>
+                                    <PassLockSelector
+                                        value={organizationSettings?.Settings?.ForceLockSeconds}
+                                        disabled={loading || !organizationSettings.CanUpdate}
+                                        onChange={handleLockChange}
                                     />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight>
-                                <PassLockSelector
-                                    value={organizationSettings?.Settings?.ForceLockSeconds}
-                                    disabled={loading || !organizationSettings.CanUpdate}
-                                    onChange={handleLockChange}
-                                />
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        </div>
+
+                        <SubSettingsSection
+                            id="password-generator"
+                            title={c('Title').t`Password generator rules`}
+                            className="container-section-sticky-section"
+                        >
+                            <div className="color-weak mb-4">
+                                {c('Description')
+                                    .t`You can enforce the password rules that organization members will use when they generate a password in ${PASS_APP_NAME}.`}
+                            </div>
+                            <PasswordGeneratorPolicyForm
+                                config={organizationSettings.Settings.PasswordPolicy}
+                                onSubmit={handleSubmitPasswordGenerator}
+                                loading={loading}
+                            />
+                        </SubSettingsSection>
                     </>
                 )}
             </SettingsSection>
