@@ -15,7 +15,7 @@ export function usePublicLinksActions() {
     const { preventLeave } = usePreventLeave();
     const { request: publicDebouncedRequest, user } = usePublicSession();
     const { lockLinks, unlockLinks } = useLinksState();
-    const { getUploadToken } = useAnonymousUploadAuthStore();
+    const getUploadToken = useAnonymousUploadAuthStore((state) => state.getUploadToken);
 
     /**
      * withLinkLock is helper to lock provided `linkIds` before the action done
