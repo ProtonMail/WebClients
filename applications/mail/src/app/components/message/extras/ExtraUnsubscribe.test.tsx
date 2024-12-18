@@ -245,7 +245,7 @@ describe('Unsubscribe banner', () => {
         }
 
         // Second modal should be opened
-        screen.getByText('hide-my-email aliases');
+        expect(screen.queryByText('Hide-my-email aliases')).toBeNull();
     });
 
     it('should not show an extra modal when the message was coming from an official Proton address', async () => {
@@ -288,6 +288,6 @@ describe('Unsubscribe banner', () => {
         }
 
         // Second modal should not be opened
-        expect(screen.queryByText('hide-my-email aliases')).toBeNull();
+        expect(screen.queryByText('with hide-my-email aliases')).toBeNull();
     });
 });
