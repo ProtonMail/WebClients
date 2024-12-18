@@ -5,10 +5,10 @@ import AddCommentIcon from '../../Icons/AddCommentIcon'
 import ToolbarTooltip from '../../Toolbar/ToolbarTooltip'
 import { ShortcutLabel } from '../KeyboardShortcuts/ShortcutLabel'
 import SpeechBubblePenIcon from '../../Icons/SpeechBubblePenIcon'
-import { useApplication } from '../../ApplicationProvider'
 import { TOGGLE_SUGGESTION_MODE_COMMAND } from '../Suggestions/Commands'
 import clsx from '@proton/utils/clsx'
 import { useActiveBreakpoint } from '@proton/components'
+import { useEditorStateValues } from '../../Lib/useEditorStateValues'
 
 export function FloatingQuickActions({
   anchorKey,
@@ -19,7 +19,7 @@ export function FloatingQuickActions({
   editor: LexicalEditor
   onAddComment: () => void
 }): JSX.Element {
-  const { isSuggestionMode, isSuggestionsFeatureEnabled } = useApplication()
+  const { isSuggestionMode, suggestionsEnabled } = useEditorStateValues()
 
   const boxRef = useRef<HTMLDivElement>(null)
   const { viewportWidth } = useActiveBreakpoint()
@@ -82,7 +82,7 @@ export function FloatingQuickActions({
           <AddCommentIcon className="h-4 w-4 fill-current" />
         </button>
       </ToolbarTooltip>
-      {isSuggestionsFeatureEnabled && !isSuggestionMode && (
+      {suggestionsEnabled && !isSuggestionMode && (
         <>
           <hr className="min-h-px bg-[--border-weak]" />
           <ToolbarTooltip

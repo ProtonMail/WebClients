@@ -9,7 +9,7 @@ import { useYjsCollaboration } from './useYjsCollaboration'
 import { useYjsHistory } from './useYjsHistory'
 import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { useYjsFocusTracking } from './useYjsFocusTracking'
-import type { EditorLoadResult } from '../../EditorLoadResult'
+import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useScrollToUserCursorOnEvent } from './ScrollToUserCursorPlugin'
 
 type Props = {

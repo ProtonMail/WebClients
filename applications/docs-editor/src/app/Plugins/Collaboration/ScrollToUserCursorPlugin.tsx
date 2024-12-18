@@ -1,5 +1,5 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { useApplication } from '../../ApplicationProvider'
+import { useApplication } from '../../Containers/ApplicationProvider'
 import { useEffect } from 'react'
 import type { AbsolutePosition, RelativePosition } from 'yjs'
 import { createAbsolutePositionFromRelativePosition } from 'yjs'

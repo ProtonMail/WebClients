@@ -5,3 +5,5 @@
  */
 export const EDITOR_TAG_INFO_EVENT = 'docs-editor-tag-info'
 export const EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD = 'docs-editor-requires-reload'
+/** When the editor receives the tag event, it will either request a client reload, or confirm everything is good */
+export const EDITOR_CONFIRMS_VERSIONS_MATCH = 'docs-editor-confirms-versions-match'
