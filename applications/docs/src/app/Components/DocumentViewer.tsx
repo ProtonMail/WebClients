@@ -96,11 +96,8 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
   const { isSuggestionsEnabled } = useSuggestionsFeatureFlag()
   useEffect(() => {
-    if (!bridge) {
-      return
-    }
-    void bridge.editorInvoker.handleIsSuggestionsFeatureEnabled(isSuggestionsEnabled || isLocalEnvironment())
-  }, [bridge, isSuggestionsEnabled])
+    application.syncedEditorState.setProperty('suggestionsEnabled', isSuggestionsEnabled || isLocalEnvironment())
+  }, [application.syncedEditorState, isSuggestionsEnabled])
 
   useEffect(() => {
     if (action === 'download' && didLoadTitle && didLoadEditorContent && docOrchestrator) {
@@ -419,6 +416,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
           key="docs-editor-iframe"
           onFrameReady={onFrameReady}
           systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
+          logger={application.logger}
         />
       )}
 

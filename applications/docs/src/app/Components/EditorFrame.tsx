@@ -5,13 +5,16 @@ import {
   EDITOR_READY_POST_MESSAGE_EVENT,
   EDITOR_TAG_INFO_EVENT,
   EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
+  EDITOR_CONFIRMS_VERSIONS_MATCH,
 } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 type Props = {
   onFrameReady: (frame: HTMLIFrameElement) => void
   systemMode: EditorSystemMode
+  logger: LoggerInterface
 }
 
 function GetEditorUrl(systemMode: EditorSystemMode) {
@@ -31,7 +34,7 @@ function GetEditorUrl(systemMode: EditorSystemMode) {
  */
 const SANDBOX_OPTIONS = 'allow-scripts allow-same-origin allow-forms allow-downloads allow-modals'
 
-export function EditorFrame({ onFrameReady, systemMode }: Props) {
+export function EditorFrame({ onFrameReady, systemMode, logger }: Props) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
   /**
    * The URL cannot change once initially set, since reloading just the editor iframe is disallowed,
@@ -63,7 +66,19 @@ export function EditorFrame({ onFrameReady, systemMode }: Props) {
     iframe.contentWindow?.focus()
   }, [iframe, onFrameReady])
 
+  const handleContentWindowReady = useCallback((contentWindow: Window) => {
+    contentWindow.postMessage(
+      {
+        type: EDITOR_TAG_INFO_EVENT,
+        versionCookieAtLoad,
+      },
+      BridgeOriginProvider.GetEditorOrigin(),
+    )
+  }, [])
+
   useEffect(() => {
+    let pollTimeoutId: ReturnType<typeof setTimeout> | null = null
+
     const eventListener = (event: MessageEvent) => {
       if (!iframe) {
         return
@@ -74,20 +89,44 @@ export function EditorFrame({ onFrameReady, systemMode }: Props) {
       }
 
       if (event.data === EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD) {
+        logger.info('Editor requested client reload')
         window.location.reload()
         return
       }
 
-      if (event.data === EDITOR_READY_POST_MESSAGE_EVENT) {
+      if (event.data === EDITOR_CONFIRMS_VERSIONS_MATCH) {
+        logger.info('Editor confirms versions match')
         onReady()
+        return
+      }
 
-        iframe.contentWindow?.postMessage(
-          {
-            type: EDITOR_TAG_INFO_EVENT,
-            versionCookieAtLoad,
-          },
-          BridgeOriginProvider.GetEditorOrigin(),
-        )
+      if (event.data === EDITOR_READY_POST_MESSAGE_EVENT) {
+        logger.info('Editor ready event received')
+
+        /**
+         * In Sentry we see instances where the editor ready event is received, but contentWindow is still null.
+         * Given that we cannot communicate with the editor at all until contentWindow is ready, we poll until it is ready.
+         */
+        const MAX_POLLING_TIME = 10_000 // 10 seconds
+        const startTime = Date.now()
+
+        const pollForContentWindow = () => {
+          if (!iframe.contentWindow) {
+            if (Date.now() - startTime > MAX_POLLING_TIME) {
+              logger.error(`${systemMode} editor contentWindow not available after 10 seconds of polling; restarting`)
+              window.location.reload()
+              return
+            }
+
+            logger.warn(`${systemMode} editor contentWindow not ready, polling...`)
+            pollTimeoutId = setTimeout(pollForContentWindow, 10)
+            return
+          }
+
+          handleContentWindowReady(iframe.contentWindow)
+        }
+
+        pollForContentWindow()
       }
 
       if (event.data === EDITOR_IFRAME_FOCUS_EVENT) {
@@ -99,8 +138,11 @@ export function EditorFrame({ onFrameReady, systemMode }: Props) {
 
     return () => {
       window.removeEventListener('message', eventListener)
+      if (pollTimeoutId) {
+        clearTimeout(pollTimeoutId)
+      }
     }
-  }, [iframe, onReady])
+  }, [iframe, logger, onReady, handleContentWindowReady, systemMode])
 
   return (
     <iframe

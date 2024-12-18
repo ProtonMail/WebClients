@@ -2,7 +2,7 @@ import { ErrorBoundary } from '@proton/components'
 import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared'
 import '@proton/polyfill'
 import { createRoot } from 'react-dom/client'
-import { App } from './App'
+import { RootContainer } from './Containers/RootContainer'
 import './style'
 import { reportErrorToSentry } from './Utils/errorMessage'
 import type { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
@@ -24,7 +24,7 @@ root.render(
       reportErrorToSentry(error)
     }}
   >
-    <App systemMode={systemMode as EditorSystemMode} />
+    <RootContainer systemMode={systemMode as EditorSystemMode} />
   </ErrorBoundary>,
 )
 

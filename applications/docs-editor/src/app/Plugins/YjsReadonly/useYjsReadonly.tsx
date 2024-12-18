@@ -7,7 +7,7 @@ import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
 
 import { TranslatedResult } from '@proton/docs-shared'
-import type { EditorLoadResult } from '../../EditorLoadResult'
+import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import type { LoggerInterface } from '@proton/utils/logs'
 
 /**

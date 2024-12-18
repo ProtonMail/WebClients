@@ -15,7 +15,7 @@ import { UndoManager } from 'yjs'
 
 import { TranslatedResult, type EditorInitializationConfig } from '@proton/docs-shared'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
-import type { EditorLoadResult } from '../../EditorLoadResult'
+import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 
 /**
  * Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx

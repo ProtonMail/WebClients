@@ -1,5 +1,5 @@
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
-import { useApplication } from '../ApplicationProvider'
+import { useApplication } from '../Containers/ApplicationProvider'
 import { useCallback, useEffect, useState } from 'react'
 import { AnonymousUserDisplayName } from '@proton/docs-shared'
 
