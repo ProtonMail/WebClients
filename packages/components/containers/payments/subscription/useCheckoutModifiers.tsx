@@ -9,9 +9,9 @@ import type { Model } from './SubscriptionContainer';
 
 export interface CheckoutModifiers {
     isProration: boolean;
-    isScheduledSubscription: boolean;
+    isScheduledChargedImmediately: boolean;
     isCustomBilling: boolean;
-    isAddonDowngrade: boolean;
+    isScheduledChargedLater: boolean;
 }
 
 export const useCheckoutModifiers = (
@@ -55,31 +55,32 @@ export const useCheckoutModifiers = (
     if (checkResult?.SubscriptionMode !== undefined) {
         return {
             isProration: checkResult.SubscriptionMode === SubscriptionMode.Regular,
-            isScheduledSubscription: checkResult.SubscriptionMode === SubscriptionMode.Upcoming,
+            isScheduledChargedImmediately:
+                checkResult.SubscriptionMode === SubscriptionMode.ScheduledChargedImmediately,
             isCustomBilling: checkResult.SubscriptionMode === SubscriptionMode.CustomBillings,
-            isAddonDowngrade: checkResult.SubscriptionMode === SubscriptionMode.AddonDowngrade,
+            isScheduledChargedLater: checkResult.SubscriptionMode === SubscriptionMode.ScheduledChargedLater,
         };
     }
 
     if (checkResult?.optimistic) {
         return {
             isProration: false,
-            isScheduledSubscription: false,
+            isScheduledChargedImmediately: false,
             isCustomBilling: false,
-            isAddonDowngrade: false,
+            isScheduledChargedLater: false,
         };
     }
 
     const isCustomBilling =
         checkResult && checkResult.UnusedCredit !== undefined ? checkResult.UnusedCredit !== 0 : false;
 
-    const isScheduledSubscription = !isProration && !isCustomBilling;
+    const isScheduledChargedImmediately = !isProration && !isCustomBilling;
 
     // fallback. It will be removed after CB migration is done.
     return {
         isProration,
-        isScheduledSubscription,
+        isScheduledChargedImmediately,
         isCustomBilling,
-        isAddonDowngrade: false,
+        isScheduledChargedLater: false,
     };
 };
