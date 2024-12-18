@@ -1,4 +1,4 @@
-import type { PaymentProcessor } from '@proton/payments';
+import type { PAYMENT_METHOD_TYPES, PaymentProcessor } from '@proton/payments';
 
 export type PaymentProcessorType =
     | 'paypal'
@@ -11,7 +11,7 @@ export type PaymentProcessorType =
     | 'saved-chargebee'
     | 'bitcoin'
     | 'chargebee-bitcoin'
-    | 'sepa_direct_debit';
+    | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
 
 export function getSystemByHookType(
     type: PaymentProcessorType | 'n/a' | undefined

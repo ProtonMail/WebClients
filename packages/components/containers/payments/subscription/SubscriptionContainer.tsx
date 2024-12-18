@@ -38,6 +38,7 @@ import {
     isFreeSubscription,
     isOnSessionMigration,
 } from '@proton/payments';
+import { DisplayablePaymentError } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { ProrationMode, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -832,6 +833,12 @@ const SubscriptionContainer = ({
                 });
                 await processor.processPaymentToken();
             } catch (e) {
+                let tokenDidntHaveEmail = false;
+                if (e instanceof DisplayablePaymentError) {
+                    createNotification({ text: e.message, type: 'error' });
+                    tokenDidntHaveEmail = true;
+                }
+
                 const error = getSentryError(e);
                 if (error) {
                     const context = {
@@ -848,6 +855,7 @@ const SubscriptionContainer = ({
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
                         chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
+                        tokenDidntHaveEmail,
                     };
                     captureMessage('Payments: failed to handle subscription', {
                         level: 'error',
