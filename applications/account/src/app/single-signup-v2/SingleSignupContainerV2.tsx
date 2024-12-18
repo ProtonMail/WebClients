@@ -26,15 +26,8 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { FullPlansMap, PaymentMethodFlows, PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
-import {
-    type Currency,
-    DEFAULT_CURRENCY,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    getPlansMap,
-} from '@proton/payments';
+import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
+import { type Currency, DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -52,18 +45,16 @@ import { resumeSession } from '@proton/shared/lib/authentication/persistedSessio
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, CYCLE, SSO_PATHS } from '@proton/shared/lib/constants';
-import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Api, Cycle } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
-import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { formatUser } from '@proton/shared/lib/user/helpers';
-import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
+import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { useFlag, useFlagsReady } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -92,18 +83,20 @@ import type { Step1Rref } from './Step1';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import SwitchModal from './SwitchModal';
+import { defaultSignupModel } from './constants';
 import { cachedPlans, cachedPlansMap } from './defaultPlans';
 import {
     getAccessiblePlans,
     getFreeSubscriptionData,
     getIsProductB2BPlan,
+    getOptimisticPlanCardSubscriptionData,
     getPlanCardSubscriptionData,
     getRelativeUpsellPrice,
     getSessionDataFromSignup,
     getUserInfo,
 } from './helper';
 import type { PlanParameters, SignupModelV2, SignupParameters2, Upsell } from './interface';
-import { SignupMode, Steps, UpsellTypes } from './interface';
+import { SignupMode, Steps } from './interface';
 import type { TelemetryMeasurementData } from './measure';
 import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryData } from './measure';
 import AccessModal from './modals/AccessModal';
@@ -117,71 +110,6 @@ import { getSignupParameters } from './signupParameters';
 const getRecoveryKit = async () => {
     // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
     return import(/* webpackChunkName: "recovery-kit" */ '@proton/recovery-kit');
-};
-
-const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
-    return {
-        skipUpsell: false,
-        currency: DEFAULT_CURRENCY,
-        cycle,
-        planIDs: {},
-        checkResult: getFreeCheckResult(),
-        billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
-    };
-};
-
-const subscriptionDataCycleMapping = {
-    [PLANS.FREE]: {
-        [CYCLE.MONTHLY]: getDefaultSubscriptionData(CYCLE.MONTHLY),
-        [CYCLE.YEARLY]: getDefaultSubscriptionData(CYCLE.YEARLY),
-        [CYCLE.TWO_YEARS]: getDefaultSubscriptionData(CYCLE.TWO_YEARS),
-        [CYCLE.FIFTEEN]: getDefaultSubscriptionData(CYCLE.FIFTEEN),
-        [CYCLE.THIRTY]: getDefaultSubscriptionData(CYCLE.THIRTY),
-    },
-};
-
-export const defaultUpsell: Upsell = {
-    mode: UpsellTypes.PLANS,
-    currentPlan: undefined,
-    unlockPlan: undefined,
-    plan: undefined,
-    subscriptionOptions: {},
-};
-export const defaultSignupModel: SignupModelV2 = {
-    session: undefined,
-    domains: [],
-    subscriptionData: subscriptionDataCycleMapping[PLANS.FREE][CYCLE.YEARLY],
-    subscriptionDataCycleMapping,
-    subscriptionDataCycleMappingByCurrency: [],
-    paymentMethodStatusExtended: {
-        VendorStates: {
-            Card: false,
-            Paypal: false,
-            Apple: false,
-            Cash: false,
-            Bitcoin: false,
-        },
-        CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
-        State: DEFAULT_TAX_BILLING_ADDRESS.State,
-    },
-    humanVerificationMethods: [],
-    humanVerificationToken: '',
-    selectedProductPlans: {
-        [Audience.B2C]: PLANS.MAIL,
-        [Audience.B2B]: PLANS.MAIL_PRO,
-        [Audience.FAMILY]: PLANS.FAMILY,
-    },
-    freePlan: FREE_PLAN,
-    upsell: defaultUpsell,
-    inviteData: undefined,
-    plans: [],
-    plansMap: {},
-    referralData: undefined,
-    step: Steps.Account,
-    cache: undefined,
-    optimistic: {},
-    vpnServersCountData: defaultVPNServersCountData,
-    loadingDependencies: true,
 };
 
 interface Props {
@@ -300,35 +228,21 @@ const SingleSignupContainerV2 = ({
         const planParameters = getPlanIDsFromParams(plans, 'CHF', signupParameters, signupConfiguration.defaults);
         const planIDs = planParameters.planIDs;
 
-        const subscriptionData: SubscriptionData = {
+        const billingAddress = {
+            CountryCode: '',
+            State: '',
+        };
+
+        const subscriptionData = getOptimisticPlanCardSubscriptionData({
             currency,
             cycle,
             planIDs,
-            billingAddress: {
-                CountryCode: '',
-                State: '',
-            },
-            checkResult: {
-                ...getOptimisticCheckResult({ planIDs, plansMap, cycle, currency }),
-                Currency: currency,
-                PeriodEnd: 0,
-            },
-        };
-
-        // If there's no sessions available, we optimistically enable Card and Paypal payment methods to true. This
-        // speeds up the chargebee iframe loading
-        const paymentMethodStatusExtended: PaymentMethodStatusExtended = {
-            ...defaultSignupModel.paymentMethodStatusExtended,
-            VendorStates: {
-                ...defaultSignupModel.paymentMethodStatusExtended.VendorStates,
-                Card: true,
-                Paypal: true,
-            },
-        };
+            plansMap,
+            billingAddress,
+        });
 
         return {
             ...defaultSignupModel,
-            paymentMethodStatusExtended: paymentMethodStatusExtended,
             domains: getOptimisticDomains(),
             plans,
             plansMap,

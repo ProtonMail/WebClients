@@ -1,24 +1,21 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import { Price } from '@proton/components';
-import { type Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     label: string;
     numberOfItems: number;
-    currency: Currency;
-    price: number;
+    price: ReactNode;
     subline?: ReactNode;
 }
 
-const AddonSummary = ({ label, numberOfItems, currency, price, subline, className, ...rest }: Props) => {
+const AddonSummary = ({ label, numberOfItems, price, subline, className, ...rest }: Props) => {
     return (
         <div className={clsx('flex', className)} {...rest}>
             <span className="flex-1">{label}</span>
             <div>
                 <div>
-                    {numberOfItems} x <Price currency={currency}>{price}</Price>
+                    {numberOfItems} x {price}
                 </div>
                 {subline !== undefined && <div className="color-weak text-right text-sm">{subline}</div>}
             </div>

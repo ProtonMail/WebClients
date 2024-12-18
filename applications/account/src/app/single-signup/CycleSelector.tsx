@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PassLogo, Radio } from '@proton/components';
+import { PassLogo, Radio, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { PLANS, type PlanIDs } from '@proton/payments';
@@ -49,6 +49,7 @@ export const getBilledText = (cycle: CYCLE): string | null => {
 const getSaveLabel = (percentage: string) => c('Info').t`Save ${percentage}`;
 
 const CycleItemView = ({
+    loading,
     cycle,
     currency,
     text,
@@ -66,6 +67,7 @@ const CycleItemView = ({
     extra,
     bg,
 }: {
+    loading: boolean;
     cycle: CYCLE;
     currency: Currency;
     orderGroup: number;
@@ -131,29 +133,46 @@ const CycleItemView = ({
 
                         <div className="pt-4">
                             {discountPercentage > 0 && (
-                                <div className="flex gap-1">
-                                    <span className="text-strike color-hint">
-                                        {getSimplePriceString(currency, totalWithoutPerMonth)}
-                                    </span>
-                                    <SaveLabel2
-                                        highlightPrice
-                                        id={`${cycle}-save`}
-                                        className={clsx('text-bold text-uppercase')}
-                                    >
-                                        {getSaveLabel(`${discountPercentage}%`)}
-                                    </SaveLabel2>
-                                </div>
+                                <>
+                                    {loading ? (
+                                        <div className="flex">
+                                            <SkeletonLoader
+                                                width="10em"
+                                                className="h-custom"
+                                                style={{ '--h-custom': '1.5em' }}
+                                                index={1}
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className="flex gap-1">
+                                            <span className="text-strike color-hint">
+                                                {getSimplePriceString(currency, totalWithoutPerMonth)}
+                                            </span>
+                                            <SaveLabel2
+                                                highlightPrice
+                                                id={`${cycle}-save`}
+                                                className={clsx('text-bold text-uppercase')}
+                                            >
+                                                {getSaveLabel(`${discountPercentage}%`)}
+                                            </SaveLabel2>
+                                        </div>
+                                    )}
+                                </>
                             )}
 
                             <div id={`${cycle}-price`}>
-                                <span className={clsx(highlightPrice && 'color-primary', 'text-bold h2')}>
-                                    {getSimplePriceString(currency, totalPerMonth)}
+                                <span className={clsx(!loading && highlightPrice && 'color-primary', 'text-bold h2')}>
+                                    {loading ? (
+                                        <SkeletonLoader width="4em" index={1} />
+                                    ) : (
+                                        getSimplePriceString(currency, totalPerMonth)
+                                    )}
                                 </span>
                             </div>
 
                             <div className="text-sm">
-                                <div className="color-weak" id={`${cycle}-billed`}>
-                                    {billedText}
+                                <div className={clsx('color-weak')} id={`${cycle}-billed`}>
+                                    {loading ? <SkeletonLoader width="12em" index={2} /> : billedText}
                                 </div>
                             </div>
                         </div>
@@ -162,12 +181,13 @@ const CycleItemView = ({
                     {cta && selected && <div className="mt-4">{cta}</div>}
                 </div>
             </div>
-            {selected && upsell && !bg && <div className="mt-2">{upsell}</div>}
+            {selected && upsell && !bg && <div className={clsx('mt-2', loading && 'visibility-hidden')}>{upsell}</div>}
         </div>
     );
 };
 
 const CycleSelector = ({
+    loading,
     mode,
     cycle,
     cycles,
@@ -177,6 +197,7 @@ const CycleSelector = ({
     bg,
     upsell,
 }: {
+    loading: boolean;
     onGetTheDeal: (data: { cycle: CYCLE; planIDs: PlanIDs }) => void;
     cycle: CYCLE;
     mode: 'vpn-pass-promotion' | 'signup' | 'pricing';
@@ -211,6 +232,7 @@ const CycleSelector = ({
 
                 return (
                     <CycleItemView
+                        loading={loading}
                         bg={bg}
                         cycle={cycleItem}
                         orderGroup={orderGroup}

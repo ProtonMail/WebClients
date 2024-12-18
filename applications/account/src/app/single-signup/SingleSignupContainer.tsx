@@ -19,7 +19,6 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { type BillingAddress, CURRENCIES, type Currency, PLANS, getPlansMap, isMainCurrency } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -42,6 +41,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
+import { getOptimisticDomains } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
@@ -53,7 +53,13 @@ import {
     handleSetupUser,
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import { defaultSignupModel } from '../single-signup-v2/constants';
+import { cachedPlans, cachedPlansMap } from '../single-signup-v2/defaultPlans';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
+import {
+    getOptimisticPlanCardSubscriptionData,
+    getOptimisticPlanCardsSubscriptionData,
+} from '../single-signup-v2/helper';
 import { getPlanCardSubscriptionData, getSubscriptionData, swapCurrency } from '../single-signup-v2/helper';
 import type { SignupDefaults, SubscriptionDataCycleMappingByCurrency } from '../single-signup-v2/interface';
 import { Steps } from '../single-signup-v2/interface';
@@ -68,9 +74,9 @@ import Step4 from './Step4';
 import { pushConvertGoal } from './convert';
 import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
-import type { VPNSignupModel } from './interface';
+import type { VPNSignupMode, VPNSignupModel } from './interface';
 import type { TelemetryMeasurementData } from './measure';
-import { defaultVPNSignupModel, getCycleData } from './state';
+import { getCycleData } from './state';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 
 interface Props {
@@ -93,7 +99,27 @@ interface CheckPlansArgs {
     billingAddress?: BillingAddress;
 }
 
-const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLogin, productParam }: Props) => {
+const vpnPlanName = PLANS.VPN2024;
+
+const getSearchParams = () => {
+    return new URLSearchParams(window.location.search);
+};
+
+const getSignupMode = (coupon: string | undefined, currency: Currency | undefined): VPNSignupMode => {
+    const searchParams = getSearchParams();
+
+    if (searchParams?.get('plan') && (searchParams?.get('cycle') || searchParams?.get('billing'))) {
+        return 'signup' as const;
+    }
+
+    if (getIsVPNPassPromotion(coupon, currency)) {
+        return 'vpn-pass-promotion' as const;
+    }
+
+    return 'pricing' as const;
+};
+
+const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, onLogin, productParam }: Props) => {
     const ktActivation = useKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -114,26 +140,6 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
 
     useMetaTags(metaTags);
 
-    const [loadingDependencies, withLoadingDependencies] = useLoading(true);
-
-    const getSearchParams = () => {
-        return new URLSearchParams(location.search);
-    };
-
-    const getSignupMode = (coupon: string | undefined, currency: Currency | undefined) => {
-        const searchParams = getSearchParams();
-
-        if (searchParams?.get('plan') && (searchParams?.get('cycle') || searchParams?.get('billing'))) {
-            return 'signup' as const;
-        }
-
-        if (getIsVPNPassPromotion(coupon, currency)) {
-            return 'vpn-pass-promotion' as const;
-        }
-
-        return 'pricing' as const;
-    };
-
     const [signupParameters, setSignupParameters] = useState(() => {
         const result = getSignupSearchParams(location.pathname, getSearchParams());
 
@@ -150,13 +156,73 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             delete result.preSelectedPlan;
         }
 
-        return { ...result, mode: 'signup' as ReturnType<typeof getSignupMode> };
+        return result;
     });
 
+    const [model, setModel] = useState<VPNSignupModel>(() => {
+        // Add free plan
+        const plans = cachedPlans;
+        const plansMap = cachedPlansMap;
+        const currency = 'CHF';
+
+        const cycleData = getCycleData({
+            plan: vpnPlanName,
+            currency,
+        });
+
+        const defaults: SignupDefaults = {
+            plan: vpnPlanName,
+            cycle: cycleData.upsellCycle,
+        };
+        const cycle = signupParameters.cycle || defaults.cycle;
+        const planParameters = getPlanIDsFromParams(plans, currency, signupParameters, defaults) || {};
+        const planIDs = planParameters.planIDs;
+        const billingAddress = {
+            CountryCode: '',
+            State: '',
+        };
+
+        const mode = getSignupMode(signupParameters.coupon, currency);
+
+        const subscriptionData = getOptimisticPlanCardSubscriptionData({
+            currency,
+            cycle,
+            planIDs,
+            plansMap,
+            billingAddress,
+        });
+        const subscriptionDataCycleMapping = getOptimisticPlanCardsSubscriptionData({
+            plansMap,
+            planIDs: [planIDs, { [vpnPlanName]: 1 }, { [PLANS.VPN_PASS_BUNDLE]: 1 }],
+            cycles: unique([cycle, ...cycleData.cycles]),
+            billingAddress,
+        });
+
+        return {
+            ...defaultSignupModel,
+            cycleData,
+            planParameters,
+            subscriptionData,
+            subscriptionDataCycleMapping,
+            domains: getOptimisticDomains(),
+            signupType: 'default',
+            plansMap,
+            plans,
+            mode,
+        };
+    });
+
+    const setModelDiff = (diff: Partial<VPNSignupModel>) => {
+        return setModel((model) => ({
+            ...model,
+            ...diff,
+        }));
+    };
+
     const setMode = (mode: ReturnType<typeof getSignupMode>) => {
+        setModelDiff({ mode });
         setSignupParameters((params) => ({
             ...params,
-            mode,
             hideFreePlan: params.hideFreePlan || mode === 'vpn-pass-promotion',
         }));
     };
@@ -173,24 +239,15 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             event: data.event,
             dimensions: {
                 ...data.dimensions,
-                flow: signupParameters.mode === 'signup' ? 'vpn_signup_2step' : 'vpn_signup_3step',
+                flow: model.mode === 'signup' ? 'vpn_signup_2step' : 'vpn_signup_3step',
             },
             values,
         }).catch(noop);
     };
 
-    const [model, setModel] = useState<VPNSignupModel>(defaultVPNSignupModel);
-
-    const setModelDiff = (diff: Partial<VPNSignupModel>) => {
-        return setModel((model) => ({
-            ...model,
-            ...diff,
-        }));
-    };
-
     const vpnServersCountData = model.vpnServersCountData;
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
-    const upsellShortPlan = getUpsellShortPlan(model.plansMap[PLANS.VPN], vpnServersCountData);
+    const upsellShortPlan = getUpsellShortPlan(model.plansMap[vpnPlanName], vpnServersCountData);
 
     const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
     const background = (() => {
@@ -210,8 +267,6 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
         billingAddress: maybeBillingAddress,
         withModel = false,
     }: CheckPlansArgs) => {
-        const vpnPlanName = PLANS.VPN2024;
-
         let coupon = withModel ? model.subscriptionData.checkResult.Coupon?.Code : signupParameters.coupon;
 
         const cycleData = getCycleData({
@@ -397,12 +452,11 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, { plans, freePlan }] = await Promise.all([
+            const [{ Domains: domains }, { plans, freePlan }, paymentMethodStatusExtended] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 getPlans({ api: silentApi }),
+                getPaymentStatus({ api: silentApi }),
             ]);
-
-            const paymentMethodStatusExtended = await getPaymentStatus({ api: silentApi });
 
             void measure({
                 event: TelemetryAccountSignupEvents.pageLoad,
@@ -421,7 +475,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
             });
 
             const mode = getSignupMode(signupParameters.coupon, preferredCurrency);
-            setMode(mode);
+            setModelDiff({ mode });
 
             const {
                 plansMap,
@@ -452,27 +506,26 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
                 subscriptionDataCycleMappingByCurrency: updatedSubscriptionDataCycleMappingByCurrency,
                 cycleData,
                 signupType: getSignupType(selectedPlan, subscriptionData, coupon),
+                loadingDependencies: false,
             });
         };
 
-        void withLoadingDependencies(
-            fetchDependencies()
-                .then(() => {
+        fetchDependencies()
+            .then(() => {
+                metrics.core_vpn_single_signup_fetchDependencies_2_total.increment({
+                    status: 'success',
+                    flow: getIsVpnB2BPlan(signupParameters.preSelectedPlan as PLANS) ? 'b2b' : 'b2c',
+                });
+            })
+            .catch((error) => {
+                observeApiError(error, (status) =>
                     metrics.core_vpn_single_signup_fetchDependencies_2_total.increment({
-                        status: 'success',
+                        status,
                         flow: getIsVpnB2BPlan(signupParameters.preSelectedPlan as PLANS) ? 'b2b' : 'b2c',
-                    });
-                })
-                .catch((error) => {
-                    observeApiError(error, (status) =>
-                        metrics.core_vpn_single_signup_fetchDependencies_2_total.increment({
-                            status,
-                            flow: getIsVpnB2BPlan(signupParameters.preSelectedPlan as PLANS) ? 'b2b' : 'b2c',
-                        })
-                    );
-                    setError(error);
-                })
-        );
+                    })
+                );
+                setError(error);
+            });
     }, []);
 
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
@@ -556,28 +609,22 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLo
         await onLogin(session);
     };
 
-    const loading = loadingDependencies;
-
     return (
         <>
             <link rel="prefetch" href={onboardingVPNWelcome} as="image" />
             <link rel="prefetch" href={onboardingVPNWelcome2} as="image" />
             <link rel="prefetch" href={vpnUpsellIllustration} as="image" />
-            {loading && <>{loader}</>}
             <UnAuthenticated>
                 {model.step === Steps.Account && (
                     <Step1
                         activeBreakpoint={activeBreakpoint}
-                        mode={signupParameters.mode}
+                        mode={model.mode}
                         defaultEmail={signupParameters.email}
-                        className={loading ? 'visibility-hidden' : undefined}
-                        loading={loading}
                         selectedPlan={selectedPlan}
                         cycleData={model.cycleData}
                         isVpn2024Deal={model.signupType === 'vpn2024'}
                         isB2bPlan={isB2bPlan}
                         background={background}
-                        vpnServersCountData={vpnServersCountData}
                         upsellShortPlan={upsellShortPlan}
                         model={model}
                         setModel={setModel}
