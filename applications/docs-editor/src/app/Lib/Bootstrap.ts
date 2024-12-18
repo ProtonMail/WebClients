@@ -2,7 +2,7 @@ import * as bootstrap from '@proton/account/bootstrap'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 
-import locales from './locales'
+import locales from '../locales'
 
 export const bootstrapEditorApp = async ({ config }: { config: ProtonConfig }) => {
   setTtagLocales(locales)
