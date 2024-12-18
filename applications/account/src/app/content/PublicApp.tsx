@@ -172,7 +172,8 @@ const initialSessionsLength = getPersistedSessions().length;
 const initialSessionsLengthBool = Boolean(getPersistedSessions().length);
 
 const BasePublicApp = () => {
-    const api = useApi();
+    const normalApi = useApi();
+    const silentApi = getSilentApi(normalApi);
     const history = useHistory();
     const authentication = useAuthentication();
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
@@ -241,7 +242,7 @@ const BasePublicApp = () => {
 
     const handleLogin: OnLoginCallback = async (session) => {
         const result = await getLoginResult({
-            api,
+            api: silentApi,
             session,
             localRedirect: maybeLocalRedirect,
             initialSearchParams,
@@ -254,7 +255,7 @@ const BasePublicApp = () => {
 
     const handleProduceFork = async (data: ProduceForkData, session: AuthSession): Promise<OnLoginCallbackResult> => {
         const result = await getProduceForkLoginResult({
-            api,
+            api: silentApi,
             session,
             data,
             paths,
@@ -268,7 +269,7 @@ const BasePublicApp = () => {
 
     const handleGetActiveSessions = async () => {
         const result = await getActiveSessions({
-            api: getSilentApi(api),
+            api: silentApi,
             localID: getLocalIDForkSearchParameter(initialSearchParams),
             email: getEmailSessionForkSearchParameter(initialSearchParams),
         });
@@ -292,7 +293,7 @@ const BasePublicApp = () => {
             productParam,
         });
         const result = await getActiveSessionLoginResult({
-            api,
+            api: silentApi,
             sessionsResult,
             forkState: newForkState,
             localRedirect: maybeLocalRedirect,
@@ -345,7 +346,7 @@ const BasePublicApp = () => {
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
                     <AccountEffect
                         onEffect={async () => {
-                            const result = await handleOAuthFork({ api });
+                            const result = await handleOAuthFork({ api: silentApi });
                             if (result.type === 'invalid') {
                                 handleInvalidFork();
                                 return;
@@ -364,7 +365,7 @@ const BasePublicApp = () => {
                 <Route path={SSO_PATHS.AUTHORIZE}>
                     <AccountEffect
                         onEffect={async () => {
-                            const result = await handleProtonFork({ api });
+                            const result = await handleProtonFork({ api: silentApi });
                             if (result.type === 'invalid') {
                                 handleInvalidFork();
                                 return;
@@ -677,7 +678,7 @@ const BasePublicApp = () => {
                                                                         throw new Error('Missing state');
                                                                     }
                                                                     const url = await produceOAuthFork({
-                                                                        api,
+                                                                        api: normalApi,
                                                                         oauthData:
                                                                             locationState.payload.data.payload
                                                                                 .oauthData,
