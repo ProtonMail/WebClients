@@ -18,7 +18,7 @@ import type { CommentMarkNodeChangeData, CommentThreadInterface } from '@proton/
 import { CommentThreadState, CommentsEvent } from '@proton/docs-shared'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { useApplication } from '../../ApplicationProvider'
+import { useApplication } from '../../Containers/ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'

@@ -13,6 +13,7 @@ import {
   DOCS_EDITOR_DEBUG_KEY,
   EDITOR_TAG_INFO_EVENT,
   EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
+  EDITOR_CONFIRMS_VERSIONS_MATCH,
 } from '@proton/docs-shared'
 
 import { ClientInvoker } from './ClientInvoker'
@@ -35,6 +36,8 @@ export class EditorToClientBridge {
         if (tag && tag !== versionCookieAtLoad) {
           updateVersionCookie(tag, undefined)
           this.clientFrame.postMessage(EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD, BridgeOriginProvider.GetClientOrigin())
+        } else {
+          this.clientFrame.postMessage(EDITOR_CONFIRMS_VERSIONS_MATCH, BridgeOriginProvider.GetClientOrigin())
         }
         return
       }
@@ -65,7 +68,7 @@ export class EditorToClientBridge {
     message: ClientToEditorInvokationMessage<keyof ClientRequiresEditorMethods>,
   ) {
     if (!this.requestHandler) {
-      throw new Error(`Request handler not set; attempting to invoke ${message.functionName}`)
+      throw new Error(`Editor request handler not set; attempting to invoke editor method ${message.functionName}`)
     }
 
     const funcInstance = this.requestHandler[message.functionName]

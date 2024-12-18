@@ -1,5 +1,5 @@
 import { useCallback, useId, useMemo, useRef, useState } from 'react'
-import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
+import { EditorToClientBridge } from '../Bridge/EditorToClientBridge'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { DocState } from '@proton/docs-shared/lib/Doc/DocState'
 import type { RtsMessagePayload } from '@proton/docs-shared/lib/Doc/RtsMessagePayload'
@@ -11,7 +11,8 @@ import type { YDocMap } from '@proton/docs-shared/lib/YDocMap'
 import type { Doc as YDoc } from 'yjs'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import type { EditorInitializationConfig } from '@proton/docs-shared/lib/EditorInitializationConfig'
-import { reportErrorToSentry } from './Utils/errorMessage'
+import { reportErrorToSentry } from '../Utils/errorMessage'
+import { EditorState } from './EditorState'
 
 export type EditorConfig = {
   editorInitializationConfig?: EditorInitializationConfig
@@ -23,6 +24,7 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
   const [application] = useState(() => new Application())
   const [bridge] = useState(() => new EditorToClientBridge(window.parent))
   const [docState, setDocState] = useState<DocState | null>(null)
+  const [editorState] = useState<EditorState>(new EditorState(systemMode))
 
   const viewOnlyDocumentId = useId()
 
@@ -111,5 +113,5 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
     }
   })
 
-  return { bridge, docState, application, docMap, editorConfig, setEditorConfig, didSetInitialConfig }
+  return { bridge, docState, application, docMap, editorConfig, setEditorConfig, didSetInitialConfig, editorState }
 }
