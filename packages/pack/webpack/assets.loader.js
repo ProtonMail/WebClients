@@ -36,7 +36,7 @@ module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
                 },
             },
             {
-                test: /\.(bmp|png|jpg|jpeg|gif|svg)$/,
+                test: /\.(bmp|png|jpg|jpeg|gif|svg|webp)$/,
                 type: 'asset/resource',
             },
             {
