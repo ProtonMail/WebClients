@@ -25,7 +25,10 @@ import { validateLinkName } from './validation';
  */
 export function usePublicLinkActions() {
     const { preventLeave } = usePreventLeave();
-    const { getUploadToken, setUploadToken } = useAnonymousUploadAuthStore();
+    const { getUploadToken, setUploadToken } = useAnonymousUploadAuthStore((state) => ({
+        getUploadToken: state.getUploadToken,
+        setUploadToken: state.setUploadToken,
+    }));
     const { request: publicDebouncedRequest, getAddressKeyInfo } = usePublicSession();
     const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
     const { getSharePrivateKey } = useShare();
