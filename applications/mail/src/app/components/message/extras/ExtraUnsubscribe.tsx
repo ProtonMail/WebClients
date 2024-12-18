@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Banner, Button, ButtonLike, Href } from '@proton/atoms';
+import { Banner, Button, Href } from '@proton/atoms';
 import {
     Field,
     Icon,
@@ -236,29 +236,14 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         setPassAliasesModalOpen(true);
     };
 
-    /*
-     * translator:
-     * ${maskMyEmailButton} link to open the hide-my-email modal
-     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases."
-     */
     const maskMyEmailButton = (
-        <ButtonLike
-            as="a"
-            key="mask-my-email-button"
-            className="ml-1"
-            color="norm"
-            shape="underline"
-            onClick={handlePassAliasesModalOpen}
-        >{c('Action').t`hide-my-email aliases`}</ButtonLike>
+        <Button key="mask-my-email-button" shape="solid" fullWidth color="norm" onClick={handlePassAliasesModalOpen}>{c(
+            'Action'
+        ).t`About hide-my-email aliases`}</Button>
     );
 
-    /*
-     * translator:
-     * ${maskMyEmailButton} link to open the hide-my-email modal
-     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with hide-my-email."
-     */
     const unsubscribeSLtext = c('Info')
-        .jt`Protect your email from being leaked to mailing lists or spammers with ${maskMyEmailButton}.`;
+        .t`Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.`;
 
     return (
         <Banner
@@ -293,10 +278,13 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             {renderUnsubscribedModal && (
                 <Prompt
                     title={c('Title').t`Unsubscribe request sent`}
-                    buttons={[<Button onClick={unsubscribedModalProps.onClose}>{c('Action').t`Close`}</Button>]}
+                    buttons={[
+                        maskMyEmailButton,
+                        <Button onClick={unsubscribedModalProps.onClose}>{c('Action').t`Close`}</Button>,
+                    ]}
                     {...unsubscribedModalProps}
                 >
-                    <span>{unsubscribeSLtext}</span>
+                    <p>{unsubscribeSLtext}</p>
                 </Prompt>
             )}
 
