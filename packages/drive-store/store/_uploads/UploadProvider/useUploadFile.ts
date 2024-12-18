@@ -574,7 +574,7 @@ export default function useUploadFile() {
                 },
                 finalize: queuedFunction(
                     'upload_finalize',
-                    async (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
+                    async (signature: string, signatureEmail: string, xattr: string, photo?: PhotoUpload) => {
                         const createdFileRevision = await createdFileRevisionPromise;
                         if (!createdFileRevision) {
                             throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
@@ -593,7 +593,7 @@ export default function useUploadFile() {
                                 createdFileRevision.revisionID,
                                 {
                                     ManifestSignature: signature,
-                                    SignatureAddress: signatureAddress,
+                                    SignatureAddress: signatureEmail,
                                     XAttr: xattr,
                                     Photo: photo
                                         ? {
