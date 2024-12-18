@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import type { Cancellable } from '@proton/components';
 import { Alert, Checkbox, ErrorButton, useLocalState } from '@proton/components';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -26,7 +26,7 @@ interface Props {
     handleCloseInnerModal: () => void;
     handleScheduleSend: (scheduledAt: number) => void;
     handleCloseInsertImageModal: () => void;
-    handleAddAttachmentsUpload: ((action: ATTACHMENT_DISPOSITION, files?: File[]) => Promise<void>) & Cancellable;
+    handleAddAttachmentsUpload: (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => Promise<void>;
     handleDelete: () => void;
     handleSendAnyway: () => void;
     handleCancelSend: (error: string) => void;
@@ -53,6 +53,7 @@ const ComposerInnerModals = ({
     composerID,
     handleToggleAssistant,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const boldNoReplyEmail = <strong key="no-reply-email">{noReplyEmail}</strong>;
     const [dontShowAgain, setDontShowAgain] = useLocalState(false, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY);
     return (
@@ -75,6 +76,7 @@ const ComposerInnerModals = ({
                     files={pendingFiles}
                     onClose={handleCloseInsertImageModal}
                     onSelect={handleAddAttachmentsUpload}
+                    mailSettings={mailSettings}
                 />
             )}
             {innerModal === ComposerInnerModalStates.DeleteDraft && (
