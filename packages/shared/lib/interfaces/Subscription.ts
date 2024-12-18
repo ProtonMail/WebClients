@@ -159,8 +159,8 @@ export enum TaxInclusive {
 export enum SubscriptionMode {
     Regular = 0,
     CustomBillings = 1,
-    Upcoming = 2,
-    AddonDowngrade = 3,
+    ScheduledChargedImmediately = 2,
+    ScheduledChargedLater = 3,
 }
 
 export type Coupon = Nullable<{

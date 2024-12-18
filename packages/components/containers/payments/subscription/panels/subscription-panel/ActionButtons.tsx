@@ -16,7 +16,7 @@ import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 
 export const ActionButtons = ({ user, subscription }: { user: UserModel; subscription?: SubscriptionModel }) => {
-    const allowDowncycling = useFlag('AllowDowncycling');
+    const scheduledDowncycling = useFlag('ScheduledDowncycling');
     const [openSubscriptionModal] = useSubscriptionModal();
 
     /**
@@ -53,7 +53,7 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
     const showEditBillingDetails =
         user.isPaid &&
         user.canPay &&
-        (!hasMaximumCycle(subscription) || allowDowncycling) &&
+        (!hasMaximumCycle(subscription) || scheduledDowncycling) &&
         !hasPassB2B &&
         !getIsCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription) &&
