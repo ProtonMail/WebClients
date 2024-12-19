@@ -127,7 +127,7 @@ describe('addresses with user', () => {
     mockUseFeature({ feature: { Value: true } as any });
 
     const getFirstAddress = (container: HTMLElement) => {
-        return container.querySelector('[title]');
+        return container.querySelector('[data-testid^="users-and-addresses-table"]');
     };
 
     it('should be able to set an alias as default', async () => {
