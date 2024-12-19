@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Akceptuj"
+      ],
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
@@ -200,6 +203,9 @@
       ],
       "Customize import": [
         "Dostosuj proces importowania"
+      ],
+      "Decline": [
+        "Odrzuć"
       ],
       "Decrease": [
         "Zmniejsz"
@@ -3632,28 +3638,17 @@
       "Use your app password instead of your regular password if:": [
         "Użyj hasła aplikacji, zamiast swojego zwykłego hasła, jeśli:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Hasło aplikacji jest prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
-      ],
       "Your email account requires an app password to export your data.": [
         "Konto e-mail wymaga hasła aplikacji do eksportu danych."
       ],
       "Your email account requires one to export your data.": [
         "Konto e-mail wymaga tego hasła do eksportu danych."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Adres e-mail i hasło aplikacji są prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
-      ],
       "Your email address and password are correct.": [
         "Adres e-mail i hasło są prawidłowe."
       ],
       "Your password is correct.": [
         "Hasło jest prawidłowe."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "Nie"
       ]
     },
     "Import instructions": {
@@ -3998,6 +3993,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Czy na pewno chcesz trwale usunąć zaznaczone elementy?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Czy na pewno chcesz kontynuować?"
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -7216,8 +7214,17 @@
       "External invitation's email was sent again": [
         "Zewnętrzne zaproszenie zostało wysłane"
       ],
+      "Failed to accept share invitation": [
+        "Nie udało się zaakceptować zaproszenia"
+      ],
       "Failed to download files: ${ err }": [
         "Nie udało się pobrać plików: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Nie udało się załadować szczegółów zaproszenia"
+      ],
+      "Failed to reject share invitation": [
+        "Nie udało się odrzucić zaproszenia"
       ],
       "Failed to upload files: ${ err }": [
         "Nie udało się przesłać plików: ${ err }"
@@ -7248,6 +7255,12 @@
       ],
       "Public link update access failed ": [
         "Dostęp do aktualizacji linku nie powiódł się "
+      ],
+      "Share invitation accepted successfully": [
+        "Zaproszenie zostało zaakceptowane"
+      ],
+      "Share invitation declined": [
+        "Zaproszenie zostało odrzucone"
       ],
       "Stopping the sharing of this item has failed": [
         "Zatrzymanie udostępniania nie powiodło się"
@@ -9221,6 +9234,9 @@
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Zamierzasz odrzucić zaproszenie do udostępnionego elementu. Nie będziesz mógł ponownie uzyskać do niego dostępu, dopóki właściciel go nie udostępni."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"

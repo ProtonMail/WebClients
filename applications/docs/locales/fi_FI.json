@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
+      "Accept": [
+        "Hyväksy"
+      ],
       "Activate recovery": [
         "Aktivoi palautus"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Mukauta tuontia"
+      ],
+      "Decline": [
+        "Kieltäydy"
       ],
       "Decrease": [
         "Vähennä"
@@ -985,7 +991,7 @@
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seuraajia ja haittaohjelmia."
+        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
@@ -3579,28 +3585,17 @@
       "Use your app password instead of your regular password if:": [
         "Käytä normaalin salasanasi sijaan sovellusalasanaa, jos:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Sovellussalasanasi on oikein. ${ boldNot } käytä normaalia salasanaasi."
-      ],
       "Your email account requires an app password to export your data.": [
         "Sähköpostitilisi vaatii tietojesi vientiin sovellussalasanan."
       ],
       "Your email account requires one to export your data.": [
         "Sähköpostitilisi vaatii sovellussalasanan tietojesi vientiin."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Sähköpostiosoitteesi ja sovellussalasanasi ovat oikein. ${ boldNot } käytä normaalia salasanaasi."
-      ],
       "Your email address and password are correct.": [
         "Sähköpostiosoitteesi ja salasanasi ovat oikein."
       ],
       "Your password is correct.": [
         "Salasanasi on oikein."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "Älä"
       ]
     },
     "Import instructions": {
@@ -3901,6 +3896,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Haluatko varmasti poistaa valitut kohteet roskakorista pysyvästi?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Haluatko varmasti jatkaa?"
       ],
       "Attention required": [
         "Huomiota vaaditaan"
@@ -6971,8 +6969,17 @@
       "External invitation's email was sent again": [
         "Ulkoinen kutsusähköposti lähetettiin uudelleen"
       ],
+      "Failed to accept share invitation": [
+        "Jakokutsun hyväksyntä epäonnistui"
+      ],
       "Failed to download files: ${ err }": [
         "Tiedostojen lataus epäonnistui: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Kutsun tietojen lataaminen epäonnistui"
+      ],
+      "Failed to reject share invitation": [
+        "Jakokutsusta kieltäytyminen epäonnistui"
       ],
       "Failed to upload files: ${ err }": [
         "Tiedostojen tallennus epäonnistui: ${ err }"
@@ -6995,6 +7002,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
+      ],
+      "Share invitation accepted successfully": [
+        "Jakokutsu hyväksyttiin"
+      ],
+      "Share invitation declined": [
+        "Kieltäydyit jakokutsusta"
       ],
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
@@ -8878,6 +8891,9 @@
       ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Olet kieltäytymästä jaetun kohteen kutsusta. Et voi käyttää sitä uudelleen, ennen kuin omistaja jakaa sen sinulle."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } -kokeilusi päättyy ${ textDate }"

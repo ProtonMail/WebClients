@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Aceptar"
+      ],
       "Activate recovery": [
         "Activar recuperación"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Personalizar importación"
+      ],
+      "Decline": [
+        "Rechazar"
       ],
       "Decrease": [
         "Reducir"
@@ -3585,8 +3591,8 @@
       "Use your app password instead of your regular password if:": [
         "Utiliza tu contraseña de la aplicación en lugar de tu contraseña habitual si:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Tu contraseña de la aplicación es correcta. ${ boldNot } utilices tu contraseña habitual."
+      "Your app password is correct. Do not use your regular password.": [
+        "La contraseña de la aplicación es correcta. No uses la contraseña habitual."
       ],
       "Your email account requires an app password to export your data.": [
         "Tu cuenta de correo requiere una contraseña de la aplicación para exportar tus datos."
@@ -3594,19 +3600,14 @@
       "Your email account requires one to export your data.": [
         "Tu cuenta de correo requiere una contraseña de la aplicación para exportar tus datos."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Tu dirección de correo electrónico y contraseña de la aplicación son correctas. ${ boldNot } utilices tu contraseña habitual."
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "La dirección de correo electrónico y la contraseña de la aplicación son correctas. No uses la contraseña habitual."
       ],
       "Your email address and password are correct.": [
         "Tu dirección de correo electrónico y contraseña son correctas."
       ],
       "Your password is correct.": [
         "Tu contraseña es correcta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "No"
       ]
     },
     "Import instructions": {
@@ -3857,11 +3858,17 @@
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
+      "Actions": [
+        "Acciones"
+      ],
       "Address copied to clipboard": [
         "Se ha copiado la dirección al portapapeles."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
@@ -3907,6 +3914,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
+      ],
+      "Are you sure you want to proceed?": [
+        "¿Estás seguro de que quieres continuar?"
       ],
       "Attention required": [
         "Atención requerida"
@@ -3983,6 +3993,10 @@
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crear una nube segura para ${ value } miembro",
+        "Crear una nube segura para ${ value } miembros"
       ],
       "Create in": [
         "Crear en"
@@ -4236,6 +4250,9 @@
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
+      ],
+      "Invite": [
+        "Invitar"
       ],
       "Invite link copied": [
         "Se ha copiado el enlace de la invitación."
@@ -4549,6 +4566,12 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Enlace compartible para ${ boldNameText }"
+      ],
+      "Shared by": [
+        "Compartido por"
+      ],
+      "Shared on": [
+        "Compartido el"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Error al validar la firma debido a errores de red. Inténtalo de nuevo más tarde."
@@ -6980,8 +7003,17 @@
       "External invitation's email was sent again": [
         "Se ha enviado nuevamente el correo de invitación externa."
       ],
+      "Failed to accept share invitation": [
+        "Se ha producido un error al aceptar la invitación compartida"
+      ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "No se ha podido cargar los detalles de la invitación."
+      ],
+      "Failed to reject share invitation": [
+        "Se ha producido un error al rechazar la invitación compartida."
       ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
@@ -7010,6 +7042,12 @@
       ],
       "Public link update access failed ": [
         "Error al acceder a la actualización del enlace público "
+      ],
+      "Share invitation accepted successfully": [
+        "La invitación compartida ha sido aceptada."
+      ],
+      "Share invitation declined": [
+        "Se ha rechazado la invitación compartida."
       ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
@@ -8893,6 +8931,9 @@
       ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Estás a punto de rechazar la invitación a un elemento compartido. No podrás volver a acceder a él hasta que el propietario lo comparta contigo nuevamente."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."
