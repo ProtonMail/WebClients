@@ -146,7 +146,8 @@ export class LoadDocument {
         decryptedNode: node,
         documentName: node.name,
         documentTrashState: node.trashed ? 'trashed' : 'not_trashed',
-        realtimeConnectionToken: realtimeToken,
+        realtimeConnectionToken: realtimeToken?.token,
+        currentDocumentEmailDocTitleEnabled: realtimeToken?.preferences.includeDocumentNameInEmails ?? false,
       })
 
       if (nodeIsFromCache) {
@@ -276,10 +277,11 @@ export class LoadDocument {
         currentCommitId: serverBasedMeta.latestCommitId(),
         baseCommit: decryptedCommit,
         documentTrashState: decryptedNode.trashed ? 'trashed' : 'not_trashed',
-        realtimeConnectionToken: realtimeToken,
+        realtimeConnectionToken: realtimeToken?.token,
+        currentDocumentEmailDocTitleEnabled: realtimeToken?.preferences.includeDocumentNameInEmails ?? false,
       })
 
-      return Result.ok({ documentState })
+      return Result.ok({ documentState, preferences: realtimeToken?.preferences })
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to load document')
     }
