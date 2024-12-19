@@ -27,7 +27,7 @@ export class GetCommitData {
 
     const result = await this.docsApi.getCommitData(nodeMeta, commitId)
     if (result.isFailed()) {
-      return ApiResult.fail(result.getError())
+      return ApiResult.fail(result.getErrorObject())
     }
 
     const commit = Commit.deserialize(result.getValue())

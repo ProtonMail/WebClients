@@ -22,7 +22,7 @@ export class FetchDecryptedCommit implements UseCaseInterface<DecryptedCommit> {
   ): Promise<Result<DecryptedCommit>> {
     const commitDataResult = await this.getCommitData.execute(lookup, commitId)
     if (commitDataResult.isFailed()) {
-      return Result.fail(`Failed to get commit data ${commitDataResult.getError()}`)
+      return Result.fail(`Failed to get commit data ${commitDataResult.getErrorMessage()}`)
     }
 
     const commit = commitDataResult.getValue()

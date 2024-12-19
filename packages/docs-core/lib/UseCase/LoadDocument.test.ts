@@ -1,4 +1,4 @@
-import { DocumentRole, Result } from '@proton/docs-shared'
+import { DocumentRole, DynamicResult, Result } from '@proton/docs-shared'
 import type { DecryptCommit } from './DecryptCommit'
 import type { NodeMeta, PublicDriveCompat } from '@proton/drive-store'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
@@ -95,7 +95,7 @@ describe('LoadDocument', () => {
       mockGetNode.execute.mockResolvedValue(Result.ok({ node: mockNode, fromCache: false } as any))
       mockGetDocumentKeys.execute.mockResolvedValue(Result.ok({ keys: mockKeys as any, fromCache: false } as any))
       mockLoadMetaAndCommit.execute.mockResolvedValue(
-        Result.ok({
+        DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: undefined,
           realtimeToken: 'token-1',
@@ -143,7 +143,7 @@ describe('LoadDocument', () => {
       const result = await loadDocument.executePrivate(nodeMeta)
 
       expect(result.isFailed()).toBe(true)
-      expect(result.getError().message).toBe('Node loading failed')
+      expect(result.getErrorObject().message).toBe('Node loading failed')
     })
 
     it('should handle failed keys loading', async () => {
@@ -152,13 +152,13 @@ describe('LoadDocument', () => {
       const result = await loadDocument.executePrivate(nodeMeta)
 
       expect(result.isFailed()).toBe(true)
-      expect(result.getError().message).toBe('Keys loading failed')
+      expect(result.getErrorObject().message).toBe('Keys loading failed')
     })
 
     it('should handle commit decryption when commit exists', async () => {
       const mockCommit = { updates: { documentUpdates: [] } }
       mockLoadMetaAndCommit.execute.mockResolvedValue(
-        Result.ok({
+        DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: mockCommit,
           realtimeToken: 'token-1',
@@ -196,7 +196,7 @@ describe('LoadDocument', () => {
       )
       mockPublicCompat.getDocumentKeys.mockResolvedValue({ documentContentKey: 'public-key' as any })
       mockLoadMetaAndCommit.execute.mockResolvedValue(
-        Result.ok({
+        DynamicResult.ok({
           serverBasedMeta: { latestCommitId: () => 'commit-1' },
           latestCommit: undefined,
           realtimeToken: 'token-1',
@@ -227,7 +227,7 @@ describe('LoadDocument', () => {
     })
 
     it('should handle failed meta loading', async () => {
-      mockLoadMetaAndCommit.execute.mockResolvedValue(Result.fail({ message: 'Meta loading failed', code: 0 }))
+      mockLoadMetaAndCommit.execute.mockResolvedValue(DynamicResult.fail({ message: 'Meta loading failed', code: 0 }))
 
       const result = await loadDocument.executePublic(publicNodeMeta as any, true)
 
