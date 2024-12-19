@@ -75,6 +75,7 @@ import AddressModal from '../../addresses/AddressModal';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import useOrganizationUnprivatizationModals from '../../organization/useOrganizationUnprivatizationModals';
+import AttachSSOMemberPrompt from '../AttachSSOMemberPrompt';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal from '../LoginMemberModal';
@@ -154,6 +155,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const [addAddressModalProps, setAddAddressModalOpen, renderAddAddressModal] = useModalState();
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
+    const [attachSSOPromptProps, setAttachSSOPrompt, renderAttachSSOPrompt] = useModalState(cleanOption);
     const [resendInviteProps, setResendInviteModalOpen, renderResendInviteModal] = useModalState(cleanOption);
     const [subUserEditModalProps, setSubUserEditModalOpen, renderSubUserEditModal] = useModalState(cleanOption);
     const [loginMemberModalProps, setLoginMemberModalOpen, renderLoginMemberModal] = useModalState(cleanOption);
@@ -247,6 +249,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         createNotification({
             text: c('sso').ngettext(msgid`${n} user converted to SSO`, `${n} users converted to SSO`, n),
         });
+        setTmpMemberID(member.ID);
+        setAttachSSOPrompt(true);
     };
 
     const handleDetachSSO = async (member: EnhancedMember) => {
@@ -491,6 +495,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 )}
                 {renderChangeMemberPasswordModal && tmpMember && (
                     <ChangeMemberPasswordModal member={tmpMember} {...changeMemberPasswordModalProps} />
+                )}
+                {renderAttachSSOPrompt && tmpMember && (
+                    <AttachSSOMemberPrompt member={tmpMember} {...attachSSOPromptProps} />
                 )}
                 {renderInviteOrCreateUserModal && (
                     <InviteUserCreateSubUserModal
