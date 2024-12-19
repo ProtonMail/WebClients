@@ -13,4 +13,5 @@ export interface FetchConfig extends Omit<RequestInit, 'mode' | 'credentials' | 
     suppress?: number[];
     silence?: boolean;
     timeout?: number;
+    ignoreHandler?: number[];
 }
