@@ -4157,28 +4157,17 @@
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
-      ],
       "Your email account requires an app password to export your data.": [
         "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
       ],
       "Your email account requires one to export your data.": [
         "データをエクスポートするためにメールアカウントが必要です。"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
-      ],
       "Your email address and password are correct.": [
         "あなたのメールアドレスとパスワードは正しいです。"
       ],
       "Your password is correct.": [
         "パスワードは正しいです。"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "しないで"
       ]
     },
     "Import instructions": {
@@ -7188,7 +7177,7 @@
         "高度な VPN 機能にアクセス"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+        "より多くのパーソナライゼーションを追加するために、 15 のメールアドレスと つのカスタムメールドメインのサポートを提供します。"
       ],
       "AES 256-bit VPN encryption": [
         "AES 256ビットVPN暗号化"
@@ -9906,7 +9895,7 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } サーバー"
+        "${ n } 台のサーバー"
       ],
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
