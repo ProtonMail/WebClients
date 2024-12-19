@@ -14,6 +14,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CODES, APPS } from '@proton/shared/lib/constants';
 import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
+import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { OwnAuthModalProps, SSOAuthModalResult } from './interface';
@@ -37,14 +38,25 @@ export interface SSOAuthModalProps
     extends Omit<OwnAuthModalProps, 'onSuccess'>,
         Omit<PromptProps, 'title' | 'buttons' | 'children' | 'onError'> {
     onSuccess?: (data: SSOAuthModalResult) => Promise<void> | void;
+    api?: Api;
 }
 
-const SSOAuthModal = ({ scope, onCancel, onClose, onSuccess, onError, config, ...rest }: SSOAuthModalProps) => {
+const SSOAuthModal = ({
+    api: maybeApi,
+    scope,
+    onCancel,
+    onClose,
+    onSuccess,
+    onError,
+    config,
+    ...rest
+}: SSOAuthModalProps) => {
     const abortRef = useRef<AbortController | null>(null);
     const handleError = useErrorHandler();
     const [state, setState] = useState<State>(initialState);
     const ssoInfoResponsePromiseRef = useRef<Promise<SSOInfoResponse> | null>(null);
-    const api = useApi();
+    const contextApi = useApi();
+    const api = maybeApi || contextApi;
     const { APP_NAME } = useConfig();
 
     const refresh = useCallback(() => {
