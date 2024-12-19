@@ -701,6 +701,9 @@
       "Upgrade now": [
         "立即升级账户"
       ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升级至 ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -2877,11 +2880,17 @@
       "Event not found": [
         "未找到事件"
       ],
+      "Failed to create meeting": [
+        "无法创建会议"
+      ],
       "Failed to get event": [
         "获取事件失败"
       ],
       "Failed to get original occurrence in series": [
         "无法获取序列中的原始事件"
+      ],
+      "Failed to load OAuth modal.": [
+        "无法加载 OAuth 模式。"
       ],
       "First name is too long": [
         "名字太长。"
@@ -3863,28 +3872,17 @@
       "Use your app password instead of your regular password if:": [
         "下列情况需使用应用专用密码，不能用平常输入的密码："
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "应用密码输入无误。${ boldNot } 输入您平常用的密码。"
-      ],
       "Your email account requires an app password to export your data.": [
         "该邮箱需要应用专用密码才能导出数据."
       ],
       "Your email account requires one to export your data.": [
         "该邮箱需要应用专用密码才能导出数据."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "您的邮箱地址和应用专用密码输入无误。${ boldNot } 输入您平常用的密码。"
-      ],
       "Your email address and password are correct.": [
         "您输入的邮箱地址和密码正确。"
       ],
       "Your password is correct.": [
         "密码输入无误。"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "不要"
       ]
     },
     "Import instructions": {
@@ -7660,6 +7658,12 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "现在您可以看到参与者何时有空参加您的会议。"
+      ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "无缝创建并添加视频会议链接至您的活动。"
+      ],
+      "Video conferencing is here!": [
+        "视频会议就在这里！"
       ]
     },
     "sso": {
@@ -8018,6 +8022,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "指纹已复制到剪贴板"
+      ],
+      "Finish Zoom authentication to save event": [
+        "完成 Zoom 身份验证以保存活动"
       ],
       "Future events deleted": [
         "未来事件已删除"
