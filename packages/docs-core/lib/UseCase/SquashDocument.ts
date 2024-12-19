@@ -53,7 +53,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     const lockResult = await this.docsApi.lockDocument(nodeMeta, commitId)
     if (lockResult.isFailed()) {
-      return Result.fail(lockResult.getError().message)
+      return Result.fail(lockResult.getErrorMessage())
     }
 
     const squashLock = SquashLock.deserializeBinary(lockResult.getValue())
@@ -92,7 +92,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     const commitResult = await this.docsApi.squashCommit(nodeMeta, decryptedCommit.commitId, squashCommit)
     if (commitResult.isFailed()) {
-      return Result.fail(commitResult.getError().message)
+      return Result.fail(commitResult.getErrorMessage())
     }
 
     const endTime = Date.now()

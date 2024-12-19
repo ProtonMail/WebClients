@@ -1,7 +1,7 @@
 import { LoadLogger } from '../LoadLogger/LoadLogger'
-import { Result } from '@proton/docs-shared'
 import type { Commit } from '@proton/docs-proto'
 import type { ApiResult, DocumentMetaInterface, RealtimeUrlAndToken } from '@proton/docs-shared'
+import { DynamicResult } from '@proton/docs-shared'
 import type { GetCommitData } from './GetCommitData'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
@@ -31,7 +31,7 @@ export class FetchMetaAndRawCommit {
     private fetchRealtimeToken: FetchRealtimeToken,
   ) {}
 
-  async execute(nodeMeta: NodeMeta | PublicNodeMeta): Promise<Result<SuccessResult, ErrorResult>> {
+  async execute(nodeMeta: NodeMeta | PublicNodeMeta): Promise<DynamicResult<SuccessResult, ErrorResult>> {
     const metaResult = await this.getDocumentMeta
       .execute(nodeMeta)
       .then((result) => {
@@ -43,7 +43,7 @@ export class FetchMetaAndRawCommit {
       })
 
     if (metaResult.isFailed()) {
-      return Result.fail(metaResult.getError())
+      return DynamicResult.fail(metaResult.getErrorObject())
     }
 
     const serverBasedMeta: DocumentMetaInterface = metaResult.getValue()
@@ -72,13 +72,16 @@ export class FetchMetaAndRawCommit {
     ]
 
     if (commitDataResult?.isFailed()) {
-      return Result.fail({ reason: 'unknown', message: `Failed to get commit data ${commitDataResult.getError()}` })
+      return DynamicResult.fail({
+        reason: 'unknown',
+        message: `Failed to get commit data ${commitDataResult.getErrorMessage()}`,
+      })
     }
 
     latestCommit = commitDataResult?.getValue()
     const realtimeToken = realtimeTokenResult.isFailed() ? undefined : realtimeTokenResult.getValue().token
 
-    return Result.ok({
+    return DynamicResult.ok({
       serverBasedMeta,
       latestCommit,
       realtimeToken,
