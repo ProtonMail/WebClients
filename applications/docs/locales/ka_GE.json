@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
+      "Accept": [
+        "დასტური"
+      ],
       "Activate recovery": [
         "აღდგენის აქტივაცია"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "შემოტანის მორგება"
+      ],
+      "Decline": [
+        "უარყოფა"
       ],
       "Decrease": [
         "შემცირება"
@@ -3566,28 +3572,17 @@
       "Use your app password instead of your regular password if:": [
         "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
-      ],
       "Your email account requires an app password to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
       "Your email account requires one to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
-      ],
       "Your email address and password are correct.": [
         "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
       ],
       "Your password is correct.": [
         "პაროლი სწორია."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "არ"
       ]
     },
     "Import instructions": {
@@ -3879,6 +3874,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ ელემენტები სანაგვე ყუთიდან?"
+      ],
+      "Are you sure you want to proceed?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
@@ -6931,8 +6929,17 @@
       "External invitation's email was sent again": [
         "გარე მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
       ],
+      "Failed to accept share invitation": [
+        "ზიარის მოსაწვევზე დათანხმება ჩავარდა"
+      ],
       "Failed to download files: ${ err }": [
         "ფაილების გადმოწერის შეცდომა: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "მოწვევის დეტალების ჩატვირთვა ჩავარდა"
+      ],
+      "Failed to reject share invitation": [
+        "ზიარის მოსაწვეის უარყოფა ჩავარდა"
       ],
       "Failed to upload files: ${ err }": [
         "ფაილების ატვირთვის შეცდომა: ${ err }"
@@ -6961,6 +6968,12 @@
       ],
       "Public link update access failed ": [
         "საჯარო ბმულის წვდომის განახლება ჩავარდა "
+      ],
+      "Share invitation accepted successfully": [
+        "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
+      ],
+      "Share invitation declined": [
+        "გაზიარების მოსაწვევი უარყოფილია"
       ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
@@ -8835,6 +8848,9 @@
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "აპირებთ, უარჰყოთ მოსაწვევი გაზიარებული ელემენტისთვის. მასთან წვდომა აღარ გექნებათ, თუ მფლობელი თავიდან არ გაგიზიარებთ მას."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"

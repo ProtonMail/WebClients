@@ -94,6 +94,9 @@
       "Check DNS": [
         "Controleer DNS"
       ],
+      "Check settings": [
+        "Controleer uw instellingen"
+      ],
       "Choose a file or drag it here": [
         "Kies een bestand of sleep het hierheen"
       ],
@@ -704,6 +707,12 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA voegt een extra beveiligingslaag toe aan uw inloggegevens. ${ PASS_APP_NAME } maakt 2FA makkelijker door uw 2FA op te slaan en automatisch uw 2FA-codes in te vullen."
       ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Voeg het volgende MX DNS-record toe aan uw domein. Houd er rekening mee dat er een punt (.) is op de einddoeladressen. Als uw domein registrator dit punt niet toestaat, verwijder het dan bij het toevoegen van het DNS-record."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Voeg het volgende TXT DNS-record toe aan uw domein."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
       ],
@@ -719,6 +728,9 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "Ontvang een melding als uw e-mail, wachtwoord of andere persoonlijke gegevens zijn gelekt."
       ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Als u een subdomein gebruikt, zoals subdomein.domein.com, moet u ${ domainKeyExampleSubdomain } als het domein gebruiken. Dat betekent dat als uw domein mail.domein.com is, u ${ domainKeyExampleMail } als het domein moet invoeren."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Houd uw info veiliger en privé met deze handleidingen en tips."
       ],
@@ -727,6 +739,12 @@
       ],
       "Set up 2FA for more security": [
         "2FA instellen voor meer beveiliging"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Voor sommige DNS registrarors is een volledig record pad vereist, in dit geval moet u ${ domain } als domeinwaarde gebruiken."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Sommige domein registrators (Namecheap, CloudFlare, enz) gebruiken misschien ook @ voor het root-domein."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Start monitoring voor datalekken gerelateerd aan accounts met uw e-mailadres en uw hide-my-email aliassen."
@@ -743,6 +761,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Deze service biedt 2FA aan. Schakel het in voor extra accountveiligheid."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Om de eigendom van het domein te verifiëren, voeg je de volgende TXT-record toe. Sommige domeinregistrars (Namegoedkoop, CloudFlare, enz.) kunnen @ gebruiken voor het hoofddomein."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."
       ],
@@ -756,12 +777,20 @@
         "Uw persoonlijke informatie is uitgelekt in een data-inbreuk van een service van derden."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "iets@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
         "[Fout] een item kon niet worden verwerkt"
+      ],
+      "A domain ownership must be verified first.": [
+        "De eigenaar van het domein moet eerst worden gecontroleerd."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias kon niet worden bijgewerkt. Probeer het later opnieuw"
@@ -831,6 +860,9 @@
         "${ errors.length } corrupte csv-rij gedetecteerd",
         "${ errors.length } corrupte csv-rijen gedetecteerd"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Domein kon niet worden geverifieerd. Controleer of u de juiste DNS-records hebt toegevoegd"
+      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -864,8 +896,14 @@
       "Failed to create domain": [
         "Maken van domein is mislukt"
       ],
+      "Failed to create new mailbox": [
+        "Het maken van een nieuwe mailbox is mislukt"
+      ],
       "Failed to create the contact": [
         "Contact maken mislukt"
+      ],
+      "Failed to delete domain": [
+        "Fout bij het verwijderen domein"
       ],
       "Failed to delete email address from monitoring": [
         "Verwijderen van e-mailadres van monitoring mislukt"
@@ -876,6 +914,9 @@
       "Failed to delete the contact": [
         "Contact verwijderen mislukt"
       ],
+      "Failed to delete the mailbox": [
+        "Fout bij het verwijderen van de mailbox"
+      ],
       "Failed to edit user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker aan te passen."
       ],
@@ -884,6 +925,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Fout bij het laden van inbreuken voor deze e-mailalias"
+      ],
+      "Failed to load domain settings.": [
+        "Laden van domeininstellingen mislukt."
       ],
       "Failed to load item history": [
         "Fout bij het laden van item geschiedenis"
@@ -903,6 +947,9 @@
       "Failed to remove user's access.": [
         "Het is niet gelukt om de toegang van de gebruiker te verwijderen."
       ],
+      "Failed to resend verification code": [
+        "Fout bij het opnieuw verzenden van verificatiecode"
+      ],
       "Failed to resend verification for custom email": [
         "Verificatie voor aangepaste e-mail kon niet opnieuw worden verzonden"
       ],
@@ -911,6 +958,9 @@
       ],
       "Failed to restore items from trash": [
         "Fout bij het herstellen van items uit de prullenbak"
+      ],
+      "Failed to set default mailbox": [
+        "Fout bij het instellen van de standaard mailbox"
       ],
       "Failed to sync aliases": [
         "Fout bij het synchroniseren van aliassen"
@@ -921,8 +971,26 @@
       "Failed to unpin item": [
         "Kan item niet losmaken"
       ],
+      "Failed to update catch-all setting.": [
+        "Update van catch-all-instelling mislukt."
+      ],
+      "Failed to update default domain": [
+        "Fout bij het bijwerken van het standaarddomein"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Update domein mailbox mislukt."
+      ],
+      "Failed to update domain name.": [
+        "Domeinnaam bijwerken mislukt."
+      ],
       "Failed to update monitoring settings": [
         "Bijwerken van monitoringinstellingen mislukt"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Bijwerken van willekeurige generatie prefix mislukt."
+      ],
+      "Failed to verify domain": [
+        "Controleren domein mislukt"
       ],
       "Failed to verify email address": [
         "E-mailadres verifiëren mislukt"
@@ -1193,6 +1261,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" update is afgewezen"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } geblokkeerd",
+        "${ blockedEmailsCount } geblokkeerd"
+      ],
       "${ count } invite successfully sent": [
         "${ count } uitnodiging succesvol verzonden",
         "${ count } uitnodigingen succesvol verzonden"
@@ -1207,6 +1279,10 @@
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } keer bekeken"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } doorgestuurd",
+        "${ forwardedEmailsCount } doorgestuurd"
       ],
       "${ memberCount } member": [
         "${ memberCount } lid",
@@ -1225,6 +1301,9 @@
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } zal uw systeemthema volgen."
       ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } zal een doorstuuradres genereren (ook aangeduid als omgekeerde alias) dat u naar het klembord kunt kopiëren."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } zal alleen logins importeren, creditcards en identiteiten."
       ],
@@ -1236,6 +1315,10 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } succesvol ingeschakeld"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } verzonden",
+        "${ repliedEmailsCount } verzonden"
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } inbreuk gedetecteerd",
@@ -1289,6 +1372,9 @@
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliassen met aangepaste domeinen worden niet gecontroleerd, voeg ze toe als een aangepaste e-mail voor controle."
       ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Alle aliassen die de mailbox ${ emailJSX } gebruiken zullen ook worden verwijderd."
+      ],
       "All breaches for this address were resolved": [
         "Alle inbreuken op dit adres zijn opgelost"
       ],
@@ -1313,8 +1399,14 @@
       "An item previously shared with you was removed": [
         "Een item dat eerder gedeeld was met u, werd verwijderd"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Weet u zeker dat u ${ emailJSX } wilt verwijderen uit uw mailboxen?"
+      ],
       "Are you sure you want to remove the link?": [
         "Weet u zeker dat u de koppeling wilt verwijderen?"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Automatisch gemaakte aliassen zijn automatisch eigendom van de volgende postbus(en):"
       ],
       "Auto-lock successfully disabled.": [
         "Auto-vergrendelen succesvol ingeschakeld."
@@ -1336,6 +1428,9 @@
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Breng uw bestaande wachtwoorden naar ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Gebruik uw eigen domein en u hoeft niet nog een andere e-mailhosting oplossing te kopen."
       ],
       "Built in 2FA authenticator": [
         "Ingebouwd in 2FA-authenticator"
@@ -1367,6 +1462,12 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Create contact illustration": [
+        "Maak een contactafbeelding"
+      ],
+      "Created ${ time }.": [
+        "Gemaakt om ${ time }."
+      ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV-bestand biedt een handig formaat om je gegevens te bekijken. Echter, door de eenvoud ervan worden sommige gegevens niet opgenomen (aangepaste velden, toegangssleutels. .). Voor een volledige export, raden we een ander formaat aan."
       ],
@@ -1375,6 +1476,9 @@
       ],
       "Decrypting your data": [
         "Uw data ontsleutelen"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Standaardweergavenaam voor aliassen die gemaakt zijn met ${ domainDisplay }, tenzij deze overschreven wordt door de alias weergavenaam."
       ],
       "Deleted items will be moved here first": [
         "Verwijderde items worden eerst hier naartoe verplaatst"
@@ -1393,6 +1497,9 @@
       ],
       "Disabling offline mode...": [
         "Offline modus uitschakelen..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Het kan tot 24 uur duren om de DNS-wijzigingen bij te werken."
       ],
       "Domain: ${ domainPath } or @": [
         "Domein: ${ domainPath } of @"
@@ -1420,6 +1527,15 @@
       ],
       "Email address successfully included in monitoring": [
         "E-mailadres succesvol opgenomen in monitoring"
+      ],
+      "Email headers illustration": [
+        "E-mail headers afbeelding"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "E-mail dit adres en het zal lijken te worden verzonden vanuit ${ exampleEmail } bijvoorbeeld."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "E-mails verzonden naar uw aliassen worden doorgestuurd naar uw mailboxen. Een alias kan meerdere mailboxen hebben: handig om een alias te delen tussen u en uw vrienden."
       ],
       "Emptying trash...": [
         "Prullenbak leegmaken..."
@@ -1522,6 +1638,9 @@
       ],
       "Imported on ${ date }": [
         "Geïmporteerd op ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "In is ${ PASS_SHORT_APP_NAME }, een item notitie versleuteld met de item-encryptie-sleutel en alleen gebruikers die toegang hebben tot het item kunnen de notitie bekijken. ${ BRAND_NAME } of SimpleLogin kunnen het niet zien."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Geef de benodigde extensierechten om de beste ervaring uit ${ PASS_APP_NAME } te halen"
@@ -1656,6 +1775,9 @@
       "Moving items to trash": [
         "Items verplaatsen naar prullenbak"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Wil u iemand e-mailen, maar wilt u niet dat ze uw e-mailadres zien? Maak een alias aan."
+      ],
       "Never": [
         "Nooit"
       ],
@@ -1780,6 +1902,9 @@
       "Please enter your current PIN code to continue": [
         "Voer uw huidige pincode in om door te gaan"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Volg onderstaande stappen om uw domein in te stellen."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Let op: eenmaal verwijderd, de alias kan niet worden hersteld. Misschien wilt u de alias in plaats daarvan uitschakelen?"
       ],
@@ -1788,6 +1913,9 @@
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Upgrade om Vroegtijdige toegang te hebben ${ PASS_APP_NAME } web app"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Gebruik het volledige domeinpad, bijvoorbeeld my-domain.com of my-subdomein.my-domain.com als u een subdomein gebruikt."
       ],
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
@@ -1831,8 +1959,14 @@
       "Restoring trashed items...": [
         "Verwijderde items herstellen..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Omgekeerd alias adres gekopieerd naar klembord. Verstuur een e-mail naar dit adres en ${ Email } zal het ontvangen."
+      ],
       "Secure links": [
         "Beveiligde links"
+      ],
+      "See more info": [
+        "Zie meer informatie"
       ],
       "Select destination vault": [
         "Kies bestemmingskluis"
@@ -1875,6 +2009,9 @@
       ],
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "SimpleLogin note wordt samen opgeslagen op dezelfde locatie met alias adres en terwijl het beschermd is door encryptie in de rest het is niet E2E-versleuteld wat betekent dat iedereen die toegang heeft tot SimpleLogin database dit kan lezen."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Gebruik gewoon ${ emailBold } volgende keer dat u een alias nodig hebt: het wordt ${ automaticallyBold } aangemaakt de eerste keer dat het een e-mail ontvangt. Voor een fijnmazigere controle kunt u ook ${ rulesHyperLink } definiëren."
       ],
       "Successfully exported all your items": [
         "Alle items succesvol geëxporteerd"
@@ -1931,6 +2068,12 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
       ],
+      "This operation is irreversible.": [
+        "Deze actie is onomkeerbaar."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Deze bewerking is onomkeerbaar. Alle aliassen die het domein ${ domainTextBold } gebruiken worden verwijderd. Let op: aliassen kunnen niet hersteld worden zodra ze verwijderd zijn."
+      ],
       "This option is currently not available on your device.": [
         "Deze optie is momenteel niet beschikbaar op uw apparaat."
       ],
@@ -1946,6 +2089,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dit zal het apparaat **${ name }** afwijzen, die proberen in te loggen op uw ${ BRAND_NAME } account op **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Om e-mails te blijven ontvangen, zet deze aliassen over naar een ander postvak:"
+      ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Om uw persoonlijke e-mailadres verborgen te houden, kunt u een alias-contactpersoon maken die uw adres maskert."
       ],
@@ -1960,6 +2106,12 @@
       ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
+      ],
+      "Unconfigured": [
+        "Niet geconfigureerd"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Onbeperkt hide-my-email aliassen en geavanceerd alias beheer"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Ontgrendel ${ PASS_SHORT_APP_NAME } met biometrische gegevens"
@@ -2034,8 +2186,14 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Bij het aanmaken/bewerken van een aanmelding in ${ PASS_APP_NAME } zal de 'gebruikersnaam' invoer altijd zichtbaar zijn."
       ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Bij het verzenden van een e-mail van deze alias wordt ${ emailSender } weergegeven als afzender."
+      ],
       "You are about to create:": [
         "U staat op het punt volgende aan te maken:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "U kunt ook een pincode definiëren om ${ PASS_APP_NAME } te ontgrendelen"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "U kunt nu uw ${ BRAND_NAME }-wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
@@ -2068,6 +2226,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "U hebt de maximaal toegestane lengte van ${ maxLength } tekens bereikt."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "U kunt uw domein instellingen aanpassen (catch-all e-mail aliassen, standaard weergavenaam voor aliassen enz...) na het verifiëren van uw domein."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "U wordt uitgelogd en moet opnieuw inloggen op al uw andere apparaten."
@@ -2114,6 +2275,10 @@
         "${ aliasCount } alias",
         "${ aliasCount } aliassen"
       ],
+      "${ blockedCount } block": [
+        "${ blockedCount } geblokkeerd",
+        "${ blockedCount } geblokkeerd"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } teken",
         "${ config.options.length } tekens"
@@ -2125,6 +2290,10 @@
       "${ days } day": [
         "${ days } dag",
         "${ days } dagen"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } doorgestuurd",
+        "${ forwardCount } doorgestuurd"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails } en ${ blockedEmails } in de laatste 14 dagen."
@@ -2210,6 +2379,9 @@
       "Account": [
         "Account"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Voeg een willekeurige prefix toe voor dit domein bij het maken van een nieuwe alias."
+      ],
       "Add section": [
         "Sectie toevoegen"
       ],
@@ -2251,9 +2423,6 @@
       ],
       "Auto-lock after": [
         "Automatisch vergrendelen na"
-      ],
-      "Backup password": [
-        "Back-up wachtwoord"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Naast het opslaan van uw logins beschermt ${ PASS_APP_NAME } uw identiteit met een geïntegreerde email alias-functie. Wanneer u zich registreert voor een nieuw online account, kan ${ PASS_APP_NAME } automatisch een alias maken om uw werkelijke e-mailadres te beschermen. "
@@ -2308,6 +2477,9 @@
       ],
       "Confirm vault name": [
         "Bevestig naam van kluis"
+      ],
+      "Contact created ${ time } ago.": [
+        "Contactpersoon werd ${ time } geleden aangemaakt."
       ],
       "Contact details": [
         "Contactgegevens"
@@ -2666,6 +2838,9 @@
       "Note": [
         "Notitie"
       ],
+      "Note • SimpleLogin": [
+        "Notitie • SimpleLogin"
+      ],
       "Notes": [
         "Notities"
       ],
@@ -2854,6 +3029,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synchroniseer aliassen met SimpleLogin"
+      ],
+      "Target:": [
+        "Doel:"
       ],
       "Tax number": [
         "BTW-nummer"
@@ -3087,6 +3265,9 @@
       "Add text": [
         "Tekst toevoegen"
       ],
+      "Alias Display Name": [
+        "Alias weergavenaam"
+      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -3116,6 +3297,12 @@
       ],
       "my-domain.com": [
         "mijn-domein.com"
+      ],
+      "Name to display when sending an email": [
+        "Naam die getoond moet worden bij het verzenden van een e-mail"
+      ],
+      "Note from SimpleLogin": [
+        "Notitie van SimpleLogin"
       ],
       "Password": [
         "Wachtwoord"
@@ -3254,6 +3441,12 @@
       "Default mailbox successfully updated": [
         "Standaard postbus succesvol bijgewerkt"
       ],
+      "Display name successfully updated": [
+        "Weergavenaam succesvol bijgewerkt"
+      ],
+      "Domain successfully deleted": [
+        "Domein succesvol verwijderd"
+      ],
       "Mailbox successfully deleted": [
         "Mailbox verwijderd"
       ],
@@ -3303,6 +3496,9 @@
       ],
       "Aliases": [
         "Aliassen"
+      ],
+      "Auto create/on the fly alias": [
+        "Automatisch aanmaken van instant alias"
       ],
       "Auto-lock update": [
         "Automatische vergrendelingsupdate"
@@ -3364,6 +3560,9 @@
       "Default": [
         "Standaard"
       ],
+      "Default Display Name": [
+        "Standaard weergavenaam"
+      ],
       "Delete ${ deletedItemsCount } item?": [
         "${ deletedItemsCount } item verwijderen?",
         "${ deletedItemsCount } items verwijderen?"
@@ -3400,9 +3599,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Voer uw back-up wachtwoord in"
       ],
       "Enter your extra password": [
         "Voer uw extra wachtwoord in"
@@ -3536,6 +3732,9 @@
         "Houd er rekening mee dat de alias eenmaal verwijderd, niet kan worden hersteld.",
         "Houd er rekening mee dat aliassen eenmaal verwijderd, niet kunnen worden hersteld."
       ],
+      "Random Prefix Generation": [
+        "Willekeurige Voorvoegsel Generatie"
+      ],
       "Recommended actions": [
         "Aanbevolen acties"
       ],
@@ -3572,6 +3771,9 @@
       ],
       "Secure your data": [
         "Beveilig uw gegevens"
+      ],
+      "Select the default domain for aliases": [
+        "Selecteer het standaard domein voor aliassen"
       ],
       "Set access level": [
         "Stel toegangsniveau in"
@@ -3657,6 +3859,9 @@
       "What is the dark web?": [
         "Wat is het dark web?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Wat is het verschil tussen ${ PASS_SHORT_APP_NAME } notitie en SimpleLogin notitie?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Uw ${ planName } abonnement zal eindigen op ${ endDate }"
       ],
@@ -3675,6 +3880,9 @@
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Domein URL is ongeldig"
+      ],
       "Duplicated URL": [
         "Dubbele URL"
       ],
@@ -3750,6 +3958,9 @@
       ],
       "Duplicate email addresses.": [
         "Dubbele e-mailadressen."
+      ],
+      "Email cannot be empty": [
+        "E-mail mag niet leeg zijn."
       ],
       "Email is required": [
         "E-mailadres is vereist"

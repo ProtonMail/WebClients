@@ -1330,9 +1330,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება ${ BRAND_NAME }-ის პაროლი."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება მარქაფი პაროლი."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }-სთან წვდომისთვის თქვენი თითის ანაბეჭდი, ან მოწყობილობის PIN-კოდი დაგჭირდებათ."
       ],
@@ -1841,15 +1838,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
-      ],
-      "Please confirm your backup password": [
-        "დაადასტურეთ თქვენი მარქაფი პაროლი"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "დაადასტურეთ თქვენი მარქაფი პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი მარქფი პაროლი."
       ],
       "Please confirm your extra password": [
         "დაადასტურეთ თქვენი დამატებითი პაროლი"
@@ -2402,9 +2390,6 @@
       ],
       "Auto-lock after": [
         "ავტომატური დაბლოკვის დრო"
-      ],
-      "Backup password": [
-        "მარქაფი პაროლი"
       ],
       "Beta Access": [
         "წვდომა ბეტა ვერსიებზე"
@@ -3599,9 +3584,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "შეიყვანეთ თქვენი მარქაფის პაროლი"
       ],
       "Enter your extra password": [
         "შეიყვანეთ თქვენი დაამატებითი პაროლი"

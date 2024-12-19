@@ -1397,9 +1397,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše heslo do ${ BRAND_NAME }"
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše záložné heslo"
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
       ],
@@ -1930,15 +1927,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Potvrďte vaše záložné heslo, prosím"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Potvrďte, prosím, vaše záložné heslo pre automatické uzamknutie pomocou vášho hesla."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Potvrďte, prosím, vaše záložné heslo pre zrušenie vášho aktuálneho zámku."
       ],
       "Please confirm your extra password": [
         "Potvrďte vaše dodatočné heslo, prosím"
@@ -2541,9 +2529,6 @@
       ],
       "Auto-lock after": [
         "Automatické uzamknutie po"
-      ],
-      "Backup password": [
-        "Záložné heslo"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Okrem ukladania prihlasovacích údajov ${ PASS_APP_NAME } chráni vašu identitu integrovanou funkciou emailového aliasu. Vždy, keď sa zaregistrujete na nové online konto, ${ PASS_APP_NAME } môže automaticky vytvoriť alias, aby bola vaša skutočná emailová adresa chránená. "
@@ -3763,9 +3748,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Zadajte vaše záložné heslo"
       ],
       "Enter your extra password": [
         "Zadajte vaše dodatočné heslo"

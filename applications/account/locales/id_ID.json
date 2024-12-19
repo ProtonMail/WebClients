@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -3576,7 +3576,7 @@
     },
     "Description": {
       "Also included": [
-        "Juga termasuk"
+        "Turut meliputi"
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Hapus pesan spam dan sampah secara otomatis dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
@@ -6412,28 +6412,17 @@
       "Use your app password instead of your regular password if:": [
         "Gunakan kata sandi aplikasi Anda alih-alih kata sandi biasa apabila:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
-      ],
       "Your email account requires an app password to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email account requires one to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Alamat email dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
-      ],
       "Your email address and password are correct.": [
         "Alamat email dan kata sandi Anda benar."
       ],
       "Your password is correct.": [
         "Kata sandi Anda benar."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "jangan"
       ]
     },
     "Import error link": {
@@ -8605,7 +8594,7 @@
         "Ini adalah kunci enkripsi yang telah Anda simpan sebelumnya."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "Ini sekarang merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
+        "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
       ],
       "This is the password you used before the password reset.": [
         "Berikut ini adalah kata sandi yang Anda gunakan sebelum kata sandi Anda diatur ulang."
@@ -9990,6 +9979,9 @@
       "Auto-unsubscribe": [
         "Batalkan langganan secara otomatis"
       ],
+      "Automatically save contacts": [
+        "Simpan kontak secara otomatis"
+      ],
       "Awarded": [
         "Penghargaan"
       ],
@@ -10576,7 +10568,7 @@
         "Silakan tambahkan ketiga rekaman CNAME berikut. Catatan: Rekaman DNS dapat memakan waktu hingga beberapa jam untuk diperbarui."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
-        "Silakan tambahkan kedua rekaman MX berikut. Catatan: Rekaman DNS dapat memakan waktu hingga beberapa jam untuk diperbarui."
+        "Silakan tambahkan kedua rekaman MX berikut. Catatan: Rekaman DNS dapat memerlukan waktu hingga beberapa jam untuk dapat diperbarui."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Silakan tambahkan rekaman TXT berikut. Catatan: Rekaman DNS dapat memakan waktu hingga beberapa jam untuk diperbarui."
@@ -18327,7 +18319,7 @@
         "Anggota organisasi yang tidak menggunakan 2FA akan menerima email yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Pesan yang ada pada folder Terkirim atau Draf akan tetap muncul di kedua folder ini, bahkan apabila Anda memindahkannya ke folder lain."
+        "Pesan yang terdapat pada folder Terkirim atau Draf akan tetap muncul pada folder tersebut, bahkan apabila Anda memindahkan pesan ini ke folder lain."
       ],
       "Remove metadata from images to protect your privacy.": [
         "Hapus metadata dari gambar untuk melindungi privasi Anda."

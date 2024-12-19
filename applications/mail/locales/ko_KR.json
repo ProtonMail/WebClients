@@ -1907,7 +1907,7 @@
         "이메일 주소 설정 변경"
       ],
       "Continue": [
-        "기계속"
+        "계속"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
@@ -5563,28 +5563,17 @@
       "Use your app password instead of your regular password if:": [
         "다음과 같은 경우 일반 비밀번호 대신 앱 비밀번호를 사용하세요:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "앱 비밀번호가 올바릅니다. ${ boldNot } 일반 비밀번호를 사용하세요."
-      ],
       "Your email account requires an app password to export your data.": [
         "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
       ],
       "Your email account requires one to export your data.": [
         "데이터를 내보내려면 이메일 계정이 필요합니다."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "이메일 주소 및 앱 비밀번호가 올바릅니다. ${ boldNot } 일반 비밀번호를 사용하세요."
-      ],
       "Your email address and password are correct.": [
         "이메일 주소 및 비밀번호가 올바릅니다."
       ],
       "Your password is correct.": [
         "사용자의 비밀번호가 알맞습니다."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "아닌"
       ]
     },
     "Import ICS file from Mail": {
@@ -7092,9 +7081,6 @@
       ],
       "This message is from a mailing list.": [
         "이 메시지는 메일링 리스트에서 온 것입니다."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "이 메시지는 SimpleLogin 별칭 주소에서 온 것입니다."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "이 메시지는 아직 신뢰되지 않은 키로 서명됩니다."
@@ -10034,9 +10020,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle }는 인터넷을 통해 더 이상 추적되지 않음을 뜻합니다."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "데스크톱 앱으로 데스크톱 상에서 즉시 이메일 및 캘린더에 접근하세요."
-      ],
       "Activate premium features": [
         "프리미엄 기능 활성화"
       ],
@@ -10045,9 +10028,6 @@
       ],
       "Advanced encryption": [
         "향상된 암호화"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -10061,23 +10041,8 @@
       "Download the desktop app": [
         "데스크톱 앱 다운로드"
       ],
-      "Download the desktop app and continue": [
-        "데스크톱 앱 다운로드하고 계속하기"
-      ],
-      "Fixed and focused": [
-        "고정되고 집중되게"
-      ],
       "Get notified if your password is compromised.": [
         "비밀번호가 유출되면 알림을 받아보세요."
-      ],
-      "Get the desktop app": [
-        "데스크톱 앱 다운로드"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "${ mobileAppAppStoreLink } 또는 ${ mobileAppGooglePlayLink }에서 모바일 앱을 다운로드하세요."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "업계 최고 수준의 스팸 보호"
@@ -10091,14 +10056,8 @@
       "Maybe later": [
         "나중에"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME }을 경험할 더 많은 방법"
-      ],
       "Next": [
         "다음"
-      ],
-      "On the move": [
-        "이동 중에"
       ],
       "Protection from trackers": [
         "트래커로부터 보호"
@@ -11349,7 +11308,7 @@
         "이제 메시지를 예약하여 나중에 전송할 수 있습니다"
       ],
       "Your pm.me email is active": [
-        "pm.me 이메일이 활성상태입니다."
+        "pm.me 이메일이 활성상태입니다"
       ]
     },
     "sso": {

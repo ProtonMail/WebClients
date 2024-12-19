@@ -1357,9 +1357,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον εφεδρικό κωδικό πρόσβασής σας."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
       ],
@@ -1874,15 +1871,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
-      ],
-      "Please confirm your backup password": [
-        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό σας"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης για αυτόματο κλείδωμα με τον κωδικό πρόσβασής σας."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης σας για να καταργήσετε το τρέχον κλείδωμα."
       ],
       "Please confirm your extra password": [
         "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας"
@@ -2453,9 +2441,6 @@
       ],
       "Auto-lock after": [
         "Αυτόματο-κλείδωμα μετά"
-      ],
-      "Backup password": [
-        "Εφεδρικός κωδικός πρόσβασης"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Εκτός από την αποθήκευση των συνδέσεών σας, το ${ PASS_APP_NAME } προστατεύει την ταυτότητά σας με μια ενσωματωμένη λειτουργία ψευδωνύμου διεύθυνσης ηλεκτρονικού ταχυδρομείου. Κάθε φορά που εγγράφεστε για έναν νέο ηλεκτρονικό λογαριασμό, το ${ PASS_APP_NAME } μπορεί να δημιουργήσει αυτόματα ένα ψευδώνυμο για να διατηρήσει την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας προστατευμένη. "
@@ -3665,9 +3650,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
-      ],
-      "Enter your backup password": [
-        "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
       ],
       "Enter your extra password": [
         "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"

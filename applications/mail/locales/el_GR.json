@@ -5608,28 +5608,17 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας."
       ],
       "Your email account requires one to export your data.": [
         "Ο λογαριασμός email σας απαιτεί έναν για εξαγωγή των δεδομένων σας"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
-      ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
       ],
       "Your password is correct.": [
         "Ο κωδικός πρόσβασής σας είναι σωστός."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "δεν"
       ]
     },
     "Import ICS file from Mail": {
@@ -7202,9 +7191,6 @@
       ],
       "This message is from a mailing list.": [
         "Αυτό το μήνυμα προέρχεται από μια λίστα αλληλογραφίας."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Αυτό το μήνυμα προέρχεται από ψευδώνυμο SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Αυτό το μήνυμα υπογράφεται από κλειδί που δεν έχει γίνει αξιόπιστο ακόμη."
@@ -10200,9 +10186,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } σημαίνει ότι δεν ακολουθείται πλέον στο διαδίκτυο."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Αποκτήστε πρόσβαση στο ηλεκτρονικό ταχυδρομείο και το ημερολόγιο απευθείας από την επιφάνεια εργασίας σας με την εφαρμογή επιφάνειας εργασίας."
-      ],
       "Activate premium features": [
         "Ενεργοποιήστε premium χαρακτηριστικά"
       ],
@@ -10211,9 +10194,6 @@
       ],
       "Advanced encryption": [
         "Προηγμένη κρυπτογράφηση"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
@@ -10227,23 +10207,8 @@
       "Download the desktop app": [
         "Κατεβάστε την εφαρμογή για υπολογιστές"
       ],
-      "Download the desktop app and continue": [
-        "Κατεβάστε την εφαρμογή για υπολογιστές και συνεχίστε"
-      ],
-      "Fixed and focused": [
-        "Σταθερό και εστιασμένο"
-      ],
       "Get notified if your password is compromised.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας έχει παραβιαστεί."
-      ],
-      "Get the desktop app": [
-        "Λήψη της εφαρμογής για υπολογιστές"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Αποκτήστε την εφαρμογή για κινητά από το ${ mobileAppAppStoreLink } ή ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Κορυφαία στον κλάδο προστασία από ανεπιθύμητα μηνύματα"
@@ -10257,14 +10222,8 @@
       "Maybe later": [
         "Ίσως αργότερα"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Περισσότεροι τρόποι να βιώσετε το ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Επόμενο"
-      ],
-      "On the move": [
-        "Εν κινήσει"
       ],
       "Protection from trackers": [
         "Προστασία από ιχνηλάτες"

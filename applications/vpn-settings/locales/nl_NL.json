@@ -1148,6 +1148,9 @@
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Vernieuwt automatisch op ${ renewPrice }, voor ${ renewLength } maand",
         "Vernieuwt automatisch op ${ renewPrice }voor ${ renewLength } maanden"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Vernieuwt automatisch op ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -2567,6 +2570,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Kan facturen niet laden. Probeer het later nog een keer."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Kon transacties niet laden. Probeer het later nog eens."
+      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -2692,6 +2698,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
+      ],
+      "Please enter a valid entity ID URL": [
+        "Voer een geldige entiteit ID URL in"
       ],
       "Please generate keys before you try to change your password": [
         "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
@@ -3843,6 +3852,9 @@
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "Blijf verbinden **${ organizationValue.Name }** met uw ${ BRAND_NAME } organisatie."
       ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Ga door om deze entiteit te verbinden met uw ${ BRAND_NAME } organisatie."
+      ],
       "Continue with ${ freeName }": [
         "Ga verder met ${ freeName }"
       ],
@@ -4028,6 +4040,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Voer de code in die is verzonden naar ${ email }. Als u het bericht niet kan vinden in uw inbox, kijk dan in de map 'Spam'."
+      ],
+      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Voer de entiteit-ID van een **eduGAIN** organisatie in voor **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Voer het wachtwoord van de organisatie in om de beheerdersrechten te herstellen. ${ learnMore }"
@@ -4610,6 +4625,9 @@
       "Select recently used servers": [
         "Selecteer recent gebruikte servers"
       ],
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Selecteer de bij ${ getFormattedOrganization } aangesloten gebruikers die u wilt toelaten tot uw ${ BRAND_NAME } organisatie:"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "E-mails verzenden om uw leden aan te moedigen om hun accounts te beschermen met 2FA."
       ],
@@ -5150,6 +5168,9 @@
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
+      "You have no transactions.": [
+        "U heeft geen transacties."
+      ],
       "You may be redirected to your bank’s website.": [
         "U wordt mogelijk doorverwezen naar de website van uw bank."
       ],
@@ -5593,6 +5614,9 @@
       ],
       "Entity ID": [
         "Entiteit ID"
+      ],
+      "Entity ID URL": [
+        "Entiteit ID URL"
       ],
       "Event": [
         "Afspraak"
@@ -10702,6 +10726,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } factuur"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME }-transactie"
       ]
     },
     "Title header for addresses domain table": {
@@ -10869,11 +10896,29 @@
       "Chargeback": [
         "Terugvordering"
       ],
+      "Failed": [
+        "Gefaald"
+      ],
+      "Needs attention": [
+        "Moet gecontroleerd worden"
+      ],
       "Refunded": [
         "Terugbetaald"
+      ],
+      "Success": [
+        "Succesvol"
+      ],
+      "Timeout": [
+        "Time-out"
+      ],
+      "Voided": [
+        "Ongeldig"
       ]
     },
     "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Aanpassing krediet"
+      ],
       "Authorization": [
         "Autorisatie"
       ],
@@ -10892,14 +10937,23 @@
       "Credit": [
         "Tegoed"
       ],
+      "Credit transfer": [
+        "Overschrijving"
+      ],
       "Currency conversion": [
         "Valuta's omrekenen"
+      ],
+      "Gift card": [
+        "Cadeaubon"
       ],
       "Migration": [
         "Migratie"
       ],
       "Payment": [
         "Betaling"
+      ],
+      "Payment reversal": [
+        "Terugboeking betaling"
       ],
       "Refund": [
         "Terugbetalen"

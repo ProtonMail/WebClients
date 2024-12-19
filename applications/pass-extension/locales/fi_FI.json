@@ -1444,9 +1444,6 @@
       "Current version": [
         "Nykyinen versio"
       ],
-      "Currently selected": [
-        "Tällä hetkellä valittuna"
-      ],
       "Decrypting your data": [
         "Tietojesi salausta puretaan"
       ],
@@ -1803,15 +1800,6 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
-      "Please confirm your backup password": [
-        "Vahvista varasalasanasi"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Vahvista varasalasanasi käyttääksesi automaattista salasanalukitusta."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Poista nykyinen lukitustapa vahvistamalla varasalasanasi."
-      ],
       "Please confirm your extra password": [
         "Vahvista lisäsalasanasi"
       ],
@@ -1982,6 +1970,9 @@
       ],
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "SimpleLogin-muistiinpano tallennetaan samaan paikkaan aliasosoitteen kanssa. Vaikka se on suojattu salauksella levossa, sitä ei ole päästä päähän -salattu, joten kuka tahansa SimpleLogin-tietokantaan pääsevä voi lukea sen."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Käytä yksinkertaisesti osoitetta ${ emailBold } seuraavan kerran, kun tarvitset aliasta: se luodaan ${ automaticallyBold }, kun se vastaanottaa ensimmäisen kerran sähköpostia. Voit myös määrittää ${ rulesHyperLink }, jos haluat yksityiskohtaisempaa hallintaa."
       ],
       "Successfully exported all your items": [
         "Kaikki kohteesi vietiin"
@@ -2398,9 +2389,6 @@
       ],
       "Autosuggest": [
         "Automaattiehdotus"
-      ],
-      "Backup password": [
-        "Varasalasana"
       ],
       "Biometrics": [
         "Biometria"
@@ -3064,6 +3052,11 @@
         "Postinumero"
       ]
     },
+    "Link": {
+      "auto create rules ››": [
+        "automaattisen luomisen sääntöjä ››"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } kohde",
@@ -3453,9 +3446,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
-      ],
-      "Enter your backup password": [
-        "Syötä varasalasanasi"
       ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"

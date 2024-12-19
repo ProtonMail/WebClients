@@ -1164,6 +1164,9 @@
         "Поновлюється автоматично за ціною ${ renewPrice }, на ${ renewLength } місяці",
         "Поновлюється автоматично за ціною ${ renewPrice }, на ${ renewLength } місяців",
         "Поновлюється автоматично за ціною ${ renewPrice }, на ${ renewLength } місяців"
+      ],
+      "Renews automatically on ${ subscriptionManagerName }": [
+        "Поновлюється автоматично на ${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
@@ -2907,6 +2910,9 @@
       "Got it": [
         "Зрозуміло"
       ],
+      "Invite a user": [
+        "Запросити користувача"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Запросити наявного користувача ${ BRAND_NAME }"
       ],
@@ -3044,14 +3050,29 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Тільки одна безплатна пробна версія на одного користувача. Після цього застосовується звичайна ціна."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Після виходу з вашого тарифного плану цей користувач буде переведений на тариф ${ BRAND_NAME } Безплатний тарифний план."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Після виходу з вашого тарифного плану цей користувач буде переміщений на ${ BRAND_NAME } Безлімітний план з 30-денною безплатною пробною версією.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Типово ми призначаємо ${ formattedStorage } сховища для облікового запису адміністратора. Ви можете керувати призначеним сховищем, щоб пізніше розподілити його між іншими користувачами."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Створюйте учасників сімейної групи, керуйте ними та призначайте їм місце у сховищі, спільне для ${ DRIVE_APP_NAME } та ${ MAIL_APP_NAME }."
       ],
+      "Create and manage family members.": [
+        "Створюйте та керуйте членами сім'ї."
+      ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Якщо користувач вже має адресу ${ MAIL_APP_NAME }, введіть її тут. В іншому випадку потрібно спочатку створити обліковий запис."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Якщо користувач вже має обліковий запис з ${ BRAND_NAME }, введіть його тут. В іншому випадку їм потрібно спочатку створити обліковий запис."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрошення буде скасовано, і користувач не зможе приєднатися до ${ organizationName }."
@@ -3193,6 +3214,9 @@
     "fido2: Action": {
       "Delete key": [
         "Видалити ключ"
+      ],
+      "New security key": [
+        "Новий ключ безпеки"
       ]
     },
     "fido2: Error": {
@@ -3279,6 +3303,9 @@
       ],
       "Security key registered": [
         "Ключ безпеки зареєстровано"
+      ],
+      "Security keys": [
+        "Ключі безпеки"
       ]
     },
     "file size format": {
@@ -3761,6 +3788,9 @@
         "Залучених користувачів перелічено в рядках",
         "Залучених користувачів перелічено в рядках"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
+      ],
       "All inactive members deleted": [
         "Всіх неактивних членів видалено"
       ],
@@ -3949,6 +3979,9 @@
       ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Виділені сервери з окремими IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
       ],
       "default email address": [
         "адреса електронної пошти за замовчуванням"
@@ -4336,6 +4369,9 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "Learn more about Gateways": [
+        "Дізнайтеся більше про шлюзи"
       ],
       "Learn more about single sign-on": [
         "Дізнайтеся більше про єдиний вхід"
@@ -4846,6 +4882,9 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Ця перевірка може тривати до однієї години. Після успішної перевірки не видаляйте даний TXT запис, оскільки він потрібен для підтвердження того, що ви продовжуєте володіти даним доменом."
+      ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Це заборонить доступ до **${ email }**. Ви впевнені, що хочете продовжити?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Це вимкне двофакторну автентифікацію, включаючи як додаток-автентифікатор, так і методи ключів безпеки."
@@ -5436,6 +5475,9 @@
       ],
       "Other": [
         "Інша"
+      ],
+      "Product": [
+        "Продукт"
       ],
       "Refund": [
         "Відшкодування"
@@ -6244,11 +6286,17 @@
       "Change password": [
         "Змінити пароль"
       ],
+      "Convert to SSO": [
+        "Конвертувати в SSO"
+      ],
       "Delete": [
         "Видалити"
       ],
       "Delete and revoke invite": [
         "Видалити та відкликати запрошення"
+      ],
+      "Detach from SSO": [
+        "Від'єднати від SSO"
       ],
       "Edit": [
         "Редагувати"
@@ -6306,11 +6354,26 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Австралійський долар"
+      ],
+      "Brazilian real": [
+        "Бразильський реал"
+      ],
+      "British pound": [
+        "Британський фунт"
+      ],
+      "Canadian dollar": [
+        "Канадський долар"
+      ],
       "Euro": [
         "Євро"
       ],
       "Swiss franc": [
         "Швейцарський франк"
+      ],
+      "US Dollar": [
+        "Долар США"
       ]
     },
     "Navigation": {
@@ -7393,6 +7456,80 @@
         "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } та ${ additionalApp } оновлення продукту"
+      ],
+      "${ app } product updates": [
+        "${ app } оновлення продукту"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } для Бізнес-розсилки"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } важливі оголошення"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } розсилка"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } пропозиції та акції"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } оголошення продукту"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Опитування користувача ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Вітальні листи ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 електронний лист на місяць"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 електронний лист на місяць. Отримуйте останні новини про приватність і те, що відбувається у всесвіті ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 електронний лист на квартал"
+      ],
+      "1-2 emails per month": [
+        "1-2 електронні листи на місяць"
+      ],
+      "2-4 emails per year": [
+        "2-4 електронні листи на рік"
+      ],
+      "4-6 emails per year": [
+        "4-6 електронних листів на рік"
+      ],
+      "Application notifications": [
+        "Сповіщення додатку"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Сповіщення про критичні облікові записи все одно надходитимуть"
+      ],
+      "Daily email notifications": [
+        "Щоденні сповіщення електронною поштою"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Вимкнення цієї опції вилучить можливість отримувати сповіщення в додатках ${ BRAND_NAME }."
+      ],
+      "During your first month": [
+        "Упродовж вашого першого місяця"
+      ],
+      "Email subscriptions": [
+        "Підписки електронної пошти"
+      ],
+      "In-app notifications": [
+        "Сповіщення в застосунку"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Беріть участь в опитуваннях для покращення послуг ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Оновлення продукту"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } вимкнено"
@@ -7598,6 +7735,9 @@
       ],
       "Organization identity": [
         "Тотожність нової організації"
+      ],
+      "Organization identity updated": [
+        "Оновлена ідентичність організації"
       ],
       "Verify": [
         "Перевірити"
@@ -7845,6 +7985,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Скористайтеся способом відновлення даних, зверніться до іншого адміністратора або скиньте ключ організації, щоб відновити адміністраторські повноваження."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Ми не змогли перевірити справжність цієї особи."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Не вдалося перевірити безпеку ключа адреси цього відправника. Іноді відбувається затримка оновлення інформації про відправника. Спробуйте ще раз пізніше. Якщо ви не довіряєте цьому запрошенню або його відправнику, зверніться до клієнтської підтримки ${ BRAND_NAME }."
       ],
@@ -7955,6 +8098,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Ми обробляємо ваш платіж за виставленим рахунком. Будь ласка, дочекайтеся завершення платежу, перш ніж вносити зміни до вашого тарифного плану або оновлювати платіжні реквізити. Дякуємо за ваше терпіння."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "З вас буде списано ${ amountToCharge } з обраного вами способу оплати."
       ]
     },
     "Payments.Error": {
@@ -8199,6 +8345,9 @@
       "Changing organization password": [
         "Зміна пароля організації"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Створення або доступ до неприватних облікових записів користувачів"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Внаслідок зміни пароля ваші повноваження адміністратора організації були обмежені. Зазначені дії більше не дозволені:"
       ]
@@ -8225,8 +8374,14 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вхід не був успішно завершений."
+      ],
       "Something went wrong": [
         "Щось пішло не так"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Адреса електронної пошти **${ email }** вже існує як користувач ${ BRAND_NAME }. Будь ласка, введіть адресу електронної пошти користувача від вашого постачальника ідентифікаційних даних."
       ]
     },
     "saml: Info": {
@@ -8283,6 +8438,12 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Передумова:** Для активації забезпечення SCIM необхідно налаштувати автентифікацію SAML."
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Обов'язкова умова:** щоб увімкнути надання послуг SCIM, ви повинні підтвердити право власності на домен **${ domainName }**. Ця перевірка може зайняти до однієї години."
+      ],
+      "Enter the token into your identity provider": [
+        "Введіть токен у свого провайдера ідентифікації"
+      ],
       "Enter URL and token into your identity provider": [
         "Введіть URL-адресу і токен у свого провайдера ідентифікації"
       ],
@@ -8300,6 +8461,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Після вимкнення SCIM у вашій організації **всі користувачі SCIM, автоматично надані вашим провайдером ідентифікації, будуть перетворені на користувачів SSO**, і ви зможете керувати ними безпосередньо в налаштуваннях ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Спрощує керування користувачами в різних сервісах. Додавайте, редагуйте та вилучайте користувачів у вашого провайдера ідентифікації, і ці зміни автоматично застосовуватимуться до вашої організації ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Автоматичне забезпечення SCIM буде вимкнено, доки ви не введете новий SCIM-токен у налаштуваннях вашого провайдера ідентифікації."
@@ -8369,6 +8533,9 @@
       ],
       "Invoice": [
         "Рахунок"
+      ],
+      "Transactions": [
+        "Транзакції"
       ]
     },
     "Select search results": {
@@ -8388,6 +8555,9 @@
       ],
       "to be created": [
         "буде створено"
+      ],
+      "to be deleted": [
+        "буде видалено"
       ]
     },
     "session_recovery:available:action": {
@@ -8613,6 +8783,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Ми зв'яжемося з вами знову, коли скидання пароля стане доступним."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Ви можете перевірити статус вашого запиту в будь-який час ${ accountAndPasswordSectionLink } з налаштувань."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "у розділі \"Обліковий запис та пароль\""
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8954,11 +9132,23 @@
         "${ n } користувачів просять вас допомогти їм увійти до їх ${ BRAND_NAME } Облікового запису за допомогою єдиного входу.",
         "${ n } користувачів просять вас допомогти їм увійти до їх ${ BRAND_NAME } Облікового запису за допомогою єдиного входу."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Користувачі SSO (надані вашим постачальником ідентифікаційних даних) будуть видалені**, і вам доведеться створити їх вручну, щоб повернути їх до вашої організації."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**Користувачі SSO будуть від'єднані від вашого постачальника ідентифікаційних даних** і перетворені на користувачів без SSO."
+      ],
       "Access denied": [
         "Доступ заборонено"
       ],
+      "Access granted": [
+        "Доступ надано"
+      ],
       "added you to their ${ BRAND_NAME } organization": [
         "додав вас до їх ${ BRAND_NAME } організації"
+      ],
+      "Approve or deny it now": [
+        "Затвердити або відхилити це зараз"
       ],
       "Approve the sign-in from another device": [
         "Підтвердьте вхід на іншому пристрої"
@@ -8969,8 +9159,17 @@
       "Ask your administrator for access?": [
         "Звернутися до адміністратора для доступу?"
       ],
+      "Backup password": [
+        "Резервний пароль"
+      ],
       "Cancel": [
         "Скасувати"
+      ],
+      "Change backup password": [
+        "Змінити резервний пароль"
+      ],
+      "Confirm backup password": [
+        "Підтвердити резервний пароль"
       ],
       "Confirmation code": [
         "Код підтвердження"
@@ -9026,11 +9225,32 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Якщо ви заблокували свій ${ BRAND_NAME } Обліковий запис, резервний пароль дозволить вам увійти й відновити дані."
       ],
+      "Invalid confirmation code": [
+        "Невірний код підтвердження"
+      ],
       "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
         "Це єдиний спосіб повністю відновити ваш обліковий запис, тому обов'язково зберігайте його в безпечному місці."
       ],
       "Join ${ organizationName }": [
         "Доєднатися до ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Переконайтеся, що ви зберегли його в безпечному місці, щоб мати змогу повернутися до свого облікового запису, якщо ви втратите доступ до облікових даних постачальника ідентифікаційних даних."
+      ],
+      "New backup password": [
+        "Новий резервний пароль"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Користувачі, які не є SSO (створені вручну, а не надані вашим постачальником ідентифікаційних даних), все ще можуть увійти до вашої організації."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Після того, як єдиний вхід для вашої організації буде вимкнено:"
+      ],
+      "Remove single sign-on": [
+        "Вилучити єдиний вхід"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Вилучити єдиний вхід для вашої організації?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Встановити резервний пароль, щоб додати додатковий рівень захисту. Він дозволить вам увійти в систему, якщо вас заблокують, тому обов'язково зберігайте його в надійному місці."
@@ -9043,6 +9263,15 @@
       ],
       "Sign in": [
         "Увійти"
+      ],
+      "Sign in to your organization": [
+        "Увійти до своєї організації"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Вийдіть і увійдіть знову, щоб змінити резервний пароль"
+      ],
+      "Single sign-on removed": [
+        "Єдиний вхід вилучено"
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Це призведе до виходу користувача з інших пристроїв, і йому доведеться створити новий резервний пароль."
@@ -9068,8 +9297,14 @@
       "User details:": [
         "Деталі користувача:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Вам доведеться створювати нових користувачів вручну, щоб додати їх до вашої організації."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вас буде перенаправлено до вашого стороннього провайдера SSO."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Ваша конфігурація SSO буде видалена."
       ]
     },
     "sso: auth device state": {
@@ -9296,6 +9531,9 @@
       ],
       "1 email address": [
         "1 адреса електронної пошти"
+      ],
+      "1 email address per user": [
+        "1 адреса електронної пошти на користувача"
       ],
       "1 VPN connection": [
         "1 VPN-з'єднання"
@@ -9535,6 +9773,9 @@
       "Keep ${ config.planName }": [
         "Залишити ${ config.planName }"
       ],
+      "Keep subscription": [
+        "Зберегти підписку"
+      ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Захистіть свою команду в дорозі за допомогою наших додатків для вебу, iOS, Android, Windows, Mac і Linux."
       ],
@@ -9639,6 +9880,9 @@
       ],
       "Yearly free storage bonuses": [
         "Щорічні бонуси на безплатне сховище"
+      ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Ви можете продовжувати користуватися всіма перевагами вашого поточного плану до ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "У вашій передплаті ${ planName } ще залишилося ${ expiryDate }. Ми додамо кредити за невикористаний залишок часу до вашого облікового запису ${ BRAND_NAME }. Перш ніж скасовувати передплату перевірте обмеження безплатного тарифного плану. ${ learnMoreLink }"
@@ -9900,8 +10144,20 @@
       "Creating config file for ${ serverName }": [
         "Створення файлу конфігурації для ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Групове наскрізне шифрування електронної пошти вимкнене"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Групове наскрізне шифрування електронної пошти увімкнене"
+      ],
       "Preference updated": [
         "Налаштування оновлено"
+      ],
+      "Preferences updated": [
+        "Параметри оновлено"
+      ],
+      "Resent invitation": [
+        "Повторно надіслати запрошення"
       ]
     },
     "Suffix": {
@@ -10051,6 +10307,9 @@
       "Action": [
         "Дія"
       ],
+      "Actions": [
+        "Дії"
+      ],
       "Activate organization key": [
         "Активувати ключ організації"
       ],
@@ -10072,8 +10331,14 @@
       "Add credits": [
         "Поповнити рахунок"
       ],
+      "Add dedicated servers": [
+        "Додати виділені сервери"
+      ],
       "Add domain": [
         "Додати домен"
+      ],
+      "Add external address?": [
+        "Додати зовнішню адресу?"
       ],
       "Add PayPal payment method": [
         "Додати спосіб оплати PayPal"
@@ -10104,6 +10369,9 @@
       ],
       "Amount due": [
         "До сплати"
+      ],
+      "An address for each role": [
+        "Адреса для кожної ролі"
       ],
       "Appearance": [
         "Зовнішній вигляд"
@@ -10156,6 +10424,9 @@
       "Change second password": [
         "Змініть другий пароль"
       ],
+      "Choose user affiliations": [
+        "Виберіть приналежність користувачів"
+      ],
       "Click a value in the table to use it as filter": [
         "Клацніть на значення в таблиці, щоб використовувати його як фільтр"
       ],
@@ -10176,6 +10447,9 @@
       ],
       "Confirm phone number": [
         "Підтвердьте номер телефону"
+      ],
+      "Connect organization": [
+        "Приєднати організацію"
       ],
       "Contact us": [
         "Зв'яжіться з нами"
@@ -10255,6 +10529,9 @@
       "Delete user?": [
         "Видалити користувача?"
       ],
+      "Deny access to user?": [
+        "Заборонити доступ користувачу?"
+      ],
       "Device": [
         "Пристрій"
       ],
@@ -10327,6 +10604,9 @@
       "Email subscriptions": [
         "Підписки електронної пошти"
       ],
+      "Enable for all users": [
+        "Увімкнути для всіх користувачів"
+      ],
       "Enter 2FA code": [
         "Введіть код 2FA"
       ],
@@ -10362,6 +10642,15 @@
       ],
       "Gateway": [
         "Шлюз"
+      ],
+      "Gateway monitor": [
+        "Монітор шлюзу"
+      ],
+      "Gateway monitor disabled": [
+        "Монітор шлюзу вимкнено"
+      ],
+      "Gateway monitor enabled": [
+        "Монітор шлюзу увімкнено"
       ],
       "Gateways": [
         "Мережеві шлюзи"
@@ -10474,6 +10763,9 @@
       "Processing...": [
         "Триває обробка..."
       ],
+      "QR Code": [
+        "QR-код"
+      ],
       "Recommended": [
         "Рекомендовано"
       ],
@@ -10485,6 +10777,9 @@
       ],
       "Remove domain": [
         "Вилучити домен"
+      ],
+      "Remove server?": [
+        "Вилучити сервер?"
       ],
       "Remove single sign-on": [
         "Вилучити єдиний вхід"
@@ -10518,6 +10813,9 @@
       ],
       "SAML authentication": [
         "Автентифікація SAML"
+      ],
+      "Security events": [
+        "Події безпеки"
       ],
       "Select a plan": [
         "Оберіть тарифний план"
@@ -10639,6 +10937,9 @@
       "Verifying your payment...": [
         "Триває перевірка платежу..."
       ],
+      "Video conferencing": [
+        "Відеоконференція"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Ми надішлемо лист на вашу нову адресу з інструкцією для завершення зміни."
       ],
@@ -10678,6 +10979,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "Рахунок-фактура ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } транзакція"
       ]
     },
     "Title header for addresses domain table": {
@@ -10813,6 +11117,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
+      ],
+      "Waiting for user to accept the invitation": [
+        "Очікування на прийняття користувачем запрошення"
       ]
     },
     "Tor out of date": {
@@ -10823,12 +11130,71 @@
         "Ця версія Tor Browser не підтримується. Будь ласка, оновіть до останньої версії ${ stableRelease }"
       ]
     },
+    "Transaction state display as badge": {
+      "Chargeback": [
+        "Повернення коштів"
+      ],
+      "Failed": [
+        "Невдало"
+      ],
+      "Success": [
+        "Успіх"
+      ],
+      "Timeout": [
+        "Час очікування"
+      ],
+      "Voided": [
+        "Анульовано"
+      ]
+    },
     "Transaction type display as badge": {
+      "Adjustment credit": [
+        "Регулювання кредиту"
+      ],
+      "Authorization": [
+        "Авторизація"
+      ],
+      "Bank transfer": [
+        "Банківський переказ"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Cash": [
         "Готівка"
+      ],
+      "Chargeback": [
+        "Повернення коштів"
+      ],
+      "Credit": [
+        "Кредит"
+      ],
+      "Credit transfer": [
+        "Кредитний переказ"
+      ],
+      "Currency conversion": [
+        "Конвертування валюти"
+      ],
+      "Gift card": [
+        "Подарункова карта"
+      ],
+      "Migration": [
+        "Міграція"
+      ],
+      "Payment": [
+        "Оплата"
+      ],
+      "Payment reversal": [
+        "Скасування платежу"
+      ],
+      "Refund": [
+        "Відшкодування"
       ]
     },
     "unprivatization": {
+      "Cancel request": [
+        "Скасувати запит"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Не вдалося автоматично увімкнути доступ адміністратора для користувача ${ n }, оскільки його ключі шифрування було оновлено:",
         "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:",
@@ -10924,6 +11290,9 @@
       "Administrators can't access the data of private users": [
         "Адміністратори не можуть отримати доступ до даних приватних користувачів"
       ],
+      "Inactive": [
+        "Неактивний"
+      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Запрошення надіслано. Очікування на відповідь від запрошеного учасника"
       ],
@@ -10932,6 +11301,9 @@
       ],
       "It's you": [
         "Це ви"
+      ],
+      "Pending admin access": [
+        "Очікування доступу адміністратора"
       ],
       "Private": [
         "Приватно"

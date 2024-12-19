@@ -1357,9 +1357,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de recuperació."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
       ],
@@ -1874,15 +1871,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Confirmeu la vostra contrasenya de recuperació."
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Confirmeu la vostra contrasenya de recuperació per tal de bloquejar-la automàticament amb la vostra contrasenya"
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Confirmeu la vostra contrasenya de recuperació per desregistrar el vostre bloqueig."
       ],
       "Please confirm your extra password": [
         "Confirmeu la vostra contrasenya addicional."
@@ -2453,9 +2441,6 @@
       ],
       "Auto-lock after": [
         "Bloqueig automàtic després de"
-      ],
-      "Backup password": [
-        "Contrasenya de recuperació"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "A més de conservar les vostres credencials, ${ PASS_APP_NAME } protegeix la vostra identitat amb la seva funcionalitat d'àlies de correu electrònic integrada. Cada vegada que us registreu per obtenir un compte en línia nou, ${ PASS_APP_NAME } pot crear automàticament un àlies per protegir la vostra adreça electrònica real. "
@@ -3665,9 +3650,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Introduïu la vostra contrasenya de recuperació."
       ],
       "Enter your extra password": [
         "Introduïu la vostra contrasenya addicional"
