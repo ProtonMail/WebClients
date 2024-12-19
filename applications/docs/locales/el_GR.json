@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "Accept": [
+        "Αποδοχή"
+      ],
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Προσαρμοσμένη εισαγωγή"
+      ],
+      "Decline": [
+        "Απόρριψη"
       ],
       "Decrease": [
         "Μείωση"
@@ -3579,28 +3585,17 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας."
       ],
       "Your email account requires one to export your data.": [
         "Ο λογαριασμός email σας απαιτεί έναν για εξαγωγή των δεδομένων σας"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
-      ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
       ],
       "Your password is correct.": [
         "Ο κωδικός πρόσβασής σας είναι σωστός."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "δεν"
       ]
     },
     "Import instructions": {
@@ -3901,6 +3896,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά τα επιλεγμένα στοιχεία από τα Διαγραμμένα;"
+      ],
+      "Are you sure you want to proceed?": [
+        "Θέλετε σίγουρα να συνεχίσετε;"
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
@@ -6971,8 +6969,17 @@
       "External invitation's email was sent again": [
         "Το μήνυμα ηλεκτρονικού ταχυδρομείου εξωτερικής πρόσκλησης στάλθηκε ξανά"
       ],
+      "Failed to accept share invitation": [
+        "Αποτυχία αποδοχής πρόσκλησης κοινής χρήσης"
+      ],
       "Failed to download files: ${ err }": [
         "Αποτυχία λήψης αρχείων: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Αποτυχία φόρτωσης λεπτομερειών πρόσκλησης"
+      ],
+      "Failed to reject share invitation": [
+        "Αποτυχία απόρριψης πρόσκλησης κοινής χρήσης"
       ],
       "Failed to upload files: ${ err }": [
         "Αποτυχία μεταφόρτωσης αρχείων: ${ err }"
@@ -7001,6 +7008,12 @@
       ],
       "Public link update access failed ": [
         "Αποτυχία ενημέρωσης πρόσβασης σε δημόσιο σύνδεσμο "
+      ],
+      "Share invitation accepted successfully": [
+        "Η πρόσκληση κοινής χρήσης έγινε αποδεκτή"
+      ],
+      "Share invitation declined": [
+        "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
       "Stopping the sharing of this item has failed": [
         "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
@@ -8884,6 +8897,9 @@
       ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Πρόκειται να απορρίψετε την πρόσκληση για το κοινόχρηστο στοιχείο. Δεν θα μπορείτε να αποκτήσετε ξανά πρόσβαση σε αυτό έως ότου ο κάτοχος το μοιραστεί μαζί σας."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"

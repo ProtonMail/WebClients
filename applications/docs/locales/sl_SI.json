@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Sprejmi"
+      ],
       "Activate recovery": [
         "Aktivirajte obnovitev."
       ],
@@ -203,6 +206,9 @@
       ],
       "Customize import": [
         "Prilagajanje uvoza"
+      ],
+      "Decline": [
+        "Zavrni"
       ],
       "Decrease": [
         "Zmanjšaj"
@@ -3480,28 +3486,17 @@
       "Use your app password instead of your regular password if:": [
         "Uporabite geslo aplikacije namesto navadnega gesla, če:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "je geslo za aplikacijo pravilno. ${ boldNot } uporabite običajnega gesla"
-      ],
       "Your email account requires an app password to export your data.": [
         "vaš e-poštni račun zahteva geslo aplikacije za izvoz podatkov."
       ],
       "Your email account requires one to export your data.": [
         "ga vaš e-poštni račun zahteva za izvoz podatkov."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "sta e-poštni naslov in geslo aplikacije pravilna. ${ boldNot } uporabite običajnega gesla"
-      ],
       "Your email address and password are correct.": [
         "sta e-poštni naslov in geslo pravilna."
       ],
       "Your password is correct.": [
         "je geslo pravilno."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "ne"
       ]
     },
     "Import instructions": {
@@ -6744,6 +6739,9 @@
       "External invitation removed from the share": [
         "Zunanje povabilo je bilo odstranjeno iz skupne rabe."
       ],
+      "Failed to accept share invitation": [
+        "Povabila k skupni rabi ni bilo mogoče sprejeti."
+      ],
       "Failed to download files: ${ err }": [
         "Prenos datotek ni uspel: ${ err }"
       ],
@@ -6767,6 +6765,9 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ni dovolj prostora za nalaganje ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Povabilo k skupni rabi je bilo sprejeto."
       ],
       "Stopping the sharing of this item has failed": [
         "Preklic deljenja za ta predmet ni uspel"

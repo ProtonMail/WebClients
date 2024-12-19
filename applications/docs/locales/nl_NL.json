@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "Accept": [
+        "Accepteren"
+      ],
       "Activate recovery": [
         "Herstel activeren"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Importeren aanpassen"
+      ],
+      "Decline": [
+        "Afwijzen"
       ],
       "Decrease": [
         "Verlagen"
@@ -3579,28 +3585,17 @@
       "Use your app password instead of your regular password if:": [
         "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
-      ],
       "Your email account requires an app password to export your data.": [
         "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
       ],
       "Your email account requires one to export your data.": [
         "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
-      ],
       "Your email address and password are correct.": [
         "Uw e-mailadres en wachtwoord zijn juist."
       ],
       "Your password is correct.": [
         "Uw wachtwoord is juist."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "niet"
       ]
     },
     "Import instructions": {
@@ -3901,6 +3896,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Weet u zeker dat u verder wilt gaan?"
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -4499,6 +4497,9 @@
       "Restored version to": [
         "Versie hersteld naar"
       ],
+      "Save Document as PDF": [
+        "Document opslaan als PDF-bestand"
+      ],
       "Saving": [
         "Bezig met opslaan"
       ],
@@ -4582,6 +4583,9 @@
       ],
       "The Beginning": [
         "Het begin"
+      ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "De digitale handtekening is gedeeltelijk geverifieerd. De map is geüpload vanaf een openbare pagina zonder specifieke herkomst van de gebruiker."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
@@ -4764,6 +4768,15 @@
       "What do you want to do?": [
         "Wat wilt u doen?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Wanneer het dialoogvenster wordt geopend, verander de \"bestemming\" in \"Opslaan als PDF\" en druk dan op Opslaan."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Wanneer het dialoogvenster wordt geopend, verander de \"bestemming\" in \"Opslaan naar PDF\" en druk op Opslaan."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Als het dialoogvenster wordt geopend, selecteer dan \"PDF\" in de linkerbenedenhoek, en druk dan op Opslaan."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
@@ -4879,6 +4892,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Uw account wordt bijgewerkt zodra de betaling is verwerkt."
+      ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "Uw browsers afdrukvenster wordt nu geopend, waar u uw document naar PDF kunt exporteren."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Uw wijzigingen worden gesynchroniseerd met Drive. Sluit de webpagina niet."
@@ -6805,11 +6821,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" succesvol aangemaakt"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" verwijderd"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" kon niet aangemaakt worden"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" kon niet verwijderd worden"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" konden niet permanent verwijderd worden uit prullenbak"
@@ -6944,8 +6966,17 @@
       "External invitation's email was sent again": [
         "Externe uitnodigingsmail is opnieuw verzonden"
       ],
+      "Failed to accept share invitation": [
+        "Accepteren van uitnodiging mislukt"
+      ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Fout bij het laden van uitnodigingsdetails"
+      ],
+      "Failed to reject share invitation": [
+        "Weigeren van deel-uitnodiging mislukt"
       ],
       "Failed to upload files: ${ err }": [
         "Het uploaden van bestanden is mislukt: ${ err }"
@@ -6968,6 +6999,18 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
+      ],
+      "Public link access updated": [
+        "Toegang publieke link aangepast"
+      ],
+      "Public link update access failed ": [
+        "Toegang publieke link kon niet aangepast worden "
+      ],
+      "Share invitation accepted successfully": [
+        "Uitnodiging met succes geaccepteerd"
+      ],
+      "Share invitation declined": [
+        "Deel-uitnodiging afgewezen"
       ],
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
@@ -8851,6 +8894,9 @@
       ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "U staat op het punt de uitnodiging voor het gedeelte item te weigeren. U zal geen toegang meer hebben tot het item tot de eigenaar het met u deelt."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"

@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "Accept": [
+        "Accepter"
+      ],
       "Activate recovery": [
         "Aktiver gendannelse"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Tilpas import"
+      ],
+      "Decline": [
+        "Afslå"
       ],
       "Decrease": [
         "Formindsk"
@@ -3553,28 +3559,17 @@
       "Use your app password instead of your regular password if:": [
         "Brug din app adgangskode i stedet for din almindelige adgangskode, hvis:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode."
-      ],
       "Your email account requires an app password to export your data.": [
         "Din e-mail-konto kræver en app-adgangskode for at eksportere dine data."
       ],
       "Your email account requires one to export your data.": [
         "Din e-mail-konto kræver en for at eksportere dine data."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
-      ],
       "Your email address and password are correct.": [
         "Din e-mailadresse og adgangskode er korrekte."
       ],
       "Your password is correct.": [
         "Din adgangskode er korrekt."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "ikke"
       ]
     },
     "Import instructions": {
@@ -3875,6 +3870,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Er du sikker på, at du vil fortsætte?"
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
@@ -6889,8 +6887,17 @@
       "External invitation's email was sent again": [
         "E-mail med ekstern invitation blev sendt igen"
       ],
+      "Failed to accept share invitation": [
+        "Kunne ikke acceptere invitation til at dele"
+      ],
       "Failed to download files: ${ err }": [
         "Kunne ikke downloade filer: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Kunne ikke indlæse invitationsdetaljer"
+      ],
+      "Failed to reject share invitation": [
+        "Kunne ikke afvise invitation til at dele"
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
@@ -6919,6 +6926,12 @@
       ],
       "Public link update access failed ": [
         "Adgang til opdatering af offentligt link mislykkedes "
+      ],
+      "Share invitation accepted successfully": [
+        "Del-invitation accepteret"
+      ],
+      "Share invitation declined": [
+        "Afvist invitation til at dele"
       ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
@@ -8763,6 +8776,9 @@
       ],
       "What would you like to import?": [
         "Hvad ønsker du at importere?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du er ved at afvise invitationen til det delte element. Du vil ikke kunne få adgang til det igen, før ejeren deler det med dig."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
