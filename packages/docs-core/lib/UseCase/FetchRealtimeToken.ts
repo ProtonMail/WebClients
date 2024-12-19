@@ -11,9 +11,8 @@ export class FetchRealtimeToken {
     commitId: string | undefined,
   ): Promise<ApiResult<RealtimeUrlAndToken>> {
     const result = await this.docsApi.createRealtimeValetToken(lookup, commitId)
-
     if (result.isFailed()) {
-      return ApiResult.fail(result.getError())
+      return ApiResult.fail(result.getErrorObject())
     }
 
     const value = result.getValue().ValetToken

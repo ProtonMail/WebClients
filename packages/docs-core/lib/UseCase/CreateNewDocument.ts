@@ -34,7 +34,7 @@ export class CreateNewDocument {
       })
 
       if (createResult.isFailed()) {
-        return Result.fail(createResult.getError().message)
+        return Result.fail(createResult.getErrorObject().message)
       }
 
       return Result.ok(shellResult)
