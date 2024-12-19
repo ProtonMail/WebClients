@@ -10,6 +10,7 @@ import OrderableTable from '@proton/components/components/orderableTable/Orderab
 import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
 import OrderableTableHeader from '@proton/components/components/orderableTable/OrderableTableHeader';
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
@@ -29,6 +30,7 @@ import {
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -171,6 +173,14 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
         />
     );
 
+    const handleCopyEmail = (email: string) => {
+        textToClipboard(email);
+        createNotification({
+            type: 'success',
+            text: c('Success').t`Email address copied to clipboard`,
+        });
+    };
+
     return (
         <>
             {hasDescription && (
@@ -212,9 +222,17 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
                                     key={i}
                                     index={i}
                                     cells={[
-                                        <div key={0} className="text-ellipsis" title={address.Email}>
-                                            {address.Email}
-                                        </div>,
+                                        <Tooltip title={address.Email}>
+                                            <button
+                                                key={0}
+                                                type="button"
+                                                className="user-select text-ellipsis w-auto max-w-full text-left"
+                                                data-testid="users-and-addresses-table:address"
+                                                onClick={() => handleCopyEmail(address.Email)}
+                                            >
+                                                {address.Email}
+                                            </button>
+                                        </Tooltip>,
                                         <AddressStatus key={1} {...addressStatuses} />,
                                         <AddressActions
                                             key={2}
