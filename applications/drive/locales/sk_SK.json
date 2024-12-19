@@ -1338,6 +1338,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Zmena nastavení emailovej adresy"
+      ],
       "Continue": [
         "Pokračovať"
       ],
@@ -2443,6 +2446,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
+      "Also included": [
+        "Zahŕňa aj"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrovanie kontaktov… Táto akcia môže trvať niekoľko minút. Akonáhle bude proces ukončený, budete si môcť stiahnuť súbor s vašimi exportovanými kontaktmi."
       ],
@@ -2454,6 +2460,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3909,28 +3918,17 @@
       "Use your app password instead of your regular password if:": [
         "Použite heslo aplikácie namiesto bežného hesla, ak:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Vaše heslo pre aplikáciu je správne. ${ boldNot } používajte vaše bežné heslo."
-      ],
       "Your email account requires an app password to export your data.": [
         "Váš emailový účet vyžaduje heslo aplikácie pre export vašich dát."
       ],
       "Your email account requires one to export your data.": [
         "Váš emailový účet toto vyžaduje na export vašich dát."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Vaša emailová adresa a heslo aplikácie sú správne. ${ boldNot } používajte vaše bežné heslo."
-      ],
       "Your email address and password are correct.": [
         "Vaša emailová adresa a heslo sú správne."
       ],
       "Your password is correct.": [
         "Vaše heslo je správne."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "nie"
       ]
     },
     "Import instructions": {
@@ -4918,6 +4916,9 @@
       "Merged": [
         "Zlúčený"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Správy zo všetkých vašich emailových adries budú chodiť do vašej schránky."
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -5167,6 +5168,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
       ],
+      "Registering your subscription...": [
+        "Registrácia vášho predplatného..."
+      ],
       "Report has been sent": [
         "Hlásenie bolo odoslané"
       ],
@@ -5251,6 +5255,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavenie PGP vám umožní odosielať end-to-end šifrované emaily používateľom, ktorí nemajú ${ BRAND_NAME } a používajú službu kompatibilnú s PGP."
       ],
+      "Setting up your new address...": [
+        "Nastavovanie vašej novej adresy..."
+      ],
       "Share files with links": [
         "Zdieľajte súbory pomocou odkazov"
       ],
@@ -5298,6 +5305,9 @@
       ],
       "Something went wrong...": [
         "Niečo sa pokazilo..."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
@@ -5364,6 +5374,9 @@
       ],
       "This folder is empty": [
         "Tento priečinok je prázdny"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
       ],
       "This item already exists in your library": [
         "Táto položka už vo vašej knižnici existuje"
@@ -7096,6 +7109,9 @@
       "10 email addresses/aliases": [
         "10 emailových adries/aliasov"
       ],
+      "10 more premium features": [
+        "10 ďalších prémiových funkcií"
+      ],
       "10-year file version history": [
         "10-ročná história verzií súborov"
       ],
@@ -7596,6 +7612,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ priceCoupon }": [
         "Získajte Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "new_plans: tooltip": {
@@ -10692,6 +10711,9 @@
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"
       ],
+      "Upgrade complete!": [
+        "Aktualizácia dokončená!"
+      ],
       "Uploaded": [
         "Nahrané"
       ],
@@ -10754,6 +10776,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Your shorter address is now ready": [
+        "Vaša skrátená adresa je pripravená"
       ],
       "Your welcome actions": [
         "Vaše uvítacie akcie"

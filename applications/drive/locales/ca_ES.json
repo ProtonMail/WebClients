@@ -3849,8 +3849,8 @@
       "Use your app password instead of your regular password if:": [
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "La contrasenya de l'aplicació és correcta. ${ boldNot } utilitzeu la vostra contrasenya habitual."
+      "Your app password is correct. Do not use your regular password.": [
+        "La contrasenya de l'aplicació és correcta. No utilitzeu la contrasenya normal."
       ],
       "Your email account requires an app password to export your data.": [
         "El vostre compte de correu electrònic requereix una contrasenya d'aplicació per a exportar les dades."
@@ -3858,19 +3858,14 @@
       "Your email account requires one to export your data.": [
         "El vostre compte de correu electrònic en requereix una per exportar les dades."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. ${ boldNot } utilitzi la contrasenya normal."
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya normal."
       ],
       "Your email address and password are correct.": [
         "La vostra adreça de correu electrònic i contrasenya són correctes."
       ],
       "Your password is correct.": [
         "La seva contrasenya és correcta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "no"
       ]
     },
     "Import instructions": {
@@ -4084,7 +4079,7 @@
         "${ nbFile } fitxers xifrats..."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }."
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantenen sense canvis."
@@ -4181,6 +4176,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
@@ -4359,6 +4357,10 @@
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un núvol segur per a ${ value } membre",
+        "Crea un núvol segur per a ${ value } membres"
       ],
       "Create in": [
         "Crear a"
