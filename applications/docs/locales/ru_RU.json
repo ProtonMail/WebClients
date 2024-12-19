@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
+      "Accept": [
+        "Принять"
+      ],
       "Activate recovery": [
         "Активировать восстановление"
       ],
@@ -197,6 +200,9 @@
       ],
       "Customize import": [
         "Настроить импорт"
+      ],
+      "Decline": [
+        "Отклонить"
       ],
       "Decrease": [
         "Уменьшить"
@@ -3614,28 +3620,17 @@
       "Use your app password instead of your regular password if:": [
         "Используйте ваш пароль приложения вместо обычного пароля, если:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ваш пароль приложения правильный. ${ boldNot } используйте свой обычный пароль."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ваш почтовый аккаунт требует пароль приложения для экспорта данных."
       ],
       "Your email account requires one to export your data.": [
         "Для экспорта данных требуется аккаунт электронной почты."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ваш адрес электронной почты и пароль приложения верны. ${ boldNot } используйте свой обычный пароль."
-      ],
       "Your email address and password are correct.": [
         "Ваш адрес электронной почты и пароль верны."
       ],
       "Your password is correct.": [
         "Ваш пароль правильный."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "не"
       ]
     },
     "Import instructions": {
@@ -3974,6 +3969,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Вы уверены, что хотите продолжить?"
       ],
       "Attention required": [
         "Требуется внимание"
@@ -7057,8 +7055,17 @@
       "External invitation's email was sent again": [
         "Электронное письмо с внешним приглашением было отправлено еще раз"
       ],
+      "Failed to accept share invitation": [
+        "Не удалось принять приглашение на использование общего ресурса"
+      ],
       "Failed to download files: ${ err }": [
         "Не удалось скачать файлы: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Не удалось загрузить информацию о приглашении"
+      ],
+      "Failed to reject share invitation": [
+        "Не удалось отклонить приглашение на использование общего ресурса"
       ],
       "Failed to upload files: ${ err }": [
         "Не удалось загрузить файлы: ${ err }"
@@ -7089,6 +7096,12 @@
       ],
       "Public link update access failed ": [
         "Доступ к обновлению публичной ссылки не удался "
+      ],
+      "Share invitation accepted successfully": [
+        "Приглашение на использование общего ресурса успешно принято"
+      ],
+      "Share invitation declined": [
+        "Приглашение поделиться отклонено"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не удалось удалить ссылку на \"${ name }\""
@@ -9044,6 +9057,9 @@
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Вы собираетесь отклонить приглашение для элемента, находящегося в общем доступе. Вы не сможете получить к нему доступ до тех пор, пока владелец не поделится им с вами."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"

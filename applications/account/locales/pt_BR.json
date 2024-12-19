@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -6467,28 +6467,17 @@
       "Use your app password instead of your regular password if:": [
         "Use sua senha de aplicativo em vez da sua senha normal se:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "A senha de aplicativo está correta. ${ boldNot } use sua senha normal."
-      ],
       "Your email account requires an app password to export your data.": [
         "Sua conta de e-mail requer uma senha de aplicativo para exportar seus dados."
       ],
       "Your email account requires one to export your data.": [
         "Sua conta de e-mail requer uma para exportar os seus dados."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Seu endereço de e-mail e senha do aplicativo estão corretos. ${ boldNot } use sua senha normal."
-      ],
       "Your email address and password are correct.": [
         "Seu endereço de e-mail e senha estão corretos."
       ],
       "Your password is correct.": [
         "Sua senha está correta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "não"
       ]
     },
     "Import error link": {
@@ -10107,6 +10096,9 @@
       ],
       "Auto-unsubscribe": [
         "Cancelar inscrição automaticamente"
+      ],
+      "Automatically save contacts": [
+        "Salvar contatos automaticamente"
       ],
       "Awarded": [
         "Premiado"

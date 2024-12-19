@@ -1191,11 +1191,17 @@
       ]
     },
     "Link": {
+      "contact us": [
+        "lépjen velünk kapcsolatba"
+      ],
       "Learn more": [
         "További információk"
       ],
       "Request an invite": [
         "Meghívó kérése"
+      ],
+      "terms of service": [
+        "szolgáltatási feltételek"
       ]
     },
     "new_plans": {
@@ -1203,7 +1209,15 @@
         "Tartsa rendezetten a leveleit, mappák segítésével"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "${ planTitle } beszerzése"
+      ]
+    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írási segéd"
+      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -1311,8 +1325,17 @@
       "HTML signatures": [
         "HTML aláírás"
       ],
+      "Online document editor": [
+        "Online dokumentum szerkesztő"
+      ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
+      ],
+      "Proofread and refine your emails": [
+        "Lektorálja és finomítsa e-mailjeit"
+      ],
+      "Recover previous file versions": [
+        "Régebbi fájl verziók visszaállítása"
       ],
       "Schedule and snooze emails for any time": [
         "E-mailek időzítése vagy halasztása"
@@ -1427,6 +1450,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Megoszthatja fájljait vagy mappáit bárkivel egy biztonságos, megosztási hivatkozás használatával"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } és a ${ PASS_APP_NAME } közt."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt. A szervezet egyes felhasználói közt az adminisztrátorok osztják szét a tárhelyet"
       ],
@@ -1460,6 +1486,22 @@
         "Jelszó"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Bejelentkezés"
+      ],
+      "Sign in to your organization": [
+        "Jelentkezzen be a szervezetébe"
+      ]
+    },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Akár ${ totalStorageSize } Drive-tárhely"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Akár ${ totalStorageSize } Mail-tárhely"
+      ]
+    },
     "storage_split: info": {
       "For all ${ BRAND_NAME } services": [
         "Minden ${ BRAND_NAME } szolgáltatáshoz"
@@ -1474,6 +1516,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Fiók zárolva"
+      ],
       "Enter 2FA code": [
         "Írja be a kétlépcsős hitelesítési kódot"
       ],

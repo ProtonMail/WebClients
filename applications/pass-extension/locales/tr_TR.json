@@ -1324,9 +1324,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "${ PASS_APP_NAME } uygulamasına erişim için her zaman yedek parolanız istenir."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
       ],
@@ -1470,9 +1467,6 @@
       ],
       "Current version": [
         "Güncel sürüm"
-      ],
-      "Currently selected": [
-        "Şu an seçilmiş olan"
       ],
       "Decrypting your data": [
         "Verilerinizin şifresi çözülüyor"
@@ -1829,15 +1823,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
-      ],
-      "Please confirm your backup password": [
-        "Lütfen yedek parolanızı onaylayın"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Parolanızla otomatik kilitleme için lütfen yedek parolanızı yazın"
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Geçerli kilidin kaydını kaldırmak için yedek parolanızı yazın."
       ],
       "Please confirm your extra password": [
         "Lütfen ek parolanızı onaylayın"
@@ -2428,9 +2413,6 @@
       ],
       "Autosuggest": [
         "Otomatik öneri"
-      ],
-      "Backup password": [
-        "Yedek parola"
       ],
       "Biometrics": [
         "Biyometri"
@@ -3488,9 +3470,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
-      ],
-      "Enter your backup password": [
-        "Yedek parolanızı yazın"
       ],
       "Enter your extra password": [
         "Ek parolanızı yazın"

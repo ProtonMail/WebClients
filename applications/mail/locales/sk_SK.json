@@ -1936,6 +1936,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Zmena nastavení emailovej adresy"
+      ],
       "Continue": [
         "Pokračovať"
       ],
@@ -3600,6 +3603,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
+      "Also included": [
+        "Zahŕňa aj"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a koša a odomknúť ďalšie prémiové funkcie."
       ],
@@ -3629,6 +3635,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Pre neobmedzený prístup k asistentovi písnania a ďalším možnostiami prejtide na ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Dostávajte upozornenia, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3701,6 +3710,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Odomknite upgradovaním neobmedzené množstvo priečinkov, štítkov a ďalšie prémiové funkcie."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Upgradovaním získate ${ activatePmUser } kratšiu, ľahko zapamätateľnú emailovú adresu k vašej súčasnej adrese."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Aktualizujte si svoj účet a aktivujte si ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostné riešenie založené na umelej inteligencii (AI) s vyhradenou nepretržitou (24/7) odbornou podporou."
@@ -5692,28 +5704,17 @@
       "Use your app password instead of your regular password if:": [
         "Použite heslo aplikácie namiesto bežného hesla, ak:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Vaše heslo pre aplikáciu je správne. ${ boldNot } používajte vaše bežné heslo."
-      ],
       "Your email account requires an app password to export your data.": [
         "Váš emailový účet vyžaduje heslo aplikácie pre export vašich dát."
       ],
       "Your email account requires one to export your data.": [
         "Váš emailový účet toto vyžaduje na export vašich dát."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Vaša emailová adresa a heslo aplikácie sú správne. ${ boldNot } používajte vaše bežné heslo."
-      ],
       "Your email address and password are correct.": [
         "Vaša emailová adresa a heslo sú správne."
       ],
       "Your password is correct.": [
         "Vaše heslo je správne."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "nie"
       ]
     },
     "Import ICS file from Mail": {
@@ -6892,6 +6893,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Správy, ktoré boli v koši a spame viac ako 30 dní, budú automaticky vymazané."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Správy zo všetkých vašich emailových adries budú chodiť do vašej schránky."
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -7123,6 +7127,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
       ],
+      "Registering your subscription...": [
+        "Registrácia vášho predplatného..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Nezabudnite ho aktualizovať v správcovi hesiel alebo kdekoľvek, kde máte uložené údaje o svojom účte a prihlasovacie údaje."
       ],
@@ -7228,6 +7235,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavenie PGP vám umožní odosielať end-to-end šifrované emaily používateľom, ktorí nemajú ${ BRAND_NAME } a používajú službu kompatibilnú s PGP."
       ],
+      "Setting up your new address...": [
+        "Nastavovanie vašej novej adresy..."
+      ],
       "Shorten selection": [
         "Skrátiť výber"
       ],
@@ -7254,6 +7264,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
@@ -7387,6 +7400,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Tento dokument je určený ako pomôcka na písanie. Skontrolujte správnosť navrhovaného textu. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
@@ -7401,9 +7417,6 @@
       ],
       "This message is from a mailing list.": [
         "Správa pochádza zo zoznamu adresátov."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Táto správa je zo SimpleLogin aliasu."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Táto správa je podpísaná prílohou kľúča, ktorý nie je dôveryhodný kľúč."
@@ -9626,6 +9639,9 @@
       "10 email addresses/aliases": [
         "10 emailových adries/aliasov"
       ],
+      "10 more premium features": [
+        "10 ďalších prémiových funkcií"
+      ],
       "10-year file version history": [
         "10-ročná história verzií súborov"
       ],
@@ -10126,6 +10142,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ priceCoupon }": [
         "Získajte Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "new_plans: tooltip": {
@@ -10505,9 +10524,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } znamená, že už vás nebudú sledovať na internete."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Pristupujte k svojim emailom a kalendáru priamo z počítača pomocou desktopovej aplikácie."
-      ],
       "Activate premium features": [
         "Aktivujte prémiové funkcie"
       ],
@@ -10516,9 +10532,6 @@
       ],
       "Advanced encryption": [
         "Pokročilé šifrovanie"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "Automatické mazanie spamu a koša"
@@ -10532,23 +10545,8 @@
       "Download the desktop app": [
         "Stiahnite si desktopovú aplikáciu"
       ],
-      "Download the desktop app and continue": [
-        "Stiahnite si desktopovú aplikáciu a pokračujte"
-      ],
-      "Fixed and focused": [
-        "Pevne a sústredene"
-      ],
       "Get notified if your password is compromised.": [
         "Dostávajte upozornenia, ak dôjde k úniku vášho hesla."
-      ],
-      "Get the desktop app": [
-        "Získať desktopovú aplikáciu"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Stiahnite si mobilnú aplikáciu z ${ mobileAppAppStoreLink } alebo ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Špičková ochrana proti spamu"
@@ -10562,14 +10560,8 @@
       "Maybe later": [
         "Možno neskôr"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Ďalšie možnosti využitia ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Ďalej"
-      ],
-      "On the move": [
-        "Na cestách"
       ],
       "Protection from trackers": [
         "Ochrana pred sledovaním"
@@ -11894,6 +11886,9 @@
       "Schedule send": [
         "Naplánovať odoslanie"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Toto je teraz vaša predvolená adresa. Ak chcete odoslať z inej adresy, otvorte rozbaľovaciu ponuku. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Zapnite ${ DARK_WEB_MONITORING_NAME }, aby ste dostávali upozornenia, ak vaše údaje uniknú zo služieb tretích strán."
       ],
@@ -11905,6 +11900,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Teraz môžete naplánovať odosielanie správ na neskôr"
+      ],
+      "Your pm.me email is active": [
+        "Váš email pm.me je aktívny"
       ]
     },
     "sso": {
@@ -13779,6 +13777,9 @@
       "Unsubscribe request sent": [
         "Žiadosť o odhlásenie odoslaná"
       ],
+      "Upgrade complete!": [
+        "Aktualizácia dokončená!"
+      ],
       "Verification error": [
         "Chyba pri overovaní"
       ],
@@ -13829,6 +13830,9 @@
       ],
       "Your free trial has ended": [
         "Vaša bezplatná skúšobná verzia vypršala"
+      ],
+      "Your shorter address is now ready": [
+        "Vaša skrátená adresa je pripravená"
       ]
     },
     "Today icon tooltip in mini calendar": {

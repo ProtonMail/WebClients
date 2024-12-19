@@ -213,7 +213,7 @@
         "選択を解除"
       ],
       "Disable alias": [
-        "エイリアスを無効にする"
+        "エイリアスを無効化"
       ],
       "Disable autosave on this website": [
         "ウェブサイトでの自動保存を無効化"
@@ -1304,9 +1304,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } へのアクセスには常にあなたの ${ BRAND_NAME } パスワードが必要です。"
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "${ PASS_APP_NAME }へのアクセスには、常にバックアップパスワードが必要です。"
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } へのアクセスには指紋または端末のPINが必要です。"
       ],
@@ -1450,9 +1447,6 @@
       ],
       "Current version": [
         "現在のバージョン"
-      ],
-      "Currently selected": [
-        "現在選択されています"
       ],
       "Decrypting your data": [
         "データの暗号化解除"
@@ -1707,7 +1701,7 @@
         "${ count }個のアイテムを移動"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "「${ payload.content.name }」からすべての項目を移動します"
+        "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
         "アイテムを別の保管庫に移動すると、それらの履歴とすべてのセキュアリンクが消去されます。"
@@ -1802,15 +1796,6 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
-      "Please confirm your backup password": [
-        "バックアップパスワードを確認してください"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "パスワードの自動ロックのために、バックアップパスワードを確認してください。"
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "現在のロックを解除するには、バックアップパスワードを確認してください。"
-      ],
       "Please confirm your extra password": [
         "追加のパスワードを確認してください"
       ],
@@ -1866,10 +1851,10 @@
         "以下の手順に従って、ドメインを設定してください。"
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
-        "削除したエイリアスは復元できません。エイリアスを無効にするほうがよろしいでしょうか？"
+        "一度削除したエイリアスは復元できません。代わりにエイリアスを無効にしますか？"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "削除したエイリアスは復元できません。このエイリアスは既に無効になっており、メールボックスにメールを転送することはできません。"
+        "一度削除したエイリアスは復元できません。エイリアスは既に無効になっており、メールボックスにメールを転送しません。"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } ウェブ アプリに早期アクセスできるようにアップグレードしてください"
@@ -1905,7 +1890,7 @@
         "追加パスワードを登録中..."
       ],
       "Registering PIN lock failed": [
-        "PINロックを登録できませんでした"
+        "PINロックの登録に失敗しました"
       ],
       "Removing all inactive secure links...": [
         "すべての非アクティブなセキュアリンクを削除中..."
@@ -1989,7 +1974,7 @@
         "すべてのアイテムのエクスポートに成功"
       ],
       "Successfully left the vault": [
-        "フォルダーを正常に退出しました。"
+        "保管庫を退出しました"
       ],
       "Successfully synced all vaults": [
         "すべての保管庫が正常に同期されました"
@@ -2001,7 +1986,7 @@
         "保管庫を同期中…"
       ],
       "Thank you, the problem has been reported": [
-        "問題は報告されました　ありがとうございます"
+        "ありがとうございます。問題が報告されました"
       ],
       "The display name when sending an email from this alias.": [
         "このエイリアスからメールを送った時の表示名"
@@ -2211,7 +2196,7 @@
         "このPINを使用して、${ PASS_APP_NAME }が一定期間使用されずに自動ロックされた後、ロックを解除します。"
       ],
       "You're about to create": [
-        "作成されるメールアドレス"
+        "作成しようとしています"
       ],
       "You're invited to a vault.": [
         "フォルダーへの招待があります。"
@@ -2297,7 +2282,7 @@
         "24 時間"
       ],
       "2FA autofill": [
-        "2 要素認証 (2FA) 自動入力"
+        "2要素認証自動入力"
       ],
       "2FA secret key (TOTP)": [
         "2FA 秘密鍵 (TOTP)"
@@ -2384,10 +2369,7 @@
         "自動保存"
       ],
       "Autosuggest": [
-        "オートサジェスト"
-      ],
-      "Backup password": [
-        "バックアップパスワード"
+        "自動提案"
       ],
       "Biometrics": [
         "生体認証"
@@ -3440,9 +3422,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
-      ],
-      "Enter your backup password": [
-        "バックアップパスワードを入力してください"
       ],
       "Enter your extra password": [
         "追加のパスワードを入力"

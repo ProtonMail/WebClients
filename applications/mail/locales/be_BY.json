@@ -4726,7 +4726,7 @@
         "Плаваючы час не падтрымліваецца"
       ],
       "Free-busy time information": [
-        "Інфармацыя пра свабодны час і працоўныя дні"
+        "Інфармацыя аб свабодным часе і працоўных днях"
       ],
       "Invalid event": [
         "Памылковая падзея"
@@ -5699,28 +5699,17 @@
       "Use your app password instead of your regular password if:": [
         "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ваш пароль праграмы правільны. ${ boldNot } выкарыстоўвайце свой звычайны пароль."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе пароль праграмы для экспартавання вашых даных."
       ],
       "Your email account requires one to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе яго для экспартавання даных."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. ${ boldNot } выкарыстоўвайце свой звычайны пароль."
-      ],
       "Your email address and password are correct.": [
         "Вашы адрас электроннай пошты і пароль правільныя."
       ],
       "Your password is correct.": [
         "Ваш пароль правільны."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "не"
       ]
     },
     "Import ICS file from Mail": {
@@ -7271,6 +7260,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно пратэрмінаванае."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Магчымасці сховішча не падтрымліваюцца ў гэтым браўзеры. Гэта падтрымка неабходна, каб уключыць пошук па змесціве."
       ],
@@ -7420,9 +7412,6 @@
       ],
       "This message is from a mailing list.": [
         "Гэта паведамленне са спіса рассылкі."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Гэта паведамленне з псеўданіма SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Гэта паведамленне падпісана ключом, які яшчэ не быў давераным."
@@ -10530,9 +10519,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } азначае, што за вамі больш не будуць сачыць у інтэрнэце."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Атрымлівайце доступ да электроннай пошты і календара з дапамогай праграмы для камп'ютара."
-      ],
       "Activate premium features": [
         "Актываваць прэміяльныя функцыі"
       ],
@@ -10541,9 +10527,6 @@
       ],
       "Advanced encryption": [
         "Дадатковае шыфраванне"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
@@ -10557,23 +10540,8 @@
       "Download the desktop app": [
         "Спампоўка настольных праграм"
       ],
-      "Download the desktop app and continue": [
-        "Спампаваць настольную праграму і працягнуць"
-      ],
-      "Fixed and focused": [
-        "Нязменны і сканцэнтраваны"
-      ],
       "Get notified if your password is compromised.": [
         "Будзьце ў курсе ў выпадку, калі ваш пароль будзе скампраметаваны."
-      ],
-      "Get the desktop app": [
-        "Атрымаць настольную праграму"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Атрымайце мабільную праграму з ${ mobileAppAppStoreLink } або ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Адна з лепшых абарон ад спаму"
@@ -10587,14 +10555,8 @@
       "Maybe later": [
         "Магчыма пазней"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Іншыя магчымасці выкарыстання ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Далей"
-      ],
-      "On the move": [
-        "На хаду"
       ],
       "Protection from trackers": [
         "Абарона ад праграм сачэння"

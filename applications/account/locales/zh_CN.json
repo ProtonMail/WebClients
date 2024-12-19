@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -1095,6 +1095,9 @@
       ],
       "Upgrade now": [
         "立即升级账户"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升级至 ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "升级到 Business 套餐"
@@ -3877,6 +3880,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "未能获取已登录的账户，请${ refresh }或稍后再试。"
       ],
+      "Failed to load OAuth modal.": [
+        "无法加载 OAuth 模式。"
+      ],
       "Failed to process the logo": [
         "无法处理图标"
       ],
@@ -5450,28 +5456,17 @@
       "Use your app password instead of your regular password if:": [
         "下列情况需使用应用专用密码，不能用平常输入的密码："
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "应用密码输入无误。${ boldNot } 输入您平常用的密码。"
-      ],
       "Your email account requires an app password to export your data.": [
         "该邮箱需要应用专用密码才能导出数据."
       ],
       "Your email account requires one to export your data.": [
         "该邮箱需要应用专用密码才能导出数据."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "您的邮箱地址和应用专用密码输入无误。${ boldNot } 输入您平常用的密码。"
-      ],
       "Your email address and password are correct.": [
         "您输入的邮箱地址和密码正确。"
       ],
       "Your password is correct.": [
         "密码输入无误。"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "不要"
       ]
     },
     "Import error link": {

@@ -3577,7 +3577,7 @@
         "${ number } servidors"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }."
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantenen sense canvis."
@@ -3717,6 +3717,9 @@
       "Affected user is on row": [
         "L'usuari afectat es troba a la fila.",
         "Els usuaris afectats es troben a les files."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ],
       "All inactive members deleted": [
         "S'han suprimit tots els membres inactius."
@@ -3867,6 +3870,10 @@
       ],
       "Country code": [
         "Codi de país"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un núvol segur per a ${ value } membre",
+        "Crea un núvol segur per a ${ value } membres"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."

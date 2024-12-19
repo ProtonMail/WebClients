@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Terima"
+      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -203,6 +206,9 @@
       ],
       "Customize import": [
         "Sesuaikan impor"
+      ],
+      "Decline": [
+        "Tolak"
       ],
       "Decrease": [
         "Kurangi"
@@ -2171,7 +2177,7 @@
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
       "Also included": [
-        "Juga termasuk"
+        "Turut meliputi"
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
@@ -3545,28 +3551,17 @@
       "Use your app password instead of your regular password if:": [
         "Gunakan kata sandi aplikasi Anda alih-alih kata sandi biasa apabila:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
-      ],
       "Your email account requires an app password to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email account requires one to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Alamat email dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
-      ],
       "Your email address and password are correct.": [
         "Alamat email dan kata sandi Anda benar."
       ],
       "Your password is correct.": [
         "Kata sandi Anda benar."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "jangan"
       ]
     },
     "Import instructions": {
@@ -3845,6 +3840,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Apakah Anda yakin ingin melanjutkan?"
       ],
       "Attention required": [
         "Diperlukan perhatian"
@@ -4555,7 +4553,7 @@
         "Dokumen ini tidak ada, atau Anda mungkin tidak memiliki izin untuk melihat dokumen ini. Anda dapat mencoba untuk memuat ulang halaman untuk memeriksa apakah masalah ini terus berlanjut."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
-        "Ini sekarang merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
+        "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
       ],
       "This item already exists in your library": [
         "Item ini telah ada pada pustaka Anda"
@@ -5192,13 +5190,13 @@
         "Sertakan pesan dan nama berkas dalam email undangan"
       ],
       "Keep both": [
-        "Simpan keduanya"
+        "Pertahankan keduanya"
       ],
       "Keep both files": [
-        "Simpan kedua berkas"
+        "Pertahankan kedua berkas"
       ],
       "Keep both folders": [
-        "Simpan kedua folder"
+        "Pertahankan kedua folder"
       ],
       "Label messages as": [
         "Labeli pesan sebagai"
@@ -6916,8 +6914,17 @@
       "External invitation's email was sent again": [
         "Email undangan eksternal telah dikirim ulang"
       ],
+      "Failed to accept share invitation": [
+        "Gagal menerima undangan pembagian"
+      ],
       "Failed to download files: ${ err }": [
         "Gagal mengunduh berkas: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Rincian undangan gagal dimuat"
+      ],
+      "Failed to reject share invitation": [
+        "Undangan untuk berbagi gagal ditolak"
       ],
       "Failed to upload files: ${ err }": [
         "Gagal mengunggah berkas: ${ err }"
@@ -6945,6 +6952,12 @@
       ],
       "Public link update access failed ": [
         "Gagal memperbarui akses tautan publik "
+      ],
+      "Share invitation accepted successfully": [
+        "Undangan pembagian berhasil diterima"
+      ],
+      "Share invitation declined": [
+        "Undangan untuk berbagi ditolak"
       ],
       "Stopping the sharing of this item has failed": [
         "Pembagian item gagal dihentikan"
@@ -8783,6 +8796,9 @@
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Anda akan menolak undangan untuk item yang dibagikan. Anda tidak akan dapat mengakses lagi sampai pemilik membagikan ulang kepada Anda."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"

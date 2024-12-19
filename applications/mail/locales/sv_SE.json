@@ -5629,28 +5629,17 @@
       "Use your app password instead of your regular password if:": [
         "Använd ditt applösenord istället för ditt vanliga lösenord om:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ditt applösenord är korrekt. Använd ${ boldNot } ditt vanliga lösenord."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ditt e-postkonto kräver ett applösenord för att exportera dina data."
       ],
       "Your email account requires one to export your data.": [
         "Ditt e-postkonto kräver ett för att exportera dina data."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Din e-postadress och applösenord är korrekta. Använd ${ boldNot } ditt vanliga lösenord."
-      ],
       "Your email address and password are correct.": [
         "Din e-postadress och ditt lösenord är korrekta."
       ],
       "Your password is correct.": [
         "Ditt lösenord är korrekt."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "inte"
       ]
     },
     "Import ICS file from Mail": {
@@ -7226,9 +7215,6 @@
       ],
       "This message is from a mailing list.": [
         "Detta meddelande är från en e-postlista."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Detta meddelande kommer från ett SimpleLogin-alias."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Detta meddelande är signerat med en nyckel som inte är betrodd ännu."
@@ -10233,9 +10219,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } innebär att du inte längre följs över internet."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Kom åt e-post och kalender direkt från ditt skrivbord med skrivbordsappen."
-      ],
       "Activate premium features": [
         "Aktivera premiumfunktioner"
       ],
@@ -10244,9 +10227,6 @@
       ],
       "Advanced encryption": [
         "Avancerad kryptering"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "Ta automatiskt bort skräppost och pappersborg"
@@ -10260,23 +10240,8 @@
       "Download the desktop app": [
         "Ladda ner skrivbordsappen"
       ],
-      "Download the desktop app and continue": [
-        "Ladda ner skrivbordsappen och fortsätt"
-      ],
-      "Fixed and focused": [
-        "Snabb och fokuserad"
-      ],
       "Get notified if your password is compromised.": [
         "Bli aviserad när ditt lösenord avslöjats."
-      ],
-      "Get the desktop app": [
-        "Skaffa skrivbordsappen"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Skaffa mobilappen från ${ mobileAppAppStoreLink } eller ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Branschledande skräppostskydd"
@@ -10290,14 +10255,8 @@
       "Maybe later": [
         "Kanske senare"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Fler sätt att uppleva ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Nästa"
-      ],
-      "On the move": [
-        "På språng"
       ],
       "Protection from trackers": [
         "Skydd från spårare"

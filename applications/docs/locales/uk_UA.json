@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Схвалити"
+      ],
       "Activate recovery": [
         "Активувати відновлення"
       ],
@@ -206,6 +209,9 @@
       ],
       "Customize import": [
         "Налаштувати імпорт"
+      ],
+      "Decline": [
+        "Відхилити"
       ],
       "Decrease": [
         "Зменшити"
@@ -392,6 +398,9 @@
       ],
       "Merge contacts": [
         "Об'єднати контакти"
+      ],
+      "More actions": [
+        "Додаткові дії"
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
@@ -3644,28 +3653,17 @@
       "Use your app password instead of your regular password if:": [
         "Використовуйте пароль програм замість свого звичайного пароля якщо:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
-      ],
       "Your email account requires an app password to export your data.": [
         "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ваша адреса е-пошти та пароль програм правильні. ${ boldNot } використовуйте свій звичайний пароль."
-      ],
       "Your email address and password are correct.": [
         "Ваші адреса е-пошти та пароль правильні."
       ],
       "Your password is correct.": [
         "Ваш пароль правильний."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "не"
       ]
     },
     "Import instructions": {
@@ -3954,11 +3952,17 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
+      "Actions": [
+        "Дії"
+      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Усі (${ totalFoldersCount } тека)",
@@ -4010,6 +4014,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Ви справді хочете продовжити?"
       ],
       "Attention required": [
         "Потребує уваги"
@@ -4661,6 +4668,12 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Посилання спільного доступу для ${ boldNameText }"
+      ],
+      "Shared by": [
+        "Поширено користувачем"
+      ],
+      "Shared on": [
+        "Поширено"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
@@ -7177,8 +7190,17 @@
       "External invitation's email was sent again": [
         "Зовнішній лист із запрошенням надіслано знову"
       ],
+      "Failed to accept share invitation": [
+        "Не вдалося прийняти запрошення на спільний доступ"
+      ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Не вдалося завантажити деталі запрошення"
+      ],
+      "Failed to reject share invitation": [
+        "Не вдалося відхилити запрошення, яким поділилися"
       ],
       "Failed to upload files: ${ err }": [
         "Не вдалося вивантажити файли: ${ err }"
@@ -7209,6 +7231,12 @@
       ],
       "Public link update access failed ": [
         "Не вдалося отримати доступ до публічного посилання "
+      ],
+      "Share invitation accepted successfully": [
+        "Запрошення на спільний доступ прийнято"
+      ],
+      "Share invitation declined": [
+        "Запрошення, яким поділилися, відхилено"
       ],
       "Stopping the sharing of this item has failed": [
         "Не вдалося зупинити поширення елемента"
@@ -7662,6 +7690,11 @@
     "Safety review": {
       "Review your account safety": [
         "Переглянути безпеку вашого облікового запису"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вхід не був успішно завершений."
       ]
     },
     "Security Center": {
@@ -8183,6 +8216,9 @@
     "sso": {
       "Sign in": [
         "Увійти"
+      ],
+      "Sign in to your organization": [
+        "Увійти до своєї організації"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вас буде перенаправлено до вашого стороннього провайдера SSO."
@@ -9174,6 +9210,9 @@
       ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Ви збираєтеся відхилити запрошення на спільний доступ до елемента. Ви не зможете отримати до нього доступ знову, доки власник не поділиться ним з вами."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш безплатний пробний період ${ planName } завершується ${ textDate }"
