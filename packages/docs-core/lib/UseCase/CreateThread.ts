@@ -117,7 +117,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
 
       onFail()
 
-      return Result.fail(result.getError().message)
+      return Result.fail(result.getErrorMessage())
     }
 
     const response = result.getValue()

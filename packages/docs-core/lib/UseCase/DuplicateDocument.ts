@@ -59,7 +59,7 @@ export class DuplicateDocument {
         linkId: shellResult.linkId,
       })
       if (documentMetaResult.isFailed()) {
-        return Result.fail(documentMetaResult.getError().message)
+        return Result.fail(documentMetaResult.getErrorObject().message)
       }
 
       const newNodeMeta = {

@@ -313,7 +313,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     return record.connection.isConnected()
   }
 
-  async reconnectToDocumentWithoutDelay(nodeMeta: NodeMeta | PublicNodeMeta): Promise<void> {
+  async reconnectToDocumentWithoutDelay(
+    nodeMeta: NodeMeta | PublicNodeMeta,
+    options: { invalidateTokenCache: boolean },
+  ): Promise<void> {
     const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -326,7 +329,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     this.logger.info(`Reconnecting to document without delay`)
 
-    await record.connection.connect()
+    await record.connection.connect(undefined, options)
   }
 
   async handleDocumentUpdateDebouncerFlush(

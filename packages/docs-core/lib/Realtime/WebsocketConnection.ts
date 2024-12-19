@@ -79,6 +79,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   clearTokenCache(): void {
+    this.logger.info('Clearing websocket token cache')
     this.realtimeToken = undefined
   }
 
@@ -189,6 +190,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
+
+    this.logger.info(`Fetching realtime token from network using commit id ${this.lastCommitId}`)
     const urlAndTokenResult = await this._fetchRealtimeToken.execute(nodeMeta, this.lastCommitId)
 
     if (!urlAndTokenResult.isFailed()) {
@@ -200,19 +203,19 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       this.documentState.setProperty('realtimeConnectionToken', urlAndTokenResult.getValue().token)
 
       return ApiResult.ok(urlAndTokenResult.getValue())
+    } else {
+      this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getErrorMessage())
+      this.state.didFailToFetchToken()
+
+      this.callbacks.onFailToGetToken(urlAndTokenResult.getErrorObject().code)
+
+      this.queueReconnection()
+
+      return ApiResult.fail(urlAndTokenResult.getErrorObject())
     }
-
-    this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getError())
-    this.state.didFailToFetchToken()
-
-    this.callbacks.onFailToGetToken(urlAndTokenResult.getError().code)
-
-    this.queueReconnection()
-
-    return ApiResult.fail(urlAndTokenResult.getError())
   }
 
-  async connect(abortSignal?: () => boolean): Promise<void> {
+  async connect(abortSignal?: () => boolean, options?: { invalidateTokenCache: boolean }): Promise<void> {
     if (this.destroyed) {
       throw new Error('Attempted to connect to a destroyed WebsocketConnection')
     }
@@ -230,6 +233,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     clearTimeout(this.reconnectTimeout)
 
     LoadLogger.logEventRelativeToLoadTime('Fetching token for websocket connection')
+
+    if (options?.invalidateTokenCache) {
+      this.clearTokenCache()
+    }
 
     const urlAndTokenResult = await this.getTokenOrFailConnection()
     if (urlAndTokenResult.isFailed()) {
