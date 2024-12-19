@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "Accept": [
+        "Acceptera"
+      ],
       "Activate recovery": [
         "Aktivera återställning"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Anpassa import"
+      ],
+      "Decline": [
+        "Avböj"
       ],
       "Decrease": [
         "Minska"
@@ -3588,28 +3594,17 @@
       "Use your app password instead of your regular password if:": [
         "Använd ditt applösenord istället för ditt vanliga lösenord om:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ditt applösenord är korrekt. Använd ${ boldNot } ditt vanliga lösenord."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ditt e-postkonto kräver ett applösenord för att exportera dina data."
       ],
       "Your email account requires one to export your data.": [
         "Ditt e-postkonto kräver ett för att exportera dina data."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Din e-postadress och applösenord är korrekta. Använd ${ boldNot } ditt vanliga lösenord."
-      ],
       "Your email address and password are correct.": [
         "Din e-postadress och ditt lösenord är korrekta."
       ],
       "Your password is correct.": [
         "Ditt lösenord är korrekt."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "inte"
       ]
     },
     "Import instructions": {
@@ -3913,6 +3908,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Är du säker på att du vill ta bort markerade objekt permanent från papperskorgen?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Är du säker på att du vill fortsätta?"
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
@@ -7049,8 +7047,17 @@
       "External invitation's email was sent again": [
         "Extern e-postinbjudan skickades igen"
       ],
+      "Failed to accept share invitation": [
+        "Misslyckades att acceptera delningsinbjudan"
+      ],
       "Failed to download files: ${ err }": [
         "Misslyckades att ladda ner filer: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Misslyckades att ladda inbjudningsdetaljer"
+      ],
+      "Failed to reject share invitation": [
+        "Misslyckades att avvisa delningsinbjudan"
       ],
       "Failed to upload files: ${ err }": [
         "Misslyckades att ladda upp filer: ${ err }"
@@ -7079,6 +7086,12 @@
       ],
       "Public link update access failed ": [
         "Uppdatering av offentlig länkåtkomst misslyckades "
+      ],
+      "Share invitation accepted successfully": [
+        "Delningsinbjudan accepterades"
+      ],
+      "Share invitation declined": [
+        "Delningsinbjudan avböjd"
       ],
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
@@ -8968,6 +8981,9 @@
       ],
       "What would you like to import?": [
         "Vad vill du importera?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du är på väg att avböja inbjudan för det delade objektet. Du kommer inte att kunna komma åt det igen förrän ägaren delar det med dig."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"

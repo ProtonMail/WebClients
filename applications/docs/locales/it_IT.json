@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Accetta"
+      ],
       "Activate recovery": [
         "Attiva il ripristino"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Personalizza importazione"
+      ],
+      "Decline": [
+        "Rifiuta"
       ],
       "Decrease": [
         "Riduci"
@@ -3579,28 +3585,17 @@
       "Use your app password instead of your regular password if:": [
         "Usa la password dell'app invece della tua password normale se:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "La password dell'app è corretta. Fai ${ boldNot } usa la tua password regolare."
-      ],
       "Your email account requires an app password to export your data.": [
         "Il tuo account email richiede una password dell'app per esportare i tuoi dati."
       ],
       "Your email account requires one to export your data.": [
         "Il tuo account email ne richiede uno per esportare i tuoi dati."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Il tuo indirizzo email e la password dell'app sono corretti. Fai ${ boldNot } usa la tua password regolare."
-      ],
       "Your email address and password are correct.": [
         "Il tuo indirizzo email e la password siano corretti."
       ],
       "Your password is correct.": [
         "La tua password sia corretta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "non"
       ]
     },
     "Import instructions": {
@@ -3901,6 +3896,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Sei sicuro di voler procedere?"
       ],
       "Attention required": [
         "Attenzione"
@@ -7025,8 +7023,17 @@
       "External invitation's email was sent again": [
         "L'email di invito esterno è stata inviata nuovamente"
       ],
+      "Failed to accept share invitation": [
+        "Impossibile accettare l'invito alla condivisione"
+      ],
       "Failed to download files: ${ err }": [
         "Scaricamento dei file non riuscito: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Impossibile caricare i dettagli dell'invito"
+      ],
+      "Failed to reject share invitation": [
+        "Impossibile rifiutare l'invito alla condivisione"
       ],
       "Failed to upload files: ${ err }": [
         "Caricamento dei file non riuscito: ${ err }"
@@ -7055,6 +7062,12 @@
       ],
       "Public link update access failed ": [
         "Impossibile aggiornare l'accesso al collegamento pubblico "
+      ],
+      "Share invitation accepted successfully": [
+        "Invito alla condivisione accettato con successo"
+      ],
+      "Share invitation declined": [
+        "Invito alla condivisione rifiutato"
       ],
       "Stopping the sharing of this item has failed": [
         "L'interruzione della condivisione di questo elemento non è riuscita"
@@ -8938,6 +8951,9 @@
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Stai per rifiutare l'invito per l'elemento condiviso. Non potrai accedervi nuovamente finché il proprietario non lo condividerà con te."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"

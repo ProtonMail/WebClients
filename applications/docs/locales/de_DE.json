@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "Accept": [
+        "Annehmen"
+      ],
       "Activate recovery": [
         "Wiederherstellung aktivieren"
       ],
@@ -201,6 +204,9 @@
       ],
       "Customize import": [
         "Import anpassen"
+      ],
+      "Decline": [
+        "Ablehnen"
       ],
       "Decrease": [
         "Verkleinern"
@@ -3558,28 +3564,17 @@
       "Use your app password instead of your regular password if:": [
         "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort."
-      ],
       "Your email account requires an app password to export your data.": [
         "Dein E-Mail-Konto erfordert ein App-Passwort, um deine Daten zu exportieren."
       ],
       "Your email account requires one to export your data.": [
         "Dein E-Mail-Konto erfordert ein solches, um deine Daten zu exportieren."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
-      ],
       "Your email address and password are correct.": [
         "Deine E-Mail-Adresse und dein Passwort korrekt sind."
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "nicht"
       ]
     },
     "Import instructions": {
@@ -3871,6 +3866,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Möchtest du dich wirklich fortfahren?"
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
@@ -6898,8 +6896,17 @@
       "External invitation's email was sent again": [
         "Externe Einladungs-E-Mail wurde erneut versendet"
       ],
+      "Failed to accept share invitation": [
+        "Einladung zur gemeinsamen Nutzung fehlgeschlagen"
+      ],
       "Failed to download files: ${ err }": [
         "Download der Dateien fehlgeschlagen: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Einladungsdetails konnten nicht geladen werden"
+      ],
+      "Failed to reject share invitation": [
+        "Ablehnung der Einladung zur gemeinsamen Nutzung fehlgeschlagen"
       ],
       "Failed to upload files: ${ err }": [
         "Upload der Dateien fehlgeschlagen: ${ err }"
@@ -6928,6 +6935,12 @@
       ],
       "Public link update access failed ": [
         "Update-Zugriff auf öffentlichen Link fehlgeschlagen "
+      ],
+      "Share invitation accepted successfully": [
+        "Einladung zur gemeinsamen Nutzung erfolgreich angenommen"
+      ],
+      "Share invitation declined": [
+        "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Der Link zu \"${ name }\" konnte nicht gelöscht werden"
@@ -8784,6 +8797,9 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du bist dabei, die Einladung für das freigegebene Element abzulehnen. Du kannst erst wieder darauf zugreifen, wenn der Besitzer es für dich freigibt."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."

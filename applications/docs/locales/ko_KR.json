@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
+      "Accept": [
+        "수락"
+      ],
       "Activate recovery": [
         "복구 활성화"
       ],
@@ -203,6 +206,9 @@
       ],
       "Customize import": [
         "사용자 지정 설정값 가져오기"
+      ],
+      "Decline": [
+        "거절"
       ],
       "Decrease": [
         "감소"
@@ -1088,7 +1094,7 @@
         "이메일 주소 설정 변경"
       ],
       "Continue": [
-        "기계속"
+        "계속"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
@@ -3545,28 +3551,17 @@
       "Use your app password instead of your regular password if:": [
         "다음과 같은 경우 일반 비밀번호 대신 앱 비밀번호를 사용하세요:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "앱 비밀번호가 올바릅니다. ${ boldNot } 일반 비밀번호를 사용하세요."
-      ],
       "Your email account requires an app password to export your data.": [
         "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
       ],
       "Your email account requires one to export your data.": [
         "데이터를 내보내려면 이메일 계정이 필요합니다."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "이메일 주소 및 앱 비밀번호가 올바릅니다. ${ boldNot } 일반 비밀번호를 사용하세요."
-      ],
       "Your email address and password are correct.": [
         "이메일 주소 및 비밀번호가 올바릅니다."
       ],
       "Your password is correct.": [
         "사용자의 비밀번호가 알맞습니다."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "아닌"
       ]
     },
     "Import instructions": {
@@ -3845,6 +3840,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "정말 선택한 항목을 휴지통에서 영구적으로 삭제하시겠습니까?"
+      ],
+      "Are you sure you want to proceed?": [
+        "계속 진행하겠습니까?"
       ],
       "Attention required": [
         "주의 필요"
@@ -6859,8 +6857,17 @@
       "External invitation's email was sent again": [
         "외부 초대 이메일을 다시 전송했습니다."
       ],
+      "Failed to accept share invitation": [
+        "초대장 공유 수락 실패"
+      ],
       "Failed to download files: ${ err }": [
         "파일 다운로드 실패: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "초대 상세 정보를 불러오지 못했습니다"
+      ],
+      "Failed to reject share invitation": [
+        "초대장 공유 거절 실패"
       ],
       "Failed to upload files: ${ err }": [
         "파일 업로드 실패: ${ err }"
@@ -6888,6 +6895,12 @@
       ],
       "Public link update access failed ": [
         "공개 링크 업데이트 접근 실패 "
+      ],
+      "Share invitation accepted successfully": [
+        "초대장 공유가 성공적으로 수락되었습니다."
+      ],
+      "Share invitation declined": [
+        "캘린더 공유 거부됨"
       ],
       "Stopping the sharing of this item has failed": [
         "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
@@ -8726,6 +8739,9 @@
       ],
       "What would you like to import?": [
         "무엇을 가져오시겠어요?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "공유된 항목에 대한 초대를 거절하려고 합니다. 소유자가 나와 공유하지 않는 한 다시 해당 항목에 접근할 수 없습니다."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."

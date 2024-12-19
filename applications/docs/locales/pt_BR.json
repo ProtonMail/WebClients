@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Aceitar"
+      ],
       "Activate recovery": [
         "Ativar a recuperação"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "Importação personalizada"
+      ],
+      "Decline": [
+        "Negar"
       ],
       "Decrease": [
         "Diminuir"
@@ -3591,28 +3597,17 @@
       "Use your app password instead of your regular password if:": [
         "Use sua senha de aplicativo em vez da sua senha normal se:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "A senha de aplicativo está correta. ${ boldNot } use sua senha normal."
-      ],
       "Your email account requires an app password to export your data.": [
         "Sua conta de e-mail requer uma senha de aplicativo para exportar seus dados."
       ],
       "Your email account requires one to export your data.": [
         "Sua conta de e-mail requer uma para exportar os seus dados."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Seu endereço de e-mail e senha do aplicativo estão corretos. ${ boldNot } use sua senha normal."
-      ],
       "Your email address and password are correct.": [
         "Seu endereço de e-mail e senha estão corretos."
       ],
       "Your password is correct.": [
         "Sua senha está correta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "não"
       ]
     },
     "Import instructions": {
@@ -3916,6 +3911,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Você tem certeza de que deseja excluir permanentemente os itens selecionados da lixeira?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Tem certeza de que deseja continuar?"
       ],
       "Attention required": [
         "Atenção necessária"
@@ -7052,8 +7050,17 @@
       "External invitation's email was sent again": [
         "O e-mail do convite externo foi enviado novamente"
       ],
+      "Failed to accept share invitation": [
+        "Falha ao aceitar convite de compartilhamento"
+      ],
       "Failed to download files: ${ err }": [
         "Erro ao baixar arquivos: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Erro ao carregar os detalhes do convite"
+      ],
+      "Failed to reject share invitation": [
+        "Falha ao rejeitar convite de compartilhamento"
       ],
       "Failed to upload files: ${ err }": [
         "Erro ao enviar arquivos: ${ err }"
@@ -7082,6 +7089,12 @@
       ],
       "Public link update access failed ": [
         "Falha na atualização do acesso do link público "
+      ],
+      "Share invitation accepted successfully": [
+        "Convite de compartilhamento aceito com sucesso"
+      ],
+      "Share invitation declined": [
+        "Convite para compartilhamento recusado"
       ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
@@ -8971,6 +8984,9 @@
       ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Você está prestes a recusar o convite para o item compartilhado. Você não poderá acessá-lo novamente até que o proprietário o compartilhe com você."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
