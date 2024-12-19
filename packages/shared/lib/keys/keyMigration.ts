@@ -14,7 +14,7 @@ import { ApiError } from '../fetch/ApiError';
 import type {
     Address,
     Api,
-    DecryptedKey,
+    DecryptedAddressKey,
     KeyMigrationKTVerifier,
     KeyTransparencyVerify,
     Member,
@@ -92,7 +92,7 @@ interface AddressKeyMigrationValue<T extends MigrateAddressKeyPayload> {
 
 interface AddressesKeys {
     address: Address;
-    keys: DecryptedKey[];
+    keys: DecryptedAddressKey[];
 }
 
 export function getAddressKeysMigration(data: {
@@ -130,7 +130,7 @@ export function getAddressKeysMigration({
     return Promise.all(
         addressesKeys.map(async ({ address, keys }) => {
             const migratedKeys = await Promise.all(
-                keys.map(async ({ ID, privateKey }) => {
+                keys.map(async ({ ID, privateKey, Flags, Primary }) => {
                     const { token, encryptedToken, signature, organizationSignature } = await generateAddressKeyTokens(
                         userKey,
                         organizationKey
@@ -146,14 +146,18 @@ export function getAddressKeysMigration({
                         privateKey,
                         privateKeyArmored,
                         ID,
+                        Flags,
+                        Primary
                     };
                 })
             );
             const migratedDecryptedKeys = await Promise.all(
-                migratedKeys.map(async ({ ID, privateKey }) => ({
+                migratedKeys.map(async ({ ID, privateKey, Flags, Primary }) => ({
                     ID,
                     privateKey,
                     publicKey: await toPublicKeyReference(privateKey),
+                    Flags,
+                    Primary
                 }))
             );
             const [signedKeyList, onSKLPublishSuccess] = await createSignedKeyListForMigration({

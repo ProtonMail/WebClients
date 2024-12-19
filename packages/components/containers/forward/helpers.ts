@@ -11,6 +11,7 @@ import type {
     Address,
     Api,
     ApiKeysConfig,
+    DecryptedAddressKey,
     DecryptedKey,
     IncomingAddressForwarding,
     KTUserContext,
@@ -288,7 +289,7 @@ export const getInternalParameters = async (
 interface AcceptIncomingForwardingParameters {
     api: Api;
     address: Address;
-    addressKeys: DecryptedKey[];
+    addressKeys: DecryptedAddressKey[];
     user: UserModel;
     userKeys: DecryptedKey[];
     forward: IncomingAddressForwarding;

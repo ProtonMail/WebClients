@@ -14,6 +14,7 @@ import type {
     Address,
     Api,
     CachedOrganizationKey,
+    DecryptedAddressKey,
     DecryptedKey,
     KeyGenConfig,
     KeyGenConfigV6,
@@ -28,7 +29,7 @@ import { createAddressKeyLegacy, createAddressKeyV2 } from './addAddressKeyHelpe
 
 interface AddAddressKeysProcessArguments {
     api: Api;
-    addressKeys: DecryptedKey[];
+    addressKeys: DecryptedAddressKey[];
     userKeys: DecryptedKey[];
     address: Address;
     addresses: Address[];
