@@ -78,7 +78,7 @@ const EditInternalAddressModal = ({ address, ...rest }: Props) => {
     return (
         <Modal
             as="form"
-            size="small"
+            size="medium"
             {...rest}
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
