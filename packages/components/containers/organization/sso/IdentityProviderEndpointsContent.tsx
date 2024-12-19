@@ -34,7 +34,7 @@ const IdentityProviderEndpointsContent = ({ issuerID, callbackURL }: IdentityPro
             <ReadonlyFieldWithCopy
                 label={c('Label').t`Issuer ID`}
                 value={issuerID}
-                assistiveText={c('Info').t`Copy and paste this URL into the entity ID field of your identity provider`}
+                assistiveText={c('Info').t`Copy and paste this URL into the Entity ID field of your identity provider`}
             />
         </div>
     );

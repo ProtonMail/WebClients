@@ -185,7 +185,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="ssoEntity" className="text-semibold flex items-center gap-2">
-                        <span>{c('Label').t`Single sign-on entity ID`}</span>
+                        <span>{c('Label').t`Single sign-on Entity ID`}</span>
                         <Info
                             title={c('Tooltip').t`Usually an URL that contains the identity provider's name within`}
                         />
@@ -246,7 +246,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
                         <span>{c('Label').t`Issuer ID`}</span>
                         <Info
                             title={c('Tooltip')
-                                .t`Copy and paste this URL into the entity ID field of your identity provider`}
+                                .t`Copy and paste this URL into the Entity ID field of your identity provider`}
                         />
                     </label>
                 </SettingsLayoutLeft>

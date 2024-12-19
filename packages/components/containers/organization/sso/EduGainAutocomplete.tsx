@@ -57,7 +57,7 @@ const EduGainAutocomplete = ({ organizationData, organizationValue, setOrganizat
 
     const handleInputChange = (newValue: string) => {
         if (!isValidHttpUrl(newValue) && newValue !== '') {
-            setError(c('Error').t`Please enter a valid entity ID URL`);
+            setError(c('Error').t`Please enter a valid Entity ID URL`);
         } else {
             setError(undefined);
         }
