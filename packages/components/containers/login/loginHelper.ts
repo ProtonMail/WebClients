@@ -44,3 +44,10 @@ export const getUnlockError = () => {
     error.trace = false;
     return error;
 };
+
+export const getBackupPasswordError = () => {
+    const error: any = new Error(c('Error').t`Incorrect backup password. Please try again.`);
+    error.name = 'PasswordError';
+    error.trace = false;
+    return error;
+};
