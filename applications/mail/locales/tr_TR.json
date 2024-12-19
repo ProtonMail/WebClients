@@ -5608,28 +5608,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
-      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
-      ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
       ],
       "Your password is correct.": [
         "Parolanız doğru."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "değildir"
       ]
     },
     "Import ICS file from Mail": {
@@ -7202,9 +7191,6 @@
       ],
       "This message is from a mailing list.": [
         "Bu ileti bir posta listesinden gönderilmiş."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Bu ileti bir SimpleLogin takma adından geliyor."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Bu ileti, henüz güvenilmemiş bir anahtar ile imzalanmış."
@@ -10200,9 +10186,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } artık internet üzerinden izlenmeyeceğiniz anlamına gelir."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Masaüstü uygulamasıyla e-postanıza ve takviminize doğrudan bilgisayarınızdan erişin."
-      ],
       "Activate premium features": [
         "Ücretli özellikleri etkinleştir"
       ],
@@ -10211,9 +10194,6 @@
       ],
       "Advanced encryption": [
         "Gelişmiş şifreleme"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltın"
@@ -10227,23 +10207,8 @@
       "Download the desktop app": [
         "Masaüstü uygulamasını indirin"
       ],
-      "Download the desktop app and continue": [
-        "İlerlemek için masaüstü uygulamasını indirin"
-      ],
-      "Fixed and focused": [
-        "Sabit ve odaklanmış"
-      ],
       "Get notified if your password is compromised.": [
         "Parolanız ele geçirildiğinde bildirim alın."
-      ],
-      "Get the desktop app": [
-        "Masaüstü uygulamasını edinin"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "${ mobileAppAppStoreLink } ya da ${ mobileAppGooglePlayLink } üzerinden mobil uygulamayı alın."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Endüstri lideri istenmeyen e-posta koruması"
@@ -10257,14 +10222,8 @@
       "Maybe later": [
         "Belki daha sonra"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } uygulamasını deneyimlemenin diğer yolları"
-      ],
       "Next": [
         "Sonraki"
-      ],
-      "On the move": [
-        "Dolaşırken"
       ],
       "Protection from trackers": [
         "İzleyicilere karşı koruma"
@@ -10849,7 +10808,7 @@
         "${ MAIL_APP_NAME } tarafından sıfır erişim şifrelemesi ile gönderildi"
       ],
       "Stored with zero-access encryption": [
-        "Sıfır erişim şifrelemesiyle kaydedildi"
+        "Sıfır erişim şifrelemesi ile kaydedildi"
       ]
     },
     "Remaining days before the message expire": {
@@ -11076,7 +11035,7 @@
         "Doğrulanmış alıcılara uçtan uca şifrelenmiş olarak gönderdiniz"
       ],
       "Stored with zero-access encryption": [
-        "Sıfır erişim şifrelemesiyle kaydedildi"
+        "Sıfır erişim şifrelemesi ile kaydedildi"
       ]
     },
     "session_recovery:available:action": {
