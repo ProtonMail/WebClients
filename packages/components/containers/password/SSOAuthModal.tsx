@@ -134,13 +134,12 @@ const SSOAuthModal = ({
     };
 
     const loading = state.type === 'loading';
-
-    // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
-    const handleClose = loading ? noop : cancelClose;
+    const handleClose = cancelClose;
 
     return (
         <Prompt
             {...rest}
+            onClose={handleClose}
             title={c('sso').t`Sign in to your organization`}
             buttons={[
                 <Button color="norm" onClick={handleSubmit} loading={loading}>
