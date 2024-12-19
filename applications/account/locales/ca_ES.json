@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -909,6 +909,9 @@
       ],
       "Reset keys": [
         "Restablir les claus"
+      ],
+      "Reset modifications": [
+        "Restableix les modificacions"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -3671,6 +3674,9 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Podeu continuar convidant amics, però no podreu guanyar més crèdits"
+      ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Podeu aplicar les regles de contrasenya que utilitzaran els membres de l'organització quan generin una contrasenya a ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
@@ -6450,8 +6456,8 @@
       "Use your app password instead of your regular password if:": [
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "La contrasenya de l'aplicació és correcta. ${ boldNot } utilitzeu la vostra contrasenya habitual."
+      "Your app password is correct. Do not use your regular password.": [
+        "La contrasenya de l'aplicació és correcta. No utilitzeu la contrasenya normal."
       ],
       "Your email account requires an app password to export your data.": [
         "El vostre compte de correu electrònic requereix una contrasenya d'aplicació per a exportar les dades."
@@ -6459,19 +6465,14 @@
       "Your email account requires one to export your data.": [
         "El vostre compte de correu electrònic en requereix una per exportar les dades."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. ${ boldNot } utilitzi la contrasenya normal."
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya normal."
       ],
       "Your email address and password are correct.": [
         "La vostra adreça de correu electrònic i contrasenya són correctes."
       ],
       "Your password is correct.": [
         "La seva contrasenya és correcta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "no"
       ]
     },
     "Import error link": {
@@ -6724,7 +6725,7 @@
         "${ PASS_APP_NAME } és el gestor de contrasenyes de nova generació dissenyat per a la facilitat d'ús i la productivitat. Amb codi obert i desenvolupat conjuntament per SimpleLogin i ${ BRAND_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }."
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantenen sense canvis."
@@ -6944,6 +6945,9 @@
       ],
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Un cop bloquejats, els membres de l'organització hauran de desbloquejar ${ PASS_APP_NAME } amb la seva contrasenya o codi PIN, etc."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ],
       "Align left": [
         "Alinea a l'esquerra"
@@ -7248,6 +7252,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les etiquetes que vulgueu importar."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un núvol segur per a ${ value } membre",
+        "Crea un núvol segur per a ${ value } membres"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."
@@ -8160,6 +8168,9 @@
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
       ],
+      "Password generator rules successfully saved": [
+        "Les regles del generador de contrasenyes s'han desat."
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters."
       ],
@@ -8444,6 +8455,9 @@
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
+      ],
+      "Setting successfully saved": [
+        "S'ha desat la preferència."
       ],
       "Setting up your new address...": [
         "S'està configurant la vostra nova adreça..."
@@ -10001,8 +10015,14 @@
       "Allow": [
         "Adreces permeses"
       ],
+      "Allow memorable passwords": [
+        "Permet les contrasenyes fàcils de recordar"
+      ],
       "Allow notifications by email": [
         "Permet notificacions per correu"
+      ],
+      "Allow random passwords": [
+        "Permet les contrasenyes aleatòries"
       ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
@@ -10132,6 +10152,9 @@
       ],
       "Calendars": [
         "Calendaris"
+      ],
+      "Capitalize words": [
+        "Paraules en majúscules"
       ],
       "Card details": [
         "Dades de la targeta"
@@ -10538,6 +10561,12 @@
       "Mark as": [
         "Marca com a"
       ],
+      "Maximum number of characters": [
+        "Nombre màxim de caràcters"
+      ],
+      "Maximum number of words": [
+        "Nombre màxim de paraules"
+      ],
       "Message": [
         "Missatge"
       ],
@@ -10552,6 +10581,12 @@
       ],
       "Method for importing metadata": [
         "Mètode per a importar metadades"
+      ],
+      "Minimum number of characters": [
+        "Nombre mínim de caràcters"
+      ],
+      "Minimum number of words": [
+        "Nombre mínim de paraules"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -10609,6 +10644,9 @@
       ],
       "Notifications": [
         "Notificacions"
+      ],
+      "Numbers": [
+        "Números"
       ],
       "OpenVPN / IKEv2 password": [
         "Contrasenya OpenVPN / IKEv2"
@@ -10818,6 +10856,9 @@
       "Spam": [
         "Correu brossa"
       ],
+      "Special characters": [
+        "Caràcters especials"
+      ],
       "Starred": [
         "Destacats"
       ],
@@ -10892,6 +10933,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Pengeu 1 o més fitxers de recuperació o claus de xifratge"
+      ],
+      "Uppercase": [
+        "Majúscules"
       ],
       "URL": [
         "URL"
@@ -13249,6 +13293,9 @@
       "Add to existing group": [
         "Afegeix a un grup existent"
       ],
+      "Allowed (default)": [
+        "Permès (per defecte)"
+      ],
       "Archive": [
         "Arxiva"
       ],
@@ -13306,6 +13353,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "No es permet"
+      ],
       "Off": [
         "Desactivat"
       ],
@@ -13332,6 +13382,9 @@
       ],
       "Repeat weekly": [
         "Repeteix cada setmana"
+      ],
+      "Required": [
+        "Requerit"
       ],
       "Right to Left": [
         "Dreta a esquerra"
@@ -17917,6 +17970,9 @@
       "Password": [
         "Contrasenya"
       ],
+      "Password generator rules": [
+        "Regles del generador de contrasenyes"
+      ],
       "Password reset settings": [
         "Preferències de restabliment de contrasenya"
       ],
@@ -19307,6 +19363,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si cancel·leu aquesta importació, no la podreu reprendre. ${ BRAND_NAME } ha desat tot el progrés al vostre compte. Voleu cancel·lar-la de totes maneres?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "El valor màxim no pot ser inferior al valor mínim."
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "El valor ha de ser entre ${ minimumNumber } i ${ maximumNumber }."
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "El valor ha de ser superior o igual a ${ minimumNumber }."
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "El valor ha de ser inferior o igual a ${ maximumNumber }."
       ],
       "Please add at least one recipient.": [
         "Afegiu almenys un destinatari."

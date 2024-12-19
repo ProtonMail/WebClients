@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -6094,28 +6094,17 @@
       "Use your app password instead of your regular password if:": [
         "使用您的應用程式密碼而非一般密碼，如果："
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
-      ],
       "Your email account requires an app password to export your data.": [
         "您的電子郵件帳號要求應用程式密碼來匯出您的資料。"
       ],
       "Your email account requires one to export your data.": [
         "您的電子郵件帳號要求一個方式來匯出您的資料。"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "您的電子郵件位址和應用程式密碼均為正確。${ boldNot } 使用您的一般密碼。"
-      ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
       ],
       "Your password is correct.": [
         "您的密碼正確無誤。"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "不要"
       ]
     },
     "Import error link": {

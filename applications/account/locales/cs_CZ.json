@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -6541,28 +6541,17 @@
       "Use your app password instead of your regular password if:": [
         "Použijte heslo aplikace místo běžného hesla, pokud:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Vaše heslo pro aplikaci je správné. ${ boldNot }používejte vaše běžné heslo."
-      ],
       "Your email account requires an app password to export your data.": [
         "Váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat."
       ],
       "Your email account requires one to export your data.": [
         "Váš e-mailový účet toto vyžaduje pro export vašich dat."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Vaše e-mailová adresa a heslo aplikace jsou správné. ${ boldNot }používejte vaše běžné heslo."
-      ],
       "Your email address and password are correct.": [
         "Vaše e-mailová adresa a heslo jsou správné."
       ],
       "Your password is correct.": [
         "Vaše heslo je správné."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "ne"
       ]
     },
     "Import error link": {
@@ -10292,6 +10281,9 @@
       ],
       "Auto-unsubscribe": [
         "Automatické odhlášení odběru"
+      ],
+      "Automatically save contacts": [
+        "Automaticky ukládat kontakty"
       ],
       "Awarded": [
         "Uděleno"
