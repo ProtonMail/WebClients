@@ -1,8 +1,9 @@
-export class Result<T> {
+/** Same as @Result but with a non-string error type */
+export class DynamicResult<T, E = unknown> {
   constructor(
-    private isSuccess: boolean,
-    private error?: string,
-    private value?: T,
+    protected isSuccess: boolean,
+    protected error?: E,
+    protected value?: T,
   ) {
     Object.freeze(this)
   }
@@ -19,7 +20,7 @@ export class Result<T> {
     return this.value as T
   }
 
-  getError(): string {
+  getErrorObject(): E {
     if (this.isSuccess || this.error === undefined) {
       throw new Error('Cannot get an error of a successful result')
     }
@@ -27,15 +28,14 @@ export class Result<T> {
     return this.error
   }
 
-  static ok<U>(value?: U): Result<U> {
-    return new Result<U>(true, undefined, value)
+  static ok<U, E>(value?: U): DynamicResult<U, E> {
+    return new DynamicResult<U, E>(true, undefined, value)
   }
 
-  static fail<U>(error: string): Result<U> {
+  static fail<U, E>(error: E): DynamicResult<U, E> {
     if (!error) {
       throw new Error('Attempting to create a failed result without an error')
     }
-
-    return new Result<U>(false, error)
+    return new DynamicResult(false, error)
   }
 }

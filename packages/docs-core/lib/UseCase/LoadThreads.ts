@@ -31,7 +31,7 @@ export class LoadThreads implements UseCaseInterface<void> {
         reason: 'server_error',
       })
 
-      return Result.fail(result.getError().message)
+      return Result.fail(result.getErrorMessage())
     }
 
     const response = result.getValue()
@@ -61,7 +61,7 @@ export class LoadThreads implements UseCaseInterface<void> {
         reason: 'server_error',
       })
 
-      return Result.fail(thread.getError().message)
+      return Result.fail(thread.getErrorMessage())
     }
 
     const { CommentThread: commentThreadDto } = thread.getValue()
@@ -137,7 +137,7 @@ export class LoadThreads implements UseCaseInterface<void> {
       })
 
       if (rejectResponse.isFailed()) {
-        this.logger.info(`[LoadThreads] Failed to reject corrupt thread: ${rejectResponse.getError()}`)
+        this.logger.info(`[LoadThreads] Failed to reject corrupt thread: ${rejectResponse.getErrorMessage()}`)
         return
       }
 

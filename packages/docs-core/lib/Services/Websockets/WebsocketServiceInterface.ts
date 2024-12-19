@@ -20,7 +20,15 @@ export interface WebsocketServiceInterface {
   ): Promise<void>
 
   flushPendingUpdates(): void
-  reconnectToDocumentWithoutDelay(nodeMeta: NodeMeta | PublicNodeMeta): Promise<void>
+
+  /**
+   * invalidateTokenCache refers to whether the websocket connection should reuse the connection token it has,
+   * or re-fetch it from the network.
+   */
+  reconnectToDocumentWithoutDelay(
+    nodeMeta: NodeMeta | PublicNodeMeta,
+    options: { invalidateTokenCache: boolean },
+  ): Promise<void>
   retryAllFailedDocumentUpdates(): void
 
   debugSendCommitCommandToRTS(nodeMeta: NodeMeta | PublicNodeMeta, keys: DocumentKeys): Promise<void>

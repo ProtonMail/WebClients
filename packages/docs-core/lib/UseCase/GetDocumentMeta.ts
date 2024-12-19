@@ -1,10 +1,9 @@
-import { Result } from '@proton/docs-shared'
-import type { DocsApi } from '../Api/DocsApi'
-
-import type { DocumentMetaInterface } from '@proton/docs-shared'
 import { DocumentMeta } from '../Models/DocumentMeta'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import { DynamicResult } from '@proton/docs-shared'
+import type { DocsApi } from '../Api/DocsApi'
 import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 
 type ErrorResult = {
   code?: DocsApiErrorCode
@@ -17,20 +16,16 @@ type ErrorResult = {
 export class GetDocumentMeta {
   constructor(private docsApi: DocsApi) {}
 
-  async execute(lookup: NodeMeta | PublicNodeMeta): Promise<Result<DocumentMetaInterface, ErrorResult>> {
+  async execute(lookup: NodeMeta | PublicNodeMeta): Promise<DynamicResult<DocumentMetaInterface, ErrorResult>> {
     const result = await this.docsApi.getDocumentMeta(lookup)
     if (result.isFailed()) {
-      const error = result.getError()
-      return Result.fail({
-        code: error.code,
-        message: error.message,
-      })
+      return DynamicResult.fail(result.getErrorObject())
     }
 
     const data = result.getValue().Document
 
     const meta = new DocumentMeta(data.VolumeID, data.CommitIDs, data.CreateTime, data.ModifyTime)
 
-    return Result.ok<DocumentMetaInterface, ErrorResult>(meta)
+    return DynamicResult.ok<DocumentMetaInterface, ErrorResult>(meta)
   }
 }
