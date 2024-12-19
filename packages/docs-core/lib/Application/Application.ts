@@ -32,7 +32,6 @@ export class Application implements ApplicationInterface {
     this.imageProxyParams,
     this.publicContextHeaders,
     this.compatWrapper,
-    this.userState,
     this.appVersion,
     this.unleashClient,
     this.syncedEditorState,

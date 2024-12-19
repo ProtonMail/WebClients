@@ -53,7 +53,7 @@ describe('LoadDocument', () => {
     } as unknown as jest.Mocked<GetNodePermissions>
 
     mockLoadMetaAndCommit = {
-      execute: jest.fn(),
+      execute: jest.fn().mockResolvedValue(Result.ok({ realtimeToken: { preferences: {} } })),
     } as unknown as jest.Mocked<FetchMetaAndRawCommit>
 
     mockGetDocumentKeys = {
@@ -98,7 +98,7 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: undefined,
-          realtimeToken: 'token-1',
+          realtimeToken: { token: 'token-1', preferences: {} },
         } as any),
       )
       mockGetNodePermissions.execute.mockResolvedValue(
@@ -161,7 +161,7 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: mockCommit,
-          realtimeToken: 'token-1',
+          realtimeToken: { token: 'token-1', preferences: {} },
         } as any),
       )
       mockDecryptCommit.execute.mockResolvedValue(Result.ok(new DecryptedCommit('commit-1', [])))
@@ -199,7 +199,7 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: { latestCommitId: () => 'commit-1' },
           latestCommit: undefined,
-          realtimeToken: 'token-1',
+          realtimeToken: { token: 'token-1', preferences: {} },
         } as any),
       )
     })

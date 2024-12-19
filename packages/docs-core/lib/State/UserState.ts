@@ -5,13 +5,11 @@ export type UserEvent = { name: string; payload: unknown }
 export interface UserStateValues {
   userAccountEmailDocTitleEnabled: boolean
   userAccountEmailNotificationsEnabled: boolean
-  currentDocumentEmailDocTitleEnabled: boolean
 }
 
 const DefaultValues: UserStateValues = {
   userAccountEmailDocTitleEnabled: false,
   userAccountEmailNotificationsEnabled: false,
-  currentDocumentEmailDocTitleEnabled: false,
 }
 
 /**

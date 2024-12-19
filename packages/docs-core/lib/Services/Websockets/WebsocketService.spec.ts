@@ -7,7 +7,7 @@ import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
-import type { InternalEventBusInterface, RealtimeUrlAndToken, WebsocketConnectionInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
 import { BroadcastSource } from '@proton/docs-shared'
 import { Result } from '@proton/docs-shared'
 import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
@@ -17,8 +17,7 @@ import { type UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
 import { MetricService } from '../Metrics/MetricService'
-import { UserState } from '../../State/UserState'
-import type { DocumentStateValues } from '../../State/DocumentState';
+import type { DocumentStateValues } from '../../State/DocumentState'
 import { DocumentState } from '../../State/DocumentState'
 import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 
@@ -37,7 +36,6 @@ describe('WebsocketService', () => {
   let document: NodeMeta
   let keys: DocumentKeys
   let metricService: MetricService
-  let userState: UserState
 
   const createService = async (mode: DocumentDebounceMode) => {
     if (service) {
@@ -48,7 +46,6 @@ describe('WebsocketService', () => {
       debouncer.destroy()
     }
 
-    userState = new UserState()
     metricService = new MetricService(jest.fn())
 
     document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
@@ -84,7 +81,6 @@ describe('WebsocketService', () => {
     } as unknown as jest.Mocked<LoggerInterface>
 
     service = new WebsocketService(
-      userState,
       {} as jest.Mocked<FetchRealtimeToken>,
       encryptMessage,
       {
@@ -487,20 +483,6 @@ describe('WebsocketService', () => {
           error: expect.any(String),
         },
       })
-    })
-  })
-
-  describe('handleRetrievedValetTokenResult', () => {
-    it('should set currentDocumentEmailDocTitleEnabled', () => {
-      userState.setProperty = jest.fn()
-
-      service.handleRetrievedValetTokenResult({
-        preferences: {
-          includeDocumentNameInEmails: true,
-        },
-      } as RealtimeUrlAndToken)
-
-      expect(userState.setProperty).toHaveBeenCalledWith('currentDocumentEmailDocTitleEnabled', true)
     })
   })
 })
