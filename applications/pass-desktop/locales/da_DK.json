@@ -1357,9 +1357,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Adgang til ${ PASS_APP_NAME } vil altid kræve din ${ BRAND_NAME }-adgangskode."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Adgang til ${ PASS_APP_NAME } vil altid kræve din sikkerhedskopi-adgangskode."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
       ],
@@ -1830,7 +1827,7 @@
         "Offline-tilstand blev deaktiveret"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
-        "Onlineadgang til ${ PASS_APP_NAME } kræver en PIN-kode. Du bliver logget ud efter 3 mislykkede forsøg."
+        "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
@@ -1874,15 +1871,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
-      ],
-      "Please confirm your backup password": [
-        "Bekræft din adgangskode til sikkerhedskopi"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Bekræft din sikkerhedskopi-adgangskode for at autolåse med din adgangskode."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Bekræft din sikkerhedskopi-adgangskode for at afregistrere din nuværende lås."
       ],
       "Please confirm your extra password": [
         "Bekræft din ekstra adgangskode"
@@ -2450,9 +2438,6 @@
       ],
       "Auto-lock after": [
         "Lås automatisk efter"
-      ],
-      "Backup password": [
-        "Adgangskode til sikkerhedskopi"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Ud over at gemme dine logins beskytter ${ PASS_APP_NAME } din identitet med en integreret e-mailaliasfunktion. Når du tilmelder dig en ny onlinekonto, kan ${ PASS_APP_NAME } automatisk oprette et alias for at beskytte din faktiske e-mailadresse. "
@@ -3650,9 +3635,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Indtast din sikkerhedskopi-adgangskode"
       ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
