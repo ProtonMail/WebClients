@@ -1325,9 +1325,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt ${ BRAND_NAME }-lösenord."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt reservlösenord."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
       ],
@@ -1465,9 +1462,6 @@
       ],
       "Current version": [
         "Nuvarande version"
-      ],
-      "Currently selected": [
-        "Nuvarande val"
       ],
       "Decrypting your data": [
         "Dekrypterar dina data"
@@ -1845,15 +1839,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
-      ],
-      "Please confirm your backup password": [
-        "Bekräfta ditt reservlösenord"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Bekräfta ditt reservlösenord för att autolåsa med ditt lösenord."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Bekräfta ditt reservlösenord för att avregistrera ditt nuvarande lås"
       ],
       "Please confirm your extra password": [
         "Bekräfta ditt extralösenord"
@@ -2415,9 +2400,6 @@
       ],
       "Auto-lock after": [
         "Lås automatiskt efter"
-      ],
-      "Backup password": [
-        "Reservlösenord"
       ],
       "Beta Access": [
         "Betaåtkomst"
@@ -3532,9 +3514,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Ange ditt reservlösenord"
       ],
       "Enter your extra password": [
         "Ange ditt extralösenord"
