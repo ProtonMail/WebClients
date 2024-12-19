@@ -1,5 +1,4 @@
-import { type PropsWithChildren } from 'react';
-import { type FC, createContext, useContext } from 'react';
+import { type FC, type PropsWithChildren, createContext, useContext } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -23,7 +22,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
           ]
         : [c('Info').t`Please confirm your password`, c('Title').t`Enter your password`, c('Label').t`Password`];
 
-    const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, PasswordModalProps>({
+    const { handler, abort, resolver, state, loading, key } = useAsyncModalHandles<string, PasswordModalProps>({
         getInitialModalState: () => ({
             message,
             submitLabel: c('Action').t`Authenticate`,
@@ -37,7 +36,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <PasswordUnlockContext.Provider value={handler}>
             {children}
-            <PasswordModal onSubmit={resolver} onClose={abort} {...state} key={key} />
+            <PasswordModal onSubmit={resolver} onClose={abort} {...state} loading={loading} key={key} />
         </PasswordUnlockContext.Provider>
     );
 };
