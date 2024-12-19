@@ -4,6 +4,9 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -15,12 +18,21 @@ interface MemberAddressesProps {
 
 const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
     const [expanded, setExpanded] = useState(false);
+    const { createNotification } = useNotifications();
 
     const handleExpandClick = () => {
         setExpanded(true);
     };
 
     const amountOfAddresses = addresses.length;
+
+    const handleCopyEmail = (email: string) => {
+        textToClipboard(email);
+        createNotification({
+            type: 'success',
+            text: c('Success').t`Email address copied to clipboard`,
+        });
+    };
 
     const renderListItem = ({ ID, Email }: PartialMemberAddress, index: number) => {
         /*
@@ -39,13 +51,17 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
         return (
             <li key={ID} className={listItemClassName}>
-                <span
-                    className="text-ellipsis block"
-                    title={Email}
-                    data-testid="users-and-addresses-table:memberAddress"
-                >
-                    {Email}
-                </span>
+                <Tooltip title={Email}>
+                    <button
+                        key={0}
+                        type="button"
+                        className="user-select text-ellipsis w-auto max-w-full text-left"
+                        data-testid="users-and-addresses-table:memberAddress"
+                        onClick={() => handleCopyEmail(Email)}
+                    >
+                        {Email}
+                    </button>
+                </Tooltip>
             </li>
         );
     };

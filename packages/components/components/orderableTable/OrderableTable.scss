@@ -20,7 +20,7 @@
 	}
 }
 
-@include media('<=medium') {
+@container (max-width: 35rem) {
 	.orderableTable {
 		tbody {
 			tr {

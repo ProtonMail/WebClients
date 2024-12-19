@@ -6,6 +6,11 @@
 
 	--table-border-color: var(--border-norm);
 
+	&-wrapper {
+		inline-size: 100%;
+		container-type: inline-size;
+	}
+
 	&--border-weak {
 		--table-border-color: var(--border-weak);
 	}
@@ -22,7 +27,7 @@
 
 	// NEW RESPONSIVE TABLES
 	&--responsive {
-		@include media('<=medium') {
+		@container (max-width: 35rem) {
 			td {
 				display: block;
 				margin: 0;
@@ -41,7 +46,7 @@
 	}
 
 	&--responsive-stacked {
-		@include media('<=medium') {
+		@container (max-width: 35rem) {
 			tr {
 				margin-block-end: var(--space-2);
 				border-block-end: 1px solid var(--table-border-color);
@@ -54,7 +59,7 @@
 	}
 
 	&--responsive-cards {
-		@include media('<=medium') {
+		@container (max-width: 35rem) {
 			tr {
 				padding: var(--space-3);
 				border: 1px solid var(--table-border-color);
@@ -76,7 +81,7 @@
 	&--responsive &__th-small {
 		display: none;
 
-		@include media('<=medium') {
+		@container (max-width: 35rem) {
 			display: flex;
 			align-content: center;
 			font-weight: var(--font-weight-medium);
@@ -172,7 +177,7 @@
 	}
 
 	// TODO: refactor this
-	@include media('<=medium') {
+	@container (max-width: 35rem) {
 		&--responsive#{&}--has-actions {
 			td,
 			th {
