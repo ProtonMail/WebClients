@@ -7,9 +7,9 @@ export type DocsApiError = {
 
 export class ApiResult<T> {
   constructor(
-    private isSuccess: boolean,
-    private error?: DocsApiError,
-    private value?: T,
+    protected isSuccess: boolean,
+    protected error?: DocsApiError,
+    protected value?: T,
   ) {
     Object.freeze(this)
   }
@@ -26,7 +26,7 @@ export class ApiResult<T> {
     return this.value as T
   }
 
-  getError(): DocsApiError {
+  getErrorObject(): DocsApiError {
     if (this.isSuccess || this.error === undefined) {
       throw new Error('Cannot get an error of a successful result')
     }
@@ -47,10 +47,6 @@ export class ApiResult<T> {
   }
 
   static fail<U>(error: DocsApiError): ApiResult<U> {
-    if (!error) {
-      throw new Error('Attempting to create a failed result without an error')
-    }
-
     return new ApiResult<U>(false, error)
   }
 }

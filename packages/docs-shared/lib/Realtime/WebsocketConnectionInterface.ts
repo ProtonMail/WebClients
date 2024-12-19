@@ -3,7 +3,7 @@ import type { WebsocketCallbacks } from './WebsocketCallbacks'
 
 export interface WebsocketConnectionInterface {
   callbacks: WebsocketCallbacks
-  connect(abortSignal?: () => boolean): Promise<void>
+  connect(abortSignal?: () => boolean, options?: { invalidateTokenCache: boolean }): Promise<void>
   destroy(): void
   disconnect(code: number): void
   markAsReadyToAcceptMessages(): void

@@ -11,7 +11,7 @@ import type {
   RtsMessagePayload,
   WebsocketConnectionInterface,
 } from '@proton/docs-shared'
-import { DecryptedMessage, Result } from '@proton/docs-shared'
+import { ApiResult, DecryptedMessage, Result } from '@proton/docs-shared'
 import { BroadcastSource, DocumentRole } from '@proton/docs-shared'
 import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
@@ -198,7 +198,9 @@ describe('RealtimeController', () => {
         })
         expect(controller.abortWebsocketConnectionAttempt).toBe(false)
         const nodeMeta = documentState.getProperty('entitlements').nodeMeta
-        expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
+        expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta, {
+          invalidateTokenCache: true,
+        })
       })
     })
 
@@ -214,7 +216,9 @@ describe('RealtimeController', () => {
           'Reconnecting to RTS because currentCommitId changed and we are not connected',
         )
         const nodeMeta = documentState.getProperty('entitlements').nodeMeta
-        expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
+        expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta, {
+          invalidateTokenCache: true,
+        })
       })
 
       it('should not reconnect when connected', () => {
@@ -234,7 +238,9 @@ describe('RealtimeController', () => {
 
         expect(logger.info).toHaveBeenCalledWith('Reconnecting to RTS because document was untrashed')
         const nodeMeta = documentState.getProperty('entitlements').nodeMeta
-        expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
+        expect(websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta, {
+          invalidateTokenCache: false,
+        })
       })
 
       it('should not reconnect for other trash state changes', () => {
@@ -803,10 +809,12 @@ describe('RealtimeController', () => {
 
   describe('reconnect', () => {
     it('should call websocket service to reconnect', async () => {
-      await controller.reconnect()
+      await controller.reconnect({ invalidateTokenCache: true })
 
       const nodeMeta = documentState.getProperty('entitlements').nodeMeta
-      expect(controller.websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta)
+      expect(controller.websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalledWith(nodeMeta, {
+        invalidateTokenCache: true,
+      })
     })
   })
 
@@ -1047,8 +1055,12 @@ describe('RealtimeController', () => {
       controller.logger.error = jest.fn()
       eventBus.publish = jest.fn()
 
-      controller._fetchDecryptedCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
-      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
+      controller._fetchDecryptedCommit.execute = jest
+        .fn()
+        .mockReturnValue(ApiResult.fail({ message: 'Unable to resolve', code: 0 }))
+      controller._getDocumentMeta.execute = jest
+        .fn()
+        .mockReturnValue(ApiResult.fail({ message: 'Unable to resolve', code: 0 }))
 
       await controller.refetchCommitDueToStaleContents('rts-disconnect')
 

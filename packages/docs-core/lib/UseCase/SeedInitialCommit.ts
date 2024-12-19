@@ -46,7 +46,7 @@ export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResu
     const commitResult = await this.docsApi.seedInitialCommit(nodeMeta, commit)
 
     if (commitResult.isFailed()) {
-      return Result.fail(commitResult.getError().message)
+      return Result.fail(commitResult.getErrorMessage())
     }
 
     const { CommitID: commitId, VolumeID: volumeId, LinkID: linkId } = commitResult.getValue()

@@ -73,7 +73,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       })
 
       dto.commentsState.deleteComment({ commentID: localComment.id, threadID: dto.threadID })
-      return Result.fail(result.getError().message)
+      return Result.fail(result.getErrorMessage())
     }
 
     const { Comment: commentFromResponse } = result.getValue()
