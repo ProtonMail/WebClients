@@ -126,12 +126,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
             return {
                 onSubmit: () => setStep(STEP.SAML_METADATA),
                 title: c('Title').t`Enter endpoints into your identity provider`,
-                content: (
-                    <IdentityProviderEndpointsContent
-                        issuerID={issuerID}
-                        callbackURL={callbackURL}
-                    />
-                ),
+                content: <IdentityProviderEndpointsContent issuerID={issuerID} callbackURL={callbackURL} />,
                 footer: (
                     <>
                         <div />
@@ -249,7 +244,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                 if (file.type !== 'text/xml') {
                     createNotification({
                         type: 'error',
-                        text: c('Error').t`Please upload an xml file`,
+                        text: c('Error').t`Please upload an XML file`,
                     });
                     return;
                 }
@@ -407,7 +402,7 @@ const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }:
                                             .t`Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).`}
                                     />
                                     <InputFieldTwo
-                                        label={c('Label').t`Single sign-on entity ID`}
+                                        label={c('Label').t`Single sign-on Entity ID`}
                                         data-testid="saml:entity-id"
                                         placeholder={c('Placeholder').t`e.g. https://idp.example.com/XXXXX`}
                                         value={metadata[METADATA_METHOD.TEXT].entityId}
