@@ -60,13 +60,12 @@ export const bootstrapApp = async ({
         const evPromise = bootstrap.eventManager({ api: silentApi });
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        await unleashPromise;
-        // Needs unleash to be loaded.
-        await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
             appContainerPromise,
             userPromise,
             evPromise,
+            bootstrap.loadCrypto({ appName }),
+            unleashPromise,
         ]);
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });

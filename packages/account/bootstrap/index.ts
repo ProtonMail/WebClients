@@ -335,7 +335,7 @@ export const eventManager = async ({
     return eventManager;
 };
 
-export const loadCrypto = ({ appName }: { unleashClient: UnleashClient | undefined; appName: APP_NAMES }) => {
+export const loadCrypto = ({ appName }: { appName: APP_NAMES }) => {
     return loadCryptoWorker(getCryptoWorkerOptions(appName, {}));
 };
 
@@ -505,8 +505,5 @@ export const publicApp = ({
         pathLocale,
     });
 
-    return Promise.all([
-        loadCrypto({ appName: app, unleashClient: undefined }),
-        loadLocalesPublicApp({ locales, localeCode, browserLocale }),
-    ]);
+    return Promise.all([loadCrypto({ appName: app }), loadLocalesPublicApp({ locales, localeCode, browserLocale })]);
 };
