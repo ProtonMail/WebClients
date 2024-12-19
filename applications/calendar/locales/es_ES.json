@@ -4211,8 +4211,8 @@
       "Use your app password instead of your regular password if:": [
         "Utiliza tu contraseña de la aplicación en lugar de tu contraseña habitual si:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Tu contraseña de la aplicación es correcta. ${ boldNot } utilices tu contraseña habitual."
+      "Your app password is correct. Do not use your regular password.": [
+        "La contraseña de la aplicación es correcta. No uses la contraseña habitual."
       ],
       "Your email account requires an app password to export your data.": [
         "Tu cuenta de correo requiere una contraseña de la aplicación para exportar tus datos."
@@ -4220,19 +4220,14 @@
       "Your email account requires one to export your data.": [
         "Tu cuenta de correo requiere una contraseña de la aplicación para exportar tus datos."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Tu dirección de correo electrónico y contraseña de la aplicación son correctas. ${ boldNot } utilices tu contraseña habitual."
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "La dirección de correo electrónico y la contraseña de la aplicación son correctas. No uses la contraseña habitual."
       ],
       "Your email address and password are correct.": [
         "Tu dirección de correo electrónico y contraseña son correctas."
       ],
       "Your password is correct.": [
         "Tu contraseña es correcta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "No"
       ]
     },
     "Import instructions": {
@@ -4482,6 +4477,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
         "Todo (${ totalFoldersCount } carpetas)"
@@ -4611,6 +4609,10 @@
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crear una nube segura para ${ value } miembro",
+        "Crear una nube segura para ${ value } miembros"
       ],
       "Create in": [
         "Crear en"

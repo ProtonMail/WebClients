@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -4068,7 +4068,7 @@
         "${ categories }メールの購読を解除する場合、下のボタンをクリックしてください。"
       ],
       "Email subscriptions": [
-        "Eメール購読"
+        "メール購読"
       ],
       "If you unsubscribed by accident, you are welcome to resubscribe.": [
         "もし間違って購読を解除した場合、再度購読可能です。"
@@ -4080,7 +4080,7 @@
         "ありがとうございました、またお会いしましょう"
       ],
       "Unsubscribe": [
-        "退会"
+        "登録解除"
       ],
       "Unsubscribe?": [
         "登録解除しますか?"
@@ -5865,7 +5865,7 @@
         "迷惑メール:"
       ],
       "Take control over what lands in your inbox by creating the following lists:": [
-        "以下のリストを作成することで、受信箱に届くものをコントロールしよう："
+        "以下のリストを作成して、受信箱に届くものをコントロールしよう："
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "次のリストを作成して、組織メンバーの受信トレイに何が届くかを制御します。"
@@ -6412,28 +6412,17 @@
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
-      ],
       "Your email account requires an app password to export your data.": [
         "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
       ],
       "Your email account requires one to export your data.": [
         "データをエクスポートするためにメールアカウントが必要です。"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
-      ],
       "Your email address and password are correct.": [
         "あなたのメールアドレスとパスワードは正しいです。"
       ],
       "Your password is correct.": [
         "パスワードは正しいです。"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "しないで"
       ]
     },
     "Import error link": {
@@ -7474,7 +7463,7 @@
         "有効期限切れ"
       ],
       "expires ${ expirationDate }": [
-        "期限 ${ expirationDate }"
+        "有効期限 ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
@@ -8560,7 +8549,7 @@
         "これらの設定ファイルは、サードパーティ製の VPN アプリを使用する際や、ルーターで VPN 接続を設定する際に、どの ${ VPN_APP_NAME } サーバーに接続するかを選択するためのものです。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "この設定ファイルを WireGuard ルーターや公式クライアントで使用できます。"
+        "Translation: これらの構成は、WireGuardルーターおよび公式クライアントで動作するように提供されています。"
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "これらの認証情報は、公式 ${ VPN_APP_NAME } アプリへのサインインには使用できません。 ${ learnMore }"
@@ -12712,7 +12701,7 @@
         "高度な VPN 機能にアクセス"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+        "より多くのパーソナライゼーションを追加するために、 15 のメールアドレスと つのカスタムメールドメインのサポートを提供します。"
       ],
       "AES 256-bit VPN encryption": [
         "AES 256ビットVPN暗号化"
@@ -13533,7 +13522,7 @@
         "続行すると、${ termsAndConditionsLink } に同意したことになります。"
       ],
       "Creating your account": [
-        "アカウントの作成"
+        "アカウントの作成中"
       ],
       "Current plan": [
         "現在のプラン"
@@ -13692,7 +13681,7 @@
         "してモバイル端末で ${ PASS_APP_NAME } を使い始めましょう"
       ],
       "Updating your account": [
-        "アカウントの更新"
+        "アカウントの更新中"
       ],
       "Verifying your payment": [
         "お支払いの確認"
@@ -18270,7 +18259,7 @@
         "この URL をコピーして、ACS(Assertion Consumer Service)の URL フィールドに貼り付けてください。"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "このURLをコピーして、ユーザー情報ロバイダーのエンティティIDフィールドに貼り付ける。"
+        "このURLをコピーして、ユーザー情報プロバイダーのエンティティIDフィールドに貼り付けてください"
       ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
@@ -18867,7 +18856,7 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } サーバー"
+        "${ n } 台のサーバー"
       ],
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"

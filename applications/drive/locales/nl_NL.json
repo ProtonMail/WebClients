@@ -2500,6 +2500,14 @@
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
       ]
     },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Samenwerken is nu nog eenvoudiger. Nu kan iedereen bewerkingen voorstellen zonder het document te wijzigen."
+      ],
+      "Suggestion mode is here": [
+        "Suggestie-mode is hier"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
@@ -3840,28 +3848,17 @@
       "Use your app password instead of your regular password if:": [
         "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
-      ],
       "Your email account requires an app password to export your data.": [
         "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
       ],
       "Your email account requires one to export your data.": [
         "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
-      ],
       "Your email address and password are correct.": [
         "Uw e-mailadres en wachtwoord zijn juist."
       ],
       "Your password is correct.": [
         "Uw wachtwoord is juist."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "niet"
       ]
     },
     "Import instructions": {
@@ -5172,6 +5169,9 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
+      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
+        "De digitale handtekening is gedeeltelijk geverifieerd. De map is geüpload vanaf een openbare pagina zonder specifieke herkomst van de gebruiker."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Het aantal downloads omvat zowel daadwerkelijke downloads als exemplaren waarin bestanden worden bekeken."
       ],
@@ -5199,14 +5199,23 @@
       "This action will delete the file you uploaded permanently.": [
         "Deze actie zal het bestand dat u heeft geüpload definitief verwijderen."
       ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Deze actie zorgt ervoor dat de map die u opgeladen heeft permanent verwijderd zal worden. U kan geen map verwijderen die bestanden bevat waarvan u geen eigenaar bent."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Deze actie zal de geselecteerde items definitief verwijderen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Deze actie kan NIET ongedaan gemaakt worden. Wilt u de naam van uw toestel in te geven om uw verwijdering te bevestigen."
       ],
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
@@ -5244,6 +5253,9 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
         "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Hierdoor wordt het gesynchroniseerde apparaat ${ deviceName } verwijderd uit ${ DRIVE_APP_NAME } en worden alle gegevens verwijderd uit ${ DRIVE_APP_NAME }. Mappen die u hebt toegevoegd aan Mijn computers worden niet langer gesynchroniseerd."
       ],
       "This will replace the existing file with the folder": [
         "Dit zal het bestaande bestand vervangen door de map"
@@ -7659,11 +7671,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" succesvol aangemaakt"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" verwijderd"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent verwijderd uit de prullenbak"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" kon niet aangemaakt worden"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" kon niet verwijderd worden"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" konden niet permanent verwijderd worden uit prullenbak"
@@ -7864,6 +7882,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
+      ],
+      "Public link access updated": [
+        "Toegang publieke link aangepast"
+      ],
+      "Public link update access failed ": [
+        "Toegang publieke link kon niet aangepast worden "
       ],
       "Root folder failed to be loaded": [
         "Hoofdmap kon niet geladen worden"
@@ -9934,6 +9958,12 @@
       "Delete ${ count } contact group": [
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
+      ],
+      "Delete ${ item.name }?": [
+        "Verwijder ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Verwijder ${ links.length } items?"
       ],
       "Delete ${ value }": [
         "Verwijder ${ value }"

@@ -5704,28 +5704,17 @@
       "Use your app password instead of your regular password if:": [
         "Użyj hasła aplikacji, zamiast swojego zwykłego hasła, jeśli:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Hasło aplikacji jest prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
-      ],
       "Your email account requires an app password to export your data.": [
         "Konto e-mail wymaga hasła aplikacji do eksportu danych."
       ],
       "Your email account requires one to export your data.": [
         "Konto e-mail wymaga tego hasła do eksportu danych."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Adres e-mail i hasło aplikacji są prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
-      ],
       "Your email address and password are correct.": [
         "Adres e-mail i hasło są prawidłowe."
       ],
       "Your password is correct.": [
         "Hasło jest prawidłowe."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "Nie"
       ]
     },
     "Import ICS file from Mail": {
@@ -7428,9 +7417,6 @@
       ],
       "This message is from a mailing list.": [
         "Ta wiadomość pochodzi z listy mailingowej."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Ta wiadomość pochodzi z aliasu SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Ta wiadomość jest podpisana przy pomocy klucza, który nie został jeszcze dodany do zaufanych."
@@ -10538,9 +10524,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } zapewnia koniec śledzenia w Internecie."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Dostęp do poczty i kalendarza bezpośrednio z pulpitu za pomocą aplikacji desktopowej."
-      ],
       "Activate premium features": [
         "Aktywuj funkcje premium"
       ],
@@ -10549,9 +10532,6 @@
       ],
       "Advanced encryption": [
         "Zaawansowane szyfrowanie"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -10565,23 +10545,8 @@
       "Download the desktop app": [
         "Pobierz aplikację desktopową"
       ],
-      "Download the desktop app and continue": [
-        "Pobierz aplikację desktopową i kontynuuj"
-      ],
-      "Fixed and focused": [
-        "Skoncentrowana aplikacja"
-      ],
       "Get notified if your password is compromised.": [
         "Otrzymaj powiadomienie, jeśli Twoje hasło zostanie naruszone."
-      ],
-      "Get the desktop app": [
-        "Pobierz aplikację desktopową"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Uzyskaj aplikację mobilną ze sklepu ${ mobileAppAppStoreLink } lub ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Najlepsza w branży ochrona antyspamowa"
@@ -10595,14 +10560,8 @@
       "Maybe later": [
         "Może później"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Więcej sposobów na poznanie ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Dalej"
-      ],
-      "On the move": [
-        "W ruchu"
       ],
       "Protection from trackers": [
         "Ochrona przed elementami śledzącymi"

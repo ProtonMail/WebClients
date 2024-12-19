@@ -3662,6 +3662,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "აწიეთ სატარიფო გეგმა და მიიღეთ განუსაზღვრელი რაოდენობის საქაღალდეები, ჭდეები და მეტი ფასიანი ფუნქცია."
       ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "ასწიეთ ტრაფიკი, რომ მიიღოთ ${ activatePmUser } უფრო მოკლე და ადვილად დასამახსოვრებელი ელფოსტის მისამართი იმასთან ერთად, რაც ახლა გაქვთ."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
       ],
@@ -5589,28 +5592,17 @@
       "Use your app password instead of your regular password if:": [
         "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
-      ],
       "Your email account requires an app password to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
       "Your email account requires one to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
-      ],
       "Your email address and password are correct.": [
         "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
       ],
       "Your password is correct.": [
         "პაროლი სწორია."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "არ"
       ]
     },
     "Import ICS file from Mail": {
@@ -7177,9 +7169,6 @@
       ],
       "This message is from a mailing list.": [
         "ეს შეტყობინება საფოსტო სიიდანაა."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "ეს შეტყობინება SimpleLogin-ის ფსევდონიმიდანაა."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "შეტყობინება ხელმოწერილია გასაღებით, რომელიც, ჯერ, სანდო არაა."
@@ -10160,9 +10149,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } ნიშნავს, რომ ინტერნეტში ვერავინ აგედევნებათ."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "იქონიეთ წვდომა ელფოსტასთან და კალენდართან კომპიუტერზე, კომპიუტერის აპლიკაციით."
-      ],
       "Activate premium features": [
         "ფასიანი ფუნქციების ჩართვა"
       ],
@@ -10171,9 +10157,6 @@
       ],
       "Advanced encryption": [
         "დამატებითი დაშიფვრა"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "სპამისა და ნაგვის ყუთის ავტოწაშლა"
@@ -10187,23 +10170,8 @@
       "Download the desktop app": [
         "გადმოწერეთ კომპიუტერის აპები"
       ],
-      "Download the desktop app and continue": [
-        "კომპიუტერის აპის გადმოწერა და გაგრძელება"
-      ],
-      "Fixed and focused": [
-        "ფიქსირებული და დაფოკუსებული"
-      ],
       "Get notified if your password is compromised.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი გაჟონავს."
-      ],
-      "Get the desktop app": [
-        "მიიღეთ კომპიუტერის აპი"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "გადმოწერეთ მობილურის აპი ${ mobileAppAppStoreLink }-დან ან ${ mobileAppGooglePlayLink }-დან."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "მოწინავე სპამისგან დაცვის ტექნოლოგიები"
@@ -10217,14 +10185,8 @@
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "მეტი გზა ${ MAIL_APP_NAME }-ის სანახავად"
-      ],
       "Next": [
         "შემდეგი"
-      ],
-      "On the move": [
-        "გზაშივე"
       ],
       "Protection from trackers": [
         "ტრეკერებისგან დაცვა"

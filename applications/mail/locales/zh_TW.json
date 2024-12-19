@@ -5477,28 +5477,17 @@
       "Use your app password instead of your regular password if:": [
         "使用您的應用程式密碼而非一般密碼，如果："
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
-      ],
       "Your email account requires an app password to export your data.": [
         "您的電子郵件帳號要求應用程式密碼來匯出您的資料。"
       ],
       "Your email account requires one to export your data.": [
         "您的電子郵件帳號要求一個方式來匯出您的資料。"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "您的電子郵件位址和應用程式密碼均為正確。${ boldNot } 使用您的一般密碼。"
-      ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
       ],
       "Your password is correct.": [
         "您的密碼正確無誤。"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "不要"
       ]
     },
     "Import ICS file from Mail": {
@@ -6982,9 +6971,6 @@
       ],
       "This message is from a mailing list.": [
         "此郵件來自郵寄清單。"
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "此訊息是從SimpleLogin別名傳送。"
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "簽署此郵件的金鑰尚未信任。"
@@ -9809,9 +9795,6 @@
       ]
     },
     "Onboarding modal": {
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "於桌面應用程式存取電子郵件和行事曆。"
-      ],
       "Activate premium features": [
         "激活頂級質子版功能"
       ],
@@ -9820,9 +9803,6 @@
       ],
       "Advanced encryption": [
         "進階加密"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "自動刪除垃圾郵件和垃圾桶"
@@ -9836,23 +9816,8 @@
       "Download the desktop app": [
         "下載桌面應用程式"
       ],
-      "Download the desktop app and continue": [
-        "下載桌面應用程式及繼續"
-      ],
-      "Fixed and focused": [
-        "已修復與關注"
-      ],
       "Get notified if your password is compromised.": [
         "獲得提醒，當您的密碼處於危害。"
-      ],
-      "Get the desktop app": [
-        "取得桌面應用程式"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "從${ mobileAppAppStoreLink }或${ mobileAppGooglePlayLink }取得移動裝置的應用程式。"
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "業界領導的垃圾郵件防護"
@@ -9866,14 +9831,8 @@
       "Maybe later": [
         "稍後再說"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "更多體驗${ MAIL_APP_NAME }的方法"
-      ],
       "Next": [
         "下一步"
-      ],
-      "On the move": [
-        "移動中"
       ],
       "Protection from trackers": [
         "保護免於追蹤"

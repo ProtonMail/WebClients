@@ -5613,8 +5613,8 @@
       "Use your app password instead of your regular password if:": [
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "La contrasenya de l'aplicació és correcta. ${ boldNot } utilitzeu la vostra contrasenya habitual."
+      "Your app password is correct. Do not use your regular password.": [
+        "La contrasenya de l'aplicació és correcta. No utilitzeu la contrasenya normal."
       ],
       "Your email account requires an app password to export your data.": [
         "El vostre compte de correu electrònic requereix una contrasenya d'aplicació per a exportar les dades."
@@ -5622,19 +5622,14 @@
       "Your email account requires one to export your data.": [
         "El vostre compte de correu electrònic en requereix una per exportar les dades."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. ${ boldNot } utilitzi la contrasenya normal."
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "La vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. No utilitzeu la contrasenya normal."
       ],
       "Your email address and password are correct.": [
         "La vostra adreça de correu electrònic i contrasenya són correctes."
       ],
       "Your password is correct.": [
         "La seva contrasenya és correcta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "no"
       ]
     },
     "Import ICS file from Mail": {
@@ -5899,7 +5894,7 @@
         "${ PASS_APP_NAME } proporciona una forma fàcil de crear inicis de sessió a llocs de tercers no confiables on no voleu revelar la vostra adreça de correu electrònic real."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }."
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantenen sense canvis."
@@ -6010,6 +6005,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ],
       "Align left": [
         "Alinea a l'esquerra"
@@ -6233,6 +6231,10 @@
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un núvol segur per a ${ value } membre",
+        "Crea un núvol segur per a ${ value } membres"
       ],
       "Create in": [
         "Crear a"
@@ -7205,11 +7207,11 @@
       "This message is automatically generated as a response to a previous message.": [
         "Aquest missatge es genera automàticament com a resposta a un missatge previ."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Aquest missatge prové d'un àlies ${ PASS_APP_NAME }."
+      ],
       "This message is from a mailing list.": [
         "Aquest missatge és d'una llista de correus."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Aquest missatge prové d'un àlies del SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Aquest missatge està signat per una clau que encara no s'ha confiat."
@@ -8460,6 +8462,9 @@
       ],
       "Remember my choice": [
         "Recorda la meva elecció"
+      ],
+      "Remove metadata": [
+        "Esborrar les metadades"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -10211,11 +10216,14 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } evita que els correus electrònics d'estafa arribin a la vostra safata d'entrada."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } a l'App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } a Play Store"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle }: no es permetrà més seguiment mitjançant internet."
-      ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Accediu al correu electrònic i al calendari directament des del vostre escriptori amb l'aplicació d'escriptori."
       ],
       "Activate premium features": [
         "Activeu les característiques prèmium"
@@ -10226,8 +10234,8 @@
       "Advanced encryption": [
         "Xifratge avançat"
       ],
-      "App Store": [
-        "App Store"
+      "Anytime, anywhere access": [
+        "Accés en qualsevol moment i des de qualsevol lloc"
       ],
       "Auto-delete spam and trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -10238,26 +10246,20 @@
       "Dark Web Monitoring": [
         "Monitoratge del web fosc"
       ],
+      "Distraction-free emailing": [
+        "Correu electrònic sense distraccions"
+      ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
       ],
-      "Download the desktop app and continue": [
-        "Descarregueu l'aplicació d'escriptori i continueu"
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Gaudiu d'una experiència de correu electrònic més ràpida i centrada en l'aplicació d'escriptori."
       ],
-      "Fixed and focused": [
-        "Fixat i enfocat"
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Rebeu una notificació si la vostra contrasenya està compromesa."
-      ],
-      "Get the desktop app": [
-        "Obteniu l'aplicació d'escriptori"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Obteniu l'aplicació mòbil des de ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Protecció contra el correu brossa líder en el sector"
@@ -10271,14 +10273,8 @@
       "Maybe later": [
         "Potser després"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Altres maneres d'experimentar ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Següent"
-      ],
-      "On the move": [
-        "Mentre us desplaceu"
       ],
       "Protection from trackers": [
         "Protecció contra els rastrejadors"
@@ -13459,6 +13455,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionat s'activarà quan el sistema estigui en «mode clar»"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Això garanteix que ningú pugui veure la ubicació, el dispositiu i altra informació que es pugui utilitzar per identificar-vos o rastrejar-vos."
       ],
       "This feature is only available for paid users": [
         "Aquesta funció només està disponible per a usuaris de pagament"

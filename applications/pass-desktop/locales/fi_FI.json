@@ -1848,15 +1848,6 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
-      "Please confirm your backup password": [
-        "Vahvista varasalasanasi"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Vahvista varasalasanasi käyttääksesi automaattista salasanalukitusta."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Poista nykyinen lukitustapa vahvistamalla varasalasanasi."
-      ],
       "Please confirm your extra password": [
         "Vahvista lisäsalasanasi"
       ],
@@ -2012,6 +2003,9 @@
       ],
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
         "SimpleLogin-muistiinpano tallennetaan samaan paikkaan aliasosoitteen kanssa. Vaikka se on suojattu salauksella levossa, sitä ei ole päästä päähän -salattu, joten kuka tahansa SimpleLogin-tietokantaan pääsevä voi lukea sen."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Käytä yksinkertaisesti osoitetta ${ emailBold } seuraavan kerran, kun tarvitset aliasta: se luodaan ${ automaticallyBold }, kun se vastaanottaa ensimmäisen kerran sähköpostia. Voit myös määrittää ${ rulesHyperLink }, jos haluat yksityiskohtaisempaa hallintaa."
       ],
       "Successfully exported all your items": [
         "Kaikki kohteesi vietiin"
@@ -2423,9 +2417,6 @@
       ],
       "Auto-lock after": [
         "Lukitse automaattisesti"
-      ],
-      "Backup password": [
-        "Varasalasana"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Kirjautumistietojesi tallentamisen lisäksi ${ PASS_APP_NAME } suojaa identiteettisi sisäänrakennetulla sähköpostialiasominaisuudella. Aina kun luot uuden tilin verkossa, ${ PASS_APP_NAME } voi automaattisesti luoda aliaksen, jotta todellinen sähköpostiosoitteesi pysyy suojattuna. "
@@ -3171,6 +3162,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "automaattisen luomisen sääntöjä ››"
+      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -3632,9 +3626,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
-      ],
-      "Enter your backup password": [
-        "Syötä varasalasanasi"
       ],
       "Enter your extra password": [
         "Syötä lisäsalasanasi"

@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -4643,28 +4643,17 @@
       "Use your app password instead of your regular password if:": [
         "Seqdec awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ ma yella:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Awal-ik·im uffir d ameɣtu. Seqdec ${ boldNot } awal-ik·im uffir n tannumi."
-      ],
       "Your email account requires an app password to export your data.": [
         "Amiḍan-ik·im n yimayl yesra awal uffir i usifeḍ n yisefka-inek·inem."
       ],
       "Your email account requires one to export your data.": [
         "Amiḍan-ik·im n yimayl yesra yiwen i usifeḍ n yisefka-inek·inem."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Tansal-inek·inem n yimayl akked wawal uffir d imeɣta. Seqdec ${ boldNot } awal-ik·im uffir n tannumi."
-      ],
       "Your email address and password are correct.": [
         "Tansa-inek·inem n yiamyl akked wawal uffir d imeɣta."
       ],
       "Your password is correct.": [
         "Awal-ik·im uffir d arameɣtu."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "uhu"
       ]
     },
     "Import error link": {

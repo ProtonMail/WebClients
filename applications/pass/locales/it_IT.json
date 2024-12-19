@@ -1325,9 +1325,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password di backup."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
       ],
@@ -1465,9 +1462,6 @@
       ],
       "Current version": [
         "Versione attuale"
-      ],
-      "Currently selected": [
-        "Selezione attuale"
       ],
       "Decrypting your data": [
         "Decrittografia dei tuoi dati in corso"
@@ -1845,15 +1839,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Conferma la tua password di backup"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Conferma la tua password di backup per abilitare il blocco automatico con password."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Conferma la tua password di backup per disabilitare il blocco attuale."
       ],
       "Please confirm your extra password": [
         "Conferma la tua password aggiuntiva"
@@ -2415,9 +2400,6 @@
       ],
       "Auto-lock after": [
         "Blocca automaticamente dopo"
-      ],
-      "Backup password": [
-        "Password di backup"
       ],
       "Beta Access": [
         "Accesso beta"
@@ -3529,9 +3511,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Inserisci la tua password di backup"
       ],
       "Enter your extra password": [
         "Inserisci la password aggiuntiva"

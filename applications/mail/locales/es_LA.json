@@ -5618,8 +5618,8 @@
       "Use your app password instead of your regular password if:": [
         "Use la contraseña de la aplicación en lugar de la contraseña normal si:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "La contraseña de la aplicación es correcta. ${ boldNot } use la contraseña regular."
+      "Your app password is correct. Do not use your regular password.": [
+        "La contraseña de la aplicación es correcta. No use la contraseña habitual."
       ],
       "Your email account requires an app password to export your data.": [
         "La cuenta de correo requiere una contraseña de la aplicación para exportar los datos."
@@ -5627,19 +5627,14 @@
       "Your email account requires one to export your data.": [
         "La cuenta de correo requiere una contraseña de la aplicación para exportar los datos."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "La dirección de correo y contraseña de la aplicación son correctas. ${ boldNot } use la contraseña regular."
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "La dirección de correo electrónico y la contraseña de la aplicación son correctas. No use la contraseña habitual."
       ],
       "Your email address and password are correct.": [
         "La dirección de correo y contraseña son correctas."
       ],
       "Your password is correct.": [
         "La contraseña es correcta."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "No"
       ]
     },
     "Import ICS file from Mail": {
@@ -6016,6 +6011,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
+      ],
       "Align left": [
         "Alinear a la izquierda"
       ],
@@ -6238,6 +6236,10 @@
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crear una nube segura para ${ value } miembro",
+        "Crear una nube segura para ${ value } miembros"
       ],
       "Create in": [
         "Crear en"
@@ -7210,11 +7212,11 @@
       "This message is automatically generated as a response to a previous message.": [
         "Este mensaje es generado automáticamente como respuesta a un mensaje anterior."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Este mensaje proviene de un alias de ${ PASS_APP_NAME }."
+      ],
       "This message is from a mailing list.": [
         "Este mensaje proviene de una lista de correo."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Este mensaje proviene de un alias de SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Este mensaje está firmado con una clave que aún no ha sido confiada."
@@ -8468,6 +8470,9 @@
       ],
       "Remember my choice": [
         "Recordar mi elección"
+      ],
+      "Remove metadata": [
+        "Eliminar los metadatos"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -10219,11 +10224,14 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } mantiene los correos electrónicos de spam fuera de su bandeja de entrada."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } en App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } en Play Store"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } significa no más seguimiento a través de internet."
-      ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Acceda al correo electrónico o calendario directamente desde el escritorio con la aplicación de escritorio."
       ],
       "Activate premium features": [
         "Activar las funciones premium"
@@ -10234,8 +10242,8 @@
       "Advanced encryption": [
         "Cifrado avanzado"
       ],
-      "App Store": [
-        "App Store"
+      "Anytime, anywhere access": [
+        "Acceso en cualquier momento y en cualquier lugar"
       ],
       "Auto-delete spam and trash": [
         "Eliminación automática del spam y la papelera"
@@ -10246,26 +10254,20 @@
       "Dark Web Monitoring": [
         "Monitoreo de la Dark Web"
       ],
+      "Distraction-free emailing": [
+        "Correo electrónico sin distracciones"
+      ],
       "Download the desktop app": [
         "Descargue la aplicación de escritorio"
       ],
-      "Download the desktop app and continue": [
-        "Descargue la aplicación de escritorio y continúe"
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Disfrute de una experiencia de correo electrónico más rápida y centrada con la aplicación de escritorio."
       ],
-      "Fixed and focused": [
-        "Fijo y concentrado"
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Para acceder a su correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descargue nuestra aplicación desde ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Obtenga notificaciones si su contraseña es comprometida."
-      ],
-      "Get the desktop app": [
-        "Obtenga la aplicación de escritorio"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Obtenga la aplicación móvil de ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Protección contra spam líder en la industria"
@@ -10279,14 +10281,8 @@
       "Maybe later": [
         "Quizás más tarde"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Más formas de disfrutar de ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Siguiente"
-      ],
-      "On the move": [
-        "Mientras se desplaza"
       ],
       "Protection from trackers": [
         "Protección contra rastreadores"
@@ -13467,6 +13463,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando el sistema esté en \"modo claro\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Esto garantiza que nadie pueda ver su ubicación, dispositivo y otra información que pueda usarse para identificarle o rastrearle."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"
