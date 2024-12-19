@@ -13,7 +13,7 @@ type PinUnlockContextValue = UseAsyncModalHandle<string, LockConfirmState>;
 const PinUnlockContext = createContext<PinUnlockContextValue>(async () => {});
 
 export const PinUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, LockConfirmState>({
+    const { handler, abort, resolver, state, loading, key } = useAsyncModalHandles<string, LockConfirmState>({
         getInitialModalState: () => ({
             title: c('Title').t`Enter your PIN`,
             assistiveText: c('Info').t`Please enter your current PIN code to continue`,
@@ -23,7 +23,7 @@ export const PinUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <PinUnlockContext.Provider value={handler}>
             {children}
-            <PinUnlockModal onSubmit={resolver} onClose={abort} {...state} key={key} />
+            <PinUnlockModal onSubmit={resolver} onClose={abort} {...state} loading={loading} key={key} />
         </PinUnlockContext.Provider>
     );
 };
