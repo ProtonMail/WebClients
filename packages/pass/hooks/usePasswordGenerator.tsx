@@ -124,8 +124,11 @@ export const usePasswordGenerator = ({ initial, onConfigChange, policy }: UsePas
     const [password, setPassword] = useState('');
 
     const regeneratePassword = useCallback(() => {
-        generator(config).then(setPassword).catch(noop);
-    }, [generator, config]);
+        // Update config if policy changed
+        const updatedConfig = getConfigWithB2BPolicy(config, policy);
+        generator(updatedConfig).then(setPassword).catch(noop);
+        setConfig(updatedConfig);
+    }, [generator, config, policy]);
 
     useEffect(regeneratePassword, []);
 
@@ -152,6 +155,9 @@ export const usePasswordGenerator = ({ initial, onConfigChange, policy }: UsePas
 
     /* regenerate the password on each options change */
     useEffect(() => regeneratePassword(), Object.values(config.options));
+
+    /* regenerate the password on policy change */
+    useEffect(regeneratePassword, [policy]);
 
     return {
         config,
