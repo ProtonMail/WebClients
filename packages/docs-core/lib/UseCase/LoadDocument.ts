@@ -1,4 +1,4 @@
-import { DocumentRole } from '@proton/docs-shared'
+import { DocumentRole, DynamicResult } from '@proton/docs-shared'
 import { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import { getCanWrite } from '@proton/shared/lib/drive/permissions'
 import { getErrorString } from '../Util/GetErrorString'
@@ -41,7 +41,7 @@ export class LoadDocument {
     private logger: LoggerInterface,
   ) {}
 
-  async executePrivate(nodeMeta: NodeMeta): Promise<Result<LoadDocumentResult<DocumentState>, ErrorResult>> {
+  async executePrivate(nodeMeta: NodeMeta): Promise<DynamicResult<LoadDocumentResult<DocumentState>, ErrorResult>> {
     LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Beginning to load document')
     try {
       const [nodeResult, keysResult, metaResult, permissionsResult] = await Promise.all([
@@ -86,13 +86,13 @@ export class LoadDocument {
       LoadLogger.logEventRelativeToLoadTime('[LoadDocument] All network requests')
 
       if (metaResult.isFailed()) {
-        return Result.fail({ message: metaResult.getError().message, code: metaResult.getError().code })
+        return DynamicResult.fail({ message: metaResult.getErrorObject().message, code: metaResult.getErrorObject().code })
       }
       if (nodeResult.isFailed()) {
-        return Result.fail({ message: nodeResult.getError() })
+        return DynamicResult.fail({ message: nodeResult.getError() })
       }
       if (keysResult.isFailed()) {
-        return Result.fail({ message: keysResult.getError() })
+        return DynamicResult.fail({ message: keysResult.getError() })
       }
 
       const { keys } = keysResult.getValue()
@@ -111,22 +111,22 @@ export class LoadDocument {
         })
 
         if (decryptResult.isFailed()) {
-          return Result.fail({ message: `Failed to decrypt commit ${decryptResult.getError()}` })
+          return DynamicResult.fail({ message: `Failed to decrypt commit ${decryptResult.getError()}` })
         }
 
         decryptedCommit = decryptResult.getValue()
       }
 
       if (!permissionsResult) {
-        return Result.fail({ message: 'Unable to load permissions' })
+        return DynamicResult.fail({ message: 'Unable to load permissions' })
       }
 
       if (!keysResult) {
-        return Result.fail({ message: 'Unable to load all necessary data' })
+        return DynamicResult.fail({ message: 'Unable to load all necessary data' })
       }
 
       if (permissionsResult.isFailed()) {
-        return Result.fail({ message: 'Unable to load all necessary data' })
+        return DynamicResult.fail({ message: 'Unable to load all necessary data' })
       }
 
       const { role, fromCache: roleIsFromCache } = permissionsResult.getValue()
@@ -174,9 +174,9 @@ export class LoadDocument {
         })
       }
 
-      return Result.ok({ documentState })
+      return DynamicResult.ok({ documentState })
     } catch (error) {
-      return Result.fail({ message: getErrorString(error) ?? 'Failed to load document' })
+      return DynamicResult.fail({ message: getErrorString(error) ?? 'Failed to load document' })
     }
   }
 
@@ -205,7 +205,7 @@ export class LoadDocument {
       ])
 
       if (metaResult.isFailed()) {
-        return Result.fail(metaResult.getError().message)
+        return Result.fail(metaResult.getErrorObject().message)
       }
 
       const { serverBasedMeta, latestCommit, realtimeToken } = metaResult.getValue()

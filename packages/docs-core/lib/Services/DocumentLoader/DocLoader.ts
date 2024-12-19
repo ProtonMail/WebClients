@@ -78,9 +78,9 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
 
     const loadResult = await this.loadDocument.executePrivate(nodeMeta)
     if (loadResult.isFailed()) {
-      this.logger.error('Failed to load private document', loadResult.getError())
+      this.logger.error('Failed to load private document', loadResult.getErrorObject())
       this.statusObservers.forEach((observer) => {
-        observer.onError(loadResult.getError().message, loadResult.getError().code)
+        observer.onError(loadResult.getErrorObject().message, loadResult.getErrorObject().code)
       })
       return
     }
