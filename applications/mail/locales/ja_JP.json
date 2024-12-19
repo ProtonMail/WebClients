@@ -367,7 +367,7 @@
         "詳細"
       ],
       "Disable alias": [
-        "エイリアスを無効にする"
+        "エイリアスを無効化"
       ],
       "Disabling alias": [
         "エイリアスを無効化"
@@ -5560,28 +5560,17 @@
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
-      ],
       "Your email account requires an app password to export your data.": [
         "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
       ],
       "Your email account requires one to export your data.": [
         "データをエクスポートするためにメールアカウントが必要です。"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
-      ],
       "Your email address and password are correct.": [
         "あなたのメールアドレスとパスワードは正しいです。"
       ],
       "Your password is correct.": [
         "パスワードは正しいです。"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "しないで"
       ]
     },
     "Import ICS file from Mail": {
@@ -7089,9 +7078,6 @@
       ],
       "This message is from a mailing list.": [
         "これはメーリングリストからのメッセージです。"
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "このメッセージはSimpleLoginエイリアスからです。"
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "このメッセージはまだ信頼されていない鍵で署名されています。"
@@ -9886,7 +9872,7 @@
         "高度な VPN 機能にアクセス"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+        "より多くのパーソナライゼーションを追加するために、 15 のメールアドレスと つのカスタムメールドメインのサポートを提供します。"
       ],
       "AES 256-bit VPN encryption": [
         "AES 256ビットVPN暗号化"
@@ -10031,9 +10017,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } は、あなたがこれ以上インターネット上で追いかけ回されないようにします。"
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "デスクトップ アプリを使用して、デスクトップからメールやカレンダーに直接アクセスします。"
-      ],
       "Activate premium features": [
         "プレミアム機能を有効にする"
       ],
@@ -10042,9 +10025,6 @@
       ],
       "Advanced encryption": [
         "高度な暗号化"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "迷惑メールとごみ箱を自動削除"
@@ -10058,23 +10038,8 @@
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
       ],
-      "Download the desktop app and continue": [
-        "デスクトップアプリをダウンロードして続行する"
-      ],
-      "Fixed and focused": [
-        "固定と集中"
-      ],
       "Get notified if your password is compromised.": [
         "パスワードの安全性が損なわれた場合に通知を受け取る"
-      ],
-      "Get the desktop app": [
-        "デスクトップアプリを入手"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "${ mobileAppAppStoreLink }や${ mobileAppGooglePlayLink }からモバイルアプリを入手"
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "業界をリードするスパム対策"
@@ -10088,14 +10053,8 @@
       "Maybe later": [
         "後で行う"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } を体験するその他の方法"
-      ],
       "Next": [
         "次へ"
-      ],
-      "On the move": [
-        "移動中"
       ],
       "Protection from trackers": [
         "トラッカーからの保護"
@@ -13241,7 +13200,7 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } サーバー"
+        "${ n } 台のサーバー"
       ],
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
