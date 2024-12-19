@@ -759,6 +759,9 @@
       "More": [
         "Більше"
       ],
+      "More actions": [
+        "Додаткові дії"
+      ],
       "More details about ${ ariaLabelTitle }": [
         "Докладніше про ${ ariaLabelTitle }"
       ],
@@ -5701,28 +5704,17 @@
       "Use your app password instead of your regular password if:": [
         "Використовуйте пароль програм замість свого звичайного пароля якщо:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
-      ],
       "Your email account requires an app password to export your data.": [
         "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ваша адреса е-пошти та пароль програм правильні. ${ boldNot } використовуйте свій звичайний пароль."
-      ],
       "Your email address and password are correct.": [
         "Ваші адреса е-пошти та пароль правильні."
       ],
       "Your password is correct.": [
         "Ваш пароль правильний."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "не"
       ]
     },
     "Import ICS file from Mail": {
@@ -6186,6 +6178,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
       ],
       "Align left": [
         "Вирівняти ліворуч"
@@ -7425,9 +7420,6 @@
       ],
       "This message is from a mailing list.": [
         "Це повідомлення зі списку розсилки."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Це повідомлення від псевдоніма SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Це повідомлення підписано ключем, який ще не був довіреним."
@@ -10532,11 +10524,14 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } запобігає потраплянню шахрайських листів у вашу поштову скриньку."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } в App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } у Play Маркеті"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } означає, що за вами більше не стежитимуть в інтернеті."
-      ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Отримайте доступ до електронної пошти та календаря прямо з вашого настільного комп'ютера за допомогою додатку для настільних комп'ютерів."
       ],
       "Activate premium features": [
         "Активувати преміумфункції"
@@ -10546,9 +10541,6 @@
       ],
       "Advanced encryption": [
         "Розширене шифрування"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "Автоматичне видалення спаму та смітника"
@@ -10562,23 +10554,8 @@
       "Download the desktop app": [
         "Завантажити настільний додаток"
       ],
-      "Download the desktop app and continue": [
-        "Завантажити застосунок для настільного компʼютера та продовжити"
-      ],
-      "Fixed and focused": [
-        "Фіксовано та фокусовано"
-      ],
       "Get notified if your password is compromised.": [
         "Отримувати сповіщення якщо ваш пароль буде скомпрометовано."
-      ],
-      "Get the desktop app": [
-        "Отримати настільний застосунок"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Отримайте мобільний додаток з ${ mobileAppAppStoreLink } або ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Google Play"
       ],
       "Industry-leading spam protection": [
         "Найкращий у галузі захист від спаму"
@@ -10592,14 +10569,8 @@
       "Maybe later": [
         "Можливо пізніше"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Більше способів використовувати ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Далі"
-      ],
-      "On the move": [
-        "На ходу"
       ],
       "Protection from trackers": [
         "Захист від стеження"
@@ -11233,6 +11204,11 @@
     "Safety review": {
       "Review your account safety": [
         "Переглянути безпеку вашого облікового запису"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вхід не був успішно завершений."
       ]
     },
     "Search - no results": {
@@ -11941,6 +11917,9 @@
     "sso": {
       "Sign in": [
         "Увійти"
+      ],
+      "Sign in to your organization": [
+        "Увійти до своєї організації"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вас буде перенаправлено до вашого стороннього провайдера SSO."
