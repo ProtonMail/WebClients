@@ -1,5 +1,6 @@
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { CryptoWorkerOptions } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import type { CryptoWorkerOptions } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import clamp from '@proton/utils/clamp';
 
 export const getCryptoWorkerOptions = (
