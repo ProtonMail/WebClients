@@ -1304,9 +1304,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi cadangan Anda."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
       ],
@@ -1450,9 +1447,6 @@
       ],
       "Current version": [
         "Versi saat ini"
-      ],
-      "Currently selected": [
-        "Saat ini dipilih"
       ],
       "Decrypting your data": [
         "Mendekripsi data Anda"
@@ -1801,15 +1795,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
-      ],
-      "Please confirm your backup password": [
-        "Silakan konfirmasi kata sandi cadangan Anda"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk membatalkan kunci Anda saat ini."
       ],
       "Please confirm your extra password": [
         "Silakan konfirmasi kata sandi tambahan Anda"
@@ -2336,7 +2321,7 @@
         "Rincian tambahan"
       ],
       "Address details": [
-        "Detail alamat"
+        "Rincian alamat"
       ],
       "Alias": [
         "Alias"
@@ -2385,9 +2370,6 @@
       ],
       "Autosuggest": [
         "Saran otomatis"
-      ],
-      "Backup password": [
-        "Kata sandi cadangan"
       ],
       "Biometrics": [
         "Biometrik"
@@ -2588,7 +2570,7 @@
         "Sembunyikan kata sandi"
       ],
       "https://example.com": [
-        "https://example.com"
+        "https://contoh.com"
       ],
       "ID Card": [
         "Kartu ID"
@@ -3047,7 +3029,7 @@
         "Domain Anda"
       ],
       "ZIP or Postal code": [
-        "Kode pos"
+        "ZIP atau kode pos"
       ]
     },
     "Link": {
@@ -3440,9 +3422,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Masukkan kata sandi cadangan Anda"
       ],
       "Enter your extra password": [
         "Masukkan kata sandi tambahan Anda"

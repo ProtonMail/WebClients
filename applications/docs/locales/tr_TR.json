@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "Accept": [
+        "Kabul et"
+      ],
       "Activate recovery": [
         "Kurtarma özelliğini aç"
       ],
@@ -204,6 +207,9 @@
       ],
       "Customize import": [
         "İçe aktarmayı özelleştir"
+      ],
+      "Decline": [
+        "Reddet"
       ],
       "Decrease": [
         "Azalt"
@@ -3579,28 +3585,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
-      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
-      ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
       ],
       "Your password is correct.": [
         "Parolanız doğru."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "değildir"
       ]
     },
     "Import instructions": {
@@ -3901,6 +3896,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Seçilmiş ögeleri çöp kutusundan kalıcı olarak silmek istediğinizden emin misiniz?"
+      ],
+      "Are you sure you want to proceed?": [
+        "İlerlemek istediğinizden emin misiniz?"
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
@@ -6971,8 +6969,17 @@
       "External invitation's email was sent again": [
         "Dış davet e-postası yeniden gönderildi"
       ],
+      "Failed to accept share invitation": [
+        "Paylaşma daveti kabul edilemedi"
+      ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Davet bilgileri yüklenemedi"
+      ],
+      "Failed to reject share invitation": [
+        "Paylaşma daveti reddedilemedi"
       ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
@@ -7001,6 +7008,12 @@
       ],
       "Public link update access failed ": [
         "Herkese açık bağlantı erişimi güncellenemedi "
+      ],
+      "Share invitation accepted successfully": [
+        "Paylaşma daveti kabul edildi"
+      ],
+      "Share invitation declined": [
+        "Paylaşma daveti reddedildi"
       ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
@@ -8884,6 +8897,9 @@
       ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
+      ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Paylaşılan öge davetini reddetmek üzeresiniz. Sahibi sizinle yeniden paylaşana kadar ona erişemeyeceksiniz."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"

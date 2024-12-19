@@ -1487,6 +1487,9 @@
       "Disabling offline mode...": [
         "Wyłączenie trybu offline..."
       ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Aktualizacja rekordów DNS może zająć do 24 godzin."
+      ],
       "Domain: ${ domainPath } or @": [
         "Domena: ${ domainPath } lub @"
       ],
@@ -1843,9 +1846,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Potwierdź hasło zapasowe"
       ],
       "Please confirm your extra password": [
         "Potwierdź dodatkowe hasło"
@@ -2403,9 +2403,6 @@
       ],
       "Auto-lock after": [
         "Automatyczna blokada"
-      ],
-      "Backup password": [
-        "Hasło zapasowe"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Poza przechowywaniem loginów ${ PASS_APP_NAME } chroni Twoją tożsamość dzięki zintegrowanej funkcji aliasów e-mail. Za każdym razem, gdy rejestrujesz nowe konto online, ${ PASS_APP_NAME } może automatycznie utworzyć alias, aby chronić Twój rzeczywisty adres e-mail."
@@ -3446,7 +3443,7 @@
         "Skrzynka pocztowa została zweryfikowana"
       ],
       "Mailboxes successfully updated": [
-        "Skrzynka pocztowa została zaktualizowana"
+        "Skrzynki pocztowe zostały zaktualizowane"
       ],
       "Random prefix generation successfully disabled": [
         "Generowanie losowego przedrostka zostało wyłączone"
@@ -3593,11 +3590,11 @@
       "Domain": [
         "Domena"
       ],
+      "Domain ownership verification": [
+        "Weryfikacja domeny"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Lubisz ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Wpisz hasło zapasowe"
       ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
@@ -3865,6 +3862,9 @@
       ],
       "What is the dark web?": [
         "Co to jest dark web?"
+      ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Jaka jest różnica między notatką ${ PASS_SHORT_APP_NAME } i SimpleLogin?"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Subskrypcja ${ planName } wygasa ${ endDate }"

@@ -1325,9 +1325,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de ${ BRAND_NAME }."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de respaldo."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "El acceso a ${ PASS_APP_NAME } requerirá tu huella dactilar o el código PIN del dispositivo."
       ],
@@ -1465,9 +1462,6 @@
       ],
       "Current version": [
         "Versión actual"
-      ],
-      "Currently selected": [
-        "Selección actual"
       ],
       "Decrypting your data": [
         "Descifrando tus datos"
@@ -1845,15 +1839,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
-      ],
-      "Please confirm your backup password": [
-        "Confirma tu contraseña de respaldo."
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Confirma tu contraseña de respaldo para bloquear automáticamente con tu contraseña."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Confirma la contraseña de respaldo para cancelar el registro del bloqueo actual."
       ],
       "Please confirm your extra password": [
         "Confirma tu nueva contraseña."
@@ -2415,9 +2400,6 @@
       ],
       "Auto-lock after": [
         "Bloqueo automático después de"
-      ],
-      "Backup password": [
-        "Contraseña de respaldo"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -3529,9 +3511,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando de ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Ingresa tu contraseña de respaldo."
       ],
       "Enter your extra password": [
         "Ingresa tu contraseña adicional."

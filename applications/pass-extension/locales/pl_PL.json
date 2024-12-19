@@ -1466,6 +1466,9 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Zobacz filmy ${ PASS_APP_NAME } na YouTube"
       ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Aktualizacja rekordów DNS może zająć do 24 godzin."
+      ],
       "Domain: ${ domainPath } or @": [
         "Domena: ${ domainPath } lub @"
       ],
@@ -1795,9 +1798,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Potwierdź hasło zapasowe"
       ],
       "Please confirm your extra password": [
         "Potwierdź dodatkowe hasło"
@@ -2373,9 +2373,6 @@
       ],
       "Autosuggest": [
         "Automatyczne sugestie"
-      ],
-      "Backup password": [
-        "Hasło zapasowe"
       ],
       "Biometrics": [
         "Biometria"
@@ -3283,7 +3280,7 @@
         "Skrzynka pocztowa została zweryfikowana"
       ],
       "Mailboxes successfully updated": [
-        "Skrzynka pocztowa została zaktualizowana"
+        "Skrzynki pocztowe zostały zaktualizowane"
       ],
       "Random prefix generation successfully disabled": [
         "Generowanie losowego przedrostka zostało wyłączone"
@@ -3403,14 +3400,14 @@
       "Domain": [
         "Domena"
       ],
+      "Domain ownership verification": [
+        "Weryfikacja domeny"
+      ],
       "Email": [
         "E-mail"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Lubisz ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Wpisz hasło zapasowe"
       ],
       "Enter your extra password": [
         "Wpisz dodatkowe hasło"
@@ -3633,6 +3630,9 @@
       ],
       "Welcome to your new password manager!": [
         "Witaj w nowym menadżerze haseł!"
+      ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Jaka jest różnica między notatką ${ PASS_SHORT_APP_NAME } i SimpleLogin?"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Subskrypcja ${ planName } wygasa ${ endDate }"
