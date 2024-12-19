@@ -1324,9 +1324,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de recuperació."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
       ],
@@ -1470,9 +1467,6 @@
       ],
       "Current version": [
         "Versió actual"
-      ],
-      "Currently selected": [
-        "Selecció actual"
       ],
       "Decrypting your data": [
         "S'estan desxifrant les dades"
@@ -1829,15 +1823,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Confirmeu la vostra contrasenya de recuperació."
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Confirmeu la vostra contrasenya de recuperació per tal de bloquejar-la automàticament amb la vostra contrasenya"
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Confirmeu la vostra contrasenya de recuperació per desregistrar el vostre bloqueig."
       ],
       "Please confirm your extra password": [
         "Confirmeu la vostra contrasenya addicional."
@@ -2428,9 +2413,6 @@
       ],
       "Autosuggest": [
         "Suggeriment automàtic"
-      ],
-      "Backup password": [
-        "Contrasenya de recuperació"
       ],
       "Biometrics": [
         "Dades biomètriques"
@@ -3488,9 +3470,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Introduïu la vostra contrasenya de recuperació."
       ],
       "Enter your extra password": [
         "Introduïu la vostra contrasenya addicional"
