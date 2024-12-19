@@ -14,7 +14,6 @@ import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/Websocke
 import type { MetricService } from '../Metrics/MetricService'
 import type { DocumentStateValues } from '../../State/DocumentState'
 import { DocumentState } from '../../State/DocumentState'
-import { UserState } from '../../State/UserState'
 
 describe('CommentController', () => {
   let controller: CommentController
@@ -30,7 +29,6 @@ describe('CommentController', () => {
   let logger: LoggerInterface
   let handleRealtimeCommentsEvent: HandleRealtimeCommentsEvent
   let documentState: DocumentState
-  let userState: UserState
 
   beforeEach(() => {
     websocketService = {
@@ -92,10 +90,7 @@ describe('CommentController', () => {
       },
     } as DocumentStateValues)
 
-    userState = new UserState()
-
     controller = new CommentController(
-      userState,
       documentState,
       websocketService,
       metricService,
@@ -123,13 +118,13 @@ describe('CommentController', () => {
 
   describe('shouldSendDocumentName', () => {
     it('should be false when currentDocumentEmailDocTitleEnabled is false', () => {
-      userState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+      documentState.setProperty('currentDocumentEmailDocTitleEnabled', false)
 
       expect(controller.shouldSendDocumentName).toBe(false)
     })
 
     it('should be true when currentDocumentEmailDocTitleEnabled is true', () => {
-      userState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+      documentState.setProperty('currentDocumentEmailDocTitleEnabled', true)
 
       expect(controller.shouldSendDocumentName).toBe(true)
     })
@@ -137,7 +132,7 @@ describe('CommentController', () => {
 
   describe('createCommentThread', () => {
     it('should send the document name when currentDocumentEmailDocTitleEnabled is true', async () => {
-      userState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+      documentState.setProperty('currentDocumentEmailDocTitleEnabled', true)
 
       await controller.createCommentThread('comment-content')
 
@@ -149,7 +144,7 @@ describe('CommentController', () => {
     })
 
     it('should not send the document name when currentDocumentEmailDocTitleEnabled is false', async () => {
-      userState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+      documentState.setProperty('currentDocumentEmailDocTitleEnabled', false)
 
       await controller.createCommentThread('comment-content')
 
@@ -163,7 +158,7 @@ describe('CommentController', () => {
 
   describe('createSuggestionThread', () => {
     it('should send the document name when currentDocumentEmailDocTitleEnabled is true', async () => {
-      userState.setProperty('currentDocumentEmailDocTitleEnabled', true)
+      documentState.setProperty('currentDocumentEmailDocTitleEnabled', true)
 
       await controller.createSuggestionThread('suggestion-id', 'comment-content', 'replace')
 
@@ -175,7 +170,7 @@ describe('CommentController', () => {
     })
 
     it('should not send the document name when currentDocumentEmailDocTitleEnabled is false', async () => {
-      userState.setProperty('currentDocumentEmailDocTitleEnabled', false)
+      documentState.setProperty('currentDocumentEmailDocTitleEnabled', false)
 
       await controller.createSuggestionThread('suggestion-id', 'comment-content', 'replace')
 

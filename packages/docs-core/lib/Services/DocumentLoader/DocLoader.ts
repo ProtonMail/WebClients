@@ -30,7 +30,6 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import type { MetricService } from '../Metrics/MetricService'
 import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import type { SquashDocument } from '../../UseCase/SquashDocument'
-import type { UserState } from '../../State/UserState'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
@@ -42,7 +41,6 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
   private readonly statusObservers: DocLoaderStatusObserver<DocumentState>[] = []
 
   constructor(
-    private userState: UserState,
     private websocketSerivce: WebsocketServiceInterface,
     private driveCompat: DriveCompat,
     private metricService: MetricService,
@@ -120,7 +118,6 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     realtime.initializeConnection()
 
     this.commentsController = new CommentController(
-      this.userState,
       documentState,
       this.websocketSerivce,
       this.metricService,
