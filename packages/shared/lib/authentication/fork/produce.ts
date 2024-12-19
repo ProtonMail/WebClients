@@ -1,4 +1,5 @@
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { getIsGlobalSSOAccount, getIsSSOAccount } from '@proton/shared/lib/keys';
 
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
@@ -201,7 +202,19 @@ export const getRequiredForkParameters = (
 };
 
 export const getCanUserReAuth = (user: User) => {
-    return !user.Flags.sso && !user.OrganizationPrivateKey;
+    // The reauth container doesn't support an admin signed into a sub-user
+    if (user.OrganizationPrivateKey) {
+        return false;
+    }
+    // Global SSO accounts are supported by entering the backup password
+    if (getIsGlobalSSOAccount(user)) {
+        return true;
+    }
+    // Not supported for a standard SSO account without keys
+    if (getIsSSOAccount(user)) {
+        return false;
+    }
+    return true;
 };
 
 export const getShouldReAuth = (

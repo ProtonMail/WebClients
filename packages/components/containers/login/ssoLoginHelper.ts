@@ -45,7 +45,7 @@ import type {
     SSOUnlockData,
 } from './interface';
 import { type AuthActionResponse, AuthStep, SSOLoginCapabilites } from './interface';
-import { getUnlockError, handleUnlockKey } from './loginHelper';
+import { getBackupPasswordError, handleUnlockKey } from './loginHelper';
 
 export const getSSOIntent = ({ user, authDevices }: { user: User; authDevices: AuthDeviceOutput[] }) => {
     if (!authDevices.length) {
@@ -105,7 +105,7 @@ export const handleUnlockSSO = async ({
 
     const unlockResult = await handleUnlockKey(user, salts, clearKeyPassword).catch(() => undefined);
     if (!unlockResult) {
-        throw getUnlockError();
+        throw getBackupPasswordError();
     }
 
     const keyPassword = unlockResult.keyPassword;
