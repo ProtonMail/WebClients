@@ -5704,28 +5704,17 @@
       "Use your app password instead of your regular password if:": [
         "Použijte heslo aplikace místo běžného hesla, pokud:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Vaše heslo pro aplikaci je správné. ${ boldNot }používejte vaše běžné heslo."
-      ],
       "Your email account requires an app password to export your data.": [
         "Váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat."
       ],
       "Your email account requires one to export your data.": [
         "Váš e-mailový účet toto vyžaduje pro export vašich dat."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Vaše e-mailová adresa a heslo aplikace jsou správné. ${ boldNot }používejte vaše běžné heslo."
-      ],
       "Your email address and password are correct.": [
         "Vaše e-mailová adresa a heslo jsou správné."
       ],
       "Your password is correct.": [
         "Vaše heslo je správné."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "ne"
       ]
     },
     "Import ICS file from Mail": {
@@ -7428,9 +7417,6 @@
       ],
       "This message is from a mailing list.": [
         "Zpráva pochází z e-mailového seznamu."
-      ],
-      "This message is from a SimpleLogin alias.": [
-        "Tato zpráva pochází z aliasu SimpleLogin."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Tato zpráva je podepsána klíčem, který nebyl dosud označen jako důvěryhodný."
@@ -10538,9 +10524,6 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } znamená, že už nebudete sledováni na internetu."
       ],
-      "Access email and calendar right from your desktop with the desktop app.": [
-        "Přistupujte k e-mailu a kalendáři přímo z počítače pomocí desktopové aplikace."
-      ],
       "Activate premium features": [
         "Aktivujte prémiové funkce"
       ],
@@ -10549,9 +10532,6 @@
       ],
       "Advanced encryption": [
         "Pokročilé šifrování"
-      ],
-      "App Store": [
-        "App Store"
       ],
       "Auto-delete spam and trash": [
         "Automatické smazání obsahu složek Spam a Koš"
@@ -10565,23 +10545,8 @@
       "Download the desktop app": [
         "Stáhněte si desktopovou aplikaci"
       ],
-      "Download the desktop app and continue": [
-        "Stáhněte si desktopovou aplikaci a pokračujte"
-      ],
-      "Fixed and focused": [
-        "Pevně a soustředěně"
-      ],
       "Get notified if your password is compromised.": [
         "Dostávejte upozornění, pokud dojde ke kompromitaci vašeho hesla."
-      ],
-      "Get the desktop app": [
-        "Získejte desktopovou aplikaci"
-      ],
-      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "Získejte mobilní aplikaci z ${ mobileAppAppStoreLink } nebo ${ mobileAppGooglePlayLink }."
-      ],
-      "Google Play": [
-        "Obchod Play"
       ],
       "Industry-leading spam protection": [
         "Špičková ochrana proti spamu"
@@ -10595,14 +10560,8 @@
       "Maybe later": [
         "Možná později"
       ],
-      "More ways to experience ${ MAIL_APP_NAME }": [
-        "Další možnosti využití ${ MAIL_APP_NAME }"
-      ],
       "Next": [
         "Další"
-      ],
-      "On the move": [
-        "Na cestách"
       ],
       "Protection from trackers": [
         "Ochrana před sledováním"
