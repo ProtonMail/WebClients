@@ -7,7 +7,7 @@ import noop from '@proton/utils/noop';
 import { useRerender } from './useRerender';
 
 export class AsyncModalAbortedError extends Error {}
-type ModalState<T> = T & Omit<ModalProps, 'onSubmit'> & { loading: boolean };
+type ModalState<T> = T & Omit<ModalProps, 'onSubmit'>;
 type HookOptions<T> = { getInitialModalState: () => T };
 export type UseAsyncModalHandle<V, T> = (options: UseAsyncModalHandlerOptions<V, T>) => Promise<void>;
 
@@ -22,8 +22,8 @@ export const useAsyncModalHandles = <V, T = {}>(options: HookOptions<T>) => {
     const [state, setState] = useState<ModalState<T>>({
         ...options.getInitialModalState(),
         open: false,
-        loading: false,
     });
+    const [loading, setLoading] = useState<boolean>(false);
 
     const resolver = useRef<(value: V) => void>(noop);
     const rejector = useRef<(error: unknown) => void>(noop);
@@ -36,7 +36,8 @@ export const useAsyncModalHandles = <V, T = {}>(options: HookOptions<T>) => {
             next();
 
             const { onSubmit, onError, onAbort, ...modalOptions } = opts;
-            setState({ ...options.getInitialModalState(), ...modalOptions, open: true, loading: false });
+            setState({ ...options.getInitialModalState(), ...modalOptions, open: true });
+            setLoading(false);
 
             try {
                 const value = await new Promise<V>((resolve, reject) => {
@@ -44,19 +45,21 @@ export const useAsyncModalHandles = <V, T = {}>(options: HookOptions<T>) => {
                     rejector.current = reject;
                 });
 
-                setState((state) => ({ ...state, loading: true }));
+                setLoading(true);
                 await onSubmit(value);
             } catch (error) {
-                setState((state) => ({ ...state, loading: false }));
-
                 if (error instanceof AsyncModalAbortedError) await onAbort?.();
                 else await onError?.(error);
             } finally {
-                setState((state) => ({ ...state, open: false, loading: false }));
+                setState((state) => ({ ...state, open: false }));
+                setLoading(false);
             }
         },
         [options.getInitialModalState]
     );
 
-    return useMemo(() => ({ handler, abort, state, resolver: resolve, key }), [handler, abort, state, key]);
+    return useMemo(
+        () => ({ handler, abort, state, loading, resolver: resolve, key }),
+        [handler, abort, state, loading, key]
+    );
 };
