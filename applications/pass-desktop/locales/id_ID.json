@@ -1337,9 +1337,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi cadangan Anda."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
       ],
@@ -1846,15 +1843,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
-      ],
-      "Please confirm your backup password": [
-        "Silakan konfirmasi kata sandi cadangan Anda"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk membatalkan kunci Anda saat ini."
       ],
       "Please confirm your extra password": [
         "Silakan konfirmasi kata sandi tambahan Anda"
@@ -2375,7 +2363,7 @@
         "Rincian tambahan"
       ],
       "Address details": [
-        "Detail alamat"
+        "Rincian alamat"
       ],
       "Alias": [
         "Alias"
@@ -2409,9 +2397,6 @@
       ],
       "Auto-lock after": [
         "Kunci Pass secara otomatis setelah"
-      ],
-      "Backup password": [
-        "Kata sandi cadangan"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Di samping menyimpan entri masuk Anda, ${ PASS_APP_NAME } juga melindungi identitas Anda dengan fitur alias email yang terintegrasi. Pada saat Anda mendaftar akun online baru, ${ PASS_APP_NAME } dapat menghasilkan alias secara otomatis untuk melindungi alamat email asli Anda. "
@@ -2657,7 +2642,7 @@
         "Cara membuka ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
-        "https://example.com"
+        "https://contoh.com"
       ],
       "ID Card": [
         "Kartu ID"
@@ -3152,7 +3137,7 @@
         "Kata sandi Anda. Di mana pun Anda berada."
       ],
       "ZIP or Postal code": [
-        "Kode pos"
+        "ZIP atau kode pos"
       ]
     },
     "Link": {
@@ -3616,9 +3601,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Masukkan kata sandi cadangan Anda"
       ],
       "Enter your extra password": [
         "Masukkan kata sandi tambahan Anda"

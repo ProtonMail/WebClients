@@ -1357,9 +1357,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe ${ BRAND_NAME }."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe de secours."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera votre empreinte digitale ou le code PIN de votre appareil."
       ],
@@ -1874,15 +1871,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
-      ],
-      "Please confirm your backup password": [
-        "Veuillez confirmer votre mot de passe de secours."
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Veuillez confirmer votre mot de passe de secours afin de verrouiller automatiquement avec votre mot de passe."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Veuillez confirmer votre mot de passe de secours afin d'enlever votre verrouillage actuel."
       ],
       "Please confirm your extra password": [
         "Veuillez confirmer votre mot de passe supplémentaire."
@@ -2453,9 +2441,6 @@
       ],
       "Auto-lock after": [
         "Verrouillage automatique après"
-      ],
-      "Backup password": [
-        "Mot de passe de secours"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "En plus de conserver vos identifiants, ${ PASS_APP_NAME } protège votre identité avec sa fonctionnalité intégrée d'alias d'adresse e-mail. Chaque fois que vous vous inscrivez à un nouveau compte en ligne, ${ PASS_APP_NAME } peut créer automatiquement un alias pour protéger votre véritable adresse e-mail. "
@@ -3665,9 +3650,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
-      ],
-      "Enter your backup password": [
-        "Saisissez votre mot de passe de secours."
       ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire"
