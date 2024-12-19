@@ -1325,9 +1325,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha da ${ BRAND_NAME }"
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha de backup"
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "O acesso a ${ PASS_APP_NAME } exigirá sua impressão digital ou o PIN do dispositivo."
       ],
@@ -1465,9 +1462,6 @@
       ],
       "Current version": [
         "Versão atual"
-      ],
-      "Currently selected": [
-        "Atualmente selecionado"
       ],
       "Decrypting your data": [
         "Descriptografando seus dados"
@@ -1845,15 +1839,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Confirme sua nova senha de backup"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Confirme sua senha de backup para bloquear automaticamente com a sua senha."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Confirme sua senha de backup para cancelar o registro do seu bloqueio atual."
       ],
       "Please confirm your extra password": [
         "Confirme sua nova senha adicional"
@@ -2415,9 +2400,6 @@
       ],
       "Auto-lock after": [
         "Bloqueio automático após"
-      ],
-      "Backup password": [
-        "Senha de backup"
       ],
       "Beta Access": [
         "Acesso beta"
@@ -3532,9 +3514,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Digite sua senha de backup"
       ],
       "Enter your extra password": [
         "Digite sua senha adicional"
