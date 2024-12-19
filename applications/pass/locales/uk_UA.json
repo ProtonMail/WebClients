@@ -448,6 +448,9 @@
       "See members": [
         "Переглянути учасників"
       ],
+      "Send email": [
+        "Надіслати лист"
+      ],
       "Send invite": [
         "Надіслати запрошення"
       ],
@@ -1525,6 +1528,9 @@
       "Reconnecting": [
         "Повторне з'єднання"
       ],
+      "Record: MX": [
+        "Запис: MX"
+      ],
       "Registering PIN lock failed": [
         "Не вдалося зареєструвати блокування PIN-кодом"
       ],
@@ -1620,6 +1626,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Ця версія буде додана до історії як найновіша версія."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Це призведе до відхилення пристрою **${ name }**, який намагався увійти до вашого облікового запису ${ BRAND_NAME } у **${ date }**."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Щоб перенести дані з іншого менеджера паролів, перейдіть до нього, експортуйте дані, а потім завантажте їх до ${ PASS_APP_NAME }. Після імпорту даних видаліть експортований файл."
@@ -1853,9 +1862,6 @@
       ],
       "Auto-lock after": [
         "Автоблокування після"
-      ],
-      "Backup password": [
-        "Резервний пароль"
       ],
       "Beta Access": [
         "Бета-доступ"
@@ -2307,6 +2313,9 @@
       "Type": [
         "Тип"
       ],
+      "Unknown": [
+        "Невідомий"
+      ],
       "Unlock with": [
         "Спосіб розблокування"
       ],
@@ -2537,6 +2546,35 @@
         "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Затвердити або відхилити це зараз"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Введіть код підтвердження, який ми надіслали на інший пристрій."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Якщо ви не зробили цього запиту, скасуйте його зараз."
+      ],
+      "Invalid confirmation code": [
+        "Невірний код підтвердження"
+      ],
+      "No, it wasn’t me": [
+        "Ні, це був не я"
+      ],
+      "Sign-in confirmed": [
+        "Вхід підтверджено"
+      ],
+      "Sign-in rejected": [
+        "Вхід відхилено"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Запитано вхід на іншому пристрої. Це був ти?"
+      ],
+      "Yes, it was me": [
+        "Так, це був я"
+      ]
+    },
     "sso: auth device state": {
       "Active": [
         "Активний"
@@ -2582,6 +2620,15 @@
       ],
       "Account protection": [
         "Захист облікового запису"
+      ],
+      "Actions": [
+        "Дії"
+      ],
+      "Activity": [
+        "Діяльність"
+      ],
+      "Aliases": [
+        "Псевдоніми"
       ],
       "Auto-lock update": [
         "Оновлення автоблокування"
@@ -2633,6 +2680,9 @@
       ],
       "Dark Web Monitoring": [
         "Моніторинг Темного Вебу"
+      ],
+      "Default": [
+        "За замовчуванням"
       ],
       "Details": [
         "Подробиці"
@@ -2694,6 +2744,9 @@
       "Low disk space": [
         "Бракує місця на диску"
       ],
+      "Mailbox": [
+        "Поштова скринька"
+      ],
       "Mark as resolved?": [
         "Позначити як вирішене?"
       ],
@@ -2747,6 +2800,9 @@
       ],
       "Recommended actions": [
         "Рекомендовані дії"
+      ],
+      "Reject device?": [
+        "Відхилити пристрій?"
       ],
       "Remove email address?": [
         "Вилучити адресу електронної пошти"
@@ -2819,6 +2875,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Розблокувати ${ brandNameJSX }"
+      ],
+      "Unverified": [
+        "Не підтверджено"
       ],
       "Update available": [
         "Доступне оновлення"
