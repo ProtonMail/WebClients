@@ -37,7 +37,6 @@ import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCo
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { MetricService } from '../Metrics/MetricService'
-import type { UserState } from '../../State/UserState'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 
 /**
@@ -57,7 +56,6 @@ export class CommentController implements CommentControllerInterface, InternalEv
   shouldSendDocumentName = false
 
   constructor(
-    private userState: UserState | undefined,
     private documentState: DocumentState | PublicDocumentState,
     private readonly websocketService: WebsocketServiceInterface,
     private readonly metricService: MetricService,
@@ -74,11 +72,9 @@ export class CommentController implements CommentControllerInterface, InternalEv
     eventBus.addEventHandler(this, DocControllerEvent.RealtimeCommentMessageReceived)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady)
 
-    if (this.userState) {
-      this.userState.subscribeToProperty('currentDocumentEmailDocTitleEnabled', (value) => {
-        this.shouldSendDocumentName = value
-      })
-    }
+    this.documentState.subscribeToProperty('currentDocumentEmailDocTitleEnabled', (value) => {
+      this.shouldSendDocumentName = value
+    })
   }
 
   get userDisplayName(): string {

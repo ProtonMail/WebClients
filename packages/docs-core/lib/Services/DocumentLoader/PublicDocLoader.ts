@@ -102,7 +102,6 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       realtime.initializeConnection()
 
       this.commentsController = new CommentController(
-        undefined,
         documentState,
         this.websocketSerivce,
         this.metricService,

@@ -9,9 +9,8 @@ import type { WebsocketCallbacks } from '@proton/docs-shared'
 import { ApiResult, Result } from '@proton/docs-shared'
 import { MetricService } from '../Services/Metrics/MetricService'
 import type { Api } from '@proton/shared/lib/interfaces'
-import type { DocumentStateValues } from '../State/DocumentState';
+import type { DocumentStateValues } from '../State/DocumentState'
 import { DocumentState } from '../State/DocumentState'
-import { UserState } from '../State/UserState'
 import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
@@ -26,7 +25,6 @@ describe('WebsocketConnection', () => {
   let connection: WebsocketConnection
   let metricService: MetricService
   let documentState: DocumentState
-  let userState: UserState
 
   beforeEach(() => {
     jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
@@ -35,11 +33,9 @@ describe('WebsocketConnection', () => {
     documentState = new DocumentState({
       entitlements: {} as DocumentEntitlements,
     } as DocumentStateValues)
-    userState = new UserState()
 
     connection = new WebsocketConnection(
       documentState,
-      userState,
       {
         onFailToGetToken: jest.fn(),
         onConnecting: jest.fn(),
@@ -278,7 +274,6 @@ describe('WebsocketConnection', () => {
 
       connection = new WebsocketConnection(
         documentState,
-        userState,
         {
           getUrlAndToken: () => Result.fail('error'),
           onFailToGetToken: onFailToGetToken,
