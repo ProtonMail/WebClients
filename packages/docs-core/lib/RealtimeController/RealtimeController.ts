@@ -90,7 +90,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
     documentState.subscribeToEvent('DriveFileConversionToDocSucceeded', () => {
       this.abortWebsocketConnectionAttempt = false
-      void this.reconnect()
+      /** Token cache must be invalidated since a conversion entails seeding the initial commit, which changes our current commit id */
+      void this.reconnect({ invalidateTokenCache: true })
     })
 
     documentState.subscribeToEvent('DebugMenuRequestingCommitWithRTS', (payload) => {
@@ -104,7 +105,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         !this.websocketService.isConnected(this.documentState.getProperty('entitlements').nodeMeta)
       ) {
         this.logger.info('Reconnecting to RTS because currentCommitId changed and we are not connected')
-        void this.reconnect()
+        /** Token cache must be invalidated since commit state changed */
+        void this.reconnect({ invalidateTokenCache: true })
       }
     })
 
@@ -115,7 +117,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         !this.websocketService.isConnected(this.documentState.getProperty('entitlements').nodeMeta)
       ) {
         this.logger.info('Reconnecting to RTS because document was untrashed')
-        void this.reconnect()
+        /** No need to invalidate token cache since no commit state changed */
+        void this.reconnect({ invalidateTokenCache: false })
       }
     })
   }
@@ -139,8 +142,11 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     this.websocketService.closeConnection(this.documentState.getProperty('entitlements').nodeMeta)
   }
 
-  public async reconnect(): Promise<void> {
-    await this.websocketService.reconnectToDocumentWithoutDelay(this.documentState.getProperty('entitlements').nodeMeta)
+  public async reconnect(options: { invalidateTokenCache: boolean }): Promise<void> {
+    await this.websocketService.reconnectToDocumentWithoutDelay(
+      this.documentState.getProperty('entitlements').nodeMeta,
+      options,
+    )
   }
 
   public async debugSendCommitCommandToRTS(entitlements: DocumentEntitlements): Promise<void> {
@@ -435,7 +441,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
     const result = await this._getDocumentMeta.execute(nodeMeta)
     if (result.isFailed()) {
-      fail(`Failed to reload document meta: ${result.getError()}`)
+      fail(`Failed to reload document meta: ${result.getErrorObject()}`)
 
       return
     }
@@ -468,6 +474,12 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     )
 
     this.documentState.setProperty('baseCommit', decryptedCommit)
+    /**
+     * This will trigger a reconnect since we observe the currentCommitId in this class and trigger a reconnect.
+     * Note that we also explicitely clear the token cache, even though the websocket connection class also observers
+     * this property and clears it own cache, just in case of a race condition where our observer is triggered first
+     * before the websocket observer can trigger and clear its cache. So it will get cleared twice.
+     * */
     this.documentState.setProperty('currentCommitId', decryptedCommit.commitId)
 
     this.isRefetchingStaleCommit = false
