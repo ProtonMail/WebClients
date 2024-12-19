@@ -13,20 +13,22 @@ interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>,
 
 const Table = ({ children, responsive, className, hasActions, caption, borderWeak, ...props }: Props) => {
     return (
-        <table
-            className={clsx([
-                'simple-table',
-                responsive === 'cards' && 'simple-table--responsive simple-table--responsive-cards',
-                responsive === 'stacked' && 'simple-table--responsive simple-table--responsive-stacked',
-                hasActions && 'simple-table--has-actions',
-                borderWeak && 'simple-table--border-weak',
-                className,
-            ])}
-            {...props}
-        >
-            {caption ? <caption className="sr-only">{caption}</caption> : null}
-            {children}
-        </table>
+        <div className="simple-table-wrapper">
+            <table
+                className={clsx([
+                    'simple-table',
+                    responsive === 'cards' && 'simple-table--responsive simple-table--responsive-cards',
+                    responsive === 'stacked' && 'simple-table--responsive simple-table--responsive-stacked',
+                    hasActions && 'simple-table--has-actions',
+                    borderWeak && 'simple-table--border-weak',
+                    className,
+                ])}
+                {...props}
+            >
+                {caption ? <caption className="sr-only">{caption}</caption> : null}
+                {children}
+            </table>
+        </div>
     );
 };
 
