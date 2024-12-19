@@ -189,7 +189,7 @@ function HistoryViewerModalContent({
       {/* Right column */}
       <div className="flex h-full flex-col justify-between overflow-scroll border-l border-[--border-weak] bg-[--optional-background-lowered]">
         {/* Upper content */}
-        <div className="flex flex-col">
+        <div>
           <div className="sticky top-0 flex items-center justify-between gap-2 bg-[--optional-background-lowered] px-3.5 py-1.5">
             <div className="text-bold text-rg">Document History</div>
             <Tooltip title={c('Action').t`Close`}>
