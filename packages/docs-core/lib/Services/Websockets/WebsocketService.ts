@@ -4,12 +4,7 @@ import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
-import type {
-  InternalEventBusInterface,
-  WebsocketConnectionInterface,
-  WebsocketCallbacks,
-  RealtimeUrlAndToken,
-} from '@proton/docs-shared'
+import type { InternalEventBusInterface, WebsocketConnectionInterface, WebsocketCallbacks } from '@proton/docs-shared'
 import { BroadcastSource, ProcessedIncomingRealtimeEventMessage, assertUnreachableAndLog } from '@proton/docs-shared'
 import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -48,7 +43,6 @@ import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
-import type { UserState } from '../../State/UserState'
 import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../../Types/DocumentEntitlements'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 
@@ -59,7 +53,6 @@ export class WebsocketService implements WebsocketServiceInterface {
   readonly ledger: AckLedgerInterface = new AckLedger(this.logger, this.handleLedgerStatusChangeCallback.bind(this))
 
   constructor(
-    private userState: UserState,
     private _createRealtimeValetToken: FetchRealtimeToken,
     private _encryptMessage: EncryptMessage,
     private _decryptMessage: DecryptMessage,
@@ -193,7 +186,6 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const connection = new WebsocketConnection(
       documentState,
-      this.userState,
       callbacks,
       this._createRealtimeValetToken,
       this.metricService,
@@ -222,10 +214,6 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
 
     return connection
-  }
-
-  handleRetrievedValetTokenResult(result: RealtimeUrlAndToken): void {
-    this.userState.setProperty('currentDocumentEmailDocTitleEnabled', result.preferences.includeDocumentNameInEmails)
   }
 
   isConnectionReadyPayload(obj: any): obj is ConnectionReadyPayload {

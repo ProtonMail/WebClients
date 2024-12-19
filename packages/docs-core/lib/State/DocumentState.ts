@@ -71,6 +71,8 @@ export interface DocumentStateValues {
   decryptedNode: DecryptedNode
   entitlements: DocumentEntitlements
 
+  currentDocumentEmailDocTitleEnabled: boolean
+
   editorReady: boolean
   editorHasRenderingIssue: boolean
 
