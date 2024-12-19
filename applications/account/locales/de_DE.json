@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -6416,28 +6416,17 @@
       "Use your app password instead of your regular password if:": [
         "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort."
-      ],
       "Your email account requires an app password to export your data.": [
         "Dein E-Mail-Konto erfordert ein App-Passwort, um deine Daten zu exportieren."
       ],
       "Your email account requires one to export your data.": [
         "Dein E-Mail-Konto erfordert ein solches, um deine Daten zu exportieren."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
-      ],
       "Your email address and password are correct.": [
         "Deine E-Mail-Adresse und dein Passwort korrekt sind."
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "nicht"
       ]
     },
     "Import error link": {
