@@ -248,27 +248,33 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                     },
                     content: (() => {
                         return (
-                            <SSOBackupPasswordForm
-                                onAskAdminHelp={maybeStepSetter(SSOLoginCapabilites.ASK_ADMIN)}
-                                onSubmit={async (clearKeyPassword) => {
-                                    try {
-                                        const validateFlow = createFlow();
-                                        const result = await handleUnlockSSO({
-                                            cache,
-                                            clearKeyPassword,
-                                        });
-                                        if (validateFlow()) {
-                                            return await handleResult(result);
+                            <>
+                                <Text>
+                                    {c('sso')
+                                        .t`To make sure it's really you trying to sign-in, please enter your backup password.`}
+                                </Text>
+                                <SSOBackupPasswordForm
+                                    onAskAdminHelp={maybeStepSetter(SSOLoginCapabilites.ASK_ADMIN)}
+                                    onSubmit={async (clearKeyPassword) => {
+                                        try {
+                                            const validateFlow = createFlow();
+                                            const result = await handleUnlockSSO({
+                                                cache,
+                                                clearKeyPassword,
+                                            });
+                                            if (validateFlow()) {
+                                                return await handleResult(result);
+                                            }
+                                        } catch (e: any) {
+                                            handleError(e);
+                                            // Cancel on any error except retry
+                                            if (e.name !== 'PasswordError') {
+                                                handleCancel();
+                                            }
                                         }
-                                    } catch (e: any) {
-                                        handleError(e);
-                                        // Cancel on any error except retry
-                                        if (e.name !== 'PasswordError') {
-                                            handleCancel();
-                                        }
-                                    }
-                                }}
-                            />
+                                    }}
+                                />
+                            </>
                         );
                     })(),
                 })}

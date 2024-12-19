@@ -28,7 +28,7 @@ import type { ChallengeResult } from '../challenge/interface';
 import { finalizeLogin } from './finalizeLogin';
 import type { AuthActionResponse, AuthCacheResult, AuthSession } from './interface';
 import { AuthStep, AuthType } from './interface';
-import { getAuthTypes, getUnlockError, handleUnlockKey } from './loginHelper';
+import { getAuthTypes, getBackupPasswordError, getUnlockError, handleUnlockKey } from './loginHelper';
 import { handlePrepareSSOData } from './ssoLoginHelper';
 import { syncAddresses, syncSalts, syncUser } from './syncCache';
 
@@ -150,15 +150,20 @@ export const handleReAuthKeyPassword = async ({
     clearKeyPassword,
     salts,
     api,
+    type,
 }: {
     authSession: AuthSession;
     User: tsUser;
     clearKeyPassword: string;
     salts: tsKeySalt[];
     api: Api;
+    type?: 'sso';
 }) => {
     const unlockResult = await handleUnlockKey(User, salts, clearKeyPassword).catch(() => undefined);
     if (!unlockResult) {
+        if (type === 'sso') {
+            throw getBackupPasswordError();
+        }
         throw getUnlockError();
     }
     const newAuthSession = {
