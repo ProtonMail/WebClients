@@ -11,7 +11,6 @@ import { LoadLogger } from '../LoadLogger/LoadLogger'
 import type { PublicDocumentState } from '../State/DocumentState'
 import type { DocumentState } from '../State/DocumentState'
 import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
-import type { UserState } from '../State/UserState'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -46,7 +45,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
   constructor(
     readonly documentState: DocumentState | PublicDocumentState,
-    readonly userState: UserState,
     readonly callbacks: WebsocketCallbacks,
     private _fetchRealtimeToken: FetchRealtimeToken,
     readonly metricService: MetricService,
@@ -195,7 +193,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     const urlAndTokenResult = await this._fetchRealtimeToken.execute(nodeMeta, this.lastCommitId)
 
     if (!urlAndTokenResult.isFailed()) {
-      this.userState.setProperty(
+      this.documentState.setProperty(
         'currentDocumentEmailDocTitleEnabled',
         urlAndTokenResult.getValue().preferences.includeDocumentNameInEmails,
       )
