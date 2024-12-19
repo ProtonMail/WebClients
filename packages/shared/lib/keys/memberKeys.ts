@@ -11,7 +11,7 @@ import { MEMBER_PRIVATE } from '../constants';
 import type {
     Api,
     CachedOrganizationKey,
-    DecryptedKey,
+    DecryptedAddressKey,
     KeyGenConfig,
     KeyPair,
     KeyTransparencyVerify,
@@ -191,7 +191,7 @@ interface CreateMemberAddressKeysLegacyArguments {
     api: Api;
     member: tsMember;
     memberAddress: tsAddress;
-    memberAddressKeys: DecryptedKey[];
+    memberAddressKeys: DecryptedAddressKey[];
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
     keyGenConfig: KeyGenConfig;
@@ -263,7 +263,7 @@ interface CreateMemberAddressKeysV2Arguments {
     api: Api;
     member: tsMember;
     memberAddress: tsAddress;
-    memberAddressKeys: DecryptedKey[];
+    memberAddressKeys: DecryptedAddressKey[];
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
     keyGenConfig: KeyGenConfig;

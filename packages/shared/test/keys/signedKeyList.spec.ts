@@ -16,7 +16,11 @@ describe('active keys', () => {
         ]);
         const address = { Email: 'a@a.com' } as Address;
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
-        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key, Key: { Primary, Flags } }) => ({
+            ...key,
+            Primary,
+            Flags: Flags!,
+        }));
         const activeKeys = await getActiveAddressKeys(address, null, addressKeys, decryptedAddressKeys);
         expect(activeKeys.v4).toEqual([
             {
@@ -65,7 +69,11 @@ describe('active keys', () => {
             await getAddressKeyHelper('e', userKey.key.privateKey, someAddressKeys[0].key.privateKey),
         ];
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
-        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key, Key: { Primary, Flags } }) => ({
+            ...key,
+            Primary,
+            Flags: Flags!,
+        }));
         const signedKeyList = await getSignedKeyList(
             {
                 v4: await Promise.all([
@@ -144,7 +152,11 @@ describe('active keys', () => {
             getAddressKey('c', userKey.key.privateKey, 'a@a.com'),
         ]);
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
-        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key, Key: { Primary, Flags } }) => ({
+            ...key,
+            Primary,
+            Flags: Flags!,
+        }));
         const address = { Email: 'a@a.com', Type: ADDRESS_TYPE.TYPE_EXTERNAL } as Address;
         const signedKeyList = await getSignedKeyList(
             {
@@ -204,7 +216,11 @@ describe('active keys', () => {
         addressKeysFull[1].Key.Primary = 0;
         addressKeysFull[2].Key.Primary = 0;
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
-        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key, Key: { Primary, Flags } }) => ({
+            ...key,
+            Primary,
+            Flags: Flags!,
+        }));
         const activeKeys = await getActiveAddressKeys(undefined, undefined, addressKeys, decryptedAddressKeys);
         expect(activeKeys.v4).toEqual([
             {
@@ -247,7 +263,11 @@ describe('active keys', () => {
             getAddressKey('c', userKey.key.privateKey, 'a@a.com'),
         ]);
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
-        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key, Key: { Primary, Flags } }) => ({
+            ...key,
+            Primary,
+            Flags: Flags!,
+        }));
         const address = { Email: 'a@a.com', Type: ADDRESS_TYPE.TYPE_ORIGINAL } as Address;
         const signedKeyList = await getSignedKeyList(
             {
@@ -310,7 +330,11 @@ describe('active keys', () => {
             getAddressKey('c', userKey.key.privateKey, 'a@a.com'),
         ]);
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
-        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key, Key: { Primary, Flags } }) => ({
+            ...key,
+            Primary,
+            Flags: Flags!,
+        }));
         const address = { Email: 'a@a.com', Type: ADDRESS_TYPE.TYPE_ORIGINAL } as Address;
 
         // guard against multiple primary keys with the same version (v4)

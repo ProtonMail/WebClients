@@ -7,6 +7,7 @@ import {
     type ActiveKeyWithVersion,
     type Address,
     type Api,
+    DecryptedAddressKey,
     type DecryptedKey,
     type Key,
     type KeyTransparencyVerify,
@@ -28,8 +29,8 @@ interface ReactivateKeysProcessArguments {
     keysToReactivate: KeyReactivationData[];
     address?: Address;
     onReactivation: OnKeyReactivationCallback;
-    keys: DecryptedKey[];
     Keys: Key[];
+    keys: DecryptedAddressKey[];
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 

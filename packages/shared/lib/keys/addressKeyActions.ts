@@ -1,10 +1,10 @@
 import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
 import type {
-    ActiveKeyWithVersion} from '../interfaces';
+    ActiveKeyWithVersion,
+    DecryptedAddressKey} from '../interfaces';
 import {
     type Address,
     type Api,
-    type DecryptedKey,
     type KeyTransparencyVerify,
 } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
@@ -13,7 +13,7 @@ import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 export const setPrimaryAddressKey = async (
     api: Api,
     address: Address,
-    keys: DecryptedKey[],
+    keys: DecryptedAddressKey[],
     ID: string,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
@@ -54,7 +54,7 @@ export const setPrimaryAddressKey = async (
 export const deleteAddressKey = async (
     api: Api,
     address: Address,
-    keys: DecryptedKey[],
+    keys: DecryptedAddressKey[],
     ID: string,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
@@ -81,7 +81,7 @@ export const deleteAddressKey = async (
 export const setAddressKeyFlags = async (
     api: Api,
     address: Address,
-    keys: DecryptedKey[],
+    keys: DecryptedAddressKey[],
     ID: string,
     flags: number,
     keyTransparencyVerify: KeyTransparencyVerify
