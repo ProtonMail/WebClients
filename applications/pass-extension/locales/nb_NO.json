@@ -1324,9 +1324,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ${ BRAND_NAME }-passordet ditt."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve reservepassordet ditt."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
       ],
@@ -1470,9 +1467,6 @@
       ],
       "Current version": [
         "Gjeldende versjon"
-      ],
-      "Currently selected": [
-        "Valgt nå"
       ],
       "Decrypting your data": [
         "Dekrypterer dataene dine"
@@ -1829,15 +1823,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
-      ],
-      "Please confirm your backup password": [
-        "Vennligst bekreft ditt reservepassord"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Bekreft reservepassordet ditt for å låse automatisk med passordet ditt."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Bekreft reservepassordet ditt for å avregistrere din nåværende lås."
       ],
       "Please confirm your extra password": [
         "Vennligst bekreft ditt ekstra passord"
@@ -2428,9 +2413,6 @@
       ],
       "Autosuggest": [
         "Foreslå automatisk"
-      ],
-      "Backup password": [
-        "Reservepassord"
       ],
       "Biometrics": [
         "Biometri"
@@ -3488,9 +3470,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Koser du deg med ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Skriv inn reservepassordet ditt"
       ],
       "Enter your extra password": [
         "Angi det ekstra passordet ditt"
