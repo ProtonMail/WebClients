@@ -1305,9 +1305,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }에 대한 접근이 항상 ${ BRAND_NAME } 비밀번호를 요구하게 됩니다."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "${ PASS_APP_NAME }에 접근하려면 항상 백업 비밀번호가 필요하게 됩니다."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }에 접근하려면 지문 인식 및 기기 PIN코드가 필요합니다."
       ],
@@ -1445,9 +1442,6 @@
       ],
       "Current version": [
         "현재 버전"
-      ],
-      "Currently selected": [
-        "현재 선택됨"
       ],
       "Decrypting your data": [
         "데이터 복호화 중"
@@ -1817,15 +1811,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
-      ],
-      "Please confirm your backup password": [
-        "백업 비밀번호를 확인해주세요"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "비밀번호로 자동 잠금을 사용하려면 백업 비밀번호로 인증해주세요."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "현재 잠금의 등록을 취소하려면 귀하의 백업 비밀번호로 인증해주세요."
       ],
       "Please confirm your extra password": [
         "추가 비밀번호를 확인해주세요"
@@ -2371,9 +2356,6 @@
       ],
       "Auto-lock after": [
         "자동 잠금 시간"
-      ],
-      "Backup password": [
-        "백업 비밀번호"
       ],
       "Beta Access": [
         "베타 참여"
@@ -3480,9 +3462,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
-      ],
-      "Enter your backup password": [
-        "백업 비밀번호를 입력하세요"
       ],
       "Enter your extra password": [
         "추가 비밀번호를 입력하세요"
