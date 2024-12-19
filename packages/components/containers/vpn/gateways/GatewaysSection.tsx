@@ -86,15 +86,18 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return [...(gateways || [])]
             .map((gateway) => ({
                 ...gateway,
-                Logicals: gateway.Logicals.filter((l) => !deletedLogicals[l.ID]).map((l) => updatedLogicals[l.ID] || l),
+                Logicals: gateway.Logicals.filter((l) => !deletedLogicals[l.ID] && (l.Visible || !l.Servers.length)) // Filter out deleted and hidden logicals
+                    .map((l) => updatedLogicals[l.ID] || l),
             }))
             .filter((gateway) => {
-                if (ids[gateway.Name]) {
+                const name = gateway.Name;
+
+                if (ids[name]) {
                     return false;
                 }
 
                 if (gateway.Logicals.length) {
-                    ids[gateway.Name] = true;
+                    ids[name] = true;
 
                     return true;
                 }
