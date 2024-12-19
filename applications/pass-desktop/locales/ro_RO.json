@@ -1377,9 +1377,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Accesul la ${ PASS_APP_NAME } va necesita întotdeauna parola ${ BRAND_NAME }."
       ],
-      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Accesul la ${ PASS_APP_NAME } va necesita întotdeauna parola de rezervă."
-      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Accesul la ${ PASS_APP_NAME } va necesita amprenta digitală sau codul PIN al dispozitivului."
       ],
@@ -1902,15 +1899,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your backup password": [
-        "Confirmați parola de rezervă"
-      ],
-      "Please confirm your backup password in order to auto-lock with your password.": [
-        "Confirmați parola de rezervă pentru a bloca automat cu parolă."
-      ],
-      "Please confirm your backup password in order to unregister your current lock.": [
-        "Confirmați parola de rezervă pentru a anula blocarea curentă."
       ],
       "Please confirm your extra password": [
         "Confirmați parola suplimentară"
@@ -2497,9 +2485,6 @@
       ],
       "Auto-lock after": [
         "Autoblocare după"
-      ],
-      "Backup password": [
-        "Parola de rezervă"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Pe lângă stocarea autentificărilor, ${ PASS_APP_NAME } vă protejează identitatea cu o funcție integrată de alias pentru e-mail.\n\nOri de câte ori vă înscrieți pentru un nou cont online, ${ PASS_APP_NAME } poate crea automat un alias pentru a vă păstra adresa de e-mail reală protejată."
@@ -3714,9 +3699,6 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
-      ],
-      "Enter your backup password": [
-        "Introduceți parola de rezervă"
       ],
       "Enter your extra password": [
         "Introduceți parola suplimentară"
