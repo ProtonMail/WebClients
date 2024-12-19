@@ -4037,7 +4037,7 @@
         "有効期限切れ"
       ],
       "expires ${ expirationDate }": [
-        "期限 ${ expirationDate }"
+        "有効期限 ${ expirationDate }"
       ],
       "Fill in user details": [
         "ユーザーの詳細を入力します"
@@ -4709,7 +4709,7 @@
         "これらの設定ファイルは、サードパーティ製の VPN アプリを使用する際や、ルーターで VPN 接続を設定する際に、どの ${ VPN_APP_NAME } サーバーに接続するかを選択するためのものです。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "この設定ファイルを WireGuard ルーターや公式クライアントで使用できます。"
+        "Translation: これらの構成は、WireGuardルーターおよび公式クライアントで動作するように提供されています。"
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "これらの認証情報は、公式 ${ VPN_APP_NAME } アプリへのサインインには使用できません。 ${ learnMore }"
@@ -7159,7 +7159,7 @@
         "高度な VPN 機能にアクセス"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+        "より多くのパーソナライゼーションを追加するために、 15 のメールアドレスと つのカスタムメールドメインのサポートを提供します。"
       ],
       "AES 256-bit VPN encryption": [
         "AES 256ビットVPN暗号化"
@@ -7544,7 +7544,7 @@
         "/月 /ユーザー、隔年請求"
       ],
       "Creating your account": [
-        "アカウントの作成"
+        "アカウントの作成中"
       ],
       "Current plan": [
         "現在のプラン"
@@ -7607,7 +7607,7 @@
         "${ PASS_APP_NAME } にログインしています"
       ],
       "Updating your account": [
-        "アカウントの更新"
+        "アカウントの更新中"
       ],
       "Verifying your payment": [
         "お支払いの確認"
@@ -10645,7 +10645,7 @@
         "この URL をコピーして、ACS(Assertion Consumer Service)の URL フィールドに貼り付けてください。"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "このURLをコピーして、ユーザー情報ロバイダーのエンティティIDフィールドに貼り付ける。"
+        "このURLをコピーして、ユーザー情報プロバイダーのエンティティIDフィールドに貼り付けてください"
       ],
       "Device information such as operating system": [
         "オペレーティングシステムなどのデバイス情報"
@@ -11019,7 +11019,7 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } サーバー"
+        "${ n } 台のサーバー"
       ],
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
