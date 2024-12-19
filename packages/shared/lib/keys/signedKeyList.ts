@@ -7,7 +7,7 @@ import type {
     ActiveAddressKeysByVersion,
     Address,
     Api,
-    DecryptedKey,
+    DecryptedAddressKey,
     KeyMigrationKTVerifier,
     KeyTransparencyVerify,
     SignedKeyList,
@@ -112,7 +112,7 @@ export const createSignedKeyListForMigration = async ({
 }: {
     api: Api;
     address: Address;
-    decryptedKeys: DecryptedKey[];
+    decryptedKeys: DecryptedAddressKey[];
     keyTransparencyVerify: KeyTransparencyVerify;
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }): Promise<[SignedKeyList | undefined, OnSKLPublishSuccess | undefined]> => {

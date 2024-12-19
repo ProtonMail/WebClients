@@ -12,6 +12,7 @@ import {
     type Key,
     type SignedKeyList,
     isActiveKeyV6,
+    DecryptedAddressKey,
 } from '../interfaces';
 import { getDefaultKeyFlags, setExternalFlags } from './keyFlags';
 import { ParsedSignedKeyList } from './signedKeyList';
@@ -48,7 +49,7 @@ export const getActiveAddressKeys = async (
     address: Address | undefined,
     signedKeyList: SignedKeyList | null | undefined,
     keys: Key[],
-    decryptedKeys: DecryptedKey[]
+    decryptedKeys: DecryptedAddressKey[]
 ): Promise<ActiveAddressKeysByVersion> => {
     if (!decryptedKeys.length) {
         return { v4: [], v6: [] };
@@ -69,11 +70,11 @@ export const getActiveAddressKeys = async (
     }, {});
 
     const isV6Key = (
-        key: DecryptedKey<PrivateKeyReferenceV6> | DecryptedKey<PrivateKeyReferenceV4>
-    ): key is DecryptedKey<PrivateKeyReferenceV6> => key.privateKey.isPrivateKeyV6();
+        key: DecryptedAddressKey<PrivateKeyReferenceV6> | DecryptedKey<PrivateKeyReferenceV4>
+    ): key is DecryptedAddressKey<PrivateKeyReferenceV6> => key.privateKey.isPrivateKeyV6();
     const decryptedKeysByVersion = (
-        decryptedKeys as (DecryptedKey<PrivateKeyReferenceV6> | DecryptedKey<PrivateKeyReferenceV4>)[]
-    ).reduce<{ v4: DecryptedKey<PrivateKeyReferenceV4>[]; v6: DecryptedKey<PrivateKeyReferenceV6>[] }>(
+        decryptedKeys as (DecryptedAddressKey<PrivateKeyReferenceV6> | DecryptedAddressKey<PrivateKeyReferenceV4>)[]
+    ).reduce<{ v4: DecryptedAddressKey<PrivateKeyReferenceV4>[]; v6: DecryptedAddressKey<PrivateKeyReferenceV6>[] }>(
         (prev, curr) => {
             if (isV6Key(curr)) {
                 prev.v6.push(curr);

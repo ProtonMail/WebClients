@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRoute } from '../../api/keys';
-import type { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
+import type { Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../../interfaces';
 import {
     getActiveAddressKeys,
     getActiveKeyObject,
@@ -21,7 +21,7 @@ export interface ImportKeysProcessLegacyArguments {
     onImport: OnKeyImportCallback;
     keyPassword: string;
     address: Address;
-    addressKeys: DecryptedKey[];
+    addressKeys: DecryptedAddressKey[];
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 

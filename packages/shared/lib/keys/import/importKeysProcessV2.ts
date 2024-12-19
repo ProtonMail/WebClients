@@ -7,7 +7,7 @@ import {
     type ActiveKeyWithVersion,
     type Address,
     type Api,
-    type DecryptedKey,
+    type DecryptedAddressKey,
     type KeyTransparencyVerify,
     isActiveKeyV6,
 } from '../../interfaces';
@@ -30,7 +30,7 @@ export interface ImportKeysProcessV2Arguments {
     onImport: OnKeyImportCallback;
     keyPassword: string;
     address: Address;
-    addressKeys: DecryptedKey[];
+    addressKeys: DecryptedAddressKey[];
     userKey: PrivateKeyReference;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
