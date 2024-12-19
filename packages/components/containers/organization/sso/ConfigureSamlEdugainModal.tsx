@@ -152,9 +152,9 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
                     <div>
                         <div className="mb-4">
                             {getBoldFormattedText(
-                                // translator: Full sentence example: "Enter the entity ID of an eduGAIN organization for switch.ch" (DomainName is the SAML SSO domain)
+                                // translator: Full sentence example: "Enter the Entity ID of an eduGAIN organization for switch.ch" (DomainName is the SAML SSO domain)
                                 c('Info')
-                                    .t`Enter the entity ID of an **eduGAIN** organization for **${domain.DomainName}**.`
+                                    .t`Enter the Entity ID of an **eduGAIN** organization for **${domain.DomainName}**.`
                             )}
                         </div>
                         <EduGainAutocomplete
