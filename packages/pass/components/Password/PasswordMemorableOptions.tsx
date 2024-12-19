@@ -8,6 +8,7 @@ import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordG
 import { getSeperatorTranslation } from '@proton/pass/lib/password/memorable';
 import type { MemorablePasswordOptions } from '@proton/pass/lib/password/types';
 import { SeperatorOptions } from '@proton/pass/lib/password/types';
+import { oneOf } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
 import { MaybeOrgSettingTooltip } from './MaybeOrgTooltip';
@@ -81,6 +82,10 @@ export const PasswordMemorableOptions: FC<Props> = ({
                                     value={seperator}
                                     className={clsx(dense && 'text-sm')}
                                     preventScroll
+                                    disabled={
+                                        oneOf(SeperatorOptions.NUMBER, SeperatorOptions.NUMBER_OR_SYMBOL)(seperator) &&
+                                        policy?.MemorablePasswordMustIncludeNumbers === false
+                                    }
                                 />
                             ))}
                         </SelectTwo>
