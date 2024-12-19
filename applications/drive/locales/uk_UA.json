@@ -516,6 +516,9 @@
       "Minimize transfers": [
         "Згорнути передачі"
       ],
+      "More actions": [
+        "Додаткові дії"
+      ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
@@ -3918,28 +3921,17 @@
       "Use your app password instead of your regular password if:": [
         "Використовуйте пароль програм замість свого звичайного пароля якщо:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
-      ],
       "Your email account requires an app password to export your data.": [
         "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ваша адреса е-пошти та пароль програм правильні. ${ boldNot } використовуйте свій звичайний пароль."
-      ],
       "Your email address and password are correct.": [
         "Ваші адреса е-пошти та пароль правильні."
       ],
       "Your password is correct.": [
         "Ваш пароль правильний."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "не"
       ]
     },
     "Import instructions": {
@@ -4314,6 +4306,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Перевірка адреси з довіреними ключами увімкнена для цієї адреси. Щоб мати змогу надсилати на цю адресу, спочатку зробіть довіреними відкриті ключі, які можна використовувати для надсилання."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Усі (${ totalFoldersCount } тека)",
@@ -8831,6 +8826,11 @@
         "Переглянути безпеку вашого облікового запису"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вхід не був успішно завершений."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Усі псевдоніми"
@@ -9353,6 +9353,9 @@
     "sso": {
       "Sign in": [
         "Увійти"
+      ],
+      "Sign in to your organization": [
+        "Увійти до своєї організації"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вас буде перенаправлено до вашого стороннього провайдера SSO."
