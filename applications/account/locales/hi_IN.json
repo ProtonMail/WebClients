@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -5559,28 +5559,17 @@
       "Use your app password instead of your regular password if:": [
         "अपने नियमित पासवर्ड के बजाय अपने ऐप पासवर्ड का उपयोग करें यदि:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "आपका ऐप पासवर्ड सही है। क्या ${ boldNot } अपने नियमित पासवर्ड का उपयोग करें |"
-      ],
       "Your email account requires an app password to export your data.": [
         "आपके ईमेल खाते को आपका डाटा निर्यात करने के लिए एक ऐप पासवर्ड की ज़रूरत है"
       ],
       "Your email account requires one to export your data.": [
         "आपके ईमेल खाते को आपका निर्यात किया डाटा चाहिए।"
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "आपका ईमेल पता और ऐप पासवर्ड सही है। अपने सामान्य पासवर्ड का इस्तेमाल ${ boldNot } करें।"
-      ],
       "Your email address and password are correct.": [
         "आपका ईमेल पता और पासवर्ड सही है |"
       ],
       "Your password is correct.": [
         "आपका पासवर्ड सही है |"
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "नहीं"
       ]
     },
     "Import error link": {
