@@ -13,7 +13,6 @@ import type {
     Address,
     Api,
     DecryptedAddressKey,
-    DecryptedKey,
     Domain,
     EnhancedMember,
     KeyTransparencyCommit,
@@ -46,7 +45,7 @@ const convertToInternalAddress = async ({
     keyTransparencyVerify,
 }: {
     address: Address;
-    keys: DecryptedKey[];
+    keys: DecryptedAddressKey[];
     api: Api;
     keyTransparencyVerify: KeyTransparencyVerify;
 }) => {
