@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -909,6 +909,9 @@
       ],
       "Reset keys": [
         "Réinitialiser les clés"
+      ],
+      "Reset modifications": [
+        "Réinitialiser les modifications"
       ],
       "Reset password": [
         "Réinitialiser le mot de passe"
@@ -3676,6 +3679,9 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Vous pouvez continuer à inviter des amis, mais vous ne pourrez plus gagner de crédits."
+      ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Vous pouvez appliquer les règles de mot de passe que les membres de l'organisation utiliseront lorsqu'ils généreront un mot de passe dans ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
@@ -6458,8 +6464,8 @@
       "Use your app password instead of your regular password if:": [
         "Utilisez le mot de passe d'application au lieu de votre mot de passe habituel si :"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Le mot de passe de votre application est correct. N'utilisez ${ boldNot } votre mot de passe habituel."
+      "Your app password is correct. Do not use your regular password.": [
+        "Le mot de passe de votre application est correct. N'utilisez pas votre mot de passe habituel."
       ],
       "Your email account requires an app password to export your data.": [
         "Votre compte de messagerie nécessite un mot de passe d'application pour exporter vos données."
@@ -6467,19 +6473,14 @@
       "Your email account requires one to export your data.": [
         "Votre compte de messagerie en nécessite un pour exporter vos données."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Votre adresse email et le mot de passe de l'application sont corrects. N'utilisez ${ boldNot } pas votre mot de passe habituel."
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Votre adresse email et le mot de passe de l'application sont corrects. N'utilisez pas votre mot de passe habituel."
       ],
       "Your email address and password are correct.": [
         "Votre adresse e-mail et votre mot de passe sont corrects."
       ],
       "Your password is correct.": [
         "Votre mot de passe est correct."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "pas"
       ]
     },
     "Import error link": {
@@ -6953,6 +6954,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Une fois l'application verrouillée, les membres de l'organisation devront déverrouiller ${ PASS_APP_NAME } avec leur mot de passe, code PIN, etc."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
+      ],
       "Align left": [
         "Aligner à gauche"
       ],
@@ -7256,6 +7260,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Créer un cloud sécurisé pour ${ value } membre",
+        "Créer un cloud sécurisé pour ${ value } membres"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses e-mail sur votre domaine personnalisé."
@@ -8168,6 +8176,9 @@
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
       ],
+      "Password generator rules successfully saved": [
+        "Les règles du générateur de mots de passe ont été enregistrée."
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Le mot de passe doit être de ${ MIN_PASSWORD_LENGTH } ou plus."
       ],
@@ -8452,6 +8463,9 @@
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
+      ],
+      "Setting successfully saved": [
+        "Le paramètre a été enregistré."
       ],
       "Setting up your new address...": [
         "Configuration de votre nouvelle adresse..."
@@ -10009,8 +10023,14 @@
       "Allow": [
         "Adresses autorisées"
       ],
+      "Allow memorable passwords": [
+        "Autoriser les mots de passe faciles à mémoriser"
+      ],
       "Allow notifications by email": [
         "Autoriser les notifications par e-mail"
+      ],
+      "Allow random passwords": [
+        "Autoriser les mots de passe aléatoires"
       ],
       "Allow recovery by email": [
         "Autoriser la récupération par e-mail"
@@ -10140,6 +10160,9 @@
       ],
       "Calendars": [
         "Calendriers"
+      ],
+      "Capitalize words": [
+        "Mots en majuscule"
       ],
       "Card details": [
         "Informations de carte"
@@ -10546,6 +10569,12 @@
       "Mark as": [
         "Marquer comme"
       ],
+      "Maximum number of characters": [
+        "Nombre maximum de caractères"
+      ],
+      "Maximum number of words": [
+        "Nombre maximum de mots"
+      ],
       "Message": [
         "Message"
       ],
@@ -10560,6 +10589,12 @@
       ],
       "Method for importing metadata": [
         "Méthode d'importation des métadonnées"
+      ],
+      "Minimum number of characters": [
+        "Nombre minimum de caractères"
+      ],
+      "Minimum number of words": [
+        "Nombre minimum de mots"
       ],
       "Moderate NAT": [
         "NAT modéré"
@@ -10617,6 +10652,9 @@
       ],
       "Notifications": [
         "Notifications"
+      ],
+      "Numbers": [
+        "Chiffres"
       ],
       "OpenVPN / IKEv2 password": [
         "Mot de passe OpenVPN/IKEv2"
@@ -10826,6 +10864,9 @@
       "Spam": [
         "Indésirables/spam"
       ],
+      "Special characters": [
+        "Avec des caractères spéciaux"
+      ],
       "Starred": [
         "Favoris"
       ],
@@ -10900,6 +10941,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Chargez un ou plusieurs fichiers de récupération ou clés de chiffrement."
+      ],
+      "Uppercase": [
+        "Majuscules"
       ],
       "URL": [
         "URL"
@@ -13257,6 +13301,9 @@
       "Add to existing group": [
         "Ajouter à un groupe existant"
       ],
+      "Allowed (default)": [
+        "Autorisé (par défaut)"
+      ],
       "Archive": [
         "Archiver"
       ],
@@ -13314,6 +13361,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "Non autorisé"
+      ],
       "Off": [
         "Désactivé"
       ],
@@ -13340,6 +13390,9 @@
       ],
       "Repeat weekly": [
         "Répéter chaque semaine"
+      ],
+      "Required": [
+        "Requis"
       ],
       "Right to Left": [
         "De droite à gauche"
@@ -17925,6 +17978,9 @@
       "Password": [
         "Mot de passe"
       ],
+      "Password generator rules": [
+        "Règles du générateur de mots de passe"
+      ],
       "Password reset settings": [
         "Paramètres de réinitialisation du mot de passe"
       ],
@@ -19315,6 +19371,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si vous annulez cette importation, vous ne pourrez pas la reprendre. ${ BRAND_NAME } a sauvegardé toute la progression dans votre compte. Voulez-vous quand même annuler ?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "La valeur maximum ne peut être inférieure à la valeur minimum."
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "La valeur doit être entre ${ minimumNumber } et ${ maximumNumber }."
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "La valeur doit être supérieure ou égale à ${ minimumNumber }."
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "La valeur doit être inférieure ou égale à ${ maximumNumber }."
       ],
       "Please add at least one recipient.": [
         "Ajoutez au moins un destinataire."

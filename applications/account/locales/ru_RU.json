@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -3869,19 +3869,19 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**Совместная работа:** в онлайновом редакторе"
+        "**Коллаборативно:** онлайн редактор документов"
       ],
       "**GDPR** and **HIPAA** compliant": [
-        "Соответствие требованиям **GDPR** и **HIPAA**."
+        "Соответствует требованиям **GDPR** и **HIPAA**"
       ],
       "**ISO 27001** certified": [
-        "Сертификат **ISO 27001**"
+        "Сертифицировано **ISO 27001**"
       ],
       "**Secure:** end-to-end encryption": [
-        "**Защищенное:** сквозное шифрование"
+        "**Безопасно:** сквозное шифрование"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Простой и удобный:** импорт файлов и настройка за несколько минут"
+        "**Просто и дружелюбно:** импортируйте свои файлы и приготовьте за минуты"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Передовая защита, превосходящая отраслевые стандарты"
@@ -6518,28 +6518,17 @@
       "Use your app password instead of your regular password if:": [
         "Используйте ваш пароль приложения вместо обычного пароля, если:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ваш пароль приложения правильный. ${ boldNot } используйте свой обычный пароль."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ваш почтовый аккаунт требует пароль приложения для экспорта данных."
       ],
       "Your email account requires one to export your data.": [
         "Для экспорта данных требуется аккаунт электронной почты."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ваш адрес электронной почты и пароль приложения верны. ${ boldNot } используйте свой обычный пароль."
-      ],
       "Your email address and password are correct.": [
         "Ваш адрес электронной почты и пароль верны."
       ],
       "Your password is correct.": [
         "Ваш пароль правильный."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "не"
       ]
     },
     "Import error link": {
@@ -10236,6 +10225,9 @@
       ],
       "Auto-unsubscribe": [
         "Автоматическая отписка"
+      ],
+      "Automatically save contacts": [
+        "Автоматическое сохранение контактов"
       ],
       "Awarded": [
         "Присуждено"
@@ -15647,16 +15639,16 @@
         "Расширенные функции безопасности"
       ],
       "Advanced sharing security": [
-        "Повышенная безопасность совместного доступа"
+        "С повышенной безопасностью совместного доступа"
       ],
       "Apps for all devices": [
-        "Приложениями для всех устройств"
+        "С приложениями для всех устройств"
       ],
       "Based in Switzerland, GDPR compliant": [
         "Находится в Швейцарии, соответствует требованиям GDPR"
       ],
       "Built-in encryption": [
-        "Встроенным шифрованием"
+        "Со встроенным шифрованием"
       ],
       "Calendar, password manager, file storage, and VPN included": [
         "Календарем, менеджером паролей, хранилищем файлов и VPN в комплекте"
@@ -15668,13 +15660,13 @@
         "Псевдонимами электронной почты"
       ],
       "Email, calendar, password manager, and VPN included": [
-        "Включена электронная почта, календарь, менеджер паролей и VPN"
+        "С электронной почтой, календарем, менеджером паролей и VPN"
       ],
       "End-to-end encrypted transactions": [
         "Транзакциями со сквозным шифрованием"
       ],
       "End-to-end encryption": [
-        "Сквозным шифрованием"
+        "Сквозное шифрование"
       ],
       "From the team that knows encryption": [
         "Создан командой, знающей шифрование"
@@ -15692,19 +15684,19 @@
         "Открытым исходным кодом, проверенным на безопасность"
       ],
       "Protected by Swiss privacy laws": [
-        "Защищен швейцарскими законами о конфиденциальности"
+        "Защищенное швейцарскими законами о конфиденциальности"
       ],
       "Self-custody — only you have access to your wallet keys": [
         "Само-гарантией — только у вас есть доступ к ключам кошелька"
       ],
       "The only business solution that is:": [
-        "Единственное решение для бизнеса:"
+        "Единственное решение для бизнеса, которое:"
       ],
       "The only cloud storage with:": [
-        "Единственное облачное хранилище с:"
+        "Единственное облачное хранилище:"
       ],
       "The only email service with:": [
-        "Единственная служба электронной почты с:"
+        "Единственная служба электронной почты:"
       ],
       "Unlimited passwords": [
         "Неограниченными паролями"

@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -5092,7 +5092,7 @@
         "Плаваючы час не падтрымліваецца"
       ],
       "Free-busy time information": [
-        "Інфармацыя пра свабодны час і працоўныя дні"
+        "Інфармацыя аб свабодным часе і працоўных днях"
       ],
       "Invalid event": [
         "Памылковая падзея"
@@ -6536,28 +6536,17 @@
       "Use your app password instead of your regular password if:": [
         "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Ваш пароль праграмы правільны. ${ boldNot } выкарыстоўвайце свой звычайны пароль."
-      ],
       "Your email account requires an app password to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе пароль праграмы для экспартавання вашых даных."
       ],
       "Your email account requires one to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе яго для экспартавання даных."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. ${ boldNot } выкарыстоўвайце свой звычайны пароль."
-      ],
       "Your email address and password are correct.": [
         "Вашы адрас электроннай пошты і пароль правільныя."
       ],
       "Your password is correct.": [
         "Ваш пароль правільны."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "не"
       ]
     },
     "Import error link": {
@@ -8662,6 +8651,9 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF удакладняе, каму дазволена адпраўляць электронную пошту для вашага дамена. Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
+      ],
       "Stay tuned for future promotions.": [
         "Будзьце ў курсе будучых рэкламных акцый."
       ],
@@ -8957,7 +8949,7 @@
         "для працягу ў ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Для пастаяннага ўдасканалення нашых сэрвісаў, мы час ад часу збіраем даныя для назірання за належным функцыянаваннем нашых праграм. Гэта інфармацыя ніколі не абагульваецца з іншымі сэрвісамі."
+        "Мы час ад часу збіраем даныя для назірання за належным функцыянаваннем нашых праграм, каб пастаянна ўдасканальваць нашы сэрвісы. Гэта інфармацыя ніколі не абагульваецца з іншымі сэрвісамі."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Выберыце спосаб аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
@@ -10281,6 +10273,9 @@
       ],
       "Auto-unsubscribe": [
         "Аўтаматычнае скасаванне падпіскі"
+      ],
+      "Automatically save contacts": [
+        "Аўтаматычна захоўваць кантакты"
       ],
       "Awarded": [
         "Узнагароджаны"

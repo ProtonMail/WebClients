@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -6498,28 +6498,17 @@
       "Use your app password instead of your regular password if:": [
         "Folosiți parola aplicației în locul parolei obișnuite dacă:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Parola aplicației este corectă. Să ${ boldNot } folosiți parola obișnuită."
-      ],
       "Your email account requires an app password to export your data.": [
         "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
       ],
       "Your email account requires one to export your data.": [
         "Contul de e-mail necesită o parolă pentru a exporta datele."
       ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
-      ],
       "Your email address and password are correct.": [
         "Adresa de e-mail și parola sunt corecte."
       ],
       "Your password is correct.": [
         "Parola este corectă."
-      ]
-    },
-    "Import error emphasis": {
-      "not": [
-        "nu"
       ]
     },
     "Import error link": {
@@ -10192,6 +10181,9 @@
       ],
       "Auto-unsubscribe": [
         "Autodezabonare"
+      ],
+      "Automatically save contacts": [
+        "Salvare automată contacte"
       ],
       "Awarded": [
         "Acreditat"
