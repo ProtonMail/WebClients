@@ -40,7 +40,6 @@ import { GetNode } from '../../UseCase/GetNode'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { PublicDocLoader } from '../../Services/DocumentLoader/PublicDocLoader'
 import type { UnleashClient } from '@proton/unleash'
-import type { UserState } from '../../State/UserState'
 import { ApiEditComment } from '../../Api/Requests/ApiEditComment'
 import { ApiAddCommentToThread } from '../../Api/Requests/ApiAddCommentToThread'
 import { ApiCreateThread } from '../../Api/Requests/ApiCreateThread'
@@ -62,7 +61,6 @@ export class AppDependencies extends DependencyContainer {
     imageProxyParams: ImageProxyParams | undefined,
     publicContextHeaders: HttpHeaders | undefined,
     compatWrapper: DriveCompatWrapper,
-    userState: UserState,
     appVersion: string,
     unleashClient: UnleashClient,
     syncedEditorState: SyncedEditorState,
@@ -325,7 +323,6 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.DocLoader, () => {
       return new DocLoader(
-        userState,
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         compatWrapper.getUserCompat(),
         this.get<MetricService>(App_TYPES.MetricService),
@@ -351,7 +348,6 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.WebsocketService, () => {
       return new WebsocketService(
-        userState,
         this.get<FetchRealtimeToken>(App_TYPES.FetchRealtimeToken),
         this.get<EncryptMessage>(App_TYPES.EncryptMessage),
         this.get<DecryptMessage>(App_TYPES.DecryptMessage),

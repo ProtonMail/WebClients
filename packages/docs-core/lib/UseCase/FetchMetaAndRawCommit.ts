@@ -1,7 +1,7 @@
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import type { Commit } from '@proton/docs-proto'
-import type { ApiResult, DocumentMetaInterface, RealtimeUrlAndToken } from '@proton/docs-shared'
 import { DynamicResult } from '@proton/docs-shared'
+import type { ApiResult, DocumentMetaInterface, RealtimeTokenResult } from '@proton/docs-shared'
 import type { GetCommitData } from './GetCommitData'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
@@ -16,7 +16,7 @@ type ErrorResult = {
 type SuccessResult = {
   serverBasedMeta: DocumentMetaInterface
   latestCommit: Commit | undefined
-  realtimeToken: string | undefined
+  realtimeToken: RealtimeTokenResult | undefined
 }
 
 /**
@@ -51,7 +51,7 @@ export class FetchMetaAndRawCommit {
     const latestCommitId = serverBasedMeta.latestCommitId()
     let latestCommit: Commit | undefined
 
-    const promises: Promise<ApiResult<RealtimeUrlAndToken> | ApiResult<Commit>>[] = [
+    const promises: Promise<ApiResult<RealtimeTokenResult> | ApiResult<Commit>>[] = [
       this.fetchRealtimeToken.execute(nodeMeta, latestCommitId).then((result) => {
         LoadLogger.logEventRelativeToLoadTime('[FetchMetaAndRawCommit] Loaded realtime token')
         return result
@@ -67,7 +67,7 @@ export class FetchMetaAndRawCommit {
     ]
 
     const [realtimeTokenResult, commitDataResult] = (await Promise.all(promises)) as [
-      ApiResult<RealtimeUrlAndToken>,
+      ApiResult<RealtimeTokenResult>,
       ApiResult<Commit> | undefined,
     ]
 
@@ -79,7 +79,7 @@ export class FetchMetaAndRawCommit {
     }
 
     latestCommit = commitDataResult?.getValue()
-    const realtimeToken = realtimeTokenResult.isFailed() ? undefined : realtimeTokenResult.getValue().token
+    const realtimeToken = realtimeTokenResult.isFailed() ? undefined : realtimeTokenResult.getValue()
 
     return DynamicResult.ok({
       serverBasedMeta,
