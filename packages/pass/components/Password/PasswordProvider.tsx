@@ -9,18 +9,18 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import type { PasswordContextValue } from './PasswordContext';
-import { PasswordContext, type PasswordModalState } from './PasswordContext';
+import { PasswordContext, type PasswordGeneratorModalState } from './PasswordContext';
 import { PasswordGeneratorModal } from './PasswordGeneratorModal';
 import { PasswordHistoryModal } from './PasswordHistoryModal';
 
-const getInitialModalState = (): PasswordModalState => ({ actionLabel: '' });
+const getInitialModalState = (): PasswordGeneratorModalState => ({ actionLabel: '' });
 
 export const PasswordProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
     const [showHistory, setShowHistory] = useState(false);
     const config = useSelector(selectPasswordOptions);
 
-    const { resolver, state, handler, abort } = useAsyncModalHandles<string, PasswordModalState>({
+    const { resolver, state, handler, abort } = useAsyncModalHandles<string, PasswordGeneratorModalState>({
         getInitialModalState,
     });
 

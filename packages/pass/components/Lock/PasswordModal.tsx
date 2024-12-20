@@ -13,21 +13,23 @@ import {
     PasswordInputTwo,
 } from '@proton/components';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import type { Maybe, MaybePromise } from '@proton/pass/types';
+import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
+import type { Maybe } from '@proton/pass/types';
 
-export type PasswordModalProps = {
+export type PasswordModalState = {
     label?: string;
-    loading?: boolean;
     message?: string;
-    open?: boolean;
     placeholder?: string;
     submitLabel?: string;
     title: string;
     type: 'new-password' | 'current-password';
     warning?: string;
-    onClose?: () => void;
-    onSubmit?: (password: string) => MaybePromise<void>;
     onValidate?: (password: string) => Maybe<string>;
+};
+
+export type PasswordModalProps = AsyncModalState<PasswordModalState> & {
+    onClose?: () => void;
+    onSubmit?: (password: string) => void;
 };
 
 export const PasswordModal: FC<PasswordModalProps> = ({
