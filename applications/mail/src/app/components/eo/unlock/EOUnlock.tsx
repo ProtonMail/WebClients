@@ -19,18 +19,21 @@ interface Props {
 const EOUnlock = ({ setSessionStorage }: Props) => {
     const match = useRouteMatch<EOUrlParams>();
     const { id } = match.params;
-    const { encryptedToken, isStoreInitialized } = useLoadEOMessage({ id, setSessionStorage });
+    const { encryptedToken, isStoreInitialized, isEncryptedTokenInitialized } = useLoadEOMessage({
+        id,
+        setSessionStorage,
+    });
     const { handleTryUnlock } = useLoadEOToken({ id, encryptedToken, setSessionStorage });
 
-    const [isError, setIsError] = useState(true);
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
-        if (encryptedToken && encryptedToken !== '') {
-            setIsError(false);
+        if (isEncryptedTokenInitialized && !encryptedToken) {
+            setIsError(true);
         }
-    }, [encryptedToken]);
+    }, [encryptedToken, isEncryptedTokenInitialized]);
 
-    if (!isStoreInitialized) {
+    if (!isStoreInitialized || !isEncryptedTokenInitialized) {
         return <Loader />;
     }
 

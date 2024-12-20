@@ -4,12 +4,13 @@ import { useApi } from '@proton/components';
 
 import { useEOMailDispatch, useEOMailSelector, useEOMailStore } from 'proton-mail/store/eo/hooks';
 
-import { loadEOToken } from '../../store/eo/eoActions';
+import { initEncryptedToken, loadEOToken } from '../../store/eo/eoActions';
 import {
     eoDecryptedTokenSelector,
     eoMessageSelector,
     eoMessageStateSelector,
     eoTokenSelector,
+    isEncryptedTokenInitializedSelector,
     isStoreInitializedSelector,
     passwordSelector,
 } from '../../store/eo/eoSelectors';
@@ -54,6 +55,7 @@ export const useLoadEOMessage = ({ id, setSessionStorage }: Props) => {
     const decryptedToken = useEOMailSelector((state) => eoDecryptedTokenSelector(state));
     const eoMessageState = useEOMailSelector((state) => eoMessageSelector(state));
     const isStoreInitialized = useEOMailSelector((state) => isStoreInitializedSelector(state));
+    const isEncryptedTokenInitialized = useEOMailSelector((state) => isEncryptedTokenInitializedSelector(state));
     const password = useEOMailSelector((state) => passwordSelector(state));
     const messageState = useEOMailSelector((state) => eoMessageStateSelector(state));
 
@@ -79,12 +81,15 @@ export const useLoadEOMessage = ({ id, setSessionStorage }: Props) => {
 
         if (isStoreInitialized && id && (!encryptedToken || encryptedToken === '')) {
             void fetchToken(id);
+        } else if (!id) {
+            dispatch(initEncryptedToken());
         }
     }, [encryptedToken, isStoreInitialized]);
 
     return {
         encryptedToken,
         isStoreInitialized,
+        isEncryptedTokenInitialized,
         message: eoMessageState,
         decryptedToken,
         password,
