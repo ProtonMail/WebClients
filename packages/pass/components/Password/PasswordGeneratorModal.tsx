@@ -5,26 +5,24 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
 import { usePasswordGenerator } from '@proton/pass/hooks/usePasswordGenerator';
 import { passwordOptionsEdit } from '@proton/pass/store/actions';
 import { selectOrganizationPasswordGeneratorPolicy } from '@proton/pass/store/selectors';
 
+import type { PasswordGeneratorModalState } from './PasswordContext';
 import { usePasswordContext } from './PasswordContext';
 import { PasswordGenerator } from './PasswordGenerator';
 
-export type BaseProps = {
-    actionLabel?: string;
-    className?: string;
+type Props = AsyncModalState<PasswordGeneratorModalState> & {
+    onClose: () => void;
     onSubmit?: (password: string) => void;
 };
 
-type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
-
-export const PasswordGeneratorModal: FC<Props> = ({ onSubmit, actionLabel, ...props }) => {
+export const PasswordGeneratorModal: FC<Props> = ({ onSubmit, onClose, actionLabel, className, open }) => {
     const dispatch = useDispatch();
     const { config, history } = usePasswordContext();
     const policy = useSelector(selectOrganizationPasswordGeneratorPolicy);
@@ -39,11 +37,11 @@ export const PasswordGeneratorModal: FC<Props> = ({ onSubmit, actionLabel, ...pr
 
     useEffect(() => {
         /* regenerate on each modal opening */
-        if (props.open) passwordGenerator.regeneratePassword();
-    }, [props.open]);
+        if (open) passwordGenerator.regeneratePassword();
+    }, [open]);
 
     return (
-        <SidebarModal {...props}>
+        <SidebarModal open={open} onClose={onClose} className={className}>
             <Panel
                 header={
                     <PanelHeader
@@ -54,7 +52,7 @@ export const PasswordGeneratorModal: FC<Props> = ({ onSubmit, actionLabel, ...pr
                                 icon
                                 pill
                                 shape="solid"
-                                onClick={props.onClose}
+                                onClick={onClose}
                             >
                                 <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
                             </Button>,

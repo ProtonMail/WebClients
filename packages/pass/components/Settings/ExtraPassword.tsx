@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { PasswordModal, type PasswordModalProps } from '@proton/pass/components/Lock/PasswordModal';
+import type { PasswordModalState } from '@proton/pass/components/Lock/PasswordModal';
+import { PasswordModal } from '@proton/pass/components/Lock/PasswordModal';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useRequest } from '@proton/pass/hooks/useRequest';
@@ -29,7 +30,7 @@ export const ExtraPassword: FC = () => {
         ? ' ' + c('Info').t`Biometrics will be disabled and will need to be enabled again.`
         : '';
 
-    const getInitialModalState = (): PasswordModalProps => ({
+    const getInitialModalState = (): PasswordModalState => ({
         label: c('Label').t`Extra password`,
         placeholder: c('Label').t`Extra password`,
         message:
@@ -42,7 +43,7 @@ export const ExtraPassword: FC = () => {
             .t`Caution: You won’t be able to access your ${PASS_APP_NAME} account if you lose this password.`,
     });
 
-    const modal = useAsyncModalHandles<string, PasswordModalProps>({ getInitialModalState });
+    const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
 
     const handleExtraPasswordToggle = async () => {
         if (enabled) {
@@ -93,13 +94,7 @@ export const ExtraPassword: FC = () => {
                 </span>
             </Checkbox>
 
-            <PasswordModal
-                {...modal.state}
-                loading={modal.loading}
-                onSubmit={modal.resolver}
-                onClose={modal.abort}
-                key={modal.key}
-            />
+            <PasswordModal {...modal.state} onSubmit={modal.resolver} onClose={modal.abort} key={modal.key} />
         </SettingsPanel>
     );
 };
