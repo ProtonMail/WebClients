@@ -86,4 +86,26 @@ describe('getPasswordConfig', () => {
         expect(result.options.capitalize).toBe(false);
         expect(result.options.extraNumbers).toBe(memorableConfig.options.extraNumbers);
     });
+
+    it('enforces max length policy for random password', () => {
+        const randomConfig = DEFAULT_RANDOM_PW_OPTIONS;
+        const policy: OrganizationUpdatePasswordPolicyRequest = {
+            ...DEFAULT_POLICY,
+            RandomPasswordMinLength: 4,
+            RandomPasswordMaxLength: 4,
+        };
+        const result = getPasswordConfig(randomConfig, policy) as GeneratePasswordConfig<'random'>;
+        expect(result.options.length).toBe(4);
+    });
+
+    it('enforces max words policy for memorable password', () => {
+        const memorableConfig = DEFAULT_MEMORABLE_PW_OPTIONS;
+        const policy: OrganizationUpdatePasswordPolicyRequest = {
+            ...DEFAULT_POLICY,
+            MemorablePasswordMinWords: 1,
+            MemorablePasswordMaxWords: 2,
+        };
+        const result = getPasswordConfig(memorableConfig, policy) as GeneratePasswordConfig<'memorable'>;
+        expect(result.options.wordCount).toBe(2);
+    });
 });

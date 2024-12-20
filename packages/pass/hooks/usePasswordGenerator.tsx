@@ -68,7 +68,10 @@ const getRandomPasswordConfig = (
     return {
         type: 'random',
         options: {
-            length: Math.max(policy?.RandomPasswordMinLength ?? 0, config.options.length),
+            length: Math.min(
+                policy?.RandomPasswordMaxLength ?? 99,
+                Math.max(policy?.RandomPasswordMinLength ?? 0, config.options.length)
+            ),
             useDigits: policy?.RandomPasswordMustIncludeNumbers ?? config.options.useDigits,
             useSpecialChars: policy?.RandomPasswordMustIncludeSymbols ?? config.options.useSpecialChars,
             useUppercase: policy?.RandomPasswordMustIncludeUppercase ?? config.options.useUppercase,
@@ -83,7 +86,10 @@ const getMemorablePasswordConfig = (
     return {
         type: 'memorable',
         options: {
-            wordCount: Math.max(policy?.MemorablePasswordMinWords ?? 0, config.options.wordCount),
+            wordCount: Math.min(
+                policy?.MemorablePasswordMaxWords ?? 99,
+                Math.max(policy?.MemorablePasswordMinWords ?? 0, config.options.wordCount)
+            ),
             capitalize: policy?.MemorablePasswordMustCapitalize ?? config.options.capitalize,
             extraNumbers: policy?.MemorablePasswordMustIncludeNumbers ?? config.options.extraNumbers,
             seperator: config.options.seperator,
