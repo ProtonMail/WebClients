@@ -8,17 +8,14 @@ import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordG
 
 import { MaybeOrgSettingTooltip } from './MaybeOrgTooltip';
 
-type Props = UsePasswordGeneratorResult<'random'> & {
-    advanced: boolean;
-    dense?: boolean;
-};
+type Props = UsePasswordGeneratorResult<'random'> & { advanced: boolean; dense?: boolean };
 
 export const PasswordRandomOptions: FC<Props> = ({
     advanced,
     config,
     dense = false,
-    setPasswordOptions,
     policy = null,
+    setPasswordOptions,
 }) => {
     const symbolsPolicyEnforced = typeof policy?.RandomPasswordMustIncludeSymbols === 'boolean';
     const uppercasePolicyEnforced = typeof policy?.RandomPasswordMustIncludeUppercase === 'boolean';

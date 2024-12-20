@@ -19,8 +19,8 @@ export const PasswordMemorableOptions: FC<Props> = ({
     advanced,
     config,
     dense = false,
-    setPasswordOptions,
     policy = null,
+    setPasswordOptions,
 }) => {
     const capitalizePolicyEnforced = typeof policy?.MemorablePasswordMustCapitalize === 'boolean';
     const numbersPolicyEnforced = typeof policy?.MemorablePasswordMustIncludeNumbers === 'boolean';

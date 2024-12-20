@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
@@ -61,7 +61,7 @@ export const getCharsGroupedByColor = (password: string) => {
         ));
 };
 
-const getRandomPasswordWithB2BPolicy = (
+const getRandomPasswordConfig = (
     config: GeneratePasswordConfig<'random'>,
     policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
 ): GeneratePasswordConfig => {
@@ -76,7 +76,7 @@ const getRandomPasswordWithB2BPolicy = (
     };
 };
 
-const getMemorablePasswordWithB2BPolicy = (
+const getMemorablePasswordConfig = (
     config: GeneratePasswordConfig<'memorable'>,
     policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
 ): GeneratePasswordConfig => {
@@ -91,82 +91,91 @@ const getMemorablePasswordWithB2BPolicy = (
     };
 };
 
-export const getConfigWithB2BPolicy = (
+/** If the current config type is not allowed by policy, create new config,
+ * else update the current config */
+export const getPasswordConfig = (
     config: GeneratePasswordConfig,
     policy?: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
 ): GeneratePasswordConfig => {
     if (!policy) return config;
 
-    if (config.type === 'random') {
-        // If the current config type is not allowed by policy, create new config, else update the current config
-        return policy.RandomPasswordAllowed === false
-            ? getMemorablePasswordWithB2BPolicy(DEFAULT_MEMORABLE_PW_OPTIONS, policy)
-            : getRandomPasswordWithB2BPolicy(config, policy);
+    switch (config.type) {
+        case 'random':
+            return policy.RandomPasswordAllowed === false
+                ? getMemorablePasswordConfig(DEFAULT_MEMORABLE_PW_OPTIONS, policy)
+                : getRandomPasswordConfig(config, policy);
+        case 'memorable':
+            return policy.MemorablePasswordAllowed === false
+                ? getRandomPasswordConfig(DEFAULT_RANDOM_PW_OPTIONS, policy)
+                : getMemorablePasswordConfig(config, policy);
     }
-
-    return policy.MemorablePasswordAllowed === false
-        ? getRandomPasswordWithB2BPolicy(DEFAULT_RANDOM_PW_OPTIONS, policy)
-        : getMemorablePasswordWithB2BPolicy(config, policy);
 };
 
 type UsePasswordGeneratorOptions = {
     initial: MaybeNull<GeneratePasswordConfig>;
-    onConfigChange: (options: GeneratePasswordConfig) => void;
     policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
+    onConfigChange: (options: GeneratePasswordConfig) => void;
 };
 
-export const usePasswordGenerator = ({ initial, onConfigChange, policy }: UsePasswordGeneratorOptions) => {
+export const usePasswordGenerator = ({ initial, policy, onConfigChange }: UsePasswordGeneratorOptions) => {
     const { core } = usePassCore();
-    const [config, setConfig] = useState<GeneratePasswordConfig>(
-        getConfigWithB2BPolicy(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS, policy)
-    );
-    const generator = useCallback(generatePassword(core), [core]);
+
     const [password, setPassword] = useState('');
+    const [config, setConfig] = useState<GeneratePasswordConfig>(() =>
+        getPasswordConfig(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS, policy)
+    );
 
-    const regeneratePassword = useCallback(() => {
-        // Update config if policy changed
-        const updatedConfig = getConfigWithB2BPolicy(config, policy);
-        generator(updatedConfig).then(setPassword).catch(noop);
-        setConfig(updatedConfig);
-    }, [generator, config, policy]);
+    const generate = useCallback(
+        (opts: GeneratePasswordConfig) => {
+            generatePassword(core)(opts).then(setPassword).catch(noop);
+        },
+        [core]
+    );
 
-    useEffect(regeneratePassword, []);
-
-    /** debounce the pw options dispatch in order to avoid swarming the
+    /** Debounce the pw options dispatch in order to avoid swarming the
      * store with updates when using the length slider */
     const savePasswordOptions = useCallback(debounce(onConfigChange, 250), []);
 
-    const setPasswordOptions = <T extends GeneratePasswordConfig['type']>(
-        type: T,
-        update?: Partial<Extract<GeneratePasswordConfig, { type: T }>['options']>
-    ) => {
-        setConfig((options) => {
-            const newOptions = (() => {
-                if (update) return merge(options, { options: update });
-                if (type === 'memorable') return DEFAULT_MEMORABLE_PW_OPTIONS;
-                if (type === 'random') return DEFAULT_RANDOM_PW_OPTIONS;
-                return options;
-            })();
+    useEffect(() => setConfig((config) => getPasswordConfig(config, policy)), [policy]);
 
-            savePasswordOptions(newOptions);
-            return newOptions;
-        });
-    };
+    /** Regenerates password when config changes. Uses `Object.values()` to track option changes.
+     * WARNING: Assumes both password types have same number of options - will cause dependency
+     * array mismatch if this changes in the future. */
+    useEffect(() => {
+        generate(config);
+        savePasswordOptions(config);
+    }, [config.type, ...Object.values(config.options)]);
 
-    /* regenerate the password on each options change */
-    useEffect(() => regeneratePassword(), Object.values(config.options));
+    return useMemo(
+        () => ({
+            config,
+            password,
+            policy,
+            regeneratePassword: () => generate(config),
+            setPasswordOptions: <
+                Type extends GeneratePasswordConfig['type'],
+                Options = Extract<GeneratePasswordConfig, { type: Type }>['options'],
+            >(
+                type: Type,
+                update?: Partial<Options>
+            ) => {
+                setConfig((prev) => {
+                    if (prev.type === type && update) {
+                        const updatedKeys = Object.keys(update) as (keyof Options)[];
+                        const prevOptions = prev.options as Options;
+                        const didChange = updatedKeys.some((key) => update[key] !== prevOptions[key]);
+                        return didChange ? merge(prev, { options: update }) : prev;
+                    }
 
-    /* regenerate the password on policy change */
-    useEffect(regeneratePassword, [policy]);
+                    if (type === 'memorable') return DEFAULT_MEMORABLE_PW_OPTIONS;
+                    if (type === 'random') return DEFAULT_RANDOM_PW_OPTIONS;
 
-    return {
-        config,
-        password,
-        setPassword,
-        setPasswordOptions,
-        regeneratePassword,
-        policy,
-    };
+                    return prev;
+                });
+            },
+        }),
+        [config, password, policy]
+    );
 };
 
 export type UsePasswordGeneratorResult<T extends GeneratePasswordMode = GeneratePasswordMode> = Omit<
