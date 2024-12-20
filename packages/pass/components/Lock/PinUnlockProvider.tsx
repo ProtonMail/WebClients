@@ -5,15 +5,15 @@ import { c } from 'ttag';
 
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 
+import type { PinUnlockModalState } from './PinUnlockModal';
 import { PinUnlockModal } from './PinUnlockModal';
 
-type LockConfirmState = { title: string; assistiveText: string };
-type PinUnlockContextValue = UseAsyncModalHandle<string, LockConfirmState>;
+type PinUnlockContextValue = UseAsyncModalHandle<string, PinUnlockModalState>;
 
 const PinUnlockContext = createContext<PinUnlockContextValue>(async () => {});
 
 export const PinUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { handler, abort, resolver, state, loading, key } = useAsyncModalHandles<string, LockConfirmState>({
+    const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, PinUnlockModalState>({
         getInitialModalState: () => ({
             title: c('Title').t`Enter your PIN`,
             assistiveText: c('Info').t`Please enter your current PIN code to continue`,
@@ -23,7 +23,7 @@ export const PinUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <PinUnlockContext.Provider value={handler}>
             {children}
-            <PinUnlockModal onSubmit={resolver} onClose={abort} {...state} loading={loading} key={key} />
+            <PinUnlockModal onSubmit={resolver} onClose={abort} {...state} key={key} />
         </PinUnlockContext.Provider>
     );
 };
