@@ -5,8 +5,7 @@ import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings'
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
-import type { DecryptedLink } from '../../../store';
-import { useThumbnailsDownload } from '../../../store';
+import { type DecryptedLink, useThumbnailsDownload } from '../../../store';
 import type { SortField } from '../../../store/_views/utils/useSorting';
 import type { BrowserItemId, SortParams } from '../../FileBrowser';
 import FileBrowser, { useContextMenuControls, useItemContextMenu, useSelection } from '../../FileBrowser';
@@ -34,7 +33,7 @@ interface Props {
     setSorting?: (params: SortParams<SortField>) => void;
 }
 
-export default function SharedFileBrowser({
+export function SharedFileBrowser({
     folderName,
     items,
     isLoading,
@@ -91,20 +90,19 @@ export default function SharedFileBrowser({
                 <EmptyPlaceholder />
             ) : (
                 <>
-                    {canWrite && (
-                        <DrivePublicContextMenu
-                            isActiveLinkReadOnly={false}
-                            shareId={token}
-                            selectedLinks={selectedItems}
-                            anchorRef={contextMenuAnchorRef}
-                            close={browserItemContextMenu.close}
-                            isOpen={browserItemContextMenu.isOpen}
-                            open={browserItemContextMenu.open}
-                            position={browserItemContextMenu.position}
-                            openPreview={onItemOpen}
-                            openInDocs={openInDocs}
-                        />
-                    )}
+                    <DrivePublicContextMenu
+                        canWrite={canWrite}
+                        isActiveLinkReadOnly={false}
+                        shareId={token}
+                        selectedLinks={selectedItems}
+                        anchorRef={contextMenuAnchorRef}
+                        close={browserItemContextMenu.close}
+                        isOpen={browserItemContextMenu.isOpen}
+                        open={browserItemContextMenu.open}
+                        position={browserItemContextMenu.position}
+                        openPreview={onItemOpen}
+                        openInDocs={openInDocs}
+                    />
                     <FileBrowser
                         caption={folderName}
                         headerItems={headerCells}

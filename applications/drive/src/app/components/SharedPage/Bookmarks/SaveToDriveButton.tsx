@@ -57,7 +57,10 @@ export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword
                 >
                     <Button
                         loading={loading || isAdding}
-                        className={clsx('flex items-center', className)}
+                        className={clsx(
+                            'flex gap-2 py-2 items-start justify-center text-left flex-column md:gap-4 md:py-3',
+                            className
+                        )}
                         onClick={async () => {
                             if (!user) {
                                 countActionWithTelemetry(Actions.AddToBookmarkTriggeredModal);
@@ -75,7 +78,7 @@ export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword
                         color="norm"
                         data-testid="save-in-drive-button"
                     >
-                        {!isAdding && <Icon className="mr-2" name="folder-arrow-in" />}
+                        <Icon name="folder-arrow-in" />
                         {isAdding ? c('Info').t`Saving...` : buttonText}
                     </Button>
                 </Tooltip>
