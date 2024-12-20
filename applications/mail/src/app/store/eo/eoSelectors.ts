@@ -12,6 +12,11 @@ export const eoMessageSelector = createSelector(eoState, (state) => state.messag
 
 export const isStoreInitializedSelector = createSelector(eoState, (state) => state.isStoreInitialized);
 
+export const isEncryptedTokenInitializedSelector = createSelector(
+    eoState,
+    (state) => state.isEncryptedTokenInitialized
+);
+
 export const passwordSelector = createSelector(eoState, (state) => state.password);
 
 export const eoMessageStateSelector = createSelector(eoState, (state) => state.messageState);
