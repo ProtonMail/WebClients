@@ -6,8 +6,7 @@ import { FilePreview, NavigationControl, useActiveBreakpoint } from '@proton/com
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import type { DecryptedLink } from '../../../store';
-import { type useBookmarksPublicView, useDownload, usePublicFolderView } from '../../../store';
+import { type DecryptedLink, type useBookmarksPublicView, useDownload, usePublicFolderView } from '../../../store';
 import { useDriveDocsPublicSharingFF } from '../../../store/_documents';
 import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
@@ -15,17 +14,12 @@ import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import TransferManager from '../../TransferManager/TransferManager';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
-import { EditActions } from '../EditActions/EditActions';
-import Breadcrumbs from '../Layout/Breadcrumbs';
-import HeaderSecureLabel from '../Layout/HeaderSecureLabel';
-import HeaderSize from '../Layout/HeaderSize';
 import ReportAbuseButton from '../Layout/ReportAbuseButton';
-import SharedPageFooter from '../Layout/SharedPageFooter';
-import SharedPageHeader from '../Layout/SharedPageHeader';
+import { SharedPageContentHeader } from '../Layout/SharedPageContentHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
 import SharedPageTransferManager from '../TransferModal/SharedPageTransferManager';
 import type { PublicLink } from '../interface';
-import SharedFileBrowser from './FileBrowser';
+import { SharedFileBrowser } from './FileBrowser';
 
 interface Props {
     token: string;
@@ -33,7 +27,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     permissions: SHARE_URL_PERMISSIONS;
     hideSaveToDrive?: boolean;
-    partialView?: boolean;
+    isPartialView?: boolean;
     openInDocs?: (linkId: string) => void;
 }
 
@@ -108,7 +102,7 @@ export default function SharedFolder({
     rootLink,
     permissions,
     hideSaveToDrive = false,
-    partialView = false,
+    isPartialView = false,
     openInDocs,
 }: Props) {
     const [linkId, setLinkId] = useState(rootLink.linkId);
@@ -209,61 +203,35 @@ export default function SharedFolder({
         void download([{ ...displayedLink, shareId: token }]);
     };
 
-    const { totalSize } = useMemo(
-        () =>
-            fileBrowserItems.reduce(
-                (previousValue, currentValue) => {
-                    if (previousValue.haveSubFolder || !currentValue.isFile) {
-                        return { haveSubFolder: true, totalSize: 0 };
-                    }
-                    return {
-                        ...previousValue,
-                        totalSize: previousValue.totalSize + currentValue.size,
-                    };
-                },
-                { haveSubFolder: false, totalSize: 0 }
-            ),
-        [fileBrowserItems]
-    );
+    const totalSize = !folderView.isLoading
+        ? fileBrowserItems.reduce((total, currentValue) => {
+              if (!currentValue.isFile) {
+                  return total;
+              }
+              return total + currentValue.size;
+          }, 0)
+        : undefined;
 
     const canWrite = useMemo(() => getCanWrite(permissions), [permissions]);
 
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
-            <SharedPageLayout
-                partialView={partialView}
-                FooterComponent={
-                    <SharedPageFooter
-                        rootItem={rootLink}
-                        items={fileBrowserItems}
-                        bookmarksPublicView={bookmarksPublicView}
-                        hideSaveToDrive={hideSaveToDrive}
-                        partialView={partialView}
-                    />
-                }
-            >
-                <SharedPageHeader
-                    partialView={partialView}
+            <SharedPageLayout isPartialView={isPartialView}>
+                <SharedPageContentHeader
+                    token={token}
+                    canWrite={canWrite}
+                    linkId={linkId}
+                    onNavigate={setLinkId}
+                    size={totalSize}
+                    name={folderView.folderName}
+                    isPartialView={isPartialView}
                     rootItem={rootLink}
                     items={fileBrowserItems}
                     bookmarksPublicView={bookmarksPublicView}
                     hideSaveToDrive={hideSaveToDrive}
-                    className="mt-7 mb-8"
-                >
-                    <div className="max-w-full flex items-center">
-                        <Breadcrumbs
-                            token={token}
-                            name={folderView.folderName}
-                            linkId={linkId}
-                            onNavigate={setLinkId}
-                            className="w-full shared-folder-header-breadcrumbs pb-1"
-                        />
-                        <div className="flex items-center">
-                            <HeaderSecureLabel />
-                            {totalSize ? <HeaderSize size={totalSize} /> : null}
-                        </div>
-                    </div>
-                </SharedPageHeader>
+                    className="mt-3 mb-8"
+                    isFolderView
+                />
                 {shouldRenderPreviewContainer && (
                     <SharedPagePreviewContainer
                         shareId={token}
@@ -275,7 +243,6 @@ export default function SharedFolder({
                         openInDocs={openInDocs}
                     />
                 )}
-                {canWrite && <EditActions token={token} linkId={linkId} />}
                 {/* // Use TransferManager only for uploads */}
                 {canWrite && !downloads.length && (
                     <div

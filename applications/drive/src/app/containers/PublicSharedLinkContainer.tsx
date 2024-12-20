@@ -220,7 +220,7 @@ function PublicShareLinkInitContainer() {
         token,
         hideSaveToDrive: isLegacy || !showBookmarks,
         openInDocs: isDocsPublicSharingEnabled ? openInDocs : undefined,
-        partialView: isPartialView,
+        isPartialView,
     };
 
     if (shouldRedirectToDocs) {
