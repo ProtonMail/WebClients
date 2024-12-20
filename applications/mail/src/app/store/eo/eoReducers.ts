@@ -48,6 +48,7 @@ export const initFulfilled = (
 
     if (token) {
         state.encryptedToken = token;
+        state.isEncryptedTokenInitialized = true;
     }
     if (decryptedToken) {
         state.decryptedToken = decryptedToken;
@@ -58,11 +59,16 @@ export const initFulfilled = (
     state.isStoreInitialized = true;
 };
 
+export const initEncryptedToken = (state: Draft<EOState>) => {
+    state.isEncryptedTokenInitialized = true;
+};
+
 export const loadEOTokenFulfilled = (
     state: Draft<EOState>,
     action: PayloadAction<string, string, { arg: EOTokenParams }>
 ) => {
     state.encryptedToken = action.payload;
+    state.isEncryptedTokenInitialized = true;
 };
 
 export const loadEOMessageFulfilled = (

@@ -8,6 +8,7 @@ import {
     EOLoadEmbedded,
     EOLoadRemote,
     init,
+    initEncryptedToken,
     loadEOMessage,
     loadEOToken,
 } from './eoActions';
@@ -18,6 +19,7 @@ import {
     EOLoadEmbeddedFulfilled,
     EOLoadRemote as EOLoadRemoteReducer,
     reset as globalResetReducer,
+    initEncryptedToken as initEncryptedTokenReducer,
     initFulfilled,
     loadEOMessageFulfilled,
     loadEOTokenFulfilled,
@@ -28,6 +30,7 @@ export const initialState = {
     encryptedToken: '',
     decryptedToken: '',
     isStoreInitialized: false,
+    isEncryptedTokenInitialized: false,
     password: '',
 } as EOState;
 
@@ -39,7 +42,9 @@ export const eoSlice = createSlice({
         builder.addCase(globalReset, globalResetReducer);
 
         builder.addCase(init.fulfilled, initFulfilled);
+        builder.addCase(initEncryptedToken, initEncryptedTokenReducer);
         builder.addCase(loadEOToken.fulfilled, loadEOTokenFulfilled);
+        builder.addCase(loadEOToken.rejected, initEncryptedTokenReducer);
         builder.addCase(loadEOMessage.fulfilled, loadEOMessageFulfilled);
 
         builder.addCase(EODocumentInitializePending, EODocumentInitializePendingReducer);
