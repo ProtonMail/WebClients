@@ -19,7 +19,7 @@ export default function ReportAbuseButton({ linkInfo }: { linkInfo: LinkInfo }) 
                     size="medium"
                     color="weak"
                     data-testid="report-abuse-button"
-                    className="ml-2 mb-2 fixed left-0 bottom-0"
+                    className="ml-0.5 mb-0.5 fixed left-0 bottom-0"
                     icon
                     onClick={() => showReportAbuseModal({ linkInfo, onSubmit: submitAbuseReport })}
                 >
