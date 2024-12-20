@@ -1,67 +1,58 @@
-import { useActiveBreakpoint } from '@proton/components';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
-import clsx from '@proton/utils/clsx';
+import { c } from 'ttag';
 
-import type { useBookmarksPublicView } from '../../../store';
-import { useDownloadScanFlag } from '../../../store';
-import { useSelection } from '../../FileBrowser';
-import { getSelectedItems } from '../../sections/helpers';
-import { SaveToDriveButton } from '../Bookmarks/SaveToDriveButton';
-import { ClosePartialPublicViewButton } from './ClosePartialPublicViewButton';
-import type { DownloadButtonProps } from './DownloadButton';
-import { DownloadButton } from './DownloadButton';
+import { ButtonLike } from '@proton/atoms/index';
+import { Header, MainLogo, UnAuthenticatedAppsDropdown, useActiveBreakpoint } from '@proton/components/index';
+import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 
-interface Props extends DownloadButtonProps {
-    children: React.ReactNode;
-    bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
-    className?: string;
-    hideSaveToDrive?: boolean;
-    partialView?: boolean;
-}
+import { APP_NAME } from '../../../config';
+import { usePublicSessionUser } from '../../../store';
+import HeaderSecureLabel from './HeaderSecureLabel';
+import { UserInfo } from './UserInfo';
 
-export default function SharedPageHeader({
-    children,
-    rootItem,
-    items,
-    bookmarksPublicView,
-    className,
-    hideSaveToDrive,
-    partialView,
-}: Props) {
-    const isDownloadScanEnabled = useDownloadScanFlag();
+export const SharedPageHeader = () => {
+    const { user, localID } = usePublicSessionUser();
     const { viewportWidth } = useActiveBreakpoint();
-    const selectionControls = useSelection();
-    const { isAlreadyBookmarked, addBookmark, isLoading, customPassword } = bookmarksPublicView;
-
-    const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
-
-    const hasOnlyDocuments =
-        (items.length > 0 && items.every((item) => item.isFile && isProtonDocument(item.mimeType))) ||
-        (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocument(item.mimeType)));
 
     return (
-        <div className={clsx('flex flex-nowrap shrink-0 justify-space-between items-center gap-4', className)}>
-            <div className="flex flex-nowrap flex-1 items-center mb-0 pb-0 mr-4 shared-page-layout-header">
-                {children}
+        <Header className="h-auto lg:justify-space-between items-center">
+            <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
+            <div className="logo-container flex justify-space-between items-center w-auto h-auto">
+                <MainLogo to="/" reloadDocument variant={viewportWidth['<=medium'] ? 'glyph-only' : 'with-wordmark'} />
+                <div className="hidden md:block">
+                    <UnAuthenticatedAppsDropdown reloadDocument user={user} />
+                </div>
             </div>
-            {!!items.length && !viewportWidth['<=small'] && (
-                <DownloadButton
-                    rootItem={rootItem}
-                    items={items}
-                    isScanAndDownload={isDownloadScanEnabled}
-                    disabled={hasOnlyDocuments}
-                />
-            )}
-            {partialView && <ClosePartialPublicViewButton />}
-            {!hideSaveToDrive && !partialView && !viewportWidth['<=small'] && (
-                <SaveToDriveButton
-                    loading={isLoading}
-                    onClick={addBookmark}
-                    alreadyBookmarked={isAlreadyBookmarked}
-                    customPassword={customPassword}
-                    className="ml-4"
-                />
-            )}
-        </div>
+            <HeaderSecureLabel shortText={viewportWidth['<=medium']} />
+            <div className="flex justify-end flex-nowrap items-center ml-auto lg:ml-0">
+                {!!user ? (
+                    <>
+                        <ButtonLike
+                            className="w-auto mr-4"
+                            color="norm"
+                            shape="outline"
+                            as="a"
+                            href={getAppHref('/', APPS.PROTONDRIVE, localID)}
+                            target="_blank"
+                        >
+                            {c('Action').t`Go to ${DRIVE_SHORT_APP_NAME}`}
+                        </ButtonLike>
+                        <UserInfo user={user} />
+                    </>
+                ) : (
+                    <ButtonLike
+                        className="w-full md:w-auto"
+                        color="norm"
+                        shape="ghost"
+                        as="a"
+                        href={DRIVE_PRICING_PAGE}
+                        target="_blank"
+                    >
+                        {c('Action').t`Create free account`}
+                    </ButtonLike>
+                )}
+            </div>
+        </Header>
     );
-}
+};

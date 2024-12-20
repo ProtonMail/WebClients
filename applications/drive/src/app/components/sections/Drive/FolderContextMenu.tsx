@@ -6,8 +6,14 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useActions, useDriveSharingFlags, useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
+import {
+    useActions,
+    useDocumentActions,
+    useDriveSharingFlags,
+    useFileUploadInput,
+    useFolderUploadInput,
+} from '../../../store';
+import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';

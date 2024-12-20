@@ -2,7 +2,7 @@ import { ContextSeparator, useConfirmActionModal } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import type { DecryptedLink } from '../../../store';
+import { type DecryptedLink, useDownloadScanFlag } from '../../../store';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useRenameModal } from '../../modals/RenameModal';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
@@ -10,6 +10,7 @@ import { DeleteButton, DownloadButton, OpenInDocsButton, PreviewButton, RenameBu
 import { usePublicLinksPermissions } from './utils/usePublicLinksPermissions';
 
 export function DrivePublicContextMenu({
+    canWrite,
     selectedLinks,
     anchorRef,
     isOpen,
@@ -21,6 +22,7 @@ export function DrivePublicContextMenu({
     children,
     isActiveLinkReadOnly,
 }: ContextMenuProps & {
+    canWrite: boolean;
     shareId: string;
     selectedLinks: DecryptedLink[];
     isActiveLinkReadOnly?: boolean;
@@ -36,6 +38,7 @@ export function DrivePublicContextMenu({
     const [publicRenameModal, showPublicRenameModal] = useRenameModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const isDocument = isProtonDocument(selectedLink?.mimeType || '');
+    const isDownloadScanEnabled = useDownloadScanFlag();
 
     const showPreviewButton = hasPreviewAvailable;
     const showOpenInDocsButton = isOnlyOneFileItem && isDocument && openInDocs;
@@ -53,15 +56,18 @@ export function DrivePublicContextMenu({
                     />
                 )}
                 {(showPreviewButton || showOpenInDocsButton) && <ContextSeparator />}
+                {isDownloadScanEnabled && (
+                    <DownloadButton selectedBrowserItems={selectedLinks} close={close} virusScan />
+                )}
                 <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
-                {isOnlyOneItem && !isActiveLinkReadOnly && canRename && (
+                {canWrite && isOnlyOneItem && !isActiveLinkReadOnly && canRename && (
                     <>
                         <ContextSeparator />
                         <RenameButton showRenameModal={showPublicRenameModal} link={selectedLink} close={close} />
                     </>
                 )}
 
-                {canDelete && (
+                {canWrite && canDelete && (
                     <>
                         <ContextSeparator />
                         <DeleteButton links={selectedLinks} close={close} showConfirmModal={showConfirmModal} />
