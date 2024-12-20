@@ -39,6 +39,8 @@ export const init = createAsyncThunk<EOInitResult, EOInitParams>('eo/init', asyn
     }
 });
 
+export const initEncryptedToken = createAction('eo/init/encryptedToken');
+
 export const loadEOToken = createAsyncThunk<string, EOTokenParams>('eo/token/load', async ({ api, id, set }) => {
     try {
         const { Token } = await api(getEOToken(id));
