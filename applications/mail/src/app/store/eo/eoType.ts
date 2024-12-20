@@ -98,6 +98,7 @@ export type EOState = {
     encryptedToken: string;
     decryptedToken: string;
     isStoreInitialized: boolean;
+    isEncryptedTokenInitialized: boolean;
     password: string;
     messageState: MessageState;
 };
