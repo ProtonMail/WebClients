@@ -2,7 +2,7 @@ import { DEFAULT_MEMORABLE_PW_OPTIONS, DEFAULT_RANDOM_PW_OPTIONS } from '@proton
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 
-import { getConfigWithB2BPolicy } from './usePasswordGenerator';
+import { getPasswordConfig } from './usePasswordGenerator';
 
 const DEFAULT_POLICY: OrganizationUpdatePasswordPolicyRequest = {
     RandomPasswordAllowed: true,
@@ -18,24 +18,24 @@ const DEFAULT_POLICY: OrganizationUpdatePasswordPolicyRequest = {
     MemorablePasswordMustIncludeNumbers: null,
 };
 
-describe('getConfigWithB2BPolicy', () => {
+describe('getPasswordConfig', () => {
     it('returns the original config if policy is null', () => {
         const randomConfig = DEFAULT_RANDOM_PW_OPTIONS;
-        const randomResult = getConfigWithB2BPolicy(randomConfig, null);
+        const randomResult = getPasswordConfig(randomConfig, null);
         expect(randomResult).toEqual(randomConfig);
 
         const memorableConfig = DEFAULT_MEMORABLE_PW_OPTIONS;
-        const memorableResult = getConfigWithB2BPolicy(memorableConfig, null);
+        const memorableResult = getPasswordConfig(memorableConfig, null);
         expect(memorableResult).toEqual(memorableConfig);
     });
 
     it('returns the original config if policy does not enforce any rule', () => {
         const randomConfig = DEFAULT_RANDOM_PW_OPTIONS;
-        const randomResult = getConfigWithB2BPolicy(randomConfig, DEFAULT_POLICY);
+        const randomResult = getPasswordConfig(randomConfig, DEFAULT_POLICY);
         expect(randomResult).toEqual(randomConfig);
 
         const memorableConfig = DEFAULT_MEMORABLE_PW_OPTIONS;
-        const memorableResult = getConfigWithB2BPolicy(memorableConfig, DEFAULT_POLICY);
+        const memorableResult = getPasswordConfig(memorableConfig, DEFAULT_POLICY);
         expect(memorableResult).toEqual(memorableConfig);
     });
 
@@ -45,7 +45,7 @@ describe('getConfigWithB2BPolicy', () => {
             ...DEFAULT_POLICY,
             RandomPasswordAllowed: false,
         };
-        const randomResult = getConfigWithB2BPolicy(randomConfig, randomPolicy);
+        const randomResult = getPasswordConfig(randomConfig, randomPolicy);
         expect(randomResult.type).toBe('memorable');
 
         const memorableConfig = DEFAULT_MEMORABLE_PW_OPTIONS;
@@ -53,7 +53,7 @@ describe('getConfigWithB2BPolicy', () => {
             ...DEFAULT_POLICY,
             MemorablePasswordAllowed: false,
         };
-        const memorableResult = getConfigWithB2BPolicy(memorableConfig, memorablePolicy);
+        const memorableResult = getPasswordConfig(memorableConfig, memorablePolicy);
         expect(memorableResult.type).toBe('random');
     });
 
@@ -66,7 +66,7 @@ describe('getConfigWithB2BPolicy', () => {
             RandomPasswordMustIncludeUppercase: true,
             RandomPasswordMustIncludeSymbols: null,
         };
-        const result = getConfigWithB2BPolicy(randomConfig, policy) as GeneratePasswordConfig<'random'>;
+        const result = getPasswordConfig(randomConfig, policy) as GeneratePasswordConfig<'random'>;
         expect(result.options.length).toBe(63);
         expect(result.options.useDigits).toBe(false);
         expect(result.options.useUppercase).toBe(true);
@@ -81,7 +81,7 @@ describe('getConfigWithB2BPolicy', () => {
             MemorablePasswordMustCapitalize: false,
             MemorablePasswordMustIncludeNumbers: null,
         };
-        const result = getConfigWithB2BPolicy(memorableConfig, policy) as GeneratePasswordConfig<'memorable'>;
+        const result = getPasswordConfig(memorableConfig, policy) as GeneratePasswordConfig<'memorable'>;
         expect(result.options.wordCount).toBe(9);
         expect(result.options.capitalize).toBe(false);
         expect(result.options.extraNumbers).toBe(memorableConfig.options.extraNumbers);
