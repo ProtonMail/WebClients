@@ -1,0 +1,28 @@
+@import '~@proton/styles/scss/lib';
+
+.shared-page-content-header-buttons {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.25rem), 1fr));
+	grid-gap: 0.5rem;
+	grid-auto-rows: minmax(3.125rem, 1fr);
+	justify-content: center;
+	max-inline-size: 23rem;
+	margin-block: 0;
+	margin-inline: auto;
+
+	> * {
+		min-inline-size: 8.25rem;
+	}
+
+	@include media('>small') {
+		grid-auto-flow: column;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.25rem), auto));
+		justify-content: end;
+		max-inline-size: 100%;
+		margin: auto;
+
+		> * {
+			min-inline-size: 8.25rem;
+		}
+	}
+}

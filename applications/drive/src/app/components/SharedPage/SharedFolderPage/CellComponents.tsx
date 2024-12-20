@@ -6,7 +6,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
-import { useDownload } from '../../../store';
+import { useDownload, useDownloadScanFlag } from '../../../store';
 import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { Cells, HeaderCellsPresets } from '../../FileBrowser';
 import { getLinkIconText } from '../../sections/FileBrowser/utils';
@@ -140,13 +140,14 @@ function SizeCell({ item }: { item: PublicLink }) {
 function DownloadCell({ item }: { item: PublicLink }) {
     const { token } = usePublicToken();
     const { download, downloads, clearDownloads } = useDownload();
+    const isDownloadScanEnabled = useDownloadScanFlag();
 
     const isCurrentInProgress = Boolean(item.progress);
 
     const handleClick = () => {
         clearDownloads();
 
-        void download([{ ...item, shareId: token }]);
+        void download([{ ...item, shareId: token }], { virusScan: isDownloadScanEnabled });
     };
 
     const isAnyInProgress = downloads.some((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));

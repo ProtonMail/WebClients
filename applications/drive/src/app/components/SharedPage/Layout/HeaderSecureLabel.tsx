@@ -5,11 +5,14 @@ import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
+    shortText?: boolean;
 }
-const HeaderSecureLabel = ({ className }: Props) => (
-    <div className={clsx('color-success flex flex-row', className)}>
-        <Icon name="lock-open-check-filled" className="mr-2" />
-        <span className="encryption-block-text">{c('Info').t`End-to-end encrypted`}</span>
+const HeaderSecureLabel = ({ className, shortText = false }: Props) => (
+    <div className={clsx('flex flex-row', className)}>
+        <Icon name="lock-filled" className="mr-2" />
+        <span className="encryption-block-text">
+            {shortText ? c('Info').t`Encrypted` : c('Info').t`End-to-end encrypted`}
+        </span>
     </div>
 );
 

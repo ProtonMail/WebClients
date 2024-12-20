@@ -15,8 +15,9 @@ interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
 interface Props {
     selectedBrowserItems: SelectedBrowserItem[];
     close: () => void;
+    virusScan?: boolean;
 }
-export const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
+export const DownloadButton = ({ selectedBrowserItems, close, virusScan }: Props) => {
     const { download } = useDownload();
     const { token } = usePublicToken();
     const { downloadDocument } = useDocumentActions();
@@ -42,15 +43,22 @@ export const DownloadButton = ({ selectedBrowserItems, close }: Props) => {
             selectedBrowserItems.map((link) => ({
                 ...link,
                 shareId: token,
-            }))
+            })),
+            { virusScan }
         );
     };
 
+    const count = selectedBrowserItems.length;
+
+    const buttonTextWithScan = count > 1 ? c('Action').t`Download (${count})` : c('Action').t`Download`;
+    const buttonTextWithoutScan =
+        count > 1 ? c('Action').t`Download without scanning (${count})` : c('Action').t`Download without scanning`;
+
     return (
         <ContextMenuButton
-            name={c('Action').t`Download`}
+            name={virusScan ? buttonTextWithScan : buttonTextWithoutScan}
             icon="arrow-down-line"
-            testId="context-menu-download"
+            testId={`context-menu-download${virusScan ? '-scan' : ''}`}
             action={onClick}
             close={close}
         />
