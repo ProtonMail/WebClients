@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors';
 
+import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
 
 type PasswordUnlockContextValue = UseAsyncModalHandle<string, PasswordModalProps>;
@@ -22,7 +23,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
           ]
         : [c('Info').t`Please confirm your password`, c('Title').t`Enter your password`, c('Label').t`Password`];
 
-    const { handler, abort, resolver, state, loading, key } = useAsyncModalHandles<string, PasswordModalProps>({
+    const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, PasswordModalState>({
         getInitialModalState: () => ({
             message,
             submitLabel: c('Action').t`Authenticate`,
@@ -36,7 +37,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <PasswordUnlockContext.Provider value={handler}>
             {children}
-            <PasswordModal onSubmit={resolver} onClose={abort} {...state} loading={loading} key={key} />
+            <PasswordModal onSubmit={resolver} onClose={abort} {...state} key={key} />
         </PasswordUnlockContext.Provider>
     );
 };
