@@ -173,8 +173,8 @@ export const usePasswordGenerator = ({ initial, policy, onConfigChange }: UsePas
                         return didChange ? merge(prev, { options: update }) : prev;
                     }
 
-                    if (type === 'memorable') return DEFAULT_MEMORABLE_PW_OPTIONS;
-                    if (type === 'random') return DEFAULT_RANDOM_PW_OPTIONS;
+                    if (type === 'memorable') return getPasswordConfig(DEFAULT_MEMORABLE_PW_OPTIONS, policy);
+                    if (type === 'random') return getPasswordConfig(DEFAULT_RANDOM_PW_OPTIONS, policy);
 
                     return prev;
                 });
