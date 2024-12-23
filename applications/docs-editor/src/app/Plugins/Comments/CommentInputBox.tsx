@@ -5,12 +5,11 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
 import { c } from 'ttag'
 import { Icon, ToolbarButton } from '@proton/components'
-import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 
 export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
   const textContentRef = useRef('')
-  const { controller, setThreadToFocus } = useCommentsContext()
+  const { controller, setThreadToFocus, setCurrentCommentDraft } = useCommentsContext()
 
   const boxRef = useRef<HTMLDivElement>(null)
   const selectionState = useMemo(
@@ -107,22 +106,35 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
   }, [cancelAddComment, updateLocation])
 
   const onSubmit = useCallback(
-    (content: string) => {
+    async (content: string) => {
       if (selectionRef.current) {
-        controller
-          .createCommentThread(content)
-          .then((thread) => {
-            if (thread) {
-              setThreadToFocus(thread.id)
-            }
-          })
-          .catch(reportErrorToSentry)
-        selectionRef.current = null
-        textContentRef.current = ''
-        cancelAddComment()
+        const success = await controller.createCommentThread(content).then((thread) => {
+          if (thread) {
+            setThreadToFocus(thread.id)
+          }
+          return !!thread
+        })
+
+        if (success) {
+          selectionRef.current = null
+          textContentRef.current = ''
+          cancelAddComment()
+          setCurrentCommentDraft(undefined)
+        }
+
+        return success
       }
+      return false
     },
-    [cancelAddComment, controller, setThreadToFocus],
+    [cancelAddComment, controller, setThreadToFocus, setCurrentCommentDraft],
+  )
+
+  const onTextChange = useCallback(
+    (textContent: string) => {
+      textContentRef.current = textContent
+      setCurrentCommentDraft(textContent)
+    },
+    [setCurrentCommentDraft],
   )
 
   return (
@@ -137,7 +149,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
         placeholder={c('Placeholder').t`Add a comment...`}
         onSubmit={onSubmit}
         onCancel={cancelAddComment}
-        onTextContentChange={(textContent) => (textContentRef.current = textContent)}
+        onTextContentChange={onTextChange}
         buttons={(canSubmit, submitComment) => (
           <ToolbarButton
             className="bg-primary rounded-full p-1"

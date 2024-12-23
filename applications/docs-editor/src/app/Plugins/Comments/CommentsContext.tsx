@@ -18,6 +18,7 @@ type CommentsContextValue = {
 
   commentInputSelection: RangeSelection | undefined
   cancelAddComment: () => void
+  setCurrentCommentDraft: (draft: string | undefined) => void
 }
 
 const CommentsContext = createContext<CommentsContextValue | null>(null)
