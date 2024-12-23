@@ -1,4 +1,5 @@
 import type { ShareExternalInvitation, ShareInvitation, ShareMember } from '../../store';
+import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store';
 
 export interface MembersState {
     members: ShareMember[];
@@ -20,4 +21,20 @@ export interface InvitationsState {
     updateExternalInvitations: (invitations: ShareExternalInvitation[]) => void;
     // Mixed Invitations Actions
     addMultipleInvitations: (invitations: ShareInvitation[], externalInvitations: ShareExternalInvitation[]) => void;
+}
+export interface SharesState {
+    shares: Record<string, Share | ShareWithKey>;
+    lockedVolumesForRestore: LockedVolumeForRestore[];
+    setShares: (shares: (Share | ShareWithKey)[]) => void;
+    removeShares: (shareIds: string[]) => void;
+    getShare: (shareId: string) => Share | ShareWithKey | undefined;
+    getLockedShares: () => {
+        defaultShare: Share | ShareWithKey;
+        devices: (Share | ShareWithKey)[];
+        photos: (Share | ShareWithKey)[];
+    }[];
+    getDefaultShareId: () => string | undefined;
+    getDefaultPhotosShareId: () => string | undefined;
+    getRestoredPhotosShares: () => (Share | ShareWithKey)[];
+    setLockedVolumesForRestore: (volumes: LockedVolumeForRestore[]) => void;
 }
