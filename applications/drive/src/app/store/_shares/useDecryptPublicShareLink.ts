@@ -4,14 +4,14 @@ import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing'
 import { computeKeyPassword } from '@proton/srp/lib';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { useSharesStore } from '../../zustand/share/shares.store';
 import { type DecryptedLink, useLink } from './../_links';
 import useLinksState from './../_links/useLinksState';
 import { ShareState, ShareType } from './interface';
 import useSharesKeys from './useSharesKeys';
-import useSharesState from './useSharesState';
 
 export const useDecryptPublicShareLink = () => {
-    const { setShares } = useSharesState();
+    const setShares = useSharesStore((state) => state.setShares);
     const sharesKeys = useSharesKeys();
     const { setLinks } = useLinksState();
     const { decryptLink } = useLink();
