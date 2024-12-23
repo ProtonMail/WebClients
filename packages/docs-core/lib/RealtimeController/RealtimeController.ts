@@ -448,8 +448,16 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
     const latestCommitId = result.getValue().latestCommitId()
 
-    if (!latestCommitId || latestCommitId === this.documentState.getProperty('currentCommitId')) {
-      fail(!latestCommitId ? 'Reloaded commit but commit id was null' : 'Reloaded commit id is the same as current')
+    if (!latestCommitId) {
+      fail('Reloaded commit but commit id was null')
+
+      return
+    }
+
+    if (latestCommitId === this.documentState.getProperty('currentCommitId')) {
+      fail(
+        `Reloaded commit id ${latestCommitId} is the same as current commit id: ${this.documentState.getProperty('currentCommitId')}`,
+      )
 
       return
     }
