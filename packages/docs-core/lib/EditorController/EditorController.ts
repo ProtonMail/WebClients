@@ -268,7 +268,7 @@ export class EditorController implements EditorControllerInterface {
 
     let shouldLock = true
 
-    if (this.documentState.getProperty('realtimeIsParticipantLimitReached') && !role.isAdmin()) {
+    if (this.documentState.getProperty('realtimeIsParticipantLimitReached') && !role.isAdminOrOwner()) {
       this.logger.info('Max users. Changing editing locked to true')
     } else if (!role.canEdit()) {
       this.logger.info('Locking editor due to lack of editing permissions')
