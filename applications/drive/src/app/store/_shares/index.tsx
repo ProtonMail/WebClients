@@ -1,5 +1,4 @@
 import { SharesKeysProvider } from './useSharesKeys';
-import { SharesStateProvider } from './useSharesState';
 
 export * from './interface';
 export * from './shareUrl';
@@ -18,9 +17,5 @@ export { useDrivePublicSharingFlags } from './useDrivePublicSharingFlags';
 export { useContextShareHandler } from './useContextShareHandler';
 
 export function SharesProvider({ children }: { children: React.ReactNode }) {
-    return (
-        <SharesStateProvider>
-            <SharesKeysProvider>{children}</SharesKeysProvider>
-        </SharesStateProvider>
-    );
+    return <SharesKeysProvider>{children}</SharesKeysProvider>;
 }

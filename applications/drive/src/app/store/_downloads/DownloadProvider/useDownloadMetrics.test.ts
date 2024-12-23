@@ -4,7 +4,6 @@ import metrics from '@proton/metrics';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { ShareType } from '../../_shares';
-import useSharesState from '../../_shares/useSharesState';
 import type { Download } from './interface';
 import { getErrorCategory, useDownloadMetrics } from './useDownloadMetrics';
 
@@ -23,12 +22,28 @@ jest.mock('@proton/metrics', () => ({
     },
 }));
 
-jest.mock('../../_shares/useSharesState', () => ({
-    __esModule: true,
-    default: jest.fn(),
-}));
+const mockGetShare = jest.fn();
 
-const mockUseShareState = jest.mocked(useSharesState);
+jest.mock('../../../zustand/share/shares.store', () => {
+    const actual = jest.requireActual('../../../zustand/share/shares.store');
+
+    return {
+        ...actual,
+        useSharesStore: (cb: any) => {
+            const state = actual.useSharesStore();
+            if (cb) {
+                return cb({
+                    ...state,
+                    getShare: mockGetShare,
+                });
+            }
+            return {
+                ...state,
+                getShare: mockGetShare,
+            };
+        },
+    };
+});
 
 describe('getErrorCategory', () => {
     const testCases = [
@@ -71,11 +86,8 @@ describe('getErrorCategory', () => {
 });
 
 describe('useDownloadMetrics', () => {
-    const mockGetShare = jest.fn();
-
     beforeEach(() => {
         jest.clearAllMocks();
-        mockUseShareState.mockReturnValue({ getShare: mockGetShare } as any);
     });
 
     it('should observe downloads and update metrics for successful downloads', () => {
