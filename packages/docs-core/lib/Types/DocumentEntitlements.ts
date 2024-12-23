@@ -45,7 +45,7 @@ export function rawPermissionToRole(permission: SHARE_MEMBER_PERMISSIONS): Docum
   }
 
   if (getIsOwner(permission)) {
-    return new DocumentRole('Admin')
+    return new DocumentRole('Owner')
   }
 
   return new DocumentRole('Viewer')
