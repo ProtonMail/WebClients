@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import type { ReactNode } from 'react'
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import type { CommentEditorHandle } from './CommentEditor'
 import { CommentEditor } from './CommentEditor'
 import clsx from '@proton/utils/clsx'
 import { isMac } from '@proton/shared/lib/helpers/browser'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 
 export function CommentsComposer({
   autoFocus,
@@ -18,7 +19,7 @@ export function CommentsComposer({
   className,
   buttons,
 }: {
-  onSubmit: (content: string) => void
+  onSubmit: (content: string) => Promise<boolean>
   placeholder: string
   autoFocus?: boolean
   initialContent?: string
@@ -33,20 +34,24 @@ export function CommentsComposer({
   const composerRef = useRef<HTMLDivElement>(null)
   const commentEditorRef = useRef<CommentEditorHandle>(null)
 
-  const submitComment = () => {
+  const submitComment = useCallback(async () => {
     if (canSubmit) {
       const editorHandle = commentEditorRef.current
       if (!editorHandle) {
         return
       }
+
       const content = editorHandle.getStringifiedJSON()
       if (!content) {
         return
       }
-      onSubmit(content)
-      editorHandle.clearEditor()
+
+      const success = await onSubmit(content)
+      if (success) {
+        editorHandle.clearEditor()
+      }
     }
-  }
+  }, [canSubmit, onSubmit])
 
   return (
     <div
@@ -72,7 +77,7 @@ export function CommentsComposer({
           const hasModifier = isMac() ? event.metaKey : event.ctrlKey
           if (hasModifier && canSubmit) {
             event.preventDefault()
-            submitComment()
+            submitComment().catch(reportErrorToSentry)
             return true
           }
           return false
