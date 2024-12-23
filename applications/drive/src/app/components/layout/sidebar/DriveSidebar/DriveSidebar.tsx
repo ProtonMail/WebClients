@@ -6,13 +6,14 @@ import SidebarStorageUpsell from '@proton/components/containers/payments/subscri
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { APPS } from '@proton/shared/lib/constants';
+import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
 import type { ShareWithKey } from '../../../../store';
-import { useDefaultShare } from '../../../../store';
 import { useCreateDevice } from '../../../../store/_shares/useCreateDevice';
 import { useCreatePhotos } from '../../../../store/_shares/useCreatePhotos';
+import { useDefaultShare } from '../../../../store/_shares/useDefaultShare';
 import { logPerformanceMarker } from '../../../../utils/performance';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
@@ -28,7 +29,6 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
     const { activeShareId } = useActiveShare();
     const { getDefaultShare } = useDefaultShare();
     const debug = useDebug();
-
     const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
     const { createDevice } = useCreateDevice();
     const { createPhotosShare } = useCreatePhotos();
@@ -36,8 +36,15 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
     useEffectOnce(() => {
         logPerformanceMarker('drive_performance_clicktonavrendered_histogram');
     });
+
     useEffect(() => {
-        void getDefaultShare().then(setDefaultShare);
+        void getDefaultShare().then((share) => {
+            // This prevents some re-rendering
+            // There is no point re-setting the default share if it has not changed
+            if (!isEqual(defaultShare, share)) {
+                setDefaultShare(share);
+            }
+        });
     }, [getDefaultShare]);
 
     const displayContactsInHeader = useDisplayContactsWidget();
@@ -48,6 +55,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
      * unless the opposite is decided.
      */
     const shares = defaultShare ? [defaultShare] : [];
+
     return (
         <Sidebar
             app={APPS.PROTONDRIVE}

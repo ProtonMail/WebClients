@@ -18,9 +18,7 @@ interface Props {
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const { showPhotosSection } = usePhotos();
-
     const { invitations } = useInvitationsView();
-
     const [sidebarWidth, setSidebarWidth] = useState('100%');
     const setSidebarLevel = (level: number) => {
         const extraWidth = Math.floor(level / 7) * 50;
