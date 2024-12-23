@@ -34,7 +34,7 @@ export function TrashedDocumentModal({
           : c('Info').t`"${documentTitle}" is in trash and will stay there until you delete it permanently.`}
       </ModalTwoContent>
       <ModalTwoFooter>
-        {documentState.getProperty('userRole').isAdmin() && (
+        {documentState.getProperty('userRole').canTrash() && (
           <>
             {didTrashDocInCurrentSession ? (
               <>
