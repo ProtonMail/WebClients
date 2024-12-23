@@ -21,6 +21,7 @@ import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin'
 import clsx from '@proton/utils/clsx'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
+import { EditorReadonlyPlugin } from '../EditorReadonlyPlugin'
 
 type Props = {
   initialContent: string | undefined
@@ -31,6 +32,7 @@ type Props = {
   onKeyDown?: KeyboardEventHandler
   onBlur?: FocusEventHandler
   placeholder?: JSX.Element
+  disabled?: boolean
 }
 
 export type CommentEditorHandle = {
@@ -41,7 +43,10 @@ export type CommentEditorHandle = {
 
 // eslint-disable-next-line react/display-name
 export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
-  ({ initialContent, className, autoFocus, onTextContentChange, onKeyDown, onEnter, onBlur, placeholder }, ref) => {
+  (
+    { initialContent, className, autoFocus, onTextContentChange, onKeyDown, onEnter, onBlur, placeholder, disabled },
+    ref,
+  ) => {
     const [editor, setEditor] = useState<LexicalEditor | null>(null)
 
     useEffect(() => {
@@ -97,8 +102,9 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
         <RichTextPlugin
           contentEditable={
             <ContentEditable
-              className={clsx('focus:shadow-none focus:outline-none', className)}
+              className={clsx('focus:shadow-none focus:outline-none', disabled && 'opacity-50', className)}
               onKeyDown={onKeyDown}
+              disabled={disabled}
               onBlur={onBlur}
             />
           }
@@ -113,6 +119,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
             })
           }}
         />
+        <EditorReadonlyPlugin editingEnabled={!disabled} />
         <EditorRefPlugin editorRef={setEditor} />
         {autoFocus && <AutoFocusPlugin />}
         <HistoryPlugin />
