@@ -40,18 +40,19 @@ jest.mock('../_utils/useDebouncedFunction', () => {
     return useDebouncedFunction;
 });
 
-jest.mock('./useSharesState', () => {
-    const useSharesState = () => {
-        return {
-            setShares: () => {},
-            getDefaultShareId: mockGetDefaultShareId,
-        };
-    };
+jest.mock('../../zustand/share/shares.store', () => {
+    const actual = jest.requireActual('../../zustand/share/shares.store');
 
     return {
-        ...jest.requireActual('./useSharesState'),
-        __esModule: true,
-        default: useSharesState,
+        ...actual,
+        useSharesStore: () => {
+            const state = actual.useSharesStore();
+            return {
+                ...state,
+                setShares: () => {},
+                getDefaultShareId: mockGetDefaultShareId,
+            };
+        },
     };
 });
 

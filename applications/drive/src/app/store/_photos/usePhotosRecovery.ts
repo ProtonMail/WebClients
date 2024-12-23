@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useSharesStore } from '../../zustand/share/shares.store';
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
 import type { Share, ShareWithKey } from '../_shares';
-import useSharesState from '../_shares/useSharesState';
 import { waitFor } from '../_utils';
 import { usePhotos } from './PhotosProvider';
 
@@ -27,22 +28,22 @@ const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = () => {
     const { shareId, linkId, deletePhotosShare } = usePhotos();
-    const { getRestoredPhotosShares } = useSharesState();
+    const getRestoredPhotosShares = useSharesStore((state) => state.getRestoredPhotosShares);
     const { getCachedChildren, getCachedTrashed, loadChildren } = useLinksListing();
     const { moveLinks } = useLinksActions();
     const [countOfUnrecoveredLinksLeft, setCountOfUnrecoveredLinksLeft] = useState<number>(0);
     const [countOfFailedLinks, setCountOfFailedLinks] = useState<number>(0);
     const [state, setState] = useState<RECOVERY_STATE>('READY');
     const [restoredData, setRestoredData] = useState<{ links: DecryptedLink[]; shareId: string }[]>([]);
-    const [needsRecovery, setNeedsRecovery] = useState<boolean>(false);
-
     const [restoredShares, setRestoredShares] = useState<Share[] | ShareWithKey[] | undefined>();
 
     useEffect(() => {
         const shares = getRestoredPhotosShares();
-        setRestoredShares(shares);
-        setNeedsRecovery(!!shares?.length);
+        if (!isEqual(shares, restoredShares)) {
+            setRestoredShares(shares);
+        }
     }, [getRestoredPhotosShares]);
+
     const handleFailed = (e: Error) => {
         setState('FAILED');
         setItem(RECOVERY_STATE_CACHE_KEY, 'failed');
@@ -222,7 +223,7 @@ export const usePhotosRecovery = () => {
         }
     }, [state]);
     return {
-        needsRecovery,
+        needsRecovery: !!restoredShares?.length,
         countOfUnrecoveredLinksLeft,
         countOfFailedLinks,
         start,
