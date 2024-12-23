@@ -33,6 +33,7 @@ export function CommentsComposer({
   const [hasNewLines, setHasNewLines] = useState(false)
   const composerRef = useRef<HTMLDivElement>(null)
   const commentEditorRef = useRef<CommentEditorHandle>(null)
+  const [submissionInProgress, setSubmissionInProgress] = useState(false)
 
   const submitComment = useCallback(async () => {
     if (canSubmit) {
@@ -46,10 +47,13 @@ export function CommentsComposer({
         return
       }
 
+      setSubmissionInProgress(true)
+
       const success = await onSubmit(content)
       if (success) {
         editorHandle.clearEditor()
       }
+      setSubmissionInProgress(false)
     }
   }, [canSubmit, onSubmit])
 
@@ -69,6 +73,7 @@ export function CommentsComposer({
     >
       <CommentEditor
         autoFocus={autoFocus}
+        disabled={submissionInProgress}
         className="min-w-0 flex-grow border border-[transparent] text-sm caret-[--primary]"
         onEnter={(event) => {
           if (!event) {
@@ -104,7 +109,9 @@ export function CommentsComposer({
         ref={commentEditorRef}
         initialContent={initialContent}
       />
-      <div className="ml-auto flex items-center gap-1.5">{buttons(canSubmit, submitComment)}</div>
+      {!submissionInProgress && (
+        <div className="ml-auto flex items-center gap-1.5">{buttons(canSubmit, submitComment)}</div>
+      )}
     </div>
   )
 }
