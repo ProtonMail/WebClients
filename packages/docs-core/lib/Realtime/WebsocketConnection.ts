@@ -40,7 +40,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private didReceiveReadyMessageFromRTS = false
   closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
 
-  lastCommitId: string | undefined = undefined
   realtimeToken: { token: string; commitId: string | undefined; initializedAt: number } | undefined = undefined
 
   constructor(
@@ -55,8 +54,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     window.addEventListener('online', this.handleWindowCameOnlineEvent)
     document.addEventListener('visibilitychange', this.handleVisibilityChangeEvent)
 
-    this.lastCommitId = this.documentState.getProperty('currentCommitId')
-
     /**
      * On app initialization, the load document flow will fetch a conenction token for us so it can do it much earlier
      * then the constructor of this function is called. If it's available we use it. Otherwise, the token will be fetched
@@ -64,13 +61,16 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
      */
     this.documentState.subscribeToProperty('realtimeConnectionToken', (token) => {
       if (token) {
-        this.realtimeToken = { token, commitId: this.lastCommitId, initializedAt: Date.now() }
+        this.realtimeToken = {
+          token,
+          commitId: this.documentState.getProperty('currentCommitId'),
+          initializedAt: Date.now(),
+        }
       }
     })
 
-    this.documentState.subscribeToProperty('currentCommitId', (commitId) => {
-      if (commitId !== this.lastCommitId) {
-        this.lastCommitId = commitId
+    this.documentState.subscribeToProperty('currentCommitId', (commitId, oldCommitId) => {
+      if (commitId !== oldCommitId) {
         this.clearTokenCache()
       }
     })
@@ -188,9 +188,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
+    const currentCommitId = this.documentState.getProperty('currentCommitId')
 
-    this.logger.info(`Fetching realtime token from network using commit id ${this.lastCommitId}`)
-    const urlAndTokenResult = await this._fetchRealtimeToken.execute(nodeMeta, this.lastCommitId)
+    this.logger.info(`Fetching realtime token from network using commit id ${currentCommitId}`)
+    const urlAndTokenResult = await this._fetchRealtimeToken.execute(nodeMeta, currentCommitId)
 
     if (!urlAndTokenResult.isFailed()) {
       this.documentState.setProperty(
