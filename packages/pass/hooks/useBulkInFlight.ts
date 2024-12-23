@@ -13,18 +13,16 @@ import {
 import { selectRequestInFlight, selectRequestInFlightData } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO, ItemRevision, MaybeNull, SelectedItem } from '@proton/pass/types';
 
-type BulkRequestDTO = { selected: BulkSelectionDTO };
-
 const bulkSelectionContains =
     ({ shareId, itemId }: SelectedItem) =>
-    (dto: MaybeNull<BulkRequestDTO>) =>
-        dto?.selected?.[shareId]?.[itemId] ?? false;
+    (dto: MaybeNull<BulkSelectionDTO>) =>
+        dto?.[shareId]?.[itemId] ?? false;
 
 export const useBulkInFlight = (item: ItemRevision) => {
-    const bulkMoveDTO = useSelector(selectRequestInFlightData<BulkRequestDTO>(itemsBulkMoveRequest()));
-    const bulkTrashDTO = useSelector(selectRequestInFlightData<BulkRequestDTO>(itemsBulkTrashRequest()));
-    const bulkRestoreDTO = useSelector(selectRequestInFlightData<BulkRequestDTO>(itemsBulkRestoreRequest()));
-    const bulkRemoveDTO = useSelector(selectRequestInFlightData<BulkRequestDTO>(itemsBulkDeleteRequest()));
+    const bulkMoveDTO = useSelector(selectRequestInFlightData<BulkSelectionDTO>(itemsBulkMoveRequest()));
+    const bulkTrashDTO = useSelector(selectRequestInFlightData<BulkSelectionDTO>(itemsBulkTrashRequest()));
+    const bulkRestoreDTO = useSelector(selectRequestInFlightData<BulkSelectionDTO>(itemsBulkRestoreRequest()));
+    const bulkRemoveDTO = useSelector(selectRequestInFlightData<BulkSelectionDTO>(itemsBulkDeleteRequest()));
 
     const trashed = isTrashed(item);
     const trashEmptyInFlight = useSelector(selectRequestInFlight(trashEmptyRequest())) && trashed;
