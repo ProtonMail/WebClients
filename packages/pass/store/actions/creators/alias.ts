@@ -3,15 +3,8 @@ import { c } from 'ttag';
 
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import {
-    aliasDetailsRequest,
-    aliasOptionsRequest,
-    intKey,
-    selectedItemKey,
-    withKey,
-} from '@proton/pass/store/actions/requests';
+import { aliasDetailsRequest, intKey, selectedItemKey, withKey } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
@@ -47,32 +40,17 @@ import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import identity from '@proton/utils/identity';
 
-export const getAliasOptionsIntent = createAction(
-    'alias::options::get::intent',
-    (
-        payload: { shareId: string },
-        callback?: ActionCallback<ReturnType<typeof getAliasOptionsSuccess> | ReturnType<typeof getAliasOptionsFailure>>
-    ) =>
-        pipe(
-            withRequest({ status: 'start', id: aliasOptionsRequest(payload.shareId) }),
-            withCallback(callback)
-        )({ payload })
-);
-
-export const getAliasOptionsSuccess = createAction(
-    'alias::options::get::success',
-    withRequestSuccess((payload: { options: AliasOptions }) => withCache({ payload }))
-);
-
-export const getAliasOptionsFailure = createAction(
-    'alias::options::get::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({ type: 'error', text: c('Error').t`Requesting alias options failed`, error })({
-            payload: {},
-            error,
-        })
-    )
-);
+export const requestAliasOptions = requestActionsFactory<ShareId, AliasOptions>('alias::options::get')({
+    key: identity,
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Requesting alias options failed`,
+                error,
+            })({ payload, error }),
+    },
+});
 
 export const getAliasDetailsIntent = createAction(
     'alias::details::get::intent',
