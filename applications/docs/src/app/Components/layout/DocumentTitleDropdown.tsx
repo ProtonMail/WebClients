@@ -233,7 +233,7 @@ const DocumentTitleDropdown = ({
         }}
       >
         <DropdownMenu>
-          {authenticatedController && documentState.getProperty('userRole').isAdmin() && (
+          {authenticatedController && documentState.getProperty('userRole').canRename() && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
@@ -362,7 +362,7 @@ const DocumentTitleDropdown = ({
               </DropdownMenu>
             </SimpleDropdown>
           )}
-          {documentState.getProperty('userRole').isAdmin() && (
+          {documentState.getProperty('userRole').canTrash() && (
             <DropdownMenuButton
               disabled={trashState === 'trashing' || trashState === 'trashed'}
               data-testid="dropdown-trash"
