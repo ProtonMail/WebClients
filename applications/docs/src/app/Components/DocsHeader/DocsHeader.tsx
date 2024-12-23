@@ -75,7 +75,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
           <>
             <DocumentActiveUsers className="mr-2 hidden md:flex" />
 
-            {documentState.getProperty('userRole').isAdmin() && (
+            {documentState.getProperty('userRole').canShare() && (
               <Button
                 shape="ghost"
                 className="flex flex-nowrap items-center gap-2 head-max-849:!mr-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!px-[0.5em]"
