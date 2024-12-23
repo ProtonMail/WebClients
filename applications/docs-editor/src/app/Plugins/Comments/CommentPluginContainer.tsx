@@ -39,6 +39,9 @@ export default function CommentPlugin({
   const [editor] = useLexicalComposerContext()
   const isEditorEditable = useLexicalEditable()
 
+  /** Top level comment only, not reply */
+  const [currentCommentDraft, setCurrentCommentDraft] = useState<string | undefined>()
+
   const [threads, setThreads] = useState<CommentThreadInterface[]>([])
 
   const activeThreads = useMemo(() => {
@@ -60,10 +63,10 @@ export default function CommentPlugin({
   const [threadToFocus, setThreadToFocus] = useState<string | null>(null)
 
   useEffect(() => {
-    if (!isEditorEditable) {
+    if (!isEditorEditable && !currentCommentDraft) {
       setCommentInputSelection(undefined)
     }
-  }, [isEditorEditable])
+  }, [isEditorEditable, currentCommentDraft])
 
   const cancelAddComment = useCallback(() => {
     editor.update(() => {
@@ -322,6 +325,7 @@ export default function CommentPlugin({
         showConfirmModal,
         commentInputSelection,
         cancelAddComment,
+        setCurrentCommentDraft,
       }}
     >
       {confirmModal}
