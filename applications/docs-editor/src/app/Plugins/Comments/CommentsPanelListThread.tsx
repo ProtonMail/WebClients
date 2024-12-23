@@ -262,8 +262,9 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Reply...`}
             data-testid="reply-in-thread-input"
-            onSubmit={(content) => {
-              controller.createComment(content, thread.id).catch(reportErrorToSentry)
+            onSubmit={async (content) => {
+              const comment = await controller.createComment(content, thread.id)
+              return !!comment
             }}
             onTextContentChange={(textContent) => {
               if (textContent.length > 0) {
