@@ -291,10 +291,13 @@ export function CommentsPanelListComment({
             initialContent={comment.content}
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Edit comment...`}
-            onSubmit={(content) => {
-              controller.editComment(thread.id, comment.id, content).catch(reportErrorToSentry)
-              setIsEditing(false)
-              void controller.stoppedTypingInThread(thread.id)
+            onSubmit={async (content) => {
+              const success = await controller.editComment(thread.id, comment.id, content)
+              if (success) {
+                setIsEditing(false)
+                void controller.stoppedTypingInThread(thread.id)
+              }
+              return success
             }}
             onTextContentChange={(textContent) => {
               if (textContent.length > 0) {
