@@ -5,8 +5,6 @@ import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { itemCreationFailure, itemCreationIntent, itemCreationSuccess } from '@proton/pass/store/actions';
-import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
-import { requestInvalidate } from '@proton/pass/store/request/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -39,7 +37,6 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
 
         const itemCreationSuccessAction = itemCreationSuccess({ optimisticId, shareId, item });
         yield put(itemCreationSuccessAction);
-        yield isAlias && put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] })
@@ -73,7 +70,6 @@ function* withAliasCreationWorker(
         const aliasItem: ItemRevision = yield parseItemRevision(shareId, encryptedAliasItem);
 
         yield put(itemCreationSuccess({ optimisticId, shareId, item: loginItem, alias: aliasItem }));
-        yield put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] })

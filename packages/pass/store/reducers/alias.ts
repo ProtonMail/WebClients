@@ -3,9 +3,9 @@ import type { Reducer } from 'redux';
 import {
     aliasDetailsSync,
     getAliasDetailsSuccess,
-    getAliasOptionsSuccess,
     itemCreationIntent,
     itemEditIntent,
+    requestAliasOptions,
 } from '@proton/pass/store/actions';
 import type { AliasDetails, Maybe, MaybeNull } from '@proton/pass/types';
 import type { AliasOptions } from '@proton/pass/types/data/alias';
@@ -21,8 +21,8 @@ export type AliasState = {
 const getInitialState = (): AliasState => ({ aliasOptions: null, aliasDetails: {} });
 
 const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
-    if (getAliasOptionsSuccess.match(action)) {
-        return merge(state, { aliasOptions: { ...action.payload.options } });
+    if (requestAliasOptions.success.match(action)) {
+        return merge(state, { aliasOptions: { ...action.payload } });
     }
 
     if (itemCreationIntent.match(action) && action.payload.type === 'alias') {
