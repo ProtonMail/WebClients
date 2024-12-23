@@ -2,19 +2,12 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady } from 'proton-pass-extension/app/worker/context/inject';
 import { c } from 'ttag';
 
-import {
-    getAliasOptionsIntent,
-    getAliasOptionsSuccess,
-    itemCreationIntent,
-    itemCreationSuccess,
-} from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
+import { itemCreate, requestAliasOptions } from '@proton/pass/store/actions';
 import { selectAliasLimits, selectMostRecentVaultShareID } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 export const createAliasService = () => {
@@ -30,21 +23,14 @@ export const createAliasService = () => {
 
             const { needsUpgrade } = selectAliasLimits(state);
 
-            return new Promise((resolve) => {
-                ctx.service.store.dispatch(
-                    withRevalidate(
-                        getAliasOptionsIntent({ shareId }, (result) => {
-                            if (getAliasOptionsSuccess.match(result)) {
-                                const { options } = result.payload;
-                                return resolve({ ok: true, needsUpgrade, options });
-                            }
-
-                            const error =
-                                result.error instanceof Error ? (getApiErrorMessage(result.error) ?? null) : null;
-                            return resolve({ ok: false, error });
-                        })
-                    )
-                );
+            return ctx.service.store.dispatchAsyncRequest(requestAliasOptions, shareId).then((res) => {
+                switch (res.type) {
+                    case 'success':
+                        return { ok: true, needsUpgrade, options: res.data };
+                    case 'failure':
+                        const error = res.error instanceof Error ? (getApiErrorMessage(res.error) ?? null) : null;
+                        return { ok: false, error };
+                }
             });
         })
     );
@@ -64,7 +50,6 @@ export const createAliasService = () => {
                 type: 'alias',
                 optimisticId,
                 shareId,
-                createTime: getEpoch(),
                 metadata: {
                     name: url,
                     note: obfuscate(c('Placeholder').t`Used on ${url}`),
@@ -80,16 +65,15 @@ export const createAliasService = () => {
                 },
             };
 
-            return new Promise((resolve) =>
-                ctx.service.store.dispatch(
-                    itemCreationIntent(aliasCreationIntent, (result) => {
-                        if (itemCreationSuccess.match(result)) return resolve({ ok: true });
-
-                        const error = result.error instanceof Error ? (getApiErrorMessage(result.error) ?? null) : null;
-                        return resolve({ ok: false, error });
-                    })
-                )
-            );
+            return ctx.service.store.dispatchAsyncRequest(itemCreate, aliasCreationIntent).then((res) => {
+                switch (res.type) {
+                    case 'success':
+                        return { ok: true };
+                    case 'failure':
+                        const error = res.error instanceof Error ? (getApiErrorMessage(res.error) ?? null) : null;
+                        return { ok: false, error };
+                }
+            });
         })
     );
 
