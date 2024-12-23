@@ -1,11 +1,11 @@
+import { useSharesStore } from '../../../zustand/share/shares.store';
 import { integrityMetrics } from '../../_crypto';
 import { getShareTypeString } from '../../_shares';
-import useSharesState from '../../_shares/useSharesState';
 import { useIsPaid } from '../../_user';
 import type { LinkDownload } from '../interface';
 
 export default function useDownloadDecryptionIssue() {
-    const { getShare } = useSharesState();
+    const getShare = useSharesStore((state) => state.getShare);
     const isPaid = useIsPaid();
 
     const handleDecryptionIssue = (link: LinkDownload): void => {

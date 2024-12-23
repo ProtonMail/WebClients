@@ -13,13 +13,26 @@ import useUploadMetrics, { getErrorCategory, getFailedUploadMetadata, getShareTy
 jest.mock('@proton/metrics');
 
 const mockGetShare = jest.fn();
-jest.mock('../../_shares/useSharesState', () => {
-    const useSharesState = () => {
-        return {
-            getShare: mockGetShare,
-        };
+
+jest.mock('../../../zustand/share/shares.store', () => {
+    const actual = jest.requireActual('../../../zustand/share/shares.store');
+
+    return {
+        ...actual,
+        useSharesStore: (cb: any) => {
+            const state = actual.useSharesStore();
+            if (cb) {
+                return cb({
+                    ...state,
+                    getShare: mockGetShare,
+                });
+            }
+            return {
+                ...state,
+                getShare: mockGetShare,
+            };
+        },
     };
-    return useSharesState;
 });
 
 const mockFailedUploadMetadata = (numberOfErrors: number, size: number = 10000) => ({
