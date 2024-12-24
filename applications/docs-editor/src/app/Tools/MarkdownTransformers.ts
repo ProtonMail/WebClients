@@ -6,6 +6,7 @@ import {
   ELEMENT_TRANSFORMERS,
   TEXT_FORMAT_TRANSFORMERS,
   TEXT_MATCH_TRANSFORMERS,
+  MULTILINE_ELEMENT_TRANSFORMERS,
 } from '@lexical/markdown'
 import {
   $createHorizontalRuleNode,
@@ -203,5 +204,6 @@ export const MarkdownTransformers = [
   ...ELEMENT_TRANSFORMERS,
   ...TEXT_FORMAT_TRANSFORMERS,
   ...TEXT_MATCH_TRANSFORMERS,
+  ...MULTILINE_ELEMENT_TRANSFORMERS,
   HorizontalRule,
 ]
