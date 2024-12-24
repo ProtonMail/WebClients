@@ -1,11 +1,9 @@
 import type { FC, MouseEventHandler, ReactNode } from 'react';
 import { useCallback, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms';
 import { type IconName, useNotifications } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -16,9 +14,6 @@ import { AccountPath } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { useOfflineSupported } from '@proton/pass/hooks/useOfflineSupported';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 type MenuAction = {
@@ -26,7 +21,6 @@ type MenuAction = {
     key: string;
     label: string;
     subMenu?: ReactNode;
-    signaled?: boolean;
     onClick?: MouseEventHandler;
 };
 
@@ -37,9 +31,6 @@ export const MenuActions: FC = () => {
     const authService = useAuthService();
     const orgEnabled = useOrganization()?.settings.enabled ?? false;
     const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
-    const plan = useSelector(selectPassPlan);
-    const offlineEnabled = useSelector(selectOfflineEnabled);
-    const offlineSignaled = useOfflineSupported() && !offlineEnabled && isPaidPlan(plan);
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
@@ -52,7 +43,7 @@ export const MenuActions: FC = () => {
 
     const settings = useMemo<MenuAction[]>(
         () => [
-            { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel', signaled: offlineSignaled },
+            { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel' },
             ...(aliasesEnabled ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' } as const] : []),
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
@@ -71,18 +62,12 @@ export const MenuActions: FC = () => {
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
             { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: onLogout },
         ],
-        [offlineSignaled, orgEnabled, aliasesEnabled]
+        [orgEnabled, aliasesEnabled]
     );
 
     return (
         <>
-            <QuickActionsDropdown
-                icon="cog-wheel"
-                size="small"
-                shape="ghost"
-                className="shrink-0"
-                signaled={offlineSignaled}
-            >
+            <QuickActionsDropdown icon="cog-wheel" size="small" shape="ghost" className="shrink-0">
                 {settings.map((setting) => (
                     <DropdownMenuButton
                         key={setting.key}
@@ -93,7 +78,6 @@ export const MenuActions: FC = () => {
                         label={
                             <div className="flex items-center gap-3">
                                 <span className="flex-1 flex-nowrap">{setting.label}</span>
-                                {setting.signaled && <NotificationDot className="w-2 h-2" />}
                             </div>
                         }
                     />
