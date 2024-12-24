@@ -1,6 +1,3 @@
-import { useApi } from '@proton/components';
-import { UnleashFlagProvider } from '@proton/unleash';
-
 import { PublicSessionProvider } from '../store/_api';
 import { DevicesProvider } from '../store/_devices';
 import { DownloadsProvider } from '../store/_downloads';
@@ -32,17 +29,13 @@ export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) 
 };
 
 export const PublicDriveStoreProvider = ({ children }: { children: React.ReactNode }) => {
-    const api = useApi();
-
     return (
-        <UnleashFlagProvider api={api}>
-            <VolumesProvider>
-                <SharesProvider>
-                    <PublicSessionProvider>
-                        <PublicLinksProvider>{children}</PublicLinksProvider>
-                    </PublicSessionProvider>
-                </SharesProvider>
-            </VolumesProvider>
-        </UnleashFlagProvider>
+        <VolumesProvider>
+            <SharesProvider>
+                <PublicSessionProvider>
+                    <PublicLinksProvider>{children}</PublicLinksProvider>
+                </PublicSessionProvider>
+            </SharesProvider>
+        </VolumesProvider>
     );
 };
