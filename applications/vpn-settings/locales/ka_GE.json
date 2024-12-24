@@ -864,23 +864,6 @@
         "გაითიშება ყველა რაუტერი და კლიენტი, რომელიც ამ სერტიფიკატს იყენებს."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "იმუშავეთ ინტერნეტში კონფიდენციალურად და დაბლოკეთ რეკლამა"
-      ],
-      "Keep your schedule private": [
-        "შეინარჩუნეთ თქვენი განრიგი კონფიდენციალურად"
-      ],
-      "Protect your passwords and identity": [
-        "დაიცავით თქვენი პაროლები და იდენტიფიკაცია"
-      ],
-      "Safeguard your files and photos": [
-        "დაიცავით თქვენი ფაილები და სურათები"
-      ],
-      "Secure your communications": [
-        "დაიცავით თქვენი კომუნიკაცია"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
@@ -2685,9 +2668,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
       ],
-      "Please enter a valid entity ID URL": [
-        "შეიყვანეთ სწორი ობიექტის ID-ის ბმული"
-      ],
       "Please generate keys before you try to change your password": [
         "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ],
@@ -2708,9 +2688,6 @@
       ],
       "Please upload a square logo": [
         "ატვირთეთ ოთხკუთხედი ლოგო"
-      ],
-      "Please upload an xml file": [
-        "ატვირთეთ XML ფაილი"
       ],
       "Please upload only 1 file": [
         "ატვირთეთ, მხოლოდ, ერთი ფაილი"
@@ -3838,9 +3815,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს URL თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
-      ],
       "Copy the suggested password to clipboard": [
         "ნარჩევი პაროლის მიმოცვლის ბაფერში კოპირება"
       ],
@@ -4014,9 +3988,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "შეიყვანეთ კოდი, რომელიც ${ email }-ზე გამოგიგზავნეთ. თუ შეტყობინებას საფოსტო ყუთში ვერ პოულობთ, სპამშიც ჩაიხედეთ."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "შეიყვანეთ ობიექტის ID **eduGAIN** ორგანიზაციისთვის **${ domain.DomainName }**-სთვის."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "ადმინისტრატორის პრივილეგიების აღსადგენად შეიყვანეთ ორგანიზაციის პაროლი. ${ learnMore }"
@@ -5800,9 +5771,6 @@
         "${ n } ადმინისტრატორის ჩვენება",
         "${ n } ადმინისტრატორის ჩვენება"
       ],
-      "Single sign-on entity ID": [
-        "SSO-ის ერთეულის ID"
-      ],
       "Single sign-on URL": [
         "SSO-ის ბმული"
       ],
@@ -7558,85 +7526,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "ამ გეგმის დატოვება"
-      ],
       "Start using ${ appName }": [
         "${ appName }-ის გამოყენების დაწყება"
-      ],
-      "Upgrade my plan": [
-        "ტარიფის გაუმჯობესება"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "ვისაუბროთ"
-      ],
-      "Limited time offer": [
-        "დროში შეზღუდული შეთავაზება"
-      ],
-      "Recommended": [
-        "რეკომენდებულია"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } თვეში"
-      ],
-      "/month /user": [
-        "/თვე /მომხმარებელი"
-      ],
-      "/month /user, billed annually": [
-        "/თვე /მომხმარებელი, გადახდით წელიწადში ერთხელ"
-      ],
-      "/month /user, billed biennially": [
-        "/თვე /მომხმარებელი, გადახდით ორ წელიწადში ერთხელ"
-      ],
-      "Creating your account": [
-        "თქვენი ანგარიშის შექმნა"
-      ],
-      "Current plan": [
-        "მიმდინარე ტარიფი"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "შეიყვანეთ საჩვენებლი სახელი **${ username }**-სთვის. ეს ისაა, რასაც თქვენი მომხმარებლები დაინახავენ, როცა თქვენ მათ წვდომებს შეცვლით, ან მონაცემებს გაუზიარებთ."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან პაროლების მმართველთან!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან VPN სერვისთან!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ ${ BRAND_NAME }-ის ყველა ფასიანი სერვისი!"
-      ],
-      "Free forever": [
-        "სამუდამოდ უფასო"
-      ],
-      "Get in touch with our sales team": [
-        "დაუკავშირდით ჩვენი გაყიდვების გუნდს"
-      ],
-      "Includes:": [
-        "შეიცავს:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }-ის გაშვება"
-      ],
-      "per month": [
-        "თვეში"
-      ],
-      "per month, billed annually": [
-        "თვეში, გადახდა წლიურად"
-      ],
-      "per month, billed every month": [
-        "თვეში, გადაიხდით ყოველ-თვე"
-      ],
-      "per month, billed every two years": [
-        "ყოველთვე, გადაიხდით 2 წელიწადში ერთხელ"
-      ],
-      "Preparing your Recovery Kit": [
-        "თქვენი აღგენის ნაკრების მომზადება"
-      ],
       "Secure vault and link sharing": [
         "დაცული საცავი და ბმულის გაზიარება"
       ],
@@ -7650,23 +7544,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება",
         "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
-      ],
-      "Setting up your organization": [
-        "ორგანიზაციის მორგება"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }-ში შესვლა"
-      ],
-      "Updating your account": [
-        "თქვენი ანგარიშის განახლება"
-      ],
-      "Verifying your payment": [
-        "თქვენი გადახდის შემოწმება"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "ყველა ${ BRAND_NAME } Plus-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10726,9 +10603,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
-      ],
       "Device information such as operating system": [
         "მოწყობილობის ინფორმაცია, როგორიცაა ოპერაციული სისტემა"
       ],
@@ -11115,6 +10989,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში",
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში"
+      ],
+      "servers": [
+        "სერვერი"
       ]
     },
     "vpn_2024: renew": {

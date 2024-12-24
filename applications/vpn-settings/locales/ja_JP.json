@@ -860,23 +860,6 @@
         "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "広告をブロックしプライベートにウェブを閲覧します"
-      ],
-      "Keep your schedule private": [
-        "予定をプライベートに保ちます"
-      ],
-      "Protect your passwords and identity": [
-        "パスワードや認証情報を保護します"
-      ],
-      "Safeguard your files and photos": [
-        "ファイルや写真を保護します"
-      ],
-      "Secure your communications": [
-        "コミュニケーションを保護します"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "メールの生産性を新しいレベルに。${ BRAND_NAME }Scribeがメールの作成、返信、校正をお手伝いします。"
@@ -2689,9 +2672,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
       ],
-      "Please enter a valid entity ID URL": [
-        "有効なエンティティID URLを入力してください"
-      ],
       "Please generate keys before you try to change your password": [
         "パスワードを変更する前に鍵を生成してください"
       ],
@@ -2712,9 +2692,6 @@
       ],
       "Please upload a square logo": [
         "正方形のロゴをアップロードしてください。"
-      ],
-      "Please upload an xml file": [
-        "XMLファイルをアップロードしてください"
       ],
       "Please upload only 1 file": [
         "ファイルを 1 つだけアップロードしてください"
@@ -3826,9 +3803,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "この URL をコピーして、アイデンティティ プロバイダーの ACS (Assertion Consumer Service) URL フィールドに貼り付けます。"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "この URL をコピーして、アイデンティティ プロバイダーのエンティティ ID フィールドに貼り付けます。"
-      ],
       "Copy the suggested password to clipboard": [
         "提案されたパスワードをクリップボードにコピーする"
       ],
@@ -3999,9 +3973,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } に送信したコードを入力してください。受信トレイにメールがない場合、迷惑メールフォルダーを確認してください。"
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }**に、**eduGAIN**のエンティティIDを入力してください。"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "組織のパスワードを入力して管理者権限を取り戻します。${ learnMore }"
@@ -5776,9 +5747,6 @@
       "Show ${ n } administrator": [
         "${ n }人の管理者を表示"
       ],
-      "Single sign-on entity ID": [
-        "シングル サインオン エンティティ ID"
-      ],
       "Single sign-on URL": [
         "シングルサインオン URL"
       ],
@@ -7509,85 +7477,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "このプランを維持してください"
-      ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
-      ],
-      "Upgrade my plan": [
-        "プランのアップグレード"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "話しましょう"
-      ],
-      "Limited time offer": [
-        "期間限定オファー"
-      ],
-      "Recommended": [
-        "おすすめ"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }/月あたり"
-      ],
-      "/month /user": [
-        "/月 /ユーザー"
-      ],
-      "/month /user, billed annually": [
-        "/月 /ユーザー、毎年請求されます"
-      ],
-      "/month /user, billed biennially": [
-        "/月 /ユーザー、隔年請求"
-      ],
-      "Creating your account": [
-        "アカウントの作成中"
-      ],
-      "Current plan": [
-        "現在のプラン"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "**${ username }** の表示名を入力します。 これは、ユーザーの権限を変更したり、ユーザーとデータを共有したりするときに表示されます。"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム パスワード マネージャーにアクセスできるようになります。"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム VPN サービスにアクセスできます。"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**月額わずか ${ relativePrice }** を追加するだけで、すべてのプレミアム ${ BRAND_NAME } サービスにアクセスできるようになります。"
-      ],
-      "Free forever": [
-        "永久無料"
-      ],
-      "Get in touch with our sales team": [
-        "当社の営業チームにお問い合わせください"
-      ],
-      "Includes:": [
-        "含まれるもの:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を起動しています"
-      ],
-      "per month": [
-        "月あたり"
-      ],
-      "per month, billed annually": [
-        "月払い、年払い"
-      ],
-      "per month, billed every month": [
-        "月額、毎月請求"
-      ],
-      "per month, billed every two years": [
-        "月額、2年ごとに請求"
-      ],
-      "Preparing your Recovery Kit": [
-        "回復キットを準備中"
-      ],
       "Secure vault and link sharing": [
         "安全な保管庫とリンク共有"
       ],
@@ -7599,23 +7493,6 @@
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
         "安全な保管庫共有 (${ n } 個の保管庫) とリンクの共有"
-      ],
-      "Setting up your organization": [
-        "組織の設定"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } にログインしています"
-      ],
-      "Updating your account": [
-        "アカウントの更新中"
-      ],
-      "Verifying your payment": [
-        "お支払いの確認"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "すべての ${ BRAND_NAME } Plus サービス。${ br }1 つの簡単なサブスクリプション。"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10644,9 +10521,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "この URL をコピーして、ACS(Assertion Consumer Service)の URL フィールドに貼り付けてください。"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "このURLをコピーして、ユーザー情報プロバイダーのエンティティIDフィールドに貼り付けてください"
-      ],
       "Device information such as operating system": [
         "オペレーティングシステムなどのデバイス情報"
       ],
@@ -11029,6 +10903,9 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ],
+      "servers": [
+        "サーバー"
       ]
     },
     "vpn_2024: renew": {

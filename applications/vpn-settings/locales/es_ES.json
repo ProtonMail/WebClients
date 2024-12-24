@@ -864,23 +864,6 @@
         "Esto desconectará todos los routers y clientes que utilicen este certificado."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Navega en la web de manera privada y bloquea anuncios"
-      ],
-      "Keep your schedule private": [
-        "Mantén privada tu agenda"
-      ],
-      "Protect your passwords and identity": [
-        "Protege tus contraseñas y tu identidad"
-      ],
-      "Safeguard your files and photos": [
-        "Protege tus archivos y fotos"
-      ],
-      "Secure your communications": [
-        "Protege tus comunicaciones"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
@@ -2609,6 +2592,9 @@
       "Impossible to rename the gateway": [
         "No es posible cambiar el nombre de la puerta de enlace."
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtalo de nuevo."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "El tipo de archivo es incorrecto. Carga un archivo en formato PNG o JPEG."
       ],
@@ -2699,7 +2685,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
-      "Please enter a valid entity ID URL": [
+      "Please enter a valid Entity ID URL": [
         "Introduce una URL de identificación de entidad válida."
       ],
       "Please generate keys before you try to change your password": [
@@ -2723,7 +2709,7 @@
       "Please upload a square logo": [
         "Cargar un logotipo cuadrado"
       ],
-      "Please upload an xml file": [
+      "Please upload an XML file": [
         "Carga un archivo XML."
       ],
       "Please upload only 1 file": [
@@ -3867,7 +3853,7 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copia y pega esta URL en el campo URL ACS (Assertion Consumer Service) de tu proveedor de identidad."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copia y pega esta URL en el campo ID de entidad de tu proveedor de identidad."
       ],
       "Copy the suggested password to clipboard": [
@@ -4048,7 +4034,7 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Introduce el código que se ha enviado a ${ email }. Si no encuentras el mensaje en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Ingresa el ID de entidad de una organización **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
@@ -4637,6 +4623,9 @@
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envía correos electrónicos para invitar a tus miembros a proteger sus cuentas con autenticación de dos factores (2FA)."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
       ],
       "Server is currently down": [
         "El servidor no está actualmente disponible."
@@ -5256,6 +5245,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tu próxima fecha de facturación es el ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Ponte en contacto con el servicio de asistencia si necesitas un cambio de plan inmediato."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Tu organización utiliza el inicio de sesión único (SSO). Presiona iniciar sesión para continuar con tu proveedor de SSO."
       ],
@@ -5267,6 +5259,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tu suscripción está gestionada por Mozilla. Contacta con el soporte de Mozilla."
@@ -5845,7 +5843,7 @@
         "Mostrar ${ n } administrador",
         "Mostrar ${ n } administradores"
       ],
-      "Single sign-on entity ID": [
+      "Single sign-on Entity ID": [
         "ID de entidad de inicio de sesión único"
       ],
       "Single sign-on URL": [
@@ -7609,85 +7607,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Mantener este plan"
-      ],
       "Start using ${ appName }": [
         "Comienza a utilizar ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Mejorar mi plan"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Habla con nosotros"
-      ],
-      "Limited time offer": [
-        "Oferta por tiempo limitado"
-      ],
-      "Recommended": [
-        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+${ relativePrice } por mes"
-      ],
-      "/month /user": [
-        "/mes /usuario"
-      ],
-      "/month /user, billed annually": [
-        "/mes /usuario, facturación anual"
-      ],
-      "/month /user, billed biennially": [
-        "/mes /usuario, facturación bienal"
-      ],
-      "Creating your account": [
-        "Creando tu cuenta"
-      ],
-      "Current plan": [
-        "Plan actual"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Ingresa un nombre a mostrar para **${ username }**. Esto es lo que verán tus usuarios cuando cambies sus permisos o compartas información con ellos."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrás acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrás acceder al servicio VPN premium de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrás acceder a todos los servicios de ${ BRAND_NAME } premium!"
-      ],
-      "Free forever": [
-        "Gratis para siempre"
-      ],
-      "Get in touch with our sales team": [
-        "Ponte en contacto con nuestro equipo de ventas"
-      ],
-      "Includes:": [
-        "Incluye:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Iniciando ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "por mes"
-      ],
-      "per month, billed annually": [
-        "al mes con facturación anual"
-      ],
-      "per month, billed every month": [
-        "al mes con facturación mensual"
-      ],
-      "per month, billed every two years": [
-        "al mes con facturación cada dos años"
-      ],
-      "Preparing your Recovery Kit": [
-        "Preparando tu kit de recuperación"
-      ],
       "Secure vault and link sharing": [
         "Intercambio seguro de caja fuerte y enlaces"
       ],
@@ -7701,23 +7625,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
         "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
-      ],
-      "Setting up your organization": [
-        "Configurando tu organización"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Iniciando sesión en ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Actualizando tu cuenta"
-      ],
-      "Verifying your payment": [
-        "Verificando tu pago"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Todos los servicios Plus de ${ BRAND_NAME }.${ br }Suscripción sencilla."
       ]
     },
     "pass_signup_2024: Info": {
@@ -9005,6 +8912,9 @@
       "Enter your backup password": [
         "Ingresa tu contraseña de respaldo."
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Para que este usuario pueda iniciar sesión, asegúrate de que existe en tu proveedor de identidad."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Por tu seguridad, se ha cerrado la sesión activa en todos tus otros dispositivos. Antes de acceder a tu cuenta, necesitarás introducir tu contraseña de respaldo."
       ],
@@ -9070,6 +8980,9 @@
       ],
       "Single sign-on removed": [
         "Se ha quitado el inicio de sesión único."
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "El usuario ${ name } tiene ahora una cuenta de inicio de sesión único (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Esto cerrará la sesión del usuario en sus otros dispositivos y tendrá que crear una nueva contraseña de respaldo."
@@ -10676,6 +10589,9 @@
       "User": [
         "Usuario"
       ],
+      "User converted to SSO": [
+        "El usuario ha pasado a la autenticación única (SSO)."
+      ],
       "Users": [
         "Usuarios"
       ],
@@ -10801,7 +10717,7 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copia y pega esta URL en el campo URL ACS (Assertion Consumer Service) de tu proveedor de identidad."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copia y pega esta URL en el campo ID de entidad de tu proveedor de identidad."
       ],
       "Device information such as operating system": [
@@ -11193,6 +11109,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ],
+      "servers": [
+        "servidores"
       ]
     },
     "vpn_2024: renew": {

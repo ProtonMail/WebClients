@@ -872,23 +872,6 @@
         "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Переглядайте інтернет приватно та блокуйте рекламу"
-      ],
-      "Keep your schedule private": [
-        "Збережіть приватність свого розкладу"
-      ],
-      "Protect your passwords and identity": [
-        "Захистіть свої паролі та особисті дані"
-      ],
-      "Safeguard your files and photos": [
-        "Захистіть свої файли та фотографії"
-      ],
-      "Secure your communications": [
-        "Захистіть свої комунікації"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Вдоскональте рівень продуктивності електронної пошти. Дозвольте ${ BRAND_NAME } Scribe допомогти вам писати, відповідати й рецензувати ваші листи."
@@ -2341,6 +2324,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Ви дійсно хочете видалити цю групу?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Зверніть увагу, що якщо ви видалите групу ${ displayGroupName } (з адресою ${ displayGroupAddressEmail }), ви більше не зможете отримувати електронні листи на її адресу."
       ]
     },
     "Delinquent modal title": {
@@ -2716,9 +2702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Будь ласка, увімкніть підтримку декількох користувачів, перш ніж додавати користувачів до вашої організації."
       ],
-      "Please enter a valid entity ID URL": [
-        "Будь ласка, введіть правильний URL ID сутності"
-      ],
       "Please generate keys before you try to change your password": [
         "Будь ласка, згенеруйте ключі перед зміною пароля"
       ],
@@ -2739,9 +2722,6 @@
       ],
       "Please upload a square logo": [
         "Будь ласка, вивантажте квадратний логотип"
-      ],
-      "Please upload an xml file": [
-        "Вивантажте файл у форматі xml"
       ],
       "Please upload only 1 file": [
         "Вивантажуйте лише 1 файл"
@@ -2835,6 +2815,11 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "У вашому обліковому записі чи вашій організації є прострочений рахунок. Будь ласка, сплатіть усі рахунки."
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Введіть адресу електронної пошти"
       ]
     },
     "Error importing users": {
@@ -3122,6 +3107,9 @@
       ],
       "An error occurred, please try again": [
         "Сталася помилка, спробуйте ще раз"
+      ],
+      "Family name updated": [
+        "Ім'я сім'ї оновлено"
       ],
       "Member updated": [
         "Учасника оновлено"
@@ -3932,9 +3920,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопіюйте і вставте цю URL-адресу в поле ACS (Assertion Consumer Service) вашого провайдера ідентифікації"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопіюйте і вставте цю URL-адресу в поле Entity ID вашого провайдера ідентифікації"
-      ],
       "Copy the suggested password to clipboard": [
         "Скопіюйте запропонований пароль до буфера обміну"
       ],
@@ -4114,9 +4099,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Введіть код, який було надіслано на ${ email }. Якщо ви не можете знайти повідомлення у вхідних, перевірте теку зі спамом."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Введіть ідентифікатор організації **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введіть пароль організації, щоб відновити права адміністратора. ${ learnMore }"
@@ -5420,6 +5402,11 @@
         "Тільки перегляд"
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Недійсна адреса електронної пошти"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Відхилено"
@@ -5429,6 +5416,9 @@
       ],
       "Pending": [
         "У черзі"
+      ],
+      "Sending invite...": [
+        "Надсилання запрошення..."
       ]
     },
     "Invoice state display as badge": {
@@ -5946,9 +5936,6 @@
         "Показати ${ n } адміністраторів",
         "Показати ${ n } адміністраторів"
       ],
-      "Single sign-on entity ID": [
-        "Entity ID послуги єдиного входу (SSO)"
-      ],
       "Single sign-on URL": [
         "URL-адреса послуги єдиного входу (SSO)"
       ],
@@ -6089,6 +6076,11 @@
     "Label, credit card": {
       "ZIP code": [
         "Поштовий індекс"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Виберіть постачальника ідентифікації, щоб почати"
       ]
     },
     "Link": {
@@ -7647,8 +7639,14 @@
       ]
     },
     "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
       "Group members": [
         "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
       ]
     },
     "Organization capacity error": {
@@ -7724,6 +7722,9 @@
       ]
     },
     "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } вашу адресу електронної пошти ${ email }, щоб встановити ідентифікатор організації."
+      ],
       "Current organization identity": [
         "Тотожність поточної організації"
       ],
@@ -7758,85 +7759,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Залишити цей план"
-      ],
       "Start using ${ appName }": [
         "Почати використовувати ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Покращити тарифний план"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Поговорімо"
-      ],
-      "Limited time offer": [
-        "Обмежена пропозиція"
-      ],
-      "Recommended": [
-        "Рекомендовано"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } на місяць"
-      ],
-      "/month /user": [
-        "/місяць /користувач"
-      ],
-      "/month /user, billed annually": [
-        "/місяць /користувач, сплачується щороку"
-      ],
-      "/month /user, billed biennially": [
-        "/місяць /користувач, сплачується кожні два роки"
-      ],
-      "Creating your account": [
-        "Створення облікового запису"
-      ],
-      "Current plan": [
-        "Поточний план"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Введіть ім'я для показу **${ username }**. Це те, що побачать ваші користувачі, коли ви зміните їхні дозволи або надасте їм доступ до даних."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального менеджера паролів ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального сервісу VPN від ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміумсервісів ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Безплатно назавжди"
-      ],
-      "Get in touch with our sales team": [
-        "Зв'яжіться з нашим відділом продажів"
-      ],
-      "Includes:": [
-        "Включає:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Запуск ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "на місяць"
-      ],
-      "per month, billed annually": [
-        "на місяць, оплачується щороку"
-      ],
-      "per month, billed every month": [
-        "на місяць, рахунок виставляється щомісяця"
-      ],
-      "per month, billed every two years": [
-        "на місяць, рахунок виставляється кожні два роки"
-      ],
-      "Preparing your Recovery Kit": [
-        "Підготовка комплекту відновлення"
-      ],
       "Secure vault and link sharing": [
         "Безпечний спільний доступ до сховища та обмін посиланнями"
       ],
@@ -7854,23 +7781,6 @@
         "Безпечний спільний доступ до ${ n } сховищ та обмін посиланнями",
         "Безпечний спільний доступ до ${ n } сховищ та обмін посиланнями",
         "Безпечний спільний доступ до ${ n } сховищ та обмін посиланнями"
-      ],
-      "Setting up your organization": [
-        "Налаштування вашої організації"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Вхід у ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Оновлення облікового запису"
-      ],
-      "Verifying your payment": [
-        "Триває перевірка платежу"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Всі сервіси ${ BRAND_NAME } Plus.${ br }Одна проста передплата."
       ]
     },
     "pass_signup_2024: Info": {
@@ -8391,6 +8301,9 @@
       "Details": [
         "Подробиці"
       ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Введіть адресу електронної пошти користувача, надану вашим постачальником ідентифікаційних даних для **${ domainName }**"
+      ],
       "Test in progress...": [
         "Триває перевірка..."
       ],
@@ -8452,6 +8365,12 @@
       ],
       "For security reasons, the token is hidden": [
         "З міркувань безпеки токен приховано"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Перейдіть до свого постачальника ідентифікаційних даних, скопіюйте та вставте наведені нижче дані та завершіть налаштування SCIM для ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Перейдіть до свого постачальника ідентифікаційних даних, скопіюйте та вставте токен нижче і знову увімкніть SCIM для ${ appName }."
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Якщо ви втратили SCIM-токен, можете згенерувати новий, але пам'ятайте, що після цього потрібно буде оновити налаштування вашого провайдера ідентифікації."
@@ -9974,6 +9893,11 @@
         "Термін дії"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Перегляньте деталі сеансу VPN для вашої організації."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Обліковий запис видалено. Вихід із системи..."
@@ -11047,9 +10971,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопіюйте і вставте цю URL-адресу в поле ACS (Assertion Consumer Service) вашого провайдера ідентифікації"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопіюйте і вставте цю URL-адресу в поле Entity ID вашого провайдера ідентифікації"
-      ],
       "Device information such as operating system": [
         "Інформація про пристрій, наприклад, операційна система"
       ],
@@ -11118,6 +11039,21 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
       ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
+      ],
+      "Group membership paused": [
+        "Членство в групі призупинено"
+      ],
+      "Sending member invitation": [
+        "Надсилання запрошення учаснику"
+      ],
+      "User declined invitation": [
+        "Користувач відхилив запрошення"
+      ],
       "Waiting for user to accept the invitation": [
         "Очікування на прийняття користувачем запрошення"
       ]
@@ -11136,6 +11072,12 @@
       ],
       "Failed": [
         "Невдало"
+      ],
+      "Needs attention": [
+        "Потребує уваги"
+      ],
+      "Refunded": [
+        "Повернено"
       ],
       "Success": [
         "Успіх"
@@ -11192,8 +11134,23 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Очікування на доступ адміністратора:** Ми надіслали запит цьому користувачеві, щоб дозволити будь-якому адміністратору керувати його обліковим записом."
+      ],
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Адміністратори не мають доступу до даних приватних користувачів і не можуть скинути їхній пароль."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Зробивши користувача приватним, ви не зможете допомогти йому відновити доступ до своїх даних або облікового запису."
+      ],
       "Cancel request": [
         "Скасувати запит"
+      ],
+      "Cancel request to access user data?": [
+        "Скасувати запит на доступ до даних користувача?"
+      ],
+      "Confirm all": [
+        "Підтвердити все"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Не вдалося автоматично увімкнути доступ адміністратора для користувача ${ n }, оскільки його ключі шифрування було оновлено:",
@@ -11201,8 +11158,50 @@
         "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:",
         "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:"
       ],
+      "Could not enable administrator access: ${ error }": [
+        "Не вдалося увімкнути доступ адміністратора: ${ error }"
+      ],
+      "Enable manually": [
+        "Увімкнути вручну"
+      ],
+      "Keep request": [
+        "Залишити запит"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Після того, як користувач дасть згоду, ви зможете допомогти йому відновити доступ до облікового запису або керувати своїми даними."
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ організації має бути активований для запиту доступу до даних"
+      ],
+      "Private user": [
+        "Приватний користувач"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Запит на керування обліковим записом надіслано, очікується схвалення користувача"
+      ],
+      "Request user permission for data access": [
+        "Запитати дозвіл користувача на доступ до даних"
+      ],
       "Revoke access": [
         "Відкликати доступ"
+      ],
+      "Revoke administrator access?": [
+        "Відкликати доступ адміністратора?"
+      ],
+      "Send request": [
+        "Відправити запит"
+      ],
+      "The user must have an address to request data access": [
+        "Користувач повинен мати адресу для запиту доступу до даних"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Це скасує очікуваний запит на доступ адміністратора до даних користувача або скидання пароля."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Це призведе до відкликання дозволу адміністратора на керування обліковим записом цього користувача."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Щоб продовжити, вам потрібно запросити у користувача дозвіл на доступ до його даних або скинути пароль."
       ]
     },
     "upsell panel": {
@@ -11375,6 +11374,9 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ],
+      "servers": [
+        "сервери"
       ]
     },
     "vpn_2024: renew": {

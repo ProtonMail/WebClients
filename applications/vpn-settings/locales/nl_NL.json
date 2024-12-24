@@ -864,23 +864,6 @@
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surf privé op het internet en blokkeer advertenties"
-      ],
-      "Keep your schedule private": [
-        "Houd uw planning privé"
-      ],
-      "Protect your passwords and identity": [
-        "Bescherm uw wachtwoorden en identiteit"
-      ],
-      "Safeguard your files and photos": [
-        "Bescherm uw bestanden en foto's"
-      ],
-      "Secure your communications": [
-        "Beveilig uw communicatie"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
@@ -2699,9 +2682,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
       ],
-      "Please enter a valid entity ID URL": [
-        "Voer een geldige entiteit ID URL in"
-      ],
       "Please generate keys before you try to change your password": [
         "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ],
@@ -2722,9 +2702,6 @@
       ],
       "Please upload a square logo": [
         "Upload een vierkant logo"
-      ],
-      "Please upload an xml file": [
-        "Upload een xml-bestand"
       ],
       "Please upload only 1 file": [
         "Upload slechts 1 bestand"
@@ -3864,9 +3841,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identiteitsprovider"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
-      ],
       "Copy the suggested password to clipboard": [
         "Kopieer het voorgestelde wachtwoord naar het klembord"
       ],
@@ -4040,9 +4014,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Voer de code in die is verzonden naar ${ email }. Als u het bericht niet kan vinden in uw inbox, kijk dan in de map 'Spam'."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Voer de entiteit-ID van een **eduGAIN** organisatie in voor **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Voer het wachtwoord van de organisatie in om de beheerdersrechten te herstellen. ${ learnMore }"
@@ -5838,9 +5809,6 @@
         "Toon ${ n } beheerder",
         "Toon ${ n } beheerders"
       ],
-      "Single sign-on entity ID": [
-        "Single sign-on entiteit-ID"
-      ],
       "Single sign-on URL": [
         "URL voor enkele-teken"
       ],
@@ -7602,85 +7570,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Dit abonnement behouden"
-      ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Mijn abonnement upgraden"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Laten we praten!"
-      ],
-      "Limited time offer": [
-        "Tijdelijke aanbieding"
-      ],
-      "Recommended": [
-        "Aanbevolen"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per maand"
-      ],
-      "/month /user": [
-        "/maand /gebruiker"
-      ],
-      "/month /user, billed annually": [
-        "/maand /gebruiker, jaarlijks gefactureerd"
-      ],
-      "/month /user, billed biennially": [
-        "/maand /gebruiker, tweejaarlijks gefactureerd"
-      ],
-      "Creating your account": [
-        "Account aan het aanmaken"
-      ],
-      "Current plan": [
-        "Huidig abonnement"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Voer een weergavenaam in voor **${ username }**. Dit is wat uw gebruikers zullen zien wanneer u hun rechten wijzigt of gegevens met hen deelt."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium wachtwoord manager!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium VPN service!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Voor slechts **${ relativePrice } per maand** extra, krijgt u toegang tot alle premium ${ BRAND_NAME }-diensten!"
-      ],
-      "Free forever": [
-        "Voor altijd gratis"
-      ],
-      "Get in touch with our sales team": [
-        "Neem contact op met ons verkoopteam"
-      ],
-      "Includes:": [
-        "Omvat:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } opstarten"
-      ],
-      "per month": [
-        "maandelijks"
-      ],
-      "per month, billed annually": [
-        "per maand, jaarlijks gefactureerd"
-      ],
-      "per month, billed every month": [
-        "per maand, maandelijks gefactureerd"
-      ],
-      "per month, billed every two years": [
-        "per maand, tweejaarlijks gefactureerd"
-      ],
-      "Preparing your Recovery Kit": [
-        "Uw herstelkit voorbereiden"
-      ],
       "Secure vault and link sharing": [
         "Veilige kluis en het delen van links"
       ],
@@ -7694,23 +7588,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Veilig delen van kluis (${ n } kluis) en het delen van links",
         "Veilig delen van kluis (${ n } kluizen) en het delen van links"
-      ],
-      "Setting up your organization": [
-        "Uw organisatie wordt aangemaakt"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Inloggen bij ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Uw account wordt bijgewerkt"
-      ],
-      "Verifying your payment": [
-        "Verifiëren van uw betaling"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10794,9 +10671,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identiteitsprovider"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
-      ],
       "Device information such as operating system": [
         "Toestelinformatie zoals operating system"
       ],
@@ -11186,6 +11060,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "servers": [
+        "servers"
       ]
     },
     "vpn_2024: renew": {

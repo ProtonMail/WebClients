@@ -872,23 +872,6 @@
         "Это приведет к отключению всех маршрутизаторов и клиентов, использующих данный сертификат."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Просматривайте веб-страницы в приватном режиме и блокируйте рекламу"
-      ],
-      "Keep your schedule private": [
-        "Сохраняйте конфиденциальность своего расписания"
-      ],
-      "Protect your passwords and identity": [
-        "Защитите свои пароли и личные данные"
-      ],
-      "Safeguard your files and photos": [
-        "Обеспечьте сохранность файлов и фотографий"
-      ],
-      "Secure your communications": [
-        "Держите письма в надежном месте"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
@@ -2713,9 +2696,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
       ],
-      "Please enter a valid entity ID URL": [
-        "Пожалуйста, введите правильный URL идентификатора сущности"
-      ],
       "Please generate keys before you try to change your password": [
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ],
@@ -2736,9 +2716,6 @@
       ],
       "Please upload a square logo": [
         "Пожалуйста, загрузите квадратный логотип"
-      ],
-      "Please upload an xml file": [
-        "Загрузите файл xml"
       ],
       "Please upload only 1 file": [
         "Загрузите только 1 файл"
@@ -3928,9 +3905,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопируйте и вставьте этот URL-адрес в поле ID субъекта вашего поставщика идентификационных данных"
-      ],
       "Copy the suggested password to clipboard": [
         "Скопировать предложенный пароль в буфер обмена"
       ],
@@ -4107,9 +4081,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Введите код, который был отправлен на ${ email }. Если вы не нашли письмо в папке \"Входящие\", проверьте папку \"Спам\"."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Введите ID сущности организации **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введите пароль организации для восстановления полномочий администратора. ${ learnMore }"
@@ -5926,9 +5897,6 @@
         "Показать ${ n } администраторов",
         "Показать ${ n } администратора"
       ],
-      "Single sign-on entity ID": [
-        "ID единого входа"
-      ],
       "Single sign-on URL": [
         "URL единого входа"
       ],
@@ -7713,85 +7681,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Сохранить этот тариф"
-      ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Улучшить мой план"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Свяжитесь с нами"
-      ],
-      "Limited time offer": [
-        "Ограниченное предложение"
-      ],
-      "Recommended": [
-        "Рекомендовано"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } в месяц"
-      ],
-      "/month /user": [
-        "в месяц за пользователя"
-      ],
-      "/month /user, billed annually": [
-        "в месяц за пользователя в год"
-      ],
-      "/month /user, billed biennially": [
-        "в месяц за пользователя раз в два года"
-      ],
-      "Creating your account": [
-        "Создание вашего аккаунта"
-      ],
-      "Current plan": [
-        "Текущий тариф"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Введите отображаемое имя для **${ username }**. Его будут видеть ваши пользователи, когда вы будете изменять их права или делиться с ними данными."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Всего за **${ relativePrice } в месяц** вы получаете доступ к платному менеджеру паролей от ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Всего за на **${ relativePrice } в месяц** больше вы получаете доступ к платной службе ${ BRAND_NAME } VPN!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Всего дополнительно за **${ relativePrice } в месяц**, вы получаете доступ ко всем премиальным сервисам ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Бесплатно навсегда"
-      ],
-      "Get in touch with our sales team": [
-        "Свяжитесь с нашим отделом продаж"
-      ],
-      "Includes:": [
-        "Включает:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Запуск ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "в месяц"
-      ],
-      "per month, billed annually": [
-        "в месяц, оплата за год"
-      ],
-      "per month, billed every month": [
-        "в месяц, оплачивается ежемесячно"
-      ],
-      "per month, billed every two years": [
-        "в месяц, оплачивается каждые два года"
-      ],
-      "Preparing your Recovery Kit": [
-        "Подготовка вашего набора для восстановления"
-      ],
       "Secure vault and link sharing": [
         "Защищенное хранилище и обмен ссылками"
       ],
@@ -7809,23 +7703,6 @@
         "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
         "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
         "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
-      ],
-      "Setting up your organization": [
-        "Настройка вашей организации"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Вход в ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Обновление вашего аккаунта"
-      ],
-      "Verifying your payment": [
-        "Подтверждение вашего платежа"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Все сервисы ${ BRAND_NAME } Plus.${ br }Или одна лёгкая подписка."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10989,9 +10866,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопируйте и вставьте этот адрес URL в поле ID субъекта вашего провайдера личных данных"
-      ],
       "Device information such as operating system": [
         "Информация об устройстве, например операционная система"
       ],
@@ -11395,6 +11269,9 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
+      ],
+      "servers": [
+        "серверы"
       ]
     },
     "vpn_2024: renew": {

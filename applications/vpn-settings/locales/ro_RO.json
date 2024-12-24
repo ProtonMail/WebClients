@@ -868,23 +868,6 @@
         "Aceasta va deconecta toate ruterele și clienții care folosesc acest certificat."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Navigați pe web în mod privat și blocați reclamele"
-      ],
-      "Keep your schedule private": [
-        "Păstrați-vă programul privat"
-      ],
-      "Protect your passwords and identity": [
-        "Protejați-vă parolele și identitatea"
-      ],
-      "Safeguard your files and photos": [
-        "Asigurați-vă fișierele și fotografiile"
-      ],
-      "Secure your communications": [
-        "Securizați-vă informațiile"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
@@ -2709,9 +2692,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
       ],
-      "Please enter a valid entity ID URL": [
-        "Introduceți un URL de ID de entitate valid."
-      ],
       "Please generate keys before you try to change your password": [
         "Generați cheile înainte de a vă schimba parola."
       ],
@@ -2732,9 +2712,6 @@
       ],
       "Please upload a square logo": [
         "Încărcați un logo pătrat."
-      ],
-      "Please upload an xml file": [
-        "Încărcați un fișier xml."
       ],
       "Please upload only 1 file": [
         "Încărcați numai un fișier."
@@ -3902,9 +3879,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
-      ],
       "Copy the suggested password to clipboard": [
         "Copiați parola sugerată în memorie."
       ],
@@ -4081,9 +4055,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Introduceți codul de recuperare trimis la ${ email }. Dacă nu găsiți mesajul în mesajele primite, verificați în folderul cu mesaje nedorite."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Introduceți ID-ul entității dintr-o organizație **eduGAIN** pentru **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduceți parola organizației pentru a restaura privilegiile administratorului. ${ learnMore }"
@@ -5903,9 +5874,6 @@
         "Afișare ${ n } administratori",
         "Afișare ${ n } de administratori"
       ],
-      "Single sign-on entity ID": [
-        "ID entitate SSO"
-      ],
       "Single sign-on URL": [
         "URL SSO (autentificare unică)"
       ],
@@ -7722,85 +7690,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Păstrez planul"
-      ],
       "Start using ${ appName }": [
         "Începeți să utilizați ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Modificare plan"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Să discutăm"
-      ],
-      "Limited time offer": [
-        "Ofertă limitată"
-      ],
-      "Recommended": [
-        "Recomandat"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pe lună"
-      ],
-      "/month /user": [
-        "/lună /utilizator"
-      ],
-      "/month /user, billed annually": [
-        "/lună /utizator, facturat anual"
-      ],
-      "/month /user, billed biennially": [
-        "/lună /utizator, facturat la doi ani"
-      ],
-      "Creating your account": [
-        "Se creează contul"
-      ],
-      "Current plan": [
-        "Plan actual"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Introduceți un nume de afișat pentru **${ username }**. Aceasta este ceea ce vor vedea utilizatorii când le schimbați permisiunile sau le partajați date."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la serviciul VPN premium al ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Gratuit întotdeauna"
-      ],
-      "Get in touch with our sales team": [
-        "Luați legătura cu echipa noastră de vânzări"
-      ],
-      "Includes:": [
-        "Include:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Se lansează ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "pe lună"
-      ],
-      "per month, billed annually": [
-        "pe lună, facturat anual"
-      ],
-      "per month, billed every month": [
-        "pe lună, facturat în fiecare lună"
-      ],
-      "per month, billed every two years": [
-        "pe lună, facturat la fiecare doi ani"
-      ],
-      "Preparing your Recovery Kit": [
-        "Se pregătește pachetul de recuperare"
-      ],
       "Secure vault and link sharing": [
         "Partajare sigură seif și legături web"
       ],
@@ -7816,23 +7710,6 @@
         "Partajare securizată seif (${ n } seif) și legături web",
         "Partajare securizată seifuri (${ n } seifuri) și legături web",
         "Partajare securizată seifuri (${ n } de seifuri) și legături web"
-      ],
-      "Setting up your organization": [
-        "Setare organizație"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Se conectează la ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Se actualizează contul"
-      ],
-      "Verifying your payment": [
-        "Verificare plată"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10971,9 +10848,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
-      ],
       "Device information such as operating system": [
         "Informații despre dispozitiv cum ar fi sistemul de operare."
       ],
@@ -11370,6 +11244,9 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "servers": [
+        "servere"
       ]
     },
     "vpn_2024: renew": {
