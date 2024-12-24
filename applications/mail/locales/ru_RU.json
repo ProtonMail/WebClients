@@ -579,9 +579,6 @@
       "Hide toolbar": [
         "Скрыть панель инструментов"
       ],
-      "hide-my-email aliases": [
-        "псевдонимы hide-my-email"
-      ],
       "I like this response": [
         "Мне нравится этот ответ"
       ],
@@ -7088,9 +7085,6 @@
       "Proofread text": [
         "Коррекция текста"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Защитите свою электронную почту от утечки в списки рассылки или спамеров с помощью ${ maskMyEmailButton }."
-      ],
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
       ],
@@ -10083,6 +10077,14 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Оформите Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -10095,14 +10097,6 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Оформите Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
       ]
     },
     "new_plans: tooltip": {

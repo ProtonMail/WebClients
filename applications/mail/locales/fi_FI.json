@@ -573,9 +573,6 @@
       "Hide toolbar": [
         "Piilota työkalurivi"
       ],
-      "hide-my-email aliases": [
-        "Hide-my-email-aliaksilla"
-      ],
       "I like this response": [
         "Pidän tästä vastauksesta"
       ],
@@ -6131,7 +6128,7 @@
         "Sisältö: "
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
+        "Tehosta organisaatiosi brändi-identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
       "Browser not supported": [
         "Selainta ei tueta"
@@ -6891,9 +6888,6 @@
       ],
       "Proofread text": [
         "Oikolue tekstiä"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Suojaa sähköpostiosoitettasi vuodoilta postituslistoille tai roskapostittajille ${ maskMyEmailButton }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
@@ -9737,7 +9731,7 @@
         "Vättämätön suojaus ja turvallinen yhteiskäyttö rajattomalle määrälle käyttäjiä."
       ],
       "For next-level password management and identity protection.": [
-        "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
+        "Edistyneempään salasanojen hallintaan ja identiteetin suojaukseen."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Jos poistat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos luot uuden tilin."
@@ -9791,6 +9785,14 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hanki Mail Plus hintaan ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -9803,14 +9805,6 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hanki Mail Plus hintaan ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
       ]
     },
     "new_plans: tooltip": {

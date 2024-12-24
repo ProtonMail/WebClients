@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "Acerca de los alias de hide-my-email"
+      ],
       "Activate recovery": [
         "Activar recuperación"
       ],
@@ -575,9 +578,6 @@
       ],
       "Hide toolbar": [
         "Ocultar la barra de herramientas"
-      ],
-      "hide-my-email aliases": [
-        "alias de hide-my-email"
       ],
       "I like this response": [
         "Me gusta esta respuesta"
@@ -6915,8 +6915,8 @@
       "Proofread text": [
         "Revisar el texto"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Protege tu correo electrónico de ser filtrado a listas de correo o spammers con ${ maskMyEmailButton }."
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Protege tu correo electrónico de ser filtrado a listas de correo o spammers con alias de hide-my-email."
       ],
       "Public sharing of documents is not yet supported.": [
         "La compartición pública de documentos aún no está disponible."
@@ -7023,6 +7023,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado con el correo electrónico seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -7741,6 +7744,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tu próxima fecha de facturación es el ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Ponte en contacto con el servicio de asistencia si necesitas un cambio de plan inmediato."
+      ],
       "Your password was leaked:": [
         "Se ha filtrado tu contraseña:"
       ],
@@ -7749,6 +7755,12 @@
       ],
       "Your private writing assistant": [
         "Tu asistente de escritura privado"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ]
     },
     "info": {
@@ -9832,6 +9844,14 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Disfruta de Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -9844,14 +9864,6 @@
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Disfruta de Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
       ]
     },
     "new_plans: tooltip": {
