@@ -214,9 +214,6 @@
       "Create": [
         "Crear"
       ],
-      "Create a folder": [
-        "Crea una carpeta"
-      ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
@@ -300,9 +297,6 @@
       "Download (${ count })": [
         "Baixa'n (${ count })"
       ],
-      "Download all": [
-        "Desa tot"
-      ],
       "Download anyway": [
         "Baixa igualment"
       ],
@@ -311,6 +305,12 @@
       ],
       "Download logs": [
         "Descarrega els registres"
+      ],
+      "Download without scanning": [
+        "Descarrega sense escanejar"
+      ],
+      "Download without scanning (${ count })": [
+        "Descarrega sense escanejar (${ count })"
       ],
       "Drive Locked": [
         "Unitat bloquejada"
@@ -459,6 +459,9 @@
       "Learn more": [
         "Més informació"
       ],
+      "Learn more.": [
+        "Més informació."
+      ],
       "Leave": [
         "Surt"
       ],
@@ -569,9 +572,6 @@
       ],
       "Open navigation": [
         "Obre la navegació"
-      ],
-      "Open scan and download info": [
-        "Obre l'escaneig i els detalls de la descàrrega"
       ],
       "Pause all": [
         "Interromp-ho tot"
@@ -710,15 +710,6 @@
       ],
       "Save changes": [
         "Desa els canvis"
-      ],
-      "Scan & Download": [
-        "Escaneja i descarrega"
-      ],
-      "Scan & Download (${ count })": [
-        "Escaneja i descarrega(${ count })"
-      ],
-      "Scan & Download all": [
-        "Escaneja i descarrega-ho tot"
       ],
       "Search": [
         "Cerca"
@@ -4300,9 +4291,6 @@
       "Change your password": [
         "Canvieu la vostra contrasenya"
       ],
-      "Check for malicious files": [
-        "Cercant fitxers maliciosos"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
       ],
@@ -4503,6 +4491,9 @@
       ],
       "Enabling drive search": [
         "S'està activant la cerca de la unitat"
+      ],
+      "Encrypted": [
+        "Xifrat"
       ],
       "Encrypted search is here": [
         "Ha arribat la cerca xifrada"
@@ -5102,6 +5093,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Els pagaments SEPA no estan disponibles en aquests moments. Proveu de nou més tard."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -5298,7 +5292,7 @@
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Per ajudar-vos a protegir-vos, ${ DRIVE_APP_NAME } pot escanejar els vostres fitxers d'una manera que preservi la privadesa i bloquejar fitxers maliciosos. Tanmateix, encara és millor descarregar fitxers només de fonts de confiança."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
@@ -5644,6 +5638,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
       "Your password was leaked:": [
         "S'ha filtrat la vostra contrasenya:"
       ],
@@ -5658,6 +5655,12 @@
       ],
       "Your previous recovery phrase": [
         "La vostra frase de recuperació anterior"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mesos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
       ]
     },
     "info": {
@@ -9892,6 +9895,9 @@
       ],
       "Change password": [
         "Canvia la contrasenya"
+      ],
+      "Check for malicious files": [
+        "Cercant fitxers maliciosos"
       ],
       "Clearing data": [
         "Netejant dades"

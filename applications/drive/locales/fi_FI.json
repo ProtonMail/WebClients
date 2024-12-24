@@ -214,9 +214,6 @@
       "Create": [
         "Luo"
       ],
-      "Create a folder": [
-        "Luo kansio"
-      ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
@@ -299,9 +296,6 @@
       ],
       "Download (${ count })": [
         "Lataa (${ count })"
-      ],
-      "Download all": [
-        "Lataa kaikki"
       ],
       "Download anyway": [
         "Lataa silti"
@@ -564,9 +558,6 @@
       "Open navigation": [
         "Avaa navigaatio"
       ],
-      "Open scan and download info": [
-        "Avaa skannaus ja lataa tiedot"
-      ],
       "Pause all": [
         "Pysäytä kaikki"
       ],
@@ -704,15 +695,6 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
-      ],
-      "Scan & Download": [
-        "Skannaa ja lataa"
-      ],
-      "Scan & Download (${ count })": [
-        "Skannaa ja lataa (${ count })"
-      ],
-      "Scan & Download all": [
-        "Skannaa ja lataa kaikki"
       ],
       "Search": [
         "Hae"
@@ -4264,7 +4246,7 @@
         "Laskutusjakso: ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
+        "Tehosta organisaatiosi brändi-identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -4289,9 +4271,6 @@
       ],
       "Change your password": [
         "Vaihda salasanasi"
-      ],
-      "Check for malicious files": [
-        "Tarkista haitallisten tiedostojen varalta"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
@@ -5257,6 +5236,9 @@
         "Tämä poistaa linkin ja tiedoston tai kansion käyttöoikeuden kaikilta, joilla on tämä linkki.",
         "Tämä poistaa linkin ja tiedoston tai kansion käyttöoikeuden kaikilta, joilla on nämä linkit."
       ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Tämä poistaa synkronoidun laitteen ${ deviceName } ${ DRIVE_APP_NAME }:stä ja kaikki sen tiedot ${ DRIVE_APP_NAME }stä. Omiin tietokoneisiisi lisäämiäsi kansioita ei enää synkronoida."
+      ],
       "This will replace the existing file with the folder": [
         "Tämä korvaa olemassa olevan tiedoston kansiolla"
       ],
@@ -5280,9 +5262,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
-        "Suojellakseen sinua ${ DRIVE_APP_NAME } voi skannata tiedostojasi yksityisyyttä suojaavalla tavalla, ja estää haitallisia tiedostoja. On silti parasta ladata tiedostoja vain luotettavista lähteistä."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Tuodaksesi tapahtumia, luo ensin ${ CALENDAR_APP_NAME }iin kalenteri, johon tapahtumat lisätään."
@@ -7315,7 +7294,7 @@
         "Vättämätön suojaus ja turvallinen yhteiskäyttö rajattomalle määrälle käyttäjiä."
       ],
       "For next-level password management and identity protection.": [
-        "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
+        "Edistyneempään salasanojen hallintaan ja identiteetin suojaukseen."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Jos poistat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos luot uuden tilin."

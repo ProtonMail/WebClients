@@ -910,6 +910,9 @@
       "Reset keys": [
         "ღილაკების ნაგულისხმებ მნიშვნელობაზე დაბრუნება"
       ],
+      "Reset modifications": [
+        "მოდიფიკაციების ჩამოყრა"
+      ],
       "Reset password": [
         "პაროლის თავიდან დაყენება"
       ],
@@ -4682,9 +4685,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
       ],
-      "Please enter a valid entity ID URL": [
-        "შეიყვანეთ სწორი ობიექტის ID-ის ბმული"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
@@ -4712,9 +4712,6 @@
       ],
       "Please upload a square logo": [
         "ატვირთეთ ოთხკუთხედი ლოგო"
-      ],
-      "Please upload an xml file": [
-        "ატვირთეთ XML ფაილი"
       ],
       "Please upload only 1 file": [
         "ატვირთეთ, მხოლოდ, ერთი ფაილი"
@@ -7186,9 +7183,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს URL თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
-      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -7459,9 +7453,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "შეიყვანეთ ელფოსტის მომხმარებელი და პაროლი, საიდანაც შემოტანას აპირებთ."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "შეიყვანეთ ობიექტის ID **eduGAIN** ორგანიზაციისთვის **${ domain.DomainName }**-სთვის."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "ადმინისტრატორის პრივილეგიების აღსადგენად შეიყვანეთ ორგანიზაციის პაროლი. ${ learnMore }"
@@ -8122,6 +8113,9 @@
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Password generator rules successfully saved": [
+        "პაროლების გენერატორის წესები წარმატებით იქნა შენახული"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } ან მეტი სიმბოლოსგან უნდა შედგებოდეს."
       ],
@@ -8403,6 +8397,9 @@
       ],
       "Set recovery phrase": [
         "აღსადგენი ფრაზის დაყენება"
+      ],
+      "Setting successfully saved": [
+        "პარამეტრის შენახვა წარმატებულია"
       ],
       "Setting up your new address...": [
         "თქვენი ახალი მისამართის მორგება..."
@@ -9951,8 +9948,14 @@
       "Allow": [
         "ავტორიზებული მისამართები"
       ],
+      "Allow memorable passwords": [
+        "დამახსოვრებადი პაროლების დაშვება"
+      ],
       "Allow notifications by email": [
         "ელფოსტით გაფრთხილებების ჩართვა"
+      ],
+      "Allow random passwords": [
+        "შემთხვევითი პაროლების დაშვება"
       ],
       "Allow recovery by email": [
         "ელფოსტით აღდგენის ჩართვა"
@@ -10082,6 +10085,9 @@
       ],
       "Calendars": [
         "კალენდრები"
+      ],
+      "Capitalize words": [
+        "დიდი ასოებით წერა"
       ],
       "Card details": [
         "ბარათის დეტალები"
@@ -10488,6 +10494,12 @@
       "Mark as": [
         "დანიშვნა, როგორც"
       ],
+      "Maximum number of characters": [
+        "სიმბოლოების მაქსიმალური რაოდენობა"
+      ],
+      "Maximum number of words": [
+        "სიტყვების მაქსიმალური რაოდენობა"
+      ],
       "Message": [
         "შეტყობინება"
       ],
@@ -10502,6 +10514,12 @@
       ],
       "Method for importing metadata": [
         "მეტამონაცემების შემოტანის მეთოდი"
+      ],
+      "Minimum number of characters": [
+        "სიმბოლოების მინიმალური რაოდენობა"
+      ],
+      "Minimum number of words": [
+        "სიტყვების მინიმალური რაოდენობა"
       ],
       "Moderate NAT": [
         "საშუალო NAT-ი"
@@ -10559,6 +10577,9 @@
       ],
       "Notifications": [
         "შეტყობინებები"
+      ],
+      "Numbers": [
+        "რიცხვები"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 -ის პაროლი"
@@ -10747,9 +10768,6 @@
       "Signature": [
         "ხელმოწერა"
       ],
-      "Single sign-on entity ID": [
-        "SSO-ის ერთეულის ID"
-      ],
       "Single sign-on URL": [
         "SSO-ის ბმული"
       ],
@@ -10767,6 +10785,9 @@
       ],
       "Spam": [
         "სპამი"
+      ],
+      "Special characters": [
+        "სპეცსიმბოლოები"
       ],
       "Starred": [
         "ვარსკვლავიანები"
@@ -10842,6 +10863,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "ატვირთეთ ერთი ან მეტი აღდგენის ფაილი ან დაშიფვრის გასაღები"
+      ],
+      "Uppercase": [
+        "მთავრული"
       ],
       "URL": [
         "URL"
@@ -13193,6 +13217,9 @@
       "Add to existing group": [
         "არსებულ ჯგუფში ჩამატება"
       ],
+      "Allowed (default)": [
+        "დაშვებულია (ნაგულიხმევი)"
+      ],
       "Archive": [
         "არქივი"
       ],
@@ -13250,6 +13277,9 @@
       "Normal": [
         "ნორმალური"
       ],
+      "Not allowed": [
+        "დაშვებული არაა"
+      ],
       "Off": [
         "გამორთ"
       ],
@@ -13276,6 +13306,9 @@
       ],
       "Repeat weekly": [
         "ყოველკვირეულად გამეორება"
+      ],
+      "Required": [
+        "აუცილებელი"
       ],
       "Right to Left": [
         "მარჯვნიდან მარცხნივ"
@@ -17834,6 +17867,9 @@
       "Password": [
         "პაროლი"
       ],
+      "Password generator rules": [
+        "პაროლის გენერატორის წესები"
+      ],
       "Password reset settings": [
         "პაროლის ჩამოყრის მორგება"
       ],
@@ -18398,9 +18434,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
       ],
       "Customize import to reduce the number of folders": [
         "საქაღალდეების რაოდენობის შესამცირებლად მოირგეთ შემოტანის პარამეტრები"
@@ -19012,6 +19045,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში",
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში"
+      ],
+      "servers": [
+        "სერვერი"
       ]
     },
     "vpn_2024: renew": {
@@ -19221,6 +19257,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "შემოტანას თუ გააუქმებთ, მისი გაგრძელება შეუძლებელი იქნება. ${ BRAND_NAME }-მა ყველაფერი, რაც უკვე გააკეთა, თქვენს ანგარიშში შეინახა. მაინც გნებავთ გაუქმება?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "მაქსიმუმი მინიმუმზე ნაკლები ვერ იქნება"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "უნდა იყოს შუალედში ${ minimumNumber } - ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "უნდა იყოს ${ minimumNumber }-ზე მეტი ან ტოლი"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "უნდა იყოს ${ maximumNumber }-ზე ნაკლები ან ტოლი"
       ],
       "Please add at least one recipient.": [
         "დაამატეთ ერთი მიმღები მაინც."
