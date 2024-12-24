@@ -4,6 +4,8 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 
 import locales from '../../locales'
 import { extendStore, setupStore } from '../../ReduxStore/store'
+import { createBrowserHistory } from 'history'
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'
 
 export const bootstrapPublicApp = async ({ config }: { config: ProtonConfig }) => {
   const authentication = bootstrap.createAuthentication({ initialAuth: false })
@@ -11,7 +13,9 @@ export const bootstrapPublicApp = async ({ config }: { config: ProtonConfig }) =
 
   const store = setupStore()
   const api = createApi({ config })
-  extendStore({ config, api, authentication })
+  const history = createBrowserHistory()
+  const unleashClient = bootstrap.createUnleash({ api: getSilentApi(api) })
+  extendStore({ config, api, authentication, history, unleashClient })
 
   const searchParams = new URLSearchParams(location.search)
   await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' })
