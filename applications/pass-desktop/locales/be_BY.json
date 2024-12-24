@@ -738,16 +738,16 @@
         "DKIM ${ WIKIPEDIA_LINK_DKIM } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для прадухілення падробкі электроннай пошты. Настойліва рэкамендуецца наладзіць DKIM, каб паменшыць верагоднасць траплення вашых лістоў у папку са спамам атрымальніка."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
-        "Палітыка DMARC ${ WIKIPEDIA_LINK_DMARC } распрацавана для абароны дамена ад неаўтарызаванага выкарыстання. Яна таксама вядома пад назвай падробка электроннай пошты. Яна пабудавана на аснове SPF і DKIM і дае ўказанні паштоваму серверу, што рабіць, калі ні адзін з гэтых метадаў аўтэнтыфікацыі не праходзіць."
+        "Палітыка DMARC ${ WIKIPEDIA_LINK_DMARC } распрацавана для абароны дамена ад неаўтарызаванага выкарыстання. Яна таксама вядома пад назвай падробка электроннай пошты. Дадзеная тэхналогія пабудавана на аснове SPF і DKIM і дае ўказанні паштоваму серверу, што рабіць, калі ні адзін з гэтых метадаў аўтэнтыфікацыі не праходзіць."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Атрымліваць апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
-        "Калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample }), то вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } як дамен."
+        "Калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample }), то вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } у якасці дамена."
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Калі вы выкарыстоўваеце паддамен (напрыклад, subdomain.domain.com), вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена. Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
+        "Калі вы выкарыстоўваеце паддамен (напрыклад, paddamen.damen.com), вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена. Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
       ],
       "If you are using CloudFlare, please make sure to not select the Proxy option.": [
         "Пераканайцеся, што не выбраны параметр проксі-сервера, калі вы выкарыстоўваеце CloudFlare."

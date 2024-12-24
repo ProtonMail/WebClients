@@ -34,6 +34,12 @@
       "Add current URL": [
         "Додати поточний URL"
       ],
+      "Add custom domain": [
+        "Додати власний домен"
+      ],
+      "Add mailbox": [
+        "Додати поштову скриньку"
+      ],
       "Add more": [
         "Додати ще"
       ],
@@ -61,6 +67,9 @@
       "Back": [
         "Назад"
       ],
+      "Block contact": [
+        "Блокувати контакт"
+      ],
       "Bulk delete items from trash": [
         "Масове видалення елементів зі смітника"
       ],
@@ -81,6 +90,12 @@
       ],
       "Change": [
         "Змінити"
+      ],
+      "Check DNS": [
+        "Перевірити DNS"
+      ],
+      "Check settings": [
+        "Перевірити налаштування"
       ],
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
@@ -106,11 +121,17 @@
       "Confirm access": [
         "Підтвердити доступ"
       ],
+      "Confirm all": [
+        "Підтвердити все"
+      ],
       "Continue": [
         "Продовжити"
       ],
       "Continue offline": [
         "Продовжити в автономному режимі"
+      ],
+      "Copy alias address": [
+        "Копіювати адресу псевдоніма"
       ],
       "Copy and close": [
         "Скопіювати та закрити"
@@ -139,8 +160,14 @@
       "Create card": [
         "Створити картку"
       ],
+      "Create contact": [
+        "Створити контакт"
+      ],
       "Create identity": [
         "Створити ідентичність"
+      ],
+      "Create item": [
+        "Створити елемент"
       ],
       "Create login": [
         "Створити запис входу"
@@ -172,6 +199,12 @@
       "Delete all": [
         "Видалити все"
       ],
+      "Delete it, I will never need it": [
+        "Видалити, мені це ніколи не буде потрібно"
+      ],
+      "Delete mailbox": [
+        "Видалити поштову скриньку"
+      ],
       "Delete password": [
         "Видалити пароль"
       ],
@@ -183,6 +216,15 @@
       ],
       "Deselect": [
         "Прибрати вибір"
+      ],
+      "Disable alias": [
+        "Вимкнути псевдонім"
+      ],
+      "Disable instead": [
+        "Натомість вимкнути"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Вимкніть цей псевдонім, щоб припинити отримувати електронні листи, надіслані на цей псевдонім"
       ],
       "Discard": [
         "Відхилити"
@@ -201,6 +243,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Увімкнути моніторинг Темного Вебу"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Увімкнути цей псевдонім для отримання електронних листів, надісланих на цей псевдонім"
       ],
       "Entire vault": [
         "Все сховище"
@@ -298,6 +343,9 @@
       "Make admin": [
         "Зробити адміністратором"
       ],
+      "Make default": [
+        "Зробити типовою"
+      ],
       "Make editor": [
         "Зробити редактором"
       ],
@@ -318,6 +366,9 @@
       ],
       "Maximum views": [
         "Максимум переглядів"
+      ],
+      "More info": [
+        "Докладніше"
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
@@ -373,8 +424,17 @@
       "Pin item": [
         "Закріпити елемент"
       ],
+      "Please retry": [
+        "Будь ласка, спробуйте ще раз"
+      ],
       "Previous": [
         "Попередній"
+      ],
+      "Re-verify": [
+        "Повторно перевірити"
+      ],
+      "Reactivate now": [
+        "Повторно активувати"
       ],
       "Refresh the page": [
         "Оновити сторінку"
@@ -508,6 +568,24 @@
       "Submitting report...": [
         "Надсилання звіту..."
       ],
+      "Sync alias": [
+        "Синхронізувати псевдонім",
+        "Синхронізувати псевдоніми",
+        "Синхронізувати псевдонімів",
+        "Синхронізувати псевдоніми"
+      ],
+      "Sync aliases": [
+        "Синхронізувати псевдоніми"
+      ],
+      "To mailbox": [
+        "До поштової скриньки"
+      ],
+      "Transfer aliases": [
+        "Перенести псевдоніми"
+      ],
+      "Transfer and delete mailbox": [
+        "Перенести та видалити поштову скриньку"
+      ],
       "Transfer ownership": [
         "Передати право власності"
       ],
@@ -519,6 +597,15 @@
       ],
       "Try for free": [
         "Спробуйте безплатно"
+      ],
+      "Unblock contact": [
+        "Розблокувати контакт"
+      ],
+      "Understood, I will never need it": [
+        "Зрозуміло, я ніколи не потребуватиму цього",
+        "Зрозуміло, я ніколи не потребуватиму цих",
+        "Зрозуміло, я ніколи не потребуватиму цих",
+        "Зрозуміло, я ніколи не потребуватиму цих"
       ],
       "Unlock": [
         "Розблокувати"
@@ -570,6 +657,9 @@
       ],
       "Write us on Twitter": [
         "Напишіть нам у Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Немає вашого менеджера паролів? Попросіть його."
       ]
     },
     "App menu": {
@@ -585,8 +675,14 @@
       "Speech": [
         "Мовлення"
       ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "Почати ${ PASS_APP_NAME } під час входу в систему"
+      ],
       "Toggle developers tools": [
         "Інструменти розробника"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "Видалити ${ PASS_APP_NAME }"
       ]
     },
     "Browser": {
@@ -617,6 +713,15 @@
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2ЕП додає ще один рівень безпеки до ваших входів. ${ PASS_APP_NAME } спрощує 2ЕП, зберігаючи та автоматично заповнюючи ваші 2ЕП-коди."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Додайте наступні DNS-записи CNAME до вашого домену."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Додайте наступний MX DNS-запис до вашого домену. Зверніть увагу, що в кінці цільової адреси стоїть крапка (.). Якщо ваш реєстратор домену не дозволяє цю кінцеву крапку, вилучіть її під час додавання DNS-запису."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Додайте наступний TXT DNS-запис до вашого домену."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псевдонім працює так само, як і адреса електронної пошти, але зменшує кількість спаму і зберігає вашу справжню адресу електронної пошти та особистість прихованою."
       ],
@@ -629,8 +734,23 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Моніторинг Dark Web доступний за платним тарифом. Покращте його для отримання доступу до цієї функції."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } - це метод автентифікації електронної пошти, призначений для уникнення підміни електронних листів. Наполегливо рекомендуємо налаштувати DKIM, щоб зменшити ймовірність потрапляння ваших електронних листів до теки Спам одержувача."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } призначений для захисту домену від несанкціонованого використання, відомого як підміна електронної пошти. Побудована на основі SPF і DKIM, політика DMARC вказує поштовому серверу, який отримує пошту, що робити, якщо жоден з цих методів автентифікації не пройшов."
+      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Отримуйте сповіщення, якщо ваша електронна пошта, пароль або інші персональні дані були виточені."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Якщо ви використовуєте субдомен, наприклад, ${ subdomainExample }, вам потрібно використовувати ${ dmarcExampleSubdomain } як домен."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Якщо ви використовуєте субдомен, наприклад, subdomain.domain.com, вам потрібно використовувати ${ domainKeyExampleSubdomain } як домен. Це означає, що якщо ваш домен mail.domain.com, ви повинні ввести ${ domainKeyExampleMail } як домен."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Якщо ви використовуєте CloudFlare, переконайтеся, що ви не вибрали опцію Проксі."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Тримайте вашу інформацію більш безпечно та приватно разом з даними посібниками та порадами."
@@ -640,6 +760,15 @@
       ],
       "Set up 2FA for more security": [
         "Налаштуйте 2ЕП для більшої безпеки"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Деякі реєстратори DNS можуть вимагати повний шлях до запису, у цьому випадку використовуйте ${ domain } як значення домену."
+      ],
+      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
+        "Деякі реєстратори доменів (Namecheap, CloudFlare тощо) також можуть використовувати @ для кореневого домену."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } - це метод автентифікації електронної пошти, призначений для виявлення підроблених адрес відправників під час доставлення листа. Наполегливо рекомендуємо налаштувати SPF, щоб зменшити ймовірність потрапляння ваших електронних листів до теки Спам одержувача."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases."
@@ -656,6 +785,9 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Цей сервіс пропонує 2ЕП. Увімкніть її для додаткової безпеки облікового запису."
       ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
+        "Щоб перевірити право власності на домен, додайте наступний TXT-запис. Деякі реєстратори доменів (Namecheap, CloudFlare тощо) можуть використовувати @ для кореневого домену."
+      ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Розблокуйте розширені функції безпеки та докладні журнали, щоб захистити свою присутність в мережі."
       ],
@@ -669,18 +801,38 @@
         "Ваша особиста інформація була виточена в результаті витоку даних стороннього сервісу."
       ]
     },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "anything@${ domainDisplay }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не вдалося проаналізувати файл ${ provider }. ${ errorDetail }"
       ],
+      "[Error] an item could not be parsed": [
+        "[Error] не вдалося проаналізувати елемент"
+      ],
+      "A domain ownership must be verified first.": [
+        "Спочатку необхідно підтвердити право власності на домен."
+      ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Псевдонім не вдалося оновити на цей момент. Будь ласка, повторіть спробу пізніше"
+      ],
       "Alias options could not be resolved": [
         "Не вдалося розв'язати параметри псевдоніма"
+      ],
+      "An error occurred while resuming your session": [
+        "Виникла помилка під час відновлення сеансу"
       ],
       "Authentication error": [
         "Помилка автентифікації"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Помилка автентифікації. Підтвердьте ваш пароль ${ BRAND_NAME } для того, щоб продовжити експорт"
+      ],
+      "Biometric authentication failed": [
+        "Біометрична автентифікація не пройшла успішно"
       ],
       "Cannot send invitation at the moment": [
         "Неможливо відправити запрошення на цей момент",
@@ -712,6 +864,9 @@
       "Could not resolve share members": [
         "Не вдалось створити спільний доступ для учасників"
       ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Не вдалося отримати запрошення користувачів для сховища \"${ vaultName }\""
+      ],
       "Could not validate addresses at the moment.": [
         "Не вдалося перевірити адреси на цей час."
       ],
@@ -732,6 +887,9 @@
         "Виявлено ${ errors.length } пошкоджених csv рядки",
         "Виявлено ${ errors.length } пошкоджених csv рядків",
         "Виявлено ${ errors.length } пошкоджених csv рядків"
+      ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Домен не вдалося перевірити. Будь ласка, переконайтеся, що ви додали правильні DNS-записи"
       ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
@@ -760,11 +918,32 @@
       "Failed to add email address": [
         "Помилка під час додавання адреси пошти"
       ],
+      "Failed to block the contact": [
+        "Не вдалося заблокувати контакт"
+      ],
+      "Failed to create domain": [
+        "Не вдалося створити домен"
+      ],
+      "Failed to create new mailbox": [
+        "Не вдалося створити нову поштову скриньку"
+      ],
+      "Failed to create the contact": [
+        "Не вдалося створити контакт"
+      ],
+      "Failed to delete domain": [
+        "Не вдалося видалити домен"
+      ],
       "Failed to delete email address from monitoring": [
         "Помилка під час видалення адреси пошти з відстеження"
       ],
       "Failed to delete selected items": [
         "Не вдалося видалити вибрані елементи"
+      ],
+      "Failed to delete the contact": [
+        "Не вдалося видалити контакт"
+      ],
+      "Failed to delete the mailbox": [
+        "Не вдалося видалити поштову скриньку"
       ],
       "Failed to edit user's access.": [
         "Не вдалося змінити доступ користувача."
@@ -774,6 +953,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Помилка завантаження витоків для цього псевдоніма пошти"
+      ],
+      "Failed to load domain settings.": [
+        "Не вдалося завантажити налаштування домену."
       ],
       "Failed to load item history": [
         "Не вдалося завантажити історії елементів"
@@ -793,6 +975,9 @@
       "Failed to remove user's access.": [
         "Не вдалося видалити доступ користувача."
       ],
+      "Failed to resend verification code": [
+        "Не вдалося повторно надіслати код підтвердження"
+      ],
       "Failed to resend verification for custom email": [
         "Не вдалося повторно надіслати підтвердження для власної адреси пошти"
       ],
@@ -802,14 +987,38 @@
       "Failed to restore items from trash": [
         "Не вдалося відновити елементи з кошика"
       ],
+      "Failed to set default mailbox": [
+        "Не вдалося встановити поштову скриньку за замовчуванням"
+      ],
+      "Failed to sync aliases": [
+        "Не вдалося синхронізувати псевдоніми"
+      ],
       "Failed to transfer this vault's ownership.": [
         "Не вдалося передати володіння сховищем."
       ],
       "Failed to unpin item": [
         "Не вдалося відкріпити елемент"
       ],
+      "Failed to update catch-all setting.": [
+        "Не вдалося оновити налаштування перехоплення."
+      ],
+      "Failed to update default domain": [
+        "Не вдалося оновити домен за замовчуванням"
+      ],
+      "Failed to update domain mailboxes.": [
+        "Не вдалося оновити поштові скриньки домену."
+      ],
+      "Failed to update domain name.": [
+        "Не вдалося оновити доменне ім'я."
+      ],
       "Failed to update monitoring settings": [
         "Помилка оновлення налаштувань відстеження"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Не вдалося оновити налаштування генерації випадкових префіксів."
+      ],
+      "Failed to verify domain": [
+        "Не вдалося перевірити домен"
       ],
       "Failed to verify email address": [
         "Помилка під час перевірки адреси пошти"
@@ -837,6 +1046,9 @@
       ],
       "Importing items failed": [
         "Не вдалося імпортувати елементи"
+      ],
+      "Inactive secure links could not be removed.": [
+        "Неактивні безпечні посилання не можуть бути вилучені."
       ],
       "Invalid password manager": [
         "Недійсний менеджер паролів"
@@ -886,6 +1098,12 @@
       "Restoring trashed items failed": [
         "Не вдалося відновити елементи"
       ],
+      "Secure link could not be created.": [
+        "Не вдалося створити безпечне з'єднання."
+      ],
+      "Secure link could not be opened.": [
+        "Не вдалося відкрити захищене посилання."
+      ],
       "Settings update failed": [
         "Не вдалося оновити налаштування"
       ],
@@ -898,17 +1116,26 @@
       "Something went wrong": [
         "Щось пішло не так"
       ],
+      "Something went wrong. Please sign in again.": [
+        "Щось пішло не так. Будь ласка, увійдіть ще раз."
+      ],
       "The file you are trying to import is empty": [
         "Ви намагаєтеся імпортувати порожній файл"
       ],
       "The session has expired. Please sign in again.": [
         "Термін дії сеансу завершився. Виконайте вхід знову."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Виникла помилка при вилученні захищеного посилання. Будь ласка, спробуйте ще раз через кілька хвилин."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Забагато невдалих спроб. Будь ласка, увійдіть ще раз."
       ],
       "Trashing item failed": [
         "Не вдалося перемістити елемент у смітник"
+      ],
+      "Try reaching out to the link owner.": [
+        "Спробуйте знайти власника посилання."
       ],
       "Unable to generate an OTP code for this item": [
         "Не вдалося створити код OTP для цього елемента"
@@ -1074,6 +1301,18 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Оновлення \"${ payload.item.data.metadata.name }\" було відхилено"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } заблоковано",
+        "${ blockedEmailsCount } заблоковано",
+        "${ blockedEmailsCount } заблоковано",
+        "${ blockedEmailsCount } заблоковано"
+      ],
+      "${ count } invite successfully sent": [
+        "${ count } запрошення успішно відправлено",
+        "${ count } запрошень успішно відправлено",
+        "${ count } запрошень успішно відправлено",
+        "${ count } запрошень успішно відправлено"
+      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } разів",
@@ -1085,6 +1324,15 @@
         "${ count } перегляди",
         "${ count } переглядів",
         "${ count } переглядів"
+      ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } переглядів"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } переслано"
       ],
       "${ memberCount } member": [
         "${ memberCount } учасник",
@@ -1104,6 +1352,15 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } буде відповідати темі вашої системи."
+      ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } згенерує адресу переадресації (також звану зворотним псевдонімом), яку ви можете скопіювати до буфера обміну."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } імпортує лише дані входу, нотатки, кредитні картки та посвідчення особи."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } вимагатиме вашого паролю ${ BRAND_NAME } для доступу до даних в автономному режимі."
       ],
@@ -1112,6 +1369,12 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } успішно ввімкнено"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } надіслано",
+        "${ repliedEmailsCount } надіслано",
+        "${ repliedEmailsCount } надіслано",
+        "${ repliedEmailsCount } надіслано"
       ],
       "${ row.breachCount } breach detected": [
         "Виявлено ${ row.breachCount } витік",
@@ -1122,6 +1385,9 @@
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 днів, щоб спробувати преміум функції задарма. Лише протягом вашого першого тижня ${ BRAND_NAME }."
       ],
+      "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
+        "Контакт створюється для кожної адреси електронної пошти, яка надсилає або отримує електронні листи з ${ aliasEmail }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
       ],
@@ -1131,20 +1397,50 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступу до ${ PASS_APP_NAME } завжди буде потрібен ваш пароль ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Для доступу до ${ PASS_APP_NAME } знадобиться ваш відбиток пальця або PIN-код пристрою."
+      ],
+      "Add your custom email address to monitor:": [
+        "Додайте власну адресу електронної пошти для моніторингу:"
+      ],
       "Admin": [
         "Адміністратор"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Після успішного імпорту даних ви можете видалити файл CSV, що містить ваші паролі, з міркувань безпеки."
       ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Функції управління псевдонімами від SimpleLogin скоро з'являться!"
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Псевдонім успішно вимкнено. Ви більше не будете отримувати електронні листи на адресу ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Псевдонім успішно ввімкнено. Тепер ви можете отримувати електронні листи, надіслані на адресу ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Синхронізація псевдонімів між обліковими записами ${ BRAND_NAME } та SimpleLogin активна."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Псевдоніми в теці Смітник продовжуватимуть пересилати листи. Якщо ви хочете припинити отримувати електронні листи на цю адресу, вимкніть її."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Псевдоніми не синхронізовані (${ aliasCount })"
+      ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Псевдоніми з власними доменами не відстежуються, будь ласка, додайте їх як власну пошту для відстеження."
+      ],
+      "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
+        "Всі псевдоніми, що використовують поштову скриньку ${ emailJSX }, також буде видалено."
       ],
       "All breaches for this address were resolved": [
         "Всі витоки за цією адресою були усунені"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Всі поточні витоки будуть позначені як вирішені. У разі майбутніх витоків даних ви будете повідомлені."
+      ],
+      "All inactive secure links were removed": [
+        "Всі неактивні безпечні посилання були вилучені"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усі елементи успішно переміщені з ${ payload.content.name }"
@@ -1161,20 +1457,38 @@
       "An item previously shared with you was removed": [
         "Елемент, до якого раніше було надано доступ, було видалено"
       ],
+      "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
+        "Ви впевнені, що хочете вилучити ${ emailJSX } зі своїх поштових скриньок?"
+      ],
       "Are you sure you want to remove the link?": [
         "Ви впевнені, що хочете видалити посилання?"
+      ],
+      "Auto-created aliases are automatically owned by the following mailbox(es):": [
+        "Автоматично створені псевдоніми автоматично належать наступним поштовим скринькам:"
       ],
       "Auto-lock successfully disabled.": [
         "Автоблокування успішно вимкнено."
       ],
+      "automatically": [
+        "автоматично"
+      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Перед експортом даних у цьому форматі, відкрийте налаштування Safari -> вкладка «Загальні» -> вимкніть параметр «Відкривати безпечні файли після завантаження». Це запобіжить некоректному розпакуванню Safari експортованого файлу."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Біометричний замок успішно зареєстровано. Використовуйте його для розблокування ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Біометрію буде вимкнено, і її потрібно буде ввімкнути знову."
       ],
       "Breaches detected": [
         "Виявлено витоки"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Введіть ваші чинні паролі в ${ BRAND_NAME }."
+      ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Використовуйте власний домен, і вам не доведеться купувати ще одне рішення для хостингу електронної пошти."
       ],
       "Built in 2FA authenticator": [
         "Створений у 2FA автентифікатор"
@@ -1197,11 +1511,20 @@
       "Change your password": [
         "Змініть свій пароль"
       ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Підтвердьте додатковий пароль, щоб продовжити його вилучення."
+      ],
       "Congratulations, your access has been confirmed": [
         "Вітаємо, ваш доступ підтверджено"
       ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
+      ],
+      "Create contact illustration": [
+        "Створити зображення контакту"
+      ],
+      "Created ${ time }.": [
+        "Створено ${ time }."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV пропонує зручний формат для перегляду ваших даних. However due to its simplicity, some data will not be included (custom fields, passkeys...). Для повного експорту ми рекомендуємо використовувати інший формат."
@@ -1211,6 +1534,9 @@
       ],
       "Decrypting your data": [
         "Розшифрування ваших даних"
+      ],
+      "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
+        "Ім'я показу за замовчуванням для псевдонімів, створених за допомогою ${ domainDisplay }, якщо його не замінено ім'ям показу псевдоніма."
       ],
       "Deleted items will be moved here first": [
         "Видалені елементи спочатку будуть переміщені сюди"
@@ -1229,6 +1555,12 @@
       ],
       "Disabling offline mode...": [
         "Вимкнення автономного режиму..."
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Оновлення змін DNS може зайняти до 24 годин."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Домен: ${ domainPath } або @"
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
@@ -1254,6 +1586,15 @@
       "Email address successfully included in monitoring": [
         "Адреса пошти успішно включена до відстеження"
       ],
+      "Email headers illustration": [
+        "Зображення заголовків електронної пошти"
+      ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Надішліть листа на цю адресу, і він буде відправлений, наприклад, з ${ exampleEmail }."
+      ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Електронні листи, надіслані на ваші псевдоніми, перенаправляються на ваші поштові скриньки. Псевдонім може мати більше однієї поштової скриньки: корисно ділитися псевдонімом з друзями."
+      ],
       "Emptying trash...": [
         "Спорожнення смітника..."
       ],
@@ -1262,6 +1603,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Увімкнути автоблокування для захисту даних"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Увімкнення автоблокування біометрії"
+      ],
+      "Enabling biometrics lock failed": [
+        "Не вдалося увімкнути біометричне блокування"
       ],
       "Enabling offline mode...": [
         "Увімкнення автономного режиму..."
@@ -1274,6 +1621,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Увімкнення автоблокування PIN-кодом"
+      ],
+      "Enter the address you want to email.": [
+        "Введіть адресу, на яку ви хочете надіслати листа."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введіть код підтвердження. Цифри ${ digit }."
@@ -1290,6 +1640,12 @@
       "Expires in ${ remainingTime }": [
         "Термін дії завершується ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Додатковий пароль успішно створено"
+      ],
+      "Extra password successfully removed": [
+        "Додатковий пароль успішно вилучено"
+      ],
       "Fill in the CSV with your data": [
         "Заповніть CSV своїми даними"
       ],
@@ -1298,6 +1654,12 @@
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Виконайте ці кроки, щоб імпортувати дані у загальному форматі CSV:"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "З міркувань безпеки вам необхідно підтвердити доступ до цього спільного сховища",
+        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ",
+        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ",
+        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ"
       ],
       "For security reasons, your access needs to be confirmed": [
         "З міркувань безпеки ваш доступ потребує підтвердження."
@@ -1316,6 +1678,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "Here's how it works:": [
+        "Ось як це працює:"
       ],
       "High Priority": [
         "Високий пріоритет"
@@ -1337,6 +1702,9 @@
       ],
       "Imported on ${ date }": [
         "Імпортовано ${ date }"
+      ],
+      "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
+        "У ${ PASS_SHORT_APP_NAME } примітка до елемента зашифрована за допомогою ключа шифрування елемента, і тільки користувачі, які мають доступ до цього елемента, можуть переглянути цю примітку. Навіть ${ BRAND_NAME } або SimpleLogin не можуть його побачити."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Щоб робота з ${ PASS_APP_NAME } була найзручнішою надайте розширенню необхідні дозволи"
@@ -1443,8 +1811,29 @@
       "Monitoring settings successfully updated": [
         "Налаштування відстеження успішно оновлено"
       ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Більше ніж менеджер паролів, ${ PASS_APP_NAME } захищає ваш пароль й вашу особисту адресу електронної пошти за допомогою псевдонімів. Завдяки тій самій технології, що й ${ MAIL_APP_NAME }, ваші дані наскрізь зашифровані та доступні лише вам."
+      ],
+      "Move ${ count } item": [
+        "Перемістити ${ count } елемент",
+        "Перемістити ${ count } елементи",
+        "Перемістити ${ count } елементів",
+        "Перемістити ${ count } елементів"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Переміщення елемента до іншого сховища призведе до видалення його історії та всіх захищених посилань.",
+        "Переміщення елементів до іншого сховища призведе до стирання їхньої історії та всіх захищених посилань.",
+        "Переміщення елементів до іншого сховища призведе до стирання їхньої історії та всіх захищених посилань.",
+        "Переміщення елементів до іншого сховища призведе до стирання їхньої історії та всіх захищених посилань."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Переміщення елемента до іншого сховища призведе до стирання його історії.",
+        "Переміщення елементів до іншого сховища призведе до стирання його історії.",
+        "Переміщення елементів до іншого сховища призведе до стирання його історії.",
+        "Переміщення елементів до іншого сховища призведе до стирання його історії."
       ],
       "Moving items": [
         "Переміщення елементів"
@@ -1457,6 +1846,9 @@
       ],
       "Moving items to trash": [
         "Переміщення елементів до смітника"
+      ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Потрібно написати комусь електронного листа, але ви не хочете, щоб він бачив вашу адресу? Створіть псевдонім для контакту."
       ],
       "Never": [
         "Ніколи"
@@ -1473,6 +1865,9 @@
       "None": [
         "Немає"
       ],
+      "Not recommended": [
+        "Не рекомендовано"
+      ],
       "Offline mode": [
         "Автономний режим"
       ],
@@ -1484,6 +1879,9 @@
       ],
       "Offline support successfully disabled": [
         "Підтримка автономного доступу успішно відключена"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Онлайн доступ до ${ PASS_APP_NAME } вимагатиме PIN-код. Ви вийдете з системи після 3 невдалих спроб."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
@@ -1530,8 +1928,38 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Будь ласка, підтвердьте свій пароль ${ BRAND_NAME }, щоб експортувати дані ${ PASS_APP_NAME }."
       ],
+      "Please confirm your extra password": [
+        "Будь ласка, підтвердьте ваш додатковий пароль"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Будь ласка, підтвердьте додатковий пароль для автоматичного блокування за допомогою біометрії."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Будь ласка, підтвердьте свій додатковий пароль для автоматичного блокування за допомогою додаткового пароля."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Будь ласка, підтвердьте ваш додатковий пароль, щоб експортувати ваші дані ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Будь ласка, підтвердьте ваш додатковий пароль, щоб зняти поточне блокування."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Будь ласка, підтвердьте свій додатковий пароль, щоб оновити час автоблокування."
+      ],
       "Please confirm your password": [
         "Підтвердьте свій пароль"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Будь ласка, підтвердьте свій пароль для автоматичного блокування за допомогою біометрії."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Будь ласка, підтвердьте свій пароль для автоматичного блокування паролем."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Будь ласка, підтвердьте свій пароль, щоб зняти поточне блокування."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Будь ласка, підтвердьте свій пароль, щоб оновити час автоблокування."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Підтвердьте PIN-код, щоб скасувати реєстрацію поточного блокування."
@@ -1542,11 +1970,26 @@
       "Please consider leaving a review.": [
         "Напишіть відгук."
       ],
+      "Please do not close this window": [
+        "Будь ласка, не закривайте це вікно"
+      ],
       "Please enter your current PIN code to continue": [
         "Щоб продовжити, введіть поточний PIN-код"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Будь ласка, виконайте наведені нижче кроки, щоб налаштувати свій домен."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Зверніть увагу, що після видалення псевдонім не можна відновити. Можливо, ви хочете вимкнути псевдонім?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Зверніть увагу, що після видалення псевдонім не можна відновити. Псевдонім вже вимкнено і він не буде пересилати електронні листи на вашу поштову скриньку"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Будь ласка, оновіть, щоб отримати ранній доступ до web програми ${ PASS_APP_NAME }"
+      ],
+      "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
+        "Будь ласка, використовуйте повний шлях до домену, наприклад, my-domain.com або my-subdomain.my-domain.com, якщо ви використовуєте субдомен."
       ],
       "Press Enter to copy": [
         "Натисніть Enter, щоб скопіювати"
@@ -1560,11 +2003,29 @@
       "Reconnecting": [
         "Повторне з'єднання"
       ],
+      "Record: CNAME": [
+        "Запис: CNAME"
+      ],
       "Record: MX": [
         "Запис: MX"
       ],
+      "Record: TXT": [
+        "Запис: TXT"
+      ],
+      "Registering extra password...": [
+        "Реєстрація додаткового пароля..."
+      ],
       "Registering PIN lock failed": [
         "Не вдалося зареєструвати блокування PIN-кодом"
+      ],
+      "Removing all inactive secure links...": [
+        "Вилучення всіх неактивних захищених посилань..."
+      ],
+      "Removing extra password...": [
+        "Вилучення додаткового пароля..."
+      ],
+      "Removing secure link...": [
+        "Вилучення захищеного посилання..."
       ],
       "Restoring items from trash": [
         "Відновлення елементів зі смітника"
@@ -1572,14 +2033,23 @@
       "Restoring trashed items...": [
         "Відновлення елементів..."
       ],
+      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Адреса зворотного псевдоніма скопійована в буфер обміну. Надішліть листа на цю адресу, і ${ Email } отримає його."
+      ],
       "Secure links": [
         "Безпечні посилання"
+      ],
+      "See more info": [
+        "Переглянути більше інформації"
       ],
       "Select destination vault": [
         "Виберіть місце призначення"
       ],
       "Select vault to share": [
         "Виберіть сховище для спільного доступу"
+      ],
+      "Select where you want your imported vaults to be saved.": [
+        "Виберіть, куди ви хочете зберегти імпортовані сховища."
       ],
       "Selected items permanently deleted": [
         "Вибрані елементи видалено назавжди"
@@ -1596,14 +2066,26 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
+      "Set by your organization": [
+        "Встановлено вашою організацією"
+      ],
       "Settings successfully updated": [
         "Налаштування успішно оновлені!"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Діліться своїми даними входу та захищеними нотатками з 10 людьми"
       ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
       ],
       "Signing you in": [
         "Виконується вхід"
+      ],
+      "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
+        "Нотатки SimpleLogin зберігаються в одному місці з псевдоадресою, і хоча вони захищені шифруванням у стані спокою, вони не зашифровані E2E, що означає, що будь-хто, хто має доступ до бази даних SimpleLogin, може їх прочитати."
+      ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Просто використовуйте ${ emailBold } наступного разу, коли вам знадобиться псевдонім: це буде ${ automaticallyBold }, створений при першому отриманні листа. Для тонкішого контролю ви також можете визначити ${ rulesHyperLink }."
       ],
       "Successfully exported all your items": [
         "Успішно експортовано всі ваші елементи"
@@ -1629,6 +2111,9 @@
       "The changelog can be found ${ changelogLink }.": [
         "Список змін можна знайти ${ changelogLink }."
       ],
+      "The display name when sending an email from this alias.": [
+        "Ім'я, яке показуватиметься під час надсилання електронного листа з цього псевдоніму."
+      ],
       "The export will only contain vaults that you own.": [
         "Експорт міститиме лише ті сховища, якими ви володієте."
       ],
@@ -1638,11 +2123,17 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Додатковий пароль буде потрібен для використання ${ PASS_APP_NAME }. Він діє як додатковий пароль до вашого пароля ${ BRAND_NAME }."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не вдалося імпортувати цей ${ result.ignored.length } елемент:",
         "Не вдалося імпортувати ці ${ result.ignored.length } елементи:",
         "Не вдалося імпортувати ці ${ result.ignored.length } елементів:",
         "Не вдалося імпортувати ці ${ result.ignored.length } елементів:"
+      ],
+      "The secure link has been removed": [
+        "Безпечне посилання було вилучено"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "У тексті, який ви намагаєтеся вставити перевищено максимально дозволену кількість ${ maxLength } символів."
@@ -1652,6 +2143,15 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Цей експорт буде незашифрований, і кожен, хто має доступ до експортованого файлу, зможе побачити ваші паролі. Для безпеки видаліть його після його завершення."
+      ],
+      "This operation is irreversible.": [
+        "Ця операція незворотна."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Ця операція є незворотною. Всі псевдоніми, що використовують домен ${ domainTextBold }, буде видалено. Зверніть увагу, що після видалення псевдоніми не можуть бути відновлені."
+      ],
+      "This option is currently not available on your device.": [
+        "Наразі ця опція недоступна на вашому пристрої."
       ],
       "This setting is disabled on the organization level": [
         "Цей параметр вимкнено на рівні організації"
@@ -1665,8 +2165,17 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Це призведе до відхилення пристрою **${ name }**, який намагався увійти до вашого облікового запису ${ BRAND_NAME } у **${ date }**."
       ],
+      "To keep receiving emails transfer these aliases to a different mailbox:": [
+        "Щоб продовжувати отримувати електронні листи, перенесіть ці псевдоніми на іншу поштову скриньку:"
+      ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Щоб приховати свою особисту електронну адресу, ви можете створити псевдонім контакту, який замаскує вашу адресу."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Щоб перенести дані з іншого менеджера паролів, перейдіть до нього, експортуйте дані, а потім завантажте їх до ${ PASS_APP_NAME }. Після імпорту даних видаліть експортований файл."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Щоб переглянути імпортовані дані, натисніть на іконку ${ PASS_APP_NAME } на панелі інструментів вашого браузера."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
@@ -1674,11 +2183,26 @@
       "Unable to copy to clipboard": [
         "Неможливо скопіювати в буфер обміну"
       ],
+      "Unconfigured": [
+        "Не налаштовано"
+      ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Unlimited hide-my-email aliases and advanced alias management"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Розблокувати ${ PASS_SHORT_APP_NAME } за допомогою біометрії"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Розблокувати ${ PASS_SHORT_APP_NAME } паролем ${ BRAND_NAME }"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
+        "Розблокуйте ${ PASS_SHORT_APP_NAME } за допомогою резервного пароля"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Розблокувати ${ PASS_SHORT_APP_NAME } додатковим паролем"
+      ],
+      "Unlock with biometrics": [
+        "Розблокування за допомогою біометрії"
       ],
       "Unpinning item...": [
         "Відкріплення елементу..."
@@ -1689,14 +2213,23 @@
       "Upgrade Now to Unlock Premium Features": [
         "Оновіться зараз, щоб розблокувати преміум функції"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Перейдіть на платний тарифний план, щоб створити кілька сховищ."
+      ],
       "Use vaults to share this item with others.": [
         "Використовуйте сховища, щоб поділитися цим елементам з іншими."
       ],
       "User's access removed": [
         "Доступ користувача вилучено"
       ],
+      "User's access successfully updated": [
+        "Доступ користувача успішно оновлено"
+      ],
       "username": [
         "ім'я користувача"
+      ],
+      "Value:": [
+        "Значення:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
@@ -1719,17 +2252,38 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Виникли труднощі під час синхронізації даних з вашим локальним сховищем. Упевніться, що ви маєте достатньо дискового простору для безперебійної роботи ${ PASS_SHORT_APP_NAME }."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Ми виявили, що у вас є псевдонім ${ aliasCount }, який присутній у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
+        "Ми виявили, що у вас є псевдоніми ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
+        "Ми виявили, що у вас є псевдонімів ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
+        "Ми виявили, що у вас є псевдоніми ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Ми надіслали код підтвердження на ${ email }. Будь ласка, введіть його нижче:"
       ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "При створенні/редагуванні Даних входу в ${ PASS_APP_NAME } завжди буде видно введення 'ім'я користувача'."
+      ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "При надсиланні листа з цього псевдоніму як відправник буде вказано ${ emailSender }."
+      ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Ви також можете визначити PIN-код для розблокування ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Тепер ви можете використовувати пароль ${ BRAND_NAME } для доступу до ${ PASS_SHORT_APP_NAME } в автономному режимі"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Ви не можете змінити поштові скриньки для цих псевдонімів"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "У вас є псевдонім ${ aliasCount }, який присутній у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Ви хочете синхронізувати його?",
+        "У вас є псевдоніми ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?",
+        "У вас є псевдонімів ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?",
+        "У вас є псевдоніми ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас залишився ${ daysRemaining } день, щоб спробувати ці та інші преміум функції.",
@@ -1755,6 +2309,12 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ви досягли максимальної дозволеної кількості символів ${ maxLength }."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Ви зможете налаштувати параметри вашого домену (псевдоніми електронної пошти, ім'я для показу за замовчуванням для псевдонімів тощо) після перевірки вашого домену."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Ви вийдете з системи, і вам потрібно буде увійти знову на всіх інших пристроях."
+      ],
       "You will be notified of data breaches for these email addresses.": [
         "Вас буде сповіщено про витоки даних цих поштових адрес"
       ],
@@ -1767,6 +2327,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "Вас більше не буде сповіщено про витоки даних цієї пошти."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Ви більше не матимете доступу до спільного доступу, 2FA, кредитної картки та інших розширених функцій у ${ PASS_APP_NAME }"
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Цей PIN-код потрібен для отримання доступу до ${ PASS_APP_NAME } після автоматичного блокування."
       ],
@@ -1776,14 +2339,32 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Доступ до вашого облікового запису обмежено, оскільки ваша організація запровадила двоетапну перевірку. Увімкніть двоетапну перевірку в налаштуваннях облікового запису або зверніться до свого адміністратора."
       ],
+      "your domain": [
+        "ваш домен"
+      ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Ваша організація вимагає, щоб ви захистили свій доступ до ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } псевдонім",
+        "${ aliasCount } псевдоніми",
+        "${ aliasCount } псевдонімів",
+        "${ aliasCount } псевдонімів"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } блок",
+        "${ blockedCount } блоки",
+        "${ blockedCount } блоків",
+        "${ blockedCount } блоки"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } символ",
         "${ config.options.length } символів",
@@ -1802,6 +2383,15 @@
         "${ days } днів",
         "${ days } днів"
       ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } пересилання",
+        "${ forwardCount } пересилання",
+        "${ forwardCount } пересилань",
+        "${ forwardCount } пересилання"
+      ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, за останні 14 днів."
+      ],
       "${ hours } hour": [
         "${ hours } година",
         "${ hours } години",
@@ -1814,14 +2404,32 @@
         "${ minutes } хвилин",
         "${ minutes } хвилин"
       ],
+      "${ months } month": [
+        "${ months } місяць",
+        "${ months } місяців",
+        "${ months } місяці",
+        "${ months } місяці"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } відповідь",
+        "${ repliedCount } відповіді",
+        "${ repliedCount } відповідей",
+        "${ repliedCount } відповіді"
       ],
       "${ usageCount } login": [
         "${ usageCount } запис входу",
         "${ usageCount } записи входу",
         "${ usageCount } записів входу",
         "${ usageCount } записів входу"
+      ],
+      "${ years } year": [
+        "${ years } рік",
+        "${ years } роки",
+        "${ years } років",
+        "${ years } роки"
       ],
       "1 hour": [
         "1 година"
@@ -1837,6 +2445,12 @@
       ],
       "15 minutes": [
         "15 хвилин"
+      ],
+      "15 seconds": [
+        "15 секунд"
+      ],
+      "2 minutes": [
+        "2 хвилин"
       ],
       "24 hours": [
         "24 годин"
@@ -1868,8 +2482,14 @@
       "Account": [
         "Обліковий запис"
       ],
+      "Add a random prefix for this domain when creating a new alias.": [
+        "Додайте випадковий префікс для цього домену під час створення нового псевдоніма."
+      ],
       "Add section": [
         "Додати розділ"
+      ],
+      "Additional details": [
+        "Додаткові деталі"
       ],
       "Address details": [
         "Деталі адреси"
@@ -1879,6 +2499,12 @@
       ],
       "Alias address": [
         "Адреса псевдоніма"
+      ],
+      "Alias address (disabled)": [
+        "Адреса псевдоніма (вимкнено)"
+      ],
+      "Alias management": [
+        "Керування псевдонімом"
       ],
       "Aliases": [
         "Псевдоніми"
@@ -1892,6 +2518,9 @@
       "Alphabetical": [
         "За абеткою"
       ],
+      "Always show username field": [
+        "Завжди показувати поле «Ім'я користувача»"
+      ],
       "Application logs": [
         "Журнали програми"
       ],
@@ -1901,11 +2530,20 @@
       "Beta Access": [
         "Бета-доступ"
       ],
+      "Biometrics": [
+        "Біометрика"
+      ],
       "Birthdate": [
         "Дата народження"
       ],
+      "Browse faster, smarter": [
+        "Перегляд швидший, розумніший"
+      ],
       "Capital letters (A-Z)": [
         "Великі літери (А-Я)"
+      ],
+      "Capitalize": [
+        "Великі літери"
       ],
       "Card": [
         "Картка"
@@ -1916,8 +2554,20 @@
       "Cards": [
         "Картки"
       ],
+      "Catch-All": [
+        "Catch-all"
+      ],
+      "Choose unlock method": [
+        "Оберіть спосіб розблокування"
+      ],
+      "Choose your preferred look and feel.": [
+        "Виберіть ваш бажаний вигляд та почуття."
+      ],
       "City": [
         "Місто"
+      ],
+      "Clear clipboard after": [
+        "Очистити буфер обміну після"
       ],
       "Code": [
         "Код"
@@ -1927,6 +2577,9 @@
       ],
       "Confirm vault name": [
         "Підтвердити назву сховища"
+      ],
+      "Contact created ${ time } ago.": [
+        "Контакт створено ${ time } тому."
       ],
       "Contact details": [
         "Подробиці контакту"
@@ -1955,6 +2608,9 @@
       "Create an encrypted note": [
         "Створити зашифровану нотатку"
       ],
+      "Create an Identity": [
+        "Створити ідентичність"
+      ],
       "Create lock": [
         "Створити блокування"
       ],
@@ -1966,6 +2622,15 @@
       ],
       "Created at": [
         "Створено"
+      ],
+      "Custom hidden field": [
+        "Власне приховане поле"
+      ],
+      "Custom text field": [
+        "Власне текстове поле"
+      ],
+      "Dark Web Monitoring": [
+        "Відстеження Dark Web"
       ],
       "Date": [
         "Дата"
@@ -1991,6 +2656,9 @@
       "Domains": [
         "Домени"
       ],
+      "Don't remind me again": [
+        "Більше не нагадувати"
+      ],
       "Download logs": [
         "Завантажити журнали"
       ],
@@ -2015,6 +2683,9 @@
       "Enable offline access": [
         "Увімкнути автономний доступ"
       ],
+      "Enter email or username": [
+        "Введіть адресу електронної пошти або ім'я користувача"
+      ],
       "Expiration date": [
         "Термін дії"
       ],
@@ -2030,6 +2701,9 @@
       "Extra password": [
         "Додатковий пароль"
       ],
+      "Facebook account": [
+        "Обліковий запис Facebook"
+      ],
       "Field name": [
         "Назва поля"
       ],
@@ -2038,6 +2712,12 @@
       ],
       "First name": [
         "Ім'я"
+      ],
+      "Floor, apartment, building": [
+        "Поверх, квартира, будівля"
+      ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "З міркувань безпеки ${ PASS_SHORT_APP_NAME } автоматично блокується після 10 хвилин бездіяльності."
       ],
       "Forwards to": [
         "Пересилається на"
@@ -2054,8 +2734,17 @@
       "General": [
         "Загальні"
       ],
+      "Generate a secure link for this item": [
+        "Створити безпечне посилання на цей елемент"
+      ],
       "Generic CSV": [
         "Загальний CSV"
+      ],
+      "Get Started": [
+        "Розпочати"
+      ],
+      "Get the extension for your browser.": [
+        "Отримайте розширення для вашого браузера."
       ],
       "Grant": [
         "Дозволити"
@@ -2066,8 +2755,20 @@
       "Hide password": [
         "Приховати пароль"
       ],
+      "Hide-my-email aliases": [
+        "Псевдоніми Hide-my-email"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Як розблокувати ${ PASS_SHORT_APP_NAME }"
+      ],
+      "https://example.com": [
+        "https://example.com"
+      ],
       "ID Card": [
         "Ідентифікаційнa карткa"
+      ],
+      "ID Card number": [
+        "Номер ID-картки"
       ],
       "Identities": [
         "Особисті дані"
@@ -2080,6 +2781,9 @@
       ],
       "Import passwords": [
         "Імпорт паролів"
+      ],
+      "Imported from: ": [
+        "Імпортовано з: "
       ],
       "Imported on : ": [
         "Імпортовано : "
@@ -2095,6 +2799,15 @@
       ],
       "Instagram handle": [
         "Instagram обробник"
+      ],
+      "Install and continue": [
+        "Встановити й продовжити"
+      ],
+      "Install extension": [
+        "Встановити розширення"
+      ],
+      "Integrated 2FA authenticator": [
+        "Інтегрований автентифікатор 2FA"
       ],
       "Invitations": [
         "Запрошення"
@@ -2141,11 +2854,17 @@
       "License number": [
         "Номер ліцензії"
       ],
+      "LinkedIn account": [
+        "Обліковий запис LinkedIn"
+      ],
       "Login": [
         "Увійти"
       ],
       "Logins": [
         "Записи входу"
+      ],
+      "Mailboxes": [
+        "Поштові скриньки"
       ],
       "Make all admins": [
         "Зробити всіх адміністраторами"
@@ -2155,6 +2874,12 @@
       ],
       "Make all viewers": [
         "Зробити всіх глядачами"
+      ],
+      "Make it your own.": [
+        "Зробіть це по-своєму."
+      ],
+      "max views reached": [
+        "досягнуто максимального числа переглядів"
       ],
       "Members": [
         "Учасники"
@@ -2192,14 +2917,23 @@
       "Newest to oldest": [
         "Спочатку нові"
       ],
+      "No Activity in the last 14 days.": [
+        "Жодної активності за останні 14 днів."
+      ],
       "No history": [
         "Немає історії"
       ],
       "None": [
         "Нічого"
       ],
+      "Not selected": [
+        "Не вибрано"
+      ],
       "Note": [
         "Нотатка"
+      ],
+      "Note • SimpleLogin": [
+        "Нотатка • SimpleLogin"
       ],
       "Notes": [
         "Нотатки"
@@ -2213,11 +2947,17 @@
       "Oldest to newest": [
         "Найдавніші"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Менеджер паролів з відкритим вихідним кодом для легкого захисту."
+      ],
       "Organization": [
         "Організація"
       ],
       "Passkey": [
         "Ключ доступу"
+      ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Ключі доступу - це проста і безпечна альтернатива традиційним паролям, яка запобігає шахрайським атакам і робить вашу роботу в Інтернеті зручнішою.  ${ PASS_APP_NAME } підтримує ключі доступу на всіх платформах."
       ],
       "Passphrase": [
         "Парольна фраза"
@@ -2237,6 +2977,12 @@
       "Personal details": [
         "Персональні подробиці"
       ],
+      "Personal website": [
+        "Персональний вебсайт"
+      ],
+      "Personalize": [
+        "Персоналізувати"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "Зашифрований PGP JSON (рекомендується)"
       ],
@@ -2252,11 +2998,26 @@
       "Prefix": [
         "Префікс"
       ],
+      "Premium domain": [
+        "Преміум домен"
+      ],
+      "Priority:": [
+        "Пріоритет:"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Захистіть ${ PASS_APP_NAME } додатковим паролем"
+      ],
+      "Public domain": [
+        "Публічний домен"
+      ],
       "Rate us": [
         "Оцініть нас"
       ],
       "Recent": [
         "Найновіші"
+      ],
+      "Reddit handle": [
+        "Reddit handle"
       ],
       "Remove link": [
         "Вилучити посилання"
@@ -2270,11 +3031,17 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Безпечно зберігайте, діліться та автоматично входьте у свої облікові записи за допомогою ${ PASS_APP_NAME }, використовуючи наскрізне шифрування, якому довіряють мільйони."
+      ],
       "Security": [
         "Безпека"
       ],
       "Security code": [
         "Код безпеки"
+      ],
+      "Select a domain": [
+        "Обрати домен"
       ],
       "Select an email address": [
         "Виберіть адресу електронної пошти"
@@ -2282,8 +3049,17 @@
       "Select preferred language": [
         "Оберіть мову"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Виберіть сховище, до якого буде імпортовано псевдоніми SimpleLogin"
+      ],
+      "Select theme": [
+        "Вибрати тему"
+      ],
       "Select your password manager": [
         "Виберіть менеджер паролів"
+      ],
+      "Select your theme": [
+        "Виберіть вашу тему"
       ],
       "Selected": [
         "Вибрано"
@@ -2291,8 +3067,17 @@
       "Share": [
         "Поділитися"
       ],
+      "Share this vault or create a new vault": [
+        "Поділіться цим сховищем або створіть нове"
+      ],
+      "Shared link": [
+        "Поширене посилання"
+      ],
       "Show website favicons": [
         "Показувати піктограми вебсайтів"
+      ],
+      "Social security": [
+        "Соціальний захист"
       ],
       "Social security number": [
         "Номер соціального страхування"
@@ -2321,6 +3106,12 @@
       "Support": [
         "Підтримка"
       ],
+      "Sync aliases with SimpleLogin": [
+        "Синхронізувати псевдоніми з SimpleLogin"
+      ],
+      "Target:": [
+        "Ціль:"
+      ],
       "Tax number": [
         "Податковий номер"
       ],
@@ -2333,14 +3124,26 @@
         "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами",
         "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами"
       ],
+      "The URL has been copied to the clipboard": [
+        "URL-адресу скопійовано до буфера обміну"
+      ],
       "Theme": [
         "Тема"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Цей елемент буде доступним до тих пір, поки ${ remaining }"
       ],
       "Title": [
         "Назва"
       ],
       "Today": [
         "Сьогодні"
+      ],
+      "Total imported items: ": [
+        "Всього імпортованих елементів: "
+      ],
+      "Total items: ": [
+        "Всього елементів: "
       ],
       "TOTP": [
         "TOTP"
@@ -2357,8 +3160,14 @@
       "Unlock with": [
         "Спосіб розблокування"
       ],
+      "Unlock with:": [
+        "Спосіб розблокування:"
+      ],
       "Unnamed Credit Card": [
         "Неназвана кредитна картка"
+      ],
+      "Unnamed identity": [
+        "Неназвана особистість"
       ],
       "Unnamed item": [
         "Елемент без нави"
@@ -2408,17 +3217,38 @@
       "Work details": [
         "Робочі деталі"
       ],
+      "Work email": [
+        "Робоча електронна пошта"
+      ],
       "Work phone number": [
         "Номер робочого телефону"
       ],
       "X handle": [
         "Ідентифікатор Х"
       ],
+      "Yahoo account": [
+        "Обліковий запис Yahoo"
+      ],
       "You are about to create": [
         "Ви збираєтеся створити"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Для розблокування ви можете вибрати PIN-код, біометричні дані або пароль вашого облікового запису."
+      ],
+      "Your domain": [
+        "Ваш домен"
+      ],
+      "Your passwords. Everywhere.": [
+        "Ваші паролі. Усюди."
+      ],
+      "ZIP or Postal code": [
+        "Поштовий індекс"
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "автоматичне створення правил ››"
+      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -2451,6 +3281,15 @@
         "${ count } елементи",
         "${ count } елементи",
         "${ count } елементів"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Ви можете перетягнути вибраний елемент до іншого сховища",
+        "Ви можете перетягнути вибрані елементи до іншого сховища",
+        "Ви можете перетягнути вибраних елементів до іншого сховища",
+        "Ви можете перетягнути вибрані елементи до іншого сховища"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Ви вибрали ${ semiboldText } у цьому сховищі."
       ]
     },
     "new_plans: feature": {
@@ -2511,6 +3350,9 @@
       "Add text": [
         "Додати текст"
       ],
+      "Alias Display Name": [
+        "Ім'я псевдоніма"
+      ],
       "Email address": [
         "Адреса е-пошти"
       ],
@@ -2537,6 +3379,15 @@
       ],
       "MM/YY": [
         "ММ/РР"
+      ],
+      "my-domain.com": [
+        "my-domain.com"
+      ],
+      "Name to display when sending an email": [
+        "Ім'я, яке буде показуватися при надсиланні електронного листа"
+      ],
+      "Note from SimpleLogin": [
+        "Примітка від SimpleLogin"
       ],
       "Password": [
         "Пароль"
@@ -2617,11 +3468,20 @@
       "Sign-in confirmed": [
         "Вхід підтверджено"
       ],
+      "Sign-in failed": [
+        "Помилка входу"
+      ],
       "Sign-in rejected": [
         "Вхід відхилено"
       ],
+      "Sign-in rejection failure": [
+        "Не вдалося відхилити вхід"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Запитано вхід на іншому пристрої. Це був ти?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Запитано вхід на іншому пристрої. Це був ти? "
       ],
       "Yes, it was me": [
         "Так, це був я"
@@ -2651,16 +3511,79 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Синхронізацію псевдонімів успішно ввімкнено. Синхронізація псевдонімів SimpleLogin може зайняти деякий час"
+      ],
+      "Catch-all setting successfully disabled": [
+        "Налаштування перехоплення успішно вимкнено"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Налаштування перехоплення успішно ввімкнено"
+      ],
+      "Contact successfully blocked": [
+        "Контакт успішно заблоковано"
+      ],
+      "Contact successfully created": [
+        "Контакт успішно створено"
+      ],
+      "Contact successfully deleted": [
+        "Контакт успішно видалено"
+      ],
+      "Contact successfully unblocked": [
+        "Контакт успішно розблоковано"
+      ],
+      "Default domain successfully updated": [
+        "Домен за замовчуванням успішно оновлено"
+      ],
+      "Default mailbox successfully updated": [
+        "Поштову скриньку за замовчуванням успішно оновлено"
+      ],
+      "Display name successfully updated": [
+        "Ім'я показу успішно оновлено"
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Право власності на домен підтверджено. Тепер ви можете налаштувати MX-запис."
+      ],
+      "Domain successfully deleted": [
+        "Домен успішно видалено"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Домен успішно підтверджено. Ваш домен може почати отримувати електронні листи та створювати псевдоніми"
+      ],
+      "Mailbox successfully deleted": [
+        "Поштову скриньку успішно видалено"
+      ],
+      "Mailbox successfully verified": [
+        "Поштову скриньку успішно перевірено"
+      ],
+      "Mailboxes successfully updated": [
+        "Поштові скриньки успішно оновлено"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Генерацію випадкових префіксів успішно вимкнено"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Генерацію випадкових префіксів успішно увімкнено"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувача.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів.",
         "Сховища не можуть містити більше ніж ${ vault.targetMaxMembers } користувачів."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Підтверджувальний лист надіслано. Будь ласка, перевірте свою поштову скриньку, щоб підтвердити свою поштову скриньку"
       ]
     },
     "Theme": {
+      "Automatic": [
+        "Автоматично"
+      ],
       "Dark": [
         "Темна"
+      ],
+      "Light": [
+        "Світла"
       ]
     },
     "Title": {
@@ -2679,11 +3602,26 @@
       "Activity": [
         "Діяльність"
       ],
+      "Add custom domain": [
+        "Додати власний домен"
+      ],
+      "Add mailbox": [
+        "Додати поштову скриньку"
+      ],
+      "Alias contacts": [
+        "Контакти псевдоніма"
+      ],
       "Aliases": [
         "Псевдоніми"
       ],
+      "Auto create/on the fly alias": [
+        "Автоматичне створення/на льоту псевдоніма"
+      ],
       "Auto-lock update": [
         "Оновлення автоблокування"
+      ],
+      "Blocked addresses": [
+        "Заблоковані адреси"
       ],
       "Breach detected": [
         "Виявлено витік даних"
@@ -2724,6 +3662,9 @@
       "Custom addresses": [
         "Користувацькі адреси"
       ],
+      "Custom domains": [
+        "Власні домени"
+      ],
       "Custom email monitoring": [
         "Користувацький моніторинг електронної пошти"
       ],
@@ -2736,17 +3677,50 @@
       "Default": [
         "За замовчуванням"
       ],
+      "Default Display Name": [
+        "Ім'я показу за замовчуванням"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Видалити ${ deletedItemsCount } елемент?",
+        "Видалити ${ deletedItemsCount } елементи?",
+        "Видалити ${ deletedItemsCount } елементів?",
+        "Видалити ${ deletedItemsCount } елементи?"
+      ],
+      "Delete domain": [
+        "Видалити домен"
+      ],
+      "Delete mailbox": [
+        "Видалити поштову скриньку"
+      ],
+      "Delete this item?": [
+        "Видалити цей елемент?"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Видалити сховище \"${ vaultName }\"?"
+      ],
       "Details": [
         "Подробиці"
       ],
       "Discard changes?": [
         "Відхилити зміни?"
       ],
+      "DKIM (Optional)": [
+        "DKIM (необов'язково)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (необов'язково)"
+      ],
       "Domain": [
         "Домен"
       ],
+      "Domain ownership verification": [
+        "Підтвердження власності на домен"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Уведіть ваш додатковий пароль"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -2790,6 +3764,9 @@
       "Last modified": [
         "Востаннє змінено"
       ],
+      "Leave vault?": [
+        "Покинути сховище?"
+      ],
       "Loading breaches...": [
         "Завантаження порушень..."
       ],
@@ -2811,8 +3788,26 @@
       "Modified": [
         "Змінено"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Перемістити ${ count } елемент до ${ vaultName }",
+        "Перемістити ${ count } елементи до ${ vaultName }",
+        "Перемістити ${ count } елементів до ${ vaultName }",
+        "Перемістити ${ count } елементи до ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Перемістити елемент ${ trashedItemsCount } до смітника?",
+        "Перемістити елементи ${ trashedItemsCount } до смітника?",
+        "Перемістити елементів ${ trashedItemsCount } до смітника?",
+        "Перемістити елементи ${ trashedItemsCount } до смітника?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Перемістити всі елементи до «${ vaultName }»?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Перемістити елемент до \"${ vaultName }\""
+      ],
+      "MX record": [
+        "MX запис"
       ],
       "No excluded items": [
         "Немає виключених елементів"
@@ -2844,11 +3839,26 @@
       "Pause monitoring?": [
         "Призупинити моніторинг?"
       ],
+      "Pending access confirmation": [
+        "Очікується підтвердження доступу"
+      ],
       "Pending access to the shared data": [
         "Очікування доступу до спільних даних"
       ],
+      "Permanently remove all items?": [
+        "Остаточно видалити всі елементи?"
+      ],
       "Pinned (${ items.length })": [
         "Закріплено (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Зверніть увагу, що після видалення псевдонім не можна відновити.",
+        "Зверніть увагу, що після видалення псевдоніми не можна відновити.",
+        "Зверніть увагу, що після видалення псевдоніми не можна відновити.",
+        "Зверніть увагу, що після видалення псевдоніми не можна відновити."
+      ],
+      "Random Prefix Generation": [
+        "Генерація випадкових префіксів"
       ],
       "Recommended actions": [
         "Рекомендовані дії"
@@ -2889,6 +3899,9 @@
       "Secure your data": [
         "Захист ваших даних"
       ],
+      "Select the default domain for aliases": [
+        "Виберіть домен за замовчуванням для псевдонімів"
+      ],
       "Set access level": [
         "Задати рівень доступу"
       ],
@@ -2910,6 +3923,9 @@
       "Share with": [
         "Поділитися"
       ],
+      "SPF (Optional)": [
+        "SPF (необов'язково)"
+      ],
       "Status": [
         "Стан"
       ],
@@ -2918,6 +3934,15 @@
       ],
       "Suggestions": [
         "Пропозиції"
+      ],
+      "Switch to": [
+        "Перейти до"
+      ],
+      "Sync alias": [
+        "Синхронізувати псевдонім"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "Синхронізація псевдонімів з SimpleLogin"
       ],
       "Transfer ownership": [
         "Передати право власності"
@@ -2961,6 +3986,12 @@
       "What is the dark web?": [
         "Що таке dark web?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Яка різниця між приміткою ${ PASS_SHORT_APP_NAME } та приміткою SimpleLogin?"
+      ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Ваша підписка на ${ planName } закінчується на ${ endDate }"
+      ],
       "Your exposed information": [
         "Ваша викрита інформація"
       ],
@@ -2969,9 +4000,18 @@
       ],
       "Your welcome gift": [
         "Ваш вітальний подарунок"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Ви збираєтеся назавжди видалити псевдонім ${ aliasCount }.",
+        "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }.",
+        "Ви збираєтеся назавжди видалити псевдонімів ${ aliasCount }.",
+        "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }."
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Неприпустима URL-адреса домену"
+      ],
       "Duplicated URL": [
         "Дублювати посилання"
       ],
@@ -2987,6 +4027,9 @@
       "Section name cannot be empty": [
         "Назва розділу не може бути пустою"
       ],
+      "URL already exists": [
+        "URL-адреса вже існує"
+      ],
       "URL cannot be empty": [
         "URL не може бути порожнім"
       ],
@@ -2995,11 +4038,35 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } пароль є обов'язковим"
+      ],
       "A description of the problem is required": [
         "Потрібен опис проблеми"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Псевдоніми в смітнику продовжуватимуть пересилати електронні листи."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Всі ваші видалені елементи будуть безповоротно видалені. Ви не можете скасувати дану дію."
+      ],
+      "An error occurred while exporting your data": [
+        "Під час експортування даних сталася помилка"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Ви впевнені, що хочете перемістити елемент ${ trashedItemsCount } до смітника?",
+        "Ви впевнені, що хочете перемістити елементи ${ trashedItemsCount } до смітника?",
+        "Ви впевнені, що хочете перемістити елементів ${ trashedItemsCount } до смітника?",
+        "Ви впевнені, що хочете перемістити елементи ${ trashedItemsCount } до смітника?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Ви впевнені, що хочете назавжди видалити елемент ${ deletedItemsCount }?",
+        "Ви впевнені, що хочете назавжди видалити елементи ${ deletedItemsCount }?",
+        "Ви впевнені, що хочете назавжди видалити елементів ${ deletedItemsCount }?",
+        "Ви впевнені, що хочете назавжди видалити елементи ${ deletedItemsCount }?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Ви впевнені, що хочете назавжди видалити цей елемент?"
       ],
       "At least one email address is required": [
         "Принаймні одна адреса електронної пошти є обов'язковою"
@@ -3013,8 +4080,20 @@
       "Could not create vault \"${ vaultName }\"": [
         "Не вдалося створити сховище \"${ vaultName }\""
       ],
+      "Could not send invitations to the following addresses:": [
+        "Не вдалося надіслати запрошення на наступні адреси:"
+      ],
+      "Delete alias": [
+        "Видалити псевдонім"
+      ],
+      "Domain cannot be empty": [
+        "Домен не може бути порожнім"
+      ],
       "Duplicate email addresses.": [
         "Дублювати адресу електронної пошти."
+      ],
+      "Email cannot be empty": [
+        "Електронна пошта не може бути порожньою"
       ],
       "Email is required": [
         "Потрібна поштова адреса"
@@ -3027,6 +4106,9 @@
       ],
       "Extra password cannot be empty": [
         "Додатковий пароль не може бути порожнім"
+      ],
+      "Extra password is required": [
+        "Потрібен додатковий пароль"
       ],
       "Extra password should have at least 8 characters": [
         "Додатковий пароль повинен містити щонайменше 8 символів"
@@ -3064,6 +4146,9 @@
       "Missing alias suffix": [
         "Відсутній суфікс псевдоніма"
       ],
+      "Move to trash": [
+        "Перемістити до смітника"
+      ],
       "Name is required": [
         "Назва обовʼязкова"
       ],
@@ -3085,6 +4170,9 @@
       "Offline": [
         "В автономному режимі"
       ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Після синхронізації, видалення псевдонімів у ${ PASS_SHORT_APP_NAME } також видалить їх у SimpleLogin."
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Дозволено лише буквено-цифрові символи, крапки, дефіси та підкреслення"
       ],
@@ -3099,6 +4187,12 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Перевірте, чи правильно встановлено та увімкнено розширення"
+      ],
+      "Please contact us to investigate the issue": [
+        "Будь ласка, зв'яжіться з нами, щоб дослідити проблему"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Зверніть увагу, що після видалення псевдоніми не можна відновити"
       ],
       "Please update the extension to its latest version": [
         "Оновіть розширення до останньої версії"
@@ -3120,6 +4214,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Префікс псевдоніма не може бути довшим ніж 40 символів"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Цей псевдонім \"${ aliasEmail }\" наразі використовується в даних входу \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Ця електронна адреса більше не буде перевірятися на предмет витоку даних."
@@ -3174,6 +4271,9 @@
       ],
       "Your session was locked.": [
         "Ваша сесія була заблокована."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Ваша підписка не дозволяє створювати більше сховищ."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого першого сховища. Щоб імпортувати дані до кількох сховищ, передплатіть тарифний план вищого рівня."
