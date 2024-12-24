@@ -6589,6 +6589,9 @@
       "\"${ name }\" created successfully": [
         "»${ name }« je bil uspešno ustvarjen"
       ],
+      "\"${ name }\" deleted": [
+        "'${ name }' izbrisano"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name } je trajno izbrisan iz smetnjaka"
       ],
@@ -6634,11 +6637,23 @@
         "${ count } predmetov ni bilo mogoče dešifrirati",
         "${ count } predmetov ni bilo mogoče dešifrirati"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } predmet izbrisan",
+        "${ numberOfItems } predmeta izbrisana",
+        "${ numberOfItems } predmetov izbrisanih",
+        "${ numberOfItems } predmetov izbrisanih"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } predmet je trajno izbrisan iz smetnjaka",
         "${ numberOfItems } predmeta sta trajno izbrisana iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } elementa ni bilo mogoče izbrisati",
+        "${ numberOfItems } elementov ni bilo mogoče izbrisati",
+        "${ numberOfItems } elementov ni bilo mogoče izbrisati",
+        "${ numberOfItems } elementov ni bilo mogoče izbrisati"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } predmeta ni bilo mogoče trajno izbrisati iz smetnjaka",

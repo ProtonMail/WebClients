@@ -585,6 +585,9 @@
       "Show advanced PGP settings": [
         "Vis avancerede PGP-indstillinger"
       ],
+      "Show options": [
+        "Vis valgmuligheder"
+      ],
       "Sign out": [
         "Log ud"
       ],
@@ -4471,6 +4474,9 @@
       "Restored version to": [
         "Gendannet version til"
       ],
+      "Save Document as PDF": [
+        "Gem dokument som PDF"
+      ],
       "Saving": [
         "Gemmer"
       ],
@@ -4739,6 +4745,15 @@
       "What do you want to do?": [
         "Hvad ønsker du at gøre?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Når dialogen åbner, ændr \"Destination\" til \"Gem til PDF\", tryk derefter på Gem."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Når dialogen åbner, skal du ændre \"Destination\" til \"Gem til PDF\" og derefter trykke på Gem."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Når dialogen åbner, skal du vælge \"PDF\" i nederste venstre hjørne og derefter trykke på Gem."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ],
@@ -4854,6 +4869,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
+      ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "Din browsers udskrivningsdialog åbnes nu, hvor du kan eksportere dit dokument til PDF."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Dine ændringer bliver synkroniseret til Drive. Du må ikke lukke webstedet."
@@ -6756,11 +6774,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" oprettet"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" slettet"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent slettet fra papirkurven"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" kunne ikke oprettes"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" kunne ikke slettes"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" kunne ikke slettes permanent fra papirkurven"
@@ -6799,9 +6823,17 @@
         "${ count } element kunne ikke dekrypteres",
         "${ count } elementer kunne ikke dekrypteres"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } element slettet",
+        "${ numberOfItems } elementer slettet"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element permanent slettet fra papirkurven",
         "${ numberOfItems } elementer permanent slettet fra papirkurven"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } element kunne ikke slettes",
+        "${ numberOfItems } elementer kunne ikke slettes"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } element kunne ikke fjernes permanent fra papirkurven",
