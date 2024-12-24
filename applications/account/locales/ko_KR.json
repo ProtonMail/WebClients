@@ -910,6 +910,9 @@
       "Reset keys": [
         "키 초기화"
       ],
+      "Reset modifications": [
+        "설정 초기화"
+      ],
       "Reset password": [
         "비밀번호 재설정"
       ],
@@ -3662,6 +3665,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "계속 친구들을 초대할 수 있으나, 더 이상 크레딧을 얻을 수 없습니다"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }에서 비밀번호를 생성할 때 조직 구성원이 사용할 비밀번호에 대한 규칙을 강제할 수 있습니다."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷 (ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING } 이벤트를 가지고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주십시오."
       ]
@@ -4678,9 +4684,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
       ],
-      "Please enter a valid entity ID URL": [
-        "유효한 개체 ID URL을 입력해주세요"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "계속하려면 표시된 충돌을 해결해 주세요."
       ],
@@ -4707,9 +4710,6 @@
       ],
       "Please upload a square logo": [
         "정사각형인 로고를 업로드하셔야 합니다"
-      ],
-      "Please upload an xml file": [
-        "xml 파일을 업로드하세요"
       ],
       "Please upload only 1 file": [
         "하나의 파일만 업로드하세요"
@@ -7150,9 +7150,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
-      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -7419,9 +7416,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }**을 위한 **eduGAIN**의 객체 ID를 입력하세요."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "조직 비밀번호를 입력해 관리자의 특권을 복구하세요. ${ learnMore }"
@@ -8080,6 +8074,9 @@
       "Password copied to clipboard": [
         "비밀번호 복사됨"
       ],
+      "Password generator rules successfully saved": [
+        "성공적으로 비밀번호 생성기 규칙을 저장함"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "비밀번호는 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다."
       ],
@@ -8361,6 +8358,9 @@
       ],
       "Set recovery phrase": [
         "복구 키 설정"
+      ],
+      "Setting successfully saved": [
+        "설정이 저장되었습니다"
       ],
       "Setting up your new address...": [
         "새 주소 준비 중"
@@ -8960,7 +8960,7 @@
         "방금 새 링크를 보내드렸습니다."
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
-        "당신의 (이메일 주소나 제 3자 사이트에서 사용된 비밀번호 같은) 개인정보가 유출되었거나 노출되었는지 다크 웹을 모니터링합니다."
+        "사용자의 (이메일 주소나 제 3자 사이트에서 사용된 비밀번호 같은) 개인정보가 유출되었거나 노출되었는지 다크 웹을 모니터링합니다."
       ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
@@ -9898,8 +9898,14 @@
       "Allow": [
         "허용"
       ],
+      "Allow memorable passwords": [
+        "기억할 수 있는 비밀번호 허용"
+      ],
       "Allow notifications by email": [
         "이메일로 알림 허용"
+      ],
+      "Allow random passwords": [
+        "무작위 비밀번호 허용"
       ],
       "Allow recovery by email": [
         "이메일을 통한 복구 허용"
@@ -10029,6 +10035,9 @@
       ],
       "Calendars": [
         "캘린더"
+      ],
+      "Capitalize words": [
+        "대문자 표기"
       ],
       "Card details": [
         "카드 상세정보"
@@ -10435,6 +10444,12 @@
       "Mark as": [
         "표시"
       ],
+      "Maximum number of characters": [
+        "최대 문자 수"
+      ],
+      "Maximum number of words": [
+        "최대 단어 수"
+      ],
       "Message": [
         "메시지"
       ],
@@ -10449,6 +10464,12 @@
       ],
       "Method for importing metadata": [
         "메타데이터를 불러올 방법"
+      ],
+      "Minimum number of characters": [
+        "최소 문자 수"
+      ],
+      "Minimum number of words": [
+        "최소 단어 수"
       ],
       "Moderate NAT": [
         "일반형 NAT"
@@ -10506,6 +10527,9 @@
       ],
       "Notifications": [
         "알림"
+      ],
+      "Numbers": [
+        "숫자"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 비밀번호"
@@ -10693,9 +10717,6 @@
       "Signature": [
         "서명"
       ],
-      "Single sign-on entity ID": [
-        "싱글 사인 온 엔티티 ID"
-      ],
       "Single sign-on URL": [
         "싱글 사인 온 URL"
       ],
@@ -10713,6 +10734,9 @@
       ],
       "Spam": [
         "스팸"
+      ],
+      "Special characters": [
+        "특수 문자"
       ],
       "Starred": [
         "별표 표시됨"
@@ -10788,6 +10812,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "하나 및 하나 이상의 복구 파일 혹은 암호화 키를 업로드 하십시오"
+      ],
+      "Uppercase": [
+        "대문자"
       ],
       "URL": [
         "URL"
@@ -12553,7 +12580,7 @@
         "사용자를 위한 저장 공간을 늘리거나 재할당하세요"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+        "암호화된 캘린더로 나와 나의 가족의 사적인 계획을 지키세요"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "VPN 서버에서 예기치 않게 연결이 끊어졌을 때 모든 네트워크 연결을 차단하여 보호합니다."
@@ -12586,7 +12613,7 @@
         "관리자가 사용자를 추가 및 제거하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, \n 다른 작업을 수행할 수 있는 조직 관리 도구"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
+        "당사의 강력한 인프라는 사용자가 필요할 때 계정에 접근할 수 있도록 보장합니다."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "자사 서버버의 하드 디스크는 여러 암호 계층으로 완전히 암호화되어 하드웨어가 손상되더라도 데이터가 보호됩니다"
@@ -12676,7 +12703,7 @@
         "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "우리는 온라인 상에서 당신이 하는 것에 대한 세션 사용 로그를 보관하지 않으며, 당신의 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
+        "당사는 온라인 상에서 사용자의 행동에 대한 세션 사용 로그를 보관하지 않으며, 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "HIPAA/HITECH 규정이 적용되는 고객이 보호된 건강 정보(PHI)를 보호할 수 있도록 돕기 위해 최선을 다하고 있습니다. 서명된 BAA는 비즈니스 고객을 위한 모든 ${ BRAND_NAME }에서 사용할 수 있습니다."
@@ -13105,6 +13132,9 @@
       "Add to existing group": [
         "병합할 그룹 추가"
       ],
+      "Allowed (default)": [
+        "허용 (기본값)"
+      ],
       "Android": [
         "Android"
       ],
@@ -13174,6 +13204,9 @@
       "Normal": [
         "보통"
       ],
+      "Not allowed": [
+        "허용되지 않음"
+      ],
       "Off": [
         "끄기"
       ],
@@ -13200,6 +13233,9 @@
       ],
       "Repeat weekly": [
         "매주 반복"
+      ],
+      "Required": [
+        "필수"
       ],
       "Right to Left": [
         "오른쪽에서 왼쪽으로"
@@ -13567,7 +13603,7 @@
         "${ PASS_APP_NAME } 엡을 App Store에서 설치하고 휴대폰에서 ${ PASS_APP_NAME2 } 사용을 시작하세요."
       ],
       "Encrypted password manager that also protects your identity": [
-        "당신의 신원도 보호하는 암호화된 비밀번호 관리자"
+        "나의 신원까지 지켜주는 암호화된 비밀번호 관리자"
       ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
         "**${ username }**의 표시 이름을 입력하세요. 이 이름은 사용자가 권한을 변경하거나 데이터를 공유할 때 확인 가능합니다."
@@ -13600,7 +13636,7 @@
         "나의 가족을 위한 온라인 프라이버시 보호 얻기"
       ],
       "Get the security and features your business needs": [
-        "당신의 비즈니스에 필요한 보안과 기능을 얻으세요"
+        "나의 비즈니스에 필요한 보안과 기능을 얻으세요"
       ],
       "Get unlimited privacy for two": [
         "두 명을 위한 무제한 프라이버시 보호 받기"
@@ -16275,7 +16311,7 @@
         "캘린더를 관리할 수 없게 됩니다"
       ],
       "Online privacy, for your whole family": [
-        "당신의 가족, 모두를 위한 온라인 프라이버시."
+        "내 가족, 모두를 위한 온라인 프라이버시."
       ],
       "Our fight against censorship in Russia": [
         "러시아의 검열에 맞선 저희의 싸움"
@@ -17718,6 +17754,9 @@
       "Password": [
         "비밀번호"
       ],
+      "Password generator rules": [
+        "비밀번호 생성기 규칙"
+      ],
       "Password reset settings": [
         "비밀번호 재설정 설정"
       ],
@@ -18281,9 +18320,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
       ],
       "Customize import to reduce the number of folders": [
         "폴더 수를 줄이기 위해 가져오기를 사용자 정의하세요"
@@ -18890,6 +18926,9 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ],
+      "servers": [
+        "서버"
       ]
     },
     "vpn_2024: renew": {
@@ -19116,6 +19155,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "이 가져오기 작업을 취소하면 재개할 수 없습니다. 모든 진행 사항은 ${ BRAND_NAME } 계정에 저장되었습니다. 정말 취소하시겠습니까?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "최대가 최소보다 낮을 수 없습니다"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "${ minimumNumber }부터 ${ maximumNumber } 사이여야 합니다"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "${ minimumNumber }보다 같거나 커야 합니다"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "${ maximumNumber }보다 같거나 작아야 합니다"
       ],
       "Please add at least one recipient.": [
         "최소한 한 명의 수신자를 추가해주세요."

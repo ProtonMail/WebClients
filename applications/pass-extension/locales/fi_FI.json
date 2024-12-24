@@ -1254,7 +1254,7 @@
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot, maksukortit ja identiteetit."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } pyytää sinulta vahvistusta heti, kun generoitua salasanaa täytetään automaattisesti."
+        "${ PASS_APP_NAME } pyytää vahvistusta automaattitäytettäessä generoituja salasanoja."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } tarjoaa kirjautumistietojen tallennusta tai päivitystä."
@@ -1879,7 +1879,7 @@
         "Automaattitäytä identiteettisi nopeasti."
       ],
       "Quickly autofill your saved credentials.": [
-        "Automaattitäytä tallennetut kirjautumistietosi nopeasti."
+        "Automaattitäytä kirjautumistietosi nopeasti."
       ],
       "Record: CNAME": [
         "Tietue: CNAME"
@@ -2589,7 +2589,7 @@
         "Piilota salasana"
       ],
       "https://example.com": [
-        "https://example.com"
+        "https://esimerkki.fi"
       ],
       "ID Card": [
         "Henkilökortti"
@@ -2604,7 +2604,7 @@
         "Identiteetti"
       ],
       "Identity autofill": [
-        "Identiteetin automaattitäyttö"
+        "Identiteettien automaattitäyttö"
       ],
       "Import": [
         "Tuonti"
@@ -2679,7 +2679,7 @@
         "Kirjautumistieto"
       ],
       "Login autofill": [
-        "Kirjautumistiedon automaattitäyttö"
+        "Kirjautumistietojen automaattitäyttö"
       ],
       "Logins": [
         "Kirjautumistiedot"
@@ -2835,7 +2835,7 @@
         "Käytön mukaan"
       ],
       "Reddit handle": [
-        "Reddit-käyttäjätunnus"
+        "Reddit-tunnus"
       ],
       "Remove link": [
         "Poista linkki"

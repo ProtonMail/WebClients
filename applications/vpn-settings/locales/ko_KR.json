@@ -860,23 +860,6 @@
         "이 인증서를 사용하는 모든 라우터와 클라이언트의 연결이 끊어집니다."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "웹을 비공개로 탐색하고 광고를 차단하세요"
-      ],
-      "Keep your schedule private": [
-        "스케쥴을 사적으로 유지하세요"
-      ],
-      "Protect your passwords and identity": [
-        "비밀번호와 신원을 보호하세요"
-      ],
-      "Safeguard your files and photos": [
-        "파일과 사진을 보호하세요"
-      ],
-      "Secure your communications": [
-        "안전하게 소통하세요"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
@@ -2689,9 +2672,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
       ],
-      "Please enter a valid entity ID URL": [
-        "유효한 개체 ID URL을 입력해주세요"
-      ],
       "Please generate keys before you try to change your password": [
         "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ],
@@ -2712,9 +2692,6 @@
       ],
       "Please upload a square logo": [
         "정사각형인 로고를 업로드하셔야 합니다"
-      ],
-      "Please upload an xml file": [
-        "xml 파일을 업로드하세요"
       ],
       "Please upload only 1 file": [
         "하나의 파일만 업로드하세요"
@@ -3826,9 +3803,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
-      ],
       "Copy the suggested password to clipboard": [
         "클립보드로 비밀번호 제안을 복사하십시오"
       ],
@@ -3999,9 +3973,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } (으) 로 전송된 코드를 입력하세요. 받은 편지함에서 이메일을 찾을 수 없는 경우 스팸 폴더를 확인하세요."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }**을 위한 **eduGAIN**의 객체 ID를 입력하세요."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "조직 비밀번호를 입력해 관리자의 특권을 복구하세요. ${ learnMore }"
@@ -5779,9 +5750,6 @@
       "Show ${ n } administrator": [
         "${ n }명 관리자 보기"
       ],
-      "Single sign-on entity ID": [
-        "싱글 사인 온 엔티티 ID"
-      ],
       "Single sign-on URL": [
         "싱글 사인 온 URL"
       ],
@@ -7011,7 +6979,7 @@
         "사용자를 위한 저장 공간을 늘리거나 재할당하세요"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+        "암호화된 캘린더로 나와 나의 가족의 사적인 계획을 지키세요"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "VPN 서버에서 예기치 않게 연결이 끊어졌을 때 모든 네트워크 연결을 차단하여 보호합니다."
@@ -7044,7 +7012,7 @@
         "관리자가 사용자를 추가 및 제거하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, \n 다른 작업을 수행할 수 있는 조직 관리 도구"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
+        "당사의 강력한 인프라는 사용자가 필요할 때 계정에 접근할 수 있도록 보장합니다."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "자사 서버버의 하드 디스크는 여러 암호 계층으로 완전히 암호화되어 하드웨어가 손상되더라도 데이터가 보호됩니다"
@@ -7134,7 +7102,7 @@
         "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "우리는 온라인 상에서 당신이 하는 것에 대한 세션 사용 로그를 보관하지 않으며, 당신의 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
+        "당사는 온라인 상에서 사용자의 행동에 대한 세션 사용 로그를 보관하지 않으며, 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "HIPAA/HITECH 규정이 적용되는 고객이 보호된 건강 정보(PHI)를 보호할 수 있도록 돕기 위해 최선을 다하고 있습니다. 서명된 BAA는 비즈니스 고객을 위한 모든 ${ BRAND_NAME }에서 사용할 수 있습니다."
@@ -7536,85 +7504,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "이 플랜 유지"
-      ],
       "Start using ${ appName }": [
         "${ appName } 사용 시작"
-      ],
-      "Upgrade my plan": [
-        "내 플랜 업그레이드"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "상담 및 계약 필요"
-      ],
-      "Limited time offer": [
-        "기간 한정 세일"
-      ],
-      "Recommended": [
-        "권장"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }/월간"
-      ],
-      "/month /user": [
-        "/월 /사용자"
-      ],
-      "/month /user, billed annually": [
-        "/월간 /사용자 당, 연간 결제됨"
-      ],
-      "/month /user, billed biennially": [
-        "/월 /사용자, 매년 결제됨"
-      ],
-      "Creating your account": [
-        "계정을 생성하는 중"
-      ],
-      "Current plan": [
-        "현재 플랜"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "**${ username }**의 표시 이름을 입력하세요. 이 이름은 사용자가 권한을 변경하거나 데이터를 공유할 때 확인 가능합니다."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 VPN 서비스를 사용하실 수 있습니다!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
-      ],
-      "Free forever": [
-        "영원히 무료"
-      ],
-      "Get in touch with our sales team": [
-        "자사 세일즈 팀에 문의하세요."
-      ],
-      "Includes:": [
-        "포함:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 실행 중"
-      ],
-      "per month": [
-        "매월"
-      ],
-      "per month, billed annually": [
-        "월 기준, 매년마다 납부됨"
-      ],
-      "per month, billed every month": [
-        "월 기준, 개월마다 납부됨"
-      ],
-      "per month, billed every two years": [
-        "월 기준, 2년마다 납부됨"
-      ],
-      "Preparing your Recovery Kit": [
-        "복구 키트를 준비하는 중"
-      ],
       "Secure vault and link sharing": [
         "안전한 금고 및 링크 공유"
       ],
@@ -7626,23 +7520,6 @@
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
         "안전한 링크 공유 (${ n }개 금고) 및 링크 공유"
-      ],
-      "Setting up your organization": [
-        "조직을 설정하세요"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }로 로그인 중"
-      ],
-      "Updating your account": [
-        "계정 업데이트 중"
-      ],
-      "Verifying your payment": [
-        "결제 수단을 인증 중입니다."
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "모든 ${ BRAND_NAME } Plus 서비스. ${ br }한 번의 쉬운 구독으로."
       ]
     },
     "pass_signup_2024: Info": {
@@ -9426,7 +9303,7 @@
         "캘린더를 관리할 수 없게 됩니다"
       ],
       "Online privacy, for your whole family": [
-        "당신의 가족, 모두를 위한 온라인 프라이버시."
+        "내 가족, 모두를 위한 온라인 프라이버시."
       ],
       "Our fight against censorship in Russia": [
         "러시아의 검열에 맞선 저희의 싸움"
@@ -10668,9 +10545,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
-      ],
       "Device information such as operating system": [
         "운영체제와 같은 디바이스 정보"
       ],
@@ -11053,6 +10927,9 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ],
+      "servers": [
+        "서버"
       ]
     },
     "vpn_2024: renew": {

@@ -691,6 +691,9 @@
       "A checked box means the feature is disabled.": [
         "Een selectievakje betekent dat de functie is uitgeschakeld."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Voeg de volgende CNAME DNS records toe aan uw domein."
+      ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
         "Voeg het volgende MX DNS-record toe aan uw domein. Houd er rekening mee dat er een punt (.) is op de einddoeladressen. Als uw domein registrator dit punt niet toestaat, verwijder het dan bij het toevoegen van het DNS-record."
       ],
@@ -700,8 +703,20 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Dark Web Monitoring is beschikbaar met een betaald abonnement. Upgrade voor directe toegang."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } is een authenticatiemethode ontworpen om te voorkomen dat e-mail vervalst wordt. Het instellen van DKIM is sterk aanbevolen om de kans te verminderen dat uw e-mails in de spammap van de ontvanger terechtkomen."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } is ontworpen om het domein te beschermen tegen ongeautoriseerd gebruik, algemeen bekend als e-mail spoofing. Gebouwd rond SPF en DKIM, vertelt een DMARC-beleid de ontvangende mailserver wat te doen als geen van deze authenticatiemethoden doorgaat."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Als u een subdomein gebruikt, bijvoorbeeld ${ subdomainExample }, dan moet u ${ dmarcExampleSubdomain } als het domein gebruiken."
+      ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Als u een subdomein gebruikt, zoals subdomein.domein.com, moet u ${ domainKeyExampleSubdomain } als het domein gebruiken. Dat betekent dat als uw domein mail.domein.com is, u ${ domainKeyExampleMail } als het domein moet invoeren."
+      ],
+      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
+        "Als u CloudFlare gebruikt, zorg er dan voor dat u de Proxy optie niet selecteert."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lijst van domeinen waar bepaalde automatische functies in ${ PASS_SHORT_APP_NAME } (Automatisch invullen, automatisch suggesties geven, automatisch opslaan) niet mogen uitgevoerd worden. ${ infoText }"
@@ -711,6 +726,9 @@
       ],
       "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
         "Sommige domein registrators (Namecheap, CloudFlare, enz) gebruiken misschien ook @ voor het root-domein."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } is een verificatiemethode ontworpen om het vervalsen van afzenderadressen te detecteren tijdens de levering van de e-mail. Het instellen van SPF wordt sterk aanbevolen om de kans te verminderen dat uw e-mails in de Spam map van de ontvanger terechtkomen."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
@@ -3058,6 +3076,11 @@
         "Postcode"
       ]
     },
+    "Link": {
+      "auto create rules ››": [
+        "automatisch regels creëren"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } item",
@@ -3268,6 +3291,12 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronisatie aliassen succesvol ingeschakeld. SimpleLogin aliassen kunnen enige tijd duren om te synchroniseren"
       ],
+      "Catch-all setting successfully disabled": [
+        "Catch-allinstellingen succesvol uitgeschakeld"
+      ],
+      "Catch-all setting successfully enabled": [
+        "Catch-all instelling succesvol ingeschakeld"
+      ],
       "Contact successfully blocked": [
         "Contact geblokkeerd"
       ],
@@ -3277,14 +3306,26 @@
       "Contact successfully deleted": [
         "Contact verwijderd"
       ],
+      "Contact successfully unblocked": [
+        "Contactpersoon succesvol gedeblokkerd"
+      ],
+      "Default domain successfully updated": [
+        "Standaarddomein succesvol bijgewerkt"
+      ],
       "Default mailbox successfully updated": [
         "Standaard postbus succesvol bijgewerkt"
       ],
       "Display name successfully updated": [
         "Weergavenaam succesvol bijgewerkt"
       ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Domein eigendom geverifieerd. U kunt nu MX record instellen."
+      ],
       "Domain successfully deleted": [
         "Domein succesvol verwijderd"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domein met succes geverifieerd. Uw domein kan e-mails ontvangen en aliassen aanmaken"
       ],
       "Mailbox successfully deleted": [
         "Mailbox verwijderd"
@@ -3292,9 +3333,21 @@
       "Mailbox successfully verified": [
         "Mailbox geverifieerd"
       ],
+      "Mailboxes successfully updated": [
+        "Mailboxen bijgewerkt"
+      ],
+      "Random prefix generation successfully disabled": [
+        "Willekeurige prefix generatie succesvol uitgeschakeld"
+      ],
+      "Random prefix generation successfully enabled": [
+        "Willekeurige prefix genereren succesvol ingeschakeld"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruiker bevatten.",
         "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruikers bevatten."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "E-mail met verificatie is verzonden. Controleer uw inbox om uw mailbox te verifiëren"
       ]
     },
     "Theme": {

@@ -858,23 +858,6 @@
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surfe privat im Internet und blockiere Werbung"
-      ],
-      "Keep your schedule private": [
-        "Halte deinen Terminplan privat"
-      ],
-      "Protect your passwords and identity": [
-        "Schütze deine Passwörter und Identität"
-      ],
-      "Safeguard your files and photos": [
-        "Sichere deine Dateien und Fotos"
-      ],
-      "Secure your communications": [
-        "Sichere deine Kommunikation"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
@@ -2676,9 +2659,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
       ],
-      "Please enter a valid entity ID URL": [
-        "Bitte gib eine gültige URL zur Entitäts-ID ein"
-      ],
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ],
@@ -2700,7 +2680,7 @@
       "Please upload a square logo": [
         "Bitte lade ein quadratisches Logo hoch."
       ],
-      "Please upload an xml file": [
+      "Please upload an XML file": [
         "Bitte lade eine XML-Datei hoch."
       ],
       "Please upload only 1 file": [
@@ -3831,9 +3811,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
-      ],
       "Copy the suggested password to clipboard": [
         "Vorgeschlagenes Passwort in die Zwischenablage kopieren"
       ],
@@ -3995,9 +3972,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Gib den an „${ email }” gesendeten Code ein. Solltest du die Nachricht nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Gib die Entitäts-ID einer **eduGAIN**-Organisation für **${ domain.DomainName }** ein."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Gib das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
@@ -5755,9 +5729,6 @@
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
       ],
-      "Single sign-on entity ID": [
-        "Single Sign-on-Entitäts-ID"
-      ],
       "Single sign-on URL": [
         "Single Sign-on-URL"
       ],
@@ -7242,6 +7213,9 @@
       "During your first month": [
         "Während des ersten Monats"
       ],
+      "Email subscriptions": [
+        "E‐Mail‐Abonnements"
+      ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Nimm an Umfragen teil, um die Dienstleistungen von ${ BRAND_NAME } zu verbessern."
       ],
@@ -7480,85 +7454,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Dieses Abonnement beibehalten"
-      ],
       "Start using ${ appName }": [
         "Beginne, ${ appName } zu verwenden"
-      ],
-      "Upgrade my plan": [
-        "Abonnement upgraden"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Lass uns reden"
-      ],
-      "Limited time offer": [
-        "Zeitlich befristetes Angebot"
-      ],
-      "Recommended": [
-        "Empfohlen"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pro Monat"
-      ],
-      "/month /user": [
-        "/Monat/Benutzer"
-      ],
-      "/month /user, billed annually": [
-        "/Monat/Benutzer, jährlich abgerechnet"
-      ],
-      "/month /user, billed biennially": [
-        "/Monat/Benutzer, zweijährlich abgerechnet"
-      ],
-      "Creating your account": [
-        "Dein Konto wird erstellt"
-      ],
-      "Current plan": [
-        "Aktuelles Abonnement"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Gib einen Anzeigenamen für **${ username }** ein. Dies ist der Name, den deine Benutzer sehen werden, wenn du ihre Berechtigungen änderst oder Daten mit ihnen teilst."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium Passwortmanager!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium VPN-Diensten!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu allen ${ BRAND_NAME }-Premiumdiensten!"
-      ],
-      "Free forever": [
-        "Dauerhaft kostenlos"
-      ],
-      "Get in touch with our sales team": [
-        "Wende dich an unser Vertriebsteam"
-      ],
-      "Includes:": [
-        "Enthält:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } wird gestartet"
-      ],
-      "per month": [
-        "pro Monat"
-      ],
-      "per month, billed annually": [
-        "pro Monat, jährliche Abrechnung"
-      ],
-      "per month, billed every month": [
-        "pro Monat, monatliche Abrechnung"
-      ],
-      "per month, billed every two years": [
-        "pro Monat, Abrechnung alle zwei Jahre"
-      ],
-      "Preparing your Recovery Kit": [
-        "Dein Wiederherstellungskit wird vorbereitet"
-      ],
       "Secure vault and link sharing": [
         "Sichere Tresor- und Linkfreigabe"
       ],
@@ -7572,23 +7472,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Sichere Tresorfreigabe (${ n } Tresor) und Linkfreigabe",
         "Sichere Tresorfreigabe (${ n } Tresore) und Linkfreigabe"
-      ],
-      "Setting up your organization": [
-        "Deine Organisation wird eingerichtet"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Anmelden bei ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Dein Konto wird aktualisiert"
-      ],
-      "Verifying your payment": [
-        "Deine Zahlung wird verifiziert"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Alle ${ BRAND_NAME } Plus-Dienste.${ br }Ein einfaches Abonnement."
       ]
     },
     "pass_signup_2024: Info": {
@@ -8775,6 +8658,9 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Confirm backup password": [
+        "Backup-Passwort bestätigen"
+      ],
       "Confirmation code": [
         "Bestätigungscode"
       ],
@@ -8809,6 +8695,9 @@
       ],
       "Grant access": [
         "Zugriff gewähren"
+      ],
+      "Grant access to user?": [
+        "Dem Benutzer Zugriff gewähren?"
       ],
       "Grant access to users?": [
         "Den Benutzern Zugriff gewähren?"
@@ -10531,9 +10420,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
-      ],
       "Device information such as operating system": [
         "Geräteinformationen wie das Betriebssystem"
       ],
@@ -10629,6 +10515,9 @@
       ],
       "Refunded": [
         "Erstattet"
+      ],
+      "Success": [
+        "Erfolgreich"
       ]
     },
     "Transaction type display as badge": {
@@ -10880,6 +10769,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ],
+      "servers": [
+        "Servers"
       ]
     },
     "vpn_2024: renew": {

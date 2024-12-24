@@ -910,6 +910,9 @@
       "Reset keys": [
         "Resetare chei"
       ],
+      "Reset modifications": [
+        "Resetare modificări"
+      ],
       "Reset password": [
         "Resetare parolă"
       ],
@@ -3692,6 +3695,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puteți continua să invitați prieteni, dar nu veți putea câștiga mai multe credite."
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Puteți aplica regulile pentru parole pe care membrii organizației le vor folosi atunci când generează o parolă în ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ]
@@ -4714,9 +4720,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
       ],
-      "Please enter a valid entity ID URL": [
-        "Introduceți un URL de ID de entitate valid."
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua.",
@@ -4745,9 +4748,6 @@
       ],
       "Please upload a square logo": [
         "Încărcați un logo pătrat."
-      ],
-      "Please upload an xml file": [
-        "Încărcați un fișier xml."
       ],
       "Please upload only 1 file": [
         "Încărcați numai un fișier."
@@ -7286,9 +7286,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
-      ],
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
       ],
@@ -7563,9 +7560,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Introduceți ID-ul entității dintr-o organizație **eduGAIN** pentru **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduceți parola organizației pentru a restaura privilegiile administratorului. ${ learnMore }"
@@ -8234,6 +8228,9 @@
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
       ],
+      "Password generator rules successfully saved": [
+        "Regulile generatorului de parole s-au salvat."
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola trebuie să conțină ${ MIN_PASSWORD_LENGTH } caractere sau mai mult."
       ],
@@ -8521,6 +8518,9 @@
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Setting successfully saved": [
+        "Setările au fost salvate."
       ],
       "Setting up your new address...": [
         "Vi se configurează noile adrese..."
@@ -10098,8 +10098,14 @@
       "Allow": [
         "Adrese permise"
       ],
+      "Allow memorable passwords": [
+        "Permitere parole memorabile"
+      ],
       "Allow notifications by email": [
         "Permitere notificări pe e-mail"
+      ],
+      "Allow random passwords": [
+        "Permitere parole aleatorii"
       ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
@@ -10229,6 +10235,9 @@
       ],
       "Calendars": [
         "Calendare"
+      ],
+      "Capitalize words": [
+        "Cuvinte cu majuscule"
       ],
       "Card details": [
         "Detalii card"
@@ -10635,6 +10644,12 @@
       "Mark as": [
         "Marcare"
       ],
+      "Maximum number of characters": [
+        "Număr maxim de caractere"
+      ],
+      "Maximum number of words": [
+        "Număr maxim de cuvinte"
+      ],
       "Message": [
         "Mesaj"
       ],
@@ -10649,6 +10664,12 @@
       ],
       "Method for importing metadata": [
         "Metoda de importare a metadatelor"
+      ],
+      "Minimum number of characters": [
+        "Număr minim de caractere"
+      ],
+      "Minimum number of words": [
+        "Număr minim de cuvinte"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -10706,6 +10727,9 @@
       ],
       "Notifications": [
         "Notificări"
+      ],
+      "Numbers": [
+        "Cifre"
       ],
       "OpenVPN / IKEv2 password": [
         "Parola OpenVPN/IKEv2"
@@ -10895,9 +10919,6 @@
       "Signature": [
         "Semnătura"
       ],
-      "Single sign-on entity ID": [
-        "ID entitate SSO"
-      ],
       "Single sign-on URL": [
         "URL SSO (autentificare unică)"
       ],
@@ -10915,6 +10936,9 @@
       ],
       "Spam": [
         "Nedorite"
+      ],
+      "Special characters": [
+        "Caractere speciale"
       ],
       "Starred": [
         "Cu stea"
@@ -10990,6 +11014,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Încărcare una sau mai multe fișiere de recuperare sau chei de criptare"
+      ],
+      "Uppercase": [
+        "Majuscule"
       ],
       "URL": [
         "Adresa URL"
@@ -13393,6 +13420,9 @@
       "Add to existing group": [
         "Adăugare la grup existent"
       ],
+      "Allowed (default)": [
+        "Permis (implicit)"
+      ],
       "Android": [
         "Android"
       ],
@@ -13462,6 +13492,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "Nepermis"
+      ],
       "Off": [
         "Oprită"
       ],
@@ -13488,6 +13521,9 @@
       ],
       "Repeat weekly": [
         "Repetare săptămânală"
+      ],
+      "Required": [
+        "Necesar"
       ],
       "Right to Left": [
         "De la dreapta la stânga"
@@ -18146,6 +18182,9 @@
       "Password": [
         "Parola"
       ],
+      "Password generator rules": [
+        "Reguli generator de parole"
+      ],
       "Password reset settings": [
         "Setări resetare parolă"
       ],
@@ -18711,9 +18750,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
       ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
@@ -19336,6 +19372,9 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "servers": [
+        "servere"
       ]
     },
     "vpn_2024: renew": {
@@ -19574,6 +19613,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Dacă anulați această importare, nu o veți putea relua. ${ BRAND_NAME } a salvat tot progresul în cont. Continuați anularea?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Maximul nu poate fi mai mic decât minimul."
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Trebuie să fie între ${ minimumNumber } și ${ maximumNumber }."
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Trebuie să fie mai mare decât sau egal cu ${ minimumNumber }."
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Trebuie să fie mai mic decât sau egal cu ${ maximumNumber }."
       ],
       "Please add at least one recipient.": [
         "Adăugați cel puțin un destinatar."

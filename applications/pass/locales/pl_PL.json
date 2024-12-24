@@ -814,6 +814,9 @@
         "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV",
         "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Nie można zweryfikować domeny. Upewnij się, że dodano prawidłowe rekordy DNS"
+      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
@@ -936,6 +939,9 @@
       ],
       "Failed to update monitoring settings": [
         "Nie udało się zaktualizować ustawień monitoringu"
+      ],
+      "Failed to update random prefix generation setting.": [
+        "Nie udało się zaktualizować ustawienia generowania losowego przedrostka."
       ],
       "Failed to verify domain": [
         "Nie udało się zweryfikować domeny"
@@ -1491,6 +1497,9 @@
       "Email headers illustration": [
         "Ilustracja nagłówków wiadomości"
       ],
+      "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
+        "Wiadomość wysłana na ten adres będzie wyglądała na wysłaną z adresu, np. ${ exampleEmail }."
+      ],
       "Emptying trash...": [
         "Opróżnianie Kosza..."
       ],
@@ -1917,6 +1926,9 @@
       "Secure links": [
         "Linki"
       ],
+      "See more info": [
+        "Pokaż więcej informacji"
+      ],
       "Select destination vault": [
         "Wybierz docelowy sejf"
       ],
@@ -1976,6 +1988,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
+      ],
+      "The display name when sending an email from this alias.": [
+        "Nazwa wyświetlana podczas wysyłania wiadomości z tego aliasu."
       ],
       "The export will only contain vaults that you own.": [
         "Plik eksportu będzie zawierał tylko Twoje sejfy."
@@ -2043,6 +2058,9 @@
       "Unconfigured": [
         "Nieskonfigurowano"
       ],
+      "Unlimited hide-my-email aliases and advanced alias management": [
+        "Nieograniczona liczba aliasów hide-my-email i zaawansowane zarządzanie aliasami"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą biometrii"
       ],
@@ -2050,7 +2068,7 @@
         "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
-        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą zapasowego hasła"
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła zapasowego"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą dodatkowego hasła"
@@ -3722,7 +3740,7 @@
         "Co to jest dark web?"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
-        "Jaka jest różnica między notatką ${ PASS_SHORT_APP_NAME } i SimpleLogin?"
+        "Jaka jest różnica między notatką ${ PASS_SHORT_APP_NAME } a SimpleLogin?"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Subskrypcja ${ planName } wygasa ${ endDate }"
@@ -3925,6 +3943,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Skontaktuj się z nami, aby zbadać problem"
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Usuniętych aliasów nie można przywrócić"
       ],
       "Please update the extension to its latest version": [
         "Zaktualizuj rozszerzenie do najnowszej wersji"

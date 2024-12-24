@@ -216,9 +216,6 @@
       "Create": [
         "Стварыць"
       ],
-      "Create a folder": [
-        "Стварыць папку"
-      ],
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
@@ -305,9 +302,6 @@
       ],
       "Download (${ count })": [
         "Спампаваць (${ count })"
-      ],
-      "Download all": [
-        "Спампаваць усё"
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
@@ -570,9 +564,6 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
-      "Open scan and download info": [
-        "Адкрыйце сканер і спампуйце звесткі"
-      ],
       "Pause all": [
         "Прыпыніць усе"
       ],
@@ -710,15 +701,6 @@
       ],
       "Save changes": [
         "Захаваць змены"
-      ],
-      "Scan & Download": [
-        "Сканіраваць і спампаваць"
-      ],
-      "Scan & Download (${ count })": [
-        "Сканіраваць і спампаваць (${ count })"
-      ],
-      "Scan & Download all": [
-        "Сканіраваць і спампаваць усё"
       ],
       "Search": [
         "Пошук"
@@ -3306,7 +3288,7 @@
         "Плаваючы час не падтрымліваецца"
       ],
       "Free-busy time information": [
-        "Інфармацыя аб свабодным часе і працоўных днях"
+        "Звесткі аб свабодным часе і працоўных днях"
       ],
       "Invalid event": [
         "Памылковая падзея"
@@ -4425,9 +4407,6 @@
       "Change your password": [
         "Змяніць свой пароль"
       ],
-      "Check for malicious files": [
-        "Праверка на наяўнасць шкодных файлаў"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
       ],
@@ -5413,7 +5392,7 @@
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
-        "Гэта выдаліць сінхранізаваную прыладу ${ deviceName } з ${ DRIVE_APP_NAME } і ўсе яе даныя з ${ DRIVE_APP_NAME }. Папкі дадзеныя ў \"Мой камп'ютар\" больш не будуць сінхранізавацца."
+        "Гэта прывядзе да выдалення сінхранізаванай прылады ${ deviceName } з ${ DRIVE_APP_NAME } і ўсіх яе даных з ${ DRIVE_APP_NAME }. Папкі дададзеныя ў \"Мой камп'ютар\" больш не будуць сінхранізавацца."
       ],
       "This will replace the existing file with the folder": [
         "Гэта заменіць існуючы файл папкай"
@@ -5438,9 +5417,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
-        "${ DRIVE_APP_NAME } можа сканіраваць вашы файлы з захаваннем прыватнасці і блакіраваць шкоднасныя файлы, каб дапамагчы абараніць вас. Аднак, лепш спампоўваць файлы толькі з надзейных крыніц."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
