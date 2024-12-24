@@ -139,6 +139,9 @@
       "Delete all": [
         "全部刪除"
       ],
+      "Delete it, I will never need it": [
+        "刪除，我將不再使用"
+      ],
       "Delete password": [
         "刪除密碼"
       ],
@@ -150,6 +153,9 @@
       ],
       "Deselect": [
         "取消選取"
+      ],
+      "Disable alias": [
+        "停用別名"
       ],
       "Discard": [
         "放棄"
@@ -289,6 +295,9 @@
       "Move to Trash": [
         "移至垃圾桶"
       ],
+      "Multiple select": [
+        "多選"
+      ],
       "Next": [
         "下一個"
       ],
@@ -312,6 +321,9 @@
       ],
       "Pin item": [
         "固定物品"
+      ],
+      "Please retry": [
+        "請重新嘗試"
       ],
       "Previous": [
         "上一步"
@@ -421,6 +433,9 @@
       "Submitting report...": [
         "正在送出報告..."
       ],
+      "Sync alias": [
+        "同步別名"
+      ],
       "Transfer ownership": [
         "轉移所有權"
       ],
@@ -432,6 +447,9 @@
       ],
       "Try for free": [
         "免費滿意體驗"
+      ],
+      "Understood, I will never need it": [
+        "了解，我將不再需要這些項目"
       ],
       "Unlock": [
         "解鎖"
@@ -477,6 +495,9 @@
       ],
       "Write us on Twitter": [
         "在 Twitter 上寫上我們"
+      ],
+      "Your password manager is not here? Request it.": [
+        "您使用的密碼管理器不在這裡？歡迎告訴我們"
       ]
     },
     "App menu": {
@@ -561,6 +582,9 @@
       ],
       "Could not resolve share members": [
         "無法還原共享成員"
+      ],
+      "Could not validate addresses at the moment.": [
+        "目前無法驗證地址"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV檔案失去表頭。${ missingHeaders }"
@@ -673,6 +697,9 @@
       "Moving item failed": [
         "移動項目失敗"
       ],
+      "Network error": [
+        "網路連線錯誤"
+      ],
       "Passphrase is incorrect": [
         "密碼不正確"
       ],
@@ -730,6 +757,9 @@
       "Unknown item": [
         "未知項目"
       ],
+      "Unlock failure": [
+        "解鎖失敗"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "不支援${ PASS_APP_NAME }檔案格式"
       ],
@@ -747,6 +777,9 @@
       ],
       "Vault name does not match": [
         "保管庫名稱不符"
+      ],
+      "Wrong extra password": [
+        "第二密碼錯誤"
       ],
       "Wrong PIN code. Try again.": [
         "錯誤的個人識別數字代碼，請再嘗試。"
@@ -927,6 +960,15 @@
       "Didn't receive the code?": [
         "沒收到驗證碼嗎?"
       ],
+      "Disabling auto-lock": [
+        "停用自動鎖定"
+      ],
+      "Disabling auto-lock failed": [
+        "停用自動鎖定失敗"
+      ],
+      "Disabling offline mode...": [
+        "停用離線模式..."
+      ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
       ],
@@ -944,6 +986,18 @@
       ],
       "Emptying trash...": [
         "清空垃圾桶..."
+      ],
+      "Enabling offline mode...": [
+        "啟用離線模式..."
+      ],
+      "Enabling password auto-lock": [
+        "啟用密碼自動鎖定"
+      ],
+      "Enabling password lock failed": [
+        "啟用密碼鎖定失敗"
+      ],
+      "Enabling PIN auto-lock": [
+        "啟用 PIN 自動鎖定"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "輸入驗證代碼。正在按下 ${ digit } 。"
@@ -1095,6 +1149,9 @@
       "Offline mode": [
         "離線模式"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "離線模式目前無法被停用"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
@@ -1109,6 +1166,9 @@
       ],
       "password": [
         "密碼"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "已成功註冊密碼鎖定，使用密碼以解鎖 ${ PASS_APP_NAME }"
       ],
       "Paused": [
         "已暫停"
@@ -1131,6 +1191,12 @@
       "Please enter your current PIN code to continue": [
         "輸入 PIN 碼以繼續"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "當信箱別名被刪除，將無法復原。可能您需要停用別名？"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "已被刪除的信箱別名無法復原。此別名已被停用並不再轉寄郵件至您的信箱"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "請升級以提早存取${ PASS_APP_NAME }網頁"
       ],
@@ -1142,6 +1208,9 @@
       ],
       "Reconnecting": [
         "重新連線"
+      ],
+      "Registering PIN lock failed": [
+        "註冊 PIN 鎖定失敗"
       ],
       "Restoring items from trash": [
         "重垃圾桶垃圾桶還原項目"
@@ -1257,6 +1326,9 @@
       "You are about to create:": [
         "您將要創建:"
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "你有 ${ aliasCount } 個別名存在於 SimpleLogin ，但未同步到 ${ PASS_APP_NAME } 。是否需要進行同步？"
+      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "已用鑿可供創建別名的數量。升級訂購授權即可釋放限制"
       ],
@@ -1319,6 +1391,9 @@
       "15 minutes": [
         "15 分鐘"
       ],
+      "15 seconds": [
+        "15 秒"
+      ],
       "24 hours": [
         "24 小時"
       ],
@@ -1379,8 +1454,14 @@
       "Birthdate": [
         "日期"
       ],
+      "Browse faster, smarter": [
+        "更聰明、快速的瀏覽"
+      ],
       "Capital letters (A-Z)": [
         "大寫字母(A~Z)"
+      ],
+      "Capitalize": [
+        "首字大寫"
       ],
       "Card": [
         "卡片"
@@ -1393,6 +1474,9 @@
       ],
       "City": [
         "縣市"
+      ],
+      "Clear clipboard after": [
+        "自動清除剪貼簿"
       ],
       "Code": [
         "代碼"
@@ -1439,6 +1523,9 @@
       "Created at": [
         "建立於"
       ],
+      "Dark Web Monitoring": [
+        "暗網監控"
+      ],
       "Date": [
         "日期"
       ],
@@ -1460,6 +1547,9 @@
       "Download logs": [
         "下載記錄檔"
       ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "輕鬆共享敏感資訊給任何人，即使不是 ${ PASS_APP_NAME } 的用戶。你可以共享單一密碼、筆記、信用或簽帳卡資訊、或資料夾下的多個項目。"
+      ],
       "Email": [
         "電郵"
       ],
@@ -1471,6 +1561,9 @@
       ],
       "Empty trash": [
         "清空垃圾桶"
+      ],
+      "Enable offline access": [
+        "啟用離線存取"
       ],
       "Expiration date": [
         "有效期限"
@@ -1496,6 +1589,9 @@
       "Free forever": [
         "永久免費"
       ],
+      "Free password manager with identity protection": [
+        "具身分保護功能的免費密碼管理器"
+      ],
       "Full Name": [
         "全名"
       ],
@@ -1508,6 +1604,9 @@
       "Generic CSV": [
         "通用 CSV"
       ],
+      "Get the extension for your browser.": [
+        "在你的瀏覽器使用擴充功能"
+      ],
       "Grant": [
         "授予"
       ],
@@ -1516,6 +1615,15 @@
       ],
       "Hide password": [
         "隱藏密碼"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "如何解鎖 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "ID Card": [
+        "身分識別證件"
+      ],
+      "ID Card number": [
+        "身分識別證件號碼"
       ],
       "Identities": [
         "身分"
@@ -1529,6 +1637,9 @@
       "Import passwords": [
         "匯入密碼"
       ],
+      "Imported from: ": [
+        "匯入自： "
+      ],
       "Imported on : ": [
         "匯入自 : "
       ],
@@ -1537,6 +1648,15 @@
       ],
       "Include numbers (0-9)": [
         "包含數字(0~9)"
+      ],
+      "Install and continue": [
+        "安裝並繼續"
+      ],
+      "Install extension": [
+        "安裝擴充功能"
+      ],
+      "Integrated 2FA authenticator": [
+        "整合雙重驗證"
       ],
       "Invitations": [
         "邀請"
@@ -1652,6 +1772,9 @@
       "Passphrase": [
         "驗證驗密語"
       ],
+      "Passport": [
+        "護照"
+      ],
       "Passport number": [
         "護照號碼"
       ],
@@ -1663,6 +1786,9 @@
       ],
       "Personal details": [
         "個人資訊"
+      ],
+      "Personalize": [
+        "個人化"
       ],
       "Phone number": [
         "手機號碼"
@@ -1691,6 +1817,12 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Secure password sharing": [
+        "安全的密碼共享"
+      ],
+      "Securely log in with passkeys": [
+        "使用通行密鑰更安全的登入"
+      ],
       "Security": [
         "安全"
       ],
@@ -1703,8 +1835,14 @@
       "Select preferred language": [
         "選擇顯示語言"
       ],
+      "Select theme": [
+        "選擇主題"
+      ],
       "Select your password manager": [
         "選擇您的密碼管理器"
+      ],
+      "Select your theme": [
+        "選擇你的主題"
       ],
       "Selected": [
         "選取"
@@ -1714,6 +1852,9 @@
       ],
       "Show website favicons": [
         "顯示網站圖示"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "以更快的方式登入 ${ PASS_APP_NAME }"
       ],
       "Social security number": [
         "社會安全碼（SSN）"
@@ -1739,6 +1880,9 @@
       "Support": [
         "支援"
       ],
+      "Tax number": [
+        "稅務識別碼"
+      ],
       "Text": [
         "文字"
       ],
@@ -1751,6 +1895,12 @@
       "Today": [
         "今日"
       ],
+      "Total imported items: ": [
+        "所有的匯入項目： "
+      ],
+      "Total items: ": [
+        "所有項目： "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -1759,6 +1909,9 @@
       ],
       "Type": [
         "類型"
+      ],
+      "Unlock with:": [
+        "解鎖透過："
       ],
       "Unnamed Credit Card": [
         "未命名信用卡"
@@ -1810,6 +1963,12 @@
       ],
       "You are about to create": [
         "您將要創建"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "你可以選擇個人識別數字代碼、生物識別或帳號密碼以解鎖"
+      ],
+      "Your passwords. Everywhere.": [
+        "你的密碼，無所不在"
       ]
     },
     "Link": {
@@ -2148,6 +2307,9 @@
       "Pinned (${ items.length })": [
         "地址 (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "需注意別名一旦刪除，將無法恢復"
+      ],
       "Recommended actions": [
         "建議行動"
       ],
@@ -2204,6 +2366,9 @@
       ],
       "Suggestions": [
         "建議"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "從 SimpleLogin 同步你的別名"
       ],
       "Transfer ownership": [
         "轉移所有權"
@@ -2286,6 +2451,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "無法創建保管庫${ vaultName }"
+      ],
+      "Delete alias": [
+        "刪除信箱別名"
       ],
       "Duplicate email addresses.": [
         "重複的電子郵件位址"
@@ -2399,7 +2567,7 @@
         "您的作業階段無法復原"
       ],
       "Your session was locked.": [
-        "您的作業階段以鎖定。"
+        "您的作業階段已鎖定"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入第一個保管庫。若要匯入多重保管庫，需升級訂閱。"
