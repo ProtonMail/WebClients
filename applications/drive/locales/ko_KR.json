@@ -213,9 +213,6 @@
       "Create": [
         "생성"
       ],
-      "Create a folder": [
-        "폴더 생성"
-      ],
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
@@ -296,9 +293,6 @@
       ],
       "Download (${ count })": [
         "다운로드 (${ count })"
-      ],
-      "Download all": [
-        "모두 다운로드"
       ],
       "Download anyway": [
         "무시하고 다운로드"
@@ -561,9 +555,6 @@
       "Open navigation": [
         "탐색 열기"
       ],
-      "Open scan and download info": [
-        "스캔 열고 정보 다운로드"
-      ],
       "Pause all": [
         "모두 일시 정지"
       ],
@@ -701,15 +692,6 @@
       ],
       "Save changes": [
         "변경 사항 저장"
-      ],
-      "Scan & Download": [
-        "검사하고 다운로드"
-      ],
-      "Scan & Download (${ count })": [
-        "검사하고 (${ count })개 다운로드"
-      ],
-      "Scan & Download all": [
-        "검사하고 모두 다운로드"
       ],
       "Search": [
         "검색"
@@ -4220,9 +4202,6 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
-      "Check for malicious files": [
-        "악성 파일 확인"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "연락처 확인 중 ${ max } 중 ${ progress }..."
       ],
@@ -5203,9 +5182,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
-        "사용자를 보호하는데 도움이 되도록 ${ DRIVE_APP_NAME }가 개인정보를 보호하는 방식으로 파일을 스캔하고 멀웨어 파일을 차단합니다. 여전히 신뢰된 출처에서만 파일을 다운로드해야 합니다."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
@@ -7355,7 +7331,7 @@
         "사용자를 위한 저장 공간을 늘리거나 재할당하세요"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+        "암호화된 캘린더로 나와 나의 가족의 사적인 계획을 지키세요"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "VPN 서버에서 예기치 않게 연결이 끊어졌을 때 모든 네트워크 연결을 차단하여 보호합니다."
@@ -7388,7 +7364,7 @@
         "관리자가 사용자를 추가 및 제거하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, \n 다른 작업을 수행할 수 있는 조직 관리 도구"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
+        "당사의 강력한 인프라는 사용자가 필요할 때 계정에 접근할 수 있도록 보장합니다."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "자사 서버버의 하드 디스크는 여러 암호 계층으로 완전히 암호화되어 하드웨어가 손상되더라도 데이터가 보호됩니다"
@@ -7478,7 +7454,7 @@
         "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "우리는 온라인 상에서 당신이 하는 것에 대한 세션 사용 로그를 보관하지 않으며, 당신의 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
+        "당사는 온라인 상에서 사용자의 행동에 대한 세션 사용 로그를 보관하지 않으며, 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "HIPAA/HITECH 규정이 적용되는 고객이 보호된 건강 정보(PHI)를 보호할 수 있도록 돕기 위해 최선을 다하고 있습니다. 서명된 BAA는 비즈니스 고객을 위한 모든 ${ BRAND_NAME }에서 사용할 수 있습니다."
@@ -9225,7 +9201,7 @@
         "캘린더를 관리할 수 없게 됩니다"
       ],
       "Online privacy, for your whole family": [
-        "당신의 가족, 모두를 위한 온라인 프라이버시."
+        "내 가족, 모두를 위한 온라인 프라이버시."
       ],
       "Our fight against censorship in Russia": [
         "러시아의 검열에 맞선 저희의 싸움"

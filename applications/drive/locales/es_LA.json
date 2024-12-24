@@ -214,9 +214,6 @@
       "Create": [
         "Crear"
       ],
-      "Create a folder": [
-        "Crear una carpeta"
-      ],
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
       ],
@@ -300,9 +297,6 @@
       "Download (${ count })": [
         "Descargar (${ count })"
       ],
-      "Download all": [
-        "Descargar todo"
-      ],
       "Download anyway": [
         "Descargar de todos modos"
       ],
@@ -311,6 +305,12 @@
       ],
       "Download logs": [
         "Descargar los registros"
+      ],
+      "Download without scanning": [
+        "Descargar sin escanear"
+      ],
+      "Download without scanning (${ count })": [
+        "Descargar sin escanear (${ count })"
       ],
       "Drive Locked": [
         "Unidad bloqueada"
@@ -459,6 +459,9 @@
       "Learn more": [
         "Más información"
       ],
+      "Learn more.": [
+        "Más información."
+      ],
       "Leave": [
         "Salir"
       ],
@@ -569,9 +572,6 @@
       ],
       "Open navigation": [
         "Abrir navegación"
-      ],
-      "Open scan and download info": [
-        "Abrir el escáner y descargar la información"
       ],
       "Pause all": [
         "Pausar todo"
@@ -710,15 +710,6 @@
       ],
       "Save changes": [
         "Guardar los cambios"
-      ],
-      "Scan & Download": [
-        "Escanear y descargar"
-      ],
-      "Scan & Download (${ count })": [
-        "Escanear y descargar (${ count })"
-      ],
-      "Scan & Download all": [
-        "Escanear y descargar todo"
       ],
       "Search": [
         "Buscar"
@@ -4305,9 +4296,6 @@
       "Change your password": [
         "Cambie la contraseña"
       ],
-      "Check for malicious files": [
-        "Buscar archivos maliciosos"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contacto ${ progress } de ${ max }..."
       ],
@@ -4508,6 +4496,9 @@
       ],
       "Enabling drive search": [
         "Activando búsqueda en Drive"
+      ],
+      "Encrypted": [
+        "Cifrado"
       ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
@@ -5107,6 +5098,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccione los calendarios que quiere importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en el plan."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Los pagos SEPA no están disponibles en este momento. Intente de nuevo más tarde."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
@@ -5303,7 +5297,7 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Para ayudarle a protegerse, ${ DRIVE_APP_NAME } puede escanear sus archivos de forma que mantenga su privacidad y bloquear archivos maliciosos. Sin embargo, sigue siendo mejor descargar archivos solo de fuentes confiables."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
@@ -5649,6 +5643,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La próxima fecha de facturación es el ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }.Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
+      ],
       "Your password was leaked:": [
         "La contraseña fue filtrada:"
       ],
@@ -5663,6 +5660,12 @@
       ],
       "Your previous recovery phrase": [
         "La frase de recuperación anterior"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ]
     },
     "info": {
@@ -9957,6 +9960,9 @@
       ],
       "Change password": [
         "Cambiar contraseña"
+      ],
+      "Check for malicious files": [
+        "Buscar archivos maliciosos"
       ],
       "Clearing data": [
         "Limpiando datos"
