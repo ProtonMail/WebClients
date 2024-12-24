@@ -23,6 +23,43 @@ describe('notification manager', () => {
         expect(result.current[0]).toStrictEqual([expect.objectContaining({ text: 'hello' })]);
     });
 
+    it('should allow html and only allow href attr', () => {
+        const { result } = renderHook(() => useState<Notification[]>([]));
+        const [, setState] = result.current;
+
+        const manager = createNotificationManager(setState, noop);
+        expect(result.current[0]).toStrictEqual([]);
+        act(() => {
+            manager.createNotification({
+                text: 'hello <a href="https://foo.bar" style="inline-size: 123px">link</a>',
+            });
+            manager.createNotification({
+                text: '<b style="inline-size: 123px">bold</b>',
+            });
+        });
+
+        expect(result.current[0]).toStrictEqual([
+            expect.objectContaining({
+                text: (
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: '<b>bold</b>',
+                        }}
+                    />
+                ),
+            }),
+            expect.objectContaining({
+                text: (
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: 'hello <a href="https://foo.bar" rel="noopener noreferrer" target="_blank" class="color-inherit">link</a>',
+                        }}
+                    />
+                ),
+            }),
+        ]);
+    });
+
     describe('deduplication', () => {
         describe('when deduplicate true', () => {
             it('should remove duplicate notifications', () => {
