@@ -848,11 +848,6 @@
         "這將會把使用此憑證的所有路由器和客戶端都中斷連線。"
       ]
     },
-    "app-switcher": {
-      "Secure your communications": [
-        "安全您的通訊"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
@@ -2611,9 +2606,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至選用多於 1 位使用者的企業方案，以便管理多個使用者。"
       ],
-      "Please upload an xml file": [
-        "請上載xml格式文檔"
-      ],
       "Please upload only 1 file": [
         "請上傳一個檔案"
       ],
@@ -3624,9 +3616,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "請複製此 URL 並到您的身分提供者提示的 ACS (判斷提示取用者服務) URL 欄位中貼上"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
       ],
       "Copy the suggested password to clipboard": [
         "複製建議的密碼至剪貼簿"
@@ -5360,9 +5349,6 @@
       "Show ${ n } administrator": [
         "顯示 ${ n } 管理員"
       ],
-      "Single sign-on entity ID": [
-        "單一登入登入ID"
-      ],
       "Single sign-on URL": [
         "單一登入網址"
       ],
@@ -6852,82 +6838,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "保持此方案"
-      ],
       "Start using ${ appName }": [
         "開始使用 ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "升級我的方案"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "來談談"
-      ],
-      "Limited time offer": [
-        "限時促銷"
-      ],
-      "Recommended": [
-        "建議"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }每月"
-      ],
-      "/month /user": [
-        "/月 /使用者"
-      ],
-      "/month /user, billed annually": [
-        "/月 /使用者 每年付款"
-      ],
-      "/month /user, billed biennially": [
-        "/月 /使用者 每兩年付款"
-      ],
-      "Creating your account": [
-        "創建您的帳號"
-      ],
-      "Current plan": [
-        "目前方案"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版密碼管理器${ BRAND_NAME }功能!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版VPN${ BRAND_NAME }功能!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
-      ],
-      "Free forever": [
-        "永久免費"
-      ],
-      "Get in touch with our sales team": [
-        "與銷售團隊聯繫"
-      ],
-      "Includes:": [
-        "包含:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "切換至 ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "每月"
-      ],
-      "per month, billed annually": [
-        "每年，每年收費"
-      ],
-      "per month, billed every month": [
-        "每月，每月收費"
-      ],
-      "per month, billed every two years": [
-        "每月，每兩年收費"
-      ],
-      "Preparing your Recovery Kit": [
-        "準備復原包"
-      ],
       "Secure vault and link sharing": [
         "安全保管庫和共享連結"
       ],
@@ -6939,23 +6854,6 @@
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
         "安全保管庫共享(${ n } 保管庫)和連結共享"
-      ],
-      "Setting up your organization": [
-        "設定您的組織"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "登入至${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "更新您的帳號"
-      ],
-      "Verifying your payment": [
-        "驗證您的付帳款"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "全部${ BRAND_NAME }升級服務。${ br }一個簡單的訂購授權。"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9398,9 +9296,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "請複製此 URL 並到您的身分提供者提示的 ACS (判斷提示取用者服務) URL 欄位中貼上"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "請複製此 URL 並到您的身分提供者提示的實體 ID 欄位中貼上"
       ],
       "Device information such as operating system": [
         "裝置資訊如作業系統"

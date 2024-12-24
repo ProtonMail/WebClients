@@ -872,23 +872,6 @@
         "Tím se odpojí všechny routery a klienti, kteří používají tento certifikát."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Procházejte web soukromě a blokujte reklamu"
-      ],
-      "Keep your schedule private": [
-        "Udržujte svůj rozvrh v soukromí"
-      ],
-      "Protect your passwords and identity": [
-        "Chraňte svá hesla a identitu"
-      ],
-      "Safeguard your files and photos": [
-        "Ochraňte své soubory a fotky"
-      ],
-      "Secure your communications": [
-        "Zabezpečte svou komunikaci"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
@@ -2719,9 +2702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
       ],
-      "Please enter a valid entity ID URL": [
-        "Zadejte prosím platnou URL ID subjektu"
-      ],
       "Please generate keys before you try to change your password": [
         "Než se pokusíte změnit heslo, vytvořte si prosím klíče"
       ],
@@ -2742,9 +2722,6 @@
       ],
       "Please upload a square logo": [
         "Nahrajte logo ve čtvercovém tvaru"
-      ],
-      "Please upload an xml file": [
-        "Nahrejte prosím soubor xml"
       ],
       "Please upload only 1 file": [
         "Nahrajte prosím pouze 1 soubor"
@@ -3940,9 +3917,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Zkopírujte a vložte tuto URL do ACS (Assertion Consumer Service) pole u vašeho poskytovatele identity"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Zkopírujte a vložte tuto URL do pole ID subjektu u vašeho poskytovatele identity"
-      ],
       "Copy the suggested password to clipboard": [
         "Zkopírujte navržené heslo do schránky"
       ],
@@ -4122,9 +4096,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Zadejte ověřovací kód, který byl zaslán na ${ email }. Pokud nemůžete ve své schránce zprávu nalézt, prosím podívejte se do spamové složky."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Zadejte ID subjektu organizace **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadejte heslo organizace pro obnovení oprávnění správce. ${ learnMore }"
@@ -5964,9 +5935,6 @@
         "Zobrazit ${ n } správce",
         "Zobrazit ${ n } správců",
         "Zobrazit ${ n } správců"
-      ],
-      "Single sign-on entity ID": [
-        "ID subjektu jednotného přihlášení"
       ],
       "Single sign-on URL": [
         "URL pro jednotné přihlášení"
@@ -7815,85 +7783,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Ponechat tento tarif"
-      ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Přejít na vyšší tarif"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Promluvme si"
-      ],
-      "Limited time offer": [
-        "Časově omezená nabídka"
-      ],
-      "Recommended": [
-        "Doporučeno"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } za měsíc"
-      ],
-      "/month /user": [
-        "/měsíc /uživatel"
-      ],
-      "/month /user, billed annually": [
-        "/měsíc /uživatel, účtováno ročně"
-      ],
-      "/month /user, billed biennially": [
-        "/měsíc /uživatel, účtováno jednou za dva roky"
-      ],
-      "Creating your account": [
-        "Vytváření vašeho účtu"
-      ],
-      "Current plan": [
-        "Aktuální tarif"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Zadejte zobrazované jméno pro **${ username }**. Uvidí ho, když jim změníte oprávnění, a nebo s nimi sdílíte data."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup k prémiovému správci hesel od ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke službě VPN Premium od ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke všem prémiovým službám ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Navždy zdarma"
-      ],
-      "Get in touch with our sales team": [
-        "Kontaktujte náš obchodní tým"
-      ],
-      "Includes:": [
-        "Zahrnuje:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Spuštění ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "za měsíc"
-      ],
-      "per month, billed annually": [
-        "za měsíc, účtováno ročně"
-      ],
-      "per month, billed every month": [
-        "za měsíc, účtováno kažký měsíc"
-      ],
-      "per month, billed every two years": [
-        "za měsíc, účtováno kažké dva roky"
-      ],
-      "Preparing your Recovery Kit": [
-        "Příprava sady pro obnovení"
-      ],
       "Secure vault and link sharing": [
         "Bezpečné sdílení trezoru a odkazu"
       ],
@@ -7911,23 +7805,6 @@
         "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
-      ],
-      "Setting up your organization": [
-        "Nastavení vaší organizace"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Přihlášení do ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Aktualizace vašeho účtu"
-      ],
-      "Verifying your payment": [
-        "Ověřování vaší platby"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Všechny služby ${ BRAND_NAME } Plus.${ br }Jedno jednoduché předplatné."
       ]
     },
     "pass_signup_2024: Info": {
@@ -11121,9 +10998,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Zkopírujte a vložte tuto URL adresu do pole ACS (Assertion Consumer Service) URL u svého poskytovatele identity."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Zkopírujte a vložte tuto URL adresu do pole ID subjektu u svého poskytovatele identity"
-      ],
       "Device information such as operating system": [
         "Informace o zařízení, jako je operační systém"
       ],
@@ -11527,6 +11401,9 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ],
+      "servers": [
+        "serverů"
       ]
     },
     "vpn_2024: renew": {
