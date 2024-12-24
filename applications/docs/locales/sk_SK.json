@@ -4621,6 +4621,9 @@
       "Restored version to": [
         "Verzia obnovená na"
       ],
+      "Save Document as PDF": [
+        "Uložiť dokument ako PDF"
+      ],
       "Saving": [
         "Ukladanie"
       ],
@@ -4894,6 +4897,15 @@
       "What do you want to do?": [
         "Čo si prajete urobiť?"
       ],
+      "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
+        "Keď sa otvorí dialógové okno, zmeňte položku \"Umiestnenie\" na \"Uložiť ako PDF\" a potom stlačte tlačidlo Uložiť."
+      ],
+      "When the dialog opens, change the \"Destination\" to \"Save to PDF\", then press Save.": [
+        "Keď sa otvorí dialógové okno, zmeňte položku \"Umiestnenie\" na \"Uložiť ako PDF\" a potom stlačte tlačidlo Uložiť."
+      ],
+      "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
+        "Po otvorení dialógového okna vyberte v ľavom dolnom rohu položku \"PDF\" a potom stlačte tlačidlo Uložiť."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
@@ -5013,6 +5025,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Váš účet bude aktualizovaný po zúčtovaní platby."
+      ],
+      "Your browser's Print dialog will now open, where you can export your document to PDF.": [
+        "V prehliadači sa teraz otvorí dialógové okno Tlač, v ktorom môžete dokument exportovať do formátu PDF."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Vaše zmeny sa synchronizujú s lokalitou Drive. Nezatvárajte webovú stránku."
@@ -7016,6 +7031,9 @@
       "\"${ name }\" failed to be created": [
         "„${ name }“ sa nepodarilo vytvoriť"
       ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" sa nepodarilo vymazať"
+      ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "„${ name }“ sa nepodarilo trvalo zmazať z koša"
       ],
@@ -7055,11 +7073,23 @@
         "${ count } položiek sa nepodarilo dešifrovať",
         "${ count } položiek sa nepodarilo dešifrovať"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } položka vymazaná",
+        "${ numberOfItems } položky vymazané",
+        "${ numberOfItems } položiek vymazaných",
+        "${ numberOfItems } položiek vymazaných"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } položka natrvalo odstránená z koša",
         "${ numberOfItems } položky natrvalo odstránené z koša",
         "${ numberOfItems } položiek natrvalo odstránených z koša",
         "${ numberOfItems } položky natrvalo odstránených z koša"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } položku sa nepodarilo vymazať",
+        "${ numberOfItems } položky sa nepodarilo vymazať",
+        "${ numberOfItems } položiek sa nepodarilo vymazať",
+        "${ numberOfItems } položiek sa nepodarilo vymazať"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } položku sa nepodarilo natrvalo odstrániť z koša",
