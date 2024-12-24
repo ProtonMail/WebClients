@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "À propos des alias « hide-my-email »"
+      ],
       "Activate recovery": [
         "Activer la récupération"
       ],
@@ -575,9 +578,6 @@
       ],
       "Hide toolbar": [
         "Masquer la barre d'outils"
-      ],
-      "hide-my-email aliases": [
-        "les alias « hide-my-email »"
       ],
       "I like this response": [
         "Cette réponse me convient."
@@ -6915,8 +6915,8 @@
       "Proofread text": [
         "Relire le texte"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou les spammeurs avec ${ maskMyEmailButton }."
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou les spammeurs avec alias « hide-my-email »."
       ],
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
@@ -7023,6 +7023,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }.</a>"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Les paiements via SEPA ne sont pas disponibles pour l''instant. Réessayez ultérieurement."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -7741,6 +7744,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Votre prochaine date de facturation est le ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      ],
       "Your password was leaked:": [
         "Votre mot de passe a été exposé :"
       ],
@@ -7749,6 +7755,12 @@
       ],
       "Your private writing assistant": [
         "Votre assistant d'écriture privé"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
       ]
     },
     "info": {
@@ -8901,7 +8913,7 @@
         "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ cta }."
+        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
@@ -9829,6 +9841,14 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Profitez de Mail Plus pour ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -9841,14 +9861,6 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Profitez de Mail Plus pour ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
       ]
     },
     "new_plans: tooltip": {
@@ -11659,7 +11671,7 @@
         "Pour tous les services ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Pour continuer à importer ou synchroniser vos fichiers, libérez de l'espace ou changez d'abonnement pour en obtenir davantage."
+        "Pour continuer à importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou changer d'abonnement pour en obtenir davantage."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
@@ -11668,7 +11680,7 @@
         "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour augmenter votre espace de stockage."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
+        "Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ upgrade }."
       ],
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"

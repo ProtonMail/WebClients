@@ -579,9 +579,6 @@
       "Hide toolbar": [
         "Схаваць панэль інструментаў"
       ],
-      "hide-my-email aliases": [
-        "псеўданімаў Hide-my-email"
-      ],
       "I like this response": [
         "Мне падабаецца гэты адказ"
       ],
@@ -4726,7 +4723,7 @@
         "Плаваючы час не падтрымліваецца"
       ],
       "Free-busy time information": [
-        "Інфармацыя аб свабодным часе і працоўных днях"
+        "Звесткі аб свабодным часе і працоўных днях"
       ],
       "Invalid event": [
         "Памылковая падзея"
@@ -7106,9 +7103,6 @@
       ],
       "Proofread text": [
         "Вычытаць тэкст"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Абараняйце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай ${ maskMyEmailButton }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
@@ -10120,6 +10114,14 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Атрымайце Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -10132,14 +10134,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: tooltip": {
