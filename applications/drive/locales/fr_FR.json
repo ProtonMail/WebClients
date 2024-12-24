@@ -214,9 +214,6 @@
       "Create": [
         "Créer"
       ],
-      "Create a folder": [
-        "Créer un dossier"
-      ],
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
@@ -300,9 +297,6 @@
       "Download (${ count })": [
         "Télécharger (${ count })"
       ],
-      "Download all": [
-        "Tout télécharger"
-      ],
       "Download anyway": [
         "Télécharger quand même"
       ],
@@ -311,6 +305,12 @@
       ],
       "Download logs": [
         "Télécharger les journaux"
+      ],
+      "Download without scanning": [
+        "Télécharger sans analyser"
+      ],
+      "Download without scanning (${ count })": [
+        "Télécharger sans analyser (${ count })"
       ],
       "Drive Locked": [
         "Disque verrouillé"
@@ -459,6 +459,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Learn more.": [
+        "En savoir plus."
+      ],
       "Leave": [
         "Quitter"
       ],
@@ -569,9 +572,6 @@
       ],
       "Open navigation": [
         "Ouvrir la navigation"
-      ],
-      "Open scan and download info": [
-        "Ouvrir les informations d'analyse et de téléchargement"
       ],
       "Pause all": [
         "Tout mettre en pause"
@@ -710,15 +710,6 @@
       ],
       "Save changes": [
         "Enregistrer les modifications"
-      ],
-      "Scan & Download": [
-        "Scanner et télécharger"
-      ],
-      "Scan & Download (${ count })": [
-        "Scanner et télécharger (${ count })"
-      ],
-      "Scan & Download all": [
-        "Tout scanner et télécharger"
       ],
       "Search": [
         "Rechercher"
@@ -4305,9 +4296,6 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
-      "Check for malicious files": [
-        "Rechercher des fichiers malveillants"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
@@ -4508,6 +4496,9 @@
       ],
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
+      ],
+      "Encrypted": [
+        "Chiffré"
       ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."
@@ -5107,6 +5098,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Les paiements via SEPA ne sont pas disponibles pour l''instant. Réessayez ultérieurement."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
@@ -5303,7 +5297,7 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Pour vous aider à vous protéger, ${ DRIVE_APP_NAME } peut analyser vos fichiers en respectant votre vie privée et bloquer les fichiers malveillants. Cependant, il est toujours préférable de télécharger des fichiers uniquement à partir de sources fiables."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
@@ -5649,6 +5643,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Votre prochaine date de facturation est le ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      ],
       "Your password was leaked:": [
         "Votre mot de passe a été exposé :"
       ],
@@ -5663,6 +5660,12 @@
       ],
       "Your previous recovery phrase": [
         "Votre phrase de récupération précédente"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
       ]
     },
     "info": {
@@ -6460,7 +6463,7 @@
         "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ cta }."
+        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
@@ -9105,7 +9108,7 @@
         "Pour tous les services ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Pour continuer à importer ou synchroniser vos fichiers, libérez de l'espace ou changez d'abonnement pour en obtenir davantage."
+        "Pour continuer à importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou changer d'abonnement pour en obtenir davantage."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
@@ -9114,7 +9117,7 @@
         "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour augmenter votre espace de stockage."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
+        "Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ upgrade }."
       ],
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"
@@ -9897,6 +9900,9 @@
       ],
       "Change password": [
         "Changer le mot de passe"
+      ],
+      "Check for malicious files": [
+        "Rechercher des fichiers malveillants"
       ],
       "Clearing data": [
         "Effacement des données"

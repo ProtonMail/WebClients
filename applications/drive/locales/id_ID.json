@@ -49,7 +49,7 @@
         "Tambah alamat"
       ],
       "Add birthday": [
-        "Tambahkan ulang tahun"
+        "Tambah ulang tahun"
       ],
       "Add contact": [
         "Tambah kontak"
@@ -67,7 +67,7 @@
         "Tambah grup baru"
       ],
       "Add note": [
-        "Tambahkan catatan"
+        "Tambah catatan"
       ],
       "Add people or groups to share": [
         "Tambahkan orang atau grup untuk dibagikan"
@@ -213,9 +213,6 @@
       "Create": [
         "Buat"
       ],
-      "Create a folder": [
-        "Buat folder"
-      ],
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
@@ -296,9 +293,6 @@
       ],
       "Download (${ count })": [
         "Unduh (${ count })"
-      ],
-      "Download all": [
-        "Unduh semua"
       ],
       "Download anyway": [
         "Tetap unduh"
@@ -561,9 +555,6 @@
       "Open navigation": [
         "Buka navigasi"
       ],
-      "Open scan and download info": [
-        "Buka pindai dan unduh informasi"
-      ],
       "Pause all": [
         "Jeda semua"
       ],
@@ -701,15 +692,6 @@
       ],
       "Save changes": [
         "Simpan perubahan"
-      ],
-      "Scan & Download": [
-        "Pindai & Unduh"
-      ],
-      "Scan & Download (${ count })": [
-        "Pindai & Unduh (${ count })"
-      ],
-      "Scan & Download all": [
-        "Pindai & Unduh semua"
       ],
       "Search": [
         "Pencarian"
@@ -2637,13 +2619,13 @@
         "Keberlangsungan acara ini telah diperbarui."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Keberlangsungan acara ini telah diperbarui. Berikut merupakan apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
+        "Keberlangsungan acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+        "Acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Anda diundang ke ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -4220,9 +4202,6 @@
       "Change your password": [
         "Ubah kata sandi Anda"
       ],
-      "Check for malicious files": [
-        "Pindai berkas berbahaya"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
       ],
@@ -5204,9 +5183,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
-        "Untuk membantu melindungi Anda, ${ DRIVE_APP_NAME } dapat memindai berkas Anda tanpa mengusik privasi dan memblokir berkas yang berbahaya. Meskipun demikian, Anda tetap disarankan untuk hanya mengunduh berkas dari sumber yang dipercaya."
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."
       ],
@@ -5460,7 +5436,7 @@
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
       ],
       "You may be redirected to your bank’s website.": [
-        "Anda mungkin akan dialihkan ke situs web bank Anda."
+        "Anda akan dapat dialihkan ke situs web milik bank Anda."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
@@ -6924,7 +6900,7 @@
         "Pengelolaan grup kontak"
       ],
       "Custom and secure business email": [
-        "Email bisnis khusus dan aman"
+        "Email bisnis yang khusus dan aman"
       ],
       "Custom domains for email aliases": [
         "Domain khusus untuk alias email"
@@ -6963,7 +6939,7 @@
         "Grup email"
       ],
       "Enables HIPAA compliance": [
-        "Tunduk terhadap undang-undang HIPAA"
+        "Memungkinkan kepatuhan HIPAA"
       ],
       "Encrypted contact details": [
         "Rincian kontak yang terenkripsi"
@@ -7321,7 +7297,7 @@
         "Peninjauan dan pembayaran langganan"
       ],
       "Switch plans?": [
-        "Ganti paket?"
+        "Ubah paket?"
       ]
     },
     "new_plans: Title": {
@@ -9082,7 +9058,7 @@
         "Cukup masuk ke akun Apple App Store Anda, lalu pilih ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
+        "Cukup masuk ke akun Play Store Anda dan tekan ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Kelola langganan Anda pada ${ subscriptionManager }"
@@ -9207,7 +9183,7 @@
         "Mencadangkan foto dari perangkat Anda"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Kembangkan kepercayaan dan pengenalan merek dengan alamat email profesional menggunakan domain Anda sendiri."
+        "Kembangkan kepercayaan dan pengenalan merek dengan alamat email profesional yang berada di bawah domain Anda."
       ],
       "Catch-all email address": [
         "Alamat email catch-all"
@@ -9995,7 +9971,7 @@
         "Kalender mini"
       ],
       "Modified": [
-        "Dimodifikasi"
+        "Diubah"
       ],
       "My files": [
         "Berkas saya"
@@ -10223,7 +10199,7 @@
         "Diunggah"
       ],
       "Uploaded by": [
-        "Diupload oleh"
+        "Diunggah oleh"
       ],
       "Uploading a large file or folder": [
         "Mengunggah berkas atau folder berukuran besar"
@@ -10482,13 +10458,13 @@
         "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Apakah Anda yakin ingin menghapus grup kontak ini?"
+        "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "Yakin ingin menghapus kontak ini secara permanen?"
+        "Apakah Anda yakin ingin menghapus kontak ini secara permanen?"
       ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
@@ -10524,7 +10500,7 @@
         "Lewati verifikasi?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
+        "Sebagian kontak yang akan digabungkan menampilkan kesalahan. Silakan periksa kontak ini satu per satu"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Awalan alias tidak boleh melebihi 40 karakter"
@@ -10545,10 +10521,10 @@
         "Verifikasi tanda tangan rincian kontak gagal."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di kolom tersebut untuk melanjutkan."
+        "Tindakan ini tidak dapat diurungkan. Silakan masukkan kata ${ boldDanger } pada kolom yang tertera untuk melanjutkan."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
+        "Impor ini dapat melebihi kapasitas penyimpanan yang tersedia pada akun ${ BRAND_NAME } Anda saat ini. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."

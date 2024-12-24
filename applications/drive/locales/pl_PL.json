@@ -216,9 +216,6 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a folder": [
-        "Utwórz folder"
-      ],
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
@@ -305,9 +302,6 @@
       ],
       "Download (${ count })": [
         "Pobierz (${ count })"
-      ],
-      "Download all": [
-        "Pobierz wszystkie"
       ],
       "Download anyway": [
         "Pobierz mimo to"
@@ -570,9 +564,6 @@
       "Open navigation": [
         "Otwórz nawigację"
       ],
-      "Open scan and download info": [
-        "Otwórz skan i pobierz informacje"
-      ],
       "Pause all": [
         "Wstrzymaj wszystko"
       ],
@@ -710,15 +701,6 @@
       ],
       "Save changes": [
         "Zapisz zmiany"
-      ],
-      "Scan & Download": [
-        "Skanuj i pobierz"
-      ],
-      "Scan & Download (${ count })": [
-        "Skanuj i pobierz (${ count })"
-      ],
-      "Scan & Download all": [
-        "Skanuj i pobierz wszystko"
       ],
       "Search": [
         "Szukaj"
@@ -1052,9 +1034,6 @@
       ]
     },
     "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwsze ${ cycle } miesięcy. Odnowienie nastąpi w obniżonej cenie ${ nextPrice } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
@@ -2526,7 +2505,7 @@
     },
     "Docs Info": {
       "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "Współpraca właśnie stała się prostsza. Teraz każdy może sugerować zmiany bez edytowania dokumentu."
+        "Współpraca stała się łatwiejsza. Teraz każdy może sugerować zmiany bez edytowania dokumentu."
       ],
       "Suggestion mode is here": [
         "Tryb sugestii jest tutaj"
@@ -4430,9 +4409,6 @@
       "Change your password": [
         "Zmień hasło"
       ],
-      "Check for malicious files": [
-        "Sprawdź pod kątem złośliwych plików"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
       ],
@@ -5443,9 +5419,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
-        "${ DRIVE_APP_NAME } może skanować pliki w sposób chroniący prywatność, aby chronić użytkownika i blokować złośliwe pliki. Jednak nadal najlepiej jest pobierać pliki tylko z zaufanych źródeł."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
@@ -8621,15 +8594,6 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
