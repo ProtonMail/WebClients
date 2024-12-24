@@ -83,6 +83,7 @@ function createNotificationManager(
             const sanitizedElement = DOMPurify.sanitize(text, {
                 RETURN_DOM: true,
                 ALLOWED_TAGS: ['b', 'a', 'i', 'em', 'strong', 'br', 'p', 'span'],
+                ALLOWED_ATTR: ['href'],
             });
             const containsHTML =
                 sanitizedElement instanceof Element &&
