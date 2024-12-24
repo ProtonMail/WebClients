@@ -366,6 +366,9 @@
       "Details": [
         "詳細資訊"
       ],
+      "Disable alias": [
+        "停用別名"
+      ],
       "Disabling alias": [
         "停用別名"
       ],
@@ -560,9 +563,6 @@
       ],
       "Hide toolbar": [
         "隱藏工具列"
-      ],
-      "hide-my-email aliases": [
-        "hide-my-email 別名"
       ],
       "I like this response": [
         "我喜歡這個回應"
@@ -6687,9 +6687,6 @@
       "Proofread text": [
         "校閱文字"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "防止您的郵件位址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
-      ],
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
       ],
@@ -6937,7 +6934,7 @@
         "此往來對話包含非垃圾訊息。"
       ],
       "This conversation contains one or more expiring messages": [
-        "此往來對話包含了一個或更多過期的訊息"
+        "此交談包含了一個或更多過期的訊息"
       ],
       "This conversation contains trashed messages.": [
         "此往來對話含有已被移至垃圾桶的訊息。"
@@ -7321,7 +7318,7 @@
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
-        "立刻使用免費的 ${ VPN_APP_NAME }。"
+        "立即使用免費的 ${ VPN_APP_NAME }。"
       ],
       "You cannot reply from the invited address.": [
         "您無法從獲邀的電郵位址回覆。"

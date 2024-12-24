@@ -570,9 +570,6 @@
       "Hide toolbar": [
         "Skjul værktøjslinjen"
       ],
-      "hide-my-email aliases": [
-        "hide-my-email-aliasser"
-      ],
       "I like this response": [
         "Jeg kan lide dette svar"
       ],
@@ -6842,9 +6839,6 @@
       "Proofread text": [
         "Korrekturlæs tekst"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ maskMyEmailButton }."
-      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
@@ -9726,6 +9720,11 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Få Mail Plus for ${ priceCoupon }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -9738,11 +9737,6 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Få Mail Plus for ${ priceCoupon }"
       ]
     },
     "new_plans: tooltip": {
