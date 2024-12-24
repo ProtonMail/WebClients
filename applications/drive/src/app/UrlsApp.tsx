@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+
+import { createBrowserHistory } from 'history';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import {
@@ -16,8 +18,10 @@ import {
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { FlagProvider } from '@proton/unleash/index';
 import noop from '@proton/utils/noop';
 
 import * as config from './config';
@@ -38,7 +42,9 @@ const bootstrapApp = async () => {
 
     const store = setupStore();
     const api = createApi({ config });
-    extendStore({ config, api, authentication });
+    const history = createBrowserHistory();
+    const unleashClient = bootstrap.createUnleash({ api: getSilentApi(api) });
+    extendStore({ config, api, authentication, history, unleashClient });
 
     const searchParams = new URLSearchParams(location.search);
     await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' });
@@ -74,19 +80,21 @@ const UrlsApp = () => {
                 }
                 return (
                     <ProtonStoreProvider store={state.store}>
-                        <BrowserRouter>
+                        <Router history={extraThunkArguments.history}>
                             <AuthenticationProvider store={extraThunkArguments.authentication}>
-                                <ApiProvider api={extraThunkArguments.api}>
-                                    <ErrorBoundary big component={<StandardErrorPage big />}>
-                                        <div className="h-full">
-                                            <NotificationsChildren />
-                                            <ModalsChildren />
-                                            <PublicSharedLinkContainer />
-                                        </div>
-                                    </ErrorBoundary>
-                                </ApiProvider>
+                                <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
+                                    <ApiProvider api={extraThunkArguments.api}>
+                                        <ErrorBoundary big component={<StandardErrorPage big />}>
+                                            <div className="h-full">
+                                                <NotificationsChildren />
+                                                <ModalsChildren />
+                                                <PublicSharedLinkContainer />
+                                            </div>
+                                        </ErrorBoundary>
+                                    </ApiProvider>
+                                </FlagProvider>
                             </AuthenticationProvider>
-                        </BrowserRouter>
+                        </Router>
                     </ProtonStoreProvider>
                 );
             })()}
