@@ -910,6 +910,9 @@
       "Reset keys": [
         "Återställ nycklar"
       ],
+      "Reset modifications": [
+        "Återställ ändringar"
+      ],
       "Reset password": [
         "Återställ lösenord"
       ],
@@ -3680,6 +3683,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsätta bjuda in vänner, men du kommer inte kunna tjäna fler krediter"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Du kan upprätthålla lösenordsreglerna som dina organisationsmedlemmar kommer att använda när de genererar lösenord i ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
       ]
@@ -4699,9 +4705,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Aktivera stöd för flera användare innan du lägger till användare till din organisation."
       ],
-      "Please enter a valid entity ID URL": [
-        "Ange en giltig entitets-ID-URL."
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Åtgärda den markerade konflikten för att fortsätta.",
         "Åtgärda de markerade konflikterna för att fortsätta."
@@ -4729,9 +4732,6 @@
       ],
       "Please upload a square logo": [
         "Ladda upp en fyrkantig bild"
-      ],
-      "Please upload an xml file": [
-        "Ladda upp en XML-fil"
       ],
       "Please upload only 1 file": [
         "Ladda endast upp 1 fil"
@@ -7238,9 +7238,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiera och klistra in denna URL i fältet för entity-ID för din identitetsleverantör"
-      ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
       ],
@@ -7511,9 +7508,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Ange inloggningsuppgifter till e-postkontot du vill importera från."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Ange entitets-ID:t för en **eduGAIN**-organisation för **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ange organisationslösenordet för att återställa administratörsprivilegier. ${ learnMore }"
@@ -8177,6 +8171,9 @@
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
+      "Password generator rules successfully saved": [
+        "Lösenordsgeneratorregler sparade"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
       ],
@@ -8461,6 +8458,9 @@
       ],
       "Set recovery phrase": [
         "Ställ in återställningsfras"
+      ],
+      "Setting successfully saved": [
+        "Inställning sparad"
       ],
       "Setting up your new address...": [
         "Konfigurerar din nya adress..."
@@ -10018,8 +10018,14 @@
       "Allow": [
         "Tillåt"
       ],
+      "Allow memorable passwords": [
+        "Tillåt minnesvärda lösenord"
+      ],
       "Allow notifications by email": [
         "Tillåt aviseringar via e-post"
+      ],
+      "Allow random passwords": [
+        "Tillåt slumpmässiga lösenord"
       ],
       "Allow recovery by email": [
         "Tillåt återställning via e-post"
@@ -10102,6 +10108,9 @@
       "Auto-unsubscribe": [
         "Avsluta prenumeration automatiskt"
       ],
+      "Automatically save contacts": [
+        "Spara kontakter automatiskt"
+      ],
       "Awarded": [
         "Belönades"
       ],
@@ -10146,6 +10155,9 @@
       ],
       "Calendars": [
         "Kalendrar"
+      ],
+      "Capitalize words": [
+        "Versalisera ord"
       ],
       "Card details": [
         "Kortdetaljer"
@@ -10552,6 +10564,12 @@
       "Mark as": [
         "Markera som"
       ],
+      "Maximum number of characters": [
+        "Max antal tecken"
+      ],
+      "Maximum number of words": [
+        "Max antal ord"
+      ],
       "Message": [
         "Meddelande"
       ],
@@ -10566,6 +10584,12 @@
       ],
       "Method for importing metadata": [
         "Metod för att importera metadata"
+      ],
+      "Minimum number of characters": [
+        "Minst antal tecken"
+      ],
+      "Minimum number of words": [
+        "Minst antal ord"
       ],
       "Moderate NAT": [
         "Måttlig NAT"
@@ -10623,6 +10647,9 @@
       ],
       "Notifications": [
         "Aviseringar"
+      ],
+      "Numbers": [
+        "Siffror"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN-/IKEv2-lösenord"
@@ -10811,9 +10838,6 @@
       "Signature": [
         "Signatur"
       ],
-      "Single sign-on entity ID": [
-        "Entitets-ID för enkel inloggning"
-      ],
       "Single sign-on URL": [
         "URL för enkel inloggning"
       ],
@@ -10831,6 +10855,9 @@
       ],
       "Spam": [
         "Skräppost"
+      ],
+      "Special characters": [
+        "Specialtecken"
       ],
       "Starred": [
         "Stjärnmärkt"
@@ -10906,6 +10933,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Ladda upp 1 eller flera återställningsfiler eller krypteringsnycklar"
+      ],
+      "Uppercase": [
+        "Versaler"
       ],
       "URL": [
         "URL"
@@ -13272,6 +13302,9 @@
       "Add to existing group": [
         "Lägg till i befintlig grupp"
       ],
+      "Allowed (default)": [
+        "Tillåtet (standard)"
+      ],
       "Android": [
         "Android"
       ],
@@ -13341,6 +13374,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "Ej tillåtet"
+      ],
       "Off": [
         "Av"
       ],
@@ -13367,6 +13403,9 @@
       ],
       "Repeat weekly": [
         "Upprepa varje vecka"
+      ],
+      "Required": [
+        "Krävs"
       ],
       "Right to Left": [
         "Höger till vänster"
@@ -17973,6 +18012,9 @@
       "Password": [
         "Lösenord"
       ],
+      "Password generator rules": [
+        "Lösenordsgeneratorregler"
+      ],
       "Password reset settings": [
         "Inställning för lösenordsåterställning"
       ],
@@ -18540,9 +18582,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiera och klistra in denna URL i fältet för entity-ID hos din identitetsleverantör"
       ],
       "Customize import to reduce the number of folders": [
         "Anpassa import för att minska antalet mappar"
@@ -19157,6 +19196,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
+      ],
+      "servers": [
+        "servrar"
       ]
     },
     "vpn_2024: renew": {
@@ -19389,6 +19431,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Om du avbryter denna import kommer du inte att kunna återuppta den. ${ BRAND_NAME } sparade alla framsteg på ditt konto. Avbryt ändå?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Max kan inte vara mindre än minst"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Måste vara mellan ${ minimumNumber } och ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Måste vara större eller lika med ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Måste vara mindre eller lika med ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Lägg till minst en mottagare."

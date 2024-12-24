@@ -910,6 +910,9 @@
       "Reset keys": [
         "Nollaa avaimet"
       ],
+      "Reset modifications": [
+        "Nollaa muutokset"
+      ],
       "Reset password": [
         "Nollaa salasana"
       ],
@@ -3677,6 +3680,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Voit edelleen kutsua kavereita, muttet voi ansaita enempää krediittejä"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Voit asettaa salasanasääntöjä, joita organisaation jäsenten on käytettävä salasanoja luodessa ${ PASS_APP_NAME }issa."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ]
@@ -4696,9 +4702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
       ],
-      "Please enter a valid entity ID URL": [
-        "Syötä kelvollinen entiteetti-ID-URL"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
         "Jatka korjaamalla korostetut ristiriidat."
@@ -4726,9 +4729,6 @@
       ],
       "Please upload a square logo": [
         "Lähetä neliön muotoinen logo"
-      ],
-      "Please upload an xml file": [
-        "Lähetä XML-tiedosto"
       ],
       "Please upload only 1 file": [
         "Lähetä vain 1 tiedosto"
@@ -7141,7 +7141,7 @@
         "Estää lähettäjiä näkemästä jos ja milloin avasit viestin."
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
+        "Tehosta organisaatiosi brändi-identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Luomalla ${ PASS_APP_NAME }-tilin SimpleLogin-sähköpostiosoitteellasi voit hallita aliaksiasi suoraan ${ PASS_APP_NAME }ista."
@@ -7208,9 +7208,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
@@ -7482,9 +7479,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Syötä **eduGAIN** organisaation entiteetti-ID verkkotunnukselle **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Palauta hallintaoikeudet syöttämällä organisaation salasana. ${ learnMore }"
@@ -7789,10 +7783,10 @@
         "Palvelimen maan vaihtaminen kestää 10 päivää, joten varmista, että valintasi on oikein."
       ],
       "Item autofilled in ${ vaultLink }": [
-        "Holvin ${ vaultLink } kohde automaattitäytettiin"
+        "Kohde automaattitäytettiin holvista ${ vaultLink }"
       ],
       "Item autofilled in vault": [
-        "Holvin kohde automaattitäytettiin"
+        "Kohde automaattitäytettiin holvista"
       ],
       "Item created in ${ vaultLink }": [
         "Kohde luotiin holviin ${ vaultLink }"
@@ -8145,6 +8139,9 @@
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
       ],
+      "Password generator rules successfully saved": [
+        "Salasanageneraattorin säännöt tallennettiin"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH } merkkiä."
       ],
@@ -8426,6 +8423,9 @@
       ],
       "Set recovery phrase": [
         "Aseta palautuslause"
+      ],
+      "Setting successfully saved": [
+        "Asetus tallennettiin"
       ],
       "Setting up your new address...": [
         "Määritetään uutta osoitettasi..."
@@ -8909,7 +8909,7 @@
         "Luo tilejä tuomalla täydellinen CSV-tiedosto"
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
-        "Lisää organisaatiosi logo, jotta voit vahvistaa brändisi identiteettiä ja tarjota käyttäjillesi mukautetun käyttökokemuksen."
+        "Lisää organisaatiosi logo, vahvistaaksesi brändi-identiteettiäsi ja tarjotaksesi käyttäjillesi mukautetun käyttökokemuksen."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen."
@@ -9347,7 +9347,7 @@
         "Et voi palauttaa lukittuja tietoja lataamillasi palautustiedostoilla. Tämä poistaa myös laitepohjaisen palautuksen käytöstä."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
-        "${ BRAND_NAME }-tilisi liittyy osoitteeseen ${ externalEmailAddress }."
+        "${ BRAND_NAME }-tilisi on liitetty osoitteeseen ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
@@ -9983,8 +9983,14 @@
       "Allow": [
         "Salli"
       ],
+      "Allow memorable passwords": [
+        "Salli helposti muistettavat salasanat"
+      ],
       "Allow notifications by email": [
         "Salli ilmoitukset sähköpostitse"
+      ],
+      "Allow random passwords": [
+        "Salli satunnaiset salasanat"
       ],
       "Allow recovery by email": [
         "Salli palautus sähköpostitse"
@@ -10114,6 +10120,9 @@
       ],
       "Calendars": [
         "Kalenterit"
+      ],
+      "Capitalize words": [
+        "Käytä isoja alkukirjaimia"
       ],
       "Card details": [
         "Kortin tiedot"
@@ -10520,6 +10529,12 @@
       "Mark as": [
         "Merkitse"
       ],
+      "Maximum number of characters": [
+        "Merkkien enimmäismäärä"
+      ],
+      "Maximum number of words": [
+        "Sanojen enimmäismäärä"
+      ],
       "Message": [
         "Viesti"
       ],
@@ -10534,6 +10549,12 @@
       ],
       "Method for importing metadata": [
         "Metatietojen tuontitapa"
+      ],
+      "Minimum number of characters": [
+        "Merkkien vähimmäismäärä"
+      ],
+      "Minimum number of words": [
+        "Sanojen vähimmäismäärä"
       ],
       "Moderate NAT": [
         "Keskitasoinen NAT"
@@ -10591,6 +10612,9 @@
       ],
       "Notifications": [
         "Ilmoitukset"
+      ],
+      "Numbers": [
+        "Numerot"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN/IKEv2-salasana"
@@ -10779,9 +10803,6 @@
       "Signature": [
         "Allekirjoitus"
       ],
-      "Single sign-on entity ID": [
-        "Kertakirjautumisen entiteetti-ID"
-      ],
       "Single sign-on URL": [
         "Kertakirjautumisen URL-osoite"
       ],
@@ -10799,6 +10820,9 @@
       ],
       "Spam": [
         "Roskaposti"
+      ],
+      "Special characters": [
+        "Erikoismerkit"
       ],
       "Starred": [
         "Tähdellä"
@@ -10874,6 +10898,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Lataa yksi tai useita palautustiedostoja tai salausavaimia"
+      ],
+      "Uppercase": [
+        "Isot kirjaimet"
       ],
       "URL": [
         "URL"
@@ -12445,7 +12472,7 @@
         "Vättämätön suojaus ja turvallinen yhteiskäyttö rajattomalle määrälle käyttäjiä."
       ],
       "For next-level password management and identity protection.": [
-        "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
+        "Edistyneempään salasanojen hallintaan ja identiteetin suojaukseen."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Jos poistat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos luot uuden tilin."
@@ -13231,6 +13258,9 @@
       "Add to existing group": [
         "Lisää olemassa olevaan ryhmään"
       ],
+      "Allowed (default)": [
+        "Sallittu (oletus)"
+      ],
       "Archive": [
         "Arkistoi"
       ],
@@ -13288,6 +13318,9 @@
       "Normal": [
         "Normaali"
       ],
+      "Not allowed": [
+        "Ei sallittu"
+      ],
       "Off": [
         "Ei käytössä"
       ],
@@ -13314,6 +13347,9 @@
       ],
       "Repeat weekly": [
         "Toista viikoittain"
+      ],
+      "Required": [
+        "Vaaditaan"
       ],
       "Right to Left": [
         "Oikealta vasemmalle"
@@ -13469,22 +13505,22 @@
     },
     "orgidentity": {
       "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } sähköpostiosoitteesi ${ email } asettaaksesi organisaation identiteetti"
+        "Aseta organisaatioidentiteetti ${ verify } sähköpostiosoitteesi ${ email }."
       ],
       "Current organization identity": [
-        "Nykyinen organisaation identiteetti"
+        "Nykyinen organisaatioidentiteetti"
       ],
       "Edit organization identity": [
-        "Muokkaa organisaation identiteettiä"
+        "Muokkaa organisaatioidentiteettiä"
       ],
       "New organization identity": [
-        "Uusi organisaation identiteetti"
+        "Uusi organisaatioidentiteetti"
       ],
       "Organization identity": [
-        "Organisaation identiteetti"
+        "Organisaatioidentiteetti"
       ],
       "Organization identity updated": [
-        "Organisaation identiteettiä muutettiin"
+        "Organisaatioidentiteettiä muutettiin"
       ],
       "Verify": [
         "Vahvista"
@@ -13990,7 +14026,7 @@
         "Palauta hallintaoikeudet tietojen palautustavalla, olemalla yhteydessä toiseen ylläpitäjään tai nollaamalla organisaatioavain."
       ],
       "We couldn't verify the authenticity of this identity.": [
-        "Emme voineet vahvistaa tämän identiteetin aitoutta."
+        "Emme voineet vahvistaa identiteetin aitoutta."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakastukeen."
@@ -14757,7 +14793,7 @@
         "Jokin meni pieleen"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
-        "Sähköpostiosoite **${ email }** on jo olemassa ${ BRAND_NAME }-käyttäjänä. Syötä käyttäjän sähköpostiosoite identiteetintarjoajastasi."
+        "Sähköpostiosoite **${ email }** on jo olemassa ${ BRAND_NAME }-käyttäjänä. Syötä käyttäjän sähköpostiosoite identiteetintarjoajaltasi."
       ]
     },
     "saml: Info": {
@@ -15847,7 +15883,7 @@
         "Liity organisaatioon ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
-        "Tallenna se turvalliseen paikkaan, jotta pääset takaisin tilillesi, vaikka kadottaisit identiteetintarjoajasi kirjautumistiedot."
+        "Tallenna se turvalliseen paikkaan, jotta pääset takaisin tilillesi, vaikka kadottaisit identiteetintarjoajasi tunnistetiedot."
       ],
       "New backup password": [
         "Uusi varasalasana"
@@ -17896,6 +17932,9 @@
       "Password": [
         "Salasana"
       ],
+      "Password generator rules": [
+        "Salasanageneraattorin säännöt"
+      ],
       "Password reset settings": [
         "Salasanan uudelleenasetuksen asetukset"
       ],
@@ -18460,9 +18499,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään."
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
@@ -19077,6 +19113,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",
         "${ numberOfServers } ${ numberOfCountries } maassa"
+      ],
+      "servers": [
+        "palvelinta"
       ]
     },
     "vpn_2024: renew": {
@@ -19286,6 +19325,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Jos perut tuonnin, et voi jatkaa sitä. ${ BRAND_NAME } tallensi tilanteen tilillesi. Perutaanko tuonti silti?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Enimmäismäärä ei voi olla pienempi kuin vähimmäismäärä"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Tulee olla ${ minimumNumber }–${ maximumNumber } numeroa"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Täytyy olla ${ minimumNumber } tai enemmän"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Täytyy olla ${ maximumNumber } tai vähemmän"
       ],
       "Please add at least one recipient.": [
         "Lisää ainakin yksi vastaanottaja."

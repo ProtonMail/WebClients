@@ -910,6 +910,9 @@
       "Reset keys": [
         "Скинути ключі"
       ],
+      "Reset modifications": [
+        "Скинути модифікації"
+      ],
       "Reset password": [
         "Скинути пароль"
       ],
@@ -3609,6 +3612,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Ви дійсно хочете видалити цю групу?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Зверніть увагу, що якщо ви видалите групу ${ displayGroupName } (з адресою ${ displayGroupAddressEmail }), ви більше не зможете отримувати електронні листи на її адресу."
       ]
     },
     "Delinquent modal title": {
@@ -3703,6 +3709,9 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Ви можете й надалі запрошувати друзів, але ви більше не отримуватимете за це кредити"
+      ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Ви можете застосувати правила паролів, які члени організації будуть використовувати при створенні паролів у ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -3880,8 +3889,29 @@
       ]
     },
     "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Співпраця:** онлайн-редактор документів"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "**GDPR** та **HIPAA** відповідно до вимог"
+      ],
+      "**ISO 27001** certified": [
+        "**ISO 27001** сертифіковано"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Безпечно:** наскрізне шифрування"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Просто і зручно:** імпортуйте файли та налаштовуйте за лічені хвилини"
+      ],
       "Advanced protection that goes beyond industry standards": [
         "Удосконалений захист, що перевершує галузеві стандарти"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Приєднуйтесь до 50 000+ організацій, які вже користуються безпекою ${ BRAND_NAME }."
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Захистіть конфіденційну бізнес-інформацію та безпечно співпрацюйте"
       ],
       "Secure cloud storage that gives you control of your data": [
         "Захищене хмарне сховище, що надає вам контроль особистих даних"
@@ -4085,11 +4115,20 @@
       "Change other email subscriptions": [
         "Змінити інші підписки е-поштою"
       ],
+      "Click the button below to unsubscribe from ${ categories } emails.": [
+        "Натисніть кнопку нижче, щоб відписатися від електронних листів ${ categories }."
+      ],
       "Email subscriptions": [
         "Підписки електронної пошти"
       ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "Якщо ви випадково відписалися, будь ласка, підпишіться знову."
+      ],
       "Resubscribe": [
         "Відновити передплату"
+      ],
+      "Thank you and goodbye": [
+        "Дякуємо та прощавайте"
       ],
       "Unsubscribe": [
         "Відписатися"
@@ -4097,11 +4136,20 @@
       "Unsubscribe?": [
         "Відписатися?"
       ],
+      "Update email preferences": [
+        "Оновити параметри електронної пошти"
+      ],
+      "We're sorry to see you go.": [
+        "Нам шкода, що Ви йдете."
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Які листи ви хочете отримувати від ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Ви підписалися на листи ${ categoriesJsx }."
+      ],
+      "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
+        "Ви відписалися від електронних листів ${ categories } і більше не отримуватимете таких електронних листів від ${ BRAND_NAME }."
       ]
     },
     "Email verification": {
@@ -4690,9 +4738,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Будь ласка, увімкніть підтримку декількох користувачів, перш ніж додавати користувачів до вашої організації."
       ],
-      "Please enter a valid entity ID URL": [
-        "Будь ласка, введіть правильний URL ID сутності"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -4722,9 +4767,6 @@
       ],
       "Please upload a square logo": [
         "Будь ласка, вивантажте квадратний логотип"
-      ],
-      "Please upload an xml file": [
-        "Вивантажте файл у форматі xml"
       ],
       "Please upload only 1 file": [
         "Вивантажуйте лише 1 файл"
@@ -4941,6 +4983,11 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключів повторно активовано"
+      ]
+    },
+    "error": {
+      "Enter an email address": [
+        "Введіть адресу електронної пошти"
       ]
     },
     "Error importing calendar": {
@@ -5586,6 +5633,9 @@
       "An error occurred, please try again": [
         "Сталася помилка, спробуйте ще раз"
       ],
+      "Family name updated": [
+        "Ім'я сім'ї оновлено"
+      ],
       "Member updated": [
         "Учасника оновлено"
       ]
@@ -6124,6 +6174,11 @@
         "Покинув(ла) групу"
       ]
     },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "У вас немає груп для управління"
+      ]
+    },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
         "Спробуйте відкрити посилання знову."
@@ -6138,6 +6193,9 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "для ${ email }"
+      ],
       "Group invitation accepted": [
         "Запрошення до групи прийнято"
       ],
@@ -6483,11 +6541,17 @@
       "Use your app password instead of your regular password if:": [
         "Використовуйте пароль програм замість свого звичайного пароля якщо:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ваш пароль програм правильний. Не використовуйте свій звичайний пароль."
+      ],
       "Your email account requires an app password to export your data.": [
         "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Ваша адреса е-пошти та пароль програм правильні. Не використовуйте свій звичайний пароль."
       ],
       "Your email address and password are correct.": [
         "Ваші адреса е-пошти та пароль правильні."
@@ -7299,9 +7363,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопіюйте і вставте цю URL-адресу в поле ACS (Assertion Consumer Service) вашого провайдера ідентифікації"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопіюйте і вставте цю URL-адресу в поле Entity ID вашого провайдера ідентифікації"
-      ],
       "Copy the link to clipboard": [
         "Копіювати посилання в буфер обміну"
       ],
@@ -7580,9 +7641,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введіть облікові дані облікового запису електронної пошти, з якої ви хочете імпортувати."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Введіть ідентифікатор організації **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введіть пароль організації, щоб відновити права адміністратора. ${ learnMore }"
@@ -8253,6 +8311,9 @@
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
+      "Password generator rules successfully saved": [
+        "Правила генератора паролів успішно збережено"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Пароль має містити ${ MIN_PASSWORD_LENGTH } символів або більше."
       ],
@@ -8543,6 +8604,9 @@
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
+      ],
+      "Setting successfully saved": [
+        "Налаштування успішно збережено"
       ],
       "Setting up your new address...": [
         "Налаштування вашої нової адреси..."
@@ -9665,6 +9729,11 @@
         "Тільки перегляд"
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Недійсна адреса електронної пошти"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Мітка посилання (необов'язково)"
@@ -9684,6 +9753,9 @@
       ],
       "Pending": [
         "У черзі"
+      ],
+      "Sending invite...": [
+        "Надсилання запрошення..."
       ]
     },
     "Invoice state display as badge": {
@@ -10081,6 +10153,9 @@
       "15 minutes": [
         "15 хвилин"
       ],
+      "2 minutes": [
+        "2 хвилин"
+      ],
       "30 minutes": [
         "30 хвилин"
       ],
@@ -10126,8 +10201,14 @@
       "Allow": [
         "Дозволити"
       ],
+      "Allow memorable passwords": [
+        "Дозволити паролі, які можна запам'ятовувати"
+      ],
       "Allow notifications by email": [
         "Дозволити сповіщення електронною поштою"
+      ],
+      "Allow random passwords": [
+        "Дозволити випадкові паролі"
       ],
       "Allow recovery by email": [
         "Дозволити відновлення за електронною поштою"
@@ -10257,6 +10338,9 @@
       ],
       "Calendars": [
         "Календарі"
+      ],
+      "Capitalize words": [
+        "Слова з великої літери"
       ],
       "Card details": [
         "Подробиці картки"
@@ -10666,6 +10750,9 @@
       "Maximum number of characters": [
         "Максимальна кількість символів"
       ],
+      "Maximum number of words": [
+        "Максимальна кількість слів"
+      ],
       "Message": [
         "Повідомлення"
       ],
@@ -10683,6 +10770,9 @@
       ],
       "Minimum number of characters": [
         "Мінімальна кількість символів"
+      ],
+      "Minimum number of words": [
+        "Мінімальна кількість слів"
       ],
       "Moderate NAT": [
         "Помірна NAT"
@@ -10933,9 +11023,6 @@
       "Signature": [
         "Підпис"
       ],
-      "Single sign-on entity ID": [
-        "Entity ID послуги єдиного входу (SSO)"
-      ],
       "Single sign-on URL": [
         "URL-адреса послуги єдиного входу (SSO)"
       ],
@@ -11031,6 +11118,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Вивантажте 1 чи більше файлів відновлення чи ключів шифрування"
+      ],
+      "Uppercase": [
+        "Верхній регістр"
       ],
       "URL": [
         "URL-адреса"
@@ -11247,6 +11337,11 @@
       ],
       "To: ${ to }": [
         "Кому: ${ to }"
+      ]
+    },
+    "Lable": {
+      "Select an identity provider to start": [
+        "Виберіть постачальника ідентифікації, щоб почати"
       ]
     },
     "Limit of calendars reached": {
@@ -13469,6 +13564,9 @@
       "Add to existing group": [
         "Додати до наявної групи"
       ],
+      "Allowed (default)": [
+        "Дозволено (за замовчуванням)"
+      ],
       "Archive": [
         "Архівувати"
       ],
@@ -13526,6 +13624,9 @@
       "Normal": [
         "Звичайний"
       ],
+      "Not allowed": [
+        "Не дозволено"
+      ],
       "Off": [
         "Вимк"
       ],
@@ -13552,6 +13653,9 @@
       ],
       "Repeat weekly": [
         "Повторювати щотижня"
+      ],
+      "Required": [
+        "Необхідно"
       ],
       "Right to Left": [
         "Справа наліво"
@@ -13588,8 +13692,14 @@
       ]
     },
     "option": {
+      "Everyone": [
+        "Будь-хто"
+      ],
       "Group members": [
         "Учасники групи"
+      ],
+      "No one": [
+        "Ніхто"
       ]
     },
     "Option delay send seconds": {
@@ -13706,6 +13816,9 @@
       ]
     },
     "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } вашу адресу електронної пошти ${ email }, щоб встановити ідентифікатор організації."
+      ],
       "Current organization identity": [
         "Тотожність поточної організації"
       ],
@@ -15010,6 +15123,9 @@
       "Details": [
         "Подробиці"
       ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Введіть адресу електронної пошти користувача, надану вашим постачальником ідентифікаційних даних для **${ domainName }**"
+      ],
       "Test in progress...": [
         "Триває перевірка..."
       ],
@@ -15071,6 +15187,12 @@
       ],
       "For security reasons, the token is hidden": [
         "З міркувань безпеки токен приховано"
+      ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Перейдіть до свого постачальника ідентифікаційних даних, скопіюйте та вставте наведені нижче дані та завершіть налаштування SCIM для ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Перейдіть до свого постачальника ідентифікаційних даних, скопіюйте та вставте токен нижче і знову увімкніть SCIM для ${ appName }."
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Якщо ви втратили SCIM-токен, можете згенерувати новий, але пам'ятайте, що після цього потрібно буде оновити налаштування вашого провайдера ідентифікації."
@@ -15690,17 +15812,38 @@
       ]
     },
     "Signup: Info": {
+      "10 aliases for email protection from breaches": [
+        "10 псевдонімів для захисту електронної пошти від зламу"
+      ],
       "Advanced security features": [
         "Розширені функції безпеки"
       ],
       "Advanced sharing security": [
         "Розширені можливості спільного доступу"
       ],
+      "Apps for all devices": [
+        "Застосунки для всіх пристроїв"
+      ],
       "Based in Switzerland, GDPR compliant": [
         "Знаходиться у Швейцарії та відповідає вимогам GDPR"
       ],
+      "Built-in encryption": [
+        "Вбудоване шифрування"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Календар, менеджер паролів, сховище файлів та VPN включено"
+      ],
+      "Device sync": [
+        "Синхронізація пристрою"
+      ],
       "Email aliases": [
         "Псевдоніми електронної пошти"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "Електронна пошта, календар, менеджер паролів та VPN включено"
+      ],
+      "End-to-end encrypted transactions": [
+        "Наскрізно зашифровані транзакції"
       ],
       "End-to-end encryption": [
         "Наскрізне шифрування"
@@ -15708,11 +15851,43 @@
       "From the team that knows encryption": [
         "Від розробників, які розуміються на шифруванні"
       ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Інтегрована електронна пошта, календар, сховище файлів, менеджер паролів та VPN"
+      ],
+      "ISO 27001 certified": [
+        "ISO 27001 сертифіковано"
+      ],
+      "Open source and audited": [
+        "З відкритим кодом і незалежним аудитом"
+      ],
+      "Open source and verified": [
+        "Відкритий вихідний код та перевірений"
+      ],
       "Protected by Swiss privacy laws": [
         "Захищено швейцарськими законами про приватність"
       ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Самостійне зберігання - тільки ви маєте доступ до ключів від вашого гаманця"
+      ],
+      "The only business solution that is:": [
+        "Єдине бізнес-рішення, яке є:"
+      ],
+      "The only cloud storage with:": [
+        "Єдине хмарне сховище з:"
+      ],
+      "The only email service with:": [
+        "Єдина служба електронної пошти з:"
+      ],
+      "Unlimited passwords": [
+        "Необмежені паролі"
+      ],
       "Works on all devices": [
         "Працює на всіх пристроях"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "GDPR та HIPAA відповідно до вимог"
       ]
     },
     "specialoffer: Action": {
@@ -16895,6 +17070,11 @@
       ],
       "Expiring": [
         "Термін дії"
+      ]
+    },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Перегляньте деталі сеансу VPN для вашої організації."
       ]
     },
     "Success": {
@@ -18189,6 +18369,9 @@
       "Password": [
         "Пароль"
       ],
+      "Password generator rules": [
+        "Правила генератора паролів"
+      ],
       "Password reset settings": [
         "Налаштування скидання пароля"
       ],
@@ -18756,9 +18939,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопіюйте і вставте цю URL-адресу в поле ACS (Assertion Consumer Service) вашого провайдера ідентифікації"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопіюйте і вставте цю URL-адресу в поле Entity ID вашого провайдера ідентифікації"
-      ],
       "Customize import to reduce the number of folders": [
         "Налаштуйте імпорт щоб зменшити кількість тек"
       ],
@@ -18947,6 +19127,21 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
       ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
+      ],
+      "Group membership paused": [
+        "Членство в групі призупинено"
+      ],
+      "Sending member invitation": [
+        "Надсилання запрошення учаснику"
+      ],
+      "User declined invitation": [
+        "Користувач відхилив запрошення"
+      ],
       "Waiting for user to accept the invitation": [
         "Очікування на прийняття користувачем запрошення"
       ]
@@ -18993,6 +19188,12 @@
       ],
       "Failed": [
         "Невдало"
+      ],
+      "Needs attention": [
+        "Потребує уваги"
+      ],
+      "Refunded": [
+        "Повернено"
       ],
       "Success": [
         "Успіх"
@@ -19049,11 +19250,38 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Очікування на доступ адміністратора:** Ми надіслали запит цьому користувачеві, щоб дозволити будь-якому адміністратору керувати його обліковим записом."
+      ],
+      "Administrator access enabled": [
+        "Доступ адміністратора увімкнено"
+      ],
+      "Administrator access rejected": [
+        "Доступ адміністратора відхилено"
+      ],
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Адміністратори не мають доступу до даних приватних користувачів і не можуть скинути їхній пароль."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "Адміністратор ${ orgName } хоче увімкнути доступ адміністратора для вашого облікового запису."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Адміністратор організації **${ orgName }** (**${ adminEmail }**) хоче увімкнути доступ адміністратора для вашого облікового запису."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Зробивши користувача приватним, ви не зможете допомогти йому відновити доступ до своїх даних або облікового запису."
+      ],
       "Cancel": [
         "Скасувати"
       ],
       "Cancel request": [
         "Скасувати запит"
+      ],
+      "Cancel request to access user data?": [
+        "Скасувати запит на доступ до даних користувача?"
+      ],
+      "Confirm all": [
+        "Підтвердити все"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Не вдалося автоматично увімкнути доступ адміністратора для користувача ${ n }, оскільки його ключі шифрування було оновлено:",
@@ -19061,14 +19289,68 @@
         "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:",
         "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:"
       ],
+      "Could not enable administrator access: ${ error }": [
+        "Не вдалося увімкнути доступ адміністратора: ${ error }"
+      ],
+      "Enable admin access?": [
+        "Увімкнути доступ адміністратора?"
+      ],
+      "Enable administrator access": [
+        "Увімкнути доступ адміністратора"
+      ],
+      "Enable manually": [
+        "Увімкнути вручну"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Якщо ви коли-небудь втратите доступ до своїх облікових даних, адміністратори вашої організації зможуть скинути пароль і відновити доступ до вашого облікового запису."
+      ],
+      "Keep request": [
+        "Залишити запит"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Після того, як користувач дасть згоду, ви зможете допомогти йому відновити доступ до облікового запису або керувати своїми даними."
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ організації має бути активований для запиту доступу до даних"
+      ],
+      "Private user": [
+        "Приватний користувач"
+      ],
       "reject": [
         "відхилити"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Запит на керування обліковим записом надіслано, очікується схвалення користувача"
+      ],
+      "Request user permission for data access": [
+        "Запитати дозвіл користувача на доступ до даних"
       ],
       "Revoke access": [
         "Відкликати доступ"
       ],
+      "Revoke administrator access?": [
+        "Відкликати доступ адміністратора?"
+      ],
+      "Send request": [
+        "Відправити запит"
+      ],
+      "The user must have an address to request data access": [
+        "Користувач повинен мати адресу для запиту доступу до даних"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Це скасує очікуваний запит на доступ адміністратора до даних користувача або скидання пароля."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Це призведе до відкликання дозволу адміністратора на керування обліковим записом цього користувача."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Щоб продовжити, вам потрібно запросити у користувача дозвіл на доступ до його даних або скинути пароль."
+      ],
       "View request": [
         "Переглянути запит"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Ви можете ${ reject } цей запит, якщо не бажаєте продовжувати."
       ]
     },
     "Update font modal": {
@@ -19286,6 +19568,9 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ],
+      "servers": [
+        "сервери"
       ]
     },
     "vpn_2024: renew": {
@@ -19507,6 +19792,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. ${ BRAND_NAME } зберіг перебіг процесу до вашого облікового запису. Усе одно скасувати?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Максимум не може бути меншим за мінімум"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Має бути між ${ minimumNumber } та ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Має бути більше або дорівнювати ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Має бути менше або дорівнювати ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Додайте принаймні одного отримувача."
