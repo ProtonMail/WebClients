@@ -33,7 +33,7 @@ export function usePrivateHooksToEvents({
   const [contactEmails] = useContactEmails()
 
   useEffect(() => {
-    syncedEditorState.setProperty('userName', user.DisplayName)
+    syncedEditorState.setProperty('userName', user.DisplayName || user.Name || user.Email)
   }, [user, syncedEditorState])
 
   useEffect(() => {
