@@ -910,6 +910,9 @@
       "Reset keys": [
         "Klíče pro obnovení"
       ],
+      "Reset modifications": [
+        "Resetovat úpravy"
+      ],
       "Reset password": [
         "Resetovat heslo"
       ],
@@ -3707,6 +3710,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Můžete nadále zvát přátele, ale nebudete moci získávat další kredity"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "V poli ${ PASS_APP_NAME } můžete vynutit pravidla pro hesla, která budou členové organizace používat při jejich generování"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ]
@@ -4732,9 +4738,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
       ],
-      "Please enter a valid entity ID URL": [
-        "Zadejte prosím platnou URL ID subjektu"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
@@ -4764,9 +4767,6 @@
       ],
       "Please upload a square logo": [
         "Nahrajte logo ve čtvercovém tvaru"
-      ],
-      "Please upload an xml file": [
-        "Nahrejte prosím soubor xml"
       ],
       "Please upload only 1 file": [
         "Nahrajte prosím pouze 1 soubor"
@@ -7354,9 +7354,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Zkopírujte a vložte tuto URL do ACS (Assertion Consumer Service) pole u vašeho poskytovatele identity"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Zkopírujte a vložte tuto URL do pole ID subjektu u vašeho poskytovatele identity"
-      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -7635,9 +7632,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Zadejte ID subjektu organizace **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadejte heslo organizace pro obnovení oprávnění správce. ${ learnMore }"
@@ -8311,6 +8305,9 @@
       "Password copied to clipboard": [
         "Heslo bylo zkopírováno do schránky"
       ],
+      "Password generator rules successfully saved": [
+        "Pravidla generátoru hesel úspěšně uložena"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Délka hesla musí být minimálně ${ MIN_PASSWORD_LENGTH } znaků."
       ],
@@ -8601,6 +8598,9 @@
       ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
+      ],
+      "Setting successfully saved": [
+        "Nastavení úspěšně uloženo"
       ],
       "Setting up your new address...": [
         "Nastavování nové adresy..."
@@ -10198,8 +10198,14 @@
       "Allow": [
         "Povolit"
       ],
+      "Allow memorable passwords": [
+        "Povolení zapamatovatelných hesel"
+      ],
       "Allow notifications by email": [
         "Povolit upozornění e-mailem"
+      ],
+      "Allow random passwords": [
+        "Povolení náhodných hesel"
       ],
       "Allow recovery by email": [
         "Povolit obnovení e-mailem"
@@ -10329,6 +10335,9 @@
       ],
       "Calendars": [
         "Kalendáře"
+      ],
+      "Capitalize words": [
+        "Slova velkými písmeny"
       ],
       "Card details": [
         "Podrobnosti karty"
@@ -10735,6 +10744,12 @@
       "Mark as": [
         "Označit jako"
       ],
+      "Maximum number of characters": [
+        "Maximální počet znaků"
+      ],
+      "Maximum number of words": [
+        "Maximální počet slov"
+      ],
       "Message": [
         "Zpráva"
       ],
@@ -10749,6 +10764,12 @@
       ],
       "Method for importing metadata": [
         "Metoda pro import metadat"
+      ],
+      "Minimum number of characters": [
+        "Minimální počet znaků"
+      ],
+      "Minimum number of words": [
+        "Minimální počet slov"
       ],
       "Moderate NAT": [
         "Moderate NAT"
@@ -10806,6 +10827,9 @@
       ],
       "Notifications": [
         "Upozornění"
+      ],
+      "Numbers": [
+        "Číslice"
       ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
@@ -10996,9 +11020,6 @@
       "Signature": [
         "Podpis"
       ],
-      "Single sign-on entity ID": [
-        "ID subjektu jednotného přihlášení"
-      ],
       "Single sign-on URL": [
         "URL pro jednotné přihlášení"
       ],
@@ -11016,6 +11037,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Speciální znaky"
       ],
       "Starred": [
         "S hvězdičkou"
@@ -11091,6 +11115,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Nahrát 1 nebo více souborů pro obnovení nebo šifrovacích klíčů"
+      ],
+      "Uppercase": [
+        "Velká písmena"
       ],
       "URL": [
         "URL"
@@ -13537,6 +13564,9 @@
       "Add to existing group": [
         "Přidat do existující skupiny"
       ],
+      "Allowed (default)": [
+        "Povoleno (výchozí)"
+      ],
       "Android": [
         "Android"
       ],
@@ -13606,6 +13636,9 @@
       "Normal": [
         "Normální"
       ],
+      "Not allowed": [
+        "Nepovoleno"
+      ],
       "Off": [
         "Vypnuto"
       ],
@@ -13632,6 +13665,9 @@
       ],
       "Repeat weekly": [
         "Opakovat týdně"
+      ],
+      "Required": [
+        "Povinné"
       ],
       "Right to Left": [
         "Zprava doleva"
@@ -18357,6 +18393,9 @@
       "Password": [
         "Heslo"
       ],
+      "Password generator rules": [
+        "Pravidla generátoru hesel"
+      ],
       "Password reset settings": [
         "Nastavení resetování hesla"
       ],
@@ -18923,9 +18962,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Zkopírujte a vložte tuto URL adresu do pole ACS (Assertion Consumer Service) URL u svého poskytovatele identity."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Zkopírujte a vložte tuto URL adresu do pole ID subjektu u svého poskytovatele identity"
       ],
       "Customize import to reduce the number of folders": [
         "Přizpůsobte proces importu, abyste snížili počet složek"
@@ -19556,6 +19592,9 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ],
+      "servers": [
+        "serverů"
       ]
     },
     "vpn_2024: renew": {
@@ -19800,6 +19839,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Pokud zrušíte tento import, nebudete jej moci obnovit. ${ BRAND_NAME } uložil veškerý průběh na vašem účtu. Přesto zrušit?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Maximum nemůže být nižší než minimum"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Musí být mezi ${ minimumNumber } a ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Musí být větší nebo rovno ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Musí být menší nebo rovno ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Zadejte alespoň jednoho příjemce."

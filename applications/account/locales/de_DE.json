@@ -4661,9 +4661,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
       ],
-      "Please enter a valid entity ID URL": [
-        "Bitte gib eine gültige URL zur Entitäts-ID ein"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
         "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
@@ -4692,7 +4689,7 @@
       "Please upload a square logo": [
         "Bitte lade ein quadratisches Logo hoch."
       ],
-      "Please upload an xml file": [
+      "Please upload an XML file": [
         "Bitte lade eine XML-Datei hoch."
       ],
       "Please upload only 1 file": [
@@ -7164,9 +7161,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
-      ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
       ],
@@ -7425,9 +7419,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Gib die Entitäts-ID einer **eduGAIN**-Organisation für **${ domain.DomainName }** ein."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Gib das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
@@ -10486,6 +10477,9 @@
       "Notifications": [
         "Benachrichtigungen"
       ],
+      "Numbers": [
+        "Zahlen"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN‐/IKEv2‐Passwort"
       ],
@@ -10669,9 +10663,6 @@
       "Signature": [
         "Signatur"
       ],
-      "Single sign-on entity ID": [
-        "Single Sign-on-Entitäts-ID"
-      ],
       "Single sign-on URL": [
         "Single Sign-on-URL"
       ],
@@ -10689,6 +10680,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Sonderzeichen"
       ],
       "Starred": [
         "Markiert"
@@ -12796,6 +12790,9 @@
       ],
       "During your first month": [
         "Während des ersten Monats"
+      ],
+      "Email subscriptions": [
+        "E‐Mail‐Abonnements"
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Nimm an Umfragen teil, um die Dienstleistungen von ${ BRAND_NAME } zu verbessern."
@@ -15235,6 +15232,9 @@
     "signup: Feature": {
       "Encrypted": [
         "Verschlüsselt"
+      ],
+      "Strict no-logs policy": [
+        "Strenge No Logs-Richtlinie"
       ]
     },
     "Signup: Info": {
@@ -15525,6 +15525,9 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Confirm backup password": [
+        "Backup-Passwort bestätigen"
+      ],
       "Confirmation code": [
         "Bestätigungscode"
       ],
@@ -15565,6 +15568,9 @@
       ],
       "Grant access": [
         "Zugriff gewähren"
+      ],
+      "Grant access to user?": [
+        "Dem Benutzer Zugriff gewähren?"
       ],
       "Grant access to users?": [
         "Den Benutzern Zugriff gewähren?"
@@ -18127,9 +18133,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
-      ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
       ],
@@ -18370,6 +18373,9 @@
       ],
       "Refunded": [
         "Erstattet"
+      ],
+      "Success": [
+        "Erfolgreich"
       ]
     },
     "Transaction type display as badge": {
@@ -18697,6 +18703,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ],
+      "servers": [
+        "Servers"
       ]
     },
     "vpn_2024: renew": {
