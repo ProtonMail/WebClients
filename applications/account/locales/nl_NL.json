@@ -910,6 +910,9 @@
       "Reset keys": [
         "Reset sleutels"
       ],
+      "Reset modifications": [
+        "Reset wijzigingen"
+      ],
       "Reset password": [
         "Wachtwoord resetten"
       ],
@@ -3677,6 +3680,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "U kan vrienden blijven uitnodigen, maar u kan geen tegoed meer ontvangen"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "U kunt de wachtwoordregels die leden zullen gebruiken als ze een wachtwoord aanmaken in ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
       ]
@@ -4696,9 +4702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
       ],
-      "Please enter a valid entity ID URL": [
-        "Voer een geldige entiteit ID URL in"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
@@ -4726,9 +4729,6 @@
       ],
       "Please upload a square logo": [
         "Upload een vierkant logo"
-      ],
-      "Please upload an xml file": [
-        "Upload een xml-bestand"
       ],
       "Please upload only 1 file": [
         "Upload slechts 1 bestand"
@@ -7218,9 +7218,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identiteitsprovider"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
-      ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
       ],
@@ -7491,9 +7488,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Voer de entiteit-ID van een **eduGAIN** organisatie in voor **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Voer het wachtwoord van de organisatie in om de beheerdersrechten te herstellen. ${ learnMore }"
@@ -8154,6 +8148,9 @@
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
+      "Password generator rules successfully saved": [
+        "Wachtwoordgeneratorregels succesvol bijgewerkt"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Wachtwoord moet ${ MIN_PASSWORD_LENGTH } tekens of meer bevatten."
       ],
@@ -8438,6 +8435,9 @@
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Setting successfully saved": [
+        "Instellingen succesvol bijgewerkt"
       ],
       "Setting up your new address...": [
         "Uw nieuwe adres wordt ingesteld..."
@@ -9995,8 +9995,14 @@
       "Allow": [
         "Geautoriseerde adressen"
       ],
+      "Allow memorable passwords": [
+        "Makkelijk te onthouden wachtwoorden toestaan"
+      ],
       "Allow notifications by email": [
         "Meldingen per e-mail toestaan"
+      ],
+      "Allow random passwords": [
+        "Willekeurige wachtwoorden toestaan"
       ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
@@ -10126,6 +10132,9 @@
       ],
       "Calendars": [
         "Agenda's"
+      ],
+      "Capitalize words": [
+        "Zet woorden om naar hoofdletters"
       ],
       "Card details": [
         "Kaart details"
@@ -10532,6 +10541,12 @@
       "Mark as": [
         "Markeren als"
       ],
+      "Maximum number of characters": [
+        "Maximum aantal tekens"
+      ],
+      "Maximum number of words": [
+        "Minimum aantal woorden"
+      ],
       "Message": [
         "Bericht"
       ],
@@ -10546,6 +10561,12 @@
       ],
       "Method for importing metadata": [
         "Importeren metagegevens"
+      ],
+      "Minimum number of characters": [
+        "Minimaal aantal tekens"
+      ],
+      "Minimum number of words": [
+        "Minimum aantal woorden"
       ],
       "Moderate NAT": [
         "Gemiddelde NAT"
@@ -10603,6 +10624,9 @@
       ],
       "Notifications": [
         "Meldingen"
+      ],
+      "Numbers": [
+        "Getallen"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 wachtwoord"
@@ -10791,9 +10815,6 @@
       "Signature": [
         "Handtekening"
       ],
-      "Single sign-on entity ID": [
-        "Single sign-on entiteit-ID"
-      ],
       "Single sign-on URL": [
         "URL voor enkele-teken"
       ],
@@ -10811,6 +10832,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Speciale tekens"
       ],
       "Starred": [
         "Met ster"
@@ -10886,6 +10910,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Upload 1 of meer herstelbestanden of encryptiesleutels"
+      ],
+      "Uppercase": [
+        "Hoofdletter"
       ],
       "URL": [
         "Website"
@@ -13243,6 +13270,9 @@
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
       ],
+      "Allowed (default)": [
+        "Toegestaan (standaard)"
+      ],
       "Archive": [
         "Archief"
       ],
@@ -13300,6 +13330,9 @@
       "Normal": [
         "Normaal"
       ],
+      "Not allowed": [
+        "Niet toegestaan"
+      ],
       "Off": [
         "Uit"
       ],
@@ -13326,6 +13359,9 @@
       ],
       "Repeat weekly": [
         "Wekelijks herhalen"
+      ],
+      "Required": [
+        "Vereist"
       ],
       "Right to Left": [
         "Rechts naar links"
@@ -17908,6 +17944,9 @@
       "Password": [
         "Wachtwoord"
       ],
+      "Password generator rules": [
+        "Regels wachtwoord generator"
+      ],
       "Password reset settings": [
         "Wachtwoord reset instellingen"
       ],
@@ -18472,9 +18511,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identiteitsprovider"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
       ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"
@@ -19089,6 +19125,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "servers": [
+        "servers"
       ]
     },
     "vpn_2024: renew": {
@@ -19298,6 +19337,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Als u deze import annuleert, zult u niet in staat zijn om deze te hervatten. ${ BRAND_NAME } heeft alle voortgang in uw account opgeslagen. Toch annuleren?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Maximum kan niet lager zijn dan minimum"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Moet tussen ${ minimumNumber } en ${ maximumNumber } liggen"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Moet groter of gelijk zijn dan ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Moet kleiner dan of gelijk zijn aan ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Vul minstens één ontvanger in."
