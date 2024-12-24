@@ -910,6 +910,9 @@
       "Reset keys": [
         "Nullstill nøkler"
       ],
+      "Reset modifications": [
+        "Tilbakestill endringer"
+      ],
       "Reset password": [
         "Tilbakestill passord"
       ],
@@ -3677,6 +3680,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsette med å invitere venner, men du vil ikke være i stand til å tjene flere kreditter"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Du kan håndheve passordreglene som organisasjonsmedlemmer skal bruke når de genererer et passord i ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
       ]
@@ -4696,9 +4702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
       ],
-      "Please enter a valid entity ID URL": [
-        "Angi en gyldig enhets-ID-URL"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
         "Løs de uthevede konfliktene for å fortsette."
@@ -4726,9 +4729,6 @@
       ],
       "Please upload a square logo": [
         "Last opp en firkantet logo"
-      ],
-      "Please upload an xml file": [
-        "Vennligst last opp en xml-fil"
       ],
       "Please upload only 1 file": [
         "Vennligst last opp bare 1 fil"
@@ -7218,9 +7218,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i ACS (Assertion Consumer Service) URL-feltet til identitetsleverandøren din."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
-      ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
       ],
@@ -7491,9 +7488,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Angi enhets-ID-en for en **eduGAIN**-organisasjon for **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Skriv inn organisasjonspassord for å gjenopprette administratorprivilegier. ${ learnMore }"
@@ -8157,6 +8151,9 @@
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
+      "Password generator rules successfully saved": [
+        "Passordgeneratorreglene er lagret."
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Passordet må være ${ MIN_PASSWORD_LENGTH } tegn eller mer."
       ],
@@ -8441,6 +8438,9 @@
       ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
+      ],
+      "Setting successfully saved": [
+        "Innstilling lagret"
       ],
       "Setting up your new address...": [
         "Konfigurerer den nye adressen din ..."
@@ -9998,8 +9998,14 @@
       "Allow": [
         "Tillat"
       ],
+      "Allow memorable passwords": [
+        "Tillat minneverdige passord"
+      ],
       "Allow notifications by email": [
         "Tillat varslinger via e-post"
+      ],
+      "Allow random passwords": [
+        "Tillat tilfeldige passord"
       ],
       "Allow recovery by email": [
         "Tillat gjenoppretting ved e-post"
@@ -10129,6 +10135,9 @@
       ],
       "Calendars": [
         "Kalendere"
+      ],
+      "Capitalize words": [
+        "Bruk store bokstaver"
       ],
       "Card details": [
         "Kortopplysninger"
@@ -10535,6 +10544,12 @@
       "Mark as": [
         "Marker som"
       ],
+      "Maximum number of characters": [
+        "Maksimalt antall tegn"
+      ],
+      "Maximum number of words": [
+        "Maksimalt antall ord"
+      ],
       "Message": [
         "Melding"
       ],
@@ -10549,6 +10564,12 @@
       ],
       "Method for importing metadata": [
         "Metode for import av metadata"
+      ],
+      "Minimum number of characters": [
+        "Minimum antall tegn"
+      ],
+      "Minimum number of words": [
+        "Minimum antall ord"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -10606,6 +10627,9 @@
       ],
       "Notifications": [
         "Varsler"
+      ],
+      "Numbers": [
+        "Tall"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-passord"
@@ -10794,9 +10818,6 @@
       "Signature": [
         "Signatur"
       ],
-      "Single sign-on entity ID": [
-        "Enhets-ID for enkeltpålogging"
-      ],
       "Single sign-on URL": [
         "URL for enkel pålogging"
       ],
@@ -10814,6 +10835,9 @@
       ],
       "Spam": [
         "Søppelpost"
+      ],
+      "Special characters": [
+        "Spesialtegn"
       ],
       "Starred": [
         "Stjernemerket"
@@ -10889,6 +10913,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Last opp 1 eller flere gjenopprettingsfiler eller krypteringsnøkler"
+      ],
+      "Uppercase": [
+        "Store bokstaver"
       ],
       "URL": [
         "Nettadresse"
@@ -13249,6 +13276,9 @@
       "Add to existing group": [
         "Legg til eksisterende gruppe"
       ],
+      "Allowed (default)": [
+        "Tillatt (standard)"
+      ],
       "Android": [
         "Android"
       ],
@@ -13318,6 +13348,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "Ikke tillatt"
+      ],
       "Off": [
         "Av"
       ],
@@ -13344,6 +13377,9 @@
       ],
       "Repeat weekly": [
         "Gjenta ukentlig"
+      ],
+      "Required": [
+        "Obligatorisk"
       ],
       "Right to Left": [
         "Høyre til venstre"
@@ -17932,6 +17968,9 @@
       "Password": [
         "Passord"
       ],
+      "Password generator rules": [
+        "Passordgeneratorregler"
+      ],
       "Password reset settings": [
         "Innstillinger for tilbakestilling av passord"
       ],
@@ -18496,9 +18535,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i ACS (Assertion Consumer Service) URL-feltet til identitetsleverandøren din."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
       ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"
@@ -19113,6 +19149,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } land"
+      ],
+      "servers": [
+        "tjenere"
       ]
     },
     "vpn_2024: renew": {
@@ -19345,6 +19384,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Dersom du avbryter denne importen, vil du ikke kunne gjenoppta den. ${ BRAND_NAME } lagret all fremgangen på kontoen din. Avbryte likevel?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Maksimum kan ikke være lavere enn minimum"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Må være mellom ${ minimumNumber } og ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Må være større enn eller lik ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Må være lavere enn eller lik ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Legg til minst én mottaker."
