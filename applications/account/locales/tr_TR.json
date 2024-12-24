@@ -910,6 +910,9 @@
       "Reset keys": [
         "Anahtarları sıfırla"
       ],
+      "Reset modifications": [
+        "Değişiklikleri sıfırla"
+      ],
       "Reset password": [
         "Parolayı sıfırla"
       ],
@@ -3677,6 +3680,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Arkadaşlarınızı davet etmeyi sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } uygulamasında kuruluş üyelerinin parola oluştururken kullanacakları parola kurallarını dayatabilirsiniz."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
       ]
@@ -4696,9 +4702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
       ],
-      "Please enter a valid entity ID URL": [
-        "Lütfen geçerli bir varlık kimliği adresi yazın"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
@@ -4726,9 +4729,6 @@
       ],
       "Please upload a square logo": [
         "Lütfen kare biçiminde bir logo yükleyin"
-      ],
-      "Please upload an xml file": [
-        "Lütfen bir XML dosyası yükleyin"
       ],
       "Please upload only 1 file": [
         "Lütfen yalnızca 1 dosya yükleyin"
@@ -7218,9 +7218,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın varlık kimliği alanına yapıştırın"
-      ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
@@ -7491,9 +7488,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }** için bir **eduGAIN** kuruluşunun varlık kimliğini yazın."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Yönetici yetkilerini geri yüklemek için kuruluş parolasını yazın. ${ learnMore }"
@@ -8154,6 +8148,9 @@
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
       ],
+      "Password generator rules successfully saved": [
+        "Parola oluşturucu kuralları kaydedildi"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır."
       ],
@@ -8438,6 +8435,9 @@
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
+      ],
+      "Setting successfully saved": [
+        "Ayar kaydedildi"
       ],
       "Setting up your new address...": [
         "Yeni adresiniz ayarlanıyor..."
@@ -9995,8 +9995,14 @@
       "Allow": [
         "İzin verilen"
       ],
+      "Allow memorable passwords": [
+        "Anımsanabilir parolalar kullanılabilsin"
+      ],
       "Allow notifications by email": [
         "E-posta bildirimleri kullanılabilsin"
+      ],
+      "Allow random passwords": [
+        "Rastgele parolalar kullanılabilsin"
       ],
       "Allow recovery by email": [
         "E-posta ile hesap kurtarılabilsin"
@@ -10126,6 +10132,9 @@
       ],
       "Calendars": [
         "Takvimler"
+      ],
+      "Capitalize words": [
+        "Sözcükler büyük harfe dönüştürülsün"
       ],
       "Card details": [
         "Kart bilgileri"
@@ -10532,6 +10541,12 @@
       "Mark as": [
         "Şöyle işaretlensin"
       ],
+      "Maximum number of characters": [
+        "En fazla karakter sayısı"
+      ],
+      "Maximum number of words": [
+        "En fazla sözcük sayısı"
+      ],
       "Message": [
         "İleti"
       ],
@@ -10546,6 +10561,12 @@
       ],
       "Method for importing metadata": [
         "Üst verileri içe aktarma yöntemi"
+      ],
+      "Minimum number of characters": [
+        "En az karakter sayısı"
+      ],
+      "Minimum number of words": [
+        "En az sözcük sayısı"
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
@@ -10603,6 +10624,9 @@
       ],
       "Notifications": [
         "Bildirimler"
+      ],
+      "Numbers": [
+        "Rakamlar"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
@@ -10791,9 +10815,6 @@
       "Signature": [
         "İmza"
       ],
-      "Single sign-on entity ID": [
-        "Tek oturum açma varlık kimliği"
-      ],
       "Single sign-on URL": [
         "Tek oturum açma adresi"
       ],
@@ -10811,6 +10832,9 @@
       ],
       "Spam": [
         "İstenmeyen e-posta"
+      ],
+      "Special characters": [
+        "Özel karakterler"
       ],
       "Starred": [
         "Yıldızlı"
@@ -10886,6 +10910,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "1 ya da birkaç kurtarma dosyası ya da şifreleme anahtarı yükleyin"
+      ],
+      "Uppercase": [
+        "Büyük harf"
       ],
       "URL": [
         "İnternet adresi"
@@ -13243,6 +13270,9 @@
       "Add to existing group": [
         "Var olan gruba ekle"
       ],
+      "Allowed (default)": [
+        "İzin veriliyor (varsayılan)"
+      ],
       "Archive": [
         "Arşivle"
       ],
@@ -13300,6 +13330,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "İzin verilmiyor"
+      ],
       "Off": [
         "Kapalı"
       ],
@@ -13326,6 +13359,9 @@
       ],
       "Repeat weekly": [
         "Haftalık yinelenen"
+      ],
+      "Required": [
+        "Zorunlu"
       ],
       "Right to Left": [
         "Sağdan sola"
@@ -17908,6 +17944,9 @@
       "Password": [
         "Parola"
       ],
+      "Password generator rules": [
+        "Parola oluşturucu kuralları"
+      ],
       "Password reset settings": [
         "Parola sıfırlama ayarları"
       ],
@@ -18472,9 +18511,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın varlık kimliği alanına yapıştırın"
       ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
@@ -19089,6 +19125,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "servers": [
+        "sunucular"
       ]
     },
     "vpn_2024: renew": {
@@ -19298,6 +19337,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. ${ BRAND_NAME }, tüm ilerlemeyi hesabınıza kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "En fazla değeri en az değerinden küçük olamaz"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "${ minimumNumber } ile ${ maximumNumber } arasında olmalıdır"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "En az ${ minimumNumber } olmalıdır"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "En fazla ${ maximumNumber } olmalıdır"
       ],
       "Please add at least one recipient.": [
         "Lütfen en az bir alıcı ekleyin."

@@ -910,6 +910,9 @@
       "Reset keys": [
         "Επαναφορά κλειδιών"
       ],
+      "Reset modifications": [
+        "Επαναφορά τροποποιήσεων"
+      ],
       "Reset password": [
         "Επαναφορά κωδικού πρόσβασης"
       ],
@@ -3677,6 +3680,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Μπορείτε να συνεχίσετε να προσκαλείτε φίλους, αλλά δεν θα μπορείτε να κερδίσετε περισσότερες πιστώσεις"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Μπορείτε να επιβάλετε τους κανόνες κωδικού πρόσβασης που θα χρησιμοποιούν τα μέλη του οργανισμού όταν δημιουργούν έναν κωδικό πρόσβασης στο ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ]
@@ -4696,9 +4702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
       ],
-      "Please enter a valid entity ID URL": [
-        "Εισαγάγετε μια έγκυρη Entity ID διεύθυνσης URL"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
@@ -4726,9 +4729,6 @@
       ],
       "Please upload a square logo": [
         "Παρακαλούμε ανεβάστε ένα τετράγωνο λογότυπο"
-      ],
-      "Please upload an xml file": [
-        "Παρακαλούμε ανεβάστε ένα αρχείο xml"
       ],
       "Please upload only 1 file": [
         "Παρακαλούμε ανεβάστε μόνο 1 αρχείο"
@@ -7218,9 +7218,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο αναγνωριστικού οντότητας της υπηρεσίας παροχής ταυτότητάς σας"
-      ],
       "Copy the link to clipboard": [
         "Αντιγραφή του συνδέσμου στο πρόχειρο"
       ],
@@ -7491,9 +7488,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Εισαγάγετε το αναγνωριστικό οντότητας ενός οργανισμού **eduGAIN** για τον τομέα **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
@@ -8154,6 +8148,9 @@
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
+      "Password generator rules successfully saved": [
+        "Οι κανόνες δημιουργίας κωδικών πρόσβασης αποθηκεύτηκαν με επιτυχία"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Ο κωδικός πρόσβασης πρέπει να είναι ${ MIN_PASSWORD_LENGTH } χαρακτήρες ή περισσότεροι."
       ],
@@ -8438,6 +8435,9 @@
       ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
+      ],
+      "Setting successfully saved": [
+        "Η ρύθμιση αποθηκεύτηκε με επιτυχία"
       ],
       "Setting up your new address...": [
         "Ρύθμιση της νέας διεύθυνσής σας..."
@@ -9995,8 +9995,14 @@
       "Allow": [
         "Αποδεκτή"
       ],
+      "Allow memorable passwords": [
+        "Να επιτρέπονται οι αξέχαστοι κωδικοί πρόσβασης"
+      ],
       "Allow notifications by email": [
         "Να επιτρέπονται οι ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Allow random passwords": [
+        "Να επιτρέπονται τυχαίοι κωδικοί πρόσβασης"
       ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
@@ -10126,6 +10132,9 @@
       ],
       "Calendars": [
         "Ημερολόγια"
+      ],
+      "Capitalize words": [
+        "Κεφαλαιοποίηση λέξεων"
       ],
       "Card details": [
         "Στοιχεία κάρτας"
@@ -10532,6 +10541,12 @@
       "Mark as": [
         "Σήμανση ως"
       ],
+      "Maximum number of characters": [
+        "Μέγιστος αριθμός χαρακτήρων"
+      ],
+      "Maximum number of words": [
+        "Μέγιστος αριθμός λέξεων"
+      ],
       "Message": [
         "Μήνυμα"
       ],
@@ -10546,6 +10561,12 @@
       ],
       "Method for importing metadata": [
         "Μέθοδος εισαγωγής μεταδεδομένων"
+      ],
+      "Minimum number of characters": [
+        "Ελάχιστος αριθμός χαρακτήρων"
+      ],
+      "Minimum number of words": [
+        "Ελάχιστος αριθμός λέξεων"
       ],
       "Moderate NAT": [
         "Μέτριο NAT"
@@ -10603,6 +10624,9 @@
       ],
       "Notifications": [
         "Ειδοποιήσεις"
+      ],
+      "Numbers": [
+        "Αριθμοί"
       ],
       "OpenVPN / IKEv2 password": [
         "Κωδικός πρόσβασης OpenVPN / IKEv2"
@@ -10791,9 +10815,6 @@
       "Signature": [
         "Υπογραφή"
       ],
-      "Single sign-on entity ID": [
-        "Entity ID καθολικής σύνδεσης"
-      ],
       "Single sign-on URL": [
         "URL καθολικής σύνδεσης"
       ],
@@ -10811,6 +10832,9 @@
       ],
       "Spam": [
         "Ενοχλητικό"
+      ],
+      "Special characters": [
+        "Ειδικοί χαρακτήρες"
       ],
       "Starred": [
         "Με αστέρι"
@@ -10886,6 +10910,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Ανεβάστε 1 ή περισσότερα αρχεία ανάκτησης ή κλειδιά κρυπτογράφησης"
+      ],
+      "Uppercase": [
+        "Κεφαλαία"
       ],
       "URL": [
         "Διεύθυνση URL"
@@ -13243,6 +13270,9 @@
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
       ],
+      "Allowed (default)": [
+        "Επιτρέπεται (προεπιλογή)"
+      ],
       "Archive": [
         "Αρχειοθετημένα"
       ],
@@ -13300,6 +13330,9 @@
       "Normal": [
         "Κανονική"
       ],
+      "Not allowed": [
+        "Δεν επιτρέπεται"
+      ],
       "Off": [
         "Ανενεργό"
       ],
@@ -13326,6 +13359,9 @@
       ],
       "Repeat weekly": [
         "Επανάληψη εβδομαδιαία"
+      ],
+      "Required": [
+        "Απαιτείται"
       ],
       "Right to Left": [
         "Δεξιά προς Αριστερά"
@@ -17905,6 +17941,9 @@
       "Password": [
         "Κωδικός"
       ],
+      "Password generator rules": [
+        "Κανόνες γεννήτριας κωδικών πρόσβασης"
+      ],
       "Password reset settings": [
         "Ρυθμίσεις επαναφοράς κωδικού πρόσβασης"
       ],
@@ -18469,9 +18508,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο αναγνωριστικού οντότητας της υπηρεσίας παροχής ταυτότητάς σας"
       ],
       "Customize import to reduce the number of folders": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
@@ -19086,6 +19122,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ],
+      "servers": [
+        "διακομιστές"
       ]
     },
     "vpn_2024: renew": {
@@ -19295,6 +19334,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Εάν ακυρώσετε αυτήν την εισαγωγή, δεν θα μπορέσετε να τη συνεχίσετε. Το ${ BRAND_NAME } αποθήκευσε όλη την πρόοδο στον λογαριασμό σας. Ακύρωση οπωσδήποτε;"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Το μέγιστο δεν μπορεί να είναι χαμηλότερο από το ελάχιστο"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Πρέπει να είναι μεταξύ ${ minimumNumber } και ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Πρέπει να είναι μεγαλύτερο ή ίσο με ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Πρέπει να είναι μικρότερο ή ίσο με ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Παρακαλούμε προσθέστε τουλάχιστον έναν παραλήπτη."

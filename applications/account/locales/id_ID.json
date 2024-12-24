@@ -910,6 +910,9 @@
       "Reset keys": [
         "Setel ulang kunci"
       ],
+      "Reset modifications": [
+        "Atur ulang perubahan"
+      ],
       "Reset password": [
         "Atur ulang kata sandi"
       ],
@@ -3603,10 +3606,10 @@
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
       "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktifkan peristiwa berdetail dan ${ PROTON_SENTINEL_NAME } untuk mengakses fitur-fitur ini"
+        "Aktifkan rekaman peristiwa terperinci dan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur ini"
       ],
       "Enable detailed events to access these features": [
-        "Aktifkan peristiwa berdetail untuk mengakses fitur-fitur ini"
+        "Aktifkan rekaman peristiwa terperinci untuk mengakses berbagai fitur ini"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
@@ -3661,6 +3664,9 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh saldo tambahan"
+      ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Anda dapat mewajibkan peraturan kata sandi tertentu yang akan harus diikuti oleh para anggota organisasi pada saat mereka menghasilkan kata sandi di ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
@@ -3967,13 +3973,13 @@
         "Keberlangsungan acara ini telah diperbarui."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Keberlangsungan acara ini telah diperbarui. Berikut merupakan apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
+        "Keberlangsungan acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+        "Acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Anda diundang ke ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -4678,9 +4684,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
       ],
-      "Please enter a valid entity ID URL": [
-        "Silakan masukkan URL ID entitas yang valid"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
       ],
@@ -4707,9 +4710,6 @@
       ],
       "Please upload a square logo": [
         "Silakan unggah logo berbentuk persegi"
-      ],
-      "Please upload an xml file": [
-        "Silakan unggah berkas xml"
       ],
       "Please upload only 1 file": [
         "Mohon hanya unggah 1 berkas"
@@ -6824,7 +6824,7 @@
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
       ],
       "Add a recovery email address": [
-        "Tambahkan alamat email pemulihan"
+        "Tambah alamat email pemulihan"
       ],
       "add a recovery method": [
         "tambah metode pemulihan"
@@ -7150,9 +7150,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Salin dan tempel URL ini ke kolom ID entitas milik penyedia identitas Anda"
-      ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
       ],
@@ -7361,7 +7358,7 @@
         "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
       ],
       "Emailing preference saved": [
-        "Preferensi email disimpan"
+        "Preferensi pengiriman email disimpan"
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Email yang ditandai dengan label ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
@@ -7420,9 +7417,6 @@
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
       ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Masukkan ID entitas organisasi **eduGAIN** untuk **${ domain.DomainName }**."
-      ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Masukkan Kata Sandi Organisasi untuk memulihkan hak administrator. ${ learnMore }"
       ],
@@ -7454,7 +7448,7 @@
         "Undangan acara dan tanggapan akan dikirim dalam bahasa ini."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Peristiwa mencakup berbagai percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
+        "Peristiwa keamanan mencatat berbagai percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
       ],
       "Example: ${ spfExample }": [
         "Contoh: ${ spfExample }"
@@ -8077,6 +8071,9 @@
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
       ],
+      "Password generator rules successfully saved": [
+        "Peraturan penghasil kata sandi berhasil disimpan"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Kata sandi harus mengandung ${ MIN_PASSWORD_LENGTH } karakter atau lebih."
       ],
@@ -8126,7 +8123,7 @@
         "Silakan masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
       "Please fill out this field.": [
-        "Mohon isi kolom ini."
+        "Silakan isi kolom ini."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
@@ -8358,6 +8355,9 @@
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
+      ],
+      "Setting successfully saved": [
+        "Pengaturan berhasil disimpan"
       ],
       "Setting up your new address...": [
         "Menyiapkan alamat baru Anda..."
@@ -9209,7 +9209,7 @@
         "Anda tidak memiliki transaksi."
       ],
       "You may be redirected to your bank’s website.": [
-        "Anda mungkin akan dialihkan ke situs web bank Anda."
+        "Anda akan dapat dialihkan ke situs web milik bank Anda."
       ],
       "You may now start using the extension": [
         "Anda kini dapat mulai menggunakan ekstensi"
@@ -9338,7 +9338,7 @@
         "Email organisasi Anda terlindungi dengan enkripsi end-to-end melalui kunci organisasi. Sidik jari ini dapat digunakan untuk memverifikasi apakah seluruh administrator pada akun Anda memiliki kunci yang sama."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
+        "Rincian pembayaran Anda dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
@@ -9895,8 +9895,14 @@
       "Allow": [
         "Alamat yang diizinkan"
       ],
+      "Allow memorable passwords": [
+        "Izinkan kata sandi yang mudah diingat"
+      ],
       "Allow notifications by email": [
         "Izinkan notifikasi melalui email"
+      ],
+      "Allow random passwords": [
+        "Izinkan kata sandi acak"
       ],
       "Allow recovery by email": [
         "Izinkan pemulihan akun melalui email"
@@ -10026,6 +10032,9 @@
       ],
       "Calendars": [
         "Kalender"
+      ],
+      "Capitalize words": [
+        "Kapitalkan kata"
       ],
       "Card details": [
         "Rincian kartu"
@@ -10432,6 +10441,12 @@
       "Mark as": [
         "Tandai sebagai"
       ],
+      "Maximum number of characters": [
+        "Jumlah karakter maksimum"
+      ],
+      "Maximum number of words": [
+        "Jumlah kata maksimum"
+      ],
       "Message": [
         "Pesan"
       ],
@@ -10446,6 +10461,12 @@
       ],
       "Method for importing metadata": [
         "Metode pengimporan metadata"
+      ],
+      "Minimum number of characters": [
+        "Jumlah karakter minimum"
+      ],
+      "Minimum number of words": [
+        "Jumlah kata minimum"
       ],
       "Moderate NAT": [
         "NAT Moderat"
@@ -10503,6 +10524,9 @@
       ],
       "Notifications": [
         "Notifikasi"
+      ],
+      "Numbers": [
+        "Angka"
       ],
       "OpenVPN / IKEv2 password": [
         "Kata sandi OpenVPN / IKEv2"
@@ -10690,9 +10714,6 @@
       "Signature": [
         "Tanda tangan"
       ],
-      "Single sign-on entity ID": [
-        "ID entitas single sign-on"
-      ],
       "Single sign-on URL": [
         "URL single sign-on"
       ],
@@ -10710,6 +10731,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Karakter khusus"
       ],
       "Starred": [
         "Dibintangi"
@@ -10785,6 +10809,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Unggah setidaknya 1 berkas pemulihan atau kunci enkripsi"
+      ],
+      "Uppercase": [
+        "Huruf besar"
       ],
       "URL": [
         "URL"
@@ -11230,7 +11257,7 @@
         "Aktifkan ${ reason }"
       ],
       "Enable detailed events": [
-        "Aktifkan peristiwa terperinci"
+        "Aktifkan rekaman peristiwa terperinci"
       ],
       "Enable security events": [
         "Aktifkan peristiwa keamanan"
@@ -11943,7 +11970,7 @@
         "Pengelolaan grup kontak"
       ],
       "Custom and secure business email": [
-        "Email bisnis khusus dan aman"
+        "Email bisnis yang khusus dan aman"
       ],
       "Custom domains for email aliases": [
         "Domain khusus untuk alias email"
@@ -11988,7 +12015,7 @@
         "Grup email"
       ],
       "Enables HIPAA compliance": [
-        "Tunduk terhadap undang-undang HIPAA"
+        "Memungkinkan kepatuhan HIPAA"
       ],
       "Encrypted contact details": [
         "Rincian kontak yang terenkripsi"
@@ -12458,7 +12485,7 @@
         "Mulai jelajahi semesta ${ BRAND_NAME }"
       ],
       "Switch plans?": [
-        "Ganti paket?"
+        "Ubah paket?"
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
@@ -13096,6 +13123,9 @@
       "Add to existing group": [
         "Tambah ke grup yang sudah ada"
       ],
+      "Allowed (default)": [
+        "Diperbolehkan (bawaan)"
+      ],
       "Archive": [
         "Arsipkan"
       ],
@@ -13153,6 +13183,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "Tidak diperbolehkan"
+      ],
       "Off": [
         "Nonaktif"
       ],
@@ -13179,6 +13212,9 @@
       ],
       "Repeat weekly": [
         "Ulangi setiap minggu"
+      ],
+      "Required": [
+        "Diperlukan"
       ],
       "Right to Left": [
         "Kanan ke Kiri"
@@ -15146,7 +15182,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Gagal memperbarui pengaturan"
+        "Pengaturan gagal diperbarui"
       ]
     },
     "Settings/filters": {
@@ -16030,7 +16066,7 @@
         "Cukup masuk ke akun Apple App Store Anda, lalu pilih ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
+        "Cukup masuk ke akun Play Store Anda dan tekan ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Kelola langganan Anda pada ${ subscriptionManager }"
@@ -16155,7 +16191,7 @@
         "Mencadangkan foto dari perangkat Anda"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Kembangkan kepercayaan dan pengenalan merek dengan alamat email profesional menggunakan domain Anda sendiri."
+        "Kembangkan kepercayaan dan pengenalan merek dengan alamat email profesional yang berada di bawah domain Anda."
       ],
       "Cancel subscription": [
         "Batalkan langganan"
@@ -17296,7 +17332,7 @@
         "Perangkat"
       ],
       "Device connected!": [
-        "Perangkat tersambung!"
+        "Perangkat terhubung!"
       ],
       "Device name": [
         "Nama perangkat"
@@ -17694,6 +17730,9 @@
       "Password": [
         "Kata sandi"
       ],
+      "Password generator rules": [
+        "Peraturan penghasil kata sandi"
+      ],
       "Password reset settings": [
         "Opsi pengaturan ulang kata sandi"
       ],
@@ -17998,7 +18037,7 @@
         "Lacak rujukan Anda"
       ],
       "TV sign in": [
-        "Masuk TV"
+        "Entri masuk TV"
       ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
@@ -18257,9 +18296,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Salin dan tempel URL ini ke kolom ID entitas milik penyedia identitas Anda"
       ],
       "Customize import to reduce the number of folders": [
         "Sesuaikan impor untuk mengurangi jumlah folder"
@@ -18866,6 +18902,9 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ],
+      "servers": [
+        "server"
       ]
     },
     "vpn_2024: renew": {
@@ -19044,10 +19083,10 @@
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
       "Are you sure you want to delete the phone number?": [
-        "Apakah Anda yakin untuk menghapus nomor telepon ini?"
+        "Apakah Anda yakin ingin menghapus nomor telepon ini?"
       ],
       "Are you sure you want to delete this address?": [
-        "Apakah Anda yakin untuk menghapus alamat ini?"
+        "Apakah Anda yakin ingin menghapus alamat ini?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Dengan menghapus alamat ini, Anda tidak akan lagi dapat menerima notifikasi email harian."
@@ -19062,7 +19101,7 @@
         "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
       ],
       "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Dengan menonaktifkan pemantauan peristiwa keamanan, Anda juga akan menghapus seluruh riwayat Anda. Apakah Anda yakin untuk menonaktifkan ini?"
+        "Dengan menonaktifkan pemantauan peristiwa keamanan, Anda juga akan menghapus seluruh riwayat Anda. Apakah Anda yakin ingin menonaktifkan fitur ini?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"
@@ -19070,11 +19109,23 @@
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Apabila Anda membatalkan impor ini, Anda tidak akan dapat melanjutkannya kembali. ${ BRAND_NAME } menyimpan seluruh proses yang telah berlangsung pada akun Anda. Tetap batalkan?"
       ],
+      "Maximum cannot be lower than minimum": [
+        "Nilai maksimum tidak dapat lebih rendah dari nilai minimum"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Nilai ini harus berada di antara ${ minimumNumber } dan ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Nilai ini harus lebih besar dari atau sama dengan ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Nilai ini harus lebih kecil dari atau sama dengan ${ maximumNumber }"
+      ],
       "Please add at least one recipient.": [
-        "Mohon tambahkan setidaknya satu nama penerima."
+        "Silakan tambahkan setidaknya satu nama penerima."
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah diaktifkan"
+        "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah aktif"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
@@ -19095,7 +19146,7 @@
         "Perangkat atau layanan yang menggunakan token ini tidak akan lagi dapat mengirim email melalui ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
+        "Impor ini dapat melebihi kapasitas penyimpanan yang tersedia pada akun ${ BRAND_NAME } Anda saat ini. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Tindakan ini akan menghapus seluruh pesan, folder, dan label yang dihasilkan pada saat impor."

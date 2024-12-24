@@ -754,7 +754,7 @@
         "Dapatkan berbagai fitur keamanan mutakhir dan log yang terperinci untuk melindungi presensi online Anda."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Dengan Pemantauan ${ PASS_SHORT_APP_NAME }, buat diri Anda tetap berada selangkah di depan ancaman dengan memperoleh pemberitahuan secara instan apabila kredensial Anda dibocorkan. Dapatkan berbagai fitur keamanan lanjutan dan log yang terperinci untuk melindungi presensi online Anda."
+        "Dengan ${ PASS_SHORT_APP_NAME } Monitor, tempatkan diri Anda selangkah di depan ancaman dengan memperoleh peringatan instan apabila kredensial Anda terpapar. Dapatkan berbagai fitur keamanan lanjutan dan log yang terperinci untuk melindungi presensi online Anda."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Alamat email Anda telah dibocorkan pada setidaknya 1 insiden kebocoran data."
@@ -779,7 +779,7 @@
         "Kepemilikan domain harus diverifikasi terlebih dahulu."
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "Alias tidak dapat diperbaharui sekarang. Tolong coba lagi nanti"
+        "Alias tidak dapat diperbarui untuk saat ini. Silakan coba lagi nanti"
       ],
       "Alias options could not be resolved": [
         "Pengaturan alias tidak dapat diperoleh"
@@ -1285,7 +1285,7 @@
         "${ PROTON_SENTINEL_NAME } berhasil diaktifkan"
       ],
       "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } terkirim"
+        "${ repliedEmailsCount } dikirim"
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } kebocoran terdeteksi"
@@ -1327,7 +1327,7 @@
         "Alias berhasil di aktifkan. Kamu sekarang bisa menerima email yang dikirim ke ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
-        "Penyinkronan Alias antara ${ BRAND_NAME } anda dan akun SimpleLogin aktif."
+        "Penyinkronan alias antara akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "Alias di sampah akan terus meneruskan email. Jika anda mau berhenti menerima email di alamat ini, nonaktifkan saja."
@@ -2241,7 +2241,7 @@
         "${ forwardCount } penerusan"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
-        "${ forwardedEmails }, ${ repliedEmails }, dan ${ blockedEmails }, dalam 14 hari terakhir."
+        "${ forwardedEmails }, ${ repliedEmails }, dan ${ blockedEmails } dalam 14 hari terakhir."
       ],
       "${ hours } hour": [
         "${ hours } jam"
@@ -2832,7 +2832,7 @@
         "Pilih bahasa yang diinginkan"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
-        "Pilih brangkas dimana alias SimpleLogin akan di impor"
+        "Pilih brankas di mana alias SimpleLogin akan diimpor"
       ],
       "Select your password manager": [
         "Pilih pengelola kata sandi Anda"
@@ -3259,7 +3259,7 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "Penyinkronan alias sukses diaktifkan. Alias SimpleLogin mungkin memerlukan beberapa saat untuk sinkron"
+        "Penyinkronan alias berhasil diaktifkan. Alias SimpleLogin dapat memerlukan beberapa saat untuk tersinkron"
       ],
       "Catch-all setting successfully disabled": [
         "Pengaturan catch-all berhasil dinonaktifkan"
@@ -3530,7 +3530,7 @@
         "Anggota"
       ],
       "Modified": [
-        "Dimodifikasi"
+        "Diubah"
       ],
       "Move ${ count } item to ${ vaultName }": [
         "Pindahkan ${ count } item ke ${ vaultName }"
@@ -3855,7 +3855,7 @@
         "Mengundang alamat email di luar organisasi tidak diperkenankan"
       ],
       "item was imported without custom fields": [
-        "item telah diimpor tanpa kolom kustom"
+        "item diimpor tanpa kolom khusus"
       ],
       "Maximum length is ${ maxLength } character": [
         "Panjang maksimum adalah ${ maxLength } karakter"
@@ -3906,7 +3906,7 @@
         "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah diaktifkan"
+        "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah aktif"
       ],
       "Please contact us to investigate the issue": [
         "Silakan hubungi kami untuk menyelidiki masalah ini"

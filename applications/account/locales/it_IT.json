@@ -910,6 +910,9 @@
       "Reset keys": [
         "Reimposta chiavi"
       ],
+      "Reset modifications": [
+        "Reimposta le modifiche"
+      ],
       "Reset password": [
         "Reimposta la password"
       ],
@@ -3677,6 +3680,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Puoi continuare a invitare amici, ma non potrai guadagnare più crediti"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Puoi scegliere le regole della password che i membri dell'organizzazione utilizzeranno quando generano una password in ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
       ]
@@ -4696,9 +4702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
       ],
-      "Please enter a valid entity ID URL": [
-        "Inserisci un URL ID entità valido"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
@@ -4726,9 +4729,6 @@
       ],
       "Please upload a square logo": [
         "Carica un logo quadrato"
-      ],
-      "Please upload an xml file": [
-        "Carica un file xml"
       ],
       "Please upload only 1 file": [
         "Carica un solo file"
@@ -7218,9 +7218,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copia e incolla questo URL nel campo ACS (Assertion Consumer Service) URL del tuo fornitore di identità"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copia e incolla questo URL nel campo Entity ID del tuo fornitore di identità"
-      ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
       ],
@@ -7491,9 +7488,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Inserisci l'ID entità di un'organizzazione **eduGAIN** per **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Inserisci la password dell'organizzazione per ripristinare i privilegi di amministratore. ${ learnMore }"
@@ -8157,6 +8151,9 @@
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
+      "Password generator rules successfully saved": [
+        "Regole del generatore di password salvate con successo"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri."
       ],
@@ -8441,6 +8438,9 @@
       ],
       "Set recovery phrase": [
         "Imposta una frase di recupero"
+      ],
+      "Setting successfully saved": [
+        "Impostazioni salvate correttamente"
       ],
       "Setting up your new address...": [
         "Configurazione del tuo nuovo indirizzo..."
@@ -9998,8 +9998,14 @@
       "Allow": [
         "Consenti"
       ],
+      "Allow memorable passwords": [
+        "Consenti password facili da ricordare"
+      ],
       "Allow notifications by email": [
         "Consenti le notifiche via email"
+      ],
+      "Allow random passwords": [
+        "Consenti password casuali"
       ],
       "Allow recovery by email": [
         "Consenti il recupero via email"
@@ -10129,6 +10135,9 @@
       ],
       "Calendars": [
         "Calendari"
+      ],
+      "Capitalize words": [
+        "Maiuscole Iniziali"
       ],
       "Card details": [
         "Dettagli della carta"
@@ -10535,6 +10544,12 @@
       "Mark as": [
         "Segna come"
       ],
+      "Maximum number of characters": [
+        "Numero massimo di caratteri"
+      ],
+      "Maximum number of words": [
+        "Numero massimo di parole"
+      ],
       "Message": [
         "Messaggio"
       ],
@@ -10549,6 +10564,12 @@
       ],
       "Method for importing metadata": [
         "Metodo di importazione dei metadati"
+      ],
+      "Minimum number of characters": [
+        "Numero minimo di caratteri"
+      ],
+      "Minimum number of words": [
+        "Numero minimo di parole"
       ],
       "Moderate NAT": [
         "NAT moderato"
@@ -10606,6 +10627,9 @@
       ],
       "Notifications": [
         "Notifiche"
+      ],
+      "Numbers": [
+        "Numeri"
       ],
       "OpenVPN / IKEv2 password": [
         "Password OpenVPN / IKEv2"
@@ -10794,9 +10818,6 @@
       "Signature": [
         "Firma"
       ],
-      "Single sign-on entity ID": [
-        "Entity ID di accesso singolo"
-      ],
       "Single sign-on URL": [
         "URL di accesso singolo"
       ],
@@ -10814,6 +10835,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Caratteri speciali"
       ],
       "Starred": [
         "Importante"
@@ -10889,6 +10913,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Carica 1 o più file di recupero o chiavi di crittografia"
+      ],
+      "Uppercase": [
+        "Maiuscolo"
       ],
       "URL": [
         "URL"
@@ -13252,6 +13279,9 @@
       "Add to existing group": [
         "Aggiungi al gruppo esistente"
       ],
+      "Allowed (default)": [
+        "Consentito (impostazione predefinita)"
+      ],
       "Android": [
         "Android"
       ],
@@ -13321,6 +13351,9 @@
       "Normal": [
         "Normale"
       ],
+      "Not allowed": [
+        "Non consentito"
+      ],
       "Off": [
         "Inattivo"
       ],
@@ -13347,6 +13380,9 @@
       ],
       "Repeat weekly": [
         "Ripeti ogni settimana"
+      ],
+      "Required": [
+        "Richiesto"
       ],
       "Right to Left": [
         "Da destra a sinistra"
@@ -17938,6 +17974,9 @@
       "Password": [
         "Password"
       ],
+      "Password generator rules": [
+        "Regole per il generatore di password"
+      ],
       "Password reset settings": [
         "Reimpostazione della password"
       ],
@@ -18502,9 +18541,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copia e incolla questo URL nel campo ACS (Assertion Consumer Service) URL del tuo fornitore di identità"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copia e incolla questo URL nel campo Entity ID del tuo fornitore di identità"
       ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"
@@ -19119,6 +19155,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
+      ],
+      "servers": [
+        "server"
       ]
     },
     "vpn_2024: renew": {
@@ -19336,6 +19375,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Se annulli questa importazione, non potrai riprenderla. ${ BRAND_NAME } ha salvato tutti i progressi nel tuo account. Vuoi comunque annullare?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Il massimo non può essere inferiore al minimo"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Deve essere compreso tra ${ minimumNumber } e ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Deve essere superiore o uguale a ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Deve essere inferiore o uguale a ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Inserisci almeno un destinatario."

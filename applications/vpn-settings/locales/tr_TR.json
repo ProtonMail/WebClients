@@ -864,23 +864,6 @@
         "Bu işlem bu sertifikayı kullanan tüm yöneltici ve istemcilerin bağlantısını kesecek."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
-      ],
-      "Keep your schedule private": [
-        "Zaman planınızı gizli tutun"
-      ],
-      "Protect your passwords and identity": [
-        "Parolalarınızı ve kimliğinizi koruyun"
-      ],
-      "Safeguard your files and photos": [
-        "Dosyalarınızı ve fotoğraflarınızı koruyun"
-      ],
-      "Secure your communications": [
-        "İletişiminizin güvenliğini sağlayın"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
@@ -2699,9 +2682,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
       ],
-      "Please enter a valid entity ID URL": [
-        "Lütfen geçerli bir varlık kimliği adresi yazın"
-      ],
       "Please generate keys before you try to change your password": [
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
@@ -2722,9 +2702,6 @@
       ],
       "Please upload a square logo": [
         "Lütfen kare biçiminde bir logo yükleyin"
-      ],
-      "Please upload an xml file": [
-        "Lütfen bir XML dosyası yükleyin"
       ],
       "Please upload only 1 file": [
         "Lütfen yalnızca 1 dosya yükleyin"
@@ -3864,9 +3841,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın varlık kimliği alanına yapıştırın"
-      ],
       "Copy the suggested password to clipboard": [
         "Önerilen parolayı panoya kopyala"
       ],
@@ -4040,9 +4014,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }** için bir **eduGAIN** kuruluşunun varlık kimliğini yazın."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Yönetici yetkilerini geri yüklemek için kuruluş parolasını yazın. ${ learnMore }"
@@ -5838,9 +5809,6 @@
         "${ n } yöneticiyi görüntüle",
         "${ n } yöneticiyi görüntüle"
       ],
-      "Single sign-on entity ID": [
-        "Tek oturum açma varlık kimliği"
-      ],
       "Single sign-on URL": [
         "Tek oturum açma adresi"
       ],
@@ -7602,85 +7570,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Bu tarifede kal"
-      ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
-      ],
-      "Upgrade my plan": [
-        "Tarifemi yükselt"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Hadi konuşalım."
-      ],
-      "Limited time offer": [
-        "Sınırlı süreli teklif"
-      ],
-      "Recommended": [
-        "Önerilen"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } aylık"
-      ],
-      "/month /user": [
-        "/ay /kullanıcı"
-      ],
-      "/month /user, billed annually": [
-        "/ay /kullanıcı, yıllık faturalanır"
-      ],
-      "/month /user, billed biennially": [
-        "/ay /kullanıcı, iki yılda bir faturalanır"
-      ],
-      "Creating your account": [
-        "Hesabınız oluşturuluyor"
-      ],
-      "Current plan": [
-        "Geçerli tarife"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "**${ username }** için görüntülenecek adı yazın. Bu ad, izinlerini değiştirdiğinizde ya da onlarla veri paylaştığınızda kullanıcılarınıza görüntülenir."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } parola yöneticisine erişebilirsiniz!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Ayda yalnızca **${ relativePrice }** daha ödeyerek tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
-      ],
-      "Free forever": [
-        "Sonsuza kadar ücretsiz"
-      ],
-      "Get in touch with our sales team": [
-        "Satış ekibimizle görüşün"
-      ],
-      "Includes:": [
-        "İçindekiler:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulaması başlatılıyor"
-      ],
-      "per month": [
-        "aylık"
-      ],
-      "per month, billed annually": [
-        "aylık, yılda bir faturalanır"
-      ],
-      "per month, billed every month": [
-        "aylık, ayda bir faturalanır"
-      ],
-      "per month, billed every two years": [
-        "aylık, iki yılda bir faturalanır"
-      ],
-      "Preparing your Recovery Kit": [
-        "Kurtarma paketiniz hazırlanıyor"
-      ],
       "Secure vault and link sharing": [
         "Güvenli kasa ve bağlantı ile paylaşım"
       ],
@@ -7694,23 +7588,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
-      ],
-      "Setting up your organization": [
-        "Kuruluşunuz ayarlanıyor"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasında oturum açılıyor"
-      ],
-      "Updating your account": [
-        "Hesabınız güncelleniyor"
-      ],
-      "Verifying your payment": [
-        "Ödemeniz doğrulanıyor"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Tüm ${ BRAND_NAME } Plus hizmetleri.${ br }Tek bir kolay abonelik."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10794,9 +10671,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın varlık kimliği alanına yapıştırın"
-      ],
       "Device information such as operating system": [
         "İşletim sistemi gibi aygıt bilgileri"
       ],
@@ -11186,6 +11060,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "servers": [
+        "sunucular"
       ]
     },
     "vpn_2024: renew": {

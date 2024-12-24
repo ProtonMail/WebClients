@@ -106,6 +106,9 @@
       "Add email address": [
         "添加邮箱地址"
       ],
+      "Add external address": [
+        "添加外部地址"
+      ],
       "Add filter": [
         "创建筛选规则"
       ],
@@ -114,6 +117,9 @@
       ],
       "Add label": [
         "创建标签"
+      ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "添加更多 ${ BRAND_NAME } Scribe 席位"
       ],
       "Add notification": [
         "添加通知"
@@ -147,6 +153,12 @@
       ],
       "Allow": [
         "白名单"
+      ],
+      "Allow end-to-end encrypted mail for this group": [
+        "允许此群组使用端到端加密邮件"
+      ],
+      "Always allow sending": [
+        "始终允许发送"
       ],
       "Apply": [
         "应用"
@@ -184,11 +196,17 @@
       "Change": [
         "更改"
       ],
+      "Change configuration": [
+        "更改配置"
+      ],
       "Change keys": [
         "更改密码"
       ],
       "Change password": [
         "更改密码"
+      ],
+      "Change second password": [
+        "修改第二个密码"
       ],
       "Chat with us": [
         "与我们实时对话"
@@ -237,6 +255,9 @@
       ],
       "Connected": [
         "已连接"
+      ],
+      "Contact sales": [
+        "联系销售"
       ],
       "Contact support": [
         "联系客服"
@@ -340,8 +361,17 @@
       "Delete Gateway": [
         "删除网关"
       ],
+      "Delete group": [
+        "删除组"
+      ],
       "Delete link": [
         "删除链接"
+      ],
+      "Delete logo": [
+        "删除徽标"
+      ],
+      "Delete member": [
+        "删除成员"
       ],
       "Delete permanently": [
         "永久删除"
@@ -357,6 +387,9 @@
       ],
       "Delete your account": [
         "删除您的账户"
+      ],
+      "Deny access": [
+        "拒绝访问"
       ],
       "Details": [
         "详细信息"
@@ -439,6 +472,9 @@
       "Edit name": [
         "编辑名称"
       ],
+      "Edit organization name": [
+        "编辑组织名称"
+      ],
       "Edit password": [
         "编辑密码"
       ],
@@ -502,6 +538,9 @@
       "Forgot password?": [
         "忘记密码?"
       ],
+      "Forgot recovery method?": [
+        "忘记恢复方法？"
+      ],
       "Generate": [
         "生成"
       ],
@@ -525,6 +564,9 @@
       ],
       "Get in touch": [
         "保持联系"
+      ],
+      "Get limited-time offer": [
+        "获取限时优惠"
       ],
       "Get more": [
         "获取更多"
@@ -622,6 +664,9 @@
       "Keep": [
         "保留"
       ],
+      "Keep logo": [
+        "保留徽标"
+      ],
       "label emails as": [
         "给邮件加标签"
       ],
@@ -631,6 +676,9 @@
       "Leave": [
         "离开"
       ],
+      "Leave group": [
+        "离开群组"
+      ],
       "Let's talk": [
         "让我们聊聊"
       ],
@@ -639,6 +687,9 @@
       ],
       "Loading verification": [
         "正在载入验证"
+      ],
+      "Lost access to your 2FA device?": [
+        "无法访问您的 2FA 设备？"
       ],
       "Make admin": [
         "设为管理员"
@@ -654,6 +705,9 @@
       ],
       "Mark as default": [
         "标记为默认"
+      ],
+      "Mark as open": [
+        "标记为打开"
       ],
       "Mark as resolved": [
         "标记为已解决"
@@ -781,6 +835,12 @@
       "Remove": [
         "移除"
       ],
+      "Remove all members": [
+        "删除所有成员"
+      ],
+      "Remove all other devices": [
+        "移除所有其他设备"
+      ],
       "Remove bonuses": [
         "放弃特权"
       ],
@@ -835,6 +895,9 @@
       "Reset keys": [
         "重置密钥"
       ],
+      "Reset modifications": [
+        "重置修改"
+      ],
       "Reset password": [
         "重置密码"
       ],
@@ -846,6 +909,9 @@
       ],
       "Resume": [
         "继续"
+      ],
+      "Resume membership": [
+        "恢复会员资格"
       ],
       "Retry": [
         "重试"
@@ -864,6 +930,9 @@
       ],
       "Revoke all other sessions": [
         "其余设备全部下线"
+      ],
+      "Revoke invitation": [
+        "撤回邀请"
       ],
       "Revoke this invitation": [
         "撤销此邀请"
@@ -945,6 +1014,9 @@
       ],
       "Send my username": [
         "发送我的用户名"
+      ],
+      "Send new invite": [
+        "发送新邀请"
       ],
       "Send reminder": [
         "发送提醒"
@@ -1030,6 +1102,9 @@
       "Start import": [
         "开始导入"
       ],
+      "Start live chat": [
+        "开始实时聊天"
+      ],
       "Stay": [
         "留在此页"
       ],
@@ -1050,6 +1125,12 @@
       ],
       "Switch or add account": [
         "切换或添加账户"
+      ],
+      "Test": [
+        "测试"
+      ],
+      "Test SAML configuration": [
+        "测试 SAML 配置"
       ],
       "Top up": [
         "充值"
@@ -1114,6 +1195,9 @@
       "Upload": [
         "已上传"
       ],
+      "Upload logo": [
+        "上传徽标"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -1128,6 +1212,9 @@
       ],
       "Use authentication code": [
         "使用验证码"
+      ],
+      "Use group sending permissions": [
+        "使用群组发送权限"
       ],
       "Use recovery code": [
         "使用恢复码"
@@ -1156,6 +1243,9 @@
       "Verify domain": [
         "认证域名"
       ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "验证域 ${ unverifiedSSODomain.DomainName }"
+      ],
       "View": [
         "查看"
       ],
@@ -1167,6 +1257,9 @@
       ],
       "View plans details": [
         "查看等级详情"
+      ],
+      "View recovery settings": [
+        "查看恢复设置"
       ],
       "Void": [
         "确定废除"
@@ -4069,9 +4162,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "请升级为支持多用户的商务账户后再执行用户管理操作。"
       ],
-      "Please upload an xml file": [
-        "请上传 xml 文件"
-      ],
       "Please upload only 1 file": [
         "请只上传 1 个文件"
       ],
@@ -5804,6 +5894,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "恢复文件可让您在帐户恢复后解锁并查看数据"
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "若不慎忘记密码，恢复密语可用于找回账户并解锁加密邮件"
       ],
@@ -5977,6 +6070,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "确定要移除域名 ${ boldDomain } 吗？"
+      ],
+      "Ask your organization admin to setup Gateways.": [
+        "要求您的组织管理员设置网关。"
       ],
       "Attention required": [
         "需要关注"
@@ -6188,6 +6284,12 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "删除 ${ deletedServerCount } 台网关服务器"
       ],
+      "Disable recovery by email address": [
+        "禁用通过电子邮件地址恢复"
+      ],
+      "Disable recovery by phone number": [
+        "禁用通过电话号码恢复"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
       ],
@@ -6341,6 +6443,9 @@
       "Enter your recovery phrase to change your password now.": [
         "输入找回密码需要的助记词。"
       ],
+      "Event invitations and responses will be sent in this language.": [
+        "活动邀请和回复将以此语言发送。"
+      ],
       "Example: ${ spfExample }": [
         "示例：${ spfExample }"
       ],
@@ -6364,6 +6469,9 @@
       ],
       "finance": [
         "金融"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "如需了解 10 年版本历史记录，请联系我们的销售团队。"
       ],
       "for choosing ${ product }": [
         "感谢您选择 ${ product }"
@@ -6445,6 +6553,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "如果您从未使用过双重验证技术，我们强烈建议您${ guideButton }。"
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "如果您忘记了密码并需要恢复您的帐户，${ boldImperative } 您有一个 ${ boldAccountRecovery }。"
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "如果您忘记了密码并且需要恢复您的账户，${ boldImperative } 请确保您拥有 ${ boldAccountAndRecovery }，否则您可能无法访问您的任何电子邮件、联系人或文件。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "如果您丢失了启用双重认证的设备，可以使用这些代码代替 6 位双重认证代码来登录您的账户。每个代码只能使用一次。"
@@ -6548,6 +6662,9 @@
       "Invite for new user deleted": [
         "对新用户的邀请已删除"
       ],
+      "Invite for organization created": [
+        "已创建组织邀请"
+      ],
       "Invite rejected": [
         "邀请被拒绝"
       ],
@@ -6556,6 +6673,9 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的部分数据被加密并锁定。"
+      ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "更改服务器的国家/地区需要 10 天时间，因此请确保您的选择正确。"
       ],
       "Item autofilled in vault": [
         "密码库中有条目被自动补全"
@@ -6902,6 +7022,9 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "请妥善保存，将来如需重置密码，只有通过它才能恢复账户并解密数据。"
       ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "请注意，如果您删除过滤器 ${ nameDeleted }，我们将停止处理它触发的所有自动操作。"
+      ],
       "Please open the document to view it.": [
         "请打开文档查看。"
       ],
@@ -7069,6 +7192,9 @@
       ],
       "Select a service provider to start": [
         "请选择一个服务提供商并开始导入"
+      ],
+      "Select recently used servers": [
+        "选择最近使用的服务器"
       ],
       "Select what you want to import.": [
         "选择需要导入的内容。"
@@ -7391,6 +7517,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "设置账户恢复方式可进一步保障您对账户的控制权"
       ],
+      "To ensure highest possible security of your account": [
+        "为了确保您的帐户尽可能安全"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "为了确保您不会丢失重要数据，${ DRIVE_APP_NAME } 会在您和您的协作者进行更改时保存文件的旧版本。选择 ${ BRAND_NAME } 应保留先前版本的时间。"
       ],
@@ -7532,6 +7661,9 @@
       "Vault deleted": [
         "密码库已被删除"
       ],
+      "Vault either deleted or requires access permissions": [
+        "保险库已删除或需要访问权限"
+      ],
       "Vault updated": [
         "保管库已更新"
       ],
@@ -7552,6 +7684,9 @@
       ],
       "Verify email address": [
         "验证邮箱地址"
+      ],
+      "Verify phone number": [
+        "验证电话号码"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "通过应用程序根据时间生成的一次性验证码确认身份"
@@ -7672,6 +7807,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "点击链接后向您确认要打开的网址，谨防欺诈网站。"
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
@@ -7859,8 +7997,14 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
       ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "10 天内您将无法将这些服务器重新分配到其他国家/地区。"
+      ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "重置密码时您将无法再通过此前下载的恢复文件解锁账户数据。"
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "您将无法使用下载的恢复文件恢复锁定的数据。这也会禁用基于设备的恢复。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。"
@@ -7948,6 +8092,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "您将能够立即将这些服务器添加到另一个网关。"
       ],
       "Zoom meeting": [
         "Zoom 会议"
@@ -9152,9 +9299,6 @@
       ],
       "Signature": [
         "落款"
-      ],
-      "Single sign-on entity ID": [
-        "单点登录实体标号"
       ],
       "Single sign-on URL": [
         "单点登录网址"

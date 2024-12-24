@@ -910,6 +910,9 @@
       "Reset keys": [
         "鍵をリセット"
       ],
+      "Reset modifications": [
+        "変更をリセット"
+      ],
       "Reset password": [
         "パスワードをリセット"
       ],
@@ -3662,6 +3665,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "友達を招待し続けることはできますが、さらにクレジットを獲得することはできません。"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "組織のメンバーが${ PASS_APP_NAME }でパスワードを生成する際に使用するパスワードルールを強制することができます。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
       ]
@@ -4678,9 +4684,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
       ],
-      "Please enter a valid entity ID URL": [
-        "有効なエンティティID URLを入力してください"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
@@ -4707,9 +4710,6 @@
       ],
       "Please upload a square logo": [
         "正方形のロゴをアップロードしてください。"
-      ],
-      "Please upload an xml file": [
-        "XMLファイルをアップロードしてください"
       ],
       "Please upload only 1 file": [
         "ファイルを 1 つだけアップロードしてください"
@@ -7150,9 +7150,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "この URL をコピーして、アイデンティティ プロバイダーの ACS (Assertion Consumer Service) URL フィールドに貼り付けます。"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "この URL をコピーして、アイデンティティ プロバイダーのエンティティ ID フィールドに貼り付けます。"
-      ],
       "Copy the link to clipboard": [
         "リンクをクリップボードにコピー"
       ],
@@ -7419,9 +7416,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "**${ domain.DomainName }**に、**eduGAIN**のエンティティIDを入力してください。"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "組織のパスワードを入力して管理者権限を取り戻します。${ learnMore }"
@@ -8077,6 +8071,9 @@
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
       ],
+      "Password generator rules successfully saved": [
+        "パスワード生成ルールを保存しました"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "パスワードは${ MIN_PASSWORD_LENGTH }文字かそれ以上である必要があります。"
       ],
@@ -8358,6 +8355,9 @@
       ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
+      ],
+      "Setting successfully saved": [
+        "設定を保存しました"
       ],
       "Setting up your new address...": [
         "新しいアドレスを設定中…"
@@ -9895,8 +9895,14 @@
       "Allow": [
         "許可"
       ],
+      "Allow memorable passwords": [
+        "覚えやすいパスワードを許可"
+      ],
       "Allow notifications by email": [
         "メールによる通知を許可"
+      ],
+      "Allow random passwords": [
+        "ランダムなパスワードも許可する"
       ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
@@ -9979,6 +9985,9 @@
       "Auto-unsubscribe": [
         "自動登録解除"
       ],
+      "Automatically save contacts": [
+        "連絡先を自動的に保存"
+      ],
       "Awarded": [
         "進呈"
       ],
@@ -10023,6 +10032,9 @@
       ],
       "Calendars": [
         "カレンダー"
+      ],
+      "Capitalize words": [
+        "単語を大文字化"
       ],
       "Card details": [
         "カード詳細"
@@ -10429,6 +10441,12 @@
       "Mark as": [
         "としてマークする"
       ],
+      "Maximum number of characters": [
+        "最大文字数"
+      ],
+      "Maximum number of words": [
+        "最大単語数"
+      ],
       "Message": [
         "メッセージ"
       ],
@@ -10443,6 +10461,12 @@
       ],
       "Method for importing metadata": [
         "メタデータのインポート方法"
+      ],
+      "Minimum number of characters": [
+        "最小文字数"
+      ],
+      "Minimum number of words": [
+        "最小単語数"
       ],
       "Moderate NAT": [
         "モデレート NAT"
@@ -10500,6 +10524,9 @@
       ],
       "Notifications": [
         "通知"
+      ],
+      "Numbers": [
+        "数字"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 パスワード"
@@ -10687,9 +10714,6 @@
       "Signature": [
         "署名"
       ],
-      "Single sign-on entity ID": [
-        "シングル サインオン エンティティ ID"
-      ],
       "Single sign-on URL": [
         "シングルサインオン URL"
       ],
@@ -10707,6 +10731,9 @@
       ],
       "Spam": [
         "迷惑メール"
+      ],
+      "Special characters": [
+        "記号"
       ],
       "Starred": [
         "スター付き"
@@ -10782,6 +10809,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "1 つ以上の回復用ファイルまたは暗号鍵をアップロード"
+      ],
+      "Uppercase": [
+        "大文字"
       ],
       "URL": [
         "URL"
@@ -13096,6 +13126,9 @@
       "Add to existing group": [
         "既存のグループに追加"
       ],
+      "Allowed (default)": [
+        "許可 (既定)"
+      ],
       "Archive": [
         "アーカイブ"
       ],
@@ -13153,6 +13186,9 @@
       "Normal": [
         "標準"
       ],
+      "Not allowed": [
+        "許可しない"
+      ],
       "Off": [
         "オフ"
       ],
@@ -13179,6 +13215,9 @@
       ],
       "Repeat weekly": [
         "毎週繰り返し"
+      ],
+      "Required": [
+        "必須"
       ],
       "Right to Left": [
         "右から左に"
@@ -17694,6 +17733,9 @@
       "Password": [
         "パスワード"
       ],
+      "Password generator rules": [
+        "パスワード生成ルール"
+      ],
       "Password reset settings": [
         "パスワードリセットの設定"
       ],
@@ -18257,9 +18299,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "この URL をコピーして、ACS(Assertion Consumer Service)の URL フィールドに貼り付けてください。"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "このURLをコピーして、ユーザー情報プロバイダーのエンティティIDフィールドに貼り付けてください"
       ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
@@ -18866,6 +18905,9 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ],
+      "servers": [
+        "サーバー"
       ]
     },
     "vpn_2024: renew": {
@@ -19066,6 +19108,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "このインポートをキャンセルすると、後で再開することはできません。${ BRAND_NAME } は進行状況をすべてアカウントに保存しました。それでもキャンセルしますか？"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "最大値は最小値より大きくしてください"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "${ minimumNumber } 以上、 ${ maximumNumber } 以下にしてください"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "${ minimumNumber } 以上にしてください"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "${ maximumNumber } 以下にしてください"
       ],
       "Please add at least one recipient.": [
         "少なくとも 1 件の宛先を追加してください。"

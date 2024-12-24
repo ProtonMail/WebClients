@@ -872,23 +872,6 @@
         "Гэта адключыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Праглядайце вэб-старонкі прыватна і блакіруйце рэкламу"
-      ],
-      "Keep your schedule private": [
-        "Трымайце свой расклад у сакрэце"
-      ],
-      "Protect your passwords and identity": [
-        "Абараняйце свае паролі і ідэнтычнасць"
-      ],
-      "Safeguard your files and photos": [
-        "Абараняйце свае файлы і фатаграфіі"
-      ],
-      "Secure your communications": [
-        "Абараняйце свае зносіны"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
@@ -2714,9 +2697,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Уключыце падтрымку шматкарыстальніцкага рэжыму перад тым, як дадаць карыстальнікаў да вашай арганізацыі."
       ],
-      "Please enter a valid entity ID URL": [
-        "Увядзіце сапраўдны Entity ID"
-      ],
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
       ],
@@ -2737,9 +2717,6 @@
       ],
       "Please upload a square logo": [
         "Запампуйце квадратны лагатып"
-      ],
-      "Please upload an xml file": [
-        "Запампуйце файл xml"
       ],
       "Please upload only 1 file": [
         "Запампуйце толькі 1 файл"
@@ -3924,7 +3901,7 @@
         "Працягнуць падключэнне да **${ organizationValue.Name }** з вашай арганізацыяй ${ BRAND_NAME }."
       ],
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
-        "Працягнуць падключэнне гэтага аб'екта з вашай арганізацыяй ${ BRAND_NAME }."
+        "Працягніце падключэнне гэтага аб'екта з вашай арганізацыяй ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
         "Працягнуць з ${ freeName }"
@@ -3934,9 +3911,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скапіюйце і ўстаўце гэты URL-адрас у поле URL-адраса ACS (Assertion Consumer Service) вашага пастаўшчыка пасведчанняў."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў."
       ],
       "Copy the suggested password to clipboard": [
         "Скапіяваць прапанаваны пароль у буфер абмену"
@@ -4117,9 +4091,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Увядзіце код, які быў адпраўлены на ${ email }. Калі вы не знайшлі паведамленне з кодам у папцы ўваходныя, праверце папку са спамам."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Увядзіце Entity ID арганізацыі **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Увядзіце пароль арганізацыі для аднаўлення правоў адміністратара. ${ learnMore }"
@@ -5957,9 +5928,6 @@
         "Паказаць ${ n } адміністратараў",
         "Паказаць ${ n } адміністратараў"
       ],
-      "Single sign-on entity ID": [
-        "Адзіны ўваход Entity ID"
-      ],
       "Single sign-on URL": [
         "Адзіны ўваход URL-адраса"
       ],
@@ -7783,85 +7751,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Пакінуць гэты тарыфны план"
-      ],
       "Start using ${ appName }": [
         "Пачаць выкарыстоўваць ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Палепшыць мой тарыфны план"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Звяжыцеся з намі"
-      ],
-      "Limited time offer": [
-        "Абмежаваная прапанова"
-      ],
-      "Recommended": [
-        "Рэкамендавана"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } у месяц"
-      ],
-      "/month /user": [
-        "/месяц /карыстальнік"
-      ],
-      "/month /user, billed annually": [
-        "/месяц /карыстальнік, аплата адзін раз у год"
-      ],
-      "/month /user, billed biennially": [
-        "/месяц /карыстальнік, аплата адзін раз у два гады"
-      ],
-      "Creating your account": [
-        "Стварэнне вашага ўліковага запісу"
-      ],
-      "Current plan": [
-        "Бягучы тарыфны план"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Увядзіце бачнае імя для **${ username }**. Гэту назву будуць бачыць вашы карыстальнікі, калі вы зменіце іх дазволы або абагуліце даныя з імі."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Усяго за **${ relativePrice } дадатковай платы ў месяц** вы атрымаеце доступ да прэміяльнага менеджара пароляў ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Усяго за **${ relativePrice } дадатковай платы ў месяц** вы атрымаеце доступ да прэміяльнага сэрвісу VPN ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Бясплатна назаўсёды"
-      ],
-      "Get in touch with our sales team": [
-        "Сувязь з нашай камандай па продажам"
-      ],
-      "Includes:": [
-        "Уключае:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Запуск ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "у месяц"
-      ],
-      "per month, billed annually": [
-        "у месяц (аплачваецца адзін раз у год)"
-      ],
-      "per month, billed every month": [
-        "у месяц (аплачваецца адзін раз у месяц)"
-      ],
-      "per month, billed every two years": [
-        "у месяц (аплачваецца кожныя два гады)"
-      ],
-      "Preparing your Recovery Kit": [
-        "Падрыхтоўка камплекту аднаўлення"
-      ],
       "Secure vault and link sharing": [
         "Бяспечнае сховішча і абагульванне спасылкі"
       ],
@@ -7879,23 +7773,6 @@
         "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
-      ],
-      "Setting up your organization": [
-        "Наладжванне вашай арганізацыі"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Уваход у ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Абнаўленне вашага ўліковага запісу"
-      ],
-      "Verifying your payment": [
-        "Праверка вашага плацяжу"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
       ]
     },
     "pass_signup_2024: Info": {
@@ -11089,9 +10966,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса ваша пастаўшчыка пасведчанняў."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"
-      ],
       "Device information such as operating system": [
         "Звесткі пра прыладу, такія як аперацыйная сістэма"
       ],
@@ -11495,6 +11369,9 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ],
+      "servers": [
+        "сервераў"
       ]
     },
     "vpn_2024: renew": {

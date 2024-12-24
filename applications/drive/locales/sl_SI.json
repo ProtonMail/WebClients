@@ -300,9 +300,6 @@
       "Download (${ count })": [
         "Prenesi (${ count })"
       ],
-      "Download all": [
-        "Prenesi vse"
-      ],
       "Download anyway": [
         "Vseeno prenesi"
       ],
@@ -698,15 +695,6 @@
       ],
       "Save changes": [
         "Shrani spremembe"
-      ],
-      "Scan & Download": [
-        "Optično preberi in prenesi"
-      ],
-      "Scan & Download (${ count })": [
-        "Optično preberi in prenesi (${ count })"
-      ],
-      "Scan & Download all": [
-        "Optično preberi in prenesi vse"
       ],
       "Search": [
         "Iskanje"
@@ -5095,8 +5083,17 @@
       "There is nothing to see here": [
         "Tukaj ni ničesar za videti"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "To dejanje bo trajno izbrisalo datoteko, ki ste jo naložili."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "To dejanje bo trajno izbrisalo mapo, ki ste jo naložili. Ne morete izbrisati mape, ki vsebuje datoteko, ki ni v vaši lasti."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "To dejanje bo odstranilo povezavo in preklicalo dostop za vse uporabnike."
+      ],
+      "This action will delete the selected items permanently.": [
+        "To dejanje bo trajno izbrisalo izbrane elemente."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
@@ -7472,6 +7469,9 @@
       "\"${ name }\" created successfully": [
         "»${ name }« je bil uspešno ustvarjen"
       ],
+      "\"${ name }\" deleted": [
+        "'${ name }' izbrisano"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name } je trajno izbrisan iz smetnjaka"
       ],
@@ -7517,11 +7517,23 @@
         "${ count } predmetov ni bilo mogoče dešifrirati",
         "${ count } predmetov ni bilo mogoče dešifrirati"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } predmet izbrisan",
+        "${ numberOfItems } predmeta izbrisana",
+        "${ numberOfItems } predmetov izbrisanih",
+        "${ numberOfItems } predmetov izbrisanih"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } predmet je trajno izbrisan iz smetnjaka",
         "${ numberOfItems } predmeta sta trajno izbrisana iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } elementa ni bilo mogoče izbrisati",
+        "${ numberOfItems } elementov ni bilo mogoče izbrisati",
+        "${ numberOfItems } elementov ni bilo mogoče izbrisati",
+        "${ numberOfItems } elementov ni bilo mogoče izbrisati"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } predmeta ni bilo mogoče trajno izbrisati iz smetnjaka",
@@ -9488,6 +9500,12 @@
         "Izbriši ${ count } skupini stikov",
         "Izbriši ${ count } skupine stikov",
         "Izbriši ${ count } skupin stikov"
+      ],
+      "Delete ${ item.name }?": [
+        "Izbrišem ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Izbrišem ${ links.length } predmete?"
       ],
       "Delete ${ value }": [
         "Izbriši ${ value }"

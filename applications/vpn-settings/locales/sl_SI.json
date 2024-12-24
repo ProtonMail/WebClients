@@ -845,23 +845,6 @@
         "To bo prekinilo vse usmerjevalnike in odjemalce, ki uporabljajo to potrdilo."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Zasebno brskajte po spletu in blokirajte oglase"
-      ],
-      "Keep your schedule private": [
-        "Naj bo vaš urnik zaseben"
-      ],
-      "Protect your passwords and identity": [
-        "Zaščitite svoja gesla in identiteto"
-      ],
-      "Safeguard your files and photos": [
-        "Zaščitite svoje datoteke in fotografije"
-      ],
-      "Secure your communications": [
-        "Zavarujte svoje komunikacije"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
@@ -2600,9 +2583,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da boste lahko upravljali več uporabnikov."
       ],
-      "Please upload an xml file": [
-        "Naložite datoteko xml"
-      ],
       "Please upload only 1 file": [
         "Naložite samo 1 datoteko"
       ],
@@ -3684,9 +3664,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopirajte in prilepite ta URL v polje URL ACS (Assertion Consumer Service) vašega ponudnika identitete"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopirajte in prilepite ta URL v polje ID entitete vašega ponudnika identitete"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiraj predlagano geslo v odložišče."
@@ -5405,9 +5382,6 @@
         "Prikaži ${ n } skrbnike",
         "Prikaži ${ n } skrbnikov"
       ],
-      "Single sign-on entity ID": [
-        "ID entitete za enotno prijavo"
-      ],
       "Single sign-on URL": [
         "URL za enotno prijavo"
       ],
@@ -6996,104 +6970,13 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Obdržite ta paket"
-      ],
       "Start using ${ appName }": [
         "Začnite uporabljati ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Nadgradite trenutni paket"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Pogovorimo se!"
-      ],
-      "Limited time offer": [
-        "Časovno omejena ponudba"
-      ],
-      "Recommended": [
-        "Priporočeno"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } na mesec"
-      ],
-      "/month /user": [
-        "na mesec na uporabnika"
-      ],
-      "/month /user, billed annually": [
-        "na mesec na uporabnika, zaračunano letno"
-      ],
-      "/month /user, billed biennially": [
-        "na mesec na uporabnika, zaračunano na dve leti"
-      ],
-      "Creating your account": [
-        "Ustvarjanje vašega računa"
-      ],
-      "Current plan": [
-        "Trenutni paket"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Vnesite prikazno ime za **${ username }**. To bodo videli vaši uporabniki, ko spremenite njihova dovoljenja ali delite podatke z njimi."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za samo **${ relativePrice } na mesec** več dobite dostop do vrhunskega upravitelja gesel ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za samo **${ relativePrice } na mesec** več dobite dostop do vrhunskega VPN ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Za le **${ relativePrice } na mesec** več dobite dostop do vseh premijskih storitev ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Brezplačno za vedno."
-      ],
-      "Get in touch with our sales team": [
-        "Stopite v stik z našo prodajno ekipo"
-      ],
-      "Includes:": [
-        "Vključuje:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Zaganjanje ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "na mesec"
-      ],
-      "per month, billed annually": [
-        "na mesec, zaračunano letno"
-      ],
-      "per month, billed every month": [
-        "na mesec, zaračunano vsak mesec"
-      ],
-      "per month, billed every two years": [
-        "na mesec, zaračunano vsaki dve leti"
-      ],
-      "Preparing your Recovery Kit": [
-        "Pripravljam vaš komplet za obnovitev"
-      ],
       "Secure vault sharing": [
         "Varna in zanesljiva skupna raba"
-      ],
-      "Setting up your organization": [
-        "Nastavljam vašo organizacijo"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Prijava na ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Posodabljanje vašega računa"
-      ],
-      "Verifying your payment": [
-        "Preverjanje vašega plačila"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Vse ${ BRAND_NAME } Plus storitve.${ br }Ena enostavna naročnina."
       ]
     },
     "pass_signup_2024: Info": {
@@ -9684,9 +9567,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopirajte in prilepite ta URL v polje URL ACS (Assertion Consumer Service) vašega ponudnika identitete"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopirajte in prilepite ta URL v polje ID entitete vašega ponudnika identitete"
       ],
       "Device information such as operating system": [
         "Informacije o napravi, kot je operacijski sistem"
