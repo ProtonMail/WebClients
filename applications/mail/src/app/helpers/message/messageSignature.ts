@@ -178,7 +178,11 @@ export const changeSignature = (
                 .trimEnd()
         );
     }
-    const document = message.messageDocument?.document as Element;
+    const document = message.messageDocument?.document as Element | undefined;
+
+    if (!document) {
+        return '';
+    }
 
     const userSignature = [...document.querySelectorAll(`.${CLASSNAME_SIGNATURE_USER}`)].find(
         (element) => element.closest(`.${CLASSNAME_BLOCKQUOTE}`) === null

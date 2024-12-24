@@ -4,8 +4,7 @@ import { DropdownMenu, DropdownMenuButton, SimpleDropdown, useConfig, useForceRe
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
@@ -17,9 +16,8 @@ const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 const LanguageSelect = ({ className, locales = {} }: Props) => {
     const forceRefresh = useForceRefresh();
     const { LOCALES = {} } = useConfig();
-    const handleChange = async (newLocale: string) => {
-        const localeCode = getClosestLocaleCode(newLocale, locales);
-        await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
+    const handleChange = async (locale: string) => {
+        const { localeCode } = await loadLocales({ locale, locales, userSettings: undefined });
         setCookie({
             cookieName: 'Locale',
             cookieValue: localeCode,

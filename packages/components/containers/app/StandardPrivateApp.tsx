@@ -1,15 +1,16 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useCallback, useRef } from 'react';
 
-import EventNotices from '@proton/components/containers/eventManager/EventNotices';
-import NotificationsChildren from '@proton/components/containers/notifications/Children';
-import useConfig from '@proton/components/hooks/useConfig';
-import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
-
+import useConfig from '../../hooks/useConfig';
+import useIsInboxElectronApp from '../../hooks/useIsInboxElectronApp';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
+import LocaleInjector from '../app/LocaleInjector';
+import EventNotices from '../eventManager/EventNotices';
 import ForceRefreshProvider from '../forceRefresh/Provider';
+import type { RefreshFn } from '../forceRefresh/context';
 import KeyTransparencyManager from '../keyTransparency/KeyTransparencyManager';
 import DensityInjector from '../layouts/DensityInjector';
 import ModalsChildren from '../modals/Children';
+import NotificationsChildren from '../notifications/Children';
 import PaymentSwitcher from '../payments/PaymentSwitcher';
 import { ThemeInjector } from '../themes/ThemeInjector';
 import ElectronBlockedContainer from './ElectronBlockedContainer';
@@ -33,6 +34,10 @@ const StandardPrivateApp = ({
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { isElectronDisabled } = useIsInboxElectronApp();
+    const refreshRef = useRef<RefreshFn>(() => {});
+    const refresh = useCallback(() => {
+        return refreshRef.current();
+    }, []);
 
     if (isElectronDisabled) {
         return <ElectronBlockedContainer />;
@@ -46,6 +51,7 @@ const StandardPrivateApp = ({
                     <ThemeInjector />
                     <DensityInjector />
                     <NotificationsChildren />
+                    <LocaleInjector onRerender={refresh} />
                     {!noModals && <ModalsChildren />}
                     <KeyBackgroundManager
                         hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
@@ -53,7 +59,7 @@ const StandardPrivateApp = ({
                         hasMemberKeyMigration={hasMemberKeyMigration}
                     />
                     <StorageListener />
-                    <ForceRefreshProvider>{children}</ForceRefreshProvider>
+                    <ForceRefreshProvider ref={refreshRef}>{children}</ForceRefreshProvider>
                 </SessionRecoveryLocalStorageManager>
             </KeyTransparencyManager>
         </PaymentSwitcher>
