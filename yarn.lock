@@ -7811,6 +7811,10 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.5.0"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    ts-jest: "npm:^29.2.5"
+    typescript: "npm:^5.7.2"
   languageName: unknown
   linkType: soft
 
