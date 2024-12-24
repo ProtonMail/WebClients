@@ -652,7 +652,7 @@ const Step1 = ({
                 left: <Icon size={6} className={iconColorClassName} name="servers" />,
                 text: model.loadingDependencies ? (
                     <>
-                        <SkeletonLoader width="3em" /> {c('VPN Plan Feature').t`servers`}
+                        <SkeletonLoader width="5em" />
                     </>
                 ) : (
                     getVpnServers(vpnServersCountData.paid.servers)
