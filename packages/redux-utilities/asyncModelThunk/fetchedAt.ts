@@ -14,10 +14,11 @@ export const getFetchedAt = () => {
     return Date.now() + getMinuteJitter();
 };
 
-export const isNotStale = (fetchedAt: number | undefined, expiry: number) => {
-    return Date.now() - (fetchedAt || 0) < expiry;
+export const isExpired = (fetchedAt: number | undefined, expiry: number) => {
+    return Date.now() - (fetchedAt || 0) >= expiry;
 };
 
+// Can be any value. It relies on the ephemeral meta field never being stored
 export const getFetchedEphemeral = () => {
     return true;
 };
