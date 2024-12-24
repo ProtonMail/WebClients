@@ -1,4 +1,4 @@
-import { defaultExpiry, getFetchedEphemeral as defaultGetFetchedEphemeral, isNotStale } from './fetchedAt';
+import { defaultExpiry, getFetchedEphemeral as defaultGetFetchedEphemeral, isExpired } from './fetchedAt';
 import { CacheType, type ReducerValue } from './interface';
 
 const context: { cache?: CacheType; fetchedEphemeral: ReturnType<typeof defaultGetFetchedEphemeral> } = {
@@ -48,7 +48,7 @@ export const cacheHelper = <Returned>({
     }
     if (cache === CacheType.Stale || cache === CacheType.StaleRefetch) {
         const state = select();
-        if (state && state.value !== undefined && isNotStale(state.meta.fetchedAt, expiry)) {
+        if (state?.value !== undefined && !isExpired(state.meta.fetchedAt, expiry)) {
             if (getIsStaleRefetch(state.meta.fetchedEphemeral, cache)) {
                 const newPromise = cb();
                 store.set(key, newPromise);

@@ -27,6 +27,7 @@ export const getFeatureFlagsState = (features: [FeatureCode, boolean | object][]
                     },
                     meta: {
                         fetchedAt,
+                        fetchedEphemeral: true,
                     },
                 },
             ];
