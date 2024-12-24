@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
+import { FlagProvider } from '@proton/unleash'
 
 import {
   ApiProvider,
@@ -60,19 +61,21 @@ const PublicApp = () => {
 
         return (
           <ProtonStoreProvider store={state.store}>
-            <BrowserRouter>
+            <Router history={extraThunkArguments.history}>
               <AuthenticationProvider store={extraThunkArguments.authentication}>
-                <ApiProvider api={extraThunkArguments.api}>
-                  <ErrorBoundary big component={<StandardErrorPage big />}>
-                    <div className="h-full">
-                      <NotificationsChildren />
-                      <ModalsChildren />
-                      <PublicAppRootContainer />
-                    </div>
-                  </ErrorBoundary>
-                </ApiProvider>
+                <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
+                  <ApiProvider api={extraThunkArguments.api}>
+                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                      <div className="h-full">
+                        <NotificationsChildren />
+                        <ModalsChildren />
+                        <PublicAppRootContainer />
+                      </div>
+                    </ErrorBoundary>
+                  </ApiProvider>
+                </FlagProvider>
               </AuthenticationProvider>
-            </BrowserRouter>
+            </Router>
           </ProtonStoreProvider>
         )
       })()}
