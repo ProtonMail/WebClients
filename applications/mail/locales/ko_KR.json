@@ -570,9 +570,6 @@
       "Hide toolbar": [
         "도구 모음 숨기기"
       ],
-      "hide-my-email aliases": [
-        "Hide-my-email 별칭"
-      ],
       "I like this response": [
         "이 결과물이 마음에 듭니다"
       ],
@@ -6785,9 +6782,6 @@
       "Proofread text": [
         "문장 교정"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "${ maskMyEmailButton }으로 메일링 리스트나 스패머로 이메일이 유출되지 않도록 보호하세요."
-      ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
@@ -9627,6 +9621,14 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }에 Mail Plus 얻기"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -9639,14 +9641,6 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 Mail Plus 얻기"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
       ]
     },
     "new_plans: tooltip": {
@@ -9729,7 +9723,7 @@
         "사용자를 위한 저장 공간을 늘리거나 재할당하세요"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+        "암호화된 캘린더로 나와 나의 가족의 사적인 계획을 지키세요"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "VPN 서버에서 예기치 않게 연결이 끊어졌을 때 모든 네트워크 연결을 차단하여 보호합니다."
@@ -9762,7 +9756,7 @@
         "관리자가 사용자를 추가 및 제거하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, \n 다른 작업을 수행할 수 있는 조직 관리 도구"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
+        "당사의 강력한 인프라는 사용자가 필요할 때 계정에 접근할 수 있도록 보장합니다."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "자사 서버버의 하드 디스크는 여러 암호 계층으로 완전히 암호화되어 하드웨어가 손상되더라도 데이터가 보호됩니다"
@@ -9852,7 +9846,7 @@
         "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "우리는 온라인 상에서 당신이 하는 것에 대한 세션 사용 로그를 보관하지 않으며, 당신의 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
+        "당사는 온라인 상에서 사용자의 행동에 대한 세션 사용 로그를 보관하지 않으며, 개인정보를 침해할 수 있는 메타데이터 또한 로깅하지 않습니다."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "HIPAA/HITECH 규정이 적용되는 고객이 보호된 건강 정보(PHI)를 보호할 수 있도록 돕기 위해 최선을 다하고 있습니다. 서명된 BAA는 비즈니스 고객을 위한 모든 ${ BRAND_NAME }에서 사용할 수 있습니다."
@@ -11308,7 +11302,7 @@
         "이제 메시지를 예약하여 나중에 전송할 수 있습니다"
       ],
       "Your pm.me email is active": [
-        "pm.me 이메일이 활성상태입니다"
+        "pm.me 이메일이 활성 상태입니다"
       ]
     },
     "sso": {
@@ -11709,7 +11703,7 @@
         "캘린더를 관리할 수 없게 됩니다"
       ],
       "Online privacy, for your whole family": [
-        "당신의 가족, 모두를 위한 온라인 프라이버시."
+        "내 가족, 모두를 위한 온라인 프라이버시."
       ],
       "Our fight against censorship in Russia": [
         "러시아의 검열에 맞선 저희의 싸움"

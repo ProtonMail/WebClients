@@ -49,7 +49,7 @@
         "Tambah penerima Bcc"
       ],
       "Add birthday": [
-        "Tambahkan ulang tahun"
+        "Tambah ulang tahun"
       ],
       "Add Cc recipients": [
         "Tambah penerima Cc"
@@ -73,7 +73,7 @@
         "Tambah grup baru"
       ],
       "Add note": [
-        "Tambahkan catatan"
+        "Tambah catatan"
       ],
       "Add participant": [
         "Tambah peserta"
@@ -569,9 +569,6 @@
       ],
       "Hide toolbar": [
         "Sembunyikan bilah alat"
-      ],
-      "hide-my-email aliases": [
-        "alias hide-my-email"
       ],
       "I like this response": [
         "Saya menyukai respon ini"
@@ -1964,7 +1961,7 @@
         "${ participantName } meminta kabar terkini untuk acara yang sudah tidak ada di kalender Anda."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } meminta pembaruan terkini seputar acara yang tidak sesuai dengan rincian undangan Anda. Harap verifikasi rincian undangan yang ada pada kalender Anda."
+        "${ participantName } meminta pembaruan terkini untuk acara yang tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } telah menolak undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk salah satu acara dalam rangkaian acara ini."
@@ -2144,10 +2141,10 @@
         "Undangan ini kedaluwarsa. Acara telah diperbarui."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Waktu baru yang diajukan tidak sesuai dengan rincian undangan Anda. Mohon periksa ulang rincian undangan yang terdapat pada kalender Anda."
+        "Waktu baru yang diajukan tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Balasan ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan di kalender Anda."
+        "Balasan ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
       ],
       "This response is out of date.": [
         "Balasan ini telah kedaluwarsa."
@@ -3664,7 +3661,7 @@
         "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
-        "Gunakan ${ MAIL_APP_NAME } untuk masuk ke berbagai layanan onlin karena (tidak seperti layanan penyedia email lainnya) kami tidak akan pernah melacak data Anda dan membagikan data ini dengan pihak ketiga."
+        "Gunakan ${ MAIL_APP_NAME } untuk masuk ke berbagai layanan online karena (tidak seperti layanan penyedia email lainnya) kami tidak akan pernah melacak data Anda dan membagikan data ini dengan pihak ketiga."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -3861,13 +3858,13 @@
         "Keberlangsungan acara ini telah diperbarui."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Keberlangsungan acara ini telah diperbarui. Berikut merupakan apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
+        "Keberlangsungan acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
         "Acara ini telah diperbarui."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
-        "Acara ini telah diperbarui. Berikut adalah apa yang diubah:\n\n${ updateEventDetailsText }"
+        "Acara ini telah diperbarui. Berikut apa-apa saja yang telah diubah:\n\n${ updateEventDetailsText }"
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Anda diundang ke ${ eventTitle }.\n\n${ eventDetailsText }"
@@ -3934,7 +3931,7 @@
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        "Acara dibatalkan"
+        "Acara telah dibatalkan"
       ],
       "Event was updated. This reminder is out-of-date.": [
         "Waktu acara telah diperbarui. Pengingat ini tidak lagi sesuai dengan jadwal."
@@ -4751,7 +4748,7 @@
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        "Tidak dapat mengirim undangan ke ${ email }. ${ errorMessage }"
+        "Undangan tidak dapat dikirim ke ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -5341,7 +5338,7 @@
         "Petunjuk bergabung"
       ],
       "Less details": [
-        "Lebih sedikit detail"
+        "Lebih sedikit rincian"
       ],
       "Meeting host:": [
         "Host pertemuan:"
@@ -5350,7 +5347,7 @@
         "Tautan undangan:"
       ],
       "More details": [
-        "Lebih banyak detail"
+        "Lebih banyak rincian"
       ]
     },
     "Group": {
@@ -6369,7 +6366,7 @@
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
-        "Apabila Anda merasa bahwa ini merupakan sebuah kesalahan, silakan ${ contactLink }."
+        "Apabila Anda merasa kami telah membuat kesalahan, silakan ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
@@ -6699,7 +6696,7 @@
         "Silakan autentikasi pembayaran Anda pada tab verifikasi."
       ],
       "Please fill out this field.": [
-        "Mohon isi kolom ini."
+        "Silakan isi kolom ini."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Harap diperhatikan bahwa alamat yang terhubung ke grup ini TIDAK akan dihapus."
@@ -6784,9 +6781,6 @@
       ],
       "Proofread text": [
         "Periksa teks"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Lindungi email Anda agar tidak bocor ke tangan milis atau pengirim spam dengan ${ maskMyEmailButton }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
@@ -6924,10 +6918,10 @@
         "Ditunda hingga ${ dateString } pada pukul ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Tunda sampai hari ini, ${ formattedTime }"
+        "Ditunda hingga hari ini, ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "Tunda sampai besok, ${ formattedTime }"
+        "Ditunda hingga besok, ${ formattedTime }"
       ],
       "Snoozing this conversation will be canceled.": [
         "Penundaan percakapan ini akan dibatalkan."
@@ -7473,7 +7467,7 @@
         "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
       ],
       "You may be redirected to your bank’s website.": [
-        "Anda mungkin akan dialihkan ke situs web bank Anda."
+        "Anda akan dapat dialihkan ke situs web milik bank Anda."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
@@ -9241,7 +9235,7 @@
         "Pengelolaan grup kontak"
       ],
       "Custom and secure business email": [
-        "Email bisnis khusus dan aman"
+        "Email bisnis yang khusus dan aman"
       ],
       "Custom domains for email aliases": [
         "Domain khusus untuk alias email"
@@ -9280,7 +9274,7 @@
         "Grup email"
       ],
       "Enables HIPAA compliance": [
-        "Tunduk terhadap undang-undang HIPAA"
+        "Memungkinkan kepatuhan HIPAA"
       ],
       "Encrypted contact details": [
         "Rincian kontak yang terenkripsi"
@@ -9627,6 +9621,14 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -9638,15 +9640,7 @@
         "Peninjauan dan pembayaran langganan"
       ],
       "Switch plans?": [
-        "Ganti paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
+        "Ubah paket?"
       ]
     },
     "new_plans: tooltip": {
@@ -11340,7 +11334,7 @@
         "Masukkan alamat ${ MAIL_APP_NAME } Anda sebagai alamat yang baru, lalu simpan, konfirmasi, atau verifikasi perubahan ini"
       ],
       "In the account settings, look for the option to edit or change your email address ": [
-        "Dalam pengaturan akun, temukan pilihan untuk menyunting atau mengubah alamat email Anda "
+        "Pada pengaturan akun, temukan pilihan untuk menyunting atau mengubah alamat email Anda "
       ],
       "Select service to update": [
         "Pilih layanan untuk diperbarui"
@@ -11509,7 +11503,7 @@
         "Cukup masuk ke akun Apple App Store Anda, lalu pilih ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
+        "Cukup masuk ke akun Play Store Anda dan tekan ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Kelola langganan Anda pada ${ subscriptionManager }"
@@ -11634,7 +11628,7 @@
         "Mencadangkan foto dari perangkat Anda"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Kembangkan kepercayaan dan pengenalan merek dengan alamat email profesional menggunakan domain Anda sendiri."
+        "Kembangkan kepercayaan dan pengenalan merek dengan alamat email profesional yang berada di bawah domain Anda."
       ],
       "Catch-all email address": [
         "Alamat email catch-all"
@@ -13295,13 +13289,13 @@
         "Apakah Anda yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Apakah Anda yakin ingin menghapus grup kontak ini?"
+        "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "Yakin ingin menghapus kontak ini secara permanen?"
+        "Apakah Anda yakin ingin menghapus kontak ini secara permanen?"
       ],
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
@@ -13337,7 +13331,7 @@
         "Lewati verifikasi?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
+        "Sebagian kontak yang akan digabungkan menampilkan kesalahan. Silakan periksa kontak ini satu per satu"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Awalan alias tidak boleh melebihi 40 karakter"
@@ -13361,10 +13355,10 @@
         "Verifikasi tanda tangan rincian kontak gagal."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di kolom tersebut untuk melanjutkan."
+        "Tindakan ini tidak dapat diurungkan. Silakan masukkan kata ${ boldDanger } pada kolom yang tertera untuk melanjutkan."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
+        "Impor ini dapat melebihi kapasitas penyimpanan yang tersedia pada akun ${ BRAND_NAME } Anda saat ini. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."

@@ -864,23 +864,6 @@
         "Detta kommer att koppla från alla routrar och klienter som använder detta certifikat."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surfa på webben privat och blockera annonser"
-      ],
-      "Keep your schedule private": [
-        "Håll ditt schema privat"
-      ],
-      "Protect your passwords and identity": [
-        "Skydda dina lösenord och din identitet"
-      ],
-      "Safeguard your files and photos": [
-        "Skydda dina filer och foton"
-      ],
-      "Secure your communications": [
-        "Säkra din kommunikation"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
@@ -2699,9 +2682,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Aktivera stöd för flera användare innan du lägger till användare till din organisation."
       ],
-      "Please enter a valid entity ID URL": [
-        "Ange en giltig entitets-ID-URL."
-      ],
       "Please generate keys before you try to change your password": [
         "Generera nycklar innan du försöker ändra ditt lösenord"
       ],
@@ -2722,9 +2702,6 @@
       ],
       "Please upload a square logo": [
         "Ladda upp en fyrkantig bild"
-      ],
-      "Please upload an xml file": [
-        "Ladda upp en XML-fil"
       ],
       "Please upload only 1 file": [
         "Ladda endast upp 1 fil"
@@ -3875,9 +3852,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiera och klistra in denna URL i fältet för entity-ID för din identitetsleverantör"
-      ],
       "Copy the suggested password to clipboard": [
         "Kopiera det föreslagna lösenordet till urklipp"
       ],
@@ -4051,9 +4025,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Ange koden som skickades till ${ email }. Om du inte kan hitta meddelandet i din inkorg, kontrollera din skräppostmapp."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Ange entitets-ID:t för en **eduGAIN**-organisation för **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ange organisationslösenordet för att återställa administratörsprivilegier. ${ learnMore }"
@@ -5852,9 +5823,6 @@
         "Visa ${ n } administratör",
         "Visa ${ n } administratörer"
       ],
-      "Single sign-on entity ID": [
-        "Entitets-ID för enkel inloggning"
-      ],
       "Single sign-on URL": [
         "URL för enkel inloggning"
       ],
@@ -7643,85 +7611,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Behåll detta paket"
-      ],
       "Start using ${ appName }": [
         "Börja använda ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Uppgradera mitt paket"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Låt oss prata"
-      ],
-      "Limited time offer": [
-        "Tidsbegränsat erbjudande"
-      ],
-      "Recommended": [
-        "Rekommenderad"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per månad"
-      ],
-      "/month /user": [
-        "/månad/användare"
-      ],
-      "/month /user, billed annually": [
-        "/månad/användare, faktureras årligen"
-      ],
-      "/month /user, billed biennially": [
-        "/månad/användare, faktureras vartannat år"
-      ],
-      "Creating your account": [
-        "Skapar ditt konto"
-      ],
-      "Current plan": [
-        "Nuvarande paket"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Ange ett visningsnamn för **${ username }**. Detta är vad dina användare kommer se när du ändrar deras behörigheter eller delar data med dem."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium VPN-tjänster för ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Gratis för alltid"
-      ],
-      "Get in touch with our sales team": [
-        "Ta kontakt med vårt säljteam"
-      ],
-      "Includes:": [
-        "Inkluderar:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Lanserar ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "per månad"
-      ],
-      "per month, billed annually": [
-        "per månad, faktureras årligen"
-      ],
-      "per month, billed every month": [
-        "per månad, faktureras varje månad"
-      ],
-      "per month, billed every two years": [
-        "per månad, faktureras vartannat år"
-      ],
-      "Preparing your Recovery Kit": [
-        "Förbereder ditt återställningskit"
-      ],
       "Secure vault and link sharing": [
         "Säker valv- och länkdelning"
       ],
@@ -7735,23 +7629,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Säker valvdelning (${ n } valv) och länkdelning",
         "Säker valvdelning (${ n } valv) och länkdelning"
-      ],
-      "Setting up your organization": [
-        "Konfigurerar din organisation"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Loggar in på ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Uppdaterar ditt konto"
-      ],
-      "Verifying your payment": [
-        "Verifierar din betalning"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Alla ${ BRAND_NAME } Plus-tjänster.${ br }En enkel prenumeration."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10841,9 +10718,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiera och klistra in denna URL i fältet för entity-ID hos din identitetsleverantör"
-      ],
       "Device information such as operating system": [
         "Enhetsinformation såsom operativsystem"
       ],
@@ -11233,6 +11107,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
+      ],
+      "servers": [
+        "servrar"
       ]
     },
     "vpn_2024: renew": {

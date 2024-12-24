@@ -4557,6 +4557,9 @@
       "Impossible to rename the gateway": [
         "No es posible cambiar el nombre de la puerta de enlace."
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtelo de nuevo."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Tipo de archivo incorrecto. Cargue un archivo en formato PNG o JPEG."
       ],
@@ -4702,8 +4705,8 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Active el soporte multi usuario antes de añadir usuarios a la organización."
       ],
-      "Please enter a valid entity ID URL": [
-        "Ingrese una URL de identificación de entidad válida"
+      "Please enter a valid Entity ID URL": [
+        "Ingrese una URL de identificación de entidad válida."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Solucione el conflicto resaltado para continuar.",
@@ -4733,8 +4736,8 @@
       "Please upload a square logo": [
         "Cargar un logo cuadrado"
       ],
-      "Please upload an xml file": [
-        "Cargue un archivo xml"
+      "Please upload an XML file": [
+        "Cargue un archivo XML."
       ],
       "Please upload only 1 file": [
         "Cargue solo un archivo"
@@ -7236,8 +7239,8 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie y pegue esta URL en el campo URL ACS (Assertion Consumer Service) del proveedor de identidad"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copie y pegue esta URL en el campo ID de entidad del proveedor de identidad"
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copie y pegue esta URL en el campo ID de la entidad del proveedor de identidad."
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -7514,8 +7517,8 @@
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que quiere importar."
       ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Ingrese la ID de entidad de una organización **eduGAIN** para **${ domain.DomainName }**."
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Ingrese el ID de entidad de una organización **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ingrese la contraseña de la organización para restablecer los privilegios de administrador. ${ learnMore }"
@@ -8448,6 +8451,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> - correo electrónico seguro."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Los pagos SEPA no están disponibles en este momento. Intente de nuevo más tarde."
       ],
       "Server is currently down": [
         "El servidor está actualmente caído"
@@ -9453,6 +9459,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La próxima fecha de facturación es el ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }.Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "la organización usa el inicio de sesión único (SSO). Presione iniciar sesión para continuar con el proveedor de SSO."
       ],
@@ -9473,6 +9482,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La frase de recuperación es una serie de 12 palabras generadas aleatoriamente en un orden específico."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
@@ -10843,7 +10858,7 @@
       "Signature": [
         "Firma"
       ],
-      "Single sign-on entity ID": [
+      "Single sign-on Entity ID": [
         "ID de entidad de inicio de sesión único"
       ],
       "Single sign-on URL": [
@@ -15895,6 +15910,9 @@
       "Enter your backup password": [
         "Ingrese su contraseña de respaldo"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Para que este usuario pueda iniciar sesión, asegúrese de que existe en su proveedor de identidad."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Por su seguridad, ha cerrado la sesión en todos sus dispositivos activos. Antes de acceder a su cuenta, necesitará ingresar la contraseña de respaldo."
       ],
@@ -15984,6 +16002,9 @@
       ],
       "Single sign-on removed": [
         "Se quitó el inicio de sesión único."
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "El usuario ${ name } tiene ahora una cuenta de inicio de sesión único (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Esto cerrará la sesión del usuario en sus otros dispositivos y tendrá que crear una nueva contraseña de respaldo."
@@ -18315,6 +18336,9 @@
       "User": [
         "Usuario"
       ],
+      "User converted to SSO": [
+        "Se pasó al usuario a la autenticación única (SSO)."
+      ],
       "Users": [
         "Usuarios"
       ],
@@ -18543,8 +18567,8 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie y pegue esta URL en el campo URL ACS (Assertion Consumer Service) del proveedor de identidad"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copie y pegue esta URL en el campo ID de la entidad del proveedor de identidad"
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copie y pegue esta URL en el campo ID de la entidad del proveedor de identidad."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"
@@ -19159,6 +19183,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ],
+      "servers": [
+        "servidores"
       ]
     },
     "vpn_2024: renew": {

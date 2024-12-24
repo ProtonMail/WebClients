@@ -4557,6 +4557,9 @@
       "Impossible to rename the gateway": [
         "No es posible cambiar el nombre de la puerta de enlace."
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtalo de nuevo."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "El tipo de archivo es incorrecto. Carga un archivo en formato PNG o JPEG."
       ],
@@ -4702,7 +4705,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
-      "Please enter a valid entity ID URL": [
+      "Please enter a valid Entity ID URL": [
         "Introduce una URL de identificación de entidad válida."
       ],
       "Please fix the highlighted conflict to proceed.": [
@@ -4733,7 +4736,7 @@
       "Please upload a square logo": [
         "Cargar un logotipo cuadrado"
       ],
-      "Please upload an xml file": [
+      "Please upload an XML file": [
         "Carga un archivo XML."
       ],
       "Please upload only 1 file": [
@@ -7236,7 +7239,7 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copia y pega esta URL en el campo URL ACS (Assertion Consumer Service) de tu proveedor de identidad."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copia y pega esta URL en el campo ID de entidad de tu proveedor de identidad."
       ],
       "Copy the link to clipboard": [
@@ -7514,7 +7517,7 @@
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
       ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Ingresa el ID de entidad de una organización **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
@@ -8448,6 +8451,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado con el correo electrónico seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
       ],
       "Server is currently down": [
         "El servidor no está actualmente disponible."
@@ -9453,6 +9459,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tu próxima fecha de facturación es el ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Ponte en contacto con el servicio de asistencia si necesitas un cambio de plan inmediato."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Tu organización utiliza el inicio de sesión único (SSO). Presiona iniciar sesión para continuar con tu proveedor de SSO."
       ],
@@ -9473,6 +9482,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La frase de recuperación es una serie de 12 palabras generadas aleatoriamente en un orden específico."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tu suscripción está gestionada por Mozilla. Contacta con el soporte de Mozilla."
@@ -10843,7 +10858,7 @@
       "Signature": [
         "Firma"
       ],
-      "Single sign-on entity ID": [
+      "Single sign-on Entity ID": [
         "ID de entidad de inicio de sesión único"
       ],
       "Single sign-on URL": [
@@ -15898,6 +15913,9 @@
       "Enter your backup password": [
         "Ingresa tu contraseña de respaldo."
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Para que este usuario pueda iniciar sesión, asegúrate de que existe en tu proveedor de identidad."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Por tu seguridad, se ha cerrado la sesión activa en todos tus otros dispositivos. Antes de acceder a tu cuenta, necesitarás introducir tu contraseña de respaldo."
       ],
@@ -15987,6 +16005,9 @@
       ],
       "Single sign-on removed": [
         "Se ha quitado el inicio de sesión único."
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "El usuario ${ name } tiene ahora una cuenta de inicio de sesión único (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Esto cerrará la sesión del usuario en sus otros dispositivos y tendrá que crear una nueva contraseña de respaldo."
@@ -18318,6 +18339,9 @@
       "User": [
         "Usuario"
       ],
+      "User converted to SSO": [
+        "El usuario ha pasado a la autenticación única (SSO)."
+      ],
       "Users": [
         "Usuarios"
       ],
@@ -18546,7 +18570,7 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copia y pega esta URL en el campo URL ACS (Assertion Consumer Service) de tu proveedor de identidad."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copia y pega esta URL en el campo ID de entidad de tu proveedor de identidad."
       ],
       "Customize import to reduce the number of folders": [
@@ -19162,6 +19186,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ],
+      "servers": [
+        "servidores"
       ]
     },
     "vpn_2024: renew": {

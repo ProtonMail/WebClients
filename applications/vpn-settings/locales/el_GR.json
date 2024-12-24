@@ -864,23 +864,6 @@
         "Αυτό θα αποσυνδέσει όλους τους δρομολογητές και πελάτες που χρησιμοποιούν αυτό το πιστοποιητικό."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Ιδιωτική περιήγηση στον ιστό και αποκλεισμός διαφημίσεων"
-      ],
-      "Keep your schedule private": [
-        "Διατηρήστε το πρόγραμμά σας απόρρητο"
-      ],
-      "Protect your passwords and identity": [
-        "Προστατέψτε τους κωδικούς πρόσβασης και την ταυτότητά σας"
-      ],
-      "Safeguard your files and photos": [
-        "Προστατέψτε τα αρχεία και τις φωτογραφίες σας"
-      ],
-      "Secure your communications": [
-        "Ασφαλίστε τις επικοινωνίες σας"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
@@ -2699,9 +2682,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
       ],
-      "Please enter a valid entity ID URL": [
-        "Εισαγάγετε μια έγκυρη Entity ID διεύθυνσης URL"
-      ],
       "Please generate keys before you try to change your password": [
         "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ],
@@ -2722,9 +2702,6 @@
       ],
       "Please upload a square logo": [
         "Παρακαλούμε ανεβάστε ένα τετράγωνο λογότυπο"
-      ],
-      "Please upload an xml file": [
-        "Παρακαλούμε ανεβάστε ένα αρχείο xml"
       ],
       "Please upload only 1 file": [
         "Παρακαλούμε ανεβάστε μόνο 1 αρχείο"
@@ -3864,9 +3841,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο αναγνωριστικού οντότητας της υπηρεσίας παροχής ταυτότητάς σας"
-      ],
       "Copy the suggested password to clipboard": [
         "Αντιγράψτε τον προτεινόμενο κωδικό πρόσβασης στο πρόχειρο"
       ],
@@ -4040,9 +4014,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Εισάγετε τον κωδικό που στάλθηκε στο ${ email }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο των ενοχλητικών."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Εισαγάγετε το αναγνωριστικό οντότητας ενός οργανισμού **eduGAIN** για τον τομέα **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
@@ -5838,9 +5809,6 @@
         "Εμφάνιση ${ n } διαχειριστή",
         "Εμφάνιση ${ n } διαχειριστών"
       ],
-      "Single sign-on entity ID": [
-        "Entity ID καθολικής σύνδεσης"
-      ],
       "Single sign-on URL": [
         "URL καθολικής σύνδεσης"
       ],
@@ -7602,85 +7570,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Διατηρήστε αυτό το πλάνο"
-      ],
       "Start using ${ appName }": [
         "Έναρξη χρήσης του ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Αναβαθμίστε το πλάνο μου"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Ας μιλήσουμε"
-      ],
-      "Limited time offer": [
-        "Προσφορά περιορισμένου χρόνου"
-      ],
-      "Recommended": [
-        "Προτεινόμενο"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } ανά μήνα"
-      ],
-      "/month /user": [
-        "/μήνα /χρήστη"
-      ],
-      "/month /user, billed annually": [
-        "/μήνας /χρήστης, χρεώνεται ετησίως"
-      ],
-      "/month /user, billed biennially": [
-        "/μήνας /χρήστης, χρεώνεται ανά διετία"
-      ],
-      "Creating your account": [
-        "Γίνεται δημιουργία του λογαριασμού σας"
-      ],
-      "Current plan": [
-        "Τρέχον πλάνο"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Εισαγάγετε ένα εμφανιζόμενο όνομα για το **${ username }**. Αυτό θα βλέπουν οι χρήστες σας όταν αλλάζετε τα δικαιώματά τους ή μοιράζεστε δεδομένα μαζί τους."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Για μόλις **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στην premium υπηρεσία VPN του ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Με μόνο **${ relativePrice } ανά μήνα** παραπάνω, θα έχετε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Δωρεάν για πάντα"
-      ],
-      "Get in touch with our sales team": [
-        "Επικοινωνήστε με την ομάδα πωλήσεών μας"
-      ],
-      "Includes:": [
-        "Περιλαμβάνει:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Εκκίνηση του ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "ανά μήνα"
-      ],
-      "per month, billed annually": [
-        "ανά μήνα, χρεώνεται ετησίως"
-      ],
-      "per month, billed every month": [
-        "ανά μήνα, χρεώνεται κάθε μήνα"
-      ],
-      "per month, billed every two years": [
-        "ανά μήνα, χρεώνεται κάθε δύο χρόνια"
-      ],
-      "Preparing your Recovery Kit": [
-        "Προετοιμασία του Κιτ Αποκατάστασης"
-      ],
       "Secure vault and link sharing": [
         "Ασφαλής κρύπτη και κοινή χρήση συνδέσμων"
       ],
@@ -7694,23 +7588,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη) και κοινή χρήση συνδέσμων",
         "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες) και κοινή χρήση συνδέσμων"
-      ],
-      "Setting up your organization": [
-        "Ρύθμιση του οργανισμού σας"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Σύνδεση στο ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Πραγματοποιείται ενημέρωση του λογαριασμού σας"
-      ],
-      "Verifying your payment": [
-        "Γίνεται επαλήθευση της πληρωμής σας"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Όλες οι ${ BRAND_NAME } Plus λειτουργείες.${ br }Μία εύκολη συνδρομή."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10791,9 +10668,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο αναγνωριστικού οντότητας της υπηρεσίας παροχής ταυτότητάς σας"
-      ],
       "Device information such as operating system": [
         "Πληροφορίες συσκευής, όπως λειτουργικό σύστημα"
       ],
@@ -11183,6 +11057,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ],
+      "servers": [
+        "διακομιστές"
       ]
     },
     "vpn_2024: renew": {

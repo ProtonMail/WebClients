@@ -82,7 +82,7 @@
         "Zastosuj"
       ],
       "Ask me next time": [
-        "Zapytaj mnie później"
+        "Zapytaj później"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
@@ -585,6 +585,9 @@
       "Show advanced PGP settings": [
         "Pokaż zaawansowane ustawienia PGP"
       ],
+      "Show options": [
+        "Pokaż opcje"
+      ],
       "Sign out": [
         "Wyloguj"
       ],
@@ -819,9 +822,6 @@
       ]
     },
     "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwsze ${ cycle } miesięcy. Odnowienie nastąpi w obniżonej cenie ${ nextPrice } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
@@ -4256,10 +4256,10 @@
         "Darmowe 5 GB zaszyfrowanej przestrzeni dyskowej na początek"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Otrzymuj wiadomości e-mail o komentarzach i sugestiach dodanych do Twoich dokumentów"
+        "Otrzymaj wiadomości o komentarzach i sugestiach w dokumentach."
       ],
       "Get Notified About Comments": [
-        "Otrzymuj powiadomienia o komentarzach"
+        "Otrzymaj powiadomienia o komentarzach"
       ],
       "here": [
         "tutaj"
@@ -5003,7 +5003,7 @@
         "Twoja obecna przeglądarka nie obsługuje pobierania dużych plików z powodu niedostępności mechanizmu Service Workers. Pobieranie dużych plików może spowodować zawieszenie przeglądarki lub brak reakcji na jej działanie. Użyj najnowszych wersji ${ recommendedBrowser } i spróbuj ponownie."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
-        "Twój aktualny dokument zostanie zastąpiony wybraną wersją. Komentarze i sugestie zostaną usunięte z dokumentu, ale nadal będą dostępne w historii komentarzy."
+        "Obecny dokument zostanie zastąpiony wybraną wersją. Komentarze i sugestie zostaną usunięte z dokumentu, ale nadal będą dostępne w historii komentarzy."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
@@ -7475,15 +7475,6 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesięcy. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Kupon jest ważny na ${ couponRedemptions } odnowień. Odnowienie nastąpi w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."

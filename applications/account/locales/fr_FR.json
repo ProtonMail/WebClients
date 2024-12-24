@@ -4557,6 +4557,9 @@
       "Impossible to rename the gateway": [
         "Le nom de la passerelle ne peut pas être modifié."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe n'est pas correct. Veuillez réessayer."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Le type de fichier n'est pas correct. Veuillez importer un fichier au format JPEG ou PNG."
       ],
@@ -4702,8 +4705,8 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Nous vous invitons à activer la prise en charge multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
       ],
-      "Please enter a valid entity ID URL": [
-        "Veuillez saisis une URL valide pour l'identité."
+      "Please enter a valid Entity ID URL": [
+        "Veuillez saisis une URL valide pour l'entité."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
@@ -4733,7 +4736,7 @@
       "Please upload a square logo": [
         "Veuillez importer un logo carré."
       ],
-      "Please upload an xml file": [
+      "Please upload an XML file": [
         "Veuillez importer un fichier XML."
       ],
       "Please upload only 1 file": [
@@ -7236,8 +7239,8 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiez et coller cette URL dans le champ URL ACS (Assertion Consumer Service) de votre fournisseur d'identité."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copiez et collez cette URL dans le champ ID de l'émetteur de votre fournisseur d'identité."
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copiez et collez cette URL dans le champ ID de l'entité de votre fournisseur d'identité."
       ],
       "Copy the link to clipboard": [
         "Copier le lien dans le presse-papiers"
@@ -7514,7 +7517,7 @@
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
       ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Saisissez l'identifiant de l'entité d'une organisation **eduGAIN** pour **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
@@ -8177,7 +8180,7 @@
         "Le mot de passe a été copié dans le presse-papiers."
       ],
       "Password generator rules successfully saved": [
-        "Les règles du générateur de mots de passe ont été enregistrée."
+        "Les règles du générateur de mots de passe ont été enregistrés."
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Le mot de passe doit être de ${ MIN_PASSWORD_LENGTH } ou plus."
@@ -8448,6 +8451,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }.</a>"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Les paiements via SEPA ne sont pas disponibles pour l''instant. Réessayez ultérieurement."
       ],
       "Server is currently down": [
         "Ce serveur est actuellement indisponible."
@@ -9453,6 +9459,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Votre prochaine date de facturation est le ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Votre organisation utilise une authentification unique (SSO). Appuyez sur Se connecter pour continuer avec votre fournisseur d'authentification unique (SSO)."
       ],
@@ -9473,6 +9482,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Votre phrase de récupération est une série de 12 mots générés aléatoirement dans un ordre spécifique."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
@@ -10843,7 +10858,7 @@
       "Signature": [
         "Signature"
       ],
-      "Single sign-on entity ID": [
+      "Single sign-on Entity ID": [
         "ID de l'entité d'authentification unique"
       ],
       "Single sign-on URL": [
@@ -11383,7 +11398,7 @@
         "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ cta }."
       ],
       "Your storage is full. To upload or sync files, free up space or ${ cta }.": [
-        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ cta }."
+        "Votre espace de stockage est plein. Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
@@ -15898,6 +15913,9 @@
       "Enter your backup password": [
         "Saisissez votre mot de passe de secours."
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Pour que cet utilisateur puisse se connecter, assurez-vous qu'il existe dans votre fournisseur d'identité."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Pour des raisons de sécurité, vous avez été déconnecté de tous vos autres appareils actifs. Avant d'accéder à votre compte, vous devrez saisir un nouveau mot de passe de secours."
       ],
@@ -15987,6 +16005,9 @@
       ],
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "L'utilisateur ${ name } dispose désormais d'un compte à authentification unique (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Ceci déconnectera l'utilisateur de ses autres appareils et il devra créer un nouveau mot de passe de secours."
@@ -16120,7 +16141,7 @@
         "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
+        "Pour importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou ${ upgrade }."
       ],
       "Try out ${ app } to its full potential": [
         "Explorez tout le potentiel de ${ app }"
@@ -18318,6 +18339,9 @@
       "User": [
         "Utilisateur"
       ],
+      "User converted to SSO": [
+        "L'utilisateur est passé à l'authentification unique (SSO)."
+      ],
       "Users": [
         "Utilisateurs"
       ],
@@ -18546,8 +18570,8 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiez et coller cette URL dans le champ URL ACS (Assertion Consumer Service) de votre fournisseur d'identité."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copiez et collez cette URL dans le champ ID de l'émetteur de votre fournisseur d'identité."
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copiez et collez cette URL dans le champ ID de l'entité de votre fournisseur d'identité."
       ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
@@ -19162,6 +19186,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ],
+      "servers": [
+        "serveurs"
       ]
     },
     "vpn_2024: renew": {

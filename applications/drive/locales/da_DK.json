@@ -214,9 +214,6 @@
       "Create": [
         "Opret"
       ],
-      "Create a folder": [
-        "Opret en mappe"
-      ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
@@ -299,9 +296,6 @@
       ],
       "Download (${ count })": [
         "Hent (${ count })"
-      ],
-      "Download all": [
-        "Hent alle"
       ],
       "Download anyway": [
         "Download alligevel"
@@ -561,9 +555,6 @@
       "Open navigation": [
         "Åbn navigation"
       ],
-      "Open scan and download info": [
-        "Åbn scanning og hent information"
-      ],
       "Pause all": [
         "Pause alle"
       ],
@@ -701,15 +692,6 @@
       ],
       "Save changes": [
         "Gem ændringer"
-      ],
-      "Scan & Download": [
-        "Scan og download"
-      ],
-      "Scan & Download (${ count })": [
-        "Scan og download (${ count })"
-      ],
-      "Scan & Download all": [
-        "Scan og download alt"
       ],
       "Search": [
         "Søg"
@@ -4264,9 +4246,6 @@
       "Change your password": [
         "Skift din adgangskode"
       ],
-      "Check for malicious files": [
-        "Tjek efter skadelige filer"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
@@ -5170,14 +5149,26 @@
       "There is nothing to see here": [
         "Der er ikke noget at se her"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Denne handling sletter den fil, du har uploadet, permanent."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Denne handling sletter den mappe, du har uploadet, permanent. Du kan ikke slette en mappe, der indeholder en ikke-ejet fil."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handling vil slette linket og fjerne adgangen for alle brugere."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Denne handling sletter de valgte elementer permanent."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Dette kan IKKE fortrydes. Indtast enhedens navn for at bekræfte fjernelsen."
       ],
       "This file is too large to preview": [
         "Denne fil er for stor til forhåndsvisning"
@@ -5216,6 +5207,9 @@
         "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
         "Dette vil slette linkene og fjerne adgangen til dine filer eller mapper for alle, der har linkene."
       ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Dette vil fjerne den synkroniserede enhed ${ deviceName } fra ${ DRIVE_APP_NAME } og alle dens data fra ${ DRIVE_APP_NAME }. Mapper, du har tilføjet til Mine computere, stopper med at synkronisere."
+      ],
       "This will replace the existing file with the folder": [
         "Dette vil erstatte eksisterende fil med mappen"
       ],
@@ -5239,9 +5233,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
-      ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources.": [
-        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
@@ -7606,11 +7597,17 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" oprettet"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" slettet"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent slettet fra papirkurven"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" kunne ikke oprettes"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\" kunne ikke slettes"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" kunne ikke slettes permanent fra papirkurven"
@@ -7649,9 +7646,17 @@
         "${ count } element kunne ikke dekrypteres",
         "${ count } elementer kunne ikke dekrypteres"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } element slettet",
+        "${ numberOfItems } elementer slettet"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element permanent slettet fra papirkurven",
         "${ numberOfItems } elementer permanent slettet fra papirkurven"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } element kunne ikke slettes",
+        "${ numberOfItems } elementer kunne ikke slettes"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } element kunne ikke fjernes permanent fra papirkurven",
@@ -7844,7 +7849,7 @@
         "Linket til dit element blev slettet"
       ],
       "This item was not removed from your list": [
-        "Elementet blev ikke fjernet fra din liste.",
+        "Dette element blev ikke fjernet fra din liste.",
         "Nogle elementer kunne ikke fjernes fra din liste"
       ],
       "This item was successfully removed from your list": [
@@ -9834,6 +9839,9 @@
       ],
       "Delete ${ item.name }?": [
         "Slet ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Slet ${ links.length } elementer?"
       ],
       "Delete ${ value }": [
         "Slet ${ value }"

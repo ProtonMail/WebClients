@@ -910,6 +910,9 @@
       "Reset keys": [
         "Redefinir chaves"
       ],
+      "Reset modifications": [
+        "Redefinir modificações"
+      ],
       "Reset password": [
         "Redefinir senha"
       ],
@@ -4699,9 +4702,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
       ],
-      "Please enter a valid entity ID URL": [
-        "Digite um URL de ID de entidade válido"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito em destaque para prosseguir.",
         "Corrija os conflitos em destaque para prosseguir."
@@ -4729,9 +4729,6 @@
       ],
       "Please upload a square logo": [
         "Faça upload de um logotipo quadrado"
-      ],
-      "Please upload an xml file": [
-        "Envie um arquivo xml"
       ],
       "Please upload only 1 file": [
         "Envie somente um arquivo"
@@ -7233,9 +7230,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie e cole este URL no campo URL ACS (Serviço ao Consumidor de Asserção) do seu provedor de identidade"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copie e cole este URL no campo de ID da entidade do seu provedor de identidade"
-      ],
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
@@ -7506,9 +7500,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Digite o ID da entidade de uma organização **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Digite a senha da organização para restaurar os privilégios de administrador. ${ learnMore }"
@@ -10013,8 +10004,14 @@
       "Allow": [
         "Endereços permitidos"
       ],
+      "Allow memorable passwords": [
+        "Permitir senhas memoráveis"
+      ],
       "Allow notifications by email": [
         "Permitir notificações por e-mail"
+      ],
+      "Allow random passwords": [
+        "Permitir senhas aleatórias"
       ],
       "Allow recovery by email": [
         "Permitir recuperação por e-mail"
@@ -10550,6 +10547,12 @@
       "Mark as": [
         "Marcar como"
       ],
+      "Maximum number of characters": [
+        "Número máximo de caracteres"
+      ],
+      "Maximum number of words": [
+        "Número máximo de palavras"
+      ],
       "Message": [
         "Mensagem"
       ],
@@ -10564,6 +10567,12 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadados"
+      ],
+      "Minimum number of characters": [
+        "Número mínimo de caracteres"
+      ],
+      "Minimum number of words": [
+        "Número mínimo de palavras"
       ],
       "Moderate NAT": [
         "NAT moderado"
@@ -10621,6 +10630,9 @@
       ],
       "Notifications": [
         "Notificações"
+      ],
+      "Numbers": [
+        "Números"
       ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN / IKEv2"
@@ -10809,9 +10821,6 @@
       "Signature": [
         "Assinatura"
       ],
-      "Single sign-on entity ID": [
-        "ID da entidade de autenticação única"
-      ],
       "Single sign-on URL": [
         "URL de autenticação única"
       ],
@@ -10829,6 +10838,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Carateres especiais"
       ],
       "Starred": [
         "Com estrela"
@@ -10904,6 +10916,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Envie 1 ou mais arquivos de recuperação ou chaves de criptografia"
+      ],
+      "Uppercase": [
+        "Maiúsculas"
       ],
       "URL": [
         "URL"
@@ -13270,6 +13285,9 @@
       "Add to existing group": [
         "Adicionar a um grupo existente"
       ],
+      "Allowed (default)": [
+        "Permitido (padrão)"
+      ],
       "Android": [
         "Android"
       ],
@@ -13339,6 +13357,9 @@
       "Normal": [
         "Normal"
       ],
+      "Not allowed": [
+        "Não permitido"
+      ],
       "Off": [
         "Desligado"
       ],
@@ -13365,6 +13386,9 @@
       ],
       "Repeat weekly": [
         "Repetir semanalmente"
+      ],
+      "Required": [
+        "Obrigatório"
       ],
       "Right to Left": [
         "Direita para esquerda"
@@ -17971,6 +17995,9 @@
       "Password": [
         "Senha"
       ],
+      "Password generator rules": [
+        "Regras de gerador de senha"
+      ],
       "Password reset settings": [
         "Configurações de redefinição de senha"
       ],
@@ -18538,9 +18565,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie e cole este URL no campo URL ACS (Assertion Consumer Service) do seu provedor de identidade"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copie e cole este URL no campo ID do seu provedor de identidade"
       ],
       "Customize import to reduce the number of folders": [
         "Personalize importação para reduzir o número de pastas"
@@ -19155,6 +19179,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
+      ],
+      "servers": [
+        "servidores"
       ]
     },
     "vpn_2024: renew": {

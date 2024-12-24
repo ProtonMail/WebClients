@@ -910,6 +910,9 @@
       "Reset keys": [
         "Сбросить ключи"
       ],
+      "Reset modifications": [
+        "Сбросить модификации"
+      ],
       "Reset password": [
         "Сбросить пароль"
       ],
@@ -3692,6 +3695,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можете продолжать приглашать друзей, но не сможете заработать больше кредитов"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Вы можете ввести правила для паролей, которые будут использовать члены организации при создании пароля в ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
       ]
@@ -4717,9 +4723,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
       ],
-      "Please enter a valid entity ID URL": [
-        "Пожалуйста, введите правильный URL идентификатора сущности"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
@@ -4749,9 +4752,6 @@
       ],
       "Please upload a square logo": [
         "Пожалуйста, загрузите квадратный логотип"
-      ],
-      "Please upload an xml file": [
-        "Загрузите файл xml"
       ],
       "Please upload only 1 file": [
         "Загрузите только 1 файл"
@@ -7328,9 +7328,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопируйте и вставьте этот URL-адрес в поле ID субъекта вашего поставщика идентификационных данных"
-      ],
       "Copy the link to clipboard": [
         "Скопировать ссылку в буфер обмена"
       ],
@@ -7606,9 +7603,6 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Введите ID сущности организации **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введите пароль организации для восстановления полномочий администратора. ${ learnMore }"
@@ -8276,6 +8270,9 @@
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
       ],
+      "Password generator rules successfully saved": [
+        "Правила генератора паролей успешно сохранены"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Пароль должен состоять из ${ MIN_PASSWORD_LENGTH } или более символов."
       ],
@@ -8560,6 +8557,9 @@
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
+      ],
+      "Setting successfully saved": [
+        "Настройка успешно сохранена"
       ],
       "Setting up your organization": [
         "Настройка вашей организации"
@@ -10142,8 +10142,14 @@
       "Allow": [
         "Разрешить"
       ],
+      "Allow memorable passwords": [
+        "Разрешить запоминающиеся пароли"
+      ],
       "Allow notifications by email": [
         "Разрешить уведомления по эл. почте"
+      ],
+      "Allow random passwords": [
+        "Разрешить случайные пароли"
       ],
       "Allow recovery by email": [
         "Разрешить восстановление по электронной почте"
@@ -10273,6 +10279,9 @@
       ],
       "Calendars": [
         "Календари"
+      ],
+      "Capitalize words": [
+        "Писать слова с заглавных букв"
       ],
       "Card details": [
         "Данные карты"
@@ -10679,6 +10688,12 @@
       "Mark as": [
         "Отметить как"
       ],
+      "Maximum number of characters": [
+        "Максимальное количество символов"
+      ],
+      "Maximum number of words": [
+        "Максимальное количество слов"
+      ],
       "Message": [
         "Сообщение"
       ],
@@ -10693,6 +10708,12 @@
       ],
       "Method for importing metadata": [
         "Метод импорта метаданных"
+      ],
+      "Minimum number of characters": [
+        "Минимальное количество символов"
+      ],
+      "Minimum number of words": [
+        "Минимальное количество слов"
       ],
       "Moderate NAT": [
         "Умеренный NAT"
@@ -10750,6 +10771,9 @@
       ],
       "Notifications": [
         "Уведомления"
+      ],
+      "Numbers": [
+        "Цифры"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -10940,9 +10964,6 @@
       "Signature": [
         "Подпись"
       ],
-      "Single sign-on entity ID": [
-        "ID единого входа"
-      ],
       "Single sign-on URL": [
         "URL единого входа"
       ],
@@ -10960,6 +10981,9 @@
       ],
       "Spam": [
         "Спам"
+      ],
+      "Special characters": [
+        "Специальные символы"
       ],
       "Starred": [
         "Отмеченные *"
@@ -11035,6 +11059,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Загрузите 1 или несколько файлов восстановления или ключей шифрования"
+      ],
+      "Uppercase": [
+        "Заглавные"
       ],
       "URL": [
         "URL"
@@ -13433,6 +13460,9 @@
       "Add to existing group": [
         "Добавить в существующую группу"
       ],
+      "Allowed (default)": [
+        "Разрешено (по умолчанию)"
+      ],
       "Archive": [
         "Архив"
       ],
@@ -13490,6 +13520,9 @@
       "Normal": [
         "Обычный"
       ],
+      "Not allowed": [
+        "Не разрешено"
+      ],
       "Off": [
         "Выключено"
       ],
@@ -13516,6 +13549,9 @@
       ],
       "Repeat weekly": [
         "Повторять каждую неделю"
+      ],
+      "Required": [
+        "Требуется"
       ],
       "Right to Left": [
         "Справа налево"
@@ -18177,6 +18213,9 @@
       "Password": [
         "Пароль"
       ],
+      "Password generator rules": [
+        "Правила генератора паролей"
+      ],
       "Password reset settings": [
         "Настройки сброса пароля"
       ],
@@ -18737,9 +18776,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скопируйте и вставьте этот адрес URL в поле ID субъекта вашего провайдера личных данных"
       ],
       "Customize import to reduce the number of folders": [
         "Настройте импорт, чтобы уменьшить количество папок"
@@ -19367,6 +19403,9 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
+      ],
+      "servers": [
+        "серверы"
       ]
     },
     "vpn_2024: renew": {
@@ -19588,6 +19627,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Если вы отмените этот импорт, вы не сможете его возобновить. ${ BRAND_NAME } сохранил весь прогресс в вашем аккаунте. Все равно отменить?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Максимум не может быть меньше, чем минимум"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Должно быть между ${ minimumNumber } и ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Должно быть больше или равно ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Должно быть меньше или равно ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Добавьте хотя бы одного получателя."

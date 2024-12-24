@@ -5026,6 +5026,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Els pagaments SEPA no estan disponibles en aquests moments. Proveu de nou més tard."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -5406,11 +5409,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
       "Your password was leaked:": [
         "S'ha filtrat la vostra contrasenya:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mesos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sembla que el fus horari del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
@@ -9247,7 +9259,7 @@
         "Empremta digital copiada al porta-retalls"
       ],
       "Finish Zoom authentication to save event": [
-        "Finalitza l'autenticació de Zoom per desar l'esdeveniment"
+        "Finalitza l'autenticació de Zoom per a desar l'esdeveniment"
       ],
       "Future events deleted": [
         "S'han eliminat els futurs esdeveniments"

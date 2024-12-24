@@ -864,23 +864,6 @@
         "Això desconnectarà tots els rúters i clients que utilitzin aquest certificat."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Navegueu pel web de manera privada i bloquegeu els anuncis"
-      ],
-      "Keep your schedule private": [
-        "Manteniu la vostra agenda privada"
-      ],
-      "Protect your passwords and identity": [
-        "Protegiu les vostres contrasenyes i identitat"
-      ],
-      "Safeguard your files and photos": [
-        "Protegiu els vostres fitxers i fotos"
-      ],
-      "Secure your communications": [
-        "Protegiu les vostres comunicacions"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
@@ -2604,6 +2587,9 @@
       "Impossible to rename the gateway": [
         "No és possible canviar el nom de la passarel·la"
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "El tipus de fitxer és incorrecte. Carregueu un fitxer en format PNG o JPEG."
       ],
@@ -2694,7 +2680,7 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Habiliteu el suport multiusuari abans d'afegir usuaris a la vostra organització."
       ],
-      "Please enter a valid entity ID URL": [
+      "Please enter a valid Entity ID URL": [
         "Introduïu un URL d'identificació d'entitat vàlid."
       ],
       "Please generate keys before you try to change your password": [
@@ -2718,8 +2704,8 @@
       "Please upload a square logo": [
         "Carregeu un logo quadrat."
       ],
-      "Please upload an xml file": [
-        "Carregueu un arxiu XML"
+      "Please upload an XML file": [
+        "Carregueu un arxiu XML."
       ],
       "Please upload only 1 file": [
         "Carregueu només un arxiu."
@@ -3043,7 +3029,7 @@
         "Creeu i gestioneu els membres de la família i assigneu-los espai d'emmagatzematge compartit entre ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "Create and manage family members.": [
-        "Creu i gestioneu els membres de la família."
+        "Creeu i gestioneu els membres de la família."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'usuari ja té una adreça ${ MAIL_APP_NAME }, introduïu-la aquí. En cas contrari, primer haurà de crear un compte."
@@ -3862,7 +3848,7 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp URL de l'ACS (Assertion Consumer Service) del vostre proveïdor d'identitat"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp ID de l'entitat del vostre proveïdor d'identitat"
       ],
       "Copy the suggested password to clipboard": [
@@ -4043,7 +4029,7 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Introduïu el codi que s'ha enviat a ${ email }. Si no trobeu el missatge a la vostra safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Introduïu l'ID d'entitat d'una organització **eduGAIN** per a **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
@@ -4632,6 +4618,9 @@
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envieu correus electrònics per animar els vostres membres a protegir els seus comptes amb l'A2F."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Els pagaments SEPA no estan disponibles en aquests moments. Proveu de nou més tard."
       ],
       "Server is currently down": [
         "El servidor està actualment caigut"
@@ -5251,6 +5240,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
       ],
@@ -5262,6 +5254,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mesos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
@@ -5840,7 +5838,7 @@
         "Mostra ${ n } administrador",
         "Mostra ${ n } administradors"
       ],
-      "Single sign-on entity ID": [
+      "Single sign-on Entity ID": [
         "ID d'entitat d'inici de sessió únic"
       ],
       "Single sign-on URL": [
@@ -7604,85 +7602,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Mantén aquest pla"
-      ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Millora el meu pla"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Parlem-ne"
-      ],
-      "Limited time offer": [
-        "Oferta per temps limitat"
-      ],
-      "Recommended": [
-        "Recomanat"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } al mes"
-      ],
-      "/month /user": [
-        "/mes /usuari"
-      ],
-      "/month /user, billed annually": [
-        "/mes /usuari, facturat anualment"
-      ],
-      "/month /user, billed biennially": [
-        "/mes /usuari, facturat biennalment"
-      ],
-      "Creating your account": [
-        "S'està creant el compte"
-      ],
-      "Current plan": [
-        "Pla actual"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Indiqueu un nom per a mostrar per a **${ username }**. Aquest és el que els vostres usuaris veuran quan canvieu els seus permisos o compartiu dades amb ells."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Per només **${ relativePrice } mensuals** més, tindreu accés al gestor de contrasenyes prèmium de ${ BRAND_NAME }."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Per només **${ relativePrice } al mes** més, tindreu accés al servei VPN prèmium de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
-      ],
-      "Free forever": [
-        "Gratuït per sempre"
-      ],
-      "Get in touch with our sales team": [
-        "Poseu-vos en contacte amb el nostre equip comercial"
-      ],
-      "Includes:": [
-        "Inclou:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "S'està llançant ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "per mes"
-      ],
-      "per month, billed annually": [
-        "al mes amb facturació anual"
-      ],
-      "per month, billed every month": [
-        "al mes amb facturació mensual"
-      ],
-      "per month, billed every two years": [
-        "al mes amb facturació cada dos anys"
-      ],
-      "Preparing your Recovery Kit": [
-        "S'està preparant el vostre kit de recuperació"
-      ],
       "Secure vault and link sharing": [
         "Compartició segura de caixes fortes i enllaços"
       ],
@@ -7696,23 +7620,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Compartició segura de caixes fortes (${ n } caixa forta) i compartició d'enllaços",
         "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
-      ],
-      "Setting up your organization": [
-        "S'està configurant la vostra organització."
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "S'està iniciant la sessió a ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "S'està actualitzant el compte"
-      ],
-      "Verifying your payment": [
-        "S'està verificant el pagament"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Tots els serveis de ${ BRAND_NAME } Plus. ${ br } Una subscripció senzilla."
       ]
     },
     "pass_signup_2024: Info": {
@@ -9000,6 +8907,9 @@
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Perquè aquest usuari pugui iniciar la sessió, assegureu-vos que existeixen al vostre proveïdor d'identitat."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Per la vostra seguretat, heu tancat la sessió de tots els vostres dispositius actius. Abans d'accedir al vostre compte, haureu d'introduir una nova contrasenya de recuperació."
       ],
@@ -9065,6 +8975,9 @@
       ],
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "L'usuari ${ name } ara té un compte d'inici de sessió únic (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Això tancarà la sessió de l'usuari dels seus altres dispositius i haurà de crear una nova contrasenya de recuperació."
@@ -10671,6 +10584,9 @@
       "User": [
         "Usuari"
       ],
+      "User converted to SSO": [
+        "S'ha passat l'usuari a l'inici de sessió únic (SSO)."
+      ],
       "Users": [
         "Usuaris"
       ],
@@ -10796,7 +10712,7 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp URL de l'ACS (Assertion Consumer Service) del vostre proveïdor d'identitat"
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp ID de l'entitat del vostre proveïdor d'identitat"
       ],
       "Device information such as operating system": [
@@ -10902,7 +10818,7 @@
         "Operació fallida"
       ],
       "Needs attention": [
-        "Necessita la vostra atenció"
+        "Necessita atenció"
       ],
       "Refunded": [
         "Reemborsat"
@@ -10978,7 +10894,7 @@
         "Voleu cancel·lar la sol·licitud d'accés a les dades de l'usuari?"
       ],
       "Confirm all": [
-        "Confirma tot"
+        "Confirma-ho tot"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "No s'ha pogut activar automàticament l'accés d'administrador per ${ n } usuari perquè les seves claus de xifratge s'han actualitzat mentrestant:",
@@ -11188,6 +11104,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
+      ],
+      "servers": [
+        "servidors"
       ]
     },
     "vpn_2024: renew": {
