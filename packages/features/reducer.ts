@@ -1,18 +1,26 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ThunkAction } from 'redux-thunk';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
-import { CacheType, getFetchedAt, getFetchedEphemeral, isNotStale } from '@proton/redux-utilities';
+import { CacheType, defaultExpiry, getFetchedAt, isExpired } from '@proton/redux-utilities';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { HOUR } from '@proton/shared/lib/constants';
+import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
-import unique from '@proton/utils/unique';
 
 import type { Feature, FeatureCode } from './interface';
 
+const defaultCacheType = CacheType.StaleRefetch;
+// Expiry for when we need to refetch
+const expiry = defaultExpiry;
+// Expiry for when we treat the feature as archived
+const archivedExpiry = DAY * 14;
+// Can be any truthy value. It relies on the meta field never being stored
+const fetchedEphemeral = true;
+
 interface FeatureState {
     value: Feature;
-    meta: { fetchedAt: number; fetchedEphemeral: boolean | undefined };
+    meta: { fetchedAt: number; fetchedEphemeral: typeof fetchedEphemeral | undefined };
 }
 
 type FeaturesState = { [key in FeatureCode]?: FeatureState };
@@ -28,6 +36,10 @@ export const selectFeatures = (state: FeaturesReducerState) => state.features;
 export interface ThunkArguments {
     api: Api;
 }
+
+export type FeaturesResponse = {
+    Features: Feature[];
+};
 
 const initialState = {} as FeaturesState;
 
@@ -66,23 +78,29 @@ export const featuresReducer = createSlice({
         'update/rejected': (state, action: PayloadAction<{ code: FeatureCode; feature: FeatureState | undefined }>) => {
             state[action.payload.code] = action.payload.feature;
         },
+        delete: (state, action: PayloadAction<{ codes: FeatureCode[] }>) => {
+            for (const code of action.payload.codes) {
+                delete state[code];
+            }
+        },
     },
 });
 
-export const isValidFeature = (
+const isFeatureExpired = (featureState: FeatureState | undefined, cache?: CacheType): featureState is FeatureState => {
+    return (
+        cache === CacheType.None || featureState?.value === undefined || isExpired(featureState.meta.fetchedAt, expiry)
+    );
+};
+
+const isStaleRefetch = (featureState: FeatureState | undefined, cache?: CacheType): featureState is FeatureState => {
+    return cache === CacheType.StaleRefetch && featureState?.meta.fetchedEphemeral !== fetchedEphemeral;
+};
+
+export const shouldFeatureRefetch = (
     featureState: FeatureState | undefined,
-    cache?: CacheType
+    cache = defaultCacheType
 ): featureState is FeatureState => {
-    if (cache === CacheType.None) {
-        return false;
-    }
-    if (
-        featureState?.value !== undefined &&
-        (cache === CacheType.Stale || isNotStale(featureState.meta.fetchedAt, HOUR * 2))
-    ) {
-        return true;
-    }
-    return false;
+    return isFeatureExpired(featureState, cache) || isStaleRefetch(featureState, cache);
 };
 
 type ThunkResult<Key extends FeatureCode> = { [key in Key]: Feature };
@@ -98,37 +116,53 @@ export const fetchFeatures = <T extends FeatureCode>(
     Promise<ThunkResult<T>>,
     FeaturesReducerState,
     ThunkArguments,
-    ReturnType<(typeof featuresReducer.actions)['fetch/fulfilled']>
+    | ReturnType<(typeof featuresReducer.actions)['fetch/fulfilled']>
+    | ReturnType<(typeof featuresReducer.actions)['delete']>
 > => {
+    const cache = options?.cache ?? defaultCacheType;
+
     return async (dispatch, getState, extraArgument) => {
-        const featuresState = selectFeatures(getState());
+        let featuresState = selectFeatures(getState());
+
+        const archivedFeatureCodes = Object.entries(featuresState).reduce<FeatureCode[]>((acc, [key, value]) => {
+            if (isExpired(value.meta.fetchedAt, archivedExpiry)) {
+                acc.push(key as FeatureCode);
+            }
+            return acc;
+        }, []);
+        if (archivedFeatureCodes.length) {
+            dispatch(featuresReducer.actions.delete({ codes: archivedFeatureCodes }));
+            featuresState = selectFeatures(getState());
+        }
 
         const codesToFetch = codes.filter((code) => {
             if (codePromiseCache[code] !== undefined) {
                 return false;
             }
-            return !isValidFeature(featuresState[code], options?.cache);
+            return shouldFeatureRefetch(featuresState[code], cache);
         });
 
         if (codesToFetch.length) {
-            const promise = getSilentApi(extraArgument.api)<{
-                Features: Feature[];
-            }>(getFeatures(codesToFetch)).then(({ Features }) => {
-                const fetchedAt = getFetchedAt();
-                const fetchedEphemeral = getFetchedEphemeral();
-                const result = Features.reduce<FeaturesState>(
-                    (acc, Feature) => {
-                        acc[Feature.Code as FeatureCode] = { value: Feature, meta: { fetchedAt, fetchedEphemeral } };
-                        return acc;
-                    },
-                    codesToFetch.reduce<FeaturesState>((acc, code) => {
-                        acc[code] = { value: defaultFeature, meta: { fetchedAt, fetchedEphemeral } };
-                        return acc;
-                    }, {})
-                );
-                dispatch(featuresReducer.actions['fetch/fulfilled']({ codes: codesToFetch, features: result }));
-                return result;
-            });
+            const promise = getSilentApi(extraArgument.api)<FeaturesResponse>(getFeatures(codesToFetch)).then(
+                ({ Features }) => {
+                    const fetchedAt = getFetchedAt();
+                    const result = Features.reduce<FeaturesState>(
+                        (acc, Feature) => {
+                            acc[Feature.Code as FeatureCode] = {
+                                value: Feature,
+                                meta: { fetchedAt, fetchedEphemeral },
+                            };
+                            return acc;
+                        },
+                        codesToFetch.reduce<FeaturesState>((acc, code) => {
+                            acc[code] = { value: defaultFeature, meta: { fetchedAt, fetchedEphemeral } };
+                            return acc;
+                        }, {})
+                    );
+                    dispatch(featuresReducer.actions['fetch/fulfilled']({ codes: codesToFetch, features: result }));
+                    return result;
+                }
+            );
 
             codesToFetch.forEach((code) => {
                 codePromiseCache[code] = promise;
@@ -141,15 +175,23 @@ export const fetchFeatures = <T extends FeatureCode>(
             });
         }
 
-        const promises = unique(codes.map((code) => codePromiseCache[code]).filter(Boolean));
-        if (promises.length) {
+        const promises = codes.reduce((acc, code) => {
+            const promise = codePromiseCache[code];
+            // Only wait for the promise if the current value can not be used
+            if (promise && isFeatureExpired(featuresState[code], options?.cache)) {
+                acc.add(promise);
+            }
+            return acc;
+        }, new Set<Promise<void>>());
+
+        if (promises.size) {
             await Promise.all(promises);
+            featuresState = selectFeatures(getState());
         }
 
-        const latestFeaturesState = selectFeatures(getState());
         return Object.fromEntries(
             codes.map((code) => {
-                return [code, latestFeaturesState[code]?.value || featuresState[code]?.value || defaultFeature];
+                return [code, featuresState[code]?.value || defaultFeature];
             })
         ) as ThunkResult<T>;
     };
@@ -183,7 +225,7 @@ export const updateFeature = (
                     code,
                     feature: {
                         value: Feature,
-                        meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
+                        meta: { fetchedAt: getFetchedAt(), fetchedEphemeral },
                     },
                 })
             );
