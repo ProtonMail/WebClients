@@ -1,10 +1,21 @@
 {
     "name": "@proton/features",
     "description": "Feature toggles",
+    "scripts": {
+        "check-types": "tsc",
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci"
+    },
     "dependencies": {
         "@proton/redux-shared-store": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
         "@reduxjs/toolkit": "^2.5.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "ts-jest": "^29.2.5",
+        "typescript": "^5.7.2"
     }
 }
