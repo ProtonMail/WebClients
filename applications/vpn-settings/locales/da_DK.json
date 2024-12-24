@@ -843,23 +843,6 @@
         "Dette vil afbryde forbindelsen til alle routere og klienter, der bruger dette certifikat."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Surf privat på nettet og bloker reklamer"
-      ],
-      "Keep your schedule private": [
-        "Hold dit skema privat"
-      ],
-      "Protect your passwords and identity": [
-        "Beskyt dine adgangskoder og identitet"
-      ],
-      "Safeguard your files and photos": [
-        "Pas på dine filer og fotos"
-      ],
-      "Secure your communications": [
-        "Beskyt din kommunikation"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
@@ -2665,9 +2648,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
-      "Please upload an xml file": [
-        "Upload en xml-fil"
-      ],
       "Please upload only 1 file": [
         "Upload kun 1 fil"
       ],
@@ -3768,9 +3748,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiér og indsæt denne URL i ACS-URL-feltet (Assertion Consumer Service) hos din identitetsudbyder"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiér og indsæt denne URL i feltet Entity ID hos din identitetsudbyder"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiér den foreslåede adgangskode til udklipsholderen"
@@ -5651,9 +5628,6 @@
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
       ],
-      "Single sign-on entity ID": [
-        "Single sign-on enheds-ID"
-      ],
       "Single sign-on URL": [
         "Single sign-on URL"
       ],
@@ -7365,85 +7339,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Behold dette abonnement"
-      ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
-      ],
-      "Upgrade my plan": [
-        "Opgradér mit abonnement"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Lad os snakke"
-      ],
-      "Limited time offer": [
-        "Tidsbegrænset tilbud"
-      ],
-      "Recommended": [
-        "Anbefalet"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pr. måned"
-      ],
-      "/month /user": [
-        "/måned /bruger"
-      ],
-      "/month /user, billed annually": [
-        "/måned /bruger, faktureres årligt"
-      ],
-      "/month /user, billed biennially": [
-        "/måned /bruger, faktureres hvert andet år"
-      ],
-      "Creating your account": [
-        "Opretter din konto"
-      ],
-      "Current plan": [
-        "Nuværende abonnent"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Indtast et visnings navn for **${ username }**. Dette er, hvad dine brugere vil se, når du ændrer deres tilladelser eller dele data med dem."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses VPN-tjeneste!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
-      ],
-      "Free forever": [
-        "Gratis for evigt"
-      ],
-      "Get in touch with our sales team": [
-        "Kontakt vores salgsteam"
-      ],
-      "Includes:": [
-        "Inkluderer:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Starter ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "pr. måned"
-      ],
-      "per month, billed annually": [
-        "pr. måned, faktureres årligt"
-      ],
-      "per month, billed every month": [
-        "pr. måned, faktureres hver måned"
-      ],
-      "per month, billed every two years": [
-        "pr. måned, faktureres hver andet år"
-      ],
-      "Preparing your Recovery Kit": [
-        "Forbereder dit gendannelseskit"
-      ],
       "Secure vault and link sharing": [
         "Sikker boks- og linkdeling"
       ],
@@ -7457,23 +7357,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Sikker deling af boks (${ n } vault) og deling af link",
         "Sikker deling af bokse (${ n } vault) og deling af links"
-      ],
-      "Setting up your organization": [
-        "Konfigurerer din organisation"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Logger ind på ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Opdaterer din konto"
-      ],
-      "Verifying your payment": [
-        "Verificerer din betaling"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ét nemt abonnement"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10281,9 +10164,6 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiér og indsæt denne URL i ACS-URL-feltet (Assertion Consumer Service) hos din identitetsudbyder"
-      ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopiér og indsæt denne URL i feltet Entity ID hos din identitetsudbyder"
       ],
       "Device information such as operating system": [
         "Enhedsoplysninger, som f.eks. operativsystem"

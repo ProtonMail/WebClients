@@ -864,23 +864,6 @@
         "Tämä katkaisee kaikkien tätä varmennettä käyttävien reitittimien ja asiakaspäätteiden yhteydet."
       ]
     },
-    "app-switcher": {
-      "Browse the web privately and block ads": [
-        "Selaa verkkoa yksityisesti ja estä mainoksia"
-      ],
-      "Keep your schedule private": [
-        "Pidä aikataulusi yksityisenä"
-      ],
-      "Protect your passwords and identity": [
-        "Suojaa salasanasi ja identiteettisi"
-      ],
-      "Safeguard your files and photos": [
-        "Turvaa tietostosi ja valokuvasi"
-      ],
-      "Secure your communications": [
-        "Suojaa viestintäsi"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan viestejäsi."
@@ -2699,9 +2682,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
       ],
-      "Please enter a valid entity ID URL": [
-        "Syötä kelvollinen entiteetti-ID-URL"
-      ],
       "Please generate keys before you try to change your password": [
         "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
       ],
@@ -2722,9 +2702,6 @@
       ],
       "Please upload a square logo": [
         "Lähetä neliön muotoinen logo"
-      ],
-      "Please upload an xml file": [
-        "Lähetä XML-tiedosto"
       ],
       "Please upload only 1 file": [
         "Lähetä vain 1 tiedosto"
@@ -3855,9 +3832,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
-      ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
       ],
@@ -4031,9 +4005,6 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Syötä osoitteeseen ${ email } lähetetty koodi. Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
-      ],
-      "Enter the entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Syötä **eduGAIN** organisaation entiteetti-ID verkkotunnukselle **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Palauta hallintaoikeudet syöttämällä organisaation salasana. ${ learnMore }"
@@ -4225,10 +4196,10 @@
         "Palvelimen maan vaihtaminen kestää 10 päivää, joten varmista, että valintasi on oikein."
       ],
       "Item autofilled in ${ vaultLink }": [
-        "Holvin ${ vaultLink } kohde automaattitäytettiin"
+        "Kohde automaattitäytettiin holvista ${ vaultLink }"
       ],
       "Item autofilled in vault": [
-        "Holvin kohde automaattitäytettiin"
+        "Kohde automaattitäytettiin holvista"
       ],
       "Item created in ${ vaultLink }": [
         "Kohde luotiin holviin ${ vaultLink }"
@@ -4909,7 +4880,7 @@
         "Luo tilejä tuomalla täydellinen CSV-tiedosto"
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
-        "Lisää organisaatiosi logo, jotta voit vahvistaa brändisi identiteettiä ja tarjota käyttäjillesi mukautetun käyttökokemuksen."
+        "Lisää organisaatiosi logo, vahvistaaksesi brändi-identiteettiäsi ja tarjotaksesi käyttäjillesi mukautetun käyttökokemuksen."
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä palautustapaa käyttämällä."
@@ -5825,9 +5796,6 @@
       "Show ${ n } administrator": [
         "Näytä ${ n } ylläpitäjä",
         "Näytä ${ n } ylläpitäjää"
-      ],
-      "Single sign-on entity ID": [
-        "Kertakirjautumisen entiteetti-ID"
       ],
       "Single sign-on URL": [
         "Kertakirjautumisen URL-osoite"
@@ -6890,7 +6858,7 @@
         "Vättämätön suojaus ja turvallinen yhteiskäyttö rajattomalle määrälle käyttäjiä."
       ],
       "For next-level password management and identity protection.": [
-        "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
+        "Edistyneempään salasanojen hallintaan ja identiteetin suojaukseen."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Jos poistat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos luot uuden tilin."
@@ -7554,22 +7522,22 @@
     },
     "orgidentity": {
       "${ verify } your email address ${ email } to set organization identity.": [
-        "${ verify } sähköpostiosoitteesi ${ email } asettaaksesi organisaation identiteetti"
+        "Aseta organisaatioidentiteetti ${ verify } sähköpostiosoitteesi ${ email }."
       ],
       "Current organization identity": [
-        "Nykyinen organisaation identiteetti"
+        "Nykyinen organisaatioidentiteetti"
       ],
       "Edit organization identity": [
-        "Muokkaa organisaation identiteettiä"
+        "Muokkaa organisaatioidentiteettiä"
       ],
       "New organization identity": [
-        "Uusi organisaation identiteetti"
+        "Uusi organisaatioidentiteetti"
       ],
       "Organization identity": [
-        "Organisaation identiteetti"
+        "Organisaatioidentiteetti"
       ],
       "Organization identity updated": [
-        "Organisaation identiteettiä muutettiin"
+        "Organisaatioidentiteettiä muutettiin"
       ],
       "Verify": [
         "Vahvista"
@@ -7590,85 +7558,11 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Keep this plan": [
-        "Pidä tämä tilaus"
-      ],
       "Start using ${ appName }": [
         "Aloita ${ appName } -sovelluksen käyttö"
-      ],
-      "Upgrade my plan": [
-        "Päivitä tilaukseni"
-      ]
-    },
-    "pass_signup_2023: Header": {
-      "Let's talk": [
-        "Keskustellaan"
-      ],
-      "Limited time offer": [
-        "Vain rajoitetun ajan"
-      ],
-      "Recommended": [
-        "Suositus"
       ]
     },
     "pass_signup_2023: Info": {
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } kuukaudessa"
-      ],
-      "/month /user": [
-        "/kuukausi /käyttäjä"
-      ],
-      "/month /user, billed annually": [
-        "/kuukausi /käyttäjä, laskutetaan vuosittain"
-      ],
-      "/month /user, billed biennially": [
-        "/kuukausi /käyttäjä, laskutetaan joka toinen vuosi"
-      ],
-      "Creating your account": [
-        "Tiliäsi luodaan"
-      ],
-      "Current plan": [
-        "Nykyinen tilaus"
-      ],
-      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Anna käyttäjälle **${ username }** näyttönimi. Käyttäjät näkevät sen, kun muutat heidän oikeuksiaan tai jaat tietoja heidän kanssaan."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-VPN:n!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
-      ],
-      "Free forever": [
-        "Pysyvästi ilmainen"
-      ],
-      "Get in touch with our sales team": [
-        "Ota yhteyttä myyntiimme"
-      ],
-      "Includes:": [
-        "Sisältää:"
-      ],
-      "Launching ${ PASS_APP_NAME }": [
-        "Käynnistetään ${ PASS_APP_NAME }"
-      ],
-      "per month": [
-        "kuukaudessa"
-      ],
-      "per month, billed annually": [
-        "kuukaudessa, laskutetaan vuosittain"
-      ],
-      "per month, billed every month": [
-        "kuukaudessa, laskutetaan kuukausittain"
-      ],
-      "per month, billed every two years": [
-        "kuukaudessa, laskutetaan kahden vuoden välein"
-      ],
-      "Preparing your Recovery Kit": [
-        "Palautuspakettiasi valmistellaan"
-      ],
       "Secure vault and link sharing": [
         "Holvien ja linkkien turvallinen jakaminen"
       ],
@@ -7682,23 +7576,6 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Holvien (${ n } holvi) ja linkkien turvallinen jakaminen",
         "Holvien (${ n } holvia) ja linkkien turvallinen jakaminen"
-      ],
-      "Setting up your organization": [
-        "Määritetään organisaatiotasi"
-      ],
-      "Signing in to ${ PASS_APP_NAME }": [
-        "Kirjaudutaan ${ PASS_APP_NAME }"
-      ],
-      "Updating your account": [
-        "Tiliäsi päivitetään"
-      ],
-      "Verifying your payment": [
-        "Maksuasi vahvistetaan"
-      ]
-    },
-    "pass_signup_2023: Title": {
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Kaikki ${ BRAND_NAME }in Plus-palvelut.${ br }Yksi helppo tilaus."
       ]
     },
     "pass_signup_2024: Info": {
@@ -7812,7 +7689,7 @@
         "Palauta hallintaoikeudet tietojen palautustavalla, olemalla yhteydessä toiseen ylläpitäjään tai nollaamalla organisaatioavain."
       ],
       "We couldn't verify the authenticity of this identity.": [
-        "Emme voineet vahvistaa tämän identiteetin aitoutta."
+        "Emme voineet vahvistaa identiteetin aitoutta."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakastukeen."
@@ -8205,7 +8082,7 @@
         "Jokin meni pieleen"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
-        "Sähköpostiosoite **${ email }** on jo olemassa ${ BRAND_NAME }-käyttäjänä. Syötä käyttäjän sähköpostiosoite identiteetintarjoajastasi."
+        "Sähköpostiosoite **${ email }** on jo olemassa ${ BRAND_NAME }-käyttäjänä. Syötä käyttäjän sähköpostiosoite identiteetintarjoajaltasi."
       ]
     },
     "saml: Info": {
@@ -9014,7 +8891,7 @@
         "Liity organisaatioon ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
-        "Tallenna se turvalliseen paikkaan, jotta pääset takaisin tilillesi, vaikka kadottaisit identiteetintarjoajasi kirjautumistiedot."
+        "Tallenna se turvalliseen paikkaan, jotta pääset takaisin tilillesi, vaikka kadottaisit identiteetintarjoajasi tunnistetiedot."
       ],
       "New backup password": [
         "Uusi varasalasana"
@@ -10782,9 +10659,6 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
       ],
-      "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään."
-      ],
       "Device information such as operating system": [
         "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"
       ],
@@ -11174,6 +11048,9 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",
         "${ numberOfServers } ${ numberOfCountries } maassa"
+      ],
+      "servers": [
+        "palvelinta"
       ]
     },
     "vpn_2024: renew": {
