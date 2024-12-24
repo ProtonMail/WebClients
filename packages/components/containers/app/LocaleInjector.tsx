@@ -1,0 +1,41 @@
+import { useEffect } from 'react';
+
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import busy, { domIsBusy } from '@proton/shared/lib/busy';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
+import { locales } from '@proton/shared/lib/i18n/locales';
+import noop from '@proton/utils/noop';
+
+interface Props {
+    onRerender?: () => void;
+}
+
+const LocaleInjector = ({ onRerender }: Props) => {
+    const [userSettings] = useUserSettings();
+    const locale = userSettings?.Locale;
+
+    useEffect(() => {
+        // When busy, the locale update is treated as dangerous and is ignored.
+        // This because it's uncertain that applications can properly handle force re-renders while actions are taking place.
+        if (domIsBusy() || busy.getIsBusy()) {
+            return;
+        }
+
+        // We also ignore electron mail since there's another system to deal with locale updates
+        if (isElectronMail) {
+            return;
+        }
+
+        (async () => {
+            const { update } = await loadLocales({ locale, locales, userSettings });
+            if (update) {
+                onRerender?.();
+            }
+        })().catch(noop);
+    }, [locale]);
+
+    return null;
+};
+
+export default LocaleInjector;

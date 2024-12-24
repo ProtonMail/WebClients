@@ -5,8 +5,8 @@ import type { TtagLocaleMap } from '../interfaces/Locale';
 import type { Options } from './dateFnLocale';
 import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
 import dateFnLocales, { getDateFnLocale } from './dateFnLocales';
-import { getClosestLocaleMatch, getLangAttribute, getLanguageCode } from './helper';
-import { setDateLocales, setLocales } from './index';
+import { getBrowserLocale, getClosestLocaleCode, getLangAttribute, getLanguageCode } from './helper';
+import { browserLocaleCode, dateLocaleCode, localeCode, setDateLocales, setLocales } from './index';
 
 export const willLoadLocale = (localeCode: string) => {
     return localeCode !== DEFAULT_LOCALE;
@@ -36,8 +36,8 @@ export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => 
 };
 
 export const loadDateLocale = async (localeCode: string, browserLocaleCode?: string, options?: Options) => {
-    const closestLocaleCode = getClosestLocaleMatch(localeCode, dateFnLocales) || DEFAULT_LOCALE;
-    const closestBrowserLocaleCode = getClosestLocaleMatch(browserLocaleCode, dateFnLocales) || DEFAULT_LOCALE;
+    const closestLocaleCode = getClosestLocaleCode(localeCode, dateFnLocales);
+    const closestBrowserLocaleCode = getClosestLocaleCode(browserLocaleCode, dateFnLocales);
     const [dateFnLocale, browserDateFnLocale] = await Promise.all([
         getDateFnLocale(closestLocaleCode),
         getDateFnLocale(closestBrowserLocaleCode),
@@ -54,4 +54,33 @@ export const loadDateLocale = async (localeCode: string, browserLocaleCode?: str
     });
 
     return updatedDateFnLocale;
+};
+
+export const loadLocales = async ({
+    locale: newLocale,
+    browserLocaleCode: newBrowserLocaleCode = getBrowserLocale(),
+    locales,
+    userSettings,
+}: {
+    locale: string;
+    browserLocaleCode?: string;
+    locales: TtagLocaleMap;
+    userSettings: Options | undefined;
+}) => {
+    const promises: Promise<any>[] = [];
+
+    const closestLocaleCode = getClosestLocaleCode(newLocale, locales);
+    if (localeCode !== closestLocaleCode) {
+        promises.push(loadLocale(closestLocaleCode, locales));
+    }
+
+    const closestDateFnLocaleCode = getClosestLocaleCode(closestLocaleCode, dateFnLocales);
+    const closestBrowserLocaleCode = getClosestLocaleCode(newBrowserLocaleCode, dateFnLocales);
+    if (dateLocaleCode !== closestDateFnLocaleCode || browserLocaleCode !== closestBrowserLocaleCode) {
+        promises.push(loadDateLocale(closestLocaleCode, closestBrowserLocaleCode, userSettings));
+    }
+
+    await Promise.all(promises);
+
+    return { update: promises.length >= 1, localeCode: closestLocaleCode };
 };
