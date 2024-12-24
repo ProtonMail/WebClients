@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
@@ -7,8 +7,7 @@ import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
 import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSettingsTab';
 import { c } from 'ttag';
 
-import { Button, NotificationDot } from '@proton/atoms';
-import { ThemeColor } from '@proton/colors';
+import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
 import {
     Collapsible,
@@ -46,12 +45,10 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
-import { SpotlightMessage } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
@@ -60,7 +57,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 };
 
 export const MenuDropdown: FC = () => {
-    const { onLink, spotlight } = usePassCore();
+    const { onLink } = usePassCore();
     const { ready, expanded } = usePopupContext();
     const { lock, logout } = useExtensionClient();
     const { API_URL } = usePassConfig();
@@ -73,21 +70,12 @@ export const MenuDropdown: FC = () => {
     const user = useSelector(selectUser);
     const canLock = useSelector(selectLockEnabled);
 
-    const [notifyMonitor, setNotifyMonitor] = useState(false);
-    const notify = notifyMonitor;
-
     const vaultActions = useVaultActions();
     const openSettings = useOpenSettingsTab();
     const expandPopup = useExpandPopup();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = withTap(close);
-
-    useEffect(() => {
-        (async () => spotlight.check(SpotlightMessage.PASS_MONITOR))()
-            .then((show) => setNotifyMonitor(Boolean(show)))
-            .catch(noop);
-    }, []);
 
     const menu = useMenuItems({
         onAction: close,
@@ -145,7 +133,6 @@ export const MenuDropdown: FC = () => {
                             icon={matchTrash ? 'pass-trash' : vault?.content.display.icon}
                         />
                     </Button>
-                    {notify && <NotificationDot className="absolute h-2 w-2 top-0 right-0" color={ThemeColor.Danger} />}
                 </div>
 
                 <Dropdown
@@ -232,20 +219,9 @@ export const MenuDropdown: FC = () => {
 
                         <DropdownMenuButton
                             onClick={withClose(() => {
-                                void spotlight.acknowledge(SpotlightMessage.PASS_MONITOR);
                                 onLink(getPassWebUrl(API_URL, 'monitor'));
                             })}
-                            label={
-                                <>
-                                    {c('Label').t`${PASS_SHORT_APP_NAME} monitor`}
-                                    {notifyMonitor && (
-                                        <NotificationDot
-                                            className="ml-2 h-2 w-2 self-center"
-                                            color={ThemeColor.Danger}
-                                        />
-                                    )}
-                                </>
-                            }
+                            label={c('Label').t`${PASS_SHORT_APP_NAME} monitor`}
                             icon={'pass-shield-warning'}
                             className="pt-1.5 pb-1.5"
                         />
