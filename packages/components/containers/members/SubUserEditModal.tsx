@@ -133,7 +133,6 @@ const SubUserEditModal = ({
 }: Props) => {
     const [organization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
-    const unprivatizeMemberEnabled = useFlag('UnprivatizeMember');
     const lumoAddonAvailable = useFlag('LumoAddonAvailable');
     const dispatch = useDispatch();
     const storageSizeUnit = sizeUnits.GB;
@@ -180,21 +179,16 @@ const SubUserEditModal = ({
 
     const isSelf = Boolean(member.Self);
 
-    let canTogglePrivate;
-    if (unprivatizeMemberEnabled) {
-        const organizationHasKeys = Boolean(organization?.HasKeys);
-        const isSelfAndPrivate = Boolean(isSelf && member.Private === MEMBER_PRIVATE.UNREADABLE);
+    const organizationHasKeys = Boolean(organization?.HasKeys);
+    const isSelfAndPrivate = Boolean(isSelf && member.Private === MEMBER_PRIVATE.UNREADABLE);
 
-        canTogglePrivate =
-            // Organization must be keyful, so not family-style organization
-            organizationHasKeys &&
-            // Not yourself, to avoid requesting unprivatization for yourself
-            !isSelfAndPrivate &&
-            // The user does not have an ongoing unprivatization request or an admin request is ongoing (to be able to remove it)
-            (!unprivatization.exists || unprivatization.mode === MemberUnprivatizationMode.AdminAccess);
-    } else {
-        canTogglePrivate = member.Private === MEMBER_PRIVATE.READABLE && !unprivatization.exists;
-    }
+    const canTogglePrivate =
+        // Organization must be keyful, so not family-style organization
+        organizationHasKeys &&
+        // Not yourself, to avoid requesting unprivatization for yourself
+        !isSelfAndPrivate &&
+        // The user does not have an ongoing unprivatization request or an admin request is ongoing (to be able to remove it)
+        (!unprivatization.exists || unprivatization.mode === MemberUnprivatizationMode.AdminAccess);
 
     const canPromoteAdmin =
         !isSelf &&
