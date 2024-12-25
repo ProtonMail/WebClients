@@ -9,5 +9,5 @@ module.exports = {
         'no-console': ['error', { allow: ['warn', 'error'] }],
         curly: ['error', 'multi-line'],
     },
-    ignorePatterns: ['.eslintrc.js', 'fathom/'],
+    ignorePatterns: ['.eslintrc.js', 'fathom/', 'asm/'],
 };
