@@ -17745,7 +17745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:4.1.0":
+"ci-info@npm:4.1.0, ci-info@npm:^4.1.0":
   version: 4.1.0
   resolution: "ci-info@npm:4.1.0"
   checksum: 10c0/0f969ce32a974c542bc8abe4454b220d9d9323bb9415054c92a900faa5fdda0bb222eda68c490127c1d78503510d46b6aca614ecaba5a60515b8ac7e170119e6
@@ -26966,6 +26966,17 @@ __metadata:
   bin:
     is-ci: bin.js
   checksum: 10c0/0e81caa62f4520d4088a5bef6d6337d773828a88610346c4b1119fb50c842587ed8bef1e5d9a656835a599e7209405b5761ddf2339668f2d0f4e889a92fe6051
+  languageName: node
+  linkType: hard
+
+"is-ci@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "is-ci@npm:4.1.0"
+  dependencies:
+    ci-info: "npm:^4.1.0"
+  bin:
+    is-ci: bin.js
+  checksum: 10c0/c58e733d21f8d7e6ba3d70686124004576b369b4a02a37c4783159ed5a668b3a9e4b359efa955e4a675bd021eca7305010c45a1e646bf77cce14b08808eda88d
   languageName: node
   linkType: hard
 
@@ -38943,7 +38954,7 @@ __metadata:
     "@types/jest-when": "npm:^3.5.5"
     danger: "npm:^12.3.3"
     husky: "npm:^9.1.7"
-    is-ci: "npm:^3.0.1"
+    is-ci: "npm:^4.1.0"
     lint-staged: "npm:^15.2.11"
     nyc: "npm:^17.1.0"
     prettier: "npm:^3.4.2"
