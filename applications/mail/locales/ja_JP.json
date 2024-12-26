@@ -9618,14 +9618,6 @@
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }でMail Plusを入手"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -9638,6 +9630,14 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }でMail Plusを入手"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
       ]
     },
     "new_plans: tooltip": {
@@ -9657,7 +9657,7 @@
         "デスクトップから ${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } にアクセスします"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
+        "どこからでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセス"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "アドレスには完全な送受信機能があります。 ユーザーには複数のアドレスを割り当てることができます。 ただし、1 つのアドレスを複数のユーザーに割り当てることはできません。"
@@ -9735,7 +9735,7 @@
         "フォルダーと同様に、保管庫はアイテムを整理するのに便利な方法です"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "企業のリソースを一般インターネットからロックダウンし、プライベートゲートウェイ経由でのみアクセスできるようにする。"
+        "公共インターネットから会社のリソースをロックし、プライベートゲートウェイ経由でのみアクセスできるようにする"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "プランのカスタマイズなど、サブスクリプションを管理することができます。お支払い方法は、クレジットカード、PayPal、暗号資産、および電信送金に対応しています。"
@@ -9783,7 +9783,7 @@
         "最高レベルのアカウントセキュリティ保護と専門家サポートを提供します。"
       ],
       "Quickly set up out-of-office messages": [
-        "不在時のメッセージをすばやく設定する"
+        "不在時メッセージのかんたん設定"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "メール、カレンダー、連絡先を任意のプロバイダーからすばやく転送する"
@@ -9834,7 +9834,7 @@
         "ストレージ容量は、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }、${ PASS_APP_NAME } のユーザー間で共有されます。"
       ],
       "Support for file-sharing protocols like BitTorrent": [
-        "BitTorrent などのファイル共有プロトコルに対応します"
+        "BitTorrent などのファイル共有プロトコルに対応"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
         "ビジネスのロゴをアップロードして、${ BRAND_NAME }のウェブアプリでのチーム体験をカスタマイズします"
@@ -9843,7 +9843,7 @@
         "独自ドメインのメールアドレス (例: you@yourname.com) を使う"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "当社は、オンラインでの行動に関するセッション使用ログを保持せず、プライバシーを侵害する可能性のあるメタデータも記録しません。"
+        "私たちは、オンラインでの行動に関するセッション使用ログを保持せず、プライバシーを侵害する可能性のあるメタデータも記録しません"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "当社は、HIPAA/HITECH 規制の対象となるお客様が保護対象医療情報 (PHI) を保護できるよう支援することに尽力しています。 署名済み BAA は、${ BRAND_NAME } for Business のすべての顧客が利用できます。"

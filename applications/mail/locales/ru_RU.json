@@ -1933,6 +1933,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Изменить настройки адреса электронной почты"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3594,6 +3600,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
       ],
+      "Also included": [
+        "Также включены"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
       ],
@@ -3623,6 +3632,9 @@
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Для неограниченного доступа к помощнику по написанию и другим функциям обновите до ${ BRAND_NAME } Duo."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -6155,6 +6167,9 @@
       "Add image URL": [
         "Добавить ссылку на изображение"
       ],
+      "Address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
@@ -6430,6 +6445,9 @@
       ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "default email address": [
+        "адрес эл. почты по умолчанию"
       ],
       "Default email application": [
         "Приложение электронной почты по умолчанию"
@@ -7097,6 +7115,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Registering your subscription...": [
+        "Регистрация вашей подписки..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудьте обновить это в менеджере паролей или где бы вы ни хранили учетную запись и регистрационные данные."
       ],
@@ -7201,6 +7222,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
+      ],
+      "Setting up your new address...": [
+        "Настройка нового адреса..."
       ],
       "Shorten selection": [
         "Свернуть выбранное"
@@ -9419,6 +9443,9 @@
       "Get ${ planTitle }": [
         "Перейти на тариф ${ planTitle }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
       ],
@@ -9593,6 +9620,9 @@
       ],
       "10 email addresses/aliases": [
         "10 адресов электронной почты или псевдонимов"
+      ],
+      "10 more premium features": [
+        "и еще 10 платных функций"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -10077,14 +10107,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Оформите Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -10097,6 +10119,14 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Оформите Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
       ]
     },
     "new_plans: tooltip": {
@@ -11838,6 +11868,9 @@
       "Schedule send": [
         "Отправка по расписанию"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Теперь это ваш адрес по умолчанию. Откройте раскрывающийся список для отправки с другого адреса. "
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Включите ${ DARK_WEB_MONITORING_NAME }, чтобы получать уведомления об утечке ваших данных из сторонних служб."
       ],
@@ -11849,6 +11882,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Теперь вы можете запланировать отправку сообщений на более позднее время"
+      ],
+      "Your pm.me email is active": [
+        "Ваша почта pm.me активна"
       ]
     },
     "sso": {
@@ -13723,6 +13759,9 @@
       "Unsubscribe request sent": [
         "Отправлен запрос на отмену подписки"
       ],
+      "Upgrade complete!": [
+        "Улучшение выполнено!"
+      ],
       "Verification error": [
         "Ошибка подтверждения"
       ],
@@ -13773,6 +13812,9 @@
       ],
       "Your free trial has ended": [
         "Ваш бесплатный пробный период истек"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш укороченный адрес готов"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14052,6 +14094,9 @@
       ],
       "Missing alias suffix": [
         "Отсутствует суффикс псевдонима"
+      ],
+      "Name is required": [
+        "Требуется имя"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"
