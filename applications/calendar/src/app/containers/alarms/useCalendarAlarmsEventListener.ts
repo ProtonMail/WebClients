@@ -3,10 +3,7 @@ import { useEffect } from 'react';
 
 import { useCalendarModelEventManager, useEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type {
-    CalendarAlarmEventManager,
-    CalendarEventManager,
-} from '@proton/shared/lib/interfaces/calendar/EventManager';
+import type { CalendarEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
 import type { CalendarsAlarmsCache } from './CacheInterface';
 
@@ -45,91 +42,88 @@ export const useCalendarsAlarmsEventListeners = (
 
     // subscribe to calendar event loop
     useEffect(() => {
-        return calendarSubscribe(
-            calendarIDs,
-            ({ CalendarAlarms = [] }: { CalendarAlarms?: CalendarAlarmEventManager[] }) => {
-                if (!cacheRef.current) {
-                    return;
+        return calendarSubscribe(calendarIDs, ({ CalendarAlarms = [] }) => {
+            if (!cacheRef.current) {
+                return;
+            }
+
+            let actions = 0;
+
+            const { calendarsCache, end } = cacheRef.current;
+            const now = new Date();
+
+            const calendarAlarmChangesToTreat = CalendarAlarms.filter((CalendarAlarmChange) => {
+                // If it's delete we'll fallback to search later
+                if (CalendarAlarmChange.Action === EVENT_ACTIONS.DELETE) {
+                    return true;
                 }
 
-                let actions = 0;
+                const { Occurrence, CalendarID } = CalendarAlarmChange.Alarm;
 
-                const { calendarsCache, end } = cacheRef.current;
-                const now = new Date();
+                const hasCalendarInCache = !!calendarsCache[CalendarID];
+                const occurrenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
+                const isAlarmInRange = Occurrence !== -1 && occurrenceInMs >= +now && occurrenceInMs <= +end;
+                return hasCalendarInCache && isAlarmInRange;
+            });
 
-                const calendarAlarmChangesToTreat = CalendarAlarms.filter((CalendarAlarmChange) => {
-                    // If it's delete we'll fallback to search later
-                    if (CalendarAlarmChange.Action === EVENT_ACTIONS.DELETE) {
-                        return true;
-                    }
+            for (const CalendarAlarmChange of calendarAlarmChangesToTreat) {
+                if (CalendarAlarmChange.Action === EVENT_ACTIONS.DELETE) {
+                    const { ID: AlarmID } = CalendarAlarmChange;
+                    let index = -1;
 
-                    const { Occurrence, CalendarID } = CalendarAlarmChange.Alarm;
-
-                    const hasCalendarInCache = !!calendarsCache[CalendarID];
-                    const occurrenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
-                    const isAlarmInRange = Occurrence !== -1 && occurrenceInMs >= +now && occurrenceInMs <= +end;
-                    return hasCalendarInCache && isAlarmInRange;
-                });
-
-                for (const CalendarAlarmChange of calendarAlarmChangesToTreat) {
-                    if (CalendarAlarmChange.Action === EVENT_ACTIONS.DELETE) {
-                        const { ID: AlarmID } = CalendarAlarmChange;
-                        let index = -1;
-
-                        const calendarID = Object.keys(calendarsCache).find((calendarID) => {
-                            const result = calendarsCache[calendarID]?.result;
-                            if (!result) {
-                                return false;
-                            }
-                            index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
-                            return index !== -1;
-                        });
-
-                        if (calendarID && index >= 0) {
-                            const result = calendarsCache[calendarID]?.result;
-                            if (result) {
-                                result.splice(index, 1);
-                                actions++;
-                            }
+                    const calendarID = Object.keys(calendarsCache).find((calendarID) => {
+                        const result = calendarsCache[calendarID]?.result;
+                        if (!result) {
+                            return false;
                         }
-                    }
+                        index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
+                        return index !== -1;
+                    });
 
-                    if (CalendarAlarmChange.Action === EVENT_ACTIONS.CREATE) {
-                        const {
-                            Alarm,
-                            Alarm: { CalendarID },
-                        } = CalendarAlarmChange;
-
-                        const result = calendarsCache[CalendarID]?.result;
+                    if (calendarID && index >= 0) {
+                        const result = calendarsCache[calendarID]?.result;
                         if (result) {
-                            result.push(Alarm);
+                            result.splice(index, 1);
                             actions++;
                         }
                     }
+                }
 
-                    // This case only happens when the user changes timezone
-                    if (CalendarAlarmChange.Action === EVENT_ACTIONS.UPDATE) {
-                        const {
-                            Alarm,
-                            Alarm: { ID: AlarmID, CalendarID },
-                        } = CalendarAlarmChange;
+                if (CalendarAlarmChange.Action === EVENT_ACTIONS.CREATE) {
+                    const {
+                        Alarm,
+                        Alarm: { CalendarID },
+                    } = CalendarAlarmChange;
 
-                        const result = calendarsCache[CalendarID]?.result;
-                        if (result) {
-                            const index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
-                            if (index >= 0) {
-                                result.splice(index, 1, Alarm);
-                                actions++;
-                            }
-                        }
+                    const result = calendarsCache[CalendarID]?.result;
+                    if (result) {
+                        result.push(Alarm);
+                        actions++;
                     }
                 }
 
-                if (actions) {
-                    cacheRef.current.rerender?.();
+                // This case only happens when the user changes timezone
+                if (CalendarAlarmChange.Action === EVENT_ACTIONS.UPDATE) {
+                    const {
+                        Alarm,
+                        Alarm: { ID: AlarmID, CalendarID },
+                    } = CalendarAlarmChange;
+
+                    const result = calendarsCache[CalendarID]?.result;
+                    if (result) {
+                        const index = result.findIndex(({ ID: otherID }) => otherID === AlarmID);
+                        if (index >= 0) {
+                            result.splice(index, 1, Alarm);
+                            actions++;
+                        }
+                    }
                 }
             }
-        );
+
+            if (actions) {
+                cacheRef.current.rerender?.();
+            }
+        });
     }, [calendarIDs]);
 };
 

@@ -15,7 +15,6 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type {
     CalendarEventManager,
-    CalendarUrlEventManager,
     CalendarUrlEventManagerDelete,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { splitKeys } from '@proton/shared/lib/keys';
@@ -124,21 +123,18 @@ const useCalendarShareUrls = (calendars: VisualCalendar[]) => {
 
     // subscribe to calendar event loop
     useEffect(() => {
-        return calendarSubscribe(
-            calendarIDs,
-            ({ CalendarURL: CalendarURLEvents = [] }: { CalendarURL?: CalendarUrlEventManager[] }) => {
-                CalendarURLEvents.forEach((event) => {
-                    if (getIsCalendarUrlEventManagerDelete(event)) {
-                        handleDeleteLink(event);
-                    }
-                    if (getIsCalendarUrlEventManagerCreate(event) || getIsCalendarUrlEventManagerUpdate(event)) {
-                        // TODO: The code below is prone to race conditions. Namely if a new event manager update
-                        //  comes before this promise is resolved.
-                        void handleAddOrUpdateLink(event.CalendarUrl);
-                    }
-                });
-            }
-        );
+        return calendarSubscribe(calendarIDs, ({ CalendarURL: CalendarURLEvents = [] }) => {
+            CalendarURLEvents.forEach((event) => {
+                if (getIsCalendarUrlEventManagerDelete(event)) {
+                    handleDeleteLink(event);
+                }
+                if (getIsCalendarUrlEventManagerCreate(event) || getIsCalendarUrlEventManagerUpdate(event)) {
+                    // TODO: The code below is prone to race conditions. Namely if a new event manager update
+                    //  comes before this promise is resolved.
+                    void handleAddOrUpdateLink(event.CalendarUrl);
+                }
+            });
+        });
     }, [calendarIDs]);
 
     return {

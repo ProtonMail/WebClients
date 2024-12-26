@@ -17,7 +17,7 @@ const mockApi = (responses) => {
  */
 describe('event manager', () => {
     it('should call more and not finish until it is done', async () => {
-        const api = mockApi([
+        const getEvents = mockApi([
             { EventID: '1', More: 1 },
             { EventID: '2', More: 1 },
             { EventID: '3', More: 1 },
@@ -29,7 +29,7 @@ describe('event manager', () => {
 
         const eventManager = createEventManager({
             eventID: '1',
-            api,
+            getEvents,
             interval: 1000,
         });
         const onSuccess = jasmine.createSpy();
@@ -39,12 +39,12 @@ describe('event manager', () => {
 
         await eventManager.call();
 
-        expect(api.calls.all().length).toEqual(6);
+        expect(getEvents.calls.all().length).toEqual(6);
         expect(onSuccess.calls.all().length).toEqual(6);
 
         await eventManager.call();
 
-        expect(api.calls.all().length, 7);
+        expect(getEvents.calls.all().length, 7);
         expect(onSuccess.calls.all().length, 7);
 
         eventManager.stop();
@@ -52,7 +52,7 @@ describe('event manager', () => {
     });
 
     it('should call getLatestEventID to get the event ID when it is not passed', async () => {
-        const api = mockApi([
+        const getEvents = mockApi([
             { EventID: '2', More: 0 },
             { EventID: '3', More: 0 },
         ]);
@@ -60,7 +60,7 @@ describe('event manager', () => {
 
         const eventManager = createEventManager({
             getLatestEventID,
-            api,
+            getEvents,
             interval: 1000,
         });
         const onSuccess = jasmine.createSpy();
@@ -75,12 +75,12 @@ describe('event manager', () => {
         await eventManager.call();
 
         expect(getLatestEventID.calls.all().length).toEqual(1);
-        expect(api.calls.all().length).toEqual(1);
+        expect(getEvents.calls.all().length).toEqual(1);
 
         await eventManager.call();
 
         expect(getLatestEventID.calls.all().length).toEqual(1);
-        expect(api.calls.all().length).toEqual(2);
+        expect(getEvents.calls.all().length).toEqual(2);
 
         eventManager.stop();
         unsubscribe();
