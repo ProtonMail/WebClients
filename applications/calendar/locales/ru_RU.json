@@ -1264,6 +1264,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Изменить настройки адреса электронной почты"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -2635,17 +2641,15 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
+      ],
+      "Also included": [
+        "Также включены"
       ],
       "Availability unknown": [
         "Доступность неизвестна"
@@ -2670,6 +2674,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -2727,6 +2734,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4579,6 +4591,9 @@
       "Added and removed participants will be notified.": [
         "Добавленные и удаленные участники будут уведомлены."
       ],
+      "Address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
@@ -4752,6 +4767,9 @@
       ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "default email address": [
+        "адрес эл. почты по умолчанию"
       ],
       "Deleting event...": [
         "Удаление события...",
@@ -5119,6 +5137,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Registering your subscription...": [
+        "Регистрация вашей подписки..."
+      ],
       "Removed participants will be notified.": [
         "Удаленные участники будут уведомлены."
       ],
@@ -5148,6 +5169,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
+      ],
+      "Setting up your new address...": [
+        "Настройка нового адреса..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
@@ -6577,6 +6601,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
       ],
@@ -6751,6 +6778,9 @@
       ],
       "10 email addresses/aliases": [
         "10 адресов электронной почты или псевдонимов"
+      ],
+      "10 more premium features": [
+        "и еще 10 платных функций"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -7235,6 +7265,14 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Оформите Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7247,14 +7285,6 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Оформите Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
       ]
     },
     "new_plans: tooltip": {
@@ -10250,6 +10280,9 @@
       "Update recurring event": [
         "Обновить повторяющееся событие"
       ],
+      "Upgrade complete!": [
+        "Улучшение выполнено!"
+      ],
       "Verification failed": [
         "Проверка не удалась"
       ],
@@ -10291,6 +10324,9 @@
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш укороченный адрес готов"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10555,6 +10591,9 @@
       ],
       "Missing alias suffix": [
         "Отсутствует суффикс псевдонима"
+      ],
+      "Name is required": [
+        "Требуется имя"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"
