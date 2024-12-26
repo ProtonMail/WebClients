@@ -12,6 +12,7 @@ import {
   $isTableRowNode,
   $isTableSelection,
   applyTableHandlers,
+  setScrollableTablesActive,
   TableCellNode,
   TableNode,
   TableRowNode,
@@ -56,6 +57,7 @@ import { duplicateRow } from './TableUtils/duplicateRow'
 import { duplicateSelectedColumn } from './TableUtils/duplicateSelectedColumn'
 import { $handleDeleteTableRowCommand } from './TableUtils/handleDeleteTableRowCommand'
 import { $handleDeleteTableColumnCommand } from './TableUtils/handleDeleteTableColumnCommand'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 
 export function TablePlugin({
   hasCellMerge = false,
@@ -68,9 +70,13 @@ export function TablePlugin({
 }): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
-  const isEditable = editor.isEditable()
+  const isEditable = useLexicalEditable()
 
   const [tables, setTables] = useState<TableNode[]>([])
+
+  useEffect(() => {
+    setScrollableTablesActive(editor, true)
+  }, [editor])
 
   useEffect(() => {
     const container = editor.getRootElement()?.parentElement

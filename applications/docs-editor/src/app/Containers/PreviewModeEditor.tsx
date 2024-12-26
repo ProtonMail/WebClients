@@ -13,6 +13,7 @@ import type { EditorState } from 'lexical'
 import { $unwrapAllCommentThreadMarks } from '../Tools/removeCommentThreadMarks'
 import { $rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestions'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { setScrollableTablesActive } from '@lexical/table'
 
 export function PreviewModeEditor({
   clonedEditorState,
@@ -27,7 +28,15 @@ export function PreviewModeEditor({
     <SafeLexicalComposer
       initialConfig={BuildInitialEditorConfig({
         onError: console.error,
-        editorState: clonedEditorState,
+        editorState: (editor) => {
+          /**
+           * Required to add this before the table nodes are created
+           * since the table wrapper is only added if this is enabled
+           * before the `createDOM` method for a table node is run.
+           */
+          setScrollableTablesActive(editor, true)
+          editor.setEditorState(clonedEditorState)
+        },
       })}
       key={Math.random()}
     >
