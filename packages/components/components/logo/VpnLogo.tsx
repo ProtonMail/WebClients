@@ -6,6 +6,7 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import type { LogoProps } from './Logo';
+import { getLogoWidthStyles } from './helpers';
 
 type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 
@@ -27,18 +28,26 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, 
             break;
     }
 
+    const hasIconSize = size && variant === 'glyph-only';
+    // this ensure logo scales properly with text zoom
+    const logoWidthStyles = hasIconSize ? undefined : getLogoWidthStyles(logoWidth);
+
     return (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <svg
+            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlns="http://www.w3.org/2000/svg"
+            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox={`0 0 ${logoWidth} 36`}
             width={logoWidth}
             height="36"
             fill="none"
             role="img"
-            className={clsx('logo', size && variant === 'glyph-only' && `icon-size-${size}`, variant, className)}
+            className={clsx('logo', hasIconSize && `icon-size-${size}`, variant, className)}
             aria-labelledby={`${uid}-title`}
             {...rest}
+            style={{ ...logoWidthStyles, ...rest?.style }}
         >
             {hasTitle && <title id={`${uid}-title`}>{VPN_APP_NAME}</title>}
             {variant === 'glyph-only' && (
