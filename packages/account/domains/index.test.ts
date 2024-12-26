@@ -1,9 +1,9 @@
+import { getServerEvent } from '@proton/account/test/getServerEvent';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS, PRODUCT_BIT, USER_ROLES } from '@proton/shared/lib/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { Domain, User, UserModel } from '@proton/shared/lib/interfaces';
 
-import { serverEvent } from '../eventLoop';
 import { getModelState } from '../test';
 import { userReducer } from '../user';
 import { domainsReducer, domainsThunk, selectDomains } from './index';
@@ -49,7 +49,7 @@ describe('domains', () => {
         await store.dispatch(domainsThunk());
         expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }], 1));
         store.dispatch(
-            serverEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as any, Action: EVENT_ACTIONS.CREATE }] })
+            getServerEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as Domain, Action: EVENT_ACTIONS.CREATE }] })
         );
         expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }, { ID: '2' }], 1));
     });
@@ -64,10 +64,10 @@ describe('domains', () => {
         await store.dispatch(domainsThunk());
         expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }], 1));
         store.dispatch(
-            serverEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as any, Action: EVENT_ACTIONS.CREATE }] })
+            getServerEvent({ Domains: [{ ID: '2', Domain: { ID: '2' } as Domain, Action: EVENT_ACTIONS.CREATE }] })
         );
         expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }, { ID: '2' }], 1));
-        store.dispatch(serverEvent({ User: { Subscribed: 0 } as any }));
+        store.dispatch(getServerEvent({ User: { Subscribed: 0 } as User }));
         expect(selectDomains(store.getState())).toMatchObject(getState([], 0));
     });
 });

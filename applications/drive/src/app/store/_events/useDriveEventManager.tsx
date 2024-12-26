@@ -44,10 +44,10 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
     },
 };
 
-export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
+export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager<DriveCoreEvent>) {
     const isPollingManually = useRef(false);
     const eventHandlers = useRef(new Map<string, EventHandler>());
-    const eventManagers = useRef(new Map<string, EventManager>());
+    const eventManagers = useRef(new Map<string, EventManager<DriveEventsResult>>());
     const eventsMetrics = useMemo(() => new EventsMetrics(), [api, generalEventManager]);
 
     const genericHandler = (volumeId: string, type: VolumeType, driveEvents: DriveEventsResult) => {
@@ -89,10 +89,11 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         try {
             const { EventID } = await api<{ EventID: string }>(queryLatestVolumeEvent(volumeId));
 
-            const eventManager = createEventManager({
-                api,
+            const eventManager = createEventManager<DriveEventsResult>({
                 eventID: EventID,
-                query: (eventId: string) => queryVolumeEvents(volumeId, eventId),
+                getEvents: ({ eventID, ...rest }) => {
+                    return api<DriveEventsResult>({ ...queryVolumeEvents(volumeId, eventID), ...rest });
+                },
             });
 
             eventManagers.current.set(volumeId, eventManager);
