@@ -1,15 +1,31 @@
 .Lexical__table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	max-inline-size: 100%;
+	max-inline-size: none;
 	overflow-y: scroll;
 	table-layout: fixed;
 	margin: 0;
-	margin-block-start: 1.25rem;
+	min-inline-size: max-content;
 }
 
-[contenteditable='true'] .Lexical__table {
-	margin-block-end: 1.65rem;
+.Lexical__tableWrapper {
+	margin-block-start: 1.25rem;
+	inline-size: fit-content;
+
+	--margin-from-sides-in-rem: 3rem;
+
+	max-inline-size: calc(100vw - var(--margin-from-sides-in-rem));
+	position: relative;
+	inset-block-start: 0;
+	inset-inline-start: 50%;
+	transform: translateX(-50%);
+	overflow: auto;
+	scrollbar-width: auto !important;
+	padding-block-end: 0.25rem;
+
+	[contenteditable='true'] & {
+		margin-block-end: 1.65rem;
+	}
 }
 
 .Lexical__tableSelection *::selection {
@@ -30,6 +46,7 @@
 	padding-inline: 8px;
 	position: relative;
 	outline: none;
+	max-inline-size: none;
 }
 
 .Lexical__tableCellHeader {
