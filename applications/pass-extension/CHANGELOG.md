@@ -1,5 +1,9 @@
-### Version 1.26.1
--   Improve app unlock UX for SSO users
+### Version 1.27.0
+-   Fix app unlock UX for SSO users
+-   Add new in-app notification system
+-   Fix alias custom domain management displaying incorrect DNS values
+-   Improve custom domain error messages during verification
+-   Enforce password generator policy for B2B users
 
 ### Version 1.26.0
 
