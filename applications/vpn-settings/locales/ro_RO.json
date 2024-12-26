@@ -2602,6 +2602,9 @@
       "Impossible to rename the gateway": [
         "Imposibil de redenumit poarta de acces."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Parolă de rezervă incorectă. Mai reîncercați."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Tip de fișier incorect. Încărcați un fișier în format PNG sau JPEG."
       ],
@@ -2692,6 +2695,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Introduceți un URL de ID de entitate valid."
+      ],
       "Please generate keys before you try to change your password": [
         "Generați cheile înainte de a vă schimba parola."
       ],
@@ -2712,6 +2718,9 @@
       ],
       "Please upload a square logo": [
         "Încărcați un logo pătrat."
+      ],
+      "Please upload an XML file": [
+        "Încărcați un fișier XML."
       ],
       "Please upload only 1 file": [
         "Încărcați numai un fișier."
@@ -3879,6 +3888,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
+      ],
       "Copy the suggested password to clipboard": [
         "Copiați parola sugerată în memorie."
       ],
@@ -4055,6 +4067,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Introduceți codul de recuperare trimis la ${ email }. Dacă nu găsiți mesajul în mesajele primite, verificați în folderul cu mesaje nedorite."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Introduceți ID-ul entității dintr-o organizație **eduGAIN** pentru **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduceți parola organizației pentru a restaura privilegiile administratorului. ${ learnMore }"
@@ -5873,6 +5888,9 @@
         "Afișare ${ n } administrator",
         "Afișare ${ n } administratori",
         "Afișare ${ n } de administratori"
+      ],
+      "Single sign-on Entity ID": [
+        "ID entitate autentificare unică (SSO)"
       ],
       "Single sign-on URL": [
         "URL SSO (autentificare unică)"
@@ -9026,6 +9044,9 @@
       "Enter your backup password": [
         "Introduceți parola de rezervă"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Pentru ca acest utilizator să se poată autentifica, asigurați-vă că există la furnizorul de identitate."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Din motive de securitate contul a fost deconectat de la toate celelalte dispozitive active. Înainte de a vă accesa contul, va trebui să introduceți o nouă parolă de rezervă."
       ],
@@ -9091,6 +9112,9 @@
       ],
       "Single sign-on removed": [
         "Conectarea prin autentificare unică a fost eliminată."
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Utilizatorul ${ name } are un cont cu autentificare unică (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Aceasta va deconecta utilizatorul de pe alte dispozitive și va trebui să-și creeze o parolă de rezervă nouă."
@@ -10723,6 +10747,9 @@
       "User": [
         "Utilizator"
       ],
+      "User converted to SSO": [
+        "Utilizator a fost convertit la autentificarea unică (SSO)."
+      ],
       "Users": [
         "Utilizatori"
       ],
@@ -10847,6 +10874,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
       ],
       "Device information such as operating system": [
         "Informații despre dispozitiv cum ar fi sistemul de operare."
@@ -11244,9 +11274,6 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
-      ],
-      "servers": [
-        "servere"
       ]
     },
     "vpn_2024: renew": {

@@ -2592,6 +2592,9 @@
       "Impossible to rename the gateway": [
         "Omöjligt att byta namn på gateway"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Felaktig filtyp. Ladda upp en fil i PNG- eller JPEG-format."
       ],
@@ -2682,6 +2685,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Aktivera stöd för flera användare innan du lägger till användare till din organisation."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Ange en giltig entitets-ID-URL."
+      ],
       "Please generate keys before you try to change your password": [
         "Generera nycklar innan du försöker ändra ditt lösenord"
       ],
@@ -2702,6 +2708,9 @@
       ],
       "Please upload a square logo": [
         "Ladda upp en fyrkantig bild"
+      ],
+      "Please upload an XML file": [
+        "Ladda upp en XML-fil"
       ],
       "Please upload only 1 file": [
         "Ladda endast upp 1 fil"
@@ -3852,6 +3861,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiera och klistra in denna URL i fältet för entity-ID hos din identitetsleverantör"
+      ],
       "Copy the suggested password to clipboard": [
         "Kopiera det föreslagna lösenordet till urklipp"
       ],
@@ -4025,6 +4037,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Ange koden som skickades till ${ email }. Om du inte kan hitta meddelandet i din inkorg, kontrollera din skräppostmapp."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Ange entitets-ID:t för en **eduGAIN**-organisation för **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ange organisationslösenordet för att återställa administratörsprivilegier. ${ learnMore }"
@@ -5822,6 +5837,9 @@
       "Show ${ n } administrator": [
         "Visa ${ n } administratör",
         "Visa ${ n } administratörer"
+      ],
+      "Single sign-on Entity ID": [
+        "Entitets-ID för enkel inloggning"
       ],
       "Single sign-on URL": [
         "URL för enkel inloggning"
@@ -8922,6 +8940,9 @@
       "Enter your backup password": [
         "Ange ditt reservlösenord"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "För att denna användare ska kunna logga in se till att hen existerar hos din identitetsleverantör."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "För din säkerhet har du blivit utloggad från alla dina andra aktiva enheter. Innan du kommer åt ditt konto måste du ange ett nytt reservlösenord."
       ],
@@ -8987,6 +9008,9 @@
       ],
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Användaren ${ name } är nu ett konto med enkel inloggning."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Detta kommer att logga ut användaren från sina andra enheter och de måste skapa ett nytt reservlösenord."
@@ -10593,6 +10617,9 @@
       "User": [
         "Användare"
       ],
+      "User converted to SSO": [
+        "Användare konverterad till SSO"
+      ],
       "Users": [
         "Användare"
       ],
@@ -10717,6 +10744,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiera och klistra in denna URL i fältet för entity-ID hos din identitetsleverantör"
       ],
       "Device information such as operating system": [
         "Enhetsinformation såsom operativsystem"
@@ -11107,9 +11137,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
-      ],
-      "servers": [
-        "servrar"
       ]
     },
     "vpn_2024: renew": {
