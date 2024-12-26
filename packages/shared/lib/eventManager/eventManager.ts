@@ -1,60 +1,68 @@
 import noop from '@proton/utils/noop';
 
-import { getEvents } from '../api/events';
 import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
 import type { Listener } from '../helpers/listeners';
 import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
-import type { Api } from '../interfaces';
 
-export enum EVENT_ID_KEYS {
-    DEFAULT = 'EventID',
-    CALENDAR = 'CalendarModelEventID',
+interface DefaultEventResult {
+    More: 0 | 1;
+    EventID: string;
 }
 
-type EventResponse = {
-    [key in EVENT_ID_KEYS]: string;
-} & {
-    More: 0 | 1;
-};
-
-interface EventManagerConfig {
-    /** Function to call the API */
-    api: Api;
-    /** Initial event ID to begin from */
+type GetEvents<EventResult> = (options: {
     eventID: string;
+    signal: AbortSignal;
+    silence: boolean;
+}) => Promise<EventResult>;
+type GetLatestEventID = (options: { signal: AbortSignal; silence: boolean }) => Promise<string>;
+
+type EventManagerConfigBase<EventResult> = {
     /** Maximum interval time to wait between each call */
     interval?: number;
-    /** Event polling endpoint override */
-    query?: (eventID: string) => object;
-    eventIDKey?: EVENT_ID_KEYS;
-}
+    parseResults?: (value: EventResult) => { nextEventID: string; more: 0 | 1 };
+    getEvents: GetEvents<EventResult>;
+};
 
-export type SubscribeFn = <A extends any[], R = void>(listener: Listener<A, R>) => () => void;
+type EventManagerConfig<EventResult> = EventManagerConfigBase<EventResult> &
+    /** Initial event ID to begin from */
+    (| { eventID: string; getLatestEventID?: GetLatestEventID }
+        | {
+              eventID?: string;
+              getLatestEventID: GetLatestEventID;
+          }
+    );
 
-export interface EventManager {
+export type SubscribeFn<Arguments extends any[], R = void> = (listener: Listener<Arguments, R>) => () => void;
+
+export type EventManager<EventResult> = {
     setEventID: (eventID: string) => void;
     getEventID: () => string | undefined;
     start: () => void;
     stop: () => void;
     call: () => Promise<void>;
     reset: () => void;
-    subscribe: SubscribeFn;
-}
+    subscribe: SubscribeFn<[EventResult]>;
+};
+
+const defaultParseResults: EventManagerConfigBase<any>['parseResults'] = (result: DefaultEventResult) => ({
+    nextEventID: result.EventID,
+    more: result.More,
+});
 
 /**
  * Create the event manager process.
  */
-const createEventManager = ({
-    api,
+const createEventManager = <EventResult = DefaultEventResult>({
     eventID: initialEventID,
+    getLatestEventID,
     interval = INTERVAL_EVENT_TIMER,
-    query = getEvents,
-    eventIDKey = EVENT_ID_KEYS.DEFAULT,
-}: EventManagerConfig): EventManager => {
-    const listeners = createListeners<[EventResponse]>();
+    parseResults = defaultParseResults,
+    getEvents,
+}: EventManagerConfig<EventResult>): EventManager<EventResult> => {
+    const listeners = createListeners<[EventResult]>();
 
-    if (!initialEventID) {
+    if (!initialEventID && !getLatestEventID) {
         throw new Error('eventID must be provided.');
     }
 
@@ -135,6 +143,32 @@ const createEventManager = ({
         listeners.clear();
     };
 
+    const getInitialEventIDPromise = async () => {
+        if (initialEventID) {
+            return initialEventID;
+        }
+
+        if (getLatestEventID) {
+            const abortController = new AbortController();
+            STATE.abortController = abortController;
+
+            try {
+                const latestEventID = await getLatestEventID({ signal: abortController.signal, silence: true });
+                if (latestEventID && !getEventID()) {
+                    setEventID(latestEventID);
+                }
+                return latestEventID;
+            } catch (e) {
+                // Swallow any errors. This will anyway get retried in the call if event id is missing.
+                return undefined;
+            }
+        }
+
+        return undefined;
+    };
+
+    const initialEventIDPromise = getInitialEventIDPromise();
+
     /**
      * Call the event manager. Either does it immediately, or queues the call until after the current call has finished.
      */
@@ -142,20 +176,33 @@ const createEventManager = ({
         try {
             stop();
 
+            await initialEventIDPromise;
+
             const abortController = new AbortController();
             STATE.abortController = abortController;
 
             for (;;) {
-                const eventID = getEventID();
+                let eventID = getEventID();
+
+                if (!eventID && getLatestEventID) {
+                    try {
+                        eventID = await getLatestEventID({ signal: abortController.signal, silence: true });
+                    } catch (error: any) {
+                        if (error.name === 'AbortError') {
+                            return;
+                        }
+                        throw error;
+                    }
+                }
 
                 if (!eventID) {
                     throw new Error('EventID undefined');
                 }
 
-                let result: EventResponse;
+                let result: EventResult;
                 try {
-                    result = await api<EventResponse>({
-                        ...query(eventID),
+                    result = await getEvents({
+                        eventID,
                         signal: abortController.signal,
                         silence: true,
                     });
@@ -168,11 +215,11 @@ const createEventManager = ({
 
                 await Promise.all(listeners.notify(result)).catch(noop);
 
-                const { More, [eventIDKey]: nextEventID } = result;
+                const { nextEventID, more } = parseResults(result);
                 setEventID(nextEventID);
                 setRetryIndex(0);
 
-                if (!More) {
+                if (!more) {
                     break;
                 }
             }
@@ -193,7 +240,7 @@ const createEventManager = ({
         stop,
         call,
         reset,
-        subscribe: listeners.subscribe as SubscribeFn,
+        subscribe: listeners.subscribe,
     };
 };
 

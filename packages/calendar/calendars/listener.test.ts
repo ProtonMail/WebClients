@@ -2,8 +2,8 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { addressKeysReducer } from '@proton/account/addressKeys';
 import { addressesReducer } from '@proton/account/addresses';
-import { serverEvent } from '@proton/account/eventLoop';
 import { getModelState } from '@proton/account/test';
+import { getServerEvent } from '@proton/account/test/getServerEvent';
 import { userReducer } from '@proton/account/user';
 import { userKeysReducer } from '@proton/account/userKeys';
 import { getTestStore } from '@proton/redux-shared-store/test';
@@ -22,7 +22,7 @@ import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar';
 
 import { calendarsBootstrapReducer } from '../calendarBootstrap';
 import { createCalendarModelEventManager } from '../calendarModelEventManager';
-import { calendarServerEvent } from '../calendarServerEvent';
+import { type CalendarEventLoop, calendarServerEvent } from '../calendarServerEvent';
 import type { CalendarThunkArguments } from '../interface';
 import { calendarsReducer } from './index';
 import { startCalendarEventListener } from './listener';
@@ -146,6 +146,14 @@ const getMockBootstrap = ({ CalendarID }: { CalendarID: string }): CalendarBoots
     };
 };
 
+const getCalendarServerEvent = (diff: Partial<CalendarEventLoop>): ReturnType<typeof calendarServerEvent> => {
+    return calendarServerEvent({
+        ...diff,
+        More: 0,
+        CalendarModelEventID: '',
+    });
+};
+
 describe('calendar listener', () => {
     it('should react to calendar object server events', async () => {
         const { store } = setup();
@@ -162,10 +170,10 @@ describe('calendar listener', () => {
         };
 
         expect(getCalendars()).toEqual([]);
-        store.dispatch(serverEvent({ Calendars: [] }));
+        store.dispatch(getServerEvent({ Calendars: [] }));
         expect(getCalendars()).toEqual([]);
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 Calendars: [{ ID: newCalendar.ID, Action: EVENT_ACTIONS.CREATE, Calendar: newCalendar }],
             })
         );
@@ -176,7 +184,7 @@ describe('calendar listener', () => {
             Type: CALENDAR_TYPE.PERSONAL,
         };
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 Calendars: [{ ID: newCalendar.ID, Action: EVENT_ACTIONS.UPDATE, Calendar: updatedCalendar }],
             })
         );
@@ -185,7 +193,7 @@ describe('calendar listener', () => {
         });
         expect(getCalendars()).toEqual([newCalendar]);
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 CalendarMembers: [
                     { ID: newCalendarMember.ID, Action: EVENT_ACTIONS.CREATE, Member: newCalendarMember },
                 ],
@@ -201,7 +209,7 @@ describe('calendar listener', () => {
         const oldCalendar = getCalendars();
         // Should not do anything and keep referential equality
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 CalendarMembers: [
                     {
                         ID: unknownCalendarMembers.ID,
@@ -225,7 +233,7 @@ describe('calendar listener', () => {
 
         expect(getCalendarBootstrap('123')).toEqual(initialCalendar.value);
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 Calendars: [{ ID: '123', Action: EVENT_ACTIONS.DELETE }],
             })
         );
@@ -243,7 +251,7 @@ describe('calendar listener', () => {
 
         expect(getCalendarBootstrap('123')).toEqual(initialCalendar.value);
         store.dispatch(
-            calendarServerEvent({
+            getCalendarServerEvent({
                 CalendarSettings: [
                     {
                         CalendarSettings: getMockCalendarSettings({
@@ -274,7 +282,7 @@ describe('calendar listener', () => {
         expect(getCalendarBootstrap('123')).toEqual(initialCalendar.value);
         expect(getCalendarBootstrap('124')).toEqual(initialCalendar2.value);
         store.dispatch(
-            calendarServerEvent({
+            getCalendarServerEvent({
                 CalendarKeys: [
                     {
                         ID: '1',
@@ -292,7 +300,7 @@ describe('calendar listener', () => {
 
         const calendarKeyWithoutCalendarID = getMockCalendarKey({ CalendarID: '', ID: 'key1id' });
         store.dispatch(
-            calendarServerEvent({
+            getCalendarServerEvent({
                 CalendarKeys: [
                     {
                         ID: 'key1id',
@@ -315,12 +323,12 @@ describe('calendar listener', () => {
         const getCalendarBootstrap = (calendarID: string) => store.getState().calendarsBootstrap[calendarID]?.value;
 
         expect(getCalendarBootstrap('123')).toEqual(initialCalendar.value);
-        store.dispatch(serverEvent({ Calendars: [] }));
+        store.dispatch(getServerEvent({ Calendars: [] }));
         expect(getCalendarBootstrap('123')).toEqual(initialCalendar.value);
 
         const newCalendarMember = getMockMember({ CalendarID: '123', ID: 'new-member' });
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 CalendarMembers: [
                     { ID: newCalendarMember.ID, Action: EVENT_ACTIONS.CREATE, Member: newCalendarMember },
                 ],
@@ -332,7 +340,7 @@ describe('calendar listener', () => {
 
         const updatedCalendarMember = getMockMember({ CalendarID: '123', ID: 'new-member', Color: 'red' });
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 CalendarMembers: [
                     { ID: updatedCalendarMember.ID, Action: EVENT_ACTIONS.UPDATE, Member: updatedCalendarMember },
                 ],
@@ -350,7 +358,7 @@ describe('calendar listener', () => {
         const oldCalendar = getCalendarBootstrap('123');
         // Should not do anything and keep referential equality
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 CalendarMembers: [
                     {
                         ID: unknownCalendarMembers.ID,
