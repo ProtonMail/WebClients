@@ -134,6 +134,8 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                     files={imagesToInsert}
                     onClose={handleCloseInsertImageModal}
                     onSelect={handleUploadImage}
+                    canRemoveImageMetadata
+                    mailSettings={EO_DEFAULT_MAILSETTINGS}
                 />
             )}
             <EOReplyHeader message={referenceMessage} />

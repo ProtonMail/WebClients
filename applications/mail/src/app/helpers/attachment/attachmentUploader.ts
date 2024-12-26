@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
+import removeExifMetadata from '@proton/shared/lib/helpers/exif';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -172,14 +173,16 @@ export const upload = (
     });
 };
 
-export const uploadEO = (
+export const uploadEO = async (
     file: File,
     message: MessageStateWithData,
     publicKey: PublicKeyReference[],
-    action = ATTACHMENT_DISPOSITION.ATTACHMENT
+    action = ATTACHMENT_DISPOSITION.ATTACHMENT,
+    removeImageMetadata?: boolean
 ) => {
     const inline = isEmbeddable(file.type) && action === ATTACHMENT_DISPOSITION.INLINE;
-    return uploadEOFile(file, message, publicKey, inline);
+    const updatedFile = removeImageMetadata ? await removeExifMetadata(file).catch(() => file) : file;
+    return uploadEOFile(updatedFile, message, publicKey, inline);
 };
 
 /**
