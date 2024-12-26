@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const getPassAppRoutes = ({ app, user, organization, subscription, canDisplayB2BLogsPass }: Props) => {
-    const isAdmin = user.isAdmin && !user.isSubUser;
+    const isAdmin = user.isAdmin && user.isSelf;
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);

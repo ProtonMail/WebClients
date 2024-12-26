@@ -90,7 +90,7 @@ const UserKeysSections = () => {
         }
     };
 
-    const canGenerateUserKey = !User.isSubUser && User.isPrivate && userKeysDisplay.length < 20;
+    const canGenerateUserKey = User.isSelf && User.isPrivate && userKeysDisplay.length < 20;
 
     const children = (() => {
         if (loadingDeviceRecovery || (loadingUserKeys && !Array.isArray(userKeys))) {

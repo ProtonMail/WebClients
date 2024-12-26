@@ -154,7 +154,7 @@ export const getCanGenerateMemberKeysPermissions = (
     user: UserModel,
     organizationKey: CachedOrganizationKey | undefined
 ) => {
-    return !!organizationKey?.privateKey && user.isAdmin && !user.isSubUser;
+    return !!organizationKey?.privateKey && user.isAdmin && user.isSelf;
 };
 
 export const getCanGenerateMemberAddressKeys = ({
