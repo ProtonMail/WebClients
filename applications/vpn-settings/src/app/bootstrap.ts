@@ -57,19 +57,18 @@ export const bootstrapApp = async ({
         };
 
         const userPromise = loadUser();
-        const evPromise = bootstrap.eventManager({ api: silentApi });
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        const [MainContainer, userData, eventManager] = await Promise.all([
+        const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
-            evPromise,
             bootstrap.loadCrypto({ appName }),
             unleashPromise,
         ]);
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
 
+        const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });
         const unsubscribeEventManager = eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
