@@ -17,9 +17,15 @@ import { getPersistedSession, removePersistedSession } from './persistedSessionS
 
 const clearRecoveryParam = 'clear-recovery';
 
+interface SerializedPassedSession {
+    id: string;
+    // isSubUser: legacy passed value
+    s: boolean;
+}
+
 interface PassedSession {
     id: string;
-    s: boolean;
+    isSelf: boolean;
 }
 
 export const serializeLogoutURL = ({
@@ -42,10 +48,10 @@ export const serializeLogoutURL = ({
     }
     if (persistedSessions.length) {
         const hashParams = new URLSearchParams();
-        const sessions = persistedSessions.map((persistedSession): PassedSession => {
+        const sessions = persistedSessions.map((persistedSession): SerializedPassedSession => {
             return {
                 id: persistedSession.UserID,
-                s: persistedSession.isSubUser,
+                s: !persistedSession.isSelf,
             };
         });
         hashParams.set('sessions', encodeBase64URL(JSON.stringify(sessions)));
@@ -95,10 +101,10 @@ const parseSessions = (sessions: string | null) => {
     try {
         const result = JSON.parse(decodeBase64URL(sessions || ''));
         if (Array.isArray(result)) {
-            return result.map((session): PassedSession => {
+            return result.map((session: SerializedPassedSession): PassedSession => {
                 return {
                     id: session.id,
-                    s: session.s === true,
+                    isSelf: session.s === false,
                 };
             });
         }

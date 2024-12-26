@@ -19,8 +19,8 @@ const HandleLogout = () => {
                 });
             }
 
-            params.sessions.forEach(({ id, s }) => {
-                const session = getActiveSessionByUserID(id, s);
+            params.sessions.forEach(({ id, isSelf }) => {
+                const session = getActiveSessionByUserID(id, isSelf);
                 if (session) {
                     removePersistedSession(session.localID, session.UID).catch(noop);
                 }

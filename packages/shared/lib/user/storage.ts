@@ -99,7 +99,7 @@ export const getCanAddStorage = ({ user, subscription }: { user: UserModel; subs
     if (!subscription) {
         return false;
     }
-    if (user.isSubUser) {
+    if (!user.isSelf) {
         return false;
     }
     if (user.isMember) {

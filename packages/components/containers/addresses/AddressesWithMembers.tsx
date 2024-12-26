@@ -151,7 +151,7 @@ const AddressesWithMembers = ({
                 </SettingsParagraph>
             )}
 
-            {currentMember && !user.isSubUser && (
+            {currentMember && user.isSelf && (
                 <div className="mb-4 flex gap-2 self-start items-center">
                     <div className="mr-4">
                         {mustActivateOrganizationKey ? (

@@ -5,7 +5,7 @@ import { UNPAID_STATE } from '@proton/payments';
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
-import type { User } from '../interfaces';
+import type { User, UserInfo } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 
@@ -19,19 +19,19 @@ export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);
 export const isAdmin = (user: User) => user.Role === ADMIN_ROLE;
 export const isMember = (user: User) => user.Role === MEMBER_ROLE;
-export const isSubUser = (user: User) => typeof user.OrganizationPrivateKey !== 'undefined';
+export const isSelf = (user: User) => !user.OrganizationPrivateKey;
 export const isDelinquent = (user: User) => !!user.Delinquent;
 export const getHasNonDelinquentScope = (user: User) => user.Delinquent < UNPAID_STATE.DELINQUENT;
-export const canPay = (user: User) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role) && !isSubUser(user);
+export const canPay = (user: User) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role) && isSelf(user);
 
-export const getInfo = (User: User) => {
+export const getInfo = (User: User): UserInfo => {
     return {
         isAdmin: isAdmin(User),
         isMember: isMember(User),
         isFree: isFree(User),
         isPaid: isPaid(User),
         isPrivate: isPrivate(User),
-        isSubUser: isSubUser(User),
+        isSelf: isSelf(User),
         isDelinquent: isDelinquent(User),
         hasNonDelinquentScope: getHasNonDelinquentScope(User),
         hasPaidMail: hasPaidMail(User),
