@@ -89,18 +89,17 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         };
 
         const userPromise = loadUser();
-        const evPromise = bootstrap.eventManager({ api: silentApi });
 
-        const [MainContainer, userData, eventManager] = await Promise.all([
+        const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
-            evPromise,
             bootstrap.loadCrypto({ appName }),
             unleashPromise,
         ]);
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
 
+        const eventManager = bootstrap.eventManager({ api: silentApi });
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 
         extendStore({ eventManager, calendarModelEventManager });

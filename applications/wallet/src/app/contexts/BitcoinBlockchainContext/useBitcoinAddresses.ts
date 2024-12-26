@@ -29,6 +29,20 @@ import { useGetBitcoinAddressPool } from '@proton/wallet/store';
 import { getAccountWithChainDataFromManyWallets } from '../../utils';
 import { useDebounceEffect } from '../../utils/hooks/useDebouncedEffect';
 
+interface WalletEventLoopUpdate {
+    WalletBitcoinAddresses?: {
+        WalletBitcoinAddress: {
+            WalletAccountID: string;
+            BitcoinAddress?: string;
+            Fetched: boolean;
+            Used: boolean;
+        };
+    }[];
+    WalletAccounts?: {
+        WalletAccount: { ID: string; WalletID: string; LastUsedIndex: number };
+    }[];
+}
+
 export interface BitcoinAddressHelper {
     receiveBitcoinAddress: WasmAddressInfo;
     generateNewReceiveAddress: () => Promise<void>;
@@ -211,86 +225,70 @@ export const useBitcoinAddresses = ({
     }, []);
 
     useEffect(() => {
-        return subscribe(
-            async ({
-                WalletBitcoinAddresses = [],
-                WalletAccounts = [],
-            }: {
-                WalletBitcoinAddresses: {
-                    WalletBitcoinAddress: {
-                        WalletAccountID: string;
-                        BitcoinAddress?: string;
-                        Fetched: boolean;
-                        Used: boolean;
-                    };
-                }[];
-                WalletAccounts: {
-                    WalletAccount: { ID: string; WalletID: string; LastUsedIndex: number };
-                }[];
-            }) => {
-                const walletAccountIds = uniq(
-                    /**
-                     * We want to keep only address events for
-                     * - Address request creation (!b.BitcoinAddress)
-                     * - Address lookup (b.Fetched)
-                     * - Address use (b.Used)
-                     *
-                     * And fill the pool for every wallet account related
-                     */
-                    WalletBitcoinAddresses.filter(
-                        ({ WalletBitcoinAddress: b }) => !b.BitcoinAddress || b.Fetched || b.Used
-                    ).map(({ WalletBitcoinAddress: b }) => b.WalletAccountID)
+        return subscribe(async (update) => {
+            const { WalletBitcoinAddresses = [], WalletAccounts = [] } = update as WalletEventLoopUpdate; // TODO: Fix these types
+            const walletAccountIds = uniq(
+                /**
+                 * We want to keep only address events for
+                 * - Address request creation (!b.BitcoinAddress)
+                 * - Address lookup (b.Fetched)
+                 * - Address use (b.Used)
+                 *
+                 * And fill the pool for every wallet account related
+                 */
+                WalletBitcoinAddresses.filter(
+                    ({ WalletBitcoinAddress: b }) => !b.BitcoinAddress || b.Fetched || b.Used
+                ).map(({ WalletBitcoinAddress: b }) => b.WalletAccountID)
+            );
+
+            // Make sure pool is updated on event
+            for (const walletAccountId of walletAccountIds) {
+                const data = walletAccountById[walletAccountId];
+                const accountChainData = getAccountWithChainDataFromManyWallets(
+                    walletsChainData,
+                    data?.wallet.ID,
+                    data?.account.ID
                 );
 
-                // Make sure pool is updated on event
-                for (const walletAccountId of walletAccountIds) {
-                    const data = walletAccountById[walletAccountId];
-                    const accountChainData = getAccountWithChainDataFromManyWallets(
-                        walletsChainData,
-                        data?.wallet.ID,
-                        data?.account.ID
-                    );
-
-                    if (data && accountChainData) {
-                        await manageBitcoinAddressPool({
-                            wallet: data.wallet,
-                            account: data.account,
-                            accountChainData,
-                        });
-                    }
-                }
-
-                // Use latest LastUsedIndex
-                for (const walletAccount of WalletAccounts) {
-                    const accountChainData = getAccountWithChainDataFromManyWallets(
-                        walletsChainData,
-                        walletAccount.WalletAccount.WalletID,
-                        walletAccount.WalletAccount.ID
-                    );
-
-                    if (!accountChainData) {
-                        continue;
-                    }
-
-                    // Naming is wrong but LastUsedIndex is actually the next index to use
-                    const nextIndexToUse = walletAccount.WalletAccount.LastUsedIndex;
-
-                    // Mark all addresses below in range [0, LastUsedIndex] as used to avoid reusing them
-                    await accountChainData.account.markReceiveAddressesUsedTo(0, nextIndexToUse);
-
-                    // Check if current displayed address is still ok
-                    const currentHelpers = bitcoinAddressHelperByWalletAccountId[walletAccount.WalletAccount.ID];
-
-                    if (
-                        currentHelpers?.receiveBitcoinAddress.index &&
-                        currentHelpers.receiveBitcoinAddress.index <= nextIndexToUse - 1
-                    ) {
-                        const receiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
-                        updateBitcoinAddressHelper(walletAccount.WalletAccount.ID, { receiveBitcoinAddress });
-                    }
+                if (data && accountChainData) {
+                    await manageBitcoinAddressPool({
+                        wallet: data.wallet,
+                        account: data.account,
+                        accountChainData,
+                    });
                 }
             }
-        );
+
+            // Use latest LastUsedIndex
+            for (const walletAccount of WalletAccounts) {
+                const accountChainData = getAccountWithChainDataFromManyWallets(
+                    walletsChainData,
+                    walletAccount.WalletAccount.WalletID,
+                    walletAccount.WalletAccount.ID
+                );
+
+                if (!accountChainData) {
+                    continue;
+                }
+
+                // Naming is wrong but LastUsedIndex is actually the next index to use
+                const nextIndexToUse = walletAccount.WalletAccount.LastUsedIndex;
+
+                // Mark all addresses below in range [0, LastUsedIndex] as used to avoid reusing them
+                await accountChainData.account.markReceiveAddressesUsedTo(0, nextIndexToUse);
+
+                // Check if current displayed address is still ok
+                const currentHelpers = bitcoinAddressHelperByWalletAccountId[walletAccount.WalletAccount.ID];
+
+                if (
+                    currentHelpers?.receiveBitcoinAddress.index &&
+                    currentHelpers.receiveBitcoinAddress.index <= nextIndexToUse - 1
+                ) {
+                    const receiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
+                    updateBitcoinAddressHelper(walletAccount.WalletAccount.ID, { receiveBitcoinAddress });
+                }
+            }
+        });
     }, [
         bitcoinAddressHelperByWalletAccountId,
         manageBitcoinAddressPool,

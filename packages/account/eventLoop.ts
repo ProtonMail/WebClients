@@ -2,6 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { SavedPaymentMethod } from '@proton/payments';
+import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type {
     Address,
@@ -69,6 +70,11 @@ export interface EventLoop {
     Groups?: EventItemUpdate<Group, 'Group'>[];
     GroupMembers?: EventItemUpdate<GroupMember, 'GroupMember'>[];
     GroupMemberships?: EventItemUpdate<GroupMembership, 'GroupMembership'>[];
+    DriveShareRefresh?: {
+        Action: EVENT_ACTIONS;
+    };
+    More: 0 | 1;
+    EventID: string;
 }
 
 export const serverEvent = createAction('server event', (payload: EventLoop) => ({ payload }));
