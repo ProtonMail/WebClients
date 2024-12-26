@@ -1255,6 +1255,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Изменить настройки адреса электронной почты"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3755,6 +3761,9 @@
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }"
       ],
+      "Address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
       ],
@@ -3952,6 +3961,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
+      ],
+      "default email address": [
+        "адрес эл. почты по умолчанию"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -4610,6 +4622,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Registering your subscription...": [
+        "Регистрация вашей подписки..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
       ],
@@ -4681,6 +4696,9 @@
       ],
       "Session timed out": [
         "Время сеанса истекло"
+      ],
+      "Setting up your new address...": [
+        "Настройка нового адреса..."
       ],
       "Setting up your organization": [
         "Настройка вашей организации"
@@ -6349,6 +6367,9 @@
       "From ${ price }": [
         "От: ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
       ],
@@ -6526,6 +6547,9 @@
       ],
       "10 email addresses/aliases": [
         "10 адресов электронной почты или псевдонимов"
+      ],
+      "10 more premium features": [
+        "и еще 10 платных функций"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -10732,6 +10756,9 @@
       "Unlock your data": [
         "Разблокируйте свои данные"
       ],
+      "Upgrade complete!": [
+        "Улучшение выполнено!"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Улучшить защиту вашей сети с помощью выделенных серверов"
       ],
@@ -10779,6 +10806,9 @@
       ],
       "Your plan": [
         "Ваш тариф"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш укороченный адрес готов"
       ],
       "Your subscriptions": [
         "Ваши подписки"
@@ -11269,9 +11299,6 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
-      ],
-      "servers": [
-        "серверы"
       ]
     },
     "vpn_2024: renew": {
