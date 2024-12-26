@@ -19,7 +19,7 @@ import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getDarkThemes } from '@proton/shared/lib/themes/themes';
@@ -55,7 +55,7 @@ const Verify = () => {
     const theme = useThemeQueryParameter();
 
     const search = parseSearch(location.search) as VerificationSearchParameters;
-    const { methods, embed, locale, token, vpn, defaultCountry, defaultEmail, defaultPhone } = search;
+    const { methods, embed, token, vpn, defaultCountry, defaultEmail, defaultPhone } = search;
 
     const isEmbedded = windowIsEmbedded || embed;
 
@@ -72,11 +72,11 @@ const Verify = () => {
     };
 
     useEffect(() => {
-        const browserLocale = getBrowserLocale();
+        const browserLocaleCode = getBrowserLocale();
+        const locale =
+            getClosestLocaleMatch(search.locale || '', locales) || getClosestLocaleCode(browserLocaleCode, locales);
 
-        const localeCode = getClosestLocaleMatch(locale || '', locales) || getClosestLocaleCode(browserLocale, locales);
-
-        Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)])
+        loadLocales({ locales, locale, browserLocaleCode, userSettings: undefined })
             .then(() => {
                 setLoading(false);
             })
