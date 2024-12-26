@@ -2638,11 +2638,6 @@
         "Zaległa faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2736,6 +2731,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7271,6 +7271,14 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Wybierz plan Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -7283,14 +7291,6 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Wybierz plan Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
       ]
     },
     "new_plans: tooltip": {
