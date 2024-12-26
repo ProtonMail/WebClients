@@ -226,7 +226,7 @@ const SwitchAccountContainer = ({
             const { LocalID, DisplayName, Username, PrimaryEmail } = session.remote;
             const isLoading = loadingMap[LocalID];
 
-            const isAdminSignedIntoMember = session.persisted.isSubUser;
+            const isAdminSignedIntoMember = !session.persisted.isSelf;
             const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
             const initials = getInitials(nameToDisplay);
 

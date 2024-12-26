@@ -34,7 +34,7 @@ export const getDisplayKey = ({
     isWeak,
     isE2EEForwardingKey,
 }: Arguments): KeyDisplay => {
-    const { isPrivate, isSubUser } = User;
+    const { isPrivate, isSelf } = User;
     const signedKeyListItem = signedKeyListMap[fingerprint];
 
     const { ID, Flags, Primary, AddressForwardingID, GroupMemberID } = Key;
@@ -69,8 +69,7 @@ export const getDisplayKey = ({
 
     const hasUserPermission = isPrivate;
     const canModify = isAddressKey && hasUserPermission && !isPrimary;
-    // If you are a private user, or an admin signed into a non-private user
-    const canDeleteForwarding = (isPrivate || isSubUser) && (AddressForwardingID === null || GroupMemberID === null);
+    const canDeleteForwarding = (isPrivate || !isSelf) && (AddressForwardingID === null || GroupMemberID === null);
 
     return {
         ID,
