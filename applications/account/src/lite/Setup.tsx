@@ -18,15 +18,14 @@ import { getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
-import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
+import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import {
     FlagProvider,
@@ -140,10 +139,9 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
 
             const loadLocales = () => {
                 const languageParams = searchParams.get('language');
-                const browserLocale = getBrowserLocale();
-                const localeCode = getClosestLocaleMatch(languageParams || browserLocale, locales) || DEFAULT_LOCALE;
-
-                return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
+                const browserLocaleCode = getBrowserLocale();
+                const locale = languageParams || browserLocaleCode;
+                return loadLocalesI18n({ locales, locale, browserLocaleCode, userSettings: undefined });
             };
 
             const [eventManager] = await Promise.all([
