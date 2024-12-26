@@ -1,6 +1,6 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import type { TableNode } from '@lexical/table'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import debounce from '@proton/utils/debounce'
 import clsx from '@proton/utils/clsx'
 import { Icon } from '@proton/components'
@@ -18,17 +18,28 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
   const columnAddButtonRef = useRef<HTMLButtonElement>(null)
   const [isHoveringOnLastColumn, setIsHoveringOnLastColumn] = useState(false)
 
-  const tableElement = useMemo(() => {
+  const { tableElement, tableWrapperElement } = useMemo(() => {
     return editor.getEditorState().read(() => {
-      const tableElement = editor.getElementByKey(tableNode.getKey())
-      return tableElement
+      const tableWrapperElement = editor.getElementByKey(tableNode.getKey())
+      return {
+        tableWrapperElement,
+        tableElement:
+          tableWrapperElement?.firstElementChild instanceof HTMLTableElement
+            ? tableWrapperElement.firstElementChild
+            : null,
+      }
     })
   }, [editor, tableNode])
+
+  const resetHoverState = useCallback(() => {
+    setIsHoveringOnLastColumn(false)
+    setIsHoveringOnLastRow(false)
+  }, [])
 
   useEffect(() => {
     const rootElement = editor.getRootElement()
 
-    if (!tableElement || !rootElement) {
+    if (!tableElement || !tableWrapperElement || !rootElement) {
       return
     }
 
@@ -90,32 +101,48 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
       }
     }
 
-    rootElement.addEventListener('mousemove', mouseMoveHandler)
+    const mouseLeaveHandler = (event: MouseEvent) => {
+      const relatedTarget = event.relatedTarget
+      if (isHTMLElement(relatedTarget) && relatedTarget.getAttribute('data-table-cell-resizer')) {
+        return
+      }
+      resetHoverState()
+    }
+
+    tableWrapperElement.addEventListener('mousemove', mouseMoveHandler)
+    tableWrapperElement.addEventListener('mouseleave', mouseLeaveHandler)
 
     return () => {
-      rootElement.removeEventListener('mousemove', mouseMoveHandler)
+      tableWrapperElement.removeEventListener('mousemove', mouseMoveHandler)
+      tableWrapperElement.removeEventListener('mouseleave', mouseLeaveHandler)
     }
-  }, [editor, tableElement])
+  }, [editor, resetHoverState, tableElement, tableWrapperElement])
 
   useEffect(() => {
-    const rootContainer = editor.getRootElement()?.parentElement
+    const root = editor.getRootElement()
+    const rootParent = root?.parentElement
     const rowAddButton = rowAddButtonRef.current
     const columnAddButton = columnAddButtonRef.current
 
-    if (!rootContainer || !tableElement || !rowAddButton || !columnAddButton) {
+    if (!rootParent || !tableElement || !tableWrapperElement || !rowAddButton || !columnAddButton) {
       return
     }
 
     const setSizeAndPosition = debounce(() => {
-      const rect = tableElement.getBoundingClientRect()
+      const containerRect = rootParent.getBoundingClientRect()
+      const containerPaddingLeft = parseInt(getComputedStyle(root).paddingLeft)
+      const containerPadding = containerPaddingLeft * 2
+      const tableRect = tableElement.getBoundingClientRect()
+      const tableWrapperRect = tableWrapperElement.getBoundingClientRect()
+      const columnAddButtonRect = columnAddButton.getBoundingClientRect()
 
-      rowAddButton.style.width = `${rect.width}px`
-      columnAddButton.style.height = `${rect.height}px`
+      rowAddButton.style.width = `${Math.min(containerRect.width - containerPadding, tableRect.width)}px`
+      columnAddButton.style.height = `${tableRect.height}px`
 
-      const containerOffset = rootContainer.scrollTop - rootContainer.getBoundingClientRect().top
+      const containerOffset = rootParent.scrollTop - containerRect.top
 
-      rowAddButton.style.transform = `translate(${rect.left}px, ${rect.bottom + containerOffset + 2}px)`
-      columnAddButton.style.transform = `translate(${rect.right + 2}px, ${rect.top + containerOffset}px)`
+      rowAddButton.style.transform = `translate(${Math.max(containerPaddingLeft, tableRect.left)}px, ${tableWrapperRect.bottom + containerOffset + 1}px)`
+      columnAddButton.style.transform = `translate(${tableRect.width > containerRect.width ? tableWrapperRect.right - columnAddButtonRect.width / 2 : tableRect.right + 1}px, ${tableRect.top + containerOffset}px)`
     }, 10)
 
     setSizeAndPosition()
@@ -123,7 +150,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
     return editor.registerUpdateListener(() => {
       setSizeAndPosition()
     })
-  }, [editor, tableElement])
+  }, [editor, tableElement, tableWrapperElement])
 
   return (
     <>
@@ -148,8 +175,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
           if (isHTMLElement(relatedTarget) && relatedTarget.getAttribute('data-table-cell-resizer')) {
             return
           }
-          setIsHoveringOnLastRow(false)
-          setIsHoveringOnLastColumn(false)
+          resetHoverState()
         }}
       >
         <Icon name="plus" size={3.5} />
@@ -176,8 +202,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
           if (isHTMLElement(relatedTarget) && relatedTarget.getAttribute('data-table-cell-resizer')) {
             return
           }
-          setIsHoveringOnLastColumn(false)
-          setIsHoveringOnLastRow(false)
+          resetHoverState()
         }}
       >
         <Icon name="plus" size={3.5} />
