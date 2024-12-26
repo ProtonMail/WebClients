@@ -6,26 +6,36 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import type { LogoProps } from './Logo';
+import { getLogoWidthStyles } from './helpers';
 
 type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 
 const LumoLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
+    const logoWidth = 32;
+
+    const hasIconSize = size && variant === 'glyph-only';
+    // this ensure logo scales properly with text zoom
+    const logoWidthStyles = hasIconSize ? undefined : getLogoWidthStyles(logoWidth);
 
     if (variant === 'glyph-only') {
         return (
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             <svg
+                // eslint-disable-next-line custom-rules/deprecate-sizing-classes
                 xmlns="http://www.w3.org/2000/svg"
+                // eslint-disable-next-line custom-rules/deprecate-sizing-classes
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 64 64"
                 width="32"
                 height="32"
                 fill="none"
                 role="img"
-                className={clsx('logo', size && `icon-size-${size}`, variant, className)}
+                className={clsx('logo', hasIconSize && `icon-size-${size}`, variant, className)}
                 aria-labelledby={`${uid}-title`}
                 {...rest}
+                style={{ ...logoWidthStyles, ...rest?.style }}
             >
                 {hasTitle && <title id={`${uid}-title`}>{LUMO_APP_NAME}</title>}
                 <defs>
@@ -56,7 +66,9 @@ const LumoLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true,
 
     return (
         <svg
+            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlns="http://www.w3.org/2000/svg"
+            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 166.54 53.12"
             width="160"
