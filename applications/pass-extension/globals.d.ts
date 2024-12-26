@@ -15,4 +15,7 @@ declare global {
 
     var cloneInto: Maybe<CloneInto>;
     var exportFunction: Maybe<ExportFunction>;
+
+    declare const HTTP_DEBUGGER_PORT: number;
+    declare const HTTP_DEBUGGER: boolean;
 }
