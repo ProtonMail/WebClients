@@ -53,6 +53,10 @@ body {
 	* {
 		scrollbar-width: none !important;
 	}
+
+	.Lexical__table {
+		min-inline-size: 0;
+	}
 }
 
 .dropdown-content {

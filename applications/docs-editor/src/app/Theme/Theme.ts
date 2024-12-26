@@ -85,6 +85,7 @@ const DocumentEditorTheme: EditorThemeClasses = {
   quote: 'Lexical__quote',
   rtl: 'Lexical__rtl',
   table: 'Lexical__table',
+  tableScrollableWrapper: 'Lexical__tableWrapper',
   tableAddColumns: 'Lexical__tableAddColumns',
   tableAddRows: 'Lexical__tableAddRows',
   tableCell: 'Lexical__tableCell',
