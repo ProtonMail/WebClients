@@ -4540,6 +4540,9 @@
       "Impossible to rename the gateway": [
         "게이트웨이의 이름을 변경할 수 없습니다."
       ],
+      "Incorrect backup password. Please try again.": [
+        "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "잘못된 파일 유형입니다. PNG 또는 JPEG 포맷의 파일을 업로드하십시오."
       ],
@@ -4684,6 +4687,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
       ],
+      "Please enter a valid Entity ID URL": [
+        "유효한 Entity ID URL을 입력해주세요"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "계속하려면 표시된 충돌을 해결해 주세요."
       ],
@@ -4710,6 +4716,9 @@
       ],
       "Please upload a square logo": [
         "정사각형인 로고를 업로드하셔야 합니다"
+      ],
+      "Please upload an XML file": [
+        "XML 파일을 업로드하세요"
       ],
       "Please upload only 1 file": [
         "하나의 파일만 업로드하세요"
@@ -7150,6 +7159,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "사용자의 인증 제공자의 Entity ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
+      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -7367,7 +7379,7 @@
         "이메일 알림 활성화"
       ],
       "Enable single sign-on to keep your organization safe": [
-        "사용자의 조직이 안전하도록 통합 인증을 활성화하십시오"
+        "회원님의 조직이 안전하도록 통합 인증을 활성화하세요"
       ],
       "Enable this address to join this calendar": [
         "이 주소가 이 캘린더에 가입하도록 설정"
@@ -7409,13 +7421,16 @@
         "인증 앱의 코드를 입력하세요"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        "사용자의 전화 번호 ${ phone }로 전송된 코드를 입력해 주십시오."
+        "회원님의 전화번호 ${ phone }(으)로 전송된 코드를 입력해주세요."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } (으) 로 전송된 코드를 입력하세요. 받은 편지함에서 이메일을 찾을 수 없는 경우 스팸 폴더를 확인하세요."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }**을 위한 **eduGAIN**의 Entity ID를 입력하세요."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "조직 비밀번호를 입력해 관리자의 특권을 복구하세요. ${ learnMore }"
@@ -8660,7 +8675,7 @@
         "이 작업은 **${ date }**에 사용자의 ${ BRAND_NAME } 계정에 로그인 시도한 기기 **${ name }**을(를) 거부합니다."
       ],
       "This will remove any enabled 2FA methods.": [
-        "이것으로 모든 활성화된 2단계 인증 방법이 제거됩니다."
+        "이 작업으로 모든 활성화된 2단계 인증 방법이 제거됩니다."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "이 작업은 ${ boldDomainName }의 SSO를 제거합니다."
@@ -9344,7 +9359,7 @@
         "결제 정보는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "회원님의 전화번호는 이번 인증에만 사용돼요."
+        "회원님의 전화번호는 이번 인증에만 사용됩니다."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
@@ -10716,6 +10731,9 @@
       ],
       "Signature": [
         "서명"
+      ],
+      "Single sign-on Entity ID": [
+        "싱글 사인온 Entity ID"
       ],
       "Single sign-on URL": [
         "싱글 사인 온 URL"
@@ -15629,7 +15647,7 @@
         "**(나의 신원 제공자로 부터 제공된) SSO 사용자가 삭제되며** 내 조직에 항목을 추가하기 위해 수동 추가해야 합니다."
       ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
-        "**SSO 사용자가 귀하의 신원 제공자로부터 분리되고** 비 SSO 사용자로 전환될 것입니다."
+        "**SSO 사용자가 사용자의 신원 제공자로부터 분리되고** 비 SSO 사용자로 전환됩니다."
       ],
       "Access denied": [
         "접근 거부됨"
@@ -15708,6 +15726,9 @@
       ],
       "Enter your backup password": [
         "백업 비밀번호를 입력하세요"
+      ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "이 사용자가 로그인할 수 있도록, 사용자의 정보 제공사에 사용자가 존재하도록 조치하십시오."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "보안을 위해, 다른 모든 기기에서 로그아웃 되었습니다. 계정 접근 전에 새 백업 비밀번호를 입력해야합니다."
@@ -15799,6 +15820,9 @@
       "Single sign-on removed": [
         "싱글 사인온 (Sso) 제거됨"
       ],
+      "The user ${ name } is now a single sign-on account.": [
+        "${ name } 사용자는 이제 싱글 사인온 계정입니다."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "이 작업은 이 기기를 제외한 모든 기기에서 로그아웃되며 새 백업 비밀번호를 생성해야 합니다."
       ],
@@ -15827,7 +15851,7 @@
         "네, 저였어요."
       ],
       "You will have to create new users manually to add them to your organization.": [
-        "새 사용자를 귀하의 조직에 추가하려면 직접 생성하셔야 합니다."
+        "새 사용자를 회원님의 조직에 추가하려면 직접 생성해야 합니다."
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "서드 파티 SSO 제공자로 리다이렉트됩니다."
@@ -16158,7 +16182,7 @@
         "${ planName }는 당신이 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
-        "${ planName }는 귀하가 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
+        "${ planName }가 당신을 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
         "${ planName }가 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 도와드립니다."
@@ -18093,6 +18117,9 @@
       "User": [
         "사용자"
       ],
+      "User converted to SSO": [
+        "사용자가 SSO로 전환됨"
+      ],
       "Users": [
         "사용자"
       ],
@@ -18320,6 +18347,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "사용자의 인증 제공자의 Entity ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
       ],
       "Customize import to reduce the number of folders": [
         "폴더 수를 줄이기 위해 가져오기를 사용자 정의하세요"
@@ -18926,9 +18956,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
-      ],
-      "servers": [
-        "서버"
       ]
     },
     "vpn_2024: renew": {
@@ -19085,7 +19112,7 @@
         "Visionary 사용자와 초대받은 친구는 다른 사람들과 얼리 액세스를 공유하고 친구를 초대하여 ${ appName }을 무료로 사용해 볼 수 있습니다."
       ],
       "You're Invited.": [
-        "사용자가 초대되었습니다."
+        "회원님께서 초대되었습니다."
       ]
     },
     "wallet_signup_2024:app-switcher": {

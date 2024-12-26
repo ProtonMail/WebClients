@@ -4702,6 +4702,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Syötä kelvollinen entiteetti-ID-URL"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
         "Jatka korjaamalla korostetut ristiriidat."
@@ -4729,6 +4732,9 @@
       ],
       "Please upload a square logo": [
         "Lähetä neliön muotoinen logo"
+      ],
+      "Please upload an XML file": [
+        "Lähetä XML-tiedosto"
       ],
       "Please upload only 1 file": [
         "Lähetä vain 1 tiedosto"
@@ -10802,6 +10808,9 @@
       ],
       "Signature": [
         "Allekirjoitus"
+      ],
+      "Single sign-on Entity ID": [
+        "Kertakirjautumisen entiteetti-ID"
       ],
       "Single sign-on URL": [
         "Kertakirjautumisen URL-osoite"
@@ -18272,6 +18281,9 @@
       "User": [
         "Käyttäjä"
       ],
+      "User converted to SSO": [
+        "Käyttäjä muunnettu SSO:ksi"
+      ],
       "Users": [
         "Käyttäjät"
       ],
@@ -19113,9 +19125,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } maassa",
         "${ numberOfServers } ${ numberOfCountries } maassa"
-      ],
-      "servers": [
-        "palvelinta"
       ]
     },
     "vpn_2024: renew": {

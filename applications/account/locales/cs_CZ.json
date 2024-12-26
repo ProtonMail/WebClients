@@ -4591,6 +4591,9 @@
       "Impossible to rename the gateway": [
         "Není možné přejmenovat bránu"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávné záložní heslo. Zkuste to prosím znovu."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Nesprávný typ souboru. Nahrajte soubor ve formátu PNG nebo JPEG."
       ],
@@ -4738,6 +4741,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Zadejte prosím platnou URL ID subjektu"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
@@ -4767,6 +4773,9 @@
       ],
       "Please upload a square logo": [
         "Nahrajte logo ve čtvercovém tvaru"
+      ],
+      "Please upload an XML file": [
+        "Nahrejte prosím soubor XML"
       ],
       "Please upload only 1 file": [
         "Nahrajte prosím pouze 1 soubor"
@@ -7354,6 +7363,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Zkopírujte a vložte tuto URL do ACS (Assertion Consumer Service) pole u vašeho poskytovatele identity"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Zkopírujte a vložte tuto URL adresu do pole ID subjektu u svého poskytovatele identity"
+      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -7632,6 +7644,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Zadejte ID subjektu organizace **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadejte heslo organizace pro obnovení oprávnění správce. ${ learnMore }"
@@ -11019,6 +11034,9 @@
       ],
       "Signature": [
         "Podpis"
+      ],
+      "Single sign-on Entity ID": [
+        "ID subjektu jednotného přihlášení"
       ],
       "Single sign-on URL": [
         "URL pro jednotné přihlášení"
@@ -16249,6 +16267,9 @@
       "Enter your backup password": [
         "Zadejte své záložní heslo"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Aby se tento uživatel mohl přihlásit, ujistěte se, že existuje ve vašem poskytovateli identit."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Pro vaši bezpečnost jste byli odhlášeni ze všech ostatních aktivních zařízení. Před přístupem k účtu je třeba zadat nové záložní heslo."
       ],
@@ -16338,6 +16359,9 @@
       ],
       "Single sign-on removed": [
         "Jednotné přihlášení zrušeno"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Uživatel ${ name } nyní používá účet s jednotným přihlášením."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tím se uživatel odhlásí z ostatních zařízení a bude muset vytvořit nové záložní heslo."
@@ -18735,6 +18759,9 @@
       "User": [
         "Uživatel"
       ],
+      "User converted to SSO": [
+        "Uživatel převeden na SSO"
+      ],
       "Users": [
         "Uživatelé"
       ],
@@ -18962,6 +18989,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Zkopírujte a vložte tuto URL adresu do pole ACS (Assertion Consumer Service) URL u svého poskytovatele identity."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Zkopírujte a vložte tuto URL adresu do pole ID subjektu u svého poskytovatele identity"
       ],
       "Customize import to reduce the number of folders": [
         "Přizpůsobte proces importu, abyste snížili počet složek"
@@ -19592,9 +19622,6 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
-      ],
-      "servers": [
-        "serverů"
       ]
     },
     "vpn_2024: renew": {

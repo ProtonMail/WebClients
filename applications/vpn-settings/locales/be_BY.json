@@ -2607,6 +2607,9 @@
       "Impossible to rename the gateway": [
         "Немагчыма перайменаваць шлюз"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паспрабуйце яшчэ раз."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Няправільны тып файла. Запампаваць файл у фармаце PNG або JPEG."
       ],
@@ -2697,6 +2700,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Уключыце падтрымку шматкарыстальніцкага рэжыму перад тым, як дадаць карыстальнікаў да вашай арганізацыі."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Увядзіце сапраўдны URL-адрас Entity ID"
+      ],
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
       ],
@@ -2717,6 +2723,9 @@
       ],
       "Please upload a square logo": [
         "Запампуйце квадратны лагатып"
+      ],
+      "Please upload an XML file": [
+        "Запампуйце файл XML"
       ],
       "Please upload only 1 file": [
         "Запампуйце толькі 1 файл"
@@ -3912,6 +3921,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скапіюйце і ўстаўце гэты URL-адрас у поле URL-адраса ACS (Assertion Consumer Service) вашага пастаўшчыка пасведчанняў."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"
+      ],
       "Copy the suggested password to clipboard": [
         "Скапіяваць прапанаваны пароль у буфер абмену"
       ],
@@ -4091,6 +4103,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Увядзіце код, які быў адпраўлены на ${ email }. Калі вы не знайшлі паведамленне з кодам у папцы ўваходныя, праверце папку са спамам."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Увядзіце Entity ID арганізацыі **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Увядзіце пароль арганізацыі для аднаўлення правоў адміністратара. ${ learnMore }"
@@ -5927,6 +5942,9 @@
         "Паказаць ${ n } адміністратары",
         "Паказаць ${ n } адміністратараў",
         "Паказаць ${ n } адміністратараў"
+      ],
+      "Single sign-on Entity ID": [
+        "Адзіны ўваход Entity ID"
       ],
       "Single sign-on URL": [
         "Адзіны ўваход URL-адраса"
@@ -9184,6 +9202,9 @@
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
       ],
+      "The user ${ name } is now a single sign-on account.": [
+        "У карыстальніка ${ name } цяпер уліковы запіс з адзіным уваходам."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
       ],
@@ -10841,6 +10862,9 @@
       "User": [
         "Карыстальнік"
       ],
+      "User converted to SSO": [
+        "Карыстальнік пераўтвораны ў SSO"
+      ],
       "Users": [
         "Карыстальнікі"
       ],
@@ -10965,6 +10989,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса ваша пастаўшчыка пасведчанняў."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"
       ],
       "Device information such as operating system": [
         "Звесткі пра прыладу, такія як аперацыйная сістэма"
@@ -11369,9 +11396,6 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
-      ],
-      "servers": [
-        "сервераў"
       ]
     },
     "vpn_2024: renew": {
