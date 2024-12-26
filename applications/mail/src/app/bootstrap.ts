@@ -47,6 +47,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     initElectronClassnames();
     initLogicalProperties();
     initSafariFontFixClassnames();
+    startLogoutListener();
     // If the browser is Chromium based, register automatically the mailto protocol handler
     if (isChromiumBased()) {
         registerMailToProtocolHandler();
@@ -62,8 +63,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         }
     }
 
-    startLogoutListener();
-
     const run = async () => {
         const appContainerPromise = getAppContainer();
         const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
@@ -75,18 +74,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
 
-        await unleashPromise;
-        let persistedState = await getDecryptedPersistedState<Partial<MailState>>({
+        const persistedState = await getDecryptedPersistedState<Partial<MailState>>({
             authentication,
             user,
         });
 
-        const persistedStateEnabled = unleashClient.isEnabled('PersistedState');
-        if (persistedState?.state && !persistedStateEnabled) {
-            persistedState = undefined;
-        }
-
-        const store = setupStore({ preloadedState: persistedState?.state, persist: persistedStateEnabled });
+        const store = setupStore({ preloadedState: persistedState?.state, persist: true });
         const dispatch = store.dispatch;
 
         if (user) {
@@ -144,6 +137,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             userPromise,
             evPromise,
             bootstrap.loadCrypto({ appName }),
+            unleashPromise,
         ]);
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
