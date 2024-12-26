@@ -3,6 +3,7 @@ import {
     initEvent,
     organizationThunk,
     serverEvent,
+    startLogoutListener,
     userSettingsThunk,
     userThunk,
     welcomeFlagsActions,
@@ -57,6 +58,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     initElectronClassnames();
     initLogicalProperties();
     initSafariFontFixClassnames();
+    startLogoutListener();
 
     const appName = config.APP_NAME;
 
@@ -80,6 +82,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
+        // Persisted state is not enabled in the drawer app. This is because in drawer mode, it uses the client key
+        // of the parent app. Since that's different from the client key in the calendar app itself, the persisted
+        // state db will get encrypted with a different key and they'll both be writing to the same value but they
+        // won't be decryptable outside of its own context. Easiest way to solve that is probably to pass a prefix
+        // so that the drawer app writes to a different key.
+        const isPersistEnabled = !isDrawerApp;
 
         const sessionResult =
             (isDrawerApp && parentApp
@@ -98,18 +106,14 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
 
-        await unleashPromise;
-        let persistedState = await getDecryptedPersistedState<Partial<CalendarState>>({
-            authentication,
-            user,
-        });
+        const persistedState = isPersistEnabled
+            ? await getDecryptedPersistedState<Partial<CalendarState>>({
+                  authentication,
+                  user,
+              })
+            : undefined;
 
-        const persistedStateEnabled = unleashClient.isEnabled('PersistedState');
-        if (persistedState?.state && !persistedStateEnabled) {
-            persistedState = undefined;
-        }
-
-        const store = setupStore({ preloadedState: persistedState?.state, persist: persistedStateEnabled });
+        const store = setupStore({ preloadedState: persistedState?.state, persist: isPersistEnabled });
         const dispatch = store.dispatch;
 
         if (user) {
@@ -157,6 +161,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             userPromise,
             evPromise,
             bootstrap.loadCrypto({ appName }),
+            unleashPromise,
         ]);
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
