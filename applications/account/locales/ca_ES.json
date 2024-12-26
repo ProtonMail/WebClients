@@ -3595,7 +3595,7 @@
         "Suprimíeu automàticament el correu brossa i els missatges enviats a la paperera i desbloqueja més funcions prèmium quan milloreu."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa fa més de 30 dies."
+        "Esborra automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ordeneu automàticament els missatges entrants abans que arribin a la safata d'entrada."
@@ -4732,7 +4732,7 @@
         "Carregeu un logo quadrat."
       ],
       "Please upload an XML file": [
-        "Carregueu un arxiu XML."
+        "Carregueu un fitxer XML."
       ],
       "Please upload only 1 file": [
         "Carregueu només un arxiu."
@@ -5489,7 +5489,7 @@
         "Us heu unit al grup familiar."
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Teniu factures pendents de pagar. Pagueu-los abans d'unir-vos a un pla familiar."
+        "Teniu factures pendents de pagar. Pagueu-les abans d'unir-vos a un pla familiar."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Heu de configurar un domini personalitzat abans d'afegir diversos usuaris."
@@ -10559,7 +10559,7 @@
         "Etiqueta de l'enllaç (opcional)"
       ],
       "Lock app after inactivity": [
-        "Bloqueja l'aplicació després d'una inactivitat"
+        "Bloqueja l'aplicació després de la inactivitat"
       ],
       "Logo": [
         "Logo"
@@ -12825,7 +12825,7 @@
         "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "Encamineu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
+        "Dirigiu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
@@ -15878,8 +15878,8 @@
         "Voleu eliminar ${ n } usuaris inactius?"
       ],
       "Delete ${ n } user": [
-        "Elimina ${ n } usuari",
-        "Elimina ${ n } usuaris"
+        "Suprimeix ${ n } usuari",
+        "Suprimeix ${ n } usuaris"
       ],
       "Deny": [
         "Denega"
@@ -16017,7 +16017,7 @@
         "Per assegurar-vos que realment esteu intentant iniciar la sessió, compartiu el codi de confirmació amb el vostre administrador **${ adminEmail }** perquè pugui aprovar la sol·licitud de **${ email }**."
       ],
       "Tried to sign in at": [
-        "He intentat iniciar sessió a"
+        "S'ha provat d'iniciar sessió a"
       ],
       "Use backup password instead": [
         "Utilitza la contrasenya de recuperació en lloc"
@@ -16327,7 +16327,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "La subscripció es reduirà a una categoria inferior al final del cicle de facturació."
+        "La subscripció es desactivarà al final del cicle de facturació."
       ]
     },
     "Subscription length": {
@@ -18805,7 +18805,7 @@
         "versió estable"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }."
+        "Aquesta versió del Navegador Tor no és compatible. Actualitzeu a la darrera ${ stableRelease }."
       ]
     },
     "Transaction state display as badge": {
@@ -19178,9 +19178,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
-      ],
-      "servers": [
-        "servidors"
       ]
     },
     "vpn_2024: renew": {

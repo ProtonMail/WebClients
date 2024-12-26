@@ -4557,6 +4557,9 @@
       "Impossible to rename the gateway": [
         "Umulig å gi porttjeneren nytt navn"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Feil reservepassord. Forsøk igjen."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Feil filtype. Last opp en fil i PNG- eller JPEG-format."
       ],
@@ -4702,6 +4705,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Aktiver støtte for flere brukere før du legger brukere til din organisasjon."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Angi en gyldig enhets-ID-URL"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
         "Løs de uthevede konfliktene for å fortsette."
@@ -4725,13 +4731,16 @@
         "Oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
+        "Oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
       "Please upload a square logo": [
         "Last opp en firkantet logo"
       ],
+      "Please upload an XML file": [
+        "Last opp en XML-fil"
+      ],
       "Please upload only 1 file": [
-        "Vennligst last opp bare 1 fil"
+        "Last opp bare 1 fil"
       ],
       "Port is required": [
         "Port kreves"
@@ -4933,7 +4942,7 @@
         "Du har nådd det maksimale tegntallet. Forkort meldingen."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Din konto eller organisasjon har en forfalt faktura. Vennligst betal alle ubetalte fakturaer."
+        "Din konto eller organisasjon har en forfalt faktura. Betal alle ubetalte fakturaer."
       ],
       "Your forward will not be processed.": [
         "Videresendingen din blir ikke behandlet."
@@ -5485,7 +5494,7 @@
         "Du har blitt med i familiegruppen"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en familieplan."
+        "Du har ubetalte fakturaer. Betal dem før du blir med i en familieplan."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du må konfigurere et egendefinert domene før du kan legge til flere brukere."
@@ -6558,7 +6567,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Er du sikker på at du ønsker å importere en privat nøkkel? Import av en usikkert generert eller lekket privat nøkkel kan skade sikkerheten til e-postene dine.\n\nVær også oppmerksom på at den offentlige nøkkelen som tilsvarer denne private nøkkelen vil være offentlig tilgjengelig fra vår nøkkelserver. Hvis nøkkelen inneholder personlige detaljer (slik som ditt fulle navn) som du ikke ønsker å publisere, vennligst rediger nøkkel før import av den."
+        "Er du sikker på at du ønsker å importere en privat nøkkel? Import av en usikkert generert eller lekket privat nøkkel kan skade sikkerheten til e-postene dine.\n\nVær også oppmerksom på at den offentlige nøkkelen som tilsvarer denne private nøkkelen vil være offentlig tilgjengelig fra vår nøkkelserver. Hvis nøkkelen inneholder personlige detaljer (slik som ditt fulle navn) som du ikke ønsker å publisere, rediger nøkkelen før import av den."
       ]
     },
     "Import provider": {
@@ -7218,6 +7227,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i ACS (Assertion Consumer Service) URL-feltet til identitetsleverandøren din."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
+      ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
       ],
@@ -7489,6 +7501,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
       ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Angi enhets-ID-en for en **eduGAIN**-organisasjon for **${ domain.DomainName }**."
+      ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Skriv inn organisasjonspassord for å gjenopprette administratorprivilegier. ${ learnMore }"
       ],
@@ -7634,7 +7649,7 @@
         "Hvis du er logget på et annet sted, kan du kanskje ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener det er en feil, vennligst kontakt oss ${ contactLink }."
+        "Hvis du mener det er en feil, kontakt oss ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -7927,7 +7942,7 @@
         "Laster ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
+        "Laster inn kalender, vent litt. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading eduGAIN data...": [
         "Laster eduGAIN-data..."
@@ -8218,7 +8233,7 @@
         "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditter igjen."
       ],
       "please open a support ticket": [
-        "vennligst åpne en støtteforespørsel"
+        "åpne en støtteforespørsel"
       ],
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
@@ -8230,10 +8245,10 @@
         "Velg hvilken type kobling du vil sette inn og fyll ut alle felt."
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "Vennligst prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
+        "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
+        "Prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
       ],
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
@@ -9365,10 +9380,10 @@
         "Din ${ BRAND_NAME }-konto er tilknyttet ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, vennligst betal eventuelle forfalte fakturaer."
+        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, vennligst betal eventuelle forfalte fakturaer."
+        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, betal eventuelle forfalte fakturaer."
       ],
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-passord"
@@ -9480,7 +9495,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Vennligst kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
+        "Kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
       ]
     },
     "Info for domain modal": {
@@ -10818,6 +10833,9 @@
       "Signature": [
         "Signatur"
       ],
+      "Single sign-on Entity ID": [
+        "Enhets-ID for enkeltpålogging"
+      ],
       "Single sign-on URL": [
         "URL for enkel pålogging"
       ],
@@ -11040,7 +11058,7 @@
     },
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
-        "Vennligst legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
+        "Legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
       ]
     },
     "Label for new member": {
@@ -14134,7 +14152,7 @@
         "Legg til en betalingsmåte i kontrollpanelet for å fortsette."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
+        "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "Please select billing country": [
         "Velg faktureringsland"
@@ -15891,6 +15909,9 @@
       "Enter your backup password": [
         "Angi reservepassordet ditt"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "For at denne brukeren skal kunne logge på, må du kontrollere at de finnes hos identitetsleverandøren."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Av sikkerhetshensyn har du blitt logget av alle de andre aktive enhetene dine. Før du får tilgang til kontoen din, må du skrive inn et nytt reservepassord."
       ],
@@ -15980,6 +16001,9 @@
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Brukeren ${ name } er nå en konto med enkel pålogging."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dette vil logge brukeren ut av de andre enhetene sine, og vedkommende må opprette et nytt reservepassord."
@@ -18308,6 +18332,9 @@
       "User": [
         "Bruker"
       ],
+      "User converted to SSO": [
+        "Bruker konverterte til SSO"
+      ],
       "Users": [
         "Brukere"
       ],
@@ -18535,6 +18562,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i ACS (Assertion Consumer Service) URL-feltet til identitetsleverandøren din."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
       ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"
@@ -19149,9 +19179,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } land"
-      ],
-      "servers": [
-        "tjenere"
       ]
     },
     "vpn_2024: renew": {

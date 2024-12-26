@@ -4558,7 +4558,7 @@
         "Le nom de la passerelle ne peut pas être modifié."
       ],
       "Incorrect backup password. Please try again.": [
-        "Le mot de passe n'est pas correct. Veuillez réessayer."
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Le type de fichier n'est pas correct. Veuillez importer un fichier au format JPEG ou PNG."
@@ -4706,7 +4706,7 @@
         "Nous vous invitons à activer la prise en charge multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
       ],
       "Please enter a valid Entity ID URL": [
-        "Veuillez saisis une URL valide pour l'entité."
+        "Veuillez saisir une URL valide pour l'entité."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
@@ -19186,9 +19186,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
-      ],
-      "servers": [
-        "serveurs"
       ]
     },
     "vpn_2024: renew": {
