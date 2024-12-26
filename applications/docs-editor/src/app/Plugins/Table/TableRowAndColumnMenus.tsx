@@ -109,17 +109,23 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
     [editor, getCurrentCell, isColumnMenuOpen],
   )
 
-  const tableElement = useMemo(() => {
+  const { tableElement, tableWrapperElement } = useMemo(() => {
     return editor.getEditorState().read(() => {
-      const tableElement = editor.getElementByKey(tableNode.getKey())
-      return tableElement
+      const tableWrapperElement = editor.getElementByKey(tableNode.getKey())
+      return {
+        tableWrapperElement,
+        tableElement:
+          tableWrapperElement?.firstElementChild instanceof HTMLTableElement
+            ? tableWrapperElement.firstElementChild
+            : null,
+      }
     })
   }, [editor, tableNode])
 
   useEffect(() => {
     const rootElement = editor.getRootElement()
     const rootContainer = rootElement?.parentElement
-    if (!rootContainer || !tableElement) {
+    if (!rootContainer || !tableElement || !tableWrapperElement) {
       return
     }
 
@@ -138,7 +144,14 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         return
       }
 
-      if (rowMenuButtonRef.current) {
+      const tableWrapperInlineMargin =
+        parseFloat(getComputedStyle(tableWrapperElement).getPropertyValue('--margin-from-sides-in-rem')) * 16
+      const tableWrapperRect = tableWrapperElement.getBoundingClientRect()
+      const tableWrapperRight = tableWrapperRect.right
+      const tableWrapperMarginLeft = tableWrapperInlineMargin / 2
+      const isTableWrapperOverflowing = tableWrapperElement.scrollWidth > tableWrapperElement.clientWidth
+
+      if (rowMenuButtonRef.current && tableWrapperElement) {
         setTableRowElement(row)
 
         const rowRect = row.getBoundingClientRect()
@@ -147,7 +160,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         const rowMenuButton = rowMenuButtonRef.current
         const rowMenuButtonRect = rowMenuButton.getBoundingClientRect()
 
-        rowMenuButton.style.setProperty('--x', `${rowRect.left - rowMenuButtonRect.width / 2}px`)
+        const left = isTableWrapperOverflowing ? tableWrapperMarginLeft : rowRect.left
+
+        rowMenuButton.style.setProperty('--x', `${left - rowMenuButtonRect.width / 2}px`)
         rowMenuButton.style.setProperty(
           '--y',
           `${rowRect.top + rootOffset + rowRect.height / 2 - rowMenuButtonRect.height / 2}px`,
@@ -174,10 +189,13 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
 
         const columnMenuButton = columnMenuButtonRef.current
         const columnMenuButtonRect = columnMenuButton.getBoundingClientRect()
+        const columnMenuButtonHalfWidth = columnMenuButtonRect.width / 2
+
+        const x = cellRect.left + cellRect.width / 2 - columnMenuButtonHalfWidth
 
         columnMenuButton.style.setProperty(
           '--x',
-          `${cellRect.left + cellRect.width / 2 - columnMenuButtonRect.width / 2}px`,
+          `${x > tableWrapperRight ? tableWrapperRight - columnMenuButtonHalfWidth * 2 : x}px`,
         )
         columnMenuButton.style.setProperty(
           '--y',
@@ -210,7 +228,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
       tableElement.removeEventListener('mousemove', onMouseMove)
       rootElement.removeEventListener('mousemove', onRootMouseMove)
     }
-  }, [editor, isColumnMenuOpen, isRowMenuOpen, tableElement])
+  }, [editor, isColumnMenuOpen, isRowMenuOpen, tableElement, tableWrapperElement])
 
   const menuButtonClassName = 'text-sm flex items-center gap-2'
 
