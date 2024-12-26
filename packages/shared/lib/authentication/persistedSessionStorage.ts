@@ -34,11 +34,21 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     }
     try {
         const parsedValue = JSON.parse(itemValue);
+        const isSelf = (() => {
+            /* Legacy persisted value. The meaning has been inverted into `self`, so it compares to false. */
+            if (parsedValue.isSubUser !== undefined) {
+                return parsedValue.isSubUser === false;
+            }
+            if (parsedValue.isSelf !== undefined) {
+                return parsedValue.isSelf === true;
+            }
+            return true;
+        })();
         return {
             UserID: parsedValue.UserID || '',
             UID: parsedValue.UID || '',
             blob: parsedValue.blob || '',
-            isSubUser: parsedValue.isSubUser || false,
+            isSelf,
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
             trusted: parsedValue.trusted || false,
             payloadVersion: parsedValue.payloadVersion || 1,
@@ -140,7 +150,7 @@ export const setPersistedSessionWithBlob = async (
         UID: string;
         keyPassword: string;
         offlineKey: OfflineKey | undefined;
-        isSubUser: boolean;
+        isSelf: boolean;
         persistent: boolean;
         trusted: boolean;
     }
@@ -180,7 +190,7 @@ export const setPersistedSessionWithBlob = async (
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
         UID: data.UID,
-        isSubUser: data.isSubUser,
+        isSelf: data.isSelf,
         persistent: data.persistent,
         trusted: data.trusted,
         payloadVersion,

@@ -9,7 +9,7 @@ import TopBanner from './TopBanner';
 const SubUserTopBanner = () => {
     const [user] = useUser();
 
-    if (!user.isSubUser) {
+    if (user.isSelf) {
         return null;
     }
 

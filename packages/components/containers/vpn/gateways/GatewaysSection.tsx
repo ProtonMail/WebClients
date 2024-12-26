@@ -145,7 +145,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             plan: organization.PlanName,
         });
 
-    const isAdmin = user.isAdmin && !user.isSubUser;
+    const isAdmin = user.isAdmin && user.isSelf;
 
     const countryOptions = getCountryOptions(userSettings);
 
