@@ -1,11 +1,12 @@
+import type { CSSProperties } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { getBrowserLocale, getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { getLanguageCode } from '@proton/shared/lib/i18n/helper';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import clsx from '@proton/utils/clsx';
 
@@ -14,7 +15,7 @@ import useLocationWithoutLocale, { getLocalePathPrefix } from '../useLocationWit
 
 interface Props {
     className?: string;
-    style?: React.CSSProperties;
+    style?: CSSProperties;
     outlined?: boolean;
     globe?: boolean;
     locales?: TtagLocaleMap;
@@ -27,9 +28,8 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color
     const location = useLocationWithoutLocale();
     const history = useHistory();
 
-    const handleChange = async (newLocale: string) => {
-        const localeCode = getClosestLocaleCode(newLocale, locales);
-        await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
+    const handleChange = async (locale: string) => {
+        const { localeCode } = await loadLocales({ locale, locales, userSettings: undefined });
         forceRefresh();
         history.push(
             `${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}${location.search}${

@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 
 import { useForceRefresh } from '@proton/components';
 import { languageCode } from '@proton/shared/lib/i18n';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
 
 const useForceLanguage = () => {
@@ -14,11 +13,12 @@ const useForceLanguage = () => {
             return;
         }
         // Force english until more languages are translated
-        const newLocale = 'en';
-        const localeCode = getClosestLocaleCode(newLocale, locales);
+        const locale = 'en';
         const run = async () => {
-            await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
-            forceRefresh();
+            const { update } = await loadLocales({ locale, locales, userSettings: undefined });
+            if (update) {
+                forceRefresh();
+            }
         };
         run();
     }, []);
