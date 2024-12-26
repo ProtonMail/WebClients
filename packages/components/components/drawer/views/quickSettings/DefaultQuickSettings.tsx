@@ -38,8 +38,8 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
     const [betaToggleLoading, betaToggleWithLoading] = useLoading(false);
 
     const handleChangeEarlyAccess = async (e: ChangeEvent<HTMLInputElement>) => {
-        await earlyAccess.update(e.target.checked);
         const run = async () => {
+            await earlyAccess.update(e.target.checked);
             await wait(800);
             window.location.reload();
         };
