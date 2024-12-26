@@ -328,7 +328,7 @@
         "Definições de e-mail"
       ],
       "Empty trash": [
-        "Esvaziar lixeira"
+        "Esvaziar o lixo"
       ],
       "enable desktop notifications": [
         "ativar as notificações"
@@ -658,7 +658,7 @@
         "Restaurar"
       ],
       "Restore from trash": [
-        "Restaurar da lixeira"
+        "Restaurar do lixo"
       ],
       "Restore this version": [
         "Restaurar esta versão"
@@ -3880,7 +3880,7 @@
         "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
-        "Tente também procurar na lixeira."
+        "Tente também procurar no Lixo."
       ],
       "American Express SafeKey logo": [
         "Logotipo do American Express SafeKey"
@@ -3916,16 +3916,16 @@
         "Tem certeza de que deseja descartar a importação?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Tem a certeza de que deseja esvaziar a lixeira e eliminar permanentemente todos os itens?"
+        "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
       ],
       "Are you sure you want to permanently delete": [
         "Tem certeza de que deseja eliminar permanentemente"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Tem certeza de que deseja eliminar permanentemente \"${ itemName }\" da lixeira?"
+        "Tem certeza de que deseja eliminar permanentemente \"${ itemName }\" do lixo?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Tem a certeza de que deseja eliminar permanentemente os itens selecionados da lixeira?"
+        "Tem a certeza de que deseja eliminar permanentemente os itens selecionados do lixo?"
       ],
       "Attention required": [
         "Atenção Requerida"
@@ -4334,7 +4334,7 @@
         "Parece que tentou recentemente enviar ${ uploadName }. Se o envio falhou, ${ replaceFile }. Se o envio ainda estiver em curso, a substituição do ficheiro cancelará o envio em curso."
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "Os itens na lixeira permanecerão aqui até serem eliminados permanentemente."
+        "Os itens no lixo permanecerão aqui até serem eliminados permanentemente."
       ],
       "It’s easy and secure": [
         "É fácil e seguro"
@@ -4895,10 +4895,10 @@
         "A transferência foi ignorada para a pasta \"${ folderName }\"."
       ],
       "Trash": [
-        "Lixeira"
+        "Lixo"
       ],
       "Trash is empty": [
-        "A lixeira está vazia."
+        "O lixo está vazio"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
@@ -5903,7 +5903,7 @@
         "fique mais seguro online"
       ],
       "Trash": [
-        "Lixeira"
+        "Lixo"
       ],
       "What’s this?": [
         "O que é isto?"
@@ -6323,7 +6323,7 @@
         "Todos os produtos e funcionalidades ${ BRAND_NAME }"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixeira"
+        "Eliminação automática das pastas Spam e Lixo"
       ],
       "Auto-delete spam and trashed messages": [
         "Eliminar mensagens de spam e lixo automaticamente"
@@ -6884,31 +6884,31 @@
         "\"${ name }\" criado"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanentemente eliminado da lixeira"
+        "\"${ name }\" permanentemente eliminado do lixo"
       ],
       "\"${ name }\" failed to be created": [
         "Erro ao criar \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "Erro ao eliminar \"${ name }\" permanentemente da lixeira"
+        "Erro ao eliminar \"${ name }\" permanentemente do lixo"
       ],
       "\"${ name }\" failed to be moved": [
         "Erro ao mover \"${ name }\""
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "Erro ao mover \"${ name }\" para a lixeira"
+        "Erro ao mover \"${ name }\" para o lixo"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "Erro ao restaurar \"${ name }\" da lixeira"
+        "Erro ao restaurar \"${ name }\" do lixo"
       ],
       "\"${ name }\" failed to be saved": [
         "Erro ao guardar \"${ name }\""
       ],
       "\"${ name }\" moved to trash": [
-        "\"${ name }\" movido para a lixeira"
+        "\"${ name }\" movido para o lixo"
       ],
       "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado da lixeira"
+        "\"${ name }\" restaurado do lixo"
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" guardado"
@@ -6927,32 +6927,32 @@
         "Erro ao desencriptar ${ count } itens"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } item permanentemente eliminado da lixeira",
-        "${ numberOfItems } itens permanentemente eliminados da lixeira"
+        "${ numberOfItems } item permanentemente eliminado do lixo",
+        "${ numberOfItems } itens permanentemente eliminados do lixo"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Erro ao eliminar ${ numberOfItems } item permanentemente da lixeira",
-        "Erro ao eliminar ${ numberOfItems } itens permanentemente da lixeira"
+        "Erro ao eliminar ${ numberOfItems } item permanentemente do lixo",
+        "Erro ao eliminar ${ numberOfItems } itens permanentemente do lixo"
       ],
       "${ numberOfItems } item failed to be moved": [
         "Erro ao mover ${ numberOfItems } item",
         "Erro ao mover ${ numberOfItems } itens"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "Erro ao mover ${ numberOfItems } item para a lixeira",
-        "Erro ao mover ${ numberOfItems } itens para a lixeira"
+        "Não foi possível mover o item ${ numberOfItems } para o lixo",
+        "Não foi possível mover os itens ${ numberOfItems } para o lixo"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "Erro ao restaurar ${ numberOfItems } ficheiro da lixeira",
-        "Erro ao restaurar ${ numberOfItems } ficheiros da lixeira"
+        "Erro ao restaurar ${ numberOfItems } ficheiro do lixo",
+        "Erro ao restaurar ${ numberOfItems } ficheiros do lixo"
       ],
       "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } item movido para a lixeira",
-        "${ numberOfItems } itens movidos para a lixeira"
+        "${ numberOfItems } item movido para o lixo",
+        "${ numberOfItems } itens movidos para o lixo"
       ],
       "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } item restaurado da lixeira",
-        "${ numberOfItems } itens restaurados da lixeira"
+        "${ numberOfItems } item restaurado do lixo",
+        "${ numberOfItems } itens restaurados do lixo"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item movido com sucesso",
@@ -6976,7 +6976,7 @@
         "O acesso foi atualizado."
       ],
       "All items will soon be permanently deleted from trash": [
-        "Todos os itens serão permanentemente eliminados da lixeira"
+        "Todos os itens serão permanentemente eliminados do lixo"
       ],
       "Cannot load link": [
         "Não é possível carregar a ligação."
@@ -7070,7 +7070,7 @@
         "A ligação ao seu item foi eliminada."
       ],
       "Trash failed to be emptied": [
-        "Erro ao esvaziar a lixeira"
+        "Falha ao esvaziar o lixo"
       ],
       "Your old files will be deleted in 72 hours": [
         "Os seus ficheiros antigos serão eliminados em 72 horas."
@@ -8672,7 +8672,7 @@
         "Definições de e-mail"
       ],
       "Empty trash": [
-        "Esvaziar lixeira"
+        "Esvaziar o lixo"
       ],
       "Enable 2FA": [
         "Ativar A2F"
@@ -8977,7 +8977,7 @@
         "Tamanho total"
       ],
       "Trash": [
-        "Lixeira"
+        "Lixo"
       ],
       "Type": [
         "Tipo"
