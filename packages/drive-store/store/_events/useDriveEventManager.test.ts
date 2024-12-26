@@ -34,7 +34,7 @@ const EVENT_PAYLOAD = {
 const apiMock = jest.fn().mockImplementation(() => Promise.resolve(EVENT_PAYLOAD));
 
 describe('useDriveEventManager', () => {
-    let eventManager: EventManager;
+    let eventManager: EventManager<DriveEventsResult>;
     let hook: RenderResult<ReturnType<typeof useDriveEventManagerProvider>>;
 
     const renderTestHook = () => {
@@ -44,7 +44,7 @@ describe('useDriveEventManager', () => {
 
     beforeEach(() => {
         apiMock.mockClear();
-        eventManager = createEventManager({ api: apiMock, eventID: '1' });
+        eventManager = createEventManager<DriveEventsResult>({ getEvents: apiMock, eventID: '1' });
         hook = renderTestHook();
     });
 

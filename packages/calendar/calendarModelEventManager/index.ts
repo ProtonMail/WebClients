@@ -1,8 +1,10 @@
 import { queryLatestModelEventID, queryModelEvents } from '@proton/shared/lib/api/calendars';
-import createEventManager, { EVENT_ID_KEYS, type EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import createEventManager, { type EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 
-type SubscribeCallback = (data: any) => void;
+import type { CalendarEventLoop } from '../calendarServerEvent';
+
+type SubscribeCallback = (data: CalendarEventLoop) => void;
 
 export interface CalendarModelEventManager {
     start: (calendarIDs: string[]) => void[];
@@ -14,16 +16,18 @@ export interface CalendarModelEventManager {
 }
 
 const createCalendarEventManagerById = (api: Api, calendarID: string) => {
-    const eventManager = createEventManager({
-        api,
-        getLatestEventID: ({ api, ...rest }) =>
-            api<{
+    const eventManager = createEventManager<CalendarEventLoop>({
+        getLatestEventID: (options) => {
+            return api<{
                 CalendarModelEventID: string;
-            }>({ ...queryLatestModelEventID(calendarID), ...rest }).then(
+            }>({ ...queryLatestModelEventID(calendarID), ...options }).then(
                 ({ CalendarModelEventID }) => CalendarModelEventID
-            ),
-        eventIDKey: EVENT_ID_KEYS.CALENDAR,
-        query: (eventId: string) => queryModelEvents(calendarID, eventId),
+            );
+        },
+        getEvents: ({ eventID, ...rest }) => {
+            return api<CalendarEventLoop>({ ...queryModelEvents(calendarID, eventID), ...rest });
+        },
+        parseResults: (result) => ({ nextEventID: result.CalendarModelEventID, more: result.More }),
     });
     eventManager.start();
     return eventManager;
@@ -37,7 +41,7 @@ const getOrSetRecord = (calendarID: string, eventManagers: SimpleMap<EventManage
     return cachedValue;
 };
 
-type EventManagerCacheRecord = EventManager;
+type EventManagerCacheRecord = EventManager<any>;
 
 export const createCalendarModelEventManager = ({ api }: { api: Api }): CalendarModelEventManager => {
     let eventManagers: SimpleMap<EventManagerCacheRecord> = {};
@@ -80,14 +84,13 @@ export const createCalendarModelEventManager = ({ api }: { api: Api }): Calendar
     };
 
     const subscribe = (calendarIDs: string[], cb: SubscribeCallback) => {
-        let isActive = true;
         const notify = (data: any) => {
             cb(data);
         };
 
         const unsubscribes = calendarIDs.reduce<(() => void)[]>((acc, calendarID) => {
             const eventManager = getOrSetRecord(calendarID, eventManagers, api);
-            if (!isActive || !eventManager) {
+            if (!eventManager) {
                 return acc;
             }
             acc.push(eventManager.subscribe(notify));
@@ -95,8 +98,7 @@ export const createCalendarModelEventManager = ({ api }: { api: Api }): Calendar
         }, []);
 
         return () => {
-            unsubscribes.forEach((unsub) => unsub?.());
-            isActive = false;
+            unsubscribes.forEach((unsub) => unsub());
         };
     };
 

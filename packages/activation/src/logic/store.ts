@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 
+import type { EventLoop } from '@proton/account/eventLoop';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
@@ -38,7 +39,7 @@ type EasySwitchDispatch = ReturnType<typeof useGenerateEasySwitchStore>['dispatc
 export type EasySwitchThunkExtra = {
     state: EasySwitchState;
     dispatch: EasySwitchDispatch;
-    extra: { api: Api; notificationManager: NotificationsManager; eventManager: EventManager };
+    extra: { api: Api; notificationManager: NotificationsManager; eventManager: EventManager<EventLoop> };
 };
 
 export const useEasySwitchDispatch: () => EasySwitchDispatch = useDispatch;

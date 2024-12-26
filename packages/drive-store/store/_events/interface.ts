@@ -30,4 +30,6 @@ export type DriveCoreEvent = {
     DriveShareRefresh?: {
         Action: EVENT_ACTIONS;
     };
+    More: 1 | 0;
+    EventID: string;
 };

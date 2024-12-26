@@ -16,7 +16,6 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import type { Event } from '../../models/event';
 import { refresh } from '../../store/contacts/contactsActions';
 import { resetVerification } from '../../store/messages/read/messagesReadActions';
 
@@ -30,12 +29,12 @@ import { resetVerification } from '../../store/messages/read/messagesReadActions
  * @param onResetMessageForEmails
  */
 const processContactUpdate = async (
-    contact: Contact | undefined,
+    contact: Partial<Contact> | undefined,
     publicKeys: PublicKeyReference[],
     globalCache: Cache<string, any>,
     onResetMessageForEmails: (emails: string[]) => void
 ) => {
-    const signedCard = contact?.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
+    const signedCard = contact?.Cards?.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
     if (!signedCard) {
         return;
     }
@@ -71,9 +70,10 @@ export const useContactsListener = () => {
     };
 
     useEffect(() => {
-        const unsubscribe = subscribe(({ Contacts = [] }: Event) => {
-            for (const { Contact } of Contacts) {
-                void processContactUpdate(Contact, publicKeys, globalCache, handleResetMessageForEmails);
+        const unsubscribe = subscribe(({ Contacts = [] }) => {
+            for (const contactEvent of Contacts) {
+                const contact = 'Contact' in contactEvent ? contactEvent.Contact : undefined;
+                void processContactUpdate(contact, publicKeys, globalCache, handleResetMessageForEmails);
             }
         });
 
