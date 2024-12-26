@@ -1,5 +1,5 @@
 import { queryLatestModelEventID, queryModelEvents } from '@proton/shared/lib/api/calendars';
-import createEventManager, { EVENT_ID_KEYS, EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import createEventManager, { EVENT_ID_KEYS, type EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 
 type SubscribeCallback = (data: any) => void;
@@ -13,13 +13,17 @@ export interface CalendarModelEventManager {
     clear: () => void;
 }
 
-const createCalendarEventManagerById = async (api: Api, calendarID: string) => {
-    const { CalendarModelEventID } = await api<{ CalendarModelEventID: string }>(queryLatestModelEventID(calendarID));
+const createCalendarEventManagerById = (api: Api, calendarID: string) => {
     const eventManager = createEventManager({
         api,
-        eventID: CalendarModelEventID,
-        query: (eventId: string) => queryModelEvents(calendarID, eventId),
+        getLatestEventID: ({ api, ...rest }) =>
+            api<{
+                CalendarModelEventID: string;
+            }>({ ...queryLatestModelEventID(calendarID), ...rest }).then(
+                ({ CalendarModelEventID }) => CalendarModelEventID
+            ),
         eventIDKey: EVENT_ID_KEYS.CALENDAR,
+        query: (eventId: string) => queryModelEvents(calendarID, eventId),
     });
     eventManager.start();
     return eventManager;
@@ -27,83 +31,50 @@ const createCalendarEventManagerById = async (api: Api, calendarID: string) => {
 
 const getOrSetRecord = (calendarID: string, eventManagers: SimpleMap<EventManagerCacheRecord>, api: Api) => {
     const cachedValue = eventManagers[calendarID];
-    if (!cachedValue || (cachedValue.eventManager === undefined && cachedValue.promise === undefined)) {
-        const promise = createCalendarEventManagerById(api, calendarID)
-            .then((eventManager) => {
-                eventManagers[calendarID] = {
-                    eventManager,
-                    promise: undefined,
-                };
-                return eventManager;
-            })
-            .catch(() => {
-                delete eventManagers[calendarID];
-                return undefined;
-            });
-        const record = { promise, eventManager: undefined };
-        eventManagers[calendarID] = record;
-        return record;
+    if (!cachedValue) {
+        eventManagers[calendarID] = createCalendarEventManagerById(api, calendarID);
     }
     return cachedValue;
 };
 
-type EventManagerCacheRecord =
-    | {
-          eventManager: EventManager;
-          promise: undefined;
-      }
-    | {
-          promise: Promise<EventManager | undefined>;
-          eventManager: undefined;
-      };
+type EventManagerCacheRecord = EventManager;
 
 export const createCalendarModelEventManager = ({ api }: { api: Api }): CalendarModelEventManager => {
     let eventManagers: SimpleMap<EventManagerCacheRecord> = {};
 
     const clear = () => {
-        Object.values(eventManagers).forEach((record) => {
-            if (!record) {
+        Object.values(eventManagers).forEach((eventManager) => {
+            if (!eventManager) {
                 return;
             }
-            if (record.promise) {
-                record.promise.then((eventManager) => {
-                    if (!eventManager) {
-                        return;
-                    }
-                    eventManager.stop();
-                    eventManager.reset();
-                });
-            }
-            if (record.eventManager) {
-                record.eventManager.stop();
-                record.eventManager.reset();
-            }
+            eventManager.stop();
+            eventManager.reset();
         });
         eventManagers = {};
     };
 
     const start = (calendarIDs: string[]) => {
         return calendarIDs.map((calendarID) => {
-            return eventManagers[calendarID]?.eventManager?.start();
+            return eventManagers[calendarID]?.start();
         });
     };
 
     const stop = (calendarIDs: string[]) => {
         return calendarIDs.map((calendarID) => {
-            return eventManagers[calendarID]?.eventManager?.stop();
+            return eventManagers[calendarID]?.stop();
         });
     };
 
     const reset = (calendarIDs: string[]) => {
         return calendarIDs.map((calendarID) => {
-            return eventManagers[calendarID]?.eventManager?.reset();
+            return eventManagers[calendarID]?.reset();
         });
     };
 
     const call = (calendarIDs: string[]) => {
         return Promise.all(
             calendarIDs.map((calendarID) => {
-                return eventManagers[calendarID]?.eventManager?.call();
+                return eventManagers[calendarID]?.call();
             })
         );
     };
@@ -115,17 +86,11 @@ export const createCalendarModelEventManager = ({ api }: { api: Api }): Calendar
         };
 
         const unsubscribes = calendarIDs.reduce<(() => void)[]>((acc, calendarID) => {
-            const record = getOrSetRecord(calendarID, eventManagers, api);
-            if (record.promise) {
-                record.promise.then((eventManager) => {
-                    if (!isActive || !eventManager) {
-                        return;
-                    }
-                    acc.push(eventManager.subscribe(notify));
-                });
+            const eventManager = getOrSetRecord(calendarID, eventManagers, api);
+            if (!isActive || !eventManager) {
                 return acc;
             }
-            acc.push(record.eventManager.subscribe(notify));
+            acc.push(eventManager.subscribe(notify));
             return acc;
         }, []);
 

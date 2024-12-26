@@ -2,6 +2,7 @@ import noop from '@proton/utils/noop';
 
 import { getEvents } from '../api/events';
 import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
+import type { FetchConfig } from '../fetch/interface';
 import type { Listener } from '../helpers/listeners';
 import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
@@ -18,17 +19,26 @@ type EventResponse = {
     More: 0 | 1;
 };
 
-interface EventManagerConfig {
+interface EventManagerConfigBase {
     /** Function to call the API */
     api: Api;
-    /** Initial event ID to begin from */
-    eventID: string;
     /** Maximum interval time to wait between each call */
     interval?: number;
     /** Event polling endpoint override */
-    query?: (eventID: string) => object;
+    query?: (eventID: string) => FetchConfig;
     eventIDKey?: EVENT_ID_KEYS;
 }
+
+type GetLatestEventID = (options: { api: Api; signal: AbortSignal; silence: boolean }) => Promise<string>;
+
+type EventManagerConfig = EventManagerConfigBase &
+    /** Initial event ID to begin from */
+    (| { eventID: string; getLatestEventID?: GetLatestEventID }
+        | {
+              eventID?: string;
+              getLatestEventID: GetLatestEventID;
+          }
+    );
 
 export type SubscribeFn = <A extends any[], R = void>(listener: Listener<A, R>) => () => void;
 
@@ -48,13 +58,14 @@ export interface EventManager {
 const createEventManager = ({
     api,
     eventID: initialEventID,
+    getLatestEventID,
+    eventIDKey = EVENT_ID_KEYS.DEFAULT,
     interval = INTERVAL_EVENT_TIMER,
     query = getEvents,
-    eventIDKey = EVENT_ID_KEYS.DEFAULT,
 }: EventManagerConfig): EventManager => {
     const listeners = createListeners<[EventResponse]>();
 
-    if (!initialEventID) {
+    if (!initialEventID && !getLatestEventID) {
         throw new Error('eventID must be provided.');
     }
 
@@ -135,6 +146,32 @@ const createEventManager = ({
         listeners.clear();
     };
 
+    const getInitialEventIDPromise = async () => {
+        if (initialEventID) {
+            return initialEventID;
+        }
+
+        if (getLatestEventID) {
+            const abortController = new AbortController();
+            STATE.abortController = abortController;
+
+            try {
+                const latestEventID = await getLatestEventID({ api, signal: abortController.signal, silence: true });
+                if (latestEventID && !getEventID()) {
+                    setEventID(latestEventID);
+                }
+                return latestEventID;
+            } catch (e) {
+                // Swallow any errors. This will anyway get retried in the call if event id is missing.
+                return undefined;
+            }
+        }
+
+        return undefined;
+    };
+
+    const initialEventIDPromise = getInitialEventIDPromise();
+
     /**
      * Call the event manager. Either does it immediately, or queues the call until after the current call has finished.
      */
@@ -142,11 +179,24 @@ const createEventManager = ({
         try {
             stop();
 
+            await initialEventIDPromise;
+
             const abortController = new AbortController();
             STATE.abortController = abortController;
 
             for (;;) {
-                const eventID = getEventID();
+                let eventID = getEventID();
+
+                if (!eventID && getLatestEventID) {
+                    try {
+                        eventID = await getLatestEventID({ api, signal: abortController.signal, silence: true });
+                    } catch (error: any) {
+                        if (error.name === 'AbortError') {
+                            return;
+                        }
+                        throw error;
+                    }
+                }
 
                 if (!eventID) {
                     throw new Error('EventID undefined');
