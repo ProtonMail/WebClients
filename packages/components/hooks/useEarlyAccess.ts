@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 
+import { removePersistedStateEvent } from '@proton/account/persist/event';
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     getTargetEnvironment,
-    getVersionCookieIsValid,
     updateVersionCookie,
     versionCookieAtLoad,
 } from '@proton/components/helpers/versionCookie';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
@@ -17,12 +18,11 @@ import useApi from './useApi';
 const useEarlyAccess = () => {
     const api = useApi();
     const earlyAccessScope = useFeature(FeatureCode.EarlyAccessScope);
+    const dispatch = useDispatch();
     const { feature: { Value: maybeEarlyAccess, DefaultValue } = {} } = earlyAccessScope;
-    const [loadingUpdate, withLoadingUpdate] = useLoading();
-    const [userSettings, userSettingsLoading] = useUserSettings();
+    const [userSettings] = useUserSettings();
 
     const earlyAccessScopeValue = maybeEarlyAccess || DefaultValue;
-    const hasLoaded = !(userSettingsLoading || earlyAccessScope.loading);
 
     /*
      * Shouldn't be able to call update without the request for the EarlyAccessScope
@@ -41,18 +41,15 @@ const useEarlyAccess = () => {
             updateVersionCookie(earlyAccessEnabled ? earlyAccessScopeValue : undefined, earlyAccessScope.feature);
         }
 
-        await withLoadingUpdate(api(updateEarlyAccess({ EarlyAccess: Number(earlyAccessEnabled) })));
+        const newValue = { EarlyAccess: Number(earlyAccessEnabled) };
+        dispatch(userSettingsActions.update({ UserSettings: newValue }));
+        // We remove the persisted state because it's important that it's persisted with the new user settings so that
+        // it doesn't desynchronize the app on the next load
+        dispatch(removePersistedStateEvent());
+        await api(updateEarlyAccess(newValue));
     };
 
-    const normalizedVersionCookieAtLoad = getVersionCookieIsValid(versionCookieAtLoad, earlyAccessScope.feature)
-        ? versionCookieAtLoad
-        : undefined;
-
     const targetEnvironment = getTargetEnvironment(earlyAccessScope.feature, Boolean(userSettings.EarlyAccess));
-
-    const currentEnvironmentMatchesTargetEnvironment = normalizedVersionCookieAtLoad === targetEnvironment;
-    const environmentIsDesynchronized = hasLoaded && !currentEnvironmentMatchesTargetEnvironment;
-    const loading = earlyAccessScope.loading || loadingUpdate;
 
     useEffect(() => {
         if (hasInboxDesktopFeature('EarlyAccess')) {
@@ -62,13 +59,7 @@ const useEarlyAccess = () => {
 
     return {
         value: Boolean(userSettings.EarlyAccess),
-        scope: earlyAccessScopeValue,
-        canUpdate,
         update,
-        loading,
-        loadingUpdate,
-        environmentIsDesynchronized,
-        targetEnvironment,
         currentEnvironment: versionCookieAtLoad,
     };
 };

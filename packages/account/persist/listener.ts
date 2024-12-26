@@ -12,6 +12,7 @@ import { serverEvent } from '../eventLoop';
 import type { UserState } from '../user';
 import { selectUser } from '../user';
 import { deleteStore, pruneStores } from './db';
+import { removePersistedStateEvent } from './event';
 import { setEncryptedPersistedState } from './helper';
 
 const PERSIST_THROTTLE = 2.5 * SECOND;
@@ -76,18 +77,26 @@ export const startPersistListener = <T extends UserState>(
     });
 
     startListening({
+        actionCreator: removePersistedStateEvent,
+        effect: async (action, listenerApi) => {
+            const userID = selectUser(listenerApi.getState())?.value?.ID;
+            if (userID) {
+                await deleteStore(userID).catch(noop);
+            }
+        },
+    });
+
+    startListening({
         predicate: (action) => {
             return serverEvent.match(action) && action.payload.Refresh === EVENT_ERRORS.ALL;
         },
         effect: async (action, listenerApi) => {
-            const state = listenerApi.getState();
-            const userID = selectUser(state)?.value?.ID;
-            if (!userID) {
-                return;
+            const userID = selectUser(listenerApi.getState())?.value?.ID;
+            if (userID) {
+                listenerApi.unsubscribe();
+                await deleteStore(userID).catch(noop);
+                window.location.reload();
             }
-            listenerApi.unsubscribe();
-            await deleteStore(userID).catch(noop);
-            window.location.reload();
         },
     });
 
