@@ -2,6 +2,7 @@ import {
   addressesThunk,
   initEvent,
   serverEvent,
+  startLogoutListener,
   userSettingsThunk,
   userThunk,
   welcomeFlagsActions,
@@ -42,6 +43,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
   const appName = config.APP_NAME
 
   initSafariFontFixClassnames()
+  startLogoutListener()
 
   const run = async () => {
     const appContainerPromise = getAppContainer()
@@ -53,19 +55,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     extendStore({ config, api, authentication, unleashClient, history })
 
     const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
-    await unleashPromise
 
-    let persistedState = await getDecryptedPersistedState<Partial<DocsState>>({
+    const persistedState = await getDecryptedPersistedState<Partial<DocsState>>({
       authentication,
       user,
     })
 
-    const persistedStateEnabled = unleashClient.isEnabled('PersistedState')
-    if (persistedState?.state && !persistedStateEnabled) {
-      persistedState = undefined
-    }
-
-    const store = setupStore({ preloadedState: persistedState?.state, persist: persistedStateEnabled })
+    const store = setupStore({ preloadedState: persistedState?.state, persist: true })
     const dispatch = store.dispatch
 
     if (user) {
@@ -102,6 +98,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
       userPromise,
       evPromise,
       bootstrap.loadCrypto({ appName }),
+      unleashPromise,
     ])
     // postLoad needs everything to be loaded.
     await bootstrap.postLoad({ appName, authentication, ...userData, history })
