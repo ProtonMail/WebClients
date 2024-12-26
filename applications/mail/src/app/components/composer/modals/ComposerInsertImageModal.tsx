@@ -7,7 +7,6 @@ import { Checkbox, Info, Label } from '@proton/components';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
-import useFlag from '@proton/unleash/useFlag';
 
 import ComposerInnerModal from './ComposerInnerModal';
 
@@ -16,16 +15,24 @@ interface Props {
     onSelect: (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => void;
     onClose: () => void;
     mailSettings?: MailSettings;
+    canRemoveImageMetadata?: boolean;
+    canShowMetadataToggle?: boolean;
 }
 
-const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings }: Props) => {
-    const removeImageMetadataFeatureFlag = useFlag('RemoveImageMetadata');
+const ComposerInsertImageModal = ({
+    files,
+    onSelect,
+    onClose,
+    mailSettings,
+    canRemoveImageMetadata,
+    canShowMetadataToggle,
+}: Props) => {
     const [removeImageMetadata, setRemoveImageMetadata] = useState(
         mailSettings?.RemoveImageMetadata === REMOVE_IMAGE_METADATA.ENABLED
     );
     const actions = (
         <>
-            {removeImageMetadataFeatureFlag && mailSettings ? (
+            {canRemoveImageMetadata && canShowMetadataToggle && mailSettings ? (
                 <Label htmlFor="remove-image-metadata-checkbox" className="w-full flex flex-nowrap mb-3 items-center">
                     <Checkbox
                         id="remove-image-metadata-checkbox"
@@ -46,7 +53,9 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings }: Pr
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect(ATTACHMENT_DISPOSITION.ATTACHMENT)}
+                onClick={() =>
+                    onSelect(ATTACHMENT_DISPOSITION.ATTACHMENT, removeImageMetadata && canRemoveImageMetadata)
+                }
                 data-testid="composer:insert-image-attachment"
                 autoFocus
             >
@@ -55,7 +64,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose, mailSettings }: Pr
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect(ATTACHMENT_DISPOSITION.INLINE)}
+                onClick={() => onSelect(ATTACHMENT_DISPOSITION.INLINE, removeImageMetadata && canRemoveImageMetadata)}
                 data-testid="composer:insert-image-inline"
             >{c('Action').t`Inline`}</Button>
         </>

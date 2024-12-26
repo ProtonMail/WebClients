@@ -6,6 +6,7 @@ import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
@@ -53,6 +54,8 @@ const ComposerInnerModals = ({
     composerID,
     handleToggleAssistant,
 }: Props) => {
+    const removeImageMetadataFeatureFlag = useFlag('RemoveImageMetadata');
+
     const [mailSettings] = useMailSettings();
     const boldNoReplyEmail = <strong key="no-reply-email">{noReplyEmail}</strong>;
     const [dontShowAgain, setDontShowAgain] = useLocalState(false, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY);
@@ -77,6 +80,8 @@ const ComposerInnerModals = ({
                     onClose={handleCloseInsertImageModal}
                     onSelect={handleAddAttachmentsUpload}
                     mailSettings={mailSettings}
+                    canRemoveImageMetadata={removeImageMetadataFeatureFlag}
+                    canShowMetadataToggle
                 />
             )}
             {innerModal === ComposerInnerModalStates.DeleteDraft && (
