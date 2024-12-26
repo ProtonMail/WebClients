@@ -126,11 +126,13 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
 
             extendStore({ unleashClient });
 
-            const eventManagerPromise = api<{ EventID: string }>(getLatestID())
-                .then(({ EventID }) => EventID)
-                .then((eventID) => {
-                    return createEventManager({ api, eventID });
-                });
+            const eventManager = createEventManager({
+                api,
+                getLatestEventID: ({ api, ...rest }) =>
+                    api<{
+                        EventID: string;
+                    }>({ ...getLatestID(), ...rest }).then(({ EventID }) => EventID),
+            });
 
             const setupModels = async () => {
                 const [user] = await Promise.all([dispatch(userThunk())]);
@@ -144,8 +146,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
                 return loadLocalesI18n({ locales, locale, browserLocaleCode, userSettings: undefined });
             };
 
-            const [eventManager] = await Promise.all([
-                eventManagerPromise,
+            await Promise.all([
                 setupModels(),
                 loadLocales(),
                 loadCryptoWorker({ poolSize: 1 }),
