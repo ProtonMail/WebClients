@@ -7300,7 +7300,9 @@ __metadata:
     "@reduxjs/toolkit": "npm:^2.5.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^15.0.7"
+    "@types/deep-freeze": "npm:^0.1.5"
     date-fns: "npm:^2.30.0"
+    deep-freeze: "npm:^0.0.1"
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
@@ -11675,6 +11677,13 @@ __metadata:
   version: 2.3.9
   resolution: "@types/css-tree@npm:2.3.9"
   checksum: 10c0/abd105f979538d4c63f9564adfad9373fd6860cf7d942f41e16a8c7490a2b511835c119403cec069afa82b8c11b82a1303b4edfe9254238586206fa12f5836d6
+  languageName: node
+  linkType: hard
+
+"@types/deep-freeze@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "@types/deep-freeze@npm:0.1.5"
+  checksum: 10c0/cb568f0adbbcb0f3af3533a522e67de357c7ec7a9049d6a7799c4825162c843431302874c1c63668e21f78d8ddad0562f9968011736f27c34d659d161ff64d4c
   languageName: node
   linkType: hard
 
@@ -19994,6 +20003,13 @@ __metadata:
   version: 0.6.0
   resolution: "deep-extend@npm:0.6.0"
   checksum: 10c0/1c6b0abcdb901e13a44c7d699116d3d4279fdb261983122a3783e7273844d5f2537dc2e1c454a23fcf645917f93fbf8d07101c1d03c015a87faa662755212566
+  languageName: node
+  linkType: hard
+
+"deep-freeze@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "deep-freeze@npm:0.0.1"
+  checksum: 10c0/b32c878395df6ca0e07d065750e14bc1651ec76e99490bca25e5844f7321676d7045d4eb4123892a0d4f08c38e4b7fa46d6e834782c095723447c0ee2ad0340b
   languageName: node
   linkType: hard
 
