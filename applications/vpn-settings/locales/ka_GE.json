@@ -2689,6 +2689,9 @@
       "Please upload a square logo": [
         "ატვირთეთ ოთხკუთხედი ლოგო"
       ],
+      "Please upload an XML file": [
+        "ატვირთეთ XML ფაილი"
+      ],
       "Please upload only 1 file": [
         "ატვირთეთ, მხოლოდ, ერთი ფაილი"
       ],
@@ -5770,6 +5773,9 @@
       "Show ${ n } administrator": [
         "${ n } ადმინისტრატორის ჩვენება",
         "${ n } ადმინისტრატორის ჩვენება"
+      ],
+      "Single sign-on Entity ID": [
+        "SSO-ის ერთეულის ID"
       ],
       "Single sign-on URL": [
         "SSO-ის ბმული"
@@ -10478,6 +10484,9 @@
       "User": [
         "მომხმარებელი"
       ],
+      "User converted to SSO": [
+        "მომხმარებელი გადაყვანილია SSO-ზე"
+      ],
       "Users": [
         "მომხმარებლები"
       ],
@@ -10989,9 +10998,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში",
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში"
-      ],
-      "servers": [
-        "სერვერი"
       ]
     },
     "vpn_2024: renew": {

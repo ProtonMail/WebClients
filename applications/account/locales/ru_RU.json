@@ -2001,6 +2001,12 @@
       "Add link to your email footer": [
         "Добавить ссылку в нижний колонтитул электронной почты"
       ],
+      "Change email address settings": [
+        "Изменить настройки адреса электронной почты"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3617,6 +3623,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Также включены"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
       ],
@@ -3649,6 +3658,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Получите до ${ credits } кредитов, приглашая друзей в ${ BRAND_NAME }."
@@ -7031,6 +7043,9 @@
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
         "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }"
       ],
+      "Address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
       ],
@@ -7420,6 +7435,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
+      ],
+      "default email address": [
+        "адрес эл. почты по умолчанию"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -8459,6 +8477,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Registering your subscription...": [
+        "Регистрация вашей подписки..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
       ],
@@ -8560,6 +8581,9 @@
       ],
       "Setting successfully saved": [
         "Настройка успешно сохранена"
+      ],
+      "Setting up your new address...": [
+        "Настройка нового адреса..."
       ],
       "Setting up your organization": [
         "Настройка вашей организации"
@@ -12008,6 +12032,9 @@
       "From ${ price }": [
         "От: ${ price }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
       ],
@@ -12191,6 +12218,9 @@
       ],
       "10 email addresses/aliases": [
         "10 адресов электронной почты или псевдонимов"
+      ],
+      "10 more premium features": [
+        "и еще 10 платных функций"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -18540,6 +18570,9 @@
       "Unlock your data": [
         "Разблокируйте свои данные"
       ],
+      "Upgrade complete!": [
+        "Улучшение выполнено!"
+      ],
       "Upgrade plan": [
         "Улучшить план"
       ],
@@ -18626,6 +18659,9 @@
       ],
       "Your recovery status": [
         "Ваше состояние восстановления"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш укороченный адрес готов"
       ],
       "Your SMTP token": [
         "Ваш SMTP токен"
@@ -19403,9 +19439,6 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
-      ],
-      "servers": [
-        "серверы"
       ]
     },
     "vpn_2024: renew": {
