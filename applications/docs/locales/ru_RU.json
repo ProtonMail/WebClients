@@ -1099,6 +1099,12 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "Изменить настройки адреса электронной почты"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -2185,6 +2191,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
       ],
+      "Also included": [
+        "Также включены"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
@@ -2196,6 +2205,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3916,6 +3928,9 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
+      "Address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
@@ -4077,6 +4092,9 @@
       ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "default email address": [
+        "адрес эл. почты по умолчанию"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
@@ -4543,6 +4561,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Registering your subscription...": [
+        "Регистрация вашей подписки..."
+      ],
       "Saving": [
         "Сохранение"
       ],
@@ -4569,6 +4590,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
+      ],
+      "Setting up your new address...": [
+        "Настройка нового адреса..."
       ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
@@ -5938,6 +5962,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Начните с ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
       ],
@@ -6112,6 +6139,9 @@
       ],
       "10 email addresses/aliases": [
         "10 адресов электронной почты или псевдонимов"
+      ],
+      "10 more premium features": [
+        "и еще 10 платных функций"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -6947,11 +6977,23 @@
         "${ count } элементов не удалось расшифровать",
         "${ count } элементов не удалось расшифровать"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } элемент удален",
+        "${ numberOfItems } элемента удалены",
+        "${ numberOfItems } элементов удалены",
+        "${ numberOfItems } элемента удалены"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } элемент окончательно удален из корзины",
         "${ numberOfItems } элемента окончательно удалены из корзины",
         "${ numberOfItems } элементов окончательно удалены из корзины",
         "${ numberOfItems } элементов окончательно удалены из корзины"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } элемент не удалось удалить",
+        "${ numberOfItems } элемента не удалось удалить",
+        "${ numberOfItems } элементов не удалось удалить",
+        "${ numberOfItems } элемента не удалось удалить"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } элемент не удалось окончательно удалить из корзины",
@@ -9037,6 +9079,9 @@
       "Untitled document ${ date }": [
         "Документ без названия ${ date }"
       ],
+      "Upgrade complete!": [
+        "Улучшение выполнено!"
+      ],
       "Uploading a large file or folder": [
         "Загрузка большого файла или папки"
       ],
@@ -9075,6 +9120,9 @@
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш укороченный адрес готов"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9319,6 +9367,9 @@
       ],
       "Missing alias suffix": [
         "Отсутствует суффикс псевдонима"
+      ],
+      "Name is required": [
+        "Требуется имя"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"
