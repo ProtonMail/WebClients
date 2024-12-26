@@ -47,7 +47,7 @@ import sentry, { setSentryEnabled, setUID as setSentryUID } from '@proton/shared
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -339,10 +339,14 @@ export const loadCrypto = ({ appName }: { appName: APP_NAMES }) => {
     return loadCryptoWorker(getCryptoWorkerOptions(appName, {}));
 };
 
-export const loadLocales = ({ locales, userSettings }: { locales: TtagLocaleMap; userSettings: UserSettings }) => {
-    const browserLocale = getBrowserLocale();
-    const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
-    return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale, userSettings)]);
+export const loadLocales = ({
+    locales,
+    userSettings,
+}: {
+    locales: TtagLocaleMap;
+    userSettings: Pick<UserSettings, 'Locale' | 'TimeFormat' | 'DateFormat' | 'WeekStart'>;
+}) => {
+    return loadLocalesI18n({ locale: userSettings.Locale, locales, userSettings });
 };
 
 export const initUser = ({
@@ -485,7 +489,12 @@ export const loadLocalesPublicApp = ({
     browserLocale: string;
     locales: TtagLocaleMap;
 }) => {
-    return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
+    return loadLocalesI18n({
+        locales,
+        locale: localeCode,
+        browserLocaleCode: browserLocale,
+        userSettings: undefined,
+    });
 };
 
 export const publicApp = ({

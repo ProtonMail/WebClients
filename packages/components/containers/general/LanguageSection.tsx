@@ -1,21 +1,22 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useForceRefresh from '@proton/components/hooks/useForceRefresh';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useLoading } from '@proton/hooks';
-import { updateLocale } from '@proton/shared/lib/api/settings';
+import { useDispatch } from '@proton/redux-shared-store';
+import { updateLocale as updateLocaleConfig } from '@proton/shared/lib/api/settings';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import noop from '@proton/utils/noop';
 
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -26,29 +27,26 @@ interface Props {
 }
 
 const LanguageSection = ({ locales = {} }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
     const { LOCALES = {} } = useConfig();
+    const dispatch = useDispatch();
     const [userSettings] = useUserSettings();
+    const api = useApi();
     const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
-    const forceRefresh = useForceRefresh();
-
-    const languageOptions = Object.entries(LOCALES).map(([key, value]) => (
-        <Option key={key} title={value} value={key} />
-    ));
+    const errorHandler = useErrorHandler();
 
     const handleChange = async (locale: string) => {
-        await api(updateLocale(locale));
-        const localeCode = getClosestLocaleCode(locale, locales);
-        await Promise.all([
-            loadLocale(localeCode, locales),
-            loadDateLocale(localeCode, getBrowserLocale(), userSettings),
-        ]);
-        await call();
-        createNotification({ text: c('Success').t`Locale updated` });
-        forceRefresh();
-        void invokeInboxDesktopIPC({ type: 'updateLocale', payload: locale });
+        try {
+            // Ignore API failures on update
+            api(updateLocaleConfig(locale)).catch(noop);
+            const { update } = await loadLocales({ locale, locales, userSettings });
+            if (update) {
+                dispatch(userSettingsActions.update({ UserSettings: { Locale: locale } }));
+                invokeInboxDesktopIPC({ type: 'updateLocale', payload: locale }).catch(noop);
+                createNotification({ text: c('Success').t`Locale updated` });
+            }
+        } catch (e) {
+            errorHandler(e);
+        }
     };
 
     const displayedValue = getClosestLocaleCode(userSettings?.Locale, locales);
@@ -64,13 +62,14 @@ const LanguageSection = ({ locales = {} }: Props) => {
                 <SelectTwo
                     id="languageSelect"
                     value={displayedValue}
-                    disabled={loading}
                     onChange={({ value }) => {
-                        void withLoading(handleChange(value));
+                        handleChange(value);
                     }}
                     aria-describedby="label-languageSelect"
                 >
-                    {languageOptions}
+                    {Object.entries(LOCALES).map(([key, value]) => (
+                        <Option key={key} title={value} value={key} />
+                    ))}
                 </SelectTwo>
                 <div className="mt-1 text-sm">
                     <Href href={getBlogURL('/translation-community')}>{c('Link').t`Help translate`}</Href>
