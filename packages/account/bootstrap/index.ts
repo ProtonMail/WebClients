@@ -311,7 +311,7 @@ export const unleashReady = async ({ unleashClient }: { unleashClient: UnleashCl
 };
 
 const defaultQuery = (eventID: string) => getEvents(eventID);
-export const eventManager = async ({
+export const eventManager = ({
     api,
     query = defaultQuery,
     eventID: maybeEventID,
@@ -320,19 +320,15 @@ export const eventManager = async ({
     query?: Parameters<typeof createEventManager>[0]['query'];
     eventID?: string;
 }) => {
-    const eventID = maybeEventID
-        ? maybeEventID
-        : await api<{
-              EventID: string;
-          }>(getLatestID()).then(({ EventID }) => EventID);
-
-    const eventManager = createEventManager({
-        api: api,
-        eventID,
+    return createEventManager({
+        api,
+        eventID: maybeEventID,
+        getLatestEventID: ({ api, ...rest }) =>
+            api<{
+                EventID: string;
+            }>({ ...getLatestID(), ...rest }).then(({ EventID }) => EventID),
         query: query,
     });
-
-    return eventManager;
 };
 
 export const loadCrypto = ({ appName }: { appName: APP_NAMES }) => {

@@ -50,4 +50,39 @@ describe('event manager', () => {
         eventManager.stop();
         unsubscribe();
     });
+
+    it('should call getLatestEventID to get the event ID when it is not passed', async () => {
+        const api = mockApi([
+            { EventID: '2', More: 0 },
+            { EventID: '3', More: 0 },
+        ]);
+        const getLatestEventID = jasmine.createSpy('getLatestEventID').and.callFake(() => '1');
+
+        const eventManager = createEventManager({
+            getLatestEventID,
+            api,
+            interval: 1000,
+        });
+        const onSuccess = jasmine.createSpy();
+        const unsubscribe = eventManager.subscribe(onSuccess);
+
+        // Should make one call initially
+        expect(getLatestEventID.calls.all().length).toEqual(1);
+
+        eventManager.start();
+
+        // Should wait for that call to finish
+        await eventManager.call();
+
+        expect(getLatestEventID.calls.all().length).toEqual(1);
+        expect(api.calls.all().length).toEqual(1);
+
+        await eventManager.call();
+
+        expect(getLatestEventID.calls.all().length).toEqual(1);
+        expect(api.calls.all().length).toEqual(2);
+
+        eventManager.stop();
+        unsubscribe();
+    });
 });
