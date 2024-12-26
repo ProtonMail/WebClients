@@ -44,7 +44,9 @@ const useChecklist = (id: ChecklistId) => {
             void withLoading(api<Checklist>(getChecklist(id)).then(setChecklist));
         }
 
-        const unsubscribe = subscribe(({ Checklist }: Event) => {
+        const unsubscribe = subscribe((update) => {
+            const checklistUpdate = update as Event; // TODO: Improve these types
+            const Checklist = checklistUpdate?.Checklist;
             Checklist?.forEach(({ CompletedItem, Display }) => {
                 setChecklist((current) => ({
                     ...current,

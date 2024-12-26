@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { serverEvent, userThunk } from '@proton/account';
+import { type EventLoop, serverEvent, userThunk } from '@proton/account';
 import {
     ApiProvider,
     EventManagerProvider,
@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
-import { getLatestID } from '@proton/shared/lib/api/events';
+import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
@@ -126,11 +126,15 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
 
             extendStore({ unleashClient });
 
-            const eventManagerPromise = api<{ EventID: string }>(getLatestID())
-                .then(({ EventID }) => EventID)
-                .then((eventID) => {
-                    return createEventManager({ api, eventID });
-                });
+            const eventManager = createEventManager<EventLoop>({
+                getLatestEventID: (options) =>
+                    api<{
+                        EventID: string;
+                    }>({ ...getLatestID(), ...options }).then(({ EventID }) => EventID),
+                getEvents: ({ eventID, ...rest }) => {
+                    return api<EventLoop>({ ...getEvents(eventID), ...rest });
+                },
+            });
 
             const setupModels = async () => {
                 const [user] = await Promise.all([dispatch(userThunk())]);
@@ -144,8 +148,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
                 return loadLocalesI18n({ locales, locale, browserLocaleCode, userSettings: undefined });
             };
 
-            const [eventManager] = await Promise.all([
-                eventManagerPromise,
+            await Promise.all([
                 setupModels(),
                 loadLocales(),
                 loadCryptoWorker({ poolSize: 1 }),

@@ -112,13 +112,11 @@ export const bootstrapApp = async ({
 
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
-        const evPromise = bootstrap.eventManager({ api: silentApi });
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        const [MainContainer, userData, eventManager] = await Promise.all([
+        const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
-            evPromise,
             bootstrap.loadCrypto({ appName }),
             unleashPromise,
         ]);
@@ -127,6 +125,7 @@ export const bootstrapApp = async ({
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
         await preloadPromise;
 
+        const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });
         const unsubscribeEventManager = eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
