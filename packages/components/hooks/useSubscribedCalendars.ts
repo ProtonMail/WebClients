@@ -23,11 +23,6 @@ import type {
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import type {
-    CalendarEventManager,
-    CalendarMemberEventManager,
-    CalendarSubscriptionEventManager,
-} from '@proton/shared/lib/interfaces/calendar/EventManager';
 import addItem from '@proton/utils/addItem';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
@@ -152,43 +147,35 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], loadingCalendars = 
             return;
         }
 
-        return coreSubscribe(
-            ({
-                Calendars: CalendarEvents = [],
-                CalendarMembers: CalendarMembersEvents = [],
-            }: {
-                Calendars?: CalendarEventManager[];
-                CalendarMembers?: CalendarMemberEventManager[];
-            }) => {
-                CalendarEvents.forEach((event) => {
-                    if (getIsCalendarEventManagerDelete(event)) {
-                        handleDeleteCalendar(event.ID);
-                    }
+        return coreSubscribe(({ Calendars: CalendarEvents = [], CalendarMembers: CalendarMembersEvents = [] }) => {
+            CalendarEvents.forEach((event) => {
+                if (getIsCalendarEventManagerDelete(event)) {
+                    handleDeleteCalendar(event.ID);
+                }
 
-                    if (getIsCalendarEventManagerCreate(event)) {
-                        // TODO: The code below is prone to race conditions. Namely if a new event manager update
-                        //  comes before this promise is resolved.
-                        void handleAddCalendar(event.Calendar);
-                    }
+                if (getIsCalendarEventManagerCreate(event)) {
+                    // TODO: The code below is prone to race conditions. Namely if a new event manager update
+                    //  comes before this promise is resolved.
+                    void handleAddCalendar(event.Calendar);
+                }
 
-                    if (getIsCalendarEventManagerUpdate(event)) {
-                        // TODO: The code below is prone to race conditions. Namely if a new event manager update
-                        //  comes before this promise is resolved.
-                        void handleUpdateCalendar(event.Calendar);
-                    }
-                });
+                if (getIsCalendarEventManagerUpdate(event)) {
+                    // TODO: The code below is prone to race conditions. Namely if a new event manager update
+                    //  comes before this promise is resolved.
+                    void handleUpdateCalendar(event.Calendar);
+                }
+            });
 
-                CalendarMembersEvents.forEach((event) => {
-                    if (getIsCalendarMemberEventManagerDelete(event)) {
-                        handleDeleteMember(event.ID);
-                    } else if (getIsCalendarMemberEventManagerCreate(event)) {
-                        handleCreateMember(event.Member);
-                    } else if (getIsCalendarMemberEventManagerUpdate(event)) {
-                        handleUpdateMember(event.Member);
-                    }
-                });
-            }
-        );
+            CalendarMembersEvents.forEach((event) => {
+                if (getIsCalendarMemberEventManagerDelete(event)) {
+                    handleDeleteMember(event.ID);
+                } else if (getIsCalendarMemberEventManagerCreate(event)) {
+                    handleCreateMember(event.Member);
+                } else if (getIsCalendarMemberEventManagerUpdate(event)) {
+                    handleUpdateMember(event.Member);
+                }
+            });
+        });
     }, [loadingCalendars]);
 
     useEffect(() => {
@@ -196,21 +183,14 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], loadingCalendars = 
             return;
         }
 
-        return calendarSubscribe(
-            calendarIDs,
-            ({
-                CalendarSubscriptions: CalendarSubscriptionEvents = [],
-            }: {
-                CalendarSubscriptions?: CalendarSubscriptionEventManager[];
-            }) => {
-                CalendarSubscriptionEvents.forEach((calendarSubscriptionChange) => {
-                    if (getIsCalendarSubscriptionEventManagerUpdate(calendarSubscriptionChange)) {
-                        const { ID, CalendarSubscription } = calendarSubscriptionChange;
-                        handleUpdateSubscription(ID, CalendarSubscription);
-                    }
-                });
-            }
-        );
+        return calendarSubscribe(calendarIDs, ({ CalendarSubscriptions: CalendarSubscriptionEvents = [] }) => {
+            CalendarSubscriptionEvents.forEach((calendarSubscriptionChange) => {
+                if (getIsCalendarSubscriptionEventManagerUpdate(calendarSubscriptionChange)) {
+                    const { ID, CalendarSubscription } = calendarSubscriptionChange;
+                    handleUpdateSubscription(ID, CalendarSubscription);
+                }
+            });
+        });
     }, [calendarIDs, loadingCalendars]);
 
     useEffect(() => {
