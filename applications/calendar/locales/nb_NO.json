@@ -2604,11 +2604,6 @@
         "Forfalt faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -2702,6 +2697,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3851,7 +3851,7 @@
         "Du har blitt med i familiegruppen"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en familieplan."
+        "Du har ubetalte fakturaer. Betal dem før du blir med i en familieplan."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne familieplanen og sammen nyte alle ${ brandOrAppName }-premiumfunksjoner."
@@ -4830,7 +4830,7 @@
         "Laster ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
+        "Laster inn kalender, vent litt. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading event": [
         "Laster hendelse"
@@ -4967,10 +4967,10 @@
         "Prøv igjen om noen øyeblikk"
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "Vennligst prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
+        "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
+        "Prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent mens vi ser etter kontakter som kan signeres på nytt med den primære krypteringsnøkkelen."
@@ -5342,10 +5342,10 @@
         "Du har nådd maksimalt antall adresser i kontaktgruppen."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, vennligst betal eventuelle forfalte fakturaer."
+        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, vennligst betal eventuelle forfalte fakturaer."
+        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, betal eventuelle forfalte fakturaer."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
@@ -5417,7 +5417,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Vennligst kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
+        "Kontakt oss på ${ email } for instruksjoner om hvordan du betaler med kontanter."
       ]
     },
     "Info message": {
@@ -7047,6 +7047,14 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaff deg Mail Plus for ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -7059,14 +7067,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaff deg Mail Plus for ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
       ]
     },
     "new_plans: tooltip": {
@@ -7765,7 +7765,7 @@
         "Betalingsbehandling"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
+        "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "Please select billing country": [
         "Velg faktureringsland"

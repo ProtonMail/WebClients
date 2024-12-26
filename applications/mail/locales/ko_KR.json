@@ -5775,7 +5775,7 @@
         "${ groupCounts } 그룹 찾음"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        "${ MAIL_APP_NAME }이 귀하의 비즈니스를 잘 보호해줍니다."
+        "${ MAIL_APP_NAME }이 회원님의 비즈니스를 잘 보호해줍니다."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 메시지가 이동되지 않을 수 있습니다."
@@ -7578,7 +7578,7 @@
         "사용자의 비밀번호가 유출되었습니다:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "회원님의 전화번호는 이번 인증에만 사용돼요."
+        "회원님의 전화번호는 이번 인증에만 사용됩니다."
       ],
       "Your private writing assistant": [
         "나만의 개인 글쓰기 도우미"
@@ -9621,14 +9621,6 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 Mail Plus 얻기"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -9641,6 +9633,14 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }에 Mail Plus 얻기"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
       ]
     },
     "new_plans: tooltip": {
@@ -11568,7 +11568,7 @@
         "${ planName }는 당신이 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
-        "${ planName }는 귀하가 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
+        "${ planName }가 당신을 더욱 생산적이고, 체계적이며 받은 편지함과 이메일 신원을 관리하는 것에 기본을 뛰어넘는 도움을 줍니다."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
         "${ planName }가 가족 구성원 모두와 그 데이터가 온라인에서 언제나 보호받을 수 있도록 도와드립니다."

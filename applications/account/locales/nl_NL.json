@@ -4557,6 +4557,9 @@
       "Impossible to rename the gateway": [
         "De gateway hernoemen is niet mogelijk"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Onjuist back-up wachtwoord. Probeer het opnieuw."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Onjuist bestandstype. Upload een bestand in PNG- of JPEG-formaat."
       ],
@@ -4702,6 +4705,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Voer een geldige entiteit ID URL in"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
@@ -4729,6 +4735,9 @@
       ],
       "Please upload a square logo": [
         "Upload een vierkant logo"
+      ],
+      "Please upload an XML file": [
+        "Upload een XML-bestand"
       ],
       "Please upload only 1 file": [
         "Upload slechts 1 bestand"
@@ -7218,6 +7227,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identiteitsprovider"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
+      ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
       ],
@@ -7488,6 +7500,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Voer de entiteit-ID van een **eduGAIN** organisatie in voor **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Voer het wachtwoord van de organisatie in om de beheerdersrechten te herstellen. ${ learnMore }"
@@ -10814,6 +10829,9 @@
       ],
       "Signature": [
         "Handtekening"
+      ],
+      "Single sign-on Entity ID": [
+        "Single sign-on entiteit-ID"
       ],
       "Single sign-on URL": [
         "URL voor enkele-teken"
@@ -15864,6 +15882,9 @@
       "Enter your backup password": [
         "Voer uw back-up wachtwoord in"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Om ervoor te zorgen dat deze gebruiker zich kan aanmelden, moet u ervoor zorgen dat deze gebruiker bestaat in uw identiteitsprovider."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Voor uw veiligheid bent u afgemeld van al uw andere actieve apparaten. Voordat u toegang krijgt tot uw account, moet u een nieuw wachtwoord voor back-up invoeren."
       ],
@@ -15953,6 +15974,9 @@
       ],
       "Single sign-on removed": [
         "Single sign-on verwijderd"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "De gebruiker ${ name } is nu een single sign-on account."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dit zal de gebruiker uitloggen uit zijn andere apparaten en hij zal een nieuw back-upwachtwoord moeten maken."
@@ -18284,6 +18308,9 @@
       "User": [
         "Gebruiker"
       ],
+      "User converted to SSO": [
+        "Gebruiker omgezet naar SSO"
+      ],
       "Users": [
         "Gebruikers"
       ],
@@ -18511,6 +18538,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopieer en plak deze URL in de ACS (Assertion Consumer Service) URL-veld van uw identiteitsprovider"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
       ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"
@@ -19125,9 +19155,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
-      ],
-      "servers": [
-        "servers"
       ]
     },
     "vpn_2024: renew": {
