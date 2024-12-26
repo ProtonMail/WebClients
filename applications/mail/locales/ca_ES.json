@@ -1253,7 +1253,7 @@
         "Demà"
       ],
       "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
-        "La protecció contra els rastrejadors va impedir que es carreguessin algunes imatges. Carregueu-les si confieu en el remitent."
+        "La protecció contra els rastrejadors ha impedit que es carreguessin algunes imatges. Carregueu-les si confieu en el remitent."
       ],
       "Trust": [
         "De confiança"
@@ -3577,7 +3577,7 @@
         "Suprimíeu automàticament el correu brossa i els missatges enviats a la paperera i desbloqueja més funcions prèmium quan milloreu."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa fa més de 30 dies."
+        "Esborra automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ordeneu automàticament els missatges entrants abans que arribin a la safata d'entrada."
@@ -4930,7 +4930,7 @@
         "Us heu unit al grup familiar."
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Teniu factures pendents de pagar. Pagueu-los abans d'unir-vos a un pla familiar."
+        "Teniu factures pendents de pagar. Pagueu-les abans d'unir-vos a un pla familiar."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla familiar i gaudir junts de totes les característiques prèmium de ${ brandOrAppName }."
@@ -5289,7 +5289,7 @@
         "S'ha completat la llista de verificació"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
-        "Termineu aquesta llista en un termini de ${ daysCount } per duplicar el vostre emmagatzematge de manera gratuïta."
+        "Completeu aquesta llista en un termini de ${ daysCount } per duplicar el vostre emmagatzematge de manera gratuïta."
       ],
       "Discover how our ${ strongText } protect you": [
         "Descobriu com els nostres ${ strongText } us protegeixen."
@@ -9836,14 +9836,6 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Obteniu Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -9856,6 +9848,14 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obteniu Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
       ]
     },
     "new_plans: tooltip": {
@@ -10014,7 +10014,7 @@
         "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "Encamineu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
+        "Dirigiu el trànsit d'internet a través de la xarxa Tor amb un sol clic"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
@@ -10223,10 +10223,10 @@
     },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } garanteix que només vosaltres i els destinataris previstos podeu accedir als vostres correus electrònics."
+        "${ advancedEncryptionTitle } garanteix que només vosaltres i els destinataris previstos podeu accedir als correus electrònics."
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
-        "${ industryLeadingSpamProtectionTitle } evita que els correus electrònics d'estafa arribin a la vostra safata d'entrada."
+        "${ industryLeadingSpamProtectionTitle } evita que els correus electrònics fraudulents arribin a la vostra safata d'entrada."
       ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } a l'App Store"
@@ -11791,7 +11791,7 @@
     },
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
-        "La subscripció es reduirà a una categoria inferior al final del cicle de facturació."
+        "La subscripció es desactivarà al final del cicle de facturació."
       ]
     },
     "Subscription length": {
@@ -13488,7 +13488,7 @@
         "versió estable"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }."
+        "Aquesta versió del Navegador Tor no és compatible. Actualitzeu a la darrera ${ stableRelease }."
       ]
     },
     "Update font modal": {
