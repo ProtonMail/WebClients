@@ -1,6 +1,12 @@
 import { DEFAULT_LOCALE } from '../../constants';
 import type { Address, MailSettings, UserSettings } from '../../interfaces';
-import { AUTO_SAVE_CONTACTS, DEFAULT_MAILSETTINGS, IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '../mailSettings';
+import {
+    AUTO_SAVE_CONTACTS,
+    DEFAULT_MAILSETTINGS,
+    IMAGE_PROXY_FLAGS,
+    REMOVE_IMAGE_METADATA,
+    SHOW_IMAGES,
+} from '../mailSettings';
 
 export const EO_DEFAULT_USER_SETTINGS = {
     Referral: undefined,
@@ -15,6 +21,7 @@ export const EO_DEFAULT_MAILSETTINGS: MailSettings = {
     HideRemoteImages: SHOW_IMAGES.HIDE,
     HideEmbeddedImages: SHOW_IMAGES.HIDE,
     ImageProxy: IMAGE_PROXY_FLAGS.NONE,
+    RemoveImageMetadata: REMOVE_IMAGE_METADATA.ENABLED,
 };
 
 export const eoDefaultAddress = {} as Address[];

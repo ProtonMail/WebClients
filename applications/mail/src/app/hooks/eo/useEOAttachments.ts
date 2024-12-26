@@ -35,39 +35,41 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
     /**
      * Start uploading a file, the choice between attachment or inline is done.
      */
-    const handleAddAttachmentsUpload = useHandler(async (action: ATTACHMENT_DISPOSITION, files: File[] = []) => {
-        if (publicKey) {
-            files.forEach((file: File) => {
-                void uploadEO(file, message as MessageStateWithData, publicKey, action).then(
-                    ({ attachment, packets }) => {
-                        // Warning, that change function can be called multiple times, don't do any side effect in it
-                        onChange((message: MessageState) => {
-                            // New attachment list
-                            const Attachments = [...getAttachments(message.data), attachment];
-                            const embeddedImages = getEmbeddedImages(message);
+    const handleAddAttachmentsUpload = useHandler(
+        async (action: ATTACHMENT_DISPOSITION, files: File[] = [], removeImageMetadata?: boolean) => {
+            if (publicKey) {
+                files.forEach((file: File) => {
+                    void uploadEO(file, message as MessageStateWithData, publicKey, action, removeImageMetadata).then(
+                        ({ attachment, packets }) => {
+                            // Warning, that change function can be called multiple times, don't do any side effect in it
+                            onChange((message: MessageState) => {
+                                // New attachment list
+                                const Attachments = [...getAttachments(message.data), attachment];
+                                const embeddedImages = getEmbeddedImages(message);
+
+                                if (action === ATTACHMENT_DISPOSITION.INLINE) {
+                                    embeddedImages.push(createEmbeddedImageFromUpload(attachment));
+                                }
+
+                                const messageImages = updateImages(
+                                    message.messageImages,
+                                    undefined,
+                                    undefined,
+                                    embeddedImages
+                                );
+
+                                return { data: { Attachments }, messageImages };
+                            });
 
                             if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                                embeddedImages.push(createEmbeddedImageFromUpload(attachment));
+                                editorActionsRef.current?.insertEmbedded(attachment, packets.Preview);
                             }
-
-                            const messageImages = updateImages(
-                                message.messageImages,
-                                undefined,
-                                undefined,
-                                embeddedImages
-                            );
-
-                            return { data: { Attachments }, messageImages };
-                        });
-
-                        if (action === ATTACHMENT_DISPOSITION.INLINE) {
-                            editorActionsRef.current?.insertEmbedded(attachment, packets.Preview);
                         }
-                    }
-                );
-            });
+                    );
+                });
+            }
         }
-    });
+    );
 
     /**
      * Entry point for upload, will check and ask for attachment action if possible
@@ -118,8 +120,8 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
         });
     });
 
-    const handleUploadImage = (action: ATTACHMENT_DISPOSITION) => {
-        void handleAddAttachmentsUpload(action, imagesToInsert);
+    const handleUploadImage = (action: ATTACHMENT_DISPOSITION, removeImageMetadata?: boolean) => {
+        void handleAddAttachmentsUpload(action, imagesToInsert, removeImageMetadata);
         setImagesToInsert([]);
     };
 
