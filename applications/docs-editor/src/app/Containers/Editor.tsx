@@ -184,7 +184,7 @@ export function Editor({
             >
               <ProtonContentEditable
                 className={clsx(
-                  'DocumentEditor w-full max-w-full px-[10%] lg:w-full lg:max-w-full lg:px-[calc((100%-816px)/2)] print:w-full print:max-w-full',
+                  'DocumentEditor w-full max-w-full overflow-x-hidden px-[10%] lg:w-full lg:max-w-full lg:px-[calc((100%-816px)/2)] print:w-full print:max-w-full',
                   isSuggestionMode && 'suggestion-mode',
                 )}
                 style={{

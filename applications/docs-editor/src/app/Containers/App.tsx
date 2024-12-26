@@ -405,11 +405,13 @@ export function App({ systemMode, bridgeState }: AppProps) {
       }}
     >
       {isPreviewMode && clonedEditorState && (
-        <PreviewModeEditor
-          clonedEditorState={clonedEditorState}
-          role={application.getRole()}
-          onUserModeChange={onUserModeChange}
-        />
+        <div style={{ display: 'contents' }}>
+          <PreviewModeEditor
+            clonedEditorState={clonedEditorState}
+            role={application.getRole()}
+            onUserModeChange={onUserModeChange}
+          />
+        </div>
       )}
       <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
         <Editor
