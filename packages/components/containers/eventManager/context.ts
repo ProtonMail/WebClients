@@ -1,5 +1,6 @@
 import { createContext } from 'react';
 
-import type createEventManager from '@proton/shared/lib/eventManager/eventManager';
+import type { EventLoop } from '@proton/account/eventLoop';
+import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 
-export default createContext<ReturnType<typeof createEventManager> | null>(null);
+export default createContext<EventManager<EventLoop> | null>(null);

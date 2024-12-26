@@ -1,6 +1,7 @@
 import { createBrowserHistory } from 'history';
 import type { History } from 'history';
 
+import type { EventLoop } from '@proton/account/eventLoop';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie';
@@ -40,6 +41,7 @@ import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constant
 import { storeAppVersion } from '@proton/shared/lib/desktop/version';
 import { resumeSessionDrawerApp } from '@proton/shared/lib/drawer/session';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
+import type { FetchConfig } from '@proton/shared/lib/fetch/interface';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
@@ -317,17 +319,18 @@ export const eventManager = ({
     eventID: maybeEventID,
 }: {
     api: Api;
-    query?: Parameters<typeof createEventManager>[0]['query'];
+    query?: (eventID: string) => FetchConfig;
     eventID?: string;
 }) => {
-    return createEventManager({
-        api,
+    return createEventManager<EventLoop>({
         eventID: maybeEventID,
-        getLatestEventID: ({ api, ...rest }) =>
+        getLatestEventID: (options) =>
             api<{
                 EventID: string;
-            }>({ ...getLatestID(), ...rest }).then(({ EventID }) => EventID),
-        query: query,
+            }>({ ...getLatestID(), ...options }).then(({ EventID }) => EventID),
+        getEvents: ({ eventID, ...rest }) => {
+            return api<EventLoop>({ ...query(eventID), ...rest });
+        },
     });
 };
 

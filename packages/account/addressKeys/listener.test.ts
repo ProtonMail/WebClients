@@ -10,8 +10,8 @@ import type { Address, AddressKey, DecryptedAddressKey, UserModel } from '@proto
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import { addressesReducer } from '../addresses';
-import { serverEvent } from '../eventLoop';
 import { getModelState } from '../test';
+import { getServerEvent } from '../test/getServerEvent';
 import { userReducer } from '../user';
 import { userKeysReducer } from '../userKeys';
 import * as addressKeysModule from './index';
@@ -144,7 +144,7 @@ describe('address keys keys listener', () => {
         mockedGetDecryptedUserKeysHelper.mockReturnValue([]);
 
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 Addresses: [
                     {
                         ID: '2',
@@ -178,7 +178,7 @@ describe('address keys keys listener', () => {
         });
 
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 Addresses: [
                     {
                         ID: '3',
@@ -195,7 +195,7 @@ describe('address keys keys listener', () => {
         const result2 = [getKey(2)];
         mockedGetDecryptedAddressKeysHelper.mockReturnValue(result2);
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 Addresses: [
                     {
                         ID: '2',
@@ -211,7 +211,7 @@ describe('address keys keys listener', () => {
         expect(selectAddressKeys(store.getState())).toEqual({ ...initialState, '2': getState(result2) });
 
         store.dispatch(
-            serverEvent({
+            getServerEvent({
                 Addresses: [
                     {
                         ID: '2',

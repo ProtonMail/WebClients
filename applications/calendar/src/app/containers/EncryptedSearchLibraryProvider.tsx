@@ -16,10 +16,7 @@ import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/sha
 import { MINUTE_IN_SECONDS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type {
-    CalendarEventManager,
-    CalendarEventsEventManager,
-} from '@proton/shared/lib/interfaces/calendar/EventManager';
+import type { CalendarEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
 import { getESCallbacks } from '../helpers/encryptedSearch/calendarESCallbacks';
 import {
@@ -128,35 +125,24 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
 
     // Calendars loop
     useEffect(() => {
-        return calendarSubscribe(
-            calendarIDs,
-            async ({
-                CalendarEvents = [],
-                Refresh = 0,
+        return calendarSubscribe(calendarIDs, async ({ CalendarEvents = [], Refresh = 0, CalendarModelEventID }) => {
+            /**
+             * If we have `More` calendar events (e.g: in case of a large import) to handle, the application itself will take care of the pagination so this handler will automatically get called next.
+             */
+            const esEvent = await processCalendarEvents(
+                CalendarEvents,
+                Refresh,
+                userID,
                 CalendarModelEventID,
-            }: {
-                CalendarModelEventID: string;
-                CalendarEvents?: CalendarEventsEventManager[];
-                Refresh?: number;
-            }) => {
-                /**
-                 * If we have `More` calendar events (e.g: in case of a large import) to handle, the application itself will take care of the pagination so this handler will automatically get called next.
-                 */
-                const esEvent = await processCalendarEvents(
-                    CalendarEvents,
-                    Refresh,
-                    userID,
-                    CalendarModelEventID,
-                    api,
-                    getCalendarEventRaw
-                );
-                if (cachedIndexKey) {
-                    await updateRecurrenceIDsMap(userID, cachedIndexKey, CalendarEvents, setRecurrenceIDsMap);
-                }
-
-                return esLibraryFunctions.handleEvent(esEvent);
+                api,
+                getCalendarEventRaw
+            );
+            if (cachedIndexKey) {
+                await updateRecurrenceIDsMap(userID, cachedIndexKey, CalendarEvents, setRecurrenceIDsMap);
             }
-        );
+
+            return esLibraryFunctions.handleEvent(esEvent);
+        });
     }, [calendarIDs, esLibraryFunctions, esCallbacks, cachedIndexKey]);
 
     useEffect(() => {
