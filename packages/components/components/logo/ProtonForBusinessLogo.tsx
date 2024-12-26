@@ -4,6 +4,7 @@ import { useState } from 'react';
 import generateUID from '@proton/utils/generateUID';
 
 import type { LogoProps } from './Logo';
+import { getLogoWidthStyles } from './helpers';
 
 type Props = ComponentPropsWithoutRef<'svg'> &
     Pick<LogoProps, 'variant' | 'size' | 'hasTitle'> & { withBackground?: boolean };
@@ -12,17 +13,26 @@ const ProtonForBusinessLogo = ({ withBackground = true, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
+    const logoWidth = 146;
+
+    // this ensure logo scales properly with text zoom
+    const logoWidthStyles = getLogoWidthStyles(logoWidth);
+
     return (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <svg
+            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlns="http://www.w3.org/2000/svg"
+            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="146"
+            width={logoWidth}
             height="36"
-            viewBox="0 0 146 36"
+            viewBox={`0 0 ${logoWidth} 36`}
             fill="none"
             role="img"
             aria-labelledby={`${uid}-title`}
             {...rest}
+            style={{ ...logoWidthStyles, ...rest?.style }}
         >
             {withBackground && <rect width="146" height="36" fill="white" />}
             <path
