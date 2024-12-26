@@ -40,14 +40,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     initElectronClassnames();
     initLogicalProperties();
     initSafariFontFixClassnames();
+    startLogoutListener();
 
     const appName = config.APP_NAME;
 
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(appName, authentication, api);
     }
-
-    startLogoutListener();
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
@@ -60,7 +59,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, history, unleashClient });
 
-        let persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
+        const persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
             authentication,
             user,
         });
