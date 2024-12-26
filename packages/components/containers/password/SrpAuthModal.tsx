@@ -305,7 +305,7 @@ const SrpAuthModal = ({
                     <>
                         <PasswordForm
                             key={`${rerender}`}
-                            isSignedInAsAdmin={user?.isSubUser}
+                            isSignedInAsAdmin={user?.isSelf === false}
                             defaultPassword={password}
                             onSubmit={(password) => {
                                 return withSubmitting(handleSubmit({ step, password, twoFa: undefined }));

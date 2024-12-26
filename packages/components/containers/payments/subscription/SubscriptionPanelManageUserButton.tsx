@@ -26,7 +26,7 @@ const SubscriptionPanelManageUserButton = () => {
     const [subscription] = useSubscription();
 
     const { APP_NAME } = useConfig();
-    const isAdmin = user.isAdmin && !user.isSubUser && user.Type !== UserType.EXTERNAL;
+    const isAdmin = user.isAdmin && user.isSelf && user.Type !== UserType.EXTERNAL;
 
     if (!isAdmin || !(hasOrganizationSetup(organization) || hasOrganizationSetupWithKeys(organization))) {
         return null;

@@ -16,7 +16,7 @@ const defaultUseUser = [
         isMember: true,
         isPaid: true,
         isPrivate: true,
-        isSubUser: true,
+        isSelf: true,
         isDelinquent: true,
         hasNonDelinquentScope: true,
         hasPaidMail: true,

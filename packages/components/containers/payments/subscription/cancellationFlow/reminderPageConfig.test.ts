@@ -36,7 +36,7 @@ const user = {
     isMember: true,
     isPaid: true,
     isPrivate: false,
-    isSubUser: false,
+    isSelf: true,
     hasPassLifetime: false,
 };
 

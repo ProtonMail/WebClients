@@ -331,7 +331,7 @@ const useTips = () => {
                 }
                 return userSettings && !isDesktopInboxUser(BigInt(userSettings.UsedClientFlags));
             case TipActionType.GetProtonSubdomainAddress:
-                return user.isFree || (user.isAdmin && !user.isSubUser && !hasEnabledPremiumAddresses);
+                return user.isFree || (user.isAdmin && user.isSelf && !hasEnabledPremiumAddresses);
             case TipActionType.CreateAlias:
                 return !missScopePass;
             case TipActionType.ScheduleMessage:
@@ -341,7 +341,7 @@ const useTips = () => {
                     ? mailSettings.AutoDeleteSpamAndTrashDays !== AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE
                     : false;
             case TipActionType.CreateEmailAddress:
-                if (user.isFree || user.isSubUser) {
+                if (user.isFree || !user.isSelf) {
                     return true;
                 }
                 if (user.isAdmin) {
