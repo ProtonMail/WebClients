@@ -15,7 +15,7 @@ export interface DefaultPersistedSession {
     UserID: string;
     UID: string;
     blob?: string;
-    isSubUser: boolean;
+    isSelf: boolean;
     persistent: boolean;
     trusted: boolean;
     payloadVersion: 2 | 1;

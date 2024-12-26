@@ -51,7 +51,7 @@ export const getOrganizationAppRoutes = ({
     isScribeEnabled,
     isZoomIntegrationEnabled,
 }: Props) => {
-    const isAdmin = user.isAdmin && !user.isSubUser;
+    const isAdmin = user.isAdmin && user.isSelf;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);

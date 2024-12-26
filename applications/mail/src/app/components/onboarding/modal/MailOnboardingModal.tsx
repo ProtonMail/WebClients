@@ -40,8 +40,8 @@ const useUserInfos = (): Record<'isB2B' | 'isLoading' | 'isMailPaidPlan', boolea
 
     let isB2B = false;
     const isLoading = loadingUser || loadingSub || loadingOrg;
-    const isUserWithB2BPlan = !user.isSubUser && getIsB2BAudienceFromSubscription(subscription);
-    const isSubUserWithB2BPlan = user.isSubUser && organization && getIsB2BAudienceFromPlan(organization.PlanName);
+    const isUserWithB2BPlan = user.isSelf && getIsB2BAudienceFromSubscription(subscription);
+    const isSubUserWithB2BPlan = !user.isSelf && organization && getIsB2BAudienceFromPlan(organization.PlanName);
 
     if (isUserWithB2BPlan || isSubUserWithB2BPlan) {
         isB2B = true;
