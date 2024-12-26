@@ -9,6 +9,7 @@ import { getUser } from '../api/user';
 import { withUIDHeaders } from '../fetch/headers';
 import { captureMessage } from '../helpers/sentry';
 import type { Api, User as tsUser } from '../interfaces';
+import { isSelf } from '../user/helpers';
 import { appMode } from '../webpack.constants';
 import type { PersistedSessionWithLocalID } from './SessionInterface';
 import { generateClientKey, getClientKey } from './clientKey';
@@ -155,7 +156,7 @@ export const persistSession = async ({
             UID,
             UserID: User.ID,
             keyPassword,
-            isSubUser: !!User.OrganizationPrivateKey,
+            isSelf: isSelf(User),
             persistent,
             trusted,
             offlineKey,
@@ -165,11 +166,11 @@ export const persistSession = async ({
     return { clientKey: serializedData, offlineKey };
 };
 
-export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => {
+export const getActiveSessionByUserID = (UserID: string, isSelf: boolean) => {
     return getPersistedSessions().find((persistedSession) => {
         const isSameUserID = persistedSession.UserID === UserID;
-        const isSameSubUser = persistedSession.isSubUser === isSubUser;
-        return isSameUserID && isSameSubUser;
+        const isSameSelf = persistedSession.isSelf === isSelf;
+        return isSameUserID && isSameSelf;
     });
 };
 
@@ -417,12 +418,8 @@ export const getActiveSessions = async ({
     };
 };
 
-export const maybeResumeSessionByUser = async (
-    api: Api,
-    User: tsUser,
-    isSubUser: boolean = !!User.OrganizationPrivateKey
-) => {
-    const maybePersistedSession = getActiveSessionByUserID(User.ID, isSubUser);
+export const maybeResumeSessionByUser = async (api: Api, User: tsUser) => {
+    const maybePersistedSession = getActiveSessionByUserID(User.ID, isSelf(User));
     if (!maybePersistedSession) {
         return;
     }

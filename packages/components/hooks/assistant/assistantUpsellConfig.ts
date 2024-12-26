@@ -79,7 +79,7 @@ export const getAssistantUpsellConfig = (
     isOrgAdmin: boolean,
     selectedPlan: SelectedPlan
 ): OpenCallbackProps | undefined => {
-    if (user.isSubUser) {
+    if (!user.isSelf) {
         return undefined;
     }
 
