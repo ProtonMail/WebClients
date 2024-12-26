@@ -24,9 +24,9 @@ const useSpotlightOnFeature = (
     const [manualClose, setManualClose] = useState(false);
     const { feature, update, loading: loadingFeature } = useFeature(code);
     const [user, loadingUser] = useUser();
-    const { currentEnvironment, loading: loadingCurrentEnvironment } = useEarlyAccess();
+    const { currentEnvironment } = useEarlyAccess();
 
-    const loading = loadingFeature || loadingUser || !user || loadingCurrentEnvironment;
+    const loading = loadingFeature || loadingUser || !user;
 
     // If the feature flag value is changing right after the spotlight is displayed, we don't want it to be closed automatically
     const show = useMemo(() => {
