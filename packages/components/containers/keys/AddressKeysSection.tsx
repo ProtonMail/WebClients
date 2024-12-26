@@ -304,10 +304,10 @@ const AddressKeysSection = () => {
         );
     };
 
-    const { isSubUser, isPrivate } = User;
+    const { isSelf, isPrivate } = User;
     const hasDecryptedUserKeys = (userKeys?.length || 0) > 0;
 
-    const canAdd = !isSubUser && isPrivate && hasDecryptedUserKeys;
+    const canAdd = isSelf && isPrivate && hasDecryptedUserKeys;
     const canImport = canAdd;
 
     const children = (() => {

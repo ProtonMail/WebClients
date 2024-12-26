@@ -115,13 +115,18 @@ export function isBilledUser(user: User | undefined): boolean {
     return !!user.Billed;
 }
 
-export interface UserModel extends User {
+export interface UserInfo {
     isAdmin: boolean;
     isMember: boolean;
     isFree: boolean;
     isPaid: boolean;
     isPrivate: boolean;
-    isSubUser: boolean;
+    /**
+     * isSelf determines if the user has `self` scope, i.e.
+     * it's true when the user is signed in normally,
+     * and false when an administrator is signed in to the user's non-private account through the organization key
+     */
+    isSelf: boolean;
     isDelinquent: boolean;
     hasNonDelinquentScope: boolean;
     hasPaidMail: boolean;
@@ -131,3 +136,5 @@ export interface UserModel extends User {
     hasPassLifetime: boolean;
     canPay: boolean;
 }
+
+export interface UserModel extends User, UserInfo {}

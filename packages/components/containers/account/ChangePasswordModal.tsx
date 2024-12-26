@@ -199,7 +199,7 @@ const ChangePasswordModal = ({
 
     const getModalProperties = (mode: MODES): ModalProperties => {
         if ([MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE, MODES.CHANGE_ONE_PASSWORD_MODE].includes(mode)) {
-            if (user.isSubUser) {
+            if (!user.isSelf) {
                 const userName = (
                     <b key="user" className="text-break">
                         {user.Name} ({user.Email})

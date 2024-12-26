@@ -631,7 +631,7 @@ export const user = {
     isMember: false,
     isPaid: true,
     isPrivate: true,
-    isSubUser: false,
+    isSelf: true,
     isDelinquent: false,
     hasNonDelinquentScope: true,
     hasPaidMail: true,
