@@ -1,3 +1,5 @@
+import deepFreeze from 'deep-freeze';
+
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
@@ -29,7 +31,13 @@ export const getDecryptedPersistedState = async <T>({
         if (!encryptedCache) {
             return;
         }
-        return await getDecryptedCache<T>(encryptedCache, { clientKey });
+        const result = await getDecryptedCache<T>(encryptedCache, { clientKey });
+        if (result?.state) {
+            // This is important to speed up the preloaded state initialization in redux toolkit, otherwise it'll end
+            // up in a non-mutable clause which has performance implications (however only in dev-mode)
+            deepFreeze(result.state);
+        }
+        return result;
     } catch (e) {
         await deleteStore(persistedSession.UserID).catch(noop);
         return;
