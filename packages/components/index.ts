@@ -818,6 +818,7 @@ export { default as TopBanners } from './containers/topBanners/TopBanners';
 export { default as EmbeddedVerification } from './containers/verification/EmbeddedVerification';
 export { getFlagSvg } from './containers/vpn/flag';
 export { default as GatewaysSection } from './containers/vpn/gateways/GatewaysSection';
+export { default as SharedServersSection } from './containers/vpn/sharedServers/SharedServersSection';
 export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as OpenVPNCredentialsSection } from './containers/vpn/OpenVPNCredentialsSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';

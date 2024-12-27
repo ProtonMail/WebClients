@@ -98,6 +98,7 @@ const MainContainer: FunctionComponent = () => {
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const isGlobalSSOEnabled = useFlag('GlobalSSO');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const [groups, loadingGroups] = useGroups();
 
     const vpnRoutes = getRoutes({
@@ -116,6 +117,7 @@ const MainContainer: FunctionComponent = () => {
         isGlobalSSOEnabled,
         groups,
         isZoomIntegrationEnabled,
+        isSharedServerFeatureEnabled,
     });
     useConvertExternalAddresses();
     useUnprivatizeMembers();
