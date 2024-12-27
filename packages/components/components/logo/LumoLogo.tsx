@@ -1,43 +1,28 @@
-import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { LogoProps } from './Logo';
-import { getLogoWidthStyles } from './helpers';
+import LogoBase, { type LogoProps } from './LogoBase';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
-
-const LumoLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
-    // This logo can be several times in the view, ids has to be different each time
+const LumoLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoProps) => {
     const [uid] = useState(generateUID('logo'));
-    const logoWidth = 32;
-
-    const hasIconSize = size && variant === 'glyph-only';
-    // this ensure logo scales properly with text zoom
-    const logoWidthStyles = hasIconSize ? undefined : getLogoWidthStyles(logoWidth);
 
     if (variant === 'glyph-only') {
+        const logoWidth = 32;
+        const logoHeight = 32;
         return (
-            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-            <svg
-                // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-                xmlns="http://www.w3.org/2000/svg"
-                // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-                xmlnsXlink="http://www.w3.org/1999/xlink"
+            <LogoBase
+                uid={uid}
+                logoWidth={logoWidth}
+                logoHeight={logoHeight}
                 viewBox="0 0 64 64"
                 width="32"
                 height="32"
-                fill="none"
-                role="img"
-                className={clsx('logo', hasIconSize && `icon-size-${size}`, variant, className)}
-                aria-labelledby={`${uid}-title`}
+                title={hasTitle ? LUMO_APP_NAME : undefined}
+                variant={variant}
                 {...rest}
-                style={{ ...logoWidthStyles, ...rest?.style }}
             >
-                {hasTitle && <title id={`${uid}-title`}>{LUMO_APP_NAME}</title>}
                 <defs>
                     <linearGradient
                         id="linear-gradient"
@@ -60,26 +45,22 @@ const LumoLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true,
                     fill="#6d4aff"
                     d="M41.18,44.26c-9.29,0-16.86-7.56-16.86-16.86s7.56-16.86,16.86-16.86,16.86,7.56,16.86,16.86-7.56,16.86-16.86,16.86ZM41.18,15.65c-6.48,0-11.75,5.27-11.75,11.75s5.27,11.75,11.75,11.75,11.75-5.27,11.75-11.75-5.27-11.75-11.75-11.75Z"
                 />
-            </svg>
+            </LogoBase>
         );
     }
 
     return (
-        <svg
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlns="http://www.w3.org/2000/svg"
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlnsXlink="http://www.w3.org/1999/xlink"
+        <LogoBase
+            uid={uid}
+            logoWidth={160}
+            logoHeight={32}
             viewBox="0 0 166.54 53.12"
             width="160"
             height="32"
-            fill="none"
-            role="img"
-            className={clsx('logo', variant, className)}
-            aria-labelledby={`${uid}-title`}
+            title={hasTitle ? LUMO_APP_NAME : undefined}
+            variant={variant}
             {...rest}
         >
-            {hasTitle && <title id={`${uid}-title`}>{LUMO_APP_NAME}</title>}
             <linearGradient
                 id="linear-gradient"
                 x1="26.46"
@@ -121,7 +102,7 @@ const LumoLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true,
                     d="M37.71,36.84c-8.42,0-15.26-6.85-15.26-15.26s6.85-15.26,15.26-15.26,15.26,6.85,15.26,15.26-6.85,15.26-15.26,15.26ZM37.71,10.94c-5.87,0-10.64,4.77-10.64,10.64s4.77,10.64,10.64,10.64,10.64-4.77,10.64-10.64-4.77-10.64-10.64-10.64Z"
                 />
             </g>
-        </svg>
+        </LogoBase>
     );
 };
 
