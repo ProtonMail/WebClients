@@ -67,6 +67,9 @@ export const handleEarlyAccessDesynchronization = ({
     const shouldUpdateToEarlyAccessVersion = !isVpnSettings && environmentIsDesynchronized;
     if (shouldUpdateToEarlyAccessVersion) {
         return () => {
+            // Stop any pending requests. This is to avoid race conditions with the server
+            // setting the old cookie value instead of the new one that is being set
+            window.stop();
             setCurrentRetries(currentRetries + 1);
             updateVersionCookie(targetEnvironment, earlyAccessScope);
             window.location.reload();
