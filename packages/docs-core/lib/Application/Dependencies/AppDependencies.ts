@@ -129,6 +129,7 @@ export class AppDependencies extends DependencyContainer {
     this.bind(App_TYPES.DecryptComment, () => {
       return new DecryptComment(
         this.get<EncryptionService<EncryptionContext.PersistentComment>>(App_TYPES.CommentsEncryptionService),
+        this.get<LoggerInterface>(App_TYPES.Logger),
       )
     })
 
