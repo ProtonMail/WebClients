@@ -1,40 +1,20 @@
-import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
 import generateUID from '@proton/utils/generateUID';
 
-import type { LogoProps } from './Logo';
-import { getLogoWidthStyles } from './helpers';
+import LogoBase, { type LogoProps } from './LogoBase';
 
-type Props = ComponentPropsWithoutRef<'svg'> &
-    Pick<LogoProps, 'variant' | 'size' | 'hasTitle'> & { withBackground?: boolean };
+type Props = LogoProps & { withBackground?: boolean };
 
-const ProtonForBusinessLogo = ({ withBackground = true, ...rest }: Props) => {
-    // This logo can be several times in the view, ids has to be different each time
+const ProtonForBusinessLogo = ({ variant = 'with-wordmark', withBackground = true, hasTitle, ...rest }: Props) => {
     const [uid] = useState(generateUID('logo'));
 
     const logoWidth = 146;
-
-    // this ensure logo scales properly with text zoom
-    const logoWidthStyles = getLogoWidthStyles(logoWidth);
+    const logoHeight = 36;
 
     return (
-        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-        <svg
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlns="http://www.w3.org/2000/svg"
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            width={logoWidth}
-            height="36"
-            viewBox={`0 0 ${logoWidth} 36`}
-            fill="none"
-            role="img"
-            aria-labelledby={`${uid}-title`}
-            {...rest}
-            style={{ ...logoWidthStyles, ...rest?.style }}
-        >
-            {withBackground && <rect width="146" height="36" fill="white" />}
+        <LogoBase uid={uid} logoWidth={logoWidth} logoHeight={logoHeight} title={undefined} variant={variant} {...rest}>
+            {withBackground && <rect width={logoWidth} height={logoHeight} fill="white" />}
             <path
                 d="M69.2681 24.7433V14.0742H75.3465V15.4235H70.6788V18.7812H75.1363V20.1305H70.6788V24.7433H69.2681Z"
                 fill="currentColor"
@@ -103,7 +83,7 @@ const ProtonForBusinessLogo = ({ withBackground = true, ...rest }: Props) => {
                 d="M6.68209e-07 20.5488V24.6501H2.76277V20.7262C2.76277 20.3445 2.90831 19.9783 3.16737 19.7084C3.42643 19.4384 3.77779 19.2868 4.14416 19.2868H6.97695C8.29843 19.2864 9.5657 18.7391 10.5 17.7652C11.4343 16.7914 11.9593 15.4708 11.9594 14.0938C11.9594 12.7165 11.4344 11.3957 10.4999 10.4218C9.5654 9.44785 8.29792 8.9006 6.97619 8.90039H6.68209e-07V14.0271H2.76277V11.6101H6.78999C7.41531 11.6101 8.01501 11.8689 8.45719 12.3295C8.89944 12.7902 9.14795 13.415 9.14817 14.0666C9.14817 14.7183 8.89974 15.3433 8.45748 15.8041C8.01523 16.2649 7.41545 16.5238 6.78999 16.5238H3.86221C3.35491 16.5236 2.85255 16.6276 2.38382 16.8297C1.9151 17.0319 1.48922 17.3283 1.13052 17.7022C0.771829 18.076 0.487362 18.5198 0.293378 19.0082C0.0993944 19.4966 -0.000297801 20.0201 6.68209e-07 20.5488Z"
                 fill="currentColor"
             />
-        </svg>
+        </LogoBase>
     );
 };
 

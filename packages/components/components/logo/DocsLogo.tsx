@@ -1,19 +1,15 @@
-import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
 import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { LogoProps } from './Logo';
+import LogoBase, { type LogoProps } from './LogoBase';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
-
-const DocsLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
-    // This logo can be several times in the view, ids has to be different each time
+const DocsLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoProps) => {
     const [uid] = useState(generateUID('logo'));
 
     let logoWidth: number;
+    const logoHeight = 36;
 
     switch (variant) {
         case 'glyph-only':
@@ -26,18 +22,16 @@ const DocsLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true,
             logoWidth = 140;
             break;
     }
-
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox={`0 0 ${logoWidth + 2} 36`}
-            width={logoWidth}
-            className={clsx('logo', size && variant === 'glyph-only' && `icon-size-${size}`, variant, className)}
-            aria-labelledby={`${uid}-title`}
+        <LogoBase
+            uid={uid}
+            logoWidth={logoWidth}
+            logoHeight={logoHeight}
+            viewBox={`0 0 ${logoWidth + 2} ${logoHeight}`}
+            title={hasTitle ? DOCS_APP_NAME : undefined}
+            variant={variant}
             {...rest}
         >
-            {hasTitle && <title id={`${uid}-title`}>{DOCS_APP_NAME}</title>}
             <g clipPath="url(#a)">
                 <path
                     fill="#1B1340"
@@ -70,7 +64,7 @@ const DocsLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true,
                     <path fill="#fff" d="M0 0h141v36H0z" />
                 </clipPath>
             </defs>
-        </svg>
+        </LogoBase>
     );
 };
 

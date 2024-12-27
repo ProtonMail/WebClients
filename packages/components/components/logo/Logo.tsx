@@ -1,18 +1,16 @@
-import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import type { IconSize } from '@proton/components/components/icon/Icon';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import CalendarLogo from './CalendarLogo';
 import DocsLogo from './DocsLogo';
 import DriveLogo from './DriveLogo';
+import type { LogoProps as LogoBaseProps, LogoVariant } from './LogoBase';
 import LumoLogo from './LumoLogo';
 import MailLogo from './MailLogo';
 import PassLogo from './PassLogo';
 import VpnLogo from './VpnLogo';
 import WalletLogo from './WalletLogo';
-
-export type LogoVariant = 'with-wordmark' | 'glyph-only' | 'wordmark-only';
 
 const {
     PROTONCALENDAR,
@@ -25,45 +23,44 @@ const {
     PROTONLUMO,
 } = APPS;
 
-export interface LogoProps extends Omit<ComponentPropsWithoutRef<'svg'>, 'size'> {
+export type { LogoVariant };
+
+export interface LogoProps extends LogoBaseProps {
     appName: APP_NAMES;
-    size?: IconSize;
-    variant?: LogoVariant;
-    hasTitle?: boolean;
     fallback?: ReactNode;
 }
 
-const Logo = ({ appName, variant, fallback = null, ...rest }: LogoProps) => {
+const Logo = ({ appName, fallback = null, ...rest }: LogoProps) => {
     if (appName === PROTONMAIL) {
-        return <MailLogo variant={variant} {...rest} />;
+        return <MailLogo {...rest} />;
     }
 
     if (appName === PROTONCALENDAR) {
-        return <CalendarLogo variant={variant} {...rest} />;
+        return <CalendarLogo {...rest} />;
     }
 
     if (appName === PROTONVPN_SETTINGS) {
-        return <VpnLogo variant={variant} {...rest} />;
+        return <VpnLogo {...rest} />;
     }
 
     if (appName === PROTONDRIVE) {
-        return <DriveLogo variant={variant} {...rest} />;
+        return <DriveLogo {...rest} />;
     }
 
     if (appName === PROTONPASS) {
-        return <PassLogo variant={variant} {...rest} />;
+        return <PassLogo {...rest} />;
     }
 
     if (appName === PROTONDOCS) {
-        return <DocsLogo variant={variant} {...rest} />;
+        return <DocsLogo {...rest} />;
     }
 
     if (appName === PROTONWALLET) {
-        return <WalletLogo variant={variant} {...rest} />;
+        return <WalletLogo {...rest} />;
     }
 
     if (appName === PROTONLUMO) {
-        return <LumoLogo variant={variant} {...rest} />;
+        return <LumoLogo {...rest} />;
     }
 
     return fallback;

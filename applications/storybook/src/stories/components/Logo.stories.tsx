@@ -80,30 +80,14 @@ export const Sandbox = () => {
 };
 
 export const Individual = () => (
-    <div>
-        <div className="mb-8">
-            <ProtonLogo variant="glyph-only" />
-        </div>
-        <div className="mb-8">
-            <ProtonLogo />
-        </div>
-        <div className="mb-8">
-            <MailLogo />
-        </div>
-        <div className="mb-8">
-            <CalendarLogo />
-        </div>
-        <div className="mb-8">
-            <DriveLogo />
-        </div>
-        <div className="mb-8">
-            <VpnLogo />
-        </div>
-        <div>
-            <PassLogo />
-        </div>
-        <div>
-            <WalletLogo />
-        </div>
+    <div className="flex flex-column gap-8">
+        <ProtonLogo variant="glyph-only" />
+        <ProtonLogo />
+        <MailLogo />
+        <CalendarLogo />
+        <DriveLogo />
+        <VpnLogo />
+        <PassLogo />
+        <WalletLogo />
     </div>
 );
