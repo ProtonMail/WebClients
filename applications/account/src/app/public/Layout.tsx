@@ -79,7 +79,6 @@ const Layout = ({
 
     const protonLogo = (
         <ProtonLogo
-            variant="full"
             color={isElectronApp && theme.information.dark ? 'invert' : undefined}
             className={clsx(onBack && 'ml-4 md:ml-0')}
         />

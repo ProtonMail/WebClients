@@ -3,8 +3,8 @@ import AppLink from '@proton/components/components/link/AppLink';
 import useConfig from '@proton/components/hooks/useConfig';
 import clsx from '@proton/utils/clsx';
 
-import type { LogoVariant } from './Logo';
 import Logo from './Logo';
+import type { LogoVariant } from './LogoBase';
 
 const MainLogo = (props: AppLinkProps & { className?: string; variant?: LogoVariant }) => {
     const { APP_NAME } = useConfig();

@@ -1,43 +1,25 @@
-import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { LogoProps } from './Logo';
-import { getLogoWidthStyles } from './helpers';
+import LogoBase, { type LogoProps } from './LogoBase';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
-
-const PassForBusinessLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
-    // This logo can be several times in the view, ids has to be different each time
+const PassForBusinessLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoProps) => {
     const [uid] = useState(generateUID('logo'));
 
     const logoWidth = variant === 'with-wordmark' ? 142 : 36;
-
-    const hasIconSize = size && variant === 'glyph-only';
-    // this ensure logo scales properly with text zoom
-    const logoWidthStyles = hasIconSize ? undefined : getLogoWidthStyles(logoWidth);
+    const logoHeight = 36;
 
     return (
-        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-        <svg
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlns="http://www.w3.org/2000/svg"
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            viewBox={`0 0 ${logoWidth} 36`}
-            width={logoWidth}
-            height="36"
-            fill="none"
-            role="img"
-            className={clsx('logo', size && variant === 'glyph-only' && `icon-${size}p`, variant, className)}
-            aria-labelledby={`${uid}-title`}
+        <LogoBase
+            uid={uid}
+            logoWidth={logoWidth}
+            logoHeight={logoHeight}
+            title={hasTitle ? PASS_APP_NAME : undefined}
+            variant={variant}
             {...rest}
-            style={{ ...logoWidthStyles, ...rest?.style }}
         >
-            {hasTitle && <title id={`${uid}-title`}>{PASS_APP_NAME}</title>}
             {variant === 'glyph-only' && (
                 <>
                     <path
@@ -259,7 +241,7 @@ const PassForBusinessLogo = ({ variant = 'with-wordmark', size, className, hasTi
                     </defs>
                 </>
             )}
-        </svg>
+        </LogoBase>
     );
 };
 
