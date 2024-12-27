@@ -64,6 +64,7 @@ const manifestPath = path.resolve(__dirname, manifest);
 
 const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
 const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
+const safariPatch = (entry) => (BUILD_TARGET === 'safari' ? [entry, './src/lib/utils/safari-patch.ts'] : entry);
 const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version);
 
 module.exports = {
@@ -89,7 +90,7 @@ module.exports = {
         notification: nonAccessibleWebResource('./src/app/content/injections/apps/notification/index.tsx'),
         onboarding: './src/app/pages/onboarding/index.tsx',
         orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
-        popup: './src/app/popup/index.tsx',
+        popup: safariPatch('./src/app/popup/index.tsx'),
         settings: './src/app/pages/settings/index.tsx',
         /* Passkey handling not available in Safari */
         ...(BUILD_TARGET !== 'safari' ? { webauthn: './src/app/content/webauthn.ts' } : {}),
