@@ -93,14 +93,13 @@ export type ItemRevisionID = ItemIDRevision;
 
 export type UnsafeItemRevision<T extends ItemType = ItemType> = Deobfuscate<ItemRevision<T>>;
 
+export type ItemOptimisticState = { optimistic: boolean; failed: boolean };
+
 /**
  * Adds an optimistic & failed property to
  * the ItemRevision type
  */
-export type ItemRevisionWithOptimistic<T extends ItemType = ItemType> = ItemRevision<T> & {
-    optimistic: boolean;
-    failed: boolean;
-};
+export type ItemRevisionWithOptimistic<T extends ItemType = ItemType> = ItemRevision<T> & ItemOptimisticState;
 
 /**
  * Generic utility type to construct
