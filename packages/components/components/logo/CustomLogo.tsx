@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react';
+
 import Logo from '@proton/components/components/logo/Logo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -10,7 +12,7 @@ type Props = {
     url: string;
     className?: string;
     collapsed?: boolean;
-    style?: React.CSSProperties;
+    style?: CSSProperties;
     organizationNameDataTestId?: string;
 };
 
