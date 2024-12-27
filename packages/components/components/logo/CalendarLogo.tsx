@@ -1,20 +1,15 @@
-import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { LogoProps } from './Logo';
-import { getLogoWidthStyles } from './helpers';
+import LogoBase, { type LogoProps } from './LogoBase';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
-
-const CalendarLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
-    // This logo can be several times in the view, ids has to be different each time
+const CalendarLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoProps) => {
     const [uid] = useState(generateUID('logo'));
 
     let logoWidth: number;
+    const logoHeight = 36;
 
     switch (variant) {
         case 'glyph-only':
@@ -28,28 +23,15 @@ const CalendarLogo = ({ variant = 'with-wordmark', size, className, hasTitle = t
             break;
     }
 
-    const hasIconSize = size && variant === 'glyph-only';
-    // this ensure logo scales properly with text zoom
-    const logoWidthStyles = hasIconSize ? undefined : getLogoWidthStyles(logoWidth);
-
     return (
-        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-        <svg
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlns="http://www.w3.org/2000/svg"
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            viewBox={`0 0 ${logoWidth} 36`}
-            width={logoWidth}
-            height="36"
-            fill="none"
-            role="img"
-            className={clsx('logo', hasIconSize && `icon-size-${size}`, variant, className)}
-            aria-labelledby={`${uid}-title`}
+        <LogoBase
+            uid={uid}
+            logoWidth={logoWidth}
+            logoHeight={logoHeight}
+            title={hasTitle ? CALENDAR_APP_NAME : undefined}
+            variant={variant}
             {...rest}
-            style={{ ...logoWidthStyles, ...rest?.style }}
         >
-            {hasTitle && <title id={`${uid}-title`}>{CALENDAR_APP_NAME}</title>}
             {variant === 'glyph-only' && (
                 <>
                     <path fill={`url(#${uid}-a)`} d="M7 6a3 3 0 0 0-3 3v1l1 1v17l20-10 1 1h6V9a3 3 0 0 0-3-3H7Z" />
@@ -201,7 +183,7 @@ const CalendarLogo = ({ variant = 'with-wordmark', size, className, hasTitle = t
                     />
                 </>
             )}
-        </svg>
+        </LogoBase>
     );
 };
 
