@@ -12,7 +12,9 @@ const ContactLabelProperty = ({ field, type, className, ...rest }: Props) => {
     const labels: { [key: string]: string } = getAllFieldLabels();
     // Some fields like email have sub-types like "home", "work" etc...
     const typesLabels = getAllTypes();
-    const typeLabel = typesLabels[field].find((fieldType) => fieldType.value === type?.toLowerCase())?.text;
+    const typeLabel = typesLabels[field].find(
+        (fieldType) => fieldType.value === (typeof type === 'string' ? type.toLowerCase() : type)
+    )?.text;
 
     const label: string = ['bday', 'anniversary'].includes(field)
         ? labels[field]
