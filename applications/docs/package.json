@@ -5,7 +5,7 @@
   "author": "",
   "main": "index.ts",
   "scripts": {
-    "build:web": "cross-env NODE_ENV=production WEBPACK_PARALLELISM=2 TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
+    "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
     "check-types": "tsc",
     "i18n:extract:web": "proton-i18n extract",
     "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
