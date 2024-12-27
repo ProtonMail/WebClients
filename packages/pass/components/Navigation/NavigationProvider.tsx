@@ -63,7 +63,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const history = useHistory();
     const location = useLocation();
 
-    const filters = decodeFiltersFromSearch(location.search);
+    const filters = useMemo(() => decodeFiltersFromSearch(location.search), [location.search]);
 
     const matchTrash = useRouteMatch(getTrashRoute()) !== null;
     const matchOnboarding = useRouteMatch(getOnboardingRoute()) !== null;
