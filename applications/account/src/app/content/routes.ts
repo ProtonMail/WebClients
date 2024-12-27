@@ -44,6 +44,7 @@ interface Arguments {
     isGlobalSSOEnabled: boolean;
     isScribeEnabled: boolean;
     isZoomIntegrationEnabled: boolean;
+    isSharedServerFeatureEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -71,6 +72,7 @@ export const getRoutes = ({
     isGlobalSSOEnabled,
     isScribeEnabled,
     isZoomIntegrationEnabled,
+    isSharedServerFeatureEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -112,6 +114,7 @@ export const getRoutes = ({
             groups,
             isScribeEnabled,
             isZoomIntegrationEnabled,
+            isSharedServerFeatureEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
