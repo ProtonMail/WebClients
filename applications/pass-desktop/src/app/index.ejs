@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <% if (process.env.NODE_ENV !== 'development') { %>
         <meta http-equiv="content-security-policy"
-            content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self' blob: data:; script-src 'self' 'wasm-unsafe-eval'; connect-src *;">
+            content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src * blob: data:; font-src 'self' blob: data:; script-src 'self' 'wasm-unsafe-eval'; connect-src *;">
         <% } %>
         <title>Proton Pass</title>
     </head>

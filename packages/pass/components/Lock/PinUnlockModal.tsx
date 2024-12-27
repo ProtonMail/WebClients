@@ -1,16 +1,17 @@
 import { type FC, useEffect, useState } from 'react';
 
 import { Card } from '@proton/atoms';
-import { type ModalProps, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import { ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 
 import { PinCodeInput } from './PinCodeInput';
 
-type Props = Omit<ModalProps, 'onSubmit'> & {
-    title: string;
-    assistiveText?: string;
-    loading?: boolean;
+export type PinUnlockModalState = { title: string; assistiveText: string };
+
+type Props = AsyncModalState<PinUnlockModalState> & {
+    onClose: () => void;
     onSubmit: (pin: string) => void;
 };
 

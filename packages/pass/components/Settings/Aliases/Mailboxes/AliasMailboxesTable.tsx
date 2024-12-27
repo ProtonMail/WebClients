@@ -33,7 +33,9 @@ export const AliasMailboxesTable: FC = () => {
                 <TableRow>
                     <TableHeaderCell className="w-1/2">{c('Title').t`Mailbox`}</TableHeaderCell>
                     <TableHeaderCell>{c('Title').t`Aliases`}</TableHeaderCell>
-                    <TableHeaderCell>{c('Title').t`Status`}</TableHeaderCell>
+                    <TableHeaderCell className="w-1/5">
+                        <span className="ml-4">{c('Title').t`Status`}</span>
+                    </TableHeaderCell>
                     <TableHeaderCell>{c('Title').t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>

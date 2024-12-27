@@ -48,5 +48,5 @@ export const useNavigateToUpgrade = (options: {
             ? `${SAFARI_URL_SCHEME}//upgrade?${searchParams.toString()}`
             : `${config.SSO_URL}/${options.path ?? PASS_UPGRADE_PATH}?${searchParams.toString()}`;
 
-    return () => onLink(upgradeHref, { replace: true });
+    return () => onLink(upgradeHref, { replace: false });
 };

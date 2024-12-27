@@ -8,7 +8,7 @@ import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } fro
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
+import { SubTheme, itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
@@ -51,7 +51,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
     const handleNewPasswordClick = () => {
         void passwordContext.generate({
             actionLabel: c('Action').t`Copy and close`,
-            className: 'ui-red',
+            className: SubTheme.RED,
             onSubmit: (value) => {
                 passwordContext.history.add({ value, origin });
                 copyToClipboard(value).catch(noop);
