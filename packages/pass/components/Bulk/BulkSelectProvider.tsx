@@ -51,7 +51,11 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
     const aliasCount = useMemoSelector(selectBulkSelectionAliasCount, [selectionDTO]);
 
     const context = useMemo<BulkSelectContextType>(() => {
-        const clear = () => setSelection(new Map());
+        const clear = () => {
+            if (selection.size > 0) {
+                setSelection(new Map());
+            }
+        };
 
         return {
             aliasCount,
