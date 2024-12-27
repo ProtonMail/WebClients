@@ -37,8 +37,8 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type {
+    ActiveSession,
     GetActiveSessionsResult,
-    LocalSessionPersisted,
     ResumedSessionResult,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -120,7 +120,7 @@ interface Props {
     toAppName?: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
-    activeSessions?: LocalSessionPersisted[];
+    activeSessions?: ActiveSession[];
     onGetActiveSessions?: () => Promise<GetActiveSessionsResult>;
     fork: boolean;
     metaTags: MetaTags;
@@ -462,7 +462,7 @@ const SingleSignupContainerV2 = ({
         const getSessionsData = async (
             api: Api
         ): Promise<{
-            sessions: LocalSessionPersisted[];
+            sessions: ActiveSession[];
             session: ResumedSessionResult | undefined;
         }> => {
             if (signupParameters.localID === -1) {
@@ -858,14 +858,17 @@ const SingleSignupContainerV2 = ({
         }
     };
 
-    const handleSwitchSession = async (session: LocalSessionPersisted) => {
+    const handleSwitchSession = async (session: ActiveSession) => {
         if (!model.plans.length || accountRef.current.signingIn || accountRef.current.signingOut) {
             return;
         }
         try {
             accountRef.current.signingIn = true;
             const silentApi = getSilentApi(unauthApi);
-            const resumedSession = await resumeSession({ api: silentApi, localID: session.persisted.localID });
+            const resumedSession = await resumeSession({
+                api: silentApi,
+                localID: session.persisted.localID,
+            });
             if (resumedSession) {
                 return await handleSignIn(resumedSession, { ignore: true });
             }

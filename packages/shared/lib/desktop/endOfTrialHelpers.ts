@@ -3,7 +3,7 @@ import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/li
 import type createApi from '../api/createApi';
 import { getApiError } from '../api/helpers/apiErrorHelper';
 import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
-import { handleLogout } from '../authentication/logout';
+import { getSelfLogoutOptions, handleLogout } from '../authentication/logout';
 import type { APP_NAMES } from '../constants';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
 
@@ -36,7 +36,16 @@ export const listenFreeTrialSessionExpiration = (
 ) => {
     const runEffect = async () => {
         try {
-            await handleLogout({ appName, authentication, clearDeviceRecoveryData: true, type: 'full' });
+            await handleLogout({
+                appName,
+                authentication,
+                type: 'full',
+                options: {
+                    ...getSelfLogoutOptions({ authentication }),
+                    clearDeviceRecovery: false,
+                    reason: 'signout',
+                },
+            });
         } finally {
             endOfTrialIPCCall();
         }

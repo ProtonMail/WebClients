@@ -1,31 +1,71 @@
 import { useEffect } from 'react';
 
-import { parseLogoutURL } from '@proton/shared/lib/authentication/logout';
-import { getActiveSessionByUserID } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import useApi from '@proton/components/hooks/useApi';
+import { revoke } from '@proton/shared/lib/api/auth';
+import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
+import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
+import { parseLogoutURL } from '@proton/shared/lib/authentication/logoutUrl';
+import { findPersistedSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    getPersistedSessions,
+    removePersistedSession,
+} from '@proton/shared/lib/authentication/persistedSessionStorage';
+import type { Api } from '@proton/shared/lib/interfaces';
+import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import noop from '@proton/utils/noop';
 
-const HandleLogout = () => {
-    useEffect(() => {
-        const params = parseLogoutURL(new URL(window.location.href));
+const clearSession = ({
+    session,
+    api,
+    revokeSession,
+}: {
+    session: PersistedSession;
+    api: Api;
+    revokeSession?: boolean;
+}) => {
+    if (revokeSession) {
+        const uidApi = getUIDApi(session.UID, api);
+        uidApi(revoke()).catch(noop);
+    }
+    removePersistedSession(session).catch(noop);
+};
 
-        if (params.logout) {
-            window.location.hash = '';
+const clear = ({ api }: { api: Api }) => {
+    const params = parseLogoutURL(new URL(window.location.href));
 
-            if (params.clearDeviceRecoveryData) {
-                params.sessions.forEach(({ id }) => {
-                    removeDeviceRecovery(id);
-                });
-            }
+    if (!params.logout) {
+        return;
+    }
 
-            params.sessions.forEach(({ id, isSelf }) => {
-                const session = getActiveSessionByUserID(id, isSelf);
-                if (session) {
-                    removePersistedSession(session.localID, session.UID).catch(noop);
-                }
-            });
+    window.location.hash = '';
+
+    if (params.clearDeviceRecoveryData) {
+        params.sessions.forEach(({ id }) => {
+            removeDeviceRecovery(id);
+        });
+    }
+
+    // Sessions are revoked through the API in the case the user is signing out of all sessions (which is new
+    // functionality introduced in the in-app account switcher.
+    // Otherwise, it is guaranteed that the session has already been revoked in the private app itself.
+    // It would be possible to do all the time, but it would trigger unnecessary 401's.
+    const revokeSession = params.type === 'all';
+
+    const silentApi = getSilentApi(api);
+    const persistedSessions = getPersistedSessions();
+    params.sessions.forEach(({ id, isSelf }) => {
+        const session = findPersistedSession({ persistedSessions, UserID: id, isSelf });
+        if (session) {
+            clearSession({ session, api: silentApi, revokeSession });
         }
+    });
+};
+
+const HandleLogout = () => {
+    const api = useApi();
+
+    useEffect(() => {
+        clear({ api });
     }, []);
 
     return null;

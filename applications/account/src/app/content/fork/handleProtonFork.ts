@@ -11,10 +11,11 @@ import {
 import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     GetActiveSessionType,
-    getActiveLocalSession,
     getActiveSessions,
+    getActiveSessionsData,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { ProtonForkData } from './interface';
@@ -62,7 +63,8 @@ export const handleProtonFork = async ({ api }: { api: Api }): Promise<ProtonFor
         const session = await resumeSession({ api, localID });
 
         if (getShouldReAuth(forkParameters, session)) {
-            const sessions = await getActiveLocalSession(getUIDApi(session.UID, api));
+            const persistedSessions = getPersistedSessions();
+            const sessions = await getActiveSessionsData({ api: getUIDApi(session.UID, api), persistedSessions });
             const activeSessionsResult = { session, sessions, type: GetActiveSessionType.AutoPick };
             return await handleActiveSessions(activeSessionsResult, forkParameters);
         }
