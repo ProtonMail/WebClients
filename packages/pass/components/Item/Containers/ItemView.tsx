@@ -1,4 +1,4 @@
-import { type FC, useMemo, useState } from 'react';
+import { type FC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/co
 import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { useOptimisticItem } from '@proton/pass/hooks/useItem';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId, getItemKey } from '@proton/pass/lib/items/item.utils';
 import {
@@ -28,12 +29,7 @@ import {
     setItemFlags,
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
-import {
-    selectIsOptimisticId,
-    selectItemWithOptimistic,
-    selectItemsState,
-    selectShare,
-} from '@proton/pass/store/selectors';
+import { selectIsOptimisticId, selectItemsState, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -58,11 +54,10 @@ export const ItemView: FC = () => {
 
     const optimisticItemId = getItemActionId({ itemId, shareId });
     const optimisticResolved = useSelector(selectIsOptimisticId(itemId));
-    const itemSelector = useMemo(() => selectItemWithOptimistic(shareId, itemId), [shareId, itemId]);
     const failedItemActionSelector = pipe(selectItemsState, selectFailedAction(optimisticItemId));
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
-    const item = useSelector(itemSelector);
+    const item = useOptimisticItem(shareId, itemId);
     const failure = useSelector(failedItemActionSelector);
 
     /* if vault or item cannot be found : redirect to base path */

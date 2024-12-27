@@ -12,8 +12,9 @@ import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContex
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
+import { useItem } from '@proton/pass/hooks/useItem';
 import { itemEditIntent } from '@proton/pass/store/actions';
-import { selectItem, selectShare } from '@proton/pass/store/selectors';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 
 const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
@@ -32,7 +33,7 @@ export const ItemEdit: FC = () => {
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
-    const item = useSelector(selectItem(shareId, itemId));
+    const item = useItem(shareId, itemId);
 
     const handleSubmit = (data: ItemEditIntent) => {
         dispatch(itemEditIntent(data));
