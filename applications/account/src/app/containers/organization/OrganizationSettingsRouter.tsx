@@ -20,6 +20,7 @@ import {
     OrganizationTwoFARemindersSection,
     PrivateMainSettingsArea,
     PrivateMainSettingsAreaBase,
+    SharedServersSection,
     SsoPage,
     UsersAndAddressesSection,
     VPNEvents,
@@ -60,6 +61,7 @@ const OrganizationSettingsRouter = ({
             groups,
             scribe,
             videoConf,
+            sharedServers,
         },
     } = organizationAppRoutes;
 
@@ -73,6 +75,13 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, gateways)}>
                     <PrivateMainSettingsArea config={gateways}>
                         <GatewaysSection organization={organization} />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(sharedServers) && (
+                <Route path={getSectionPath(path, sharedServers)}>
+                    <PrivateMainSettingsArea config={sharedServers}>
+                        <SharedServersSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

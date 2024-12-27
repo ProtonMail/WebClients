@@ -155,6 +155,7 @@ const MainContainer = () => {
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
+    const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -202,6 +203,7 @@ const MainContainer = () => {
         isGlobalSSOEnabled,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled,
+        isSharedServerFeatureEnabled,
     });
 
     useEffect(() => {
