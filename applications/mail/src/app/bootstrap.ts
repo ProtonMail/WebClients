@@ -26,6 +26,7 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
+import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
@@ -37,13 +38,14 @@ const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './MainContainer').then((result) => result.default);
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+    const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
     const api = createApi({ config });
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
-    setupGuestCrossStorage();
+    setupGuestCrossStorage({ appMode, appName });
     initElectronClassnames();
     initLogicalProperties();
     initSafariFontFixClassnames();
@@ -52,8 +54,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     if (isChromiumBased()) {
         registerMailToProtocolHandler();
     }
-
-    const appName = config.APP_NAME;
 
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(appName, authentication, api);

@@ -8,7 +8,7 @@ enum States {
     ERROR,
 }
 
-const createGuest = <MessagePayload>(urlTarget: string) => {
+const createGuest = (urlTarget: string) => {
     let iframe: HTMLIFrameElement;
     let state = States.INIT;
     let promiseHandler: {
@@ -105,9 +105,9 @@ const createGuest = <MessagePayload>(urlTarget: string) => {
         iframe.contentWindow?.postMessage(message, url.origin);
     };
 
-    const postAndGetMessage = async <T>(messagePayload: MessagePayload) => {
+    const postAndGetMessage = async <Response, Args>(messagePayload: Args) => {
         const messageId = id++;
-        const promise = getMessagePromise<T>(messageId);
+        const promise = getMessagePromise<Response>(messageId);
         await postMessage({
             type: 'message',
             id: messageId,

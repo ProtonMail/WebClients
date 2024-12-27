@@ -55,6 +55,7 @@ export interface RefreshSessionResponse {
 }
 
 export interface LocalSessionResponse {
+    UID: string;
     Username?: string;
     DisplayName: string;
     LocalID: number;

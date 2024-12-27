@@ -94,30 +94,20 @@ export const requestFork = ({
     return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));
 };
 
-export const consumeFork = async ({
-    api,
-    mode,
-    parameters,
-    parameters: { selector, state: stateKey, key, persistent, trusted, payloadVersion },
-}: ConsumeForkArguments): Promise<{
-    session: ResumedSessionResult;
-    forkState: ForkState;
-}> => {
-    const forkState = getForkStateData(stateKey, parameters);
-
-    const { UID, AccessToken, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
+export const consumeForkSelector = async ({ api, selector }: { api: Api; selector: string }) => {
+    const response = await api<PullForkResponse>(pullForkSession(selector));
+    const { UID, AccessToken, LocalID } = response;
 
     try {
         // Resume and use old session if it exists
         const validatedSession = await resumeSession({ api, localID: LocalID });
 
         // Revoke the discarded forked session
-        await authApi(revoke({ Child: 1 })).catch(noop);
+        await api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
 
         return {
+            type: 'existing-session',
             session: validatedSession,
-            forkState,
         } as const;
     } catch (e: any) {
         // If existing session is invalid. Fall through to continue using the new fork.
@@ -126,24 +116,30 @@ export const consumeFork = async ({
         }
     }
 
-    let keyPassword = '';
-    let forkedOfflineKey: OfflineKey | undefined;
+    return {
+        type: 'new-session',
+        response,
+    } as const;
+};
 
-    if (Payload) {
-        try {
-            const data = await getForkDecryptedBlob(await importKey(key), Payload, payloadVersion);
-            keyPassword = data?.keyPassword || '';
-            if (data?.type === 'offline') {
-                forkedOfflineKey = {
-                    password: data.offlineKeyPassword,
-                    salt: data.offlineKeySalt,
-                };
-            }
-        } catch (e: any) {
-            throw new InvalidForkConsumeError('Failed to decrypt payload');
-        }
-    }
+export const finalizeConsumeFork = async ({
+    api,
+    pullForkResponse,
+    payload: { keyPassword, forkedOfflineKey, persistent, trusted, mode },
+}: {
+    api: Api;
+    pullForkResponse: PullForkResponse;
+    payload: {
+        persistent: boolean;
+        trusted: boolean;
+        keyPassword?: string;
+        forkedOfflineKey?: OfflineKey;
+        mode?: 'sso' | 'standalone';
+    };
+}): Promise<ResumedSessionResult> => {
+    const { UID, AccessToken, RefreshToken, LocalID } = pullForkResponse;
 
+    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
     const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
     const result = {
@@ -167,11 +163,80 @@ export const consumeFork = async ({
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 
     return {
-        session: {
-            ...result,
-            clientKey,
-            offlineKey,
-        },
-        forkState,
+        ...result,
+        clientKey,
+        offlineKey,
     } as const;
+};
+
+const resolveForkPasswords = async ({
+    key,
+    payloadVersion,
+    pullForkResponse,
+}: {
+    key: ConsumeForkParameters['key'];
+    payloadVersion: ConsumeForkParameters['payloadVersion'];
+    pullForkResponse: PullForkResponse;
+}) => {
+    let keyPassword = '';
+    let forkedOfflineKey: OfflineKey | undefined;
+    const payload = pullForkResponse.Payload;
+
+    if (payload) {
+        try {
+            const data = await getForkDecryptedBlob(await importKey(key), payload, payloadVersion);
+            keyPassword = data?.keyPassword || '';
+            if (data?.type === 'offline') {
+                forkedOfflineKey = {
+                    password: data.offlineKeyPassword,
+                    salt: data.offlineKeySalt,
+                };
+            }
+        } catch (e: any) {
+            throw new InvalidForkConsumeError('Failed to decrypt payload');
+        }
+    }
+
+    return {
+        keyPassword,
+        forkedOfflineKey,
+    };
+};
+
+export const consumeFork = async ({
+    api,
+    mode,
+    parameters,
+    parameters: { selector, state: stateKey, key, persistent, trusted, payloadVersion },
+}: ConsumeForkArguments): Promise<{
+    session: ResumedSessionResult;
+    forkState: ForkState;
+}> => {
+    const forkState = getForkStateData(stateKey, parameters);
+
+    const selectorResult = await consumeForkSelector({ api, selector });
+
+    if (selectorResult.type === 'existing-session') {
+        return {
+            session: selectorResult.session,
+            forkState,
+        };
+    }
+
+    const { keyPassword, forkedOfflineKey } = await resolveForkPasswords({
+        key,
+        payloadVersion,
+        pullForkResponse: selectorResult.response,
+    });
+
+    const result = await finalizeConsumeFork({
+        api,
+        pullForkResponse: selectorResult.response,
+        payload: { persistent, trusted, keyPassword, forkedOfflineKey, mode },
+    });
+
+    return {
+        session: result,
+        forkState,
+    };
 };
