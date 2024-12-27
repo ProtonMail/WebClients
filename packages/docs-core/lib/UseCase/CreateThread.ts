@@ -48,6 +48,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       isPrivateDocumentKeys(dto.entitlements.keys) ? dto.entitlements.keys.userOwnAddress : undefined,
       [],
       false,
+      { verified: true },
       commentType,
     )
 
