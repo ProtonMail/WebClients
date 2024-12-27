@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { type ReactNode } from 'react';
 
 import { c } from 'ttag';
@@ -5,11 +6,21 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { Alert } from '@proton/components';
 import proxyScreenshot from '@proton/pass/assets/alias/proxy-screenshot.png';
+import { ClickToCopy } from '@proton/pass/components/Form/Field/Control/ClickToCopy';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 
 import type { CustomDomain } from './DomainsProvider';
 
+export enum DNSSectionID {
+    OWNERSHIP = 'OWNERSHIP',
+    MX = 'MX',
+    SPF = 'SPF',
+    DKIM = 'DKIM',
+    DMARC = 'DMARC',
+}
+
 export type CustomDomainDNSSection = {
+    id: DNSSectionID;
     disabled?: boolean;
     errorMessages?: string[];
     isVerified: boolean;
@@ -38,6 +49,29 @@ const WIKIPEDIA_LINK_DMARC = (
 const getDomainValueMessage = (domain: ReactNode) =>
     c('Description')
         .jt`Some DNS registrar might require a full record path, in this case please use ${domain} as domain value instead.`;
+
+// eslint-disable-next-line custom-rules/deprecate-spacing-utility-classes
+const copyMx1 = 'mx1.alias.proton.me';
+// eslint-disable-next-line custom-rules/deprecate-spacing-utility-classes
+const copyMx2 = 'mx2.alias.proton.me';
+const copySpf = 'v=spf1 include:alias.proton.me ~all';
+const copyDkimDomain = 'dkim._domainkey';
+const copyDkimValue = 'dkim._domainkey.alias.proton.me';
+const copyDkim02Domain = 'dkim02._domainkey';
+const copyDkim02Value = 'dkim02._domainkey.alias.proton.me';
+const copyDkim03Domain = 'dkim03._domainkey';
+const copyDkim03Value = 'dkim03._domainkey.alias.proton.me';
+const copyDmarcDomain = '_dmarc';
+const copyDmarcValue = 'v=DMARC1; p=quarantine; pct=100; adkim=s; aspf=s';
+
+const CopyValue: FC<{ label: string; value: string }> = ({ label, value }) => (
+    <div className="flex gap-1">
+        {label}
+        <ClickToCopy value={value}>
+            <mark className="bg-warning text-break">{value}</mark>
+        </ClickToCopy>
+    </div>
+);
 
 export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] => {
     const domainPath = domain.Domain;
@@ -75,6 +109,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
 
     return [
         {
+            id: DNSSectionID.OWNERSHIP,
             title: c('Title').t`Domain ownership verification`,
             content: (
                 <>
@@ -83,9 +118,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: TXT`}</div>
                         <div>{c('Info').t`Domain: ${domainPath} or @`}</div>
-                        <div>
-                            {c('Info').t`Value:`} <mark className="bg-warning">{domain.VerificationRecord}</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Value:`} value={domain.VerificationRecord} />
                     </Card>
                 </>
             ),
@@ -93,6 +126,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.VerificationErrors,
         },
         {
+            id: DNSSectionID.MX,
             title: c('Title').t`MX record`,
             content: (
                 <>
@@ -104,17 +138,13 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
                         <div>{c('Info').t`Record: MX`}</div>
                         <div>{c('Info').t`Domain: ${domainPath} or @`}</div>
                         <div>{c('Label').t`Priority:`} 10</div>
-                        <div>
-                            {c('Label').t`Target:`} <mark className="bg-warning">mx1.simplelogin.co.</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Target:`} value={copyMx1} />
                     </Card>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: MX`}</div>
                         <div>{c('Info').t`Domain: ${domainPath} or @`}</div>
                         <div>{c('Label').t`Priority:`} 20</div>
-                        <div>
-                            {c('Label').t`Target:`} <mark className="bg-warning">mx2.simplelogin.co.</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Target:`} value={copyMx2} />
                     </Card>
                 </>
             ),
@@ -122,6 +152,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.MxErrors,
         },
         {
+            id: DNSSectionID.SPF,
             title: c('Title').t`SPF (Optional)`,
             content: (
                 <>
@@ -134,10 +165,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
                             c('Info').t`Record: TXT`
                         }</div>
                         <div>{c('Info').t`Domain: ${domainPath} or @`}</div>
-                        <div>
-                            {c('Label').t`Value:`}{' '}
-                            <mark className="bg-warning">v=spf1 include:simplelogin.co ~all</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Value:`} value={copySpf} />
                     </Card>
                 </>
             ),
@@ -145,6 +173,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.SpfErrors,
         },
         {
+            id: DNSSectionID.DKIM,
             title: c('Title').t`DKIM (Optional)`,
             content: (
                 <>
@@ -153,30 +182,18 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
                     <div>{c('Description').t`Add the following CNAME DNS records to your domain.`}</div>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: CNAME`}</div>
-                        <div>
-                            {c('Label').t`Domain:`} <mark className="bg-warning">dkim._domainkey</mark>
-                        </div>
-                        <div>
-                            {c('Label').t`Value:`} <mark className="bg-warning">dkim._domainkey.simplelogin.co.</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Domain:`} value={copyDkimDomain} />
+                        <CopyValue label={c('Label').t`Value:`} value={copyDkimValue} />
                     </Card>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: CNAME`}</div>
-                        <div>
-                            {c('Label').t`Domain:`} <mark className="bg-warning">dkim02._domainkey</mark>
-                        </div>
-                        <div>
-                            {c('Label').t`Value:`} <mark className="bg-warning">dkim02._domainkey.simplelogin.co.</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Domain:`} value={copyDkim02Domain} />
+                        <CopyValue label={c('Label').t`Value:`} value={copyDkim02Value} />
                     </Card>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: CNAME`}</div>
-                        <div>
-                            {c('Label').t`Domain:`} <mark className="bg-warning">dkim03._domainkey</mark>
-                        </div>
-                        <div>
-                            {c('Label').t`Value:`} <mark className="bg-warning">dkim03._domainkey.simplelogin.co.</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Domain:`} value={copyDkim03Domain} />
+                        <CopyValue label={c('Label').t`Value:`} value={copyDkim03Value} />
                     </Card>
                     <Alert className="mb-3" type="success">
                         <div>{getDomainValueMessage(domainKey)}</div>
@@ -194,6 +211,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             errorMessages: domain.DkimErrors,
         },
         {
+            id: DNSSectionID.DMARC,
             title: c('Title').t`DMARC (Optional)`,
             content: (
                 <>
@@ -202,13 +220,8 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
                     <div>{c('Description').t`Add the following TXT DNS record to your domain.`}</div>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: TXT`}</div>
-                        <div>
-                            {c('Label').t`Domain:`} <mark className="bg-warning">_dmarc</mark>
-                        </div>
-                        <div>
-                            {c('Label').t`Value:`}{' '}
-                            <mark className="bg-warning">v=DMARC1; p=quarantine; pct=100; adkim=s; aspf=s</mark>
-                        </div>
+                        <CopyValue label={c('Label').t`Domain:`} value={copyDmarcDomain} />
+                        <CopyValue label={c('Label').t`Value:`} value={copyDmarcValue} />
                     </Card>
                     <Alert className="mb-3" type="success">
                         <div>{getDomainValueMessage(dmarc)}</div>

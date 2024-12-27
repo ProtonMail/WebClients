@@ -12,6 +12,7 @@ import importReducer from './import';
 import invites from './invites';
 import items from './items';
 import monitor from './monitor';
+import notification from './notification';
 import organization from './organization';
 import pwHistory from './pw-history';
 import settings from './settings';
@@ -35,6 +36,7 @@ export const reducerMap = {
     invites,
     items,
     monitor,
+    notification,
     organization,
     pwHistory,
     request,
