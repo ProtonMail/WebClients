@@ -6,15 +6,20 @@ import type { PasswordItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-import { type BaseProps as PasswordGeneratorModalProps } from './PasswordGeneratorModal';
-
-export type PasswordModalState = Omit<PasswordGeneratorModalProps, 'onSubmit'>;
+export type PasswordGeneratorModalState = {
+    /** Allows different themes to be applied based on the
+     * context where the modal is launched */
+    className?: string;
+    /** When provided, displays a submit button that
+     * triggers the modal's `onSubmit` callback. */
+    actionLabel?: string;
+};
 
 export type PasswordContextValue = {
     /** Current password options in store */
     config: MaybeNull<GeneratePasswordConfig>;
     /** Generates a random password */
-    generate: UseAsyncModalHandle<string, PasswordModalState>;
+    generate: UseAsyncModalHandle<string, PasswordGeneratorModalState>;
     /** Password history handles */
     history: {
         /** Pushes a password to the history */

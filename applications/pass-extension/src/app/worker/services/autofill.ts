@@ -17,6 +17,7 @@ import {
     selectAutofillLoginCandidates,
     selectAutosuggestCopyToClipboard,
     selectItem,
+    selectOrganizationPasswordGeneratorPolicy,
     selectPasswordOptions,
     selectVaultLimits,
     selectWritableVaults,
@@ -148,6 +149,7 @@ export const createAutoFillService = () => {
             return {
                 config: selectPasswordOptions(state) ?? DEFAULT_RANDOM_PW_OPTIONS,
                 copy: selectAutosuggestCopyToClipboard(state) ?? getInitialSettings().autosuggest.passwordCopy,
+                policy: selectOrganizationPasswordGeneratorPolicy(state),
             };
         })
     );

@@ -180,8 +180,5 @@ export const createUserRenewalRule = (store: Store<State>) =>
 export const createSSOChangeLockRule = () =>
     createSpotlightRule({
         message: SpotlightMessage.SSO_CHANGE_LOCK,
-        when: (previous) => {
-            if (DESKTOP_BUILD) return false;
-            return !previous;
-        },
+        when: (previous) => !previous,
     });

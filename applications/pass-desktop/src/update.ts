@@ -1,7 +1,6 @@
 import assert from 'assert';
 import { randomBytes } from 'crypto';
 import { type MessageBoxOptions, type Session, app, autoUpdater, dialog } from 'electron';
-import logger from 'electron-log/main';
 import isURL from 'is-url';
 
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
@@ -11,6 +10,7 @@ import * as config from './app/config';
 import { ARCH } from './lib/env';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
+import logger from './utils/logger';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
 export type StoreUpdateProperties = {

@@ -1,4 +1,4 @@
-import type { ItemIDRevision2 } from '@proton/pass/types/api/pass';
+import type { ItemIDRevision } from '@proton/pass/types/api/pass';
 import type { OpenedItem } from '@proton/pass/types/crypto';
 import type {
     ExtraFieldType,
@@ -89,7 +89,7 @@ export type ItemRevision<T extends ItemType = ItemType> = Omit<OpenedItem, 'cont
 
 export type LoginItem = ItemRevision<'login'>;
 
-export type ItemRevisionID = ItemIDRevision2;
+export type ItemRevisionID = ItemIDRevision;
 
 export type UnsafeItemRevision<T extends ItemType = ItemType> = Deobfuscate<ItemRevision<T>>;
 

@@ -1,5 +1,4 @@
 import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme, session, shell } from 'electron';
-import logger from 'electron-log/main';
 import { join } from 'path';
 
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -12,14 +11,16 @@ import * as config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
+import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
-import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
 import { userAgent } from './lib/user-agent';
+import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
 import type { PassElectronContext } from './types';
 import { SourceType, updateElectronApp } from './update';
+import logger from './utils/logger';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
 const ctx: PassElectronContext = { window: null, quitting: false };
@@ -34,34 +35,16 @@ const createSession = () => {
 
     secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
 
-    // Fix SSO callback URL
-    secureSession.webRequest.onHeadersReceived(
-        {
-            urls: [`https://${DOMAIN}/api/auth/saml`, `${config.SSO_URL}/api/auth/saml`, `${config.API_URL}/auth/saml`],
-            types: ['mainFrame'],
-        },
-        ({ responseHeaders }, callback) => {
-            const location = (responseHeaders?.Location || responseHeaders?.location)?.[0];
+    // Use certificate pinning
+    secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
-            if (location && !location.startsWith(config.SSO_URL)) {
-                delete responseHeaders!.location;
-                delete responseHeaders!.Location;
-                const url = new URL(location);
-                const newLocation = `${config.SSO_URL}${url.pathname}${url.search}${url.hash}`;
-                responseHeaders!.location = [newLocation];
-                logger.debug(`[onHeadersReceived] rewriting SSO callback URL from '${location}' to '${newLocation}'`);
-            }
+    secureSession.webRequest.onHeadersReceived({ urls: [`https://*.${DOMAIN}/*`] }, (details, callback) => {
+        // FIXME: Temporary bypass for SSO callback using the wrong protocol
+        fixSSOUrl(details);
 
-            callback({ cancel: false, responseHeaders });
-        }
-    );
-
-    if (isProdEnv()) {
-        // Use certificate pinning
-        if (config.SSO_URL.endsWith('proton.me')) secureSession.setCertificateVerifyProc(certificateVerifyProc);
-
-        secureSession.webRequest.onHeadersReceived({ urls: [`https://*.${DOMAIN}/*`] }, (details, callback) => {
-            const { responseHeaders = {}, frame } = details;
+        if (isProdEnv()) {
+            if (!details.responseHeaders) details.responseHeaders = {};
+            const { responseHeaders, frame } = details;
             const appRequest = frame?.url?.startsWith('file://') ?? false;
 
             /** If the request is made from a `file://` url: migrate ALL `SameSite` directives
@@ -69,14 +52,14 @@ const createSession = () => {
              * EMPTY `SameSite` cookie directives to `None` to preserve `Session-ID` cookies */
             if (appRequest) {
                 migrateSameSiteCookies(responseHeaders);
+                responseHeaders['access-control-allow-headers'] = Object.keys(responseHeaders);
                 responseHeaders['access-control-allow-origin'] = ['file://'];
                 responseHeaders['access-control-allow-credentials'] = ['true'];
-                responseHeaders['access-control-allow-headers'] = Object.keys(details.responseHeaders || {});
             } else upgradeSameSiteCookies(responseHeaders);
+        }
 
-            callback({ cancel: false, responseHeaders });
-        });
-    }
+        callback({ cancel: false, responseHeaders: details.responseHeaders });
+    });
 
     const clientId = ((): string => {
         const config = APPS_CONFIGURATION[APPS.PROTONPASS];
@@ -313,10 +296,16 @@ app.addListener('web-contents-created', (_, contents) => {
         const url = new URL(href);
 
         // Open a new window for SSO
-        if (url.origin === config.SSO_URL) return { action: 'allow' };
+        if (url.origin === config.SSO_URL && url.pathname.match(/(\/api)?\/auth\/sso/)) {
+            logger.debug(`[setWindowOpenHandler] opening url in window: ${href}`);
+            return { action: 'allow' };
+        }
 
         // Shell out to the OS handler for http(s) and mailto
-        if (['http:', 'https:', 'mailto:'].includes(url.protocol)) shell.openExternal(href).catch(noop);
+        if (['http:', 'https:', 'mailto:'].includes(url.protocol)) {
+            logger.debug(`[setWindowOpenHandler] opening url externally: ${href}`);
+            shell.openExternal(href).catch(noop);
+        }
 
         // Always deny opening extra windows
         return { action: 'deny' };

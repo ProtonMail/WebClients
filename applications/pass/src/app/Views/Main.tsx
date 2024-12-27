@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
+import { DeepLinks } from 'proton-pass-web/app/DeepLinks/DeepLinks';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -19,6 +20,7 @@ import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
+import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
@@ -104,19 +106,17 @@ const MainSwitch: FC = () => {
                                             <Route path={`${route.match.path}/monitor`} component={Monitor} />
                                             <Route exact path={`${route.match.path}/settings`} component={Settings} />
                                             <Route path={`${route.match.path}/secure-links`} component={SecureLinks} />
+                                            <Route path={`${route.match.path}/internal/:key`} component={DeepLinks} />
                                             <Route component={Items} />
                                         </Switch>
                                     )}
-                                    {!DESKTOP_BUILD && (
-                                        <>
-                                            <ThemeOnboardingModal />
-                                            {isSSO && (
-                                                <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
-                                                    {(props) => <OnboardingSSO {...props} />}
-                                                </WithSpotlightModal>
-                                            )}
-                                        </>
+                                    {!DESKTOP_BUILD && <ThemeOnboardingModal />}
+                                    {isSSO && (
+                                        <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                                            {(props) => <OnboardingSSO {...props} />}
+                                        </WithSpotlightModal>
                                     )}
+                                    <InAppNotifications />
                                 </div>
                             </div>
                         </main>
