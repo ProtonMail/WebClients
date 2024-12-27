@@ -34,6 +34,7 @@ interface Props {
     groups: Group[] | undefined;
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
+    isSharedServerFeatureEnabled: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -50,6 +51,7 @@ export const getOrganizationAppRoutes = ({
     groups,
     isScribeEnabled,
     isZoomIntegrationEnabled,
+    isSharedServerFeatureEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -216,6 +218,19 @@ export const getOrganizationAppRoutes = ({
                 to: '/gateways',
                 icon: 'servers',
                 available: hasVpnB2BPlan || hasBundlePro2024(subscription) || hasBundlePro(subscription),
+                subsections: [
+                    {
+                        id: 'servers',
+                    },
+                ],
+            },
+            sharedServers: <SectionConfig>{
+                text: c('Title').t`Shared servers`,
+                to: '/shared-servers',
+                icon: 'servers',
+                available:
+                    isSharedServerFeatureEnabled &&
+                    (hasVpnB2BPlan || hasBundlePro2024(subscription) || hasBundlePro(subscription)),
                 subsections: [
                     {
                         id: 'servers',

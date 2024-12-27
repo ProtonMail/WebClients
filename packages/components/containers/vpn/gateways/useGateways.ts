@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-
 import { c, msgid } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
-import { SECOND } from '@proton/shared/lib/constants';
+import { useFetchData } from '@proton/components/hooks/useFetchData';
 
 import type { Gateway } from './Gateway';
 import type { GatewayLocation } from './GatewayLocation';
@@ -36,74 +34,53 @@ interface GatewayResult {
     Users: readonly GatewayUser[];
 }
 
-export const useGateways = (maxAge: number) => {
-    const [result, setResult] = useState<GatewayResult | null>(null);
-    const [loading, setLoading] = useState<boolean>(true);
+const getDefaultConfig = (nbDay: number) => {
+    return {
+        Table: {
+            Name: false,
+            Status: true,
+            Country: true,
+            IPv4: true,
+            IPv6: false,
+            Load: false,
+            Deleted: false,
+        },
+        ServerTable: {
+            Name: false,
+            Status: true,
+            Country: true,
+            IPv4: true,
+            IPv6: false,
+            Load: true,
+            Deleted: false,
+        },
+        Provisioning: {
+            // This string is only generated if getDefaultConfig() is actually called
+            TranslatedDuration: c('Label').ngettext(msgid`${nbDay} day`, `${nbDay} days`, nbDay),
+        },
+    };
+};
 
+export const useGateways = (maxAge: number) => {
     const api = useApi();
 
-    const refreshStateRef = useRef({ lastUpdate: 0, lastSuccess: 0 });
-
-    const refresh = async () => {
-        try {
-            refreshStateRef.current.lastUpdate = Date.now();
-            const result = await api<GatewayResult>(queryVPNGateways());
-            refreshStateRef.current.lastSuccess = Date.now();
-            setResult(result);
-        } catch {
-            // ignore
-        } finally {
-            setLoading(false);
-        }
+    // Specialized fetcher for Gateways
+    const fetcher = async () => {
+        return api<GatewayResult>(queryVPNGateways());
     };
 
-    useEffect(() => {
-        refresh();
+    // Reuse the generic fetch-data hook
+    const { loading, result, refresh } = useFetchData<GatewayResult>({
+        fetcher,
+        maxAge,
+    });
 
-        const refreshHandle = setInterval(() => {
-            const { lastSuccess, lastUpdate } = refreshStateRef.current;
-
-            // Don't start to refresh until first success
-            if (!lastSuccess) {
-                return;
-            }
-
-            const now = Date.now();
-            if (now > lastUpdate + maxAge / 5 && now > lastSuccess + maxAge) {
-                refresh();
-            }
-        }, 30 * SECOND);
-
-        return () => {
-            clearInterval(refreshHandle);
-        };
-    }, []);
-
+    // If there’s no result yet, define fallback config
     const nbDay = 7;
 
     return {
-        loading: !result || loading,
-        config: result?.Config || {
-            Table: {
-                Name: false,
-                Status: true,
-                Country: true,
-                IPv4: true,
-                IPv6: false,
-                Load: false,
-            },
-            ServerTable: {
-                Name: false,
-                Status: true,
-                Country: true,
-                IPv4: true,
-                IPv6: false,
-                Load: true,
-            },
-            Provisioning: {
-                TranslatedDuration: c('Label').ngettext(msgid`${nbDay} day`, `${nbDay} days`, nbDay),
-            },
-        },
+        loading,
+        config: result?.Config || getDefaultConfig(nbDay),
         locations: result?.Locations,
         gateways: result?.Gateways,
         users: result?.Users || [],
