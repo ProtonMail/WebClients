@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
 import type { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -47,7 +48,7 @@ const useCalendarsAlarms = (
                 cacheRef.current.rerender = () => setForceRefresh({});
             }
 
-            const promise = getCalendarsAlarmsCached(api, cacheRef.current.calendarsCache, calendarIDs, [
+            const promise = getCalendarsAlarmsCached(getSilentApi(api), cacheRef.current.calendarsCache, calendarIDs, [
                 cacheRef.current.start,
                 cacheRef.current.end,
             ]);

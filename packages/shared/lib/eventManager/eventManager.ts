@@ -1,5 +1,6 @@
 import noop from '@proton/utils/noop';
 
+import { getApiError } from '../api/helpers/apiErrorHelper';
 import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
 import type { Listener } from '../helpers/listeners';
 import createListeners from '../helpers/listeners';
@@ -191,6 +192,14 @@ const createEventManager = <EventResult = DefaultEventResult>({
                         if (error.name === 'AbortError') {
                             return;
                         }
+                        const { status } = getApiError(error);
+                        if (status >= 400 && status <= 499) {
+                            // In case it fails to fetch the latest event id due to a 4xx error, it is assumed
+                            // that this event loop is invalid and is subsequently stopped
+                            stop();
+                            return;
+                        }
+                        // Otherwise, if 5xx, offline, or any other error, it's thrown so that it's later retried
                         throw error;
                     }
                 }
