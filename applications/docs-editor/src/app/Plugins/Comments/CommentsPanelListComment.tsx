@@ -176,6 +176,7 @@ export function CommentsPanelListComment({
               {comment.createTime.milliseconds !== comment.modifyTime.milliseconds && ' • Edited'}
             </span>
           </div>
+
           {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadState.Active && (
             <>
               <Tooltip title={c('Action').t`Decline suggestion`} onClick={rejectSuggestion}>
@@ -282,6 +283,15 @@ export function CommentsPanelListComment({
                 )}
               </DropdownMenu>
             </SimpleDropdown>
+          )}
+          {!comment.verificationResult.verified && comment.verificationResult.verificationAvailable && (
+            <Tooltip
+              title={c('Action').t`Signature could not be verified`}
+              className="flex-shrink-0"
+              data-testid="comment-signature-unverified"
+            >
+              <Icon name="exclamation-triangle-filled" size={4.5} />
+            </Tooltip>
           )}
         </div>
         {/* eslint-disable-next-line no-nested-ternary */}
