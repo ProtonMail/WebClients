@@ -86,7 +86,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
         ['private-index']: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
         ['public-index']: [path.resolve('./src/app/public.tsx'), getSupportedEntry()],
         ['lite-index']: [path.resolve('./src/lite/index.tsx'), getSupportedEntry()],
-        storage: path.resolve('./src/app/storage.ts'),
+        storage: path.resolve('./src/app/hostStorage.ts'),
         unsupported,
     };
 

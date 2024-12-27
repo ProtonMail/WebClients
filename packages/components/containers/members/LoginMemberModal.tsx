@@ -56,7 +56,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
             const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
             const User = await memberApi<{ User: User }>(getUser()).then(({ User }) => User);
 
-            const validatedSession = await maybeResumeSessionByUser(silentApi, User);
+            const validatedSession = await maybeResumeSessionByUser({ api: silentApi, User });
             if (validatedSession) {
                 memberApi(revoke()).catch(noop);
                 return validatedSession.LocalID;

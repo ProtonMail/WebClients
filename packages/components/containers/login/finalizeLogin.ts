@@ -7,9 +7,9 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import {
     attemptDeviceRecovery,
     getIsDeviceRecoveryAvailable,
-    removeDeviceRecovery,
     storeDeviceRecovery,
 } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
@@ -81,7 +81,7 @@ export const finalizeLogin = async ({
         cache.data.addresses || syncAddresses(cache),
     ]);
 
-    const validatedSession = attemptResume ? await maybeResumeSessionByUser(api, user) : null;
+    const validatedSession = attemptResume ? await maybeResumeSessionByUser({ api, User: user }) : null;
     if (validatedSession) {
         await api(revoke()).catch(noop);
         return {

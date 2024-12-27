@@ -22,7 +22,17 @@ const DeleteAccount = () => {
         broadcast({ type: MessageType.CLOSE });
     };
 
-    return <DeleteAccountModal hideHeader fullscreen open onSuccess={handleSuccess} onClose={handleClose} />;
+    return (
+        <DeleteAccountModal
+            hideHeader
+            fullscreen
+            open
+            onSuccess={handleSuccess}
+            // The lite app does not need to redirect to or deal with logout afterwards
+            disableLogout={true}
+            onClose={handleClose}
+        />
+    );
 };
 
 export default DeleteAccount;
