@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 import { useEffect, useState } from 'react';
 
 import { useApi } from '@proton/components';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -59,7 +60,7 @@ const useCalendarsEventsFetcher = ({
                 }
 
                 return fetchCalendarEvents({
-                    api,
+                    api: getSilentApi(api),
                     calendarEventsCache,
                     calendarID,
                     dateRange: range,
