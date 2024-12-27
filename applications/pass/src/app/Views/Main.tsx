@@ -53,7 +53,9 @@ const MainSwitch: FC = () => {
     const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
     const isSSO = useSelector(selectIsSSO);
 
-    const { state: expanded, toggle } = useToggle();
+    /** FIXME: update `useToggle` so callbacks are stable */
+    const { state: expanded, set } = useToggle();
+    const toggle = useCallback(() => set((prev) => !prev), []);
 
     const connectivityBar = useConnectivityBar((online) => ({
         className: offline ? 'bg-weak border-top' : 'bg-danger',
