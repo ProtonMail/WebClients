@@ -1,5 +1,4 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -10,6 +9,7 @@ import {
     type ConfirmationPromptHandles,
 } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
 import { selectSecureLinksByItems } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO } from '@proton/pass/types';
@@ -58,7 +58,8 @@ export const ConfirmMoveManyItems: FC<
         shareId: string;
     }
 > = ({ selected, shareId, onCancel, onConfirm }) => {
-    const hasLinks = Boolean(useSelector(selectSecureLinksByItems(selected)).length);
+    const secureLinks = useMemoSelector(selectSecureLinksByItems, [selected]);
+    const hasLinks = Boolean(secureLinks.length);
     const count = getBulkSelectionCount(selected);
 
     return (

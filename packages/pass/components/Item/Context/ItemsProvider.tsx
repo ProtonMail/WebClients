@@ -6,11 +6,12 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { selectItemsSearchResult } from '@proton/pass/store/selectors';
-import type { ItemRevisionWithOptimistic } from '@proton/pass/types';
+import type { State } from '@proton/pass/store/types';
+import type { ItemRevision } from '@proton/pass/types';
 
 type ItemsContextValue = {
-    filtered: ItemRevisionWithOptimistic[];
-    searched: ItemRevisionWithOptimistic[];
+    filtered: ItemRevision[];
+    searched: ItemRevision[];
     totalCount: number;
 };
 
@@ -21,8 +22,8 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
     const shareId = selectedItem?.shareId;
     const itemId = selectedItem?.itemId;
 
-    const items = useSelector(
-        selectItemsSearchResult({
+    const items = useSelector((state: State) =>
+        selectItemsSearchResult(state, {
             type: filters.type === '*' ? null : filters.type,
             search: filters.search,
             shareId: matchTrash ? null : filters.selectedShareId,
@@ -30,7 +31,6 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
             trashed: matchTrash,
         })
     );
-
     useEffect(() => {
         /* Check if the currently selected item is not present in the current
          * filtered item list. In such cases, unselect it and re-trigger the

@@ -10,6 +10,7 @@ import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/compone
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
+import { useItemOptimisticState } from '@proton/pass/hooks/useItem';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -26,22 +27,16 @@ type Props = Partial<LinkProps> &
     Partial<ButtonLikeProps<Link>> & {
         item: ItemRevision;
         active?: boolean;
-        failed?: boolean;
-        optimistic?: boolean;
         search?: string;
     };
 
-const ItemsListItemRaw: FC<Props> = ({
-    item,
-    active = false,
-    failed = false,
-    optimistic = false,
-    search = '',
-    ...rest
-}) => {
-    const { data, shareId } = item;
+const ItemsListItemRaw: FC<Props> = ({ item, active = false, search = '', ...rest }) => {
+    const { data, shareId, itemId } = item;
     const { heading, subheading } = presentListItem(item);
+
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
+    const { failed, optimistic } = useItemOptimisticState(shareId, itemId);
+
     const bulk = useBulkSelect();
     const bulkSelected = bulk.isSelected(item);
     const bulkInFlight = useBulkInFlight(item);

@@ -7,10 +7,10 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import type { ItemRevisionWithOptimistic, ItemTypeFilter } from '@proton/pass/types';
+import type { ItemRevision, ItemTypeFilter } from '@proton/pass/types';
 
 type Props = {
-    items: ItemRevisionWithOptimistic[];
+    items: ItemRevision[];
     value: ItemTypeFilter;
     onChange: (value: ItemTypeFilter) => void;
 };

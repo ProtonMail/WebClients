@@ -11,14 +11,14 @@ import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
 import { selectIsWritableShare } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { ItemFilters, ItemRevision, ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
+import type { ItemFilters, ItemRevision, SelectedItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import './ItemsListBase.scss';
 
 type Props = {
     filters: ItemFilters;
-    items: ItemRevisionWithOptimistic[];
+    items: ItemRevision[];
     selectedItem?: SelectedItem;
     totalCount: number;
     onFilter: (update: Partial<ItemFilters>) => void;
@@ -73,8 +73,6 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                     <div style={style} key={key}>
                                         <ItemsListItem
                                             active={!bulk.enabled && selectedItem && itemEq(selectedItem)(item)}
-                                            optimistic={item.optimistic}
-                                            failed={item.failed}
                                             id={id}
                                             item={item}
                                             key={id}
