@@ -133,7 +133,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
 
     const logo = (() => {
         if (!backLink || !backLink.appName) {
-            return <ProtonLogo variant="full" color={theme.information.dark ? 'invert' : undefined} />;
+            return <ProtonLogo color={theme.information.dark ? 'invert' : undefined} />;
         }
 
         return <Logo appName={backLink.appName} />;

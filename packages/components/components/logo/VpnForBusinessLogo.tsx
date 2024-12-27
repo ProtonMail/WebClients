@@ -1,38 +1,17 @@
-import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
 import generateUID from '@proton/utils/generateUID';
 
-import type { LogoProps } from './Logo';
-import { getLogoWidthStyles } from './helpers';
+import LogoBase, { type LogoProps } from './LogoBase';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
-
-const VpnForBusinessLogo = ({ ...rest }: Props) => {
-    // This logo can be several times in the view, ids has to be different each time
+const VpnForBusinessLogo = ({ variant = 'with-wordmark', hasTitle, ...rest }: LogoProps) => {
     const [uid] = useState(generateUID('logo'));
 
     const logoWidth = 249;
-
-    // this ensure logo scales properly with text zoom
-    const logoWidthStyles = getLogoWidthStyles(logoWidth);
+    const logoHeight = 48;
 
     return (
-        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-        <svg
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlns="http://www.w3.org/2000/svg"
-            // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            width={logoWidth}
-            height="48"
-            viewBox={`0 0 ${logoWidth} 48`}
-            fill="none"
-            role="img"
-            aria-labelledby={`${uid}-title`}
-            {...rest}
-            style={{ ...logoWidthStyles, ...rest?.style }}
-        >
+        <LogoBase uid={uid} logoWidth={logoWidth} logoHeight={logoHeight} title={undefined} variant={variant} {...rest}>
             <g clipPath="url(#clip0_631_54368)">
                 <path
                     d="M0 28.0379V32.9245H3.41208V28.2513C3.41208 27.7977 3.59027 27.3594 3.91252 27.0392C4.23098 26.719 4.66697 26.536 5.11812 26.536H8.6174C10.2476 26.536 11.8134 25.8842 12.9659 24.7216C14.1184 23.5629 14.7667 21.9886 14.7667 20.3496C14.7667 18.7105 14.1184 17.1363 12.9659 15.9737C11.8134 14.8149 10.2476 14.1631 8.61361 14.1631H0V20.2695H3.41208V17.3916H8.38613C9.15954 17.3916 9.89882 17.7004 10.4448 18.2493C10.9907 18.7982 11.2978 19.5415 11.2978 20.3191C11.2978 21.0967 10.9907 21.84 10.4448 22.3889C9.89882 22.9377 9.15954 23.2465 8.38613 23.2465H4.77312C4.14757 23.2465 3.52582 23.3685 2.94955 23.6124C2.3695 23.8526 1.84631 24.2071 1.40274 24.653C0.959173 25.099 0.610386 25.6288 0.367749 26.2082C0.125112 26.7838 0 27.4089 0 28.0379Z"
@@ -120,7 +99,7 @@ const VpnForBusinessLogo = ({ ...rest }: Props) => {
                     <rect width="249" height="48" fill="currentColor" />
                 </clipPath>
             </defs>
-        </svg>
+        </LogoBase>
     );
 };
 
