@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { State } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
@@ -24,3 +24,7 @@ export const selectLockSetupRequired = createSelector(
     (orgSettings, lockMode) =>
         Boolean(orgSettings?.ForceLockSeconds && orgSettings.ForceLockSeconds > 0 && lockMode === LockMode.NONE)
 );
+
+export const selectOrganizationPasswordGeneratorPolicy = ({
+    organization,
+}: State): MaybeNull<OrganizationUpdatePasswordPolicyRequest> => organization?.settings?.PasswordPolicy ?? null;

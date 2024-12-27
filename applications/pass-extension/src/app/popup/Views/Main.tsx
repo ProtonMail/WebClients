@@ -13,6 +13,7 @@ import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsPro
 import { Items } from '@proton/pass/components/Item/Items';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
+import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
@@ -48,6 +49,7 @@ const MainSwitch: FC = () => {
                             </Switch>
                         )}
                         <ThemeOnboardingModal />
+                        <InAppNotifications />
                         {isSSO && (
                             <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
                                 {(props) => <OnboardingSSO {...props} />}

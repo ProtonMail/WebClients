@@ -28,7 +28,7 @@ import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
-export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy }) => {
+export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy, policy }) => {
     const { visible, forwardMessage, close } = useIFrameContext();
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -36,7 +36,7 @@ export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy }
     const [advanced, setAdvanced] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const generator = usePasswordGenerator({ initial, onConfigChange: noop });
+    const generator = usePasswordGenerator({ initial, onConfigChange: noop, policy });
 
     useEffect(() => {
         setCopied(false);

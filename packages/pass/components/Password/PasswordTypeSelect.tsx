@@ -5,13 +5,17 @@ import { c } from 'ttag';
 import { Option, SelectTwo } from '@proton/components';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import './PasswordTypeSelect.scss';
 
-type Props = UsePasswordGeneratorResult & { dense?: boolean };
+type Props = UsePasswordGeneratorResult & {
+    dense?: boolean;
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
+};
 
-export const PasswordTypeSelect: FC<Props> = ({ config, dense = false, setPasswordOptions }) => (
+export const PasswordTypeSelect: FC<Props> = ({ config, dense = false, setPasswordOptions, policy }) => (
     <div className="flex items-center justify-space-between gap-x-2">
         <label htmlFor="password-type" className="shrink-0">
             {c('Label').t`Type`}
@@ -27,12 +31,14 @@ export const PasswordTypeSelect: FC<Props> = ({ config, dense = false, setPasswo
                 value="memorable"
                 className={clsx(dense && 'text-sm')}
                 preventScroll
+                disabled={policy?.MemorablePasswordAllowed === false}
             />
             <Option
                 title={c('Option').t`Random Password`}
                 value="random"
                 className={clsx(dense && 'text-sm')}
                 preventScroll
+                disabled={policy?.RandomPasswordAllowed === false}
             />
         </SelectTwo>
     </div>
