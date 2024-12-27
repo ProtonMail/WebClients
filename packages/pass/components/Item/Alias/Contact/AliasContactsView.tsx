@@ -16,7 +16,8 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
 import { UpsellRef } from '@proton/pass/constants';
-import { selectItem, selectPassPlan } from '@proton/pass/store/selectors';
+import { useItem } from '@proton/pass/hooks/useItem';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 type Props = Pick<ModalStateProps, 'onClose'>;
@@ -27,7 +28,7 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
 
     const [openCreate, setOpenCreate] = useState(false);
     const [openMoreInfo, setOpenMoreInfo] = useState(false);
-    const aliasEmail = useSelector(selectItem<'alias'>(shareId, itemId))?.aliasEmail;
+    const aliasEmail = useItem<'alias'>(shareId, itemId)?.aliasEmail;
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const empty = !loading && contacts.active.length + contacts.blocked.length === 0;

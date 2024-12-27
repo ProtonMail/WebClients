@@ -1,5 +1,4 @@
 import { type FC, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -7,7 +6,7 @@ import { type ModalProps, ModalTwoHeader } from '@proton/components';
 import { presentListItem } from '@proton/pass/components/Item/List/utils';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { selectItem } from '@proton/pass/store/selectors';
+import { useItem } from '@proton/pass/hooks/useItem';
 import type { MaybeNull, SecureLink } from '@proton/pass/types';
 
 import { SecureLinkDetails } from './SecureLinkDetails';
@@ -21,7 +20,7 @@ type SecureLinkModalProps = ModalProps & {
 
 export const SecureLinkModal: FC<SecureLinkModalProps> = ({ itemId, shareId, itemSecureLink = null, ...props }) => {
     const [secureLink, setSecureLink] = useState<MaybeNull<SecureLink>>(null);
-    const item = useSelector(selectItem(shareId, itemId));
+    const item = useItem(shareId, itemId);
 
     useEffect(() => {
         if (itemSecureLink) setSecureLink(itemSecureLink);

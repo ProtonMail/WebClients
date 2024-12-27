@@ -16,7 +16,7 @@ import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { secureLinksGet } from '@proton/pass/store/actions';
-import { selectAllSecureLinks, selectOptimisticItemsWithSecureLink } from '@proton/pass/store/selectors';
+import { selectAllSecureLinks, selectItemsWithSecureLink } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 
 import { SecureLinkQuickActions } from './SecureLinkQuickActions';
@@ -28,7 +28,7 @@ export const SecureLinkItemsList: FC = () => {
 
     const { loading, dispatch } = useRequest(secureLinksGet, { initial: true });
     const secureLinkCount = useSelector(selectAllSecureLinks).length;
-    const items = useSelector(selectOptimisticItemsWithSecureLink);
+    const items = useSelector(selectItemsWithSecureLink);
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'secure-links' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
 
@@ -74,11 +74,9 @@ export const SecureLinkItemsList: FC = () => {
                             <div style={style} key={key}>
                                 <ItemsListItem
                                     active={selectedItem && itemEq(selectedItem)(item)}
-                                    failed={item.failed}
                                     id={id}
                                     item={item}
                                     key={id}
-                                    optimistic={item.optimistic}
                                     onClick={(e) => {
                                         e.preventDefault();
                                         selectItem(item, { prefix: 'secure-links' });

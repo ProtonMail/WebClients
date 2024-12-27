@@ -1,6 +1,6 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
 
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { selectBulkSelectionAliasCount } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO, SelectedItem } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -47,7 +47,8 @@ export const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>
 export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
     const [selection, setSelection] = useState<BulkSelection>(new Map());
     const [enabled, setEnabled] = useState(false);
-    const aliasCount = useSelector(selectBulkSelectionAliasCount(bulkSelectionDTO(selection)));
+    const selectionDTO = useMemo(() => bulkSelectionDTO(selection), [selection]);
+    const aliasCount = useMemoSelector(selectBulkSelectionAliasCount, [selectionDTO]);
 
     const context = useMemo<BulkSelectContextType>(() => {
         const clear = () => setSelection(new Map());

@@ -1,5 +1,4 @@
-import { type FC } from 'react';
-import { useSelector } from 'react-redux';
+import { type FC, useMemo } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
@@ -14,6 +13,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectSelectedItems } from '@proton/pass/store/selectors';
@@ -33,8 +33,12 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
     const { duplicates } = useMonitor();
     const { selectItem } = useNavigation();
 
-    const group = duplicates.data.find((group) => group.some(itemEq(item))) ?? [];
-    const others = useSelector(selectSelectedItems(group?.filter(not(itemEq(item))) ?? []));
+    const matches = useMemo(() => {
+        const group = duplicates.data.find((group) => group.some(itemEq(item))) ?? [];
+        return group?.filter(not(itemEq(item))) ?? [];
+    }, [duplicates.data]);
+
+    const others = useMemoSelector(selectSelectedItems, [matches]);
     const total = others.length;
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
