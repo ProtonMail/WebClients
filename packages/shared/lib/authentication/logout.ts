@@ -1,128 +1,64 @@
-import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import noop from '@proton/utils/noop';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
-import { getAppHref } from '../apps/helper';
-import { getSlugFromApp } from '../apps/slugHelper';
 import type { APP_NAMES } from '../constants';
-import { APPS, SSO_PATHS } from '../constants';
+import { APPS } from '../constants';
 import { replaceUrl } from '../helpers/browser';
-import { decodeBase64URL, encodeBase64URL } from '../helpers/encoding';
-import type { PersistedSession } from './SessionInterface';
 import type { AuthenticationStore } from './createAuthenticationStore';
 import { requestFork } from './fork/consume';
 import type { ExtraSessionForkData } from './interface';
-import { stripLocalBasenameFromPathname } from './pathnameHelper';
-import { getPersistedSession, removePersistedSession } from './persistedSessionStorage';
+import type { SignoutActionOptions, SignoutSessions } from './logoutInterface';
+import { getLocalAccountLogoutUrl, getLogoutURL, getStandaloneLogoutURL } from './logoutUrl';
+import type { ActiveSessionLite } from './persistedSessionHelper';
+import {
+    getPersistedSessionByLocalIDAndUID,
+    getPersistedSessionByLocalIDAndUserID,
+    removePersistedSession,
+} from './persistedSessionStorage';
 
-const clearRecoveryParam = 'clear-recovery';
-
-interface SerializedPassedSession {
-    id: string;
-    // isSubUser: legacy passed value
-    s: boolean;
-}
-
-interface PassedSession {
-    id: string;
-    isSelf: boolean;
-}
-
-export const serializeLogoutURL = ({
-    persistedSessions,
-    clearDeviceRecoveryData,
-    appName,
-    url,
-}: {
-    url: URL;
-    appName: APP_NAMES;
-    persistedSessions: PersistedSession[];
-    clearDeviceRecoveryData: boolean | undefined;
-}) => {
-    const slug = getSlugFromApp(appName);
-    if (slug && appName !== APPS.PROTONACCOUNT) {
-        url.searchParams.set('product', slug);
+export const getSelfLogoutOptions = ({ authentication }: { authentication: AuthenticationStore }): SignoutSessions => {
+    const UID = authentication.UID;
+    const localID = authentication.localID;
+    const selfSession = getPersistedSessionByLocalIDAndUID(localID, UID);
+    if (!selfSession) {
+        return {
+            sessions: [],
+            users: [],
+            type: 'self',
+        };
     }
-    if (clearDeviceRecoveryData) {
-        url.searchParams.set(clearRecoveryParam, JSON.stringify(clearDeviceRecoveryData));
-    }
-    if (persistedSessions.length) {
-        const hashParams = new URLSearchParams();
-        const sessions = persistedSessions.map((persistedSession): SerializedPassedSession => {
-            return {
-                id: persistedSession.UserID,
-                s: !persistedSession.isSelf,
-            };
-        });
-        hashParams.set('sessions', encodeBase64URL(JSON.stringify(sessions)));
-        url.hash = hashParams.toString();
-    }
-    return url;
-};
-
-export const getLogoutURL = ({
-    type,
-    appName,
-    mode,
-    persistedSessions: inputPersistedSessions,
-    clearDeviceRecoveryData,
-    reason,
-    localID,
-}: {
-    type?: 'full' | 'local';
-    appName: APP_NAMES;
-    mode: 'sso' | 'standalone';
-    persistedSessions: PersistedSession[];
-    clearDeviceRecoveryData?: boolean;
-    reason: 'signout' | 'session-expired';
-    localID: number;
-}) => {
-    if (mode === 'sso') {
-        // If it's not a full logout on account, we just strip the local id from the path in order to get redirected back
-        if (appName === APPS.PROTONACCOUNT && type !== 'full') {
-            const url = new URL(window.location.href);
-            url.pathname = stripLocalBasenameFromPathname(url.pathname);
-            if (localID !== undefined) {
-                url.searchParams.set(ForkSearchParameters.LocalID, `${localID}`);
-            }
-            return url.toString();
-        }
-
-        const url = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT));
-        url.searchParams.set('reason', reason);
-        const persistedSessions = type === 'full' ? inputPersistedSessions : [];
-        return serializeLogoutURL({ appName, url, persistedSessions, clearDeviceRecoveryData }).toString();
-    }
-
-    return SSO_PATHS.LOGIN;
-};
-
-const parseSessions = (sessions: string | null) => {
-    try {
-        const result = JSON.parse(decodeBase64URL(sessions || ''));
-        if (Array.isArray(result)) {
-            return result.map((session: SerializedPassedSession): PassedSession => {
-                return {
-                    id: session.id,
-                    isSelf: session.s === false,
-                };
-            });
-        }
-        return [];
-    } catch (e) {
-        return [];
-    }
-};
-
-export const parseLogoutURL = (url: URL) => {
-    const searchParams = new URLSearchParams(url.search);
-    const hashParams = new URLSearchParams(url.hash.slice(1));
-    const sessions = parseSessions(hashParams.get('sessions'));
-    const reason = searchParams.get('reason') || searchParams.get('flow');
     return {
-        logout: reason === 'signout' || reason === 'logout',
-        clearDeviceRecoveryData: searchParams.get(clearRecoveryParam) === 'true',
-        sessions,
+        sessions: [selfSession],
+        users: [{ id: selfSession.UserID, isSelf: selfSession.isSelf }],
+        type: 'self',
+    };
+};
+
+export const getAllSessionsLogoutOptions = ({
+    authentication,
+    sessions,
+}: {
+    authentication: AuthenticationStore;
+    sessions: ActiveSessionLite[];
+}): SignoutSessions => {
+    // Self should be included
+    const self = getSelfLogoutOptions({ authentication });
+
+    // Try to get the sessions that exist on this subdomain from the global sessions, and always include the logged in user
+    const options = sessions.reduce<SignoutSessions>((acc, cur) => {
+        const persistedSession = getPersistedSessionByLocalIDAndUserID(cur.remote.LocalID, cur.remote.UserID);
+        if (persistedSession) {
+            acc.sessions.push(persistedSession);
+        }
+        acc.users.push({ id: cur.remote.UserID, isSelf: cur.persisted.isSelf });
+        return acc;
+    }, self);
+
+    return {
+        sessions: uniqueBy(options.sessions, (x) => x.localID),
+        users: uniqueBy(options.users, (x) => `${x.id}-${x.isSelf}`),
+        type: 'all',
     };
 };
 
@@ -130,52 +66,50 @@ export const handleLogout = async ({
     appName,
     authentication,
     type,
-    clearDeviceRecoveryData,
-    reason = 'signout',
+    options,
     extra,
 }: {
     appName: APP_NAMES;
     type: 'full' | 'local';
     authentication: AuthenticationStore;
-    clearDeviceRecoveryData?: boolean;
-    reason?: 'signout' | 'session-expired';
+    options: SignoutActionOptions;
     extra?: ExtraSessionForkData;
 }) => {
     const UID = authentication.UID;
-    const localID = extra?.localID ?? authentication.localID;
     const mode = authentication.mode;
-
-    const persistedSessions: PersistedSession[] = [];
+    const localID = extra?.localID ?? authentication.localID;
 
     if (UID) {
         removeLastRefreshDate(UID);
     }
 
-    if (localID !== undefined && mode === 'sso') {
-        const persistedSession = getPersistedSession(localID);
-        if (persistedSession) {
-            persistedSessions.push(persistedSession);
-            await removePersistedSession(localID, UID).catch(noop);
-        }
-    }
+    await Promise.all(
+        options.sessions.map(async (persistedSession) => {
+            await removePersistedSession(persistedSession).catch(noop);
+        })
+    );
 
     authentication.logout();
 
-    if (appName === APPS.PROTONACCOUNT || appName === APPS.PROTONVPN_SETTINGS || mode !== 'sso' || type === 'full') {
-        replaceUrl(
-            getLogoutURL({
-                type,
-                appName,
-                reason,
-                mode,
-                persistedSessions,
-                clearDeviceRecoveryData,
-                localID,
-            })
-        );
-    } else {
-        requestFork({ fromApp: appName, localID, reason, extra });
+    if (mode === 'standalone') {
+        replaceUrl(getStandaloneLogoutURL());
+        return;
     }
+
+    // In full sso logouts, account will need to do more work to clear the parent session
+    if (type === 'full') {
+        replaceUrl(getLogoutURL({ appName, options }));
+        return;
+    }
+
+    // If it's not a full logout on account, we just strip the local id from the path in order to get redirected back
+    if (appName === APPS.PROTONACCOUNT && type === 'local') {
+        replaceUrl(getLocalAccountLogoutUrl({ appName, localID }));
+        return;
+    }
+
+    // Any other type of session that still exists on account but not on this app should request to be forked
+    requestFork({ fromApp: appName, localID, reason: options.reason, extra });
 };
 
 export const handleInvalidSession = ({
@@ -190,10 +124,13 @@ export const handleInvalidSession = ({
     // A session that is invalid should just do a local deletion on its own subdomain, to check if the session still exists on account.
     handleLogout({
         appName,
-        reason: 'session-expired',
+        options: {
+            ...getSelfLogoutOptions({ authentication }),
+            reason: 'session-expired',
+            clearDeviceRecovery: false,
+        },
         authentication,
         type: 'local',
-        clearDeviceRecoveryData: false,
         extra,
-    });
+    }).catch(noop);
 };

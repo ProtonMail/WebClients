@@ -36,7 +36,7 @@ import {
 } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
     BRAND_NAME,
@@ -165,7 +165,7 @@ const Step1 = ({
     onOpenSwitch: OnOpenSwitch;
     className?: string;
     step1Ref: MutableRefObject<Step1Rref | undefined>;
-    activeSessions?: LocalSessionPersisted[];
+    activeSessions?: ActiveSession[];
     onChangeCurrency: (newCurrency: Currency) => Promise<FullPlansMap>;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');

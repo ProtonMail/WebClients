@@ -1,4 +1,4 @@
-import type { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
+import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
 import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
@@ -26,7 +26,7 @@ const getLastActiveUserId = () => {
 export const getLastActivePersistedUserSession = () => {
     try {
         // Last Active Persisted Session in any apps
-        let persistedSession: PersistedSessionWithLocalID | null = null;
+        let persistedSession: PersistedSession | null = null;
         const lastActiveUserId = getLastActiveUserId();
         const persistedSessions = getPersistedSessions();
         const lastPersitedSessionFromPing = persistedSessions.find(

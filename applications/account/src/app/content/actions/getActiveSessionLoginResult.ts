@@ -44,6 +44,14 @@ export const getActiveSessionLoginResult = async ({
             };
         }
 
+        if (forkParameters.forkType === ForkType.LOGIN) {
+            return {
+                type: 'login',
+                pathname: paths.login,
+                payload: null,
+            };
+        }
+
         if (autoSignIn && forkParameters.forkType === undefined) {
             if (getShouldReAuth(forkParameters, sessionsResult.session)) {
                 const reAuthState: ReAuthState = {
@@ -72,6 +80,14 @@ export const getActiveSessionLoginResult = async ({
             type: 'sessions-switcher',
             payload: null,
             pathname: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
+        };
+    }
+
+    if (initialSearchParams.get('prompt') === 'login') {
+        return {
+            type: 'login',
+            pathname: paths.login,
+            payload: null,
         };
     }
 
