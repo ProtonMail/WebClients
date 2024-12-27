@@ -7,9 +7,9 @@ import type { CalendarEventLoop } from '../calendarServerEvent';
 type SubscribeCallback = (data: CalendarEventLoop) => void;
 
 export interface CalendarModelEventManager {
-    start: (calendarIDs: string[]) => void[];
-    stop: (calendarIDs: string[]) => void[];
-    reset: (calendarIDs: string[]) => void[];
+    start: (calendarIDs: string[]) => void;
+    stop: (calendarIDs: string[]) => void;
+    reset: (calendarIDs: string[]) => void;
     call: (calendarIDs: string[]) => Promise<void[]>;
     subscribe: (calendarIDs: string[], cb: SubscribeCallback) => () => void;
     clear: () => void;
@@ -58,20 +58,21 @@ export const createCalendarModelEventManager = ({ api }: { api: Api }): Calendar
     };
 
     const start = (calendarIDs: string[]) => {
-        return calendarIDs.map((calendarID) => {
-            return eventManagers[calendarID]?.start();
+        calendarIDs.forEach((calendarID) => {
+            eventManagers[calendarID]?.start();
         });
     };
 
     const stop = (calendarIDs: string[]) => {
-        return calendarIDs.map((calendarID) => {
-            return eventManagers[calendarID]?.stop();
+        calendarIDs.forEach((calendarID) => {
+            eventManagers[calendarID]?.stop();
         });
     };
 
     const reset = (calendarIDs: string[]) => {
-        return calendarIDs.map((calendarID) => {
-            return eventManagers[calendarID]?.reset();
+        calendarIDs.forEach((calendarID) => {
+            eventManagers[calendarID]?.reset();
+            delete eventManagers[calendarID];
         });
     };
 
