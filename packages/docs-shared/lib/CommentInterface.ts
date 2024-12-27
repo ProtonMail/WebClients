@@ -1,6 +1,7 @@
 import type { ServerTime } from './ServerTime'
 import type { CommentPayload } from './CommentPayload'
 import type { CommentType } from './CommentType'
+import type { CommentVerificationResult } from './CommentVerificationResult'
 
 export interface CommentInterface {
   id: string
@@ -12,6 +13,7 @@ export interface CommentInterface {
   comments: CommentInterface[]
   isPlaceholder: boolean
   type: CommentType
+  verificationResult: CommentVerificationResult
 
   asPayload(): CommentPayload
 }

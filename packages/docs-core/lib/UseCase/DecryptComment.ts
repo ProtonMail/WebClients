@@ -1,6 +1,7 @@
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { CommentVerificationResult} from '@proton/docs-shared';
 import { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { DocumentKeys } from '@proton/drive-store'
@@ -12,9 +13,14 @@ import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import metrics from '@proton/metrics'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../Types/DocumentEntitlements'
+import type { SignedPlaintextContent } from 'packages/docs-proto'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
-  constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
+  constructor(
+    private encryption: EncryptionService<EncryptionContext.PersistentComment>,
+    private logger: LoggerInterface,
+  ) {}
 
   async execute(
     dto: CommentResponseDto,
@@ -42,43 +48,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
       return Result.fail(`Comment decryption failed: ${decrypted.getError()}`)
     }
 
-    /** Cannot verify signatures if public viewier/editor, as API to retrieve public keys of signer is not available */
-    if (isPrivateDocumentKeys(keys) && !isAnonymousComment(aad)) {
-      if (!emailToUse) {
-        return Result.fail('Cannot verify; no author email or author address found in private comment')
-      }
-
-      const verificationKey = await this.encryption.getVerificationKey(emailToUse)
-
-      if (verificationKey.isFailed()) {
-        return Result.fail(`Comment verification key failed: ${verificationKey.getError()}`)
-      }
-
-      const verifyResult = await this.encryption.verifyData(
-        decrypted.getValue().content,
-        decrypted.getValue().signature,
-        aad,
-        verificationKey.getValue(),
-      )
-
-      if (verifyResult.isFailed()) {
-        metrics.docs_comments_download_error_total.increment({
-          reason: 'decryption_error',
-        })
-
-        return Result.fail(`Comment verifyResult is failed: ${verifyResult.getError()}`)
-      }
-
-      const verifyValue = verifyResult.getValue()
-
-      if (verifyValue !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-        metrics.docs_comments_download_error_total.increment({
-          reason: 'decryption_error',
-        })
-
-        return Result.fail(`Comment content verification failed: ${verifyValue}`)
-      }
-    }
+    const verificationResult = await this.verifySignature(aad, emailToUse, decrypted.getValue(), keys)
 
     return Result.ok(
       new Comment(
@@ -90,8 +60,97 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         emailToUse,
         [],
         false,
+        verificationResult,
         dto.Type,
       ),
     )
+  }
+
+  async verifySignature(
+    aad: string,
+    emailToUse: string | undefined,
+    content: SignedPlaintextContent,
+    keys: DocumentKeys | PublicDocumentKeys,
+  ): Promise<CommentVerificationResult> {
+    /** Anonymous comments do not have a signature */
+    if (isAnonymousComment(aad)) {
+      return {
+        verified: false,
+        verificationAvailable: false,
+      }
+    }
+
+    /**
+     * If we have public keys, it means we are a public viewer, and thus cannot verify signatures because the API to
+     * retrieve public keys of signer is not available to us
+     */
+    if (!isPrivateDocumentKeys(keys)) {
+      return {
+        verified: false,
+        verificationAvailable: false,
+      }
+    }
+
+    if (!emailToUse) {
+      /** This should not be empty at this point. So this is a failed verification. */
+      return {
+        verified: false,
+        verificationAvailable: true,
+      }
+    }
+
+    const verificationKey = await this.encryption.getVerificationKey(emailToUse)
+    if (verificationKey.isFailed()) {
+      this.logger.error('Failed to get comment verification key', {
+        error: verificationKey.getError(),
+      })
+
+      return {
+        verified: false,
+        verificationAvailable: true,
+      }
+    }
+
+    const verifyResult = await this.encryption.verifyData(
+      content.content,
+      content.signature,
+      aad,
+      verificationKey.getValue(),
+    )
+    if (verifyResult.isFailed()) {
+      metrics.docs_comments_download_error_total.increment({
+        reason: 'decryption_error',
+      })
+
+      this.logger.error('Comment verification failed to execute', {
+        error: verifyResult.getError(),
+      })
+
+      return {
+        verified: false,
+        verificationAvailable: true,
+      }
+    }
+
+    const verifyValue = verifyResult.getValue()
+
+    if (verifyValue !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+      metrics.docs_comments_download_error_total.increment({
+        reason: 'decryption_error',
+      })
+
+      this.logger.error('Comment content verification failed', {
+        error: verifyValue,
+      })
+
+      return {
+        verified: false,
+        verificationAvailable: true,
+      }
+    }
+
+    return {
+      verified: true,
+    }
   }
 }
