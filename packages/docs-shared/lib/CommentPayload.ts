@@ -1,4 +1,5 @@
 import type { CommentType } from './CommentType'
+import type { CommentVerificationResult } from './CommentVerificationResult'
 
 export type CommentPayload = {
   id: string
@@ -10,4 +11,5 @@ export type CommentPayload = {
   comments: CommentPayload[]
   isPlaceholder: boolean
   type: CommentType
+  verificationResult: CommentVerificationResult
 }

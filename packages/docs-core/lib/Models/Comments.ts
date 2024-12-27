@@ -1,4 +1,4 @@
-import type { CommentInterface, CommentPayload, CommentType } from '@proton/docs-shared'
+import type { CommentInterface, CommentPayload, CommentType , CommentVerificationResult } from '@proton/docs-shared'
 import { ServerTime } from '@proton/docs-shared'
 
 export class Comment implements CommentInterface {
@@ -11,6 +11,7 @@ export class Comment implements CommentInterface {
     public author: string | undefined,
     public comments: CommentInterface[],
     public isPlaceholder: boolean,
+    public verificationResult: CommentVerificationResult,
     public type: CommentType,
   ) {}
 
@@ -25,6 +26,7 @@ export class Comment implements CommentInterface {
       comments: this.comments.map((comment) => comment.asPayload()),
       isPlaceholder: this.isPlaceholder,
       type: this.type,
+      verificationResult: this.verificationResult,
     }
   }
 
@@ -38,6 +40,7 @@ export class Comment implements CommentInterface {
       payload.author,
       payload.comments.map((comment) => Comment.fromPayload(comment)),
       payload.isPlaceholder,
+      payload.verificationResult,
       payload.type,
     )
   }
