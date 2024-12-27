@@ -180,7 +180,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
                 telemetryEvent,
             });
         },
-        [canUseOptimistic]
+        [canUseOptimistic, folders, labels]
     );
 
     // Depending on the case, we want to launch a select all or a move all

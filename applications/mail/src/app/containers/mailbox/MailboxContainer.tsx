@@ -265,7 +265,6 @@ const MailboxContainer = ({
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
     const currentFolder = folderLocation(labelID, labels, folders);
-    // console.log(currentFolder)
 
     const handleElement = useCallback(
         (elementID: string | undefined, preventComposer = false) => {
