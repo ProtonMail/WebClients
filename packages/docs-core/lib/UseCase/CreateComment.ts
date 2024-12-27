@@ -42,6 +42,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       isPrivateDocumentKeys(dto.entitlements.keys) ? dto.entitlements.keys.userOwnAddress : undefined,
       [],
       true,
+      { verified: true },
       dto.type,
     )
 
@@ -89,6 +90,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       emailToUse,
       [],
       false,
+      { verified: true },
       commentFromResponse.Type,
     )
     dto.commentsState.replacePlaceholderComment(localComment.id, comment)
