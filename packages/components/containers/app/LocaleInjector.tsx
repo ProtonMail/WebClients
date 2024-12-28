@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import busy, { domIsBusy } from '@proton/shared/lib/busy';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
@@ -22,15 +22,11 @@ const LocaleInjector = ({ onRerender }: Props) => {
             return;
         }
 
-        // We also ignore electron mail since there's another system to deal with locale updates
-        if (isElectronMail) {
-            return;
-        }
-
         (async () => {
             const { update } = await loadLocales({ locale, locales, userSettings });
             if (update) {
                 onRerender?.();
+                invokeInboxDesktopIPC({ type: 'updateLocale', payload: locale }).catch(noop);
             }
         })().catch(noop);
     }, [locale]);
