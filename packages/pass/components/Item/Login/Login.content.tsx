@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -21,6 +21,7 @@ import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator'
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { isValidScheme } from '@proton/pass/utils/url/utils';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem = false }) => {
     const { data: item, shareId, itemId } = revision;
@@ -32,6 +33,11 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
         extraFields,
     } = useDeobfuscatedItem(item);
 
+    /** Filter URLs with unsupported protocols for additional security,
+     * especially in the context of shared secure links. CSPs prevents XSS
+     * attacks, this acts as a backup safeguard in case client-side validation
+     * was bypassed. Only URLs with approved protocols are rendered as links. */
+    const sanitizedUrls = useMemo(() => urls.filter(isValidScheme), [urls]);
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
     const passwordStrength = usePasswordStrength(password);
 
@@ -101,10 +107,10 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                 )}
             </FieldsetCluster>
 
-            {urls.length > 0 && (
+            {sanitizedUrls.length > 0 && (
                 <FieldsetCluster mode="read" as="div">
                     <ValueControl icon="earth" label={c('Label').t`Websites`}>
-                        {urls.map((url) => (
+                        {sanitizedUrls.map((url) => (
                             <Href className="block text-ellipsis" href={url} key={url}>
                                 {url}
                             </Href>
