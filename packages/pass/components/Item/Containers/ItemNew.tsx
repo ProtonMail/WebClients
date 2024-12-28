@@ -8,7 +8,8 @@ import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCar
 import { IdentityNew } from '@proton/pass/components/Item/Identity/Identity.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
 import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { type ItemNewRouteParams } from '@proton/pass/components/Navigation/routing';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -31,7 +32,8 @@ const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
 
 export const ItemNew: FC = () => {
     const { getCurrentTabUrl } = usePassCore();
-    const { selectItem, setFilters, filters } = useNavigation();
+    const selectItem = useSelectItem();
+    const { filters, setFilters } = useNavigationFilters();
     const selectedShareId = filters.selectedShareId;
     const history = useHistory();
     const dispatch = useDispatch();

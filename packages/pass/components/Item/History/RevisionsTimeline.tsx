@@ -9,7 +9,8 @@ import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryContext';
@@ -17,7 +18,8 @@ import { RevisionItem } from './RevisionItem';
 
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
     const { prefix } = useItemRoute();
-    const { selectItem, navigate, matchTrash } = useNavigation();
+    const { matchTrash } = useNavigationMatches();
+    const { selectItem, navigate } = useNavigationActions();
     const { item, loading, more, revisions, loadMore } = useItemHistory();
     const { shareId, itemId } = item;
     const [current, ...history] = revisions;

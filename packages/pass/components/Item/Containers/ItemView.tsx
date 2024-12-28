@@ -11,7 +11,8 @@ import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvide
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/components/Navigation/routing';
 import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
@@ -43,7 +44,8 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
 
 export const ItemView: FC = () => {
     const { prefix } = useItemRoute();
-    const { selectItem, matchTrash: inTrash, preserveSearch } = useNavigation();
+    const { matchTrash: inTrash } = useNavigationMatches();
+    const { selectItem, preserveSearch } = useNavigationActions();
     const inviteContext = useInviteContext();
     const itemActions = useItemsActions();
 

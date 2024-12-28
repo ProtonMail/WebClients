@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
 import { ConfirmTrashEmpty } from '@proton/pass/components/Vault/Actions/ConfirmTrashEmpty';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
@@ -54,7 +55,8 @@ export const useVaultActions = () => useContext(VaultActionsContext);
 
 export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const inviteContext = useInviteContext();
-    const { navigate, setFilters, filters } = useNavigation();
+    const navigate = useNavigate();
+    const { filters, setFilters } = useNavigationFilters();
     const dispatch = useDispatch();
 
     const [state, setState] = useState<MaybeNull<VaultActionState>>();

@@ -9,7 +9,7 @@ import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme, itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
@@ -30,7 +30,7 @@ type Props = {
 };
 
 export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, onCreate }) => {
-    const { matchItemList } = useNavigation();
+    const { matchItemList } = useNavigationMatches();
     const passwordContext = usePasswordContext();
     const copyToClipboard = useCopyToClipboard();
 

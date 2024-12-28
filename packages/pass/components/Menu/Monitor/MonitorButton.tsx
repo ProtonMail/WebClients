@@ -1,20 +1,20 @@
 import { type FC } from 'react';
 import { useSelector } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { selectTotalBreaches } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
 export const MonitorButton: FC = () => {
-    const { navigate } = useNavigation();
+    const navigate = useNavigate();
+    const isSelected = useNavigationMatches().matchMonitor;
     const breachCount = useSelector(selectTotalBreaches) ?? 0;
-    const isSelected = useRouteMatch(getLocalPath('monitor'));
 
     return (
         <DropdownMenuButton

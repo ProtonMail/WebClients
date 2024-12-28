@@ -1,7 +1,9 @@
 import { useCallback } from 'react';
 
-import type { ItemSelectOptions } from '@proton/pass/components/Navigation/NavigationProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import type { ItemSelectOptions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
 import type { ItemRevision } from '@proton/pass/types';
 import { B2BEventName } from '@proton/pass/types/data/b2b';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -15,7 +17,10 @@ import { isEmptyString } from '../utils/string/is-empty-string';
  * telemetry event dispatches depending on the current filtering context. */
 export const useSelectItemAction = () => {
     const { onTelemetry, onB2BEvent } = usePassCore();
-    const { selectItem, filters, selectedItem } = useNavigation();
+    const selectItem = useSelectItem();
+
+    const selectedItem = useSelectedItem();
+    const { filters } = useNavigationFilters();
     const { search } = filters;
 
     return useCallback(

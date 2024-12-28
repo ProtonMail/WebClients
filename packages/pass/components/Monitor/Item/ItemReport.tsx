@@ -11,7 +11,7 @@ import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { CardIcon } from '@proton/pass/components/Layout/Card/CardIcon';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
@@ -31,7 +31,7 @@ const BTN_STYLES = {
 
 const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
     const { duplicates } = useMonitor();
-    const { selectItem } = useNavigation();
+    const selectItem = useSelectItem();
 
     const matches = useMemo(() => {
         const group = duplicates.data.find((group) => group.some(itemEq(item))) ?? [];
