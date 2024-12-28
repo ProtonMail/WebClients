@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import { TableCell, TableRow } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import type { LoginItem } from '@proton/pass/types';
 import { formatEpoch } from '@proton/pass/utils/time/format';
@@ -13,7 +13,7 @@ type Props = { item: LoginItem };
 
 export const BreachUsageRow: FC<Props> = ({ item }) => {
     const { shareId, itemId } = item;
-    const { selectItem } = useNavigation();
+    const selectItem = useSelectItem();
 
     const handleClick = (evt: MouseEvent) => {
         evt.stopPropagation();

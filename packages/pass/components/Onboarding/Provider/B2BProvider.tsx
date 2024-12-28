@@ -5,7 +5,7 @@ import { useRouteMatch } from 'react-router-dom';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import {
     selectB2BOnboardingComplete,
@@ -20,7 +20,7 @@ import { OnboardingContext, type OnboardingContextValue, OnboardingType } from '
 export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     const { spotlight } = usePassCore();
     const extension = usePassExtensionLink();
-    const { navigate } = useNavigation();
+    const navigate = useNavigate();
 
     const state = useSelector(selectB2BOnboardingState);
     const complete = useSelector(selectB2BOnboardingComplete(extension.installed));

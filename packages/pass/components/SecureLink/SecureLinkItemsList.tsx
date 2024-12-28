@@ -9,7 +9,7 @@ import { CircleLoader } from '@proton/atoms';
 import { DropdownButton, Icon } from '@proton/components';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
@@ -22,7 +22,7 @@ import type { SelectedItem } from '@proton/pass/types';
 import { SecureLinkQuickActions } from './SecureLinkQuickActions';
 
 export const SecureLinkItemsList: FC = () => {
-    const { navigate } = useNavigation();
+    const navigate = useNavigate();
     const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
 

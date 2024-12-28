@@ -13,7 +13,7 @@ import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { type AuthRouteState, isUnauthorizedPath, reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
@@ -42,7 +42,7 @@ export const useAuthService = createUseContext(AuthServiceContext);
 export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const core = usePassCore();
     const { createNotification } = useNotifications();
-    const { getCurrentLocation } = useNavigation();
+    const { getCurrentLocation } = useNavigationActions();
     const sw = useServiceWorker();
     const app = useContextProxy(AppStateContext);
     const history = useHistory<MaybeNull<AuthRouteState>>();

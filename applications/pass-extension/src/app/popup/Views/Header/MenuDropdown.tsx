@@ -27,7 +27,9 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
@@ -61,7 +63,9 @@ export const MenuDropdown: FC = () => {
     const { ready, expanded } = usePopupContext();
     const { lock, logout } = useExtensionClient();
     const { API_URL } = usePassConfig();
-    const { navigate, filters, matchTrash } = useNavigation();
+    const { matchTrash } = useNavigationMatches();
+    const navigate = useNavigate();
+    const { filters } = useNavigationFilters();
     const { selectedShareId } = filters;
 
     const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
@@ -169,10 +173,8 @@ export const MenuDropdown: FC = () => {
 
                         <VaultMenu
                             dense
-                            inTrash={matchTrash}
                             onAction={close}
                             onSelect={vaultActions.select}
-                            selectedShareId={selectedShareId}
                             render={(selected, menu) => (
                                 <Collapsible>
                                     <CollapsibleHeader

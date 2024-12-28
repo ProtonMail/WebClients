@@ -2,7 +2,10 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { selectItemsSearchResult } from '@proton/pass/store/selectors';
@@ -18,9 +21,13 @@ type ItemsContextValue = {
 const ItemsContext = createContext<ItemsContextValue>({ filtered: [], searched: [], totalCount: 0 });
 
 export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { filters, matchTrash, selectedItem, navigate } = useNavigation();
+    const selectedItem = useSelectedItem();
     const shareId = selectedItem?.shareId;
     const itemId = selectedItem?.itemId;
+
+    const { matchTrash } = useNavigationMatches();
+    const { filters } = useNavigationFilters();
+    const navigate = useNavigate();
 
     const items = useSelector((state: State) =>
         selectItemsSearchResult(state, {

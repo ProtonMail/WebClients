@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
@@ -18,7 +18,7 @@ type InviteContextState =
     | { view: 'manage'; shareId: string };
 
 export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { setFilters } = useNavigation();
+    const { setFilters } = useNavigationFilters();
 
     const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
     const [invite, setInvite] = useState<MaybeNull<Invite>>(null);

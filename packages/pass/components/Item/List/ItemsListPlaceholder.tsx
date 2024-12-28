@@ -12,7 +12,9 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellRef } from '@proton/pass/constants';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -38,7 +40,9 @@ type Props = {
 
 export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     const { openSettings } = usePassCore();
-    const { navigate, matchTrash, filters } = useNavigation();
+    const { filters } = useNavigationFilters();
+    const { matchTrash } = useNavigationMatches();
+    const navigate = useNavigate();
     const { search, selectedShareId } = filters;
     const { totalCount } = useItems();
 

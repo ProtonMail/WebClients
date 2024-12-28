@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { useItemsDroppable } from '@proton/components';
 import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { fromItemKey, getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { SelectedItem } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
@@ -32,7 +32,7 @@ const getDragHtml = ({ length: count }: string[]) =>
 export const useCanDragItems = EXTENSION_BUILD
     ? () => false
     : () => {
-          const { matchTrash } = useNavigation();
+          const { matchTrash } = useNavigationMatches();
           return !matchTrash;
       };
 
