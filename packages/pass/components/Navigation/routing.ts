@@ -52,6 +52,8 @@ export const getItemHistoryRoute = (shareId: string, itemId: string, options?: I
 export const getNewItemRoute = (type: ItemType) => getLocalPath(`item/new/${type}`);
 export const getTrashRoute = () => getLocalPath('trash');
 export const getOnboardingRoute = () => getLocalPath('onboarding');
+export const getSecureLinksRoute = () => getLocalPath('secure-links');
+export const getMonitorRoute = () => getLocalPath('monitor');
 
 export const getInitialFilters = (): ItemFilters => ({ search: '', sort: 'recent', type: '*', selectedShareId: null });
 
