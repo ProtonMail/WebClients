@@ -9,7 +9,7 @@ import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopB
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
@@ -22,7 +22,7 @@ export const Header: FC = () => {
     const { ready, initial } = usePopupContext();
     const { url } = useExtensionContext();
 
-    const { navigate } = useNavigation();
+    const navigate = useNavigate();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
     useSpotlightListener();

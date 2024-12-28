@@ -11,7 +11,7 @@ import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
 import { BreachSummaryCard } from '@proton/pass/components/Monitor/Breach/Card/BreachSummaryCard';
 import { BreachUpsellCard } from '@proton/pass/components/Monitor/Breach/Card/BreachUpsellCard';
 import { Sentinel } from '@proton/pass/components/Monitor/Sentinel/Sentinel';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
@@ -29,7 +29,7 @@ import { MonitorLearnMore } from './MonitorLearnMore';
 import './MonitorSummary.scss';
 
 export const MonitorSummary: FC = () => {
-    const { navigate } = useNavigation();
+    const navigate = useNavigate();
     const { duplicates, insecure, missing2FAs, excluded } = useMonitor();
     const { plan, features, upsellType, upgradePath } = useUpsellPlanFeatures();
 

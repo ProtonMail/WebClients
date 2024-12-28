@@ -7,7 +7,8 @@ import { Button, Input } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getItemTypeOptions } from '@proton/pass/components/Item/Filters/Type';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useSearchShortcut } from '@proton/pass/hooks/useSearchShortcut';
 import { selectShare } from '@proton/pass/store/selectors';
@@ -27,7 +28,8 @@ const SEARCH_DEBOUNCE_TIME = 75;
 
 const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
     const { onTelemetry } = usePassCore();
-    const { filters, setFilters, matchTrash } = useNavigation();
+    const { matchTrash } = useNavigationMatches();
+    const { filters, setFilters } = useNavigationFilters();
 
     const [search, setSearch] = useState<string>((filters.search || initial) ?? '');
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
