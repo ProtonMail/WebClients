@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren, createContext, useContext } from 'react';
+import { type FC, type PropsWithChildren, createContext, useCallback, useContext } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -15,24 +15,31 @@ const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async ()
 export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
     const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
 
-    const [message, title, label] = hasExtraPassword
-        ? [
-              c('Info').t`Please confirm your extra password`,
-              c('Title').t`Enter your extra password`,
-              c('Label').t`Extra password`,
-          ]
-        : [c('Info').t`Please confirm your password`, c('Title').t`Enter your password`, c('Label').t`Password`];
+    const getInitialModalState = useCallback((): PasswordModalState => {
+        const { message, title, label } = hasExtraPassword
+            ? {
+                  label: c('Label').t`Extra password`,
+                  message: c('Info').t`Please confirm your extra password`,
+                  title: c('Title').t`Enter your extra password`,
+              }
+            : {
+                  label: c('Label').t`Password`,
+                  message: c('Info').t`Please confirm your password`,
+                  title: c('Title').t`Enter your password`,
+              };
 
-    const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, PasswordModalState>({
-        getInitialModalState: () => ({
+        return {
+            label,
             message,
+            placeholder: label,
             submitLabel: c('Action').t`Authenticate`,
             title,
             type: 'current-password',
-            label,
-            placeholder: label,
-        }),
-    });
+        };
+    }, [hasExtraPassword]);
+
+    const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
+    const { handler, abort, resolver, state, key } = modal;
 
     return (
         <PasswordUnlockContext.Provider value={handler}>
