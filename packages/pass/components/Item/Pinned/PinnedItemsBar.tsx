@@ -10,7 +10,9 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
 import { useResponsiveHorizontalList } from '@proton/pass/hooks/useResponsiveHorizontalList';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
@@ -21,7 +23,9 @@ import clsx from '@proton/utils/clsx';
 import './PinnedItemsBar.scss';
 
 export const PinnedItemsBar: FC = () => {
-    const { selectedItem, selectItem, filters } = useNavigation();
+    const selectedItem = useSelectedItem();
+    const selectItem = useSelectItem();
+    const { filters } = useNavigationFilters();
     const { filtered } = useItems();
 
     const pinnedItems = useSelector(selectPinnedItems);

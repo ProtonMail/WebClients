@@ -3,11 +3,13 @@ import { useSelector } from 'react-redux';
 
 import { TrashItem } from '@proton/pass/components/Menu/Vault/TrashItem';
 import { VaultItem } from '@proton/pass/components/Menu/Vault/VaultItem';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
-import type { MaybeNull, ShareType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
@@ -17,21 +19,16 @@ import './VaultMenu.scss';
 
 type Props = {
     dense?: boolean;
-    inTrash: boolean;
-    selectedShareId: MaybeNull<string>;
     onSelect: (selected: string) => void;
     onAction?: () => void;
     render?: (selectedVaultOption: VaultMenuOption, menu: ReactElement) => ReactElement;
 };
 
-export const VaultMenu: FC<Props> = ({
-    dense = false,
-    inTrash,
-    selectedShareId,
-    onSelect,
-    render,
-    onAction = noop,
-}) => {
+export const VaultMenu: FC<Props> = ({ dense = false, onSelect, render, onAction = noop }) => {
+    const { filters } = useNavigationFilters();
+    const { selectedShareId } = filters;
+    const inTrash = useNavigationMatches().matchTrash;
+
     const vaults = useSelector(selectVaultsWithItemsCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));

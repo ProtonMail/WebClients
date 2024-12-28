@@ -9,7 +9,9 @@ import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
 import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
 import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
 import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { saveFilters } from '@proton/pass/store/actions/creators/filters';
 import { selectIsWritableShare } from '@proton/pass/store/selectors';
@@ -18,11 +20,15 @@ import { type ItemRevision } from '@proton/pass/types';
 
 export const ItemsList: FC = () => {
     const store = useStore<State>();
-    const { filters, matchTrash, selectedItem, setFilters } = useNavigation();
     const dispatch = useDispatch();
+
     const items = useItems();
-    const selectItem = useSelectItemAction();
+    const selectedItem = useSelectedItem();
     const bulk = useBulkSelect();
+
+    const selectItem = useSelectItemAction();
+    const { matchTrash } = useNavigationMatches();
+    const { filters, setFilters } = useNavigationFilters();
 
     const handleSelect = (item: ItemRevision, metaKey: boolean) => {
         if (metaKey || bulk.enabled) {

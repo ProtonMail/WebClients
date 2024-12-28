@@ -15,7 +15,8 @@ import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemHistoryRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
@@ -35,7 +36,8 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
 
 export const RevisionDiff: FC = () => {
     const { prefix } = useItemRoute();
-    const { selectItem, matchTrash } = useNavigation();
+    const { matchTrash } = useNavigationMatches();
+    const selectItem = useSelectItem();
     const dispatch = useDispatch();
     const params = useParams<{ revision: string }>();
 

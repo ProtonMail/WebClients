@@ -16,7 +16,7 @@ import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButto
 import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingState } from '@proton/pass/components/Onboarding/OnboardingState';
@@ -40,13 +40,11 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
+    const navigate = useNavigate();
 
     const accountSwitchEnabled = useFeatureFlag(PassFeature.PassAccountSwitchV1);
     const authSwitchEnabled = useMemo(() => accountSwitchEnabled || checkAuthSwitch(), [accountSwitchEnabled]);
     const sessions = useAvailableSessions();
-
-    const { navigate, filters, matchTrash } = useNavigation();
-    const { selectedShareId } = filters;
 
     const user = useSelector(selectUser);
     const lockMode = useSelector(selectLockMode);
@@ -72,7 +70,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
             <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
                 <div className="flex mx-3">
-                    <VaultMenu selectedShareId={selectedShareId} inTrash={matchTrash} onSelect={vaultActions.select} />
+                    <VaultMenu onSelect={vaultActions.select} />
                 </div>
             </Scroll>
 

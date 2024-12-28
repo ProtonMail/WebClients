@@ -9,7 +9,7 @@ import { IdentityEdit } from '@proton/pass/components/Item/Identity/Identity.edi
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { useItem } from '@proton/pass/hooks/useItem';
@@ -29,7 +29,7 @@ export const ItemEdit: FC = () => {
     const { prefix } = useItemRoute();
     const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
-    const router = useNavigation();
+    const nav = useNavigationActions();
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
@@ -37,16 +37,16 @@ export const ItemEdit: FC = () => {
 
     const handleSubmit = (data: ItemEditIntent) => {
         dispatch(itemEditIntent(data));
-        router.selectItem(shareId, itemId, { mode: 'replace', prefix });
+        nav.selectItem(shareId, itemId, { mode: 'replace', prefix });
     };
 
-    if (!(item && vault)) return <Redirect to={router.preserveSearch(getLocalPath())} push={false} />;
+    if (!(item && vault)) return <Redirect to={nav.preserveSearch(getLocalPath())} push={false} />;
 
     const EditViewComponent = itemEditMap[item.data.type] as FC<ItemEditViewProps>;
 
     return (
         <EditViewComponent
-            onCancel={() => router.selectItem(shareId, itemId, { prefix })}
+            onCancel={() => nav.selectItem(shareId, itemId, { prefix })}
             onSubmit={handleSubmit}
             revision={item}
             url={getCurrentTabUrl?.() ?? null}

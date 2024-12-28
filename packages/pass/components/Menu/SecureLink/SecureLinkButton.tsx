@@ -1,11 +1,10 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { UpsellRef } from '@proton/pass/constants';
@@ -20,7 +19,7 @@ type SecureLinkButtonProps = {
 };
 
 export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ className, parentClassName, onClick }) => {
-    const isSelected = useRouteMatch(getLocalPath('secure-links'));
+    const isSelected = useNavigationMatches().matchSecureLinks;
     const spotlight = useSpotlight();
     const passPlan = useSelector(selectPassPlan);
     const free = passPlan === UserPassPlan.FREE;

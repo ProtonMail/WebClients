@@ -6,12 +6,12 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { bulkSelectionDTO, useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 
 type Props = { disabled?: boolean };
 
 export const BulkActions: FC<Props> = (props) => {
-    const { matchTrash } = useNavigation();
+    const { matchTrash } = useNavigationMatches();
     const { selection, count } = useBulkSelect();
     const disabled = count === 0 || props.disabled;
 
