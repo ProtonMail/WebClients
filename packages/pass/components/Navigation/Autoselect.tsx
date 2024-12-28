@@ -3,12 +3,16 @@ import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { selectShare } from '@proton/pass/store/selectors';
 
 export const Autoselect: FC = () => {
-    const { matchTrash: trashed, preserveSearch, filters } = useNavigation();
+    const { matchTrash: trashed } = useNavigationMatches();
+    const { filters } = useNavigationFilters();
+    const { preserveSearch } = useNavigationActions();
     const { filtered } = useItems();
     const autoselect = filtered[0];
 
