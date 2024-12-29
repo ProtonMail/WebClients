@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { bulkSelectionDTO, useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
+import { bulkSelectionDTO } from '@proton/pass/components/Bulk/utils';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 
@@ -12,7 +13,7 @@ type Props = { disabled?: boolean };
 
 export const BulkActions: FC<Props> = (props) => {
     const { matchTrash } = useNavigationMatches();
-    const { selection, count } = useBulkSelect();
+    const { selection, count } = useBulkSelection();
     const disabled = count === 0 || props.disabled;
 
     const { moveMany, trashMany, deleteMany, restoreMany } = useItemsActions();
