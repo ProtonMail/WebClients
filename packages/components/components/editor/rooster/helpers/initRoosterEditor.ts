@@ -28,7 +28,7 @@ interface Options {
     showModalLink: (props: ModalLinkProps) => void;
     iframeRef: RefObject<HTMLIFrameElement>;
     mailSettings?: MailSettings;
-    onPasteImage: (image: File) => void;
+    onPasteFiles: (files: File[]) => void;
     openEmojiPicker: () => void;
 }
 
@@ -69,7 +69,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         new CutPasteListChain(),
         new HyperLink(),
         new EditorEventListener(options.onEditorEvent),
-        new EditorCustomPastePlugin(options.onPasteImage),
+        new EditorCustomPastePlugin(options.onPasteFiles),
         new ImageEdit({
             disableRotate: true,
             preserveRatio: true,

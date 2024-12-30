@@ -88,7 +88,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }:
                     <div className="w-full mt-4">
                         <Editor
                             onReady={handleReady}
-                            metadata={{ supportImages: false }}
+                            metadata={{ supportFiles: false }}
                             onChange={(value: string) => {
                                 setEditorValue(value);
                                 handleUpdateActions({ autoReply: value });
