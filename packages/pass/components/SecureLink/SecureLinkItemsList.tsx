@@ -1,4 +1,4 @@
-import { type FC, useEffect, useRef } from 'react';
+import { type FC, useCallback, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import type { List } from 'react-virtualized';
@@ -17,20 +17,22 @@ import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { secureLinksGet } from '@proton/pass/store/actions';
 import { selectAllSecureLinks, selectItemsWithSecureLink } from '@proton/pass/store/selectors';
-import type { SelectedItem } from '@proton/pass/types';
+import type { ItemRevision, SelectedItem } from '@proton/pass/types';
 
 import { SecureLinkQuickActions } from './SecureLinkQuickActions';
 
 export const SecureLinkItemsList: FC = () => {
     const navigate = useNavigate();
     const listRef = useRef<List>(null);
-    const selectItem = useSelectItemAction();
 
     const { loading, dispatch } = useRequest(secureLinksGet, { initial: true });
     const secureLinkCount = useSelector(selectAllSecureLinks).length;
     const items = useSelector(selectItemsWithSecureLink);
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'secure-links' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
+
+    const selectItem = useSelectItemAction();
+    const onSelect = useCallback((item: ItemRevision) => selectItem(item, { prefix: 'secure-links' }), []);
 
     useEffect(() => {
         if (items.length > 0 && !selectedItem) {
@@ -77,10 +79,7 @@ export const SecureLinkItemsList: FC = () => {
                                     id={id}
                                     item={item}
                                     key={id}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        selectItem(item, { prefix: 'secure-links' });
-                                    }}
+                                    onSelect={onSelect}
                                 />
                             </div>
                         );
