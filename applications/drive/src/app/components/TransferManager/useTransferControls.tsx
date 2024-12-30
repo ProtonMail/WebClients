@@ -99,13 +99,13 @@ function useTransferControls() {
 export default useTransferControls;
 
 function applyToTransfers(
-    entries: { transfer: Download | Upload; type: TransferType }[],
-    downloadCallback: (id: string, transfer: Download) => void,
+    entries: { transfer: Download | Upload; type: TransferType; options?: { virusScan?: boolean } }[],
+    downloadCallback: (id: string, options?: { virusScan?: boolean }) => void,
     uploadCallback: (filter: (data: { id: string }) => boolean) => void
 ) {
     entries
         .filter(({ type }) => type === TransferType.Download)
-        .forEach(({ transfer }) => downloadCallback(transfer.id, transfer as Download));
+        .forEach(({ transfer, options }) => downloadCallback(transfer.id, options));
 
     const uploadIds = entries.filter(({ type }) => type === TransferType.Upload).map(({ transfer: { id } }) => id);
     uploadCallback(({ id }) => uploadIds.includes(id));

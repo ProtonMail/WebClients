@@ -8,6 +8,7 @@ import {
     isTransferFinished,
     isTransferOngoing,
     isTransferPaused,
+    isTransferScanIssue,
     isTransferSkipped,
 } from '../../utils/transfer';
 import Buttons from './Buttons';
@@ -16,17 +17,21 @@ import type { Upload } from './transfer';
 import { TransferType } from './transfer';
 import useTransferControls from './useTransferControls';
 
-function TransferControls<T extends TransferType>({ transfer, type }: TransferProps<T>) {
+function TransferControls<T extends TransferType>({ transfer, type, onVirusReport }: TransferProps<T>) {
     const transferControls = useTransferControls();
     const [pauseInProgress, withPauseInProgress] = useLoading();
     const isFinished = isTransferFinished(transfer);
     const isFailed = isTransferFailed(transfer);
     const isSkipped = isTransferSkipped(transfer);
     const isFinalizing = isTransferFinalizing(transfer);
+    const isScanIssue = isTransferScanIssue(transfer);
 
-    const isPauseResumeAvailable = isTransferOngoing(transfer);
+    const isPauseResumeAvailable = isTransferOngoing(transfer) && !isScanIssue;
     const isRestartAvailable = isFailed;
-    const isCancelAvailable = !isFinalizing && !isFinished && !isSkipped;
+    const isCancelAvailable = !isFinalizing && !isFinished && !isSkipped && !isScanIssue;
+    const isDownloadAnywayAvailable = isScanIssue;
+    const isReportAvailable = isScanIssue;
+
     const isTransferWithChildrenFinished = (upload: Upload) => {
         if (!isTransferFinished(upload)) {
             return false;
@@ -53,6 +58,8 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     const restartText =
         type === TransferType.Download ? c('Action').t`Restart download` : c('Action').t`Restart upload`;
     const removeText = c('Action').t`Remove from this list`;
+    const downloadAnywayText = c('Action').t`Download anyway`;
+    const reportText = c('Action').t`Report`;
 
     const testIdPrefix = 'drive-transfers-manager:item-controls-';
 
@@ -94,6 +101,29 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 disabled: isFinalizing,
                 iconName: 'cross',
                 testId: testIdPrefix + 'cancel',
+            });
+        }
+
+        if (isDownloadAnywayAvailable) {
+            buttons.push({
+                onClick: () => transferControls.resumeTransfers([{ transfer, type }]),
+                title: downloadAnywayText,
+                iconName: 'arrow-down-line',
+                testId: testIdPrefix + 'download-without-scanning',
+            });
+        }
+
+        if (isReportAvailable && onVirusReport) {
+            buttons.push({
+                onClick: () =>
+                    onVirusReport({
+                        transferId: transfer.id,
+                        linkId: transfer.meta.linkId,
+                        errorMessage: transfer.error?.message,
+                    }),
+                title: reportText,
+                iconName: 'shield-exclamation-filled',
+                testId: testIdPrefix + 'report',
             });
         }
 

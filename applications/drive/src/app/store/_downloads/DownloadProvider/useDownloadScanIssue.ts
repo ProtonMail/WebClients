@@ -6,16 +6,12 @@ export default function useDownloadScanIssue(
     updateWithData: (filter: UpdateFilter, newState: UpdateState, data?: UpdateData) => void,
     cancelDownloads: (filter: UpdateFilter) => void
 ) {
-    const handleScanIssue = (
-        abortSignal: AbortSignal,
-        download: Download,
-        scanIssueError?: Error
-    ): Promise<boolean> => {
+    const handleScanIssue = (abortSignal: AbortSignal, download: Download, error?: Error): Promise<boolean> => {
         const getResponse = (): boolean => {
             return download.state !== TransferState.ScanIssue;
         };
 
-        updateWithData(download.id, TransferState.ScanIssue, { scanIssueError });
+        updateWithData(download.id, TransferState.ScanIssue, { error });
 
         return new Promise((resolve, reject) => {
             waitUntil(() => getResponse(), abortSignal)

@@ -54,7 +54,7 @@ export default function useDownloadQueue(log: LogCallback) {
         (
             idOrFilter: UpdateFilter,
             newStateOrCallback: UpdateState,
-            { size, error, signatureIssueLink, signatureStatus, scanIssueError, retry }: UpdateData = {},
+            { size, error, signatureIssueLink, signatureStatus, retry }: UpdateData = {},
             callback?: UpdateCallback
         ) => {
             const filter = convertFilterToFunction(idOrFilter);
@@ -88,7 +88,6 @@ export default function useDownloadQueue(log: LogCallback) {
                     download.error = error;
                     download.signatureIssueLink = signatureIssueLink;
                     download.signatureStatus = signatureStatus;
-                    download.scanIssueError = scanIssueError;
                     // download is always marked as retried after being set to true once
                     download.retries = downloadIsARetry ? (download.retries || 0) + 1 : download.retries || 0;
 
@@ -205,6 +204,7 @@ function generateDownloadMeta(links: LinkDownload[]): TransferMeta {
         const link = links[0];
         if (link.isFile) {
             return {
+                linkId: link.linkId,
                 filename: link.name,
                 mimeType: link.mimeType,
                 size: link.size,
