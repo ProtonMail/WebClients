@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Alert } from '@proton/components';
-import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useBulkSelectionAliasCount } from '@proton/pass/components/Bulk/BulkSelectionState';
 import {
     ConfirmationPrompt,
     type ConfirmationPromptHandles,
@@ -20,7 +20,7 @@ export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: B
     onConfirm,
 }) => {
     const trashedItemsCount = getBulkSelectionCount(selected);
-    const { aliasCount } = useBulkSelect();
+    const aliasCount = useBulkSelectionAliasCount();
 
     return (
         <ConfirmationPrompt
@@ -98,7 +98,7 @@ export const ConfirmDeleteManyItems: FC<ConfirmationPromptHandles & { selected: 
     onCancel,
 }) => {
     const deletedItemsCount = getBulkSelectionCount(selected);
-    const { aliasCount } = useBulkSelect();
+    const aliasCount = useBulkSelectionAliasCount();
 
     return (
         <ConfirmationPrompt

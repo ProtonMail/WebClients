@@ -1,10 +1,10 @@
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 
 import type { ItemSelectOptions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision, Maybe, SelectedItem } from '@proton/pass/types';
 import { B2BEventName } from '@proton/pass/types/data/b2b';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -13,8 +13,14 @@ import { usePassCore } from '../components/Core/PassCoreProvider';
 import { itemEq } from '../lib/items/item.predicates';
 import { isEmptyString } from '../utils/string/is-empty-string';
 
+type SelectItemActionDeps = {
+    search: string;
+    selectedItem: Maybe<SelectedItem>;
+};
+
 /** Wraps the base `NavigationContextValue::selectItem` function and adds
- * telemetry event dispatches depending on the current filtering context. */
+ * telemetry event dispatches depending on the current filtering context.
+ * Returned function is stable. */
 export const useSelectItemAction = () => {
     const { onTelemetry, onB2BEvent } = usePassCore();
     const selectItem = useSelectItem();
@@ -23,21 +29,24 @@ export const useSelectItemAction = () => {
     const { filters } = useNavigationFilters();
     const { search } = filters;
 
-    return useCallback(
-        (item: ItemRevision, options: ItemSelectOptions) => {
-            /* noop if item is already selected */
-            if (selectedItem && itemEq(selectedItem)(item)) return;
+    /** Keep a stable ref instead of passing dependencies to
+     * returned `useCallback` to avoid re-renders */
+    const ref = useRef<SelectItemActionDeps>({ search, selectedItem });
+    ref.current.search = search;
+    ref.current.selectedItem = selectedItem;
 
-            const { itemId, shareId } = item;
-            const { type } = item.data;
+    return useCallback((item: ItemRevision, options: ItemSelectOptions) => {
+        /* noop if item is already selected */
+        if (ref.current.selectedItem && itemEq(ref.current.selectedItem)(item)) return;
 
-            selectItem(shareId, itemId, options);
+        const { itemId, shareId } = item;
+        const { type } = item.data;
 
-            onTelemetry(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[type] });
-            onB2BEvent({ name: B2BEventName.ItemRead, timestamp: getEpoch(), itemId, shareId });
+        selectItem(shareId, itemId, options);
 
-            if (!isEmptyString(search)) onTelemetry(TelemetryEventName.SearchClick, {}, {});
-        },
-        [search, selectedItem]
-    );
+        onTelemetry(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[type] });
+        onB2BEvent({ name: B2BEventName.ItemRead, timestamp: getEpoch(), itemId, shareId });
+
+        if (!isEmptyString(ref.current.search)) onTelemetry(TelemetryEventName.SearchClick, {}, {});
+    }, []);
 };
