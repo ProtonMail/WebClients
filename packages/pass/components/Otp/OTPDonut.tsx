@@ -1,5 +1,6 @@
-import { type FC, useCallback, useEffect, useRef } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
 
+import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
 import clsx from '@proton/utils/clsx';
 
 import './OTPDonut.scss';
@@ -10,88 +11,81 @@ type Props = {
     colorEmpty?: CSSVarColor;
     colorFilled?: CSSVarColor;
     enabled: boolean;
-    percent: number;
-    period?: number;
     thickness?: number;
 };
 
-export const OTPDonut: FC<Props> = ({
-    colorEmpty = '--text-hint',
-    colorFilled = '--signal-success',
-    enabled,
-    percent,
-    period = 0,
-    thickness = 3,
-}) => {
-    const ref = useRef<HTMLCanvasElement>(null);
-    const animationRef = useRef<number>();
-    const colorsRef = useRef<[empty: string, filled: string]>();
+type OTPDonutColors = [empty: string, filled: string];
 
-    const getColors = useCallback(
-        (canvas: HTMLCanvasElement): [empty: string, filled: string] => {
-            if (colorsRef.current) return colorsRef.current;
+export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
+    ({ colorEmpty = '--text-hint', colorFilled = '--signal-success', enabled, thickness = 3 }, ref) => {
+        const wrapperRef = useRef<HTMLDivElement>(null);
+        const canvasRef = useRef<HTMLCanvasElement>(null);
+        const colorsRef = useRef<OTPDonutColors>();
 
-            const computedStyle = window.getComputedStyle(canvas);
-            const filled = computedStyle.getPropertyValue(colorFilled);
-            const empty = computedStyle.getPropertyValue(colorEmpty);
+        const getColors = useCallback(
+            (canvas: HTMLCanvasElement): OTPDonutColors => {
+                if (colorsRef.current) return colorsRef.current;
 
-            return [empty, filled];
-        },
-        [colorEmpty, colorFilled]
-    );
+                const computedStyle = window.getComputedStyle(canvas);
+                const filled = computedStyle.getPropertyValue(colorFilled);
+                const empty = computedStyle.getPropertyValue(colorEmpty);
 
-    const draw = useCallback(
-        (percent: number) => {
-            const canvas = ref.current;
-            const ctx = canvas?.getContext('2d');
-            if (!(canvas && ctx)) return;
+                return [empty, filled];
+            },
+            [colorEmpty, colorFilled]
+        );
 
-            const size = 36;
-            const dpr = window.devicePixelRatio || 1;
-            const [empty, filled] = getColors(canvas);
+        useImperativeHandle<OTPRendererHandles, OTPRendererHandles>(
+            ref,
+            () => ({
+                draw: (percent, period) => {
+                    wrapperRef.current?.style.setProperty('--countdown-value', `"${Math.round(percent * period)}"`);
 
-            canvas.width = size * dpr;
-            canvas.height = size * dpr;
-            ctx.scale(dpr, dpr);
+                    const canvas = canvasRef.current;
+                    const ctx = canvas?.getContext('2d');
+                    if (!(canvas && ctx)) return;
 
-            const center = size / 2;
-            const radius = center - thickness;
-            const startAngle = -Math.PI / 2;
-            const endAngle = startAngle + (1 - percent) * (2 * Math.PI);
+                    const size = 36;
+                    const dpr = window.devicePixelRatio || 1;
+                    const [empty, filled] = getColors(canvas);
 
-            ctx.clearRect(0, 0, size, size);
+                    canvas.width = size * dpr;
+                    canvas.height = size * dpr;
+                    ctx.scale(dpr, dpr);
 
-            ctx.strokeStyle = empty;
-            ctx.lineWidth = thickness;
-            ctx.beginPath();
-            ctx.arc(center, center, radius, 0, 2 * Math.PI);
-            ctx.stroke();
+                    const center = size / 2;
+                    const radius = center - thickness;
+                    const startAngle = -Math.PI / 2;
+                    const endAngle = startAngle + (1 - percent) * (2 * Math.PI);
 
-            ctx.strokeStyle = filled;
-            ctx.lineWidth = thickness;
-            ctx.beginPath();
-            ctx.arc(center, center, radius, startAngle, endAngle);
-            ctx.stroke();
-        },
-        [thickness, getColors]
-    );
+                    ctx.clearRect(0, 0, size, size);
 
-    useEffect(() => {
-        cancelAnimationFrame(animationRef.current!);
-        animationRef.current = requestAnimationFrame(() => draw(percent));
-        return () => cancelAnimationFrame(animationRef.current!);
-    }, [percent]);
+                    ctx.strokeStyle = empty;
+                    ctx.lineWidth = thickness;
+                    ctx.beginPath();
+                    ctx.arc(center, center, radius, 0, 2 * Math.PI);
+                    ctx.stroke();
 
-    useEffect(() => {
-        colorsRef.current = undefined;
-    }, [colorFilled, colorEmpty]);
+                    ctx.strokeStyle = filled;
+                    ctx.lineWidth = thickness;
+                    ctx.beginPath();
+                    ctx.arc(center, center, radius, startAngle, endAngle);
+                    ctx.stroke();
+                },
+            }),
+            [getColors]
+        );
 
-    return (
-        <div
-            className={clsx('pass-otp--donut pointer-events-none anime-fade-in')}
-            style={{ '--countdown-value': `"${Math.round(percent * period)}"` }}
-        >
-            {enabled && <canvas ref={ref} className="pass-otp--donut" />}
-        </div>
-    );
-};
+        useEffect(() => {
+            colorsRef.current = undefined;
+        }, [colorFilled, colorEmpty]);
+
+        return (
+            <div ref={wrapperRef} className={clsx('pass-otp--donut pointer-events-none anime-fade-in')}>
+                {enabled && <canvas ref={canvasRef} className="pass-otp--donut" />}
+            </div>
+        );
+    }
+);
+
+OTPDonut.displayName = 'OTPDonutForwarded';
