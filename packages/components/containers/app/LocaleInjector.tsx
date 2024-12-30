@@ -13,7 +13,6 @@ interface Props {
 
 const LocaleInjector = ({ onRerender }: Props) => {
     const [userSettings] = useUserSettings();
-    const locale = userSettings?.Locale;
 
     useEffect(() => {
         // When busy, the locale update is treated as dangerous and is ignored.
@@ -23,13 +22,14 @@ const LocaleInjector = ({ onRerender }: Props) => {
         }
 
         (async () => {
+            const locale = userSettings?.Locale;
             const { update } = await loadLocales({ locale, locales, userSettings });
             if (update) {
                 onRerender?.();
                 invokeInboxDesktopIPC({ type: 'updateLocale', payload: locale }).catch(noop);
             }
         })().catch(noop);
-    }, [locale]);
+    }, [userSettings]);
 
     return null;
 };

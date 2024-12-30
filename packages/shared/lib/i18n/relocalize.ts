@@ -1,11 +1,12 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../constants';
-import type { Options } from './dateFnLocale';
+import type { DateFormatOptions } from '../interfaces/Locale';
 import { getBrowserLocale, getClosestLocaleCode } from './helper';
 import {
     browserDateLocale,
     browserLocaleCode,
+    dateFormatOptions,
     dateLocale,
     dateLocaleCode,
     defaultDateLocale,
@@ -24,7 +25,7 @@ export const relocalizeText = async ({
     getLocalizedText: () => string;
     newLocaleCode?: string;
     relocalizeDateFormat?: boolean;
-    userSettings?: Options;
+    userSettings?: DateFormatOptions;
 }) => {
     const currentLocaleCode = localeCode;
     const [
@@ -33,7 +34,8 @@ export const relocalizeText = async ({
         currentBrowserLocaleCode,
         currentDateLocale,
         currentDateLocaleCode,
-    ] = [defaultDateLocale, browserDateLocale, browserLocaleCode, dateLocale, dateLocaleCode];
+        currentDateFormatOptions,
+    ] = [defaultDateLocale, browserDateLocale, browserLocaleCode, dateLocale, dateLocaleCode, dateFormatOptions];
     if (!newLocaleCode || newLocaleCode === currentLocaleCode) {
         return getLocalizedText();
     }
@@ -62,6 +64,7 @@ export const relocalizeText = async ({
             browserLocaleCode: currentBrowserLocaleCode,
             dateLocale: currentDateLocale,
             dateLocaleCode: currentDateLocaleCode,
+            dateFormatOptions: currentDateFormatOptions,
         });
     }
 };
