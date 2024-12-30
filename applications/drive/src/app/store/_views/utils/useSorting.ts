@@ -18,6 +18,7 @@ export enum SortField {
     trashed = 'trashed',
     sharedOn = 'sharedOn',
     sharedBy = 'sharedBy',
+    uploadedBy = 'uploadedBy',
 }
 
 export interface SortParams<T extends SortField = SortField> {
@@ -36,6 +37,7 @@ interface LinkSortFields {
     shareUrl?: LinkShareUrl;
     sharedOn?: number;
     sharedBy?: string;
+    signatureEmail?: string;
 }
 
 /**
@@ -100,6 +102,7 @@ function sortParamsToSortConfig({ sortField, sortOrder: direction }: SortParams)
         trashed: [{ key: 'trashed', direction }, getNameSortConfig()],
         sharedOn: [{ key: 'sharedOn', direction }, getNameSortConfig()],
         sharedBy: [{ key: 'sharedBy', direction }, getNameSortConfig()],
+        uploadedBy: [{ key: 'signatureEmail', direction }, getNameSortConfig()],
     };
     return configs[sortField];
 }
