@@ -4,14 +4,15 @@ import { FilePreviewContent, useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../store';
-import { type useBookmarksPublicView } from '../../store';
+import { type useBookmarksPublicView, useDownload, usePublicShare } from '../../store';
 import { useDriveDocsPublicSharingFF } from '../../store/_documents';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
+import TransferManager from '../TransferManager/TransferManager';
+import { useReportAbuseModal } from '../modals/ReportAbuseModal/ReportAbuseModal';
 import ReportAbuseButton from './Layout/ReportAbuseButton';
 import { SharedPageContentHeader } from './Layout/SharedPageContentHeader';
 import SharedPageLayout from './Layout/SharedPageLayout';
-import SharedPageTransferManager from './TransferModal/SharedPageTransferManager';
 
 interface Props {
     token: string;
@@ -33,15 +34,30 @@ export default function SharedFilePage({
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const { viewportWidth } = useActiveBreakpoint();
     const isDocument = isProtonDocument(link?.mimeType || '');
-
+    const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
+    const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
+    const { cancelDownloads } = useDownload();
+
+    const handleVirusReport = async ({ transferId, errorMessage }: { transferId: string; errorMessage?: string }) => {
+        const { linkInfo, comment } = await getVirusReportInfo({ errorMessage, rootLinkId: link.linkId });
+        return showReportAbuseModal({
+            linkInfo,
+            onSubmit: submitAbuseReport,
+            onClose: () => cancelDownloads(transferId),
+            prefilled: {
+                Category: 'malware',
+                Comment: comment,
+            },
+        });
+    };
 
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
             <SharedPageLayout isPartialView={isPartialView}>
                 <SharedPageContentHeader
                     isPartialView={isPartialView}
-                    rootItem={link}
+                    rootLink={link}
                     name={link.name}
                     size={link.size}
                     items={[{ id: link.linkId, ...link }]}
@@ -66,7 +82,13 @@ export default function SharedFilePage({
                 />
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={link} />}
             </SharedPageLayout>
-            <SharedPageTransferManager rootItem={link} />
+            <div
+                className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
+                style={{ '--max-w-custom': '50em' }}
+            >
+                <TransferManager onVirusReport={handleVirusReport} />
+            </div>
+            {reportAbuseModal}
         </FileBrowserStateProvider>
     );
 }

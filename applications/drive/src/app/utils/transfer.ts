@@ -31,6 +31,8 @@ export const isTransferConflict = ({ state }: { state: TransferState }) => state
 
 export const isTransferSignatureIssue = ({ state }: { state: TransferState }) => state === TransferState.SignatureIssue;
 
+export const isTransferScanIssue = ({ state }: { state: TransferState }) => state === TransferState.ScanIssue;
+
 export const isTransferProgress = ({ state }: { state: TransferState }) => state === TransferState.Progress;
 
 export const isTransferInitializing = ({ state }: { state: TransferState }) => state === TransferState.Initializing;
@@ -38,7 +40,7 @@ export const isTransferInitializing = ({ state }: { state: TransferState }) => s
 export const isTransferManuallyPaused = ({ state }: { state: TransferState }) => state === TransferState.Paused;
 
 export const isTransferPaused = ({ state }: { state: TransferState }) =>
-    state === TransferState.Paused || state === TransferState.NetworkError;
+    state === TransferState.Paused || state === TransferState.ScanIssue || state === TransferState.NetworkError;
 
 export const isTransferPausedByConnection = ({ state }: { state: TransferState }) =>
     state === TransferState.NetworkError;
@@ -54,6 +56,7 @@ export const isTransferOngoing = ({ state }: { state: TransferState }) => {
         TransferState.Skipped,
         TransferState.Done,
         TransferState.Finalizing,
+        TransferState.ScanIssue,
     ].includes(state);
 };
 
