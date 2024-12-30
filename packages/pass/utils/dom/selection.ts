@@ -1,17 +1,18 @@
-/** Checks if there is an active text selection in the document or in an input field.
- * This function is a workaround for a limitation in Firefox, which does not properly
- * implement the getSelection() method for input and textarea elements. Until this is
- * fixed in Firefox, this function provides a reliable way to check for text selection
- * across all major browsers */
-export const hasSelection = () => {
-    const selection = getSelection();
+export const SelectionManager = (() => {
+    let hasSelection = false;
 
-    const fieldSelected =
-        document.activeElement !== document.body
-            ? [...document.activeElement!.querySelectorAll<HTMLTextAreaElement | HTMLInputElement>('textarea')].some(
-                  ({ selectionStart, selectionEnd }) => Math.abs((selectionStart ?? 0) - (selectionEnd ?? 0)) > 0
-              )
-            : false;
+    const onSelectionChange = () => {
+        const selection = window.getSelection();
+        hasSelection = selection !== null && selection.toString().length > 0;
+    };
 
-    return fieldSelected || selection?.toString() !== '';
-};
+    document.addEventListener('selectionchange', onSelectionChange);
+
+    return {
+        get selection() {
+            return hasSelection;
+        },
+
+        disconnect: () => document.removeEventListener('selectionchange', onSelectionChange),
+    };
+})();
