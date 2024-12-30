@@ -117,7 +117,7 @@ export const useRecipientsSelectionStep = ({ recipientHelpers, txBuilderHelpers 
                         const code = error.code as number;
 
                         if (code === 2028) {
-                            createNotification({ text: error.details, type: 'error' });
+                            createNotification({ text: error.error, type: 'error' });
                             return;
                         }
 
