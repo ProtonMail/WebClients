@@ -14,9 +14,11 @@ import { useNavigationFilters } from '@proton/pass/components/Navigation/Navigat
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
 import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { saveFilters } from '@proton/pass/store/actions/creators/filters';
 import { selectIsWritableShare } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
+import type { ItemSortFilter, ItemTypeFilter } from '@proton/pass/types';
 import { type ItemRevision } from '@proton/pass/types';
 
 export const ItemsList = memo(() => {
@@ -31,6 +33,7 @@ export const ItemsList = memo(() => {
     const selectItem = useSelectItemAction();
     const { matchTrash } = useNavigationMatches();
     const { filters, setFilters } = useNavigationFilters();
+    const filtersRef = useStatefulRef(filters);
 
     const handleSelect = useCallback(
         (item: ItemRevision, metaKey: boolean) => {
@@ -49,6 +52,14 @@ export const ItemsList = memo(() => {
 
     useEffect(bulk.disable, [selectedItem, matchTrash]);
 
+    const onChangeTypeFilter = useCallback((type: ItemTypeFilter) => setFilters({ type }), []);
+    const onChangeSortFilter = useCallback((sort: ItemSortFilter) => {
+        /** Extension leverages `usePopupStateEffects` to keep track
+         * of filters for each individual tab */
+        if (!EXTENSION_BUILD) dispatch(saveFilters({ ...filtersRef.current, sort }));
+        setFilters({ sort });
+    }, []);
+
     return (
         <>
             {!empty && (
@@ -56,20 +67,8 @@ export const ItemsList = memo(() => {
                     <div className="flex flex-1 gap-1 shrink-0 flex-nowrap">
                         {!bulkEnabled && (
                             <>
-                                <TypeFilter
-                                    items={items.searched}
-                                    value={filters.type}
-                                    onChange={(type) => setFilters({ type })}
-                                />
-                                <SortFilter
-                                    value={filters.sort}
-                                    onChange={(sort) => {
-                                        /** Extension leverages `usePopupStateEffects` to keep track
-                                         * of filters for each individual tab */
-                                        if (!EXTENSION_BUILD) dispatch(saveFilters({ ...filters, sort }));
-                                        setFilters({ sort });
-                                    }}
-                                />
+                                <TypeFilter items={items.searched} value={filters.type} onChange={onChangeTypeFilter} />
+                                <SortFilter value={filters.sort} onChange={onChangeSortFilter} />
                             </>
                         )}
                         {bulkEnabled && <BulkActions disabled={disabled} />}
