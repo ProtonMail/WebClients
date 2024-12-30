@@ -1,4 +1,4 @@
-import { type FC, memo, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -26,85 +26,97 @@ type Props = {
 
 const SEARCH_DEBOUNCE_TIME = 75;
 
-const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
-    const { onTelemetry } = usePassCore();
-    const { matchTrash } = useNavigationMatches();
-    const { filters, setFilters } = useNavigationFilters();
+export const SearchBar = memo(
+    ({ disabled, initial, trash }: Props) => {
+        const { onTelemetry } = usePassCore();
+        const { matchTrash } = useNavigationMatches();
+        const { filters, setFilters } = useNavigationFilters();
 
-    const [search, setSearch] = useState<string>((filters.search || initial) ?? '');
-    const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
+        const [search, setSearch] = useState<string>((filters.search || initial) ?? '');
+        const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
-    const inputRef = useRef<HTMLInputElement>(null);
-    const { selectedShareId, type = '*' } = filters;
+        const inputRef = useRef<HTMLInputElement>(null);
+        const { selectedShareId, type = '*' } = filters;
 
-    const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
+        const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
 
-    const placeholder = useMemo(() => {
-        const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
-        const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
-        const vaultName = matchTrash ? c('Label').t`Trash` : vault?.content.name.trim();
+        const placeholder = useMemo(() => {
+            const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
+            const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
+            const vaultName = matchTrash ? c('Label').t`Trash` : vault?.content.name.trim();
 
-        switch (type) {
-            case '*':
-                return vault || matchTrash
-                    ? c('Placeholder').t`Search in ${vaultName}`
-                    : c('Placeholder').t`Search in all vaults`;
-            default: {
-                // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
-                return vault || matchTrash
-                    ? c('Placeholder').t`Search ${pluralItemType} in ${vaultName}`
-                    : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
+            switch (type) {
+                case '*':
+                    return vault || matchTrash
+                        ? c('Placeholder').t`Search in ${vaultName}`
+                        : c('Placeholder').t`Search in all vaults`;
+                default: {
+                    // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
+                    return vault || matchTrash
+                        ? c('Placeholder').t`Search ${pluralItemType} in ${vaultName}`
+                        : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
+                }
             }
-        }
-    }, [vault, type, matchTrash]);
+        }, [vault, type, matchTrash]);
 
-    const handleClear = () => {
-        setSearch('');
-        setFilters({ search: '' });
-        inputRef.current?.focus();
-    };
+        const handleClear = () => {
+            setSearch('');
+            setFilters({ search: '' });
+            inputRef.current?.focus();
+        };
 
-    const handleFocus = () => inputRef.current?.select();
+        const handleFocus = () => inputRef.current?.select();
 
-    const handleBlur = () => {
-        if (isEmptyString(search)) return;
-        void onTelemetry(TelemetryEventName.SearchTriggered, {}, {});
-    };
+        const handleBlur = () => {
+            if (isEmptyString(search)) return;
+            void onTelemetry(TelemetryEventName.SearchTriggered, {}, {});
+        };
 
-    useEffect(handleFocus, []);
-    useEffect(() => setFilters({ search: debouncedSearch }), [debouncedSearch]);
-    useSearchShortcut(handleFocus);
+        useSearchShortcut(handleFocus);
 
-    return (
-        <Input
-            autoFocus
-            className="pass-searchbar"
-            inputClassName="text-rg"
-            disabled={disabled}
-            onBlur={handleBlur}
-            onFocus={handleFocus}
-            onValue={setSearch}
-            placeholder={`${trash ? c('Placeholder').t`Search in Trash` : placeholder}…`}
-            prefix={<Icon name="magnifier" />}
-            ref={inputRef}
-            suffix={
-                search !== '' && (
-                    <Button
-                        shape="ghost"
-                        size="small"
-                        color="weak"
-                        icon
-                        pill
-                        onClick={handleClear}
-                        title={c('Action').t`Clear search`}
-                    >
-                        <Icon name="cross" />
-                    </Button>
-                )
-            }
-            value={search}
-        />
-    );
-};
+        useEffect(handleFocus, []);
+        useEffect(() => setFilters({ search: debouncedSearch }), [debouncedSearch]);
 
-export const SearchBar = memo(SearchBarRaw);
+        useEffect(() => {
+            /** Edge-case: reset internal search state
+             * if `filters.search` was cleared */
+            if (filters.search === '') setSearch('');
+        }, [filters.search]);
+
+        return (
+            <Input
+                autoFocus
+                className="pass-searchbar"
+                inputClassName="text-rg"
+                disabled={disabled}
+                onBlur={handleBlur}
+                onFocus={handleFocus}
+                onValue={setSearch}
+                placeholder={`${trash ? c('Placeholder').t`Search in Trash` : placeholder}…`}
+                prefix={<Icon name="magnifier" />}
+                ref={inputRef}
+                suffix={
+                    search !== '' && (
+                        <Button
+                            shape="ghost"
+                            size="small"
+                            color="weak"
+                            icon
+                            pill
+                            onClick={handleClear}
+                            title={c('Action').t`Clear search`}
+                        >
+                            <Icon name="cross" />
+                        </Button>
+                    )
+                }
+                value={search}
+            />
+        );
+    },
+    /** initial is only used on initial mount - as such no need
+     * to include it as a valid prop for memoisation */
+    (a, b) => a.trash === b.trash && a.disabled === b.disabled
+);
+
+SearchBar.displayName = 'SearchBarMemo';
