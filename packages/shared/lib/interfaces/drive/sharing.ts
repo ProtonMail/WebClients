@@ -71,6 +71,7 @@ export interface SharedURLInfo {
     NodeHashKey: string | null;
     NodePassphrase: string;
     Permissions: SHARE_URL_PERMISSIONS;
+    SignatureEmail?: string;
     ShareKey: string;
     SharePassphrase: string;
     SharePasswordSalt: string;
