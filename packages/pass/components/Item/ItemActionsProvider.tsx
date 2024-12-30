@@ -3,7 +3,7 @@ import { useDispatch, useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
 import { ConfirmTrashAlias } from '@proton/pass/components/Item/Actions/ConfirmAliasActions';
 import {
     ConfirmDeleteManyItems,
@@ -45,7 +45,7 @@ type ItemActionsContextType = {
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
 
 export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const bulk = useBulkSelect();
+    const bulk = useBulkActions();
     const dispatch = useDispatch();
     const store = useStore<State>();
 
@@ -65,13 +65,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const moveManyItems = useConfirm(
-        useCallback(
-            (options: { selected: BulkSelectionDTO; shareId: string }) => {
-                dispatch(itemBulkMoveIntent(options));
-                bulk.disable();
-            },
-            [bulk]
-        )
+        useCallback((options: { selected: BulkSelectionDTO; shareId: string }) => {
+            dispatch(itemBulkMoveIntent(options));
+            bulk.disable();
+        }, [])
     );
 
     const trashItem = useConfirm(
@@ -89,13 +86,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const trashManyItems = useConfirm(
-        useCallback(
-            (selected: BulkSelectionDTO) => {
-                dispatch(itemBulkTrashIntent({ selected }));
-                bulk.disable();
-            },
-            [bulk]
-        )
+        useCallback((selected: BulkSelectionDTO) => {
+            dispatch(itemBulkTrashIntent({ selected }));
+            bulk.disable();
+        }, [])
     );
 
     const deleteItem = useConfirm(
@@ -111,33 +105,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const deleteManyItems = useConfirm(
-        useCallback(
-            (selected: BulkSelectionDTO) => {
-                dispatch(itemBulkDeleteIntent({ selected }));
-                bulk.disable();
-            },
-            [bulk]
-        )
-    );
-
-    const restoreItem = useCallback(
-        (item: ItemRevision) =>
-            dispatch(
-                itemRestoreIntent({
-                    itemId: item.itemId,
-                    shareId: item.shareId,
-                    item,
-                })
-            ),
-        []
-    );
-
-    const restoreManyItems = useCallback(
-        (selected: BulkSelectionDTO) => {
-            dispatch(itemBulkRestoreIntent({ selected }));
+        useCallback((selected: BulkSelectionDTO) => {
+            dispatch(itemBulkDeleteIntent({ selected }));
             bulk.disable();
-        },
-        [bulk]
+        }, [])
     );
 
     const context = useMemo<ItemActionsContextType>(() => {
@@ -151,6 +122,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         closeVaultSelect();
                     },
                 }),
+
             moveMany: (selected, shareId) =>
                 shareId
                     ? moveManyItems.prompt({ selected, shareId })
@@ -162,6 +134,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                               closeVaultSelect();
                           },
                       }),
+
             trash: (item) => {
                 if (isAliasItem(item.data)) {
                     const state = store.getState();
@@ -172,13 +145,28 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     else trashItem.prompt(item);
                 } else trashItem.call(item);
             },
+
             trashMany: trashManyItems.prompt,
+
             delete: deleteItem.prompt,
+
             deleteMany: deleteManyItems.prompt,
-            restore: restoreItem,
-            restoreMany: restoreManyItems,
+
+            restore: (item) =>
+                dispatch(
+                    itemRestoreIntent({
+                        itemId: item.itemId,
+                        shareId: item.shareId,
+                        item,
+                    })
+                ),
+
+            restoreMany: (selected) => {
+                dispatch(itemBulkRestoreIntent({ selected }));
+                bulk.disable();
+            },
         };
-    }, [bulk]);
+    }, []);
 
     return (
         <ItemActionsContext.Provider value={context}>
