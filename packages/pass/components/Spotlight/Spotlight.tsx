@@ -1,11 +1,11 @@
-import type { FC } from 'react';
+import { type FC, memo } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
 import { SpotlightContent } from './SpotlightContent';
 import { useSpotlight } from './SpotlightProvider';
 
-export const Spotlight: FC = () => {
+export const Spotlight: FC = memo(() => {
     const spotlight = useSpotlight();
 
     return (
@@ -17,4 +17,6 @@ export const Spotlight: FC = () => {
             </div>
         </div>
     );
-};
+});
+
+Spotlight.displayName = 'SpotlightMemo';
