@@ -38,7 +38,7 @@ export function SharedPageContentHeader({
     linkId,
     name,
     size,
-    rootItem,
+    rootLink,
     items,
     bookmarksPublicView,
     className,
@@ -72,11 +72,11 @@ export function SharedPageContentHeader({
                     <FileNameDisplay className="text-4xl text-bold py-1 md:p-1" text={name} />
                 )}
                 <div className="flex items-center color-weak">
-                    {canWrite && rootItem.signatureEmail && (
+                    {canWrite && rootLink.signatureEmail && (
                         // Text will be like: Owner <eric.norbert@pm.me>
                         <>
                             {c('Info').t`Owner`}
-                            {` <${rootItem.signatureEmail}>`}
+                            {` <${rootLink.signatureEmail}>`}
                             <i
                                 className="mx-2 w-custom h-custom rounded-full bg-strong"
                                 aria-hidden="true"
@@ -91,7 +91,7 @@ export function SharedPageContentHeader({
                 </div>
             </div>
             <div className="shared-page-content-header-buttons pt-2">
-                <DownloadButton rootItem={rootItem} items={items} disabled={hasOnlyDocuments || !items.length} />
+                <DownloadButton rootLink={rootLink} items={items} disabled={hasOnlyDocuments || !items.length} />
 
                 {canWrite && token && linkId && (
                     <>

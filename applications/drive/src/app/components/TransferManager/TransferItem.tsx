@@ -28,7 +28,7 @@ type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &
         };
     };
 
-const Transfer = <T extends TransferType>({ stats, transfer, type, className, ...rest }: Props<T>) => {
+const Transfer = <T extends TransferType>({ stats, transfer, type, className, onVirusReport, ...rest }: Props<T>) => {
     const isInitializing = isTransferInitializing(transfer);
     const isNameUnresolved = isInitializing || isTransferPending(transfer);
     const isProgress = isTransferProgress(transfer);
@@ -80,7 +80,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                 <TransferStateIndicator transfer={transfer} type={type} speed={speed} />
             </div>
 
-            <TransferControls transfer={transfer} type={type} />
+            <TransferControls transfer={transfer} type={type} onVirusReport={onVirusReport} />
 
             <ProgressBar
                 status={getProgressBarStatus(transfer.state)}

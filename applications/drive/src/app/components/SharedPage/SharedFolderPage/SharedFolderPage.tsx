@@ -6,18 +6,24 @@ import { FilePreview, NavigationControl, useActiveBreakpoint } from '@proton/com
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { type DecryptedLink, type useBookmarksPublicView, useDownload, usePublicFolderView } from '../../../store';
+import {
+    type DecryptedLink,
+    type useBookmarksPublicView,
+    useDownload,
+    usePublicFolderView,
+    usePublicShare,
+} from '../../../store';
 import { useDriveDocsPublicSharingFF } from '../../../store/_documents';
 import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import TransferManager from '../../TransferManager/TransferManager';
+import { useReportAbuseModal } from '../../modals/ReportAbuseModal/ReportAbuseModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ReportAbuseButton from '../Layout/ReportAbuseButton';
 import { SharedPageContentHeader } from '../Layout/SharedPageContentHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
-import SharedPageTransferManager from '../TransferModal/SharedPageTransferManager';
 import type { PublicLink } from '../interface';
 import { SharedFileBrowser } from './FileBrowser';
 
@@ -107,11 +113,14 @@ export default function SharedFolder({
 }: Props) {
     const [linkId, setLinkId] = useState(rootLink.linkId);
     const folderView = usePublicFolderView(token, linkId);
-    const { downloads, getDownloadsLinksProgresses, download } = useDownload();
+    const { downloads, getDownloadsLinksProgresses, download, cancelDownloads } = useDownload();
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
     const { viewportWidth } = useActiveBreakpoint();
+
+    const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
+    const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
 
     const onItemOpen = (item: DecryptedLink) => {
         if (isProtonDocument(item.mimeType) && openInDocs) {
@@ -134,6 +143,29 @@ export default function SharedFolder({
 
     const handleNavigationPreview = (newLinkId: DecryptedLink['linkId']) => {
         setDiplayedLink(fileBrowserItems.find((link) => link.linkId === newLinkId));
+    };
+
+    const handleVirusReport = async ({
+        transferId,
+        linkId,
+        errorMessage,
+    }: {
+        transferId: string;
+        linkId?: string;
+        errorMessage?: string;
+    }) => {
+        const { linkInfo, comment } = await getVirusReportInfo({ linkId, errorMessage, rootLinkId: rootLink.linkId });
+        return showReportAbuseModal({
+            linkInfo,
+            onSubmit: (params) => {
+                cancelDownloads(transferId);
+                return submitAbuseReport(params);
+            },
+            prefilled: {
+                Category: 'malware',
+                Comment: comment,
+            },
+        });
     };
 
     const shouldRenderPreviewContainer = previewDisplayed && displayedLink;
@@ -225,7 +257,7 @@ export default function SharedFolder({
                     size={totalSize}
                     name={folderView.folderName}
                     isPartialView={isPartialView}
-                    rootItem={rootLink}
+                    rootLink={rootLink}
                     items={fileBrowserItems}
                     bookmarksPublicView={bookmarksPublicView}
                     hideSaveToDrive={hideSaveToDrive}
@@ -243,16 +275,14 @@ export default function SharedFolder({
                         openInDocs={openInDocs}
                     />
                 )}
-                {/* // Use TransferManager only for uploads */}
-                {canWrite && !downloads.length && (
-                    <div
-                        className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
-                        style={{ '--max-w-custom': '50em' }}
-                    >
-                        <TransferManager />
-                    </div>
-                )}
-                <SharedPageTransferManager rootItem={rootLink} />
+
+                <div
+                    className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
+                    style={{ '--max-w-custom': '50em' }}
+                >
+                    <TransferManager onVirusReport={handleVirusReport} />
+                </div>
+
                 <UploadDragDrop
                     shareId={token}
                     linkId={linkId}
@@ -269,6 +299,7 @@ export default function SharedFolder({
                 </UploadDragDrop>
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>
+            {reportAbuseModal}
         </FileBrowserStateProvider>
     );
 }

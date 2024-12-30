@@ -324,6 +324,7 @@ export type IconName =
     | 'shield-2-check-filled'
     | 'shield-filled'
     | 'shield-half-filled'
+    | 'shield-exclamation-filled'
     | 'size-arrow-up'
     | 'size-arrow-down'
     | 'speech-bubble'
