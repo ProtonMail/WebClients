@@ -28,7 +28,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
         hasCaret={false}
     >
         <DropdownMenu className="editor-toolbar-more-menu shrink-0">
-            {!isNarrow && metadata.supportImages && (
+            {!isNarrow && metadata.supportFiles && (
                 <DropdownMenuButton
                     key={17}
                     className="text-left flex flex-nowrap items-center"
@@ -115,7 +115,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     <Icon name="eraser" className="mr-2" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-3" />,
-                metadata.supportImages && [
+                metadata.supportFiles && [
                     <DropdownMenuButton
                         key={17}
                         className="text-left flex flex-nowrap items-center"
