@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useRef } from 'react';
+import { type FC, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
@@ -11,6 +11,7 @@ import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvide
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -26,8 +27,7 @@ export const AppGuard: FC = () => {
     const { state } = useAppState();
     const authStore = useAuthStore();
 
-    const status = useRef(state.status);
-    status.current = state.status;
+    const status = useStatefulRef(state.status);
 
     const online = useConnectivity();
     const auth = useAuthService();

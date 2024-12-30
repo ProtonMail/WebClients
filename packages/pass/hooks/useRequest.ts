@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { ActionCreatorWithPreparedPayload, PayloadAction } from '@reduxjs/toolkit';
 
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { withAsyncRequest, withRevalidate } from '@proton/pass/store/request/enhancers';
 import type { RequestFlow } from '@proton/pass/store/request/flow';
 import type { RequestAsyncResult, RequestMeta, RequestSuccessDTO, WithRequest } from '@proton/pass/store/request/types';
@@ -77,8 +78,7 @@ export const useActionRequest = <
         return 0;
     })();
 
-    const optionsRef = useRef(options);
-    optionsRef.current = options;
+    const optionsRef = useStatefulRef(options);
 
     useEffect(() => {
         if (!request) return setLoading(false);
