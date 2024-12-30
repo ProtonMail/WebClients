@@ -1,11 +1,12 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import type { BottomBarProps } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { useNavigatorOnline } from '@proton/pass/hooks/useNavigatorOnline';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import type { ApiSubscriptionEvent, MaybeNull } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
@@ -81,9 +82,7 @@ export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check
 
 export const useConnectivityRef = () => {
     const online = useConnectivity();
-    const ref = useRef(online);
-    ref.current = online;
-    return ref;
+    return useStatefulRef(online);
 };
 
 export const useConnectivityBar = (propsFactory: (online: boolean) => BottomBarProps) => {
