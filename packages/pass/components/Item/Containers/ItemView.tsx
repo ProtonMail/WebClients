@@ -1,6 +1,6 @@
-import { type FC, useState } from 'react';
+import { type FC, memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useParams } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
@@ -42,7 +42,7 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     identity: IdentityView,
 };
 
-export const ItemView: FC = () => {
+export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const { prefix } = useItemRoute();
     const { matchTrash: inTrash } = useNavigationMatches();
     const { selectItem, preserveSearch } = useNavigationActions();
@@ -50,7 +50,6 @@ export const ItemView: FC = () => {
     const itemActions = useItemsActions();
 
     const dispatch = useDispatch();
-    const { shareId, itemId } = useParams<SelectedItem>();
     const [inviteOpen, setInviteOpen] = useState(false);
     const [openSecureLinkModal, setOpenSecureLinkModal] = useState(false);
 
@@ -161,4 +160,6 @@ export const ItemView: FC = () => {
             )}
         </>
     );
-};
+});
+
+ItemView.displayName = 'ItemViewMemo';
