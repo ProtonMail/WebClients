@@ -1,4 +1,4 @@
-import type { ChangeEvent, ReactNode } from 'react';
+import type { ChangeEvent, ClipboardEvent, ReactNode } from 'react';
 import { useEffect, useRef } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -11,11 +11,21 @@ interface Props {
     onKeyUp?: () => void;
     onReady: (editorActions: EditorActions) => void;
     onFocus: () => void;
+    onPasteFiles: (files: File[]) => void;
     // Needed for dropzone
     children?: ReactNode;
 }
 
-const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, children, ...rest }: Props) => {
+const PlainTextEditor = ({
+    onFocus,
+    onReady,
+    onChange,
+    onMouseUp,
+    onKeyUp,
+    onPasteFiles,
+    children,
+    ...rest
+}: Props) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const isMountedCallback = useIsMounted();
     const mouseDownRef = useRef(false);
@@ -84,6 +94,19 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, child
         mouseDownRef.current = true;
     };
 
+    const handlePaste = async (e: ClipboardEvent) => {
+        const {
+            clipboardData: { files },
+        } = e;
+
+        const filesArray = Array.from(files);
+        if (filesArray && filesArray.length > 0) {
+            onPasteFiles(filesArray);
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    };
+
     return (
         <div className="w-full h-full pt-2 pb-4 px-2" {...rest}>
             <textarea
@@ -94,6 +117,7 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, onMouseUp, onKeyUp, child
                     onChange(event.target.value);
                 }}
                 onMouseDown={handleMouseDown}
+                onPaste={handlePaste}
                 onKeyUp={onKeyUp}
                 data-testid="editor-textarea"
             />

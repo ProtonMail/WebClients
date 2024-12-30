@@ -110,13 +110,13 @@ const Editor = ({
      */
     const metadata: EditorMetadata = { ...EDITOR_DEFAULT_METADATA, ...metadataProp };
 
-    const onPasteImage = useCallback(
-        (imageFile: File) => {
-            if (metadata.supportImages) {
-                onAddAttachments?.([imageFile]);
+    const onPasteFiles = useCallback(
+        (files: File[]) => {
+            if (metadata.supportFiles) {
+                onAddAttachments?.(files);
             }
         },
-        [onAddAttachments, metadata.supportImages]
+        [onAddAttachments, metadata.supportFiles]
     );
 
     const plaintextEditor = (
@@ -126,6 +126,7 @@ const Editor = ({
             onFocus={onFocus}
             onMouseUp={onMouseUp}
             onKeyUp={onKeyUp}
+            onPasteFiles={onPasteFiles}
         />
     );
 
@@ -159,7 +160,7 @@ const Editor = ({
                             showBlockquoteToggle={showBlockquoteToggle}
                             onBlockquoteToggleClick={onBlockquoteToggleClick}
                             setToolbarConfig={setToolbarConfig}
-                            onPasteImage={onPasteImage}
+                            onPasteFiles={onPasteFiles}
                             showModalLink={modalLink.showCallback}
                             onFocus={onFocus}
                             mailSettings={mailSettings}
