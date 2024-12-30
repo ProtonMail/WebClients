@@ -66,7 +66,7 @@ module.exports = {
         rules: [
             ...getJsLoaders({ ...options, hasReactRefresh: false }),
             ...getCssLoaders({ browserslist: undefined, logical: false }),
-            ...getAssetsLoaders(),
+            ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
     plugins: [...plugins, new ReactRefreshWebpackPlugin(), new MiniCssExtractPlugin({ filename: 'styles/[name].css' })],
