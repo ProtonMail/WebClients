@@ -71,7 +71,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
             isPlainText,
             supportRightToLeft: true,
             rightToLeft,
-            supportImages: true,
+            supportFiles: true,
             supportDefaultFontSelector: false,
             blockquoteExpanded,
             setBlockquoteExpanded,
