@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { CircleLoader } from '@proton/atoms/index';
 import { FileNameDisplay } from '@proton/components';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
@@ -69,7 +71,24 @@ export function SharedPageContentHeader({
                 ) : (
                     <FileNameDisplay className="text-4xl text-bold py-1 md:p-1" text={name} />
                 )}
-                {size !== undefined ? <span className="color-weak text-pre">{readableSize}</span> : <CircleLoader />}
+                <div className="flex items-center color-weak">
+                    {canWrite && rootItem.signatureEmail && (
+                        // Text will be like: Owner <eric.norbert@pm.me>
+                        <>
+                            {c('Info').t`Owner`}
+                            {` <${rootItem.signatureEmail}>`}
+                            <i
+                                className="mx-2 w-custom h-custom rounded-full bg-strong"
+                                aria-hidden="true"
+                                style={{
+                                    '--w-custom': '0.25rem',
+                                    '--h-custom': '0.25rem',
+                                }}
+                            />
+                        </>
+                    )}
+                    {size !== undefined ? <span className="text-pre">{readableSize}</span> : <CircleLoader />}
+                </div>
             </div>
             <div className="shared-page-content-header-buttons pt-2">
                 <DownloadButton rootItem={rootItem} items={items} disabled={hasOnlyDocuments || !items.length} />
