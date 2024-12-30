@@ -5,7 +5,7 @@ import type { IEditor, PluginEvent } from 'roosterjs-editor-types';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 export interface EditorMetadata {
-    supportImages: boolean;
+    supportFiles: boolean;
     supportPlainText: boolean;
     supportDefaultFontSelector: boolean;
     isPlainText: boolean;
