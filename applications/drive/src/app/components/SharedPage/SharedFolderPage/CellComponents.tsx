@@ -8,7 +8,6 @@ import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import { useDownload, useDownloadScanFlag } from '../../../store';
-import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { Cells, HeaderCellsPresets } from '../../FileBrowser';
 import { ContextMenuCell } from '../../FileBrowser/ListView/Cells';
 import headerCells from '../../sections/FileBrowser/headerCells';
@@ -124,18 +123,14 @@ function SizeCell({ item }: { item: PublicLink }) {
 
 function DownloadCell({ item }: { item: PublicLink }) {
     const { token } = usePublicToken();
-    const { download, downloads, clearDownloads } = useDownload();
+    const { download } = useDownload();
     const isDownloadScanEnabled = useDownloadScanFlag();
 
     const isCurrentInProgress = Boolean(item.progress);
 
     const handleClick = () => {
-        clearDownloads();
-
         void download([{ ...item, shareId: token }], { virusScan: isDownloadScanEnabled });
     };
-
-    const isAnyInProgress = downloads.some((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
 
     const className = clsx([
         'self-center my-auto ',
@@ -157,7 +152,6 @@ function DownloadCell({ item }: { item: PublicLink }) {
                     size="small"
                     onClick={handleClick}
                     loading={isCurrentInProgress}
-                    disabled={isAnyInProgress && !isCurrentInProgress}
                 >
                     <span>{c('Action').t`Download`}</span>
                     {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml-2 md:hidden lg:inline" /> : null}

@@ -59,6 +59,7 @@ export function SharedFileBrowser({
         },
         [items]
     );
+
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const browserItemContextMenu = useItemContextMenu();
     const browserContextMenu = useContextMenuControls();
