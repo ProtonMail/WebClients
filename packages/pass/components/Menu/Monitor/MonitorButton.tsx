@@ -6,20 +6,19 @@ import { c } from 'ttag';
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import type { RouteMatchProps } from '@proton/pass/components/Navigation/RouteMatch';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { selectTotalBreaches } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
-export const MonitorButton: FC = () => {
+export const MonitorButton: FC<RouteMatchProps> = ({ active, exact }) => {
     const navigate = useNavigate();
-    const isSelected = useNavigationMatches().matchMonitor;
     const breachCount = useSelector(selectTotalBreaches) ?? 0;
 
     return (
         <DropdownMenuButton
             icon={`pass-shield-monitoring-${breachCount ? 'warning' : 'ok'}`}
-            className={clsx('rounded', isSelected && 'is-selected')}
+            className={clsx('rounded', active && 'is-selected')}
             ellipsis
             label={c('Action').t`Pass Monitor`}
             extra={
@@ -31,7 +30,7 @@ export const MonitorButton: FC = () => {
                     />
                 )
             }
-            onClick={() => navigate(getLocalPath('monitor'))}
+            onClick={() => !exact && navigate(getLocalPath('monitor'))}
             parentClassName="mx-3"
         />
     );

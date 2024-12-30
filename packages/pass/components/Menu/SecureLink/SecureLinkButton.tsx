@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import type { RouteMatchProps } from '@proton/pass/components/Navigation/RouteMatch';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { UpsellRef } from '@proton/pass/constants';
@@ -12,14 +12,13 @@ import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import clsx from '@proton/utils/clsx';
 
-type SecureLinkButtonProps = {
+type SecureLinkButtonProps = RouteMatchProps & {
     className?: string;
     parentClassName?: string;
     onClick: () => void;
 };
 
-export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ className, parentClassName, onClick }) => {
-    const isSelected = useNavigationMatches().matchSecureLinks;
+export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ active, className, parentClassName, onClick }) => {
     const spotlight = useSpotlight();
     const passPlan = useSelector(selectPassPlan);
     const free = passPlan === UserPassPlan.FREE;
@@ -27,7 +26,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ className, parentC
     return (
         <DropdownMenuButton
             icon="link"
-            className={clsx(className, isSelected && 'is-selected')}
+            className={clsx(className, active && 'is-selected')}
             label={c('Action').t`Secure links`}
             onClick={
                 free
@@ -36,7 +35,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ className, parentC
                               type: 'pass-plus',
                               upsellRef: UpsellRef.SECURE_LINKS,
                           })
-                    : onClick
+                    : () => !active && onClick()
             }
             parentClassName={parentClassName}
             extra={free && <PassPlusPromotionButton style={{ '--background-norm': 'var(--background-strong)' }} />}
