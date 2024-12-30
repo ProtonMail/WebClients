@@ -2,7 +2,7 @@ import { type FC, memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
@@ -46,7 +46,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const { prefix } = useItemRoute();
     const { matchTrash: inTrash } = useNavigationMatches();
     const { selectItem, preserveSearch } = useNavigationActions();
-    const inviteContext = useInviteContext();
+    const inviteActions = useInviteActions();
     const itemActions = useItemsActions();
 
     const dispatch = useDispatch();
@@ -84,15 +84,15 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const handleDelete = () => itemActions.delete(item);
     const handleInviteClick = () => setInviteOpen(true);
     const handleSecureLink = () => setOpenSecureLinkModal(true);
-    const handleVaultManage = () => inviteContext.manageAccess(shareId);
+    const handleVaultManage = () => inviteActions.manageAccess(shareId);
 
     const handleCreateSharedVault = () => {
-        inviteContext.createSharedVault({ item: { shareId, itemId } });
+        inviteActions.createSharedVault({ item: { shareId, itemId } });
         setInviteOpen(false);
     };
 
     const handleShareVaultClick = () => {
-        inviteContext.createInvite({ vault });
+        inviteActions.createInvite({ vault });
         setInviteOpen(false);
     };
 

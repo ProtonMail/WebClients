@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { getItemsText } from '@proton/pass/components/Settings/helper';
@@ -14,14 +15,13 @@ import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actio
 import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
 
-import { useInviteContext } from './InviteContext';
 import { UserVerificationMessage } from './UserVerificationMessage';
 
 export const VaultInviteRespond: FC<Invite> = (invite) => {
     const { inviterEmail, invitedAddressId, token, vault, fromNewUser } = invite;
     const { itemCount, memberCount } = vault;
     const { vaultLimitReached } = useSelector(selectVaultLimits);
-    const { onInviteResponse } = useInviteContext();
+    const { onInviteResponse } = useInviteActions();
 
     const acceptInvite = useActionRequest(inviteAcceptIntent, { onSuccess: onInviteResponse });
     const rejectInvite = useActionRequest(inviteRejectIntent, { onSuccess: onInviteResponse });
