@@ -7,7 +7,7 @@ import { DeepLinks } from 'proton-pass-web/app/DeepLinks/DeepLinks';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Hamburger, useToggle } from '@proton/components';
+import { useToggle } from '@proton/components';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
@@ -95,8 +95,7 @@ const MainSwitch: FC = () => {
                     {(route) => (
                         <main id="main" className="content flex-1 overflow-hidden">
                             <div className="flex flex-nowrap flex-column h-full">
-                                <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
-
+                                <Header sidebarExpanded={expanded} sidebarToggle={toggle} />
                                 <div className="flex items-center justify-center flex-nowrap w-full h-full">
                                     {route.match && (
                                         <Switch>
