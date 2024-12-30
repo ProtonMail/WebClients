@@ -1,5 +1,4 @@
-import { type FC, memo } from 'react';
-import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms';
 import { ItemTag } from '@proton/pass/components/Item/List/ItemTag';
@@ -14,20 +13,24 @@ type Props = ButtonLikeProps<any> & {
     item: ItemRevision;
     active?: boolean;
     className?: string;
+    onClick: (item: ItemRevision) => void;
 };
 
-const PinnedItemRaw: FC<Props> = ({ item, active = false, className, ...rest }) => (
+export const PinnedItem = memo(({ item, active = false, className, onClick, ...rest }: Props) => (
     <ButtonLike
-        as={Link}
-        to="#"
+        as="a"
         className={clsx('pass-pinned-list--item shrink-0 button-xs', className, active && 'is-active')}
         color="weak"
         shape="ghost"
         size="small"
+        onClick={(e: Event) => {
+            e.preventDefault();
+            onClick(item);
+        }}
         {...rest}
     >
         <ItemTag {...item} />
     </ButtonLike>
-);
+));
 
-export const PinnedItem = memo(PinnedItemRaw);
+PinnedItem.displayName = 'PinnedItemMemo';
