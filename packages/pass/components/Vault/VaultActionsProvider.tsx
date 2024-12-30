@@ -1,21 +1,21 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { type FC, createContext, useCallback, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
 import { ConfirmTrashEmpty } from '@proton/pass/components/Vault/Actions/ConfirmTrashEmpty';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
+import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import noop from '@proton/utils/noop';
 
 import { VaultEdit } from './Vault.edit';
 import { VaultMove } from './Vault.move';
@@ -38,23 +38,11 @@ type VaultActionState =
     | { view: 'create' | 'trash-empty' }
     | { view: 'edit' | 'delete' | 'move' | 'leave'; vault: VaultShareItem };
 
-export const VaultActionsContext = createContext<VaultActionsContextValue>({
-    create: noop,
-    delete: noop,
-    edit: noop,
-    invite: noop,
-    leave: noop,
-    manage: noop,
-    moveItems: noop,
-    select: noop,
-    trashEmpty: noop,
-    trashRestore: noop,
-});
-
-export const useVaultActions = () => useContext(VaultActionsContext);
+export const VaultActionsContext = createContext<MaybeNull<VaultActionsContextValue>>(null);
+export const useVaultActions = createUseContext(VaultActionsContext);
 
 export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const inviteContext = useInviteContext();
+    const inviteActions = useInviteActions();
     const navigate = useNavigate();
     const { filters, setFilters } = useNavigationFilters();
     const dispatch = useDispatch();
@@ -81,9 +69,9 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             create: () => setState({ view: 'create' }),
             delete: (vault) => setState({ view: 'delete', vault }),
             edit: (vault) => setState({ view: 'edit', vault }),
-            invite: (vault) => inviteContext.createInvite({ vault }),
+            invite: (vault) => inviteActions.createInvite({ vault }),
             leave: (vault) => setState({ view: 'leave', vault }),
-            manage: (vault) => inviteContext.manageAccess(vault.shareId),
+            manage: (vault) => inviteActions.manageAccess(vault.shareId),
             moveItems: (vault) => setState({ view: 'move', vault }),
             select: (selected) => {
                 switch (selected) {
@@ -99,7 +87,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             trashEmpty: () => setState({ view: 'trash-empty' }),
             trashRestore: () => dispatch(restoreTrashIntent()),
         }),
-        [inviteContext]
+        [inviteActions]
     );
 
     return (

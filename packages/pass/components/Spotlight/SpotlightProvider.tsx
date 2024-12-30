@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
+import { useInviteActions, useLatestInvite } from '@proton/pass/components/Invite/InviteProvider';
 import { PendingNewUsersApprovalModal } from '@proton/pass/components/Share/PendingNewUsersApprovalModal';
 import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
@@ -51,7 +51,8 @@ export const SpotlightContext = createContext<SpotlightContextValue>({
 
 export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const { spotlight } = usePassCore();
-    const { latestInvite, respondToInvite } = useInviteContext();
+    const latestInvite = useLatestInvite();
+    const { setInvite } = useInviteActions();
 
     const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
     const [spotlightMessage, setSpotlightMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
@@ -110,7 +111,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
                       action: {
                           label: c('Label').t`View details`,
                           type: 'button',
-                          onClick: () => respondToInvite(latestInvite),
+                          onClick: () => setInvite(latestInvite),
                       },
                   }
                 : null,

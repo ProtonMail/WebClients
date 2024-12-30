@@ -1,13 +1,14 @@
 import type { FC, PropsWithChildren } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 
-import { InviteContext, type InviteContextValue } from './InviteContext';
 import { VaultAccessManager } from './VaultAccessManager';
 import { VaultInviteCreate, type VaultInviteCreateValues } from './VaultInviteCreate';
 import { VaultInviteRespond } from './VaultInviteRespond';
@@ -17,35 +18,44 @@ type InviteContextState =
     | ({ view: 'invite-new' } & VaultInviteCreateValues<true>)
     | { view: 'manage'; shareId: string };
 
+type InviteActionsContextValue = {
+    close: () => void;
+    createInvite: (props: VaultInviteCreateValues<false>) => void;
+    createSharedVault: (props: VaultInviteCreateValues<true>) => void;
+    manageAccess: (shareId: string) => void;
+    onInviteResponse: () => void;
+    onShareDisabled: (disabledShareId: string) => void;
+    setInvite: (invite: Invite) => void;
+};
+
+const LatestInviteContext = createContext<MaybeNull<Invite>>(null);
+const InviteActionsContext = createContext<MaybeNull<InviteActionsContextValue>>(null);
+
+export const useLatestInvite = () => useContext(LatestInviteContext);
+export const useInviteActions = createUseContext(InviteActionsContext);
+
 export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
     const { setFilters } = useNavigationFilters();
 
-    const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
-    const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
     const latestInvite = useSelector(selectMostRecentInvite);
+    const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
+    const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
+    const stateRef = useStatefulRef(state);
 
-    const handles = useMemo(
+    const actions = useMemo(
         () => ({
             close: () => setState(null),
             createInvite: (props: VaultInviteCreateValues<false>) => setState({ view: 'invite', ...props }),
             createSharedVault: (props: VaultInviteCreateValues<true>) => setState({ view: 'invite-new', ...props }),
             manageAccess: (shareId: string) => setState({ view: 'manage', shareId }),
             onInviteResponse: () => setInvite(null),
-        }),
-        []
-    );
-
-    const contextValue = useMemo<InviteContextValue>(
-        () => ({
-            ...handles,
-            latestInvite,
             onShareDisabled: (disabledShareId: string) => {
                 const shareId = (() => {
-                    switch (state?.view) {
+                    switch (stateRef.current?.view) {
                         case 'invite':
-                            return state.vault.shareId;
+                            return stateRef.current.vault.shareId;
                         case 'manage':
-                            return state.shareId;
+                            return stateRef.current.shareId;
                         default:
                             return null;
                     }
@@ -56,9 +66,9 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
                     setState(null);
                 }
             },
-            respondToInvite: setInvite,
+            setInvite,
         }),
-        [state, latestInvite]
+        []
     );
 
     useEffect(() => {
@@ -68,28 +78,30 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
     }, [latestInvite]);
 
     return (
-        <InviteContext.Provider value={contextValue}>
-            {(() => {
-                switch (state?.view) {
-                    case 'invite':
-                        return <VaultInviteCreate withVaultCreation={false} {...state} />;
-                    case 'invite-new':
-                        return (
-                            <VaultInviteCreate
-                                withVaultCreation
-                                {...state}
-                                onVaultCreated={(selectedShareId) => setFilters({ selectedShareId })}
-                            />
-                        );
-                    case 'manage':
-                        return <VaultAccessManager shareId={state.shareId} />;
-                    default:
-                        return null;
-                }
-            })()}
+        <InviteActionsContext.Provider value={actions}>
+            <LatestInviteContext.Provider value={latestInvite}>
+                {(() => {
+                    switch (state?.view) {
+                        case 'invite':
+                            return <VaultInviteCreate withVaultCreation={false} {...state} />;
+                        case 'invite-new':
+                            return (
+                                <VaultInviteCreate
+                                    withVaultCreation
+                                    {...state}
+                                    onVaultCreated={(selectedShareId) => setFilters({ selectedShareId })}
+                                />
+                            );
+                        case 'manage':
+                            return <VaultAccessManager shareId={state.shareId} />;
+                        default:
+                            return null;
+                    }
+                })()}
 
-            {invite && <VaultInviteRespond {...invite} />}
-            {children}
-        </InviteContext.Provider>
+                {invite && <VaultInviteRespond {...invite} />}
+                {children}
+            </LatestInviteContext.Provider>
+        </InviteActionsContext.Provider>
     );
 };
