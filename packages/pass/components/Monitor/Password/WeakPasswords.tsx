@@ -1,4 +1,4 @@
-import { type FC, useEffect, useRef } from 'react';
+import { type FC, useCallback, useEffect, useRef } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import type { List } from 'react-virtualized';
 
@@ -15,7 +15,7 @@ import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectSelectedItems } from '@proton/pass/store/selectors';
-import type { SelectedItem } from '@proton/pass/types';
+import type { ItemRevision, SelectedItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 export const WeakPasswords: FC = () => {
@@ -37,6 +37,14 @@ export const WeakPasswords: FC = () => {
 
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayWeakPasswords, {}, {})([]);
 
+    const onSelect = useCallback((item: ItemRevision) => {
+        onTelemetry(TelemetryEventName.PassMonitorItemDetailFromWeakPassword, {}, {});
+        selectItem(item, {
+            inTrash: isTrashed(item),
+            prefix: 'monitor/weak',
+        });
+    }, []);
+
     return items.length > 0 ? (
         <VirtualList
             ref={listRef}
@@ -53,14 +61,7 @@ export const WeakPasswords: FC = () => {
                             id={id}
                             item={item}
                             key={id}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                onTelemetry(TelemetryEventName.PassMonitorItemDetailFromWeakPassword, {}, {});
-                                selectItem(item, {
-                                    inTrash: isTrashed(item),
-                                    prefix: 'monitor/weak',
-                                });
-                            }}
+                            onSelect={onSelect}
                         />
                     </div>
                 );

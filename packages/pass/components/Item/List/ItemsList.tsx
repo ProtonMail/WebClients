@@ -1,8 +1,9 @@
-import { type FC, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 import { BulkActions } from '@proton/pass/components/Bulk/BulkActions';
-import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
+import { useBulkEnabled } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { BulkToggle } from '@proton/pass/components/Bulk/BulkToggle';
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
@@ -18,26 +19,30 @@ import { selectIsWritableShare } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type ItemRevision } from '@proton/pass/types';
 
-export const ItemsList: FC = () => {
+export const ItemsList = memo(() => {
     const store = useStore<State>();
     const dispatch = useDispatch();
 
     const items = useItems();
     const selectedItem = useSelectedItem();
-    const bulk = useBulkSelect();
+    const bulk = useBulkActions();
+    const bulkEnabled = useBulkEnabled();
 
     const selectItem = useSelectItemAction();
     const { matchTrash } = useNavigationMatches();
     const { filters, setFilters } = useNavigationFilters();
 
-    const handleSelect = (item: ItemRevision, metaKey: boolean) => {
-        if (metaKey || bulk.enabled) {
-            if (selectIsWritableShare(item.shareId)(store.getState())) {
-                if (!bulk.enabled) bulk.enable();
-                bulk[bulk.isSelected(item) ? 'unselect' : 'select'](item);
-            }
-        } else selectItem(item, { inTrash: matchTrash });
-    };
+    const handleSelect = useCallback(
+        (item: ItemRevision, metaKey: boolean) => {
+            if (metaKey || bulkEnabled) {
+                if (selectIsWritableShare(item.shareId)(store.getState())) {
+                    if (!bulkEnabled) bulk.enable();
+                    bulk.toggle(item);
+                }
+            } else selectItem(item, { inTrash: matchTrash });
+        },
+        [bulkEnabled]
+    );
 
     const disabled = items.filtered.length === 0;
     const empty = items.totalCount === 0;
@@ -49,7 +54,7 @@ export const ItemsList: FC = () => {
             {!empty && (
                 <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto justify-space-between">
                     <div className="flex flex-1 gap-1 shrink-0 flex-nowrap">
-                        {!bulk.enabled && (
+                        {!bulkEnabled && (
                             <>
                                 <TypeFilter
                                     items={items.searched}
@@ -67,9 +72,9 @@ export const ItemsList: FC = () => {
                                 />
                             </>
                         )}
-                        {bulk.enabled && <BulkActions disabled={disabled} />}
+                        {bulkEnabled && <BulkActions disabled={disabled} />}
                     </div>
-                    <BulkToggle disabled={!bulk.enabled && disabled} />
+                    <BulkToggle disabled={!bulkEnabled && disabled} />
                 </div>
             )}
             <ItemsListBase
@@ -83,4 +88,6 @@ export const ItemsList: FC = () => {
             />
         </>
     );
-};
+});
+
+ItemsList.displayName = 'ItemsListMemo';

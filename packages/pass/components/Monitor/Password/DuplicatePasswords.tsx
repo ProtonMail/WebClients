@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo, useRef } from 'react';
+import { type FC, useCallback, useEffect, useMemo, useRef } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import type { List } from 'react-virtualized';
 
@@ -64,6 +64,14 @@ export const DuplicatePasswords: FC = () => {
 
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayReusedPasswords, {}, {})([]);
 
+    const onSelect = useCallback((item: ItemRevision) => {
+        onTelemetry(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {});
+        selectItem(item, {
+            inTrash: isTrashed(item),
+            prefix: 'monitor/duplicates',
+        });
+    }, []);
+
     return interpolation.length > 0 ? (
         <VirtualList
             interpolationIndexes={interpolationIndexes}
@@ -83,14 +91,7 @@ export const DuplicatePasswords: FC = () => {
                                     id={id}
                                     item={item}
                                     key={id}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        onTelemetry(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {});
-                                        selectItem(item, {
-                                            inTrash: isTrashed(item),
-                                            prefix: 'monitor/duplicates',
-                                        });
-                                    }}
+                                    onSelect={onSelect}
                                 />
                             </div>
                         );
