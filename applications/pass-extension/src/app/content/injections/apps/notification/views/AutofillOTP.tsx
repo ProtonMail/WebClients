@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useMemo, useRef } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
@@ -7,11 +7,12 @@ import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
-import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
+import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
+import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
+import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 import { NotificationHeader } from '../components/NotificationHeader';
@@ -19,9 +20,11 @@ import { NotificationHeader } from '../components/NotificationHeader';
 type Props = Extract<NotificationActions, { action: NotificationAction.OTP }>;
 
 export const AutofillOTP: FC<Props> = ({ item }) => {
-    const { generateOTP } = usePassCore();
     const { close, forwardMessage, visible, domain } = useIFrameContext();
-    const [otp, percent] = usePeriodicOtpCode({ generate: generateOTP, payload: { type: 'item', item } });
+
+    const payload = useMemo((): OtpRequest => ({ type: 'item', item }), [item]);
+    const otpRenderer = useRef<MaybeNull<OTPRendererHandles>>(null);
+    const otpToken = useOTPCode(payload, otpRenderer);
 
     useTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {})([visible]);
 
@@ -41,12 +44,12 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                 <div className="flex flex-nowrap items-center justify-center gap-4">
                     <div className="text-4xl max-w-4/5 text-ellipsis">
                         <span className="text-4xl">
-                            <OTPValue code={otp?.token} />
+                            <OTPValue code={otpToken} />
                         </span>
                     </div>
 
                     <div className="h-custom w-custom" style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}>
-                        <OTPDonut enabled={otp !== null} percent={percent} period={otp?.period} />
+                        <OTPDonut enabled={Boolean(otpToken)} ref={otpRenderer} />
                     </div>
                 </div>
             </div>
@@ -57,10 +60,10 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                     type="submit"
                     className="flex-auto"
                     onClick={() => {
-                        if (otp?.token) {
+                        if (otpToken) {
                             forwardMessage({
                                 type: IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
-                                payload: { code: otp.token },
+                                payload: { code: otpToken },
                             });
                             close();
                         }
