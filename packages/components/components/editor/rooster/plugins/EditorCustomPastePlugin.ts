@@ -19,11 +19,11 @@ import { EMBEDDABLE_TYPES } from '../../constants';
 class EditorCustomPastePlugin implements EditorPlugin {
     private editor: IEditor | undefined;
 
-    private onPasteImage: ((image: File) => void) | undefined;
+    private onPasteFiles: ((files: File[]) => void) | undefined;
 
-    constructor(onPasteImage: (image: File) => void) {
+    constructor(onPasteFiles: (files: File[]) => void) {
         this.editor = undefined;
-        this.onPasteImage = onPasteImage;
+        this.onPasteFiles = onPasteFiles;
     }
 
     getName() {
@@ -77,7 +77,7 @@ class EditorCustomPastePlugin implements EditorPlugin {
 
     private handlePasteImage(event: BeforePasteEvent) {
         const {
-            clipboardData: { image, rawHtml },
+            clipboardData: { image, rawHtml, files },
         } = event;
 
         /**
@@ -89,19 +89,25 @@ class EditorCustomPastePlugin implements EditorPlugin {
          * - RawHTML should be null or contain a single image
          * - Image type should contain an allowed type
          */
-        if (
+        if (files && files.length > 0) {
+            // If pasting a combination of images and files, add everything as attachments
+            if (image) {
+                event.fragment.textContent = '';
+            }
+            this.onPasteFiles?.(image ? [image, ...files] : files);
+        } else if (
             image &&
             (rawHtml === null || getPasteSource(event, true) === KnownPasteSourceType.SingleImage) &&
             EMBEDDABLE_TYPES.includes(image.type)
         ) {
             // we replace pasted content by empty string
             event.fragment.textContent = '';
-            const pasteImage = this.onPasteImage;
+            const pasteImage = this.onPasteFiles;
             if (pasteImage) {
                 this.editor?.focus();
                 // Need to wait to focus before pasting
                 setTimeout(() => {
-                    pasteImage(image);
+                    pasteImage([image]);
                 }, 0);
             }
         }

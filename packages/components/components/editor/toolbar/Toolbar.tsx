@@ -227,7 +227,7 @@ const Toolbar = ({
                             alt={c('Action').t`Clear all formatting`}
                         />
                     </ToolbarButton>
-                    {simple && metadata.supportImages && (
+                    {simple && metadata.supportFiles && (
                         <>
                             <Vr aria-hidden="true" />
                             <ToolbarButton

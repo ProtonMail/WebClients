@@ -158,7 +158,7 @@ export const RGB_REGEX = /rgb\((\d+)\s*,\s*(\d+),\s*(\d+)\)/;
 export const EMBEDDABLE_TYPES = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
 export const EDITOR_DEFAULT_METADATA: EditorMetadata = {
-    supportImages: true,
+    supportFiles: true,
     supportPlainText: false,
     supportDefaultFontSelector: false,
     isPlainText: false,
