@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { memo } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +11,7 @@ import { useNavigationMatches } from '@proton/pass/components/Navigation/Navigat
 
 type Props = { disabled?: boolean };
 
-export const BulkActions: FC<Props> = (props) => {
+export const BulkActions = memo((props: Props) => {
     const { matchTrash } = useNavigationMatches();
     const { selection, count } = useBulkSelection();
     const disabled = count === 0 || props.disabled;
@@ -73,4 +73,6 @@ export const BulkActions: FC<Props> = (props) => {
             </Button>
         </>
     );
-};
+});
+
+BulkActions.displayName = 'BulkActionsMemo';
