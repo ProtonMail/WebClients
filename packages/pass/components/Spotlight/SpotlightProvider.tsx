@@ -11,6 +11,7 @@ import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlig
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import type { UpsellRef } from '@proton/pass/constants';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -56,8 +57,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const [spotlightMessage, setSpotlightMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
 
     const timer = useRef<NodeJS.Timeout>();
-    const messageRef = useRef(state.message);
-    messageRef.current = state.message;
+    const messageRef = useStatefulRef(state.message);
 
     const closeUpselling = () => {
         state.message?.onClose?.();

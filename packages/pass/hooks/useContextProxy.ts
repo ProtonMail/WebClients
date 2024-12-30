@@ -1,5 +1,6 @@
-import { type Context, useRef } from 'react';
+import { type Context } from 'react';
 
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import type { MaybeNull } from '@proton/pass/types';
 
 import { createUseContext } from './useContextFactory';
@@ -10,8 +11,7 @@ import { createUseContext } from './useContextFactory';
  * ensuring that you always have access to the most up-to-date context data. */
 export const useContextProxy = <T extends {}>(context: Context<MaybeNull<T>>) => {
     const ctx = createUseContext(context)();
-    const ref = useRef(ctx);
-    ref.current = ctx;
+    const ref = useStatefulRef(ctx);
 
     return new Proxy<T>({} as T, {
         get: (_, prop) => ref.current[prop as keyof T],
