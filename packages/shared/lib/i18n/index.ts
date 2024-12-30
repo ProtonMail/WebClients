@@ -1,3 +1,4 @@
+import type { DateFormatOptions } from '../interfaces/Locale';
 import { enUSLocale } from './dateFnLocales';
 
 /**
@@ -12,6 +13,7 @@ export let dateLocaleCode = 'en_US';
 export let browserLocaleCode = 'en_US';
 export let localeCode = 'en_US';
 export let languageCode = 'en';
+export let dateFormatOptions: DateFormatOptions | undefined;
 
 export const setLocales = ({
     localeCode: newLocaleCode = localeCode,
@@ -27,10 +29,12 @@ export const setDateLocales = ({
     browserLocaleCode: newBrowserLocaleCode = browserLocaleCode,
     dateLocale: newDateLocale = dateLocale,
     dateLocaleCode: newDateLocaleCode = dateLocaleCode,
+    dateFormatOptions: newDateFormatOptions = dateFormatOptions,
 }) => {
     defaultDateLocale = newDefaultDateLocale;
     browserDateLocale = newBrowserDateLocale;
     browserLocaleCode = newBrowserLocaleCode;
     dateLocale = newDateLocale;
     dateLocaleCode = newDateLocaleCode;
+    dateFormatOptions = newDateFormatOptions;
 };
