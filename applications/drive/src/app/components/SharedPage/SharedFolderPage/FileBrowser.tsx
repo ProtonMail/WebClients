@@ -13,10 +13,10 @@ import { DrivePublicContextMenu } from '../../sections/DrivePublic/DrivePublicCo
 import { getSelectedItems } from '../../sections/helpers';
 import type { PublicLink } from '../interface';
 import {
-    contentCellsLargeScreen,
-    contentCellsSmallScreen,
-    headerCellsLargeScreen,
-    headerCellsSmallScreen,
+    getContentLargeScreen,
+    getContentSmallScreen,
+    getHeaderLargeScreen,
+    getHeaderSmallScreen,
 } from './CellComponents';
 import { EmptyPlaceholder } from './EmptyPlaceholder';
 
@@ -65,8 +65,8 @@ export function SharedFileBrowser({
 
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
 
-    const contentCells = viewportWidth['<=small'] ? contentCellsSmallScreen : contentCellsLargeScreen;
-    const headerCells = viewportWidth['<=small'] ? headerCellsSmallScreen : headerCellsLargeScreen;
+    const headerCells = viewportWidth['<=small'] ? getHeaderSmallScreen() : getHeaderLargeScreen(canWrite);
+    const contentCells = viewportWidth['<=small'] ? getContentSmallScreen() : getContentLargeScreen(canWrite);
 
     const classname = clsx([
         'flex flex-column flex-nowrap shared-url-file-browser',
