@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useEffect } from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { matchPath, useHistory } from 'react-router-dom';
 
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
@@ -52,8 +52,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const checkConnectivity = useCheckConnectivity();
     const enhance = useNotificationEnhancer();
 
-    const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
-
     const authService = useInstance(() =>
         createAuthService({
             app,
@@ -81,7 +79,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const localState = sessionStorage.getItem(getStateKey(state));
 
         const run = async () => {
-            if (matchConsumeFork) {
+            if (matchPath(history.location.pathname, SSO_PATHS.FORK)) {
                 return authService.consumeFork({
                     mode: 'sso',
                     key,
