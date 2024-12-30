@@ -37,10 +37,13 @@ export default class ConcurrentIterator {
 
     private fileControlers: Map<string, DownloadStreamControls>;
 
+    private hasBeenScanned: boolean;
+
     constructor() {
         this.paused = false;
         this.canceled = false;
         this.fileControlers = new Map();
+        this.hasBeenScanned = false;
     }
 
     async *iterate(
@@ -71,12 +74,16 @@ export default class ConcurrentIterator {
                         onProgress: (linkIds: string[], bytes: number) => {
                             callbacks.onProgress?.([...link.parentLinkIds, ...linkIds], bytes);
                         },
+                        onScanIssue: async (...props) => {
+                            await callbacks.onScanIssue?.(...props);
+                            this.hasBeenScanned = true;
+                        },
                         onFinish: () => {
                             this.fileControlers.delete(uniqueId);
                         },
                     },
                     log,
-                    options
+                    { ...options, virusScan: this.hasBeenScanned ? false : options?.virusScan }
                 );
                 this.fileControlers.set(uniqueId, controls);
 
