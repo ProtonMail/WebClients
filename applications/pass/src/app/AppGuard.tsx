@@ -1,6 +1,5 @@
 import { type FC, useCallback, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -43,22 +42,17 @@ export const AppGuard: FC = () => {
 
     return (
         <>
-            <Route
-                path="*"
-                render={() =>
-                    state.booted ? (
-                        <LockProbeProvider onProbe={handleProbe}>
-                            <PasswordUnlockProvider>
-                                <PinUnlockProvider>
-                                    <Main />
-                                </PinUnlockProvider>
-                            </PasswordUnlockProvider>
-                        </LockProbeProvider>
-                    ) : (
-                        <PublicSwitch />
-                    )
-                }
-            />
+            {state.booted ? (
+                <LockProbeProvider onProbe={handleProbe}>
+                    <PasswordUnlockProvider>
+                        <PinUnlockProvider>
+                            <Main />
+                        </PinUnlockProvider>
+                    </PasswordUnlockProvider>
+                </LockProbeProvider>
+            ) : (
+                <PublicSwitch />
+            )}
 
             {online && updateAvailable && (
                 <BottomBar
