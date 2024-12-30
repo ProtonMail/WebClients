@@ -204,7 +204,7 @@ export const AutoReplySection = () => {
                             <SettingsLayoutRight>
                                 <div ref={composerRef} tabIndex={-1} className="w-full">
                                     <Editor
-                                        metadata={{ supportImages: false }}
+                                        metadata={{ supportFiles: false }}
                                         onReady={handleEditorReady}
                                         onChange={updateModel('message')}
                                         simple
