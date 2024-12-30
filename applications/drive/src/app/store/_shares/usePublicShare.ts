@@ -2,6 +2,7 @@ import { useApi } from '@proton/components';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 
+import usePublicToken from '../../hooks/drive/usePublicToken';
 import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
 import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
@@ -11,9 +12,10 @@ import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
  */
 export default function usePublicShare() {
     const api = useApi();
+    const { token } = usePublicToken();
     const { user, request, getSessionInfo } = usePublicSession();
     const { decryptPublicShareLink } = useDecryptPublicShareLink();
-    const { getLinkPassphraseAndSessionKey } = useLink();
+    const { getLinkPassphraseAndSessionKey, getLink } = useLink();
 
     const loadPublicShare = async (abortSignal: AbortSignal) => {
         const sessionInfo = getSessionInfo();
@@ -65,9 +67,37 @@ export default function usePublicShare() {
         );
     };
 
+    const getVirusReportInfo = async ({
+        linkId,
+        errorMessage,
+        rootLinkId,
+    }: {
+        linkId?: string;
+        errorMessage?: string;
+        rootLinkId: string;
+    }) => {
+        // Fallback to rootLink if we don't have linkId (Multiple download as zip)
+        const link = await getLink(new AbortController().signal, token, linkId || rootLinkId);
+        let comment = `File "${link.name}" is detected as potential malware.`;
+        if (errorMessage) {
+            comment = `${comment} Message from scanning is "${errorMessage}"`;
+        }
+
+        return {
+            linkInfo: {
+                linkId: link.linkId,
+                name: link.name,
+                mimeType: link.mimeType,
+                size: link.size,
+            },
+            comment,
+        };
+    };
+
     return {
         loadPublicShare,
         submitAbuseReport,
+        getVirusReportInfo,
         user,
     };
 }
