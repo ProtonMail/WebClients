@@ -1,12 +1,14 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { pick } from '@proton/shared/lib/helpers/object';
+
 import { DEFAULT_LOCALE } from '../constants';
-import type { TtagLocaleMap } from '../interfaces/Locale';
-import type { Options } from './dateFnLocale';
+import type { DateFormatOptions, TtagLocaleMap } from '../interfaces/Locale';
 import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
 import dateFnLocales, { getDateFnLocale } from './dateFnLocales';
 import { getBrowserLocale, getClosestLocaleCode, getLangAttribute, getLanguageCode } from './helper';
-import { browserLocaleCode, dateLocaleCode, localeCode, setDateLocales, setLocales } from './index';
+import { browserLocaleCode, dateFormatOptions, dateLocaleCode, localeCode, setDateLocales, setLocales } from './index';
 
 export const willLoadLocale = (localeCode: string) => {
     return localeCode !== DEFAULT_LOCALE;
@@ -35,7 +37,19 @@ export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => 
     }
 };
 
-export const loadDateLocale = async (localeCode: string, browserLocaleCode?: string, options?: Options) => {
+// Pick these keys to ensure that the complete user settings object isn't stored.
+export const getPickedDateFormatOptions = (dateFormatOptions: DateFormatOptions | undefined) => {
+    if (!dateFormatOptions) {
+        return;
+    }
+    return pick(dateFormatOptions, ['TimeFormat', 'DateFormat', 'WeekStart']);
+};
+
+export const loadDateLocale = async (
+    localeCode: string,
+    browserLocaleCode?: string,
+    dateFormatOptions?: DateFormatOptions
+) => {
     const closestLocaleCode = getClosestLocaleCode(localeCode, dateFnLocales);
     const closestBrowserLocaleCode = getClosestLocaleCode(browserLocaleCode, dateFnLocales);
     const [dateFnLocale, browserDateFnLocale] = await Promise.all([
@@ -43,7 +57,9 @@ export const loadDateLocale = async (localeCode: string, browserLocaleCode?: str
         getDateFnLocale(closestBrowserLocaleCode),
     ]);
     const mergedDateLocale = getDateFnLocaleWithLongFormat(dateFnLocale, browserDateFnLocale);
-    const updatedDateFnLocale = getDateFnLocaleWithSettings(mergedDateLocale, options);
+    // This function is also called outside of `loadLocales` so recalling it.
+    const pickedDateFormatOptions = getPickedDateFormatOptions(dateFormatOptions);
+    const updatedDateFnLocale = getDateFnLocaleWithSettings(mergedDateLocale, pickedDateFormatOptions);
 
     setDateLocales({
         defaultDateLocale: dateFnLocale,
@@ -51,6 +67,7 @@ export const loadDateLocale = async (localeCode: string, browserLocaleCode?: str
         browserLocaleCode: closestBrowserLocaleCode,
         dateLocale: updatedDateFnLocale,
         dateLocaleCode: closestLocaleCode,
+        dateFormatOptions: pickedDateFormatOptions,
     });
 
     return updatedDateFnLocale;
@@ -65,7 +82,7 @@ export const loadLocales = async ({
     locale: string;
     browserLocaleCode?: string;
     locales: TtagLocaleMap;
-    userSettings: Options | undefined;
+    userSettings: DateFormatOptions | undefined;
 }) => {
     const promises: Promise<any>[] = [];
 
@@ -76,8 +93,11 @@ export const loadLocales = async ({
 
     const closestDateFnLocaleCode = getClosestLocaleCode(closestLocaleCode, dateFnLocales);
     const closestBrowserLocaleCode = getClosestLocaleCode(newBrowserLocaleCode, dateFnLocales);
-    if (dateLocaleCode !== closestDateFnLocaleCode || browserLocaleCode !== closestBrowserLocaleCode) {
-        promises.push(loadDateLocale(closestLocaleCode, closestBrowserLocaleCode, userSettings));
+    // Picking this just to ensure that the whole user settings object isn't stored
+    const pickedDateFormatOptions = getPickedDateFormatOptions(userSettings);
+    const settingsDiff = !isDeepEqual(pickedDateFormatOptions, dateFormatOptions);
+    if (dateLocaleCode !== closestDateFnLocaleCode || browserLocaleCode !== closestBrowserLocaleCode || settingsDiff) {
+        promises.push(loadDateLocale(closestLocaleCode, closestBrowserLocaleCode, pickedDateFormatOptions));
     }
 
     await Promise.all(promises);

@@ -1,6 +1,6 @@
 import type { Locale } from 'date-fns';
 
-import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces';
+import { type DateFormatOptions, SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces';
 import { enGBLocale, enUSLocale, faIRLocale } from './dateFnLocales';
 
 // Support for changing the date format is not great. Hide it for now.
@@ -30,12 +30,6 @@ export const getDateFnLocaleWithLongFormat = (a: Locale, b: Locale): Locale => {
         },
     };
 };
-
-export interface Options {
-    TimeFormat: SETTINGS_TIME_FORMAT;
-    DateFormat: SETTINGS_DATE_FORMAT;
-    WeekStart: SETTINGS_WEEK_START;
-}
 
 export const getIsLocaleAMPM = (locale: Locale) => locale.formatLong?.time().includes('a');
 
@@ -82,7 +76,7 @@ export const getDateFnLocaleWithSettings = (
         TimeFormat = SETTINGS_TIME_FORMAT.LOCALE_DEFAULT,
         DateFormat = SETTINGS_DATE_FORMAT.LOCALE_DEFAULT,
         WeekStart = SETTINGS_WEEK_START.LOCALE_DEFAULT,
-    }: Partial<Options> = {}
+    }: Partial<DateFormatOptions> = {}
 ) => {
     let copy: Locale = {
         ...locale,
