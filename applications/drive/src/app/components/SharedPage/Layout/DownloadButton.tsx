@@ -23,14 +23,14 @@ import { useScanAndDownloadInfoModal } from './ScanAndDownloadInfoModal';
 import { useDownloadNotifications } from './useDownloadNotifications';
 
 export interface DownloadButtonProps {
-    rootItem: DecryptedLink;
+    rootLink: DecryptedLink;
     items: PublicLink[];
     className?: string;
     color?: ThemeColorUnion;
     disabled?: boolean;
 }
 
-export function DownloadButton({ items, rootItem, disabled }: DownloadButtonProps) {
+export function DownloadButton({ items, rootLink, disabled }: DownloadButtonProps) {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLDivElement>();
     const { token } = usePublicToken();
     const selectionControls = useSelection();
@@ -50,7 +50,7 @@ export function DownloadButton({ items, rootItem, disabled }: DownloadButtonProp
 
         const downloadLinks = selectedItems.length
             ? selectedItems.map((link) => ({ ...link, shareId: token }))
-            : [{ ...rootItem, shareId: token }];
+            : [{ ...rootLink, shareId: token }];
 
         void download(downloadLinks, options);
     };

@@ -48,9 +48,9 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
         queue.updateWithData,
         control.cancelDownloads
     );
-    const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
     const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
+    const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
     /**
      * download should be considered as main entry point for download files
      * in Drive app. It does all necessary checks, such as checking if the

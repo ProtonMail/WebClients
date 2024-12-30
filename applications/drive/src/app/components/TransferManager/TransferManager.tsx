@@ -37,12 +37,13 @@ const MAX_VISIBLE_TRANSFERS_SMALL_SCREEN = 3;
 type ListItemData = {
     entries: (TransferListEntry<TransferType.Download> | TransferListEntry<TransferType.Upload>)[];
     stats: TransfersStats;
+    onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
 };
 
 type ListItemRowProps = Omit<ListChildComponentProps, 'data'> & { data: ListItemData };
 
 const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
-    const { stats, entries } = data;
+    const { stats, entries, onVirusReport } = data;
     const { transfer, type } = entries[index];
 
     return (
@@ -50,6 +51,7 @@ const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
             style={style}
             transfer={transfer}
             type={type}
+            onVirusReport={onVirusReport}
             stats={{
                 progress: stats[transfer.id]?.progress ?? 0,
                 speed: stats[transfer.id]?.averageSpeed ?? 0,
@@ -74,6 +76,7 @@ const TransferManager = ({
     onClear,
     hasActiveTransfer,
     numberOfFailedTransfer,
+    onVirusReport,
 }: {
     downloads: Download[];
     uploads: Upload[];
@@ -85,6 +88,7 @@ const TransferManager = ({
         downloads: number;
         uploads: number;
     };
+    onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
 }) => {
     const transferManagerControls = useTransferControls();
 
@@ -250,6 +254,7 @@ const TransferManager = ({
                         itemData={{
                             entries,
                             stats,
+                            onVirusReport,
                         }}
                         itemCount={entries.length}
                         itemSize={ROW_HEIGHT_PX}
@@ -332,7 +337,11 @@ const TransferManager = ({
  * list element will be *always* present in DOM for correct transfer manager list
  * width calculation.
  */
-const TransferManagerContainer = () => {
+const TransferManagerContainer = ({
+    onVirusReport,
+}: {
+    onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
+}) => {
     const { downloads, uploads, hasActiveTransfer, numberOfFailedTransfer, stats, clearAllTransfers } =
         useTransfersView();
 
@@ -348,6 +357,7 @@ const TransferManagerContainer = () => {
             onClear={clearAllTransfers}
             hasActiveTransfer={hasActiveTransfer}
             numberOfFailedTransfer={numberOfFailedTransfer}
+            onVirusReport={onVirusReport}
         />
     );
 };
