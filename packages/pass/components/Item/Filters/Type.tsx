@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -44,7 +44,7 @@ export const getItemTypeOptions = (): Record<ItemTypeFilter, { label: string; ic
     },
 });
 
-export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
+export const TypeFilter = memo(({ items, value, onChange }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     const options = useMemo(
@@ -99,4 +99,6 @@ export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
             </Dropdown>
         </>
     );
-};
+});
+
+TypeFilter.displayName = 'TypeFilterMemo';
