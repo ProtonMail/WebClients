@@ -1,77 +1,54 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { FileIcon, Icon, TableCell, useActiveBreakpoint } from '@proton/components';
+import { Avatar, Button } from '@proton/atoms';
+import { FileIcon, Icon, TableCell } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import { useDownload, useDownloadScanFlag } from '../../../store';
 import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { Cells, HeaderCellsPresets } from '../../FileBrowser';
+import { ContextMenuCell } from '../../FileBrowser/ListView/Cells';
+import headerCells from '../../sections/FileBrowser/headerCells';
 import { getLinkIconText } from '../../sections/FileBrowser/utils';
 import type { PublicLink } from '../interface';
 
-export const headerCellsLargeScreen = [
-    {
-        type: HeaderCellsPresets.Checkbox,
-    },
-    {
-        type: 'name',
-        getText: () => c('Label').t`Name`,
-        sorting: true,
-    },
-    {
-        type: 'size',
-        getText: () => c('Label').t`Size`,
-        props: {
-            className: 'w-custom text-right',
-            style: { '--w-custom': '11em' },
+export function getHeaderLargeScreen(canWrite: boolean) {
+    return [
+        headerCells.checkbox,
+        headerCells.name,
+        ...(canWrite ? [headerCells.uploadedBy] : []),
+        headerCells.size,
+        {
+            type: HeaderCellsPresets.Placeholder,
+            props: {
+                className: 'w-1/6',
+            },
         },
-        sorting: true,
-    },
-    {
-        type: HeaderCellsPresets.Placeholder,
-        props: {
-            className: 'w-custom',
-            style: { '--w-custom': '23vw' },
-        },
-    },
-];
+        headerCells.placeholder,
+    ];
+}
 
-export const headerCellsSmallScreen = [
-    {
-        type: HeaderCellsPresets.Checkbox,
-    },
-    {
-        type: 'name',
-        getText: () => c('Label').t`Name`,
-        sorting: true,
-    },
-    {
-        type: 'size',
-        getText: () => c('Label').t`Size`,
-        props: {
-            className: 'w-custom text-right',
-            style: { '--w-custom': '11em' },
-        },
-        sorting: true,
-    },
-    {
-        type: HeaderCellsPresets.Placeholder,
-        props: {
-            className: 'w-custom',
-            style: { '--w-custom': '2.75em' },
-        },
-    },
-];
-export const contentCellsLargeScreen: React.FC<{ item: PublicLink }>[] = [
-    Cells.CheckboxCell,
-    NameCell,
-    SizeCell,
-    DownloadCell,
-];
-export const contentCellsSmallScreen = contentCellsLargeScreen.slice(0, -1);
+export function getHeaderSmallScreen() {
+    return [headerCells.checkbox, headerCells.name, headerCells.placeholder];
+}
+
+export function getContentLargeScreen(canWrite: boolean): React.FC<{ item: PublicLink }>[] {
+    return [
+        Cells.CheckboxCell,
+        NameCell,
+        ...(canWrite ? [UploadedByCell] : []),
+        SizeCell,
+        DownloadCell,
+        ContextMenuCell,
+    ];
+}
+
+export function getContentSmallScreen(): React.FC<{ item: PublicLink }>[] {
+    return [Cells.CheckboxCell, NameCell, ContextMenuCell];
+}
 
 function NameCell({ item }: { item: PublicLink }) {
     const iconText = getLinkIconText({
@@ -96,17 +73,31 @@ function NameCell({ item }: { item: PublicLink }) {
     );
 }
 
-function SizeCell({ item }: { item: PublicLink }) {
-    const { viewportWidth } = useActiveBreakpoint();
+function UploadedByCell({ item }: { item: PublicLink }) {
+    const email = item.signatureEmail;
+    return (
+        <TableCell className="flex flex-nowrap items-center m-0 w-1/5 color-weak" data-testid="column-shared-by">
+            <Avatar
+                color="weak"
+                className="mr-2 min-w-custom max-w-custom max-h-custom"
+                style={{
+                    '--min-w-custom': '1.75rem',
+                    '--max-w-custom': '1.75rem',
+                    '--max-h-custom': '1.75rem',
+                }}
+            >
+                {email ? getInitials(email) : <Icon name="alias" className="color-weak" />}
+            </Avatar>
+            <span className="text-ellipsis hidden lg:inline">{email || c('Info').t`Anonymous`}</span>
+        </TableCell>
+    );
+}
 
+function SizeCell({ item }: { item: PublicLink }) {
     if (item.progress) {
         return (
-            <TableCell
-                className="m-0 w-custom flex flex-nowrap justify-end items-center"
-                style={{ '--w-custom': '11em' }}
-                data-testid="column-size"
-            >
-                {!viewportWidth['<=small'] && item.progress.progress > 0 && (
+            <TableCell className="m-0 flex flex-nowrap items-center w-1/10" data-testid="column-size">
+                {item.progress.progress > 0 && (
                     <>
                         <Cells.SizeCell size={item.progress.progress} className="pr-11 md:pr-0" />/
                     </>
@@ -120,14 +111,8 @@ function SizeCell({ item }: { item: PublicLink }) {
         );
     }
 
-    const styleValue = viewportWidth['<=small'] ? '6em' : '11em';
-
     return (
-        <TableCell
-            className="m-0 flex flex-nowrap md:justify-end w-custom"
-            style={{ '--w-custom': styleValue }}
-            data-testid="column-size"
-        >
+        <TableCell className="m-0 flex flex-nowrap w-1/10" data-testid="column-size">
             {item.isFile ? (
                 <Cells.SizeCell size={item.size} className="pr-11 md:pr-0" />
             ) : (
@@ -162,8 +147,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap file-browser-list--icon-column w-custom"
-            style={{ '--w-custom': '23vw' }}
+            className="m-0 flex flex-nowrap justify-end file-browser-list--icon-column w-1/6"
             data-testid="column-size"
         >
             {hideDownload ? null : (
@@ -176,7 +160,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
                     disabled={isAnyInProgress && !isCurrentInProgress}
                 >
                     <span>{c('Action').t`Download`}</span>
-                    {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml-2" /> : null}
+                    {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml-2 md:hidden lg:inline" /> : null}
                 </Button>
             )}
         </TableCell>

@@ -100,6 +100,7 @@ export const useDecryptPublicShareLink = () => {
             nodeHashKey: shareUrlInfo.NodeHashKey ?? undefined,
             nodePassphrase: shareUrlInfo.NodePassphrase,
             contentKeyPacket: shareUrlInfo.ContentKeyPacket,
+            signatureEmail: shareUrlInfo.SignatureEmail,
             rootShareId: token,
             xAttr: '',
             hash: '',
