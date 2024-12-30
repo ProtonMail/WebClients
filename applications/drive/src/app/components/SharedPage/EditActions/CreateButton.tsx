@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/index';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components/index';
 
-import { useDocumentActions, usePublicActions } from '../../../store';
+import { usePublicActions } from '../../../store';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 
 interface Props {
@@ -15,7 +15,6 @@ export const CreateButton = ({ token, linkId }: Props) => {
     const { createFolder } = usePublicActions();
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { createDocument } = useDocumentActions();
 
     return (
         <>
@@ -52,19 +51,6 @@ export const CreateButton = ({ token, linkId }: Props) => {
                     >
                         <Icon name="folder-plus" className="mr-2" />
                         {c('Action').t`New folder`}
-                    </DropdownMenuButton>
-                    <DropdownMenuButton
-                        className="text-left"
-                        onClick={() =>
-                            createDocument({
-                                shareId: token,
-                                parentLinkId: linkId,
-                            })
-                        }
-                        data-testid="download-button"
-                    >
-                        <Icon name="brand-proton-docs" className="mr-2" />
-                        {c('Action').t`New document`}
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
