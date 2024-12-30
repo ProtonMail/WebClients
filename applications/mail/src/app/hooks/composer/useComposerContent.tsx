@@ -228,7 +228,7 @@ export const useComposerContent = (args: EditorArgs) => {
             isPlainText,
             supportRightToLeft: true,
             rightToLeft,
-            supportImages: true,
+            supportFiles: true,
             supportDefaultFontSelector: true,
             blockquoteExpanded,
             setBlockquoteExpanded,
