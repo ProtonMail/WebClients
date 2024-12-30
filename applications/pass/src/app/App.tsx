@@ -1,4 +1,4 @@
-import { Router } from 'react-router-dom';
+import { Router, matchPath } from 'react-router-dom';
 
 import * as config from 'proton-pass-web/app/config';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
@@ -31,8 +31,9 @@ import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCor
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
+import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
+import { UnauthorizedRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
@@ -113,7 +114,14 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         },
 
         getLogs: logStore.read,
-        getTheme: getInitialTheme,
+
+        /** UnauthorizedRoutes should stay in PassDark mode */
+        getTheme: async () => {
+            const { pathname } = window.location;
+            if (matchPath(pathname, UnauthorizedRoutes.SecureLink)) return PassThemeOption.PassDark;
+
+            return getInitialTheme();
+        },
 
         onLink: (url, options) => window.open(url, options?.replace ? '_self' : '_blank'),
         onTelemetry: pipe(createTelemetryEvent, telemetry.push),
