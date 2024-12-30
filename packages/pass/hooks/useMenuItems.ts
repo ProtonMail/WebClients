@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
@@ -34,57 +35,60 @@ export const useMenuItems = ({
     const { openSettings } = usePassCore();
     const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
-    const withAction = withTap(onAction);
 
-    return {
-        feedback: [
-            {
-                icon: 'paper-plane',
-                label: c('Action').t`Send us a message`,
-                onClick: withAction(() => openSettings?.('support')),
-            },
-            {
-                icon: 'brand-twitter',
-                label: c('Action').t`Write us on Twitter`,
-                url: PASS_X_URL,
-            },
-            {
-                icon: 'brand-reddit',
-                label: c('Action').t`Write us on Reddit`,
-                url: PASS_REDDIT_URL,
-            },
-            {
-                icon: 'rocket',
-                label: c('Action').t`Request a feature`,
-                url: PASS_REQUEST_URL,
-            },
-            ...(extra.feedback ?? []),
-        ],
-        download: [
-            {
-                icon: 'brand-android',
-                label: c('Action').t`Pass for Android`,
-                url: PASS_ANDROID_URL,
-            },
-            {
-                icon: 'brand-apple',
-                label: c('Action').t`Pass for iOS`,
-                url: PASS_IOS_URL,
-            },
-            ...(extra.download ?? []),
-        ],
-        advanced: [
-            {
-                icon: 'key-history',
-                label: c('Action').t`Generated passwords`,
-                onClick: withAction(passwordContext.history.open),
-            },
-            {
-                icon: 'arrow-rotate-right',
-                label: c('Action').t`Manually sync your data`,
-                onClick: withAction(() => dispatch(syncIntent(SyncType.FULL))),
-            },
-            ...(extra.advanced ?? []),
-        ],
-    };
+    return useMemo(() => {
+        const withAction = withTap(onAction);
+
+        return {
+            feedback: [
+                {
+                    icon: 'paper-plane',
+                    label: c('Action').t`Send us a message`,
+                    onClick: withAction(() => openSettings?.('support')),
+                },
+                {
+                    icon: 'brand-twitter',
+                    label: c('Action').t`Write us on Twitter`,
+                    url: PASS_X_URL,
+                },
+                {
+                    icon: 'brand-reddit',
+                    label: c('Action').t`Write us on Reddit`,
+                    url: PASS_REDDIT_URL,
+                },
+                {
+                    icon: 'rocket',
+                    label: c('Action').t`Request a feature`,
+                    url: PASS_REQUEST_URL,
+                },
+                ...(extra.feedback ?? []),
+            ],
+            download: [
+                {
+                    icon: 'brand-android',
+                    label: c('Action').t`Pass for Android`,
+                    url: PASS_ANDROID_URL,
+                },
+                {
+                    icon: 'brand-apple',
+                    label: c('Action').t`Pass for iOS`,
+                    url: PASS_IOS_URL,
+                },
+                ...(extra.download ?? []),
+            ],
+            advanced: [
+                {
+                    icon: 'key-history',
+                    label: c('Action').t`Generated passwords`,
+                    onClick: withAction(passwordContext.history.open),
+                },
+                {
+                    icon: 'arrow-rotate-right',
+                    label: c('Action').t`Manually sync your data`,
+                    onClick: withAction(() => dispatch(syncIntent(SyncType.FULL))),
+                },
+                ...(extra.advanced ?? []),
+            ],
+        };
+    }, [onAction, passwordContext.history.open]);
 };
