@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,7 @@ import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 type Props = { disabled?: boolean };
 
-export const BulkToggle: FC<Props> = ({ disabled }) => {
+export const BulkToggle = memo(({ disabled }: Props) => {
     const bulk = useBulkActions();
     const bulkEnabled = useBulkEnabled();
 
@@ -46,4 +46,6 @@ export const BulkToggle: FC<Props> = ({ disabled }) => {
             </Button>
         </Tooltip>
     );
-};
+});
+
+BulkToggle.displayName = 'BulkToggleMemo';
