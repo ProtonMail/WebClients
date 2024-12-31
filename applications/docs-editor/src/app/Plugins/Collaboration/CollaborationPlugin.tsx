@@ -22,6 +22,7 @@ type Props = {
   shouldBootstrap: boolean
   onLoadResult: EditorLoadResult
   editorInitializationConfig: EditorInitializationConfig | undefined
+  additionalAwarenessData?: object
 }
 
 export function CollaborationPlugin({
@@ -29,6 +30,7 @@ export function CollaborationPlugin({
   providerFactory,
   onLoadResult,
   editorInitializationConfig,
+  additionalAwarenessData,
 }: Props): JSX.Element {
   const collabContext = useCollaborationContext()
 
@@ -59,6 +61,7 @@ export function CollaborationPlugin({
     color,
     onLoadResult,
     editorInitializationConfig,
+    additionalAwarenessData,
   )
 
   collabContext.clientID = binding.clientID

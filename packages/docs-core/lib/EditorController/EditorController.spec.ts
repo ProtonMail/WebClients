@@ -89,7 +89,6 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).toHaveBeenCalled()
-      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
     })
 
     it('should show editor when realtime is ready to broadcast', () => {
@@ -100,7 +99,6 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).toHaveBeenCalled()
-      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
     })
 
     it('should show editor when realtime connection has timed out', () => {
@@ -111,7 +109,6 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).toHaveBeenCalled()
-      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
     })
 
     it('should not show editor when realtime is enabled but not ready and not timed out', () => {
@@ -122,7 +119,6 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).not.toHaveBeenCalled()
-      expect(editorInvoker.performOpeningCeremony).not.toHaveBeenCalled()
     })
 
     it('should emit EditorIsReadyToBeShown event when editor is shown', () => {
@@ -351,7 +347,6 @@ describe('EditorController', () => {
     it('should show editor when realtimeReadyToBroadcast becomes true', () => {
       sharedState.setProperty('realtimeReadyToBroadcast', true)
       expect(editorInvoker.showEditor).toHaveBeenCalled()
-      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
     })
 
     it('should send base commit to editor when baseCommit changes', () => {
@@ -704,6 +699,51 @@ describe('EditorController', () => {
       })
 
       expect(editorInvoker.broadcastPresenceState).toHaveBeenCalled()
+    })
+  })
+
+  describe('opening ceremony', () => {
+    beforeEach(() => {
+      controller.receiveEditor(editorInvoker)
+    })
+
+    it('should perform opening ceremony when realtimeReadyToBroadcast becomes true and editor is initialized', () => {
+      sharedState.setProperty('editorInitialized', true)
+      sharedState.setProperty('realtimeReadyToBroadcast', true)
+
+      expect(logger.info).toHaveBeenCalledWith('Performing opening ceremony after realtimeReadyToBroadcast')
+      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
+    })
+
+    it('should perform opening ceremony when editor becomes initialized and realtime is ready', () => {
+      sharedState.setProperty('realtimeReadyToBroadcast', true)
+      sharedState.setProperty('editorInitialized', true)
+
+      expect(logger.info).toHaveBeenCalledWith('Performing opening ceremony after editorInitialized')
+      expect(editorInvoker.performOpeningCeremony).toHaveBeenCalled()
+    })
+
+    it('should not perform opening ceremony when realtimeReadyToBroadcast is true but editor is not initialized', () => {
+      sharedState.setProperty('editorInitialized', false)
+      sharedState.setProperty('realtimeReadyToBroadcast', true)
+
+      expect(editorInvoker.performOpeningCeremony).not.toHaveBeenCalled()
+    })
+
+    it('should not perform opening ceremony when editor is initialized but realtime is not ready', () => {
+      sharedState.setProperty('editorInitialized', true)
+      sharedState.setProperty('realtimeReadyToBroadcast', false)
+
+      expect(editorInvoker.performOpeningCeremony).not.toHaveBeenCalled()
+    })
+
+    it('should not perform opening ceremony when editor invoker is not set', () => {
+      controller.editorInvoker = undefined
+
+      sharedState.setProperty('editorInitialized', true)
+      sharedState.setProperty('realtimeReadyToBroadcast', true)
+
+      expect(editorInvoker.performOpeningCeremony).not.toHaveBeenCalled()
     })
   })
 })

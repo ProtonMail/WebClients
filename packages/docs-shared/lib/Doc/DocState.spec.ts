@@ -76,6 +76,8 @@ describe('DocState', () => {
 
   describe('handleAwarenessUpdateOrChange', () => {
     it('should invoke removeDuplicateClients', () => {
+      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as DocsUserState]]))
+
       const removeDuplicateClientsSpy = jest.spyOn(state.awareness, 'removeDuplicateClients')
 
       state.handleAwarenessUpdateOrChange(EmptyAwarenessUpdate, {})
@@ -84,6 +86,8 @@ describe('DocState', () => {
     })
 
     it('should notify callbacks about the change', () => {
+      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as DocsUserState]]))
+
       const callbackSpy = jest.spyOn(state.callbacks, 'handleAwarenessStateUpdate')
 
       state.handleAwarenessUpdateOrChange(EmptyAwarenessUpdate, {})

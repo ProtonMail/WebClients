@@ -1,4 +1,5 @@
 import type { LoggerInterface } from '@proton/utils/logs'
+import type { EditorInitializationConfig } from '@proton/docs-shared'
 import {
   DocUpdateOrigin,
   type ClientRequiresEditorMethods,
@@ -24,10 +25,11 @@ export interface EditorControllerInterface {
   restoreRevisionByReplacing(lexicalState: SerializedEditorState): Promise<void>
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
+  initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void
 }
 
 export class EditorController implements EditorControllerInterface {
-  private editorInvoker?: ClientRequiresEditorMethods
+  editorInvoker?: ClientRequiresEditorMethods
 
   constructor(
     private readonly logger: LoggerInterface,
@@ -37,6 +39,20 @@ export class EditorController implements EditorControllerInterface {
     documentState.subscribeToProperty('realtimeReadyToBroadcast', (value) => {
       if (this.editorInvoker && value) {
         this.showEditorForTheFirstTime()
+
+        const editorInitialized = this.documentState.getProperty('editorInitialized')
+        if (editorInitialized) {
+          this.logger.info('Performing opening ceremony after realtimeReadyToBroadcast')
+          void this.editorInvoker.performOpeningCeremony()
+        }
+      }
+    })
+
+    documentState.subscribeToProperty('editorInitialized', (value) => {
+      const realtimeReadyToBroadcast = this.documentState.getProperty('realtimeReadyToBroadcast')
+      if (this.editorInvoker && value && realtimeReadyToBroadcast) {
+        this.logger.info('Performing opening ceremony after editorInitialized')
+        void this.editorInvoker.performOpeningCeremony()
       }
     })
 
@@ -114,6 +130,23 @@ export class EditorController implements EditorControllerInterface {
     })
   }
 
+  initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    const docMeta = this.documentState.getProperty('documentMeta')
+
+    void this.editorInvoker.initializeEditor(
+      docMeta.uniqueIdentifier,
+      userAddress,
+      this.documentState.getProperty('userRole').roleType,
+      editorInitializationConfig,
+    )
+
+    this.documentState.setProperty('editorInitialized', true)
+  }
+
   receiveEditor(editorInvoker: ClientRequiresEditorMethods): void {
     this.editorInvoker = editorInvoker
 
@@ -148,7 +181,6 @@ export class EditorController implements EditorControllerInterface {
     this.logger.info('Showing editor for the first time')
 
     void this.editorInvoker.showEditor()
-    void this.editorInvoker.performOpeningCeremony()
 
     LoadLogger.logEventRelativeToLoadTime('Editor shown for first time')
 
