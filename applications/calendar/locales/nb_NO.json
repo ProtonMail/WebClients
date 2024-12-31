@@ -258,7 +258,7 @@
         "Vis navigasjonslinjen"
       ],
       "Done": [
-        "Ferdig"
+        "Utført"
       ],
       "Downgrade": [
         "Nedgrader"
@@ -1314,7 +1314,7 @@
     },
     "Calendar permissions label": {
       "Permissions": [
-        "Rettigheter"
+        "Tillatelser"
       ]
     },
     "Calendar self sharing error": {
@@ -1589,10 +1589,10 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        "Slutte importtilpasning?"
+        "Avslutte importtilpasning?"
       ],
       "Quit import?": [
-        "Slutte import?"
+        "Avslutt import?"
       ]
     },
     "Contact field label": {
@@ -2449,7 +2449,7 @@
         "Storbritannia"
       ],
       "United States": [
-        "Amerikas forente stater"
+        "USA"
       ],
       "United States Minor Outlying Islands": [
         "Amerikas forente staters ytre småøyer"
@@ -2604,6 +2604,11 @@
         "Forfalt faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -2697,11 +2702,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3725,7 +3725,7 @@
         "Vi kunne ikke hente hendelsen fra kalenderen din"
       ],
       "We could not update the event in your calendar": [
-        "Vi kunne oppdatere hendelsen i kalenderen din"
+        "Vi kunne ikke oppdatere hendelsen i kalenderen din"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Svaret ditt ble sendt, men hendelsen kunne ikke legges til kalenderen din."
@@ -4433,7 +4433,7 @@
         "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
       ],
       "30-day money-back guarantee.": [
-        "30 dager pengene-tilbake-garanti."
+        "30 dagers tilbakebetalingsgaranti."
       ],
       "A cancellation email will be sent to removed participants.": [
         "En kansellerings-e-post vil bli sendt til fjernede deltakere."
@@ -5550,7 +5550,7 @@
         "Varsler for heldagshendelser"
       ],
       "Anderson": [
-        "Anderson"
+        "Andersen"
       ],
       "App password": [
         "App-passord"
@@ -5772,7 +5772,7 @@
         "E-posttjener (IMAP)"
       ],
       "Main": [
-        "Hoved"
+        "Hjem"
       ],
       "Manage categories": [
         "Administrer kategorier"
@@ -5851,7 +5851,7 @@
         "Primær"
       ],
       "Proration": [
-        "Avskriving"
+        "Proporsjonal fakturering"
       ],
       "Public keys": [
         "Offentlige nøkler"
@@ -6046,7 +6046,7 @@
         "Be om en invitasjon"
       ],
       "stay safer online": [
-        "holder deg tryggere på nettet"
+        "vær sikrere på nettet"
       ],
       "What’s this?": [
         "Hva er det der?"
@@ -6579,7 +6579,7 @@
         "10 flere premiumfunksjoner"
       ],
       "10-year file version history": [
-        "10-år filversjonshistorikk"
+        "10-års filversjonshistorikk"
       ],
       "15 GB storage": [
         "15 GB lagring"
@@ -7047,14 +7047,6 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaff deg Mail Plus for ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -7067,6 +7059,14 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaff deg Mail Plus for ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
       ]
     },
     "new_plans: tooltip": {
@@ -8370,10 +8370,10 @@
     },
     "Signing preference for emails": {
       "Don't sign": [
-        "Ikke signer"
+        "Ikke signér"
       ],
       "Sign": [
-        "Signer"
+        "Signér"
       ]
     },
     "SmartBanner": {
@@ -8397,7 +8397,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Få Unlimited"
+        "Skaff deg Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -8517,7 +8517,7 @@
         "Faktureres til ${ amount } for 30 måneder"
       ],
       "Get the deal": [
-        "Få avtalen"
+        "Skaff deg avtalen"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Fornyes etter 1 år til en rabattert pris på ${ discountedAmount } istedenfor ${ regularAmount } (${ discount }% rabatt)."
@@ -8686,13 +8686,13 @@
         "Din ${ storage } er full. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Din lagring er ${ percentage }% full. ${ cta }."
+        "Lagringsplassen din er ${ percentage }% full. ${ cta }."
       ],
       "Your storage is full": [
         "Lagringsplassen din er full"
       ],
       "Your storage is full. ${ cta }.": [
-        "Din lagring er full. ${ cta }."
+        "Lagringsplassen din er full. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister tilgangen til ${ gb } lagring og prioritert støtte."
@@ -10144,7 +10144,7 @@
         "${ n } lommebøker"
       ],
       "A safer way to hold your Bitcoin": [
-        "En tryggere måte å holde Bitcoin på"
+        "En tryggere måte å bevare Bitcoin på"
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
