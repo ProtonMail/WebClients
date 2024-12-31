@@ -63,6 +63,10 @@ export type AuthOptions = {
     retryable?: boolean;
     /** If `true`, the session is considered unlocked */
     unlocked?: boolean;
+    /** PRIVATE: Optional override of the `onLoginStart` callback. */
+    onStart?: () => void;
+    /** PRIVATE: Optional override of the `onLoginComplete` callback */
+    onComplete?: (userID: string, localID: Maybe<number>) => void;
 };
 
 export interface AuthServiceConfig {
@@ -173,7 +177,11 @@ export const createAuthService = (config: AuthServiceConfig) => {
         registerLockAdapter: (mode: LockMode, adapter: LockAdapter) => adapters.set(mode, adapter),
 
         login: async (session: AuthSession, options: AuthOptions) => {
-            config.onLoginStart?.();
+            /** see: `AuthService::consumeFork` for overrides */
+            const onLoginStart = options.onStart ?? config.onLoginStart;
+            const onLoginComplete = options.onComplete ?? config.onLoginComplete;
+
+            onLoginStart?.();
 
             try {
                 if (!authStore.validSession(session)) {
@@ -221,7 +229,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
 
             logger.info(`[AuthService] User is authorized`);
-            config.onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID());
+            onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID());
 
             return true;
         },
@@ -247,6 +255,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
         consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<boolean> => {
             try {
                 config.onLoginStart?.();
+
                 const { session, Scopes } = await consumeFork({ api, apiUrl, payload, pullFork: config.pullFork });
                 const validScope = Scopes.includes('pass');
 
@@ -261,7 +270,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 await config.onForkConsumed?.(session, payload);
 
-                const loggedIn = validScope && (await authService.login(session, {}));
+                /** Override login hooks as `consumeFork` is orchestrating these side-effects */
+                const loggedIn = validScope && (await authService.login(session, { onStart: noop, onComplete: noop }));
 
                 if (!validScope) {
                     authStore.setSession(session);
@@ -276,6 +286,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                  * user does not unlock immediately (reset api state for persisting). */
                 if (locked) await api.reset();
                 if (loggedIn || locked) await authService.persistSession({ regenerateClientKey: true });
+                if (loggedIn) config.onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID());
 
                 return true;
             } catch (error: unknown) {
