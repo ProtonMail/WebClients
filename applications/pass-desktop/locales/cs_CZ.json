@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Přijmout"
+      ],
       "Add": [
         "Přidat"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Žádné prošlé odkazy"
+      ],
+      "Not now": [
+        "Nyní ne"
       ],
       "OK": [
         "OK"
@@ -2228,9 +2234,6 @@
       "username": [
         "uživatelské jméno"
       ],
-      "Value:": [
-        "Hodnota:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" úspěšně smazán"
       ],
@@ -3661,6 +3664,9 @@
       ],
       "Breaches detected for": [
         "Zjištěny úniky informací pro"
+      ],
+      "Change your lock method": [
+        "Změna způsobu zamykání"
       ],
       "Confirm extra password": [
         "Potvrdit dodatečné heslo"

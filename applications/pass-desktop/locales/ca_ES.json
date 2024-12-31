@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Accepta"
+      ],
       "Add": [
         "Afegeix"
       ],
@@ -122,7 +125,7 @@
         "Confirma l'accés"
       ],
       "Confirm all": [
-        "Confirma tot"
+        "Confirma-ho tot"
       ],
       "Continue": [
         "Continua"
@@ -338,7 +341,7 @@
         "L'enllaç caduca després de"
       ],
       "Lock ${ PASS_APP_NAME }": [
-        "Bloqueja ${ PASS_APP_NAME }"
+        "Bloca ${ PASS_APP_NAME }"
       ],
       "Make admin": [
         "Estableix com a administrador"
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Sense enllaços caducats"
+      ],
+      "Not now": [
+        "Ara no"
       ],
       "OK": [
         "D'acord"
@@ -1178,6 +1184,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "El DNS no està configurat correctament. El registre MX que obtenim és:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "El DNS no està configurat correctament. El registre TXT que obtenim és:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
       ]
@@ -1341,6 +1353,9 @@
       "${ row.breachCount } breach detected": [
         "S'ha detectat ${ row.breachCount } infracció.",
         "S'han detectat ${ row.breachCount } infraccions."
+      ],
+      "(Empty)": [
+        "(Buit)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
@@ -1722,7 +1737,7 @@
         "S'ha mogut l'element."
       ],
       "Item successfully pinned": [
-        "S'ha ancorat l'element."
+        "S'ha fixat l'element."
       ],
       "Item successfully unpinned": [
         "S'ha desancorat l'element."
@@ -2098,6 +2113,9 @@
       "This setting is disabled on the organization level": [
         "Aquesta opció està desactivada en l'àmbit d'organització"
       ],
+      "This setting is enforced by your organization": [
+        "L'organització aplica aquesta configuració."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Aquesta caixa forta no està compartida actualment amb ningú. Inviteu persones a compartir-la amb altres."
       ],
@@ -2169,9 +2187,6 @@
       ],
       "username": [
         "nom d'usuari"
-      ],
-      "Value:": [
-        "Valor:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "S'ha eliminat la caixa forta \"${ payload.content.name }\""
@@ -2944,7 +2959,7 @@
         "Recents"
       ],
       "Reddit handle": [
-        "Nom d'usuari de Reddit"
+        "Nom d'usuari del Reddit"
       ],
       "Remove link": [
         "Esborra l'enllaç"
@@ -3565,6 +3580,9 @@
       ],
       "Breaches detected for": [
         "Infraccions detectades per"
+      ],
+      "Change your lock method": [
+        "Canvia el mètode de bloqueig"
       ],
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"

@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Схвалити"
+      ],
       "Add": [
         "Додати"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Немає прострочених посилань"
+      ],
+      "Not now": [
+        "Не зараз"
       ],
       "OK": [
         "Застосувати"
@@ -1382,6 +1388,9 @@
         "Виявлено ${ row.breachCount } витоків",
         "Виявлено ${ row.breachCount } витоків"
       ],
+      "(Empty)": [
+        "(Порожньо)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 днів, щоб спробувати преміум функції задарма. Лише протягом вашого першого тижня ${ BRAND_NAME }."
       ],
@@ -2228,9 +2237,6 @@
       "username": [
         "ім'я користувача"
       ],
-      "Value:": [
-        "Значення:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
       ],
@@ -2410,6 +2416,9 @@
         "${ months } місяці",
         "${ months } місяці"
       ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } розпізнає вебсайти та програми, якими ви користуєтеся, і автоматично заповнює форми з вашими обліковими даними за вас у будь-якому браузері чи пристрої. Не потрібно копіювати та вставляти."
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2526,6 +2535,9 @@
       ],
       "Auto-lock after": [
         "Автоблокування після"
+      ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Окрім зберігання ваших логінів, ${ PASS_APP_NAME } захищає вашу особистість за допомогою вбудованої функції псевдоніму електронної пошти. Щоразу, коли ви реєструєте новий онлайн обліковий запис, ${ PASS_APP_NAME } може автоматично створювати псевдонім, щоб зберегти вашу справжню адресу електронної пошти захищеною. "
       ],
       "Beta Access": [
         "Бета-доступ"
@@ -2662,6 +2674,9 @@
       "Download logs": [
         "Завантажити журнали"
       ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Легко діліться конфіденційною інформацією з будь-ким, навіть якщо вони не використовують ${ PASS_APP_NAME }. Ви можете поділитися одним паролем, нотаткою або кредитною карткою, або декількома елементами в одній теці."
+      ],
       "Email": [
         "Е-пошта"
       ],
@@ -2724,6 +2739,9 @@
       ],
       "Free forever": [
         "Безплатно назавжди"
+      ],
+      "Free password manager with identity protection": [
+        "Безплатний менеджер паролів із захистом особистих даних"
       ],
       "Full Name": [
         "Повне ім'я"
@@ -3013,6 +3031,9 @@
       "Rate us": [
         "Оцініть нас"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Отримуйте негайні сповіщення, якщо ваша особиста інформація отримає витік даних третьою стороною. Ви можете контролювати кілька адрес електронної пошти або власне доменне ім'я."
+      ],
       "Recent": [
         "Найновіші"
       ],
@@ -3030,6 +3051,15 @@
       ],
       "Reveal password": [
         "Показати пароль"
+      ],
+      "Secure password sharing": [
+        "Безпечне поширення паролю"
+      ],
+      "Securely log in with passkeys": [
+        "Безпечний вхід за допомогою ключів доступу"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Безпечно зберігайте, діліться та автоматично входьте у свої облікові записи за допомогою ${ PASS_APP_NAME }, використовуючи наскрізне шифрування, якому довіряють мільйони"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Безпечно зберігайте, діліться та автоматично входьте у свої облікові записи за допомогою ${ PASS_APP_NAME }, використовуючи наскрізне шифрування, якому довіряють мільйони."
@@ -3075,6 +3105,9 @@
       ],
       "Show website favicons": [
         "Показувати піктограми вебсайтів"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Входьте швидше за допомогою ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Соціальний захист"
@@ -3150,6 +3183,9 @@
       ],
       "Trash": [
         "Смітник"
+      ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Двофакторна автентифікація (2FA) - один з найкращих способів захистити ваші облікові записи в Інтернеті. ${ PASS_APP_NAME } спрощує 2FA завдяки вбудованому автентифікатору, який зберігає ваші 2FA-коди, автоматично показує та автоматично заповнює їх."
       ],
       "Type": [
         "Тип"
@@ -3631,6 +3667,9 @@
       ],
       "Breaches detected for": [
         "Порушення виявлено для"
+      ],
+      "Change your lock method": [
+        "Змінити ваш метод блокування"
       ],
       "Confirm extra password": [
         "Підтвердження додаткового пароля"
