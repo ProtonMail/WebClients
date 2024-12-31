@@ -28,7 +28,6 @@ import noop from '@proton/utils/noop';
 import { useExtensionContext } from './ExtensionSetup';
 
 export interface ExtensionClientContextValue {
-    ready: boolean;
     logout: (options: { soft: boolean }) => void;
     lock: () => void;
     sync: () => void;
@@ -38,7 +37,7 @@ export const ExtensionClientContext = createContext<MaybeNull<ExtensionClientCon
 export const useExtensionClient = createUseContext(ExtensionClientContext);
 
 type Props = {
-    children: ReactNode;
+    children: (ready: boolean) => ReactNode;
     onWorkerMessage?: (message: WorkerMessageWithSender) => void;
 };
 
@@ -104,7 +103,6 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
 
     const context = useMemo<ExtensionClientContextValue>(
         () => ({
-            ready,
             lock: () => {
                 AppStateManager.reset();
                 AppStateManager.setStatus(AppStatus.SESSION_LOCKED);
@@ -116,13 +114,13 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
             },
             sync: () => dispatch(syncIntent(SyncType.FULL)),
         }),
-        [ready]
+        []
     );
 
     return (
         <ExtensionClientContext.Provider value={context}>
             <ThemeConnect />
-            {children}
+            {children(ready)}
         </ExtensionClientContext.Provider>
     );
 };
