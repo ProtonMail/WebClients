@@ -385,7 +385,7 @@
         "Vis navigasjonslinjen"
       ],
       "Done": [
-        "Ferdig"
+        "Utført"
       ],
       "Downgrade": [
         "Nedgrader"
@@ -505,7 +505,7 @@
         "Generer tekst"
       ],
       "Get ${ BRAND_NAME } Duo": [
-        "Få ${ BRAND_NAME } Duo"
+        "Skaff deg ${ BRAND_NAME } Duo"
       ],
       "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
         "Skaff deg ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
@@ -2556,10 +2556,10 @@
         "Melding lagret som utkast"
       ],
       "Quit import customization?": [
-        "Slutte importtilpasning?"
+        "Avslutte importtilpasning?"
       ],
       "Quit import?": [
-        "Slutte import?"
+        "Avslutt import?"
       ]
     },
     "Contact field label": {
@@ -3416,7 +3416,7 @@
         "Storbritannia"
       ],
       "United States": [
-        "Amerikas forente stater"
+        "USA"
       ],
       "United States Minor Outlying Islands": [
         "Amerikas forente staters ytre småøyer"
@@ -3804,7 +3804,7 @@
     },
     "Download attachments": {
       "Download all": [
-        "Last ned alt"
+        "Last ned alle"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4822,7 +4822,7 @@
         "Vi kunne ikke hente hendelsen fra kalenderen din"
       ],
       "We could not update the event in your calendar": [
-        "Vi kunne oppdatere hendelsen i kalenderen din"
+        "Vi kunne ikke oppdatere hendelsen i kalenderen din"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Svaret ditt ble sendt, men hendelsen kunne ikke legges til kalenderen din."
@@ -5970,7 +5970,7 @@
         "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
       ],
       "30-day money-back guarantee.": [
-        "30 dager pengene-tilbake-garanti."
+        "30 dagers tilbakebetalingsgaranti."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
@@ -8042,7 +8042,7 @@
         "Og"
       ],
       "Anderson": [
-        "Anderson"
+        "Andersen"
       ],
       "ANY": [
         "NOEN"
@@ -8315,7 +8315,7 @@
         "E-posttjener (IMAP)"
       ],
       "Main": [
-        "Hoved"
+        "Hjem"
       ],
       "Manage categories": [
         "Administrer kategorier"
@@ -8417,7 +8417,7 @@
         "Postnummer"
       ],
       "Proration": [
-        "Avskriving"
+        "Proporsjonal fakturering"
       ],
       "Public keys": [
         "Offentlige nøkler"
@@ -8765,7 +8765,7 @@
         "Stjernemerket"
       ],
       "stay safer online": [
-        "holder deg tryggere på nettet"
+        "vær sikrere på nettet"
       ],
       "Terms": [
         "Vilkår"
@@ -8777,7 +8777,7 @@
         "Denne ICS-filen inneholder mer enn en hendelse. Last den ned og importer hendelsene i ${ CALENDAR_APP_NAME }."
       ],
       "Trash": [
-        "Papirkurv"
+        "papirkurven"
       ],
       "What’s this?": [
         "Hva er det der?"
@@ -9324,7 +9324,7 @@
         "10 flere premiumfunksjoner"
       ],
       "10-year file version history": [
-        "10-år filversjonshistorikk"
+        "10-års filversjonshistorikk"
       ],
       "15 GB storage": [
         "15 GB lagring"
@@ -9792,6 +9792,14 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaff deg Mail Plus for ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -9804,14 +9812,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaff deg Mail Plus for ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
       ]
     },
     "new_plans: tooltip": {
@@ -11029,7 +11029,7 @@
         "Sendt av ${ MAIL_APP_NAME } med nulltilgangskryptering til bekreftede mottakere."
       ],
       "Sent by you with end-to-end encryption": [
-        "Sendt av deg med ende-til-ende kryptering"
+        "Sendt av deg med ende-til-ende-kryptering"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
         "Sendt av deg med ende-til-ende kryptering til bekreftet mottaker.",
@@ -11252,10 +11252,10 @@
     },
     "Signing preference for emails": {
       "Don't sign": [
-        "Ikke signer"
+        "Ikke signér"
       ],
       "Sign": [
-        "Signer"
+        "Signér"
       ]
     },
     "SmartBanner": {
@@ -11301,7 +11301,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Få Unlimited"
+        "Skaff deg Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -11421,7 +11421,7 @@
         "Faktureres til ${ amount } for 30 måneder"
       ],
       "Get the deal": [
-        "Få avtalen"
+        "Skaff deg avtalen"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Fornyes etter 1 år til en rabattert pris på ${ discountedAmount } istedenfor ${ regularAmount } (${ discount }% rabatt)."
@@ -11638,13 +11638,13 @@
         "Din ${ storage } er full. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Din lagring er ${ percentage }% full. ${ cta }."
+        "Lagringsplassen din er ${ percentage }% full. ${ cta }."
       ],
       "Your storage is full": [
         "Lagringsplassen din er full"
       ],
       "Your storage is full. ${ cta }.": [
-        "Din lagring er full. ${ cta }."
+        "Lagringsplassen din er full. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister tilgangen til ${ gb } lagring og prioritert støtte."
@@ -12220,7 +12220,7 @@
         "Samtalen flyttet til ${ folderName } og avsender lagt til ikke-søppelpostlisten."
       ],
       "Conversation moved to ${ folderName }.": [
-        "Samtalen flyttet til ${ folderName }."
+        "Samtalen flyttet til ${ folderName }"
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "Samtalen flyttet til søppelpost og avsender lagt til søppelpostlisten."
@@ -13509,7 +13509,7 @@
         "${ n } lommebøker"
       ],
       "A safer way to hold your Bitcoin": [
-        "En tryggere måte å holde Bitcoin på"
+        "En tryggere måte å bevare Bitcoin på"
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
