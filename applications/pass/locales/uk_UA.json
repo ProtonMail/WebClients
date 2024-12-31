@@ -400,6 +400,9 @@
       "No expired links": [
         "Немає прострочених посилань"
       ],
+      "Not now": [
+        "Не зараз"
+      ],
       "OK": [
         "Застосувати"
       ],
@@ -1350,6 +1353,9 @@
         "Виявлено ${ row.breachCount } витоків",
         "Виявлено ${ row.breachCount } витоків"
       ],
+      "(Empty)": [
+        "(Порожньо)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 днів, щоб спробувати преміум функції задарма. Лише протягом вашого першого тижня ${ BRAND_NAME }."
       ],
@@ -2192,9 +2198,6 @@
       ],
       "username": [
         "ім'я користувача"
-      ],
-      "Value:": [
-        "Значення:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
