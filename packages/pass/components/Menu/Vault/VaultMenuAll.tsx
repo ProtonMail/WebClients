@@ -21,7 +21,7 @@ export const VaultMenuAll = memo(({ count, dense, selected, onAction = noop }: P
 
     return (
         <DropdownMenuButton
-            onClick={onSelect}
+            onClick={() => !selected && onSelect()}
             label={<span className="block text-ellipsis">{getVaultOptionInfo('all').label}</span>}
             parentClassName={clsx('pass-vault-submenu-vault-item w-full')}
             className={clsx(selected && 'is-selected', !dense && 'py-3')}
