@@ -458,9 +458,6 @@
       "Mark for deletion": [
         "'मिटाना है' का मार्क लगाएं"
       ],
-      "Maximize": [
-        "बड़ा करें"
-      ],
       "Maximize transfers": [
         "स्थानांतरण दिखाएं"
       ],
@@ -469,9 +466,6 @@
       ],
       "Merge contacts": [
         "संपर्क मर्ज करें"
-      ],
-      "Minimize": [
-        "छोटा करें"
       ],
       "Minimize transfers": [
         "स्थानांतरण छुपाएं"
@@ -3558,14 +3552,6 @@
         "${ groupCounts } समूह मिला",
         "${ groupCounts } समूह मिले"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } एनक्रिप्टेड फ़ाइल",
-        "${ nbFile } एनक्रिप्टेड फ़ाइल।"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } एनक्रिप्टेड फ़ाइल...",
-        "${ nbFile } एनक्रिप्टेड फ़ाइले..."
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } रोका गया",
         "${ pausedCount } रोके गए"
@@ -3656,9 +3642,6 @@
       "All (${ totalFoldersCount } label)": [
         "सभी (${ totalFoldersCount } लेबल)",
         "सभी (${ totalFoldersCount } लेबल)"
-      ],
-      "All encrypted files": [
-        "सभी एन्क्रिप्टेड फ़ाइलें"
       ],
       "All your changes will be lost.": [
         "आपके सभी परिवर्तन खो जाएंगे।"
@@ -3863,14 +3846,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "डाउनग्रेड करने से सशुल्क ${ VPN_APP_NAME } सर्वर से कोई भी कनेक्शन समाप्त हो जाएगा।"
       ],
-      "Download": [
-        "डाउनलोड"
-      ],
       "Download ${ name } app": [
         "${ name } ऐप डाउनलोड करें"
-      ],
-      "Download anyway": [
-        "फिर भी डाउनलोड करें"
       ],
       "Download canceled": [
         "डाउनलोड रद्द"
@@ -3904,9 +3881,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "${ DRIVE_APP_NAME } से ${ DOCS_APP_NAME } फ़ाइलें डाउनलोड करना अभी समर्थित नहीं है - ये आपके डाउनलोड में शामिल नहीं होंगे।"
-      ],
-      "Downloading all encrypted files": [
-        "सभी एन्क्रिप्टेड फ़ाइलें डाउनलोड हो रही है"
       ],
       "Drop file here to upload": [
         "अपलोड करने के लिए फ़ाइल को यहाँ छोड़ें."
@@ -4086,9 +4060,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "इसी दौरान, अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और अपने डेटा को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें और इसे सुरक्षित रूप से साझा करें।"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
@@ -4417,9 +4388,6 @@
       "Report has been sent": [
         "रिपोर्ट भेजा गया"
       ],
-      "Report link": [
-        "लिंक रिपोर्ट करें"
-      ],
       "Request access, or switch to an account with access.": [
         "पहुंच का अनुरोध करें, या पहुंच वाले खाते पर स्विच करें।"
       ],
@@ -4438,9 +4406,6 @@
       "Restoring Photos... Please keep the tab open": [
         "तस्वीरें बहाल की जा रही हैं.... कृपया टैब खोले रखें"
       ],
-      "Retry now": [
-        "पुन:प्रयास करें"
-      ],
       "Saving...": [
         "सहेज रहे हैं.."
       ],
@@ -4452,16 +4417,6 @@
       ],
       "Search Enabled": [
         "खोज सक्षम"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } फ़ाइल सुरक्षित रूप से डाउनलोड की गईं",
-        "${ nbFile } फ़ाइलें सुरक्षित रूप से डाउनलोड की गईं"
-      ],
-      "Securely downloaded all encrypted files": [
-        "सभी एन्क्रिप्टेड फ़ाइलें सुरक्षित रूप से डाउनलोड की गईं"
-      ],
-      "Securely downloaded all files": [
-        "सभी फ़ाइलें सुरक्षित रूप से डाउनलोड की गईं"
       ],
       "Select a folder to move to.": [
         "स्थानांतरित करने के लिए फ़ोल्डर चुनें।"
@@ -4511,9 +4466,6 @@
       "Shared with me": [
         "मेरे साथ साझा किया गया"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और अपने डेटा को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें और इसे सुरक्षित रूप से साझा करें।"
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "हस्ताक्षर नेटवर्क में गड़बड़ की वजह से सत्यापित नहीं हो सका, बाद में वापस कोशिश करें।"
       ],
@@ -4540,9 +4492,6 @@
       ],
       "Something went wrong, please try again later.": [
         "कुछ गलत हो गया है, कृपया बाद में दोबारा प्रयास करें।"
-      ],
-      "Something went wrong...": [
-        "कुछ गलत हो गया..."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
@@ -4929,9 +4878,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "आपका डाटा ${ importedEmailAddressStrong } से आपके ${ BRAND_NAME } खाते पे आयात करने के लिए तैयार है।"
       ],
-      "Your download is in progress": [
-        "आपका डाउनलोड प्रक्रिया में है"
-      ],
       "Your email address and password were leaked:": [
         "आपका ईमेल पता और पासवर्ड लीक हो गया:"
       ],
@@ -5226,9 +5172,6 @@
       ],
       "Download anyway": [
         "फिर भी डाउनलोड करें"
-      ],
-      "Downloading ${ percentageValue }": [
-        "डाउनलोड कर रहें ${ percentageValue }"
       ],
       "Duplicate found": [
         "डुप्लिकेट मिला"
@@ -5535,9 +5478,6 @@
       ],
       "Theme": [
         "थीम"
-      ],
-      "This file is potentially infected": [
-        "यह फ़ाइल संभावित रूप से संक्रमित है"
       ],
       "This will permanently delete all files in your locked drive.": [
         "ये आपके लॉक की गई ड्राइव से सभी फाइलों को हमेशा के लिए मिटा देगा।"

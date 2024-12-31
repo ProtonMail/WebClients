@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
       ],
-      "Maximize": [
-        "Μεγιστοποίηση"
-      ],
       "Maximize transfers": [
         "Μεγιστοποίηση μεταφορών"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
-      ],
-      "Minimize": [
-        "Ελαχιστοποίηση"
       ],
       "Minimize transfers": [
         "Ελαχιστοποίηση μεταφορών"
@@ -4045,14 +4039,6 @@
         "${ invitations.length } πρόσκληση σε εκκρεμότητα",
         "${ invitations.length } προσκλήσεις σε εκκρεμότητα"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } κρυπτογραφημένο αρχείο",
-        "${ nbFile } κρυπτογραφημένα αρχεία"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } κρυπτογραφημένο αρχείο...",
-        "${ nbFile } κρυπτογραφημένα αρχεία..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η προσφορά εφ' όρου ζωής για το ${ PASS_SHORT_APP_NAME } δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4159,9 +4145,6 @@
       "All (${ totalFoldersCount } label)": [
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
-      ],
-      "All encrypted files": [
-        "Όλα τα κρυπτογραφημένα αρχεία"
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
@@ -4391,14 +4374,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
       ],
-      "Download": [
-        "Λήψη"
-      ],
       "Download ${ name } app": [
         "Λήψη εφαρμογής ${ name }"
-      ],
-      "Download anyway": [
-        "Λήψη οπωσδήποτε"
       ],
       "Download canceled": [
         "Η λήψη ακυρώθηκε"
@@ -4432,9 +4409,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Η λήψη αρχείων ${ DOCS_APP_NAME } από το ${ DRIVE_APP_NAME } δεν υποστηρίζεται προς το παρόν — αυτά δεν θα συμπεριληφθούν στη λήψη σας."
-      ],
-      "Downloading all encrypted files": [
-        "Λήψη όλων των κρυπτογραφημένων αρχείων"
       ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
@@ -4623,9 +4597,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Εν τω μεταξύ, εγγραφείτε για τον δικό σας λογαριασμό ${ DRIVE_APP_NAME } και προστατέψτε τα δεδομένα σας με κρυπτογράφηση από άκρο σε άκρο και μοιραστείτε τα με ασφάλεια."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
@@ -4997,9 +4968,6 @@
       "Report has been sent": [
         "Η αναφορά εστάλη"
       ],
-      "Report link": [
-        "Αναφορά συνδέσμου"
-      ],
       "Request access, or switch to an account with access.": [
         "Ζητήστε πρόσβαση ή μεταβείτε σε λογαριασμό με πρόσβαση."
       ],
@@ -5018,9 +4986,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Επαναφορά Φωτογραφιών... Κρατήστε την καρτέλα ανοιχτή"
       ],
-      "Retry now": [
-        "Επανάληψη τώρα"
-      ],
       "Saving...": [
         "Αποθήκευση..."
       ],
@@ -5032,16 +4997,6 @@
       ],
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } αρχείο λήφθηκε με ασφάλεια",
-        "${ nbFile } αρχεία λήφθηκαν με ασφάλεια"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Έγινε ασφαλής λήψη όλων των κρυπτογραφημένων αρχείων"
-      ],
-      "Securely downloaded all files": [
-        "Όλα τα αρχεία λήφθηκαν με ασφάλεια"
       ],
       "Select a folder to move to.": [
         "Επιλέξτε έναν φάκελο στον οποίο θέλετε να μετακινήσετε τα δεδομένα."
@@ -5094,9 +5049,6 @@
       "Shared with me": [
         "Κοινοποιημένο με εμένα"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Εγγραφείτε για τον δικό σας λογαριασμό ${ DRIVE_APP_NAME } και προστατέψτε τα δεδομένα σας με διατερματική κρυπτογράφηση και μοιραστείτε τα με ασφάλεια."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
       ],
@@ -5123,9 +5075,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
-      ],
-      "Something went wrong...": [
-        "Κάτι πήγε στραβά..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
@@ -5576,9 +5525,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Η λήψη σας βρίσκεται σε εξέλιξη"
-      ],
       "Your email address and password were leaked:": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασής σας διέρρευσαν:"
       ],
@@ -5885,9 +5831,6 @@
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Λήψη ${ percentageValue }"
       ],
       "Duplicate found": [
         "Βρέθηκε διπλότυπο"
@@ -6206,9 +6149,6 @@
       ],
       "Theme": [
         "Θέμα"
-      ],
-      "This file is potentially infected": [
-        "Αυτό το αρχείο είναι πιθανώς μολυσμένο"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Αυτό θα διαγράψει οριστικά όλα τα αρχεία στον κλειδωμένο δίσκο σας."

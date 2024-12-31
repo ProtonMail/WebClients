@@ -489,9 +489,6 @@
       "Mark for deletion": [
         "Marcare pentru ștergere"
       ],
-      "Maximize": [
-        "Maximizare"
-      ],
       "Maximize transfers": [
         "Maximizare transferuri"
       ],
@@ -500,9 +497,6 @@
       ],
       "Merge contacts": [
         "Îmbinare contacte"
-      ],
-      "Minimize": [
-        "Minimizare"
       ],
       "Minimize transfers": [
         "Micșorare transferuri"
@@ -4098,16 +4092,6 @@
         "${ invitations.length } invitații în așteptare",
         "${ invitations.length } de invitații în așteptare"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } fișier criptat.",
-        "${ nbFile } fișiere criptate.",
-        "${ nbFile } de fișiere criptate."
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } fișier criptat...",
-        "${ nbFile } fișiere criptate...",
-        "${ nbFile } de fișiere criptate..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4228,9 +4212,6 @@
         "Toate (o etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
-      ],
-      "All encrypted files": [
-        "Toate fișierele criptate"
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
@@ -4463,14 +4444,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
       ],
-      "Download": [
-        "Descărcare"
-      ],
       "Download ${ name } app": [
         "Descărcați aplicația ${ name }"
-      ],
-      "Download anyway": [
-        "Descărcare așa"
       ],
       "Download canceled": [
         "Descărcare anulată."
@@ -4504,9 +4479,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Descărcarea fișierelor ${ DOCS_APP_NAME } din ${ DRIVE_APP_NAME } nu este acceptată în prezent – ​​acestea nu vor fi incluse în descărcare."
-      ],
-      "Downloading all encrypted files": [
-        "Se descarcă toate fișierele criptate"
       ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
@@ -4697,9 +4669,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Între timp, creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
@@ -5075,9 +5044,6 @@
       "Report has been sent": [
         "Raportul a fost trimis."
       ],
-      "Report link": [
-        "Raportare legătură web"
-      ],
       "Request access, or switch to an account with access.": [
         "Solicitați accesul sau comutați la un cont care are acces."
       ],
@@ -5096,9 +5062,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Se restaurează fotografiile... Păstrați fila navigatorului deschisă."
       ],
-      "Retry now": [
-        "Reîncercare"
-      ],
       "Saving...": [
         "Se salvează..."
       ],
@@ -5110,17 +5073,6 @@
       ],
       "Search Enabled": [
         "Căutare actvată."
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "S-a descărcat în siguranță ${ nbFile } fișier.",
-        "S-au descărcat în siguranță ${ nbFile } fișiere.",
-        "S-au descărcat în siguranță ${ nbFile } de fișiere."
-      ],
-      "Securely downloaded all encrypted files": [
-        "Toate fișierele criptate au fost descărcate securizat."
-      ],
-      "Securely downloaded all files": [
-        "S-au descărcat în siguranță toate fișierele."
       ],
       "Select a folder to move to.": [
         "Selectați folderul sursă."
@@ -5173,9 +5125,6 @@
       "Shared with me": [
         "Partajate cu mine"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
       ],
@@ -5202,9 +5151,6 @@
       ],
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
-      ],
-      "Something went wrong...": [
-        "Ceva nu a funcționat corect..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
@@ -5660,9 +5606,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Descărcarea este în desfășurare."
-      ],
       "Your email address and password were leaked:": [
         "Adresa de e-mail și parola au fost divulgate:"
       ],
@@ -5975,9 +5918,6 @@
       ],
       "Download anyway": [
         "Descărcare așa"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Se descarcă ${ percentageValue }"
       ],
       "Duplicate found": [
         "S-a găsit o dublură."
@@ -6296,9 +6236,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Acest fișier este potențial infectat"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Acest lucru va șterge definitiv toate fișierele de pe unitatea blocată."
