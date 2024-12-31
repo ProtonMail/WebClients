@@ -498,9 +498,6 @@
       "Mark for deletion": [
         "Marca per a l'eliminació"
       ],
-      "Maximize": [
-        "Maximitza"
-      ],
       "Maximize transfers": [
         "Maximitzar les transferències"
       ],
@@ -509,9 +506,6 @@
       ],
       "Merge contacts": [
         "Combinar contactes"
-      ],
-      "Minimize": [
-        "Minimitza"
       ],
       "Minimize transfers": [
         "Minimitzar les transferències"
@@ -2565,7 +2559,7 @@
         "Obre a ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Save for later": [
-        "Guarda per a després"
+        "Desa per a més tard"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4061,14 +4055,6 @@
         "${ invitations.length } invitació pendent",
         "${ invitations.length } invitacions pendents"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } fitxer xifrat",
-        "${ nbFile } fitxers xifrats"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } fitxer xifrat...",
-        "${ nbFile } fitxers xifrats..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4178,9 +4164,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tot (${ totalFoldersCount } etiqueta)",
         "Tot (${ totalFoldersCount } etiquetes)"
-      ],
-      "All encrypted files": [
-        "Tots els fitxers xifrats"
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
@@ -4414,14 +4397,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
       ],
-      "Download": [
-        "Descarrega"
-      ],
       "Download ${ name } app": [
         "Descarrega l'aplicació ${ name }"
-      ],
-      "Download anyway": [
-        "Descarrega de tota manera"
       ],
       "Download canceled": [
         "S'ha cancel·lat la descarregada"
@@ -4455,9 +4432,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Actualment, no s'admet la descàrrega de fitxers de ${ DOCS_APP_NAME } de ${ DRIVE_APP_NAME }; aquests no s'inclouran en la descàrrega."
-      ],
-      "Downloading all encrypted files": [
-        "S'estan descarregant tots els fitxers xifrats"
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
@@ -4584,7 +4558,7 @@
         "Per a obtenir els millors resultats, eviteu activitats d'estríming i que consumeixin molta memòria o dividiu la càrrega en lots més petits."
       ],
       "Free 5GB encrypted storage to get started": [
-        "Emmagatzematge xifrat gratuït de 5 GB per començar"
+        "Emmagatzematge xifrat gratuït de 5 GB per a començar"
       ],
       "from the version history?": [
         "de l'historial de versions?"
@@ -4649,9 +4623,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Mentrestant, registreu-vos al compte ${ DRIVE_APP_NAME } i protegiu les vostres dades amb el xifratge d'extrem a extrem i compartiu-les de manera segura."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Al següent pas, podreu enviar un dipòsit utilitzant una adreça de Bitcoin."
@@ -5023,9 +4994,6 @@
       "Report has been sent": [
         "S'ha enviat l'informe"
       ],
-      "Report link": [
-        "Informa sobre l'enllaç"
-      ],
       "Request access, or switch to an account with access.": [
         "Sol·liciteu accés o canvieu a un compte amb accés."
       ],
@@ -5044,9 +5012,6 @@
       "Restoring Photos... Please keep the tab open": [
         "S'estan restaurant les fotos... Manteniu la pestanya oberta."
       ],
-      "Retry now": [
-        "Reintenta ara"
-      ],
       "Saving...": [
         "Desant..."
       ],
@@ -5058,16 +5023,6 @@
       ],
       "Search Enabled": [
         "Cerca activa"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "S'ha descarregat de forma segura ${ nbFile } fitxer.",
-        "S'han descarregat de forma segura ${ nbFile } fitxers."
-      ],
-      "Securely downloaded all encrypted files": [
-        "S'han descarregat de forma segura tots els fitxers xifrats"
-      ],
-      "Securely downloaded all files": [
-        "S'han descarregat de forma segura els fitxers"
       ],
       "Select a folder to move to.": [
         "Seleccioneu la carpeta de destinació."
@@ -5123,9 +5078,6 @@
       "Shared with me": [
         "Compartit amb mi"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Registreu-vos al vostre compte ${ DRIVE_APP_NAME } i protegiu les vostres dades amb el xifratge d'extrem a extrem i compartiu-les de manera segura."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No es pot validar la signatura a causa d'un error de xarxa. Torneu-ho a provar més tard."
       ],
@@ -5152,9 +5104,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament. Intenteu-ho de nou més tard."
-      ],
-      "Something went wrong...": [
-        "Alguna cosa ha anat malament..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
@@ -5608,9 +5557,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "La descàrrega és en curs"
-      ],
       "Your email address and password were leaked:": [
         "La seva adreça de correu electrònic i contrasenya es van filtrar:"
       ],
@@ -5926,9 +5872,6 @@
       ],
       "Download anyway": [
         "Baixa igualment"
-      ],
-      "Downloading ${ percentageValue }": [
-        "S'està descarregant ${ percentageValue } "
       ],
       "Duplicate found": [
         "S'ha trobat un duplicat"
@@ -6247,9 +6190,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Aquest fitxer està potencialment infectat"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Això eliminarà de manera permanent tots els fitxers de la vostra unitat bloquejada."
@@ -8011,7 +7951,7 @@
         "Convideu els membres."
       ],
       "Maybe Later": [
-        "Potser més endavant"
+        "Potser més tard"
       ],
       "Maybe later": [
         "Potser després"
@@ -8109,7 +8049,7 @@
         "Protegiu els vostres documents financers, targetes d'identificació, fitxers de projectes, fotos i molt més amb el xifratge d'extrem a extrem."
       ],
       "Scan the QR code to install the mobile app": [
-        "Escanegeu el codi QR per instal·lar l'aplicació mòbil"
+        "Escanegeu el codi QR per a instal·lar l'aplicació mòbil"
       ],
       "Secure your files": [
         "Assegureu els vostres fitxers"

@@ -471,9 +471,6 @@
       "Mark for deletion": [
         "标记以删除"
       ],
-      "Maximize": [
-        "最大化"
-      ],
       "Maximize transfers": [
         "最大化传输窗口"
       ],
@@ -482,9 +479,6 @@
       ],
       "Merge contacts": [
         "合并联系人"
-      ],
-      "Minimize": [
-        "最小化"
       ],
       "Minimize transfers": [
         "最小化传输窗口"
@@ -3708,9 +3702,6 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } 个已加密文件..."
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } 项已暂停"
       ],
@@ -3794,9 +3785,6 @@
       ],
       "All (${ totalFoldersCount } label)": [
         "全部（${ totalFoldersCount } 个标签）"
-      ],
-      "All encrypted files": [
-        "所有的加密文件"
       ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
@@ -4011,14 +3999,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
-      "Download": [
-        "下载"
-      ],
       "Download ${ name } app": [
         "下载 ${ name } app"
-      ],
-      "Download anyway": [
-        "仍要下载"
       ],
       "Download canceled": [
         "下载已取消"
@@ -4052,9 +4034,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "目前不支持从 ${ DRIVE_APP_NAME } 下载 ${ DOCS_APP_NAME } 文件 — 这些文件不会包含在您的下载中。"
-      ],
-      "Downloading all encrypted files": [
-        "下载所有的加密文件"
       ],
       "Drop file here to upload": [
         "拖至此处上传文件"
@@ -4587,9 +4566,6 @@
       "Report has been sent": [
         "报告已发送"
       ],
-      "Report link": [
-        "报告链接"
-      ],
       "Request access, or switch to an account with access.": [
         "请求访问权限，或切换到具有访问权限的账户。"
       ],
@@ -4608,9 +4584,6 @@
       "Restoring Photos... Please keep the tab open": [
         "正在恢复照片...请保持选项卡打开"
       ],
-      "Retry now": [
-        "立即重试"
-      ],
       "Saving...": [
         "保存中..."
       ],
@@ -4622,15 +4595,6 @@
       ],
       "Search Enabled": [
         "搜索已启用"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "已安全下载了 ${ nbFile } 个文件"
-      ],
-      "Securely downloaded all encrypted files": [
-        "已安全地下载所有加密文件"
-      ],
-      "Securely downloaded all files": [
-        "已安全地下载所有文件"
       ],
       "Select a folder to move to.": [
         "选择要移动到的文件夹。"
@@ -4680,9 +4644,6 @@
       "Shared with me": [
         "与我共享"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "注册您自己的 ${ DRIVE_APP_NAME } 账户并使用端到端加密保护您的数据并安全地共享。"
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "由于网络错误，无法验证签名，请稍后重试。"
       ],
@@ -4709,9 +4670,6 @@
       ],
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
-      ],
-      "Something went wrong...": [
-        "出了些问题..."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
@@ -5112,9 +5070,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
-      "Your download is in progress": [
-        "您的下载正在进行中"
-      ],
       "Your email address and password were leaked:": [
         "您的电子邮件地址和密码已泄露："
       ],
@@ -5406,9 +5361,6 @@
       ],
       "Download anyway": [
         "仍要下载"
-      ],
-      "Downloading ${ percentageValue }": [
-        "正在下载 ${ percentageValue }"
       ],
       "Duplicate found": [
         "发现重复"
@@ -5721,9 +5673,6 @@
       ],
       "Theme": [
         "配色"
-      ],
-      "This file is potentially infected": [
-        "该文件可能已被感染"
       ],
       "This will permanently delete all files in your locked drive.": [
         "这将永久删除您的锁定网盘中的所有文件。"

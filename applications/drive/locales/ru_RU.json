@@ -492,9 +492,6 @@
       "Mark for deletion": [
         "Отметить для удаления"
       ],
-      "Maximize": [
-        "Развернуть"
-      ],
       "Maximize transfers": [
         "Развернуть окно скачиваний"
       ],
@@ -503,9 +500,6 @@
       ],
       "Merge contacts": [
         "Объединить контакты"
-      ],
-      "Minimize": [
-        "Свернуть"
       ],
       "Minimize transfers": [
         "Свернуть окно передач"
@@ -4151,18 +4145,6 @@
         "${ invitations.length } ожидающих приглашений",
         "${ invitations.length } ожидающих приглашений"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } зашифрованный файл",
-        "${ nbFile } зашифрованных файла",
-        "${ nbFile } зашифрованных файлов",
-        "${ nbFile } зашифрованных файлов"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } зашифрованный файл...",
-        "${ nbFile } зашифрованных файла...",
-        "${ nbFile } зашифрованных файлов...",
-        "${ nbFile } зашифрованных файлов..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4297,9 +4279,6 @@
         "Всё (${ totalFoldersCount } ярлыка)",
         "Все (${ totalFoldersCount } ярлыков)",
         "Всё (${ totalFoldersCount } ярлыков)"
-      ],
-      "All encrypted files": [
-        "Все зашифрованные файлы"
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
@@ -4535,14 +4514,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
       ],
-      "Download": [
-        "Скачать"
-      ],
       "Download ${ name } app": [
         "Загрузите приложение ${ name }"
-      ],
-      "Download anyway": [
-        "Все равно скачать"
       ],
       "Download canceled": [
         "Скачивание отменено"
@@ -4576,9 +4549,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Скачивание файлов ${ DOCS_APP_NAME } с ${ DRIVE_APP_NAME } в настоящее время не поддерживается. Они не будут включены в ваше скачивание."
-      ],
-      "Downloading all encrypted files": [
-        "Скачивание всех зашифрованных файлов"
       ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
@@ -4771,9 +4741,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "А пока зарегистрируйте свой собственный аккаунт ${ DRIVE_APP_NAME } для защиты данных с помощью сквозного шифрования и безопасного обмена ими."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
@@ -5150,9 +5117,6 @@
       "Report has been sent": [
         "Отчет был отправлен"
       ],
-      "Report link": [
-        "Сообщить о ссылке"
-      ],
       "Request access, or switch to an account with access.": [
         "Запросите доступ или перейдите на аккаунт с доступом."
       ],
@@ -5171,9 +5135,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Восстановление фотографий... Не закрывайте вкладку"
       ],
-      "Retry now": [
-        "Повторить попытку сейчас"
-      ],
       "Saving...": [
         "Сохранение..."
       ],
@@ -5185,18 +5146,6 @@
       ],
       "Search Enabled": [
         "Поиск включен"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "Безопасно скачан ${ nbFile } файл",
-        "Безопасно скачаны ${ nbFile } файла",
-        "Безопасно скачаны ${ nbFile } файлов",
-        "Безопасно скачаны ${ nbFile } файлов"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Все зашифрованные файлы были безопасно скачаны"
-      ],
-      "Securely downloaded all files": [
-        "Все файлы были безопасно загружены"
       ],
       "Select a folder to move to.": [
         "Выберите папку для перемещения."
@@ -5249,9 +5198,6 @@
       "Shared with me": [
         "Поделись со мной"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Зарегистрируйте свой собственный аккаунт ${ DRIVE_APP_NAME } для защиты данных с помощью сквозного шифрования и безопасного обмена ими."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
       ],
@@ -5278,9 +5224,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
-      ],
-      "Something went wrong...": [
-        "Что-то пошло не так..."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
@@ -5720,9 +5663,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Скачивание продолжается"
-      ],
       "Your email address and password were leaked:": [
         "Ваш адрес электронной почты и пароль подверглись утечке:"
       ],
@@ -6042,9 +5982,6 @@
       "Download anyway": [
         "Все равно скачать"
       ],
-      "Downloading ${ percentageValue }": [
-        "Загрузка ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Найден дубликат"
       ],
@@ -6362,9 +6299,6 @@
       ],
       "Theme": [
         "Тема"
-      ],
-      "This file is potentially infected": [
-        "Этот файл может оказаться зараженным"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Это окончательно удалит все ваши файлы в вашем закрытом хранилище."
