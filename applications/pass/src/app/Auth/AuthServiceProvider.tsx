@@ -9,14 +9,13 @@ import { getStateKey } from 'proton-pass-web/lib/sessions';
 
 import { useNotifications } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
-import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { type AuthRouteState, isUnauthorizedPath, reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
@@ -44,7 +43,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const { createNotification } = useNotifications();
     const { getCurrentLocation } = useNavigationActions();
     const sw = useServiceWorker();
-    const app = useContextProxy(AppStateContext);
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
@@ -54,7 +52,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const authService = useInstance(() =>
         createAuthService({
-            app,
+            app: AppStateManager,
             authSwitch,
             config,
             core,
@@ -117,7 +115,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         };
 
         const handleLocked: ServiceWorkerClientMessageHandler<'locked'> = ({ localID, mode }) => {
-            const { status } = app.state;
+            const { status } = AppStateManager.getState();
 
             if (authStore.hasSession(localID)) {
                 if (mode !== authStore.getLockMode()) return window.location.reload();
