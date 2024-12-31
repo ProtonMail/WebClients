@@ -492,9 +492,6 @@
       "Mark for deletion": [
         "Označiť na odstránenie"
       ],
-      "Maximize": [
-        "Maximalizovať"
-      ],
       "Maximize transfers": [
         "Maximalizovať prenosy"
       ],
@@ -503,9 +500,6 @@
       ],
       "Merge contacts": [
         "Zlúčiť kontakty"
-      ],
-      "Minimize": [
-        "Minimalizovať"
       ],
       "Minimize transfers": [
         "Minimalizovať prenosy"
@@ -4151,18 +4145,6 @@
         "${ invitations.length } čakajúcich pozvánok",
         "${ invitations.length } čakajúcich pozvánok"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } šifrovaný súbor",
-        "${ nbFile } šifrované súbory",
-        "${ nbFile } šifrovaných súborov",
-        "${ nbFile } šifrovaných súborov"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } šifrovaný súbor...",
-        "${ nbFile } šifrované súbory...",
-        "${ nbFile } šifrovaných súborov...",
-        "${ nbFile } šifrovaných súborov..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
       ],
@@ -4297,9 +4279,6 @@
         "Všetky (${ totalFoldersCount } štítky)",
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
-      ],
-      "All encrypted files": [
-        "Všetky šifrované súbory"
       ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
@@ -4535,14 +4514,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
       ],
-      "Download": [
-        "Stiahnuť"
-      ],
       "Download ${ name } app": [
         "Prevziať aplikáciu ${ name }"
-      ],
-      "Download anyway": [
-        "Stiahnuť aj tak"
       ],
       "Download canceled": [
         "Sťahovanie zrušené"
@@ -4576,9 +4549,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Sťahovanie ${ DOCS_APP_NAME } súborov z ${ DRIVE_APP_NAME } v súčasnosti nie je podporované — tieto súbory nebudú zahrnuté do sťahovania."
-      ],
-      "Downloading all encrypted files": [
-        "Sťahovanie všetkých šifrovaných súborov"
       ],
       "Drop file here to upload": [
         "Sem presuňte súbor na nahranie"
@@ -4771,9 +4741,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Medzitým si zaregistrujte vlastný účet ${ DRIVE_APP_NAME } a chráňte svoje údaje pomocou end-to-end šifrovania a bezpečne ich zdieľajte."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V ďalšom kroku budete môcť odoslať vklad pomocou Bitcoin adresy."
@@ -5153,9 +5120,6 @@
       "Report has been sent": [
         "Hlásenie bolo odoslané"
       ],
-      "Report link": [
-        "Nahlásiť odkaz"
-      ],
       "Request access, or switch to an account with access.": [
         "Požiadajte o prístup alebo sa prepnite na účet s prístupom."
       ],
@@ -5174,9 +5138,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Obnovovanie fotografií... Ponechajte prosím kartu otvorenú"
       ],
-      "Retry now": [
-        "Skúsiť teraz"
-      ],
       "Saving...": [
         "Ukladanie..."
       ],
@@ -5188,18 +5149,6 @@
       ],
       "Search Enabled": [
         "Vyhľadávanie povolené"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } súbor bezpečne stiahnutý",
-        "${ nbFile } súbory bezpečne stiahnuté",
-        "${ nbFile } súborov bezpečne stiahnutých",
-        "${ nbFile } súborov bezpečne stiahnutých"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Všetky šifrované súbory boli bezpečne stiahnuté"
-      ],
-      "Securely downloaded all files": [
-        "Všetky súbory boli bezpečne stiahnuté"
       ],
       "Select a folder to move to.": [
         "Vyberte priečinok na presun."
@@ -5252,9 +5201,6 @@
       "Shared with me": [
         "Zdieľané so mnou"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Založte si vlastný účet ${ DRIVE_APP_NAME } a chráňte svoje údaje end-to-end šifrovaním a bezpečne ich zdieľajte."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
       ],
@@ -5281,9 +5227,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Niečo sa pokazilo, skúste znova neskôr, prosím."
-      ],
-      "Something went wrong...": [
-        "Niečo sa pokazilo..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
@@ -5744,9 +5687,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Prebieha sťahovanie"
-      ],
       "Your email address and password were leaked:": [
         "Unikla vaša emailová adresa a heslo:"
       ],
@@ -6066,9 +6006,6 @@
       "Download anyway": [
         "Stiahnuť aj tak"
       ],
-      "Downloading ${ percentageValue }": [
-        "Sťahovanie ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Nájdený duplikát"
       ],
@@ -6386,9 +6323,6 @@
       ],
       "Theme": [
         "Motív"
-      ],
-      "This file is potentially infected": [
-        "Tento súbor môže byť infikovaný"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Týmto sa trvalo zmažú všetky súbory na vašom zamknutom disku."

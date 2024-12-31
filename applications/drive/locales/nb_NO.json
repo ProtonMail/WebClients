@@ -286,7 +286,7 @@
         "Avvis"
       ],
       "Done": [
-        "Ferdig"
+        "Utført"
       ],
       "Downgrade": [
         "Nedgrader"
@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Merk for sletting"
       ],
-      "Maximize": [
-        "Maksimer"
-      ],
       "Maximize transfers": [
         "Maksimer overføringer"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
-      ],
-      "Minimize": [
-        "Minimer"
       ],
       "Minimize transfers": [
         "Minimer overføringer"
@@ -790,7 +784,7 @@
         "Send inn"
       ],
       "Submit report": [
-        "Send rapport"
+        "Send inn rapport"
       ],
       "Switch or add account": [
         "Bytt eller legg til konto"
@@ -1462,10 +1456,10 @@
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        "Slutte importtilpasning?"
+        "Avslutte importtilpasning?"
       ],
       "Quit import?": [
-        "Slutte import?"
+        "Avslutt import?"
       ]
     },
     "Contact field label": {
@@ -2322,7 +2316,7 @@
         "Storbritannia"
       ],
       "United States": [
-        "Amerikas forente stater"
+        "USA"
       ],
       "United States Minor Outlying Islands": [
         "Amerikas forente staters ytre småøyer"
@@ -3322,7 +3316,7 @@
         "App er for øyeblikket utilgjengelig"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Gjør deg klar til vi får feilen fikset."
+        "Behold tålmodigheten til vi får fikset feilen."
       ],
       "Error: ${ errorMessage }": [
         "Feil: ${ errorMessage }"
@@ -3403,7 +3397,7 @@
         "Vi kunne ikke hente hendelsen fra kalenderen din"
       ],
       "We could not update the event in your calendar": [
-        "Vi kunne oppdatere hendelsen i kalenderen din"
+        "Vi kunne ikke oppdatere hendelsen i kalenderen din"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Svaret ditt ble sendt, men hendelsen kunne ikke legges til kalenderen din."
@@ -4048,14 +4042,6 @@
         "${ invitations.length } ventende invitasjon",
         "${ invitations.length } ventende invitasjoner"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } kryptert fil",
-        "${ nbFile } kryptert fil."
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } kryptert fil...",
-        "${ nbFile } krypterte filer..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4129,7 +4115,7 @@
         "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
       ],
       "30-day money-back guarantee.": [
-        "30 dager pengene-tilbake-garanti."
+        "30 dagers tilbakebetalingsgaranti."
       ],
       "A number will be added to the filename": [
         "Et nummer vil bli lagt til filnavnet"
@@ -4162,9 +4148,6 @@
       "All (${ totalFoldersCount } label)": [
         "(${ totalFoldersCount } etikett)",
         "Alle (${ totalFoldersCount } etiketter)"
-      ],
-      "All encrypted files": [
-        "Alle krypterte filer"
       ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
@@ -4394,14 +4377,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
       ],
-      "Download": [
-        "Last ned"
-      ],
       "Download ${ name } app": [
         "Last ned ${ name }-appen"
-      ],
-      "Download anyway": [
-        "Last ned uansett"
       ],
       "Download canceled": [
         "Nedlasting avbrutt"
@@ -4436,9 +4413,6 @@
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Nedlasting av ${ DOCS_APP_NAME }-filer fra ${ DRIVE_APP_NAME } støttes for øyeblikket ikke – disse vil ikke bli inkludert i nedlastingen."
       ],
-      "Downloading all encrypted files": [
-        "Laster ned alle krypterte filer"
-      ],
       "Drop file here to upload": [
         "Slipp fil her for å laste opp"
       ],
@@ -4467,7 +4441,7 @@
         "E-post signeres automatisk"
       ],
       "Empty folder": [
-        "Tøm mappe"
+        "Tom mappe"
       ],
       "Enabling drive search": [
         "Aktiverer søk i Drive"
@@ -4626,9 +4600,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "I mellomtiden kan du registrere deg for din egen ${ DRIVE_APP_NAME }-konto og beskytte dataene dine med ende-til-ende-kryptering og dele dem sikkert."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
@@ -5000,9 +4971,6 @@
       "Report has been sent": [
         "Rapporten er sendt"
       ],
-      "Report link": [
-        "Rapporter kobling"
-      ],
       "Request access, or switch to an account with access.": [
         "Be om tilgang, eller bytt til en konto med tilgang."
       ],
@@ -5021,9 +4989,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Gjenoppretter bilder...Hold fanen åpen"
       ],
-      "Retry now": [
-        "Prøv igjen nå"
-      ],
       "Saving...": [
         "Lagrer..."
       ],
@@ -5035,16 +5000,6 @@
       ],
       "Search Enabled": [
         "Søk aktivert"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "Lastet ned sikkert ${ nbFile } fil",
-        "Lastet ned sikkert ${ nbFile } filer"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Lastet ned sikkert alle krypterte filer"
-      ],
-      "Securely downloaded all files": [
-        "Lastet sikkert ned alle filer"
       ],
       "Select a folder to move to.": [
         "Velg en mappe du vil flytte til."
@@ -5097,9 +5052,6 @@
       "Shared with me": [
         "Delt med meg"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Registrer for din egen ${ DRIVE_APP_NAME }-konto og beskytt dataene dine med ende-til-ende-kryptering og del dem sikkert."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres på grunn av nettverksfeil, prøv igjen senere."
       ],
@@ -5126,9 +5078,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Noe gikk galt, prøv igjen senere."
-      ],
-      "Something went wrong...": [
-        "Noe gikk galt..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
@@ -5441,7 +5390,7 @@
         "vil bli gjenopprettet til versjonen fra ${ formattedRevisionDate }. Alle andre versjoner lagres fortsatt."
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "Med ${ DRIVE_APP_NAME }, er dine data beskyttet med ende-til-ende kryptering."
+        "Med ${ DRIVE_APP_NAME }, er dine data beskyttet med ende-til-ende-kryptering."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -5579,9 +5528,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
-      "Your download is in progress": [
-        "Nedlastingen pågår"
-      ],
       "Your email address and password were leaked:": [
         "Din e-postadresse og passord ble lekket:"
       ],
@@ -5678,7 +5624,7 @@
         "navn"
       ],
       "thumbnail": [
-        "miniatyrbilde"
+        "miniatyr"
       ]
     },
     "Key badge": {
@@ -5742,7 +5688,7 @@
         "Adresse"
       ],
       "Anderson": [
-        "Anderson"
+        "Andersen"
       ],
       "Anyone on the Internet with the link can view": [
         "Alle på Internett med koblingen kan se"
@@ -5889,9 +5835,6 @@
       "Download anyway": [
         "Last ned uansett"
       ],
-      "Downloading ${ percentageValue }": [
-        "Laster ned ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Duplikat funnet"
       ],
@@ -6028,7 +5971,7 @@
         "E-posttjener (IMAP)"
       ],
       "Main": [
-        "Hoved"
+        "Hjem"
       ],
       "Make editor": [
         "Gjør til redaktør"
@@ -6115,7 +6058,7 @@
         "Postnummer"
       ],
       "Proration": [
-        "Avskriving"
+        "Proporsjonal fakturering"
       ],
       "Protect with password": [
         "Beskytt med passord"
@@ -6209,9 +6152,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Denne filen er potensielt infisert"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dette vil permanent slette alle filer i din låste stasjon."
@@ -6364,10 +6304,10 @@
         "Delt med meg"
       ],
       "stay safer online": [
-        "holder deg tryggere på nettet"
+        "vær sikrere på nettet"
       ],
       "Trash": [
-        "Papirkurv"
+        "papirkurven"
       ],
       "What’s this?": [
         "Hva er det der?"
@@ -6542,7 +6482,7 @@
         "Apple Pages"
       ],
       "Archive document": [
-        "Arkiver dokument"
+        "Dokumentarkiv"
       ],
       "Audio file": [
         "Lydfil"
@@ -6551,7 +6491,7 @@
         "AV1 Image File Format (AVIF)"
       ],
       "AVI video": [
-        "AVI video"
+        "AVI-video"
       ],
       "Binary data": [
         "Binære data"
@@ -6578,7 +6518,7 @@
         "Electronic publication (EPUB)"
       ],
       "Flash Video": [
-        "Flash video"
+        "Flash-video"
       ],
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
@@ -6602,7 +6542,7 @@
         "Bilde"
       ],
       "Java Archive (JAR)": [
-        "Java Archive (JAR)"
+        "Java-arkiv (JAR)"
       ],
       "JavaScript": [
         "JavaScript"
@@ -6641,10 +6581,10 @@
         "MP3-lyd"
       ],
       "MPEG transport stream": [
-        "MPEG transport stream"
+        "MPEG-transportstrøm"
       ],
       "MPEG Video": [
-        "MPEG Video"
+        "MPEG-video"
       ],
       "MS Embedded OpenType fonts": [
         "MS Embedded OpenType-skrifttyper"
@@ -6659,7 +6599,7 @@
         "OGG-lyd"
       ],
       "OGG video": [
-        "OGG video"
+        "OGG-video"
       ],
       "OpenDocument presentation document": [
         "OpenDocument presentasjonsdokument"
@@ -6698,7 +6638,7 @@
         "Tagged Image File Format (TIFF)"
       ],
       "Tape Archive (TAR)": [
-        "Tape Archive (TAR)"
+        "Tape-arkiv (TAR)"
       ],
       "Text": [
         "Tekst"
@@ -6940,7 +6880,7 @@
         "10 flere premiumfunksjoner"
       ],
       "10-year file version history": [
-        "10-år filversjonshistorikk"
+        "10-års filversjonshistorikk"
       ],
       "15 GB storage": [
         "15 GB lagring"
@@ -8107,7 +8047,7 @@
         "Har du en iPhone? Du er dekket."
       ],
       "Hang tight": [
-        "Hold deg fast"
+        "Vent litt"
       ],
       "Invitation accepted": [
         "Invitasjon godtatt"
@@ -8843,10 +8783,10 @@
     },
     "Signing preference for emails": {
       "Don't sign": [
-        "Ikke signer"
+        "Ikke signér"
       ],
       "Sign": [
-        "Signer"
+        "Signér"
       ]
     },
     "specialoffer: Action": {
@@ -8862,7 +8802,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Få Unlimited"
+        "Skaff deg Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -8982,7 +8922,7 @@
         "Faktureres til ${ amount } for 30 måneder"
       ],
       "Get the deal": [
-        "Få avtalen"
+        "Skaff deg avtalen"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Fornyes etter 1 år til en rabattert pris på ${ discountedAmount } istedenfor ${ regularAmount } (${ discount }% rabatt)."
@@ -9156,13 +9096,13 @@
         "Din ${ storage } er full. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Din lagring er ${ percentage }% full. ${ cta }."
+        "Lagringsplassen din er ${ percentage }% full. ${ cta }."
       ],
       "Your storage is full": [
         "Lagringsplassen din er full"
       ],
       "Your storage is full. ${ cta }.": [
-        "Din lagring er full. ${ cta }."
+        "Lagringsplassen din er full. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister tilgangen til ${ gb } lagring og prioritert støtte."
@@ -10521,7 +10461,7 @@
         "Last inn bilde"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
-        "Meldings- og filnavn lagres med null tilgangskryptering når det er inkludert i e-posten"
+        "Meldings- og filnavn lagres med nulltilgangskryptering når det er inkludert i e-posten"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."
@@ -10640,7 +10580,7 @@
         "${ n } lommebøker"
       ],
       "A safer way to hold your Bitcoin": [
-        "En tryggere måte å holde Bitcoin på"
+        "En tryggere måte å bevare Bitcoin på"
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"

@@ -483,9 +483,6 @@
       "Mark for deletion": [
         "Tandai untuk dihapus"
       ],
-      "Maximize": [
-        "Perbesar"
-      ],
       "Maximize transfers": [
         "Perbesar jendela transfer"
       ],
@@ -494,9 +491,6 @@
       ],
       "Merge contacts": [
         "Gabungkan kontak"
-      ],
-      "Minimize": [
-        "Perkecil"
       ],
       "Minimize transfers": [
         "Sembunyikan jendela transfer"
@@ -3298,7 +3292,7 @@
         "Aplikasi saat ini tidak tersedia"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Kami sedang perbaiki. Mohon bersabar."
+        "Mohon bersabar selagi kami memperbaiki kesalahan ini."
       ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
@@ -3992,12 +3986,6 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length } undangan tertunda"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } berkas terenkripsi"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } berkas terenkripsi..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4090,9 +4078,6 @@
       ],
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
-      ],
-      "All encrypted files": [
-        "Seluruh berkas terenkripsi"
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
@@ -4319,14 +4304,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
       ],
-      "Download": [
-        "Unduh"
-      ],
       "Download ${ name } app": [
         "Unduh aplikasi ${ name }"
-      ],
-      "Download anyway": [
-        "Tetap unduh"
       ],
       "Download canceled": [
         "Unduhan dibatalkan"
@@ -4360,9 +4339,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Pengunduhan ${ DOCS_APP_NAME } berkas dari ${ DRIVE_APP_NAME } saat ini belum didukung — rangkaian berkas ini tidak akan disertakan dalam unduhan Anda"
-      ],
-      "Downloading all encrypted files": [
-        "Mengunduh seluruh berkas terenkripsi"
       ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
@@ -4549,9 +4525,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Selagi Anda menunggu, daftarkan diri Anda ke ${ DRIVE_APP_NAME } dan lindungi serta bagikan data Anda dengan enkripsi end-to-end yang aman."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Pada langkah selanjutnya, Anda dapat mengirimkan deposit menggunakan alamat Bitcoin."
@@ -4919,9 +4892,6 @@
       "Report has been sent": [
         "Laporan telah dikirim"
       ],
-      "Report link": [
-        "Laporkan tautan"
-      ],
       "Request access, or switch to an account with access.": [
         "Minta akses, atau ganti akun yang memiliki akses."
       ],
@@ -4940,9 +4910,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Memulihkan Foto... Mohon biarkan tab ini terbuka"
       ],
-      "Retry now": [
-        "Coba lagi sekarang"
-      ],
       "Saving...": [
         "Menyimpan..."
       ],
@@ -4954,15 +4921,6 @@
       ],
       "Search Enabled": [
         "Pencarian Diaktifkan"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } berkas diunduh secara aman"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Seluruh berkas terenkripsi berhasil diunduh secara aman"
-      ],
-      "Securely downloaded all files": [
-        "Seluruh berkas berhasil diunduh secara aman"
       ],
       "Select a folder to move to.": [
         "Pilih folder tujuan."
@@ -5015,9 +4973,6 @@
       "Shared with me": [
         "Dibagikan dengan saya"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Daftarkan diri Anda ke ${ DRIVE_APP_NAME } dan lindungi serta bagikan data Anda dengan enkripsi end-to-end yang aman."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
       ],
@@ -5044,9 +4999,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
-      ],
-      "Something went wrong...": [
-        "Terdapat suatu kesalahan..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
@@ -5492,9 +5444,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
-      "Your download is in progress": [
-        "Unduhan Anda sedang berlangsung"
-      ],
       "Your email address and password were leaked:": [
         "Alamat email dan kata sandi Anda telah bocor:"
       ],
@@ -5795,9 +5744,6 @@
       ],
       "Download anyway": [
         "Tetap unduh"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Mengunduh ${ percentageValue }"
       ],
       "Duplicate found": [
         "Duplikat ditemukan"
@@ -6116,9 +6062,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Berkas ini kemungkinan terinfeksi"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Tindakan ini akan menghapus seluruh berkas yang terdapat pada drive milik Anda yang terkunci secara permanen."
@@ -8853,7 +8796,7 @@
         "Akses konten terblokir dan jelajahi secara pribadi. Beserta 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN per pengguna, layanan streaming seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan lebih banyak lagi."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Akses konten terblokir dan jelajahi secara pribadi. Beserta 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN, layanan streaming seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan lebih banyak lagi."
+        "Akses konten yang diblokir dan jelajahi internet secara pribadi. Meliputi 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN, layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan masih banyak lagi."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Seluruh layanan premium kami dengan batasan tertingginya: 100 alamat email, dukungan untuk 10 domain khusus, alias hide-my-email tanpa batasan jumlah, pembagian kalender, penyimpanan cloud dan pembagian berkas terenkripsi, dan masih banyak lagi."
@@ -10387,7 +10330,7 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } server"
+        "${ n }+ server"
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"

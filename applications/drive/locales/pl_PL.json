@@ -492,9 +492,6 @@
       "Mark for deletion": [
         "Oznacz do usunięcia"
       ],
-      "Maximize": [
-        "Maksymalizuj"
-      ],
       "Maximize transfers": [
         "Maksymalizuj listę transferów"
       ],
@@ -503,9 +500,6 @@
       ],
       "Merge contacts": [
         "Scal kontakty"
-      ],
-      "Minimize": [
-        "Minimalizuj"
       ],
       "Minimize transfers": [
         "Minimalizuj listę transferów"
@@ -4148,18 +4142,6 @@
         "${ invitations.length } oczekujących zaproszeń",
         "${ invitations.length } oczekujących zaproszeń"
       ],
-      "${ nbFile } encrypted file": [
-        "Zaszyfrowano ${ nbFile } plik",
-        "Zaszyfrowano ${ nbFile } pliki",
-        "Zaszyfrowano ${ nbFile } plików",
-        "Zaszyfrowano ${ nbFile } plików"
-      ],
-      "${ nbFile } encrypted file...": [
-        "Zaszyfrowano ${ nbFile } plik...",
-        "Zaszyfrowano ${ nbFile } pliki...",
-        "Zaszyfrowano ${ nbFile } plików...",
-        "Zaszyfrowano ${ nbFile } plików..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4294,9 +4276,6 @@
         "Wszystkie (${ totalFoldersCount } etykiety)",
         "Wszystkie (${ totalFoldersCount } etykiet)",
         "Wszystkie (${ totalFoldersCount } etykiety)"
-      ],
-      "All encrypted files": [
-        "Zaszyfrowano wszystkie pliki"
       ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
@@ -4532,14 +4511,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
       ],
-      "Download": [
-        "Pobierz"
-      ],
       "Download ${ name } app": [
         "Pobierz aplikację dla systemu ${ name }"
-      ],
-      "Download anyway": [
-        "Pobierz mimo to"
       ],
       "Download canceled": [
         "Pobieranie zostało anulowane"
@@ -4573,9 +4546,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Pobieranie plików ${ DOCS_APP_NAME } z aplikacji ${ DRIVE_APP_NAME } nie jest obsługiwane — te pliki nie zostaną uwzględnione w pobieraniu."
-      ],
-      "Downloading all encrypted files": [
-        "Pobierz wszystkie zaszyfrowane pliki"
       ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
@@ -4768,9 +4738,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Załóż konto ${ DRIVE_APP_NAME }. Chroń swoje dane za pomocą szyfrowania end-to-end i bezpiecznie udostępniaj pliki."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "W następnym kroku wyślesz środki za pomocą adresu Bitcoin."
@@ -5150,9 +5117,6 @@
       "Report has been sent": [
         "Raport został wysłany"
       ],
-      "Report link": [
-        "Zgłoś link"
-      ],
       "Request access, or switch to an account with access.": [
         "Poproś o dostęp lub przełącz konto."
       ],
@@ -5171,9 +5135,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Przywracanie zdjęć... Pozostaw kartę otwartą"
       ],
-      "Retry now": [
-        "Spróbuj ponownie"
-      ],
       "Saving...": [
         "Zapisywanie..."
       ],
@@ -5185,18 +5146,6 @@
       ],
       "Search Enabled": [
         "Wyszukiwanie zostało włączone"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "Pobrano bezpiecznie ${ nbFile } plik",
-        "Pobrano bezpiecznie ${ nbFile } pliki",
-        "Pobrano bezpiecznie ${ nbFile } plików",
-        "Pobrano bezpiecznie ${ nbFile } plików"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Pobrano bezpiecznie wszystkie zaszyfrowane pliki"
-      ],
-      "Securely downloaded all files": [
-        "Pobrano bezpiecznie wszystkie pliki"
       ],
       "Select a folder to move to.": [
         "Wybierz folder do przeniesienia."
@@ -5249,9 +5198,6 @@
       "Shared with me": [
         "Udostępnione Tobie"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Załóż konto ${ DRIVE_APP_NAME }. Chroń swoje dane za pomocą szyfrowania end-to-end i bezpiecznie udostępniaj pliki."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
       ],
@@ -5278,9 +5224,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
-      ],
-      "Something went wrong...": [
-        "Coś poszło nie tak..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
@@ -5741,9 +5684,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Pobieranie jest w toku"
-      ],
       "Your email address and password were leaked:": [
         "Twój adres e-mail i hasło zostały ujawnione:"
       ],
@@ -6063,9 +6003,6 @@
       "Download anyway": [
         "Pobierz mimo to"
       ],
-      "Downloading ${ percentageValue }": [
-        "Pobieranie ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Duplikat został znaleziony"
       ],
@@ -6383,9 +6320,6 @@
       ],
       "Theme": [
         "Motyw"
-      ],
-      "This file is potentially infected": [
-        "Plik jest prawdopodobnie zainfekowany"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Spowoduje to trwałe usunięcie wszystkich plików w zablokowanym dysku."
