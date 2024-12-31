@@ -23,11 +23,11 @@ import './Notification.scss';
 
 export const Notification: FC = () => {
     const { visible, resize } = useIFrameContext();
-    const app = useAppState();
+    const { status } = useAppState();
     const ref = useRef<HTMLDivElement>(null);
 
     const [state, setState] = useState<MaybeNull<NotificationActions>>(null);
-    const loading = state === null || clientBusy(app.state.status);
+    const loading = state === null || clientBusy(status);
 
     useRegisterMessageHandler(IFramePortMessageType.NOTIFICATION_ACTION, ({ payload }) => setState(payload));
 
