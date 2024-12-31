@@ -13,8 +13,8 @@ import { AliasContactsMoreInfo } from '@proton/pass/components/Item/Alias/Contac
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useItem } from '@proton/pass/hooks/useItem';
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -24,7 +24,7 @@ type Props = Pick<ModalStateProps, 'onClose'>;
 
 export const AliasContactsView: FC<Props> = ({ onClose }) => {
     const { contacts, sync, loading, shareId, itemId } = useAliasContacts();
-    const spotlight = useSpotlight();
+    const upsell = useUpselling();
 
     const [openCreate, setOpenCreate] = useState(false);
     const [openMoreInfo, setOpenMoreInfo] = useState(false);
@@ -34,7 +34,7 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
     const empty = !loading && contacts.active.length + contacts.blocked.length === 0;
 
     const handleCreateClick = () => {
-        if (isFreePlan) spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.LIMIT_ALIAS });
+        if (isFreePlan) upsell({ type: 'pass-plus', upsellRef: UpsellRef.LIMIT_ALIAS });
         else setOpenCreate(true);
     };
 

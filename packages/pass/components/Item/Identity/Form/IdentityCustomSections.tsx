@@ -13,7 +13,7 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -36,13 +36,16 @@ const getSectionFieldProps = (
 
 export const IdentityCustomSections: FC<Props> = ({ form }) => {
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
-    const spotlight = useSpotlight();
-
-    const openUpsell = () => spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS });
+    const upsell = useUpselling();
 
     const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number) => {
         const createCustomField = (type: ExtraFieldType) => {
-            if (isFreePlan) return openUpsell();
+            if (isFreePlan) {
+                return upsell({
+                    type: 'pass-plus',
+                    upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS,
+                });
+            }
 
             helpers.push<UnsafeItemExtraField>(createExtraField(type));
             autofocusInput(`${helpers.name}[${focusIndex}]`);

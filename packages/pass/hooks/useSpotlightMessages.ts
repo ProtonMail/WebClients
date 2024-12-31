@@ -8,6 +8,7 @@ import { UserRenewal } from '@proton/pass/components/Onboarding/UserRenewal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { SpotlightMessage } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -16,7 +17,8 @@ import noop from '@proton/utils/noop';
 
 export const useSpotlightMessages = () => {
     const { onLink, openSettings, promptForPermissions, getRatingURL, onForceUpdate } = usePassCore();
-    const { setPendingShareAccess, setUpselling } = useSpotlight();
+    const { setPendingShareAccess } = useSpotlight();
+    const upsell = useUpselling();
 
     return useMemo<Partial<Record<SpotlightMessage, SpotlightMessageDefinition>>>(
         () =>
@@ -40,11 +42,11 @@ export const useSpotlightMessages = () => {
                         message: c('Info')
                             .t`7 days to try premium features for free. Only during your first week of ${BRAND_NAME}.`,
                         className: 'ui-orange',
-                        onClose: () => setUpselling(null),
+                        onClose: () => upsell(null),
                         action: {
                             label: c('Label').t`Learn more`,
                             type: 'link',
-                            onClick: () => setUpselling({ type: 'free-trial', upsellRef: UpsellRef.FREE_TRIAL }),
+                            onClick: () => upsell({ type: 'free-trial', upsellRef: UpsellRef.FREE_TRIAL }),
                         },
                     },
                     {
@@ -126,16 +128,6 @@ export const useSpotlightMessages = () => {
                         message: '',
                         className: 'ui-teal hidden',
                         icon: ShieldIcon,
-                    },
-                    {
-                        type: SpotlightMessage.EARLY_ACCESS,
-                        mode: 'default',
-                        id: 'early-access',
-                        hidden: true,
-                        title: c('Title').t`Upgrade to Unlock Premium Features`,
-                        message: c('Info').t`Please upgrade to have early access ${PASS_APP_NAME} web app`,
-                        weak: true,
-                        onClose: () => setUpselling(null),
                     },
                     {
                         type: SpotlightMessage.ALIAS_SYNC_ENABLE,
