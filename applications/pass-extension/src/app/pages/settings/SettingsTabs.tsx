@@ -69,7 +69,7 @@ const pathnameToIndex = (pathname: string, availableTabs: SettingTab[]) => {
 };
 
 export const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
-    const app = useAppState();
+    const { authorized, status } = useAppState();
     const organization = useOrganization();
     const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
@@ -96,7 +96,7 @@ export const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     useEffect(() => setActiveTab(pathnameToIndex(pathname, tabs)), [pathname, tabs]);
 
-    if (app.state.authorized) {
+    if (authorized) {
         return (
             <OrganizationProvider>
                 <PasswordUnlockProvider>
@@ -163,7 +163,7 @@ export const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     return (
         <div className="flex flex-column items-center justify-center my-auto">
             <Icon name="lock-filled" size={10} className="mb-4" />
-            {clientSessionLocked(app.state.status) && (
+            {clientSessionLocked(status) && (
                 <>
                     <span className="block color-norm">{c('Info').t`Your ${PASS_APP_NAME} session is locked`}</span>
                     <span className="block text-sm color-weak">{c('Info')

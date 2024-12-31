@@ -5,7 +5,9 @@ import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { saveTabState } from '@proton/pass/store/actions/creators/filters';
@@ -20,7 +22,11 @@ export const usePopupStateEffects = () => {
     const { getCurrentTabUrl } = usePassCore();
     const { tabId } = useExtensionContext();
     const popup = usePopupContext();
-    const { navigate, selectItem, selectedItem, filters, setFilters } = useNavigation();
+
+    const { filters, setFilters } = useNavigationFilters();
+    const { selectItem, navigate } = useNavigationActions();
+    const selectedItem = useSelectedItem();
+
     const dispatch = useDispatch();
 
     /** Get the latest draft on first load - the equality check
