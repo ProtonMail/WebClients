@@ -20,7 +20,7 @@ export const ThemeOnboardingModal: FC = () => {
     const dispatch = useDispatch();
 
     const handleClose = () => {
-        if (!theme) dispatch(settingsEditIntent('theme', { theme: core.theme }, true));
+        if (!theme) dispatch(settingsEditIntent('theme', { theme: core.theme.getState() }, true));
         setOpen(false);
     };
 

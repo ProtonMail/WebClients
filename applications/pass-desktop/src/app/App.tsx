@@ -33,6 +33,7 @@ import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCor
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
+import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
@@ -78,6 +79,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     monitor,
     settings,
     spotlight,
+    theme: createPassThemeManager({ getInitialTheme }),
 
     exportData: async (options) => {
         const state = store.getState();
@@ -105,7 +107,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     },
 
     getLogs: logStore.read,
-    getTheme: getInitialTheme,
 
     onLink: (url) => window.open(url, '_blank'),
     onTelemetry: pipe(createTelemetryEvent, telemetry.push),

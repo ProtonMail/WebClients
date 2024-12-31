@@ -17,7 +17,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { PassCoreContext } from '@proton/pass/components/Core/PassCoreProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
 import {
@@ -26,7 +26,6 @@ import {
     getLocalPath,
     removeLocalPath,
 } from '@proton/pass/components/Navigation/routing';
-import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -57,9 +56,7 @@ import { sagaMiddleware, store } from './store';
 const SAGAS = DESKTOP_BUILD ? [...WEB_SAGAS, ...DESKTOP_SAGAS] : WEB_SAGAS;
 
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
-    /* Avoid stale closures when accessing core state outside of the React life-cycle (IE: sagas) */
-    const core = useContextProxy(PassCoreContext);
-
+    const core = usePassCore();
     const config = usePassConfig();
     const authService = useAuthService();
     const history = useHistory();
@@ -86,10 +83,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getDesktopBridge: DESKTOP_BUILD ? () => window.ctxBridge! : undefined,
 
                 onBeforeHydrate: (state) => {
-                    /* If the user switched to a new account for the first time, initialize their settings theme
-                     * to be the current theme (core.theme) which is also the last used account's theme. */
-                    const theme = selectTheme(state);
-                    if (theme === undefined && getPersistedSessions().length > 1) state.settings.theme = core.theme;
+                    if (selectTheme(state) === undefined && getPersistedSessions().length > 1) {
+                        /* If the user switched to a new account for the first time, initialize
+                         * their settings theme to be the current theme which should have been
+                         * set to the last used account's theme (see `getInitialTheme`). This
+                         * avoids prompting for theme onboarding on account switch. */
+                        state.settings.theme = core.theme.getState();
+                    }
 
                     return state;
                 },
