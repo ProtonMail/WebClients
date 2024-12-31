@@ -2582,6 +2582,9 @@
       "Impossible to rename the gateway": [
         "Nama gateway tidak dapat diubah"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Kata sandi cadangan salah. Silakan coba lagi."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Jenis berkas tidak tepat. Silakan unggah berkas dengan format PNG atau JPEG."
       ],
@@ -2672,6 +2675,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Silakan masukkan URL ID Entitas yang valid"
+      ],
       "Please generate keys before you try to change your password": [
         "Silakan buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
@@ -2692,6 +2698,9 @@
       ],
       "Please upload a square logo": [
         "Silakan unggah logo berbentuk persegi"
+      ],
+      "Please upload an XML file": [
+        "Mohon unggah berkas XML"
       ],
       "Please upload only 1 file": [
         "Mohon hanya unggah 1 berkas"
@@ -3540,7 +3549,7 @@
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "Server ${ provisioningCounter } masih dipersiapkan. Proses ini pada umumnya akan memakan waktu sekitar ${ provisioningDuration }."
+        "${ provisioningCounter } server masih dipersiapkan. Proses ini pada umumnya akan memakan waktu sekitar ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: meminta platform penerima untuk mengarantina atau menandai email yang tidak berizin sebagai spam."
@@ -3803,6 +3812,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom ID Entitas milik penyedia identitas Anda"
+      ],
       "Copy the suggested password to clipboard": [
         "Salin kata sandi yang disarankan ke papan klip"
       ],
@@ -3973,6 +3985,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Masukkan kode yang terkirim ke ${ email }. Apabila Anda tidak menemukannya di kotak masuk, cek folder spam Anda."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Masukkan ID Entitas organisasi **eduGAIN** untuk **${ domain.DomainName }**"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Masukkan Kata Sandi Organisasi untuk memulihkan hak administrator. ${ learnMore }"
@@ -5178,7 +5193,7 @@
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
-        "Anda akan segera dapat menambahkan server berikut ke Gateway lain."
+        "Anda akan dapat menambahkan server berikut ke Gateway lain dengan segera."
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
@@ -5746,6 +5761,9 @@
       ],
       "Show ${ n } administrator": [
         "Tampilkan ${ n } administrator"
+      ],
+      "Single sign-on Entity ID": [
+        "ID Entitas Masuk Sekali Pakai"
       ],
       "Single sign-on URL": [
         "URL single sign-on"
@@ -8631,7 +8649,7 @@
         "Akses konten terblokir dan jelajahi secara pribadi. Beserta 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN per pengguna, layanan streaming seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan lebih banyak lagi."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Akses konten terblokir dan jelajahi secara pribadi. Beserta 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN, layanan streaming seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan lebih banyak lagi."
+        "Akses konten yang diblokir dan jelajahi internet secara pribadi. Meliputi 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN, layanan streaming di seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan masih banyak lagi."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Seluruh layanan premium kami dengan batasan tertingginya: 100 alamat email, dukungan untuk 10 domain khusus, alias hide-my-email tanpa batasan jumlah, pembagian kalender, penyimpanan cloud dan pembagian berkas terenkripsi, dan masih banyak lagi."
@@ -8748,6 +8766,9 @@
       "Enter your backup password": [
         "Masukkan kata sandi cadangan Anda"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Agar pengguna ini dapat masuk, pastikan pengguna tersebut ada dalam penyedia identitas."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Demi keamanan Anda, Anda telah dikeluarkan dari seluruh perangkat aktif lainnya yang Anda miliki. Sebelum mengakses akun, Anda akan perlu untuk memasukkan kata sandi cadangan yang baru."
       ],
@@ -8813,6 +8834,9 @@
       ],
       "Single sign-on removed": [
         "Single sign-on dihapus"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Pengguna ${ name } kini merupakan akun single sign-on."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tindakan ini akan mengeluarkan pengguna yang bersangkutan dari perangkat lainnya yang mereka miliki, di mana mereka akan perlu untuk membuat kata sandi cadangan baru."
@@ -10393,6 +10417,9 @@
       "User": [
         "Pengguna"
       ],
+      "User converted to SSO": [
+        "Pengguna dikonversi ke SSO"
+      ],
       "Users": [
         "Pengguna"
       ],
@@ -10517,6 +10544,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Salin dan tempel tautan ini ke kolom ID Entitas penyedia identitas Anda."
       ],
       "Device information such as operating system": [
         "Informasi seputar perangkat, seperti sistem operasi yang digunakan"
@@ -10890,7 +10920,7 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } server"
+        "${ n }+ server"
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"

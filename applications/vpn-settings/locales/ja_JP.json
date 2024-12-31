@@ -2582,6 +2582,9 @@
       "Impossible to rename the gateway": [
         "ゲートウェイの名前を編集できません"
       ],
+      "Incorrect backup password. Please try again.": [
+        "間違ったバックアップパスワードです。再度お試しください。"
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "ファイルの種類が正しくありません。 PNG または JPEG 形式でファイルをアップロードします。"
       ],
@@ -2672,6 +2675,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
       ],
+      "Please enter a valid Entity ID URL": [
+        "有効なエンティティID URLを入力してください"
+      ],
       "Please generate keys before you try to change your password": [
         "パスワードを変更する前に鍵を生成してください"
       ],
@@ -2692,6 +2698,9 @@
       ],
       "Please upload a square logo": [
         "正方形のロゴをアップロードしてください。"
+      ],
+      "Please upload an XML file": [
+        "XMLファイルをアップロードしてください"
       ],
       "Please upload only 1 file": [
         "ファイルを 1 つだけアップロードしてください"
@@ -3803,6 +3812,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "この URL をコピーして、アイデンティティ プロバイダーの ACS (Assertion Consumer Service) URL フィールドに貼り付けます。"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "このURLをコピーして、アイデンティティプロバイダーのエンティティIDフィールドに貼り付けてください"
+      ],
       "Copy the suggested password to clipboard": [
         "提案されたパスワードをクリップボードにコピーする"
       ],
@@ -3973,6 +3985,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } に送信したコードを入力してください。受信トレイにメールがない場合、迷惑メールフォルダーを確認してください。"
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }**の**eduGAIN**組織のエンティティ ID を入力してください。"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "組織のパスワードを入力して管理者権限を取り戻します。${ learnMore }"
@@ -5746,6 +5761,9 @@
       ],
       "Show ${ n } administrator": [
         "${ n }人の管理者を表示"
+      ],
+      "Single sign-on Entity ID": [
+        "シングルサインオンエンティティID"
       ],
       "Single sign-on URL": [
         "シングルサインオン URL"
@@ -8751,6 +8769,9 @@
       "Enter your backup password": [
         "バックアップパスワードを入力してください"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "このユーザーがサインインできるようにするには、アイデンティティプロバイダーに存在していることを確認してください。"
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "セキュリティのため、全ての他のデバイスからサインアウトされました。アカウントにアクセスする前に、新しいバックアップパスワードを入力する必要があります。"
       ],
@@ -8816,6 +8837,9 @@
       ],
       "Single sign-on removed": [
         "シングルサインオンは削除されました"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "ユーザー${ name }は現在シングルサイオンアカウントです。"
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "これにより、ユーザーは他のデバイスからサインアウトされ、新しいバックアップパスワードを作成する必要があります。"
@@ -10396,6 +10420,9 @@
       "User": [
         "ユーザー"
       ],
+      "User converted to SSO": [
+        "ユーザーはSSOに変換されました"
+      ],
       "Users": [
         "ユーザー"
       ],
@@ -10520,6 +10547,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "この URL をコピーして、ACS(Assertion Consumer Service)の URL フィールドに貼り付けてください。"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "このURLをコピーして、アイデンティティプロバイダーのエンティティIDフィールドに貼り付けてください。"
       ],
       "Device information such as operating system": [
         "オペレーティングシステムなどのデバイス情報"
@@ -10915,7 +10945,7 @@
     },
     "vpn_2step: billing": {
       "Billed monthly": [
-        "毎月請求される"
+        "毎月請求"
       ]
     },
     "vpn_2step: discount": {
