@@ -2,7 +2,6 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
 
@@ -15,6 +14,7 @@ import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { MaybeNull, PopupInitialState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 
+type Props = { ready: boolean };
 export interface PopupContextValue {
     expanded: boolean /* is popup expanded into a separate window */;
     initial: PopupInitialState;
@@ -34,9 +34,8 @@ export const usePopupContext = createUseContext(PopupContext);
 /* this cannot be included directly in `PopupContextProvider` because
  * of the `useExtensionContext` call which requires this component to
  * be a descendant of `ExtensionConnect` */
-export const PopupProvider: FC<PropsWithChildren> = ({ children }) => {
+export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready }) => {
     const { status } = useAppState();
-    const { ready } = useExtensionClient();
     const { tabId } = useExtensionContext();
 
     const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
