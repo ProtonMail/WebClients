@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "承認する"
+      ],
       "Add": [
         "追加"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "期限切れのリンクはありません"
+      ],
+      "Not now": [
+        "後で"
       ],
       "OK": [
         "OK"
@@ -835,7 +841,7 @@
         "現時点ではこの招待を確認できませんでした"
       ],
       "Could not leave vault.": [
-        "フォルダーから退出できません"
+        "保管庫から退出できませんでした"
       ],
       "Could not load recommendations at the moment.": [
         "現時点では推奨事項を読み込めませんでした。"
@@ -931,7 +937,7 @@
         "受信箱の削除に失敗しました"
       ],
       "Failed to edit user's access.": [
-        "ユーザーのアクセスを削除できませんでした。"
+        "ユーザーのアクセスを編集できませんでした。"
       ],
       "Failed to load breaches for this address": [
         "このアドレスの違反をロードできませんでした"
@@ -943,7 +949,7 @@
         "ドメイン設定の読み込みに失敗しました。"
       ],
       "Failed to load item history": [
-        "アイテム履歴のロードに失敗しました"
+        "アイテム履歴の読み込みに失敗しました"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動できませんでした"
@@ -1066,7 +1072,7 @@
         "現在、オフライン モードはご利用のプランでは利用できず、2 パスワード モードと互換性がありません。"
       ],
       "Passphrase is incorrect": [
-        "パスフレーズが無効です"
+        "パスフレーズが間違っています"
       ],
       "PIN codes do not match": [
         "PINコードが一致しません"
@@ -1680,7 +1686,7 @@
         "アイテム「${ payload.item.data.metadata.name }」が更新されました"
       ],
       "Item moved to trash": [
-        "ごみ箱へ移動"
+        "アイテムをゴミ箱に移動しました"
       ],
       "Item permanently deleted": [
         "アイテムが完全に削除されました"
@@ -2140,9 +2146,6 @@
       ],
       "username": [
         "ユーザー名"
-      ],
-      "Value:": [
-        "値:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫「${ payload.content.name }」が正常に削除されました"
@@ -3517,6 +3520,9 @@
       ],
       "Breaches detected for": [
         "検出された侵害"
+      ],
+      "Change your lock method": [
+        "ロック方法を変更"
       ],
       "Confirm extra password": [
         "追加パスワードの確認"

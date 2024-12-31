@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Aksepter"
+      ],
       "Add": [
         "Legg til"
       ],
@@ -403,6 +406,9 @@
       "No expired links": [
         "Ingen utløpte koblinger"
       ],
+      "Not now": [
+        "Ikke nå"
+      ],
       "OK": [
         "OK"
       ],
@@ -588,7 +594,7 @@
         "Overfør eierskap"
       ],
       "Trash": [
-        "Papirkurv"
+        "Legg i papirkurven"
       ],
       "Try again.": [
         "Prøv igjen."
@@ -2170,9 +2176,6 @@
       "username": [
         "brukernavn"
       ],
-      "Value:": [
-        "Verdi:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Hvelv \"${ payload.content.name }\" slettet"
       ],
@@ -3193,7 +3196,7 @@
         "Lær mer"
       ],
       "stay safer online": [
-        "holder deg tryggere på nettet"
+        "vær sikrere på nettet"
       ]
     },
     "Log preference": {
@@ -3565,6 +3568,9 @@
       ],
       "Breaches detected for": [
         "Brudd oppdaget for"
+      ],
+      "Change your lock method": [
+        "Endre låsemetoden din"
       ],
       "Confirm extra password": [
         "Bekreft ekstra passord"
