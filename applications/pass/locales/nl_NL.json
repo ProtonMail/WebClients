@@ -400,6 +400,9 @@
       "No expired links": [
         "Geen verlopen koppelingen"
       ],
+      "Not now": [
+        "Niet nu"
+      ],
       "OK": [
         "OK"
       ],
@@ -679,7 +682,7 @@
         "2FA voegt een extra beveiligingslaag toe aan uw inloggegevens. ${ PASS_APP_NAME } maakt 2FA makkelijker door uw 2FA op te slaan en automatisch uw 2FA-codes in te vullen."
       ],
       "Add the following CNAME DNS records to your domain.": [
-        "Voeg de volgende CNAME DNS records toe aan uw domein."
+        "Voeg de volgende CNAME DNS-records toe aan uw domein."
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
         "Voeg het volgende MX DNS-record toe aan uw domein. Houd er rekening mee dat er een punt (.) is op de einddoeladressen. Als uw domein registrator dit punt niet toestaat, verwijder het dan bij het toevoegen van het DNS-record."
@@ -2135,9 +2138,6 @@
       "username": [
         "gebruikersnaam"
       ],
-      "Value:": [
-        "Waarde:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kluis \"${ payload.content.name }\" succesvol verwijderd"
       ],
@@ -3309,7 +3309,7 @@
         "Synchronisatie aliassen succesvol ingeschakeld. SimpleLogin aliassen kunnen enige tijd duren om te synchroniseren"
       ],
       "Catch-all setting successfully disabled": [
-        "Catch-allinstellingen succesvol uitgeschakeld"
+        "Catch-all instellingen succesvol uitgeschakeld"
       ],
       "Catch-all setting successfully enabled": [
         "Catch-all instelling succesvol ingeschakeld"
@@ -3336,7 +3336,7 @@
         "Weergavenaam succesvol bijgewerkt"
       ],
       "Domain ownership verified. You can now set up MX record.": [
-        "Domein eigendom geverifieerd. U kunt nu MX record instellen."
+        "Domein eigendom geverifieerd. U kunt nu MX-record instellen."
       ],
       "Domain successfully deleted": [
         "Domein succesvol verwijderd"
