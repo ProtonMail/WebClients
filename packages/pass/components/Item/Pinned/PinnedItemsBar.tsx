@@ -64,26 +64,29 @@ const PinnedItemBarContent = memo(({ sort, onSelect }: Props) => {
                     className="p-1 button-xs ui-violet"
                     pill={false}
                 >
-                    {list.hidden.map((item) => (
-                        <DropdownMenuButton
-                            key={item.itemId}
-                            icon={
-                                <SafeItemIcon
-                                    className={clsx('shrink-0', itemTypeToSubThemeClassName[item.data.type])}
-                                    item={item}
-                                    size={3}
-                                    pill={false}
-                                />
-                            }
-                            className={clsx(
-                                'pass-pinned-bar--item',
-                                selectedItem && itemEq(selectedItem)(item) && 'is-active'
-                            )}
-                            onClick={() => onSelect(item)}
-                            label={item.data.metadata.name}
-                            labelClassname="text-sm"
-                        />
-                    ))}
+                    {(opened) =>
+                        opened &&
+                        list.hidden.map((item) => (
+                            <DropdownMenuButton
+                                key={item.itemId}
+                                icon={
+                                    <SafeItemIcon
+                                        className={clsx('shrink-0', itemTypeToSubThemeClassName[item.data.type])}
+                                        item={item}
+                                        size={3}
+                                        pill={false}
+                                    />
+                                }
+                                className={clsx(
+                                    'pass-pinned-bar--item',
+                                    selectedItem && itemEq(selectedItem)(item) && 'is-active'
+                                )}
+                                onClick={() => onSelect(item)}
+                                label={item.data.metadata.name}
+                                labelClassname="text-sm"
+                            />
+                        ))
+                    }
                 </QuickActionsDropdown>
             )}
         </div>
