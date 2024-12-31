@@ -10,7 +10,7 @@ import {
     type NotificationActions,
 } from 'proton-pass-extension/app/content/types';
 
-import { AppStateProvider } from '@proton/pass/components/Core/AppStateProvider';
+import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, AppStatus } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -60,8 +60,8 @@ export const MockIFrameContainer: FC<{
             marginBottom: 12,
         }}
     >
-        <AppStateProvider
-            initial={{
+        <AppStateContext.Provider
+            value={{
                 booted: true,
                 localID: undefined,
                 authorized: true,
@@ -71,6 +71,6 @@ export const MockIFrameContainer: FC<{
             }}
         >
             <IFrameContext.Provider value={createMockIFrameContext(payload, domain)}>{children}</IFrameContext.Provider>
-        </AppStateProvider>
+        </AppStateContext.Provider>
     </div>
 );

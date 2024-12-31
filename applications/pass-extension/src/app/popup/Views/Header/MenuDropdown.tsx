@@ -215,6 +215,7 @@ export const MenuDropdown: FC = () => {
                         />
 
                         <SecureLinkButton
+                            active={false}
                             className="pt-1.5 pb-1.5"
                             onClick={withClose(() => navigate(getLocalPath('secure-links')))}
                         />

@@ -15,6 +15,7 @@ import locales from 'proton-pass-extension/app/locales';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import type { Runtime } from 'webextension-polyfill';
 
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -57,7 +58,7 @@ type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string>
  * forwarding messages to the content-script's ports. We retrieve
  * the content-script's parent port name through postMessaging */
 export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
-    const { i18n, endpoint, setTheme } = usePassCore();
+    const { i18n, endpoint, theme } = usePassCore();
     const app = useAppState();
     const authStore = useAuthStore();
 
@@ -127,7 +128,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     );
 
     useEffect(() => {
-        if (userEmail === null && clientReady(app.state.status)) {
+        if (userEmail === null && clientReady(app.status)) {
             sendMessage
                 .onSuccess(
                     contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER }),
@@ -135,7 +136,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                 )
                 .catch(noop);
         }
-    }, [app.state, userEmail]);
+    }, [app, userEmail]);
 
     useEffect(() => {
         setTtagLocales(locales);
@@ -149,8 +150,8 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                 if (isIFrameMessage(message)) {
                     switch (message?.type) {
                         case IFramePortMessageType.IFRAME_INIT:
-                            app.setState(message.payload.appState);
-                            setTheme(message.payload.theme);
+                            AppStateManager.setState(message.payload.appState);
+                            theme.setState(message.payload.theme);
                             setSettings(message.payload.settings);
                             setFeatures(message.payload.features);
                             setDomain(message.payload.domain);
@@ -164,7 +165,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                         case IFramePortMessageType.IFRAME_OPEN:
                             return setVisible(true);
                         case IFramePortMessageType.IFRAME_THEME:
-                            return setTheme(message.payload);
+                            return theme.setState(message.payload);
                         case WorkerMessageType.FEATURE_FLAGS_UPDATE:
                             return setFeatures(message.payload);
                         case WorkerMessageType.SETTINGS_UPDATE:
@@ -180,7 +181,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                             return destroyFrame();
                         case WorkerMessageType.WORKER_STATE_CHANGE:
                             authStore?.setLocalID(message.payload.state.localID);
-                            return app.setState(message.payload.state);
+                            return AppStateManager.setState(message.payload.state);
                     }
                 }
             });
@@ -246,7 +247,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     );
 
     useEffect(() => {
-        if (visible && app.state.authorized) activityProbe.start();
+        if (visible && AppStateManager.getState().authorized) activityProbe.start();
         else activityProbe.cancel();
     }, [visible]);
 

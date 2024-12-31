@@ -61,7 +61,7 @@ export const WithPinUnlock: FC<Props & { children: (locked: boolean, input: Reac
     children,
     ...props
 }) => {
-    const { status } = useAppState().state;
+    const { status } = useAppState();
     const locked = clientSessionLocked(status);
     const input = locked ? <PinUnlock {...props} /> : null;
 

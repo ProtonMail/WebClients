@@ -13,7 +13,7 @@ import { Main } from './Views/Main';
 
 export const AppGuard: FC = () => {
     const { initialized } = usePopupContext();
-    const { authorized } = useAppState().state;
+    const { authorized } = useAppState();
     const lockSetup = useSelector(selectLockSetupRequired);
 
     /* Navigate from Lobby when user is logged in (or needs lock setup),
