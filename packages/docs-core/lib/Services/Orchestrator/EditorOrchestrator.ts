@@ -1,3 +1,4 @@
+import type { DocsUserState } from '@proton/docs-shared'
 import {
   type CommentInterface,
   type CommentThreadInterface,
@@ -15,7 +16,6 @@ import {
   AnonymousUserEmail,
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
-import type { UserState } from '@lexical/yjs'
 import type { DocsApi } from '../../Api/DocsApi'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
@@ -217,7 +217,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.deleteThread(id)
   }
 
-  async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
+  async handleAwarenessStateUpdate(states: DocsUserState[]): Promise<void> {
     this.participantTracker.updateParticipantsFromUserStates(states)
 
     this.eventBus.publish<DocsAwarenessStateChangeData>({

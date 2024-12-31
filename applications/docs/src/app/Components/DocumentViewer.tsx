@@ -262,7 +262,11 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   }, [application.eventBus, bridge])
 
   const createBridge = useCallback(
-    (orchestrator: EditorOrchestratorInterface, editorFrame: HTMLIFrameElement) => {
+    (
+      orchestrator: EditorOrchestratorInterface,
+      editorFrame: HTMLIFrameElement,
+      editorController: EditorControllerInterface,
+    ) => {
       if (bridge) {
         application.logger.warn('Attempting to create bridge when one already exists')
         return
@@ -283,17 +287,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
 
       setBridge(clientToEditorBridge)
 
-      const docMeta = documentState?.getProperty('documentMeta')
-      if (!docMeta) {
-        throw new Error('Document meta not yet available')
-      }
-
-      void clientToEditorBridge.editorInvoker.initializeEditor(
-        docMeta.uniqueIdentifier,
-        orchestrator.userAddress,
-        documentState.getProperty('userRole').roleType,
-        editorInitializationConfig,
-      )
+      void editorController.initializeEditor(editorInitializationConfig, orchestrator.userAddress)
     },
     [
       bridge,
@@ -343,10 +337,10 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   }, [application, docOrchestrator, initializing, nodeMeta])
 
   useEffect(() => {
-    if (docOrchestrator && editorFrame && !bridge) {
-      createBridge(docOrchestrator, editorFrame)
+    if (docOrchestrator && editorFrame && editorController && !bridge) {
+      createBridge(docOrchestrator, editorFrame, editorController)
     }
-  }, [docOrchestrator, editorFrame, createBridge, bridge])
+  }, [docOrchestrator, editorFrame, createBridge, bridge, editorController])
 
   const onInviteAutoAcceptResult = useCallback((result: boolean) => {
     if (result) {
