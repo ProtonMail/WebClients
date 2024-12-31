@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
-import type { UserState } from '@lexical/yjs'
 import { Tooltip } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 import { useApplication } from '../Containers/ApplicationProvider'
-import type { DocsAwarenessStateChangeData } from '@proton/docs-shared'
+import type { DocsAwarenessStateChangeData, DocsUserState } from '@proton/docs-shared'
 import { DocAwarenessEvent, UserAvatar } from '@proton/docs-shared'
 
 export function DocumentActiveUsers({ className }: { className?: string }) {
   const application = useApplication()
-  const [states, setStates] = useState<UserState[]>([])
+  const [states, setStates] = useState<DocsUserState[]>([])
 
   useEffect(() => {
     return application.eventBus.addEventCallback<DocsAwarenessStateChangeData>((data) => {
@@ -29,15 +28,17 @@ export function DocumentActiveUsers({ className }: { className?: string }) {
   return (
     <div className={clsx('flex items-center gap-2', className)} data-testid="active-users">
       {states.map((state, index) => {
-        const { name, color, focusing } = state
+        const { name, color, focusing, awarenessData } = state
+
+        const particle = awarenessData.anonymousUserParticle
+
         return (
           <Tooltip title={name} key={index}>
             <UserAvatar
-              name={name}
+              name={particle ? particle : name}
+              useFirstLetterOfName={!particle}
               className={!focusing ? 'opacity-50' : ''}
-              color={{
-                hsl: color,
-              }}
+              color={{ hsl: color }}
               onClick={() => {
                 application.syncedEditorState.emitEvent({
                   name: 'ScrollToUserCursorData',

@@ -3,7 +3,10 @@ import type { UserState } from '@lexical/yjs'
 
 export type DocsUserState = UserState & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  awarenessData: Record<string, any>
+  awarenessData: Record<string, any> & {
+    anonymousUserParticle?: string
+    userId: string
+  }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }
@@ -21,7 +24,8 @@ export class DocsAwareness extends Awareness {
    * When a single client refreshes their page, they may not have the chance to propagate their own removal
    * This means that when the user comes back to the page after the refresh, they will see their old user avatar.
    * (Other users will also see the old avatar). This function looks for duplicates based on the username (email)
-   * and if there are more than one state entries for an email, it will delete the one that has the older lastUpdated.
+   * for normal clients and a random ID for anonymous users and if there are more than one state entries for an
+   * email, it will delete the one that has the older lastUpdated.
    */
   removeDuplicateClients(): void {
     const states = this.getStates()
@@ -29,10 +33,10 @@ export class DocsAwareness extends Awareness {
     const alreadyBrowsedEntries: Map<string, number> = new Map()
 
     for (const [clientId, userState] of states) {
-      const username = userState.name
+      const id = userState.awarenessData.userId ?? userState.name
 
-      if (alreadyBrowsedEntries.has(username)) {
-        const previousClientId = alreadyBrowsedEntries.get(username) as number
+      if (alreadyBrowsedEntries.has(id)) {
+        const previousClientId = alreadyBrowsedEntries.get(id) as number
 
         const currentLastUpdated = this.meta.get(clientId)?.lastUpdated ?? 0
         const previousLastUpdated = this.meta.get(previousClientId)?.lastUpdated ?? 0
@@ -44,7 +48,7 @@ export class DocsAwareness extends Awareness {
         }
       }
 
-      alreadyBrowsedEntries.set(username, clientId)
+      alreadyBrowsedEntries.set(id, clientId)
     }
   }
 
