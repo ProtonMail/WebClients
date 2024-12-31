@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import useInstance from '@proton/hooks/useInstance';
@@ -96,20 +96,25 @@ export const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(nu
  * clients : it provides implementations for processes that are
  * dependent on the platform. */
 export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, wasm, ...core }) => {
+    const [initialized, setInitialized] = useState(!wasm);
     const context = useInstance<PassCoreContextValue>(() => core);
 
     useEffect(() => {
-        if (wasm) preloadPassCoreUI()?.catch(noop);
-
         const client = ['desktop', 'web'].includes(core.endpoint) ? core.endpoint : 'extension';
         document.body.classList.add(`pass-${client}`);
+
+        if (wasm) {
+            preloadPassCoreUI()
+                ?.catch(noop)
+                .finally(() => setInitialized(true));
+        }
     }, []);
 
     return (
         <ConfigProvider config={core.config}>
             <PassCoreContext.Provider value={context}>
                 <PassThemeProvider>
-                    <AppStateProvider>{children}</AppStateProvider>
+                    <AppStateProvider>{initialized && children}</AppStateProvider>
                 </PassThemeProvider>
             </PassCoreContext.Provider>
         </ConfigProvider>
