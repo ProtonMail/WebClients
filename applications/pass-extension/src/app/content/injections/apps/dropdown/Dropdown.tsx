@@ -33,13 +33,11 @@ import './Dropdown.scss';
 
 export const Dropdown: FC = () => {
     const { visible, resize, close } = useIFrameContext();
-    const app = useAppState();
+    const { status, authorized, lockSetup } = useAppState();
     const accountFork = useRequestFork();
 
     const [state, setState] = useState<MaybeNull<DropdownActions>>(null);
     const ref = useRef<HTMLDivElement>(null);
-
-    const { status } = app.state;
     const loading = state === null || clientBusy(status);
 
     useRegisterMessageHandler(IFramePortMessageType.DROPDOWN_ACTION, ({ payload }) => setState(payload));
@@ -120,15 +118,15 @@ export const Dropdown: FC = () => {
                         );
                     }
 
-                    if (!app.state.authorized) {
+                    if (!authorized) {
                         return (
                             <ListItem
                                 onClick={() => {
-                                    if (!app.state.lockSetup) return accountFork(ForkType.SWITCH);
+                                    if (!lockSetup) return accountFork(ForkType.SWITCH);
                                     close();
                                 }}
                                 subTitle={
-                                    app.state.lockSetup
+                                    lockSetup
                                         ? c('Info')
                                               .t`Your organization requires you to secure your access to ${PASS_APP_NAME}`
                                         : c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`

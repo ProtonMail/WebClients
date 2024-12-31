@@ -35,10 +35,9 @@ export const usePopupContext = createUseContext(PopupContext);
  * of the `useExtensionContext` call which requires this component to
  * be a descendant of `ExtensionConnect` */
 export const PopupProvider: FC<PropsWithChildren> = ({ children }) => {
-    const app = useAppState();
+    const { status } = useAppState();
     const { ready } = useExtensionClient();
     const { tabId } = useExtensionContext();
-    const { status } = app.state;
 
     const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
     const expanded = useExpanded();
