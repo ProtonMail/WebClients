@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Accetta"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Nessun link scaduto"
+      ],
+      "Not now": [
+        "Non ora"
       ],
       "OK": [
         "OK"
@@ -2170,9 +2176,6 @@
       "username": [
         "nome utente"
       ],
-      "Value:": [
-        "Valore:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "La cassaforte \"${ payload.content.name }\" è stata eliminata con successo"
       ],
@@ -3565,6 +3568,9 @@
       ],
       "Breaches detected for": [
         "Violazioni di dati rilevate per"
+      ],
+      "Change your lock method": [
+        "Cambia il metodo di blocco"
       ],
       "Confirm extra password": [
         "Conferma la password aggiuntiva"

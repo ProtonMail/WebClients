@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Aceitar"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Nenhum link expirado"
+      ],
+      "Not now": [
+        "Agora não"
       ],
       "OK": [
         "OK"
@@ -2170,9 +2176,6 @@
       "username": [
         "Nome de usuário"
       ],
-      "Value:": [
-        "Valor:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" excluído"
       ],
@@ -3568,6 +3571,9 @@
       ],
       "Breaches detected for": [
         "Violações detectadas para"
+      ],
+      "Change your lock method": [
+        "Altere seu método de bloqueio"
       ],
       "Confirm extra password": [
         "Confirmar senha adicional"
