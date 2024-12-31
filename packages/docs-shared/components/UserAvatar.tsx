@@ -19,10 +19,11 @@ interface UserAvatarProps extends Omit<ComponentPropsWithoutRef<'button'>, 'colo
   name: string
   className?: string
   color?: { hue: HueValue } | { hsl: string }
+  useFirstLetterOfName?: boolean
 }
 
 export const UserAvatar = forwardRef(function UserAvatar(
-  { name, className, color, ...rest }: UserAvatarProps,
+  { name, className, color, useFirstLetterOfName = true, ...rest }: UserAvatarProps,
   ref: ForwardedRef<HTMLButtonElement>,
 ) {
   if (!name) {
@@ -80,7 +81,7 @@ export const UserAvatar = forwardRef(function UserAvatar(
       }
       {...rest}
     >
-      {letter}
+      {useFirstLetterOfName ? letter : name}
     </button>
   )
 })
