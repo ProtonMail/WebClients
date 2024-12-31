@@ -1346,6 +1346,9 @@
         "Залишилось ${ trialDaysLeft } днів",
         "Залишилось ${ trialDaysLeft } дні"
       ],
+      "(Empty)": [
+        "(Порожньо)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 днів, щоб спробувати преміум функції задарма. Лише протягом вашого першого тижня ${ BRAND_NAME }."
       ],
@@ -2197,9 +2200,6 @@
       ],
       "User's access successfully updated": [
         "Доступ користувача успішно оновлено"
-      ],
-      "Value:": [
-        "Значення:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
