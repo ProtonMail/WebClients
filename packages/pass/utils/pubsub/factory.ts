@@ -3,7 +3,7 @@ import type { MaybePromise } from '@proton/pass/types';
 export type Subscriber<E> = (event: E) => MaybePromise<void>;
 
 export interface PubSub<E> {
-    subscribe: (subscriber: Subscriber<E>) => void;
+    subscribe: (subscriber: Subscriber<E>) => () => void;
     unsubscribe: () => void;
     publish: (event: E) => void;
     /** Publishes an event and wait for all subscribers to have resolved.
