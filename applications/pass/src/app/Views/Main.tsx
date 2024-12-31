@@ -46,10 +46,10 @@ import { Menu } from './Sidebar/Menu';
 
 const MainSwitch: FC = () => {
     const dispatch = useDispatch();
-    const app = useAppState();
+    const { status } = useAppState();
     const authStore = useAuthStore();
     const localID = authStore?.getLocalID();
-    const offline = clientOffline(app.state.status);
+    const offline = clientOffline(status);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
     const isSSO = useSelector(selectIsSSO);
 

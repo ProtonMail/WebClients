@@ -11,7 +11,7 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
 
 import type { CreateNotificationOptions } from '@proton/components';
-import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
+import type { AppStateService } from '@proton/pass/components/Core/AppStateManager';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     type AuthRouteState,
@@ -64,7 +64,7 @@ import {
 } from './sessions';
 
 type AuthServiceBindings = {
-    app: AppStateContextValue;
+    app: AppStateService;
     authSwitch: AuthSwitchService;
     config: PassConfig;
     core: PassCoreContextValue;
@@ -197,7 +197,7 @@ export const createAuthService = ({
         },
 
         onLoginStart: () => {
-            if (app.state.booted) return;
+            if (app.getState().booted) return;
             return app.setStatus(AppStatus.AUTHORIZING);
         },
 
@@ -211,7 +211,7 @@ export const createAuthService = ({
                 await auth.persistSession({ regenerateClientKey: false }).catch(noop);
             }
 
-            if (app.state.booted) app.setStatus(AppStatus.READY);
+            if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {
                 const redirect = stripLocalBasenameFromPathname(route.get('redirectPath'));
                 history.replace({ ...history.location, pathname: (getBasename(localID) ?? '/') + redirect });
@@ -345,7 +345,7 @@ export const createAuthService = ({
         },
 
         onUnlocked: async (mode, _, localID) => {
-            if (clientBooted(app.state.status)) return;
+            if (clientBooted(app.getState().status)) return;
 
             const validSession = authStore.validSession(authStore.getSession());
 
@@ -398,7 +398,7 @@ export const createAuthService = ({
 
         onSessionFailure: () => {
             logger.info('[AuthServiceProvider] Session resume failure');
-            if (!(clientOffline(app.state.status) && !getOnline())) {
+            if (!(clientOffline(app.getState().status) && !getOnline())) {
                 app.setStatus(AppStatus.ERROR);
                 app.setBooted(false);
             }

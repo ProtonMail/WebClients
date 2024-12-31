@@ -15,7 +15,7 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PassCoreContext } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
@@ -66,7 +66,6 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const { installed } = usePassExtensionLink();
     const online = useConnectivity();
 
-    const app = useContextProxy(AppStateContext);
     const sw = useServiceWorker();
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
@@ -76,8 +75,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
             rootSagaFactory(SAGAS).bind(null, {
                 endpoint: 'web',
                 getConfig: () => config,
-                getAppState: () => app.state,
-                setAppStatus: app.setStatus,
+                getAppState: () => AppStateManager.getState(),
+                setAppStatus: AppStateManager.setStatus,
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
                 getCache: async () => cacheGuard(await getDBCache(authStore.getUserID()), config.APP_VERSION),
@@ -96,7 +95,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onBoot: async (res) => {
-                    app.setBooted(res.ok);
+                    AppStateManager.setBooted(res.ok);
                     const userID = authStore.getUserID();
                     const state = store.getState();
 
@@ -155,7 +154,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onNotification: (notification) => {
-                    if (notification.type === 'error' && clientOffline(app.state.status)) {
+                    if (notification.type === 'error' && clientOffline(AppStateManager.getState().status)) {
                         notification.errorMessage = c('Warning').t`Offline`;
                     }
 
@@ -188,7 +187,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         );
 
         const handleAction: ServiceWorkerClientMessageHandler<'action'> = ({ action, localID }) => {
-            if (clientBooted(app.state.status) && authStore.hasSession(localID)) store.dispatch(action);
+            if (clientBooted(AppStateManager.getState().status) && authStore.hasSession(localID)) {
+                store.dispatch(action);
+            }
         };
 
         sw?.on('action', handleAction);
@@ -203,7 +204,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useVisibleEffect(
         (visible: boolean) => {
-            if (visible && online && clientReady(app.state.status)) store.dispatch(startEventPolling());
+            const { status } = AppStateManager.getState();
+            if (visible && online && clientReady(status)) store.dispatch(startEventPolling());
             else if (!visible || !online) store.dispatch(stopEventPolling());
         },
         [online]
