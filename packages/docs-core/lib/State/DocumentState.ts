@@ -73,7 +73,14 @@ export interface DocumentStateValues {
 
   currentDocumentEmailDocTitleEnabled: boolean
 
+  /** true when the editor is ready to receive function invocations */
   editorReady: boolean
+  /**
+   * true when the editor has been configured with the correct initial config, set as permissions and mode.
+   * This must necessarily happen after editorReady, since first we need the editor to tell us it is ready to
+   * receive invocations. Then we invoke a initialize-editor function.
+   */
+  editorInitialized: boolean
   editorHasRenderingIssue: boolean
 
   /** Public documents may not support realtime depending on feature configuration */
@@ -95,6 +102,7 @@ const DefaultValues: Pick<
   | 'currentCommitId'
   | 'baseCommit'
   | 'editorReady'
+  | 'editorInitialized'
   | 'editorHasRenderingIssue'
   | 'realtimeEnabled'
   | 'realtimeReadyToBroadcast'
@@ -109,6 +117,7 @@ const DefaultValues: Pick<
   baseCommit: undefined,
 
   editorReady: false,
+  editorInitialized: false,
   editorHasRenderingIssue: false,
   realtimeEnabled: true,
   realtimeConnectionTimedOut: false,

@@ -12,7 +12,13 @@ import type {
   EditorInitializationConfig,
   DocumentRole,
 } from '@proton/docs-shared'
-import { LexicalDocProvider, getAccentColorForUsername } from '@proton/docs-shared'
+import {
+  AnonymousUserDisplayName,
+  GenerateUUID,
+  LexicalDocProvider,
+  getAccentColorForUsername,
+  getRandomParticle,
+} from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
@@ -135,18 +141,40 @@ export function Editor({
     [clientInvoker],
   )
 
-  const color = useMemo(() => {
-    return getAccentColorForUsername(userName)
-  }, [userName])
+  const isAnonymousUser = userName === AnonymousUserDisplayName
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
   const hasMutationDisplay = systemMode === EditorSystemMode.Edit && userMode !== EditorUserMode.Preview
+
+  const particleForAnonymousUser = useMemo(() => {
+    if (!isAnonymousUser) {
+      return null
+    }
+    return getRandomParticle()
+  }, [isAnonymousUser])
+
+  const anonymousUserId = useRef(GenerateUUID())
+
+  const awarenessData = useMemo(
+    () => ({
+      anonymousUserParticle: particleForAnonymousUser?.particle,
+      userId: isAnonymousUser ? anonymousUserId.current : userName,
+    }),
+    [isAnonymousUser, particleForAnonymousUser?.particle, userName],
+  )
+
+  const color = useMemo(() => {
+    if (particleForAnonymousUser) {
+      return particleForAnonymousUser.hsl
+    }
+    return getAccentColorForUsername(userName)
+  }, [particleForAnonymousUser, userName])
 
   return (
     <CollaborationContext.Provider
       value={{
         yjsDocMap: docMap,
-        name: userName,
+        name: particleForAnonymousUser ? `Anonymous ${particleForAnonymousUser.particle}` : userName,
         color,
         clientID: 0,
         isCollabActive: false,
@@ -222,6 +250,7 @@ export function Editor({
             shouldBootstrap={ShouldBootstrap}
             onLoadResult={onEditorLoadResult}
             editorInitializationConfig={editorInitializationConfig}
+            additionalAwarenessData={awarenessData}
           />
         )}
         {systemMode === EditorSystemMode.Revision && (
