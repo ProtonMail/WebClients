@@ -37,15 +37,15 @@ export const Popup = () => {
             <ExtensionClient onWorkerMessage={onWorkerMessage}>
                 {(ready) => (
                     <ErrorBoundary component={<ExtensionError />}>
-                        <PopupProvider ready={ready}>
-                            <Router>
-                                <NavigationProvider>
+                        <Router>
+                            <NavigationProvider>
+                                <PopupProvider ready={ready}>
                                     <Localized>
                                         <AppGuard />
                                     </Localized>
-                                </NavigationProvider>
-                            </Router>
-                        </PopupProvider>
+                                </PopupProvider>
+                            </NavigationProvider>
+                        </Router>
                     </ErrorBoundary>
                 )}
             </ExtensionClient>
