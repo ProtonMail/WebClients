@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,20 +8,14 @@ import { useInviteActions, useLatestInvite } from '@proton/pass/components/Invit
 import { PendingNewUsersApprovalModal } from '@proton/pass/components/Share/PendingNewUsersApprovalModal';
 import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
-import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
-import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
-import type { UpsellRef } from '@proton/pass/constants';
+import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { type MaybeNull, SpotlightMessage } from '@proton/pass/types';
-import noop from '@proton/utils/noop';
 
 import { InviteIcon } from './SpotlightIcon';
 
-type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
-
 type SpotlightState = {
     open: boolean;
-    upselling: MaybeNull<UpsellingState>;
     pendingShareAccess: boolean;
     message: MaybeNull<SpotlightMessageDefinition>;
 };
@@ -32,22 +26,14 @@ export type SpotlightContextValue = {
     acknowledge: (messageType: SpotlightMessage) => void;
     /** Controls the Pending Share Access modal */
     setPendingShareAccess: (value: boolean) => void;
-    /** Controls the Upselling modal */
-    setUpselling: (value: MaybeNull<UpsellingState>) => void;
     /** Sets the current message - if an invite  */
     setSpotlight: (message: MaybeNull<SpotlightMessageDefinition>) => void;
     state: SpotlightState;
 };
 
-const INITIAL_STATE: SpotlightState = { open: false, message: null, upselling: null, pendingShareAccess: false };
+const INITIAL_STATE: SpotlightState = { open: false, message: null, pendingShareAccess: false };
 
-export const SpotlightContext = createContext<SpotlightContextValue>({
-    acknowledge: noop,
-    setUpselling: noop,
-    setPendingShareAccess: noop,
-    setSpotlight: noop,
-    state: INITIAL_STATE,
-});
+export const SpotlightContext = createContext<MaybeNull<SpotlightContextValue>>(null);
 
 export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const { spotlight } = usePassCore();
@@ -59,11 +45,6 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const timer = useRef<NodeJS.Timeout>();
     const messageRef = useStatefulRef(state.message);
-
-    const closeUpselling = () => {
-        state.message?.onClose?.();
-        setState((prev) => ({ ...prev, upselling: null }));
-    };
 
     const closePendingShareAccess = () => {
         state.message?.onClose?.();
@@ -89,7 +70,6 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         () => ({
             acknowledge,
             setPendingShareAccess: (pendingShareAccess) => setState((prev) => ({ ...prev, pendingShareAccess })),
-            setUpselling: (upselling) => setState((prev) => ({ ...prev, upselling })),
             setSpotlight: setSpotlightMessage,
             state,
         }),
@@ -129,20 +109,10 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <SpotlightContext.Provider value={ctx}>
             {children}
-
-            {state.upselling && (
-                <UpsellingModal
-                    open
-                    onClose={closeUpselling}
-                    upsellType={state.upselling.type}
-                    upsellRef={state.upselling.upsellRef}
-                />
-            )}
-
             <PendingShareAccessModal open={state.pendingShareAccess} onClose={closePendingShareAccess} />
             <PendingNewUsersApprovalModal />
         </SpotlightContext.Provider>
     );
 };
 
-export const useSpotlight = () => useContext(SpotlightContext);
+export const useSpotlight = createUseContext(SpotlightContext);
