@@ -89,7 +89,7 @@ export const VaultMenuItem = memo(
 
         return (
             <DropdownMenuButton
-                onClick={onSelect}
+                onClick={() => !selected && onSelect()}
                 label={<span className="block text-ellipsis">{label}</span>}
                 parentClassName={clsx(
                     'pass-vault-submenu-vault-item w-full',
