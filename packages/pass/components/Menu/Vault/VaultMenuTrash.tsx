@@ -37,7 +37,7 @@ export const VaultMenuTrash = memo(({ dense, selected, onAction = noop }: Props)
         <DropdownMenuButton
             label={c('Label').t`Trash`}
             icon="trash"
-            onClick={onSelect}
+            onClick={() => !selected && onSelect()}
             className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-3')}
             parentClassName="pass-vault-submenu-vault-item w-full"
             style={{ '--max-h-custom': '1.25rem' }}
