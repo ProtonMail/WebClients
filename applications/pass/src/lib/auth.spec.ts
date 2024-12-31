@@ -1,7 +1,7 @@
 import type { History } from 'history';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
 
-import { type AppStateContextValue, getInitialAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { type AppStateService, getInitialAppState } from '@proton/pass/components/Core/AppStateManager';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import type { AuthService } from '@proton/pass/lib/auth/service';
@@ -20,7 +20,7 @@ describe('AuthService', () => {
     let authService: AuthService;
     let history: History<any>;
     let sw: ServiceWorkerClient;
-    let app: AppStateContextValue;
+    let app: AppStateService;
 
     const config = { SSO_URL: 'test://' } as PassConfig;
 
@@ -46,7 +46,17 @@ describe('AuthService', () => {
 
     beforeEach(() => {
         authStore.clear();
-        app = { reset, setAuthorized, setBooted, setLocalID, setState, setStatus, setUID, state: getInitialAppState() };
+        app = {
+            reset,
+            setAuthorized,
+            setBooted,
+            setLocalID,
+            setState,
+            setStatus,
+            setUID,
+            getState: getInitialAppState,
+            subscribe: jest.fn(),
+        };
         history = { replace: jest.fn(), location: { pathname: '/', search: '', state: null, hash: '' } } as any;
         sw = { on: jest.fn(), off: jest.fn() } as any;
 
