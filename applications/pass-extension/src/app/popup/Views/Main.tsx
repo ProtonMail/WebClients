@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupStateEffects';
+import { useSaveTabState } from 'proton-pass-extension/lib/hooks/useSaveTabState';
 
 import { useNotifications } from '@proton/components';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
@@ -33,7 +33,7 @@ const MainSwitch: FC = () => {
     const isSSO = useSelector(selectIsSSO);
 
     return (
-        <Route>
+        <Route path="*">
             {({ match }) => (
                 <main
                     key="main"
@@ -67,7 +67,7 @@ export const Main: FC = () => {
     const { logout } = useExtensionClient();
     const lockSetup = useSelector(selectLockSetupRequired);
 
-    usePopupStateEffects();
+    useSaveTabState();
 
     /** Clear notifications when `Main` unmounts */
     const { clearNotifications } = useNotifications();
