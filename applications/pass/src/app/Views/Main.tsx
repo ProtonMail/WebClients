@@ -28,6 +28,7 @@ import { OrganizationProvider } from '@proton/pass/components/Organization/Organ
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { clientOffline } from '@proton/pass/lib/client';
@@ -142,11 +143,13 @@ export const Main: FC = () => {
                         <InviteProvider>
                             <VaultActionsProvider>
                                 <PasswordProvider>
-                                    <SpotlightProvider>
-                                        <OnboardingProvider>
-                                            {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
-                                        </OnboardingProvider>
-                                    </SpotlightProvider>
+                                    <UpsellingProvider>
+                                        <SpotlightProvider>
+                                            <OnboardingProvider>
+                                                {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
+                                            </OnboardingProvider>
+                                        </SpotlightProvider>
+                                    </UpsellingProvider>
                                 </PasswordProvider>
                             </VaultActionsProvider>
                         </InviteProvider>

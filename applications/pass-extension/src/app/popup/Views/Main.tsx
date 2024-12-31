@@ -20,6 +20,7 @@ import { OrganizationProvider } from '@proton/pass/components/Organization/Organ
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { selectIsSSO, selectLockSetupRequired } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 
@@ -79,13 +80,15 @@ export const Main: FC = () => {
                     <ItemActionsProvider>
                         <InviteProvider>
                             <PasswordProvider>
-                                <SpotlightProvider>
-                                    {lockSetup ? (
-                                        <LockOnboarding onCancel={() => logout({ soft: true })} />
-                                    ) : (
-                                        <MainSwitch />
-                                    )}
-                                </SpotlightProvider>
+                                <UpsellingProvider>
+                                    <SpotlightProvider>
+                                        {lockSetup ? (
+                                            <LockOnboarding onCancel={() => logout({ soft: true })} />
+                                        ) : (
+                                            <MainSwitch />
+                                        )}
+                                    </SpotlightProvider>
+                                </UpsellingProvider>
                             </PasswordProvider>
                         </InviteProvider>
                     </ItemActionsProvider>
