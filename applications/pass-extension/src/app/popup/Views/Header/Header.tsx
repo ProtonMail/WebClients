@@ -19,7 +19,7 @@ import { resolveDomain } from '@proton/pass/utils/url/utils';
 import { MenuDropdown } from './MenuDropdown';
 
 export const Header: FC = () => {
-    const { ready, initial } = usePopupContext();
+    const { interactive } = usePopupContext();
     const { url } = useExtensionContext();
 
     const navigate = useNavigate();
@@ -33,7 +33,7 @@ export const Header: FC = () => {
             <CoreHeader className="border-bottom border-weak h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />
-                    <SearchBar disabled={!ready} initial={initial.search} />
+                    <SearchBar disabled={!interactive} />
                     <ItemQuickActions onCreate={onCreate} origin={url ? resolveDomain(url) : null} />
                     <Spotlight />
                 </div>

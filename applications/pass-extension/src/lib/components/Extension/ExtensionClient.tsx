@@ -13,7 +13,7 @@ import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect'
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
-import { clientErrored, clientReady } from '@proton/pass/lib/client';
+import { clientErrored } from '@proton/pass/lib/client';
 import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
@@ -37,19 +37,18 @@ export const ExtensionClientContext = createContext<MaybeNull<ExtensionClientCon
 export const useExtensionClient = createUseContext(ExtensionClientContext);
 
 type Props = {
-    children: (ready: boolean) => ReactNode;
+    children: (connected: boolean) => ReactNode;
     onWorkerMessage?: (message: WorkerMessageWithSender) => void;
 };
 
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const { endpoint, setCurrentTabUrl, onTelemetry } = usePassCore();
     const config = usePassConfig();
-    const { status, authorized } = useAppState();
+    const { authorized } = useAppState();
 
     const dispatch = useDispatch();
     const { tabId, url, port } = useExtensionContext();
-    const loading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
-    const ready = !loading && clientReady(status);
+    const ready = !useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
 
     const activityProbe = useExtensionActivityProbe();
 

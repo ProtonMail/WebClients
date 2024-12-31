@@ -42,7 +42,7 @@ export const ExtensionSetup: FC<Props> = ({ children, recycle = false }) => {
 
     return (
         <ExtensionReactContext.Provider value={ctx.current}>
-            {ready ? <WithExtensionLocale>{children}</WithExtensionLocale> : null}
+            {ready && <WithExtensionLocale>{children}</WithExtensionLocale>}
         </ExtensionReactContext.Provider>
     );
 };
