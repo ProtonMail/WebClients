@@ -81,6 +81,9 @@
       "Apply": [
         "Übernehmen"
       ],
+      "Ask me next time": [
+        "Frag mich das nächste Mal"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
         "Pro Kontaktgruppe sind maximal ${ maxContacts } Kontakte erlaubt."
@@ -387,6 +390,9 @@
       "Merge contacts": [
         "Kontakte zusammenführen"
       ],
+      "More actions": [
+        "Weitere Aktionen"
+      ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
@@ -522,6 +528,9 @@
       "Restore this version": [
         "Diese Version wiederherstellen"
       ],
+      "Restore this version?": [
+        "Diese Version wiederherstellen?"
+      ],
       "Retry": [
         "Erneut versuchen"
       ],
@@ -530,6 +539,9 @@
       ],
       "Save changes": [
         "Änderungen speichern"
+      ],
+      "Save preferences": [
+        "Einstellungen speichern"
       ],
       "Search": [
         "Suchen"
@@ -3825,6 +3837,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
@@ -3937,6 +3952,9 @@
         "${ calendarsToBeCreatedCount } neuen Kalender erstellen",
         "${ calendarsToBeCreatedCount } neue Kalender erstellen"
       ],
+      "Create a copy to edit": [
+        "Eine Kopie zum Bearbeiten erstellen"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchtest."
       ],
@@ -3996,6 +4014,9 @@
       ],
       "Document moved to trash": [
         "Dokument in den Papierkorb verschoben"
+      ],
+      "Document owner has the password": [
+        "Der Eigentümer des Dokuments hat das Passwort."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Es passiert nichts? Denke daran, deine Pop-up-Blocker zu deaktivieren."
@@ -4126,6 +4147,9 @@
       "Free 5GB encrypted storage to get started": [
         "Kostenlose 5 GB verschlüsselter Speicherplatz für den Anfang"
       ],
+      "Get Notified About Comments": [
+        "Über Kommentare benachrichtigt werden"
+      ],
       "here": [
         "hier"
       ],
@@ -4253,6 +4277,9 @@
       "Low Priority": [
         "Niedrige Priorität"
       ],
+      "Making a copy...": [
+        "Kopie wird erstellt..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
       ],
@@ -4342,6 +4369,12 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
+      "Owned by me": [
+        "In meInem Besitz"
+      ],
+      "Owned by others": [
+        "Im Besitz anderer"
+      ],
       "Owner": [
         "Besitzer"
       ],
@@ -4383,6 +4416,10 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."
@@ -4432,6 +4469,12 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
+      ],
+      "Restored version to": [
+        "Wiederhergestellte Version zu"
+      ],
+      "Save Document as PDF": [
+        "Dokument als PDF speichern"
       ],
       "Saving": [
         "Wird gespeichert"
@@ -4628,6 +4671,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
+      ],
+      "Undo successful": [
+        "Rückgängig gemacht"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Leider scheint es, dass die Datei oder einige ihrer Daten nicht entschlüsselt werden können."
@@ -5150,6 +5196,9 @@
       ],
       "Import to:": [
         "Importieren nach:"
+      ],
+      "Include document name in notification": [
+        "Dokumentname in der Benachrichtigung einbeziehen"
       ],
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
@@ -8620,6 +8669,9 @@
       ],
       "Link confirmation": [
         "Linkbestätigung"
+      ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Eine Kopie in deinem ${ DRIVE_APP_NAME } erstellen"
       ],
       "Manage secure link": [
         "Sicheren Link verwalten"
