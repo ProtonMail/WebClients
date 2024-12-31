@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Acceptera"
+      ],
       "Add": [
         "Lägg till"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Inga utlöpta länkar"
+      ],
+      "Not now": [
+        "Inte nu"
       ],
       "OK": [
         "OK"
@@ -2170,9 +2176,6 @@
       "username": [
         "användarnamn"
       ],
-      "Value:": [
-        "Värde:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Valv “${ payload.content.name }“ borttaget"
       ],
@@ -3568,6 +3571,9 @@
       ],
       "Breaches detected for": [
         "Intrång upptäckta för"
+      ],
+      "Change your lock method": [
+        "Byt din låsmetod"
       ],
       "Confirm extra password": [
         "Bekräfta extralösenord"

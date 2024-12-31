@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Terima"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Tidak ada tautan yang kedaluwarsa"
+      ],
+      "Not now": [
+        "Tidak sekarang"
       ],
       "OK": [
         "OK"
@@ -2141,9 +2147,6 @@
       "username": [
         "nama pengguna"
       ],
-      "Value:": [
-        "Nilai:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Brankas \"${ payload.content.name }\" berhasil dihapus"
       ],
@@ -3517,6 +3520,9 @@
       ],
       "Breaches detected for": [
         "Kebocoran terdeteksi untuk"
+      ],
+      "Change your lock method": [
+        "Ubah metode penguncian Anda"
       ],
       "Confirm extra password": [
         "Konfirmasi kata sandi tambahan"

@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Hyväksy"
+      ],
       "Add": [
         "Lisää"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Erääntyneitä linkkejä ei ole"
+      ],
+      "Not now": [
+        "Ei nyt"
       ],
       "OK": [
         "OK"
@@ -2146,9 +2152,6 @@
       "username": [
         "käyttäjätunnus"
       ],
-      "Value:": [
-        "Arvo:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
       ],
@@ -3541,6 +3544,9 @@
       ],
       "Breaches detected for": [
         "Havaittua tietomurtoa osoitteelle"
+      ],
+      "Change your lock method": [
+        "Vaihda lukitustapaasi"
       ],
       "Confirm extra password": [
         "Vahvista lisäsalasana"
