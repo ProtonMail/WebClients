@@ -54,7 +54,18 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
         docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => {
           /** Return if the parent hasn't properly initialized us yet */
           if (!editorConfig.current) {
-            application.logger.info('Doc state requested update before initialization was complete')
+            if (message.type.wrapper === 'du') {
+              application.logger.info('Doc state requested propagation of DU before initialization was complete')
+            } else if (message.type.wrapper === 'events') {
+              application.logger.info(
+                `Doc state requested propagation of event ${message.type.eventType} before initialization was complete`,
+              )
+            } else {
+              application.logger.info(
+                `Doc state requested propagation of unknown message type ${message.type.wrapper} before initialization was complete`,
+              )
+            }
+
             return
           }
 

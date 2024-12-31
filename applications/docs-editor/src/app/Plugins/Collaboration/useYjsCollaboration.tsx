@@ -29,6 +29,7 @@ export function useYjsCollaboration(
   color: string,
   onLoadResult: EditorLoadResult,
   editorInitializationConfig?: EditorInitializationConfig,
+  awarenessData = {},
 ): [JSX.Element, Binding] {
   const [doc] = useState(() => docMap.get(id))
   const didPostReadyEvent = useRef(false)
@@ -57,7 +58,7 @@ export function useYjsCollaboration(
       }
     }
 
-    initLocalState(provider, name, color, document.activeElement === editor.getRootElement(), {})
+    initLocalState(provider, name, color, document.activeElement === editor.getRootElement(), awarenessData)
 
     const onWindowResize = () => {
       syncCursorPositions(binding, provider)
@@ -108,7 +109,7 @@ export function useYjsCollaboration(
       removeListener()
       window.removeEventListener('resize', onWindowResize)
     }
-  }, [binding, color, docMap, editor, id, editorInitializationConfig, name, provider, onLoadResult])
+  }, [binding, color, docMap, editor, id, editorInitializationConfig, name, provider, onLoadResult, awarenessData])
 
   const cursorsContainer = useMemo(() => {
     let rootElementContainer: HTMLElement | null = null
