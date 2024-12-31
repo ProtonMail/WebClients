@@ -8,6 +8,7 @@ import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/Servi
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
+import { getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -49,7 +50,6 @@ import {
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
-import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import noop from '@proton/utils/noop';
 
 import { sagaMiddleware, store } from './store';

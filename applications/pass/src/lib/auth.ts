@@ -205,7 +205,8 @@ export const createAuthService = ({
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
 
-            /** Repersist the session if sufficient time has elapsed since last use */
+            /** Re-persist session after sufficient time elapse to ensure
+             * the last used (freshest) session is loaded on reload/new tabs */
             if (getEpoch() - authStore.getLastUsedAt() > UNIX_MINUTE) {
                 await auth.persistSession({ regenerateClientKey: false }).catch(noop);
             }
