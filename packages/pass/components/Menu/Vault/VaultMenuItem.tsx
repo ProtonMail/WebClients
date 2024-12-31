@@ -7,7 +7,7 @@ import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { UpsellRef } from '@proton/pass/constants';
@@ -63,7 +63,7 @@ export const VaultMenuItem = memo(
         const vaultActions = useVaultActions();
         const { moveMany } = useItemsActions();
 
-        const spotlight = useSpotlight();
+        const upsell = useUpselling();
         const plan = useSelector(selectPassPlan);
 
         const withActions = canEdit || canDelete || canInvite || canManage || canLeave || canMove;
@@ -172,7 +172,7 @@ export const VaultMenuItem = memo(
                                       onClick={
                                           plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
                                               ? () =>
-                                                    spotlight.setUpselling({
+                                                    upsell({
                                                         type: 'pass-plus',
                                                         upsellRef: UpsellRef.LIMIT_SHARING,
                                                     })

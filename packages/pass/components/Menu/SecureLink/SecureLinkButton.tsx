@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import type { RouteMatchProps } from '@proton/pass/components/Navigation/RouteMatch';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -19,7 +19,7 @@ type SecureLinkButtonProps = RouteMatchProps & {
 };
 
 export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ active, className, parentClassName, onClick }) => {
-    const spotlight = useSpotlight();
+    const upsell = useUpselling();
     const passPlan = useSelector(selectPassPlan);
     const free = passPlan === UserPassPlan.FREE;
 
@@ -31,7 +31,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ active, className,
             onClick={
                 free
                     ? () =>
-                          spotlight.setUpselling({
+                          upsell({
                               type: 'pass-plus',
                               upsellRef: UpsellRef.SECURE_LINKS,
                           })
