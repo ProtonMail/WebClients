@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
@@ -11,7 +12,6 @@ import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvide
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -24,10 +24,8 @@ import { PublicSwitch } from './Views/Public/PublicSwitch';
 
 export const AppGuard: FC = () => {
     const dispatch = useDispatch();
-    const { state } = useAppState();
+    const state = useAppState();
     const authStore = useAuthStore();
-
-    const status = useStatefulRef(state.status);
 
     const online = useConnectivity();
     const auth = useAuthService();
@@ -37,7 +35,8 @@ export const AppGuard: FC = () => {
 
     useEffect(() => {
         const localID = authStore?.getLocalID();
-        if (online && clientOffline(status.current)) dispatch(offlineResume.intent({ localID }));
+        const { status } = AppStateManager.getState();
+        if (online && clientOffline(status)) dispatch(offlineResume.intent({ localID }));
     }, [online]);
 
     return (
