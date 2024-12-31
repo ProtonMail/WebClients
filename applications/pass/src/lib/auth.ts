@@ -127,7 +127,7 @@ export const createAuthService = ({
                 /** Apply user preferences early */
                 core.i18n.setLocale().catch(noop);
                 const theme = await getThemeForLocalID(persistedSession.LocalID);
-                if (theme) core.setTheme(theme);
+                if (theme) core.theme.setState(theme);
 
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
                 const onlineAndSessionReady = getOnline() && !cookieUpgrade;
