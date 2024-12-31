@@ -456,6 +456,9 @@
       "Learn more": [
         "Докладніше"
       ],
+      "Learn more.": [
+        "Докладніше."
+      ],
       "Leave": [
         "Залишити"
       ],
@@ -492,9 +495,6 @@
       "Mark for deletion": [
         "Позначити для видалення"
       ],
-      "Maximize": [
-        "Розгорнути"
-      ],
       "Maximize transfers": [
         "Розгорнути передавання"
       ],
@@ -503,9 +503,6 @@
       ],
       "Merge contacts": [
         "Об'єднати контакти"
-      ],
-      "Minimize": [
-        "Згорнути"
       ],
       "Minimize transfers": [
         "Згорнути передачі"
@@ -4160,18 +4157,6 @@
         "${ invitations.length } запрошень на розгляді",
         "${ invitations.length } запрошень на розгляді"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } зашифрований файл",
-        "${ nbFile } зашифровані файли",
-        "${ nbFile } зашифрованих файлів",
-        "${ nbFile } зашифрованих файлів"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } зашифрований файл...",
-        "${ nbFile } зашифровані файли...",
-        "${ nbFile } зашифрованих файлів...",
-        "${ nbFile } зашифрованих файлів"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Довічна угода ${ PASS_SHORT_APP_NAME } не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4309,9 +4294,6 @@
         "Усі (${ totalFoldersCount } мітки)",
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
-      ],
-      "All encrypted files": [
-        "Усі зашифровані файли"
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
@@ -4547,14 +4529,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Перехід на тарифний план нижчого рівня розірве всі з'єднання з платними серверами ${ VPN_APP_NAME }."
       ],
-      "Download": [
-        "Завантажити"
-      ],
       "Download ${ name } app": [
         "Завантажити програму ${ name }"
-      ],
-      "Download anyway": [
-        "Все одно завантажити"
       ],
       "Download canceled": [
         "Завантаження скасовано"
@@ -4589,9 +4565,6 @@
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Завантаження файлів ${ DOCS_APP_NAME } з ${ DRIVE_APP_NAME } в цей час не підтримується. Вони не будуть додані до вашого завантаження."
       ],
-      "Downloading all encrypted files": [
-        "Завантаження всіх зашифрованих файлів"
-      ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
       ],
@@ -4624,6 +4597,9 @@
       ],
       "Enabling drive search": [
         "Увімкнення пошуку на диску"
+      ],
+      "Encrypted": [
+        "Зашифровано"
       ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
@@ -4783,9 +4759,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Тим часом зареєструйте власний обліковий запис ${ DRIVE_APP_NAME }, захистіть свої дані за допомогою наскрізного шифрування та безпечно діліться ними."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Наступним кроком ви зможете внести депозит за допомогою адреси Bitcoin."
@@ -5165,9 +5138,6 @@
       "Report has been sent": [
         "Звіт надіслано"
       ],
-      "Report link": [
-        "Повідомити про посилання"
-      ],
       "Request access, or switch to an account with access.": [
         "Попросіть доступ або перемкніться на обліковий запис із доступом."
       ],
@@ -5186,9 +5156,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Відновлення фотографій... Залиште вкладку відкритою"
       ],
-      "Retry now": [
-        "Повторити спробу"
-      ],
       "Saving...": [
         "Збереження..."
       ],
@@ -5200,18 +5167,6 @@
       ],
       "Search Enabled": [
         "Пошук увімкнено"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "Безпечно завантажено ${ nbFile } файл",
-        "Безпечно завантажено ${ nbFile } файли",
-        "Безпечно завантажено ${ nbFile } файлів",
-        "Безпечно завантажено ${ nbFile } файлів"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Усі зашифровані файли безпечно завантажено"
-      ],
-      "Securely downloaded all files": [
-        "Всі файли безпечно завантажені"
       ],
       "Select a folder to move to.": [
         "Виберіть теку для переміщення."
@@ -5264,9 +5219,6 @@
       "Shared with me": [
         "Поширено для мене"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Зареєструйте власний обліковий запис ${ DRIVE_APP_NAME } і захистіть свої дані за допомогою наскрізного шифрування та безпечно ними діліться."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
       ],
@@ -5293,9 +5245,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Сталася помилка, повторіть спробу пізніше."
-      ],
-      "Something went wrong...": [
-        "Виникла проблема..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
@@ -5434,6 +5383,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "Щоб захистити вас, ${ DRIVE_APP_NAME } може сканувати ваші файли у безпечний спосіб і блокувати шкідливі файли. Проте все одно краще завантажувати файли лише з надійних джерел."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Для імпорту подій спочатку створіть календар у ${ CALENDAR_APP_NAME }. Саме тут будуть показані події після імпорту."
@@ -5756,9 +5708,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
       ],
-      "Your download is in progress": [
-        "Триває завантаження"
-      ],
       "Your email address and password were leaked:": [
         "Вашу адресу електронної пошти та пароль було викрито:"
       ],
@@ -6078,9 +6027,6 @@
       "Download anyway": [
         "Все одно завантажити"
       ],
-      "Downloading ${ percentageValue }": [
-        "Завантаження ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Знайдено дублікат"
       ],
@@ -6398,9 +6344,6 @@
       ],
       "Theme": [
         "Тема"
-      ],
-      "This file is potentially infected": [
-        "Цей файл потенційно інфікований"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Це остаточно видалить усі файли у вашому сховищі."

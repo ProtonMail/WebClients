@@ -477,9 +477,6 @@
       "Mark for deletion": [
         "Marcar para eliminação"
       ],
-      "Maximize": [
-        "Maximizar"
-      ],
       "Maximize transfers": [
         "Maximizar transferências"
       ],
@@ -489,11 +486,11 @@
       "Merge contacts": [
         "Unir contactos"
       ],
-      "Minimize": [
-        "Minimizar"
-      ],
       "Minimize transfers": [
         "Minimizar transferências"
+      ],
+      "More actions": [
+        "Mais acções"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -1247,6 +1244,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Continuar"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
       ],
@@ -3767,10 +3767,6 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } ficheiro encriptado",
-        "${ nbFile } ficheiros encriptados"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
@@ -3868,9 +3864,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tudo (${ totalFoldersCount } etiqueta)",
         "Tudo (${ totalFoldersCount } etiquetas)"
-      ],
-      "All encrypted files": [
-        "Todos os ficheiros encriptados"
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -4088,14 +4081,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
       ],
-      "Download": [
-        "Transferir"
-      ],
       "Download ${ name } app": [
         "Transfira a app ${ name }"
-      ],
-      "Download anyway": [
-        "Transferir assim mesmo"
       ],
       "Download canceled": [
         "A transferência foi cancelada."
@@ -4156,6 +4143,9 @@
       ],
       "Enabling drive search": [
         "Ativação da pesquisa na unidade"
+      ],
+      "Encrypted": [
+        "Encriptado"
       ],
       "Encrypted search is here": [
         "A pesquisa encriptada está aqui"
@@ -4644,9 +4634,6 @@
       "Report has been sent": [
         "A denúncia foi enviada."
       ],
-      "Report link": [
-        "Reportar o link"
-      ],
       "Restore": [
         "Restaurar"
       ],
@@ -4661,9 +4648,6 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "A recuperar fotos... Por favor, mantenha o separador do seu navegador aberto"
-      ],
-      "Retry now": [
-        "Tente novamente agora"
       ],
       "Saving...": [
         "A guardar..."
@@ -4751,9 +4735,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Algo correu mal. Tente novamente mais tarde."
-      ],
-      "Something went wrong...": [
-        "Ocorreu um erro..."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
@@ -5442,9 +5423,6 @@
       ],
       "Download anyway": [
         "Transferir assim mesmo"
-      ],
-      "Downloading ${ percentageValue }": [
-        "A transferir ${ percentageValue }"
       ],
       "Duplicate found": [
         "Duplicado encontrado"
@@ -7110,6 +7088,9 @@
       "Invite members": [
         "Convidar membros"
       ],
+      "Maybe Later": [
+        "Talvez mais tarde"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -7483,7 +7464,7 @@
     },
     "Security Center - Action": {
       "View events": [
-        "Ver os eventos"
+        "Ver eventos"
       ]
     },
     "Security Center - Info": {

@@ -483,9 +483,6 @@
       "Mark for deletion": [
         "삭제를 표시합니다."
       ],
-      "Maximize": [
-        "최대화"
-      ],
       "Maximize transfers": [
         "최대 이동"
       ],
@@ -494,9 +491,6 @@
       ],
       "Merge contacts": [
         "연락처 통합"
-      ],
-      "Minimize": [
-        "최소화"
       ],
       "Minimize transfers": [
         "최소 이동"
@@ -3992,12 +3986,6 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length }개 대기 중인 초대"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } 암호화된 파일"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } 암호화된 파일..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
       ],
@@ -4090,9 +4078,6 @@
       ],
       "All (${ totalFoldersCount } label)": [
         "총 (${ totalFoldersCount } 개 라벨)"
-      ],
-      "All encrypted files": [
-        "전체 암호화된 파일"
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
@@ -4319,14 +4304,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
       ],
-      "Download": [
-        "다운로드"
-      ],
       "Download ${ name } app": [
         "${ name }앱 설치"
-      ],
-      "Download anyway": [
-        "그래도 다운로드"
       ],
       "Download canceled": [
         "다운로드 취소됨"
@@ -4360,9 +4339,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "${ DOCS_APP_NAME } 파일을 ${ DRIVE_APP_NAME }에서 다운로드 하는 것을 아직 지원하지 않습니다. 이것들은 다운로드에 포함되지 않을 것입니다."
-      ],
-      "Downloading all encrypted files": [
-        "모든 암호화된 파일 다운로드 중"
       ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
@@ -4549,9 +4525,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "그동안 자신의 ${ DRIVE_APP_NAME } 계정을 생성하여 종단간 암호화로 데이터를 보호하고 안전하게 공유하세요."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
@@ -4919,9 +4892,6 @@
       "Report has been sent": [
         "신고를 제출했습니다"
       ],
-      "Report link": [
-        "링크 신고하기"
-      ],
       "Request access, or switch to an account with access.": [
         "접근 권한을 요청하거나, 권한이 있는 다른 계정으로 전환하세요."
       ],
@@ -4940,9 +4910,6 @@
       "Restoring Photos... Please keep the tab open": [
         "사진 복구 중... 탭을 닫지 마십시오"
       ],
-      "Retry now": [
-        "지금 다시 시도"
-      ],
       "Saving...": [
         "저장 중..."
       ],
@@ -4954,15 +4921,6 @@
       ],
       "Search Enabled": [
         "검색 활성화됨"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile }개 파일을 안전하게 다운로드했습니다."
-      ],
-      "Securely downloaded all encrypted files": [
-        "안전히 모든 암호화된 파일을 다운로드 했습니다."
-      ],
-      "Securely downloaded all files": [
-        "전체 파일을 안전히 다운로드 했습니다."
       ],
       "Select a folder to move to.": [
         "이동할 폴더 선택"
@@ -5015,9 +4973,6 @@
       "Shared with me": [
         "나와 공유됨"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "자신의 ${ DRIVE_APP_NAME } 계정에 로그인하고 종단간 암호화로 데이터를 보호하고 안전하게 공유하세요."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "네트워크 오류로 인해 서명을 확인할 수 없습니다. 나중에 다시 시도하세요."
       ],
@@ -5044,9 +4999,6 @@
       ],
       "Something went wrong, please try again later.": [
         "문제가 발생했습니다, 나중에 다시 시도해 주세요."
-      ],
-      "Something went wrong...": [
-        "문제가 발생했습니다..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
@@ -5492,9 +5444,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
-      "Your download is in progress": [
-        "사용자의 다운로드가 이미 진행 중입니다."
-      ],
       "Your email address and password were leaked:": [
         "사용자의 이메일 주소 및 비밀번호가 유출되었습니다:"
       ],
@@ -5795,9 +5744,6 @@
       ],
       "Download anyway": [
         "무시하고 다운로드"
-      ],
-      "Downloading ${ percentageValue }": [
-        "다운로드 중 ${ percentageValue }"
       ],
       "Duplicate found": [
         "중복 발견"
@@ -6116,9 +6062,6 @@
       ],
       "Theme": [
         "테마"
-      ],
-      "This file is potentially infected": [
-        "이 파일은 감염되었을 수도 있습니다."
       ],
       "This will permanently delete all files in your locked drive.": [
         "잠긴 드라이브의 모든 파일이 영구적으로 삭제됩니다."

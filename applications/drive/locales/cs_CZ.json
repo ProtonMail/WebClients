@@ -492,9 +492,6 @@
       "Mark for deletion": [
         "Označit pro odstranění"
       ],
-      "Maximize": [
-        "Maximalizovat"
-      ],
       "Maximize transfers": [
         "Maximalizovat přenosy"
       ],
@@ -503,9 +500,6 @@
       ],
       "Merge contacts": [
         "Sloučit kontakty"
-      ],
-      "Minimize": [
-        "Minimalizovat"
       ],
       "Minimize transfers": [
         "Minimalizovat přenosy"
@@ -4151,18 +4145,6 @@
         "${ invitations.length } čekajících pozvánek",
         "${ invitations.length } čekajících pozvánek"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } šifrovaný soubor",
-        "${ nbFile } šifrované soubory",
-        "${ nbFile } šifrovaných souborů",
-        "${ nbFile } šifrovaných souborů"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } šifrovaný soubor...",
-        "${ nbFile } šifrované soubory...",
-        "${ nbFile } šifrovaných souborů...",
-        "${ nbFile } šifrovaných souborů..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4297,9 +4279,6 @@
         "Všechny (${ totalFoldersCount } štítky)",
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
-      ],
-      "All encrypted files": [
-        "Všechny šifrované soubory"
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
@@ -4535,14 +4514,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
       ],
-      "Download": [
-        "Stahování"
-      ],
       "Download ${ name } app": [
         "Stáhnout aplikaci pro ${ name }"
-      ],
-      "Download anyway": [
-        "Přesto stáhnout"
       ],
       "Download canceled": [
         "Stahování zrušeno"
@@ -4576,9 +4549,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Stahování souborů ${ DOCS_APP_NAME } z ${ DRIVE_APP_NAME } není momentálně podporováno — tyto soubory nebudou zahrnuty do vašeho stahování."
-      ],
-      "Downloading all encrypted files": [
-        "Stahování všech šifrovaných souborů"
       ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
@@ -4771,9 +4741,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Mezitím se zaregistrujte do ${ DRIVE_APP_NAME } a chraňte svá data pomocí koncového šifrování a bezpečně je sdílejte."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V dalším kroku budete moci odeslat vklad pomocí adresy Bitcoin."
@@ -5153,9 +5120,6 @@
       "Report has been sent": [
         "Hlášení bylo odesláno"
       ],
-      "Report link": [
-        "Nahlásit odkaz"
-      ],
       "Request access, or switch to an account with access.": [
         "Požádejte o přístup nebo přepněte na účet, který má přístup."
       ],
@@ -5174,9 +5138,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Obnovování fotografií... Ponechte prosím záložku otevřenou"
       ],
-      "Retry now": [
-        "Zkusit znovu"
-      ],
       "Saving...": [
         "Ukládání..."
       ],
@@ -5188,18 +5149,6 @@
       ],
       "Search Enabled": [
         "Vyhledávání Zapnuto"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } soubor bezpečně stažen",
-        "${ nbFile } soubory bezpečně staženy",
-        "${ nbFile } souborů bezpečně staženo",
-        "${ nbFile } souborů bezpečně staženo"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Všechny zašifrované soubory bezpečně staženy"
-      ],
-      "Securely downloaded all files": [
-        "Všechny soubory jsou bezpečně staženy"
       ],
       "Select a folder to move to.": [
         "Vyberte složku, do níž chcete přesunout."
@@ -5252,9 +5201,6 @@
       "Shared with me": [
         "Sdíleno se mnou"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Založte si vlastní účet ${ DRIVE_APP_NAME } a chraňte svá data koncovým šifrováním a bezpečně je sdílejte."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
       ],
@@ -5281,9 +5227,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
-      ],
-      "Something went wrong...": [
-        "Něco se pokazilo..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
@@ -5744,9 +5687,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Probíhá stahování"
-      ],
       "Your email address and password were leaked:": [
         "Vaše e-mailová adresa a heslo unikly:"
       ],
@@ -6066,9 +6006,6 @@
       "Download anyway": [
         "Přesto stáhnout"
       ],
-      "Downloading ${ percentageValue }": [
-        "Stahování ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Nalezeny duplicity"
       ],
@@ -6386,9 +6323,6 @@
       ],
       "Theme": [
         "Motiv"
-      ],
-      "This file is potentially infected": [
-        "Tento soubor je potenciálně infikován"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Tím se trvale odstraní všechny soubory na uzamčeném disku."

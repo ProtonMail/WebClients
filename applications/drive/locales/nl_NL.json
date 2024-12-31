@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Markeren voor verwijderen"
       ],
-      "Maximize": [
-        "Maximaliseren"
-      ],
       "Maximize transfers": [
         "Maximaliseer overdrachten"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Contacten samenvoegen"
-      ],
-      "Minimize": [
-        "Minimaliseren"
       ],
       "Minimize transfers": [
         "Minimaliseer overdrachten"
@@ -4045,14 +4039,6 @@
         "${ invitations.length } uitnodiging in behandeling",
         "${ invitations.length } uitnodigingen in behandeling"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } versleuteld bestand",
-        "${ nbFile } versleuteld bestanden"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } versleuteld bestand...",
-        "${ nbFile } versleuteld bestanden..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4159,9 +4145,6 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } label)",
         "Alle (${ totalFoldersCount } labels)"
-      ],
-      "All encrypted files": [
-        "Alle versleutelde bestanden"
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
@@ -4391,14 +4374,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
-      "Download": [
-        "Downloaden"
-      ],
       "Download ${ name } app": [
         "Download ${ name }-app"
-      ],
-      "Download anyway": [
-        "Toch downloaden"
       ],
       "Download canceled": [
         "Download geannuleerd"
@@ -4432,9 +4409,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Downloaden van ${ DOCS_APP_NAME } bestanden van ${ DRIVE_APP_NAME } wordt momenteel niet ondersteund - deze worden niet opgenomen in uw download."
-      ],
-      "Downloading all encrypted files": [
-        "Alle versleutelde bestanden downloaden"
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
@@ -4623,9 +4597,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Intussen meldt u zich aan voor uw eigen ${ DRIVE_APP_NAME }-account en beschermt u uw gegevens met end-to-end versleuteling en deelt u deze veilig."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
@@ -4997,9 +4968,6 @@
       "Report has been sent": [
         "Rapport werd verzonden"
       ],
-      "Report link": [
-        "Link rapporteren"
-      ],
       "Request access, or switch to an account with access.": [
         "Vraag toegang aan, of schakel over naar een account met toegang."
       ],
@@ -5018,9 +4986,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Foto's herstellen. Sluit het tabblad niet"
       ],
-      "Retry now": [
-        "Probeer nu opnieuw"
-      ],
       "Saving...": [
         "Opslaan..."
       ],
@@ -5032,16 +4997,6 @@
       ],
       "Search Enabled": [
         "Zoeken Ingeschakeld"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "Veilig ${ nbFile } bestand gedownload",
-        "Veilig ${ nbFile } bestanden gedownload"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Alle versleutelde bestanden veilig gedownload"
-      ],
-      "Securely downloaded all files": [
-        "Alle bestanden veilig gedownload"
       ],
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
@@ -5094,9 +5049,6 @@
       "Shared with me": [
         "Gedeeld met mij"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Meld u aan voor uw eigen ${ DRIVE_APP_NAME }-account en bescherm uw gegevens met end-to-end versleuteling en deel deze veilig."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
       ],
@@ -5123,9 +5075,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
-      ],
-      "Something went wrong...": [
-        "Er is iets fout gegaan..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
@@ -5576,9 +5525,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
-      "Your download is in progress": [
-        "Uw download is bezig"
-      ],
       "Your email address and password were leaked:": [
         "Uw emailadres en wachtwoorden werden gelekt:"
       ],
@@ -5885,9 +5831,6 @@
       ],
       "Download anyway": [
         "Toch downloaden"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Downloaden ${ percentageValue }"
       ],
       "Duplicate found": [
         "Duplicaat gevonden"
@@ -6206,9 +6149,6 @@
       ],
       "Theme": [
         "Thema"
-      ],
-      "This file is potentially infected": [
-        "Dit bestand is mogelijk geïnfecteerd"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dit zal alle bestanden op uw vergrendelde schijf permanent verwijderen."

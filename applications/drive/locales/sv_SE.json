@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Markera för borttagning"
       ],
-      "Maximize": [
-        "Maximera"
-      ],
       "Maximize transfers": [
         "Maximera överföringar"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Slå ihop kontakter"
-      ],
-      "Minimize": [
-        "Minimera"
       ],
       "Minimize transfers": [
         "Minimera överföringar"
@@ -4057,14 +4051,6 @@
         "${ invitations.length } väntande inbjudan",
         "${ invitations.length } väntande inbjudningar"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } krypterad fil",
-        "${ nbFile } krypterade filer"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } krypterad fil...",
-        "${ nbFile } krypterade filer..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4171,9 +4157,6 @@
       "All (${ totalFoldersCount } label)": [
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
-      ],
-      "All encrypted files": [
-        "Alla krypterade filer"
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
@@ -4403,14 +4386,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
-      "Download": [
-        "Ladda ner"
-      ],
       "Download ${ name } app": [
         "Ladda ner ${ name }-appen"
-      ],
-      "Download anyway": [
-        "Ladda ner ändå"
       ],
       "Download canceled": [
         "Nedladdning avbröts"
@@ -4444,9 +4421,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Nedladdning av ${ DOCS_APP_NAME }-filer från ${ DRIVE_APP_NAME } stöds för närvarande inte – dessa kommer inte att inkluderas i din nedladdning."
-      ],
-      "Downloading all encrypted files": [
-        "Laddar ner alla krypterade filer"
       ],
       "Drop file here to upload": [
         "Släpp filer här för att ladda upp"
@@ -4635,9 +4609,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Under tiden kan du registrera dig för ditt eget ${ DRIVE_APP_NAME }-konto och skydda dina data med end-to-end-kryptering och dela det säkert."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
@@ -5009,9 +4980,6 @@
       "Report has been sent": [
         "Rapport har skickats"
       ],
-      "Report link": [
-        "Rapportera länk"
-      ],
       "Request access, or switch to an account with access.": [
         "Begär åtkomst eller byt till ett konto med åtkomst."
       ],
@@ -5030,9 +4998,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Återställer foton... Håll fliken öppen"
       ],
-      "Retry now": [
-        "Försök igen nu"
-      ],
       "Saving...": [
         "Sparar …"
       ],
@@ -5044,16 +5009,6 @@
       ],
       "Search Enabled": [
         "Sökning aktiverad"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "Laddade ner ${ nbFile } fil säkert",
-        "Laddade ner ${ nbFile } filer säkert"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Laddade ner alla krypterade filer säkert"
-      ],
-      "Securely downloaded all files": [
-        "Laddade ner alla filer säkert"
       ],
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
@@ -5106,9 +5061,6 @@
       "Shared with me": [
         "Delat med mig"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Registrera dig för ditt eget ${ DRIVE_APP_NAME }-konto och skydda dina data med end-to-end kryptering och dela det säkert."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signatur kan inte valideras på grund av nätverksfel, försök igen senare."
       ],
@@ -5135,9 +5087,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Något gick fel, försök igen senare."
-      ],
-      "Something went wrong...": [
-        "Något gick fel..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
@@ -5588,9 +5537,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
-      "Your download is in progress": [
-        "Din nedladdningar pågår"
-      ],
       "Your email address and password were leaked:": [
         "Din e-postadress och ditt lösenord läcktes:"
       ],
@@ -5903,9 +5849,6 @@
       ],
       "Download anyway": [
         "Ladda ner ändå"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Laddar ner ${ percentageValue }"
       ],
       "Duplicate found": [
         "Duplikat hittades"
@@ -6224,9 +6167,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Denna fil är potentiellt infekterad"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Detta tar permanent bort alla filer på din låsta Drive."
