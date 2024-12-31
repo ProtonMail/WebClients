@@ -457,6 +457,9 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
+      "Refresh Data": [
+        "Actualitza les dades"
+      ],
       "Refresh status": [
         "Refresca l'estat"
       ],
@@ -3408,6 +3411,12 @@
       "Checkout": [
         "Pagament"
       ],
+      "City": [
+        "Ciutat"
+      ],
+      "Country": [
+        "País"
+      ],
       "Create your account": [
         "Creeu el vostre compte"
       ],
@@ -4383,11 +4392,17 @@
       "No Gateways yet": [
         "Encara no hi ha passarel·les."
       ],
+      "No location filters are currently assigned.": [
+        "Actualment no hi ha cap filtre d'ubicació assignat."
+      ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
+      ],
+      "No Shared Servers Found": [
+        "No s'han trobat cap servidor compartit."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
@@ -4645,6 +4660,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "S'ha actualitzat l'enllaç compartit ${ vaultLink }."
+      ],
+      "Shared Server Location Filters": [
+        "Filtres d'ubicació de servidor compartit"
       ],
       "Shared vault deleted": [
         "S'ha eliminat la caixa forta compartida"
@@ -10508,6 +10526,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Configureu els servidors dedicats millorant el pla a Business"
       ],
+      "Shared servers": [
+        "Servidors compartits"
+      ],
       "Sign in": [
         "Inicia la sessió"
       ],
@@ -10713,7 +10734,7 @@
         "Copieu i enganxeu aquest URL al camp URL de l'ACS (Assertion Consumer Service) del vostre proveïdor d'identitat"
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
-        "Copieu i enganxeu aquest URL al camp ID de l'entitat del vostre proveïdor d'identitat"
+        "Copieu i enganxeu aquest URL al camp ID de l'entitat del proveïdor d'identitat"
       ],
       "Device information such as operating system": [
         "Informació del dispositiu com ara el sistema operatiu"
@@ -10815,7 +10836,7 @@
         "Devolució de càrrec"
       ],
       "Failed": [
-        "Operació fallida"
+        "Ha fallat"
       ],
       "Needs attention": [
         "Necessita atenció"
@@ -10824,7 +10845,7 @@
         "Reemborsat"
       ],
       "Success": [
-        "Operació reeixida"
+        "Èxit"
       ],
       "Timeout": [
         "Temps esgotat"
