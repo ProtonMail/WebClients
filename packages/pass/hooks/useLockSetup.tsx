@@ -10,7 +10,7 @@ import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockPr
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -68,7 +68,7 @@ export const useLockSetup = (): LockSetup => {
 
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
-    const spotlight = useSpotlight();
+    const upsell = useUpselling();
     const authStore = useAuthStore();
 
     const org = useOrganization({ sync: true });
@@ -100,7 +100,7 @@ export const useLockSetup = (): LockSetup => {
 
     const setLockMode = async (mode: LockMode) => {
         if (isFreePlan && mode === LockMode.BIOMETRICS) {
-            return spotlight.setUpselling({
+            return upsell({
                 type: 'pass-plus',
                 upsellRef: UpsellRef.PASS_BIOMETRICS,
             });

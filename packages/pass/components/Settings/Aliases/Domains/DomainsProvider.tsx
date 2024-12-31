@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useRequest } from '@proton/pass/hooks/useRequest';
@@ -53,7 +53,7 @@ export const useCustomDomain = (domainID: number) => {
 };
 
 export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const spotlight = useSpotlight();
+    const upsell = useUpselling();
     const canManage = useSelector(selectCanManageAlias);
 
     const [customDomains, setCustomDomains] = useState<Record<number, CustomDomainOutput>>({});
@@ -116,7 +116,7 @@ export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
             setAction: (action) => {
                 switch (action?.type) {
                     case 'create':
-                        if (!canManage) spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.SETTING });
+                        if (!canManage) upsell({ type: 'pass-plus', upsellRef: UpsellRef.SETTING });
                         else setAction({ type: 'create' });
                         break;
                     default:
