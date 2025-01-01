@@ -6,7 +6,7 @@ import { Slider } from '@proton/atoms';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 
-import { MaybeOrgSettingTooltip } from './MaybeOrgTooltip';
+import { OrganizationPolicyTooltip } from '../Organization/OrganizationPolicyTooltip';
 
 type Props = UsePasswordGeneratorResult<'random'> & { advanced: boolean; dense?: boolean };
 
@@ -45,7 +45,7 @@ export const PasswordRandomOptions: FC<Props> = ({
                 </div>
             </div>
             {!dense && <hr className="m-0" />}
-            <MaybeOrgSettingTooltip show={symbolsPolicyEnforced}>
+            <OrganizationPolicyTooltip enforced={symbolsPolicyEnforced}>
                 <div className="flex items-center justify-space-between">
                     <label htmlFor="password-special-chars" className="w-custom" style={{ '--w-custom': '10rem' }}>
                         {c('Label').t`Special characters (!&*)`}
@@ -58,11 +58,11 @@ export const PasswordRandomOptions: FC<Props> = ({
                         disabled={symbolsPolicyEnforced}
                     />
                 </div>
-            </MaybeOrgSettingTooltip>
+            </OrganizationPolicyTooltip>
             {advanced && (
                 <>
                     {!dense && <hr className="m-0" />}
-                    <MaybeOrgSettingTooltip show={uppercasePolicyEnforced}>
+                    <OrganizationPolicyTooltip enforced={uppercasePolicyEnforced}>
                         <div className="flex items-center justify-space-between">
                             <label htmlFor="password-capitalise" className="w-custom" style={{ '--w-custom': '10rem' }}>
                                 {c('Label').t`Capital letters (A-Z)`}
@@ -75,9 +75,9 @@ export const PasswordRandomOptions: FC<Props> = ({
                                 disabled={uppercasePolicyEnforced}
                             />
                         </div>
-                    </MaybeOrgSettingTooltip>
+                    </OrganizationPolicyTooltip>
                     {!dense && <hr className="m-0" />}
-                    <MaybeOrgSettingTooltip show={numbersPolicyEnforced}>
+                    <OrganizationPolicyTooltip enforced={numbersPolicyEnforced}>
                         <div className="flex items-center justify-space-between">
                             <label htmlFor="password-digits" className="w-custom" style={{ '--w-custom': '10rem' }}>
                                 {c('Label').t`Include numbers (0-9)`}
@@ -90,7 +90,7 @@ export const PasswordRandomOptions: FC<Props> = ({
                                 disabled={numbersPolicyEnforced}
                             />
                         </div>
-                    </MaybeOrgSettingTooltip>
+                    </OrganizationPolicyTooltip>
                 </>
             )}
         </>
