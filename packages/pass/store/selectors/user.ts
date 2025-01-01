@@ -23,6 +23,7 @@ export const selectIsSSO = ({ user: { user } }: State) => Boolean(user?.Flags.ss
 export const selectUserPlan = ({ user: { plan } }: State) => plan;
 export const selectUserSettings = ({ user: { userSettings } }: State) => userSettings;
 export const selectUserData = ({ user: { userData } }: State) => userData;
+export const selectHasPendingShareAccess = ({ user }: State) => (user.waitingNewUserInvites ?? 0) > 0;
 
 export const selectSentinelEligible = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Eligible ?? false);
 export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Value ?? false);

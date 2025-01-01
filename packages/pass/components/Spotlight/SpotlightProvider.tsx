@@ -1,5 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -10,6 +11,7 @@ import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingSh
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
+import { selectHasPendingShareAccess } from '@proton/pass/store/selectors';
 import { type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 
 import { InviteIcon } from './SpotlightIcon';
@@ -42,6 +44,12 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
     const [spotlightMessage, setSpotlightMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
+
+    /** When spotlight message shows `PENDING_SHARE_ACCESS` from synchronous local
+     * cache read on boot, and cache later invalidates asynchronously, the pending
+     * access modal should close after cache updates with confirmed access. */
+    const pendingShareAccess = useSelector(selectHasPendingShareAccess);
+    const pendingShareAccessModalOpened = state.pendingShareAccess && pendingShareAccess;
 
     const timer = useRef<NodeJS.Timeout>();
     const messageRef = useStatefulRef(state.message);
@@ -109,7 +117,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <SpotlightContext.Provider value={ctx}>
             {children}
-            <PendingShareAccessModal open={state.pendingShareAccess} onClose={closePendingShareAccess} />
+            <PendingShareAccessModal open={pendingShareAccessModalOpened} onClose={closePendingShareAccess} />
             <PendingNewUsersApprovalModal />
         </SpotlightContext.Provider>
     );

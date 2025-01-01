@@ -4,12 +4,12 @@ import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
 import {
     selectCreatedItemsCount,
     selectFeatureFlag,
+    selectHasPendingShareAccess,
     selectInAppNotificationsEnabled,
     selectLockEnabled,
     selectPassPlan,
     selectUserData,
     selectUserPlan,
-    selectUserState,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '@proton/pass/types';
@@ -27,8 +27,7 @@ export const createPendingShareAccessRule = (store: Store<State>) =>
         when: (previous) => {
             if (previous) return false;
             const state = store.getState();
-            const { waitingNewUserInvites } = selectUserState(state);
-            return (waitingNewUserInvites ?? 0) > 0;
+            return selectHasPendingShareAccess(state);
         },
     });
 
