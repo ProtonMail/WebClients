@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Accepter"
+      ],
       "Add": [
         "Ajouter"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Aucun lien expiré"
+      ],
+      "Not now": [
+        "Plus tard"
       ],
       "OK": [
         "OK"
@@ -1178,6 +1184,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Vous êtes hors ligne. Veuillez vous reconnecter afin de débloquer ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Votre DNS n'est pas correctement configuré. L'enregistrement MX obtenu est :"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Votre DNS n'est pas correctement configuré. L'enregistrement TXT obtenu est :"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
       ]
@@ -1341,6 +1353,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } fuite de données a été détectée.",
         "${ row.breachCount } fuites de données ont été détectées."
+      ],
+      "(Empty)": [
+        "(Vide)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 jours pour essayer gratuitement les fonctionnalités premium, lors de votre première semaine d'utilisation de ${ BRAND_NAME }."
@@ -2098,6 +2113,9 @@
       "This setting is disabled on the organization level": [
         "Ce paramètre est désactivé pour l'organisation."
       ],
+      "This setting is enforced by your organization": [
+        "Votre organisation applique ce paramètre."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
@@ -2169,9 +2187,6 @@
       ],
       "username": [
         "nom d'utilisateur"
-      ],
-      "Value:": [
-        "Valeur :"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Le coffre-fort « ${ payload.content.name } » a été supprimé."
@@ -3565,6 +3580,9 @@
       ],
       "Breaches detected for": [
         "Des fuites de données ont été détectées pour"
+      ],
+      "Change your lock method": [
+        "Modifier votre méthode de verrouillage"
       ],
       "Confirm extra password": [
         "Confirmer le mot de passe supplémentaire"

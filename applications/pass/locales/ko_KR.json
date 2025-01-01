@@ -400,6 +400,9 @@
       "No expired links": [
         "만료된 링크 없음"
       ],
+      "Not now": [
+        "다음에"
+      ],
       "OK": [
         "확인"
       ],
@@ -754,7 +757,7 @@
         "나의 온라인 활동을 보호할 고급 보안 기능과 자세한 로그를 잠금해제 하세요."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "${ PASS_SHORT_APP_NAME } Monitor를 사용하여 자격 증명이 훼손되었을 때 위협을 앞서나가십시오. 당신의 온라인 활동을 보호할 고급 보안 기능과 자세한 로그를 잠금해제하십시오."
+        "${ PASS_SHORT_APP_NAME } Monitor를 사용하여 자격 증명이 훼손되었을 때 위협을 앞서나가세요. 회워님의 온라인 활동을 보호할 고급 보안 기능과 자세한 로그를 잠금해제하세요."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "사용자의 이메일 주소가 하나 이상의 데이터 침해에 처해있습니다."
@@ -2105,9 +2108,6 @@
       ],
       "username": [
         "사용자 이름"
-      ],
-      "Value:": [
-        "값:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "금고 :${ payload.content.name }\" 이(가) 성공적으로 삭제되었습니다."

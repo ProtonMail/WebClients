@@ -4060,10 +4060,10 @@
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
+        "Адбылася памылка падчас загрузкі параметраў псеўданіма"
       ],
       "An error occurred while saving your alias": [
-        "Падчас захавання вашага псеўданіма адбылася памылка"
+        "Адбылася памылка падчас захавання вашага псеўданіма"
       ],
       "Attachments are limited to 25 MB": [
         "Максімальны памер далучэнняў складае 25 МБ"
@@ -5555,16 +5555,16 @@
         "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дададзены ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання вашай падзеі. Ніводная падзея не была імпартавана."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Падчас шыфравання і дадавання вашых падзей адбылася памылка. Ніводная падзея не была імпартавана."
+        "Адбылася памылка падчас шыфравання і дадавання вашых падзей. Ніводная падзея не была імпартавана."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шыфраванне і дадаванне кантактаў: ${ totalImported }/${ totalToImport }"
@@ -5618,13 +5618,13 @@
         "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Падчас шыфравання і дадавання кантактаў адбылася памылка. Кантактаў паспяхова імпартавана (${ totalImported } з ${ totalToImport })."
+        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Кантактаў паспяхова імпартавана (${ totalImported } з ${ totalToImport })."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Падчас шыфравання і дадавання вашых кантактаў адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання вашых кантактаў. Ніводны кантакт не быў імпартаваны."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Кантакт паспяхова імпартаваны. Імпартаваны кантакт цяпер з'явіцца ў вашым спісе кантактаў."
@@ -6112,7 +6112,7 @@
         "(${ memberCount } удзельнік)",
         "(${ memberCount } удзельнікі)",
         "(${ memberCount } удзельнікаў)",
-        "(${ memberCount } удзельнікі)"
+        "(${ memberCount } удзельнікаў)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/месяц)"
@@ -6121,7 +6121,7 @@
         "(Фільтраваць, калі ЎСЕ з наступных умоў выкананы)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Фільтраваць, калі будзе выканана ЛЮБАЯ з наступных умоў)"
+        "(Фільтраваць, калі выканана ЛЮБАЯ з наступных умоў)"
       ],
       "(No Recipient)": [
         "(Няма атрымальніка)"
@@ -10114,6 +10114,14 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Атрымайце Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -10126,14 +10134,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: tooltip": {
@@ -10273,7 +10273,7 @@
         "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый абранага змесціва"
+        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."

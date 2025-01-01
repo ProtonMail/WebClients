@@ -2592,6 +2592,9 @@
       "Impossible to rename the gateway": [
         "Δεν είναι δυνατή η μετονομασία της πύλης"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Εσφαλμένος τύπος αρχείου. Ανεβάστε ένα αρχείο σε μορφή PNG ή JPEG."
       ],
@@ -2682,6 +2685,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Εισαγάγετε ένα έγκυρο Αναγνωριστικό Οντότητας (Entity ID) διεύθυνσης URL"
+      ],
       "Please generate keys before you try to change your password": [
         "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ],
@@ -2702,6 +2708,9 @@
       ],
       "Please upload a square logo": [
         "Παρακαλούμε ανεβάστε ένα τετράγωνο λογότυπο"
+      ],
+      "Please upload an XML file": [
+        "Παρακαλούμε ανεβάστε ένα αρχείο XML"
       ],
       "Please upload only 1 file": [
         "Παρακαλούμε ανεβάστε μόνο 1 αρχείο"
@@ -3841,6 +3850,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο Αναγνωριστικού Οντότητας (Entity ID) της υπηρεσίας παροχής ταυτότητάς σας"
+      ],
       "Copy the suggested password to clipboard": [
         "Αντιγράψτε τον προτεινόμενο κωδικό πρόσβασης στο πρόχειρο"
       ],
@@ -4014,6 +4026,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Εισάγετε τον κωδικό που στάλθηκε στο ${ email }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο των ενοχλητικών."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Εισαγάγετε το Αναγνωριστικό Οντότητας (Entity ID) ενός οργανισμού **eduGAIN** για τον τομέα **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
@@ -5808,6 +5823,9 @@
       "Show ${ n } administrator": [
         "Εμφάνιση ${ n } διαχειριστή",
         "Εμφάνιση ${ n } διαχειριστών"
+      ],
+      "Single sign-on Entity ID": [
+        "Entity ID καθολικής σύνδεσης"
       ],
       "Single sign-on URL": [
         "URL καθολικής σύνδεσης"
@@ -8875,6 +8893,9 @@
       "Enter your backup password": [
         "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Για να μπορεί αυτός ο χρήστης να συνδεθεί, βεβαιωθείτε ότι υπάρχει στην υπηρεσία παροχής ταυτότητάς σας."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Για την ασφάλειά σας, έχετε αποσυνδεθεί από όλες τις άλλες ενεργές συσκευές σας. Προτού αποκτήσετε πρόσβαση στον λογαριασμό σας, θα πρέπει να εισαγάγετε έναν νέο εφεδρικό κωδικό πρόσβασης σας."
       ],
@@ -8940,6 +8961,9 @@
       ],
       "Single sign-on removed": [
         "Η καθολική σύνδεση καταργήθηκε"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Ο χρήστης ${ name } είναι πλέον ένας λογαριασμός καθολικής σύνδεσης."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Αυτό θα αποσυνδέσει τον χρήστη από τις άλλες συσκευές του και θα πρέπει να δημιουργήσει έναν νέο εφεδρικό κωδικό πρόσβασης."
@@ -10543,6 +10567,9 @@
       "User": [
         "Χρήστης"
       ],
+      "User converted to SSO": [
+        "Χρήστης έκανε μετατροπή σε SSO"
+      ],
       "Users": [
         "Χρήστες"
       ],
@@ -10667,6 +10694,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο Αναγνωριστικού Οντότητας (Entity ID) της υπηρεσίας παροχής ταυτότητάς σας"
       ],
       "Device information such as operating system": [
         "Πληροφορίες συσκευής, όπως λειτουργικό σύστημα"

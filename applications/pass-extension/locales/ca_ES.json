@@ -108,7 +108,7 @@
         "Confirma l'accés"
       ],
       "Confirm all": [
-        "Confirma tot"
+        "Confirma-ho tot"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Connecteu el vostre compte de ${ BRAND_NAME }"
@@ -1144,6 +1144,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "El vostre navegador té problemes per activar ${ PASS_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "El DNS no està configurat correctament. El registre MX que obtenim és:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "El DNS no està configurat correctament. El registre TXT que obtenim és:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
       ]
@@ -1305,6 +1311,9 @@
       "${ trialDaysLeft } day left": [
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
+      ],
+      "(Empty)": [
+        "(Buit)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
@@ -1689,7 +1698,7 @@
         "S'ha mogut l'element."
       ],
       "Item successfully pinned": [
-        "S'ha ancorat l'element."
+        "S'ha fixat l'element."
       ],
       "Item successfully unpinned": [
         "S'ha desancorat l'element."
@@ -2056,6 +2065,9 @@
       "This setting is disabled on the organization level": [
         "Aquesta opció està desactivada en l'àmbit d'organització"
       ],
+      "This setting is enforced by your organization": [
+        "L'organització aplica aquesta configuració."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Aquesta caixa forta no està compartida actualment amb ningú. Inviteu persones a compartir-la amb altres."
       ],
@@ -2139,9 +2151,6 @@
       ],
       "User's access successfully updated": [
         "S'ha actualitzat l'accés de l'usuari."
-      ],
-      "Value:": [
-        "Valor:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "S'ha eliminat la caixa forta \"${ payload.content.name }\""
@@ -2325,7 +2334,7 @@
         "24 hores"
       ],
       "2FA autofill": [
-        "Emplenament automàtic A2F"
+        "Emplena automàticament el 2FA"
       ],
       "2FA secret key (TOTP)": [
         "Clau secreta d'A2F (TOTP)"
@@ -2406,7 +2415,7 @@
         "Emplenament automàtic"
       ],
       "Autofill 2FA": [
-        "Emplenament automàtic A2F"
+        "Emplena automàticament el 2FA"
       ],
       "Autosave": [
         "Desament automàtic"
@@ -2859,7 +2868,7 @@
         "Recents"
       ],
       "Reddit handle": [
-        "Nom d'usuari de Reddit"
+        "Nom d'usuari del Reddit"
       ],
       "Remove link": [
         "Esborra l'enllaç"

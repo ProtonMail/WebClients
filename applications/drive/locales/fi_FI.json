@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Merkitse poistettavaksi"
       ],
-      "Maximize": [
-        "Suurenna"
-      ],
       "Maximize transfers": [
         "Suurenna siirrot"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Yhdistä yhteystiedot"
-      ],
-      "Minimize": [
-        "Pienennä"
       ],
       "Minimize transfers": [
         "Pienennä siirrot"
@@ -4045,14 +4039,6 @@
         "${ invitations.length } odottava kutsu",
         "${ invitations.length } odottavaa kutsua"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } salattu tiedosto",
-        "${ nbFile } salattua tiedostoa"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } salattu tiedosto...",
-        "${ nbFile } salattua tiedostoa..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
@@ -4159,9 +4145,6 @@
       "All (${ totalFoldersCount } label)": [
         "Kaikki (${ totalFoldersCount } tunniste)",
         "Kaikki (${ totalFoldersCount } tunnistetta)"
-      ],
-      "All encrypted files": [
-        "Kaikki salatut tiedostot"
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
@@ -4391,14 +4374,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
-      "Download": [
-        "Lataa"
-      ],
       "Download ${ name } app": [
         "Lataa ${ name }-sovellus"
-      ],
-      "Download anyway": [
-        "Lataa silti"
       ],
       "Download canceled": [
         "Lataus peruttiin"
@@ -4432,9 +4409,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "${ DOCS_APP_NAME } -tiedostojen latausta ${ DRIVE_APP_NAME }esta ei tällä hetkellä tueta — näitä ei sisällytetä lataukseesi."
-      ],
-      "Downloading all encrypted files": [
-        "Ladataan kaikki salatut tiedostot"
       ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
@@ -4623,9 +4597,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Sillä välin voit luoda oman ${ DRIVE_APP_NAME } -tilisi, suojata tietosi päästä päähän -salauksella ja jakaa ne turvallisesti."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
@@ -4997,9 +4968,6 @@
       "Report has been sent": [
         "Ilmoitus lähetettiin"
       ],
-      "Report link": [
-        "Ilmoita linkistä"
-      ],
       "Request access, or switch to an account with access.": [
         "Pyydä käyttöoikeutta tai vaihda tiliin, jolla on käyttöoikeus."
       ],
@@ -5018,9 +4986,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Kuvia palautetaan... Älä sulje välilehteä"
       ],
-      "Retry now": [
-        "Yritä uudelleen nyt"
-      ],
       "Saving...": [
         "Tallennetaan..."
       ],
@@ -5032,16 +4997,6 @@
       ],
       "Search Enabled": [
         "Haku otettiin käyttöön"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } tiedosto ladattiin turvallisesti",
-        "${ nbFile } tiedostoa ladattiin turvallisesti"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Lataa kaikki salatut tiedostot turvallisesti"
-      ],
-      "Securely downloaded all files": [
-        "Lataa kaikki tiedostot turvallisesti"
       ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
@@ -5094,9 +5049,6 @@
       "Shared with me": [
         "Jaettu minulle"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Luo oma ${ DRIVE_APP_NAME } -tilisi, suojaa tietosi päästä päähän -salauksella ja jaa ne turvallisesti."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
       ],
@@ -5123,9 +5075,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Jotain meni pieleen. Yritä myöhemmin uudelleen."
-      ],
-      "Something went wrong...": [
-        "Jotain meni pieleen..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
@@ -5576,9 +5525,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
-      "Your download is in progress": [
-        "Latauksesi on käynnissä"
-      ],
       "Your email address and password were leaked:": [
         "Sähköpostiosoitteesi ja salasanasi paljastuivat:"
       ],
@@ -5885,9 +5831,6 @@
       ],
       "Download anyway": [
         "Lataa silti"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Ladattu ${ percentageValue }"
       ],
       "Duplicate found": [
         "Löydettiin kaksoiskappale"
@@ -6206,9 +6149,6 @@
       ],
       "Theme": [
         "Teema"
-      ],
-      "This file is potentially infected": [
-        "Tämä tiedosto voi olla saanut tartunnan"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Tämä poistaa kaikki lukitun levysi tiedostot pysyvästi."

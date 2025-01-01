@@ -457,6 +457,9 @@
       "Refer a friend": [
         "Parrainer un ami"
       ],
+      "Refresh Data": [
+        "Actualiser les données"
+      ],
       "Refresh status": [
         "Actualiser le statut"
       ],
@@ -3413,6 +3416,12 @@
       "Checkout": [
         "Paiement"
       ],
+      "City": [
+        "Ville"
+      ],
+      "Country": [
+        "Pays"
+      ],
       "Create your account": [
         "Créez votre compte"
       ],
@@ -4388,11 +4397,17 @@
       "No Gateways yet": [
         "Aucune Passerelle pour le moment"
       ],
+      "No location filters are currently assigned.": [
+        "Aucun filtre d'emplacement n'est actuellement attribué."
+      ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
+      ],
+      "No Shared Servers Found": [
+        "Aucun serveur partagé n'a été trouvé."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
@@ -4650,6 +4665,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Le partage ${ vaultLink } a été mis à jour."
+      ],
+      "Shared Server Location Filters": [
+        "Filtres d'emplacement de serveur partagé"
       ],
       "Shared vault deleted": [
         "Le coffre-fort partagé a été supprimé."
@@ -10512,6 +10530,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Configurez des serveurs dédiés en passant à un abonnement Business."
+      ],
+      "Shared servers": [
+        "Serveurs partagés"
       ],
       "Sign in": [
         "Se connecter"

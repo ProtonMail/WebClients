@@ -823,6 +823,9 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
+      "Refresh Data": [
+        "Daten aktualisieren"
+      ],
       "Refresh status": [
         "Status aktualisieren"
       ],
@@ -6111,6 +6114,12 @@
       "Checkout": [
         "Zur Kasse"
       ],
+      "City": [
+        "Ort"
+      ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Erstelle dein Konto"
       ],
@@ -6888,6 +6897,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Nach der Sperrung müssen die Mitglieder der Organisation ${ PASS_APP_NAME } mit ihrem Passwort oder ihrer PIN usw. entsperren."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
+      ],
       "Align left": [
         "Linksbündig"
       ],
@@ -7246,6 +7258,9 @@
       ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
       "default email address": [
         "standard E-Mail-Adresse"
@@ -8132,6 +8147,10 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Bitte beachte, dass, wenn du den Filter ${ nameDeleted } löschst, wir alle automatischen Aktionen, die er auslöst, nicht mehr verarbeiten."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
+      ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
       ],
@@ -8522,6 +8541,9 @@
       ],
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Die Gruppenfunktion wird von deinem aktuellen Abonnement nicht unterstützt. Zuvor erstellte Gruppen sind deaktiviert und können nur gelöscht werden."
+      ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Der Link zur Meldung, dass du kein ${ BRAND_NAME }-Konto eingerichtet hast, ist abgelaufen. Bitte setze dich mit unserem Support-Team in Verbindung, um dieses Problem zu lösen."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."
@@ -9108,6 +9130,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kannst dies einmal bearbeiten, um sicherzustellen, dass die richtige E-Mail-Adresse für die Verifizierung verwendet wird."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Sie können die Protokollierung von Authentifizierungen aktivieren um zu sehen wann auf Ihr Account von welcher IP-Adresse zugegriffen wurde. Wir werden die IP-Adresse und den Zeitpunkt, auch von fehlgeschlagenen Anmeldeversuchen, aufzeichnen."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Du kannst den Bereich Fotos über das Interface aktivieren, indem du den Schalter unten betätigst."
@@ -9955,6 +9980,9 @@
       "Auto-unsubscribe": [
         "Automatisch abbestellen"
       ],
+      "Automatically save contacts": [
+        "Kontakte automatisch speichern"
+      ],
       "Awarded": [
         "Gutgeschrieben"
       ],
@@ -9999,6 +10027,9 @@
       ],
       "Calendars": [
         "Kalender"
+      ],
+      "Capitalize words": [
+        "Wörter großschreiben"
       ],
       "Card details": [
         "Kartendaten"
@@ -10758,6 +10789,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Lade eine(n) oder mehrere Wiederherstellungsdateien oder Verschlüsselungsschlüssel hoch"
+      ],
+      "Uppercase": [
+        "Großbuchstaben"
       ],
       "URL": [
         "URL"
@@ -12773,6 +12807,9 @@
       "1 email per month": [
         "1 E-Mail pro Monat"
       ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 E-Mail pro Monat. Erhalte die neuesten Nachrichten zum Thema Privatsphäre und was im ${ BRAND_NAME }-Universum vor sich geht."
+      ],
       "1 email per quarter": [
         "1 E-Mail pro Quartal"
       ],
@@ -12784,6 +12821,9 @@
       ],
       "4-6 emails per year": [
         "4-6 E-Mails pro Jahr"
+      ],
+      "Application notifications": [
+        "Anwendungsbenachrichtigungen"
       ],
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
@@ -13652,6 +13692,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Spezielles Einführungsangebot: Hol dir ${ title } für ${ price } für immer!"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Beginne ${ PASS_APP_NAME } zu nutzen"
       ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Maßgeschneiderte Lösungen für größere Organisationen mit benutzerdefinierten Anforderungen."
@@ -15504,6 +15547,10 @@
       ]
     },
     "sso": {
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } Benutzer bitte, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden.",
+        "${ n } Benutzer bitten, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden."
+      ],
       "Access denied": [
         "Zugriff verweigert"
       ],
@@ -15563,6 +15610,9 @@
       "Enter your backup password": [
         "Gib dein Backup-Passwort ein"
       ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Zu deiner Sicherheit wurdest du von all deinen anderen aktiven Geräten abgemeldet. Bevor du auf dein Konto zugreifen kannst, musst du ein neues Backup-Passwort eingeben."
+      ],
       "Grant": [
         "Zulassen"
       ],
@@ -15577,6 +15627,9 @@
       ],
       "If you didn't make this request, cancel it now.": [
         "Wenn du diese Anfrage nicht gestellt hast, brich sie jetzt ab."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Wenn du aus deinem ${ BRAND_NAME }-Konto ausgesperrt wirst, kannst du dich mit deinem Backup-Passwort anmelden und deine Daten wiederherstellen."
       ],
       "Invalid confirmation code": [
         "Ungültiger Bestätigungscode"
@@ -15622,6 +15675,12 @@
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Dadurch wirst du von deinen anderen Geräten abgemeldet, und du musst ein neues Backup-Passwort festlegen."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei **${ email }** anzumelden, überprüfe den Bestätigungscode und bestätige die Anfrage von einem anderen Gerät aus."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei deinem Konto anzumelden, gib den Bestätigungscode an deinen Administrator **${ adminEmail }** weiter, damit er die Anfrage für **${ email }** genehmigen kann."
@@ -18400,6 +18459,9 @@
       "Currency conversion": [
         "Währungsumrechnung"
       ],
+      "Gift card": [
+        "Geschenkgutschein"
+      ],
       "Migration": [
         "Migration"
       ],
@@ -18440,6 +18502,10 @@
       ],
       "Confirm all": [
         "Alle bestätigen"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, ,da seiner Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert wurde:",
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, da ihre Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert worden sind:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"

@@ -304,6 +304,9 @@
       "Forgot recovery method?": [
         "忘記復原方法?"
       ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得${ MAIL_SHORT_APP_NAME }"
+      ],
       "Get ${ vpnPlus }": [
         "選購 ${ vpnPlus }"
       ],
@@ -1077,6 +1080,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護您的電子郵件。包含 ${ addresses } 電子郵件位址、支援自訂電子郵件網域、${ BRAND_NAME } Scribe 寫作助手、無限的 hide-my-email 別名等更多功能。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含${ addresses }電子郵件地址,支援自訂電子郵件網域,無限hide-my-email別名及更多"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
       ],
@@ -1242,6 +1248,9 @@
       ],
       "Try ${ planName }": [
         "嘗試${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "嘗試${ upsellPlanName }及保持頂級電子郵件和行事曆功能的權限。"
       ],
       "Ultra fast and private VPN": [
         "超快與私有的VPN"
@@ -3398,6 +3407,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME }終身方案無續約費,他是單次付款終身存取${ PASS_SHORT_APP_NAME }。您${ planTitle }訂閱價格及日期保持不便。"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
@@ -3502,6 +3514,9 @@
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "正在新增閘道伺服器：${ serverNumber } / ${ total }"
+      ],
+      "Address copied to clipboard": [
+        "地址已複製到剪貼簿"
       ],
       "Admin account allocation": [
         "管理員帳號指派"
@@ -3658,6 +3673,9 @@
       ],
       "Dedicated servers": [
         "專用伺服器"
+      ],
+      "default email address": [
+        "預設電子信箱地址"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "刪除其他 MX 紀錄或確保 ${ MAIL_APP_NAME } 的優先順序是最低的數字。"
@@ -4049,6 +4067,9 @@
       "Member": [
         "成員"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
+      ],
       "MM/YY": [
         "月月/年年"
       ],
@@ -4298,6 +4319,9 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
+      "Setting up your new address...": [
+        "設定您的新地址..."
+      ],
       "Setting up your organization": [
         "設定您的組織"
       ],
@@ -4324,6 +4348,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF 聲明了誰可以以此網域的名義寄信。確保您添加下列的 TXT 記錄到您的 DNS 中 (通常由您的網域註冊商提供)。"
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "開始共享此內容和使用於線上服務。"
       ],
       "Step ${ step }": [
         "步驟 ${ step }"
@@ -4417,6 +4444,9 @@
       ],
       "This file is too large to preview": [
         "此檔案太大無法預覽"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "此為您新傳送新電子郵件的${ defaultEmailAddress }"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此使用者目前負責您組織的付款。降級此成員後，將會由您負責組織的付款。"
@@ -5766,6 +5796,9 @@
       "From ${ price }": [
         "${ price }起"
       ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
       ],
@@ -5892,6 +5925,9 @@
       ],
       "10 email addresses/aliases": [
         "10 組電子郵件地址/別名"
+      ],
+      "10 more premium features": [
+        "10多項豐富的頂級功能"
       ],
       "10-year file version history": [
         "10年的檔案版本紀錄"
@@ -6335,6 +6371,12 @@
       ],
       "Popular": [
         "熱門"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "保持敏感資料安全及安全地合作。"
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "透過${ PASS_SHORT_APP_NAME }頂級功能保護家庭及6位使用者。"
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
@@ -8000,6 +8042,11 @@
         "您的方案乃購自 iOS 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Apple App Store。"
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "此訂閱將於繳款單週期末被降級"
+      ]
+    },
     "Subscription length": {
       "Lifetime": [
         "終身"
@@ -9175,6 +9222,9 @@
       "Unlock your data": [
         "解鎖您的資料"
       ],
+      "Upgrade complete!": [
+        "升級完成！"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "透過專用伺服器提升您的網路保護"
       ],
@@ -9219,6 +9269,9 @@
       ],
       "Your plan": [
         "您的方案"
+      ],
+      "Your shorter address is now ready": [
+        "您的短地址已完成"
       ],
       "Your subscriptions": [
         "您的訂購授權"

@@ -477,9 +477,6 @@
       "Mark for deletion": [
         "Törlésre jelöl"
       ],
-      "Maximize": [
-        "Teljes méretű"
-      ],
       "Maximize transfers": [
         "Le- és feltöltések megnyitása"
       ],
@@ -488,9 +485,6 @@
       ],
       "Merge contacts": [
         "Névjegyek egyesítése"
-      ],
-      "Minimize": [
-        "Kis méret"
       ],
       "Minimize transfers": [
         "Le- és feltöltések összecsukása"
@@ -2764,6 +2758,10 @@
       "Process aborted": [
         "Folyamat megszakítva"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Kettőzött meghívás eltávolítva: ${ joinedInvitee }",
+        "Kettőzött meghívás eltávolítva: ${ joinedInvitee }"
+      ],
       "Report failed to be sent": [
         "A bejelentés elküldése nem sikerült"
       ],
@@ -3775,13 +3773,9 @@
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } titkosított fájl",
-        "${ nbFile } titkosított fájl"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } titkosított fájl...",
-        "${ nbFile } titkosított fájl..."
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length } függőben lévő meghívás",
+        "${ invitations.length } függő meghívás"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } felfüggesztve",
@@ -3884,9 +3878,6 @@
         "Mind (${ totalFoldersCount } címke)",
         "Mind (${ totalFoldersCount } címke)"
       ],
-      "All encrypted files": [
-        "Minden titkosított fájl"
-      ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
@@ -3908,6 +3899,9 @@
       ],
       "An active recovery file": [
         "Egy aktív helyreállító fájl"
+      ],
+      "an anonymous user": [
+        "egy névtelen felhasználó"
       ],
       "An issue occurred during the restore process.": [
         "A helyreállítás során probléma merült fel."
@@ -4113,14 +4107,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
       ],
-      "Download": [
-        "Letöltés"
-      ],
       "Download ${ name } app": [
         "${ name } alkalmazás letöltése"
-      ],
-      "Download anyway": [
-        "Letöltés mindenképpen"
       ],
       "Download canceled": [
         "Letöltés megszakítva"
@@ -4152,8 +4140,8 @@
       "Downloading": [
         "Letöltés"
       ],
-      "Downloading all encrypted files": [
-        "Minden titkosított fájl letöltése"
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "A ${ DOCS_APP_NAME } fájlok letöltése a ${ DRIVE_APP_NAME } fájlokból jelenleg nem támogatott — ezek nem lesznek benne a letöltésben."
       ],
       "Drop file here to upload": [
         "Húzza ide a fájlokat a feltöltéshez"
@@ -4276,6 +4264,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "A legjobb eredményért addig ne videózzon vagy végezzem memóriaigényes műveletet, vagy darabolja a feltöltését kisebb részekre."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Ingyen 5GB titkosított tárhely a kezdéshez"
+      ],
       "from the version history?": [
         "az előző változatok közül?"
       ],
@@ -4384,6 +4375,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Tartsa fájljait biztonságosan végpontok közti titkosítással."
       ],
       "Key fingerprint": [
         "Kulcs ujjlenyomat"
@@ -4682,9 +4676,6 @@
       "Report has been sent": [
         "A jelentés el lett küldve"
       ],
-      "Report link": [
-        "Hivatkozás jelentése"
-      ],
       "Request access, or switch to an account with access.": [
         "Kérjen hozzáférést vagy váltson egy hozzáféréssel rendelkező fiókra."
       ],
@@ -4700,9 +4691,6 @@
       "Restored files ${ formattedDate }": [
         "Helyreálíltott fájlok ${ formattedDate }"
       ],
-      "Retry now": [
-        "Újra"
-      ],
       "Saving...": [
         "Mentés..."
       ],
@@ -4712,12 +4700,8 @@
       "Search Enabled": [
         "Keresés engedélyezve"
       ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } fájl biztonságosan letöltve",
-        "${ nbFile } fájl biztonságosan letöltve"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Minden titkosított biztonságosan letöltve"
+      "Select a folder to move to.": [
+        "Válasszon ki egy mappát, ahová szeretné áthelyezni."
       ],
       "Select a service provider to start": [
         "Válaszon ki egy szolgáltatót a kezdéshez"
@@ -4751,6 +4735,9 @@
       ],
       "Share files with links": [
         "Fájlok megosztása hivatkozással"
+      ],
+      "Share via link settings": [
+        "Megosztás a hivatkozás beállításain keresztül"
       ],
       "Shareable link for ${ boldNameText }": [
         "Megosztható hivatkozás ehhez: ${ boldNameText }"
@@ -4787,9 +4774,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
-      ],
-      "Something went wrong...": [
-        "Hiba történt..."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Küldje el a befizetést az alábbi címre, vagy olvassa be a QR-kódot. A befizetés a megerősítést követően megjelenik a számláján."
@@ -4833,14 +4817,26 @@
       "There is nothing to see here": [
         "Nincs itt semmi látnivaló"
       ],
+      "This action will delete the file you uploaded permanently.": [
+        "Ez a művelet véglegesen törli a feltöltött fájlt."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "Ez a művelet véglegesen törli a mappát, amit feltöltött. Nem tudja törölni a mappát, ha nem saját fájlt tartalmaz."
+      ],
       "This action will delete the link and revoke access for all users.": [
         "Ez a cselekmény törölni fog minden hivatkozást és visszavonja minden felhasználó jogosultságait."
+      ],
+      "This action will delete the selected items permanently.": [
+        "Ez a művelet véglegesen törli a kiválaszott elemeket."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ez a cím le van tiltva. Ahhoz, hogy küldhessen erre a címre, a tulajdonosnak engedélyeznie kell."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Ezt nem tudja visszaállítani. Adja meg az eszköz nevét az eltávolítás megerősítéséhez."
       ],
       "This file is too large to preview": [
         "Ez a fájl túl nagy az előnézethez"
@@ -4875,6 +4871,9 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ez törli a hivatkozást és megszünteti a fájl vagy mappa elérhetőségét azok számára, akiknek elküldte.",
         "Ez törli a hivatkozásokat és megszünteti a fájlok vagy mappák elérhetőségét azok számára, akiknek elküldte."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "Ez eltávolítja a ${ deviceName } szinkronizált eszközt a ${ DRIVE_APP_NAME }-ból és az összes adatot a ${ DRIVE_APP_NAME }-ból. Mappák, amiket hozzáadott a Számítógépeimhez többé nem fognak szinkronizálódni."
       ],
       "This will replace the existing file with the folder": [
         "Ez lecseréli a meglévő fájl a mappával"
@@ -4944,6 +4943,9 @@
       ],
       "Trash is empty": [
         "A lomtár üres"
+      ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Próbáld ki a ${ DRIVE_APP_NAME }: Ingyenes örökké"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
@@ -5086,6 +5088,9 @@
       "You already have a free account": [
         "Már van egy ingyenes fiókja"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "A megosztott elemet el akarja hagyni. Addig nem férhetsz hozzá újra, amíg a tulajdonos meg nem osztja veled."
+      ],
       "You are about to open another browser tab and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
@@ -5154,6 +5159,10 @@
       ],
       "You will lose all unsaved changes.": [
         "A nem mentett módosítások el fognak veszni."
+      ],
+      "You will need to save it again from the public link page.": [
+        "A nyilvános hivatkozásról oldalról újra el kell mentenie.",
+        "A nyilvános hivatkozásról oldalról újra el kell mentenie."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
@@ -5492,9 +5501,6 @@
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
-      "Downloading ${ percentageValue }": [
-        "${ percentageValue } letöltése"
-      ],
       "Duplicate found": [
         "Duplikált elem található"
       ],
@@ -5803,9 +5809,6 @@
       ],
       "Theme": [
         "Téma"
-      ],
-      "This file is potentially infected": [
-        "Ez a fájl lehet vírust tartalmaz."
       ],
       "This will permanently delete all files in your locked drive.": [
         "Ez véglegesen törli a zárolt tárhelyen található összes fájlját."
@@ -7012,9 +7015,17 @@
         "${ count } elem visszafejtése nem sikerült",
         "${ count } elem visszafejtése nem sikerült"
       ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } elem törölve",
+        "${ numberOfItems } elem törölve"
+      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elem véglegesen törölve a lomtárból",
         "${ numberOfItems } elem véglegesen törölve a lomtárból"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } elemet nem sikerült eltávolítani",
+        "${ numberOfItems } elemet nem sikerült eltávolítani"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült",
@@ -7160,6 +7171,14 @@
       ],
       "The link to your item was deleted": [
         "A fájlra vonatkozó hivatkozás törölve"
+      ],
+      "This item was not removed from your list": [
+        "Ez az elem nem lett eltávolítva a listájáról",
+        "Egyes elemek nem lettek eltávolítva a listájáról"
+      ],
+      "This item was successfully removed from your list": [
+        "Ez az elem sikeresen eltávolítva a listájáról",
+        "Összes elem sikeresen eltávolítva a listájáról"
       ],
       "Trash failed to be emptied": [
         "A lomtár ürítése nem sikerült"
@@ -8659,6 +8678,10 @@
       ],
       "Are you sure you want to close the preview?": [
         "Biztos, hogy be szeretné zárni az előnézetet?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Biztos, hogy el akarja távolítani ezt az elemet a listáról?",
+        "Biztos, hogy el akarja távolítani ezeket az elemet a listáról?"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
