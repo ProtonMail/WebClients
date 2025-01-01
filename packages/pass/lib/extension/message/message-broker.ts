@@ -101,7 +101,7 @@ export const createMessageBroker = (options: {
 
                     return successMessage(res);
                 } catch (error: any) {
-                    logger.debug(`[MessageBroker::Message] error`, error);
+                    logger.debug(`[MessageBroker::Message] Error "${message.type}"`, error);
                     options.onError(error);
                     return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
                 }

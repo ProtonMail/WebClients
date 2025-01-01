@@ -18,14 +18,16 @@ const {
     CLEAN_MANIFEST,
     ENV,
     HOT_MANIFEST_UPDATE,
+    HTTP_DEBUGGER_PORT,
+    HTTP_DEBUGGER,
     MANIFEST_KEY,
     REDUX_DEVTOOLS_PORT,
     RELEASE,
     RESUME_FALLBACK,
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
-    WEBPACK_DEV_PORT,
     WEBPACK_CIRCULAR_DEPS,
+    WEBPACK_DEV_PORT,
 } = require('./tools/env');
 
 const SUPPORTED_TARGETS = ['chrome', 'firefox', 'safari'];
@@ -45,6 +47,9 @@ console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
 console.log(`MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
 console.log(`PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
 console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
+console.log(`HTTP_DEBUGGER = ${HTTP_DEBUGGER}`);
+
+if (HTTP_DEBUGGER) console.log(`HTTP_DEBUGGER_PORT = ${HTTP_DEBUGGER_PORT}`);
 
 if (ENV !== 'production') {
     console.log(`HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
@@ -64,6 +69,7 @@ const manifestPath = path.resolve(__dirname, manifest);
 
 const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
 const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
+const safariPatch = (entry) => (BUILD_TARGET === 'safari' ? [entry, './src/lib/utils/safari-patch.ts'] : entry);
 const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version);
 
 module.exports = {
@@ -89,7 +95,7 @@ module.exports = {
         notification: nonAccessibleWebResource('./src/app/content/injections/apps/notification/index.tsx'),
         onboarding: './src/app/pages/onboarding/index.tsx',
         orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
-        popup: './src/app/popup/index.tsx',
+        popup: safariPatch('./src/app/popup/index.tsx'),
         settings: './src/app/pages/settings/index.tsx',
         /* Passkey handling not available in Safari */
         ...(BUILD_TARGET !== 'safari' ? { webauthn: './src/app/content/webauthn.ts' } : {}),
@@ -176,6 +182,8 @@ module.exports = {
             DESKTOP_BUILD: false,
             ENV: JSON.stringify(ENV),
             EXTENSION_BUILD: true,
+            HTTP_DEBUGGER_PORT,
+            HTTP_DEBUGGER,
             OFFLINE_SUPPORTED: false,
             REDUX_DEVTOOLS_PORT,
             RESUME_FALLBACK,

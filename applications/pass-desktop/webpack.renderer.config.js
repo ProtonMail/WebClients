@@ -3,6 +3,7 @@ const plugins = require('./webpack.plugins');
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 const { getJsLoaders } = require('@proton/pack/webpack/js.loader');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
@@ -65,16 +66,10 @@ module.exports = {
         rules: [
             ...getJsLoaders({ ...options, hasReactRefresh: false }),
             ...getCssLoaders({ browserslist: undefined, logical: false }),
-            ...getAssetsLoaders(),
+            ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
-    plugins: [
-        ...plugins,
-        new ReactRefreshWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'styles/[name].css',
-        }),
-    ],
+    plugins: [...plugins, new ReactRefreshWebpackPlugin(), new MiniCssExtractPlugin({ filename: 'styles/[name].css' })],
     experiments: {
         asyncWebAssembly: true,
     },
