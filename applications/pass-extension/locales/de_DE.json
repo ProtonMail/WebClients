@@ -1180,6 +1180,9 @@
         "${ trialDaysLeft } verbleibender Tag",
         "${ trialDaysLeft } verbleibende Tage"
       ],
+      "(Empty)": [
+        "(Leer)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
       ],
@@ -1839,6 +1842,9 @@
       "This version will be added to the history as the newest version.": [
         "Diese Version wird als neueste Version in den Verlauf aufgenommen."
       ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "Um deine persönliche E-Mail-Adresse zu verbergen, kannst du einen Alias-Kontakt erstellen, der deine Adresse verschleiert."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Um Daten von einem anderen Passwort-Manager zu migrieren, exportiere deine Daten und lade sie dann zu ${ PASS_APP_NAME } hoch. Lösche die exportierte Datei, sobald deine Daten importiert wurden."
       ],
@@ -1901,9 +1907,6 @@
       ],
       "User's access successfully updated": [
         "Benutzerzugriff aktualisiert"
-      ],
-      "Value:": [
-        "Wert:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."

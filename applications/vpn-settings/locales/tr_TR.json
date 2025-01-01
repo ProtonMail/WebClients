@@ -2592,6 +2592,9 @@
       "Impossible to rename the gateway": [
         "Ağ geçidi yeniden adlandırılamıyor"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Dosya türü yanlış. PNG ya da JPEG biçiminde bir dosya yükleyin."
       ],
@@ -2682,6 +2685,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Lütfen geçerli bir Entity ID adresi yazın"
+      ],
       "Please generate keys before you try to change your password": [
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
@@ -2702,6 +2708,9 @@
       ],
       "Please upload a square logo": [
         "Lütfen kare biçiminde bir logo yükleyin"
+      ],
+      "Please upload an XML file": [
+        "Lütfen bir XML dosyası yükleyin"
       ],
       "Please upload only 1 file": [
         "Lütfen yalnızca 1 dosya yükleyin"
@@ -3841,6 +3850,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın Entity ID alanına yapıştırın"
+      ],
       "Copy the suggested password to clipboard": [
         "Önerilen parolayı panoya kopyala"
       ],
@@ -4014,6 +4026,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } alıcısına gönderilen doğrulama kodunu yazın. E-postayı Gelen kutunuzda bulamazsanız, İstenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "**${ domain.DomainName }** için bir **eduGAIN** kuruluşunun Entity ID değerini yazın."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Yönetici yetkilerini geri yüklemek için kuruluş parolasını yazın. ${ learnMore }"
@@ -5808,6 +5823,9 @@
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
         "${ n } yöneticiyi görüntüle"
+      ],
+      "Single sign-on Entity ID": [
+        "Tek oturum açma Entity ID"
       ],
       "Single sign-on URL": [
         "Tek oturum açma adresi"
@@ -8875,6 +8893,9 @@
       "Enter your backup password": [
         "Yedek parolanızı yazın"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Bu kullanıcının oturum açabilmesi için kimlik hizmeti sağlayıcısı üzerinde bulunduğundan emin olun."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Güvenliğiniz için, diğer tüm etkin aygıtlarınızdaki oturumlar kapatıldı. Hesabınıza erişmeden önce, yeni bir yedek parola yazmanız gerekecek."
       ],
@@ -8940,6 +8961,9 @@
       ],
       "Single sign-on removed": [
         "Tek oturum açma kaldırıldı"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "${ name } hesabı artık tek oturum açma kullanıyor."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Bu işlem kullanıcının diğer aygıtlardaki oturumlarını kapatacak ve yeni bir yedek parola oluşturmaları gerekecek."
@@ -10546,6 +10570,9 @@
       "User": [
         "Kullanıcı"
       ],
+      "User converted to SSO": [
+        "Kullanıcıya tek oturum açma eklendi"
+      ],
       "Users": [
         "Kullanıcılar"
       ],
@@ -10670,6 +10697,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın Entity ID alanına yapıştırın"
       ],
       "Device information such as operating system": [
         "İşletim sistemi gibi aygıt bilgileri"

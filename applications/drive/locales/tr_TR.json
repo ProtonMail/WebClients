@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Silinecek olarak işaretle"
       ],
-      "Maximize": [
-        "Büyüt"
-      ],
       "Maximize transfers": [
         "Aktarımları büyüt"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Kişileri birleştir"
-      ],
-      "Minimize": [
-        "Küçült"
       ],
       "Minimize transfers": [
         "Aktarımları küçült"
@@ -4045,14 +4039,6 @@
         "${ invitations.length } davet bekliyor",
         "${ invitations.length } davet bekliyor"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } şifrelenmiş dosya",
-        "${ nbFile } şifrelenmiş dosya"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } şifrelenmiş dosya...",
-        "${ nbFile } şifrelenmiş dosya..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
@@ -4159,9 +4145,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
-      ],
-      "All encrypted files": [
-        "Tüm şifrelenmiş dosyalar"
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -4391,14 +4374,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
-      "Download": [
-        "İndir"
-      ],
       "Download ${ name } app": [
         "${ name } uygulamasını indir"
-      ],
-      "Download anyway": [
-        "Yine de indir"
       ],
       "Download canceled": [
         "İndirme iptal edildi"
@@ -4432,9 +4409,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "${ DRIVE_APP_NAME } üzerinden ${ DOCS_APP_NAME } dosyalarının indirilmesi şu anda desteklenmiyor. Bu dosyalar indirme işleminize katılmayacak."
-      ],
-      "Downloading all encrypted files": [
-        "Tüm şifrelenmiş dosyalar indiriliyor"
       ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
@@ -4623,9 +4597,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Bu sırada kendi ${ DRIVE_APP_NAME } hesabınızı açıp verilerinizi uçtan uca şifreleme ile koruyabilir ve güvenli olarak paylaşabilirsiniz."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
@@ -4997,9 +4968,6 @@
       "Report has been sent": [
         "Şikayet gönderildi"
       ],
-      "Report link": [
-        "Bağlantıyı bildir"
-      ],
       "Request access, or switch to an account with access.": [
         "Erişim isteğinde bulunun ya da erişimi olan bir hesaba geçin."
       ],
@@ -5018,9 +4986,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Fotoğraflar geri yükleniyor... Lütfen sekmeyi açık tutun"
       ],
-      "Retry now": [
-        "Yeniden dene"
-      ],
       "Saving...": [
         "Kaydediliyor..."
       ],
@@ -5032,16 +4997,6 @@
       ],
       "Search Enabled": [
         "Arama özelliği açıldı"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } dosya güvenli olarak indirildi",
-        "${ nbFile } dosya güvenli olarak indirildi"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Tüm şifrelenmiş dosyalar güvenli olarak indirildi"
-      ],
-      "Securely downloaded all files": [
-        "Tüm dosyalar güvenli olarak indirildi"
       ],
       "Select a folder to move to.": [
         "Taşınacak bir klasör seçin."
@@ -5094,9 +5049,6 @@
       "Shared with me": [
         "Benimle paylaşılan"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Kendi ${ DRIVE_APP_NAME } hesabınızı açıp verilerinizi uçtan uca şifreleme ile koruyabilir ve güvenli olarak paylaşabilirsiniz."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -5123,9 +5075,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
-      ],
-      "Something went wrong...": [
-        "Bir sorun çıktı..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
@@ -5576,9 +5525,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
-      "Your download is in progress": [
-        "İndirme işleminiz sürüyor"
-      ],
       "Your email address and password were leaked:": [
         "E-posta adresiniz ve parolanız açığa çıkmış:"
       ],
@@ -5885,9 +5831,6 @@
       ],
       "Download anyway": [
         "Yine de indir"
-      ],
-      "Downloading ${ percentageValue }": [
-        "İndiriliyor ${ percentageValue }"
       ],
       "Duplicate found": [
         "Kopya bulundu"
@@ -6206,9 +6149,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Bu dosya virüslü olabilir"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Bu işlem, kilitli sürücünüzdeki bütün dosyaları kalıcı olarak silecek."

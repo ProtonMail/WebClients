@@ -1144,6 +1144,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "El navegador está teniendo problemas para activar ${ PASS_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "El DNS no está configurado correctamente. El registro MX obtenido es:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "El DNS no está configurado correctamente. El registro TXT obtenido es:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Tu código PIN ha sido eliminado por otro cliente de ${ PASS_APP_NAME }"
       ]
@@ -1305,6 +1311,9 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } día restante",
         "${ trialDaysLeft } días restantes"
+      ],
+      "(Empty)": [
+        "(Vacío)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Prueba gratis las funciones premium durante 7 días, solo durante tu primera semana en ${ BRAND_NAME }."
@@ -2056,6 +2065,9 @@
       "This setting is disabled on the organization level": [
         "Este ajuste está desactivado para la organización."
       ],
+      "This setting is enforced by your organization": [
+        "La organización aplica esta configuración."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Esta caja fuerte ya no se comparte con nadie. Invita a personas para compartirla con otros."
       ],
@@ -2139,9 +2151,6 @@
       ],
       "User's access successfully updated": [
         "Se ha actualizado el acceso del usuario."
-      ],
-      "Value:": [
-        "Valor:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Se ha eliminado la caja fuerte \"${ payload.content.name }\"."

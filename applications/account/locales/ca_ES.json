@@ -832,6 +832,9 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
+      "Refresh Data": [
+        "Actualitza les dades"
+      ],
       "Refresh status": [
         "Refresca l'estat"
       ],
@@ -4523,7 +4526,7 @@
         "No s'han pogut obtenir sessions actives. ${ refresh } o torneu-ho a provar més tard."
       ],
       "Failed to load OAuth modal.": [
-        "Error en carregar la finestra OAuth"
+        "No s'ha pogut carregar la finestra OAuth."
       ],
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
@@ -6156,6 +6159,12 @@
       ],
       "Checkout": [
         "Pagament"
+      ],
+      "City": [
+        "Ciutat"
+      ],
+      "Country": [
+        "País"
       ],
       "Create your account": [
         "Creeu el vostre compte"
@@ -8072,6 +8081,9 @@
       "No label selected": [
         "No s'ha seleccionat cap etiqueta"
       ],
+      "No location filters are currently assigned.": [
+        "Actualment no hi ha cap filtre d'ubicació assignat."
+      ],
       "No logs yet.": [
         "Encara no hi ha registres."
       ],
@@ -8080,6 +8092,9 @@
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
+      ],
+      "No Shared Servers Found": [
+        "No s'han trobat cap servidor compartit."
       ],
       "Not a valid URL": [
         "No és un URL vàlid."
@@ -8482,6 +8497,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "S'ha actualitzat l'enllaç compartit ${ vaultLink }."
+      ],
+      "Shared Server Location Filters": [
+        "Filtres d'ubicació de servidor compartit"
       ],
       "Shared vault deleted": [
         "S'ha eliminat la caixa forta compartida"
@@ -13369,7 +13387,7 @@
         "Normal"
       ],
       "Not allowed": [
-        "No es permet"
+        "No permès"
       ],
       "Off": [
         "Desactivat"
@@ -18201,6 +18219,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Configureu els servidors dedicats millorant el pla a Business"
       ],
+      "Shared servers": [
+        "Servidors compartits"
+      ],
       "Short domain (@pm.me)": [
         "Domini curt (@pm.me)"
       ],
@@ -18563,7 +18584,7 @@
         "Copieu i enganxeu aquest URL al camp URL de l'ACS (Assertion Consumer Service) del vostre proveïdor d'identitat"
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
-        "Copieu i enganxeu aquest URL al camp ID de l'entitat del vostre proveïdor d'identitat"
+        "Copieu i enganxeu aquest URL al camp ID de l'entitat del proveïdor d'identitat"
       ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
@@ -18813,7 +18834,7 @@
         "Devolució de càrrec"
       ],
       "Failed": [
-        "Operació fallida"
+        "Ha fallat"
       ],
       "Needs attention": [
         "Necessita atenció"
@@ -18822,7 +18843,7 @@
         "Reemborsat"
       ],
       "Success": [
-        "Operació reeixida"
+        "Èxit"
       ],
       "Timeout": [
         "Temps esgotat"

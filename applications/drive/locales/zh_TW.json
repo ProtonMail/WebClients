@@ -360,6 +360,9 @@
       "Get ${ DRIVE_APP_NAME }": [
         "取得 ${ DRIVE_APP_NAME }"
       ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得${ MAIL_SHORT_APP_NAME }"
+      ],
       "Get in touch": [
         "保持聯絡"
       ],
@@ -480,9 +483,6 @@
       "Mark for deletion": [
         "標記為刪除"
       ],
-      "Maximize": [
-        "最大化"
-      ],
       "Maximize transfers": [
         "傳輸最大化"
       ],
@@ -491,9 +491,6 @@
       ],
       "Merge contacts": [
         "合併聯絡人"
-      ],
-      "Minimize": [
-        "最小化"
       ],
       "Minimize transfers": [
         "傳輸最小化"
@@ -1162,6 +1159,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護您的電子郵件。包含 ${ addresses } 電子郵件位址、支援自訂電子郵件網域、${ BRAND_NAME } Scribe 寫作助手、無限的 hide-my-email 別名等更多功能。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含${ addresses }電子郵件地址,支援自訂電子郵件網域,無限hide-my-email別名及更多"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
       ],
@@ -1338,6 +1338,9 @@
       ],
       "Try ${ planName }": [
         "嘗試${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "嘗試${ upsellPlanName }及保持頂級電子郵件和行事曆功能的權限。"
       ],
       "Ultra fast and private VPN": [
         "超快與私有的VPN"
@@ -3930,14 +3933,11 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length }處理邀請函"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile }加密的檔案"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile }加密的檔案..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME }終身方案無續約費,他是單次付款終身存取${ PASS_SHORT_APP_NAME }。您${ planTitle }訂閱價格及日期保持不便。"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } 個任務已暫停"
@@ -4014,6 +4014,9 @@
       "Account successfully updated": [
         "帳號已成功更新"
       ],
+      "Address copied to clipboard": [
+        "地址已複製到剪貼簿"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
@@ -4022,9 +4025,6 @@
       ],
       "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
-      ],
-      "All encrypted files": [
-        "全部加密的檔案"
       ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
@@ -4227,6 +4227,9 @@
       "Dedicated servers": [
         "專用伺服器"
       ],
+      "default email address": [
+        "預設電子信箱地址"
+      ],
       "Delete locked drive": [
         "刪除鎖定的硬碟"
       ],
@@ -4248,14 +4251,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
       ],
-      "Download": [
-        "下載"
-      ],
       "Download ${ name } app": [
         "下載 ${ name } app"
-      ],
-      "Download anyway": [
-        "仍要下載"
       ],
       "Download canceled": [
         "下載已取消"
@@ -4286,9 +4283,6 @@
       ],
       "Downloading": [
         "正在下載"
-      ],
-      "Downloading all encrypted files": [
-        "正在下載所有加密的檔案"
       ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
@@ -4593,6 +4587,9 @@
       "Merged": [
         "合併的"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
+      ],
       "MM/YY": [
         "月月/年年"
       ],
@@ -4833,9 +4830,6 @@
       "Report has been sent": [
         "回報已傳送"
       ],
-      "Report link": [
-        "檢舉連結"
-      ],
       "Restore": [
         "還原"
       ],
@@ -4851,9 +4845,6 @@
       "Restoring Photos... Please keep the tab open": [
         "復原照片中...請保持分頁開啟。"
       ],
-      "Retry now": [
-        "立即重試"
-      ],
       "Saving...": [
         "儲存中..."
       ],
@@ -4865,15 +4856,6 @@
       ],
       "Search Enabled": [
         "搜尋已啟用"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "安全下載${ nbFile }檔案"
-      ],
-      "Securely downloaded all encrypted files": [
-        "安全下載加密檔案"
-      ],
-      "Securely downloaded all files": [
-        "安全下載檔案"
       ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
@@ -4908,6 +4890,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
       ],
+      "Setting up your new address...": [
+        "設定您的新地址..."
+      ],
       "Share files with links": [
         "透過連結分享檔案"
       ],
@@ -4922,9 +4907,6 @@
       ],
       "Shared with me": [
         "與我分享"
-      ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "註冊您自己的 ${ DRIVE_APP_NAME } 帳號，以端到端加密保護您的資料並安全地分享。"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
@@ -4953,8 +4935,8 @@
       "Something went wrong, please try again later.": [
         "發生錯誤，請稍後再試。"
       ],
-      "Something went wrong...": [
-        "發生錯誤..."
+      "Start sharing it with contacts and use it for online services.": [
+        "開始共享此內容和使用於線上服務。"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
@@ -5018,6 +5000,9 @@
       ],
       "This folder is empty": [
         "此資料夾為空"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "此為您新傳送新電子郵件的${ defaultEmailAddress }"
       ],
       "This item already exists in your library": [
         "此項目已存在於資料庫"
@@ -5370,9 +5355,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
-      "Your download is in progress": [
-        "正在下載"
-      ],
       "Your email address and password were leaked:": [
         "您的電子郵件位址與密碼皆已洩漏曝光："
       ],
@@ -5673,9 +5655,6 @@
       ],
       "Download anyway": [
         "仍要下載"
-      ],
-      "Downloading ${ percentageValue }": [
-        "正在下載 ${ percentageValue }"
       ],
       "Duplicate found": [
         "發現重複項目"
@@ -5994,9 +5973,6 @@
       ],
       "Theme": [
         "主題"
-      ],
-      "This file is potentially infected": [
-        "這個檔案可能被感染了"
       ],
       "This will permanently delete all files in your locked drive.": [
         "此舉將會永久刪除所有位於鎖定之雲端硬碟內的檔案。"
@@ -6515,6 +6491,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
       ],
+      "Get started for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得"
+      ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
       ],
@@ -6638,6 +6617,9 @@
       ],
       "10 email addresses/aliases": [
         "10 組電子郵件地址/別名"
+      ],
+      "10 more premium features": [
+        "10多項豐富的頂級功能"
       ],
       "10-year file version history": [
         "10年的檔案版本紀錄"
@@ -7051,6 +7033,12 @@
       ],
       "Popular": [
         "熱門"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "保持敏感資料安全及安全地合作。"
+      ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "透過${ PASS_SHORT_APP_NAME }頂級功能保護家庭及6位使用者。"
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
@@ -8718,6 +8706,11 @@
         "您的方案乃購自 iOS 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Apple App Store。"
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "此訂閱將於繳款單週期末被降級"
+      ]
+    },
     "Subscription length": {
       "Lifetime": [
         "終身"
@@ -9475,6 +9468,9 @@
       "Groups": [
         "群組"
       ],
+      "High security for your account": [
+        "高安全性帳號"
+      ],
       "Hm, we couldn't find that one": [
         "抱歉，我們找不到那個"
       ],
@@ -9748,6 +9744,9 @@
       "Unlock contacts groups": [
         "解鎖通訊群組"
       ],
+      "Upgrade complete!": [
+        "升級完成！"
+      ],
       "Uploaded": [
         "已上載"
       ],
@@ -9807,6 +9806,9 @@
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
+      ],
+      "Your shorter address is now ready": [
+        "您的短地址已完成"
       ],
       "Your welcome actions": [
         "您的歡迎動作"

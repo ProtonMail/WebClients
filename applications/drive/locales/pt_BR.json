@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Marcar para exclusão"
       ],
-      "Maximize": [
-        "Maximizar"
-      ],
       "Maximize transfers": [
         "Maximizar transferências"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Mesclar contatos"
-      ],
-      "Minimize": [
-        "Minimizar"
       ],
       "Minimize transfers": [
         "Minimizar transferências"
@@ -4057,14 +4051,6 @@
         "${ invitations.length } convite pendente",
         "${ invitations.length } convites pendentes"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } arquivo criptografado",
-        "${ nbFile } arquivos criptografados."
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } arquivo criptografado...",
-        "${ nbFile } arquivos criptografados..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4171,9 +4157,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
-      ],
-      "All encrypted files": [
-        "Todos os arquivos criptografados."
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -4403,14 +4386,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
       ],
-      "Download": [
-        "Baixar"
-      ],
       "Download ${ name } app": [
         "Baixe o aplicativo ${ name }"
-      ],
-      "Download anyway": [
-        "Baixar mesmo assim"
       ],
       "Download canceled": [
         "Download cancelado"
@@ -4444,9 +4421,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "O download de arquivos ${ DOCS_APP_NAME } do ${ DRIVE_APP_NAME } atualmente não é suportado - eles não serão incluídos no download."
-      ],
-      "Downloading all encrypted files": [
-        "Baixando todos os arquivos criptografados"
       ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
@@ -4635,9 +4609,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Enquanto isso, crie sua própria conta ${ DRIVE_APP_NAME }, proteja seus dados com criptografia de ponta a ponta e compartilhe-os com segurança."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
@@ -5009,9 +4980,6 @@
       "Report has been sent": [
         "A denúncia foi enviada"
       ],
-      "Report link": [
-        "Reportar link"
-      ],
       "Request access, or switch to an account with access.": [
         "Solicite acesso, ou altere para uma conta com acesso."
       ],
@@ -5030,9 +4998,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Restaurando fotos... Mantenha a guia aberta"
       ],
-      "Retry now": [
-        "Tente novamente agora"
-      ],
       "Saving...": [
         "Salvando..."
       ],
@@ -5044,16 +5009,6 @@
       ],
       "Search Enabled": [
         "Busca habilitada"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } arquivo baixado com segurança",
-        "${ nbFile } arquivos baixados com segurança"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Baixei com segurança todos os arquivos criptografados"
-      ],
-      "Securely downloaded all files": [
-        "Todos os arquivos baixados de forma segura"
       ],
       "Select a folder to move to.": [
         "Selecione uma pasta para onde deseja mover."
@@ -5106,9 +5061,6 @@
       "Shared with me": [
         "Compartilhado comigo"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Cadastre-se para uma conta pessoal no ${ DRIVE_APP_NAME } e proteja seus dados com criptografia de ponta a ponta e o compartilhe em segurança."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Não é possível validar a assinatura devido a um erro de rede. Tente novamente mais tarde.."
       ],
@@ -5135,9 +5087,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Ocorreu um erro. Tente novamente mais tarde.."
-      ],
-      "Something went wrong...": [
-        "Algo deu errado..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
@@ -5588,9 +5537,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Seu download está em progresso"
-      ],
       "Your email address and password were leaked:": [
         "Seu endereço de e-mail e senha estão expostos:"
       ],
@@ -5903,9 +5849,6 @@
       ],
       "Download anyway": [
         "Baixar mesmo assim"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Baixando ${ percentageValue }"
       ],
       "Duplicate found": [
         "Duplicado encontrado"
@@ -6224,9 +6167,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Esse arquivo está potencialmente infectado"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Isso irá excluir permanentemente todos os arquivos em sua unidade bloqueada."
