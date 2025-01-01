@@ -41,8 +41,8 @@ export const PasswordProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <PasswordContext.Provider value={contextValue}>
             {children}
-            <PasswordGeneratorModal onClose={abort} onSubmit={resolver} {...state} />
-            <PasswordHistoryModal open={showHistory} onClose={() => setShowHistory(false)} className="ui-red" />
+            {state.open && <PasswordGeneratorModal onClose={abort} onSubmit={resolver} {...state} />}
+            {showHistory && <PasswordHistoryModal open onClose={() => setShowHistory(false)} className="ui-red" />}
         </PasswordContext.Provider>
     );
 };
