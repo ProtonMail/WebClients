@@ -1,6 +1,9 @@
 import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
@@ -29,7 +32,8 @@ import noop from '@proton/utils/noop';
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
 export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy, policy }) => {
-    const { visible, forwardMessage, close } = useIFrameContext();
+    const { visible } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -53,14 +57,14 @@ export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy, 
     }, []);
 
     const autofillPassword = (feedback: boolean) => {
-        forwardMessage({
+        controller.forwardMessage({
             type: IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
             payload: { password: generator.password },
         });
 
         if (copy) copyToClipboard();
-        if (feedback) timer.current = setTimeout(close, 1_000);
-        else close();
+        if (feedback) timer.current = setTimeout(controller.close, 1_000);
+        else controller.close();
     };
 
     const label = copy ? c('Title').t`Fill & copy password` : c('Title').t`Fill password`;
@@ -99,7 +103,7 @@ export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy, 
                     ? {
                           icon: 'checkmark',
                           subTitle: c('Info').t`Password copied`,
-                          onClick: close,
+                          onClick: controller.close,
                       }
                     : {
                           icon: 'key',

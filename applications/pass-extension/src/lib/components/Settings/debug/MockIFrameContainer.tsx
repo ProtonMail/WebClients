@@ -1,44 +1,21 @@
 import type { FC, ReactNode } from 'react';
 
 import {
-    IFrameContext,
-    type IFrameContextValue,
+    type IFrameAppState,
+    IFrameAppStateContext,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
-import {
-    type DropdownActions,
-    IFramePortMessageType,
-    type NotificationActions,
-} from 'proton-pass-extension/app/content/types';
+import { type DropdownActions, type NotificationActions } from 'proton-pass-extension/app/content/types';
 
 import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, AppStatus } from '@proton/pass/types';
-import noop from '@proton/utils/noop';
 
-const createMockIFrameContext = (payload?: any, domain?: string): IFrameContextValue => ({
-    endpoint: 'test',
+const createMockIFrameContext = (payload?: any, domain?: string): IFrameAppState => ({
     domain: domain ?? 'proton.test',
-    features: {},
-    port: null,
+    connectionID: 'test',
     settings: getInitialSettings(),
     userEmail: 'john@proton.me',
     visible: true,
-    close: noop,
-    postMessage: noop,
-    forwardMessage: noop,
-    registerHandler: (action, cb) => {
-        if (
-            action === IFramePortMessageType.DROPDOWN_ACTION ||
-            action === IFramePortMessageType.NOTIFICATION_ACTION ||
-            payload
-        ) {
-            const timer = setTimeout(() => cb({ payload } as any), 50);
-            return () => clearTimeout(timer);
-        }
-
-        return noop;
-    },
-    resize: noop,
 });
 
 export const MockIFrameContainer: FC<{
@@ -70,7 +47,9 @@ export const MockIFrameContainer: FC<{
                 ...appState,
             }}
         >
-            <IFrameContext.Provider value={createMockIFrameContext(payload, domain)}>{children}</IFrameContext.Provider>
+            <IFrameAppStateContext.Provider value={createMockIFrameContext(payload, domain)}>
+                {children}
+            </IFrameAppStateContext.Provider>
         </AppStateContext.Provider>
     </div>
 );

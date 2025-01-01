@@ -1,10 +1,12 @@
-import { type FC, useEffect, useRef, useState } from 'react';
+import { type FC, useCallback, useEffect, useState } from 'react';
 
 import { DROPDOWN_MIN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
 import {
-    useIFrameContext,
+    useIFrameAppController,
+    useIFrameAppState,
     useRegisterMessageHandler,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { IFrameAppAutoSizer } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppAutoSizer';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { ListItemIcon } from 'proton-pass-extension/app/content/injections/apps/components/ListItemIcon';
 import { PinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
@@ -32,33 +34,27 @@ import { AutosuggestPassword } from './views/AutosuggestPassword';
 import './Dropdown.scss';
 
 export const Dropdown: FC = () => {
-    const { visible, resize, close } = useIFrameContext();
+    const { visible } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const { status, authorized, lockSetup } = useAppState();
     const accountFork = useRequestFork();
 
     const [state, setState] = useState<MaybeNull<DropdownActions>>(null);
-    const ref = useRef<HTMLDivElement>(null);
     const loading = state === null || clientBusy(status);
 
-    useRegisterMessageHandler(IFramePortMessageType.DROPDOWN_ACTION, ({ payload }) => setState(payload));
+    useRegisterMessageHandler(
+        IFramePortMessageType.DROPDOWN_ACTION,
+        useCallback(({ payload }) => setState(payload), [])
+    );
 
-    useEffect(() => {
-        if (!visible) setState(null);
-
-        if (ref.current) {
-            const obs = new ResizeObserver(([entry]) => resize(entry.contentRect.height));
-            obs.observe(ref.current);
-            return () => obs.disconnect();
-        }
-    }, [visible]);
+    useEffect(() => setState((prev) => (visible ? prev : null)), [visible]);
 
     return (
-        <Localized>
-            <div
-                ref={ref}
-                className="min-h-custom bg-norm relative"
-                style={{ '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
-            >
+        <IFrameAppAutoSizer
+            className="min-h-custom bg-norm relative"
+            style={{ '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
+        >
+            <Localized>
                 {(() => {
                     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
@@ -76,7 +72,7 @@ export const Dropdown: FC = () => {
                                         </div>
                                     </div>
                                 }
-                                onUnlock={() => close({ refocus: true })}
+                                onUnlock={() => controller.close({ refocus: true })}
                             />
                         );
                     }
@@ -109,7 +105,7 @@ export const Dropdown: FC = () => {
                     if (clientMissingScope(status)) {
                         return (
                             <ListItem
-                                onClick={() => close()}
+                                onClick={controller.close}
                                 subTitle={c('Info')
                                     .t`Please enter your extra password to start using ${PASS_SHORT_APP_NAME}.`}
                                 icon={PassIconStatus.LOCKED}
@@ -123,7 +119,7 @@ export const Dropdown: FC = () => {
                             <ListItem
                                 onClick={() => {
                                     if (!lockSetup) return accountFork(ForkType.SWITCH);
-                                    close();
+                                    controller.close();
                                 }}
                                 subTitle={
                                     lockSetup
@@ -148,7 +144,7 @@ export const Dropdown: FC = () => {
                             return <AutosuggestEmail {...state} />;
                     }
                 })()}
-            </div>
-        </Localized>
+            </Localized>
+        </IFrameAppAutoSizer>
     );
 };

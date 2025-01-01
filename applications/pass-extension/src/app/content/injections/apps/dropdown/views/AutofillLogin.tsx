@@ -1,7 +1,8 @@
 import { type FC, useCallback, useEffect, useMemo } from 'react';
 
 import {
-    useIFrameContext,
+    useIFrameAppController,
+    useIFrameAppState,
     useRegisterMessageHandler,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
@@ -32,7 +33,8 @@ import noop from '@proton/utils/noop';
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>;
 
 export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
-    const { settings, visible, close, forwardMessage } = useIFrameContext();
+    const { settings, visible } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const [state, setState] = useMountedState<MaybeNull<AutofillLoginResult>>(null);
@@ -110,11 +112,11 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                                               payload: { shareId, itemId },
                                           }),
                                           ({ userIdentifier, password }) => {
-                                              forwardMessage({
+                                              controller.forwardMessage({
                                                   type: IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN,
                                                   payload: { userIdentifier, password },
                                               });
-                                              close({ refocus: false });
+                                              controller.close({ refocus: false });
                                           }
                                       )
                                   }
@@ -123,7 +125,7 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                       }),
                   ].filter(truthy)
                 : [],
-        [state, filter, forwardMessage]
+        [state, filter]
     );
 
     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
@@ -146,7 +148,7 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
             ) : (
                 <ListItem
                     icon={PassIconStatus.ACTIVE}
-                    onClick={close}
+                    onClick={controller.close}
                     title={PASS_APP_NAME}
                     subTitle={c('Info').t`No login found`}
                 />

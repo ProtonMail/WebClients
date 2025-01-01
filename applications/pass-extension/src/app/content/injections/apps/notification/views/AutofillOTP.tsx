@@ -1,6 +1,9 @@
 import { type FC, useMemo, useRef } from 'react';
 
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
@@ -20,7 +23,8 @@ import { NotificationHeader } from '../components/NotificationHeader';
 type Props = Extract<NotificationActions, { action: NotificationAction.OTP }>;
 
 export const AutofillOTP: FC<Props> = ({ item }) => {
-    const { close, forwardMessage, visible, domain } = useIFrameContext();
+    const { visible, domain } = useIFrameAppState();
+    const controller = useIFrameAppController();
 
     const payload = useMemo((): OtpRequest => ({ type: 'item', item }), [item]);
     const otpRenderer = useRef<MaybeNull<OTPRendererHandles>>(null);
@@ -61,11 +65,11 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                     className="flex-auto"
                     onClick={() => {
                         if (otpToken) {
-                            forwardMessage({
+                            controller.forwardMessage({
                                 type: IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
                                 payload: { code: otpToken },
                             });
-                            close();
+                            controller.close();
                         }
                     }}
                 >
