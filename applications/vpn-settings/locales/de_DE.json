@@ -451,6 +451,9 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
+      "Refresh Data": [
+        "Daten aktualisieren"
+      ],
       "Refresh status": [
         "Status aktualisieren"
       ],
@@ -3380,6 +3383,12 @@
       "Checkout": [
         "Zur Kasse"
       ],
+      "City": [
+        "Ort"
+      ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Erstelle dein Konto"
       ],
@@ -3670,6 +3679,9 @@
         "Betroffener Benutzer ist in Zeile",
         "Betroffene Benutzer sind in Zeilen"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
+      ],
       "All inactive members deleted": [
         "Alle inaktiven Mitglieder gelöscht"
       ],
@@ -3853,6 +3865,9 @@
       ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
       "default email address": [
         "standard E-Mail-Adresse"
@@ -4420,6 +4435,10 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
@@ -7195,6 +7214,9 @@
       "1 email per month": [
         "1 E-Mail pro Monat"
       ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 E-Mail pro Monat. Erhalte die neuesten Nachrichten zum Thema Privatsphäre und was im ${ BRAND_NAME }-Universum vor sich geht."
+      ],
       "1 email per quarter": [
         "1 E-Mail pro Quartal"
       ],
@@ -7206,6 +7228,9 @@
       ],
       "4-6 emails per year": [
         "4-6 E-Mails pro Jahr"
+      ],
+      "Application notifications": [
+        "Anwendungsbenachrichtigungen"
       ],
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
@@ -8640,6 +8665,10 @@
       ]
     },
     "sso": {
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } Benutzer bitte, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden.",
+        "${ n } Benutzer bitten, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden."
+      ],
       "Access denied": [
         "Zugriff verweigert"
       ],
@@ -8690,6 +8719,9 @@
       "Enter your backup password": [
         "Gib dein Backup-Passwort ein"
       ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Zu deiner Sicherheit wurdest du von all deinen anderen aktiven Geräten abgemeldet. Bevor du auf dein Konto zugreifen kannst, musst du ein neues Backup-Passwort eingeben."
+      ],
       "Grant": [
         "Zulassen"
       ],
@@ -8701,6 +8733,9 @@
       ],
       "Grant access to users?": [
         "Den Benutzern Zugriff gewähren?"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Wenn du aus deinem ${ BRAND_NAME }-Konto ausgesperrt wirst, kannst du dich mit deinem Backup-Passwort anmelden und deine Daten wiederherstellen."
       ],
       "Invalid confirmation code": [
         "Ungültiger Bestätigungscode"
@@ -8728,6 +8763,12 @@
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Dadurch wirst du von deinen anderen Geräten abgemeldet, und du musst ein neues Backup-Passwort festlegen."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei **${ email }** anzumelden, überprüfe den Bestätigungscode und bestätige die Anfrage von einem anderen Gerät aus."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei deinem Konto anzumelden, gib den Bestätigungscode an deinen Administrator **${ adminEmail }** weiter, damit er die Anfrage für **${ email }** genehmigen kann."
@@ -10542,6 +10583,9 @@
       "Currency conversion": [
         "Währungsumrechnung"
       ],
+      "Gift card": [
+        "Geschenkgutschein"
+      ],
       "Migration": [
         "Migration"
       ],
@@ -10567,6 +10611,10 @@
       ],
       "Confirm all": [
         "Alle bestätigen"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, ,da seiner Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert wurde:",
+        "Der Administratorzugriff für ${ n } Benutzer konnte nicht automatisch aktiviert werden, da ihre Verschlüsselungsschlüssel in der Zwischenzeit aktualisiert worden sind:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"

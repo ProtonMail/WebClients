@@ -4540,6 +4540,9 @@
       "Impossible to rename the gateway": [
         "რაუტერის სახელის გადარქმევა შეუძლებელია"
       ],
+      "Incorrect backup password. Please try again.": [
+        "არასწორი მარქაფი პაროლი. თავიდან სცადეთ."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "არასწორი ფაილის ტიპი. ატვირთეთ ფაილი PNG ან JPEG ფორმატში."
       ],
@@ -4684,6 +4687,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
+      ],
+      "Please enter a valid Entity ID URL": [
+        "შეიყვანეთ სწორი ობიექტის ID-ის ბმული"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
@@ -7186,6 +7192,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს URL თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
+      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -7456,6 +7465,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "შეიყვანეთ ელფოსტის მომხმარებელი და პაროლი, საიდანაც შემოტანას აპირებთ."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "შეიყვანეთ ობიექტის ID **eduGAIN** ორგანიზაციისთვის **${ domain.DomainName }**-სთვის."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "ადმინისტრატორის პრივილეგიების აღსადგენად შეიყვანეთ ორგანიზაციის პაროლი. ${ learnMore }"
@@ -9295,6 +9307,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "შესვლის შემდეგ ${ destination }-ზე გადაგამისამართებთ."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "თუ თქვენს გამოწერას გააუქმებთ, ${ PASS_APP_NAME } + SimpleLogin-ის ფასიან ფუნქციებთან წვდომა მაინც დაგრჩებათ."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "ამ თარიღის მოსვლისას ${ planTitle }-სთან და მის ფუნქციებთან წვდომას დაკარგავთ."
@@ -15802,6 +15817,9 @@
       "Enter your backup password": [
         "შეიყვანეთ თქვენი მარქაფის პაროლი"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "იმისათვის, რომ ამ მომხმარებელმა შესვლა შეძლოს, დარწმუნდით, რომ ის არსებობს თქვენი იდენტიფიკატორის მომწოდებელში."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "თქვენი უსაფრთხოებისთვის გახვედით ყველა თქვენი აქტიური მოწყობილობიდან. თქვენს ანგარიშთან წვდომამდე ახალი მარქაფის პაროლის შეყვანა მოგიწევთ."
       ],
@@ -15888,6 +15906,9 @@
       ],
       "Single sign-on removed": [
         "SSO წაიშალა"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "მომხმარებელი ${ name }, ახლა, SSO ანგარიშია."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "ეს გაიყვანს მომხმარებელს ყველა თავისი მოწყობილობიდან და ისინი იძულებული იქნებიან, ახალი მარქაფი პაროლი შექმნან."
@@ -18443,6 +18464,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკაციის მომწოდებლის ACS ბმულის ველში"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "დააკოპირეთ და ჩასვით ეს ბმული თქვენი იდენტიფიკატორის მომწოდებლის ერთეულის ID-ის ველში"
       ],
       "Customize import to reduce the number of folders": [
         "საქაღალდეების რაოდენობის შესამცირებლად მოირგეთ შემოტანის პარამეტრები"

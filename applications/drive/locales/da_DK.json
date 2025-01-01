@@ -483,9 +483,6 @@
       "Mark for deletion": [
         "Markér til sletning"
       ],
-      "Maximize": [
-        "Maksimér"
-      ],
       "Maximize transfers": [
         "Maksimér overførsler"
       ],
@@ -494,9 +491,6 @@
       ],
       "Merge contacts": [
         "Flet kontakter"
-      ],
-      "Minimize": [
-        "Minimér"
       ],
       "Minimize transfers": [
         "Minimér overførsler"
@@ -4019,14 +4013,6 @@
         "${ invitations.length } afventende invitation",
         "${ invitations.length } afventende invitationer"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } krypteret fil",
-        "${ nbFile } krypterede filer"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } krypteret fil...",
-        "${ nbFile } krypterede filer..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4133,9 +4119,6 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
-      ],
-      "All encrypted files": [
-        "Alle krypterede filer"
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
@@ -4365,14 +4348,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
-      "Download": [
-        "Download"
-      ],
       "Download ${ name } app": [
         "Download ${ name }-app"
-      ],
-      "Download anyway": [
-        "Download alligevel"
       ],
       "Download canceled": [
         "Download annulleret"
@@ -4406,9 +4383,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Download af ${ DOCS_APP_NAME }-filer fra ${ DRIVE_APP_NAME } understøttes i øjeblikket ikke - disse vil ikke blive medtaget i dit download."
-      ],
-      "Downloading all encrypted files": [
-        "Downloader alle krypterede filer"
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -4597,9 +4571,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "I mellemtiden kan du tilmelde dig din egen ${ DRIVE_APP_NAME }-konto og beskytte dine data med end-to-end-kryptering og dele dem sikkert."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
@@ -4971,9 +4942,6 @@
       "Report has been sent": [
         "Anmeldelse sendt"
       ],
-      "Report link": [
-        "Rapportér link"
-      ],
       "Request access, or switch to an account with access.": [
         "Anmod om adgang, eller skift til en konto med adgang."
       ],
@@ -4992,9 +4960,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Gendanner fotos... Hold fanen åben."
       ],
-      "Retry now": [
-        "Forsøg igen nu"
-      ],
       "Saving...": [
         "Gemmer..."
       ],
@@ -5006,16 +4971,6 @@
       ],
       "Search Enabled": [
         "Søgning aktiveret"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } fil downloadet sikkert",
-        "${ nbFile } filer downloadet sikkert"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Downloadede alle krypterede filer sikkert"
-      ],
-      "Securely downloaded all files": [
-        "Downloadede alle filer sikkert"
       ],
       "Select a folder to move to.": [
         "Vælg en mappe at flytte til."
@@ -5065,9 +5020,6 @@
       "Shared with me": [
         "Delt med mig"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Tilmeld dig din egen ${ DRIVE_APP_NAME } konto og beskyt dine data med end-to-end kryptering og dele det sikkert."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
       ],
@@ -5094,9 +5046,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Noget gik galt. Prøv igen senere."
-      ],
-      "Something went wrong...": [
-        "Noget gik galt..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
@@ -5547,9 +5496,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
-      "Your download is in progress": [
-        "Din download er i gang"
-      ],
       "Your email address and password were leaked:": [
         "Din e-mailadresse og adgangskode er blevet lækket:"
       ],
@@ -5856,9 +5802,6 @@
       ],
       "Download anyway": [
         "Download alligevel"
-      ],
-      "Downloading ${ percentageValue }": [
-        "Henter ${ percentageValue }"
       ],
       "Duplicate found": [
         "Dublet fundet"
@@ -6177,9 +6120,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Denne fil er muligvis inficeret"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dette vil slette alle filer på dit låste drev permanent."

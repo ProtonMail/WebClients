@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "მონიშნეთ წასაშლელად"
       ],
-      "Maximize": [
-        "გაშლა"
-      ],
       "Maximize transfers": [
         "გადაწერების ამოკეცვა"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "კონტაქტების შერწყმა"
-      ],
-      "Minimize": [
-        "ჩაკეცვა"
       ],
       "Minimize transfers": [
         "გადაწერების ჩაკეცვა"
@@ -4032,14 +4026,6 @@
         "${ invitations.length } დარჩენილი მოსაწვევი",
         "${ invitations.length } დარჩენილი მოსაწვევი"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } დაშიფრული ფაილი",
-        "${ nbFile } დაშიფრული ფაილი"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } დაშიფრული ფაილი...",
-        "${ nbFile } დაშიფრული ფაილი..."
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } შეჩერებულია",
         "${ pausedCount } შეჩერებულია"
@@ -4140,9 +4126,6 @@
       "All (${ totalFoldersCount } label)": [
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
-      ],
-      "All encrypted files": [
-        "ყველა დაშიფრული ფაილი"
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
@@ -4372,14 +4355,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
       ],
-      "Download": [
-        "გადმოწერა"
-      ],
       "Download ${ name } app": [
         "გადმოწერეთ აპი ${ name }"
-      ],
-      "Download anyway": [
-        "მაინც გადმოწერა"
       ],
       "Download canceled": [
         "გადმოწერა გაუქმებულია"
@@ -4413,9 +4390,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "${ DOCS_APP_NAME }-ის ფაილების გადმოწერა ${ DRIVE_APP_NAME }-დან, ამჟამად, მხარდაჭერილი არაა - ესენი თქვენს გადმოწერაში ჩასმული არ იქნება."
-      ],
-      "Downloading all encrypted files": [
-        "ყველა დაშიფრული ფაილის გადმოწერა"
       ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
@@ -4604,9 +4578,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "ამასობაში დარეგისტრირდით საკუთარი ${ DRIVE_APP_NAME }-ის ანგარიშისთვის და დაიცავით თქვენი მონაცემები გამჭოლი დაშიფვრით და გააზიარეთ ის დაცულად."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
@@ -4978,9 +4949,6 @@
       "Report has been sent": [
         "ანგარიში გაგზავნილია"
       ],
-      "Report link": [
-        "ბმულის დარეპორტება"
-      ],
       "Request access, or switch to an account with access.": [
         "მოითხოვეთ წვდომა, ან გადაერთეთ ანგარიშზე, რომელსაც წვდომა უკვე აქვს."
       ],
@@ -4999,9 +4967,6 @@
       "Restoring Photos... Please keep the tab open": [
         "ფოტოების აღდგენა.. ნუ დახურავთ ამ ჩანართს"
       ],
-      "Retry now": [
-        "თავიდან ცდა ახლავე"
-      ],
       "Saving...": [
         "შენახვა..."
       ],
@@ -5013,16 +4978,6 @@
       ],
       "Search Enabled": [
         "ძებნა ჩართულია"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "დაცულად გადმოწერილია ${ nbFile } ფაილი",
-        "დაცულად გადმოწერილია ${ nbFile } ფაილი"
-      ],
-      "Securely downloaded all encrypted files": [
-        "დაცულად გადმოწერილია ყველა დაშიფრული ფაილი"
-      ],
-      "Securely downloaded all files": [
-        "დაცულად გადმოწერილია ყველა ფაილი"
       ],
       "Select a folder to move to.": [
         "აირჩიეთ საქაღალდე, სადაც გადაიტანთ."
@@ -5075,9 +5030,6 @@
       "Shared with me": [
         "ჩემთვის გაზიარებული"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "დარეგისტრირდით საკუთარი ${ DRIVE_APP_NAME }-ის ანგარიშისთვის და დაიცავით თქვენი მონაცემები გამჭოლი დაშიფვრით და გააზიარეთ ის დაცულად."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
       ],
@@ -5104,9 +5056,6 @@
       ],
       "Something went wrong, please try again later.": [
         "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ],
-      "Something went wrong...": [
-        "რაღაც არასწორად წავიდა..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
@@ -5155,6 +5104,9 @@
       ],
       "This action will delete the file you uploaded permanently.": [
         "ეს ქმედება თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
+      ],
+      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
+        "ეს ქმედება შეუქცევადად წაშლის საქაღალდეს, რომელიც ატვირთეთ. საქაღალდეს, რომელიც შეიცავს ფაილს, რომლის მფლობელიც თქვენ არ ბრძანდებით, ვერ წაშლით."
       ],
       "This action will delete the link and revoke access for all users.": [
         "ეს ქმედება წაშლის ბმულს და გააუქმებს წვდომას ყველა მომხმარებლისთვის."
@@ -5542,9 +5494,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
       ],
-      "Your download is in progress": [
-        "მიმდინარეობს გადმოწერა"
-      ],
       "Your email address and password were leaked:": [
         "თქვენი ელფოსტის მისამართი და პაროლი გაიჟონა:"
       ],
@@ -5851,9 +5800,6 @@
       ],
       "Download anyway": [
         "მაინც გადმოწერა"
-      ],
-      "Downloading ${ percentageValue }": [
-        "გადმოწერა ${ percentageValue }"
       ],
       "Duplicate found": [
         "ნაპოვნია დუბლიკატი"
@@ -6172,9 +6118,6 @@
       ],
       "Theme": [
         "თემა"
-      ],
-      "This file is potentially infected": [
-        "ეს ფაილი პოტენციურად დასნებოვნებულია"
       ],
       "This will permanently delete all files in your locked drive.": [
         "თქვენს ჩაკეტილ დისკზე ყველა ფაილი სამუდამოდ წაიშლება."

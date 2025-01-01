@@ -492,9 +492,6 @@
       "Mark for deletion": [
         "Пазначыць для выдалення"
       ],
-      "Maximize": [
-        "Разгарнуць"
-      ],
       "Maximize transfers": [
         "Разгарнуць перадачы"
       ],
@@ -503,9 +500,6 @@
       ],
       "Merge contacts": [
         "Аб'яднаць кантакты"
-      ],
-      "Minimize": [
-        "Згарнуць"
       ],
       "Minimize transfers": [
         "Згарнуць перадачы"
@@ -2761,10 +2755,10 @@
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
+        "Адбылася памылка падчас загрузкі параметраў псеўданіма"
       ],
       "An error occurred while saving your alias": [
-        "Падчас захавання вашага псеўданіма адбылася памылка"
+        "Адбылася памылка падчас захавання вашага псеўданіма"
       ],
       "Authentication canceled.": [
         "Аўтэнтыфікацыя скасавана."
@@ -3754,16 +3748,16 @@
         "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дададзены ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання вашай падзеі. Ніводная падзея не была імпартавана."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Падчас шыфравання і дадавання вашых падзей адбылася памылка. Ніводная падзея не была імпартавана."
+        "Адбылася памылка падчас шыфравання і дадавання вашых падзей. Ніводная падзея не была імпартавана."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шыфраванне і дадаванне кантактаў: ${ totalImported }/${ totalToImport }"
@@ -3817,13 +3811,13 @@
         "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Падчас шыфравання і дадавання кантактаў адбылася памылка. Кантактаў паспяхова імпартавана (${ totalImported } з ${ totalToImport })."
+        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Кантактаў паспяхова імпартавана (${ totalImported } з ${ totalToImport })."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Падчас шыфравання і дадавання вашых кантактаў адбылася памылка. Ніводны кантакт не быў імпартаваны."
+        "Адбылася памылка падчас шыфравання і дадавання вашых кантактаў. Ніводны кантакт не быў імпартаваны."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Кантакт паспяхова імпартаваны. Імпартаваны кантакт цяпер з'явіцца ў вашым спісе кантактаў."
@@ -4146,18 +4140,6 @@
         "${ invitations.length } у чаканні запрашэнняў",
         "${ invitations.length } у чаканні запрашэнняў"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } зашыфраваны файл",
-        "${ nbFile } зашыфраваныя файлы",
-        "${ nbFile } зашыфраваных файлаў",
-        "${ nbFile } зашыфраваных файлаў"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } зашыфраваны файл...",
-        "${ nbFile } зашыфраваныя файлы...",
-        "${ nbFile } зашыфраваных файлаў...",
-        "${ nbFile } зашыфраваных файлаў..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4240,7 +4222,7 @@
         "(${ memberCount } удзельнік)",
         "(${ memberCount } удзельнікі)",
         "(${ memberCount } удзельнікаў)",
-        "(${ memberCount } удзельнікі)"
+        "(${ memberCount } удзельнікаў)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/месяц)"
@@ -4292,9 +4274,6 @@
         "Усе (${ totalFoldersCount } меткі)",
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } меткі)"
-      ],
-      "All encrypted files": [
-        "Усе зашыфраваныя файлы"
       ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
@@ -4530,14 +4509,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
-      "Download": [
-        "Спампаваць"
-      ],
       "Download ${ name } app": [
         "Спампаваць праграму для ${ name }"
-      ],
-      "Download anyway": [
-        "Усё роўна спампаваць"
       ],
       "Download canceled": [
         "Спампоўванне скасавана"
@@ -4571,9 +4544,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "Спампоўванне файлаў ${ DOCS_APP_NAME } з ${ DRIVE_APP_NAME } часова не падтрымліваецца. Яны не будуць уключаны ў ваша спампоўванне."
-      ],
-      "Downloading all encrypted files": [
-        "Спампоўванне ўсіх зашыфраваных файлаў"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -4766,9 +4736,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Тым часам, вы можаце зарэгістраваць свой уласны ўліковы запіс ${ DRIVE_APP_NAME } і абараняць свае даныя з дапамогай скразнога шыфравання, а таксама бяспечна абагульваць іх."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
@@ -5148,9 +5115,6 @@
       "Report has been sent": [
         "Скарга была адпраўлена"
       ],
-      "Report link": [
-        "Справаздача спасылкі"
-      ],
       "Request access, or switch to an account with access.": [
         "Запытайце доступ або пераключыцеся на ўліковы запіс, які мае яго."
       ],
@@ -5169,9 +5133,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Аднаўленне фатаграфій... Не закрывайце ўкладку браўзера"
       ],
-      "Retry now": [
-        "Паўтарыць зараз"
-      ],
       "Saving...": [
         "Захаванне..."
       ],
@@ -5183,18 +5144,6 @@
       ],
       "Search Enabled": [
         "Пошук уключаны"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } файл быў бяспечна спампаваны",
-        "${ nbFile } файлы былі бяспечна спампаваны",
-        "${ nbFile } файлаў былі бяспечна спампаваны",
-        "${ nbFile } файлаў былі бяспечна спампаваны"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Бяспечна спампаваны ўсе зашыфраваныя файлы"
-      ],
-      "Securely downloaded all files": [
-        "Усе файлы былі бяспечна спампаваны"
       ],
       "Select a folder to move to.": [
         "Выберыце папку для перамяшчэння."
@@ -5247,9 +5196,6 @@
       "Shared with me": [
         "Абагулена са мной"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Зарэгіструйце ўласны ўліковы запіс ${ DRIVE_APP_NAME } і абараняйце свае даныя з дапамогай скразнога шыфравання, а таксама бяспечна абагульвайце іх."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
       ],
@@ -5276,9 +5222,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
-      ],
-      "Something went wrong...": [
-        "Нешта пайшло не так..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
@@ -5739,9 +5682,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Адбываецца спампоўванне"
-      ],
       "Your email address and password were leaked:": [
         "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
       ],
@@ -6061,9 +6001,6 @@
       "Download anyway": [
         "Усё роўна спампаваць"
       ],
-      "Downloading ${ percentageValue }": [
-        "Спампавана ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Знойдзены дублікат"
       ],
@@ -6381,9 +6318,6 @@
       ],
       "Theme": [
         "Тэма"
-      ],
-      "This file is potentially infected": [
-        "Гэты файл патэнцыйна інфіцыраваны"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Гэта незваротна выдаліць усе файлы на вашым заблакіраваным дыску."
@@ -7791,7 +7725,7 @@
         "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый абранага змесціва"
+        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
@@ -7939,7 +7873,7 @@
         "\"${ name }\" паспяхова створана"
       ],
       "\"${ name }\" deleted": [
-        "\"${ name }\" выдалены"
+        "\"${ name }\" выдалена"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" незваротна выдалены са сметніцы"
@@ -7975,7 +7909,7 @@
         "\"${ name }\" паспяхова захавана"
       ],
       "\"${ name }\" successfully moved": [
-        "\"${ name }\" паспяхова перамешчаны"
+        "\"${ name }\" паспяхова перамешчана"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Не ўдалося перайменаваць \"${ newName }\""
@@ -10372,6 +10306,9 @@
       ],
       "Delete ${ item.name }?": [
         "Выдаліць ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "Выдаліць ${ links.length } элементаў?"
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"

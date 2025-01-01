@@ -400,6 +400,9 @@
       "No expired links": [
         "Пратэрмінаваныя спасылкі адсутнічаюць"
       ],
+      "Not now": [
+        "Не зараз"
+      ],
       "OK": [
         "Добра"
       ],
@@ -518,7 +521,7 @@
         "Адправіць запрашэнне"
       ],
       "Send us a message": [
-        "Напішыце нам"
+        "Напісаць нам"
       ],
       "Set access level": [
         "Задаць узровень доступу"
@@ -647,10 +650,10 @@
         "Паглядзець больш старую гісторыю"
       ],
       "Write us on Reddit": [
-        "Напішыце нам у Reddit"
+        "Напісаць нам у Reddit"
       ],
       "Write us on Twitter": [
-        "Напішыце нам у Twitter"
+        "Напісаць нам у Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
@@ -715,10 +718,10 @@
         "Атрымліваць апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
-        "Калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample }), то вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } у якасці дамена."
+        "Вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } у якасці дамена, калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample })."
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Калі вы выкарыстоўваеце паддамен (напрыклад, paddamen.damen.com), вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена. Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
+        "Вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена, калі вы выкарыстоўваеце паддамен (напрыклад, paddamen.damen.com). Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
       ],
       "If you are using CloudFlare, please make sure to not select the Proxy option.": [
         "Пераканайцеся, што не выбраны параметр проксі-сервера, калі вы выкарыстоўваеце CloudFlare."
@@ -794,7 +797,7 @@
         "Не атрымалася вызначыць параметры псеўданіма"
       ],
       "An error occurred while resuming your session": [
-        "Падчас узнаўлення вашага сеанса адбылася памылка"
+        "Адбылася памылка падчас узнаўлення вашага сеанса"
       ],
       "Authentication error": [
         "Памылка аўтэнтыфікацыі"
@@ -2149,7 +2152,7 @@
         "Немагчыма скапіяваць у буфер абмену"
       ],
       "Unconfigured": [
-        "Несканфігурыравана"
+        "Несканфігуравана"
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email і пашыранае кіраванне псеўданімам"
@@ -2192,9 +2195,6 @@
       ],
       "username": [
         "імя карыстальніка"
-      ],
-      "Value:": [
-        "Значэнне:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховішча \"${ payload.content.name }\" паспяхова выдалена"
@@ -3942,7 +3942,7 @@
         "Усе элементы са сметніцы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
       ],
       "An error occurred while exporting your data": [
-        "Падчас экспартавання вашых даных адбылася памылка"
+        "Адбылася памылка падчас экспартавання вашых даных"
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элемент у сметніцу?",

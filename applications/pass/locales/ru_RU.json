@@ -391,6 +391,9 @@
       "No expired links": [
         "Ссылок с испеченным срока действия нет"
       ],
+      "Not now": [
+        "Не сейчас"
+      ],
       "OK": [
         "OK"
       ],
@@ -2105,9 +2108,6 @@
       ],
       "username": [
         "имя пользователя"
-      ],
-      "Value:": [
-        "Значение:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Хранилище \"${ payload.content.name }\" успешно удалено"

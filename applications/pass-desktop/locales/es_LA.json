@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Aceptar"
+      ],
       "Add": [
         "Añadir"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "No hay enlaces expirados"
+      ],
+      "Not now": [
+        "Ahora no"
       ],
       "OK": [
         "OK"
@@ -1178,6 +1184,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "No hay conexión. Reanude la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "El DNS no está configurado correctamente. El registro MX obtenido es:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "El DNS no está configurado correctamente. El registro TXT obtenido es:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "El código PIN fue eliminado por otro cliente de ${ PASS_APP_NAME }"
       ]
@@ -1341,6 +1353,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
+      ],
+      "(Empty)": [
+        "(Vacío)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Pruebe gratis las funciones premium durante 7 días, solo durante la primera semana en ${ BRAND_NAME }."
@@ -2098,6 +2113,9 @@
       "This setting is disabled on the organization level": [
         "Este ajuste está desactivado para la organización."
       ],
+      "This setting is enforced by your organization": [
+        "La organización aplica esta configuración."
+      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Esta bóveda ya no se comparte con nadie. Invite a personas para compartirla con otros."
       ],
@@ -2169,9 +2187,6 @@
       ],
       "username": [
         "nombre de usuario"
-      ],
-      "Value:": [
-        "Valor:"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Bóveda \"${ payload.content.name }\" eliminada con éxito"
@@ -3565,6 +3580,9 @@
       ],
       "Breaches detected for": [
         "Vulneraciones detectadas para"
+      ],
+      "Change your lock method": [
+        "Cambiar el método de bloqueo"
       ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"

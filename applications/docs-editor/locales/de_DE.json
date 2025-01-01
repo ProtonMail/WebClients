@@ -209,6 +209,9 @@
       "Show thread": [
         "Unterhaltung anzeigen"
       ],
+      "Signature could not be verified": [
+        "Die Signatur konnte nicht überprüft werden."
+      ],
       "Strike-through": [
         "Durchgestrichen"
       ],
@@ -406,9 +409,21 @@
     "Description": {
       "Edit document directly": [
         "Dokument direkt bearbeiten"
+      ],
+      "Edits become suggestions": [
+        "Bearbeitungen in Vorschläge umwandeln"
+      ],
+      "Read or print final document": [
+        "Endgültiges Dokument lesen oder drucken"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Verwenden Sie das Dropdown-Menü oben, um umzuschalten und Vorschläge zu machen."
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Beim Laden des Dokuments ist ein Fehler aufgetreten. Um eine Beschädigung des Dokuments zu verhindern, wurde der Editor gesperrt. Bitte lade die Seite neu und versuche es erneut. Sollte der Fehler weiterhin auftreten, öffne bitte den Versionsverlauf über die Menüoptionen, um zu versuchen, dein Dokument auf eine frühere Version zurückzusetzen."
+      ],
       "Failed to export document.": [
         "Dokument konnte nicht exportiert werden."
       ],
@@ -490,6 +505,9 @@
       "Font size": [
         "Schriftgröße"
       ],
+      "Highlight": [
+        "Markieren"
+      ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
@@ -534,6 +552,9 @@
       "Add link": [
         "Link hinzufügen"
       ],
+      "Align": [
+        "Ausrichten"
+      ],
       "Background colour": [
         "Hintergrundfarbe"
       ],
@@ -548,6 +569,9 @@
       ],
       "Delete": [
         "Löschen"
+      ],
+      "Delete divider": [
+        "Teiler löschen"
       ],
       "Delete image": [
         "Bild löschen"
@@ -578,6 +602,9 @@
       ],
       "Insert": [
         "Einfügen"
+      ],
+      "Insert divider": [
+        "Teiler einfügen"
       ],
       "Insert image": [
         "Bild einfügen"
@@ -642,6 +669,9 @@
       ],
       "Delete thread": [
         "Unterhaltung löschen"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Den neuen Vorschlagsmodus erkunden"
       ],
       "Language not supported": [
         "Sprache wird nicht unterstützt"

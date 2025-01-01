@@ -1129,8 +1129,8 @@
     },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Vernieuwt automatisch op ${ renewPrice }, voor ${ renewLength } maand",
-        "Vernieuwt automatisch op ${ renewPrice }voor ${ renewLength } maanden"
+        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maand",
+        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maanden"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Vernieuwt automatisch op ${ subscriptionManagerName }"
@@ -5369,7 +5369,7 @@
         "Terugbetalen"
       ],
       "Renewal": [
-        "Vernieuwbaar"
+        "Verlenging"
       ],
       "Subscription": [
         "Abonnement"
