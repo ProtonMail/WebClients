@@ -14,6 +14,7 @@
         "config": "yarn config:extension --api=https://pass-api.proton.me/api --sso=https://account.proton.me",
         "config:dev": "SUFFIX=\"-dev\" yarn config:extension --api=https://account.proton.black/api --sso=https://account.proton.black",
         "config:extension": "proton-pack config --no-api-proxy --version=\"$(node -e \"process.stdout.write(require('./manifest-${BUILD_TARGET:-chrome}.json').version)\")${SUFFIX:+$SUFFIX}\"",
+        "debugger:http": "node -e \"require('./tools/debugger-server.js')()\"",
         "i18n:extract:extension": "proton-i18n extract",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:extension": "proton-i18n validate",

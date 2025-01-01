@@ -8,7 +8,7 @@ import {
     intoDomainWithPort,
     isSupportedSenderUrl,
     isTotpUri,
-    isValidScheme,
+    isValidURLScheme,
     urlEq,
 } from './utils';
 
@@ -27,16 +27,16 @@ describe('URL utils', () => {
         });
     });
 
-    describe('`isValidScheme`', () => {
+    describe('`isValidURLScheme`', () => {
         test.each(['http:', 'https:', 'ftp:', 'ws:'])('returns true for valid schemes: %s', (scheme) =>
-            expect(isValidScheme(new URL(`${scheme}//example.com`))).toBe(true)
+            expect(isValidURLScheme(new URL(`${scheme}//example.com`))).toBe(true)
         );
 
         test.each(UNSUPPORTED_SCHEMES)('returns false for unsupported schemes: %s', (scheme) =>
-            expect(isValidScheme(new URL(`${scheme}//example.com`))).toBe(false)
+            expect(isValidURLScheme(new URL(`${scheme}//example.com`))).toBe(false)
         );
 
-        test('returns false for undefined input', () => expect(isValidScheme(undefined)).toBe(false));
+        test('returns false for undefined input', () => expect(isValidURLScheme(undefined)).toBe(false));
     });
 
     describe('`urlEq`', () => {

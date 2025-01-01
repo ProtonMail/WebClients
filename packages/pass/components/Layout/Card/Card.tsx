@@ -15,7 +15,7 @@ export const Card: FC<PropsWithChildren<ItemCardProps>> = ({ children, className
         rounded
         background={false}
         bordered={false}
-        className={clsx(getCardTheme(type), 'pass-card', `pass-card:${type}`, className)}
+        className={clsx(getCardTheme(type), 'pass-card', type && `pass-card:${type}`, className)}
         onClick={onClick}
     >
         {children}

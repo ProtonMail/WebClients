@@ -1,3 +1,11 @@
+### Version 1.27.1
+
+- Remove Pass Monitor feature discovery notification
+- Hide unsafe URL items from secure links & item view
+- Fix missing item loading state on bulk action
+- [Safari] ASM.js work-around for WASM limitations
+- [Safari] Fix scroll/focus conflict in extension popup
+
 ### Version 1.27.0
 
 - Fix app unlock UX for SSO users

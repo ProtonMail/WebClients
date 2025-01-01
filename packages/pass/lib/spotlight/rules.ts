@@ -110,12 +110,6 @@ export const createUserRatingRule = (store: Store<State>) =>
         },
     });
 
-export const createMonitorRule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.PASS_MONITOR,
-        when: (previous) => !previous,
-    });
-
 export const createMonitorLearnMoreRule = () =>
     createSpotlightRule({
         message: SpotlightMessage.PASS_MONITOR_LEARN_MORE,

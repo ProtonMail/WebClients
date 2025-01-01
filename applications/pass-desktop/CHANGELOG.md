@@ -1,3 +1,10 @@
+### Version 1.27.1
+
+- Remove Offline Mode feature discovery notification
+- Hide unsafe URL items from secure links & item view
+- Address CSS injection attack vector
+- Fix missing item loading state on bulk action
+
 ### Version 1.27.0
 
 - Support SSO on desktop
