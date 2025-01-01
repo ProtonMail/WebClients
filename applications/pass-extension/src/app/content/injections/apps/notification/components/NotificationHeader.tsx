@@ -15,7 +15,7 @@ type Props = {
     onClose?: () => void;
 };
 
-export const NotificationHeader: FC<Props> = ({ discardOnClose = true, extra, title, onClose }) => {
+export const NotificationHeader: FC<Props> = ({ discardOnClose, extra, title, onClose }) => {
     const controller = useIFrameAppController();
 
     return (
