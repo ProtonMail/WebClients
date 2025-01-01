@@ -22,11 +22,16 @@ import { PasskeyGet } from './views/PasskeyGet';
 
 import './Notification.scss';
 
-export const Notification: FC = () => {
+type Props = {
+    /** @internal Only used for debugging component */
+    initial?: NotificationActions;
+};
+
+export const Notification: FC<Props> = ({ initial = null }) => {
     const { visible } = useIFrameAppState();
     const { status } = useAppState();
 
-    const [state, setState] = useState<MaybeNull<NotificationActions>>(null);
+    const [state, setState] = useState<MaybeNull<NotificationActions>>(initial);
     const loading = state === null || clientBusy(status);
 
     useRegisterMessageHandler(
