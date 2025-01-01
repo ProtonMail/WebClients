@@ -1,3 +1,11 @@
+### Version 1.27.1
+
+- Remove Offline Mode feature discovery notification
+- Force dark theme on public secure links page
+- Hide unsafe URL items from secure links & item view
+- Address CSS injection attack vector
+- Fix missing item loading state on bulk action
+
 ### Version 1.27.0
 
 - Fix app unlock UX for SSO users
