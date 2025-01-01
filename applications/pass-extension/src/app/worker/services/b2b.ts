@@ -26,7 +26,10 @@ export const createB2BEventsService = (
         getStorageKey: () => B2B_EVENTS_STORAGE_KEY,
     });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.B2B_EVENT, ({ payload: { event } }) => push(event));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.B2B_EVENT, ({ payload: { event } }) => {
+        void push(event);
+        return true;
+    });
 
     browser.alarms.onAlarm.addListener(
         withContext((ctx, { name }) => {

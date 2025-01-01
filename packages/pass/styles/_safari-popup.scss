@@ -1,0 +1,9 @@
+.modal-two {
+	/** Fix for Safari extension popup scroll jump bug:
+		* Safari tries to maintain viewport constraints while
+		* scrolling with focused inputs, causing unwanted scroll
+		* jumps. Removing max-width/height viewport constraints
+		* prevents this scroll recalculation behavior. */
+	max-inline-size: unset !important;
+	max-block-size: unset !important;
+}

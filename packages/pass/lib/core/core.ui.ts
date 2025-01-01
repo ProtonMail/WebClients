@@ -10,9 +10,15 @@ import { logger } from '@proton/pass/utils/logger';
 type PassUI = typeof PassRustUI;
 let service: Maybe<PassUI>;
 
+const getUIModule = () =>
+    BUILD_TARGET === 'safari'
+        ? import(/* webpackChunkName: "pass-core.ui" */ './asm/ui/proton_pass_web.asm')
+        : import(/* webpackChunkName: "pass-core.ui" */ '@protontech/pass-rust-core/ui');
+
 export const preloadPassCoreUI = () => {
     if (service !== undefined || typeof window === 'undefined') return;
-    return import(/* webpackChunkName: "pass-core.ui" */ '@protontech/pass-rust-core/ui')
+
+    return getUIModule()
         .then((value) => {
             service = value;
             logger.debug(`[PassCoreUI] Module v${value.library_version()} loaded`);

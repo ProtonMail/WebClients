@@ -15,6 +15,7 @@ import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from './channel';
 import { createWorkerContext } from './context/factory';
+import './debugger';
 
 if (typeof browser !== 'undefined') {
     if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {

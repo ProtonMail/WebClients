@@ -25,7 +25,7 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import Icons from '@proton/icons/Icons';
+import InlineIcons from '@proton/icons/InlineIcons';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
@@ -128,7 +128,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
 export const App = () => {
     return (
         <PassCoreProvider {...getPassCoreProps()} wasm>
-            <Icons />
+            <InlineIcons /> {/* Remove when enabling SRI in desktop */}
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>
                     <ModalsProvider>

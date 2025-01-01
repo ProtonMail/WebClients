@@ -9,6 +9,7 @@ const webpack = require('webpack');
 const path = require('path');
 const createReloadRuntimeServer = require('./reload-runtime');
 const createReduxDevTools = require('./redux-tools');
+const createDebuggerServer = require('./debugger-server');
 
 const config = require('../webpack.config');
 const {
@@ -17,6 +18,7 @@ const {
     HOT_MANIFEST_UPDATE,
     RUNTIME_RELOAD,
     RUNTIME_RELOAD_PORT,
+    HTTP_DEBUGGER,
 } = require('./env');
 
 const EXCLUDED_WEBPACK_ENTRIES = [
@@ -87,6 +89,8 @@ const main = async () => {
         const { reload } = createReloadRuntimeServer({ port: RUNTIME_RELOAD_PORT });
         compiler.hooks.afterEmit.tap('ProtonPassExtensionReloader', reload);
     }
+
+    if (HTTP_DEBUGGER) createDebuggerServer();
 
     if (HOT_MANIFEST_UPDATE) {
         compiler.hooks.compilation.tap('ProtonPassUpdateManifest', (compilation) => {
