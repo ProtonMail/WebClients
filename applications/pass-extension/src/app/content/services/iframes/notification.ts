@@ -45,9 +45,10 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
                         ctx?.service.formManager
                             .getTrackedForms()
                             .filter(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0)
-                            .forEach(({ element }) => {
+                            .forEach(({ element, getFieldsFor }) => {
                                 removeClassifierFlags(element, { preserveIgnored: true });
                                 flagAsIgnored(element);
+                                getFieldsFor(FieldType.OTP).forEach((field) => flagAsIgnored(field.element));
                             });
                     }
 

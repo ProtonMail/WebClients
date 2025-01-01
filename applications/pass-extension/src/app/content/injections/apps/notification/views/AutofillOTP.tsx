@@ -36,6 +36,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
         <div className="flex flex-column flex-nowrap justify-space-between *:shrink-0 h-full anime-fade-in gap-3">
             <NotificationHeader
                 title={c('Info').t`Verification code`}
+                discardOnClose
                 extra={
                     <PauseListDropdown
                         criteria="Autofill2FA"
