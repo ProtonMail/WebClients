@@ -15,6 +15,7 @@ import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationIt
 import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
+import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { saveFilters } from '@proton/pass/store/actions/creators/filters';
 import { selectIsWritableShare } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
@@ -42,7 +43,7 @@ export const ItemsList = memo(() => {
                     if (!bulkEnabled) bulk.enable();
                     bulk.toggle(item);
                 }
-            } else selectItem(item, { inTrash: matchTrash });
+            } else selectItem(item, { inTrash: isTrashed(item) });
         },
         [bulkEnabled]
     );
