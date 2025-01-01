@@ -1,9 +1,6 @@
-import { type FC, useCallback, useEffect } from 'react';
+import { type FC, useCallback, useEffect, useState } from 'react';
 
-import {
-    useIFrameAppController,
-    useIFrameAppState,
-} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { useIFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
@@ -38,11 +35,11 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
 export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
-    const { userEmail } = useIFrameAppState();
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
 
+    const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [aliasOptions, setAliasOptions] = useMountedState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useMountedState<boolean>(false);
     const [loadingText, setLoadingText] = useMountedState<MaybeNull<string>>(getInitialLoadingText());
@@ -108,6 +105,13 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
     );
 
     useEffect(() => {
+        sendMessage
+            .onSuccess(
+                contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER }),
+                (response) => response.user?.Email && setUserEmail(response.user.Email)
+            )
+            .catch(noop);
+
         requestAliasOptions().catch(noop);
     }, []);
 
