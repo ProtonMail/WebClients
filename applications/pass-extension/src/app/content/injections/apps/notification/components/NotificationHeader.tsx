@@ -1,6 +1,6 @@
 import type { FC, ReactElement, ReactNode } from 'react';
 
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { useIFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -16,7 +16,7 @@ type Props = {
 };
 
 export const NotificationHeader: FC<Props> = ({ discardOnClose = true, extra, title, onClose }) => {
-    const { close } = useIFrameContext();
+    const controller = useIFrameAppController();
 
     return (
         <div className="flex flex-nowrap shrink-0 items-center justify-space-between gap-2">
@@ -37,7 +37,7 @@ export const NotificationHeader: FC<Props> = ({ discardOnClose = true, extra, ti
                     className="shrink-0"
                     onClick={() => {
                         onClose?.();
-                        close({ discard: discardOnClose });
+                        controller.close({ discard: discardOnClose });
                     }}
                     title={c('Action').t`Cancel`}
                 >

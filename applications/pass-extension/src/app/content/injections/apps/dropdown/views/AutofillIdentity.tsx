@@ -1,7 +1,10 @@
 import type { FC } from 'react';
 import { useCallback, useEffect, useMemo } from 'react';
 
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
@@ -28,7 +31,8 @@ import noop from '@proton/utils/noop';
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_IDENTITY }>;
 
 export const AutofillIdentity: FC<Props> = ({ domain }) => {
-    const { visible, close, forwardMessage } = useIFrameContext();
+    const { visible } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const [state, setState] = useMountedState<MaybeNull<AutofillIdentityResult>>(null);
     const loading = useMemo(() => state === null, [state]);
 
@@ -84,11 +88,11 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                                           payload: { shareId, itemId },
                                       }),
                                       (fields) => {
-                                          forwardMessage({
+                                          controller.forwardMessage({
                                               type: IFramePortMessageType.DROPDOWN_AUTOFILL_IDENTITY,
                                               payload: fields,
                                           });
-                                          close({ refocus: false });
+                                          controller.close({ refocus: false });
                                       }
                                   )
                               }
@@ -119,7 +123,7 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
             ) : (
                 <ListItem
                     icon={PassIconStatus.ACTIVE}
-                    onClick={close}
+                    onClick={controller.close}
                     title={PASS_APP_NAME}
                     subTitle={c('Info').t`No identity item found`}
                 />

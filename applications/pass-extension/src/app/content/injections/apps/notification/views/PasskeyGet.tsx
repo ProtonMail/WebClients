@@ -1,7 +1,10 @@
 import { type FC, useEffect } from 'react';
 
 import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
@@ -24,7 +27,8 @@ type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_G
 
 const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDomain }) => {
     const { onTelemetry } = usePassCore();
-    const { postMessage, close, domain } = useIFrameContext();
+    const { domain } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const { createNotification } = useNotifications();
 
     const authenticate = (passkey: SelectedPasskey) => {
@@ -44,7 +48,7 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
                         );
                     }
 
-                    postMessage(
+                    controller.postMessage(
                         createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
                             { type: 'success', intercept: true, response: result.response },
                             token
@@ -52,7 +56,7 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
                     );
 
                     onTelemetry(TelemetryEventName.PasskeyAuthSuccess, {}, {});
-                    close();
+                    controller.close();
                 }
             )
             .catch((err) => {
@@ -87,14 +91,15 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
 };
 
 export const PasskeyGet: FC<Props> = (props) => {
-    const { postMessage, domain } = useIFrameContext();
+    const { domain } = useIFrameAppState();
+    const controller = useIFrameAppController();
 
     return (
         <div className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full gap-2 anime-fade-in">
             <NotificationHeader
                 title={c('Info').t`Passkey sign-in`}
                 onClose={() =>
-                    postMessage(
+                    controller.postMessage(
                         createBridgeResponse<WorkerMessageType.PASSKEY_GET>(
                             { type: 'success', intercept: false },
                             props.token
