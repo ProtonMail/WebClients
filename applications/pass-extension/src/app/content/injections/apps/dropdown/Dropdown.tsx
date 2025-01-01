@@ -33,13 +33,18 @@ import { AutosuggestPassword } from './views/AutosuggestPassword';
 
 import './Dropdown.scss';
 
-export const Dropdown: FC = () => {
+type Props = {
+    /** @internal Only used for debugging component */
+    initial?: DropdownActions;
+};
+
+export const Dropdown: FC<Props> = ({ initial = null }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const { status, authorized, lockSetup } = useAppState();
     const accountFork = useRequestFork();
 
-    const [state, setState] = useState<MaybeNull<DropdownActions>>(null);
+    const [state, setState] = useState<MaybeNull<DropdownActions>>(initial);
     const loading = state === null || clientBusy(status);
 
     useRegisterMessageHandler(

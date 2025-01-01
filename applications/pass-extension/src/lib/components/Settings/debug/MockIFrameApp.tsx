@@ -1,31 +1,42 @@
 import type { FC, ReactNode } from 'react';
 
 import {
+    IFrameAppControllerContext,
     type IFrameAppState,
     IFrameAppStateContext,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
-import { type DropdownActions, type NotificationActions } from 'proton-pass-extension/app/content/types';
+import type { IFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppController';
 
 import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, AppStatus } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
-const createMockIFrameContext = (payload?: any, domain?: string): IFrameAppState => ({
+const mockAppState = (appState?: Partial<AppState>) => ({
+    booted: true,
+    localID: undefined,
+    authorized: true,
+    status: AppStatus.READY,
+    UID: undefined,
+    ...appState,
+});
+
+const mockIFrameAppState = (domain?: string): IFrameAppState => ({
     domain: domain ?? 'proton.test',
     connectionID: 'test',
     settings: getInitialSettings(),
-    userEmail: 'john@proton.me',
     visible: true,
 });
 
-export const MockIFrameContainer: FC<{
+const mockIFrameAppController = (): IFrameAppController => new Proxy({} as IFrameAppController, { get: () => noop });
+
+export const MockIFrameApp: FC<{
     children: ReactNode;
     domain?: string;
     appState?: Partial<AppState>;
-    payload?: NotificationActions | DropdownActions;
     height?: number;
     width: number;
-}> = ({ children, domain, appState, payload, height, width }) => (
+}> = ({ children, domain, appState, height, width }) => (
     <div
         style={{
             width: '100%',
@@ -37,18 +48,11 @@ export const MockIFrameContainer: FC<{
             marginBottom: 12,
         }}
     >
-        <AppStateContext.Provider
-            value={{
-                booted: true,
-                localID: undefined,
-                authorized: true,
-                status: AppStatus.READY,
-                UID: undefined,
-                ...appState,
-            }}
-        >
-            <IFrameAppStateContext.Provider value={createMockIFrameContext(payload, domain)}>
-                {children}
+        <AppStateContext.Provider value={mockAppState(appState)}>
+            <IFrameAppStateContext.Provider value={mockIFrameAppState(domain)}>
+                <IFrameAppControllerContext.Provider value={mockIFrameAppController()}>
+                    {children}
+                </IFrameAppControllerContext.Provider>
             </IFrameAppStateContext.Provider>
         </AppStateContext.Provider>
     </div>
