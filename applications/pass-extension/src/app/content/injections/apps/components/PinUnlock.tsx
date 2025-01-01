@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import { useEffect } from 'react';
 
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { useIFrameAppState } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
@@ -16,7 +16,7 @@ import type { MaybeNull } from '@proton/pass/types';
 type Props = { header?: ReactNode; onUnlock?: () => void };
 
 export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
-    const { visible } = useIFrameContext();
+    const { visible } = useIFrameAppState();
     const [value, setValue] = useMountedState<string>('');
     const [loading, setLoading] = useMountedState<boolean>(false);
     const [error, setError] = useMountedState<MaybeNull<string>>(null);

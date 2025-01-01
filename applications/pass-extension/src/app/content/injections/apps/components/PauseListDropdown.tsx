@@ -1,6 +1,9 @@
 import { type FC } from 'react';
 
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -15,7 +18,8 @@ type Props = {
     label: string;
 };
 export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label }) => {
-    const { close, visible } = useIFrameContext();
+    const { visible } = useIFrameAppState();
+    const controller = useIFrameAppController();
 
     const addToPauseList = () => {
         if (hostname) {
@@ -27,7 +31,7 @@ export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label 
             );
         }
 
-        close();
+        controller.close();
     };
 
     return (
