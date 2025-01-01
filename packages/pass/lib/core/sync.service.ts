@@ -10,18 +10,19 @@ export const createPassCoreSyncService = (): PassCoreService => {
 
     const loadWASM = async () =>
         (wasmPromise =
-            wasmPromise ?? import(/* webpackChunkName: "pass-core.worker" */ '@protontech/pass-rust-core/worker'))
-            .then((value) => {
-                logger.debug(`[PassCoreUI] Module v${value.library_version()} loaded`);
-                return value;
-            })
-            .catch(() => {
-                /** Chrome extensions may encounter internal runtime errors (ie: `ChromeMethodBFE`)
-                 * during WASM instantiation. We explicitly read `browser.runtime.lastError` to
-                 * prevent these errors from interfering with other extension API calls. */
-                void browser.runtime?.lastError;
-                throw new Error('Module not initialized');
-            });
+            wasmPromise ??
+            import(/* webpackChunkName: "pass-core.worker" */ '@protontech/pass-rust-core/worker')
+                .then((value) => {
+                    logger.debug(`[PassCoreUI] Module v${value.library_version()} loaded`);
+                    return value;
+                })
+                .catch(() => {
+                    /** Chrome extensions may encounter internal runtime errors (ie: `ChromeMethodBFE`)
+                     * during WASM instantiation. We explicitly read `browser.runtime.lastError` to
+                     * prevent these errors from interfering with other extension API calls. */
+                    void browser.runtime?.lastError;
+                    throw new Error('Module not initialized');
+                }));
 
     const service: PassCoreService = {
         exec: async (method, ...args) => {

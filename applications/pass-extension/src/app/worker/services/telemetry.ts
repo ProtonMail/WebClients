@@ -29,7 +29,10 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
         getUserTier: withContext((ctx) => selectUserTier(ctx.service.store.getState())),
     });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.TELEMETRY_EVENT, ({ payload: { event } }) => push(event));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.TELEMETRY_EVENT, ({ payload: { event } }) => {
+        void push(event);
+        return true;
+    });
 
     browser.alarms.onAlarm.addListener(
         withContext((ctx, { name }) => {

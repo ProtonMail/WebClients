@@ -1,5 +1,5 @@
 import type { SanitizedUrl } from './types';
-import { MAX_HOSTNAME_LENGTH, RegexURL, isValidScheme } from './utils';
+import { MAX_HOSTNAME_LENGTH, RegexURL, isValidURLScheme } from './utils';
 
 /* Will first try to validate against the URL constructor.
  * If it fails, try to append https:// scheme and revalidate
@@ -16,7 +16,7 @@ export const sanitizeURL = (maybeUrl: string, scheme?: string): SanitizedUrl => 
         const urlObj = new URL(url);
 
         /* if scheme is unsupported for our use-case */
-        if (!isValidScheme(urlObj)) return { valid: false, hostname: null, protocol: null, port: null, url };
+        if (!isValidURLScheme(urlObj)) return { valid: false, hostname: null, protocol: null, port: null, url };
 
         const { protocol, hostname, href, port } = urlObj;
         const valid = hostname.length <= MAX_HOSTNAME_LENGTH && Boolean(RegexURL.test(urlObj.href));
