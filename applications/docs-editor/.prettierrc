@@ -4,13 +4,5 @@
   "singleQuote": true,
   "trailingComma": "all",
   "printWidth": 120,
-  "tabWidth": 2,
-  "overrides": [
-    {
-      "files": "./webpack.config.ts",
-      "options": {
-        "printWidth": 1000
-      }
-    }
-  ]
+  "tabWidth": 2
 }
