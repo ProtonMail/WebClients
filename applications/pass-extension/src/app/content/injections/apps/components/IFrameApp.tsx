@@ -11,12 +11,9 @@ import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useEx
 
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { clientReady } from '@proton/pass/lib/client';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -28,7 +25,6 @@ export type IFrameAppState = {
     connectionID: MaybeNull<string>;
     domain: string;
     settings: ProxiedSettings;
-    userEmail: MaybeNull<string>;
     visible: boolean;
 };
 
@@ -36,7 +32,6 @@ const getInitialIFrameAppState = (): IFrameAppState => ({
     connectionID: null,
     domain: '',
     settings: getInitialSettings(),
-    userEmail: null,
     visible: false,
 });
 
@@ -51,7 +46,6 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     const { i18n, endpoint, theme } = usePassCore();
     if (!(endpoint === 'dropdown' || endpoint === 'notification')) throw Error('Invalid IFrame endpoint');
 
-    const { status } = useAppState();
     const authStore = useAuthStore();
     const activityProbe = useExtensionActivityProbe();
     const controller = useInstance(() => createIFrameAppController(endpoint));
@@ -62,17 +56,6 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
         (update: Partial<IFrameAppState>) => setIFrameAppState(withMerge<IFrameAppState>(update)),
         []
     );
-
-    useEffect(() => {
-        if (state.userEmail === null && clientReady(status)) {
-            sendMessage
-                .onSuccess(
-                    contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER }),
-                    (response) => response.user?.Email && setState({ userEmail: response.user.Email })
-                )
-                .catch(noop);
-        }
-    }, [status, state.userEmail]);
 
     useEffect(() => {
         setTtagLocales(locales);
