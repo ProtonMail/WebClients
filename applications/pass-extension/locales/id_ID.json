@@ -2111,9 +2111,6 @@
       "User's access successfully updated": [
         "Akses pengguna berhasil diperbarui"
       ],
-      "Value:": [
-        "Nilai:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Brankas \"${ payload.content.name }\" berhasil dihapus"
       ],
@@ -2249,7 +2246,7 @@
         "${ months } bulan"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
-        "Pemantauan ${ PASS_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versi ${ PASS_SHORT_APP_NAME }"

@@ -483,9 +483,6 @@
       "Mark for deletion": [
         "削除マーク"
       ],
-      "Maximize": [
-        "最大化"
-      ],
       "Maximize transfers": [
         "転送一覧を最大化"
       ],
@@ -494,9 +491,6 @@
       ],
       "Merge contacts": [
         "連絡先を統合"
-      ],
-      "Minimize": [
-        "最小化"
       ],
       "Minimize transfers": [
         "転送一覧を最小化"
@@ -3992,12 +3986,6 @@
       "${ invitations.length } pending invitation": [
         "保留中の招待が${ invitations.length }件"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } 暗号化ファイル。"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } 暗号化されたファイル..."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }のLifetimeディールには更新料金はなく、一度の支払いで${ PASS_SHORT_APP_NAME }への生涯アクセスが可能です。"
       ],
@@ -4090,9 +4078,6 @@
       ],
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
-      ],
-      "All encrypted files": [
-        "すべての暗号化されたファイル"
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
@@ -4319,14 +4304,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
       ],
-      "Download": [
-        "ダウンロード"
-      ],
       "Download ${ name } app": [
         "${ name } アプリをダウンロード"
-      ],
-      "Download anyway": [
-        "無視してダウンロード"
       ],
       "Download canceled": [
         "ダウンロードをキャンセルしました"
@@ -4360,9 +4339,6 @@
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
         "${ DRIVE_APP_NAME }からの${ DOCS_APP_NAME }ファイルのダウンロードは現在サポートされていません ー ダウンロードには含まれていません。"
-      ],
-      "Downloading all encrypted files": [
-        "すべての暗号化されたファイルをダウンロードする"
       ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
@@ -4549,9 +4525,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
-      ],
-      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "その間に、あなた自身の${ DRIVE_APP_NAME }アカウントにサインアップして、エンドツーエンドの暗号化でデータを保護し、安全に共有しましょう。"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
@@ -4919,9 +4892,6 @@
       "Report has been sent": [
         "レポートは送信されました"
       ],
-      "Report link": [
-        "リンクを報告"
-      ],
       "Request access, or switch to an account with access.": [
         "アクセスを要求するか、アクセス権のあるアカウントに切り替えてください。"
       ],
@@ -4940,9 +4910,6 @@
       "Restoring Photos... Please keep the tab open": [
         "写真を復元中... タブを開いたままにしてください"
       ],
-      "Retry now": [
-        "リトライ"
-      ],
       "Saving...": [
         "保存中..."
       ],
@@ -4954,15 +4921,6 @@
       ],
       "Search Enabled": [
         "検索機能が有効です"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } 件のファイルが安全にダウンロードされました"
-      ],
-      "Securely downloaded all encrypted files": [
-        "すべての暗号化されたファイルを安全にダウンロード"
-      ],
-      "Securely downloaded all files": [
-        "すべてのファイルを安全にダウンロードしました"
       ],
       "Select a folder to move to.": [
         "移動先のフォルダーを選択します。"
@@ -5015,9 +4973,6 @@
       "Shared with me": [
         "私と共有しました"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "自分の ${ DRIVE_APP_NAME } アカウントを作成し、エンドツーエンド暗号化でデータを保護し、安全に共有します。"
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ネットワークエラーのため、署名の検証ができません。後ほど再度お試しください。"
       ],
@@ -5044,9 +4999,6 @@
       ],
       "Something went wrong, please try again later.": [
         "問題が発生しました。後ほど再度お試しください。"
-      ],
-      "Something went wrong...": [
-        "何か問題が発生しました..."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "連絡先との共有を始め、オンラインサービスのために使ってください。"
@@ -5492,9 +5444,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
-      "Your download is in progress": [
-        "ダウンロードが進行中です"
-      ],
       "Your email address and password were leaked:": [
         "メールアドレスとパスワードが漏洩しました:"
       ],
@@ -5795,9 +5744,6 @@
       ],
       "Download anyway": [
         "無視してダウンロード"
-      ],
-      "Downloading ${ percentageValue }": [
-        "ダウンロード中 ${ percentageValue }"
       ],
       "Duplicate found": [
         "重複が見つかりました"
@@ -6116,9 +6062,6 @@
       ],
       "Theme": [
         "テーマ"
-      ],
-      "This file is potentially infected": [
-        "このファイルは感染している恐れがあります"
       ],
       "This will permanently delete all files in your locked drive.": [
         "開くことのできないドライブ内のすべてのデータが削除されます。"

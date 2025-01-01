@@ -25,6 +25,9 @@
       ]
     },
     "Action": {
+      "Accept": [
+        "Accepter"
+      ],
       "Add": [
         "Tilføj"
       ],
@@ -402,6 +405,9 @@
       ],
       "No expired links": [
         "Ingen udløbne links"
+      ],
+      "Not now": [
+        "Ikke nu"
       ],
       "OK": [
         "Ok"
@@ -2167,9 +2173,6 @@
       "username": [
         "brugernavn"
       ],
-      "Value:": [
-        "Værdi:"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Boksen \"${ payload.content.name }\" blev slettet"
       ],
@@ -3550,6 +3553,9 @@
       ],
       "Breaches detected for": [
         "Databrud registreret for"
+      ],
+      "Change your lock method": [
+        "Skift din låsemetode"
       ],
       "Confirm extra password": [
         "Bekræft ekstra adgangskode"

@@ -486,9 +486,6 @@
       "Mark for deletion": [
         "Označi za izbris"
       ],
-      "Maximize": [
-        "Povečaj"
-      ],
       "Maximize transfers": [
         "Povečaj seznam prenosov"
       ],
@@ -497,9 +494,6 @@
       ],
       "Merge contacts": [
         "Združi stike"
-      ],
-      "Minimize": [
-        "Pomanjšaj"
       ],
       "Minimize transfers": [
         "Pomanjšaj seznam prenosov"
@@ -3973,18 +3967,6 @@
         "${ groupCounts } najdene skupine",
         "${ groupCounts } najdenih skupin"
       ],
-      "${ nbFile } encrypted file": [
-        "${ nbFile } šifrirana datoteka",
-        "${ nbFile } šifrirani datoteki",
-        "${ nbFile } šifrirane datoteke",
-        "${ nbFile } šifriranih datotek"
-      ],
-      "${ nbFile } encrypted file...": [
-        "${ nbFile } šifrirana datoteka ...",
-        "${ nbFile } šifrirani datoteki ...",
-        "${ nbFile } šifrirane datoteke ...",
-        "${ nbFile } šifriranih datotek ..."
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } zaustavljen",
         "${ pausedCount } zaustavljena",
@@ -4107,9 +4089,6 @@
         "Vse (${ totalFoldersCount } oznaki)",
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
-      ],
-      "All encrypted files": [
-        "Vse šifrirane datoteke"
       ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
@@ -4333,14 +4312,8 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Zmanjšanje paketa bo prekinila vse povezave do plačljivih ${ VPN_APP_NAME } strežnikov."
       ],
-      "Download": [
-        "Prenos"
-      ],
       "Download ${ name } app": [
         "Prenesite aplikacijo ${ name }"
-      ],
-      "Download anyway": [
-        "Vseeno prenesi"
       ],
       "Download canceled": [
         "Prenos je preklican"
@@ -4371,9 +4344,6 @@
       ],
       "Downloading": [
         "Prenašanje"
-      ],
-      "Downloading all encrypted files": [
-        "Prenašanje vseh šifriranih datotek"
       ],
       "Drop file here to upload": [
         "Spusti datoteko tukaj za nalaganje."
@@ -4912,9 +4882,6 @@
       "Report has been sent": [
         "Poročilo poslano"
       ],
-      "Report link": [
-        "Povezava na poročilo"
-      ],
       "Request access, or switch to an account with access.": [
         "Zahtevajte dostop ali preklopite na račun z dostopom."
       ],
@@ -4933,9 +4900,6 @@
       "Restoring Photos... Please keep the tab open": [
         "Obnavljanje fotografij ... Pustite zavihek odprt"
       ],
-      "Retry now": [
-        "Poskusi znova zdaj"
-      ],
       "Saving...": [
         "Shranjevanje ..."
       ],
@@ -4947,18 +4911,6 @@
       ],
       "Search Enabled": [
         "Iskanje v"
-      ],
-      "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } datoteka je bila varno prenesena",
-        "${ nbFile } datoteki sta bili varno preneseni",
-        "${ nbFile } datoteke so bile varno prenesene",
-        "${ nbFile } datotek je bilo varno prenesenih"
-      ],
-      "Securely downloaded all encrypted files": [
-        "Vse šifrirane datoteke so varno prenesene"
-      ],
-      "Securely downloaded all files": [
-        "Vse datoteke so varno prenesene"
       ],
       "Select a folder to move to.": [
         "Izberite mapo, v katero se želite premakniti."
@@ -5008,9 +4960,6 @@
       "Shared with me": [
         "Deljeno z mano"
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Prijavite se za svoj račun ${ DRIVE_APP_NAME } in zaščitite svoje podatke s šifriranjem od konca do konca ter jih varno delite z drugimi."
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpisa ni mogoče preveriti zaradi napake v omrežju, poskusite znova pozneje."
       ],
@@ -5037,9 +4986,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Nekaj je šlo narobe. Prosimo, poizkusite znova."
-      ],
-      "Something went wrong...": [
-        "Nekaj je šlo narobe ..."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
@@ -5464,9 +5410,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
       ],
-      "Your download is in progress": [
-        "Prenos je v teku"
-      ],
       "Your email address and password were leaked:": [
         "Vaš e-poštni naslov in geslo sta bila izpostavljena :"
       ],
@@ -5780,9 +5723,6 @@
       "Download anyway": [
         "Vseeno prenesi"
       ],
-      "Downloading ${ percentageValue }": [
-        "Prenašanje ${ percentageValue }"
-      ],
       "Duplicate found": [
         "Najden dvojnik"
       ],
@@ -6091,9 +6031,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This file is potentially infected": [
-        "Ta datoteka je lahko okužena"
       ],
       "This will permanently delete all files in your locked drive.": [
         "S tem boste trajno izbrisali vse datoteke na zaklenjenem disku."
