@@ -8,6 +8,10 @@ export function isVaultShare(share: Share): share is Share<ShareType.Vault> {
     return share.targetType === ShareType.Vault;
 }
 
+export function isItemShare(share: Share): share is Share<ShareType.Item> {
+    return share.targetType === ShareType.Item;
+}
+
 export const isShareManageable = <T extends Share>(share: T) => share.owner || share.shareRoleId === ShareRole.ADMIN;
 
 export const hasShareAccessChanged = (current: Share, incoming: ShareGetResponse) =>

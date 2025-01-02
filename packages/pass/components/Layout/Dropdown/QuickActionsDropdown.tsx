@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
 import { Button, NotificationDot } from '@proton/atoms';
 import {
+    Badge,
     Dropdown,
     DropdownMenu,
     Icon,
@@ -18,6 +19,7 @@ import clsx from '@proton/utils/clsx';
 
 export type QuickActionsDropdownProps = {
     children?: ReactNode | ((opened: boolean) => ReactNode);
+    badge?: number;
     className?: string;
     color?: 'weak' | 'norm';
     disabled?: boolean;
@@ -38,6 +40,7 @@ export type QuickActionsDropdownProps = {
 
 export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     children,
+    badge,
     className,
     color,
     disabled,
@@ -60,7 +63,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     return (
         <>
             <Button
-                className={clsx(className, signaled && 'relative')}
+                className={clsx(className, 'flex items-center gap-x-2', signaled && 'relative')}
                 color={color}
                 disabled={disabled}
                 icon
@@ -77,6 +80,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
             >
                 <Icon name={icon} size={iconSize} />
                 {signaled && <NotificationDot className="absolute top-0 right-0 w-2 h-2" />}
+                {badge && <Badge className="shrink-0 bg-primary ratio-square color-invert text-bold">{badge}</Badge>}
             </Button>
 
             <Dropdown
