@@ -12,6 +12,7 @@ export type PersistedSessionBlob =
       };
 
 export interface DefaultPersistedSession {
+    localID: number;
     UserID: string;
     UID: string;
     blob?: string;
@@ -30,6 +31,5 @@ export interface OfflinePersistedSession extends Omit<DefaultPersistedSession, '
 
 export type PersistedSession = OfflinePersistedSession | DefaultPersistedSession;
 
-export type PersistedSessionWithLocalID = PersistedSession & {
-    localID: number;
-};
+// The minimal amount of data needed to render the session list
+export type PersistedSessionLite = Pick<PersistedSession, 'localID' | 'isSelf' | 'persistent'>;

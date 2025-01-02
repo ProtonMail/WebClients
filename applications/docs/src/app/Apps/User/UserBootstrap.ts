@@ -21,6 +21,7 @@ import locales from '../../locales'
 import { extendStore, setupStore } from '../../ReduxStore/store'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '../../ReduxStore/rootReducer'
+import { appMode } from '@proton/shared/lib/webpack.constants'
 
 const getAppContainer = () =>
   import(/* webpackChunkName: "MainContainer" */ './UserAppRootContainer')
@@ -33,14 +34,14 @@ const getAppContainer = () =>
     })
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+  const appName = config.APP_NAME
   const pathname = window.location.pathname
   const searchParams = new URLSearchParams(window.location.search)
   const api = createApi({ config })
   const silentApi = getSilentApi(api)
   const authentication = bootstrap.createAuthentication()
   bootstrap.init({ config, authentication, locales })
-  setupGuestCrossStorage()
-  const appName = config.APP_NAME
+  setupGuestCrossStorage({ appMode, appName })
 
   initSafariFontFixClassnames()
   startLogoutListener()

@@ -7,14 +7,14 @@ import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader, useErrorHandler } from '@proton/components';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
-import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import AccountSwitcherItem from './AccountSwitcherItem';
 
 interface Props extends ModalProps {
-    onSwitchSession: (session: LocalSessionPersisted) => Promise<void>;
-    sessions: LocalSessionPersisted[] | undefined;
+    onSwitchSession: (session: ActiveSession) => Promise<void>;
+    sessions: ActiveSession[] | undefined;
     user: User | undefined;
 }
 

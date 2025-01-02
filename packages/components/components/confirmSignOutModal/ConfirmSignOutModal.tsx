@@ -9,7 +9,7 @@ import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { User } from '@proton/shared/lib/interfaces';
-import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 
 import type { PrivateAuthenticationStore } from '../../containers/app/interface';
 

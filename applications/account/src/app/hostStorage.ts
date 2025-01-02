@@ -1,8 +1,10 @@
+import { createHost } from '@proton/cross-storage';
+import { Action, type ProtonMessageResponses, type ProtonMessages } from '@proton/cross-storage/account-impl';
+import {
+    getMinimalPersistedSession,
+    getPersistedSessions,
+} from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-
-import { createHost } from '../lib';
-import type { ProtonMessageResponses, ProtonMessages } from './interface';
-import { Action } from './interface';
 
 const handler = async (message: ProtonMessages): Promise<ProtonMessageResponses | undefined> => {
     if (message.type === Action.getLocalStorage) {
@@ -23,9 +25,16 @@ const handler = async (message: ProtonMessages): Promise<ProtonMessageResponses 
         return;
     }
 
+    if (message.type === Action.sessions) {
+        if (message.payload.type === 'minimal') {
+            return {
+                type: 'minimal',
+                sessions: getPersistedSessions().map(getMinimalPersistedSession),
+            };
+        }
+    }
+
     throw new Error(`Unknown message type`);
 };
 
-export const setupHostCrossStorage = () => {
-    createHost<ProtonMessages, ProtonMessageResponses>(handler);
-};
+createHost<ProtonMessages, ProtonMessageResponses>(handler);
