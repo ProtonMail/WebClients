@@ -11,8 +11,8 @@ import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe, ShareType } from '@proton/pass/types';
-import { type Share, type ShareGetResponse } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
+import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -48,26 +48,37 @@ export function* synchronize(type: SyncType) {
     const deletedShareIds = cachedShareIds.filter(notIn(remoteShareIds));
     const disabledShareIds = Array.from(new Set(deletedShareIds.concat(inactiveCachedShareIds)));
 
+    type RemoteShare = { shareId: string; share: Maybe<Share>; type: ShareType };
+
     /* only load shares that are not currently present
      * in cache and have not been registered on PassCrypto.
      * Share loading may fail if the userkey it was encrypted
      * with is inactive */
     const remoteShares = (yield Promise.all(
-        remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(async (encryptedShare) => ({
-            shareId: encryptedShare.ShareID,
-            share: await parseShareResponse(encryptedShare),
-        }))
-    )) as { shareId: string; share: Maybe<Share> }[];
+        remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(
+            async (encryptedShare): Promise<RemoteShare> => ({
+                shareId: encryptedShare.ShareID,
+                share: await parseShareResponse(encryptedShare),
+                type: encryptedShare.TargetType,
+            })
+        )
+    )) as RemoteShare[];
 
-    /* split active from inactive shares */
+    /* Split active from inactive shares : if share is not defined
+     * it means the decryption failed and as such is considered inactive. */
     const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
 
-    /* in the case of a partial partial sync : inactive shares
-     * should be resolved for both remote and local shares. */
+    /** FIXME: remove `targetType` check when supporting item shares
+     * This filter is done to avoid detecting a falsely inactive share
+     * when trying to decrypt an item share */
+    const inactiveVaultShares = inactiveRemoteShares.filter(({ share, type }) => !share && type === ShareType.Vault);
+
+    /* In the case of a partial sync : inactive shares should
+     * be resolved for both remote and local shares. */
     const totalInactiveShares =
         type === SyncType.FULL
-            ? inactiveRemoteShares.length
-            : inactiveRemoteShares.length + inactiveCachedShareIds.length;
+            ? inactiveVaultShares.length
+            : inactiveVaultShares.length + inactiveCachedShareIds.length;
 
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
