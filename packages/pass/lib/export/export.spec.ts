@@ -41,6 +41,7 @@ const EXPORT_TEST_PAYLOAD: ExportData = {
                     aliasEmail: null,
                     createTime: getEpoch(),
                     modifyTime: getEpoch() + 100,
+                    shareCount: 0,
                 },
             ],
         },

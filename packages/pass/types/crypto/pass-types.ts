@@ -80,4 +80,5 @@ export type OpenedItem = {
     revision: number;
     revisionTime: number;
     state: ItemState;
+    shareCount: number;
 };

@@ -156,6 +156,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         revisionTime: now,
                         shareId: shareId,
                         state: ItemState.Active,
+                        shareCount: 0,
                     },
                 },
             });
