@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -1449,7 +1449,7 @@
         "Få 10 gratis aliaser!"
       ],
       "Get unlimited aliases!": [
-        "Få ubegrensede aliaser!"
+        "Skaff deg ubegrenset antall aliaser!"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
@@ -3758,7 +3758,7 @@
         "${ name } sletting mislyktes"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } kunne ikke flyttes til tillatlisten"
+        "${ name } kunne ikke flytte til tillatelseslisten"
       ],
       "${ name } failed to move to block list": [
         "${ name } kunne ikke flyttes til blokkeringsliste"
@@ -3767,7 +3767,7 @@
         "${ name } kunne ikke flyttes til søppelpostliste"
       ],
       "${ name } moved to allow list": [
-        "${ name } flyttet til tillatlisten"
+        "${ name } flyttet til tillatelseslisten"
       ],
       "${ name } moved to block list": [
         "${ name } flyttet til blokkeringsliste"
@@ -4040,7 +4040,7 @@
         "${ name } sletting mislyktes"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } kunne ikke flyttes til tillatlisten"
+        "${ name } kunne ikke flyttes til tillatelseslisten"
       ],
       "${ name } failed to move to block list": [
         "${ name } kunne ikke flyttes til blokkeringsliste"
@@ -4049,7 +4049,7 @@
         "${ name } kunne ikke flyttes til søppelpostliste"
       ],
       "${ name } moved to allow list": [
-        "${ name } flyttet til tillatlisten"
+        "${ name } flyttet til tillatelseslisten"
       ],
       "${ name } moved to block list": [
         "${ name } flyttet til blokkeringsliste"
@@ -4685,7 +4685,7 @@
         "Betalingsprosessen ble avbrutt"
       ],
       "Payment process consumed": [
-        "Forbrukt betalingsprosess"
+        "Betalingsprosess forbrukt"
       ],
       "Payment process failed": [
         "Betalingsprosessen mislyktes"
@@ -4888,7 +4888,7 @@
         "Ukjent feil"
       ],
       "Unknown payment token status": [
-        "Ukjent betalingstoken status"
+        "Ukjent status for betalingstoken"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Opplastet fil er ikke en gyldig privat nøkkel. Verifiser og prøv på nytt."
@@ -6160,7 +6160,7 @@
         "Beste avtale"
       ],
       "Checkout": [
-        "Sjekk ut"
+        "Betaling"
       ],
       "Create your account": [
         "Opprett konto"
@@ -11090,7 +11090,7 @@
     },
     "Label to  inform a feature is only available on Beta": {
       "Beta": [
-        "Testversjon"
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -12084,7 +12084,7 @@
         "Alle premium ${ BRAND_NAME }-tjenester. Ett enkelt abonnement"
       ],
       "Auto-delete Spam and Trash": [
-        "Auto-slett søppelpost og papirkurv"
+        "Slett automatisk elementer i søppelpost og papirkurv"
       ],
       "Auto-delete spam and trashed messages": [
         "Fjern automatisk søppelpost og meldinger som er slettet"
@@ -12180,7 +12180,7 @@
         "Krypterte VPN-tjenere"
       ],
       "End-to-end encryption": [
-        "Ende-til-ende kryptering"
+        "Ende-til-ende-kryptering"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Raske P2P/BitTorrent-nedlastinger"
@@ -12336,7 +12336,7 @@
         "Begynn å beskytte deg selv på nettet i 2 enkle trinn"
       ],
       "Strict no-logs policy": [
-        "Streng ingen-loggførings-praksis"
+        "Streng politikk om ingen logger"
       ],
       "Support for up to 2 users": [
         "Støtte for opptil 2 brukere"
@@ -12381,19 +12381,19 @@
         "Ubegrenset antall pålogginger, notater og kredittkort"
       ],
       "Unlimited messages per day": [
-        "Ubegrensede meldinger per dag"
+        "Ubegrenset antall meldinger per dag"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Ubegrenset delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
       ],
       "Unlimited shared vaults with access permissions": [
-        "Ubegrenset delte hvelv med tilgangstillatelser"
+        "Ubegrenset antall delte hvelv med tilgangstillatelser"
       ],
       "Unlimited vault sharing": [
         "Ubegrenset hvelvdeling"
       ],
       "Unlimited vaults": [
-        "Ubegrensede hvelv"
+        "Ubegrenset antall hvelv"
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
@@ -13301,7 +13301,7 @@
         "Android"
       ],
       "Archive": [
-        "Arkiv"
+        "Arkiver"
       ],
       "Ask each time": [
         "Spør hver gang"
@@ -14705,7 +14705,7 @@
         "Det oppstod en feil under generering av gjenopprettingssettet"
       ],
       "There was an error verifying your recovery email": [
-        "Det oppsto en feil under bekreftelse av gjenopprettings-e-posten din"
+        "Det oppstod en feil under bekreftelse av gjenopprettings-e-posten din"
       ],
       "There was an error verifying your recovery phone": [
         "Det oppstod en feil under verifisering av gjenopprettingstelefonen"
@@ -15410,7 +15410,7 @@
         "Navn"
       ],
       "Order": [
-        "Ordre"
+        "Sortering"
       ]
     },
     "Settings/labels": {
@@ -18636,7 +18636,7 @@
         "Angi hvordan listen over meldinger skal se ut som standard."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Angi standard størrelsen på sprett-opp-skrivevinduet som liten eller fullskjerm."
+        "Angi standard størrelse på sprettoppskrivevinduet som liten eller fullskjerm."
       ],
       "Set the default layout for your Inbox.": [
         "Angi standardstil for innboksen din."
@@ -18693,7 +18693,7 @@
         "Denne funksjonen er bare tilgjengelig for betalende brukere."
       ],
       "This feature is only available on Beta": [
-        "Denne funksjonen er kun tilgjengelig på testversjonen"
+        "Denne funksjonen er kun tilgjengelig på Beta"
       ],
       "This key cannot be used for encryption": [
         "Denne nøkkelen kan ikke bli brukt til kryptering"

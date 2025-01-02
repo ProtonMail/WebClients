@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -15269,6 +15269,10 @@
       ],
       "Confirmation code": [
         "Bekræftelseskode"
+      ],
+      "Delete ${ n } user": [
+        "Slet ${ n } bruger",
+        "Slet ${ n } brugere"
       ],
       "Deny": [
         "Afslå"
