@@ -185,3 +185,11 @@ export const parseStringToDOM = (content: string, type: DOMParserSupportedType =
     const parser = new DOMParser();
     return parser.parseFromString(content, type);
 };
+
+export const getShouldProcessLinkClick = (event: MouseEvent, target?: string) => {
+    return (
+        event.button === 0 && // Ignore everything but left clicks
+        (!target || target === '_self') && // Let browser handle "target=_blank" etc.
+        !getIsEventModified(event) // Ignore clicks with modifier keys
+    );
+};
