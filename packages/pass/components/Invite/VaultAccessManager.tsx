@@ -31,7 +31,7 @@ type InviteListItem =
     | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
-    const { createInvite, close } = useInviteActions();
+    const { createVaultInvite, close } = useInviteActions();
 
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const plan = useSelector(selectPassPlan);
@@ -104,7 +104,9 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 key="modal-invite-button"
                                 color="norm"
                                 pill
-                                onClick={() => (memberLimitReached ? setLimitModalOpen(true) : createInvite({ vault }))}
+                                onClick={() =>
+                                    memberLimitReached ? setLimitModalOpen(true) : createVaultInvite({ vault })
+                                }
                                 disabled={!canManage || (plan === UserPassPlan.FREE && memberLimitReached)}
                             >
                                 {c('Action').t`Invite others`}

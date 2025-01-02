@@ -87,7 +87,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     };
 
     const handleShareVaultClick = () => {
-        inviteActions.createInvite({ vault });
+        inviteActions.createVaultInvite({ vault });
         setInviteOpen(false);
     };
 

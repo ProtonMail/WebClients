@@ -21,7 +21,7 @@ import {
 } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectDefaultVault } from '@proton/pass/store/selectors';
-import { BitField, type Callback, type InviteFormValues, type SelectedItem } from '@proton/pass/types';
+import { BitField, type Callback, type SelectedItem, ShareType, type VaultInviteFormValues } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 import noop from '@proton/utils/noop';
 
@@ -37,7 +37,7 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
 >;
 
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
-    const { close, manageAccess } = useInviteActions();
+    const { close, manageVaultAccess } = useInviteActions();
     const org = useOrganization({ sync: true });
     const defaultVault = useSelector(selectDefaultVault);
 
@@ -53,14 +53,15 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     >(inviteBatchCreateIntent, {
         onSuccess: ({ shareId }) => {
             if (props.withVaultCreation) props.onVaultCreated?.(shareId);
-            manageAccess(shareId);
+            manageVaultAccess(shareId);
         },
     });
 
-    const form = useFormik<InviteFormValues>({
+    const form = useFormik<VaultInviteFormValues>({
         initialValues: {
             step: 'members',
             members: [],
+            shareType: ShareType.Vault,
             ...(props.withVaultCreation
                 ? {
                       color: VaultColor.COLOR3,
