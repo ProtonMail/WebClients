@@ -21,11 +21,14 @@ export const ClosePartialPublicViewButton = ({ className }: Props) => {
             icon
             className={className}
             shape="ghost"
-            title={c('Action').t`Close`}
+            // translator: Go back action is going back to Proton Drive
+            title={c('Action').t`Go back`}
             onClick={handleClosePartialPublicView}
             data-testid="public-preview:button:close"
         >
-            <Icon name="cross-big" />
+            <Icon className="mr-2" name="arrow-left" />
+            {/* // translator: Go back action is going back to Proton Drive */}
+            {c('Action').t`Go back`}
         </Button>
     );
 };
