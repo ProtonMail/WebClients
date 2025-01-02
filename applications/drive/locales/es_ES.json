@@ -642,6 +642,9 @@
       "Replace file": [
         "Reemplazar archivo"
       ],
+      "Report": [
+        "Informe"
+      ],
       "Report a problem": [
         "Notificar un problema"
       ],
@@ -4081,6 +4084,10 @@
         "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail",
         "${ providerFoldersNumLocalized } etiquetas encontradas en Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } error de escaneo",
+        "${ scanErrorCount } errores de escaneo"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
@@ -4203,6 +4210,9 @@
       ],
       "And access it from anywhere": [
         "¡Y accede a él desde cualquier lugar!"
+      ],
+      "Anonymous": [
+        "Anónimo"
       ],
       "Anyone with this link can access your file.": [
         "Cualquier persona que tenga este enlace puede acceder a tu archivo."
@@ -6231,6 +6241,9 @@
       ],
       "Upload your first file": [
         "Carga tu primer archivo"
+      ],
+      "Uploaded by": [
+        "Cargado por"
       ],
       "VAT": [
         "IVA"
