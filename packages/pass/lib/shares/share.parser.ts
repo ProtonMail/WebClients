@@ -1,27 +1,24 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
-import type { Maybe, Share, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import type { Maybe, Share, ShareContent, ShareGetResponse, ShareKeyResponse, ShareType } from '@proton/pass/types';
 
-export const parseShareResponse = async (
+// TODO(@djankovic): Revisit if this should be a generic in the first place
+export const parseShareResponse = async <T extends ShareType = ShareType>(
     encryptedShare: ShareGetResponse,
     options?: { eventId?: string; shareKeys?: ShareKeyResponse[] }
-): Promise<Maybe<Share<ShareType.Vault>>> => {
+): Promise<Maybe<Share<T>>> => {
     const shareId = encryptedShare.ShareID;
     const [shareKeys, eventId] = await Promise.all([
         options?.shareKeys ?? getAllShareKeys(shareId),
         options?.eventId ?? getShareLatestEventId(shareId),
     ]);
 
-    /** Remove when supporting Item shares */
-    if (encryptedShare.TargetType !== ShareType.Vault) return;
-
-    const share = await PassCrypto.openShare<ShareType.Vault>({ encryptedShare, shareKeys });
+    const share = await PassCrypto.openShare<T>({ encryptedShare, shareKeys });
 
     if (share) {
         return {
-            content: decodeVaultContent(share.content),
+            content: (share.content ? decodeVaultContent(share.content) : {}) as ShareContent<T>,
             createTime: share.createTime,
             eventId,
             newUserInvitesReady: share.newUserInvitesReady,
