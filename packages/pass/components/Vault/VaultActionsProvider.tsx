@@ -69,9 +69,9 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             create: () => setState({ view: 'create' }),
             delete: (vault) => setState({ view: 'delete', vault }),
             edit: (vault) => setState({ view: 'edit', vault }),
-            invite: (vault) => inviteActions.createInvite({ vault }),
+            invite: (vault) => inviteActions.createVaultInvite({ vault }),
             leave: (vault) => setState({ view: 'leave', vault }),
-            manage: (vault) => inviteActions.manageAccess(vault.shareId),
+            manage: (vault) => inviteActions.manageVaultAccess(vault.shareId),
             moveItems: (vault) => setState({ view: 'move', vault }),
             select: (selected) => {
                 switch (selected) {

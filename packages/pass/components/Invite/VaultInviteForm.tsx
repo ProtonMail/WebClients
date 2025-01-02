@@ -15,7 +15,7 @@ import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
 import { selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
-import { type InviteFormValues, ShareRole } from '@proton/pass/types';
+import { ShareRole, type VaultInviteFormValues } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import clsx from '@proton/utils/clsx';
@@ -30,7 +30,7 @@ export const FORM_ID = 'vault-invite';
 type Props = {
     addressValidator: InviteAddressValidator;
     autoFocus?: boolean;
-    form: FormikContextType<InviteFormValues>;
+    form: FormikContextType<VaultInviteFormValues>;
 };
 
 /** `VaultInviteForm` takes a forwarded ref parameter for the email input element.
@@ -119,7 +119,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                     <FieldsetCluster>
                         <Field
                             autoFocus={autoFocus}
-                            component={ListField<InviteFormValues>}
+                            component={ListField<VaultInviteFormValues>}
                             disabled={addressValidator.loading}
                             fieldLoading={(entry) => addressValidator.loading && emailsValidating.includes(entry)}
                             fieldKey="members"
@@ -169,7 +169,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
 
             {step === 'vault' && (
                 <div className="flex flex-column gap-y-4 anime-fade-in">
-                    <VaultForm form={form as FormikContextType<InviteFormValues<true>>} autoFocus={autoFocus} />
+                    <VaultForm form={form as FormikContextType<VaultInviteFormValues<true>>} autoFocus={autoFocus} />
                 </div>
             )}
 
