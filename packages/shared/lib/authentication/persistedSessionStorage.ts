@@ -10,7 +10,7 @@ import type {
     OfflinePersistedSession,
     PersistedSession,
     PersistedSessionBlob,
-    PersistedSessionWithLocalID,
+    PersistedSessionLite,
 } from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
 import { getValidatedLocalID } from './fork/validation';
@@ -45,6 +45,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             return true;
         })();
         return {
+            localID,
             UserID: parsedValue.UserID || '',
             UID: parsedValue.UID || '',
             blob: parsedValue.blob || '',
@@ -65,21 +66,41 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     }
 };
 
-export const removePersistedSession = async (localID: number, UID: string) => {
-    const oldSession = getPersistedSession(localID);
-    if (oldSession?.UID) {
-        removeLastRefreshDate(oldSession.UID);
-    }
-    if (!oldSession || (oldSession.UID && UID !== oldSession.UID)) {
-        return;
-    }
+export const removePersistedSession = async (session: PersistedSession) => {
+    removeLastRefreshDate(session.UID);
+    removeItem(getKey(session.localID));
     if (sessionRemovalListeners.length()) {
-        await Promise.all(sessionRemovalListeners.notify(oldSession)).catch(noop);
+        await Promise.all(sessionRemovalListeners.notify(session)).catch(noop);
     }
-    removeItem(getKey(localID));
 };
 
-export const getPersistedSessions = (): PersistedSessionWithLocalID[] => {
+// Retrieve a persisted session by LocalID and UserID combination, since they could potentially change in asynchronous scenarios
+export const getPersistedSessionByLocalIDAndUserID = (localID: number, UserID: string) => {
+    const persistedSession = getPersistedSession(localID);
+    if (!persistedSession || persistedSession.UserID !== UserID) {
+        return;
+    }
+    return persistedSession;
+};
+
+// Retrieve a persisted session by LocalID and UID combination, since they could potentially change in asynchronous scenarios
+export const getPersistedSessionByLocalIDAndUID = (localID: number, UID: string) => {
+    const persistedSession = getPersistedSession(localID);
+    if (!persistedSession || persistedSession.UID !== UID) {
+        return;
+    }
+    return persistedSession;
+};
+
+export const removePersistedSessionByLocalIDAndUID = async (localID: number, UID: string) => {
+    const persistedSession = getPersistedSessionByLocalIDAndUID(localID, UID);
+    if (!persistedSession) {
+        return;
+    }
+    return removePersistedSession(persistedSession);
+};
+
+export const getPersistedSessions = (): PersistedSession[] => {
     const localStorageKeys = Object.keys(localStorage);
     return localStorageKeys
         .filter((key) => key.startsWith(STORAGE_PREFIX))
@@ -98,6 +119,14 @@ export const getPersistedSessions = (): PersistedSessionWithLocalID[] => {
             };
         })
         .filter(isTruthy);
+};
+
+export const getMinimalPersistedSession = ({ localID, isSelf, persistent }: PersistedSession): PersistedSessionLite => {
+    return {
+        localID,
+        isSelf,
+        persistent,
+    };
 };
 
 export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | undefined => {
@@ -187,7 +216,7 @@ export const setPersistedSessionWithBlob = async (
         } as const;
     })();
 
-    const persistedSession: PersistedSession = {
+    const persistedSession: Omit<PersistedSession, 'localID'> = {
         UserID: data.UserID,
         UID: data.UID,
         isSelf: data.isSelf,

@@ -5,7 +5,7 @@ import { ForkType } from './constants';
 import type { ConsumeForkParameters } from './getConsumeForkParameters';
 
 export const getCurrentUrl = ({ forkType, fromApp }: { forkType?: ForkType; fromApp: APP_NAMES }) => {
-    if (forkType === ForkType.SWITCH) {
+    if (forkType === ForkType.SWITCH || forkType === ForkType.LOGIN) {
         return getAppHref('/', fromApp, undefined, window.location);
     }
     return window.location.href;

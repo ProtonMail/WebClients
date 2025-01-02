@@ -4,8 +4,8 @@ export const ForkVersion = 2;
 
 export enum ForkType {
     SWITCH = '1',
-    // Used in VPN extension
     SIGNUP = '2',
+    LOGIN = '3',
 }
 
 export const ForkableApps = new Set(

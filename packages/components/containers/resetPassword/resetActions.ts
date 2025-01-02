@@ -32,9 +32,9 @@ import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import {
     attemptDeviceRecovery,
     getIsDeviceRecoveryAvailable,
-    removeDeviceRecovery,
     storeDeviceRecovery,
 } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
@@ -71,7 +71,7 @@ export const handleNewPassword = async ({
         addresses,
         passphrase,
         preAuthKTVerify,
-        supportV6Keys: SupportPgpV6Keys === 1
+        supportV6Keys: SupportPgpV6Keys === 1,
     });
 
     await srpVerify({
