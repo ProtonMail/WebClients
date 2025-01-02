@@ -1,11 +1,8 @@
 import type { OnLoginCallbackArguments } from '@proton/components';
-import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
-export const addSession = (
-    previousSessions: LocalSessionPersisted[] | undefined,
-    session: OnLoginCallbackArguments
-) => {
+export const addSession = (previousSessions: ActiveSession[] | undefined, session: OnLoginCallbackArguments) => {
     if (!previousSessions) {
         return undefined;
     }
@@ -19,10 +16,11 @@ export const addSession = (
     if (!persisted) {
         return previousSessions;
     }
-    const { LocalID, User } = session;
-    const localSessionPersisted: LocalSessionPersisted = {
+    const { LocalID, User, UID } = session;
+    const activeSession: ActiveSession = {
         remote: {
             LocalID,
+            UID,
             DisplayName: User.DisplayName,
             Username: User.Name,
             UserID: User.ID,
@@ -33,5 +31,5 @@ export const addSession = (
             localID: LocalID,
         },
     };
-    return [...previousSessions, localSessionPersisted];
+    return [...previousSessions, activeSession];
 };

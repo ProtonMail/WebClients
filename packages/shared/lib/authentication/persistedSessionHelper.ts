@@ -11,7 +11,7 @@ import { captureMessage } from '../helpers/sentry';
 import type { Api, User as tsUser } from '../interfaces';
 import { isSelf } from '../user/helpers';
 import { appMode } from '../webpack.constants';
-import type { PersistedSessionWithLocalID } from './SessionInterface';
+import type { PersistedSession, PersistedSessionLite } from './SessionInterface';
 import { generateClientKey, getClientKey } from './clientKey';
 import { InvalidPersistentSessionError } from './error';
 import type { LocalKeyResponse, LocalSessionResponse } from './interface';
@@ -21,9 +21,30 @@ import {
     getDecryptedPersistedSessionBlob,
     getPersistedSession,
     getPersistedSessions,
-    removePersistedSession,
+    removePersistedSessionByLocalIDAndUID,
     setPersistedSessionWithBlob,
 } from './persistedSessionStorage';
+
+export const compareSessions = (a: ActiveSessionLite, b: ActiveSessionLite) => {
+    if (a.remote.DisplayName && b.remote.DisplayName) {
+        return a.remote.DisplayName.localeCompare(b.remote.DisplayName);
+    }
+    if (a.remote.Username && b.remote.Username) {
+        return a.remote.Username.localeCompare(b.remote.Username);
+    }
+    if (a.remote.PrimaryEmail && b.remote.PrimaryEmail) {
+        return a.remote.PrimaryEmail.localeCompare(b.remote.PrimaryEmail);
+    }
+    return 0;
+};
+
+interface SessionOptions {
+    clearInvalidSession: boolean;
+}
+
+const defaultSessionOptions: SessionOptions = {
+    clearInvalidSession: true,
+};
 
 export type ResumedSessionResult = {
     UID: string;
@@ -49,7 +70,15 @@ export const logRemoval = (e: any = {}, UID: string, context: string) => {
     });
 };
 
-export const resumeSession = async ({ api, localID }: { api: Api; localID: number }): Promise<ResumedSessionResult> => {
+export const resumeSession = async ({
+    api,
+    localID,
+    options = defaultSessionOptions,
+}: {
+    api: Api;
+    localID: number;
+    options?: SessionOptions;
+}): Promise<ResumedSessionResult> => {
     const persistedSession = getPersistedSession(localID);
     if (!persistedSession) {
         throw new InvalidPersistentSessionError('Missing persisted session or UID');
@@ -103,15 +132,15 @@ export const resumeSession = async ({ api, localID }: { api: Api; localID: numbe
             offlineKey,
         };
     } catch (e: any) {
-        if (getIs401Error(e)) {
+        if (options.clearInvalidSession && getIs401Error(e)) {
             logRemoval(e, persistedUID, 'resume 401');
-            await removePersistedSession(localID, persistedUID).catch(noop);
+            await removePersistedSessionByLocalIDAndUID(localID, persistedUID).catch(noop);
             throw new InvalidPersistentSessionError('Session invalid');
         }
-        if (e instanceof InvalidPersistentSessionError) {
+        if (options.clearInvalidSession && e instanceof InvalidPersistentSessionError) {
             logRemoval(e, persistedUID, 'invalid blob');
             await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
-            await removePersistedSession(localID, persistedUID).catch(noop);
+            await removePersistedSessionByLocalIDAndUID(localID, persistedUID).catch(noop);
             throw e;
         }
         throw e;
@@ -166,27 +195,41 @@ export const persistSession = async ({
     return { clientKey: serializedData, offlineKey };
 };
 
-export const getActiveSessionByUserID = (UserID: string, isSelf: boolean) => {
-    return getPersistedSessions().find((persistedSession) => {
+export const findPersistedSession = ({
+    persistedSessions,
+    UserID,
+    isSelf,
+}: {
+    persistedSessions: PersistedSession[];
+    UserID: string;
+    isSelf: boolean;
+}) => {
+    return persistedSessions.find((persistedSession) => {
         const isSameUserID = persistedSession.UserID === UserID;
         const isSameSelf = persistedSession.isSelf === isSelf;
         return isSameUserID && isSameSelf;
     });
 };
 
-export interface LocalSessionPersisted {
+export type ActiveSessionBase<T> = {
     remote: LocalSessionResponse;
-    persisted: PersistedSessionWithLocalID;
-}
+    persisted: T;
+};
 
-const getNonExistingSessions = async (
-    api: Api,
-    persistedSessions: PersistedSessionWithLocalID[],
-    localSessions: LocalSessionPersisted[]
-): Promise<LocalSessionPersisted[]> => {
-    const localSessionsSet = new Set(
-        localSessions.map((localSessionPersisted) => localSessionPersisted.persisted.localID)
-    );
+export type ActiveSessionLite = ActiveSessionBase<PersistedSessionLite>;
+export type ActiveSession = ActiveSessionBase<PersistedSession>;
+
+// Can only be called from parent sessions since the UIDs returned from remote are not mapped to child sessions
+export const getActiveSessionsMissingFromRemoteResponse = async ({
+    api,
+    persistedSessions,
+    activeSessions,
+}: {
+    api: Api;
+    persistedSessions: PersistedSession[];
+    activeSessions: ActiveSession[];
+}): Promise<ActiveSession[]> => {
+    const localSessionsSet = new Set(activeSessions.map(({ persisted }) => persisted.localID));
 
     const nonExistingSessions = persistedSessions.filter((persistedSession) => {
         return !localSessionsSet.has(persistedSession.localID);
@@ -198,22 +241,24 @@ const getNonExistingSessions = async (
 
     const result = await Promise.all(
         nonExistingSessions.map(async (persistedSession) => {
-            const result = await api<{ User: tsUser }>(withUIDHeaders(persistedSession.UID, getUser())).catch((e) => {
+            const { UID, localID } = persistedSession;
+            const result = await api<{ User: tsUser }>(withUIDHeaders(UID, getUser())).catch((e) => {
                 if (getIs401Error(e)) {
-                    logRemoval(e, persistedSession.UID, 'non-existing-sessions');
-                    removePersistedSession(persistedSession.localID, persistedSession.UID).catch(noop);
+                    logRemoval(e, UID, 'non-existing-sessions');
+                    removePersistedSessionByLocalIDAndUID(localID, UID).catch(noop);
                 }
             });
             if (!result?.User) {
-                return undefined;
+                return;
             }
             const User = result.User;
             const remoteSession: LocalSessionResponse = {
+                UID,
                 Username: User.Name,
                 DisplayName: User.DisplayName,
                 PrimaryEmail: User.Email,
                 UserID: User.ID,
-                LocalID: persistedSession.localID,
+                LocalID: localID,
             };
             return {
                 remote: remoteSession,
@@ -225,36 +270,22 @@ const getNonExistingSessions = async (
     return result.filter(isTruthy);
 };
 
-export const getActiveLocalSession = async (api: Api) => {
+export const getActiveSessionsData = async <T extends PersistedSessionLite>({
+    api,
+    persistedSessions,
+}: {
+    api: Api;
+    persistedSessions: T[];
+}): Promise<ActiveSessionBase<T>[]> => {
+    const map = Object.fromEntries(persistedSessions.map((value) => [value.localID, value]));
     const { Sessions = [] } = await api<{ Sessions: LocalSessionResponse[] }>(getLocalSessions());
-
-    const persistedSessions = getPersistedSessions();
-    const persistedSessionsMap = Object.fromEntries(
-        persistedSessions.map((persistedSession) => [persistedSession.localID, persistedSession])
-    );
-
-    // The returned sessions have to exist in localstorage to be able to activate
-    const maybeActiveSessions = Sessions.map((remoteSession) => {
-        return {
-            persisted: persistedSessionsMap[remoteSession.LocalID],
-            remote: remoteSession,
-        };
-    }).filter((value): value is LocalSessionPersisted => !!value.persisted);
-
-    const nonExistingSessions = await getNonExistingSessions(api, persistedSessions, maybeActiveSessions);
-    if (nonExistingSessions.length) {
-        captureMessage('Unexpected non-existing sessions', {
-            extra: {
-                length: nonExistingSessions.length,
-                ids: nonExistingSessions.map((session) => ({
-                    id: `${session.remote.Username || session.remote.PrimaryEmail || session.remote.UserID}`,
-                    lid: session.remote.LocalID,
-                })),
-            },
-        });
-    }
-
-    return [...maybeActiveSessions, ...nonExistingSessions];
+    return Sessions.reduce<ActiveSessionBase<T>[]>((acc, remote) => {
+        const persisted = map[remote.LocalID];
+        if (persisted) {
+            acc.push({ persisted, remote });
+        }
+        return acc;
+    }, []);
 };
 
 export enum GetActiveSessionType {
@@ -265,12 +296,12 @@ export enum GetActiveSessionType {
 export type GetActiveSessionsResult =
     | {
           session?: ResumedSessionResult;
-          sessions: LocalSessionPersisted[];
+          sessions: ActiveSession[];
           type: GetActiveSessionType.Switch;
       }
     | {
           session: ResumedSessionResult;
-          sessions: LocalSessionPersisted[];
+          sessions: ActiveSession[];
           type: GetActiveSessionType.AutoPick;
       };
 
@@ -279,11 +310,13 @@ const pickSessionByEmail = async ({
     email,
     session,
     sessions,
+    options,
 }: {
     api: Api;
     email: string;
     session?: ResumedSessionResult;
-    sessions: LocalSessionPersisted[];
+    sessions: ActiveSession[];
+    options?: SessionOptions;
 }) => {
     const lowerCaseEmail = email.toLowerCase();
 
@@ -308,7 +341,7 @@ const pickSessionByEmail = async ({
             }
             const firstMatchingSession = remoteSessions[0];
             if (firstMatchingSession && firstMatchingSession.LocalID !== undefined) {
-                return resumeSession({ api, localID: firstMatchingSession.LocalID });
+                return resumeSession({ api, localID: firstMatchingSession.LocalID, options });
             }
         }
         return;
@@ -318,7 +351,7 @@ const pickSessionByEmail = async ({
         return session;
     }
 
-    return resumeSession({ api, localID: matchingSession.remote.LocalID });
+    return resumeSession({ api, localID: matchingSession.remote.LocalID, options });
 };
 
 export const maybePickSessionByEmail = async ({
@@ -326,11 +359,13 @@ export const maybePickSessionByEmail = async ({
     localID,
     email,
     result,
+    options,
 }: {
     api: Api;
     localID?: number;
     email?: string;
     result: GetActiveSessionsResult;
+    options?: SessionOptions;
 }): Promise<GetActiveSessionsResult> => {
     const { session, sessions } = result;
 
@@ -342,6 +377,7 @@ export const maybePickSessionByEmail = async ({
             email,
             session,
             sessions,
+            options,
         }).catch(noop);
 
         if (maybeMatchingResumedSession) {
@@ -369,10 +405,12 @@ export const getActiveSessions = async ({
     api,
     localID,
     email,
+    options,
 }: {
     api: Api;
     localID?: number;
     email?: string;
+    options?: SessionOptions;
 }): Promise<GetActiveSessionsResult> => {
     let persistedSessions = getPersistedSessions();
 
@@ -386,8 +424,19 @@ export const getActiveSessions = async ({
 
     for (const persistedSession of persistedSessions) {
         try {
-            const session = await resumeSession({ api, localID: persistedSession.localID });
-            const sessions = await getActiveLocalSession(getUIDApi(session.UID, api));
+            const session = await resumeSession({ api, localID: persistedSession.localID, options });
+            // Refetch to have latest since we're looping and it might get refreshed
+            const latestPersistedSessions = getPersistedSessions();
+            const activeSessions = await getActiveSessionsData({
+                api: getUIDApi(session.UID, api),
+                persistedSessions: latestPersistedSessions,
+            });
+            const missingSessions = await getActiveSessionsMissingFromRemoteResponse({
+                api,
+                activeSessions,
+                persistedSessions: latestPersistedSessions,
+            });
+            const sessions = [...activeSessions, ...missingSessions];
 
             const hasOnlyOneSessionAndUnspecifiedLocalID = localID === undefined && sessions.length === 1;
             // This is technically incorrect, but users have bookmarked sessions with expired local ids, so in the case of 1 session on account
@@ -400,7 +449,7 @@ export const getActiveSessions = async ({
                     ? GetActiveSessionType.AutoPick
                     : GetActiveSessionType.Switch;
 
-            return await maybePickSessionByEmail({ api, localID, email, result: { session, sessions, type } });
+            return await maybePickSessionByEmail({ api, localID, email, result: { session, sessions, type }, options });
         } catch (e: any) {
             if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                 // Session expired, try another session
@@ -418,13 +467,25 @@ export const getActiveSessions = async ({
     };
 };
 
-export const maybeResumeSessionByUser = async (api: Api, User: tsUser) => {
-    const maybePersistedSession = getActiveSessionByUserID(User.ID, isSelf(User));
+export const maybeResumeSessionByUser = async ({
+    api,
+    User,
+    options,
+}: {
+    api: Api;
+    User: tsUser;
+    options?: SessionOptions;
+}) => {
+    const maybePersistedSession = findPersistedSession({
+        persistedSessions: getPersistedSessions(),
+        UserID: User.ID,
+        isSelf: isSelf(User),
+    });
     if (!maybePersistedSession) {
         return;
     }
     try {
-        return await resumeSession({ api, localID: maybePersistedSession.localID });
+        return await resumeSession({ api, localID: maybePersistedSession.localID, options });
     } catch (e: any) {
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;

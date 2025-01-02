@@ -8,7 +8,6 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
 import type { APP_NAMES } from '../constants';
-import { getItem, removeItem, setItem } from '../helpers/storage';
 import type {
     Address,
     Api,
@@ -36,23 +35,7 @@ import {
     parseRecoveryFiles,
     validateRecoverySecret,
 } from './recoveryFile';
-
-const getRecoveryMessageId = (userID: string) => `dr-${userID}`;
-
-const setRecoveryMessage = (userID: string, recoveryMessage: string) => {
-    setItem(getRecoveryMessageId(userID), recoveryMessage);
-};
-
-const getRecoveryMessage = (userID: string) => {
-    return getItem(getRecoveryMessageId(userID));
-};
-
-export const getHasRecoveryMessage = (userID: string) => {
-    return !!getRecoveryMessage(userID);
-};
-export const removeDeviceRecovery = (userID: string) => {
-    removeItem(getRecoveryMessageId(userID));
-};
+import { getHasRecoveryMessage, getRecoveryMessage, removeDeviceRecovery, setRecoveryMessage } from './storage';
 
 export const getKeysFromDeviceRecovery = async (user: User) => {
     const recoveryMessage = getRecoveryMessage(user.ID);

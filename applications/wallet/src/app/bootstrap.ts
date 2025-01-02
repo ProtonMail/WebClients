@@ -21,6 +21,7 @@ import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 import { extendStore, setupStore } from '@proton/wallet/store';
 
@@ -38,6 +39,7 @@ export const bootstrapApp = async ({
     signal?: AbortSignal;
     notificationsManager: NotificationsManager;
 }) => {
+    const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
     const isIframe = getIsIframe();
@@ -49,10 +51,8 @@ export const bootstrapApp = async ({
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
 
-    setupGuestCrossStorage();
+    setupGuestCrossStorage({ appMode, appName });
     initElectronClassnames();
-
-    const appName = config.APP_NAME;
 
     const run = async () => {
         const appContainerPromise = getAppContainer();

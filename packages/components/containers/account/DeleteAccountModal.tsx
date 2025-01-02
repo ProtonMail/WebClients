@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { signoutAction } from '@proton/account/authenticationService';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
@@ -23,14 +24,12 @@ import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { handleLogout } from '@proton/shared/lib/authentication/logout';
 import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -43,6 +42,7 @@ const { DIFFERENT_ACCOUNT, TOO_EXPENSIVE, MISSING_FEATURE, USE_OTHER_SERVICE, OT
 
 interface Props extends Omit<ModalProps<'form'>, 'as'> {
     onSuccess?: () => Promise<void>;
+    disableLogout?: boolean;
     hideHeader?: boolean;
 }
 
@@ -85,9 +85,9 @@ const DeleteAccountModal = (props: Props) => {
     } = props;
     const eventManager = useEventManager();
     const api = useApi();
-    const authentication = useAuthentication();
     const [{ isAdmin }] = useUser();
     const getOrganization = useGetOrganization();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
         check: false,
@@ -95,7 +95,6 @@ const DeleteAccountModal = (props: Props) => {
         feedback: '',
     });
     const { validator, onFormSubmit } = useFormErrors();
-    const { APP_NAME } = useConfig();
 
     const reasons = [
         <Option
@@ -127,7 +126,6 @@ const DeleteAccountModal = (props: Props) => {
             // If a user is part of a family plan or duo plan we first need to leave the organization before deleting the account.
             // Refreshing the event manager is necessary to update the organization state
             if (getOrganizationDenomination(organization) === 'familyGroup' && !isAdmin) {
-                eventManager.start();
                 await api(leaveOrganisation());
                 await eventManager.call();
                 eventManager.stop();
@@ -141,8 +139,10 @@ const DeleteAccountModal = (props: Props) => {
             );
 
             await onSuccess?.();
+            if (!props.disableLogout) {
+                dispatch(signoutAction({ clearDeviceRecovery: true }));
+            }
             onClose?.();
-            handleLogout({ appName: APP_NAME, authentication, clearDeviceRecoveryData: true, type: 'full' });
         } catch (error: any) {
             eventManager.start();
             throw error;

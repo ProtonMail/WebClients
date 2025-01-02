@@ -31,6 +31,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
+import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';
@@ -46,6 +47,7 @@ const getAppContainer = () =>
 const { isIframe, isDrawerApp, parentApp } = embeddedDrawerAppInfos;
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+    const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
 
@@ -54,13 +56,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
 
-    setupGuestCrossStorage();
+    setupGuestCrossStorage({ appMode, appName });
     initElectronClassnames();
     initLogicalProperties();
     initSafariFontFixClassnames();
     startLogoutListener();
-
-    const appName = config.APP_NAME;
 
     if (isElectronMail) {
         listenFreeTrialSessionExpiration(appName, authentication, api);
