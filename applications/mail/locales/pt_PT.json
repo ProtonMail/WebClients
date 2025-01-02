@@ -1516,8 +1516,17 @@
       "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
         "Os dados permanecem no dispositivo para proteger a sua privacidade. Requer um descarregamento e hardware compatível."
       ],
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Os dados permanecem no seu dispositivo, mas é necessário um descarregamento único e um equipamento compatível."
+      ],
+      "Fast and secure. No logs are kept.": [
+        "Rápido e seguro. Nenhum registo é mantido."
+      ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Nenhum registo é mantido para proteger a sua privacidade. Processamento mais rápido."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executar nos servidores da ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Executar no dispositivo"
@@ -1527,6 +1536,11 @@
       ],
       "Securely run on device": [
         "Executado de forma segura no dispositivo"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Melhore a produtividade dos seus e-mails. Deixe o ${ BRAND_NAME } Scribe ajudá-lo a redigir, responder e corrigir os seus e-mails."
       ]
     },
     "Attached ics file error": {
@@ -4854,6 +4868,11 @@
         "Não lido"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Tem anexos"
+      ]
+    },
     "Filter preview": {
       "read": [
         "lido"
@@ -5292,6 +5311,9 @@
       ],
       "Your email account requires one to export your data.": [
         "A sua conta de e-mail requer uma para exportar os seus dados."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "O seu endereço de e-mail e a palavra-passe da aplicação estão corretos. Não utilize a sua palavra-passe normal."
       ],
       "Your email address and password are correct.": [
         "O seu endereço de e-mail e a sua palavra-passe estão corretos."
@@ -9482,6 +9504,9 @@
       ]
     },
     "Onboarding modal": {
+      "Dark Web Monitoring": [
+        "Monitorização da Dark Web"
+      ],
       "Let's get started": [
         "Vamos começar"
       ],
@@ -10768,6 +10793,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
         "${ dayDiff } dias restantes"
@@ -10809,6 +10837,9 @@
       ],
       "Automatic email forwarding": [
         "Encaminhamento automático de e-mail"
+      ],
+      "Dark web monitoring": [
+        "Monitorização da Dark Web"
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novas aplicações e funcionalidades"

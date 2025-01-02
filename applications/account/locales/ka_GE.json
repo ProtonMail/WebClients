@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1641,6 +1641,10 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება.",
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება."
       ]
     },
     "bf2023: Info": {
@@ -1787,6 +1791,9 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და Pass Plus-თან სამუდამო წვდომას მოგცემთ."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
       ],
@@ -3665,6 +3672,9 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "მეგობრების მოწვევა შეგიძლიათ, გააგრძელოთ, მაგრამ მეტ კრედიტებს აღარ მიიღებთ"
+      ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "პაროლის წესები შეგიძლიათ, ნაძალადევად გადაატაროთ ორგანიზაციის წევრებზე, როცა ისინი აგენერირებენ პაროლებს ${ PASS_APP_NAME }-ში."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
@@ -6706,6 +6716,9 @@
         "${ numberOfNonPrivateKeys } ატვირთული ფაილი სწორი პირადი გასაღები არაა. შეამოწმეთ და თავიდან სცადეთ.",
         "${ numberOfNonPrivateKeys } ატვირთული ფაილი სწორი პირადი გასაღები არაა. შეამოწმეთ და თავიდან სცადეთ."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
@@ -7123,6 +7136,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
+      "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }-ის ანგარიშის შექმნით თქვენს SimpleLogin-ის ელფოსტასთან ერთად, თქვენი ფსევდონიმების მართვა პირდაპირ ${ PASS_APP_NAME }-დან შეგიძლიათ."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "ნაგულისხმევად ორგანიზაციის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
       ],
@@ -7173,6 +7189,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "მიერთების მონაცემები დაახლოებით 1 საათში იქნება ხელმისაწვდომი"
+      ],
+      "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
+        "გააგრძელეთ, რომ დაუშვათ **${ affiliationsText }** **${ organizationValue.Name }**-დან, შეუერთდეს თქვენს ორგანიზაციას ${ BRAND_NAME }."
       ],
       "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
         "გააგრძელეთ, რომ დაუკავშირდით **${ organizationValue.Name }**-ს თქვენი ${ BRAND_NAME }-ის ორგანიზაციიდან."
@@ -12577,6 +12596,9 @@
       ],
       "Get Mail Plus for ${ priceCoupon }": [
         "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceMailPlus } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ],
       "Your account's usage": [
         "თქვენი ანგარიშის გამოყენება"
@@ -18658,6 +18680,9 @@
       ],
       "External address - disables end-to-end email encryption for this group": [
         "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
       ],
       "Group membership paused": [
         "ჯგუფის წევრობა შეჩერდა"
