@@ -1,3 +1,7 @@
+### Version 1.27.2
+
+- Fix app-crash when detecting item shares
+
 ### Version 1.27.1
 
 - Remove Pass Monitor feature discovery notification
