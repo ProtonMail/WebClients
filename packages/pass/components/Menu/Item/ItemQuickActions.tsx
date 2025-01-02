@@ -10,7 +10,8 @@ import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme, itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
+import { usePasswordGeneratorAction } from '@proton/pass/components/Password/PasswordGeneratorAction';
+import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
@@ -31,7 +32,8 @@ type Props = {
 
 export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, onCreate }) => {
     const { matchItemList } = useNavigationMatches();
-    const passwordContext = usePasswordContext();
+    const passwordHistory = usePasswordHistoryActions();
+    const generatePassword = usePasswordGeneratorAction();
     const copyToClipboard = useCopyToClipboard();
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
@@ -49,11 +51,11 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
     });
 
     const handleNewPasswordClick = () => {
-        void passwordContext.generate({
+        void generatePassword({
             actionLabel: c('Action').t`Copy and close`,
             className: SubTheme.RED,
             onSubmit: (value) => {
-                passwordContext.history.add({ value, origin });
+                passwordHistory.add({ value, origin });
                 copyToClipboard(value).catch(noop);
             },
         });
