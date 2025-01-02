@@ -1,4 +1,5 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { omit } from '@proton/shared/lib/helpers/object';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -21,9 +22,14 @@ import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 export const STORAGE_PREFIX = 'ps-';
 const getKey = (localID: number) => `${STORAGE_PREFIX}${localID}`;
 
-const sessionRemovalListeners = createListeners<PersistedSession[], Promise<void>>();
+const sessionCreateListeners = createListeners<[PersistedSession], Promise<void>>();
+const sessionRemovalListeners = createListeners<[PersistedSession], Promise<void>>();
 
-export const registerSessionRemovalListener = (listener: (persistedSessions: PersistedSession) => Promise<void>) => {
+export const registerSessionCreateListener = (listener: (persistedSession: PersistedSession) => Promise<void>) => {
+    sessionCreateListeners.subscribe(listener);
+};
+
+export const registerSessionRemovalListener = (listener: (persistedSession: PersistedSession) => Promise<void>) => {
     sessionRemovalListeners.subscribe(listener);
 };
 
@@ -121,11 +127,10 @@ export const getPersistedSessions = (): PersistedSession[] => {
         .filter(isTruthy);
 };
 
-export const getMinimalPersistedSession = ({ localID, isSelf, persistent }: PersistedSession): PersistedSessionLite => {
+export const getMinimalPersistedSession = ({ localID, isSelf }: PersistedSession): PersistedSessionLite => {
     return {
         localID,
         isSelf,
-        persistent,
     };
 };
 
@@ -216,7 +221,8 @@ export const setPersistedSessionWithBlob = async (
         } as const;
     })();
 
-    const persistedSession: Omit<PersistedSession, 'localID'> = {
+    const persistedSession = {
+        localID,
         UserID: data.UserID,
         UID: data.UID,
         isSelf: data.isSelf,
@@ -231,5 +237,9 @@ export const setPersistedSessionWithBlob = async (
         ),
         persistedAt: Date.now(),
     };
-    setItem(getKey(localID), JSON.stringify(persistedSession));
+    setItem(getKey(localID), JSON.stringify(omit(persistedSession, ['localID'])));
+
+    if (sessionCreateListeners.length()) {
+        await Promise.all(sessionCreateListeners.notify(persistedSession)).catch(noop);
+    }
 };
