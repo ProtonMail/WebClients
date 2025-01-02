@@ -6,9 +6,12 @@ import { useNavigationFilters } from '@proton/pass/components/Navigation/Navigat
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
-import type { MaybeNull } from '@proton/pass/types';
+import { type MaybeNull, ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 
+import { ItemAccessManager } from './ItemAccessManager';
+import { ItemInviteCreate, type ItemInviteCreateProps } from './ItemInviteCreate';
+import { ItemInviteRespond } from './ItemInviteRespond';
 import { VaultAccessManager } from './VaultAccessManager';
 import { VaultInviteCreate, type VaultInviteCreateValues } from './VaultInviteCreate';
 import { VaultInviteRespond } from './VaultInviteRespond';
@@ -16,13 +19,17 @@ import { VaultInviteRespond } from './VaultInviteRespond';
 type InviteContextState =
     | ({ view: 'invite-vault' } & VaultInviteCreateValues<false>)
     | ({ view: 'invite-new' } & VaultInviteCreateValues<true>)
-    | { view: 'manage-vault'; shareId: string };
+    | ({ view: 'invite-item' } & ItemInviteCreateProps)
+    | { view: 'manage-vault'; shareId: string }
+    | { view: 'manage-item'; shareId: string; itemId: string };
 
 type InviteActionsContextValue = {
     close: () => void;
     createVaultInvite: (props: VaultInviteCreateValues<false>) => void;
+    createItemInvite: (props: ItemInviteCreateProps) => void;
     createSharedVault: (props: VaultInviteCreateValues<true>) => void;
     manageVaultAccess: (shareId: string) => void;
+    manageItemAccess: (shareId: string, itemId: string) => void;
     onInviteResponse: () => void;
     onShareDisabled: (disabledShareId: string) => void;
     setInvite: (invite: Invite) => void;
@@ -46,15 +53,21 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
         () => ({
             close: () => setState(null),
             createVaultInvite: (props: VaultInviteCreateValues<false>) => setState({ view: 'invite-vault', ...props }),
+            createItemInvite: (props: ItemInviteCreateProps) => setState({ view: 'invite-item', ...props }),
             createSharedVault: (props: VaultInviteCreateValues<true>) => setState({ view: 'invite-new', ...props }),
             manageVaultAccess: (shareId: string) => setState({ view: 'manage-vault', shareId }),
+            manageItemAccess: (shareId: string, itemId: string) => setState({ view: 'manage-item', shareId, itemId }),
             onInviteResponse: () => setInvite(null),
             onShareDisabled: (disabledShareId: string) => {
                 const shareId = (() => {
                     switch (stateRef.current?.view) {
                         case 'invite-vault':
                             return stateRef.current.vault.shareId;
+                        case 'invite-item':
+                            return stateRef.current.item.shareId;
                         case 'manage-vault':
+                            return stateRef.current.shareId;
+                        case 'manage-item':
                             return stateRef.current.shareId;
                         default:
                             return null;
@@ -84,6 +97,8 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
                     switch (state?.view) {
                         case 'invite-vault':
                             return <VaultInviteCreate withVaultCreation={false} {...state} />;
+                        case 'invite-item':
+                            return <ItemInviteCreate {...state} />;
                         case 'invite-new':
                             return (
                                 <VaultInviteCreate
@@ -94,12 +109,15 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
                             );
                         case 'manage-vault':
                             return <VaultAccessManager shareId={state.shareId} />;
+                        case 'manage-item':
+                            return <ItemAccessManager shareId={state.shareId} itemId={state.itemId} />;
                         default:
                             return null;
                     }
                 })()}
 
-                {invite && <VaultInviteRespond token={invite.token} />}
+                {invite?.targetType === ShareType.Vault && <VaultInviteRespond token={invite.token} />}
+                {invite?.targetType === ShareType.Item && <ItemInviteRespond {...invite} />}
                 {children}
             </LatestInviteContext.Provider>
         </InviteActionsContext.Provider>
