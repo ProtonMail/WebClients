@@ -65,7 +65,11 @@ export const DesktopAppStepButtons = ({ platform, download, onNext }: Props) => 
                 onClick={() => {
                     if (platform === DESKTOP_PLATFORMS.MACOS) {
                         countActionWithTelemetry(Actions.OnboardingV2InstallMacApp);
-                    } else if (platform === DESKTOP_PLATFORMS.WINDOWS) {
+                    } else if (
+                        platform === DESKTOP_PLATFORMS.WINDOWS ||
+                        platform === DESKTOP_PLATFORMS.WINDOWS_X64 ||
+                        platform === DESKTOP_PLATFORMS.WINDOWS_ARM
+                    ) {
                         countActionWithTelemetry(Actions.OnboardingV2InstallWindowsApp);
                     }
 
