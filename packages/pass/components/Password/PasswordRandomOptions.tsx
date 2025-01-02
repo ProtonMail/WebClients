@@ -4,11 +4,10 @@ import { c, msgid } from 'ttag';
 
 import { Slider } from '@proton/atoms';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
+import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
+import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 
-import { OrganizationPolicyTooltip } from '../Organization/OrganizationPolicyTooltip';
-
-type Props = UsePasswordGeneratorResult<'random'> & { advanced: boolean; dense?: boolean };
+type Props = PasswordGeneratorResult<'random'> & { advanced: boolean; dense?: boolean };
 
 export const PasswordRandomOptions: FC<Props> = ({
     advanced,

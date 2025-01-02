@@ -27,11 +27,10 @@ import {
     usePasswordGenerator,
 } from '@proton/pass/hooks/usePasswordGenerator';
 import { type Maybe } from '@proton/pass/types';
-import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
-export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy, policy }) => {
+export const AutosuggestPassword: FC<Props> = ({ domain, config, copy, policy }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
@@ -40,7 +39,7 @@ export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy, 
     const [advanced, setAdvanced] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const generator = usePasswordGenerator({ initial, onConfigChange: noop, policy });
+    const generator = usePasswordGenerator({ config, policy });
 
     useEffect(() => {
         setCopied(false);
