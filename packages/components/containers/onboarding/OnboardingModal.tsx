@@ -1,16 +1,12 @@
 import { isValidElement, useState } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import StepDot from '@proton/components/components/stepDot/StepDot';
 import StepDots from '@proton/components/components/stepDots/StepDots';
-import useApi from '@proton/components/hooks/useApi';
-import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
 import type { OnboardingStepComponent, OnboardingStepProps } from './interface';
@@ -50,8 +46,6 @@ const OnboardingModal = ({
     stepDotClassName,
     ...rest
 }: Props) => {
-    const [userSettings] = useUserSettings();
-    const api = useApi();
     const { welcomeFlags } = useWelcomeFlags();
     // Using useState so that isReplay is only updated when the modal closes, not when welcomeFlags change.
     const [isReplay] = useState(welcomeFlags.isReplay);
@@ -61,14 +55,6 @@ const OnboardingModal = ({
 
     const handleNext = () => {
         if (isLastStep) {
-            if (welcomeFlags.isWelcomeFlow) {
-                // Set generic welcome to true
-                api(updateFlags({ Welcomed: 1 })).catch(noop);
-            }
-            if (!userSettings.WelcomeFlag) {
-                // Set product specific welcome to true
-                api(updateWelcomeFlags()).catch(noop);
-            }
             onDone?.();
             rest?.onClose?.();
             return;
