@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, type ReactElement } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DropdownSizeUnit, Icon } from '@proton/components';
@@ -17,13 +17,13 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
-import { isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isMonitored, isPinned, isShared, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
@@ -47,7 +47,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleDismissClick,
     handleEditClick,
     handleHistoryClick,
-    handleInviteClick,
     handleManageClick,
     handleMoveToTrashClick,
     handleMoveToVaultClick,
@@ -56,8 +55,9 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleRetryClick,
     handleSecureLinkClick,
     handleToggleFlagsClick,
+    handleShareItemClick,
 }) => {
-    const { shareId, itemId, data, optimistic, failed } = revision;
+    const { shareId, itemId, data, optimistic, failed, shareCount } = revision;
     const { name } = data.metadata;
     const trashed = isTrashed(revision);
     const pinned = isPinned(revision);
@@ -68,8 +68,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const monitored = isMonitored(revision);
 
     const hasMultipleVaults = vaults.length > 1;
-    const { shareRoleId, shared, owner, targetMembers } = vault;
-    const showVaultTag = hasMultipleVaults || shared;
+    const { shareRoleId, owner, targetMembers } = vault;
+    const shared = isShared(revision);
     const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
     const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
@@ -157,83 +157,83 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             ...actions,
 
-                            <QuickActionsDropdown
-                                key="share-item-button"
-                                color="norm"
-                                shape="ghost"
-                                icon="users-plus"
-                                menuClassName="flex flex-column gap-2"
-                                dropdownHeader={c('Label').t`Share`}
-                                disabled={!online}
-                                dropdownSize={{
-                                    height: DropdownSizeUnit.Dynamic,
-                                    width: DropdownSizeUnit.Dynamic,
-                                    maxHeight: DropdownSizeUnit.Viewport,
-                                    maxWidth: '20rem',
-                                }}
-                            >
-                                {type !== 'alias' && (
+                            type !== 'alias' && (
+                                <QuickActionsDropdown
+                                    key="share-item-button"
+                                    color="norm"
+                                    shape="ghost"
+                                    icon="users-plus"
+                                    menuClassName="flex flex-column gap-2"
+                                    dropdownHeader={c('Label').t`Share`}
+                                    disabled={!online}
+                                    badge={shared ? shareCount : undefined}
+                                    dropdownSize={{
+                                        height: DropdownSizeUnit.Dynamic,
+                                        width: DropdownSizeUnit.Dynamic,
+                                        maxHeight: DropdownSizeUnit.Viewport,
+                                        maxWidth: '20rem',
+                                    }}
+                                >
                                     <DropdownMenuButton
                                         onClick={
                                             free
                                                 ? () =>
                                                       upsell({
                                                           type: 'pass-plus',
-                                                          upsellRef: UpsellRef.SECURE_LINKS,
+                                                          upsellRef: UpsellRef.ITEM_SHARING,
                                                       })
-                                                : handleSecureLinkClick
+                                                : handleShareItemClick
                                         }
                                         label={
                                             <DropdownMenuLabel
-                                                title={c('Action').t`Via secure link`}
-                                                subtitle={c('Label').t`Generate a secure link for this item`}
+                                                title={c('Action').t`With other ${BRAND_NAME} users`}
+                                                subtitle={c('Label').t`Useful for permanent sharing`}
                                             />
                                         }
                                         icon="link"
                                         disabled={optimistic || !isOwnerOrAdmin}
                                         extra={free && <PassPlusPromotionButton className="ml-2" />}
                                     />
-                                )}
-                                {!shared && (
                                     <DropdownMenuButton
                                         onClick={
-                                            free && isVaultMemberLimitReached(vault)
-                                                ? () =>
-                                                      upsell({
-                                                          type: 'pass-plus',
-                                                          upsellRef: UpsellRef.LIMIT_SHARING,
-                                                      })
-                                                : handleInviteClick
+                                            free
+                                                ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.SECURE_LINKS })
+                                                : handleSecureLinkClick
                                         }
-                                        title={c('Action').t`Share`}
                                         label={
                                             <DropdownMenuLabel
-                                                title={c('Action').t`Entire vault`}
-                                                subtitle={c('Label').t`Share this vault or create a new vault`}
+                                                title={c('Action').t`Via secure link`}
+                                                subtitle={c('Label').t`For a one-off sharing`}
                                             />
                                         }
-                                        icon="folder-plus"
-                                        disabled={optimistic || readOnly}
+                                        icon="link"
+                                        disabled={optimistic || !isOwnerOrAdmin}
+                                        extra={free && <PassPlusPromotionButton className="ml-2" />}
                                     />
-                                )}
-                                {shared && (
-                                    <DropdownMenuButton
-                                        onClick={handleManageClick}
-                                        title={c('Action').t`See members`}
-                                        icon="users"
-                                        label={
-                                            <DropdownMenuLabel
-                                                title={c('Action').t`Manage vault access`}
-                                                subtitle={c('Label').ngettext(
-                                                    msgid`The item's vault is currently shared with ${targetMembers} person`,
-                                                    `The item's vault is currently shared with ${targetMembers} people`,
-                                                    targetMembers
-                                                )}
-                                            />
-                                        }
-                                    />
-                                )}
-                            </QuickActionsDropdown>,
+                                    {shared && (
+                                        <DropdownMenuButton
+                                            onClick={
+                                                free
+                                                    ? () =>
+                                                          upsell({
+                                                              type: 'pass-plus',
+                                                              upsellRef: UpsellRef.ITEM_SHARING,
+                                                          })
+                                                    : handleManageClick
+                                            }
+                                            title={c('Action').t`See members`}
+                                            icon="users"
+                                            disabled={optimistic || !isOwnerOrAdmin}
+                                            label={
+                                                <DropdownMenuLabel
+                                                    title={c('Action').t`Manage access`}
+                                                    subtitle={c('Label').t`See member and permission overview`}
+                                                />
+                                            }
+                                        />
+                                    )}
+                                </QuickActionsDropdown>
+                            ),
 
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
@@ -280,11 +280,12 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                         ];
                     })()}
                     subtitle={
-                        showVaultTag ? (
+                        // TODO(@djankovic): Instead of checking shared, check if item belongs to a vault
+                        !shared && hasMultipleVaults ? (
                             <VaultTag
                                 title={vault.content.name}
                                 color={vault.content.display.color}
-                                count={vault.targetMembers}
+                                count={targetMembers}
                                 shared={vault.shared}
                                 icon={
                                     vault.content.display.icon

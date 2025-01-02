@@ -2,7 +2,7 @@ import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
 import { isActive } from '@proton/pass/lib/items/item.predicates';
-import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isItemShare, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import {
     hasNewUserInvitesReady,
     isOwnVault,
@@ -29,6 +29,8 @@ export const selectAllShares = createSelector(selectShares, (shares) => Object.v
 export const selectAllVaults = createSelector([selectAllShares], (shares) =>
     shares.filter(isVaultShare).sort((a, b) => a.content.name.localeCompare(b.content.name))
 );
+
+export const selectItemShares = createSelector([selectAllShares], (shares) => shares.filter(isItemShare));
 
 export const selectWritableVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isWritableVault));
 export const selectNonOwnedVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(not(isOwnVault)));
