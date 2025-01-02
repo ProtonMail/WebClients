@@ -4280,7 +4280,7 @@
         "Betalingsprosessen ble avbrutt"
       ],
       "Payment process consumed": [
-        "Forbrukt betalingsprosess"
+        "Betalingsprosess forbrukt"
       ],
       "Payment process failed": [
         "Betalingsprosessen mislyktes"
@@ -4496,7 +4496,7 @@
         "Ukjent feil"
       ],
       "Unknown payment token status": [
-        "Ukjent betalingstoken status"
+        "Ukjent status for betalingstoken"
       ],
       "Username must begin with a letter or digit": [
         "Brukernavn må begynne med en bokstav eller ett tall"
@@ -9360,7 +9360,7 @@
         "Alle premium ${ BRAND_NAME }-tjenester. Ett enkelt abonnement"
       ],
       "Auto-delete Spam and Trash": [
-        "Auto-slett søppelpost og papirkurv"
+        "Slett automatisk elementer i søppelpost og papirkurv"
       ],
       "Auto-delete spam and trashed messages": [
         "Fjern automatisk søppelpost og meldinger som er slettet"
@@ -9447,7 +9447,7 @@
         "Krypterte VPN-tjenere"
       ],
       "End-to-end encryption": [
-        "Ende-til-ende kryptering"
+        "Ende-til-ende-kryptering"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Raske P2P/BitTorrent-nedlastinger"
@@ -9587,7 +9587,7 @@
         "SSO-integrasjon (kommer snart)"
       ],
       "Strict no-logs policy": [
-        "Streng ingen-loggførings-praksis"
+        "Streng politikk om ingen logger"
       ],
       "Support for up to 2 users": [
         "Støtte for opptil 2 brukere"
@@ -9629,19 +9629,19 @@
         "Ubegrenset antall pålogginger, notater og kredittkort"
       ],
       "Unlimited messages per day": [
-        "Ubegrensede meldinger per dag"
+        "Ubegrenset antall meldinger per dag"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Ubegrenset delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
       ],
       "Unlimited shared vaults with access permissions": [
-        "Ubegrenset delte hvelv med tilgangstillatelser"
+        "Ubegrenset antall delte hvelv med tilgangstillatelser"
       ],
       "Unlimited vault sharing": [
         "Ubegrenset hvelvdeling"
       ],
       "Unlimited vaults": [
-        "Ubegrensede hvelv"
+        "Ubegrenset antall hvelv"
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
@@ -9792,14 +9792,6 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaff deg Mail Plus for ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -9812,6 +9804,14 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaff deg Mail Plus for ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
       ]
     },
     "new_plans: tooltip": {
