@@ -45,6 +45,7 @@ export const getMockItemRevision = (revision: Partial<ItemRevision> = {}): ItemR
             revisionTime: 0,
             shareId: mockShareId,
             state: ItemState.Active,
+            shareCount: 0,
         },
         revision
     );

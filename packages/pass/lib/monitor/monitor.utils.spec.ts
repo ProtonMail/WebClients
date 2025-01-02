@@ -21,6 +21,7 @@ const createMockItem = (password: string): ItemRevision<'login'> => ({
     revisionTime: -1,
     shareId: 'shareId',
     state: ItemState.Active,
+    shareCount: 0,
 });
 
 describe('getDuplicatePasswords', () => {

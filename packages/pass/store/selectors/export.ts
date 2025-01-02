@@ -45,6 +45,7 @@ export const selectExportData =
                                 createTime: item.createTime,
                                 modifyTime: item.modifyTime,
                                 pinned: item.pinned,
+                                shareCount: item.shareCount,
                             })),
                         },
                     ]);

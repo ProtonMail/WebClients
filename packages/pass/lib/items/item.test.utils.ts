@@ -19,5 +19,6 @@ export const createTestItem = (type: ItemType, init: Partial<ItemRevision> = {})
     state: ItemState.Active,
     data: itemBuilder(type).data,
     shareId: uniqueId(),
+    shareCount: 0,
     ...init,
 });
