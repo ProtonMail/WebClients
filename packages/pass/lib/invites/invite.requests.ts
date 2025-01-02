@@ -20,6 +20,8 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
 
+import { getItemKeys } from '../items/item.requests';
+
 export type InviteData = { invites: PendingInvite[]; newUserInvites: NewUserPendingInvite[] };
 
 export const loadInvites = async (shareId: string): Promise<InviteData> => {
@@ -69,8 +71,20 @@ export const createUserInvites = async (
     shareId: string,
     itemId: Maybe<string>,
     users: InviteUserDTO[]
-): Promise<string[]> =>
-    (
+): Promise<string[]> => {
+    // For vault sharing, encrypt vault keys
+    // For item sharing, encrypt item keys
+    const shareManager = PassCrypto.getShareManager(shareId);
+
+    const targetKeys = await (async () => {
+        if (!itemId) return shareManager.getVaultKeys();
+        const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
+        return Promise.all(
+            encryptedItemKeys.map((encryptedItemKey) => PassCrypto.openItemKey({ encryptedItemKey, shareId }))
+        );
+    })();
+
+    return (
         await Promise.all(
             chunk(users, MAX_BATCH_PER_REQUEST).map(async (batch) =>
                 api({
@@ -85,6 +99,7 @@ export const createUserInvites = async (
                                     role,
                                     invitedPublicKey: publicKey,
                                     itemId,
+                                    targetKeys,
                                 })
                             )
                         ),
@@ -95,6 +110,7 @@ export const createUserInvites = async (
             )
         )
     ).flat();
+};
 
 export const createNewUserInvites = async (shareId: string, itemId: Maybe<string>, newUsers: InviteNewUserDTO[]) =>
     (
