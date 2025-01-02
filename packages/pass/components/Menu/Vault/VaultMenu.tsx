@@ -42,7 +42,7 @@ export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop })
         const ownedVaultCount = vaults.filter(isOwnVault).length;
 
         return (
-            <>
+            <div>
                 <VaultMenuAll
                     count={totalItemCount}
                     dense={dense}
@@ -69,7 +69,7 @@ export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop })
                 ))}
 
                 <VaultMenuTrash dense={dense} selected={scope === 'trash'} onAction={onAction} />
-            </>
+            </div>
         );
     }, [vaults, vaultActions, selectedShareId, scope, sharedWithMe]);
 
