@@ -642,6 +642,9 @@
       "Replace file": [
         "Substitueix el fitxer"
       ],
+      "Report": [
+        "Informe"
+      ],
       "Report a problem": [
         "Notifica un problema"
       ],
@@ -4076,6 +4079,10 @@
         "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } error d'escaneig",
+        "${ scanErrorCount } errors d'escaneig"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
@@ -4198,6 +4205,9 @@
       ],
       "And access it from anywhere": [
         "I accediu-hi des de qualsevol lloc"
+      ],
+      "Anonymous": [
+        "Anònim"
       ],
       "Anyone with this link can access your file.": [
         "Qualsevol que tingui aquest enllaç pot accedir al fitxer."
@@ -6223,6 +6233,9 @@
       ],
       "Upload your first file": [
         "Carregueu el vostre primer fitxer"
+      ],
+      "Uploaded by": [
+        "Carregat per"
       ],
       "VAT": [
         "IVA"
