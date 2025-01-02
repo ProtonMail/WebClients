@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -629,7 +629,7 @@
         "Importar do Outlook"
       ],
       "Import key": [
-        "Importar chave"
+        "Importar uma chave"
       ],
       "Increase": [
         "Aumentar"
@@ -1455,6 +1455,15 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Os dados permanecem no seu dispositivo, mas é necessário um descarregamento único e um equipamento compatível."
+      ],
+      "Fast and secure. No logs are kept.": [
+        "Rápido e seguro. Nenhum registo é mantido."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executar nos servidores da ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Executar no dispositivo"
       ]
@@ -1462,6 +1471,9 @@
     "Assistant toggle": {
       "Buy now": [
         "Comprar agora"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Melhore a produtividade dos seus e-mails. Deixe o ${ BRAND_NAME } Scribe ajudá-lo a redigir, responder e corrigir os seus e-mails."
       ]
     },
     "Attached ics file error": {
@@ -3370,6 +3382,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Receba até ${ credits } em créditos ao convidar amigos para ${ BRAND_NAME }."
       ],
+      "If disabled, only admins will have access.": [
+        "Se desativado, apenas os administradores terão acesso."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
       ],
@@ -3829,6 +3844,9 @@
       ],
       "A new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Uma nova chave de encriptação será gerada para ${ boldForwarderEmail }."
+      ],
+      "Automatically forward emails to another email address.": [
+        "Reencaminhe emails automaticamente para outro endereço de e-mail."
       ],
       "Forwarding is active": [
         "O encaminhamento está ativo."
@@ -5551,6 +5569,9 @@
       "City": [
         "Cidade"
       ],
+      "Country": [
+        "País"
+      ],
       "Create your account": [
         "Crie a sua conta"
       ],
@@ -5851,6 +5872,9 @@
       ],
       "Your email account requires one to export your data.": [
         "A sua conta de e-mail requer uma para exportar os seus dados."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "O seu endereço de e-mail e a palavra-passe da aplicação estão corretos. Não utilize a sua palavra-passe normal."
       ],
       "Your email address and password are correct.": [
         "O seu endereço de e-mail e a sua palavra-passe estão corretos."
@@ -6203,6 +6227,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Um ficheiro de recuperação permite desbloquear e visualizar os seus dados após uma recuperação de conta."
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Uma frase de recuperação permite aceder à sua conta e recuperar as suas mensagens encriptadas se se esquecer da sua palavra-passe."
       ],
@@ -6329,6 +6356,9 @@
       ],
       "Amount due": [
         "Montante devido"
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Um aliás de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém o seu endereço de e-mail real e a sua identidade ocultos."
       ],
       "An error occurred while communicating with the extension": [
         "Ocorreu um erro ao comunicar com a extensão."
@@ -6585,6 +6615,12 @@
         "A apagar ${ deletedServerCount } servidor gateway",
         "A apagar ${ deletedServerCount } servidores gateway"
       ],
+      "Disable recovery by email address": [
+        "Desativar a recuperação por endereço de e-mail"
+      ],
+      "Disable recovery by phone number": [
+        "Desativar a recuperação por número de telefone"
+      ],
       "Discount": [
         "Desconto"
       ],
@@ -6729,6 +6765,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Introduza a sua frase de recuperação para alterar a sua palavra-passe agora."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Os eventos incluem tentativas de autenticação para todos os serviços da ${ BRAND_NAME } que utilizam as suas credenciais da ${ BRAND_NAME_TWO }."
       ],
       "Example: ${ spfExample }": [
         "Exemplo: ${ spfExample }"
@@ -7010,6 +7049,9 @@
       ],
       "Just send them your personal referral link.": [
         "Basta enviar-lhes a sua ligação de referência pessoal."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Mantenha as suas informações mais seguras e privadas com estes guias e dicas."
       ],
       "Key deletion is irreversible!": [
         "A eliminação da chave é irreversível."
@@ -7630,6 +7672,9 @@
       "The calendar will be removed from your account.": [
         "O calendário será removido da sua conta."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "A Dark Web é uma parte oculta da internet onde informações pessoais roubadas, como identidades, podem ser compradas e vendidas."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A contagem de transferências inclui ambas transferências reais e instâncias em que os ficheiros são pré-visualizados."
       ],
@@ -7858,6 +7903,9 @@
       "Two-factor authentication enabled": [
         "Autenticação de dois fatores ativada"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "O modo de duas palavras-passe requer duas palavras-passe: uma para iniciar sessão na sua conta e outra para desencriptar os seus dados. (Avançado)"
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Não foi possível verificar a assinatura do ficheiro de recuperação. Por favor, contacte o suporte."
       ],
@@ -8014,6 +8062,9 @@
       "We just sent you a new link.": [
         "Enviámos-lhe um novo 'link'."
       ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitorizamos a Dark Web em busca de casos em que as suas informações pessoais (como um endereço de e-mail ou palavra-passe utilizada num sítio web de terceiros) sejam expostas ou comprometidas."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar o seu método de pagamento com o seu banco."
       ],
@@ -8025,6 +8076,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Recomendamos ter vários servidores em diferentes localizações para disponibilizar redundância."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Recomendamos notificar os membros da família e pedir-lhes que configurem a A2F para as suas contas antes de impor a utilização da A2F."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar os membros da organização e pedir-lhes que configurem a A2F para as suas contas antes de impor a utilização da A2F."
@@ -9419,6 +9473,9 @@
       "Notifications": [
         "Notificações"
       ],
+      "Numbers": [
+        "Números"
+      ],
       "OpenVPN / IKEv2 password": [
         "Palavra-passe OpenVPN/IKEv2"
       ],
@@ -10066,6 +10123,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ativar ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Ativar os eventos detalhados"
+      ],
+      "Enable security events": [
+        "Ativar os eventos de segurança"
       ]
     },
     "Mail import summary": {
@@ -12538,6 +12601,9 @@
       "Recovery phone number": [
         "Número de telefone de recuperação"
       ],
+      "Send a new code": [
+        "Enviar um novo código"
+      ],
       "Show more": [
         "Mostrar mais"
       ],
@@ -12648,6 +12714,9 @@
       ],
       "Invoice": [
         "Fatura"
+      ],
+      "Transactions": [
+        "Transações"
       ]
     },
     "Select search results": {
@@ -13093,6 +13162,11 @@
     "signup: Feature": {
       "Encrypted": [
         "Encriptado"
+      ]
+    },
+    "Signup: Info": {
+      "Device sync": [
+        "Sincronização do dispositivo"
       ]
     },
     "specialoffer: Action": {
@@ -13563,6 +13637,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
         "${ dayDiff } dias restantes"
@@ -13610,6 +13687,9 @@
       ],
       "Cancel subscription?": [
         "Cancelar subscrição?"
+      ],
+      "Dark web monitoring": [
+        "Monitorização da Dark Web"
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novas aplicações e funcionalidades"
@@ -14629,6 +14709,9 @@
       "Email privacy": [
         "Privacidade dos e-mails"
       ],
+      "Enable for all users": [
+        "Ativar para todos os utilizadores"
+      ],
       "Encryption and keys": [
         "Encriptação e chaves"
       ],
@@ -14785,7 +14868,7 @@
         "Importar grupos"
       ],
       "Import key": [
-        "Importar chave"
+        "Importar uma chave"
       ],
       "Import messages": [
         "Importar mensagens"
@@ -15466,6 +15549,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Ativar/desativar notificações no computador e dispositivo móvel"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Ao ativar os eventos detalhados, o endereço IP de cada evento é registado."
+      ],
       "Feature in early access": [
         "Funcionalidade em acesso antecipado"
       ],
@@ -15623,17 +15709,26 @@
       ]
     },
     "Transaction type display as badge": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Cash": [
         "Dinheiro"
       ],
       "Credit": [
         "Crédito"
       ],
+      "Credit transfer": [
+        "Transferência de crédito"
+      ],
       "Gift card": [
         "Cartão presente"
       ],
       "Migration": [
         "Migração"
+      ],
+      "Payment": [
+        "Pagamento"
       ],
       "Refund": [
         "Reembolso"
