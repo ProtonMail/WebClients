@@ -34,10 +34,7 @@ import {
     getLocalIDForkSearchParameter,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
-import type {
-    GetActiveSessionsResult,
-    LocalSessionPersisted,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -179,7 +176,7 @@ const BasePublicApp = () => {
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const [forkState, setForkState] = useState<ProduceForkData | null>(null);
-    const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
+    const [activeSessions, setActiveSessions] = useState<ActiveSession[]>();
     const [maybeHasActiveSessions] = useState(initialSessionsLengthBool);
     const [locationState, setLocationState] = useState<null | LoginLocationState>(null);
 

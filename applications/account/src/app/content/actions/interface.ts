@@ -19,6 +19,7 @@ export type LoginLocationState =
               session: AuthSession;
           }
       >
+    | LoginLocationStateData<'login', null>
     | LoginLocationStateData<'signup', null>
     | LoginLocationStateData<'sessions-switcher', null>
     | LoginLocationStateData<'reauth', ReAuthState>

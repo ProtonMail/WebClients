@@ -17,6 +17,7 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
+import { appMode } from '@proton/shared/lib/webpack.constants';
 import type { UnleashClient } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
@@ -45,6 +46,7 @@ const setIsSWForSafariEnabled = (unleashClient: UnleashClient) => {
 };
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+    const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
     const api = createApi({ config });
@@ -52,8 +54,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
     await userSuccessMetrics.init();
-    setupGuestCrossStorage();
-    const appName = config.APP_NAME;
+    setupGuestCrossStorage({ appMode, appName });
 
     initSafariFontFixClassnames();
     initDriveWorker();
