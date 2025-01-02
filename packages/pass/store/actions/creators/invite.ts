@@ -17,7 +17,7 @@ import {
 } from '@proton/pass/store/actions/requests';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
+import type { InviteFormValues, ItemRevision, Share } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
     InviteBatchCreateSuccess,
@@ -107,7 +107,7 @@ export const inviteAcceptIntent = createAction(
 
 export const inviteAcceptSuccess = createAction(
     'invite::accept::success',
-    withRequestSuccess((token: string, share: Share<ShareType.Vault>, items: ItemRevision[]) =>
+    withRequestSuccess((token: string, share: Share, items: ItemRevision[]) =>
         withCache({
             payload: { share, items, token },
         })
