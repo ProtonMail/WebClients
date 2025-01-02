@@ -12,6 +12,7 @@ import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButto
 import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
+import { VaultMenuLink } from '@proton/pass/components/Menu/Vault/VaultMenuLink';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { RouteMatch } from '@proton/pass/components/Navigation/RouteMatch';
 import {
@@ -32,23 +33,43 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto gap-2">
-            <Button
-                icon
-                size="medium"
-                color="norm"
-                onClick={vaultActions.create}
-                shape="ghost"
-                title={c('Action').t`Create a new vault`}
-                className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 mx-3"
-            >
-                <div className="flex text-ellipsis">{c('Label').t`Vaults`}</div>
-                <Icon name="plus" alt={c('Action').t`Create a new vault`} />
-            </Button>
-
+        <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
             <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
-                <div className="flex mx-3">
-                    <VaultMenu />
+                <div className="flex mx-3 gap-5">
+                    <div className="flex flex-column gap-2 w-full">
+                        <Button
+                            icon
+                            size="medium"
+                            color="norm"
+                            onClick={vaultActions.create}
+                            shape="ghost"
+                            title={c('Action').t`Create a new vault`}
+                            className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 w-full"
+                        >
+                            <div className="flex text-ellipsis">{c('Label').t`Vaults`}</div>
+                            <Icon name="plus" alt={c('Action').t`Create a new vault`} />
+                        </Button>
+                        <VaultMenu />
+                    </div>
+
+                    <div className="flex flex-column gap-2 w-full">
+                        <div className="mx-2">{c('Label').t`Shared`}</div>
+                        <div className="flex">
+                            <VaultMenuLink
+                                label={c('Label').t`Shared with me`}
+                                count={0}
+                                selected={false}
+                                to="shared-with-me"
+                            />
+
+                            <VaultMenuLink
+                                label={c('Label').t`Shared by me`}
+                                count={0}
+                                selected={false}
+                                to="shared-by-me"
+                            />
+                        </div>
+                    </div>
                 </div>
             </Scroll>
 
