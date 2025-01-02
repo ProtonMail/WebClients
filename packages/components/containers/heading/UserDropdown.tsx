@@ -1,11 +1,13 @@
 import type { MouseEvent } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { signoutAction, useUserSettings } from '@proton/account';
+import { useUserSettings } from '@proton/account';
+import { useAccountSessions } from '@proton/account/accountSessions/hooks';
+import { getLoginHref, getSwitchHref, handleSwitchAccountFork } from '@proton/account/accountSessions/sessionsHelper';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -15,8 +17,8 @@ import { ThemeColor } from '@proton/colors';
 import ConfirmSignOutModal, {
     shouldShowConfirmSignOutModal,
 } from '@proton/components/components/confirmSignOutModal/ConfirmSignOutModal';
+import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
@@ -27,6 +29,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import { ReferralSpotlight } from '@proton/components/containers/referral/ReferralSpotlight';
 import useIsSecurityCheckupAvailable from '@proton/components/hooks/securityCheckup/useIsSecurityCheckupAvailable';
 import useSecurityCheckup from '@proton/components/hooks/securityCheckup/useSecurityCheckup';
@@ -39,11 +42,9 @@ import { useSessionRecoveryState } from '@proton/components/hooks/useSessionReco
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
 import { getSubscriptionPlanTitleAndName } from '@proton/payments';
-import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
-import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
-import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
+import { getAppShortName } from '@proton/shared/lib/apps/helper';
+import { ForkType } from '@proton/shared/lib/authentication/fork';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -51,13 +52,12 @@ import {
     BRAND_NAME,
     SECURITY_CHECKUP_PATHS,
     SHARED_UPSELL_PATHS,
-    SSO_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
+import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls, openCalendlyLink } from '@proton/shared/lib/helpers/support';
@@ -83,7 +83,6 @@ interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onCli
 }
 
 const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...rest }: Props) => {
-    const dispatch = useDispatch();
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
@@ -99,6 +98,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
     const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
+    const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
 
@@ -108,6 +108,14 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
         setSessionRecoverySignOutConfirmPrompt,
         renderSessionRecoverySignOutConfirmPrompt,
     ] = useModalState();
+
+    const accountSessions = useAccountSessions();
+
+    useEffect(() => {
+        if (isOpen) {
+            accountSessions.actions.ping();
+        }
+    }, [isOpen]);
 
     const getScheduleCall = useGetScheduleCall();
 
@@ -142,8 +150,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
         });
     };
 
-    const handleSignout = (clearDeviceRecovery: boolean) => {
-        dispatch(signoutAction({ clearDeviceRecovery }));
+    const handleSignOut = (clearDeviceRecovery: boolean) => {
+        accountSessions.actions.signOut({ clearDeviceRecovery });
     };
 
     const handleSignOutClick = () => {
@@ -153,7 +161,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
         } else if (shouldShowConfirmSignOutModal({ user, authentication })) {
             setConfirmSignOutModal(true);
         } else {
-            handleSignout(false);
+            handleSignOut(false);
         }
     };
 
@@ -184,12 +192,47 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
         }
     }, [location.pathname]);
 
-    const switchHref = useMemo(() => {
-        const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
-        const toApp = APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) : APP_NAME;
-        const search = `?product=${getSlugFromApp(toApp || APPS.PROTONMAIL)}`;
-        return `${href}${search}`;
-    }, [location.pathname]);
+    const { switchHref, loginHref } = useMemo(() => {
+        return { switchHref: getSwitchHref(app), loginHref: getLoginHref(app) };
+    }, [app]);
+
+    const handleSwitchAccount = useCallback((event: MouseEvent<HTMLAnchorElement>, forkType: ForkType) => {
+        const target = event.currentTarget?.getAttribute('target') || '';
+        if (APP_NAME !== APPS.PROTONACCOUNT && getShouldProcessLinkClick(event.nativeEvent, target)) {
+            event.preventDefault();
+            handleSwitchAccountFork(app, forkType);
+        }
+    }, []);
+
+    const addAccountButton = (
+        <ButtonLike
+            as="a"
+            href={loginHref}
+            shape="outline"
+            color="weak"
+            className="w-full"
+            target="_blank"
+            onClick={(event) => handleSwitchAccount(event, ForkType.LOGIN)}
+            data-testid="userdropdown:button:add-account"
+        >
+            {c('Action').t`Add account`}
+        </ButtonLike>
+    );
+
+    const switchAccountButton = (
+        <ButtonLike
+            as="a"
+            href={switchHref}
+            target="_self"
+            shape="outline"
+            color="weak"
+            className="w-full"
+            onClick={(event: MouseEvent<HTMLAnchorElement>) => handleSwitchAccount(event, ForkType.SWITCH)}
+            data-testid="userdropdown:button:switch-account"
+        >
+            {c('Action').t`Switch or add account`}
+        </ButtonLike>
+    );
 
     const { viewportWidth } = useActiveBreakpoint();
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
@@ -257,11 +300,19 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} app={app} />}
             {renderSessionRecoverySignOutConfirmPrompt && (
                 <SessionRecoverySignOutConfirmPrompt
-                    onSignOut={() => handleSignout(false)}
+                    onSignOut={() => handleSignOut(false)}
                     {...sessionRecoverySignOutConfirmPrompt}
                 />
             )}
-            {renderConfirmSignOutModal && <ConfirmSignOutModal onSignOut={handleSignout} {...confirmSignOutModal} />}
+            {renderConfirmSignOutModal && <ConfirmSignOutModal onSignOut={handleSignOut} {...confirmSignOutModal} />}
+            {renderOpenSignOutAllPrompt && (
+                <ConfirmSignOutAllModal
+                    onSignOut={() => {
+                        accountSessions.actions.signOutAll(accountSessions.state.value);
+                    }}
+                    {...openSignOutAllPrompt}
+                />
+            )}
             <ReferralSpotlight
                 show={shouldShowSpotlight}
                 anchorRef={anchorRef}
@@ -298,7 +349,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                     maxWidth: '20rem',
                 }}
             >
-                <DropdownMenu className="pb-4">
+                <div className="pb-4">
                     <div className="px-4 py-3 flex flex-nowrap gap-4 justify-space-between text-sm">
                         {planName ? (
                             <span className="text-semibold block shrink-0" data-testid="userdropdown:label:plan-name">
@@ -317,14 +368,11 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                         ) : null}
 
                         {displayUpgradeButton ? (
-                            <ButtonLike
-                                color="norm"
-                                shape="underline"
-                                className="text-ellipsis p-0 color-primary interactive-pseudo-protrude interactive--no-background"
-                                as={SettingsLink}
+                            <SettingsLink
+                                className="text-ellipsis"
                                 path={upgradeUrl}
                                 title={c('specialoffer: Link').t`Go to subscription plans`}
-                            >{c('specialoffer: Link').t`Upgrade`}</ButtonLike>
+                            >{c('specialoffer: Link').t`Upgrade`}</SettingsLink>
                         ) : null}
                     </div>
 
@@ -391,34 +439,14 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                         </AppLink>
                     ) : null}
 
-                    {showSwitchAccountButton ? (
-                        <div className="px-4 pb-2">
-                            <ButtonLike
-                                as="a"
-                                href={switchHref}
-                                target="_self"
-                                shape="outline"
-                                color="weak"
-                                className="w-full"
-                                onClick={(event: MouseEvent<HTMLAnchorElement>) => {
-                                    if (
-                                        APP_NAME !== APPS.PROTONACCOUNT &&
-                                        event.button === 0 &&
-                                        !getIsEventModified(event.nativeEvent)
-                                    ) {
-                                        event.preventDefault();
-                                        return requestFork({ fromApp: APP_NAME, forkType: ForkType.SWITCH });
-                                    }
-                                }}
-                                data-testid="userdropdown:button:switch-account"
-                            >
-                                {c('Action').t`Switch or add account`}
-                            </ButtonLike>
-                        </div>
-                    ) : null}
+                    <div className="mb-4 mx-4 flex flex-column gap-2">
+                        {showSwitchAccountButton && !accountSessions.hasList
+                            ? accountSessions.hasAddAccount
+                                ? addAccountButton
+                                : switchAccountButton
+                            : null}
 
-                    {APP_NAME !== APPS.PROTONACCOUNT && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
-                        <div className="px-4 pb-2">
+                        {APP_NAME !== APPS.PROTONACCOUNT && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                             <Button
                                 shape="outline"
                                 color="weak"
@@ -426,10 +454,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                                 onClick={() => goToSettings(path, APP_NAME, false)}
                                 data-testid="userdropdown:button:settings"
                             >{c('Action').t`Settings`}</Button>
-                        </div>
-                    ) : undefined}
+                        ) : undefined}
 
-                    <div className="px-4 pb-4">
                         <Button
                             shape="solid"
                             color="norm"
@@ -441,6 +467,19 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                         </Button>
                     </div>
 
+                    {showSwitchAccountButton && accountSessions.hasList && (
+                        <div className="mb-4">
+                            <AccountSessionsSwitcher
+                                sessions={accountSessions.state.value}
+                                onSignOut={() => {
+                                    close();
+                                    setOpenSignOutAllPrompt(true);
+                                }}
+                            />
+                            <div className="mx-4 my-2">{addAccountButton}</div>
+                        </div>
+                    )}
+
                     {(() => {
                         if (viewportWidth['<=small'] && hasAppLinks) {
                             const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
@@ -448,7 +487,12 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                                 return null;
                             }
                             return (
-                                <ul className="px-4 pb-4 unstyled text-sm">
+                                <ul
+                                    className={clsx(
+                                        'mx-4 mb-4 unstyled text-sm',
+                                        accountSessions.hasList && 'border-top border-weak'
+                                    )}
+                                >
                                     {availableApps.map((appToLinkTo) => {
                                         const appToLinkToName = getAppShortName(appToLinkTo);
                                         const current = app && appToLinkTo === app;
@@ -576,7 +620,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                             </button>
                         </div>
                     </div>
-                </DropdownMenu>
+                </div>
             </Dropdown>
         </>
     );

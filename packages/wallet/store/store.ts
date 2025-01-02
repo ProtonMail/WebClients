@@ -20,13 +20,13 @@ export const setupStore = () => {
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    start(startListening);
+    start({ startListening });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listeners', () => {
             listenerMiddleware.clearListeners();
-            start(startListening);
+            start({ startListening });
         });
     }
 
