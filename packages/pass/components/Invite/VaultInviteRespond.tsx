@@ -14,6 +14,7 @@ import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
+import { ShareType } from '@proton/pass/types';
 
 type Props = { token: string };
 
@@ -24,12 +25,13 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
 
     const acceptInvite = useActionRequest(inviteAcceptIntent, { onSuccess: onInviteResponse });
     const rejectInvite = useActionRequest(inviteRejectIntent, { onSuccess: onInviteResponse });
+    const valid = invite && invite.targetType === ShareType.Vault;
 
     useEffect(() => {
-        if (!invite) onInviteResponse();
-    }, [invite]);
+        if (!valid) onInviteResponse();
+    }, [valid]);
 
-    if (!invite) return null;
+    if (!valid) return null;
 
     const { inviterEmail, invitedAddressId, vault, fromNewUser } = invite;
     const { itemCount, memberCount } = vault;
@@ -39,7 +41,7 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
     const loading = acceptInvite.loading || rejectInvite.loading;
 
     return (
-        <PassModal size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
+        <PassModal size="small" open onClose={() => onInviteResponse()} enableCloseWhenClickOutside>
             <ModalTwoHeader
                 className="text-center text-break-all"
                 hasClose={false}
