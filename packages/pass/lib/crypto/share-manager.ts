@@ -1,4 +1,5 @@
 import type {
+    ItemKey,
     OpenedShare,
     Rotation,
     SerializedCryptoContext,
@@ -11,7 +12,7 @@ import { ShareType } from '@proton/pass/types';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { importSymmetricKey } from './utils/crypto-helpers';
-import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
+import { PassCryptoItemError, PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
 
 export const createShareManager = <T extends ShareType = ShareType>(
     share: TypedOpenedShare<T>,
@@ -65,6 +66,46 @@ export const createShareManager = <T extends ShareType = ShareType>(
 
             if (rotation > shareContext.latestRotation) {
                 shareManager.setLatestRotation(rotation);
+            }
+        },
+
+        hasItemKey: (rotation) =>
+            shareManager.getShare().targetType === ShareType.Item && shareContext.itemKeys.has(rotation),
+
+        getItemKey: (rotation) => {
+            if (shareManager.getShare().targetType !== ShareType.Item) {
+                throw new PassCryptoVaultError(`Cannot resolve item keys for non-item share`);
+            }
+
+            if (!shareManager.hasItemKey(rotation)) {
+                throw new PassCryptoItemError(`Cannot find item key for rotation ${rotation}`);
+            }
+
+            return shareContext.itemKeys.get(rotation)!;
+        },
+
+        getItemKeys: () => Array.from(shareContext.itemKeys.values()),
+
+        addItemKey(itemKey) {
+            if (shareManager.getShare().targetType !== ShareType.Item) {
+                throw new PassCryptoVaultError(`Cannot add item key to non-item share`);
+            }
+
+            const rotation = itemKey.rotation;
+            shareContext.itemKeys.set(rotation, itemKey);
+
+            if (rotation > shareContext.latestRotation) {
+                shareManager.setLatestRotation(rotation);
+            }
+        },
+
+        addKeys(keys) {
+            const share = shareManager.getShare();
+
+            if (share.targetType === ShareType.Vault) {
+                keys.forEach((key) => this.addVaultKey(key as VaultKey));
+            } else if (share.targetType === ShareType.Item) {
+                keys.forEach((key) => this.addItemKey(key as ItemKey));
             }
         },
 

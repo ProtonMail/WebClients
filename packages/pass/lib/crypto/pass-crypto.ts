@@ -18,7 +18,6 @@ import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import { getItemKeys } from '../items/item.requests';
-import { getAllShareKeys } from '../shares/share.requests';
 import * as processes from './processes';
 import { createShareManager } from './share-manager';
 import { getSupportedAddresses } from './utils/addresses';
@@ -248,13 +247,13 @@ export const createPassCrypto = (): PassCryptoWorker => {
             assertHydrated(context);
 
             const shareManager = getShareManager(shareId);
-            const newVaultKeys = await Promise.all(
+            const newKeys = await Promise.all(
                 shareKeys
                     .filter(({ KeyRotation }) => !shareManager.hasVaultKey(KeyRotation))
                     .map((shareKey) => processes.openVaultKey({ shareKey, userKeys: context.userKeys }))
             );
 
-            newVaultKeys.forEach((vaultKey) => shareManager.addVaultKey(vaultKey));
+            shareManager.addKeys(newKeys);
         },
 
         removeShare: (shareId) => context.shareManagers.delete(shareId),
@@ -288,10 +287,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
                     }
 
                     case ShareType.Item: {
-                        // TODO(@djankovic): Grab this from shareManager instead?
-                        // ie. return shareManager.getItemKey() when previously opened and added to itemKeys by updateShareKeys/addItemKey
-                        const [encodedKey] = await getAllShareKeys(shareId);
-                        return processes.openVaultKey({ shareKey: encodedKey, userKeys: context.userKeys });
+                        return shareManager.getItemKey(encryptedItem.KeyRotation);
                     }
                 }
             })();
