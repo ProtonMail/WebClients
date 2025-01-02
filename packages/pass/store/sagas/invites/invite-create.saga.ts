@@ -14,7 +14,8 @@ import {
 } from '@proton/pass/store/actions';
 import { selectItem, selectPassPlan, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemMoveDTO, ItemRevision, Maybe, Share, ShareType } from '@proton/pass/types';
+import type { ItemMoveDTO, ItemRevision, Maybe, Share } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import type { InviteMemberDTO, InviteUserDTO } from '@proton/pass/types/data/invites.dto';
 import { partition } from '@proton/pass/utils/array/partition';
@@ -28,28 +29,31 @@ function* createInviteWorker(
     const plan: UserPassPlan = yield select(selectPassPlan);
 
     try {
-        const shareId: string = !payload.withVaultCreation
-            ? payload.shareId
-            : yield call(function* () {
-                  /** create a new vault and move the item provided in the
-                   * action's payload if the user is creating an invite through
-                   * the `move to a new shared vault` flow */
-                  const { name, description, icon, color, item } = payload;
-                  const vaultContent = { name, description, display: { icon, color } };
-                  const share: Share<ShareType.Vault> = yield createVault({ content: vaultContent });
+        const shareId: string =
+            payload.shareType === ShareType.Item || !payload.withVaultCreation
+                ? payload.shareId
+                : yield call(function* () {
+                      /** create a new vault and move the item provided in the
+                       * action's payload if the user is creating an invite through
+                       * the `move to a new shared vault` flow */
+                      const { name, description, icon, color, item } = payload;
+                      const vaultContent = { name, description, display: { icon, color } };
+                      const share: Share<ShareType.Vault> = yield createVault({ content: vaultContent });
 
-                  const itemToMove: Maybe<ItemRevision> = item
-                      ? yield select(selectItem(item.shareId, item.itemId))
-                      : undefined;
-
-                  const move: Maybe<ItemMoveDTO> =
-                      itemToMove && item
-                          ? { before: itemToMove, after: yield moveItem(itemToMove, item.shareId, share.shareId) }
+                      const itemToMove: Maybe<ItemRevision> = item
+                          ? yield select(selectItem(item.shareId, item.itemId))
                           : undefined;
 
-                  yield put(sharedVaultCreated({ share, move }));
-                  return share.shareId;
-              });
+                      const move: Maybe<ItemMoveDTO> =
+                          itemToMove && item
+                              ? { before: itemToMove, after: yield moveItem(itemToMove, item.shareId, share.shareId) }
+                              : undefined;
+
+                      yield put(sharedVaultCreated({ share, move }));
+                      return share.shareId;
+                  });
+
+        const itemId: Maybe<string> = payload.shareType === ShareType.Item ? payload.itemId : undefined;
 
         /** Filter out members that may be already invited or members of the vault */
         const vaultSharedWith: Set<string> = yield select(selectVaultSharedWithEmails(shareId));
@@ -74,8 +78,8 @@ function* createInviteWorker(
         /** Both `createUserInvites` & `createNewUserInvite` return the
          * list of emails which could not be sent out. On success, both
          * should be empty */
-        const failedUsers: string[] = yield createUserInvites(shareId, users);
-        const failedNewUsers: string[] = yield createNewUserInvites(shareId, newUsers);
+        const failedUsers: string[] = yield createUserInvites(shareId, itemId, users);
+        const failedNewUsers: string[] = yield createNewUserInvites(shareId, itemId, newUsers);
         const failed = failedUsers.concat(failedNewUsers);
 
         const totalFailure = failed.length === members.length;
