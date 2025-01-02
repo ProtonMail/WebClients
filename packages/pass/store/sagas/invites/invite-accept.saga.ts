@@ -15,7 +15,7 @@ import {
 import { requestProgress } from '@proton/pass/store/request/actions';
 import type { RequestProgress } from '@proton/pass/store/request/types';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
-import type { Invite, ItemRevision, Maybe, Share, ShareGetResponse, ShareType } from '@proton/pass/types';
+import type { Invite, ItemRevision, Maybe, Share, ShareGetResponse } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type AcceptInviteChannel = RequestProgress<ItemRevision[], null>;
@@ -31,7 +31,7 @@ function* acceptInviteWorker({ payload, meta: { request } }: ReturnType<typeof i
         if (!invite) throw new Error(c('Error').t`Unknown invite`);
 
         const encryptedShare: ShareGetResponse = yield acceptInvite({ ...payload, inviteKeys: invite.keys });
-        const share: Maybe<Share<ShareType.Vault>> = yield parseShareResponse(encryptedShare);
+        const share: Maybe<Share> = yield parseShareResponse(encryptedShare);
         if (!share) throw new Error(c('Error').t`Could not open invited vault`);
 
         const progressChannel = eventChannel<AcceptInviteChannel>((emitter) => {
