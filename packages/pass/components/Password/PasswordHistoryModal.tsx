@@ -13,13 +13,12 @@ import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '@proton/pass/constants';
 import { selectPasswordHistory } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
-import { usePasswordContext } from './PasswordContext';
+import { usePasswordHistoryActions } from './PasswordHistoryActions';
 import { PasswordHistoryItem } from './PasswordHistoryItem';
 
 export const PasswordHistoryModal: FC<ModalProps> = (props) => {
-    const passwordContext = usePasswordContext();
+    const { clear } = usePasswordHistoryActions();
     const history = useSelector(selectPasswordHistory);
-
     const empty = history.length === 0;
 
     return (
@@ -43,7 +42,7 @@ export const PasswordHistoryModal: FC<ModalProps> = (props) => {
                                 pill
                                 color="norm"
                                 className="text-sm shrink-0"
-                                onClick={passwordContext.history.clear}
+                                onClick={clear}
                             >
                                 {c('Action').t`Clear`}
                             </Button>,

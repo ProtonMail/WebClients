@@ -4,16 +4,15 @@ import { c, msgid } from 'ttag';
 
 import { Slider } from '@proton/atoms';
 import { Option, SelectTwo, Toggle } from '@proton/components';
-import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
+import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
+import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import { getSeperatorTranslation } from '@proton/pass/lib/password/memorable';
 import type { MemorablePasswordOptions } from '@proton/pass/lib/password/types';
 import { SeperatorOptions } from '@proton/pass/lib/password/types';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
-import { OrganizationPolicyTooltip } from '../Organization/OrganizationPolicyTooltip';
-
-type Props = UsePasswordGeneratorResult<'memorable'> & { advanced: boolean; dense?: boolean };
+type Props = PasswordGeneratorResult<'memorable'> & { advanced: boolean; dense?: boolean };
 
 export const PasswordMemorableOptions: FC<Props> = ({
     advanced,
