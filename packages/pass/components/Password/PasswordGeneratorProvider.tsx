@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import {
@@ -16,6 +15,7 @@ import {
 
 import { PasswordMemorableOptions } from './PasswordMemorableOptions';
 import { PasswordRandomOptions } from './PasswordRandomOptions';
+import { PasswordStrength } from './PasswordStrength';
 import { PasswordTypeSelect } from './PasswordTypeSelect';
 
 export const PasswordGenerator: FC<PasswordGeneratorResult> = (props) => {

@@ -12,7 +12,7 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
+import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
@@ -43,8 +43,8 @@ Populate username under "Username" label
 export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     const history = useHistory();
     const { search } = useLocation();
-    const passwordContext = usePasswordContext();
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
+    const passwordHistory = usePasswordHistoryActions();
 
     const { itemEmail, itemUsername, withUsername } = form.values;
 
@@ -199,7 +199,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     const { urls, url } = form.values;
                     const baseUrl = urls?.[0]?.url ?? url;
                     const origin = intoCleanHostname(baseUrl);
-                    passwordContext.history.add({ value, origin });
+                    passwordHistory.add({ value, origin });
                 }}
             />
 

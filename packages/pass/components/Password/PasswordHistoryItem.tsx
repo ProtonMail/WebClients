@@ -10,10 +10,10 @@ import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator'
 import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
 
-import { usePasswordContext } from './PasswordContext';
+import { usePasswordHistoryActions } from './PasswordHistoryActions';
 
 export const PasswordHistoryItem: FC<PasswordHistoryEntry> = ({ value, origin, id, createTime }) => {
-    const passwordContext = usePasswordContext();
+    const passwordHistory = usePasswordHistoryActions();
 
     return (
         <FieldsetCluster mode="read" as="div">
@@ -30,7 +30,7 @@ export const PasswordHistoryItem: FC<PasswordHistoryEntry> = ({ value, origin, i
                         icon
                         pill
                         shape="solid"
-                        onClick={() => passwordContext.history.remove(id)}
+                        onClick={() => passwordHistory.remove(id)}
                     >
                         <Icon name="cross" alt={c('Action').t`Delete password`} />
                     </Button>,

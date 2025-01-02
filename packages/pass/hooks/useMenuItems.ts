@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import type { IconName } from '@proton/components';
 import { syncIntent } from '@proton/pass//store/actions';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
+import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_REDDIT_URL, PASS_REQUEST_URL, PASS_X_URL } from '@proton/pass/constants';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { withTap } from '@proton/pass/utils/fp/pipe';
@@ -33,8 +33,8 @@ export const useMenuItems = ({
     extra = {},
 }: MenuItemsOptions): Record<'feedback' | 'download' | 'advanced', MenuItem[]> => {
     const { openSettings } = usePassCore();
-    const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
+    const passwordHistory = usePasswordHistoryActions();
 
     return useMemo(() => {
         const withAction = withTap(onAction);
@@ -80,7 +80,7 @@ export const useMenuItems = ({
                 {
                     icon: 'key-history',
                     label: c('Action').t`Generated passwords`,
-                    onClick: withAction(passwordContext.history.open),
+                    onClick: withAction(passwordHistory.open),
                 },
                 {
                     icon: 'arrow-rotate-right',
@@ -90,5 +90,5 @@ export const useMenuItems = ({
                 ...(extra.advanced ?? []),
             ],
         };
-    }, [onAction, passwordContext.history.open]);
+    }, [onAction, passwordHistory.open]);
 };
