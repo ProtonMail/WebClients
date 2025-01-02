@@ -65,17 +65,19 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         shareId: string;
     }) => Promise<ItemUpdateRequest>;
     moveItem: (data: { destinationShareId: string; content: Uint8Array }) => Promise<ItemMoveSingleToShareRequest>;
-    createVaultInvite: (data: {
+    createInvite: (data: {
         email: string;
         invitedPublicKey: string;
         role: ShareRole;
         shareId: string;
+        itemId?: string;
     }) => Promise<InviteCreateRequest>;
     promoteInvite: (data: { shareId: string; invitedPublicKey: string }) => Promise<NewUserInvitePromoteRequest>;
-    createNewUserVaultInvite: (data: {
+    createNewUserInvite: (data: {
         email: string;
         role: ShareRole;
         shareId: string;
+        itemId?: string;
     }) => Promise<NewUserInviteCreateRequest>;
     acceptVaultInvite: (data: {
         invitedAddressId: string;
