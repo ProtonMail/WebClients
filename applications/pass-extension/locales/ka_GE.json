@@ -700,6 +700,9 @@
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Dark Web Monitoring ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
       ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "თუ სუბდომენს იყენებთ, მაგ: ${ subdomainExample }, დომენად ${ dmarcExampleSubdomain } უნდა გამოიყენოთ."
+      ],
       "If you are using CloudFlare, please make sure to not select the Proxy option.": [
         "თუ იყენებთ CloudFlare-ს, დარწმუნდით, რომ პროქსის პარამეტრი არჩეული არ გაქვთ."
       ],
@@ -1246,6 +1249,9 @@
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } თქვენი სისტემის თემას გაჰყვება."
+      ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } დააგენერირებს გადამისამართების მისამართს (ასევე ცნობილია, როგორც უკუმისამართი), რომელიც შეგიძლიათ, ბუფერში დააკოპიროთ."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს, საკრედიტო ბარათებს და იდენტიფიკატორებს შემოიტანს."
