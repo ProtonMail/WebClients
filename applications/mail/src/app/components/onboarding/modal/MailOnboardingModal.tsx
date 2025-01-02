@@ -80,7 +80,10 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
     return (
         <OnboardingModal
             {...props}
-            onClose={endReplay}
+            onClose={() => {
+                endReplay();
+                props.onClose?.();
+            }}
             onDone={handleDone}
             modalContentClassname="mx-12 mt-12 mb-6"
             modalClassname="onboarding-modal--larger onboarding-modal--new"

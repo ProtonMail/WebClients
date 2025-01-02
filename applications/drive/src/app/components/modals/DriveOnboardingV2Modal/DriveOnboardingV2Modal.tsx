@@ -1,13 +1,11 @@
 import type { ReactNode } from 'react';
 import { type FC, useEffect, useMemo, useState } from 'react';
 
-import { useUserSettings, useWelcomeFlags } from '@proton/account';
+import { useWelcomeFlags } from '@proton/account';
 import type { ModalStateProps } from '@proton/components';
-import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, useApi, useDrivePlan } from '@proton/components';
-import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
+import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, useDrivePlan } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
 
 import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
@@ -22,9 +20,7 @@ import { UploadStep, UploadStepButtons } from './steps/UploadStep';
 import { WelcomeStep, WelcomeStepButtons } from './steps/WelcomeStep';
 
 export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
-    const api = useApi();
-    const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
-    const [userSettings] = useUserSettings();
+    const { setDone: setWelcomeFlagsDone } = useWelcomeFlags();
 
     const { isLoading: isOnboardingLoading, hasPendingExternalInvitations } = useOnboarding();
     const { isB2B, isAdmin } = useDrivePlan();
@@ -88,12 +84,6 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
         if (step < steps.length - 1) {
             setStep((step) => step + 1);
         } else {
-            if (welcomeFlags.isWelcomeFlow) {
-                api(updateFlags({ Welcomed: 1 })).catch(noop);
-            }
-            if (!userSettings.WelcomeFlag) {
-                api(updateWelcomeFlags()).catch(noop);
-            }
             setWelcomeFlagsDone();
 
             props.onClose?.();
