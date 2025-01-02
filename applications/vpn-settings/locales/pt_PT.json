@@ -834,6 +834,11 @@
         "Isto desligará todos os routers e clientes que utilizam este certificado."
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Melhore a produtividade dos seus e-mails. Deixe o ${ BRAND_NAME } Scribe ajudá-lo a redigir, responder e corrigir os seus e-mails."
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Desativado"
@@ -2126,6 +2131,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Se desativado, apenas os administradores terão acesso."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspetos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
       ]
@@ -3068,6 +3076,9 @@
       ],
       "City": [
         "Cidade"
+      ],
+      "Country": [
+        "País"
       ],
       "Create your account": [
         "Crie a sua conta"
@@ -4222,6 +4233,9 @@
       "Two-factor authentication enabled": [
         "Autenticação de dois fatores ativada"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "O modo de duas palavras-passe requer duas palavras-passe: uma para iniciar sessão na sua conta e outra para desencriptar os seus dados. (Avançado)"
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
       ],
@@ -4335,6 +4349,9 @@
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Recomendamos ter vários servidores em diferentes localizações para disponibilizar redundância."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Recomendamos notificar os membros da família e pedir-lhes que configurem a A2F para as suas contas antes de impor a utilização da A2F."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar os membros da organização e pedir-lhes que configurem a A2F para as suas contas antes de impor a utilização da A2F."
@@ -6783,6 +6800,9 @@
       ],
       "Invoice": [
         "Fatura"
+      ],
+      "Transactions": [
+        "Transações"
       ]
     },
     "Select search results": {
@@ -7500,6 +7520,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
         "${ dayDiff } dias restantes"
@@ -7547,6 +7570,9 @@
       ],
       "Cancel subscription?": [
         "Cancelar subscrição?"
+      ],
+      "Dark web monitoring": [
+        "Monitorização da Dark Web"
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novas aplicações e funcionalidades"
@@ -8243,6 +8269,9 @@
       "Email subscriptions": [
         "Subscrições de e-mail"
       ],
+      "Enable for all users": [
+        "Ativar para todos os utilizadores"
+      ],
       "Enter 2FA code": [
         "Insira o código 2FA"
       ],
@@ -8694,17 +8723,26 @@
       ]
     },
     "Transaction type display as badge": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
       "Cash": [
         "Dinheiro"
       ],
       "Credit": [
         "Crédito"
       ],
+      "Credit transfer": [
+        "Transferência de crédito"
+      ],
       "Gift card": [
         "Cartão presente"
       ],
       "Migration": [
         "Migração"
+      ],
+      "Payment": [
+        "Pagamento"
       ],
       "Refund": [
         "Reembolso"
