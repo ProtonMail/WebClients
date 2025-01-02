@@ -6,9 +6,12 @@ import notFoundSvg from '@proton/styles/assets/img/illustrations/shared-page-not
 
 import SharedPageLayout from '../Layout/SharedPageLayout';
 
-export default function SharedPageError() {
+interface SharedPageErrorProps {
+    isPartialView?: boolean;
+}
+export default function SharedPageError({ isPartialView }: SharedPageErrorProps) {
     return (
-        <SharedPageLayout>
+        <SharedPageLayout isPartialView={isPartialView}>
             <div className="flex flex-1 items-center py-7 mb-14">
                 <div
                     className="password-page--form-container ui-standard w-full relative shadow-lifted max-w-custom mx-auto px-8 py-11 rounded"
