@@ -15,6 +15,7 @@ import type {
     NewUserInvitePromoteIntent,
     NewUserInviteRemoveIntent,
 } from '@proton/pass/types/data/invites.dto';
+import type { Maybe } from '@proton/pass/types/utils';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
@@ -64,7 +65,11 @@ const limitExceededCatch =
     };
 
 /** Returns the list of emails which could not be invited successfully  */
-export const createUserInvites = async (shareId: string, users: InviteUserDTO[]): Promise<string[]> =>
+export const createUserInvites = async (
+    shareId: string,
+    itemId: Maybe<string>,
+    users: InviteUserDTO[]
+): Promise<string[]> =>
     (
         await Promise.all(
             chunk(users, MAX_BATCH_PER_REQUEST).map(async (batch) =>
@@ -74,7 +79,13 @@ export const createUserInvites = async (shareId: string, users: InviteUserDTO[])
                     data: {
                         Invites: await Promise.all(
                             batch.map(({ email, role, publicKey }) =>
-                                PassCrypto.createVaultInvite({ shareId, email, role, invitedPublicKey: publicKey })
+                                PassCrypto.createInvite({
+                                    shareId,
+                                    email,
+                                    role,
+                                    invitedPublicKey: publicKey,
+                                    itemId,
+                                })
                             )
                         ),
                     },
@@ -85,7 +96,7 @@ export const createUserInvites = async (shareId: string, users: InviteUserDTO[])
         )
     ).flat();
 
-export const createNewUserInvites = async (shareId: string, newUsers: InviteNewUserDTO[]) =>
+export const createNewUserInvites = async (shareId: string, itemId: Maybe<string>, newUsers: InviteNewUserDTO[]) =>
     (
         await Promise.all(
             chunk(newUsers, MAX_BATCH_PER_REQUEST).map(async (batch) =>
@@ -95,7 +106,7 @@ export const createNewUserInvites = async (shareId: string, newUsers: InviteNewU
                     data: {
                         NewUserInvites: await Promise.all(
                             batch.map(({ email, role }) =>
-                                PassCrypto.createNewUserVaultInvite({ email, role, shareId })
+                                PassCrypto.createNewUserInvite({ email, role, shareId, itemId })
                             )
                         ),
                     },

@@ -303,21 +303,39 @@ export const createPassCrypto = (): PassCryptoWorker => {
             return processes.moveItem({ destinationShareId, destinationVaultKey, content });
         },
 
-        async createVaultInvite({ shareId, invitedPublicKey, email, role }) {
+        async createInvite({ shareId, itemId, invitedPublicKey, email, role }) {
             assertHydrated(context);
 
             const shareManager = getShareManager(shareId);
+
+            // For vault sharing, encrypt vault keys
+            // For item sharing, encrypt item keys
+            const targetKeys = await (async () => {
+                if (!itemId) return shareManager.getVaultKeys();
+                const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
+                const vaultKey = shareManager.getVaultKey(shareManager.getLatestRotation());
+                return Promise.all(
+                    encryptedItemKeys.map((encryptedItemKey) => processes.openItemKey({ encryptedItemKey, vaultKey }))
+                );
+            })();
+
             const share = shareManager.getShare();
             const inviteKeys = await processes.createInviteKeys({
-                targetKeys: shareManager.getVaultKeys(),
+                targetKeys,
                 invitedPublicKey: await CryptoProxy.importPublicKey({ armoredKey: invitedPublicKey }),
                 inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
             });
 
-            return { Keys: inviteKeys, Email: email, ShareRoleID: role, TargetType: ShareType.Vault };
+            return {
+                Keys: inviteKeys,
+                Email: email,
+                ShareRoleID: role,
+                TargetType: !itemId ? ShareType.Vault : ShareType.Item,
+                ItemID: itemId,
+            };
         },
 
-        async createNewUserVaultInvite({ shareId, email, role }) {
+        async createNewUserInvite({ shareId, email, role, itemId }) {
             assertHydrated(context);
 
             const shareManager = getShareManager(shareId);
@@ -333,7 +351,8 @@ export const createPassCrypto = (): PassCryptoWorker => {
                 Email: email,
                 ShareRoleID: role,
                 Signature: signature,
-                TargetType: ShareType.Vault,
+                TargetType: !itemId ? ShareType.Vault : ShareType.Item,
+                ItemID: itemId,
             };
         },
 
