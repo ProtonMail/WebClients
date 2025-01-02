@@ -203,15 +203,15 @@ function PublicShareLinkInitContainer() {
     }, [isDriveWebShareUrlSignupModalEnabled, isLoggedIn, isLoading, customPassword]);
 
     if (isPasswordNeeded) {
-        return <PasswordPage submitPassword={submitPassword} />;
+        return <PasswordPage submitPassword={submitPassword} isPartialView={isPartialView} />;
     }
 
     if (showLoadingPage) {
-        return <LoadingPage haveCustomPassword={!!customPassword} />;
+        return <LoadingPage haveCustomPassword={!!customPassword} isPartialView={isPartialView} />;
     }
 
     if (showErrorPage || !link) {
-        return <ErrorPage />;
+        return <ErrorPage isPartialView={isPartialView} />;
     }
 
     const showBookmarks = !bookmarksFeatureDisabled || bookmarksPublicView.haveBookmarks;

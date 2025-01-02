@@ -13,7 +13,6 @@ import { SaveToDriveButton } from '../Bookmarks/SaveToDriveButton';
 import { CreateButton } from '../EditActions/CreateButton';
 import { UploadButton } from '../EditActions/UploadButton';
 import Breadcrumbs from './Breadcrumbs';
-import { ClosePartialPublicViewButton } from './ClosePartialPublicViewButton';
 import { DownloadButton, type DownloadButtonProps } from './DownloadButton';
 
 import './SharedPageContentHeader.scss';
@@ -99,7 +98,6 @@ export function SharedPageContentHeader({
                         <CreateButton token={token} linkId={linkId} />
                     </>
                 )}
-                {isPartialView && <ClosePartialPublicViewButton />}
                 {!hideSaveToDrive && !isPartialView && (
                     <SaveToDriveButton
                         loading={isLoading}

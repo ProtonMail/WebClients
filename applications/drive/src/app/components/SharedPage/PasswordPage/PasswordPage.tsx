@@ -13,9 +13,10 @@ import './PasswordPage.scss';
 
 interface Props {
     submitPassword: (password: string) => Promise<void>;
+    isPartialView?: boolean;
 }
 
-export default function PasswordPage({ submitPassword }: Props) {
+export default function PasswordPage({ submitPassword, isPartialView = false }: Props) {
     const [loading, withLoading] = useLoading(false);
     const [password, setPassword] = useState('');
 
@@ -25,7 +26,7 @@ export default function PasswordPage({ submitPassword }: Props) {
     };
 
     return (
-        <SharedPageLayout>
+        <SharedPageLayout isPartialView={isPartialView}>
             <div className="flex flex-1 items-center py-7 mb-14">
                 <div
                     className="password-page--form-container ui-standard w-full relative shadow-lifted max-w-custom mx-auto px-8 py-11 rounded"
