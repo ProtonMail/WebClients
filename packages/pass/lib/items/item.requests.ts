@@ -356,3 +356,6 @@ export const getItemRevisions = async (
         })
     ).Revisions!;
 };
+
+export const getItemKeys = async (shareId: string, itemId: string) =>
+    (await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key`, method: 'get' })).Keys!;
