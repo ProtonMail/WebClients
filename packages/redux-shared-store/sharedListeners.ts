@@ -16,6 +16,7 @@ import {
     securityCheckupListener,
     userInvitationsListener,
     userKeysListener,
+    userSettingsListener,
 } from '@proton/account';
 import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
@@ -32,6 +33,7 @@ type AppStartListening = TypedStartListening<RequiredState, ProtonDispatch<any>,
 
 export const startSharedListening = (startListening: AppStartListening) => {
     userKeysListener(startListening);
+    userSettingsListener(startListening);
     addressKeysListener(startListening);
     organizationThemeListener(startListening);
     organizationKeysListener(startListening);

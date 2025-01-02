@@ -1,10 +1,12 @@
 import { useCallback } from 'react';
 
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { type PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
+
+import { welcomeCompleted } from './actions';
 
 const name = 'welcomeFlags' as const;
 
@@ -13,6 +15,10 @@ export interface WelcomeFlagsState {
     isWelcomeFlow: boolean;
     isDone: boolean;
     isReplay: boolean;
+}
+
+export interface WelcomeFlagsReducer {
+    [name]: WelcomeFlagsState;
 }
 
 const initialState: WelcomeFlagsState = {
@@ -55,7 +61,7 @@ const slice = createSlice({
 
 export const welcomeFlagsReducer = { [name]: slice.reducer };
 export const welcomeFlagsActions = slice.actions;
-export const selectWelcomeFlags = (state: { [name]: WelcomeFlagsState }) => state[name];
+export const selectWelcomeFlags = (state: WelcomeFlagsReducer) => state[name];
 
 interface WelcomeFlagsOutput {
     endReplay: () => void;
@@ -68,6 +74,7 @@ export const useWelcomeFlags = (): WelcomeFlagsOutput => {
     const value = baseUseSelector(selectWelcomeFlags);
     const dispatch = baseUseDispatch();
     const setDone = useCallback(() => {
+        dispatch(welcomeCompleted());
         dispatch(slice.actions.done());
     }, []);
     const endReplay = useCallback(() => {
