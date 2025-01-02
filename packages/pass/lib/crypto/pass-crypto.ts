@@ -17,7 +17,6 @@ import { entriesMap } from '@proton/pass/utils/object/map';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
-import { getItemKeys } from '../items/item.requests';
 import * as processes from './processes';
 import { createShareManager } from './share-manager';
 import { getSupportedAddresses } from './utils/addresses';
@@ -318,22 +317,10 @@ export const createPassCrypto = (): PassCryptoWorker => {
             return processes.moveItem({ destinationShareId, destinationVaultKey, content });
         },
 
-        async createInvite({ shareId, itemId, invitedPublicKey, email, role }) {
+        async createInvite({ shareId, itemId, invitedPublicKey, email, role, targetKeys }) {
             assertHydrated(context);
 
             const shareManager = getShareManager(shareId);
-
-            // For vault sharing, encrypt vault keys
-            // For item sharing, encrypt item keys
-            const targetKeys = await (async () => {
-                if (!itemId) return shareManager.getVaultKeys();
-                const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
-                const vaultKey = shareManager.getVaultKey(shareManager.getLatestRotation());
-                return Promise.all(
-                    encryptedItemKeys.map((encryptedItemKey) => processes.openItemKey({ encryptedItemKey, vaultKey }))
-                );
-            })();
-
             const share = shareManager.getShare();
             const inviteKeys = await processes.createInviteKeys({
                 targetKeys,
@@ -438,6 +425,15 @@ export const createPassCrypto = (): PassCryptoWorker => {
 
             const vaultKey = getShareManager(shareId).getVaultKey(linkKeyShareKeyRotation);
             return processes.openLinkKey({ encryptedLinkKey, shareKey: vaultKey.key });
+        },
+
+        async openItemKey({ encryptedItemKey, shareId }) {
+            assertHydrated(context);
+
+            const shareManager = getShareManager(shareId);
+            const vaultKey = shareManager.getVaultKey(shareManager.getLatestRotation());
+
+            return processes.openItemKey({ encryptedItemKey, vaultKey });
         },
 
         serialize: () => ({
