@@ -1,4 +1,4 @@
-import { startListeningToPlanNameChange, startPersistListener } from '@proton/account';
+import { startAccountSessionsListener, startListeningToPlanNameChange, startPersistListener } from '@proton/account';
 import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
 import { startAccountSecurityListener } from '@proton/components';
 import { mailSettingsHeartbeatListener, startSharedListening } from '@proton/redux-shared-store';
@@ -21,4 +21,5 @@ export const start = ({
     if (persistTransformer) {
         startPersistListener(startListening, persistTransformer);
     }
+    startAccountSessionsListener(startListening);
 };

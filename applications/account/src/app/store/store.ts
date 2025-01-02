@@ -16,7 +16,7 @@ export const setupStore = ({
     mode,
 }: {
     preloadedState?: Partial<AccountState>;
-    mode: 'public' | 'lite' | 'default';
+    mode: 'default' | 'lite';
 }) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 

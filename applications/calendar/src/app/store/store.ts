@@ -13,9 +13,11 @@ export type { CalendarState };
 export const setupStore = ({
     preloadedState,
     persist,
+    isAccountSessionsEnabled,
 }: {
     preloadedState?: Partial<CalendarState>;
     persist?: Boolean;
+    isAccountSessionsEnabled?: boolean;
 }) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
@@ -37,13 +39,13 @@ export const setupStore = ({
     const getCalendarPersistedState = persist
         ? (state: CalendarState) => getPersistedState(state, persistReducer)
         : undefined;
-    start({ startListening, persistTransformer: getCalendarPersistedState });
+    start({ startListening, persistTransformer: getCalendarPersistedState, isAccountSessionsEnabled });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start({ startListening, persistTransformer: getCalendarPersistedState });
+            start({ startListening, persistTransformer: getCalendarPersistedState, isAccountSessionsEnabled });
         });
     }
 
