@@ -28,14 +28,23 @@ describe('cookie helper', () => {
         expect(document.cookie).toEqual('');
     });
 
+    it('should not expire cookies', () => {
+        setCookie({
+            cookieName: 'name',
+            cookieValue: '125',
+            expirationDate: new Date(2034, 0).toUTCString(),
+        });
+        // Can't actually check expires
+        expect(document.cookie).toEqual('name=125');
+    });
+
     it('should expire cookies', () => {
         setCookie({
             cookieName: 'name',
             cookieValue: '125',
-            expirationDate: new Date(2025, 0).toUTCString(),
+            expirationDate: new Date(2020, 0).toUTCString(),
         });
-        // Can't actually check expires
-        expect(document.cookie).toEqual('name=125');
+        expect(document.cookie).toEqual('');
     });
 
     it('should get cookie', () => {
