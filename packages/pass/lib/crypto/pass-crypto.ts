@@ -17,6 +17,8 @@ import { entriesMap } from '@proton/pass/utils/object/map';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
+import { getItemKeys } from '../items/item.requests';
+import { getAllShareKeys } from '../shares/share.requests';
 import * as processes from './processes';
 import { createShareManager } from './share-manager';
 import { getSupportedAddresses } from './utils/addresses';
@@ -242,8 +244,6 @@ export const createPassCrypto = (): PassCryptoWorker => {
             }
         },
 
-        /* FIXME: add support for itemKeys when we
-         * support ItemShares */
         async updateShareKeys({ shareId, shareKeys }) {
             assertHydrated(context);
 
@@ -275,9 +275,28 @@ export const createPassCrypto = (): PassCryptoWorker => {
             assertHydrated(context);
 
             const shareManager = getShareManager(shareId);
-            const vaultKey = shareManager.getVaultKey(encryptedItem.KeyRotation!);
+            const share = shareManager.getShare();
 
-            return processes.openItem({ encryptedItem, vaultKey });
+            const itemKey = await (async () => {
+                switch (share.targetType) {
+                    case ShareType.Vault: {
+                        const vaultKey = shareManager.getVaultKey(encryptedItem.KeyRotation!);
+                        return processes.openItemKey({
+                            encryptedItemKey: { Key: encryptedItem.ItemKey!, KeyRotation: encryptedItem.KeyRotation! },
+                            vaultKey,
+                        });
+                    }
+
+                    case ShareType.Item: {
+                        // TODO(@djankovic): Grab this from shareManager instead?
+                        // ie. return shareManager.getItemKey() when previously opened and added to itemKeys by updateShareKeys/addItemKey
+                        const [encodedKey] = await getAllShareKeys(shareId);
+                        return processes.openVaultKey({ shareKey: encodedKey, userKeys: context.userKeys });
+                    }
+                }
+            })();
+
+            return processes.openItem({ encryptedItem, itemKey });
         },
 
         /* We're assuming that every call to PassCrypto::updateItem will
