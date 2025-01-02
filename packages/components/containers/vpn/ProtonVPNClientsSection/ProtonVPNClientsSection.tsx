@@ -2,7 +2,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useWelcomeFlags } from '@proton/account';
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
@@ -55,7 +54,6 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
 const ProtonVPNClientsSection = () => {
     const history = useHistory();
     const location = useLocation();
-    const { setDone } = useWelcomeFlags();
     const { createNotification } = useNotifications();
 
     const androidLinks = [
@@ -98,7 +96,6 @@ const ProtonVPNClientsSection = () => {
                 open={location.search.includes('prompt')}
                 onClose={() => {
                     history.replace({ ...location, search: '' });
-                    setDone();
                 }}
             />
             <SettingsParagraph>
