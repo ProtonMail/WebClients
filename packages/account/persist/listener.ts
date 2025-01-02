@@ -1,3 +1,5 @@
+import { isAnyOf } from '@reduxjs/toolkit';
+
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import {
     getPersistedSessions,
@@ -11,6 +13,7 @@ import noop from '@proton/utils/noop';
 import { serverEvent } from '../eventLoop';
 import type { UserState } from '../user';
 import { selectUser } from '../user';
+import { welcomeCompleted } from '../welcomeFlags/actions';
 import { deleteStore, pruneStores } from './db';
 import { removePersistedStateEvent } from './event';
 import { setEncryptedPersistedState } from './helper';
@@ -77,7 +80,8 @@ export const startPersistListener = <T extends UserState>(
     });
 
     startListening({
-        actionCreator: removePersistedStateEvent,
+        // Remove the previous store to ensure that the old welcome values in user settings isn't persisted
+        matcher: isAnyOf(removePersistedStateEvent, welcomeCompleted),
         effect: async (action, listenerApi) => {
             const userID = selectUser(listenerApi.getState())?.value?.ID;
             if (userID) {
