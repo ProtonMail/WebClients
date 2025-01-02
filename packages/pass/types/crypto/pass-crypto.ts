@@ -70,6 +70,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         invitedPublicKey: string;
         role: ShareRole;
         shareId: string;
+        targetKeys: (ItemKey | VaultKey)[];
         itemId?: string;
     }) => Promise<InviteCreateRequest>;
     promoteInvite: (data: { shareId: string; invitedPublicKey: string }) => Promise<NewUserInvitePromoteRequest>;
@@ -100,6 +101,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         linkKeyShareKeyRotation: number;
         shareId: string;
     }) => Promise<Uint8Array>;
+    openItemKey: (data: { encryptedItemKey: EncodedItemKeyRotation; shareId: string }) => Promise<ItemKey>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
@@ -118,6 +120,11 @@ export interface ShareManager<T extends ShareType = ShareType> extends Serializa
     getVaultKey: (rotation: Rotation) => VaultKey;
     getVaultKeys: () => VaultKey[];
     addVaultKey: (vaultKey: VaultKey) => void;
+    hasItemKey: (rotation: Rotation) => boolean;
+    getItemKey: (rotation: Rotation) => ItemKey;
+    getItemKeys: () => ItemKey[];
+    addItemKey: (itemKey: ItemKey) => void;
+    addKeys: (keys: VaultKey[] | ItemKey[]) => void;
     isActive: (userKeys?: DecryptedKey[]) => boolean;
 }
 
