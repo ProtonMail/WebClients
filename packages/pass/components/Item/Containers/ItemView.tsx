@@ -79,7 +79,8 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const handleDelete = () => itemActions.delete(item);
     const handleInviteClick = () => setInviteOpen(true);
     const handleSecureLink = () => setOpenSecureLinkModal(true);
-    const handleVaultManage = () => inviteActions.manageAccess(shareId);
+    const handleItemManage = () => inviteActions.manageItemAccess(shareId, itemId);
+    const handleShareItem = () => inviteActions.createItemInvite({ item });
 
     const handleCreateSharedVault = () => {
         inviteActions.createSharedVault({ item: { shareId, itemId } });
@@ -123,7 +124,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 handleEditClick={handleEdit}
                 handleHistoryClick={handleHistory}
                 handleInviteClick={handleInviteClick}
-                handleManageClick={handleVaultManage}
+                handleManageClick={handleItemManage}
                 handleMoveToTrashClick={handleTrash}
                 handleMoveToVaultClick={handleMove}
                 handlePinClick={handlePinClick}
@@ -131,18 +132,21 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 handleRetryClick={handleRetry}
                 handleSecureLinkClick={handleSecureLink}
                 handleToggleFlagsClick={handleToggleFlags}
+                handleShareItemClick={handleShareItem}
             />
 
-            <VaultInviteFromItemModal
-                vault={vault}
-                shareId={shareId}
-                itemId={itemId}
-                open={inviteOpen}
-                onClose={() => setInviteOpen(false)}
-                handleMoveToSharedVaultClick={handleMoveToSharedVault}
-                handleShareVaultClick={handleShareVaultClick}
-                handleCreateSharedVaultClick={handleCreateSharedVault}
-            />
+            {inviteOpen && (
+                <VaultInviteFromItemModal
+                    vault={vault}
+                    shareId={shareId}
+                    itemId={itemId}
+                    open
+                    onClose={() => setInviteOpen(false)}
+                    handleMoveToSharedVaultClick={handleMoveToSharedVault}
+                    handleShareVaultClick={handleShareVaultClick}
+                    handleCreateSharedVaultClick={handleCreateSharedVault}
+                />
+            )}
 
             {openSecureLinkModal && (
                 <SecureLinkModal

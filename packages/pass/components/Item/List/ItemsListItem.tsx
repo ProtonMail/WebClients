@@ -58,6 +58,7 @@ export const ItemsListItem = memo(
         const loading = useItemLoading(item) || optimistic;
         const writable = (vault && isWritableVault(vault)) ?? false;
         const aliasDisabled = isDisabledAliasItem(item);
+        const shared = Boolean(item.shareCount);
 
         return (
             <div className={clsx(bulk && 'px-1 py-0.5')}>
@@ -133,7 +134,7 @@ export const ItemsListItem = memo(
                         />
 
                         <div className={clsx('text-left', loading && !failed && 'opacity-50')}>
-                            <span className="flex items-center">
+                            <span className="flex items-center gap-x-1">
                                 {search && (
                                     <VaultIcon
                                         size={3}
@@ -144,6 +145,13 @@ export const ItemsListItem = memo(
                                 <span className="flex-1 text-ellipsis">
                                     <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>
                                 </span>
+                                {shared && (
+                                    <Icon
+                                        name="users"
+                                        color={`var(${bulk ? '--interaction-norm-contrast' : '--text-weak'})`}
+                                        size={3.5}
+                                    />
+                                )}
                             </span>
                             <div
                                 className={clsx([
