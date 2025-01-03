@@ -31,10 +31,8 @@ import {
 import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { getIsProtonUID, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
-import {
-    EventInvitationError,
-    INVITATION_ERROR_TYPE,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import {
     findAttendee,

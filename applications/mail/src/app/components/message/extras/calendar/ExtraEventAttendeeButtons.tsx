@@ -9,11 +9,9 @@ import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import {
-    EventInvitationError,
-    INVITATION_ERROR_TYPE,
-    getErrorMessage,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { getICSErrorMessage } from '@proton/shared/lib/calendar/icsSurgery/errors/icsErrorMessageHelpers';
+import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { getAttendeePartstat, getAttendeeToken } from '@proton/shared/lib/calendar/vcalHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
@@ -231,7 +229,11 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         const { partstat, timestamp, isProtonInvite } = error;
         const { retryCreateEvent, retryUpdateEvent } = actions;
         const isUpdate = error.type === EVENT_UPDATE_ERROR;
-        const message = getErrorMessage(error.type, { ...error });
+        const message = getICSErrorMessage({
+            errorType: error.type,
+            config: { ...error },
+            errorOrigin: 'invitation',
+        });
 
         const handleRetry = () => {
             if (!partstat) {

@@ -32,8 +32,13 @@ import {
     propertyToUTCDate,
 } from '../vcalConverter';
 import { getIsPropertyAllDay, getPropertyTzid } from '../vcalHelper';
-import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError, INVITATION_ERROR_TYPE } from './EventInvitationError';
-import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
+import { EventInvitationError } from './EventInvitationError';
+import { ImportEventError } from './ImportEventError';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    IMPORT_EVENT_ERROR_TYPE,
+    INVITATION_ERROR_TYPE,
+} from './errors/icsSurgeryErrorTypes';
 import { getSupportedAlarms } from './valarm';
 import { getSupportedStringValue } from './vcal';
 
