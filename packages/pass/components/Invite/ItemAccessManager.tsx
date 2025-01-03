@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -17,17 +17,15 @@ import { ShareMember } from '@proton/pass/components/Share/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
 import { UpsellRef } from '@proton/pass/constants';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
+import { isShared } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { loadShareItemMembers } from '@proton/pass/lib/shares/share.requests';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectItem, selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { NewUserPendingInvite, PendingInvite, UniqueItem } from '@proton/pass/types';
-import { type ShareMember as ShareMemberType, ShareType } from '@proton/pass/types';
+import type { NewUserPendingInvite, PendingInvite, ShareType, UniqueItem } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import { useInviteActions } from './InviteProvider';
 
@@ -40,38 +38,36 @@ type InviteListItem =
 export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
     const { createItemInvite, close } = useInviteActions();
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
-    const [members, setMembers] = useState<ShareMemberType[]>([]);
     const item = useSelector(selectItem(shareId, itemId))!;
+    const members = item.members ?? [];
     const { heading, subheading } = presentListItem(item);
     const plan = useSelector(selectPassPlan);
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
 
     const [limitModalOpen, setLimitModalOpen] = useState(false);
 
-    const loading = useShareAccessOptionsPolling(shareId);
+    const loading = useShareAccessOptionsPolling(shareId, itemId);
     const canManage = isShareManageable(vault);
     const b2b = plan === UserPassPlan.BUSINESS;
 
     const invites = useMemo<InviteListItem[]>(
         () =>
             [
-                ...(vault.invites ?? []).map((invite) => ({
+                ...(item.invites ?? []).map((invite) => ({
                     key: invite.invitedEmail,
                     type: 'existing' as const,
                     invite,
                 })),
-                ...(vault.newUserInvites ?? []).map((invite) => ({
+                ...(item.newUserInvites ?? []).map((invite) => ({
                     key: invite.invitedEmail,
                     type: 'new' as const,
                     invite,
                 })),
-            ]
-                .filter((i) => i.invite.targetType === ShareType.Item)
-                .sort(sortOn('key', 'ASC')),
-        [vault]
+            ].sort(sortOn('key', 'ASC')),
+        [item]
     );
 
-    const shared = members.length > 1 || invites.length > 1;
+    const shared = isShared(item);
 
     const memberLimitReached = isVaultMemberLimitReached(vault);
 
@@ -90,13 +86,6 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
                 : c('Warning').t`You have reached the limit of members who can access this item.`;
         }
     })();
-
-    useEffect(() => {
-        (async () => {
-            const members = await loadShareItemMembers(shareId, itemId);
-            setMembers(members);
-        })().catch(noop);
-    }, []);
 
     return (
         <SidebarModal onClose={close} open>
