@@ -75,6 +75,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const handleSecureLink = () => setOpenSecureLinkModal(true);
     const handleItemManage = () => inviteActions.manageItemAccess(shareId, itemId);
     const handleShareItem = () => inviteActions.createItemInvite({ item });
+    const handleLeaveItem = () => itemActions.leave(item);
 
     const handleDismiss = () => {
         if (failure === undefined) return;
@@ -115,6 +116,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 handleSecureLinkClick={handleSecureLink}
                 handleToggleFlagsClick={handleToggleFlags}
                 handleShareItemClick={handleShareItem}
+                handleLeaveItemClick={handleLeaveItem}
             />
 
             {openSecureLinkModal && (
