@@ -55,6 +55,7 @@ describe('DecryptComment', () => {
 
     logger = {
       error: jest.fn(),
+      info: jest.fn(),
     } as unknown as jest.Mocked<LoggerInterface>
 
     decryptComment = new DecryptComment(encryptionSerivce, logger)
@@ -181,7 +182,7 @@ describe('DecryptComment', () => {
         verified: false,
         verificationAvailable: true,
       })
-      expect(logger.error).toHaveBeenCalledWith('Comment content verification failed', {
+      expect(logger.info).toHaveBeenCalledWith('Comment content verification failed', {
         error: VERIFICATION_STATUS.NOT_SIGNED,
       })
     })
