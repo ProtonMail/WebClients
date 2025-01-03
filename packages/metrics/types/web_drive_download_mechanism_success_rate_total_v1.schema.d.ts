@@ -12,7 +12,7 @@ export interface HttpsProtonMeWebDriveDownloadMechanismSuccessRateTotalV1SchemaJ
   Labels: {
     status: "success" | "failure";
     retry: "true" | "false";
-    mechanism: "memory" | "sw" | "memory_fallback";
+    mechanism: "memory" | "sw" | "memory_fallback" | "opfs";
   };
   Value: number;
 }

@@ -1,8 +1,10 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import metrics from '@proton/metrics';
+import type { UnleashClient } from '@proton/unleash';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
+import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import { ShareType } from '../../_shares';
 import type { Download } from './interface';
 import { getErrorCategory, useDownloadMetrics } from './useDownloadMetrics';
@@ -44,6 +46,11 @@ jest.mock('../../../zustand/share/shares.store', () => {
         },
     };
 });
+
+unleashVanillaStore.getState().setClient({
+    isEnabled: jest.fn().mockReturnValue(false),
+    getVariant: jest.fn().mockReturnValue('disabled'),
+} as unknown as UnleashClient);
 
 describe('getErrorCategory', () => {
     const testCases = [
@@ -90,7 +97,7 @@ describe('useDownloadMetrics', () => {
         jest.clearAllMocks();
     });
 
-    it('should observe downloads and update metrics for successful downloads', () => {
+    it('should observe downloads and update metrics for successful downloads', async () => {
         mockGetShare.mockReturnValue({ type: ShareType.default });
 
         const { result } = renderHook(() => useDownloadMetrics('download'));
@@ -110,6 +117,8 @@ describe('useDownloadMetrics', () => {
         act(() => {
             result.current.observe(testDownloads);
         });
+
+        await new Promise(process.nextTick);
 
         expect(metrics.drive_download_success_rate_total.increment).toHaveBeenCalledWith({
             status: 'success',
