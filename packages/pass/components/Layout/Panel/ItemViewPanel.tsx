@@ -49,7 +49,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleHistoryClick,
     handleManageClick,
     handleMoveToTrashClick,
-    handleMoveToVaultClick,
     handlePinClick,
     handleRestoreClick,
     handleRetryClick,
@@ -241,15 +240,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 disabled={optimistic}
                                 shape="ghost"
                             >
-                                {hasMultipleVaults && (
-                                    <DropdownMenuButton
-                                        onClick={handleMoveToVaultClick}
-                                        label={c('Action').t`Move to another vault`}
-                                        icon="folder-arrow-in"
-                                        disabled={sharedReadOnly}
-                                    />
-                                )}
-
                                 {quickActions}
 
                                 <DropdownMenuButton
