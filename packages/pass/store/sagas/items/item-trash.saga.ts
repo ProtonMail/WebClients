@@ -7,23 +7,16 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* trashItemWorker(
     { onItemsUpdated }: RootSagaOptions,
-    { payload, meta }: WithSenderAction<ReturnType<typeof itemTrashIntent>>
+    { payload }: WithSenderAction<ReturnType<typeof itemTrashIntent>>
 ) {
     const { item, shareId } = payload;
-    const { callback: onItemTrashProcessed } = meta;
 
     try {
         yield trashItems([item]);
-        const itemTrashSuccessAction = itemTrashSuccess({ itemId: item.itemId, shareId });
-        yield put(itemTrashSuccessAction);
-
-        onItemTrashProcessed?.(itemTrashSuccessAction);
+        yield put(itemTrashSuccess({ itemId: item.itemId, shareId }));
         onItemsUpdated?.();
     } catch (e) {
-        const itemTrashFailureAction = itemTrashFailure({ itemId: item.itemId, shareId }, e);
-        yield put(itemTrashFailureAction);
-
-        onItemTrashProcessed?.(itemTrashFailureAction);
+        yield put(itemTrashFailure({ itemId: item.itemId, shareId }, e));
     }
 }
 

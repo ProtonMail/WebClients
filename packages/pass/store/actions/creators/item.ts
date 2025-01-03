@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
-import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
@@ -199,10 +198,7 @@ export const itemBulkMoveSuccess = createAction(
 
 export const itemTrashIntent = createOptimisticAction(
     'item::trash::intent',
-    (
-        payload: { item: ItemRevision } & SelectedItem,
-        callback?: ActionCallback<ReturnType<typeof itemTrashSuccess> | ReturnType<typeof itemTrashFailure>>
-    ) => withCallback(callback)({ payload }),
+    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
     ({ payload }) => getItemActionId(payload)
 );
 
@@ -273,10 +269,7 @@ export const itemBulkTrashSuccess = createAction(
 
 export const itemDeleteIntent = createOptimisticAction(
     'item::delete::intent',
-    (
-        payload: { item: ItemRevision } & SelectedItem,
-        callback?: ActionCallback<ReturnType<typeof itemDeleteSuccess> | ReturnType<typeof itemDeleteFailure>>
-    ) => withCallback(callback)({ payload }),
+    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
     ({ payload }) => getItemActionId(payload)
 );
 
@@ -350,10 +343,7 @@ export const itemsDeleteSync = createAction('items::delete::sync', (shareId: str
 
 export const itemRestoreIntent = createOptimisticAction(
     'item::restore::intent',
-    (
-        payload: { item: ItemRevision } & SelectedItem,
-        callback?: ActionCallback<ReturnType<typeof itemRestoreSuccess> | ReturnType<typeof itemRestoreFailure>>
-    ) => withCallback(callback)({ payload }),
+    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
     ({ payload }) => getItemActionId(payload)
 );
 
