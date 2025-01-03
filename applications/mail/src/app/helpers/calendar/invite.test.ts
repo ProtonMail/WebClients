@@ -2,7 +2,7 @@ import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import type { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { EVENT_INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { EVENT_INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { getIsRruleSupported } from '@proton/shared/lib/calendar/recurrence/rrule';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { getIsTimezoneComponent } from '@proton/shared/lib/calendar/vcalHelper';
@@ -224,7 +224,7 @@ END:VCALENDAR`;
                 primaryTimezone: 'America/Sao_Paulo',
                 canImportEventColor: false,
             }).catch((e: EventInvitationError) => {
-                expect(e.message).toEqual('Invalid invitation');
+                expect(e.message).toEqual('Malformed recurring event');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.RRULE_MALFORMED);
                 expect(e.method).toEqual(ICAL_METHOD.REQUEST);
                 expect(e.componentIdentifiers?.prodId).toEqual('-//Apple Inc.//Mac OS X 10.13.6//EN');
@@ -267,7 +267,7 @@ END:VCALENDAR`;
                 primaryTimezone: 'America/Sao_Paulo',
                 canImportEventColor: false,
             }).catch((e: EventInvitationError) => {
-                expect(e.message).toEqual('Invalid invitation');
+                expect(e.message).toEqual('Malformed recurring event');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.RRULE_MALFORMED);
                 expect(e.method).toEqual(ICAL_METHOD.REQUEST);
                 expect(e.componentIdentifiers?.prodId).toEqual('');
@@ -464,7 +464,7 @@ END:VCALENDAR`;
                 primaryTimezone: 'America/Sao_Paulo',
                 canImportEventColor: false,
             }).catch((e: EventInvitationError) => {
-                expect(e.message).toEqual('Unsupported invitation');
+                expect(e.message).toEqual('Only the Gregorian calendar scale is allowed');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.NON_GREGORIAN);
                 expect(e.method).toEqual(ICAL_METHOD.REQUEST);
                 expect(e.componentIdentifiers?.prodId).toEqual('');
@@ -850,7 +850,7 @@ END:VCALENDAR`;
                     vtimezonesTzids: ['Europe/Vilnius'],
                 })
             ).catch((e: EventInvitationError) => {
-                expect(e.message).toEqual('Unsupported response');
+                expect(e.message).toEqual('Calendar time zone not supported');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED);
                 expect(e.method).toEqual(ICAL_METHOD.REPLY);
                 expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
@@ -867,7 +867,7 @@ END:VCALENDAR`;
                     method: ICAL_METHOD.CANCEL,
                 })
             ).catch((e: EventInvitationError) => {
-                expect(e.message).toEqual('Unsupported invitation');
+                expect(e.message).toEqual('Floating times not supported');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_FLOATING_TIME);
                 expect(e.method).toEqual(ICAL_METHOD.CANCEL);
                 expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
@@ -885,7 +885,7 @@ END:VCALENDAR`;
                     vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
                 })
             ).catch((e: EventInvitationError) => {
-                expect(e.message).toEqual('Unsupported response');
+                expect(e.message).toEqual('Floating times not supported');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_FLOATING_TIME);
                 expect(e.method).toEqual(ICAL_METHOD.COUNTER);
                 expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
@@ -1001,7 +1001,7 @@ END:VCALENDAR`;
                     vtimezonesTzids: ['Europe/Vilnius'],
                 })
             ).catch((e: EventInvitationError) => {
-                expect(e.message).toEqual('Unsupported event');
+                expect(e.message).toEqual('Calendar time zone not supported');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED);
                 expect(e.method).toEqual(ICAL_METHOD.PUBLISH);
                 expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
@@ -1106,7 +1106,7 @@ END:VCALENDAR`;
                     uid: '12abc@proton.me',
                 })
             ).catch((e: any) => {
-                expect(e.message).toEqual('Unsupported invitation');
+                expect(e.message).toEqual('Only the Gregorian calendar scale is allowed');
                 expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.NON_GREGORIAN);
                 expect(e.method).toEqual(ICAL_METHOD.REQUEST);
                 expect(e.componentIdentifiers.prodId).toEqual('DUMMY PRODID');
