@@ -13,7 +13,7 @@ import { useNavigationActions } from '@proton/pass/components/Navigation/Navigat
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { useItem } from '@proton/pass/hooks/useItem';
-import { itemEditIntent } from '@proton/pass/store/actions';
+import { itemEdit } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 
@@ -36,7 +36,7 @@ export const ItemEdit: FC = () => {
     const item = useItem(shareId, itemId);
 
     const handleSubmit = (data: ItemEditIntent) => {
-        dispatch(itemEditIntent(data));
+        dispatch(itemEdit.intent(data));
         nav.selectItem(shareId, itemId, { mode: 'replace', prefix });
     };
 

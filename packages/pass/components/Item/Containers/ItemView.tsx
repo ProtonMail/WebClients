@@ -21,10 +21,10 @@ import { useOptimisticItem } from '@proton/pass/hooks/useItem';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId, getItemKey } from '@proton/pass/lib/items/item.utils';
 import {
-    itemCreationDismiss,
-    itemCreationIntent,
+    itemCreate,
+    itemCreateDismiss,
+    itemEdit,
     itemEditDismiss,
-    itemEditIntent,
     itemPinIntent,
     itemUnpinIntent,
     setItemFlags,
@@ -99,11 +99,11 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const handleDismiss = () => {
         if (failure === undefined) return;
 
-        if (itemCreationIntent.match(failure.action)) {
-            dispatch(itemCreationDismiss({ shareId, optimisticId: itemId, item }));
+        if (itemCreate.intent.match(failure.action)) {
+            dispatch(itemCreateDismiss({ shareId, optimisticId: itemId, item }));
         }
 
-        if (itemEditIntent.match(failure.action)) {
+        if (itemEdit.intent.match(failure.action)) {
             dispatch(itemEditDismiss({ shareId, itemId, item }));
         }
     };

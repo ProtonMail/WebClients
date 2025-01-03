@@ -9,7 +9,6 @@ import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
 import type { IdentityItemFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { IdentityForm } from './Identity.form';
 
@@ -28,7 +27,6 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                 type: 'identity',
                 optimisticId: id,
                 shareId,
-                createTime: getEpoch(),
                 metadata: { name, note: obfuscate(note), itemUuid: id },
                 content,
                 extraData: {},

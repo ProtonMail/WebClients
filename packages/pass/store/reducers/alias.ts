@@ -3,8 +3,8 @@ import type { Reducer } from 'redux';
 import {
     aliasDetailsSync,
     getAliasDetailsSuccess,
-    itemCreationIntent,
-    itemEditIntent,
+    itemCreate,
+    itemEdit,
     requestAliasOptions,
 } from '@proton/pass/store/actions';
 import type { AliasDetails, Maybe, MaybeNull } from '@proton/pass/types';
@@ -25,37 +25,23 @@ const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
         return merge(state, { aliasOptions: { ...action.payload } });
     }
 
-    if (itemCreationIntent.match(action) && action.payload.type === 'alias') {
-        const {
-            payload: {
-                extraData: { mailboxes, aliasEmail },
-            },
-        } = action;
-
-        return merge(state, {
-            aliasDetails: {
-                [aliasEmail]: { mailboxes },
-            },
-        });
+    if (itemCreate.intent.match(action) && action.payload.type === 'alias') {
+        const { mailboxes, aliasEmail } = action.payload.extraData;
+        return merge(state, { aliasDetails: { [aliasEmail]: { mailboxes } } });
     }
 
     if (getAliasDetailsSuccess.match(action) || aliasDetailsSync.match(action)) {
-        const {
-            payload: { aliasEmail, ...aliasDetails },
-        } = action;
-
+        const { aliasEmail, ...aliasDetails } = action.payload;
         return merge(state, { aliasDetails: { [aliasEmail]: aliasDetails } });
     }
 
     if (
-        itemEditIntent.match(action) &&
+        itemEdit.intent.match(action) &&
         action.payload.type === 'alias' &&
         action.payload.extraData &&
         action.payload.extraData.aliasOwner
     ) {
-        const {
-            extraData: { mailboxes, aliasEmail },
-        } = action.payload;
+        const { mailboxes, aliasEmail } = action.payload.extraData;
         return merge(state, { aliasDetails: { [aliasEmail]: { mailboxes } } });
     }
 
