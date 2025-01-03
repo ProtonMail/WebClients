@@ -49,4 +49,5 @@ export const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
     calendarUserSettings: selectPersistModel,
     holidaysDirectory: selectPersistModel,
     sso: selectPersistModel,
+    sessions: selectPersistModel,
 };
