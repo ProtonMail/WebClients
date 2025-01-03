@@ -13,7 +13,7 @@ import { useNavigationFilters } from '@proton/pass/components/Navigation/Navigat
 import { type ItemNewRouteParams } from '@proton/pass/components/Navigation/routing';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { itemCreationIntent } from '@proton/pass/store/actions';
+import { itemCreate } from '@proton/pass/store/actions';
 import {
     selectDefaultVault,
     selectMostRecentVaultShareID,
@@ -56,7 +56,7 @@ export const ItemNew: FC = () => {
     if (!shareId) history.goBack();
 
     const handleSubmit = (createIntent: ItemCreateIntent) => {
-        dispatch(itemCreationIntent(createIntent));
+        dispatch(itemCreate.intent(createIntent));
 
         /* if the user put the item in a vault which is currently not selected,
          *  autoselect it so the following call to `selectItem` passes */

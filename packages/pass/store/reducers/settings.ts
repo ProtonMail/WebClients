@@ -6,7 +6,7 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     extraPasswordToggle,
-    itemCreationSuccess,
+    itemCreate,
     lockCreateSuccess,
     lockSync,
     offlineToggle,
@@ -80,7 +80,7 @@ const getInitialState = (): SettingsState => ({
 const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
     if (passwordOptionsEdit.match(action)) return { ...state, passwordOptions: action.payload };
 
-    if (itemCreationSuccess.match(action)) {
+    if (itemCreate.success.match(action)) {
         return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
     }
 
