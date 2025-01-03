@@ -1,4 +1,3 @@
-/* eslint react-hooks/rules-of-hooks: 0 */
 import type { MouseEvent } from 'react';
 import { useMemo, useState } from 'react';
 
@@ -43,7 +42,33 @@ interface Props {
     linkId: string;
 }
 
-export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
+export function SharingModal(props: Props & ModalStateProps) {
+    const isZustandShareMemberListEnabled = useFlag('DriveWebZustandShareMemberList');
+    return (
+        <>
+            {isZustandShareMemberListEnabled && <SharingModalZustand {...props} />}
+            {!isZustandShareMemberListEnabled && <SharingModalLegacy {...props} />}
+        </>
+    );
+}
+
+function SharingModalLegacy(props: Props & ModalStateProps) {
+    const shareMemberList = useShareMemberView(props.shareId, props.linkId);
+    return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
+}
+
+function SharingModalZustand(props: Props & ModalStateProps) {
+    const shareMemberList = useShareMemberViewZustand(props.shareId, props.linkId);
+    return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
+}
+
+function SharingModalInner({
+    shareId: rootShareId,
+    linkId,
+    onClose,
+    shareMemberList,
+    ...modalProps
+}: Props & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
     const {
         customPassword,
         initialExpiration,
@@ -66,11 +91,6 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         isShareUrlLoading,
         isShareUrlEnabled,
     } = useShareURLView(rootShareId, linkId);
-
-    const isZustandShareMemberListEnabled = useFlag('DriveWebZustandShareMemberList');
-    const shareMemberList = isZustandShareMemberListEnabled
-        ? useShareMemberViewZustand(rootShareId, linkId)
-        : useShareMemberView(rootShareId, linkId);
 
     const {
         volumeId,
