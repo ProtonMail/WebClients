@@ -193,3 +193,7 @@ export const getShouldProcessLinkClick = (event: MouseEvent, target?: string) =>
         !getIsEventModified(event) // Ignore clicks with modifier keys
     );
 };
+
+export const isDocumentVisible = () => {
+    return document.visibilityState === 'visible';
+};
