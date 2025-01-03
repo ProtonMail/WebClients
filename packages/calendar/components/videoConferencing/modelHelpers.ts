@@ -11,9 +11,6 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
             description: model.description?.value.trim(),
             location: model.location?.value.trim(),
             meetingId: model?.['x-pm-conference-id']?.value,
-            creator:
-                model?.['x-pm-conference-id']?.parameters?.['x-pm-creator'] ||
-                model?.['x-pm-conference-id']?.parameters?.creator,
             meetingUrl: model?.['x-pm-conference-url']?.value,
             password:
                 model?.['x-pm-conference-url']?.parameters?.['x-pm-password'] ||
@@ -29,9 +26,6 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
         description: model.description.trim(),
         location: model.location.trim(),
         meetingId: model.rest['x-pm-conference-id']?.value,
-        creator:
-            model.rest['x-pm-conference-id']?.parameters?.['x-pm-creator'] ||
-            model.rest['x-pm-conference-id']?.parameters?.creator,
         meetingUrl: model.rest['x-pm-conference-url']?.value,
         password:
             model.rest['x-pm-conference-url']?.parameters?.['x-pm-password'] ||

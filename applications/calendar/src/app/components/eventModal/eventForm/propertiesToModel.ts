@@ -48,7 +48,7 @@ export const propertiesToModel = ({
 
     const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(veventComponent), isAllDay, tzid);
     const { selfAttendeeIndex, selfAddress } = selfAddressData || {};
-    const { meetingId, meetingUrl, password, meetingHost, creator } = getVideoConferencingData(veventComponent);
+    const { meetingId, meetingUrl, password, meetingHost } = getVideoConferencingData(veventComponent);
 
     const cleanDescription = removeZoomInfoFromDescription(description?.value ?? '');
 
@@ -75,7 +75,6 @@ export const propertiesToModel = ({
         conferenceUrl: meetingUrl,
         conferencePassword: password,
         conferenceHost: meetingHost,
-        conferenceCreator: creator,
         rest,
     };
 };
