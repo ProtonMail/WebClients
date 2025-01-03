@@ -105,7 +105,6 @@ export const ZoomRow = ({ model, setModel, accessLevel, onRowClick }: Props) => 
                 conferenceUrl: data?.VideoConference?.URL,
                 conferencePassword: data?.VideoConference?.Password,
                 conferenceHost: user.Email,
-                conferenceCreator: user.ID,
             });
             setProcessState('meeting-present');
             sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.create_zoom_meeting);
