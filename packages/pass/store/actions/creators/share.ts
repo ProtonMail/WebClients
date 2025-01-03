@@ -12,7 +12,7 @@ import {
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import type { SelectedShare, Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
+import { type SelectedShare, type Share, type ShareAccessKeys, type ShareRole, ShareType } from '@proton/pass/types';
 import type {
     ShareAccessOptions,
     ShareEditMemberAccessIntent,
@@ -99,34 +99,45 @@ export const shareEditMemberAccessFailure = createAction(
     )
 );
 
-export const shareLeaveIntent = createAction('share::leave::intent', (payload: { shareId: string }) =>
-    pipe(
-        withRequest({ status: 'start', id: shareLeaveRequest(payload.shareId) }),
-        withNotification({
-            type: 'info',
-            expiration: -1,
-            loading: true,
-            text: c('Info').t`Leaving vault...`,
-        })
-    )({ payload })
+export const shareLeaveIntent = createAction(
+    'share::leave::intent',
+    (payload: { shareId: string; targetType: ShareType }) =>
+        pipe(
+            withRequest({ status: 'start', id: shareLeaveRequest(payload.shareId) }),
+            withNotification({
+                type: 'info',
+                expiration: -1,
+                loading: true,
+                text:
+                    payload.targetType === ShareType.Vault
+                        ? c('Info').t`Leaving vault...`
+                        : c('Info').t`Leaving item...`,
+            })
+        )({ payload })
 );
 
 export const shareLeaveSuccess = createAction(
     'share::leave::success',
-    withRequestSuccess((shareId: string) =>
+    withRequestSuccess((shareId: string, targetType: ShareType) =>
         withNotification({
             type: 'info',
-            text: c('Info').t`Successfully left the vault`,
+            text:
+                targetType === ShareType.Vault
+                    ? c('Info').t`Successfully left the vault`
+                    : c('Info').t`Successfully left the item`,
         })({ payload: { shareId } })
     )
 );
 
 export const shareLeaveFailure = createAction(
     'share::leave::failure',
-    withRequestFailure((error: unknown) =>
+    withRequestFailure((targetType: ShareType, error: unknown) =>
         withNotification({
             type: 'error',
-            text: c('Error').t`Could not leave vault.`,
+            text:
+                targetType === ShareType.Vault
+                    ? c('Error').t`Could not leave vault.`
+                    : c('Error').t`Could not leave item.`,
             error,
         })({ payload: {}, error })
     )
