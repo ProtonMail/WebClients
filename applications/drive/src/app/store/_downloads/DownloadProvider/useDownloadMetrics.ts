@@ -88,11 +88,12 @@ export const useDownloadMetrics = (
         });
 
         // Web only metric
-        const mechanism = selectMechanismForDownload(size);
-        metrics.drive_download_mechanism_success_rate_total.increment({
-            status: state === TransferState.Done ? 'success' : 'failure',
-            retry: retry ? 'true' : 'false',
-            mechanism,
+        selectMechanismForDownload(size).then((mechanism) => {
+            metrics.drive_download_mechanism_success_rate_total.increment({
+                status: state === TransferState.Done ? 'success' : 'failure',
+                retry: retry ? 'true' : 'false',
+                mechanism,
+            });
         });
     };
 

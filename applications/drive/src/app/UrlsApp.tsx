@@ -32,6 +32,7 @@ import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { logPerformanceMarker } from './utils/performance';
+import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 const bootstrapApp = async () => {
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
@@ -45,6 +46,8 @@ const bootstrapApp = async () => {
     const history = createBrowserHistory();
     const unleashClient = bootstrap.createUnleash({ api: getSilentApi(api) });
     extendStore({ config, api, authentication, history, unleashClient });
+    unleashVanillaStore.getState().setClient(unleashClient);
+    bootstrap.unleashReady({ unleashClient }).catch(noop);
 
     const searchParams = new URLSearchParams(location.search);
     await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' });
