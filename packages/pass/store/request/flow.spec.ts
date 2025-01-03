@@ -52,15 +52,6 @@ describe('`requestActionsFactory`', () => {
             expect(intent.meta.request.id).toEqual('action::test');
             expect(intent.meta.request.status).toEqual('start');
         });
-
-        test('should handle `ActionCallback` parameter correctly', () => {
-            const action = testActionFactory();
-            const callback = jest.fn();
-            const intent = action.intent({ value: 42 }, callback);
-            intent.meta.callback?.(action.success(intent.meta.request.id, { ok: true }));
-
-            expect(callback).toHaveBeenCalled();
-        });
     });
 
     describe('success action creator', () => {

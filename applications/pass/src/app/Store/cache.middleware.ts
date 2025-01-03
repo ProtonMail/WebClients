@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep';
 import {
     ServiceWorkerClientID,
     ServiceWorkerEnabled,
@@ -7,7 +8,6 @@ import { type Middleware, isAction } from 'redux';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
-import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/enhancers/callback';
 import type { State } from '@proton/pass/store/types';
 
 /** Broadcast any cache-triggering actions to other tabs via service
@@ -15,7 +15,7 @@ import type { State } from '@proton/pass/store/types';
  * having to worry about race-conditions when writing cache to IDB */
 export const cacheMiddleware: Middleware<{}, State> = () => (next) => (action: unknown) => {
     if (isAction(action) && isCachingAction(action)) {
-        const sanitized = sanitizeWithCallbackAction({ ...action });
+        const sanitized = cloneDeep(action);
         sanitized.meta.cache = false;
 
         const message: WithOrigin<ServiceWorkerMessage> = {

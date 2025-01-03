@@ -53,7 +53,6 @@ import {
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
-import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/enhancers/callback';
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
@@ -376,8 +375,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         return state;
-    },
-    { sanitizeAction: sanitizeWithCallbackAction }
+    }
 );
 
 export type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
