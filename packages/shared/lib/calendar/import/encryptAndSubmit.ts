@@ -18,7 +18,8 @@ import type { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api'
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
 import { getCreationKeys } from '../crypto/keys/helpers';
 import { getIsSuccessSyncApiResponse } from '../helper';
-import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
+import { ImportEventError } from '../icsSurgery/ImportEventError';
+import { IMPORT_EVENT_ERROR_TYPE } from '../icsSurgery/errors/icsSurgeryErrorTypes';
 import { createCalendarEvent } from '../serialize';
 import { prodId } from '../vcalConfig';
 import { getComponentIdentifier, splitErrors } from './import';
