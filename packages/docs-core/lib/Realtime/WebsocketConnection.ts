@@ -11,6 +11,7 @@ import { LoadLogger } from '../LoadLogger/LoadLogger'
 import type { PublicDocumentState } from '../State/DocumentState'
 import type { DocumentState } from '../State/DocumentState'
 import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -203,7 +204,12 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
       return ApiResult.ok(urlAndTokenResult.getValue())
     } else {
-      this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getErrorMessage())
+      if (urlAndTokenResult.getErrorObject().code === DocsApiErrorCode.CommitIdOutOfSync) {
+        this.logger.info('Failed to get realtime URL and token:', urlAndTokenResult.getErrorMessage())
+      } else {
+        this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getErrorMessage())
+      }
+
       this.state.didFailToFetchToken()
 
       this.callbacks.onFailToGetToken(urlAndTokenResult.getErrorObject().code)
