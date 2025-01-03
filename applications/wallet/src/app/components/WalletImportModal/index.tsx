@@ -132,7 +132,7 @@ export const WalletImportModal = ({
                     <Input
                         as={TextAreaTwo}
                         rows={3}
-                        label={c('Wallet setup').t`Seed phrase (12-24 words)`}
+                        label={c('Wallet setup').t`Seed phrase (12 or 24 words, separated by space)`}
                         value={mnemonic}
                         onValue={(v: string) => handleMnemonicChange(v)}
                         className="bg-weak"
