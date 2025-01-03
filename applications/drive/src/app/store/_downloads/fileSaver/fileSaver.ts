@@ -1,25 +1,79 @@
 import type { ReadableStream } from 'web-streams-polyfill';
 
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import type { TransferMeta } from '../../../components/TransferManager/transfer';
 import { TransferCancel } from '../../../components/TransferManager/transfer';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../utils/stream';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { isTransferCancelError } from '../../../utils/transfer';
+import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { LogCallback } from '../interface';
 import { initDownloadSW, isUnsupported, openDownloadStream } from './download';
 
-export const selectMechanismForDownload = (size?: number) => {
-    if (size && size < MEMORY_DOWNLOAD_LIMIT) {
+const isOPFSSupported = () => !!(navigator.storage && navigator.storage.getDirectory);
+
+const MB = 1024 * 1024;
+const getMemoryLimit = () => {
+    const treatment = unleashVanillaStore.getState().getVariant('DriveWebDownloadMechanismParameters');
+    if (treatment.enabled) {
+        if (treatment.name === 'low-memory') {
+            return (isMobile() ? 100 : 250) * MB;
+        }
+        if (treatment.name === 'base-memory') {
+            return (isMobile() ? 100 : 750) * MB;
+        }
+        if (treatment.name === 'high-memory') {
+            return (isMobile() ? 100 : 1000) * MB;
+        }
+    }
+    // Default limit for in-memory downloads is 500MB for Desktop and 100MB on Mobile as per MEMORY_DOWNLOAD_LIMIT
+    return MEMORY_DOWNLOAD_LIMIT;
+};
+
+const hasEnoughOPFSStorage = async (size?: number): Promise<boolean> => {
+    if (size) {
+        // https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
+        const estimate = await navigator.storage.estimate();
+        const available = (estimate.quota || 0) - (estimate.usage || 0);
+        // We verify the estimates can hold up to twice the size of the file
+        // Moving a file from OPFS to user FS is like making a copy so must holds the file twice
+        return available > size * 2;
+    }
+    return false;
+};
+
+const getRemovalTimeout = (size?: number): number => {
+    if (size) {
+        // To be really safe, we account for 1 second (1000ms) to each 30MB of file
+        // This is extra, extra, extra, extra safe
+        // A move should normally takes a very few seconds maximum
+        return (size / (30 * MB)) * 1000;
+    }
+    return 4e4; // 40 seconds, same default as the file-saver package we use https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js#L106
+};
+
+export const selectMechanismForDownload = async (size?: number) => {
+    const isOPFSEnabled = unleashVanillaStore.getState().isEnabled('DriveWebOPFSDownloadMechanism');
+    const limit = getMemoryLimit();
+    if (size && size < limit) {
         return 'memory';
     }
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system
+    if (isOPFSEnabled && isOPFSSupported() && (await hasEnoughOPFSStorage(size))) {
+        return 'opfs';
+    }
+
     if (isUnsupported()) {
         return 'memory_fallback';
     }
+
     return 'sw';
 };
 
@@ -78,6 +132,57 @@ class FileSaver {
         }
     }
 
+    private async saveViaOPFS(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+        log('Saving via OPFS');
+        try {
+            // Get the OPFS root directory
+            const root = await navigator.storage.getDirectory();
+            // Create or open the file in the OPFS
+            const fileHandle = await root.getFileHandle(meta.filename, { create: true });
+            // Create a writable stream to the file
+            const writable = await fileHandle.createWritable();
+            // Manually read from the incoming stream and write to the OPFS file
+            const reader = stream.getReader();
+            try {
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) {
+                        break;
+                    }
+                    await writable.write(value);
+                }
+            } finally {
+                // Make sure to close the writer and release the reader
+                await writable.close();
+                reader.releaseLock();
+            }
+
+            // Retrieve the written file as a File object
+            const file = await fileHandle.getFile();
+            downloadFile(file, meta.filename);
+            log('File saved to OPFS and download triggered successfully');
+
+            // We need to remove the file entry after the blob is moved
+            // This operation usually takes a very few seconds but to be super safe we will account for 1 sec for each 30MB
+            const timeout = getRemovalTimeout(meta.size);
+            const removeEntry = async () => {
+                try {
+                    await root.removeEntry(meta.filename);
+                    log('File removed from OPFS successfully');
+                } catch (e) {
+                    sendErrorReport(e);
+                } finally {
+                    window.removeEventListener('beforeunload', removeEntry);
+                }
+            };
+            window.addEventListener('beforeunload', removeEntry);
+            setTimeout(removeEntry, timeout);
+        } catch (err: any) {
+            log(`Save via OPFS failed. Reason: ${err.message}`);
+            throw err;
+        }
+    }
+
     // saveViaBuffer reads the stream and downloads the file in one go.
     // eslint-disable-next-line class-methods-use-this
     private async saveViaBuffer(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
@@ -110,15 +215,18 @@ class FileSaver {
         if (this.swFailReason) {
             log(`Service worker fail reason: ${this.swFailReason}`);
         }
-        const mechanism = selectMechanismForDownload(meta.size);
+        const mechanism = await selectMechanismForDownload(meta.size);
         if (mechanism === 'memory' || mechanism === 'memory_fallback') {
             return this.saveViaBuffer(stream, meta, log);
+        }
+        if (mechanism === 'opfs') {
+            return this.saveViaOPFS(stream, meta, log);
         }
         return this.saveViaDownload(stream, meta, log);
     }
 
     isFileTooBig(size: number) {
-        return this.useBlobFallback && size > MEMORY_DOWNLOAD_LIMIT;
+        return this.useBlobFallback && size > getMemoryLimit();
     }
 }
 

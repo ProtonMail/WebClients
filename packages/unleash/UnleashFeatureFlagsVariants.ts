@@ -5,7 +5,10 @@ import { type FeatureFlag } from './UnleashFeatureFlags';
 /**
  * List of feature flags with a variant.
  */
-export const FLAGS_WITH_VARIANT = ['InboxNewUpsellModals'] satisfies FeatureFlag[];
+export const FLAGS_WITH_VARIANT = [
+    'InboxNewUpsellModals',
+    'DriveWebDownloadMechanismParameters',
+] satisfies FeatureFlag[];
 
 /**
  * Flags with variants variants.
@@ -14,6 +17,7 @@ export const FLAGS_WITH_VARIANT = ['InboxNewUpsellModals'] satisfies FeatureFlag
  * Naming convention: `${FlagName}Variant`
  */
 export type InboxNewUpsellModalsVariant = 'old' | 'new';
+export type DriveWebDownloadMechanismParametersVariant = 'low-memory' | 'base-memory' | 'high-memory';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -33,6 +37,7 @@ type VariantReturnType<TVariantNameValue extends string> = Partial<
  */
 type FeatureFlagVariantMap = {
     InboxNewUpsellModals: VariantReturnType<InboxNewUpsellModalsVariant>;
+    DriveWebDownloadMechanismParameters: VariantReturnType<DriveWebDownloadMechanismParametersVariant>;
 };
 
 /**
