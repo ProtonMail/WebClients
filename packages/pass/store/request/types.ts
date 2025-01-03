@@ -78,4 +78,4 @@ export type RequestSuccessDTO<T extends WithRequest<any, any, any>> =
 
 export type RequestAsyncResult<TSuccess extends PayloadAction = any, TFailure extends PayloadAction = any> =
     | { type: 'success'; data: RequestSuccessDTO<TSuccess> }
-    | { type: 'failure'; data: TFailure['payload'] };
+    | { type: 'failure'; error: 'error' extends keyof TFailure ? TFailure['error'] : undefined };
