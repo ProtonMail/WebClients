@@ -24,7 +24,6 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import type { Api } from '@proton/shared/lib/interfaces';
 import unary from '@proton/utils/unary';
 
@@ -88,7 +87,6 @@ export const createPassBridge = (api: Api): PassBridge => {
 
                         const encryptedItem = await createAlias({
                             content: {},
-                            createTime: getEpoch(),
                             extraData: { aliasEmail, mailboxes: [mailbox], prefix, signedSuffix },
                             extraFields: [],
                             metadata: { itemUuid, name, note: obfuscate(note ?? '') },

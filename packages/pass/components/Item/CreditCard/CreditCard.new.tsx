@@ -30,7 +30,6 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 const FORM_ID = 'new-creditCard';
 
@@ -60,7 +59,6 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                 type: 'creditCard',
                 optimisticId: id,
                 shareId,
-                createTime: getEpoch(),
                 metadata: { name, note: obfuscate(note), itemUuid: id },
                 content: {
                     ...creditCardValues,
