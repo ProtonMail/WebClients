@@ -375,7 +375,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, { preloadedState });
 
         // test single banner
-        expect(await screen.findAllByText('Unsupported invitation')).toHaveLength(1);
+        expect(await screen.findAllByText('Time zone not supported')).toHaveLength(1);
     });
 
     describe('organizer mode', () => {
@@ -1087,7 +1087,7 @@ END:VCALENDAR`;
             });
             await render(<ExtraEvents message={message} />, { preloadedState });
 
-            await screen.findByText('Unsupported event');
+            await screen.findByText('Time zone not supported');
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
         });
 

@@ -22,11 +22,13 @@ import {
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
-    EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
-    INVITATION_ERROR_TYPE,
     cloneEventInvitationErrorWithConfig,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    INVITATION_ERROR_TYPE,
+} from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { getIsVcalErrorComponent, getVcalendarHasNoErrorComponents } from '@proton/shared/lib/calendar/vcalHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
