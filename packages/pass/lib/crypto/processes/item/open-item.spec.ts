@@ -6,6 +6,7 @@ import { ItemState } from '@proton/pass/types';
 
 import { createItem } from './create-item';
 import { openItem } from './open-item';
+import { openItemKey } from './open-item-key';
 
 describe('openItem crypto process', () => {
     const key = generateKey();
@@ -40,7 +41,12 @@ describe('openItem crypto process', () => {
             State: ItemState.Active,
         };
 
-        const item = await openItem({ encryptedItem, vaultKey });
+        const itemKey = await openItemKey({
+            encryptedItemKey: { Key: encryptedItem.ItemKey!, KeyRotation: encryptedItem.KeyRotation },
+            vaultKey,
+        });
+
+        const item = await openItem({ encryptedItem, itemKey });
 
         expect(item.itemId).toEqual(itemId);
         expect(item.contentFormatVersion).toEqual(createItemRequest.ContentFormatVersion);
@@ -59,6 +65,11 @@ describe('openItem crypto process', () => {
 
         const createItemRequest = await createItem({ content, vaultKey });
 
+        const itemKey = await openItemKey({
+            encryptedItemKey: { Key: createItemRequest.ItemKey!, KeyRotation: 1 },
+            vaultKey,
+        });
+
         const encryptedItem: ItemRevisionContentsResponse = {
             Content: createItemRequest.Content,
             ContentFormatVersion: createItemRequest.ContentFormatVersion,
@@ -76,6 +87,6 @@ describe('openItem crypto process', () => {
             State: ItemState.Active,
         };
 
-        await expect(openItem({ encryptedItem, vaultKey })).rejects.toThrow(PassCryptoItemError);
+        await expect(openItem({ encryptedItem, itemKey })).rejects.toThrow(PassCryptoItemError);
     });
 });
