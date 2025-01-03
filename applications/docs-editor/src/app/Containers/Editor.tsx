@@ -17,7 +17,7 @@ import {
   GenerateUUID,
   LexicalDocProvider,
   getAccentColorForUsername,
-  getRandomParticle,
+  getRandomAnonymousUserLetter,
 } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
@@ -146,35 +146,35 @@ export function Editor({
   const isSuggestionMode = userMode === EditorUserMode.Suggest
   const hasMutationDisplay = systemMode === EditorSystemMode.Edit && userMode !== EditorUserMode.Preview
 
-  const particleForAnonymousUser = useMemo(() => {
+  const letterForAnonymousUser = useMemo(() => {
     if (!isAnonymousUser) {
       return null
     }
-    return getRandomParticle()
+    return getRandomAnonymousUserLetter()
   }, [isAnonymousUser])
 
   const anonymousUserId = useRef(GenerateUUID())
 
   const awarenessData = useMemo(
     () => ({
-      anonymousUserParticle: particleForAnonymousUser?.particle,
+      anonymousUserLetter: letterForAnonymousUser?.letter,
       userId: isAnonymousUser ? anonymousUserId.current : userName,
     }),
-    [isAnonymousUser, particleForAnonymousUser?.particle, userName],
+    [isAnonymousUser, letterForAnonymousUser?.letter, userName],
   )
 
   const color = useMemo(() => {
-    if (particleForAnonymousUser) {
-      return particleForAnonymousUser.hsl
+    if (letterForAnonymousUser) {
+      return letterForAnonymousUser.hsl
     }
     return getAccentColorForUsername(userName)
-  }, [particleForAnonymousUser, userName])
+  }, [letterForAnonymousUser, userName])
 
   return (
     <CollaborationContext.Provider
       value={{
         yjsDocMap: docMap,
-        name: particleForAnonymousUser ? `Anonymous ${particleForAnonymousUser.particle}` : userName,
+        name: letterForAnonymousUser ? `Anonymous ${letterForAnonymousUser.name}` : userName,
         color,
         clientID: 0,
         isCollabActive: false,

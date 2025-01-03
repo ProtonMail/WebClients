@@ -4,7 +4,7 @@ import type { UserState } from '@lexical/yjs'
 export type DocsUserState = UserState & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   awarenessData: Record<string, any> & {
-    anonymousUserParticle?: string
+    anonymousUserLetter?: string
     userId: string
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
