@@ -14,7 +14,7 @@ import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { MaybeNull } from '@proton/pass/types';
+import { type MaybeNull, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { VaultEdit } from './Vault.edit';
@@ -61,7 +61,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const onVaultLeave = ({ shareId }: VaultShareItem) => {
         onVaultDisabled(shareId);
-        dispatch(shareLeaveIntent({ shareId }));
+        dispatch(shareLeaveIntent({ shareId, targetType: ShareType.Vault }));
     };
 
     const actions = useMemo<VaultActionsContextValue>(

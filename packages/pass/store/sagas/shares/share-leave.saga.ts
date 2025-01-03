@@ -9,16 +9,16 @@ function* shareLeaveWorker(
     { onItemsUpdated }: RootSagaOptions,
     { payload, meta: { request } }: ReturnType<typeof shareLeaveIntent>
 ) {
-    try {
-        const { shareId } = payload;
-        yield deleteShare(shareId);
+    const { shareId, targetType } = payload;
 
+    try {
+        yield deleteShare(shareId);
         PassCrypto.removeShare(shareId);
         onItemsUpdated?.();
 
-        yield put(shareLeaveSuccess(request.id, payload.shareId));
+        yield put(shareLeaveSuccess(request.id, shareId, targetType));
     } catch (err) {
-        yield put(shareLeaveFailure(request.id, err));
+        yield put(shareLeaveFailure(request.id, targetType, err));
     }
 }
 
