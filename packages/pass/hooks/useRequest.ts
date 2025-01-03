@@ -39,7 +39,7 @@ export type UseActionRequestOptions<
     requestId?: string;
     onStart?: (data: IntentAction['payload']) => MaybePromise<void>;
     onSuccess?: (data: RequestSuccessDTO<SuccessAction>) => MaybePromise<void>;
-    onFailure?: (data: FailureAction['payload']) => MaybePromise<void>;
+    onFailure?: (error: 'error' extends keyof FailureAction ? FailureAction['error'] : undefined) => MaybePromise<void>;
 };
 
 /* `options` is wrapped in a ref to avoid setting it as
@@ -98,7 +98,7 @@ export const useActionRequest = <
 
                 case 'failure':
                     setError(true);
-                    void optionsRef.current?.onFailure?.(result.data);
+                    void optionsRef.current?.onFailure?.(result.error);
                     break;
             }
 
@@ -148,11 +148,13 @@ type UseRequestOptions<T extends RequestFlow<any, any, any>> = {
      * - Omit to skip initial tracking */
     initial?: Parameters<T['requestID']>[0] extends infer U ? (U extends void ? true : U) : never;
     /** Called when request is initiated. Receives intent action request metadata */
-    onStart?: (request: ReturnType<T['intent']>['payload']) => MaybePromise<void>;
+    onStart?: (data: ReturnType<T['intent']>['payload']) => MaybePromise<void>;
     /** Called when request fails. Receives failure action request metadata */
-    onFailure?: (request: ReturnType<T['failure']>['payload']) => MaybePromise<void>;
+    onFailure?: (
+        error: 'error' extends keyof ReturnType<T['failure']> ? ReturnType<T['failure']>['error'] : undefined
+    ) => MaybePromise<void>;
     /** Called when request succeeds. Receives success action request metadata */
-    onSuccess?: (request: ReturnType<T['success']>['payload']) => MaybePromise<void>;
+    onSuccess?: (data: ReturnType<T['success']>['payload']) => MaybePromise<void>;
 };
 
 export const useRequest = <T extends RequestFlow<any, any, any>>(

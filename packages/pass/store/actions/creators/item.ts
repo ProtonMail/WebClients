@@ -554,12 +554,12 @@ export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, Sec
 export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('secure-link::open')({
     key: prop('token'),
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
                 text: c('Error').t`Secure link could not be opened.`,
                 error,
-            })({ payload: { error: getErrorMessage(error) } }),
+            })({ payload, error: getErrorMessage(error) }),
     },
 });
 

@@ -99,25 +99,28 @@ export const lockCreateSuccess = createAction(
 
 export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth::unlock')({
     failure: {
-        prepare: (error, mode) =>
-            withNotification({
+        prepare: (error, payload) => {
+            const reason = (() => {
+                switch (payload) {
+                    case LockMode.SESSION:
+                        if (error instanceof Error) {
+                            if (error.name === 'LockedSession') return c('Error').t`Wrong PIN code. Try again.`;
+                            if (error.name === 'InactiveSession') {
+                                return c('Error').t`Too many failed attempts. Please sign in again.`;
+                            }
+                        }
+                    default:
+                        return c('Error').t`Unlock failure`;
+                }
+            })();
+
+            return withNotification({
                 key: NotificationKey.LOCK,
                 type: 'error',
-                text: (() => {
-                    switch (mode) {
-                        case LockMode.SESSION:
-                            if (error instanceof Error) {
-                                if (error.name === 'LockedSession') return c('Error').t`Wrong PIN code. Try again.`;
-                                if (error.name === 'InactiveSession') {
-                                    return c('Error').t`Too many failed attempts. Please sign in again.`;
-                                }
-                            }
-                        default:
-                            return c('Error').t`Unlock failure`;
-                    }
-                })(),
+                text: reason,
                 error,
-            })({ payload: mode, error }),
+            })({ payload, error: reason });
+        },
     },
 });
 

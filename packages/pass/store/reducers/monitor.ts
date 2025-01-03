@@ -59,7 +59,7 @@ const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
 
         if (verifyCustomAddress.failure.match(action)) {
             const addressId = lastItem(action.meta.request.id.split('::'));
-            if (action.payload.code === PassErrorCode.NOT_ALLOWED && addressId) {
+            if (action.error.code === PassErrorCode.NOT_ALLOWED && addressId) {
                 return partialMerge(state, { custom: state.custom.filter((breach) => breach.addressId !== addressId) });
             }
         }
