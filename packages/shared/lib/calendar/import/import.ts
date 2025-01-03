@@ -30,7 +30,8 @@ import type {
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_CALENDARS_PAID, MAX_IMPORT_EVENTS } from '../constants';
 import getComponentFromCalendarEvent from '../getComponentFromCalendarEvent';
 import { generateVeventHashUID, getNaiveDomainFromUID, getOriginalUID } from '../helper';
-import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
+import { ImportEventError } from '../icsSurgery/ImportEventError';
+import { IMPORT_EVENT_ERROR_TYPE } from '../icsSurgery/errors/icsSurgeryErrorTypes';
 import { getSupportedCalscale } from '../icsSurgery/vcal';
 import { getLinkedDateTimeProperty, getSupportedEvent, withSupportedDtstamp } from '../icsSurgery/vevent';
 import { getVeventWithoutErrors, parseVcalendarWithRecoveryAndMaybeErrors, serialize } from '../vcal';

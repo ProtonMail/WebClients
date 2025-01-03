@@ -1,15 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { c } from 'ttag';
-
-import { Banner, InlineLinkButton } from '@proton/atoms';
 import { useApi, useDrawer } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import {
-    EventInvitationError,
-    INVITATION_ERROR_TYPE,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { APPS } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
@@ -35,13 +30,13 @@ import {
     getIsPartyCrasher,
     getIsProtonInvite,
     getIsReinvite,
-    sendInviteErrorTelemetryReport,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 import type { MessageStateWithData } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
+import { ExtraEventErrorBanner } from './ExtraEventErrorBanner';
 import ExtraEventHeader from './ExtraEventHeader';
 import ExtraEventSummary from './ExtraEventSummary';
 import ExtraEventTimeStatus from './ExtraEventTimeStatus';
@@ -50,14 +45,9 @@ import useCalendarWidgetDrawerEvents from './useCalendarWidgetDrawerEvents';
 
 import './CalendarWidget.scss';
 
-const {
-    DECRYPTION_ERROR,
-    FETCHING_ERROR,
-    UPDATING_ERROR,
-    CANCELLATION_ERROR,
-    EVENT_CREATION_ERROR,
-    EVENT_UPDATE_ERROR,
-} = INVITATION_ERROR_TYPE;
+const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = INVITATION_ERROR_TYPE;
+
+const noErrorBannerSet = new Set([EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR]);
 
 interface Props {
     message: MessageStateWithData;
@@ -324,33 +314,8 @@ const ExtraEvent = ({
         return <EmailReminderWidgetSkeleton />;
     }
 
-    if (model.error && ![EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(model.error.type)) {
-        const { message } = model.error;
-        const canTryAgain = [DECRYPTION_ERROR, FETCHING_ERROR, UPDATING_ERROR, CANCELLATION_ERROR].includes(
-            model.error.type
-        );
-
-        sendInviteErrorTelemetryReport({
-            error: model.error,
-            api,
-            hash: model.error.hashedIcs,
-        });
-
-        return (
-            <Banner
-                variant="danger"
-                className="mb-2"
-                action={
-                    canTryAgain ? (
-                        <span className="shrink-0 flex">
-                            <InlineLinkButton onClick={handleReloadWidget}>{c('Action').t`Try again`}</InlineLinkButton>
-                        </span>
-                    ) : undefined
-                }
-            >
-                {message}
-            </Banner>
-        );
+    if (model.error && !noErrorBannerSet.has(model.error.type)) {
+        return <ExtraEventErrorBanner error={model.error} onReload={handleReloadWidget} />;
     }
 
     if (!getHasInvitationIcs(model)) {
