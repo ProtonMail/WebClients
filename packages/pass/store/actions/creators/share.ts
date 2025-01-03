@@ -12,14 +12,23 @@ import {
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import { type SelectedShare, type Share, type ShareAccessKeys, type ShareRole, ShareType } from '@proton/pass/types';
+import {
+    type SelectedItem,
+    type SelectedShare,
+    type Share,
+    type ShareAccessKeys,
+    type ShareRole,
+    ShareType,
+} from '@proton/pass/types';
 import type {
     ShareAccessOptions,
     ShareEditMemberAccessIntent,
     ShareRemoveMemberAccessIntent,
 } from '@proton/pass/types/data/shares.dto';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+
+const shareKey = ({ shareId, itemId }: { shareId: string; itemId?: string }) =>
+    itemId ? `${shareId}::${itemId}` : String(shareId);
 
 export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) =>
     withCache({ payload })
@@ -143,8 +152,10 @@ export const shareLeaveFailure = createAction(
     )
 );
 
-export const getShareAccessOptions = requestActionsFactory<SelectedShare, ShareAccessOptions>('share::access-options')({
-    key: prop('shareId'),
+export const getShareAccessOptions = requestActionsFactory<SelectedShare | SelectedItem, ShareAccessOptions>(
+    'share::access-options'
+)({
+    key: shareKey,
     success: { config: { maxAge: 15, data: null } },
     failure: {
         prepare: (error: unknown, payload) =>
