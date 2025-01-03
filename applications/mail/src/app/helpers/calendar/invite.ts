@@ -8,11 +8,13 @@ import { ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { generateVeventHashUID, getIsProtonUID, getNaiveDomainFromUID } from '@proton/shared/lib/calendar/helper';
 import {
-    EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
-    INVITATION_ERROR_TYPE,
     cloneEventInvitationErrorWithConfig,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    INVITATION_ERROR_TYPE,
+} from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getSupportedEvent, withSupportedDtstamp } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import {
