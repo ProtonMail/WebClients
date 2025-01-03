@@ -73,7 +73,6 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const handleHistory = () => selectItem(shareId, itemId, { view: 'history', scope });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => itemActions.trash(item);
-    const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
     const handleMoveToSharedVault = () => itemActions.move(item, VaultSelectMode.Shared);
     const handleRestore = () => itemActions.restore(item);
     const handleDelete = () => itemActions.delete(item);
@@ -126,7 +125,6 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 handleInviteClick={handleInviteClick}
                 handleManageClick={handleItemManage}
                 handleMoveToTrashClick={handleTrash}
-                handleMoveToVaultClick={handleMove}
                 handlePinClick={handlePinClick}
                 handleRestoreClick={handleRestore}
                 handleRetryClick={handleRetry}
