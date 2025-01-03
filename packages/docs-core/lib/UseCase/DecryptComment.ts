@@ -139,7 +139,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         reason: 'decryption_error',
       })
 
-      this.logger.error('Comment content verification failed', {
+      this.logger.info('Comment content verification failed', {
         error: verifyValue,
       })
 
