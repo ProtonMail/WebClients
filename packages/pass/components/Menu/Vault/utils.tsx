@@ -18,7 +18,7 @@ export const getVaultOptionInfo = (vault: 'all' | 'trash' | VaultShareItem): Vau
         case 'all':
             return {
                 id: null,
-                label: c('Label').t`All vaults`,
+                label: c('Label').t`All items`,
                 color: VaultColorEnum.COLOR_CUSTOM,
             };
         case 'trash':

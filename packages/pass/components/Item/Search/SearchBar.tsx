@@ -57,12 +57,12 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
             case '*':
                 return vaultName
                     ? c('Placeholder').t`Search in ${vaultName}`
-                    : c('Placeholder').t`Search in all vaults`;
+                    : c('Placeholder').t`Search in all items`;
             default: {
                 // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
                 return vaultName
                     ? c('Placeholder').t`Search ${pluralItemType} in ${vaultName}`
-                    : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
+                    : c('Placeholder').t`Search ${pluralItemType} in all items`;
             }
         }
     }, [vault, type, scope]);
