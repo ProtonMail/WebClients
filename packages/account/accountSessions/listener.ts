@@ -1,7 +1,15 @@
 import { getAccountSessions } from '@proton/account/accountSessions/accountSessions';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType, getIsStaleRefetch, isExpired } from '@proton/redux-utilities';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import {
+    cleanupInactivePersistedSessions,
+    getMissingPersistedSessionsFromActiveSessions,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { DAY } from '@proton/shared/lib/constants';
+import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
+import noop from '@proton/utils/noop';
 
 import { bootstrapEvent } from '../bootstrap/action';
 import { accountSessionsEvent } from './events';
@@ -63,6 +71,48 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 } finally {
                     listenerApi.dispatch(accountSessionsSlice.actions.loading(false));
                 }
+            }
+        },
+    });
+
+    startListening({
+        predicate: (action, currentState, previousState) => {
+            return selectAccountSessions(currentState)?.value !== selectAccountSessions(previousState)?.value;
+        },
+        effect: async (_, listenerApi) => {
+            listenerApi.unsubscribe();
+
+            if (!isDocumentVisible()) {
+                return;
+            }
+
+            if (!listenerApi.extra.unleashClient.isEnabled('AccountSessions')) {
+                return;
+            }
+
+            const activeSessions = selectAccountSessions(listenerApi.getState()).value;
+            if (!activeSessions.length) {
+                return;
+            }
+
+            const run = () => {
+                const selfLocalID = listenerApi.extra.authentication.localID;
+                const missingPersistedSessions = getMissingPersistedSessionsFromActiveSessions(
+                    getPersistedSessions(),
+                    activeSessions
+                ).filter((x) => x.localID !== selfLocalID);
+
+                cleanupInactivePersistedSessions({
+                    api: getSilentApi(listenerApi.extra.api),
+                    persistedSessions: missingPersistedSessions,
+                }).catch(noop);
+            };
+
+            const timeout = 1_000;
+            if (globalThis.requestIdleCallback) {
+                globalThis.requestIdleCallback(run, { timeout });
+            } else {
+                setTimeout(run, timeout);
             }
         },
     });
