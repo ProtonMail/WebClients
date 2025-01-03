@@ -15,6 +15,8 @@ import type { MaybeNull, TypeMapper } from '@proton/pass/types/utils';
 import type { SanitizedBuffers } from '@proton/pass/utils/buffer/sanitization';
 import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
+import type { NewUserPendingInvite, PendingInvite, ShareMember } from './invites';
+
 type Obfuscate<T, K extends keyof T> = Omit<T, K> & { [Obf in K]: XorObfuscation };
 
 type Deobfuscate<T> = {
@@ -81,6 +83,9 @@ export enum ItemState {
 export type ItemRevision<T extends ItemType = ItemType> = Omit<OpenedItem, 'content'> & {
     data: Item<T>;
     shareId: string;
+    members?: ShareMember[];
+    invites?: PendingInvite[];
+    newUserInvites?: NewUserPendingInvite[];
 };
 
 export type LoginItem = ItemRevision<'login'>;
