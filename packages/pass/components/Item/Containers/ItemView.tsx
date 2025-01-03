@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
-import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
 import { IdentityView } from '@proton/pass/components/Item/Identity/Identity.view';
@@ -14,7 +13,6 @@ import { useNavigationActions } from '@proton/pass/components/Navigation/Navigat
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
-import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useOptimisticItem } from '@proton/pass/hooks/useItem';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
@@ -47,7 +45,6 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const itemActions = useItemsActions();
 
     const dispatch = useDispatch();
-    const [inviteOpen, setInviteOpen] = useState(false);
     const [openSecureLinkModal, setOpenSecureLinkModal] = useState(false);
 
     const optimisticItemId = useMemo(() => getItemEntityID({ itemId, shareId }), [itemId, shareId]);
@@ -73,23 +70,11 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const handleHistory = () => selectItem(shareId, itemId, { view: 'history', scope });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => itemActions.trash(item);
-    const handleMoveToSharedVault = () => itemActions.move(item, VaultSelectMode.Shared);
     const handleRestore = () => itemActions.restore(item);
     const handleDelete = () => itemActions.delete(item);
-    const handleInviteClick = () => setInviteOpen(true);
     const handleSecureLink = () => setOpenSecureLinkModal(true);
     const handleItemManage = () => inviteActions.manageItemAccess(shareId, itemId);
     const handleShareItem = () => inviteActions.createItemInvite({ item });
-
-    const handleCreateSharedVault = () => {
-        inviteActions.createSharedVault({ item: { shareId, itemId } });
-        setInviteOpen(false);
-    };
-
-    const handleShareVaultClick = () => {
-        inviteActions.createVaultInvite({ vault });
-        setInviteOpen(false);
-    };
 
     const handleDismiss = () => {
         if (failure === undefined) return;
@@ -122,7 +107,6 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 handleDismissClick={handleDismiss}
                 handleEditClick={handleEdit}
                 handleHistoryClick={handleHistory}
-                handleInviteClick={handleInviteClick}
                 handleManageClick={handleItemManage}
                 handleMoveToTrashClick={handleTrash}
                 handlePinClick={handlePinClick}
@@ -132,19 +116,6 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 handleToggleFlagsClick={handleToggleFlags}
                 handleShareItemClick={handleShareItem}
             />
-
-            {inviteOpen && (
-                <VaultInviteFromItemModal
-                    vault={vault}
-                    shareId={shareId}
-                    itemId={itemId}
-                    open
-                    onClose={() => setInviteOpen(false)}
-                    handleMoveToSharedVaultClick={handleMoveToSharedVault}
-                    handleShareVaultClick={handleShareVaultClick}
-                    handleCreateSharedVaultClick={handleCreateSharedVault}
-                />
-            )}
 
             {openSecureLinkModal && (
                 <SecureLinkModal
