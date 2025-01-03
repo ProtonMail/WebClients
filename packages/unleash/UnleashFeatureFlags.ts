@@ -94,6 +94,7 @@ enum DriveFeatureFlag {
     // Download
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
+    DriveWebOPFSDownloadMechanism = 'DriveWebOPFSDownloadMechanism',
     // Bookmarks
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
@@ -104,6 +105,7 @@ enum DriveFeatureFlag {
     DriveWebZustandShareMemberList = 'DriveWebZustandShareMemberList',
     // Experiment
     DriveThumbnailWebP = 'DriveThumbnailWebP',
+    DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
 }
 
 enum DocsFeatureFlag {

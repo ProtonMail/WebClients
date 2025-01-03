@@ -14,6 +14,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
+import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -27,6 +28,8 @@ import { sendErrorReport } from './utils/errorHandling';
 import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
 import { initDriveWorker } from './utils/initDriveWorker';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
+import { clearOPFS } from './utils/opfs';
+import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer')
@@ -101,13 +104,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
-
         const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
             bootstrap.loadCrypto({ appName }),
             unleashPromise,
         ]);
+        unleashVanillaStore.getState().setClient(unleashClient);
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
@@ -128,6 +131,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         });
 
         dispatch(bootstrapEvent({ type: 'complete' }));
+
+        // Register callback to clear OPFS entries on logout
+        const isOPFSEnabled = unleashVanillaStore.getState().isEnabled('DriveWebOPFSDownloadMechanism');
+        if (isOPFSEnabled) {
+            registerSessionRemovalListener(clearOPFS);
+        }
 
         return {
             ...userData,
