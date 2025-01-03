@@ -55,6 +55,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleSecureLinkClick,
     handleToggleFlagsClick,
     handleShareItemClick,
+    handleLeaveItemClick,
 }) => {
     const { shareId, itemId, data, optimistic, failed, shareCount } = revision;
     const { name } = data.metadata;
@@ -266,6 +267,14 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 />
 
                                 {monitorActions}
+
+                                {shared && !owner && (
+                                    <DropdownMenuButton
+                                        onClick={handleLeaveItemClick}
+                                        label={c('Action').t`Leave`}
+                                        icon="arrow-out-from-rectangle"
+                                    />
+                                )}
                             </QuickActionsDropdown>,
                         ];
                     })()}
