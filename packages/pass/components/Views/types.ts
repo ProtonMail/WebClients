@@ -25,6 +25,7 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handleSecureLinkClick: () => void;
     handleToggleFlagsClick: () => void;
     handleShareItemClick: () => void;
+    handleLeaveItemClick: () => void;
 };
 
 export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {

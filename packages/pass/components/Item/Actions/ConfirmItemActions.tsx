@@ -51,3 +51,12 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
         </WithVault>
     );
 };
+
+export const ConfirmLeaveItem: FC<ConfirmationPromptHandles & { item: ItemRevision }> = (props) => (
+    <ConfirmationPrompt
+        {...props}
+        danger
+        title={c('Title').t`Leave this item?`}
+        message={c('Warning').t`You will lose access to this item and its details. Do you want to continue?`}
+    />
+);

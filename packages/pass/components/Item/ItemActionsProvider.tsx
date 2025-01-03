@@ -10,7 +10,11 @@ import {
     ConfirmMoveManyItems,
     ConfirmTrashManyItems,
 } from '@proton/pass/components/Item/Actions/ConfirmBulkActions';
-import { ConfirmDeleteItem, ConfirmMoveItem } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
+import {
+    ConfirmDeleteItem,
+    ConfirmLeaveItem,
+    ConfirmMoveItem,
+} from '@proton/pass/components/Item/Actions/ConfirmItemActions';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
@@ -23,6 +27,7 @@ import {
     itemMove,
     itemRestore,
     itemTrash,
+    shareLeaveIntent,
 } from '@proton/pass/store/actions';
 import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
@@ -40,6 +45,7 @@ type ItemActionsContextType = {
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
     trashMany: (items: BulkSelectionDTO) => void;
+    leave: (item: ItemRevision) => void;
 };
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
@@ -94,6 +100,13 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         }, [])
     );
 
+    const leaveItem = useConfirm(
+        useCallback((item: ItemRevision) => {
+            const { shareId } = item;
+            dispatch(shareLeaveIntent({ shareId }));
+        }, [])
+    );
+
     const context = useMemo<ItemActionsContextType>(() => {
         return {
             move: (item, mode) =>
@@ -141,6 +154,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 dispatch(itemBulkRestoreIntent({ selected }));
                 bulk.disable();
             },
+
+            leave: leaveItem.prompt,
         };
     }, []);
 
@@ -192,6 +207,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     onConfirm={deleteManyItems.confirm}
                     selected={deleteManyItems.param}
                 />
+            )}
+
+            {leaveItem.pending && (
+                <ConfirmLeaveItem onCancel={leaveItem.cancel} onConfirm={leaveItem.confirm} item={leaveItem.param} />
             )}
         </ItemActionsContext.Provider>
     );
