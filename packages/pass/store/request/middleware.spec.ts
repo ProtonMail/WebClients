@@ -16,7 +16,9 @@ describe('requestMiddleware', () => {
 
     const requestID = `test-request-${uniqueId()}`;
     const payload = { value: Math.random() };
+    const error = new Error('Test');
     const action = { type: 'test-action', payload };
+    const actionFailure = { type: 'test-action-failure', error };
     const cachedState = { request: { [requestID]: { status: 'success', maxAge: 10, requestedAt: 0, data: payload } } };
 
     beforeEach(() => {
@@ -153,11 +155,11 @@ describe('requestMiddleware', () => {
     });
 
     describe('request `failure`', () => {
-        test('should resolve pending promise with failure payload', async () => {
+        test('should resolve pending promise with failure error', async () => {
             const res = tracker.push(requestID);
-            apply(withRequest({ status: 'failure', id: requestID })(action));
+            apply(withRequest({ status: 'failure', id: requestID })(actionFailure));
 
-            expect(await res).toEqual({ type: 'failure', data: payload });
+            expect(await res).toEqual({ type: 'failure', error });
             expect(tracker.requests.size).toBe(0);
             expect(next).toHaveBeenCalledTimes(1);
         });

@@ -175,12 +175,12 @@ export const validateMailbox = requestActionsFactory<{ mailboxID: number; code: 
             })({ payload }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to verify email address`,
                 type: 'error',
                 error,
-            })({ payload: getApiError(error) }),
+            })({ payload, error: getApiError(error) }),
     },
 });
 
