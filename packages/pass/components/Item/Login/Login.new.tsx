@@ -33,7 +33,6 @@ import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { sanitizeURL } from '@proton/pass/utils/url/sanitize';
 import { intoDomainWithPort, resolveDomain } from '@proton/pass/utils/url/utils';
 
@@ -91,7 +90,6 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             extraFields,
             ...values
         }) => {
-            const createTime = getEpoch();
             const optimisticId = uniqueId();
 
             const withAlias =
@@ -107,7 +105,6 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                           type: 'alias',
                           optimisticId: `${optimisticId}-alias`,
                           shareId,
-                          createTime,
                           metadata: {
                               name: `Alias for ${name}`,
                               note: obfuscate(''),
@@ -136,7 +133,6 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                 type: 'login',
                 optimisticId,
                 shareId,
-                createTime,
                 metadata: {
                     name,
                     note: obfuscate(note),

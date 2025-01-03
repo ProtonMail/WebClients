@@ -20,7 +20,7 @@ import { useNavigationMatches } from '@proton/pass/components/Navigation/Navigat
 import { getItemHistoryRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { itemEditIntent } from '@proton/pass/store/actions';
+import { itemEdit } from '@proton/pass/store/actions';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
@@ -57,7 +57,7 @@ export const RevisionDiff: FC = () => {
                 ? { ...item, itemId, shareId, lastRevision: current, extraData: null }
                 : { ...item, itemId, shareId, lastRevision: current };
 
-        dispatch(itemEditIntent(editIntent));
+        dispatch(itemEdit.intent(editIntent));
         selectItem(shareId, itemId, { mode: 'replace', inTrash: matchTrash, prefix });
     });
 
