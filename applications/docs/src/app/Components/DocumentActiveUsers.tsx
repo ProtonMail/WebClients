@@ -30,13 +30,13 @@ export function DocumentActiveUsers({ className }: { className?: string }) {
       {states.map((state, index) => {
         const { name, color, focusing, awarenessData } = state
 
-        const particle = awarenessData.anonymousUserParticle
+        const letter = awarenessData.anonymousUserLetter
 
         return (
           <Tooltip title={name} key={index}>
             <UserAvatar
-              name={particle ? particle : name}
-              useFirstLetterOfName={!particle}
+              name={letter ? letter : name}
+              useFirstLetterOfName={!letter}
               className={!focusing ? 'opacity-50' : ''}
               color={{ hsl: color }}
               onClick={() => {
