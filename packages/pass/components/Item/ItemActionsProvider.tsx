@@ -32,7 +32,7 @@ import {
 import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemMoveIntent } from '@proton/pass/types';
-import { type BulkSelectionDTO, type ItemRevision, type MaybeNull } from '@proton/pass/types';
+import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
@@ -101,9 +101,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const leaveItem = useConfirm(
-        useCallback((item: ItemRevision) => {
-            const { shareId } = item;
-            dispatch(shareLeaveIntent({ shareId }));
+        useCallback(({ shareId }: ItemRevision) => {
+            dispatch(shareLeaveIntent({ shareId, targetType: ShareType.Item }));
         }, [])
     );
 
