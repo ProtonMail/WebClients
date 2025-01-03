@@ -138,7 +138,7 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return partialMerge(state, { [shareId]: shareAccessOptions });
     }
 
-    if (getShareAccessOptions.success.match(action)) {
+    if (getShareAccessOptions.success.match(action) && !action.payload.itemId) {
         const { shareId, invites = [], newUserInvites = [], members } = action.payload;
         const shared = invites.length > 0 || newUserInvites.length > 0 || members.length > 1;
         const newUserInvitesReady = newUserInvites.filter((invite) => invite.state === NewUserInviteState.READY).length;

@@ -11,6 +11,7 @@ import {
     draftSave,
     draftsGarbageCollect,
     emptyTrashProgress,
+    getShareAccessOptions,
     importItemsProgress,
     inviteAcceptSuccess,
     itemAutofilled,
@@ -319,6 +320,11 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (aliasSyncPending.success.match(action)) {
             const { items, shareId } = action.payload;
             return partialMerge(state, { [shareId]: toMap(items, 'itemId') });
+        }
+
+        if (getShareAccessOptions.success.match(action) && action.payload.itemId) {
+            const { shareId, itemId, members = [], invites = [], newUserInvites = [] } = action.payload;
+            return updateItem({ shareId, itemId, members, invites, newUserInvites })(state);
         }
 
         return state;

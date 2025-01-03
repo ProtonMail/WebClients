@@ -6,6 +6,7 @@ export type ShareEditMemberAccessIntent = { shareId: string; userShareId: string
 
 export type ShareAccessOptions = {
     shareId: string;
+    itemId?: string;
     invites?: PendingInvite[];
     newUserInvites?: NewUserPendingInvite[];
     members: ShareMember[];
