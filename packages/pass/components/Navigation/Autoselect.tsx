@@ -5,12 +5,12 @@ import { Redirect } from 'react-router-dom';
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { selectShare } from '@proton/pass/store/selectors';
 
 export const Autoselect: FC = () => {
-    const { matchTrash: trashed } = useNavigationMatches();
+    const scope = useItemScope();
     const { filters } = useNavigationFilters();
     const { preserveSearch } = useNavigationActions();
     const { filtered } = useItems();
@@ -21,7 +21,7 @@ export const Autoselect: FC = () => {
     const clearFilters = filters.selectedShareId !== null && selectedVault === undefined;
 
     const to = (() => {
-        if (autoselect) return preserveSearch(getItemRoute(autoselect.shareId, autoselect.itemId, { trashed }));
+        if (autoselect) return preserveSearch(getItemRoute(autoselect.shareId, autoselect.itemId, { scope }));
         if (clearFilters) return getLocalPath();
         return null;
     })();
