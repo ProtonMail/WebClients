@@ -8,6 +8,7 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import type { ItemFilters, MaybeNull } from '@proton/pass/types';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 
+import type { ItemScope } from './routing';
 import { decodeFilters, encodeFilters, getItemRoute } from './routing';
 
 export type NavigateOptions<LocationState = any> = {
@@ -19,8 +20,7 @@ export type NavigateOptions<LocationState = any> = {
 };
 
 export type ItemSelectOptions<LocationState = any> = NavigateOptions<LocationState> & {
-    inTrash?: boolean;
-    prefix?: string;
+    scope?: ItemScope;
     view?: 'edit' | 'view' | 'history';
 };
 
@@ -77,7 +77,7 @@ export const NavigationActionsProvider: FC<PropsWithChildren> = ({ children }) =
             },
 
             selectItem: (shareId, itemId, options) => {
-                const base = getItemRoute(shareId, itemId, { trashed: options?.inTrash, prefix: options?.prefix });
+                const base = getItemRoute(shareId, itemId, { scope: options?.scope });
                 const view = options?.view && options.view !== 'view' ? `/${options.view}` : '';
                 ctx.navigate(base + view, options);
             },
