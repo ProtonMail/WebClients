@@ -46,7 +46,6 @@ export const useSelectItemAction = () => {
 
         onTelemetry(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[type] });
         onB2BEvent({ name: B2BEventName.ItemRead, timestamp: getEpoch(), itemId, shareId });
-
         if (!isEmptyString(ref.current.search)) onTelemetry(TelemetryEventName.SearchClick, {}, {});
     }, []);
 };
