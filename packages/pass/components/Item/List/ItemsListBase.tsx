@@ -20,7 +20,7 @@ type Props = {
     totalCount: number;
     onFilter: (update: Partial<ItemFilters>) => void;
     onSelect: (item: ItemRevision, metaKey: boolean) => void;
-    placeholder: () => ReactElement;
+    placeholder: ReactElement;
 };
 
 export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
@@ -41,7 +41,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
             {items.length === 0 ? (
                 <Scroll className="pass-items-list--placeholder">
                     <div className={clsx('flex justify-center items-center w-full m-auto pt-8 pb-14 min-h-full')}>
-                        {placeholder()}
+                        {placeholder}
                     </div>
                 </Scroll>
             ) : (
