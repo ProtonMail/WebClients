@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { PINNED_ITEM_MAX_WIDTH_PX, PinnedItem } from '@proton/pass/components/Item/Pinned/PinnedItem';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -13,6 +12,7 @@ import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Them
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { getInitialFilters } from '@proton/pass/components/Navigation/routing';
 import { useResponsiveHorizontalList } from '@proton/pass/hooks/useResponsiveHorizontalList';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
@@ -96,19 +96,22 @@ const PinnedItemBarContent = memo(({ sort, onSelect }: Props) => {
 PinnedItemBarContent.displayName = 'PinnedItemBarContentMemo';
 
 export const PinnedItemsBar: FC = () => {
-    const { filters } = useNavigationFilters();
-    const items = useItems();
-    const filtered = useStatefulRef(items.filtered);
-
     const selectItem = useSelectItem();
+    const { filters } = useNavigationFilters();
+    const filtersRef = useStatefulRef(filters);
+
+    /** Updates navigation on item select:
+     * Trashed items -> trash view with reset filters
+     * Regular items -> share view with preserved/updated shareId filter */
     const onSelect = useCallback((item: ItemRevision) => {
         const { shareId, itemId } = item;
+        const trashed = isTrashed(item);
 
-        /** If pinned item is not in the current filtered
-         * item list, reset the filters accordingly */
         selectItem(shareId, itemId, {
-            inTrash: isTrashed(item),
-            filters: !filtered.current.some(itemEq(item)) ? { search: '', selectedShareId: null, type: '*' } : {},
+            scope: trashed ? 'trash' : 'share',
+            filters: trashed
+                ? getInitialFilters()
+                : { search: '', selectedShareId: filtersRef.current.selectedShareId !== null ? shareId : null },
         });
     }, []);
 
