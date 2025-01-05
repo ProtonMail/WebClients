@@ -79,7 +79,6 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
                     shape="solid"
                     size="large"
                     pill
-                    onBlur={() => setLinkCopied(false)}
                     onClick={copyLink}
                     ref={ref}
                 >
