@@ -18,7 +18,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { getInitialFilters, getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
 import { AccountPath } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
@@ -117,13 +117,15 @@ export const MenuDropdown: FC = () => {
                         <SecureLinkButton
                             active={false}
                             className="pt-1.5 pb-1.5"
-                            onClick={withClose(() => navigate(getLocalPath('secure-links')))}
+                            onClick={withClose(() =>
+                                navigate(getLocalPath('secure-links'), {
+                                    filters: getInitialFilters(),
+                                })
+                            )}
                         />
 
                         <DropdownMenuButton
-                            onClick={withClose(() => {
-                                onLink(getPassWebUrl(API_URL, 'monitor'));
-                            })}
+                            onClick={withClose(() => onLink(getPassWebUrl(API_URL, 'monitor')))}
                             label={c('Label').t`${PASS_SHORT_APP_NAME} monitor`}
                             icon={'pass-shield-warning'}
                             className="pt-1.5 pb-1.5"
