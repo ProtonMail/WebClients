@@ -1,6 +1,6 @@
 import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { useSaveTabState } from 'proton-pass-extension/lib/hooks/useSaveTabState';
@@ -8,7 +8,6 @@ import { useSaveTabState } from 'proton-pass-extension/lib/hooks/useSaveTabState
 import { useNotifications } from '@proton/components';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
-import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
@@ -18,7 +17,6 @@ import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO'
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
-import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { selectIsSSO, selectLockSetupRequired } from '@proton/pass/store/selectors';
@@ -29,7 +27,6 @@ import { Header } from './Header/Header';
 import './Main.scss';
 
 const MainSwitch: FC = () => {
-    const sub = (basePath: string, path: string) => `${basePath}/${path}`;
     const isSSO = useSelector(selectIsSSO);
 
     return (
@@ -43,12 +40,7 @@ const MainSwitch: FC = () => {
                 >
                     <Header />
                     <div id="pass-layout" className="flex items-center justify-center flex-nowrap w-full h-full">
-                        {match && (
-                            <Switch>
-                                <Route path={sub(match.path, 'secure-links')} component={SecureLinks} />
-                                <Route component={Items} />
-                            </Switch>
-                        )}
+                        {match && <Route component={Items} />}
                         <ThemeOnboardingModal />
                         <InAppNotifications />
                         {isSSO && (
@@ -75,25 +67,23 @@ export const Main: FC = () => {
 
     return (
         <OrganizationProvider>
-            <ItemsProvider>
-                <BulkSelectProvider>
-                    <ItemActionsProvider>
-                        <InviteProvider>
-                            <PasswordProvider>
-                                <UpsellingProvider>
-                                    <SpotlightProvider>
-                                        {lockSetup ? (
-                                            <LockOnboarding onCancel={() => logout({ soft: true })} />
-                                        ) : (
-                                            <MainSwitch />
-                                        )}
-                                    </SpotlightProvider>
-                                </UpsellingProvider>
-                            </PasswordProvider>
-                        </InviteProvider>
-                    </ItemActionsProvider>
-                </BulkSelectProvider>
-            </ItemsProvider>
+            <BulkSelectProvider>
+                <ItemActionsProvider>
+                    <InviteProvider>
+                        <PasswordProvider>
+                            <UpsellingProvider>
+                                <SpotlightProvider>
+                                    {lockSetup ? (
+                                        <LockOnboarding onCancel={() => logout({ soft: true })} />
+                                    ) : (
+                                        <MainSwitch />
+                                    )}
+                                </SpotlightProvider>
+                            </UpsellingProvider>
+                        </PasswordProvider>
+                    </InviteProvider>
+                </ItemActionsProvider>
+            </BulkSelectProvider>
         </OrganizationProvider>
     );
 };
