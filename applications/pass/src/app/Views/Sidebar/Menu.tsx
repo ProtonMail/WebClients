@@ -14,7 +14,12 @@ import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { RouteMatch } from '@proton/pass/components/Navigation/RouteMatch';
-import { getLocalPath, getMonitorRoute, getSecureLinksRoute } from '@proton/pass/components/Navigation/routing';
+import {
+    getInitialFilters,
+    getLocalPath,
+    getMonitorRoute,
+    getSecureLinksRoute,
+} from '@proton/pass/components/Navigation/routing';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 
@@ -54,7 +59,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     component={SecureLinkButton}
                     className="rounded"
                     parentClassName="mx-3"
-                    onClick={() => navigate(getLocalPath('secure-links'), { filters: {} })}
+                    onClick={() => navigate(getLocalPath('secure-links'), { filters: getInitialFilters() })}
                 />
 
                 <RouteMatch path={getMonitorRoute()} component={MonitorButton} />

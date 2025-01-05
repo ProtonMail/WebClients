@@ -76,11 +76,27 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             select: (selected) => {
                 switch (selected) {
                     case 'all':
-                        return navigate(getLocalPath(), { filters: { selectedShareId: null, search: '' } });
+                        return navigate(getLocalPath(), {
+                            filters: {
+                                selectedShareId: null,
+                                search: '',
+                            },
+                        });
                     case 'trash':
-                        return navigate(getTrashRoute(), { filters: { selectedShareId: null, search: '', type: '*' } });
+                        return navigate(getTrashRoute(), {
+                            filters: {
+                                selectedShareId: null,
+                                search: '',
+                                type: '*',
+                            },
+                        });
                     default: {
-                        return navigate(getLocalPath(), { filters: { selectedShareId: selected } });
+                        return navigate(getLocalPath(`share/${selected}`), {
+                            filters: {
+                                selectedShareId: selected,
+                                search: '',
+                            },
+                        });
                     }
                 }
             },
