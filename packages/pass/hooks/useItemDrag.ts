@@ -6,7 +6,6 @@ import { c, msgid } from 'ttag';
 import { useItemsDroppable } from '@proton/components';
 import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
 import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useStableRef } from '@proton/pass/hooks/useStableRef';
 import { fromItemKey, getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { SelectedItem } from '@proton/pass/types';
@@ -30,12 +29,7 @@ const getDragHtml = ({ length: count }: string[]) =>
 
 /** Items can be dragged from any view including Pass Monitor view,
  * except in the cases defined by this `draggable` flag. */
-export const useCanDragItems = EXTENSION_BUILD
-    ? () => false
-    : () => {
-          const { matchTrash } = useNavigationMatches();
-          return !matchTrash;
-      };
+export const useCanDragItems = () => !EXTENSION_BUILD;
 
 export const useItemDrag: () => Partial<ItemDragProps> = EXTENSION_BUILD
     ? () => NOOP_DRAG

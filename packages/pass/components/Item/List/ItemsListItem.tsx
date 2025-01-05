@@ -11,7 +11,7 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
 import { useItemOptimisticState } from '@proton/pass/hooks/useItem';
 import type { DraggableItem } from '@proton/pass/hooks/useItemDrag';
-import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
+import { isDisabledAliasItem, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectIsWritableShare, selectShare } from '@proton/pass/store/selectors';
@@ -74,6 +74,7 @@ export const ItemsListItem = memo(
                     }}
                     onDragStart={(evt: DragEvent) => {
                         if (onDragStart && draggable) {
+                            if (isTrashed(item)) return false;
                             const writable = selectIsWritableShare(item.shareId)(store.getState());
                             if (writable) onDragStart?.(evt, { ID: id });
                             else return false;
