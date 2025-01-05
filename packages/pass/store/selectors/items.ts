@@ -33,15 +33,15 @@ import type {
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import type { State } from '@proton/pass/store/types';
-import type {
-    BulkSelectionDTO,
-    ItemRevision,
-    ItemRevisionWithOptimistic,
-    ItemType,
-    Maybe,
-    MaybeNull,
-    SecureLink,
-    SelectedItem,
+import {
+    type BulkSelectionDTO,
+    type ItemRevision,
+    type ItemRevisionWithOptimistic,
+    type ItemType,
+    type Maybe,
+    type MaybeNull,
+    type SecureLink,
+    type SelectedItem,
 } from '@proton/pass/types';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { first } from '@proton/pass/utils/array/first';
@@ -159,15 +159,21 @@ const selectSortedItemsByShareId = createSelector(
         pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
 );
 
+export type ItemsSearchResults = {
+    filtered: ItemRevision[];
+    searched: ItemRevision[];
+    totalCount: number;
+};
+
 /** Search result selector is organized to separate sort from search, as sorting
  * can be computationally expensive when the number of items is high. The `search`
  * is expected to change more frequently than the shareId / sortOption */
 export const selectItemsSearchResult = createSelector(
     [selectSortedItemsByShareId, selectSearchFilter, selectTypeFilter],
-    (byShareId, search, type) => {
-        const searched = searchItems(byShareId, search);
+    (items, search, type): ItemsSearchResults => {
+        const searched = searchItems(items, search);
         const filtered = filterItemsByType(type)(searched);
-        return { filtered, searched, totalCount: byShareId.length };
+        return { filtered, searched, totalCount: items.length };
     }
 );
 
@@ -349,13 +355,31 @@ export const selectInactiveSecureLinks = createSelector(selectAllSecureLinks, (l
     links.filter(not(prop('active')))
 );
 
-export const selectItemsWithSecureLink = createSelector(
-    [selectAllItems, selectSecureLinks],
-    (items, secureLinks): ItemRevision[] =>
-        items.reduce<ItemRevision[]>((acc, item) => {
-            if (secureLinks[item.shareId]?.[item.itemId]?.length) acc.push(item);
+const selectSortedSecureLinkItems = createSelector([selectItems, selectSecureLinks], (items, secureLinks) => {
+    const { totalCount, selection } = Object.entries(secureLinks).reduce(
+        (acc, [shareId, byShareId]) => {
+            Object.entries(byShareId).forEach(([itemId, { length }]) => {
+                acc.totalCount += length;
+                acc.selection.push({ shareId, itemId });
+            });
+
             return acc;
-        }, [])
+        },
+        { totalCount: 0, selection: <SelectedItem[]>[] }
+    );
+
+    const secureLinkItems = selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy);
+    const sorted = sortItems('recent')(secureLinkItems);
+    return { sorted, totalCount };
+});
+
+/** "Sort before search" strategy */
+export const selectSecureLinksSearchResult = createSelector(
+    [selectSortedSecureLinkItems, (_: State, search?: string) => search],
+    ({ sorted, totalCount }, search): ItemsSearchResults => {
+        const searched = searchItems(sorted, search);
+        return { searched, filtered: searched, totalCount };
+    }
 );
 
 export const selectItemSecureLinks = (shareId: string, itemId: string) =>
