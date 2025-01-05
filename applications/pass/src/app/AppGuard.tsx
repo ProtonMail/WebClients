@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect } from 'react';
+import { type FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
@@ -8,19 +8,14 @@ import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvider';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
-import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
-import { useAuthService } from './Auth/AuthServiceProvider';
 import { useServiceWorkerState } from './ServiceWorker/client/ServiceWorkerProvider';
-import { Main } from './Views/Main';
-import { PublicSwitch } from './Views/Public/PublicSwitch';
+import { PrivateApp } from './Views/PrivateApp';
+import { PublicRouter } from './Views/PublicRouter';
 
 export const AppGuard: FC = () => {
     const dispatch = useDispatch();
@@ -28,10 +23,7 @@ export const AppGuard: FC = () => {
     const authStore = useAuthStore();
 
     const online = useConnectivity();
-    const auth = useAuthService();
     const updateAvailable = useServiceWorkerState()?.updateAvailable ?? false;
-
-    const handleProbe = useCallback(() => auth.checkLock().catch(noop), []);
 
     useEffect(() => {
         const localID = authStore?.getLocalID();
@@ -41,18 +33,7 @@ export const AppGuard: FC = () => {
 
     return (
         <>
-            {state.booted ? (
-                <LockProbeProvider onProbe={handleProbe}>
-                    <PasswordUnlockProvider>
-                        <PinUnlockProvider>
-                            <Main />
-                        </PinUnlockProvider>
-                    </PasswordUnlockProvider>
-                </LockProbeProvider>
-            ) : (
-                <PublicSwitch />
-            )}
-
+            {state.booted ? <PrivateApp /> : <PublicRouter />}
             {online && updateAvailable && (
                 <BottomBar
                     className="bg-danger absolute bottom-0"
