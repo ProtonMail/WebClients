@@ -1,9 +1,7 @@
 import { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
-import { DeepLinks } from 'proton-pass-web/app/DeepLinks/DeepLinks';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -13,20 +11,20 @@ import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvi
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
+import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
-import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
-import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
+import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
 import { WithSpotlightModal } from '@proton/pass/components/Onboarding/WithSpotlightModal';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
-import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
@@ -35,17 +33,15 @@ import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { selectIsSSO, selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
-import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
+import noop from '@proton/utils/noop';
 
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
 import { Header } from './Header/Header';
 import { LinuxUpdateBar } from './Header/LinuxUpdateBar';
-import { Monitor } from './Monitor/Monitor';
-import { Onboarding } from './Onboarding/Onboarding';
-import { Settings } from './Settings/Settings';
+import { PrivateRouter } from './PrivateRouter';
 import { Menu } from './Sidebar/Menu';
 
-const MainSwitch: FC = () => {
+const Main: FC = () => {
     const dispatch = useDispatch();
     const { status } = useAppState();
     const authStore = useAuthStore();
@@ -92,70 +88,58 @@ const MainSwitch: FC = () => {
                     <Menu onToggle={toggle} />
                 </Sidebar>
 
-                <Route path={`/${getLocalIDPath(localID)}`}>
-                    {(route) => (
-                        <main id="main" className="content flex-1 overflow-hidden">
-                            <div className="flex flex-nowrap flex-column h-full">
-                                <Header sidebarExpanded={expanded} sidebarToggle={toggle} />
-                                <div className="flex items-center justify-center flex-nowrap w-full h-full">
-                                    {route.match && (
-                                        <Switch>
-                                            <Route
-                                                exact
-                                                path={`${route.match.path}/onboarding`}
-                                                component={Onboarding}
-                                            />
-                                            <Route path={`${route.match.path}/monitor`} component={Monitor} />
-                                            <Route exact path={`${route.match.path}/settings`} component={Settings} />
-                                            <Route path={`${route.match.path}/secure-links`} component={SecureLinks} />
-                                            <Route path={`${route.match.path}/internal/:key`} component={DeepLinks} />
-                                            <Route component={Items} />
-                                        </Switch>
-                                    )}
-                                    {!DESKTOP_BUILD && <ThemeOnboardingModal />}
-                                    {isSSO && (
-                                        <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
-                                            {(props) => <OnboardingSSO {...props} />}
-                                        </WithSpotlightModal>
-                                    )}
-                                    <InAppNotifications />
-                                </div>
-                            </div>
-                        </main>
-                    )}
-                </Route>
+                <main id="main" className="content flex-1 overflow-hidden">
+                    <div className="flex flex-nowrap flex-column h-full">
+                        <Header sidebarExpanded={expanded} sidebarToggle={toggle} />
+                        <div className="flex items-center justify-center flex-nowrap w-full h-full">
+                            <PrivateRouter />
+                            {!DESKTOP_BUILD && <ThemeOnboardingModal />}
+                            {isSSO && (
+                                <WithSpotlightModal type={SpotlightMessage.SSO_CHANGE_LOCK}>
+                                    {(props) => <OnboardingSSO {...props} />}
+                                </WithSpotlightModal>
+                            )}
+                            <InAppNotifications />
+                        </div>
+                    </div>
+                </main>
             </div>
             {connectivityBar}
         </div>
     );
 };
 
-export const Main: FC = () => {
+export const PrivateApp: FC = () => {
     const lockSetup = useSelector(selectLockSetupRequired);
     const auth = useAuthService();
     const logout = useCallback(() => auth.logout({ soft: true }), []);
+    const handleProbe = useCallback(() => auth.checkLock().catch(noop), []);
 
     return (
-        <OrganizationProvider>
-            <ItemsProvider>
-                <BulkSelectProvider>
-                    <ItemActionsProvider>
-                        <InviteProvider>
-                            <VaultActionsProvider>
-                                <PasswordProvider>
-                                    <UpsellingProvider>
-                                        <SpotlightProvider>
-                                            <OnboardingProvider>
-                                                {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
-                                            </OnboardingProvider>
-                                        </SpotlightProvider>
-                                    </UpsellingProvider>
-                                </PasswordProvider>
-                            </VaultActionsProvider>
-                        </InviteProvider>
-                    </ItemActionsProvider>
-                </BulkSelectProvider>
-            </ItemsProvider>
-        </OrganizationProvider>
+        <LockProbeProvider onProbe={handleProbe}>
+            <PasswordUnlockProvider>
+                <PinUnlockProvider>
+                    <OrganizationProvider>
+                        <BulkSelectProvider>
+                            <ItemActionsProvider>
+                                <InviteProvider>
+                                    <VaultActionsProvider>
+                                        <PasswordProvider>
+                                            <UpsellingProvider>
+                                                <SpotlightProvider>
+                                                    <OnboardingProvider>
+                                                        {lockSetup ? <LockOnboarding onCancel={logout} /> : <Main />}
+                                                    </OnboardingProvider>
+                                                </SpotlightProvider>
+                                            </UpsellingProvider>
+                                        </PasswordProvider>
+                                    </VaultActionsProvider>
+                                </InviteProvider>
+                            </ItemActionsProvider>
+                        </BulkSelectProvider>
+                    </OrganizationProvider>
+                </PinUnlockProvider>
+            </PasswordUnlockProvider>
+        </LockProbeProvider>
     );
 };
