@@ -7,6 +7,7 @@ import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { Autoselect } from '@proton/pass/components/Navigation/Autoselect';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { ItemScopes } from '@proton/pass/components/Navigation/routing';
+import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 
 import { ItemsList } from './List/ItemsList';
 
@@ -18,6 +19,7 @@ export const Items: FC<RouteChildrenProps> = (subRoute) => {
     return (
         <ItemsProvider>
             <SubSidebar>
+                {EXTENSION_BUILD && <InAppNotificationContainer className="px-3 pt-3" />}
                 <ItemsList />
             </SubSidebar>
             <Content>
