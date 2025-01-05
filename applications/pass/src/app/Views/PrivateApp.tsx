@@ -19,6 +19,7 @@ import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/Theme
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
+import { InAppNotificationProvider } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingSSO } from '@proton/pass/components/Onboarding/OnboardingSSO';
@@ -127,9 +128,15 @@ export const PrivateApp: FC = () => {
                                         <PasswordProvider>
                                             <UpsellingProvider>
                                                 <SpotlightProvider>
-                                                    <OnboardingProvider>
-                                                        {lockSetup ? <LockOnboarding onCancel={logout} /> : <Main />}
-                                                    </OnboardingProvider>
+                                                    <InAppNotificationProvider>
+                                                        <OnboardingProvider>
+                                                            {lockSetup ? (
+                                                                <LockOnboarding onCancel={logout} />
+                                                            ) : (
+                                                                <Main />
+                                                            )}
+                                                        </OnboardingProvider>
+                                                    </InAppNotificationProvider>
                                                 </SpotlightProvider>
                                             </UpsellingProvider>
                                         </PasswordProvider>

@@ -20,6 +20,7 @@ import {
     getMonitorRoute,
     getSecureLinksRoute,
 } from '@proton/pass/components/Navigation/routing';
+import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 
@@ -91,11 +92,16 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
-                <hr className="my-2 mx-4" aria-hidden="true" />
 
-                <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
-                    <AccountActions />
-                    <MenuActions />
+                <div className="shrink-0">
+                    <InAppNotificationContainer className="px-4 py-2" />
+
+                    <hr className="my-2 mx-4" aria-hidden="true" />
+
+                    <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
+                        <AccountActions />
+                        <MenuActions />
+                    </div>
                 </div>
             </div>
         </div>
