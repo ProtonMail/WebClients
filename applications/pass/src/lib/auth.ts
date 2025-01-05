@@ -15,7 +15,7 @@ import type { AppStateService } from '@proton/pass/components/Core/AppStateManag
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     type AuthRouteState,
-    getBootRedirectPath,
+    getBootRedirection,
     getLocalPath,
     getRouteError,
 } from '@proton/pass/components/Navigation/routing';
@@ -84,7 +84,7 @@ export const createAuthService = ({
     getOnline,
     onNotification,
 }: AuthServiceBindings) => {
-    const route = objectHandler({ redirectPath: getBootRedirectPath(history.location) });
+    const redirect = objectHandler(getBootRedirection(history.location));
 
     const auth = createCoreAuthService({
         api,
@@ -110,7 +110,8 @@ export const createAuthService = ({
             const error = getRouteError(history.location.search);
 
             if (error !== null) {
-                route.set('redirectPath', '/');
+                redirect.set('pathname', '/');
+                redirect.set('search', '');
                 const pathname = pathLocalID ? `/u/${pathLocalID}` : '/';
                 app.setStatus(AppStatus.ERROR);
                 history.replace({ search: '', pathname, state: { error } });
@@ -213,8 +214,9 @@ export const createAuthService = ({
 
             if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {
-                const redirect = stripLocalBasenameFromPathname(route.get('redirectPath'));
-                history.replace({ ...history.location, pathname: (getBasename(localID) ?? '/') + redirect });
+                const route = stripLocalBasenameFromPathname(redirect.get('pathname'));
+                const search = redirect.get('search');
+                history.replace({ ...history.location, pathname: (getBasename(localID) ?? '/') + route, search });
                 app.setStatus(AppStatus.AUTHORIZED);
                 store.dispatch(bootIntent());
             }
@@ -263,9 +265,11 @@ export const createAuthService = ({
 
             try {
                 const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
-                if ('url' in data && typeof data.url === 'string') route.set('redirectPath', data.url);
+                if ('pathname' in data && typeof data.pathname === 'string') redirect.set('pathname', data.pathname);
+                if ('search' in data && typeof data.search === 'string') redirect.set('search', data.search);
             } catch {
-                route.set('redirectPath', '/');
+                redirect.set('pathname', '/');
+                redirect.set('search', '');
             }
 
             /** If any on-going persisted sessions are present for the forked
@@ -297,7 +301,7 @@ export const createAuthService = ({
         onForkInvalid: () => history.replace('/'),
 
         onForkRequest: ({ url, state }) => {
-            sessionStorage.setItem(getStateKey(state), JSON.stringify({ url: route.get('redirectPath') }));
+            sessionStorage.setItem(getStateKey(state), JSON.stringify(redirect.data));
             window.location.replace(url);
         },
 
