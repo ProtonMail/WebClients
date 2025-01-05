@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
@@ -15,7 +15,8 @@ type Props = { toggle: () => void; isOpen: boolean };
 
 export const MenuHamburger = memo(
     forwardRef<HTMLButtonElement, Props>(({ toggle, isOpen }, ref) => {
-        const { matchTrash } = useNavigationMatches();
+        const scope = useItemScope();
+        const trash = scope === 'trash';
 
         const { filters } = useNavigationFilters();
         const { selectedShareId } = filters;
@@ -37,8 +38,8 @@ export const MenuHamburger = memo(
                     <VaultIcon
                         className="shrink-0"
                         size={4}
-                        color={matchTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
-                        icon={matchTrash ? 'pass-trash' : vault?.content.display.icon}
+                        color={trash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
+                        icon={trash ? 'pass-trash' : vault?.content.display.icon}
                     />
                 </Button>
             </div>

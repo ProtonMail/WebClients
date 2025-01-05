@@ -9,11 +9,8 @@ import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopB
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
-import type { ItemType } from '@proton/pass/types';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 import { MenuDropdown } from './MenuDropdown';
@@ -21,10 +18,6 @@ import { MenuDropdown } from './MenuDropdown';
 export const Header: FC = () => {
     const { interactive } = usePopupContext();
     const { url } = useExtensionContext();
-
-    const navigate = useNavigate();
-    const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
-
     useSpotlightListener();
 
     return (
@@ -34,7 +27,7 @@ export const Header: FC = () => {
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />
                     <SearchBar disabled={!interactive} />
-                    <ItemQuickActions onCreate={onCreate} origin={url ? resolveDomain(url) : null} />
+                    <ItemQuickActions origin={url ? resolveDomain(url) : null} />
                     <Spotlight />
                 </div>
             </CoreHeader>
