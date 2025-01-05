@@ -109,26 +109,26 @@ export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
 
 export const getRouteError = (search: string) => new URLSearchParams(search).get('error');
 
-export const getBootRedirectPath = (bootLocation: Location) => {
+export const getBootRedirection = (bootLocation: Location) => {
     const searchParams = new URLSearchParams(bootLocation.search);
+    const { search } = bootLocation;
+    const pathname = stripLocalBasenameFromPathname(bootLocation.pathname);
 
-    const redirectPath = (() => {
-        if (searchParams.get('filters') !== null) {
-            return bootLocation.pathname;
-        }
+    /** Initial filters could be passed on initial boot by
+     * a redirection from the proton mail security center */
+    if (searchParams.get('filters') !== null) return { pathname, search };
 
-        const [, shareId, itemId] = bootLocation.pathname.match('share/([^/]+)(/item/([^/]+))?') || [];
-        if (shareId || itemId) {
-            const filters = partialMerge(getInitialFilters(), { selectedShareId: shareId });
-            searchParams.set('filters', encodeFilters(filters));
-            return `${bootLocation.pathname}?${searchParams.toString()}`;
-        }
+    /** The admin/b2b panels may redirect to a specific share or item */
+    const [, shareId, itemId] = bootLocation.pathname.match('share/([^/]+)(/item/([^/]+))?') || [];
+    if (shareId || itemId) {
+        const filters = partialMerge(getInitialFilters(), { selectedShareId: shareId });
+        searchParams.set('filters', encodeFilters(filters));
+        return { pathname, search: searchParams.toString() };
+    }
 
-        return bootLocation.pathname;
-    })();
-
-    return stripLocalBasenameFromPathname(redirectPath);
+    return { pathname, search };
 };
+
 const extractPathWithoutFragment = (path: string): string => {
     const indexOfHash = path.indexOf('#');
     return indexOfHash === -1 ? path : path.substring(0, indexOfHash);
