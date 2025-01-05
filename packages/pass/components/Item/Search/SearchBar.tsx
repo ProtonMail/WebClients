@@ -8,7 +8,7 @@ import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getItemTypeOptions } from '@proton/pass/components/Item/Filters/Type';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useSearchShortcut } from '@proton/pass/hooks/useSearchShortcut';
 import { selectShare } from '@proton/pass/store/selectors';
@@ -27,7 +27,7 @@ const SEARCH_DEBOUNCE_TIME = 75;
 
 export const SearchBar = memo(({ disabled, trash }: Props) => {
     const { onTelemetry } = usePassCore();
-    const { matchTrash } = useNavigationMatches();
+    const scope = useItemScope();
     const { filters, setFilters } = useNavigationFilters();
 
     const [search, setSearch] = useState<string>(filters.search ?? '');
@@ -41,21 +41,31 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
     const placeholder = useMemo(() => {
         const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
         const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
-        const vaultName = matchTrash ? c('Label').t`Trash` : vault?.content.name.trim();
+
+        const vaultName = (() => {
+            switch (scope) {
+                case 'trash':
+                    return c('Label').t`Trash`;
+                case 'secure-links':
+                    return c('Action').t`Secure links`;
+                default:
+                    return vault?.content.name.trim();
+            }
+        })();
 
         switch (type) {
             case '*':
-                return vault || matchTrash
+                return vaultName
                     ? c('Placeholder').t`Search in ${vaultName}`
                     : c('Placeholder').t`Search in all vaults`;
             default: {
                 // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
-                return vault || matchTrash
+                return vaultName
                     ? c('Placeholder').t`Search ${pluralItemType} in ${vaultName}`
                     : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
             }
         }
-    }, [vault, type, matchTrash]);
+    }, [vault, type, scope]);
 
     const handleClear = () => {
         setSearch('');
