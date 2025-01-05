@@ -44,7 +44,7 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = (item: ItemRevision) => () =>
-        selectItem(item.shareId, item.itemId, { prefix: 'monitor/duplicates' });
+        selectItem(item.shareId, item.itemId, { scope: 'monitor/duplicates' });
 
     return total > 0 ? (
         <Card className="mb-2" type="warning">

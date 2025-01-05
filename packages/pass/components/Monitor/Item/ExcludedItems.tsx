@@ -1,5 +1,4 @@
 import { type FC, useCallback, useEffect, useRef } from 'react';
-import { useRouteMatch } from 'react-router-dom';
 import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
@@ -7,14 +6,14 @@ import { c } from 'ttag';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { getItemRoute } from '@proton/pass/components/Navigation/routing';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectSelectedItems } from '@proton/pass/store/selectors';
-import type { ItemRevision, SelectedItem } from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 export const ExcludedItems: FC = () => {
@@ -23,23 +22,19 @@ export const ExcludedItems: FC = () => {
 
     const { excluded } = useMonitor();
     const items = useMemoSelector(selectSelectedItems, [excluded.data]);
-    const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/excluded(/trash)?' });
-    const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
+    const selectedItem = useSelectedItem();
 
     useEffect(() => {
         if (items.length && !selectedItem) {
             const item = items[0];
-            selectItem(item, { inTrash: isTrashed(item), prefix: 'monitor/excluded', mode: 'replace' });
+            selectItem(item, { scope: 'monitor/excluded', mode: 'replace' });
         }
     }, [selectedItem, items]);
 
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayExcludedItems, {}, {})([]);
 
     const onSelect = useCallback((item: ItemRevision) => {
-        selectItem(item, {
-            inTrash: isTrashed(item),
-            prefix: 'monitor/excluded',
-        });
+        selectItem(item, { scope: 'monitor/excluded' });
     }, []);
 
     return items.length > 0 ? (

@@ -5,7 +5,7 @@ import { VaultMenuAll } from '@proton/pass/components/Menu/Vault/VaultMenuAll';
 import { VaultMenuItem } from '@proton/pass/components/Menu/Vault/VaultMenuItem';
 import { VaultMenuTrash } from '@proton/pass/components/Menu/Vault/VaultMenuTrash';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -27,7 +27,8 @@ type Props = {
 export const VaultMenu: FC<Props> = ({ dense = false, onSelect, render, onAction = noop }) => {
     const { filters } = useNavigationFilters();
     const { selectedShareId } = filters;
-    const { matchTrash: inTrash, matchItemList } = useNavigationMatches();
+    const scope = useItemScope();
+    const inTrash = scope === 'trash';
 
     const vaults = useSelector(selectVaultsWithItemsCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
@@ -44,7 +45,7 @@ export const VaultMenu: FC<Props> = ({ dense = false, onSelect, render, onAction
                 <VaultMenuAll
                     count={totalItemCount}
                     dense={dense}
-                    selected={matchItemList && !inTrash && !selectedShareId}
+                    selected={scope === 'share' && !selectedShareId}
                     onAction={onAction}
                 />
 
@@ -54,7 +55,7 @@ export const VaultMenu: FC<Props> = ({ dense = false, onSelect, render, onAction
                         vault={vault}
                         count={vault.count}
                         label={vault.content.name}
-                        selected={matchItemList && !inTrash && selectedShareId === vault.shareId}
+                        selected={scope === 'share' && selectedShareId === vault.shareId}
                         canEdit={isShareManageable(vault)}
                         canMove={isWritableVault(vault) && vault.count > 0}
                         canDelete={vault.owner && ownedVaultCount > 1}
@@ -66,10 +67,10 @@ export const VaultMenu: FC<Props> = ({ dense = false, onSelect, render, onAction
                     />
                 ))}
 
-                <VaultMenuTrash dense={dense} selected={inTrash} onAction={onAction} />
+                <VaultMenuTrash dense={dense} selected={scope === 'trash'} onAction={onAction} />
             </>
         );
-    }, [vaults, vaultActions, selectedShareId, inTrash, matchItemList, onSelect]);
+    }, [vaults, vaultActions, selectedShareId, scope, onSelect]);
 
     return render?.(selectedVaultOption, menu) ?? menu;
 };

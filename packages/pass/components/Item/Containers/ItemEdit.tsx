@@ -8,8 +8,8 @@ import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { IdentityEdit } from '@proton/pass/components/Item/Identity/Identity.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { useItem } from '@proton/pass/hooks/useItem';
@@ -26,10 +26,11 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
 };
 
 export const ItemEdit: FC = () => {
-    const { prefix } = useItemRoute();
     const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
+
     const nav = useNavigationActions();
+    const scope = useItemScope();
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
@@ -37,7 +38,7 @@ export const ItemEdit: FC = () => {
 
     const handleSubmit = (data: ItemEditIntent) => {
         dispatch(itemEdit.intent(data));
-        nav.selectItem(shareId, itemId, { mode: 'replace', prefix });
+        nav.selectItem(shareId, itemId, { mode: 'replace', scope });
     };
 
     if (!(item && vault)) return <Redirect to={nav.preserveSearch(getLocalPath())} push={false} />;
@@ -46,7 +47,7 @@ export const ItemEdit: FC = () => {
 
     return (
         <EditViewComponent
-            onCancel={() => nav.selectItem(shareId, itemId, { prefix })}
+            onCancel={() => nav.selectItem(shareId, itemId, { scope })}
             onSubmit={handleSubmit}
             revision={item}
             url={getCurrentTabUrl?.() ?? null}

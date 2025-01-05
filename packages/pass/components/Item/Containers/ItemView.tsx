@@ -10,10 +10,9 @@ import { IdentityView } from '@proton/pass/components/Item/Identity/Identity.vie
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/components/Navigation/routing';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
@@ -43,8 +42,7 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
 };
 
 export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
-    const { prefix } = useItemRoute();
-    const { matchTrash: inTrash } = useNavigationMatches();
+    const scope = useItemScope();
     const { selectItem, preserveSearch } = useNavigationActions();
     const inviteActions = useInviteActions();
     const itemActions = useItemsActions();
@@ -63,19 +61,18 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
 
     /* if vault or item cannot be found : redirect to base path */
     if (!(vault && item)) {
-        const base = maybeTrash('', inTrash);
-        const to = preserveSearch(getLocalPath(prefix ? subPath(prefix, base) : base));
+        const to = preserveSearch(getLocalPath(scope ?? ''));
         return <Redirect to={to} push={false} />;
     }
 
     /* if the item is optimistic and can be resolved to a non-optimistic item : replace */
     if (optimisticResolved) {
-        const to = preserveSearch(getItemRoute(shareId, item.itemId, { prefix }));
+        const to = preserveSearch(getItemRoute(shareId, item.itemId, { scope }));
         return <Redirect to={to} push={false} />;
     }
 
-    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', prefix });
-    const handleHistory = () => selectItem(shareId, itemId, { view: 'history', inTrash, prefix });
+    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', scope });
+    const handleHistory = () => selectItem(shareId, itemId, { view: 'history', scope });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => itemActions.trash(item);
     const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
