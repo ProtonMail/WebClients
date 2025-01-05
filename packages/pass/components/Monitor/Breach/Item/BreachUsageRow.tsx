@@ -17,7 +17,7 @@ export const BreachUsageRow: FC<Props> = ({ item }) => {
 
     const handleClick = (evt: MouseEvent) => {
         evt.stopPropagation();
-        selectItem(shareId, itemId, { inTrash: isTrashed(item) });
+        selectItem(shareId, itemId, { scope: isTrashed(item) ? 'trash' : 'share' });
     };
 
     return (

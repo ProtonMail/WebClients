@@ -14,9 +14,8 @@ import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemHistoryRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
@@ -35,8 +34,7 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
 };
 
 export const RevisionDiff: FC = () => {
-    const { prefix } = useItemRoute();
-    const { matchTrash } = useNavigationMatches();
+    const scope = useItemScope();
     const selectItem = useSelectItem();
     const dispatch = useDispatch();
     const params = useParams<{ revision: string }>();
@@ -58,11 +56,11 @@ export const RevisionDiff: FC = () => {
                 : { ...item, itemId, shareId, lastRevision: current };
 
         dispatch(itemEdit.intent(editIntent));
-        selectItem(shareId, itemId, { mode: 'replace', inTrash: matchTrash, prefix });
+        selectItem(shareId, itemId, { mode: 'replace', scope });
     });
 
     if (!(Number.isFinite(previous) && selectedItem && previousItem)) {
-        return <Redirect to={getItemHistoryRoute(shareId, itemId, { trashed: matchTrash, prefix })} push={false} />;
+        return <Redirect to={getItemHistoryRoute(shareId, itemId, { scope })} push={false} />;
     }
 
     const { type, metadata } = selectedItem.data;
@@ -81,7 +79,7 @@ export const RevisionDiff: FC = () => {
                         shape="solid"
                         color="weak"
                         className="shrink-0"
-                        onClick={() => selectItem(shareId, itemId, { view: 'history', inTrash: matchTrash, prefix })}
+                        onClick={() => selectItem(shareId, itemId, { view: 'history', scope })}
                         title={c('Action').t`Back`}
                     >
                         <Icon name="chevron-left" alt={c('Action').t`Back`} />
