@@ -1,5 +1,4 @@
-import type { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
@@ -8,71 +7,73 @@ import { Icon } from '@proton/components/index';
 import { InAppNotificationState } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
-import { withInAppNotification } from './WithInAppNotification';
+import { useInAppNotificationContainer } from './InAppNotificationPortal';
+import { WithInAppNotification } from './WithInAppNotification';
 
-export const InAppNotificationBanner: FC = withInAppNotification(
-    ({ changeNotificationState, readMessage, notification, getRedirectTo }) => {
-        const position = EXTENSION_BUILD
-            ? { '--bottom-custom': '10px', '--w-custom': '14rem' }
-            : { '--bottom-custom': '100px', '--w-custom': '18rem' };
+export const InAppNotificationBanner = WithInAppNotification(
+    ({ dense, notification, setNotificationState, onAction }) => {
+        const { container } = useInAppNotificationContainer();
+        const { content } = notification;
 
         return (
-            <aside
-                className="promo-banner fixed top-custom left-custom bottom-custom w-custom bg-norm p-4 rounded-lg border border-primary z-custom"
-                style={{ ...position, '--left-custom': '.5rem', '--z-custom': 900 }}
-                aria-live="polite"
-                role="alert"
-            >
-                <Button
-                    className="close-banner absolute top-custom right-custom"
-                    style={{
-                        '--top-custom': '-.5rem',
-                        '--right-custom': '-.5rem',
-                        padding: '0.25rem',
-                        backgroundColor: 'var(--interaction-weak-major-2)',
-                    }}
-                    title={c('Action').t`Close`}
-                    size="small"
-                    color="weak"
-                    shape="ghost"
-                    onClick={() => changeNotificationState(notification.id, InAppNotificationState.DISMISSED)}
-                    icon
-                    pill
-                >
-                    <Icon name="cross" size={3} alt={c('Action').t`Close`} />
-                </Button>
-                <div>
-                    {notification.content.imageUrl && (
-                        <img
-                            className="mb-2 max-w-custom pointer-events-none user-select-none"
-                            style={{ '--max-w-custom': '4rem' }}
-                            src={notification.content.imageUrl}
-                            alt=""
-                        />
+            container?.current &&
+            createPortal(
+                <aside
+                    className={clsx(
+                        'relative w-full bg-norm rounded-lg border border-primary',
+                        dense ? 'p-3 text-sm' : 'p-4'
                     )}
-                    <div className={clsx('bold', EXTENSION_BUILD ? 'text-lg' : 'text-xl')}>
-                        {notification.content.title}
-                    </div>
-                    <div className={clsx('color-weak', EXTENSION_BUILD ? 'mt-1 text-sm' : 'text-base')}>
-                        {notification.content.message}
-                    </div>
-                    {notification.content.cta && (
-                        <Link className="w-full" to={getRedirectTo(notification.content.cta.ref)}>
+                    aria-live="polite"
+                    role="alert"
+                >
+                    <Button
+                        className="close-banner absolute top-custom right-custom"
+                        style={{
+                            '--top-custom': '-.5rem',
+                            '--right-custom': '-.5rem',
+                            padding: '0.25rem',
+                            backgroundColor: 'var(--interaction-weak-major-2)',
+                        }}
+                        title={c('Action').t`Close`}
+                        size="small"
+                        color="weak"
+                        shape="ghost"
+                        onClick={() => setNotificationState(InAppNotificationState.DISMISSED)}
+                        icon
+                        pill
+                    >
+                        <Icon name="cross" size={3} alt={c('Action').t`Close`} />
+                    </Button>
+                    <div className={clsx('flex flex-column', dense ? 'gap-1' : 'gap-2')}>
+                        {content.imageUrl && (
+                            <img
+                                className="max-w-custom pointer-events-none user-select-none"
+                                style={{ '--max-w-custom': '4rem' }}
+                                src={content.imageUrl}
+                                alt=""
+                            />
+                        )}
+
+                        <div className="text-lg">{content.title}</div>
+                        <div className="lh120 color-weak">{content.message}</div>
+
+                        {content.cta && (
                             <Button
-                                className="mt-4 color-white text-ellipsis"
+                                className="color-white text-ellipsis mt-1"
                                 color="norm"
                                 shape="solid"
-                                size={EXTENSION_BUILD ? 'medium' : 'large'}
+                                size={dense ? 'small' : 'medium'}
                                 pill
                                 fullWidth
-                                onClick={readMessage}
+                                onClick={onAction}
                             >
-                                {notification.content.cta.text}
+                                {content.cta.text}
                             </Button>
-                        </Link>
-                    )}
-                </div>
-            </aside>
+                        )}
+                    </div>
+                </aside>,
+                container.current
+            )
         );
     }
 );
