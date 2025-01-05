@@ -34,7 +34,7 @@ import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect'
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
-import { UnauthorizedRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
+import { PublicRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
@@ -86,7 +86,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         theme: createPassThemeManager({
             getInitialTheme: async () => {
                 /** UnauthorizedRoutes should stay in PassDark mode */
-                const forceDarkMode = matchPath(window.location.pathname, UnauthorizedRoutes.SecureLink);
+                const forceDarkMode = matchPath(window.location.pathname, PublicRoutes.SecureLink);
                 return forceDarkMode ? PassThemeOption.PassDark : getInitialTheme();
             },
         }),
