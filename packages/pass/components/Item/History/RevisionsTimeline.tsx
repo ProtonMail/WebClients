@@ -8,17 +8,15 @@ import { Icon } from '@proton/components';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryContext';
 import { RevisionItem } from './RevisionItem';
 
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
-    const { prefix } = useItemRoute();
-    const { matchTrash } = useNavigationMatches();
+    const scope = useItemScope();
     const { selectItem, navigate } = useNavigationActions();
     const { item, loading, more, revisions, loadMore } = useItemHistory();
     const { shareId, itemId } = item;
@@ -36,7 +34,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                         shape="solid"
                         color="weak"
                         className="shrink-0"
-                        onClick={() => selectItem(shareId, itemId, { inTrash: matchTrash, prefix })}
+                        onClick={() => selectItem(shareId, itemId, { scope })}
                         title={c('Action').t`Close`}
                     >
                         <Icon name="cross" alt={c('Action').t`Close`} />

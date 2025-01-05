@@ -7,13 +7,10 @@ import { Header as CoreHeader, Hamburger } from '@proton/components';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useSpotlightMessages } from '@proton/pass/hooks/useSpotlightMessages';
-import type { ItemType } from '@proton/pass/types';
 import { SpotlightMessage } from '@proton/pass/types';
 
 const SpotlightSection = () => {
@@ -40,22 +37,20 @@ const SpotlightSection = () => {
 };
 
 export const HeaderMain = memo(({ sidebarExpanded, sidebarToggle }: HeaderProps) => {
-    const { matchOnboarding } = useNavigationMatches();
-    const navigate = useNavigate();
-    const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
+    const interactive = useItemScope() !== undefined;
 
     return (
         <>
             <CoreHeader className="border-bottom border-weak h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <Hamburger expanded={sidebarExpanded} onToggle={sidebarToggle} />
-                    <SearchBar disabled={matchOnboarding} />
-                    <ItemQuickActions onCreate={onCreate} />
-                    {!matchOnboarding && <SpotlightSection />}
+                    <SearchBar disabled={!interactive} />
+                    <ItemQuickActions />
+                    {interactive && <SpotlightSection />}
                 </div>
             </CoreHeader>
 
-            {!matchOnboarding && <PinnedItemsBar />}
+            {interactive && <PinnedItemsBar />}
         </>
     );
 });

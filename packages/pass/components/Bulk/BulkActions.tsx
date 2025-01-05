@@ -7,18 +7,18 @@ import { Icon } from '@proton/components';
 import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { bulkSelectionDTO } from '@proton/pass/components/Bulk/utils';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { useNavigationMatches } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 
 type Props = { disabled?: boolean };
 
 export const BulkActions = memo((props: Props) => {
-    const { matchTrash } = useNavigationMatches();
+    const scope = useItemScope();
     const { selection, count } = useBulkSelection();
     const disabled = count === 0 || props.disabled;
 
     const { moveMany, trashMany, deleteMany, restoreMany } = useItemsActions();
 
-    return matchTrash ? (
+    return scope === 'trash' ? (
         <>
             <Button
                 color="weak"
