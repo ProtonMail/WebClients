@@ -1,8 +1,10 @@
 import { createAction } from '@reduxjs/toolkit';
 
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { cleanupLastRefreshDate } from '@proton/shared/lib/api/helpers/refreshStorage';
 import {
     getAllSessionsLogoutOptions,
     getSelfLogoutOptions,
@@ -10,6 +12,7 @@ import {
 } from '@proton/shared/lib/authentication/logout';
 import type { ActiveSessionLite } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
 export const signoutAction = createAction(
@@ -67,6 +70,27 @@ export const authenticationListener = (startListening: SharedStartListening<Stat
                     },
                     authentication,
                 }).catch(noop);
+            }
+        },
+    });
+
+    startListening({
+        actionCreator: bootstrapEvent,
+        effect: async (action, listenerApi) => {
+            listenerApi.unsubscribe();
+
+            const run = () => {
+                if (!isDocumentVisible()) {
+                    return;
+                }
+                cleanupLastRefreshDate();
+            };
+
+            const timeout = 10_000;
+            if (globalThis.requestIdleCallback) {
+                globalThis.requestIdleCallback(run, { timeout });
+            } else {
+                setTimeout(run, timeout);
             }
         },
     });
