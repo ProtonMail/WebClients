@@ -221,7 +221,7 @@ const getSetup = async ({
         addApiMock(`calendar/v1/${bootstrapCalendarID}/events/${eventID}/upgrade`, () => ({
             Calendars: userCalendars,
         }));
-        addApiMock(`calendar/v1/${bootstrapCalendarID}/bootstrap`, () => ({
+        addApiMock(`calendar/v2/${bootstrapCalendarID}/bootstrap`, () => ({
             Keys: [
                 {
                     ID: dummyCalendarKeyID,
