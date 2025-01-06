@@ -95,6 +95,7 @@ enum DriveFeatureFlag {
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
     DriveWebOPFSDownloadMechanism = 'DriveWebOPFSDownloadMechanism',
+    DriveWebDownloadSWModernBrowsers = 'DriveWebDownloadSWModernBrowsers',
     // Bookmarks
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
