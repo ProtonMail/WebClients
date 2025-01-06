@@ -86,7 +86,10 @@ export class LoadDocument {
       LoadLogger.logEventRelativeToLoadTime('[LoadDocument] All network requests')
 
       if (metaResult.isFailed()) {
-        return DynamicResult.fail({ message: metaResult.getErrorObject().message, code: metaResult.getErrorObject().code })
+        return DynamicResult.fail({
+          message: metaResult.getErrorObject().message,
+          code: metaResult.getErrorObject().code,
+        })
       }
       if (nodeResult.isFailed()) {
         return DynamicResult.fail({ message: nodeResult.getError() })
