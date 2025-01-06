@@ -285,7 +285,12 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
     }
 };
 
-type MailInitiative = 'drawer-security-center' | 'composer' | 'assistant' | 'mail-onboarding';
+type MailInitiative =
+    | 'drawer-security-center'
+    | 'composer'
+    | 'assistant'
+    | 'mail-onboarding'
+    | 'list-actions-telemetry';
 type CommonInitiatives = 'post-subscription';
 export type SentryInitiative = MailInitiative;
 type CaptureExceptionArgs = Parameters<typeof captureException>;
