@@ -5,7 +5,13 @@ import { getUrlPassword } from '../../utils/url/password';
 
 export default function usePublicToken() {
     const { pathname } = useLocation();
-    const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
+    const token = useMemo(() => {
+        // Return first part before the hash
+        if (pathname.includes('/urls/')) {
+            return pathname.replace('/urls/', '').split('#')[0];
+        }
+        return '';
+    }, [pathname]);
     const urlPassword = getUrlPassword();
 
     return {

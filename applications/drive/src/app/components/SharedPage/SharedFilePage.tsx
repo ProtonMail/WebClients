@@ -16,31 +16,34 @@ import SharedPageLayout from './Layout/SharedPageLayout';
 
 interface Props {
     token: string;
-    link: DecryptedLink;
+    rootLink: DecryptedLink;
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
-    hideSaveToDrive?: boolean;
-    isPartialView?: boolean;
+    hideSaveToDrive: boolean;
+    isPartialView: boolean;
     openInDocs?: (linkId: string) => void;
 }
 
 export default function SharedFilePage({
     bookmarksPublicView,
     token,
-    link,
-    hideSaveToDrive = false,
-    isPartialView = false,
+    rootLink,
+    hideSaveToDrive,
+    isPartialView,
     openInDocs,
 }: Props) {
-    const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
+    const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(
+        token,
+        rootLink.linkId
+    );
     const { viewportWidth } = useActiveBreakpoint();
-    const isDocument = isProtonDocument(link?.mimeType || '');
+    const isDocument = isProtonDocument(rootLink?.mimeType || '');
     const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
     const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
     const { cancelDownloads } = useDownload();
 
     const handleVirusReport = async ({ transferId, errorMessage }: { transferId: string; errorMessage?: string }) => {
-        const { linkInfo, comment } = await getVirusReportInfo({ errorMessage, rootLinkId: link.linkId });
+        const { linkInfo, comment } = await getVirusReportInfo({ errorMessage, rootLinkId: rootLink.linkId });
         return showReportAbuseModal({
             linkInfo,
             onSubmit: submitAbuseReport,
@@ -53,14 +56,16 @@ export default function SharedFilePage({
     };
 
     return (
-        <FileBrowserStateProvider itemIds={[link.linkId]}>
+        <FileBrowserStateProvider itemIds={[rootLink.linkId]}>
             <SharedPageLayout isPartialView={isPartialView}>
                 <SharedPageContentHeader
+                    token={token}
+                    linkId={rootLink.linkId}
                     isPartialView={isPartialView}
-                    rootLink={link}
-                    name={link.name}
-                    size={link.size}
-                    items={[{ id: link.linkId, ...link }]}
+                    rootLink={rootLink}
+                    name={rootLink.name}
+                    size={rootLink.size}
+                    items={[{ id: rootLink.linkId, ...rootLink }]}
                     bookmarksPublicView={bookmarksPublicView}
                     hideSaveToDrive={hideSaveToDrive}
                     className="mt-3 mb-4"
@@ -71,16 +76,16 @@ export default function SharedFilePage({
                     onDownload={!viewportWidth['<=small'] ? downloadFile : undefined}
                     error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
                     contents={contents}
-                    fileName={link?.name}
-                    mimeType={link?.mimeType}
-                    fileSize={link?.size}
-                    imgThumbnailUrl={link?.cachedThumbnailUrl}
+                    fileName={rootLink?.name}
+                    mimeType={rootLink?.mimeType}
+                    fileSize={rootLink?.size}
+                    imgThumbnailUrl={rootLink?.cachedThumbnailUrl}
                     isPublic
                     isSharedFile={true}
                     isPublicDocsAvailable={isDocsPublicSharingEnabled}
-                    onOpenInDocs={link && isDocument && openInDocs ? () => openInDocs(link.linkId) : undefined}
+                    onOpenInDocs={rootLink && isDocument && openInDocs ? () => openInDocs(rootLink.linkId) : undefined}
                 />
-                {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={link} />}
+                {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>
             <div
                 className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"

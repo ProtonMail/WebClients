@@ -1,15 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import { VERIFICATION_STATUS } from '@proton/crypto';
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
-import { useDownload } from '../_downloads';
 import { useLinkActions, useLinksActions } from '../_links';
 import { usePhotos } from '../_photos';
 import { useShareActions, useShareUrl } from '../_shares';
@@ -36,7 +33,6 @@ export default function useActions() {
         createDeletedItemsNotifications,
         createDeletedSharedLinksNotifications,
     } = useListNotifications();
-    const { checkFirstBlockSignature } = useDownload();
     const { initFileUpload } = useUploadFile();
     const link = useLinkActions();
     const links = useLinksActions();
@@ -150,46 +146,6 @@ export default function useActions() {
                 showErrorNotification(e, <span className="text-pre-wrap">{failNotificationText}</span>);
                 throw e;
             });
-    };
-
-    const checkLinkSignatures = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
-        const [metaSignatureIssues, blockSignatureIssue] = await Promise.all([
-            link.checkLinkMetaSignatures(abortSignal, shareId, linkId),
-            // To avoid the need to download the whole file we assume that
-            // either all blocks fail, or none, at least in most cases. So it
-            // should be enough to check only the first block. During download
-            // we check every single block, so user is still protected.
-            checkFirstBlockSignature(abortSignal, shareId, linkId),
-        ]).catch((e) => {
-            // Only network error can be thrown here to indicate the signature
-            // couldn't be checked and user should try again. Any other case
-            // such as a very bad data should be represented as missing
-            // signature (technically the signature is not there - some other
-            // malformed data is).
-            if (getIsConnectionIssue(e)) {
-                throw e;
-            }
-            sendErrorReport(e);
-            return [
-                {
-                    passphrase: VERIFICATION_STATUS.NOT_SIGNED,
-                    name: VERIFICATION_STATUS.NOT_SIGNED,
-                    xattrs: VERIFICATION_STATUS.NOT_SIGNED,
-                },
-                {
-                    contentKeyPacket: VERIFICATION_STATUS.NOT_SIGNED,
-                    blocks: VERIFICATION_STATUS.NOT_SIGNED,
-                    thumbnail: VERIFICATION_STATUS.NOT_SIGNED,
-                },
-            ];
-        });
-        if (!metaSignatureIssues && !blockSignatureIssue) {
-            return;
-        }
-        return {
-            ...metaSignatureIssues,
-            ...blockSignatureIssue,
-        };
     };
 
     const moveLinks = async (
@@ -458,7 +414,6 @@ export default function useActions() {
         createFile,
         saveFile,
         renameLink,
-        checkLinkSignatures,
         moveLinks,
         trashLinks,
         restoreLinks,

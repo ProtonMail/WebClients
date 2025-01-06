@@ -1,9 +1,9 @@
-import type { SharedURLInfo } from './sharing';
+import type { SharedURLInfoPayload } from './sharing';
 
 export interface BookmarkPayload {
     EncryptedUrlPassword: string;
     CreateTime: number;
-    Token: SharedURLInfo;
+    Token: SharedURLInfoPayload;
 }
 
 export interface CreateBookmarkPayload {

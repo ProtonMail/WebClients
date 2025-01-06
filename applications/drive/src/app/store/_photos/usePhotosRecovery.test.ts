@@ -31,6 +31,11 @@ function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
             id: 'id',
             size: 323212,
             signatureEmail: 'address@gmail.com',
+            createTime: 123,
+            manifestSignature: '',
+            blocs: [],
+            state: 2,
+            thumbnails: [],
             photo: {
                 linkId: 'linkId',
                 captureTime: 321321,
