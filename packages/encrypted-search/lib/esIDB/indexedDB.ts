@@ -162,8 +162,9 @@ export const safelyWriteToIDBConditionally = async (
             : value.aesGcmCiphertext;
 
     try {
-        await esDB.put(storeName, valueToStore, value.ID);
-
+        const tx = esDB.transaction(storeName, 'readwrite');
+        await tx.store.put(valueToStore, value.ID);
+        await tx.done;
         // We always update the size if we are storing to the content table.
         // If we are storing to the metadata table, we do so only if the item
         // was flagged to update the size
@@ -174,6 +175,12 @@ export const safelyWriteToIDBConditionally = async (
 
         return inputStoringOutcome ?? STORING_OUTCOME.SUCCESS;
     } catch (error: any) {
+        esSentryReport('[ES Debug] IDB Write Error:', {
+            error: error.message,
+            storeName,
+            itemId: value.ID,
+            errorName: error.name,
+        });
         if (error.name === 'QuotaExceededError') {
             // We check wheter the present item is newer than the oldest one,
             // in which case we remove the latter to make space for the former
