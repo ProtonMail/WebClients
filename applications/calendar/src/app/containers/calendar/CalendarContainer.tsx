@@ -490,13 +490,13 @@ const CalendarContainer = ({
         setSearchInput('');
     }, []);
 
-    const [createEventCalendarBootstrap, loadingCreateEventCalendarBootstrap] = useCalendarBootstrap(
+    const [createEventCalendarBootstrap] = useCalendarBootstrap(
         createEventCalendar ? createEventCalendar.ID : undefined
     );
 
     const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
 
-    const isLoading = loadingCreateEventCalendarBootstrap || loadingEvents;
+    const isLoading = loadingEvents;
     const isEventCreationDisabled =
         disableCreate ||
         !createEventCalendarBootstrap ||
