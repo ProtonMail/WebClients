@@ -19,7 +19,6 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { appMode } from '@proton/shared/lib/webpack.constants';
-import type { UnleashClient } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
@@ -41,13 +40,6 @@ const getAppContainer = () =>
             return Promise.reject(report);
         });
 
-/* TODO: To be removed after test DRVWEB-4375 */
-const setIsSWForSafariEnabled = (unleashClient: UnleashClient) => {
-    if (typeof window !== 'undefined') {
-        (window as any).isSWForSafariEnabled = unleashClient.isEnabled('DriveWebDownloadSWModernBrowsers');
-    }
-};
-
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const appName = config.APP_NAME;
     const pathname = window.location.pathname;
@@ -67,10 +59,9 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
-        /* TODO: To be removed after test DRVWEB-4375 */
-        setIsSWForSafariEnabled(unleashClient);
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
+        unleashVanillaStore.getState().setClient(unleashClient);
         const store = setupStore();
         const dispatch = store.dispatch;
 
@@ -110,7 +101,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             bootstrap.loadCrypto({ appName }),
             unleashPromise,
         ]);
-        unleashVanillaStore.getState().setClient(unleashClient);
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
