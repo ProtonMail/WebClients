@@ -9,15 +9,17 @@ import { AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModa
 export type Props = Omit<ModalProps, 'onSubmit'>;
 
 export const PendingShareAccessModal: FC<Props> = ({ ...props }) => (
-    <AdaptiveModal {...props} size="large">
-        <div className="flex flex-column items-center justify-center gap-5">
+    <AdaptiveModal {...props} size="small">
+        <div className="flex flex-column items-center justify-center gap-6">
+            <h3 className="text-bold w-3/4">{c('Title').t`Pending access to the shared data`}</h3>
+
             <img
                 src={accountImg}
                 alt="pending share access graphic"
                 className="w-3/5 max-w-custom"
                 style={{ '--max-w-custom': '15em' }}
             />
-            <h3 className="text-bold w-3/4">{c('Title').t`Pending access to the shared data`}</h3>
+
             <div className="text-md w-3/4">{c('Info').t`For security reasons, your access needs to be confirmed`}</div>
         </div>
     </AdaptiveModal>
