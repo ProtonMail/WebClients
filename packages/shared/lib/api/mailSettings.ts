@@ -6,7 +6,6 @@ import type {
     MAIL_PAGE_SIZE,
     NEXT_MESSAGE_ON_MOVE,
     PM_SIGNATURE_REFERRAL,
-    REMOVE_IMAGE_METADATA,
     SPAM_ACTION,
     SWIPE_ACTION,
 } from '../mail/mailSettings';
@@ -256,7 +255,7 @@ export const updateSwipeRight = (SwipeRight: SWIPE_ACTION) => ({
     data: { SwipeRight },
 });
 
-export const updateRemoveImageMetadata = (RemoveImageMetadata: REMOVE_IMAGE_METADATA) => ({
+export const updateRemoveImageMetadata = (RemoveImageMetadata: boolean) => ({
     url: 'mail/v4/settings/remove-image-metadata',
     method: 'put',
     data: { RemoveImageMetadata },
