@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { AliasSync } from '@proton/pass/components/Onboarding/AliasSync';
 import { UserRenewal } from '@proton/pass/components/Onboarding/UserRenewal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
@@ -41,7 +42,7 @@ export const useSpotlightMessages = () => {
                         title: c('Title').t`Our welcome gift to you`,
                         message: c('Info')
                             .t`7 days to try premium features for free. Only during your first week of ${BRAND_NAME}.`,
-                        className: 'ui-orange',
+                        className: SubTheme.ORANGE,
                         onClose: () => upsell(null),
                         action: {
                             label: c('Label').t`Learn more`,
@@ -55,7 +56,7 @@ export const useSpotlightMessages = () => {
                         id: 'pin',
                         title: c('Title').t`Secure your data`,
                         message: c('Info').t`Enable auto-locking to secure your data`,
-                        className: 'ui-violet',
+                        className: SubTheme.VIOLET,
                         icon: ShieldIcon,
                         action: {
                             label: c('Label').t`Create lock`,
@@ -70,7 +71,7 @@ export const useSpotlightMessages = () => {
                         title: c('Title').t`Update available`,
                         message: c('Info')
                             .t`A new version of ${PASS_APP_NAME} is available. Update it to enjoy the latest features and bug fixes.`,
-                        className: 'ui-orange',
+                        className: SubTheme.ORANGE,
                         action: {
                             label: c('Label').t`Update`,
                             type: 'button',
@@ -84,7 +85,7 @@ export const useSpotlightMessages = () => {
                         title: c('Title').t`Grant permissions`,
                         message: c('Info')
                             .t`In order to get the best experience out of ${PASS_APP_NAME}, please grant the necessary extension permissions`,
-                        className: 'ui-orange',
+                        className: SubTheme.ORANGE,
                         action: {
                             label: c('Label').t`Grant`,
                             type: 'button',
@@ -97,7 +98,7 @@ export const useSpotlightMessages = () => {
                         id: 'rating',
                         title: c('Title').t`Enjoying ${PASS_APP_NAME}?`,
                         message: c('Info').t`Please consider leaving a review.`,
-                        className: 'ui-lime',
+                        className: SubTheme.PURPLE,
                         icon: FiveStarIcon,
                         action: {
                             label: c('Label').t`Rate us`,
@@ -113,7 +114,7 @@ export const useSpotlightMessages = () => {
                         title: c('Title').t`Low disk space`,
                         message: c('Info')
                             .t`We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${PASS_SHORT_APP_NAME} to work smoothly.`,
-                        className: 'ui-red',
+                        className: SubTheme.RED,
                         action: {
                             label: c('Label').t`Need help?`,
                             type: 'button',
@@ -126,7 +127,7 @@ export const useSpotlightMessages = () => {
                         id: 'b2b',
                         title: c('Title').t`Get Started`,
                         message: '',
-                        className: 'ui-teal hidden',
+                        className: `${SubTheme.TEAL} hidden`,
                         icon: ShieldIcon,
                     },
                     {
@@ -134,7 +135,7 @@ export const useSpotlightMessages = () => {
                         mode: 'custom',
                         component: AliasSync,
                         id: 'alias-sync',
-                        className: 'ui-teal',
+                        className: SubTheme.TEAL,
                         weak: true,
                     },
                     {
@@ -142,7 +143,7 @@ export const useSpotlightMessages = () => {
                         mode: 'custom',
                         component: UserRenewal,
                         id: 'user-renewal',
-                        className: 'ui-red',
+                        className: SubTheme.RED,
                         weak: true,
                     },
                 ],
