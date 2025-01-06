@@ -26,7 +26,7 @@ interface MarkAllParams {
     status: MARK_AS_STATUS;
     onCheckAll?: (check: boolean) => void;
     sourceAction: SOURCE_ACTION;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 /**

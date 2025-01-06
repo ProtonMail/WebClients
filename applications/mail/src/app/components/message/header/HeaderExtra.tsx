@@ -28,7 +28,7 @@ interface Props {
     messageLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const HeaderExtra = ({

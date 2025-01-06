@@ -17,7 +17,7 @@ export interface MarkAsParams {
     selectAll?: boolean;
     onCheckAll?: (check: boolean) => void;
     sourceAction: SOURCE_ACTION;
-    currentFolder: string;
+    currentFolder?: string;
 }
 export const useMarkAs = () => {
     const markSelectionAs = useMarkSelectionAs();

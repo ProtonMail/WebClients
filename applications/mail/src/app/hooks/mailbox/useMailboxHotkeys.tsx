@@ -43,7 +43,7 @@ export interface MailboxHotkeysContext {
     columnLayout: boolean;
     isMessageOpening: boolean;
     location: Location;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 export interface MailboxHotkeysHandlers {

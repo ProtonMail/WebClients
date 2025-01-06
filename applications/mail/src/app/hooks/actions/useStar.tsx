@@ -25,7 +25,7 @@ export const useStar = () => {
     const { sendSimpleActionReport } = useListTelemetry();
 
     const star = useCallback(
-        async (elements: Element[], value: boolean, sourceAction: SOURCE_ACTION, currentFolder: string) => {
+        async (elements: Element[], value: boolean, sourceAction: SOURCE_ACTION, currentFolder?: string) => {
             if (!elements.length) {
                 return;
             }
