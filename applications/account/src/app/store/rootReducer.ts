@@ -16,8 +16,7 @@ import {
     holidaysDirectoryReducer,
 } from '@proton/calendar';
 import { filtersReducer, incomingAddressForwardingsReducer, outgoingAddressForwardingsReducer } from '@proton/mail';
-import { sharedPersistReducer, sharedReducers } from '@proton/redux-shared-store';
-import { selectPersistModel } from '@proton/redux-utilities';
+import { sharedReducers } from '@proton/redux-shared-store';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,
@@ -38,16 +37,3 @@ export const rootReducer = combineReducers({
 });
 
 export type AccountState = ReturnType<typeof rootReducer>;
-
-export const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
-    ...sharedPersistReducer,
-    paymentMethods: selectPersistModel,
-    members: selectPersistModel,
-    filters: selectPersistModel,
-    incomingAddressForwarding: selectPersistModel,
-    outgoingAddressForwarding: selectPersistModel,
-    calendarUserSettings: selectPersistModel,
-    holidaysDirectory: selectPersistModel,
-    sso: selectPersistModel,
-    sessions: selectPersistModel,
-};
