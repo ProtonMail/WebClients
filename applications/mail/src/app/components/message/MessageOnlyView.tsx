@@ -34,7 +34,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const MessageOnlyView = ({

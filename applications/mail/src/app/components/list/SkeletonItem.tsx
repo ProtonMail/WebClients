@@ -18,7 +18,7 @@ interface Props {
     element: Element;
     index: number;
     breakpoints: Breakpoints;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const SkeletonItem = ({

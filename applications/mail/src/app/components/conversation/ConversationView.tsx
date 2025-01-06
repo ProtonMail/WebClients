@@ -54,7 +54,7 @@ interface Props {
     loadingElements: boolean;
     elementIDs: string[];
     conversationMode: boolean;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const DEFAULT_FILTER_VALUE = true;
