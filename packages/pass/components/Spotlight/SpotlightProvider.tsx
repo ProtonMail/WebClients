@@ -55,7 +55,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const messageRef = useStatefulRef(state.message);
 
     const closePendingShareAccess = () => {
-        state.message?.onClose?.();
+        void spotlight.acknowledge(SpotlightMessage.PENDING_SHARE_ACCESS);
         setState((prev) => ({ ...prev, pendingShareAccess: false }));
     };
 
