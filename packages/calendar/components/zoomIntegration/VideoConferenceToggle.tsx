@@ -24,9 +24,11 @@ export const VideoConferenceToggle = ({ withInfo }: Props) => {
     const { state } = useToggle(organization?.Settings.VideoConferencingEnabled);
 
     const handleToggle = async (checked: boolean) => {
-        await dispatch(toggleZoomSettings({ checked }));
-        sendEventVideoConferenceSettingsToggle(checked);
-        createNotification({ text: c('Notification').t`Video conferencing settings have been updated` });
+        try {
+            await dispatch(toggleZoomSettings({ checked }));
+            sendEventVideoConferenceSettingsToggle(checked);
+            createNotification({ text: c('Notification').t`Video conferencing settings have been updated` });
+        } catch (e) {}
     };
 
     return (
