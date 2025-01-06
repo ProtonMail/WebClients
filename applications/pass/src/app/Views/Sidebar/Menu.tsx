@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { AccountActions } from 'proton-pass-web/app/Views/Sidebar/AccountActions';
 import { AuthActions } from 'proton-pass-web/app/Views/Sidebar/AuthActions';
@@ -23,7 +24,10 @@ import {
 } from '@proton/pass/components/Navigation/routing';
 import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { selectPassPlan } from '@proton/pass/store/selectors/user';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { MenuActions } from './MenuActions';
 
@@ -31,6 +35,8 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
     const navigate = useNavigate();
+    const passPlan = useSelector(selectPassPlan);
+    const free = passPlan === UserPassPlan.FREE;
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
@@ -56,6 +62,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         <div className="mx-2">{c('Label').t`Shared`}</div>
                         <div className="flex">
                             <VaultMenuLink
+                                upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
                                 label={c('Label').t`Shared with me`}
                                 count={0}
                                 selected={false}
@@ -64,6 +71,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                             />
 
                             <VaultMenuLink
+                                upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
                                 label={c('Label').t`Shared by me`}
                                 count={0}
                                 selected={false}
