@@ -99,9 +99,12 @@ export function useLinksStateProvider() {
         [state]
     );
 
-    const getAllShareLinks = (shareId: string): Link[] => {
-        return Object.values(state[shareId]?.links || []);
-    };
+    const getAllShareLinks = useCallback(
+        (shareId: string): Link[] => {
+            return Object.values(state[shareId]?.links || []);
+        },
+        [state]
+    );
 
     const getTrashed = useCallback(
         (shareId: string): Link[] => {
@@ -109,7 +112,7 @@ export function useLinksStateProvider() {
                 (link) => !!link.encrypted.trashed && !link.encrypted.trashedByParent
             );
         },
-        [state]
+        [getAllShareLinks]
     );
 
     const getSharedByLink = useCallback(
@@ -121,7 +124,7 @@ export function useLinksStateProvider() {
                     encrypted.sharingDetails.shareId !== encrypted.rootShareId
             );
         },
-        [state]
+        [getAllShareLinks]
     );
 
     const getSharedWithMeByLink = useCallback(
@@ -133,38 +136,26 @@ export function useLinksStateProvider() {
                     encrypted.sharingDetails.shareId === encrypted.rootShareId
             );
         },
-        [state]
+        [getAllShareLinks]
     );
 
-    const removeLinkForMigration = useCallback(
-        (shareId: string, linkId: string) => {
-            setState((state) => deleteLinks(state, shareId, [linkId]));
-        },
-        [state]
-    );
+    const removeLinkForMigration = useCallback((shareId: string, linkId: string) => {
+        setState((state) => deleteLinks(state, shareId, [linkId]));
+    }, []);
 
     // TODO: Remove this when events or refactor will be in place
-    const removeLinkForSharedWithMe = useCallback(
-        (shareId: string, linkId: string) => {
-            setState((state) => deleteLinks(state, shareId, [linkId]));
-        },
-        [state]
-    );
+    const removeLinkForSharedWithMe = useCallback((shareId: string, linkId: string) => {
+        setState((state) => deleteLinks(state, shareId, [linkId]));
+    }, []);
 
     // TODO: Remove this when events or refactor will be in place
-    const removeLinksForPublicPage = useCallback(
-        (token: string, linkIds: string[]) => {
-            setState((state) => deleteLinks(state, token, linkIds));
-        },
-        [state]
-    );
+    const removeLinksForPublicPage = useCallback((token: string, linkIds: string[]) => {
+        setState((state) => deleteLinks(state, token, linkIds));
+    }, []);
 
-    const removeLinkForDriveCompat = useCallback(
-        (shareId: string, linkId: string) => {
-            setState((state) => deleteLinks(state, shareId, [linkId]));
-        },
-        [state]
-    );
+    const removeLinkForDriveCompat = useCallback((shareId: string, linkId: string) => {
+        setState((state) => deleteLinks(state, shareId, [linkId]));
+    }, []);
 
     return {
         setLinks,
@@ -191,7 +182,22 @@ export function updateByEvents(
     { events, eventId }: DriveEvents,
     processedEventcounter: (eventId: string, event: DriveEvent) => void
 ): LinksState {
-    events.forEach((event) => {
+    // Create a new state object to avoid mutations
+    let newState = { ...state };
+
+    // Sort events to ensure consistent ordering
+    // Process DELETE events last to avoid race conditions
+    const sortedEvents = [...events].sort((a, b) => {
+        if (a.eventType === EVENT_TYPES.DELETE) {
+            return 1;
+        }
+        if (b.eventType === EVENT_TYPES.DELETE) {
+            return -1;
+        }
+        return 0;
+    });
+
+    sortedEvents.forEach((event) => {
         if (event.eventType === EVENT_TYPES.DELETE) {
             // Delete event does not contain context share ID because
             // the link is already deleted and backend might not know
@@ -202,11 +208,11 @@ export function updateByEvents(
             // links with the given ID. In future when we have full sync
             // we will have storage mapped with volumes instead removing
             // the problem altogether.
-            Object.keys(state).forEach((shareId) => {
-                state = deleteLinks(state, shareId, [event.encryptedLink.linkId], () => {
+            newState = Object.keys(newState).reduce((acc, shareId) => {
+                return deleteLinks(acc, shareId, [event.encryptedLink.linkId], () => {
                     processedEventcounter(eventId, event);
                 });
-            });
+            }, newState);
             return;
         }
 
@@ -218,22 +224,22 @@ export function updateByEvents(
         if (
             event.originShareId &&
             event.encryptedLink.rootShareId !== event.originShareId &&
-            state[event.originShareId]
+            newState[event.originShareId]
         ) {
-            state = deleteLinks(state, event.originShareId, [event.encryptedLink.linkId], () => {
+            newState = deleteLinks(newState, event.originShareId, [event.encryptedLink.linkId], () => {
                 processedEventcounter(eventId, event);
             });
         }
 
-        if (!state[event.encryptedLink.rootShareId]) {
+        if (!newState[event.encryptedLink.rootShareId]) {
             return state;
         }
-        state = addOrUpdate(state, event.encryptedLink.rootShareId, [{ encrypted: event.encryptedLink }], () => {
+        newState = addOrUpdate(newState, event.encryptedLink.rootShareId, [{ encrypted: event.encryptedLink }], () => {
             processedEventcounter(eventId, event);
         });
     });
 
-    return state;
+    return newState;
 }
 
 export function deleteLinks(state: LinksState, shareId: string, linkIds: string[], onDelete?: () => void): LinksState {
@@ -241,35 +247,47 @@ export function deleteLinks(state: LinksState, shareId: string, linkIds: string[
         return state;
     }
 
+    const newState = { ...state };
+    const newShareState = {
+        ...newState[shareId],
+        links: { ...newState[shareId].links },
+        tree: { ...newState[shareId].tree },
+    };
+    newState[shareId] = newShareState;
+
     let updated = false;
+
     linkIds.forEach((linkId) => {
-        const original = state[shareId].links[linkId];
+        const original = newShareState.links[linkId];
         if (!original) {
             return;
         }
 
         updated = true;
 
-        // Delete the link itself from links and tree.
-        delete state[shareId].links[linkId];
-
-        onDelete?.();
-
-        const originalParentChildren = state[shareId].tree[original.encrypted.parentLinkId];
-        if (originalParentChildren) {
-            state[shareId].tree[original.encrypted.parentLinkId] = originalParentChildren.filter(
-                (childLinkId) => childLinkId !== linkId
-            );
+        const parentId = original.encrypted.parentLinkId;
+        if (parentId && newShareState.tree[parentId]) {
+            newShareState.tree[parentId] = newShareState.tree[parentId].filter((childId) => childId !== linkId);
         }
 
-        // Delete the root and children of the deleting link.
-        state[shareId].tree[linkId]?.forEach((childLinkId) => {
-            delete state[shareId].links[childLinkId];
-        });
-        delete state[shareId].tree[linkId];
+        const deleteChildren = (parentLinkId: string) => {
+            const children = newShareState.tree[parentLinkId];
+            if (children) {
+                children.forEach((childId) => {
+                    delete newShareState.links[childId];
+                    deleteChildren(childId);
+                });
+                delete newShareState.tree[parentLinkId];
+            }
+        };
+
+        deleteChildren(linkId);
+        delete newShareState.links[linkId];
+
+        onDelete?.();
     });
 
-    return updated ? { ...state } : state;
+    return updated ? newState : state;
 }
 
 export function addOrUpdate(state: LinksState, shareId: string, links: Link[], onAddOrUpdate?: () => void): LinksState {
