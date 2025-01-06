@@ -18,6 +18,7 @@ import {
     isTransferPausedByConnection,
     isTransferProgress,
 } from '../../../utils/transfer';
+import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import type { SignatureIssues } from '../../_links';
 import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
@@ -50,6 +51,9 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
     );
     const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
+
+    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
+
     const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
     /**
      * download should be considered as main entry point for download files
@@ -150,7 +154,8 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     link: LinkDownload,
                     signatureIssues: SignatureIssues
                 ) => {
-                    if (link.isAnonymous && hasValidAnonymousSignature(signatureIssues)) {
+                    // If we are in viewOnly mode on public page we ignore signature as we can't check
+                    if (viewOnly || (link.isAnonymous && hasValidAnonymousSignature(signatureIssues))) {
                         return;
                     }
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);

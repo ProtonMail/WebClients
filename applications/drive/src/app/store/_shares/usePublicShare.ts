@@ -1,9 +1,10 @@
 import { useApi } from '@proton/components';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
-import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
+import { usePublicShareStore } from '../../zustand/public/public-share.store';
+import { sharedUrlInfoPayloadToSharedUrlInfo, usePublicSession } from '../_api';
 import usePublicToken from '../../hooks/drive/usePublicToken';
-import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
 import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
 
@@ -15,6 +16,10 @@ export default function usePublicShare() {
     const { token } = usePublicToken();
     const { user, request, getSessionInfo } = usePublicSession();
     const { decryptPublicShareLink } = useDecryptPublicShareLink();
+    const { setPublicShare } = usePublicShareStore((state) => ({
+        publicShare: state.publicShare,
+        setPublicShare: state.setPublicShare,
+    }));
     const { getLinkPassphraseAndSessionKey, getLink } = useLink();
 
     const loadPublicShare = async (abortSignal: AbortSignal) => {
@@ -23,22 +28,28 @@ export default function usePublicShare() {
             throw new Error('Unauthenticated session');
         }
 
-        const { Token } = await request<{ Token: SharedURLInfo }>({
-            ...querySharedURLInformation(sessionInfo.token),
-            silence: true,
-        });
+        const { Token } = await request<{ Token: SharedURLInfoPayload }>(
+            {
+                ...querySharedURLInformation(sessionInfo.token),
+                silence: true,
+            },
+            abortSignal
+        );
+        const sharedUrlInfo = sharedUrlInfoPayloadToSharedUrlInfo(Token);
 
         const link = await decryptPublicShareLink(abortSignal, {
             token: sessionInfo.token,
             urlPassword: sessionInfo.password,
-            shareUrlInfo: Token,
+            sharedUrlInfo,
         });
 
-        return {
-            token: sessionInfo.token,
+        const publicShare = {
+            sharedUrlInfo,
             link,
-            permissions: Token.Permissions,
         };
+        setPublicShare(publicShare);
+
+        return publicShare;
     };
 
     const submitAbuseReport = async (params: {

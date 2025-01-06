@@ -1,6 +1,6 @@
 import { useApi } from '@proton/components';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
-import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
@@ -21,7 +21,7 @@ export default function usePublicShare() {
             throw new Error('Unauthenticated session');
         }
 
-        const { Token } = await request<{ Token: SharedURLInfo }>({
+        const { Token } = await request<{ Token: SharedURLInfoPayload }>({
             ...querySharedURLInformation(sessionInfo.token),
             silence: true,
         });
