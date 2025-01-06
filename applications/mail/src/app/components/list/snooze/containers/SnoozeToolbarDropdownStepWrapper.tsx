@@ -20,7 +20,7 @@ interface Props {
     onLock: (lock: boolean) => void;
     selectedIDs: string[];
     displayUpsellModal: () => void;
-    displayedFolder: string;
+    displayedFolder?: string;
 }
 
 const SnoozeToolbarDropdownStepWrapper = ({
