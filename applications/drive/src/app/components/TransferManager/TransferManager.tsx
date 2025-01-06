@@ -77,6 +77,7 @@ const TransferManager = ({
     hasActiveTransfer,
     numberOfFailedTransfer,
     onVirusReport,
+    theme,
 }: {
     downloads: Download[];
     uploads: Upload[];
@@ -89,6 +90,7 @@ const TransferManager = ({
         uploads: number;
     };
     onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
+    theme: 'prominent' | 'standard';
 }) => {
     const transferManagerControls = useTransferControls();
 
@@ -277,6 +279,7 @@ const TransferManager = ({
             >
                 <div ref={headerRef}>
                     <Header
+                        theme={theme}
                         downloads={downloads}
                         uploads={uploads}
                         stats={stats}
@@ -339,8 +342,10 @@ const TransferManager = ({
  */
 const TransferManagerContainer = ({
     onVirusReport,
+    theme = 'prominent',
 }: {
     onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
+    theme?: 'prominent' | 'standard';
 }) => {
     const { downloads, uploads, hasActiveTransfer, numberOfFailedTransfer, stats, clearAllTransfers } =
         useTransfersView();
@@ -351,6 +356,7 @@ const TransferManagerContainer = ({
 
     return (
         <TransferManager
+            theme={theme}
             downloads={downloads}
             uploads={uploads}
             stats={stats}
