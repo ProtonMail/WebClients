@@ -89,6 +89,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // won't be decryptable outside of its own context. Easiest way to solve that is probably to pass a prefix
         // so that the drawer app writes to a different key.
         const isPersistEnabled = !isDrawerApp;
+        const isAccountSessionsEnabled = !isDrawerApp;
 
         const sessionResult =
             (isDrawerApp && parentApp
@@ -114,7 +115,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
               })
             : undefined;
 
-        const store = setupStore({ preloadedState: persistedState?.state, persist: isPersistEnabled });
+        const store = setupStore({
+            preloadedState: persistedState?.state,
+            features: {
+                accountPersist: isPersistEnabled,
+                accountSessions: isAccountSessionsEnabled,
+            },
+        });
         const dispatch = store.dispatch;
 
         if (user) {
