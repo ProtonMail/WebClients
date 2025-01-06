@@ -89,7 +89,9 @@ export const useTransactionTable = ({
                     const slicedTransactions = transactions.slice(0, ITEMS_PER_PAGE);
                     const networkTransactionByHashedTxId = await buildNetworkTransactionByHashedTxId(
                         slicedTransactions,
-                        walletHmacKey
+                        walletHmacKey,
+                        walletId,
+                        accountIDByDerivationPathByWalletID
                     );
                     setCanGoNext(transactions?.length > ITEMS_PER_PAGE);
 
