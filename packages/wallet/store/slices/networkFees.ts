@@ -51,7 +51,7 @@ const feesMapToList = (feesMap: Map<string, number>) => {
     return (
         [...feesMap.entries()]
             // We need to round feeRate because bdk expects a BigInt
-            .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), Math.round(feeRate)])
+            .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), Math.ceil(feeRate)])
             .filter(([block]) => Number.isFinite(block))
             .sort(([a], [b]) => a - b)
     );
