@@ -37,20 +37,14 @@ export class CommentThreadMarkNode extends ElementNode {
   }
 
   static importJSON(serializedNode: SerializedCommentThreadMarkNode): CommentThreadMarkNode {
-    const node = $createCommentThreadMarkNode(serializedNode.ids, serializedNode.resolved)
-    node.setFormat(serializedNode.format)
-    node.setIndent(serializedNode.indent)
-    node.setDirection(serializedNode.direction)
-    return node
+    return $createCommentThreadMarkNode(serializedNode.ids, serializedNode.resolved).updateFromJSON(serializedNode)
   }
 
   exportJSON(): SerializedCommentThreadMarkNode {
     return {
       ...super.exportJSON(),
-      type: 'comment-thread-mark',
       ids: this.getIDs(),
       resolved: this.__resolved,
-      version: 1,
     }
   }
 
