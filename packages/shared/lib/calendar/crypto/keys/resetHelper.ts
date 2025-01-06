@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { useGetAddresses } from '@proton/account/addresses/hooks';
+import type { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import type { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { CacheType } from '@proton/redux-utilities';
 
@@ -18,6 +19,7 @@ interface ProcessArguments {
     getCalendars: ReturnType<typeof useGetCalendars>;
     getAddresses: ReturnType<typeof useGetAddresses>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    getCalendarBootstrap: ReturnType<typeof useGetCalendarBootstrap>;
     calendarsToReset?: VisualCalendar[];
     calendarsToReactivate?: VisualCalendar[];
     calendarsToClean?: VisualCalendar[];
@@ -26,6 +28,7 @@ interface ProcessArguments {
 export const process = async ({
     api,
     getCalendars,
+    getCalendarBootstrap,
     getAddresses,
     getAddressKeys,
     calendarsToReset = [],
@@ -69,7 +72,8 @@ export const process = async ({
     }
 
     // Refresh the calendar model to be able to get the new flags since it's not updated through the event manager
-    await getCalendars({ cache: CacheType.None });
+    const calendars = await getCalendars({ cache: CacheType.None });
+    await Promise.all(calendars.map((calendar) => getCalendarBootstrap(calendar.ID, CacheType.None)));
 
     return hasSharedCalendars;
 };

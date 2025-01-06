@@ -2,6 +2,7 @@ import { createNextState } from '@reduxjs/toolkit';
 
 import { selectAddresses } from '@proton/account/addresses';
 import { serverEvent } from '@proton/account/eventLoop';
+import { CacheType } from '@proton/redux-utilities';
 import {
     findMemberIndices,
     getIsCalendarEventManagerCreate,
@@ -11,9 +12,11 @@ import {
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/calendar/helpers';
+import noop from '@proton/utils/noop';
 
 import {
     type CalendarsBootstrapState,
+    calendarBootstrapThunk,
     calendarsBootstrapActions,
     findCalendarBootstrapID,
     selectCalendarsBootstrap,
@@ -57,8 +60,7 @@ export const startCalendarEventListener = (
             const calendarKeysUpdate = action.payload.CalendarKeys;
             if (calendarKeysUpdate?.length) {
                 const deleteCalendarFromCache = (calendarID: string) => {
-                    listenerApi.dispatch(calendarsBootstrapActions.remove({ id: calendarID }));
-                    deleteCalendarFromKeyCache(calendarID);
+                    listenerApi.dispatch(calendarBootstrapThunk({ calendarID, cache: CacheType.None })).catch(noop);
                 };
                 const state = selectCalendarsBootstrap(listenerApi.getState());
                 calendarKeysUpdate.forEach(({ ID: KeyID, Key }) => {

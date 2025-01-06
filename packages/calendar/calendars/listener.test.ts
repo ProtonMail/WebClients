@@ -27,6 +27,10 @@ import type { CalendarThunkArguments } from '../interface';
 import { calendarsReducer } from './index';
 import { startCalendarEventListener } from './listener';
 
+const getCalendarModelState = (bootstrap: CalendarBootstrap) => {
+    return { ...getModelState(bootstrap), loading: false };
+};
+
 jest.mock('@proton/crypto', () => {
     return {
         CryptoProxy: {},
@@ -68,6 +72,7 @@ const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
     return {
         store,
         actions,
+        extraThunkArguments,
     };
 };
 
@@ -223,7 +228,7 @@ describe('calendar listener', () => {
     });
 
     it('should remove calendar bootstrap when calendar is deleted', async () => {
-        const initialCalendar = getModelState(getMockBootstrap({ CalendarID: '123' }));
+        const initialCalendar = getCalendarModelState(getMockBootstrap({ CalendarID: '123' }));
         const { store } = setup({
             calendarsBootstrap: {
                 '123': initialCalendar,
@@ -241,7 +246,7 @@ describe('calendar listener', () => {
     });
 
     it('should update calendar bootstrap settings', async () => {
-        const initialCalendar = getModelState(getMockBootstrap({ CalendarID: '123' }));
+        const initialCalendar = getCalendarModelState(getMockBootstrap({ CalendarID: '123' }));
         const { store } = setup({
             calendarsBootstrap: {
                 '123': initialCalendar,
@@ -269,18 +274,20 @@ describe('calendar listener', () => {
     });
 
     it('should remove calendar bootstrap on keys change', async () => {
-        const initialCalendar = getModelState(getMockBootstrap({ CalendarID: '123' }));
-        const initialCalendar2 = getModelState(getMockBootstrap({ CalendarID: '124' }));
-        const { store } = setup({
+        const initialCalendar = getCalendarModelState(getMockBootstrap({ CalendarID: '123' }));
+        const initialCalendar2 = getCalendarModelState(getMockBootstrap({ CalendarID: '124' }));
+        const { store, extraThunkArguments } = setup({
             calendarsBootstrap: {
                 '123': initialCalendar,
                 '124': initialCalendar2,
             },
         });
-        const getCalendarBootstrap = (calendarID: string) => store.getState().calendarsBootstrap[calendarID]?.value;
+        extraThunkArguments.api = (async () => {}) as any; // Promise that never resolves
+        const getCalendarBootstrap = (calendarID: string) => store.getState().calendarsBootstrap[calendarID];
 
-        expect(getCalendarBootstrap('123')).toEqual(initialCalendar.value);
-        expect(getCalendarBootstrap('124')).toEqual(initialCalendar2.value);
+        expect(getCalendarBootstrap('123')!.value).toEqual(initialCalendar.value);
+        expect(getCalendarBootstrap('124')!.value).toEqual(initialCalendar2.value);
+        expect(getCalendarBootstrap('123')!.loading).toEqual(false);
         store.dispatch(
             getCalendarServerEvent({
                 CalendarKeys: [
@@ -295,8 +302,9 @@ describe('calendar listener', () => {
                 ],
             })
         );
-        expect(getCalendarBootstrap('123')).toEqual(undefined);
-        expect(getCalendarBootstrap('124')).toEqual(initialCalendar2.value);
+        expect(getCalendarBootstrap('123')!.loading).toEqual(true);
+        expect(getCalendarBootstrap('124')!.loading).toEqual(false);
+        expect(getCalendarBootstrap('124')!.value).toEqual(initialCalendar2.value);
 
         const calendarKeyWithoutCalendarID = getMockCalendarKey({ CalendarID: '', ID: 'key1id' });
         store.dispatch(
@@ -309,11 +317,11 @@ describe('calendar listener', () => {
                 ],
             })
         );
-        expect(getCalendarBootstrap('124')).toEqual(undefined);
+        expect(getCalendarBootstrap('124')!.value).toEqual(initialCalendar2.value);
     });
 
     it('should react to calendar bootstrap object server events', async () => {
-        const initialCalendar = getModelState(getMockBootstrap({ CalendarID: '123' }));
+        const initialCalendar = getCalendarModelState(getMockBootstrap({ CalendarID: '123' }));
         const { store } = setup({
             calendarsBootstrap: {
                 '123': initialCalendar,

@@ -5,22 +5,23 @@ import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { selectCalendarsBootstrap } from '@proton/calendar';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useDrawerParent } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { useInstance } from '@proton/hooks';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
 
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import useCalendarFavicon from '../../hooks/useCalendarFavicon';
+import { useCalendarSelector } from '../../store/hooks';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import UnlockCalendarsContainer from '../setup/UnlockCalendarsContainer';
+import { getCalendarsToAct } from '../setup/helper';
 import MainContainerSetup from './MainContainerSetup';
 import { fromUrlParams } from './getUrlHelper';
 
@@ -28,12 +29,12 @@ const MainContainer = () => {
     useCalendarFavicon();
 
     const hasReactivatedCalendarsRef = useRef<boolean>(false);
-
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { pathname } = useLocation();
+    const calendarBootstrap = useCalendarSelector(selectCalendarsBootstrap);
 
     // Make sure we have the data when opening the popover
     useFlag('ZoomIntegration');
@@ -52,12 +53,21 @@ const MainContainer = () => {
     const autoAddHolidaysCalendarsEnabled = getFeature(FeatureCode.AutoAddHolidaysCalendars).feature?.Value === true;
 
     const memoedCalendars = useMemo(() => sortCalendars(getVisualCalendars(calendars || [])), [calendars]);
+    const calendarsToAct = useMemo(() => {
+        return getCalendarsToAct({ calendars: memoedCalendars, calendarBootstrap });
+    }, [memoedCalendars, calendarBootstrap]);
+    const [ignoreUnlock, setIgnoreUnlock] = useState(false);
+    const [ignoreIncomplete, setIgnoreIncomplete] = useState(false);
+
     const { ownedPersonalCalendars, holidaysCalendars } = useMemo(() => {
         return groupCalendarsByTaxonomy(memoedCalendars);
     }, [memoedCalendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);
 
-    const { welcomeFlags: { isDone, isWelcomeFlow }, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
+    const {
+        welcomeFlags: { isDone, isWelcomeFlow },
+        setDone: setWelcomeFlagsDone,
+    } = useWelcomeFlags();
 
     const [hasCalendarToGenerate, setHasCalendarToGenerate] = useState(() => {
         return ownedPersonalCalendars.length === 0;
@@ -69,22 +79,6 @@ const MainContainer = () => {
             !holidaysCalendars.length &&
             !ownedPersonalCalendars.length
         );
-    });
-
-    const [calendarsToUnlock, setCalendarsToUnlock] = useState(() => {
-        return memoedCalendars.filter(({ Flags }) => {
-            return (
-                hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
-                hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE) ||
-                hasBit(Flags, CALENDAR_FLAGS.LOST_ACCESS)
-            );
-        });
-    });
-
-    const [calendarsToSetup, setCalendarsToSetup] = useState(() => {
-        return memoedCalendars.filter(({ Flags }) => {
-            return hasBit(Flags, CALENDAR_FLAGS.INCOMPLETE_SETUP);
-        });
     });
 
     if (hasCalendarToGenerate || hasHolidaysCalendarToGenerate) {
@@ -100,22 +94,24 @@ const MainContainer = () => {
         );
     }
 
-    if (calendarsToSetup.length) {
-        return <CalendarSetupContainer calendars={calendarsToSetup} onDone={() => setCalendarsToSetup([])} />;
+    if (!ignoreIncomplete && calendarsToAct.calendarsIncomplete.length) {
+        return (
+            <CalendarSetupContainer
+                calendars={calendarsToAct.calendarsIncomplete}
+                onDone={() => setIgnoreIncomplete(true)}
+            />
+        );
     }
 
     if (!isDone && !isElectronMail) {
         return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} drawerView={drawerView} />;
     }
 
-    if (calendarsToUnlock.length) {
+    if (!ignoreUnlock && calendarsToAct.info.unlockAny) {
         return (
             <UnlockCalendarsContainer
-                calendars={memoedCalendars}
-                calendarsToUnlock={calendarsToUnlock}
-                onDone={() => {
-                    setCalendarsToUnlock([]);
-                }}
+                calendarsToAct={calendarsToAct}
+                onDone={() => setIgnoreUnlock(true)}
                 drawerView={drawerView}
                 hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
             />
