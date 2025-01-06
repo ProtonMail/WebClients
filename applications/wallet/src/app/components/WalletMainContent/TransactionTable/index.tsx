@@ -112,11 +112,15 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
                         <DataList
                             onClickRow={(tx) => handleClickRow(tx)}
                             canClickRow={(tx) => !!tx}
-                            rows={Object.keys(networkTransactionByHashedTxId).map((hashedTxId) => ({
-                                networkData: networkTransactionByHashedTxId[hashedTxId] as WasmTransactionDetails,
-                                apiData: apiWalletTransactionData?.[hashedTxId] ?? null,
-                                key: hashedTxId,
-                            }))}
+                            rows={Object.keys(networkTransactionByHashedTxId).map((hashedTxIdAndAccountId) => {
+                                return {
+                                    networkData: networkTransactionByHashedTxId[
+                                        hashedTxIdAndAccountId
+                                    ] as WasmTransactionDetails,
+                                    apiData: apiWalletTransactionData?.[hashedTxIdAndAccountId] ?? null,
+                                    key: hashedTxIdAndAccountId,
+                                };
+                            })}
                             columns={columns}
                         />
                     </div>
