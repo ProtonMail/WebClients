@@ -151,23 +151,53 @@
 	}
 }
 
-.Lexical__cursorsContainer > span:has(:nth-child(2)) {
-	> :last-child {
-		inline-size: 2px !important;
+.Lexical__cursorCaret {
+	--width: 2px;
 
-		> span {
-			display: block !important;
-			border-radius: 4px !important;
-			padding-block: 4px !important;
-			padding-inline: 6px !important;
-			font-size: 11px !important;
-			line-height: 14px !important;
-			font-weight: 600 !important;
-			font-family: inherit !important;
-			inset-block-start: -24px !important;
-			inset-inline-start: 0 !important;
+	position: absolute;
+	inset-block: 0;
+	inset-inline-end: calc(-0.5 * var(--width));
+	inline-size: var(--width);
+	z-index: 10;
+	pointer-events: auto;
+
+	&.show {
+		> .Lexical__cursorNamePopup {
+			opacity: 100;
+			pointer-events: auto;
+			user-select: none;
+		}
+
+		> .Lexical__cursorCaretHandle {
+			opacity: 0;
 		}
 	}
+}
+
+.Lexical__cursorCaretHandle {
+	position: absolute;
+	inset-block-end: 100%;
+	inset-inline-start: 0;
+	inline-size: 4px;
+	block-size: 4px;
+	background: inherit;
+	pointer-events: inherit;
+}
+
+.Lexical__cursorNamePopup {
+	position: absolute;
+	inset-inline-start: -2px;
+	inset-block-end: calc(100% + 2px);
+	display: block;
+	opacity: 0;
+	transition: opacity 125ms;
+	border-radius: 4px;
+	padding-block: 4px;
+	padding-inline: 6px;
+	font-size: 11px;
+	line-height: 14px;
+	font-weight: 600;
+	pointer-events: none;
 }
 
 .Lexical__blockCursor {
