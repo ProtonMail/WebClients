@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms';
 import { Checkbox, Info, Label } from '@proton/components';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
-import { REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
 
 import ComposerInnerModal from './ComposerInnerModal';
 
@@ -27,9 +26,7 @@ const ComposerInsertImageModal = ({
     canRemoveImageMetadata,
     canShowMetadataToggle,
 }: Props) => {
-    const [removeImageMetadata, setRemoveImageMetadata] = useState(
-        mailSettings?.RemoveImageMetadata === REMOVE_IMAGE_METADATA.ENABLED
-    );
+    const [removeImageMetadata, setRemoveImageMetadata] = useState(!!mailSettings?.RemoveImageMetadata);
     const actions = (
         <>
             {canRemoveImageMetadata && canShowMetadataToggle && mailSettings ? (
