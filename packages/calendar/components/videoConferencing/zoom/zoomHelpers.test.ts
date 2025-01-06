@@ -118,4 +118,51 @@ describe('Zoom description helpers', () => {
             service: 'zoom',
         });
     });
+
+    it('should find passcode in the description', () => {
+        const description = `
+            Join Zoom Meeting https://us05web.zoom.us/j/83674139672?pwd=8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1  
+            Meeting ID: 83674139672
+            Passcode: 6Z3fiV
+        `;
+
+        const descriptionTwo = `
+            Join Zoom Meeting https://us05web.zoom.us/j/83674139672?pwd=8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1  
+            Meeting ID: 83674139672
+            passcode: 6Z3fiV
+        `;
+
+        const descriptionThree = `
+            Join Zoom Meeting https://us05web.zoom.us/j/83674139672?pwd=8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1  
+            Meeting ID: 83674139672
+            PAssCODe: 6Z3fiV
+        `;
+
+        const meetingData = getZoomFromDescription(description);
+        const meetingDataTwo = getZoomFromDescription(descriptionTwo);
+        const meetingDataThree = getZoomFromDescription(descriptionThree);
+        expect(meetingData).toStrictEqual({
+            joiningInstructions: undefined,
+            meetingId: '83674139672',
+            meetingUrl: 'https://us05web.zoom.us/j/83674139672?pwd=8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1',
+            password: '6Z3fiV',
+            service: 'zoom',
+        });
+
+        expect(meetingDataTwo).toStrictEqual({
+            joiningInstructions: undefined,
+            meetingId: '83674139672',
+            meetingUrl: 'https://us05web.zoom.us/j/83674139672?pwd=8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1',
+            password: '6Z3fiV',
+            service: 'zoom',
+        });
+
+        expect(meetingDataThree).toStrictEqual({
+            joiningInstructions: undefined,
+            meetingId: '83674139672',
+            meetingUrl: 'https://us05web.zoom.us/j/83674139672?pwd=8Rbz0DfJeacG99xbU9R6sR9DEMCYsM.1',
+            password: '6Z3fiV',
+            service: 'zoom',
+        });
+    });
 });
