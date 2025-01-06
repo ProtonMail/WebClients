@@ -9,12 +9,12 @@ import type {
     ShareInvitationDetailsPayload,
     ShareInvitationPayload,
 } from '@proton/shared/lib/interfaces/drive/invitation';
-import type { LinkMeta, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
+import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
-import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
@@ -32,13 +32,14 @@ import type {
     ShareURL,
     ShareURLLEGACY,
     ShareWithKey,
+    SharedUrlInfo,
 } from '../_shares';
 import { ThumbnailType } from '../_uploads/media';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
 type LinkMetaWithShareURL = LinkMeta & {
-    ShareUrls: (SharedUrlInfo & {
+    ShareUrls: (LinkSharedUrlInfo & {
         ShareURL?: ShareURLPayload;
     })[];
 };
@@ -64,6 +65,10 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                   id: link.FileProperties.ActiveRevision.ID,
                   size: link.FileProperties.ActiveRevision.Size,
                   signatureEmail: link.FileProperties.ActiveRevision.SignatureEmail,
+                  createTime: link.FileProperties.ActiveRevision.CreateTime,
+                  state: link.FileProperties.ActiveRevision.State,
+                  manifestSignature: link.FileProperties.ActiveRevision.ManifestSignature,
+                  blocs: link.FileProperties.ActiveRevision.Blocks,
                   thumbnail: link.FileProperties.ActiveRevision.ThumbnailURLInfo
                       ? {
                             bareUrl: link.FileProperties.ActiveRevision.ThumbnailURLInfo.BareURL,
@@ -300,7 +305,12 @@ export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): D
         manifestSignature: revision.ManifestSignature,
         signatureEmail: revision.SignatureEmail,
         blocs: revision.Blocks,
-        thumbnails: revision.Thumbnails,
+        thumbnails: revision.Thumbnails.map((Thumbnail) => ({
+            id: Thumbnail.ThumbnailID,
+            type: Thumbnail.Type,
+            hash: Thumbnail.Hash,
+            size: Thumbnail.Size,
+        })),
         xAttr: revision.XAttr,
     };
 };
@@ -350,5 +360,27 @@ export const shareInvitationDetailsPayloadToShareInvitationDetails = (
             mimeType: shareInvitationDetails.Link.MIMEType,
             isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
         },
+    };
+};
+
+export const sharedUrlInfoPayloadToSharedUrlInfo = (sharedUrlInfoPayload: SharedURLInfoPayload): SharedUrlInfo => {
+    return {
+        contentKeyPacket: sharedUrlInfoPayload.ContentKeyPacket,
+        linkId: sharedUrlInfoPayload.LinkID,
+        linkType: sharedUrlInfoPayload.LinkType,
+        mimeType: sharedUrlInfoPayload.MIMEType,
+        name: sharedUrlInfoPayload.Name,
+        nodeKey: sharedUrlInfoPayload.NodeKey,
+        nodeHashKey: sharedUrlInfoPayload.NodeHashKey,
+        nodePassphrase: sharedUrlInfoPayload.NodePassphrase,
+        nodePassphraseSignature: sharedUrlInfoPayload.NodePassphraseSignature,
+        permissions: sharedUrlInfoPayload.Permissions,
+        shareKey: sharedUrlInfoPayload.ShareKey,
+        sharePassphrase: sharedUrlInfoPayload.SharePassphrase,
+        sharePasswordSalt: sharedUrlInfoPayload.SharePasswordSalt,
+        size: sharedUrlInfoPayload.Size,
+        signatureEmail: sharedUrlInfoPayload.SignatureEmail,
+        thumbnailUrlInfo: sharedUrlInfoPayload.ThumbnailURLInfo,
+        token: sharedUrlInfoPayload.Token,
     };
 };

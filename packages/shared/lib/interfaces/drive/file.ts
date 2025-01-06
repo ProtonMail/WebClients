@@ -1,3 +1,5 @@
+import type { Photo } from './photos';
+
 export enum FileRevisionState {
     Draft = 0,
     Active = 1,
@@ -72,6 +74,11 @@ export interface DriveFileBlock {
 
 export type Thumbnail = { ThumbnailID: string; Size: number; Type: number; Hash: string };
 
+export interface ThumbnailURLInfo {
+    BareURL: string;
+    Token: string;
+}
+
 export interface DriveFileRevisionPayload {
     ID: string;
     CreateTime: number;
@@ -81,7 +88,14 @@ export interface DriveFileRevisionPayload {
     SignatureAddress: string;
     SignatureEmail: string;
     Blocks: DriveFileBlock[];
+    Thumbnail: number;
     Thumbnails: Thumbnail[];
+    ThumbnailURLInfo: {
+        BareURL: string;
+        Token: string;
+        URL: string;
+    };
+    Photo: Photo | null;
     XAttr: string;
 }
 
