@@ -60,6 +60,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                                 count={0}
                                 selected={false}
                                 to="shared-with-me"
+                                icon="user-arrow-left"
                             />
 
                             <VaultMenuLink
@@ -67,6 +68,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                                 count={0}
                                 selected={false}
                                 to="shared-by-me"
+                                icon="user-arrow-right"
                             />
                         </div>
                     </div>
