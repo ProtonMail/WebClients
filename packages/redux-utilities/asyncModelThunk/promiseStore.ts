@@ -43,19 +43,23 @@ export const cacheHelper = <Returned>({
     expiry?: number;
 }): Promise<Returned> => {
     const promise = store.get(key);
+
     if (promise) {
         return promise;
     }
+
     if (cache === CacheType.Stale || cache === CacheType.StaleRefetch) {
         const state = select();
         if (state?.value !== undefined && !isExpired(state.meta.fetchedAt, expiry)) {
             if (getIsStaleRefetch(state.meta.fetchedEphemeral, cache)) {
+                // Start background refresh but still return cached value
                 const newPromise = cb();
                 store.set(key, newPromise);
             }
             return Promise.resolve(state.value);
         }
     }
+
     const newPromise = cb();
     store.set(key, newPromise);
     return newPromise;
