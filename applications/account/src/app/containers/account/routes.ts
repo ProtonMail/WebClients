@@ -67,7 +67,7 @@ export const getAccountAppRoutes = ({
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
 }) => {
-    const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
+    const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
 
     // Used to determine if a user is on a family plan or a duo plan
@@ -88,13 +88,17 @@ export const getAccountAppRoutes = ({
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
 
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
+    const isExternalUser = getIsExternalAccount(user);
+
     const hasSplitStorage =
         getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
 
-    const showEasySwitchSection = !getIsExternalAccount(user) && app !== APPS.PROTONPASS && !isSSOUser;
+    const showEasySwitchSection = !isExternalUser && app !== APPS.PROTONPASS && !isSSOUser;
 
     const showVideoConferenceSection =
-        isZoomIntegrationEnabled && (organization?.Settings.VideoConferencingEnabled || !user.hasPaidMail);
+        isZoomIntegrationEnabled &&
+        !isExternalUser &&
+        (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
 
     return <const>{
         available: true,
