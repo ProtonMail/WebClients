@@ -42,9 +42,9 @@ export const SCRIPT_TYPES = [
 export const MIN_FEE_RATE = 1;
 
 export enum PriorityTargetBlock {
-    HighPriorityTargetBlock = 0,
-    MedianPriorityTargetBlock = 1,
-    LowPriorityTargetBlock = 2,
+    HighPriorityTargetBlock = 1,
+    MedianPriorityTargetBlock = 3,
+    LowPriorityTargetBlock = 6,
 }
 
 export const MAX_BLOCK_TARGET = 25;
