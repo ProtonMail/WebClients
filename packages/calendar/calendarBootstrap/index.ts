@@ -20,11 +20,13 @@ import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
 import type { CalendarMemberEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
 import { calendarServerEvent } from '../calendarServerEvent';
+import { calendarsActions } from '../calendars';
+import { deleteCalendarFromKeyCache } from './keys';
 
 const name = 'calendarsBootstrap' as const;
 
 export interface CalendarsBootstrapState extends AddressesState, AddressKeysState {
-    [name]: { [id: string]: ModelState<CalendarBootstrap> | undefined };
+    [name]: { [id: string]: (ModelState<CalendarBootstrap> & { loading: boolean }) | undefined };
 }
 
 type SliceState = CalendarsBootstrapState[typeof name];
@@ -52,13 +54,17 @@ const slice = createSlice({
     reducers: {
         pending: (state, action: PayloadAction<{ id: string }>) => {
             const oldValue = state[action.payload.id];
-            if (oldValue && oldValue.error) {
-                oldValue.error = undefined;
+            if (oldValue) {
+                oldValue.loading = true;
+                if (oldValue.error) {
+                    oldValue.error = undefined;
+                }
             }
         },
         fulfilled: (state, action: PayloadAction<{ id: string; value: CalendarBootstrap }>) => {
             state[action.payload.id] = {
                 value: action.payload.value,
+                loading: false,
                 error: undefined,
                 meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
             };
@@ -66,6 +72,7 @@ const slice = createSlice({
         rejected: (state, action: PayloadAction<{ id: string; value: any }>) => {
             state[action.payload.id] = {
                 value: undefined,
+                loading: false,
                 error: action.payload.value,
                 meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: undefined },
             };
@@ -150,6 +157,18 @@ export const calendarBootstrapThunk = ({
                     ...getFullCalendar(calendarID),
                     silence: true,
                 });
+                // Whenever the calendar bootstrap is re-fetched, we clear the calendar key cache. This can be improved
+                // by a better mechanism to detect changes to the key.
+                deleteCalendarFromKeyCache(calendarID);
+                const [firstMember] = result.Members;
+                // TODO: This should be merged with the calendar state
+                dispatch(
+                    calendarsActions.updateCalendarFlags({
+                        calendarID: firstMember.CalendarID,
+                        flags: firstMember.Flags,
+                        memberID: firstMember.ID,
+                    })
+                );
                 dispatch(slice.actions.fulfilled({ id: calendarID, value: result }));
                 return result;
             } catch (error) {

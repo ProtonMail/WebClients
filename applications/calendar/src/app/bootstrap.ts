@@ -12,6 +12,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import {
+    calendarBootstrapThunk,
     calendarSettingsThunk,
     calendarsThunk,
     createCalendarModelEventManager,
@@ -149,6 +150,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             loadAllowedTimeZones(silentApi).catch(noop);
             dispatch(holidaysDirectoryThunk()).catch(noop);
             dispatch(organizationThunk()).catch(noop);
+            dispatch(calendarsThunk())
+                .then((calendars) => {
+                    calendars.forEach((calendar) => {
+                        dispatch(calendarBootstrapThunk({ calendarID: calendar.ID })).catch(noop);
+                    });
+                })
+                .catch(noop);
         };
 
         const userPromise = loadUser();

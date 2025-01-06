@@ -26,6 +26,16 @@ export interface CalendarCreateArguments extends CalendarCreateData {
     AddressID: string;
 }
 
+export enum CALENDAR_ORDER_BY {
+    ASCENDING = 0,
+    DESCENDING = 1,
+}
+
+export enum CALENDAR_RETURN_FLAGS {
+    NO = 0,
+    YES = 1,
+}
+
 export interface CalendarSetupData {
     AddressID: string;
     Signature: string;
