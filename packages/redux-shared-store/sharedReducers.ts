@@ -1,4 +1,5 @@
 import {
+    accountSessionsSlice,
     addressKeysReducer,
     addressesReducer,
     domainsReducer,
@@ -67,6 +68,7 @@ export const sharedReducers = {
     ...groupMembershipsReducer,
     securityCheckup: securityCheckupSlice.reducer,
     features: featuresReducer.reducer,
+    sessions: accountSessionsSlice.reducer,
 };
 
 export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers]: any }> = {
