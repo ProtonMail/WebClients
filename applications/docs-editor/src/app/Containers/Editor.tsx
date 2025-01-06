@@ -24,7 +24,6 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import CodeHighlightPlugin from '../Plugins/CodeHighlightPlugin'
 import CommentPlugin from '../Plugins/Comments/CommentPluginContainer'
-import { MergeSiblingListsPlugin } from '../Plugins/MergeSiblingListsPlugin'
 import Toolbar from '../Toolbar/Toolbar'
 import { CollaborationPlugin } from '../Plugins/Collaboration/CollaborationPlugin'
 import ImagesPlugin from '../Plugins/Image/ImagePlugin'
@@ -267,7 +266,6 @@ export function Editor({
             safeMode={safeMode}
           />
         )}
-        <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />
         <ImagesPlugin />
         <EditorReadonlyPlugin editingEnabled={!editingLocked} />
