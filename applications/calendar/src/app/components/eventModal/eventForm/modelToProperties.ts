@@ -120,7 +120,6 @@ const modelToVideoConferenceProperties = ({
     conferencePassword,
     conferenceUrl,
     conferenceHost,
-    conferenceCreator,
 }: Partial<EventModel>) => {
     if (!conferenceId || !conferenceUrl) {
         return;
@@ -131,7 +130,6 @@ const modelToVideoConferenceProperties = ({
             value: conferenceId,
             parameters: {
                 'x-pm-provider': '1',
-                ...(conferenceCreator && { 'x-pm-creator': conferenceCreator }),
             },
         },
         'x-pm-conference-url': {
