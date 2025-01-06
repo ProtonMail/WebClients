@@ -1,4 +1,4 @@
-import { type FC, memo, useState } from 'react';
+import { type FC, memo, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -17,8 +17,9 @@ import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkMo
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useOptimisticItem } from '@proton/pass/hooks/useItem';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
-import { getItemActionId, getItemKey } from '@proton/pass/lib/items/item.utils';
+import { getItemEntityID, getItemKey } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreate,
     itemCreateDismiss,
@@ -28,10 +29,8 @@ import {
     itemUnpinIntent,
     setItemFlags,
 } from '@proton/pass/store/actions';
-import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
-import { selectIsOptimisticId, selectItemsState, selectShare } from '@proton/pass/store/selectors';
+import { selectIsOptimisticId, selectOptimisticFailedAction, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 
 const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     login: LoginView,
@@ -51,13 +50,12 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const [inviteOpen, setInviteOpen] = useState(false);
     const [openSecureLinkModal, setOpenSecureLinkModal] = useState(false);
 
-    const optimisticItemId = getItemActionId({ itemId, shareId });
+    const optimisticItemId = useMemo(() => getItemEntityID({ itemId, shareId }), [itemId, shareId]);
     const optimisticResolved = useSelector(selectIsOptimisticId(itemId));
-    const failedItemActionSelector = pipe(selectItemsState, selectFailedAction(optimisticItemId));
+    const failure = useMemoSelector(selectOptimisticFailedAction, [optimisticItemId]);
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const item = useOptimisticItem(shareId, itemId);
-    const failure = useSelector(failedItemActionSelector);
 
     /* if vault or item cannot be found : redirect to base path */
     if (!(vault && item)) {
