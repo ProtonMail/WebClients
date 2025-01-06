@@ -230,4 +230,14 @@ class FileSaver {
     }
 }
 
-export default new FileSaver();
+const fileSaverSingleton = {
+    _instance: undefined as FileSaver | undefined,
+    get instance() {
+        if (!this._instance) {
+            this._instance = new FileSaver();
+        }
+        return this._instance;
+    },
+};
+
+export default fileSaverSingleton;
