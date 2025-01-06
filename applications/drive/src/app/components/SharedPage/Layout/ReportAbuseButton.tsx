@@ -15,7 +15,7 @@ export default function ReportAbuseButton({ linkInfo }: { linkInfo: LinkInfo }) 
         <>
             <Tooltip title={c('Action').t`Report an issue`}>
                 <Button
-                    shape="solid"
+                    shape="ghost"
                     size="medium"
                     color="weak"
                     data-testid="report-abuse-button"

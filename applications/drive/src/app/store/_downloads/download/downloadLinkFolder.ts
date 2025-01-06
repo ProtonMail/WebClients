@@ -176,6 +176,7 @@ export class FolderTreeLoader {
                 signatureEmail: link.signatureEmail,
                 signatureIssues: link.signatureIssues,
                 createTime: link.createTime,
+                isAnonymous: link.isAnonymous,
             })),
         ];
 
