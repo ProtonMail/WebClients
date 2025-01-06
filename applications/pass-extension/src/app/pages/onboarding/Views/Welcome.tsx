@@ -1,12 +1,12 @@
 import { type FC, useCallback, useState } from 'react';
 
+import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
-import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
@@ -41,23 +41,7 @@ export const Welcome: FC = () => {
                 <div className="m-auto p-14 color-norm flex justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '64rem' }}>
-                        <div className="flex items-center gap-2 mb-5">
-                            {
-                                <img
-                                    src="/assets/protonpass-icon.svg"
-                                    className="h-custom"
-                                    style={{ '--h-custom': '2.25rem' }}
-                                    alt={PASS_APP_NAME}
-                                />
-                            }
-                            <span>
-                                <PassTextLogo
-                                    key="pass-text-logo"
-                                    className="pass-lobby--brand-text ml-2 shrink-0 logo"
-                                />
-                            </span>
-                        </div>
-
+                        <OnboardingHeader />
                         <div className={clsx('anime-reveal', !pendingAccess && 'anime-reveal--hidden')}>
                             {pendingAccess && (
                                 <SpotlightContent
