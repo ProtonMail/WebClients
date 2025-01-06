@@ -85,17 +85,21 @@ export const decryptTransactionData = async (
 
 export const buildNetworkTransactionByHashedTxId = async (
     transactions: WasmTransactionDetails[],
-    hmacKey: CryptoKey
+    hmacKey: CryptoKey,
+    walletId: string,
+    accountIdByDerivationPathAndWalletId: AccountIdByDerivationPathAndWalletId
 ): Promise<NetworkTransactionByHashedTxId> => {
     return transactions.reduce((prevPromise, transaction) => {
         return prevPromise.then(async (acc) => {
             try {
                 const hashedTxIdBuffer = await hmac(hmacKey, transaction.txid);
+                const normalisedDerivationPath = removeMasterPrefix(transaction.account_derivation_path);
+                const accountId = accountIdByDerivationPathAndWalletId[walletId]?.[normalisedDerivationPath] ?? '';
                 const key = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
 
                 return {
                     ...acc,
-                    [key]: {
+                    [`${key}#${accountId}`]: {
                         HashedTransactionID: key,
                         ...transaction,
                     },
