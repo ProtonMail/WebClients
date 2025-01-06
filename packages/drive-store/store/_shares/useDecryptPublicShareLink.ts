@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto/lib';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 import { computeKeyPassword } from '@proton/srp/lib';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -27,7 +27,7 @@ export const useDecryptPublicShareLink = () => {
         }: {
             urlPassword: string;
             token: string;
-            shareUrlInfo: SharedURLInfo;
+            shareUrlInfo: SharedURLInfoPayload;
             publicPage?: boolean;
             additionnalDecryptedLinkInfo?: Partial<DecryptedLink>;
         }
