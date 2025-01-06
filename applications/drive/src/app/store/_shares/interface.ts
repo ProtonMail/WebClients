@@ -1,6 +1,8 @@
 import type { PublicKeyReference, SessionKey } from '@proton/crypto';
 import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import type { ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 
 type WithSRPPayload<T extends any> = T & {
     srpModulusID: string;
@@ -197,4 +199,24 @@ export interface ShareInvitee {
     isExternal?: boolean;
     isLoading?: boolean;
     publicKey?: PublicKeyReference;
+}
+
+export interface SharedUrlInfo {
+    contentKeyPacket: string;
+    linkId: string;
+    linkType: LinkType;
+    mimeType: string;
+    name: string;
+    nodeKey: string;
+    nodeHashKey: string | null;
+    nodePassphrase: string;
+    nodePassphraseSignature: string;
+    permissions: SHARE_URL_PERMISSIONS;
+    shareKey: string;
+    sharePassphrase: string;
+    sharePasswordSalt: string;
+    size: number;
+    signatureEmail?: string;
+    thumbnailUrlInfo: ThumbnailURLInfo;
+    token: string;
 }

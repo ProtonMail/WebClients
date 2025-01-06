@@ -7,7 +7,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useDriveSharingFlags, useInvitationsActions } from '../../../store';
+import { useDriveSharingFlags, useInvitationsActions, useLinkPath } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
 import SignatureIcon from '../../SignatureIcon';
@@ -116,6 +116,7 @@ export const CreatedCell = ({ item }: { item: TrashItem | SharedLinkItem }) => {
 
 export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => {
     const { viewportWidth } = useActiveBreakpoint();
+    const { getPath } = useLinkPath();
     const shareId = item.rootShareId;
 
     return (
@@ -123,7 +124,7 @@ export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => 
             className={`flex items-center ${clsx(['m-0', viewportWidth['>=large'] ? 'w-1/5' : 'w-1/4'])}`}
             data-testid="column-location"
         >
-            <LocationCellBase shareId={shareId} parentLinkId={item.parentLinkId} />
+            <LocationCellBase shareId={shareId} parentLinkId={item.parentLinkId} getPath={getPath} />
         </TableCell>
     );
 };

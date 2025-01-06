@@ -61,7 +61,7 @@ export type UpdateSharedURL = WithSRPPayload<{
 /**
  * drive/urls/{token} response payload
  */
-export interface SharedURLInfo {
+export interface SharedURLInfoPayload {
     ContentKeyPacket: string;
     LinkID: string;
     LinkType: LinkType;
@@ -70,6 +70,7 @@ export interface SharedURLInfo {
     NodeKey: string;
     NodeHashKey: string | null;
     NodePassphrase: string;
+    NodePassphraseSignature: string;
     Permissions: SHARE_URL_PERMISSIONS;
     SignatureEmail?: string;
     ShareKey: string;
