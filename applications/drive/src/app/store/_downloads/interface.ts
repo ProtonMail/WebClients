@@ -105,6 +105,7 @@ export type ChildrenLinkMeta = Pick<
     | 'signatureEmail'
     | 'signatureIssues'
     | 'createTime'
+    | 'isAnonymous'
 >;
 export type GetChildrenCallback = (
     abortSignal: AbortSignal,

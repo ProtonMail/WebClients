@@ -85,7 +85,7 @@ function UploadedByCell({ item }: { item: PublicLink }) {
                     '--max-h-custom': '1.75rem',
                 }}
             >
-                {email ? getInitials(email) : <Icon name="alias" className="color-weak" />}
+                {email ? getInitials(email) : <Icon name="user" className="color-weak" />}
             </Avatar>
             <span className="text-ellipsis hidden lg:inline">{email || c('Info').t`Anonymous`}</span>
         </TableCell>
