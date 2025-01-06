@@ -1,5 +1,6 @@
 import { memo } from 'react';
 
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
@@ -15,9 +16,10 @@ type Props = {
     selected: boolean;
     label?: string;
     onAction?: () => void;
+    icon?: IconName;
 };
 
-export const VaultMenuLink = memo(({ to, count, dense, selected, label, onAction = noop }: Props) => {
+export const VaultMenuLink = memo(({ to, count, dense, selected, label, icon, onAction = noop }: Props) => {
     const navigate = useNavigate();
     const onSelect = pipe(() => navigate(getLocalPath(to)), onAction);
 
@@ -29,7 +31,13 @@ export const VaultMenuLink = memo(({ to, count, dense, selected, label, onAction
             className={clsx(selected && 'is-selected', !dense && 'py-3')}
             style={{ '--max-h-custom': '1.25rem' }}
             extra={<span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>}
-            icon={<VaultIcon className="shrink-0" size={3.5} />}
+            icon={
+                icon ? (
+                    <Icon className="shrink-0" name={icon} size={3.5} />
+                ) : (
+                    <VaultIcon className="shrink-0" size={3.5} />
+                )
+            }
         />
     );
 });
