@@ -53,8 +53,16 @@ export const toggleZoomSettings = ({
                     value: { VideoConferencingEnabled: checked },
                 })
             );
+
             await extra.api(updateOrganizationSettings({ VideoConferencingEnabled: checked }));
         } catch (error) {
+            // If the user doesn't fill password or the query fails, we rollback the state
+            dispatch(
+                organizationActions.updateOrganizationSettings({
+                    value: { VideoConferencingEnabled: !checked },
+                })
+            );
+            throw new Error();
         } finally {
             extra.eventManager.start();
         }
