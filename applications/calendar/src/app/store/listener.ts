@@ -3,25 +3,29 @@ import { startCalendarEventListener, startHolidaysDirectoryListener } from '@pro
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import { startListeningBusySlots } from './busySlots/busySlotsListeners';
-import type { AppStartListening, CalendarState } from './store';
+import { getCalendarPersistedState } from './persistReducer';
+import type { AppStartListening } from './store';
+
+export interface StartListeningFeatures {
+    accountPersist?: boolean;
+    accountSessions?: boolean;
+}
 
 export const start = ({
     startListening,
-    persistTransformer,
-    isAccountSessionsEnabled,
+    features,
 }: {
     startListening: AppStartListening;
-    persistTransformer?: (state: CalendarState) => any;
-    isAccountSessionsEnabled?: boolean;
+    features?: StartListeningFeatures;
 }) => {
     startSharedListening(startListening);
     startCalendarEventListener(startListening);
     startHolidaysDirectoryListener(startListening);
     startListeningBusySlots(startListening);
-    if (persistTransformer) {
-        startPersistListener(startListening, persistTransformer);
+    if (features?.accountPersist) {
+        startPersistListener(startListening, getCalendarPersistedState);
     }
-    if (isAccountSessionsEnabled) {
+    if (features?.accountSessions) {
         startAccountSessionsListener(startListening);
     }
 };
