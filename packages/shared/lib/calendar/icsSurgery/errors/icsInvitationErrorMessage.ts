@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '../../constants';
 import type { EventInvitationErrorConfig } from '../EventInvitationError';
-import { INVITATION_ERROR_TYPE } from './icsSurgeryErrorTypes';
+import { EVENT_INVITATION_ERROR_TYPE, INVITATION_ERROR_TYPE } from './icsSurgeryErrorTypes';
 
 export const getICSInvitationErrorMessage = (errorType: INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) => {
     const isUnknown = !config?.method;
@@ -12,6 +12,10 @@ export const getICSInvitationErrorMessage = (errorType: INVITATION_ERROR_TYPE, c
 
     switch (errorType) {
         case INVITATION_ERROR_TYPE.INVITATION_INVALID:
+            if (config?.extendedType === EVENT_INVITATION_ERROR_TYPE.VALIDATION_ERROR) {
+                return c('ICS event error').t`Event validation failed`;
+            }
+
             if (isUnknown) {
                 return c('Attached ics file error').t`Invalid ICS file`;
             }
