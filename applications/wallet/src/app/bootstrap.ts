@@ -7,6 +7,7 @@ import {
     welcomeFlagsActions,
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import { type NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
@@ -50,8 +51,8 @@ export const bootstrapApp = async ({
     const silentApi = getSilentApi(api);
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
-
     setupGuestCrossStorage({ appMode, appName });
+
     initElectronClassnames();
 
     const run = async () => {
@@ -138,6 +139,8 @@ export const bootstrapApp = async ({
             unleashClient.stop();
             store.unsubscribe();
         });
+
+        dispatch(bootstrapEvent({ type: 'complete' }));
 
         return {
             ...userData,

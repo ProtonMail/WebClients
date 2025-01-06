@@ -9,8 +9,7 @@ import {
 } from '@proton/calendar';
 import { breachesCountReducer, securityCenterReducer } from '@proton/components';
 import { conversationCountsReducer, filtersReducer, messageCountsReducer } from '@proton/mail';
-import { sharedPersistReducer, sharedReducers } from '@proton/redux-shared-store';
-import { selectPersistModel } from '@proton/redux-utilities';
+import { sharedReducers } from '@proton/redux-shared-store';
 
 import { attachmentsReducer } from './attachments/attachmentsSlice';
 import { composersReducer } from './composers/composersSlice';
@@ -46,11 +45,3 @@ export const rootReducer = combineReducers({
 });
 
 export type MailState = ReturnType<typeof rootReducer>;
-
-export const persistReducer: Partial<{ [key in keyof MailState]: any }> = {
-    ...sharedPersistReducer,
-    filters: selectPersistModel,
-    calendarUserSettings: selectPersistModel,
-    calendars: selectPersistModel,
-    holidaysDirectory: selectPersistModel,
-};

@@ -1,3 +1,4 @@
+import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -219,7 +220,16 @@ export type ActiveSessionBase<T> = {
 export type ActiveSessionLite = ActiveSessionBase<PersistedSessionLite>;
 export type ActiveSession = ActiveSessionBase<PersistedSession>;
 
-// Can only be called from parent sessions since the UIDs returned from remote are not mapped to child sessions
+export const getMissingPersistedSessionsFromActiveSessions = (
+    persistedSessions: PersistedSession[],
+    activeSessions: ActiveSessionLite[]
+) => {
+    const localSessionsSet = new Set(activeSessions.map(({ persisted }) => persisted.localID));
+    return persistedSessions.filter((persistedSession) => {
+        return !localSessionsSet.has(persistedSession.localID);
+    });
+};
+
 export const getActiveSessionsMissingFromRemoteResponse = async ({
     api,
     persistedSessions,
@@ -227,13 +237,9 @@ export const getActiveSessionsMissingFromRemoteResponse = async ({
 }: {
     api: Api;
     persistedSessions: PersistedSession[];
-    activeSessions: ActiveSession[];
+    activeSessions: ActiveSessionLite[];
 }): Promise<ActiveSession[]> => {
-    const localSessionsSet = new Set(activeSessions.map(({ persisted }) => persisted.localID));
-
-    const nonExistingSessions = persistedSessions.filter((persistedSession) => {
-        return !localSessionsSet.has(persistedSession.localID);
-    }, []);
+    const nonExistingSessions = getMissingPersistedSessionsFromActiveSessions(persistedSessions, activeSessions);
 
     if (!nonExistingSessions.length) {
         return [];
@@ -490,5 +496,45 @@ export const maybeResumeSessionByUser = async ({
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;
         }
+    }
+};
+
+export const cleanupInactivePersistedSession = async ({
+    api,
+    persistedSession,
+}: {
+    api: Api;
+    persistedSession: PersistedSession;
+}) => {
+    const { UID, localID } = persistedSession;
+    // Double check that the session still exists
+    if (!getPersistedSession(localID)) {
+        return;
+    }
+    try {
+        // Simple check to see if the session is still valid.
+        // It's validated with the API to ensure it doesn't accidentally remove persisted sessions that might still be
+        // valid but which are not returned from the local response
+        await api<{ User: tsUser }>(withUIDHeaders(UID, getUser()));
+    } catch (e) {
+        if (getIs401Error(e)) {
+            await removePersistedSessionByLocalIDAndUID(localID, UID).catch(noop);
+        }
+    }
+};
+
+export const cleanupInactivePersistedSessions = async ({
+    persistedSessions,
+    api,
+    delay = 2_000,
+}: {
+    persistedSessions: PersistedSession[];
+    api: Api;
+    delay?: number;
+}) => {
+    for (const persistedSession of persistedSessions) {
+        await cleanupInactivePersistedSession({ api, persistedSession });
+        // Add a little bit of a delay to avoid spamming the API
+        await wait(delay);
     }
 };

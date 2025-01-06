@@ -7,6 +7,7 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
+import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
@@ -20,10 +21,6 @@ import { setEncryptedPersistedState } from './helper';
 
 const PERSIST_THROTTLE = 2.5 * SECOND;
 
-const isVisible = () => {
-    return document.visibilityState === 'visible';
-};
-
 export const startPersistListener = <T extends UserState>(
     startListening: SharedStartListening<T>,
     transformState: (state: T) => string
@@ -32,7 +29,7 @@ export const startPersistListener = <T extends UserState>(
         predicate: (action, currentState, previousState) => {
             const hasChange = currentState !== previousState;
 
-            return isVisible() && hasChange;
+            return isDocumentVisible() && hasChange;
         },
         effect: async (action, listenerApi) => {
             listenerApi.unsubscribe();
@@ -46,7 +43,7 @@ export const startPersistListener = <T extends UserState>(
                 const { authentication, config, eventManager } = listenerApi.extra;
 
                 // Event manager is slightly delayed in bootstrap due to event ID. Refactor that to allow it to get created without ID.
-                if (!eventManager || !isVisible()) {
+                if (!eventManager || !isDocumentVisible()) {
                     return;
                 }
 
@@ -106,13 +103,13 @@ export const startPersistListener = <T extends UserState>(
 
     startListening({
         predicate: () => {
-            return isVisible();
+            return isDocumentVisible();
         },
         effect: async (action, listenerApi) => {
             listenerApi.unsubscribe();
 
             const run = () => {
-                if (!isVisible()) {
+                if (!isDocumentVisible()) {
                     return;
                 }
                 const sessions = getPersistedSessions();

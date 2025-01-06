@@ -32,4 +32,4 @@ export interface OfflinePersistedSession extends Omit<DefaultPersistedSession, '
 export type PersistedSession = OfflinePersistedSession | DefaultPersistedSession;
 
 // The minimal amount of data needed to render the session list
-export type PersistedSessionLite = Pick<PersistedSession, 'localID' | 'isSelf' | 'persistent'>;
+export type PersistedSessionLite = Pick<PersistedSession, 'localID' | 'isSelf'>;

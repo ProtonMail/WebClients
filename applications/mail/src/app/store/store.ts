@@ -1,11 +1,10 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { getPersistedState } from '@proton/redux-shared-store/persist';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
-import { start } from './listener';
-import { type MailState, persistReducer, rootReducer } from './rootReducer';
+import { type StartListeningFeatures, start } from './listener';
+import { type MailState, rootReducer } from './rootReducer';
 import { mailIgnoredActionPaths, mailIgnoredPaths } from './serializable';
 import { type MailThunkArguments, extraThunkArguments } from './thunk';
 
@@ -13,10 +12,10 @@ export type { MailState };
 
 export const setupStore = ({
     preloadedState,
-    persist,
+    features,
 }: {
     preloadedState?: Partial<MailState>;
-    persist?: boolean;
+    features?: StartListeningFeatures;
 } = {}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
@@ -36,14 +35,13 @@ export const setupStore = ({
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    const getMailPersistedState = persist ? (state: MailState) => getPersistedState(state, persistReducer) : undefined;
-    start({ startListening, persistTransformer: getMailPersistedState });
+    start({ startListening, features });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start({ startListening, persistTransformer: getMailPersistedState });
+            start({ startListening, features });
         });
     }
 

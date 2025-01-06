@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import useApi from '@proton/components/hooks/useApi';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -65,6 +66,7 @@ const HandleLogout = () => {
     const api = useApi();
 
     useEffect(() => {
+        registerSessionListener({ type: 'all' });
         clear({ api });
     }, []);
 

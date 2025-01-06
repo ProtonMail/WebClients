@@ -165,7 +165,7 @@ const ephemeralLoginPaths = [SSO_PATHS.APP_SWITCHER, SSO_PATHS.REAUTH];
 
 // Optimistically calculate if the account switcher should be visible
 const initialSessionsLength = getPersistedSessions().length;
-const initialSessionsLengthBool = Boolean(getPersistedSessions().length);
+const initialSessionsLengthBool = Boolean(initialSessionsLength);
 
 const BasePublicApp = () => {
     const normalApi = useApi();
