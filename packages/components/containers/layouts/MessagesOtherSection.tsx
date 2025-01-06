@@ -16,7 +16,7 @@ import {
     updateRightToLeft,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { DIRECTION, REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
+import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -83,7 +83,7 @@ const MessagesOtherSection = () => {
         notifyPreferenceSaved();
     };
 
-    const handleRemoveImageMetadata = async (value: REMOVE_IMAGE_METADATA) => {
+    const handleRemoveImageMetadata = async (value: boolean) => {
         await api(updateRemoveImageMetadata(value));
         await call();
         notifyPreferenceSaved();
@@ -176,7 +176,7 @@ const MessagesOtherSection = () => {
                             <Info title={c('Tooltip').t`Remove metadata from images to protect your privacy.`} />
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight>
+                    <SettingsLayoutRight isToggleContainer>
                         <RemoveImageMetadataToggle
                             id="removeImageMetadata"
                             removeImageMetadata={RemoveImageMetadata}
