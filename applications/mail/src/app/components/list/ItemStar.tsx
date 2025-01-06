@@ -19,7 +19,7 @@ interface Props {
     element?: Element;
     size?: IconSize;
     sourceAction: SOURCE_ACTION;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const ItemStar = ({ sourceAction, currentFolder, element, size }: Props) => {

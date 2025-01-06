@@ -54,7 +54,7 @@ interface Props {
     userSettings: UserSettings;
     mailSettings: MailSettings;
     labels?: Label[];
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const Item = ({
