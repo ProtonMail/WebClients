@@ -109,9 +109,15 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
     const [userSettings, userSettingsLoading] = useUserSettings();
     const [mailSettings, mailSettingsLoading] = useMailSettings();
     const { call } = useEventManager();
-    const { shortDomainAddress, createShortDomainAddress, loadingDependencies, hasShortDomain } =
+    const { canSetupShortDomain, shortDomainAddress, createShortDomainAddress, loadingDependencies, hasShortDomain } =
         useShortDomainAddress();
-    const features = useGetFeatures(shortDomainAddress);
+    const features = useGetFeatures(shortDomainAddress).filter(({ id }) => {
+        // If the user can't setup a short domain, we don't want to show the aliases feature
+        if (id === 'aliases') {
+            return canSetupShortDomain;
+        }
+        return true;
+    });
 
     const [checkedFeatures, setCheckedFeatures] = useState<Record<FeatureID, boolean>>({
         aliases: true,
@@ -142,7 +148,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
             }),
         ];
 
-        if (checkedFeatures.aliases && !activeFeatures.aliases) {
+        if (canSetupShortDomain && checkedFeatures.aliases && !activeFeatures.aliases) {
             promises.push(createShortDomainAddress({ setDefault: true }));
         }
         if (checkedFeatures.autoDelete && !activeFeatures.autoDelete) {

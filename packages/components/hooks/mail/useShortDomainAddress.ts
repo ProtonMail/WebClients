@@ -25,6 +25,7 @@ const useShortDomainAddress = () => {
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     return {
+        canSetupShortDomain: user.isPrivate && user.hasPaidMail,
         loadingDependencies: loadingProtonDomains || loadingUser,
         shortDomainAddress: shortDomain,
         hasShortDomain: (addresses: Address[]) =>
