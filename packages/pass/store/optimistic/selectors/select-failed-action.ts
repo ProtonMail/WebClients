@@ -4,13 +4,13 @@ import type { OptimisticFailedHistoryItem, WrappedOptimisticState } from '../typ
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
 
 const selectFailedAction: (
-    optimisticId: string
+    entityID: string
 ) => <T extends WrappedOptimisticState = WrappedOptimisticState>(state: T) => Maybe<OptimisticFailedHistoryItem> =
-    (optimisticId) => (state) => {
+    (entityID) => (state) => {
         const { optimistic } = state;
         const { history } = optimistic;
 
-        const failedHistoryItemIndex = history.findIndex(isOptimisticHistoryItemWithId(optimisticId, { failed: true }));
+        const failedHistoryItemIndex = history.findIndex(isOptimisticHistoryItemWithId(entityID, { failed: true }));
 
         return failedHistoryItemIndex !== -1
             ? (history[failedHistoryItemIndex] as OptimisticFailedHistoryItem)

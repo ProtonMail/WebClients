@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { getItemActionId } from '@proton/pass/lib/items/item.utils';
+import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -53,7 +53,7 @@ export const draftDiscard = createAction('draft::discard', (payload: DraftBase) 
 export const draftsGarbageCollect = createAction('drafts::gc');
 
 export const itemCreate = requestActionsFactory<ItemCreateIntent, ItemCreateSuccess, OptimisticItem>('item::create')({
-    key: getItemActionId,
+    key: getItemEntityID,
     intent: { prepare: (payload) => withSynchronousAction({ payload }) },
     success: {
         prepare: (payload) =>
@@ -82,13 +82,13 @@ export const itemCreateDismiss = createOptimisticAction(
             type: 'info',
             text: c('Info').t`"${payload.item.data.metadata.name}" item was dismissed`,
         })({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemEdit = requestActionsFactory<ItemEditIntent, { item: ItemRevision } & SelectedItem, SelectedItem>(
     'item::edit'
 )({
-    key: getItemActionId,
+    key: getItemEntityID,
     intent: { prepare: (payload) => withSynchronousAction({ payload }) },
     success: {
         prepare: (payload) =>
@@ -117,7 +117,7 @@ export const itemEditDismiss = createOptimisticAction(
             type: 'info',
             text: c('Info').t`"${payload.item.data.metadata.name}" update was dismissed`,
         })({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevision[]) =>
@@ -127,7 +127,7 @@ export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevis
 export const itemMoveIntent = createOptimisticAction(
     'item::move::intent',
     (payload: { item: ItemRevision; shareId: string; optimisticId: string }) => withSynchronousAction({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemMoveFailure = createOptimisticAction(
@@ -138,7 +138,7 @@ export const itemMoveFailure = createOptimisticAction(
             text: c('Error').t`Moving item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemMoveSuccess = createOptimisticAction(
@@ -151,7 +151,7 @@ export const itemMoveSuccess = createOptimisticAction(
                 text: c('Info').t`Item successfully moved`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkMoveIntent = createAction(
@@ -199,7 +199,7 @@ export const itemBulkMoveSuccess = createAction(
 export const itemTrashIntent = createOptimisticAction(
     'item::trash::intent',
     (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemTrashFailure = createOptimisticAction(
@@ -210,7 +210,7 @@ export const itemTrashFailure = createOptimisticAction(
             text: c('Error').t`Trashing item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemTrashSuccess = createOptimisticAction(
@@ -220,11 +220,11 @@ export const itemTrashSuccess = createOptimisticAction(
             withCache,
             withNotification({
                 type: 'success',
-                key: getItemActionId(payload),
+                key: getItemEntityID(payload),
                 text: c('Info').t`Item moved to trash`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkTrashIntent = createAction(
@@ -270,7 +270,7 @@ export const itemBulkTrashSuccess = createAction(
 export const itemDeleteIntent = createOptimisticAction(
     'item::delete::intent',
     (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemDeleteFailure = createOptimisticAction(
@@ -281,7 +281,7 @@ export const itemDeleteFailure = createOptimisticAction(
             text: c('Error').t`Deleting item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemDeleteSuccess = createOptimisticAction(
@@ -294,7 +294,7 @@ export const itemDeleteSuccess = createOptimisticAction(
                 text: c('Info').t`Item permanently deleted`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkDeleteIntent = createAction(
@@ -344,7 +344,7 @@ export const itemsDeleteSync = createAction('items::delete::sync', (shareId: str
 export const itemRestoreIntent = createOptimisticAction(
     'item::restore::intent',
     (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemRestoreFailure = createOptimisticAction(
@@ -355,7 +355,7 @@ export const itemRestoreFailure = createOptimisticAction(
             text: c('Error').t`Restoring item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemRestoreSuccess = createOptimisticAction(
@@ -368,7 +368,7 @@ export const itemRestoreSuccess = createOptimisticAction(
                 text: c('Info').t`Item restored`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkRestoreIntent = createAction(
