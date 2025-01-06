@@ -1,6 +1,7 @@
 import type { Action, Reducer } from 'redux';
 
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
+import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import {
     aliasSyncPending,
@@ -117,17 +118,17 @@ export const addItems = (data: ItemRevision[]) => (state: ItemsByShareId) =>
 export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     [
         {
-            initiate: (action) => itemCreate.intent.match(action) && itemCreate.requestID(action.payload),
-            fail: (action) => itemCreate.failure.match(action) && itemCreate.requestID(action.payload),
+            initiate: (action) => itemCreate.intent.match(action) && getItemEntityID(action.payload),
+            fail: (action) => itemCreate.failure.match(action) && getItemEntityID(action.payload),
             revert: [
-                (action) => itemCreate.success.match(action) && itemCreate.requestID(action.payload),
+                (action) => itemCreate.success.match(action) && getItemEntityID(action.payload),
                 itemCreateDismiss.optimisticMatch,
             ],
         },
         {
-            initiate: (action) => itemEdit.intent.match(action) && itemEdit.requestID(action.payload),
-            fail: (action) => itemEdit.failure.match(action) && itemEdit.requestID(action.payload),
-            commit: (action) => itemEdit.success.match(action) && itemEdit.requestID(action.payload),
+            initiate: (action) => itemEdit.intent.match(action) && getItemEntityID(action.payload),
+            fail: (action) => itemEdit.failure.match(action) && getItemEntityID(action.payload),
+            commit: (action) => itemEdit.success.match(action) && getItemEntityID(action.payload),
             revert: itemEditDismiss.optimisticMatch,
         },
         {
