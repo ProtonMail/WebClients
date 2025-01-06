@@ -4,18 +4,18 @@ import type { LexicalEditor } from 'lexical'
 import {
   createBinding,
   initLocalState,
-  syncCursorPositions,
+  // syncCursorPositions,
   syncLexicalUpdateToYjs,
   syncYjsChangesToLexical,
 } from '@lexical/yjs'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
 import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
 
 import { TranslatedResult, type EditorInitializationConfig } from '@proton/docs-shared'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
+import { syncCursorPositions } from './syncCursorPositions'
 
 /**
  * Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
@@ -28,9 +28,10 @@ export function useYjsCollaboration(
   name: string,
   color: string,
   onLoadResult: EditorLoadResult,
+  cursorsContainer: HTMLElement | null,
   editorInitializationConfig?: EditorInitializationConfig,
   awarenessData = {},
-): [JSX.Element, Binding] {
+): Binding {
   const [doc] = useState(() => docMap.get(id))
   const didPostReadyEvent = useRef(false)
   const didInitializeEditor = useRef(false)
@@ -111,29 +112,7 @@ export function useYjsCollaboration(
     }
   }, [binding, color, docMap, editor, id, editorInitializationConfig, name, provider, onLoadResult, awarenessData])
 
-  const cursorsContainer = useMemo(() => {
-    let rootElementContainer: HTMLElement | null = null
+  binding.cursorsContainer = cursorsContainer
 
-    const onContainerScroll = () => {
-      syncCursorPositions(binding, provider)
-    }
-
-    const ref = (element: null | HTMLElement) => {
-      if (element) {
-        rootElementContainer = editor.getRootElement()!.parentElement
-        if (rootElementContainer) {
-          rootElementContainer.addEventListener('scroll', onContainerScroll)
-        }
-      } else {
-        if (rootElementContainer) {
-          rootElementContainer.removeEventListener('scroll', onContainerScroll)
-        }
-      }
-      binding.cursorsContainer = element
-    }
-
-    return createPortal(<div className="Lexical__cursorsContainer" ref={ref} />, document.body)
-  }, [binding, editor, provider])
-
-  return [cursorsContainer, binding]
+  return binding
 }
