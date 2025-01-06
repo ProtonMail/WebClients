@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     GenericError,
@@ -22,57 +23,35 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { closeDrawerFromChildApp } from '@proton/shared/lib/drawer/helpers';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarReactivateSection from './CalendarReactivateSection';
 import CalendarResetSection from './CalendarResetSection';
-
-interface FilteredCalendars {
-    calendarsToReset: VisualCalendar[];
-    calendarsToReactivate: VisualCalendar[];
-    calendarsToClean: VisualCalendar[];
-}
+import type { CalendarsToAct } from './helper';
 
 interface Props {
-    calendars: VisualCalendar[];
+    calendarsToAct: CalendarsToAct;
     unlockAll: boolean;
     onDone: () => void;
     hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
 
-const UnlockCalendarsModal = ({ calendars, unlockAll, hasReactivatedCalendarsRef, onDone }: Props) => {
+const UnlockCalendarsModal = ({
+    calendarsToAct: { calendarsToReset, calendarsToClean, calendarsToReactivate },
+    unlockAll,
+    hasReactivatedCalendarsRef,
+    onDone,
+}: Props) => {
     const api = useApi();
     const getCalendars = useGetCalendars();
+    const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const { parentApp } = useDrawer();
     const { APP_NAME: currentApp } = useConfig();
-
-    const { calendarsToReset, calendarsToReactivate, calendarsToClean } = calendars.reduce<FilteredCalendars>(
-        (acc, calendar) => {
-            const { Flags } = calendar;
-            if (hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED)) {
-                acc.calendarsToReset.push(calendar);
-            } else if (hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE)) {
-                acc.calendarsToReactivate.push(calendar);
-            } else if (hasBit(Flags, CALENDAR_FLAGS.LOST_ACCESS)) {
-                acc.calendarsToClean.push(calendar);
-            }
-
-            return acc;
-        },
-        {
-            calendarsToReset: [],
-            calendarsToReactivate: [],
-            calendarsToClean: [],
-        }
-    );
 
     const hasCalendarsToReset = calendarsToReset.length > 0;
     const hasCalendarsToReactivate = calendarsToReactivate.length > 0;
@@ -90,6 +69,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, hasReactivatedCalendarsRef
             process({
                 api,
                 getCalendars,
+                getCalendarBootstrap,
                 getAddressKeys,
                 getAddresses,
                 calendarsToReset,
@@ -170,7 +150,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, hasReactivatedCalendarsRef
                 </Modal>
             )}
             {renderResetModal && (
-                <Modal {...resetModal} size="large">
+                <Modal {...resetModal} size="large" disableCloseOnEscape={true}>
                     <ModalHeader
                         title={
                             unlockAll
@@ -220,7 +200,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, hasReactivatedCalendarsRef
                 </Prompt>
             )}
             {renderReactivateModal && (
-                <Modal {...reactivateModal}>
+                <Modal {...reactivateModal} disableCloseOnEscape={true}>
                     <ModalHeader title={c('Title').t`Reactivate calendar keys`} hasClose={false} />
                     <ModalContent>
                         <CalendarReactivateSection calendarsToReactivate={calendarsToReactivate} />

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
@@ -33,6 +34,7 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
     const getAddressKeys = useGetAddressKeys();
     const getHolidaysDirectory = useGetHolidaysDirectory();
     const getCalendars = useGetCalendars();
+    const getCalendarBootstrap = useGetCalendarBootstrap();
     const getCalendarUserSettings = useGetCalendarUserSettings();
 
     const normalApi = useApi();
@@ -95,10 +97,11 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
             }
 
             await call();
-            await Promise.all([
+            const [allCalendars] = await Promise.all([
                 getCalendars({ cache: CacheType.None }),
                 getCalendarUserSettings({ cache: CacheType.None }),
             ]);
+            await Promise.all(allCalendars.map((calendar) => getCalendarBootstrap(calendar.ID, CacheType.None)));
         };
         run()
             .then(() => {

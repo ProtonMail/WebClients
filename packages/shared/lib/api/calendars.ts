@@ -6,6 +6,8 @@ import type {
     CalendarUserSettings,
 } from '../interfaces/calendar';
 import {
+    CALENDAR_ORDER_BY,
+    CALENDAR_RETURN_FLAGS,
     type CalendarCreateArguments,
     type CalendarCreateOrUpdateEventBlobData,
     type CalendarEventsIDsQuery,
@@ -28,6 +30,7 @@ import type { Nullable, RequireOnly } from '../interfaces/utils';
 import type { PaginationParams } from './interface';
 
 const CALENDAR_V1 = 'calendar/v1';
+const CALENDAR_V2 = 'calendar/v2';
 
 export const queryLatestModelEventID = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/modelevents/latest`,
@@ -39,9 +42,10 @@ export const queryModelEvents = (calendarID: string, eventID: string) => ({
     method: 'get',
 });
 
-export const queryCalendars = () => ({
+export const queryCalendars = (OrderBy = CALENDAR_ORDER_BY.ASCENDING, ReturnFlags = CALENDAR_RETURN_FLAGS.YES) => ({
     url: `${CALENDAR_V1}`,
     method: 'get',
+    params: { OrderBy, ReturnFlags },
 });
 
 export const createCalendar = (data: CalendarCreateArguments) => ({
@@ -62,7 +66,7 @@ export const getCalendar = (calendarID: string) => ({
 });
 
 export const getFullCalendar = (calendarID: string) => ({
-    url: `${CALENDAR_V1}/${calendarID}/bootstrap`,
+    url: `${CALENDAR_V2}/${calendarID}/bootstrap`,
     method: 'get',
 });
 
