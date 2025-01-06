@@ -3,14 +3,22 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { type DecryptedLink, useDownloadScanFlag } from '../../../store';
+import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
+import { usePublicDetailsModal } from '../../modals/DetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
-import { DeleteButton, DownloadButton, OpenInDocsButton, PreviewButton, RenameButton } from './ContextMenuButtons';
+import {
+    DeleteButton,
+    DetailsButton,
+    DownloadButton,
+    OpenInDocsButton,
+    PreviewButton,
+    RenameButton,
+} from './ContextMenuButtons';
 import { usePublicLinksPermissions } from './utils/usePublicLinksPermissions';
 
 export function DrivePublicContextMenu({
-    canWrite,
     selectedLinks,
     anchorRef,
     isOpen,
@@ -22,13 +30,13 @@ export function DrivePublicContextMenu({
     children,
     isActiveLinkReadOnly,
 }: ContextMenuProps & {
-    canWrite: boolean;
     shareId: string;
     selectedLinks: DecryptedLink[];
     isActiveLinkReadOnly?: boolean;
     openPreview: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string) => void;
 }) {
+    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
     const { canRename, canDelete } = usePublicLinksPermissions(selectedLinks);
     const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
     const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
@@ -36,6 +44,7 @@ export function DrivePublicContextMenu({
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedLink.mimeType && isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
     const [publicRenameModal, showPublicRenameModal] = useRenameModal();
+    const [publicDetailsModal, showPublicDetailsModal] = usePublicDetailsModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const isDocument = isProtonDocument(selectedLink?.mimeType || '');
     const isDownloadScanEnabled = useDownloadScanFlag();
@@ -60,14 +69,20 @@ export function DrivePublicContextMenu({
                     <DownloadButton selectedBrowserItems={selectedLinks} close={close} virusScan />
                 )}
                 <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
-                {canWrite && isOnlyOneItem && !isActiveLinkReadOnly && canRename && (
+                {!viewOnly && isOnlyOneItem && (
                     <>
                         <ContextSeparator />
-                        <RenameButton showRenameModal={showPublicRenameModal} link={selectedLink} close={close} />
+                        {!isActiveLinkReadOnly && canRename && (
+                            <RenameButton showRenameModal={showPublicRenameModal} link={selectedLink} close={close} />
+                        )}
+                        <DetailsButton
+                            showPublicDetailsModal={showPublicDetailsModal}
+                            linkId={selectedLink.linkId}
+                            close={close}
+                        />
                     </>
                 )}
-
-                {canWrite && canDelete && (
+                {!viewOnly && canDelete && (
                     <>
                         <ContextSeparator />
                         <DeleteButton links={selectedLinks} close={close} showConfirmModal={showConfirmModal} />
@@ -76,6 +91,7 @@ export function DrivePublicContextMenu({
                 {children}
             </ItemContextMenu>
             {publicRenameModal}
+            {publicDetailsModal}
             {confirmModal}
         </>
     );

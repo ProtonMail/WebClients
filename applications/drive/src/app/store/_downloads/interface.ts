@@ -135,7 +135,7 @@ export type InitDownloadCallback = (
     list: LinkDownload[],
     eventCallbacks: DownloadEventCallbacks,
     log: LogCallback,
-    options?: { virusScan?: boolean }
+    options?: { virusScan?: boolean; token?: string }
 ) => DownloadControls;
 
 export enum TransferSignatureIssueStrategy {

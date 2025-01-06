@@ -56,15 +56,15 @@ const urlPassword = 'urlPassword';
 const bookmark = {
     encryptedUrlPassword: 'encryptedUrlPassword',
     createTime: 1724688201,
-    token: {
-        Token: 'B2DP1EEBRW',
-        linkID: mockedLinkId,
+    sharedUrlInfo: {
+        token: 'B2DP1EEBRW',
+        linkId: mockedLinkId,
     },
 };
 
 const mockedDecryptedLink = {
     linkId: mockedLinkId,
-    rootShareId: bookmark.token.Token,
+    rootShareId: bookmark.sharedUrlInfo.token,
 };
 const mockedShareId = 'contextShareId';
 
@@ -78,8 +78,8 @@ describe('useBookmarksLinksListing', () => {
         when(mockedDecryptPublicShareLink)
             .calledWith(expect.any(AbortSignal), {
                 urlPassword,
-                token: bookmark.token.Token,
-                shareUrlInfo: bookmark.token,
+                token: bookmark.sharedUrlInfo.token,
+                sharedUrlInfo: bookmark.sharedUrlInfo,
                 publicPage: false,
                 additionnalDecryptedLinkInfo: {
                     sharedOn: bookmark.createTime,
@@ -90,7 +90,7 @@ describe('useBookmarksLinksListing', () => {
 
         when(mockedGetDecryptLinksAndDecryptTheRest).calledWith(
             expect.any(AbortSignal),
-            bookmark.token.Token,
+            bookmark.sharedUrlInfo.token,
             expect.any(Function)
         );
         mockedGetDecryptLinksAndDecryptTheRest.mockReturnValueOnce({
@@ -105,7 +105,7 @@ describe('useBookmarksLinksListing', () => {
 
     it('Should load bookmarks links and cached them ', async () => {
         when(mockedGetAllShareLinks)
-            .calledWith(bookmark.token.Token)
+            .calledWith(bookmark.sharedUrlInfo.token)
             .mockReturnValueOnce([{ decrypted: mockedDecryptedLink, encrypted: mockedDecryptedLink }]);
 
         const { result } = renderHook(() => useBookmarksLinksListing());
@@ -118,9 +118,9 @@ describe('useBookmarksLinksListing', () => {
             isDecrypting: true,
         });
 
-        expect(result.current.getCachedBookmarkDetails(bookmark.token.Token)).toEqual({
+        expect(result.current.getCachedBookmarkDetails(bookmark.sharedUrlInfo.token)).toEqual({
             urlPassword,
-            token: bookmark.token.Token,
+            token: bookmark.sharedUrlInfo.token,
             createTime: bookmark.createTime,
         });
     });
@@ -131,18 +131,18 @@ describe('useBookmarksLinksListing', () => {
             await result.current.loadLinksBookmarks(new AbortController().signal, mockedShareId);
         });
 
-        expect(result.current.getCachedBookmarkDetails(bookmark.token.Token)).toEqual({
+        expect(result.current.getCachedBookmarkDetails(bookmark.sharedUrlInfo.token)).toEqual({
             urlPassword,
-            token: bookmark.token.Token,
+            token: bookmark.sharedUrlInfo.token,
             createTime: bookmark.createTime,
         });
 
         act(() => {
-            result.current.removeCachedBookmarkLink(bookmark.token.Token, mockedLinkId);
+            result.current.removeCachedBookmarkLink(bookmark.sharedUrlInfo.token, mockedLinkId);
         });
 
-        expect(mockedRemoveLinkForSharedWithMe).toHaveBeenCalledWith(bookmark.token.Token, mockedLinkId);
+        expect(mockedRemoveLinkForSharedWithMe).toHaveBeenCalledWith(bookmark.sharedUrlInfo.token, mockedLinkId);
 
-        expect(result.current.getCachedBookmarkDetails(bookmark.token.Token)).toEqual(undefined);
+        expect(result.current.getCachedBookmarkDetails(bookmark.sharedUrlInfo.token)).toEqual(undefined);
     });
 });
