@@ -37,7 +37,7 @@ export const useSpotlightListener = () => {
         void sendMessage.onSuccess(popupMessage({ type: WorkerMessageType.SPOTLIGHT_REQUEST }), async ({ message }) => {
             await wait(200);
             if (message === SpotlightMessage.PENDING_SHARE_ACCESS) setPendingShareAccess(true);
-            setSpotlight(message ? (definitions[message] ?? null) : null);
+            else setSpotlight(message ? (definitions[message] ?? null) : null);
         });
 
         port.onMessage.addListener(handleMessage);
