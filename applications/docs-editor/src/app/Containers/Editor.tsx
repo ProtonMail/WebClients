@@ -2,7 +2,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from '../Lib/InitialEditorConfig'
-import { useCallback, useMemo, useRef } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
 import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import type {
@@ -107,6 +107,8 @@ export function Editor({
   logger,
 }: Props) {
   const editorRef = useRef<LexicalEditor | null>(null)
+
+  const [collabCursorsContainer, setCollabCursorsContainer] = useState<HTMLDivElement | null>(null)
 
   const { userName } = useSyncedState()
 
@@ -225,6 +227,7 @@ export function Editor({
                 isSuggestionMode={isSuggestionMode}
                 data-testid={systemMode === EditorSystemMode.Revision ? 'main-editor-revision' : 'main-editor'}
               />
+              <div className="Lexical__cursorsContainer" ref={setCollabCursorsContainer} />
             </div>
           }
           placeholder={null}
@@ -249,6 +252,7 @@ export function Editor({
             providerFactory={yjsWebsockProvider!}
             shouldBootstrap={ShouldBootstrap}
             onLoadResult={onEditorLoadResult}
+            cursorsContainer={collabCursorsContainer}
             editorInitializationConfig={editorInitializationConfig}
             additionalAwarenessData={awarenessData}
           />

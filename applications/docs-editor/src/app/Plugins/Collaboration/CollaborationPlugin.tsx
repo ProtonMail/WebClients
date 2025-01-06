@@ -3,6 +3,7 @@ import type { Doc } from 'yjs'
 import { useCollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import type { Provider } from '@lexical/yjs'
+import type { ReactNode } from 'react'
 import { useEffect, useMemo } from 'react'
 
 import { useYjsCollaboration } from './useYjsCollaboration'
@@ -21,6 +22,7 @@ type Props = {
   ) => Provider
   shouldBootstrap: boolean
   onLoadResult: EditorLoadResult
+  cursorsContainer: HTMLElement | null
   editorInitializationConfig: EditorInitializationConfig | undefined
   additionalAwarenessData?: object
 }
@@ -29,9 +31,10 @@ export function CollaborationPlugin({
   id,
   providerFactory,
   onLoadResult,
+  cursorsContainer,
   editorInitializationConfig,
   additionalAwarenessData,
-}: Props): JSX.Element {
+}: Props): ReactNode {
   const collabContext = useCollaborationContext()
 
   const { yjsDocMap, name, color } = collabContext
@@ -52,7 +55,7 @@ export function CollaborationPlugin({
 
   const provider = useMemo(() => providerFactory(id, yjsDocMap), [id, providerFactory, yjsDocMap])
 
-  const [cursors, binding] = useYjsCollaboration(
+  const binding = useYjsCollaboration(
     editor,
     id,
     provider,
@@ -60,6 +63,7 @@ export function CollaborationPlugin({
     name,
     color,
     onLoadResult,
+    cursorsContainer,
     editorInitializationConfig,
     additionalAwarenessData,
   )
@@ -70,5 +74,5 @@ export function CollaborationPlugin({
   useYjsFocusTracking(editor, provider, name, color)
   useScrollToUserCursorOnEvent(binding)
 
-  return cursors
+  return null
 }
