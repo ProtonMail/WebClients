@@ -62,7 +62,7 @@ interface Props {
     wrapperRef?: React.RefObject<HTMLDivElement>;
     onOpenQuickReply?: (index?: number) => void;
     onReadMessage?: (messageID?: string) => void;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 export interface MessageViewRef {

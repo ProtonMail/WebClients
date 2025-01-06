@@ -44,7 +44,7 @@ interface MoveAllParams {
     destinationLabelID: string;
     telemetryEvent: TelemetryMailSelectAllEvents;
     sourceAction: SOURCE_ACTION;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 interface SelectAllParams {
