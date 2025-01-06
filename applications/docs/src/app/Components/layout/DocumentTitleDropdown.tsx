@@ -34,6 +34,7 @@ import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
 import { useWordCount } from '../WordCount/useWordCount'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { useExportToPDFModal } from '../Modals/ExportToPDFModal/ExportToPDFModal'
+import * as config from '../../config'
 
 const DocumentTitleDropdown = ({
   authenticatedController,
@@ -59,6 +60,7 @@ const DocumentTitleDropdown = ({
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
+  const [showVersionNumber, setShowVersionNumber] = useState(false)
 
   const [isRenaming, setIsRenaming] = useState(false)
   const [renameInputValue, setRenameInputValue] = useState(title)
@@ -67,6 +69,29 @@ const DocumentTitleDropdown = ({
   }, [title])
 
   useAppTitle(title)
+
+  useEffect(() => {
+    // When the user holds down the shift key, show the version number. When they release, hide it.
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.shiftKey) {
+        setShowVersionNumber(true)
+      }
+    }
+
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (!event.shiftKey) {
+        setShowVersionNumber(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keyup', handleKeyUp)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
+    }
+  }, [])
 
   const confirmRename = useCallback(() => {
     if (!authenticatedController) {
@@ -477,6 +502,7 @@ const DocumentTitleDropdown = ({
           >
             <Icon name="info-circle" className="color-weak mr-2" />
             {c('Action').t`Help`}
+            {showVersionNumber && <span className="ml-auto text-[--text-hint]">v{config.APP_VERSION}</span>}
           </DropdownMenuButton>
 
           <DropdownMenuButton
