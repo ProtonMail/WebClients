@@ -50,7 +50,7 @@ interface MessageHotkeysContext {
     conversationMode: boolean;
     mailSettings: MailSettings;
     messageRef: React.RefObject<HTMLElement>;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 interface MessageHotkeysHandlers {

@@ -44,7 +44,7 @@ interface Props {
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
     showAttachmentThumbnails?: boolean;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const ItemRowLayout = ({
