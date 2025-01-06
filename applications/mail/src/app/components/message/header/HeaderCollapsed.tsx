@@ -37,7 +37,7 @@ interface Props {
     onExpand: () => void;
     breakpoints: Breakpoints;
     conversationIndex?: number;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const HeaderCollapsed = ({

@@ -82,7 +82,7 @@ interface Props {
     toolbar?: ReactNode | undefined;
     onCheckAll: (check: boolean) => void;
     listContainerRef: RefObject<HTMLDivElement>;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const List = (

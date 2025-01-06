@@ -58,7 +58,7 @@ interface Props {
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
     parentMessageRef: React.RefObject<HTMLElement>;
     conversationIndex?: number;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const HeaderExpanded = ({

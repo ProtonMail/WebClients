@@ -18,7 +18,7 @@ import type { MessageStateWithData } from '../../../store/messages/messagesTypes
 
 interface Props {
     message: MessageStateWithData;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const ExtraSnoozedMessage = ({ message }: Props, currentFolder: string) => {

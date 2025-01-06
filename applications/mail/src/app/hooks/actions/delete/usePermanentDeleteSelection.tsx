@@ -9,12 +9,8 @@ import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type {
-    SOURCE_ACTION} from 'proton-mail/components/list/useListTelemetry';
-import useListTelemetry, {
-    ACTION_TYPE,
-    numberSelectionElements,
-} from 'proton-mail/components/list/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
+import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -221,7 +217,11 @@ export const usePermanentDeleteSelection = (labelID: string) => {
         </Prompt>
     );
 
-    const handleDeleteSelection = async (selectedIDs: string[], sourceAction: SOURCE_ACTION, currentFolder: string) => {
+    const handleDeleteSelection = async (
+        selectedIDs: string[],
+        sourceAction: SOURCE_ACTION,
+        currentFolder?: string
+    ) => {
         setSelectedIDs(selectedIDs);
         sendSimpleActionReport({
             actionType: ACTION_TYPE.DELETE_PERMANENTLY,

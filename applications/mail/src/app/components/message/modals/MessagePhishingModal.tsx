@@ -16,7 +16,7 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props extends ModalProps {
     message: MessageState;
-    currentFolder: string;
+    currentFolder?: string;
     onBack: () => void;
 }
 

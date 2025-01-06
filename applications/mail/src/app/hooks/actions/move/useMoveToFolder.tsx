@@ -29,7 +29,7 @@ export interface MoveParams {
     selectAll?: boolean;
     onCheckAll?: (check: boolean) => void;
     sourceAction: SOURCE_ACTION;
-    currentFolder: string;
+    currentFolder?: string;
     percentUnread?: number;
 }
 

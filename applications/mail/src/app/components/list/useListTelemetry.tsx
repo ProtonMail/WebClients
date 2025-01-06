@@ -1,6 +1,7 @@
 import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
@@ -74,7 +75,7 @@ export const getActionFromLabel = (labelID: string) => {
         case '16':
             return ACTION_TYPE.SNOOZE;
         default:
-            throw new Error('Missing label ID for action');
+            traceInitiativeError('list-actions-telemetry', 'Missing label ID for action');
     }
 };
 
@@ -120,7 +121,7 @@ export const folderLocation = (labelID: string, labels?: Label[], folders?: Fold
         case '16':
             return 'SNOOZED';
         default:
-            throw new Error('Folder location not defined.');
+            traceInitiativeError('list-actions-telemetry', 'Folder location not defined.');
     }
 };
 
@@ -169,10 +170,10 @@ const useListTelemetry = () => {
         destination,
         percentUnread,
     }: {
-        actionType: ACTION_TYPE;
+        actionType?: ACTION_TYPE;
         actionLocation: SOURCE_ACTION;
         numberMessage: SELECTED_RANGE;
-        folderLocation: string;
+        folderLocation?: string;
         destination?: string;
         percentUnread?: number;
     }) => {

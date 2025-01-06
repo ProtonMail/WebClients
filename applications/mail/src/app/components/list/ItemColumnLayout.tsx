@@ -48,7 +48,7 @@ interface Props {
     attachmentsMetadata?: AttachmentsMetadata[];
     userSettings?: UserSettings;
     showAttachmentThumbnails?: boolean;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const ItemColumnLayout = ({

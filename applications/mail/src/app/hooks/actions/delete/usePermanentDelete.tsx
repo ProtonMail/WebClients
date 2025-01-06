@@ -9,7 +9,7 @@ export const usePermanentDelete = (labelID: string) => {
     const { handleDeleteAll, deleteAllModal } = usePermanentDeleteAll(labelID);
 
     const handleDelete = useCallback(
-        async (selectedIDs: string[], sourceAction: SOURCE_ACTION, currentFolder: string, selectAll?: boolean) => {
+        async (selectedIDs: string[], sourceAction: SOURCE_ACTION, currentFolder?: string, selectAll?: boolean) => {
             if (selectAll) {
                 await handleDeleteAll(selectedIDs, sourceAction, currentFolder);
             } else {
