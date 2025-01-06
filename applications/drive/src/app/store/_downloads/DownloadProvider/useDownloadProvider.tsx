@@ -21,7 +21,7 @@ import {
 import type { SignatureIssues } from '../../_links';
 import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
-import FileSaver from '../fileSaver/fileSaver';
+import fileSaver from '../fileSaver/fileSaver';
 import type { InitDownloadCallback, LinkDownload } from '../interface';
 import type { UpdateFilter } from './interface';
 import useDownloadContainsDocument from './useDownloadContainsDocument';
@@ -97,7 +97,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
             const buffer = nextDownload.links.flatMap(({ buffer }) => buffer);
             const stream = bufferToStream(buffer as Uint8Array[]);
             void preventLeave(
-                FileSaver.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
+                fileSaver.instance.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
             ).catch(logError);
 
             queue.updateState(nextDownload.id, TransferState.Done);
@@ -127,7 +127,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
                     control.updateLinkSizes(nextDownload.id, linkSizes);
 
-                    if (FileSaver.isFileTooBig(size)) {
+                    if (fileSaver.instance.isFileTooBig(size)) {
                         void showDownloadIsTooBigModal({ onCancel: () => control.cancelDownloads(nextDownload.id) });
                     }
                 },
