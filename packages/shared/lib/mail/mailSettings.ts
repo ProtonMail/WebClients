@@ -169,11 +169,6 @@ export enum NEXT_MESSAGE_ON_MOVE {
     ENABLED = 2, // enabled by the user
 }
 
-export enum REMOVE_IMAGE_METADATA {
-    DISABLED = 0,
-    ENABLED = 1,
-}
-
 export const DEFAULT_MAILSETTINGS: MailSettings = {
     DisplayName: '',
     Signature: '',
@@ -227,6 +222,6 @@ export const DEFAULT_MAILSETTINGS: MailSettings = {
     ShowMIMEType: MIME_TYPES.DEFAULT,
     PageSize: MAIL_PAGE_SIZE.FIFTY,
     NextMessageOnMove: NEXT_MESSAGE_ON_MOVE.DEFAULT,
-    RemoveImageMetadata: REMOVE_IMAGE_METADATA.DISABLED,
+    RemoveImageMetadata: false,
     KT: KEY_TRANSPARENCY_SETTING.DISABLED,
 };

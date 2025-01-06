@@ -12,7 +12,6 @@ import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/Pr
 import useLoading from '@proton/hooks/useLoading';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateRemoveImageMetadata } from '@proton/shared/lib/api/mailSettings';
-import type { REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import MobileSection from '../components/MobileSection';
@@ -37,7 +36,7 @@ const PrivacySecuritySettings = ({
     const loading = loadingMailSettings;
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
-    const handleRemoveImageMetadata = async (value: REMOVE_IMAGE_METADATA) => {
+    const handleRemoveImageMetadata = async (value: boolean) => {
         await api(updateRemoveImageMetadata(value));
         await call();
         notifyPreferenceSaved();
