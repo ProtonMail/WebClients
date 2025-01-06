@@ -5,6 +5,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
 import type { TransferMeta } from '../../../components/TransferManager/transfer';
+import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 
 let workerWakeupInterval: ReturnType<typeof setInterval>;
 
@@ -17,11 +18,9 @@ let workerWakeupInterval: ReturnType<typeof setInterval>;
  */
 export const isUnsupported = () => {
     /* TODO: To be removed after test DRVWEB-4375 */
-    if (typeof window !== 'undefined') {
-        const isSWForSafariEnabled = 'isSWForSafariEnabled' in window && window.isSWForSafariEnabled;
-        if (isSWForSafariEnabled) {
-            return !('serviceWorker' in navigator);
-        }
+    const isSWForSafariEnabled = unleashVanillaStore.getState().isEnabled('DriveWebDownloadSWModernBrowsers');
+    if (isSWForSafariEnabled) {
+        return !('serviceWorker' in navigator);
     }
     // Original
     return !('serviceWorker' in navigator) || isSafari() || isIos();
