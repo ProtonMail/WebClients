@@ -8,7 +8,6 @@ import { AliasSync } from '@proton/pass/components/Onboarding/AliasSync';
 import { UserRenewal } from '@proton/pass/components/Onboarding/UserRenewal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { SpotlightMessage } from '@proton/pass/types';
@@ -18,23 +17,12 @@ import noop from '@proton/utils/noop';
 
 export const useSpotlightMessages = () => {
     const { onLink, openSettings, promptForPermissions, getRatingURL, onForceUpdate } = usePassCore();
-    const { setPendingShareAccess } = useSpotlight();
     const upsell = useUpselling();
 
     return useMemo<Partial<Record<SpotlightMessage, SpotlightMessageDefinition>>>(
         () =>
             toMap(
                 <SpotlightMessageDefinition[]>[
-                    {
-                        type: SpotlightMessage.PENDING_SHARE_ACCESS,
-                        mode: 'default',
-                        id: 'welcome',
-                        hidden: true,
-                        title: c('Title').t`Pending access to the shared data`,
-                        message: c('Info').t`For security reasons, your access needs to be confirmed`,
-                        weak: true,
-                        onClose: () => setPendingShareAccess(false),
-                    },
                     {
                         type: SpotlightMessage.TRIAL,
                         mode: 'default',
