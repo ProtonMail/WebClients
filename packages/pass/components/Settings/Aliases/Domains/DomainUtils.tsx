@@ -114,7 +114,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
             content: (
                 <>
                     <div>{c('Description')
-                        .t`To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.`}</div>
+                        .t`To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.`}</div>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: TXT`}</div>
                         <div>{c('Info').t`Domain: ${domainPath} or @`}</div>
@@ -133,7 +133,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
                     <div>{c('Description')
                         .t`Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.`}</div>
                     <div>{c('Description')
-                        .t`Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.`}</div>
+                        .t`Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.`}</div>
                     <Card className="border my-3 flex flex-column gap-3">
                         <div>{c('Info').t`Record: MX`}</div>
                         <div>{c('Info').t`Domain: ${domainPath} or @`}</div>
@@ -202,7 +202,7 @@ export const getDNSSections = (domain: CustomDomain): CustomDomainDNSSection[] =
                     </Alert>
                     <Alert className="mb-3" type="success">
                         <div className="mb-3">{c('Description')
-                            .t`If you are using CloudFlare, please make sure to not select the Proxy option.`}</div>
+                            .t`If you are using Cloudflare, please make sure to not select the Proxy option.`}</div>
                         <img src={proxyScreenshot} alt="Image of Cloudflare Proxy option" />
                     </Alert>
                 </>
