@@ -46,7 +46,7 @@ const useSnooze = () => {
         elements: Element[],
         snooze: boolean,
         sourceAction: SOURCE_ACTION,
-        currentFolder: string,
+        currentFolder?: string,
         data?: SnoozeProps
     ) => {
         const conversationIDs = elements.map(({ ID }) => ID);
@@ -86,11 +86,11 @@ const useSnooze = () => {
         }
     };
 
-    const snooze = async (data: SnoozeProps, sourceAction: SOURCE_ACTION, currentFolder: string) => {
+    const snooze = async (data: SnoozeProps, sourceAction: SOURCE_ACTION, currentFolder?: string) => {
         await proceedSnoozeUnsnooze(data.elements, true, sourceAction, currentFolder, data);
     };
 
-    const unsnooze = async (elements: Element[], sourceAction: SOURCE_ACTION, currentFolder: string) => {
+    const unsnooze = async (elements: Element[], sourceAction: SOURCE_ACTION, currentFolder?: string) => {
         await proceedSnoozeUnsnooze(elements, false, sourceAction, currentFolder);
     };
 

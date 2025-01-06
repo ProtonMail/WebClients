@@ -73,7 +73,7 @@ interface Props {
     onDelete: (sourceAction: SOURCE_ACTION) => void;
     breakpoints: Breakpoints;
     onCheckAll?: (check: boolean) => void;
-    currentFolder: string;
+    currentFolder?: string;
 }
 
 const MoreDropdown = ({
