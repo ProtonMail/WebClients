@@ -24,7 +24,7 @@
         "@proton/pack": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
-        "@types/react": "^18.3.17",
+        "@types/react": "^18.3.18",
         "@types/react-dom": "^18.3.5",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
@@ -51,7 +51,7 @@
         "@storybook/react": "^6.5.16",
         "@storybook/source-loader": "^6.5.16",
         "babel-loader": "^9.2.1",
-        "eslint-plugin-storybook": "^0.11.1",
+        "eslint-plugin-storybook": "^0.11.2",
         "netlify-cli": "17.38.1"
     }
 }
