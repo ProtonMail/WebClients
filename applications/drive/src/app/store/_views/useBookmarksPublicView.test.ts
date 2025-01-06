@@ -90,7 +90,7 @@ describe('useBookmarksPublicView', () => {
         mockedUsePublicSessionUser.mockReturnValueOnce({ user: 'user', UID } as any);
         mockedListBookmarks.mockResolvedValueOnce([
             {
-                token: { Token: mockedToken },
+                sharedUrlInfo: { token: mockedToken },
             },
         ]);
 

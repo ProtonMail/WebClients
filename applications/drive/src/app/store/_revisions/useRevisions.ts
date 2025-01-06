@@ -4,11 +4,12 @@ import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHel
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveCrypto } from '../_crypto';
 import { useDownload } from '../_downloads';
-import { useLink } from '../_links';
+import { useLink, useLinksListing } from '../_links';
 import { decryptExtendedAttributes } from '../_links/extendedAttributes';
 
 const useRevisions = (shareId: string, linkId: string) => {
-    const { checkFirstBlockSignature } = useDownload();
+    const { getCachedChildren, loadChildren } = useLinksListing();
+    const { checkFirstBlockSignature } = useDownload({ loadChildren, getCachedChildren });
     const { getVerificationKey } = useDriveCrypto();
     const { getLinkPrivateKey } = useLink();
 

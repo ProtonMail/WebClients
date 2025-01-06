@@ -25,12 +25,12 @@ import './FileBrowser.scss';
 interface Props {
     folderName: string;
     items: PublicLink[];
-    canWrite: boolean;
     onItemOpen: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string) => void;
     isLoading?: boolean;
     sortParams?: SortParams<SortField>;
     setSorting?: (params: SortParams<SortField>) => void;
+    canWrite: boolean;
 }
 
 export function SharedFileBrowser({
@@ -92,7 +92,6 @@ export function SharedFileBrowser({
             ) : (
                 <>
                     <DrivePublicContextMenu
-                        canWrite={canWrite}
                         isActiveLinkReadOnly={false}
                         shareId={token}
                         selectedLinks={selectedItems}

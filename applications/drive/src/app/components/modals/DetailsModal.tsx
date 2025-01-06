@@ -22,10 +22,14 @@ import { useLoading } from '@proton/hooks';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
-import type { DriveFileRevision, SignatureIssues } from '../../store';
+import { type DriveFileRevision, type SignatureIssues, useLinkPath } from '../../store';
 import { useLinkDetailsView } from '../../store';
+import { usePublicSession } from '../../store/_api';
+import { useDownload } from '../../store/_downloads';
+import { useLinksListing, usePublicLinksListing } from '../../store/_links';
 import type { ParsedExtendedAttributes } from '../../store/_links/extendedAttributes';
 import useRevisions from '../../store/_revisions/useRevisions';
+import { useLinkPathPublic } from '../../store/_views/useLinkPath';
 import { formatAccessCount } from '../../utils/formatters';
 import { Cells } from '../FileBrowser';
 import SignatureAlert from '../SignatureAlert';
@@ -33,8 +37,23 @@ import ModalContentLoader from './ModalContentLoader';
 
 const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell } = Cells;
 
-interface Props {
+interface BaseDetailsModalProps {
     shareId: string;
+    linkId: string;
+    checkFirstBlockSignature: ReturnType<typeof useDownload>['checkFirstBlockSignature'];
+    getPath: ReturnType<typeof useLinkPath>['getPath'] | ReturnType<typeof useLinkPathPublic>['getPath'];
+    anonymousView?: boolean;
+    onClose?: () => void;
+}
+
+interface DetailsModalProps {
+    shareId: string;
+    linkId: string;
+    onClose?: () => void;
+}
+
+interface PublicDetailsModalProps {
+    token: string;
     linkId: string;
     onClose?: () => void;
 }
@@ -53,6 +72,228 @@ interface RevisionDetailsModalProps {
     name: string;
 }
 
+interface DetailsModalContentProps {
+    shareId: string;
+    isFile: boolean;
+    name: string;
+    size: number;
+    parentLinkId?: string;
+    mimeType?: string;
+
+    isSignatureIssuesLoading: boolean;
+    signatureIssues?: SignatureIssues;
+    signatureIssuesEmail?: string;
+    signatureNetworkError?: boolean;
+
+    lastEditedEmail?: string;
+    ownerEmail?: string;
+
+    isNumberOfAccessesLoading?: boolean;
+    numberOfAccesses?: number;
+
+    photoContentHash?: string;
+    originalSize?: number;
+    sha1Digest?: string;
+    createTime?: number;
+    fileModifyTime?: number;
+    corruptedLink?: boolean;
+
+    isAnonymous?: boolean;
+    isSharedWithMeLink?: boolean;
+    isExpired?: boolean;
+    isShared?: boolean;
+
+    // Revision xattr are loaded separatly so we have a loader for that
+    isXattrsLoading?: boolean;
+
+    // Only use on private app details modal
+    getPath?: ReturnType<typeof useLinkPath>['getPath'];
+
+    // Temporary disable useUser inside UserNameCell + signature check
+    anonymousView?: boolean;
+}
+
+const getOriginalSize = ({ originalSize, isXattrsLoading }: { originalSize?: number; isXattrsLoading?: boolean }) => {
+    if (originalSize) {
+        return humanSize({ bytes: originalSize });
+    }
+    if (isXattrsLoading) {
+        return <EllipsisLoader />;
+    }
+    return '-';
+};
+
+const getFileModifyTime = ({
+    fileModifyTime,
+    corruptedLink,
+    isXattrsLoading,
+}: {
+    fileModifyTime?: number;
+    corruptedLink?: boolean;
+    isXattrsLoading?: boolean;
+}) => {
+    if (fileModifyTime && !corruptedLink) {
+        return <TimeCell time={fileModifyTime} />;
+    }
+    if (isXattrsLoading) {
+        return <EllipsisLoader />;
+    }
+    return '-';
+};
+
+function getTitle(isFile?: boolean) {
+    if (isFile === undefined) {
+        return c('Title').t`Item details`;
+    }
+    return isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
+}
+
+const DetailsModalContent = ({
+    shareId,
+    isFile,
+    name,
+    size,
+    parentLinkId,
+    mimeType,
+    isSignatureIssuesLoading,
+    signatureIssues,
+    signatureIssuesEmail,
+    signatureNetworkError,
+    lastEditedEmail,
+    ownerEmail,
+    isNumberOfAccessesLoading = false,
+    numberOfAccesses,
+    photoContentHash,
+    originalSize,
+    sha1Digest,
+    createTime,
+    fileModifyTime,
+    corruptedLink,
+    isAnonymous,
+    isSharedWithMeLink = false,
+    isExpired,
+    isShared,
+    isXattrsLoading,
+    getPath,
+    anonymousView,
+}: DetailsModalContentProps) => {
+    return (
+        <ModalTwoContent>
+            {!anonymousView && (
+                <SignatureAlert
+                    loading={isSignatureIssuesLoading}
+                    signatureIssues={signatureIssues}
+                    signatureNetworkError={signatureNetworkError}
+                    signatureEmail={signatureIssuesEmail}
+                    isAnonymous={isAnonymous}
+                    corruptedLink={corruptedLink}
+                    isFile={isFile}
+                    name={name}
+                    className="mb-4"
+                />
+            )}
+            <DetailsRow label={c('Title').t`Name`}>
+                <FileNameDisplay text={name} />
+            </DetailsRow>
+            {isSharedWithMeLink && (
+                <DetailsRow label={c('Title').t`Location`}>
+                    <FileNameDisplay text={`/${c('Info').t`Shared with me`}`} />
+                </DetailsRow>
+            )}
+            {ownerEmail && !anonymousView && (
+                <DetailsRow label={c('Title').t`Uploaded by`}>
+                    <UserNameCell signatureEmail={ownerEmail} />
+                </DetailsRow>
+            )}
+            {parentLinkId && !isSharedWithMeLink && getPath && (
+                <DetailsRow label={c('Title').t`Location`}>
+                    <LocationCell shareId={shareId} parentLinkId={parentLinkId} getPath={getPath} />
+                </DetailsRow>
+            )}
+            {!!createTime && (
+                <DetailsRow label={c('Title').t`Uploaded`}>
+                    <TimeCell time={createTime} />
+                </DetailsRow>
+            )}
+            {!!fileModifyTime && (
+                <DetailsRow label={c('Title').t`Modified`}>
+                    {getFileModifyTime({ fileModifyTime, isXattrsLoading, corruptedLink })}
+                </DetailsRow>
+            )}
+            {isFile && (
+                <>
+                    {mimeType && (
+                        <>
+                            <DetailsRow label={c('Title').t`Type`}>
+                                <DescriptiveTypeCell mimeType={mimeType} isFile={isFile} />
+                            </DetailsRow>
+                            <DetailsRow label={c('Title').t`MIME type`}>
+                                <MimeTypeCell mimeType={mimeType} />
+                            </DetailsRow>
+                        </>
+                    )}
+                    <DetailsRow
+                        label={
+                            <>
+                                {c('Title').t`Size`}
+                                <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
+                                    <Icon name="info-circle" size={3.5} alt={getSizeTooltipMessage()} />
+                                </Tooltip>
+                            </>
+                        }
+                        dataTestId="file-size"
+                    >
+                        <span title={bytesSize(size)}>{humanSize({ bytes: size })}</span>
+                    </DetailsRow>
+                    <DetailsRow label={c('Title').t`Original size`}>
+                        {getOriginalSize({ originalSize, isXattrsLoading })}
+                    </DetailsRow>
+                </>
+            )}
+            {lastEditedEmail && (
+                <DetailsRow label={c('Title').t`Last edited by`} dataTestId={'drive:last-edited-by'}>
+                    {lastEditedEmail}
+                </DetailsRow>
+            )}
+            <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
+                {isShared ? c('Info').t`Yes` : c('Info').t`No`}
+            </DetailsRow>
+            {isExpired && (
+                <DetailsRow label={c('Title').t`Public shared link status`} dataTestId={'drive:public-sharing-status'}>
+                    {isExpired ? c('Info').t`Expired` : c('Info').t`Available`}
+                </DetailsRow>
+            )}
+
+            {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
+                <DetailsRow
+                    label={
+                        <>
+                            {c('Title').t`# of downloads`}
+                            <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
+                                <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
+                            </Tooltip>
+                        </>
+                    }
+                >
+                    {formatAccessCount(numberOfAccesses)}
+                </DetailsRow>
+            )}
+            {sha1Digest && (
+                // This should not be visible in the UI, but needed for e2e
+                <span data-testid="drive:file-digest" className="hidden" aria-hidden="true">
+                    {sha1Digest}
+                </span>
+            )}
+            {photoContentHash && (
+                // This should not be visible in the UI, but needed for e2e
+                <span data-testid="drive:photo-contentHash" className="hidden" aria-hidden="true">
+                    {photoContentHash}
+                </span>
+            )}
+        </ModalTwoContent>
+    );
+};
+
 export function RevisionDetailsModal({
     shareId,
     linkId,
@@ -65,11 +306,11 @@ export function RevisionDetailsModal({
     const [xattrs, setXattrs] = useState<ParsedExtendedAttributes>();
     const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
     const [signatureNetworkError, setSignatureNetworkError] = useState<boolean>(false);
-    const [isLoading, withIsLoading] = useLoading();
-    const [isSignatureLoading, withSignatureLoading] = useLoading();
+    const [isXattrsLoading, withXattrsLoading] = useLoading();
+    const [isSignatureIssuesLoading, withSignatureIssuesLoading] = useLoading();
     useEffect(() => {
         const ac = new AbortController();
-        void withIsLoading(
+        void withXattrsLoading(
             getRevisionDecryptedXattrs(ac.signal, revision.xAttr, revision.signatureEmail).then((decryptedXattrs) => {
                 if (!decryptedXattrs) {
                     return;
@@ -89,7 +330,7 @@ export function RevisionDetailsModal({
 
     useEffect(() => {
         const ac = new AbortController();
-        void withSignatureLoading(
+        void withSignatureIssuesLoading(
             checkRevisionSignature(ac.signal, revision.id).then((blocksSignatureIssues) => {
                 if (signatureIssues) {
                     setSignatureIssues({ ...signatureIssues, ...blocksSignatureIssues });
@@ -104,83 +345,28 @@ export function RevisionDetailsModal({
             ac.abort();
         };
     }, [revision.id]);
-    const renderModalState = () => {
-        return (
-            <ModalTwoContent>
-                <SignatureAlert
-                    loading={isSignatureLoading}
-                    signatureIssues={signatureIssues}
-                    signatureNetworkError={signatureNetworkError}
-                    signatureEmail={revision.signatureEmail}
-                    isAnonymous={!revision.signatureEmail}
-                    isFile
-                    name={name}
-                    className="mb-4"
-                />
-                <DetailsRow label={c('Title').t`Name`}>
-                    <FileNameDisplay text={name} />
-                </DetailsRow>
-                {revision.signatureEmail && (
-                    <DetailsRow label={c('Title').t`Uploaded by`}>
-                        <span className="text-pre">{revision.signatureEmail}</span>
-                    </DetailsRow>
-                )}
-                <DetailsRow label={c('Title').t`Uploaded`}>
-                    <TimeCell time={revision.createTime} />
-                </DetailsRow>
-                <DetailsRow label={c('Title').t`Modified`}>
-                    {xattrs?.Common.ModificationTime ? (
-                        <TimeCell time={xattrs.Common.ModificationTime} />
-                    ) : isLoading ? (
-                        <EllipsisLoader />
-                    ) : (
-                        '-'
-                    )}
-                </DetailsRow>
-                <DetailsRow
-                    label={
-                        <>
-                            {c('Title').t`Size`}
-                            <Tooltip
-                                title={c('Info')
-                                    .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
-                                className="ml-1 mb-1"
-                            >
-                                <Icon
-                                    name="info-circle"
-                                    size={3.5}
-                                    alt={c('Info')
-                                        .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
-                                />
-                            </Tooltip>
-                        </>
-                    }
-                >
-                    <span title={bytesSize(revision.size)}>{humanSize({ bytes: revision.size })}</span>
-                </DetailsRow>
-                <DetailsRow label={c('Title').t`Original size`}>
-                    {xattrs?.Common.Size ? (
-                        <span title={bytesSize(xattrs?.Common.Size)}>{humanSize({ bytes: xattrs?.Common.Size })}</span>
-                    ) : isLoading ? (
-                        <EllipsisLoader />
-                    ) : (
-                        '-'
-                    )}
-                </DetailsRow>
-                {xattrs?.Common.Digests && (
-                    // This should not be visible in the UI, but needed for e2e
-                    <span data-testid="drive:file-digest" className="hidden" aria-hidden="true">
-                        {xattrs.Common.Digests.SHA1}
-                    </span>
-                )}
-            </ModalTwoContent>
-        );
-    };
 
     return (
         <ModalTwo onClose={onClose} size="large" {...modalProps}>
             <ModalTwoHeader title={c('Title').t`Version details`} />
-            {renderModalState()}
+            <DetailsModalContent
+                isSignatureIssuesLoading={isSignatureIssuesLoading}
+                signatureIssues={signatureIssues}
+                signatureNetworkError={signatureNetworkError}
+                signatureIssuesEmail={revision.signatureEmail}
+                name={name}
+                isFile
+                isAnonymous={!revision.signatureEmail}
+                createTime={revision.createTime}
+                size={revision.size}
+                fileModifyTime={xattrs?.Common.ModificationTime}
+                originalSize={xattrs?.Common.Size}
+                ownerEmail={revision.signatureEmail}
+                shareId={shareId}
+                photoContentHash={revision.photo?.contentHash}
+                sha1Digest={xattrs?.Common.Digests?.SHA1}
+                isXattrsLoading={isXattrsLoading}
+            />
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
@@ -188,7 +374,15 @@ export function RevisionDetailsModal({
     );
 }
 
-export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
+export function BaseDetailsModal({
+    shareId,
+    linkId,
+    onClose,
+    checkFirstBlockSignature,
+    getPath,
+    anonymousView,
+    ...modalProps
+}: BaseDetailsModalProps & ModalStateProps) {
     const {
         isLinkLoading,
         isSignatureIssuesLoading,
@@ -199,7 +393,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
         signatureIssues,
         signatureNetworkError,
         numberOfAccesses,
-    } = useLinkDetailsView(shareId, linkId);
+    } = useLinkDetailsView(shareId, linkId, checkFirstBlockSignature);
 
     const renderModalState = () => {
         if (isLinkLoading) {
@@ -215,116 +409,34 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
         }
 
         return (
-            <ModalTwoContent>
-                <SignatureAlert
-                    loading={isSignatureIssuesLoading}
-                    signatureIssues={signatureIssues}
-                    signatureNetworkError={signatureNetworkError}
-                    signatureEmail={link.isFile ? link.activeRevision?.signatureEmail : link.signatureEmail}
-                    isAnonymous={link.isAnonymous}
-                    corruptedLink={link.corruptedLink}
-                    isFile={link.isFile}
-                    name={link.name}
-                    className="mb-4"
-                />
-                <DetailsRow label={c('Title').t`Name`}>
-                    <FileNameDisplay text={link.name} />
-                </DetailsRow>
-                {isSharedWithMeLink && (
-                    <DetailsRow label={c('Title').t`Location`}>
-                        <FileNameDisplay text={`/${c('Info').t`Shared with me`}`} />
-                    </DetailsRow>
-                )}
-                {link.signatureEmail && (
-                    <DetailsRow label={c('Title').t`Uploaded by`}>
-                        <UserNameCell signatureEmail={link.signatureEmail} />
-                    </DetailsRow>
-                )}
-                {link.parentLinkId && !isSharedWithMeLink && (
-                    <DetailsRow label={c('Title').t`Location`}>
-                        <LocationCell shareId={shareId} parentLinkId={link.parentLinkId} />
-                    </DetailsRow>
-                )}
-                <DetailsRow label={c('Title').t`Uploaded`}>
-                    <TimeCell time={link.createTime} />
-                </DetailsRow>
-                <DetailsRow label={c('Title').t`Modified`}>
-                    {link.corruptedLink ? '-' : <TimeCell time={link.fileModifyTime} />}
-                </DetailsRow>
-                {link.isFile && (
-                    <>
-                        <DetailsRow label={c('Title').t`Type`}>
-                            <DescriptiveTypeCell mimeType={link.mimeType} isFile={link.isFile} />
-                        </DetailsRow>
-                        <DetailsRow label={c('Title').t`MIME type`}>
-                            <MimeTypeCell mimeType={link.mimeType} />
-                        </DetailsRow>
-                        <DetailsRow
-                            label={
-                                <>
-                                    {c('Title').t`Size`}
-                                    <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
-                                        <Icon name="info-circle" size={3.5} alt={getSizeTooltipMessage()} />
-                                    </Tooltip>
-                                </>
-                            }
-                            dataTestId="file-size"
-                        >
-                            <span title={bytesSize(link.size)}>{humanSize({ bytes: link.size })}</span>
-                        </DetailsRow>
-                        {link.originalSize !== undefined && (
-                            <DetailsRow label={c('Title').t`Original size`}>
-                                <span title={bytesSize(link.originalSize)}>
-                                    {humanSize({ bytes: link.originalSize })}
-                                </span>
-                            </DetailsRow>
-                        )}
-                    </>
-                )}
-                {link.activeRevision?.signatureEmail && (
-                    <DetailsRow label={c('Title').t`Last edited by`} dataTestId={'drive:last-edited-by'}>
-                        {link.activeRevision?.signatureEmail}
-                    </DetailsRow>
-                )}
-                <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
-                    {link.isShared ? c('Info').t`Yes` : c('Info').t`No`}
-                </DetailsRow>
-                {link.sharingDetails?.shareUrl && (
-                    <DetailsRow
-                        label={c('Title').t`Public shared link status`}
-                        dataTestId={'drive:public-sharing-status'}
-                    >
-                        {link.sharingDetails.shareUrl.isExpired ? c('Info').t`Expired` : c('Info').t`Available`}
-                    </DetailsRow>
-                )}
-
-                {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
-                    <DetailsRow
-                        label={
-                            <>
-                                {c('Title').t`# of downloads`}
-                                <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
-                                    <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
-                                </Tooltip>
-                            </>
-                        }
-                    >
-                        {formatAccessCount(numberOfAccesses)}
-                    </DetailsRow>
-                )}
-                {link.digests && (
-                    // This should not be visible in the UI, but needed for e2e
-                    <span data-testid="drive:file-digest" className="hidden" aria-hidden="true">
-                        {link.digests.sha1}
-                    </span>
-                )}
-                {link.activeRevision?.photo?.contentHash && (
-                    // This should not be visible in the UI, but needed for e2e
-                    <span data-testid="drive:photo-contentHash" className="hidden" aria-hidden="true">
-                        {link.activeRevision.photo.contentHash}
-                    </span>
-                )}
-            </ModalTwoContent>
+            <DetailsModalContent
+                isSharedWithMeLink={isSharedWithMeLink}
+                isSignatureIssuesLoading={isSignatureIssuesLoading}
+                isNumberOfAccessesLoading={isNumberOfAccessesLoading}
+                signatureIssues={signatureIssues}
+                signatureNetworkError={signatureNetworkError}
+                numberOfAccesses={numberOfAccesses}
+                shareId={shareId}
+                lastEditedEmail={link.activeRevision?.signatureEmail}
+                ownerEmail={link.signatureEmail}
+                signatureIssuesEmail={link.isFile ? link.activeRevision?.signatureEmail : link.signatureEmail}
+                isAnonymous={link.isAnonymous}
+                corruptedLink={link.corruptedLink}
+                isFile={link.isFile}
+                name={link.name}
+                parentLinkId={link.parentLinkId}
+                createTime={link.createTime}
+                fileModifyTime={link.fileModifyTime}
+                mimeType={link.mimeType}
+                size={link.size}
+                originalSize={link.originalSize}
+                isExpired={link.sharingDetails?.shareUrl?.isExpired}
+                isShared={link.isShared}
+                sha1Digest={link.digests?.sha1}
+                photoContentHash={link.activeRevision?.photo?.contentHash}
+                getPath={getPath}
+                anonymousView={anonymousView}
+            />
         );
     };
 
@@ -339,6 +451,36 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
     );
 }
 
+export function DetailsModal(props: DetailsModalProps & ModalStateProps) {
+    const { loadChildren, getCachedChildren } = useLinksListing();
+    const { checkFirstBlockSignature } = useDownload({
+        loadChildren,
+        getCachedChildren,
+    });
+    const { getPath } = useLinkPath();
+    return <BaseDetailsModal getPath={getPath} checkFirstBlockSignature={checkFirstBlockSignature} {...props} />;
+}
+
+export function PublicDetailsModal({ token, ...props }: PublicDetailsModalProps & ModalStateProps) {
+    const { loadChildren, getCachedChildren } = usePublicLinksListing();
+    const { request, user } = usePublicSession();
+    const { checkFirstBlockSignature } = useDownload({
+        loadChildren,
+        getCachedChildren,
+        customDebouncedRequest: request,
+    });
+    const { getPath } = useLinkPathPublic();
+    return (
+        <BaseDetailsModal
+            shareId={token}
+            getPath={getPath}
+            checkFirstBlockSignature={checkFirstBlockSignature}
+            anonymousView={!user}
+            {...props}
+        />
+    );
+}
+
 function DetailsRow({ label, title, children, dataTestId }: RowProps) {
     return (
         <Row title={title}>
@@ -350,16 +492,14 @@ function DetailsRow({ label, title, children, dataTestId }: RowProps) {
     );
 }
 
-function getTitle(isFile?: boolean) {
-    if (isFile === undefined) {
-        return c('Title').t`Item details`;
-    }
-    return isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
-}
-
 export const useDetailsModal = () => {
     return useModalTwoStatic(DetailsModal);
 };
+
+export const usePublicDetailsModal = () => {
+    return useModalTwoStatic(PublicDetailsModal);
+};
+
 export const useRevisionDetailsModal = () => {
     return useModalTwoStatic(RevisionDetailsModal);
 };

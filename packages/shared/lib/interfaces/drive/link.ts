@@ -1,6 +1,5 @@
 import type { SORT_DIRECTION } from '../../constants';
-import type { FileRevisionState, Thumbnail } from './file';
-import type { Photo } from './photos';
+import type { DriveFileRevisionPayload } from './file';
 
 export enum LinkType {
     FOLDER = 1,
@@ -13,7 +12,7 @@ export enum LinkState {
     TRASHED = 2,
 }
 
-export type SharedUrlInfo = {
+export type LinkSharedUrlInfo = {
     CreateTime: number;
     ExpireTime: number | null;
     ShareUrlID: string;
@@ -22,29 +21,14 @@ export type SharedUrlInfo = {
 };
 
 export type SharingDetails = {
-    ShareUrl: SharedUrlInfo | null;
+    ShareUrl: LinkSharedUrlInfo | null;
     ShareID: string;
 };
 
 interface FileProperties {
     ContentKeyPacket: string;
     ContentKeyPacketSignature: string;
-    ActiveRevision: {
-        ID: string;
-        CreateTime: number;
-        Size: number;
-        ManifestSignature: string;
-        SignatureEmail: string;
-        State: FileRevisionState;
-        Thumbnail: number;
-        ThumbnailURLInfo: {
-            BareURL: string;
-            Token: string;
-            URL: string;
-        };
-        Thumbnails: Thumbnail[];
-        Photo: Photo | null;
-    } | null;
+    ActiveRevision: DriveFileRevisionPayload | null;
 }
 
 interface FolderProperties {
@@ -86,7 +70,7 @@ interface DriveLink {
     Shared: number;
     UrlsExpired: boolean;
     ShareIDs: string[];
-    ShareUrls: SharedUrlInfo[];
+    ShareUrls: LinkSharedUrlInfo[];
     SharingDetails: SharingDetails | null;
     // XAttr has following JSON structure encrypted by node key:
     // {
@@ -152,7 +136,7 @@ export interface MoveLink {
 export type DriveSectionSortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size' | 'Name'>;
 export type SharedLinksSectionSortKeys =
     | keyof Pick<DriveLink, 'Name'>
-    | keyof Pick<SharedUrlInfo, 'CreateTime' | 'ExpireTime'>;
+    | keyof Pick<LinkSharedUrlInfo, 'CreateTime' | 'ExpireTime'>;
 
 export type AllSortKeys = DriveSectionSortKeys | SharedLinksSectionSortKeys;
 
