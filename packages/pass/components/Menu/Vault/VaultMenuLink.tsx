@@ -4,7 +4,9 @@ import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import type { UpsellRef } from '@proton/pass/constants';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -17,11 +19,16 @@ type Props = {
     label?: string;
     onAction?: () => void;
     icon?: IconName;
+    upsellRef?: UpsellRef;
 };
 
-export const VaultMenuLink = memo(({ to, count, dense, selected, label, icon, onAction = noop }: Props) => {
+export const VaultMenuLink = memo(({ to, count, dense, selected, label, icon, upsellRef, onAction = noop }: Props) => {
     const navigate = useNavigate();
-    const onSelect = pipe(() => navigate(getLocalPath(to)), onAction);
+    const upsell = useUpselling();
+
+    const onSelect = upsellRef
+        ? () => upsell({ type: 'pass-plus', upsellRef })
+        : pipe(() => navigate(getLocalPath(to)), onAction);
 
     return (
         <DropdownMenuButton
