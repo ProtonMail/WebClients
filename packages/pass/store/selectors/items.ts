@@ -30,6 +30,7 @@ import type {
     SelectItemsOptions,
     SelectOTPAutofillCandidateOptions,
 } from '@proton/pass/lib/search/types';
+import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import type { State } from '@proton/pass/store/types';
@@ -139,6 +140,9 @@ export const selectOptimisticItemState = (shareId: string, itemId: string) =>
             };
         }
     );
+
+export const selectOptimisticFailedAction = (entityID: string) =>
+    createSelector([selectItemsState], selectFailedAction(entityID));
 
 export const selectItemWithOptimistic = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
     createSelector(
