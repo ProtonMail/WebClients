@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
-        "@noble/hashes": "^1.6.1",
+        "@noble/hashes": "^1.7.0",
         "@openpgp/web-stream-tools": "^0.0.13",
         "@proton/components": "workspace:^",
         "@proton/crypto": "workspace:^",
@@ -24,7 +24,7 @@
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "client-zip": "^2.4.6",
-        "exifreader": "^4.25.0",
+        "exifreader": "^4.26.0",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
