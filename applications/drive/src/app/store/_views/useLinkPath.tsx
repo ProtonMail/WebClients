@@ -122,7 +122,21 @@ export function useLinkPathPublic() {
         [getCachedLink]
     );
 
+    const getPath = useCallback(
+        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<string> => {
+            return traverseLinksToRoot(abortSignal, shareId, linkId)
+                .then((path) => {
+                    return `/${path.map(({ name }) => name).join('/')}`;
+                })
+                .catch((err) => {
+                    return err.message || '';
+                });
+        },
+        [traverseLinksToRoot]
+    );
+
     return {
         traverseLinksToRoot,
+        getPath,
     };
 }

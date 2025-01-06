@@ -3,9 +3,8 @@ import { c } from 'ttag';
 import { type useConfirmActionModal, useNotifications } from '@proton/components';
 
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
-import { usePublicLinkActions, usePublicLinksListing } from '../_links';
+import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
 import useLinksState from '../_links/useLinksState';
-import { usePublicLinksActions } from '../_links/usePublicLinksActions';
 import { usePublicSessionUser } from '../_user';
 import { useErrorHandler } from '../_utils';
 import useListNotifications from './useListNotifications';
@@ -27,6 +26,7 @@ export function usePublicActions() {
     const publicLink = usePublicLinkActions();
     const publicLinks = usePublicLinksActions();
     const { createDeletedPublicItemsNotifications } = useListNotifications();
+
     const createFolder = async (
         abortSignal: AbortSignal,
         token: string,

@@ -9,7 +9,7 @@ import type {
     ShareInvitationDetailsPayload,
     ShareInvitationPayload,
 } from '@proton/shared/lib/interfaces/drive/invitation';
-import type { LinkMeta, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
+import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
@@ -38,7 +38,7 @@ import { ThumbnailType } from '../_uploads/media';
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
 type LinkMetaWithShareURL = LinkMeta & {
-    ShareUrls: (SharedUrlInfo & {
+    ShareUrls: (LinkSharedUrlInfo & {
         ShareURL?: ShareURLPayload;
     })[];
 };

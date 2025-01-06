@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { FilePreview, NavigationControl, useActiveBreakpoint } from '@proton/components';
-import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import {
@@ -17,8 +16,10 @@ import { useDriveDocsPublicSharingFF } from '../../../store/_documents';
 import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
+import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import TransferManager from '../../TransferManager/TransferManager';
+import { usePublicDetailsModal } from '../../modals/DetailsModal';
 import { useReportAbuseModal } from '../../modals/ReportAbuseModal/ReportAbuseModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ReportAbuseButton from '../Layout/ReportAbuseButton';
@@ -31,14 +32,13 @@ interface Props {
     token: string;
     rootLink: DecryptedLink;
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
-    permissions: SHARE_URL_PERMISSIONS;
-    hideSaveToDrive?: boolean;
-    isPartialView?: boolean;
+    hideSaveToDrive: boolean;
+    isPartialView: boolean;
     openInDocs?: (linkId: string) => void;
 }
 
 interface PreviewContainerProps {
-    shareId: string;
+    token: string;
     linkId: DecryptedLink['linkId'];
     sortParams: SortParams;
     onClose: () => void;
@@ -48,7 +48,7 @@ interface PreviewContainerProps {
 }
 
 function SharedPagePreviewContainer({
-    shareId,
+    token,
     linkId,
     sortParams,
     onClose,
@@ -63,42 +63,55 @@ function SharedPagePreviewContainer({
         contents,
         navigation,
         link: loadedLink,
-    } = usePublicFileView(shareId, linkId, true, sortParams);
+    } = usePublicFileView(token, linkId, true, sortParams);
 
     const rootRef = useRef<HTMLDivElement>(null);
     const isDocument = isProtonDocument(loadedLink?.mimeType || '');
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
+    const [publicDetailsModal, showPublicDetailsModal] = usePublicDetailsModal();
+    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
 
     return (
-        <FilePreview
-            colorUi="standard"
-            isPublic
-            isMetaLoading={isLinkLoading}
-            isLoading={isContentLoading}
-            error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
-            fileName={loadedLink?.name}
-            mimeType={loadedLink?.mimeType}
-            imgThumbnailUrl={loadedLink?.cachedThumbnailUrl}
-            fileSize={loadedLink?.size}
-            contents={contents}
-            ref={rootRef}
-            navigationControls={
-                loadedLink &&
-                navigation && (
-                    <NavigationControl
-                        current={navigation.current}
-                        total={navigation.total}
-                        rootRef={rootRef}
-                        onPrev={() => onNavigate(navigation.prevLinkId)}
-                        onNext={() => onNavigate(navigation.nextLinkId)}
-                    />
-                )
-            }
-            onClose={onClose}
-            onDownload={isDocument ? undefined : onDownload}
-            isPublicDocsAvailable={isDocsPublicSharingEnabled}
-            onOpenInDocs={openInDocs && loadedLink && isDocument ? () => openInDocs(loadedLink.linkId) : undefined}
-        />
+        <>
+            <FilePreview
+                colorUi="standard"
+                isPublic
+                isMetaLoading={isLinkLoading}
+                isLoading={isContentLoading}
+                error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
+                fileName={loadedLink?.name}
+                mimeType={loadedLink?.mimeType}
+                imgThumbnailUrl={loadedLink?.cachedThumbnailUrl}
+                fileSize={loadedLink?.size}
+                contents={contents}
+                ref={rootRef}
+                navigationControls={
+                    loadedLink &&
+                    navigation && (
+                        <NavigationControl
+                            current={navigation.current}
+                            total={navigation.total}
+                            rootRef={rootRef}
+                            onPrev={() => onNavigate(navigation.prevLinkId)}
+                            onNext={() => onNavigate(navigation.nextLinkId)}
+                        />
+                    )
+                }
+                onClose={onClose}
+                onDownload={isDocument ? undefined : onDownload}
+                onDetails={() =>
+                    !viewOnly &&
+                    loadedLink &&
+                    showPublicDetailsModal({
+                        token,
+                        linkId: loadedLink?.linkId,
+                    })
+                }
+                isPublicDocsAvailable={isDocsPublicSharingEnabled}
+                onOpenInDocs={openInDocs && loadedLink && isDocument ? () => openInDocs(loadedLink.linkId) : undefined}
+            />
+            {publicDetailsModal}
+        </>
     );
 }
 
@@ -106,9 +119,8 @@ export default function SharedFolder({
     bookmarksPublicView,
     token,
     rootLink,
-    permissions,
-    hideSaveToDrive = false,
-    isPartialView = false,
+    hideSaveToDrive,
+    isPartialView,
     openInDocs,
 }: Props) {
     const [linkId, setLinkId] = useState(rootLink.linkId);
@@ -116,6 +128,7 @@ export default function SharedFolder({
     const { downloads, getDownloadsLinksProgresses, download, cancelDownloads } = useDownload();
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
+    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -244,14 +257,11 @@ export default function SharedFolder({
           }, 0)
         : undefined;
 
-    const canWrite = useMemo(() => getCanWrite(permissions), [permissions]);
-
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
             <SharedPageLayout isPartialView={isPartialView}>
                 <SharedPageContentHeader
                     token={token}
-                    canWrite={canWrite}
                     linkId={linkId}
                     onNavigate={setLinkId}
                     size={totalSize}
@@ -266,7 +276,7 @@ export default function SharedFolder({
                 />
                 {shouldRenderPreviewContainer && (
                     <SharedPagePreviewContainer
-                        shareId={token}
+                        token={token}
                         linkId={displayedLink.linkId}
                         sortParams={folderView.sortParams}
                         onNavigate={handleNavigationPreview}
@@ -287,14 +297,14 @@ export default function SharedFolder({
                     shareId={token}
                     linkId={linkId}
                     className="flex flex-column flex-nowrap flex-1"
-                    disabled={!canWrite}
+                    disabled={viewOnly}
                 >
                     <SharedFileBrowser
                         {...folderView}
-                        canWrite={canWrite}
                         onItemOpen={onItemOpen}
                         openInDocs={openInDocs}
                         items={fileBrowserItems}
+                        canWrite={!viewOnly}
                     />
                 </UploadDragDrop>
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
