@@ -3,23 +3,34 @@ import { startCalendarEventListener, startHolidaysDirectoryListener } from '@pro
 import { startAccountSecurityListener } from '@proton/components';
 import { mailSettingsHeartbeatListener, startSharedListening } from '@proton/redux-shared-store';
 
-import type { AppStartListening, MailState } from './store';
+import { getMailPersistedState } from './persistReducer';
+import type { AppStartListening } from './store';
+
+export interface StartListeningFeatures {
+    accountPersist?: boolean;
+    accountSessions?: boolean;
+    accountSecurity?: boolean;
+}
 
 export const start = ({
     startListening,
-    persistTransformer,
+    features,
 }: {
     startListening: AppStartListening;
-    persistTransformer?: (state: MailState) => any;
+    features?: StartListeningFeatures;
 }) => {
     startSharedListening(startListening);
     startCalendarEventListener(startListening);
     startHolidaysDirectoryListener(startListening);
-    startAccountSecurityListener(startListening);
+    if (features?.accountSecurity) {
+        startAccountSecurityListener(startListening);
+    }
     startListeningToPlanNameChange(startListening);
     mailSettingsHeartbeatListener(startListening);
-    if (persistTransformer) {
-        startPersistListener(startListening, persistTransformer);
+    if (features?.accountPersist) {
+        startPersistListener(startListening, getMailPersistedState);
     }
-    startAccountSessionsListener(startListening);
+    if (features?.accountSessions) {
+        startAccountSessionsListener(startListening);
+    }
 };
