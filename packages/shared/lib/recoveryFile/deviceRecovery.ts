@@ -145,7 +145,6 @@ export const attemptDeviceRecovery = async ({
         user,
         userKeys,
         addresses,
-        addressesKeys,
         keyReactivationRecords,
         keyPassword,
         onReactivation: (_, result) => {
