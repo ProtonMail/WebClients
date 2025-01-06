@@ -280,7 +280,7 @@ export default function SharedFolder({
                     className="fixed bottom-0 right-0 z-up w-full items-end max-w-custom"
                     style={{ '--max-w-custom': '50em' }}
                 >
-                    <TransferManager onVirusReport={handleVirusReport} />
+                    <TransferManager onVirusReport={handleVirusReport} theme="standard" />
                 </div>
 
                 <UploadDragDrop
