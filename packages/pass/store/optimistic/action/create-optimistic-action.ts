@@ -21,14 +21,14 @@ export const createOptimisticAction = <
 >(
     type: T,
     prepare: PA,
-    optimisticIdFactory: (action: OptimisticAction) => string
+    entityIDFactory: (action: OptimisticAction) => string
 ) => {
     const actionCreator = createAction(type, prepare) as PayloadActionCreator<ReturnType<PA>['payload'], T, PA> & {
         optimisticMatch: (action: Action) => OptimisticMatcherResult;
     };
 
     actionCreator.optimisticMatch = (action: Action) =>
-        actionCreator.match(action) && optimisticIdFactory(action as OptimisticAction);
+        actionCreator.match(action) && entityIDFactory(action as OptimisticAction);
 
     return actionCreator;
 };
