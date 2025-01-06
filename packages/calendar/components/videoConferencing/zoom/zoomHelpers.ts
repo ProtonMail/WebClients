@@ -110,7 +110,7 @@ ${SEPARATOR_PROTON_EVENTS}`;
     return description ? `${description}${zoomDetails}` : zoomDetails;
 };
 
-const zoomInformationPattern = new RegExp(`${SEPARATOR_PROTON_EVENTS}[\\s\\S]*?${SEPARATOR_PROTON_EVENTS}`, 'g');
+const zoomInformationPattern = new RegExp(`\n?${SEPARATOR_PROTON_EVENTS}[\\s\\S]*?${SEPARATOR_PROTON_EVENTS}`, 'g');
 export const removeZoomInfoFromDescription = (description: string): string => {
     return description.replace(zoomInformationPattern, '');
 };
