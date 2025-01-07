@@ -1,5 +1,4 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { AccountActions } from 'proton-pass-web/app/Views/Sidebar/AccountActions';
 import { AuthActions } from 'proton-pass-web/app/Views/Sidebar/AuthActions';
@@ -10,38 +9,25 @@ import { c } from 'ttag';
 import { Button, Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
-import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
+import { SharedMenu } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { VaultMenuLink } from '@proton/pass/components/Menu/Vault/VaultMenuLink';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { RouteMatch } from '@proton/pass/components/Navigation/RouteMatch';
-import {
-    getInitialFilters,
-    getLocalPath,
-    getMonitorRoute,
-    getSecureLinksRoute,
-} from '@proton/pass/components/Navigation/routing';
+import { getMonitorRoute } from '@proton/pass/components/Navigation/routing';
 import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
-import { selectPassPlan } from '@proton/pass/store/selectors/user';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { MenuActions } from './MenuActions';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
-    const navigate = useNavigate();
-    const passPlan = useSelector(selectPassPlan);
-    const free = passPlan === UserPassPlan.FREE;
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
             <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
-                <div className="flex mx-3 gap-5">
+                <div className="flex mx-3 gap-5 pb-2">
                     <div className="flex flex-column gap-2 w-full">
                         <Button
                             icon
@@ -58,41 +44,14 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         <VaultMenu />
                     </div>
 
-                    <div className="flex flex-column gap-2 w-full">
-                        <div className="mx-2">{c('Label').t`Shared`}</div>
-                        <div className="flex">
-                            <VaultMenuLink
-                                upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
-                                label={c('Label').t`Shared with me`}
-                                count={0}
-                                selected={false}
-                                to="shared-with-me"
-                                icon="user-arrow-left"
-                            />
-
-                            <VaultMenuLink
-                                upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
-                                label={c('Label').t`Shared by me`}
-                                count={0}
-                                selected={false}
-                                to="shared-by-me"
-                                icon="user-arrow-right"
-                            />
-                        </div>
-                    </div>
+                    <SharedMenu />
                 </div>
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-2">
-                <OnboardingActions />
+                <hr className="mb-2 mx-4" aria-hidden="true" />
 
-                <RouteMatch
-                    path={getSecureLinksRoute()}
-                    component={SecureLinkButton}
-                    className="rounded"
-                    parentClassName="mx-3"
-                    onClick={() => navigate(getLocalPath('secure-links'), { filters: getInitialFilters() })}
-                />
+                <OnboardingActions />
 
                 <RouteMatch path={getMonitorRoute()} component={MonitorButton} />
 
