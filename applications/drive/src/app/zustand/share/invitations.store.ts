@@ -5,27 +5,95 @@ import type { InvitationsState } from './types';
 
 export const useInvitationsStore = create<InvitationsState>()(
     devtools(
-        (set) => ({
-            invitations: [],
-            externalInvitations: [],
+        (set, get) => ({
+            _sharesInvitations: new Map(),
+            _sharesExternalInvitations: new Map(),
 
-            setInvitations: (invitations) => set({ invitations }, false, 'invitations/set'),
+            setShareInvitations: (shareId, invitations) =>
+                set(
+                    (state) => ({
+                        _sharesInvitations: new Map(state._sharesInvitations).set(shareId, invitations),
+                    }),
+                    false,
+                    'invitations/set'
+                ),
 
-            removeInvitations: (invitations) => set({ invitations }, false, 'invitations/remove'),
+            getShareInvitations: (shareId) => {
+                const state = get();
+                return state._sharesInvitations.get(shareId) || [];
+            },
 
-            updateInvitationsPermissions: (invitations) => set({ invitations }, false, 'invitations/updatePermissions'),
+            removeShareInvitations: (shareId, invitations) =>
+                set(
+                    (state) => ({
+                        _sharesInvitations: new Map(state._sharesInvitations).set(shareId, invitations),
+                    }),
+                    false,
+                    'invitations/remove'
+                ),
 
-            setExternalInvitations: (externalInvitations) =>
-                set({ externalInvitations }, false, 'externalInvitations/set'),
+            updateShareInvitationsPermissions: (shareId, invitations) =>
+                set(
+                    (state) => ({
+                        _sharesInvitations: new Map(state._sharesInvitations).set(shareId, invitations),
+                    }),
+                    false,
+                    'invitations/updatePermissions'
+                ),
 
-            removeExternalInvitations: (externalInvitations) =>
-                set({ externalInvitations }, false, 'externalInvitations/remove'),
+            setShareExternalInvitations: (shareId, externalInvitations) =>
+                set(
+                    (state) => ({
+                        _sharesExternalInvitations: new Map(state._sharesExternalInvitations).set(
+                            shareId,
+                            externalInvitations
+                        ),
+                    }),
+                    false,
+                    'externalInvitations/set'
+                ),
 
-            updateExternalInvitations: (externalInvitations) =>
-                set({ externalInvitations }, false, 'externalInvitations/updatePermissions'),
+            getShareExternalInvitations: (shareId: string) => {
+                const state = get();
+                return state._sharesExternalInvitations.get(shareId) || [];
+            },
 
-            addMultipleInvitations: (invitations, externalInvitations) =>
-                set({ invitations, externalInvitations }, false, 'invitations/addMultiple'),
+            removeShareExternalInvitations: (shareId, externalInvitations) =>
+                set(
+                    (state) => ({
+                        _sharesExternalInvitations: new Map(state._sharesExternalInvitations).set(
+                            shareId,
+                            externalInvitations
+                        ),
+                    }),
+                    false,
+                    'externalInvitations/remove'
+                ),
+
+            updateShareExternalInvitations: (shareId: string, externalInvitations) =>
+                set(
+                    (state) => ({
+                        _sharesExternalInvitations: new Map(state._sharesExternalInvitations).set(
+                            shareId,
+                            externalInvitations
+                        ),
+                    }),
+                    false,
+                    'externalInvitations/updatePermissions'
+                ),
+
+            addMultipleShareInvitations: (shareId, invitations, externalInvitations) =>
+                set(
+                    (state) => ({
+                        _sharesInvitations: new Map(state._sharesInvitations).set(shareId, invitations),
+                        _sharesExternalInvitations: new Map(state._sharesExternalInvitations).set(
+                            shareId,
+                            externalInvitations
+                        ),
+                    }),
+                    false,
+                    'invitations/addMultiple'
+                ),
         }),
         { name: 'InvitationsStore' }
     )
