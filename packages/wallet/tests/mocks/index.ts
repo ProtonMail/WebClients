@@ -15,3 +15,4 @@ export * from './useWalletApi';
 export * from './useWalletDispatch';
 export * from './useWalletSettings';
 export * from './useBitcoinAddressPool';
+export * from './useFlag';

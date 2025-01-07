@@ -101,6 +101,9 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
 
         const account = await import('../utils/account');
 
+        // Mark [0, LastUsedIndex] as used to prevent address reuse
+        await wasmAccount.markReceiveAddressesUsedTo(0, walletAccount.LastUsedIndex + 1);
+
         // Fill bitcoin address pool
         const addressesPoolPayload = await account.generateBitcoinAddressesPayloadToFillPool({
             addressesToCreate: walletAccount.PoolSize,
