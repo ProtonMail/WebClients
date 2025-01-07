@@ -7,7 +7,7 @@ if (typeof process.env.WEBPACK_PARALLELISM !== 'undefined') {
     parallel = parseInt(process.env.WEBPACK_PARALLELISM, 10);
 }
 
-const EXCLUDED_CHUNKS = new Set(['recovery-kit', 'crypto-worker', 'drive-worker']);
+const EXCLUDED_CHUNKS = new Set(['web-llm', 'llm-worker', 'recovery-kit', 'crypto-worker', 'drive-worker']);
 
 const fastSplit = {
     minSize: 20000,
