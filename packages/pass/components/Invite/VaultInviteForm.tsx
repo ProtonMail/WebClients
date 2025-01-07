@@ -13,7 +13,7 @@ import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
 import { type InviteAddressValidator } from '@proton/pass/hooks/useValidateInviteAddress';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
-import { selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
+import { selectAccessSharedWithEmails } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
 import { ShareRole, type VaultInviteFormValues } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -46,7 +46,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
     const shareId = form.values.withVaultCreation ? '' : form.values.shareId;
 
     const [autocomplete, setAutocomplete] = useState('');
-    const vaultSharedWith = useSelector(selectVaultSharedWithEmails(shareId));
+    const vaultSharedWith = useSelector(selectAccessSharedWithEmails(shareId));
 
     const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
 

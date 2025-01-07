@@ -12,7 +12,7 @@ import {
     inviteBatchCreateSuccess,
     sharedVaultCreated,
 } from '@proton/pass/store/actions';
-import { selectItem, selectPassPlan, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
+import { selectAccessSharedWithEmails, selectItem, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemMoveDTO, ItemRevision, Maybe, Share } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
@@ -56,7 +56,7 @@ function* createInviteWorker(
         const itemId: Maybe<string> = payload.shareType === ShareType.Item ? payload.itemId : undefined;
 
         /** Filter out members that may be already invited or members of the vault */
-        const vaultSharedWith: Set<string> = yield select(selectVaultSharedWithEmails(shareId));
+        const vaultSharedWith: Set<string> = yield select(selectAccessSharedWithEmails(shareId));
         const members = payload.members.filter(({ value }) => !vaultSharedWith.has(value.email));
 
         /** resolve each member's public key: if the member is not a
@@ -95,7 +95,7 @@ function* createInviteWorker(
             });
         }
 
-        yield put(inviteBatchCreateSuccess(request.id, { shareId }, members.length - failed.length));
+        yield put(inviteBatchCreateSuccess(request.id, { shareId, itemId, count: members.length - failed.length }));
     } catch (error: unknown) {
         /** Fine-tune the error message when a B2B user
          * reaches the 100 members per vault hard-limit */

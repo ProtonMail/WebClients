@@ -12,10 +12,11 @@ import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvi
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { UpsellRef } from '@proton/pass/constants';
 import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
+import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
 import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
-import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { selectAccess, selectPassPlan } from '@proton/pass/store/selectors';
 import type { UniqueItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -65,6 +66,7 @@ export const VaultMenuItem = memo(
 
         const upsell = useUpselling();
         const plan = useSelector(selectPassPlan);
+        const access = useSelector(selectAccess(vault.shareId));
 
         const withActions = canEdit || canDelete || canInvite || canManage || canLeave || canMove;
 
@@ -169,7 +171,7 @@ export const VaultMenuItem = memo(
                                       icon="user-plus"
                                       label={c('Action').t`Share`}
                                       onClick={
-                                          plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
+                                          plan === UserPassPlan.FREE && isMemberLimitReached(vault, access)
                                               ? () =>
                                                     upsell({
                                                         type: 'pass-plus',

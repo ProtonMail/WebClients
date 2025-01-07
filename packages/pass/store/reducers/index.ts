@@ -6,6 +6,7 @@ import request from '@proton/pass/store/request/reducer';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 
+import access from './access';
 import alias from './alias';
 import filters from './filters';
 import importReducer from './import';
@@ -19,6 +20,7 @@ import settings from './settings';
 import shares from './shares';
 import user from './user';
 
+export * from './access';
 export * from './alias';
 export * from './filters';
 export * from './import';
@@ -30,6 +32,7 @@ export * from './shares';
 export * from './user';
 
 export const reducerMap = {
+    access,
     alias,
     filters,
     import: importReducer,
