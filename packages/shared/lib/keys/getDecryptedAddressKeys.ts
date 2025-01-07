@@ -2,6 +2,7 @@ import { getAddressKeyPassword, getDecryptedAddressKey } from '@proton/shared/li
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { captureMessage } from '../helpers/sentry';
 import type { DecryptedAddressKey, KeyPair, User, AddressKey as tsAddressKey } from '../interfaces';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { splitKeys } from './keys';
@@ -18,7 +19,19 @@ export const getDecryptedAddressKeys = async (
 
     const userKeysPair = splitKeys(userKeys);
 
+    // there can be either one or two primary keys (with v6 keys enabled), but in this context checking one
+    // of them is sufficient.
     const [primaryKey, ...restKeys] = addressKeys;
+    if (primaryKey.Primary !== 1) {
+        // we avoid throwing an error for now; we first want to monitor if there exists some users
+        // (with broken setup) who would be impacted
+        captureMessage(
+            addressKeys.find(({ Primary }) => Primary === 1)
+                ? 'getDecryptedAddressKeys: missing Primary flag in first address key'
+                : 'getDecryptedAddressKeys: missing Primary flag in address keys',
+            { level: 'info' }
+        );
+    }
 
     const primaryKeyResult = await getAddressKeyPassword(primaryKey, userKeysPair, keyPassword, organizationKey)
         .then((password) => getDecryptedAddressKey(primaryKey, password))
