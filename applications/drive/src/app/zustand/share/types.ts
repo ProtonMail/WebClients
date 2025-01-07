@@ -2,25 +2,34 @@ import type { ShareExternalInvitation, ShareInvitation, ShareMember } from '../.
 import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store';
 
 export interface MembersState {
-    members: ShareMember[];
+    _shareMembers: Map<string, ShareMember[]>;
     // Members Actions
-    setMembers: (members: ShareMember[]) => void;
+    setShareMembers: (shareId: string, members: ShareMember[]) => void;
+    getShareMembers: (shareId: string) => ShareMember[];
 }
 
 export interface InvitationsState {
-    invitations: ShareInvitation[];
-    externalInvitations: ShareExternalInvitation[];
+    _sharesInvitations: Map<string, ShareInvitation[]>;
+    _sharesExternalInvitations: Map<string, ShareExternalInvitation[]>;
 
     // Invitations Actions
-    setInvitations: (invitations: ShareInvitation[]) => void;
-    removeInvitations: (invitations: ShareInvitation[]) => void;
-    updateInvitationsPermissions: (invitations: ShareInvitation[]) => void;
+    setShareInvitations: (shareId: string, invitations: ShareInvitation[]) => void;
+    getShareInvitations: (shareId: string) => ShareInvitation[];
+    removeShareInvitations: (shareId: string, invitations: ShareInvitation[]) => void;
+    updateShareInvitationsPermissions: (shareId: string, invitations: ShareInvitation[]) => void;
+
     // External Invitations Actions
-    setExternalInvitations: (invitations: ShareExternalInvitation[]) => void;
-    removeExternalInvitations: (invitations: ShareExternalInvitation[]) => void;
-    updateExternalInvitations: (invitations: ShareExternalInvitation[]) => void;
+    setShareExternalInvitations: (shareId: string, invitations: ShareExternalInvitation[]) => void;
+    getShareExternalInvitations: (shareId: string) => ShareExternalInvitation[];
+    removeShareExternalInvitations: (shareId: string, invitations: ShareExternalInvitation[]) => void;
+    updateShareExternalInvitations: (shareId: string, invitations: ShareExternalInvitation[]) => void;
+
     // Mixed Invitations Actions
-    addMultipleInvitations: (invitations: ShareInvitation[], externalInvitations: ShareExternalInvitation[]) => void;
+    addMultipleShareInvitations: (
+        shareId: string,
+        invitations: ShareInvitation[],
+        externalInvitations: ShareExternalInvitation[]
+    ) => void;
 }
 export interface SharesState {
     shares: Record<string, Share | ShareWithKey>;
