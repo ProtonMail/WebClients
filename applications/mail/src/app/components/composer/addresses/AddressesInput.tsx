@@ -7,10 +7,11 @@ import { Button } from '@proton/atoms';
 import { AddressesAutocomplete, Icon, Tooltip, useNotifications } from '@proton/components';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
-import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
+import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 import { getRecipientOrGroupKey, recipientsWithoutGroup } from '../../../helpers/message/messageRecipients';
@@ -53,6 +54,7 @@ const AddressesInput = ({
     hasLighterFieldDesign = false,
     anchorRef,
 }: Props) => {
+    const [editorHasTwoLines, setEditorHasTwoLines] = useState(false);
     const contactEmailsMap = useContactsMap();
     const groupsWithContactsMap = useGroupsWithContactsMap();
 
@@ -205,8 +207,38 @@ const AddressesInput = ({
         prevRecipientsOrGroupsLengthRef.current = recipientsOrGroups.length;
     }, [recipientsOrGroups.length]);
 
+    useEffect(() => {
+        // Here we want to apply this computation only on the `to` field
+        if (!containerRef.current || !id.startsWith('to-')) {
+            return;
+        }
+        const handleResize = () => {
+            const inputHeight = containerRef.current?.clientHeight;
+            if (!inputHeight) {
+                return;
+            }
+            const rootFont = rootFontSize();
+            const sizeInEm = inputHeight / rootFont;
+            setEditorHasTwoLines(sizeInEm > 2);
+        };
+
+        // First call at instanciation
+        handleResize();
+
+        const debouncedHandleResize = debounce(handleResize, 100);
+        const observer = new MutationObserver(debouncedHandleResize);
+
+        // Observer changes
+        observer.observe(containerRef.current, { attributes: false, childList: true, subtree: true });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
     return (
         <div className={clsx(['composer-addresses-autocomplete w-full flex relative', classname])}>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
                 className={clsx([
                     'composer-addresses-container flex flex-nowrap flex-1',
@@ -216,7 +248,13 @@ const AddressesInput = ({
                 onClick={handleClick}
                 {...containerDragHandlers}
             >
-                <div className="flex-1 flex flex-wrap max-w-full max-h-full gap-1 my-1 relative" ref={containerRef}>
+                <div
+                    className={clsx([
+                        'flex-1 flex flex-wrap max-w-full max-h-full gap-1 my-1 relative',
+                        editorHasTwoLines ? 'my-2' : 'my-1',
+                    ])}
+                    ref={containerRef}
+                >
                     {recipientsOrGroups.map((recipientOrGroup, index) => (
                         <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
                             {index === placeholderPosition && dragPlaceholder}
