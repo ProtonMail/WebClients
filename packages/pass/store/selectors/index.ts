@@ -11,5 +11,6 @@ export * from './onboarding';
 export * from './organization';
 export * from './password';
 export * from './settings';
+export * from './shared';
 export * from './shares';
 export * from './user';
