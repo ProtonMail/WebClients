@@ -50,6 +50,9 @@
       "Add": [
         "Lisää"
       ],
+      "Add account": [
+        "Lisää tili"
+      ],
       "Add address": [
         "Lisää osoite"
       ],
@@ -652,6 +655,9 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
+      ],
+      "Sign out of all accounts": [
+        "Kirjaa kaikki tilit ulos"
       ],
       "Skip": [
         "Ohita"
@@ -3518,17 +3524,11 @@
       "Calendar": [
         "Kalenteri"
       ],
-      "Calendar time zone not supported": [
-        "Kalenterin aikavyöhykettä ei tueta"
-      ],
       "Component with wrong format": [
         "Väärän muotoinen komponentti"
       ],
       "Custom time zone": [
         "Mukautettu aikavyöhyke"
-      ],
-      "Edited event not supported": [
-        "Muokattua tapahtumaa ei tueta"
       ],
       "Element": [
         "Elementti"
@@ -3536,17 +3536,8 @@
       "Encryption failed": [
         "Salaus epäonnistui"
       ],
-      "End time out of bounds": [
-        "Päätösaika on alueen ulkopuolella"
-      ],
       "Event": [
         "Tapahtuma"
-      ],
-      "Event validation failed": [
-        "Tapahtuman vahvistus epäonnistui"
-      ],
-      "Floating times not supported": [
-        "Vaihtuvia aikoja ei tueta"
       ],
       "Free-busy time information": [
         "Vapaa-varattu aikatietoja"
@@ -3557,26 +3548,11 @@
       "Journal entry": [
         "Päiväkirjamerkintä"
       ],
-      "Malformed all-day event": [
-        "Virheellinen koko päivän tapahtuma"
-      ],
-      "Malformed end time": [
-        "Virheellinen lopetusaika"
-      ],
-      "Malformed recurring event": [
-        "Virheellinen toistuva tapahtuma"
-      ],
-      "Malformed start time": [
-        "Virheellinen aloitusaika"
-      ],
       "Missing start time": [
         "Puuttuva aloitusaika"
       ],
       "No UID, title or start time": [
         "Ei UID:ta, nimeä tai aloitusaikaa"
-      ],
-      "Non-Gregorian": [
-        "Ei-gregoriaaninen"
       ],
       "Notification out of bounds": [
         "Ilmoitus on alueen ulkopuolella"
@@ -3584,20 +3560,8 @@
       "Original recurring event could not be found": [
         "Ketjun alkuperäistä tapahtumaa ei löytynyt"
       ],
-      "Recurring event has no occurrences": [
-        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
-      ],
-      "Recurring rule not supported": [
-        "Toistuvaa sääntöä ei tueta"
-      ],
-      "Start time out of bounds": [
-        "Aloitusaika on alueen ulkopuolella"
-      ],
       "Time zone": [
         "Aikavyöhyke"
-      ],
-      "Time zone not supported": [
-        "Aikavyöhykettä ei tueta"
       ],
       "To-do entry": [
         "Tehtävämerkintä"
@@ -3705,9 +3669,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Tapahtumaa ei voitu päivittää kalenteriisi. Vastausta ei lähetetty"
-      ],
-      "Unexpected error": [
-        "Odottamaton virhe"
       ],
       "Unsupported invitation": [
         "Kutsua ei tueta"
@@ -4847,6 +4808,9 @@
       "Medium Priority": [
         "Keskitason tärkeys"
       ],
+      "Member": [
+        "Jäsen"
+      ],
       "Merged": [
         "Yhdistetty"
       ],
@@ -5107,6 +5071,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Suorita maksu lähettämällä ${ btcAmountBold } alla olevaan osoitteeseen."
@@ -9500,6 +9467,9 @@
       "Apply gift code": [
         "Käytä lahjakoodia"
       ],
+      "Are you sure?": [
+        "Oletko varma?"
+      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -10003,7 +9973,7 @@
         "Muokkaa tunnisteiden nimiä"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Sähköpostin salaus pakottaa viestien allekirjoituksen auttaakseen sinua viestien lähetyksessä"
+        "Sähköpostisalaus pakottaa sähköpostien allekirjoituksen auttamaan lähetettyjen viestien todentamisessa"
       ],
       "Encrypted data": [
         "Salattua tietoa"
