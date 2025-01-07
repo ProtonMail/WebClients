@@ -212,9 +212,9 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
             },
             {
                 id: 25,
-                // translator: full sentence: "Join Proton Sentinel program for the highest level of account security and support."
+                // translator: full sentence: "Join Proton Sentinel program for our highest level of account security and support."
                 text: c('Info')
-                    .t`Join ${PROTON_SENTINEL_NAME} program for the highest level of account security and support.`,
+                    .t`Join ${PROTON_SENTINEL_NAME} program for our highest level of account security and support.`,
                 cta: (
                     <MailUpsellOptionCTA
                         url={securityAndPrivacy}
