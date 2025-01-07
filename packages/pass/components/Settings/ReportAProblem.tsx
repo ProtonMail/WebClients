@@ -1,4 +1,4 @@
-import { type FC, useRef } from 'react';
+import { type FC, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors } from 'formik';
@@ -57,7 +57,10 @@ export const ReportAProblem: FC = () => {
         },
     });
 
-    formRef.current = form;
+    useEffect(() => {
+        /** FIXME: use async dispatch to get rid of form ref */
+        formRef.current = form;
+    });
 
     return (
         <SettingsPanel

@@ -1,4 +1,4 @@
-import { type FC, memo } from 'react';
+import { memo } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,18 +6,18 @@ import { Button, type ButtonProps } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 
-import { usePasswordContext } from './PasswordContext';
+import { usePasswordGeneratorAction } from './PasswordGeneratorAction';
 
 type Props = Omit<ButtonProps, 'onSubmit'> & { onSubmit: (password: string) => void };
 
-const PasswordGeneratorButtonRaw: FC<Props> = ({ onSubmit, type, ...rest }) => {
-    const passwordContext = usePasswordContext();
+export const PasswordGeneratorButton = memo(({ onSubmit, type, ...rest }: Props) => {
+    const generate = usePasswordGeneratorAction();
 
     const handleOnClick = () =>
-        passwordContext.generate({
+        generate({
             onSubmit,
             actionLabel: c('Action').t`Fill password`,
-            className: SubTheme.VIOLET /* no-need for a type prop yet: only used for Login items */,
+            className: SubTheme.VIOLET,
         });
 
     return (
@@ -35,6 +35,6 @@ const PasswordGeneratorButtonRaw: FC<Props> = ({ onSubmit, type, ...rest }) => {
             <Icon name="arrows-rotate" size={5} />
         </Button>
     );
-};
+});
 
-export const PasswordGeneratorButton = memo(PasswordGeneratorButtonRaw);
+PasswordGeneratorButton.displayName = 'PasswordGeneratorButtonMemo';

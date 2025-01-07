@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { type IconName, useNotifications } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { AccountPath } from '@proton/pass/constants';
@@ -25,7 +25,7 @@ type MenuAction = {
 };
 
 export const MenuActions: FC = () => {
-    const { navigate } = useNavigation();
+    const navigate = useNavigate();
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
     const authService = useAuthService();

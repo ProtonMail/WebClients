@@ -117,18 +117,17 @@ export const getPasswordConfig = (
     }
 };
 
-type UsePasswordGeneratorOptions = {
-    initial: MaybeNull<GeneratePasswordConfig>;
+type PasswordGeneratorOptions = {
+    config: MaybeNull<GeneratePasswordConfig>;
     policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
-    onConfigChange: (options: GeneratePasswordConfig) => void;
+    onConfigChange?: (config: GeneratePasswordConfig) => void;
 };
 
-export const usePasswordGenerator = ({ initial, policy, onConfigChange }: UsePasswordGeneratorOptions) => {
+export const usePasswordGenerator = (props: PasswordGeneratorOptions) => {
     const { core } = usePassCore();
-
     const [password, setPassword] = useState('');
-    const [config, setConfig] = useState<GeneratePasswordConfig>(() =>
-        getPasswordConfig(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS, policy)
+    const [config, setConfig] = useState(() =>
+        getPasswordConfig(props.config ?? DEFAULT_MEMORABLE_PW_OPTIONS, props.policy)
     );
 
     const generate = useCallback(
@@ -139,10 +138,8 @@ export const usePasswordGenerator = ({ initial, policy, onConfigChange }: UsePas
     );
 
     /** Debounce the pw options dispatch in order to avoid swarming the
-     * store with updates when using the length slider */
-    const savePasswordOptions = useCallback(debounce(onConfigChange, 250), []);
-
-    useEffect(() => setConfig((config) => getPasswordConfig(config, policy)), [policy]);
+     * `onConfigChange` callback when using the length slider */
+    const savePasswordOptions = useCallback(debounce(props.onConfigChange ?? noop, 250), []);
 
     /** Regenerates password when config changes. Uses `Object.values()` to track option changes.
      * WARNING: Assumes both password types have same number of options - will cause dependency
@@ -156,7 +153,7 @@ export const usePasswordGenerator = ({ initial, policy, onConfigChange }: UsePas
         () => ({
             config,
             password,
-            policy,
+            policy: props.policy,
             regeneratePassword: () => generate(config),
             setPasswordOptions: <
                 Type extends GeneratePasswordConfig['type'],
@@ -173,26 +170,25 @@ export const usePasswordGenerator = ({ initial, policy, onConfigChange }: UsePas
                         return didChange ? merge(prev, { options: update }) : prev;
                     }
 
-                    if (type === 'memorable') return getPasswordConfig(DEFAULT_MEMORABLE_PW_OPTIONS, policy);
-                    if (type === 'random') return getPasswordConfig(DEFAULT_RANDOM_PW_OPTIONS, policy);
+                    if (type === 'memorable') return getPasswordConfig(DEFAULT_MEMORABLE_PW_OPTIONS, props.policy);
+                    if (type === 'random') return getPasswordConfig(DEFAULT_RANDOM_PW_OPTIONS, props.policy);
 
                     return prev;
                 });
             },
         }),
-        [config, password, policy]
+        [config, password, props.policy]
     );
 };
 
-export type UsePasswordGeneratorResult<T extends GeneratePasswordMode = GeneratePasswordMode> = Omit<
+export type PasswordGeneratorResult<T extends GeneratePasswordMode = GeneratePasswordMode> = Omit<
     ReturnType<typeof usePasswordGenerator>,
     'config'
 > & { config: GeneratePasswordConfig<T> };
 
-export const isUsingRandomPassword = (
-    result: UsePasswordGeneratorResult
-): result is UsePasswordGeneratorResult<'random'> => result.config.type === 'random';
+export const isUsingRandomPassword = (result: PasswordGeneratorResult): result is PasswordGeneratorResult<'random'> =>
+    result.config.type === 'random';
 
 export const isUsingMemorablePassword = (
-    result: UsePasswordGeneratorResult
-): result is UsePasswordGeneratorResult<'memorable'> => result.config.type === 'memorable';
+    result: PasswordGeneratorResult
+): result is PasswordGeneratorResult<'memorable'> => result.config.type === 'memorable';

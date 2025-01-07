@@ -1,15 +1,15 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { Alert } from '@proton/components';
-import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useBulkSelectionAliasCount } from '@proton/pass/components/Bulk/BulkSelectionState';
 import {
     ConfirmationPrompt,
     type ConfirmationPromptHandles,
 } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
 import { selectSecureLinksByItems } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO } from '@proton/pass/types';
@@ -20,7 +20,7 @@ export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: B
     onConfirm,
 }) => {
     const trashedItemsCount = getBulkSelectionCount(selected);
-    const { aliasCount } = useBulkSelect();
+    const aliasCount = useBulkSelectionAliasCount();
 
     return (
         <ConfirmationPrompt
@@ -58,7 +58,8 @@ export const ConfirmMoveManyItems: FC<
         shareId: string;
     }
 > = ({ selected, shareId, onCancel, onConfirm }) => {
-    const hasLinks = Boolean(useSelector(selectSecureLinksByItems(selected)).length);
+    const secureLinks = useMemoSelector(selectSecureLinksByItems, [selected]);
+    const hasLinks = Boolean(secureLinks.length);
     const count = getBulkSelectionCount(selected);
 
     return (
@@ -97,7 +98,7 @@ export const ConfirmDeleteManyItems: FC<ConfirmationPromptHandles & { selected: 
     onCancel,
 }) => {
     const deletedItemsCount = getBulkSelectionCount(selected);
-    const { aliasCount } = useBulkSelect();
+    const aliasCount = useBulkSelectionAliasCount();
 
     return (
         <ConfirmationPrompt

@@ -4,7 +4,10 @@ import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
@@ -47,7 +50,8 @@ type PasskeyCreateViewProps = {
 
 const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username }) => {
     const { onTelemetry } = usePassCore();
-    const { close, settings, domain } = useIFrameContext();
+    const { settings, domain } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const [items, setItems] = useMountedState<MaybeNull<LoginItemPreview[]>>(null);
 
     useEffect(() => {
@@ -65,7 +69,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
             onTelemetry(TelemetryEventName.PasskeyCreateDisplay, {}, {});
         };
 
-        run().catch(close);
+        run().catch(controller.close);
     }, []);
 
     return items ? (
@@ -162,7 +166,8 @@ type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_C
 export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain }) => {
     const [loading, setLoading] = useMountedState(false);
     const { onTelemetry, config } = usePassCore();
-    const { close, postMessage, domain } = useIFrameContext();
+    const { domain } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const { createNotification } = useNotifications();
 
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyCreate, [request]);
@@ -223,9 +228,9 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                     );
                 })();
 
-                postMessage(response);
+                controller.postMessage(response);
                 onTelemetry(TelemetryEventName.PasskeyCreated, {}, {});
-                close();
+                controller.close();
             } catch (err) {
                 const message = getErrorMessage(err);
                 createNotification({
@@ -259,7 +264,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                             }
                         })()}
                         onClose={() =>
-                            postMessage(
+                            controller.postMessage(
                                 createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
                                     { type: 'success', intercept: false },
                                     token

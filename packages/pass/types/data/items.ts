@@ -93,14 +93,13 @@ export type ItemRevisionID = ItemIDRevision;
 
 export type UnsafeItemRevision<T extends ItemType = ItemType> = Deobfuscate<ItemRevision<T>>;
 
+export type ItemOptimisticState = { optimistic: boolean; failed: boolean };
+
 /**
  * Adds an optimistic & failed property to
  * the ItemRevision type
  */
-export type ItemRevisionWithOptimistic<T extends ItemType = ItemType> = ItemRevision<T> & {
-    optimistic: boolean;
-    failed: boolean;
-};
+export type ItemRevisionWithOptimistic<T extends ItemType = ItemType> = ItemRevision<T> & ItemOptimisticState;
 
 /**
  * Generic utility type to construct
@@ -111,6 +110,7 @@ export type ItemMap<T> = { [type in ItemType]: T };
 export type UniqueItem = { shareId: string; itemId: string };
 export type SelectedShare = { shareId: string };
 export type SelectedItem = UniqueItem;
+export type OptimisticItem = { optimisticId: string; shareId: string; optimisticTime?: number };
 
 export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
 export type ItemTypeFilter = '*' | ItemType;

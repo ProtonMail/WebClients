@@ -1,7 +1,10 @@
 import { type FC } from 'react';
 
 import { Field, type FormikContextType } from 'formik';
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -20,7 +23,8 @@ type Props = {
 };
 
 export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
-    const { settings, close, domain } = useIFrameContext();
+    const { settings, domain } = useIFrameAppState();
+    const controller = useIFrameAppController();
 
     /** if the autosave prompt was shown before an actual form
      * submission : do not discard the form data */
@@ -68,8 +72,9 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
                 />
             </FieldsetCluster>
             <div className="flex justify-space-between gap-3 mt-1">
-                <Button pill color="norm" shape="outline" onClick={() => close({ discard: shouldDiscard })}>{c('Action')
-                    .t`Not now`}</Button>
+                <Button pill color="norm" shape="outline" onClick={() => controller.close({ discard: shouldDiscard })}>
+                    {c('Action').t`Not now`}
+                </Button>
                 <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">
                     <span className="text-ellipsis">
                         {(() => {

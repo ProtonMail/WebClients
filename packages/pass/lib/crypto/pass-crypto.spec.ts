@@ -481,6 +481,7 @@ describe('PassCrypto', () => {
                 Pinned: false,
                 Revision: 1,
                 RevisionTime: 0,
+                ShareCount: 0,
                 State: ItemState.Active,
             };
 
@@ -515,6 +516,7 @@ describe('PassCrypto', () => {
                 Pinned: false,
                 Revision: 1,
                 RevisionTime: 0,
+                ShareCount: 0,
                 State: ItemState.Active,
             };
 
@@ -559,6 +561,7 @@ describe('PassCrypto', () => {
                 Pinned: false,
                 Revision: 1,
                 RevisionTime: 0,
+                ShareCount: 0,
                 State: ItemState.Active,
             };
 

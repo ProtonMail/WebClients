@@ -7,7 +7,7 @@ import { Info } from '@proton/components';
 import automaticThemeImg from '@proton/pass/assets/settings/theme-automatic.svg';
 import darkThemeImg from '@proton/pass/assets/settings/theme-dark.svg';
 import lightThemeImg from '@proton/pass/assets/settings/theme-light.svg';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { usePassTheme } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { PassThemeCardProps } from '@proton/pass/components/Settings/PassThemeCard';
 import { PassThemeCard } from '@proton/pass/components/Settings/PassThemeCard';
@@ -41,9 +41,10 @@ const getThemeCards = (): PassThemeCardProps[] => [
 ];
 
 export const PassThemeCardList: FC = () => {
+    const currentTheme = usePassTheme();
+    const theme = useSelector(selectTheme) ?? currentTheme;
+
     const dispatch = useDispatch();
-    const core = usePassCore();
-    const currentTheme = useSelector(selectTheme) ?? core.theme;
     const onChange = (theme: PassThemeOption) => dispatch(settingsEditIntent('theme', { theme }, true));
 
     return (
@@ -51,7 +52,7 @@ export const PassThemeCardList: FC = () => {
             {getThemeCards().map((cardProps) => (
                 <PassThemeCard
                     key={cardProps.theme}
-                    selected={currentTheme === cardProps.theme}
+                    selected={theme === cardProps.theme}
                     onChange={onChange}
                     {...cardProps}
                 />

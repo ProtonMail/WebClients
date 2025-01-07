@@ -24,7 +24,7 @@ const SecureLinkView: FC = () => {
         initial: { token, linkKey: '' },
         onStart: () => setError(null),
         onSuccess: setResponse,
-        onFailure: ({ error }) => setError(error),
+        onFailure: (error) => setError(error),
     });
 
     useEffect(() => dispatch({ token, linkKey: hash.replaceAll('#', '') }), []);

@@ -79,7 +79,7 @@ export const SecureLinkCard: FC<Props> = ({
                             {views}
                         </div>
                     </div>
-                    <div>
+                    <div className="flex">
                         {active && (
                             <Copy value={secureLink} shape="ghost" className="color-weak" onCopy={onCopy} pill />
                         )}

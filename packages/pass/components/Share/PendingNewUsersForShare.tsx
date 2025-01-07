@@ -1,4 +1,4 @@
-import { type FC, useEffect, useRef } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,15 +19,12 @@ export const PendingNewUsersForShare: FC<Props> = ({
     shareId,
     onInvitesReady,
 }) => {
+    const vaultName = content.name;
     const { revalidate, loading, error } = useRequest(getShareAccessOptions, {
         initial: { shareId },
         loading: true,
         onSuccess: onInvitesReady,
     });
-
-    const didLoad = useRef(false);
-    didLoad.current = !loading;
-    const vaultName = content.name;
 
     /** Revalidate the share access options on mount. This
      * will effectively refresh the share's `newUserInvites` */
@@ -46,7 +43,7 @@ export const PendingNewUsersForShare: FC<Props> = ({
                 </Card>
             ) : (
                 <>
-                    {didLoad.current
+                    {!loading
                         ? newUserInvites?.map(
                               (invite) =>
                                   invite.state === NewUserInviteState.READY && (

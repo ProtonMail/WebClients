@@ -3,8 +3,8 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { setDefaultAliasDomain } from '@proton/pass/store/actions';
@@ -24,12 +24,12 @@ type Props = { className?: string };
 export const DefaultDomainSelect: FC<Props> = ({ className }) => {
     const { aliasDomains, defaultAliasDomain, canManage, loading, onSetDefault } = useAliasDomains();
     const setDefault = useRequest(setDefaultAliasDomain, { onSuccess: onSetDefault });
-    const spotlight = useSpotlight();
+    const upsell = useUpselling();
 
     const handleChange = (value: MaybeNull<string>) => {
         const isPremiumDomain = aliasDomains?.find((domain) => domain.Domain === value)?.IsPremium;
         if (isPremiumDomain && !canManage) {
-            return spotlight.setUpselling({
+            return upsell({
                 type: 'pass-plus',
                 upsellRef: UpsellRef.SETTING,
             });

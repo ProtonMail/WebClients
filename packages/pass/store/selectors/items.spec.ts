@@ -7,8 +7,6 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 
 import { selectAutofillLoginCandidates, selectItemsByDomain, selectOTPCandidate } from './items';
 
-const withOptimistics = (item: {}) => ({ ...item, failed: expect.any(Boolean), optimistic: expect.any(Boolean) });
-
 const stateMock = {
     items: {
         byShareId: {
@@ -247,35 +245,35 @@ describe('item selectors', () => {
             const items = selectItemsByDomain('proton.me', filter)(stateMock);
 
             expect(items.length).toEqual(4);
-            expect(items[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
-            expect(items[1]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
-            expect(items[2]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
-            expect(items[3]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
+            expect(items[0]).toEqual(stateMock.items.byShareId.share1.item1);
+            expect(items[1]).toEqual(stateMock.items.byShareId.share1.item2);
+            expect(items[2]).toEqual(stateMock.items.byShareId.share2.item2);
+            expect(items[3]).toEqual(stateMock.items.byShareId.share3.item1);
         });
 
         test('should return only active items on direct match', () => {
             const items = selectItemsByDomain('proton.me', filter)(stateMock);
 
             expect(items.length).toEqual(4);
-            expect(items[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
-            expect(items[1]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
-            expect(items[2]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
-            expect(items[3]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
+            expect(items[0]).toEqual(stateMock.items.byShareId.share1.item1);
+            expect(items[1]).toEqual(stateMock.items.byShareId.share1.item2);
+            expect(items[2]).toEqual(stateMock.items.byShareId.share2.item2);
+            expect(items[3]).toEqual(stateMock.items.byShareId.share3.item1);
         });
 
         test('should return only share matches if shareId filter', () => {
             const itemsShare1 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share1'] })(stateMock);
             expect(itemsShare1.length).toEqual(2);
-            expect(itemsShare1[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
-            expect(itemsShare1[1]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
+            expect(itemsShare1[0]).toEqual(stateMock.items.byShareId.share1.item1);
+            expect(itemsShare1[1]).toEqual(stateMock.items.byShareId.share1.item2);
 
             const itemsShare2 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share2'] })(stateMock);
             expect(itemsShare2.length).toEqual(1);
-            expect(itemsShare2[0]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
+            expect(itemsShare2[0]).toEqual(stateMock.items.byShareId.share2.item2);
 
             const itemsShare3 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share3'] })(stateMock);
             expect(itemsShare3.length).toEqual(1);
-            expect(itemsShare3[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
+            expect(itemsShare3[0]).toEqual(stateMock.items.byShareId.share3.item1);
 
             const itemsShare4 = selectItemsByDomain('proton.me', { ...filter, shareIds: ['share4'] })(stateMock);
             expect(itemsShare4.length).toEqual(0);
@@ -284,23 +282,23 @@ describe('item selectors', () => {
         test('should use protocol filter if any', () => {
             const itemsHTTPS = selectItemsByDomain('proton.me', { ...filter, protocol: 'https:' })(stateMock);
             expect(itemsHTTPS.length).toEqual(1);
-            expect(itemsHTTPS[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
+            expect(itemsHTTPS[0]).toEqual(stateMock.items.byShareId.share1.item1);
 
             const itemsHTTP = selectItemsByDomain('proton.me', { ...filter, protocol: 'http:' })(stateMock);
             expect(itemsHTTP.length).toEqual(2);
-            expect(itemsHTTP[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
-            expect(itemsHTTP[1]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
+            expect(itemsHTTP[0]).toEqual(stateMock.items.byShareId.share1.item2);
+            expect(itemsHTTP[1]).toEqual(stateMock.items.byShareId.share2.item2);
 
             const itemsAny = selectItemsByDomain('proton.me', filter)(stateMock);
             expect(itemsAny.length).toEqual(4);
-            expect(itemsAny[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
-            expect(itemsAny[1]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item2));
-            expect(itemsAny[2]).toEqual(withOptimistics(stateMock.items.byShareId.share2.item2));
-            expect(itemsAny[3]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
+            expect(itemsAny[0]).toEqual(stateMock.items.byShareId.share1.item1);
+            expect(itemsAny[1]).toEqual(stateMock.items.byShareId.share1.item2);
+            expect(itemsAny[2]).toEqual(stateMock.items.byShareId.share2.item2);
+            expect(itemsAny[3]).toEqual(stateMock.items.byShareId.share3.item1);
 
             const itemsFTP = selectItemsByDomain('proton.me', { ...filter, protocol: 'ftp:' })(stateMock);
             expect(itemsFTP.length).toEqual(1);
-            expect(itemsFTP[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
+            expect(itemsFTP[0]).toEqual(stateMock.items.byShareId.share3.item1);
         });
     });
 
@@ -315,55 +313,55 @@ describe('item selectors', () => {
         test('should not pass a protocol filter if url is secure', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('https://google.com'))(stateMock);
             expect(candidates.length).toEqual(3);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
-            expect(candidates[1]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item4));
-            expect(candidates[2]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share3.item6);
+            expect(candidates[1]).toEqual(stateMock.items.byShareId.share3.item4);
+            expect(candidates[2]).toEqual(stateMock.items.byShareId.share3.item5);
         });
 
         test('should pass a protocol filter if url is not secure `https:`', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('http://google.com'))(stateMock);
             expect(candidates.length).toEqual(1);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share3.item6);
         });
 
         test('should pass a protocol filter if url is not secure `https:`', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('http://google.com'))(stateMock);
             expect(candidates.length).toEqual(1);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share3.item6);
         });
 
         test('should return only matching protocols', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('ftp://proton.me'))(stateMock);
             expect(candidates.length).toEqual(1);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share3.item1);
         });
 
         test('if no direct public subdomain match, should sort top-level domains and other subdomain matches', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('https://account.google.com'))(stateMock);
             expect(candidates.length).toEqual(3);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
-            expect(candidates[1]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item4));
-            expect(candidates[2]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share3.item6);
+            expect(candidates[1]).toEqual(stateMock.items.byShareId.share3.item4);
+            expect(candidates[2]).toEqual(stateMock.items.byShareId.share3.item5);
         });
 
         test('if public subdomain match, should push subdomain matches on top, then top-level domain, then other subdomains', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('https://my.sub.domain.google.com'))(stateMock);
             expect(candidates.length).toEqual(3);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
-            expect(candidates[1]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
-            expect(candidates[2]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item4));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share3.item5);
+            expect(candidates[1]).toEqual(stateMock.items.byShareId.share3.item6);
+            expect(candidates[2]).toEqual(stateMock.items.byShareId.share3.item4);
         });
 
         test('if private top level domain, should match only top level domain', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('https://github.io'))(stateMock);
             expect(candidates.length).toEqual(1);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item3));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share1.item3);
         });
 
         test('if private sub domain, should match only specific subdomain', () => {
             const candidates = selectAutofillLoginCandidates(parseUrl('https://subdomain.github.io'))(stateMock);
             expect(candidates.length).toEqual(1);
-            expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item4));
+            expect(candidates[0]).toEqual(stateMock.items.byShareId.share1.item4);
         });
     });
 
@@ -371,13 +369,13 @@ describe('item selectors', () => {
         test('should match item for domain and username', () => {
             const submission = { data: { userIdentifier: 'test@proton.me' } } as FormSubmission;
             const candidate = selectOTPCandidate({ ...parseUrl('https://proton.me'), submission })(stateMock);
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
+            expect(candidate).toEqual(stateMock.items.byShareId.share1.item1);
         });
 
         test('should match item for subdomain and username', () => {
             const submission = { data: { userIdentifier: 'test@proton.me' } } as FormSubmission;
             const candidate = selectOTPCandidate({ ...parseUrl('https://subdomain.proton.me'), submission })(stateMock);
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
+            expect(candidate).toEqual(stateMock.items.byShareId.share1.item1);
         });
 
         test('should match item for domain and username when matching extra totp field', () => {
@@ -387,23 +385,23 @@ describe('item selectors', () => {
                 submission,
             })(stateMock);
 
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item4));
+            expect(candidate).toEqual(stateMock.items.byShareId.share1.item4);
         });
 
         test('should match last used item for top-level domain if username not provided', () => {
             const candidate = selectOTPCandidate(parseUrl('https://subdomain.com'))(stateMock);
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item5));
+            expect(candidate).toEqual(stateMock.items.byShareId.share5.item5);
         });
 
         test('should match last used item for subdomain if username not provided', () => {
             const candidate = selectOTPCandidate(parseUrl('https://b.subdomain.com'))(stateMock);
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item3));
+            expect(candidate).toEqual(stateMock.items.byShareId.share5.item3);
         });
 
         test('should match item for username & top-level domain', () => {
             const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
             const candidate = selectOTPCandidate({ ...parseUrl('https://subdomain.com'), submission })(stateMock);
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item5));
+            expect(candidate).toEqual(stateMock.items.byShareId.share5.item5);
         });
 
         test('should allow item for username & top-level domain on subdomain', () => {
@@ -411,15 +409,15 @@ describe('item selectors', () => {
             const candidate = selectOTPCandidate({ ...parseUrl('https://unknown.subdomain.com'), submission })(
                 stateMock
             );
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item5));
+            expect(candidate).toEqual(stateMock.items.byShareId.share5.item5);
         });
 
         test('should prioritise subdomain/username match', () => {
             const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
             const candidateA = selectOTPCandidate({ ...parseUrl('https://a.subdomain.com'), submission })(stateMock);
             const candidateB = selectOTPCandidate({ ...parseUrl('https://b.subdomain.com'), submission })(stateMock);
-            expect(candidateA).toEqual(withOptimistics(stateMock.items.byShareId.share5.item1));
-            expect(candidateB).toEqual(withOptimistics(stateMock.items.byShareId.share5.item3));
+            expect(candidateA).toEqual(stateMock.items.byShareId.share5.item1);
+            expect(candidateB).toEqual(stateMock.items.byShareId.share5.item3);
         });
 
         test('should not match subdomain item for top-level url', () => {

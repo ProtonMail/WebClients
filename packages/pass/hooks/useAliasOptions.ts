@@ -1,12 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import type { getAliasOptionsFailure, getAliasOptionsSuccess } from '@proton/pass/store/actions';
-import { getAliasOptionsIntent } from '@proton/pass/store/actions';
-import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
+import { requestAliasOptions } from '@proton/pass/store/actions';
 import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
 
-import { useActionRequest } from './useRequest';
+import { useRequest } from './useRequest';
 
 export type SanitizedAliasOptions = {
     suffixes: { value: string; signature: string }[];
@@ -32,13 +30,8 @@ export const useAliasOptions = ({
 }: UseAliasOptionsParams): UseAliasOptionsResult => {
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<SanitizedAliasOptions>>(null);
 
-    const getAliasOptions = useActionRequest<
-        typeof getAliasOptionsIntent,
-        typeof getAliasOptionsSuccess,
-        typeof getAliasOptionsFailure
-    >(getAliasOptionsIntent, {
-        requestId: aliasOptionsRequest(shareId),
-        onSuccess: ({ options }) => {
+    const getAliasOptions = useRequest(requestAliasOptions, {
+        onSuccess: (options) => {
             const sanitized = {
                 suffixes: options.suffixes.map(({ suffix, signedSuffix }) => ({
                     value: suffix,
@@ -53,13 +46,13 @@ export const useAliasOptions = ({
     });
 
     useEffect(() => {
-        if (!lazy) getAliasOptions.dispatch({ shareId });
+        if (!lazy) getAliasOptions.dispatch(shareId);
     }, [lazy]);
 
     return useMemo(
         () => ({
             loading: getAliasOptions.loading,
-            request: () => getAliasOptions.dispatch({ shareId }),
+            request: () => getAliasOptions.dispatch(shareId),
             value: aliasOptions,
         }),
         [aliasOptions, getAliasOptions.loading, shareId]

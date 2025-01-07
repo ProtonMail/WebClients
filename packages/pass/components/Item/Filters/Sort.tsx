@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { memo } from 'react';
 
 import { c } from 'ttag';
 
@@ -50,7 +50,7 @@ const getSortOptionDetails = (option: ItemSortFilter) => {
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '13rem' };
 const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
 
-export const SortFilter: FC<Props> = ({ value, onChange }) => {
+export const SortFilter = memo(({ value, onChange }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -96,4 +96,6 @@ export const SortFilter: FC<Props> = ({ value, onChange }) => {
             </Dropdown>
         </>
     );
-};
+});
+
+SortFilter.displayName = 'SortFilterMemo';

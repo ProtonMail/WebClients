@@ -2,8 +2,6 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import type { ActionCallback } from '@proton/pass/store/actions/enhancers/callback';
-import { withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
     vaultCreateRequest,
@@ -25,11 +23,8 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 export const vaultCreationIntent = createAction(
     'vault::creation::intent',
-
-    (
-        payload: { content: ShareContent<ShareType.Vault> },
-        callback?: ActionCallback<ReturnType<typeof vaultCreationSuccess> | ReturnType<typeof vaultCreationFailure>>
-    ) => pipe(withRequest({ status: 'start', id: vaultCreateRequest(uniqueId()) }), withCallback(callback))({ payload })
+    (payload: { content: ShareContent<ShareType.Vault> }) =>
+        withRequest({ status: 'start', id: vaultCreateRequest(uniqueId()) })({ payload })
 );
 
 export const vaultCreationFailure = createAction(

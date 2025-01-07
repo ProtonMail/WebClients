@@ -118,10 +118,17 @@ export const requestMiddlewareFactory =
                      * - For success: resolves promise with action payload
                      * - For failure: rejects promise with action payload
                      * - Cleans up by removing the tracked promise from results map */
-                    if (status === 'success' || status === 'failure') {
+                    if (status === 'success') {
                         pending?.resolve({
                             type: status,
                             data: 'payload' in action ? action.payload : undefined,
+                        });
+                    }
+
+                    if (status === 'failure') {
+                        pending?.resolve({
+                            type: status,
+                            error: 'error' in action ? action.error : undefined,
                         });
                     }
 

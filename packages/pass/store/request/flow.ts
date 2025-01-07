@@ -1,8 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import type { TagMatch, Tagged } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { withRequest, withRequestFailure, withRequestSuccess } from './enhancers';
 import type { RequestConfig } from './types';
@@ -13,6 +11,7 @@ type RequestKeyDefault = () => string;
 type RequestKeyPreparators<T> = RequestKeyDefault | RequestKeyPrepator<T>;
 
 type Payload<T = any> = { payload: T };
+type PayloadError<T = any> = { payload: T; error?: unknown };
 
 export type RequestFlow<I, S, F> = ReturnType<ReturnType<typeof requestActionsFactory<I, S, F>>>;
 export type RequestIntent<T extends RequestFlow<any, any, any>> = T extends RequestFlow<infer U, any, any> ? U : never;
@@ -71,7 +70,7 @@ export const requestActionsFactory =
     <
         IntentPrepared extends Payload = Payload<IntentDTO>,
         SuccessPrepared extends Payload = Payload<SuccessDTO>,
-        FailurePrepared extends Payload = Payload<FailureDTO>,
+        FailurePrepared extends PayloadError = PayloadError<FailureDTO>,
         IntentData extends any = never,
         SuccessData extends any = never,
         FailureData extends any = never,
@@ -108,15 +107,12 @@ export const requestActionsFactory =
 
         return {
             requestID: requestID as RequestPA,
-            intent: createAction(`${namespace}::intent`, (dto: IntentDTO, callback?: ActionCallback) =>
-                pipe(
-                    withRequest({
-                        status: 'start',
-                        id: requestID(dto),
-                        ...(options.intent?.config ?? {}),
-                    }),
-                    withCallback(callback)
-                )(intentPA(dto))
+            intent: createAction(`${namespace}::intent`, (dto: IntentDTO) =>
+                withRequest({
+                    status: 'start',
+                    id: requestID(dto),
+                    ...(options.intent?.config ?? {}),
+                })(intentPA(dto))
             ),
             success: createAction(`${namespace}::success`, withRequestSuccess(successPA, options.success?.config)),
             failure: createAction(`${namespace}::failure`, withRequestFailure(failurePA, options.failure?.config)),

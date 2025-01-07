@@ -1,23 +1,24 @@
-import type { FC } from 'react';
+import { memo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { bulkSelectionDTO, useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
+import { bulkSelectionDTO } from '@proton/pass/components/Bulk/utils';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 
 type Props = { disabled?: boolean };
 
-export const BulkActions: FC<Props> = (props) => {
-    const { matchTrash } = useNavigation();
-    const { selection, count } = useBulkSelect();
+export const BulkActions = memo((props: Props) => {
+    const scope = useItemScope();
+    const { selection, count } = useBulkSelection();
     const disabled = count === 0 || props.disabled;
 
     const { moveMany, trashMany, deleteMany, restoreMany } = useItemsActions();
 
-    return matchTrash ? (
+    return scope === 'trash' ? (
         <>
             <Button
                 color="weak"
@@ -72,4 +73,6 @@ export const BulkActions: FC<Props> = (props) => {
             </Button>
         </>
     );
-};
+});
+
+BulkActions.displayName = 'BulkActionsMemo';

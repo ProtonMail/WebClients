@@ -13,15 +13,21 @@ import {
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
-import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
+import {
+    selectAllAddresses,
+    selectLatestEventId,
+    selectUser,
+    selectUserPlan,
+    selectUserSettings,
+} from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { MaybeNull, UserEvent } from '@proton/pass/types';
+import type { MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
-import type { Address, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
 
 import { eventChannelFactory } from './channel.factory';
@@ -39,6 +45,8 @@ function* onUserEvent(
     const currentEventId = (yield select(selectLatestEventId)) as MaybeNull<string>;
     const userId = getAuthStore().getUserID()!;
     const userSettings: MaybeNull<UserSettings> = yield select(selectUserSettings);
+    const cachedUser: MaybeNull<User> = yield select(selectUser);
+    const cachedPlan: MaybeNull<PassPlanResponse> = yield select(selectUserPlan);
 
     /* dispatch only if there was a change */
     if (currentEventId !== event.EventID) {
@@ -80,8 +88,10 @@ function* onUserEvent(
         }
     }
 
-    /* if the subscription/invoice changes, refetch the user Plan and check Organization */
-    const revalidateUserAccess = event.Subscription || event.Invoices;
+    /* Revalidate the user access if we detect a subscription or plan type change. */
+    const revalidateUserAccess =
+        (event.User && event.User.Subscribed !== cachedUser?.Subscribed) ||
+        (event.Organization && event.Organization.PlanName !== cachedPlan?.InternalName);
 
     /* Synchronize whenever polling for core user events:
      * · User access

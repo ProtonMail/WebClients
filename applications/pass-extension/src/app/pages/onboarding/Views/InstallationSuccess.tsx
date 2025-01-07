@@ -1,13 +1,13 @@
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
+import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
-import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { chromeAPI } from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';
@@ -73,21 +73,10 @@ export const InstallationSuccess: FC = () => {
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column">
                         <div className="flex flex-column">
-                            <div className="pt-2 flex items-center gap-2 mb-4">
-                                {
-                                    <img
-                                        src="/assets/protonpass-icon.svg"
-                                        className="h-custom"
-                                        style={{ '--h-custom': '2.25rem' }}
-                                        alt={PASS_APP_NAME}
-                                    />
-                                }
-                                <span>
-                                    <PassTextLogo className="pass-lobby--brand-text mx-2 shrink-0 logo" />
-                                </span>
-                            </div>
-                            <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">{c('Title')
-                                .jt`Welcome to your new password manager!`}</h1>
+                            <OnboardingHeader />
+                            <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">
+                                {c('Title').jt`Welcome to your new password manager!`}
+                            </h1>
                         </div>
 
                         {BUILD_TARGET !== 'safari' ? (

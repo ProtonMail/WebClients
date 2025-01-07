@@ -31,9 +31,10 @@ import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCor
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
+import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
-import { UnauthorizedRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
+import { PublicRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
@@ -82,6 +83,14 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         settings,
         spotlight,
 
+        theme: createPassThemeManager({
+            getInitialTheme: async () => {
+                /** UnauthorizedRoutes should stay in PassDark mode */
+                const forceDarkMode = matchPath(window.location.pathname, PublicRoutes.SecureLink);
+                return forceDarkMode ? PassThemeOption.PassDark : getInitialTheme();
+            },
+        }),
+
         exportData: async (options) => {
             const state = store.getState();
             const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
@@ -114,14 +123,6 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         },
 
         getLogs: logStore.read,
-
-        /** UnauthorizedRoutes should stay in PassDark mode */
-        getTheme: async () => {
-            const { pathname } = window.location;
-            if (matchPath(pathname, UnauthorizedRoutes.SecureLink)) return PassThemeOption.PassDark;
-
-            return getInitialTheme();
-        },
 
         onLink: (url, options) => window.open(url, options?.replace ? '_self' : '_blank'),
         onTelemetry: pipe(createTelemetryEvent, telemetry.push),
