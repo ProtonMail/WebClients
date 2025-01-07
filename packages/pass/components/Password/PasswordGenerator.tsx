@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
-import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
+import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import {
     getCharsGroupedByColor,
     isUsingMemorablePassword,
@@ -18,7 +18,7 @@ import { PasswordMemorableOptions } from './PasswordMemorableOptions';
 import { PasswordRandomOptions } from './PasswordRandomOptions';
 import { PasswordTypeSelect } from './PasswordTypeSelect';
 
-export const PasswordGenerator: FC<UsePasswordGeneratorResult> = (props) => {
+export const PasswordGenerator: FC<PasswordGeneratorResult> = (props) => {
     const [showAdvanced, setShowAdvanced] = useState(false);
     const passwordStrength = usePasswordStrength(props.password);
 

@@ -11,8 +11,8 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
@@ -74,7 +74,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const readOnly = shareRoleId === ShareRole.READ;
     const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
     const sharedReadOnly = shared && readOnly;
-    const spotlight = useSpotlight();
+    const upsell = useUpselling();
 
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
@@ -177,7 +177,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         onClick={
                                             free
                                                 ? () =>
-                                                      spotlight.setUpselling({
+                                                      upsell({
                                                           type: 'pass-plus',
                                                           upsellRef: UpsellRef.SECURE_LINKS,
                                                       })
@@ -199,7 +199,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         onClick={
                                             free && isVaultMemberLimitReached(vault)
                                                 ? () =>
-                                                      spotlight.setUpselling({
+                                                      upsell({
                                                           type: 'pass-plus',
                                                           upsellRef: UpsellRef.LIMIT_SHARING,
                                                       })

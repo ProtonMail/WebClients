@@ -1,16 +1,18 @@
-import { type FC, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
-import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
+import { useBulkEnabled } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 type Props = { disabled?: boolean };
 
-export const BulkToggle: FC<Props> = ({ disabled }) => {
-    const bulk = useBulkSelect();
+export const BulkToggle = memo(({ disabled }: Props) => {
+    const bulk = useBulkActions();
+    const bulkEnabled = useBulkEnabled();
 
     useEffect(() => {
         if (disabled) bulk.disable();
@@ -20,7 +22,7 @@ export const BulkToggle: FC<Props> = ({ disabled }) => {
         <Tooltip
             key="bulk-toggle"
             openDelay={500}
-            isOpen={bulk.enabled ? false : undefined}
+            isOpen={bulkEnabled ? false : undefined}
             originalPlacement={'bottom'}
             title={<Kbd shortcut={metaKey} />}
         >
@@ -28,12 +30,12 @@ export const BulkToggle: FC<Props> = ({ disabled }) => {
                 shape="solid"
                 size="small"
                 color="weak"
-                onClick={bulk[bulk.enabled ? 'disable' : 'enable']}
+                onClick={bulk[bulkEnabled ? 'disable' : 'enable']}
                 title={c('Action').t`Bulk select items`}
                 disabled={disabled}
                 className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold max-w-1/3"
             >
-                {bulk.enabled ? (
+                {bulkEnabled ? (
                     c('Action').t`Cancel`
                 ) : (
                     <>
@@ -44,4 +46,6 @@ export const BulkToggle: FC<Props> = ({ disabled }) => {
             </Button>
         </Tooltip>
     );
-};
+});
+
+BulkToggle.displayName = 'BulkToggleMemo';

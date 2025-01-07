@@ -36,6 +36,7 @@ describe('openItem crypto process', () => {
             Pinned: false,
             Revision: 1,
             RevisionTime: timestamp,
+            ShareCount: 0,
             State: ItemState.Active,
         };
 
@@ -71,6 +72,7 @@ describe('openItem crypto process', () => {
             Pinned: false,
             Revision: 12,
             RevisionTime: timestamp,
+            ShareCount: 0,
             State: ItemState.Active,
         };
 

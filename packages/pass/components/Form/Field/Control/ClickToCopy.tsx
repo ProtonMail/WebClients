@@ -1,9 +1,10 @@
 import type { MouseEvent, PropsWithChildren } from 'react';
-import { type FC, useEffect, useRef, useState } from 'react';
+import { type FC, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
+import { SelectionManager } from '@proton/pass/utils/dom/selection';
 import clsx from '@proton/utils/clsx';
 
 export type ClickToCopyProps = { className?: string; value?: string };
@@ -11,22 +12,11 @@ export type ClickToCopyProps = { className?: string; value?: string };
 export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className, children, value = '' }) => {
     const ref = useRef<HTMLDivElement>(null);
     const copyToClipboard = useCopyToClipboard();
-    const [selection, setSelection] = useState(false);
 
     const handleClick = (evt: MouseEvent) => {
-        if (selection) evt.preventDefault();
+        if (SelectionManager.selection) evt.preventDefault();
         else if (value) void copyToClipboard(value);
     };
-
-    useEffect(() => {
-        const onSelectionChange = () => {
-            const selection = window.getSelection();
-            setSelection(selection !== null && selection.toString().length > 0);
-        };
-
-        document.addEventListener('selectionchange', onSelectionChange);
-        return () => document.removeEventListener('selectionchange', onSelectionChange);
-    }, []);
 
     return (
         /* disabling `prefer-tag-over-role` as we cannot use a

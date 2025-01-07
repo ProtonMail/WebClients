@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import type { Maybe } from '@proton/pass/types/utils';
 
 const FOCUS_CHECK_DELAY = 10;
@@ -10,9 +11,7 @@ export const isDocumentFocused = () => document.hasFocus();
 export const useVisibleEffect = (effect: (visible: boolean) => void, deps: any[] = []) => {
     const timer = useRef<Maybe<NodeJS.Timeout>>();
     const active = useRef<boolean>(false);
-
-    const onVisibilityChange = useRef(effect);
-    onVisibilityChange.current = effect;
+    const onVisibilityChange = useStatefulRef(effect);
 
     useEffect(() => {
         active.current = false;

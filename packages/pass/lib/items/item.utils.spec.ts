@@ -11,7 +11,7 @@ import {
     filterItemsByType,
     filterItemsByUserIdentifier,
     flattenItemsByShareId,
-    getItemActionId,
+    getItemEntityID,
     getItemKey,
     getItemKeyRevision,
     getSanitizedUserIdentifiers,
@@ -56,22 +56,22 @@ describe('Item utils', () => {
         });
     });
 
-    describe('getItemActionId', () => {
+    describe('getItemEntityID', () => {
         test('should return the correct optimistic ID for optimistic payloads', () => {
             const input = { optimisticId: 'optimistic123', shareId: 'share123' };
-            const result = getItemActionId(input);
+            const result = getItemEntityID(input);
             expect(result).toBe('share123::optimistic123');
         });
 
         test('should return the correct optimistic ID for non-optimistic payloads', () => {
             const input = { itemId: 'item456', shareId: 'share123' };
-            const result = getItemActionId(input);
+            const result = getItemEntityID(input);
             expect(result).toBe('share123::item456');
         });
 
         test('should prioritize `optimisticId` over `itemId`', () => {
             const input = { optimisticId: 'optimistic123', itemId: 'item456', shareId: 'share123' };
-            const result = getItemActionId(input);
+            const result = getItemEntityID(input);
             expect(result).toBe('share123::optimistic123');
         });
     });

@@ -27,7 +27,7 @@ import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
-import { itemCreationIntent } from '@proton/pass/store/actions';
+import { itemCreate } from '@proton/pass/store/actions';
 import { selectShowUsernameField, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
@@ -88,8 +88,6 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
             passkeys,
             ...values
         }) => {
-            const mutationTime = getEpoch();
-
             const withAlias =
                 'withAlias' in values &&
                 values.withAlias &&
@@ -106,9 +104,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 const aliasOptimisticId = uniqueId();
 
                 dispatch(
-                    itemCreationIntent({
+                    itemCreate.intent({
                         content: {},
-                        createTime: mutationTime - 1 /* alias will be created before login in saga */,
                         extraData: {
                             mailboxes: values.mailboxes,
                             prefix: values.aliasPrefix!,
@@ -120,6 +117,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                         optimisticId: aliasOptimisticId,
                         shareId,
                         type: 'alias',
+                        optimisticTime: getEpoch() - 1 /* alias will be created before login in saga */,
                     })
                 );
             }

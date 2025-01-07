@@ -11,11 +11,11 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
 
 import type { CreateNotificationOptions } from '@proton/components';
-import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
+import type { AppStateService } from '@proton/pass/components/Core/AppStateManager';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     type AuthRouteState,
-    getBootRedirectPath,
+    getBootRedirection,
     getLocalPath,
     getRouteError,
 } from '@proton/pass/components/Navigation/routing';
@@ -64,7 +64,7 @@ import {
 } from './sessions';
 
 type AuthServiceBindings = {
-    app: AppStateContextValue;
+    app: AppStateService;
     authSwitch: AuthSwitchService;
     config: PassConfig;
     core: PassCoreContextValue;
@@ -84,7 +84,7 @@ export const createAuthService = ({
     getOnline,
     onNotification,
 }: AuthServiceBindings) => {
-    const route = objectHandler({ redirectPath: getBootRedirectPath(history.location) });
+    const redirect = objectHandler(getBootRedirection(history.location));
 
     const auth = createCoreAuthService({
         api,
@@ -110,7 +110,8 @@ export const createAuthService = ({
             const error = getRouteError(history.location.search);
 
             if (error !== null) {
-                route.set('redirectPath', '/');
+                redirect.set('pathname', '/');
+                redirect.set('search', '');
                 const pathname = pathLocalID ? `/u/${pathLocalID}` : '/';
                 app.setStatus(AppStatus.ERROR);
                 history.replace({ search: '', pathname, state: { error } });
@@ -127,7 +128,7 @@ export const createAuthService = ({
                 /** Apply user preferences early */
                 core.i18n.setLocale().catch(noop);
                 const theme = await getThemeForLocalID(persistedSession.LocalID);
-                if (theme) core.setTheme(theme);
+                if (theme) core.theme.setState(theme);
 
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
                 const onlineAndSessionReady = getOnline() && !cookieUpgrade;
@@ -197,7 +198,7 @@ export const createAuthService = ({
         },
 
         onLoginStart: () => {
-            if (app.state.booted) return;
+            if (app.getState().booted) return;
             return app.setStatus(AppStatus.AUTHORIZING);
         },
 
@@ -205,15 +206,17 @@ export const createAuthService = ({
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
 
-            /** Repersist the session if sufficient time has elapsed since last use */
+            /** Re-persist session after sufficient time elapse to ensure
+             * the last used (freshest) session is loaded on reload/new tabs */
             if (getEpoch() - authStore.getLastUsedAt() > UNIX_MINUTE) {
                 await auth.persistSession({ regenerateClientKey: false }).catch(noop);
             }
 
-            if (app.state.booted) app.setStatus(AppStatus.READY);
+            if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {
-                const redirect = stripLocalBasenameFromPathname(route.get('redirectPath'));
-                history.replace({ ...history.location, pathname: (getBasename(localID) ?? '/') + redirect });
+                const route = stripLocalBasenameFromPathname(redirect.get('pathname'));
+                const search = redirect.get('search');
+                history.replace({ ...history.location, pathname: (getBasename(localID) ?? '/') + route, search });
                 app.setStatus(AppStatus.AUTHORIZED);
                 store.dispatch(bootIntent());
             }
@@ -262,9 +265,11 @@ export const createAuthService = ({
 
             try {
                 const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
-                if ('url' in data && typeof data.url === 'string') route.set('redirectPath', data.url);
+                if ('pathname' in data && typeof data.pathname === 'string') redirect.set('pathname', data.pathname);
+                if ('search' in data && typeof data.search === 'string') redirect.set('search', data.search);
             } catch {
-                route.set('redirectPath', '/');
+                redirect.set('pathname', '/');
+                redirect.set('search', '');
             }
 
             /** If any on-going persisted sessions are present for the forked
@@ -296,7 +301,7 @@ export const createAuthService = ({
         onForkInvalid: () => history.replace('/'),
 
         onForkRequest: ({ url, state }) => {
-            sessionStorage.setItem(getStateKey(state), JSON.stringify({ url: route.get('redirectPath') }));
+            sessionStorage.setItem(getStateKey(state), JSON.stringify(redirect.data));
             window.location.replace(url);
         },
 
@@ -344,7 +349,7 @@ export const createAuthService = ({
         },
 
         onUnlocked: async (mode, _, localID) => {
-            if (clientBooted(app.state.status)) return;
+            if (clientBooted(app.getState().status)) return;
 
             const validSession = authStore.validSession(authStore.getSession());
 
@@ -397,7 +402,7 @@ export const createAuthService = ({
 
         onSessionFailure: () => {
             logger.info('[AuthServiceProvider] Session resume failure');
-            if (!(clientOffline(app.state.status) && !getOnline())) {
+            if (!(clientOffline(app.getState().status) && !getOnline())) {
                 app.setStatus(AppStatus.ERROR);
                 app.setBooted(false);
             }

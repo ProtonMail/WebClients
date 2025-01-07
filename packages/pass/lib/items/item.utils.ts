@@ -40,7 +40,7 @@ export const fromItemKey = (key: string): UniqueItem => {
 
 export const intoSelectedItem = ({ shareId, itemId }: ItemRevision): SelectedItem => ({ shareId, itemId });
 
-export const getItemActionId = (
+export const getItemEntityID = (
     payload:
         | { optimisticId: string; itemId?: string; shareId: string }
         | { optimisticId?: string; itemId: string; shareId: string }

@@ -5,11 +5,11 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { selectTheme } from '@proton/pass/store/selectors';
 
 export const ThemeConnect = () => {
-    const { setTheme } = usePassCore();
+    const core = usePassCore();
     const selectedTheme = useSelector(selectTheme);
 
     useEffect(() => {
-        if (selectedTheme) setTheme(selectedTheme);
+        if (selectedTheme) core.theme.setState(selectedTheme);
     }, [selectedTheme]);
 
     return null;

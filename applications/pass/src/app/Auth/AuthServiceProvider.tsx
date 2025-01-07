@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useEffect } from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { matchPath, useHistory } from 'react-router-dom';
 
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
@@ -9,14 +9,13 @@ import { getStateKey } from 'proton-pass-web/lib/sessions';
 
 import { useNotifications } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
-import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { type AuthRouteState, isUnauthorizedPath, reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
@@ -42,9 +41,8 @@ export const useAuthService = createUseContext(AuthServiceContext);
 export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const core = usePassCore();
     const { createNotification } = useNotifications();
-    const { getCurrentLocation } = useNavigation();
+    const { getCurrentLocation } = useNavigationActions();
     const sw = useServiceWorker();
-    const app = useContextProxy(AppStateContext);
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
@@ -52,11 +50,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const checkConnectivity = useCheckConnectivity();
     const enhance = useNotificationEnhancer();
 
-    const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
-
     const authService = useInstance(() =>
         createAuthService({
-            app,
+            app: AppStateManager,
             authSwitch,
             config,
             core,
@@ -81,7 +77,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const localState = sessionStorage.getItem(getStateKey(state));
 
         const run = async () => {
-            if (matchConsumeFork) {
+            if (matchPath(history.location.pathname, SSO_PATHS.FORK)) {
                 return authService.consumeFork({
                     mode: 'sso',
                     key,
@@ -119,7 +115,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         };
 
         const handleLocked: ServiceWorkerClientMessageHandler<'locked'> = ({ localID, mode }) => {
-            const { status } = app.state;
+            const { status } = AppStateManager.getState();
 
             if (authStore.hasSession(localID)) {
                 if (mode !== authStore.getLockMode()) return window.location.reload();

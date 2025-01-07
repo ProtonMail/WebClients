@@ -5,8 +5,9 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { type ShareItem, rootReducer } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
-import type { Item, ItemRevision, TabId } from '@proton/pass/types';
+import type { ItemRevision, TabId } from '@proton/pass/types';
 import { ContentFormatVersion, ItemState, ShareRole, ShareType } from '@proton/pass/types';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 export const mockShareId = uniqueId();
@@ -28,21 +29,25 @@ export const mockShare: ShareItem = {
     vaultId: uniqueId(),
 };
 
-export const getMockItem = (data: Item = itemBuilder('login').data): ItemRevision => ({
-    aliasEmail: null,
-    contentFormatVersion: ContentFormatVersion.Item,
-    createTime: 0,
-    data,
-    itemId: uniqueId(),
-    lastUseTime: 0,
-    modifyTime: 0,
-    pinned: false,
-    revision: 1,
-    flags: 0,
-    revisionTime: 0,
-    shareId: mockShareId,
-    state: ItemState.Active,
-});
+export const getMockItemRevision = (revision: Partial<ItemRevision> = {}): ItemRevision =>
+    partialMerge<ItemRevision>(
+        {
+            aliasEmail: null,
+            contentFormatVersion: ContentFormatVersion.Item,
+            createTime: 0,
+            data: itemBuilder('login').data,
+            itemId: uniqueId(),
+            lastUseTime: 0,
+            modifyTime: 0,
+            pinned: false,
+            revision: 1,
+            flags: 0,
+            revisionTime: 0,
+            shareId: mockShareId,
+            state: ItemState.Active,
+        },
+        revision
+    );
 
 export const getMockPasskey = (): SanitizedPasskey => ({
     keyId: uniqueId(),
@@ -62,7 +67,7 @@ export const getMockPasskey = (): SanitizedPasskey => ({
 export const getMockState = (): State => {
     const mockState = rootReducer(undefined, { type: '__TEST_INIT__' });
     mockState.shares['test-share-id'] = mockShare;
-    mockState.items.byShareId[mockShareId] = { [mockItemId]: getMockItem() };
+    mockState.items.byShareId[mockShareId] = { [mockItemId]: getMockItemRevision() };
 
     /* clone deep to avoid referential equalities
      * with regards to selector memoisation in tests */

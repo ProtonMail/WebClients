@@ -1,4 +1,4 @@
-import type { CSSProperties, FC, PropsWithChildren } from 'react';
+import type { CSSProperties, FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,6 +17,7 @@ import type { DropdownSize } from '@proton/components/components/dropdown/utils'
 import clsx from '@proton/utils/clsx';
 
 export type QuickActionsDropdownProps = {
+    children?: ReactNode | ((opened: boolean) => ReactNode);
     className?: string;
     color?: 'weak' | 'norm';
     disabled?: boolean;
@@ -35,7 +36,7 @@ export type QuickActionsDropdownProps = {
     style?: CSSProperties;
 };
 
-export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProps>> = ({
+export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     children,
     className,
     color,
@@ -88,7 +89,9 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
                 size={dropdownSize}
             >
                 {dropdownHeader && <div className="text-bold px-4 my-2">{dropdownHeader}</div>}
-                <DropdownMenu className={menuClassName}>{children}</DropdownMenu>
+                <DropdownMenu className={menuClassName}>
+                    {children instanceof Function ? children(isOpen) : children}
+                </DropdownMenu>
             </Dropdown>
         </>
     );

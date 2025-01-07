@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import type { FetchedBreaches } from '@proton/components';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
 import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
@@ -31,7 +31,7 @@ export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<
     const [request, initial] = getRequest(dto);
     const [breaches, setBreaches] = useState<FetchedBreaches[]>([]);
     const req = useRequest(request, { initial, onSuccess: setBreaches });
-    const usages = useSelector(selectLoginsByUserIdentifier(email));
+    const usages = useMemoSelector(selectLoginsByUserIdentifier, [email]);
 
     useEffect(() => {
         switch (dto.type) {

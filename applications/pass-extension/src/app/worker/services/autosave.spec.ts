@@ -1,7 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/channel';
 import store from 'proton-pass-extension/__mocks__/app/worker/store';
 import {
-    getMockItem,
+    getMockItemRevision,
     getMockPasskey,
     getMockState,
     mockShareId,
@@ -10,8 +10,8 @@ import {
 
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
-import type { FormEntry, ItemCreateIntent, ItemEditIntent } from '@proton/pass/types';
+import { itemCreate, itemEdit } from '@proton/pass/store/actions';
+import type { FormEntry } from '@proton/pass/types';
 import { AutosaveMode, FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -30,6 +30,8 @@ describe('AutosaveService [worker]', () => {
     afterEach(() => {
         WorkerContext.clear();
         store.getState.mockClear();
+        store.dispatch.mockClear();
+        store.dispatchAsyncRequest.mockClear();
     });
 
     describe('resolve', () => {
@@ -65,7 +67,7 @@ describe('AutosaveService [worker]', () => {
                 .set('password', '') /* different password */
                 .set('urls', ['https://domain.com/']);
 
-            const revision = getMockItem(item.data);
+            const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
@@ -96,7 +98,7 @@ describe('AutosaveService [worker]', () => {
                 .set('password', '') /* different password */
                 .set('urls', ['https://domain.com/']);
 
-            const revision = getMockItem(item.data);
+            const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
@@ -126,7 +128,7 @@ describe('AutosaveService [worker]', () => {
                 .set('password', submission.data.password) /* same password */
                 .set('urls', ['https://domain.com/']);
 
-            const revision = getMockItem(item.data);
+            const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
@@ -142,7 +144,7 @@ describe('AutosaveService [worker]', () => {
                 .set('password', submission.data.password) /* same password */
                 .set('urls', ['https://domain.com/']);
 
-            const revision = getMockItem(item.data);
+            const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
@@ -161,7 +163,7 @@ describe('AutosaveService [worker]', () => {
                 .set('password', submission.data.password) /* same password */
                 .set('urls', [testCase.value]);
 
-            const revision = getMockItem(item.data);
+            const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
@@ -193,6 +195,8 @@ describe('AutosaveService [worker]', () => {
         });
 
         test('should handle new item with email', async () => {
+            store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
+
             const response = sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
@@ -206,27 +210,20 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemCreationIntent>;
-            const created = action.payload as ItemCreateIntent<'login'>;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
-            expect(itemCreationIntent.match(action)).toBe(true);
+            expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
             expect(created.content.urls).toEqual(['https://proton.me/']);
             expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('123');
 
-            action.meta.callback?.(
-                itemCreationSuccess({
-                    optimisticId: 'test-optimstic-id',
-                    shareId: mockShareId,
-                    item: getMockItem(action.payload),
-                })
-            );
-
             await expect(response).resolves.toBe(true);
         });
 
         test('should handle new item with username', async () => {
+            store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
+
             const response = sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
@@ -240,29 +237,21 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemCreationIntent>;
-            const created = action.payload as ItemCreateIntent<'login'>;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
-            expect(itemCreationIntent.match(action)).toBe(true);
+            expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
             expect(created.content.urls).toEqual(['https://proton.me/']);
             expect(deobfuscate(created.content.itemUsername)).toEqual('john');
             expect(deobfuscate(created.content.password)).toEqual('123');
 
-            action.meta.callback?.(
-                itemCreationSuccess({
-                    optimisticId: 'test-optimstic-id',
-                    shareId: mockShareId,
-                    item: getMockItem(action.payload),
-                })
-            );
-
             await expect(response).resolves.toBe(true);
         });
 
         test('should handle new item with passkey', async () => {
-            const passkey = getMockPasskey();
+            store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
+            const passkey = getMockPasskey();
             const response = sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
@@ -277,23 +266,14 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemCreationIntent>;
-            const created = action.payload as ItemCreateIntent<'login'>;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
-            expect(itemCreationIntent.match(action)).toBe(true);
+            expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test passkey');
             expect(created.content.urls).toEqual(['https://proton.me/']);
             expect(deobfuscate(created.content.itemEmail)).toEqual(passkey.userName);
             expect(deobfuscate(created.content.password)).toEqual('');
             expect(created.content.passkeys).toEqual([passkey]);
-
-            action.meta.callback?.(
-                itemCreationSuccess({
-                    optimisticId: 'test-optimstic-id',
-                    shareId: mockShareId,
-                    item: getMockItem(action.payload),
-                })
-            );
 
             await expect(response).resolves.toBe(true);
         });
@@ -342,10 +322,12 @@ describe('AutosaveService [worker]', () => {
                 .set('passkeys', [passkey])
                 .set('urls', ['https://domain.com/']);
 
-            const revision = getMockItem(item.data);
+            const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
+
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
+            store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
             const request = sendMessage(
                 contentScriptMessage({
@@ -361,23 +343,14 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemEditIntent>;
-            const created = action.payload as ItemEditIntent<'login'>;
+            const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall;
 
-            expect(itemEditIntent.match(action)).toBe(true);
-            expect(created.metadata.name).toEqual('Domain.com#Update');
-            expect(created.content.urls).toEqual(['https://domain.com/', 'https://sub.domain.com/']);
-            expect(deobfuscate(created.content.itemEmail)).toEqual('test@proton.me');
-            expect(deobfuscate(created.content.password)).toEqual('new-password');
-            expect(created.content.passkeys).toEqual([passkey]);
-
-            action.meta.callback?.(
-                itemEditSuccess({
-                    shareId: mockShareId,
-                    itemId: revision.itemId,
-                    item: getMockItem(action.payload),
-                })
-            );
+            expect(actions).toEqual(itemEdit);
+            expect(updated.metadata.name).toEqual('Domain.com#Update');
+            expect(updated.content.urls).toEqual(['https://domain.com/', 'https://sub.domain.com/']);
+            expect(deobfuscate(updated.content.itemEmail)).toEqual('test@proton.me');
+            expect(deobfuscate(updated.content.password)).toEqual('new-password');
+            expect(updated.content.passkeys).toEqual([passkey]);
 
             await expect(request).resolves.toBe(true);
         });
@@ -396,10 +369,12 @@ describe('AutosaveService [worker]', () => {
                 .set('passkeys', [passkey])
                 .set('urls', ['https://domain.com/']);
 
-            const revision = getMockItem(item.data);
+            const revision = getMockItemRevision({ data: item.data });
             const state = getMockState();
+
             state.items.byShareId[mockShareId][revision.itemId] = revision;
             store.getState.mockReturnValueOnce(state);
+            store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
             const request = sendMessage(
                 contentScriptMessage({
@@ -416,29 +391,21 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemEditIntent>;
-            const created = action.payload as ItemEditIntent<'login'>;
+            const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall;
 
-            expect(itemEditIntent.match(action)).toBe(true);
-            expect(created.metadata.name).toEqual('Domain.com#Update');
-            expect(created.content.urls).toEqual(['https://domain.com/']);
-            expect(deobfuscate(created.content.itemEmail)).toEqual('test@proton.me');
-            expect(deobfuscate(created.content.password)).toEqual('existing-password');
-            expect(created.content.passkeys).toEqual([passkey, newPasskey]);
-
-            action.meta.callback?.(
-                itemEditSuccess({
-                    shareId: mockShareId,
-                    itemId: revision.itemId,
-                    item: getMockItem(action.payload),
-                })
-            );
+            expect(actions).toEqual(itemEdit);
+            expect(updated.metadata.name).toEqual('Domain.com#Update');
+            expect(updated.content.urls).toEqual(['https://domain.com/']);
+            expect(deobfuscate(updated.content.itemEmail)).toEqual('test@proton.me');
+            expect(deobfuscate(updated.content.password)).toEqual('existing-password');
+            expect(updated.content.passkeys).toEqual([passkey, newPasskey]);
 
             await expect(request).resolves.toBe(true);
         });
 
         test('should handle new item in url with port', async () => {
             setMockMessageSender('https://localhost:3000');
+            store.dispatchAsyncRequest.mockImplementationOnce(async () => ({ type: 'success' }));
 
             const response = sendMessage(
                 contentScriptMessage({
@@ -453,22 +420,13 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const action = store.dispatch.mock.lastCall[0] as ReturnType<typeof itemCreationIntent>;
-            const created = action.payload as ItemCreateIntent<'login'>;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
 
-            expect(itemCreationIntent.match(action)).toBe(true);
+            expect(actions).toEqual(itemCreate);
             expect(created.metadata.name).toEqual('Test item');
             expect(created.content.urls).toEqual(['https://localhost:3000/']);
             expect(deobfuscate(created.content.itemEmail)).toEqual('john@proton.me');
             expect(deobfuscate(created.content.password)).toEqual('123');
-
-            action.meta.callback?.(
-                itemCreationSuccess({
-                    optimisticId: 'test-optimstic-id',
-                    shareId: mockShareId,
-                    item: getMockItem(action.payload),
-                })
-            );
 
             await expect(response).resolves.toBe(true);
         });

@@ -1,9 +1,10 @@
-import { type FC, useEffect, useRef, useState } from 'react';
+import { type FC, useCallback, useEffect, useState } from 'react';
 
 import {
-    useIFrameContext,
+    useIFrameAppState,
     useRegisterMessageHandler,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { IFrameAppAutoSizer } from 'proton-pass-extension/app/content/injections/apps/components/IFrameAppAutoSizer';
 import type { NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
@@ -21,29 +22,28 @@ import { PasskeyGet } from './views/PasskeyGet';
 
 import './Notification.scss';
 
-export const Notification: FC = () => {
-    const { visible, resize } = useIFrameContext();
-    const app = useAppState();
-    const ref = useRef<HTMLDivElement>(null);
+type Props = {
+    /** @internal Only used for debugging component */
+    initial?: NotificationActions;
+};
 
-    const [state, setState] = useState<MaybeNull<NotificationActions>>(null);
-    const loading = state === null || clientBusy(app.state.status);
+export const Notification: FC<Props> = ({ initial = null }) => {
+    const { visible } = useIFrameAppState();
+    const { status } = useAppState();
 
-    useRegisterMessageHandler(IFramePortMessageType.NOTIFICATION_ACTION, ({ payload }) => setState(payload));
+    const [state, setState] = useState<MaybeNull<NotificationActions>>(initial);
+    const loading = state === null || clientBusy(status);
 
-    useEffect(() => {
-        if (!visible) setState(null);
+    useRegisterMessageHandler(
+        IFramePortMessageType.NOTIFICATION_ACTION,
+        useCallback(({ payload }) => setState(payload), [])
+    );
 
-        if (ref.current) {
-            const obs = new ResizeObserver(([entry]) => resize(entry.contentRect.height));
-            obs.observe(ref.current);
-            return () => obs.disconnect();
-        }
-    }, [visible]);
+    useEffect(() => setState((prev) => (visible ? prev : null)), [visible]);
 
     return (
-        <Localized>
-            <div className="min-h-full bg-norm relative" style={{ '--anime-delay': '0s' }} ref={ref}>
+        <IFrameAppAutoSizer className="min-h-full bg-norm relative" style={{ '--anime-delay': '0s' }}>
+            <Localized>
                 <div className="h-full p-4">
                     {(() => {
                         if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
@@ -62,7 +62,7 @@ export const Notification: FC = () => {
 
                     <NotificationsChildren />
                 </div>
-            </div>
-        </Localized>
+            </Localized>
+        </IFrameAppAutoSizer>
     );
 };

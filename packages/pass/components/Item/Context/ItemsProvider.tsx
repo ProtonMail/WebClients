@@ -1,35 +1,53 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { selectItemsSearchResult } from '@proton/pass/store/selectors';
-import type { ItemRevisionWithOptimistic } from '@proton/pass/types';
+import { secureLinksGet } from '@proton/pass/store/actions';
+import { selectItemsSearchResult, selectSecureLinksSearchResult } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
+import type { ItemRevision } from '@proton/pass/types';
 
 type ItemsContextValue = {
-    filtered: ItemRevisionWithOptimistic[];
-    searched: ItemRevisionWithOptimistic[];
+    filtered: ItemRevision[];
+    searched: ItemRevision[];
     totalCount: number;
 };
 
 const ItemsContext = createContext<ItemsContextValue>({ filtered: [], searched: [], totalCount: 0 });
 
 export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { filters, matchTrash, selectedItem, navigate } = useNavigation();
+    const dispatch = useDispatch();
+
+    const selectedItem = useSelectedItem();
     const shareId = selectedItem?.shareId;
     const itemId = selectedItem?.itemId;
 
-    const items = useSelector(
-        selectItemsSearchResult({
-            type: filters.type === '*' ? null : filters.type,
-            search: filters.search,
-            shareId: matchTrash ? null : filters.selectedShareId,
-            sort: filters.sort,
-            trashed: matchTrash,
-        })
-    );
+    const scope = useItemScope();
+    const trash = scope === 'trash';
+
+    const { filters } = useNavigationFilters();
+    const navigate = useNavigate();
+
+    const items = useSelector((state: State) => {
+        switch (scope) {
+            case 'secure-links':
+                return selectSecureLinksSearchResult(state, filters.search);
+            default:
+                return selectItemsSearchResult(state, {
+                    type: filters.type === '*' ? null : filters.type,
+                    search: filters.search,
+                    shareId: trash ? null : filters.selectedShareId,
+                    sort: filters.sort,
+                    trashed: trash,
+                });
+        }
+    });
 
     useEffect(() => {
         /* Check if the currently selected item is not present in the current
@@ -37,8 +55,15 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
          * autoselect. This scenario can occur during search operations or when
          * items are moved/restored. */
         const conflict = itemId && shareId && !items.filtered.some(itemEq({ itemId, shareId }));
-        if (conflict) navigate(getLocalPath(maybeTrash('', matchTrash)), { mode: 'replace' });
-    }, [items, shareId, itemId, matchTrash]);
+        if (conflict) navigate(getLocalPath(scope), { mode: 'replace' });
+    }, [items, shareId, itemId, scope]);
+
+    useEffect(() => {
+        /** Try to revalidate the secure links data every time we navigate
+         * to a secure-links route. The underlying effect is throttled to
+         * a maximum of once every minute (see `secureLinksGet` maxAge) */
+        if (scope === 'secure-links') dispatch(secureLinksGet.intent());
+    }, [scope]);
 
     return <ItemsContext.Provider value={items}>{children}</ItemsContext.Provider>;
 };

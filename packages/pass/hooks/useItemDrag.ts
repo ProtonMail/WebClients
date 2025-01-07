@@ -5,16 +5,16 @@ import { c, msgid } from 'ttag';
 
 import { useItemsDroppable } from '@proton/components';
 import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
-import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
+import { useStableRef } from '@proton/pass/hooks/useStableRef';
 import { fromItemKey, getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { SelectedItem } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
 
-type DraggableItem = { ID?: string };
-type ItemDropProps = ReturnType<typeof useItemsDroppable>;
-type ItemDragProps = {
+export type DraggableItem = { ID?: string };
+export type ItemDropProps = ReturnType<typeof useItemsDroppable>;
+export type ItemDragProps = {
     handleDragStart: (event: DragEvent, item: DraggableItem) => void;
     handleDragEnd: (event: DragEvent) => void;
     draggable: boolean;
@@ -29,33 +29,33 @@ const getDragHtml = ({ length: count }: string[]) =>
 
 /** Items can be dragged from any view including Pass Monitor view,
  * except in the cases defined by this `draggable` flag. */
-export const useCanDragItems = EXTENSION_BUILD
-    ? () => false
-    : () => {
-          const { matchTrash } = useNavigation();
-          return !matchTrash;
-      };
+export const useCanDragItems = () => !EXTENSION_BUILD;
 
 export const useItemDrag: () => Partial<ItemDragProps> = EXTENSION_BUILD
     ? () => NOOP_DRAG
     : () => {
-          const bulk = useBulkSelect();
+          const bulkEnabled = useBulkEnabled();
+          const bulk = useBulkSelection();
           const draggable = useCanDragItems();
 
           const selectedItems = useMemo<string[]>(
               () =>
-                  bulk.enabled
+                  bulkEnabled
                       ? Array.from(bulk.selection.entries()).flatMap(([shareId, itemIds]) =>
                             Array.from(itemIds.values()).map((itemId) => getItemKey({ itemId, shareId }))
                         )
                       : [],
-              [bulk.enabled, bulk.selection]
+              [bulkEnabled, bulk.selection]
           );
+
+          /** Using stable ref here to derive stable `handleDragStart`
+           * and `handleDragEnd` methods from `useItemsDraggable` */
+          const draggableItems = useStableRef(selectedItems);
 
           /** We're keeping selection state outside of the
            * `useItemsDraggable` hook - as such no need to
            * keep track of the full items list in this hook. */
-          const { handleDragStart, handleDragEnd } = useItemsDraggable(EMPTY_LIST, selectedItems, noop, getDragHtml);
+          const { handleDragStart, handleDragEnd } = useItemsDraggable(EMPTY_LIST, draggableItems, noop, getDragHtml);
 
           return useMemo(
               () => ({

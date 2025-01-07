@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Alert, Icon, Prompt } from '@proton/components';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
@@ -23,8 +24,6 @@ import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
-import { useInviteContext } from './InviteContext';
-
 type Props = { shareId: string };
 
 type InviteListItem =
@@ -32,7 +31,7 @@ type InviteListItem =
     | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
-    const { createInvite, close } = useInviteContext();
+    const { createInvite, close } = useInviteActions();
 
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const plan = useSelector(selectPassPlan);

@@ -1,29 +1,25 @@
-import type { ComponentType, FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { type ComponentType, type FC, useMemo } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { updateInAppNotificationState } from '@proton/pass/store/actions';
-import { selectNextNotification } from '@proton/pass/store/selectors';
 import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
 import type { InAppNotification, TelemetryInAppNotificationStatus } from '@proton/pass/types/data/notification';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
-type InAppNotificationProps<P extends object> = P & {
-    /** Changes the message state from Unread to Read or Dismissed */
-    changeNotificationState: (messageId: string, state: InAppNotificationState) => void;
-    /** Marks the notification as read and stores the event in Telemetry */
-    readMessage: () => void;
-    /** Based on the CTA Ref, returns the full path to redirect to */
-    getRedirectTo: (path: string) => string;
-    /** The notification to be displayed */
+export type InAppNotificationRenderProps = {
     notification: InAppNotification;
+    dense?: boolean;
 };
+
+interface InAppNotificationHandles {
+    setNotificationState: (state: InAppNotificationState) => void;
+    onAction: () => void;
+}
 
 const TelemetryStatusName: Record<InAppNotificationState, TelemetryInAppNotificationStatus> = {
     [InAppNotificationState.READ]: 'read',
@@ -31,59 +27,48 @@ const TelemetryStatusName: Record<InAppNotificationState, TelemetryInAppNotifica
     [InAppNotificationState.DISMISSED]: 'dismissed',
 };
 
-export const withInAppNotification = <P extends object>(Component: ComponentType<InAppNotificationProps<P>>): FC<P> => {
+export const WithInAppNotification = <P extends InAppNotificationRenderProps>(
+    Component: ComponentType<InAppNotificationHandles & P>
+): FC<P> => {
     const WrappedComponent: FC<P> = (props) => {
         const { onLink, onTelemetry } = usePassCore();
         const { API_URL } = usePassConfig();
-        const authStore = useAuthStore();
         const dispatch = useDispatch();
-        const notification = useSelector(selectNextNotification(getEpoch()))!;
+        const history = useHistory();
 
-        const changeNotificationState = (id: string, state: InAppNotificationState) => {
-            onTelemetry(
-                TelemetryEventName.PassNotificationChangeStatus,
-                {},
-                {
-                    notificationKey: notification.notificationKey,
-                    notificationStatus: TelemetryStatusName[notification.state],
-                }
-            );
-            dispatch(updateInAppNotificationState.intent({ id, state }));
-        };
+        const { id, notificationKey, content } = props.notification;
 
-        const getRedirectTo = (path: string) => `/${getLocalIDPath(authStore?.getLocalID())}${path}`;
+        useTelemetryEvent(TelemetryEventName.PassNotificationDisplay, {}, { notificationKey })([]);
 
-        const readMessage = () => {
-            const { cta } = notification.content;
+        const handles = useMemo<InAppNotificationHandles>(
+            () => ({
+                setNotificationState: (state) => {
+                    dispatch(updateInAppNotificationState.intent({ id, state }));
+                    onTelemetry(
+                        TelemetryEventName.PassNotificationChangeStatus,
+                        {},
+                        { notificationKey, notificationStatus: TelemetryStatusName[state] }
+                    );
+                },
 
-            if (!cta) return;
+                onAction: () => {
+                    if (content.cta) {
+                        const { type, ref } = content.cta;
+                        const subPath = ref.substring(1);
 
-            onTelemetry(
-                TelemetryEventName.PassNotificationCTAClick,
-                {},
-                { notificationKey: notification.notificationKey }
-            );
-            changeNotificationState(notification.id, InAppNotificationState.READ);
+                        onTelemetry(TelemetryEventName.PassNotificationCTAClick, {}, { notificationKey });
+                        handles.setNotificationState(InAppNotificationState.READ);
 
-            if (cta.type === InAppNotificationCtaType.external_link) return onLink(cta.ref, { replace: true });
-            if (EXTENSION_BUILD) return onLink(getPassWebUrl(API_URL) + getRedirectTo(cta.ref).substring(1));
-        };
-
-        useTelemetryEvent(
-            TelemetryEventName.PassNotificationDisplay,
-            {},
-            { notificationKey: notification.notificationKey }
-        )([]);
-
-        return (
-            <Component
-                {...props}
-                readMessage={readMessage}
-                changeNotificationState={changeNotificationState}
-                getRedirectTo={getRedirectTo}
-                notification={notification}
-            />
+                        if (type === InAppNotificationCtaType.external_link) return onLink(ref, { replace: true });
+                        else if (EXTENSION_BUILD) return onLink(getPassWebUrl(API_URL, subPath));
+                        else return history.push(getLocalPath(subPath));
+                    }
+                },
+            }),
+            [props.notification]
         );
+
+        return <Component {...props} {...handles} />;
     };
 
     WrappedComponent.displayName = `WithInAppNotification<${Component.displayName ?? 'Component'}>`;

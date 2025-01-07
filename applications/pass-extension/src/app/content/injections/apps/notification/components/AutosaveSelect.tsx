@@ -8,6 +8,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import { type AutosaveFormValues, AutosaveMode, type AutosaveUpdatePayload } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
 
 type Props = {
     busy: boolean;
@@ -21,7 +22,7 @@ export const AutosaveSelect: FC<Props> = ({ data, busy, form }) => (
             {data.candidates.map(({ itemId, shareId, url, userIdentifier, name }) => (
                 <ListItem
                     key={`${shareId}-${itemId}`}
-                    className="rounded-none"
+                    className={clsx('rounded-none', data?.candidates.length === 1 && 'pointer-events-none')}
                     icon="user"
                     title={name}
                     subTitle={userIdentifier}

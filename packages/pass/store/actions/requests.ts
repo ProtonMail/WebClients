@@ -34,7 +34,6 @@ export const lockCreateRequest = () => `auth::lock::create`;
 
 export const settingsEditRequest = withKey(`settings::edit`);
 
-export const aliasOptionsRequest = withKey(`alias::options`);
 export const aliasDetailsRequest = withKey(`alias::details`);
 
 export const shareRemoveMemberRequest = withKey(`share::members::remove`);

@@ -1,5 +1,7 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
+
 type UseResponsiveItemsOptions = { gap: number; maxChildWidth: number };
 
 /** Tracks seen visible counts against children width to optimize reconciliation.
@@ -12,8 +14,7 @@ export const useResponsiveHorizontalList = <T>(items: T[], options: UseResponsiv
     const [visibleCount, setVisibleCount] = useState(0);
     const ref = useRef<HTMLDivElement>(null);
     const seen = useRef<Map<number, number>>(new Map());
-    const max = useRef<number>(items.length);
-    max.current = items.length;
+    const max = useStatefulRef<number>(items.length);
 
     const reconciliate = useCallback(() => {
         if (!ref.current) return;

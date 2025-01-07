@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors } from 'formik';
@@ -157,8 +157,6 @@ export const useImportForm = ({
         },
     });
 
-    formRef.current = form;
-
     const onAddFiles = (files: File[]) => {
         try {
             const file = createFileValidator(supportedFileTypes)(files);
@@ -174,6 +172,11 @@ export const useImportForm = ({
     };
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
+
+    useEffect(() => {
+        /** FIXME: use async dispatch to get rid of form ref */
+        formRef.current = form;
+    });
 
     return {
         busy,

@@ -35,7 +35,7 @@ const getCriticalRuntimeErrorMessage = (): string => {
 export const Lobby: FC = () => {
     const { openSettings } = usePassCore();
     const { logout } = useExtensionClient();
-    const { state } = useAppState();
+    const state = useAppState();
     const errored = clientErrored(state.status);
 
     const requestFork = useRequestForkWithPermissions({ autoClose: true });

@@ -1,14 +1,14 @@
 import { type FC, useCallback, useState } from 'react';
 
+import { OnboardingCard } from 'proton-pass-extension/app/pages/onboarding/Card/OnboardingCard';
+import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
-import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
@@ -41,41 +41,23 @@ export const Welcome: FC = () => {
                 <div className="m-auto p-14 color-norm flex justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '64rem' }}>
-                        <div className="flex items-center gap-2 mb-5">
-                            {
-                                <img
-                                    src="/assets/protonpass-icon.svg"
-                                    className="h-custom"
-                                    style={{ '--h-custom': '2.25rem' }}
-                                    alt={PASS_APP_NAME}
-                                />
-                            }
-                            <span>
-                                <PassTextLogo
-                                    key="pass-text-logo"
-                                    className="pass-lobby--brand-text ml-2 shrink-0 logo"
-                                />
-                            </span>
-                        </div>
+                        <OnboardingHeader />
 
                         <div className={clsx('anime-reveal', !pendingAccess && 'anime-reveal--hidden')}>
                             {pendingAccess && (
-                                <SpotlightContent
-                                    type={SpotlightMessage.NOOP}
-                                    mode="default"
-                                    className="mb-6"
-                                    id="pending"
-                                    icon={() => (
-                                        <img
-                                            className="h-custom"
-                                            style={{ '--h-custom': '4rem' }}
-                                            src={accountSetupImg}
-                                            alt=""
-                                        />
-                                    )}
-                                    message={c('Info').t`For security reason, your access needs to be confirmed`}
-                                    title={c('Info').t`Pending access to the shared data`}
-                                />
+                                <OnboardingCard className="mb-4 items-center">
+                                    <div className="flex-1">
+                                        <h3>{c('Info').t`Pending access to the shared data`}</h3>
+                                        <span>{c('Info')
+                                            .t`For security reason, your access needs to be confirmed`}</span>
+                                    </div>
+                                    <img
+                                        className="h-custom shrink-0"
+                                        style={{ '--h-custom': '4rem' }}
+                                        src={accountSetupImg}
+                                        alt=""
+                                    />
+                                </OnboardingCard>
                             )}
                         </div>
 

@@ -6,6 +6,7 @@ module.exports = {
         project: './tsconfig.json',
     },
     rules: {
+        'react/prop-types': 'off',
         'no-console': ['error', { allow: ['warn', 'error'] }],
         curly: ['error', 'multi-line'],
     },

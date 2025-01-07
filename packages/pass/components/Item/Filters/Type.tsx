@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,10 +7,10 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import type { ItemRevisionWithOptimistic, ItemTypeFilter } from '@proton/pass/types';
+import type { ItemRevision, ItemTypeFilter } from '@proton/pass/types';
 
 type Props = {
-    items: ItemRevisionWithOptimistic[];
+    items: ItemRevision[];
     value: ItemTypeFilter;
     onChange: (value: ItemTypeFilter) => void;
 };
@@ -44,7 +44,7 @@ export const getItemTypeOptions = (): Record<ItemTypeFilter, { label: string; ic
     },
 });
 
-export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
+export const TypeFilter = memo(({ items, value, onChange }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     const options = useMemo(
@@ -99,4 +99,6 @@ export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
             </Dropdown>
         </>
     );
-};
+});
+
+TypeFilter.displayName = 'TypeFilterMemo';
