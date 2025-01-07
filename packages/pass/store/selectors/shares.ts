@@ -86,17 +86,6 @@ export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
             share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(isActive).length : null
     );
 
-export const selectVaultSharedWithEmails = (shareId: string) =>
-    createSelector(
-        selectShare<ShareType.Vault>(shareId),
-        (vault): Set<string> =>
-            new Set(
-                (vault?.members?.map(prop('email')) ?? [])
-                    .concat(vault?.invites?.map(prop('invitedEmail')) ?? [])
-                    .concat(vault?.newUserInvites?.map(prop('invitedEmail')) ?? [])
-            )
-    );
-
 /* The default vault should be the oldest vault I own and can write to */
 export const selectDefaultVault = createSelector(
     selectOwnWritableVaults,

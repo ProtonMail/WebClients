@@ -10,10 +10,10 @@ export type InviteNewUserDTO = Omit<InviteUserDTO, 'publicKey'>;
 export type InviteMemberDTO = InviteUserDTO | InviteNewUserDTO;
 
 export type InviteBatchCreateIntent = { shareId: string; users: InviteUserDTO[]; newUsers: InviteNewUserDTO[] };
-export type InviteBatchCreateSuccess = { shareId: string };
+export type InviteBatchCreateSuccess = { shareId: string; itemId?: string; count: number };
 
 export type InviteResendIntent = { shareId: string; inviteId: string };
-export type InviteRemoveIntent = { shareId: string; inviteId: string };
+export type InviteRemoveIntent = { shareId: string; itemId?: string; inviteId: string };
 
 export type InviteRejectIntent = { inviteToken: string };
 export type InviteAcceptIntent = {

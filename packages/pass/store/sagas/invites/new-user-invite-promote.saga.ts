@@ -8,17 +8,16 @@ import {
     newUserInvitePromoteIntent,
     newUserInvitePromoteSuccess,
 } from '@proton/pass/store/actions';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { ShareType } from '@proton/pass/types';
+import type { AccessItem } from '@proton/pass/store/reducers';
+import { selectAccessOrThrow } from '@proton/pass/store/selectors';
 import { type Maybe } from '@proton/pass/types';
 
 function* promoteInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInvitePromoteIntent>) {
     try {
         const { newUserInviteId, shareId } = payload;
-        const share: ShareItem<ShareType.Vault> = yield select(selectShareOrThrow(shareId));
+        const access: AccessItem = yield select(selectAccessOrThrow(shareId));
 
-        const newUserInvite = (share.newUserInvites ?? []).find((invite) => newUserInviteId === invite.newUserInviteId);
+        const newUserInvite = access.newUserInvites.find((invite) => newUserInviteId === invite.newUserInviteId);
         if (!newUserInvite) throw new Error();
 
         const invitedPublicKey: Maybe<string> = yield getPrimaryPublicKeyForEmail(newUserInvite.invitedEmail);

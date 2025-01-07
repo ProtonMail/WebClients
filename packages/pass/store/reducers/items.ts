@@ -11,9 +11,10 @@ import {
     draftSave,
     draftsGarbageCollect,
     emptyTrashProgress,
-    getShareAccessOptions,
     importItemsProgress,
     inviteAcceptSuccess,
+    inviteBatchCreateSuccess,
+    inviteRemoveSuccess,
     itemAutofilled,
     itemBulkDeleteProgress,
     itemBulkMoveProgress,
@@ -41,6 +42,7 @@ import {
     setItemFlags,
     shareDeleteSync,
     shareLeaveSuccess,
+    shareRemoveMemberAccessIntent,
     sharedVaultCreated,
     sharesSync,
     syncSuccess,
@@ -322,9 +324,20 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: toMap(items, 'itemId') });
         }
 
-        if (getShareAccessOptions.success.match(action) && action.payload.itemId) {
-            const { shareId, itemId, members = [], invites = [], newUserInvites = [] } = action.payload;
-            return updateItem({ shareId, itemId, members, invites, newUserInvites })(state);
+        // TODO(@djankovic): Maybe just for resync the item instead of matching these?
+        if (inviteBatchCreateSuccess.match(action) && action.payload.itemId) {
+            const { shareId, itemId, count } = action.payload;
+            const { shareCount } = state[shareId][itemId];
+            return updateItem({ shareId, itemId, shareCount: shareCount + count })(state);
+        }
+
+        if (
+            (inviteRemoveSuccess.match(action) || shareRemoveMemberAccessIntent.match(action)) &&
+            action.payload.itemId
+        ) {
+            const { shareId, itemId } = action.payload;
+            const { shareCount } = state[shareId][itemId];
+            return updateItem({ shareId, itemId, shareCount: shareCount - 1 })(state);
         }
 
         return state;

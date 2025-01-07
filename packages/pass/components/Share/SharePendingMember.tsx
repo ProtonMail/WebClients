@@ -17,7 +17,7 @@ import { NewUserInviteState } from '@proton/pass/types';
 
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 
-type PendingMemberBase = { canManage: boolean; email: string; shareId: string };
+type PendingMemberBase = { canManage: boolean; email: string; shareId: string; itemId?: string };
 type PendingExistingMemberProps = PendingMemberBase & { inviteId: string };
 type PendingNewMemberProps = PendingMemberBase & { newUserInviteId: string; state: NewUserInviteState };
 type SharePendingMemberProps = { actions?: ReactNode[]; email: string; extra?: ReactNode; loading: boolean };
@@ -48,12 +48,18 @@ export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email
     </div>
 );
 
-export const PendingExistingMember: FC<PendingExistingMemberProps> = ({ canManage, email, inviteId, shareId }) => {
+export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
+    canManage,
+    email,
+    inviteId,
+    shareId,
+    itemId,
+}) => {
     const resendInvite = useActionRequest(inviteResendIntent);
     const removeInvite = useActionRequest(inviteRemoveIntent);
 
     const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
-    const handleRemoveInvite = () => removeInvite.dispatch({ shareId, inviteId });
+    const handleRemoveInvite = () => removeInvite.dispatch({ shareId, itemId, inviteId });
     const loading = resendInvite.loading || removeInvite.loading;
 
     return (

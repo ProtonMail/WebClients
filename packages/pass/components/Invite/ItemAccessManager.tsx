@@ -17,10 +17,16 @@ import { ShareMember } from '@proton/pass/components/Share/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
 import { UpsellRef } from '@proton/pass/constants';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
+import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
 import { isShared } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectItem, selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
+import {
+    selectAccess,
+    selectItem,
+    selectOwnWritableVaults,
+    selectPassPlan,
+    selectShareOrThrow,
+} from '@proton/pass/store/selectors';
 import type { NewUserPendingInvite, PendingInvite, ShareType, UniqueItem } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
@@ -39,7 +45,8 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
     const { createItemInvite, close } = useInviteActions();
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const item = useSelector(selectItem(shareId, itemId))!;
-    const members = item.members ?? [];
+    const access = useSelector(selectAccess(shareId, itemId));
+    const { members, invites, newUserInvites } = access;
     const { heading, subheading } = presentListItem(item);
     const plan = useSelector(selectPassPlan);
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
@@ -50,26 +57,26 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
     const canManage = isShareManageable(vault);
     const b2b = plan === UserPassPlan.BUSINESS;
 
-    const invites = useMemo<InviteListItem[]>(
+    const allInvites = useMemo<InviteListItem[]>(
         () =>
             [
-                ...(item.invites ?? []).map((invite) => ({
+                ...(invites ?? []).map((invite) => ({
                     key: invite.invitedEmail,
                     type: 'existing' as const,
                     invite,
                 })),
-                ...(item.newUserInvites ?? []).map((invite) => ({
+                ...(newUserInvites ?? []).map((invite) => ({
                     key: invite.invitedEmail,
                     type: 'new' as const,
                     invite,
                 })),
             ].sort(sortOn('key', 'ASC')),
-        [item]
+        [access]
     );
 
     const shared = isShared(item);
 
-    const memberLimitReached = isVaultMemberLimitReached(vault);
+    const memberLimitReached = isMemberLimitReached(vault, access);
 
     const warning = (() => {
         if (canManage && memberLimitReached) {
@@ -141,9 +148,9 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
 
                 {shared ? (
                     <div className="flex flex-column gap-y-3">
-                        {invites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
+                        {allInvites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
 
-                        {invites.map((item) => {
+                        {allInvites.map((item) => {
                             switch (item.type) {
                                 case 'new':
                                     return (
@@ -154,6 +161,7 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
                                             newUserInviteId={item.invite.newUserInviteId}
                                             canManage={canManage}
                                             state={item.invite.state}
+                                            itemId={itemId}
                                         />
                                     );
                                 case 'existing':
@@ -164,6 +172,7 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
                                             email={item.invite.invitedEmail}
                                             inviteId={item.invite.inviteId}
                                             canManage={canManage}
+                                            itemId={itemId}
                                         />
                                     );
                             }
@@ -181,7 +190,8 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
                                 owner={member.owner}
                                 role={member.shareRoleId}
                                 canManage={canManage}
-                                canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
+                                canTransfer={!itemId && vault.owner && hasMultipleOwnedWritableVaults}
+                                itemId={itemId}
                             />
                         ))}
                         {warning && (
