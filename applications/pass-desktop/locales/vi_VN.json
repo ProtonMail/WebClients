@@ -514,9 +514,6 @@
       ]
     },
     "Description": {
-      "${ total } other login uses the same password": [
-        "${ total } lần đăng nhập khác sử dụng cùng mật khẩu"
-      ],
       "Change your passwords": [
         "Thay đổi các mật khẩu của bạn"
       ],
@@ -555,9 +552,6 @@
       "Authentication error": [
         "Lỗi xác thực"
       ],
-      "Cannot send invitation at the moment": [
-        "Hiện tại không thể gửi lời mời"
-      ],
       "Cannot send invitations at the moment": [
         "Hiện tại không thể gửi lời mời"
       ],
@@ -593,9 +587,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Xóa kho lưu trữ ${ payload.content.name } thất bại"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Phát hiện ${ errors.length } hàng CSV bị lỗi"
       ],
       "Editing item failed": [
         "Chỉnh sửa nội dung thất bại"
@@ -810,9 +801,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte\nbytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -824,23 +812,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte\nBytes"
-      ],
-      "Gigabyte": [
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilôbytes"
-      ],
-      "Megabyte": [
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabytes"
       ]
     },
     "Font face option": {
@@ -863,20 +834,8 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Cập nhật nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
       ],
-      "${ count } time": [
-        "${ count } lần"
-      ],
-      "${ count } view": [
-        "${ count } lượt xem"
-      ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } lượt xem"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } thành viên"
-      ],
-      "${ n } item": [
-        "${ n } nội dung"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sẽ luôn truy câp được"
@@ -886,9 +845,6 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } sẽ hỏi mật khẩu ${ BRAND_NAME } để có thể truy cập dữ liệu ngoại tuyến."
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } rò rỉ đã dược phát hiện"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ngày miễn phí để dùng thử các tính năng cao cấp. Chỉ trong tuần đầu của bạn với ${ BRAND_NAME }"
@@ -1067,9 +1023,6 @@
       "For security reasons, your access needs to be confirmed": [
         "Vì lý do bảo mật, truy cập của bạn cần được xác nhận"
       ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Các mật khẩu sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Nhận không giới hạn bí danh, tận hưởng các tính năng độc quyền, vầ hỗ trợ chúng tôi bằng việc đăng ký gói Pass Plus."
       ],
@@ -1081,9 +1034,6 @@
       ],
       "Import the CSV file below.": [
         "Nhập tệp CSV vào bên dưới."
-      ],
-      "Imported ${ payload.total } item": [
-        "Đã nhập ${ payload.total } nội dung"
       ],
       "Imported on ${ date }": [
         "Đã nhập vào ${ date }"
@@ -1108,9 +1058,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Có vẻ như bạn đã đăng nhập vào ${ PASS_APP_NAME }. Nếu bạn đang muốn đăng nhập bằng tài khoản khác, hãy đăng xuất khỏi trình mở rộng này trước nhé."
-      ],
-      "item": [
-        "nội dung"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã được tạo"
@@ -1222,9 +1169,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Mật khẩu cũ hơn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần sẽ bị tự động xóa trong lịch sử."
       ],
       "Paused": [
         "Đã ngừng"
@@ -1352,9 +1296,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } nội dung không thể nhập vào:"
-      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
       ],
@@ -1430,9 +1371,6 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Chúng tôi gặp sự cố khi đồng bộ dữ liệu vào bộ nhớ của bạn. Vui lòng đảm bảo bạn có đủ bộ nhớ trống để ${ PASS_SHORT_APP_NAME } hoạt động mượt mà."
       ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Chúng tôi nhận thấy bạn có ${ aliasCount } bí danh trong SimpleLogin nhưng chưa có trong ${ PASS_APP_NAME }. Bạn muốn nhập không?"
-      ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Khi bạn tạo hoặc chỉnh sửa tài khoản đăng nhập trên ${ PASS_APP_NAME }, trường \"tên người dùng\" sẽ luôn hiển thị."
       ],
@@ -1444,9 +1382,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bạn không thể đổi địa chỉ email nhận cho bí danh này."
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Bạn còn ${ daysRemaining } ngày để thử nó và những tính năng cao cấp khác."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để chuyển nội dung giữa tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
@@ -1489,29 +1424,8 @@
       ]
     },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } bí danh"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } ký tự"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } từ"
-      ],
-      "${ days } day": [
-        "${ days } ngày"
-      ],
-      "${ hours } hour": [
-        "${ hours } tiếng"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } phút"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "phiên bản ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } đăng nhập"
       ],
       "1 hour": [
         "1 giờ"
@@ -1984,9 +1898,6 @@
       "Text": [
         "Văn bản"
       ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Kho lưu trữ của nội dung hiện được chia sẽ với ${ targetMembers } người dùng"
-      ],
       "Theme": [
         "Chủ đề"
       ],
@@ -2089,11 +2000,6 @@
       ],
       "Window": [
         "Cửa sổ"
-      ]
-    },
-    "Message": {
-      "${ count } item": [
-        "${ count } nội dung"
       ]
     },
     "new_plans: feature": {
@@ -2219,9 +2125,6 @@
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Đồng bộ bí danh đã hoàn tất! Bí danh SimpleLogin của bạn sẽ được cập nhật trong vài phút nữa."
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Kho lưu trữ không thể có hơn ${ vault.targetMaxMembers } thành viên."
       ]
     },
     "Title": {
@@ -2357,9 +2260,6 @@
       "Resume monitoring?": [
         "Theo dõi trở lại?"
       ],
-      "Reused ${ count } time": [
-        "Tái sử dụng ${ count } lần"
-      ],
       "Reused passwords": [
         "Các mật khẩu tái sử dụng"
       ],
@@ -2489,9 +2389,6 @@
       ],
       "item was imported without custom fields": [
         "Nội dung đã được nhập nhưng không có các trường tùy chỉnh"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Độ dài tối đa là ${ maxLength } ký tự"
       ],
       "Missing alias prefix": [
         "Thiếu tiền tố bí danh"

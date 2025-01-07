@@ -972,18 +972,18 @@
         "Erro: ${ errorMessage }"
       ],
       "Please refresh the page or try again later.": [
-        "Por favor, actualize a página ou tente novamente mais tarde."
+        "Atualize a página ou tente novamente mais tarde."
       ],
       "Something went wrong": [
         "Ocorreu um erro"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
+        "Não é possível carregar esta página. Atualize a página ou verifique a sua ligação à internet."
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo correu mal ao autenticar com a sua chave de segurança. Por favor, tente novamente."
+        "Algo correu mal ao autenticar com a sua chave de segurança. Tente novamente."
       ]
     },
     "fido2: Info": {
@@ -1112,6 +1112,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Se acredita que cometemos um erro, ${ contactLink }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
@@ -1136,6 +1139,18 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
       ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Para remover restrições, pode optar por um plano pago."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Para remover as restrições, consulte ${ mailLink } e escolha um plano pago."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Detetámos a criação de múltiplas contas gratuitas, o que viola os nossos ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Temos planos concebidos especificamente para utilizadores como você, que necessitam de mais do que um endereço de e-mail."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
@@ -1152,10 +1167,10 @@
         "Pode agora voltar à aplicação e continuar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor efetue o pagamento das faturas em atraso."
+        "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, efetue o pagamento das faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas em atraso."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, efetue o pagamento das faturas em atraso."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
@@ -1202,11 +1217,19 @@
       ],
       "Request an invite": [
         "Pedir um convite"
+      ],
+      "terms of service": [
+        "termos de serviço"
       ]
     },
     "new_plans": {
       "Keep your inbox organized with folders": [
         "Mantenha a sua caixa de entrada organizada com pastas"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Obtenha o ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1253,8 +1276,15 @@
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
       ],
+      "${ options }-day file version history": [
+        "Histórico de versões de ficheiros de ${ options } dia",
+        "Histórico de versões de ficheiros de ${ options } dias"
+      ],
       "${ size } attachment size": [
         "Anexos de ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } de armazenamento seguro por utilizador"
       ],
       "${ size } storage": [
         "${ size } de armazenamento"
@@ -1262,11 +1292,29 @@
       "1 TB secure storage": [
         "1 TB de armazenamento seguro"
       ],
+      "10 email addresses/aliases": [
+        "10 endereços de e-mail/aliases"
+      ],
+      "10 more premium features": [
+        "10 funcionalidades premium adicionais"
+      ],
+      "10-year file version history": [
+        "Histórico de versões de ficheiros de 10 anos"
+      ],
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Todos os produtos e funcionalidades ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Todos os serviços ${ BRAND_NAME } premiu com uma subscrição fácil"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminação automática das pastas Spam e Lixo"
@@ -1289,11 +1337,17 @@
       "Catch-all": [
         "Catch-all"
       ],
+      "Collaborate and share large files": [
+        "Colaborar e partilhar ficheiros grandes"
+      ],
       "Contact groups": [
         "Grupos de contactos"
       ],
       "Contact groups management": [
         "Gestão de grupos de contacto"
+      ],
+      "Custom and secure business email": [
+        "Endereço de e-mail profissional seguro e personalizado"
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
@@ -1325,6 +1379,9 @@
       "HTML signatures": [
         "Assinaturas HTML"
       ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
       "Password health": [
         "Estado da palavras-passe"
       ],
@@ -1337,20 +1394,41 @@
       "Quickly craft replies": [
         "Crie respostas rapidamente"
       ],
+      "Recover previous file versions": [
+        "Recuperar as versões anteriores do ficheiro"
+      ],
+      "Save time emailing": [
+        "Economize tempo ao enviar e-mails"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Agende e adie e-mails para quando quiser"
+      ],
       "Schedule messages at any time": [
         "Agende mensagens a qualquer momento"
       ],
       "Search message content": [
         "Pesquisar conteúdo da mensagem"
       ],
+      "See team's availability": [
+        "Ver a disponibilidade da equipa"
+      ],
       "Send & receive invitations": [
         "Enviar e receber convites"
+      ],
+      "Share files with no size limit": [
+        "Partilhe ficheiros sem limite de tamanho"
       ],
       "SMTP submission": [
         "Envio SMTP"
       ],
+      "SMTP submission for select organizations": [
+        "Envio de SMTP para as organizações selecionadas"
+      ],
       "Support for up to 2 users": [
         "Suporte para até 2 utilizadores"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronize e guarde cópias de segurança de todos os seus ficheiros em vários dispositivos."
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -1372,6 +1450,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domínio de e-mail personalizado"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para as suas identidades online, por exemplo, JohnShopper@${ domain } para contas de compras, JohnNews@${ domain2 } para subscrição de notícias"
       ],
@@ -1383,11 +1464,23 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Proteja a sua agenda com encriptação de ponta a ponta. Inclui suporte para agendas personalizadas, partilha de agenda e muito mais."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Aceda ao ${ MAIL_APP_NAME } e o ${ CALENDAR_APP_NAME } com facilidade do seu desktop."
+      ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Cada endereço pode enviar e receber mensagens. Um utilizador pode ter vários endereços, mas um endereço só pode ser atribuído a um utilizador."
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Permite-lhe configurar respostas automáticas para as suas mensagens recebidas"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Limpe automaticamente mensagens com mais de 30 dias do Lixo e do Spam"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "O envio de e-mail promocional ou programático em massa não é atualmente suportado. Recomendamos a utilização de um fornecedor de serviços de e-mail dedicado para este caso de utilização."
@@ -1404,6 +1497,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partilhe facilmente os seus calendários com a sua família, amigos ou colegas."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envie um email para todos num grupo com um único endereço de email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que recebe todos os e-mails enviados para o seu domínio, mesmo que o endereço de e-mail não exista, já não exista ou tenha um erro tipográfico."
@@ -1435,6 +1531,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Armazene com segurança os detalhes dos seus contactos, como número de telefone, endereço, data de nascimento e anotações pessoais. A encriptação de acesso zero garante que nem mesmo ${ BRAND_NAME } possa acessá-los."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Veja a disponibilidade dos participantes da reunião e economize tempo ao agendar reuniões."
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envie e-mails para grandes grupos de forma rápida e fácil, criando quantos grupos de contactos forem necessários (até 100 contactos por grupo)"
       ],
@@ -1444,8 +1543,14 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partilhe os seus ficheiros ou pastas com qualquer pessoa, utilizando ligações seguras e partilháveis."
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e ${ PASS_APP_NAME }."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }. Os administradores podem atribuir diferentes volumes de armazenamento aos utilizadores da sua organização"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "O espaço de armazenamento é partilhado entre os utilizadores em ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e o ${ PASS_APP_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
@@ -1477,9 +1582,33 @@
         "Palavra-passe"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "O início de sessão não foi concluído."
+      ]
+    },
     "sso": {
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sessão na sua organização"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Será redirecionado para o seu fornecedor de SSO de terceiros."
+      ]
+    },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Até ${ totalStorageSize } de armazenamento no Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Até ${ totalStorageSize } de armazenamento no Mail"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Para todos os serviços da ${ BRAND_NAME }"
       ]
     },
     "Success": {

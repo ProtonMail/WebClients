@@ -40,6 +40,9 @@
       "Add": [
         "Hozzáadás"
       ],
+      "Add account": [
+        "Fiók hozzáadása"
+      ],
       "Add address": [
         "Cím hozzáadása"
       ],
@@ -585,6 +588,9 @@
       ],
       "Sign out": [
         "Kijelentkezés"
+      ],
+      "Sign out of all accounts": [
+        "Minden fiók kiléptetése"
       ],
       "sign up for free": [
         "regisztráljon ingyenesen"
@@ -4294,6 +4300,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Ez új meghívót küld a **${ email }** címre."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ez minden aktív munkafolyamatból kilépteti és kikapcsolja a kétlépcsős hitelesítést."
@@ -8513,6 +8522,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Biztos, hogy be szeretné zárni az előnézetet?"
+      ],
+      "Are you sure?": [
+        "Biztos benne?"
       ],
       "Authentication security": [
         "Hitelesítés biztonsága"

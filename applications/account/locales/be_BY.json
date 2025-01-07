@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Дадаць уліковы запіс ${ BRAND_NAME }"
       ],
+      "Add account": [
+        "Дадаць уліковы запіс"
+      ],
       "Add address": [
         "Дадаць адрас"
       ],
@@ -832,6 +835,9 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
+      "Refresh Data": [
+        "Абнавіць даныя"
+      ],
       "Refresh status": [
         "Абнавіць статус"
       ],
@@ -1521,7 +1527,7 @@
         "Хуткі і бяспечны. Не пакідае журналаў."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Выконваецца на серверах ${ BRAND_NAME }"
+        "Выконваць на серверах ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Выконваецца на прыладзе"
@@ -3481,7 +3487,7 @@
         "${ count } раз",
         "${ count } разы",
         "${ count } разоў",
-        "${ count } разы"
+        "${ count } разоў"
       ],
       "Daily": [
         "Штодзень"
@@ -5070,17 +5076,11 @@
       "Calendar": [
         "Каляндар"
       ],
-      "Calendar time zone not supported": [
-        "Часавы пояс календара не падтрымліваецца"
-      ],
       "Component with wrong format": [
         "Кампанент з няправільным фарматам"
       ],
       "Custom time zone": [
         "Карыстальніцкі часавы пояс"
-      ],
-      "Edited event not supported": [
-        "Адрэдагаваная падзея не падтрымліваецца"
       ],
       "Element": [
         "Элемент"
@@ -5088,17 +5088,8 @@
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
       ],
-      "End time out of bounds": [
-        "Час завяршэння па-за межамі дыяпазону"
-      ],
       "Event": [
         "Падзея"
-      ],
-      "Event validation failed": [
-        "Не ўдалося праверыць падзею"
-      ],
-      "Floating times not supported": [
-        "Плаваючы час не падтрымліваецца"
       ],
       "Free-busy time information": [
         "Звесткі аб свабодным часе і працоўных днях"
@@ -5109,26 +5100,11 @@
       "Journal entry": [
         "Запіс у журнале"
       ],
-      "Malformed all-day event": [
-        "Няправільная падзея на ўвесь дзень"
-      ],
-      "Malformed end time": [
-        "Няправільны час завяршэння"
-      ],
-      "Malformed recurring event": [
-        "Няправільная перыядычная падзея"
-      ],
-      "Malformed start time": [
-        "Няправільны час пачатку"
-      ],
       "Missing start time": [
         "Адсутнічае час пачатку"
       ],
       "No UID, title or start time": [
         "Няма UID, загалоўка або часу пачатку"
-      ],
-      "Non-Gregorian": [
-        "Не грыгарыянскі каляндар"
       ],
       "Notification out of bounds": [
         "Апавяшчэнне па-за межамі"
@@ -5136,20 +5112,8 @@
       "Original recurring event could not be found": [
         "Не атрымалася знайсці арыгінальную перыядычную падзею"
       ],
-      "Recurring event has no occurrences": [
-        "Перыядычная падзея не мае паўтарэнняў"
-      ],
-      "Recurring rule not supported": [
-        "Правіла для паўтарэння не падтрымліваецца"
-      ],
-      "Start time out of bounds": [
-        "Час пачатку па-за межамі дыяпазону"
-      ],
       "Time zone": [
         "Часавы пояс"
-      ],
-      "Time zone not supported": [
-        "Часавы пояс не падтрымліваецца"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -5288,9 +5252,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Не атрымалася абнавіць падзею ў вашым календары. Адказ не адпраўлены"
-      ],
-      "Unexpected error": [
-        "Нечаканая памылка"
       ],
       "Unsupported invitation": [
         "Запрашэнне не падтрымліваецца"
@@ -6229,6 +6190,12 @@
       "Checkout": [
         "Аплата"
       ],
+      "City": [
+        "Горад"
+      ],
+      "Country": [
+        "Краіна"
+      ],
       "Create your account": [
         "Стварэнне ўліковага запісу"
       ],
@@ -6762,13 +6729,13 @@
         "${ calendarsToBeCreatedCount } новы каляндар",
         "${ calendarsToBeCreatedCount } новыя календары",
         "${ calendarsToBeCreatedCount } новых календароў",
-        "${ calendarsToBeCreatedCount } новыя календары"
+        "${ calendarsToBeCreatedCount } новых календароў"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } аб'яднаны каляндар",
         "${ calendarsToBeMergedCount } аб'яднаныя календары",
         "${ calendarsToBeMergedCount } аб'яднаных календароў",
-        "${ calendarsToBeMergedCount } аб'яднаныя календары"
+        "${ calendarsToBeMergedCount } аб'яднаных календароў"
       ],
       "${ current } of ${ total }": [
         "${ current } з ${ total }"
@@ -6942,7 +6909,7 @@
         "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
+        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Запрасіце сяброў у ${ BRAND_NAME }"
@@ -8207,6 +8174,9 @@
       "No label selected": [
         "Метка не выбрана"
       ],
+      "No location filters are currently assigned.": [
+        "У цяперашні час фільтры месцазнаходжання не прызначаны."
+      ],
       "No logs yet.": [
         "Журналаў пакуль няма."
       ],
@@ -8215,6 +8185,9 @@
       ],
       "No results found": [
         "Нічога не знойдзена"
+      ],
+      "No Shared Servers Found": [
+        "Абагуленыя серверы не знойдзены"
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
@@ -8626,6 +8599,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Абагульванне ${ vaultLink } абноўлена"
+      ],
+      "Shared Server Location Filters": [
+        "Фільтры месцазнаходжання абагуленага сервера"
       ],
       "Shared vault deleted": [
         "Абагуленае сховішча выдалена"
@@ -15918,7 +15894,7 @@
         "${ days } дзень",
         "${ days } дні",
         "${ days } дзён",
-        "${ days } дня"
+        "${ days } дзён"
       ],
       "${ hours } hour": [
         "${ hours } гадзіна",
@@ -16234,6 +16210,9 @@
       ],
       "Enter your backup password": [
         "Увядзіце свой рэзервовы пароль"
+      ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Пераканайцеся, што гэты карыстальнік існуе ў вашым пастаўшчыку пасведчанняў. Гэта неабходна для яго ўваходу ў сістэму."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "У мэтах бяспекі вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
@@ -18591,6 +18570,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Палепшыце да Business, каб наладзіць вылучаныя серверы"
+      ],
+      "Shared servers": [
+        "Абагуленыя серверы"
       ],
       "Short domain (@pm.me)": [
         "Кароткі дамен (@pm.me)"

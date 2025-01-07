@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Dodaj konto ${ BRAND_NAME }"
       ],
+      "Add account": [
+        "Dodaj konto"
+      ],
       "Add address": [
         "Dodaj adres"
       ],
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Poleć znajomemu"
+      ],
+      "Refresh Data": [
+        "Odśwież dane"
       ],
       "Refresh status": [
         "Odśwież status"
@@ -4588,6 +4594,9 @@
       "Impossible to rename the gateway": [
         "Nie można zmienić nazwy bramy"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Typ pliku jest nieobsługiwany. Prześlij plik w formacie PNG lub JPEG."
       ],
@@ -4735,6 +4744,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Wpisz prawidłowy adres URL identyfikatora jednostki"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Popraw zaznaczony konflikt, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować.",
@@ -4764,6 +4776,9 @@
       ],
       "Please upload a square logo": [
         "Prześlij kwadratowe logo"
+      ],
+      "Please upload an XML file": [
+        "Prześlij plik XML"
       ],
       "Please upload only 1 file": [
         "Prześlij tylko 1 plik"
@@ -5063,17 +5078,11 @@
       "Calendar": [
         "Kalendarz"
       ],
-      "Calendar time zone not supported": [
-        "Strefa czasowa kalendarza nie jest obsługiwana"
-      ],
       "Component with wrong format": [
         "Komponent posiada niewłaściwy format"
       ],
       "Custom time zone": [
         "Niestandardowa strefa czasowa"
-      ],
-      "Edited event not supported": [
-        "Edytowane wydarzenie nie jest obsługiwane"
       ],
       "Element": [
         "Element"
@@ -5081,17 +5090,8 @@
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
       ],
-      "End time out of bounds": [
-        "Czas zakończenia jest poza zakresem"
-      ],
       "Event": [
         "Wydarzenie"
-      ],
-      "Event validation failed": [
-        "Weryfikacja wydarzenia nie powiodła się"
-      ],
-      "Floating times not supported": [
-        "Czas w formacie \"floating\" nie jest obsługiwany"
       ],
       "Free-busy time information": [
         "Kalendarz zawiera informację o stanie wolny / zajęty"
@@ -5102,26 +5102,11 @@
       "Journal entry": [
         "Wpis w formacie dziennika"
       ],
-      "Malformed all-day event": [
-        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
-      ],
-      "Malformed end time": [
-        "Czas zakończenia posiada nieprawidłowy format"
-      ],
-      "Malformed recurring event": [
-        "Wydarzenie cykliczne posiada nieprawidłowy format"
-      ],
-      "Malformed start time": [
-        "Czas rozpoczęcia posiada nieprawidłowy format"
-      ],
       "Missing start time": [
         "Brak czasu rozpoczęcia"
       ],
       "No UID, title or start time": [
         "Brak identyfikatora użytkownika, tytułu lub czasu rozpoczęcia"
-      ],
-      "Non-Gregorian": [
-        "Kalendarz jest w formacie innym niż gregoriański"
       ],
       "Notification out of bounds": [
         "Czas powiadomienia jest poza zakresem"
@@ -5129,20 +5114,8 @@
       "Original recurring event could not be found": [
         "Oryginalne wydarzenie cykliczne nie zostało znalezione"
       ],
-      "Recurring event has no occurrences": [
-        "Wydarzenie cykliczne nie posiada powtórzeń"
-      ],
-      "Recurring rule not supported": [
-        "Reguła powtórzeń nie jest obsługiwana"
-      ],
-      "Start time out of bounds": [
-        "Czas rozpoczęcia jest poza zakresem"
-      ],
       "Time zone": [
         "Strefa czasowa"
-      ],
-      "Time zone not supported": [
-        "Strefa czasowa nie jest obsługiwana"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -5281,9 +5254,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Wydarzenie nie może zostać zaktualizowane. Odpowiedź nie została wysłana"
-      ],
-      "Unexpected error": [
-        "Wystąpił nieoczekiwany błąd"
       ],
       "Unsupported invitation": [
         "Zaproszenie jest nieobsługiwane"
@@ -6221,6 +6191,12 @@
       ],
       "Checkout": [
         "Płatność"
+      ],
+      "City": [
+        "Miasto"
+      ],
+      "Country": [
+        "Kraj"
       ],
       "Create your account": [
         "Utwórz konto"
@@ -7351,6 +7327,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiuj i wklej ten adres URL do pola adresu URL usługi ACS (Assertion Consumer Service) u swojego dostawcy tożsamości"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
+      ],
       "Copy the link to clipboard": [
         "Kopiuj link do schowka"
       ],
@@ -7629,6 +7608,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Wpisz identyfikator jednostki organizacji **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Wpisz hasło organizacji, aby przywrócić uprawnienia administratora. ${ learnMore }"
@@ -8203,6 +8185,9 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No Shared Servers Found": [
+        "Nie znaleziono udostępnionych serwerów"
+      ],
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
       ],
@@ -8613,6 +8598,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
+      ],
+      "Shared Server Location Filters": [
+        "Filtry udostępnionych serwerów"
       ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
@@ -11013,6 +11001,9 @@
       ],
       "Signature": [
         "Podpis"
+      ],
+      "Single sign-on Entity ID": [
+        "Identyfikator jednostki SSO"
       ],
       "Single sign-on URL": [
         "Adres URL logowania SSO"
@@ -18564,6 +18555,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Ulepsz plan do wersji Business, aby skonfigurować dedykowane serwery"
       ],
+      "Shared servers": [
+        "Udostępnione serwery"
+      ],
       "Short domain (@pm.me)": [
         "Krótka domena (@pm.me)"
       ],
@@ -18695,6 +18689,9 @@
       ],
       "User": [
         "Użytkownik"
+      ],
+      "User converted to SSO": [
+        "Przekonwertowano użytkownika do logowania SSO"
       ],
       "Users": [
         "Użytkownicy"
@@ -18923,6 +18920,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiuj i wklej ten adres URL do pola adresu URL usługi ACS (Assertion Consumer Service) u swojego dostawcy tożsamości"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
       ],
       "Customize import to reduce the number of folders": [
         "Dostosuj proces importowania, aby zmniejszyć liczbę folderów"

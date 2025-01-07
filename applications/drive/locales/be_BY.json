@@ -45,6 +45,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add account": [
+        "Дадаць уліковы запіс"
+      ],
       "Add address": [
         "Дадаць адрас"
       ],
@@ -758,6 +761,9 @@
       ],
       "Sign out": [
         "Выйсці з уліковага запісу"
+      ],
+      "Sign out of all accounts": [
+        "Выйсці з усіх уліковых запісаў"
       ],
       "Skip verification": [
         "Прапусціць праверку"
@@ -3251,17 +3257,11 @@
       "Calendar": [
         "Каляндар"
       ],
-      "Calendar time zone not supported": [
-        "Часавы пояс календара не падтрымліваецца"
-      ],
       "Component with wrong format": [
         "Кампанент з няправільным фарматам"
       ],
       "Custom time zone": [
         "Карыстальніцкі часавы пояс"
-      ],
-      "Edited event not supported": [
-        "Адрэдагаваная падзея не падтрымліваецца"
       ],
       "Element": [
         "Элемент"
@@ -3269,17 +3269,8 @@
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
       ],
-      "End time out of bounds": [
-        "Час завяршэння па-за межамі дыяпазону"
-      ],
       "Event": [
         "Падзея"
-      ],
-      "Event validation failed": [
-        "Не ўдалося праверыць падзею"
-      ],
-      "Floating times not supported": [
-        "Плаваючы час не падтрымліваецца"
       ],
       "Free-busy time information": [
         "Звесткі аб свабодным часе і працоўных днях"
@@ -3290,26 +3281,11 @@
       "Journal entry": [
         "Запіс у журнале"
       ],
-      "Malformed all-day event": [
-        "Няправільная падзея на ўвесь дзень"
-      ],
-      "Malformed end time": [
-        "Няправільны час завяршэння"
-      ],
-      "Malformed recurring event": [
-        "Няправільная перыядычная падзея"
-      ],
-      "Malformed start time": [
-        "Няправільны час пачатку"
-      ],
       "Missing start time": [
         "Адсутнічае час пачатку"
       ],
       "No UID, title or start time": [
         "Няма UID, загалоўка або часу пачатку"
-      ],
-      "Non-Gregorian": [
-        "Не грыгарыянскі каляндар"
       ],
       "Notification out of bounds": [
         "Апавяшчэнне па-за межамі"
@@ -3317,20 +3293,8 @@
       "Original recurring event could not be found": [
         "Не атрымалася знайсці арыгінальную перыядычную падзею"
       ],
-      "Recurring event has no occurrences": [
-        "Перыядычная падзея не мае паўтарэнняў"
-      ],
-      "Recurring rule not supported": [
-        "Правіла для паўтарэння не падтрымліваецца"
-      ],
-      "Start time out of bounds": [
-        "Час пачатку па-за межамі дыяпазону"
-      ],
       "Time zone": [
         "Часавы пояс"
-      ],
-      "Time zone not supported": [
-        "Часавы пояс не падтрымліваецца"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -3414,9 +3378,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Не атрымалася абнавіць падзею ў вашым календары. Адказ не адпраўлены"
-      ],
-      "Unexpected error": [
-        "Нечаканая памылка"
       ],
       "Unsupported invitation": [
         "Запрашэнне не падтрымліваецца"
@@ -4051,13 +4012,13 @@
         "${ calendarsToBeCreatedCount } новы каляндар",
         "${ calendarsToBeCreatedCount } новыя календары",
         "${ calendarsToBeCreatedCount } новых календароў",
-        "${ calendarsToBeCreatedCount } новыя календары"
+        "${ calendarsToBeCreatedCount } новых календароў"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } аб'яднаны каляндар",
         "${ calendarsToBeMergedCount } аб'яднаныя календары",
         "${ calendarsToBeMergedCount } аб'яднаных календароў",
-        "${ calendarsToBeMergedCount } аб'яднаныя календары"
+        "${ calendarsToBeMergedCount } аб'яднаных календароў"
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } скасаваны",
@@ -4069,13 +4030,13 @@
         "${ contactCount } кантакт змяшчае некалькі адрасоў электроннай пошты.",
         "${ contactCount } кантакты змяшчаюць некалькі адрасоў электроннай пошты.",
         "${ contactCount } кантактаў змяшчаюць некалькі адрасоў электроннай пошты.",
-        "${ contactCount } кантакты змяшчаюць некалькі адрасоў электроннай пошты."
+        "${ contactCount } кантактаў змяшчаюць некалькі адрасоў электроннай пошты."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } удзельнік",
         "${ contactEmailsLength } удзельнікі",
         "${ contactEmailsLength } удзельнікаў",
-        "${ contactEmailsLength } удзельнікі"
+        "${ contactEmailsLength } удзельнікаў"
       ],
       "${ contactName } contains multiple email addresses.": [
         "Кантакт ${ contactName } змяшчае некалькі адрасоў электроннай пошты."
@@ -4084,7 +4045,7 @@
         "Знойдзены ${ contactsCount } кантакт",
         "Знойдзена ${ contactsCount } кантакты",
         "Знойдзена ${ contactsCount } кантактаў",
-        "Знойдзена ${ contactsCount } кантакты"
+        "Знойдзена ${ contactsCount } кантактаў"
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } кантакт",
@@ -4234,7 +4195,7 @@
         "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
+        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
       ],
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
@@ -4854,6 +4815,9 @@
       "Medium Priority": [
         "Сярэдні прыярытэт"
       ],
+      "Member": [
+        "Удзельнік"
+      ],
       "Merged": [
         "Аб'яднана"
       ],
@@ -5342,6 +5306,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Гэта заменіць існуючую папку файлам"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
       "This will upload a new version of the file": [
         "Гэта запампуе новую версію файла"
@@ -7921,7 +7888,7 @@
         "Не ўдалося расшыфраваць ${ count } элемент",
         "Не ўдалося расшыфраваць ${ count } элементы",
         "Не ўдалося расшыфраваць ${ count } элементаў",
-        "Не ўдалося расшыфраваць ${ count } элементы"
+        "Не ўдалося расшыфраваць ${ count } элементаў"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
@@ -9104,7 +9071,7 @@
         "${ days } дзень",
         "${ days } дні",
         "${ days } дзён",
-        "${ days } дня"
+        "${ days } дзён"
       ],
       "${ hours } hour": [
         "${ hours } гадзіна",
@@ -9870,7 +9837,7 @@
         "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
-        "${ countMergeableContacts } кантакты выглядаюць ідэнтычна."
+        "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна."
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
         "Застаўся ${ countOfUnrecoveredLinksLeft }",
@@ -10186,6 +10153,9 @@
         "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
         "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
         "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?"
+      ],
+      "Are you sure?": [
+        "Вы ўпэўнены?"
       ],
       "Billing cycle": [
         "Перыяд аплаты"

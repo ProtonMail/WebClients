@@ -749,9 +749,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Εάν χρησιμοποιείτε έναν υποτομέα, π.χ. subdomain.domain.com, πρέπει να χρησιμοποιήσετε το ${ domainKeyExampleSubdomain } ως τομέα. Αυτό σημαίνει ότι, εάν ο τομέας σας είναι mail.domain.com θα πρέπει να εισαγάγετε ${ domainKeyExampleMail } ως τομέα."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Εάν χρησιμοποιείτε το CloudFlare, βεβαιωθείτε ότι δεν έχετε επιλέξει την επιλογή Proxy."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Διατηρήστε τις πληροφορίες σας πιο ασφαλείς και ιδιωτικές με αυτούς τους οδηγούς και συμβουλές."
       ],
@@ -763,9 +760,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Ορισμένα προγράμματα καταχώρησης ονομάτων DNS ενδέχεται να απαιτούν μια πλήρη διαδρομή εγγραφής, σε αυτήν την περίπτωση παρακαλούμε χρησιμοποιήστε ${ domain } ως τιμή τομέα."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Ορισμένοι καταχωρητές τομέα (Namecheap, CloudFlare, κ.λπ.) ενδέχεται επίσης να χρησιμοποιούν @ για τον ριζικό τομέα."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "Το SPF ${ WIKIPEDIA_LINK_SPF } είναι μια μέθοδος ελέγχου ταυτότητας ηλεκτρονικού ταχυδρομείου που έχει σχεδιαστεί για την ανίχνευση πλαστογράφησης διευθύνσεων αποστολέα κατά την παράδοση του μηνύματος ηλεκτρονικού ταχυδρομείου. Η ρύθμιση του SPF συνιστάται ιδιαίτερα για να μειώσετε την πιθανότητα τα μηνύματα ηλεκτρονικού ταχυδρομείου σας να καταλήξουν στον φάκελο ανεπιθύμητης αλληλογραφίας του παραλήπτη."
@@ -784,9 +778,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Αυτή η υπηρεσία προσφέρει 2FA. Ενεργοποιήστε το για πρόσθετη ασφάλεια λογαριασμού."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Για να επαληθεύσετε την ιδιοκτησία του τομέα, προσθέστε την ακόλουθη εγγραφή TXT. Ορισμένοι καταχωρητές τομέα (Namecheap, CloudFlare, κλπ.) ενδέχεται να χρησιμοποιούν @ για τον ριζικό τομέα."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Ξεκλειδώστε προηγμένες λειτουργίες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
@@ -1184,6 +1175,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Παρακαλούμε συνεχίστε τη συνδεσιμότητα για να ξεκλειδώσετε ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Το DNS σας δεν έχει ρυθμιστεί σωστά. Η εγγραφή MX που λαμβάνουμε είναι:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Το DNS σας δεν έχει ρυθμιστεί σωστά. Η εγγραφή TXT που λαμβάνουμε είναι:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
       ]
@@ -1347,6 +1344,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } παραβίαση εντοπίστηκε",
         "${ row.breachCount } παραβιάσεις εντοπίστηκαν"
+      ],
+      "(Empty)": [
+        "(Άδειο)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
@@ -2103,6 +2103,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Αυτή η ρύθμιση είναι απενεργοποιημένη σε επίπεδο οργανισμού"
+      ],
+      "This setting is enforced by your organization": [
+        "Αυτή η ρύθμιση επιβάλλεται από τον οργανισμό σας"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτή η κρύπτη δεν είναι προς το παρόν κοινόχρηστη με κανέναν. Προσκαλέστε άτομα να τη μοιράστε με άλλους."

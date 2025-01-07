@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Legg til ${ BRAND_NAME }-konto"
       ],
+      "Add account": [
+        "Legg til konto"
+      ],
       "Add address": [
         "Legg til adresse"
       ],
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Verv en venn"
+      ],
+      "Refresh Data": [
+        "Oppdater data"
       ],
       "Refresh status": [
         "Oppdater status"
@@ -5033,17 +5039,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Tidssone for kalender ikke støttet"
-      ],
       "Component with wrong format": [
         "Komponent med feil format"
       ],
       "Custom time zone": [
         "Tilpasset tidssone"
-      ],
-      "Edited event not supported": [
-        "Redigert hendelse ikke støttet"
       ],
       "Element": [
         "Element"
@@ -5051,17 +5051,8 @@
       "Encryption failed": [
         "Kryptering mislyktes"
       ],
-      "End time out of bounds": [
-        "Sluttid utenfor grensene"
-      ],
       "Event": [
         "Hendelse"
-      ],
-      "Event validation failed": [
-        "Hendelsesbekreftelse mislyktes"
-      ],
-      "Floating times not supported": [
-        "Flytende tider ikke støttet"
       ],
       "Free-busy time information": [
         "Ledig-opptatt tidsinformasjon"
@@ -5072,26 +5063,11 @@
       "Journal entry": [
         "Journalinnlegg"
       ],
-      "Malformed all-day event": [
-        "Misdannet heldagshendelse"
-      ],
-      "Malformed end time": [
-        "Misdannet sluttidspunkt"
-      ],
-      "Malformed recurring event": [
-        "Misdannet gjentakende hendelse"
-      ],
-      "Malformed start time": [
-        "Misdannet starttidspunkt"
-      ],
       "Missing start time": [
         "Mangler starttidspunkt"
       ],
       "No UID, title or start time": [
         "Ingen UID, tittel eller starttid"
-      ],
-      "Non-Gregorian": [
-        "Ikke-Gregoriansk"
       ],
       "Notification out of bounds": [
         "Varsel utenfor grensene"
@@ -5099,20 +5075,8 @@
       "Original recurring event could not be found": [
         "Opprinnelig gjentakende hendelse ikke funnet"
       ],
-      "Recurring event has no occurrences": [
-        "Gjentakende hendelse har ingen forekomster"
-      ],
-      "Recurring rule not supported": [
-        "Gjentakende regel ikke støttet"
-      ],
-      "Start time out of bounds": [
-        "Starttid utenfor grensene"
-      ],
       "Time zone": [
         "Tidssone"
-      ],
-      "Time zone not supported": [
-        "Tidssone ikke støttet"
       ],
       "To-do entry": [
         "Gjøremålsoppføring"
@@ -5251,9 +5215,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Hendelsen kunne ikke oppdateres i kalenderen din. Ingen svar ble sendt."
-      ],
-      "Unexpected error": [
-        "Uventet feil"
       ],
       "Unsupported invitation": [
         "Ikke støttet invitasjon"
@@ -6161,6 +6122,12 @@
       ],
       "Checkout": [
         "Betaling"
+      ],
+      "City": [
+        "By"
+      ],
+      "Country": [
+        "Land"
       ],
       "Create your account": [
         "Opprett konto"
@@ -8064,6 +8031,9 @@
       "No label selected": [
         "Ingen etikett valgt"
       ],
+      "No location filters are currently assigned.": [
+        "Ingen plasseringsfiltre er for øyeblikket tildelt."
+      ],
       "No logs yet.": [
         "Ingen logger enda."
       ],
@@ -8072,6 +8042,9 @@
       ],
       "No results found": [
         "Ingen resultater funnet"
+      ],
+      "No Shared Servers Found": [
+        "Fant ikke noen delte tjenere"
       ],
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
@@ -8474,6 +8447,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Delt ${ vaultLink } oppdatert"
+      ],
+      "Shared Server Location Filters": [
+        "Plasseringsfiltre for delt tjener"
       ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
@@ -18201,6 +18177,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Sett opp dedikerte tjenere ved å oppgradere til Business"
+      ],
+      "Shared servers": [
+        "Delte tjenere"
       ],
       "Short domain (@pm.me)": [
         "Kort domene (@pm.me)"

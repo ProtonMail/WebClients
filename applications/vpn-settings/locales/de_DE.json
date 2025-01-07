@@ -40,6 +40,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add account": [
+        "Konto hinzufügen"
+      ],
       "Add address": [
         "Adresse hinzufügen"
       ],
@@ -306,6 +309,9 @@
       ],
       "Forgot recovery method?": [
         "Wiederherstellungsmethode vergessen?"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Hol dir ${ MAIL_SHORT_APP_NAME } Plus für ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } holen"
@@ -627,6 +633,9 @@
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Sign out of all accounts": [
+        "Von allen Konten abmelden"
       ],
       "sign up for free": [
         "kostenlos registrieren"
@@ -1225,6 +1234,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "E-Mail-Adresseinstellungen ändern"
+      ],
       "Continue": [
         "Fortfahren"
       ],
@@ -2536,6 +2548,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Fehler beim Laden der Transaktionen. Bitte versuche es später erneut."
+      ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
@@ -2661,6 +2676,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please enter a valid Entity ID URL": [
+        "Bitte gib eine gültige URL zur Entitäts-ID ein"
       ],
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
@@ -3967,6 +3985,9 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiviert am ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Ende-zu-Ende-Verschlüsselung für E-Mails ist für diese Gruppe aktiviert."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
       ],
@@ -4336,11 +4357,17 @@
       "No Gateways yet": [
         "Noch keine Gateways"
       ],
+      "No location filters are currently assigned.": [
+        "Derzeit sind keine Standortfilter zugewiesen."
+      ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
+      ],
+      "No Shared Servers Found": [
+        "Keine geteilten Server gefunden"
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
@@ -4506,6 +4533,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Registering your subscription...": [
+        "Dein Abonnement wird registriert..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
@@ -4580,6 +4610,9 @@
       ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
+      ],
+      "Setting up your new address...": [
+        "Deine neue E-Mail-Adresse wird eingerichtet..."
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
@@ -4726,6 +4759,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines ${ BRAND_NAME }-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Pop-up-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
       ],
@@ -4743,6 +4779,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Dadurch wird eine neue Einladung an **${ email }** gesendet."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dadurch wirst du von allen aktiven Sitzungen abgemeldet und die 2-Faktor-Authentifizierung wird deaktiviert."
@@ -5091,6 +5130,9 @@
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
       ],
+      "You have no transactions.": [
+        "Du hast keine Transaktionen."
+      ],
       "You may be redirected to your bank’s website.": [
         "Du wirst möglicherweise zur Website deiner Bank weitergeleitet."
       ],
@@ -5327,6 +5369,9 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses }/${ MaxAddresses } E-Mail-Adresse",
         "${ UsedAddresses }/${ MaxAddresses } E-Mail-Adressen"
+      ],
+      "Account holder": [
+        "Kontoinhaber"
       ],
       "Account storage": [
         "Kontenspeicher"
@@ -5748,6 +5793,13 @@
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "${ n } Administrator anzeigen",
+        "${ n } Administratoren anzeigen"
+      ],
+      "Single sign-on Entity ID": [
+        "Single Sign-on-Entitäts-ID"
+      ],
       "Single sign-on URL": [
         "Single Sign-on-URL"
       ],
@@ -6088,11 +6140,17 @@
       "Change password": [
         "Passwort ändern"
       ],
+      "Convert to SSO": [
+        "Zu SSO konvertieren"
+      ],
       "Delete": [
         "Löschen"
       ],
       "Delete and revoke invite": [
         "Einladung löschen und widerrufen"
+      ],
+      "Detach from SSO": [
+        "Von SSO trennen"
       ],
       "Edit": [
         "Ändern"
@@ -6206,6 +6264,9 @@
       ],
       "From ${ price }": [
         "Ab ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
@@ -6955,6 +7016,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Eigene Domains für Aliasse, zusätzliche Postfächer, Versenden von E-Mails über Aliasse und mehr"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
@@ -6990,6 +7054,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Kategorien sind einfache Tags, die du zu Nachrichten hinzufügen kannst, um sie leichter zu finden oder zu filtern."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Lebenslanger Zugang zu den Premiumfunktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Wie ein Ordner ist auch ein Tresor eine praktische Möglichkeit, deine Einträge zu organisieren."
@@ -7240,6 +7307,9 @@
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
+      ],
+      "In-app notifications": [
+        "Benachrichtigungen in der App"
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Nimm an Umfragen teil, um die Dienstleistungen von ${ BRAND_NAME } zu verbessern."
@@ -8665,15 +8735,35 @@
       ]
     },
     "sso": {
+      "${ n } user converted to SSO": [
+        "${ n } Benutzer zu SSO umgewandelt.",
+        "${ n } Benutzer zu SSO umgewandelt."
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } Benutzer von SSO entfernt.",
+        "${ n } Benutzer von SSO entfernt."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } Benutzer bitte, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden.",
         "${ n } Benutzer bitten, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO-Benutzer (die von deinem Identitätsanbieter bereitgestellt wurden) werden gelöscht** und du musst sie manuell erstellen, um sie wieder zu deiner Organisation hinzuzufügen."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO-Benutzer werden von deinem Identitätsanbieter** getrennt und in Nicht-SSO-Benutzer umgewandelt."
       ],
       "Access denied": [
         "Zugriff verweigert"
       ],
       "Access granted": [
         "Zugriff gewährt"
+      ],
+      "Approve or deny it now": [
+        "Jetzt genehmigen oder ablehnen"
+      ],
+      "Approve the sign-in from another device": [
+        "Genehmige die Anmeldung von einem anderen Gerät aus"
       ],
       "Ask administrator for help": [
         "Administrator um Hilfe bitten"
@@ -8716,8 +8806,14 @@
       "Devices available": [
         "Verfügbare Geräte"
       ],
+      "Enter the confirmation code we sent to this user.": [
+        "Gib den Bestätigungscode ein, den wir diesem Benutzer zugesendet haben."
+      ],
       "Enter your backup password": [
         "Gib dein Backup-Passwort ein"
+      ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Damit sich dieser Benutzer anmelden kann, musst du sicherstellen, dass er bei deinem Identitätsanbieter vorhanden ist."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Zu deiner Sicherheit wurdest du von all deinen anderen aktiven Geräten abgemeldet. Bevor du auf dein Konto zugreifen kannst, musst du ein neues Backup-Passwort eingeben."
@@ -8761,8 +8857,14 @@
       "Sign in": [
         "Anmelden"
       ],
+      "Sign in to your organization": [
+        "Bei deiner Organisation anmelden"
+      ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Der Benutzer ${ name } ist jetzt ein Single Sign-on-Konto."
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Dadurch wirst du von deinen anderen Geräten abgemeldet, und du musst ein neues Backup-Passwort festlegen."
@@ -8773,14 +8875,23 @@
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei deinem Konto anzumelden, gib den Bestätigungscode an deinen Administrator **${ adminEmail }** weiter, damit er die Anfrage für **${ email }** genehmigen kann."
       ],
+      "Tried to sign in at": [
+        "Versuchte Anmeldung um"
+      ],
       "Use backup password instead": [
         "Stattdessen Backup-Passwort verwenden"
       ],
       "User details:": [
         "Benutzerdetails:"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Du musst neue Benutzer manuell anlegen, um sie zu deiner Organisation hinzuzufügen."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Deine SSO-Konfiguration wird gelöscht."
       ]
     },
     "sso: auth device state": {
@@ -8792,6 +8903,9 @@
       ],
       "Pending activation": [
         "Ausstehende Aktivierung"
+      ],
+      "Pending admin activation": [
+        "Ausstehende Admin-Aktivierung"
       ],
       "Rejected": [
         "Abgelehnt"
@@ -9813,6 +9927,9 @@
       "Are you sure you want to close the preview?": [
         "Möchtest du die Vorschau wirklich schließen?"
       ],
+      "Are you sure?": [
+        "Bist du sicher?"
+      ],
       "Authentication security": [
         "Sicherheit der Authentifizierung"
       ],
@@ -10330,6 +10447,9 @@
       "Unlock your data": [
         "Entsperre deine Daten"
       ],
+      "Upgrade complete!": [
+        "Upgrade abgeschlossen!"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Verbessere den Schutz deines Netzwerks mit dedizierten Servern"
       ],
@@ -10341,6 +10461,9 @@
       ],
       "User": [
         "Benutzer"
+      ],
+      "User converted to SSO": [
+        "Benutzer zu SSO umgewandelt."
       ],
       "Users": [
         "Benutzer"
@@ -10378,6 +10501,9 @@
       "Your plan": [
         "Dein Abonnement"
       ],
+      "Your shorter address is now ready": [
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+      ],
       "Your subscriptions": [
         "Deine Abonnements"
       ]
@@ -10396,6 +10522,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME }-Rechnung"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } Transaktion"
       ]
     },
     "Title header for addresses domain table": {
@@ -10460,6 +10589,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
       ],
       "Device information such as operating system": [
         "Geräteinformationen wie das Betriebssystem"
@@ -10554,11 +10686,20 @@
       "Chargeback": [
         "Rückbuchung"
       ],
+      "Failed": [
+        "Fehlgeschlagen"
+      ],
+      "Needs attention": [
+        "Erfordert Aufmerksamkeit"
+      ],
       "Refunded": [
         "Erstattet"
       ],
       "Success": [
         "Erfolgreich"
+      ],
+      "Voided": [
+        "Storniert"
       ]
     },
     "Transaction type display as badge": {
@@ -10580,6 +10721,9 @@
       "Credit": [
         "Kredit"
       ],
+      "Credit transfer": [
+        "Überweisung"
+      ],
       "Currency conversion": [
         "Währungsumrechnung"
       ],
@@ -10591,6 +10735,9 @@
       ],
       "Payment": [
         "Zahlung"
+      ],
+      "Payment reversal": [
+        "Rückabwicklung von Zahlungen"
       ],
       "Refund": [
         "Erstattung"

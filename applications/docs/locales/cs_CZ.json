@@ -45,6 +45,9 @@
       "Add": [
         "Přidat"
       ],
+      "Add account": [
+        "Přidat účet"
+      ],
       "Add address": [
         "Přidat adresu"
       ],
@@ -596,6 +599,9 @@
       ],
       "Sign out": [
         "Odhlásit se"
+      ],
+      "Sign out of all accounts": [
+        "Odhlásit se ze všech účtů"
       ],
       "Sign up": [
         "Zaregistrovat se"
@@ -3046,17 +3052,11 @@
       "Calendar": [
         "Kalendář"
       ],
-      "Calendar time zone not supported": [
-        "Časové pásmo kalendáře není podporováno"
-      ],
       "Component with wrong format": [
         "Komponenta s nesprávným formátem"
       ],
       "Custom time zone": [
         "Vlastní časové pásmo"
-      ],
-      "Edited event not supported": [
-        "Upravená událost není podporována"
       ],
       "Element": [
         "Prvek"
@@ -3064,17 +3064,8 @@
       "Encryption failed": [
         "Šifrování selhalo"
       ],
-      "End time out of bounds": [
-        "Čas ukončení mimo hranice"
-      ],
       "Event": [
         "Událost"
-      ],
-      "Event validation failed": [
-        "Ověření události se nezdařilo"
-      ],
-      "Floating times not supported": [
-        "Plovoucí časy nejsou podporovány"
       ],
       "Free-busy time information": [
         "Informace o vytížení"
@@ -3085,26 +3076,11 @@
       "Journal entry": [
         "Záznamy deníku"
       ],
-      "Malformed all-day event": [
-        "Špatný formát celodenní události"
-      ],
-      "Malformed end time": [
-        "Špatný formát času ukončení"
-      ],
-      "Malformed recurring event": [
-        "Špatný formát opakující se události"
-      ],
-      "Malformed start time": [
-        "Špatný formát času zahájení"
-      ],
       "Missing start time": [
         "Chybějící čas zahájení"
       ],
       "No UID, title or start time": [
         "Žádný UID, název nebo čas zahájení"
-      ],
-      "Non-Gregorian": [
-        "Ne-Gregoriánský"
       ],
       "Notification out of bounds": [
         "Upozornění mimo hranice"
@@ -3112,20 +3088,8 @@
       "Original recurring event could not be found": [
         "Původní opakující se událost nebyla nalezena"
       ],
-      "Recurring event has no occurrences": [
-        "Opakující se událost nemá žádné výskyty"
-      ],
-      "Recurring rule not supported": [
-        "Pravidlo opakování není podporováno"
-      ],
-      "Start time out of bounds": [
-        "Čas zahájení mimo hranice"
-      ],
       "Time zone": [
         "Časové pásmo"
-      ],
-      "Time zone not supported": [
-        "Časové pásmo není podporováno"
       ],
       "To-do entry": [
         "Úkoly"
@@ -3194,9 +3158,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Událost se nepodařilo aktualizovat ve vašem kalendáři. Nebyla odeslána žádná odpověď"
-      ],
-      "Unexpected error": [
-        "Neočekávaná chyba"
       ],
       "Unsupported invitation": [
         "Nepodporovaná pozvánka"
@@ -4426,6 +4387,9 @@
       "Medium Priority": [
         "Střední priorita"
       ],
+      "Member": [
+        "Člen"
+      ],
       "Merged": [
         "Sloučený"
       ],
@@ -4776,6 +4740,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Tímto se nahradí existující složka souborem"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
       "This will upload a new version of the file": [
         "Tímto se nahraje nová verze souboru"
@@ -8793,6 +8760,9 @@
       ],
       "Apply gift code": [
         "Použít dárkový kód"
+      ],
+      "Are you sure?": [
+        "Jste si jisti?"
       ],
       "Billing cycle": [
         "Fakturační cyklus"

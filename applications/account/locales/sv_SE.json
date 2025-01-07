@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Lägg till ${ BRAND_NAME }-konto"
       ],
+      "Add account": [
+        "Lägg till konto"
+      ],
       "Add address": [
         "Lägg till adress"
       ],
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Bjud in en vän"
+      ],
+      "Refresh Data": [
+        "Uppdatera data"
       ],
       "Refresh status": [
         "Uppdatera status"
@@ -5036,17 +5042,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Kalenderns tidszon stöds inte"
-      ],
       "Component with wrong format": [
         "Komponent med fel format"
       ],
       "Custom time zone": [
         "Anpassad tidszon"
-      ],
-      "Edited event not supported": [
-        "Redigerad händelse stöds inte"
       ],
       "Element": [
         "Element"
@@ -5054,17 +5054,8 @@
       "Encryption failed": [
         "Kryptering misslyckades"
       ],
-      "End time out of bounds": [
-        "Sluttid utanför gränserna"
-      ],
       "Event": [
         "Händelse"
-      ],
-      "Event validation failed": [
-        "Validering av händelse misslyckades"
-      ],
-      "Floating times not supported": [
-        "Flytande tider stöds inte"
       ],
       "Free-busy time information": [
         "Ledig/upptagen tidsinformation"
@@ -5075,26 +5066,11 @@
       "Journal entry": [
         "Journalinlägg"
       ],
-      "Malformed all-day event": [
-        "Felaktig heldagshändelse"
-      ],
-      "Malformed end time": [
-        "Felaktig sluttid"
-      ],
-      "Malformed recurring event": [
-        "Felaktig återkommande händelse"
-      ],
-      "Malformed start time": [
-        "Felaktig starttid"
-      ],
       "Missing start time": [
         "Starttid saknas"
       ],
       "No UID, title or start time": [
         "Ingen UID, rubrik eller starttid"
-      ],
-      "Non-Gregorian": [
-        "Icke-gregoriansk"
       ],
       "Notification out of bounds": [
         "Avisering utanför gränserna"
@@ -5102,20 +5078,8 @@
       "Original recurring event could not be found": [
         "Ursprunglig återkommande händelse kunde inte hittas"
       ],
-      "Recurring event has no occurrences": [
-        "Återkommande händelse har inga förekomster"
-      ],
-      "Recurring rule not supported": [
-        "Återkommande regel stöds inte"
-      ],
-      "Start time out of bounds": [
-        "Starttid utanför gränserna"
-      ],
       "Time zone": [
         "Tidszon"
-      ],
-      "Time zone not supported": [
-        "Tidszon stöds inte"
       ],
       "To-do entry": [
         "Att-göra-inlägg"
@@ -5254,9 +5218,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Händelsen kunde inte uppdateras i din kalender. Inget svar skickades"
-      ],
-      "Unexpected error": [
-        "Oväntat fel"
       ],
       "Unsupported invitation": [
         "Inbjudan stöds inte"
@@ -6172,6 +6133,12 @@
       ],
       "Checkout": [
         "Kassa"
+      ],
+      "City": [
+        "Ort"
+      ],
+      "Country": [
+        "Land"
       ],
       "Create your account": [
         "Skapa ditt konto"
@@ -8084,6 +8051,9 @@
       "No label selected": [
         "Ingen etikett vald"
       ],
+      "No location filters are currently assigned.": [
+        "Inga platsfilter är för närvarande tilldelade."
+      ],
       "No logs yet.": [
         "Inga loggar än."
       ],
@@ -8092,6 +8062,9 @@
       ],
       "No results found": [
         "Inga resultat hittades"
+      ],
+      "No Shared Servers Found": [
+        "Inga delade servrar hittade"
       ],
       "Not a valid URL": [
         "Ogiltig URL"
@@ -18245,6 +18218,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Konfigurera dedikerade servrar genom att uppgradera till Business"
+      ],
+      "Shared servers": [
+        "Delade servrar"
       ],
       "Short domain (@pm.me)": [
         "Kort domän (@pm.me)"
