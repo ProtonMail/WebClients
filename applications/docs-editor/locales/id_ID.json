@@ -419,7 +419,7 @@
     },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
-        "Terjadi kesalahan saat memuat dokumen. Untuk mencegah kerusakan dokumen, penyunting telah dikunci. Silakan muat ulang halaman dan coba lagi. Jika kesalahan masih berlanjut, buka Riwayat Versi dari opsi menu untuk mencoba mengembalikan dokumen Anda ke versi sebelumnya."
+        "Terdapat kesalahan saat memuat dokumen. Untuk mencegah kerusakan dokumen, editor telah dikunci. Silakan muat ulang halaman dan coba lagi. Apabila kesalahan ini masih berlanjut, silakan buka Riwayat Versi dari opsi menu untuk mencoba mengembalikan dokumen Anda ke versi sebelumnya."
       ],
       "Failed to export document.": [
         "Gagal mengekspor dokumen."
@@ -479,9 +479,6 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } dan ${ lastTyper }"
-      ],
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } sedang menulis..."
       ],
       "Are you sure you want to delete this comment?": [
         "Apakah Anda yakin ingin menghapus komentar ini?"
