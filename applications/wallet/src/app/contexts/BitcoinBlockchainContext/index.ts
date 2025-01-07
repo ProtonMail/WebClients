@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import type { WasmApiWallet, WasmApiWalletAccount, WasmNetwork } from '@proton/andromeda';
+import type { WasmApiWallet, WasmApiWalletAccount, WasmApiWalletBitcoinAddress, WasmNetwork } from '@proton/andromeda';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
@@ -42,7 +42,7 @@ export interface BitcoinBlockchainContextValue {
         wallet: WasmApiWallet;
         account: WasmApiWalletAccount;
         accountChainData: AccountWithChainData;
-    }) => Promise<void>;
+    }) => Promise<WasmApiWalletBitcoinAddress[]>;
     bitcoinAddressHelperByWalletAccountId: SimpleMap<BitcoinAddressHelper>;
 }
 
@@ -64,7 +64,7 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
     isSyncing: () => false,
     getSyncingData: () => undefined,
 
-    manageBitcoinAddressPool: async () => {},
+    manageBitcoinAddressPool: async () => [],
     bitcoinAddressHelperByWalletAccountId: {},
 });
 

@@ -7,6 +7,7 @@ export type AccountWithChainData = {
     scriptType: number;
     derivationPath: string;
     poolSize: number;
+    lastUsedIndex: number;
 };
 
 export type AccountChainDataByAccountId = SimpleMap<AccountWithChainData>;
