@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Adicionar conta da ${ BRAND_NAME }"
       ],
+      "Add account": [
+        "Adicionar conta"
+      ],
       "Add address": [
         "Adicionar endereço"
       ],
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Indicar um amigo"
+      ],
+      "Refresh Data": [
+        "Atualizar dados"
       ],
       "Refresh status": [
         "Atualizar status"
@@ -4557,6 +4563,9 @@
       "Impossible to rename the gateway": [
         "Impossível renomear o gateway"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Senha de backup incorreto. Tente novamente."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Tipo de arquivo incorreto. Envie um arquivo em formato PNG ou JPEG."
       ],
@@ -4702,6 +4711,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Digite um URL de ID de entidade válido"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito em destaque para prosseguir.",
         "Corrija os conflitos em destaque para prosseguir."
@@ -4729,6 +4741,9 @@
       ],
       "Please upload a square logo": [
         "Faça upload de um logotipo quadrado"
+      ],
+      "Please upload an XML file": [
+        "Envie um arquivo XML"
       ],
       "Please upload only 1 file": [
         "Envie somente um arquivo"
@@ -5024,17 +5039,11 @@
       "Calendar": [
         "Calendário"
       ],
-      "Calendar time zone not supported": [
-        "O fuso horário do calendário não é compatível"
-      ],
       "Component with wrong format": [
         "Componente com formato errado"
       ],
       "Custom time zone": [
         "Fuso horário personalizado"
-      ],
-      "Edited event not supported": [
-        "Evento editado não suportado"
       ],
       "Element": [
         "Elemento"
@@ -5042,17 +5051,8 @@
       "Encryption failed": [
         "Erro na criptografia"
       ],
-      "End time out of bounds": [
-        "Hora de término fora dos limites"
-      ],
       "Event": [
         "Evento"
-      ],
-      "Event validation failed": [
-        "Erro na validação do evento"
-      ],
-      "Floating times not supported": [
-        "Tempos flutuantes não suportados"
       ],
       "Free-busy time information": [
         "Informação de horário disponível/ocupado"
@@ -5063,26 +5063,11 @@
       "Journal entry": [
         "Entradas periódicas"
       ],
-      "Malformed all-day event": [
-        "Evento de dia inteiro mal formado"
-      ],
-      "Malformed end time": [
-        "A hora de término não é válida."
-      ],
-      "Malformed recurring event": [
-        "Evento recorrente mal formado"
-      ],
-      "Malformed start time": [
-        "A hora de início não é válida."
-      ],
       "Missing start time": [
         "Falta o horário de início"
       ],
       "No UID, title or start time": [
         "Sem UID, título ou hora de início"
-      ],
-      "Non-Gregorian": [
-        "Não gregoriano"
       ],
       "Notification out of bounds": [
         "Notificação fora dos limites"
@@ -5090,20 +5075,8 @@
       "Original recurring event could not be found": [
         "Não foi possível encontrar o evento recorrente original."
       ],
-      "Recurring event has no occurrences": [
-        "Evento recorrente sem datas"
-      ],
-      "Recurring rule not supported": [
-        "Regra recorrente não suportada"
-      ],
-      "Start time out of bounds": [
-        "Hora de início fora dos limites"
-      ],
       "Time zone": [
         "Fuso horário"
-      ],
-      "Time zone not supported": [
-        "Fuso horário não suportado"
       ],
       "To-do entry": [
         "Tarefas"
@@ -5242,9 +5215,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Não foi possível atualizar o evento no seu calendário. Nenhuma resposta foi enviada"
-      ],
-      "Unexpected error": [
-        "Erro inesperado"
       ],
       "Unsupported invitation": [
         "Convite não suportado"
@@ -6155,6 +6125,12 @@
       ],
       "Checkout": [
         "Finalizar compra"
+      ],
+      "City": [
+        "Cidade"
+      ],
+      "Country": [
+        "País"
       ],
       "Create your account": [
         "Crie sua conta"
@@ -8069,6 +8045,9 @@
       ],
       "No results found": [
         "Nenhum resultado encontrado"
+      ],
+      "No Shared Servers Found": [
+        "Nenhum servidor compartilhados encontrados"
       ],
       "Not a valid URL": [
         "Não é uma URL válida"
@@ -10142,6 +10121,9 @@
       "Calendars": [
         "Calendários"
       ],
+      "Capitalize words": [
+        "Palavras em maiúscula"
+      ],
       "Card details": [
         "Detalhes do cartão"
       ],
@@ -10820,6 +10802,9 @@
       ],
       "Signature": [
         "Assinatura"
+      ],
+      "Single sign-on Entity ID": [
+        "ID da entidade de autenticação única"
       ],
       "Single sign-on URL": [
         "URL de autenticação única"
@@ -12024,7 +12009,7 @@
         "10 endereços de e-mail/aliases"
       ],
       "10 more premium features": [
-        "10 novos recursos premium"
+        "10 recursos premium adicionais"
       ],
       "10-year file version history": [
         "Histórico de versões de arquivos por 10 anos"
@@ -15582,7 +15567,7 @@
         "O único armazenamento em nuvem com:"
       ],
       "The only email service with:": [
-        "O único e-mail em nuvem com:"
+        "O único e-mail de email com:"
       ],
       "Unlimited passwords": [
         "Senhas ilimitadas"
@@ -18204,6 +18189,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Configure servidores dedicados fazendo upgrade para o Business"
+      ],
+      "Shared servers": [
+        "Servidores compartilhados"
       ],
       "Short domain (@pm.me)": [
         "Domínio curto (@pm.me)"

@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Προσθήκη Λογαριασμού ${ BRAND_NAME }"
       ],
+      "Add account": [
+        "Προσθήκη λογαριασμού"
+      ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Συστήστε ένα φίλο"
+      ],
+      "Refresh Data": [
+        "Ανανέωση δεδομένων"
       ],
       "Refresh status": [
         "Ανανέωση κατάστασης"
@@ -5033,17 +5039,11 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
-      "Calendar time zone not supported": [
-        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
-      ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
       ],
       "Custom time zone": [
         "Προσαρμοσμένη ζώνη ώρας"
-      ],
-      "Edited event not supported": [
-        "Η τροποποιημένη εκδήλωση δεν υποστηρίζεται"
       ],
       "Element": [
         "Στοιχείο"
@@ -5051,17 +5051,8 @@
       "Encryption failed": [
         "Αποτυχία κρυπτογράφησης"
       ],
-      "End time out of bounds": [
-        "Ώρα λήξης εκτός ορίων"
-      ],
       "Event": [
         "Εκδήλωση"
-      ],
-      "Event validation failed": [
-        "Αποτυχία επικύρωσης εκδήλωσης"
-      ],
-      "Floating times not supported": [
-        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
       ],
       "Free-busy time information": [
         "Πληροφορίες διαθέσιμου/μη διαθέσιμου χρόνου"
@@ -5072,26 +5063,11 @@
       "Journal entry": [
         "Καταχώρηση χρονολογίου"
       ],
-      "Malformed all-day event": [
-        "Δύσμορφη ολοήμερη εκδήλωση"
-      ],
-      "Malformed end time": [
-        "Λανθασμένος χρόνος λήξης"
-      ],
-      "Malformed recurring event": [
-        "Δύσμορφη επαναλαμβανόμενη εκδήλωση"
-      ],
-      "Malformed start time": [
-        "Λάθος χρόνος έναρξης"
-      ],
       "Missing start time": [
         "Λείπει η ώρα έναρξης"
       ],
       "No UID, title or start time": [
         "Λείπει UID, τίτλος ή ώρα έναρξης"
-      ],
-      "Non-Gregorian": [
-        "Μη-Γρηγοριανό"
       ],
       "Notification out of bounds": [
         "Ειδοποίηση εκτός ορίων"
@@ -5099,20 +5075,8 @@
       "Original recurring event could not be found": [
         "Δεν βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
       ],
-      "Recurring event has no occurrences": [
-        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
-      ],
-      "Recurring rule not supported": [
-        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
-      ],
-      "Start time out of bounds": [
-        "Ώρα έναρξης εκτός ορίων"
-      ],
       "Time zone": [
         "Ζώνη ώρας"
-      ],
-      "Time zone not supported": [
-        "Μη υποστηριζόμενη ζώνη ώρας"
       ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
@@ -5251,9 +5215,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Δεν ήταν δυνατή η ενημέρωση της εκδήλωσης στο ημερολόγιό σας. Δεν εστάλη απάντηση"
-      ],
-      "Unexpected error": [
-        "Μη αναμενόμενο σφάλμα"
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -6161,6 +6122,12 @@
       ],
       "Checkout": [
         "Ολοκλήρωση αγορών"
+      ],
+      "City": [
+        "Πόλη"
+      ],
+      "Country": [
+        "Χώρα"
       ],
       "Create your account": [
         "Δημιουργήστε τον λογαριασμό σας."
@@ -8064,6 +8031,9 @@
       "No label selected": [
         "Δεν επιλέχθηκε ετικέτα"
       ],
+      "No location filters are currently assigned.": [
+        "Προς το παρόν δεν έχουν εκχωρηθεί φίλτρα τοποθεσίας."
+      ],
       "No logs yet.": [
         "Δεν υπάρχουν αρχεία καταγραφής ακόμα."
       ],
@@ -8072,6 +8042,9 @@
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
+      ],
+      "No Shared Servers Found": [
+        "Δε βρέθηκαν Κοινοποιημένοι Διακομιστές"
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
@@ -8471,6 +8444,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
+      ],
+      "Shared Server Location Filters": [
+        "Φίλτρα Τοποθεσίας Κοινοποιημένων Διακομιστών"
       ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
@@ -18174,6 +18150,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Παραμετροποίηση αποκλειστικών διακομιστών με αναβάθμιση σε Business"
+      ],
+      "Shared servers": [
+        "Κοινοποιημένοι Διακομιστές"
       ],
       "Short domain (@pm.me)": [
         "Σύντομο domain (@pm.me)"
