@@ -1,6 +1,4 @@
-import '@mlc-ai/web-llm';
-import type { ChatOptions } from '@mlc-ai/web-llm';
-import { WebWorkerEngine } from '@mlc-ai/web-llm';
+import type { ChatOptions, WebWorkerEngine } from '@mlc-ai/web-llm';
 
 import type { ServerAssistantInteraction, TransformCallback } from '@proton/llm/lib/formatPrompt';
 import {
@@ -42,6 +40,11 @@ import type {
     WriteFullEmailAction,
 } from './types';
 import { AssistantEvent } from './types';
+
+const get = () => {
+    // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
+    return import(/* webpackChunkName: "web-llm" */ '@mlc-ai/web-llm');
+};
 
 const MODEL_VARIANT = 'Mistral-7B-Instruct-v0.2-q4f16_1';
 
@@ -315,7 +318,13 @@ export class GpuLlmManager implements LlmManager {
         try {
             // Create Web-LLM worker
             if (!this.chat) {
-                let worker = new Worker(new URL('./worker', import.meta.url), { type: 'module' });
+                let worker = new Worker(
+                    // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
+                    /* webpackChunkName: "llm-worker" */
+                    new URL('./worker', import.meta.url),
+                    { type: 'module' }
+                );
+                const { WebWorkerEngine } = await get();
                 this.chat = new WebWorkerEngine(worker);
             }
 
