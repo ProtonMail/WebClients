@@ -1,5 +1,4 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,12 +7,14 @@ import {
     type ConfirmationPromptHandles,
 } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { selectSecureLinksByShareId } from '@proton/pass/store/selectors';
 
 type Props = ConfirmationPromptHandles & { destinationShareId: string; shareId: string };
 
 export const ConfirmVaultMove: FC<Props> = ({ destinationShareId, shareId, onCancel, onConfirm }) => {
-    const hasLinks = Boolean(useSelector(selectSecureLinksByShareId(shareId)).length);
+    const secureLinks = useMemoSelector(selectSecureLinksByShareId, [shareId]);
+    const hasLinks = Boolean(secureLinks.length);
 
     return (
         <WithVault shareId={destinationShareId} onFallback={onCancel}>

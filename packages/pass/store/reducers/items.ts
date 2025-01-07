@@ -1,6 +1,7 @@
 import type { Action, Reducer } from 'redux';
 
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
+import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import {
     aliasSyncPending,
@@ -17,17 +18,13 @@ import {
     itemBulkMoveProgress,
     itemBulkRestoreProgress,
     itemBulkTrashProgress,
-    itemCreationDismiss,
-    itemCreationFailure,
-    itemCreationIntent,
-    itemCreationSuccess,
+    itemCreate,
+    itemCreateDismiss,
     itemDeleteFailure,
     itemDeleteIntent,
     itemDeleteSuccess,
+    itemEdit,
     itemEditDismiss,
-    itemEditFailure,
-    itemEditIntent,
-    itemEditSuccess,
     itemMoveFailure,
     itemMoveIntent,
     itemMoveSuccess,
@@ -57,7 +54,6 @@ import {
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
-import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/enhancers/callback';
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
@@ -122,14 +118,17 @@ export const addItems = (data: ItemRevision[]) => (state: ItemsByShareId) =>
 export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     [
         {
-            initiate: itemCreationIntent.optimisticMatch,
-            fail: itemCreationFailure.optimisticMatch,
-            revert: [itemCreationSuccess.optimisticMatch, itemCreationDismiss.optimisticMatch],
+            initiate: (action) => itemCreate.intent.match(action) && getItemEntityID(action.payload),
+            fail: (action) => itemCreate.failure.match(action) && getItemEntityID(action.payload),
+            revert: [
+                (action) => itemCreate.success.match(action) && getItemEntityID(action.payload),
+                itemCreateDismiss.optimisticMatch,
+            ],
         },
         {
-            initiate: itemEditIntent.optimisticMatch,
-            fail: itemEditFailure.optimisticMatch,
-            commit: itemEditSuccess.optimisticMatch,
+            initiate: (action) => itemEdit.intent.match(action) && getItemEntityID(action.payload),
+            fail: (action) => itemEdit.failure.match(action) && getItemEntityID(action.payload),
+            commit: (action) => itemEdit.success.match(action) && getItemEntityID(action.payload),
             revert: itemEditDismiss.optimisticMatch,
         },
         {
@@ -158,9 +157,10 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (syncSuccess.match(action)) return action.payload.items;
         if (sharesSync.match(action)) return fullMerge(state, action.payload.items);
 
-        if (itemCreationIntent.match(action)) {
-            const { shareId, optimisticId, createTime, ...item } = action.payload;
+        if (itemCreate.intent.match(action)) {
+            const { shareId, optimisticId, optimisticTime, ...item } = action.payload;
             const optimisticItem = state?.[shareId]?.[optimisticId];
+            const now = optimisticTime ?? getEpoch();
 
             /**
              * FIXME: we could rely on an optimistic revisionTime update
@@ -173,15 +173,15 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                     [optimisticId]: {
                         aliasEmail: item.type === 'alias' ? item.extraData.aliasEmail : null,
                         contentFormatVersion: ContentFormatVersion.Item,
-                        createTime,
+                        createTime: now,
                         data: item,
                         flags: 1 /** default to unmonitored */,
                         itemId: optimisticId,
                         lastUseTime: null,
-                        modifyTime: createTime,
+                        modifyTime: now,
                         pinned: false,
                         revision: optimisticItem !== undefined ? optimisticItem.revision + 1 : 0,
-                        revisionTime: createTime,
+                        revisionTime: now,
                         shareId: shareId,
                         state: ItemState.Active,
                     },
@@ -189,7 +189,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             });
         }
 
-        if (itemCreationSuccess.match(action)) {
+        if (itemCreate.success.match(action)) {
             const { shareId, item, alias } = action.payload;
 
             return fullMerge(state, {
@@ -219,7 +219,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, state: ItemState.Active })(state);
         }
 
-        if (itemEditIntent.match(action)) {
+        if (itemEdit.intent.match(action)) {
             const { shareId, itemId, ...item } = action.payload;
             const { revision } = state[shareId][itemId];
 
@@ -230,7 +230,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, data: item, revision: revision + 1 })(state);
         }
 
-        if (or(itemEditSuccess.match, setItemFlags.success.match, aliasSyncStatusToggle.success.match)(action)) {
+        if (or(itemEdit.success.match, setItemFlags.success.match, aliasSyncStatusToggle.success.match)(action)) {
             const { shareId, itemId, item } = action.payload;
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
@@ -376,14 +376,13 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         return state;
-    },
-    { sanitizeAction: sanitizeWithCallbackAction }
+    }
 );
 
 export type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
 
 const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) => {
-    if (or(itemCreationSuccess.match, itemMoveSuccess.match, itemMoveFailure.match)(action)) {
+    if (or(itemCreate.success.match, itemMoveSuccess.match, itemMoveFailure.match)(action)) {
         const { optimisticId, item } = action.payload;
         const { itemId, shareId } = item;
 

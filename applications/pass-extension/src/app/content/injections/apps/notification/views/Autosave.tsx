@@ -3,7 +3,10 @@ import { type FC, useEffect } from 'react';
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+} from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { AutosaveForm } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveForm';
 import { AutosaveSelect } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveSelect';
@@ -31,7 +34,8 @@ const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, d
         : { name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
 
 export const Autosave: FC<Props> = ({ data }) => {
-    const { visible, close, domain } = useIFrameContext();
+    const { visible, domain } = useIFrameAppState();
+    const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
     const { createNotification } = useNotifications();
 
@@ -91,7 +95,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                 .then((result) => {
                     if (result.type === 'success') {
                         onTelemetry(TelemetryEventName.AutosaveDone, {}, {});
-                        close?.({ discard: true });
+                        controller.close?.({ discard: true });
                     } else createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
                 })
                 .catch(noop)

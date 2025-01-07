@@ -1,11 +1,11 @@
 import type { ReactNode, ReactPortal } from 'react';
-import { useMemo, useRef } from 'react';
+import { type ReactElement, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import type { MaybeNull } from '@proton/pass/types';
 
 type UsePortalType = {
-    ParentPortal: ReactNode;
+    ParentPortal: ReactElement;
     openPortal: (children: ReactNode) => MaybeNull<ReactPortal>;
 };
 

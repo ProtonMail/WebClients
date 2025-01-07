@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
-import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message/send-message';
@@ -18,14 +18,13 @@ import { useEndpointMessage } from './useEndpointMessage';
 export const useExtensionState = (onStateChange: (state: AppState) => void) => {
     const { endpoint } = usePassCore();
     const { port, tabId } = useExtensionContext();
-    const app = useAppState();
     const authStore = useAuthStore();
     const message = useEndpointMessage();
 
     const ready = useRef<Awaiter<void>>(awaiter());
 
     const onChange = useCallback((state: AppState) => {
-        app.setState(state);
+        AppStateManager.setState(state);
         authStore?.setLocalID(state.localID);
         authStore?.setUID(state.UID);
         onStateChange(state);

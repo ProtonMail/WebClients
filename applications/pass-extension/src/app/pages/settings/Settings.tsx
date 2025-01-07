@@ -28,11 +28,13 @@ export const Settings: FC = () => {
 
     return (
         <ExtensionStore>
+            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
             <ExtensionClient onWorkerMessage={handleWorkerMessage}>
-                <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-                <Localized>
-                    <SettingsRouter />
-                </Localized>
+                {(ready) => (
+                    <Localized>
+                        <SettingsRouter ready={ready} />
+                    </Localized>
+                )}
             </ExtensionClient>
         </ExtensionStore>
     );

@@ -8,15 +8,16 @@ import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/Servi
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
+import { getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { PassCoreContext } from '@proton/pass/components/Core/PassCoreProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
 import {
@@ -25,7 +26,6 @@ import {
     getLocalPath,
     removeLocalPath,
 } from '@proton/pass/components/Navigation/routing';
-import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -49,7 +49,6 @@ import {
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
-import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import noop from '@proton/utils/noop';
 
 import { sagaMiddleware, store } from './store';
@@ -57,16 +56,13 @@ import { sagaMiddleware, store } from './store';
 const SAGAS = DESKTOP_BUILD ? [...WEB_SAGAS, ...DESKTOP_SAGAS] : WEB_SAGAS;
 
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
-    /* Avoid stale closures when accessing core state outside of the React life-cycle (IE: sagas) */
-    const core = useContextProxy(PassCoreContext);
-
+    const core = usePassCore();
     const config = usePassConfig();
     const authService = useAuthService();
     const history = useHistory();
     const { installed } = usePassExtensionLink();
     const online = useConnectivity();
 
-    const app = useContextProxy(AppStateContext);
     const sw = useServiceWorker();
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
@@ -76,8 +72,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
             rootSagaFactory(SAGAS).bind(null, {
                 endpoint: 'web',
                 getConfig: () => config,
-                getAppState: () => app.state,
-                setAppStatus: app.setStatus,
+                getAppState: () => AppStateManager.getState(),
+                setAppStatus: AppStateManager.setStatus,
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
                 getCache: async () => cacheGuard(await getDBCache(authStore.getUserID()), config.APP_VERSION),
@@ -87,16 +83,19 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getDesktopBridge: DESKTOP_BUILD ? () => window.ctxBridge! : undefined,
 
                 onBeforeHydrate: (state) => {
-                    /* If the user switched to a new account for the first time, initialize their settings theme
-                     * to be the current theme (core.theme) which is also the last used account's theme. */
-                    const theme = selectTheme(state);
-                    if (theme === undefined && getPersistedSessions().length > 1) state.settings.theme = core.theme;
+                    if (selectTheme(state) === undefined && getPersistedSessions().length > 1) {
+                        /* If the user switched to a new account for the first time, initialize
+                         * their settings theme to be the current theme which should have been
+                         * set to the last used account's theme (see `getInitialTheme`). This
+                         * avoids prompting for theme onboarding on account switch. */
+                        state.settings.theme = core.theme.getState();
+                    }
 
                     return state;
                 },
 
                 onBoot: async (res) => {
-                    app.setBooted(res.ok);
+                    AppStateManager.setBooted(res.ok);
                     const userID = authStore.getUserID();
                     const state = store.getState();
 
@@ -155,7 +154,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onNotification: (notification) => {
-                    if (notification.type === 'error' && clientOffline(app.state.status)) {
+                    if (notification.type === 'error' && clientOffline(AppStateManager.getState().status)) {
                         notification.errorMessage = c('Warning').t`Offline`;
                     }
 
@@ -188,7 +187,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         );
 
         const handleAction: ServiceWorkerClientMessageHandler<'action'> = ({ action, localID }) => {
-            if (clientBooted(app.state.status) && authStore.hasSession(localID)) store.dispatch(action);
+            if (clientBooted(AppStateManager.getState().status) && authStore.hasSession(localID)) {
+                store.dispatch(action);
+            }
         };
 
         sw?.on('action', handleAction);
@@ -203,7 +204,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useVisibleEffect(
         (visible: boolean) => {
-            if (visible && online && clientReady(app.state.status)) store.dispatch(startEventPolling());
+            const { status } = AppStateManager.getState();
+            if (visible && online && clientReady(status)) store.dispatch(startEventPolling());
             else if (!visible || !online) store.dispatch(stopEventPolling());
         },
         [online]

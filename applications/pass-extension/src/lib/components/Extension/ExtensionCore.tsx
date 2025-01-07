@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, useCallback, useMemo, useRef } from 'react';
+import { type FC, useCallback, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
 import locales from 'proton-pass-extension/app/locales';
@@ -13,6 +13,7 @@ import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
+import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -82,6 +83,9 @@ const getPassCoreProviderProps = (
                     .then((res) => res.type === 'success' && res.enabled)
                     .catch(() => false),
         },
+        theme: createPassThemeManager({
+            getInitialTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
+        }),
 
         exportData: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {
@@ -124,8 +128,6 @@ const getPassCoreProviderProps = (
             /* Forward the abort signal to the extension service worker. */
             return fetch(requestUrl, { signal, headers }).then(imageResponsetoDataURL);
         },
-
-        getTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
 
         getLogs: () =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.LOG_REQUEST }), (res) =>
@@ -197,7 +199,7 @@ const getPassCoreProviderProps = (
 
 export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ children, endpoint, theme, wasm }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
-    const coreProps = useMemo(() => getPassCoreProviderProps(endpoint, config, theme), []);
+    const coreProps = useInstance(() => getPassCoreProviderProps(endpoint, config, theme));
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
     const message = resolveMessageFactory(endpoint);
 

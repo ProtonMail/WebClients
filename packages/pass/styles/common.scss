@@ -50,3 +50,7 @@ $endpoints: 'extension', 'web', 'desktop';
 .\*\:shrink-0 > * {
 	flex-shrink: 0;
 }
+
+.app-root {
+	background-color: var(--background-norm);
+}

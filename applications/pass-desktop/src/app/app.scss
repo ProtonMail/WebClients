@@ -4,7 +4,6 @@ $header-height: 52;
 @import '~@proton/styles/scss/lib/config';
 
 .app-root {
-	background-color: var(--background-norm);
 	transform: translateZ(0); // to be rendered by GPU
 }
 

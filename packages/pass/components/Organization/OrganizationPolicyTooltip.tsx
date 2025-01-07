@@ -3,12 +3,12 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/components/index';
+import { Tooltip } from '@proton/components';
 
-type MaybeOrganizationTooltipProps = { children: ReactElement; show: boolean };
+type MaybeOrganizationTooltipProps = { children: ReactElement; enforced: boolean };
 
-export const MaybeOrgSettingTooltip: FC<MaybeOrganizationTooltipProps> = ({ children, show }) =>
-    show ? (
+export const OrganizationPolicyTooltip: FC<MaybeOrganizationTooltipProps> = ({ children, enforced }) =>
+    enforced ? (
         <Tooltip
             openDelay={500}
             originalPlacement="top"

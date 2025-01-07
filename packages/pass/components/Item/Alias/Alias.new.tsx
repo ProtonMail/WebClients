@@ -27,7 +27,6 @@ import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'new-alias';
@@ -79,7 +78,6 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                     type: 'alias',
                     optimisticId,
                     shareId,
-                    createTime: getEpoch(),
                     metadata: {
                         name,
                         note: obfuscate(note),

@@ -8,6 +8,7 @@ import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
 import { DropdownButton, Icon } from '@proton/components';
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
@@ -25,8 +26,7 @@ export const Lobby: FC = () => {
     const { SSO_URL: host } = usePassConfig();
     const authService = useAuthService();
     const authStore = useAuthStore();
-    const app = useAppState();
-    const { status } = app.state;
+    const { status } = useAppState();
     const sessions = useAvailableSessions();
 
     const history = useHistory<MaybeNull<AuthRouteState>>();
@@ -61,7 +61,7 @@ export const Lobby: FC = () => {
                 }}
                 onLogout={() => authService.logout({ soft: false })}
                 onFork={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH })}
-                onOffline={() => app.setStatus(AppStatus.PASSWORD_LOCKED)}
+                onOffline={() => AppStateManager.setStatus(AppStatus.PASSWORD_LOCKED)}
                 onRegister={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
                 renderAccountSwitcher={() => {

@@ -1,4 +1,4 @@
-import { type FC, useContext, useEffect, useRef } from 'react';
+import { memo, useContext, useEffect, useRef } from 'react';
 
 import type { IconName } from '@proton/components';
 import {
@@ -19,15 +19,9 @@ import clsx from '@proton/utils/clsx';
 
 import './Submenu.scss';
 
-type Props = {
-    contentClassname?: string;
-    headerClassname?: string;
-    icon: IconName;
-    items: MenuItem[];
-    label: string;
-};
+type SubmenuItemsProps = { items: MenuItem[] };
 
-const SubmenuItems: FC<{ items: MenuItem[] }> = ({ items }) => {
+const SubmenuItems = memo(({ items }: SubmenuItemsProps) => {
     const { onLink } = usePassCore();
     const last = useRef<HTMLDivElement>(null);
     const { isExpanded } = useContext(CollapsibleContext);
@@ -48,9 +42,19 @@ const SubmenuItems: FC<{ items: MenuItem[] }> = ({ items }) => {
             ref={idx === items.length - 1 ? last : undefined}
         />
     ));
+});
+
+SubmenuItems.displayName = 'SubmenuItemsMemo';
+
+type SubMenuProps = {
+    contentClassname?: string;
+    headerClassname?: string;
+    icon: IconName;
+    items: MenuItem[];
+    label: string;
 };
 
-export const Submenu: FC<Props> = ({ headerClassname, icon, label, contentClassname, items }) => (
+export const Submenu = memo(({ headerClassname, icon, label, contentClassname, items }: SubMenuProps) => (
     <Collapsible className="shrink-0">
         <CollapsibleHeader
             className={clsx(headerClassname, 'shrink-0 pl-4 pr-2')}
@@ -66,4 +70,6 @@ export const Submenu: FC<Props> = ({ headerClassname, icon, label, contentClassn
             <SubmenuItems items={items} />
         </CollapsibleContent>
     </Collapsible>
-);
+));
+
+Submenu.displayName = 'SubmenuMemo';

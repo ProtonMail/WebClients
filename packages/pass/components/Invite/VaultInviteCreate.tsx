@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, type IconName } from '@proton/components';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -24,7 +25,6 @@ import { BitField, type Callback, type InviteFormValues, type SelectedItem } fro
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 import noop from '@proton/utils/noop';
 
-import { useInviteContext } from './InviteContext';
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
 export type VaultInviteCreateProps =
@@ -37,7 +37,7 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
 >;
 
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
-    const { close, manageAccess } = useInviteContext();
+    const { close, manageAccess } = useInviteActions();
     const org = useOrganization({ sync: true });
     const defaultVault = useSelector(selectDefaultVault);
 

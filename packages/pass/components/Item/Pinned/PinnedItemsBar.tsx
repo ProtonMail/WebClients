@@ -1,46 +1,38 @@
-import { type FC, type MouseEventHandler, useMemo } from 'react';
+import { type FC, memo, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { PINNED_ITEM_MAX_WIDTH_PX, PinnedItem } from '@proton/pass/components/Item/Pinned/PinnedItem';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { getInitialFilters } from '@proton/pass/components/Navigation/routing';
 import { useResponsiveHorizontalList } from '@proton/pass/hooks/useResponsiveHorizontalList';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { selectPinnedItems } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision, ItemSortFilter } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import './PinnedItemsBar.scss';
 
-export const PinnedItemsBar: FC = () => {
-    const { selectedItem, selectItem, filters } = useNavigation();
-    const { filtered } = useItems();
+type Props = {
+    sort: ItemSortFilter;
+    onSelect: (item: ItemRevision) => void;
+};
 
+const PinnedItemBarContent = memo(({ sort, onSelect }: Props) => {
+    const selectedItem = useSelectedItem();
     const pinnedItems = useSelector(selectPinnedItems);
-    const items = useMemo(() => sortItems(filters.sort)(pinnedItems), [pinnedItems, filters.sort]);
+    const items = useMemo(() => sortItems(sort)(pinnedItems), [pinnedItems, sort]);
     const list = useResponsiveHorizontalList(items, { gap: 8, maxChildWidth: PINNED_ITEM_MAX_WIDTH_PX });
-
-    const selectItemFactory =
-        (item: ItemRevision): MouseEventHandler =>
-        (e) => {
-            e.preventDefault();
-            const { shareId, itemId } = item;
-
-            /** If pinned item is not in the current filtered
-             * item list, reset the filters accordingly */
-            selectItem(shareId, itemId, {
-                inTrash: isTrashed(item),
-                filters: !filtered.some(itemEq(item)) ? { search: '', selectedShareId: null, type: '*' } : {},
-            });
-        };
 
     return items.length === 0 ? null : (
         <div className="pass-pinned-items-list flex flex-auto w-full shrink-0 flex-1 items-center flex-nowrap py-1 px-3 border-bottom border-weak">
@@ -58,7 +50,7 @@ export const PinnedItemsBar: FC = () => {
                         className="mr-2"
                         item={item}
                         key={item.shareId + item.itemId}
-                        onClick={selectItemFactory(item)}
+                        onClick={onSelect}
                         pill={false}
                     />
                 ))}
@@ -72,28 +64,56 @@ export const PinnedItemsBar: FC = () => {
                     className="p-1 button-xs ui-violet"
                     pill={false}
                 >
-                    {list.hidden.map((item) => (
-                        <DropdownMenuButton
-                            key={item.itemId}
-                            icon={
-                                <SafeItemIcon
-                                    className={clsx('shrink-0', itemTypeToSubThemeClassName[item.data.type])}
-                                    item={item}
-                                    size={3}
-                                    pill={false}
-                                />
-                            }
-                            className={clsx(
-                                'pass-pinned-bar--item',
-                                selectedItem && itemEq(selectedItem)(item) && 'is-active'
-                            )}
-                            onClick={selectItemFactory(item)}
-                            label={item.data.metadata.name}
-                            labelClassname="text-sm"
-                        />
-                    ))}
+                    {(opened) =>
+                        opened &&
+                        list.hidden.map((item) => (
+                            <DropdownMenuButton
+                                key={item.itemId}
+                                icon={
+                                    <SafeItemIcon
+                                        className={clsx('shrink-0', itemTypeToSubThemeClassName[item.data.type])}
+                                        item={item}
+                                        size={3}
+                                        pill={false}
+                                    />
+                                }
+                                className={clsx(
+                                    'pass-pinned-bar--item',
+                                    selectedItem && itemEq(selectedItem)(item) && 'is-active'
+                                )}
+                                onClick={() => onSelect(item)}
+                                label={item.data.metadata.name}
+                                labelClassname="text-sm"
+                            />
+                        ))
+                    }
                 </QuickActionsDropdown>
             )}
         </div>
     );
+});
+
+PinnedItemBarContent.displayName = 'PinnedItemBarContentMemo';
+
+export const PinnedItemsBar: FC = () => {
+    const selectItem = useSelectItem();
+    const { filters } = useNavigationFilters();
+    const filtersRef = useStatefulRef(filters);
+
+    /** Updates navigation on item select:
+     * Trashed items -> trash view with reset filters
+     * Regular items -> share view with preserved/updated shareId filter */
+    const onSelect = useCallback((item: ItemRevision) => {
+        const { shareId, itemId } = item;
+        const trashed = isTrashed(item);
+
+        selectItem(shareId, itemId, {
+            scope: trashed ? 'trash' : 'share',
+            filters: trashed
+                ? getInitialFilters()
+                : { search: '', selectedShareId: filtersRef.current.selectedShareId !== null ? shareId : null },
+        });
+    }, []);
+
+    return <PinnedItemBarContent sort={filters.sort} onSelect={onSelect} />;
 };

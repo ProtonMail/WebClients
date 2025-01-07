@@ -3,6 +3,7 @@ import { onContextReady } from 'proton-pass-extension/app/worker/context/inject'
 import store, { runSagas } from 'proton-pass-extension/app/worker/store';
 
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
+import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
 import { selectUser } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
 
@@ -21,7 +22,7 @@ export const createStoreService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.STORE_DISPATCH, handleStoreDispatch);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER, handleResolveUser);
 
-    return store;
+    return { ...store, dispatchAsyncRequest: asyncRequestDispatcherFactory(store.dispatch) };
 };
 
 export type StoreService = ReturnType<typeof createStoreService>;
