@@ -216,12 +216,7 @@ export const createMemberAddressKeysLegacy = async ({
             keyGenConfig,
         });
 
-    const activeKeys = await getActiveAddressKeys(
-        memberAddress,
-        memberAddress.SignedKeyList,
-        memberAddress.Keys,
-        memberAddressKeys
-    );
+    const activeKeys = await getActiveAddressKeys(memberAddress.SignedKeyList, memberAddressKeys);
     const newActiveKey = await getActiveKeyObject(privateKey, {
         ID: 'tmp',
         primary: getPrimaryFlag(activeKeys.v4),
@@ -291,12 +286,7 @@ export const createMemberAddressKeysV2 = async ({
         keyGenConfig,
     });
 
-    const activeKeys = await getActiveAddressKeys(
-        memberAddress,
-        memberAddress.SignedKeyList,
-        memberAddress.Keys,
-        memberAddressKeys
-    );
+    const activeKeys = await getActiveAddressKeys(memberAddress.SignedKeyList, memberAddressKeys);
     const newActiveKey = await getActiveKeyObject(addressPrivateKey, {
         ID: 'tmp',
         primary: getPrimaryFlag(activeKeys.v4),

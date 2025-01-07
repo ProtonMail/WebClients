@@ -10,10 +10,7 @@ import { verifyProofOfAbsenceForAllRevision } from '../verifyProofs';
 export const uploadMissingSKL: UploadMissingSKL = async ({ ktUserContext, address, addressKeys, epoch, api }) => {
     const proof = await fetchProof(epoch.EpochID, address.Email, 1, api);
     await verifyProofOfAbsenceForAllRevision(proof, address.Email, epoch.TreeHash);
-    const activeKeys = getNormalizedActiveAddressKeys(
-        address,
-        await getActiveAddressKeys(address, null, address.Keys, addressKeys)
-    );
+    const activeKeys = getNormalizedActiveAddressKeys(address, await getActiveAddressKeys(null, addressKeys));
     const skl = await getSignedKeyList(activeKeys, address, async () => {});
     const { Revision, ExpectedMinEpochID } = await updateSignedKeyList(api, address.ID, skl);
     if (!ExpectedMinEpochID) {

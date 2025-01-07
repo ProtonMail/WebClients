@@ -3,6 +3,7 @@ import { CryptoProxy } from '@proton/crypto';
 
 import { ADDRESS_TYPE, KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
+import type { DecryptedAddressKey } from '../interfaces';
 import {
     type ActiveAddressKeysByVersion,
     type ActiveKey,
@@ -12,7 +13,6 @@ import {
     type Key,
     type SignedKeyList,
     isActiveKeyV6,
-    DecryptedAddressKey,
 } from '../interfaces';
 import { getDefaultKeyFlags, setExternalFlags } from './keyFlags';
 import { ParsedSignedKeyList } from './signedKeyList';
@@ -46,9 +46,7 @@ export const getActiveKeyObject = async <
 };
 
 export const getActiveAddressKeys = async (
-    address: Address | undefined,
     signedKeyList: SignedKeyList | null | undefined,
-    keys: Key[],
     decryptedKeys: DecryptedAddressKey[]
 ): Promise<ActiveAddressKeysByVersion> => {
     if (!decryptedKeys.length) {
@@ -63,11 +61,6 @@ export const getActiveAddressKeys = async (
         }))
     );
     const keyIDsToSKLItemsMap = parsedSignedKeyList.mapAddressKeysToSKLItems(decryptedKeysIDsWithFingerprints);
-
-    const keysMap = keys.reduce<{ [key: string]: Key | undefined }>((acc, key) => {
-        acc[key.ID] = key;
-        return acc;
-    }, {});
 
     const isV6Key = (
         key: DecryptedAddressKey<PrivateKeyReferenceV6> | DecryptedKey<PrivateKeyReferenceV4>
@@ -86,20 +79,20 @@ export const getActiveAddressKeys = async (
         { v4: [], v6: [] }
     );
 
-    const decryptedKeyToActiveKey = async <KeyVersion extends PrivateKeyReferenceV4 | PrivateKeyReferenceV6>(
-        { ID, privateKey }: DecryptedKey<KeyVersion>,
-        index: number
-    ): Promise<ActiveKey<KeyVersion>> => {
-        const Key = keysMap[ID];
+    const decryptedKeyToActiveKey = async <KeyVersion extends PrivateKeyReferenceV4 | PrivateKeyReferenceV6>({
+        ID,
+        privateKey,
+        Primary,
+        Flags,
+    }: DecryptedAddressKey<KeyVersion>): Promise<ActiveKey<KeyVersion>> => {
         const signedKeyListItem = keyIDsToSKLItemsMap[ID];
-        const defaultPrimaryValue = privateKey.isPrivateKeyV6() ? 0 : index === 0 ? 1 : 0; // there might not be any v6 primary key
         return getActiveKeyObject(privateKey, {
             ID,
-            primary: signedKeyListItem?.Primary ?? Key?.Primary ?? defaultPrimaryValue,
+            primary: signedKeyListItem?.Primary ?? Primary,
             // SKL may not exist for non-migrated users, fall back to the flag value of the key.
             // Should be improved by asserting SKLs for migrated users, but pushed to later since SKL
             // signatures are not verified.
-            flags: signedKeyListItem?.Flags ?? Key?.Flags ?? getDefaultKeyFlags(address),
+            flags: signedKeyListItem?.Flags ?? Flags,
         }) as Promise<ActiveKey<KeyVersion>>;
     };
 

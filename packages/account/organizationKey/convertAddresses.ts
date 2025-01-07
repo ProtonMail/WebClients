@@ -49,7 +49,7 @@ const convertToInternalAddress = async ({
     api: Api;
     keyTransparencyVerify: KeyTransparencyVerify;
 }) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const internalAddress = {
         ...address,
         // Reset type to an internal address with a custom domain

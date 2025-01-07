@@ -56,9 +56,7 @@ const useGetVerificationPreferences = () => {
             if (selfAddress) {
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
                 const activeAddressKeysByVersion = await getActiveAddressKeys(
-                    selfAddress,
                     selfAddress.SignedKeyList,
-                    selfAddress.Keys,
                     selfAddressKeys
                 );
                 const activeAddressKeys = [...activeAddressKeysByVersion.v6, ...activeAddressKeysByVersion.v4];
