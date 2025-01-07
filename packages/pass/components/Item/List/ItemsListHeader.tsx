@@ -2,8 +2,8 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownButton, Icon } from '@proton/components';
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
+import { ScopeFilter } from '@proton/pass/components/Item/Filters/Scope';
 import { ItemsListActions } from '@proton/pass/components/Item/List/ItemsListActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { SecureLinkQuickActions } from '@proton/pass/components/SecureLink/SecureLinkQuickActions';
@@ -21,19 +21,31 @@ export const ItemsListHeader = memo(() => {
                         case 'secure-links':
                             return (
                                 <>
-                                    <DropdownButton
-                                        color="weak"
-                                        shape="solid"
-                                        size="small"
-                                        className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold pointer-events-none"
-                                    >
-                                        <Icon name="link" className="shrink-0" />
-                                        <span className="text-ellipsis hidden sm:block">
-                                            {c('Action').t`Secure links`} ({items.totalCount})
-                                        </span>
-                                    </DropdownButton>
+                                    <ScopeFilter
+                                        label={c('Action').t`Secure links`}
+                                        count={items.totalCount}
+                                        icon="link"
+                                    />
                                     <SecureLinkQuickActions />
                                 </>
+                            );
+
+                        case 'shared-with-me':
+                            return (
+                                <ScopeFilter
+                                    label={c('Label').t`Shared with me`}
+                                    count={items.totalCount}
+                                    icon="user-arrow-left"
+                                />
+                            );
+
+                        case 'shared-by-me':
+                            return (
+                                <ScopeFilter
+                                    label={c('Label').t`Shared by me`}
+                                    count={items.totalCount}
+                                    icon="user-arrow-right"
+                                />
                             );
 
                         default:
