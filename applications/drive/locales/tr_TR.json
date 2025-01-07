@@ -45,6 +45,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add account": [
+        "Hesap ekle"
+      ],
       "Add address": [
         "Adres ekle"
       ],
@@ -752,6 +755,9 @@
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "Sign out of all accounts": [
+        "Tüm hesapların oturumunu kapat"
       ],
       "Skip verification": [
         "Doğrulamayı atla"
@@ -3214,17 +3220,11 @@
       "Calendar": [
         "Takvim"
       ],
-      "Calendar time zone not supported": [
-        "Takvimin saat dilimi desteklenmiyor"
-      ],
       "Component with wrong format": [
         "Bileşen biçimi yanlış"
       ],
       "Custom time zone": [
         "Özel saat dilimi"
-      ],
-      "Edited event not supported": [
-        "Etkinlikleri düzenleme desteklenmiyor"
       ],
       "Element": [
         "Bileşen"
@@ -3232,17 +3232,8 @@
       "Encryption failed": [
         "Şifrelenemedi"
       ],
-      "End time out of bounds": [
-        "Bitiş zamanı sınırların dışında"
-      ],
       "Event": [
         "Etkinlik"
-      ],
-      "Event validation failed": [
-        "Etkinlik doğrulanamadı"
-      ],
-      "Floating times not supported": [
-        "Göreli zamanlar desteklenmiyor"
       ],
       "Free-busy time information": [
         "Serbest-meşgul zaman bilgileri"
@@ -3253,26 +3244,11 @@
       "Journal entry": [
         "Günlük kaydı"
       ],
-      "Malformed all-day event": [
-        "Tüm gün etkinliği bozulmuş"
-      ],
-      "Malformed end time": [
-        "Bitiş zamanı bozulmuş"
-      ],
-      "Malformed recurring event": [
-        "Yinelenen etkinlik bozulmuş"
-      ],
-      "Malformed start time": [
-        "Başlangıç zamanı bozulmuş"
-      ],
       "Missing start time": [
         "Başlangıç zamanı eksik"
       ],
       "No UID, title or start time": [
         "UID değeri, başlık ya da başlangıç zamanı yok"
-      ],
-      "Non-Gregorian": [
-        "Miladi değil"
       ],
       "Notification out of bounds": [
         "Bildirim sınırların dışında"
@@ -3280,20 +3256,8 @@
       "Original recurring event could not be found": [
         "Özgün yinelenen etkinlik bulunamadı"
       ],
-      "Recurring event has no occurrences": [
-        "Yinelenen etkinliğin herhangi bir yinelemesi yok"
-      ],
-      "Recurring rule not supported": [
-        "Yinelenme kuralı desteklenmiyor"
-      ],
-      "Start time out of bounds": [
-        "Başlangıç zamanı sınırların dışında"
-      ],
       "Time zone": [
         "Saat dilimi"
-      ],
-      "Time zone not supported": [
-        "Saat dilimi desteklenmiyor"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -3377,9 +3341,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Etkinlik takviminizde güncellenemedi. Herhangi bir yanıt gönderilmedi"
-      ],
-      "Unexpected error": [
-        "Beklenmeyen sorun"
       ],
       "Unsupported invitation": [
         "Davet desteklenmiyor"
@@ -4713,6 +4674,9 @@
       "Medium Priority": [
         "Orta öncelik"
       ],
+      "Member": [
+        "Üye"
+      ],
       "Merged": [
         "Birleştirilmiş"
       ],
@@ -5193,6 +5157,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Bu işlem var olan klasörü dosya ile değiştirir"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
       "This will upload a new version of the file": [
         "Bu işlem dosyaya yeni bir sürüm yükler"
@@ -9764,6 +9731,9 @@
       "Are you sure you want to remove this item from your list?": [
         "Bu ögeyi listenizden kaldırmak istediğinize emin misiniz?",
         "Bu ögeleri listenizden kaldırmak istediğinize emin misiniz?"
+      ],
+      "Are you sure?": [
+        "Emin misiniz?"
       ],
       "Billing cycle": [
         "Fatura dönemi"

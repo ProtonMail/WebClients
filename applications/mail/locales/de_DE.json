@@ -42,6 +42,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add account": [
+        "Konto hinzufügen"
+      ],
       "Add address": [
         "Adresse hinzufügen"
       ],
@@ -465,6 +468,9 @@
       "Expand URL": [
         "Vollständige URL anzeigen"
       ],
+      "Expand video conferencing widget": [
+        "Videokonferenz-Widget erweitern"
+      ],
       "Expiration time": [
         "Ablaufzeitpunkt"
       ],
@@ -503,6 +509,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Hol dir ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Hol dir ${ MAIL_SHORT_APP_NAME } Plus für ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakt aufnehmen"
@@ -1170,6 +1179,9 @@
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Sign out of all accounts": [
+        "Von allen Konten abmelden"
       ],
       "Size": [
         "Größe"
@@ -1905,6 +1917,9 @@
       ]
     },
     "Button": {
+      "Change email address settings": [
+        "E-Mail-Adresseinstellungen ändern"
+      ],
       "Continue": [
         "Fortfahren"
       ],
@@ -3557,6 +3572,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA fügt eine zusätzliche Sicherheitsebene hinzu, die unbefugten Zugriff verhindert."
       ],
+      "Also included": [
+        "Ebenfalls enthalten"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Lösche automatisch Spam und gelöschte Nachrichten und schalte mit einem Upgrade weitere Premium-Funktionen frei."
       ],
@@ -4622,17 +4640,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Kalenderzeitzone wird nicht unterstützt"
-      ],
       "Component with wrong format": [
         "Komponente mit ungültigem Format"
       ],
       "Custom time zone": [
         "Benutzerdefinierte Zeitzone"
-      ],
-      "Edited event not supported": [
-        "Bearbeitete Termine werden nicht unterstützt"
       ],
       "Element": [
         "Eintrag"
@@ -4640,17 +4652,8 @@
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
       ],
-      "End time out of bounds": [
-        "Endzeit außerhalb des Bereichs"
-      ],
       "Event": [
         "Termin"
-      ],
-      "Event validation failed": [
-        "Überprüfung der Termine fehlgeschlagen"
-      ],
-      "Floating times not supported": [
-        "Gleitzeiten werden nicht unterstützt"
       ],
       "Free-busy time information": [
         "Zeitinformationen zu Verfügbar/Beschäftigt"
@@ -4661,26 +4664,11 @@
       "Journal entry": [
         "Journaleintrag"
       ],
-      "Malformed all-day event": [
-        "Fehlerhafter ganztägiger Termin"
-      ],
-      "Malformed end time": [
-        "Fehlerhafte Endzeit"
-      ],
-      "Malformed recurring event": [
-        "Fehlerhafte Terminserie"
-      ],
-      "Malformed start time": [
-        "Fehlerhafte Startzeit"
-      ],
       "Missing start time": [
         "Fehlende Startzeit"
       ],
       "No UID, title or start time": [
         "UID, Titel oder Startzeit fehlt"
-      ],
-      "Non-Gregorian": [
-        "Nicht-Gregorianisch"
       ],
       "Notification out of bounds": [
         "Benachrichtigung außerhalb des Bereichs"
@@ -4688,20 +4676,8 @@
       "Original recurring event could not be found": [
         "Ursprüngliche Terminserie konnte nicht gefunden werden"
       ],
-      "Recurring event has no occurrences": [
-        "Wiederkehrendes Ereignis enthält keine Termine"
-      ],
-      "Recurring rule not supported": [
-        "Wiederkehrende Regel nicht unterstützt"
-      ],
-      "Start time out of bounds": [
-        "Startzeit außerhalb des Bereichs"
-      ],
       "Time zone": [
         "Zeitzone"
-      ],
-      "Time zone not supported": [
-        "Zeitzone wird nicht unterstützt"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen“"
@@ -4787,9 +4763,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet."
-      ],
-      "Unexpected error": [
-        "Unerwarteter Fehler"
       ],
       "Unsupported invitation": [
         "Nicht unterstützte Einladung"
@@ -5268,6 +5241,9 @@
       ],
       "Checklist complete": [
         "Checkliste vollständig"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Schließe diese Checkliste innerhalb von ${ daysCount } ab, um deinen Speicherplatz kostenlos zu verdoppeln."
       ],
       "Discover how our ${ strongText } protect you": [
         "Entdecke, wie dich unsere ${ strongText } schützen"
@@ -6615,6 +6591,9 @@
       "Medium Priority": [
         "Mittlere Priorität"
       ],
+      "Member": [
+        "Mitglied"
+      ],
       "Members": [
         "Mitglieder"
       ],
@@ -6878,6 +6857,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Registering your subscription...": [
+        "Dein Abonnement wird registriert..."
+      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Denk daran, dies in deinem Passwort-Manager oder wo auch immer du deine Konto- und Anmeldeinformationen aufbewahrst, zu aktualisieren."
       ],
@@ -6980,6 +6962,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
+      ],
+      "Setting up your new address...": [
+        "Deine neue E-Mail-Adresse wird eingerichtet..."
       ],
       "Shorten selection": [
         "Auswahl kürzen"
@@ -7205,6 +7190,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Dem öffentlichen Schlüssel dieses Absenders wurde noch nicht vertraut."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
       ],
       "to ${ destinationElement } folder.": [
         "in den Ordner ${ destinationElement } verschoben."
@@ -7950,6 +7938,9 @@
       ],
       "/month": [
         "/Monat"
+      ],
+      "Account holder": [
+        "Kontoinhaber"
       ],
       "Actions": [
         "Aktionen"
@@ -9128,6 +9119,9 @@
       "Get ${ planTitle }": [
         "${ planTitle } holen"
       ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
       ],
@@ -9807,6 +9801,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Eigene Domains für Aliasse, zusätzliche Postfächer, Versenden von E-Mails über Aliasse und mehr"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
@@ -9842,6 +9839,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Kategorien sind einfache Tags, die du zu Nachrichten hinzufügen kannst, um sie leichter zu finden oder zu filtern."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Lebenslanger Zugang zu den Premiumfunktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Wie ein Ordner ist auch ein Tresor eine praktische Möglichkeit, deine Einträge zu organisieren."
@@ -11420,6 +11420,9 @@
       "Schedule send": [
         "Senden planen"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Das ist jetzt deine Standard-E-Mail-Adresse. Öffne das Dropdown-Menü, um von einer anderen Adresse zu versenden."
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Aktiviere ${ DARK_WEB_MONITORING_NAME }, um benachrichtigt zu werden, wenn deine Daten von einem Dienst eines Drittanbieters entwendet wurden."
       ],
@@ -11431,11 +11434,17 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen."
+      ],
+      "Your pm.me email is active": [
+        "Deine pm.me-E-Mail-Adresse ist aktiv"
       ]
     },
     "sso": {
       "Sign in": [
         "Anmelden"
+      ],
+      "Sign in to your organization": [
+        "Bei deiner Organisation anmelden"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
@@ -12551,6 +12560,9 @@
       "Are you sure you want to close?": [
         "Wirklich schließen?"
       ],
+      "Are you sure?": [
+        "Bist du sicher?"
+      ],
       "Attachments": [
         "Anhänge"
       ],
@@ -13194,6 +13206,9 @@
       "Unsubscribe request sent": [
         "Abmeldeanfrage gesendet"
       ],
+      "Upgrade complete!": [
+        "Upgrade abgeschlossen!"
+      ],
       "Verification error": [
         "Verifizierungsfehler"
       ],
@@ -13242,6 +13257,9 @@
       ],
       "Your free trial has ended": [
         "Deine kostenlose Testversion ist abgelaufen."
+      ],
+      "Your shorter address is now ready": [
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
       ]
     },
     "Today icon tooltip in mini calendar": {

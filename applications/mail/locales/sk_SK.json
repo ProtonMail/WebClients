@@ -42,6 +42,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add account": [
+        "Pridať účet"
+      ],
       "Add address": [
         "Pridať adresu"
       ],
@@ -1181,6 +1184,9 @@
       ],
       "Sign out": [
         "Odhlásiť sa"
+      ],
+      "Sign out of all accounts": [
+        "Odhlásiť zo všetkých účtov"
       ],
       "Size": [
         "Veľkosť"
@@ -4697,17 +4703,11 @@
       "Calendar": [
         "Kalendár"
       ],
-      "Calendar time zone not supported": [
-        "Časové pásmo kalendára nie je podporované"
-      ],
       "Component with wrong format": [
         "Súčasť s nesprávnym formátom"
       ],
       "Custom time zone": [
         "Vlastná časová zóna"
-      ],
-      "Edited event not supported": [
-        "Upravená udalosť nie je podporovaná"
       ],
       "Element": [
         "Prvok"
@@ -4715,17 +4715,8 @@
       "Encryption failed": [
         "Šifrovanie zlyhalo"
       ],
-      "End time out of bounds": [
-        "Čas ukončenia mimo rozsahu"
-      ],
       "Event": [
         "Udalosť"
-      ],
-      "Event validation failed": [
-        "Overenie udalosti zlyhalo"
-      ],
-      "Floating times not supported": [
-        "Plávajúce časy nie sú podporované"
       ],
       "Free-busy time information": [
         "Informácie o čase voľna a zaneprázdnenosti"
@@ -4736,26 +4727,11 @@
       "Journal entry": [
         "Záznam v denníku"
       ],
-      "Malformed all-day event": [
-        "Porušená štruktúra celodenného podujatia"
-      ],
-      "Malformed end time": [
-        "Nesprávny čas ukončenia"
-      ],
-      "Malformed recurring event": [
-        "Chybne formulovaná opakujúca sa udalosť"
-      ],
-      "Malformed start time": [
-        "Chybný čas spustenia"
-      ],
       "Missing start time": [
         "Chýbajúci čas začiatku"
       ],
       "No UID, title or start time": [
         "Žiadne UID, názov alebo čas začiatku"
-      ],
-      "Non-Gregorian": [
-        "Iný ako gregoriánsky"
       ],
       "Notification out of bounds": [
         "Notifikácia mimo rozsahu"
@@ -4763,20 +4739,8 @@
       "Original recurring event could not be found": [
         "Pôvodnú opakujúcu sa udalosť sa nepodarilo nájsť"
       ],
-      "Recurring event has no occurrences": [
-        "Opakujúca sa udalosť nemá žiadne výskyty"
-      ],
-      "Recurring rule not supported": [
-        "Opakujúce sa pravidlo nie je podporované"
-      ],
-      "Start time out of bounds": [
-        "Čas začiatku mimo rozsahu"
-      ],
       "Time zone": [
         "Časové pásmo"
-      ],
-      "Time zone not supported": [
-        "Časové pásmo nie je podporované"
       ],
       "To-do entry": [
         "Položka To-do"
@@ -4862,9 +4826,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Nepodarilo sa aktualizovať udalosť vo vašom kalendári. Nebola odoslaná žiadna odpoveď"
-      ],
-      "Unexpected error": [
-        "Neočakávaná chyba"
       ],
       "Unsupported invitation": [
         "Nepodporovaná pozvánka"
@@ -6851,6 +6812,9 @@
       "Medium Priority": [
         "Stredná priorita"
       ],
+      "Member": [
+        "Člen"
+      ],
       "Members": [
         "Členovia"
       ],
@@ -7468,6 +7432,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Verejný kľúč tohto odosielateľa nebol doposiaľ overený."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
       ],
       "to ${ destinationElement } folder.": [
         "do priečinka ${ destinationElement }."
@@ -13113,6 +13080,9 @@
       ],
       "Are you sure you want to close?": [
         "Naozaj chcete zatvoriť?"
+      ],
+      "Are you sure?": [
+        "Ste si istí?"
       ],
       "Attachments": [
         "Prílohy"

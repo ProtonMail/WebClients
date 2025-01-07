@@ -42,6 +42,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add account": [
+        "Дадаць уліковы запіс"
+      ],
       "Add address": [
         "Дадаць адрас"
       ],
@@ -625,7 +628,7 @@
         "Павялічыць"
       ],
       "Inline": [
-        "Убудаваны"
+        "Убудаванне"
       ],
       "Insert": [
         "Уставіць"
@@ -1030,7 +1033,7 @@
         "Вярнуць арыгінальны выгляд"
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Выконваецца на серверах ${ BRAND_NAME }"
+        "Выконваць на серверах ${ BRAND_NAME }"
       ],
       "Save": [
         "Захаваць"
@@ -1181,6 +1184,9 @@
       ],
       "Sign out": [
         "Выйсці з уліковага запісу"
+      ],
+      "Sign out of all accounts": [
+        "Выйсці з усіх уліковых запісаў"
       ],
       "Size": [
         "Памер"
@@ -1582,7 +1588,7 @@
         "Журналы не захоўваюцца, каб абараніць вашу прыватнасць. Хутчэйшая апрацоўка."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Выконваецца на серверах ${ BRAND_NAME }"
+        "Выконваць на серверах ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Выконваецца на прыладзе"
@@ -3512,7 +3518,7 @@
         "${ count } раз",
         "${ count } разы",
         "${ count } разоў",
-        "${ count } разы"
+        "${ count } разоў"
       ],
       "Daily": [
         "Штодзень"
@@ -4692,17 +4698,11 @@
       "Calendar": [
         "Каляндар"
       ],
-      "Calendar time zone not supported": [
-        "Часавы пояс календара не падтрымліваецца"
-      ],
       "Component with wrong format": [
         "Кампанент з няправільным фарматам"
       ],
       "Custom time zone": [
         "Карыстальніцкі часавы пояс"
-      ],
-      "Edited event not supported": [
-        "Адрэдагаваная падзея не падтрымліваецца"
       ],
       "Element": [
         "Элемент"
@@ -4710,17 +4710,8 @@
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
       ],
-      "End time out of bounds": [
-        "Час завяршэння па-за межамі дыяпазону"
-      ],
       "Event": [
         "Падзея"
-      ],
-      "Event validation failed": [
-        "Не ўдалося праверыць падзею"
-      ],
-      "Floating times not supported": [
-        "Плаваючы час не падтрымліваецца"
       ],
       "Free-busy time information": [
         "Звесткі аб свабодным часе і працоўных днях"
@@ -4731,26 +4722,11 @@
       "Journal entry": [
         "Запіс у журнале"
       ],
-      "Malformed all-day event": [
-        "Няправільная падзея на ўвесь дзень"
-      ],
-      "Malformed end time": [
-        "Няправільны час завяршэння"
-      ],
-      "Malformed recurring event": [
-        "Няправільная перыядычная падзея"
-      ],
-      "Malformed start time": [
-        "Няправільны час пачатку"
-      ],
       "Missing start time": [
         "Адсутнічае час пачатку"
       ],
       "No UID, title or start time": [
         "Няма UID, загалоўка або часу пачатку"
-      ],
-      "Non-Gregorian": [
-        "Не грыгарыянскі каляндар"
       ],
       "Notification out of bounds": [
         "Апавяшчэнне па-за межамі"
@@ -4758,20 +4734,8 @@
       "Original recurring event could not be found": [
         "Не атрымалася знайсці арыгінальную перыядычную падзею"
       ],
-      "Recurring event has no occurrences": [
-        "Перыядычная падзея не мае паўтарэнняў"
-      ],
-      "Recurring rule not supported": [
-        "Правіла для паўтарэння не падтрымліваецца"
-      ],
-      "Start time out of bounds": [
-        "Час пачатку па-за межамі дыяпазону"
-      ],
       "Time zone": [
         "Часавы пояс"
-      ],
-      "Time zone not supported": [
-        "Часавы пояс не падтрымліваецца"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -4857,9 +4821,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Не атрымалася абнавіць падзею ў вашым календары. Адказ не адпраўлены"
-      ],
-      "Unexpected error": [
-        "Нечаканая памылка"
       ],
       "Unsupported invitation": [
         "Запрашэнне не падтрымліваецца"
@@ -5851,31 +5812,31 @@
         "${ calendarsToBeCreatedCount } новы каляндар",
         "${ calendarsToBeCreatedCount } новыя календары",
         "${ calendarsToBeCreatedCount } новых календароў",
-        "${ calendarsToBeCreatedCount } новыя календары"
+        "${ calendarsToBeCreatedCount } новых календароў"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } аб'яднаны каляндар",
         "${ calendarsToBeMergedCount } аб'яднаныя календары",
         "${ calendarsToBeMergedCount } аб'яднаных календароў",
-        "${ calendarsToBeMergedCount } аб'яднаныя календары"
+        "${ calendarsToBeMergedCount } аб'яднаных календароў"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } кантакт змяшчае некалькі адрасоў электроннай пошты.",
         "${ contactCount } кантакты змяшчаюць некалькі адрасоў электроннай пошты.",
         "${ contactCount } кантактаў змяшчаюць некалькі адрасоў электроннай пошты.",
-        "${ contactCount } кантакты змяшчаюць некалькі адрасоў электроннай пошты."
+        "${ contactCount } кантактаў змяшчаюць некалькі адрасоў электроннай пошты."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } удзельнік",
         "${ contactEmailsLength } удзельнікі",
         "${ contactEmailsLength } удзельнікаў",
-        "${ contactEmailsLength } удзельнікі"
+        "${ contactEmailsLength } удзельнікаў"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнік)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікаў)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікаў)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікаў)"
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнік з ${ numberOfContactsInGroup })",
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнікі з ${ numberOfContactsInGroup })",
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнікаў з ${ numberOfContactsInGroup })",
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнікаў з ${ numberOfContactsInGroup })"
       ],
       "${ contactName } contains multiple email addresses.": [
         "Кантакт ${ contactName } змяшчае некалькі адрасоў электроннай пошты."
@@ -5884,7 +5845,7 @@
         "Знойдзены ${ contactsCount } кантакт",
         "Знойдзена ${ contactsCount } кантакты",
         "Знойдзена ${ contactsCount } кантактаў",
-        "Знойдзена ${ contactsCount } кантакты"
+        "Знойдзена ${ contactsCount } кантактаў"
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } кантакт",
@@ -6139,7 +6100,7 @@
         "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
-        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
+        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
       ],
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
@@ -6846,6 +6807,9 @@
       "Medium Priority": [
         "Сярэдні прыярытэт"
       ],
+      "Member": [
+        "Удзельнік"
+      ],
       "Members": [
         "Удзельнікі"
       ],
@@ -7463,6 +7427,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Публічны ключ адпраўніка яшчэ не быў давераным."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
       "to ${ destinationElement } folder.": [
         "у папку ${ destinationElement }."
@@ -11683,7 +11650,7 @@
         "${ days } дзень",
         "${ days } дні",
         "${ days } дзён",
-        "${ days } дня"
+        "${ days } дзён"
       ],
       "${ hours } hour": [
         "${ hours } гадзіна",
@@ -12492,61 +12459,61 @@
         "${ count } размова выдалена",
         "${ count } размовы выдалены",
         "${ count } размоў выдалены",
-        "${ count } размовы выдалены"
+        "${ count } размоў выдалены"
       ],
       "${ count } draft deleted": [
         "${ count } чарнавік выдалены",
         "${ count } чарнавікі выдалены",
         "${ count } чарнавікоў выдалены",
-        "${ count } чарнавікі выдалены"
+        "${ count } чарнавікоў выдалены"
       ],
       "${ count } message deleted": [
         "${ count } паведамленне выдалена",
         "${ count } паведамленні выдалены",
         "${ count } паведамленняў выдалены",
-        "${ count } паведамленні выдалены"
+        "${ count } паведамленняў выдалены"
       ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
-        "${ countMergeableContacts } кантакты выглядаюць ідэнтычна."
+        "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } размова дададзена да ${ labelName }.",
         "${ elementsCount } размовы дададзены да ${ labelName }.",
         "${ elementsCount } размоў дададзены да ${ labelName }.",
-        "${ elementsCount } размовы дададзены да ${ labelName }."
+        "${ elementsCount } размоў дададзены да ${ labelName }."
       ],
       "${ elementsCount } conversation marked as read.": [
         "${ elementsCount } размова пазначана як прачытаная.",
         "${ elementsCount } размовы пазначаны як прачытаныя.",
         "${ elementsCount } размоў пазначаны як прачытаныя.",
-        "${ elementsCount } размовы пазначаны як прачытаныя."
+        "${ elementsCount } размоў пазначаны як прачытаныя."
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } размова пазначана зорачкай.",
         "${ elementsCount } размовы пазначаны зорачкай.",
         "${ elementsCount } размоў пазначаны зорачкай.",
-        "${ elementsCount } размовы пазначаны зорачкай."
+        "${ elementsCount } размоў пазначаны зорачкай."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } размова пазначана як непрачытаная.",
         "${ elementsCount } размовы пазначаны як непрачытаныя.",
         "${ elementsCount } размоў пазначаны як непрачытаныя.",
-        "${ elementsCount } размовы пазначаны як непрачытаныя."
+        "${ elementsCount } размоў пазначаны як непрачытаныя."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } размова перамешчана ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам.",
         "${ elementsCount } размовы перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам.",
         "${ elementsCount } размоў перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам.",
-        "${ elementsCount } размовы перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам."
+        "${ elementsCount } размоў перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } размова перамешчана ў ${ folderName }.",
         "${ elementsCount } размовы перамешчаны ў ${ folderName }.",
         "${ elementsCount } размоў перамешчаны ў ${ folderName }.",
-        "${ elementsCount } размовы перамешчаны ў ${ folderName }."
+        "${ elementsCount } размоў перамешчаны ў ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } размова перамешчана ў спам, а адпраўнік дададзены ў ваш спіс са спамам.",
@@ -13108,6 +13075,9 @@
       ],
       "Are you sure you want to close?": [
         "Вы сапраўды хочаце закрыць?"
+      ],
+      "Are you sure?": [
+        "Вы ўпэўнены?"
       ],
       "Attachments": [
         "Далучэнні"

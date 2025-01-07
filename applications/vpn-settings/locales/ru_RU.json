@@ -40,6 +40,9 @@
       "Add": [
         "Добавить"
       ],
+      "Add account": [
+        "Добавить аккаунт"
+      ],
       "Add address": [
         "Добавить адрес"
       ],
@@ -630,6 +633,9 @@
       ],
       "Sign out": [
         "Выйти"
+      ],
+      "Sign out of all accounts": [
+        "Выйти из всех учётных записей"
       ],
       "sign up for free": [
         "зарегистрироваться бесплатно"
@@ -4876,6 +4882,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Это отправит новое приглашение на **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
@@ -10230,6 +10239,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Вы уверены, что хотите закрыть предпросмотр?"
+      ],
+      "Are you sure?": [
+        "Вы уверены?"
       ],
       "Authentication security": [
         "Безопасность аутентификации"

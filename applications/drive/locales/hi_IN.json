@@ -722,6 +722,9 @@
       "Sign out": [
         "साइनआउट करें"
       ],
+      "Sign out of all accounts": [
+        "सारे खातो से साइन आउट"
+      ],
       "Skip verification": [
         "सत्यापन छोड़ें"
       ],
@@ -2814,17 +2817,11 @@
       "Calendar": [
         "कैलेंडर"
       ],
-      "Calendar time zone not supported": [
-        "कैलेंडर समय क्षेत्र सपोर्ट नहीं किया जाता"
-      ],
       "Component with wrong format": [
         "गलत प्रारूप वाला घटक"
       ],
       "Custom time zone": [
         "कस्टम समय क्षेत्र"
-      ],
-      "Edited event not supported": [
-        "संपादित घटना समर्थित नहीं है"
       ],
       "Element": [
         "तत्त्व"
@@ -2832,17 +2829,8 @@
       "Encryption failed": [
         "एन्क्रिप्शन विफल"
       ],
-      "End time out of bounds": [
-        "समाप्ति समय सीमा से बाहर"
-      ],
       "Event": [
         "इवेंट"
-      ],
-      "Event validation failed": [
-        "घटना सत्यापन विफल"
-      ],
-      "Floating times not supported": [
-        "फ़्लोटिंग समय समर्थित नहीं"
       ],
       "Free-busy time information": [
         "खाली व्यस्त समय की जानकारी"
@@ -2853,26 +2841,11 @@
       "Journal entry": [
         "जर्नल प्रविष्टि"
       ],
-      "Malformed all-day event": [
-        "खराब पूरे दिन इवेंट"
-      ],
-      "Malformed end time": [
-        "विकृत समाप्ति समय"
-      ],
-      "Malformed recurring event": [
-        "विकृत पुनरावर्ती घटना"
-      ],
-      "Malformed start time": [
-        "विकृत प्रारंभ समय"
-      ],
       "Missing start time": [
         "प्रारंभ समय गुम है"
       ],
       "No UID, title or start time": [
         "कोई यूआईडी, शीर्षक या प्रारंभ समय नहीं"
-      ],
-      "Non-Gregorian": [
-        "गैर ग्रेगोरियन"
       ],
       "Notification out of bounds": [
         "सीमा से बाहर अधिसूचना"
@@ -2880,20 +2853,8 @@
       "Original recurring event could not be found": [
         "मूल पुनरावर्ती घटना नहीं मिली"
       ],
-      "Recurring event has no occurrences": [
-        "आवर्ती घटना की कोई घटना नहीं होती"
-      ],
-      "Recurring rule not supported": [
-        "आवर्ती नियम समर्थित नहीं है"
-      ],
-      "Start time out of bounds": [
-        "समय सीमा से बाहर प्रारंभ करें"
-      ],
       "Time zone": [
         "समय क्षेत्र"
-      ],
-      "Time zone not supported": [
-        "समय क्षेत्र समर्थित नहीं है"
       ],
       "To-do entry": [
         "करने-को एंट्री"
@@ -2960,9 +2921,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "इवेंट को आपके कैलेंडर में अपडेट नहीं किया जा सका। कोई जवाब नहीं भेजा गया"
-      ],
-      "Unexpected error": [
-        "अनअपेक्षित त्रुटि"
       ],
       "Unsupported invitation": [
         "असमर्थित आमंत्रण"
@@ -4170,6 +4128,9 @@
       "Medium Priority": [
         "मध्यम प्राथमिकता"
       ],
+      "Member": [
+        "सदस्य"
+      ],
       "Merged": [
         "संविलीन"
       ],
@@ -4574,6 +4535,9 @@
       ],
       "This will replace the existing folder with the file": [
         "यह मौजूदा फ़ोल्डर को फ़ाइल के साथ बदल देगा।"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "इससे आप वर्तमान में लॉग इन सभी खातों से साइन आउट हो जाएंगे।"
       ],
       "This will upload a new version of the file": [
         "ये फ़ाइल का एक नया संस्करण अपलोड करेगा"
@@ -7918,6 +7882,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "आप पक्का इस प्रीव्यू को बंद करना चाहते हैं?"
+      ],
+      "Are you sure?": [
+        "क्या आप पक्का हैं?"
       ],
       "Billing cycle": [
         "बिलिंग चक्र"

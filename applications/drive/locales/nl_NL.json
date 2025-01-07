@@ -45,6 +45,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add account": [
+        "Account toevoegen"
+      ],
       "Add address": [
         "Adres toevoegen"
       ],
@@ -752,6 +755,9 @@
       ],
       "Sign out": [
         "Uitloggen"
+      ],
+      "Sign out of all accounts": [
+        "Alle accounts uitloggen"
       ],
       "Skip verification": [
         "Verificatie overslaan"
@@ -3214,17 +3220,11 @@
       "Calendar": [
         "Agenda"
       ],
-      "Calendar time zone not supported": [
-        "Agenda-tijdzone niet ondersteund"
-      ],
       "Component with wrong format": [
         "Component met verkeerde indeling"
       ],
       "Custom time zone": [
         "Aangepaste tijdzone"
-      ],
-      "Edited event not supported": [
-        "Bewerkte afspraak niet ondersteund"
       ],
       "Element": [
         "Element"
@@ -3232,17 +3232,8 @@
       "Encryption failed": [
         "Versleutelen is mislukt"
       ],
-      "End time out of bounds": [
-        "Eindtijd valt buiten de grenzen"
-      ],
       "Event": [
         "Afspraak"
-      ],
-      "Event validation failed": [
-        "Validatie van afspraak mislukt"
-      ],
-      "Floating times not supported": [
-        "Zwevende tijden niet ondersteund"
       ],
       "Free-busy time information": [
         "Informatie over vrije tijd"
@@ -3253,26 +3244,11 @@
       "Journal entry": [
         "Logboek-item"
       ],
-      "Malformed all-day event": [
-        "Misvormde afspraak gedurende de hele dag"
-      ],
-      "Malformed end time": [
-        "Misvormde eindtijd"
-      ],
-      "Malformed recurring event": [
-        "Misvormde periodieke afspraak"
-      ],
-      "Malformed start time": [
-        "Misvormde begintijd"
-      ],
       "Missing start time": [
         "Begintijd ontbreekt"
       ],
       "No UID, title or start time": [
         "Geen UID, titel of starttijd"
-      ],
-      "Non-Gregorian": [
-        "Niet-Gregoriaanse"
       ],
       "Notification out of bounds": [
         "Melding buiten de grenzen"
@@ -3280,20 +3256,8 @@
       "Original recurring event could not be found": [
         "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
       ],
-      "Recurring event has no occurrences": [
-        "Terugkerende afspraak heeft geen voorvallen"
-      ],
-      "Recurring rule not supported": [
-        "Herhalingsvoorwaarde niet ondersteund"
-      ],
-      "Start time out of bounds": [
-        "Begintijd valt buiten de grenzen"
-      ],
       "Time zone": [
         "Tijdzone"
-      ],
-      "Time zone not supported": [
-        "Tijdzone niet ondersteund"
       ],
       "To-do entry": [
         "To-do item"
@@ -3377,9 +3341,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Deze afspraak kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
-      ],
-      "Unexpected error": [
-        "Onverwachte fout"
       ],
       "Unsupported invitation": [
         "Niet-ondersteunde uitnodiging"
@@ -4713,6 +4674,9 @@
       "Medium Priority": [
         "Middelmatige prioriteit"
       ],
+      "Member": [
+        "Lid"
+      ],
       "Merged": [
         "Samengevoegd"
       ],
@@ -5193,6 +5157,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Dit zal de bestaande map vervangen door het bestand"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
       "This will upload a new version of the file": [
         "Dit zal een nieuwe versie van het bestand uploaden."
@@ -9764,6 +9731,9 @@
       "Are you sure you want to remove this item from your list?": [
         "Weet u zeker dat u dit item uit uw lijst wilt verwijderen?",
         "Weet u zeker dat u deze items uit uw lijst wilt verwijderen?"
+      ],
+      "Are you sure?": [
+        "Weet u het zeker?"
       ],
       "Billing cycle": [
         "Factuurperiode"

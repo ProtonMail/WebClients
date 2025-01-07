@@ -45,6 +45,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add account": [
+        "Adicionar conta"
+      ],
       "Add address": [
         "Adicionar endereço"
       ],
@@ -752,6 +755,9 @@
       ],
       "Sign out": [
         "Encerrar sessão"
+      ],
+      "Sign out of all accounts": [
+        "Encerrar sessão de todas as contas"
       ],
       "Skip verification": [
         "Pular verificação"
@@ -3217,17 +3223,11 @@
       "Calendar": [
         "Calendário"
       ],
-      "Calendar time zone not supported": [
-        "O fuso horário do calendário não é compatível"
-      ],
       "Component with wrong format": [
         "Componente com formato errado"
       ],
       "Custom time zone": [
         "Fuso horário personalizado"
-      ],
-      "Edited event not supported": [
-        "Evento editado não suportado"
       ],
       "Element": [
         "Elemento"
@@ -3235,17 +3235,8 @@
       "Encryption failed": [
         "Erro na criptografia"
       ],
-      "End time out of bounds": [
-        "Hora de término fora dos limites"
-      ],
       "Event": [
         "Evento"
-      ],
-      "Event validation failed": [
-        "Erro na validação do evento"
-      ],
-      "Floating times not supported": [
-        "Tempos flutuantes não suportados"
       ],
       "Free-busy time information": [
         "Informação de horário disponível/ocupado"
@@ -3256,26 +3247,11 @@
       "Journal entry": [
         "Entradas periódicas"
       ],
-      "Malformed all-day event": [
-        "Evento de dia inteiro mal formado"
-      ],
-      "Malformed end time": [
-        "A hora de término não é válida."
-      ],
-      "Malformed recurring event": [
-        "Evento recorrente mal formado"
-      ],
-      "Malformed start time": [
-        "A hora de início não é válida."
-      ],
       "Missing start time": [
         "Falta o horário de início"
       ],
       "No UID, title or start time": [
         "Sem UID, título ou hora de início"
-      ],
-      "Non-Gregorian": [
-        "Não gregoriano"
       ],
       "Notification out of bounds": [
         "Notificação fora dos limites"
@@ -3283,20 +3259,8 @@
       "Original recurring event could not be found": [
         "Não foi possível encontrar o evento recorrente original."
       ],
-      "Recurring event has no occurrences": [
-        "Evento recorrente sem datas"
-      ],
-      "Recurring rule not supported": [
-        "Regra recorrente não suportada"
-      ],
-      "Start time out of bounds": [
-        "Hora de início fora dos limites"
-      ],
       "Time zone": [
         "Fuso horário"
-      ],
-      "Time zone not supported": [
-        "Fuso horário não suportado"
       ],
       "To-do entry": [
         "Tarefas"
@@ -3380,9 +3344,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Não foi possível atualizar o evento no seu calendário. Nenhuma resposta foi enviada"
-      ],
-      "Unexpected error": [
-        "Erro inesperado"
       ],
       "Unsupported invitation": [
         "Convite não suportado"
@@ -4725,6 +4686,9 @@
       "Medium Priority": [
         "Média prioridade"
       ],
+      "Member": [
+        "Membro"
+      ],
       "Merged": [
         "Mesclado"
       ],
@@ -5205,6 +5169,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Isso substituirá a pasta existente pelo arquivo"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Isto irá te desconectar de todas as contas atualmente conectadas."
       ],
       "This will upload a new version of the file": [
         "Isso carregará uma nova versão do arquivo"
@@ -6835,7 +6802,7 @@
         "10 endereços de e-mail/aliases"
       ],
       "10 more premium features": [
-        "10 novos recursos premium"
+        "10 recursos premium adicionais"
       ],
       "10-year file version history": [
         "Histórico de versões de arquivos por 10 anos"
@@ -9791,6 +9758,9 @@
       "Are you sure you want to remove this item from your list?": [
         "Tem certeza que deseja excluir esse item da sua lista?",
         "Tem certeza que deseja excluir esses itens da sua lista?"
+      ],
+      "Are you sure?": [
+        "Você tem certeza?"
       ],
       "Billing cycle": [
         "Ciclo de faturamento"

@@ -40,6 +40,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add account": [
+        "Legg til konto"
+      ],
       "Add address": [
         "Legg til adresse"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Verv en venn"
       ],
+      "Refresh Data": [
+        "Oppdater data"
+      ],
       "Refresh status": [
         "Oppdater status"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Logg av"
+      ],
+      "Sign out of all accounts": [
+        "Logg av alle kontoer"
       ],
       "sign up for free": [
         "registrer deg gratis"
@@ -3413,6 +3422,12 @@
       "Checkout": [
         "Betaling"
       ],
+      "City": [
+        "By"
+      ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Opprett konto"
       ],
@@ -4381,11 +4396,17 @@
       "No Gateways yet": [
         "Ingen porttjenere enda"
       ],
+      "No location filters are currently assigned.": [
+        "Ingen plasseringsfiltre er for øyeblikket tildelt."
+      ],
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
       ],
       "No results found": [
         "Ingen resultater funnet"
+      ],
+      "No Shared Servers Found": [
+        "Fant ikke noen delte tjenere"
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
@@ -4644,6 +4665,9 @@
       "Shared ${ vaultLink } updated": [
         "Delt ${ vaultLink } oppdatert"
       ],
+      "Shared Server Location Filters": [
+        "Plasseringsfiltre for delt tjener"
+      ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
       ],
@@ -4809,6 +4833,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Dette vil sende en ny invitasjon til **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge deg av alle aktive økter og deaktivere tofaktorautentisering."
@@ -10062,6 +10089,9 @@
       "Are you sure you want to close the preview?": [
         "Er du sikker på at du vil lukke forhåndsvisningen?"
       ],
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
       "Authentication security": [
         "Sikkerhet for autentisering"
       ],
@@ -10517,6 +10547,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Sett opp dedikerte tjenere ved å oppgradere til Business"
+      ],
+      "Shared servers": [
+        "Delte tjenere"
       ],
       "Sign in": [
         "Logg på"
