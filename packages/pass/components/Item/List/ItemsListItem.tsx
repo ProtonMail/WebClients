@@ -1,6 +1,6 @@
 import type { DragEvent, DragEventHandler } from 'react';
 import { memo } from 'react';
-import { useSelector, useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon, Marks } from '@proton/components';
@@ -11,11 +11,10 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
 import { useItemOptimisticState } from '@proton/pass/hooks/useItem';
 import type { DraggableItem } from '@proton/pass/hooks/useItemDrag';
-import { isDisabledAliasItem, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectIsWritableShare, selectShare } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevision, ShareType } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
@@ -38,8 +37,18 @@ type Props = {
 };
 
 export const ItemsListItem = memo(
-    ({ id, bulk, item, active = false, search = '', draggable, selected, onDragStart, onDragEnd, onSelect }: Props) => {
-        const store = useStore<State>();
+    ({
+        id,
+        bulk,
+        item,
+        active = false,
+        search = '',
+        draggable = false,
+        selected,
+        onDragStart,
+        onDragEnd,
+        onSelect,
+    }: Props) => {
         const { data, shareId, itemId } = item;
         const { heading, subheading } = presentListItem(item);
 
@@ -72,14 +81,7 @@ export const ItemsListItem = memo(
                         e.preventDefault();
                         onSelect(item, e.ctrlKey || e.metaKey);
                     }}
-                    onDragStart={(evt: DragEvent) => {
-                        if (onDragStart && draggable) {
-                            if (isTrashed(item)) return false;
-                            const writable = selectIsWritableShare(item.shareId)(store.getState());
-                            if (writable) onDragStart?.(evt, { ID: id });
-                            else return false;
-                        }
-                    }}
+                    onDragStart={(evt: DragEvent) => draggable && onDragStart?.(evt, { ID: id })}
                     onDragEnd={onDragEnd}
                 >
                     <div className={clsx('flex-nowrap flex w-full items-center', bulk ? 'px-2 py-1.5' : 'px-3 py-2')}>
