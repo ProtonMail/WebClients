@@ -224,7 +224,7 @@
         "Deaktivovat alias"
       ],
       "Disable instead": [
-        "Místo toho deaktivovat"
+        "Deaktivovat"
       ],
       "Disable this alias to stop receiving emails sent to this alias": [
         "Deaktivujte tento alias, abyste přestali dostávat e-maily odeslané na tento alias"
@@ -755,9 +755,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Pokud používáte subdoménu, např. subdoména.doména.cz, musíte jako doménu použít ${ domainKeyExampleSubdomain }. To znamená, že pokud je vaše doména mail.doména.cz, měli byste zadat ${ domainKeyExampleMail } jako doménu."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Pokud používáte CloudFlare, ujistěte se, že není vybrána možnost Proxy."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
       ],
@@ -769,9 +766,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Někteří registrátoři DNS mohou vyžadovat úplnou cestu k záznamu, v takovém případě použijte ${ domain } jako hodnotu domény."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Někteří registrátoři domén (Namecheap, CloudFlare atd.) mohou také používat @ pro hlavní doménu."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } je metoda ověřování e-mailů určená k odhalování podvržených adres odesílatele během doručování e-mailu. Nastavení SPF se důrazně doporučuje, aby se snížila pravděpodobnost, že vaše e-maily skončí ve spamu příjemce."
@@ -790,9 +784,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Tato služba nabízí 2FA. Povolte ho pro zvýšení zabezpečení účtu."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Chcete-li ověřit vlastnictví domény, přidejte následující záznam TXT. Někteří registrátoři domén (Namecheap, CloudFlare atd.) mohou pro hlavní doménu používat @."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odemkněte pokročilé funkce zabezpečení a podrobné logy, abyste zabezpečili svou online přítomnost."
@@ -1194,6 +1185,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Momentálně jste offline. Prosím obnovte připojení pro odemčení ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Vaše nastavení DNS není správné. Získaný MX záznam je:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Vaše nastavení DNS není správné. Získaný TXT záznam je:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
       ]
@@ -1387,6 +1384,9 @@
         "Zjištěny ${ row.breachCount } úniky informací",
         "Zjištěno ${ row.breachCount } úniků informací",
         "Zjištěno ${ row.breachCount } úniků informací"
+      ],
+      "(Empty)": [
+        "(Prázdné)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
@@ -2161,6 +2161,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Tato volba je na úrovni organizace deaktivována"
+      ],
+      "This setting is enforced by your organization": [
+        "Toto nastavení je vynuceno vaší organizací"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor není v současné době s nikým sdílen. Pozvěte ostatní, se kterými chcete trezor sdílet."

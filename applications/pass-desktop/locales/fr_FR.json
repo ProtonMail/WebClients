@@ -749,8 +749,8 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Si vous utilisez un sous-domaine, par exemple sous-domaine.domaine.fr, vous devez utiliser ${ domainKeyExampleSubdomain } comme domaine à la place. Cela signifie que si votre domaine est e-mail.domaine.fr, vous devez saisir ${ domainKeyExampleMail } comme domaine."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "S vous utilisez CloudFlare, assurez-vous de ne pas sélectionner l'option Proxy."
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "S vous utilisez Cloudflare, assurez-vous de ne pas sélectionner l'option Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Renforcez la sécurité et la confidentialité de vos informations avec ces conseils."
@@ -764,8 +764,8 @@
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Certains registraires DNS peuvent nécessiter un chemin d'enregistrement complet. Dans ce cas, veuillez utiliser ${ domain } comme valeur de domaine à la place."
       ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Certains registraires de domaines (Namecheap, CloudFlare, etc.) peuvent également utiliser @ pour le domaine racine."
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Certains registraires de domaines (Namecheap, Cloudflare, etc.) peuvent également utiliser @ pour le domaine racine."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norme SPF ${ WIKIPEDIA_LINK_SPF } est une méthode d'authentification des e-mails conçue pour détecter les adresses d'expéditeur falsifiées lors de la livraison de l'e-mail. La configuration de SPF est fortement recommandée pour réduire le risque que vos e-mails se retrouvent dans le dossier indésirables/spam du destinataire."
@@ -785,8 +785,8 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Ce service propose l'A2F. Activez-la pour améliorer votre sécurité."
       ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Pour vérifier la propriété du domaine, ajoutez l'enregistrement TXT suivant. Certains registraires de domaines (Namecheap, CloudFlare, etc.) peuvent utiliser @ pour le domaine racine."
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Pour vérifier la propriété du domaine, ajoutez l'enregistrement TXT suivant. Certains registraires de domaines (Namecheap, Cloudflare, etc.) peuvent utiliser @ pour le domaine racine."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Débloquez des fonctionnalités de sécurité avancées et des journaux détaillés pour protéger votre présence en ligne."
@@ -2114,7 +2114,7 @@
         "Ce paramètre est désactivé pour l'organisation."
       ],
       "This setting is enforced by your organization": [
-        "Votre organisation applique ce paramètre."
+        "Ce paramètre est imposé par votre organisation"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."

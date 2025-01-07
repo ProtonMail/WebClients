@@ -749,9 +749,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Hvis du bruger et underdomæne, f.eks. subdomain.domain.com, skal du bruge ${ domainKeyExampleSubdomain } som domæne i stedet. Det betyder, at hvis dit domæne er mail.domain.com, skal du indtaste ${ domainKeyExampleMail } som domæne."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Hvis du bruger CloudFlare, skal du sørge for ikke at vælge Proxy-indstillingen."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
       ],
@@ -763,9 +760,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Nogle DNS-registratorer kræver måske en fuld record-sti, i så fald skal du bruge ${ domain } som domæneværdi i stedet."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Nogle domæneregistratorer (Namecheap, CloudFlare osv.) bruger måske også @ til roddomænet."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } er en e-mail-godkendelsesmetode, der er designet til at detektere falske afsenderadresser under leveringen af e-mailen. Det anbefales stærkt at opsætte SPF for at reducere risikoen for, at dine e-mails ender i modtagerens spam-mappe."
@@ -784,9 +778,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjeneste tilbyder 2FA. Aktivér det for at få ekstra kontosikkerhed."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "For at bekræfte ejerskabet af domænet skal du tilføje følgende TXT-record. Nogle domæneregistratorer (Namecheap, CloudFlare osv.) bruger muligvis @ for roddomænet."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Frigør avancerede sikkerhedsfunktioner og udførlige logfiler for at beskytte din færden på nettet."
@@ -1184,6 +1175,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du er i øjeblikket offline. Genopret venligst forbindelsen for at oplåse ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Din DNS er ikke korrekt indstillet. Den MX-record, vi får, er:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Din DNS er ikke korrekt indstillet. Den TXT-record, vi får, er:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
       ]
@@ -1347,6 +1344,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } databrud registreret",
         "${ row.breachCount } databrud registreret"
+      ],
+      "(Empty)": [
+        "(Tom)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dage til at prøve premium-funktioner gratis. Kun i din første uge med ${ BRAND_NAME }."
@@ -2103,6 +2103,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Denne indstilling er deaktiveret på organisationsniveau"
+      ],
+      "This setting is enforced by your organization": [
+        "Denne indstilling håndhæves af din organisation"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Denne boks deles i øjeblikket ikke med nogen. Inviter folk for at dele den med andre."

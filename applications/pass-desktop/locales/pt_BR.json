@@ -749,9 +749,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Se estiver usando um subdomínio, por exemplo, subdomain.domain.com, será necessário usar ${ domainKeyExampleSubdomain } como o domínio. Isso significa que, se o seu domínio for mail.domain.com, você deverá inserir ${ domainKeyExampleMail } como o domínio."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Se estiver usando o CloudFlare, certifique-se de não selecionar a opção Proxy."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantenha suas informações mais seguras e privadas com estes guias e dicas."
       ],
@@ -763,9 +760,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Alguns registradores de DNS podem exigir um caminho de registro completo; nesse caso, use ${ domain } como valor do domínio."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Alguns registradores de domínio (Namecheap, CloudFlare, etc.) também podem usar @ para o domínio raiz."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "O SPF ${ WIKIPEDIA_LINK_SPF } é um método de autenticação de e-mail desenvolvido para detectar endereços de remetente falsos durante a entrega do e-mail. A configuração do SPF é altamente recomendada para reduzir a chance de seus e-mails acabarem na pasta de Spam do destinatário."
@@ -784,9 +778,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para maior segurança da sua conta."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Para verificar a propriedade do domínio, adicione o seguinte registro TXT. Alguns registradores de domínio (Namecheap, CloudFlare, etc.) podem usar @ para o domínio raiz."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloqueie recursos avançados de segurança e registros detalhados para proteger sua presença online."
@@ -1347,6 +1338,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } violação detectada",
         "${ row.breachCount } violações detectadas"
+      ],
+      "(Empty)": [
+        "(Vazio)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dias para testar os recursos premium de graça. Somente durante a primeira semana da ${ BRAND_NAME }."
