@@ -80,12 +80,7 @@ export const getReactivatedAddressKeys = async ({
     }
 
     const oldAddressKeysMap = new Map<string, Key>(address.Keys.map((Key) => [Key.ID, Key]));
-    const newActiveKeys = await getActiveAddressKeys(
-        address,
-        address.SignedKeyList,
-        address.Keys,
-        newDecryptedAddressKeys
-    );
+    const newActiveKeys = await getActiveAddressKeys(address.SignedKeyList, newDecryptedAddressKeys);
     const setReactivateKeyFlag = <V extends ActiveKeyWithVersion>(activeKey: V) => {
         if (!reactivatedKeysSet.has(activeKey.ID)) {
             return activeKey;
