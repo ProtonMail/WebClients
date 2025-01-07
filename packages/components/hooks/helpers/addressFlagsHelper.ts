@@ -26,9 +26,9 @@ export const setAddressFlags = async ({
     api: Api;
     addressKeys: DecryptedAddressKey[];
 }): Promise<void> => {
-    const { SignedKeyList: currentSignedKeyList, Keys: currentKeys } = address;
+    const { SignedKeyList: currentSignedKeyList } = address;
 
-    const activeKeys = await getActiveAddressKeys(address, currentSignedKeyList, currentKeys, addressKeys);
+    const activeKeys = await getActiveAddressKeys(currentSignedKeyList, addressKeys);
 
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => ({
         ...activeKey,
