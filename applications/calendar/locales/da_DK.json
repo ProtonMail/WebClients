@@ -50,6 +50,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add account": [
+        "Tilføj konto"
+      ],
       "Add address": [
         "Tilføj adresse"
       ],
@@ -307,6 +310,9 @@
       ],
       "Forward as attachment": [
         "Videresend som vedhæftning"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -649,6 +655,9 @@
       ],
       "Sign out": [
         "Log ud"
+      ],
+      "Sign out of all accounts": [
+        "Log ud alle konti"
       ],
       "Skip": [
         "Spring over"
@@ -2595,6 +2604,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
+      "Also included": [
+        "Også inkluderet"
+      ],
       "Availability unknown": [
         "Tilgængelighed ukendt"
       ],
@@ -3497,17 +3509,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Kalendertidszone understøttes ikke"
-      ],
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
       "Custom time zone": [
         "Brugerdefineret tidszone"
-      ],
-      "Edited event not supported": [
-        "Redigeret begivenhed understøttes ikke"
       ],
       "Element": [
         "Element"
@@ -3515,17 +3521,8 @@
       "Encryption failed": [
         "Kryptering mislykkedes"
       ],
-      "End time out of bounds": [
-        "Sluttid uden for grænserne"
-      ],
       "Event": [
         "Begivenhed"
-      ],
-      "Event validation failed": [
-        "Validering af begivenhed mislykkedes"
-      ],
-      "Floating times not supported": [
-        "Flydende tider understøttes ikke"
       ],
       "Free-busy time information": [
         "Fri-optaget tidsinformation"
@@ -3536,26 +3533,11 @@
       "Journal entry": [
         "Journalindlæg"
       ],
-      "Malformed all-day event": [
-        "Misdannet heldagsbegivenhed"
-      ],
-      "Malformed end time": [
-        "Misdannet sluttidspunkt"
-      ],
-      "Malformed recurring event": [
-        "Misdannet tilbagevendende begivenhed"
-      ],
-      "Malformed start time": [
-        "Misdannet starttid"
-      ],
       "Missing start time": [
         "Manglende starttidspunkt"
       ],
       "No UID, title or start time": [
         "Ingen UID, titel eller starttid"
-      ],
-      "Non-Gregorian": [
-        "Ikke-gregoriansk"
       ],
       "Notification out of bounds": [
         "Notifikation uden for grænserne"
@@ -3563,20 +3545,8 @@
       "Original recurring event could not be found": [
         "Oprindelig tilbagevendende begivenhed kunne ikke findes"
       ],
-      "Recurring event has no occurrences": [
-        "Tilbagevendende begivenhed har ingen forekomster"
-      ],
-      "Recurring rule not supported": [
-        "Tilbagevendende regel understøttes ikke"
-      ],
-      "Start time out of bounds": [
-        "Starttid uden for grænserne"
-      ],
       "Time zone": [
         "Tidszone"
-      ],
-      "Time zone not supported": [
-        "Tidszone understøttes ikke"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -3679,9 +3649,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Begivenheden kunne ikke opdateres i din kalender. Der blev ikke sendt noget svar"
-      ],
-      "Unexpected error": [
-        "Uventet fejl"
       ],
       "Unsupported invitation": [
         "Ikke-understøttet invitation"
@@ -4188,7 +4155,7 @@
         "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+        "Udvid dropdownmenuen ved at trykke på de 3 prikker (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Generer ${ boldAppPassword }, og brug den i stedet for din almindelige adgangskode, når du bliver bedt om det af ${ BRAND_NAME }."
@@ -4260,7 +4227,7 @@
         "Gå til ${ calendarViewLink } i Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen."
+        "Hold musen over den kalender, du vil importere, og åbn dropdownmenuen."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
@@ -4812,6 +4779,9 @@
       "Medium Priority": [
         "Mellem prioritet"
       ],
+      "Member": [
+        "Medlem"
+      ],
       "Merged": [
         "Flettet"
       ],
@@ -4986,6 +4956,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
+      "Setting up your new address...": [
+        "Konfigurerer din nye adresse..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
@@ -5069,6 +5042,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
@@ -9384,6 +9360,9 @@
       "Apply gift code": [
         "Tilføj gavekode"
       ],
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
       "Billing cycle": [
         "Faktureringscyklus"
       ],
@@ -9628,7 +9607,7 @@
         "Én e-mail, mange modtagere"
       ],
       "Open actions dropdown": [
-        "Åbn handlingsrullemenu"
+        "Åbn handlings-dropdownmenuen"
       ],
       "Organizer cannot be notified": [
         "Arrangør kan ikke underrettes"
@@ -9789,6 +9768,9 @@
       "Update recurring event": [
         "Opdater tilbagevendende begivenhed"
       ],
+      "Upgrade complete!": [
+        "Opgradering udført!"
+      ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
       ],
@@ -9830,6 +9812,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Your shorter address is now ready": [
+        "Din kortere adresse er nu klar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

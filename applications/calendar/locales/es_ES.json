@@ -50,6 +50,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add account": [
+        "Añadir una cuenta"
+      ],
       "Add address": [
         "Añadir dirección"
       ],
@@ -658,6 +661,9 @@
       ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Sign out of all accounts": [
+        "Cerrar sesión en todas las cuentas"
       ],
       "Skip": [
         "Omitir"
@@ -3524,17 +3530,11 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendar time zone not supported": [
-        "Zona horaria del calendario no admitida"
-      ],
       "Component with wrong format": [
         "Componente con formato incorrecto"
       ],
       "Custom time zone": [
         "Zona horaria personalizada"
-      ],
-      "Edited event not supported": [
-        "Evento editado no admitido"
       ],
       "Element": [
         "Elemento"
@@ -3542,17 +3542,8 @@
       "Encryption failed": [
         "Error con el cifrado"
       ],
-      "End time out of bounds": [
-        "Hora final fuera de límites"
-      ],
       "Event": [
         "Evento"
-      ],
-      "Event validation failed": [
-        "Error al validar el evento"
-      ],
-      "Floating times not supported": [
-        "Tiempos flotantes no admitidos"
       ],
       "Free-busy time information": [
         "Información de disponibilidad"
@@ -3563,26 +3554,11 @@
       "Journal entry": [
         "Entrada de diario"
       ],
-      "Malformed all-day event": [
-        "Evento todo el día con formato no válido"
-      ],
-      "Malformed end time": [
-        "Hora final con formato no válido"
-      ],
-      "Malformed recurring event": [
-        "Evento recurrente con formato no válido"
-      ],
-      "Malformed start time": [
-        "Hora inicial con formato no válido"
-      ],
       "Missing start time": [
         "Falta la hora inicial."
       ],
       "No UID, title or start time": [
         "Sin UID, título ni hora de inicio"
-      ],
-      "Non-Gregorian": [
-        "No gregoriano"
       ],
       "Notification out of bounds": [
         "Notificación fuera de límites"
@@ -3590,20 +3566,11 @@
       "Original recurring event could not be found": [
         "No se ha podido encontrar el evento original recurrente."
       ],
-      "Recurring event has no occurrences": [
-        "El evento recurrente no tiene ocurrencias."
-      ],
-      "Recurring rule not supported": [
-        "Regla recurrente no admitida"
-      ],
-      "Start time out of bounds": [
-        "Hora inicial fuera de límites"
-      ],
       "Time zone": [
         "Zona horaria"
       ],
-      "Time zone not supported": [
-        "Zona horaria no admitida"
+      "Time zone component ignored": [
+        "Se ha ignorado el componente de zona horaria."
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -3693,6 +3660,11 @@
         "Tú"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Se ha producido un error inesperado."
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "El archivo ICS adjunto no ha podido ser descifrado."
@@ -3711,9 +3683,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "No se ha podido actualizar el evento en tu calendario. No se ha enviado una respuesta."
-      ],
-      "Unexpected error": [
-        "Error inesperado"
       ],
       "Unsupported invitation": [
         "Invitación no admitida"
@@ -4072,6 +4041,50 @@
       ],
       "No verification method available": [
         "No hay ningún método de verificación disponible."
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "La zona horaria del calendario no está admitida."
+      ],
+      "Edited event not supported": [
+        "El evento editado no está admitido."
+      ],
+      "End time out of bounds": [
+        "La hora final está fuera de los límites."
+      ],
+      "Event validation failed": [
+        "Error al validar el evento"
+      ],
+      "Floating times not supported": [
+        "Los tiempos flotantes no están admitidos."
+      ],
+      "Malformed all-day event": [
+        "El formato del evento para todo el día no es válido."
+      ],
+      "Malformed end time": [
+        "El formato de la hora final no es válido."
+      ],
+      "Malformed recurring event": [
+        "El formato del evento recurrente no es válido."
+      ],
+      "Malformed start time": [
+        "El formato de la hora inicial no es válido."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Sólo se permite la escala del calendario gregoriano."
+      ],
+      "Recurring event has no occurrences": [
+        "El evento recurrente no tiene ocurrencias."
+      ],
+      "Recurring rule not supported": [
+        "La regla recurrente no está admitida."
+      ],
+      "Start time out of bounds": [
+        "La hora inicial está fuera de los límites."
+      ],
+      "Time zone not supported": [
+        "La zona horaria no está admitida."
       ]
     },
     "Import calendar": {
@@ -4866,6 +4879,9 @@
       "Medium Priority": [
         "Prioridad media"
       ],
+      "Member": [
+        "Miembro"
+      ],
       "Merged": [
         "Combinado"
       ],
@@ -5129,6 +5145,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
@@ -7042,7 +7061,7 @@
         "Popular"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Protege la información empresarial confidencial y colabora de forma segura."
+        "Protege la información sensible de tu negocio y colabora con seguridad."
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
         "Protege a tu familia con todas las características premium de ${ PASS_SHORT_APP_NAME } Plus para seis usuarios."
@@ -9533,6 +9552,9 @@
       ],
       "Apply gift code": [
         "Aplicar código de regalo"
+      ],
+      "Are you sure?": [
+        "¿Estás seguro?"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
