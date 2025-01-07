@@ -45,6 +45,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add account": [
+        "Ajouter un compte"
+      ],
       "Add address": [
         "Ajouter une adresse"
       ],
@@ -596,6 +599,9 @@
       ],
       "Sign out": [
         "Se déconnecter"
+      ],
+      "Sign out of all accounts": [
+        "Se déconnecter de tous les comptes"
       ],
       "Sign up": [
         "S'inscrire"
@@ -3010,17 +3016,11 @@
       "Calendar": [
         "Calendrier"
       ],
-      "Calendar time zone not supported": [
-        "Le fuseau horaire du calendrier n'est pas pris en charge."
-      ],
       "Component with wrong format": [
         "L'élément n'a pas le bon format."
       ],
       "Custom time zone": [
         "Fuseau horaire personnalisé"
-      ],
-      "Edited event not supported": [
-        "L'événement modifié n'est pas pris en charge."
       ],
       "Element": [
         "Élément"
@@ -3028,17 +3028,8 @@
       "Encryption failed": [
         "Le chiffrement n'a pas abouti."
       ],
-      "End time out of bounds": [
-        "L'heure de fin est hors limites."
-      ],
       "Event": [
         "Événement"
-      ],
-      "Event validation failed": [
-        "L'événement n'a pas pu être validé."
-      ],
-      "Floating times not supported": [
-        "Les heures variables ne sont pas prises en charge."
       ],
       "Free-busy time information": [
         "Information de disponibilité"
@@ -3049,26 +3040,11 @@
       "Journal entry": [
         "Entrée du journal"
       ],
-      "Malformed all-day event": [
-        "L'événement pour la journée entière est mal formaté."
-      ],
-      "Malformed end time": [
-        "L'heure de fin est mal formatée."
-      ],
-      "Malformed recurring event": [
-        "L'événement récurrent est mal formaté."
-      ],
-      "Malformed start time": [
-        "L'heure de début est mal formatée."
-      ],
       "Missing start time": [
         "Il manque l'heure de début."
       ],
       "No UID, title or start time": [
         "Il n'y a aucun identifiant unique, titre ou heure de début."
-      ],
-      "Non-Gregorian": [
-        "Non grégorien"
       ],
       "Notification out of bounds": [
         "La notification est hors limites."
@@ -3076,20 +3052,11 @@
       "Original recurring event could not be found": [
         "L'événement récurrent original n'a pas pu être trouvé."
       ],
-      "Recurring event has no occurrences": [
-        "L'événement récurrent n'a pas d'occurrences."
-      ],
-      "Recurring rule not supported": [
-        "La règle de répétition n'est pas prise en charge."
-      ],
-      "Start time out of bounds": [
-        "L'heure de départ est hors limites."
-      ],
       "Time zone": [
         "Fuseau horaire"
       ],
-      "Time zone not supported": [
-        "Le fuseau horaire n'est pas pris en charge."
+      "Time zone component ignored": [
+        "Le composant de fuseau horaire a été ignoré."
       ],
       "To-do entry": [
         "Entrée de type tâche à réaliser"
@@ -3140,6 +3107,11 @@
         "Aucune image n'est sélectionnée."
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Erreur inattendue"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Le fichier ICS joint n'a pas pu être déchiffré."
@@ -3158,9 +3130,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "L'événement ne peut pas être mis à jour dans votre calendrier. Aucune réponse n'a été envoyée."
-      ],
-      "Unexpected error": [
-        "Erreur inattendue"
       ],
       "Unsupported invitation": [
         "L'invitation n'est pas prise en charge."
@@ -3452,6 +3421,50 @@
       ],
       "No verification method available": [
         "Aucune méthode de vérification n'est disponible."
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Le fuseau horaire du calendrier n'est pas pris en charge."
+      ],
+      "Edited event not supported": [
+        "L'événement modifié n'est pas pris en charge."
+      ],
+      "End time out of bounds": [
+        "L'heure de fin est hors limites."
+      ],
+      "Event validation failed": [
+        "L'événement n'a pas pu être validé."
+      ],
+      "Floating times not supported": [
+        "Les heures variables ne sont pas prises en charge."
+      ],
+      "Malformed all-day event": [
+        "L'événement pour la journée entière est mal formaté."
+      ],
+      "Malformed end time": [
+        "L'heure de fin est mal formatée."
+      ],
+      "Malformed recurring event": [
+        "L'événement récurrent est mal formaté."
+      ],
+      "Malformed start time": [
+        "Heure de début malformée"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Seule l'échelle du calendrier grégorien est autorisée."
+      ],
+      "Recurring event has no occurrences": [
+        "L'événement récurrent n'a pas d'occurrences."
+      ],
+      "Recurring rule not supported": [
+        "La règle de répétition n'est pas prise en charge."
+      ],
+      "Start time out of bounds": [
+        "L'heure de départ est hors limites."
+      ],
+      "Time zone not supported": [
+        "Le fuseau horaire n'est pas pris en charge."
       ]
     },
     "Import calendar": {
@@ -4333,6 +4346,9 @@
       "Medium Priority": [
         "Priorité moyenne"
       ],
+      "Member": [
+        "Membre"
+      ],
       "Merged": [
         "Fusionné"
       ],
@@ -4684,6 +4700,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Cela remplacera le dossier existant par le fichier."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
       "This will upload a new version of the file": [
         "Cela importera une nouvelle version du fichier."
@@ -8526,6 +8545,9 @@
       ],
       "Apply gift code": [
         "Appliquer un code-cadeau"
+      ],
+      "Are you sure?": [
+        "Êtes-vous sûr ?"
       ],
       "Billing cycle": [
         "Cycle de facturation"

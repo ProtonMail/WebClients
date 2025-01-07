@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto hinzufügen"
       ],
+      "Add account": [
+        "Konto hinzufügen"
+      ],
       "Add address": [
         "Adresse hinzufügen"
       ],
@@ -562,6 +565,9 @@
       "Generate token": [
         "Token generieren"
       ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Hol dir ${ MAIL_SHORT_APP_NAME } Plus für ${ priceCoupon }"
+      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } holen"
       ],
@@ -903,6 +909,9 @@
       ],
       "Reset keys": [
         "Schlüssel zurücksetzen"
+      ],
+      "Reset modifications": [
+        "Anpassungen zurücksetzen"
       ],
       "Reset password": [
         "Passwort zurücksetzen"
@@ -1964,6 +1973,9 @@
     "Button": {
       "Add link to your email footer": [
         "Füge den Link zur Fußzeile deiner E-Mail hinzu"
+      ],
+      "Change email address settings": [
+        "E-Mail-Adresseinstellungen ändern"
       ],
       "Continue": [
         "Fortfahren"
@@ -3570,6 +3582,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Ebenfalls enthalten"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Lösche automatisch Spam und gelöschte Nachrichten und schalte mit einem Upgrade weitere Premium-Funktionen frei."
       ],
@@ -3578,6 +3593,9 @@
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortiere deine eingehenden Nachrichten automatisch, bevor sie deinen Posteingang erreichen."
+      ],
+      "Available with ${ MAIL_APP_NAME } Plus": [
+        "Verfügbar mit ${ MAIL_APP_NAME } Plus"
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
@@ -3647,6 +3665,9 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kannst weiterhin Freunde einladen, aber dadurch kannst du kein weiteres Guthaben verdienen."
+      ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Du kannst die Passwortregeln erzwingen, die Organisationsmitglieder verwenden, wenn sie ein Passwort in ${ PASS_APP_NAME } generieren."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
@@ -4445,6 +4466,9 @@
       "Couldn't load invoices. Please try again later.": [
         "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
+      "Couldn't load transactions. Please try again later.": [
+        "Fehler beim Laden der Transaktionen. Bitte versuche es später erneut."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender abwählen",
         "Mindestens ${ calendarsToFixCount } Kalender abwählen"
@@ -4663,6 +4687,9 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please enter a valid Entity ID URL": [
+        "Bitte gib eine gültige URL zur Entitäts-ID ein"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
@@ -4989,17 +5016,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Kalenderzeitzone wird nicht unterstützt"
-      ],
       "Component with wrong format": [
         "Komponente mit ungültigem Format"
       ],
       "Custom time zone": [
         "Benutzerdefinierte Zeitzone"
-      ],
-      "Edited event not supported": [
-        "Bearbeitete Termine werden nicht unterstützt"
       ],
       "Element": [
         "Eintrag"
@@ -5007,17 +5028,8 @@
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
       ],
-      "End time out of bounds": [
-        "Endzeit außerhalb des Bereichs"
-      ],
       "Event": [
         "Termin"
-      ],
-      "Event validation failed": [
-        "Überprüfung der Termine fehlgeschlagen"
-      ],
-      "Floating times not supported": [
-        "Gleitzeiten werden nicht unterstützt"
       ],
       "Free-busy time information": [
         "Zeitinformationen zu Verfügbar/Beschäftigt"
@@ -5028,26 +5040,11 @@
       "Journal entry": [
         "Journaleintrag"
       ],
-      "Malformed all-day event": [
-        "Fehlerhafter ganztägiger Termin"
-      ],
-      "Malformed end time": [
-        "Fehlerhafte Endzeit"
-      ],
-      "Malformed recurring event": [
-        "Fehlerhafte Terminserie"
-      ],
-      "Malformed start time": [
-        "Fehlerhafte Startzeit"
-      ],
       "Missing start time": [
         "Fehlende Startzeit"
       ],
       "No UID, title or start time": [
         "UID, Titel oder Startzeit fehlt"
-      ],
-      "Non-Gregorian": [
-        "Nicht-Gregorianisch"
       ],
       "Notification out of bounds": [
         "Benachrichtigung außerhalb des Bereichs"
@@ -5055,20 +5052,8 @@
       "Original recurring event could not be found": [
         "Ursprüngliche Terminserie konnte nicht gefunden werden"
       ],
-      "Recurring event has no occurrences": [
-        "Wiederkehrendes Ereignis enthält keine Termine"
-      ],
-      "Recurring rule not supported": [
-        "Wiederkehrende Regel nicht unterstützt"
-      ],
-      "Start time out of bounds": [
-        "Startzeit außerhalb des Bereichs"
-      ],
       "Time zone": [
         "Zeitzone"
-      ],
-      "Time zone not supported": [
-        "Zeitzone wird nicht unterstützt"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen“"
@@ -5207,9 +5192,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Der Termin konnte nicht in deinem Kalender aktualisiert werden. Es wurde keine Antwort gesendet."
-      ],
-      "Unexpected error": [
-        "Unerwarteter Fehler"
       ],
       "Unsupported invitation": [
         "Nicht unterstützte Einladung"
@@ -7411,6 +7393,9 @@
       "Encryption setting updated": [
         "Verschlüsselungseinstellung aktualisiert"
       ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Ende-zu-Ende-Verschlüsselung für E-Mails ist für diese Gruppe aktiviert."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpunkt-URL, die du von deinem Identitätsanbieter erhalten hast (z.B. https://idp.beispiel.com/sso/saml)."
       ],
@@ -7989,6 +7974,9 @@
       "No label selected": [
         "Keine Kategorie ausgewählt"
       ],
+      "No location filters are currently assigned.": [
+        "Derzeit sind keine Standortfilter zugewiesen."
+      ],
       "No logs yet.": [
         "Noch keine Protokolle."
       ],
@@ -7997,6 +7985,9 @@
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
+      ],
+      "No Shared Servers Found": [
+        "Keine geteilten Server gefunden"
       ],
       "Not a valid URL": [
         "Ungültige URL"
@@ -8087,6 +8078,9 @@
       ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert"
+      ],
+      "Password generator rules successfully saved": [
+        "Passwortgenerator-Regeln erfolgreich gespeichert."
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen lang sein."
@@ -8268,6 +8262,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Registering your subscription...": [
+        "Dein Abonnement wird registriert..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
@@ -8369,6 +8366,12 @@
       ],
       "Set recovery phrase": [
         "Wiederherstellungsphrase festlegen"
+      ],
+      "Setting successfully saved": [
+        "Einstellungen erfolgreich gespeichert"
+      ],
+      "Setting up your new address...": [
+        "Deine neue E-Mail-Adresse wird eingerichtet..."
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
@@ -8646,6 +8649,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines ${ BRAND_NAME }-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Pop-up-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
@@ -9207,6 +9213,9 @@
       ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
+      ],
+      "You have no transactions.": [
+        "Du hast keine Transaktionen."
       ],
       "You may be redirected to your bank’s website.": [
         "Du wirst möglicherweise zur Website deiner Bank weitergeleitet."
@@ -9863,6 +9872,9 @@
       "5 minutes": [
         "5 Minuten"
       ],
+      "Account holder": [
+        "Kontoinhaber"
+      ],
       "Account storage": [
         "Kontenspeicher"
       ],
@@ -9896,8 +9908,14 @@
       "Allow": [
         "Zugelassen"
       ],
+      "Allow memorable passwords": [
+        "Einprägsame Passwörter zulassen"
+      ],
       "Allow notifications by email": [
         "Benachrichtigungen per E-Mail zulassen"
+      ],
+      "Allow random passwords": [
+        "Zufällige Passwörter zulassen"
       ],
       "Allow recovery by email": [
         "Wiederherstellung per E-Mail zulassen"
@@ -10436,6 +10454,12 @@
       "Mark as": [
         "Markieren als"
       ],
+      "Maximum number of characters": [
+        "Maximale Zeichenanzahl"
+      ],
+      "Maximum number of words": [
+        "Maximale Wörteranzahl"
+      ],
       "Message": [
         "Nachricht"
       ],
@@ -10450,6 +10474,12 @@
       ],
       "Method for importing metadata": [
         "Methode zum Importieren von Metadaten"
+      ],
+      "Minimum number of characters": [
+        "Minimale Zeichenanzahl"
+      ],
+      "Minimum number of words": [
+        "Minimale Wörteranzahl"
       ],
       "Moderate NAT": [
         "Moderates NAT"
@@ -10673,6 +10703,10 @@
       "Send in": [
         "Senden in"
       ],
+      "Show ${ n } administrator": [
+        "${ n } Administrator anzeigen",
+        "${ n } Administratoren anzeigen"
+      ],
       "Show others when I'm busy": [
         "Anderen zeigen, wann ich beschäftigt bin"
       ],
@@ -10693,6 +10727,9 @@
       ],
       "Signature": [
         "Signatur"
+      ],
+      "Single sign-on Entity ID": [
+        "Single Sign-on-Entitäts-ID"
       ],
       "Single sign-on URL": [
         "Single Sign-on-URL"
@@ -11379,11 +11416,17 @@
       "Change password": [
         "Passwort ändern"
       ],
+      "Convert to SSO": [
+        "Zu SSO konvertieren"
+      ],
       "Delete": [
         "Löschen"
       ],
       "Delete and revoke invite": [
         "Einladung löschen und widerrufen"
+      ],
+      "Detach from SSO": [
+        "Von SSO trennen"
       ],
       "Edit": [
         "Ändern"
@@ -11730,6 +11773,9 @@
       ],
       "From ${ price }": [
         "Ab ${ price }"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
       ],
       "Starting from ${ priceMailPlus }": [
         "Ab ${ priceMailPlus }"
@@ -12545,6 +12591,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Eigene Domains für Aliasse, zusätzliche Postfächer, Versenden von E-Mails über Aliasse und mehr"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
       ],
@@ -12580,6 +12629,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Kategorien sind einfache Tags, die du zu Nachrichten hinzufügen kannst, um sie leichter zu finden oder zu filtern."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Lebenslanger Zugang zu den Premiumfunktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Wie ein Ordner ist auch ein Tresor eine praktische Möglichkeit, deine Einträge zu organisieren."
@@ -12833,6 +12885,9 @@
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
+      ],
+      "In-app notifications": [
+        "Benachrichtigungen in der App"
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Nimm an Umfragen teil, um die Dienstleistungen von ${ BRAND_NAME } zu verbessern."
@@ -13116,6 +13171,9 @@
       "Add to existing group": [
         "Zu bestehender Gruppe hinzufügen"
       ],
+      "Allowed (default)": [
+        "Zugelassen (Standard)"
+      ],
       "Archive": [
         "Archivieren"
       ],
@@ -13173,6 +13231,9 @@
       "Normal": [
         "Standard"
       ],
+      "Not allowed": [
+        "Nicht zugelassen"
+      ],
       "Off": [
         "Aus"
       ],
@@ -13199,6 +13260,9 @@
       ],
       "Repeat weekly": [
         "Wöchentlich wiederholen"
+      ],
+      "Required": [
+        "Erforderlich"
       ],
       "Right to Left": [
         "Von rechts nach links"
@@ -15134,6 +15198,12 @@
     "Setting": {
       "Enable Photos section": [
         "Aktiviere den Bereich Fotos"
+      ],
+      "Get updates about comments via email": [
+        "Erhalte Benachrichtigungen über Kommentare via E-Mail."
+      ],
+      "Include document name in email notifications": [
+        "Dokumentname in E-Mail-Benachrichtigung einbeziehen"
       ]
     },
     "Settings description": {
@@ -15299,6 +15369,9 @@
       "Calendar, password manager, file storage, and VPN included": [
         "Kalender, Passwortmanager, Dateispeicher und VPN inklusive"
       ],
+      "Device sync": [
+        "Gerätesynchronisation"
+      ],
       "Email aliases": [
         "E-Mail-Aliasse"
       ],
@@ -15340,6 +15413,9 @@
       ],
       "The only email service with:": [
         "Der einzige E-Mail-Dienst mit:"
+      ],
+      "Unlimited passwords": [
+        "Unbegrenzte Passwörter"
       ],
       "Works on all devices": [
         "Funktioniert auf allen Geräten"
@@ -15547,9 +15623,23 @@
       ]
     },
     "sso": {
+      "${ n } user converted to SSO": [
+        "${ n } Benutzer zu SSO umgewandelt.",
+        "${ n } Benutzer zu SSO umgewandelt."
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } Benutzer von SSO entfernt.",
+        "${ n } Benutzer von SSO entfernt."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } Benutzer bitte, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden.",
         "${ n } Benutzer bitten, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO-Benutzer (die von deinem Identitätsanbieter bereitgestellt wurden) werden gelöscht** und du musst sie manuell erstellen, um sie wieder zu deiner Organisation hinzuzufügen."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO-Benutzer werden von deinem Identitätsanbieter** getrennt und in Nicht-SSO-Benutzer umgewandelt."
       ],
       "Access denied": [
         "Zugriff verweigert"
@@ -15559,6 +15649,12 @@
       ],
       "Approve": [
         "Genehmigen"
+      ],
+      "Approve or deny it now": [
+        "Jetzt genehmigen oder ablehnen"
+      ],
+      "Approve the sign-in from another device": [
+        "Genehmige die Anmeldung von einem anderen Gerät aus"
       ],
       "Ask administrator for help": [
         "Administrator um Hilfe bitten"
@@ -15607,8 +15703,20 @@
       "Devices management": [
         "Geräteverwaltung"
       ],
+      "Do you want to remove all other devices than the current one?": [
+        "Möchtest du alle anderen Geräte (außer das aktuelle) entfernen?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Gib den Bestätigungscode ein, den wir auf dein anderes Gerät gesendet haben."
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Gib den Bestätigungscode ein, den wir diesem Benutzer zugesendet haben."
+      ],
       "Enter your backup password": [
         "Gib dein Backup-Passwort ein"
+      ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Damit sich dieser Benutzer anmelden kann, musst du sicherstellen, dass er bei deinem Identitätsanbieter vorhanden ist."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Zu deiner Sicherheit wurdest du von all deinen anderen aktiven Geräten abgemeldet. Bevor du auf dein Konto zugreifen kannst, musst du ein neues Backup-Passwort eingeben."
@@ -15667,14 +15775,23 @@
       "Sign in": [
         "Anmelden"
       ],
+      "Sign in to your organization": [
+        "Bei deiner Organisation anmelden"
+      ],
       "Sign-in confirmed": [
         "Anmeldung bestätigt"
+      ],
+      "Sign-in rejected": [
+        "Anmeldung verweigert"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Anmeldung auf einem anderen Gerät angefragt. Warst du das?"
       ],
       "Single sign-on removed": [
         "Single Sign-on entfernt"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Der Benutzer ${ name } ist jetzt ein Single Sign-on-Konto."
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Dadurch wirst du von deinen anderen Geräten abgemeldet, und du musst ein neues Backup-Passwort festlegen."
@@ -15685,6 +15802,9 @@
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei deinem Konto anzumelden, gib den Bestätigungscode an deinen Administrator **${ adminEmail }** weiter, damit er die Anfrage für **${ email }** genehmigen kann."
       ],
+      "Tried to sign in at": [
+        "Versuchte Anmeldung um"
+      ],
       "Use backup password instead": [
         "Stattdessen Backup-Passwort verwenden"
       ],
@@ -15694,8 +15814,14 @@
       "Yes, it was me": [
         "Ja, das war ich"
       ],
+      "You will have to create new users manually to add them to your organization.": [
+        "Du musst neue Benutzer manuell anlegen, um sie zu deiner Organisation hinzuzufügen."
+      ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
+      ],
+      "Your SSO configuration will be deleted.": [
+        "Deine SSO-Konfiguration wird gelöscht."
       ]
     },
     "sso: auth device state": {
@@ -15707,6 +15833,9 @@
       ],
       "Pending activation": [
         "Ausstehende Aktivierung"
+      ],
+      "Pending admin activation": [
+        "Ausstehende Admin-Aktivierung"
       ],
       "Rejected": [
         "Abgelehnt"
@@ -17961,6 +18090,9 @@
       "Unlock your data": [
         "Entsperre deine Daten"
       ],
+      "Upgrade complete!": [
+        "Upgrade abgeschlossen!"
+      ],
       "Upgrade plan": [
         "Abonnement upgraden"
       ],
@@ -17972,6 +18104,9 @@
       ],
       "User": [
         "Benutzer"
+      ],
+      "User converted to SSO": [
+        "Benutzer zu SSO umgewandelt."
       ],
       "Users": [
         "Benutzer"
@@ -18048,6 +18183,9 @@
       "Your recovery status": [
         "Dein Wiederherstellungsstatus"
       ],
+      "Your shorter address is now ready": [
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+      ],
       "Your SMTP token": [
         "Dein SMTP-Token"
       ],
@@ -18080,6 +18218,9 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME }-Rechnung"
+      ],
+      "${ MAIL_APP_NAME } transaction": [
+        "${ MAIL_APP_NAME } Transaktion"
       ]
     },
     "Title header": {
@@ -18189,8 +18330,14 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Klicke hier, um zu erfahren, wie du eine individuelle Signatur mit HTML erstellen kannst."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
@@ -18251,6 +18398,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Entferne Metadaten aus Bildern, um deine Privatsphäre zu schützen."
       ],
       "See number of unread messages in the tab icon": [
         "Anzahl ungelesener Nachrichten im Tab-Symbol anzeigen"
@@ -18430,11 +18580,20 @@
       "Chargeback": [
         "Rückbuchung"
       ],
+      "Failed": [
+        "Fehlgeschlagen"
+      ],
+      "Needs attention": [
+        "Erfordert Aufmerksamkeit"
+      ],
       "Refunded": [
         "Erstattet"
       ],
       "Success": [
         "Erfolgreich"
+      ],
+      "Voided": [
+        "Storniert"
       ]
     },
     "Transaction type display as badge": {
@@ -18456,6 +18615,9 @@
       "Credit": [
         "Kredit"
       ],
+      "Credit transfer": [
+        "Überweisung"
+      ],
       "Currency conversion": [
         "Währungsumrechnung"
       ],
@@ -18467,6 +18629,9 @@
       ],
       "Payment": [
         "Zahlung"
+      ],
+      "Payment reversal": [
+        "Rückabwicklung von Zahlungen"
       ],
       "Refund": [
         "Erstattung"
@@ -18978,6 +19143,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Wenn du diesen Import abbrichst, wirst du ihn nicht mehr fortsetzen können. ${ BRAND_NAME } hat jeglichen Fortschritt in deinem Konto gespeichert. Trotzdem abbrechen?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Maximum darf nicht unter Minimum liegen."
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Muss zwischen ${ minimumNumber } und ${ maximumNumber } sein"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Muss größer oder gleich ${ minimumNumber } sein"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Muss kleiner oder gleich ${ maximumNumber } sein"
       ],
       "Please add at least one recipient.": [
         "Bitte füge mindestens einen Empfänger hinzu."

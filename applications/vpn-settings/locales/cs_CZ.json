@@ -40,6 +40,9 @@
       "Add": [
         "Přidat"
       ],
+      "Add account": [
+        "Přidat účet"
+      ],
       "Add address": [
         "Přidat adresu"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Doporučit přátelům"
       ],
+      "Refresh Data": [
+        "Obnovit data"
+      ],
       "Refresh status": [
         "Obnovit stav"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Odhlásit se"
+      ],
+      "Sign out of all accounts": [
+        "Odhlásit se ze všech účtů"
       ],
       "sign up for free": [
         "zaregistrujte zdarma"
@@ -3461,6 +3470,12 @@
       "Checkout": [
         "Zaplatit"
       ],
+      "City": [
+        "Město"
+      ],
+      "Country": [
+        "Země"
+      ],
       "Create your account": [
         "Vytvořte si účet"
       ],
@@ -4463,11 +4478,17 @@
       "No Gateways yet": [
         "Zatím žádné brány"
       ],
+      "No location filters are currently assigned.": [
+        "Aktuálně nejsou použity žádné filtry umístění."
+      ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ],
+      "No Shared Servers Found": [
+        "Nebyly nalezeny žádné sdílené servery"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
@@ -4736,6 +4757,9 @@
       "Shared ${ vaultLink } updated": [
         "Sdílený ${ vaultLink } aktualizován"
       ],
+      "Shared Server Location Filters": [
+        "Filtry umístění sdíleného serveru"
+      ],
       "Shared vault deleted": [
         "Sdílený trezor smazán"
       ],
@@ -4909,6 +4933,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Tímto odešlete novou pozvánku na adresu **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tímto se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
@@ -10357,6 +10384,9 @@
       "Are you sure you want to close the preview?": [
         "Jste si jisti, že chcete náhled zavřít?"
       ],
+      "Are you sure?": [
+        "Jste si jisti?"
+      ],
       "Authentication security": [
         "Zabezpečení ověření"
       ],
@@ -10818,6 +10848,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Nastavení vyhrazených serverů upgradem na Business"
+      ],
+      "Shared servers": [
+        "Sdílené servery"
       ],
       "Sign in": [
         "Přihlásit se"

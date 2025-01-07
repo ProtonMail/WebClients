@@ -50,6 +50,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add account": [
+        "Προσθήκη λογαριασμού"
+      ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
@@ -652,6 +655,9 @@
       ],
       "Sign out": [
         "Αποσύνδεση"
+      ],
+      "Sign out of all accounts": [
+        "Έξοδος από όλους τους λογαριασμούς"
       ],
       "Skip": [
         "Παράλειψη"
@@ -3518,17 +3524,11 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
-      "Calendar time zone not supported": [
-        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
-      ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
       ],
       "Custom time zone": [
         "Προσαρμοσμένη ζώνη ώρας"
-      ],
-      "Edited event not supported": [
-        "Η τροποποιημένη εκδήλωση δεν υποστηρίζεται"
       ],
       "Element": [
         "Στοιχείο"
@@ -3536,17 +3536,8 @@
       "Encryption failed": [
         "Αποτυχία κρυπτογράφησης"
       ],
-      "End time out of bounds": [
-        "Ώρα λήξης εκτός ορίων"
-      ],
       "Event": [
         "Εκδήλωση"
-      ],
-      "Event validation failed": [
-        "Αποτυχία επικύρωσης εκδήλωσης"
-      ],
-      "Floating times not supported": [
-        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
       ],
       "Free-busy time information": [
         "Πληροφορίες διαθέσιμου/μη διαθέσιμου χρόνου"
@@ -3557,26 +3548,11 @@
       "Journal entry": [
         "Καταχώρηση χρονολογίου"
       ],
-      "Malformed all-day event": [
-        "Δύσμορφη ολοήμερη εκδήλωση"
-      ],
-      "Malformed end time": [
-        "Λανθασμένος χρόνος λήξης"
-      ],
-      "Malformed recurring event": [
-        "Δύσμορφη επαναλαμβανόμενη εκδήλωση"
-      ],
-      "Malformed start time": [
-        "Λάθος χρόνος έναρξης"
-      ],
       "Missing start time": [
         "Λείπει η ώρα έναρξης"
       ],
       "No UID, title or start time": [
         "Λείπει UID, τίτλος ή ώρα έναρξης"
-      ],
-      "Non-Gregorian": [
-        "Μη-Γρηγοριανό"
       ],
       "Notification out of bounds": [
         "Ειδοποίηση εκτός ορίων"
@@ -3584,20 +3560,8 @@
       "Original recurring event could not be found": [
         "Δεν βρέθηκε η αρχική επαναλαμβανόμενη εκδήλωση"
       ],
-      "Recurring event has no occurrences": [
-        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
-      ],
-      "Recurring rule not supported": [
-        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
-      ],
-      "Start time out of bounds": [
-        "Ώρα έναρξης εκτός ορίων"
-      ],
       "Time zone": [
         "Ζώνη ώρας"
-      ],
-      "Time zone not supported": [
-        "Μη υποστηριζόμενη ζώνη ώρας"
       ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
@@ -3705,9 +3669,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Δεν ήταν δυνατή η ενημέρωση της εκδήλωσης στο ημερολόγιό σας. Δεν εστάλη απάντηση"
-      ],
-      "Unexpected error": [
-        "Μη αναμενόμενο σφάλμα"
       ],
       "Unsupported invitation": [
         "Μη υποστηριζόμενη πρόσκληση"
@@ -4847,6 +4808,9 @@
       "Medium Priority": [
         "Μεσαία προτεραιότητα"
       ],
+      "Member": [
+        "Μέλος"
+      ],
       "Merged": [
         "Συγχωνευμένο"
       ],
@@ -5107,6 +5071,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
@@ -9499,6 +9466,9 @@
       ],
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
+      ],
+      "Are you sure?": [
+        "Είστε σίγουρος/η;"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"

@@ -723,9 +723,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Ak používate subdoménu, napr. subdomena.domena.sk, musíte namiesto toho použiť ${ domainKeyExampleSubdomain } ako doménu. To znamená, že ak je vaša doména mail.domena.sk, mali by ste ako doménu zadať ${ domainKeyExampleMail }."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Ak používate službu CloudFlare, uistite sa, že ste nevybrali možnosť Proxy."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte svoje informácie v bezpečí a súkromí pomocou týchto návodov a tipov."
       ],
@@ -737,9 +734,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Niektorí registrátori DNS môžu vyžadovať úplnú cestu k záznamu, v takom prípade použite ${ domain } ako hodnotu domény."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Niektorí registrátori domén (Namecheap, CloudFlare atď.) môžu tiež používať @ pre koreňovú doménu."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } je metóda overovania elektronickej pošty určená na zisťovanie falšovania adries odosielateľov počas doručovania emailov. Nastavenie SPF sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
@@ -758,9 +752,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Táto služba ponúka 2FA. Aktiváciou tejto funkcie zvýšite bezpečnosť účtu."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Na overenie vlastníctva domény pridajte nasledujúci TXT záznam. Niektorí registrátori domén (Namecheap, CloudFlare atď.) môžu používať @ pre koreňovú doménu."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odomknite pokročilé funkcie zabezpečenia a podrobné protokoly na ochranu vašej online prítomnosti."
@@ -1159,6 +1150,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Momentálne ste offline. Obnovte, prosím, pripojenie, aby ste mohli odomknúť ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Váš systém DNS nie je správne nastavený. Záznam MX, ktorý sme získali, je:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Váš systém DNS nie je správne nastavený. Záznam TXT, ktorý sme získali, je:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
       ]
@@ -1352,6 +1349,9 @@
         "${ row.breachCount } zistených únikov",
         "${ row.breachCount } zistené úniky",
         "${ row.breachCount } zistených únikov"
+      ],
+      "(Empty)": [
+        "(Prázdne)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dní na bezplatné vyskúšanie prémiových funkcií. Len počas vášho prvého týždňa s ${ BRAND_NAME }."
@@ -2123,6 +2123,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Toto nastavenie je vypnuté na úrovni organizácie"
+      ],
+      "This setting is enforced by your organization": [
+        "Toto nastavenie je vynútené vašou organizáciou"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor zatiaľ nie je s nikým zdieľaný. Pozvite ľudí, s ktorými ho chcete zdieľať."

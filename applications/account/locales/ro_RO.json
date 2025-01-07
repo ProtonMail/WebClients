@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Adăugare cont ${ BRAND_NAME }"
       ],
+      "Add account": [
+        "Adăugare cont"
+      ],
       "Add address": [
         "Adăugare adresă"
       ],
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Recomandați pe cineva"
+      ],
+      "Refresh Data": [
+        "Împrospătare date"
       ],
       "Refresh status": [
         "Actualizare stare"
@@ -5054,17 +5060,11 @@
       "Calendar": [
         "Calendar"
       ],
-      "Calendar time zone not supported": [
-        "Fusul orar al calendarului nu este suportat."
-      ],
       "Component with wrong format": [
         "Componentă cu format greșit"
       ],
       "Custom time zone": [
         "Fus orar personal"
-      ],
-      "Edited event not supported": [
-        "Evenimentul editat nu este suportat"
       ],
       "Element": [
         "Element"
@@ -5072,17 +5072,8 @@
       "Encryption failed": [
         "Criptare eșuată"
       ],
-      "End time out of bounds": [
-        "Timp final în afara limitelor"
-      ],
       "Event": [
         "Eveniment"
-      ],
-      "Event validation failed": [
-        "Validare eveniment eșuată"
-      ],
-      "Floating times not supported": [
-        "Orele flotante nu sunt suportate"
       ],
       "Free-busy time information": [
         "Informații timp liber/ocupat"
@@ -5093,26 +5084,11 @@
       "Journal entry": [
         "Intrare în jurnal"
       ],
-      "Malformed all-day event": [
-        "Eveniment întreaga zi eronat"
-      ],
-      "Malformed end time": [
-        "Timp final malformat"
-      ],
-      "Malformed recurring event": [
-        "Eveniment repetitiv malformat"
-      ],
-      "Malformed start time": [
-        "Timp de pornire malformat"
-      ],
       "Missing start time": [
         "Lipsește ora de pornire"
       ],
       "No UID, title or start time": [
         "Lipseşte UID, titlu sau ora de începere."
-      ],
-      "Non-Gregorian": [
-        "Non-Gregorian"
       ],
       "Notification out of bounds": [
         "Notificare în afara limitelor"
@@ -5120,20 +5096,8 @@
       "Original recurring event could not be found": [
         "Evenimentul recurent original nu a putut fi găsit"
       ],
-      "Recurring event has no occurrences": [
-        "Evenimentul recurent nu are nicio apariție."
-      ],
-      "Recurring rule not supported": [
-        "Regula recurentă nesuportată"
-      ],
-      "Start time out of bounds": [
-        "Timp de start în afara limitelor"
-      ],
       "Time zone": [
         "Fus orar"
-      ],
-      "Time zone not supported": [
-        "Fus orar nesuportat."
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -5272,9 +5236,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Evenimentul nu a putut fi actualizat în calendar. Nu a fost trimis niciun răspuns."
-      ],
-      "Unexpected error": [
-        "Eroare neașteptată"
       ],
       "Unsupported invitation": [
         "Invitație nesuportată"
@@ -6197,6 +6158,12 @@
       ],
       "Checkout": [
         "Finalizare"
+      ],
+      "City": [
+        "Oraș"
+      ],
+      "Country": [
+        "Țara"
       ],
       "Create your account": [
         "Creați-vă contul"
@@ -8138,6 +8105,9 @@
       "No label selected": [
         "Nicio etichetă selectată"
       ],
+      "No location filters are currently assigned.": [
+        "Momentan nu sunt atribuite filtre de amplasare."
+      ],
       "No logs yet.": [
         "Încă nu sunt jurnale."
       ],
@@ -8146,6 +8116,9 @@
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
+      ],
+      "No Shared Servers Found": [
+        "Nu s-au găsit servere partajate."
       ],
       "Not a valid URL": [
         "URL nevalid"
@@ -8554,6 +8527,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } partajat actualizat."
+      ],
+      "Shared Server Location Filters": [
+        "Filtre de amplasare servere partajate"
       ],
       "Shared vault deleted": [
         "Seif partajat șters."
@@ -12231,7 +12207,7 @@
         "Disponibil în toate planurile"
       ],
       "Breach alerts": [
-        "Alerte breșe"
+        "Alerte divulgări"
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -18416,6 +18392,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Setați servere dedicate trecând la panul Business"
       ],
+      "Shared servers": [
+        "Servere partajate"
+      ],
       "Short domain (@pm.me)": [
         "Domeniu scurt (@pm.me)"
       ],
@@ -18617,7 +18596,7 @@
         "Modificările nu sunt încă sincronizate"
       ],
       "Your exposed information": [
-        "Informațiile expuse"
+        "Informații expuse"
       ],
       "Your plan": [
         "Plan actual"

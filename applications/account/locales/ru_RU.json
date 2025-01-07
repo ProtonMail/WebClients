@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Добавить учетную запись ${ BRAND_NAME }"
       ],
+      "Add account": [
+        "Добавить аккаунт"
+      ],
       "Add address": [
         "Добавить адрес"
       ],
@@ -5063,17 +5066,11 @@
       "Calendar": [
         "Календарь"
       ],
-      "Calendar time zone not supported": [
-        "Часовой пояс календаря не поддерживается"
-      ],
       "Component with wrong format": [
         "Неправильный формат компонента"
       ],
       "Custom time zone": [
         "Пользовательский часовой пояс"
-      ],
-      "Edited event not supported": [
-        "Отредактированное событие не поддерживается"
       ],
       "Element": [
         "Элемент"
@@ -5081,17 +5078,8 @@
       "Encryption failed": [
         "Ошибка шифрования"
       ],
-      "End time out of bounds": [
-        "Время окончания находится вне границ"
-      ],
       "Event": [
         "Событие"
-      ],
-      "Event validation failed": [
-        "Проверка события не удалась"
-      ],
-      "Floating times not supported": [
-        "Плавающие значения времени не поддерживаются"
       ],
       "Free-busy time information": [
         "Информация о свободном и занятом времени"
@@ -5102,26 +5090,11 @@
       "Journal entry": [
         "Запись журнала"
       ],
-      "Malformed all-day event": [
-        "Неправильный формат события на весь день"
-      ],
-      "Malformed end time": [
-        "Неправильный формат времени окончания"
-      ],
-      "Malformed recurring event": [
-        "Неправильное повторяющееся событие"
-      ],
-      "Malformed start time": [
-        "Неправильный формат времени начала"
-      ],
       "Missing start time": [
         "Отсутствует время начала импорта"
       ],
       "No UID, title or start time": [
         "Нет UID, названия или времени начала"
-      ],
-      "Non-Gregorian": [
-        "Не Грегорианский"
       ],
       "Notification out of bounds": [
         "Уведомление находится вне границ"
@@ -5129,20 +5102,8 @@
       "Original recurring event could not be found": [
         "Исходное повторяющееся событие не найдено"
       ],
-      "Recurring event has no occurrences": [
-        "Повторяющееся событие не имеет повторений"
-      ],
-      "Recurring rule not supported": [
-        "Правило для повторения не поддерживается"
-      ],
-      "Start time out of bounds": [
-        "Время начала находится вне границ"
-      ],
       "Time zone": [
         "Часовой пояс"
-      ],
-      "Time zone not supported": [
-        "Часовой пояс не поддерживается"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -5281,9 +5242,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Событие не было обнавлено в вашем календаре. Ответ не отправлен"
-      ],
-      "Unexpected error": [
-        "Неожиданная ошибка"
       ],
       "Unsupported invitation": [
         "Неподдерживаемое приглашение"

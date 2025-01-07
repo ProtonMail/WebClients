@@ -40,6 +40,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add account": [
+        "Hesap ekle"
+      ],
       "Add address": [
         "Adres ekle"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
+      "Refresh Data": [
+        "Verileri yenile"
+      ],
       "Refresh status": [
         "Durumu yenile"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "Sign out of all accounts": [
+        "Tüm hesapların oturumunu kapat"
       ],
       "sign up for free": [
         "ücretsiz hesap açın"
@@ -3413,6 +3422,12 @@
       "Checkout": [
         "Ödeme yapın"
       ],
+      "City": [
+        "İl"
+      ],
+      "Country": [
+        "Ülke"
+      ],
       "Create your account": [
         "Hesabınızı açın"
       ],
@@ -4381,11 +4396,17 @@
       "No Gateways yet": [
         "Henüz bir ağ geçidi yok"
       ],
+      "No location filters are currently assigned.": [
+        "Şu anda uygulanmış bir konum süzgeci yok."
+      ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "No Shared Servers Found": [
+        "Herhangi bir paylaşılan sunucu bulunamadı"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -4641,6 +4662,9 @@
       "Shared ${ vaultLink } updated": [
         "Paylaşılan ${ vaultLink } güncellendi"
       ],
+      "Shared Server Location Filters": [
+        "Paylaşılan sunucu konum süzgeçleri"
+      ],
       "Shared vault deleted": [
         "Paylaşılmış kasa silindi"
       ],
@@ -4806,6 +4830,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Bu işlem, **${ email }** adresine yeni bir davet gönderir."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Bu seçenek, tüm etkin oturumlarınızdan çıkılmasını ve iki adımlı kimlik doğrulamasının kapatılmasını sağlar."
@@ -10038,6 +10065,9 @@
       "Are you sure you want to close the preview?": [
         "Ön izlemeyi kapatmak istediğinize emin misiniz?"
       ],
+      "Are you sure?": [
+        "Emin misiniz?"
+      ],
       "Authentication security": [
         "Kimlik doğrulama güvenliği"
       ],
@@ -10493,6 +10523,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Business tarifesine yükselterek size ayrılmış sunucular kurun"
+      ],
+      "Shared servers": [
+        "Paylaşılan sunucular"
       ],
       "Sign in": [
         "Oturum aç"

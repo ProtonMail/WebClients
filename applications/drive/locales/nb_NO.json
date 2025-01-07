@@ -45,6 +45,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add account": [
+        "Legg til konto"
+      ],
       "Add address": [
         "Legg til adresse"
       ],
@@ -755,6 +758,9 @@
       ],
       "Sign out": [
         "Logg av"
+      ],
+      "Sign out of all accounts": [
+        "Logg av alle kontoer"
       ],
       "Skip verification": [
         "Hopp over bekreftelse"
@@ -3217,17 +3223,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Tidssone for kalender ikke støttet"
-      ],
       "Component with wrong format": [
         "Komponent med feil format"
       ],
       "Custom time zone": [
         "Tilpasset tidssone"
-      ],
-      "Edited event not supported": [
-        "Redigert hendelse ikke støttet"
       ],
       "Element": [
         "Element"
@@ -3235,17 +3235,8 @@
       "Encryption failed": [
         "Kryptering mislyktes"
       ],
-      "End time out of bounds": [
-        "Sluttid utenfor grensene"
-      ],
       "Event": [
         "Hendelse"
-      ],
-      "Event validation failed": [
-        "Hendelsesbekreftelse mislyktes"
-      ],
-      "Floating times not supported": [
-        "Flytende tider ikke støttet"
       ],
       "Free-busy time information": [
         "Ledig-opptatt tidsinformasjon"
@@ -3256,26 +3247,11 @@
       "Journal entry": [
         "Journalinnlegg"
       ],
-      "Malformed all-day event": [
-        "Misdannet heldagshendelse"
-      ],
-      "Malformed end time": [
-        "Misdannet sluttidspunkt"
-      ],
-      "Malformed recurring event": [
-        "Misdannet gjentakende hendelse"
-      ],
-      "Malformed start time": [
-        "Misdannet starttidspunkt"
-      ],
       "Missing start time": [
         "Mangler starttidspunkt"
       ],
       "No UID, title or start time": [
         "Ingen UID, tittel eller starttid"
-      ],
-      "Non-Gregorian": [
-        "Ikke-Gregoriansk"
       ],
       "Notification out of bounds": [
         "Varsel utenfor grensene"
@@ -3283,20 +3259,8 @@
       "Original recurring event could not be found": [
         "Opprinnelig gjentakende hendelse ikke funnet"
       ],
-      "Recurring event has no occurrences": [
-        "Gjentakende hendelse har ingen forekomster"
-      ],
-      "Recurring rule not supported": [
-        "Gjentakende regel ikke støttet"
-      ],
-      "Start time out of bounds": [
-        "Starttid utenfor grensene"
-      ],
       "Time zone": [
         "Tidssone"
-      ],
-      "Time zone not supported": [
-        "Tidssone ikke støttet"
       ],
       "To-do entry": [
         "Gjøremålsoppføring"
@@ -3380,9 +3344,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Hendelsen kunne ikke oppdateres i kalenderen din. Ingen svar ble sendt."
-      ],
-      "Unexpected error": [
-        "Uventet feil"
       ],
       "Unsupported invitation": [
         "Ikke støttet invitasjon"
@@ -4716,6 +4677,9 @@
       "Medium Priority": [
         "Middels prioritet"
       ],
+      "Member": [
+        "Medlem"
+      ],
       "Merged": [
         "Slått sammen"
       ],
@@ -5196,6 +5160,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Dette vil erstatte den eksisterende mappen med filen"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
       ],
       "This will upload a new version of the file": [
         "Dette vil laste opp en ny versjon av filen"
@@ -9824,6 +9791,9 @@
       "Are you sure you want to remove this item from your list?": [
         "Er du sikker på at du vil fjerne dette elementet fra listen din?",
         "Er du sikker på at du vil fjerne disse elementene fra listen din?"
+      ],
+      "Are you sure?": [
+        "Er du sikker?"
       ],
       "Billing cycle": [
         "Faktureringssyklus"
