@@ -70,15 +70,6 @@ export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'
 
 export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
     z.object({
-        type: z.literal('captureMessage'),
-        payload: z.object({
-            message: z.string(),
-            level: z.union([z.literal('error'), z.literal('warning')]),
-            tags: z.record(z.union([z.string(), z.number()])),
-            extra: z.record(z.union([z.string(), z.number()])),
-        }),
-    }),
-    z.object({
         type: z.literal('defaultMailtoChecked'),
         payload: zDefaultProtocol,
     }),
