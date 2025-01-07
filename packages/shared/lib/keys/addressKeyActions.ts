@@ -1,12 +1,6 @@
 import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
-import type {
-    ActiveKeyWithVersion,
-    DecryptedAddressKey} from '../interfaces';
-import {
-    type Address,
-    type Api,
-    type KeyTransparencyVerify,
-} from '../interfaces';
+import type { ActiveKeyWithVersion, DecryptedAddressKey } from '../interfaces';
+import { type Address, type Api, type KeyTransparencyVerify } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
@@ -17,7 +11,7 @@ export const setPrimaryAddressKey = async (
     ID: string,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => ID === otherID);
     const oldActiveKeyV6 = oldActiveKeyV4 ? undefined : activeKeys.v6.find(({ ID: otherID }) => ID === otherID);
 
@@ -58,7 +52,7 @@ export const deleteAddressKey = async (
     ID: string,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => ID === otherID);
     const oldActiveKeyV6 = oldActiveKeyV4 ? undefined : activeKeys.v6.find(({ ID: otherID }) => ID === otherID);
 
@@ -86,7 +80,7 @@ export const setAddressKeyFlags = async (
     flags: number,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => {
         if (activeKey.ID === ID) {
             return {

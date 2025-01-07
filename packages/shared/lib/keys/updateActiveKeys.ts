@@ -45,7 +45,7 @@ export const updateActiveKeys = async (
     // Only consider migrated keys as active.
     const migratedDecryptedKeys = filterMigratedDecryptedKeys(decryptedKeys, address.Keys);
     const [activeKeys, inactiveKeys] = await Promise.all([
-        getActiveAddressKeys(address, address.SignedKeyList, address.Keys, migratedDecryptedKeys),
+        getActiveAddressKeys(address.SignedKeyList, migratedDecryptedKeys),
         getInactiveKeys(address.Keys, migratedDecryptedKeys),
     ]);
     const normalizedActiveKeysByVersion = getNormalizedActiveAddressKeys(address, activeKeys);

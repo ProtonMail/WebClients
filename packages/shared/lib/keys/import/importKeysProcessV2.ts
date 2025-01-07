@@ -44,7 +44,7 @@ const importKeysProcessV2 = async ({
     userKey,
     keyTransparencyVerify,
 }: ImportKeysProcessV2Arguments) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
     const activeKeysList = [...activeKeys.v4, ...activeKeys.v6];
     const inactiveKeys = await getInactiveKeys(address.Keys, activeKeysList);
 

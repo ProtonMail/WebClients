@@ -50,7 +50,7 @@ export const addAddressKeysProcess = async ({
 }: AddAddressKeysProcessArguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
 
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
 
     if (hasMigratedAddressKeys) {
         return createAddressKeyV2({
