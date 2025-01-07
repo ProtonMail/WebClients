@@ -13,7 +13,6 @@ import pkg from "../package.json";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { registerLogIPCForwardTransport } from "./utils/log/logIPCForwardTransport";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
@@ -101,7 +100,6 @@ import metrics from "./utils/metrics";
     await app.whenReady();
 
     checkDefaultProtocols();
-    registerLogIPCForwardTransport();
     connectNetLogger(getWebContentsViewName);
     initializeUpdateChecks();
     new Notification();
