@@ -55,11 +55,25 @@
 
 	// metas
 	&-meta {
+		.composer-light-field-container {
+			.composer-addresses-fakefield .composer-addresses-ccbcc-container {
+				inset-block-start: em(1);
+			}
+		}
+
 		.composer-addresses-fakefield {
 			min-block-size: rem(44);
 			max-block-size: 2.5em;
 			padding-inline-end: rem(1);
 			cursor: text;
+
+			@include media('<=small') {
+				&.composer-addresses-fakefield {
+					padding-block: 0;
+					min-block-size: em(33);
+					block-size: em(33);
+				}
+			}
 
 			&.disabled {
 				color: var(--field-disabled-text-color);
@@ -70,6 +84,23 @@
 				}
 			}
 		}
+
+		&-select-sender {
+			position: relative;
+
+			> span {
+				padding-inline: var(--space-2);
+				padding-block: var(--space-1);
+				margin-inline-start: calc(-1 * var(--space-2));
+			}
+
+			&[aria-expanded='true'] > span,
+			&:hover > span,
+			&:focus > span {
+				border-radius: var(--border-radius-md);
+				background-color: var(--interaction-default-hover);
+			}
+		}
 	}
 
 	&-meta-label {
@@ -77,8 +108,7 @@
 
 		&,
 		&.label {
-			max-inline-size: 8em;
-			inline-size: 15%;
+			inline-size: auto;
 
 			[lang='fi'] & {
 				max-inline-size: 10em;
@@ -91,6 +121,7 @@
 					inline-size: 100%;
 					max-inline-size: 100%;
 					padding-block-start: 0.85em;
+					padding-inline-start: 0;
 				}
 			}
 		}
@@ -204,7 +235,7 @@
 	&-addresses-input-container {
 		// Here I tried to keep field height only with margin calculations
 		margin-block: calc(#{em(6)} - 0.25em);
-		margin-inline: calc(#{em(16)} - 0.5em) 0.5em;
+		margin-inline: 0 0.5em;
 		min-inline-size: 7em; // magic number just to force it wrapping below to avoid issue
 	}
 
@@ -236,12 +267,7 @@
 		padding-inline-end: rem(1);
 
 		&.composer-editor-expanded {
-			padding-inline-start: 0.5em;
-
-			.field:empty {
-				// only for placeholder position when empty
-				margin-inline-start: 0.65em;
-			}
+			padding-inline-start: 0.25em;
 
 			.composer-addresses-to-contact-button {
 				min-block-size: em(32);
@@ -264,14 +290,23 @@
 	&-light-field {
 		&#{&} {
 			border-radius: 0;
-			border-block-start-width: 0;
-			border-inline-width: 0;
+			border: 0;
 			min-block-size: em(44);
-			border-color: var(--border-weak);
+			padding-inline-start: rem(5);
 
 			&:focus,
 			&:focus-within {
 				box-shadow: none;
+			}
+		}
+
+		&-container {
+			border-block-end: 1px solid var(--border-weak);
+
+			&:focus-within,
+			&:has([aria-expanded='true']) {
+				// for dropdown opened inside
+				border-color: var(--focus-outline);
 			}
 		}
 
@@ -281,18 +316,11 @@
 		}
 
 		// new select
-		&.select {
-			border-block-start: 0;
+		&.select,
+		&.select[aria-expanded='true'] {
+			border: 0;
 			box-shadow: none;
-			border-inline: 0;
 			border-radius: 0;
-
-			&[aria-expanded='true'] {
-				border-color: var(--interaction-norm);
-				background-color: var(--field-focus-background-color);
-				color: var(--field-focus-text-color);
-				box-shadow: none;
-			}
 
 			// no need outline for this field, already provided by styles
 			&#{&} {
@@ -305,6 +333,14 @@
 		// new selectTwo without caret
 		&.select--inline-caret > svg {
 			display: none;
+		}
+
+		&.composer-meta-input-subject {
+			padding-inline-start: rem(8);
+
+			.input-element {
+				padding-inline-start: 0;
+			}
 		}
 
 		@include media('<=small') {
@@ -482,10 +518,6 @@
 			min-inline-size: rem(100);
 			block-size: auto;
 			min-block-size: 0; // avoid tiny layout shift
-
-			&:empty {
-				margin-inline-start: 0.65em;
-			}
 
 			&:focus {
 				box-shadow: none;
