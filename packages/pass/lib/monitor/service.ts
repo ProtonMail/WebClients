@@ -2,11 +2,11 @@ import type { Store } from 'redux';
 
 import { WASM_PROCEDURE_BATCH_SIZE } from '@proton/pass/lib/core/constants';
 import type { PassCoreProxy } from '@proton/pass/lib/core/types';
-import { hasDomain, hasOTP } from '@proton/pass/lib/items/item.predicates';
+import { hasDomain, hasOTP, isPasskeyItem } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
 import { selectMonitoredLogins } from '@proton/pass/store/selectors';
 import { type UniqueItem } from '@proton/pass/types';
-import { and, not } from '@proton/pass/utils/fp/predicates';
+import { and, not, or } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import chunk from '@proton/utils/chunk';
 
@@ -23,7 +23,8 @@ export const createMonitorService = (core: PassCoreProxy, store: Store): Monitor
     const service: MonitorService = {
         checkMissing2FAs: async () => {
             const logins = getLoginItems();
-            const candidates = logins.filter(and(hasDomain, not(hasOTP)));
+            /** Valid 2FAs : OTPs or Passkeys */
+            const candidates = logins.filter(and(hasDomain, not(or(hasOTP, isPasskeyItem))));
             const domains = candidates.flatMap((item) => item.data.content.urls);
             const chunks = chunk(domains, WASM_PROCEDURE_BATCH_SIZE);
 
