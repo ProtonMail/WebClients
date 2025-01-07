@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Lisää ${ BRAND_NAME }-tili"
       ],
+      "Add account": [
+        "Lisää tili"
+      ],
       "Add address": [
         "Lisää osoite"
       ],
@@ -182,7 +185,7 @@
         "Tunnistaudu"
       ],
       "Authenticating": [
-        "Vahvistetaan"
+        "Tunnistaudutaan"
       ],
       "Back": [
         "Takaisin"
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Kerro kaverille"
+      ],
+      "Refresh Data": [
+        "Päivitä tiedot"
       ],
       "Refresh status": [
         "Päivitä tila"
@@ -4557,6 +4563,9 @@
       "Impossible to rename the gateway": [
         "Yhdyskäytävän uudelleenimeäminen on mahdotonta"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Väärä varasalasana. Yritä uudelleen."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Virheellinen tiedostotyyppi. Lähetettävän kuvan tulee olla PNG- tai JPEG-muotoinen."
       ],
@@ -5030,17 +5039,11 @@
       "Calendar": [
         "Kalenteri"
       ],
-      "Calendar time zone not supported": [
-        "Kalenterin aikavyöhykettä ei tueta"
-      ],
       "Component with wrong format": [
         "Väärän muotoinen komponentti"
       ],
       "Custom time zone": [
         "Mukautettu aikavyöhyke"
-      ],
-      "Edited event not supported": [
-        "Muokattua tapahtumaa ei tueta"
       ],
       "Element": [
         "Elementti"
@@ -5048,17 +5051,8 @@
       "Encryption failed": [
         "Salaus epäonnistui"
       ],
-      "End time out of bounds": [
-        "Päätösaika on alueen ulkopuolella"
-      ],
       "Event": [
         "Tapahtuma"
-      ],
-      "Event validation failed": [
-        "Tapahtuman vahvistus epäonnistui"
-      ],
-      "Floating times not supported": [
-        "Vaihtuvia aikoja ei tueta"
       ],
       "Free-busy time information": [
         "Vapaa-varattu aikatietoja"
@@ -5069,26 +5063,11 @@
       "Journal entry": [
         "Päiväkirjamerkintä"
       ],
-      "Malformed all-day event": [
-        "Virheellinen koko päivän tapahtuma"
-      ],
-      "Malformed end time": [
-        "Virheellinen lopetusaika"
-      ],
-      "Malformed recurring event": [
-        "Virheellinen toistuva tapahtuma"
-      ],
-      "Malformed start time": [
-        "Virheellinen aloitusaika"
-      ],
       "Missing start time": [
         "Puuttuva aloitusaika"
       ],
       "No UID, title or start time": [
         "Ei UID:ta, nimeä tai aloitusaikaa"
-      ],
-      "Non-Gregorian": [
-        "Ei-gregoriaaninen"
       ],
       "Notification out of bounds": [
         "Ilmoitus on alueen ulkopuolella"
@@ -5096,20 +5075,8 @@
       "Original recurring event could not be found": [
         "Ketjun alkuperäistä tapahtumaa ei löytynyt"
       ],
-      "Recurring event has no occurrences": [
-        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
-      ],
-      "Recurring rule not supported": [
-        "Toistuvaa sääntöä ei tueta"
-      ],
-      "Start time out of bounds": [
-        "Aloitusaika on alueen ulkopuolella"
-      ],
       "Time zone": [
         "Aikavyöhyke"
-      ],
-      "Time zone not supported": [
-        "Aikavyöhykettä ei tueta"
       ],
       "To-do entry": [
         "Tehtävämerkintä"
@@ -5248,9 +5215,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Tapahtumaa ei voitu päivittää kalenteriisi. Vastausta ei lähetetty"
-      ],
-      "Unexpected error": [
-        "Odottamaton virhe"
       ],
       "Unsupported invitation": [
         "Kutsua ei tueta"
@@ -6158,6 +6122,12 @@
       ],
       "Checkout": [
         "Kassa"
+      ],
+      "City": [
+        "Kaupunki"
+      ],
+      "Country": [
+        "Maa"
       ],
       "Create your account": [
         "Luo oma tilisi"
@@ -7203,6 +7173,12 @@
       "Connection data will be available in around 1 hour.": [
         "Yhteystiedot ovat saatavilla noin tunnin kuluttua."
       ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Jatka **${ organizationValue.Name }**:n yhdistämistä ${ BRAND_NAME }-organisaatioosi."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Jatka tämän entiteetin yhdistämistä ${ BRAND_NAME }-organisaatioosi."
+      ],
       "Continue with ${ freeName }": [
         "Jatka ${ freeName } -tilauksella"
       ],
@@ -7214,6 +7190,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
@@ -7485,6 +7464,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Syötä **eduGAIN**-organisaation entiteetti-ID verkkotunnukselle **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Palauta hallintaoikeudet syöttämällä organisaation salasana. ${ learnMore }"
@@ -8046,6 +8028,9 @@
       "No label selected": [
         "Tunnistetta ei valittu"
       ],
+      "No location filters are currently assigned.": [
+        "Sijaintisuodattimia ei ole asetettu."
+      ],
       "No logs yet.": [
         "Lokeja ei vielä ole."
       ],
@@ -8054,6 +8039,9 @@
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
+      ],
+      "No Shared Servers Found": [
+        "Jaettuja palvelimia ei löytynyt"
       ],
       "Not a valid URL": [
         "Virheellinen URL"
@@ -8403,6 +8391,9 @@
       "Select recently used servers": [
         "Valitse viimeksi käytetyistä palvelimista"
       ],
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Valitse ${ getFormattedOrganization }-käyttäjäyhteydet, jotka haluat sallia ${ BRAND_NAME }-organisaatioosi."
+      ],
       "Select what you want to import.": [
         "Valitse mitä haluat tuoda."
       ],
@@ -8450,6 +8441,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Jaettu ${ vaultLink } päivitettiin"
+      ],
+      "Shared Server Location Filters": [
+        "Jaettujen palvelimien sijantisuodattimet"
       ],
       "Shared vault deleted": [
         "Jaettu holvi poistettiin"
@@ -15951,6 +15945,9 @@
       "Single sign-on removed": [
         "Kertakirjautuminen poistettiin"
       ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Käyttäjä ${ name } on nyt kertakirjautumistili."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tämä kirjaa käyttäjän ulos muilta laitteiltaan, ja hänen on luotava uusi varasalasana."
       ],
@@ -17550,7 +17547,7 @@
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
       ],
       "Disable two-factor authentication?": [
-        "Poista kaksivaiheinen tunnistautuminen käytöstä?"
+        "Poistetaanko kaksivaiheinen tunnistautuminen käytöstä?"
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
@@ -18151,6 +18148,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Määritä omia palvelimia päivittämällä Business-tilaukseen"
       ],
+      "Shared servers": [
+        "Jaetut palvelimet"
+      ],
       "Short domain (@pm.me)": [
         "Lyhyt verkkotunnus (@pm.me)"
       ],
@@ -18511,6 +18511,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
