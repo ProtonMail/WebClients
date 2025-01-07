@@ -40,6 +40,9 @@
       "Add": [
         "Dodaj"
       ],
+      "Add account": [
+        "Dodaj konto"
+      ],
       "Add address": [
         "Dodaj adres"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Poleć znajomemu"
       ],
+      "Refresh Data": [
+        "Odśwież dane"
+      ],
       "Refresh status": [
         "Odśwież status"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Wyloguj"
+      ],
+      "Sign out of all accounts": [
+        "Wyloguj się ze wszystkich kont"
       ],
       "sign up for free": [
         "załóż darmowe konto"
@@ -2609,6 +2618,9 @@
       "Impossible to rename the gateway": [
         "Nie można zmienić nazwy bramy"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Typ pliku jest nieobsługiwany. Prześlij plik w formacie PNG lub JPEG."
       ],
@@ -2699,6 +2711,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Wpisz prawidłowy adres URL identyfikatora jednostki"
+      ],
       "Please generate keys before you try to change your password": [
         "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
       ],
@@ -2719,6 +2734,9 @@
       ],
       "Please upload a square logo": [
         "Prześlij kwadratowe logo"
+      ],
+      "Please upload an XML file": [
+        "Prześlij plik XML"
       ],
       "Please upload only 1 file": [
         "Prześlij tylko 1 plik"
@@ -3449,6 +3467,12 @@
       "Checkout": [
         "Płatność"
       ],
+      "City": [
+        "Miasto"
+      ],
+      "Country": [
+        "Kraj"
+      ],
       "Create your account": [
         "Utwórz konto"
       ],
@@ -3914,6 +3938,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiuj i wklej ten adres URL do pola adresu URL usługi ACS (Assertion Consumer Service) u swojego dostawcy tożsamości"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
+      ],
       "Copy the suggested password to clipboard": [
         "Kopiuj sugerowane hasło do schowka"
       ],
@@ -4093,6 +4120,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Wpisz kod wysłany na ${ email }. Jeśli nie znajdziesz wiadomości w swojej skrzynce odbiorczej, sprawdź folder Spam."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Wpisz identyfikator jednostki organizacji **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Wpisz hasło organizacji, aby przywrócić uprawnienia administratora. ${ learnMore }"
@@ -4451,6 +4481,9 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No Shared Servers Found": [
+        "Nie znaleziono udostępnionych serwerów"
+      ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
@@ -4715,6 +4748,9 @@
       "Shared ${ vaultLink } updated": [
         "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
       ],
+      "Shared Server Location Filters": [
+        "Filtry udostępnionych serwerów"
+      ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
       ],
@@ -4888,6 +4924,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Nowe zaproszenie zostanie wysłane na adres **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ta czynność spowoduje wylogowanie ze wszystkich kont."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
@@ -5929,6 +5968,9 @@
         "Pokaż ${ n } administratorów",
         "Pokaż ${ n } administratorów",
         "Pokaż ${ n } administratorów"
+      ],
+      "Single sign-on Entity ID": [
+        "Identyfikator jednostki SSO"
       ],
       "Single sign-on URL": [
         "Adres URL logowania SSO"
@@ -10294,6 +10336,9 @@
       "Are you sure you want to close the preview?": [
         "Czy na pewno chcesz zamknąć podgląd?"
       ],
+      "Are you sure?": [
+        "Czy na pewno?"
+      ],
       "Authentication security": [
         "Bezpieczeństwo uwierzytelniania"
       ],
@@ -10756,6 +10801,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Ulepsz plan do wersji Business, aby skonfigurować dedykowane serwery"
       ],
+      "Shared servers": [
+        "Udostępnione serwery"
+      ],
       "Sign in": [
         "Zaloguj się"
       ],
@@ -10833,6 +10881,9 @@
       ],
       "User": [
         "Użytkownik"
+      ],
+      "User converted to SSO": [
+        "Przekonwertowano użytkownika do logowania SSO"
       ],
       "Users": [
         "Użytkownicy"
@@ -10958,6 +11009,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiuj i wklej ten adres URL do pola adresu URL usługi ACS (Assertion Consumer Service) u swojego dostawcy tożsamości"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
       ],
       "Device information such as operating system": [
         "Informacje o urządzeniu jak system operacyjny"

@@ -40,6 +40,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add account": [
+        "Lägg till konto"
+      ],
       "Add address": [
         "Lägg till adress"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Bjud in en vän"
       ],
+      "Refresh Data": [
+        "Uppdatera data"
+      ],
       "Refresh status": [
         "Uppdatera status"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Logga ut"
+      ],
+      "Sign out of all accounts": [
+        "Logga ut från alla konton"
       ],
       "sign up for free": [
         "registrera dig gratis"
@@ -3418,6 +3427,12 @@
       "Checkout": [
         "Kassa"
       ],
+      "City": [
+        "Ort"
+      ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Skapa ditt konto"
       ],
@@ -4392,11 +4407,17 @@
       "No Gateways yet": [
         "Inga gateways ännu"
       ],
+      "No location filters are currently assigned.": [
+        "Inga platsfilter är för närvarande tilldelade."
+      ],
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
       "No results found": [
         "Inga resultat hittades"
+      ],
+      "No Shared Servers Found": [
+        "Inga delade servrar hittade"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -4820,6 +4841,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Detta kommer att skicka en ny inbjudan till **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Detta kommer att logga ut dig från alla aktiva sessioner och inaktivera 2-faktors autentisering."
@@ -10085,6 +10109,9 @@
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
       ],
+      "Are you sure?": [
+        "Är du säker?"
+      ],
       "Authentication security": [
         "Autentiseringssäkerhet"
       ],
@@ -10540,6 +10567,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Konfigurera dedikerade servrar genom att uppgradera till Business"
+      ],
+      "Shared servers": [
+        "Delade servrar"
       ],
       "Sign in": [
         "Logga in"

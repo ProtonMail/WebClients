@@ -40,6 +40,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add account": [
+        "Añadir una cuenta"
+      ],
       "Add address": [
         "Añadir dirección"
       ],
@@ -633,6 +636,9 @@
       ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Sign out of all accounts": [
+        "Cerrar sesión en todas las cuentas"
       ],
       "sign up for free": [
         "regístrate gratis"
@@ -4835,6 +4841,9 @@
       "This will send a new invite to **${ email }**.": [
         "Esto enviará una nueva invitación a **${ email }**."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Esto cerrará cualquier sesión activa y desactivará la autenticación de dos factores."
       ],
@@ -6943,7 +6952,7 @@
         "Popular"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Protege la información empresarial confidencial y colabora de forma segura."
+        "Protege la información sensible de tu negocio y colabora con seguridad."
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
         "Protege a tu familia con todas las características premium de ${ PASS_SHORT_APP_NAME } Plus para seis usuarios."
@@ -10074,6 +10083,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "¿Estás seguro de que quieres cerrar la previsualización?"
+      ],
+      "Are you sure?": [
+        "¿Estás seguro?"
       ],
       "Authentication security": [
         "Autenticación de seguridad"

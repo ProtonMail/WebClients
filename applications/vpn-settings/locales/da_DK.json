@@ -40,6 +40,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add account": [
+        "Tilføj konto"
+      ],
       "Add address": [
         "Tilføj adresse"
       ],
@@ -297,6 +300,9 @@
       ],
       "Forgot recovery method?": [
         "Glemt gendannelsesmetoden?"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
@@ -612,6 +618,9 @@
       ],
       "Sign out": [
         "Log ud"
+      ],
+      "Sign out of all accounts": [
+        "Log ud alle konti"
       ],
       "sign up for free": [
         "tilmeld dig gratis"
@@ -4478,6 +4487,9 @@
       "Session timed out": [
         "Session er udløbet"
       ],
+      "Setting up your new address...": [
+        "Konfigurerer din nye adresse..."
+      ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
       ],
@@ -4643,6 +4655,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Dette vil sende en ny invitation til **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge dig ud af alle aktive sessioner og deaktivere to-faktor-godkendelse."
@@ -4984,7 +4999,7 @@
         "Du vil muligvis blive omdirigeret til din banks hjemmeside."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Du skal aktivere din organisations private nøgle med den backup-organisationsnøgleadgangskode, som din organisationsadministrator har givet dig."
+        "Du skal aktivere din private organisationsnøgle med adgangskoden til backup-organisationsnøglen, som du har fået af din organisationsadministrator."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
@@ -9548,6 +9563,9 @@
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
       ],
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
       "Authentication security": [
         "Godkendelses-sikkerhed"
       ],
@@ -9849,7 +9867,7 @@
         "Ingen gendannelsesmetode"
       ],
       "Open actions dropdown": [
-        "Åbn handlingsrullemenu"
+        "Åbn handlings-dropdownmenuen"
       ],
       "Open pagination": [
         "Åbn sidenummerering"
@@ -10047,6 +10065,9 @@
       "Unlock your data": [
         "Lås dine data op"
       ],
+      "Upgrade complete!": [
+        "Opgradering udført!"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Opgradér din netværksbeskyttelse med dedikerede servere"
       ],
@@ -10091,6 +10112,9 @@
       ],
       "Your plan": [
         "Dit abonnement"
+      ],
+      "Your shorter address is now ready": [
+        "Din kortere adresse er nu klar"
       ],
       "Your subscriptions": [
         "Dine abonnementer"
