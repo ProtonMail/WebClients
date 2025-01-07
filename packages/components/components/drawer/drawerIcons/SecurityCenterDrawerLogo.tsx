@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import generateUID from '@proton/utils/generateUID';
+
+import LogoBase from '../../logo/LogoBase';
 
 const SecurityCenterDrawerLogo = () => {
+    const [uid] = useState(generateUID('cal-logo'));
+
     return (
-        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <LogoBase logoWidth={20} logoHeight={20} variant="with-wordmark" uid={uid} focusable="false" aria-hidden="true">
             <defs>
                 <linearGradient y2="1.01026" x2="0.33901" y1="0.01025" x1="0.33901" id="paint0_linear_32795_102417">
                     <stop stopColor="#C4B6FE" />
@@ -21,7 +27,7 @@ const SecurityCenterDrawerLogo = () => {
                 />
                 {/* eslint-enable */}
             </g>
-        </svg>
+        </LogoBase>
     );
 };
 
