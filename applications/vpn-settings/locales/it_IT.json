@@ -40,6 +40,9 @@
       "Add": [
         "Aggiungi"
       ],
+      "Add account": [
+        "Aggiungi un account"
+      ],
       "Add address": [
         "Aggiungi indirizzo"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Invita un amico"
       ],
+      "Refresh Data": [
+        "Aggiorna Dati"
+      ],
       "Refresh status": [
         "Aggiorna stato"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Esci dall'account"
+      ],
+      "Sign out of all accounts": [
+        "Esci da tutti gli account"
       ],
       "sign up for free": [
         "registrati gratuitamente"
@@ -3413,6 +3422,12 @@
       "Checkout": [
         "Checkout"
       ],
+      "City": [
+        "Città"
+      ],
+      "Country": [
+        "Paese"
+      ],
       "Create your account": [
         "Crea il tuo account"
       ],
@@ -4381,11 +4396,17 @@
       "No Gateways yet": [
         "Non ci sono ancora Gateway"
       ],
+      "No location filters are currently assigned.": [
+        "Non è stato assegnato nessun filtro di posizione."
+      ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
       ],
       "No results found": [
         "Nessun risultato trovato"
+      ],
+      "No Shared Servers Found": [
+        "Nessun server condiviso trovato"
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
@@ -4644,6 +4665,9 @@
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } condiviso aggiornato"
       ],
+      "Shared Server Location Filters": [
+        "Filtri di posizione del server condiviso"
+      ],
       "Shared vault deleted": [
         "Cassaforte condivisa eliminata"
       ],
@@ -4809,6 +4833,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Questa azione invierà un nuovo invito a **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Questo ti disconnetterà da tutte le sessioni attive e disabiliterà l'autenticazione a 2 fattori."
@@ -10068,6 +10095,9 @@
       "Are you sure you want to close the preview?": [
         "Sei sicuro di voler chiudere l'anteprima?"
       ],
+      "Are you sure?": [
+        "Sei sicuro?"
+      ],
       "Authentication security": [
         "Sicurezza autenticazione"
       ],
@@ -10523,6 +10553,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Configura server dedicati effettuando l'upgrade a Business"
+      ],
+      "Shared servers": [
+        "Server condivisi"
       ],
       "Sign in": [
         "Accedi"

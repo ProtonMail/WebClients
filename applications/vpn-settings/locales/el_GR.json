@@ -40,6 +40,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add account": [
+        "Προσθήκη λογαριασμού"
+      ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
+      "Refresh Data": [
+        "Ανανέωση δεδομένων"
+      ],
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Αποσύνδεση"
+      ],
+      "Sign out of all accounts": [
+        "Έξοδος από όλους τους λογαριασμούς"
       ],
       "sign up for free": [
         "εγγραφείτε δωρεάν"
@@ -3413,6 +3422,12 @@
       "Checkout": [
         "Ολοκλήρωση αγορών"
       ],
+      "City": [
+        "Πόλη"
+      ],
+      "Country": [
+        "Χώρα"
+      ],
       "Create your account": [
         "Δημιουργήστε τον λογαριασμό σας."
       ],
@@ -4381,11 +4396,17 @@
       "No Gateways yet": [
         "Δεν υπάρχουν ακόμη πύλες"
       ],
+      "No location filters are currently assigned.": [
+        "Προς το παρόν δεν έχουν εκχωρηθεί φίλτρα τοποθεσίας."
+      ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
+      ],
+      "No Shared Servers Found": [
+        "Δε βρέθηκαν Κοινοποιημένοι Διακομιστές"
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
@@ -4641,6 +4662,9 @@
       "Shared ${ vaultLink } updated": [
         "Η κοινόχρηστη ${ vaultLink } ενημερώθηκε"
       ],
+      "Shared Server Location Filters": [
+        "Φίλτρα Τοποθεσίας Κοινοποιημένων Διακομιστών"
+      ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
       ],
@@ -4806,6 +4830,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Αυτό θα στείλει μια νέα πρόσκληση στο **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Αυτό θα σας βγάλει εκτός κάθε ενεργής συνεδρίας και θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων."
@@ -10035,6 +10062,9 @@
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
       ],
+      "Are you sure?": [
+        "Είστε σίγουρος/η;"
+      ],
       "Authentication security": [
         "Ασφάλεια ταυτοποίησης"
       ],
@@ -10490,6 +10520,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Παραμετροποίηση αποκλειστικών διακομιστών με αναβάθμιση σε Business"
+      ],
+      "Shared servers": [
+        "Κοινοποιημένοι Διακομιστές"
       ],
       "Sign in": [
         "Είσοδος"

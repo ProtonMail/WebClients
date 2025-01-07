@@ -40,6 +40,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add account": [
+        "Ajouter un compte"
+      ],
       "Add address": [
         "Ajouter une adresse"
       ],
@@ -633,6 +636,9 @@
       ],
       "Sign out": [
         "Se déconnecter"
+      ],
+      "Sign out of all accounts": [
+        "Se déconnecter de tous les comptes"
       ],
       "sign up for free": [
         "inscrivez-vous gratuitement"
@@ -3885,8 +3891,8 @@
         "Créez votre première Passerelle"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Création d'un serveur de Passerelle : ${ serverNumber } sur ${ total }",
-        "Création de serveurs de Passerelle : ${ serverNumber } sur ${ total }"
+        "Création d'un serveur de passerelle : ${ serverNumber } sur ${ total }",
+        "Création de serveurs de passerelle : ${ serverNumber } sur ${ total }"
       ],
       "Creating your account": [
         "Création de votre compte"
@@ -4834,6 +4840,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Ceci enverra une nouvelle invitation à **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Cela vous déconnectera de toutes les sessions actives et désactivera l'authentification à deux facteurs."
@@ -10074,6 +10083,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
+      ],
+      "Are you sure?": [
+        "Êtes-vous sûr ?"
       ],
       "Authentication security": [
         "Sécurité de l'authentification"
