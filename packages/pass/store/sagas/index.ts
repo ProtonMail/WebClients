@@ -2,6 +2,10 @@ import { all } from 'redux-saga/effects';
 
 import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
 
+import accessEditRole from './access/access-edit-role.saga';
+import accessLeave from './access/access-leave.saga';
+import accessSagas from './access/access-options.saga';
+import accessRemoveMember from './access/access-remove-member.saga';
 import aliasContactSagas from './alias/alias-contact.sagas';
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasManagementSagas from './alias/alias-management.sagas';
@@ -48,10 +52,6 @@ import itemSetFlags from './items/item.set-flags.saga';
 import notificationSagas from './notifications/notifications.sagas';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
-import shareAccessSagas from './shares/share-access.saga';
-import shareEditRole from './shares/share-edit-role.saga';
-import shareLeave from './shares/share-leave.saga';
-import shareRemoveMember from './shares/share-remove-member.saga';
 import featureFlags from './user/feature-flags.saga';
 import userAccess from './user/user-access.saga';
 import userSettings from './user/user-settings.saga';
@@ -71,7 +71,10 @@ const COMMON_SAGAS = [
     ...notificationSagas,
     ...secureLinkSagas,
     ...ssoSagas,
-    ...shareAccessSagas,
+    ...accessSagas,
+    accessEditRole,
+    accessLeave,
+    accessRemoveMember,
     aliasDetailsRequest,
     aliasOptionsRequest,
     boot,
@@ -110,9 +113,6 @@ const COMMON_SAGAS = [
     passwordExtra,
     reportProblem,
     settings,
-    shareEditRole,
-    shareLeave,
-    shareRemoveMember,
     sync,
     trashDelete,
     trashRestore,

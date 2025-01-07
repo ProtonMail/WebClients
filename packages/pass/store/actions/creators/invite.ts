@@ -39,15 +39,15 @@ export const inviteBatchCreateIntent = createAction('invite::batch::create::inte
 
 export const inviteBatchCreateSuccess = createAction(
     'invite::batch::create::success',
-    withRequestSuccess((payload: InviteBatchCreateSuccess, count: number) =>
+    withRequestSuccess((payload: InviteBatchCreateSuccess) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').ngettext(
-                    msgid`${count} invite successfully sent`,
-                    `${count} invites successfully sent`,
-                    count
+                    msgid`${payload.count} invite successfully sent`,
+                    `${payload.count} invites successfully sent`,
+                    payload.count
                 ),
             })
         )({ payload })
@@ -179,14 +179,14 @@ export const inviteRemoveIntent = createAction('invite::remove::intent', (payloa
 
 export const inviteRemoveSuccess = createAction(
     'invite::remove::success',
-    withRequestSuccess((shareId: string, inviteId: string) =>
+    withRequestSuccess((payload: InviteRemoveIntent) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Invite successfully removed`,
             })
-        )({ payload: { shareId, inviteId } })
+        )({ payload })
     )
 );
 

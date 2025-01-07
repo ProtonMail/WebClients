@@ -10,7 +10,7 @@ import {
 function* resendInviteWorker({ payload, meta: { request } }: ReturnType<typeof shareEditMemberAccessIntent>) {
     try {
         yield editMemberAccess(payload);
-        yield put(shareEditMemberAccessSuccess(request.id, payload.shareId, payload.userShareId, payload.shareRoleId));
+        yield put(shareEditMemberAccessSuccess(request.id, payload));
     } catch (err) {
         yield put(shareEditMemberAccessFailure(request.id, err));
     }

@@ -12,7 +12,7 @@ import { UserVerificationMessage } from '@proton/pass/components/Invite/UserVeri
 import { type InviteAddressValidator } from '@proton/pass/hooks/useValidateInviteAddress';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
-import { selectItem, selectUserVerified, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
+import { selectAccessSharedWithEmails, selectItem, selectUserVerified } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -50,7 +50,7 @@ const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props>
 
     const [autocomplete, setAutocomplete] = useState('');
     const userVerified = useSelector(selectUserVerified);
-    const vaultSharedWith = useSelector(selectVaultSharedWithEmails(shareId));
+    const vaultSharedWith = useSelector(selectAccessSharedWithEmails(shareId));
     const item = useSelector(selectItem(shareId, itemId))!;
     const { heading, subheading } = presentListItem(item);
 

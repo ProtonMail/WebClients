@@ -9,7 +9,7 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { PendingNewUsersForShare } from '@proton/pass/components/Share/PendingNewUsersForShare';
 import { newUserInvitePromoteIntent } from '@proton/pass/store/actions';
-import { selectVaultsWithNewUserInvites } from '@proton/pass/store/selectors';
+import { selectAccessForMany, selectVaultsWithNewUserInvites } from '@proton/pass/store/selectors';
 import { NewUserInviteState, type ShareId } from '@proton/pass/types';
 
 export const PendingNewUsersApprovalModal: FC = () => {
@@ -19,11 +19,12 @@ export const PendingNewUsersApprovalModal: FC = () => {
     const online = useConnectivity();
 
     const vaultsWithInvitesReady = useSelector(selectVaultsWithNewUserInvites);
+    const accessItems = useSelector(selectAccessForMany(vaultsWithInvitesReady));
     const [vaultsReady, setVaultsReady] = useState<ShareId[]>([]);
 
     const acceptAllInvites = () => {
-        vaultsWithInvitesReady.forEach(({ shareId, newUserInvites }) =>
-            newUserInvites?.forEach(
+        vaultsWithInvitesReady.forEach(({ shareId }) =>
+            accessItems[shareId].newUserInvites.forEach(
                 ({ state, newUserInviteId }) =>
                     state === NewUserInviteState.READY &&
                     dispatch(newUserInvitePromoteIntent({ shareId, newUserInviteId }))
@@ -68,6 +69,7 @@ export const PendingNewUsersApprovalModal: FC = () => {
                             {index > 0 && <hr className="my-3" />}
                             <PendingNewUsersForShare
                                 {...vault}
+                                {...accessItems[vault.shareId]}
                                 onInvitesReady={() => setVaultsReady((shareIds) => [...shareIds, vault.shareId])}
                             />
                         </Fragment>

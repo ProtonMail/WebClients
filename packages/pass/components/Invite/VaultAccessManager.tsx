@@ -16,9 +16,14 @@ import { PendingExistingMember, PendingNewMember } from '@proton/pass/components
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
 import { UpsellRef } from '@proton/pass/constants';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
+import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
+import {
+    selectAccess,
+    selectOwnWritableVaults,
+    selectPassPlan,
+    selectShareOrThrow,
+} from '@proton/pass/store/selectors';
 import type { NewUserPendingInvite, PendingInvite, ShareType } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -34,6 +39,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createVaultInvite, close } = useInviteActions();
 
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
+    const access = useSelector(selectAccess(shareId));
     const plan = useSelector(selectPassPlan);
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
 
@@ -43,19 +49,16 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const canManage = isShareManageable(vault);
     const b2b = plan === UserPassPlan.BUSINESS;
 
-    const members = useMemo<ShareMemberType[]>(
-        () => (vault.members ?? []).slice().sort(sortOn('email', 'ASC')),
-        [vault]
-    );
+    const members = useMemo<ShareMemberType[]>(() => access.members.slice().sort(sortOn('email', 'ASC')), [vault]);
     const invites = useMemo<InviteListItem[]>(
         () =>
             [
-                ...(vault.invites ?? []).map((invite) => ({
+                ...(access.invites ?? []).map((invite) => ({
                     key: invite.invitedEmail,
                     type: 'existing' as const,
                     invite,
                 })),
-                ...(vault.newUserInvites ?? []).map((invite) => ({
+                ...(access.newUserInvites ?? []).map((invite) => ({
                     key: invite.invitedEmail,
                     type: 'new' as const,
                     invite,
@@ -64,7 +67,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
         [vault]
     );
 
-    const memberLimitReached = isVaultMemberLimitReached(vault);
+    const memberLimitReached = isMemberLimitReached(vault, access);
 
     const warning = (() => {
         if (canManage && memberLimitReached) {

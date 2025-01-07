@@ -28,6 +28,7 @@ export type ShareMemberProps = {
     role: ShareRole;
     shareId: string;
     userShareId: string;
+    itemId?: string;
 };
 
 export const ShareMember: FC<ShareMemberProps> = ({
@@ -39,6 +40,7 @@ export const ShareMember: FC<ShareMemberProps> = ({
     role,
     shareId,
     userShareId,
+    itemId,
 }: ShareMemberProps) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
     const { title, description } = useMemo(() => {
@@ -56,8 +58,9 @@ export const ShareMember: FC<ShareMemberProps> = ({
     const editAccess = useActionRequest(shareEditMemberAccessIntent);
     const transferOwnership = useActionRequest(vaultTransferOwnerIntent);
 
-    const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
-    const handleEditRole = (shareRoleId: ShareRole) => editAccess.dispatch({ shareId, userShareId, shareRoleId });
+    const handleRemoveAccess = () => removeAccess.dispatch({ shareId, itemId, userShareId });
+    const handleEditRole = (shareRoleId: ShareRole) =>
+        editAccess.dispatch({ shareId, itemId, userShareId, shareRoleId });
     const handleTransferOwnership = useConfirm(transferOwnership.dispatch);
 
     const loading = transferOwnership.loading || removeAccess.loading || editAccess.loading;
