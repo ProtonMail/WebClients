@@ -64,7 +64,7 @@ const AddressesCCButton = ({ type, onClick, onFocus, disabled, classNames }: Pro
                 onFocus={onFocus}
                 disabled={disabled}
                 data-testid={dataTestId}
-                className={clsx('text-left text-no-decoration text-strong relative', classNames)}
+                className={clsx('text-left text-no-decoration text-strong relative color-inherit', classNames)}
             >
                 {content}
             </Button>
