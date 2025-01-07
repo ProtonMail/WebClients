@@ -721,17 +721,11 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена, калі вы выкарыстоўваеце паддамен (напрыклад, paddamen.damen.com). Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Пераканайцеся, што не выбраны параметр проксі-сервера, калі вы выкарыстоўваеце CloudFlare."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць.${ infoText }"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Некаторыя рэгістратары DNS могуць патрабаваць поўны шлях да запісу. У гэтым выпадку выкарыстайце ${ domain } у якасці значэння дамена."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Некаторыя рэгістратары даменаў (Namecheap, CloudFlare і г.д.) могуць таксама выкарыстоўваць знак @ каранёвага дамена."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для выяўлення падробкі адраса адпраўніка падчас дастаўкі ліста. Настойліва рэкамендуецца наладзіць SPF, каб паменшыць верагоднасць з'яўлення вашых лістоў у папцы са спамам атрымальніка."
@@ -741,9 +735,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Гэты сэрвіс прапануе 2ФА. Уключыце гэту функцыю, каб дадаць бяспеку ўліковаму запісу."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Дадайце наступны запіс TXT, каб праверыць права ўласнасці. Некаторыя рэгістратары даменаў (напрыклад, Namecheap, CloudFlare і г.д.) могуць выкарыстоўваць знак @ для каранёвага дамена."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблакіруйце дадатковыя функцыі бяспекі і падрабязныя журналы для абароны сваёй прысутнасці ў інтэрнэце."
@@ -1154,6 +1145,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "У вашага браўзера ўзніклі праблемы пры актывацыі ${ PASS_APP_NAME }"
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Ваш DNS зададзены няправільна. Атрыманы запіс MX:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Ваш DNS зададзены няправільна. Атрыманы запіс TXT:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
       ]
@@ -1345,6 +1342,9 @@
         "Засталося ${ trialDaysLeft } дні",
         "Засталося ${ trialDaysLeft } дзён",
         "Засталося ${ trialDaysLeft } дзён"
+      ],
+      "(Empty)": [
+        "(Пуста)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
@@ -2113,6 +2113,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Налада адключана на ўзроўні арганізацыі"
+      ],
+      "This setting is enforced by your organization": [
+        "Гэта налада ўжываецца прымусова вашай арганізацыяй"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце карыстальнікаў, каб абагуліць яго з іншымі."

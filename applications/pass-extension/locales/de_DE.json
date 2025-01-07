@@ -77,6 +77,12 @@
       "Change": [
         "Ändern"
       ],
+      "Check DNS": [
+        "DNS überprüfen"
+      ],
+      "Check settings": [
+        "Einstellungen überprüfen"
+      ],
       "Choose a file or drag it here": [
         "Datei auswählen oder hierhinein ziehen"
       ],
@@ -681,11 +687,38 @@
       "A checked box means the feature is disabled.": [
         "Ein angekreuztes Kästchen bedeutet, dass die Funktion deaktiviert ist."
       ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Füge die folgenden CNAME-DNS-Einträge deiner Domäne hinzu."
+      ],
+      "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
+        "Füge den folgenden MX-DNS-Eintrag deiner Domäne hinzu. Bitte beachte, dass am Ende der Zieladressen ein Punkt (.) steht. Wenn dein Domain-Registrar diesen Punkt am Ende nicht zulässt, entferne ihn bitte beim Hinzufügen des DNS-Eintrags."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Füge den folgenden TXT DNS-Eintrag deiner Domäne hinzu."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Dark Web-Überwachung ist mit einem kostenpflichtigen Abonnement verfügbar. Upgrade für sofortigen Zugriff."
       ],
+      "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } ist eine E-Mail-Authentifizierungsmethode, die dazu dient, E-Mail-Spoofing zu verhindern. Die Einrichtung von DKIM wird dringend empfohlen, um die Wahrscheinlichkeit zu verringern, dass deine E-Mails im Spam-Ordner des Empfängers landen."
+      ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } wurde entwickelt, um die Domäne vor unbefugter Nutzung zu schützen, die allgemein als E-Mail-Spoofing bekannt ist. Eine DMARC-Richtlinie, die auf SPF und DKIM aufbaut, teilt dem empfangenden E-Mail-Server mit, was zu tun ist, wenn keine der beiden Authentifizierungsmethoden funktioniert."
+      ],
+      "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
+        "Wenn du eine Subdomain verwendest, z. B. ${ subdomainExample }, musst du stattdessen ${ dmarcExampleSubdomain } als Domain verwenden."
+      ],
+      "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
+        "Wenn du eine Subdomain verwendest, z.B. subdomain.domain.com, musst du stattdessen ${ domainKeyExampleSubdomain } als Domain verwenden. Das heißt, wenn deine Domain mail.domain.com ist, solltest du ${ domainKeyExampleMail } als Domain eingeben."
+      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Liste der Domains, bei denen bestimmte automatische Funktionen in ${ PASS_SHORT_APP_NAME } (Automatisches Ausfüllen, automatische Vorschläge, automatisches Speichern) nicht ausgeführt werden sollen. ${ infoText }"
+      ],
+      "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
+        "Einige DNS-Registrierungsstellen verlangen möglicherweise einen vollständigen Eintragspfad. Verwende in diesem Fall bitte stattdessen ${ domain } als Domainwert."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } ist eine E-Mail-Authentifizierungsmethode, die dazu dient, gefälschte Absenderadressen während der Zustellung der E-Mail zu erkennen. Die Einrichtung von SPF wird dringend empfohlen, um die Wahrscheinlichkeit zu verringern, dass deine E-Mails im Spam-Ordner des Empfängers landen."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Dieses Konto ist angreifbar, besuche den Dienst und ändere dein Passwort."
@@ -695,6 +728,11 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Schalte erweiterte Sicherheitsfunktionen und detaillierte Protokolle zum Schutz deiner Online-Präsenz frei."
+      ]
+    },
+    "Email": {
+      "anything@${ domainDisplay }": [
+        "irgendwas@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -793,14 +831,29 @@
       "Failed to add email address": [
         "Fehler beim Hinzufügen der E-Mail-Adresse."
       ],
+      "Failed to block the contact": [
+        "Fehler beim Blockieren des Kontakts."
+      ],
+      "Failed to create domain": [
+        "Fehler beim Erstellen der Domain."
+      ],
       "Failed to create the contact": [
         "Fehler beim Erstellen des Kontakts"
+      ],
+      "Failed to delete domain": [
+        "Fehler beim Löschen der Domain."
       ],
       "Failed to delete email address from monitoring": [
         "Fehler beim Löschen der E-Mail-Adresse aus der Überwachung."
       ],
       "Failed to delete selected items": [
         "Fehler beim Löschen der ausgewählten Einträge."
+      ],
+      "Failed to delete the contact": [
+        "Fehler beim Löschen des Kontakts."
+      ],
+      "Failed to delete the mailbox": [
+        "Fehler beim Löschen des Postfachs."
       ],
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
@@ -810,6 +863,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Fehler beim Laden der Datenlecks für diesen E-Mail-Alias."
+      ],
+      "Failed to load domain settings.": [
+        "Fehler beim Laden der Domaineinstellungen."
       ],
       "Failed to load item history": [
         "Fehler beim Laden des Eintragsverlaufs."
@@ -838,6 +894,9 @@
       "Failed to restore items from trash": [
         "Fehler beim Wiederherstellen der Einträge aus dem Papierkorb."
       ],
+      "Failed to set default mailbox": [
+        "Fehler beim Festlegen des Standardpostfachs."
+      ],
       "Failed to sync aliases": [
         "Fehler beim Synchronisieren der Aliasse."
       ],
@@ -847,8 +906,23 @@
       "Failed to unpin item": [
         "Fehler beim Loslösen des Eintrags."
       ],
+      "Failed to update catch-all setting.": [
+        "Fehler beim Aktualisieren der Catch-All-Einstellung."
+      ],
+      "Failed to update default domain": [
+        "Fehler beim Aktualisieren der Standard-Domain."
+      ],
+      "Failed to update domain mailboxes.": [
+        "Fehler beim Aktualisieren der Domain-Postfächer."
+      ],
+      "Failed to update domain name.": [
+        "Fehler beim Aktualisieren des Domainnamens."
+      ],
       "Failed to update monitoring settings": [
         "Fehler beim Aktualisieren der Überwachungseinstellungen."
+      ],
+      "Failed to verify domain": [
+        "Fehler beim Verifizieren der Domain."
       ],
       "Failed to verify email address": [
         "Fehler beim Verifizieren der E-Mail-Adresse."
@@ -1035,6 +1109,12 @@
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Dein Browser hat Schwierigkeiten, ${ PASS_APP_NAME } zu aktivieren."
+      ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Dein DNS ist nicht korrekt eingestellt. Der MX-Eintrag, den wir erhalten, lautet:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Dein DNS ist nicht korrekt eingestellt. Der TXT-Eintrag, den wir erhalten, lautet:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
@@ -1273,6 +1353,9 @@
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometrie wird deaktiviert und muss erneut aktiviert werden."
       ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Verwende deine eigene Domain, damit du nicht noch eine weitere E-Mail-Hosting-Lösung kaufen musst."
+      ],
       "Built in 2FA authenticator": [
         "Integrierter 2FA-Authenticator"
       ],
@@ -1347,6 +1430,12 @@
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Entdecke ${ PASS_APP_NAME }"
+      ],
+      "DNS changes could take up to 24 hours to update.": [
+        "Bei DNS-Änderungen kann die Aktualisierung bis zu 24 Stunden dauern."
+      ],
+      "Domain: ${ domainPath } or @": [
+        "Domain: ${ domainPath } oder @"
       ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
@@ -1685,6 +1774,9 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Bitte gib dein zusätzliches Passwort ein, um ${ PASS_SHORT_APP_NAME } zu verwenden."
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Bitte befolge die Schritte unten, um deine Domain einzurichten."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Bitte beachte, dass der Alias nach dem Löschen nicht wiederhergestellt werden kann. Vielleicht möchtest du stattdessen den Alias deaktivieren?"
       ],
@@ -1830,11 +1922,17 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
       ],
+      "This operation is irreversible.": [
+        "Diese Aktion kann nicht rückgängig gemacht werden."
+      ],
       "This option is currently not available on your device.": [
         "Diese Option ist zurzeit auf deinem Gerät nicht verfügbar."
       ],
       "This setting is disabled on the organization level": [
         "Diese Einstellung ist auf Organisationsebene deaktiviert."
+      ],
+      "This setting is enforced by your organization": [
+        "Diese Einstellung wird von deiner Organisation erzwungen."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Tresor wird derzeit mit niemandem geteilt. Lade Personen ein, um ihn mit diesen zu teilen."
@@ -1939,6 +2037,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Beim Erstellen/Bearbeiten eines Logins auf ${ PASS_APP_NAME } wird die Eingabe 'Benutzername' immer sichtbar sein."
       ],
+      "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
+        "Wenn du eine E-Mail von diesem Alias aus versendest, wird ${ emailSender } als Absender in der E-Mail erscheinen."
+      ],
       "You are about to create:": [
         "Folgender Alias wird erstellt:"
       ],
@@ -1969,6 +2070,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du hast die maximal erlaubte Länge von ${ maxLength } Zeichen erreicht."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "Nachdem du deine Domain verifiziert hast, kannst du deine Domain-Einstellungen anpassen (Catch-All-E-Mail-Aliasse, Standard-Anzeigename für Aliasse usw.)."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du wirst abgemeldet und musst dich bei allen anderen Geräten erneut anmelden."
@@ -2668,6 +2772,9 @@
       "Sync aliases with SimpleLogin": [
         "Aliasse mit SimpleLogin synchronisieren"
       ],
+      "Target:": [
+        "Ziel:"
+      ],
       "Tax number": [
         "Steuernummer"
       ],
@@ -2796,6 +2903,11 @@
         "Postleitzahl oder ZIP-Code"
       ]
     },
+    "Link": {
+      "auto create rules ››": [
+        "Regeln automatisch erstellen ››"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } Eintrag",
@@ -2852,6 +2964,9 @@
       "Add text": [
         "Text hinzufügen"
       ],
+      "Alias Display Name": [
+        "Alias-Anzeigename"
+      ],
       "Email address": [
         "E-Mail-Adresse"
       ],
@@ -2881,6 +2996,9 @@
       ],
       "my-domain.com": [
         "meine-Domain.de"
+      ],
+      "Note from SimpleLogin": [
+        "Notiz von SimpleLogin"
       ],
       "Password": [
         "Passwort"
@@ -2929,6 +3047,12 @@
       ]
     },
     "sso": {
+      "Approve or deny it now": [
+        "Jetzt genehmigen oder ablehnen"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Gib den Bestätigungscode ein, den wir auf dein anderes Gerät gesendet haben."
+      ],
       "If you didn't make this request, cancel it now.": [
         "Wenn du diese Anfrage nicht gestellt hast, brich sie jetzt ab."
       ],
@@ -2943,6 +3067,9 @@
       ],
       "Sign-in failed": [
         "Anmeldung fehlgeschlagen"
+      ],
+      "Sign-in rejected": [
+        "Anmeldung verweigert"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Anmeldung auf einem anderen Gerät angefragt. Warst du das?"
@@ -2961,6 +3088,9 @@
       "Pending activation": [
         "Ausstehende Aktivierung"
       ],
+      "Pending admin activation": [
+        "Ausstehende Admin-Aktivierung"
+      ],
       "Rejected": [
         "Abgelehnt"
       ],
@@ -2975,14 +3105,35 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Die Synchronisierung der Aliasse wurde erfolgreich aktiviert. Die Synchronisierung der SimpleLogin-Aliasse kann einige Zeit in Anspruch nehmen."
       ],
+      "Contact successfully blocked": [
+        "Kontakt erfolgreich gesperrt."
+      ],
+      "Contact successfully created": [
+        "Kontakt erfolgreich erstellt."
+      ],
+      "Contact successfully deleted": [
+        "Kontakt erfolgreich gelöscht."
+      ],
+      "Contact successfully unblocked": [
+        "Kontakt erfolgreich entsperrt."
+      ],
+      "Default domain successfully updated": [
+        "Standard-Domain erfolgreich aktualisiert."
+      ],
       "Default mailbox successfully updated": [
         "Standard-Postfach aktualisiert"
       ],
       "Domain successfully deleted": [
         "Domain gelöscht"
       ],
+      "Mailbox successfully deleted": [
+        "Postfach erfolgreich gelöscht."
+      ],
       "Mailbox successfully verified": [
         "Postfach verifiziert"
+      ],
+      "Mailboxes successfully updated": [
+        "Postfächer erfolgreich aktualisiert."
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
@@ -3072,6 +3223,9 @@
       ],
       "Delete this item?": [
         "Diesen Eintrag löschen?"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Tresor \"${ vaultName }\" löschen?"
       ],
       "Discard changes?": [
         "Änderungen verwerfen?"
@@ -3212,6 +3366,9 @@
       "Secure your data": [
         "Schütze deine Daten"
       ],
+      "Select the default domain for aliases": [
+        "Standard-Domain für Aliasse auswählen"
+      ],
       "Set access level": [
         "Zugriffsstufe festlegen"
       ],
@@ -3286,6 +3443,9 @@
       ],
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"
+      ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Dein ${ planName }-Abonnement endet am ${ endDate }"
       ],
       "Your vault is empty": [
         "Dein Tresor ist leer."
@@ -3362,8 +3522,14 @@
       "Delete alias": [
         "Alias löschen"
       ],
+      "Domain cannot be empty": [
+        "Domain darf nicht leer sein"
+      ],
       "Duplicate email addresses.": [
         "Doppelte E-Mail-Adressen."
+      ],
+      "Email cannot be empty": [
+        "E-Mail darf nicht leer sein"
       ],
       "Empty note": [
         "Leere Notiz"
