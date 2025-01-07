@@ -11,7 +11,6 @@ import {
     useConfig,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
-import { useInboxDesktopMessageForward } from '@proton/components/hooks/useInboxDesktopMessageForward';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
 import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
@@ -48,7 +47,6 @@ const MainContainer: FunctionComponent = () => {
     const shouldAutoSetupWallet = useFlag('WalletAutoSetup');
     useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet });
 
-    useInboxDesktopMessageForward();
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();
 
