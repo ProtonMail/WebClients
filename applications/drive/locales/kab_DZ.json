@@ -666,6 +666,9 @@
       "Sign out": [
         "Ffeɣ"
       ],
+      "Sign out of all accounts": [
+        "Ffeɣ seg meṛṛa imiḍanen"
+      ],
       "Skip verification": [
         "Zgel asenqed"
       ],
@@ -2555,17 +2558,11 @@
       "Calendar": [
         "Awitay"
       ],
-      "Calendar time zone not supported": [
-        "Izḍi usrid n uwitay ur yettusefrak ara"
-      ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
       ],
       "Custom time zone": [
         "Iẓdi n wakud yugnen"
-      ],
-      "Edited event not supported": [
-        "Aẓrag n tedyant ur yettusefrak ara"
       ],
       "Element": [
         "Aferdis"
@@ -2573,17 +2570,8 @@
       "Encryption failed": [
         "Awgelhen ur yeddi ara"
       ],
-      "End time out of bounds": [
-        "Akud n taggara akkin i tlisa"
-      ],
       "Event": [
         "Amaynut"
-      ],
-      "Event validation failed": [
-        "Asentem n tedyant yecceḍ"
-      ],
-      "Floating times not supported": [
-        "Akuden i d-yuflawen ur ttusefraken ara"
       ],
       "Free-busy time information": [
         "Talɣut ɣef tilin"
@@ -2594,26 +2582,11 @@
       "Journal entry": [
         "Anekcum ɣer uɣmis"
       ],
-      "Malformed all-day event": [
-        "Tadyant i wass meṛṛa texṣer"
-      ],
-      "Malformed end time": [
-        "Akud n taggara ur yemsil ara akken ilaq"
-      ],
-      "Malformed recurring event": [
-        "Yir talɣa n tedyant d-ittuɣalen"
-      ],
-      "Malformed start time": [
-        "Akud n beddu ur yemsil ara akken ilaq"
-      ],
       "Missing start time": [
         "Akud n beddu yexxuṣ"
       ],
       "No UID, title or start time": [
         "Ulac UID, azwel neɣ akud n beddu"
-      ],
-      "Non-Gregorian": [
-        "Mačči d agriguryan"
       ],
       "Notification out of bounds": [
         "Alɣu akkin i tlisa"
@@ -2621,17 +2594,8 @@
       "Original recurring event could not be found": [
         "Tadyant tameẓlut i d-yettuɣalen ulac-itt"
       ],
-      "Recurring rule not supported": [
-        "Alugen i d-yettuɣalen ur yettusefrak ara"
-      ],
-      "Start time out of bounds": [
-        "Akud n beddu akkin i tlisa"
-      ],
       "Time zone": [
         "Izḍi usrig"
-      ],
-      "Time zone not supported": [
-        "Izḍi usrid ur yettusefrak ara"
       ],
       "To-do entry": [
         "Anekcum n twuriwin"
@@ -2689,9 +2653,6 @@
       ],
       "Invalid response": [
         "Tiririt tarameɣtut"
-      ],
-      "Unexpected error": [
-        "Tuccḍa u nettwarǧa ara"
       ],
       "Unsupported invitation": [
         "Tinubga ur tttwasefrak ara"
@@ -3663,6 +3624,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Alugu n Mastercard SecureCode"
+      ],
+      "Member": [
+        "Aεeggal"
       ],
       "Merged": [
         "Ttusmezdin"
@@ -6172,6 +6136,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "D tidet tebɣiḍ ad tmedleḍ taskant?"
+      ],
+      "Are you sure?": [
+        "Tetḥeqqeḍ?"
       ],
       "Billing cycle": [
         "Twala n ufter"

@@ -45,6 +45,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add account": [
+        "Tilføj konto"
+      ],
       "Add address": [
         "Tilføj adresse"
       ],
@@ -362,6 +365,9 @@
       ],
       "Get ${ DRIVE_APP_NAME }": [
         "Få ${ DRIVE_APP_NAME }"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -749,6 +755,9 @@
       ],
       "Sign out": [
         "Log ud"
+      ],
+      "Sign out of all accounts": [
+        "Log ud alle konti"
       ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
@@ -2380,6 +2389,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
+      "Also included": [
+        "Også inkluderet"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
       ],
@@ -3193,17 +3205,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Kalendertidszone understøttes ikke"
-      ],
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
       "Custom time zone": [
         "Brugerdefineret tidszone"
-      ],
-      "Edited event not supported": [
-        "Redigeret begivenhed understøttes ikke"
       ],
       "Element": [
         "Element"
@@ -3211,17 +3217,8 @@
       "Encryption failed": [
         "Kryptering mislykkedes"
       ],
-      "End time out of bounds": [
-        "Sluttid uden for grænserne"
-      ],
       "Event": [
         "Begivenhed"
-      ],
-      "Event validation failed": [
-        "Validering af begivenhed mislykkedes"
-      ],
-      "Floating times not supported": [
-        "Flydende tider understøttes ikke"
       ],
       "Free-busy time information": [
         "Fri-optaget tidsinformation"
@@ -3232,26 +3229,11 @@
       "Journal entry": [
         "Journalindlæg"
       ],
-      "Malformed all-day event": [
-        "Misdannet heldagsbegivenhed"
-      ],
-      "Malformed end time": [
-        "Misdannet sluttidspunkt"
-      ],
-      "Malformed recurring event": [
-        "Misdannet tilbagevendende begivenhed"
-      ],
-      "Malformed start time": [
-        "Misdannet starttid"
-      ],
       "Missing start time": [
         "Manglende starttidspunkt"
       ],
       "No UID, title or start time": [
         "Ingen UID, titel eller starttid"
-      ],
-      "Non-Gregorian": [
-        "Ikke-gregoriansk"
       ],
       "Notification out of bounds": [
         "Notifikation uden for grænserne"
@@ -3259,20 +3241,8 @@
       "Original recurring event could not be found": [
         "Oprindelig tilbagevendende begivenhed kunne ikke findes"
       ],
-      "Recurring event has no occurrences": [
-        "Tilbagevendende begivenhed har ingen forekomster"
-      ],
-      "Recurring rule not supported": [
-        "Tilbagevendende regel understøttes ikke"
-      ],
-      "Start time out of bounds": [
-        "Starttid uden for grænserne"
-      ],
       "Time zone": [
         "Tidszone"
-      ],
-      "Time zone not supported": [
-        "Tidszone understøttes ikke"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -3351,9 +3321,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Begivenheden kunne ikke opdateres i din kalender. Der blev ikke sendt noget svar"
-      ],
-      "Unexpected error": [
-        "Uventet fejl"
       ],
       "Unsupported invitation": [
         "Ikke-understøttet invitation"
@@ -3816,7 +3783,7 @@
         "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+        "Udvid dropdownmenuen ved at trykke på de 3 prikker (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Generer ${ boldAppPassword }, og brug den i stedet for din almindelige adgangskode, når du bliver bedt om det af ${ BRAND_NAME }."
@@ -3888,7 +3855,7 @@
         "Gå til ${ calendarViewLink } i Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen."
+        "Hold musen over den kalender, du vil importere, og åbn dropdownmenuen."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
@@ -4687,6 +4654,9 @@
       "Medium Priority": [
         "Mellem prioritet"
       ],
+      "Member": [
+        "Medlem"
+      ],
       "Merged": [
         "Flettet"
       ],
@@ -5005,6 +4975,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
+      "Setting up your new address...": [
+        "Konfigurerer din nye adresse..."
+      ],
       "Share files with links": [
         "Del filer med links"
       ],
@@ -5164,6 +5137,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Dette vil erstatte den eksisterende mappe med filen"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
       "This will upload a new version of the file": [
         "Dette vil uploade en ny version af filen"
@@ -9664,6 +9640,9 @@
         "Er du sikker på, at du vil fjerne dette element fra din liste?",
         "Er du sikker på, at du vil fjerne disse elementer fra din liste?"
       ],
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
       "Billing cycle": [
         "Faktureringscyklus"
       ],
@@ -9981,7 +9960,7 @@
         "Én e-mail, mange modtagere"
       ],
       "Open actions dropdown": [
-        "Åbn handlingsrullemenu"
+        "Åbn handlings-dropdownmenuen"
       ],
       "Original size": [
         "Original størrelse"
@@ -10169,6 +10148,9 @@
       "Unlock contacts groups": [
         "Få adgang til kontaktgrupper"
       ],
+      "Upgrade complete!": [
+        "Opgradering udført!"
+      ],
       "Uploaded": [
         "Uploadet"
       ],
@@ -10231,6 +10213,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Your shorter address is now ready": [
+        "Din kortere adresse er nu klar"
       ],
       "Your welcome actions": [
         "Dine velkomsthandlinger"

@@ -45,6 +45,9 @@
       "Add": [
         "Dodaj"
       ],
+      "Add account": [
+        "Dodaj račun"
+      ],
       "Add address": [
         "Dodaj naslov"
       ],
@@ -752,6 +755,9 @@
       ],
       "Sign out": [
         "Odjava"
+      ],
+      "Sign out of all accounts": [
+        "Odjavite se iz vseh računov"
       ],
       "Skip verification": [
         "Preskoči preverjanje"
@@ -3113,17 +3119,11 @@
       "Calendar": [
         "Kolendar"
       ],
-      "Calendar time zone not supported": [
-        "Časovni pas koledarja ni podprt"
-      ],
       "Component with wrong format": [
         "Komponenta z napačno obliko."
       ],
       "Custom time zone": [
         "Časovni pas po meri"
-      ],
-      "Edited event not supported": [
-        "Urejen dogodek ni podprt."
       ],
       "Element": [
         "Predmet"
@@ -3131,17 +3131,8 @@
       "Encryption failed": [
         "Šifriranje ni uspelo"
       ],
-      "End time out of bounds": [
-        "Konec časa presega dovoljene meje."
-      ],
       "Event": [
         "Dogodek"
-      ],
-      "Event validation failed": [
-        "Preverjanje dogodka ni uspelo."
-      ],
-      "Floating times not supported": [
-        "Plavajoči časi niso podprti."
       ],
       "Free-busy time information": [
         "Informacija o prostem/zasedenem času"
@@ -3152,26 +3143,11 @@
       "Journal entry": [
         "Dnevniški vnos"
       ],
-      "Malformed all-day event": [
-        "Napaka pri oblikovanju celodnevnega dogodka"
-      ],
-      "Malformed end time": [
-        "Nepravilni končni čas."
-      ],
-      "Malformed recurring event": [
-        "Nepravilno oblikovan ponavljajoči se dogodek."
-      ],
-      "Malformed start time": [
-        "Nepravilni začetni čas"
-      ],
       "Missing start time": [
         "Manjka začetni čas"
       ],
       "No UID, title or start time": [
         "Ni UID, naslova ali začetnega časa."
-      ],
-      "Non-Gregorian": [
-        "Negregorijanski"
       ],
       "Notification out of bounds": [
         "Obvestilo je izven meja."
@@ -3179,20 +3155,8 @@
       "Original recurring event could not be found": [
         "Prvotni ponavljajoči se dogodek ni bil najden."
       ],
-      "Recurring event has no occurrences": [
-        "Ponavljajoči se dogodek nima ponovitev."
-      ],
-      "Recurring rule not supported": [
-        "Ponavljajoče se pravilo ni podprto."
-      ],
-      "Start time out of bounds": [
-        "Začetni čas je izven dovoljenih meja."
-      ],
       "Time zone": [
         "Časovni pas"
-      ],
-      "Time zone not supported": [
-        "Časovni pas ni podprt"
       ],
       "To-do entry": [
         "Vnos opravila"
@@ -3271,9 +3235,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Dogodka ni bilo mogoče posodobiti v vašem koledarju. Odgovor ni bil poslan"
-      ],
-      "Unexpected error": [
-        "Nepričakovana napaka"
       ],
       "Unsupported invitation": [
         "Nepodprto povabilo"
@@ -4648,6 +4609,9 @@
       "Medium Priority": [
         "Srednja pomembnost"
       ],
+      "Member": [
+        "Član"
+      ],
       "Merged": [
         "Združeno"
       ],
@@ -5088,6 +5052,9 @@
       ],
       "This will replace the existing folder with the file": [
         "To bo zamenjalo obstoječo mapo z datoteko"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "S tem se boste odjavili iz vseh računov, v katere ste trenutno prijavljeni."
       ],
       "This will upload a new version of the file": [
         "To bo naložilo novo različico datoteke"
@@ -9323,6 +9290,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Ali ste prepričani, da želite zapreti predogled?"
+      ],
+      "Are you sure?": [
+        "Ali ste prepričani?"
       ],
       "Billing cycle": [
         "Cikel obračunavanja"
