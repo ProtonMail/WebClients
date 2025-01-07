@@ -42,6 +42,9 @@
       "Add": [
         "დამატება"
       ],
+      "Add account": [
+        "ანგარიშის დამატება"
+      ],
       "Add address": [
         "მისამართის დამატება"
       ],
@@ -1173,6 +1176,9 @@
       ],
       "Sign out": [
         "გასვლა"
+      ],
+      "Sign out of all accounts": [
+        "ყველა ანგარიშიდან გამოსვლა"
       ],
       "Size": [
         "ზომა"
@@ -4620,17 +4626,11 @@
       "Calendar": [
         "კალენდარი"
       ],
-      "Calendar time zone not supported": [
-        "კალენდრის დროის სარტყელი მხარდაუჭერელია"
-      ],
       "Component with wrong format": [
         "კომპონენტი არასწორი ფორმატით"
       ],
       "Custom time zone": [
         "მორგებული დროის ზონა"
-      ],
-      "Edited event not supported": [
-        "ელფოსტის ნაგულისხმები აპლიკაცია"
       ],
       "Element": [
         "ელემენტი"
@@ -4638,17 +4638,8 @@
       "Encryption failed": [
         "დაშიფრვის შეცდომა"
       ],
-      "End time out of bounds": [
-        "დასრულების დრო საზღვრებს მიღმაა"
-      ],
       "Event": [
         "მოვლენა"
-      ],
-      "Event validation failed": [
-        "მოვლენის შემოწმების შეცდომა"
-      ],
-      "Floating times not supported": [
-        "მცოცავი გრაფიკი მხარდაჭერილი არაა"
       ],
       "Free-busy time information": [
         "თავისუფალ-დაკავებულობის დროის ინფორმაცია"
@@ -4659,26 +4650,11 @@
       "Journal entry": [
         "ჟურნალის ჩანაწერი"
       ],
-      "Malformed all-day event": [
-        "არასწორი მთელ-დღიანი მოვლენა"
-      ],
-      "Malformed end time": [
-        "არასწორი დასასრულის დრო"
-      ],
-      "Malformed recurring event": [
-        "არასწორი გამეორებადი მოვლენა"
-      ],
-      "Malformed start time": [
-        "არასწორი საწყისი დრო"
-      ],
       "Missing start time": [
         "აკლია საწყისი დრო"
       ],
       "No UID, title or start time": [
         "UID-ის, სათაურის ან დაწყების დროის გარეშე"
-      ],
-      "Non-Gregorian": [
-        "არაგრეგორიანული"
       ],
       "Notification out of bounds": [
         "გაფრთხილება საზღვრებს მიღმაა"
@@ -4686,20 +4662,8 @@
       "Original recurring event could not be found": [
         "საწყისი გამეორებადი მოვლენის მოვლა შეუძლებელია"
       ],
-      "Recurring event has no occurrences": [
-        "განმეორებადი მოვლენა ჯერ არ მომხდარა"
-      ],
-      "Recurring rule not supported": [
-        "გამეორების წესი მხარდაუჭერელია"
-      ],
-      "Start time out of bounds": [
-        "საწყისი დრო საზღვრებს მიღმაა"
-      ],
       "Time zone": [
         "დროის სარტყელი"
-      ],
-      "Time zone not supported": [
-        "მხარდაუჭერელი დროის სარტყელი"
       ],
       "To-do entry": [
         "გეგმის ელემენტი"
@@ -4785,9 +4749,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "თქვენს კალენდარში მოვლენის განახლება შეუძლებელია. პასუხი გაგზავნილი არაა"
-      ],
-      "Unexpected error": [
-        "გაუთვალისწინებელი შეცდომა"
       ],
       "Unsupported invitation": [
         "გაუგებარი მოსაწვევი"
@@ -6619,6 +6580,9 @@
       "Medium Priority": [
         "საშუალო პრიორიტეტი"
       ],
+      "Member": [
+        "წევრი"
+      ],
       "Members": [
         "წევრები"
       ],
@@ -7224,6 +7188,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "გამოგზავნის საჯარო გასაღები ჯერ სანდო არაა."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
       ],
       "to ${ destinationElement } folder.": [
         "საქაღალდეში ${ destinationElement }."
@@ -9894,6 +9861,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "შესაძლებლობა დაათვალიეროთ საჯარო საქაღალდეები შემოსული შეტყობინებებით და კონტაქტის დეტალებით"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "ორგანიზაციის მართვის ხელსაწყო, რომელიც საშუალებას აძლევს ადმინისტრატორებს დაამატონ და წაშალონ მომხმარებლები, მართონ მათი წვდომა ${ BRAND_NAME }-ის სერვისებზე და სხვა."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "ჩვენი ძლიერი ინფრასტრუქტურა უზრუნველყოფს, რომ თქვენ შეძლებთ თქვენს ანგარიშზე წვდომას, როცა ეს დაგჭირდებათ"
@@ -12581,6 +12551,9 @@
       ],
       "Are you sure you want to close?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ?"
+      ],
+      "Are you sure?": [
+        "დარწმუნებული ბრძანდებით?"
       ],
       "Attachments": [
         "მიმაგრებები"
