@@ -4,3 +4,16 @@
 	fill: white;
 	text-align: center;
 }
+
+// small fix for text inside inlined SVG for Calendar drawer button, when text-zooming
+.drawer-sidebar-button:has(.drawer-icons__calendar__day) {
+	container-name: textcalendarbutton;
+	container-type: inline-size;
+}
+
+// if button is bigger, then we adapt the font size
+@container textcalendarbutton (width > 54px) {
+	.drawer-icons__calendar__day {
+		font-size: 0.5em;
+	}
+}
