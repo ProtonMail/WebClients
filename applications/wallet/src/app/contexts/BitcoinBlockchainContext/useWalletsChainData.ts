@@ -12,10 +12,12 @@ import usePrevious from '@proton/hooks/usePrevious';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { type SimpleMap } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet';
-import { useGetBitcoinNetwork } from '@proton/wallet/store';
+import { useWalletApiClients } from '@proton/wallet';
+import { useGetBitcoinNetwork, useWalletDispatch, walletAccountUpdate } from '@proton/wallet/store';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';
@@ -25,7 +27,7 @@ import type {
     WalletChainDataByWalletId,
 } from '../../types';
 import { removeMasterPrefix } from '../../utils';
-import { clearChangeSet } from '../../utils/cache';
+import { clearChangeSet, isFullSyncDone, setFullSyncDone } from '../../utils/cache';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number; error: string | null };
 
@@ -42,6 +44,7 @@ interface WalletSubsetData {
         ScriptType: number;
         DerivationPath: string;
         PoolSize: number;
+        LastUsedIndex: number;
     }[];
     ID: string;
     Mnemonic: string | null;
@@ -53,11 +56,12 @@ export const formatToSubset = (apiWalletsData?: IWasmApiWalletData[]): WalletSub
     apiWalletsData?.map(({ Wallet, WalletAccounts, IsNotDecryptable }) => ({
         ...pick(Wallet, ['ID', 'Mnemonic', 'Passphrase', 'HasPassphrase']),
         IsNotDecryptable,
-        WalletAccounts: WalletAccounts.map(({ ID, ScriptType, DerivationPath, PoolSize }) => ({
+        WalletAccounts: WalletAccounts.map(({ ID, ScriptType, DerivationPath, PoolSize, LastUsedIndex }) => ({
             ID,
             ScriptType,
             DerivationPath,
             PoolSize,
+            LastUsedIndex,
         })),
     }));
 
@@ -89,6 +93,7 @@ export const getWalletsChainDataInit = async ({
                     scriptType: account.ScriptType,
                     derivationPath: account.DerivationPath,
                     poolSize: account.PoolSize,
+                    lastUsedIndex: account.LastUsedIndex,
                 },
             };
         }, {});
@@ -110,6 +115,12 @@ export const getWalletsChainDataInit = async ({
  */
 export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     const blockchainClient = useBlockchainClient();
+
+    const api = useWalletApiClients();
+
+    const dispatch = useWalletDispatch();
+
+    const isWalletFullSync = useFlag('WalletFullSync');
 
     const pollingIdRef = useRef<string>();
 
@@ -148,6 +159,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                                 scriptType: account.ScriptType,
                                 derivationPath: account.DerivationPath,
                                 poolSize: account.PoolSize,
+                                lastUsedIndex: account.LastUsedIndex,
                             },
                         };
                     } catch (e: any) {
@@ -238,20 +250,37 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                         )));
 
             const account = walletsChainDataRef.current?.[walletId]?.accounts[accountId];
+            const derivationPath = walletsChainDataRef.current?.[walletId]?.accounts[accountId]?.derivationPath ?? '';
+            const fingerprint = walletsChainDataRef.current?.[walletId]?.wallet.getFingerprint() ?? '';
 
             if (account && canSync) {
                 try {
+                    let fullSyncDone = isFullSyncDone(fingerprint, derivationPath);
+
                     const wasmAccount = account.account;
 
                     addNewSyncing(walletId, accountId);
 
                     // If syncing is manual, we do a full sync
-                    if ((await wasmAccount.hasSyncData()) && !manual) {
+                    if (isWalletFullSync && !fullSyncDone) {
+                        await blockchainClient.fullSync(wasmAccount, 500);
+                        await blockchainClient.partialSync(wasmAccount);
+                        setFullSyncDone(fingerprint, derivationPath);
+                        // after full sync, double-check the LastUsedIndex
+                        // lookup LU:20 we should load 0 ... 20 and peek will get 21.
+                        await wasmAccount.markReceiveAddressesUsedTo(0, account.lastUsedIndex);
+                        await wasmAccount.markReceiveAddressesUsedTo(account.lastUsedIndex);
+                    } else if ((await wasmAccount.hasSyncData()) && !manual) {
                         await blockchainClient.partialSync(wasmAccount);
                     } else {
-                        await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + account.poolSize);
+                        // before full sync, we check the stop gap
+                        const stopGap = getDefaultStopGap() + account.poolSize;
+                        await blockchainClient.fullSync(wasmAccount, stopGap);
                         await blockchainClient.partialSync(wasmAccount);
                     }
+
+                    // Compare LastUsedIndex and getHighestUsedAddressIndexInOutput, and update LastUsedIndex
+                    await compareIndexAndMarkUsedTo(walletId, accountId, wasmAccount, account.lastUsedIndex);
 
                     incrementSyncKey(walletId, accountId);
                 } catch (error: any) {
@@ -265,6 +294,34 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         },
         [addNewSyncing, removeSyncing, incrementSyncKey, syncingFailed, syncingMetatadaByAccountIdRef, blockchainClient]
     );
+
+    /**
+     * Compare LastUsedIndex from the account object with the result of wasmAccount.getHighestUsedAddressIndexInOutput().
+     */
+    async function compareIndexAndMarkUsedTo(
+        walletId: string,
+        accountId: string,
+        wasmAccount: any,
+        lastUsedIndex: number
+    ) {
+        const addressIndexInOutput = await wasmAccount.getHighestUsedAddressIndexInOutput();
+
+        // Compare LastUsedIndex and addressIndexInOutput and handle accordingly
+        if (addressIndexInOutput >= lastUsedIndex) {
+            await wasmAccount.markReceiveAddressesUsedTo(0, addressIndexInOutput);
+            const receiveBitcoinAddress = await wasmAccount.getNextReceiveAddress();
+
+            await api.wallet.updateWalletAccountLastUsedIndex(walletId, accountId, receiveBitcoinAddress.index);
+
+            dispatch(
+                walletAccountUpdate({
+                    walletID: walletId,
+                    walletAccountID: accountId,
+                    update: { LastUsedIndex: receiveBitcoinAddress.index },
+                })
+            );
+        }
+    }
 
     const syncSingleWallet = useCallback(
         async ({ walletId, manual }: { walletId: string; manual?: boolean }) => {
