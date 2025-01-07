@@ -1,3 +1,9 @@
+import { useState } from 'react';
+
+import generateUID from '@proton/utils/generateUID';
+
+import LogoBase from '../../logo/LogoBase';
+
 import './DrawerIcons.scss';
 
 interface Props {
@@ -5,17 +11,10 @@ interface Props {
 }
 
 const CalendarDrawerLogo = ({ monthDay }: Props) => {
+    const [uid] = useState(generateUID('cal-logo'));
+
     return (
-        <svg
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            focusable="false"
-            aria-hidden="true"
-            role="img"
-        >
+        <LogoBase logoWidth={28} logoHeight={28} variant="with-wordmark" uid={uid} focusable="false" aria-hidden="true">
             <path d="M10 11H20V18.5C20 19.8807 18.8807 21 17.5 21H10V11Z" fill="white"></path>
             <path
                 fillRule="evenodd"
@@ -76,7 +75,7 @@ const CalendarDrawerLogo = ({ monthDay }: Props) => {
                     <stop offset="0.774813" stopColor="#6D4AFF" />
                 </linearGradient>
             </defs>
-        </svg>
+        </LogoBase>
     );
 };
 
