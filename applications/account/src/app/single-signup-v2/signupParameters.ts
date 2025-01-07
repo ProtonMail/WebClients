@@ -53,6 +53,7 @@ export const getSignupParameters = ({
                 type: 'pass',
                 data: { inviter, invitee, preVerifiedAddressToken },
             };
+            result.noPromo = true;
         }
 
         if (slEmail) {
@@ -62,6 +63,7 @@ export const getSignupParameters = ({
                 type: 'pass',
                 data: { invitee: emailUnspecified ? '' : slEmail },
             };
+            result.noPromo = true;
         }
     }
 
@@ -81,6 +83,7 @@ export const getSignupParameters = ({
             data: { invitee: email, externalInvitationID, preVerifiedAddressToken },
         };
         result.preSelectedPlan = PLANS.FREE;
+        result.noPromo = true;
     }
 
     if (toApp === APPS.PROTONWALLET && email && preVerifiedAddressToken) {
@@ -91,6 +94,7 @@ export const getSignupParameters = ({
             data: { invitee: email, preVerifiedAddressToken },
         };
         result.preSelectedPlan = PLANS.FREE;
+        result.noPromo = true;
     } else if (
         toApp === APPS.PROTONWALLET &&
         // If it's not visionary or wallet, force free selection
@@ -105,6 +109,7 @@ export const getSignupParameters = ({
         localID = -1;
         result.cycle = CYCLE.MONTHLY;
         result.hideFreePlan = false;
+        result.noPromo = true;
 
         invite = {
             type: 'mail',
@@ -119,6 +124,7 @@ export const getSignupParameters = ({
         mode = SignupMode.Default;
         localID = -1;
         result.hideFreePlan = false;
+        result.noPromo = true;
         invite = {
             type: 'generic',
             data: {
