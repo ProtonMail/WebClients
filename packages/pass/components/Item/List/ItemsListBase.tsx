@@ -1,4 +1,5 @@
 import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
+import { useStore } from 'react-redux';
 import type { List } from 'react-virtualized';
 
 import { Scroll } from '@proton/atoms';
@@ -6,8 +7,10 @@ import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/B
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
+import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
+import { selectIsWritableShare } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import type { ItemFilters, ItemRevision, SelectedItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -23,7 +26,16 @@ type Props = {
     placeholder: ReactElement;
 };
 
+/** Block trashed or non-writable items from being dragged */
+const assertDraggable = (item: ItemRevision, state: State) => {
+    if (isTrashed(item)) return false;
+    const writable = selectIsWritableShare(item.shareId)(state);
+    if (!writable) return false;
+    return true;
+};
+
 export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
+    const store = useStore<State>();
     const listRef = useRef<List>(null);
     const bulk = useBulkSelection();
     const bulkEnabled = useBulkEnabled();
@@ -70,7 +82,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             item={item}
                                             key={id}
                                             search={filters.search}
-                                            draggable={draggable ?? false}
+                                            draggable={draggable && assertDraggable(item, store.getState())}
                                             onDragStart={handleDragStart}
                                             onDragEnd={handleDragEnd}
                                             onSelect={onSelect}
