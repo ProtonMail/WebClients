@@ -45,6 +45,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add account": [
+        "Añadir una cuenta"
+      ],
       "Add address": [
         "Añadir dirección"
       ],
@@ -599,6 +602,9 @@
       ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Sign out of all accounts": [
+        "Cerrar la sesión de todas las cuentas"
       ],
       "Sign up": [
         "Registrarse"
@@ -3013,17 +3019,11 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendar time zone not supported": [
-        "Zona horaria del calendario no admitida"
-      ],
       "Component with wrong format": [
         "Componente con formato incorrecto"
       ],
       "Custom time zone": [
         "Zona horaria personalizada"
-      ],
-      "Edited event not supported": [
-        "Evento editado no compatible"
       ],
       "Element": [
         "Elemento"
@@ -3031,17 +3031,8 @@
       "Encryption failed": [
         "Error en el cifrado"
       ],
-      "End time out of bounds": [
-        "Hora final fuera de límites"
-      ],
       "Event": [
         "Evento"
-      ],
-      "Event validation failed": [
-        "Error en la validación del evento"
-      ],
-      "Floating times not supported": [
-        "Tiempos flotantes no compatibles"
       ],
       "Free-busy time information": [
         "Información de disponibilidad por Internet"
@@ -3052,26 +3043,11 @@
       "Journal entry": [
         "Entrada de diario"
       ],
-      "Malformed all-day event": [
-        "Evento de todo el día malformado"
-      ],
-      "Malformed end time": [
-        "Hora final malformada"
-      ],
-      "Malformed recurring event": [
-        "Evento recurrente malformado"
-      ],
-      "Malformed start time": [
-        "Hora inicial malformada"
-      ],
       "Missing start time": [
         "Hora inicial faltante"
       ],
       "No UID, title or start time": [
         "Sin UID, título u hora inicial"
-      ],
-      "Non-Gregorian": [
-        "No gregoriano"
       ],
       "Notification out of bounds": [
         "Notificación fuera de límites"
@@ -3079,20 +3055,11 @@
       "Original recurring event could not be found": [
         "No se pudo encontrar el evento original recurrente"
       ],
-      "Recurring event has no occurrences": [
-        "El evento recurrente no contiene ocurrencias"
-      ],
-      "Recurring rule not supported": [
-        "Regla recurrente no compatible"
-      ],
-      "Start time out of bounds": [
-        "Hora inicial fuera de límites"
-      ],
       "Time zone": [
         "Zona horaria"
       ],
-      "Time zone not supported": [
-        "Zona horaria no admitida"
+      "Time zone component ignored": [
+        "Se ha ignorado el componente de zona horaria."
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -3143,6 +3110,11 @@
         "Ninguna imagen seleccionada"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Ocurrió un error un error inesperado."
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "No se pudo descifrar el archivo ICS adjunto"
@@ -3161,9 +3133,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "No se pudo actualizar el evento en el calendario. No se envió ninguna respuesta"
-      ],
-      "Unexpected error": [
-        "Error inesperado"
       ],
       "Unsupported invitation": [
         "Invitación no soportada"
@@ -3455,6 +3424,50 @@
       ],
       "No verification method available": [
         "No hay un método de verificación disponible"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "La zona horaria del calendario no está admitida."
+      ],
+      "Edited event not supported": [
+        "El evento editado no está admitido."
+      ],
+      "End time out of bounds": [
+        "La hora final está fuera de los límites."
+      ],
+      "Event validation failed": [
+        "Error al validar el evento"
+      ],
+      "Floating times not supported": [
+        "Los tiempos flotantes no están admitidos."
+      ],
+      "Malformed all-day event": [
+        "El formato del evento para todo el día no es válido."
+      ],
+      "Malformed end time": [
+        "El formato de la hora final no es válido."
+      ],
+      "Malformed recurring event": [
+        "El formato del evento recurrente no es válido."
+      ],
+      "Malformed start time": [
+        "El formato de la hora inicial no es válido."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Sólo se permite la escala del calendario gregoriano."
+      ],
+      "Recurring event has no occurrences": [
+        "El evento recurrente no tiene ocurrencias."
+      ],
+      "Recurring rule not supported": [
+        "La regla recurrente no está admitida."
+      ],
+      "Start time out of bounds": [
+        "La hora inicial está fuera de los límites."
+      ],
+      "Time zone not supported": [
+        "La zona horaria no está admitida."
       ]
     },
     "Import calendar": {
@@ -4336,6 +4349,9 @@
       "Medium Priority": [
         "Prioridad media"
       ],
+      "Member": [
+        "Miembro"
+      ],
       "Merged": [
         "Fusionado"
       ],
@@ -4687,6 +4703,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Esto reemplazará la carpeta existente con el archivo"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esto cerrará la sesión de todas las cuentas con la sesión activa."
       ],
       "This will upload a new version of the file": [
         "Esto cargará una nueva versión del archivo"
@@ -8589,6 +8608,9 @@
       ],
       "Apply gift code": [
         "Aplicar código de regalo"
+      ],
+      "Are you sure?": [
+        "¿Está seguro?"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
