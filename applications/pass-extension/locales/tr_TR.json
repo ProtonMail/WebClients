@@ -715,17 +715,11 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Bir alt etki alanı kullanıyorsanız, örneğin alt-etki-alani.etki-alani.com, etki alanı olarak ${ domainKeyExampleSubdomain } kullanmanız gerekir. Yani, etki alanınız mail.etki-alani.com ise etki alanı olarak ${ domainKeyExampleMail } yazmalısınız."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "CloudFlare kullanıyorsanız vekil sunucu seçeneğini seçmediğinizden emin olun."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "${ PASS_SHORT_APP_NAME } içinde belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme) yapılmayacağı etki alanlarının listesi.${ infoText }"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Bazı DNS kayıt kuruluşları için tam kayıt yolu gerekebilir. Bu durumda lütfen etki alanı değeri olarak ${ domain } kullanın."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Bazı etki alanı kayıt kuruluşları (Namecheap, CloudFlare, vb.) kök etki alanı için @ işaretini de kullanabilir."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF }, e-posta teslimi sırasında sahte gönderici adreslerini bulmak için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için SPF kullanılması şiddetle önerilir."
@@ -735,9 +729,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Etki alanının sahipliğini doğrulamak için lütfen aşağıdaki TXT kaydını ekleyin. Bazı etki alanı kayıt kuruluşları (Namecheap, CloudFlare, vb.) kök etki alanı için @ kullanabilir."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlük kayıtlarına erişin."
@@ -1144,6 +1135,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Tarayıcınız ${ PASS_APP_NAME } uygulamasını etkinleştirmekte sorun yaşıyor."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "DNS ayarlarınız doğru yapılmamış. Bulduğumuz MX kaydı:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "DNS ayarlarınız doğru yapılmamış. Bulduğumuz TXT kaydı:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
       ]
@@ -1305,6 +1302,9 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } gün kaldı",
         "${ trialDaysLeft } gün kaldı"
+      ],
+      "(Empty)": [
+        "(Boş)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
@@ -2055,6 +2055,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Bu ayar kuruluş düzeyinde kapatılmış"
+      ],
+      "This setting is enforced by your organization": [
+        "Bu ayar kuruluşunuz tarafından zorunlu kılınmış"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."

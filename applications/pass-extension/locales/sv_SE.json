@@ -715,17 +715,11 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Om du använder en underdomän, t.ex. underdomän.domän.se, så behöver du använda ${ domainKeyExampleSubdomain } som domän istället. Det betyder att om din domän är epost.domän.se så behöver du ange ${ domainKeyExampleMail } som domän."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Om du använder Cloudflare, se till att inte välja proxyalternativet."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte ska köras.${ infoText }"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Vissa DNS-återförsäljare kan kräva en fullständig postsökväg, i detta fall använd ${ domain } som domänvärde istället."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Vissa domänåterförsäljare (Namecheap, Cloudflare, etc) kan även använda @ för rotdomänen."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } är en autentiseringsmetod för e-post designat för att upptäcka förfalskade sändaradresser under leveransen av e-postmeddelandet. Konfiguration av SPF rekommenderas starkt för att minska risken för att dina e-postmeddelanden hamnar i mottagarens skräppostmapp."
@@ -735,9 +729,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "För att verifiera ägarskap av domänen lägg till följande TXT-post. Vissa domänåterförsäljare (Namecheap, Cloudflare, etc) kan använda @ för rotdomänen."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
@@ -1144,6 +1135,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Din webbläsare har problem att aktivera ${ PASS_APP_NAME }"
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Din DNS är inte konfigurerad korrekt. MX-posten vi tog emot är:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Din DNS är inte konfigurerad korrekt. TXT-posten vi tog emot är:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
       ]
@@ -1305,6 +1302,9 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
+      ],
+      "(Empty)": [
+        "(Tom)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagar att prova premiumfunktioner gratis. Endast under din första vecka med ${ BRAND_NAME }."

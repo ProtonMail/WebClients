@@ -443,9 +443,6 @@
       "Submitting report...": [
         "正在送出報告..."
       ],
-      "Sync alias": [
-        "同步別名"
-      ],
       "Transfer ownership": [
         "轉移所有權"
       ],
@@ -454,9 +451,6 @@
       ],
       "Try again": [
         "再試一次"
-      ],
-      "Understood, I will never need it": [
-        "了解，我將不再需要這些項目"
       ],
       "Unlock": [
         "解鎖"
@@ -555,9 +549,6 @@
       "Cannot create alias (${ error }).": [
         "無法創建別名 (${ error })。"
       ],
-      "Cannot send invitation at the moment": [
-        "目前無法發送邀請"
-      ],
       "Cannot send invitations at the moment": [
         "目前無法發送邀請"
       ],
@@ -593,9 +584,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "刪除保管庫${ payload.content.name }失敗"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "刪除${ errors.length }錯誤的CSV項目"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -820,9 +808,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "位元組"
-      ],
       "GB": [
         "GB"
       ],
@@ -834,23 +819,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "位元組"
-      ],
-      "Gigabyte": [
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "千位元組"
-      ],
-      "Megabyte": [
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabytes"
       ]
     },
     "Font face option": {
@@ -885,15 +853,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
       ],
-      "${ count } time": [
-        "${ count }次數"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } 位成員"
-      ],
-      "${ n } item": [
-        "${ n } 項目"
-      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "當自動填入生成的密碼時，${ PASS_APP_NAME } 將進行提示"
       ],
@@ -917,9 +876,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } 成功啟用"
-      ],
-      "${ trialDaysLeft } day left": [
-        "剩下${ trialDaysLeft }天"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "為期 7 天完全免費體驗頂級質子版功能。${ BRAND_NAME } 授權後首週七天內皆可額外享用。"
@@ -1095,9 +1051,6 @@
       "Import the CSV file below.": [
         "於底下匯入CSV。"
       ],
-      "Imported ${ payload.total } item": [
-        "匯入${ payload.total }項目"
-      ],
       "Imported on ${ date }": [
         "匯入於${ date }"
       ],
@@ -1124,9 +1077,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已經登入 ${ PASS_APP_NAME }。若您嘗試使用其他帳號登入，請先從擴充套件登出。"
-      ],
-      "item": [
-        "項目"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "項目${ payload.item.data.metadata.name }以新增"
@@ -1329,9 +1279,6 @@
       "Thank you, the problem has been reported": [
         "感謝您舉報問題"
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "以下${ result.ignored.length }項目無法匯入:"
-      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
       ],
@@ -1398,9 +1345,6 @@
       "You are about to create:": [
         "您將要創建:"
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "你有 ${ aliasCount } 個別名存在於 SimpleLogin ，但未同步到 ${ PASS_APP_NAME } 。是否需要進行同步？"
-      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "已用鑿可供創建別名的數量。升級訂購授權即可釋放限制"
       ],
@@ -1430,21 +1374,6 @@
       ]
     },
     "Label": {
-      "${ config.options.length } character": [
-        "${ config.options.length }個字元"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount }個字"
-      ],
-      "${ days } day": [
-        "${ days }天"
-      ],
-      "${ hours } hour": [
-        "${ hours }小時"
-      ],
-      "${ minutes } minute": [
-        "${ minutes }分鐘"
-      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME }監控"
       ],
@@ -2022,11 +1951,6 @@
         "您的瀏覽器將停用內建的密碼管理器"
       ]
     },
-    "Message": {
-      "${ count } item": [
-        "${ count } 個項目"
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "歡迎來到 ${ appName }"
@@ -2139,11 +2063,6 @@
       ],
       "Write your note": [
         "新增備註"
-      ]
-    },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "保管庫不能包含超過 ${ vault.targetMaxMembers } 位使用者。"
       ]
     },
     "Title": {
@@ -2269,9 +2188,6 @@
       ],
       "Pinned (${ items.length })": [
         "地址 (${ items.length })"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "需注意別名一旦刪除，將無法恢復"
       ],
       "Reject device?": [
         "拒絕裝置？"
@@ -2412,14 +2328,14 @@
       "Invalid email addresses.": [
         "無效的電子郵件位址"
       ],
-      "Maximum length is ${ maxLength } character": [
-        "最長上限為${ maxLength }字元"
-      ],
       "Missing alias prefix": [
         "缺少別名前綴"
       ],
       "Missing alias suffix": [
         "缺少別名後綴"
+      ],
+      "Name is required": [
+        "名稱為必填"
       ],
       "No items": [
         "無項目"

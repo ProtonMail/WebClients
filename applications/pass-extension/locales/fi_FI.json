@@ -706,9 +706,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Jos käytät aliverkkotunnusta, esimerkiksi subdomain.domain.com, sinun on sen sijaan käytettävä verkkotunnuksena ${ domainKeyExampleSubdomain }. Tämä tarkoittaa, että jos verkkotunnuksesi on mail.domain.com, sinun on syötettävä verkkotunnukseksi ${ domainKeyExampleMail }."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Jos käytät CloudFlarea, varmista, ettet valitse Proxy-vaihtoehtoa."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Listaus verkkotunnuksista, joilla joitakin automaattisia ${ PASS_SHORT_APP_NAME }-toimintoja (automaattitäyttö, automaattiehdotus, automaattitallennus) ei suoriteta. ${ infoText }"
       ],
@@ -1123,6 +1120,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Selaimellasi on vaikeuksia ottaa ${ PASS_APP_NAME } käyttöön."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "DNS:ääsi ei ole asetettu oikein. Saamamme MX-tietue on:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "DNS:ääsi ei ole asetettu oikein. Saamamme TXT-tietue on:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
       ]
@@ -1284,6 +1287,9 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
         "${ trialDaysLeft } päivää jäljellä"
+      ],
+      "(Empty)": [
+        "(Tyhjä)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
@@ -2031,6 +2037,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Tämä asetus on poistettu käytöstä organisaatiotasolla"
+      ],
+      "This setting is enforced by your organization": [
+        "Tämä asetus on organisaatiosi pakottama"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Holvia ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."

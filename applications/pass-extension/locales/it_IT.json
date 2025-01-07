@@ -715,17 +715,11 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Se stai utilizzando un sottodominio, ad es. subdomain.domain.com, devi utilizzare ${ domainKeyExampleSubdomain } come dominio. Ciò significa che se il tuo dominio è mail.domain.com dovresti inserire ${ domainKeyExampleMail } come dominio."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Se stai utilizzando CloudFlare, assicurati di non selezionare l'opzione Proxy."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista di domini dove alcune funzioni automatiche di ${ PASS_SHORT_APP_NAME } (Compilazione automatica, Suggerimento automatico, Salvataggio automatico) non dovrebbero essere eseguite. ${ infoText }"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Alcuni registri DNS potrebbero richiedere un percorso completo del record, in questo caso utilizza ${ domain } come valore del dominio."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Alcuni registri di domini (Namecheap, CloudFlare, ecc.) potrebbero anche utilizzare @ per il dominio root."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } è un metodo di autenticazione email progettato per rilevare la falsificazione degli indirizzi del mittente durante la consegna dell'email. Si consiglia vivamente di impostare SPF per ridurre la possibilità che le email finiscano nella cartella Spam del destinatario."
@@ -735,9 +729,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Questo servizio offre 2FA. Abilitalo per una maggiore sicurezza dell'account."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Per verificare la proprietà del dominio, aggiungi il seguente record TXT. Alcuni registrar di domini (Namecheap, CloudFlare, ecc.) potrebbero utilizzare @ per il dominio root."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Sblocca funzionalità di sicurezza avanzate e log dettagliati per proteggere la tua presenza online."
@@ -1144,6 +1135,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Il tuo browser ha difficoltà ad attivare ${ PASS_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Il tuo DNS non è impostato correttamente. Il record MX che otteniamo è:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Il tuo DNS non è impostato correttamente. Il record TXT che otteniamo è:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
       ]
@@ -1305,6 +1302,9 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } giorno rimasto",
         "${ trialDaysLeft } giorni rimasti"
+      ],
+      "(Empty)": [
+        "(Vuoto)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 giorni per provare gratuitamente le funzionalità premium. Solamente durante la tua prima settimana su ${ BRAND_NAME }."
@@ -2055,6 +2055,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Questa impostazione è disabilitata a livello di organizzazione"
+      ],
+      "This setting is enforced by your organization": [
+        "Questa impostazione viene applicata dalla tua organizzazione"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Questa cassaforte non è attualmente condivisa con nessuno. Per condividerla con qualcuno, invita delle persone."
