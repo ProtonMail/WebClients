@@ -721,17 +721,11 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Якщо ви використовуєте субдомен, наприклад, subdomain.domain.com, вам потрібно використовувати ${ domainKeyExampleSubdomain } як домен. Це означає, що якщо ваш домен mail.domain.com, ви повинні ввести ${ domainKeyExampleMail } як домен."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Якщо ви використовуєте CloudFlare, переконайтеся, що ви не вибрали опцію Проксі."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Список доменів, для яких певні автоматичні функції ${ PASS_SHORT_APP_NAME } (Автозаповнення, Пропозиції, Автозбереження) не повинні виконуватися.${ infoText }"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Деякі реєстратори DNS можуть вимагати повний шлях до запису, у цьому випадку використовуйте ${ domain } як значення домену."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Деякі реєстратори доменів (Namecheap, CloudFlare тощо) також можуть використовувати @ для кореневого домену."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - це метод автентифікації електронної пошти, призначений для виявлення підроблених адрес відправників під час доставлення листа. Наполегливо рекомендуємо налаштувати SPF, щоб зменшити ймовірність потрапляння ваших електронних листів до теки Спам одержувача."
@@ -741,9 +735,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Цей сервіс пропонує 2ЕП. Увімкніть її для додаткової безпеки облікового запису."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Щоб перевірити право власності на домен, додайте наступний TXT-запис. Деякі реєстратори доменів (Namecheap, CloudFlare тощо) можуть використовувати @ для кореневого домену."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Розблокуйте розширені функції безпеки та докладні журнали, щоб захистити свою присутність в мережі."

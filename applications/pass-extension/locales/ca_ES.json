@@ -715,8 +715,8 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Si utilitzeu un subdomini, per exemple subdomini.domini.cat, heu d'utilitzar ${ domainKeyExampleSubdomain } com a domini. Això vol dir que si el vostre domini és correu.domini.cat, heu d'introduir ${ domainKeyExampleMail } com a domini."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Si utilitzeu CloudFlare, assegureu-vos de no seleccionar l'opció Proxy."
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Si utilitzeu Cloudflare, assegureu-vos de no seleccionar l'opció Proxy."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Llista de dominis on certes funcions automàtiques de ${ PASS_SHORT_APP_NAME } (emplenament, suggeriment i desament automàtics) no s'han d'executar.${ infoText }"
@@ -724,8 +724,8 @@
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Alguns registradors de DNS poden requerir una ruta de registre completa. En aquest cas, utilitzeu ${ domain } com a valor de domini."
       ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Alguns registradors de dominis (Namecheap, CloudFlare, etc.) també poden utilitzar @ per al domini arrel."
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Alguns registradors de dominis (Namecheap, Cloudflare, etc.) també poden utilitzar @ per al domini arrel."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } és un mètode d'autenticació de correu electrònic dissenyat per detectar adreces de remitents falsificades durant l'enviament del correu electrònic. Es recomana configurar SPF per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
@@ -736,8 +736,8 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
       ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Per verificar la propietat del domini, afegiu el registre TXT següent. Alguns registradors de dominis (Namecheap, CloudFlare, etc.) poden utilitzar @ per al domini arrel."
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Per verificar la propietat del domini, afegiu el registre TXT següent. Alguns registradors de dominis (Namecheap, Cloudflare, etc.) poden utilitzar @ per al domini arrel."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
