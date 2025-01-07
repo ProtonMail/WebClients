@@ -42,6 +42,9 @@
       "Add": [
         "Dodaj"
       ],
+      "Add account": [
+        "Dodaj konto"
+      ],
       "Add address": [
         "Dodaj adres"
       ],
@@ -1181,6 +1184,9 @@
       ],
       "Sign out": [
         "Wyloguj"
+      ],
+      "Sign out of all accounts": [
+        "Wyloguj się ze wszystkich kont"
       ],
       "Size": [
         "Rozmiar"
@@ -4694,17 +4700,11 @@
       "Calendar": [
         "Kalendarz"
       ],
-      "Calendar time zone not supported": [
-        "Strefa czasowa kalendarza nie jest obsługiwana"
-      ],
       "Component with wrong format": [
         "Komponent posiada niewłaściwy format"
       ],
       "Custom time zone": [
         "Niestandardowa strefa czasowa"
-      ],
-      "Edited event not supported": [
-        "Edytowane wydarzenie nie jest obsługiwane"
       ],
       "Element": [
         "Element"
@@ -4712,17 +4712,8 @@
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
       ],
-      "End time out of bounds": [
-        "Czas zakończenia jest poza zakresem"
-      ],
       "Event": [
         "Wydarzenie"
-      ],
-      "Event validation failed": [
-        "Weryfikacja wydarzenia nie powiodła się"
-      ],
-      "Floating times not supported": [
-        "Czas w formacie \"floating\" nie jest obsługiwany"
       ],
       "Free-busy time information": [
         "Kalendarz zawiera informację o stanie wolny / zajęty"
@@ -4733,26 +4724,11 @@
       "Journal entry": [
         "Wpis w formacie dziennika"
       ],
-      "Malformed all-day event": [
-        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
-      ],
-      "Malformed end time": [
-        "Czas zakończenia posiada nieprawidłowy format"
-      ],
-      "Malformed recurring event": [
-        "Wydarzenie cykliczne posiada nieprawidłowy format"
-      ],
-      "Malformed start time": [
-        "Czas rozpoczęcia posiada nieprawidłowy format"
-      ],
       "Missing start time": [
         "Brak czasu rozpoczęcia"
       ],
       "No UID, title or start time": [
         "Brak identyfikatora użytkownika, tytułu lub czasu rozpoczęcia"
-      ],
-      "Non-Gregorian": [
-        "Kalendarz jest w formacie innym niż gregoriański"
       ],
       "Notification out of bounds": [
         "Czas powiadomienia jest poza zakresem"
@@ -4760,20 +4736,8 @@
       "Original recurring event could not be found": [
         "Oryginalne wydarzenie cykliczne nie zostało znalezione"
       ],
-      "Recurring event has no occurrences": [
-        "Wydarzenie cykliczne nie posiada powtórzeń"
-      ],
-      "Recurring rule not supported": [
-        "Reguła powtórzeń nie jest obsługiwana"
-      ],
-      "Start time out of bounds": [
-        "Czas rozpoczęcia jest poza zakresem"
-      ],
       "Time zone": [
         "Strefa czasowa"
-      ],
-      "Time zone not supported": [
-        "Strefa czasowa nie jest obsługiwana"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -4859,9 +4823,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Wydarzenie nie może zostać zaktualizowane. Odpowiedź nie została wysłana"
-      ],
-      "Unexpected error": [
-        "Wystąpił nieoczekiwany błąd"
       ],
       "Unsupported invitation": [
         "Zaproszenie jest nieobsługiwane"
@@ -6848,6 +6809,9 @@
       "Medium Priority": [
         "Średni priorytet"
       ],
+      "Member": [
+        "Użytkownik"
+      ],
       "Members": [
         "Członkowie"
       ],
@@ -7465,6 +7429,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Ten klucz publiczny nadawcy nie został jeszcze dodany do zaufanych."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ta czynność spowoduje wylogowanie ze wszystkich kont."
       ],
       "to ${ destinationElement } folder.": [
         "do folderu ${ destinationElement }."
@@ -13101,6 +13068,9 @@
       ],
       "Are you sure you want to close?": [
         "Czy na pewno chcesz zamknąć edytor filtra?"
+      ],
+      "Are you sure?": [
+        "Czy na pewno?"
       ],
       "Attachments": [
         "Załączniki"
