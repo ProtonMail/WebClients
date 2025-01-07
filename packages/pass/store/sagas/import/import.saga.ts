@@ -15,9 +15,9 @@ import {
     startEventPolling,
     stopEventPolling,
     vaultCreationIntent,
-    vaultCreationSuccess,
 } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
+import { createVaultWorker } from '@proton/pass/store/sagas/vaults/vault-creation.saga';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -29,29 +29,25 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
 
-/**
- * When creating vaults from the import saga
- * we want to internally trigger any saga that
- * may result from vaultCreationSuccess (notably
- * the event-loop channel updates) : leverage
- * the withCallback vaultCreationIntent to await
- * the vault creation result
- */
+/** Creates a vault specifically for import purposes by directly invoking
+ * the vault creation worker saga. This bypasses the usual action dispatch
+ * flow and allows us to await the vault creation result synchronously
+ * within the import saga. Returns the generated shareId. */
 function* createVaultForImport(vaultName: string) {
     const date = new Date().toLocaleDateString();
-    let resolver: (shareId: Maybe<string>) => void;
-    const creationResult = new Promise<Maybe<string>>((res) => (resolver = res));
 
-    yield put(
-        vaultCreationIntent(
-            { content: { name: vaultName, description: c('Info').t`Imported on ${date}`, display: {} } },
-            (action) => resolver(vaultCreationSuccess.match(action) ? action.payload.share.shareId : undefined)
-        )
+    const shareId: Maybe<string> = yield call(
+        createVaultWorker,
+        vaultCreationIntent({
+            content: {
+                name: vaultName,
+                description: c('Info').t`Imported on ${date}`,
+                display: {},
+            },
+        })
     );
 
-    const shareId: Maybe<string> = yield creationResult;
     if (shareId === undefined) throw new Error(c('Warning').t`Could not create vault "${vaultName}"`);
-
     return shareId;
 }
 
@@ -95,7 +91,7 @@ function* importWorker(
                         totalItems += revisions.length;
                         yield put(importItemsProgress(meta.request.id, totalItems, { shareId, items }));
                     } catch (e) {
-                        const description = e instanceof Error ? getApiErrorMessage(e) ?? e?.message : '';
+                        const description = e instanceof Error ? (getApiErrorMessage(e) ?? e?.message) : '';
                         ignored.push(...batch.map((item) => `[${capitalize(item.type)}] ${item.metadata.name}`));
 
                         yield put(

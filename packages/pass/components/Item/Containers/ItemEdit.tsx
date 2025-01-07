@@ -8,12 +8,13 @@ import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { IdentityEdit } from '@proton/pass/components/Item/Identity/Identity.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { itemEditIntent } from '@proton/pass/store/actions';
-import { selectItem, selectShare } from '@proton/pass/store/selectors';
+import { useItem } from '@proton/pass/hooks/useItem';
+import { itemEdit } from '@proton/pass/store/actions';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 
 const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
@@ -25,27 +26,28 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
 };
 
 export const ItemEdit: FC = () => {
-    const { prefix } = useItemRoute();
     const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
-    const router = useNavigation();
+
+    const nav = useNavigationActions();
+    const scope = useItemScope();
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
-    const item = useSelector(selectItem(shareId, itemId));
+    const item = useItem(shareId, itemId);
 
     const handleSubmit = (data: ItemEditIntent) => {
-        dispatch(itemEditIntent(data));
-        router.selectItem(shareId, itemId, { mode: 'replace', prefix });
+        dispatch(itemEdit.intent(data));
+        nav.selectItem(shareId, itemId, { mode: 'replace', scope });
     };
 
-    if (!(item && vault)) return <Redirect to={router.preserveSearch(getLocalPath())} push={false} />;
+    if (!(item && vault)) return <Redirect to={nav.preserveSearch(getLocalPath())} push={false} />;
 
     const EditViewComponent = itemEditMap[item.data.type] as FC<ItemEditViewProps>;
 
     return (
         <EditViewComponent
-            onCancel={() => router.selectItem(shareId, itemId, { prefix })}
+            onCancel={() => nav.selectItem(shareId, itemId, { scope })}
             onSubmit={handleSubmit}
             revision={item}
             url={getCurrentTabUrl?.() ?? null}

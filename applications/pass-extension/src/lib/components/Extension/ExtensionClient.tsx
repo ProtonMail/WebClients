@@ -6,13 +6,14 @@ import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useEx
 import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
+import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
-import { clientErrored, clientReady } from '@proton/pass/lib/client';
+import { clientErrored } from '@proton/pass/lib/client';
 import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
@@ -27,7 +28,6 @@ import noop from '@proton/utils/noop';
 import { useExtensionContext } from './ExtensionSetup';
 
 export interface ExtensionClientContextValue {
-    ready: boolean;
     logout: (options: { soft: boolean }) => void;
     lock: () => void;
     sync: () => void;
@@ -37,19 +37,18 @@ export const ExtensionClientContext = createContext<MaybeNull<ExtensionClientCon
 export const useExtensionClient = createUseContext(ExtensionClientContext);
 
 type Props = {
-    children: ReactNode;
+    children: (connected: boolean) => ReactNode;
     onWorkerMessage?: (message: WorkerMessageWithSender) => void;
 };
 
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const { endpoint, setCurrentTabUrl, onTelemetry } = usePassCore();
     const config = usePassConfig();
-    const app = useAppState();
+    const { authorized } = useAppState();
 
     const dispatch = useDispatch();
     const { tabId, url, port } = useExtensionContext();
-    const loading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
-    const ready = !loading && clientReady(app.state.status);
+    const ready = !useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
 
     const activityProbe = useExtensionActivityProbe();
 
@@ -95,33 +94,32 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
 
     useVisibleEffect(
         (visible) => {
-            if (app.state.authorized && visible) activityProbe.start();
+            if (authorized && visible) activityProbe.start();
             else activityProbe.cancel();
         },
-        [app.state.authorized]
+        [authorized]
     );
 
     const context = useMemo<ExtensionClientContextValue>(
         () => ({
-            ready,
             lock: () => {
-                app.reset();
-                app.setStatus(AppStatus.SESSION_LOCKED);
+                AppStateManager.reset();
+                AppStateManager.setStatus(AppStatus.SESSION_LOCKED);
                 dispatch(lock());
             },
             logout: ({ soft }) => {
-                app.reset();
+                AppStateManager.reset();
                 dispatch(signoutIntent({ soft }));
             },
             sync: () => dispatch(syncIntent(SyncType.FULL)),
         }),
-        [ready]
+        []
     );
 
     return (
         <ExtensionClientContext.Provider value={context}>
             <ThemeConnect />
-            {children}
+            {children(ready)}
         </ExtensionClientContext.Provider>
     );
 };

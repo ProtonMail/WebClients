@@ -2,7 +2,7 @@ import type { MaybeNull, UniqueItem } from '@proton/pass/types';
 
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
-import type { IndexedByShareIdAndItemId, Item, ItemRevision } from './items';
+import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem } from './items';
 
 type AliasMailbox = { id: number; email: string };
 
@@ -46,11 +46,8 @@ export type ItemImportIntentDTO = {
 };
 
 /* Intent payloads */
-export type ItemCreateIntent<T extends ItemType = ItemType> = Item<T, ItemCreateIntentDTO> & {
-    optimisticId: string;
-    shareId: string;
-    createTime: number;
-};
+export type ItemCreateIntent<T extends ItemType = ItemType> = OptimisticItem & Item<T, ItemCreateIntentDTO>;
+export type ItemCreateSuccess = OptimisticItem & { item: ItemRevision; alias?: ItemRevision };
 
 export type ItemEditIntent<T extends ItemType = ItemType> = Item<T, ItemEditIntentDTO> & {
     itemId: string;

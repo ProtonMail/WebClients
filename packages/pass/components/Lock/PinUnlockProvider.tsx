@@ -12,13 +12,14 @@ type PinUnlockContextValue = UseAsyncModalHandle<string, PinUnlockModalState>;
 
 const PinUnlockContext = createContext<PinUnlockContextValue>(async () => {});
 
+const getInitialModalState = (): PinUnlockModalState => ({
+    title: c('Title').t`Enter your PIN`,
+    assistiveText: c('Info').t`Please enter your current PIN code to continue`,
+});
+
 export const PinUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, PinUnlockModalState>({
-        getInitialModalState: () => ({
-            title: c('Title').t`Enter your PIN`,
-            assistiveText: c('Info').t`Please enter your current PIN code to continue`,
-        }),
-    });
+    const modal = useAsyncModalHandles<string, PinUnlockModalState>({ getInitialModalState });
+    const { handler, abort, resolver, state, key } = modal;
 
     return (
         <PinUnlockContext.Provider value={handler}>

@@ -1,9 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { getItemActionId } from '@proton/pass/lib/items/item.utils';
+import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
-import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
@@ -30,10 +29,12 @@ import type {
     BatchItemRevisions,
     BulkSelectionDTO,
     ItemCreateIntent,
+    ItemCreateSuccess,
     ItemEditIntent,
     ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
+    OptimisticItem,
     SecureLink,
     SecureLinkCreationDTO,
     SecureLinkDeleteDTO,
@@ -51,68 +52,63 @@ export const draftSave = createAction('draft::save', (payload: Draft) => withThr
 export const draftDiscard = createAction('draft::discard', (payload: DraftBase) => withThrottledCache({ payload }));
 export const draftsGarbageCollect = createAction('drafts::gc');
 
-export const itemCreationIntent = createOptimisticAction(
-    'item::creation::intent',
-    (
-        payload: ItemCreateIntent,
-        callback?: ActionCallback<ReturnType<typeof itemCreationSuccess> | ReturnType<typeof itemCreationFailure>>
-    ) => pipe(withSynchronousAction, withCallback(callback))({ payload }),
-    ({ payload }) => getItemActionId(payload)
-);
+export const itemCreate = requestActionsFactory<ItemCreateIntent, ItemCreateSuccess, OptimisticItem>('item::create')({
+    key: getItemEntityID,
+    intent: { prepare: (payload) => withSynchronousAction({ payload }) },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item "${payload.item.data.metadata.name}" created`,
+                })
+            )({ payload }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Item creation failed`,
+                error,
+            })({ payload, error }),
+    },
+});
 
-export const itemCreationFailure = createOptimisticAction(
-    'item::creation::failure',
-    (payload: { optimisticId: string; shareId: string }, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Item creation failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
-);
-
-export const itemCreationDismiss = createOptimisticAction(
+export const itemCreateDismiss = createOptimisticAction(
     'item::creation::dismiss',
     (payload: { optimisticId: string; shareId: string; item: ItemRevision }) =>
         withNotification({
             type: 'info',
             text: c('Info').t`"${payload.item.data.metadata.name}" item was dismissed`,
         })({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
-export const itemCreationSuccess = createOptimisticAction(
-    'item::creation::success',
-    (payload: { optimisticId: string; shareId: string; item: ItemRevision; alias?: ItemRevision }) =>
-        pipe(
-            withCache,
+export const itemEdit = requestActionsFactory<ItemEditIntent, { item: ItemRevision } & SelectedItem, SelectedItem>(
+    'item::edit'
+)({
+    key: getItemEntityID,
+    intent: { prepare: (payload) => withSynchronousAction({ payload }) },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item "${payload.item.data.metadata.name}" updated`,
+                })
+            )({ payload }),
+    },
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                text: c('Info').t`Item "${payload.item.data.metadata.name}" created`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemActionId(payload)
-);
-
-export const itemEditIntent = createOptimisticAction(
-    'item::edit::intent',
-    (
-        payload: ItemEditIntent,
-        callback?: ActionCallback<ReturnType<typeof itemEditSuccess> | ReturnType<typeof itemEditFailure>>
-    ) => pipe(withSynchronousAction, withCallback(callback))({ payload }),
-    ({ payload }) => getItemActionId(payload)
-);
-
-export const itemEditFailure = createOptimisticAction(
-    'item::edit::failure',
-    (payload: SelectedItem, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Editing item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
-);
+                type: 'error',
+                text: c('Error').t`Editing item failed`,
+                error,
+            })({ payload, error }),
+    },
+});
 
 export const itemEditDismiss = createOptimisticAction(
     'item::edit::dismiss',
@@ -121,20 +117,7 @@ export const itemEditDismiss = createOptimisticAction(
             type: 'info',
             text: c('Info').t`"${payload.item.data.metadata.name}" update was dismissed`,
         })({ payload }),
-    ({ payload }) => getItemActionId(payload)
-);
-
-export const itemEditSuccess = createOptimisticAction(
-    'item::edit::success',
-    (payload: { item: ItemRevision } & SelectedItem) =>
-        pipe(
-            withCache,
-            withNotification({
-                type: 'success',
-                text: c('Info').t`Item "${payload.item.data.metadata.name}" updated`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevision[]) =>
@@ -144,7 +127,7 @@ export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevis
 export const itemMoveIntent = createOptimisticAction(
     'item::move::intent',
     (payload: { item: ItemRevision; shareId: string; optimisticId: string }) => withSynchronousAction({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemMoveFailure = createOptimisticAction(
@@ -155,7 +138,7 @@ export const itemMoveFailure = createOptimisticAction(
             text: c('Error').t`Moving item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemMoveSuccess = createOptimisticAction(
@@ -168,7 +151,7 @@ export const itemMoveSuccess = createOptimisticAction(
                 text: c('Info').t`Item successfully moved`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkMoveIntent = createAction(
@@ -215,11 +198,8 @@ export const itemBulkMoveSuccess = createAction(
 
 export const itemTrashIntent = createOptimisticAction(
     'item::trash::intent',
-    (
-        payload: { item: ItemRevision } & SelectedItem,
-        callback?: ActionCallback<ReturnType<typeof itemTrashSuccess> | ReturnType<typeof itemTrashFailure>>
-    ) => withCallback(callback)({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemTrashFailure = createOptimisticAction(
@@ -230,7 +210,7 @@ export const itemTrashFailure = createOptimisticAction(
             text: c('Error').t`Trashing item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemTrashSuccess = createOptimisticAction(
@@ -240,11 +220,11 @@ export const itemTrashSuccess = createOptimisticAction(
             withCache,
             withNotification({
                 type: 'success',
-                key: getItemActionId(payload),
+                key: getItemEntityID(payload),
                 text: c('Info').t`Item moved to trash`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkTrashIntent = createAction(
@@ -289,11 +269,8 @@ export const itemBulkTrashSuccess = createAction(
 
 export const itemDeleteIntent = createOptimisticAction(
     'item::delete::intent',
-    (
-        payload: { item: ItemRevision } & SelectedItem,
-        callback?: ActionCallback<ReturnType<typeof itemDeleteSuccess> | ReturnType<typeof itemDeleteFailure>>
-    ) => withCallback(callback)({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemDeleteFailure = createOptimisticAction(
@@ -304,7 +281,7 @@ export const itemDeleteFailure = createOptimisticAction(
             text: c('Error').t`Deleting item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemDeleteSuccess = createOptimisticAction(
@@ -317,7 +294,7 @@ export const itemDeleteSuccess = createOptimisticAction(
                 text: c('Info').t`Item permanently deleted`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkDeleteIntent = createAction(
@@ -366,11 +343,8 @@ export const itemsDeleteSync = createAction('items::delete::sync', (shareId: str
 
 export const itemRestoreIntent = createOptimisticAction(
     'item::restore::intent',
-    (
-        payload: { item: ItemRevision } & SelectedItem,
-        callback?: ActionCallback<ReturnType<typeof itemRestoreSuccess> | ReturnType<typeof itemRestoreFailure>>
-    ) => withCallback(callback)({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemRestoreFailure = createOptimisticAction(
@@ -381,7 +355,7 @@ export const itemRestoreFailure = createOptimisticAction(
             text: c('Error').t`Restoring item failed`,
             error,
         })({ payload, error }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemRestoreSuccess = createOptimisticAction(
@@ -394,7 +368,7 @@ export const itemRestoreSuccess = createOptimisticAction(
                 text: c('Info').t`Item restored`,
             })
         )({ payload }),
-    ({ payload }) => getItemActionId(payload)
+    ({ payload }) => getItemEntityID(payload)
 );
 
 export const itemBulkRestoreIntent = createAction(
@@ -554,12 +528,12 @@ export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, Sec
 export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('secure-link::open')({
     key: prop('token'),
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
                 text: c('Error').t`Secure link could not be opened.`,
                 error,
-            })({ payload: { error: getErrorMessage(error) } }),
+            })({ payload, error: getErrorMessage(error) }),
     },
 });
 

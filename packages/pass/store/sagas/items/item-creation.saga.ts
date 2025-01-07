@@ -4,28 +4,23 @@ import { all, put, takeEvery } from 'redux-saga/effects';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { itemCreationFailure, itemCreationIntent, itemCreationSuccess } from '@proton/pass/store/actions';
-import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
-import { requestInvalidate } from '@proton/pass/store/request/actions';
+import { itemCreate } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
-type ItemCreationAction = ReturnType<typeof itemCreationIntent>;
+type ItemCreationAction = ReturnType<typeof itemCreate.intent>;
 type ItemWithAliasCreationAction = ItemCreationAction & { payload: { type: 'login'; extraData: { withAlias: true } } };
 
 const singleItemCreation = (action: Action): action is ItemCreationAction =>
-    itemCreationIntent.match(action) && (action.payload.type === 'login' ? !action.payload.extraData.withAlias : true);
+    itemCreate.intent.match(action) && (action.payload.type === 'login' ? !action.payload.extraData.withAlias : true);
 
 const withAliasItemCreation = (action: Action): action is ItemWithAliasCreationAction =>
-    itemCreationIntent.match(action) && action.payload.type === 'login' && action.payload.extraData.withAlias;
+    itemCreate.intent.match(action) && action.payload.type === 'login' && action.payload.extraData.withAlias;
 
 function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOptions, action: ItemCreationAction) {
-    const {
-        payload: createIntent,
-        meta: { callback: onItemCreationIntentProcessed },
-    } = action;
+    const { payload: createIntent, meta } = action;
     const { shareId, optimisticId } = createIntent;
     const isAlias = createIntent.type === 'alias';
     const telemetry = getTelemetry();
@@ -36,10 +31,7 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
             : createItem(createIntent);
 
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
-
-        const itemCreationSuccessAction = itemCreationSuccess({ optimisticId, shareId, item });
-        yield put(itemCreationSuccessAction);
-        yield isAlias && put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
+        yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item }));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] })
@@ -49,19 +41,15 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
 
-        onItemCreationIntentProcessed?.(itemCreationSuccessAction);
         onItemsUpdated?.();
-    } catch (e) {
-        const itemCreationFailureAction = itemCreationFailure({ optimisticId, shareId }, e);
-        yield put(itemCreationFailureAction);
-
-        onItemCreationIntentProcessed?.(itemCreationFailureAction);
+    } catch (error) {
+        yield put(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }));
     }
 }
 
 function* withAliasCreationWorker(
     { onItemsUpdated, getTelemetry }: RootSagaOptions,
-    { payload: createIntent }: ItemWithAliasCreationAction
+    { payload: createIntent, meta }: ItemWithAliasCreationAction
 ) {
     const { shareId, optimisticId } = createIntent;
     const telemetry = getTelemetry();
@@ -72,8 +60,7 @@ function* withAliasCreationWorker(
         const loginItem: ItemRevision = yield parseItemRevision(shareId, encryptedLoginItem);
         const aliasItem: ItemRevision = yield parseItemRevision(shareId, encryptedAliasItem);
 
-        yield put(itemCreationSuccess({ optimisticId, shareId, item: loginItem, alias: aliasItem }));
-        yield put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
+        yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item: loginItem, alias: aliasItem }));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] })
@@ -86,9 +73,8 @@ function* withAliasCreationWorker(
         }
 
         onItemsUpdated?.();
-    } catch (err: unknown) {
-        const itemCreationFailureAction = itemCreationFailure({ optimisticId, shareId }, err);
-        yield put(itemCreationFailureAction);
+    } catch (error) {
+        yield put(itemCreate.failure(meta.request.id, error, { optimisticId, shareId }));
     }
 }
 

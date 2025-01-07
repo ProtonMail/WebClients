@@ -1,6 +1,4 @@
-import { type FC, useEffect, useMemo, useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
+import { type FC, useCallback, useEffect, useMemo, useRef } from 'react';
 import type { List } from 'react-virtualized';
 
 import { c, msgid } from 'ttag';
@@ -9,20 +7,21 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { getItemRoute } from '@proton/pass/components/Navigation/routing';
+import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectOptimisticItemsFactory, selectSelectedItems } from '@proton/pass/store/selectors';
-import type { ItemRevisionWithOptimistic, SelectedItem, UniqueItem } from '@proton/pass/types';
+import { selectSelectedItems } from '@proton/pass/store/selectors';
+import type { ItemRevision, UniqueItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
-type InterpolationItem = { type: 'divider'; label: string } | { type: 'item'; item: ItemRevisionWithOptimistic };
+type InterpolationItem = { type: 'divider'; label: string } | { type: 'item'; item: ItemRevision };
 type Interpolation = { interpolation: InterpolationItem[]; interpolationIndexes: number[]; sliceAt: number };
 
 const getLabel = (count: number) => c('Title').ngettext(msgid`Reused ${count} time`, `Reused ${count} times`, count);
-const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevisionWithOptimistic[]): Interpolation =>
+const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevision[]): Interpolation =>
     groups.reduce<Interpolation>(
         (acc, group) => {
             const start = acc.sliceAt;
@@ -45,23 +44,27 @@ export const DuplicatePasswords: FC = () => {
 
     const { duplicates } = useMonitor();
     const duplicatedData = useMemo(() => duplicates.data.flat(), [duplicates.data]);
-    const duplicatePasswordItems = useSelector(selectOptimisticItemsFactory(selectSelectedItems(duplicatedData)));
-    const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/duplicates(/trash)?' });
-    const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
+    const items = useMemoSelector(selectSelectedItems, [duplicatedData]);
+    const selectedItem = useSelectedItem();
 
     const { interpolation, interpolationIndexes } = useMemo(
-        () => interpolateDuplicates(duplicates.data, duplicatePasswordItems),
-        [duplicatePasswordItems, duplicatedData]
+        () => interpolateDuplicates(duplicates.data, items),
+        [items, duplicatedData]
     );
 
     useEffect(() => {
-        if (duplicatePasswordItems.length > 0 && !selectedItem) {
-            const item = duplicatePasswordItems[0];
-            selectItem(item, { inTrash: isTrashed(item), prefix: 'monitor/duplicates', mode: 'replace' });
+        if (items.length > 0 && !selectedItem) {
+            const item = items[0];
+            selectItem(item, { scope: 'monitor/duplicates', mode: 'replace' });
         }
-    }, [selectedItem, duplicatePasswordItems]);
+    }, [selectedItem, items]);
 
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayReusedPasswords, {}, {})([]);
+
+    const onSelect = useCallback((item: ItemRevision) => {
+        onTelemetry(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {});
+        selectItem(item, { scope: 'monitor/duplicates' });
+    }, []);
 
     return interpolation.length > 0 ? (
         <VirtualList
@@ -82,14 +85,7 @@ export const DuplicatePasswords: FC = () => {
                                     id={id}
                                     item={item}
                                     key={id}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        onTelemetry(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {});
-                                        selectItem(item, {
-                                            inTrash: isTrashed(item),
-                                            prefix: 'monitor/duplicates',
-                                        });
-                                    }}
+                                    onSelect={onSelect}
                                 />
                             </div>
                         );

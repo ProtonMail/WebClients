@@ -30,18 +30,19 @@ import type {
     SelectItemsOptions,
     SelectOTPAutofillCandidateOptions,
 } from '@proton/pass/lib/search/types';
+import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import type { State } from '@proton/pass/store/types';
-import type {
-    BulkSelectionDTO,
-    ItemRevision,
-    ItemRevisionWithOptimistic,
-    ItemType,
-    Maybe,
-    MaybeNull,
-    SecureLink,
-    SelectedItem,
+import {
+    type BulkSelectionDTO,
+    type ItemRevision,
+    type ItemRevisionWithOptimistic,
+    type ItemType,
+    type Maybe,
+    type MaybeNull,
+    type SecureLink,
+    type SelectedItem,
 } from '@proton/pass/types';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { first } from '@proton/pass/utils/array/first';
@@ -109,7 +110,7 @@ export const selectBulkSelectionAliasCount = (dto: BulkSelectionDTO) =>
     );
 
 export const selectSelectedItems = (selection: SelectedItem[]) =>
-    createSelector(selectItemsState, (items): ItemRevision[] =>
+    createSelector([selectItemsState], (items): ItemRevision[] =>
         selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy)
     );
 
@@ -128,55 +129,57 @@ export const selectItem = <T extends ItemType = ItemType>(shareId: string, itemI
             : byItemId?.[itemId]) satisfies Maybe<ItemRevision> as Maybe<ItemRevision<T>>;
     });
 
-/** Unwraps the optimistic item state and hydrates the `failed` and
- * `optimistic` properties of the returned `ItemRevisionWithOptimistic` */
-export const selectOptimisticItemsFactory = (selector: (state: State) => ItemRevision[]) =>
+export const selectOptimisticItemState = (shareId: string, itemId: string) =>
     createSelector(
-        [selector, selectNonFailedItems, selectNonOptimisticItems],
-        (items, withoutFailed, withoutOptimistic) =>
-            items.map(
-                (item): ItemRevisionWithOptimistic => ({
-                    ...item,
-                    failed: withoutFailed[item.shareId]?.[item.itemId]?.revision !== item.revision,
-                    optimistic: withoutOptimistic[item.shareId]?.[item.itemId]?.revision !== item.revision,
-                })
-            )
+        [selectItem(shareId, itemId), selectNonFailedItems, selectNonOptimisticItems],
+        (item, withoutFailed, withoutOptimistic) => {
+            if (!item) return { failed: false, optimistic: false };
+            return {
+                failed: withoutFailed[item.shareId]?.[item.itemId]?.revision !== item.revision,
+                optimistic: withoutOptimistic[item.shareId]?.[item.itemId]?.revision !== item.revision,
+            };
+        }
     );
 
-export const selectItemsWithOptimistic = selectOptimisticItemsFactory(selectAllItems);
+export const selectOptimisticFailedAction = (entityID: string) =>
+    createSelector([selectItemsState], selectFailedAction(entityID));
 
-const selectSortedItemsByShareId = ({ trashed, shareId, sort }: SelectItemsOptions) =>
+export const selectItemWithOptimistic = <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
     createSelector(
-        [selectItemsWithOptimistic, () => trashed, () => shareId, () => sort],
-        (items, trashed, shareId, sort) =>
-            pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
+        [selectItem<T>(shareId, itemId), selectOptimisticItemState(shareId, itemId)],
+        (item, { failed, optimistic }): Maybe<ItemRevisionWithOptimistic<T>> =>
+            item ? { ...item, failed, optimistic } : undefined
     );
+
+const selectTrashedFilter = (_: State, { trashed }: SelectItemsOptions) => trashed;
+const selectShareIdFilter = (_: State, { shareId }: SelectItemsOptions) => shareId;
+const selectSortFilter = (_: State, { sort }: SelectItemsOptions) => sort;
+const selectSearchFilter = (_: State, { search }: SelectItemsOptions) => search;
+const selectTypeFilter = (_: State, { type }: SelectItemsOptions) => type;
+
+const selectSortedItemsByShareId = createSelector(
+    [selectAllItems, selectTrashedFilter, selectShareIdFilter, selectSortFilter],
+    (items, trashed, shareId, sort) =>
+        pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
+);
+
+export type ItemsSearchResults = {
+    filtered: ItemRevision[];
+    searched: ItemRevision[];
+    totalCount: number;
+};
 
 /** Search result selector is organized to separate sort from search, as sorting
  * can be computationally expensive when the number of items is high. The `search`
  * is expected to change more frequently than the shareId / sortOption */
-export const selectItemsSearchResult = (options: SelectItemsOptions) =>
-    createSelector(
-        [selectSortedItemsByShareId(options), () => options.search, () => options.type],
-        (byShareId, search, type) => {
-            const searched = searchItems(byShareId, search);
-            const filtered = filterItemsByType(type)(searched);
-            return { filtered, searched, totalCount: byShareId.length };
-        }
-    );
-
-export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
-    createSelector(
-        [selectItem(shareId, itemId), selectNonFailedItems, selectNonOptimisticItems],
-        (item, withoutFailed, withoutOptimistic): Maybe<ItemRevisionWithOptimistic> =>
-            item
-                ? {
-                      ...item,
-                      failed: withoutFailed[item.shareId]?.[item.itemId]?.revision !== item.revision,
-                      optimistic: withoutOptimistic[item.shareId]?.[item.itemId]?.revision !== item.revision,
-                  }
-                : undefined
-    );
+export const selectItemsSearchResult = createSelector(
+    [selectSortedItemsByShareId, selectSearchFilter, selectTypeFilter],
+    (items, search, type): ItemsSearchResults => {
+        const searched = searchItems(items, search);
+        const filtered = filterItemsByType(type)(searched);
+        return { filtered, searched, totalCount: items.length };
+    }
+);
 
 export const selectLoginsByUserIdentifier = (itemEmail: string) =>
     createSelector(selectLoginItems, filterItemsByUserIdentifier(itemEmail));
@@ -189,10 +192,10 @@ export const selectLoginItemByEmail = (itemEmail?: MaybeNull<string>) =>
 
 export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectItemsByDomainOptions) =>
     typeof domain !== 'string' || isEmptyString(domain)
-        ? NOOP_LIST_SELECTOR<ItemRevisionWithOptimistic<'login'>>
+        ? NOOP_LIST_SELECTOR<ItemRevision<'login'>>
         : createSelector(
               [
-                  selectItemsWithOptimistic,
+                  selectAllItems,
                   () => domain,
                   () => options.protocol,
                   () => options.port,
@@ -203,36 +206,32 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
               ],
               (items, domain, protocol, port, isPrivate, shareIds, sortOn, strict) =>
                   items
-                      .reduce<{ item: ItemRevisionWithOptimistic<'login'>; priority: ItemUrlMatch }[]>(
-                          (matches, item) => {
-                              if (isItemType('login')(item) && isActive(item)) {
-                                  const validShareIds = !shareIds || shareIds.includes(item.shareId);
-                                  const validItem = !item.optimistic;
-                                  const validUrls = item.data.content.urls.some((url) => url.includes(domain));
+                      .reduce<{ item: ItemRevision<'login'>; priority: ItemUrlMatch }[]>((matches, item) => {
+                          if (isItemType('login')(item) && isActive(item)) {
+                              const validShareIds = !shareIds || shareIds.includes(item.shareId);
+                              const validUrls = item.data.content.urls.some((url) => url.includes(domain));
 
-                                  /* If the item does not pass this initial "fuzzy" test, then we
-                                   * should not even consider it as an autofill candidate.
-                                   * This avoids unnecessarily parsing items' URLs with 'tldts' */
-                                  if (!(validShareIds && validItem && validUrls)) return matches;
+                              /* If the item does not pass this initial "fuzzy" test, then we
+                               * should not even consider it as an autofill candidate.
+                               * This avoids unnecessarily parsing items' URLs with 'tldts' */
+                              if (!(validShareIds && validUrls)) return matches;
 
-                                  /* `getItemPriorityForUrl` will apply strict domain matching */
-                                  const { data } = item;
-                                  const priority = getItemPriorityForUrl(data)(domain, {
-                                      isPrivate,
-                                      protocol,
-                                      strict,
-                                      port,
-                                  });
+                              /* `getItemPriorityForUrl` will apply strict domain matching */
+                              const { data } = item;
+                              const priority = getItemPriorityForUrl(data)(domain, {
+                                  isPrivate,
+                                  protocol,
+                                  strict,
+                                  port,
+                              });
 
-                                  /* if negative priority : this item does not match the criteria */
-                                  if (priority === ItemUrlMatch.NO_MATCH) return matches;
+                              /* if negative priority : this item does not match the criteria */
+                              if (priority === ItemUrlMatch.NO_MATCH) return matches;
 
-                                  matches.push({ item, priority });
-                              }
-                              return matches;
-                          },
-                          []
-                      )
+                              matches.push({ item, priority });
+                          }
+                          return matches;
+                      }, [])
                       .sort((a, b) => {
                           const aPrio = a.priority;
                           const bPrio = b.priority;
@@ -360,16 +359,32 @@ export const selectInactiveSecureLinks = createSelector(selectAllSecureLinks, (l
     links.filter(not(prop('active')))
 );
 
-const selectItemsWithSecureLink = createSelector(
-    [selectAllItems, selectSecureLinks],
-    (items, secureLinks): ItemRevision[] =>
-        items.reduce<ItemRevision[]>((acc, item) => {
-            if (secureLinks[item.shareId]?.[item.itemId]?.length) acc.push(item);
-            return acc;
-        }, [])
-);
+const selectSortedSecureLinkItems = createSelector([selectItems, selectSecureLinks], (items, secureLinks) => {
+    const { totalCount, selection } = Object.entries(secureLinks).reduce(
+        (acc, [shareId, byShareId]) => {
+            Object.entries(byShareId).forEach(([itemId, { length }]) => {
+                acc.totalCount += length;
+                acc.selection.push({ shareId, itemId });
+            });
 
-export const selectOptimisticItemsWithSecureLink = selectOptimisticItemsFactory(selectItemsWithSecureLink);
+            return acc;
+        },
+        { totalCount: 0, selection: <SelectedItem[]>[] }
+    );
+
+    const secureLinkItems = selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy);
+    const sorted = sortItems('recent')(secureLinkItems);
+    return { sorted, totalCount };
+});
+
+/** "Sort before search" strategy */
+export const selectSecureLinksSearchResult = createSelector(
+    [selectSortedSecureLinkItems, (_: State, search?: string) => search],
+    ({ sorted, totalCount }, search): ItemsSearchResults => {
+        const searched = searchItems(sorted, search);
+        return { searched, filtered: searched, totalCount };
+    }
+);
 
 export const selectItemSecureLinks = (shareId: string, itemId: string) =>
     createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>

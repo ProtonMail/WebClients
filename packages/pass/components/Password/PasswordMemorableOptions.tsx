@@ -4,16 +4,15 @@ import { c, msgid } from 'ttag';
 
 import { Slider } from '@proton/atoms';
 import { Option, SelectTwo, Toggle } from '@proton/components';
-import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
+import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
+import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import { getSeperatorTranslation } from '@proton/pass/lib/password/memorable';
 import type { MemorablePasswordOptions } from '@proton/pass/lib/password/types';
 import { SeperatorOptions } from '@proton/pass/lib/password/types';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
-import { MaybeOrgSettingTooltip } from './MaybeOrgTooltip';
-
-type Props = UsePasswordGeneratorResult<'memorable'> & { advanced: boolean; dense?: boolean };
+type Props = PasswordGeneratorResult<'memorable'> & { advanced: boolean; dense?: boolean };
 
 export const PasswordMemorableOptions: FC<Props> = ({
     advanced,
@@ -49,7 +48,7 @@ export const PasswordMemorableOptions: FC<Props> = ({
                 </div>
             </div>
             {!dense && <hr className="m-0" />}
-            <MaybeOrgSettingTooltip show={capitalizePolicyEnforced}>
+            <OrganizationPolicyTooltip enforced={capitalizePolicyEnforced}>
                 <div className="flex items-center justify-space-between">
                     <label htmlFor="password-capitalise" className="w-custom" style={{ '--w-custom': '10rem' }}>
                         {c('Label').t`Capitalize`}
@@ -61,7 +60,7 @@ export const PasswordMemorableOptions: FC<Props> = ({
                         disabled={capitalizePolicyEnforced}
                     />
                 </div>
-            </MaybeOrgSettingTooltip>
+            </OrganizationPolicyTooltip>
             {advanced && (
                 <>
                     {!dense && <hr className="m-0" />}
@@ -91,7 +90,7 @@ export const PasswordMemorableOptions: FC<Props> = ({
                         </SelectTwo>
                     </div>
                     {!dense && <hr className="m-0" />}
-                    <MaybeOrgSettingTooltip show={numbersPolicyEnforced}>
+                    <OrganizationPolicyTooltip enforced={numbersPolicyEnforced}>
                         <div className="flex items-center justify-space-between">
                             <label
                                 htmlFor="password-extra-numbers"
@@ -108,7 +107,7 @@ export const PasswordMemorableOptions: FC<Props> = ({
                                 disabled={numbersPolicyEnforced}
                             />
                         </div>
-                    </MaybeOrgSettingTooltip>
+                    </OrganizationPolicyTooltip>
                 </>
             )}
         </>

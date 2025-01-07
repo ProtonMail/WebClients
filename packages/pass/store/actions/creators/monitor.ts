@@ -43,12 +43,12 @@ export const sentinelToggle = requestActionsFactory<SentinelState, SentinelState
             })({ payload: { value } }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
                 text: c('Error').t`Failed updating ${PROTON_SENTINEL_NAME} setting`,
                 error,
-            })({ payload: {} }),
+            })({ payload }),
     },
 });
 
@@ -159,12 +159,12 @@ export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, Monit
 )({
     key: prop('addressId'),
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to verify email address`,
                 type: 'error',
                 error,
-            })({ payload: getApiError(error) }),
+            })({ error: getApiError(error), payload }),
     },
 });
 

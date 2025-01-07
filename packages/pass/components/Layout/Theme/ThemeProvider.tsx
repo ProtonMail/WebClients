@@ -1,18 +1,19 @@
-import { type FC, useLayoutEffect, useState } from 'react';
+import type { PropsWithChildren } from 'react';
+import { type FC, createContext, useContext, useEffect, useLayoutEffect, useState } from 'react';
 
 // @ts-ignore
 import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
 // @ts-ignore
 import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
+import noop from '@proton/utils/noop';
 
 export const THEME_ID = 'pass-theme';
 
-type ThemeConfig = {
-    className: string;
-    styles: string;
-};
+type ThemeConfig = { className: string; styles: string };
 
 const getThemeConfig = (theme: PassThemeOption): ThemeConfig => {
     switch (theme) {
@@ -25,10 +26,23 @@ const getThemeConfig = (theme: PassThemeOption): ThemeConfig => {
     }
 };
 
-type Props = { theme: PassThemeOption };
+export const PassThemeContext = createContext<PassThemeOption>(PASS_DEFAULT_THEME);
 
-export const ThemeProvider: FC<Props> = ({ theme }) => {
+export const PassThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+    const core = usePassCore();
+    const [theme, setTheme] = useState<PassThemeOption>(core.theme.getState());
     const [config, setConfig] = useState<ThemeConfig>(getThemeConfig(theme));
+
+    useEffect(() => {
+        const unsubcribe = core.theme.subscribe(setTheme);
+
+        core.theme
+            .getInitialTheme?.()
+            .then((initial) => core.theme.setState(initial ?? PASS_DEFAULT_THEME))
+            .catch(noop);
+
+        return unsubcribe;
+    }, []);
 
     useLayoutEffect(() => {
         setConfig(getThemeConfig(theme));
@@ -47,5 +61,12 @@ export const ThemeProvider: FC<Props> = ({ theme }) => {
         return () => document.body.classList.remove(config.className);
     }, [config]);
 
-    return <style id={THEME_ID}>{config.styles}</style>;
+    return (
+        <PassThemeContext.Provider value={theme}>
+            <style id={THEME_ID}>{config.styles}</style>
+            {children}
+        </PassThemeContext.Provider>
+    );
 };
+
+export const usePassTheme = () => useContext(PassThemeContext);

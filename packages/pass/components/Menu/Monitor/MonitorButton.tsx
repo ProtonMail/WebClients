@@ -1,25 +1,24 @@
 import { type FC } from 'react';
 import { useSelector } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import type { RouteMatchProps } from '@proton/pass/components/Navigation/RouteMatch';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { selectTotalBreaches } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
-export const MonitorButton: FC = () => {
-    const { navigate } = useNavigation();
+export const MonitorButton: FC<RouteMatchProps> = ({ active, exact }) => {
+    const navigate = useNavigate();
     const breachCount = useSelector(selectTotalBreaches) ?? 0;
-    const isSelected = useRouteMatch(getLocalPath('monitor'));
 
     return (
         <DropdownMenuButton
             icon={`pass-shield-monitoring-${breachCount ? 'warning' : 'ok'}`}
-            className={clsx('rounded', isSelected && 'is-selected')}
+            className={clsx('rounded', active && 'is-selected')}
             ellipsis
             label={c('Action').t`Pass Monitor`}
             extra={
@@ -31,7 +30,7 @@ export const MonitorButton: FC = () => {
                     />
                 )
             }
-            onClick={() => navigate(getLocalPath('monitor'))}
+            onClick={() => !exact && navigate(getLocalPath('monitor'))}
             parentClassName="mx-3"
         />
     );

@@ -27,7 +27,7 @@ import {
     stopEventPolling,
     unlock,
 } from '@proton/pass/store/actions';
-import type { Api, WorkerMessageResponse } from '@proton/pass/types';
+import type { Api } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -263,21 +263,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }
     );
 
-    const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = withContext(
-        (ctx, { payload }) =>
-            new Promise<WorkerMessageResponse<WorkerMessageType.AUTH_UNLOCK>>((resolve) => {
-                ctx.service.store.dispatch(
-                    unlock.intent(payload, (action) => {
-                        if (unlock.success.match(action)) resolve({ ok: true });
-                        if (unlock.failure.match(action)) {
-                            resolve({
-                                ok: false,
-                                error: action.meta.notification.text?.toString() ?? null,
-                            });
-                        }
-                    })
-                );
-            })
+    const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = withContext((ctx, { payload }) =>
+        ctx.service.store.dispatchAsyncRequest(unlock, payload).then((res) => {
+            switch (res.type) {
+                case 'success':
+                    return { ok: true };
+                case 'failure':
+                    return { ok: false, error: res.error };
+            }
+        })
     );
 
     /* only extend the session lock if a lock is registered and we've reached at least 50%

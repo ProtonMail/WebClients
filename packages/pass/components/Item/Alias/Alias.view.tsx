@@ -8,7 +8,7 @@ import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHisto
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
@@ -16,7 +16,7 @@ import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
-    const { navigate } = useNavigation();
+    const navigate = useNavigate();
     const { revision, vault, handleHistoryClick } = itemViewProps;
     const { createTime, modifyTime, revision: revisionNumber, optimistic } = revision;
     const { shareId } = vault;

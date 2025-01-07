@@ -35,17 +35,19 @@ export const Popup = () => {
     return (
         <ExtensionStore>
             <ExtensionClient onWorkerMessage={onWorkerMessage}>
-                <ErrorBoundary component={<ExtensionError />}>
-                    <PopupProvider>
+                {(ready) => (
+                    <ErrorBoundary component={<ExtensionError />}>
                         <Router>
                             <NavigationProvider>
-                                <Localized>
-                                    <AppGuard />
-                                </Localized>
+                                <PopupProvider ready={ready}>
+                                    <Localized>
+                                        <AppGuard />
+                                    </Localized>
+                                </PopupProvider>
                             </NavigationProvider>
                         </Router>
-                    </PopupProvider>
-                </ErrorBoundary>
+                    </ErrorBoundary>
+                )}
             </ExtensionClient>
         </ExtensionStore>
     );

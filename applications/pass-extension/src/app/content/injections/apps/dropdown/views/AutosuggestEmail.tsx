@@ -1,6 +1,6 @@
-import { type FC, useCallback, useEffect } from 'react';
+import { type FC, useCallback, useEffect, useState } from 'react';
 
-import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
+import { useIFrameAppController } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
@@ -35,10 +35,11 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
 export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
-    const { userEmail, close, forwardMessage } = useIFrameContext();
+    const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
 
+    const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [aliasOptions, setAliasOptions] = useMountedState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useMountedState<boolean>(false);
     const [loadingText, setLoadingText] = useMountedState<MaybeNull<string>>(getInitialLoadingText());
@@ -84,14 +85,14 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                     }),
                     (response) => {
                         if (response.ok) {
-                            forwardMessage({
+                            controller.forwardMessage({
                                 type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL,
                                 payload: { email: aliasEmail },
                             });
 
                             onTelemetry(TelemetryEventName.AutosuggestAliasCreated, {}, {});
 
-                            close({ refocus: false });
+                            controller.close({ refocus: false });
                         } else setError(response.error);
                     }
                 );
@@ -104,6 +105,13 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
     );
 
     useEffect(() => {
+        sendMessage
+            .onSuccess(
+                contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER }),
+                (response) => response.user?.Email && setUserEmail(response.user.Email)
+            )
+            .catch(noop);
+
         requestAliasOptions().catch(noop);
     }, []);
 
@@ -140,11 +148,11 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                     }
                     icon="envelope"
                     onClick={() => {
-                        forwardMessage({
+                        controller.forwardMessage({
                             type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL,
                             payload: { email: userEmail },
                         });
-                        close();
+                        controller.close();
                     }}
                 />
             )}

@@ -8,95 +8,87 @@ import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import { AppStatus } from '@proton/pass/types';
 
-import { MockIFrameContainer } from './MockIFrameContainer';
+import { MockIFrameApp } from './MockIFrameApp';
 
 export const DropdownDebug: FC = () => {
     return (
         <SettingsPanel title="Dropdown">
             <div className="gap-4" style={{ columnCount: 2 }}>
-                <MockIFrameContainer appState={{ authorized: false, status: AppStatus.IDLE }} width={DROPDOWN_WIDTH}>
+                <MockIFrameApp appState={{ authorized: false, status: AppStatus.IDLE }} width={DROPDOWN_WIDTH}>
                     <Dropdown />
-                </MockIFrameContainer>
+                </MockIFrameApp>
 
-                <MockIFrameContainer
-                    payload={{
-                        action: DropdownAction.AUTOFILL_LOGIN,
-                        domain: 'proton.me',
-                        startsWith: '',
-                    }}
-                    width={DROPDOWN_WIDTH}
-                >
-                    <Dropdown />
-                </MockIFrameContainer>
+                <MockIFrameApp width={DROPDOWN_WIDTH} appState={{ authorized: false, status: AppStatus.UNAUTHORIZED }}>
+                    <Dropdown
+                        initial={{
+                            action: DropdownAction.AUTOFILL_LOGIN,
+                            domain: 'proton.me',
+                            startsWith: '',
+                        }}
+                    />
+                </MockIFrameApp>
 
-                <MockIFrameContainer
-                    appState={{ status: AppStatus.SESSION_LOCKED }}
-                    payload={{
-                        action: DropdownAction.AUTOFILL_LOGIN,
-                        domain: 'proton.me',
-                        startsWith: '',
-                    }}
-                    width={DROPDOWN_WIDTH}
-                >
-                    <Dropdown />
-                </MockIFrameContainer>
+                <MockIFrameApp appState={{ status: AppStatus.SESSION_LOCKED }} width={DROPDOWN_WIDTH}>
+                    <Dropdown
+                        initial={{
+                            action: DropdownAction.AUTOFILL_LOGIN,
+                            domain: 'proton.me',
+                            startsWith: '',
+                        }}
+                    />
+                </MockIFrameApp>
 
-                <MockIFrameContainer
-                    payload={{
-                        action: DropdownAction.AUTOFILL_LOGIN,
-                        domain: 'proton.me',
-                        startsWith: '',
-                    }}
-                    width={DROPDOWN_WIDTH}
-                >
-                    <Dropdown />
-                </MockIFrameContainer>
+                <MockIFrameApp width={DROPDOWN_WIDTH}>
+                    <Dropdown
+                        initial={{
+                            action: DropdownAction.AUTOFILL_LOGIN,
+                            domain: 'proton.me',
+                            startsWith: '',
+                        }}
+                    />
+                </MockIFrameApp>
 
-                <MockIFrameContainer
-                    payload={{
-                        action: DropdownAction.AUTOFILL_LOGIN,
-                        domain: 'proton.me',
-                        startsWith: '',
-                    }}
-                    width={DROPDOWN_WIDTH}
-                >
-                    <Dropdown />
-                </MockIFrameContainer>
+                <MockIFrameApp width={DROPDOWN_WIDTH}>
+                    <Dropdown
+                        initial={{
+                            action: DropdownAction.AUTOFILL_LOGIN,
+                            domain: 'proton.me',
+                            startsWith: '',
+                        }}
+                    />
+                </MockIFrameApp>
 
-                <MockIFrameContainer
-                    payload={{
-                        action: DropdownAction.AUTOFILL_LOGIN,
-                        domain: 'proton.me',
-                        startsWith: '',
-                    }}
-                    width={DROPDOWN_WIDTH}
-                >
-                    <Dropdown />
-                </MockIFrameContainer>
+                <MockIFrameApp width={DROPDOWN_WIDTH}>
+                    <Dropdown
+                        initial={{
+                            action: DropdownAction.AUTOFILL_LOGIN,
+                            domain: 'proton.me',
+                            startsWith: '',
+                        }}
+                    />
+                </MockIFrameApp>
 
-                <MockIFrameContainer
-                    payload={{
-                        action: DropdownAction.AUTOSUGGEST_PASSWORD,
-                        config: DEFAULT_RANDOM_PW_OPTIONS,
-                        domain: 'proton.me',
-                        copy: false,
-                        policy: null,
-                    }}
-                    width={DROPDOWN_WIDTH}
-                >
-                    <Dropdown />
-                </MockIFrameContainer>
+                <MockIFrameApp width={DROPDOWN_WIDTH}>
+                    <Dropdown
+                        initial={{
+                            action: DropdownAction.AUTOSUGGEST_PASSWORD,
+                            config: DEFAULT_RANDOM_PW_OPTIONS,
+                            domain: 'proton.me',
+                            copy: false,
+                            policy: null,
+                        }}
+                    />
+                </MockIFrameApp>
 
-                <MockIFrameContainer
-                    payload={{
-                        action: DropdownAction.AUTOSUGGEST_ALIAS,
-                        domain: 'proton.me',
-                        prefix: 'secret',
-                    }}
-                    width={DROPDOWN_WIDTH}
-                >
-                    <Dropdown />
-                </MockIFrameContainer>
+                <MockIFrameApp width={DROPDOWN_WIDTH}>
+                    <Dropdown
+                        initial={{
+                            action: DropdownAction.AUTOSUGGEST_ALIAS,
+                            domain: 'proton.me',
+                            prefix: 'secret',
+                        }}
+                    />
+                </MockIFrameApp>
             </div>
         </SettingsPanel>
     );

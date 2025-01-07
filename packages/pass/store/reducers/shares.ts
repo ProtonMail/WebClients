@@ -29,6 +29,7 @@ import type { NewUserPendingInvite, PendingInvite, ShareMember } from '@proton/p
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
     invites?: PendingInvite[];
@@ -142,15 +143,26 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         const shared = invites.length > 0 || newUserInvites.length > 0 || members.length > 1;
         const newUserInvitesReady = newUserInvites.filter((invite) => invite.state === NewUserInviteState.READY).length;
 
-        return partialMerge(state, {
-            [shareId]: {
-                invites,
-                members,
-                newUserInvites,
-                shared,
-                newUserInvitesReady,
-            },
-        });
+        const share = state[shareId];
+
+        const mutated =
+            shared !== share.shared ||
+            newUserInvitesReady !== share.newUserInvitesReady ||
+            !isDeepEqual(invites, share.invites) ||
+            !isDeepEqual(members, share.members) ||
+            !isDeepEqual(newUserInvites, share.newUserInvites);
+
+        return mutated
+            ? partialMerge(state, {
+                  [shareId]: {
+                      invites,
+                      members,
+                      newUserInvites,
+                      shared,
+                      newUserInvitesReady,
+                  },
+              })
+            : state;
     }
 
     if (shareEditMemberAccessSuccess.match(action)) {

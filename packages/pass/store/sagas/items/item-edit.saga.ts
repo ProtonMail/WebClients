@@ -4,7 +4,7 @@ import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '@proton/pass
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
+import { aliasDetailsSync, itemEdit } from '@proton/pass/store/actions';
 import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
 import { selectAliasDetails, selectAliasMailboxes, selectAliasOptions, selectItem } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
@@ -61,7 +61,7 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
 
 function* itemEditWorker(
     { onItemsUpdated, getTelemetry }: RootSagaOptions,
-    { payload: editIntent, meta: { callback: onItemEditIntentProcessed } }: ReturnType<typeof itemEditIntent>
+    { payload: editIntent, meta }: ReturnType<typeof itemEdit.intent>
 ) {
     const { itemId, shareId, lastRevision } = editIntent;
     const telemetry = getTelemetry();
@@ -74,8 +74,7 @@ function* itemEditWorker(
         const encryptedItem: ItemRevisionContentsResponse = yield editItem(editIntent, lastRevision);
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
 
-        const itemEditSuccessAction = itemEditSuccess({ item, itemId, shareId });
-        yield put(itemEditSuccessAction);
+        yield put(itemEdit.success(meta.request.id, { item, itemId, shareId }));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] })
@@ -90,16 +89,12 @@ function* itemEditWorker(
             }
         }
 
-        onItemEditIntentProcessed?.(itemEditSuccessAction);
         onItemsUpdated?.();
-    } catch (e) {
-        const itemEditFailureAction = itemEditFailure({ itemId, shareId }, e);
-        yield put(itemEditFailureAction);
-
-        onItemEditIntentProcessed?.(itemEditFailureAction);
+    } catch (err) {
+        yield put(itemEdit.failure(meta.request.id, err, { itemId, shareId }));
     }
 }
 
 export default function* watcher(options: RootSagaOptions) {
-    yield takeEvery(itemEditIntent.match, itemEditWorker, options);
+    yield takeEvery(itemEdit.intent.match, itemEditWorker, options);
 }

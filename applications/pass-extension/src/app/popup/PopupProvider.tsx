@@ -1,32 +1,30 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { type FC, createContext, useCallback, useEffect, useMemo, useState } from 'react';
+import { useSelector, useStore } from 'react-redux';
 
-import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { clientReady } from '@proton/pass/lib/client';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { syncRequest } from '@proton/pass/store/actions/requests';
-import { selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectLatestDraft, selectRequestInFlight } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import type { MaybeNull, PopupInitialState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 
+type Props = { ready: boolean };
 export interface PopupContextValue {
     expanded: boolean /* is popup expanded into a separate window */;
-    initial: PopupInitialState;
     initialized: boolean /* retrieved popup initial state */;
-    ready: boolean /* enable UI user actions */;
+    interactive: boolean /* enable UI user actions */;
 }
-
-export const INITIAL_POPUP_STATE: PopupInitialState = {
-    search: '',
-    filters: null,
-    selectedItem: null,
-};
 
 export const PopupContext = createContext<MaybeNull<PopupContextValue>>(null);
 export const usePopupContext = createUseContext(PopupContext);
@@ -34,23 +32,45 @@ export const usePopupContext = createUseContext(PopupContext);
 /* this cannot be included directly in `PopupContextProvider` because
  * of the `useExtensionContext` call which requires this component to
  * be a descendant of `ExtensionConnect` */
-export const PopupProvider: FC<PropsWithChildren> = ({ children }) => {
-    const app = useAppState();
-    const { ready } = useExtensionClient();
+export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready }) => {
+    const store = useStore<State>();
+    const { status } = useAppState();
     const { tabId } = useExtensionContext();
-    const { status } = app.state;
+    const { navigate, selectItem } = useNavigationActions();
+    const { setFilters } = useNavigationFilters();
 
-    const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
+    const [initialized, setInitialized] = useState<boolean>(false);
     const expanded = useExpanded();
-
     const sync = useSelector(selectRequestInFlight(syncRequest()));
     const syncing = sync || status === AppStatus.BOOTING;
+    const interactive = clientReady(status) && ready && !syncing;
+
+    const handleInit = useCallback((data: PopupInitialState) => {
+        setInitialized(true);
+
+        const { selectedItem } = data;
+        const filters = { ...data.filters, search: data.search ?? '' };
+        const draft = selectLatestDraft(store.getState());
+
+        if (isNewItemDraft(draft)) {
+            /** When supporting drafts v2: remove these as we will be able to leverage
+             * the full draft state and give the user more control over the drafts */
+            return navigate(getLocalPath(`item/new/${draft.type}`), { hash: 'draft', mode: 'replace', filters });
+        }
+
+        if (isEditItemDraft(draft)) {
+            return selectItem(draft.shareId, draft.itemId, { hash: 'draft', mode: 'replace', view: 'edit', filters });
+        }
+
+        if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { filters });
+        else setFilters(filters);
+    }, []);
 
     useEffect(() => {
         if (clientReady(status)) {
             void sendMessage.onSuccess(
                 popupMessage({ type: WorkerMessageType.POPUP_INIT, payload: { tabId } }),
-                setInitial
+                handleInit
             );
         }
     }, [status]);
@@ -58,11 +78,10 @@ export const PopupProvider: FC<PropsWithChildren> = ({ children }) => {
     const ctx = useMemo<PopupContextValue>(
         () => ({
             expanded,
-            initial: initial ?? INITIAL_POPUP_STATE,
-            initialized: initial !== null /* `POPUP_INIT` response resolved */,
-            ready: ready && !syncing /* worker ready and no ongoing syncs */,
+            initialized /* `POPUP_INIT` response resolved */,
+            interactive /* worker ready and no ongoing syncs */,
         }),
-        [ready, syncing, initial]
+        [expanded, interactive, initialized]
     );
 
     return <PopupContext.Provider value={ctx}>{children}</PopupContext.Provider>;

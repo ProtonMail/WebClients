@@ -11,7 +11,7 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { validateIdentitySection } from '@proton/pass/lib/validation/identity';
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -25,7 +25,7 @@ type Props = { onAdd: (v: string) => void };
 export const IdentityAddNewSection: FC<Props> = ({ onAdd }) => {
     const [{ open, onClose }, setModal] = useModalState();
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
-    const spotlight = useSpotlight();
+    const upsell = useUpselling();
 
     const closeModal = (resetForm: FormikHelpers<IdentitySectionFormValues>['resetForm']) => {
         resetForm();
@@ -50,7 +50,7 @@ export const IdentityAddNewSection: FC<Props> = ({ onAdd }) => {
                 shape="solid"
                 onClick={() =>
                     isFreePlan
-                        ? spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS })
+                        ? upsell({ type: 'pass-plus', upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS })
                         : setModal(true)
                 }
             >

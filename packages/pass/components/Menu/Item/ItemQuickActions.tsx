@@ -1,4 +1,4 @@
-import { type FC, useMemo, useRef } from 'react';
+import { type FC, useCallback, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -9,8 +9,11 @@ import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme, itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
+import { usePasswordGeneratorAction } from '@proton/pass/components/Password/PasswordGeneratorAction';
+import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
@@ -26,13 +29,16 @@ type Props = {
     /** Current origin if in the extension to hydrate the generated
      * password origin on save */
     origin?: MaybeNull<string>;
-    onCreate: (type: ItemType) => void;
 };
 
-export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, onCreate }) => {
-    const { matchItemList } = useNavigation();
-    const passwordContext = usePasswordContext();
+export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null }) => {
+    const scope = useItemScope();
+    const navigate = useNavigate();
+    const passwordHistory = usePasswordHistoryActions();
+    const generatePassword = usePasswordGeneratorAction();
     const copyToClipboard = useCopyToClipboard();
+
+    const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
@@ -43,17 +49,17 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
 
     const listRef = useRef<HTMLUListElement>(null);
     useNewItemShortcut(() => {
-        if (isOpen || !matchItemList) return;
+        if (isOpen || !scope) return;
         open();
         setTimeout(() => listRef.current?.querySelector('button')?.focus(), 50);
     });
 
     const handleNewPasswordClick = () => {
-        void passwordContext.generate({
+        void generatePassword({
             actionLabel: c('Action').t`Copy and close`,
             className: SubTheme.RED,
             onSubmit: (value) => {
-                passwordContext.history.add({ value, origin });
+                passwordHistory.add({ value, origin });
                 copyToClipboard(value).catch(noop);
             },
         });

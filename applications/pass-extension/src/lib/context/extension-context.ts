@@ -10,6 +10,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import.meta.webpackHot?.decline();
 
@@ -46,12 +47,23 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         const port = browser.runtime.connect(browser.runtime.id, { name });
         const disconnectPort = safeCall(() => port.disconnect());
         const destroy = pipe(disconnectPort, ExtensionContext.clear);
+
         const ctx = ExtensionContext.set({ endpoint, port, tabId, url, destroy });
 
         ctx.port.onDisconnect.addListener(async () => {
             const { recycle } = onDisconnect?.(ExtensionContext.read());
             logger.info(`[Context::Extension] port disconnected [reconnect=${recycle}]`);
-            return recycle && onRecycle(await setupExtensionContext(options));
+
+            if (recycle) {
+                /** When disconnection is triggered by the service worker unregistering,
+                 * we need to allow time for the new service worker to fully claim the
+                 * current extension runtime before proceeding. Without this delay, runtime
+                 * API calls during context setup may fail with "receiving end does not exist"
+                 * errors when trying to communicate with the incoming service worker. */
+                await wait(250);
+
+                return onRecycle(await setupExtensionContext(options));
+            }
         });
 
         registerLoggerEffect((...logs) =>
