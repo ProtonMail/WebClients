@@ -124,7 +124,7 @@ describe('WalletReceiveContent', () => {
         });
 
         it('should display QRCode containing `paymentLink`', () => {
-            expect(screen.getByText(bitcoinURI.toString()));
+            expect(screen.getByText(`${bitcoinURI.toString()} (#0)`));
         });
     });
 });

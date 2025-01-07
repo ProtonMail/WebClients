@@ -1,21 +1,21 @@
 /* tslint:disable */
 /* eslint-disable */
-/**
- * @param {string} word_start
- * @returns {(string)[]}
- */
-export function getWordsAutocomplete(word_start: string): (string)[];
+export function setPanicHook(): void;
 /**
  * @param {WasmPsbt} psbt
  * @param {WasmAccount} account
  * @returns {Promise<WasmTransactionDetailsData>}
  */
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
-export function setPanicHook(): void;
 /**
  * @returns {number}
  */
 export function getDefaultStopGap(): number;
+/**
+ * @param {string} word_start
+ * @returns {(string)[]}
+ */
+export function getWordsAutocomplete(word_start: string): (string)[];
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
@@ -93,8 +93,6 @@ export enum WasmWordCount {
   Words21 = 3,
   Words24 = 4,
 }
-export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
-
 export type WasmGatewayProvider = "Banxa" | "Ramp" | "MoonPay" | "Azteco" | "Unsupported";
 
 export interface WasmApiCountry {
@@ -215,6 +213,8 @@ export interface WasmApiFiatCurrency {
     Sign: string;
     Cents: number;
 }
+
+export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
 
 export type WasmTimeframe = "OneDay" | "OneWeek" | "OneMonth" | "Unsupported";
 
@@ -345,6 +345,11 @@ export interface WasmMigratedWalletTransaction {
     Label: string | null;
 }
 
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
+
 export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 export interface WasmAddressInfo {
@@ -385,11 +390,6 @@ export interface WasmEmailIntegrationData {
     is_anonymous: number | null;
 }
 
-export interface WasmPagination {
-    skip: number;
-    take: number;
-}
-
 export class WasmAccount {
   free(): void;
   /**
@@ -404,6 +404,10 @@ export class WasmAccount {
    * @returns {Promise<void>}
    */
   markReceiveAddressesUsedTo(from: number, to?: number): Promise<void>;
+  /**
+   * @returns {Promise<number | undefined>}
+   */
+  getHighestUsedAddressIndexInOutput(): Promise<number | undefined>;
   /**
    * @returns {Promise<WasmAddressInfo>}
    */
