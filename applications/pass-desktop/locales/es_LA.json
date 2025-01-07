@@ -749,8 +749,8 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Si está usando un subdominio, por ejemplo, subdominio.dominio.com, debe usar ${ domainKeyExampleSubdomain } como dominio. Esto significa que, si su dominio es correo.dominio.com, debe ingresar ${ domainKeyExampleMail } como dominio."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Si está usando CloudFlare, asegúrese de no seleccionar la opción Proxy."
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Si está usando Cloudflare, asegúrese de no seleccionar la opción Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantenga su información más segura y privada con estas guías y consejos."
@@ -764,8 +764,8 @@
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Algunos registradores de DNS podrían requerir una ruta de registro completa. En este caso, use ${ domain } como valor de dominio."
       ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Algunos registradores de dominio (Namecheap, CloudFlare, etc.) también pueden usar @ para el dominio raíz."
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Algunos registradores de dominio (Namecheap, Cloudflare, etc.) también pueden usar @ para el dominio raíz."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } es un método de autenticación de correo electrónico diseñado para detectar direcciones de remitentes falsificadas durante la entrega del correo electrónico. Se recomienda encarecidamente configurar SPF para reducir la posibilidad de que sus correos electrónicos terminen en la carpeta de spam del destinatario."
@@ -785,8 +785,8 @@
       "This service offers 2FA. Enable it for added account security.": [
         "Este servicio ofrece 2FA. Actívelo para añadir seguridad a la cuenta."
       ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Para verificar la propiedad del dominio, agregue el siguiente registro TXT. Algunos registradores de dominios (Namecheap, CloudFlare, etc.) pueden usar @ para el dominio raíz."
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Para verificar la propiedad del dominio, agregue el siguiente registro TXT. Algunos registradores de dominios (Namecheap, Cloudflare, etc.) pueden usar @ para el dominio raíz."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquee funciones de seguridad avanzadas y registros detallados para proteger su presencia en línea."

@@ -749,9 +749,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Als u een subdomein gebruikt, zoals subdomein.domein.com, moet u ${ domainKeyExampleSubdomain } als het domein gebruiken. Dat betekent dat als uw domein mail.domein.com is, u ${ domainKeyExampleMail } als het domein moet invoeren."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Als u CloudFlare gebruikt, zorg er dan voor dat u de Proxy optie niet selecteert."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Houd uw info veiliger en privé met deze handleidingen en tips."
       ],
@@ -763,9 +760,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Voor sommige DNS registrarors is een volledig record pad vereist, in dit geval moet u ${ domain } als domeinwaarde gebruiken."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Sommige domein registrators (Namecheap, CloudFlare, enz) gebruiken misschien ook @ voor het root-domein."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } is een verificatiemethode ontworpen om het vervalsen van afzenderadressen te detecteren tijdens de levering van de e-mail. Het instellen van SPF wordt sterk aanbevolen om de kans te verminderen dat uw e-mails in de Spam map van de ontvanger terechtkomen."
@@ -784,9 +778,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Deze service biedt 2FA aan. Schakel het in voor extra accountveiligheid."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Om de eigendom van het domein te verifiëren, voeg je de volgende TXT-record toe. Sommige domeinregistrars (Namegoedkoop, CloudFlare, enz.) kunnen @ gebruiken voor het hoofddomein."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Ontgrendel geavanceerde beveiligingsfuncties en gedetailleerde logs om uw online aanwezigheid te beschermen."
@@ -1184,6 +1175,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Uw DNS is niet correct ingesteld. Het MX-record dat we krijgen is:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Uw DNS is niet correct ingesteld. Het TXT-record dat we krijgen is:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
       ]
@@ -1347,6 +1344,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } inbreuk gedetecteerd",
         "${ row.breachCount } inbreuken gedetecteerd"
+      ],
+      "(Empty)": [
+        "(Leeg)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagens om premium functies gratis te proberen. Enkel tijdens uw eerste week van ${ BRAND_NAME }."
@@ -2103,6 +2103,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Deze instelling is uitgeschakeld op organisatieniveau"
+      ],
+      "This setting is enforced by your organization": [
+        "Deze instelling wordt afgedwongen door je organisatie"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Deze kluis wordt momenteel met niet gedeeld. Nodig mensen uit om deze met anderen te delen."

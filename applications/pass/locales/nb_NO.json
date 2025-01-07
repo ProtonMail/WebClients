@@ -717,9 +717,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Hvis du bruker et underdomene, f.eks. underdomene.domene.no, må du istedenfor bruke ${ domainKeyExampleSubdomain } som domenet. Det betyr, hvis domenet ditt er e-post.domene.no, skal du skrive inn ${ domainKeyExampleMail } som domenet."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Hvis du bruker CloudFlare, sørg for at du ikke velger alternativet Proxy."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
       ],
@@ -731,9 +728,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Noen DNS-registratorer kan kreve en fullstendig postbane, i dette tilfellet kan du bruke ${ domain } som domeneverdi i stedet."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan også bruke @ for rotdomenet."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } er en e-postautentiseringsmetode utviklet for å oppdage forfalskede avsenderadresser under levering av e-posten. Det anbefales sterkt å sette opp SPF for å redusere sjansen for at e-postene dine havner i mottakerens søppelpostmappe."
@@ -752,9 +746,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "For å bekrefte eierskapet til domenet, legg til følgende TXT-post. Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan bruke @ for rotdomenet."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås opp avanserte sikkerhetsfunksjoner og detaljerte logger for å beskytte din tilstedeværelse på nettet."
@@ -1149,6 +1140,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Du er frakoblet. Gjenoppta tilkoblingen for å låse opp ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "DNS-en din er ikke riktig angitt. MX-posten vi får er:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "DNS-en din er ikke riktig angitt. TXT-posten vi får er:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
       ]
@@ -1312,6 +1309,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } brudd oppdaget",
         "${ row.breachCount } brudd oppdaget"
+      ],
+      "(Empty)": [
+        "(Tom)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
@@ -2065,6 +2065,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Denne innstillingen er deaktivert på organisasjonsnivå"
+      ],
+      "This setting is enforced by your organization": [
+        "Denne innstillingen er håndhevet av organisasjonen din"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Hvelvet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."

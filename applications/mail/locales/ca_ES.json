@@ -45,6 +45,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add account": [
+        "Afegeix un compte"
+      ],
       "Add address": [
         "Afegeix una adreça"
       ],
@@ -1182,6 +1185,9 @@
       ],
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "Sign out of all accounts": [
+        "Tanca tots els comptes"
       ],
       "Size": [
         "Mida"
@@ -4641,17 +4647,11 @@
       "Calendar": [
         "Calendari"
       ],
-      "Calendar time zone not supported": [
-        "La zona horària del calendari no és compatible"
-      ],
       "Component with wrong format": [
         "Component amb format erroni"
       ],
       "Custom time zone": [
         "Fus horari personalitzat"
-      ],
-      "Edited event not supported": [
-        "Esdeveniment editat no compatible"
       ],
       "Element": [
         "Element"
@@ -4659,17 +4659,8 @@
       "Encryption failed": [
         "No s'ha pogut xifrar."
       ],
-      "End time out of bounds": [
-        "Hora de finalització fora de límits"
-      ],
       "Event": [
         "Esdeveniment"
-      ],
-      "Event validation failed": [
-        "No s'ha pogut validar l'esdeveniment."
-      ],
-      "Floating times not supported": [
-        "Temps flotants no compatibles"
       ],
       "Free-busy time information": [
         "Informació de disponibilitat temporal"
@@ -4680,26 +4671,11 @@
       "Journal entry": [
         "Entrada de diari"
       ],
-      "Malformed all-day event": [
-        "Esdeveniment de tot el dia amb format incorrecte"
-      ],
-      "Malformed end time": [
-        "Hora de finalització amb format incorrecte"
-      ],
-      "Malformed recurring event": [
-        "Esdeveniment recurrent amb format incorrecte"
-      ],
-      "Malformed start time": [
-        "Hora de inici amb format incorrecte"
-      ],
       "Missing start time": [
         "Falta l’hora d’inici"
       ],
       "No UID, title or start time": [
         "Sense UID, títol o hora d'inici"
-      ],
-      "Non-Gregorian": [
-        "No gregorià"
       ],
       "Notification out of bounds": [
         "Notificació fora de límits"
@@ -4707,20 +4683,11 @@
       "Original recurring event could not be found": [
         "No es troba l'esdeveniment recurrent original"
       ],
-      "Recurring event has no occurrences": [
-        "L'esdeveniment recurrent no té cap ocurrència"
-      ],
-      "Recurring rule not supported": [
-        "Regla recurrent no compatible"
-      ],
-      "Start time out of bounds": [
-        "Hora d’inici fora de límits"
-      ],
       "Time zone": [
         "Fus horari"
       ],
-      "Time zone not supported": [
-        "Fus horari no compatible"
+      "Time zone component ignored": [
+        "S'ha ignorat el component de la zona horària."
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -4788,6 +4755,11 @@
         "No es pot enviar la invitació a ${ email }. ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "S'ha produït un error inesperat."
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "No es pot desxifrar l'arxiu ICS adjuntat"
@@ -4806,9 +4778,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "No s'ha pogut actualitzar l'esdeveniment al calendari. No s'ha enviat cap resposta"
-      ],
-      "Unexpected error": [
-        "Error inesperat"
       ],
       "Unsupported invitation": [
         "Invitació no compatible"
@@ -5465,6 +5434,50 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "La zona horària del calendari no és compatible."
+      ],
+      "Edited event not supported": [
+        "L'esdeveniment editat no és compatible."
+      ],
+      "End time out of bounds": [
+        "L'hora de finalització està fora dels límits."
+      ],
+      "Event validation failed": [
+        "No s'ha pogut validar l'esdeveniment."
+      ],
+      "Floating times not supported": [
+        "Els temps flotants no són compatibles."
+      ],
+      "Malformed all-day event": [
+        "El format de l'esdeveniment para tot el dia és incorrecte."
+      ],
+      "Malformed end time": [
+        "El format de l'hora de finalització és incorrecte."
+      ],
+      "Malformed recurring event": [
+        "El format de l'esdeveniment recurrent és incorrecte."
+      ],
+      "Malformed start time": [
+        "El format de l'hora d'inici és incorrecte."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Només es permet l'escala del calendari gregorià."
+      ],
+      "Recurring event has no occurrences": [
+        "L'esdeveniment recurrent no té cap ocurrència."
+      ],
+      "Recurring rule not supported": [
+        "La regla recurrent no és compatible."
+      ],
+      "Start time out of bounds": [
+        "L'hora d’inici està fora dels límits."
+      ],
+      "Time zone not supported": [
+        "El fus horari no és compatible."
       ]
     },
     "ICS widget label for event details": {
@@ -6656,6 +6669,9 @@
       "Medium Priority": [
         "Prioritat mitjana"
       ],
+      "Member": [
+        "Membre"
+      ],
       "Members": [
         "Membres"
       ],
@@ -7270,6 +7286,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "La clau pública del aquest remitent no ha tingut confiança encara."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
       ],
       "to ${ destinationElement } folder.": [
         "a la carpeta ${ destinationElement }."
@@ -12690,6 +12709,9 @@
       ],
       "Are you sure you want to close?": [
         "Segur que voleu tancar?"
+      ],
+      "Are you sure?": [
+        "N'esteu segur?"
       ],
       "Attachments": [
         "Adjunts"

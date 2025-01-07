@@ -42,6 +42,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add account": [
+        "Tilføj konto"
+      ],
       "Add address": [
         "Tilføj adresse"
       ],
@@ -506,6 +509,9 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Få ${ BRAND_NAME } Duo"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -1170,6 +1176,9 @@
       ],
       "Sign out": [
         "Log ud"
+      ],
+      "Sign out of all accounts": [
+        "Log ud alle konti"
       ],
       "Size": [
         "Størrelse"
@@ -3548,6 +3557,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
+      "Also included": [
+        "Også inkluderet"
+      ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "Auto-slet spam og kasserede beskeder, og lås op for flere premium-funktioner, når du opgraderer."
       ],
@@ -3650,6 +3662,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Lås op for ubegrænsede mapper, etiketter og flere premium-funktioner når du opgraderer."
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Opgrader for at få ${ activatePmUser } og en kortere e-mailadresse, der er nem at huske, ud over din nuværende."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
@@ -4609,17 +4624,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Kalendertidszone understøttes ikke"
-      ],
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
       "Custom time zone": [
         "Brugerdefineret tidszone"
-      ],
-      "Edited event not supported": [
-        "Redigeret begivenhed understøttes ikke"
       ],
       "Element": [
         "Element"
@@ -4627,17 +4636,8 @@
       "Encryption failed": [
         "Kryptering mislykkedes"
       ],
-      "End time out of bounds": [
-        "Sluttid uden for grænserne"
-      ],
       "Event": [
         "Begivenhed"
-      ],
-      "Event validation failed": [
-        "Validering af begivenhed mislykkedes"
-      ],
-      "Floating times not supported": [
-        "Flydende tider understøttes ikke"
       ],
       "Free-busy time information": [
         "Fri-optaget tidsinformation"
@@ -4648,26 +4648,11 @@
       "Journal entry": [
         "Journalindlæg"
       ],
-      "Malformed all-day event": [
-        "Misdannet heldagsbegivenhed"
-      ],
-      "Malformed end time": [
-        "Misdannet sluttidspunkt"
-      ],
-      "Malformed recurring event": [
-        "Misdannet tilbagevendende begivenhed"
-      ],
-      "Malformed start time": [
-        "Misdannet starttid"
-      ],
       "Missing start time": [
         "Manglende starttidspunkt"
       ],
       "No UID, title or start time": [
         "Ingen UID, titel eller starttid"
-      ],
-      "Non-Gregorian": [
-        "Ikke-gregoriansk"
       ],
       "Notification out of bounds": [
         "Notifikation uden for grænserne"
@@ -4675,20 +4660,8 @@
       "Original recurring event could not be found": [
         "Oprindelig tilbagevendende begivenhed kunne ikke findes"
       ],
-      "Recurring event has no occurrences": [
-        "Tilbagevendende begivenhed har ingen forekomster"
-      ],
-      "Recurring rule not supported": [
-        "Tilbagevendende regel understøttes ikke"
-      ],
-      "Start time out of bounds": [
-        "Starttid uden for grænserne"
-      ],
       "Time zone": [
         "Tidszone"
-      ],
-      "Time zone not supported": [
-        "Tidszone understøttes ikke"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -4769,9 +4742,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Begivenheden kunne ikke opdateres i din kalender. Der blev ikke sendt noget svar"
-      ],
-      "Unexpected error": [
-        "Uventet fejl"
       ],
       "Unsupported invitation": [
         "Ikke-understøttet invitation"
@@ -5581,7 +5551,7 @@
         "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+        "Udvid dropdownmenuen ved at trykke på de 3 prikker (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Generer ${ boldAppPassword }, og brug den i stedet for din almindelige adgangskode, når du bliver bedt om det af ${ BRAND_NAME }."
@@ -5653,7 +5623,7 @@
         "Gå til ${ calendarViewLink } i Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen."
+        "Hold musen over den kalender, du vil importere, og åbn dropdownmenuen."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
@@ -6585,6 +6555,9 @@
       "Medium Priority": [
         "Mellem prioritet"
       ],
+      "Member": [
+        "Medlem"
+      ],
       "Members": [
         "Medlemmer"
       ],
@@ -6957,6 +6930,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
+      "Setting up your new address...": [
+        "Konfigurerer din nye adresse..."
+      ],
       "Shorten selection": [
         "Forkort udvælgelse"
       ],
@@ -7187,6 +7163,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Denne afsenders offentlige nøgle er endnu ikke betroet."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
       "to ${ destinationElement } folder.": [
         "til ${ destinationElement } mappe."
@@ -10085,6 +10064,12 @@
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } betyder, at det er slut med at blive forfulgt på tværs af internettet."
       ],
+      "Activate premium features": [
+        "Aktivér premium-funktioner"
+      ],
+      "Activate selected": [
+        "Aktivér valgte"
+      ],
       "Advanced encryption": [
         "Avanceret kryptering"
       ],
@@ -10097,11 +10082,17 @@
       "Download the desktop app": [
         "Download skrivebords-appen"
       ],
+      "Get notified if your password is compromised.": [
+        "Bliv underrettet hvis din adgangskode bliver kompromitteret."
+      ],
       "Industry-leading spam protection": [
         "Brancheførende beskyttelse mod spam"
       ],
       "Let's get started": [
         "Lad os komme i gang"
+      ],
+      "Make the most of your paid plan.": [
+        "Få det meste ud af dit betalte abonnement."
       ],
       "Maybe later": [
         "Måske senere"
@@ -10114,6 +10105,9 @@
       ],
       "Start using ${ BRAND_NAME }": [
         "Begynd at bruge ${ BRAND_NAME }"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Velkommen til ${ MAIL_APP_NAME }"
@@ -11330,6 +11324,9 @@
       "Schedule send": [
         "Planlæg afsendelse"
       ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Dette er nu din standard-adresse. Åbn dropdownmenuen for at sende fra en anden adresse."
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Slå ${ DARK_WEB_MONITORING_NAME } til for at få besked, hvis dine data er blevet lækket fra en tredjepartstjeneste."
       ],
@@ -11341,6 +11338,9 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
+      ],
+      "Your pm.me email is active": [
+        "Din pm.me e-mail er aktiv"
       ]
     },
     "sso": {
@@ -12438,6 +12438,9 @@
       "Are you sure you want to close?": [
         "Er du sikker på, at du vil lukke?"
       ],
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
       "Attachments": [
         "Vedhæftninger"
       ],
@@ -12877,7 +12880,7 @@
         "Én e-mail, mange modtagere"
       ],
       "Open actions dropdown": [
-        "Åbn handlingsrullemenu"
+        "Åbn handlings-dropdownmenuen"
       ],
       "Other information": [
         "Anden information"
@@ -13081,6 +13084,9 @@
       "Unsubscribe request sent": [
         "Anmodning om afmelding afsendt"
       ],
+      "Upgrade complete!": [
+        "Opgradering udført!"
+      ],
       "Verification error": [
         "Bekræftelsesfejl"
       ],
@@ -13129,6 +13135,9 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode er slut"
+      ],
+      "Your shorter address is now ready": [
+        "Din kortere adresse er nu klar"
       ]
     },
     "Today icon tooltip in mini calendar": {
