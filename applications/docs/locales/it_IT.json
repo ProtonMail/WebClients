@@ -45,6 +45,9 @@
       "Add": [
         "Aggiungi"
       ],
+      "Add account": [
+        "Aggiungi un account"
+      ],
       "Add address": [
         "Aggiungi indirizzo"
       ],
@@ -590,6 +593,9 @@
       ],
       "Sign out": [
         "Esci dall'account"
+      ],
+      "Sign out of all accounts": [
+        "Esci da tutti gli account"
       ],
       "Sign up": [
         "Registrati"
@@ -3004,17 +3010,11 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendar time zone not supported": [
-        "Fuso orario del calendario non supportato"
-      ],
       "Component with wrong format": [
         "Componente con formato errato"
       ],
       "Custom time zone": [
         "Fuso orario personalizzato"
-      ],
-      "Edited event not supported": [
-        "Evento modificato non supportato"
       ],
       "Element": [
         "Elemento"
@@ -3022,17 +3022,8 @@
       "Encryption failed": [
         "Crittografia non riuscita"
       ],
-      "End time out of bounds": [
-        "Ora di fine fuori dai limiti"
-      ],
       "Event": [
         "Evento"
-      ],
-      "Event validation failed": [
-        "Convalida dell'evento non riuscita"
-      ],
-      "Floating times not supported": [
-        "Tempi mobili non supportati"
       ],
       "Free-busy time information": [
         "Informazioni sul tempo libero/occupato"
@@ -3043,26 +3034,11 @@
       "Journal entry": [
         "Voce del diario"
       ],
-      "Malformed all-day event": [
-        "Evento per tutta la giornata ha un formato errato"
-      ],
-      "Malformed end time": [
-        "Ora di fine con un formato errato"
-      ],
-      "Malformed recurring event": [
-        "Evento ricorrente non conforme"
-      ],
-      "Malformed start time": [
-        "Ora di inizio con un formato errato"
-      ],
       "Missing start time": [
         "Ora di inizio mancante"
       ],
       "No UID, title or start time": [
         "Nessun UID, titolo o ora di inizio"
-      ],
-      "Non-Gregorian": [
-        "Non-gregoriano"
       ],
       "Notification out of bounds": [
         "Notifica fuori dai limiti"
@@ -3070,20 +3046,8 @@
       "Original recurring event could not be found": [
         "Impossibile trovare l'evento ricorrente originale"
       ],
-      "Recurring event has no occurrences": [
-        "L'evento ricorrente non ha occorrenze"
-      ],
-      "Recurring rule not supported": [
-        "Regola ricorrente non supportata"
-      ],
-      "Start time out of bounds": [
-        "Ora di inizio fuori dai limiti"
-      ],
       "Time zone": [
         "Fuso orario"
-      ],
-      "Time zone not supported": [
-        "Fuso orario non supportato"
       ],
       "To-do entry": [
         "Voce da fare"
@@ -3152,9 +3116,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Impossibile aggiornare l'evento nel tuo calendario. Nessuna risposta inviata"
-      ],
-      "Unexpected error": [
-        "Errore imprevisto"
       ],
       "Unsupported invitation": [
         "Invito non supportato"
@@ -4308,6 +4269,9 @@
       "Medium Priority": [
         "Priorità media"
       ],
+      "Member": [
+        "Membro"
+      ],
       "Merged": [
         "Unito"
       ],
@@ -4650,6 +4614,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Questo sostituirà la cartella esistente con il file."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
       "This will upload a new version of the file": [
         "Si importerà una nuova versione del file."
@@ -8537,6 +8504,9 @@
       ],
       "Apply gift code": [
         "Applica codice regalo"
+      ],
+      "Are you sure?": [
+        "Sei sicuro?"
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"

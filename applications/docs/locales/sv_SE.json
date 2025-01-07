@@ -45,6 +45,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add account": [
+        "Lägg till konto"
+      ],
       "Add address": [
         "Lägg till adress"
       ],
@@ -590,6 +593,9 @@
       ],
       "Sign out": [
         "Logga ut"
+      ],
+      "Sign out of all accounts": [
+        "Logga ut från alla konton"
       ],
       "Sign up": [
         "Registrera"
@@ -3007,17 +3013,11 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar time zone not supported": [
-        "Kalenderns tidszon stöds inte"
-      ],
       "Component with wrong format": [
         "Komponent med fel format"
       ],
       "Custom time zone": [
         "Anpassad tidszon"
-      ],
-      "Edited event not supported": [
-        "Redigerad händelse stöds inte"
       ],
       "Element": [
         "Element"
@@ -3025,17 +3025,8 @@
       "Encryption failed": [
         "Kryptering misslyckades"
       ],
-      "End time out of bounds": [
-        "Sluttid utanför gränserna"
-      ],
       "Event": [
         "Händelse"
-      ],
-      "Event validation failed": [
-        "Validering av händelse misslyckades"
-      ],
-      "Floating times not supported": [
-        "Flytande tider stöds inte"
       ],
       "Free-busy time information": [
         "Ledig/upptagen tidsinformation"
@@ -3046,26 +3037,11 @@
       "Journal entry": [
         "Journalinlägg"
       ],
-      "Malformed all-day event": [
-        "Felaktig heldagshändelse"
-      ],
-      "Malformed end time": [
-        "Felaktig sluttid"
-      ],
-      "Malformed recurring event": [
-        "Felaktig återkommande händelse"
-      ],
-      "Malformed start time": [
-        "Felaktig starttid"
-      ],
       "Missing start time": [
         "Starttid saknas"
       ],
       "No UID, title or start time": [
         "Ingen UID, rubrik eller starttid"
-      ],
-      "Non-Gregorian": [
-        "Icke-gregoriansk"
       ],
       "Notification out of bounds": [
         "Avisering utanför gränserna"
@@ -3073,20 +3049,8 @@
       "Original recurring event could not be found": [
         "Ursprunglig återkommande händelse kunde inte hittas"
       ],
-      "Recurring event has no occurrences": [
-        "Återkommande händelse har inga förekomster"
-      ],
-      "Recurring rule not supported": [
-        "Återkommande regel stöds inte"
-      ],
-      "Start time out of bounds": [
-        "Starttid utanför gränserna"
-      ],
       "Time zone": [
         "Tidszon"
-      ],
-      "Time zone not supported": [
-        "Tidszon stöds inte"
       ],
       "To-do entry": [
         "Att-göra-inlägg"
@@ -3155,9 +3119,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Händelsen kunde inte uppdateras i din kalender. Inget svar skickades"
-      ],
-      "Unexpected error": [
-        "Oväntat fel"
       ],
       "Unsupported invitation": [
         "Inbjudan stöds inte"
@@ -4320,6 +4281,9 @@
       "Medium Priority": [
         "Medium prioritet"
       ],
+      "Member": [
+        "Medlem"
+      ],
       "Merged": [
         "Sammanslagna"
       ],
@@ -4662,6 +4626,9 @@
       ],
       "This will replace the existing folder with the file": [
         "Detta kommer ersätta den befintliga mappen med filen"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
       ],
       "This will upload a new version of the file": [
         "Detta kommer ladda upp en ny version av filen"
@@ -8567,6 +8534,9 @@
       ],
       "Apply gift code": [
         "Tillämpa presentkod"
+      ],
+      "Are you sure?": [
+        "Är du säker?"
       ],
       "Billing cycle": [
         "Faktureringscykel"
