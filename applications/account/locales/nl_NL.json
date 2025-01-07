@@ -91,6 +91,9 @@
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Account Toevoegen"
       ],
+      "Add account": [
+        "Account toevoegen"
+      ],
       "Add address": [
         "Adres toevoegen"
       ],
@@ -831,6 +834,9 @@
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
+      ],
+      "Refresh Data": [
+        "Gegevens vernieuwen"
       ],
       "Refresh status": [
         "Status vernieuwen"
@@ -5033,17 +5039,11 @@
       "Calendar": [
         "Agenda"
       ],
-      "Calendar time zone not supported": [
-        "Agenda-tijdzone niet ondersteund"
-      ],
       "Component with wrong format": [
         "Component met verkeerde indeling"
       ],
       "Custom time zone": [
         "Aangepaste tijdzone"
-      ],
-      "Edited event not supported": [
-        "Bewerkte afspraak niet ondersteund"
       ],
       "Element": [
         "Element"
@@ -5051,17 +5051,8 @@
       "Encryption failed": [
         "Versleutelen is mislukt"
       ],
-      "End time out of bounds": [
-        "Eindtijd valt buiten de grenzen"
-      ],
       "Event": [
         "Afspraak"
-      ],
-      "Event validation failed": [
-        "Validatie van afspraak mislukt"
-      ],
-      "Floating times not supported": [
-        "Zwevende tijden niet ondersteund"
       ],
       "Free-busy time information": [
         "Informatie over vrije tijd"
@@ -5072,26 +5063,11 @@
       "Journal entry": [
         "Logboek-item"
       ],
-      "Malformed all-day event": [
-        "Misvormde afspraak gedurende de hele dag"
-      ],
-      "Malformed end time": [
-        "Misvormde eindtijd"
-      ],
-      "Malformed recurring event": [
-        "Misvormde periodieke afspraak"
-      ],
-      "Malformed start time": [
-        "Misvormde begintijd"
-      ],
       "Missing start time": [
         "Begintijd ontbreekt"
       ],
       "No UID, title or start time": [
         "Geen UID, titel of starttijd"
-      ],
-      "Non-Gregorian": [
-        "Niet-Gregoriaanse"
       ],
       "Notification out of bounds": [
         "Melding buiten de grenzen"
@@ -5099,20 +5075,8 @@
       "Original recurring event could not be found": [
         "Oorspronkelijke terugkerende afspraak kan niet worden gevonden"
       ],
-      "Recurring event has no occurrences": [
-        "Terugkerende afspraak heeft geen voorvallen"
-      ],
-      "Recurring rule not supported": [
-        "Herhalingsvoorwaarde niet ondersteund"
-      ],
-      "Start time out of bounds": [
-        "Begintijd valt buiten de grenzen"
-      ],
       "Time zone": [
         "Tijdzone"
-      ],
-      "Time zone not supported": [
-        "Tijdzone niet ondersteund"
       ],
       "To-do entry": [
         "To-do item"
@@ -5251,9 +5215,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Deze afspraak kon niet worden bijgewerkt in uw agenda. Er werd geen antwoord verstuurd"
-      ],
-      "Unexpected error": [
-        "Onverwachte fout"
       ],
       "Unsupported invitation": [
         "Niet-ondersteunde uitnodiging"
@@ -6161,6 +6122,12 @@
       ],
       "Checkout": [
         "Afrekenen"
+      ],
+      "City": [
+        "Stad"
+      ],
+      "Country": [
+        "Land"
       ],
       "Create your account": [
         "Maak uw account aan"
@@ -8064,6 +8031,9 @@
       "No label selected": [
         "Geen label geselecteerd"
       ],
+      "No location filters are currently assigned.": [
+        "Er zijn momenteel geen locatie filters toegewezen."
+      ],
       "No logs yet.": [
         "Nog geen logbestanden."
       ],
@@ -8072,6 +8042,9 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
+      ],
+      "No Shared Servers Found": [
+        "Geen gedeelde servers gevonden"
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -8471,6 +8444,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Gedeelde ${ vaultLink } bijgewerkt"
+      ],
+      "Shared Server Location Filters": [
+        "Gedeelde Server Locatie Filters"
       ],
       "Shared vault deleted": [
         "Gedeelde kluis verwijderd"
@@ -18177,6 +18153,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Toegewijde servers opzetten door te upgraden naar Business"
+      ],
+      "Shared servers": [
+        "Gedeelde servers"
       ],
       "Short domain (@pm.me)": [
         "Korte domein (@pm.me)"
