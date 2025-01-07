@@ -205,8 +205,8 @@ describe('useWalletAutoCreate', () => {
             const bitcoinAddressesPayloadInner = bitcoinAddressesPayload[0];
 
             expect(bitcoinAddressesPayloadInner[0].Data).toStrictEqual({
-                BitcoinAddress: 'tb1q9zt888mn6ujzz3xkrsf8v73ngslfxgwqkng0lq',
-                BitcoinAddressIndex: 0,
+                BitcoinAddress: 'tb1qlsckafxe0v6xe8kt94svx77ld38qw2yhz7cakz',
+                BitcoinAddressIndex: 1,
                 BitcoinAddressSignature: expect.any(String),
             });
             await expectSignedBy(
@@ -216,8 +216,8 @@ describe('useWalletAutoCreate', () => {
             );
 
             expect(bitcoinAddressesPayloadInner[1].Data).toStrictEqual({
-                BitcoinAddress: 'tb1qlsckafxe0v6xe8kt94svx77ld38qw2yhz7cakz',
-                BitcoinAddressIndex: 1,
+                BitcoinAddress: 'tb1qelseqz73w6p65s4a2pmfm0w48tjsvp54u2v9k3',
+                BitcoinAddressIndex: 2,
                 BitcoinAddressSignature: expect.any(String),
             });
             await expectSignedBy(
@@ -227,8 +227,8 @@ describe('useWalletAutoCreate', () => {
             );
 
             expect(bitcoinAddressesPayloadInner[2].Data).toStrictEqual({
-                BitcoinAddress: 'tb1qelseqz73w6p65s4a2pmfm0w48tjsvp54u2v9k3',
-                BitcoinAddressIndex: 2,
+                BitcoinAddress: 'tb1quyhahtn92de3296pgw9z369g9asdc4wfwn2mmd',
+                BitcoinAddressIndex: 3,
                 BitcoinAddressSignature: expect.any(String),
             });
             await expectSignedBy(
