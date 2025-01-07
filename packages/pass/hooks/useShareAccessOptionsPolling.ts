@@ -9,7 +9,7 @@ import { useRequest } from './useRequest';
 
 export const useShareAccessOptionsPolling = (shareId: string, itemId?: string) => {
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
-    const { loading, dispatch, revalidate } = useRequest(getShareAccessOptions, { initial: { shareId } });
+    const { loading, dispatch, revalidate } = useRequest(getShareAccessOptions, { initial: { shareId, itemId } });
 
     const wasLoading = usePrevious(loading);
     const [didLoad, setDidLoad] = useState(false);

@@ -12,11 +12,4 @@ export const isOwnVault = <T extends Share>({ targetType, owner }: T) => targetT
 
 export const isSharedVault = <T extends Share>({ targetType, shared }: T) => targetType === ShareType.Vault && shared;
 
-export const isVaultMemberLimitReached = ({
-    targetMaxMembers,
-    invites = [],
-    members = [],
-    newUserInvites = [],
-}: ShareItem) => invites.length + members.length + newUserInvites.length >= targetMaxMembers;
-
 export const hasNewUserInvitesReady = (vault: ShareItem<ShareType.Vault>) => vault.newUserInvitesReady > 0;

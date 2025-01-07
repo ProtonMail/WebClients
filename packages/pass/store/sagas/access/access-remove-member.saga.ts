@@ -10,7 +10,7 @@ import {
 function* removeUserAccessWorker({ payload, meta: { request } }: ReturnType<typeof shareRemoveMemberAccessIntent>) {
     try {
         yield removeUserAccess(payload);
-        yield put(shareRemoveMemberAccessSuccess(request.id, payload.shareId, payload.userShareId));
+        yield put(shareRemoveMemberAccessSuccess(request.id, payload));
     } catch (err) {
         yield put(shareRemoveMemberAccessFailure(request.id, err));
     }

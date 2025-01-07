@@ -6,7 +6,7 @@ import { inviteRemoveFailure, inviteRemoveIntent, inviteRemoveSuccess } from '@p
 function* removeInviteWorker({ payload, meta: { request } }: ReturnType<typeof inviteRemoveIntent>) {
     try {
         yield removeInvite(payload);
-        yield put(inviteRemoveSuccess(request.id, payload.shareId, payload.inviteId));
+        yield put(inviteRemoveSuccess(request.id, payload));
     } catch (err) {
         yield put(inviteRemoveFailure(request.id, err));
     }

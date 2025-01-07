@@ -39,8 +39,8 @@ export const ItemInviteCreate: FC<ItemInviteCreateProps> = (props) => {
         typeof inviteBatchCreateSuccess,
         typeof inviteBatchCreateFailure
     >(inviteBatchCreateIntent, {
-        onSuccess: ({ shareId }) => {
-            manageItemAccess(shareId, props.item.itemId);
+        onSuccess: ({ shareId, itemId }) => {
+            manageItemAccess(shareId, itemId!);
         },
     });
 
