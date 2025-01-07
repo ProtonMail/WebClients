@@ -3,6 +3,7 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
+import { isElectronMail } from '../../helpers/desktop';
 import { base64StringToUint8Array } from '../../helpers/encoding';
 import type { CalendarEventData } from '../../interfaces/calendar';
 import type { SimpleMap } from '../../interfaces/utils';
@@ -71,7 +72,9 @@ const getVerifiedLegacy = async ({
      *
      * We try to verify the signature in the legacy way and log the fact in Sentry
      */
-    captureMessage('Fallback to legacy signature verification of calendar event', { level: 'info' });
+    if (!isElectronMail) {
+        captureMessage('Fallback to legacy signature verification of calendar event', { level: 'info' });
+    }
     const { verified: verifiedLegacy } = await CryptoProxy.verifyMessage({
         textData,
         stripTrailingSpaces: true,
