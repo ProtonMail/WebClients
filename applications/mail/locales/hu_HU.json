@@ -42,6 +42,9 @@
       "Add": [
         "Hozzáadás"
       ],
+      "Add account": [
+        "Fiók hozzáadása"
+      ],
       "Add address": [
         "Cím hozzáadása"
       ],
@@ -1104,6 +1107,9 @@
       ],
       "Sign out": [
         "Kijelentkezés"
+      ],
+      "Sign out of all accounts": [
+        "Minden fiók kiléptetése"
       ],
       "Size": [
         "Méret"
@@ -4312,17 +4318,11 @@
       "Calendar": [
         "Naptár"
       ],
-      "Calendar time zone not supported": [
-        "A naptár időzónája nem támogatott"
-      ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
       "Custom time zone": [
         "Egyéni időzóna"
-      ],
-      "Edited event not supported": [
-        "Szerkesztett esemény nem támogatott"
       ],
       "Element": [
         "Elem"
@@ -4330,17 +4330,8 @@
       "Encryption failed": [
         "Titkosítás nem sikerült"
       ],
-      "End time out of bounds": [
-        "Záró időpont a korlátokon kívül"
-      ],
       "Event": [
         "Esemény"
-      ],
-      "Event validation failed": [
-        "Esemény ellenőrzése nem sikerült"
-      ],
-      "Floating times not supported": [
-        "Lebegő idők nem támogatottak"
       ],
       "Free-busy time information": [
         "Szabad-elfoglalt információ"
@@ -4351,26 +4342,11 @@
       "Journal entry": [
         "Napló elem"
       ],
-      "Malformed all-day event": [
-        "Hibás egésznapos esemény"
-      ],
-      "Malformed end time": [
-        "Hibás záró időpont"
-      ],
-      "Malformed recurring event": [
-        "Hibás ismétlődő esemény"
-      ],
-      "Malformed start time": [
-        "Hibás kezdő időpont"
-      ],
       "Missing start time": [
         "Hiányzó kezdő időpont"
       ],
       "No UID, title or start time": [
         "Nincs UID, cím vagy kezdési időpont"
-      ],
-      "Non-Gregorian": [
-        "Nem gergely-naptár"
       ],
       "Notification out of bounds": [
         "Az értesítés határokon kívül esik"
@@ -4378,20 +4354,8 @@
       "Original recurring event could not be found": [
         "Az ismétlődő esemény eredetije nem található"
       ],
-      "Recurring event has no occurrences": [
-        "Az ismétlődő eseménynek nincs előfordulása"
-      ],
-      "Recurring rule not supported": [
-        "Ismétlődési szabály nem támogatott"
-      ],
-      "Start time out of bounds": [
-        "Kezdő időpont a korlátokon kívül"
-      ],
       "Time zone": [
         "Időzóna"
-      ],
-      "Time zone not supported": [
-        "Időzóna nem támogatott"
       ],
       "To-do entry": [
         "Tennivaló elem"
@@ -4468,9 +4432,6 @@
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "Az eseményt nem sikerült frissíteni a naptárában. Válasz nem került elküldésre"
-      ],
-      "Unexpected error": [
-        "Váratlan hiba"
       ],
       "Unsupported invitation": [
         "Nem támogatott meghívó"
@@ -6186,6 +6147,9 @@
       "Medium Priority": [
         "Közepes prioritású"
       ],
+      "Member": [
+        "Tag"
+      ],
       "Members": [
         "Tagok"
       ],
@@ -6739,6 +6703,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "A feladó nyilvános kulcsa még nincs megbízhatóként jelölve."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
       ],
       "to ${ destinationElement } folder.": [
         "${ destinationElement } mappa áthelyezése."
@@ -11355,6 +11322,9 @@
       ],
       "Are you sure you want to close?": [
         "Biztosan bezárja?"
+      ],
+      "Are you sure?": [
+        "Biztos benne?"
       ],
       "Attachments": [
         "Mellékletek"
