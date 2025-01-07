@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Icon, Option, SelectTwo, SettingsLink } from '@proton/components';
+import { DropdownSizeUnit, Icon, Option, SelectTwo, SettingsLink } from '@proton/components';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
 import generateUID from '@proton/utils/generateUID';
@@ -71,13 +71,16 @@ const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props
         <>
             <SelectTwo
                 disabled={disabled}
-                className="composer-light-field select--inline-caret composer-meta-select-sender"
+                className="composer-light-field select--inline-caret composer-meta-select-sender expand-click-area"
                 id={`sender-${uid}`}
                 value={composer?.senderEmailAddress}
                 onChange={handleFromChange}
                 onFocus={addressesBlurRef.current}
                 originalPlacement="bottom-start"
                 data-testid="composer:from"
+                size={{
+                    width: DropdownSizeUnit.Dynamic,
+                }}
             >
                 {addressesOptions}
             </SelectTwo>

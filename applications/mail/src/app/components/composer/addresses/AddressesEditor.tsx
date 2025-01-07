@@ -56,13 +56,16 @@ const AddressesEditor = ({
 
     return (
         <div className="flex flex-column flex-nowrap items-start mt-0">
-            <div className="flex flex-row w-full relative flex-column md:flex-row" data-testid="composer:to-field">
-                <Label htmlFor={`to-${uid}`} className="composer-meta-label sr-only text-semibold">
+            <div
+                className="flex flex-row w-full relative flex-column md:flex-row relative composer-light-field-container"
+                data-testid="composer:to-field"
+            >
+                <Label htmlFor={`to-${uid}`} className="composer-meta-label color-hint pl-2">
                     {c('Title').t`To`}
                 </Label>
                 <div
                     className={clsx([
-                        'flex flex-nowrap field items-center flex-nowrap md:flex-1 w-full composer-to-editor composer-light-field',
+                        'flex flex-nowrap field items-center pt-2 flex-nowrap md:flex-1 w-full composer-to-editor composer-light-field',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
                     ref={toListAnchorRef}
@@ -73,7 +76,6 @@ const AddressesEditor = ({
                         messageSendInfo={messageSendInfo}
                         onChange={handleChange('ToList')}
                         inputFocusRef={inputFocusRefs.to}
-                        placeholder={c('Title').t`To`}
                         expanded={expanded}
                         dataTestId="composer:to"
                         classname="composer-editor-to flex-1"
@@ -83,14 +85,14 @@ const AddressesEditor = ({
                         <>
                             {!ccExpanded && (
                                 <AddressesCCButton
-                                    classNames="ml-4 composer-addresses-ccbcc text-cut"
+                                    classNames="ml-4 composer-addresses-ccbcc text-sm text-cut"
                                     onClick={toggleExpanded('CCList')}
                                     type="CCList"
                                 />
                             )}
                             {!bccExpanded && (
                                 <AddressesCCButton
-                                    classNames={clsx(ccExpanded && 'ml-4', 'composer-addresses-ccbcc text-cut')}
+                                    classNames={clsx(ccExpanded && 'ml-4', 'composer-addresses-ccbcc text-sm text-cut')}
                                     onClick={toggleExpanded('BCCList')}
                                     type="BCCList"
                                 />
@@ -117,13 +119,13 @@ const AddressesEditor = ({
                 <>
                     {ccExpanded && (
                         <div
-                            className="flex flex-row flex-column md:flex-row w-full mb-0"
+                            className="flex flex-row flex-column md:flex-row w-full mb-0 relative composer-light-field-container"
                             ref={ccListAnchorRef}
                             data-testid="composer:cc-field"
                         >
                             <Label
                                 htmlFor={`cc-${uid}`}
-                                className="composer-meta-label sr-only text-semibold"
+                                className="composer-meta-label color-hint pl-2"
                                 title={c('Label').t`Carbon Copy`}
                             >
                                 {c('Title').t`CC`}
@@ -133,7 +135,6 @@ const AddressesEditor = ({
                                 recipients={composer.recipients.CCList}
                                 messageSendInfo={messageSendInfo}
                                 onChange={handleChange('CCList')}
-                                placeholder={c('Title').t`CC`}
                                 dataTestId="composer:to-cc"
                                 inputFocusRef={inputFocusRefs.cc}
                                 addContactButton={c('Title').t`CC`}
@@ -146,13 +147,13 @@ const AddressesEditor = ({
                     )}
                     {bccExpanded && (
                         <div
-                            className="flex flex-row flex-column md:flex-row w-full"
+                            className="flex flex-row flex-column md:flex-row w-full relative composer-light-field-container"
                             ref={bccListAnchorRef}
                             data-testid="composer:bcc-field"
                         >
                             <Label
                                 htmlFor={`bcc-${uid}`}
-                                className="composer-meta-label sr-only text-semibold"
+                                className="composer-meta-label color-hint pl-2"
                                 title={c('Label').t`Blind Carbon Copy`}
                             >
                                 {c('Title').t`BCC`}
@@ -162,7 +163,6 @@ const AddressesEditor = ({
                                 recipients={composer.recipients.BCCList}
                                 messageSendInfo={messageSendInfo}
                                 onChange={handleChange('BCCList')}
-                                placeholder={c('Title').t`BCC`}
                                 dataTestId="composer:to-bcc"
                                 addContactButton={c('Title').t`BCC`}
                                 inputFocusRef={inputFocusRefs.bcc}

@@ -43,10 +43,10 @@ const AddressesSummary = ({
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 
     return (
-        <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center relative my-0">
+        <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center relative my-0 composer-light-field-container">
             <Label
                 className={clsx([
-                    'composer-meta-label composer-meta-label-to sr-only pr-2 text-semibold',
+                    'composer-meta-label composer-meta-label-to px-2 color-hint',
                     disabled && 'placeholder',
                 ])}
             >
@@ -68,7 +68,9 @@ const AddressesSummary = ({
                     role="button"
                     tabIndex={0}
                 >
-                    {recipients.length === 0 ? <span className="placeholder">{c('Placeholder').t`To`}</span> : null}
+                    {recipients.length === 0 ? (
+                        <span className="placeholder visibility-hidden">{c('Placeholder').t`To`}</span>
+                    ) : null}
                     {recipientTypes.map((type) => {
                         const recipients: Recipient[] = composer?.recipients[type] || [];
                         if (recipients.length === 0) {
@@ -78,7 +80,7 @@ const AddressesSummary = ({
                         return (
                             <Fragment key={type}>
                                 {type === 'ToList' && (
-                                    <span className="mr-2 color-hint" title={c('Title').t`To`}>
+                                    <span className="mr-2 color-hint sr-only" title={c('Title').t`To`}>
                                         {c('Title').t`To`}
                                     </span>
                                 )}
@@ -122,15 +124,15 @@ const AddressesSummary = ({
                         );
                     })}
                 </span>
-                <span className="flex flex-nowrap shrink-0 max-w-1/2 sm:max-w-1/3 md:max-w-none">
+                <span className="relative flex flex-nowrap shrink-0 max-w-1/2 sm:max-w-1/3 md:max-w-none composer-addresses-ccbcc-container">
                     <AddressesCCButton
-                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis shrink-0"
+                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-sm text-ellipsis shrink-0"
                         disabled={disabled}
                         onClick={toggleExpanded('CCList')}
                         type="CCList"
                     />
                     <AddressesCCButton
-                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis shrink-0"
+                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-sm text-ellipsis shrink-0"
                         disabled={disabled}
                         onClick={toggleExpanded('BCCList')}
                         type="BCCList"

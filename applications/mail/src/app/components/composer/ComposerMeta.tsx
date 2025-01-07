@@ -61,23 +61,22 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
                 inert={isInert ? '' : undefined}
             >
                 <ComposerShortDomainSpotlight>
-                    <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full">
+                    <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full relative composer-light-field-container">
                         <Label
                             htmlFor={`from-${uid}`}
-                            className={clsx([
-                                'composer-meta-label sr-only pt-0 text-semibold',
-                                disabled && 'placeholder',
-                            ])}
+                            className={clsx(['composer-meta-label pt-0 color-hint pl-2', disabled && 'placeholder'])}
                         >
                             {c('Info').t`From`}
                         </Label>
-                        <SelectSender
-                            composerID={composerID}
-                            message={message}
-                            disabled={disabled}
-                            onChangeContent={onChangeContent}
-                            addressesBlurRef={addressesBlurRef}
-                        />
+                        <div className="inline-flex self-start">
+                            <SelectSender
+                                composerID={composerID}
+                                message={message}
+                                disabled={disabled}
+                                onChangeContent={onChangeContent}
+                                addressesBlurRef={addressesBlurRef}
+                            />
+                        </div>
                     </div>
                 </ComposerShortDomainSpotlight>
                 <ComposerAddresses
@@ -88,10 +87,13 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
                     addressesFocusRef={addressesFocusRef}
                     composerID={composerID}
                 />
-                <div className="flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center mt-0">
+                <div
+                    className="flex flex-row flex-nowrap flex-column md:flex-row items-stretch md:items-center mt-0 composer-light-field-container"
+                    title={c('Placeholder').t`Subject`}
+                >
                     <Label
                         htmlFor={`subject-${uid}`}
-                        className={clsx(['composer-meta-label sr-only pt-0 text-semibold', disabled && 'placeholder'])}
+                        className={clsx(['composer-meta-label pt-0 sr-only text-semibold', disabled && 'placeholder'])}
                     >
                         {c('Info').t`Subject`}
                     </Label>

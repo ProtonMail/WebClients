@@ -117,18 +117,20 @@ const ComposerTitleBar = ({
 
     return (
         <header
-            className="composer-title-bar ui-prominent flex flex-row items-stretch flex-nowrap pl-4 pr-1 w-full"
+            className="composer-title-bar ui-prominent flex flex-row items-stretch flex-nowrap px-1 w-full"
             data-testid="composer:header"
             onDoubleClick={handleDoubleClick}
         >
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <span
                 className={clsx([
-                    'flex-1 p-2 pr-4 pl-3 text-ellipsis user-select-none',
+                    'flex-1 flex flex-row flex-no-wrap py-3 pr-4 ml-2',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}
             >
-                {title}
+                <Icon name="dots" className="my-auto mr-2 shrink-0" />
+                <span className="text-ellipsis user-select-none">{title}</span>
             </span>
             <TitleBarButton
                 className={clsx(['hidden md:flex', minimized && 'rotateX-180'])}
