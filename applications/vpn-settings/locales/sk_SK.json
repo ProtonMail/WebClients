@@ -40,6 +40,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add account": [
+        "Pridať účet"
+      ],
       "Add address": [
         "Pridať adresu"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Odporučiť priateľa"
       ],
+      "Refresh Data": [
+        "Obnoviť údaje"
+      ],
       "Refresh status": [
         "Obnoviť stav"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Odhlásiť sa"
+      ],
+      "Sign out of all accounts": [
+        "Odhlásiť zo všetkých účtov"
       ],
       "sign up for free": [
         "zaregistrujte sa zadarmo"
@@ -2612,6 +2621,9 @@
       "Impossible to rename the gateway": [
         "Nie je možné premenovať bránu"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Nesprávny typ súboru. Nahrajte súbor vo formáte PNG alebo JPEG."
       ],
@@ -2702,6 +2714,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Pred pridaním používateľov do organizácie povoľte podporu viacerých používateľov."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Zadajte platnú URL ID subjektu, prosím"
+      ],
       "Please generate keys before you try to change your password": [
         "Predtým ako sa pokúsite zmeniť heslo, vytvorte si prosím kľúče"
       ],
@@ -2722,6 +2737,9 @@
       ],
       "Please upload a square logo": [
         "Nahrajte logo v štvorcovom tvare, prosím"
+      ],
+      "Please upload an XML file": [
+        "Nahrajte XML súbor, prosím"
       ],
       "Please upload only 1 file": [
         "Nahrajte iba 1 súbor"
@@ -3452,6 +3470,12 @@
       "Checkout": [
         "Pokladňa"
       ],
+      "City": [
+        "Mesto"
+      ],
+      "Country": [
+        "Krajina"
+      ],
       "Create your account": [
         "Vytvoriť svoj účet"
       ],
@@ -3917,6 +3941,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Skopírujte a vložte túto URL do poľa ACS (Assertion Consumer Service) URL vášho poskytovateľa identity"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Skopírujte a vložte túto URL do poľa ID subjektu poskytovateľa identity"
+      ],
       "Copy the suggested password to clipboard": [
         "Skopírujte navrhované heslo do schránky"
       ],
@@ -4096,6 +4123,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Zadajte kód odoslaný na ${ email }. Ak správu nenájdete vo svojej doručenej pošte, skontrolujte priečinok so spamom."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Zadajte ID subjektu organizácie **eduGAIN** pre **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadajte heslo organizácie pre obnovenie oprávnenia správcu. ${ learnMore }"
@@ -4448,11 +4478,17 @@
       "No Gateways yet": [
         "Zatiaľ žiadne brány"
       ],
+      "No location filters are currently assigned.": [
+        "Aktuálne nie sú použité žiadne filtre umiestnenia"
+      ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
+      ],
+      "No Shared Servers Found": [
+        "Neboli nájdené žiadne zdieľané servery"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -4718,6 +4754,9 @@
       "Shared ${ vaultLink } updated": [
         "Zdieľaný ${ vaultLink } aktualizovaný"
       ],
+      "Shared Server Location Filters": [
+        "Filtre umiestnenia zdieľaného servera"
+      ],
       "Shared vault deleted": [
         "Zdieľaný trezor bol vymazaný"
       ],
@@ -4891,6 +4930,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Týmto sa odošle nová pozvánka na adresu **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Toto vás odhlási zo všetkých aktívnych relácií a vypne dvojstupňové overenie."
@@ -5932,6 +5974,9 @@
         "Zobraziť ${ n } správcov",
         "Zobraziť ${ n } správcov",
         "Zobraziť ${ n } správcov"
+      ],
+      "Single sign-on Entity ID": [
+        "ID subjektu jednotného prihlásenia"
       ],
       "Single sign-on URL": [
         "URL adresa jednotného prihlásenia"
@@ -9123,6 +9168,9 @@
       "Enter your backup password": [
         "Zadajte vaše záložné heslo"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Aby sa tento používateľ mohol prihlásiť, uistite sa, že existuje vo vašom poskytovateľovi identít."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "V záujme vašej bezpečnosti sme vás odhlásili zo všetkých ostatných aktívnych zariadení. Pred prístupom k svojmu kontu budete musieť zadať nové záložné heslo."
       ],
@@ -9188,6 +9236,9 @@
       ],
       "Single sign-on removed": [
         "Jednotné prihlásenie bolo odstránené"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Používateľ ${ name } teraz používa účet s jednotným prihlásením"
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tým sa používateľ odhlási z ostatných zariadení a bude musieť vytvoriť nové záložné heslo."
@@ -10306,6 +10357,9 @@
       "Are you sure you want to close the preview?": [
         "Naozaj chcete zatvoriť náhľad?"
       ],
+      "Are you sure?": [
+        "Ste si istí?"
+      ],
       "Authentication security": [
         "Zabezpečenie overenia"
       ],
@@ -10768,6 +10822,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Nastavenie dedikovaných serverov prechodom na Business plán"
       ],
+      "Shared servers": [
+        "Zdieľané servery"
+      ],
       "Sign in": [
         "Prihlásiť sa"
       ],
@@ -10845,6 +10902,9 @@
       ],
       "User": [
         "Používateľ"
+      ],
+      "User converted to SSO": [
+        "Používateľ prevedený na SSO"
       ],
       "Users": [
         "Používatelia"
@@ -10970,6 +11030,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Skopírujte a vložte túto URL do poľa ACS (Assertion Consumer Service) URL vášho poskytovateľa identity"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Skopírujte a vložte túto URL do poľa ID subjektu poskytovateľa identity"
       ],
       "Device information such as operating system": [
         "Informácie o zariadení, ako je operačný systém"

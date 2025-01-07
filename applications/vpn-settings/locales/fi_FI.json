@@ -40,6 +40,9 @@
       "Add": [
         "Lisää"
       ],
+      "Add account": [
+        "Lisää tili"
+      ],
       "Add address": [
         "Lisää osoite"
       ],
@@ -86,7 +89,7 @@
         "Tunnistaudu"
       ],
       "Authenticating": [
-        "Vahvistetaan"
+        "Tunnistaudutaan"
       ],
       "Back": [
         "Takaisin"
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "Kerro kaverille"
       ],
+      "Refresh Data": [
+        "Päivitä tiedot"
+      ],
       "Refresh status": [
         "Päivitä tila"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
+      ],
+      "Sign out of all accounts": [
+        "Kirjaa kaikki tilit ulos"
       ],
       "sign up for free": [
         "rekisteröidy ilmaiseksi"
@@ -2592,6 +2601,9 @@
       "Impossible to rename the gateway": [
         "Yhdyskäytävän uudelleenimeäminen on mahdotonta"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Väärä varasalasana. Yritä uudelleen."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Virheellinen tiedostotyyppi. Lähetettävän kuvan tulee olla PNG- tai JPEG-muotoinen."
       ],
@@ -3410,6 +3422,12 @@
       "Checkout": [
         "Kassa"
       ],
+      "City": [
+        "Kaupunki"
+      ],
+      "Country": [
+        "Maa"
+      ],
       "Create your account": [
         "Luo oma tilisi"
       ],
@@ -3829,6 +3847,12 @@
       "Connection data will be available in around 1 hour.": [
         "Yhteystiedot ovat saatavilla noin tunnin kuluttua."
       ],
+      "Continue to connect **${ organizationValue.Name }** with your ${ BRAND_NAME } organization.": [
+        "Jatka **${ organizationValue.Name }**:n yhdistämistä ${ BRAND_NAME }-organisaatioosi."
+      ],
+      "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
+        "Jatka tämän entiteetin yhdistämistä ${ BRAND_NAME }-organisaatioosi."
+      ],
       "Continue with ${ freeName }": [
         "Jatka ${ freeName } -tilauksella"
       ],
@@ -3837,6 +3861,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
@@ -4011,6 +4038,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Syötä osoitteeseen ${ email } lähetetty koodi. Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Syötä **eduGAIN**-organisaation entiteetti-ID verkkotunnukselle **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Palauta hallintaoikeudet syöttämällä organisaation salasana. ${ learnMore }"
@@ -4363,11 +4393,17 @@
       "No Gateways yet": [
         "Yhdyskäytäviä ei vielä ole"
       ],
+      "No location filters are currently assigned.": [
+        "Sijaintisuodattimia ei ole asetettu."
+      ],
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
+      ],
+      "No Shared Servers Found": [
+        "Jaettuja palvelimia ei löytynyt"
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
@@ -4593,6 +4629,9 @@
       "Select recently used servers": [
         "Valitse viimeksi käytetyistä palvelimista"
       ],
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Valitse ${ getFormattedOrganization }-käyttäjäyhteydet, jotka haluat sallia ${ BRAND_NAME }-organisaatioosi."
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Lähetä sähköpostiviestejä, joilla kehotat jäseniäsi suojaamaan heidän tilinsä 2FA:lla."
       ],
@@ -4619,6 +4658,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Jaettu ${ vaultLink } päivitettiin"
+      ],
+      "Shared Server Location Filters": [
+        "Jaettujen palvelimien sijantisuodattimet"
       ],
       "Shared vault deleted": [
         "Jaettu holvi poistettiin"
@@ -4785,6 +4827,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Tämä lähettää uuden kutsun osoitteeseen **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tämä kirjaa ulos kaikki aktiiviset istuntosi ja poistaa kaksivaiheisen todennuksen käytöstä."
@@ -8938,6 +8983,9 @@
       "Single sign-on removed": [
         "Kertakirjautuminen poistettiin"
       ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Käyttäjä ${ name } on nyt kertakirjautumistili."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tämä kirjaa käyttäjän ulos muilta laitteiltaan, ja hänen on luotava uusi varasalasana."
       ],
@@ -10011,6 +10059,9 @@
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
       ],
+      "Are you sure?": [
+        "Oletko varma?"
+      ],
       "Authentication security": [
         "Tunnistautumisen turvallisuus"
       ],
@@ -10170,7 +10221,7 @@
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
       ],
       "Disable two-factor authentication?": [
-        "Poista kaksivaiheinen tunnistautuminen käytöstä?"
+        "Poistetaanko kaksivaiheinen tunnistautuminen käytöstä?"
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
@@ -10467,6 +10518,9 @@
       "Setup dedicated servers by upgrading to Business": [
         "Määritä omia palvelimia päivittämällä Business-tilaukseen"
       ],
+      "Shared servers": [
+        "Jaetut palvelimet"
+      ],
       "Sign in": [
         "Kirjaudu sisään"
       ],
@@ -10670,6 +10724,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetintarjoajasi entiteetti-ID-kenttään"
       ],
       "Device information such as operating system": [
         "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"

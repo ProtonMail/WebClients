@@ -40,6 +40,9 @@
       "Add": [
         "დამატება"
       ],
+      "Add account": [
+        "ანგარიშის დამატება"
+      ],
       "Add address": [
         "მისამართის დამატება"
       ],
@@ -457,6 +460,9 @@
       "Refer a friend": [
         "მიმართეთ მეგობარს"
       ],
+      "Refresh Data": [
+        "მონაცემების განახლება"
+      ],
       "Refresh status": [
         "სტატუსის განახლება"
       ],
@@ -630,6 +636,9 @@
       ],
       "Sign out": [
         "გასვლა"
+      ],
+      "Sign out of all accounts": [
+        "ყველა ანგარიშიდან გამოსვლა"
       ],
       "sign up for free": [
         "უფასო რეგისტრაცია"
@@ -3406,6 +3415,12 @@
       "Checkout": [
         "გადახდა"
       ],
+      "City": [
+        "ქალაქი"
+      ],
+      "Country": [
+        "ქვეყანა"
+      ],
       "Create your account": [
         "შექმენით თქვენი ანგარიში"
       ],
@@ -3681,6 +3696,9 @@
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } რაუტერი სერვერის დამატება",
         "${ addedServerCount } რაუტერი სერვერის დამატება"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "გარეთ ელფოსტის დამატება გამჭოლ დაშიფვრას გათიშავს ამ ჯგუფში. გნებავთ, გააგრძელოთ?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "რაუტერი სერვერის დამატება: ${ serverNumber } / ${ total }",
@@ -4368,11 +4386,17 @@
       "No Gateways yet": [
         "რაუტერების გარეშე"
       ],
+      "No location filters are currently assigned.": [
+        "ამჟამად მდებარეობის ფილტრები მინიჭებული არაა."
+      ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
       "No results found": [
         "შედეგების გარეშე"
+      ],
+      "No Shared Servers Found": [
+        "გაზიარებული სერვერები აღმოჩენილი არაა"
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
@@ -4598,6 +4622,9 @@
       "Select recently used servers": [
         "ახლახან გამოყენებული სერვერების არჩევა"
       ],
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "აირჩიეთ მომხმარებლის წევრობა ${ getFormattedOrganization }-დან რომელიც გნებავთ, თქვენს ${ BRAND_NAME } ორგანიზაციაში ჩართოთ:"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "გააგზავნეთ ელფოსტები, რომ დაარწმუნოთ თქვენი წევრები, 2FA ჩართონ."
       ],
@@ -4624,6 +4651,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "გაზიარებული ${ vaultLink } განახლდა"
+      ],
+      "Shared Server Location Filters": [
+        "გაზიარებული სერვერის მდებარეობის ფილტრები"
       ],
       "Shared vault deleted": [
         "გაზიარებული საცავი წაიშალა"
@@ -4790,6 +4820,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "ეს გააგზავნის ახალ მოწვევას ელფოსტაზე **${ email }**."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "ამის გაკეთებით ყველა აქტიური სესიიდან გამოხვალთ და 2FA გაითიშება."
@@ -7086,6 +7119,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "შესაძლებლობა დაათვალიეროთ საჯარო საქაღალდეები შემოსული შეტყობინებებით და კონტაქტის დეტალებით"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "ორგანიზაციის მართვის ხელსაწყო, რომელიც საშუალებას აძლევს ადმინისტრატორებს დაამატონ და წაშალონ მომხმარებლები, მართონ მათი წვდომა ${ BRAND_NAME }-ის სერვისებზე და სხვა."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "ჩვენი ძლიერი ინფრასტრუქტურა უზრუნველყოფს, რომ თქვენ შეძლებთ თქვენს ანგარიშზე წვდომას, როცა ეს დაგჭირდებათ"
@@ -9989,6 +10025,9 @@
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
       ],
+      "Are you sure?": [
+        "დარწმუნებული ბრძანდებით?"
+      ],
       "Authentication security": [
         "ავთენტიკაციის უსაფრთხოება"
       ],
@@ -10444,6 +10483,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "იქონიეთ გამოყოფილი სერვერები ტარიფის Business-მდე აწევით"
+      ],
+      "Shared servers": [
+        "გაზიარებული სერვერები"
       ],
       "Sign in": [
         "შესვლა"
