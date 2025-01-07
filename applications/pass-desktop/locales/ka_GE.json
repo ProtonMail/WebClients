@@ -737,9 +737,6 @@
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "თუ სუბდომენს იყენებთ, მაგ: ${ subdomainExample }, დომენად ${ dmarcExampleSubdomain } უნდა გამოიყენოთ."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "თუ იყენებთ CloudFlare-ს, დარწმუნდით, რომ პროქსის პარამეტრი არჩეული არ გაქვთ."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "იქონიეთ თქვენი ინფორმაცია უფრო დაცული და კონფიდენციალური ამ სახელმძღვანელოებით და მინიშნებებით."
       ],
@@ -751,9 +748,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "ზოგიერთ DNS რეგისტრატორს, შეიძლება, სრული ჩანაწერის ბილიკი დასჭირდეს. ამ შემთხვევაში დომენის მნიშვნელობად ${ domain } გამოიყენეთ."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "ზოგიერთი დომენის რეგისტრატორი (Namecheap, CloudFlare და ა.შ.) ძირითადი დომენისთვის ასევე იყენებს სიმბოლოს @."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "დაიწყეთ მონაცემების გაჟონვის მონიტორინგი თქვენი ელფოსტის მისამართებით და hide-my-email-ის ფსევდონიმებით შექმნილი ანგარიშებისთვის."
@@ -1166,6 +1160,12 @@
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "თქვენი DNS არასწორადაა დაყენებული. MX ჩანაწერი, რომელიც მივიღეთ:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "თქვენი DNS არასწორადაა დაყენებული. TXT ჩანაწერი, რომელიც მივიღეთ:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "თქვენი PIN-კოდი წაშლილია სხვა ${ PASS_APP_NAME }-ის კლიენტის მიერ"
       ]
@@ -1329,6 +1329,9 @@
       "${ row.breachCount } breach detected": [
         "აღმოჩენილია ${ row.breachCount } გაჟონვა",
         "აღმოჩენილია ${ row.breachCount } გაჟონვა"
+      ],
+      "(Empty)": [
+        "(ცარიელი)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად, მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
@@ -2070,6 +2073,9 @@
       ],
       "This setting is disabled on the organization level": [
         "ეს პარამეტრი გათიშულია ორგანიზაციის დონეზე"
+      ],
+      "This setting is enforced by your organization": [
+        "ეს პარამეტრი ნაძალადევია თქვენი ორგანიზაციის მიერ"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "ეს საცავი, ამჟამად, გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
