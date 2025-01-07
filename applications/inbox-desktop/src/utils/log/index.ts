@@ -11,10 +11,12 @@ if (process.env.NODE_ENV === "test") {
     Logger.transports.file.level = false;
 }
 
+export const NET_LOGGER_VIEW_PREFIX = "net/";
+
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
 export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
-    viewID ? Logger.scope(`net/${viewID}`) : Logger.scope("net");
+    viewID ? Logger.scope(`${NET_LOGGER_VIEW_PREFIX}${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
 export const protocolLogger = Logger.scope("protocol");

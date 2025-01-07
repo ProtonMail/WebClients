@@ -10,7 +10,7 @@ import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getWindowBounds } from "../store/boundsStore";
 import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
-import { sentryLogger } from "./log";
+import { NET_LOGGER_VIEW_PREFIX, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 
 const MAX_TAG_LENGTH = 32;
@@ -97,6 +97,12 @@ export async function initializeSentry() {
         });
 
         if (level === "error" || level === "warn") {
+            // We want to skip reporting network logs that are related to a browser view.
+            // These should not be related with electron.
+            if (scope?.startsWith(NET_LOGGER_VIEW_PREFIX)) {
+                return;
+            }
+
             captureMessage(serialize(data), {
                 level: LOG_LEVEL_TO_SEVERITY[level],
                 tags: { logScope: scope },
