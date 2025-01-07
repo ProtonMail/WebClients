@@ -1503,6 +1503,9 @@
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
         "Wiadomość wysłana na ten adres będzie wyglądała na wysłaną z adresu, np. ${ exampleEmail }."
       ],
+      "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
+        "Wiadomości wysłane na Twoje aliasy zostaną przekierowane do Twoich skrzynek pocztowych. Alias może mieć więcej niż jedną taką skrzynkę: przydaje się to kiedy chcesz udostępnić alias swoim znajomym."
+      ],
       "Emptying trash...": [
         "Opróżnianie Kosza..."
       ],
@@ -1875,6 +1878,9 @@
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
       ],
+      "Please follow the steps below to set up your domain.": [
+        "Wykonaj poniższe kroki, aby skonfigurować swoją domenę."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Pamiętaj, że usuniętego aliasu nie można przywrócić. Czy chcesz, zamiast tego wyłączyć alias?"
       ],
@@ -1971,6 +1977,9 @@
       "Signing you in": [
         "Logowanie"
       ],
+      "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
+        "Po prostu użyj adresu ${ emailBold } następnym razem, kiedy będziesz potrzebować aliasu: zostanie on ${ automaticallyBold } utworzony, kiedy otrzyma pierwszą wiadomość e-mail. Aby mieć nad tym większą kontrolę, możesz także skonfigurować ${ rulesHyperLink }"
+      ],
       "Successfully exported all your items": [
         "Wyeksportowano wszystkie elementy"
       ],
@@ -2027,6 +2036,9 @@
       ],
       "This operation is irreversible.": [
         "Ta operacja jest nieodwracalna."
+      ],
+      "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
+        "Ta operacja jest nieodwracalna. Wszystkie aliasy używające domeny ${ domainTextBold } zostaną usunięte. Pamiętaj, że po usunięciu, aliasów nie będzie można przywrócić."
       ],
       "This option is currently not available on your device.": [
         "Funkcja nie jest dostępna na tym urządzeniu."
@@ -2138,6 +2150,9 @@
       ],
       "You are about to create:": [
         "Utworzysz:"
+      ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "Możesz także ustawić kod PIN, aby odblokować ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Użyj hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline ${ PASS_SHORT_APP_NAME }"
@@ -3034,6 +3049,9 @@
       ]
     },
     "Link": {
+      "auto create rules ››": [
+        "zasady automatycznego tworzenia ››"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],

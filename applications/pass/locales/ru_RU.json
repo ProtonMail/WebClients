@@ -708,9 +708,6 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Если вы используете поддомен, например subdomain.domain.com, вам нужно использовать ${ domainKeyExampleSubdomain } в качестве домена. То есть, если вашим доменом является mail.domain.com, в качестве домена следует ввести ${ domainKeyExampleMail }."
       ],
-      "If you are using CloudFlare, please make sure to not select the Proxy option.": [
-        "Если вы используете CloudFlare, убедитесь, что не выбрали опцию прокси-сервера."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Обеспечьте защищенность и конфиденциальность своей информации с помощью этих руководств и советов."
       ],
@@ -722,9 +719,6 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Некоторые регистраторы DNS могут потребовать полный путь к записи, в этом случае используйте ${ domain } в качестве значения домена."
-      ],
-      "Some domain registrars (Namecheap, CloudFlare, etc) might also use @ for the root domain.": [
-        "Некоторые регистраторы доменов (Namecheap, CloudFlare и др.) также могут использовать @ для корневого домена."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - это метод проверки подлинности электронной почты, предназначенный для обнаружения подделки адреса отправителя во время доставки письма. Настройка SPF настоятельно рекомендуется для снижения вероятности попадания ваших писем в папку «Спам» получателя."
@@ -743,9 +737,6 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
-      ],
-      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, CloudFlare, etc) might use @ for the root domain.": [
-        "Чтобы проверить право собственности на домен, добавьте следующую запись TXT. Некоторые регистраторы доменов (Namecheap, CloudFlare и др.) могут использовать @ для корневого домена."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблокируйте расширенные функции безопасности и подробные журналы для защиты вашего присутствия в Интернете."
