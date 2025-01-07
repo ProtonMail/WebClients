@@ -41,7 +41,8 @@ export const openESDB = async (userID: string) => {
             },
         });
         if (!dbExisted) {
-            throw new Error('Attempting to opening a non-existent DB');
+            esDB?.close();
+            return;
         }
     } catch (error: any) {
         esDB?.close();
