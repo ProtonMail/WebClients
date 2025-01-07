@@ -23,7 +23,7 @@ import {
     vaultEditSuccess,
     vaultTransferOwnershipSuccess,
 } from '@proton/pass/store/actions';
-import type { Share } from '@proton/pass/types';
+import type { Share, ShareId } from '@proton/pass/types';
 import { NewUserInviteState, ShareRole, type ShareType } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { or } from '@proton/pass/utils/fp/predicates';
@@ -39,8 +39,7 @@ export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
 
 export type WithItemCount<T> = T & { count: number };
 export type VaultShareItem = ShareItem<ShareType.Vault>;
-
-export type SharesState = { [shareId: string]: ShareItem };
+export type SharesState = Record<ShareId, ShareItem>;
 
 export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
     if (bootSuccess.match(action) && action.payload?.shares !== undefined) return action.payload.shares;
