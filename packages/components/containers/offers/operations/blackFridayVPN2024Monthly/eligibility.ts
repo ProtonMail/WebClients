@@ -19,7 +19,13 @@ interface Props {
     preferredCurrency: Currency;
 }
 
-const isEligible = ({ subscription, protonConfig, user, lastSubscriptionEnd = 0, preferredCurrency }: Props) => {
+export const getIsEligible = ({
+    subscription,
+    protonConfig,
+    user,
+    lastSubscriptionEnd = 0,
+    preferredCurrency,
+}: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const plan = getPlan(subscription);
     const isMonthly = hasMonthly(subscription);
@@ -48,5 +54,3 @@ const isEligible = ({ subscription, protonConfig, user, lastSubscriptionEnd = 0,
         isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)
     );
 };
-
-export default isEligible;
