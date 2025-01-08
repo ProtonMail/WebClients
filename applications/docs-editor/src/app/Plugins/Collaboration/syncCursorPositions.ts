@@ -1,5 +1,5 @@
 import type { Binding, Provider } from '@lexical/yjs'
-import { getAnchorAndFocusCollabNodesForUserState } from '@lexical/yjs'
+import { getAnchorAndFocusCollabNodesForUserState } from './CursorUtils'
 import type { NodeKey, NodeMap } from 'lexical'
 import { $isLineBreakNode } from 'lexical'
 import { createDOMRange } from '@lexical/selection'
