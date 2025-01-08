@@ -93,7 +93,7 @@ export const PermissionsDropdownMenu = ({
     const getPermissionsOptionLabel = (permissions: number) => {
         if (autocompleteOptions) {
             return memberPermissionsLabels[permissions];
-        } else if (publicSharingPermissionsLabels) {
+        } else if (publicSharingOptions) {
             return publicSharingPermissionsLabels[permissions];
         } else if (permissions === selectedPermissions) {
             return externalInvitationState
