@@ -40,6 +40,8 @@ export enum SpotlightMessage {
     USER_RENEWAL = 16,
     /** Enforce SSO lock onboarding */
     SSO_CHANGE_LOCK = 18,
+    /** Item sharing feature discovery */
+    ITEM_SHARING = 19,
 }
 
 export type SpotlightAcknowledgment = {
