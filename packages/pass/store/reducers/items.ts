@@ -27,9 +27,7 @@ import {
     itemEditDismiss,
     itemMove,
     itemPinSuccess,
-    itemRestoreFailure,
-    itemRestoreIntent,
-    itemRestoreSuccess,
+    itemRestore,
     itemTrash,
     itemUnpinSuccess,
     itemsDeleteSync,
@@ -128,11 +126,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             revert: itemEditDismiss.optimisticMatch,
         },
         {
-            initiate: itemRestoreIntent.optimisticMatch,
-            commit: itemRestoreSuccess.optimisticMatch,
-            revert: itemRestoreFailure.optimisticMatch,
-        },
-        {
             initiate: itemDeleteIntent.optimisticMatch,
             commit: itemDeleteSuccess.optimisticMatch,
             revert: itemDeleteFailure.optimisticMatch,
@@ -196,11 +189,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, state: ItemState.Trashed, modifyTime: getEpoch() })(state);
         }
 
-        if (itemRestoreIntent.match(action)) {
-            const { item, shareId } = action.payload;
-            const { itemId } = item;
-
-            return updateItem({ shareId, itemId, state: ItemState.Active })(state);
+        if (itemRestore.success.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return updateItem({ shareId, itemId, state: ItemState.Active, modifyTime: getEpoch() })(state);
         }
 
         if (itemEdit.intent.match(action)) {
