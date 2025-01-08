@@ -19,6 +19,7 @@ import type {
     ItemType,
     ItemUpdateFlagsRequest,
     Maybe,
+    SelectedRevision,
 } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -187,7 +188,7 @@ export const moveItems = async (
     ).flat();
 
 export const trashItems = async (
-    items: ItemRevision[],
+    items: SelectedRevision[],
     onBatch?: (data: BatchItemRevisionIDs, progress: number) => void,
     progress: number = 0
 ) =>

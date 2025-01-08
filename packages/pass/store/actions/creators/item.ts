@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
+import { getItemEntityID, getItemKey } from '@proton/pass/lib/items/item.utils';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -41,6 +41,7 @@ import type {
     SecureLinkItem,
     SecureLinkQuery,
     SelectedItem,
+    SelectedRevision,
     UniqueItem,
 } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -196,36 +197,27 @@ export const itemBulkMoveSuccess = createAction(
     )
 );
 
-export const itemTrashIntent = createOptimisticAction(
-    'item::trash::intent',
-    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemTrashFailure = createOptimisticAction(
-    'item::trash::failure',
-    (payload: SelectedItem, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Trashing item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemTrashSuccess = createOptimisticAction(
-    'item::trash::success',
-    (payload: SelectedItem) =>
-        pipe(
-            withCache,
+export const itemTrash = requestActionsFactory<SelectedRevision, SelectedRevision>('item::trash')({
+    key: getItemKey,
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item moved to trash`,
+                })
+            )({ payload }),
+    },
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                key: getItemEntityID(payload),
-                text: c('Info').t`Item moved to trash`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Trashing item failed`,
+                error,
+            })({ payload, error }),
+    },
+});
 
 export const itemBulkTrashIntent = createAction(
     'item::bulk::trash::intent',
