@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
-import { type ShareWithKey, useDriveSharingFlags, useInvitationsView, usePhotos } from '../../../../store';
+import { type ShareWithKey, useDriveSharingFlags, useInvitationsView, useUserSettings } from '../../../../store';
 //TODO: This should be removed after full sharing rollout
 import { useSharedWithMeWithoutFF } from '../../../../store/_shares/useSharedWithMeWithoutFF';
 import DriveSidebarDevices from './DriveSidebarDevices';
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
-    const { showPhotosSection } = usePhotos();
+    const { photosEnabled } = useUserSettings();
     const { invitations } = useInvitationsView();
     const [sidebarWidth, setSidebarWidth] = useState('100%');
     const setSidebarLevel = (level: number) => {
@@ -47,7 +47,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 />
             ))}
             <DriveSidebarDevices setSidebarLevel={setSidebarLevel} />
-            {showPhotosSection && (
+            {photosEnabled && (
                 <DriveSidebarListItem to="/photos" icon="image" isActive={(match) => match?.url === '/photos'}>
                     <span className="text-ellipsis" title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
