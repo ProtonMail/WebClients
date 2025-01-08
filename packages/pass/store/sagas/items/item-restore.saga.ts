@@ -1,22 +1,20 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { select } from 'redux-saga/effects';
 
 import { restoreItems } from '@proton/pass/lib/items/item.requests';
-import { itemRestoreFailure, itemRestoreIntent, itemRestoreSuccess } from '@proton/pass/store/actions';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { itemRestore } from '@proton/pass/store/actions';
+import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { selectItem } from '@proton/pass/store/selectors';
+import type { ItemRevision, Maybe } from '@proton/pass/types';
 
-function* restoreItem({ onItemsUpdated }: RootSagaOptions, { payload }: ReturnType<typeof itemRestoreIntent>) {
-    const { item, shareId } = payload;
-    const { itemId } = item;
+export default createRequestSaga({
+    actions: itemRestore,
+    call: function* (selectedItem, { onItemsUpdated }) {
+        const { shareId, itemId } = selectedItem;
+        const item: Maybe<ItemRevision> = yield select(selectItem(shareId, itemId));
+        if (!item) throw new Error('Invalid restore action');
 
-    try {
         yield restoreItems([item]);
-        yield put(itemRestoreSuccess({ itemId, shareId }));
         onItemsUpdated?.();
-    } catch (e) {
-        yield put(itemRestoreFailure({ itemId, shareId }, e));
-    }
-}
-
-export default function* watcher(options: RootSagaOptions) {
-    yield takeLatest(itemRestoreIntent, restoreItem, options);
-}
+        return selectedItem;
+    },
+});
