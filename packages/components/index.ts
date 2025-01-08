@@ -8,6 +8,8 @@ export * from './components/addressesAutocomplete/helper';
 export { default as AddressesInput, AddressesInputItem } from './components/addressesInput/AddressesInput';
 export { default as Alert } from './components/alert/Alert';
 export type { AlertType } from './components/alert/Alert';
+export { mailTrial2024Config } from './containers/offers/operations/mailTrial2024/configuration';
+export { getCTAContent, getRenews } from './containers/offers/operations/mailTrial2024/text';
 export { default as AttachedFile } from './components/attachedFile/AttachedFile';
 export { default as Autocomplete } from './components/autocomplete/Autocomplete';
 export {
@@ -698,8 +700,6 @@ export { isBlackFridayPeriod, isCyberWeekPeriod } from './containers/offers/help
 export { default as useFetchOffer } from './containers/offers/hooks/useFetchOffer';
 export { default as useOfferConfig } from './containers/offers/hooks/useOfferConfig';
 export { default as useOfferModal } from './containers/offers/hooks/useOfferModal';
-export { mailTrial2024Config } from './containers/offers/operations/mailTrial2024';
-export { getCTAContent, getRenews } from './containers/offers/operations/mailTrial2024/text';
 export { ONBOARDING_THEMES } from './containers/onboarding/constants';
 export type { OnboardingStepProps, OnboardingStepRenderCallback } from './containers/onboarding/interface';
 export { default as OnboardingContent } from './containers/onboarding/OnboardingContent';
