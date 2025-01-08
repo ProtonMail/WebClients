@@ -10,7 +10,7 @@ import Layout from './Layout';
 import sideImage from './Unlimited-400x1200.png';
 import sideImage2x from './Unlimited-800x2400.png';
 
-const config: OfferConfig = {
+export const goUnlimited2022Config: OfferConfig = {
     ID: 'go-unlimited-2022',
     featureCode: FeatureCode.OfferGoUnlimited2022,
     canBeDisabled: true,
@@ -37,5 +37,3 @@ const config: OfferConfig = {
         sideImage2x,
     },
 };
-
-export default config;
