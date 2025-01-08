@@ -7,7 +7,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { activateMemberAuthDeviceConfig, rejectMemberAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { DecryptedKey, Member } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getMemberKeys } from '@proton/shared/lib/keys';
+import { generateKeySaltAndPassphrase, getIsMemberInManualApproveState, getMemberKeys } from '@proton/shared/lib/keys';
 import type { DeviceSecretData, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import {
     AuthDeviceState,
@@ -19,7 +19,7 @@ import { generatePassword } from '@proton/shared/lib/password';
 import noop from '@proton/utils/noop';
 
 import { getMemberAddresses } from '../members';
-import { getMemberToUnprivatizeApproval, unprivatizeApprovalMembers } from '../members/unprivatizeMembers';
+import { unprivatizeApprovalMembers } from '../members/unprivatizeMembers';
 import { organizationKeyThunk } from '../organizationKey';
 import type { MemberAuthDevicesState, PendingAdminActivation } from './memberAuthDevices';
 import { memberAuthDeviceActions } from './memberAuthDevices';
@@ -54,7 +54,7 @@ export const prepareConfirmPendingMemberAuthDevice = ({
             throw new Error('Organization key must be activated to activate a member device');
         }
         // If the member needs to get unprivatized, let's do it first
-        if (getMemberToUnprivatizeApproval(member)) {
+        if (getIsMemberInManualApproveState(member)) {
             const [updatedMember] = await dispatch(unprivatizeApprovalMembers({ membersToUnprivatize: [member] }));
             if (updatedMember) {
                 member = updatedMember;

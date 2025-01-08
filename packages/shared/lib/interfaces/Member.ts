@@ -77,7 +77,17 @@ export type MemberUnprivatization = {
     InvitationEmail: string | null;
 };
 
-export type MemberUnprivatizationReadyForUnprivatization = {
+export type MemberUnprivatizationAcceptState = {
+    State: MemberUnprivatizationState.Pending;
+    PrivateKeys: string[];
+    ActivationToken: string;
+    PrivateIntent: false;
+    InvitationData: string;
+    InvitationSignature: string;
+    InvitationEmail: string;
+};
+
+export type MemberUnprivatizationAutomaticApproveState = {
     State: MemberUnprivatizationState.Ready;
     PrivateKeys: string[];
     ActivationToken: string;
@@ -87,7 +97,7 @@ export type MemberUnprivatizationReadyForUnprivatization = {
     InvitationEmail: string;
 };
 
-export type MemberUnprivatizationReadyForUnprivatizationApproval = {
+export type MemberUnprivatizationManualApproveState = {
     State: MemberUnprivatizationState.Ready;
     PrivateKeys: string[];
     ActivationToken: string;
@@ -124,11 +134,11 @@ export interface Member {
 }
 
 export interface MemberReadyForUnprivatization extends Member {
-    Unprivatization: MemberUnprivatizationReadyForUnprivatization;
+    Unprivatization: MemberUnprivatizationAutomaticApproveState;
 }
 
 export interface MemberReadyForUnprivatizationApproval extends Member {
-    Unprivatization: MemberUnprivatizationReadyForUnprivatization;
+    Unprivatization: MemberUnprivatizationAutomaticApproveState;
 }
 
 export type EnhancedMember = Member &
