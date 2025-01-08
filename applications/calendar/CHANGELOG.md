@@ -1,3 +1,24 @@
+## November 2024
+
+-   Performance improvements for a faster page load and more instantaneous action feedback
+-   Add new timezone conversion, for better cross calendar compatibility
+-   Fix "your" avatar initials in event details popover
+-   Restore some disappearing events in narrow screen resolutions
+
+## October 2024
+
+-   Fix "calendar cannot be found" for some newly created calendar
+-   Improve keyboard navigation in event grid
+-   Accessibility improvements across the entire application
+-   Performance improvements when changing calendar visibility
+
+## September 2024
+
+-   Resolved crashes when adding malformed attendees to events
+-   Fixed issues with recurring events using different time zones on excluded dates
+-   Fixed disappearing text between chevrons when editing event descriptions
+-   Update our timezones definition to reflect recent changes (Kazakhstan, Egypt DST, ...)
+
 ## August 2024
 
 ### Improvements
