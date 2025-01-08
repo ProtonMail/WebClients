@@ -19,7 +19,7 @@ import {
     itemBulkMoveIntent,
     itemBulkRestoreIntent,
     itemBulkTrashIntent,
-    itemDeleteIntent,
+    itemDelete,
     itemMove,
     itemRestore,
     itemTrash,
@@ -82,14 +82,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const deleteItem = useConfirm(
-        useCallback((item: ItemRevision) => {
-            dispatch(
-                itemDeleteIntent({
-                    itemId: item.itemId,
-                    shareId: item.shareId,
-                    item,
-                })
-            );
+        useCallback(({ shareId, itemId }: ItemRevision) => {
+            dispatch(itemDelete.intent({ shareId, itemId }));
         }, [])
     );
 
