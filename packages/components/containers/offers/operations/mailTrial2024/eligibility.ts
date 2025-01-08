@@ -12,7 +12,7 @@ interface Props {
     lastSubscriptionEnd?: number;
 }
 
-const isEligible = ({ user, protonConfig, lastSubscriptionEnd = 0 }: Props) => {
+export const getIsEligible = ({ user, protonConfig, lastSubscriptionEnd = 0 }: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONMAIL) ||
@@ -30,5 +30,3 @@ const isEligible = ({ user, protonConfig, lastSubscriptionEnd = 0 }: Props) => {
         isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)
     );
 };
-
-export default isEligible;

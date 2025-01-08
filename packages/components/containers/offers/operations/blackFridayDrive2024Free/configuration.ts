@@ -8,7 +8,7 @@ import { getDriveFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
-const config: OfferConfig = {
+export const blackFriday2024DriveFreeConfig: OfferConfig = {
     ID: 'black-friday-2024-drive-free',
     autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFriday2024DriveFree,
@@ -38,5 +38,3 @@ const config: OfferConfig = {
     ],
     layout: Layout,
 };
-
-export default config;
