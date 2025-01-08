@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
@@ -8,9 +8,10 @@ import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCar
 import { IdentityNew } from '@proton/pass/components/Item/Identity/Identity.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
 import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
-import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
+import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { type ItemNewRouteParams } from '@proton/pass/components/Navigation/routing';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { type ItemNewRouteParams, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemCreate } from '@proton/pass/store/actions';
@@ -32,11 +33,14 @@ const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
 
 export const ItemNew: FC = () => {
     const { getCurrentTabUrl } = usePassCore();
-    const selectItem = useSelectItem();
+    const { selectItem, navigate } = useNavigationActions();
     const { filters, setFilters } = useNavigationFilters();
+    const scope = useItemScope();
+
     const selectedShareId = filters.selectedShareId;
     const history = useHistory();
     const dispatch = useDispatch();
+
     const { type } = useParams<ItemNewRouteParams>();
     const { didDowngrade } = useSelector(selectVaultLimits);
 
@@ -53,7 +57,15 @@ export const ItemNew: FC = () => {
         return mostRecentVaultShareID;
     })();
 
-    if (!shareId) history.goBack();
+    /** If a user's first route is an item creation route
+     * (draft recovery), there won't be any history to go back
+     * to, so we navigate to the selected share view. */
+    const handleCancel = useCallback(() => {
+        if (history.length > 1) history.goBack();
+        else navigate(getLocalPath(scope), { filters: { selectedShareId } });
+    }, [selectedShareId, scope]);
+
+    if (!shareId) handleCancel();
 
     const handleSubmit = (createIntent: ItemCreateIntent) => {
         dispatch(itemCreate.intent(createIntent));
@@ -66,8 +78,6 @@ export const ItemNew: FC = () => {
 
         selectItem(createIntent.shareId, createIntent.optimisticId, { mode: 'replace' });
     };
-
-    const handleCancel = () => history.goBack();
 
     const ItemNewComponent = itemNewMap[type];
 

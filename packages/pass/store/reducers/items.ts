@@ -20,21 +20,13 @@ import {
     itemBulkTrashProgress,
     itemCreate,
     itemCreateDismiss,
-    itemDeleteFailure,
-    itemDeleteIntent,
-    itemDeleteSuccess,
+    itemDelete,
     itemEdit,
     itemEditDismiss,
-    itemMoveFailure,
-    itemMoveIntent,
-    itemMoveSuccess,
+    itemMove,
     itemPinSuccess,
-    itemRestoreFailure,
-    itemRestoreIntent,
-    itemRestoreSuccess,
-    itemTrashFailure,
-    itemTrashIntent,
-    itemTrashSuccess,
+    itemRestore,
+    itemTrash,
     itemUnpinSuccess,
     itemsDeleteSync,
     itemsEditSync,
@@ -131,26 +123,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             commit: (action) => itemEdit.success.match(action) && getItemEntityID(action.payload),
             revert: itemEditDismiss.optimisticMatch,
         },
-        {
-            initiate: itemMoveIntent.optimisticMatch,
-            commit: itemMoveSuccess.optimisticMatch,
-            revert: itemMoveFailure.optimisticMatch,
-        },
-        {
-            initiate: itemTrashIntent.optimisticMatch,
-            commit: itemTrashSuccess.optimisticMatch,
-            revert: itemTrashFailure.optimisticMatch,
-        },
-        {
-            initiate: itemRestoreIntent.optimisticMatch,
-            commit: itemRestoreSuccess.optimisticMatch,
-            revert: itemRestoreFailure.optimisticMatch,
-        },
-        {
-            initiate: itemDeleteIntent.optimisticMatch,
-            commit: itemDeleteSuccess.optimisticMatch,
-            revert: itemDeleteFailure.optimisticMatch,
-        },
     ],
     (state = {}, action: Action) => {
         if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
@@ -175,7 +147,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         contentFormatVersion: ContentFormatVersion.Item,
                         createTime: now,
                         data: item,
-                        flags: 1 /** default to unmonitored */,
+                        flags: 0,
                         itemId: optimisticId,
                         lastUseTime: null,
                         modifyTime: now,
@@ -205,18 +177,14 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(state, { [shareId]: toMap(items, 'itemId') });
         }
 
-        if (itemTrashIntent.match(action)) {
-            const { item, shareId } = action.payload;
-            const { itemId } = item;
-
-            return updateItem({ shareId, itemId, state: ItemState.Trashed })(state);
+        if (itemTrash.success.match(action)) {
+            const { itemId, shareId } = action.payload;
+            return updateItem({ shareId, itemId, state: ItemState.Trashed, modifyTime: getEpoch() })(state);
         }
 
-        if (itemRestoreIntent.match(action)) {
-            const { item, shareId } = action.payload;
-            const { itemId } = item;
-
-            return updateItem({ shareId, itemId, state: ItemState.Active })(state);
+        if (itemRestore.success.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return updateItem({ shareId, itemId, state: ItemState.Active, modifyTime: getEpoch() })(state);
         }
 
         if (itemEdit.intent.match(action)) {
@@ -245,9 +213,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItems(items)(state);
         }
 
-        if (itemDeleteIntent.match(action)) {
-            const { shareId, item } = action.payload;
-            return { ...state, [shareId]: objectDelete(state[shareId], item.itemId) };
+        if (itemDelete.success.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return { ...state, [shareId]: objectDelete(state[shareId], itemId) };
         }
 
         if (itemsDeleteSync.match(action)) {
@@ -257,36 +225,11 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return { ...state, [shareId]: objectFilter(state[shareId], (itemId) => !itemIds.has(itemId)) };
         }
 
-        /**
-         * BE side and under the hood, moving an item
-         * will delete the item and re-create a new one.
-         * That's why we are relying on an optimisticId
-         * on an `itemMoveIntent`. This is similar to
-         * the `itemCreationIntent` flow with the extra
-         * deletion of the item to be moved.
-         */
-        if (itemMoveIntent.match(action)) {
-            const { item, optimisticId, shareId } = action.payload;
+        if (itemMove.success.match(action)) {
+            const { before, after } = action.payload;
             return fullMerge(
-                { ...state, [item.shareId]: objectDelete(state[item.shareId], item.itemId) },
-                {
-                    [shareId]: {
-                        [optimisticId]: {
-                            ...item,
-                            shareId,
-                            itemId: optimisticId,
-                            modifyTime: getEpoch(),
-                        },
-                    },
-                }
-            );
-        }
-
-        if (itemMoveSuccess.match(action)) {
-            const { item, shareId, optimisticId } = action.payload;
-            return fullMerge(
-                { ...state, [shareId]: objectDelete(state[item.shareId], optimisticId) },
-                { [shareId]: { [item.itemId]: item } }
+                { ...state, [before.shareId]: objectDelete(state[before.shareId], before.itemId) },
+                { [after.shareId]: { [after.itemId]: after } }
             );
         }
 
@@ -325,6 +268,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                     shareId,
                     itemId,
                     state: ItemState.Active,
+                    modifyTime: getEpoch(),
                 }))
             )(state);
         }
@@ -358,6 +302,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                     shareId,
                     itemId,
                     state: ItemState.Trashed,
+                    modifyTime: getEpoch(),
                 }))
             )(state);
         }
@@ -382,10 +327,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 export type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
 
 const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) => {
-    if (or(itemCreate.success.match, itemMoveSuccess.match, itemMoveFailure.match)(action)) {
+    if (itemCreate.success.match(action)) {
         const { optimisticId, item } = action.payload;
         const { itemId, shareId } = item;
-
         return fullMerge(state, { [optimisticId]: { shareId, itemId } });
     }
 
