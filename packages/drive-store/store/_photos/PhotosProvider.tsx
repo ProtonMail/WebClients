@@ -1,12 +1,10 @@
 import type { FC, ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
-import { useDrivePlan } from '@proton/components';
 import { queryDeletePhotosShare, queryPhotos } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
-import { useUserSettings } from '../_settings';
 import type { ShareWithKey } from '../_shares';
 import { useDefaultShare } from '../_shares';
 import type { Photo } from './interface';
@@ -15,7 +13,6 @@ export const PhotosContext = createContext<{
     shareId?: string;
     linkId?: string;
     volumeId?: string;
-    showPhotosSection: boolean;
     isLoading: boolean;
     photos: Photo[];
     loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
@@ -30,15 +27,6 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const request = useDebouncedRequest();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [photos, setPhotos] = useState<Photo[]>([]);
-
-    const { isB2B } = useDrivePlan();
-    const { b2bPhotosEnabled } = useUserSettings();
-
-    const showPhotosSection = isB2B
-        ? // B2B depends on user setting, kill switch disables it
-          b2bPhotosEnabled
-        : // Other plans should always show it
-          true;
 
     useEffect(() => {
         void Promise.all([getDefaultShare(), getDefaultPhotosShare()]).then(([defaultShare, defaultPhotosShare]) => {
@@ -93,7 +81,6 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
                 shareId: photosShare?.shareId,
                 linkId: photosShare?.rootLinkId,
                 volumeId: photosShare?.volumeId,
-                showPhotosSection,
                 isLoading: photosLoading,
                 photos,
                 loadPhotos,
