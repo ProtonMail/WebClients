@@ -75,7 +75,7 @@ describe('EditEmailSubscription', () => {
         expect(screen.getByText('Proton Drive product updates'));
         expect(screen.getByText('Proton Pass product updates'));
         expect(screen.getByText('Proton VPN product updates'));
-        expect(screen.queryByText('In-app notifications')).not.toBeInTheDocument();
+        expect(screen.getByText('In-app notifications'));
     });
 
     it('should not have FEATURES toggle', () => {
