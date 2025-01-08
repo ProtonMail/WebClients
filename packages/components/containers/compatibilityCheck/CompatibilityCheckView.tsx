@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { Href } from '@proton/atoms';
 import type { CompatibilityItem } from '@proton/components/containers/compatibilityCheck/compatibilityCheckHelper';
-import { isWebCryptoRsaSigningSupported } from '@proton/crypto/lib/compatibilityChecks';
+import { isWebCryptoAvailable, isWebCryptoRsaSigningSupported } from '@proton/crypto/lib/compatibilityChecks';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -38,13 +38,15 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
                 extra: { reason: incompatibilities.map(({ name }) => name).join(',') },
             });
             // the following check is just for informational purposes for now, to understand how many browsers require fallback code for RSA signatures
-            void isWebCryptoRsaSigningSupported().then((isSupported) => {
-                if (!isSupported) {
-                    captureMessage('Crypto compatibility report: RSA signing not supported by WebCrypto API', {
-                        level: 'info',
-                    });
-                }
-            });
+            if (isWebCryptoAvailable()) {
+                void isWebCryptoRsaSigningSupported().then((isSupported) => {
+                    if (!isSupported) {
+                        captureMessage('Crypto compatibility report: RSA signing not supported by WebCrypto API', {
+                            level: 'info',
+                        });
+                    }
+                });
+            }
             setItem(key, '1');
         }
     }, []);
