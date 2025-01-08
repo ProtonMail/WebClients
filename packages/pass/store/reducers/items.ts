@@ -268,6 +268,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                     shareId,
                     itemId,
                     state: ItemState.Active,
+                    modifyTime: getEpoch(),
                 }))
             )(state);
         }
@@ -301,6 +302,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                     shareId,
                     itemId,
                     state: ItemState.Trashed,
+                    modifyTime: getEpoch(),
                 }))
             )(state);
         }
