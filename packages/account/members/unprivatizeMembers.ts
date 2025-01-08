@@ -9,6 +9,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
+    Api,
     EnhancedMember,
     Member,
     MemberReadyForUnprivatization,
@@ -17,32 +18,26 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import {
     UnprivatizationRevisionError,
-    getMemberReadyForUnprivatization,
-    getMemberReadyForUnprivatizationApproval,
+    getIsMemberInAutomaticApproveState,
+    getIsMemberInManualApproveState,
     getSentryError,
-    unprivatizeMember,
+    getUnprivatizeMemberPayload,
     unprivatizeMemberHelper,
 } from '@proton/shared/lib/keys';
 
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
-import { getMember } from './actions';
+import { getMember } from './getMember';
 import {
+    type MembersState,
     type UnprivatizationMemberApproval,
     type UnprivatizationMemberFailure,
     type UnprivatizationMemberSuccess,
+    getMemberAddresses,
+    selectMembers,
+    setUnprivatizationState,
     upsertMember,
 } from './index';
-import { type MembersState, selectMembers, setUnprivatizationState } from './index';
-import { getMemberAddresses } from './index';
-
-export const getMemberToUnprivatize = (member: Member): member is MemberReadyForUnprivatization => {
-    return getMemberReadyForUnprivatization(member.Unprivatization);
-};
-
-export const getMemberToUnprivatizeApproval = (member: Member): member is MemberReadyForUnprivatizationApproval => {
-    return getMemberReadyForUnprivatizationApproval(member.Unprivatization);
-};
 
 export const selectUnprivatizationState = (state: MembersState) => state.members.unprivatization;
 
@@ -76,13 +71,13 @@ const getJoinedUnprivatizationMemberList = (
         if (!cur.value || !member) {
             return acc;
         }
-        if (cur.value.type === 'approval' && getMemberToUnprivatizeApproval(member)) {
+        if (cur.value.type === 'approval' && getIsMemberInManualApproveState(member)) {
             acc.push({
                 ...cur.value,
                 member: member,
             });
         }
-        if (cur.value.type === 'error' && getMemberToUnprivatize(member)) {
+        if (cur.value.type === 'error' && getIsMemberInAutomaticApproveState(member)) {
             acc.push({
                 ...cur.value,
                 member: member,
@@ -262,11 +257,11 @@ const getMembersToUnprivatize = ({
 
     members.forEach((member) => {
         const item = oldState.members[member.ID];
-        if (getMemberToUnprivatize(member)) {
+        if (getIsMemberInAutomaticApproveState(member)) {
             if (!item) {
                 membersToUnprivatize.push(member);
             }
-        } else if (getMemberToUnprivatizeApproval(member)) {
+        } else if (getIsMemberInManualApproveState(member)) {
             if (!item) {
                 membersToApprove.push(member);
             }
@@ -279,6 +274,34 @@ const getMembersToUnprivatize = ({
     return { membersToUnprivatize, membersToDelete, membersToApprove };
 };
 
+export const unprivatizeMember = ({
+    member,
+    verifyOutboundPublicKeys,
+    options,
+    api,
+}: {
+    member: MemberReadyForUnprivatization;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
+    api: Api;
+}): ThunkAction<Promise<void>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const [organizationKey, memberAddresses] = await Promise.all([
+            dispatch(organizationKeyThunk()), // Fetch org key again to ensure it's up-to-date.
+            dispatch(getMemberAddresses({ member, retry: true })),
+        ]);
+        const payload = await getUnprivatizeMemberPayload({
+            api,
+            member,
+            memberAddresses,
+            organizationKey: organizationKey.privateKey,
+            verifyOutboundPublicKeys,
+            options,
+        });
+        await api(unprivatizeMemberKeysRoute(member.ID, payload));
+    };
+};
+
 export const unprivatizeMembersBackgroundHelper = ({
     membersToUnprivatize,
     verifyOutboundPublicKeys,
@@ -286,7 +309,7 @@ export const unprivatizeMembersBackgroundHelper = ({
 }: {
     membersToUnprivatize: MemberReadyForUnprivatization[];
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    options?: Parameters<typeof unprivatizeMember>[0]['options'];
+    options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
 }): ThunkAction<
     Promise<{
         membersToUpdate: Member[];
@@ -304,19 +327,14 @@ export const unprivatizeMembersBackgroundHelper = ({
         const api = getSilentApi(extra.api);
         for (const member of membersToUnprivatize) {
             try {
-                const [organizationKey, memberAddresses] = await Promise.all([
-                    dispatch(organizationKeyThunk()), // Fetch org key again to ensure it's up-to-date.
-                    dispatch(getMemberAddresses({ member, retry: true })),
-                ]);
-                const payload = await unprivatizeMember({
-                    api,
-                    member,
-                    memberAddresses,
-                    organizationKey: organizationKey.privateKey,
-                    verifyOutboundPublicKeys,
-                    options,
-                });
-                await api(unprivatizeMemberKeysRoute(member.ID, payload));
+                await dispatch(
+                    unprivatizeMember({
+                        member,
+                        api,
+                        options,
+                        verifyOutboundPublicKeys,
+                    })
+                );
                 const newMember = await getMember(api, member.ID);
                 membersToUpdate.push(newMember);
             } catch (error: any) {
@@ -334,7 +352,7 @@ export const unprivatizeMembersBackground = ({
     target,
 }: {
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    options?: Parameters<typeof unprivatizeMember>[0]['options'];
+    options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
     target:
         | {
               type: 'background';
