@@ -15,12 +15,18 @@ type AnyCollabNode = Binding['root']['_children'][0]
 type CollabElementNode = Binding['root']
 type CollabTextNode = Extract<AnyCollabNode, { _text: string }>
 
+// Lexical does not export the `CollabElementNode` and `CollabTextNode`
+// classes, which means we cannot use those with `instanceof` checks
+// in these two typeguard functions. Instead we check for properties
+// that are exclusive to those particular nodes. A strict instanceof
+// check is not required in the contexts these functions are used
+// where the nodes passed into these are always going to be some CollabNode
+// and the properties we're checking only exist in the node we're checking for.
 function isCollabElementNode(node: any): node is CollabElementNode {
-  return node.constructor.name === 'CollabElementNode' && '_children' in node
+  return '_children' in node
 }
-
 function isCollabTextNode(node: AnyCollabNode): node is CollabTextNode {
-  return node.constructor.name === 'CollabTextNode' && '_text' in node
+  return '_text' in node
 }
 
 function getCollabNodeAndOffset(
