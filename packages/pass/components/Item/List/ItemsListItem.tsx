@@ -8,9 +8,9 @@ import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
 import { useItemOptimisticState } from '@proton/pass/hooks/useItem';
 import type { DraggableItem } from '@proton/pass/hooks/useItemDrag';
+import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -55,8 +55,7 @@ export const ItemsListItem = memo(
         const vault = useSelector(selectShare<ShareType.Vault>(shareId));
         const { failed, optimistic } = useItemOptimisticState(shareId, itemId);
 
-        const bulkInFlight = useBulkInFlight(item);
-        const loading = optimistic || bulkInFlight;
+        const loading = useItemLoading(item) || optimistic;
         const writable = (vault && isWritableVault(vault)) ?? false;
         const aliasDisabled = isDisabledAliasItem(item);
 
@@ -71,7 +70,7 @@ export const ItemsListItem = memo(
                         'pass-item-list--item interactive-pseudo w-full',
                         bulk && 'pass-item-list--item-bulk',
                         bulk && selected && 'pass-item-list--item-bulk-selected',
-                        bulk && (!writable || bulkInFlight) && 'pointer-events-none opacity-50',
+                        bulk && (!writable || loading) && 'pointer-events-none opacity-50',
                         active && 'is-active',
                     ])}
                     color={failed ? 'warning' : 'weak'}
