@@ -43,7 +43,7 @@ export function SharedPageContentHeader({
     className,
     hideSaveToDrive,
     isPartialView,
-    isFolderView,
+    isFolderView = false,
     onNavigate,
 }: Props) {
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
@@ -98,7 +98,7 @@ export function SharedPageContentHeader({
             <div className="shared-page-content-header-buttons m-auto md:m-0 md:ml-auto">
                 <DownloadButton rootLink={rootLink} items={items} disabled={hasOnlyDocuments || !items.length} />
 
-                {!viewOnly && token && linkId && (
+                {isFolderView && !viewOnly && (
                     <>
                         <UploadButton token={token} linkId={linkId} />
                         <CreateButton token={token} linkId={linkId} />
