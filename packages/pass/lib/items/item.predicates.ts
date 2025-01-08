@@ -81,4 +81,6 @@ export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
 export const hasOTP = ({ data: { content, extraFields } }: LoginItem) =>
     Boolean(content.totpUri.v || extraFields.some((field) => field.type === 'totp' && field.data.totpUri.v));
 
+export const hasPasskeys = ({ data: { content } }: LoginItem) => (content.passkeys ?? []).length > 0;
+
 export const isExtraOTPField = (field: ItemExtraField): field is ItemExtraField<'totp'> => field.type === 'totp';
