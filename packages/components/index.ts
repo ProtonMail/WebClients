@@ -254,7 +254,6 @@ export type { SearcheableSelectProps } from './components/selectTwo/SearchableSe
 export { default as SelectTwo } from './components/selectTwo/SelectTwo';
 export type { SelectTwoProps } from './components/selectTwo/SelectTwo';
 export { default as ShortcutsSectionView } from './components/shortcuts/ShortcutsSectionView';
-export { default as CollapsibleSidebarSpotlight } from './components/sidebar/CollapsibleSidebarSpotlight';
 export { default as Hamburger } from './components/sidebar/Hamburger';
 export { default as SettingsListItem } from './components/sidebar/SettingsListItem';
 export { default as Sidebar } from './components/sidebar/Sidebar';
