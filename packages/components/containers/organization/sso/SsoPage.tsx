@@ -12,6 +12,8 @@ import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -52,7 +54,12 @@ const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
 
 const ConfigureSamlContent = ({
     domain,
+    domains,
     ssoConfigs,
+    count,
+    onAddDomain,
+    onRemoveDomain,
+    onChangeDomain,
     configureSamlModalProps,
     configureSamlEdugainModalProps,
     setConfigureSamlModalOpen,
@@ -63,7 +70,12 @@ const ConfigureSamlContent = ({
     isEduGainSSOEnabled,
 }: {
     domain: Domain;
+    domains: Domain[];
+    count: { used: number; total: number };
     ssoConfigs: SSO[];
+    onAddDomain?: () => void;
+    onRemoveDomain?: () => void;
+    onChangeDomain: (domain: Domain) => void;
     configureSamlModalProps: ModalStateProps;
     configureSamlEdugainModalProps: ModalStateProps;
     setConfigureSamlModalOpen: (newValue: boolean) => void;
@@ -109,15 +121,91 @@ const ConfigureSamlContent = ({
                     className={clsx('w-full flex flex-nowrap items-start gap-2', !ssoConfigForDomain && 'max-w-custom')}
                     style={{ '--max-w-custom': '25rem' }}
                 >
-                    <InputFieldTwo
-                        id="domainName"
-                        value={domain.DomainName}
-                        readOnly
-                        assistiveText={<DomainVerificationState domain={domain} />}
-                    />
+                    {(() => {
+                        if (domains.length === 1 && !onAddDomain) {
+                            return (
+                                <InputFieldTwo
+                                    id="domainName"
+                                    value={domain.DomainName}
+                                    readOnly
+                                    assistiveText={<DomainVerificationState domain={domain} />}
+                                />
+                            );
+                        }
+
+                        const domainOptions = domains.map((domain) => {
+                            return (
+                                <Option
+                                    value={domain}
+                                    title={domain.DomainName}
+                                    key={domain.ID}
+                                    className="flex gap-2 items-center flex-nowrap"
+                                >
+                                    <Icon name="globe" className="shrink-0" />{' '}
+                                    <span className="text-ellipsis">{domain.DomainName}</span>
+                                </Option>
+                            );
+                        });
+                        const addDomain = c('Action').t`Add domain`;
+                        const addDomainKey = 'add-domain';
+
+                        const children = [
+                            ...domainOptions,
+                            <div key="divider" className="my-2">
+                                <hr className="m-0 border-bottom border-weak" />
+                            </div>,
+                            <Option
+                                value={addDomainKey}
+                                title={addDomain}
+                                key={addDomainKey}
+                                disabled={!onAddDomain}
+                                className="flex gap-2 items-center justify-space-between flex-nowrap"
+                            >
+                                <div className="flex gap-2 flex-nowrap items-center">
+                                    <Icon name="plus" className="shrink-0" />{' '}
+                                    <span className="flex-1 text-ellipsis">{addDomain}</span>
+                                </div>
+                                <div className="shrink-0 color-hint">
+                                    {count.used} / {count.total}
+                                </div>
+                            </Option>,
+                        ];
+
+                        return (
+                            <InputFieldTwo
+                                as={SelectTwo<Domain | typeof addDomainKey>}
+                                id="domainName"
+                                value={domain}
+                                assistiveText={<DomainVerificationState domain={domain} />}
+                                renderSelected={(domain) => {
+                                    if (domain === addDomainKey) {
+                                        return null;
+                                    }
+                                    if (domain) {
+                                        return domain.DomainName;
+                                    }
+                                    return null;
+                                }}
+                                onValue={(domain) => {
+                                    if (domain === addDomainKey) {
+                                        onAddDomain?.();
+                                        return;
+                                    }
+                                    if (domain) {
+                                        onChangeDomain(domain);
+                                        return;
+                                    }
+                                }}
+                            >
+                                {children}
+                            </InputFieldTwo>
+                        );
+                    })()}
                     {!ssoConfigForDomain && (
                         <>
-                            {renderRemoveSSODomain && <RemoveSSODomain domain={domain} {...removeSSODomainProps} />}
+                            {renderRemoveSSODomain && (
+                                <RemoveSSODomain domain={domain} onSuccess={onRemoveDomain} {...removeSSODomainProps} />
+                            )}
                             <Tooltip title={c('Action').t`Remove domain`}>
                                 <Button
                                     color="danger"
@@ -212,7 +300,8 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [configureSamlEdugainModalProps, setConfigureSamlEdugainModalOpen, renderConfigureSamlEdugainModal] =
         useModalState();
 
-    const [selectedIDPType, setSelectedIDPType] = useState<IDP_TYPE>(IDP_TYPE.DEFAULT);
+    const [preferredDomainID, setPreferredDomainID] = useState<Domain['ID'] | undefined>(undefined);
+    const [selectedIDPType, setSelectedIDPType] = useState<IDP_TYPE | null>(null);
 
     const isEduGainSSOEnabled = useFlag('EduGainSSO');
 
@@ -278,7 +367,9 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
 
     const hasSsoDomain = ssoDomains.length > 0;
     const hasSsoConfig = samlSSO.configs.length > 0;
-    const domain = ssoDomains[0];
+    const domain: Domain | undefined = ssoDomains.find(({ ID }) => ID === preferredDomainID) || ssoDomains[0];
+    // Domain addons are not currently supported on vpn or pass b2b plans, so ignoring any addon upsell here.
+    const canAddSsoDomain = customDomains.length !== organization.MaxDomains;
 
     const ssoConfigIsEdugain = samlSSO.configs[0]?.Type === IDP_TYPE.EDUGAIN;
 
@@ -286,8 +377,14 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
         <>
             {renderSetupSSODomainModal && (
                 <SetupSSODomainModal
+                    onDomainAdded={(domain) => {
+                        setPreferredDomainID(domain.ID);
+                    }}
                     onContinue={() => {
                         setupSSODomainModalProps.onClose();
+                        if (selectedIDPType === null) {
+                            return;
+                        }
                         if (selectedIDPType === IDP_TYPE.EDUGAIN) {
                             setConfigureSamlEdugainModalOpen(true);
                         } else {
@@ -295,6 +392,9 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                         }
                     }}
                     {...setupSSODomainModalProps}
+                    onClose={() => {
+                        setupSSODomainModalProps.onClose();
+                    }}
                 />
             )}
             {renderVerifySSODomainModal && domain && <TXTRecordModal domain={domain} {...verifySSODOmainModalProps} />}
@@ -314,6 +414,25 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                     {hasSsoDomain ? (
                         <ConfigureSamlContent
                             domain={domain}
+                            domains={ssoDomains}
+                            count={{
+                                used: customDomains.length,
+                                total: Math.max(customDomains.length, organization.MaxDomains),
+                            }}
+                            onAddDomain={
+                                canAddSsoDomain
+                                    ? () => {
+                                          setSelectedIDPType(null);
+                                          setSetupSSODomainModalOpen(true);
+                                      }
+                                    : undefined
+                            }
+                            onChangeDomain={(domain) => {
+                                setPreferredDomainID(domain.ID);
+                            }}
+                            onRemoveDomain={() => {
+                                setPreferredDomainID(undefined);
+                            }}
                             ssoConfigs={samlSSO.configs}
                             configureSamlModalProps={configureSamlModalProps}
                             configureSamlEdugainModalProps={configureSamlEdugainModalProps}
@@ -342,6 +461,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                                 <Button
                                     color="norm"
                                     onClick={() => {
+                                        setSelectedIDPType(IDP_TYPE.DEFAULT);
                                         setSetupSSODomainModalOpen(true);
                                     }}
                                 >
