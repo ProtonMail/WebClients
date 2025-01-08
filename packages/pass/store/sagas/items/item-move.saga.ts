@@ -1,20 +1,19 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { select } from 'redux-saga/effects';
 
 import { moveItem } from '@proton/pass/lib/items/item.requests';
-import { itemMoveFailure, itemMoveIntent, itemMoveSuccess } from '@proton/pass/store/actions';
-import type { ItemRevision } from '@proton/pass/types';
+import { itemMove } from '@proton/pass/store/actions';
+import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { selectItem } from '@proton/pass/store/selectors';
+import type { ItemRevision, Maybe } from '@proton/pass/types';
 
-function* itemCreationWorker({ payload }: ReturnType<typeof itemMoveIntent>) {
-    const { item: itemToMove, optimisticId, shareId } = payload;
+export default createRequestSaga({
+    actions: itemMove,
+    call: function* ({ itemId, shareId, destinationShareId }, { onItemsUpdated }) {
+        const before: Maybe<ItemRevision> = yield select(selectItem(shareId, itemId));
+        if (!before) throw new Error('Invalid move action');
 
-    try {
-        const item: ItemRevision = yield moveItem(itemToMove, itemToMove.shareId, shareId);
-        yield put(itemMoveSuccess({ item, optimisticId, shareId }));
-    } catch (e: unknown) {
-        yield put(itemMoveFailure({ optimisticId, shareId, item: itemToMove }, e));
-    }
-}
-
-export default function* watcher() {
-    yield takeEvery(itemMoveIntent.match, itemCreationWorker);
-}
+        const after: ItemRevision = yield moveItem(before, shareId, destinationShareId);
+        onItemsUpdated?.();
+        return { before, after };
+    },
+});

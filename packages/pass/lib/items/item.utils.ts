@@ -14,6 +14,7 @@ import type {
     LoginItemPreview,
     MaybeNull,
     SelectedItem,
+    SelectedRevision,
     UniqueItem,
     UnsafeItem,
 } from '@proton/pass/types';
@@ -159,7 +160,7 @@ export const batchByShareId = <T extends UniqueItem, R>(
     });
 
 /** Converts an item revision to a revision request payload  */
-export const intoRevisionID = (item: ItemRevision): ItemRevisionID => ({
+export const intoRevisionID = <T extends SelectedRevision>(item: T): ItemRevisionID => ({
     ItemID: item.itemId,
     Revision: item.revision,
 });
