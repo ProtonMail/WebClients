@@ -22,7 +22,7 @@ import {
     itemDeleteIntent,
     itemMoveIntent,
     itemRestoreIntent,
-    itemTrashIntent,
+    itemTrash,
 } from '@proton/pass/store/actions';
 import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
@@ -75,10 +75,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         useCallback(
             (item: ItemRevision) =>
                 dispatch(
-                    itemTrashIntent({
+                    itemTrash.intent({
                         itemId: item.itemId,
                         shareId: item.shareId,
-                        item,
+                        revision: item.revision,
                     })
                 ),
             []
