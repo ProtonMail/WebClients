@@ -9,7 +9,6 @@ import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
 
-import BusySlotsSpotlight from '../BusySlotsSpotlight';
 import { getOrganizerAndSelfAddressModel } from '../eventForm/state';
 import ParticipantsInput from '../inputs/ParticipantsInput';
 
@@ -62,23 +61,21 @@ export const RowParticipants = ({
     };
 
     return (
-        <BusySlotsSpotlight view={view} isDisplayedInPopover={!!isMinimal}>
-            <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
-                <ParticipantsInput
-                    placeholder={c('Placeholder').t`Add participants`}
-                    id={PARTICIPANTS_INPUT_ID}
-                    value={model.attendees}
-                    isOwnedCalendar={model.calendar.isOwned}
-                    onChange={handleChangeAttendees}
-                    organizer={model.organizer}
-                    addresses={addresses}
-                    collapsible={!isMinimal}
-                    setParticipantError={setParticipantError}
-                    onDisplayBusySlots={onDisplayBusySlots}
-                    displayBusySlots={!!isMinimal}
-                    view={view}
-                />
-            </IconRow>
-        </BusySlotsSpotlight>
+        <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
+            <ParticipantsInput
+                placeholder={c('Placeholder').t`Add participants`}
+                id={PARTICIPANTS_INPUT_ID}
+                value={model.attendees}
+                isOwnedCalendar={model.calendar.isOwned}
+                onChange={handleChangeAttendees}
+                organizer={model.organizer}
+                addresses={addresses}
+                collapsible={!isMinimal}
+                setParticipantError={setParticipantError}
+                onDisplayBusySlots={onDisplayBusySlots}
+                displayBusySlots={!!isMinimal}
+                view={view}
+            />
+        </IconRow>
     );
 };
