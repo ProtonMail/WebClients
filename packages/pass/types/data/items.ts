@@ -107,7 +107,7 @@ export type UniqueItem = { shareId: string; itemId: string };
 export type SelectedShare = { shareId: string };
 export type SelectedItem = UniqueItem;
 export type SelectedRevision = UniqueItem & { revision: number };
-export type OptimisticItem = { optimisticId: string; shareId: string; optimisticTime?: number };
+export type OptimisticItem = SelectedShare & { optimisticId: string; optimisticTime?: number };
 
 export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
 export type ItemTypeFilter = '*' | ItemType;
