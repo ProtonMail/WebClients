@@ -126,6 +126,7 @@ const useShareMemberViewZustand = (rootShareId: string, linkId: string) => {
     const updateIsSharedStatus = async (abortSignal: AbortSignal) => {
         const updatedLink = await getLink(abortSignal, rootShareId, linkId);
         setSharingShareId(updatedLink.sharingDetails?.shareId);
+        return updatedLink.sharingDetails?.shareId;
     };
 
     const deleteShareIfEmpty = useCallback(async () => {
@@ -249,9 +250,6 @@ const useShareMemberViewZustand = (rootShareId: string, linkId: string) => {
         permissions: SHARE_MEMBER_PERMISSIONS;
         emailDetails?: ShareInvitationEmailDetails;
     }) => {
-        if (!sharingShareId) {
-            throw new Error('No details for sharing link');
-        }
         await withAdding(async () => {
             const abortController = new AbortController();
             const newInvitations = [];
@@ -270,11 +268,14 @@ const useShareMemberViewZustand = (rootShareId: string, linkId: string) => {
                     newExternalInvitations.push(member.externalInvitation);
                 }
             }
-
-            await updateIsSharedStatus(abortController.signal);
+            // If the sharingShareId is already present we use it, if not we retrieve it by creating a share
+            const newSharingShareId = sharingShareId || (await updateIsSharedStatus(abortController.signal));
+            if (!newSharingShareId) {
+                throw new Error('No details for sharing link');
+            }
 
             addMultipleShareInvitations(
-                sharingShareId,
+                newSharingShareId,
                 [...invitations, ...newInvitations],
                 [...externalInvitations, ...newExternalInvitations]
             );
