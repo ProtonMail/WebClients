@@ -14,7 +14,7 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
         vaultLimit,
         vaultTotalCount: vaults.length,
         vaultLimitReached: vaults.length >= vaultLimit,
-        didDowngrade: vaults.length > vaultLimit && plan?.Type === PlanType.free,
+        didDowngrade: vaults.length > vaultLimit && plan?.Type === PlanType.FREE,
     };
 });
 
@@ -58,6 +58,6 @@ export const selectTOTPLimits = createSelector([selectLoginItems, selectUserPlan
 
 export const selectExtraFieldLimits = createSelector([selectUserPlan], (plan) => {
     return {
-        needsUpgrade: plan?.Type === PlanType.free,
+        needsUpgrade: plan?.Type === PlanType.FREE,
     };
 });
