@@ -96,7 +96,7 @@ export const LobbyContent: FC<Props> = ({
         })().catch(noop);
     }, [online, localID]);
 
-    const brandNameJSX = <PassTextLogo key="pass-text-logo" className="pass-lobby--brand-text ml-1.5 shrink-0 logo" />;
+    const brandNameJSX = <PassTextLogo key="pass-text-logo" className="pass-lobby--brand-text shrink-0 logo" />;
 
     if (criticalError) return renderError(criticalError);
 
@@ -129,7 +129,7 @@ export const LobbyContent: FC<Props> = ({
     return (
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column items-center gap-3">
-                <span className="pass-lobby--heading text-bold text-norm text-no-wrap flex flex-nowrap items-end justify-center user-select-none">
+                <span className="pass-lobby--heading w-full text-bold text-norm text-no-wrap flex flex-nowrap gap-2 items-end justify-center user-select-none">
                     {locked || passwordLocked || missingScope
                         ? c('Title').jt`Unlock ${brandNameJSX}`
                         : c('Title').jt`Welcome to ${brandNameJSX}`}

@@ -1,11 +1,12 @@
 @import '~@proton/styles/scss/lib';
 
 .pass-lobby--heading {
-	font-size: rem(24);
-	line-height: 0.95;
+	font-size: rem(25);
+	line-height: 0.9;
 }
 
 .pass-lobby--brand-text {
-	block-size: 1.5rem;
+	block-size: 1.6rem;
+	padding-block-end: 0.25%;
 	fill: var(--text-norm);
 }
