@@ -1,12 +1,4 @@
-export type BinaryString = string;
-export type Id = string;
-
-export type ItemIDRevision = {
-  /** ItemID */
-  ItemID: string;
-  /** Current revision for the item */
-  Revision: number;
-};
+export type ItemIDRevision = ItemIDRevision2;
 
 export type ItemMoveSingleToShareRequest = {
   /* Encrypted ID of the destination share */
@@ -23,52 +15,11 @@ export type ItemMoveIndividualToShareRequest = {
   /* Encrypted ID of the source item to move */
   ItemID: string;
   /* Data to create the new item in the destination vault */
-  Item?: ItemCreateRequest;
+  Item: ItemCreateRequest;
   /* Previous revisions of this item */
   History: ItemHistoryRequest[];
   /* Item keys encrypted with the target vault key */
   ItemKeys?: EncodedItemKeyRotation[];
-};
-
-export enum InAppNotificationState {
-  UNREAD = 0,
-  READ = 1,
-  DISMISSED = 2,
-}
-
-export enum InAppNotificationDisplayType {
-  BANNER = 0,
-  MODAL = 1,
-}
-
-export type InAppNotificationContent = {
-  /* Optional URL of the image to be shown */
-  ImageUrl?: string | null;
-  DisplayType: InAppNotificationDisplayType;
-  /* Translated title of the notification */
-  Title: string;
-  /* Translated message of the notification */
-  Message: string;
-  /* Theme of the notification */
-  Theme?: string | null;
-  /* CTA of the notification */
-  Cta?: InAppNotificationCta;
-};
-
-export type EnableSLSyncRequest = {
-  /** ShareID to store the alias when syncing */
-  DefaultShareID?: string;
-};
-
-export type OrganizationSettingsGetResponse = {
-  /** Bitfield with allowed ways to share within the organization. 0 means unrestricted, 1 means sharing is only allowed within the organization */
-  ShareMode: number;
-  /** Force seconds to lock pass. 0 means lock time is not enforced */
-  ForceLockSeconds: number;
-  /** Bitfield with allowed ways to export data. 0 means anyone can export. 1 means only admins can export data */
-  ExportMode: number;
-  /** Organization password policy */
-  PasswordPolicy: OrganizationUpdatePasswordPolicyRequest | null;
 };
 
 export type PublicLinkCreateRequest = {
@@ -84,26 +35,6 @@ export type PublicLinkCreateRequest = {
   EncryptedLinkKey: string;
   /* ShareKey rotation used for encrypting the encryptedLinkKey */
   LinkKeyShareKeyRotation: number;
-};
-
-export type BreachSource = {
-  /** Whether the breach is aggregated data from multiple sources or data from a single source */
-  IsAggregated: boolean;
-  /** Domain name (DNS) of the source of the breach, if known */
-  Domain?: string | null;
-  /** Breach category, if known; values are dynamic and can change over time */
-  Category?: string | null /* FIX OPENAPI */;
-  /** Country to which source of the breach is associated, if known */
-  Country?: string | null /* FIX OPENAPI */;
-};
-
-export type BreachString = {
-  /** Original value, keyword, token, ... */
-  Code: string;
-  /** Localized name or description of the value */
-  Name: string;
-  /** The leaked value */
-  Values?: string[] | null;
 };
 
 export type BreachAction = {
