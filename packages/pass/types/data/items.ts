@@ -18,15 +18,11 @@ import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 type Obfuscate<T, K extends keyof T> = Omit<T, K> & { [Obf in K]: XorObfuscation };
 
 type Deobfuscate<T> = {
-    [K in keyof T]: T[K] extends XorObfuscation
-        ? string
-        : T[K] extends ArrayBuffer
-          ? T[K]
-          : T[K] extends (infer U)[]
-            ? Deobfuscate<U>[]
-            : T[K] extends {}
-              ? Deobfuscate<T[K]>
-              : T[K];
+    [K in keyof T]: T[K] extends XorObfuscation ? string
+    : T[K] extends ArrayBuffer ? T[K]
+    : T[K] extends (infer U)[] ? Deobfuscate<U>[]
+    : T[K] extends {} ? Deobfuscate<T[K]>
+    : T[K];
 };
 
 type ExtraFieldContent<T extends ExtraFieldType> = {
@@ -110,7 +106,8 @@ export type ItemMap<T> = { [type in ItemType]: T };
 export type UniqueItem = { shareId: string; itemId: string };
 export type SelectedShare = { shareId: string };
 export type SelectedItem = UniqueItem;
-export type OptimisticItem = { optimisticId: string; shareId: string; optimisticTime?: number };
+export type SelectedRevision = UniqueItem & { revision: number };
+export type OptimisticItem = SelectedShare & { optimisticId: string; optimisticTime?: number };
 
 export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
 export type ItemTypeFilter = '*' | ItemType;

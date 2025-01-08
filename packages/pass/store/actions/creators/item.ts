@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
+import { getItemEntityID, getItemKey } from '@proton/pass/lib/items/item.utils';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -31,6 +31,8 @@ import type {
     ItemCreateIntent,
     ItemCreateSuccess,
     ItemEditIntent,
+    ItemMoveDTO,
+    ItemMoveIntent,
     ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
@@ -41,6 +43,7 @@ import type {
     SecureLinkItem,
     SecureLinkQuery,
     SelectedItem,
+    SelectedRevision,
     UniqueItem,
 } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -124,35 +127,27 @@ export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevis
     withCache({ payload: { items } })
 );
 
-export const itemMoveIntent = createOptimisticAction(
-    'item::move::intent',
-    (payload: { item: ItemRevision; shareId: string; optimisticId: string }) => withSynchronousAction({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemMoveFailure = createOptimisticAction(
-    'item::move::failure',
-    (payload: { optimisticId: string; shareId: string; item: ItemRevision }, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Moving item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemMoveSuccess = createOptimisticAction(
-    'item::move::success',
-    (payload: { item: ItemRevision; optimisticId: string; shareId: string }) =>
-        pipe(
-            withCache,
+export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item::move')({
+    key: getItemKey<UniqueItem>,
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                text: c('Info').t`Item successfully moved`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Moving item failed`,
+                error,
+            })({ payload, error }),
+    },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item successfully moved`,
+                })
+            )({ payload }),
+    },
+});
 
 export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
@@ -196,36 +191,27 @@ export const itemBulkMoveSuccess = createAction(
     )
 );
 
-export const itemTrashIntent = createOptimisticAction(
-    'item::trash::intent',
-    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemTrashFailure = createOptimisticAction(
-    'item::trash::failure',
-    (payload: SelectedItem, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Trashing item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemTrashSuccess = createOptimisticAction(
-    'item::trash::success',
-    (payload: SelectedItem) =>
-        pipe(
-            withCache,
+export const itemTrash = requestActionsFactory<SelectedRevision, SelectedRevision>('item::trash')({
+    key: getItemKey,
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item moved to trash`,
+                })
+            )({ payload }),
+    },
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                key: getItemEntityID(payload),
-                text: c('Info').t`Item moved to trash`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Trashing item failed`,
+                error,
+            })({ payload, error }),
+    },
+});
 
 export const itemBulkTrashIntent = createAction(
     'item::bulk::trash::intent',
@@ -267,35 +253,27 @@ export const itemBulkTrashSuccess = createAction(
     )
 );
 
-export const itemDeleteIntent = createOptimisticAction(
-    'item::delete::intent',
-    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemDeleteFailure = createOptimisticAction(
-    'item::delete::failure',
-    (payload: SelectedItem, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Deleting item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemDeleteSuccess = createOptimisticAction(
-    'item::delete::success',
-    (payload: SelectedItem) =>
-        pipe(
-            withCache,
+export const itemDelete = requestActionsFactory<SelectedItem, SelectedItem>('item::delete')({
+    key: getItemKey,
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                text: c('Info').t`Item permanently deleted`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Deleting item failed`,
+                error,
+            })({ payload, error }),
+    },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item permanently deleted`,
+                })
+            )({ payload }),
+    },
+});
 
 export const itemBulkDeleteIntent = createAction(
     'item::bulk::delete::intent',
@@ -341,35 +319,27 @@ export const itemsDeleteSync = createAction('items::delete::sync', (shareId: str
     withCache({ payload: { shareId, itemIds } })
 );
 
-export const itemRestoreIntent = createOptimisticAction(
-    'item::restore::intent',
-    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemRestoreFailure = createOptimisticAction(
-    'item::restore::failure',
-    (payload: SelectedItem, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Restoring item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemRestoreSuccess = createOptimisticAction(
-    'item::restore::success',
-    (payload: SelectedItem) =>
-        pipe(
-            withCache,
+export const itemRestore = requestActionsFactory<SelectedItem, SelectedItem>('item::restore')({
+    key: getItemKey,
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                text: c('Info').t`Item restored`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Restoring item failed`,
+                error,
+            })({ payload, error }),
+    },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item restored`,
+                })
+            )({ payload }),
+    },
+});
 
 export const itemBulkRestoreIntent = createAction(
     'item::bulk:restore::intent',

@@ -19,15 +19,15 @@ import {
     itemBulkMoveIntent,
     itemBulkRestoreIntent,
     itemBulkTrashIntent,
-    itemDeleteIntent,
-    itemMoveIntent,
-    itemRestoreIntent,
-    itemTrashIntent,
+    itemDelete,
+    itemMove,
+    itemRestore,
+    itemTrash,
 } from '@proton/pass/store/actions';
 import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
+import type { ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
@@ -51,18 +51,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
-    const moveItem = useConfirm(
-        useCallback(
-            (options: { item: ItemRevision; shareId: string }) =>
-                dispatch(
-                    itemMoveIntent({
-                        ...options,
-                        optimisticId: uniqueId(),
-                    })
-                ),
-            []
-        )
-    );
+    const moveItem = useConfirm(useCallback((dto: ItemMoveIntent) => dispatch(itemMove.intent(dto)), []));
 
     const moveManyItems = useConfirm(
         useCallback((options: { selected: BulkSelectionDTO; shareId: string }) => {
@@ -75,10 +64,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         useCallback(
             (item: ItemRevision) =>
                 dispatch(
-                    itemTrashIntent({
+                    itemTrash.intent({
                         itemId: item.itemId,
                         shareId: item.shareId,
-                        item,
+                        revision: item.revision,
                     })
                 ),
             []
@@ -93,14 +82,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     );
 
     const deleteItem = useConfirm(
-        useCallback((item: ItemRevision) => {
-            dispatch(
-                itemDeleteIntent({
-                    itemId: item.itemId,
-                    shareId: item.shareId,
-                    item,
-                })
-            );
+        useCallback(({ shareId, itemId }: ItemRevision) => {
+            dispatch(itemDelete.intent({ shareId, itemId }));
         }, [])
     );
 
@@ -117,8 +100,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 openVaultSelect({
                     mode,
                     shareId: item.shareId,
-                    onSubmit: (shareId) => {
-                        moveItem.prompt({ item, shareId });
+                    onSubmit: (destinationShareId) => {
+                        moveItem.prompt({ itemId: item.itemId, shareId: item.shareId, destinationShareId });
                         closeVaultSelect();
                     },
                 }),
@@ -152,14 +135,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             deleteMany: deleteManyItems.prompt,
 
-            restore: (item) =>
-                dispatch(
-                    itemRestoreIntent({
-                        itemId: item.itemId,
-                        shareId: item.shareId,
-                        item,
-                    })
-                ),
+            restore: ({ shareId, itemId }) => dispatch(itemRestore.intent({ shareId, itemId })),
 
             restoreMany: (selected) => {
                 dispatch(itemBulkRestoreIntent({ selected }));
@@ -179,18 +155,12 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             />
 
             {moveItem.pending && (
-                <ConfirmMoveItem
-                    item={moveItem.param.item}
-                    shareId={moveItem.param.shareId}
-                    onCancel={moveItem.cancel}
-                    onConfirm={moveItem.confirm}
-                />
+                <ConfirmMoveItem {...moveItem.param} onCancel={moveItem.cancel} onConfirm={moveItem.confirm} />
             )}
 
             {moveManyItems.pending && (
                 <ConfirmMoveManyItems
-                    selected={moveManyItems.param.selected}
-                    shareId={moveManyItems.param.shareId}
+                    {...moveManyItems.param}
                     onConfirm={moveManyItems.confirm}
                     onCancel={moveManyItems.cancel}
                 />
