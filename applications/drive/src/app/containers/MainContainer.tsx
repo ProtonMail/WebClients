@@ -27,6 +27,7 @@ import {
     useDefaultShare,
     useDriveEventManager,
     useSearchControl,
+    useUserSettings,
 } from '../store';
 // TODO: This should be removed after rollout phase
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
@@ -82,6 +83,7 @@ const InitContainer = () => {
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
+    const { photosEnabled } = useUserSettings();
     useActivePing();
     useReactRouterNavigationLog();
     useEffect(() => {
@@ -172,7 +174,7 @@ const InitContainer = () => {
                     <Route path="/no-access" component={NoAccessContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
                     {!isDirectSharingDisabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
-                    <Route path="/photos" component={PhotosContainer} />
+                    {photosEnabled && <Route path="/photos" component={PhotosContainer} />}
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
                     <Route path="/:shareId?/:type/:linkId?" component={FolderConntainerWrapper} />
