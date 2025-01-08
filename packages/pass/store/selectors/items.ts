@@ -69,7 +69,7 @@ export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNot
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
 export const selectTrashedItems = createSelector(selectAllItems, (items) => items.filter(isTrashed));
-export const selectPinnedItems = createSelector(selectAllItems, (items) => items.filter(isPinned));
+export const selectPinnedItems = createSelector(selectAllItems, (items) => items.filter(and(isActive, isPinned)));
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
 
 export const selectItemsByType = <T extends ItemType>(type: T) =>
