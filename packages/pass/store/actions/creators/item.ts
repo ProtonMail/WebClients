@@ -327,35 +327,27 @@ export const itemsDeleteSync = createAction('items::delete::sync', (shareId: str
     withCache({ payload: { shareId, itemIds } })
 );
 
-export const itemRestoreIntent = createOptimisticAction(
-    'item::restore::intent',
-    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemRestoreFailure = createOptimisticAction(
-    'item::restore::failure',
-    (payload: SelectedItem, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Restoring item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemRestoreSuccess = createOptimisticAction(
-    'item::restore::success',
-    (payload: SelectedItem) =>
-        pipe(
-            withCache,
+export const itemRestore = requestActionsFactory<SelectedItem, SelectedItem>('item::restore')({
+    key: getItemKey,
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                text: c('Info').t`Item restored`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Restoring item failed`,
+                error,
+            })({ payload, error }),
+    },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item restored`,
+                })
+            )({ payload }),
+    },
+});
 
 export const itemBulkRestoreIntent = createAction(
     'item::bulk:restore::intent',
