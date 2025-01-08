@@ -32,9 +32,7 @@ import {
     itemRestoreFailure,
     itemRestoreIntent,
     itemRestoreSuccess,
-    itemTrashFailure,
-    itemTrashIntent,
-    itemTrashSuccess,
+    itemTrash,
     itemUnpinSuccess,
     itemsDeleteSync,
     itemsEditSync,
@@ -137,11 +135,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             revert: itemMoveFailure.optimisticMatch,
         },
         {
-            initiate: itemTrashIntent.optimisticMatch,
-            commit: itemTrashSuccess.optimisticMatch,
-            revert: itemTrashFailure.optimisticMatch,
-        },
-        {
             initiate: itemRestoreIntent.optimisticMatch,
             commit: itemRestoreSuccess.optimisticMatch,
             revert: itemRestoreFailure.optimisticMatch,
@@ -205,11 +198,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(state, { [shareId]: toMap(items, 'itemId') });
         }
 
-        if (itemTrashIntent.match(action)) {
-            const { item, shareId } = action.payload;
-            const { itemId } = item;
-
-            return updateItem({ shareId, itemId, state: ItemState.Trashed })(state);
+        if (itemTrash.success.match(action)) {
+            const { itemId, shareId } = action.payload;
+            return updateItem({ shareId, itemId, state: ItemState.Trashed, modifyTime: getEpoch() })(state);
         }
 
         if (itemRestoreIntent.match(action)) {
