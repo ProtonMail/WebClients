@@ -5,6 +5,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import {
     createAliasSyncEnableRule,
     createB2BRule,
+    createItemSharingRule,
     createMonitorLearnMoreRule,
     createPendingShareAccessRule,
     createSSOChangeLockRule,
@@ -51,6 +52,7 @@ export const spotlight = createSpotlightService({
         createB2BRule(store),
         createMonitorLearnMoreRule(),
         createSSOChangeLockRule(),
+        createItemSharingRule(),
     ],
 });
 
