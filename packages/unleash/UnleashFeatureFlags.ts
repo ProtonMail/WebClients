@@ -9,10 +9,7 @@ enum CommonFeatureFlag {
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
-    BreachesSecurityCenter = 'BreachesSecurityCenter',
     InboxUpsellFlow = 'InboxUpsellFlow',
-    ABTestInboxUpsellStep = 'ABTestInboxUpsellStep',
-    ABTestSubscriptionReminder = 'ABTestSubscriptionReminder',
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
@@ -30,7 +27,6 @@ enum CommonFeatureFlag {
     ScribeAdminSetting = 'ScribeAdminSetting',
     WalletRbf = 'WalletRbf',
     WalletAddressList = 'WalletAddressList',
-    WalletMinFee = 'WalletMinFee',
     WalletAztecoWeb = 'WalletAztecoWeb',
     WalletFullSync = 'WalletFullSync',
 }
@@ -74,7 +70,6 @@ enum CalendarFeatureFlag {
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     VideoConferenceWidget = 'VideoConferenceWidget',
     CalendarRedux = 'CalendarRedux',
-    // CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb', removed with proton-calendar@5.0.21.0, can be removed from Unleash when FU'd
     ZoomIntegration = 'ZoomIntegration',
     CalendarMetrics = 'CalendarMetrics',
 }
@@ -137,7 +132,6 @@ enum MailFeatureFlag {
     ComposerAssistantFormatting = 'ComposerAssistantFormatting',
     WalletRightSidebarLink = 'WalletRightSidebarLink',
     ProtonTips = 'ProtonTips',
-    MailOnboarding = 'MailOnboarding',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     RemoveImageMetadata = 'RemoveImageMetadata',
