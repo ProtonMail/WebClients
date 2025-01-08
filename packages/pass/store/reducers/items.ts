@@ -25,9 +25,7 @@ import {
     itemDeleteSuccess,
     itemEdit,
     itemEditDismiss,
-    itemMoveFailure,
-    itemMoveIntent,
-    itemMoveSuccess,
+    itemMove,
     itemPinSuccess,
     itemRestoreFailure,
     itemRestoreIntent,
@@ -128,11 +126,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             fail: (action) => itemEdit.failure.match(action) && getItemEntityID(action.payload),
             commit: (action) => itemEdit.success.match(action) && getItemEntityID(action.payload),
             revert: itemEditDismiss.optimisticMatch,
-        },
-        {
-            initiate: itemMoveIntent.optimisticMatch,
-            commit: itemMoveSuccess.optimisticMatch,
-            revert: itemMoveFailure.optimisticMatch,
         },
         {
             initiate: itemRestoreIntent.optimisticMatch,
@@ -248,36 +241,11 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return { ...state, [shareId]: objectFilter(state[shareId], (itemId) => !itemIds.has(itemId)) };
         }
 
-        /**
-         * BE side and under the hood, moving an item
-         * will delete the item and re-create a new one.
-         * That's why we are relying on an optimisticId
-         * on an `itemMoveIntent`. This is similar to
-         * the `itemCreationIntent` flow with the extra
-         * deletion of the item to be moved.
-         */
-        if (itemMoveIntent.match(action)) {
-            const { item, optimisticId, shareId } = action.payload;
+        if (itemMove.success.match(action)) {
+            const { before, after } = action.payload;
             return fullMerge(
-                { ...state, [item.shareId]: objectDelete(state[item.shareId], item.itemId) },
-                {
-                    [shareId]: {
-                        [optimisticId]: {
-                            ...item,
-                            shareId,
-                            itemId: optimisticId,
-                            modifyTime: getEpoch(),
-                        },
-                    },
-                }
-            );
-        }
-
-        if (itemMoveSuccess.match(action)) {
-            const { item, shareId, optimisticId } = action.payload;
-            return fullMerge(
-                { ...state, [shareId]: objectDelete(state[item.shareId], optimisticId) },
-                { [shareId]: { [item.itemId]: item } }
+                { ...state, [before.shareId]: objectDelete(state[before.shareId], before.itemId) },
+                { [after.shareId]: { [after.itemId]: after } }
             );
         }
 
@@ -373,10 +341,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 export type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
 
 const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) => {
-    if (or(itemCreate.success.match, itemMoveSuccess.match, itemMoveFailure.match)(action)) {
+    if (itemCreate.success.match(action)) {
         const { optimisticId, item } = action.payload;
         const { itemId, shareId } = item;
-
         return fullMerge(state, { [optimisticId]: { shareId, itemId } });
     }
 
