@@ -34,48 +34,30 @@ import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscript
 import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { blackFriday2024DuoConfig, blackFriday2024DuoEligibility } from '../../offers/operations/blackFriday2024Duo';
-import { blackFriday2024PlusConfig, blackFriday2024PlusEligibility } from '../../offers/operations/blackFriday2024Plus';
-import {
-    blackFriday2024UnlimitedConfig,
-    blackFriday2024UnlimitedEligibility,
-} from '../../offers/operations/blackFriday2024Unlimited';
-import {
-    blackFriday2024DriveFreeConfig,
-    blackFriday2024DriveFreeEligibility,
-} from '../../offers/operations/blackFridayDrive2024Free';
-import {
-    blackFriday2024DriveFreeYearlyConfig,
-    blackFriday2024DriveFreeYearlyEligibility,
-} from '../../offers/operations/blackFridayDrive2024FreeYearly';
-import {
-    blackFriday2024InboxFreeConfig,
-    blackFriday2024InboxFreeEligibility,
-} from '../../offers/operations/blackFridayInbox2024Free';
-import {
-    blackFriday2024InboxFreeYearlyConfig,
-    blackFriday2024InboxFreeYearlyEligibility,
-} from '../../offers/operations/blackFridayInbox2024FreeYearly';
-import {
-    blackFriday2024PassFreeConfig,
-    blackFriday2024PassFreeEligibility,
-} from '../../offers/operations/blackFridayPass2024Free';
-import {
-    blackFriday2024PassPlusConfig,
-    blackFriday2024PassPlusEligibility,
-} from '../../offers/operations/blackFridayPass2024Plus';
-import {
-    blackFriday2024VPNFreeConfig,
-    blackFriday2024VPNFreeEligibility,
-} from '../../offers/operations/blackFridayVPN2024Free';
-import {
-    blackFriday2024VPNFreeYearlyConfig,
-    blackFriday2024VPNFreeYearlyEligibility,
-} from '../../offers/operations/blackFridayVPN2024FreeYearly';
-import {
-    blackFriday2024VPNMonthlyConfig,
-    blackFriday2024VPNMonthlyEligibility,
-} from '../../offers/operations/blackFridayVPN2024Monthly';
+import { blackFriday2024DuoConfig } from '../../offers/operations/blackFriday2024Duo/configuration';
+import { getIsEligible as blackFriday2024DuoEligibility } from '../../offers/operations/blackFriday2024Duo/eligibility';
+import { blackFriday2024PlusConfig } from '../../offers/operations/blackFriday2024Plus/configuration';
+import { getIsEligible as blackFriday2024PlusEligibility } from '../../offers/operations/blackFriday2024Plus/eligibility';
+import { blackFriday2024UnlimitedConfig } from '../../offers/operations/blackFriday2024Unlimited/configuration';
+import { getIsEligible as blackFriday2024UnlimitedEligibility } from '../../offers/operations/blackFriday2024Unlimited/eligibility';
+import { blackFriday2024DriveFreeConfig } from '../../offers/operations/blackFridayDrive2024Free/configuration';
+import { getIsEligible as blackFriday2024DriveFreeEligibility } from '../../offers/operations/blackFridayDrive2024Free/eligibility';
+import { blackFriday2024DriveFreeYearlyConfig } from '../../offers/operations/blackFridayDrive2024FreeYearly/configuration';
+import { getIsEligible as blackFriday2024DriveFreeYearlyEligibility } from '../../offers/operations/blackFridayDrive2024FreeYearly/eligibility';
+import { blackFriday2024InboxFreeConfig } from '../../offers/operations/blackFridayInbox2024Free/configuration';
+import { getIsEligible as blackFriday2024InboxFreeEligibility } from '../../offers/operations/blackFridayInbox2024Free/eligibility';
+import { blackFriday2024InboxFreeYearlyConfig } from '../../offers/operations/blackFridayInbox2024FreeYearly/configuration';
+import { getIsEligible as blackFriday2024InboxFreeYearlyEligibility } from '../../offers/operations/blackFridayInbox2024FreeYearly/eligibility';
+import { blackFriday2024PassFreeConfig } from '../../offers/operations/blackFridayPass2024Free/configuration';
+import { getIsEligible as blackFriday2024PassFreeEligibility } from '../../offers/operations/blackFridayPass2024Free/eligibility';
+import { blackFriday2024PassPlusConfig } from '../../offers/operations/blackFridayPass2024Plus/configuration';
+import { getIsEligible as blackFriday2024PassPlusEligibility } from '../../offers/operations/blackFridayPass2024Plus/eligibility';
+import { blackFriday2024VPNFreeConfig } from '../../offers/operations/blackFridayVPN2024Free/configuration';
+import { getIsEligible as blackFriday2024VPNFreeEligibility } from '../../offers/operations/blackFridayVPN2024Free/eligibility';
+import { blackFriday2024VPNFreeYearlyConfig } from '../../offers/operations/blackFridayVPN2024FreeYearly/configuration';
+import { getIsEligible as blackFriday2024VPNFreeYearlyEligibility } from '../../offers/operations/blackFridayVPN2024FreeYearly/eligibility';
+import { blackFriday2024VPNMonthlyConfig } from '../../offers/operations/blackFridayVPN2024Monthly/configuration';
+import { getIsEligible as blackFriday2024VPNMonthlyEligibility } from '../../offers/operations/blackFridayVPN2024Monthly/eligibility';
 import type { Eligibility, PlanCombination } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
 

@@ -4,17 +4,17 @@ import { FeatureCode, useFeature } from '@proton/features';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';
-import config from './configuration';
-import getIsEligible from './eligibility';
+import { subscriptionReminderConfig } from './configuration';
+import { getIsEligible } from './eligibility';
 
 /**
  * This offer is different than others, it runs all the time and is used to nudge free users
  * Once the account is old enough, we display a spotlight over the upgrade button on the navbar
  **/
-const useOffer = (): Operation => {
+export const useSubscriptionReminder = (): Operation => {
     const protonConfig = useConfig();
     const [user, loadingUser] = useUser();
-    const { isActive, loading: flagsLoading, isVisited } = useOfferFlags(config);
+    const { isActive, loading: flagsLoading, isVisited } = useOfferFlags(subscriptionReminderConfig);
     const { feature: lastReminderDate, loading: lastReminderDateLoading } = useFeature(
         FeatureCode.SubscriptionLastReminderDate
     );
@@ -28,7 +28,5 @@ const useOffer = (): Operation => {
         isVisited,
     });
 
-    return { isValid: isEligible && isActive, config, isEligible, isLoading: !!isLoading };
+    return { isValid: isEligible && isActive, config: subscriptionReminderConfig, isEligible, isLoading: !!isLoading };
 };
-
-export default useOffer;

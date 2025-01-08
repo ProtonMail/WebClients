@@ -14,7 +14,7 @@ interface Props {
 const ACCOUNT_AGE_DAY_THESHOLD = 14;
 const REMINDER_INTERVAL_DAYS = 90;
 
-const isEligible = ({ user, protonConfig, lastReminderTimestamp, isVisited }: Props) => {
+export const getIsEligible = ({ user, protonConfig, lastReminderTimestamp, isVisited }: Props) => {
     const { isFree, isDelinquent, CreateTime } = user;
     const isNotDelinquent = !isDelinquent;
     const hasValidApp = protonConfig.APP_NAME === APPS.PROTONMAIL;
@@ -40,5 +40,3 @@ const isEligible = ({ user, protonConfig, lastReminderTimestamp, isVisited }: Pr
         !isDomBusy
     );
 };
-
-export default isEligible;

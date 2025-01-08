@@ -3,7 +3,7 @@ import { subDays } from 'date-fns';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
-import isEligible from './eligibility';
+import { getIsEligible } from './eligibility';
 
 const now = new Date();
 const fourteenDaysAgo = subDays(now, 14).getTime() / 1000;
@@ -22,9 +22,9 @@ describe('Subscription reminder eligibility', () => {
             CreateTime: now.getTime() / 1000,
         } as unknown as UserModel;
 
-        expect(isEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: false })).toBe(
-            false
-        );
+        expect(
+            getIsEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: false })
+        ).toBe(false);
     });
 
     it('should return true if user is older than 14 days and hasnt seen the offer', () => {
@@ -34,9 +34,9 @@ describe('Subscription reminder eligibility', () => {
             CreateTime: fourteenDaysAgo,
         } as unknown as UserModel;
 
-        expect(isEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: false })).toBe(
-            true
-        );
+        expect(
+            getIsEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: false })
+        ).toBe(true);
     });
 
     it('should return false if user is older than 14 days and has seen the offer', () => {
@@ -46,9 +46,9 @@ describe('Subscription reminder eligibility', () => {
             CreateTime: fourteenDaysAgo,
         } as unknown as UserModel;
 
-        expect(isEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: true })).toBe(
-            false
-        );
+        expect(
+            getIsEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: true })
+        ).toBe(false);
     });
 
     it('should return true if user is older than 180 days and has seen the offer', () => {
@@ -58,9 +58,9 @@ describe('Subscription reminder eligibility', () => {
             CreateTime: ninetyDaysAgo,
         } as unknown as UserModel;
 
-        expect(isEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: true })).toBe(
-            true
-        );
+        expect(
+            getIsEligible({ user, protonConfig: mailConfig, lastReminderTimestamp: undefined, isVisited: true })
+        ).toBe(true);
     });
 
     it('should return true if user is older than 360 days and has seen the offer 180 days ago', () => {
@@ -71,7 +71,7 @@ describe('Subscription reminder eligibility', () => {
         } as unknown as UserModel;
 
         expect(
-            isEligible({
+            getIsEligible({
                 user,
                 protonConfig: mailConfig,
                 lastReminderTimestamp: ninetyDaysAgo,
@@ -88,7 +88,7 @@ describe('Subscription reminder eligibility', () => {
         } as unknown as UserModel;
 
         expect(
-            isEligible({
+            getIsEligible({
                 user,
                 protonConfig: mailConfig,
                 lastReminderTimestamp: fourteenDaysAgo,

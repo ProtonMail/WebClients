@@ -8,7 +8,7 @@ import { getMailPlus2024InboxFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
-const config: OfferConfig = {
+export const blackFriday2024InboxFreeYearlyConfig: OfferConfig = {
     ID: 'black-friday-2024-inbox-free-yearly',
     autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFriday2024InboxFreeYearly,
@@ -38,5 +38,3 @@ const config: OfferConfig = {
     ],
     layout: Layout,
 };
-
-export default config;
