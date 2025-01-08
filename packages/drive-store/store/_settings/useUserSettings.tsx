@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
-import { useApi } from '@proton/components';
+import { useApi, useDrivePlan } from '@proton/components';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -20,7 +20,7 @@ const UserSettingsContext = createContext<{
     sort: UserSortParams;
     layout: LayoutSetting;
     revisionRetentionDays: RevisionRetentionDaysSetting;
-    b2bPhotosEnabled: boolean;
+    photosEnabled: boolean;
     changeSort: (sortParams: UserSortParams) => Promise<void>;
     changeLayout: (Layout: LayoutSetting) => Promise<void>;
     changeB2BPhotosEnabled: (B2BPhotosEnabled: boolean) => Promise<void>;
@@ -35,6 +35,7 @@ export function UserSettingsProvider({
     initialUser: UserModel;
     initialDriveUserSettings: UserSettingsResponse;
 }) {
+    const { isB2B } = useDrivePlan();
     const api = useApi();
     const driveB2BPhotosUpload = useFlag('DriveB2BPhotosUpload');
 
@@ -96,7 +97,7 @@ export function UserSettingsProvider({
         sort,
         layout: userSettings.Layout,
         revisionRetentionDays: userSettings.RevisionRetentionDays,
-        b2bPhotosEnabled: !driveB2BPhotosUpload || (driveB2BPhotosUpload && userSettings.B2BPhotosEnabled),
+        photosEnabled: !isB2B || (userSettings.B2BPhotosEnabled && driveB2BPhotosUpload),
         changeSort,
         changeLayout,
         changeB2BPhotosEnabled,
