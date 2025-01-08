@@ -46,13 +46,19 @@ export class ProtonNode extends ElementNode {
   }
 
   static importJSON(serializedNode: SerializedProtonNode): ProtonNode {
-    return $createProtonNode(serializedNode.properties).updateFromJSON(serializedNode)
+    const node = $createProtonNode(serializedNode.properties)
+    node.setFormat(serializedNode.format)
+    node.setIndent(serializedNode.indent)
+    node.setDirection(serializedNode.direction)
+    return node
   }
 
   exportJSON(): SerializedProtonNode {
     return {
       ...super.exportJSON(),
+      type: 'proton-node',
       properties: this.__properties,
+      version: 1,
     }
   }
 
