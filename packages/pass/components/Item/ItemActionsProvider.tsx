@@ -21,7 +21,7 @@ import {
     itemBulkTrashIntent,
     itemDeleteIntent,
     itemMove,
-    itemRestoreIntent,
+    itemRestore,
     itemTrash,
 } from '@proton/pass/store/actions';
 import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
@@ -141,14 +141,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             deleteMany: deleteManyItems.prompt,
 
-            restore: (item) =>
-                dispatch(
-                    itemRestoreIntent({
-                        itemId: item.itemId,
-                        shareId: item.shareId,
-                        item,
-                    })
-                ),
+            restore: ({ shareId, itemId }) => dispatch(itemRestore.intent({ shareId, itemId })),
 
             restoreMany: (selected) => {
                 dispatch(itemBulkRestoreIntent({ selected }));
