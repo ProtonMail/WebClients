@@ -175,7 +175,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         contentFormatVersion: ContentFormatVersion.Item,
                         createTime: now,
                         data: item,
-                        flags: 1 /** default to unmonitored */,
+                        flags: 0,
                         itemId: optimisticId,
                         lastUseTime: null,
                         modifyTime: now,
