@@ -163,8 +163,6 @@ export const filterNews = ({
     userSettings: UserSettings | undefined;
 }) => {
     switch (emailSubscription.flag) {
-        case NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS:
-            return Boolean(user?.isPaid);
         case NEWSLETTER_SUBSCRIPTIONS_BITS.NEW_EMAIL_NOTIF:
             // Daily email notifications are currently in a separate setting. Should they be migrated?
             return false;
