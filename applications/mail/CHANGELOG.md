@@ -1,3 +1,29 @@
+## November 2024
+
+-   Improve subfolder creation user experience
+-   Improve CSV import fields mapping
+-   Fix encrypted search incorrect estimated time remaining to index
+-   Add "Delete permanently" action on emails when in the Trash folder
+-   Performance improvements when attaching files to unsaved drafts
+
+## October 2024
+
+-   Inline images can be resized when writing an email
+-   Autocompletion got better, and now highlights already selected contacts
+-   Added an admin setting to drive Proton Scribe visibility for organisation users
+-   Performance improvements for accounts with large amount of folders or labels
+-   We have improved our email rendering, we fixed
+    -   rendering issues with external stylesheets, HTML content missing a DOCTYPE
+    -   Nested anchor links that could be unclickable
+    -   Tracker protection broke links in rare cases
+
+## September 2024
+
+-   Preserve formatting for Scribe generated content
+-   Disambiguate error messages when sending an email to a disabled address by using a new lock icon UX
+-   Fix warning when replying to a no-reply address
+-   Update encrypted search for more accurate crawling time estimation.
+
 ## August 2024
 
 ### Improvements
