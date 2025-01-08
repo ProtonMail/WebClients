@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useCustomDomains, useGetCustomDomains } from '@proton/account/domains/hooks';
+import { syncDomain } from '@proton/account/domains/actions';
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useDomainsAddresses } from '@proton/account/domainsAddresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -18,11 +19,9 @@ import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
-import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { CacheType } from '@proton/redux-utilities';
-import { getDomain } from '@proton/shared/lib/api/domains';
+import { useDispatch } from '@proton/redux-shared-store';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -54,8 +53,7 @@ const DomainsSectionText = () => {
 
 const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [customDomains, loadingCustomDomains] = useCustomDomains();
-    const getCustomDomains = useGetCustomDomains();
-    const api = useApi();
+    const dispatch = useDispatch();
     const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(customDomains);
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
@@ -82,11 +80,9 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
         // Fetch all domains individually to trigger a DNS refresh CP-8499
         await Promise.all(
             (customDomains || []).map((domain) => {
-                return api(getDomain(domain.ID));
+                return dispatch(syncDomain(domain));
             })
         );
-        // This actually refreshes the list. TODO: Replace this by a redux upsert.
-        await getCustomDomains({ cache: CacheType.None });
     };
 
     const reviewText = c('Action').t`Review`;
