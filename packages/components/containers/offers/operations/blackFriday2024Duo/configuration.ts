@@ -8,7 +8,7 @@ import { getFamilyInboxFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
-const config: OfferConfig = {
+export const blackFriday2024DuoConfig: OfferConfig = {
     ID: 'black-friday-2024-duo',
     autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFriday2024Duo,
@@ -39,5 +39,3 @@ const config: OfferConfig = {
     ],
     layout: Layout,
 };
-
-export default config;
