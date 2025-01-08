@@ -228,7 +228,7 @@ export const restoreItems = async (
     ).flatMap(({ Items }) => Items ?? []);
 
 export const deleteItems = async (
-    items: ItemRevision[],
+    items: SelectedRevision[],
     onBatch?: (data: BatchItemRevisionIDs, progress: number) => void,
     progress: number = 0
 ) =>

@@ -253,35 +253,27 @@ export const itemBulkTrashSuccess = createAction(
     )
 );
 
-export const itemDeleteIntent = createOptimisticAction(
-    'item::delete::intent',
-    (payload: { item: ItemRevision } & SelectedItem) => ({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemDeleteFailure = createOptimisticAction(
-    'item::delete::failure',
-    (payload: SelectedItem, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Deleting item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemDeleteSuccess = createOptimisticAction(
-    'item::delete::success',
-    (payload: SelectedItem) =>
-        pipe(
-            withCache,
+export const itemDelete = requestActionsFactory<SelectedItem, SelectedItem>('item::delete')({
+    key: getItemKey,
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                text: c('Info').t`Item permanently deleted`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Deleting item failed`,
+                error,
+            })({ payload, error }),
+    },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item permanently deleted`,
+                })
+            )({ payload }),
+    },
+});
 
 export const itemBulkDeleteIntent = createAction(
     'item::bulk::delete::intent',

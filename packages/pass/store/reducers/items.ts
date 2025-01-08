@@ -20,9 +20,7 @@ import {
     itemBulkTrashProgress,
     itemCreate,
     itemCreateDismiss,
-    itemDeleteFailure,
-    itemDeleteIntent,
-    itemDeleteSuccess,
+    itemDelete,
     itemEdit,
     itemEditDismiss,
     itemMove,
@@ -125,11 +123,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             commit: (action) => itemEdit.success.match(action) && getItemEntityID(action.payload),
             revert: itemEditDismiss.optimisticMatch,
         },
-        {
-            initiate: itemDeleteIntent.optimisticMatch,
-            commit: itemDeleteSuccess.optimisticMatch,
-            revert: itemDeleteFailure.optimisticMatch,
-        },
     ],
     (state = {}, action: Action) => {
         if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
@@ -220,9 +213,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItems(items)(state);
         }
 
-        if (itemDeleteIntent.match(action)) {
-            const { shareId, item } = action.payload;
-            return { ...state, [shareId]: objectDelete(state[shareId], item.itemId) };
+        if (itemDelete.success.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return { ...state, [shareId]: objectDelete(state[shareId], itemId) };
         }
 
         if (itemsDeleteSync.match(action)) {
