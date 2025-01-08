@@ -1,12 +1,13 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, type ReactElement } from 'react';
+import { type FC, type ReactElement, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownSizeUnit, Icon } from '@proton/components';
+import { Badge, DropdownSizeUnit, Icon } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -21,9 +22,10 @@ import { isMonitored, isPinned, isShared, isTrashed } from '@proton/pass/lib/ite
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
-import { type ItemType, ShareRole } from '@proton/pass/types';
+import { type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
@@ -75,10 +77,19 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
     const sharedReadOnly = shared && readOnly;
     const upsell = useUpselling();
+    const { spotlight } = usePassCore();
 
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
+
+    const [signalItemSharing, setSignalItemSharing] = useState(false);
+    useEffect(() => {
+        (async () => {
+            const showSignal = await spotlight.check(SpotlightMessage.ITEM_SHARING);
+            setSignalItemSharing(showSignal);
+        })().catch(noop);
+    }, []);
 
     const monitorActions = !EXTENSION_BUILD && !trashed && data.type === 'login' && (
         <DropdownMenuButton
@@ -167,6 +178,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online}
                                     badge={shared ? shareCount : undefined}
+                                    signaled={isOwnerOrAdmin && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
                                         width: DropdownSizeUnit.Dynamic,
@@ -182,7 +194,11 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                           type: 'pass-plus',
                                                           upsellRef: UpsellRef.ITEM_SHARING,
                                                       })
-                                                : handleShareItemClick
+                                                : () => {
+                                                      void spotlight.acknowledge(SpotlightMessage.ITEM_SHARING);
+                                                      setSignalItemSharing(false);
+                                                      handleShareItemClick();
+                                                  }
                                         }
                                         label={
                                             <DropdownMenuLabel
@@ -192,7 +208,10 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         }
                                         icon="link"
                                         disabled={optimistic || !isOwnerOrAdmin}
-                                        extra={free && <PassPlusPromotionButton className="ml-2" />}
+                                        extra={
+                                            (free && <PassPlusPromotionButton className="ml-2" />) ||
+                                            (signalItemSharing && <Badge type="info">{c('Label').t`New`}</Badge>)
+                                        }
                                     />
                                     <DropdownMenuButton
                                         onClick={
