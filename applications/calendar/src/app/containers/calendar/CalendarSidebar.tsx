@@ -10,7 +10,6 @@ import {
     AppVersion,
     AppsDropdown,
     CalendarLimitReachedModal,
-    CollapsibleSidebarSpotlight,
     DropdownMenu,
     DropdownMenuButton,
     HolidaysCalendarModal,
@@ -63,7 +62,6 @@ export interface CalendarSidebarProps {
     onToggleExpand: () => void;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
-    isAskUpdateTimezoneModalOpen?: boolean;
 }
 
 const CalendarSidebar = ({
@@ -75,7 +73,6 @@ const CalendarSidebar = ({
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
-    isAskUpdateTimezoneModalOpen,
 }: CalendarSidebarProps) => {
     const api = useApi();
     const [user] = useUser();
@@ -349,36 +346,31 @@ const CalendarSidebar = ({
                             isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
                         )}
                     >
-                        <CollapsibleSidebarSpotlight
-                            app={APPS.PROTONCALENDAR}
-                            isAskUpdateTimezoneModalOpen={isAskUpdateTimezoneModalOpen}
+                        {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
+                        <Tooltip
+                            title={
+                                showSideBar
+                                    ? c('Action').t`Collapse navigation bar`
+                                    : c('Action').t`Display navigation bar`
+                            }
+                            originalPlacement="right"
                         >
-                            {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
-                            <Tooltip
-                                title={
-                                    showSideBar
-                                        ? c('Action').t`Collapse navigation bar`
-                                        : c('Action').t`Display navigation bar`
-                                }
-                                originalPlacement="right"
+                            <button
+                                className={clsx(
+                                    'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
+                                    !showSideBar && 'sidebar-collapse-button--collapsed',
+                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto',
+                                    isScrollPresent && 'sidebar-collapse-button--above-scroll'
+                                )}
+                                onClick={onClickExpandNav}
+                                aria-pressed={showSideBar}
                             >
-                                <button
-                                    className={clsx(
-                                        'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
-                                        !showSideBar && 'sidebar-collapse-button--collapsed',
-                                        collapsed ? 'mx-auto' : 'mr-2 ml-auto',
-                                        isScrollPresent && 'sidebar-collapse-button--above-scroll'
-                                    )}
-                                    onClick={onClickExpandNav}
-                                    aria-pressed={showSideBar}
-                                >
-                                    <Icon
-                                        name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                        alt={c('Action').t`Show navigation bar`}
-                                    />
-                                </button>
-                            </Tooltip>
-                        </CollapsibleSidebarSpotlight>
+                                <Icon
+                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                    alt={c('Action').t`Show navigation bar`}
+                                />
+                            </button>
+                        </Tooltip>
                     </span>
                 )}
             </SidebarNav>
