@@ -213,6 +213,7 @@ const SubUserEditModal = ({
                 memberDiff,
                 memberKeyPacketPayload,
                 api: silentApi,
+                verifyOutboundPublicKeys,
             })
         );
         if (result.member) {
