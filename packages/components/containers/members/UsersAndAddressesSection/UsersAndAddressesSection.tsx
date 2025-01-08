@@ -3,7 +3,13 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { attachMemberSSO, deleteMember, getDomainAddressError, useMemberAddresses } from '@proton/account';
+import {
+    attachMemberSSO,
+    deleteMember,
+    detachMemberSSO,
+    getDomainAddressError,
+    useMemberAddresses,
+} from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useMembers } from '@proton/account/members/hooks';
@@ -28,6 +34,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
+import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import {
     getInvitationAcceptLimit,
     getInvitationLimit,
@@ -35,9 +42,11 @@ import {
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useDispatch } from '@proton/redux-shared-store';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -108,10 +117,13 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
     const [keywords, setKeywords] = useState('');
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
-    const api = useApi();
+    const normalApi = useApi();
+    const api = getSilentApi(normalApi);
+    const errorHandler = useErrorHandler();
     const dispatch = useDispatch();
     const accessToAssistant = useAssistantFeatureEnabled();
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
     const hasSetupActiveOrganizationWithKeys =
@@ -216,10 +228,17 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         });
     })();
 
-    const handleDeleteUserConfirm = async (member: Member) => {
+    const wrapError = <T extends any[]>(cb: (...args: T) => Promise<void>): typeof cb => {
+        return (...args) =>
+            cb(...args).catch((error: any) => {
+                errorHandler(error);
+            });
+    };
+
+    const handleDeleteUserConfirm = wrapError(async (member: Member) => {
         await dispatch(deleteMember({ api, member }));
         createNotification({ text: c('Success message').t`User deleted` });
-    };
+    });
 
     const handleSetupUser = (member: EnhancedMember) => {
         setTmpMemberID(member.ID);
@@ -227,10 +246,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setUserSetupModal(true);
     };
 
-    const handleResendMagicLinkInvite = async (member: EnhancedMember) => {
+    const handleResendMagicLinkInvite = wrapError(async (member: EnhancedMember) => {
         await api(resendUnprivatizationLink(member.ID));
         createNotification({ text: c('Success message').t`Invitation resent` });
-    };
+    });
 
     const handleDeleteUser = (member: EnhancedMember) => {
         setTmpMemberID(member.ID);
@@ -243,28 +262,28 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         }
     };
 
-    const handleAttachSSO = async (member: EnhancedMember) => {
-        await dispatch(attachMemberSSO({ api, member, type: 'attach' }));
+    const handleAttachSSO = wrapError(async (member: EnhancedMember) => {
+        await dispatch(attachMemberSSO({ api, member, verifyOutboundPublicKeys }));
         const n = 1;
         createNotification({
             text: c('sso').ngettext(msgid`${n} user converted to SSO`, `${n} users converted to SSO`, n),
         });
         setTmpMemberID(member.ID);
         setAttachSSOPrompt(true);
-    };
+    });
 
-    const handleDetachSSO = async (member: EnhancedMember) => {
-        await dispatch(attachMemberSSO({ api, member, type: 'detach' }));
+    const handleDetachSSO = wrapError(async (member: EnhancedMember) => {
+        await dispatch(detachMemberSSO({ api, member }));
         const n = 1;
         createNotification({
             text: c('sso').ngettext(msgid`${n} user detached from SSO`, `${n} users detached from SSO`, n),
         });
-    };
+    });
 
-    const handleRevokeUserSessions = async (member: EnhancedMember) => {
+    const handleRevokeUserSessions = wrapError(async (member: EnhancedMember) => {
         await api(revokeSessions(member.ID));
         createNotification({ text: c('Success message').t`Sessions revoked` });
-    };
+    });
 
     const handleInviteUser = () => {
         setUserInviteOrEditModalOpen(true);

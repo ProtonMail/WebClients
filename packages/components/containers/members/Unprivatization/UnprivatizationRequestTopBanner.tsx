@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { memberThunk } from '@proton/account/member';
 import { getPendingUnprivatizationRequest } from '@proton/account/member/actions';
 import { InlineLinkButton } from '@proton/atoms';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
@@ -27,9 +28,10 @@ const UnprivatizationRequestTopBanner = () => {
     useEffect(() => {
         const initialSearchParams = new URLSearchParams(window.location.search);
         const run = async () => {
-            const result = await dispatch(getPendingUnprivatizationRequest({ verifyOutboundPublicKeys }));
+            const member = await dispatch(memberThunk());
+            const result = await dispatch(getPendingUnprivatizationRequest({ member, verifyOutboundPublicKeys }));
             if (result) {
-                const { member, organization, parsedUnprivatizationData } = result;
+                const { organization, parsedUnprivatizationData } = result;
                 setData({ member, orgName: organization.Name || '', parsedUnprivatizationData });
 
                 if (initialSearchParams.get('action') === 'enable-admin-access') {
