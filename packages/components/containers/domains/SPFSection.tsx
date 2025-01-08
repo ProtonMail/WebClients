@@ -14,14 +14,16 @@ import { getBlogURL } from '@proton/shared/lib/helpers/url';
 const SPFSection = () => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`SPF value copied to clipboard` });
-    const spf = <strong>include:_spf.protonmail.ch</strong>;
-    const spfValue = <strong>v=spf1</strong>;
+
+    const spf = <strong key="spf">include:_spf.protonmail.ch</strong>;
+    const spfValue = <strong key="spf-value">v=spf1</strong>;
     const spfExample = (
-        <code>
+        <code key="example">
             v=spf1 <strong>include:_spf.protonmail.ch</strong> include:spf.example.com ~all
         </code>
     );
     const valueToCopy = 'v=spf1 include:_spf.protonmail.ch ~all';
+
     return (
         <>
             <Alert className="mb-4">
