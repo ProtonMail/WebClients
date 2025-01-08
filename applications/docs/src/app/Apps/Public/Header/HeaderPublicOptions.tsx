@@ -28,6 +28,7 @@ import {
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { useSignupFlowModal } from '../SignupFlowModal/SignupFlowModal'
 import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
+import { DocumentActiveUsers } from '../../../Components/DocumentActiveUsers'
 
 export const HeaderPublicOptions = ({
   editorController,
@@ -116,6 +117,8 @@ export const HeaderPublicOptions = ({
 
   return (
     <div className="flex flex-nowrap items-center gap-2">
+      <DocumentActiveUsers className="mr-2 hidden md:flex" />
+
       {!user && (
         <ButtonLike
           className="flex head-max-849:![display:none]"
