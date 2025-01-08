@@ -6,7 +6,6 @@ import { useUser } from '@proton/account/user/hooks';
 import {
     AppVersion,
     AppsDropdown,
-    CollapsibleSidebarSpotlight,
     Icon,
     Sidebar,
     SidebarDrawerItems,
@@ -126,33 +125,31 @@ const MailSidebar = ({ labelID }: Props) => {
                             isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
                         )}
                     >
-                        <CollapsibleSidebarSpotlight app={APPS.PROTONMAIL}>
-                            {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
-                            <Tooltip
-                                title={
-                                    showSideBar
-                                        ? c('Action').t`Collapse navigation bar`
-                                        : c('Action').t`Display navigation bar`
-                                }
-                                originalPlacement="right"
+                        {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
+                        <Tooltip
+                            title={
+                                showSideBar
+                                    ? c('Action').t`Collapse navigation bar`
+                                    : c('Action').t`Display navigation bar`
+                            }
+                            originalPlacement="right"
+                        >
+                            <button
+                                className={clsx(
+                                    'hidden md:flex sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
+                                    !showSideBar && 'sidebar-collapse-button--collapsed',
+                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto',
+                                    isScrollPresent && 'sidebar-collapse-button--above-scroll'
+                                )}
+                                onClick={() => onClickExpandNav()}
+                                aria-pressed={showSideBar}
                             >
-                                <button
-                                    className={clsx(
-                                        'hidden md:flex sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
-                                        !showSideBar && 'sidebar-collapse-button--collapsed',
-                                        collapsed ? 'mx-auto' : 'mr-2 ml-auto',
-                                        isScrollPresent && 'sidebar-collapse-button--above-scroll'
-                                    )}
-                                    onClick={() => onClickExpandNav()}
-                                    aria-pressed={showSideBar}
-                                >
-                                    <Icon
-                                        name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                        alt={c('Action').t`Show navigation bar`}
-                                    />
-                                </button>
-                            </Tooltip>
-                        </CollapsibleSidebarSpotlight>
+                                <Icon
+                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                    alt={c('Action').t`Show navigation bar`}
+                                />
+                            </button>
+                        </Tooltip>
                     </span>
                 )}
             </SidebarNav>
