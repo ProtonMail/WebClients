@@ -156,7 +156,7 @@ const PassPolicies = () => {
                                         .t`You can enforce the password rules that organization members will use when they generate a password in ${PASS_APP_NAME}.`}
                                 </div>
                                 <PasswordGeneratorPolicyForm
-                                    config={organizationSettings.Settings.PasswordPolicy}
+                                    config={organizationSettings.Settings?.PasswordPolicy ?? null}
                                     onSubmit={handleSubmitPasswordGenerator}
                                     loading={loading}
                                 />
