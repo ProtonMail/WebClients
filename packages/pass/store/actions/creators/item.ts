@@ -31,6 +31,8 @@ import type {
     ItemCreateIntent,
     ItemCreateSuccess,
     ItemEditIntent,
+    ItemMoveDTO,
+    ItemMoveIntent,
     ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
@@ -125,35 +127,27 @@ export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevis
     withCache({ payload: { items } })
 );
 
-export const itemMoveIntent = createOptimisticAction(
-    'item::move::intent',
-    (payload: { item: ItemRevision; shareId: string; optimisticId: string }) => withSynchronousAction({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemMoveFailure = createOptimisticAction(
-    'item::move::failure',
-    (payload: { optimisticId: string; shareId: string; item: ItemRevision }, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Moving item failed`,
-            error,
-        })({ payload, error }),
-    ({ payload }) => getItemEntityID(payload)
-);
-
-export const itemMoveSuccess = createOptimisticAction(
-    'item::move::success',
-    (payload: { item: ItemRevision; optimisticId: string; shareId: string }) =>
-        pipe(
-            withCache,
+export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item::move')({
+    key: getItemKey<UniqueItem>,
+    failure: {
+        prepare: (error, payload) =>
             withNotification({
-                type: 'success',
-                text: c('Info').t`Item successfully moved`,
-            })
-        )({ payload }),
-    ({ payload }) => getItemEntityID(payload)
-);
+                type: 'error',
+                text: c('Error').t`Moving item failed`,
+                error,
+            })({ payload, error }),
+    },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item successfully moved`,
+                })
+            )({ payload }),
+    },
+});
 
 export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',

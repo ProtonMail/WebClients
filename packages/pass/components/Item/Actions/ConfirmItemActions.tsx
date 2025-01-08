@@ -11,7 +11,7 @@ import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectItemSecureLinks } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemMoveIntent, ItemRevision } from '@proton/pass/types';
 
 export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevision }> = (props) =>
     isAliasItem(props.item.data) ? (
@@ -25,13 +25,13 @@ export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevis
         />
     );
 
-export const ConfirmMoveItem: FC<
-    ConfirmationPromptHandles & {
-        item: ItemRevision;
-        shareId: string;
-    }
-> = ({ item, shareId, onCancel, onConfirm }) => {
-    const secureLinks = useMemoSelector(selectItemSecureLinks, [item.shareId, item.itemId]);
+export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = ({
+    itemId,
+    shareId,
+    onCancel,
+    onConfirm,
+}) => {
+    const secureLinks = useMemoSelector(selectItemSecureLinks, [shareId, itemId]);
     const hasLinks = Boolean(secureLinks.length);
 
     return (

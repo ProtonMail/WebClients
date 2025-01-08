@@ -1,8 +1,8 @@
-import type { MaybeNull, UniqueItem } from '@proton/pass/types';
+import type { MaybeNull, ShareId, UniqueItem } from '@proton/pass/types';
 
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
-import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem } from './items';
+import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem, SelectedItem } from './items';
 
 type AliasMailbox = { id: number; email: string };
 
@@ -54,6 +54,8 @@ export type ItemEditIntent<T extends ItemType = ItemType> = Item<T, ItemEditInte
     shareId: string;
     lastRevision: number;
 };
+
+export type ItemMoveIntent = SelectedItem & { destinationShareId: ShareId };
 
 export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImportIntentDTO> & {
     trashed: boolean;
