@@ -143,7 +143,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown, isUsingTabs =
         <div className="relative ui-standard color-norm shrink-0" ref={wrapperRef}>
             <Header className="header--drawer flex-column p-3" style={{ blockSize: 'auto' }}>
                 <div className="drawer-app-header-actions flex justify-space-between items-center w-full">
-                    {isUsingTabs ? title : <h2 className="text-bold text-lg flex-1">{title}</h2>}
+                    {isUsingTabs ? title : <h2 className="text-bold text-lg">{title}</h2>}
 
                     <div className="flex items-center flex-nowrap gap-2">
                         <Tooltip title={c('Action').t`Close`}>
