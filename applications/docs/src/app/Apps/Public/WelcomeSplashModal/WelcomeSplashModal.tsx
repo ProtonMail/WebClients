@@ -59,9 +59,9 @@ export default function WelcomeSplashModal({
             alt="Encrypted"
             className="no-select pointer-events-none left-0 top-0 w-full select-none"
           />
-          <div className="color-invert pointer-events-none absolute left-14 top-1/2 -translate-y-1/2 select-none text-2xl tracking-wide">
+          <div className="color-invert text-xs pointer-events-none absolute left-14 top-1/2 -translate-y-1/2 select-none tracking-wide">
             <h1 className="font-extralight">{c('Info').t`${DOCS_SHORT_APP_NAME} in`}</h1>
-            <h1 className="font-medium">{DRIVE_APP_NAME}</h1>
+            <h1 className="font-medium mt-4">{DRIVE_APP_NAME}</h1>
           </div>
         </div>
         <div className="p-6">
