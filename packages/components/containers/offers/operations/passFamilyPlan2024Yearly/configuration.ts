@@ -5,7 +5,7 @@ import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import Layout from '../../components/passFamilyPlan/Layout';
 import type { OfferConfig } from '../../interface';
 
-const config = {
+export const passFamilyPlan2024YearlyConfig = {
     ID: 'pass-family-plan-2024-yearly',
     featureCode: FeatureCode.OfferPassFamilyPlan2024Yearly,
     autoPopUp: 'each-time',
@@ -32,5 +32,3 @@ const config = {
     hideDiscountBubble: true,
     darkBackground: true,
 } satisfies OfferConfig;
-
-export default config;

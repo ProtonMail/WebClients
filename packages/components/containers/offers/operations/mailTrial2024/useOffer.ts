@@ -4,19 +4,17 @@ import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscription
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';
-import config from './configuration';
-import getIsEligible from './eligibility';
+import { mailTrial2024Config } from './configuration';
+import { getIsEligible } from './eligibility';
 
-const useOffer = (): Operation => {
+export const useMailTrial2024 = (): Operation => {
     const [user, loadingUser] = useUser();
     const protonConfig = useConfig();
     const [lastSubscriptionEnd, lastSubscriptionEndLoading] = useLastSubscriptionEnd();
-    const { isActive, loading: flagsLoading } = useOfferFlags(config);
+    const { isActive, loading: flagsLoading } = useOfferFlags(mailTrial2024Config);
     const isLoading = flagsLoading || loadingUser || lastSubscriptionEndLoading;
     const isEligible = getIsEligible({ user, protonConfig, lastSubscriptionEnd });
     const isValid = isEligible && isActive;
 
-    return { isValid, config, isLoading, isEligible };
+    return { isValid, config: mailTrial2024Config, isLoading, isEligible };
 };
-
-export default useOffer;

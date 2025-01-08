@@ -11,7 +11,7 @@ import sideImage from './mail-trial-400x1200.jpg';
 import sideImage2x from './mail-trial-800x2400.jpg';
 import { getCTAContent } from './text';
 
-const config = {
+export const mailTrial2024Config = {
     ID: 'mail-trial-2024',
     featureCode: FeatureCode.OfferMailTrial2024,
     autoPopUp: 'one-time',
@@ -46,5 +46,3 @@ const config = {
         sideImage2x,
     },
 } satisfies OfferConfig;
-
-export default config;

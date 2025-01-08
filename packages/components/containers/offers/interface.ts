@@ -11,8 +11,6 @@ import type { Optional } from '@proton/shared/lib/interfaces';
 export type OfferId =
     // This offer runs all the time and is used to remind users to upgrade once their account is old enough
     | 'subscription-reminder'
-    | 'duo-plan-2024-yearly'
-    | 'duo-plan-2024-two-years'
     | 'go-unlimited-2022'
     | 'mail-trial-2023'
     | 'mail-trial-2024'

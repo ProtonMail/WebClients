@@ -17,7 +17,13 @@ interface Props {
     preferredCurrency: Currency;
 }
 
-const isEligible = ({ subscription, protonConfig, user, lastSubscriptionEnd = 0, preferredCurrency }: Props) => {
+export const getIsEligible = ({
+    subscription,
+    protonConfig,
+    user,
+    lastSubscriptionEnd = 0,
+    preferredCurrency,
+}: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONMAIL) ||
@@ -40,5 +46,3 @@ const isEligible = ({ subscription, protonConfig, user, lastSubscriptionEnd = 0,
         isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)
     );
 };
-
-export default isEligible;

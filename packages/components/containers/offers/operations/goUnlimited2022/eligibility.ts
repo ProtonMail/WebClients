@@ -11,7 +11,7 @@ interface Props {
     protonConfig: ProtonConfig;
 }
 
-const isEligible = ({ user, subscription, protonConfig }: Props) => {
+export const getIsEligible = ({ user, subscription, protonConfig }: Props) => {
     const isValidApp = protonConfig?.APP_NAME === APPS.PROTONMAIL || protonConfig?.APP_NAME === APPS.PROTONACCOUNT;
     const createDate = subscription?.CreateTime ? fromUnixTime(subscription.CreateTime) : new Date();
     const plan = getPlan(subscription);
@@ -25,5 +25,3 @@ const isEligible = ({ user, subscription, protonConfig }: Props) => {
         !isManagedExternally(subscription)
     );
 };
-
-export default isEligible;

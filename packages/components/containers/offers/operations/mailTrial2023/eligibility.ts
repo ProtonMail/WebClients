@@ -6,8 +6,6 @@ interface Props {
     subscription?: Subscription;
 }
 
-const isEligible = ({ subscription }: Props) => {
+export const getIsEligible = ({ subscription }: Props) => {
     return isTrial(subscription, PLANS.MAIL);
 };
-
-export default isEligible;

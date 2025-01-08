@@ -4,19 +4,17 @@ import useConfig from '@proton/components/hooks/useConfig';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';
-import config from './configuration';
-import getIsEligible from './eligibility';
+import { goUnlimited2022Config } from './configuration';
+import { getIsEligible } from './eligibility';
 
-const useOffer = (): Operation => {
+export const useGoUnlimited2022 = (): Operation => {
     const [user, userLoading] = useUser();
     const [subscription, loading] = useSubscription();
-    const { isActive, loading: flagsLoading } = useOfferFlags(config);
+    const { isActive, loading: flagsLoading } = useOfferFlags(goUnlimited2022Config);
     const protonConfig = useConfig();
     const isLoading = flagsLoading || userLoading || loading;
     const isEligible = getIsEligible({ user, subscription, protonConfig }) && isActive;
     const isValid = isEligible && isActive;
 
-    return { isValid, config, isLoading, isEligible };
+    return { isValid, config: goUnlimited2022Config, isLoading, isEligible };
 };
-
-export default useOffer;

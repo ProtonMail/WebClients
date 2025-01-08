@@ -8,7 +8,7 @@ import { getFamilyPassFeatures, getUnlimitedInboxFeaturesForPass } from '../../h
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
-const config: OfferConfig = {
+export const blackFriday2024PassFreeConfig: OfferConfig = {
     ID: 'black-friday-2024-pass-free',
     autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFriday2024PassFree,
@@ -53,5 +53,3 @@ const config: OfferConfig = {
     ],
     layout: Layout,
 };
-
-export default config;

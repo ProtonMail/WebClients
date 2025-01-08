@@ -10,7 +10,7 @@ interface Props {
     protonConfig: ProtonConfig;
 }
 
-const isEligible = ({ subscription, user, protonConfig }: Props): boolean => {
+export const getIsEligible = ({ subscription, user, protonConfig }: Props): boolean => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp = protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONPASS;
 
@@ -21,5 +21,3 @@ const isEligible = ({ subscription, user, protonConfig }: Props): boolean => {
 
     return hasValidApp && canPay && notDelinquent && isNotExternal && (isFree || cohortPass2023);
 };
-
-export default isEligible;

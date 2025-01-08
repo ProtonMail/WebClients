@@ -10,7 +10,7 @@ import Layout from './Layout';
 import bannerImage from './upsell_mail-plus-free-trial.png';
 import bannerImage2x from './upsell_mail-plus-free-trial@2x.png';
 
-const config: OfferConfig = {
+export const mailTrial2023Config: OfferConfig = {
     ID: 'mail-trial-2023',
     featureCode: FeatureCode.OfferMailTrial2023,
     deals: [
@@ -56,5 +56,3 @@ const config: OfferConfig = {
         bannerImage2x,
     },
 };
-
-export default config;

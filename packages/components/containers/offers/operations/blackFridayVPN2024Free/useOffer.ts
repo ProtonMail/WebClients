@@ -6,13 +6,13 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';
-import config from './configuration';
-import getIsEligible from './eligibility';
+import { blackFriday2024VPNFreeConfig } from './configuration';
+import { getIsEligible } from './eligibility';
 
-const useOffer = (): Operation => {
+export const useBlackFriday2024VPNFree = (): Operation => {
     const [user, userLoading] = useUser();
     const [subscription, subscriptionLoading] = useSubscription();
-    const { isActive, loading: flagsLoading } = useOfferFlags(config);
+    const { isActive, loading: flagsLoading } = useOfferFlags(blackFriday2024VPNFreeConfig);
     const [lastSubscriptionEnd, lastSubscriptionEndLoading] = useLastSubscriptionEnd();
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const protonConfig = useConfig();
@@ -21,7 +21,5 @@ const useOffer = (): Operation => {
     const isEligible = getIsEligible({ subscription, protonConfig, user, lastSubscriptionEnd, preferredCurrency });
     const isValid = isEligible && isActive;
 
-    return { isValid, config, isLoading, isEligible };
+    return { isValid, config: blackFriday2024VPNFreeConfig, isLoading, isEligible };
 };
-
-export default useOffer;

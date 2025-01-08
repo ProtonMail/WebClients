@@ -8,7 +8,7 @@ import { getVPNFeatures } from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
-const config: OfferConfig = {
+export const blackFriday2024VPNFreeYearlyConfig: OfferConfig = {
     ID: 'black-friday-2024-vpn-free-yearly',
     autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFriday2024VPNFreeYearly,
@@ -38,5 +38,3 @@ const config: OfferConfig = {
     ],
     layout: Layout,
 };
-
-export default config;

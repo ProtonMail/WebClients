@@ -66,22 +66,17 @@ export enum FeatureCode {
     MailServiceWorker = 'MailServiceWorker',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
-    // This is a different offer than the others, it runs all the time and is used to nudge free users once their accounts is old enough
+
+    // This is a different offer than the others, it runs all the time and is used to promote paid features
     OfferSubscriptionReminder = 'OfferSubscriptionReminder',
-    OfferDuoPlanYearly2024 = 'OfferDuoPlanYearly2024',
-    OfferDuoPlanTwoYears2024 = 'OfferDuoPlanTwoYears2024',
-    OfferFamily2023 = 'OfferFamily2023',
+
+    OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferMailTrial2023 = 'OfferMailTrial2023',
     OfferMailTrial2024 = 'OfferMailTrial2024',
-    OfferSpecialOffer2022 = 'OfferSpecialOffer2022',
-    OfferSummer2023 = 'OfferSummer2023',
-
-    OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
 
     OfferBlackFriday2024InboxFree = 'OfferBlackFriday2024InboxFree',
     OfferBlackFriday2024PassFree = 'OfferBlackFriday2024PassFree',
-    OfferBlackFriday2024PassPlus = 'OfferBlackFriday2024PassPlus',
     OfferBlackFriday2024DriveFree = 'OfferBlackFriday2024DriveFree',
     OfferBlackFriday2024VPNFree = 'OfferBlackFriday2024VPNFree',
     OfferBlackFriday2024InboxFreeYearly = 'OfferBlackFriday2024InboxFreeYearly',

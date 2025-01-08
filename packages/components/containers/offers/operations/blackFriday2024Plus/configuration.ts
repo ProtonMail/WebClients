@@ -8,7 +8,7 @@ import { getDuoInboxFeatures, getUnlimitedInboxFeatures } from '../../helpers/of
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
-const config: OfferConfig = {
+export const blackFriday2024PlusConfig: OfferConfig = {
     ID: 'black-friday-2024-plus',
     autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFriday2024Plus,
@@ -51,5 +51,3 @@ const config: OfferConfig = {
     ],
     layout: Layout,
 };
-
-export default config;
