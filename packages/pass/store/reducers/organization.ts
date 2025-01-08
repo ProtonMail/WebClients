@@ -21,7 +21,7 @@ export type OrganizationState = {
 
 const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null, action) => {
     /* Remove all organization state if the user plan changes */
-    if (getUserAccessSuccess.match(action)) return action.payload.plan.Type !== PlanType.business ? null : state;
+    if (getUserAccessSuccess.match(action)) return action.payload.plan.Type !== PlanType.BUSINESS ? null : state;
 
     if (state !== null) {
         /* Actions applied to the organization state should only be processed
