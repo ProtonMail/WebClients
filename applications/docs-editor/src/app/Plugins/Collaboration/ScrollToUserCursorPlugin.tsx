@@ -2,7 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { useEffect } from 'react'
 import type { Binding } from '@lexical/yjs'
-import { getAnchorAndFocusCollabNodesForUserState } from '@lexical/yjs'
+import { getAnchorAndFocusCollabNodesForUserState } from './CursorUtils'
 
 /**
  * On a `ScrollToUserCursorData` event call, it will use the passed
