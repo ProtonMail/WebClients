@@ -84,5 +84,7 @@ export type OpenedItem = {
     revision: number;
     revisionTime: number;
     state: ItemState;
-    shareCount: number;
+    /* New property on the item - keeping it as an optional
+     * to avoid undefined behaviour when booting from cache */
+    shareCount: Maybe<number>;
 };
