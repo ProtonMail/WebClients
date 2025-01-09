@@ -749,6 +749,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Se stai utilizzando un sottodominio, ad es. subdomain.domain.com, devi utilizzare ${ domainKeyExampleSubdomain } come dominio. Ciò significa che se il tuo dominio è mail.domain.com dovresti inserire ${ domainKeyExampleMail } come dominio."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Se stai utilizzando Cloudflare, assicurati di non selezionare l'opzione Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantieni le tue informazioni più sicure e private con queste guide e suggerimenti."
       ],
@@ -760,6 +763,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Alcuni registri DNS potrebbero richiedere un percorso completo del record, in questo caso utilizza ${ domain } come valore del dominio."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Alcuni registri di domini (Namecheap, Cloudflare, ecc.) potrebbero anche utilizzare @ per il dominio root."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } è un metodo di autenticazione email progettato per rilevare la falsificazione degli indirizzi del mittente durante la consegna dell'email. Si consiglia vivamente di impostare SPF per ridurre la possibilità che le email finiscano nella cartella Spam del destinatario."
@@ -778,6 +784,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Questo servizio offre 2FA. Abilitalo per una maggiore sicurezza dell'account."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Per verificare la proprietà del dominio, aggiungi il seguente record TXT. Alcuni registrar di domini (Namecheap, Cloudflare, ecc.) potrebbero utilizzare @ per il dominio root."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Sblocca funzionalità di sicurezza avanzate e log dettagliati per proteggere la tua presenza online."
@@ -1934,9 +1943,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. L'alias è già disabilitato e non inoltrerà le email alla tua casella di posta"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Effettua l'upgrade per avere l'accesso anticipato all'app web di ${ PASS_APP_NAME }"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Utilizza il dominio con percorso completo, ad esempio mio-dominio.com o mio-sottodominio.mio-dominio.com se utilizzi un sottodominio."
@@ -3892,9 +3898,6 @@
       "Update available": [
         "Aggiornamento disponibile"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Effettua l'upgrade per sbloccare le funzionalità premium"
-      ],
       "Vault": [
         "Cassaforte"
       ],
@@ -4091,6 +4094,9 @@
       ],
       "No results": [
         "Nessun risultato"
+      ],
+      "No secure links matching": [
+        "Nessun collegamento sicuro corrispondente"
       ],
       "Offline": [
         "Offline"

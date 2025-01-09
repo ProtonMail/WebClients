@@ -752,6 +752,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Dacă utilizați un subdomeniu, de ex. subdomeniu.domeniu.com, trebuie să utilizați în schimb ${ domainKeyExampleSubdomain } ca domeniu. Aceasta înseamnă că, dacă domeniul personal este mail.domeniu.com, ar trebui să introduceți ${ domainKeyExampleMail } ca domeniu."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Dacă utilizați Cloudflare, asigurați-vă că nu selectați opțiunea Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Păstrați informațiile mai sigure și private cu aceste ghiduri și sfaturi."
       ],
@@ -763,6 +766,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Unele registratori de DNS ar putea necesita o cale de înregistrare completă, în acest caz, utilizați în schimb ${ domain } ca valoare de domeniu."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Unii registratori de domenii (Namecheap, Cloudflare etc.) pot folosi @ pentru domeniul rădăcină."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } este o metodă de autentificare a e-mailului concepută pentru a detecta falsificarea adreselor expeditorului în timpul livrării e-mailului. Configurarea SPF este foarte recomandată pentru a reduce șansele ca e-mailurile trimise să vă ajungă în folderul de mesaje nedorite (spam) al destinatarului."
@@ -781,6 +787,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Acest serviciu oferă A2A. Activați-l pentru o securitate suplimentară a contului."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Pentru a dovedi că dețineți domeniul, adăugați următoarea înregistrare TXT. Unii registratori de domenii (Namecheap, Cloudflare etc.) ar putea folosi @ pentru domeniul rădăcină."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Deblocați funcțiile de securitate avansate și jurnalele detaliate pentru a vă securiza prezența online."
@@ -1962,9 +1971,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "După ștergere, aliasul nu poate fi restaurat. Aliasul este deja dezactivat și nu va redirecționa mesajele către adresa de e-mail."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Treceți la un plan superior pentru a avea acces timpuriu la aplicația web ${ PASS_APP_NAME }."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Utilizați domeniul cu calea completă, de exemplu domeniul-meu.com sau subdomeniul-meu.domeniul-meu.com dacă utilizați un subdomeniu."
@@ -3945,9 +3951,6 @@
       "Update available": [
         "Actualizare disponibilă"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Modificați-vă contul pentru a debloca funcțiile premium"
-      ],
       "Vault": [
         "Seif"
       ],
@@ -4148,6 +4151,9 @@
       ],
       "No results": [
         "Nu sunt rezultate"
+      ],
+      "No secure links matching": [
+        "Nu există legături web securizate corelate."
       ],
       "Offline": [
         "Deconectat"

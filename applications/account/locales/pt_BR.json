@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -3904,49 +3904,6 @@
         "Suporte prioritário"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Obter ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Obtenha por ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Cobrado anualmente a ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB de armazenamento"
-      ],
-      "2 users": [
-        "2 usuários"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Acesso completo aos produtos da ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Economize ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Todos os recursos de ${ BRAND_NAME }, para 2 pessoas."
-      ],
-      "Double your storage": [
-        "Dobre seu armazenamento"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Apresentamos ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duration": {
       "120 minutes": [
         "120 minutos"
@@ -5197,6 +5154,11 @@
         "Evento a partir de ${ timeString }, ${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Erro inesperado"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Não foi possível descriptografar o arquivo ICS anexado."
@@ -6303,6 +6265,47 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "O fuso horário do calendário não é compatível"
+      ],
+      "Edited event not supported": [
+        "Evento editado não suportado"
+      ],
+      "End time out of bounds": [
+        "Hora de término fora dos limites"
+      ],
+      "Event validation failed": [
+        "Erro na validação do evento"
+      ],
+      "Floating times not supported": [
+        "Tempos flutuantes não suportados"
+      ],
+      "Malformed all-day event": [
+        "Evento de dia inteiro mal formado"
+      ],
+      "Malformed end time": [
+        "A hora de término não é válida."
+      ],
+      "Malformed recurring event": [
+        "Evento recorrente mal formado"
+      ],
+      "Malformed start time": [
+        "A hora de início não é válida."
+      ],
+      "Recurring event has no occurrences": [
+        "Evento recorrente sem datas"
+      ],
+      "Recurring rule not supported": [
+        "Regra recorrente não suportada"
+      ],
+      "Start time out of bounds": [
+        "Hora de início fora dos limites"
+      ],
+      "Time zone not supported": [
+        "Fuso horário não suportado"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } evento criptografado e adicionado ao seu calendário",
@@ -6440,11 +6443,17 @@
       "Use your app password instead of your regular password if:": [
         "Use sua senha de aplicativo em vez da sua senha normal se:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "A senha de aplicativo está correta. Não use sua senha normal."
+      ],
       "Your email account requires an app password to export your data.": [
         "Sua conta de e-mail requer uma senha de aplicativo para exportar seus dados."
       ],
       "Your email account requires one to export your data.": [
         "Sua conta de e-mail requer uma para exportar os seus dados."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Seu endereço de e-mail e senha do aplicativo estão corretos. Não use sua senha normal."
       ],
       "Your email address and password are correct.": [
         "Seu endereço de e-mail e senha estão corretos."
@@ -6927,6 +6936,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Após o bloqueio, os membros da organização precisarão desbloquear o ${ PASS_APP_NAME } com sua senha ou PIN, etc."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
+      ],
       "Align left": [
         "Alinhar à esquerda"
       ],
@@ -7206,6 +7218,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie e cole este URL no campo URL ACS (Serviço ao Consumidor de Asserção) do seu provedor de identidade"
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copie e cole este URL no campo ID do seu provedor de identidade"
+      ],
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
@@ -7227,6 +7242,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Criar uma nuvem segura para ${ value } membro",
+        "Criar uma nuvem segura para ${ value } membros"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Criar e gerenciar subcontas além de atribuir a elas endereços de e-mail em seu domínio personalizado."
@@ -7476,6 +7495,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Digite o ID da entidade de uma organização **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Digite a senha da organização para restaurar os privilégios de administrador. ${ learnMore }"
@@ -8142,6 +8164,9 @@
       "Password copied to clipboard": [
         "Senha copiada para a área de transferências"
       ],
+      "Password generator rules successfully saved": [
+        "As regras do gerador de senhas foram salvas com sucesso"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "A senha deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
       ],
@@ -8412,6 +8437,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "O pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
+      ],
       "Server is currently down": [
         "O servidor está indisponível no momento"
       ],
@@ -8538,6 +8566,9 @@
       ],
       "Swiss based": [
         "Sediado na Suíça"
+      ],
+      "Switch to": [
+        "Alternar para"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -18556,6 +18587,9 @@
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copie e cole este URL no campo URL ACS (Assertion Consumer Service) do seu provedor de identidade"
+      ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Copie e cole este URL no campo ID do seu provedor de identidade"
       ],
       "Customize import to reduce the number of folders": [
         "Personalize importação para reduzir o número de pastas"

@@ -717,6 +717,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Hvis du bruker et underdomene, f.eks. underdomene.domene.no, må du istedenfor bruke ${ domainKeyExampleSubdomain } som domenet. Det betyr, hvis domenet ditt er e-post.domene.no, skal du skrive inn ${ domainKeyExampleMail } som domenet."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Hvis du bruker CloudFlare, sørg for at du ikke velger alternativet Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
       ],
@@ -728,6 +731,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Noen DNS-registratorer kan kreve en fullstendig postbane, i dette tilfellet kan du bruke ${ domain } som domeneverdi i stedet."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan også bruke @ for rotdomenet."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } er en e-postautentiseringsmetode utviklet for å oppdage forfalskede avsenderadresser under levering av e-posten. Det anbefales sterkt å sette opp SPF for å redusere sjansen for at e-postene dine havner i mottakerens søppelpostmappe."
@@ -746,6 +752,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "For å bekrefte eierskapet til domenet, legg til følgende TXT-post. Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan bruke @ for rotdomenet."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås opp avanserte sikkerhetsfunksjoner og detaljerte logger for å beskytte din tilstedeværelse på nettet."
@@ -1899,9 +1908,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Aliaset er allerede deaktivert og videresender ikke e-post til postboksen din"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Bruk fullbanedomene, for eksempel mitt-domene.no eller mitt-underdomene.mitt-domene.no hvis du bruker et underdomene."
@@ -3747,9 +3753,6 @@
       "Update available": [
         "Oppdatering tilgjengelig"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Oppgrader for å låse opp premiumfunksjoner"
-      ],
       "Vault": [
         "Hvelv"
       ],
@@ -3946,6 +3949,9 @@
       ],
       "No results": [
         "Ingen resultater"
+      ],
+      "No secure links matching": [
+        "Ingen sikre koblinger som samsvarer"
       ],
       "Offline": [
         "Frakoblet"

@@ -446,6 +446,9 @@
       "Merge contacts": [
         "Mesclar contatos"
       ],
+      "More actions": [
+        "Mais ações"
+      ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
@@ -2811,49 +2814,6 @@
         "Adicionar calendário"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Obter ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Obtenha por ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Cobrado anualmente a ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB de armazenamento"
-      ],
-      "2 users": [
-        "2 usuários"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Acesso completo aos produtos da ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Economize ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Todos os recursos de ${ BRAND_NAME }, para 2 pessoas."
-      ],
-      "Double your storage": [
-        "Dobre seu armazenamento"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Apresentamos ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplicar evento"
@@ -3654,6 +3614,11 @@
         "Você"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Erro inesperado"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Não foi possível descriptografar o arquivo ICS anexado."
@@ -4038,6 +4003,47 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "O fuso horário do calendário não é compatível"
+      ],
+      "Edited event not supported": [
+        "Evento editado não suportado"
+      ],
+      "End time out of bounds": [
+        "Hora de término fora dos limites"
+      ],
+      "Event validation failed": [
+        "Erro na validação do evento"
+      ],
+      "Floating times not supported": [
+        "Tempos flutuantes não suportados"
+      ],
+      "Malformed all-day event": [
+        "Evento de dia inteiro mal formado"
+      ],
+      "Malformed end time": [
+        "A hora de término não é válida."
+      ],
+      "Malformed recurring event": [
+        "Evento recorrente mal formado"
+      ],
+      "Malformed start time": [
+        "A hora de início não é válida."
+      ],
+      "Recurring event has no occurrences": [
+        "Evento recorrente sem datas"
+      ],
+      "Recurring rule not supported": [
+        "Regra recorrente não suportada"
+      ],
+      "Start time out of bounds": [
+        "Hora de início fora dos limites"
+      ],
+      "Time zone not supported": [
+        "Fuso horário não suportado"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } evento criptografado e adicionado ao seu calendário",
@@ -4175,11 +4181,17 @@
       "Use your app password instead of your regular password if:": [
         "Use sua senha de aplicativo em vez da sua senha normal se:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "A senha de aplicativo está correta. Não use sua senha normal."
+      ],
       "Your email account requires an app password to export your data.": [
         "Sua conta de e-mail requer uma senha de aplicativo para exportar seus dados."
       ],
       "Your email account requires one to export your data.": [
         "Sua conta de e-mail requer uma para exportar os seus dados."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Seu endereço de e-mail e senha do aplicativo estão corretos. Não use sua senha normal."
       ],
       "Your email address and password are correct.": [
         "Seu endereço de e-mail e senha estão corretos."
@@ -4438,6 +4450,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
         "Todas (${ totalFoldersCount } pastas)"
@@ -4567,6 +4582,10 @@
       ],
       "Create a new contact group": [
         "Criar novo grupo de contato"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Criar uma nuvem segura para ${ value } membro",
+        "Criar uma nuvem segura para ${ value } membros"
       ],
       "Create in": [
         "Criar em"
@@ -4988,6 +5007,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "O pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
       ],
@@ -5020,6 +5042,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Alternar para"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -8576,20 +8601,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
       ],
-      "No more scheduling conflicts": [
-        "Sem mais conflitos de agendamento"
-      ],
-      "Now you can see when participants are free to attend your meeting.": [
-        "Agora você pode ver quando os participantes estão livres para comparecer à sua reunião."
-      ],
       "Seamlessly create and add video meeting links to your events.": [
         "Crie e adicione links de videoconferências aos seus eventos de forma simples e sem interrupções."
       ],
       "Video conferencing is here!": [
         "A videoconferência chegou!"
-      ],
-      "You can now collapse the navigation bar.": [
-        "Você agora pode esconder a barra de navegação."
       ]
     },
     "sso": {

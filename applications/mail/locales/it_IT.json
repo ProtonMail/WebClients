@@ -754,6 +754,9 @@
       "More": [
         "Altro"
       ],
+      "More actions": [
+        "Altre azioni"
+      ],
       "More details about ${ ariaLabelTitle }": [
         "Maggiori dettagli su ${ ariaLabelTitle }"
       ],
@@ -3818,49 +3821,6 @@
         "Supporto prioritario"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Ottieni ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Ottienilo per ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Fatturato ogni 2 anni a ${ amountBilled }. Gli sconti si basano sul prezzo mensile standard."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Fatturato annualmente a ${ amountBilled }. Risparmia ${ amountSave } su 2 abbonamenti annuali individuali di ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB di spazio di archiviazione"
-      ],
-      "2 users": [
-        "2 utenti"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Accesso completo a tutti i prodotti ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Risparmi ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Tutte le funzionalità di ${ BRAND_NAME }, per 2."
-      ],
-      "Double your storage": [
-        "Ti presentiamo Proton Duo"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Ti presentiamo ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIZIONE:\n${ eventDescription }"
@@ -4748,6 +4708,11 @@
         "Impossibile inviare l'invito a ${ email }. ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Errore inaspettato"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Il file ICS allegato non può essere decriptato"
@@ -5424,6 +5389,47 @@
         "Nessun metodo di verifica disponibile"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fuso orario del calendario non supportato"
+      ],
+      "Edited event not supported": [
+        "Evento modificato non supportato"
+      ],
+      "End time out of bounds": [
+        "Ora di fine fuori dai limiti"
+      ],
+      "Event validation failed": [
+        "Convalida dell'evento non riuscita"
+      ],
+      "Floating times not supported": [
+        "Tempi mobili non supportati"
+      ],
+      "Malformed all-day event": [
+        "Evento per tutta la giornata ha un formato errato"
+      ],
+      "Malformed end time": [
+        "Ora di fine con un formato errato"
+      ],
+      "Malformed recurring event": [
+        "Evento ricorrente non conforme"
+      ],
+      "Malformed start time": [
+        "Ora di inizio con un formato errato"
+      ],
+      "Recurring event has no occurrences": [
+        "L'evento ricorrente non ha occorrenze"
+      ],
+      "Recurring rule not supported": [
+        "Regola ricorrente non supportata"
+      ],
+      "Start time out of bounds": [
+        "Ora di inizio fuori dai limiti"
+      ],
+      "Time zone not supported": [
+        "Fuso orario non supportato"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } partecipante",
@@ -5575,6 +5581,9 @@
       ],
       "Your email account requires one to export your data.": [
         "Il tuo account email ne richiede uno per esportare i tuoi dati."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Il tuo indirizzo email e la password dell'app sono corretti. Non usare la tua password regolare."
       ],
       "Your email address and password are correct.": [
         "Il tuo indirizzo email e la password siano corretti."
@@ -5957,6 +5966,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
+      ],
       "Align left": [
         "Allinea a sinistra"
       ],
@@ -6179,6 +6191,10 @@
       ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un cloud sicuro per ${ value } membro",
+        "Crea un cloud sicuro per ${ value } membri"
       ],
       "Create in": [
         "Crea in"
@@ -6521,9 +6537,6 @@
       ],
       "JCB logo": [
         "Logo JCB"
-      ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Partecipa al programma ${ PROTON_SENTINEL_NAME } per ottenere il più elevato livello di sicurezza dell'account e il miglior supporto."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Devi solo confermare la tua selezione e noi faremo il resto."
@@ -6963,6 +6976,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Inviato con l'email sicura <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "I pagamenti SEPA non sono disponibili al momento. Si prega di riprovare più tardi."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
@@ -7034,6 +7050,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Altri account"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
@@ -8401,6 +8420,9 @@
       "Remember my choice": [
         "Ricorda la mia selezione"
       ],
+      "Remove metadata": [
+        "Rimuovi i metadati"
+      ],
       "Reveal password": [
         "Mostra la password"
       ],
@@ -9759,6 +9781,17 @@
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Ottieni Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -9771,17 +9804,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Ottieni Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10153,6 +10175,12 @@
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } impedisce alle email fraudolente di raggiungere la tua casella di posta."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } su App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } su Play Store"
       ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } significa che non sarai più seguito su Internet."
@@ -11467,9 +11495,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ora, in maniera predefinita, carichiamo le immagini e blocchiamo i mittenti dal poterti tracciare.\nCiò può essere cambiato in ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Ora puoi comprimere la barra di navigazione."
       ],
       "You can now schedule your messages to be sent later": [
         "Ora puoi programmare i tuoi messaggi da inviare più tardi"
