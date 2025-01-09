@@ -1,7 +1,7 @@
 import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
-import type { VaultKey } from '@proton/pass/types';
+import type { VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -13,7 +13,7 @@ describe('moveItem crypto process', () => {
 
     test('should re-encrypt item content with destination vault key', async () => {
         const destinationShareId = `shareId-${Math.random()}`;
-        const destinationVaultKey: VaultKey = {
+        const destinationVaultKey: VaultShareKey = {
             key: await importSymmetricKey(key),
             raw: key,
             rotation: 42,
@@ -41,7 +41,7 @@ describe('moveItem crypto process', () => {
     });
 
     test('should throw when provided with empty content', async () => {
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             key: await importSymmetricKey(key),
             raw: key,
             rotation: 42,

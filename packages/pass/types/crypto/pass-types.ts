@@ -30,8 +30,12 @@ export type RotationKey = {
     rotation: Rotation;
 };
 
-export type VaultKey = RotationKey & { userKeyId: Maybe<string> };
+export type ShareKey = RotationKey & { userKeyId: Maybe<string> };
+
 export type ItemKey = RotationKey;
+export type VaultShareKey = ShareKey;
+export type ItemShareKey = ShareKey;
+export type InviteTargetKey = ItemKey | VaultShareKey;
 
 type OpenedShareBase = {
     addressId: string;
