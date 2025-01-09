@@ -4,6 +4,7 @@ import type { NodeKey, NodeMap } from 'lexical'
 import { $isLineBreakNode } from 'lexical'
 import { createDOMRange } from '@lexical/selection'
 import { isHTMLElement } from '../../Utils/guard'
+import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
 
 // Forked and modified from https://github.com/facebook/lexical/blob/main/packages/lexical-yjs/src/SyncCursors.ts to have custom behavior.
 
@@ -199,43 +200,10 @@ function updateCursor(
     selectionRects = [brRect]
   } else {
     const range = createDOMRange(editor, anchorNode, anchor.offset, focusNode, focus.offset)
-
     if (range === null) {
       return
     }
-
-    selectionRects = Array.from(range.getClientRects())
-
-    //sort rects from top left to bottom right.
-    selectionRects.sort((a, b) => {
-      const top = a.top - b.top
-      // Some rects match position closely, but not perfectly,
-      // so we give a 3px tolerance.
-      if (Math.abs(top) <= 3) {
-        return a.left - b.left
-      }
-      return top
-    })
-
-    let prevRect
-    let selectionRectsLength = selectionRects.length
-    for (let i = 0; i < selectionRectsLength; i++) {
-      const selectionRect = selectionRects[i]
-
-      // Exclude rects that overlap preceding Rects in the sorted list.
-      const isOverlappingRect =
-        prevRect &&
-        prevRect.top <= selectionRect.top &&
-        prevRect.top + prevRect.height > selectionRect.top &&
-        prevRect.left + prevRect.width > selectionRect.left
-      if (isOverlappingRect) {
-        selectionRects.splice(i--, 1)
-        selectionRectsLength--
-        continue
-      }
-
-      prevRect = selectionRect
-    }
+    selectionRects = createRectsFromDOMRange(editor, range)
   }
 
   const selectionsLength = selections.length
