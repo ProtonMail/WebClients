@@ -20,6 +20,14 @@ const getDBName = (userID: string) => `ES:${userID}:DB`;
  */
 export const deleteESDB = async (userID: string) => deleteDB(getDBName(userID)).catch(noop);
 
+async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string) {
+    esDB.close();
+    // Flags are removed from local storage in case this code
+    // is called due to an update from an outdated version of IDB
+    removeESFlags(userID);
+    await deleteESDB(userID);
+}
+
 /**
  * Open an existing IDB for the given user. If the DB hadn't already existed,
  * undefined is returned instead. WARNING: this function will delete an old
@@ -28,33 +36,26 @@ export const deleteESDB = async (userID: string) => deleteDB(getDBName(userID)).
 export const openESDB = async (userID: string) => {
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
     try {
-        let dbExisted = true;
         /** Perhaps in Lockdown mode, the browser does not support IndexedDB, so we need to check for that */
         const { isAccessible, hasIndexedDB } = await detectStorageCapabilities();
         if (!isAccessible || !hasIndexedDB) {
             esSentryReport('openESDB: indexedDB not accessible', { isAccessible, hasIndexedDB });
             return;
         }
-        esDB = await openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION, {
-            upgrade() {
-                dbExisted = false;
-            },
-        });
-        if (!dbExisted) {
-            esDB?.close();
-            return;
+        esDB = await openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION);
+        // return esDB if the esDB contains a metadata and content table
+        if (esDB?.objectStoreNames.contains('metadata') && esDB.objectStoreNames.contains('content')) {
+            return esDB;
         }
+        await cleanupESDB(esDB, userID);
+        return;
     } catch (error: any) {
-        esDB?.close();
-        esSentryReport('openESDB: failed to open DB', { error });
-        // Flags are removed from local storage in case this code
-        // is called due to an update from an outdated version of IDB
-        removeESFlags(userID);
-        await deleteESDB(userID);
+        if (esDB) {
+            await cleanupESDB(esDB, userID);
+        }
         // Currently our openESDB usage expects undefined in case a db was never there (see !dbExisted conditional above)
         return;
     }
-    return esDB;
 };
 
 /**
