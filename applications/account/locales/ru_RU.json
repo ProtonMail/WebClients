@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -3928,49 +3928,6 @@
         "Приоритетная поддержка"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Оформить ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Оформите за ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Оплата раз в 2 года по цене ${ amountBilled }. Скидки рассчитываются исходя из стандартной платы за месяц."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Ежегодная оплата в размере ${ amountBilled }. Сохраните ${ amountSave } на 2 индивидуальных подписках ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 ТБ хранилища"
-      ],
-      "2 users": [
-        "2 пользователя"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Полный доступ ко всем продуктам ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Вы экономите ${ amountSave }."
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Все возможности ${ BRAND_NAME } для двоих."
-      ],
-      "Double your storage": [
-        "Удвойте своё хранилище"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Встречайте ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duration": {
       "120 minutes": [
         "120 минут"
@@ -6171,6 +6128,9 @@
       ],
       "Checkout": [
         "Оформление покупки"
+      ],
+      "City": [
+        "Город"
       ],
       "Create your account": [
         "Создать аккаунт"
