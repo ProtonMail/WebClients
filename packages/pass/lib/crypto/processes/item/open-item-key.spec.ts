@@ -11,7 +11,7 @@ describe('openItemKey crypto process', () => {
         const key = generateKey();
         const itemKey = generateKey();
 
-        const vaultKey: VaultShareKey = {
+        const shareKey: VaultShareKey = {
             key: await importSymmetricKey(key),
             raw: key,
             rotation: 1,
@@ -19,11 +19,11 @@ describe('openItemKey crypto process', () => {
         };
 
         const encryptedItemKey: EncodedItemKeyRotation = {
-            Key: uint8ArrayToBase64String(await encryptData(vaultKey.key, itemKey, PassEncryptionTag.ItemKey)),
+            Key: uint8ArrayToBase64String(await encryptData(shareKey.key, itemKey, PassEncryptionTag.ItemKey)),
             KeyRotation: 42,
         };
 
-        const decryptedItemKey = await openItemKey({ encryptedItemKey, vaultKey });
+        const decryptedItemKey = await openItemKey({ encryptedItemKey, shareKey });
 
         expect(decryptedItemKey.raw).toStrictEqual(itemKey);
         expect(decryptedItemKey.rotation).toStrictEqual(42);
