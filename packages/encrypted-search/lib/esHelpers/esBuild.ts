@@ -44,7 +44,7 @@ import type {
     GetUserKeys,
     InternalESCallbacks,
 } from '../models';
-import { esSentryReport } from './esAPI';
+import { esErrorReport, esSentryReport } from './esAPI';
 import { sizeOfESItem } from './esCache';
 import { isObjectEmpty } from './esUtils';
 
@@ -321,22 +321,30 @@ export const buildContentDB = async <ESItemContent>(
             throw new Error('Operation aborted');
         }
 
-        const itemToStore = await fetchESItemContent(ID, abortIndexingRef.current.signal);
-        if (!itemToStore) {
-            throw new Error('Item fetching failed');
-        }
+        try {
+            const itemToStore = await fetchESItemContent(ID, abortIndexingRef.current.signal);
+            if (!itemToStore) {
+                esSentryReport('Item fetch failed', { ID, timepoint });
+                throw new Error('Item fetching failed');
+            }
 
-        if (isObjectEmpty(itemToStore)) {
-            // If decryption fails, we want to anyway count the item
+            if (isObjectEmpty(itemToStore)) {
+                esSentryReport('Empty item fetched', { ID, timepoint });
+                // If decryption fails, we want to anyway count the item
+                recordProgress(++counter);
+                return { ID, timepoint };
+            }
+
+            const aesGcmCiphertext = await encryptItem(itemToStore, indexKey);
             recordProgress(++counter);
-            return { ID, timepoint };
+            return { ID, timepoint, aesGcmCiphertext };
+        } catch (error) {
+            esErrorReport('Item processing error', {
+                error,
+                counter,
+            });
+            throw error;
         }
-
-        const aesGcmCiphertext = await encryptItem(itemToStore, indexKey);
-
-        recordProgress(++counter);
-
-        return { ID, timepoint, aesGcmCiphertext };
     };
 
     let indexingOutcome = STORING_OUTCOME.SUCCESS;
@@ -374,6 +382,12 @@ export const buildContentDB = async <ESItemContent>(
         if (abortIndexingRef.current.signal.aborted) {
             return STORING_OUTCOME.FAILURE;
         }
+
+        console.debug('Processing content batch', {
+            batchSize: IDs.length,
+            totalProcessed: counter,
+            isBackgroundIndexing,
+        });
 
         const infoMap = new Map(
             await readMetadataBatch(userID, IDs).then((encryptedMetadata) => {
@@ -418,6 +432,11 @@ export const buildContentDB = async <ESItemContent>(
         ).filter(isTruthy);
 
         if (itemsToAdd.length) {
+            console.debug('Storing content batch', {
+                batchSize: itemsToAdd.length,
+                totalProcessed: counter,
+            });
+
             const last = itemsToAdd[itemsToAdd.length - 1];
             recoveryPoint = { ID: last.ID, timepoint: last.timepoint };
 
@@ -434,6 +453,10 @@ export const buildContentDB = async <ESItemContent>(
                 }
             } else if (storingOutcome === STORING_OUTCOME.QUOTA) {
                 // If we have reached the quota, we need to stop indexing
+                esErrorReport('Storage quota reached', {
+                    totalProcessed: counter,
+                    batchSize: itemsToAdd.length,
+                });
                 indexingOutcome = STORING_OUTCOME.QUOTA;
                 break;
             }
