@@ -2814,49 +2814,6 @@
         "Añadir calendario"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Obtenga ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Obténgalo por ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Se factura cada dos años por ${ amountBilled }. Los descuentos se aplican sobre el precio mensual estándar."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Facturado anualmente por ${ amountBilled }. Ahorre ${ amountSave } en comparación a 2 suscripciones anuales de ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB de almacenamiento"
-      ],
-      "2 users": [
-        "2 usuarios"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Acceso completo a todos los productos de ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Ahorre ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Todas las funciones de ${ BRAND_NAME }, para 2."
-      ],
-      "Double your storage": [
-        "Duplica su almacenamiento"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplicar evento"
@@ -5082,6 +5039,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La suscripción terminará pronto: reactívela antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Cambiar a"
       ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
@@ -8635,20 +8595,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Invite amistades a ${ BRAND_NAME }"
       ],
-      "No more scheduling conflicts": [
-        "No hay más conflictos de programación"
-      ],
-      "Now you can see when participants are free to attend your meeting.": [
-        "Ahora puede ver cuando los participantes están disponibles para atender su reunión."
-      ],
       "Seamlessly create and add video meeting links to your events.": [
         "Cree y añada fácilmente enlaces de reuniones de vídeo a sus eventos."
       ],
       "Video conferencing is here!": [
         "¡La videoconferencia ya está aquí!"
-      ],
-      "You can now collapse the navigation bar.": [
-        "Ahora puede contraer la barra de navegación."
       ]
     },
     "sso": {

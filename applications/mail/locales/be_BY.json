@@ -3845,49 +3845,6 @@
         "Прыярытэтная падтрымка"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Атрымаць ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Атрымайце яго за ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Аплачваецца кожныя 2 гады ў памеры ${ amountBilled }. Скідкі разлічваюцца на падставе стандартнай платы за месяц."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Аплачваецца штогод у памеры ${ amountBilled }. Эканомія складае ${ amountSave } пры гадавой падпісцы на 2 асабістыя ўліковыя запісы ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 ТБ сховішча"
-      ],
-      "2 users": [
-        "2 карыстальнікі"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Поўны доступ да ўсіх прадуктаў ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Вы эканоміце ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Усе функцыі ${ BRAND_NAME } для дваіх карыстальнікаў."
-      ],
-      "Double your storage": [
-        "Падвоіць ваша сховішча"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Прадстаўляем тарыфны план ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "АПІСАННЕ:\n${ eventDescription }"
@@ -5582,7 +5539,7 @@
         "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Кантактаў паспяхова імпартавана (${ totalImported } з ${ totalToImport })."
+        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Адбылася памылка падчас шыфравання і дадавання вашых кантактаў. Ніводны кантакт не быў імпартаваны."
@@ -5771,13 +5728,13 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } кантакты(-аў) з ${ totalContacts } не будуць імпартаваны. Націсніце, каб даведацца больш"
+        "Не будзе імпартавана наступная колькасць кантактаў: ${ totalContactsDiscarded } з ${ totalContacts }. Націсніце, каб даведацца больш"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEventsDiscarded } падзея з ${ totalEvents } не будзе імпартавана. Разгарніце, каб даведацца больш.",
         "${ totalEventsDiscarded } падзеі з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш.",
         "${ totalEventsDiscarded } падзей з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш.",
-        "${ totalEventsDiscarded } падзеі з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш."
+        "${ totalEventsDiscarded } падзей з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш."
       ],
       "No contact can be imported. Click for details": [
         "Немагчыма імпартаваць кантакты. Націсніце, каб даведацца больш"
@@ -5878,10 +5835,10 @@
         "${ elementsCount } размоў будуць пазначаны як непрачытаныя."
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } размова будзе перамешчана",
-        "${ elementsCount } размовы будуць перамешчаны",
-        "${ elementsCount } размоў будуць перамешчаны",
-        "${ elementsCount } размоў будуць перамешчаны"
+        "будзе перамешчана ${ elementsCount } размова",
+        "будуць перамешчаны ${ elementsCount } размовы",
+        "будуць перамешчаны ${ elementsCount } размоў",
+        "будуць перамешчаны ${ elementsCount } размоў"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
         "З ${ elementsCount } размовы будзе знята пазнака:",
@@ -5923,7 +5880,7 @@
         "${ embeddedAttachmentsCount } убудаваны відарыс",
         "${ embeddedAttachmentsCount } убудаваныя відарысы",
         "${ embeddedAttachmentsCount } убудаваных відарысаў",
-        "${ embeddedAttachmentsCount } убудаваныя відарысы"
+        "${ embeddedAttachmentsCount } убудаваных відарысаў"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
@@ -5935,7 +5892,7 @@
         "Знойдзена ${ groupCounts } група",
         "Знойдзены ${ groupCounts } групы",
         "Знойдзены ${ groupCounts } груп",
-        "Знойдзены ${ groupCounts } групы"
+        "Знойдзены ${ groupCounts } груп"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } таксама можа абараніць ваш бізнес."
@@ -5944,7 +5901,7 @@
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленне.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
-        "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні."
+        "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленняў."
       ],
       "${ n } unread conversation": [
         "${ n } непрачытаная размова",
@@ -6728,9 +6685,6 @@
       ],
       "JCB logo": [
         "Лагатып JCB"
-      ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Далучайцеся да праграмы ${ PROTON_SENTINEL_NAME } для забеспячэння найвышэйшага ўзроўню бяспекі ўліковага запісу і падтрымкі."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
@@ -7935,7 +7889,7 @@
         "${ filteredList.length } каманда знойдзена.",
         "${ filteredList.length } каманды знойдзены.",
         "${ filteredList.length } каманд знойдзены.",
-        "${ filteredList.length } каманды знойдзены."
+        "${ filteredList.length } каманд знойдзены."
       ],
       "Optional": [
         "Неабавязкова"
@@ -8216,7 +8170,7 @@
         "${ n } месяц",
         "${ n } месяцы",
         "${ n } месяцаў",
-        "${ n } месяцы"
+        "${ n } месяцаў"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паспрабуйце яшчэ раз пазней.)"
@@ -9116,16 +9070,16 @@
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папкі з ${ itemsToImportCount } і пазначыць іх як",
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як",
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як",
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як"
+        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } меткі з ${ itemsToImportCount } і пазначыць іх як",
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
-        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як"
+        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
       ]
     },
     "mail_signup_2024: Info": {
@@ -9464,7 +9418,7 @@
         "${ n } каляндар",
         "${ n } календары",
         "${ n } календароў",
-        "${ n } календары"
+        "${ n } календароў"
       ],
       "${ n } calendar per user": [
         "${ n } каляндар на карыстальніка",
@@ -9476,55 +9430,55 @@
         "${ n } карыстальніцкі дамен электроннай пошты",
         "${ n } карыстальніцкія дамены электроннай пошты",
         "${ n } карыстальніцкіх даменаў электроннай пошты",
-        "${ n } карыстальніцкія дамены электроннай пошты"
+        "${ n } карыстальніцкіх даменаў электроннай пошты"
       ],
       "${ n } email address": [
         "${ n } адрас электроннай пошты",
         "${ n } адрасы электроннай пошты/псеўданімаў",
         "${ n } адрасоў электроннай пошты/псеўданімаў",
-        "${ n } адрасы электроннай пошты/псеўданімаў"
+        "${ n } адрасоў электроннай пошты/псеўданімаў"
       ],
       "${ n } email address per user": [
         "${ n } адрас электроннай пошты на карыстальніка",
         "${ n } адрасы электроннай пошты на карыстальніка",
         "${ n } адрасоў электроннай пошты на карыстальніка",
-        "${ n } адрасы электроннай пошты на карыстальніка"
+        "${ n } адрасоў электроннай пошты на карыстальніка"
       ],
       "${ n } filter": [
         "${ n } фільтр",
         "${ n } фільтры",
         "${ n } фільтраў",
-        "${ n } фільтры"
+        "${ n } фільтраў"
       ],
       "${ n } folder": [
         "${ n } папка",
         "${ n } папкі",
         "${ n } папак",
-        "${ n } папкі"
+        "${ n } папак"
       ],
       "${ n } folder and label": [
         "${ n } папка і метка",
         "${ n } папкі і меткі",
         "${ n } папак і метак",
-        "${ n } папкі і меткі"
+        "${ n } папак і метак"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } псеўданім Hide-my-email",
-        "${ n } псеўданімы Hide-my-email",
-        "${ n } псеўданімаў Hide-my-email",
-        "${ n } псеўданімаў Hide-my-email"
+        "${ n } псеўданім hide-my-email",
+        "${ n } псеўданімы hide-my-email",
+        "${ n } псеўданімаў hide-my-email",
+        "${ n } псеўданімаў hide-my-email"
       ],
       "${ n } label": [
         "${ n } метка",
         "${ n } меткі",
         "${ n } метак",
-        "${ n } меткі"
+        "${ n } метак"
       ],
       "${ n } message per day": [
         "${ n } паведамленне ў дзень",
         "${ n } паведамленні ў дзень",
         "${ n } паведамленняў у дзень",
-        "${ n } паведамленні ў дзень"
+        "${ n } паведамленняў у дзень"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } абагуленае сховішча ${ PASS_SHORT_APP_NAME } на карыстальніка",
@@ -9536,13 +9490,13 @@
         "${ n } сховішча",
         "${ n } сховішчы",
         "${ n } сховішчаў",
-        "${ n } сховішчы"
+        "${ n } сховішчаў"
       ],
       "${ n } VPN connection": [
         "${ n } падключэнне па VPN",
         "${ n } падключэнні па VPN",
         "${ n } падключэнняў па VPN",
-        "${ n } падключэнні па VPN"
+        "${ n } падключэнняў па VPN"
       ],
       "${ numberOfUsers } user": [
         "${ numberOfUsers } карыстальнік",
@@ -10081,6 +10035,14 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Атрымайце Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -10093,14 +10055,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: tooltip": {
@@ -10177,7 +10131,7 @@
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Прымусова завяршайце сеансы карыстальнікаў пры падазрэнні, што іх уліковыя даныя скампраметаваны"
+        "Прымусова завяршайце сеансы карыстальніка пры падазрэнні, што яго ўліковыя даныя скампраметаваны"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Падтрымка IMAP абмежавана выкарыстаннем праграм для камп'ютараў (напрыклад, Outlook, Apple Mail, Thunderbird) праз ${ MAIL_APP_NAME } Bridge. Воблачныя сродкі інтэграцыі IMAP у дадзены момант не падтрымліваюцца."
@@ -10835,7 +10789,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ нельга выкарыстоўваць для шыфравання і праверкі подпісу."
+        "${ emailAddress } пазначыў гэты ключ як скампраментаваны. Гэты ключ нельга выкарыстоўваць для шыфравання і праверкі подпісу."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
@@ -11015,22 +10969,22 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } з ${ countContacts } кантакту паспяхова экспартаваны.",
-        "${ contactsExported.length } з ${ countContacts } кантактаў паспяхова экспартаваны.",
-        "${ contactsExported.length } з ${ countContacts } кантактаў паспяхова экспартаваны.",
-        "${ contactsExported.length } з ${ countContacts } кантактаў паспяхова экспартаваны."
+        "${ contactsExported.length } кантакт з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантакты ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў ${ countContacts } паспяхова экспартаваны."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } кантакт з ${ totalBeDeleted } паспяхова выдалены.",
         "${ model.deleted.length } кантакты з ${ totalBeDeleted } паспяхова выдалены.",
         "${ model.deleted.length } кантактаў з ${ totalBeDeleted } паспяхова выдалены.",
-        "${ model.deleted.length } кантакты з ${ totalBeDeleted } паспяхова выдалены."
+        "${ model.deleted.length } кантактаў з ${ totalBeDeleted } паспяхова выдалены."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } кантакт з ${ totalBeMerged } паспяхова аб'яднаны.",
         "${ model.submitted.length } кантакты з ${ totalBeMerged } паспяхова аб'яднаны.",
         "${ model.submitted.length } кантактаў з ${ totalBeMerged } паспяхова аб'яднаны.",
-        "${ model.submitted.length } кантакты з ${ totalBeMerged } паспяхова аб'яднаны."
+        "${ model.submitted.length } кантактаў з ${ totalBeMerged } паспяхова аб'яднаны."
       ],
       "No contacts exported.": [
         "Кантакты не экспартаваны."
@@ -11656,13 +11610,13 @@
         "${ hours } гадзіна",
         "${ hours } гадзіны",
         "${ hours } гадзін",
-        "${ hours } гадзіны"
+        "${ hours } гадзін"
       ],
       "${ minutes } minute": [
         "${ minutes } хвіліна",
         "${ minutes } хвіліны",
         "${ minutes } хвілін",
-        "${ minutes } хвіліны"
+        "${ minutes } хвілін"
       ],
       "${ seconds } second": [
         "${ seconds } секунда",
@@ -11676,7 +11630,7 @@
         "${ n } месяц БЯСПЛАТНА",
         "${ n } месяцы БЯСПЛАТНА",
         "${ n } месяцаў БЯСПЛАТНА",
-        "${ n } месяца БЯСПЛАТНА"
+        "${ n } месяцаў БЯСПЛАТНА"
       ]
     },
     "specialoffer: Deal details": {
@@ -11850,9 +11804,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Цяпер мы прадвызначана загрузілі відарысы і заблакіравалі адпраўнікоў ад сачэння за вамі. Гэта можна змяніць у ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Цяпер вы можаце згарнуць панэль навігацыі."
       ],
       "You can now schedule your messages to be sent later": [
         "Цяпер вы можаце запланаваць адпраўку паведамленняў на больш позні час"
@@ -12048,25 +11999,25 @@
         "${ n } высакахуткаснае падключэнне па VPN",
         "${ n } высакахуткасныя падключэнні па VPN",
         "${ n } высакахуткасных падключэнняў па VPN",
-        "${ n } высакахуткасныя падключэнні па VPN"
+        "${ n } высакахуткасных падключэнняў па VPN"
       ],
       "${ n } high-speed VPN connection per user": [
         "${ n } высакахуткаснае падключэнне па VPN на карыстальніка",
         "${ n } высакахуткасныя падключэнні па VPN на карыстальніка",
         "${ n } высакахуткасных падключэнняў па VPN на карыстальніка",
-        "${ n } высакахуткасныя падключэнні па VPN на карыстальніка"
+        "${ n } высакахуткасных падключэнняў па VPN на карыстальніка"
       ],
       "${ n } VPN connection": [
         "${ n } падключэнне па VPN",
         "${ n } падключэнні па VPN",
         "${ n } падключэнняў па VPN",
-        "${ n } падключэнні па VPN"
+        "${ n } падключэнняў па VPN"
       ],
       "${ n } VPN connection per user": [
         "${ n } падключэнне па VPN на карыстальніка",
         "${ n } падключэнні па VPN на карыстальніка",
         "${ n } падключэнняў па VPN на карыстальніка",
-        "${ n } падключэнні па VPN на карыстальніка"
+        "${ n } падключэнняў па VPN на карыстальніка"
       ]
     },
     "Subscription change warning": {
@@ -12525,7 +12476,7 @@
         "${ elementsCount } размова выдалена з ${ labelName }.",
         "${ elementsCount } размовы выдалены з ${ labelName }.",
         "${ elementsCount } размоў выдалены з ${ labelName }.",
-        "${ elementsCount } размовы выдалены з ${ labelName }."
+        "${ elementsCount } размоў выдалены з ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } размова адкладзена",
@@ -12543,13 +12494,13 @@
         "${ elementsCount } паведамленне дададзена да ${ labelName }.",
         "${ elementsCount } паведамленні дададзены да ${ labelName }.",
         "${ elementsCount } паведамленняў дададзены да ${ labelName }.",
-        "${ elementsCount } паведамленні дададзены да ${ labelName }."
+        "${ elementsCount } паведамленняў дададзены да ${ labelName }."
       ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } паведамленне пазначана як прачытанае.",
         "${ elementsCount } паведамленні пазначаны як прачытаныя.",
         "${ elementsCount } паведамленняў пазначаны як прачытаныя.",
-        "${ elementsCount } паведамленні пазначаны як прачытаныя."
+        "${ elementsCount } паведамленняў пазначаны як прачытаныя."
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } паведамленне пазначана зорачкай.",
@@ -12567,25 +12518,25 @@
         "${ elementsCount } паведамленне перамешчана ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам.",
         "${ elementsCount } паведамленні перамешчаны ў ${ folderName }, а адпраўнікі дададзены ў ваш спіс не спам.",
         "${ elementsCount } паведамленняў перамешчаны ў ${ folderName }, а адпраўнікі дададзены ў ваш спіс не спам.",
-        "${ elementsCount } паведамленні перамешчаны ў ${ folderName }, а адпраўнікі дададзены ў ваш спіс не спам."
+        "${ elementsCount } паведамленняў перамешчаны ў ${ folderName }, а адпраўнікі дададзены ў ваш спіс не спам."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } паведамленне перамешчана ў ${ folderName }.",
         "${ elementsCount } паведамленні перамешчаны ў ${ folderName }.",
         "${ elementsCount } паведамленняў перамешчаны ў ${ folderName }.",
-        "${ elementsCount } паведамленні перамешчаны ў ${ folderName }."
+        "${ elementsCount } паведамленняў перамешчаны ў ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount } паведамленне перамешчана ў спам, а адпраўнік дададзены ў ваш спіс са спамам.",
         "${ elementsCount } паведамленні перамешчаны ў спам, а адпраўнік дададзены ў ваш спіс са спамам.",
         "${ elementsCount } паведамленняў перамешчаны ў спам, а адпраўнік дададзены ў ваш спіс са спамам.",
-        "${ elementsCount } паведамленні перамешчаны ў спам, а адпраўнік дададзены ў ваш спіс са спамам."
+        "${ elementsCount } паведамленняў перамешчаны ў спам, а адпраўнік дададзены ў ваш спіс са спамам."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } паведамленне выдалена з ${ labelName }.",
         "${ elementsCount } паведамленні выдалены з ${ labelName }.",
         "${ elementsCount } паведамленняў выдалены з ${ labelName }.",
-        "${ elementsCount } паведамленні выдалены з ${ labelName }."
+        "${ elementsCount } паведамленняў выдалены з ${ labelName }."
       ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
@@ -12941,19 +12892,19 @@
         "${ hours } гадзіна",
         "${ hours } гадзіны",
         "${ hours } гадзін",
-        "${ hours } гадзіны"
+        "${ hours } гадзін"
       ],
       "${ hoursInt }.5 hour": [
         "${ hoursInt },5 гадзіны",
         "${ hoursInt },5 гадзіны",
         "${ hoursInt },5 гадзін",
-        "${ hoursInt },5 гадзіны"
+        "${ hoursInt },5 гадзін"
       ],
       "${ minutes } minute": [
         "${ minutes } хвіліна",
         "${ minutes } хвіліны",
         "${ minutes } хвілін",
-        "${ minutes } хвіліны"
+        "${ minutes } хвілін"
       ]
     },
     "Tip Action": {
@@ -13930,13 +13881,13 @@
         "${ n } сервер",
         "${ n } серверы",
         "${ n } сервераў",
-        "${ n } серверы"
+        "${ n } сервераў"
       ],
       "${ n } VPN connection": [
         "${ n } падключэнне па VPN",
         "${ n } падключэнні па VPN",
         "${ n } падключэнняў па VPN",
-        "${ n } падключэнні па VPN"
+        "${ n } падключэнняў па VPN"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } у ${ numberOfCountries } краіне",

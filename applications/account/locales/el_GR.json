@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -3904,49 +3904,6 @@
         "Υποστήριξη με προτεραιότητα"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Αποκτήστε το ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Αποκτήστε το για ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Χρεώνεται κάθε 2 χρόνια με ${ amountBilled }. Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Χρεώνεται ετησίως με ${ amountBilled }. Εξοικονομήστε ${ amountSave } πάνω από 2 μεμονωμένα ${ BRAND_NAME } Απεριόριστες ετήσιες συνδρομές."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB αποθηκευτικού χώρου"
-      ],
-      "2 users": [
-        "2 χρήστες"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Πλήρης πρόσβαση σε όλα τα ${ BRAND_NAME } προϊόντα"
-      ],
-      "You save ${ amountSave }": [
-        "Εξοικονομείτε ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Όλα του ${ BRAND_NAME }, για 2."
-      ],
-      "Double your storage": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Παρουσιάζουμε το ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duration": {
       "120 minutes": [
         "120 λεπτά"
@@ -5197,6 +5154,11 @@
         "Εκδήλωση από ${ timeString }, ${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Μη αναμενόμενο σφάλμα"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
@@ -6292,6 +6254,29 @@
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
+      ],
+      "End time out of bounds": [
+        "Ώρα λήξης εκτός ορίων"
+      ],
+      "Event validation failed": [
+        "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Malformed all-day event": [
+        "Δύσμορφη ολοήμερη εκδήλωση"
+      ],
+      "Malformed end time": [
+        "Λανθασμένος χρόνος λήξης"
+      ],
+      "Recurring event has no occurrences": [
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
+      ],
+      "Time zone not supported": [
+        "Μη υποστηριζόμενη ζώνη ώρας"
       ]
     },
     "Import calendar": {
@@ -8541,6 +8526,9 @@
       ],
       "Swiss based": [
         "Με έδρα στην Ελβετία"
+      ],
+      "Switch to": [
+        "Αλλάξτε σε"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."

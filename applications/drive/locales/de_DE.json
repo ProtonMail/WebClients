@@ -2569,49 +2569,6 @@
         "Priorisierter Support"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Hol dir ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Für ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Alle zwei Jahre für ${ amountBilled } in Rechnung gestellt. Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Jährlich für ${ amountBilled } in Rechnung gestellt. Spare ${ amountSave } bei 2 individuellen ${ BRAND_NAME } Unlimited-Jahresabonnements."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB Speicherplatz"
-      ],
-      "2 users": [
-        "2 Benutzer"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Voller Zugriff auf alle ${ BRAND_NAME }-Produkte"
-      ],
-      "You save ${ amountSave }": [
-        "Du sparst ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Alles von ${ BRAND_NAME } für zwei Personen."
-      ],
-      "Double your storage": [
-        "Verdopple deinen Speicherplatz"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Wir präsentieren ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESCHREIBUNG:\n${ eventDescription }"
@@ -3326,6 +3283,11 @@
         "Kein Bild ausgewählt"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Unerwarteter Fehler"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Angehängte ICS-Datei konnte nicht entschlüsselt werden."
@@ -4003,6 +3965,9 @@
         "${ invitations.length } ausstehende Einladung",
         "${ invitations.length } ausstehende Einladungen"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausiert",
         "${ pausedCount } pausiert"
@@ -4140,6 +4105,9 @@
       ],
       "And access it from anywhere": [
         "Und greife von überall darauf zu"
+      ],
+      "Anonymous": [
+        "Anonym"
       ],
       "Anyone with this link can access your file.": [
         "Jeder mit diesem Link kann auf deine Datei zugreifen."
@@ -5051,6 +5019,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Wechseln zu"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
@@ -8100,6 +8071,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
+      ],
+      "Team policies": [
+        "Gruppenrichtlinien"
       ]
     },
     "PassFamilyPlan2024": {
