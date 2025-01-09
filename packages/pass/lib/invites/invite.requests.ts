@@ -77,12 +77,12 @@ export const createUserInvites = async (
 
     const targetKeys = await (async (): Promise<InviteTargetKey[]> => {
         /** If no `itemId` is supplied then we're dealing with
-         * a vault invite -> encrypt the vault keys */
+         * a vault invite -> encrypt the vault keys. */
         if (!itemId) return shareManager.getVaultShareKeys();
 
         /** For item sharing : encrypt the items keys.
          * We're currently not caching the item keys, as
-         * such resolve them */
+         * such resolve them. FIXME: use caching. */
         const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
         return Promise.all(encryptedItemKeys.map((key) => PassCrypto.openItemKey({ encryptedItemKey: key, shareId })));
     })();

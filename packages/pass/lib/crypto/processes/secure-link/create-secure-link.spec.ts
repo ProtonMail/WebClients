@@ -1,5 +1,5 @@
 import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { ItemKey} from '@proton/pass/types';
+import type { ItemKey } from '@proton/pass/types';
 import { PassEncryptionTag, type VaultShareKey } from '@proton/pass/types';
 
 import { createSecureLink } from './create-secure-link';
@@ -15,14 +15,14 @@ describe('createSecureLink crypto process', () => {
             rotation: 1,
         };
 
-        const vaultKey: VaultShareKey = {
+        const shareKey: VaultShareKey = {
             key: await importSymmetricKey(rawVaultKey),
             raw: rawVaultKey,
             rotation: 1,
             userKeyId: 'userkey-id',
         };
 
-        const result = await createSecureLink({ itemKey, vaultKey });
+        const result = await createSecureLink({ itemKey, shareKey });
 
         expect(result.encryptedItemKey instanceof Uint8Array).toBe(true);
         expect(result.secureLinkKey instanceof Uint8Array).toBe(true);
@@ -30,7 +30,7 @@ describe('createSecureLink crypto process', () => {
 
         const secureLinkKey = await importSymmetricKey(result.secureLinkKey);
         const decryptedItemKey = await decryptData(secureLinkKey, result.encryptedItemKey, PassEncryptionTag.ItemKey);
-        const decryptedLinkKey = await decryptData(vaultKey.key, result.encryptedLinkKey, PassEncryptionTag.LinkKey);
+        const decryptedLinkKey = await decryptData(shareKey.key, result.encryptedLinkKey, PassEncryptionTag.LinkKey);
 
         expect(decryptedItemKey).toStrictEqual(itemKey.raw);
         expect(decryptedLinkKey).toStrictEqual(result.secureLinkKey);
