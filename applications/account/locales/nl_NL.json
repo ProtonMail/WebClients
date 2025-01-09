@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -3904,49 +3904,6 @@
         "Prioriteitsondersteuning"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Neem ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Neem het voor ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Elke 2 jaar gefactureerd aan ${ amountBilled }. Kortingen zijn gebaseerd op de standaard maandelijkse prijs."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Jaarlijks gefactureerd op ${ amountBilled }. Bespaar ${ amountSave } op 2 individuele ${ BRAND_NAME } Unlimited jaarabonnementen."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB opslagruimte"
-      ],
-      "2 users": [
-        "2 gebruikers"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Volledige toegang tot alle ${ BRAND_NAME } producten"
-      ],
-      "You save ${ amountSave }": [
-        "U bespaart ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Alles van ${ BRAND_NAME }, voor 2."
-      ],
-      "Double your storage": [
-        "Verdubbel uw opslagruimte"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Nieuw: ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duration": {
       "120 minutes": [
         "120 minuten"
@@ -5197,6 +5154,11 @@
         "Afspraak van ${ timeString }, ${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Onverwachte fout"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Bijgevoegd ICS-bestand kon niet worden ontsleuteld"
@@ -6294,6 +6256,47 @@
         "Geen verificatiemethode beschikbaar"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Agenda-tijdzone niet ondersteund"
+      ],
+      "Edited event not supported": [
+        "Bewerkte afspraak niet ondersteund"
+      ],
+      "End time out of bounds": [
+        "Eindtijd valt buiten de grenzen"
+      ],
+      "Event validation failed": [
+        "Validatie van afspraak mislukt"
+      ],
+      "Floating times not supported": [
+        "Zwevende tijden niet ondersteund"
+      ],
+      "Malformed all-day event": [
+        "Misvormde afspraak gedurende de hele dag"
+      ],
+      "Malformed end time": [
+        "Misvormde eindtijd"
+      ],
+      "Malformed recurring event": [
+        "Misvormde periodieke afspraak"
+      ],
+      "Malformed start time": [
+        "Misvormde begintijd"
+      ],
+      "Recurring event has no occurrences": [
+        "Terugkerende afspraak heeft geen voorvallen"
+      ],
+      "Recurring rule not supported": [
+        "Herhalingsvoorwaarde niet ondersteund"
+      ],
+      "Start time out of bounds": [
+        "Begintijd valt buiten de grenzen"
+      ],
+      "Time zone not supported": [
+        "Tijdzone niet ondersteund"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
@@ -6915,6 +6918,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Nadat ze vergrendeld zijn, moeten organisatieleden ${ PASS_APP_NAME } ontgrendelen met hun wachtwoord of pincode, etc."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
+      ],
       "Align left": [
         "Links uitlijnen"
       ],
@@ -7218,6 +7224,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
@@ -8409,6 +8419,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
+      ],
       "Server is currently down": [
         "Server is momenteel offline"
       ],
@@ -8541,6 +8554,9 @@
       ],
       "Swiss based": [
         "Gevestigd in Zwitserland"
+      ],
+      "Switch to": [
+        "Wissel naar"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."

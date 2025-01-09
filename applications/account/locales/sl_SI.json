@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -1909,6 +1909,9 @@
       "Add link to your email footer": [
         "Dodajte povezavo v podpis svojega e-poštnega sporočila."
       ],
+      "Continue": [
+        "Nadaljuj"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -2167,6 +2170,9 @@
         "${ users } uporabnika",
         "${ users } uporabniki",
         "${ users } uporabnikov"
+      ],
+      "Total": [
+        "Skupaj"
       ],
       "Total for ${ n } month": [
         "Skupaj za ${ n } mesec",
@@ -3715,35 +3721,6 @@
         "Prednostna podpora"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Pridobi ${ BRAND_NAME } Duo"
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB prostora za shranjevanje"
-      ],
-      "2 users": [
-        "2 uporabnika"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Poln dostop do vseh izdelkov ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Prihranite ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "Double your storage": [
-        "Podvojite si prostor za shranjevanje"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duration": {
       "120 minutes": [
         "120 minut"
@@ -4173,6 +4150,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Opozorilo"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Neimenovan"
       ]
     },
     "Error": {
@@ -5818,6 +5800,12 @@
       ],
       "Checkout": [
         "Na blagajno"
+      ],
+      "City": [
+        "Mesto"
+      ],
+      "Country": [
+        "Država"
       ],
       "Create your account": [
         "Ustvarite svoj račun"
@@ -9924,6 +9912,9 @@
       ],
       "Notifications": [
         "Obvestila"
+      ],
+      "Numbers": [
+        "Številke"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 geslo"
@@ -14570,6 +14561,11 @@
         "Podrobnosti o uporabniku:"
       ]
     },
+    "sso: auth device state": {
+      "Unknown": [
+        "Neznan"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Preklic vaše naročnine, počakajte"
@@ -16444,6 +16440,9 @@
       "Send new invite?": [
         "Pošlji novo povabilo?"
       ],
+      "Service": [
+        "Storitev"
+      ],
       "Session management": [
         "Upravljanje seje"
       ],
@@ -16515,6 +16514,9 @@
       ],
       "Start import process": [
         "Začni uvažati"
+      ],
+      "State": [
+        "Država"
       ],
       "Status": [
         "Stanje"
@@ -17003,6 +17005,17 @@
     "Tor out of date": {
       "stable release": [
         "izdajno različico"
+      ]
+    },
+    "Transaction type display as badge": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "Cash": [
+        "Gotovina"
+      ],
+      "Payment": [
+        "Plačilo"
       ]
     },
     "unprivatization": {

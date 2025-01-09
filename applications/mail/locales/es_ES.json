@@ -1562,7 +1562,7 @@
     },
     "Assistant feedback": {
       "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
-        "Al enviar este comentario, el prompt y tus notas también serán visibles al equipo de moderación de ${ BRAND_NAME }."
+        "Al enviar este comentario, la solicitud y tus notas serán visibles para el equipo de moderación de ${ BRAND_NAME }."
       ]
     },
     "Assistant option": {
@@ -3014,7 +3014,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "Irán (República Islámica)"
+        "República Islámica de Irán"
       ],
       "Isle of Man": [
         "Isla de Man"
@@ -3825,49 +3825,6 @@
       ],
       "Priority support": [
         "Soporte prioritario"
-      ]
-    },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Obtén ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Obtenlo por ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Se factura cada dos años por ${ amountBilled }. Los descuentos se aplican sobre el precio mensual estándar."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Facturación anual de ${ amountBilled }. Ahorra ${ amountSave } en 2 suscripciones individuales anuales ilimitadas de ${ BRAND_NAME }."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB de almacenamiento"
-      ],
-      "2 users": [
-        "2 usuarios"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Acceso completo a todos los productos de ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Ahorras ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Todo ${ BRAND_NAME } para 2"
-      ],
-      "Double your storage": [
-        "Doblar tu almacenamiento"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -4871,7 +4828,7 @@
         "Invitación de: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "Las cuentas Lifetime no pueden unirse a un plan familiar."
+        "Las cuentas de por vida no pueden unirse a un plan familiar."
       ],
       "Manage addresses": [
         "Gestiona las direcciones"
@@ -6530,7 +6487,7 @@
         "Si tu alias es vendido o filtrado, simplemente desactívalo para dejar de recibir spam."
       ],
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
-        "Si tu contraseña termina en la dark web, ${ BRAND_NAME } puedes decirte de cuál servicio fueron filtrados tus datos y cómo detener el daño."
+        "Si tu contraseña termina en la red oscura, ${ BRAND_NAME } puedes decirte de cuál servicio fueron filtrados tus datos y cómo detener el daño."
       ],
       "Image description": [
         "Descripción de la imagen"
@@ -6567,7 +6524,7 @@
         "Incluir Spam/Papelera"
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Incluye el prompt y la respuesta para ayudarnos a mejorar la exactitud."
+        "Incluye tu pregunta y la respuesta para ayudarnos a mejorar la exactitud."
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6596,8 +6553,8 @@
       "JCB logo": [
         "Logo de JCB"
       ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Únete al programa ${ PROTON_SENTINEL_NAME } para tener el nivel más alto en seguridad de la cuenta y soporte."
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Únete al programa ${ PROTON_SENTINEL_NAME } para disfrutar de nuestro nivel más alto en seguridad de tu cuenta y soporte."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
@@ -6855,7 +6812,7 @@
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Por favor, ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "Please open the document to view it.": [
@@ -7115,6 +7072,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tu suscripción terminará pronto: reactívala antes del ${ byDate } para mantener los beneficios del ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Cambiar a"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -7356,7 +7316,7 @@
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Desactívala para buscar sólo por fecha, nombre, dirección de correo electrónico o asunto. Para desactivar el contenido de los mensajes de búsqueda (y eliminar los mensajes descargados para activar esta función), ve a Configuración."
+        "Desactívala para buscar únicamente por fecha, nombre, dirección de correo electrónico o asunto. Para desactivar el contenido de los mensajes de búsqueda (y eliminar los mensajes descargados para activar esta función), ve a Configuración."
       ],
       "Turn on to search the content of your messages": [
         "Actívala para buscar en el contenido de sus mensajes."
@@ -9536,7 +9496,7 @@
         "Acuerdo para el tratamiento de datos conforme al RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correos electrónicos con un prompt"
+        "Genera correos electrónicos con un aviso"
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
@@ -9742,7 +9702,7 @@
         "Compartir la caja fuerte (hasta ${ n } personas)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+        "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
     },
     "new_plans: feature highlight": {
@@ -9863,6 +9823,14 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Disfruta de Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -9875,14 +9843,6 @@
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Disfruta de Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puedes cancelar en cualquier momento."
       ]
     },
     "new_plans: tooltip": {
@@ -10283,7 +10243,7 @@
         "Borra los correos electrónicos eliminados y spam después de 30 días."
       ],
       "Dark Web Monitoring": [
-        "Monitoreo de la Dark Web"
+        "Monitoreo de la red oscura"
       ],
       "Distraction-free emailing": [
         "Correo electrónico sin distracciones"
@@ -11587,9 +11547,6 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ahora cargamos las imágenes por defecto y bloqueamos el rastreo por parte de los remitentes. Esto se puede cambiar en ${ settingsLink }."
       ],
-      "You can now collapse the navigation bar.": [
-        "Ahora puedes contraer la barra de navegación."
-      ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde."
       ],
@@ -11941,7 +11898,7 @@
         "Privacidad y seguridad integrales"
       ],
       "Dark web monitoring": [
-        "Monitoreo de la Dark Web"
+        "Monitoreo de la red oscura"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Soporte para aplicación de escritorio y cliente de correo (vía IMAP)"
@@ -11974,7 +11931,7 @@
         "Cómo nuestro equipo de atención al cliente ha llevado nuestra aplicación VPN directamente a la mano de la gente."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "Cómo contraatacamos cuando ${ BRAND_NAME } fue bloqueada por una campaña agresiva ."
+        "Cómo contraatacamos cuando ${ BRAND_NAME } fue bloqueada por una campaña agresiva."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Cómo apoyamos a activistas locales cuando la privacidad y la libertad de expresión fueron amenazadas."
@@ -12079,7 +12036,7 @@
         "Cuando canceles ${ planName }, se te pasará a ${ BRAND_NAME } Free el cual ofrece hasta 1 GB de almacenamiento en Mail y hasta 5 GB en Drive. Tu equipo experimentará interrupciones en su trabajo debido a que los usuarios adicionales no están soportados en el plan gratuito."
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Cuando tu suscripción a ${ planName } termine el ${ expiryDate }, pasarás al plan ${ BRAND_NAME } Free."
+        "Cuando tu suscripción a ${ planName } termine el ${ expiryDate }, pasarás al plan gratuito ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Bono de almacenamiento gratuito al año"
@@ -12627,7 +12584,7 @@
         "Descargar la aplicación de escritorio"
       ],
       "Enable Dark Web Monitoring": [
-        "Activar el monitoreo de la Dark Web"
+        "Activar el monitoreo de la red oscura"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Obtener mi dirección «@${ PM_DOMAIN }»"
@@ -13151,7 +13108,7 @@
         "No se han encontrado rastreadores."
       ],
       "No-reply address detected": [
-        "Se ha detectado una dirección de no responder (no-reply)."
+        "Se ha detectado una dirección de no responder"
       ],
       "Notes": [
         "Notas"

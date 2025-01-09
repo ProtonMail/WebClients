@@ -1646,6 +1646,9 @@
     "bf2023: renew": {
       "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
         "O preço com desconto especial de ${ discountedPrice } é válido pelos primeiros ${ cycle } meses. Após esse período, será renovado automaticamente com o preço de ${ nextPrice } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Após este período, será automaticamente renovado a cada mês por ${ nextPrice } . Pode cancelar a qualquer momento."
       ]
     },
     "bf2023: Tooltip": {
@@ -3821,49 +3824,6 @@
         "Apoio ao cliente prioritário"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Obtenha o ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Obtenha por ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Faturação a cada 2 anos de ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Faturação anual de ${ amountBilled }. Poupe ${ amountSave } em 2 subscrições anuais ilimitadas do ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB de armazenamento"
-      ],
-      "2 users": [
-        "2 utilizadores"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Acesso total a todos os produtos da ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Poupe ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Todas as funcionalidades de ${ BRAND_NAME }, para 2 pessoas."
-      ],
-      "Double your storage": [
-        "Duplique o seu armazenamento"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Apresentando ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -5445,6 +5405,9 @@
       "End time out of bounds": [
         "Hora final fora dos limites"
       ],
+      "Event validation failed": [
+        "Erro ao validar o evento"
+      ],
       "Floating times not supported": [
         "Não são suportadas horas flutuantes"
       ],
@@ -6560,6 +6523,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
       ],
@@ -6584,8 +6550,8 @@
       "JCB logo": [
         "Logótipo JCB"
       ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Aderir ao programa ${ PROTON_SENTINEL_NAME } para o nível mais alto de segurança de conta e apoio ao cliente."
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Junte-se ao programa ${ PROTON_SENTINEL_NAME } para o nosso nível mais alto de segurança de conta e apoio ao cliente."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirme apenas a sua seleção e faremos o resto."
@@ -7102,6 +7068,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "A subscrição termina: Reative até ${ byDate } para manter os seus benefícios ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Mudar para"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -9655,7 +9624,7 @@
         "TOR sobre VPN"
       ],
       "Two-factor authentication": [
-        "Autenticação em dois fatores"
+        "Autenticação de dois fatores"
       ],
       "Unlimited devices": [
         "Número ilimitado de dispositivos"
@@ -9689,6 +9658,9 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Cofres partilhados do ${ PASS_SHORT_APP_NAME } ilimitados por utilizador"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Cofres partilhados ilimitados com permissões de acesso"
       ],
       "Unlimited vault sharing": [
         "Partilha de cofre ilimitada"
@@ -9787,6 +9759,9 @@
       "Enhanced security and premium features for teams.": [
         "Segurança melhorada e funcionalidades premium para equipas."
       ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Proteção essencial e colaboração segura para um número ilimitado de utilizadores."
+      ],
       "For next-level password management and identity protection.": [
         "Para uma gestão de palavras-passe e proteção de identidade de nível superior."
       ],
@@ -9842,6 +9817,14 @@
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obtenha o Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "O preço com desconto de ${ priceCoupon } é válido pelo primeiro mês. Após esse período, será automaticamente renovado por ${ priceMailPlus } . Pode cancelar a qualquer momento."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Apagar a conta?"
@@ -9856,20 +9839,15 @@
         "Alterar o plano?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Obtenha o Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "O preço com desconto de ${ priceCoupon } é válido pelo primeiro mês. Após esse período, será automaticamente renovado por ${ priceMailPlus } . Pode cancelar a qualquer momento."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja a sua agenda com encriptação de ponta a ponta. Inclui suporte para agendas personalizadas, partilha de agenda e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Aceda a conteúdo bloqueado e navegue de forma privada. Inclui ${ serversAndCountries }, as velocidades mais altas da VPN, acesso a serviços de streaming em todo o mundo, bloqueador de malware e de anúncios, transferências rápidas de BitTorrent e muito mais."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
         "Aceda ao ${ MAIL_APP_NAME } e o ${ CALENDAR_APP_NAME } com facilidade do seu desktop."
@@ -9889,8 +9867,14 @@
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "Limpe automaticamente mensagens com mais de 30 dias do Lixo e do Spam"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Encaminhe e-mails automaticamente enviados para a sua conta do ${ MAIL_APP_NAME } para qualquer outro endereço de e-mail."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "O envio de e-mail promocional ou programático em massa não é atualmente suportado. Recomendamos a utilização de um fornecedor de serviços de e-mail dedicado para este caso de utilização."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Escolha horários personalizados para ser lembrado sobre um e-mail ou para a sua mensagem ser enviada."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crie vários endereços de e-mail para as suas identidades online, por exemplo, JoãoCompras@${ domain } para as contas de compras, JoãoNotícias@${ domain } para as subscrições de notícias"
@@ -9955,6 +9939,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nos dias úteis, a equipa de apoio ao cliente de ${ BRAND_NAME } irá ajudá-lo no prazo de 24 horas após o seu pedido."
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Uma ligação VPN permite que um dispositivo se conecte ao${ VPN_APP_NAME } em qualquer momento. Por exemplo, para ligar um telemóvel e um computador portátil ao${ VPN_APP_NAME } em simultâneo, são necessárias duas ligações à VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
@@ -10027,6 +10014,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partilhe os seus ficheiros ou pastas com qualquer pessoa, utilizando ligações seguras e partilháveis."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "O SMTP permite que serviços ou dispositivos de terceiros enviem e-mails através do ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Especialmente concebido, o NetShield protege o seu dispositivo e acelera a navegação bloqueando anúncios, rastreadores e malware."
@@ -10462,6 +10452,9 @@
       ],
       "The organization key must be activated first.": [
         "Tem de ativar a chave da organização primeiro."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Precisa de acesso à chave da organização para executar esta operação."
       ]
     },
     "Payment method option": {
@@ -10560,6 +10553,9 @@
       ],
       "Something went wrong. Please try again later.": [
         "Ocorreu um erro. Tente novamente mais tarde."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Não foi possível autenticar o seu método de pagamento. Escolha outro método de pagamento ou tente novamente."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
@@ -11542,9 +11538,6 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por padrão e impedimos que os remetentes o rastreiem. Isto pode ser alterado em ${ settingsLink }."
       ],
-      "You can now collapse the navigation bar.": [
-        "Agora, pode fechar a barra de navegação."
-      ],
       "You can now schedule your messages to be sent later": [
         "Pode agora agendar as suas mensagens a serem enviadas mais tarde"
       ],
@@ -11686,6 +11679,12 @@
       ],
       "Your storage is full. ${ cta }.": [
         "O seu armazenamento está cheio. ${ cta }"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Deixará de ter acesso a ${ gb } de espaço de armazenamento e ao suporte prioritário."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Perderá o acesso ao armazenamento adicional, aos endereços de e-mail, aliases, calendários, assim como o suporte prioritário."
       ]
     },
     "Subscription": {
@@ -11901,6 +11900,9 @@
       "Helping activists in Hong Kong": [
         "Ajudar ativistas em Hong Kong"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Como a nossa equipa de apoio ao cliente conseguiu a nossa aplicação VPN diretamente nas mãos das pessoas."
+      ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
         "Aqui está como reagimos quando ${ BRAND_NAME } foi bloqueada durante uma campanha agressiva."
       ],
@@ -11996,6 +11998,9 @@
       ],
       "Watch the interview": [
         "Assistir à entrevista"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "O que perde ao cancelar o ${ planName }"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Ao cancelar o ${ planName }, a sua conta será reduzida para o ${ BRAND_NAME } Free, que oferece apenas até 1 GB de armazenamento de e-mail e até 5 GB de armazenamento no Drive. Também perderá quaisquer bónus de armazenamento previamente atribuído."
@@ -13489,6 +13494,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Será faturado a cada 12 meses no valor de ${ renewPrice }."
+      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "A sua subscrição será renovada automaticamente dentro de ${ cycle } mês.",
         "A sua subscrição será renovada automaticamente em ${ cycle } meses."
