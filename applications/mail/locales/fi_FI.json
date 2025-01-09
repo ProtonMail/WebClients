@@ -3814,49 +3814,6 @@
         "Ensisijainen tuki"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Hanki ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Hanki se hintaan ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Laskutetaan kahden vuoden välein hintaan ${ amountBilled }. Alennukset perustuvat normaaliin kuukausihinnoitteluun."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Laskutetaan vuosittain hintaan ${ amountBilled }. Säästä ${ amountSave }, kahden henkilön vuosittaisiin ${ BRAND_NAME } Unlimited -tilauksiin verrattuna."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 Tt tallennustilaa"
-      ],
-      "2 users": [
-        "2 käyttäjää"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Täysi pääsy kaikkiin ${ BRAND_NAME } -tuotteisiin"
-      ],
-      "You save ${ amountSave }": [
-        "Säästät ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Kaikki ${ BRAND_NAME }in tarjoama, kahdelle."
-      ],
-      "Double your storage": [
-        "Tuplaa tallennustilasi"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Esittelyssä ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "KUVAUS:\n${ eventDescription }"
@@ -6517,9 +6474,6 @@
       ],
       "JCB logo": [
         "JCB-logo"
-      ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Liity ${ PROTON_SENTINEL_NAME } ohjelmaan saadaksesi korkeimman tason turvan tilillesi ja tuen."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
@@ -9752,6 +9706,14 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hanki Mail Plus hintaan ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -9764,14 +9726,6 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hanki Mail Plus hintaan ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
       ]
     },
     "new_plans: tooltip": {
@@ -11457,9 +11411,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyt kuvat ladataan oletusarvoisesti ja lähettäjiä estetään seuraamasta sinua. Tätä voidaan muuttaa ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Voit nyt supistaa navigointipalkin"
       ],
       "You can now schedule your messages to be sent later": [
         "Voit nyt ajoittaa viestiesi lähetyksen myöhempään ajankohtaan"

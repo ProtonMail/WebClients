@@ -3824,49 +3824,6 @@
         "Prioriterad support"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Skaffa ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Skaffa det för ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Faktureras vartannat är på ${ amountBilled }. Rabatter baseras på standardpriset per månad."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Faktureras årligen på ${ amountBilled }. Spara ${ amountSave } jämfört med 2 individuella och årliga ${ BRAND_NAME } Unlimited-prenumerationer"
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB lagringsutrymme"
-      ],
-      "2 users": [
-        "2 användare"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Full åtkomst till alla ${ BRAND_NAME }-produkter"
-      ],
-      "You save ${ amountSave }": [
-        "Du sparar ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Allt av ${ BRAND_NAME }, för 2."
-      ],
-      "Double your storage": [
-        "Dubbla ditt lagringsutrymme"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Introducerar ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESKRIVNING:\n${ eventDescription }"
@@ -6541,9 +6498,6 @@
       ],
       "JCB logo": [
         "JCB-logga"
-      ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Gå med i ${ PROTON_SENTINEL_NAME }-programmet för högsta nivå av kontosäkerhet och support."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
@@ -9782,6 +9736,17 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Skaffa Mail Plus för ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Det rabatterade priset på ${ priceCoupon } är giltigt den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Dun kan säga upp när som helst."
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -9794,17 +9759,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaffa Mail Plus för ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceCoupon } är giltigt den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Dun kan säga upp när som helst."
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -11496,9 +11450,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi laddar nu bilder som standard och blockerar avsändare från att spåra dig. Detta kan ändras i ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Du kan nu minimera navigeringsfältet."
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu schemalägga dina meddelanden för att skickas senare"

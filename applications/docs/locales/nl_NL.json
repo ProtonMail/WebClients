@@ -396,6 +396,9 @@
       "Merge contacts": [
         "Contacten samenvoegen"
       ],
+      "More actions": [
+        "Meer acties"
+      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
@@ -2353,49 +2356,6 @@
         "Prioriteitsondersteuning"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Neem ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Neem het voor ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Elke 2 jaar gefactureerd aan ${ amountBilled }. Kortingen zijn gebaseerd op de standaard maandelijkse prijs."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Jaarlijks gefactureerd op ${ amountBilled }. Bespaar ${ amountSave } op 2 individuele ${ BRAND_NAME } Unlimited jaarabonnementen."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB opslagruimte"
-      ],
-      "2 users": [
-        "2 gebruikers"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Volledige toegang tot alle ${ BRAND_NAME } producten"
-      ],
-      "You save ${ amountSave }": [
-        "U bespaart ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Alles van ${ BRAND_NAME }, voor 2."
-      ],
-      "Double your storage": [
-        "Verdubbel uw opslagruimte"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Nieuw: ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESCHRIJVING:\n${ eventDescription }"
@@ -3098,6 +3058,11 @@
         "Geen afbeelding geselecteerd"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Onverwachte fout"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Bijgevoegd ICS-bestand kon niet worden ontsleuteld"
@@ -3407,6 +3372,47 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Agenda-tijdzone niet ondersteund"
+      ],
+      "Edited event not supported": [
+        "Bewerkte afspraak niet ondersteund"
+      ],
+      "End time out of bounds": [
+        "Eindtijd valt buiten de grenzen"
+      ],
+      "Event validation failed": [
+        "Validatie van afspraak mislukt"
+      ],
+      "Floating times not supported": [
+        "Zwevende tijden niet ondersteund"
+      ],
+      "Malformed all-day event": [
+        "Misvormde afspraak gedurende de hele dag"
+      ],
+      "Malformed end time": [
+        "Misvormde eindtijd"
+      ],
+      "Malformed recurring event": [
+        "Misvormde periodieke afspraak"
+      ],
+      "Malformed start time": [
+        "Misvormde begintijd"
+      ],
+      "Recurring event has no occurrences": [
+        "Terugkerende afspraak heeft geen voorvallen"
+      ],
+      "Recurring rule not supported": [
+        "Herhalingsvoorwaarde niet ondersteund"
+      ],
+      "Start time out of bounds": [
+        "Begintijd valt buiten de grenzen"
+      ],
+      "Time zone not supported": [
+        "Tijdzone niet ondersteund"
       ]
     },
     "Import calendar": {
@@ -3807,11 +3813,17 @@
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
+      "Actions": [
+        "Acties"
+      ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
@@ -3936,6 +3948,10 @@
       ],
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
       ],
       "Create in": [
         "Maak in"
@@ -4189,6 +4205,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "Invite": [
+        "Uitnodigen"
       ],
       "Invite link copied": [
         "Link met uitnodiging gekopieerd"
@@ -4482,6 +4501,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
@@ -4505,6 +4527,12 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Deelbare koppeling voor ${ boldNameText }"
+      ],
+      "Shared by": [
+        "Gedeeld door"
+      ],
+      "Shared on": [
+        "Gedeeld op"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -4535,6 +4563,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Wissel naar"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."

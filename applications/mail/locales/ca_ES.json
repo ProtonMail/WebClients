@@ -3822,49 +3822,6 @@
         "Suport prioritari"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Obtingueu ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Obteniu-lo per ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Es factura cada 2 anys a ${ amountBilled }. Els descomptes es basen en el preu mensual estàndard."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Facturació anual a ${ amountBilled }. Estalvieu ${ amountSave } en 2 subscripcions individuals de ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB d'emmagatzematge"
-      ],
-      "2 users": [
-        "2 usuaris"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Accés complet a tots els productes de ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Estalvieu ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Tot allò de ${ BRAND_NAME }, per a 2."
-      ],
-      "Double your storage": [
-        "Dobleu l'emmagatzematge"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Presentem ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPCIÓ:\n${ eventDescription }"
@@ -5910,7 +5867,7 @@
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantenen sense canvis."
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantenen sense canvis."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
@@ -6591,8 +6548,8 @@
       "JCB logo": [
         "Logotip de JCB"
       ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Uniu-vos al programa ${ PROTON_SENTINEL_NAME } per obtenir el més alt nivell de seguretat i suport del compte."
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Uniu-vos al programa ${ PROTON_SENTINEL_NAME } per beneficiar del nostre nivell més alt de seguretat i suport del vostre compte."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
@@ -6799,7 +6756,7 @@
         "Mida de l'organització"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest report."
+        "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
@@ -6945,7 +6902,7 @@
         "Registrant la vostra subscripció..."
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
-        "Recordeu actualitzar aquesta informació al vostre gestor de contrasenyes o allà on conserveu la informació i les credencials del vostre compte."
+        "Recordeu actualitzar aquesta informació al gestor de contrasenyes o a qualsevol lloc on guardeu les vostres dades d'accés."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "S'esborren totes les dades associades a aquesta aplicació (inclosos els missatges descarregats, etc.)"
@@ -7075,7 +7032,7 @@
         "En pausa fins demà a les ${ formattedTime }"
       ],
       "Snoozing this conversation will be canceled.": [
-        "La pausa d'aquesta conversa es cancel·larà."
+        "Es cancel·larà la posposició d'aquesta conversa."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -7110,6 +7067,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Canvia a"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
@@ -7129,7 +7089,7 @@
         "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
       ],
       "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
-        "Sembla que l'adreça de correu electrònic ${ boldNoReplyEmail } no accepta respostes. Esteu segur que voleu enviar el vostre missatge?"
+        "Sembla que l'adreça de correu electrònic ${ boldNoReplyEmail } no accepta respostes. Segur que voleu enviar el missatge?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Les dades xifrades són lleugerament més grans a causa de la sobrecàrrega del xifratge i les signatures, els quals garanteixen la seguretat de les vostres dades."
@@ -7351,7 +7311,7 @@
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Desactiveu per cercar només per data, nom, adreça de correu electrònic o línia d'assumpte. Per desactivar el contingut dels missatges de cerca (i suprimir els missatges descarregats per activar aquesta funció), aneu a Preferències."
+        "Desactiveu per a cercar només per data, nom, adreça de correu electrònic o línia d'assumpte. Per a desactivar la cerca del contingut dels missatges (i suprimir els missatges descarregats per a activar aquesta funció), aneu a les Preferències."
       ],
       "Turn on to search the content of your messages": [
         "Activeu-ho per cercar el contingut dels missatges"
@@ -7477,7 +7437,7 @@
         "No hem pogut processar el vostre pagament."
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
-        "Hem detectat la creació de diversos comptes gratuïts, cosa que infringeix el nostre ${ termsLink }."
+        "Hem detectat la creació de diversos comptes gratuïts, cosa que infringeix els nostres ${ termsLink }."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Tenim plans dissenyats específicament per a usuaris com vosaltres que necessiten diverses adreces de correu electrònic."
@@ -7704,7 +7664,7 @@
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius i no podeu carregar-hi fitxers nous. Per a continuar utilitzant el vostre compte, pagueu les factures vençudes."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "La vostra subscripció ${ PASS_SHORT_APP_NAME } Plus es substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant de la vostra subscripció s'afegirà al vostre compte. L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } Lifetime no té preu de renovació, és un pagament únic per accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }."
+        "La vostra subscripció ${ PASS_SHORT_APP_NAME } Plus se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant de la vostra subscripció s'afegirà al vostre compte. L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
@@ -9855,6 +9815,14 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obteniu Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -9867,14 +9835,6 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Obteniu Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
       ]
     },
     "new_plans: tooltip": {
@@ -11578,9 +11538,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Per defecte, ara es carreguen les imatges i es bloca el seguiment per part de l'emissor. Això es pot canviar a ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Ara podeu col·lapsar la barra de navegació."
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"

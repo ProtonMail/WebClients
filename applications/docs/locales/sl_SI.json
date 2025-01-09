@@ -1072,6 +1072,9 @@
       ]
     },
     "Button": {
+      "Continue": [
+        "Nadaljuj"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -1120,6 +1123,9 @@
         "${ users } uporabnika",
         "${ users } uporabniki",
         "${ users } uporabnikov"
+      ],
+      "Total": [
+        "Skupaj"
       ],
       "Total for ${ n } month": [
         "Skupaj za ${ n } mesec",
@@ -2254,35 +2260,6 @@
       ],
       "Priority support": [
         "Prednostna podpora"
-      ]
-    },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Pridobi ${ BRAND_NAME } Duo"
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB prostora za shranjevanje"
-      ],
-      "2 users": [
-        "2 uporabnika"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Poln dostop do vseh izdelkov ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Prihranite ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "Double your storage": [
-        "Podvojite si prostor za shranjevanje"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Predstavljamo ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {

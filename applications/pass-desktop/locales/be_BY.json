@@ -755,6 +755,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена, калі вы выкарыстоўваеце паддамен (напрыклад, paddamen.damen.com). Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Пераканайцеся, што не выбраны параметр проксі-сервера, калі вы выкарыстоўваеце Cloudflare."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
       ],
@@ -766,6 +769,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Некаторыя рэгістратары DNS могуць патрабаваць поўны шлях да запісу. У гэтым выпадку выкарыстайце ${ domain } у якасці значэння дамена."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Некаторыя рэгістратары даменаў (Namecheap, Cloudflare і г.д.) могуць таксама выкарыстоўваць знак @ каранёвага дамена."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } - гэта спосаб аўтэнтыфікацыі электроннай пошты, які распрацаваны для выяўлення падробкі адраса адпраўніка падчас дастаўкі ліста. Настойліва рэкамендуецца наладзіць SPF, каб паменшыць верагоднасць з'яўлення вашых лістоў у папцы са спамам атрымальніка."
@@ -784,6 +790,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Гэты сэрвіс прапануе 2ФА. Уключыце гэту функцыю, каб дадаць бяспеку ўліковаму запісу."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Дадайце наступны запіс TXT, каб праверыць права ўласнасці. Некаторыя рэгістратары даменаў (напрыклад, Namecheap, Cloudflare і г.д.) могуць выкарыстоўваць знак @ для каранёвага дамена."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Разблакіруйце дадатковыя функцыі бяспекі і падрабязныя журналы для абароны сваёй прысутнасці ў інтэрнэце."
@@ -1713,7 +1722,7 @@
         "У ${ PASS_SHORT_APP_NAME } нататка элемента зашыфравана з дапамогай ключа шыфравання элемента і паглядзець яе могуць толькі карыстальнікі, якія маюць доступ да элемента. Нават супрацоўнікі ${ BRAND_NAME } або SimpleLogin не могуць убачыць яе."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Для атрымання лепшага досведу ад працы з ${ PASS_APP_NAME }, дайце неабходныя дазволы пашырэнню"
+        "Для атрымання лепшага досведу ад працы з ${ PASS_APP_NAME } дайце неабходныя дазволы пашырэнню"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Усталюйце ${ PASS_APP_NAME } для ${ browser.title }, каб хутка аўтазапаўняць вашы запісы ўваходу."
@@ -1990,9 +1999,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Псеўданім ужо адключаны і ён не будзе перасылаць электронныя лісты ў вашу паштовую скрыню"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Выкарыстоўвайце поўны шлях дамена. Напрыклад, moi-damen.com або moi-paddamen.moi-damen.com, калі вы выкарыстоўваеце паддамен."
@@ -3998,9 +4004,6 @@
       "Update available": [
         "Даступна абнаўленне"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
-      ],
       "Vault": [
         "Сховішча"
       ],
@@ -4205,6 +4208,9 @@
       ],
       "No results": [
         "Няма вынікаў"
+      ],
+      "No secure links matching": [
+        "Няма адпаведных бяспечных спасылак"
       ],
       "Offline": [
         "Па-за сеткай"

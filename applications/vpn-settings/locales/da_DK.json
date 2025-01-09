@@ -2406,49 +2406,6 @@
         "Prioriteret support"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Hent ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Fås til ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Faktureres hvert 2. år til ${ amountBilled }. Rabatter er baseret på den månedlige standardpris."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Faktureres årligt til ${ amountBilled }. Spar ${ amountSave } på 2 enkeltstående ${ BRAND_NAME }. Ubegrænset årlige abonnementer."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB lagerplads"
-      ],
-      "2 users": [
-        "2 brugere"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Fuld adgang til alle ${ BRAND_NAME }-produkter"
-      ],
-      "You save ${ amountSave }": [
-        "Du sparer ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Alt fra ${ BRAND_NAME }, for 2."
-      ],
-      "Double your storage": [
-        "Fordobl din lagerplads"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Vi præsenterer ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } tilføjet"
@@ -4979,6 +4936,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Du har ${ availableCount } ny server tilgængelig.",
+        "Du har ${ availableCount } nye servere tilgængelig."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -9509,6 +9470,10 @@
       "Activate user": [
         "Aktiver bruger"
       ],
+      "Add ${ totalServerCount } server?": [
+        "Tilføj ${ totalServerCount } server?",
+        "Tilføj ${ totalServerCount } servere?"
+      ],
       "Add address": [
         "Tilføj adresse"
       ],
@@ -10020,7 +9985,7 @@
         "Single sign-on"
       ],
       "Spam, block, and allow lists": [
-        "Spam-, blokerings- og tillad-lister"
+        "Spam-, blokerings- og tilladelseslister"
       ],
       "Status": [
         "Status"
@@ -10331,6 +10296,10 @@
       ],
       "Confirm all": [
         "Bekræft alle"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:",
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Så snart brugeren har givet sit samtykke, kan du hjælpe dem med at tilgå deres konto igen eller håndtere deres data."
