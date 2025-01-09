@@ -56,9 +56,7 @@ jest.mocked(useGetPublicKeysForEmail).mockReturnValue({
 });
 
 jest.mock('../../../../store/_shares/useDriveSharingFlags', () => ({
-    useDriveSharingFlags: jest
-        .fn()
-        .mockReturnValue({ isSharingExternalInviteDisabled: false, isSharingExternalInviteAvailable: true }),
+    useDriveSharingFlags: jest.fn().mockReturnValue({ isSharingExternalInviteDisabled: false }),
 }));
 
 const primaryPublicKey = 'primaryPublicKey';

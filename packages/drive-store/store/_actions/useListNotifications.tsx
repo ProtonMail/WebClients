@@ -207,41 +207,11 @@ export default function useListNotifications() {
         );
     };
 
-    const createDeletedSharedLinksNotifications = (
-        linkInfos: LinkInfo[],
-        ok: string[],
-        failures: { [linkId: string]: any }
-    ) => {
-        createSuccessMessage(
-            linkInfos,
-            ok,
-            (name: string) => c('Notification').t`The link to "${name}" was deleted`,
-            (numberOfItems: number) =>
-                c('Notification').ngettext(
-                    msgid`${numberOfItems} link to your item was deleted`,
-                    `${numberOfItems} links to your items were deleted`,
-                    numberOfItems
-                )
-        );
-        createFailureMessage(
-            linkInfos,
-            failures,
-            (name: string) => c('Notification').t`The link to "${name}" failed to be deleted`,
-            (numberOfItems: number) =>
-                c('Notification').ngettext(
-                    msgid`${numberOfItems} link to your item failed to be deleted`,
-                    `${numberOfItems} links to your items failed to be deleted`,
-                    numberOfItems
-                )
-        );
-    };
-
     return {
         createMovedItemsNotifications,
         createTrashedItemsNotifications,
         createRestoredItemsNotifications,
         createDeletedItemsNotifications,
-        createDeletedSharedLinksNotifications,
         createDeletedPublicItemsNotifications,
     };
 }

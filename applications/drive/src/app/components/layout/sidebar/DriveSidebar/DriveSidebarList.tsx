@@ -5,8 +5,6 @@ import { c, msgid } from 'ttag';
 import { SidebarList } from '@proton/components';
 
 import { type ShareWithKey, useDriveSharingFlags, useInvitationsView, useUserSettings } from '../../../../store';
-//TODO: This should be removed after full sharing rollout
-import { useSharedWithMeWithoutFF } from '../../../../store/_shares/useSharedWithMeWithoutFF';
 import DriveSidebarDevices from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';
@@ -25,10 +23,8 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
         setSidebarWidth(`${100 + extraWidth}%`);
     };
 
-    const { isSharingInviteAvailable, isDirectSharingDisabled } = useDriveSharingFlags();
-    // We prevent list shared with me items if kill switch enabled (isDirectSharingDisabled)
-    const { haveSharedWithMeItems } = useSharedWithMeWithoutFF(isSharingInviteAvailable || isDirectSharingDisabled);
-    const showSharedWithMeSection = (isSharingInviteAvailable || haveSharedWithMeItems) && !isDirectSharingDisabled;
+    const { isDirectSharingDisabled } = useDriveSharingFlags();
+    const showSharedWithMeSection = !isDirectSharingDisabled;
 
     const invitationsCountTitle = c('Info').ngettext(
         msgid`${invitations.length} pending invitation`,
