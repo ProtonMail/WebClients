@@ -147,6 +147,12 @@ export const createAsyncValidator = () => {
                 return;
             }
 
+            const cachedValue = cache[value];
+            if (cachedValue) {
+                set(cachedValue);
+                return;
+            }
+
             set({ state: AsyncValidationStateValue.Loading, value, message: '' });
             validator({ validate, value, set });
         },
