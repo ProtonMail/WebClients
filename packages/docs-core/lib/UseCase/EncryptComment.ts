@@ -7,13 +7,14 @@ import type { EncryptionContext } from '../Services/Encryption/EncryptionContext
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding'
 import metrics from '@proton/metrics'
-import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../Types/DocumentEntitlements'
+import { canKeysSign } from '../Types/DocumentEntitlements'
+import type { PublicDocumentKeys } from '@proton/drive-store'
 
 export class EncryptComment implements UseCaseInterface<string> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
 
   async execute(comment: string, markId: string, keys: DocumentKeys | PublicDocumentKeys): Promise<Result<string>> {
-    const encrypted = isPrivateDocumentKeys(keys)
+    const encrypted = canKeysSign(keys)
       ? await this.encryption.signAndEncryptData(
           stringToUtf8Array(comment),
           GetAssociatedEncryptionDataForComment({

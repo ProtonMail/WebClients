@@ -1,14 +1,19 @@
 import { getCanWrite, getCanAdmin, getIsOwner } from '@proton/shared/lib/drive/permissions'
-import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import {
+  isPublicNodeMeta,
+  type DocumentKeys,
+  type NodeMeta,
+  type PublicDocumentKeys,
+  type PublicNodeMeta,
+} from '@proton/drive-store'
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { DocumentRole } from '@proton/docs-shared'
+import type { PrivateKeyReference } from '@proton/crypto'
 
 export type DocumentEntitlements = {
   keys: DocumentKeys
   nodeMeta: NodeMeta
 }
-
-export type PublicDocumentKeys = Pick<DocumentKeys, 'documentContentKey'>
 
 export type PublicDocumentEntitlements = {
   keys: PublicDocumentKeys
@@ -18,21 +23,18 @@ export type PublicDocumentEntitlements = {
 export function isPublicDocumentEntitlements(
   entitlements: PublicDocumentEntitlements | DocumentEntitlements,
 ): entitlements is PublicDocumentEntitlements {
-  return isPublicDocumentKeys(entitlements.keys)
+  return isPublicNodeMeta(entitlements.nodeMeta)
 }
 
-export function isPrivateDocumentEntitlements(
-  entitlements: PublicDocumentEntitlements | DocumentEntitlements,
-): entitlements is DocumentEntitlements {
-  return isPrivateDocumentKeys(entitlements.keys)
+/** Returns true if the keychain contains a private key that can be used to sign data */
+export function canKeysSign(keys: {
+  userAddressPrivateKey?: PrivateKeyReference
+}): keys is { userAddressPrivateKey: PrivateKeyReference; userOwnAddress: string } {
+  return keys.userAddressPrivateKey !== undefined
 }
 
-export function isPublicDocumentKeys(keys: DocumentKeys | PublicDocumentKeys): keys is PublicDocumentKeys {
-  return !('userAddressPrivateKey' in keys)
-}
-
-export function isPrivateDocumentKeys(keys: DocumentKeys | PublicDocumentKeys): keys is DocumentKeys {
-  return 'userAddressPrivateKey' in keys
+export function doKeysBelongToAuthenticatedUser(keys: { userAddressPrivateKey?: PrivateKeyReference }): boolean {
+  return canKeysSign(keys)
 }
 
 export function rawPermissionToRole(permission: SHARE_MEMBER_PERMISSIONS): DocumentRole {
