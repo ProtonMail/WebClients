@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -6,18 +6,28 @@ import clsx from '@proton/utils/clsx';
 export interface Props {
     description?: ReactNode;
     children?: ReactNode;
+    topChildren?: ReactNode;
     title?: ReactNode;
     /** classes wrapper surrounding title only or title + description block */
     titleBlockClassName?: string;
     /** overall wrapper classname */
     className?: string;
+    style?: CSSProperties;
 }
 
-const OnboardingContent = ({ description, children, title, titleBlockClassName = 'mb-12', ...rest }: Props) => {
+const OnboardingContent = ({
+    description,
+    topChildren,
+    children,
+    title,
+    titleBlockClassName = 'mb-12',
+    ...rest
+}: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <div {...rest}>
+            {topChildren && <div className="mb-4">{topChildren}</div>}
             {!!(title || description) && (
                 <div className={clsx('text-center', titleBlockClassName)}>
                     {title && (
