@@ -420,14 +420,12 @@ export interface InvoiceResponse {
 }
 
 export interface Transaction {
-    TransactionId: number;
-    ExternalId: string;
-    AccountId: number;
+    TransactionID: number;
+    ExternalID: string;
     CurrencyCode: Currency;
     Type: TransactionType;
     Amount: number;
     State: TransactionState;
-    Gateway: number;
     CreatedAt: string;
 }
 

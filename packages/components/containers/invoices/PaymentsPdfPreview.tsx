@@ -43,7 +43,7 @@ const PaymentsPdfPreviewBase = ({ items, onDownload, getFilename }: Props, ref: 
 
         const getPDF = () => {
             if (isTransaction(item)) {
-                return getTransactionPDF(item.TransactionId);
+                return getTransactionPDF(item.TransactionID);
             }
 
             return getInvoicePDF(item.ID, getInvoicePaymentsVersion(item));
