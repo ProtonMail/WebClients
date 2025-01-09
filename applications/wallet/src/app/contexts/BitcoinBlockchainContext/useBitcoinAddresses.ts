@@ -407,11 +407,24 @@ export const useBitcoinAddresses = ({
                         await accountChainData.account.markReceiveAddressesUsedTo(0, account.LastUsedIndex);
                     }
 
+                    // If we detect higher used index from network, we mark as used until this index included
+                    const highestUsedAddressIndex = await accountChainData.account.getHighestUsedAddressIndexInOutput();
+                    const isLastUsedIndexUsed = !!(
+                        highestUsedAddressIndex && highestUsedAddressIndex >= account.LastUsedIndex
+                    );
+                    if (isLastUsedIndexUsed) {
+                        await accountChainData.account.markReceiveAddressesUsedTo(0, highestUsedAddressIndex);
+                        await accountChainData.account.markReceiveAddressesUsedTo(highestUsedAddressIndex);
+                    }
+
                     const receiveBitcoinAddress = await getCurrentReceiveBitcoinAddress(
                         account.ID,
-                        account.LastUsedIndex,
+                        isLastUsedIndexUsed ? highestUsedAddressIndex + 1 : account.LastUsedIndex,
                         accountChainData
                     );
+                    if (receiveBitcoinAddress.index !== account.LastUsedIndex) {
+                        await updateWalletAccountLastUsedIndex(wallet, account, receiveBitcoinAddress.index);
+                    }
 
                     const unusedAddresses = await manageBitcoinAddressPool({ wallet, account, accountChainData });
 
