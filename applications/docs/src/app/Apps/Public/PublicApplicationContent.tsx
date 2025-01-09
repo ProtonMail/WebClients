@@ -11,7 +11,7 @@ import { WordCountContextProvider } from '../../Components/WordCount/WordCountPr
 import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
 import SharedLayout from '../SharedLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
-import UserProvider from '../../Containers/ContextProvider'
+import DocsContextProvider from '../../Containers/DocsContextProvider'
 import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
@@ -66,7 +66,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
 
   return (
     <ApplicationProvider application={application}>
-      <UserProvider
+      <DocsContextProvider
         publicContext={{ user, localID, compat: publicDriveCompat, openParams: openAction }}
         privateContext={undefined}
       >
@@ -79,7 +79,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
             </Route>
           </Switch>
         </WordCountContextProvider>
-      </UserProvider>
+      </DocsContextProvider>
     </ApplicationProvider>
   )
 }

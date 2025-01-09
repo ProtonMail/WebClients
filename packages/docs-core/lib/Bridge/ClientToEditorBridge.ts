@@ -13,6 +13,23 @@ import { EditorToClientRequestHandler } from './EditorToClientRequestHandler'
 import { Logger } from '@proton/utils/logs'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 
+function isIrrelevantMessage(event: MessageEvent) {
+  if (typeof event.data !== 'object' || event.data === null) {
+    return false
+  }
+
+  if (!('source' in event.data)) {
+    return false
+  }
+
+  const source = event.data.source
+  if (typeof source !== 'string') {
+    return false
+  }
+
+  return source.includes('react-devtools')
+}
+
 export class ClientToEditorBridge {
   public readonly logger = new Logger('DocsClient', DOCS_EDITOR_DEBUG_KEY)
   public readonly editorInvoker = new EditorInvoker(this.editorFrame, this.logger)
@@ -36,7 +53,9 @@ export class ClientToEditorBridge {
 
     window.addEventListener('message', (event) => {
       if (event.source !== this.editorFrame.contentWindow) {
-        this.logger.info('Client ignoring message from unknown source', event.data)
+        if (!isIrrelevantMessage(event)) {
+          this.logger.info('Client ignoring message from unknown source', event.data)
+        }
         return
       }
 

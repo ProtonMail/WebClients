@@ -1,7 +1,6 @@
 import { Comment } from '../Models'
 import { GenerateUUID } from '@proton/docs-shared'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
-import { isPrivateDocumentKeys } from '../Types/DocumentEntitlements'
 import { Result } from '@proton/docs-shared'
 import { ServerTime } from '@proton/docs-shared'
 import metrics from '@proton/metrics'
@@ -39,7 +38,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       ServerTime.now(),
       dto.text,
       null,
-      isPrivateDocumentKeys(dto.entitlements.keys) ? dto.entitlements.keys.userOwnAddress : undefined,
+      dto.entitlements.keys.userOwnAddress,
       [],
       true,
       { verified: true },

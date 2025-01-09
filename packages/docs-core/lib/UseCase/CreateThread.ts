@@ -12,7 +12,6 @@ import metrics from '@proton/metrics'
 import { CommentThreadType } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
-import { isPrivateDocumentKeys } from '../Types/DocumentEntitlements'
 
 /**
  * Creates a new comment thread with the API, supplying and encrypting an initial comment.
@@ -45,7 +44,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       ServerTime.now(),
       dto.text,
       null,
-      isPrivateDocumentKeys(dto.entitlements.keys) ? dto.entitlements.keys.userOwnAddress : undefined,
+      dto.entitlements.keys.userOwnAddress,
       [],
       false,
       { verified: true },

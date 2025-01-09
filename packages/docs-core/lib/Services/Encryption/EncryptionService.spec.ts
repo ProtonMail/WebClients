@@ -200,7 +200,7 @@ describe('EncryptionService', () => {
       const result = await serviceWithoutCompat.getVerificationKey(mockEmail)
 
       expect(result.isFailed()).toBe(true)
-      expect(result.getError()).toBe('Failed to get verification key Error: User drive compat not found')
+      expect(result.getError()).toBe('Failed to get verification key Error: Public drive compat not found')
       expect(() => result.getValue()).toThrow()
     })
 

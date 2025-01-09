@@ -75,6 +75,7 @@ export class ApiCreateThread {
         Mark: dto.markId,
         Comment: {
           Type: dto.commentType,
+          AuthorEmail: entitlements.keys.userOwnAddress,
           Content: dto.encryptedMainCommentContent,
           DocumentName: dto.decryptedDocumentName,
         },
