@@ -324,10 +324,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: toMap(items, 'itemId') });
         }
 
-        // TODO(@djankovic): Maybe just for resync the item instead of matching these?
         if (inviteBatchCreateSuccess.match(action) && action.payload.itemId) {
             const { shareId, itemId, count } = action.payload;
-            const { shareCount } = state[shareId][itemId];
+            const { shareCount = 0 } = state[shareId][itemId];
             return updateItem({ shareId, itemId, shareCount: shareCount + count })(state);
         }
 
@@ -336,8 +335,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             action.payload.itemId
         ) {
             const { shareId, itemId } = action.payload;
-            const { shareCount } = state[shareId][itemId];
-            return updateItem({ shareId, itemId, shareCount: shareCount - 1 })(state);
+            const { shareCount = 0 } = state[shareId][itemId];
+            return updateItem({ shareId, itemId, shareCount: Math.max(0, shareCount - 1) })(state);
         }
 
         return state;
