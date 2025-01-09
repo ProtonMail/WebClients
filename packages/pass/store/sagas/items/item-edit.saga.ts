@@ -44,7 +44,7 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
 
     if (mailboxesChanged) yield syncAliasMailboxes(item, Array.from(nextMailboxIds.values()));
     if (nameChanged) yield syncAliasName(item, nextDisplayName);
-    if (slNoteChanged) yield syncAliasSLNote(item, nextDisplayName);
+    if (slNoteChanged) yield syncAliasSLNote(item, nextSlNote);
 
     if (mailboxesChanged || nameChanged || slNoteChanged) {
         yield put(
