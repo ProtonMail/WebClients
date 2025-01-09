@@ -3,9 +3,8 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { ShareRole } from '@proton/pass/types';
-
-import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
 
 type Props = { onRoleChange: (role: ShareRole) => void };
 

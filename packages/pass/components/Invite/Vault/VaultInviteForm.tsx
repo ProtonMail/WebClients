@@ -4,63 +4,55 @@ import { useSelector } from 'react-redux';
 import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
-import { UserVerificationMessage } from '@proton/pass/components/Invite/UserVerificationMessage';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { type InviteAddressValidator } from '@proton/pass/hooks/useValidateInviteAddress';
+import { BulkMemberActions } from '@proton/pass/components/Invite/Members/BulkMemberActions';
+import { InviteMember } from '@proton/pass/components/Invite/Members/InviteMember';
+import { InviteRecommendations } from '@proton/pass/components/Invite/Members/InviteRecommendations';
+import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
+import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
+import { type InviteAddressValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
-import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
-import { selectAccessSharedWithEmails, selectItem, selectUserVerified } from '@proton/pass/store/selectors';
-import type { InviteFormMemberValue, ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
-import { ShareRole } from '@proton/pass/types';
+import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
+import { selectAccessSharedWithEmails } from '@proton/pass/store/selectors';
+import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
+import { ShareRole, type VaultInviteFormValues } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import clsx from '@proton/utils/clsx';
 
-import { presentListItem } from '../Item/List/utils';
-import { SafeItemIcon } from '../Layout/Icon/ItemIcon';
-import { itemTypeToSubThemeClassName } from '../Layout/Theme/types';
-import { BulkMemberActions } from './BulkMemberActions';
-import { InviteMember } from './InviteMember';
-import { InviteRecommendations } from './InviteRecommendations';
-
-export const FORM_ID = 'item-invite';
+export const FORM_ID = 'vault-invite';
 
 type Props = {
-    addressValidator: InviteAddressValidator;
     autoFocus?: boolean;
-    form: FormikContextType<ItemInviteFormValues>;
+    form: FormikContextType<VaultInviteFormValues>;
+    validator: MaybeNull<InviteAddressValidator>;
 };
 
-/** `ItemInviteForm` takes a forwarded ref parameter for the email input element.
+/** `VaultInviteForm` takes a forwarded ref parameter for the email input element.
  * This ref is essential to trigger validation on any non-added email values that
  * are pushed to the member list. This ensures correct interaction with the invite
  * recommendations. */
-const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props> = (
-    { form, autoFocus, addressValidator },
+const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props> = (
+    { form, autoFocus, validator },
     fieldRef
 ) => {
     const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
-    const { step, members } = form.values;
-    const shareId = form.values.shareId;
-    const itemId = form.values.itemId;
+    const { step, members, withVaultCreation } = form.values;
+    const shareId = form.values.withVaultCreation ? '' : form.values.shareId;
 
     const [autocomplete, setAutocomplete] = useState('');
-    const userVerified = useSelector(selectUserVerified);
-    const vaultSharedWith = useMemoSelector(selectAccessSharedWithEmails, [shareId]);
-    const item = useMemoSelector(selectItem, [shareId, itemId])!;
-    const { heading, subheading } = presentListItem(item);
+    const vaultSharedWith = useSelector(selectAccessSharedWithEmails(shareId));
 
     const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
 
     /** Filter out emails pending validation by comparing against the address validator cache.
      * Pending emails are those present in 'members' but not in the validator cache */
     const emailsValidating = useMemo(
-        () => members.filter(({ value }) => !addressValidator.emails.current.has(value.email)),
+        () => members.filter(({ value }) => !validator?.emails.current.has(value.email)),
         [members]
     );
 
@@ -94,19 +86,41 @@ const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props>
 
     useEffect(() => setAutocomplete(''), [form.values.step]);
 
+    const getVaultHeader = (customizable: boolean = false) => (
+        <div
+            className={clsx(
+                'flex justify-space-between items-center flex-nowrap mt-3 mb-6 gap-3',
+                customizable && 'border rounded-xl p-3'
+            )}
+        >
+            <SharedVaultItem {...form.values} />
+            {customizable && (
+                <Button
+                    className="shrink-0"
+                    color="weak"
+                    onClick={() => form.setFieldValue('step', 'vault')}
+                    pill
+                    shape="solid"
+                >
+                    {c('Action').t`Customize`}
+                </Button>
+            )}
+        </div>
+    );
+
     return (
         <>
-            {!userVerified && <UserVerificationMessage />}
             {step === 'members' && (
                 <div className="anime-fade-in h-full flex flex-column">
+                    {getVaultHeader(withVaultCreation)}
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Share with`}</h2>
 
                     <FieldsetCluster>
                         <Field
                             autoFocus={autoFocus}
-                            component={ListField<ItemInviteFormValues>}
-                            disabled={!userVerified || addressValidator.loading}
-                            fieldLoading={(entry) => addressValidator.loading && emailsValidating.includes(entry)}
+                            component={ListField<VaultInviteFormValues>}
+                            disabled={validator?.loading}
+                            fieldLoading={(entry) => (validator?.loading ?? false) && emailsValidating.includes(entry)}
                             fieldKey="members"
                             fieldRef={fieldRef}
                             fieldValue={prop('email')}
@@ -145,15 +159,22 @@ const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props>
                             autocomplete={autocomplete}
                             selected={selected}
                             excluded={vaultSharedWith}
-                            access={form.values}
+                            access={form.values.withVaultCreation ? undefined : form.values}
                             onToggle={onRecommendationToggle}
                         />
                     </div>
                 </div>
             )}
 
+            {step === 'vault' && (
+                <div className="flex flex-column gap-y-4 anime-fade-in">
+                    <VaultForm form={form as FormikContextType<VaultInviteFormValues<true>>} autoFocus={autoFocus} />
+                </div>
+            )}
+
             {step === 'permissions' && (
                 <div className="anime-fade-in">
+                    {getVaultHeader()}
                     <h2 className="text-xl text-bold mb-2">{c('Title').t`Set access level`}</h2>
                     <div className="w-full flex flex-nowrap items-center justify-between gap-3 mb-3 text-lg">
                         <div className="flex-auto shrink-0">
@@ -202,28 +223,8 @@ const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props>
             {step === 'review' && (
                 <div className="anime-fade-in">
                     <h2 className="text-xl text-bold my-4">{c('Title').t`Review and share`}</h2>
-                    <div className="color-weak text-semibold"> {c('Title').t`Item`}</div>
-
-                    <div className="flex gap-3 flex-nowrap items-center py-3 w-full">
-                        <SafeItemIcon
-                            item={item}
-                            size={5}
-                            className={clsx('shrink-0 relative', itemTypeToSubThemeClassName[item.data.type])}
-                        />
-                        <div className="text-left flex-1">
-                            <div className="text-ellipsis">{heading}</div>
-                            <div
-                                className={clsx([
-                                    'pass-item-list--subtitle block color-weak text-sm text-ellipsis',
-                                    item.data.type === 'note' &&
-                                        isEmptyString(item.data.metadata.note.v) &&
-                                        'text-italic',
-                                ])}
-                            >
-                                {subheading}
-                            </div>
-                        </div>
-                    </div>
+                    <div className="color-weak text-semibold"> {c('Title').t`Vault`}</div>
+                    {getVaultHeader()}
 
                     <div className="color-weak text-semibold"> {c('Label').t`Members`}</div>
                     {members.map((member) => (
@@ -235,4 +236,4 @@ const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props>
     );
 };
 
-export const ItemInviteForm = forwardRef(ForwardedItemInviteForm);
+export const VaultInviteForm = forwardRef(ForwardedVaultInviteForm);
