@@ -2,12 +2,11 @@ import { useMemo } from 'react';
 
 import { Vr } from '@proton/atoms';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS} from '@proton/shared/lib/drive/permissions';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import type { DecryptedLink } from '../../../store';
-import { useDriveSharingFlags } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -19,8 +18,6 @@ import {
     ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
-import ShareButtonLEGACY from '../ToolbarButtons/_legacy/ShareButtonLEGACY';
-import ShareLinkButtonLEGACY from '../ToolbarButtons/_legacy/ShareLinkButtonLEGACY';
 import { getSelectedItems } from '../helpers';
 import useIsEditEnabled from '../useIsEditEnabled';
 import {
@@ -47,7 +44,6 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -58,7 +54,6 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
     );
 
     const shouldShowShareButton = !isLinkReadOnly || items.length > 0;
-    const ShareButtonComponent = isSharingInviteAvailable ? ShareButton : ShareButtonLEGACY;
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -78,7 +73,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                         </>
                     ) : null}
 
-                    {isAdmin && shouldShowShareButton && <ShareButtonComponent shareId={shareId} />}
+                    {isAdmin && shouldShowShareButton && <ShareButton shareId={shareId} />}
                 </>
             );
         }
@@ -94,11 +89,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                     <>
                         {isAdmin && (
                             <>
-                                {isSharingInviteAvailable ? (
-                                    <ShareLinkButton selectedLinks={selectedItems} />
-                                ) : (
-                                    <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
-                                )}
+                                <ShareLinkButton selectedLinks={selectedItems} />
                                 <Vr />
                             </>
                         )}

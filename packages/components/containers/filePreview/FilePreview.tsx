@@ -55,7 +55,6 @@ interface Props {
     isPublicDocsAvailable?: boolean;
 
     contents?: Uint8Array[];
-    isSharingInviteAvailable?: boolean; // Feature flag for drive direct sharing
     sharedStatus?: SharedStatus;
 
     onClose?: () => void;
@@ -233,7 +232,6 @@ const FilePreview = (
 
         contents,
         navigationControls,
-        isSharingInviteAvailable,
         isPublicDocsAvailable,
         sharedStatus,
         signatureStatus,
@@ -321,7 +319,6 @@ const FilePreview = (
             <Header
                 mimeType={mimeType}
                 name={fileName}
-                isSharingInviteAvailable={isSharingInviteAvailable}
                 sharedStatus={sharedStatus}
                 signatureStatus={signatureStatus}
                 isDirty={
