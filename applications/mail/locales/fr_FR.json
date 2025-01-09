@@ -3827,49 +3827,6 @@
         "Assistance prioritaire"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Je choisis ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Disponible pour ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Facturation tous les 2 ans à ${ amountBilled }. Les réductions se basent sur le prix mensuel standard."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Facturation annuelle à ${ amountBilled }. Économisez ${ amountSave } par an sur 2 abonnements individuels ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 To de stockage"
-      ],
-      "2 users": [
-        "2 utilisateurs"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Accès complet à tous les produits ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Vous économisez ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Tout ${ BRAND_NAME }, pour deux personnes."
-      ],
-      "Double your storage": [
-        "Doublez votre espace de stockage"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Voici ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPTION :\n${ eventDescription }"
@@ -6596,8 +6553,8 @@
       "JCB logo": [
         "Logo JCB"
       ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Rejoignez le programme ${ PROTON_SENTINEL_NAME } pour bénéficier du plus haut niveau de sécurité et de support."
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Rejoignez le programme ${ PROTON_SENTINEL_NAME } pour bénéficier de notre plus haut niveau de sécurité et de support."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -7114,6 +7071,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Basculer vers"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -9860,6 +9820,14 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Profitez de Mail Plus pour ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -9872,14 +9840,6 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Profitez de Mail Plus pour ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
       ]
     },
     "new_plans: tooltip": {
@@ -11583,9 +11543,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Vous pouvez maintenant réduire la barre de navigation."
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
