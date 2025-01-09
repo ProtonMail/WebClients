@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import { authStore } from '@proton/pass/lib/auth/store';
+import { serializeShareManagers } from '@proton/pass/lib/crypto/utils/seralize';
 import type {
     PassCryptoManagerContext,
     PassCryptoWorker,
@@ -161,9 +162,9 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async updateVault({ shareId, content }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const latestRotation = shareManager.getLatestRotation();
-            const vaultKey = shareManager.getVaultKey(latestRotation);
+            const manager = getShareManager(shareId);
+            const latestRotation = manager.getLatestRotation();
+            const vaultKey = manager.getVaultShareKey(latestRotation);
 
             return processes.updateVault({ vaultKey, content });
         },
@@ -208,9 +209,9 @@ export const createPassCrypto = (): PassCryptoWorker => {
                         case ShareType.Vault: {
                             const vaultKeys = await Promise.all(
                                 shareKeys.map((shareKey) =>
-                                    maybeShareManager?.hasVaultKey(shareKey.KeyRotation)
-                                        ? maybeShareManager.getVaultKey(shareKey.KeyRotation)
-                                        : processes.openVaultKey({ shareKey, userKeys: context.userKeys })
+                                    maybeShareManager?.hasVaultShareKey(shareKey.KeyRotation)
+                                        ? maybeShareManager.getVaultShareKey(shareKey.KeyRotation)
+                                        : processes.openShareKey({ shareKey, userKeys: context.userKeys })
                                 )
                             );
 
@@ -230,13 +231,13 @@ export const createPassCrypto = (): PassCryptoWorker => {
                     }
                 })();
 
-                const shareManager = maybeShareManager ?? createShareManager(share);
+                const manager = maybeShareManager ?? createShareManager(share);
 
-                context.shareManagers.set(shareId, shareManager);
-                shareManager.setShare(share); /* handle update when recyling */
+                context.shareManagers.set(shareId, manager);
+                manager.setShare(share); /* handle update when recyling */
                 await worker.updateShareKeys({ shareId, shareKeys });
 
-                return shareManager.getShare() as TypedOpenedShare<T>;
+                return manager.getShare() as TypedOpenedShare<T>;
             } catch (err: any) {
                 throw isPassCryptoError(err) ? err : new PassCryptoError(err);
             }
@@ -245,14 +246,22 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async updateShareKeys({ shareId, shareKeys }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const newKeys = await Promise.all(
-                shareKeys
-                    .filter(({ KeyRotation }) => !shareManager.hasVaultKey(KeyRotation))
-                    .map((shareKey) => processes.openVaultKey({ shareKey, userKeys: context.userKeys }))
-            );
+            const manager = getShareManager(shareId);
+            const { userKeys } = context;
 
-            shareManager.addKeys(newKeys);
+            switch (manager.getType()) {
+                case ShareType.Vault: {
+                    const keys = shareKeys.filter(({ KeyRotation }) => !manager.hasVaultShareKey(KeyRotation));
+                    const newKeys = keys.map((shareKey) => processes.openShareKey({ shareKey, userKeys }));
+                    return (await Promise.all(newKeys)).forEach(manager.addVaultShareKey);
+                }
+
+                case ShareType.Item: {
+                    const keys = shareKeys.filter(({ KeyRotation }) => !manager.hasItemShareKey(KeyRotation));
+                    const newKeys = keys.map((shareKey) => processes.openShareKey({ shareKey, userKeys }));
+                    return (await Promise.all(newKeys)).forEach(manager.addItemShareKey);
+                }
+            }
         },
 
         removeShare: (shareId) => context.shareManagers.delete(shareId),
@@ -262,9 +271,9 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async createItem({ shareId, content }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const latestRotation = shareManager.getLatestRotation();
-            const vaultKey = shareManager.getVaultKey(latestRotation);
+            const manager = getShareManager(shareId);
+            const latestRotation = manager.getLatestRotation();
+            const vaultKey = manager.getVaultShareKey(latestRotation);
 
             return processes.createItem({ content, vaultKey });
         },
@@ -272,13 +281,13 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async openItem({ shareId, encryptedItem }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const share = shareManager.getShare();
+            const manager = getShareManager(shareId);
+            const share = manager.getShare();
 
             const itemKey = await (async () => {
                 switch (share.targetType) {
                     case ShareType.Vault: {
-                        const vaultKey = shareManager.getVaultKey(encryptedItem.KeyRotation!);
+                        const vaultKey = manager.getVaultShareKey(encryptedItem.KeyRotation!);
                         return processes.openItemKey({
                             encryptedItemKey: { Key: encryptedItem.ItemKey!, KeyRotation: encryptedItem.KeyRotation! },
                             vaultKey,
@@ -286,7 +295,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
                     }
 
                     case ShareType.Item: {
-                        return shareManager.getItemKey(encryptedItem.KeyRotation);
+                        return manager.getItemShareKey(encryptedItem.KeyRotation);
                     }
                 }
             })();
@@ -300,8 +309,8 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async updateItem({ shareId, content, latestItemKey, lastRevision }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const vaultKey = shareManager.getVaultKey(latestItemKey.KeyRotation);
+            const manager = getShareManager(shareId);
+            const vaultKey = manager.getVaultShareKey(latestItemKey.KeyRotation);
             const itemKey = await processes.openItemKey({ encryptedItemKey: latestItemKey, vaultKey });
 
             return processes.updateItem({ itemKey, content, lastRevision });
@@ -310,9 +319,9 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async moveItem({ destinationShareId, content }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(destinationShareId);
-            const latestRotation = shareManager.getLatestRotation();
-            const destinationVaultKey = shareManager.getVaultKey(latestRotation);
+            const manager = getShareManager(destinationShareId);
+            const latestRotation = manager.getLatestRotation();
+            const destinationVaultKey = manager.getVaultShareKey(latestRotation);
 
             return processes.moveItem({ destinationShareId, destinationVaultKey, content });
         },
@@ -320,8 +329,8 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async createInvite({ shareId, itemId, invitedPublicKey, email, role, targetKeys }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const share = shareManager.getShare();
+            const manager = getShareManager(shareId);
+            const share = manager.getShare();
             const inviteKeys = await processes.createInviteKeys({
                 targetKeys,
                 invitedPublicKey: await CryptoProxy.importPublicKey({ armoredKey: invitedPublicKey }),
@@ -340,13 +349,14 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async createNewUserInvite({ shareId, email, role, itemId }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const share = shareManager.getShare();
+            const manager = getShareManager(shareId);
+            const share = manager.getShare();
+            const rotation = manager.getLatestRotation();
 
             const signature = await processes.createNewUserSignature({
                 inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
                 invitedEmail: email,
-                vaultKey: shareManager.getVaultKey(shareManager.getLatestRotation()),
+                vaultKey: manager.getVaultShareKey(rotation),
             });
 
             return {
@@ -361,10 +371,10 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async promoteInvite({ shareId, invitedPublicKey }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const share = shareManager.getShare();
+            const manager = getShareManager(shareId);
+            const share = manager.getShare();
             const inviteKeys = await processes.createInviteKeys({
-                targetKeys: shareManager.getVaultKeys(),
+                targetKeys: manager.getVaultShareKeys(),
                 invitedPublicKey: await CryptoProxy.importPublicKey({ armoredKey: invitedPublicKey }),
                 inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
             });
@@ -403,7 +413,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async createSecureLink({ shareId, latestItemKey }) {
             assertHydrated(context);
 
-            const vaultKey = getShareManager(shareId).getVaultKey(latestItemKey.KeyRotation);
+            const vaultKey = getShareManager(shareId).getVaultShareKey(latestItemKey.KeyRotation);
             const itemKey = await processes.openItemKey({ encryptedItemKey: latestItemKey, vaultKey });
             return processes.createSecureLink({ itemKey, vaultKey });
         },
@@ -423,25 +433,19 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async openLinkKey({ encryptedLinkKey, linkKeyShareKeyRotation, shareId }) {
             assertHydrated(context);
 
-            const vaultKey = getShareManager(shareId).getVaultKey(linkKeyShareKeyRotation);
+            const vaultKey = getShareManager(shareId).getVaultShareKey(linkKeyShareKeyRotation);
             return processes.openLinkKey({ encryptedLinkKey, shareKey: vaultKey.key });
         },
 
         async openItemKey({ encryptedItemKey, shareId }) {
             assertHydrated(context);
 
-            const shareManager = getShareManager(shareId);
-            const vaultKey = shareManager.getVaultKey(shareManager.getLatestRotation());
-
+            const manager = getShareManager(shareId);
+            const vaultKey = manager.getVaultShareKey(manager.getLatestRotation());
             return processes.openItemKey({ encryptedItemKey, vaultKey });
         },
 
-        serialize: () => ({
-            shareManagers: [...context.shareManagers.entries()].map(([shareId, shareManager]) => [
-                shareId,
-                shareManager.serialize(),
-            ]),
-        }),
+        serialize: () => ({ shareManagers: serializeShareManagers(context.shareManagers) }),
     };
 
     return worker;

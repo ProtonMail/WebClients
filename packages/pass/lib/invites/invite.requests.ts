@@ -3,6 +3,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import type { InviteTargetKey } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
@@ -72,16 +73,18 @@ export const createUserInvites = async (
     itemId: Maybe<string>,
     users: InviteUserDTO[]
 ): Promise<string[]> => {
-    // For vault sharing, encrypt vault keys
-    // For item sharing, encrypt item keys
     const shareManager = PassCrypto.getShareManager(shareId);
 
-    const targetKeys = await (async () => {
-        if (!itemId) return shareManager.getVaultKeys();
+    const targetKeys = await (async (): Promise<InviteTargetKey[]> => {
+        /** If no `itemId` is supplied then we're dealing with
+         * a vault invite -> encrypt the vault keys */
+        if (!itemId) return shareManager.getVaultShareKeys();
+
+        /** For item sharing : encrypt the items keys.
+         * We're currently not caching the item keys, as
+         * such resolve them */
         const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
-        return Promise.all(
-            encryptedItemKeys.map((encryptedItemKey) => PassCrypto.openItemKey({ encryptedItemKey, shareId }))
-        );
+        return Promise.all(encryptedItemKeys.map((key) => PassCrypto.openItemKey({ encryptedItemKey: key, shareId })));
     })();
 
     return (

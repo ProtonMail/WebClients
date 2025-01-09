@@ -1,7 +1,7 @@
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { type ItemKey, PassEncryptionTag, type VaultKey } from '@proton/pass/types';
+import { type ItemKey, PassEncryptionTag, type VaultShareKey } from '@proton/pass/types';
 
-type CreateSecureLinkProcessParams = { itemKey: ItemKey; vaultKey: VaultKey };
+type CreateSecureLinkProcessParams = { itemKey: ItemKey; vaultKey: VaultShareKey };
 
 export type CreateSecureLinkData = {
     encryptedItemKey: Uint8Array;

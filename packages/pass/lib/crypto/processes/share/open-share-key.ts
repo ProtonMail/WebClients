@@ -1,7 +1,7 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
-import type { ShareKeyResponse, VaultKey } from '@proton/pass/types';
+import type { VaultShareKey as ShareKey, ShareKeyResponse } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
@@ -10,7 +10,7 @@ type OpenVaultKeyProcessParams = {
     userKeys: DecryptedKey[];
 };
 
-export const openVaultKey = async ({ shareKey, userKeys }: OpenVaultKeyProcessParams): Promise<VaultKey> => {
+export const openShareKey = async ({ shareKey, userKeys }: OpenVaultKeyProcessParams): Promise<ShareKey> => {
     const { Key, KeyRotation, UserKeyID } = shareKey;
     const privateUserKeys = userKeys.map(({ privateKey }) => privateKey);
 

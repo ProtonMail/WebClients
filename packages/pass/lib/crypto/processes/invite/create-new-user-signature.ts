@@ -1,11 +1,11 @@
 import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto/lib';
-import { PassSignatureContext, type VaultKey } from '@proton/pass/types';
+import { PassSignatureContext, type VaultShareKey } from '@proton/pass/types';
 import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateNewUserSignatureProcessParams = {
     invitedEmail: string;
     inviterPrivateKey: PrivateKeyReference;
-    vaultKey: VaultKey;
+    vaultKey: VaultShareKey;
 };
 
 type CreateNewUserSignatureBodyProcessParams = Omit<CreateNewUserSignatureProcessParams, 'inviterPrivateKey'>;

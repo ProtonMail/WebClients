@@ -21,7 +21,16 @@ import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import type { Address, DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
-import type { ItemKey, OpenedItem, Rotation, ShareId, TypedOpenedShare, VaultKey } from './pass-types';
+import type {
+    InviteTargetKey,
+    ItemKey,
+    ItemShareKey,
+    OpenedItem,
+    Rotation,
+    ShareId,
+    TypedOpenedShare,
+    VaultShareKey,
+} from './pass-types';
 
 export type PassCryptoManagerContext = {
     user?: User;
@@ -70,7 +79,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         invitedPublicKey: string;
         role: ShareRole;
         shareId: string;
-        targetKeys: (ItemKey | VaultKey)[];
+        targetKeys: InviteTargetKey[];
         itemId?: string;
     }) => Promise<InviteCreateRequest>;
     promoteInvite: (data: { shareId: string; invitedPublicKey: string }) => Promise<NewUserInvitePromoteRequest>;
@@ -107,25 +116,29 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
 export type ShareContext<T extends ShareType = ShareType> = {
     share: TypedOpenedShare<T>;
     latestRotation: Rotation;
-    vaultKeys: Map<Rotation, VaultKey>;
-    itemKeys: Map<Rotation, ItemKey>;
+    vaultKeys: Map<Rotation, VaultShareKey>;
+    itemKeys: Map<Rotation, ItemShareKey>;
 };
 
 export interface ShareManager<T extends ShareType = ShareType> extends SerializableCryptoContext<ShareContext> {
     getShare: () => TypedOpenedShare<T>;
     setShare: (share: TypedOpenedShare<T>) => void;
+    getType: () => ShareType;
+
+    isActive: (userKeys?: DecryptedKey[]) => boolean;
+
     getLatestRotation: () => Rotation;
     setLatestRotation: (rotation: Rotation) => void;
-    hasVaultKey: (rotation: Rotation) => boolean;
-    getVaultKey: (rotation: Rotation) => VaultKey;
-    getVaultKeys: () => VaultKey[];
-    addVaultKey: (vaultKey: VaultKey) => void;
-    hasItemKey: (rotation: Rotation) => boolean;
-    getItemKey: (rotation: Rotation) => ItemKey;
-    getItemKeys: () => ItemKey[];
-    addItemKey: (itemKey: ItemKey) => void;
-    addKeys: (keys: VaultKey[] | ItemKey[]) => void;
-    isActive: (userKeys?: DecryptedKey[]) => boolean;
+
+    hasVaultShareKey: (rotation: Rotation) => boolean;
+    getVaultShareKey: (rotation: Rotation) => VaultShareKey;
+    getVaultShareKeys: () => VaultShareKey[];
+    addVaultShareKey: (vaultShareKey: VaultShareKey) => void;
+
+    hasItemShareKey: (rotation: Rotation) => boolean;
+    getItemShareKey: (rotation: Rotation) => ItemShareKey;
+    getItemShareKeys: () => ItemShareKey[];
+    addItemShareKey: (itemShareKey: ItemShareKey) => void;
 }
 
 export interface SerializableCryptoContext<S> {
@@ -133,14 +146,9 @@ export interface SerializableCryptoContext<S> {
 }
 
 export type SerializedCryptoContext<T> =
-    T extends SerializableCryptoContext<infer U>
-        ? SerializedCryptoContext<U>
-        : T extends Uint8Array
-          ? string
-          : T extends Map<infer K, infer U>
-            ? (readonly [K, SerializedCryptoContext<U>])[]
-            : T extends (infer U)[]
-              ? SerializedCryptoContext<U>[]
-              : T extends {}
-                ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }
-                : T;
+    T extends SerializableCryptoContext<infer U> ? SerializedCryptoContext<U>
+    : T extends Uint8Array ? string
+    : T extends Map<infer K, infer U> ? (readonly [K, SerializedCryptoContext<U>])[]
+    : T extends (infer U)[] ? SerializedCryptoContext<U>[]
+    : T extends {} ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }
+    : T;

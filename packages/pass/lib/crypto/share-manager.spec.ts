@@ -1,4 +1,4 @@
-import type { VaultKey } from '@proton/pass/types';
+import type { VaultShareKey } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 
 import { createShareManager } from './share-manager';
@@ -29,9 +29,9 @@ describe('ShareManager', () => {
         expect(shareManager.getLatestRotation()).toStrictEqual(42);
     });
 
-    test('ShareManager::hasVaultKey should account for share type and rotation', async () => {
+    test('ShareManager::hasVaultShareKey should account for share type and rotation', async () => {
         const key = generateKey();
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             raw: key,
             key: await importSymmetricKey(key),
             rotation: 1,
@@ -41,33 +41,33 @@ describe('ShareManager', () => {
         const itemShare = createRandomShare(ShareType.Item);
         const itemShareManager = createShareManager(itemShare);
 
-        expect(itemShareManager.hasVaultKey(1)).toEqual(false);
+        expect(itemShareManager.hasVaultShareKey(1)).toEqual(false);
 
         const vaultShare = createRandomShare(ShareType.Vault);
         const vaultShareManager = createShareManager(vaultShare);
-        vaultShareManager.addVaultKey(vaultKey);
+        vaultShareManager.addVaultShareKey(vaultKey);
 
-        expect(vaultShareManager.hasVaultKey(1)).toEqual(true);
-        expect(vaultShareManager.hasVaultKey(2)).toEqual(false);
+        expect(vaultShareManager.hasVaultShareKey(1)).toEqual(true);
+        expect(vaultShareManager.hasVaultShareKey(2)).toEqual(false);
     });
 
-    test('ShareManager::getVaultKey should throw on ItemShare', async () => {
+    test('ShareManager::getVaultShareKey should throw on ItemShare', async () => {
         const itemShare = createRandomShare(ShareType.Item);
         const shareManager = createShareManager(itemShare);
 
-        expect(() => shareManager.getVaultKey(1)).toThrow(PassCryptoVaultError);
+        expect(() => shareManager.getVaultShareKey(1)).toThrow(PassCryptoVaultError);
     });
 
-    test('ShareManager::getVaultKey should throw if no key for rotation found', () => {
+    test('ShareManager::getVaultShareKey should throw if no key for rotation found', () => {
         const vaultShare = createRandomShare(ShareType.Vault);
         const shareManager = createShareManager(vaultShare);
 
-        expect(() => shareManager.getVaultKey(1)).toThrow(PassCryptoVaultError);
+        expect(() => shareManager.getVaultShareKey(1)).toThrow(PassCryptoVaultError);
     });
 
-    test('ShareManager::addVaultKey should throw on ItemShare', async () => {
+    test('ShareManager::addVaultShareKey should throw on ItemShare', async () => {
         const key = generateKey();
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             raw: key,
             key: await importSymmetricKey(key),
             rotation: 1,
@@ -77,12 +77,12 @@ describe('ShareManager', () => {
         const share = createRandomShare(ShareType.Item);
         const shareManager = createShareManager(share);
 
-        expect(() => shareManager.addVaultKey(vaultKey)).toThrow(PassCryptoVaultError);
+        expect(() => shareManager.addVaultShareKey(vaultKey)).toThrow(PassCryptoVaultError);
     });
 
-    test('ShareManager::addVaultKey should add vault key to share context & update latest rotation', async () => {
+    test('ShareManager::addVaultShareKey should add vault key to share context & update latest rotation', async () => {
         const key = generateKey();
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             raw: key,
             key: await importSymmetricKey(key),
             rotation: 42,
@@ -92,13 +92,13 @@ describe('ShareManager', () => {
         const share = createRandomShare(ShareType.Vault);
         const shareManager = createShareManager(share);
 
-        expect(() => shareManager.addVaultKey(vaultKey)).not.toThrow();
-        expect(shareManager.getVaultKey(42)).toStrictEqual(vaultKey);
+        expect(() => shareManager.addVaultShareKey(vaultKey)).not.toThrow();
+        expect(shareManager.getVaultShareKey(42)).toStrictEqual(vaultKey);
         expect(shareManager.getLatestRotation()).toEqual(42);
     });
 
     test('ShareManager::serialize result should allow re-hydrating instance', async () => {
-        const vaultKeys: VaultKey[] = await Promise.all(
+        const vaultKeys: VaultShareKey[] = await Promise.all(
             Array.from({ length: 3 }, async (_, i) => {
                 const key = generateKey();
                 return {
@@ -112,7 +112,7 @@ describe('ShareManager', () => {
 
         const share = createRandomShare(ShareType.Vault);
         const shareManager = createShareManager(share);
-        vaultKeys.forEach((vaultKey) => shareManager.addVaultKey(vaultKey));
+        vaultKeys.forEach((vaultKey) => shareManager.addVaultShareKey(vaultKey));
 
         const dump = shareManager.serialize();
         const rehydratedManager = await createShareManager.fromSnapshot(dump);
@@ -121,7 +121,7 @@ describe('ShareManager', () => {
         expect(rehydratedManager.getLatestRotation()).toEqual(3);
 
         vaultKeys.forEach((vaultKey) =>
-            expect(rehydratedManager.getVaultKey(vaultKey.rotation)).toStrictEqual(vaultKey)
+            expect(rehydratedManager.getVaultShareKey(vaultKey.rotation)).toStrictEqual(vaultKey)
         );
     });
 });

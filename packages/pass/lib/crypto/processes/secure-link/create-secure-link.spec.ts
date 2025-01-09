@@ -1,5 +1,6 @@
 import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { type ItemKey, PassEncryptionTag, type VaultKey } from '@proton/pass/types';
+import type { ItemKey} from '@proton/pass/types';
+import { PassEncryptionTag, type VaultShareKey } from '@proton/pass/types';
 
 import { createSecureLink } from './create-secure-link';
 
@@ -14,7 +15,7 @@ describe('createSecureLink crypto process', () => {
             rotation: 1,
         };
 
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             key: await importSymmetricKey(rawVaultKey),
             raw: rawVaultKey,
             rotation: 1,
