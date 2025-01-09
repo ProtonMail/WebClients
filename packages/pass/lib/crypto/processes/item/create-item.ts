@@ -1,14 +1,14 @@
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { validateItemContentSize } from '@proton/pass/lib/crypto/utils/validators';
-import type { ItemCreateRequest, VaultKey } from '@proton/pass/types';
+import type { ItemCreateRequest, VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateItemProcessParams = {
     content: Uint8Array;
-    vaultKey: VaultKey;
+    vaultKey: VaultShareKey;
 };
 
 export const createItem = async ({ content, vaultKey }: CreateItemProcessParams): Promise<ItemCreateRequest> => {

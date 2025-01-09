@@ -1,10 +1,10 @@
 import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { OpenedShare, ShareGetResponse, ShareRole, VaultKey } from '@proton/pass/types';
+import type { OpenedShare, ShareGetResponse, ShareRole, VaultShareKey } from '@proton/pass/types';
 import { PassEncryptionTag, ShareType } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 type OpenShareProcessParams = { encryptedShare: ShareGetResponse } & (
-    | { type: ShareType.Vault; vaultKey: VaultKey }
+    | { type: ShareType.Vault; vaultKey: VaultShareKey }
     | { type: ShareType.Item }
 );
 

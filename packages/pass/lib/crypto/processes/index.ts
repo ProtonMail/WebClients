@@ -12,6 +12,6 @@ export * from './secure-link/create-secure-link';
 export * from './secure-link/open-link-key';
 export * from './secure-link/open-secure-link';
 export * from './share/open-share';
+export * from './share/open-share-key';
 export * from './vault/create-vault';
-export * from './vault/open-vault-key';
 export * from './vault/update-vault';

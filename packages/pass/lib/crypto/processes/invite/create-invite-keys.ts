@@ -1,10 +1,11 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { type ItemKey, type KeyRotationKeyPair, PassSignatureContext, type VaultKey } from '@proton/pass/types';
+import type { InviteTargetKey } from '@proton/pass/types';
+import { type KeyRotationKeyPair, PassSignatureContext } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateInviteKeysProcessParams = {
-    targetKeys: (VaultKey | ItemKey)[];
+    targetKeys: InviteTargetKey[];
     invitedPublicKey: PublicKeyReference;
     inviterPrivateKey: PrivateKeyReference;
 };
