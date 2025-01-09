@@ -23,6 +23,7 @@ import GetDesktopAppStep from './steps/GetDesktopAppStep';
 import NewOnboardingOrganizationStep from './steps/NewOnboardingOrganizationStep';
 import NewOnboardingThemes from './steps/NewOnboardingThemes';
 import OnboardingWelcomeStep from './steps/OnboardingWelcomeStep';
+import PartnerStep from './steps/PartnerStep';
 
 export interface MailOnboardingProps {
     hideDiscoverApps?: boolean;
@@ -58,6 +59,7 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
     const { isLoading, isB2B, isMailPaidPlan } = useUserInfos();
     const displayPremiumFeaturesSteps = isMailPaidPlan && !isB2B;
     const displayGetDesktopAppStep = !isMobile() && !isElectronApp;
+    const partnerEnabled = new URLSearchParams(window.location.search).get('partner') === 'true';
 
     const handleDone = () => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_onboarding_modals, {});
@@ -96,7 +98,12 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
                 organizationStep: NewOnboardingOrganizationStep,
             }}
         >
-            {[OnboardingWelcomeStep, displayGetDesktopAppStep && GetDesktopAppStep, GetMobileAppStep].filter(isTruthy)}
+            {[
+                partnerEnabled && PartnerStep,
+                OnboardingWelcomeStep,
+                displayGetDesktopAppStep && GetDesktopAppStep,
+                GetMobileAppStep,
+            ].filter(isTruthy)}
         </OnboardingModal>
     );
 };
