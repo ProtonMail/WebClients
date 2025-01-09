@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useAppTitle } from '@proton/components';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useDriveSharingFlags, useSharedWithMeView } from '../../../store';
+import { useSharedWithMeView } from '../../../store';
 import { Actions, traceTelemetry } from '../../../utils/telemetry';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
@@ -22,12 +22,6 @@ const SharedWithMeView = () => {
     }, []);
 
     const sharedWithMeView = useSharedWithMeView(activeShareId);
-    const hasSharedItems = !!sharedWithMeView.items.length;
-
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
-    if (!hasSharedItems && !isSharingInviteAvailable) {
-        return null;
-    }
 
     // rootShareId is unique per item in shared with me section, so we can use it as id key
     return (

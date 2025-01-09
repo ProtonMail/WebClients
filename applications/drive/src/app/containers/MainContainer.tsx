@@ -29,7 +29,6 @@ import {
     useSearchControl,
     useUserSettings,
 } from '../store';
-// TODO: This should be removed after rollout phase
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import { VolumeType } from '../store/_volumes';

@@ -11,7 +11,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import clsx from '@proton/utils/clsx';
 
-import { type DecryptedLink, type PhotoLink, isDecryptedLink, useDriveSharingFlags } from '../../../../store';
+import { type DecryptedLink, type PhotoLink, isDecryptedLink } from '../../../../store';
 import { stopPropagation } from '../../../../utils/stopPropagation';
 import SignatureIcon from '../../../SignatureIcon';
 import { getMimeTypeDescription } from '../../helpers';
@@ -48,7 +48,6 @@ export const PhotosCard: FC<Props> = ({
 
     const isDecrypted = isDecryptedLink(photo);
     const hasName = 'name' in photo;
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     // First call when photo is rendered to request caching link meta data.
 
@@ -159,7 +158,7 @@ export const PhotosCard: FC<Props> = ({
                             )}
                             {photo.isShared && (
                                 <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
-                                    <Icon name={isSharingInviteAvailable ? 'users' : 'link'} color="white" size={3} />
+                                    <Icon name="users" color="white" size={3} />
                                 </div>
                             )}
                         </div>

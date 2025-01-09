@@ -6,7 +6,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { useDefaultShare, useDriveSharingFlags } from '../_shares';
+import { useDefaultShare } from '../_shares';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import type { SortField } from './utils/useSorting';
 
@@ -22,20 +22,12 @@ export default function useSharedLinksView(shareId: string) {
     const { getDefaultShare } = useDefaultShare();
     const volumeId = useRef<string>();
     const [isLoading, withLoading] = useLoading(true);
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
     const linksListing = useLinksListing();
-    const loadSharedLinks = useCallback(
-        async (signal: AbortSignal) => {
-            const defaultShare = await getDefaultShare(signal);
-            volumeId.current = defaultShare.volumeId;
-            if (isSharingInviteAvailable) {
-                await linksListing.loadLinksSharedByMeLink(signal, defaultShare.volumeId);
-            } else {
-                await linksListing.loadLinksSharedByLinkLEGACY(signal, defaultShare.volumeId);
-            }
-        },
-        [isSharingInviteAvailable]
-    ); //TODO: No all deps params as too much work needed in linksListing
+    const loadSharedLinks = useCallback(async (signal: AbortSignal) => {
+        const defaultShare = await getDefaultShare(signal);
+        volumeId.current = defaultShare.volumeId;
+        await linksListing.loadLinksSharedByMeLink(signal, defaultShare.volumeId);
+    }, []); //TODO: No all deps params as too much work needed in linksListing
     const abortSignal = useAbortSignal([shareId, withLoading, loadSharedLinks]);
 
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedByLink(abortSignal, volumeId.current);
