@@ -3832,49 +3832,6 @@
         "Asistență prioritară"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Luați ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Luați-l cu ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Facturat la doi ani cu ${ amountBilled }. Reducerile se bazează pe prețul lunar standard."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Facturat anual cu ${ amountBilled }. Economisiți ${ amountSave } cu două abonamente anuale ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TiB spațiu de stocare"
-      ],
-      "2 users": [
-        "Doi utilizatori"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Acces complet la toate produsele ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Economisiți ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Toate produsele ${ BRAND_NAME } pentru doi utilizatori."
-      ],
-      "Double your storage": [
-        "Dublați-vă spațiul de stocare"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Vă prezentăm ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIERE:\n${ eventDescription }"
@@ -6625,9 +6582,6 @@
       ],
       "JCB logo": [
         "Logo JCB"
-      ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Alăturați-vă programului ${ PROTON_SENTINEL_NAME } pentru cel mai înalt nivel de securitate și asistență pentru cont."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
@@ -9919,6 +9873,14 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Luați Mail Plus cu ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -9931,14 +9893,6 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Luați Mail Plus cu ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
       ]
     },
     "new_plans: tooltip": {
@@ -11656,9 +11610,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Acum puteți restrânge bara de navigare."
       ],
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."

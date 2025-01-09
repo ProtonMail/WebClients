@@ -3814,49 +3814,6 @@
         "Öncelikli destek"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo edinin"
-      ],
-      "Get it for ${ price }": [
-        "${ price } ile edinin"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "2 yılda bir ${ amountBilled } tutar ile faturalanır. İndirimler standart aylık ücret üzerinden hesaplanır."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Yıllık olarak ${ amountBilled } ile faturalanır. 2 kişisel ${ BRAND_NAME } Unlimited yıllık aboneliğinde ${ amountSave } indirim alın."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB depolama alanı"
-      ],
-      "2 users": [
-        "2 kullanıcı"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Tüm ${ BRAND_NAME } ürünlerine tam erişim"
-      ],
-      "You save ${ amountSave }": [
-        "${ amountSave } kazancınız var"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Tüm ${ BRAND_NAME } ürünleri, 2 kişi için."
-      ],
-      "Double your storage": [
-        "Depolama alanınızı iki katına çıkarın"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "${ PLAN_NAMES[PLANS.DUO] } ile tanışın "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "AÇIKLAMA:\n${ eventDescription }"
@@ -6517,9 +6474,6 @@
       ],
       "JCB logo": [
         "JCB logosu"
-      ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "En yüksek düzeyde hesap güvenliği ve destek için ${ PROTON_SENTINEL_NAME } programına katılın."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -9752,6 +9706,14 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon } ile Mail Plus edinin"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -9764,14 +9726,6 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon } ile Mail Plus edinin"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "new_plans: tooltip": {
@@ -11457,9 +11411,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Şimdi gezinme çubuğunu daraltabilirsiniz."
       ],
       "You can now schedule your messages to be sent later": [
         "Artık iletileri daha sonra gönderilmek üzere zamanlayabilirsiniz"
