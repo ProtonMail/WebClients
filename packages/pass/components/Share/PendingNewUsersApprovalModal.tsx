@@ -10,6 +10,7 @@ import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { PendingNewUsersForShare } from '@proton/pass/components/Share/PendingNewUsersForShare';
 import { newUserInvitePromoteIntent } from '@proton/pass/store/actions';
 import { selectAccessForMany, selectVaultsWithNewUserInvites } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import { NewUserInviteState, type ShareId } from '@proton/pass/types';
 
 export const PendingNewUsersApprovalModal: FC = () => {
@@ -19,7 +20,7 @@ export const PendingNewUsersApprovalModal: FC = () => {
     const online = useConnectivity();
 
     const vaultsWithInvitesReady = useSelector(selectVaultsWithNewUserInvites);
-    const accessItems = useSelector(selectAccessForMany(vaultsWithInvitesReady));
+    const accessItems = useSelector((state: State) => selectAccessForMany(state, vaultsWithInvitesReady));
     const [vaultsReady, setVaultsReady] = useState<ShareId[]>([]);
 
     const acceptAllInvites = () => {
