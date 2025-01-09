@@ -1,5 +1,5 @@
 export const AnonymousUserEmail = 'anonymous-proton@docs.proton.me'
-export const AnonymousUserDisplayName = 'Anonymous Proton'
+export const AnonymousUserDisplayName = 'Anonymous User'
 
 export const AnonymousUserLetters: Record<string, { name: string; hsl: string }> = {
   Σ: { name: 'sigma', hsl: 'hsla(231, 85%, 18%, 1)' },
