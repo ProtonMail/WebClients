@@ -5,7 +5,7 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, PrimaryButton, useModalTwoSt
 import { useState } from 'react'
 import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { usePublicDocumentCopying } from '../Hooks/usePublicDocumentCopying'
-import { useDocsContext } from '../../../Containers/ContextProvider'
+import { useDocsContext } from '../../../Containers/DocsContextProvider'
 import { Button } from '@proton/atoms/index'
 import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
 import type { PublicDocumentState } from '@proton/docs-core'

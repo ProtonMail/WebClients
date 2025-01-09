@@ -70,6 +70,7 @@ export class ApiEditComment {
       commentId: dto.commentId,
       data: {
         Content: dto.encryptedContent,
+        AuthorEmail: entitlements.keys.userOwnAddress,
       },
     })
 

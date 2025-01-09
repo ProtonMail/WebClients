@@ -5,7 +5,8 @@ import type { EncryptionContext } from '../Services/Encryption/EncryptionContext
 import type { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../Types/EncryptionMetadata'
-import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../Types/DocumentEntitlements'
+import { canKeysSign } from '../Types/DocumentEntitlements'
+import type { PublicDocumentKeys } from '@proton/drive-store'
 
 /**
  * Encrypts a message directed towards the RTS.
@@ -20,7 +21,7 @@ export class EncryptMessage implements UseCaseInterface<Uint8Array> {
   ): Promise<Result<Uint8Array>> {
     const aad = GetAssociatedEncryptionDataForRealtimeMessage(metadata)
 
-    if (isPrivateDocumentKeys(keys)) {
+    if (canKeysSign(keys)) {
       const result = await this.encryption.signAndEncryptData(
         update,
         aad,
