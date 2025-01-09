@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -834,6 +834,9 @@
       ],
       "Refer a friend": [
         "Запросити друга"
+      ],
+      "Refresh Data": [
+        "Оновити дані"
       ],
       "Refresh status": [
         "Оновити стан"
@@ -3929,49 +3932,6 @@
       ],
       "Priority support": [
         "Пріоритетна підтримка"
-      ]
-    },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Отримати ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Отримайте за ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Рахунок виставляється кожні 2 роки у розмірі ${ amountBilled }. Знижки надаються на основі стандартного щомісячного тарифу."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Рахунок на рік у розмірі ${ amountBilled }. Заощаджуйте ${ amountSave } понад 2 індивідуальних ${ BRAND_NAME } Необмежених річних підписок."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 ТБ сховища"
-      ],
-      "2 users": [
-        "2 користувачі"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Повний доступ до всіх продуктів ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Ви заощаджуєте ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Всі ${ BRAND_NAME }, для 2."
-      ],
-      "Double your storage": [
-        "Подвоїти обсяг свого сховища"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Представляємо ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -8185,6 +8145,9 @@
       "No label selected": [
         "Жодної мітки не вибрано"
       ],
+      "No location filters are currently assigned.": [
+        "На цей момент ніяких фільтрів по місцю перебування."
+      ],
       "No logs yet.": [
         "Наразі немає журналів."
       ],
@@ -8193,6 +8156,9 @@
       ],
       "No results found": [
         "Результатів не знайдено"
+      ],
+      "No Shared Servers Found": [
+        "Загальних серверів не знайдено"
       ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
@@ -8604,6 +8570,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Надіслане ${ vaultLink } оновлено"
+      ],
+      "Shared Server Location Filters": [
+        "Фільтри розташування спільних серверів"
       ],
       "Shared vault deleted": [
         "Спільне сховище видалено"
@@ -18566,6 +18535,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Налаштуйте виділені сервери, перейшовши на тарифний план Business"
+      ],
+      "Shared servers": [
+        "Загальні сервери"
       ],
       "Short domain (@pm.me)": [
         "Короткий домен (@pm.me)"

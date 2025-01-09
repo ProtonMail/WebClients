@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -3835,49 +3835,6 @@
       ],
       "Priority support": [
         "Prioriteret support"
-      ]
-    },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Hent ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Fås til ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Faktureres hvert 2. år til ${ amountBilled }. Rabatter er baseret på den månedlige standardpris."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Faktureres årligt til ${ amountBilled }. Spar ${ amountSave } på 2 enkeltstående ${ BRAND_NAME }. Ubegrænset årlige abonnementer."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB lagerplads"
-      ],
-      "2 users": [
-        "2 brugere"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Fuld adgang til alle ${ BRAND_NAME }-produkter"
-      ],
-      "You save ${ amountSave }": [
-        "Du sparer ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Alt fra ${ BRAND_NAME }, for 2."
-      ],
-      "Double your storage": [
-        "Fordobl din lagerplads"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Vi præsenterer ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -8840,7 +8797,7 @@
         "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-adresse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Når de abonnerer på et abonnement, får du kreditter, du kan bruge på dit abonnement."
+        "Når de tegner et abonnement, får du kreditter, du kan bruge på dit abonnement."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Når du opsiger dit nuværende betalte abonnement, returneres restbeløbet af abonnementet som kontokredit, og du nedgraderes til ${ BRAND_NAME }. ${ PLANS.FREE }-abonnementet"
@@ -8989,6 +8946,10 @@
       ],
       "You do not have permission to perform this action": [
         "Du har ikke tilladelse til at udføre denne handling"
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Du har ${ availableCount } ny server tilgængelig.",
+        "Du har ${ availableCount } nye servere tilgængelig."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -16483,6 +16444,10 @@
       "Activate user": [
         "Aktiver bruger"
       ],
+      "Add ${ totalServerCount } server?": [
+        "Tilføj ${ totalServerCount } server?",
+        "Tilføj ${ totalServerCount } servere?"
+      ],
       "Add a custom logo": [
         "Tilføj et brugertilpasset logo"
       ],
@@ -17445,7 +17410,7 @@
         "Sortér etiketter alfabetisk"
       ],
       "Spam, block, and allow lists": [
-        "Spam-, blokerings- og tillad-lister"
+        "Spam-, blokerings- og tilladelseslister"
       ],
       "Start a new import": [
         "Start en ny import"
@@ -18043,6 +18008,10 @@
       ],
       "Confirm all": [
         "Bekræft alle"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:",
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:"
       ],
       "Enable admin access?": [
         "Aktiver administratoradgang?"
