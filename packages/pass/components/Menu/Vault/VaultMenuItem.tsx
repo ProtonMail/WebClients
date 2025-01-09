@@ -68,7 +68,6 @@ export const VaultMenuItem = memo(
 
         const withActions = canEdit || canDelete || canInvite || canManage || canLeave || canMove;
 
-        const onSelect = pipe(() => vaultActions.select(vault.shareId), onAction);
         const onManage = pipe(() => vaultActions.manage(vault), onAction);
         const onEdit = pipe(() => vaultActions.edit(vault), onAction);
         const onInvite = pipe(() => vaultActions.invite(vault), onAction);
@@ -89,7 +88,7 @@ export const VaultMenuItem = memo(
 
         return (
             <DropdownMenuButton
-                onClick={() => !selected && onSelect()}
+                onClick={pipe(() => !selected && vaultActions.select(vault.shareId), onAction)}
                 label={<span className="block text-ellipsis">{label}</span>}
                 parentClassName={clsx(
                     'pass-vault-submenu-vault-item w-full',
