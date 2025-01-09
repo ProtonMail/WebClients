@@ -98,6 +98,11 @@ interface ResizeImageProps {
      * Is transparency allowed?
      */
     transparencyAllowed?: boolean;
+    /**
+     * Force image to be rendered in Canvas and returned
+     * This can be used to force image conversion to common types (jpeg, png, webp)
+     */
+    forceCanvasGeneration?: boolean;
 }
 
 /**
@@ -114,6 +119,7 @@ export const resizeImage = async ({
     bigResize = false,
     crossOrigin = true,
     transparencyAllowed = true,
+    forceCanvasGeneration = false,
 }: ResizeImageProps) => {
     const image = await toImage(original, crossOrigin);
     // Resize the image
@@ -123,7 +129,7 @@ export const resizeImage = async ({
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
     const [widthRatio, heightRatio] = [maxWidth && width / maxWidth, maxHeight && height / maxHeight].map(Number);
 
-    if (widthRatio <= 1 && heightRatio <= 1) {
+    if (!forceCanvasGeneration && widthRatio <= 1 && heightRatio <= 1) {
         return image.src;
     }
 
@@ -192,7 +198,13 @@ export const toBlob = (base64str: string) => {
 /**
  * Down size image to reach the max size limit
  */
-export const downSize = async (base64str: string, maxSize: number, mimeType = 'image/jpeg', encoderOptions = 1) => {
+export const downSize = async (
+    base64str: string,
+    maxSize: number,
+    mimeType = 'image/jpeg',
+    encoderOptions = 1,
+    forceCanvasGeneration = false
+) => {
     const process = async (source: string, maxWidth: number, maxHeight: number): Promise<string> => {
         const resized = await resizeImage({
             original: source,
@@ -200,6 +212,7 @@ export const downSize = async (base64str: string, maxSize: number, mimeType = 'i
             maxHeight,
             finalMimeType: mimeType,
             encoderOptions,
+            forceCanvasGeneration,
         });
         const { size } = new Blob([resized]);
 
