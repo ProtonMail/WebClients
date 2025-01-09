@@ -713,6 +713,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Wenn du eine Subdomain verwendest, z.B. subdomain.domain.com, musst du stattdessen ${ domainKeyExampleSubdomain } als Domain verwenden. Das heißt, wenn deine Domain mail.domain.com ist, solltest du ${ domainKeyExampleMail } als Domain eingeben."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Wenn du Cloudflare verwendest, stelle bitte sicher, dass du die Proxy-Option nicht auswählst."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
       ],
@@ -724,6 +727,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Einige DNS-Registrierungsstellen verlangen möglicherweise einen vollständigen Eintragspfad. Verwende in diesem Fall bitte stattdessen ${ domain } als Domainwert."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Einige Domänenregistrierungsstellen (Namecheap, Cloudflare usw.) verwenden möglicherweise auch @ für die Stammdomäne."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } ist eine E-Mail-Authentifizierungsmethode, die dazu dient, gefälschte Absenderadressen während der Zustellung der E-Mail zu erkennen. Die Einrichtung von SPF wird dringend empfohlen, um die Wahrscheinlichkeit zu verringern, dass deine E-Mails im Spam-Ordner des Empfängers landen."
@@ -742,6 +748,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Dieser Dienst unterstützt 2FA. Aktiviere sie für zusätzliche Kontosicherheit."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Um die Eigentümerschaft der Domain zu verifizieren, füge bitte den folgenden TXT-Eintrag hinzu. Einige Domain-Registrierungsstellen (Namecheap, Cloudflare usw.) verwenden möglicherweise @ für die Stammdomain."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Schalte erweiterte Sicherheitsfunktionen und detaillierte Protokolle zum Schutz deiner Online-Präsenz frei."
@@ -764,6 +773,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "A domain ownership must be verified first.": [
+        "Die Eigentümerschaft einer Domain muss zunächst verifiziert werden."
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Der Alias kann im Moment nicht aktualisiert werden. Bitte versuche es später erneut."
@@ -827,6 +839,9 @@
         "${ errors.length } beschädigte CSV-Zeile gefunden",
         "${ errors.length } beschädigte CSV-Zeilen gefunden"
       ],
+      "Domain could not be verified. Please make sure you added the correct DNS records": [
+        "Die Domain konnte nicht verifiziert werden. Bitte stelle sicher, dass du die richtigen DNS-Einträge hinzugefügt hast."
+      ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
@@ -859,6 +874,9 @@
       ],
       "Failed to create domain": [
         "Fehler beim Erstellen der Domain."
+      ],
+      "Failed to create new mailbox": [
+        "Fehler beim Erstellen des neuen Postfachs."
       ],
       "Failed to create the contact": [
         "Fehler beim Erstellen des Kontakts"
@@ -907,6 +925,9 @@
       ],
       "Failed to remove user's access.": [
         "Fehler beim Löschen des Benutzerzugriffs."
+      ],
+      "Failed to resend verification code": [
+        "Fehler beim erneuten Senden des Bestätigungscodes."
       ],
       "Failed to resend verification for custom email": [
         "Überprüfung für benutzerdefinierte E-Mail konnte nicht erneut gesendet werden"
@@ -1250,6 +1271,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
+      ],
+      "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
+        "${ PASS_APP_NAME } generiert eine Weiterleitungsadresse (auch als Reverse Alias bezeichnet), die du in die Zwischenablage kopieren kannst."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen, Kreditkarten und Identitäten."
@@ -1672,6 +1696,9 @@
       "Moving items to trash": [
         "Einträge werden in den Papierkorb verschoben"
       ],
+      "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
+        "Du musst jemandem eine E-Mail schicken, willst aber nicht, dass dieser deine E-Mail-Adresse sieht? Richte einen Kontakt-Alias ein."
+      ],
       "Never": [
         "Niemals"
       ],
@@ -1799,9 +1826,6 @@
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Bitte beachte, dass der Alias nach dem Löschen nicht wiederhergestellt werden kann. Der Alias ist bereits deaktiviert und kann keine E-Mails an dein Postfach weiterleiten"
       ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Bitte upgrade, um frühen Zugang zur ${ PASS_APP_NAME } Web-App zu erhalten."
-      ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
@@ -1846,6 +1870,9 @@
       ],
       "Secure links": [
         "Sichere Links"
+      ],
+      "See more info": [
+        "Weitere Infos anzeigen"
       ],
       "Select destination vault": [
         "Zieltresor auswählen:"
@@ -1906,6 +1933,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
+      ],
+      "The display name when sending an email from this alias.": [
+        "Der Anzeigename, wenn eine E-Mail von diesem Alias versendet wird."
       ],
       "The export will only contain vaults that you own.": [
         "Der Export enthält nur Tresore, die in deinem Besitz sind."
@@ -2129,6 +2159,9 @@
         "${ days } Tag",
         "${ days } Tage"
       ],
+      "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
+        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } in den letzten 14 Tagen."
+      ],
       "${ hours } hour": [
         "${ hours } Stunde",
         "${ hours } Stunden"
@@ -2284,6 +2317,9 @@
       ],
       "Confirm vault name": [
         "Tresorname bestätigen"
+      ],
+      "Contact created ${ time } ago.": [
+        "Kontakt vor ${ time } erstellt."
       ],
       "Contact details": [
         "Kontaktdetails"
@@ -2587,6 +2623,9 @@
       ],
       "Newest to oldest": [
         "Neueste nach älteste"
+      ],
+      "No Activity in the last 14 days.": [
+        "Keine Aktivität in den letzten 14 Tagen."
       ],
       "No history": [
         "Kein Verlauf"
@@ -3009,6 +3048,9 @@
       "my-domain.com": [
         "meine-Domain.de"
       ],
+      "Name to display when sending an email": [
+        "Name, der beim Versenden einer E-Mail angezeigt werden soll"
+      ],
       "Note from SimpleLogin": [
         "Notiz von SimpleLogin"
       ],
@@ -3100,6 +3142,9 @@
       "Sign-in requested on another device. Was it you?": [
         "Anmeldung auf einem anderen Gerät angefragt. Warst du das?"
       ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Anmeldung auf einem anderen Gerät angefragt. Warst du das? "
+      ],
       "Yes, it was me": [
         "Ja, das war ich"
       ]
@@ -3131,6 +3176,12 @@
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Die Synchronisierung der Aliasse wurde erfolgreich aktiviert. Die Synchronisierung der SimpleLogin-Aliasse kann einige Zeit in Anspruch nehmen."
       ],
+      "Catch-all setting successfully disabled": [
+        "Catch-all-Einstellung erfolgreich deaktiviert."
+      ],
+      "Catch-all setting successfully enabled": [
+        "Catch-all-Einstellung erfolgreich aktiviert."
+      ],
       "Contact successfully blocked": [
         "Kontakt erfolgreich gesperrt."
       ],
@@ -3149,8 +3200,17 @@
       "Default mailbox successfully updated": [
         "Standard-Postfach aktualisiert"
       ],
+      "Display name successfully updated": [
+        "Anzeigename erfolgreich aktualisiert."
+      ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Domaineigentümerschaft verifiziert. Du kannst nun einen MX-Eintrag einrichten."
+      ],
       "Domain successfully deleted": [
         "Domain gelöscht"
+      ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domain erfolgreich verifiziert. Über deine Domain können nun E-Mails empfangen und Aliasse erstellt werden."
       ],
       "Mailbox successfully deleted": [
         "Postfach erfolgreich gelöscht."
@@ -3164,6 +3224,9 @@
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Verifizierungs-E-Mail versendet. Bitte überprüfe deinen Posteingang, um dein Postfach zu verifizieren."
       ]
     },
     "Theme": {
@@ -3265,6 +3328,9 @@
       "Default": [
         "Standard"
       ],
+      "Default Display Name": [
+        "Standardanzeigename"
+      ],
       "Delete domain": [
         "Domain löschen"
       ],
@@ -3291,6 +3357,9 @@
       ],
       "Domain": [
         "Domain"
+      ],
+      "Domain ownership verification": [
+        "Verifizierung der Domaineigentümerschaft"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
@@ -3413,6 +3482,10 @@
       "Pinned (${ items.length })": [
         "Angeheftet (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Bitte beachte, dass einmal gelöschte Aliasse nicht wiederhergestellt werden können.",
+        "Bitte beachte, dass einmal gelöschte Aliasse nicht wiederhergestellt werden können."
+      ],
       "Recommended actions": [
         "Empfohlene Aktionen"
       ],
@@ -3510,9 +3583,6 @@
       "Update available": [
         "Update verfügbar"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Upgrade zum Freischalten von Premiumfunktionen"
-      ],
       "Vault": [
         "Tresor"
       ],
@@ -3537,6 +3607,9 @@
       "What is the dark web?": [
         "Was ist das Dark Web?"
       ],
+      "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
+        "Was ist der Unterschied zwischen einer ${ PASS_SHORT_APP_NAME }-Notiz und einer SimpleLogin-Notiz?"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dein ${ planName }-Abonnement endet am ${ endDate }"
       ],
@@ -3548,9 +3621,16 @@
       ],
       "Your welcome gift": [
         "Dein Willkommensgeschenk"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
+        "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
       ]
     },
     "Validation": {
+      "Domain URL is invalid": [
+        "Domain-URL ist ungültig."
+      ],
       "Duplicated URL": [
         "Doppelte URL"
       ],
@@ -3582,6 +3662,9 @@
       ],
       "A description of the problem is required": [
         "Eine Beschreibung des Problems ist erforderlich."
+      ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliasse im Papierkorb werden E-Mails weiterhin weiterleiten."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle deine im Papierkorb befindlichen Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."

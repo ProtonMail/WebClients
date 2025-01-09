@@ -718,7 +718,7 @@
         "Si vous utilisez un sous-domaine, par exemple sous-domaine.domaine.fr, vous devez utiliser ${ domainKeyExampleSubdomain } comme domaine à la place. Cela signifie que si votre domaine est e-mail.domaine.fr, vous devez saisir ${ domainKeyExampleMail } comme domaine."
       ],
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
-        "S vous utilisez Cloudflare, assurez-vous de ne pas sélectionner l'option Proxy."
+        "Si vous utilisez Cloudflare, assurez-vous de ne pas sélectionner l'option Proxy."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Renforcez la sécurité et la confidentialité de vos informations avec ces conseils."
@@ -1908,9 +1908,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Une fois supprimé, l'alias ne pourra pas être restauré. Cet alias est déjà désactivé et ne transfèrera plus d'e-mails dans votre messagerie"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Changez d'abonnement pour bénéficier d'un accès en avant-première à l'application web de ${ PASS_APP_NAME }."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Veuillez utiliser le chemin d'accès complet du domaine, par exemple mon-domaine.fr ou mon-sous-domaine.mon-domaine.fr si vous utilisez un sous-domaine."
@@ -3756,9 +3753,6 @@
       "Update available": [
         "Mise à jour disponible"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Passez à la version supérieure pour profiter des fonctionnalités premium."
-      ],
       "Vault": [
         "Coffre-fort"
       ],
@@ -3955,6 +3949,9 @@
       ],
       "No results": [
         "Aucun résultat"
+      ],
+      "No secure links matching": [
+        "Aucun lien sécurisé ne correspond."
       ],
       "Offline": [
         "Hors ligne"
