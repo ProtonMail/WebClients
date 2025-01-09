@@ -30,7 +30,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
     const didQueueLoadPublicShare = useRef(false);
 
     const { loadPublicShare } = usePublicShare();
-    const { request } = usePublicSession();
+    const { request, getAddressKeyInfo } = usePublicSession();
     const { cacheLoadedLinks } = useLinksListingHelpers();
     const { getLinkSessionKey } = useLink();
     const { loadChildren: publicLinksLoadChildren } = usePublicLinksListing();
@@ -189,6 +189,7 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
         getNode,
         getNodeContentKey,
         permissions,
+        getAddressKeyInfo,
         performInitialSetup: loadChildren,
         didCompleteInitialSetup: didLoadChildren && didPreloadNode,
     };

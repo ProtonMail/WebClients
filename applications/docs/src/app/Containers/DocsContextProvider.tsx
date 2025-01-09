@@ -48,7 +48,7 @@ type ChildrenProps = {
 // eslint-disable-next-line react/display-name
 const MemoizedChildren = memo(({ children }: ChildrenProps) => <>{children}</>)
 
-const DocsProvider = ({ publicContext, privateContext, children }: ProviderProps) => {
+const DocsContextProvider = ({ publicContext, privateContext, children }: ProviderProps) => {
   return (
     <DocsContext.Provider
       value={{ publicContext, privateContext, surePrivateContext: privateContext!, surePublicContext: publicContext! }}
@@ -58,4 +58,4 @@ const DocsProvider = ({ publicContext, privateContext, children }: ProviderProps
   )
 }
 
-export default DocsProvider
+export default DocsContextProvider
