@@ -10,6 +10,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import useApi from '@proton/components/hooks/useApi';
+import { type Transaction } from '@proton/payments';
 import { getTransactionPDF } from '@proton/shared/lib/api/payments';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -27,11 +28,11 @@ const TransactionGroup = ({ transactions, loading, error, page }: TransactionsHo
     const isEmpty = page === 1 && !loading && transactions.length === 0 && !showError;
     const showContent = !isEmpty && !showError;
 
-    const getFilename = (transaction: any) =>
-        `${c('Title for PDF file').t`${MAIL_APP_NAME} transaction`} ${transaction.TransactionId}.pdf`;
+    const getFilename = (transaction: Transaction) =>
+        `${c('Title for PDF file').t`${MAIL_APP_NAME} transaction`} ${transaction.TransactionID}.pdf`;
 
-    const handleDownload = async (transaction: any) => {
-        const buffer = await api(getTransactionPDF(transaction.TransactionId));
+    const handleDownload = async (transaction: Transaction) => {
+        const buffer = await api(getTransactionPDF(transaction.TransactionID));
         const blob = new Blob([buffer], { type: 'application/pdf' });
         downloadFile(blob, getFilename(transaction));
     };
@@ -68,7 +69,7 @@ const TransactionGroup = ({ transactions, loading, error, page }: TransactionsHo
                                             '',
                                         ]}
                                         cells={[
-                                            transaction.TransactionId,
+                                            transaction.TransactionID,
                                             <Price currency={transaction.CurrencyCode}>{transaction.Amount}</Price>,
                                             <TransactionType key={key} type={transaction.Type} />,
                                             <TransactionState key={key} state={transaction.State} />,
