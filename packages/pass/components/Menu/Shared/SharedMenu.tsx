@@ -32,23 +32,27 @@ export const SharedMenu = memo(() => {
                 {free && <PassPlusPromotionButton style={{ '--background-norm': 'var(--background-strong)' }} />}
             </div>
             <div className="flex">
-                <SharedMenuItem
-                    upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
-                    label={c('Label').t`Shared with me`}
-                    count={sharedWithMeCount}
-                    selected={scope === 'shared-with-me'}
-                    to="shared-with-me"
-                    icon="user-arrow-left"
-                />
+                {sharedWithMeCount > 0 && (
+                    <SharedMenuItem
+                        upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
+                        label={c('Label').t`Shared with me`}
+                        count={sharedWithMeCount}
+                        selected={scope === 'shared-with-me'}
+                        to="shared-with-me"
+                        icon="user-arrow-left"
+                    />
+                )}
 
-                <SharedMenuItem
-                    upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
-                    label={c('Label').t`Shared by me`}
-                    count={sharedByMeCount}
-                    selected={scope === 'shared-by-me'}
-                    to="shared-by-me"
-                    icon="user-arrow-right"
-                />
+                {sharedByMeCount > 0 && (
+                    <SharedMenuItem
+                        upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
+                        label={c('Label').t`Shared by me`}
+                        count={sharedByMeCount}
+                        selected={scope === 'shared-by-me'}
+                        to="shared-by-me"
+                        icon="user-arrow-right"
+                    />
+                )}
 
                 <SharedMenuItem
                     upsellRef={free ? UpsellRef.SECURE_LINKS : undefined}
