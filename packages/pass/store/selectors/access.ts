@@ -1,13 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
+import { selectState } from '@proton/pass/store/selectors/utils';
 import { prop } from '@proton/pass/utils/fp/lens';
 
 import type { AccessItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 
-const defaultAccess: AccessItem = {
+type SelectAccessDTO = { shareId: string; itemId?: string };
+
+const DEFAULT_ACCESS: AccessItem = {
     members: [],
     invites: [],
     newUserInvites: [],
@@ -16,13 +19,13 @@ const defaultAccess: AccessItem = {
 export const selectAccess =
     (shareId: string, itemId?: string) =>
     ({ access }: State) =>
-        access[toShareAccessKey({ shareId, itemId })] || defaultAccess;
+        access[toShareAccessKey({ shareId, itemId })] || DEFAULT_ACCESS;
 
-export const selectAccessOrThrow = (shareId: string, itemId?: string) => (state: State) => {
-    const item = selectAccess(shareId, itemId)(state);
-    if (!item) throw new SelectorError(`Access item for key ${toShareAccessKey({ shareId, itemId })} not found`);
-    return item;
-};
+export const selectAccessOrThrow = (shareId: string, itemId?: string) =>
+    createSelector([selectAccess(shareId, itemId)], (access) => {
+        if (!access) throw new SelectorError(`Access item for key ${toShareAccessKey({ shareId, itemId })} not found`);
+        return access;
+    });
 
 export const selectAccessSharedWithEmails = (shareId: string, itemId?: string) =>
     createSelector(
@@ -36,12 +39,15 @@ export const selectAccessSharedWithEmails = (shareId: string, itemId?: string) =
             )
     );
 
-export const selectAccessForMany = (targets: { shareId: string; itemId?: string }[]) => (state: State) =>
-    Object.fromEntries(
-        new Map(
-            targets.map((t) => {
-                const stateKey = toShareAccessKey(t);
-                return [stateKey, selectAccess(stateKey)(state)];
-            })
+export const selectAccessForMany = createSelector(
+    [selectState, (_: State, dto: SelectAccessDTO[]) => dto],
+    (state: State, dtos) =>
+        Object.fromEntries(
+            new Map(
+                dtos.map((dto) => {
+                    const stateKey = toShareAccessKey(dto);
+                    return [stateKey, selectAccess(stateKey)(state)];
+                })
+            )
         )
-    );
+);
