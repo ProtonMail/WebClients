@@ -723,6 +723,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Pokud používáte subdoménu, např. subdoména.doména.cz, musíte jako doménu použít ${ domainKeyExampleSubdomain }. To znamená, že pokud je vaše doména mail.doména.cz, měli byste zadat ${ domainKeyExampleMail } jako doménu."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Pokud používáte Cloudflare, ujistěte se, že není vybrána možnost Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
       ],
@@ -734,6 +737,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Někteří registrátoři DNS mohou vyžadovat úplnou cestu k záznamu, v takovém případě použijte ${ domain } jako hodnotu domény."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Někteří registrátoři domén (Namecheap, Cloudflare atd.) mohou také používat @ pro hlavní doménu."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } je metoda ověřování e-mailů určená k odhalování podvržených adres odesílatele během doručování e-mailu. Nastavení SPF se důrazně doporučuje, aby se snížila pravděpodobnost, že vaše e-maily skončí ve spamu příjemce."
@@ -752,6 +758,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Tato služba nabízí 2FA. Povolte ho pro zvýšení zabezpečení účtu."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Chcete-li ověřit vlastnictví domény, přidejte následující záznam TXT. Někteří registrátoři domén (Namecheap, Cloudflare atd.) mohou pro hlavní doménu používat @."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odemkněte pokročilé funkce zabezpečení a podrobné logy, abyste zabezpečili svou online přítomnost."
@@ -1955,9 +1964,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Upozorňujeme, že jednou smazaný alias nelze obnovit. Alias je již deaktivován a nepřeposílá e-maily do vaší e-mailové schránky"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Pro předběžný přístup k webové aplikaci ${ PASS_APP_NAME } prosím navyšte svůj tarif"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Použijte úplnou cestu domény, například má-doména.cz nebo pokud používáte subdoménu, tak má-subdoména.má-doména.cz."
@@ -3853,9 +3859,6 @@
       "Update available": [
         "Aktualizace k dispozici"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Přejděte na vyšší tarif pro odemčení prémiových funkcí"
-      ],
       "Vault": [
         "Trezor"
       ],
@@ -4060,6 +4063,9 @@
       ],
       "No results": [
         "Žádné výsledky"
+      ],
+      "No secure links matching": [
+        "Žádné bezpečné odkazy neodpovídají"
       ],
       "Offline": [
         "Offline"
