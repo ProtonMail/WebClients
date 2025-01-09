@@ -100,5 +100,13 @@ export const migrate = (state: State, versions: { from?: string; to: string }) =
     /** Clear request cache on update */
     if (!versions.from || semver(versions.from) < semver(versions.to)) state.request = {};
 
+    /** v1.28.0 migration */
+    for (const shareId in state.shares) {
+        const share = state.shares[shareId];
+        if ('invites' in share) delete share.invites;
+        if ('newUserInvites' in share) delete share.newUserInvites;
+        if ('members' in share) delete share.members;
+    }
+
     return state;
 };
