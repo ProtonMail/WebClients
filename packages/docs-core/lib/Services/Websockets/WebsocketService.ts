@@ -1,5 +1,5 @@
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
-import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import type { DocumentKeys, NodeMeta, PublicNodeMeta, PublicDocumentKeys } from '@proton/drive-store'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -43,8 +43,8 @@ import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
-import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../../Types/DocumentEntitlements'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
+import { doKeysBelongToAuthenticatedUser } from '../../Types/DocumentEntitlements'
 
 type LinkID = string
 
@@ -332,7 +332,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     const { keys, connection } = record
 
     const metadata: EncryptionMetadata | AnonymousEncryptionMetadata = {
-      authorAddress: isPrivateDocumentKeys(keys) ? keys.userOwnAddress : undefined,
+      authorAddress: keys.userOwnAddress,
       timestamp: Date.now(),
       version: DocumentUpdateVersion.V1,
     }
@@ -412,7 +412,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
 
     const metadata: EncryptionMetadata | AnonymousEncryptionMetadata = {
-      authorAddress: isPrivateDocumentKeys(keys) ? keys.userOwnAddress : undefined,
+      authorAddress: keys.userOwnAddress,
       timestamp: Date.now(),
       version: ClientEventVersion.V1,
     }
@@ -519,8 +519,9 @@ export class WebsocketService implements WebsocketServiceInterface {
     const { keys, debouncer, document } = record
 
     for (const update of message.updates.documentUpdates) {
-      const isReceivedUpdateFromOtherUser = isPrivateDocumentKeys(keys) && update.authorAddress !== keys.userOwnAddress
-      const isReceivedUpdateFromAnonymousUser = isPrivateDocumentKeys(keys) && !update.authorAddress
+      const isReceivedUpdateFromOtherUser =
+        doKeysBelongToAuthenticatedUser(keys) && update.authorAddress !== keys.userOwnAddress
+      const isReceivedUpdateFromAnonymousUser = doKeysBelongToAuthenticatedUser(keys) && !update.authorAddress
       if (isReceivedUpdateFromOtherUser || isReceivedUpdateFromAnonymousUser) {
         this.switchToRealtimeMode(debouncer, 'receiving DU from other user')
       }

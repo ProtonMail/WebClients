@@ -82,7 +82,10 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       `Loaded document meta with last commit id ${documentState.getProperty('documentMeta').latestCommitId()}`,
     )
 
-    this.syncedEditorState.setProperty('userName', AnonymousUserDisplayName)
+    this.syncedEditorState.setProperty(
+      'userName',
+      documentState.getProperty('entitlements').keys.userOwnAddress || AnonymousUserDisplayName,
+    )
 
     this.documentState = documentState
 

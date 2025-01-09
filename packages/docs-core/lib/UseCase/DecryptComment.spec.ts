@@ -3,11 +3,10 @@ import { DecryptComment } from './DecryptComment'
 import { Result } from '@proton/docs-shared'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
-import type { DocumentKeys } from '@proton/drive-store'
+import type { DocumentKeys, PublicDocumentKeys } from '@proton/drive-store'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { PublicDocumentKeys } from '../Types/DocumentEntitlements'
 import type { SignedPlaintextContent } from '@proton/docs-proto'
 
 jest.mock('./GetAdditionalEncryptionData', () => ({

@@ -22,7 +22,7 @@ import { CommentThreadType } from '@proton/docs-shared'
 import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
 import { DocControllerEvent } from '../../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import { EventTypeEnum } from '@proton/docs-proto'
-import { isDocumentState, type DocumentState, type PublicDocumentState } from '../../State/DocumentState'
+import { type DocumentState, type PublicDocumentState } from '../../State/DocumentState'
 import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
 import { LocalCommentsState } from './LocalCommentsState'
 import { TelemetryDocsEvents } from '@proton/shared/lib/api/telemetry'
@@ -78,11 +78,7 @@ export class CommentController implements CommentControllerInterface, InternalEv
   }
 
   get userDisplayName(): string {
-    if (isDocumentState(this.documentState)) {
-      return this.documentState.getProperty('entitlements').keys.userOwnAddress
-    }
-
-    return AnonymousUserDisplayName
+    return this.documentState.getProperty('entitlements').keys.userOwnAddress || AnonymousUserDisplayName
   }
 
   public fetchAllComments(): void {
