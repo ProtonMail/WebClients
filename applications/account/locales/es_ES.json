@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -2957,7 +2957,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "Irán (República Islámica)"
+        "República Islámica de Irán"
       ],
       "Isle of Man": [
         "Isla de Man"
@@ -3902,49 +3902,6 @@
       ],
       "Priority support": [
         "Soporte prioritario"
-      ]
-    },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Obtén ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Obtenlo por ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Se factura cada dos años por ${ amountBilled }. Los descuentos se aplican sobre el precio mensual estándar."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Facturación anual de ${ amountBilled }. Ahorra ${ amountSave } en 2 suscripciones individuales anuales ilimitadas de ${ BRAND_NAME }."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB de almacenamiento"
-      ],
-      "2 users": [
-        "2 usuarios"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Acceso completo a todos los productos de ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Ahorras ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Todo ${ BRAND_NAME } para 2"
-      ],
-      "Double your storage": [
-        "Doblar tu almacenamiento"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -5400,7 +5357,7 @@
         "Abandonar el plan Visionary"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "Las cuentas Lifetime no pueden unirse a un plan familiar."
+        "Las cuentas de por vida no pueden unirse a un plan familiar."
       ],
       "Manage addresses": [
         "Gestiona las direcciones"
@@ -8267,7 +8224,7 @@
         "Ten en cuenta que si eliminas el filtro ${ nameDeleted }, dejaremos de procesar todas las acciones automatizadas que desencadena."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Por favor, ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
@@ -8612,6 +8569,9 @@
       ],
       "Swiss based": [
         "Con sede en Suiza"
+      ],
+      "Switch to": [
+        "Cambiar a"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
@@ -12248,7 +12208,7 @@
         "Acuerdo para el tratamiento de datos conforme al RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correos electrónicos con un prompt"
+        "Genera correos electrónicos con un aviso"
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
@@ -12473,7 +12433,7 @@
         "Compartir la caja fuerte (hasta ${ n } personas)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+        "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
     },
     "new_plans: feature highlight": {
@@ -16492,7 +16452,7 @@
         "Privacidad y seguridad integrales"
       ],
       "Dark web monitoring": [
-        "Monitoreo de la Dark Web"
+        "Monitoreo de la red oscura"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Soporte para aplicación de escritorio y cliente de correo (vía IMAP)"
@@ -16531,7 +16491,7 @@
         "Cómo nuestro equipo de atención al cliente ha llevado nuestra aplicación VPN directamente a la mano de la gente."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "Cómo contraatacamos cuando ${ BRAND_NAME } fue bloqueada por una campaña agresiva ."
+        "Cómo contraatacamos cuando ${ BRAND_NAME } fue bloqueada por una campaña agresiva."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Cómo apoyamos a activistas locales cuando la privacidad y la libertad de expresión fueron amenazadas."
@@ -16651,7 +16611,7 @@
         "Cuando canceles ${ planName }, se te pasará a ${ BRAND_NAME } Free el cual ofrece hasta 1 GB de almacenamiento en Mail y hasta 5 GB en Drive. Tu equipo experimentará interrupciones en su trabajo debido a que los usuarios adicionales no están soportados en el plan gratuito."
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Cuando tu suscripción a ${ planName } termine el ${ expiryDate }, pasarás al plan ${ BRAND_NAME } Free."
+        "Cuando tu suscripción a ${ planName } termine el ${ expiryDate }, pasarás al plan gratuito ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Bono de almacenamiento gratuito al año"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -3904,49 +3904,6 @@
         "Supporto prioritario"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Ottieni ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Ottienilo per ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Fatturato ogni 2 anni a ${ amountBilled }. Gli sconti si basano sul prezzo mensile standard."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Fatturato annualmente a ${ amountBilled }. Risparmia ${ amountSave } su 2 abbonamenti annuali individuali di ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB di spazio di archiviazione"
-      ],
-      "2 users": [
-        "2 utenti"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Accesso completo a tutti i prodotti ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Risparmi ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Tutte le funzionalità di ${ BRAND_NAME }, per 2."
-      ],
-      "Double your storage": [
-        "Ti presentiamo Proton Duo"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Ti presentiamo ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duration": {
       "120 minutes": [
         "120 minuti"
@@ -5197,6 +5154,11 @@
         "Evento dalle ${ timeString }, ${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Errore inaspettato"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Il file ICS allegato non può essere decriptato"
@@ -6294,6 +6256,47 @@
         "Nessun metodo di verifica disponibile"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fuso orario del calendario non supportato"
+      ],
+      "Edited event not supported": [
+        "Evento modificato non supportato"
+      ],
+      "End time out of bounds": [
+        "Ora di fine fuori dai limiti"
+      ],
+      "Event validation failed": [
+        "Convalida dell'evento non riuscita"
+      ],
+      "Floating times not supported": [
+        "Tempi mobili non supportati"
+      ],
+      "Malformed all-day event": [
+        "Evento per tutta la giornata ha un formato errato"
+      ],
+      "Malformed end time": [
+        "Ora di fine con un formato errato"
+      ],
+      "Malformed recurring event": [
+        "Evento ricorrente non conforme"
+      ],
+      "Malformed start time": [
+        "Ora di inizio con un formato errato"
+      ],
+      "Recurring event has no occurrences": [
+        "L'evento ricorrente non ha occorrenze"
+      ],
+      "Recurring rule not supported": [
+        "Regola ricorrente non supportata"
+      ],
+      "Start time out of bounds": [
+        "Ora di inizio fuori dai limiti"
+      ],
+      "Time zone not supported": [
+        "Fuso orario non supportato"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } evento crittografato e aggiunto al tuo calendario",
@@ -6436,6 +6439,9 @@
       ],
       "Your email account requires one to export your data.": [
         "Il tuo account email ne richiede uno per esportare i tuoi dati."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Il tuo indirizzo email e la password dell'app sono corretti. Non usare la tua password regolare."
       ],
       "Your email address and password are correct.": [
         "Il tuo indirizzo email e la password siano corretti."
@@ -6915,6 +6921,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Dopo essere stati bloccati, i membri dell'organizzazione dovranno sbloccare ${ PASS_APP_NAME } con la propria password o PIN, ecc."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
+      ],
       "Align left": [
         "Allinea a sinistra"
       ],
@@ -7218,6 +7227,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un cloud sicuro per ${ value } membro",
+        "Crea un cloud sicuro per ${ value } membri"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
@@ -8412,6 +8425,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Inviato con l'email sicura <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "I pagamenti SEPA non sono disponibili al momento. Si prega di riprovare più tardi."
+      ],
       "Server is currently down": [
         "Il server è attualmente offline"
       ],
@@ -8544,6 +8560,9 @@
       ],
       "Swiss based": [
         "Con sede in Svizzera"
+      ],
+      "Switch to": [
+        "Altri account"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
