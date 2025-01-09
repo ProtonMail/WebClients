@@ -439,6 +439,9 @@
       "Submitting report...": [
         "正在送出報告..."
       ],
+      "Sync alias": [
+        "同步別名"
+      ],
       "Transfer ownership": [
         "轉移所有權"
       ],
@@ -450,6 +453,9 @@
       ],
       "Try for free": [
         "免費滿意體驗"
+      ],
+      "Understood, I will never need it": [
+        "了解，我將不再需要這些項目"
       ],
       "Unlock": [
         "解鎖"
@@ -559,6 +565,9 @@
       "Authentication error": [
         "認證錯誤"
       ],
+      "Cannot send invitation at the moment": [
+        "目前無法發送邀請"
+      ],
       "Cannot send invitations at the moment": [
         "目前無法發送邀請"
       ],
@@ -594,6 +603,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "刪除保管庫${ payload.content.name }失敗"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "刪除${ errors.length }錯誤的CSV項目"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -805,6 +817,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "位元組"
+      ],
       "GB": [
         "GB"
       ],
@@ -816,6 +831,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "位元組"
+      ],
+      "Gigabyte": [
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "千位元組"
+      ],
+      "Megabyte": [
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -849,6 +881,15 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
+      ],
+      "${ count } time": [
+        "${ count }次數"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } 位成員"
+      ],
+      "${ n } item": [
+        "${ n } 項目"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 成功停用"
@@ -1003,6 +1044,9 @@
       "Import the CSV file below.": [
         "於底下匯入CSV。"
       ],
+      "Imported ${ payload.total } item": [
+        "匯入${ payload.total }項目"
+      ],
       "Imported on ${ date }": [
         "匯入於${ date }"
       ],
@@ -1029,6 +1073,9 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已經登入 ${ PASS_APP_NAME }。若您嘗試使用其他帳號登入，請先從擴充套件登出。"
+      ],
+      "item": [
+        "項目"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "項目${ payload.item.data.metadata.name }以新增"
@@ -1156,9 +1203,6 @@
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "已被刪除的信箱別名無法復原。此別名已被停用並不再轉寄郵件至您的信箱"
       ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "請升級以提早存取${ PASS_APP_NAME }網頁"
-      ],
       "Press Enter to copy": [
         "按 Enter 以複製"
       ],
@@ -1228,6 +1272,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "以下${ result.ignored.length }項目無法匯入:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
       ],
@@ -1282,6 +1329,9 @@
       "You are about to create:": [
         "您將要創建:"
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "你有 ${ aliasCount } 個別名存在於 SimpleLogin ，但未同步到 ${ PASS_APP_NAME } 。是否需要進行同步？"
+      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "已用鑿可供創建別名的數量。升級訂購授權即可釋放限制"
       ],
@@ -1308,8 +1358,26 @@
       ]
     },
     "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length }個字元"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount }個字"
+      ],
+      "${ days } day": [
+        "${ days }天"
+      ],
+      "${ hours } hour": [
+        "${ hours }小時"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }分鐘"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }版本"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount }登入"
       ],
       "1 hour": [
         "1 小時"
@@ -1933,6 +2001,11 @@
         "視窗"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } 個項目"
+      ]
+    },
     "new_plans: feature": {
       "Require 2FA for organization": [
         "要求組織雙重驗證"
@@ -2070,6 +2143,11 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "保管庫不能包含超過 ${ vault.targetMaxMembers } 位使用者。"
       ]
     },
     "Title": {
@@ -2232,6 +2310,9 @@
       "Pinned (${ items.length })": [
         "地址 (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "需注意別名一旦刪除，將無法恢復"
+      ],
       "Recommended actions": [
         "建議行動"
       ],
@@ -2249,6 +2330,9 @@
       ],
       "Resume monitoring?": [
         "繼續監控?"
+      ],
+      "Reused ${ count } time": [
+        "接續${ count }時間"
       ],
       "Reused passwords": [
         "重複使用的密碼"
@@ -2300,9 +2384,6 @@
       ],
       "Update available": [
         "有可用更新"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "升級解鎖頂級功能"
       ],
       "Vault": [
         "保管庫"
@@ -2397,6 +2478,9 @@
       ],
       "Invalid email addresses.": [
         "無效的電子郵件位址"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "最長上限為${ maxLength }字元"
       ],
       "Missing alias prefix": [
         "缺少別名前綴"
