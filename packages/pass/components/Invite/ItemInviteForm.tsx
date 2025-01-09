@@ -9,6 +9,7 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { UserVerificationMessage } from '@proton/pass/components/Invite/UserVerificationMessage';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { type InviteAddressValidator } from '@proton/pass/hooks/useValidateInviteAddress';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
@@ -50,8 +51,8 @@ const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props>
 
     const [autocomplete, setAutocomplete] = useState('');
     const userVerified = useSelector(selectUserVerified);
-    const vaultSharedWith = useSelector(selectAccessSharedWithEmails(shareId));
-    const item = useSelector(selectItem(shareId, itemId))!;
+    const vaultSharedWith = useMemoSelector(selectAccessSharedWithEmails, [shareId]);
+    const item = useMemoSelector(selectItem, [shareId, itemId])!;
     const { heading, subheading } = presentListItem(item);
 
     const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
@@ -144,7 +145,7 @@ const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props>
                             autocomplete={autocomplete}
                             selected={selected}
                             excluded={vaultSharedWith}
-                            shareId={form.values.shareId}
+                            access={form.values}
                             onToggle={onRecommendationToggle}
                         />
                     </div>

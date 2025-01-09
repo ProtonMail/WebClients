@@ -10,6 +10,7 @@ import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { ShareMemberAvatar } from '@proton/pass/components/Share/ShareMemberAvatar';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useInviteRecommendations } from '@proton/pass/hooks/useInviteRecommendations';
+import type { SelectAccessDTO } from '@proton/pass/store/selectors';
 import { selectDefaultVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -21,7 +22,7 @@ type Props = {
     autocomplete: string;
     excluded: Set<string>;
     selected: Set<string>;
-    shareId?: string;
+    access?: SelectAccessDTO;
     onToggle: (email: string, selected: boolean) => void;
 };
 
@@ -34,9 +35,15 @@ export const InviteRecommendations: FC<Props> = (props) => {
 
     const startsWith = useDebouncedValue(autocomplete, 250);
     const defaultVault = useSelector(selectDefaultVault);
-    const shareId = props.shareId ?? defaultVault?.shareId ?? '';
 
-    const { loadMore, state } = useInviteRecommendations(shareId, startsWith, pageSize);
+    const access = useMemo(
+        /** If not `access` prop is passed consider
+         * we're dealing with a vault invite */
+        () => props.access ?? { shareId: defaultVault?.shareId ?? '' },
+        [props.access, defaultVault]
+    );
+
+    const { loadMore, state } = useInviteRecommendations(access, startsWith, pageSize);
     const { organization, emails, loading } = state;
 
     const displayedEmails = useMemo(() => {
