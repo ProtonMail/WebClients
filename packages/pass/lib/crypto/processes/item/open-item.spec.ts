@@ -43,7 +43,7 @@ describe('openItem crypto process', () => {
 
         const itemKey = await openItemKey({
             encryptedItemKey: { Key: encryptedItem.ItemKey!, KeyRotation: encryptedItem.KeyRotation },
-            vaultKey,
+            shareKey: vaultKey,
         });
 
         const item = await openItem({ encryptedItem, itemKey });
@@ -67,7 +67,7 @@ describe('openItem crypto process', () => {
 
         const itemKey = await openItemKey({
             encryptedItemKey: { Key: createItemRequest.ItemKey!, KeyRotation: 1 },
-            vaultKey,
+            shareKey: vaultKey,
         });
 
         const encryptedItem: ItemRevisionContentsResponse = {

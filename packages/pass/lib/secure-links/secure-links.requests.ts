@@ -1,5 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { decodeItemContent, protobufToItem } from '@proton/pass/lib/items/item-proto.transformer';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type {
@@ -19,14 +20,8 @@ export const createSecureLink = async (
     { shareId, itemId, revision }: ItemRevision,
     options: SecureLinkOptions
 ): Promise<SecureLink> => {
-    const latestItemKey = (
-        await api({
-            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
-            method: 'get',
-        })
-    ).Key!;
-
-    const linkData = await PassCrypto.createSecureLink({ shareId, latestItemKey });
+    const itemKey = await resolveItemKey(shareId, itemId);
+    const linkData = await PassCrypto.createSecureLink({ shareId, itemKey });
     const { encryptedItemKey, encryptedLinkKey, secureLinkKey } = linkData;
 
     const data: PublicLinkCreateRequest = {
@@ -34,7 +29,7 @@ export const createSecureLink = async (
         EncryptedItemKey: uint8ArrayToBase64String(encryptedItemKey),
         EncryptedLinkKey: uint8ArrayToBase64String(encryptedLinkKey),
         ExpirationTime: options.expirationTime,
-        LinkKeyShareKeyRotation: latestItemKey.KeyRotation,
+        LinkKeyShareKeyRotation: itemKey.rotation,
     };
 
     if (options.maxReadCount !== null) data.MaxReadCount = options.maxReadCount;
@@ -62,7 +57,7 @@ export const createSecureLink = async (
 export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promise<SecureLinkItem> => {
     try {
         const { PublicLinkContent } = await api({ url: `pass/v1/public_link/content/${token}`, method: 'get' });
-        const decryptedContents = await PassCrypto.openSecureLink({ linkKey, publicLinkContent: PublicLinkContent! });
+        const decryptedContents = await PassCrypto.openSecureLink({ linkKey, publicLinkContent: PublicLinkContent });
         const item = obfuscateItem(protobufToItem(decodeItemContent(decryptedContents)));
         const expirationDate = PublicLinkContent?.ExpirationTime!;
 

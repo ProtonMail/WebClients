@@ -4,7 +4,6 @@ import type {
     InviteAcceptRequest,
     InviteCreateRequest,
     ItemCreateRequest,
-    ItemLatestKeyResponse,
     ItemMoveSingleToShareRequest,
     ItemRevisionContentsResponse,
     ItemUpdateRequest,
@@ -67,12 +66,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     removeShare: (shareId: string) => void;
     openItem: (data: { shareId: string; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
     createItem: (data: { shareId: string; content: Uint8Array }) => Promise<ItemCreateRequest>;
-    updateItem: (data: {
-        content: Uint8Array;
-        lastRevision: number;
-        latestItemKey: EncodedItemKeyRotation;
-        shareId: string;
-    }) => Promise<ItemUpdateRequest>;
+    updateItem: (data: { content: Uint8Array; lastRevision: number; itemKey: ItemKey }) => Promise<ItemUpdateRequest>;
     moveItem: (data: { destinationShareId: string; content: Uint8Array }) => Promise<ItemMoveSingleToShareRequest>;
     createInvite: (data: {
         email: string;
@@ -100,10 +94,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
     }) => Promise<Uint8Array>;
-    createSecureLink: (data: {
-        shareId: string;
-        latestItemKey: ItemLatestKeyResponse;
-    }) => Promise<CreateSecureLinkData>;
+    createSecureLink: (data: { itemKey: ItemKey; shareId: string }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;
     openLinkKey: (data: {
         encryptedLinkKey: string;
