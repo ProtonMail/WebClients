@@ -8,6 +8,7 @@ import {
   welcomeFlagsActions,
 } from '@proton/account'
 import * as bootstrap from '@proton/account/bootstrap'
+import { bootstrapEvent } from '@proton/account/bootstrap/action'
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance'
 import { FeatureCode, fetchFeatures } from '@proton/features'
 import createApi from '@proton/shared/lib/api/createApi'
@@ -117,6 +118,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
       unleashClient.stop()
       store.unsubscribe()
     })
+
+    dispatch(bootstrapEvent({ type: 'complete' }))
 
     return {
       ...userData,
