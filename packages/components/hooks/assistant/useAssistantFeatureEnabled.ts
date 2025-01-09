@@ -1,5 +1,4 @@
 import { selectOrganization, selectUser } from '@proton/account';
-import { useIsOrganizationBeforeBackfill } from '@proton/components/containers/payments/subscription/assistant/useIsOrganizationBeforeBackfill';
 import useScribePaymentsEnabled from '@proton/components/containers/payments/subscription/assistant/useScribePaymentsEnabled';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { baseUseSelector } from '@proton/react-redux-store';
@@ -8,7 +7,6 @@ import { useFlag } from '@proton/unleash';
 const useAssistantFeatureEnabled = () => {
     const accessToAssistant = useFlag('ComposerAssistant');
     const scribePaymentsEnabled = useScribePaymentsEnabled();
-    const isOrganizationBeforeBackfill = useIsOrganizationBeforeBackfill();
 
     const user = baseUseSelector(selectUser)?.value;
     const userHasScribeSeat = !!user?.NumAI;
@@ -17,11 +15,10 @@ const useAssistantFeatureEnabled = () => {
     const organizationScribeEnabled = !!organization?.Settings.ShowScribeWritingAssistant || !!user?.isAdmin;
     const planSupportsScribe = isScribeSupported(organization, user);
 
-    const paymentsEnabled = accessToAssistant && !isOrganizationBeforeBackfill && scribePaymentsEnabled;
+    const paymentsEnabled = accessToAssistant && scribePaymentsEnabled;
 
     const enabled =
         accessToAssistant &&
-        !isOrganizationBeforeBackfill &&
         // you can't see anything Scribe related if the payments can't support you buying it
         // but if you have a seat you can still use it
         (scribePaymentsEnabled || userHasScribeSeat) &&
