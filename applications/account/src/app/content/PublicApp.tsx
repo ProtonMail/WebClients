@@ -708,6 +708,7 @@ const BasePublicApp = () => {
                                                                 paths={paths}
                                                                 onLogin={handleLogin}
                                                                 state={locationState.payload}
+                                                                onPreSubmit={handlePreSubmit}
                                                             />
                                                         </UnAuthenticated>
                                                     </Route>
