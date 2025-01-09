@@ -3,7 +3,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { useCallback } from 'react'
-import type { PublicContextType } from '../../../Containers/ContextProvider'
+import type { PublicContextType } from '../../../Containers/DocsContextProvider'
 import {
   type PublicDocumentPostMessageDataForCopying,
   PublicDocumentPostMessageEvent,
