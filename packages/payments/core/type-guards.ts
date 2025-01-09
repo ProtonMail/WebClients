@@ -139,5 +139,5 @@ export function isFreeSubscription(obj: any): obj is FreeSubscription {
 }
 
 export function isTransaction(obj: any): obj is Transaction {
-    return !!obj && !!obj.TransactionId;
+    return !!obj && !!obj.TransactionID;
 }

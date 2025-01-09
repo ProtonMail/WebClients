@@ -2,12 +2,13 @@ import { c } from 'ttag';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
+import { type Transaction } from '@proton/payments';
 import isTruthy from '@proton/utils/isTruthy';
 
 interface Props {
-    transaction: any;
-    onPreview?: (transaction: any) => void;
-    onDownload: (transaction: any) => void;
+    transaction: Transaction;
+    onPreview?: (transaction: Transaction) => void;
+    onDownload: (transaction: Transaction) => void;
 }
 
 const TransactionActions = ({ transaction, onPreview, onDownload }: Props) => {
