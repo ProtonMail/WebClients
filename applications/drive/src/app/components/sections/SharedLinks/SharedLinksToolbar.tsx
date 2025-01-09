@@ -4,7 +4,6 @@ import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
 import type { DecryptedLink } from '../../../store';
-import { useDriveSharingFlags } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -16,10 +15,8 @@ import {
     ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
-import ShareLinkButtonLEGACY from '../ToolbarButtons/_legacy/ShareLinkButtonLEGACY';
 import { getSelectedItems } from '../helpers';
 import { StopSharingButton } from './ToolbarButtons';
-import StopSharingButtonLEGACY from './ToolbarButtons/_legacy/StopSharingButtonLEGACY';
 
 interface Props {
     shareId: string;
@@ -28,8 +25,6 @@ interface Props {
 
 const SharedLinksToolbar = ({ shareId, items }: Props) => {
     const selectionControls = useSelection()!;
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
-
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
         [items, selectionControls!.selectedItemIds]
@@ -54,17 +49,8 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                 <RenameButton selectedLinks={selectedItems} />
                 <DetailsButton selectedBrowserItems={selectedItems} />
                 {isOnlyOneItem && <Vr />}
-                {isSharingInviteAvailable ? (
-                    <ShareLinkButton selectedLinks={selectedItems} />
-                ) : (
-                    <ShareLinkButtonLEGACY selectedLinks={selectedItems} />
-                )}
-                {/* //TODO: Add multiple share deletion support */}
-                {isSharingInviteAvailable ? (
-                    <StopSharingButton selectedLinks={selectedItems} />
-                ) : (
-                    <StopSharingButtonLEGACY selectedLinks={selectedItems} />
-                )}
+                <ShareLinkButton selectedLinks={selectedItems} />
+                <StopSharingButton selectedLinks={selectedItems} />
             </>
         );
     };

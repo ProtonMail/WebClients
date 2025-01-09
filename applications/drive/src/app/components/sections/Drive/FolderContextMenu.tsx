@@ -6,13 +6,7 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import {
-    useActions,
-    useDocumentActions,
-    useDriveSharingFlags,
-    useFileUploadInput,
-    useFolderUploadInput,
-} from '../../../store';
+import { useActions, useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
@@ -20,7 +14,6 @@ import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import { ShareFileButton } from '../ContextMenu/buttons';
-import ShareFileButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareFileButtonLEGACY';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
 import CreateNewDocumentButton from './ContextMenuButtons/CreateNewDocumentButton';
@@ -63,12 +56,9 @@ export function FolderContextMenu({
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
-
-    const ShareFileButtonComponent = isSharingInviteAvailable ? ShareFileButton : ShareFileButtonLEGACY;
 
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
@@ -118,7 +108,7 @@ export function FolderContextMenu({
                 ) : null}
                 {isAdmin && !isActiveLinkReadOnly && <ContextSeparator />}
                 {isAdmin && (
-                    <ShareFileButtonComponent
+                    <ShareFileButton
                         close={close}
                         shareId={shareId}
                         showFileSharingModal={showFileSharingModal}

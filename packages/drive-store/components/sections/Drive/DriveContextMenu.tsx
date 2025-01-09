@@ -1,12 +1,11 @@
 import { useMemo } from 'react';
 
 import { ContextSeparator } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS} from '@proton/shared/lib/drive/permissions';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { DecryptedLink } from '../../../store';
-import { useDriveSharingFlags } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -26,7 +25,6 @@ import {
     ShareLinkButton,
 } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
-import ShareLinkButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareLinkButtonLEGACY';
 import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
 
 export function DriveItemContextMenu({
@@ -63,11 +61,8 @@ export function DriveItemContextMenu({
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
 
     const { showOpenInDocs } = useOpenInDocs(selectedLink);
-
-    const ShareLinkButtonComponent = isSharingInviteAvailable ? ShareLinkButton : ShareLinkButtonLEGACY;
 
     return (
         <>
@@ -84,7 +79,7 @@ export function DriveItemContextMenu({
                     <CopyLinkButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
                 {isAdmin && isOnlyOneItem && (
-                    <ShareLinkButtonComponent
+                    <ShareLinkButton
                         shareId={shareId}
                         showLinkSharingModal={showLinkSharingModal}
                         link={selectedLink}
