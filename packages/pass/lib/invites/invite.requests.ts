@@ -164,7 +164,7 @@ export const getInviteRecommendations = async (
             url: `pass/v1/share/${shareId}/invite/recommended_emails`,
             params: {
                 PlanPageSize: pageSize,
-                StartsWith: startsWith?.toLowerCase(),
+                StartsWith: startsWith,
                 ...(since ? { PlanSince: since } : {}),
             },
             method: 'get',

@@ -36,7 +36,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
     const defaultVault = useSelector(selectDefaultVault);
     const shareId = props.shareId ?? defaultVault?.shareId ?? '';
 
-    const { loadMore, state } = useInviteRecommendations(startsWith, { pageSize, shareId });
+    const { loadMore, state } = useInviteRecommendations(shareId, startsWith, pageSize);
     const { organization, emails, loading } = state;
 
     const displayedEmails = useMemo(() => {
