@@ -28,7 +28,6 @@ export const VaultMenuTrash = memo(({ dense, selected, onAction = noop }: Props)
 
     const onTrashRestore = pipe(vaultActions.trashRestore, onAction);
     const onTrashEmpty = pipe(vaultActions.trashEmpty, onAction);
-    const onSelect = pipe(() => vaultActions.select('trash'), onAction);
 
     const onDrop = useCallback((items: UniqueItem[]) => itemActions.trashMany(intoBulkSelection(items)), []);
     const { dragOver, dragProps } = useItemDrop(onDrop);
@@ -37,7 +36,7 @@ export const VaultMenuTrash = memo(({ dense, selected, onAction = noop }: Props)
         <DropdownMenuButton
             label={c('Label').t`Trash`}
             icon="trash"
-            onClick={() => !selected && onSelect()}
+            onClick={pipe(() => !selected && vaultActions.select('trash'), onAction)}
             className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-3')}
             parentClassName="pass-vault-submenu-vault-item w-full"
             style={{ '--max-h-custom': '1.25rem' }}
