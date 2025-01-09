@@ -84,7 +84,7 @@ export const useActionRequest = <
         if (!request) return setLoading(false);
     }, [request]);
 
-    return useMemo(() => {
+    const handles = useMemo(() => {
         const actionCreator = (...args: Params) => intent(...args) as IntentAction;
 
         const onResult = ensureMounted((result: Result) => {
@@ -132,11 +132,10 @@ export const useActionRequest = <
         return {
             dispatch: pipe(actionCreator, withAsyncRequest, dispatchAsync),
             revalidate: pipe(actionCreator, withRevalidate, withAsyncRequest, dispatchAsync),
-            progress,
-            loading,
-            error,
         };
-    }, [progress, loading, error]);
+    }, [intent]);
+
+    return useMemo(() => ({ ...handles, progress, loading, error }), [progress, loading, error]);
 };
 
 type UseRequestOptions<T extends RequestFlow<any, any, any>> = {
