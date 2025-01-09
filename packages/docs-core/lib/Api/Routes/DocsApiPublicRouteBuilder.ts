@@ -40,7 +40,11 @@ export class DocsApiPublicRouteBuilder extends DocsApiRouteBuilder {
   }
 
   createThread(params: {
-    data: { Mark: string; Comment: CreatePublicCommentData; Type: CommentThreadType }
+    data: {
+      Mark: string
+      Comment: CreatePublicCommentData & { AuthorEmail: string | undefined }
+      Type: CommentThreadType
+    }
   }): DocsRoute {
     return {
       method: 'post',
@@ -52,7 +56,7 @@ export class DocsApiPublicRouteBuilder extends DocsApiRouteBuilder {
 
   addComment(params: {
     threadId: string
-    data: CreatePublicCommentData & { ParentCommentId: string | null }
+    data: CreatePublicCommentData & { ParentCommentId: string | null; AuthorEmail: string | undefined }
   }): DocsRoute {
     return {
       method: 'post',
@@ -62,7 +66,11 @@ export class DocsApiPublicRouteBuilder extends DocsApiRouteBuilder {
     }
   }
 
-  editComment(params: { threadId: string; commentId: string; data: CommonPublicCommentData }): DocsRoute {
+  editComment(params: {
+    threadId: string
+    commentId: string
+    data: CommonPublicCommentData & { AuthorEmail: string | undefined }
+  }): DocsRoute {
     return {
       method: 'put',
       url: `${this.basePath}/threads/${params.threadId}/comments/${params.commentId}`,

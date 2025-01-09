@@ -73,6 +73,7 @@ export class ApiAddCommentToThread {
         ParentCommentId: dto.parentCommentId,
         DocumentName: dto.decryptedDocumentName,
         Content: dto.encryptedContent,
+        AuthorEmail: entitlements.keys.userOwnAddress,
       },
     })
 

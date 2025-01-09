@@ -1,10 +1,10 @@
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { CommentVerificationResult} from '@proton/docs-shared';
+import type { CommentVerificationResult } from '@proton/docs-shared'
 import { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
-import type { DocumentKeys } from '@proton/drive-store'
+import type { DocumentKeys, PublicDocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForComment, isAnonymousComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Comment } from '../Models'
@@ -12,7 +12,7 @@ import { ServerTime } from '@proton/docs-shared'
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import metrics from '@proton/metrics'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
-import { isPrivateDocumentKeys, type PublicDocumentKeys } from '../Types/DocumentEntitlements'
+import { canKeysSign } from '../Types/DocumentEntitlements'
 import type { SignedPlaintextContent } from 'packages/docs-proto'
 import type { LoggerInterface } from '@proton/utils/logs'
 
@@ -84,7 +84,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
      * If we have public keys, it means we are a public viewer, and thus cannot verify signatures because the API to
      * retrieve public keys of signer is not available to us
      */
-    if (!isPrivateDocumentKeys(keys)) {
+    if (!canKeysSign(keys)) {
       return {
         verified: false,
         verificationAvailable: false,
