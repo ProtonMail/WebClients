@@ -13,7 +13,7 @@ import useListNotifications from './useListNotifications';
  * useActions provides actions over links and its results is reported back
  * to user using notifications.
  *
- * {@return {confirmModal}} Only needed for deletePermanently/emptyTrash/stopSharingLinks
+ * {@return {confirmModal}} Only needed for deletePermanently/emptyTrash
  */
 export function usePublicActions() {
     const { showErrorNotification } = useErrorHandler();

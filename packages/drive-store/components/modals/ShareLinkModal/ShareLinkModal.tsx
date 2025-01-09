@@ -35,7 +35,6 @@ import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteM
 import ErrorState from './ErrorState';
 import { PublicSharing } from './PublicSharing';
 import { useLinkSharingSettingsModal } from './ShareLinkSettingsModal';
-import { ShareLinkModalLEGACY } from './_legacy/ShareLinkModalLEGACY';
 
 interface Props {
     modalTitleID?: string;
@@ -319,6 +318,5 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 }
 
 export const useLinkSharingModal = () => {
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
-    return useModalTwoStatic(isSharingInviteAvailable ? SharingModal : ShareLinkModalLEGACY);
+    return useModalTwoStatic(SharingModal);
 };
