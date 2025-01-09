@@ -17,11 +17,10 @@ type Props = {
 
 export const VaultMenuAll = memo(({ count, dense, selected, onAction = noop }: Props) => {
     const vaultActions = useVaultActions();
-    const onSelect = pipe(() => vaultActions.select('all'), onAction);
 
     return (
         <DropdownMenuButton
-            onClick={() => !selected && onSelect()}
+            onClick={pipe(() => !selected && vaultActions.select('all'), onAction)}
             label={<span className="block text-ellipsis">{getVaultOptionInfo('all').label}</span>}
             parentClassName={clsx('pass-vault-submenu-vault-item w-full')}
             className={clsx(selected && 'is-selected', !dense && 'py-3')}
