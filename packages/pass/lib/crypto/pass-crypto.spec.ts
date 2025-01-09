@@ -152,7 +152,7 @@ describe('PassCrypto', () => {
             expect(vault.AddressID).toEqual(address.ID);
             expect(vault.ContentFormatVersion).toEqual(ContentFormatVersion.Share);
 
-            const vaultKey = await processes.openVaultKey({
+            const vaultKey = await processes.openShareKey({
                 userKeys: [userKey],
                 shareKey: {
                     Key: vault.EncryptedVaultKey,
@@ -218,7 +218,7 @@ describe('PassCrypto', () => {
             const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
             const contentUpdate = randomContents();
             const vaultUpdate = await PassCrypto.updateVault({ shareId: share!.shareId, content: contentUpdate });
-            const vaultKey = PassCrypto.getShareManager(share!.shareId).getVaultKey(42);
+            const vaultKey = PassCrypto.getShareManager(share!.shareId).getVaultShareKey(42);
 
             const decryptedContent = await decryptData(
                 vaultKey.key,
@@ -282,7 +282,7 @@ describe('PassCrypto', () => {
             expect(share!.content).toEqual(content);
             expect(PassCrypto.getShareManager(encryptedShare.ShareID)).toBeDefined();
             expect(shareManager.getShare()).toStrictEqual(share);
-            expect(shareManager.hasVaultKey(1)).toBe(true);
+            expect(shareManager.hasVaultShareKey(1)).toBe(true);
 
             /* simulate new vault keys being added */
             const encryptedShareUpdate: ShareGetResponse = {
@@ -297,7 +297,7 @@ describe('PassCrypto', () => {
                 UserKeyID: TEST_USER_KEY_ID,
             };
 
-            jest.spyOn(shareManager, 'addVaultKey');
+            jest.spyOn(shareManager, 'addVaultShareKey');
 
             const shareUpdate = await PassCrypto.openShare({
                 encryptedShare: encryptedShareUpdate,
@@ -305,8 +305,8 @@ describe('PassCrypto', () => {
             });
 
             expect(shareManager.getShare()).toStrictEqual(shareUpdate);
-            expect(shareManager.hasVaultKey(1)).toBe(true);
-            expect(shareManager.hasVaultKey(2)).toBe(true);
+            expect(shareManager.hasVaultShareKey(1)).toBe(true);
+            expect(shareManager.hasVaultShareKey(2)).toBe(true);
         });
 
         test('should throw if share keys list is empty', async () => {
@@ -439,7 +439,7 @@ describe('PassCrypto', () => {
 
             const shareManager = PassCrypto.getShareManager(encryptedShare.ShareID);
 
-            jest.spyOn(shareManager, 'addVaultKey');
+            jest.spyOn(shareManager, 'addVaultShareKey');
 
             const content = randomContents();
             const vault = await processes.createVault({ content, userKey, addressId: address.ID });
@@ -451,10 +451,10 @@ describe('PassCrypto', () => {
             };
 
             await PassCrypto.updateShareKeys({ shareId, shareKeys: [shareKey] });
-            expect(shareManager.addVaultKey).toHaveBeenCalledTimes(0);
+            expect(shareManager.addVaultShareKey).toHaveBeenCalledTimes(0);
 
             await PassCrypto.updateShareKeys({ shareId, shareKeys: [shareKey, newShareKey] });
-            expect(shareManager.addVaultKey).toHaveBeenCalledTimes(1);
+            expect(shareManager.addVaultShareKey).toHaveBeenCalledTimes(1);
         });
     });
 
@@ -498,7 +498,7 @@ describe('PassCrypto', () => {
 
             const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, address.ID);
             await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
-            const vaultKey = await processes.openVaultKey({ shareKey, userKeys: [userKey] });
+            const vaultKey = await processes.openShareKey({ shareKey, userKeys: [userKey] });
 
             /* create item */
             const itemContent = randomContents();
@@ -540,13 +540,13 @@ describe('PassCrypto', () => {
             await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
 
             const content = randomContents();
-            const [targetShare, targetVaultKey] = await createRandomShareResponses(userKey, address.ID);
-            await PassCrypto.openShare({ encryptedShare: targetShare, shareKeys: [targetVaultKey] });
+            const [targetShare, targetVaultShareKey] = await createRandomShareResponses(userKey, address.ID);
+            await PassCrypto.openShare({ encryptedShare: targetShare, shareKeys: [targetVaultShareKey] });
 
             const { Item } = await PassCrypto.moveItem({ content, destinationShareId: targetShare.ShareID });
 
             expect(Item.ContentFormatVersion).toEqual(ContentFormatVersion.Item);
-            expect(Item.KeyRotation).toEqual(targetVaultKey.KeyRotation);
+            expect(Item.KeyRotation).toEqual(targetVaultShareKey.KeyRotation);
 
             const encryptedItem: ItemRevisionContentsResponse = {
                 Content: Item.Content,

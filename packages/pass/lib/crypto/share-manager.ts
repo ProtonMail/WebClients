@@ -1,199 +1,136 @@
+import {
+    hydrateShare,
+    hydrateShareKeys,
+    serializeShare,
+    serializeShareKeys,
+} from '@proton/pass/lib/crypto/utils/seralize';
 import type {
-    ItemKey,
-    OpenedShare,
-    Rotation,
+    Maybe,
     SerializedCryptoContext,
     ShareContext,
+    ShareKey,
     ShareManager,
     TypedOpenedShare,
-    VaultKey,
 } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { importSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoItemError, PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
 
 export const createShareManager = <T extends ShareType = ShareType>(
     share: TypedOpenedShare<T>,
     context?: ShareContext
 ): ShareManager<T> => {
-    const shareContext: ShareContext = context ?? {
+    const ctx: ShareContext = context ?? {
         share,
         latestRotation: -1,
         vaultKeys: new Map(),
         itemKeys: new Map(),
     };
 
-    const shareManager: ShareManager<T> = {
-        getShare: () => shareContext.share as TypedOpenedShare<T>,
-        setShare: (share) => (shareContext.share = share),
+    const manager: ShareManager<T> = {
+        getShare: () => ctx.share as TypedOpenedShare<T>,
+        setShare: (share) => (ctx.share = share),
+        getType: () => ctx.share.targetType,
 
-        setLatestRotation: (rotation) => (shareContext.latestRotation = rotation),
+        setLatestRotation: (rotation) => (ctx.latestRotation = rotation),
 
         getLatestRotation() {
-            if (shareContext.latestRotation === -1) {
-                throw new PassCryptoShareError(`Share has not been hydrated`);
-            }
-
-            return shareContext.latestRotation;
+            if (ctx.latestRotation === -1) throw new PassCryptoShareError(`Share has not been hydrated`);
+            return ctx.latestRotation;
         },
 
-        hasVaultKey: (rotation) =>
-            shareManager.getShare().targetType === ShareType.Vault && shareContext.vaultKeys.has(rotation),
+        hasVaultShareKey: (rotation) => manager.getType() === ShareType.Vault && ctx.vaultKeys.has(rotation),
 
-        getVaultKey(rotation) {
-            if (shareManager.getShare().targetType !== ShareType.Vault) {
+        getVaultShareKey(rotation) {
+            if (manager.getType() !== ShareType.Vault) {
                 throw new PassCryptoVaultError(`Cannot resolve vault keys for non-vault share`);
             }
 
-            if (!shareManager.hasVaultKey(rotation)) {
+            if (!manager.hasVaultShareKey(rotation)) {
                 throw new PassCryptoVaultError(`Cannot find vault key for rotation ${rotation}`);
             }
 
-            return shareContext.vaultKeys.get(rotation)!;
+            return ctx.vaultKeys.get(rotation)!;
         },
 
-        getVaultKeys: () => Array.from(shareContext.vaultKeys.values()),
+        getVaultShareKeys: () => Array.from(ctx.vaultKeys.values()),
 
-        addVaultKey(vaultKey) {
-            if (shareManager.getShare().targetType !== ShareType.Vault) {
+        addVaultShareKey(vaultShareKey) {
+            if (manager.getType() !== ShareType.Vault) {
                 throw new PassCryptoVaultError(`Cannot add vault key to non-vault share`);
             }
 
-            const rotation = vaultKey.rotation;
-            shareContext.vaultKeys.set(rotation, vaultKey);
-
-            if (rotation > shareContext.latestRotation) {
-                shareManager.setLatestRotation(rotation);
-            }
+            const rotation = vaultShareKey.rotation;
+            ctx.vaultKeys.set(rotation, vaultShareKey);
+            if (rotation > ctx.latestRotation) manager.setLatestRotation(rotation);
         },
 
-        hasItemKey: (rotation) =>
-            shareManager.getShare().targetType === ShareType.Item && shareContext.itemKeys.has(rotation),
+        hasItemShareKey: (rotation) => manager.getShare().targetType === ShareType.Item && ctx.itemKeys.has(rotation),
 
-        getItemKey: (rotation) => {
-            if (shareManager.getShare().targetType !== ShareType.Item) {
+        getItemShareKey: (rotation) => {
+            if (manager.getShare().targetType !== ShareType.Item) {
                 throw new PassCryptoVaultError(`Cannot resolve item keys for non-item share`);
             }
 
-            if (!shareManager.hasItemKey(rotation)) {
+            if (!manager.hasItemShareKey(rotation)) {
                 throw new PassCryptoItemError(`Cannot find item key for rotation ${rotation}`);
             }
 
-            return shareContext.itemKeys.get(rotation)!;
+            return ctx.itemKeys.get(rotation)!;
         },
 
-        getItemKeys: () => Array.from(shareContext.itemKeys.values()),
+        getItemShareKeys: () => Array.from(ctx.itemKeys.values()),
 
-        addItemKey(itemKey) {
-            if (shareManager.getShare().targetType !== ShareType.Item) {
+        addItemShareKey(itemShareKey) {
+            if (manager.getShare().targetType !== ShareType.Item) {
                 throw new PassCryptoVaultError(`Cannot add item key to non-item share`);
             }
 
-            const rotation = itemKey.rotation;
-            shareContext.itemKeys.set(rotation, itemKey);
-
-            if (rotation > shareContext.latestRotation) {
-                shareManager.setLatestRotation(rotation);
-            }
+            const rotation = itemShareKey.rotation;
+            ctx.itemKeys.set(rotation, itemShareKey);
+            if (rotation > ctx.latestRotation) manager.setLatestRotation(rotation);
         },
 
-        addKeys(keys) {
-            const share = shareManager.getShare();
-
-            if (share.targetType === ShareType.Vault) {
-                keys.forEach((key) => this.addVaultKey(key as VaultKey));
-            } else if (share.targetType === ShareType.Item) {
-                keys.forEach((key) => this.addItemKey(key as ItemKey));
-            }
-        },
-
-        /* a share is considered `active` if its latest rotation key
-         * was encrypted with an active user key - if the user key is
-         * inactive, then share should be ignored until it becomes
-         * active again */
+        /* A share is considered `active` if its latest rotation key was
+         * encrypted with an active user key - if the user key is inactive,
+         * then share should be ignored until it becomes "active" again */
         isActive(userKeys = []) {
             try {
-                const { targetType } = shareManager.getShare();
-                const latestRotation = shareManager.getLatestRotation();
+                const rotation = manager.getLatestRotation();
+                const targetKey = ((): Maybe<ShareKey> => {
+                    switch (manager.getType()) {
+                        case ShareType.Vault:
+                            return manager.getVaultShareKey(rotation);
+                        case ShareType.Item:
+                            return manager.getItemShareKey(rotation);
+                    }
+                })();
 
-                if (targetType === ShareType.Vault) {
-                    const vaultKey = shareManager.getVaultKey(latestRotation);
-                    return userKeys.some(({ ID }) => ID === vaultKey.userKeyId);
-                }
-
-                return false;
+                if (!targetKey) return false;
+                return userKeys.some(({ ID }) => ID === targetKey.userKeyId);
             } catch (_) {
                 return false;
             }
         },
 
         serialize: () => ({
-            ...shareContext,
-            share: (() => {
-                switch (shareContext.share.targetType) {
-                    case ShareType.Vault: {
-                        return {
-                            ...shareContext.share,
-                            content: uint8ArrayToBase64String(shareContext.share.content),
-                        };
-                    }
-                    case ShareType.Item:
-                        return shareContext.share;
-                }
-            })(),
-            vaultKeys: [...shareContext.vaultKeys.entries()].map(([rotation, vaultKey]) => [
-                rotation,
-                {
-                    rotation: vaultKey.rotation,
-                    raw: uint8ArrayToBase64String(vaultKey.raw),
-                    userKeyId: vaultKey.userKeyId,
-                },
-            ]),
-            itemKeys: [],
+            ...ctx,
+            share: serializeShare(ctx.share),
+            vaultKeys: serializeShareKeys(ctx.vaultKeys),
+            itemKeys: serializeShareKeys(ctx.itemKeys),
         }),
     };
 
-    return shareManager as ShareManager<T>;
+    return manager as ShareManager<T>;
 };
 
 createShareManager.fromSnapshot = async (snapshot: SerializedCryptoContext<ShareContext>): Promise<ShareManager> => {
-    /**
-     * Item shares do not have a content property
-     * Only encode the vault content when dealing
-     * with VaultShares
-     */
-    const share: OpenedShare = (() => {
-        switch (snapshot.share.targetType) {
-            case ShareType.Vault: {
-                return { ...snapshot.share, content: base64StringToUint8Array(snapshot.share.content) };
-            }
-            case ShareType.Item: {
-                return snapshot.share;
-            }
-        }
-    })();
-
-    const vaultKeys: [Rotation, VaultKey][] = await Promise.all(
-        snapshot.vaultKeys.map(async ([rotation, vaultKey]) => {
-            const rawKey = base64StringToUint8Array(vaultKey.raw);
-            return [
-                rotation,
-                {
-                    rotation: vaultKey.rotation,
-                    raw: rawKey,
-                    key: await importSymmetricKey(rawKey),
-                    userKeyId: vaultKey.userKeyId,
-                },
-            ];
-        })
-    );
+    const share = hydrateShare(snapshot.share);
 
     return createShareManager(share, {
         ...snapshot,
         share,
-        vaultKeys: new Map(vaultKeys),
-        itemKeys: new Map(),
+        vaultKeys: await hydrateShareKeys(snapshot.vaultKeys),
+        itemKeys: await hydrateShareKeys(snapshot.itemKeys),
     });
 };

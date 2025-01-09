@@ -1,5 +1,5 @@
+import { openShareKey } from '@proton/pass/lib/crypto/processes/share/open-share-key';
 import { createVault } from '@proton/pass/lib/crypto/processes/vault/create-vault';
-import { openVaultKey } from '@proton/pass/lib/crypto/processes/vault/open-vault-key';
 import {
     createRandomKey,
     randomContents,
@@ -26,7 +26,7 @@ describe('openShare crypto process', () => {
         const vault = await createVault({ content, addressId, userKey });
 
         /* resolve vault key */
-        const vaultKey = await openVaultKey({
+        const vaultKey = await openShareKey({
             shareKey: {
                 CreateTime: 0,
                 Key: vault.EncryptedVaultKey,

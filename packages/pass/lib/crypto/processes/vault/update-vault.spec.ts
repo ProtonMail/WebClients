@@ -1,7 +1,7 @@
 import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
-import type { VaultKey } from '@proton/pass/types';
+import type { VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -13,7 +13,7 @@ describe('updateVault crypto process', () => {
         const shareKey = await importSymmetricKey(key);
         const content = randomContents();
 
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             key: shareKey,
             raw: key,
             rotation: 42,
@@ -37,7 +37,7 @@ describe('updateVault crypto process', () => {
         const key = generateKey();
         const shareKey = await importSymmetricKey(key);
 
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             key: shareKey,
             raw: key,
             rotation: 42,

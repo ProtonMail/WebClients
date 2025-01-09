@@ -10,10 +10,10 @@ import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import lastItem from '@proton/utils/lastItem';
 
-import { createVault } from './create-vault';
-import { openVaultKey } from './open-vault-key';
+import { createVault } from '../vault/create-vault';
+import { openShareKey } from './open-share-key';
 
-describe('openVaultKey crypto process', () => {
+describe('openShareKey crypto process', () => {
     beforeAll(async () => setupCryptoProxyForTesting());
     afterAll(async () => releaseCryptoProxy());
 
@@ -27,7 +27,7 @@ describe('openVaultKey crypto process', () => {
             userKey: lastItem(userKeys)!,
         });
 
-        const vaultKey = await openVaultKey({
+        const vaultKey = await openShareKey({
             shareKey: {
                 CreateTime: 0,
                 Key: vault.EncryptedVaultKey,
