@@ -2475,49 +2475,6 @@
         "Prioritná podpora"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Získajte ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Získajte za ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Fakturované každé 2 roky za sumu ${ amountBilled }. Zľavy sú založené na štandardných mesačných cenách."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Fakturované ročne sumou ${ amountBilled }. Ušetrite ${ amountSave } za 2 jednotlivé ${ BRAND_NAME } Unlimited ročné predplatné."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB úložného priestoru"
-      ],
-      "2 users": [
-        "2 používatelia"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Plný prístup k všetkým produktom ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Ušetríte ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Všetko od ${ BRAND_NAME } pre 2."
-      ],
-      "Double your storage": [
-        "Zdvojnásobte svoje úložisko"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Predstavujeme ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } pridaný"
@@ -8031,7 +7988,7 @@
         "Vyberte fakturačnú krajinu na platbu"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
@@ -9849,7 +9806,7 @@
         "Každoročné bonusy na kapacitu úložiska"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
-        "Všetky výhody svojho súčasného plánu môžete využívať až do${ boldedDate }."
+        "Všetky výhody svojho súčasného plánu môžete využívať až do ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
