@@ -28,9 +28,10 @@ import { $createImageNode, $isImageNode, ImageNode } from './ImageNode'
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
-import { isImage } from '@proton/shared/lib/helpers/mimetype'
+import { isImage, isSupportedImage } from '@proton/shared/lib/helpers/mimetype'
 import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from './ImageUtils'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 
 type InsertImagePayload = File | Blob
 
@@ -84,7 +85,7 @@ export default function ImagesPlugin(): JSX.Element | null {
       editor.registerCommand<InsertImagePayload>(
         INSERT_FILE_COMMAND,
         (payload) => {
-          if (!isImage(payload.type)) {
+          if (!isSupportedImage(payload.type)) {
             return false
           }
 
@@ -107,13 +108,21 @@ export default function ImagesPlugin(): JSX.Element | null {
 
           async function handleDownsizingAndInsert() {
             const base64 = await toBase64(payload)
-
-            if (payload.size <= FIVE_HUNDRED_KILO_BYTES) {
+            // These formats can be accepted in certain browsers
+            // For cross browser compatibility, we convert them to WebP no matter what
+            const convertToWebPNoMatterWhat = [
+              SupportedMimeTypes.avif.toString(),
+              SupportedMimeTypes.heic.toString(),
+              SupportedMimeTypes.jxl.toString(),
+            ]
+            const shouldForceImageConvertion = convertToWebPNoMatterWhat.includes(payload.type)
+            if (!shouldForceImageConvertion && payload.size <= FIVE_HUNDRED_KILO_BYTES) {
               createAndInsertImageNode(base64)
               return
             }
 
-            const downsizedImage = await downSize(base64, FIVE_HUNDRED_KILO_BYTES, payload.type)
+            // If the image needs to be downsized we save it as image/webp since it's most cost efficient and we can ensure higher quality
+            const downsizedImage = await downSize(base64, FIVE_HUNDRED_KILO_BYTES, 'image/webp', 1, true)
             createAndInsertImageNode(downsizedImage)
           }
 
