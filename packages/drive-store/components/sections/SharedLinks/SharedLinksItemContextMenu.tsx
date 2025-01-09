@@ -1,7 +1,7 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { DecryptedLink } from '../../../store';
-import { useActions, useDriveSharingFlags } from '../../../store';
+import { useActions } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -17,8 +17,7 @@ import {
     ShareLinkButton,
 } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
-import ShareLinkButtonLEGACY from '../ContextMenu/buttons/_legacy/ShareLinkButtonLEGACY';
-import { StopSharingButton, StopSharingButtonLEGACY } from './ContextMenuButtons';
+import { StopSharingButton } from './ContextMenuButtons';
 
 export function SharedLinksItemContextMenu({
     selectedLinks,
@@ -39,16 +38,14 @@ export function SharedLinksItemContextMenu({
         selectedLink.mimeType &&
         isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
 
-    const { stopSharingLinks, stopSharing, confirmModal } = useActions();
+    const { stopSharing, confirmModal } = useActions();
 
     const [renameModal, showRenameModal] = useRenameModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { isSharingInviteAvailable } = useDriveSharingFlags();
     const { showOpenInDocs } = useOpenInDocs(selectedLink);
 
-    const ShareLinkButtonComponent = isSharingInviteAvailable ? ShareLinkButton : ShareLinkButtonLEGACY;
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -67,7 +64,7 @@ export function SharedLinksItemContextMenu({
                     close={close}
                 />
                 {isOnlyOneItem && (
-                    <ShareLinkButtonComponent
+                    <ShareLinkButton
                         shareId={selectedLink.rootShareId}
                         showLinkSharingModal={showLinkSharingModal}
                         link={selectedLink}
@@ -75,15 +72,8 @@ export function SharedLinksItemContextMenu({
                     />
                 )}
                 {/* //TODO: Add multiple share deletion support */}
-                {isOnlyOneItem && isSharingInviteAvailable && (
+                {isOnlyOneItem && (
                     <StopSharingButton selectedLink={selectedLink} stopSharing={stopSharing} close={close} />
-                )}
-                {!isSharingInviteAvailable && (
-                    <StopSharingButtonLEGACY
-                        selectedLinks={selectedLinks}
-                        stopSharingLinks={stopSharingLinks}
-                        close={close}
-                    />
                 )}
             </ItemContextMenu>
             {renameModal}

@@ -36,8 +36,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
             }),
         [inviteesMap]
     );
-    const { isSharingExternalInviteDisabled, isSharingExternalInviteAvailable } = useDriveSharingFlags();
-    const disabledExternalInvite = isSharingExternalInviteDisabled || !isSharingExternalInviteAvailable;
+    const { isSharingExternalInviteDisabled } = useDriveSharingFlags();
 
     const { createNotification } = useNotifications();
 
@@ -124,7 +123,7 @@ export const useShareInvitees = (existingEmails: string[]) => {
                     const copy = new Map(map);
                     copy.set(email, {
                         ...filteredInvitee,
-                        error: disabledExternalInvite
+                        error: isSharingExternalInviteDisabled
                             ? new ShareInviteeValidationError(
                                   isSharingExternalInviteDisabled
                                       ? VALIDATION_ERROR_TYPES.EXTERNAL_INVITE_DISABLED
