@@ -8,7 +8,7 @@ import type { AccessItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 
-type SelectAccessDTO = { shareId: string; itemId?: string };
+export type SelectAccessDTO = { shareId: string; itemId?: string };
 
 const DEFAULT_ACCESS: AccessItem = {
     members: [],

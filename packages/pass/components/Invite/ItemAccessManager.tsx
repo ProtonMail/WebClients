@@ -117,7 +117,7 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
                                 color="norm"
                                 pill
                                 onClick={() =>
-                                    memberLimitReached ? setLimitModalOpen(true) : createItemInvite({ item })
+                                    memberLimitReached ? setLimitModalOpen(true) : createItemInvite(shareId, itemId)
                                 }
                                 disabled={!canManage || (plan === UserPassPlan.FREE && memberLimitReached)}
                             >

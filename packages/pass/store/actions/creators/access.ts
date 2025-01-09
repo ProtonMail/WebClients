@@ -11,7 +11,8 @@ import {
 } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import { type SelectedItem, type SelectedShare, ShareType } from '@proton/pass/types';
+import type { SelectAccessDTO } from '@proton/pass/store/selectors';
+import { ShareType } from '@proton/pass/types';
 import type {
     ShareAccessOptions,
     ShareEditMemberAccessIntent,
@@ -79,7 +80,7 @@ export const shareEditMemberAccessFailure = createAction(
     )
 );
 
-export const getShareAccessOptions = requestActionsFactory<SelectedShare | SelectedItem, ShareAccessOptions>(
+export const getShareAccessOptions = requestActionsFactory<SelectAccessDTO, ShareAccessOptions>(
     'share::access-options'
 )({
     key: toShareAccessKey,
