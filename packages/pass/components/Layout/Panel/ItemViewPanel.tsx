@@ -18,11 +18,13 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isMonitored, isPinned, isShared, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -100,6 +102,9 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
         />
     );
 
+    const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
+    const showItemSharing = itemSharingEnabled && type !== 'alias';
+
     return (
         <Panel
             className={itemTypeToSubThemeClassName[type]}
@@ -168,7 +173,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             ...actions,
 
-                            type !== 'alias' && (
+                            showItemSharing && (
                                 <QuickActionsDropdown
                                     key="share-item-button"
                                     color="norm"
