@@ -115,12 +115,14 @@ const ReAuthContainer = ({
     onLogin,
     onSwitch,
     state,
+    onPreSubmit,
 }: {
     toApp?: APP_NAMES;
     paths: Paths;
     onLogin: OnLoginCallback;
     onSwitch: () => void;
     state: ReAuthState;
+    onPreSubmit: () => Promise<void>;
 }) => {
     const [data, setData] = useState<{ step: 'initial' | 'unlock'; salts: tsKeySalt[] }>({
         step: 'initial',
@@ -211,6 +213,7 @@ const ReAuthContainer = ({
     const loginForm = (
         <SrpForm
             onSubmit={async (password) => {
+                await onPreSubmit();
                 await handleSubmitSRP(password).catch(errorHandler);
             }}
             below={
@@ -246,6 +249,7 @@ const ReAuthContainer = ({
     const unlockForm = (
         <UnlockForm
             onSubmit={async (keyPassword) => {
+                await onPreSubmit();
                 await wait(500);
                 await handleSubmitKeyPassword(keyPassword, data.salts).catch(errorHandler);
             }}
@@ -255,6 +259,7 @@ const ReAuthContainer = ({
     const backupPasswordForm = (
         <SSOBackupPasswordForm
             onSubmit={async (keyPassword) => {
+                await onPreSubmit();
                 await wait(500);
                 await handleSubmitSSO(keyPassword).catch(errorHandler);
             }}
