@@ -3,9 +3,10 @@ import type { ReactNode } from 'react';
 
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
+import { useGetPublicKeysForEmail } from '../store';
 import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import type { NodeMeta, PublicNodeMeta } from './NodeMeta';
-import { type DocumentKeys } from './_documents';
+import type { PublicDocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
 import type { DecryptedNode } from './_nodes/interface';
 import { usePublicDocsToken } from './_shares';
@@ -74,7 +75,7 @@ export interface PublicDriveCompat {
     /**
      * Gets the keys for a given document node.
      */
-    getDocumentKeys: (meta: PublicNodeMeta) => Promise<Pick<DocumentKeys, 'documentContentKey'>>;
+    getDocumentKeys: (meta: PublicNodeMeta) => Promise<PublicDocumentKeys>;
 
     /**
      * Gets the authentication headers for `useApi()`
@@ -85,6 +86,11 @@ export interface PublicDriveCompat {
      * The permissions of the public link.
      */
     permissions: SHARE_URL_PERMISSIONS | undefined;
+
+    /**
+     * Gets the public keys for a given email.
+     */
+    getPublicKeysForEmail: (email: string, abortSignal?: AbortSignal) => Promise<string[] | undefined>;
 }
 
 export const usePublicDriveCompatValue = (): PublicDriveCompat => {
@@ -104,13 +110,26 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         linkId,
     } = usePublicDocsToken();
 
-    const { getNode, getNodeContentKey, didCompleteInitialSetup, permissions } = usePublicNode({
+    const { getNode, getNodeContentKey, didCompleteInitialSetup, getAddressKeyInfo, permissions } = usePublicNode({
         isDocsTokenReady,
         linkId,
     });
     const { openDocumentWindow } = useOpenDocument();
 
     const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
+
+    const { getPublicKeysForEmail } = useGetPublicKeysForEmail();
+
+    const getDocumentKeys = async (meta: PublicNodeMeta): Promise<PublicDocumentKeys> => {
+        const documentContentKey = await getNodeContentKey(meta);
+        const addressInfoResult = await getAddressKeyInfo(new AbortController().signal);
+
+        return {
+            documentContentKey,
+            userAddressPrivateKey: addressInfoResult?.privateKey,
+            userOwnAddress: addressInfoResult?.address.Email,
+        };
+    };
 
     return {
         isDocsEnabled,
@@ -124,12 +143,11 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         error,
         redirectToAuthedDocument: redirectToAuthedDocument,
         isPublicDocsEnabled: isDocsPublicSharingEnabled,
-        getDocumentKeys: async (nodeMeta) => ({
-            documentContentKey: await getNodeContentKey(nodeMeta),
-        }),
+        getDocumentKeys,
         getNode,
         getPublicAuthHeaders,
         permissions,
+        getPublicKeysForEmail,
     };
 };
 

@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { Button, ButtonLike } from '@proton/atoms'
 import { c } from 'ttag'
-import { useDocsContext } from '../../../Containers/ContextProvider'
+import { useDocsContext } from '../../../Containers/DocsContextProvider'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import { usePublicDocumentCopying } from '../Hooks/usePublicDocumentCopying'
 import { UserInfo } from './UserInfo'

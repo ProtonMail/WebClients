@@ -19,7 +19,7 @@ import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { DocsApi } from '../../Api/DocsApi'
 import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
-import { isDocumentState, type DocumentState, type PublicDocumentState } from '../../State/DocumentState'
+import { type DocumentState, type PublicDocumentState } from '../../State/DocumentState'
 import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
 
 /**
@@ -29,9 +29,7 @@ import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTr
 export class EditorOrchestrator implements EditorOrchestratorInterface {
   readonly participantTracker = new DocParticipantTracker(this.documentState)
 
-  public userAddress = isDocumentState(this.documentState)
-    ? this.documentState.getProperty('entitlements').keys.userOwnAddress
-    : AnonymousUserEmail
+  public userAddress = this.documentState.getProperty('entitlements').keys.userOwnAddress ?? AnonymousUserEmail
 
   constructor(
     private readonly comments: CommentControllerInterface | undefined,

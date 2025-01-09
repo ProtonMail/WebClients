@@ -15,7 +15,7 @@ import { WordCountContextProvider } from '../../Components/WordCount/WordCountPr
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
 import { useUser } from '@proton/account/user/hooks'
-import UserProvider from '../../Containers/ContextProvider'
+import UserProvider from '../../Containers/DocsContextProvider'
 import { PublicDocumentCopier } from '../../Components/PublicDocumentCopier'
 import { getUrlPassword } from '@proton/drive-store/utils/url/password'
 import { useEmailOptInModal } from '../../Components/Modals/EmailOptInModal/EmailOptInModal'
