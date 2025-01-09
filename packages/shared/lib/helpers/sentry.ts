@@ -285,14 +285,20 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
     }
 };
 
-type MailInitiative =
-    | 'drawer-security-center'
-    | 'composer'
-    | 'assistant'
-    | 'mail-onboarding'
-    | 'list-actions-telemetry';
-type CommonInitiatives = 'post-subscription';
-export type SentryInitiative = MailInitiative;
+export enum SentryMailInitiatives {
+    DRAWER_SECURITY_CENTER = 'drawer-security-center',
+    COMPOSER = 'composer',
+    ASSISTANT = 'assistant',
+    MAIL_ONBOARDING = 'mail-onboarding',
+    LIST_ACTIONS_TELEMETRY = 'list-actions-telemetry',
+}
+
+export enum SentryCommonInitiatives {
+    POST_SUBSCRIPTION = 'post-subscription',
+}
+
+export type SentryInitiative = `${SentryMailInitiatives}` | `${SentryCommonInitiatives}`;
+
 type CaptureExceptionArgs = Parameters<typeof captureException>;
 
 /**
@@ -300,10 +306,7 @@ type CaptureExceptionArgs = Parameters<typeof captureException>;
  * @param initiative
  * @param error
  */
-export const traceInitiativeError = (
-    initiative: MailInitiative | CommonInitiatives,
-    error: CaptureExceptionArgs[0]
-) => {
+export const traceInitiativeError = (initiative: SentryInitiative, error: CaptureExceptionArgs[0]) => {
     if (!isLocalhost(window.location.host)) {
         captureException(error, {
             tags: {
