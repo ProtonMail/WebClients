@@ -359,6 +359,8 @@ export const selectAllSecureLinks = createSelector(selectSecureLinks, (byShareId
     Object.values(byShareId).flatMap((byItemId) => Object.values(byItemId).flat())
 );
 
+export const selectSecureLinksCount = createSelector(selectAllSecureLinks, (links) => links.length);
+
 export const selectInactiveSecureLinks = createSelector(selectAllSecureLinks, (links) =>
     links.filter(not(prop('active')))
 );

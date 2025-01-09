@@ -7,13 +7,21 @@ import { SharedMenuItem } from '@proton/pass/components/Menu/Shared/SharedMenuIt
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { UpsellRef } from '@proton/pass/constants';
-import { selectAllSecureLinks, selectPassPlan } from '@proton/pass/store/selectors';
+import {
+    selectPassPlan,
+    selectSecureLinksCount,
+    selectSharedByMeCount,
+    selectSharedWithMeCount,
+} from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 export const SharedMenu = memo(() => {
     const scope = useItemScope();
 
-    const secureLinks = useSelector(selectAllSecureLinks);
+    const sharedWithMeCount = useSelector(selectSharedWithMeCount);
+    const sharedByMeCount = useSelector(selectSharedByMeCount);
+    const secureLinksCount = useSelector(selectSecureLinksCount);
+
     const passPlan = useSelector(selectPassPlan);
     const free = passPlan === UserPassPlan.FREE;
 
@@ -27,7 +35,7 @@ export const SharedMenu = memo(() => {
                 <SharedMenuItem
                     upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
                     label={c('Label').t`Shared with me`}
-                    count={0}
+                    count={sharedWithMeCount}
                     selected={scope === 'shared-with-me'}
                     to="shared-with-me"
                     icon="user-arrow-left"
@@ -36,7 +44,7 @@ export const SharedMenu = memo(() => {
                 <SharedMenuItem
                     upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
                     label={c('Label').t`Shared by me`}
-                    count={0}
+                    count={sharedByMeCount}
                     selected={scope === 'shared-by-me'}
                     to="shared-by-me"
                     icon="user-arrow-right"
@@ -45,7 +53,7 @@ export const SharedMenu = memo(() => {
                 <SharedMenuItem
                     upsellRef={free ? UpsellRef.SECURE_LINKS : undefined}
                     label={c('Action').t`Secure links`}
-                    count={secureLinks.length}
+                    count={secureLinksCount}
                     selected={scope === 'secure-links'}
                     to="secure-links"
                     icon="link"
