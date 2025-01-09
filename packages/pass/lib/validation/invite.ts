@@ -4,7 +4,7 @@ import { type FormikErrors } from 'formik';
 
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
-import type { InviteFormValues } from '@proton/pass/types';
+import type { InviteFormValues, Maybe } from '@proton/pass/types';
 
 export enum InviteEmailsError {
     DUPLICATE = 'DUPLICATE' /* duplicate members */,
@@ -15,12 +15,11 @@ export enum InviteEmailsError {
 
 type ValidateShareInviteOptions = {
     emailField: RefObject<HTMLInputElement>;
-    validateAddresses: boolean;
-    validationMap: MutableRefObject<Map<string, boolean>>;
+    emailValidationResults: Maybe<MutableRefObject<Map<string, boolean>>>;
 };
 
-export const validateShareInviteValues =
-    ({ emailField, validateAddresses, validationMap }: ValidateShareInviteOptions) =>
+export const validateInvite =
+    ({ emailField, emailValidationResults }: ValidateShareInviteOptions) =>
     (values: InviteFormValues) => {
         if (values.step === 'vault' && values.withVaultCreation) return validateVaultValues(values);
 
@@ -39,7 +38,7 @@ export const validateShareInviteValues =
                     } else if (!PassCoreUI.is_email_valid(value.email)) {
                         acc.pass = false;
                         acc.errors.push(InviteEmailsError.INVALID_EMAIL);
-                    } else if (validateAddresses && validationMap.current.get(value.email) === false) {
+                    } else if (emailValidationResults?.current.get(value.email) === false) {
                         acc.errors.push(InviteEmailsError.INVALID_ORG);
                         acc.pass = false;
                     } else acc.errors.push('');
