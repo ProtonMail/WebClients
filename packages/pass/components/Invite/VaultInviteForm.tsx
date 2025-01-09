@@ -160,7 +160,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                             autocomplete={autocomplete}
                             selected={selected}
                             excluded={vaultSharedWith}
-                            shareId={!form.values.withVaultCreation ? form.values.shareId : undefined}
+                            access={form.values.withVaultCreation ? undefined : form.values}
                             onToggle={onRecommendationToggle}
                         />
                     </div>

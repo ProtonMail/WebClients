@@ -23,13 +23,10 @@ import noop from '@proton/utils/noop';
 import { useInviteActions } from './InviteProvider';
 import { FORM_ID, ItemInviteForm } from './ItemInviteForm';
 
-export type ItemInviteCreateProps = { item: SelectedItem };
-
-export const ItemInviteCreate: FC<ItemInviteCreateProps> = (props) => {
+export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
     const { close, manageItemAccess } = useInviteActions();
     const org = useOrganization({ sync: true });
 
-    const shareId = props.item.shareId;
     const addressValidator = useValidateInviteAddresses(shareId ?? '');
     const validateAddresses = !org?.b2bAdmin && org?.settings.ShareMode === BitField.ACTIVE;
     const emailFieldRef = useRef<HTMLInputElement>(null);
@@ -48,8 +45,8 @@ export const ItemInviteCreate: FC<ItemInviteCreateProps> = (props) => {
         initialValues: {
             step: 'members',
             members: [],
-            shareId: props.item.shareId,
-            itemId: props.item.itemId,
+            shareId,
+            itemId,
             shareType: ShareType.Item,
         },
         initialErrors: { members: [] },
