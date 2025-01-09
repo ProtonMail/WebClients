@@ -11,9 +11,9 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { useInviteAddressesValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { useValidateInviteAddresses } from '@proton/pass/hooks/useValidateInviteAddress';
-import { validateShareInviteValues } from '@proton/pass/lib/validation/vault-invite';
+import { validateInvite } from '@proton/pass/lib/validation/invite';
 import {
     type inviteBatchCreateFailure,
     inviteBatchCreateIntent,
@@ -42,7 +42,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const defaultVault = useSelector(selectDefaultVault);
 
     const shareId = props.withVaultCreation ? defaultVault?.shareId : props.vault.shareId;
-    const addressValidator = useValidateInviteAddresses(shareId ?? '');
+    const validator = useInviteAddressesValidator(shareId ?? '');
     const validateAddresses = !org?.b2bAdmin && org?.settings.ShareMode === BitField.ACTIVE;
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
@@ -82,13 +82,12 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         },
         initialErrors: { members: [] },
         validateOnChange: true,
-        validate: validateShareInviteValues({
+        validate: validateInvite({
             emailField: emailFieldRef,
-            validateAddresses,
-            validationMap: addressValidator.emails,
+            emailValidationResults: validator?.emails,
         }),
         onSubmit: (values, { setFieldValue }) => {
-            if (addressValidator.loading) return;
+            if (validator?.loading) return;
 
             switch (values.step) {
                 case 'members':
@@ -105,12 +104,10 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     });
 
     useEffect(() => {
-        if (validateAddresses) {
-            addressValidator
-                .validate(form.values.members.map(({ value }) => value.email))
-                .then(() => form.validateForm())
-                .catch(noop);
-        }
+        validator
+            ?.validate(form.values.members.map(({ value }) => value.email))
+            .then(() => form.validateForm())
+            .catch(noop);
     }, [form.values.members, validateAddresses]);
 
     const attributes = ((): {
@@ -179,7 +176,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={createInvite.loading || addressValidator.loading || !form.isValid}
+                                    disabled={createInvite.loading || validator?.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
                                     loading={createInvite.loading}
@@ -198,7 +195,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                                 form={form}
                                 autoFocus={didEnter}
                                 ref={emailFieldRef}
-                                addressValidator={addressValidator}
+                                validator={validator}
                             />
                         </Form>
                     </FormikProvider>

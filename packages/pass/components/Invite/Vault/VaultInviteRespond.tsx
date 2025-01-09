@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
+import { UserVerificationMessage } from '@proton/pass/components/Invite/Steps/UserVerificationMessage';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { getItemsText } from '@proton/pass/components/Settings/helper';

@@ -5,30 +5,26 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, type IconName } from '@proton/components';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { useInviteAddressesValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { useValidateInviteAddresses } from '@proton/pass/hooks/useValidateInviteAddress';
-import { validateShareInviteValues } from '@proton/pass/lib/validation/vault-invite';
+import { validateInvite } from '@proton/pass/lib/validation/invite';
 import {
     type inviteBatchCreateFailure,
     inviteBatchCreateIntent,
     type inviteBatchCreateSuccess,
 } from '@proton/pass/store/actions';
-import { BitField, type Callback, type ItemInviteFormValues, type SelectedItem, ShareType } from '@proton/pass/types';
+import { type Callback, type ItemInviteFormValues, type SelectedItem, ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-import { useInviteActions } from './InviteProvider';
 import { FORM_ID, ItemInviteForm } from './ItemInviteForm';
 
 export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
     const { close, manageItemAccess } = useInviteActions();
-    const org = useOrganization({ sync: true });
-
-    const addressValidator = useValidateInviteAddresses(shareId ?? '');
-    const validateAddresses = !org?.b2bAdmin && org?.settings.ShareMode === BitField.ACTIVE;
+    const validator = useInviteAddressesValidator(shareId ?? '');
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
     const createInvite = useActionRequest<
@@ -51,13 +47,12 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
         },
         initialErrors: { members: [] },
         validateOnChange: true,
-        validate: validateShareInviteValues({
+        validate: validateInvite({
             emailField: emailFieldRef,
-            validateAddresses,
-            validationMap: addressValidator.emails,
+            emailValidationResults: validator?.emails,
         }),
         onSubmit: (values, { setFieldValue }) => {
-            if (addressValidator.loading) return;
+            if (validator?.loading) return;
 
             switch (values.step) {
                 case 'members':
@@ -72,13 +67,11 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
     });
 
     useEffect(() => {
-        if (validateAddresses) {
-            addressValidator
-                .validate(form.values.members.map(({ value }) => value.email))
-                .then(() => form.validateForm())
-                .catch(noop);
-        }
-    }, [form.values.members, validateAddresses]);
+        validator
+            ?.validate(form.values.members.map(({ value }) => value.email))
+            .then(() => form.validateForm())
+            .catch(noop);
+    }, [form.values.members, validator]);
 
     const attributes = ((): {
         submitText: string;
@@ -138,7 +131,7 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={createInvite.loading || addressValidator.loading || !form.isValid}
+                                    disabled={createInvite.loading || validator?.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
                                     loading={createInvite.loading}
@@ -154,10 +147,10 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
                     <FormikProvider value={form}>
                         <Form id={FORM_ID} className="flex-1">
                             <ItemInviteForm
-                                form={form}
                                 autoFocus={didEnter}
+                                form={form}
                                 ref={emailFieldRef}
-                                addressValidator={addressValidator}
+                                validator={validator}
                             />
                         </Form>
                     </FormikProvider>

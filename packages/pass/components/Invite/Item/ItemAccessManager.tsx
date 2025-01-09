@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Alert, Icon, Prompt } from '@proton/components';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { presentListItem } from '@proton/pass/components/Item/List/utils';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -32,8 +33,6 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
-
-import { useInviteActions } from './InviteProvider';
 
 type Props = UniqueItem;
 
