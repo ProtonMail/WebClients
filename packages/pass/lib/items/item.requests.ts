@@ -1,6 +1,7 @@
 import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import type {
     AliasAndItemCreateRequest,
     BatchItemRevisionIDs,
@@ -30,6 +31,15 @@ import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
 import { batchByShareId, intoRevisionID } from './item.utils';
 
+/** FIXME: we should start caching the item keys */
+export const getLatestItemKey = async (shareId: string, itemId: string) =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
+            method: 'get',
+        })
+    ).Key;
+
 /* Item creation API request for all items
  * except for alias items */
 export const createItem = async (
@@ -46,7 +56,7 @@ export const createItem = async (
         data,
     });
 
-    return Item!;
+    return Item;
 };
 
 /* Specific alias item API request */
@@ -69,7 +79,7 @@ export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Prom
         data,
     });
 
-    return Item!;
+    return Item;
 };
 
 /* Specific item with alias API request: the first item
@@ -101,7 +111,7 @@ export const createItemWithAlias = async (
         data,
     });
 
-    return [Bundle!.Item, Bundle!.Alias];
+    return [Bundle.Item, Bundle.Alias];
 };
 
 export const editItem = async (
@@ -110,23 +120,10 @@ export const editItem = async (
 ): Promise<ItemRevisionContentsResponse> => {
     const { shareId, itemId, ...item } = editIntent;
     const content = serializeItemContent(item);
+    const itemKey = await resolveItemKey(shareId, itemId);
+    const data = await PassCrypto.updateItem({ content, lastRevision, itemKey });
 
-    const latestItemKey = (
-        await api({
-            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
-            method: 'get',
-        })
-    ).Key!;
-
-    const data = await PassCrypto.updateItem({ shareId, content, lastRevision, latestItemKey });
-
-    const { Item } = await api({
-        url: `pass/v1/share/${shareId}/item/${itemId}`,
-        method: 'put',
-        data,
-    });
-
-    return Item!;
+    return (await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data })).Item;
 };
 
 export const moveItem = async (
@@ -143,7 +140,7 @@ export const moveItem = async (
             method: 'put',
             data,
         })
-    ).Item!;
+    ).Item;
 
     return parseItemRevision(destinationShareId, encryptedItem);
 };
@@ -225,7 +222,7 @@ export const restoreItems = async (
                 return response;
             })
         )
-    ).flatMap(({ Items }) => Items ?? []);
+    ).flatMap(({ Items }) => Items);
 
 export const deleteItems = async (
     items: SelectedRevision[],
@@ -254,7 +251,7 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
             method: 'put',
             data: { LastUseTime: getEpoch() },
         })
-    ).Revision!;
+    ).Revision;
 
 export const requestAllItemsForShareId = async (
     options: { shareId: string; OnlyAlias?: boolean },
@@ -354,7 +351,7 @@ export const getItemRevisions = async (
             method: 'get',
             signal,
         })
-    ).Revisions!;
+    ).Revisions;
 };
 
 export const getItemKeys = async (shareId: string, itemId: string) =>
