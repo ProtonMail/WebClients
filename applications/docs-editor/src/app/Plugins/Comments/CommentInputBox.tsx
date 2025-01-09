@@ -1,11 +1,12 @@
 import type { LexicalEditor, RangeSelection } from 'lexical'
-import { createDOMRange, createRectsFromDOMRange } from '@lexical/selection'
+import { createDOMRange } from '@lexical/selection'
 import { $getSelection, $isRangeSelection } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
 import { c } from 'ttag'
 import { Icon, ToolbarButton } from '@proton/components'
 import { useCommentsContext } from './CommentsContext'
+import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
 
 export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
   const textContentRef = useRef('')
