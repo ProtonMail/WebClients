@@ -453,6 +453,9 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
+      "Learn more.": [
+        "Μάθετε περισσότερα."
+      ],
       "Leave": [
         "Αποχώρηση"
       ],
@@ -500,6 +503,9 @@
       ],
       "Minimize transfers": [
         "Ελαχιστοποίηση μεταφορών"
+      ],
+      "More actions": [
+        "Περισσότερες ενέργειες"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
@@ -629,6 +635,9 @@
       ],
       "Replace file": [
         "Αντικατάσταση αρχείου"
+      ],
+      "Report": [
+        "Αναφορά"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -2566,49 +2575,6 @@
         "Υποστήριξη με προτεραιότητα"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Αποκτήστε το ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Αποκτήστε το για ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Χρεώνεται κάθε 2 χρόνια με ${ amountBilled }. Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Χρεώνεται ετησίως με ${ amountBilled }. Εξοικονομήστε ${ amountSave } πάνω από 2 μεμονωμένα ${ BRAND_NAME } Απεριόριστες ετήσιες συνδρομές."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB αποθηκευτικού χώρου"
-      ],
-      "2 users": [
-        "2 χρήστες"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Πλήρης πρόσβαση σε όλα τα ${ BRAND_NAME } προϊόντα"
-      ],
-      "You save ${ amountSave }": [
-        "Εξοικονομείτε ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Όλα του ${ BRAND_NAME }, για 2."
-      ],
-      "Double your storage": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Παρουσιάζουμε το ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "ΠΕΡΙΓΡΑΦΗ:\n${ eventDescription }"
@@ -3323,6 +3289,11 @@
         "Δεν επιλέχθηκε εικόνα"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Μη αναμενόμενο σφάλμα"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
@@ -3646,6 +3617,29 @@
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
+      ],
+      "End time out of bounds": [
+        "Ώρα λήξης εκτός ορίων"
+      ],
+      "Event validation failed": [
+        "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Malformed all-day event": [
+        "Δύσμορφη ολοήμερη εκδήλωση"
+      ],
+      "Malformed end time": [
+        "Λανθασμένος χρόνος λήξης"
+      ],
+      "Recurring event has no occurrences": [
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
+      ],
+      "Time zone not supported": [
+        "Μη υποστηριζόμενη ζώνη ώρας"
       ]
     },
     "Import calendar": {
@@ -4141,6 +4135,9 @@
       "And access it from anywhere": [
         "Και αποκτήστε πρόσβαση σε αυτό από οπουδήποτε"
       ],
+      "Anonymous": [
+        "Ανώνυμος"
+      ],
       "Anyone with this link can access your file.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
       ],
@@ -4403,6 +4400,9 @@
       ],
       "Enabling drive search": [
         "Γίνεται ενεργοποίηση τοπικής αναζήτησης"
+      ],
+      "Encrypted": [
+        "Κρυπτογραφημένα"
       ],
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση είναι εδώ"
@@ -5055,6 +5055,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Αλλάξτε σε"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -5178,6 +5181,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "Για την προστασία σας, το ${ DRIVE_APP_NAME } μπορεί να σαρώσει τα αρχεία σας με τρόπο που διατηρεί το απόρρητο και να αποκλείσει κακόβουλα αρχεία. Ωστόσο, εξακολουθεί να είναι καλύτερο να κάνετε λήψη αρχείων μόνο από αξιόπιστες πηγές."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Για να εισάγετε εκδηλώσεις, θα πρέπει πρώτα να δημιουργήσετε ένα ημερολόγιο στο ${ CALENDAR_APP_NAME }. Εδώ θα εμφανιστούν οι εκδηλώσεις μετά την εισαγωγή."
@@ -6149,6 +6155,9 @@
       ],
       "Upload your first file": [
         "Ανεβάστε το πρώτο σας αρχείο"
+      ],
+      "Uploaded by": [
+        "Ανέβηκε από"
       ],
       "VAT": [
         "ΦΠΑ"
