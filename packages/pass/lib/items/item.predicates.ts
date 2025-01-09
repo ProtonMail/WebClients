@@ -53,7 +53,7 @@ export const isNewItemDraft = (draft?: Draft): draft is NewDraft => draft?.mode 
 
 export const isPinned = ({ pinned }: ItemRevision) => pinned;
 
-export const isShared = ({ shareCount }: ItemRevision) => shareCount > 0;
+export const isShared = ({ shareCount = 0 }: ItemRevision) => shareCount > 0;
 
 const hasItemFlag =
     (bitFlag: ItemFlag) =>
