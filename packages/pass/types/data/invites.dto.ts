@@ -31,6 +31,7 @@ export type InviteRecommendationsIntent = {
 };
 
 export type InviteRecommendationsSuccess = {
+    startsWith: string;
     emails: string[];
     more: boolean;
     next: MaybeNull<string>;
