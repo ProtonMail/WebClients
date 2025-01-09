@@ -492,27 +492,23 @@ const BasePublicApp = () => {
                                         >
                                             <Switch location={location}>
                                                 <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
-                                                    <UnAuthenticatedApiProvider>
-                                                        <UnleashFlagProviderWrapper>
-                                                            <UnAuthenticated>
-                                                                <JoinMagicLinkContainer
-                                                                    onPreload={handlePreload}
-                                                                    onPreSubmit={handlePreSubmit}
-                                                                    onLogin={handleLogin}
-                                                                    productParam={productParam}
-                                                                    toAppName={toAppName}
-                                                                    toApp={maybePreAppIntent}
-                                                                    onUsed={() => {
-                                                                        history.replace(
-                                                                            (activeSessions || []).length >= 1
-                                                                                ? SSO_PATHS.SWITCH
-                                                                                : paths.login
-                                                                        );
-                                                                    }}
-                                                                />
-                                                            </UnAuthenticated>
-                                                        </UnleashFlagProviderWrapper>
-                                                    </UnAuthenticatedApiProvider>
+                                                    <UnAuthenticated>
+                                                        <JoinMagicLinkContainer
+                                                            onPreload={handlePreload}
+                                                            onPreSubmit={handlePreSubmit}
+                                                            onLogin={handleLogin}
+                                                            productParam={productParam}
+                                                            toAppName={toAppName}
+                                                            toApp={maybePreAppIntent}
+                                                            onUsed={() => {
+                                                                history.replace(
+                                                                    (activeSessions || []).length >= 1
+                                                                        ? SSO_PATHS.SWITCH
+                                                                        : paths.login
+                                                                );
+                                                            }}
+                                                        />
+                                                    </UnAuthenticated>
                                                 </Route>
                                                 <Route path={SSO_PATHS.SWITCH}>
                                                     <UnAuthenticated>
