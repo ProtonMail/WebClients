@@ -723,6 +723,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Ak používate subdoménu, napr. subdomena.domena.sk, musíte namiesto toho použiť ${ domainKeyExampleSubdomain } ako doménu. To znamená, že ak je vaša doména mail.domena.sk, mali by ste ako doménu zadať ${ domainKeyExampleMail }."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Ak používate službu Cloudflare, uistite sa, že ste nevybrali možnosť Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte svoje informácie v bezpečí a súkromí pomocou týchto návodov a tipov."
       ],
@@ -734,6 +737,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Niektorí registrátori DNS môžu vyžadovať úplnú cestu k záznamu, v takom prípade použite ${ domain } ako hodnotu domény."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Niektorí registrátori domén (Namecheap, Cloudflare atď.) môžu tiež používať @ pre koreňovú doménu."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } je metóda overovania elektronickej pošty určená na zisťovanie falšovania adries odosielateľov počas doručovania emailov. Nastavenie SPF sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
@@ -752,6 +758,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Táto služba ponúka 2FA. Aktiváciou tejto funkcie zvýšite bezpečnosť účtu."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Na overenie vlastníctva domény pridajte nasledujúci TXT záznam. Niektorí registrátori domén (Namecheap, Cloudflare atď.) môžu používať @ pre koreňovú doménu."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odomknite pokročilé funkcie zabezpečenia a podrobné protokoly na ochranu vašej online prítomnosti."
@@ -1955,9 +1964,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Upozorňujeme, že po vymazaní sa alias nedá obnoviť. Alias je už deaktivovaný a nebude preposielať emaily do vašej poštovej schránky"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Aktualizujte, aby ste získali skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Použite, prosím, celú cestu k doméne, napríklad moja-doména.sk alebo moja-subdoména.moja-doména.sk, ak používate subdoménu."
@@ -3852,9 +3858,6 @@
       ],
       "Update available": [
         "K dispozícii je aktualizácia"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Inovujte pre odomknutie prémiových funkcií"
       ],
       "Vault": [
         "Trezor"
