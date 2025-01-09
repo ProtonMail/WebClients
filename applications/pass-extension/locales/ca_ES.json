@@ -1893,9 +1893,6 @@
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Un cop suprimit, l'àlies no es pot restaurar. L'àlies ja està desactivat i no reenviarà correus electrònics a la vostra bústia de correu"
       ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Actualitzeu per a tenir accés anticipat a l'aplicació web ${ PASS_APP_NAME }"
-      ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Utilitzeu el domini del camí complet, per exemple el- meu-domini.cat o el-meu-subdomini.el-meu-domini.cat si feu servir un subdomini."
       ],
@@ -3675,9 +3672,6 @@
       "Update available": [
         "Hi ha una actualització disponible"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Actualitzeu per a desbloquejar les característiques prèmium"
-      ],
       "Use my email": [
         "Utilitza el meu correu electrònic"
       ],
@@ -3862,6 +3856,9 @@
       ],
       "No results": [
         "Sense resultats"
+      ],
+      "No secure links matching": [
+        "No hi ha cap enllaç segur que coincideixi."
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Un cop sincronitzats, suprimir els àlies a ${ PASS_SHORT_APP_NAME } també els suprimirà a SimpleLogin."
