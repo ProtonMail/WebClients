@@ -446,6 +446,9 @@
       "Merge contacts": [
         "Συγχώνευση Επαφών"
       ],
+      "More actions": [
+        "Περισσότερες ενέργειες"
+      ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
@@ -2808,49 +2811,6 @@
         "Προσθήκη ημερολογίου"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Αποκτήστε το ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Αποκτήστε το για ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Χρεώνεται κάθε 2 χρόνια με ${ amountBilled }. Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Χρεώνεται ετησίως με ${ amountBilled }. Εξοικονομήστε ${ amountSave } πάνω από 2 μεμονωμένα ${ BRAND_NAME } Απεριόριστες ετήσιες συνδρομές."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB αποθηκευτικού χώρου"
-      ],
-      "2 users": [
-        "2 χρήστες"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Πλήρης πρόσβαση σε όλα τα ${ BRAND_NAME } προϊόντα"
-      ],
-      "You save ${ amountSave }": [
-        "Εξοικονομείτε ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Όλα του ${ BRAND_NAME }, για 2."
-      ],
-      "Double your storage": [
-        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Παρουσιάζουμε το ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Διπλότυπη εκδήλωση"
@@ -3651,6 +3611,11 @@
         "Εσείς"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Μη αναμενόμενο σφάλμα"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
@@ -4027,6 +3992,29 @@
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
+      ],
+      "End time out of bounds": [
+        "Ώρα λήξης εκτός ορίων"
+      ],
+      "Event validation failed": [
+        "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Malformed all-day event": [
+        "Δύσμορφη ολοήμερη εκδήλωση"
+      ],
+      "Malformed end time": [
+        "Λανθασμένος χρόνος λήξης"
+      ],
+      "Recurring event has no occurrences": [
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
+      ],
+      "Time zone not supported": [
+        "Μη υποστηριζόμενη ζώνη ώρας"
       ]
     },
     "Import calendar": {
@@ -5008,6 +4996,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Αλλάξτε σε"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -8549,20 +8540,11 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
       ],
-      "No more scheduling conflicts": [
-        "Δεν υπάρχουν άλλες διενέξεις προγραμματισμού"
-      ],
-      "Now you can see when participants are free to attend your meeting.": [
-        "Τώρα μπορείτε να δείτε πότε οι συμμετέχοντες είναι διαθέσιμοι να παρευρεθούν στη συνάντησή σας."
-      ],
       "Seamlessly create and add video meeting links to your events.": [
         "Δημιουργήστε και προσθέστε απρόσκοπτα συνδέσμους βιντεοσυσκέψεων στις εκδηλώσεις σας."
       ],
       "Video conferencing is here!": [
         "Η τηλεδιάσκεψη είναι εδώ!"
-      ],
-      "You can now collapse the navigation bar.": [
-        "Τώρα μπορείτε να συμπτύξετε τη γραμμή περιήγησης."
       ]
     },
     "sso": {
