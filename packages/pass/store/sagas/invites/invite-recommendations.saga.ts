@@ -23,6 +23,7 @@ function* loadRecommendationsWorker({
 
         yield put(
             inviteRecommendationsSuccess(request.id, {
+                startsWith: payload.startsWith,
                 emails: RecommendedEmails,
                 more: PlanRecommendedEmailsNextToken !== null,
                 next: PlanRecommendedEmailsNextToken ?? null,
