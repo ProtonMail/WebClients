@@ -10,12 +10,12 @@ import type { SelectedItem, SelectedShare } from '@proton/pass/types';
 import { type MaybeNull, ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 
-import { ItemAccessManager } from './ItemAccessManager';
-import { ItemInviteCreate } from './ItemInviteCreate';
-import { ItemInviteRespond } from './ItemInviteRespond';
-import { VaultAccessManager } from './VaultAccessManager';
-import { VaultInviteCreate, type VaultInviteCreateValues } from './VaultInviteCreate';
-import { VaultInviteRespond } from './VaultInviteRespond';
+import { ItemAccessManager } from './Item/ItemAccessManager';
+import { ItemInviteCreate } from './Item/ItemInviteCreate';
+import { ItemInviteRespond } from './Item/ItemInviteRespond';
+import { VaultAccessManager } from './Vault/VaultAccessManager';
+import { VaultInviteCreate, type VaultInviteCreateValues } from './Vault/VaultInviteCreate';
+import { VaultInviteRespond } from './Vault/VaultInviteRespond';
 
 type InviteContextState =
     | ({ view: 'invite-vault' } & VaultInviteCreateValues<false>)

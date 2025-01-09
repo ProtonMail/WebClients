@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { Checkbox } from '@proton/components';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
+import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { ShareMemberAvatar } from '@proton/pass/components/Share/ShareMemberAvatar';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { useInviteRecommendations } from '@proton/pass/hooks/useInviteRecommendations';
@@ -15,8 +16,6 @@ import { selectDefaultVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
-
-import { VirtualList } from '../Layout/List/VirtualList';
 
 type Props = {
     autocomplete: string;
