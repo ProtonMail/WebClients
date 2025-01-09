@@ -937,6 +937,10 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Tarif leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monat anmeldest.",
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monate anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -1127,6 +1131,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Wird automatisch für ${ renewPrice } um ${ renewLength } Monat verlängert.",
+        "Wird automatisch für ${ renewPrice } um ${ renewLength } Monate verlängert."
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Verlängert sich automatisch auf ${ subscriptionManagerName }"
       ]
@@ -2441,49 +2449,6 @@
         "Priorisierter Support"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Hol dir ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Für ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Alle zwei Jahre für ${ amountBilled } in Rechnung gestellt. Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Jährlich für ${ amountBilled } in Rechnung gestellt. Spare ${ amountSave } bei 2 individuellen ${ BRAND_NAME } Unlimited-Jahresabonnements."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB Speicherplatz"
-      ],
-      "2 users": [
-        "2 Benutzer"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Voller Zugriff auf alle ${ BRAND_NAME }-Produkte"
-      ],
-      "You save ${ amountSave }": [
-        "Du sparst ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Alles von ${ BRAND_NAME } für zwei Personen."
-      ],
-      "Double your storage": [
-        "Verdopple deinen Speicherplatz"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Wir präsentieren ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } hinzugefügt"
@@ -3561,6 +3526,9 @@
         "${ number } Server",
         "${ number } Server"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
@@ -3984,6 +3952,9 @@
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiviert am ${ formattedDateAndTime }"
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "E-Mail Ende-zu-Ende-Verschlüsselung ist für diese Gruppe deaktiviert. Sie kann aktiviert werden."
       ],
       "End-to-end email encryption is enabled for this group.": [
         "Ende-zu-Ende-Verschlüsselung für E-Mails ist für diese Gruppe aktiviert."
@@ -4677,6 +4648,9 @@
       ],
       "Swiss based": [
         "Aus der Schweiz"
+      ],
+      "Switch to": [
+        "Wechseln zu"
       ],
       "Thank you": [
         "Vielen Dank"
@@ -7579,6 +7553,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
+      ],
+      "Team policies": [
+        "Gruppenrichtlinien"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8743,6 +8720,14 @@
         "${ n } Benutzer von SSO entfernt.",
         "${ n } Benutzer von SSO entfernt."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } Benutzer hat sich deiner Organisation über deinen Identitätsanbieter angeschlossen. Überprüfe das Konto jetzt:",
+        "${ n } Benutzer haben sich deiner Organisation über deinen Identitätsanbieter angeschlossen. Überprüfe die Konten jetzt:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } Benutzer ist inaktiv. Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
+        "${ n } Benutzer sind inaktiv. Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } Benutzer bitte, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden.",
         "${ n } Benutzer bitten, um deine Hilfe bei der Anmeldung an seinem ${ BRAND_NAME } Konto mit Single-Sign-On anzumelden."
@@ -8758,6 +8743,9 @@
       ],
       "Access granted": [
         "Zugriff gewährt"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "hat dich zu der ${ BRAND_NAME } Organisation hinzugefügt"
       ],
       "Approve or deny it now": [
         "Jetzt genehmigen oder ablehnen"
@@ -8836,6 +8824,9 @@
       "Invalid confirmation code": [
         "Ungültiger Bestätigungscode"
       ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Dies ist die einzige Möglichkeit dein Konto vollständig wiederherzustellen, also bewahre es an einem sicheren Ort auf."
+      ],
       "Join ${ organizationName }": [
         "${ organizationName } beitreten"
       ],
@@ -8850,6 +8841,9 @@
       ],
       "Remove single sign-on for your organization?": [
         "Single Sign-on für deine Organisation entfernen?"
+      ],
+      "Set your backup password": [
+        "Setze dein Backup-Password"
       ],
       "Share the confirmation code with your administrator": [
         "Teile den Bestätigungscode mit deinem Administrator"
@@ -10385,6 +10379,9 @@
       ],
       "Setup dedicated servers by upgrading to Business": [
         "Richte dedizierte Server ein, indem du auf Business upgradest"
+      ],
+      "Shared servers": [
+        "Geteilte Server"
       ],
       "Sign in": [
         "Melde dich an,"

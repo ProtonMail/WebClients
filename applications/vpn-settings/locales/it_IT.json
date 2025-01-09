@@ -2455,49 +2455,6 @@
         "Supporto prioritario"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Ottieni ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Ottienilo per ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Fatturato ogni 2 anni a ${ amountBilled }. Gli sconti si basano sul prezzo mensile standard."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Fatturato annualmente a ${ amountBilled }. Risparmia ${ amountSave } su 2 abbonamenti annuali individuali di ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB di spazio di archiviazione"
-      ],
-      "2 users": [
-        "2 utenti"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Accesso completo a tutti i prodotti ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Risparmi ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Tutte le funzionalità di ${ BRAND_NAME }, per 2."
-      ],
-      "Double your storage": [
-        "Ti presentiamo Proton Duo"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Ti presentiamo ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } aggiunto"
@@ -3724,6 +3681,9 @@
         "L'utente interessato è nella riga",
         "Gli utenti interessati sono nelle righe"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
+      ],
       "All inactive members deleted": [
         "Tutti i membri inattivi sono stati eliminati"
       ],
@@ -3873,6 +3833,10 @@
       ],
       "Country code": [
         "Codice nazione"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un cloud sicuro per ${ value } membro",
+        "Crea un cloud sicuro per ${ value } membri"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
@@ -4641,6 +4605,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Invia mail per invitare gli utenti a proteggere i loro account con l'autenticazione a due fattori."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "I pagamenti SEPA non sono disponibili al momento. Si prega di riprovare più tardi."
+      ],
       "Server is currently down": [
         "Il server è attualmente offline"
       ],
@@ -4725,6 +4692,9 @@
       ],
       "Swiss based": [
         "Con sede in Svizzera"
+      ],
+      "Switch to": [
+        "Altri account"
       ],
       "Thank you": [
         "Grazie"
