@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/crypto';
@@ -23,7 +23,7 @@ import useListNotifications from './useListNotifications';
  * useActions provides actions over links and its results is reported back
  * to user using notifications.
  *
- * {@return {confirmModal}} Only needed for deletePermanently/emptyTrash/stopSharingLinks
+ * {@return {confirmModal}} Only needed for deletePermanently/emptyTrash
  */
 export default function useActions() {
     const { showErrorNotification } = useErrorHandler();
@@ -34,7 +34,6 @@ export default function useActions() {
         createTrashedItemsNotifications,
         createRestoredItemsNotifications,
         createDeletedItemsNotifications,
-        createDeletedSharedLinksNotifications,
     } = useListNotifications();
     const { checkFirstBlockSignature } = useDownload();
     const { initFileUpload } = useUploadFile();
@@ -391,29 +390,6 @@ export default function useActions() {
         });
     };
 
-    const stopSharingLinks = (abortSignal: AbortSignal, linksToStopSharing: LinkInfo[]) => {
-        if (!linksToStopSharing.length) {
-            return;
-        }
-
-        void showConfirmModal({
-            title: c('Title').t`Stop sharing`,
-            submitText: c('Title').t`Stop sharing`,
-            message: c('Info').ngettext(
-                msgid`This will delete the link and remove access to your file or folder for anyone with the link.`,
-                `This will delete the links and remove access to your files or folders for anyone with the links.`,
-                linksToStopSharing.length
-            ),
-            onSubmit: async () => {
-                const result = await shareUrl.deleteShareUrls(
-                    abortSignal,
-                    linksToStopSharing.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
-                );
-                createDeletedSharedLinksNotifications(linksToStopSharing, result.successes, result.failures);
-            },
-        });
-    };
-
     // Safari does not allow copy to clipboard outside of the event
     // (e.g., click). No await or anything does not do the trick.
     // Clipboard API also doesn't work. Therefore we cannot have this
@@ -479,7 +455,6 @@ export default function useActions() {
         deletePermanently,
         emptyTrash,
         stopSharing,
-        stopSharingLinks,
         copyShareLinkToClipboard,
         removeDevice,
         renameDevice,

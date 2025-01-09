@@ -76,20 +76,15 @@ enum CalendarFeatureFlag {
 
 enum DriveFeatureFlag {
     // Photos
-    DrivePhotos = 'DrivePhotos',
     DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
     // Sharing
-    DriveSharingInvitations = 'DriveSharingInvitations',
     DriveSharingDisabled = 'DriveSharingDisabled',
     DriveSharingEditingDisabled = 'DriveSharingEditingDisabled',
-    DriveSharingDevelopment = 'DriveSharingDevelopment',
     DriveExternalInvitationsDisabled = 'DriveSharingExternalInvitationsDisabled',
-    DriveExternalInvitations = 'DriveSharingExternalInvitations',
     // Public sharing edit mode
     DrivePublicShareEditMode = 'DrivePublicShareEditMode',
     DrivePublicShareEditModeDisabled = 'DrivePublicShareEditModeDisabled',
     // Download
-    DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
     DriveWebOPFSDownloadMechanism = 'DriveWebOPFSDownloadMechanism',
     DriveWebDownloadSWModernBrowsers = 'DriveWebDownloadSWModernBrowsers',
@@ -103,6 +98,9 @@ enum DriveFeatureFlag {
     // Experiment
     DriveThumbnailWebP = 'DriveThumbnailWebP',
     DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
+    // Albums
+    DriveAlbums = 'DriveAlbums',
+    DriveAlbumsDisabled = 'DriveAlbumsDisabled',
 }
 
 enum DocsFeatureFlag {
