@@ -3850,49 +3850,6 @@
         "Prioritní podpora"
       ]
     },
-    "duoplan2024: Action": {
-      "Get ${ BRAND_NAME } Duo": [
-        "Získejte ${ BRAND_NAME } Duo"
-      ],
-      "Get it for ${ price }": [
-        "Získejte za ${ price }"
-      ]
-    },
-    "duoplan2024: Footer": {
-      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
-        "Placeno každé 2 roky, ${ amountBilled }. Slevy jsou založeny na běžných měsíčních cenách."
-      ],
-      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Placeno ročně, ${ amountBilled }. Ušetřete ${ amountSave } oproti 2 samostatným ročním předplatným ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "duoplan2024: Info": {
-      "1 TB storage": [
-        "1 TB prostoru"
-      ],
-      "2 users": [
-        "2 uživatelé"
-      ],
-      "Full access to all ${ BRAND_NAME } products": [
-        "Plný přístup ke všem produktům ${ BRAND_NAME }"
-      ],
-      "You save ${ amountSave }": [
-        "Ušetříte ${ amountSave }"
-      ]
-    },
-    "duoplan2024: SubTitle": {
-      "All of ${ BRAND_NAME }, for 2.": [
-        "Vše od ${ BRAND_NAME } pro 2."
-      ],
-      "Double your storage": [
-        "Zdvojnásobte své úložiště"
-      ]
-    },
-    "duoplan2024: Title": {
-      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Představujeme ${ PLAN_NAMES[PLANS.DUO] } "
-      ]
-    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -6733,9 +6690,6 @@
       ],
       "JCB logo": [
         "JCB logo"
-      ],
-      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
-        "Zapojte se do programu ${ PROTON_SENTINEL_NAME } a získejte nejvyšší úroveň zabezpečení účtu a podpory."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
@@ -10086,6 +10040,14 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Získejte Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -10098,14 +10060,6 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získejte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
       ]
     },
     "new_plans: tooltip": {
@@ -11855,9 +11809,6 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
-      ],
-      "You can now collapse the navigation bar.": [
-        "Nyní můžete sbalit navigační panel."
       ],
       "You can now schedule your messages to be sent later": [
         "Nyní můžete naplánovat odesílání zpráv na později"
