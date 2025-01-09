@@ -159,11 +159,20 @@ export function CommentsPanelListComment({
         data-testid="thread-comments-list"
       >
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
-          <UserAvatar
-            name={displayNameForEmail(comment.author)}
-            color={color ? { hsl: color } : undefined}
-            className="mr-1 flex-shrink-0"
-          />
+          {comment.author ? (
+            <UserAvatar
+              name={displayNameForEmail(comment.author)}
+              color={color ? { hsl: color } : undefined}
+              className="mr-1 flex-shrink-0"
+            />
+          ) : (
+            <div
+              className="h-custom w-custom bg-strong mr-1 flex flex-shrink-0 items-center justify-center rounded-lg"
+              style={{ '--h-custom': '1.75rem', '--w-custom': '1.75rem' }}
+            >
+              <Icon name="user" />
+            </div>
+          )}
           <div className="mr-auto flex flex-col overflow-hidden">
             <span
               className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold"
