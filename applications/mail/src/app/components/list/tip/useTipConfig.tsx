@@ -62,11 +62,7 @@ const useTipConfig = ({ actionType }: Props) => {
     const increasePrivacyUpsellModal = useModalStateObject();
     const pmMeUpsellModal = useModalStateObject();
     const dwmUpsellModal = useModalStateObject();
-    const {
-        canSetupShortDomain,
-        createShortDomainAddress,
-        loadingDependencies: loadingProtonDomains,
-    } = useShortDomainAddress();
+    const { createShortDomainAddress, loadingDependencies: loadingProtonDomains } = useShortDomainAddress();
 
     const renderFolderModals = () => {
         return (
@@ -205,8 +201,6 @@ const useTipConfig = ({ actionType }: Props) => {
             case TipActionType.SnoozeEmail:
             case TipActionType.DownloadDesktopApp:
                 return true;
-            case TipActionType.GetProtonSubdomainAddress:
-                return canSetupShortDomain;
             default:
                 return user.isPaid;
         }
