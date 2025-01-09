@@ -4,6 +4,7 @@ import { serverTime } from '@proton/crypto';
 import { MINUTE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { esSentryReport } from '..';
 import { executeContentOperations, openESDB, readMetadataBatch, readRetries, setRetries } from '../esIDB';
 import type { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
 import { encryptItem } from './esBuild';
@@ -65,6 +66,10 @@ export const retryAPICalls = async <ESItemContent>(
     fetchESItemContent?: InternalESCallbacks<unknown, unknown, ESItemContent>['fetchESItemContent']
 ) => {
     const retryMap = await getRetries(userID);
+    esSentryReport('[ES Debug] Retrying API calls:', {
+        retryCount: retryMap.size,
+        userID,
+    });
     if (!retryMap.size || !fetchESItemContent) {
         return;
     }

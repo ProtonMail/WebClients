@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import type { IndexedDBRow } from '@proton/encrypted-search/lib/esIDB';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
-import { estimateIndexingProgress } from './esHelpers';
+import { esSentryReport, estimateIndexingProgress } from './esHelpers';
 import type { ESIndexingState, RecordProgress } from './models';
 
 /**
@@ -40,6 +40,12 @@ const useEncryptedSearchIndexingProgress = () => {
 
     const recordProgress: RecordProgress = async (newProgress, indexedDbRow) => {
         const currentRecordTimestamp = performance.now();
+
+        esSentryReport('[ES Debug] Recording progress:', {
+            newProgress,
+            indexedDbRow,
+            currentTimestamp: currentRecordTimestamp,
+        });
 
         // When switching from metadata fetch to the content fetch (which is the indexing step that needs to be displayed to the user),
         // set the indexing start time, and reset the record timestamp
