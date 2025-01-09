@@ -16,13 +16,16 @@ import { RouteMatch } from '@proton/pass/components/Navigation/RouteMatch';
 import { getMonitorRoute } from '@proton/pass/components/Navigation/routing';
 import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 import { MenuActions } from './MenuActions';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
+    const sharedMenuEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
@@ -44,7 +47,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         <VaultMenu />
                     </div>
 
-                    <SharedMenu />
+                    {sharedMenuEnabled && <SharedMenu />}
                 </div>
             </Scroll>
 
