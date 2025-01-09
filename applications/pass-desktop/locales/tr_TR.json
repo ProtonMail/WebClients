@@ -749,6 +749,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Bir alt etki alanı kullanıyorsanız, örneğin alt-etki-alani.etki-alani.com, etki alanı olarak ${ domainKeyExampleSubdomain } kullanmanız gerekir. Yani, etki alanınız mail.etki-alani.com ise etki alanı olarak ${ domainKeyExampleMail } yazmalısınız."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "CloudFlare kullanıyorsanız vekil sunucu seçeneğini seçmediğinizden emin olun."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Bu rehberler ve ipuçları ile bilgilerinizi daha güvenli ve gizli tutun."
       ],
@@ -760,6 +763,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Bazı DNS kayıt kuruluşları için tam kayıt yolu gerekebilir. Bu durumda lütfen etki alanı değeri olarak ${ domain } kullanın."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Bazı etki alanı kayıt kuruluşları (Namecheap, CloudFlare, vb.) kök etki alanı için @ işaretini de kullanabilir."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF }, e-posta teslimi sırasında sahte gönderici adreslerini bulmak için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için SPF kullanılması şiddetle önerilir."
@@ -778,6 +784,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Etki alanının sahipliğini doğrulamak için lütfen aşağıdaki TXT kaydını ekleyin. Bazı etki alanı kayıt kuruluşları (Namecheap, CloudFlare, vb.) kök etki alanı için @ kullanabilir."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlük kayıtlarına erişin."
@@ -1934,9 +1943,6 @@
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Takma adın silindikten sonra geri alınamayacağını unutmayın. Takma ad zaten kullanımdan kaldırılmış ve e-posta kutunuza herhangi bir ileti iletmiyor."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "${ PASS_APP_NAME } internet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Örneğin bir alt etki alanı kullanıyorsanız, etki-alanim.com veya alt-etki-alanim.etki.alanim.com gibi tam yol alan adını kullanın."
@@ -3891,9 +3897,6 @@
       ],
       "Update available": [
         "Güncelleme yayınlanmış"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
       "Vault": [
         "Kasa"

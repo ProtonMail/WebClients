@@ -1470,9 +1470,6 @@
       "Please enter your current PIN code to continue": [
         "Za nadaljevanje vnesite veljaven PIN."
       ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Nadgradite za zgodnji dostop do spletne aplikacije ${ PASS_APP_NAME }"
-      ],
       "Press Enter to copy": [
         "Pritisnite Enter za kopiranje"
       ],
@@ -2537,6 +2534,11 @@
         "Neveljavna potrditvena koda"
       ]
     },
+    "sso: auth device state": {
+      "Unknown": [
+        "Neznan"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
@@ -2548,6 +2550,9 @@
     "Theme": {
       "Dark": [
         "Temna"
+      ],
+      "Light": [
+        "Svetla"
       ]
     },
     "Title": {
@@ -2562,6 +2567,9 @@
       ],
       "Actions": [
         "Dejanja"
+      ],
+      "Activity": [
+        "Opravilo"
       ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
@@ -2613,6 +2621,9 @@
       ],
       "Dark Web Monitoring": [
         "Spremljanje temnega spleta"
+      ],
+      "Default": [
+        "Privzeta"
       ],
       "Details": [
         "Podrobnosti"
@@ -2796,9 +2807,6 @@
       ],
       "Update available": [
         "Na voljo je posodobitev."
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Nadgradite za odklepanje premijskih funkcij"
       ],
       "Vault": [
         "Trezor"
