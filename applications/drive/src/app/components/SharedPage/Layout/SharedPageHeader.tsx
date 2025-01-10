@@ -20,7 +20,7 @@ export const SharedPageHeader = () => {
             <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
             <div className="logo-container flex justify-space-between items-center w-auto h-auto">
                 <MainLogo to="/" reloadDocument variant={viewportWidth['<=medium'] ? 'glyph-only' : 'with-wordmark'} />
-                <div className="hidden md:block">
+                <div className="hidden md:block md:ml-2">
                     <UnAuthenticatedAppsDropdown reloadDocument user={user} />
                 </div>
             </div>
