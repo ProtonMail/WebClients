@@ -1,5 +1,5 @@
-import type { KeyRotationKeyPair } from '@proton/pass/types/api';
-import type { ShareRole } from '@proton/pass/types/data/shares';
+import type { ItemRevision } from '@proton/pass/types/data/items';
+import type { Share, ShareRole } from '@proton/pass/types/data/shares';
 import type { MaybeNull } from '@proton/pass/types/utils';
 
 export type NewUserInvitePromoteIntent = { newUserInviteId: string; shareId: string };
@@ -16,12 +16,8 @@ export type InviteResendIntent = { shareId: string; inviteId: string };
 export type InviteRemoveIntent = { shareId: string; itemId?: string; inviteId: string };
 
 export type InviteRejectIntent = { inviteToken: string };
-export type InviteAcceptIntent = {
-    invitedAddressId: string;
-    inviteKeys: KeyRotationKeyPair[];
-    inviterEmail: string;
-    inviteToken: string;
-};
+export type InviteAcceptIntent = { invitedAddressId: string; inviterEmail: string; inviteToken: string };
+export type InviteAcceptSuccess = { inviteToken: string; share: Share; items: ItemRevision[] };
 
 export type InviteRecommendationsIntent = {
     pageSize: number;

@@ -12,7 +12,7 @@ import {
     draftsGarbageCollect,
     emptyTrashProgress,
     importItemsProgress,
-    inviteAcceptSuccess,
+    inviteAccept,
     inviteBatchCreateSuccess,
     inviteRemoveSuccess,
     itemAutofilled,
@@ -286,8 +286,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return objectDelete(state, action.payload.shareId);
         }
 
-        if (inviteAcceptSuccess.match(action)) {
-            return fullMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
+        if (inviteAccept.success.match(action)) {
+            const { share, items } = action.payload;
+            return fullMerge(state, { [share.shareId]: toMap(items, 'itemId') });
         }
 
         if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match)(action)) {

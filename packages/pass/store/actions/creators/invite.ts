@@ -5,11 +5,9 @@ import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
-    inviteAcceptRequest,
     inviteAddressesValidateRequest,
     inviteCreateRequest,
     inviteRecommendationsRequest,
-    inviteRejectRequest,
     inviteRemoveRequest,
     inviteResendRequest,
     newUserInvitePromoteRequest,
@@ -17,9 +15,11 @@ import {
 } from '@proton/pass/store/actions/requests';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import type { InviteFormValues, ItemRevision, Share } from '@proton/pass/types';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import type { InviteFormValues } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
+    InviteAcceptSuccess,
     InviteBatchCreateSuccess,
     InviteRecommendationsIntent,
     InviteRecommendationsSuccess,
@@ -28,6 +28,7 @@ import type {
     InviteResendIntent,
     NewUserInvitePromoteIntent,
 } from '@proton/pass/types/data/invites.dto';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -99,51 +100,35 @@ export const newUserInvitePromoteFailure = createAction(
     )
 );
 
-export const inviteAcceptIntent = createAction(
-    'invite::accept::intent',
-    (payload: Omit<InviteAcceptIntent, 'inviteKeys'>) =>
-        withRequest({ status: 'start', id: inviteAcceptRequest(payload.inviteToken) })({ payload })
-);
+export const inviteAccept = requestActionsFactory<InviteAcceptIntent, InviteAcceptSuccess>('invite::accept')({
+    key: prop('inviteToken'),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be accepted`,
+                error,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) => withCache({ payload }),
+    },
+});
 
-export const inviteAcceptSuccess = createAction(
-    'invite::accept::success',
-    withRequestSuccess((token: string, share: Share, items: ItemRevision[]) =>
-        withCache({
-            payload: { share, items, token },
-        })
-    )
-);
-
-export const inviteAcceptFailure = createAction(
-    'invite::accept::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Invitation could not be accepted`,
-            error,
-        })({ payload: {} })
-    )
-);
-
-export const inviteRejectIntent = createAction('invite::reject::intent', (payload: InviteRejectIntent) =>
-    withRequest({ status: 'start', id: inviteRejectRequest(payload.inviteToken) })({ payload })
-);
-
-export const inviteRejectSuccess = createAction(
-    'invite::reject::success',
-    withRequestSuccess((token: string) => withCache({ payload: { token } }))
-);
-
-export const inviteRejectFailure = createAction(
-    'invite::reject::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Invitation could not be rejected`,
-            error,
-        })({ payload: {} })
-    )
-);
+export const inviteReject = requestActionsFactory<InviteRejectIntent, { inviteToken: string }>('invite::reject')({
+    key: prop('inviteToken'),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be rejected`,
+                error,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) => withCache({ payload }),
+    },
+});
 
 export const inviteResendIntent = createAction('invite::resend::intent', (payload: InviteResendIntent) =>
     withRequest({ status: 'start', id: inviteResendRequest(payload.inviteId) })({ payload })

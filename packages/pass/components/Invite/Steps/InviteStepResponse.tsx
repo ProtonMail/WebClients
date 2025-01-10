@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -7,10 +7,12 @@ import { Button, CircleLoader } from '@proton/atoms/index';
 import { Progress } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
+import { useRequest } from '@proton/pass/hooks/useRequest';
+import { inviteAccept, inviteReject } from '@proton/pass/store/actions';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemInvite, VaultInvite } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
+import type { InviteAcceptSuccess } from '@proton/pass/types/data/invites.dto';
 
 type Props = {
     acceptText: string;
@@ -23,8 +25,22 @@ export const InviteStepResponse: FC<Props> = ({ acceptText, invite, limitText })
     const { token, inviterEmail, invitedAddressId, fromNewUser } = invite;
     const { onInviteResponse } = useInviteActions();
 
-    const acceptInvite = useActionRequest(inviteAcceptIntent, { onSuccess: onInviteResponse });
-    const rejectInvite = useActionRequest(inviteRejectIntent, { onSuccess: onInviteResponse });
+    const onAccept = useCallback(({ share, items }: InviteAcceptSuccess) => {
+        const { shareId } = share;
+
+        switch (share.targetType) {
+            case ShareType.Vault:
+                return onInviteResponse({ ok: true, shareId });
+            case ShareType.Item:
+                const [{ itemId }] = items;
+                return onInviteResponse({ ok: true, shareId, itemId });
+        }
+    }, []);
+
+    const onReject = useCallback(() => onInviteResponse({ ok: false }), []);
+
+    const acceptInvite = useRequest(inviteAccept, { onSuccess: onAccept });
+    const rejectInvite = useRequest(inviteReject, { onSuccess: onReject });
 
     const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: token });
     const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });

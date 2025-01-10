@@ -3,7 +3,7 @@ import type { Action, Reducer } from 'redux';
 import {
     bootSuccess,
     getShareAccessOptions,
-    inviteAcceptSuccess,
+    inviteAccept,
     inviteBatchCreateSuccess,
     newUserInvitePromoteSuccess,
     shareAccessChange,
@@ -76,8 +76,9 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return partialMerge(state, { [share.shareId]: share });
     }
 
-    if (inviteBatchCreateSuccess.match(action) && !action.payload.itemId)
-        {partialMerge(state, { [action.payload.shareId]: { shared: true } });}
+    if (inviteBatchCreateSuccess.match(action) && !action.payload.itemId) {
+        partialMerge(state, { [action.payload.shareId]: { shared: true } });
+    }
 
     if (newUserInvitePromoteSuccess.match(action)) {
         const { shareId } = action.payload;
@@ -107,8 +108,9 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         });
     }
 
-    if (inviteAcceptSuccess.match(action)) {
-        return partialMerge(state, { [action.payload.share.shareId]: action.payload.share });
+    if (inviteAccept.success.match(action)) {
+        const { share } = action.payload;
+        return partialMerge(state, { [share.shareId]: share });
     }
 
     return state;

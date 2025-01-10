@@ -2,9 +2,12 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
+import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import type { SelectAccessDTO } from '@proton/pass/store/selectors';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
-import type { SelectedItem, SelectedShare } from '@proton/pass/types';
+import type { Result, SelectedItem, SelectedShare } from '@proton/pass/types';
 import { type MaybeNull, ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 
@@ -22,13 +25,15 @@ type InviteContextState =
     | ({ view: 'manage-vault' } & SelectedShare)
     | ({ view: 'manage-item' } & SelectedItem);
 
+export type InviteResponseDTO = Result<SelectAccessDTO, {}>;
+
 type InviteActionsContextValue = {
     close: () => void;
     createVaultInvite: (shareId: string) => void;
     createItemInvite: (shareId: string, itemId: string) => void;
     manageVaultAccess: (shareId: string) => void;
     manageItemAccess: (shareId: string, itemId: string) => void;
-    onInviteResponse: () => void;
+    onInviteResponse: (response: InviteResponseDTO) => void;
     setInvite: (invite: Invite) => void;
 };
 
@@ -40,8 +45,12 @@ export const useInviteActions = createUseContext(InviteActionsContext);
 
 export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
     const latestInvite = useSelector(selectMostRecentInvite);
+
     const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
     const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
+
+    const selectItem = useSelectItem();
+    const vaultActions = useVaultActions();
 
     const actions = useMemo<InviteActionsContextValue>(
         () => ({
@@ -50,7 +59,11 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
             createItemInvite: (shareId, itemId) => setState({ view: 'invite-item', shareId, itemId }),
             manageVaultAccess: (shareId) => setState({ view: 'manage-vault', shareId }),
             manageItemAccess: (shareId, itemId) => setState({ view: 'manage-item', shareId, itemId }),
-            onInviteResponse: () => setInvite(null),
+            onInviteResponse: (res) => {
+                if (res.ok && res.itemId) selectItem(res.shareId, res.itemId);
+                if (res.ok && !res.itemId) vaultActions.select(res.shareId);
+                setInvite(null);
+            },
             setInvite,
         }),
         []
