@@ -9,7 +9,7 @@ export const VaultInviteHeader: FC<SelectedShare> = ({ shareId }) => {
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     return (
         <div className={'flex justify-space-between items-center flex-nowrap mt-3 mb-6 gap-3'}>
-            <SharedVaultItem {...vault.content} />
+            <SharedVaultItem shareId={shareId} name={vault.content.name} {...vault.content.display} />
         </div>
     );
 };
