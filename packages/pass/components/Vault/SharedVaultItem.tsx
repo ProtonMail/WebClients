@@ -1,8 +1,6 @@
 import { type FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
-
 import { selectVaultItemsCount } from '@proton/pass/store/selectors';
 import type { VaultColor, VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
@@ -27,11 +25,7 @@ export const SharedVaultItem: FC<SharedVaultItemProps> = memo(
                 <VaultIcon color={color} icon={icon} size={5} background />
                 <div className="flex-1">
                     <div className="text-xl text-bold text-ellipsis">{name}</div>
-                    {
-                        <span className="color-weak">
-                            {count !== null ? getItemsText(count) : c('Label').t`New vault`}
-                        </span>
-                    }
+                    {count !== null && <span className="color-weak">{getItemsText(count)}</span>}
                 </div>
             </div>
         );
