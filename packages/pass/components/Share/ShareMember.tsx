@@ -15,6 +15,7 @@ import {
     vaultTransferOwnerIntent,
 } from '@proton/pass/store/actions';
 import { ShareRole } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
 
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 import { getShareRoleDefinition } from './ShareRoleOptions';
@@ -29,6 +30,7 @@ export type ShareMemberProps = {
     shareId: string;
     userShareId: string;
     itemId?: string;
+    className?: string;
 };
 
 export const ShareMember: FC<ShareMemberProps> = ({
@@ -41,6 +43,7 @@ export const ShareMember: FC<ShareMemberProps> = ({
     shareId,
     userShareId,
     itemId,
+    className,
 }: ShareMemberProps) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
     const { title, description } = useMemo(() => {
@@ -66,7 +69,9 @@ export const ShareMember: FC<ShareMemberProps> = ({
     const loading = transferOwnership.loading || removeAccess.loading || editAccess.loading;
 
     return (
-        <div className="flex flex-nowrap items-center border border-weak rounded-xl px-4 py-3 w-full">
+        <div
+            className={clsx('flex flex-nowrap items-center border border-weak rounded-xl px-4 py-3 w-full', className)}
+        >
             <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
@@ -74,7 +79,7 @@ export const ShareMember: FC<ShareMemberProps> = ({
                     {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
                 </div>
                 <div className="flex items-center gap-1">
-                    <span className="color-weak">{title}</span>
+                    <span className="color-weak text-sm">{title}</span>
                     <Info title={description} className="color-weak" questionMark />
                 </div>
             </div>

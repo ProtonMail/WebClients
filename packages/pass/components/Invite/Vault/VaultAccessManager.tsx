@@ -24,16 +24,12 @@ import {
     selectPassPlan,
     selectShareOrThrow,
 } from '@proton/pass/store/selectors';
-import type { NewUserPendingInvite, PendingInvite, ShareType } from '@proton/pass/types';
+import type { InviteListItem, ShareType } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 type Props = { shareId: string };
-
-type InviteListItem =
-    | { key: string; type: 'existing'; invite: PendingInvite }
-    | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createVaultInvite, close } = useInviteActions();
