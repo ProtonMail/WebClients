@@ -1,20 +1,18 @@
 export { getPaymentMethodStatus, queryPaymentMethodStatus } from './core/api';
 export { DEFAULT_TAX_BILLING_ADDRESS, type BillingAddress, type BillingAddressProperty } from './core/billing-address';
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
-export { SepaEmailNotProvidedError, DisplayablePaymentError } from './core/errors';
 export {
     ADDON_NAMES,
+    ADDON_PREFIXES,
     AddonKey,
     AddonLimit,
     Autopay,
     CURRENCIES,
     CurrencySymbols,
     DEFAULT_CURRENCY,
-    DOMAIN_ADDON_PREFIX,
     FREE_SUBSCRIPTION,
     INVOICE_STATE,
     INVOICE_TYPE,
-    IP_ADDON_PREFIX,
     MAX_ADDRESS_ADDON,
     MAX_BITCOIN_AMOUNT,
     MAX_CREDIT_AMOUNT,
@@ -26,8 +24,6 @@ export {
     MAX_MEMBER_VPN_B2B_ADDON,
     MAX_PAYPAL_AMOUNT,
     MAX_VPN_ADDON,
-    LUMO_ADDON_PREFIX,
-    MEMBER_ADDON_PREFIX,
     MIN_BITCOIN_AMOUNT,
     MIN_CREDIT_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
@@ -39,7 +35,6 @@ export {
     PLAN_NAMES,
     PLAN_SERVICES,
     PLAN_TYPES,
-    SCRIBE_ADDON_PREFIX,
     TransactionState,
     TransactionType,
     UNPAID_STATE,
@@ -56,6 +51,7 @@ export {
     type EnsureTokenChargeableInputs,
     type EnsureTokenChargeableTranslations,
 } from './core/ensureTokenChargeable';
+export { DisplayablePaymentError, SepaEmailNotProvidedError } from './core/errors';
 export {
     NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     extendStatus,
