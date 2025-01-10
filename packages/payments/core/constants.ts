@@ -225,7 +225,7 @@ export const AddonKey: Readonly<{
 export const MAX_VPN_ADDON = 2000;
 export const MAX_MEMBER_ADDON = 5000;
 export const MAX_MEMBER_SCRIBE_ADDON = 5000;
-export const MAX_DOMAIN_PRO_ADDON = 100;
+export const MAX_DOMAIN_PRO_ADDON = 200;
 export const MAX_DOMAIN_PLUS_ADDON = 10;
 export const MAX_ADDRESS_ADDON = 10;
 export const MAX_LUMO_ADDON = 1;
