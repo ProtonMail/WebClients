@@ -10,7 +10,9 @@ import Select from '@proton/components/components/select/Select';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
+import metrics from '@proton/metrics';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { VersionLoadError } from '@proton/shared/lib/apps/desktopVersions';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -62,17 +64,42 @@ const initialBridgeClients: BridgeClient[] = [
 
 const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeClient> => {
     try {
-        const response = await fetch(getStaticURL(`/download/bridge/${bridgeClient.versionFile}`));
+        const response = await fetch(getStaticURL(`/download/bridge/${bridgeClient.versionFile}`)).catch((error) => {
+            throw new VersionLoadError('NETWORK_ERROR', error.message);
+        });
+
         if (!response.ok) {
-            throw new Error(response.statusText);
+            throw new VersionLoadError('HTTP_ERROR', `${response.status} ${response.statusText}`);
         }
-        const jsonResponse = await response.json();
+        const jsonResponse = await response.json().catch((error) => {
+            {
+                throw new VersionLoadError('FORMAT_ERROR', error.message);
+            }
+        });
+
         return {
             ...bridgeClient,
             version: jsonResponse.stable.Version,
             downloads: jsonResponse.stable.Installers,
         };
     } catch (e: any) {
+        const platform = (() => {
+            switch (bridgeClient.id) {
+                case 'windows':
+                    return 'windows';
+                case 'linux':
+                    return 'linux';
+                default:
+                    return 'macos';
+            }
+        })();
+
+        metrics.core_version_json_failed_total.increment({
+            error: e.name ?? 'FORMAT_ERROR',
+            product: 'bridge',
+            platform,
+        });
+
         if (bridgeClient.id === 'linux') {
             return {
                 ...bridgeClient,

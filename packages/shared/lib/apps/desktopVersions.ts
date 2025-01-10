@@ -25,6 +25,15 @@ interface RELEASE {
     }[];
 }
 
+type VersionLoadErrorTypes = 'NETWORK_ERROR' | 'HTTP_ERROR' | 'FORMAT_ERROR';
+
+export class VersionLoadError extends Error {
+    constructor(name: VersionLoadErrorTypes, message: string) {
+        super(message);
+        this.name = name;
+    }
+}
+
 /*
  * This helper will help to fetch specific or latest version of a desktop app
  * It currently only support Drive apps.

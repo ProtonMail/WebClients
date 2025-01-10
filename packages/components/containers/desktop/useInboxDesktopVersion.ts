@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 
 import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useLoading from '@proton/hooks/useLoading';
+import metrics from '@proton/metrics';
+import { VersionLoadError } from '@proton/shared/lib/apps/desktopVersions';
 import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
 import { type DesktopVersion, VersionFileSchema } from '@proton/shared/lib/desktop/DesktopVersion';
 import { getLatestRelease } from '@proton/shared/lib/desktop/getLatestRelease';
@@ -63,15 +65,34 @@ const initialMacosClient: DesktopVersion = {
 
 const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS) => {
     try {
-        const response = await fetch(getDownloadUrl(`/mail/${platform}/version.json`));
+        const response = await fetch(getDownloadUrl(`/mail/${platform}/version.json`)).catch((error) => {
+            throw new VersionLoadError('NETWORK_ERROR', error.message);
+        });
+
         if (!response.ok) {
-            throw new Error(response.statusText);
+            throw new VersionLoadError('HTTP_ERROR', `${response.status} ${response.statusText}`);
         }
 
-        const json = await response.json();
+        const json = await response.json().catch((error) => {
+            throw new VersionLoadError('FORMAT_ERROR', error.message);
+        });
         const res = VersionFileSchema.parse(json);
         return res.Releases;
     } catch (e: any) {
+        metrics.core_version_json_failed_total.increment({
+            error: e.name ?? 'FORMAT_ERROR',
+            product: 'inda',
+            platform: (() => {
+                switch (platform) {
+                    case 'windows':
+                        return 'windows';
+                    case 'linux':
+                        return 'linux';
+                    default:
+                        return 'macos';
+                }
+            })(),
+        });
         return undefined;
     }
 };
