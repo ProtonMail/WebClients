@@ -26,6 +26,7 @@ const shareAccessOptions = createRequestSaga({
         const inviteFilter = itemId
             ? ({ targetType, targetId }: InviteBase) => targetType === ShareType.Item && targetId === itemId
             : ({ targetType }: InviteBase) => targetType === ShareType.Vault;
+
         const invites: Partial<InviteData> = {
             invites: inviteData.invites?.filter(inviteFilter),
             newUserInvites: inviteData.newUserInvites?.filter(inviteFilter),

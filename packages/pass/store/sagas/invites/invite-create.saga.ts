@@ -1,9 +1,10 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
 import { createNewUserInvites, createUserInvites } from '@proton/pass/lib/invites/invite.requests';
+import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
+import { concatInviteResults } from '@proton/pass/lib/invites/invite.utils';
 import {
     inviteBatchCreateFailure,
     inviteBatchCreateIntent,
@@ -16,7 +17,6 @@ import { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import type { InviteMemberDTO, InviteUserDTO } from '@proton/pass/types/data/invites.dto';
 import { partition } from '@proton/pass/utils/array/partition';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 function* createInviteWorker(
     { onNotification }: RootSagaOptions,
@@ -24,6 +24,7 @@ function* createInviteWorker(
 ) {
     const count = payload.members.length;
     const plan: UserPassPlan = yield select(selectPassPlan);
+    const b2b = plan === UserPassPlan.BUSINESS;
 
     try {
         const shareId = payload.shareId;
@@ -49,40 +50,29 @@ function* createInviteWorker(
             (dto): dto is InviteUserDTO => 'publicKey' in dto && dto.publicKey !== undefined
         );
 
-        /** Both `createUserInvites` & `createNewUserInvite` return the
-         * list of emails which could not be sent out. On success, both
-         * should be empty */
-        const failedUsers: string[] = yield createUserInvites(shareId, itemId, users);
-        const failedNewUsers: string[] = yield createNewUserInvites(shareId, itemId, newUsers);
-        const failed = failedUsers.concat(failedNewUsers);
+        const failedUsers: InviteBatchResult[] = yield createUserInvites(shareId, itemId, users, b2b);
+        const failedNewUsers: InviteBatchResult[] = yield createNewUserInvites(shareId, itemId, newUsers, b2b);
+        const results = concatInviteResults(failedUsers.concat(failedNewUsers));
 
-        const totalFailure = failed.length === members.length;
-        const hasFailures = failedUsers.length > 0 || failedNewUsers.length > 0;
+        const totalFailure = !results.ok && results.failed.length === members.length;
+        const batchFailures = results.ok ? 0 : results.failed.length;
+        const hasFailures = !results.ok && batchFailures > 0;
 
-        if (totalFailure) throw new Error('Could not send invitations');
+        if (totalFailure) throw new Error(results.error ?? 'Unknown error');
 
         if (hasFailures) {
             onNotification?.({
                 type: 'error',
-                // Translator: list of failed invited emails is appended
-                text: c('Warning').t`Could not send invitations to the following addresses:` + ` ${failed.join(', ')}`,
+                text:
+                    // Translator: list of failed invited emails is appended
+                    c('Warning').t`Could not send invitations to the following addresses:` +
+                    ` ${results.failed.join(', ')}. ${results.error}`,
             });
         }
 
-        yield put(inviteBatchCreateSuccess(request.id, { shareId, itemId, count: members.length - failed.length }));
+        const invitesCount = members.length - batchFailures;
+        yield put(inviteBatchCreateSuccess(request.id, { shareId, itemId, count: invitesCount }));
     } catch (error: unknown) {
-        console.warn(error);
-        /** Fine-tune the error message when a B2B user
-         * reaches the 100 members per vault hard-limit */
-        if (plan === UserPassPlan.BUSINESS && error instanceof Error && 'data' in error) {
-            const apiError = error as any;
-            const { code } = getApiError(apiError);
-
-            if (code === PassErrorCode.RESOURCE_LIMIT_EXCEEDED) {
-                apiError.data.Error = c('Warning').t`Please contact us to investigate the issue`;
-            }
-        }
-
         yield put(inviteBatchCreateFailure(request.id, error, count));
     }
 }
