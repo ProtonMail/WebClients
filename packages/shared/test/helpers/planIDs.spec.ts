@@ -326,7 +326,8 @@ describe('switchPlan', () => {
         const planId = PLANS.MAIL_PRO;
 
         const organization = {
-            UsedLumo: 0,
+            UsedLumo: 1,
+            MaxLumo: 7,
         } as Organization;
 
         expect(
@@ -341,6 +342,77 @@ describe('switchPlan', () => {
             [PLANS.MAIL_PRO]: 1,
             [ADDON_NAMES.MEMBER_MAIL_PRO]: 6,
             [ADDON_NAMES.LUMO_MAIL_PRO]: 7,
+        });
+    });
+
+    it('should not transfer too many lumo addons - Mail Plus', () => {
+        const planIDs = {
+            [PLANS.VISIONARY]: 1,
+        };
+        const planID = PLANS.MAIL;
+
+        const organization = {
+            UsedLumo: 0,
+            MaxLumo: 6,
+        } as Organization;
+
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getLongTestPlans(),
+                organization,
+                user,
+            })
+        ).toEqual({
+            [PLANS.MAIL]: 1,
+            [ADDON_NAMES.LUMO_MAIL]: 1,
+        });
+    });
+
+    it('should not transfer too many lumo addons - Duo', () => {
+        const planIDs = {
+            [PLANS.VISIONARY]: 1,
+        };
+        const planID = PLANS.DUO;
+
+        const organization = {
+            UsedLumo: 0,
+            MaxLumo: 6,
+        } as Organization;
+
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getLongTestPlans(),
+                organization,
+                user,
+            })
+        ).toEqual({
+            [PLANS.DUO]: 1,
+            [ADDON_NAMES.LUMO_DUO]: 2,
+        });
+    });
+
+    it('should not transfer lumo addons if they are already included in the new plan', () => {
+        const planIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 };
+        const planID = PLANS.VISIONARY;
+        const organization = {
+            UsedLumo: 2,
+            MaxLumo: 2,
+        } as Organization;
+
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getLongTestPlans(),
+                organization,
+                user,
+            })
+        ).toEqual({
+            [PLANS.VISIONARY]: 1,
         });
     });
 });
