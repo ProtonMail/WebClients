@@ -66,11 +66,10 @@ export const useSendVerifications = (
                 ...defaultVerifications,
                 ...optionalVerifications,
             };
-            const { draftFlags } = getMessage(message.localID) as MessageStateWithData;
-            const { isSentDraft } = draftFlags || {};
 
+            const msg = getMessage(message.localID);
             // Message already sent
-            if (verifications.alreadySent && isSentDraft) {
+            if (verifications.alreadySent && msg?.draftFlags?.isSentDraft) {
                 throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
             }
 
