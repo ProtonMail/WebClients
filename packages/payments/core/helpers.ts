@@ -9,7 +9,7 @@ import { type FeatureFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
-import { type ADDON_NAMES, DEFAULT_CURRENCY, type PLANS, signupFlows } from './constants';
+import { type ADDON_NAMES, DEFAULT_CURRENCY, PLANS, signupFlows } from './constants';
 import type {
     Currency,
     Invoice,
@@ -205,6 +205,7 @@ export function getPreferredCurrency({
     const ifPlanSupportsCurrency = (preferredCurrency: Currency): Currency => {
         const paramPlanSupportsCurrency: boolean =
             !paramPlanName ||
+            paramPlanName === PLANS.FREE ||
             !isStringPLAN(paramPlanName) ||
             !!plans?.find((it) => it.Name === paramPlanName && it.Currency === preferredCurrency);
 
