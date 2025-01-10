@@ -5,6 +5,7 @@ import {
     type User,
     type UserModel,
 } from '@proton/shared/lib/interfaces';
+import { getTestPlans } from '@proton/testing/data';
 
 import { DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from './constants';
 import {
@@ -558,6 +559,24 @@ describe('payments core helpers', () => {
                     status,
                     plans,
                     enableNewBatchCurrencies: false,
+                })
+            ).toEqual('BRL');
+        });
+
+        it('should return regional currency if free plan is selected', () => {
+            const status: PaymentMethodStatusExtended = {
+                CountryCode: 'BR',
+                VendorStates: {} as any,
+            };
+
+            const plans = getTestPlans('BRL');
+
+            expect(
+                getPreferredCurrency({
+                    status,
+                    plans,
+                    enableNewBatchCurrencies: true,
+                    paramPlanName: PLANS.FREE,
                 })
             ).toEqual('BRL');
         });
