@@ -15,7 +15,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { useItem } from '@proton/pass/hooks/useItem';
 import { itemEdit } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
-import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
+import type { ItemEditIntent, ItemType, SelectedItem } from '@proton/pass/types';
 
 const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
     login: LoginEdit,
@@ -33,7 +33,7 @@ export const ItemEdit: FC = () => {
     const scope = useItemScope();
     const dispatch = useDispatch();
 
-    const vault = useSelector(selectShare<ShareType.Vault>(shareId));
+    const share = useSelector(selectShare(shareId));
     const item = useItem(shareId, itemId);
 
     const handleSubmit = (data: ItemEditIntent) => {
@@ -41,7 +41,7 @@ export const ItemEdit: FC = () => {
         nav.selectItem(shareId, itemId, { mode: 'replace', scope });
     };
 
-    if (!(item && vault)) return <Redirect to={nav.preserveSearch(getLocalPath())} push={false} />;
+    if (!(item && share)) return <Redirect to={nav.preserveSearch(getLocalPath())} push={false} />;
 
     const EditViewComponent = itemEditMap[item.data.type] as FC<ItemEditViewProps>;
 
@@ -51,7 +51,7 @@ export const ItemEdit: FC = () => {
             onSubmit={handleSubmit}
             revision={item}
             url={getCurrentTabUrl?.() ?? null}
-            vault={vault}
+            share={share}
         />
     );
 };

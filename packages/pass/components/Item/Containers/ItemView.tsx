@@ -51,11 +51,11 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const optimisticResolved = useSelector(selectIsOptimisticId(itemId));
     const failure = useMemoSelector(selectOptimisticFailedAction, [optimisticItemId]);
 
-    const vault = useSelector(selectShare<ShareType.Vault>(shareId));
+    const share = useSelector(selectShare<ShareType.Vault>(shareId));
     const item = useOptimisticItem(shareId, itemId);
 
     /* if vault or item cannot be found : redirect to base path */
-    if (!(vault && item)) {
+    if (!(share && item)) {
         const to = preserveSearch(getLocalPath(scope ?? ''));
         return <Redirect to={to} push={false} />;
     }
@@ -102,7 +102,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
         <>
             <ItemTypeViewComponent
                 key={item.itemId}
-                vault={vault}
+                share={share}
                 revision={item}
                 handleDeleteClick={handleDelete}
                 handleDismissClick={handleDismiss}

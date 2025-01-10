@@ -45,8 +45,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     children,
     quickActions = [],
     revision,
+    share,
     type,
-    vault,
     handleDeleteClick,
     handleDismissClick,
     handleEditClick,
@@ -72,7 +72,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const monitored = isMonitored(revision);
 
     const hasMultipleVaults = vaults.length > 1;
-    const { shareRoleId, owner, targetMembers } = vault;
+    const { shareRoleId, owner, targetMembers } = share;
     const shared = isShared(revision);
     const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
