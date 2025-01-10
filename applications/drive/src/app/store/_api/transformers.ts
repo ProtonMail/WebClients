@@ -1,3 +1,5 @@
+import { getUnixTime } from 'date-fns';
+
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
@@ -47,6 +49,7 @@ type LinkMetaWithShareURL = LinkMeta & {
 export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: string): EncryptedLink {
     const isDocument = link.Type === LinkType.FILE && isProtonDocument(link.MIMEType);
 
+    const currentUnixTime = getUnixTime(Date.now());
     return {
         linkId: link.LinkID,
         parentLinkId: link.ParentLinkID ?? '',
@@ -101,7 +104,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         hasHdThumbnail: !!link.FileProperties?.ActiveRevision?.Thumbnails?.find(
             (Thumbnail) => Thumbnail.Type === ThumbnailType.HD_PREVIEW
         ),
-        isShared: !!link.SharingDetails,
+        isShared: link.SharingDetails === undefined ? undefined : !!link.SharingDetails,
         shareId: link.SharingDetails?.ShareID,
         rootShareId: shareId,
         shareUrl:
@@ -109,7 +112,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                 ? {
                       id: link.ShareUrls[0].ShareUrlID,
                       token: link.ShareUrls[0].Token,
-                      isExpired: link.UrlsExpired,
+                      isExpired: link.ShareUrls[0].ExpireTime ? currentUnixTime > link.ShareUrls[0].ExpireTime : false,
                       createTime: link.ShareUrls[0].CreateTime,
                       expireTime: link.ShareUrls[0].ExpireTime,
                       numAccesses: link.ShareUrls[0].NumAccesses,
@@ -122,7 +125,9 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                       ? {
                             id: link.SharingDetails.ShareUrl.ShareUrlID,
                             token: link.SharingDetails.ShareUrl.Token,
-                            isExpired: link.UrlsExpired, // TODO: Remove it when full refactor as it's deprecated
+                            isExpired: link.SharingDetails.ShareUrl.ExpireTime
+                                ? currentUnixTime > link.SharingDetails.ShareUrl.ExpireTime
+                                : false,
                             createTime: link.SharingDetails.ShareUrl.CreateTime,
                             expireTime: link.SharingDetails.ShareUrl.ExpireTime,
                             numAccesses: link.SharingDetails.ShareUrl.NumAccesses,
