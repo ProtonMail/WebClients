@@ -707,4 +707,22 @@ describe('SelectedPlan', () => {
             expect(selectedPlan.getTotalUsers()).toBe(1);
         }
     );
+
+    it('should change plan and its addons', () => {
+        const planIDs = {
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 4,
+        };
+
+        const toPlan = PLANS.MAIL_PRO;
+
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+        const newSelectedPlan = selectedPlan.changePlan(toPlan);
+
+        expect(newSelectedPlan.planIDs).toEqual({
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+        });
+    });
 });

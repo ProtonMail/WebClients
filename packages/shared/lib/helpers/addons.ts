@@ -1,13 +1,9 @@
 import {
     ADDON_NAMES,
-    DOMAIN_ADDON_PREFIX,
+    ADDON_PREFIXES,
     type FreeSubscription,
-    IP_ADDON_PREFIX,
-    LUMO_ADDON_PREFIX,
-    MEMBER_ADDON_PREFIX,
     PLANS,
     type PlanIDs,
-    SCRIBE_ADDON_PREFIX,
     isFreeSubscription,
 } from '@proton/payments';
 
@@ -15,7 +11,7 @@ import type { Addon, SubscriptionModel } from '../interfaces';
 
 type AddonOrName = Addon | ADDON_NAMES | PLANS;
 
-function isAddonType(addonOrName: AddonOrName, addonPrefix: string): boolean {
+export function isAddonType(addonOrName: AddonOrName, addonPrefix: ADDON_PREFIXES): boolean {
     let addonName: ADDON_NAMES | PLANS;
     if (typeof addonOrName === 'string') {
         addonName = addonOrName;
@@ -26,8 +22,12 @@ function isAddonType(addonOrName: AddonOrName, addonPrefix: string): boolean {
     return addonName.startsWith(addonPrefix);
 }
 
+export function getAddonType(addonOrName: AddonOrName): ADDON_PREFIXES | null {
+    return Object.values(ADDON_PREFIXES).find((prefix) => isAddonType(addonOrName, prefix)) ?? null;
+}
+
 export const isScribeAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, SCRIBE_ADDON_PREFIX);
+    return isAddonType(addonOrName, ADDON_PREFIXES.SCRIBE);
 };
 
 export function hasScribeAddon(subscriptionOrPlanIds: SubscriptionModel | FreeSubscription | undefined): boolean {
@@ -61,19 +61,19 @@ export const isOrgSizeAddon: AddonGuard = (addonOrName): boolean => {
 };
 
 export const isMemberAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, MEMBER_ADDON_PREFIX);
+    return isAddonType(addonOrName, ADDON_PREFIXES.MEMBER);
 };
 
 export const isDomainAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, DOMAIN_ADDON_PREFIX);
+    return isAddonType(addonOrName, ADDON_PREFIXES.DOMAIN);
 };
 
 export const isIpAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, IP_ADDON_PREFIX);
+    return isAddonType(addonOrName, ADDON_PREFIXES.IP);
 };
 
 export const isLumoAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, LUMO_ADDON_PREFIX);
+    return isAddonType(addonOrName, ADDON_PREFIXES.LUMO);
 };
 
 export const removeAddon = (originalPlanIDs: PlanIDs, addonGuard: AddonGuard): PlanIDs => {
