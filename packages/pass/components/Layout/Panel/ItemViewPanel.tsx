@@ -20,6 +20,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isMonitored, isPinned, isShared, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -103,7 +104,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     );
 
     const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
-    const showItemSharing = itemSharingEnabled && type !== 'alias';
+    const showItemSharing = itemSharingEnabled && type !== 'alias' && isOwnerOrAdmin;
 
     return (
         <Panel
@@ -181,7 +182,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     icon="users-plus"
                                     menuClassName="flex flex-column gap-2"
                                     dropdownHeader={c('Label').t`Share`}
-                                    disabled={!online}
+                                    disabled={!online || optimistic}
                                     badge={shared ? shareCount : undefined}
                                     signaled={isOwnerOrAdmin && signalItemSharing}
                                     dropdownSize={{
@@ -212,7 +213,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                             />
                                         }
                                         icon="link"
-                                        disabled={optimistic || !isOwnerOrAdmin}
                                         extra={
                                             (free && <PassPlusPromotionButton className="ml-2" />) ||
                                             (signalItemSharing && <Badge type="info">{c('Label').t`New`}</Badge>)
@@ -231,7 +231,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                             />
                                         }
                                         icon="link"
-                                        disabled={optimistic || !isOwnerOrAdmin}
                                         extra={free && <PassPlusPromotionButton className="ml-2" />}
                                     />
                                     {shared && (
@@ -247,7 +246,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                             }
                                             title={c('Action').t`See members`}
                                             icon="users"
-                                            disabled={optimistic || !isOwnerOrAdmin}
                                             label={
                                                 <DropdownMenuLabel
                                                     title={c('Action').t`Manage access`}
@@ -303,16 +301,15 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                         ];
                     })()}
                     subtitle={
-                        // TODO(@djankovic): Instead of checking shared, check if item belongs to a vault
-                        !shared && hasMultipleVaults ? (
+                        isVaultShare(share) && owner && hasMultipleVaults ? (
                             <VaultTag
-                                title={vault.content.name}
-                                color={vault.content.display.color}
+                                title={share.content.name}
+                                color={share.content.display.color}
                                 count={targetMembers}
-                                shared={vault.shared}
+                                shared={share.shared}
                                 icon={
-                                    vault.content.display.icon
-                                        ? VAULT_ICON_MAP[vault.content.display.icon]
+                                    share.content.display.icon
+                                        ? VAULT_ICON_MAP[share.content.display.icon]
                                         : 'pass-all-vaults'
                                 }
                             />
