@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
@@ -25,9 +24,7 @@ type VaultActionsContextValue = {
     create: () => void;
     delete: (vault: VaultShareItem) => void;
     edit: (vault: VaultShareItem) => void;
-    invite: (vault: VaultShareItem) => void;
     leave: (vault: VaultShareItem) => void;
-    manage: (vault: VaultShareItem) => void;
     moveItems: (vault: VaultShareItem) => void;
     select: (selected: string) => void;
     trashEmpty: () => void;
@@ -42,7 +39,6 @@ export const VaultActionsContext = createContext<MaybeNull<VaultActionsContextVa
 export const useVaultActions = createUseContext(VaultActionsContext);
 
 export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const inviteActions = useInviteActions();
     const navigate = useNavigate();
     const { filters, setFilters } = useNavigationFilters();
     const dispatch = useDispatch();
@@ -69,9 +65,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             create: () => setState({ view: 'create' }),
             delete: (vault) => setState({ view: 'delete', vault }),
             edit: (vault) => setState({ view: 'edit', vault }),
-            invite: (vault) => inviteActions.createVaultInvite(vault.shareId),
             leave: (vault) => setState({ view: 'leave', vault }),
-            manage: (vault) => inviteActions.manageVaultAccess(vault.shareId),
             moveItems: (vault) => setState({ view: 'move', vault }),
             select: (selected) => {
                 switch (selected) {
@@ -103,7 +97,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             trashEmpty: () => setState({ view: 'trash-empty' }),
             trashRestore: () => dispatch(restoreTrashIntent()),
         }),
-        [inviteActions]
+        []
     );
 
     return (

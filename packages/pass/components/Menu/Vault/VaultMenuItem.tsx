@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
@@ -62,6 +63,7 @@ export const VaultMenuItem = memo(
         onAction = noop,
     }: Props) => {
         const vaultActions = useVaultActions();
+        const inviteActions = useInviteActions();
         const { moveMany } = useItemsActions();
 
         const upsell = useUpselling();
@@ -70,9 +72,9 @@ export const VaultMenuItem = memo(
 
         const withActions = canEdit || canDelete || canInvite || canManage || canLeave || canMove;
 
-        const onManage = pipe(() => vaultActions.manage(vault), onAction);
+        const onManage = pipe(() => inviteActions.manageVaultAccess(vault.shareId), onAction);
         const onEdit = pipe(() => vaultActions.edit(vault), onAction);
-        const onInvite = pipe(() => vaultActions.invite(vault), onAction);
+        const onInvite = pipe(() => inviteActions.createVaultInvite(vault.shareId), onAction);
         const onLeave = pipe(() => vaultActions.leave(vault), onAction);
         const onMove = pipe(() => vaultActions.moveItems(vault), onAction);
         const onDelete = pipe(() => vaultActions.delete(vault), onAction);
