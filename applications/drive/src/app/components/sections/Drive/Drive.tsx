@@ -47,7 +47,7 @@ export interface DriveItem extends FileBrowserBaseItem {
     size: number;
     trashed: number | null;
     parentLinkId: string;
-    isShared: boolean;
+    isShared?: boolean;
     isAdmin: boolean;
     showLinkSharingModal?: ReturnType<typeof useLinkSharingModal>[1];
 }
