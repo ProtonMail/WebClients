@@ -586,6 +586,14 @@ const Step1 = ({
         setCheckTrialResult(result);
     };
 
+    const upsellModalCommonProps = {
+        checkTrialResult: checkTrialResult as CheckTrialPriceResult,
+        onConfirm: async (data: { planIDs: PlanIDs; cycle: Cycle; coupon: string }) => handleOptimistic(data),
+        onContinue: async () => {
+            void withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(noop);
+        },
+    };
+
     return (
         <Layout
             afterLogo={afterLogo}
@@ -597,28 +605,10 @@ const Step1 = ({
             footerWidth={boxWidth}
         >
             {renderUpsellMailTrialModal && (
-                <MailTrial2024UpsellModal
-                    {...upsellMailTrialModal}
-                    checkTrialResult={checkTrialResult as CheckTrialPriceResult}
-                    onConfirm={async (data) => handleOptimistic(data)}
-                    onContinue={async () => {
-                        withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(
-                            noop
-                        );
-                    }}
-                />
+                <MailTrial2024UpsellModal {...upsellMailTrialModal} {...upsellModalCommonProps} />
             )}
             {renderUpsellDriveTrialModal && (
-                <DriveTrial2024UpsellModal
-                    {...upsellDriveTrialModal}
-                    checkTrialResult={checkTrialResult as CheckTrialPriceResult}
-                    onConfirm={async (data) => handleOptimistic(data)}
-                    onContinue={async () => {
-                        withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(
-                            noop
-                        );
-                    }}
-                />
+                <DriveTrial2024UpsellModal {...upsellDriveTrialModal} {...upsellModalCommonProps} />
             )}
             <div className="flex items-center flex-column">
                 <div
