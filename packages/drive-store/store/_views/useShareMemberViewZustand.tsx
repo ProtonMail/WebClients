@@ -86,7 +86,7 @@ const useShareMemberViewZustand = (rootShareId: string, linkId: string) => {
             if (!link.shareId) {
                 return;
             }
-            setIsShared(link.isShared);
+            setIsShared(!!link.isShared);
             const share = await getShare(abortController.signal, link.shareId);
 
             const [fetchedInvitations, fetchedExternalInvitations, fetchedMembers] = await Promise.all([
@@ -115,7 +115,7 @@ const useShareMemberViewZustand = (rootShareId: string, linkId: string) => {
 
     const updateIsSharedStatus = async (abortSignal: AbortSignal) => {
         const updatedLink = await getLink(abortSignal, rootShareId, linkId);
-        setIsShared(updatedLink.isShared);
+        setIsShared(!!updatedLink.isShared);
     };
 
     const deleteShareIfEmpty = useCallback(async () => {

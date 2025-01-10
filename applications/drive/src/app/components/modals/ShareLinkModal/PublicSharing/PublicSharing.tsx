@@ -1,11 +1,11 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Avatar, Button, Input } from '@proton/atoms';
-import { Icon, Toggle, useNotifications } from '@proton/components';
+import { Icon, Toggle, Tooltip, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -53,6 +53,10 @@ export const PublicSharing = ({
         }
     };
 
+    const editorPermissions = useMemo(() => getCanWrite(publicSharedLinkPermissions), [publicSharedLinkPermissions]);
+    const editorPermissionsTooltipText = c('Info')
+        .t`Your email address will be visible as the link's owner on the share page`;
+
     return (
         <div className="w-full" ref={contentRef} data-testid="share-modal-shareWithAnyoneSection">
             <div className="flex justify-space-between items-center mb-6">
@@ -66,8 +70,16 @@ export const PublicSharing = ({
                     </Avatar>
                     <p className="flex-1 flex flex-column p-0 m-0">
                         <span className="text-semibold">{c('Label').t`Anyone with the link`}</span>
-                        <span className="color-weak">{c('Label')
-                            .t`Anyone on the Internet with the link can view`}</span>
+                        <span className="flex items-center color-weak">
+                            {editorPermissions
+                                ? c('Label').t`Anyone on the Internet with the link can edit`
+                                : c('Label').t`Anyone on the Internet with the link can view`}
+                            {editorPermissions && (
+                                <Tooltip title={editorPermissionsTooltipText}>
+                                    <Icon className="ml-1" name="info-circle" />
+                                </Tooltip>
+                            )}
+                        </span>
                     </p>
                 </div>
                 {viewOnly ? (

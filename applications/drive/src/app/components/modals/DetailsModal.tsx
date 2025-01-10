@@ -255,9 +255,11 @@ const DetailsModalContent = ({
                     {lastEditedEmail}
                 </DetailsRow>
             )}
-            <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
-                {isShared ? c('Info').t`Yes` : c('Info').t`No`}
-            </DetailsRow>
+            {isShared !== undefined && (
+                <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
+                    {isShared ? c('Info').t`Yes` : c('Info').t`No`}
+                </DetailsRow>
+            )}
             {isExpired && (
                 <DetailsRow label={c('Title').t`Public shared link status`} dataTestId={'drive:public-sharing-status'}>
                     {isExpired ? c('Info').t`Expired` : c('Info').t`Available`}
