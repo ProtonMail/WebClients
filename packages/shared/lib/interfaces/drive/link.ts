@@ -68,7 +68,6 @@ interface DriveLink {
     FolderProperties: FolderProperties | null;
     DocumentProperties: DocumentProperties | null;
     Shared: number;
-    UrlsExpired: boolean;
     ShareIDs: string[];
     ShareUrls: LinkSharedUrlInfo[];
     SharingDetails: SharingDetails | null;
