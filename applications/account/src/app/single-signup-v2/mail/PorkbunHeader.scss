@@ -1,0 +1,13 @@
+@import '~@proton/styles/scss/lib';
+
+.porkbun-header {
+	background: linear-gradient(
+		81.4deg,
+		var(--optional-promotion-background-start),
+		var(--optional-promotion-background-end)
+	);
+	font-size: rem(12);
+	font-weight: var(--font-weight-normal);
+	display: block;
+	color: var(--optional-promotion-text-weak);
+}
