@@ -3,17 +3,12 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
-import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components';
+import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
-import { UserVerificationMessage } from '@proton/pass/components/Invite/Steps/UserVerificationMessage';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteStepResponse';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { getItemsText } from '@proton/pass/components/Settings/helper';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
-import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
 import { ShareType } from '@proton/pass/types';
 
@@ -21,11 +16,8 @@ type Props = { token: string };
 
 export const VaultInviteRespond: FC<Props> = ({ token }) => {
     const invite = useSelector(selectInviteByToken(token));
-    const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteActions();
 
-    const acceptInvite = useActionRequest(inviteAcceptIntent, { onSuccess: onInviteResponse });
-    const rejectInvite = useActionRequest(inviteRejectIntent, { onSuccess: onInviteResponse });
     const valid = invite && invite.targetType === ShareType.Vault;
 
     useEffect(() => {
@@ -34,12 +26,8 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
 
     if (!valid) return null;
 
-    const { inviterEmail, invitedAddressId, vault, fromNewUser } = invite;
+    const { inviterEmail, vault, fromNewUser } = invite;
     const { itemCount, memberCount } = vault;
-
-    const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
-    const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });
-    const loading = acceptInvite.loading || rejectInvite.loading;
 
     return (
         <PassModal size="small" open onClose={() => onInviteResponse()} enableCloseWhenClickOutside>
@@ -73,52 +61,11 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
             </ModalTwoContent>
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
-                {vaultLimitReached && (
-                    <Card className="mb-2 text-sm" type="primary">
-                        {c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
-                    </Card>
-                )}
-                <Button
-                    pill
-                    size="large"
-                    shape="solid"
-                    color="norm"
-                    disabled={loading || vaultLimitReached}
-                    loading={acceptInvite.loading}
-                    onClick={handleAcceptInvite}
-                >
-                    {fromNewUser ? c('Action').t`Continue` : c('Action').t`Join shared vault`}
-                </Button>
-
-                <Button
-                    pill
-                    size="large"
-                    shape="solid"
-                    color="weak"
-                    disabled={loading}
-                    loading={rejectInvite.loading}
-                    onClick={handleRejectInvite}
-                >
-                    {fromNewUser ? c('Action').t`Reject` : c('Action').t`Reject invitation`}
-                </Button>
-
-                {acceptInvite.loading && (
-                    <div className="ui-purple flex gap-x-2 items-center">
-                        <Progress
-                            value={
-                                invite.vault.itemCount > 0
-                                    ? Math.round(100 * (acceptInvite.progress / invite.vault.itemCount))
-                                    : 0
-                            }
-                            className="flex-1 progress-bar--norm"
-                        />
-
-                        <small className="block">
-                            {acceptInvite.progress} / {invite.vault.itemCount}
-                        </small>
-                        <CircleLoader size="small" />
-                    </div>
-                )}
+                <InviteStepResponse
+                    invite={invite}
+                    acceptText={fromNewUser ? c('Action').t`Continue` : c('Action').t`Join shared vault`}
+                    limitText={c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
+                />
             </ModalTwoFooter>
         </PassModal>
     );

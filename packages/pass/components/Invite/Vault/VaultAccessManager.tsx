@@ -108,7 +108,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 color="norm"
                                 pill
                                 onClick={() =>
-                                    memberLimitReached ? setLimitModalOpen(true) : createVaultInvite({ vault })
+                                    memberLimitReached ? setLimitModalOpen(true) : createVaultInvite(vault.shareId)
                                 }
                                 disabled={!canManage || (plan === UserPassPlan.FREE && memberLimitReached)}
                             >
