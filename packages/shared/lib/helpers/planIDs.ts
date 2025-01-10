@@ -37,11 +37,13 @@ const getLumoWithEnoughSeats = ({
     lumoAddon,
     organization,
     toPlan,
+    plans,
 }: {
     planIDs: PlanIDs;
     lumoAddon: Plan;
     organization: Organization;
     toPlan: Plan;
+    plans: Plan[];
 }) => {
     const diffAddons = (organization.MaxLumo || 0) - getMaxValue(toPlan, 'MaxLumo');
 
@@ -57,7 +59,16 @@ const getLumoWithEnoughSeats = ({
             lumoAddons += planIDs[addonName] ?? 0;
         }
     }
-    return Math.max(lumoAddonsWithEnoughSeats, lumoAddons);
+
+    const transferredLumoAddons = Math.max(lumoAddonsWithEnoughSeats, lumoAddons);
+
+    // cycle and currency don't matter in this case, we care about normalizing the planIDs only
+    const currentPlan = SelectedPlan.createNormalized(planIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
+    const newPlan = currentPlan.changePlan(toPlan.Name as PLANS);
+
+    const maxLumosInNewPlan = newPlan.getMaxLumos();
+
+    return Math.min(transferredLumoAddons, maxLumosInNewPlan);
 };
 
 export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
@@ -207,7 +218,7 @@ export const switchPlan = ({
             const lumoAddon = plans.find(({ Name }) => Name === addon);
 
             if (lumoAddon) {
-                newPlanIDs[addon] = getLumoWithEnoughSeats({ planIDs, lumoAddon, organization, toPlan: plan });
+                newPlanIDs[addon] = getLumoWithEnoughSeats({ planIDs, lumoAddon, organization, toPlan: plan, plans });
             }
         }
 

@@ -2756,6 +2756,50 @@ const plans: Plan[] = deepFreeze([
             },
         },
     },
+    {
+        ID: 'qkEIGf2ytYw3sqya4ZdSQRsI-cTjzi7lrLV08vq0p2dLKSNxgEJrqI1qNLGwAvQ1-bRUuOlXvFjXBRC8zL3z_Q==',
+        ParentMetaPlanID: 'flz6WyEo9y0dPsnUy2wRabn7cOA3jjx2xQQt_3hYPH2j3mAKy9kgzozLulWJyKD3VpOQy8fSiZDGXgSvFyXsHg==',
+        Type: 0,
+        Name: '1lumo-duo2024',
+        Title: '+1 Lumo Seat for Duo Plan',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 64,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 2299,
+            '12': 21588,
+        },
+        DefaultPricing: {
+            '1': 2299,
+            '12': 21588,
+        },
+        PeriodEnd: {
+            '1': 1739119785,
+            '12': 1767977385,
+        },
+        Currency: 'USD',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2299,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_6IgJn9jU40IIzcsI2TZR',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
 ]);
 
 export function getTestPlansMap() {
