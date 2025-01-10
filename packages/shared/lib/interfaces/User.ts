@@ -120,9 +120,6 @@ export interface UserInfo {
     isMember: boolean;
     isFree: boolean;
     isPaid: boolean;
-    /**
-     * User can manage their own keys when private.
-     */
     isPrivate: boolean;
     /**
      * isSelf determines if the user has `self` scope, i.e.
