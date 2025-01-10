@@ -40,6 +40,8 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
     const [selectedCurrency, setSelectedCurrency] = useState<string | undefined>(preselectedQuote?.FiatCurrencySymbol);
     const [exchangeRate] = useExchangeRate(selectedCurrency as WasmFiatCurrencySymbol);
 
+    const [error, setError] = useState<String | undefined>(undefined);
+
     const [selectedPaymentProvider, setSelectedPaymentProvider] = useState<WasmGatewayProvider | undefined>(
         preselectedQuote?.provider
     );
@@ -108,41 +110,47 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
 
     const run = async () => {
         if (selectedCurrency && amount) {
+            setError(undefined);
+
             const args: GetQuotesArgs = [amount, selectedCurrency];
 
-            const quotes = await getQuotesByProviders(args);
-            const sortedQuotes = Object.entries(quotes ?? {})
-                .flatMap(([provider, quotes]) =>
-                    quotes.map((quote) => ({
-                        provider: provider as WasmGatewayProvider,
-                        ...quote,
-                    }))
-                )
-                .sort((quoteA, quoteB) => {
-                    if (quoteA.provider === 'Azteco' && quoteB.provider !== 'Azteco') {
-                        return -1;
-                    }
-                    if (quoteA.provider !== 'Azteco' && quoteB.provider === 'Azteco') {
-                        return 1;
-                    }
-                    return quoteA.BitcoinAmount <= quoteB.BitcoinAmount ? 1 : -1;
-                });
-            if (sortedQuotes.length) {
+            try {
+                const quotes = await getQuotesByProviders(args);
+                const sortedQuotes = Object.entries(quotes ?? {})
+                    .flatMap(([provider, quotes]) =>
+                        quotes.map((quote) => ({
+                            provider: provider as WasmGatewayProvider,
+                            ...quote,
+                        }))
+                    )
+                    .sort((quoteA, quoteB) => {
+                        if (quoteA.provider === 'Azteco' && quoteB.provider !== 'Azteco') {
+                            return -1;
+                        }
+                        if (quoteA.provider !== 'Azteco' && quoteB.provider === 'Azteco') {
+                            return 1;
+                        }
+                        return quoteA.BitcoinAmount <= quoteB.BitcoinAmount ? 1 : -1;
+                    });
                 setSortedQuotes(sortedQuotes);
 
                 const [bestQuote] = sortedQuotes;
                 setSelectedPaymentProvider(bestQuote.provider);
                 setSelectedPaymentMethod(bestQuote.PaymentMethod);
-            } else {
+                setError(undefined);
+            } catch (error: any) {
                 setSortedQuotes([]);
                 setSelectedPaymentProvider(undefined);
                 setSelectedPaymentMethod(undefined);
-
                 createNotification({
                     type: 'warning',
-                    text: c('Bitcoin buy')
-                        .t`The selected currency is not supported in your country or the requested amount is too low`,
+                    text:
+                        error.error ??
+                        c('Bitcoin buy')
+                            .t`The selected currency is not supported in your country or the requested amount is too low`,
                 });
+                setError(c('Bitcoin buy').t`No quote available for the requested amount`);
+                throw error;
             }
         }
     };
@@ -202,5 +210,8 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
 
         // Reset redux store
         resetQuoteByProvider,
+
+        // Error
+        error,
     };
 };

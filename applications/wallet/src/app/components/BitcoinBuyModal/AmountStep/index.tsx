@@ -144,6 +144,9 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
 
         // Reset redux store
         resetQuoteByProvider,
+
+        // Error
+        error,
     } = useAmountStep({ country: inputCountry, preselectedQuote });
 
     const [disclaimerModal, setDisclaimerModal] = useModalState();
@@ -201,6 +204,7 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                         <Input
                             isGroupElement
                             label={c('bitcoin buy').t`You pay`}
+                            error={error}
                             value={`${formatNumberForDisplay(amount, 2, digitsAfterDecimalPoint)}`}
                             type="number"
                             onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -235,8 +239,10 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                                 isGroupElement
                                 label={c('bitcoin buy').t`You receive`}
                                 readOnly
-                                value={selectedQuote?.BitcoinAmount && `${selectedQuote?.BitcoinAmount} BTC`}
-                                disabled={loadingQuotes}
+                                value={
+                                    !error && selectedQuote?.BitcoinAmount ? `${selectedQuote?.BitcoinAmount} BTC` : ''
+                                }
+                                disabled={loadingQuotes || error}
                                 subline={
                                     selectedPaymentProvider === 'Azteco' &&
                                     selectedQuote &&
