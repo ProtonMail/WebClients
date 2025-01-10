@@ -32,9 +32,7 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
         typeof inviteBatchCreateSuccess,
         typeof inviteBatchCreateFailure
     >(inviteBatchCreateIntent, {
-        onSuccess: ({ shareId, itemId }) => {
-            manageItemAccess(shareId, itemId!);
-        },
+        onSuccess: ({ shareId, itemId }) => manageItemAccess(shareId, itemId!),
     });
 
     const form = useFormik<ItemInviteFormValues>({

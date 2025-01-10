@@ -111,7 +111,7 @@ export const B2BOnboarding: FC = () => {
                 onSubmit={(shareId) => {
                     const vault = vaults.find((vault) => vault.shareId === shareId);
                     if (vault) {
-                        inviteActions.createVaultInvite({ vault });
+                        inviteActions.createVaultInvite(vault.shareId);
                         setSelectVault(false);
                     }
                 }}

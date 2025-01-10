@@ -1,29 +1,18 @@
-import { type ForwardRefRenderFunction, type MutableRefObject, forwardRef, useEffect, useMemo, useState } from 'react';
+import { forwardRef, useMemo } from 'react';
 
 import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
-import { ListField } from '@proton/pass/components/Form/Field/ListField';
-import { BulkMemberActions } from '@proton/pass/components/Invite/Members/BulkMemberActions';
-import { InviteMember } from '@proton/pass/components/Invite/Members/InviteMember';
-import { InviteRecommendations } from '@proton/pass/components/Invite/Members/InviteRecommendations';
-import { presentListItem } from '@proton/pass/components/Item/List/utils';
-import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
+import { InviteStepMembers } from '@proton/pass/components/Invite/Steps/InviteStepMembers';
+import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/InviteStepPermissions';
+import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
 import { type InviteAddressValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
-import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
-import { selectAccessSharedWithEmails, selectItem } from '@proton/pass/store/selectors';
-import type { InviteFormMemberValue, ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
-import { ShareRole } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import clsx from '@proton/utils/clsx';
+import type { SelectAccessDTO } from '@proton/pass/store/selectors';
+import { selectAccessMembers } from '@proton/pass/store/selectors';
+import type { ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
+
+import { ItemInviteHeader } from './ItemInviteHeader';
 
 export const FORM_ID = 'item-invite';
 
@@ -33,201 +22,42 @@ type Props = {
     validator: MaybeNull<InviteAddressValidator>;
 };
 
-/** `ItemInviteForm` takes a forwarded ref parameter for the email input element.
- * This ref is essential to trigger validation on any non-added email values that
- * are pushed to the member list. This ensures correct interaction with the invite
- * recommendations. */
-const ForwardedItemInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props> = (
-    { form, autoFocus, validator },
-    fieldRef
-) => {
-    const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
-    const { step, members } = form.values;
-    const shareId = form.values.shareId;
-    const itemId = form.values.itemId;
-
-    const [autocomplete, setAutocomplete] = useState('');
-    const vaultSharedWith = useMemoSelector(selectAccessSharedWithEmails, [shareId, itemId]);
-    const item = useMemoSelector(selectItem, [shareId, itemId])!;
-    const { heading, subheading } = presentListItem(item);
-
-    const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
-
-    /** Filter out emails pending validation by comparing against the address validator cache.
-     * Pending emails are those present in 'members' but not in the validator cache */
-    const emailsValidating = useMemo(
-        () => members.filter(({ value }) => !validator?.emails.current.has(value.email)),
-        [members]
-    );
-
-    const createMember = (email: string): ListFieldValue<InviteFormMemberValue> => ({
-        value: { email, role: ShareRole.READ },
-        id: uniqueId(),
-    });
-
-    const onEmailFieldBlur = (maybeEmail: string) => {
-        const value = maybeEmail.trim();
-        if (PassCoreUI.is_email_valid(value) && emailField) {
-            emailField.value = '';
-            void form.setFieldValue('members', members.concat([createMember(value)]));
-        }
-    };
-
-    const onRecommendationToggle = (email: string, checked: boolean) => {
-        const update = checked
-            ? members.concat([createMember(email)])
-            : members.filter(({ value }) => value.email !== email);
-
-        if (checked) {
-            /** If the trailing email field value matches the beginning of one of
-             * the suggestions, it is assumed that the user wishes to autocomplete. */
-            const trailing = (emailField?.value ?? '').trim().toLowerCase();
-            if (emailField && email.toLowerCase().startsWith(trailing)) emailField.value = '';
-        }
-
-        void form.setFieldValue('members', update);
-    };
-
-    useEffect(() => setAutocomplete(''), [form.values.step]);
+export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoFocus, validator }, fieldRef) => {
+    const { step, members, shareId, itemId } = form.values;
+    const access = useMemo<SelectAccessDTO>(() => ({ shareId, itemId }), [shareId, itemId]);
+    const excluded = useMemoSelector(selectAccessMembers, [shareId, itemId]);
 
     return (
         <>
             {step === 'members' && (
-                <div className="anime-fade-in h-full flex flex-column">
-                    <h2 className="text-xl text-bold mb-3">{c('Title').t`Share with`}</h2>
-
-                    <FieldsetCluster>
-                        <Field
-                            autoFocus={autoFocus}
-                            component={ListField<ItemInviteFormValues>}
-                            disabled={validator?.loading}
-                            fieldLoading={(entry) => (validator?.loading ?? false) && emailsValidating.includes(entry)}
-                            fieldKey="members"
-                            fieldRef={fieldRef}
-                            fieldValue={prop('email')}
-                            key={`autofocus-email-${autoFocus}`}
-                            name="emails"
-                            onBlur={onEmailFieldBlur}
-                            onPush={createMember}
-                            onReplace={(email, prev) => ({ ...prev, value: { ...prev.value, email } })}
-                            placeholder={c('Placeholder').t`Email address`}
-                            renderError={(err) => {
-                                const errors = err as string[];
-
-                                const isEmpty = errors.includes(InviteEmailsError.EMPTY);
-                                if (isEmpty) return c('Warning').t`At least one email address is required`;
-
-                                const hasDuplicates = errors.includes(InviteEmailsError.DUPLICATE);
-                                const hasInvalid = errors.includes(InviteEmailsError.INVALID_EMAIL);
-                                const hasOrganizationLimits = errors.includes(InviteEmailsError.INVALID_ORG);
-
-                                return (
-                                    <>
-                                        {hasOrganizationLimits &&
-                                            c('Warning')
-                                                .t`Inviting email addresses outside organization is not allowed.`}
-                                        {hasDuplicates && c('Warning').t`Duplicate email addresses.` + ` `}
-                                        {hasInvalid && c('Warning').t`Invalid email addresses.`}
-                                    </>
-                                );
-                            }}
-                            onAutocomplete={setAutocomplete}
-                        />
-                    </FieldsetCluster>
-
-                    <div className="flex flex-nowrap flex-column gap-2 my-3">
-                        <InviteRecommendations
-                            autocomplete={autocomplete}
-                            selected={selected}
-                            excluded={vaultSharedWith}
-                            access={form.values}
-                            onToggle={onRecommendationToggle}
-                        />
-                    </div>
-                </div>
+                <InviteStepMembers
+                    ref={fieldRef}
+                    access={access}
+                    autoFocus={autoFocus}
+                    excluded={excluded}
+                    members={members}
+                    validator={validator}
+                    onUpdate={(next) => form.setFieldValue('members', next)}
+                />
             )}
 
             {step === 'permissions' && (
-                <div className="anime-fade-in">
-                    <h2 className="text-xl text-bold mb-2">{c('Title').t`Set access level`}</h2>
-                    <div className="w-full flex flex-nowrap items-center justify-between gap-3 mb-3 text-lg">
-                        <div className="flex-auto shrink-0">
-                            <button
-                                className="text-break-all text-left color-weak text-semibold"
-                                onClick={() => form.setFieldValue('step', 'members')}
-                            >
-                                {c('Title').t`Members`} ({members.length})
-                            </button>
-                        </div>
-
-                        <BulkMemberActions
-                            onRoleChange={(role) =>
-                                form.setFieldValue(
-                                    'members',
-                                    members.map(({ id, value }) => ({ id, value: { ...value, role } }))
-                                )
-                            }
-                        />
-                    </div>
-                    <div className="py-3">
-                        {members.map((member) => (
-                            <InviteMember
-                                {...member}
-                                key={`member-${member.id}`}
-                                onRemove={() => {
-                                    const update = members.filter(({ id }) => id !== member.id);
-                                    void form.setFieldValue('members', update);
-                                    void form.setFieldValue('step', update.length === 0 ? 'members' : 'permissions');
-                                }}
-                                onRoleChange={(role) =>
-                                    form.setFieldValue(
-                                        'members',
-                                        members.map(({ id, value }) => ({
-                                            id,
-                                            value: { ...value, role: id === member.id ? role : value.role },
-                                        }))
-                                    )
-                                }
-                            />
-                        ))}
-                    </div>
-                </div>
+                <InviteStepPermissions
+                    members={members}
+                    onUpdate={(next) => form.setFieldValue('members', next)}
+                    onStep={(next) => form.setFieldValue('step', next)}
+                />
             )}
 
             {step === 'review' && (
-                <div className="anime-fade-in">
-                    <h2 className="text-xl text-bold my-4">{c('Title').t`Review and share`}</h2>
-                    <div className="color-weak text-semibold"> {c('Title').t`Item`}</div>
-
-                    <div className="flex gap-3 flex-nowrap items-center py-3 w-full">
-                        <SafeItemIcon
-                            item={item}
-                            size={5}
-                            className={clsx('shrink-0 relative', itemTypeToSubThemeClassName[item.data.type])}
-                        />
-                        <div className="text-left flex-1">
-                            <div className="text-ellipsis">{heading}</div>
-                            <div
-                                className={clsx([
-                                    'pass-item-list--subtitle block color-weak text-sm text-ellipsis',
-                                    item.data.type === 'note' &&
-                                        isEmptyString(item.data.metadata.note.v) &&
-                                        'text-italic',
-                                ])}
-                            >
-                                {subheading}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="color-weak text-semibold"> {c('Label').t`Members`}</div>
-                    {members.map((member) => (
-                        <InviteMember {...member} key={`review-${member.id}`} />
-                    ))}
-                </div>
+                <InviteStepReview
+                    heading={<ItemInviteHeader shareId={shareId} itemId={itemId} />}
+                    members={members}
+                    title={c('Title').t`Item`}
+                />
             )}
         </>
     );
-};
+});
 
-export const ItemInviteForm = forwardRef(ForwardedItemInviteForm);
+ItemInviteForm.displayName = 'ItemInviteFormForwarded';
