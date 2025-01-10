@@ -1,6 +1,9 @@
 import { CYCLE } from '@proton/shared/lib/constants';
 import {
     type AddonGuard,
+    getAddonType,
+    getSupportedAddons,
+    isAddonType,
     isDomainAddon,
     isIpAddon,
     isLumoAddon,
@@ -13,7 +16,7 @@ import type { Plan, PlansMap, Subscription } from '@proton/shared/lib/interfaces
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { type ADDON_NAMES, DEFAULT_CURRENCY, PLANS } from '../constants';
+import { ADDON_NAMES, DEFAULT_CURRENCY, PLANS } from '../constants';
 import type { Currency, FreeSubscription, MaxKeys, PlanIDs } from '../interface';
 import { getLumoAddonNameByPlan, getScribeAddonNameByPlan } from './helpers';
 import { getPlansMap } from './plans-map-wrapper';
@@ -82,6 +85,39 @@ export class SelectedPlan {
         } else {
             this._plansMap = plans;
         }
+    }
+
+    changePlan(toPlan: PLANS): SelectedPlan {
+        const newPlanIDs: PlanIDs = {
+            [toPlan]: 1,
+        };
+        for (const addonName of Object.values(ADDON_NAMES)) {
+            if ((this.planIDs[addonName] ?? 0) > 0) {
+                const newAddonName = this.swapAddonName(addonName, toPlan);
+                if (newAddonName) {
+                    newPlanIDs[newAddonName] = this.planIDs[addonName];
+                }
+            }
+        }
+
+        return SelectedPlan.createNormalized(newPlanIDs, this._plansMap, this._cycle, this._currency);
+    }
+
+    private swapAddonName(addonName: ADDON_NAMES, planName: PLANS): ADDON_NAMES | null {
+        const addonType = getAddonType(addonName);
+        if (!addonType) {
+            return null;
+        }
+
+        const supportedAddons = getSupportedAddons({ [planName]: 1 });
+        const supportedAddon = (Object.keys(supportedAddons) as ADDON_NAMES[]).find((addon) =>
+            isAddonType(addon, addonType)
+        );
+        if (!supportedAddon) {
+            return null;
+        }
+
+        return supportedAddon;
     }
 
     getTotalMembers(): number {
@@ -215,17 +251,27 @@ export class SelectedPlan {
         return getIsB2BAudienceFromPlan(this.getPlanName());
     }
 
+    getMaxLumos(): number {
+        return this.getTotalUsers();
+    }
+
+    getMaxScribes(): number {
+        return this.getTotalUsers();
+    }
+
     private capScribes(): SelectedPlan {
-        if (this.getTotalUsers() < this.getTotalScribes()) {
-            return this.setScribeCount(this.getTotalUsers());
+        const maxScribes = this.getMaxScribes();
+        if (this.getTotalScribes() > maxScribes) {
+            return this.setScribeCount(maxScribes);
         }
 
         return this;
     }
 
     private capLumos(): SelectedPlan {
-        if (this.getTotalUsers() < this.getTotalLumos()) {
-            return this.setLumoCount(this.getTotalUsers());
+        const maxLumos = this.getMaxLumos();
+        if (this.getTotalLumos() > maxLumos) {
+            return this.setLumoCount(maxLumos);
         }
 
         return this;
