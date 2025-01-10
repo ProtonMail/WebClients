@@ -67,6 +67,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const trashed = isTrashed(revision);
     const pinned = isPinned(revision);
     const online = useConnectivity();
+    const isVault = isVaultShare(share);
 
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
@@ -218,21 +219,30 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                             (signalItemSharing && <Badge type="info">{c('Label').t`New`}</Badge>)
                                         }
                                     />
-                                    <DropdownMenuButton
-                                        onClick={
-                                            free
-                                                ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.SECURE_LINKS })
-                                                : handleSecureLinkClick
-                                        }
-                                        label={
-                                            <DropdownMenuLabel
-                                                title={c('Action').t`Via secure link`}
-                                                subtitle={c('Label').t`For a one-off sharing`}
-                                            />
-                                        }
-                                        icon="link"
-                                        extra={free && <PassPlusPromotionButton className="ml-2" />}
-                                    />
+                                    {/** NOTE: disabling secure links for non-vault shares
+                                     * until we start using the `itemKey` to encrypt the
+                                     * `secureLinkKey` with */}
+                                    {isVault && (
+                                        <DropdownMenuButton
+                                            onClick={
+                                                free
+                                                    ? () =>
+                                                          upsell({
+                                                              type: 'pass-plus',
+                                                              upsellRef: UpsellRef.SECURE_LINKS,
+                                                          })
+                                                    : handleSecureLinkClick
+                                            }
+                                            label={
+                                                <DropdownMenuLabel
+                                                    title={c('Action').t`Via secure link`}
+                                                    subtitle={c('Label').t`For a one-off sharing`}
+                                                />
+                                            }
+                                            icon="link"
+                                            extra={free && <PassPlusPromotionButton className="ml-2" />}
+                                        />
+                                    )}
                                     {shared && (
                                         <DropdownMenuButton
                                             onClick={
@@ -301,7 +311,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                         ];
                     })()}
                     subtitle={
-                        isVaultShare(share) && owner && hasMultipleVaults ? (
+                        isVault && owner && hasMultipleVaults ? (
                             <VaultTag
                                 title={share.content.name}
                                 color={share.content.display.color}
