@@ -13,7 +13,12 @@ export const ItemInviteRespond: FC<ItemInvite> = (invite) => {
     const { onInviteResponse } = useInviteActions();
 
     return (
-        <PassModal size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
+        <PassModal
+            size="small"
+            open
+            onClose={() => onInviteResponse({ ok: false, error: null })}
+            enableCloseWhenClickOutside
+        >
             <ModalTwoHeader
                 className="text-center text-break-all"
                 hasClose={false}

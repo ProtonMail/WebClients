@@ -7,7 +7,7 @@ import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
 import { getItemKeys } from '@proton/pass/lib/items/item.requests';
-import type { InviteTargetKey } from '@proton/pass/types';
+import type { InviteTargetKey, KeyRotationKeyPair } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
@@ -184,7 +184,10 @@ export const removeNewUserInvite = async ({ shareId, newUserInviteId }: NewUserI
         method: 'delete',
     });
 
-export const acceptInvite = async ({ inviteToken, inviterEmail, invitedAddressId, inviteKeys }: InviteAcceptIntent) => {
+export const acceptInvite = async (
+    { inviteToken, inviterEmail, invitedAddressId }: InviteAcceptIntent,
+    inviteKeys: KeyRotationKeyPair[]
+) => {
     return (
         await api({
             url: `pass/v1/invite/${inviteToken}`,
