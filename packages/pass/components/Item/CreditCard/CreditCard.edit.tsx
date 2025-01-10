@@ -26,8 +26,8 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-creditCard';
 
-export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, revision, onSubmit, onCancel }) => {
-    const { shareId } = vault;
+export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, revision, onSubmit, onCancel }) => {
+    const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
 
     const { metadata, content, ...uneditable } = useDeobfuscatedItem(item);
