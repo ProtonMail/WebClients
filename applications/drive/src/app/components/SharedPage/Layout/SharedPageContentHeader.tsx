@@ -76,12 +76,9 @@ export function SharedPageContentHeader({
                 </div>
                 <div className="flex items-center color-weak">
                     {rootLink.signatureEmail && (
-                        // translator: Text will be like: Owner <eric.norbert@pm.me>
+                        // translator: Text will be like: Shared by eric.norbert@pm.me
                         <>
-                            <span>
-                                {c('Info').t`Owner`}
-                                {` <${rootLink.signatureEmail}>`}
-                            </span>
+                            <span>{c('Info').t`Shared by ${rootLink.signatureEmail}`}</span>
                             <i
                                 className="mx-2 w-custom h-custom rounded-full bg-strong"
                                 aria-hidden="true"

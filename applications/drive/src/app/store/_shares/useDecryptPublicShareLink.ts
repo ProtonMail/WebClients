@@ -94,7 +94,6 @@ export const useDecryptPublicShareLink = () => {
             metaDataModifyTime: 0,
             trashed: null,
             hasThumbnail: sharedUrlInfo.thumbnailUrlInfo !== undefined,
-            isShared: false,
             nodeKey: sharedUrlInfo.nodeKey,
             nodeHashKey: sharedUrlInfo.nodeHashKey ?? undefined,
             nodePassphrase: sharedUrlInfo.nodePassphrase,
