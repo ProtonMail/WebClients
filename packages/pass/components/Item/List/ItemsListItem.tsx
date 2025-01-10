@@ -147,7 +147,7 @@ export const ItemsListItem = memo(
                                 </span>
                                 {shared && (
                                     <Icon
-                                        name="users"
+                                        name="users-filled"
                                         color={`var(${bulk ? '--interaction-norm-contrast' : '--text-weak'})`}
                                         size={3.5}
                                     />
