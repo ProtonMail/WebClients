@@ -37,7 +37,7 @@ interface SearchItem extends FileBrowserBaseItem {
     trashed: number | null;
     parentLinkId: string;
     rootShareId: string;
-    isShared: boolean;
+    isShared?: boolean;
     isAdmin: boolean;
 }
 

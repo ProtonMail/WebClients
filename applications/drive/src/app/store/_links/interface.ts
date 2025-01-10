@@ -35,7 +35,7 @@ interface Link {
     trashedByParent?: boolean;
     hasThumbnail: boolean;
     hasHdThumbnail?: boolean;
-    isShared: boolean;
+    isShared?: boolean;
     // Note that shareId is ID of the share, that is pointer of what is shared
     // with someone else. Link can be part of many shares; for example part of
     // user's default share and of shared folder with someone else.
