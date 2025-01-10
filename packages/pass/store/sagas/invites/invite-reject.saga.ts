@@ -1,17 +1,11 @@
-import { put, takeEvery } from 'redux-saga/effects';
-
 import { rejectInvite } from '@proton/pass/lib/invites/invite.requests';
-import { inviteRejectFailure, inviteRejectIntent, inviteRejectSuccess } from '@proton/pass/store/actions';
+import { inviteReject } from '@proton/pass/store/actions';
+import { createRequestSaga } from '@proton/pass/store/request/sagas';
 
-function* rejectInviteWorker({ payload, meta: { request } }: ReturnType<typeof inviteRejectIntent>) {
-    try {
-        yield rejectInvite(payload);
-        yield put(inviteRejectSuccess(request.id, payload.inviteToken));
-    } catch (err) {
-        yield put(inviteRejectFailure(request.id, err));
-    }
-}
-
-export default function* watcher() {
-    yield takeEvery(inviteRejectIntent.match, rejectInviteWorker);
-}
+export default createRequestSaga({
+    actions: inviteReject,
+    call: async (payload) => {
+        await rejectInvite(payload);
+        return payload;
+    },
+});

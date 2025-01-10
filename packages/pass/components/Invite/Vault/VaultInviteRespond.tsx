@@ -21,7 +21,7 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
     const valid = invite && invite.targetType === ShareType.Vault;
 
     useEffect(() => {
-        if (!valid) onInviteResponse();
+        if (!valid) onInviteResponse({ ok: false });
     }, [valid]);
 
     if (!valid) return null;
@@ -30,7 +30,7 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
     const { itemCount, memberCount } = vault;
 
     return (
-        <PassModal size="small" open onClose={() => onInviteResponse()} enableCloseWhenClickOutside>
+        <PassModal size="small" open onClose={() => onInviteResponse({ ok: false })} enableCloseWhenClickOutside>
             <ModalTwoHeader
                 className="text-center text-break-all"
                 hasClose={false}
