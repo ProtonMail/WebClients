@@ -10,7 +10,6 @@ import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsB
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
-import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 import { MenuDropdown } from './MenuDropdown';
@@ -21,7 +20,7 @@ export const Header: FC = () => {
     useSpotlightListener();
 
     return (
-        <VaultActionsProvider>
+        <>
             <AuthDeviceTopBanner />
             <CoreHeader className="border-bottom border-weak h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
@@ -32,6 +31,6 @@ export const Header: FC = () => {
                 </div>
             </CoreHeader>
             <PinnedItemsBar />
-        </VaultActionsProvider>
+        </>
     );
 };
