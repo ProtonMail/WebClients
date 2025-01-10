@@ -3,7 +3,6 @@ import type { MutableRefObject, RefObject } from 'react';
 import { type FormikErrors } from 'formik';
 
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
-import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import type { InviteFormValues, Maybe } from '@proton/pass/types';
 
 export enum InviteEmailsError {
@@ -21,8 +20,6 @@ type ValidateShareInviteOptions = {
 export const validateInvite =
     ({ emailField, emailValidationResults }: ValidateShareInviteOptions) =>
     (values: InviteFormValues) => {
-        if (values.step === 'vault' && values.withVaultCreation) return validateVaultValues(values);
-
         let errors: FormikErrors<InviteFormValues> = {};
 
         if (values.step === 'members') {

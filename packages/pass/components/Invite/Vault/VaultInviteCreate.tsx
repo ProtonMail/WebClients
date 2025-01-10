@@ -19,30 +19,18 @@ import {
     inviteBatchCreateIntent,
     type inviteBatchCreateSuccess,
 } from '@proton/pass/store/actions';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectDefaultVault } from '@proton/pass/store/selectors';
-import { BitField, type Callback, type SelectedItem, ShareType, type VaultInviteFormValues } from '@proton/pass/types';
-import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
+import { selectShareOrThrow } from '@proton/pass/store/selectors';
+import type { SelectedShare } from '@proton/pass/types';
+import { BitField, type Callback, ShareType, type VaultInviteFormValues } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
-export type VaultInviteCreateProps =
-    | { withVaultCreation: false; vault: VaultShareItem }
-    | { withVaultCreation: true; item?: SelectedItem; onVaultCreated?: (shareId: string) => void };
-
-export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
-    Extract<VaultInviteCreateProps, { withVaultCreation: T }>,
-    'withVaultCreation' | 'onVaultCreated'
->;
-
-export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
+export const VaultInviteCreate: FC<SelectedShare> = ({ shareId }) => {
+    const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const { close, manageVaultAccess } = useInviteActions();
     const org = useOrganization({ sync: true });
-    const defaultVault = useSelector(selectDefaultVault);
-
-    const shareId = props.withVaultCreation ? defaultVault?.shareId : props.vault.shareId;
-    const validator = useInviteAddressesValidator(shareId ?? '');
+    const validator = useInviteAddressesValidator(shareId);
     const validateAddresses = !org?.b2bAdmin && org?.settings.ShareMode === BitField.ACTIVE;
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
@@ -51,10 +39,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         typeof inviteBatchCreateSuccess,
         typeof inviteBatchCreateFailure
     >(inviteBatchCreateIntent, {
-        onSuccess: ({ shareId }) => {
-            if (props.withVaultCreation) props.onVaultCreated?.(shareId);
-            manageVaultAccess(shareId);
-        },
+        onSuccess: ({ shareId }) => manageVaultAccess(shareId),
     });
 
     const form = useFormik<VaultInviteFormValues>({
@@ -62,23 +47,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
             step: 'members',
             members: [],
             shareType: ShareType.Vault,
-            ...(props.withVaultCreation
-                ? {
-                      color: VaultColor.COLOR3,
-                      description: '',
-                      icon: VaultIcon.ICON9,
-                      item: props.item,
-                      name: c('Placeholder').t`Shared vault`,
-                      withVaultCreation: true,
-                  }
-                : {
-                      color: props.vault.content.display.color ?? VaultColor.COLOR_UNSPECIFIED,
-                      description: '',
-                      icon: props.vault.content.display.icon ?? VaultIcon.ICON_UNSPECIFIED,
-                      name: props.vault.content.name,
-                      shareId: props.vault.shareId,
-                      withVaultCreation: false,
-                  }),
+            shareId: vault.shareId,
         },
         initialErrors: { members: [] },
         validateOnChange: true,
@@ -92,8 +61,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
             switch (values.step) {
                 case 'members':
                     return setFieldValue('step', 'permissions');
-                case 'vault':
-                    return setFieldValue('step', 'members');
                 case 'permissions':
                     return setFieldValue('step', 'review');
                 case 'review':
@@ -116,17 +83,9 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         closeLabel: string;
         closeIcon: IconName;
     } => {
-        const sharedVault = !props.withVaultCreation && props.vault.shared;
-        const submitText = sharedVault ? c('Action').t`Send invite` : c('Action').t`Share vault`;
+        const submitText = vault.shared ? c('Action').t`Send invite` : c('Action').t`Share vault`;
 
         switch (form.values.step) {
-            case 'vault':
-                return {
-                    closeAction: () => form.setFieldValue('step', 'members'),
-                    closeIcon: 'chevron-left',
-                    closeLabel: c('Action').t`Back`,
-                    submitText: c('Action').t`Update vault`,
-                };
             case 'permissions':
                 return {
                     closeAction: () => form.setFieldValue('step', 'members'),

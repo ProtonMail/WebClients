@@ -27,7 +27,7 @@ export const selectAccessOrThrow = (shareId: string, itemId?: string) =>
         return access;
     });
 
-export const selectAccessSharedWithEmails = (shareId: string, itemId?: string) =>
+export const selectAccessMembers = (shareId: string, itemId?: string) =>
     createSelector(
         selectAccess(shareId, itemId),
         (access): Set<string> =>
