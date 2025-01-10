@@ -6,16 +6,10 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Alert, Icon, Prompt } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
-import { presentListItem } from '@proton/pass/components/Item/List/utils';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { ShareMember } from '@proton/pass/components/Share/ShareMember';
-import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
 import { UpsellRef } from '@proton/pass/constants';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
@@ -24,31 +18,31 @@ import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import {
     selectAccess,
     selectItem,
-    selectOwnWritableVaults,
     selectPassPlan,
     selectShareOrThrow,
+    selectVaultItemsCount,
 } from '@proton/pass/store/selectors';
-import type { NewUserPendingInvite, PendingInvite, ShareType, UniqueItem } from '@proton/pass/types';
+import type { InviteListItem, UniqueItem } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
+
+import { Card } from '../../Layout/Card/Card';
+import { getItemsText } from '../../Settings/helper';
+import { VaultIcon } from '../../Vault/VaultIcon';
+import { ItemMembersList } from './ItemMembersList';
 
 type Props = UniqueItem;
 
-type InviteListItem =
-    | { key: string; type: 'existing'; invite: PendingInvite }
-    | { key: string; type: 'new'; invite: NewUserPendingInvite };
-
 export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
-    const { createItemInvite, close } = useInviteActions();
+    const { createItemInvite, createVaultInvite, close } = useInviteActions();
+    /** vault.content may be an empty object if user has sharing access via item sharing and not vault sharing */
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const item = useSelector(selectItem(shareId, itemId))!;
     const access = useSelector(selectAccess(shareId, itemId));
     const { members, invites, newUserInvites } = access;
-    const { heading, subheading } = presentListItem(item);
     const plan = useSelector(selectPassPlan);
-    const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
 
     const [limitModalOpen, setLimitModalOpen] = useState(false);
 
@@ -73,9 +67,29 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
         [access]
     );
 
+    const itemInvites = allInvites.filter(({ invite }) => invite.targetType === ShareType.Item);
+    const itemMembers = members.filter((member) => member.targetType === ShareType.Item);
+    const itemTotalMembersCount = itemInvites.length + itemMembers.length;
+
+    const vaultInvites = allInvites.filter(({ invite }) => invite.targetType === ShareType.Vault);
+    const vaultMembers = members.filter((member) => member.targetType === ShareType.Vault);
+    const vaultTotalMembersCount = vaultInvites.length + vaultMembers.length;
+
+    const count = useSelector(selectVaultItemsCount(shareId));
+
     const shared = isShared(item);
 
     const memberLimitReached = isMemberLimitReached(vault, access);
+
+    const handleItemInviteClick = () => {
+        if (memberLimitReached) setLimitModalOpen(true);
+        else createItemInvite(shareId, itemId);
+    };
+
+    const handleVaultInviteClick = () => {
+        if (memberLimitReached) setLimitModalOpen(true);
+        else createVaultInvite(shareId);
+    };
 
     const warning = (() => {
         if (canManage && memberLimitReached) {
@@ -110,95 +124,80 @@ export const ItemAccessManager: FC<Props> = ({ shareId, itemId }) => {
                             >
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
-
-                            <Button
-                                key="modal-invite-button"
-                                color="norm"
-                                pill
-                                onClick={() =>
-                                    memberLimitReached ? setLimitModalOpen(true) : createItemInvite(shareId, itemId)
-                                }
-                                disabled={!canManage || (plan === UserPassPlan.FREE && memberLimitReached)}
-                            >
-                                {c('Action').t`Invite others`}
-                            </Button>,
                         ]}
                     />
                 }
             >
-                <div className="flex gap-3 flex-nowrap items-center py-3 w-full">
-                    <SafeItemIcon
-                        item={item}
-                        size={5}
-                        className={clsx('shrink-0 relative', itemTypeToSubThemeClassName[item.data.type])}
-                    />
-                    <div className="text-left flex-1">
-                        <div className="text-ellipsis">{heading}</div>
-                        <div
-                            className={clsx([
-                                'pass-item-list--subtitle block color-weak text-sm text-ellipsis',
-                                item.data.type === 'note' && isEmptyString(item.data.metadata.note.v) && 'text-italic',
-                            ])}
-                        >
-                            {subheading}
-                        </div>
-                    </div>
-                </div>
+                <h2 className="text-xl text-bold mb-6">{c('Title').t`Shared via`}</h2>
 
                 {shared ? (
-                    <div className="flex flex-column gap-y-3">
-                        {allInvites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
-
-                        {allInvites.map((item) => {
-                            switch (item.type) {
-                                case 'new':
-                                    return (
-                                        <PendingNewMember
-                                            shareId={vault.shareId}
-                                            key={item.key}
-                                            email={item.invite.invitedEmail}
-                                            newUserInviteId={item.invite.newUserInviteId}
-                                            canManage={canManage}
-                                            state={item.invite.state}
-                                            itemId={itemId}
-                                        />
-                                    );
-                                case 'existing':
-                                    return (
-                                        <PendingExistingMember
-                                            key={item.key}
-                                            shareId={vault.shareId}
-                                            email={item.invite.invitedEmail}
-                                            inviteId={item.invite.inviteId}
-                                            canManage={canManage}
-                                            itemId={itemId}
-                                        />
-                                    );
-                            }
-                        })}
-
-                        {members.length > 0 && <span className="color-weak">{c('Label').t`Members`}</span>}
-
-                        {members.map((member) => (
-                            <ShareMember
-                                key={member.email}
-                                email={member.email}
+                    <>
+                        <div className="color-weak text-sm mb-3">
+                            {c('Info').ngettext(
+                                msgid`Item sharing: ${itemTotalMembersCount} member`,
+                                `Item sharing: ${itemTotalMembersCount} members`,
+                                itemTotalMembersCount
+                            )}
+                        </div>
+                        {itemTotalMembersCount && (
+                            <ItemMembersList
                                 shareId={vault.shareId}
-                                userShareId={member.shareId}
-                                me={vault.shareId === member.shareId}
-                                owner={member.owner}
-                                role={member.shareRoleId}
-                                canManage={canManage}
-                                canTransfer={!itemId && vault.owner && hasMultipleOwnedWritableVaults}
                                 itemId={itemId}
+                                invites={itemInvites}
+                                members={itemMembers}
+                                onInviteClick={handleItemInviteClick}
+                                className="mb-6"
                             />
-                        ))}
+                        )}
+
+                        <div className="color-weak text-sm mb-3">
+                            {c('Info').ngettext(
+                                msgid`Vault sharing: ${vaultTotalMembersCount} member`,
+                                `Vault sharing: ${vaultTotalMembersCount} members`,
+                                vaultTotalMembersCount
+                            )}
+                        </div>
+                        {vaultTotalMembersCount && (
+                            <ItemMembersList
+                                shareId={vault.shareId}
+                                itemId={itemId}
+                                invites={vaultInvites}
+                                members={vaultMembers}
+                                onInviteClick={handleVaultInviteClick}
+                                itemIcon={
+                                    /* If vault.content.display is not defined, the user only has item sharing
+                                     * and doesn't have access to vault sharing.
+                                     * So we don't display the vault */
+                                    vault.content?.display ? (
+                                        <div className="flex gap-3 flex-nowrap items-center py-3 w-full pl-4">
+                                            <VaultIcon
+                                                color={vault.content.display.color}
+                                                icon={vault.content.display.icon}
+                                                size={4}
+                                                background
+                                            />
+                                            <div className="text-left flex-1">
+                                                <div className="text-ellipsis">{vault.content.name}</div>
+                                                <div
+                                                    className={clsx([
+                                                        'pass-item-list--subtitle block color-weak text-sm text-ellipsis',
+                                                    ])}
+                                                >
+                                                    {count && getItemsText(count)}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : undefined
+                                }
+                            />
+                        )}
+
                         {warning && (
                             <Card type="primary" className="text-sm">
                                 {warning}
                             </Card>
                         )}
-                    </div>
+                    </>
                 ) : (
                     <div className="absolute inset-center flex flex-column gap-y-3 text-center color-weak text-sm">
                         {c('Info')
