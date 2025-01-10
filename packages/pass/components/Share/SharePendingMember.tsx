@@ -14,22 +14,29 @@ import {
     newUserInviteRemoveIntent,
 } from '@proton/pass/store/actions';
 import { NewUserInviteState } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
 
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 
-type PendingMemberBase = { canManage: boolean; email: string; shareId: string; itemId?: string };
+type PendingMemberBase = { canManage: boolean; email: string; shareId: string; itemId?: string; className?: string };
 type PendingExistingMemberProps = PendingMemberBase & { inviteId: string };
 type PendingNewMemberProps = PendingMemberBase & { newUserInviteId: string; state: NewUserInviteState };
-type SharePendingMemberProps = { actions?: ReactNode[]; email: string; extra?: ReactNode; loading: boolean };
+type SharePendingMemberProps = {
+    actions?: ReactNode[];
+    email: string;
+    extra?: ReactNode;
+    loading: boolean;
+    className?: string;
+};
 
-export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email, extra, loading }) => (
-    <div className="border border-weak rounded-xl px-4 py-3 max-w-full">
+export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email, extra, loading, className }) => (
+    <div className={clsx('border border-weak rounded-xl px-4 py-3 max-w-full', className)}>
         <div className="flex flex-nowrap items-center w-full">
             <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} loading={loading} />
             <div className="flex-1">
                 <div className="text-ellipsis">{email}</div>
                 <div className="flex items-center gap-1">
-                    <span className="color-weak">{c('Info').t`Invitation sent`}</span>
+                    <span className="color-weak text-sm">{c('Info').t`Invitation sent`}</span>
                     <Info
                         title={c('Info').t`The user did not accept the invitation yet.`}
                         className="color-weak"
@@ -54,6 +61,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
     inviteId,
     shareId,
     itemId,
+    className,
 }) => {
     const resendInvite = useActionRequest(inviteResendIntent);
     const removeInvite = useActionRequest(inviteRemoveIntent);
@@ -88,11 +96,19 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
                       ]
                     : undefined
             }
+            className={className}
         />
     );
 };
 
-export const PendingNewMember: FC<PendingNewMemberProps> = ({ canManage, email, shareId, state, newUserInviteId }) => {
+export const PendingNewMember: FC<PendingNewMemberProps> = ({
+    canManage,
+    email,
+    shareId,
+    state,
+    newUserInviteId,
+    className,
+}) => {
     const promoteInvite = useActionRequest(newUserInvitePromoteIntent);
     const removeInvite = useActionRequest(newUserInviteRemoveIntent);
 
@@ -134,6 +150,7 @@ export const PendingNewMember: FC<PendingNewMemberProps> = ({ canManage, email, 
                     </Button>
                 ) : undefined
             }
+            className={className}
         />
     );
 };
