@@ -98,6 +98,7 @@ import type { WebCoreSSOSamlSetupTotal } from './types/web_core_sso_saml_setup_t
 import type { WebCoreSSOSamlUpdateInfoTotal } from './types/web_core_sso_saml_update_info_total_v1.schema';
 import type { WebCoreSSOSetupDomainModalLoadTotal } from './types/web_core_sso_setup_domain_modal_load_total_v1.schema';
 import type { WebCoreSSOSetupDomainTotal } from './types/web_core_sso_setup_domain_total_v1.schema';
+import type { WebCoreVersionJsonFailedTotal } from './types/web_core_version_json_failed_total_v1.schema';
 import type { WebCoreVpnSingleSignupFetchDependencies2Total } from './types/web_core_vpn_single_signup_fetchDependencies_2_total_v1.schema';
 import type { WebCoreVpnSingleSignupFetchDependenciesTotal } from './types/web_core_vpn_single_signup_fetchDependencies_total_v1.schema';
 import type { WebCoreVpnSingleSignupPageLoad2Total } from './types/web_core_vpn_single_signup_pageLoad_2_total_v1.schema';
@@ -320,6 +321,8 @@ class Metrics extends MetricsBase {
     public core_sso_setup_domain_modal_load_total: Counter<WebCoreSSOSetupDomainModalLoadTotal>;
 
     public core_sso_setup_domain_total: Counter<WebCoreSSOSetupDomainTotal>;
+
+    public core_version_json_failed_total: Counter<WebCoreVersionJsonFailedTotal>;
 
     public core_vpn_single_signup_fetchDependencies_2_total: Counter<WebCoreVpnSingleSignupFetchDependencies2Total>;
 
@@ -876,6 +879,11 @@ class Metrics extends MetricsBase {
 
         this.core_sso_setup_domain_total = new Counter<WebCoreSSOSetupDomainTotal>(
             { name: 'web_core_sso_setup_domain_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_version_json_failed_total = new Counter<WebCoreVersionJsonFailedTotal>(
+            { name: 'web_core_version_json_failed_total', version: 1 },
             this.requestService
         );
 
