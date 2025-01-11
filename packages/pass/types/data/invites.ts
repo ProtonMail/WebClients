@@ -27,10 +27,6 @@ export type NewUserPendingInvite = InviteBase & {
     state: NewUserInviteState;
 };
 
-export type InviteListItem =
-    | { key: string; type: 'existing'; invite: PendingInvite }
-    | { key: string; type: 'new'; invite: NewUserPendingInvite };
-
 export type InviteVaultData = {
     content: VaultShareContent;
     itemCount: number;

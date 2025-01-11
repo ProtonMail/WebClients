@@ -9,8 +9,8 @@ import { Checkbox } from '@proton/components';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { ShareMemberAvatar } from '@proton/pass/components/Share/ShareMemberAvatar';
+import { useInviteRecommendations } from '@proton/pass/hooks/invite/useInviteRecommendations';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
-import { useInviteRecommendations } from '@proton/pass/hooks/useInviteRecommendations';
 import type { SelectAccessDTO } from '@proton/pass/store/selectors';
 import { selectDefaultVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -54,10 +54,6 @@ export const InviteRecommendations: FC<Props> = (props) => {
             : displayed.filter((email) => email.toLowerCase().startsWith(startsWith));
     }, [emails, organization, view, autocomplete]);
 
-    /** Used to compute the virtual list min-height as this component
-     * may be wrapped in a scrollable element */
-    const maxVisibleItems = Math.min(displayedEmails.length, pageSize - 1);
-
     return (
         <>
             <h2 className="text-lg text-bold color-weak pb-2 shrink-0">
@@ -89,8 +85,8 @@ export const InviteRecommendations: FC<Props> = (props) => {
             )}
 
             <div
-                className="flex-1 min-h-custom overflow-hidden"
-                style={{ '--min-h-custom': `${40 * maxVisibleItems + 15}px` }}
+                className="flex-1 min-h-custom overflow-hidden rounded-lg"
+                style={{ '--min-h-custom': 'calc(100vh - 250px' }}
             >
                 {displayedEmails.length === 0 && !loading ? (
                     <em className="color-weak anime-fade-in"> {c('Warning').t`No results`}</em>

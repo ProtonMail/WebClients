@@ -1,77 +1,73 @@
 import type { ReactNode } from 'react';
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import { Icon } from '@proton/components/index';
+import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { ShareMember } from '@proton/pass/components/Share/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
-import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
-import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import {
-    selectAccess,
-    selectOwnWritableVaults,
-    selectPassPlan,
-    selectShareOrThrow,
-} from '@proton/pass/store/selectors';
-import type { InviteListItem, ShareType, UniqueItem } from '@proton/pass/types';
+import type { SelectAccessDTO } from '@proton/pass/store/selectors';
+import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import clsx from '@proton/utils/clsx';
 
-import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+export type InviteListItem =
+    | { key: string; type: 'existing'; invite: PendingInvite }
+    | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
-type Props = UniqueItem & {
-    invites: InviteListItem[];
-    members: ShareMemberType[];
-    onInviteClick: () => void;
-    itemIcon?: ReactNode;
+type Props = SelectAccessDTO & {
+    canManage: boolean;
+    canTransfer: boolean;
     className?: string;
+    heading?: ReactNode;
+    invites?: InviteListItem[];
+    members?: ShareMemberType[];
+    title?: ReactNode;
+    onInvite?: () => void;
 };
 
-export const ItemMembersList: FC<Props> = ({
-    shareId,
-    itemId,
-    invites,
-    members,
-    onInviteClick,
-    itemIcon,
+export const AccessList: FC<Props> = ({
+    canManage,
+    canTransfer,
     className,
+    heading,
+    invites,
+    itemId,
+    members,
+    shareId,
+    title,
+    onInvite,
 }) => {
-    const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
-    const access = useSelector(selectAccess(shareId, itemId));
-    const plan = useSelector(selectPassPlan);
-    const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
-
-    const canManage = isShareManageable(vault);
-
-    const memberLimitReached = isMemberLimitReached(vault, access);
-    const inviteDisabled = !canManage || (plan === UserPassPlan.FREE && memberLimitReached);
-
     return (
         <div className={clsx('flex flex-column gap-y-3', className)}>
+            {title && <div className="color-weak text-sm">{title}</div>}
+
             <FieldsetCluster mode="read" as="div">
-                {itemIcon}
-                <div>
-                    <Button
-                        color="norm"
-                        shape="ghost"
-                        className="pr-auto"
-                        onClick={onInviteClick}
-                        disabled={inviteDisabled}
-                    >
-                        <Icon name="users-plus" className="mr-4" />
-                        {c('Action').t`Invite more...`}
-                    </Button>
-                </div>
-                {invites.map((item) => {
+                {heading && <div className="px-4">{heading}</div>}
+
+                {onInvite && (
+                    <div>
+                        <Button
+                            color="norm"
+                            shape="ghost"
+                            className="w-full text-left"
+                            onClick={onInvite}
+                            disabled={!canManage}
+                        >
+                            <Icon name="users-plus" className="mr-4" />
+                            {c('Action').t`Invite more...`}
+                        </Button>
+                    </div>
+                )}
+
+                {invites?.map((item) => {
                     switch (item.type) {
                         case 'new':
                             return (
                                 <PendingNewMember
-                                    shareId={vault.shareId}
+                                    shareId={shareId}
                                     key={item.key}
                                     email={item.invite.invitedEmail}
                                     newUserInviteId={item.invite.newUserInviteId}
@@ -85,7 +81,7 @@ export const ItemMembersList: FC<Props> = ({
                             return (
                                 <PendingExistingMember
                                     key={item.key}
-                                    shareId={vault.shareId}
+                                    shareId={shareId}
                                     email={item.invite.invitedEmail}
                                     inviteId={item.invite.inviteId}
                                     canManage={canManage}
@@ -96,17 +92,17 @@ export const ItemMembersList: FC<Props> = ({
                     }
                 })}
 
-                {members.map((member) => (
+                {members?.map((member) => (
                     <ShareMember
                         key={member.email}
                         email={member.email}
-                        shareId={vault.shareId}
+                        shareId={shareId}
                         userShareId={member.shareId}
-                        me={vault.shareId === member.shareId}
+                        me={shareId === member.shareId}
                         owner={member.owner}
                         role={member.shareRoleId}
                         canManage={canManage}
-                        canTransfer={!itemId && vault.owner && hasMultipleOwnedWritableVaults}
+                        canTransfer={canTransfer}
                         itemId={itemId}
                         className="rounded-none"
                     />
