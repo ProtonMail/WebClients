@@ -2,7 +2,6 @@ import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/selec
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
 import { objectFilter } from '@proton/pass/utils/object/filter';
-import { objectMap } from '@proton/pass/utils/object/map';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export const selectCachableState = (state: State) => {
@@ -14,11 +13,7 @@ export const selectCachableState = (state: State) => {
     whiteListedState.items.secureLinks = {};
     whiteListedState.invites = {};
     whiteListedState.user = partialMerge(whiteListedState.user, { devices: [] });
-    whiteListedState.shares = objectMap(whiteListedState.shares, (_, share) => ({
-        ...share,
-        invites: [],
-        newUserInvites: [],
-    }));
+    whiteListedState.access = {};
 
     /** Filter stale request metadata and optimisticIds */
     whiteListedState.items.byOptimisticId = {};
