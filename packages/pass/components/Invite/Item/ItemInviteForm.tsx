@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { InviteStepMembers } from '@proton/pass/components/Invite/Steps/InviteStepMembers';
 import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/InviteStepPermissions';
 import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
-import { type InviteAddressValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
+import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import type { SelectAccessDTO } from '@proton/pass/store/selectors';
 import { selectAccessMembers } from '@proton/pass/store/selectors';

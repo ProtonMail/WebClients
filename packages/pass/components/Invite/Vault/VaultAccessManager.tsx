@@ -1,219 +1,117 @@
-import { type FC, useMemo, useState } from 'react';
+import { type FC, useCallback, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, Icon, Prompt } from '@proton/components';
+import { Icon } from '@proton/components';
+import { AccessLimitPrompt } from '@proton/pass/components/Invite/Access/AccessLimitPrompt';
+import { AccessList } from '@proton/pass/components/Invite/Access/AccessList';
+import { AccessUpgrade } from '@proton/pass/components/Invite/Access/AccessUpgrade';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
-import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { VaultHeading } from '@proton/pass/components/Invite/Vault/VaultHeading';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
+import { PanelFallback } from '@proton/pass/components/Layout/Panel/PanelFallback';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { ShareMember } from '@proton/pass/components/Share/ShareMember';
-import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
-import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
-import { UpsellRef } from '@proton/pass/constants';
+import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
-import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import {
-    selectAccess,
-    selectOwnWritableVaults,
-    selectPassPlan,
-    selectShareOrThrow,
-} from '@proton/pass/store/selectors';
-import type { InviteListItem, ShareType } from '@proton/pass/types';
-import { type ShareMember as ShareMemberType } from '@proton/pass/types';
+import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
+import type { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { sortOn } from '@proton/pass/utils/fp/sort';
 
 type Props = { shareId: string };
 
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createVaultInvite, close } = useInviteActions();
+    const [limitModalOpen, setLimitModalOpen] = useState(false);
+    const loading = useShareAccessOptionsPolling(shareId);
 
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
-    const access = useSelector(selectAccess(shareId));
     const plan = useSelector(selectPassPlan);
-    const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
+    const ownWritableVaults = useSelector(selectOwnWritableVaults);
 
-    const [limitModalOpen, setLimitModalOpen] = useState(false);
-
-    const loading = useShareAccessOptionsPolling(shareId);
+    const access = useShareAccess(shareId);
     const canManage = isShareManageable(vault);
-    const b2b = plan === UserPassPlan.BUSINESS;
+    const canTransfer = vault.owner && ownWritableVaults.length > 1;
 
-    const members = useMemo<ShareMemberType[]>(() => access.members.slice().sort(sortOn('email', 'ASC')), [vault]);
-    const invites = useMemo<InviteListItem[]>(
-        () =>
-            [
-                ...(access.invites ?? []).map((invite) => ({
-                    key: invite.invitedEmail,
-                    type: 'existing' as const,
-                    invite,
-                })),
-                ...(access.newUserInvites ?? []).map((invite) => ({
-                    key: invite.invitedEmail,
-                    type: 'new' as const,
-                    invite,
-                })),
-            ].sort(sortOn('key', 'ASC')),
-        [vault]
-    );
+    const { limitReached, vaultInvites, vaultMembers } = access;
+    const { shared, targetMaxMembers } = vault;
 
-    const memberLimitReached = isMemberLimitReached(vault, access);
+    const onVaultInvite = useCallback(() => {
+        if (limitReached) setLimitModalOpen(true);
+        else createVaultInvite(shareId);
+    }, [limitReached]);
 
-    const warning = (() => {
-        if (canManage && memberLimitReached) {
-            const upgradeLink = (
-                <UpgradeButton
-                    inline
-                    label={c('Action').t`Upgrade now to share with more people`}
-                    upsellRef={UpsellRef.LIMIT_SHARING}
-                    key="access-upgrade-link"
-                />
+    const warning = useMemo(() => {
+        if (canManage && limitReached) {
+            const upgradeLink = <AccessUpgrade />;
+            return (
+                <Card type="primary" className="text-sm">
+                    {plan === UserPassPlan.FREE
+                        ? c('Warning').jt`You have reached the limit of users in this vault. ${upgradeLink}`
+                        : c('Warning').t`You have reached the limit of members who can access this vault.`}
+                </Card>
             );
-            return plan === UserPassPlan.FREE
-                ? c('Warning').jt`You have reached the limit of users in this vault. ${upgradeLink}`
-                : c('Warning').t`You have reached the limit of members who can access this vault.`;
         }
-    })();
+    }, [canManage, limitReached, plan]);
+
+    const actions = [
+        <Button key="modal-close-button" className="shrink-0" icon pill shape="solid" onClick={close}>
+            <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+        </Button>,
+        <Button key="modal-invite-button" color="norm" pill onClick={onVaultInvite} disabled={!canManage}>
+            {c('Action').t`Invite others`}
+        </Button>,
+    ];
+
+    const fallback = c('Info')
+        .t`This vault is not currently shared with anyone. Invite people to share it with others.`;
 
     return (
         <SidebarModal onClose={close} open>
-            <Panel
-                loading={loading}
-                header={
-                    <PanelHeader
-                        actions={[
-                            <Button
-                                key="modal-close-button"
-                                className="shrink-0"
-                                icon
-                                pill
-                                shape="solid"
-                                onClick={close}
-                            >
-                                <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
-                            </Button>,
+            <Panel loading={loading} header={<PanelHeader actions={actions} />}>
+                <PanelFallback when={!shared} fallback={fallback} className="flex flex-column gap-y-3">
+                    <VaultHeading shareId={shareId} />
 
-                            <Button
-                                key="modal-invite-button"
-                                color="norm"
-                                pill
-                                onClick={() =>
-                                    memberLimitReached ? setLimitModalOpen(true) : createVaultInvite(vault.shareId)
-                                }
-                                disabled={!canManage || (plan === UserPassPlan.FREE && memberLimitReached)}
-                            >
-                                {c('Action').t`Invite others`}
-                            </Button>,
-                        ]}
-                    />
-                }
-            >
-                <SharedVaultItem
-                    className="mt-3 mb-6"
-                    color={vault.content.display.color}
-                    icon={vault.content.display.icon}
-                    name={vault.content.name}
-                    shareId={vault.shareId}
-                />
+                    {vaultInvites.length > 0 && (
+                        <AccessList
+                            canManage={canManage}
+                            canTransfer={canTransfer}
+                            invites={vaultInvites}
+                            onInvite={onVaultInvite}
+                            shareId={shareId}
+                            title={c('Label').t`Invitations`}
+                        />
+                    )}
 
-                {vault.shared ? (
-                    <div className="flex flex-column gap-y-3">
-                        {invites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
+                    {vaultMembers.length > 0 && (
+                        <AccessList
+                            canManage={canManage}
+                            canTransfer={canTransfer}
+                            members={vaultMembers}
+                            shareId={shareId}
+                            title={c('Label').t`Members`}
+                        />
+                    )}
 
-                        {invites.map((item) => {
-                            switch (item.type) {
-                                case 'new':
-                                    return (
-                                        <PendingNewMember
-                                            shareId={vault.shareId}
-                                            key={item.key}
-                                            email={item.invite.invitedEmail}
-                                            newUserInviteId={item.invite.newUserInviteId}
-                                            canManage={canManage}
-                                            state={item.invite.state}
-                                        />
-                                    );
-                                case 'existing':
-                                    return (
-                                        <PendingExistingMember
-                                            key={item.key}
-                                            shareId={vault.shareId}
-                                            email={item.invite.invitedEmail}
-                                            inviteId={item.invite.inviteId}
-                                            canManage={canManage}
-                                        />
-                                    );
-                            }
-                        })}
+                    {warning}
 
-                        {members.length > 0 && <span className="color-weak">{c('Label').t`Members`}</span>}
-
-                        {members.map((member) => (
-                            <ShareMember
-                                key={member.email}
-                                email={member.email}
-                                shareId={vault.shareId}
-                                userShareId={member.shareId}
-                                me={vault.shareId === member.shareId}
-                                owner={member.owner}
-                                role={member.shareRoleId}
-                                canManage={canManage}
-                                canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
-                            />
-                        ))}
-                        {warning && (
-                            <Card type="primary" className="text-sm">
-                                {warning}
-                            </Card>
-                        )}
-                    </div>
-                ) : (
-                    <div className="absolute inset-center flex flex-column gap-y-3 text-center color-weak text-sm">
-                        {c('Info')
-                            .t`This vault is not currently shared with anyone. Invite people to share it with others.`}
-                    </div>
-                )}
-
-                <Prompt
-                    buttons={
-                        <Button
-                            pill
-                            onClick={() => setLimitModalOpen(false)}
-                            className="w-full"
-                            shape="solid"
-                            color="weak"
-                        >
-                            {c('Action').t`OK`}
-                        </Button>
-                    }
-                    className="text-left"
-                    onClose={() => setLimitModalOpen(false)}
-                    open={limitModalOpen}
-                    title={c('Title').t`Member limit`}
-                    enableCloseWhenClickOutside
-                >
-                    <Alert className="mb-4 text-sm" type="error">
-                        {b2b ? (
-                            <>
-                                {c('Error').t`Cannot send invitations at the moment`}{' '}
-                                {c('Warning').t`Please contact us to investigate the issue`}
-                            </>
-                        ) : (
+                    <AccessLimitPrompt
+                        open={limitModalOpen}
+                        onClose={() => setLimitModalOpen(false)}
+                        promptText={
                             // translator: full message is "Vaults can’t contain more than 10 users.""
                             c('Success').ngettext(
-                                msgid`Vaults can’t contain more than ${vault.targetMaxMembers} user.`,
-                                `Vaults can’t contain more than ${vault.targetMaxMembers} users.`,
-                                vault.targetMaxMembers
+                                msgid`Vaults can’t contain more than ${targetMaxMembers} user.`,
+                                `Vaults can’t contain more than ${targetMaxMembers} users.`,
+                                targetMaxMembers
                             )
-                        )}
-                    </Alert>
-                </Prompt>
+                        }
+                    />
+                </PanelFallback>
             </Panel>
         </SidebarModal>
     );
