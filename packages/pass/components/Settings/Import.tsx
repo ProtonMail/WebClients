@@ -17,13 +17,13 @@ import {
 } from '@proton/pass/hooks/useImportForm';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
+import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
 import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
-import { getItemsText } from './helper';
 
 export const Import: FC = () => {
     const store = useStore();
@@ -87,12 +87,12 @@ export const Import: FC = () => {
 
                         <div>
                             <span className="color-weak">{c('Label').t`Total items: `}</span>
-                            <span>{getItemsText(totalItems)}</span>
+                            <span>{formatItemsCount(totalItems)}</span>
                         </div>
 
                         <div>
                             <span className="color-weak">{c('Label').t`Total imported items: `}</span>
-                            <span>{getItemsText(totalImportedItems)}</span>
+                            <span>{formatItemsCount(totalImportedItems)}</span>
                         </div>
 
                         {showResultDetails && (

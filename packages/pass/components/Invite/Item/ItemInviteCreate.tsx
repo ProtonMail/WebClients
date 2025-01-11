@@ -1,105 +1,62 @@
-import { type FC, type ReactNode, useEffect, useRef } from 'react';
+import { type FC, type ReactNode } from 'react';
 
-import { Form, FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, type IconName } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
+import type { InviteStepAttributes } from '@proton/pass/components/Invite/Steps/InviteStepActions';
+import { InviteStepActions } from '@proton/pass/components/Invite/Steps/InviteStepActions';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useInviteAddressesValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { validateInvite } from '@proton/pass/lib/validation/invite';
-import {
-    type inviteBatchCreateFailure,
-    inviteBatchCreateIntent,
-    type inviteBatchCreateSuccess,
-} from '@proton/pass/store/actions';
-import { type Callback, type ItemInviteFormValues, type SelectedItem, ShareType } from '@proton/pass/types';
-import noop from '@proton/utils/noop';
+import { useInviteForm } from '@proton/pass/hooks/invite/useInviteForm';
+import { type ItemInviteFormValues, type SelectedItem, ShareType } from '@proton/pass/types';
 
 import { FORM_ID, ItemInviteForm } from './ItemInviteForm';
 
 export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
     const { close, manageItemAccess } = useInviteActions();
-    const validator = useInviteAddressesValidator(shareId ?? '');
-    const emailFieldRef = useRef<HTMLInputElement>(null);
 
-    const createInvite = useActionRequest<
-        typeof inviteBatchCreateIntent,
-        typeof inviteBatchCreateSuccess,
-        typeof inviteBatchCreateFailure
-    >(inviteBatchCreateIntent, {
+    const { form, emailFieldRef, validator, loading } = useInviteForm<ItemInviteFormValues>({
         onSuccess: ({ shareId, itemId }) => manageItemAccess(shareId, itemId!),
-    });
-
-    const form = useFormik<ItemInviteFormValues>({
         initialValues: {
-            step: 'members',
+            itemId,
             members: [],
             shareId,
-            itemId,
             shareType: ShareType.Item,
-        },
-        initialErrors: { members: [] },
-        validateOnChange: true,
-        validate: validateInvite({
-            emailField: emailFieldRef,
-            emailValidationResults: validator?.emails,
-        }),
-        onSubmit: (values, { setFieldValue }) => {
-            if (validator?.loading) return;
-
-            switch (values.step) {
-                case 'members':
-                    return setFieldValue('step', 'permissions');
-                case 'permissions':
-                    return setFieldValue('step', 'review');
-                case 'review':
-                    createInvite.dispatch(values);
-                    break;
-            }
+            step: 'members',
         },
     });
 
-    useEffect(() => {
-        validator
-            ?.validate(form.values.members.map(({ value }) => value.email))
-            .then(() => form.validateForm())
-            .catch(noop);
-    }, [form.values.members, validator]);
-
-    const attributes = ((): {
-        submitText: string;
-        closeAction: Callback;
-        closeLabel: string;
-        closeIcon: IconName;
-    } => {
-        const submitText = c('Action').t`Send invite`;
+    const attributes = ((): InviteStepAttributes => {
+        const submitDisabled = loading || validator?.loading || !form.isValid;
 
         switch (form.values.step) {
-            case 'permissions':
-                return {
-                    closeAction: () => form.setFieldValue('step', 'members'),
-                    closeIcon: 'chevron-left',
-                    closeLabel: c('Action').t`Back`,
-                    submitText,
-                };
-            case 'review':
-                return {
-                    closeAction: () => form.setFieldValue('step', 'permissions'),
-                    closeIcon: 'chevron-left',
-                    closeLabel: c('Action').t`Back`,
-                    submitText,
-                };
             case 'members':
                 return {
                     closeAction: close,
                     closeIcon: 'cross-big',
                     closeLabel: c('Action').t`Close`,
+                    submitDisabled,
                     submitText: c('Action').t`Continue`,
+                };
+            case 'permissions':
+                return {
+                    closeAction: () => form.setFieldValue('step', 'members'),
+                    closeIcon: 'chevron-left',
+                    closeLabel: c('Action').t`Back`,
+                    submitDisabled,
+                    submitText: c('Action').t`Continue`,
+                };
+
+            case 'review':
+                return {
+                    closeAction: () => form.setFieldValue('step', 'permissions'),
+                    closeIcon: 'chevron-left',
+                    closeLabel: c('Action').t`Back`,
+                    submitDisabled,
+                    submitLoading: loading,
+                    submitText: c('Action').t`Share item`,
                 };
         }
     })();
@@ -107,41 +64,7 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
     return (
         <SidebarModal onClose={close} open>
             {(didEnter): ReactNode => (
-                <Panel
-                    loading={createInvite.loading}
-                    header={
-                        <PanelHeader
-                            actions={[
-                                <Button
-                                    className="shrink-0"
-                                    disabled={form.values.step === 'review' && createInvite.loading}
-                                    icon
-                                    key="modal-close-button"
-                                    onClick={attributes.closeAction}
-                                    pill
-                                    shape="solid"
-                                >
-                                    <Icon
-                                        className="modal-close-icon"
-                                        name={attributes.closeIcon}
-                                        alt={attributes.closeLabel}
-                                    />
-                                </Button>,
-                                <Button
-                                    color="norm"
-                                    disabled={createInvite.loading || validator?.loading || !form.isValid}
-                                    form={FORM_ID}
-                                    key="modal-submit-button"
-                                    loading={createInvite.loading}
-                                    pill
-                                    type="submit"
-                                >
-                                    {attributes.submitText}
-                                </Button>,
-                            ]}
-                        />
-                    }
-                >
+                <Panel loading={loading} header={<PanelHeader actions={InviteStepActions(FORM_ID, attributes)} />}>
                     <FormikProvider value={form}>
                         <Form id={FORM_ID} className="flex-1">
                             <ItemInviteForm

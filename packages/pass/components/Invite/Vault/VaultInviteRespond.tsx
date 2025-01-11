@@ -7,8 +7,8 @@ import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/compone
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteStepResponse';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { getItemsText } from '@proton/pass/components/Settings/helper';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
 import { ShareType } from '@proton/pass/types';
 
@@ -52,7 +52,7 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
                 />
                 <div className="text-xl text-bold text-ellipsis max-w-full">{vault.content.name}</div>
                 <div className="color-weak">
-                    <span>{getItemsText(itemCount)}</span>
+                    <span>{formatItemsCount(itemCount)}</span>
                     <span> • </span>
                     <span>
                         {c('Info').ngettext(msgid`${memberCount} member`, `${memberCount} members`, memberCount)}

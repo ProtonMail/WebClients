@@ -64,6 +64,7 @@ export const ShareMember: FC<ShareMemberProps> = ({
     const handleRemoveAccess = () => removeAccess.dispatch({ shareId, itemId, userShareId });
     const handleEditRole = (shareRoleId: ShareRole) =>
         editAccess.dispatch({ shareId, itemId, userShareId, shareRoleId });
+
     const handleTransferOwnership = useConfirm(transferOwnership.dispatch);
 
     const loading = transferOwnership.loading || removeAccess.loading || editAccess.loading;
