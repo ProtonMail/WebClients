@@ -14,7 +14,7 @@ const getActions = () => [
     { role: ShareRole.ADMIN, label: c('Label').t`Make all admins` },
 ];
 
-export const BulkMemberActions: FC<Props> = ({ onRoleChange }) => {
+export const AccessRoleToggle: FC<Props> = ({ onRoleChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -25,6 +25,7 @@ export const BulkMemberActions: FC<Props> = ({ onRoleChange }) => {
                 color="norm"
                 ref={anchorRef}
                 shape="outline"
+                size="small"
                 type="button"
                 title={c('Action').t`Set access level`}
                 style={{ '--text-norm': 'var(--interaction-norm-major-1)' }}

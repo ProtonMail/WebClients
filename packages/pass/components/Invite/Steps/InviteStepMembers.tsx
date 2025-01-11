@@ -7,8 +7,8 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
-import { InviteRecommendations } from '@proton/pass/components/Invite/Members/InviteRecommendations';
-import type { InviteAddressValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
+import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
+import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
 import { type SelectAccessDTO } from '@proton/pass/store/selectors';
@@ -76,9 +76,9 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
         };
 
         return (
-            <div className="anime-fade-in h-full flex flex-column">
+            <div className="anime-fade-in h-full flex flex-column gap-y-3">
                 {heading}
-                <h2 className="text-xl text-bold mb-3">{c('Title').t`Share with`}</h2>
+                <h2 className="text-xl text-bold">{c('Title').t`Share with`}</h2>
 
                 <FieldsetCluster>
                     <Field
@@ -118,7 +118,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                     />
                 </FieldsetCluster>
 
-                <div className="flex flex-nowrap flex-column gap-2 my-3">
+                <div className="flex flex-nowrap flex-column gap-2">
                     {!disabled && (
                         <InviteRecommendations
                             access={access}

@@ -6,14 +6,14 @@ import { c } from 'ttag';
 import { InviteStepMembers } from '@proton/pass/components/Invite/Steps/InviteStepMembers';
 import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/InviteStepPermissions';
 import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
-import { type InviteAddressValidator } from '@proton/pass/hooks/useInviteAddressesValidator';
+import { type InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import type { SelectAccessDTO } from '@proton/pass/store/selectors';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { type VaultInviteFormValues } from '@proton/pass/types';
 
-import { VaultInviteHeader } from './VaultInviteHeader';
+import { VaultHeading } from './VaultHeading';
 
 export const FORM_ID = 'vault-invite';
 
@@ -38,7 +38,7 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
                     access={access}
                     autoFocus={autoFocus}
                     excluded={excluded}
-                    heading={<VaultInviteHeader shareId={shareId} />}
+                    heading={<VaultHeading shareId={shareId} />}
                     members={members}
                     validator={validator}
                     onUpdate={(next) => form.setFieldValue('members', next)}
@@ -47,7 +47,7 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
 
             {step === 'permissions' && (
                 <InviteStepPermissions
-                    heading={<VaultInviteHeader shareId={shareId} />}
+                    heading={<VaultHeading shareId={shareId} />}
                     members={members}
                     onUpdate={(next) => form.setFieldValue('members', next)}
                     onStep={(next) => form.setFieldValue('step', next)}
@@ -56,7 +56,7 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
 
             {step === 'review' && (
                 <InviteStepReview
-                    heading={<VaultInviteHeader shareId={shareId} />}
+                    heading={<VaultHeading shareId={shareId} />}
                     members={members}
                     title={c('Title').t`Vault`}
                 />
