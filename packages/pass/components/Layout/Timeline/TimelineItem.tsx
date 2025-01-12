@@ -19,7 +19,7 @@ export const TimelineItem: FC<PropsWithChildren<Props>> = ({ children, index, to
 
     return (
         <div className="flex items-center flex-nowrap gap-2">
-            {timelineImage && <img src={timelineImage} alt="" className="shrink-0" />}
+            {timelineImage && <img src={timelineImage} alt="" className="shrink-0" width={12} height={72} />}
             {children}
         </div>
     );
