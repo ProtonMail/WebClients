@@ -4,22 +4,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import type { AccessDTO } from '@proton/pass/lib/access/types';
 import { newUserInvitePromoteIntent, newUserInviteRemoveIntent } from '@proton/pass/store/actions';
-import type { NewUserPendingInvite, SelectedShare } from '@proton/pass/types';
-import type { NewUserInvitePromoteIntent } from '@proton/pass/types/data/invites.dto';
+import type { NewUserPendingInvite } from '@proton/pass/types';
 
-type Props = NewUserPendingInvite & SelectedShare;
+type Props = NewUserPendingInvite & AccessDTO;
 
-export const PendingNewUser: FC<Props> = ({ invitedEmail, newUserInviteId, shareId }) => {
+export const PendingNewUser: FC<Props> = ({ invitedEmail, newUserInviteId, shareId, itemId, target }) => {
     const promoteInvite = useActionRequest(newUserInvitePromoteIntent);
     const removeInvite = useActionRequest(newUserInviteRemoveIntent);
     const loading = promoteInvite.loading || removeInvite.loading;
 
-    const handlePromoteInvite = ({ shareId, newUserInviteId }: NewUserInvitePromoteIntent) =>
-        promoteInvite.dispatch({ shareId, newUserInviteId });
-
-    const handleRemoveInvite = ({ shareId, newUserInviteId }: NewUserInvitePromoteIntent) =>
-        removeInvite.dispatch({ shareId, newUserInviteId });
+    const promote = () => promoteInvite.dispatch({ shareId, newUserInviteId, itemId, target });
+    const remove = () => removeInvite.dispatch({ shareId, newUserInviteId, itemId, target });
 
     return (
         <div className="flex items-center gap-2">
@@ -34,7 +31,7 @@ export const PendingNewUser: FC<Props> = ({ invitedEmail, newUserInviteId, share
                 className="text-sm shrink-0"
                 loading={removeInvite.loading}
                 disabled={loading}
-                onClick={() => handleRemoveInvite({ shareId, newUserInviteId })}
+                onClick={remove}
             >
                 {c('Action').t`Remove access`}
             </Button>
@@ -46,7 +43,7 @@ export const PendingNewUser: FC<Props> = ({ invitedEmail, newUserInviteId, share
                 className="text-sm shrink-0"
                 loading={promoteInvite.loading}
                 disabled={loading}
-                onClick={() => handlePromoteInvite({ shareId, newUserInviteId })}
+                onClick={promote}
             >
                 {c('Action').t`Confirm access`}
             </Button>
