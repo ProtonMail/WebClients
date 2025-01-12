@@ -1,5 +1,6 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
+import type { AccessItem } from '@proton/pass/lib/access/types';
 import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { loadInvites, promoteInvite } from '@proton/pass/lib/invites/invite.requests';
@@ -8,9 +9,8 @@ import {
     newUserInvitePromoteIntent,
     newUserInvitePromoteSuccess,
 } from '@proton/pass/store/actions';
-import type { AccessItem } from '@proton/pass/store/reducers';
 import { selectAccessOrThrow } from '@proton/pass/store/selectors';
-import { type Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 
 function* promoteInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInvitePromoteIntent>) {
     try {
@@ -23,9 +23,9 @@ function* promoteInviteWorker({ payload, meta: { request } }: ReturnType<typeof 
         const invitedPublicKey: Maybe<string> = yield getPrimaryPublicKeyForEmail(newUserInvite.invitedEmail);
         if (!invitedPublicKey) throw new Error();
 
-        yield promoteInvite({ invitedPublicKey, newUserInviteId, shareId });
+        yield promoteInvite({ ...payload, invitedPublicKey });
         const invites: InviteData = yield loadInvites(shareId);
-        yield put(newUserInvitePromoteSuccess(request.id, shareId, invites));
+        yield put(newUserInvitePromoteSuccess(request.id, { ...payload, ...invites }));
     } catch (err) {
         yield put(newUserInvitePromoteFailure(request.id, err));
     }

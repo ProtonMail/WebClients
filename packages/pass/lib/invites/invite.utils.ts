@@ -1,4 +1,11 @@
-import type { Result } from '@proton/pass/types';
+import { isItemTarget } from '@proton/pass/lib/access/access.predicates';
+import type { NewUserPendingInvite } from '@proton/pass/types';
+import { type InviteBase, NewUserInviteState, type Result } from '@proton/pass/types';
+import { and } from '@proton/pass/utils/fp/predicates';
+
+export const isTargetInvite = (targetId: string) => (invite: InviteBase) => invite.targetId === targetId;
+export const isItemInviteForItem = (itemId: string) => and(isItemTarget, isTargetInvite(itemId));
+export const isInviteReady = (invite: NewUserPendingInvite) => invite.state === NewUserInviteState.READY;
 
 export type InviteBatchResult = Result<{}, { failed: string[] }>;
 
