@@ -1,18 +1,6 @@
-import type { NewUserPendingInvite, PendingInvite, ShareMember } from './invites';
+import type { AccessDTO, AccessItem, AccessKeys } from '@proton/pass/lib/access/types';
 import type { ShareRole } from './shares';
 
-export type ShareRemoveMemberAccessIntent = { shareId: string; itemId?: string; userShareId: string };
-export type ShareEditMemberAccessIntent = {
-    shareId: string;
-    itemId?: string;
-    userShareId: string;
-    shareRoleId: ShareRole;
-};
-
-export type ShareAccessOptions = {
-    shareId: string;
-    itemId?: string;
-    invites?: PendingInvite[];
-    newUserInvites?: NewUserPendingInvite[];
-    members: ShareMember[];
-};
+export type ShareRemoveMemberAccessIntent = AccessDTO & { userShareId: string };
+export type ShareEditMemberAccessIntent = AccessDTO & { userShareId: string; shareRoleId: ShareRole };
+export type ShareAccessResult = AccessItem & AccessKeys;

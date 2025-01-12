@@ -1,6 +1,7 @@
 import type { Action, Reducer } from 'redux';
 
 import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
+import type { AccessItem } from '@proton/pass/lib/access/types';
 import {
     getShareAccessOptions,
     inviteRemoveSuccess,
@@ -10,101 +11,78 @@ import {
     shareRemoveMemberAccessSuccess,
     vaultTransferOwnershipSuccess,
 } from '@proton/pass/store/actions';
-import type { NewUserPendingInvite, PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { type Maybe } from '@proton/pass/types/utils';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
-export type AccessItem = {
-    invites: PendingInvite[];
-    newUserInvites: NewUserPendingInvite[];
-    members: ShareMember[];
+export type AccessState = { [accessKey: string]: Maybe<AccessItem> };
+
+const updateAccess = (state: AccessState) => (accessKey: string, update: Partial<AccessItem>) => {
+    const access = state[accessKey];
+    if (!access) return state;
+
+    return partialMerge(state, { [accessKey]: update });
 };
 
-export type AccessState = { [shareKey: string]: Maybe<AccessItem> };
-
 export const access: Reducer<AccessState> = (state = {}, action: Action) => {
+    if (getShareAccessOptions.success.match(action)) return partialMerge(state, action.payload);
+
     if (vaultTransferOwnershipSuccess.match(action)) {
-        const shareKey = toShareAccessKey(action.payload);
         const { userShareId } = action.payload;
+        const accessKey = toShareAccessKey(action.payload);
 
-        const members = (state[shareKey]?.members ?? []).map((member) => {
-            if (member.owner) return { ...member, owner: false };
-            if (member.shareId === userShareId) return { ...member, owner: true };
-            return member;
+        return updateAccess(state)(accessKey, {
+            members: (state[accessKey]?.members ?? []).map((member) => {
+                if (member.owner) return { ...member, owner: false };
+                if (member.shareId === userShareId) return { ...member, owner: true };
+                return member;
+            }),
         });
-
-        return partialMerge(state, { [shareKey]: { members } });
     }
 
     if (newUserInvitePromoteSuccess.match(action)) {
-        const shareKey = toShareAccessKey(action.payload);
         const { invites, newUserInvites } = action.payload;
-        return partialMerge(state, {
-            [shareKey]: {
-                invites,
-                newUserInvites,
-            },
-        });
+        const accessKey = toShareAccessKey(action.payload);
+
+        return updateAccess(state)(accessKey, { invites, newUserInvites });
     }
 
     if (inviteRemoveSuccess.match(action)) {
-        const shareKey = toShareAccessKey(action.payload);
         const { inviteId } = action.payload;
-        const { invites = [] } = state[shareKey] ?? {};
+        const accessKey = toShareAccessKey(action.payload);
 
-        const update = invites.filter((invite) => invite.inviteId !== inviteId);
-
-        return partialMerge(state, { [shareKey]: { invites: update } });
-    }
-
-    if (newUserInviteRemoveSuccess.match(action)) {
-        const shareKey = toShareAccessKey(action.payload);
-        const { newUserInviteId } = action.payload;
-        const { newUserInvites = [] } = state[shareKey] ?? {};
-
-        const update = newUserInvites.filter((invite) => invite.newUserInviteId !== newUserInviteId);
-
-        return partialMerge(state, {
-            [shareKey]: {
-                newUserInvites: update,
-            },
+        return updateAccess(state)(accessKey, {
+            invites: (state[accessKey]?.invites ?? []).filter((invite) => invite.inviteId !== inviteId),
         });
     }
 
-    if (getShareAccessOptions.success.match(action)) {
-        const shareKey = toShareAccessKey(action.payload);
-        const { invites = [], newUserInvites = [], members = [] } = action.payload;
+    if (newUserInviteRemoveSuccess.match(action)) {
+        const { newUserInviteId } = action.payload;
+        const accessKey = toShareAccessKey(action.payload);
 
-        return partialMerge(state, {
-            [shareKey]: {
-                invites,
-                members,
-                newUserInvites,
-            },
+        return updateAccess(state)(accessKey, {
+            newUserInvites: (state[accessKey]?.newUserInvites ?? []).filter(
+                (invite) => invite.newUserInviteId !== newUserInviteId
+            ),
         });
     }
 
     if (shareEditMemberAccessSuccess.match(action)) {
-        const shareKey = toShareAccessKey(action.payload);
         const { userShareId, shareRoleId } = action.payload;
-        const members = state[shareKey]?.members ?? [];
+        const accessKey = toShareAccessKey(action.payload);
 
-        return partialMerge(state, {
-            [shareKey]: {
-                members: members.map<ShareMember>((member) =>
-                    member.shareId === userShareId ? { ...member, shareRoleId } : member
-                ),
-            },
+        return updateAccess(state)(accessKey, {
+            members: (state[accessKey]?.members ?? []).map((member) =>
+                member.shareId === userShareId ? { ...member, shareRoleId } : member
+            ),
         });
     }
 
     if (shareRemoveMemberAccessSuccess.match(action)) {
-        const shareKey = toShareAccessKey(action.payload);
         const { userShareId } = action.payload;
-        return partialMerge(state, {
-            [shareKey]: {
-                members: (state[shareKey]?.members ?? []).filter(({ shareId }) => shareId !== userShareId),
-            },
+        const accessKey = toShareAccessKey(action.payload);
+
+        return updateAccess(state)(accessKey, {
+            members: (state[accessKey]?.members ?? []).filter(({ shareId }) => shareId !== userShareId),
         });
     }
 
