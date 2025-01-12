@@ -10,7 +10,8 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useInviteForm } from '@proton/pass/hooks/invite/useInviteForm';
-import { type ItemInviteFormValues, type SelectedItem, ShareType } from '@proton/pass/types';
+import { AccessTarget } from '@proton/pass/lib/access/types';
+import { type ItemInviteFormValues, type SelectedItem } from '@proton/pass/types';
 
 import { FORM_ID, ItemInviteForm } from './ItemInviteForm';
 
@@ -23,7 +24,7 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
             itemId,
             members: [],
             shareId,
-            shareType: ShareType.Item,
+            target: AccessTarget.Item,
             step: 'members',
         },
     });

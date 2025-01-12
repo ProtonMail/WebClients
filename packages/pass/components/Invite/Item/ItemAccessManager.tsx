@@ -17,11 +17,15 @@ import { PanelFallback } from '@proton/pass/components/Layout/Panel/PanelFallbac
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
+import { isItemTarget, isVaultTarget } from '@proton/pass/lib/access/access.predicates';
+import { AccessTarget } from '@proton/pass/lib/access/types';
 import { isShared } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectItem, selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { SelectedItem } from '@proton/pass/types';
+import { type SelectedItem } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
     const { createItemInvite, createVaultInvite, close } = useInviteActions();
@@ -34,11 +38,19 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
     const ownWritableVaults = useSelector(selectOwnWritableVaults);
 
     const access = useShareAccess(shareId, itemId);
+
+    const vaultShare = isVaultShare(share);
     const canManage = isShareManageable(share);
     const canTransfer = !itemId && share.owner && ownWritableVaults.length > 1;
+    const { limitReached } = access;
 
-    const { itemInvites, itemMembers, itemAccessCount, limitReached } = access;
-    const { vaultInvites, vaultMembers, vaultAccessCount } = access;
+    const itemInvites = useMemo(() => access.invites.filter(pipe(prop('invite'), isItemTarget)), [access]);
+    const itemMembers = useMemo(() => access.members.filter(isItemTarget), [access]);
+    const itemAccessCount = itemInvites.length + itemMembers.length;
+
+    const vaultInvites = useMemo(() => access.invites.filter(pipe(prop('invite'), isVaultTarget)), [access]);
+    const vaultMembers = useMemo(() => access.members.filter(isVaultTarget), [access]);
+    const vaultAccessCount = vaultInvites.length + vaultMembers.length;
 
     /** From the perspective of the owner, the item is also
      * considered shared if the parent vault is shared even
@@ -79,19 +91,19 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
     return (
         <SidebarModal onClose={close} open>
             <Panel loading={loading} header={<PanelHeader actions={actions} />}>
-                <PanelFallback when={!shared} fallback={fallback}>
-                    <h2 className="text-xl text-bold mb-6">{c('Title').t`Shared via`}</h2>
+                <PanelFallback when={!shared} fallback={fallback} className="flex flex-column gap-y-3 flex-nowrap">
+                    <h2 className="text-xl text-bold">{c('Title').t`Shared via`}</h2>
 
                     {itemAccessCount > 0 && (
                         <AccessList
                             canManage={canManage}
                             canTransfer={false}
-                            className="mb-6"
                             invites={itemInvites}
                             itemId={itemId}
                             members={itemMembers}
                             onInvite={onItemInvite}
                             shareId={shareId}
+                            target={AccessTarget.Item}
                             title={c('Info').ngettext(
                                 msgid`Item sharing: ${itemAccessCount} member`,
                                 `Item sharing: ${itemAccessCount} members`,
@@ -100,18 +112,17 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                         />
                     )}
 
-                    {isVaultShare(share) && vaultAccessCount > 0 && (
-                        /** This section should only be visible when opening
-                         * the item access manager view from the owner's side */
+                    {vaultAccessCount > 0 && (
                         <AccessList
-                            canManage={canManage}
-                            canTransfer={canTransfer}
-                            heading={<VaultHeading shareId={shareId} />}
+                            canManage={vaultShare && canManage}
+                            canTransfer={vaultShare && canTransfer}
+                            heading={vaultShare && <VaultHeading shareId={shareId} />}
                             invites={vaultInvites}
                             itemId={itemId}
                             members={vaultMembers}
-                            onInvite={onVaultInvite}
+                            onInvite={vaultShare ? onVaultInvite : undefined}
                             shareId={shareId}
+                            target={AccessTarget.Vault}
                             title={c('Info').ngettext(
                                 msgid`Vault sharing: ${vaultAccessCount} member`,
                                 `Vault sharing: ${vaultAccessCount} members`,

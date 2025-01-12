@@ -7,6 +7,7 @@ import { Info } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import type { AccessDTO } from '@proton/pass/lib/access/types';
 import {
     inviteRemoveIntent,
     inviteResendIntent,
@@ -18,9 +19,10 @@ import clsx from '@proton/utils/clsx';
 
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 
-type PendingMemberBase = { canManage: boolean; email: string; shareId: string; itemId?: string; className?: string };
+type PendingMemberBase = AccessDTO & { canManage: boolean; email: string; className?: string };
 type PendingExistingMemberProps = PendingMemberBase & { inviteId: string };
 type PendingNewMemberProps = PendingMemberBase & { newUserInviteId: string; state: NewUserInviteState };
+
 type SharePendingMemberProps = {
     actions?: ReactNode[];
     email: string;
@@ -57,17 +59,18 @@ export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email
 
 export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
     canManage,
+    className,
     email,
     inviteId,
-    shareId,
     itemId,
-    className,
+    shareId,
+    target,
 }) => {
     const resendInvite = useActionRequest(inviteResendIntent);
     const removeInvite = useActionRequest(inviteRemoveIntent);
 
-    const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
-    const handleRemoveInvite = () => removeInvite.dispatch({ shareId, itemId, inviteId });
+    const resend = () => resendInvite.dispatch({ shareId, itemId, inviteId, target });
+    const remove = () => removeInvite.dispatch({ shareId, itemId, inviteId, target });
     const loading = resendInvite.loading || removeInvite.loading;
 
     return (
@@ -81,7 +84,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
                               key="resend"
                               label={c('Action').t`Resend invitation`}
                               icon={'paper-plane'}
-                              onClick={handleResendInvite}
+                              onClick={resend}
                               disabled={loading}
                           />,
 
@@ -90,7 +93,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
                               label={c('Action').t`Remove access`}
                               icon="circle-slash"
                               danger
-                              onClick={handleRemoveInvite}
+                              onClick={remove}
                               disabled={loading}
                           />,
                       ]
@@ -105,15 +108,17 @@ export const PendingNewMember: FC<PendingNewMemberProps> = ({
     canManage,
     email,
     shareId,
+    itemId,
     state,
     newUserInviteId,
     className,
+    target,
 }) => {
     const promoteInvite = useActionRequest(newUserInvitePromoteIntent);
     const removeInvite = useActionRequest(newUserInviteRemoveIntent);
 
-    const handlePromoteInvite = () => promoteInvite.dispatch({ shareId, newUserInviteId });
-    const handleRemoveInvite = () => removeInvite.dispatch({ shareId, newUserInviteId });
+    const promote = () => promoteInvite.dispatch({ shareId, itemId, newUserInviteId, target });
+    const remove = () => removeInvite.dispatch({ shareId, itemId, newUserInviteId, target });
     const loading = promoteInvite.loading || removeInvite.loading;
 
     return (
@@ -128,7 +133,7 @@ export const PendingNewMember: FC<PendingNewMemberProps> = ({
                               label={c('Action').t`Remove access`}
                               icon="circle-slash"
                               danger
-                              onClick={handleRemoveInvite}
+                              onClick={remove}
                               disabled={loading}
                           />,
                       ]
@@ -144,7 +149,7 @@ export const PendingNewMember: FC<PendingNewMemberProps> = ({
                         className="w-full text-sm mt-2"
                         disabled={loading}
                         loading={promoteInvite.loading}
-                        onClick={handlePromoteInvite}
+                        onClick={promote}
                     >
                         {c('Action').t`Confirm access`}
                     </Button>

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { SelectAccessDTO } from '@proton/pass/store/selectors';
+import type { AccessKeys } from '@proton/pass/lib/access/types';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { Result, SelectedItem, SelectedShare } from '@proton/pass/types';
 import { type MaybeNull, ShareType } from '@proton/pass/types';
@@ -25,7 +25,7 @@ type InviteContextState =
     | ({ view: 'manage-vault' } & SelectedShare)
     | ({ view: 'manage-item' } & SelectedItem);
 
-export type InviteResponseDTO = Result<SelectAccessDTO, {}>;
+export type InviteResponseDTO = Result<AccessKeys, {}>;
 
 type InviteActionsContextValue = {
     close: () => void;

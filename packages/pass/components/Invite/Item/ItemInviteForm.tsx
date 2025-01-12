@@ -8,7 +8,7 @@ import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/Invi
 import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import type { SelectAccessDTO } from '@proton/pass/store/selectors';
+import type { AccessKeys } from '@proton/pass/lib/access/types';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
 import type { ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
 
@@ -24,8 +24,8 @@ type Props = {
 
 export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoFocus, validator }, fieldRef) => {
     const { step, members, shareId, itemId } = form.values;
-    const access = useMemo<SelectAccessDTO>(() => ({ shareId, itemId }), [shareId, itemId]);
     const excluded = useMemoSelector(selectAccessMembers, [shareId, itemId]);
+    const access = useMemo<AccessKeys>(() => ({ shareId, itemId }), [shareId, itemId]);
 
     return (
         <>

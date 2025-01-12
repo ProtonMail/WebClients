@@ -9,16 +9,16 @@ import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListFiel
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
+import type { AccessKeys } from '@proton/pass/lib/access/types';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
-import { type SelectAccessDTO } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
 import { type InviteFormValues, ShareRole } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 type Props = {
-    access: SelectAccessDTO;
+    access: AccessKeys;
     autoFocus?: boolean;
     disabled?: boolean;
     excluded: Set<string>;

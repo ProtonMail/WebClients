@@ -6,12 +6,12 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { Checkbox } from '@proton/components';
+import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
-import { ShareMemberAvatar } from '@proton/pass/components/Share/ShareMemberAvatar';
 import { useInviteRecommendations } from '@proton/pass/hooks/invite/useInviteRecommendations';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
-import type { SelectAccessDTO } from '@proton/pass/store/selectors';
+import type { AccessKeys } from '@proton/pass/lib/access/types';
 import { selectDefaultVault } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -21,7 +21,7 @@ type Props = {
     autocomplete: string;
     excluded: Set<string>;
     selected: Set<string>;
-    access?: SelectAccessDTO;
+    access?: AccessKeys;
     onToggle: (email: string, selected: boolean) => void;
 };
 
@@ -86,7 +86,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
 
             <div
                 className="flex-1 min-h-custom overflow-hidden rounded-lg"
-                style={{ '--min-h-custom': 'calc(100vh - 250px' }}
+                style={{ '--min-h-custom': 'calc(100vh - 300px)' }}
             >
                 {displayedEmails.length === 0 && !loading ? (
                     <em className="color-weak anime-fade-in"> {c('Warning').t`No results`}</em>
