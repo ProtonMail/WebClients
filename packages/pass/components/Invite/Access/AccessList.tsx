@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/index';
 import { Icon } from '@proton/components/index';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { ShareMember } from '@proton/pass/components/Share/ShareMember';
-import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
-import type { SelectAccessDTO } from '@proton/pass/store/selectors';
+import { ShareMember } from '@proton/pass/components/Invite/Member/ShareMember';
+import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Invite/Member/SharePendingMember';
+import type { AccessDTO } from '@proton/pass/lib/access/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
@@ -17,7 +17,7 @@ export type InviteListItem =
     | { key: string; type: 'existing'; invite: PendingInvite }
     | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
-type Props = SelectAccessDTO & {
+type Props = AccessDTO & {
     canManage: boolean;
     canTransfer: boolean;
     className?: string;
@@ -37,6 +37,7 @@ export const AccessList: FC<Props> = ({
     itemId,
     members,
     shareId,
+    target,
     title,
     onInvite,
 }) => {
@@ -67,26 +68,28 @@ export const AccessList: FC<Props> = ({
                         case 'new':
                             return (
                                 <PendingNewMember
-                                    shareId={shareId}
                                     key={item.key}
-                                    email={item.invite.invitedEmail}
-                                    newUserInviteId={item.invite.newUserInviteId}
                                     canManage={canManage}
-                                    state={item.invite.state}
-                                    itemId={itemId}
                                     className="rounded-none"
+                                    email={item.invite.invitedEmail}
+                                    itemId={itemId}
+                                    newUserInviteId={item.invite.newUserInviteId}
+                                    shareId={shareId}
+                                    state={item.invite.state}
+                                    target={target}
                                 />
                             );
                         case 'existing':
                             return (
                                 <PendingExistingMember
                                     key={item.key}
-                                    shareId={shareId}
+                                    canManage={canManage}
+                                    className="rounded-none"
                                     email={item.invite.invitedEmail}
                                     inviteId={item.invite.inviteId}
-                                    canManage={canManage}
                                     itemId={itemId}
-                                    className="rounded-none"
+                                    shareId={shareId}
+                                    target={target}
                                 />
                             );
                     }
@@ -95,16 +98,17 @@ export const AccessList: FC<Props> = ({
                 {members?.map((member) => (
                     <ShareMember
                         key={member.email}
+                        canManage={canManage}
+                        canTransfer={canTransfer}
+                        className="rounded-none"
                         email={member.email}
-                        shareId={shareId}
-                        userShareId={member.shareId}
+                        itemId={itemId}
                         me={shareId === member.shareId}
                         owner={member.owner}
                         role={member.shareRoleId}
-                        canManage={canManage}
-                        canTransfer={canTransfer}
-                        itemId={itemId}
-                        className="rounded-none"
+                        shareId={shareId}
+                        target={target}
+                        userShareId={member.shareId}
                     />
                 ))}
             </FieldsetCluster>

@@ -2,9 +2,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import type { AccessKeys } from '@proton/pass/lib/access/types';
 import type { inviteRecommendationsFailure, inviteRecommendationsSuccess } from '@proton/pass/store/actions';
 import { getShareAccessOptions, inviteRecommendationsIntent } from '@proton/pass/store/actions';
-import type { SelectAccessDTO } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import type { InviteRecommendationsIntent, InviteRecommendationsSuccess } from '@proton/pass/types/data/invites.dto';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -12,11 +12,7 @@ import debounce from '@proton/utils/debounce';
 
 type InviteRecommendationsState = Omit<InviteRecommendationsSuccess, 'startsWith'> & { loading: boolean };
 
-export const useInviteRecommendations = (
-    { shareId, itemId }: SelectAccessDTO,
-    startsWith: string,
-    pageSize: number
-) => {
+export const useInviteRecommendations = ({ shareId, itemId }: AccessKeys, startsWith: string, pageSize: number) => {
     const dispatch = useDispatch();
 
     /** Keep a unique requestId per mount to allow multiple components

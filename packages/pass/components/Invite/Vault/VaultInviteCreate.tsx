@@ -11,9 +11,10 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useInviteForm } from '@proton/pass/hooks/invite/useInviteForm';
+import { AccessTarget } from '@proton/pass/lib/access/types';
 import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { SelectedShare } from '@proton/pass/types';
-import { ShareType, type VaultInviteFormValues } from '@proton/pass/types';
+import type { SelectedShare, ShareType } from '@proton/pass/types';
+import { type VaultInviteFormValues } from '@proton/pass/types';
 
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
@@ -26,7 +27,7 @@ export const VaultInviteCreate: FC<SelectedShare> = ({ shareId }) => {
         initialValues: {
             step: 'members',
             members: [],
-            shareType: ShareType.Vault,
+            target: AccessTarget.Vault,
             shareId,
         },
     });

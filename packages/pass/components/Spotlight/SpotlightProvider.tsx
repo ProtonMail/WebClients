@@ -6,8 +6,8 @@ import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteActions, useLatestInvite } from '@proton/pass/components/Invite/InviteProvider';
-import { PendingNewUsersApprovalModal } from '@proton/pass/components/Share/PendingNewUsersApprovalModal';
-import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
+import { PendingNewUsersApprovalModal } from '@proton/pass/components/Invite/Member/PendingNewUsersApprovalModal';
+import { PendingShareAccessModal } from '@proton/pass/components/Invite/Member/PendingShareAccessModal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
