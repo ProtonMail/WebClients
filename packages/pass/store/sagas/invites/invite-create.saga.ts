@@ -1,6 +1,7 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
+import { AccessTarget } from '@proton/pass/lib/access/types';
 import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
 import { createNewUserInvites, createUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
@@ -13,7 +14,6 @@ import {
 import { selectAccessMembers, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import type { InviteMemberDTO, InviteUserDTO } from '@proton/pass/types/data/invites.dto';
 import { partition } from '@proton/pass/utils/array/partition';
@@ -28,7 +28,7 @@ function* createInviteWorker(
 
     try {
         const shareId = payload.shareId;
-        const itemId: Maybe<string> = payload.shareType === ShareType.Item ? payload.itemId : undefined;
+        const itemId: Maybe<string> = payload.target === AccessTarget.Item ? payload.itemId : undefined;
 
         /** Filter out members that may be already invited or members of the vault */
         const currentMembers: Set<string> = yield select(selectAccessMembers(shareId, itemId));
@@ -57,6 +57,7 @@ function* createInviteWorker(
         const totalFailure = !results.ok && results.failed.length === members.length;
         const batchFailures = results.ok ? 0 : results.failed.length;
         const hasFailures = !results.ok && batchFailures > 0;
+        const invitesCount = members.length - batchFailures;
 
         if (totalFailure) throw new Error(results.error ?? 'Unknown error');
 
@@ -70,7 +71,6 @@ function* createInviteWorker(
             });
         }
 
-        const invitesCount = members.length - batchFailures;
         yield put(inviteBatchCreateSuccess(request.id, { shareId, itemId, count: invitesCount }));
     } catch (error: unknown) {
         yield put(inviteBatchCreateFailure(request.id, error, count));

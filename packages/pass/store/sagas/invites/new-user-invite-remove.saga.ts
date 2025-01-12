@@ -10,7 +10,7 @@ import {
 function* removeInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInviteRemoveIntent>) {
     try {
         yield removeNewUserInvite(payload);
-        yield put(newUserInviteRemoveSuccess(request.id, payload.shareId, payload.newUserInviteId));
+        yield put(newUserInviteRemoveSuccess(request.id, payload));
     } catch (err) {
         yield put(newUserInviteRemoveFailure(request.id, err));
     }

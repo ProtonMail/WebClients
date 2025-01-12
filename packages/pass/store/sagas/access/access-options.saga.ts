@@ -1,38 +1,57 @@
 import { select } from 'redux-saga/effects';
 
+import { isVaultTarget } from '@proton/pass/lib/access/access.predicates';
+import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { loadInvites } from '@proton/pass/lib/invites/invite.requests';
+import { isItemInviteForItem } from '@proton/pass/lib/invites/invite.utils';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { loadShareItemMembers, loadShareMembers } from '@proton/pass/lib/shares/share.requests';
 import { getShareAccessOptions } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import { ShareType } from '@proton/pass/types';
-import type { InviteBase, ShareMember } from '@proton/pass/types/data/invites';
+import { type ShareMember } from '@proton/pass/types/data/invites';
+import { or } from '@proton/pass/utils/fp/predicates';
 
-/** Only the owner or the manager of a share can manage the invites.
- * Only request the members if the share is actually shared. */
+/** Access options resolution may duplicate member/invite data across
+ * different `accessKeys` in the state tree. This is an accepted trade-off:
+ * BE responses are context-specific (vault vs item), mutations are rare,
+ * and it simplifies UI selection by avoiding share/item state reconciliation.
+ * Fresh data is guaranteed through revalidation and lack of caching */
 const shareAccessOptions = createRequestSaga({
     actions: getShareAccessOptions,
     call: function* ({ shareId, itemId }) {
         const share: ShareItem = yield select(selectShareOrThrow(shareId));
+        const canManage = isShareManageable(share);
+        const allInvites: Partial<InviteData> = canManage ? yield loadInvites(shareId) : {};
+        const { invites = [], newUserInvites = [] } = allInvites;
 
-        const members: ShareMember[] = !itemId
-            ? yield loadShareMembers(shareId)
-            : yield loadShareItemMembers(shareId, itemId);
+        if (itemId !== undefined) {
+            const members: ShareMember[] = yield loadShareItemMembers(shareId, itemId!);
+            const itemAccessKey = toShareAccessKey({ shareId, itemId });
 
-        const inviteData: Partial<InviteData> = isShareManageable(share) ? yield loadInvites(shareId) : {};
-        const inviteFilter = itemId
-            ? ({ targetType, targetId }: InviteBase) => targetType === ShareType.Item && targetId === itemId
-            : ({ targetType }: InviteBase) => targetType === ShareType.Vault;
+            return {
+                [itemAccessKey]: {
+                    members: members,
+                    invites: invites.filter(or(isVaultTarget, isItemInviteForItem(itemId!))),
+                    newUserInvites: newUserInvites.filter(or(isVaultTarget, isItemInviteForItem(itemId!))),
+                },
+            };
+        }
 
-        const invites: Partial<InviteData> = {
-            invites: inviteData.invites?.filter(inviteFilter),
-            newUserInvites: inviteData.newUserInvites?.filter(inviteFilter),
+        const members: ShareMember[] = yield loadShareMembers(shareId);
+        const vaultAccessKey = toShareAccessKey({ shareId });
+        const vaultInvites = invites.filter(isVaultTarget);
+        const vaultnewUserInvites = newUserInvites.filter(isVaultTarget);
+
+        return {
+            [vaultAccessKey]: {
+                members,
+                invites: vaultInvites,
+                newUserInvites: vaultnewUserInvites,
+            },
         };
-
-        return { shareId, itemId, members, ...invites };
     },
 });
 
