@@ -28,7 +28,7 @@ import {
     setItemFlags,
 } from '@proton/pass/store/actions';
 import { selectIsOptimisticId, selectOptimisticFailedAction, selectShare } from '@proton/pass/store/selectors';
-import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
+import type { ItemType, SelectedItem } from '@proton/pass/types';
 
 const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     login: LoginView,
@@ -51,7 +51,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
     const optimisticResolved = useSelector(selectIsOptimisticId(itemId));
     const failure = useMemoSelector(selectOptimisticFailedAction, [optimisticItemId]);
 
-    const share = useSelector(selectShare<ShareType.Vault>(shareId));
+    const share = useSelector(selectShare(shareId));
     const item = useOptimisticItem(shareId, itemId);
 
     /* if vault or item cannot be found : redirect to base path */
