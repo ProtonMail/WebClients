@@ -104,8 +104,24 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
         />
     );
 
+    const onManageItem = free
+        ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })
+        : handleManageClick;
+
+    const onSecureLink = free
+        ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.SECURE_LINKS })
+        : handleSecureLinkClick;
+
+    const onItemShare = free
+        ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })
+        : () => {
+              void spotlight.acknowledge(SpotlightMessage.ITEM_SHARING);
+              setSignalItemSharing(false);
+              handleShareItemClick();
+          };
+
     const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
-    const showItemSharing = itemSharingEnabled && type !== 'alias' && isOwnerOrAdmin;
+    const showSharing = type !== 'alias' && isOwnerOrAdmin && (itemSharingEnabled || isVault);
 
     return (
         <Panel
@@ -175,7 +191,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             ...actions,
 
-                            showItemSharing && (
+                            showSharing && (
                                 <QuickActionsDropdown
                                     key="share-item-button"
                                     color="norm"
@@ -193,46 +209,29 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         maxWidth: '20rem',
                                     }}
                                 >
-                                    <DropdownMenuButton
-                                        onClick={
-                                            free
-                                                ? () =>
-                                                      upsell({
-                                                          type: 'pass-plus',
-                                                          upsellRef: UpsellRef.ITEM_SHARING,
-                                                      })
-                                                : () => {
-                                                      void spotlight.acknowledge(SpotlightMessage.ITEM_SHARING);
-                                                      setSignalItemSharing(false);
-                                                      handleShareItemClick();
-                                                  }
-                                        }
-                                        label={
-                                            <DropdownMenuLabel
-                                                title={c('Action').t`With other ${BRAND_NAME} users`}
-                                                subtitle={c('Label').t`Useful for permanent sharing`}
-                                            />
-                                        }
-                                        icon="link"
-                                        extra={
-                                            (free && <PassPlusPromotionButton className="ml-2" />) ||
-                                            (signalItemSharing && <Badge type="info">{c('Label').t`New`}</Badge>)
-                                        }
-                                    />
+                                    {itemSharingEnabled && (
+                                        <DropdownMenuButton
+                                            onClick={onItemShare}
+                                            label={
+                                                <DropdownMenuLabel
+                                                    title={c('Action').t`With other ${BRAND_NAME} users`}
+                                                    subtitle={c('Label').t`Useful for permanent sharing`}
+                                                />
+                                            }
+                                            icon="link"
+                                            extra={
+                                                (free && <PassPlusPromotionButton className="ml-2" />) ||
+                                                (signalItemSharing && <Badge type="info">{c('Label').t`New`}</Badge>)
+                                            }
+                                        />
+                                    )}
+
                                     {/** NOTE: disabling secure links for non-vault shares
                                      * until we start using the `itemKey` to encrypt the
                                      * `secureLinkKey` with */}
                                     {isVault && (
                                         <DropdownMenuButton
-                                            onClick={
-                                                free
-                                                    ? () =>
-                                                          upsell({
-                                                              type: 'pass-plus',
-                                                              upsellRef: UpsellRef.SECURE_LINKS,
-                                                          })
-                                                    : handleSecureLinkClick
-                                            }
+                                            onClick={onSecureLink}
                                             label={
                                                 <DropdownMenuLabel
                                                     title={c('Action').t`Via secure link`}
@@ -243,17 +242,10 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                             extra={free && <PassPlusPromotionButton className="ml-2" />}
                                         />
                                     )}
-                                    {shared && (
+
+                                    {shared && itemSharingEnabled && (
                                         <DropdownMenuButton
-                                            onClick={
-                                                free
-                                                    ? () =>
-                                                          upsell({
-                                                              type: 'pass-plus',
-                                                              upsellRef: UpsellRef.ITEM_SHARING,
-                                                          })
-                                                    : handleManageClick
-                                            }
+                                            onClick={onManageItem}
                                             title={c('Action').t`See members`}
                                             icon="users"
                                             label={
