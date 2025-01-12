@@ -17,15 +17,15 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handleDismissClick: () => void;
     handleEditClick: () => void;
     handleHistoryClick: () => void;
+    handleLeaveItemClick: () => void;
     handleManageClick: () => void;
     handleMoveToTrashClick: () => void;
     handlePinClick: () => void;
     handleRestoreClick: () => void;
     handleRetryClick: () => void;
     handleSecureLinkClick: () => void;
-    handleToggleFlagsClick: () => void;
     handleShareItemClick: () => void;
-    handleLeaveItemClick: () => void;
+    handleToggleFlagsClick: () => void;
 };
 
 export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {
