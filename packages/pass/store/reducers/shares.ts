@@ -2,7 +2,6 @@ import type { Action, Reducer } from 'redux';
 
 import {
     bootSuccess,
-    getShareAccessOptions,
     inviteAccept,
     inviteBatchCreateSuccess,
     newUserInvitePromoteSuccess,
@@ -20,7 +19,7 @@ import {
     vaultTransferOwnershipSuccess,
 } from '@proton/pass/store/actions';
 import type { Share, ShareId } from '@proton/pass/types';
-import { NewUserInviteState, ShareRole, type ShareType } from '@proton/pass/types';
+import { ShareRole, type ShareType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
@@ -93,19 +92,6 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
     if (shareAccessChange.match(action)) {
         const { shareId, ...shareAccessOptions } = action.payload;
         return partialMerge(state, { [shareId]: shareAccessOptions });
-    }
-
-    if (getShareAccessOptions.success.match(action) && !action.payload.itemId) {
-        const { shareId, invites = [], newUserInvites = [], members } = action.payload;
-        const shared = invites.length > 0 || newUserInvites.length > 0 || members.length > 1;
-        const newUserInvitesReady = newUserInvites.filter((invite) => invite.state === NewUserInviteState.READY).length;
-
-        return partialMerge(state, {
-            [shareId]: {
-                newUserInvitesReady,
-                shared,
-            },
-        });
     }
 
     if (inviteAccept.success.match(action)) {

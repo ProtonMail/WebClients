@@ -1,14 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
+import type { AccessItem, AccessKeys } from '@proton/pass/lib/access/types';
 import { selectState } from '@proton/pass/store/selectors/utils';
+import type { State } from '@proton/pass/store/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 
-import type { AccessItem } from '../reducers';
-import type { State } from '../types';
 import { SelectorError } from './errors';
-
-export type SelectAccessDTO = { shareId: string; itemId?: string };
 
 const DEFAULT_ACCESS: AccessItem = {
     members: [],
@@ -40,7 +38,7 @@ export const selectAccessMembers = (shareId: string, itemId?: string) =>
     );
 
 export const selectAccessForMany = createSelector(
-    [selectState, (_: State, dto: SelectAccessDTO[]) => dto],
+    [selectState, (_: State, dto: AccessKeys[]) => dto],
     (state: State, dtos) =>
         Object.fromEntries(
             new Map(

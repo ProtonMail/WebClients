@@ -2,6 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
+import type { AccessKeys } from '@proton/pass/lib/access/types';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
@@ -9,15 +10,11 @@ import {
     shareLeaveRequest,
     shareRemoveMemberRequest,
 } from '@proton/pass/store/actions/requests';
+import type { AccessState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { SelectAccessDTO } from '@proton/pass/store/selectors';
 import { ShareType } from '@proton/pass/types';
-import type {
-    ShareAccessOptions,
-    ShareEditMemberAccessIntent,
-    ShareRemoveMemberAccessIntent,
-} from '@proton/pass/types/data/access.dto';
+import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareRemoveMemberAccessIntent = createAction(
@@ -80,9 +77,7 @@ export const shareEditMemberAccessFailure = createAction(
     )
 );
 
-export const getShareAccessOptions = requestActionsFactory<SelectAccessDTO, ShareAccessOptions>(
-    'share::access-options'
-)({
+export const getShareAccessOptions = requestActionsFactory<AccessKeys, AccessState>('share::access-options')({
     key: toShareAccessKey,
     success: { config: { maxAge: 15, data: null } },
     failure: {

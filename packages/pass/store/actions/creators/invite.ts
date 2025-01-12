@@ -1,7 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
-import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
@@ -27,6 +26,8 @@ import type {
     InviteRemoveIntent,
     InviteResendIntent,
     NewUserInvitePromoteIntent,
+    NewUserInvitePromoteSuccess,
+    NewUserInviteRemoveIntent,
 } from '@proton/pass/types/data/invites.dto';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -78,14 +79,14 @@ export const newUserInvitePromoteIntent = createAction(
 
 export const newUserInvitePromoteSuccess = createAction(
     'new-user-invite::promote::success',
-    withRequestSuccess((shareId: string, shareInvites: InviteData) =>
+    withRequestSuccess((payload: NewUserInvitePromoteSuccess) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Access successfully confirmed`,
             })
-        )({ payload: { shareId, ...shareInvites } })
+        )({ payload })
     )
 );
 
@@ -136,14 +137,14 @@ export const inviteResendIntent = createAction('invite::resend::intent', (payloa
 
 export const inviteResendSuccess = createAction(
     'invite::resend::success',
-    withRequestSuccess((shareId: string, inviteId: string) =>
+    withRequestSuccess((payload: InviteResendIntent) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Invite successfully resent`,
             })
-        )({ payload: { shareId, inviteId } })
+        )({ payload })
     )
 );
 
@@ -188,20 +189,20 @@ export const inviteRemoveFailure = createAction(
 
 export const newUserInviteRemoveIntent = createAction(
     'new-user-invite::remove::intent',
-    (payload: NewUserInvitePromoteIntent) =>
+    (payload: NewUserInviteRemoveIntent) =>
         withRequest({ status: 'start', id: newUserInviteRemoveRequest(payload.newUserInviteId) })({ payload })
 );
 
 export const newUserInviteRemoveSuccess = createAction(
     'new-user-invite::remove::success',
-    withRequestSuccess((shareId: string, newUserInviteId: string) =>
+    withRequestSuccess((payload: NewUserInviteRemoveIntent) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Invite successfully removed`,
             })
-        )({ payload: { shareId, newUserInviteId } })
+        )({ payload })
     )
 );
 
