@@ -17,6 +17,7 @@ import { PanelFallback } from '@proton/pass/components/Layout/Panel/PanelFallbac
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
+import { AccessTarget } from '@proton/pass/lib/access/types';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
@@ -37,7 +38,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const canManage = isShareManageable(vault);
     const canTransfer = vault.owner && ownWritableVaults.length > 1;
 
-    const { limitReached, vaultInvites, vaultMembers } = access;
+    const { limitReached, invites, members } = access;
     const { shared, targetMaxMembers } = vault;
 
     const onVaultInvite = useCallback(() => {
@@ -73,27 +74,29 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     return (
         <SidebarModal onClose={close} open>
             <Panel loading={loading} header={<PanelHeader actions={actions} />}>
-                <PanelFallback when={!shared} fallback={fallback} className="flex flex-column gap-y-3">
+                <PanelFallback when={!shared} fallback={fallback} className="flex flex-column gap-y-3 flex-nowrap">
                     <VaultHeading shareId={shareId} />
 
-                    {vaultInvites.length > 0 && (
+                    {invites.length > 0 && (
                         <AccessList
                             canManage={canManage}
                             canTransfer={canTransfer}
-                            invites={vaultInvites}
+                            invites={invites}
                             onInvite={onVaultInvite}
                             shareId={shareId}
                             title={c('Label').t`Invitations`}
+                            target={AccessTarget.Vault}
                         />
                     )}
 
-                    {vaultMembers.length > 0 && (
+                    {members.length > 0 && (
                         <AccessList
                             canManage={canManage}
                             canTransfer={canTransfer}
-                            members={vaultMembers}
+                            members={members}
                             shareId={shareId}
                             title={c('Label').t`Members`}
+                            target={AccessTarget.Vault}
                         />
                     )}
 

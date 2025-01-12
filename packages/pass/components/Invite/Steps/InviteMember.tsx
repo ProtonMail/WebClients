@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
+import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
-import { getShareRoleDefinition } from '@proton/pass/components/Share/ShareRoleOptions';
 import { type InviteFormMemberValue, ShareRole } from '@proton/pass/types';
 
 export type InviteMemberProps = ListFieldValue<InviteFormMemberValue> & {

@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 
-import { Avatar } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms';
+import { Avatar, CircleLoader } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import './ShareMemberAvatar.scss';

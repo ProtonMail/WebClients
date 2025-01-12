@@ -3,12 +3,14 @@ import { type FC, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { PendingNewUser } from '@proton/pass/components/Share/PendingNewUser';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { type AccessItem, AccessTarget } from '@proton/pass/lib/access/types';
 import { getShareAccessOptions } from '@proton/pass/store/actions';
-import type { AccessItem, VaultShareItem } from '@proton/pass/store/reducers';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { NewUserInviteState } from '@proton/pass/types';
+
+import { PendingNewUser } from './PendingNewUser';
 
 type Props = VaultShareItem & AccessItem & { onInvitesReady: () => void };
 
@@ -47,7 +49,12 @@ export const PendingNewUsersForShare: FC<Props> = ({
                         ? newUserInvites?.map(
                               (invite) =>
                                   invite.state === NewUserInviteState.READY && (
-                                      <PendingNewUser key={invite.newUserInviteId} shareId={shareId} {...invite} />
+                                      <PendingNewUser
+                                          key={invite.newUserInviteId}
+                                          shareId={shareId}
+                                          target={AccessTarget.Vault}
+                                          {...invite}
+                                      />
                                   )
                           )
                         : Array.from({ length: newUserInvitesReady }, (_, idx) => (
