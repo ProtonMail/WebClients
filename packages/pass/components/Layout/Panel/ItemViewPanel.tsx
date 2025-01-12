@@ -87,7 +87,9 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
-    const [signalItemSharing, setSignalItemSharing] = useState(false);
+    const [signal, setSignalItemSharing] = useState(false);
+    const signalItemSharing = signal && !shared;
+
     useEffect(() => {
         (async () => {
             const showSignal = await spotlight.check(SpotlightMessage.ITEM_SHARING);
