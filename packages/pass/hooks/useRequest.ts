@@ -126,7 +126,10 @@ export const useActionRequest = <
                     pending.current = job;
                     void job.then(onResult).catch(onError);
                 }
-            } catch {}
+            } catch {
+                setLoading(false);
+                setError(false);
+            }
         };
 
         return {
