@@ -6,6 +6,12 @@ export const getSupportedEntry = () => {
 };
 
 export const getIndexChunks = (target: string) => {
+    // The pre chunk sets up a query selector for -index suffixed script files
+    if (!target.includes('index')) {
+        throw new Error(
+            'pre and unsupported chunks rely on the naming of the main chunk file starting with index or containing a -index suffix'
+        );
+    }
     return ['pre', target, 'unsupported'];
 };
 
