@@ -3,7 +3,6 @@ import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { Maybe, Share, ShareContent, ShareGetResponse, ShareKeyResponse, ShareType } from '@proton/pass/types';
 
-// TODO(@djankovic): Revisit if this should be a generic in the first place
 export const parseShareResponse = async <T extends ShareType = ShareType>(
     encryptedShare: ShareGetResponse,
     options?: { eventId?: string; shareKeys?: ShareKeyResponse[] }
@@ -21,6 +20,7 @@ export const parseShareResponse = async <T extends ShareType = ShareType>(
             content: (share.content ? decodeVaultContent(share.content) : {}) as ShareContent<T>,
             createTime: share.createTime,
             eventId,
+            canAutofill: share.canAutofill,
             newUserInvitesReady: share.newUserInvitesReady,
             owner: share.owner,
             shared: share.shared,

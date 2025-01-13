@@ -5,14 +5,11 @@ import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import { type Share, type ShareAccessKeys } from '@proton/pass/types';
+import { type Share, type ShareSyncKeys } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
-export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) =>
-    withCache({ payload })
-);
-
-export const shareDeleteSync = createAction('share::delete::sync', (share: Share) =>
+export const shareEventUpdate = createAction('share::event::update', (payload: Share) => withCache({ payload }));
+export const shareEventDelete = createAction('share::event::delete', (share: Share) =>
     pipe(
         withCache,
         withNotification({
@@ -24,8 +21,10 @@ export const shareDeleteSync = createAction('share::delete::sync', (share: Share
     )({ payload: { shareId: share.shareId } })
 );
 
-export const sharesSync = createAction('shares::sync', (payload: SynchronizationResult) => withCache({ payload }));
+export const sharesEventNew = createAction('shares::event::new', (payload: SynchronizationResult) =>
+    withCache({ payload })
+);
 
-export const shareAccessChange = createAction('share::access::change', (payload: Pick<Share, ShareAccessKeys>) =>
+export const sharesEventSync = createAction('shares::event::sync', (payload: Pick<Share, ShareSyncKeys>) =>
     withCache({ payload })
 );
