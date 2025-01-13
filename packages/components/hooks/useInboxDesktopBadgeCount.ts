@@ -24,12 +24,9 @@ const useInboxDesktopBadgeCount = () => {
         const inboxConvCount = counts?.find(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.INBOX);
         let payload = inboxConvCount?.Unread;
 
+        // This is expected for the first render,
+        // until the inbox has been loaded
         if (payload === undefined) {
-            captureMessage('Invalid undefined unread count', {
-                level: 'error',
-                extra: { inboxConvCount, payload },
-            });
-
             payload = 0;
         } else if (payload < 0) {
             captureMessage('Invalid negative unread count', {
