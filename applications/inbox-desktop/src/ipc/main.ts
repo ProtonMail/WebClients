@@ -178,6 +178,9 @@ export const handleIPCCalls = () => {
             case "storeAppVersion":
                 storeAppVersion(payload);
                 break;
+            case "reportTestingError":
+                ipcLogger.error("Testing error");
+                break;
             case "triggerCrash":
                 throw new Error("Crash bandicoot");
             case "metricsListenerChanged":
