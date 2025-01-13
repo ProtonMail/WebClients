@@ -1,6 +1,7 @@
 export * from '@proton/pass/store/request/selectors';
 export * from './access';
 export * from './alias';
+export * from './autofill';
 export * from './export';
 export * from './filters';
 export * from './import';
