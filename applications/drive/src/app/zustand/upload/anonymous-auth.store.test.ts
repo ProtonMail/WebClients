@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { useAnonymousUploadAuthStore } from './anonymous-auth.store';
 
@@ -30,7 +30,7 @@ describe('useAnonymousUploadAuthStore', () => {
             expect(result.current.getUploadToken(linkId)).toBe(authToken);
         });
 
-        it('should remove token after expiration time', () => {
+        it('should remove token after expiration time', async () => {
             const { result } = renderHook(() => useAnonymousUploadAuthStore());
 
             jest.spyOn(Date, 'now').mockReturnValue(0);
@@ -46,7 +46,7 @@ describe('useAnonymousUploadAuthStore', () => {
 
             jest.spyOn(Date, 'now').mockReturnValue(59 * 60 * 1000 + 1); // Fast-forward time by 59 minutes + 1 seconds
 
-            expect(result.current.hasUploadToken(linkId)).toBeFalsy();
+            await waitFor(() => expect(result.current.hasUploadToken(linkId)).toBeFalsy());
         });
     });
 
