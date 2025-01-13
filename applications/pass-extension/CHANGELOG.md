@@ -1,3 +1,26 @@
+### Version 1.28.0
+
+- Improve react app performance
+- Improve app navigation and routing
+- Improve UI for pending external invitations
+- Improve autosave popover UX
+- Improve extension onboarding pages
+- Improve in-app notifications UX
+- Improve iframe injection performance
+- Properly support content-script BFCaching
+- Wipe search filter on vault change
+- Allow searching inside secure links section
+- Ensure trashed items do not show up in pinned items bar
+- Exclude failed items from showing up in excluded monitoring items
+- Fix plan upgrade/downgrade dynamic detection
+- Fix passkey item detection in PassMonitor
+- Fix extension autofill dropdown sizing issues
+- Fix theme pre-selection during account switch
+- Fix extension expanded window detection
+- Fix OTP autofill discard not accounted for on tab switch
+- Fix pending share access not auto-closing when invalidated
+- Fix query parameter preservation on web-app boot
+
 ### Version 1.27.2
 
 - Fix app-crash when detecting item shares
