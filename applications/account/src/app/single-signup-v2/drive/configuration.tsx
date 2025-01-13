@@ -35,6 +35,7 @@ import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
+import SignupHeaderV2 from '../SignupHeaderV2';
 import {
     getBenefits,
     getBuiltInEncryptionBenefit,
@@ -364,10 +365,10 @@ export const getDriveConfiguration = ({
     return {
         logo,
         title: {
-            [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
-            [SignupMode.Invite]: inviteTitle,
-            [SignupMode.MailReferral]: title,
-            [SignupMode.PassSimpleLogin]: title,
+            [SignupMode.Default]: <SignupHeaderV2>{audience === Audience.B2B ? b2bTitle : title}</SignupHeaderV2>,
+            [SignupMode.Invite]: <SignupHeaderV2 className="max-w-full">{inviteTitle}</SignupHeaderV2>,
+            [SignupMode.MailReferral]: <SignupHeaderV2>{title}</SignupHeaderV2>,
+            [SignupMode.PassSimpleLogin]: <SignupHeaderV2>{title}</SignupHeaderV2>,
         }[mode],
         audience,
         audiences: [

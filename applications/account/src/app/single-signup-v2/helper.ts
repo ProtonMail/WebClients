@@ -2,7 +2,14 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import type { BillingAddress, PAYMENT_METHOD_TYPES, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
+import type {
+    BillingAddress,
+    FullPlansMap,
+    PAYMENT_METHOD_TYPES,
+    PaymentsApi,
+    SavedPaymentMethod,
+} from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type Currency,
@@ -13,7 +20,9 @@ import {
     isStringPLAN,
 } from '@proton/payments';
 import { getOrganization } from '@proton/shared/lib/api/organization';
+import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
@@ -846,4 +855,54 @@ export const getAccessiblePlans = ({
     }
 
     return plans.filter(({ Name }) => accessiblePlanNames.includes(Name as PLANS)) as StrictPlan[];
+};
+
+export const getSubscriptionDataCycleMapping = async ({
+    paymentsApi,
+    plansMap,
+    coupon,
+    signupConfiguration,
+}: {
+    paymentsApi: PaymentsApi;
+    plansMap: FullPlansMap;
+    coupon: string | undefined | null;
+    signupConfiguration: SignupConfiguration;
+}) => {
+    const [b2c, b2b] = await Promise.all(
+        ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
+            const planIDs = signupConfiguration.planCards[audienceToFetch].map(({ plan }) => ({ [plan]: 1 }));
+            return getPlanCardSubscriptionData({
+                planIDs,
+                plansMap,
+                cycles: signupConfiguration.cycles,
+                paymentsApi,
+                coupon,
+                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+            });
+        })
+    );
+    return { ...b2b, ...b2c };
+};
+
+export const getTemporarySignupParameters = async ({
+    session,
+    signupParameters,
+    api,
+}: {
+    session: ResumedSessionResult | undefined;
+    signupParameters: SignupParameters2;
+    api: Api;
+}) => {
+    if (session && signupParameters.invite?.type === 'porkbun') {
+        const { CouponName } = await api<{ CouponName: string }>(
+            partnerWhitelist({ Token: signupParameters.invite.data.porkbunToken })
+        ).catch(() => ({ CouponName: '' })); // TODO: What to do if it fails?
+
+        return {
+            ...signupParameters,
+            preSelectedPlan: undefined,
+            coupon: CouponName,
+        };
+    }
+    return signupParameters;
 };

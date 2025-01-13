@@ -11,10 +11,10 @@ import type { PublicTheme } from '../containers/PublicThemeProvider';
 import { getDriveConfiguration } from './drive/configuration';
 import { getGenericConfiguration } from './generic/configuration';
 import type { SignupModelV2, SignupParameters2 } from './interface';
+import { getLumoConfiguration } from './lumo/configuration';
 import { getMailConfiguration } from './mail/configuration';
 import { getPassConfiguration } from './pass/configuration';
 import { getWalletConfiguration } from './wallet/configuration';
-import { getLumoConfiguration } from './lumo/configuration';
 
 export const getSignupConfiguration = ({
     toApp,
@@ -51,13 +51,12 @@ export const getSignupConfiguration = ({
     if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
         return getMailConfiguration({
             audience,
-            mode: signupParameters.mode,
+            signupParameters,
             plan,
             planParameters: model.planParameters,
             plansMap: model.plansMap,
             isLargeViewport: viewportWidth['>=large'],
             vpnServersCountData,
-            hideFreePlan: signupParameters.hideFreePlan,
             freePlan: model.freePlan,
         });
     }
@@ -108,13 +107,12 @@ export const getSignupConfiguration = ({
     return getGenericConfiguration({
         theme,
         audience,
-        mode: signupParameters.mode,
+        signupParameters,
         plan,
         freePlan: model.freePlan,
         planParameters: model.planParameters,
         plansMap: model.plansMap,
         isLargeViewport: viewportWidth['>=large'],
         vpnServersCountData,
-        hideFreePlan: signupParameters.hideFreePlan,
     });
 };
