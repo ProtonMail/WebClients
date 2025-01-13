@@ -84,6 +84,9 @@ export function useYjsCollaboration(
             tags,
           )
         }
+        if (tags.has('collaboration')) {
+          syncCursorPositions(binding, provider)
+        }
       },
     )
 
