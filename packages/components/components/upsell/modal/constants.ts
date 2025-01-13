@@ -37,7 +37,11 @@ export type UpsellFeatureName =
     | 'breach-alerts'
     | 'password-health'
     | 'account-protection'
-    | 'more-premium-features';
+    | 'more-premium-features'
+    | 'drive-plus-storage'
+    | 'file-sharing'
+    | 'docs-editor'
+    | 'photos-backup';
 
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
@@ -184,5 +188,24 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFea
     'more-premium-features': {
         icon: 'checkmark',
         getText: () => c('new_plans: feature').t`10 more premium features`,
+    },
+    'drive-plus-storage': {
+        icon: 'storage',
+        getText: () => c('new_plans: feature').t`200 GB of storage`,
+        getTooltip: () =>
+            c('new_plans: feature info')
+                .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME} and ${DRIVE_APP_NAME}`,
+    },
+    'file-sharing': {
+        icon: 'users',
+        getText: () => c('new_plans: feature').t`Secure file storage and sharing`,
+    },
+    'docs-editor': {
+        icon: 'brand-proton-docs',
+        getText: () => c('new_plans: feature').t`Online document editor`,
+    },
+    'photos-backup': {
+        icon: 'image',
+        getText: () => c('new_plans: feature').t`Private photo backup`,
     },
 };
