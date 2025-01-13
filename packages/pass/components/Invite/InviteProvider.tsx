@@ -19,6 +19,8 @@ import { VaultAccessManager } from './Vault/VaultAccessManager';
 import { VaultInviteCreate } from './Vault/VaultInviteCreate';
 import { VaultInviteRespond } from './Vault/VaultInviteRespond';
 
+import './InviteProvider.scss';
+
 type InviteContextState =
     | ({ view: 'invite-vault' } & SelectedShare)
     | ({ view: 'invite-item' } & SelectedItem)
