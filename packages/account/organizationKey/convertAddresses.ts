@@ -57,7 +57,7 @@ const convertToInternalAddress = async ({
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         {
             v4: normalizedKeys.v4.map(clearFlags),
-            v6: normalizedKeys.v6.map(clearFlags)
+            v6: normalizedKeys.v6.map(clearFlags),
         },
         address,
         keyTransparencyVerify
@@ -240,6 +240,34 @@ export const convertExternalAddresses = ({
             return;
         }
 
+        const userKeys = await dispatch(userKeysThunk());
+        await keyTransparencyCommit(userKeys);
+        await dispatch(addressesThunk({ cache: CacheType.None }));
+    };
+};
+
+export const convertExternalAddress = ({
+    externalAddress,
+    keyTransparencyVerify,
+    keyTransparencyCommit,
+}: {
+    externalAddress: Address;
+    keyTransparencyVerify: KeyTransparencyVerify;
+    keyTransparencyCommit: KeyTransparencyCommit;
+}): ThunkAction<
+    Promise<void>,
+    AddressesState & AddressKeysState & UserKeysState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, _, extra) => {
+        const silentApi = getSilentApi(extra.api);
+        await convertToInternalAddress({
+            address: externalAddress,
+            keys: await dispatch(addressKeysThunk({ addressID: externalAddress.ID })),
+            api: silentApi,
+            keyTransparencyVerify,
+        });
         const userKeys = await dispatch(userKeysThunk());
         await keyTransparencyCommit(userKeys);
         await dispatch(addressesThunk({ cache: CacheType.None }));

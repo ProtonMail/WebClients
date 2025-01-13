@@ -48,6 +48,8 @@ const singlePageSignupPaths = new Set([
     SSO_PATHS.MAIL_SIGNUP_B2B,
     SSO_PATHS.CALENDAR_SIGNUP_B2B,
     SSO_PATHS.BUSINESS_SIGNUP,
+    SSO_PATHS.PORKBUN_SIGNUP,
+    SSO_PATHS.PORKBUN_SIGN_IN,
 ]);
 const singlePageSignupPlans = new Set([PLANS.VISIONARY, PLANS.DUO]);
 

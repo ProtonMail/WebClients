@@ -15,13 +15,15 @@ export const getSignupParameters = ({
     visionarySignupEnabled,
     location,
     isMailTrial,
+    partner,
 }: {
     toApp?: APP_NAMES;
     initialSearchParams?: URLSearchParams;
     visionarySignupEnabled: boolean;
     location: H.Location<{ invite?: InviteData }>;
     isMailTrial?: boolean;
-}) => {
+    partner?: 'porkbun';
+}): SignupParameters2 => {
     const searchParams = new URLSearchParams(location.search);
     if (toApp !== APPS.PROTONWALLET && !visionarySignupEnabled && searchParams.get('plan') === PLANS.VISIONARY) {
         searchParams.delete('plan');
@@ -71,6 +73,30 @@ export const getSignupParameters = ({
 
     if (isMailTrial) {
         result.referrer = REFERRER_CODE_MAIL_TRIAL;
+    }
+
+    if (partner === 'porkbun') {
+        const preVerifiedAddressToken = searchParams.get('jwt') || undefined; // May be undefined in login scenario
+        const porkbunToken = searchParams.get('token') || undefined;
+        const email = searchParams.get('email') || undefined;
+        if (email && porkbunToken) {
+            return {
+                ...result,
+                localID: -1,
+                signIn,
+                mode: SignupMode.Invite,
+                noPromo: true,
+                invite: {
+                    type: 'porkbun',
+                    data: {
+                        invitee: email,
+                        preVerifiedAddressToken,
+                        porkbunToken,
+                    },
+                },
+                preSelectedPlan: PLANS.FREE,
+            };
+        }
     }
 
     const externalInvitationID = searchParams.get('externalInvitationID');

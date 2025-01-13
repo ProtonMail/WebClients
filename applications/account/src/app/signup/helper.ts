@@ -52,6 +52,12 @@ export const isMailReferAFriendSignup = (location: Location) => {
     return location.pathname.includes(SSO_PATHS.REFER);
 };
 
+export const isPorkbunSignup = (location: Location) => {
+    return (
+        location.pathname.includes(SSO_PATHS.PORKBUN_SIGNUP) || location.pathname.includes(SSO_PATHS.PORKBUN_SIGN_IN)
+    );
+};
+
 export const getSignupApplication = (APP_NAME: APP_NAMES) => {
     if (APP_NAME === 'proton-vpn-settings') {
         return 'proton-vpn-settings';

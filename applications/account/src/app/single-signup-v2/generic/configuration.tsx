@@ -3,29 +3,27 @@ import type { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } f
 
 import type { PublicTheme } from '../../containers/PublicThemeProvider';
 import { SignupType } from '../../signup/interfaces';
-import type { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
+import type { PlanParameters, SignupConfiguration, SignupParameters2 } from '../interface';
 import { getMailConfiguration } from '../mail/configuration';
 import CustomStep from './CustomStep';
 
 export const getGenericConfiguration = ({
     theme,
-    mode,
     plan,
     audience,
     isLargeViewport,
     plansMap,
     planParameters,
     vpnServersCountData,
-    hideFreePlan,
     freePlan,
+    signupParameters,
 }: {
     theme: PublicTheme;
     audience: Audience.B2C | Audience.B2B;
-    mode: SignupMode;
+    signupParameters: SignupParameters2;
     freePlan: FreePlanDefault;
     plan: Plan;
     planParameters: PlanParameters | undefined;
-    hideFreePlan: boolean;
     plansMap?: PlansMap;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
@@ -34,13 +32,12 @@ export const getGenericConfiguration = ({
 
     const mailConfiguration = getMailConfiguration({
         audience,
-        mode,
         plan,
         planParameters,
         isLargeViewport,
         plansMap,
         vpnServersCountData,
-        hideFreePlan,
+        signupParameters,
         freePlan,
     });
 
