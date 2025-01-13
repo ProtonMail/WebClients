@@ -5081,6 +5081,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lexical/yjs@patch:@lexical/yjs@npm%3A0.21.0#~/.yarn/patches/@lexical-yjs-npm-0.21.0-3fb1cd60e1.patch":
+  version: 0.21.0
+  resolution: "@lexical/yjs@patch:@lexical/yjs@npm%3A0.21.0#~/.yarn/patches/@lexical-yjs-npm-0.21.0-3fb1cd60e1.patch::version=0.21.0&hash=8ef381"
+  dependencies:
+    "@lexical/offset": "npm:0.21.0"
+    "@lexical/selection": "npm:0.21.0"
+    lexical: "npm:0.21.0"
+  peerDependencies:
+    yjs: ">=13.5.22"
+  checksum: 10c0/19579bfab5ede9fe82674064aba289abac2e7791fea34dc723f6aeec6e682f884193d06919763c818a3a0881839c864b813e5357ef63bbf099f919755db556dd
+  languageName: node
+  linkType: hard
+
 "@lukeed/ms@npm:^2.0.1":
   version: 2.0.2
   resolution: "@lukeed/ms@npm:2.0.2"
@@ -7569,7 +7582,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/docs-core@workspace:packages/docs-core"
   dependencies:
-    "@lexical/yjs": "npm:0.21.0"
+    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.21.0#~/.yarn/patches/@lexical-yjs-npm-0.21.0-3fb1cd60e1.patch"
     "@proton/components": "workspace:^"
     "@proton/crypto": "workspace:^"
     "@proton/docs-proto": "workspace:^"
@@ -7628,7 +7641,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/docs-shared@workspace:packages/docs-shared"
   dependencies:
-    "@lexical/yjs": "npm:0.21.0"
+    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.21.0#~/.yarn/patches/@lexical-yjs-npm-0.21.0-3fb1cd60e1.patch"
     "@proton/docs-proto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
@@ -35573,7 +35586,7 @@ __metadata:
     "@lexical/selection": "npm:0.21.0"
     "@lexical/table": "npm:0.21.0"
     "@lexical/utils": "npm:0.21.0"
-    "@lexical/yjs": "npm:0.21.0"
+    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.21.0#~/.yarn/patches/@lexical-yjs-npm-0.21.0-3fb1cd60e1.patch"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/crypto": "workspace:^"
@@ -35627,7 +35640,7 @@ __metadata:
   dependencies:
     "@babel/preset-typescript": "npm:^7.26.0"
     "@lexical/utils": "npm:0.21.0"
-    "@lexical/yjs": "npm:0.21.0"
+    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.21.0#~/.yarn/patches/@lexical-yjs-npm-0.21.0-3fb1cd60e1.patch"
     "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
