@@ -326,7 +326,6 @@ const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PASS,
     PASS_FAMILY,
     VPN_PASS_BUNDLE,
-    PASS_PRO,
     PASS_BUSINESS,
     MAIL_BUSINESS,
 ]);
