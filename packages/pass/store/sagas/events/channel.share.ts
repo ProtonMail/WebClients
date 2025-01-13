@@ -11,9 +11,9 @@ import {
     itemsDeleteSync,
     itemsEditSync,
     itemsUsedSync,
-    shareDeleteSync,
-    shareEditSync,
     shareEvent,
+    shareEventDelete,
+    shareEventUpdate,
     vaultDeleteSuccess,
 } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
@@ -58,7 +58,7 @@ const onShareEvent = (shareId: string) =>
 
         if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
             const share: Maybe<Share<ShareType.Vault>> = yield parseShareResponse(UpdatedShare, { eventId });
-            if (share) yield put(shareEditSync({ id: share.shareId, share }));
+            if (share) yield put(shareEventUpdate(share));
         }
 
         if (DeletedItemIDs.length > 0) {
@@ -105,7 +105,7 @@ const onShareEventError = (shareId: string) =>
             if (share) {
                 onItemsUpdated?.();
                 yield discardDrafts(shareId);
-                yield put(shareDeleteSync(share));
+                yield put(shareEventDelete(share));
             }
         }
     };

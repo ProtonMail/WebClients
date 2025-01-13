@@ -5,13 +5,13 @@ import {
     inviteAccept,
     inviteBatchCreateSuccess,
     newUserInvitePromoteSuccess,
-    shareAccessChange,
-    shareDeleteSync,
-    shareEditSync,
     shareEvent,
+    shareEventDelete,
+    shareEventUpdate,
     shareLeaveSuccess,
     sharedVaultCreated,
-    sharesSync,
+    sharesEventNew,
+    sharesEventSync,
     syncSuccess,
     vaultCreationSuccess,
     vaultDeleteSuccess,
@@ -33,7 +33,7 @@ export type SharesState = Record<ShareId, ShareItem>;
 export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
     if (bootSuccess.match(action) && action.payload?.shares !== undefined) return action.payload.shares;
     if (syncSuccess.match(action)) return action.payload.shares;
-    if (sharesSync.match(action)) return fullMerge(state, action.payload.shares);
+    if (sharesEventNew.match(action)) return fullMerge(state, action.payload.shares);
 
     if (shareEvent.match(action) && state !== null) {
         const { shareId, Events } = action.payload;
@@ -56,12 +56,12 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return partialMerge(state, { [share.shareId]: share });
     }
 
-    if (shareEditSync.match(action)) {
-        const { id, share } = action.payload;
-        return fullMerge(state, { [id]: share });
+    if (shareEventUpdate.match(action)) {
+        const share = action.payload;
+        return fullMerge(state, { [share.shareId]: share });
     }
 
-    if (or(vaultDeleteSuccess.match, shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
+    if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
         return objectDelete(state, action.payload.shareId);
     }
 
@@ -89,9 +89,9 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         });
     }
 
-    if (shareAccessChange.match(action)) {
-        const { shareId, ...shareAccessOptions } = action.payload;
-        return partialMerge(state, { [shareId]: shareAccessOptions });
+    if (sharesEventSync.match(action)) {
+        const { shareId, ...data } = action.payload;
+        return partialMerge(state, { [shareId]: data });
     }
 
     if (inviteAccept.success.match(action)) {

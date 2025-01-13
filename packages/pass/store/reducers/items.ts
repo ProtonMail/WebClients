@@ -40,11 +40,11 @@ import {
     secureLinksGet,
     secureLinksRemoveInactive,
     setItemFlags,
-    shareDeleteSync,
+    shareEventDelete,
     shareLeaveSuccess,
     shareRemoveMemberAccessIntent,
     sharedVaultCreated,
-    sharesSync,
+    sharesEventNew,
     syncSuccess,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
@@ -130,7 +130,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     (state = {}, action: Action) => {
         if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
         if (syncSuccess.match(action)) return action.payload.items;
-        if (sharesSync.match(action)) return fullMerge(state, action.payload.items);
+        if (sharesEventNew.match(action)) return fullMerge(state, action.payload.items);
 
         if (itemCreate.intent.match(action)) {
             const { shareId, optimisticId, optimisticTime, ...item } = action.payload;
@@ -282,7 +282,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, lastUseTime: getEpoch() })(state);
         }
 
-        if (or(vaultDeleteSuccess.match, shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
+        if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
             return objectDelete(state, action.payload.shareId);
         }
 

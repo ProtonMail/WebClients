@@ -4,8 +4,8 @@ import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { hasShareAccessChanged } from '@proton/pass/lib/shares/share.predicates';
-import { shareAccessChange, sharedVaultCreated, sharesSync, vaultCreationSuccess } from '@proton/pass/store/actions';
+import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
+import { sharedVaultCreated, sharesEventNew, sharesEventSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import { selectAllShares } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
@@ -34,9 +34,7 @@ function* onSharesEvent(
 
     const localShares: Share[] = yield select(selectAllShares);
     const localShareIds = localShares.map(({ shareId }) => shareId);
-
     const remoteShares = event.Shares;
-
     const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
 
     if (newShares.length) {
@@ -59,7 +57,7 @@ function* onSharesEvent(
                 )) as ItemsByShareId[]
             ).reduce(diadic(merge));
 
-            yield put(sharesSync({ shares: toMap(activeNewShares, 'shareId'), items }));
+            yield put(sharesEventNew({ shares: toMap(activeNewShares, 'shareId'), items }));
             yield all(activeNewShares.map(getShareChannelForks(api, options)).flat());
         }
     }
@@ -69,9 +67,10 @@ function* onSharesEvent(
             const shareId = share.ShareID;
             const localShare = localShares.find((localShare) => localShare.shareId === shareId);
 
-            if (localShare && hasShareAccessChanged(localShare, share)) {
+            if (localShare && hasShareChanged(localShare, share)) {
                 yield put(
-                    shareAccessChange({
+                    sharesEventSync({
+                        canAutofill: share.CanAutoFill,
                         newUserInvitesReady: share.NewUserInvitesReady,
                         owner: share.Owner,
                         shared: share.Shared,
