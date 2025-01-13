@@ -43,6 +43,14 @@ const mockFailedUploadMetadata = (numberOfErrors: number, size: number = 10000) 
 });
 
 describe('useUploadMetrics::', () => {
+    beforeAll(() => {
+        // Prevent warning to be shown in the console when running tests
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
+    });
+    afterAll(() => {
+        jest.restoreAllMocks();
+    });
+
     const freeSpaceExceeded = new Error('Unprocessable Content');
     (freeSpaceExceeded as any).data = {
         Code: API_CUSTOM_ERROR_CODES.FREE_SPACE_EXCEEDED,
