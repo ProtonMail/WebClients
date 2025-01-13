@@ -97,6 +97,22 @@ const CustomStep = ({
         setStep(nextStep);
     };
 
+    const defaultEmail = (() => {
+        if (signupParameters.invite?.type === 'porkbun') {
+            return '';
+        }
+
+        if (verificationModel?.method === 'email' && verificationModel?.value) {
+            return verificationModel.value;
+        }
+
+        if (accountData?.signupType === SignupType.Email) {
+            return accountData.email;
+        }
+
+        return '';
+    })();
+
     return (
         <Layout logo={logo} hasDecoration={false}>
             {step === Step.MnemonicRecovery && (
@@ -145,11 +161,7 @@ const CustomStep = ({
                 <RecoveryStep
                     hasConfirmWarning={hasRecoveryStepConfirmWarning}
                     defaultCountry={defaultCountry}
-                    defaultEmail={
-                        (verificationModel?.method === 'email' && verificationModel?.value) ||
-                        (accountData?.signupType === SignupType.Email && accountData.email) ||
-                        ''
-                    }
+                    defaultEmail={defaultEmail}
                     defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
                     onSubmit={async ({ recoveryEmail, recoveryPhone }) => {
                         const validateFlow = createFlow();

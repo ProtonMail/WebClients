@@ -23,6 +23,7 @@ import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
+import SignupHeaderV2 from '../SignupHeaderV2';
 import {
     getAdvancedSecurityBenefit,
     getAppsIncludedBenefit,
@@ -41,9 +42,10 @@ import {
     getTeamKnowsEncryptionBenefit,
     getWorksOnAllDevicesBenefit,
 } from '../configuration/helper';
-import type { PlanParameters, SignupConfiguration } from '../interface';
+import type { PlanParameters, SignupConfiguration, SignupParameters2 } from '../interface';
 import { SignupMode } from '../interface';
 import CustomStep from './CustomStep';
+import PorkbunHeader from './PorkbunHeader';
 import setupAccount from './account-setup.svg';
 
 const getMailBenefitsTitle = (plan: PLANS | undefined, audience: Audience | undefined) => {
@@ -135,18 +137,16 @@ export const getPlanTitle = (plan: Plan | undefined) => {
 
 export const getMailConfiguration = ({
     freePlan,
-    mode,
     plan,
     audience,
     isLargeViewport,
-    hideFreePlan,
     plansMap,
+    signupParameters: { mode, hideFreePlan, invite },
 }: {
     freePlan: FreePlanDefault;
     audience: Audience.B2B | Audience.B2C;
-    mode: SignupMode;
     plan: Plan | undefined;
-    hideFreePlan: boolean;
+    signupParameters: SignupParameters2;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     planParameters: PlanParameters | undefined;
@@ -156,7 +156,14 @@ export const getMailConfiguration = ({
 
     const title = c('mail_signup_2024: Info').t`An encrypted email service that puts your privacy first`;
     const b2bTitle = c('mail_signup_2024: Info').t`Encrypted solutions to protect your entire business`;
-    const inviteTitle = c('mail_signup_2024: Info').t`You’ve been invited to try ${MAIL_APP_NAME}`;
+    const inviteTitle =
+        invite?.type === 'porkbun' ? (
+            <PorkbunHeader />
+        ) : (
+            <SignupHeaderV2 className="max-w-full">
+                {c('mail_signup_2024: Info').t`You’ve been invited to try ${MAIL_APP_NAME}`}
+            </SignupHeaderV2>
+        );
 
     const features = getGenericFeatures(isLargeViewport, audience);
 
@@ -289,6 +296,64 @@ export const getMailConfiguration = ({
         };
     }
 
+    if (invite?.type === 'porkbun') {
+        planCards = {
+            [Audience.B2C]: [
+                {
+                    plan: PLANS.MAIL_PRO,
+                    subsection: (
+                        <FeatureListPlanCardSubSection
+                            description={c('mail_signup_2024: Info').t`Encrypted email and calendar to get you started`}
+                            features={
+                                <PlanCardFeatureList
+                                    {...planCardFeatureProps}
+                                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_PRO], freePlan)}
+                                />
+                            }
+                        />
+                    ),
+                    type: 'standard' as const,
+                    guarantee: true,
+                },
+                {
+                    plan: PLANS.MAIL_BUSINESS,
+                    subsection: (
+                        <FeatureListPlanCardSubSection
+                            description={c('mail_signup_2024: Info')
+                                .t`Enhanced security and premium features for teams`}
+                            features={
+                                <PlanCardFeatureList
+                                    {...planCardFeatureProps}
+                                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_BUSINESS], freePlan)}
+                                />
+                            }
+                        />
+                    ),
+                    type: 'best' as const,
+                    guarantee: true,
+                },
+                {
+                    plan: PLANS.BUNDLE_PRO_2024,
+                    subsection: (
+                        <FeatureListPlanCardSubSection
+                            description={c('mail_signup_2024: Info')
+                                .t`All ${BRAND_NAME} for Business apps and premium features to protect your entire business`}
+                            features={
+                                <PlanCardFeatureList
+                                    {...planCardFeatureProps}
+                                    features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024], freePlan)}
+                                />
+                            }
+                        />
+                    ),
+                    type: 'standard' as const,
+                    guarantee: true,
+                },
+            ],
+            [Audience.B2B]: [],
+        };
+    }
+
     const benefitItems = getMailBenefits(plan?.Name as PLANS, audience);
     const benefits = benefitItems && (
         <div>
@@ -322,10 +387,10 @@ export const getMailConfiguration = ({
             },
         ],
         title: {
-            [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
+            [SignupMode.Default]: <SignupHeaderV2>{audience === Audience.B2B ? b2bTitle : title}</SignupHeaderV2>,
             [SignupMode.Invite]: inviteTitle,
-            [SignupMode.MailReferral]: title,
-            [SignupMode.PassSimpleLogin]: title,
+            [SignupMode.MailReferral]: <SignupHeaderV2>{title}</SignupHeaderV2>,
+            [SignupMode.PassSimpleLogin]: <SignupHeaderV2>{title}</SignupHeaderV2>,
         }[mode],
         features,
         benefits,
@@ -338,6 +403,9 @@ export const getMailConfiguration = ({
         generateMnemonic: false,
         defaults: {
             plan: (() => {
+                if (invite?.type === 'porkbun') {
+                    return PLANS.MAIL_BUSINESS;
+                }
                 if (audience === Audience.B2B) {
                     return PLANS.BUNDLE_PRO_2024;
                 }
