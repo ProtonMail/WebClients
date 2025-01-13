@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -21,6 +23,8 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { onClose } = rest;
+
+    const [isDeleting, setIsDeleting] = useState(false);
 
     const handleRemove = async () => {
         await api(deleteLabel(label.ID));
@@ -59,7 +63,17 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
                 label.Type === LABEL_TYPE.MESSAGE_FOLDER ? c('Title').t`Delete folder?` : c('Title').t`Delete label?`
             }
             buttons={[
-                <ErrorButton onClick={handleRemove}>{c('Action').t`Delete`}</ErrorButton>,
+                <ErrorButton
+                    disabled={isDeleting}
+                    onClick={async () => {
+                        try {
+                            setIsDeleting(true);
+                            await handleRemove();
+                        } finally {
+                            setIsDeleting(false);
+                        }
+                    }}
+                >{c('Action').t`Delete`}</ErrorButton>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
