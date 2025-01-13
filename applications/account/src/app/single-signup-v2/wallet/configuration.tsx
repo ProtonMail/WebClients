@@ -31,6 +31,7 @@ import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import { planCardFeatureProps } from '../PlanCardSelector';
+import SignupHeaderV2 from '../SignupHeaderV2';
 import StepLabel, { StepLabelSize } from '../StepLabel';
 import { getBenefits, getGenericFeatures, getJoinString, getSwissPrivacyLawsBenefit } from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
@@ -255,16 +256,16 @@ export const getWalletConfiguration = ({
     return {
         logo,
         title: {
-            [SignupMode.Default]: title,
+            [SignupMode.Default]: <SignupHeaderV2>{title}</SignupHeaderV2>,
             [SignupMode.Invite]: (
-                <>
+                <SignupHeaderV2 className="max-w-full">
                     {inviteTitle1}
                     <br />
                     {inviteTitle2}
-                </>
+                </SignupHeaderV2>
             ),
-            [SignupMode.MailReferral]: title,
-            [SignupMode.PassSimpleLogin]: title,
+            [SignupMode.MailReferral]: <SignupHeaderV2>{title}</SignupHeaderV2>,
+            [SignupMode.PassSimpleLogin]: <SignupHeaderV2>{title}</SignupHeaderV2>,
         }[mode],
         features,
         benefits,

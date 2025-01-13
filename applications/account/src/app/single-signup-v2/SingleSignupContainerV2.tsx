@@ -26,21 +26,18 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
-import { type Currency, DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
+import type { FullPlansMap, PaymentMethodFlows } from '@proton/payments';
+import { type Currency, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
-import type {
-    ActiveSession,
-    GetActiveSessionsResult,
-    ResumedSessionResult,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -50,7 +47,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Api } from '@proton/shared/lib/interfaces';
+import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { formatUser } from '@proton/shared/lib/user/helpers';
@@ -63,11 +60,13 @@ import mailReferPage from '../../pages/refer-a-friend';
 import mailTrialPage from '../../pages/trial';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import type { Paths } from '../content/helper';
-import { getOptimisticDomains, isMailReferAFriendSignup, isMailTrialSignup } from '../signup/helper';
+import { getOptimisticDomains, isMailReferAFriendSignup, isMailTrialSignup, isPorkbunSignup } from '../signup/helper';
 import type {
     InviteData,
     SessionData,
+    SignupActionDoneResponse,
     SignupCacheResult,
+    SignupInviteParameters,
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
@@ -85,14 +84,16 @@ import Step2 from './Step2';
 import SwitchModal from './SwitchModal';
 import { defaultSignupModel } from './constants';
 import { cachedPlans, cachedPlansMap } from './defaultPlans';
+import { getSessionsData } from './getSessionsData';
 import {
     getAccessiblePlans,
     getFreeSubscriptionData,
     getIsProductB2BPlan,
     getOptimisticPlanCardSubscriptionData,
-    getPlanCardSubscriptionData,
     getRelativeUpsellPrice,
     getSessionDataFromSignup,
+    getSubscriptionDataCycleMapping,
+    getTemporarySignupParameters,
     getUserInfo,
 } from './helper';
 import type { PlanParameters, SignupModelV2, SignupParameters2, Upsell } from './interface';
@@ -106,6 +107,39 @@ import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getSignupConfiguration } from './signupConfiguration';
 import { getSignupParameters } from './signupParameters';
+
+const getPorkbunPaymentUrl = ({ data }: { data: Extract<SignupInviteParameters, { type: 'porkbun' }>['data'] }) => {
+    return getAppHref(
+        `${SSO_PATHS.PORKBUN_SIGNUP}${stringifySearchParams(
+            {
+                email: data.invitee,
+                token: data.porkbunToken,
+            },
+            '?'
+        )}`,
+        APPS.PROTONACCOUNT
+    );
+};
+
+const getPorkbunClaimUrl = ({
+    data,
+    localID,
+}: {
+    data: Extract<SignupInviteParameters, { type: 'porkbun' }>['data'];
+    localID: number;
+}) => {
+    return getAppHref(
+        `/partner/porkbun/claim${stringifySearchParams(
+            {
+                email: data.invitee,
+                token: data.porkbunToken,
+            },
+            '?'
+        )}`,
+        APPS.PROTONACCOUNT,
+        localID
+    );
+};
 
 const getRecoveryKit = async () => {
     // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
@@ -171,6 +205,7 @@ const SingleSignupContainerV2 = ({
     })();
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
+    const isPorkbun = isPorkbunSignup(location);
     useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
 
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
@@ -178,6 +213,12 @@ const SingleSignupContainerV2 = ({
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
         toApp = APPS.PROTONMAIL;
+    }
+
+    let partner: 'porkbun' | undefined;
+    if (isPorkbun) {
+        toApp = APPS.PROTONMAIL;
+        partner = 'porkbun';
     }
 
     const unauthApi = useApi();
@@ -203,7 +244,14 @@ const SingleSignupContainerV2 = ({
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
 
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
-        return getSignupParameters({ toApp, location, visionarySignupEnabled, initialSearchParams, isMailTrial });
+        return getSignupParameters({
+            toApp,
+            location,
+            visionarySignupEnabled,
+            initialSearchParams,
+            isMailTrial,
+            partner,
+        });
     });
 
     const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
@@ -414,27 +462,6 @@ const SingleSignupContainerV2 = ({
         }
     };
 
-    const getSubscriptionDataCycleMapping = async (
-        paymentsApi: PaymentsApi,
-        plansMap: FullPlansMap,
-        coupon: string | undefined | null
-    ) => {
-        const [b2c, b2b] = await Promise.all(
-            ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
-                const planIDs = planCards[audienceToFetch].map(({ plan }) => ({ [plan]: 1 }));
-                return getPlanCardSubscriptionData({
-                    planIDs,
-                    plansMap,
-                    cycles: signupConfiguration.cycles,
-                    paymentsApi,
-                    coupon,
-                    billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
-                });
-            })
-        );
-        return { ...b2b, ...b2c };
-    };
-
     const changeCurrency = async (newCurrency: Currency): Promise<FullPlansMap> => {
         const plansMap = getPlansMap(model.plans, newCurrency, false);
 
@@ -444,11 +471,12 @@ const SingleSignupContainerV2 = ({
         );
         const paymentsApi = getPaymentsApi(silentApi);
 
-        const subscriptionDataCycleMapping = await getSubscriptionDataCycleMapping(
+        const subscriptionDataCycleMapping = await getSubscriptionDataCycleMapping({
             paymentsApi,
             plansMap,
-            signupParameters.coupon
-        );
+            signupConfiguration,
+            coupon: signupParameters.coupon,
+        });
 
         setModelDiff({
             plansMap,
@@ -459,60 +487,16 @@ const SingleSignupContainerV2 = ({
     };
 
     useEffect(() => {
-        const getSessionsData = async (
-            api: Api
-        ): Promise<{
-            sessions: ActiveSession[];
-            session: ResumedSessionResult | undefined;
-        }> => {
-            if (signupParameters.localID === -1) {
-                return {
-                    sessions: [],
-                    session: undefined,
-                };
-            }
-
-            let { sessions, session } = await (async () => {
-                if (activeSessions?.length) {
-                    return {
-                        sessions: activeSessions,
-                        session: undefined,
-                    };
-                }
-
-                const activeSessionsResult = await onGetActiveSessions?.();
-                if (activeSessionsResult) {
-                    return {
-                        sessions: activeSessionsResult.sessions,
-                        session: activeSessionsResult.session,
-                    };
-                }
-
-                return {
-                    sessions: [],
-                    session: undefined,
-                };
-            })();
-
-            if (!session && sessions.length) {
-                const firstSession = sessions[0];
-                session = await resumeSession({
-                    api,
-                    localID: firstSession.persisted.localID,
-                }).catch(noop);
-            }
-
-            return {
-                sessions,
-                session,
-            };
-        };
-
         const fetchDependencies = async () => {
             await startUnAuthFlow().catch(noop);
             let silentApi = getSilentApi(unauthApi);
 
-            const sessionsData = await getSessionsData(silentApi);
+            const sessionsData = await getSessionsData({
+                signupParameters,
+                activeSessions,
+                api: silentApi,
+                onGetActiveSessions,
+            });
             const resumedSession = sessionsData.session;
 
             let chargebeeEnabled = undefined;
@@ -542,10 +526,15 @@ const SingleSignupContainerV2 = ({
                 user: resumedSession?.User ? formatUser(resumedSession?.User) : undefined,
             });
 
-            const planParameters = getPlanIDsFromParams(plans, currency, signupParameters, defaults);
-            const cycle = signupParameters.cycle || defaults.cycle;
-            const invite = signupParameters.invite;
-            const coupon = signupParameters.coupon;
+            const modifiedSignupParameters = await getTemporarySignupParameters({
+                session: resumedSession,
+                signupParameters,
+                api: silentApi,
+            });
+            const planParameters = getPlanIDsFromParams(plans, currency, modifiedSignupParameters, defaults);
+            const cycle = modifiedSignupParameters.cycle || defaults.cycle;
+            const invite = modifiedSignupParameters.invite;
+            const coupon = modifiedSignupParameters.coupon;
 
             const plansMap = getPlansMap(plans, currency, false);
 
@@ -575,7 +564,7 @@ const SingleSignupContainerV2 = ({
                     plansMap,
                     upsellPlanCard,
                     planParameters,
-                    signupParameters,
+                    signupParameters: modifiedSignupParameters,
                     options: {
                         plansMap: plansMap,
                         planIDs: planParameters.planIDs,
@@ -590,13 +579,14 @@ const SingleSignupContainerV2 = ({
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
                 }),
-                getSubscriptionDataCycleMapping(
+                getSubscriptionDataCycleMapping({
+                    signupConfiguration,
                     paymentsApi,
                     plansMap,
                     // if plan parameters are defined, we assume we won't be showing the plan cards
                     // and that we won't need to fetch the subscription data from the API call with each coupon
-                    planParameters.defined ? null : coupon
-                ),
+                    coupon: planParameters.defined ? null : coupon,
+                }),
             ]);
 
             let session: SessionData | undefined;
@@ -605,6 +595,18 @@ const SingleSignupContainerV2 = ({
                     resumedSessionResult: resumedSession,
                     ...userInfo,
                 };
+            }
+
+            // TODO: How to define already paid behavior?
+            if (resumedSession && userInfo.state.access && signupParameters.invite?.type === 'porkbun') {
+                // Once porkbun payment has completed, the next step is to link the domains
+                window.location.replace(
+                    getPorkbunClaimUrl({
+                        localID: resumedSession.LocalID,
+                        data: signupParameters.invite.data,
+                    })
+                );
+                await Promise.resolve(() => {});
             }
 
             const signupParametersDiff: Partial<SignupParameters2> = {};
@@ -792,6 +794,16 @@ const SingleSignupContainerV2 = ({
             return;
         }
 
+        if (signupParameters.invite?.type === 'porkbun') {
+            window.location.replace(
+                getPorkbunPaymentUrl({
+                    data: { ...signupParameters.invite.data, invitee: authSession.User.Email },
+                })
+            );
+            // Promise that never resolves
+            return new Promise(() => {});
+        }
+
         try {
             accountRef.current.signingIn = true;
             // Override the silentApi to not use the one with the UID as we prepare the state
@@ -891,8 +903,48 @@ const SingleSignupContainerV2 = ({
 
     const br = <br key="br" />;
 
+    const handleFinalizeSignup = async (result: SignupActionDoneResponse) => {
+        try {
+            if (signupParameters.invite?.type === 'porkbun') {
+                // If it's porkbun signup, we reload this page to show the "signed in payment mode"
+                window.location.replace(
+                    getPorkbunPaymentUrl({
+                        data: { ...signupParameters.invite.data, invitee: result.session.User.Email },
+                    })
+                );
+                // Promise that never resolves
+                return await new Promise<void>(() => {});
+            }
+
+            await onLogin(result.session);
+
+            metrics.core_single_signup_complete_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_single_signup_complete_total.increment({
+                    status,
+                })
+            );
+            handleError(error);
+        }
+    };
+
     const handleLoginUser = async (cache: UserCacheResult) => {
         try {
+            if (signupParameters.invite?.type === 'porkbun') {
+                // Once porkbun payment has completed, the next step is to link the domains
+                window.location.replace(
+                    getPorkbunClaimUrl({
+                        localID: cache.session.resumedSessionResult.LocalID,
+                        data: signupParameters.invite.data,
+                    })
+                );
+                // Promise that never resolves
+                return await new Promise<void>(() => {});
+            }
+
             await onLogin({
                 ...cache.session.resumedSessionResult,
                 flow: 'login',
@@ -1417,20 +1469,7 @@ const SingleSignupContainerV2 = ({
                                 return handleLoginUser(result);
                             }
                             if (result.type === 'signup') {
-                                try {
-                                    await onLogin(result.payload.session);
-
-                                    metrics.core_single_signup_complete_total.increment({
-                                        status: 'success',
-                                    });
-                                } catch (error) {
-                                    observeApiError(error, (status) =>
-                                        metrics.core_single_signup_complete_total.increment({
-                                            status,
-                                        })
-                                    );
-                                    handleError(error);
-                                }
+                                return handleFinalizeSignup(result.payload);
                             }
                         }}
                     />
