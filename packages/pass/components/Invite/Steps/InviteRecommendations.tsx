@@ -26,6 +26,7 @@ type Props = {
 };
 
 const pageSize = 50;
+const rowHeight = 40;
 
 export const InviteRecommendations: FC<Props> = (props) => {
     const { autocomplete, excluded, selected, onToggle } = props;
@@ -86,7 +87,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
 
             <div
                 className="flex-1 min-h-custom overflow-hidden rounded-lg"
-                style={{ '--min-h-custom': 'calc(100vh - 300px)' }}
+                style={{ '--min-h-custom': `${rowHeight * Math.min(displayedEmails.length, 2)}px` }}
             >
                 {displayedEmails.length === 0 && !loading ? (
                     <em className="color-weak anime-fade-in"> {c('Warning').t`No results`}</em>
@@ -98,7 +99,7 @@ export const InviteRecommendations: FC<Props> = (props) => {
                              * request if we have more organization suggestions to load */
                             if (view === organization?.name) loadMore();
                         }}
-                        rowHeight={() => 40}
+                        rowHeight={() => rowHeight}
                         rowRenderer={({ style, index, key }) => {
                             const email = displayedEmails[index];
                             const disabled = excluded.has(email);
