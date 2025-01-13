@@ -204,7 +204,7 @@ export const handleCreateAddressAndKey = async ({
     ]);
     const [address] = await handleSetupUsernameAndAddress({ api, username, user, domain });
     const userKeys = await getDecryptedUserKeysHelper(user, passphrase);
-    const hasV6UserKeys = userKeys.filter((key) => key.privateKey.isPrivateKeyV6());
+    const hasV6UserKeys = userKeys.some((key) => key.privateKey.isPrivateKeyV6());
     const keyTransparencyVerify = preAuthKTVerify(userKeys);
     if (getHasMigratedAddressKeys(addresses)) {
         const [, updatedActiveKeys] = await createAddressKeyV2({
@@ -214,15 +214,16 @@ export const handleCreateAddressAndKey = async ({
             activeKeys: { v4: [], v6: [] },
             keyTransparencyVerify,
         });
-        
-        if (hasV6UserKeys) { // also generate a v6 address key
+
+        if (hasV6UserKeys) {
+            // also generate a v6 address key
             await createAddressKeyV2({
                 api,
                 userKeys,
                 address,
                 activeKeys: updatedActiveKeys,
                 keyTransparencyVerify,
-                keyGenConfig: KEYGEN_CONFIGS[KEYGEN_TYPES.PQC]
+                keyGenConfig: KEYGEN_CONFIGS[KEYGEN_TYPES.PQC],
             });
         }
     } else {
