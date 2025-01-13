@@ -44,7 +44,8 @@ export type SourceEventUpsell =
     | 'BUTTON_SCRIBE'
     | 'BUTTON_ZOOM'
     | 'STATE_ACCOUNT_LOCKED'
-    | 'BUTTON_DWM';
+    | 'BUTTON_DWM'
+    | 'BUTTON_PUBLIC_SHARING_EDITOR';
 
 export const sendRequestUpsellModalReport = ({
     api,
