@@ -1,4 +1,15 @@
-import { addBreadcrumb, captureMessage, init, setTag, setTags, setUser, SeverityLevel } from "@sentry/electron/main";
+import {
+    addBreadcrumb,
+    anrIntegration,
+    captureMessage,
+    childProcessIntegration,
+    electronMinidumpIntegration,
+    init,
+    setTag,
+    setTags,
+    setUser,
+    SeverityLevel,
+} from "@sentry/electron/main";
 import { appSession, updateSession } from "./session";
 import pkg from "../../package.json";
 import { app } from "electron";
@@ -12,6 +23,7 @@ import { getWindowBounds } from "../store/boundsStore";
 import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
 import { NET_LOGGER_VIEW_PREFIX, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
+import { getOSInfo } from "./log/getOSInfo";
 
 const MAX_TAG_LENGTH = 32;
 
@@ -65,6 +77,12 @@ export async function initializeSentry() {
         autoSessionTracking: true,
         environment,
         release,
+        integrations: (defaultIntegrations) => [
+            ...defaultIntegrations,
+            electronMinidumpIntegration(),
+            childProcessIntegration(),
+            anrIntegration({ captureStackTrace: true }),
+        ],
     });
 
     setUser({
@@ -117,6 +135,7 @@ export async function initializeSentry() {
                         calendarViewURL: getCalendarView()?.webContents.getURL(),
                         accountViewURL: getAccountView()?.webContents.getURL(),
                     },
+                    osInfo: getOSInfo(),
                     appURL: getAppURL(),
                 },
             });
