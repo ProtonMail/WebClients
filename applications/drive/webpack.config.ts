@@ -1,8 +1,9 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
 import webpack from 'webpack';
 
 import getConfig from '@proton/pack/webpack.config';
-import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
+import { addDevEntry, getIndexChunks, getSupportedEntry, mergeEntry } from '@proton/pack/webpack/entries';
 
 /**
  * There are some specific references to Buffer in the drive application,
@@ -19,6 +20,15 @@ const result = (env: any): webpack.Configuration => {
     if (!htmlPlugin) {
         throw new Error('Missing html plugin');
     }
+
+    config.entry = mergeEntry(config.entry, {
+        ['urls']: [path.resolve('./src/app/urls.tsx'), getSupportedEntry()],
+    });
+
+    if (env.appMode === 'standalone') {
+        addDevEntry(config);
+    }
+
     const htmlIndex = config.plugins.indexOf(htmlPlugin);
 
     config.plugins.splice(
@@ -43,12 +53,23 @@ const result = (env: any): webpack.Configuration => {
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             inject: 'body',
-            chunks: getIndexChunks('index'),
+            chunks: getIndexChunks('urls'),
         })
     );
 
-    if (env.appMode === 'standalone') {
-        addDevEntry(config);
+    if (config.devServer) {
+        config.devServer.historyApiFallback = {
+            rewrites: [
+                {
+                    from: /^\/urls/, // Matches any path starting with `/urls`
+                    to: '/urls.html', // Serves `urls.html`
+                },
+                {
+                    from: /./, // Matches any other route
+                    to: '/index.html', // Serves `index.html`
+                },
+            ],
+        };
     }
 
     return {
