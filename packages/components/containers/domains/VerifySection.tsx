@@ -21,7 +21,7 @@ const VerifySection = ({ domain }: Props) => {
     const handleCopy = () => createNotification({ text: c('Success').t`Verification code copied to clipboard` });
     const domainName = domain?.DomainName || '';
     const verifyCode = domain?.VerifyCode || '';
-    const kbLink = <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`here`}</Href>;
+    const kbLink = <Href href={getKnowledgeBaseUrl('/custom-domain')} key="kb">{c('Link').t`here`}</Href>;
     return (
         <>
             <Alert className="mb-4">

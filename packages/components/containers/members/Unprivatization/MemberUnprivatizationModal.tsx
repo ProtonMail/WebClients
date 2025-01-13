@@ -11,6 +11,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -26,42 +27,53 @@ interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
 }
 
 const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData, onChange, ...rest }: Props) => {
-    const [loading, withLoading] = useLoading();
+    const [loadingAccept, withLoadingAccept] = useLoading();
+    const [loadingReject, withLoadingReject] = useLoading();
     const dispatch = useDispatch();
     const api = useApi();
     const [authModalProps, setAuthModal, renderAuthModal] = useModalState();
     const { createNotification } = useNotifications();
+    const errorHandler = useErrorHandler();
 
     const adminEmail = parsedUnprivatizationData.payload.unprivatizationData.AdminEmail;
+    const loading = loadingReject || loadingAccept;
 
-    const handleAccept = () => {
-        withLoading(
-            dispatch(
+    const handleAccept = async () => {
+        try {
+            await dispatch(
                 memberAcceptUnprivatization({
                     api,
                     member,
                     parsedUnprivatizationData,
                 })
-            )
-        ).then(() => {
+            );
             onChange();
             createNotification({ text: c('unprivatization').t`Administrator access enabled` });
             rest.onClose?.();
-        });
+        } catch (e) {
+            errorHandler(e);
+        }
     };
 
-    const handleReject = () => {
-        dispatch(memberRejectUnprivatization({ api, member }));
-        createNotification({ text: c('unprivatization').t`Administrator access rejected` });
-        onChange();
-        rest.onClose?.();
+    const handleReject = async () => {
+        try {
+            await dispatch(memberRejectUnprivatization({ api, member }));
+            createNotification({ text: c('unprivatization').t`Administrator access rejected` });
+            onChange();
+            rest.onClose?.();
+        } catch (e) {
+            errorHandler(e);
+        }
     };
 
     const reject = (
         <InlineLinkButton
             key="reject"
             onClick={() => {
-                handleReject();
+                if (loading) {
+                    return;
+                }
+                withLoadingReject(handleReject());
             }}
         >{c('unprivatization').t`reject`}</InlineLinkButton>
     );
@@ -75,7 +87,10 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
                     {...authModalProps}
                     onCancel={authModalProps.onClose}
                     onSuccess={async () => {
-                        handleAccept();
+                        if (loading) {
+                            return;
+                        }
+                        withLoadingAccept(handleAccept());
                     }}
                 />
             )}
@@ -98,8 +113,11 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
                     <Button onClick={rest.onClose}>{c('unprivatization').t`Cancel`}</Button>
                     <Button
                         color="norm"
-                        loading={loading}
+                        loading={loadingAccept}
                         onClick={() => {
+                            if (loading) {
+                                return;
+                            }
                             setAuthModal(true);
                         }}
                     >{c('unprivatization').t`Enable administrator access`}</Button>

@@ -18,10 +18,11 @@ import type {
     Organization,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
-import { type MemberUnprivatizationOutput, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import { type MemberUnprivatizationOutput } from '@proton/shared/lib/interfaces';
 import {
     type ParsedUnprivatizationData,
     acceptUnprivatization,
+    getIsMemberInManualAcceptState,
     parseUnprivatizationData,
     validateUnprivatizationData,
 } from '@proton/shared/lib/keys';
@@ -32,17 +33,18 @@ import { type InactiveKeysState, selectInactiveKeys } from '../inactiveKeys';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
-import { type MemberState, memberThunk, updateMember } from './index';
+import { type MemberState, updateMember } from './index';
 
 export const getPendingUnprivatizationRequest = ({
+    member,
     verifyOutboundPublicKeys,
 }: {
+    member: Member;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
 }): ThunkAction<
     Promise<
         | {
               organization: Organization;
-              member: Member;
               parsedUnprivatizationData: ParsedUnprivatizationData;
           }
         | undefined
@@ -52,9 +54,7 @@ export const getPendingUnprivatizationRequest = ({
     UnknownAction
 > => {
     return async (dispatch, _, extra) => {
-        const member = await dispatch(memberThunk());
-
-        if (!member?.Unprivatization || member.Unprivatization.State !== MemberUnprivatizationState.Pending) {
+        if (!getIsMemberInManualAcceptState(member)) {
             return;
         }
 
@@ -81,7 +81,6 @@ export const getPendingUnprivatizationRequest = ({
         });
 
         return {
-            member,
             organization,
             parsedUnprivatizationData,
         };
