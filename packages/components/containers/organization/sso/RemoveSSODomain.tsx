@@ -2,25 +2,26 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { deleteDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
-import { deleteDomain } from '@proton/shared/lib/api/domains';
+import { useDispatch } from '@proton/redux-shared-store';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     domain: Domain;
+    onSuccess?: () => void;
 }
 
-const RemoveSSODomain = ({ domain, ...rest }: Props) => {
-    const api = useApi();
+const RemoveSSODomain = ({ domain, onSuccess, ...rest }: Props) => {
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
     const [loading, withLoading] = useLoading();
 
     useEffect(() => {
@@ -29,8 +30,8 @@ const RemoveSSODomain = ({ domain, ...rest }: Props) => {
 
     const handleConfirmDelete = async () => {
         try {
-            await api(deleteDomain(domain.ID));
-            await call();
+            await dispatch(deleteDomain(domain));
+            onSuccess?.();
             rest.onClose?.();
             createNotification({ text: c('Success message').t`Domain deleted` });
 
@@ -43,7 +44,7 @@ const RemoveSSODomain = ({ domain, ...rest }: Props) => {
                     status,
                 })
             );
-            throw error;
+            handleError(error);
         }
     };
 

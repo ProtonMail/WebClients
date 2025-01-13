@@ -9,7 +9,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    domain: Partial<Domain>;
+    domain: Domain | undefined;
     domainName: string;
     onValue: (domainName: string) => void;
     validator: (validations: string[]) => string;
@@ -25,7 +25,7 @@ const DomainSection = ({ domain, domainName, onValue, validator }: Props) => {
                     <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`Learn more`}</Href>
                 </div>
             </Alert>
-            {domain.ID ? (
+            {domain?.ID ? (
                 <InputFieldTwo label={c('Label').t`Domain name`} as="div">
                     {domainName}
                 </InputFieldTwo>
@@ -42,7 +42,7 @@ const DomainSection = ({ domain, domainName, onValue, validator }: Props) => {
                     placeholder={c('Placeholder').t`yourdomain.com`}
                 />
             )}
-            {!domain.ID && domainName.toLowerCase().startsWith('www.') ? (
+            {!domain?.ID && domainName.toLowerCase().startsWith('www.') ? (
                 <Alert className="mb-4" type="warning">{c('Domain modal')
                     .t`'www' subdomains are typically not used for email. Are you sure you want to use this domain value?`}</Alert>
             ) : null}
