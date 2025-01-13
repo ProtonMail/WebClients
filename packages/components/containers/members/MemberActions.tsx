@@ -3,8 +3,15 @@ import { c } from 'ttag';
 import type { getSSODomainsSet } from '@proton/account/samlSSO/helper';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import type {
+    APP_NAMES} from '@proton/shared/lib/constants';
+import {
+    APPS,
+    MEMBER_PRIVATE,
+    MEMBER_ROLE,
+    MEMBER_TYPE,
+    ORGANIZATION_STATE,
+} from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type {
@@ -16,6 +23,7 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -94,24 +102,26 @@ export const getMemberPermissions = ({
         addresses?.length;
 
     const isNonPrivate = member.Private === MEMBER_PRIVATE.READABLE;
-    const hasKeysSetup = member.Keys.length > 0;
+    const isPrivate = member.Private === MEMBER_PRIVATE.UNREADABLE;
+    const isMemberSetup = getIsMemberSetup(member);
+    const isSelf = Boolean(member.Self);
 
     const canLogin =
         !disableMemberSignIn &&
         appName !== APPS.PROTONVPN_SETTINGS &&
         hasSetupOrganizationWithKeys &&
-        !member.Self &&
+        !isSelf &&
         isNonPrivate &&
-        hasKeysSetup &&
+        isMemberSetup &&
         !!organizationKey?.privateKey &&
         addresses &&
         addresses?.length > 0;
 
     const canChangePassword =
         hasSetupOrganizationWithKeys &&
-        !member.Self &&
+        !isSelf &&
         isNonPrivate &&
-        hasKeysSetup &&
+        isMemberSetup &&
         !!organizationKey?.privateKey &&
         addresses &&
         addresses.length > 0;
@@ -119,17 +129,21 @@ export const getMemberPermissions = ({
     const isMemberSSO = Boolean(member.SSO);
     const canAddAddress = !isMemberSSO && addresses && addresses.length === 0;
 
-    const canDetachSSO = isMemberSSO && hasKeysSetup;
-    const canAttachSSO = Boolean(
+    const hasSSOAddress = Boolean(
         ssoDomainsSet.size &&
-            !isMemberSSO &&
-            hasKeysSetup &&
-            isNonPrivate &&
             addresses?.length &&
             addresses.some((address) => {
                 const [, domain] = getEmailParts(address.Email);
                 return ssoDomainsSet.has(domain.toLowerCase());
             })
+    );
+    const canDetachSSO = isMemberSSO && isMemberSetup;
+    const canAttachSSO = Boolean(
+        !isMemberSSO &&
+            isMemberSetup &&
+            // Private admins will first perform unprivatization for themselves)
+            (isNonPrivate || (isPrivate && isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN)) &&
+            hasSSOAddress
     );
 
     return {

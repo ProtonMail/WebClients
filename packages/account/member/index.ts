@@ -31,7 +31,7 @@ export const selectMember = (state: MemberState) => state[name];
 
 const canFetch = (user: User) => isAdmin(user) || isMember(user);
 
-const modelThunk = createAsyncModelThunk<Model | undefined, MemberState, ProtonThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, MemberState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
         const user = await dispatch(userThunk());
         if (!canFetch(user)) {
