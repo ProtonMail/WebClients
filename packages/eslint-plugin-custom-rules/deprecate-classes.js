@@ -207,6 +207,10 @@ const deprecatedClassNames = [
         suggestedClassName: 'flex and *:min-size-auto',
     },
     {
+        deprecatedClassName: 'flex-no-wrap',
+        suggestedClassName: 'flex-nowrap',
+    },
+    {
         deprecatedClassName: 'hidden-empty',
         suggestedClassName: 'empty:hidden',
     },
