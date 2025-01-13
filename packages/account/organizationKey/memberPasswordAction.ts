@@ -13,7 +13,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 
 import { addressesThunk } from '../addresses';
 import { type MembersState, getMemberAddresses, upsertMember } from '../members';
-import { getMember } from '../members/actions';
+import { getMember } from '../members/getMember';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
 

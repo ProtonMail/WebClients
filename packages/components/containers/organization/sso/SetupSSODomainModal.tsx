@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { createDomain, syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
@@ -13,16 +14,13 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
-import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { useDispatch } from '@proton/redux-shared-store';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
 import TXTSection from './TXTSection';
 
@@ -32,13 +30,15 @@ enum STEP {
 }
 
 interface Props extends ModalProps {
+    onDomainAdded?: (domain: Domain) => void;
     onContinue: () => void;
 }
 
-const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
+const SetupSSODomainModal = ({ onContinue, onDomainAdded, onClose, ...rest }: Props) => {
     const [step, setStep] = useState(STEP.DOMAIN_INPUT);
     const [domainName, setDomainName] = useState('');
     const [domain, setDomain] = useState<Domain>();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const stepLabel = (() => {
@@ -52,8 +52,7 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
         void metrics.core_sso_setup_domain_modal_load_total.increment({ step: stepLabel });
     }, [step]);
 
-    const api = useApi();
-    const { call } = useEventManager();
+    const handleError = useErrorHandler();
     const [submitting, withSubmitting] = useLoading();
     const [loadingVerification, withLoadingVerification] = useLoading();
 
@@ -72,12 +71,9 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
                 }
 
                 try {
-                    const { Domain } = await api<{ Domain: Domain }>(
-                        addDomain({ Name: domainName, AllowedForMail: false, AllowedForSSO: true })
-                    );
+                    const Domain = await dispatch(createDomain({ name: domainName, allowedForSSO: true }));
+                    onDomainAdded?.(Domain);
                     setDomain(Domain);
-
-                    await call();
                     setStep(STEP.TXT_RECORD);
                 } catch (error) {
                     observeApiError(error, (status) =>
@@ -85,8 +81,7 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
                             status,
                         })
                     );
-
-                    throw error;
+                    handleError(error);
                 }
             };
             return {
@@ -123,14 +118,8 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
 
         if (step === STEP.TXT_RECORD && domain) {
             const handleVerification = async () => {
-                if (domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD) {
-                    onContinue();
-                    return;
-                }
-                const silentApi = getSilentApi(api);
-                const result = await silentApi<{ Domain: Domain }>(getDomain(domain.ID)).catch(noop);
-                if (result?.Domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD) {
-                    call();
+                if (domain.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD) {
+                    await dispatch(syncDomain(domain));
                 }
                 onContinue();
             };
@@ -142,7 +131,7 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
                         <Button onClick={onClose}>{c('Action').t`Close`}</Button>
                         <Button
                             loading={loadingVerification}
-                            onClick={() => withLoadingVerification(handleVerification()).catch(noop)}
+                            onClick={() => withLoadingVerification(handleVerification()).catch(handleError)}
                             color="norm"
                         >
                             {c('Action').t`Continue`}

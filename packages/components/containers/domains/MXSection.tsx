@@ -26,7 +26,7 @@ const MXSection = () => {
      * translator: This string is used in the following sentence
      * "Before you can receive emails for your custom domain addresses at Proton Mail, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips here."
      */
-    const kbLink = <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`here`}</Href>;
+    const kbLink = <Href key="kb" href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`here`}</Href>;
     const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
     const mailDomain = 'mail.protonmail.ch';
     const mailsecDomain = 'mailsec.protonmail.ch';

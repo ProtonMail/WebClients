@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
+import { deleteDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms';
 import ErrorButton from '@proton/components/components/button/ErrorButton';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { deleteDomain } from '@proton/shared/lib/api/domains';
+import { useDispatch } from '@proton/redux-shared-store';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
@@ -16,14 +16,13 @@ interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
 }
 
 const DeleteDomainModal = ({ domain, ...rest }: Props) => {
-    const api = useApi();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
+    const handleError = useErrorHandler();
 
     const handleConfirmDelete = async () => {
-        await api(deleteDomain(domain.ID));
-        await call();
+        await dispatch(deleteDomain(domain));
         rest.onClose?.();
         createNotification({ text: c('Success message').t`Domain deleted` });
     };
@@ -40,7 +39,7 @@ const DeleteDomainModal = ({ domain, ...rest }: Props) => {
             buttons={[
                 <ErrorButton
                     onClick={() => {
-                        withLoading(handleConfirmDelete());
+                        withLoading(handleConfirmDelete()).catch(handleError);
                     }}
                     loading={loading}
                 >{c('Delete domain prompt').t`Delete`}</ErrorButton>,

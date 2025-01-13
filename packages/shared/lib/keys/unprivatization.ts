@@ -14,12 +14,15 @@ import type {
     Address,
     Api,
     KTUserContext,
+    Member,
     MemberInvitationData,
     MemberReadyForUnprivatization,
+    MemberReadyForUnprivatizationApproval,
     MemberUnprivatization,
+    MemberUnprivatizationAcceptState,
+    MemberUnprivatizationAutomaticApproveState,
+    MemberUnprivatizationManualApproveState,
     MemberUnprivatizationOutput,
-    MemberUnprivatizationReadyForUnprivatization,
-    MemberUnprivatizationReadyForUnprivatizationApproval,
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
     Unwrap,
@@ -435,9 +438,9 @@ export interface UnprivatizeMemberResult {
     AddressKeys: UnprivatizeMemberAddressKeyDto[];
 }
 
-export const getMemberReadyForUnprivatization = (
+export const getIsMemberUnprivatizationInAutomaticApproveState = (
     unprivatizationData: MemberUnprivatization | null
-): unprivatizationData is MemberUnprivatizationReadyForUnprivatization => {
+): unprivatizationData is MemberUnprivatizationAutomaticApproveState => {
     return Boolean(
         unprivatizationData?.State === MemberUnprivatizationState.Ready &&
             !unprivatizationData.PrivateIntent &&
@@ -448,18 +451,42 @@ export const getMemberReadyForUnprivatization = (
     );
 };
 
-export const getMemberReadyForUnprivatizationApproval = (
+export const getIsMemberUnprivatizationInManualApproveState = (
     unprivatizationData: MemberUnprivatization | null
-): unprivatizationData is MemberUnprivatizationReadyForUnprivatizationApproval => {
+): unprivatizationData is MemberUnprivatizationManualApproveState => {
     return Boolean(
         unprivatizationData?.State === MemberUnprivatizationState.Ready &&
             !unprivatizationData.PrivateIntent &&
             !unprivatizationData.InvitationData &&
             !unprivatizationData.InvitationSignature &&
-            !unprivatizationData.InvitationSignature &&
             unprivatizationData.ActivationToken &&
             (unprivatizationData.PrivateKeys?.length || 0) > 0
     );
+};
+
+export const getIsMemberUnprivatizationInManualAcceptState = (
+    unprivatizationData: MemberUnprivatization | null
+): unprivatizationData is MemberUnprivatizationAcceptState => {
+    return Boolean(
+        unprivatizationData?.State === MemberUnprivatizationState.Pending &&
+            !unprivatizationData.PrivateIntent &&
+            unprivatizationData.InvitationData &&
+            unprivatizationData.InvitationSignature &&
+            !unprivatizationData.ActivationToken &&
+            !unprivatizationData.PrivateKeys?.length
+    );
+};
+
+export const getIsMemberInAutomaticApproveState = (member: Member): member is MemberReadyForUnprivatization => {
+    return getIsMemberUnprivatizationInAutomaticApproveState(member.Unprivatization);
+};
+
+export const getIsMemberInManualApproveState = (member: Member): member is MemberReadyForUnprivatizationApproval => {
+    return getIsMemberUnprivatizationInManualApproveState(member.Unprivatization);
+};
+
+export const getIsMemberInManualAcceptState = (member: Member): member is MemberReadyForUnprivatizationApproval => {
+    return getIsMemberUnprivatizationInManualAcceptState(member.Unprivatization);
 };
 
 export const unprivatizeMemberHelper = async ({
@@ -545,7 +572,7 @@ export const unprivatizeMemberHelper = async ({
 
 export class UnprivatizationRevisionError extends Error {}
 
-export const unprivatizeMember = async ({
+export const getUnprivatizeMemberPayload = async ({
     verifyOutboundPublicKeys,
     api,
     member,

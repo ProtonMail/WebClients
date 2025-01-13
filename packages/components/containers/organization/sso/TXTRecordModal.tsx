@@ -1,19 +1,18 @@
 import { c } from 'ttag';
 
+import { syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { getDomain } from '@proton/shared/lib/api/domains';
+import { useDispatch } from '@proton/redux-shared-store';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
 import { verifyDomain } from '../../domains/DomainModal';
 import TXTSection from './TXTSection';
@@ -24,22 +23,23 @@ interface Props extends ModalProps {
 
 const TXTRecordModal = ({ domain, ...rest }: Props) => {
     const onContinue = rest.onClose;
-    const { call } = useEventManager();
-    const api = useApi();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
+    const handleError = useErrorHandler();
+
     const handleVerification = async () => {
         if (domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD) {
             return onContinue?.();
         }
-        const { Domain } = await api<{ Domain: Domain }>(getDomain(domain.ID));
-        const error = verifyDomain(Domain);
+        const updatedDomain = await dispatch(syncDomain(domain));
+        const error = verifyDomain(updatedDomain);
         if (error) {
             return createNotification({ text: error, type: 'error' });
         }
-        await call();
         onContinue?.();
     };
+
     return (
         <Modal size="large" {...rest}>
             <ModalHeader title={c('Info').t`Verify domain`} />
@@ -51,7 +51,7 @@ const TXTRecordModal = ({ domain, ...rest }: Props) => {
                     color="norm"
                     loading={loading}
                     onClick={() => {
-                        withLoading(handleVerification()).catch(noop);
+                        withLoading(handleVerification()).catch(handleError);
                     }}
                 >{c('Action').t`Done`}</Button>
             </ModalFooter>
