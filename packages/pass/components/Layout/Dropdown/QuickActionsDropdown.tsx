@@ -80,7 +80,11 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
             >
                 <Icon name={icon} size={iconSize} />
                 {signaled && <NotificationDot className="absolute top-0 right-0 w-2 h-2" />}
-                {badge && <Badge className="shrink-0 bg-primary ratio-square color-invert text-bold">{badge}</Badge>}
+                {badge && (
+                    <Badge className="bg-primary ratio-square color-invert text-bold w-6 flex justify-center items-center lh120">
+                        {badge}
+                    </Badge>
+                )}
             </Button>
 
             <Dropdown
