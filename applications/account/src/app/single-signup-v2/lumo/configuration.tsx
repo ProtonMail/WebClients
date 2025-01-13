@@ -9,6 +9,7 @@ import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import { planCardFeatureProps } from '../PlanCardSelector';
+import SignupHeaderV2 from '../SignupHeaderV2';
 import {
     getBenefits,
     getEncryptedFeature,
@@ -38,7 +39,7 @@ export const getLumoConfiguration = (): SignupConfiguration => {
 
     const appName = LUMO_APP_NAME;
 
-    const title = '';
+    const title = <SignupHeaderV2></SignupHeaderV2>;
 
     const features = [getNoLogsFeature(), getEncryptedFeature({ e2ee: false }), getSwissFeature({ fullText: true })];
 
