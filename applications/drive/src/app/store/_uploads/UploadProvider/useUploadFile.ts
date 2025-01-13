@@ -598,7 +598,7 @@ export default function useUploadFile() {
                                     Photo: photo
                                         ? {
                                               MainPhotoLinkID: null, // This is for live photos
-                                              CaptureTime: photo.captureTime,
+                                              CaptureTime: photo.captureTime || 0,
                                               Exif: photo.encryptedExif,
                                               ContentHash: photo.contentHash,
                                           }
