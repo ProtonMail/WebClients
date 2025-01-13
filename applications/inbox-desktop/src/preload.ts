@@ -34,6 +34,12 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
 } satisfies IPCInboxMessageBroker);
 
 contextBridge.exposeInMainWorld("crashBandicoot", {
+    reportTestingError: () => {
+        ipcRenderer.send("clientUpdate", {
+            type: "reportTestingError",
+            payload: undefined,
+        });
+    },
     triggerCrash: () => {
         ipcRenderer.send("clientUpdate", {
             type: "triggerCrash",
