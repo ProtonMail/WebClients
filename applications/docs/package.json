@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@lexical/utils": "0.21.0",
-    "@lexical/yjs": "0.21.0",
+    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.21.0#~/.yarn/patches/@lexical-yjs-npm-0.21.0-3fb1cd60e1.patch",
     "@proton/account": "workspace:^",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
