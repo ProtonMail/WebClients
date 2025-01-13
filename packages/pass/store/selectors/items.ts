@@ -364,7 +364,7 @@ const selectSortedSecureLinkItems = createSelector([selectItems, selectSecureLin
         (acc, [shareId, byShareId]) => {
             Object.entries(byShareId).forEach(([itemId, { length }]) => {
                 acc.totalCount += length;
-                acc.selection.push({ shareId, itemId });
+                if (length > 0) acc.selection.push({ shareId, itemId });
             });
 
             return acc;
