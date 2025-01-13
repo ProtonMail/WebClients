@@ -22,7 +22,7 @@ const result = (env: any): webpack.Configuration => {
     }
 
     config.entry = mergeEntry(config.entry, {
-        ['urls']: [path.resolve('./src/app/urls.tsx'), getSupportedEntry()],
+        ['urls-index']: [path.resolve('./src/app/urls.tsx'), getSupportedEntry()],
     });
 
     if (env.appMode === 'standalone') {
@@ -53,7 +53,7 @@ const result = (env: any): webpack.Configuration => {
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             inject: 'body',
-            chunks: getIndexChunks('urls'),
+            chunks: getIndexChunks('urls-index'),
         })
     );
 
