@@ -112,7 +112,8 @@ export type SignupInviteParameters =
     | { type: 'drive'; data: { invitee: string; externalInvitationID: string; preVerifiedAddressToken: string } }
     | { type: 'wallet'; data: { invitee: string; preVerifiedAddressToken: string } }
     | { type: 'pass'; data: { invitee: string; inviter?: string; preVerifiedAddressToken?: string } }
-    | { type: 'mail'; data: { referrer: string; invite: string | undefined } };
+    | { type: 'mail'; data: { referrer: string; invite: string | undefined } }
+    | { type: 'porkbun'; data: { invitee: string; preVerifiedAddressToken?: string; porkbunToken: string } };
 
 export class HumanVerificationError extends Error {
     methods: HumanVerificationMethodType[];

@@ -545,6 +545,8 @@ const BasePublicApp = () => {
                                                         SSO_PATHS.PASS_SIGNUP_B2B,
                                                         SSO_PATHS.WALLET_SIGNUP,
                                                         SSO_PATHS.LUMO_SIGNUP,
+                                                        SSO_PATHS.PORKBUN_SIGNUP,
+                                                        SSO_PATHS.PORKBUN_SIGN_IN,
                                                     ]}
                                                 >
                                                     <SingleSignupSwitchContainer
