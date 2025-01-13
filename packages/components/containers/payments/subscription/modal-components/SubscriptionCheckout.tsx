@@ -22,7 +22,7 @@ import {
     planIDsPositiveDifference,
 } from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
-import { getHas2024OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type {
     Cycle,
@@ -124,15 +124,7 @@ const SubscriptionCheckout = ({
         plansMap,
         checkResult,
     });
-    const {
-        planTitle,
-        usersTitle,
-        withDiscountPerCycle,
-        addons,
-        membersPerMonth,
-        couponDiscount,
-        withDiscountPerMonth,
-    } = checkout;
+    const { planTitle, usersTitle, addons, membersPerMonth, couponDiscount } = checkout;
 
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const currencies = useAvailableCurrenciesForPlan(plan, subscription);
@@ -158,8 +150,6 @@ const SubscriptionCheckout = ({
     const giftValue = Math.abs(checkResult.Gift || 0);
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
-
-    const hasBFDiscount = getHas2024OfferCoupon(checkResult.Coupon?.Code);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
@@ -218,11 +208,7 @@ const SubscriptionCheckout = ({
             ) : (
                 <CheckoutRow
                     title={usersTitle}
-                    // That a very naïve approach for the discounted number of members.
-                    // It will NOT work for the actual member addons and it can break when/if we introduce B2C addons
-                    // This is valid only for B2C plans without addons, so it should be good enough for the BF2024.
-                    // Kill it with fire after the BF is done (revert it to be just amount={membersPerMonth})
-                    amount={hasBFDiscount ? withDiscountPerMonth : membersPerMonth}
+                    amount={membersPerMonth}
                     currency={currency}
                     suffix={perMonthSuffix}
                     loading={loading}
@@ -269,17 +255,14 @@ const SubscriptionCheckout = ({
                                 ) : null} */}
                             </>
                         }
-                        // revert it to amount={amount} after BF
-                        amount={hasBFDiscount ? withDiscountPerCycle : amount}
+                        amount={amount}
                         currency={currency}
                         loading={loading}
                         data-testid="price"
-                        star={hasBFDiscount}
                     />
                 </>
             )}
-            {/* remove !hasBFDiscount after BF */}
-            {!!couponDiscount && !hasBFDiscount && (
+            {!!couponDiscount && (
                 <CheckoutRow
                     title={c('Title').t`Coupon`}
                     amount={couponDiscount}
