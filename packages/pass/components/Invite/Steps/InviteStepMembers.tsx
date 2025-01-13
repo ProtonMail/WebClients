@@ -118,7 +118,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                     />
                 </FieldsetCluster>
 
-                <div className="flex flex-nowrap flex-column gap-2">
+                <div className="flex flex-1 flex-nowrap flex-column gap-2">
                     {!disabled && (
                         <InviteRecommendations
                             access={access}
