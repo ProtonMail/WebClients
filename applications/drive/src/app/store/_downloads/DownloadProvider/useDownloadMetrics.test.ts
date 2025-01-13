@@ -53,6 +53,13 @@ unleashVanillaStore.getState().setClient({
 } as unknown as UnleashClient);
 
 describe('getErrorCategory', () => {
+    beforeAll(() => {
+        // Prevent warning to be shown in the console when running tests
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
+    });
+    afterAll(() => {
+        jest.restoreAllMocks();
+    });
     const testCases = [
         { state: TransferState.Error, error: { status: 503 }, expected: 'server_error', desc: 'unreachable error' },
         {

@@ -135,17 +135,17 @@ describe('useLockedVolume', () => {
             return [];
         });
         const { result } = renderHook(() => useSharesStore());
-        result.current.setLockedVolumesForRestore([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
+        act(() => {
+            result.current.setLockedVolumesForRestore([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
+        });
     });
 
     describe('prepareVolumesForRestore', () => {
         it("should return locked volumes if there's no private keys associated with address", async () => {
             const { result } = renderHook(() => useHook(), { wrapper });
 
-            await act(async () => {
-                const res = await result.current.prepareVolumesForRestore(abortSignal);
-                expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
-            });
+            const res = await result.current.prepareVolumesForRestore(abortSignal);
+            expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
         });
 
         it("should return locked volumes if there's no locked unprepared shares", async () => {
@@ -158,10 +158,8 @@ describe('useLockedVolume', () => {
                 { wrapper }
             );
 
-            await act(async () => {
-                const res = await result.current.prepareVolumesForRestore(abortSignal);
-                expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
-            });
+            const res = await result.current.prepareVolumesForRestore(abortSignal);
+            expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
         });
 
         it("should return locked volumes if there's no new prepared shares", async () => {
@@ -181,10 +179,8 @@ describe('useLockedVolume', () => {
                 { wrapper }
             );
 
-            await act(async () => {
-                const res = await result.current.prepareVolumesForRestore(abortSignal);
-                expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
-            });
+            const res = await result.current.prepareVolumesForRestore(abortSignal);
+            expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
         });
 
         it('should return extended volume list with new prepared volumes', async () => {

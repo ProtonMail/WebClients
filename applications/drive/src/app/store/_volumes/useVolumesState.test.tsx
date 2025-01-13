@@ -14,12 +14,19 @@ describe('useDriveEventManager', () => {
         return result;
     };
 
+    beforeAll(() => {
+        // Prevent warning to be shown in the console when running tests
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
+    });
     beforeEach(() => {
         hook = renderTestHook();
     });
 
     afterEach(() => {
         hook.current.clear();
+    });
+    afterAll(() => {
+        jest.restoreAllMocks();
     });
 
     it('sets share ids by volumeId', async () => {
