@@ -391,7 +391,9 @@ const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (st
         const { shareId, itemId, linkId } = action.payload;
         const links = state[shareId][itemId].filter((link) => link.linkId !== linkId);
 
-        return partialMerge(state, { [shareId]: { [itemId]: links } });
+        return links.length === 0
+            ? { ...state, [shareId]: objectDelete(state[shareId], itemId) }
+            : partialMerge(state, { [shareId]: { [itemId]: links } });
     }
 
     return state;
