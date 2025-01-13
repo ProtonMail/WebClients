@@ -3,7 +3,6 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import {
@@ -114,7 +113,6 @@ function SharingModalInner({
 
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { isPublicEditModeEnabled } = useDrivePublicSharingFlags();
-    const [{ hasPaidDrive }] = useUser();
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
@@ -263,8 +261,7 @@ function SharingModalInner({
                                 <hr className="mb-0.5 min-h-px" />
                                 <ModalTwoFooter>
                                     <PublicSharing
-                                        // TODO: Implement Upgrade to drive plus modal in case user is free user
-                                        viewOnly={!isPublicEditModeEnabled || !hasPaidDrive}
+                                        viewOnly={!isPublicEditModeEnabled}
                                         createSharedLink={createSharedLink}
                                         isLoading={isShareWithAnyoneLoading}
                                         publicSharedLink={sharedLink}
