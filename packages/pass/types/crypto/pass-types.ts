@@ -39,6 +39,7 @@ export type InviteTargetKey = ItemKey | VaultShareKey;
 
 type OpenedShareBase = {
     addressId: string;
+    canAutofill: Maybe<boolean>;
     createTime: number;
     expireTime?: MaybeNull<number>;
     newUserInvitesReady: number;
