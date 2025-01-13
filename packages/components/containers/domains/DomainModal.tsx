@@ -32,7 +32,6 @@ import {
     VERIFY_STATE,
 } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-import isTruthy from '@proton/utils/isTruthy';
 
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
@@ -112,80 +111,87 @@ const getBreadcrumbs = ({ domain, domainAddresses }: { domain?: Domain; domainAd
     const dkimState = domain?.DKIM?.State || DKIM_STATE.DKIM_STATE_DEFAULT;
 
     const dkimIcon = renderDKIMIcon(dkimState);
+    const verified = verifyState === VERIFY_STATE.VERIFY_STATE_GOOD;
 
     return [
         {
             label: c('Label in domain modal').t`Domain`,
-            disabled: domainState === DOMAIN_STATE.DOMAIN_STATE_DEFAULT,
-            icon: (
-                <RoundedIcon
-                    className="mr-1 md:mr-2 p-1 md:p-0"
-                    key="domain-icon"
-                    type={domainState === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'success' : 'error'}
-                    name={domainState === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'checkmark' : 'cross'}
-                />
-            ),
+            disabled: false,
+            icon:
+                domainState === DOMAIN_STATE.DOMAIN_STATE_DEFAULT ? null : (
+                    <RoundedIcon
+                        className="mr-1 md:mr-2 p-1 md:p-0"
+                        key="domain-icon"
+                        type={domainState === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'success' : 'error'}
+                        name={domainState === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'checkmark' : 'cross'}
+                    />
+                ),
         },
         {
             label: c('Label in domain modal').t`Verify`,
-            disabled: verifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT,
-            icon: (
-                <RoundedIcon
-                    className="mr-1 md:mr-2 p-1 md:p-0"
-                    key="verify-icon"
-                    type={verifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'success' : 'error'}
-                    name={verifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'checkmark' : 'cross'}
-                />
-            ),
+            disabled: !domain,
+            icon:
+                verifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
+                    <RoundedIcon
+                        className="mr-1 md:mr-2 p-1 md:p-0"
+                        key="verify-icon"
+                        type={verifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'success' : 'error'}
+                        name={verifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'checkmark' : 'cross'}
+                    />
+                ),
         },
         {
             label: c('Label in domain modal').t`Addresses`,
-            disabled: !domainAddresses?.length,
-            icon: (
+            disabled: !verified,
+            icon: !domainAddresses?.length ? null : (
                 <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="addresses-icon" type="success" name="checkmark" />
             ),
         },
         {
             label: 'MX',
-            disabled: mxState === MX_STATE.MX_STATE_DEFAULT,
-            icon: (
-                <RoundedIcon
-                    className="mr-1 md:mr-2 p-1 md:p-0"
-                    key="mx-icon"
-                    type={mxState === MX_STATE.MX_STATE_GOOD ? 'success' : 'error'}
-                    name={mxState === MX_STATE.MX_STATE_GOOD ? 'checkmark' : 'cross'}
-                />
-            ),
+            disabled: !verified,
+            icon:
+                mxState === MX_STATE.MX_STATE_DEFAULT ? null : (
+                    <RoundedIcon
+                        className="mr-1 md:mr-2 p-1 md:p-0"
+                        key="mx-icon"
+                        type={mxState === MX_STATE.MX_STATE_GOOD ? 'success' : 'error'}
+                        name={mxState === MX_STATE.MX_STATE_GOOD ? 'checkmark' : 'cross'}
+                    />
+                ),
         },
         {
             label: 'SPF',
-            disabled: spfState === SPF_STATE.SPF_STATE_DEFAULT,
-            icon: (
-                <RoundedIcon
-                    className="mr-1 md:mr-2 p-1 md:p-0"
-                    key="spf-icon"
-                    type={spfState === SPF_STATE.SPF_STATE_GOOD ? 'success' : 'error'}
-                    name={spfState === SPF_STATE.SPF_STATE_GOOD ? 'checkmark' : 'cross'}
-                />
-            ),
+            disabled: !verified,
+            icon:
+                spfState === SPF_STATE.SPF_STATE_DEFAULT ? null : (
+                    <RoundedIcon
+                        className="mr-1 md:mr-2 p-1 md:p-0"
+                        key="spf-icon"
+                        type={spfState === SPF_STATE.SPF_STATE_GOOD ? 'success' : 'error'}
+                        name={spfState === SPF_STATE.SPF_STATE_GOOD ? 'checkmark' : 'cross'}
+                    />
+                ),
         },
-        dkimIcon && {
+        {
             label: 'DKIM',
-            icon: dkimIcon,
+            disabled: !verified,
+            icon: dkimState === DKIM_STATE.DKIM_STATE_DEFAULT ? null : dkimIcon,
         },
         {
             label: 'DMARC',
-            disabled: dmarcState === DMARC_STATE.DMARC_STATE_DEFAULT,
-            icon: (
-                <RoundedIcon
-                    className="mr-1 md:mr-2 p-1 md:p-0"
-                    key="dmarc-icon"
-                    type={dmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'success' : 'error'}
-                    name={dmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'checkmark' : 'cross'}
-                />
-            ),
+            disabled: !verified,
+            icon:
+                dmarcState === DMARC_STATE.DMARC_STATE_DEFAULT ? null : (
+                    <RoundedIcon
+                        className="mr-1 md:mr-2 p-1 md:p-0"
+                        key="dmarc-icon"
+                        type={dmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'success' : 'error'}
+                        name={dmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'checkmark' : 'cross'}
+                    />
+                ),
         },
-    ].filter(isTruthy);
+    ];
 };
 
 interface Props extends ModalProps {
@@ -332,10 +338,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                             icon
                             key={label}
                             className={clsx(['flex flex-nowrap items-center', index === step && 'is-selected'])}
-                            disabled={
-                                (index > STEPS.DOMAIN && !domainModel?.ID) ||
-                                (index > STEPS.VERIFY && domainModel?.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD)
-                            }
+                            disabled={disabled}
                             onClick={() => goTo(index)}
                             title={label}
                         >
