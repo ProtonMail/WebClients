@@ -13,6 +13,15 @@ export function isItemShare(share: Share): share is Share<ShareType.Item> {
 }
 
 export const isShareManageable = <T extends Share>(share: T) => share.owner || share.shareRoleId === ShareRole.ADMIN;
+export const isShareWritable = <T extends Share>({ shareRoleId }: T) => shareRoleId !== ShareRole.READ;
+
+/** If the `canAutofill` flag isis not present on the share item, fallback to client
+ * side downgrade detection : only allow autofilling from writable shares. */
+export const isAutofillableShare = <T extends Share>(share: T, writableOnly: boolean) => {
+    if (typeof share.canAutofill === 'boolean') return share.canAutofill;
+    if (writableOnly) return isShareWritable(share);
+    return true;
+};
 
 /** These share property changes are not reflected in the
  * share events endpoint. As such, compare manually when
