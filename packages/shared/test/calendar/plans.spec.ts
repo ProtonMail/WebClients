@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments';
 import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getShouldCalendarPreventSubscripitionChange, planHasPaidMail } from '@proton/shared/lib/calendar/plans';
 import { buildUser } from '@proton/testing/builders';

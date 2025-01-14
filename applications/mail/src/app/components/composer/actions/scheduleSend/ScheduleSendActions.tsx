@@ -15,6 +15,7 @@ import {
     useUpsellConfig,
 } from '@proton/components';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
+import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
@@ -177,7 +178,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
         });
 
         const oneDollarConfig = useOneDollarConfig();
-        const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+        const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
         const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
