@@ -40,7 +40,7 @@
         "is-ci": "^4.1.0",
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-use-logical-spec": "^5.0.1",
-        "typescript": "^5.7.2"
+        "typescript": "^5.7.3"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^5.2.1",
@@ -50,11 +50,11 @@
         "lint-staged": "^15.3.0",
         "nyc": "^17.1.0",
         "prettier": "^3.4.2",
-        "sort-package-json": "^2.12.0",
+        "sort-package-json": "^2.13.0",
         "turbo": "^2.3.3"
     },
     "packageManager": "yarn@4.6.0",
     "engines": {
-        "node": ">= 22.12.0"
+        "node": ">= 22.13.0"
     }
 }
