@@ -225,9 +225,6 @@
       "Create free account": [
         "무료 계정 생성"
       ],
-      "Create link": [
-        "링크 생성"
-      ],
       "Create new folder": [
         "새 폴더 만들기"
       ],
@@ -306,6 +303,12 @@
       "Download logs": [
         "다운로드 로그"
       ],
+      "Download without scanning": [
+        "스캔 없이 다운로드"
+      ],
+      "Download without scanning (${ count })": [
+        "스캔 없이 다운로드 (${ count })"
+      ],
       "Drive Locked": [
         "Drive 잠김"
       ],
@@ -350,6 +353,9 @@
       ],
       "Export contact group": [
         "연락처 그룹 내보내기"
+      ],
+      "Export selection as .vcf": [
+        "선택한 항목을 .vcf로 내보내기"
       ],
       "Fit to window": [
         "창에 맞게"
@@ -450,6 +456,9 @@
       "Learn more": [
         "더 알아보기"
       ],
+      "Learn more.": [
+        "더 알아보기."
+      ],
       "Leave": [
         "나가기"
       ],
@@ -497,6 +506,9 @@
       ],
       "Minimize transfers": [
         "최소 이동"
+      ],
+      "More actions": [
+        "더 많은 액션"
       ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
@@ -626,6 +638,9 @@
       ],
       "Replace file": [
         "파일 대체"
+      ],
+      "Report": [
+        "신고"
       ],
       "Report a problem": [
         "문제 신고"
@@ -810,9 +825,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "다시 저장해보세요. 이 이유로 저장을 실패했습니다: ${ saveError }"
       ],
-      "Understood": [
-        "이해했습니다"
-      ],
       "Undo": [
         "되돌리기"
       ],
@@ -941,7 +953,7 @@
         "사용자당 ${ price }"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } 글쓰기 도우미 이용 권한"
+        "${ seats }명 글쓰기 도우미 이용 권한"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -3195,6 +3207,9 @@
       "Time zone": [
         "시간대"
       ],
+      "Time zone component ignored": [
+        "시간대 구성 무시됨"
+      ],
       "To-do entry": [
         "할 일 항목"
       ],
@@ -3257,6 +3272,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "선택된 이미지가 없음"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "예기치 않은 오류"
       ]
     },
     "Event invitation error": {
@@ -3576,6 +3596,50 @@
         "사용 가능한 인증 방법 없음"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "캘린더 시간대가 지원되지 않음"
+      ],
+      "Edited event not supported": [
+        "편집된 이벤트 지원되지 않음"
+      ],
+      "End time out of bounds": [
+        "범위를 벗어난 종료 시간"
+      ],
+      "Event validation failed": [
+        "이벤트이벤트 검증 실패"
+      ],
+      "Floating times not supported": [
+        "유동 시간 지원되지 않음"
+      ],
+      "Malformed all-day event": [
+        "잘못된 상시 이벤트"
+      ],
+      "Malformed end time": [
+        "잘못된 종료 시간"
+      ],
+      "Malformed recurring event": [
+        "잘못된 반복 이벤트"
+      ],
+      "Malformed start time": [
+        "잘못된 시작 시간"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "그레고리력 척도만 허용됩니다."
+      ],
+      "Recurring event has no occurrences": [
+        "반복되는 이벤트가 존재하지 않습니다"
+      ],
+      "Recurring rule not supported": [
+        "반복 규칙이 지원되지 않음"
+      ],
+      "Start time out of bounds": [
+        "범위를 벗어난 시작 시간"
+      ],
+      "Time zone not supported": [
+        "시간대 지원되지 않음"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "이벤트 ${ totalToImport }개 중 ${ totalImported }개를 암호화하고 캘린더에 추가했습니다"
@@ -3707,11 +3771,17 @@
       "Use your app password instead of your regular password if:": [
         "다음과 같은 경우 일반 비밀번호 대신 앱 비밀번호를 사용하세요:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
+      ],
       "Your email account requires an app password to export your data.": [
         "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
       ],
       "Your email account requires one to export your data.": [
         "데이터를 내보내려면 이메일 계정이 필요합니다."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "이메일 주소 및 앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
       ],
       "Your email address and password are correct.": [
         "이메일 주소 및 비밀번호가 올바릅니다."
@@ -3922,6 +3992,9 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "Gmail에서 ${ providerFoldersNumLocalized }개 라벨 찾음"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount }개 스캔 실패"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } 중 ${ providerCalendars.length } 캘린더"
       ],
@@ -3991,6 +4064,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "총 (${ totalFoldersCount } 개 폴더)"
       ],
@@ -4029,6 +4105,9 @@
       ],
       "And access it from anywhere": [
         "그리고 어디에서나 접근할 수 있습니다"
+      ],
+      "Anonymous": [
+        "익명"
       ],
       "Anyone with this link can access your file.": [
         "링크를 가지고 있는 모든 사람이 파일을 볼 수 있습니다."
@@ -4159,6 +4238,9 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
       "Create in": [
         "만들기"
       ],
@@ -4255,9 +4337,6 @@
       "Downloading": [
         "다운로드 중"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DOCS_APP_NAME } 파일을 ${ DRIVE_APP_NAME }에서 다운로드 하는 것을 아직 지원하지 않습니다. 이것들은 다운로드에 포함되지 않을 것입니다."
-      ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
       ],
@@ -4290,6 +4369,9 @@
       ],
       "Enabling drive search": [
         "드라이브 검색을 활성화하는 중"
+      ],
+      "Encrypted": [
+        "암호화됨"
       ],
       "Encrypted search is here": [
         "암호화된 검색이 여기 있습니다"
@@ -4478,7 +4560,7 @@
         "최근에 ${ uploadName } 을(를) 업로드하려고 시도한 것 같습니다. 업로드가 실패하면, ${ replaceFile } 주세요. 업로드가 아직 진행 중이라면, 교체하면 진행 중인 업로드가 취소됩니다."
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "휴지통의 항목은 영구적으로 삭제하기 전까지 여기에 남습니다"
+        "휴지통의 항목은 영구적으로 삭제하기 전까지 여기에 보관됩니다."
       ],
       "Items moved to the trash will stay here until deleted": [
         "휴지통으로 이동된 항목들이 삭제될 때 까지 계속 여기에 유지됩니다."
@@ -4642,9 +4724,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "${ MAX_CUSTOM_PASSWORD_LENGTH }글자까지만 허용됩니다"
-      ],
       "Only the people with the link and the password can access this file.": [
         "링크와 비밀번호를 가지고 있는 사람만 이 파일에 접근할 수 있습니다."
       ],
@@ -4698,9 +4777,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "복호화하고 내용을 보려면 비밀번호를 입력하세요."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "해당 파일을 다운로드하길 희망하신다면 ${ DOCS_APP_NAME } 애플리케이션에서 대신 직접 내보내 주세요."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "이 그룹에 할당된 주소는 삭제되지 않는다는 점에 유의하세요."
@@ -4867,6 +4943,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
       ],
@@ -4884,9 +4963,6 @@
       ],
       "Share via link settings": [
         "링크로 공유 설정"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "${ boldNameText }의 공유 가능 링크"
       ],
       "Shared link not found": [
         "공유 링크 찾을 수 없음"
@@ -4936,17 +5012,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "구독 종료 예정: ${ planName }의 혜택을 계속 이용하려면 ${ byDate }까지 재활성화해주세요. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "다음으로 전환:"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "이 계정이 새 키를 가지고 있거나, 다음이 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "디지털 서명이 부분적으로 검증되었습니다. 파일이 특정할 수 없는 사용자에 의해 공개 페이지로 업로드되었습니다."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "디지털 서명이 부분적으로 검증되었습니다. 폴더가 특정할 수 없는 사용자에 의해 공개 페이지로 업로드되었습니다."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "다운로드 횟수에는 실제 다운로드와 파일을 미리보는 경우도 포함됩니다."
@@ -5017,17 +5090,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "이 링크는 이전 Drive 버전으로 만들어졌으며 수정할 수 없습니다. 이 링크를 삭제하고 새 링크를 만들어 설정을 변경하십시오."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "링크가 영구적으로 비활성화되었습니다. 아무도 이 링크를 통해 파일에 접근할 수 없습니다. 다시 파일을 공유하려면, 새로운 링크가 필요합니다."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "링크가 영구적으로 비활성화되었습니다. 아무도 이 링크를 통해 폴더에 접근할 수 없습니다. 다시 파일을 공유하려면, 새로운 링크가 필요합니다."
-      ],
       "This month": [
         "이번 달"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "링크가 삭제되고 아무도 이 링크를 통해 파일이나 폴더에 접근할 수 없게 됩니다."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "${ DRIVE_APP_NAME }에서 연결된 기기 ${ deviceName } 및 ${ DRIVE_APP_NAME }의 데이터를 전부 삭제합니다. 내 컴퓨터에 추가한 폴더들은 연동이 중단됩니다."
@@ -5058,6 +5122,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "사용자를 보호하는데 도움이 되도록 ${ DRIVE_APP_NAME }가 개인정보를 보호하는 방식으로 파일을 스캔하고 멀웨어 파일을 차단합니다. 여전히 신뢰된 출처에서만 파일을 다운로드해야 합니다."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
@@ -5395,6 +5462,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "다음 결제일은 ${ renewalTime } 입니다."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      ],
       "Your password was leaked:": [
         "사용자의 비밀번호가 유출되었습니다:"
       ],
@@ -5409,6 +5479,12 @@
       ],
       "Your previous recovery phrase": [
         "내 이전 복구 구문"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
       ]
     },
     "info": {
@@ -5894,9 +5970,6 @@
       "Proration": [
         "할당"
       ],
-      "Protect with password": [
-        "비밀번호로 보호"
-      ],
       "Public keys": [
         "공개 키"
       ],
@@ -6019,6 +6092,9 @@
       ],
       "Upload your first file": [
         "첫 파일을 업로드하세요"
+      ],
+      "Uploaded by": [
+        "업로드한 사용자:"
       ],
       "VAT": [
         "부가세"
@@ -6509,6 +6585,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
       ],
       "Upgrade now": [
         "지금 업그레이드"
@@ -7474,12 +7553,6 @@
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems }개가 성공적으로 삭제되었습니다"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "항목 ${ numberOfItems }개의 링크를 삭제하는 데 실패했습니다"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "항목 ${ numberOfItems }개의 링크가 삭제되었습니다"
-      ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
       ],
@@ -7617,12 +7690,6 @@
       ],
       "The item was successfully added to your drive": [
         "항목이 Drive로 성공적으로 추가되었습니다."
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "\"${ name }\" 에 대한 링크 삭제 실패"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "\"${ name }\" 의 링크가 삭제되었습니다"
       ],
       "The link to your item failed to be deleted": [
         "아이템의 링크 실패로 인해 삭제됩니다"
@@ -9303,9 +9370,6 @@
       "Secure link copied": [
         "보안 링크 복사함"
       ],
-      "The link to your file was successfully copied": [
-        "파일의 링크가 성공적으로 복사되었습니다"
-      ],
       "Undo in progress": [
         "실행 취소 중"
       ],
@@ -9332,7 +9396,7 @@
         "매월"
       ],
       "per user per month": [
-        "사용자당 월별"
+        "매월 사용자당"
       ]
     },
     "summer2023: Tooltip": {
@@ -9533,6 +9597,9 @@
       ],
       "Change password": [
         "비밀번호 변경"
+      ],
+      "Check for malicious files": [
+        "악성 파일 확인"
       ],
       "Clearing data": [
         "데이터 지우기"
@@ -9849,9 +9916,6 @@
       "Preview": [
         "미리 보기"
       ],
-      "Privacy settings": [
-        "개인 정보 보호 설정"
-      ],
       "Processing...": [
         "처리 중..."
       ],
@@ -9933,9 +9997,6 @@
       "Share ${ name }": [
         "${ name } 공유"
       ],
-      "Share via link": [
-        "링크로 공유"
-      ],
       "Shared": [
         "공유"
       ],
@@ -9965,9 +10026,6 @@
       ],
       "Stop sharing": [
         "공유 중지"
-      ],
-      "Stop sharing with everyone?": [
-        "모두에게 공유를 중지할까요?"
       ],
       "Stop sharing?": [
         "공유를 중단합니까?"
@@ -10064,9 +10122,6 @@
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "다운로드에 ${ DOCS_APP_NAME } 파일이 있습니다"
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
