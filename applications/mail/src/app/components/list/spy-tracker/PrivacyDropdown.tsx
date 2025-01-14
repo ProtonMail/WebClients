@@ -141,6 +141,7 @@ const PrivacyDropdown = ({ message }: Props) => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailPrivacyDropdown,
             event: TelemetryMailEvents.privacy_dropdown_opened,
+            delay: false,
         });
     };
 

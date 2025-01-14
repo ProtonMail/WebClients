@@ -1,6 +1,10 @@
-export interface CacheEntry<T> {
-    status: number;
-    value: T;
+export interface Filter {
+    [key: string]: number;
+}
+
+export interface Sort {
+    sort: 'Time' | 'Size' | 'SnoozeTime';
+    desc: boolean;
 }
 
 export interface SearchParameters {

@@ -44,6 +44,7 @@ const useSubscriptionModalTelemetry = () => {
                 upsell_reference: upsellRef,
                 coupon_code: coupon || undefined,
             },
+            delay: false,
         });
     };
 
@@ -68,6 +69,7 @@ const useSubscriptionModalTelemetry = () => {
                 plan_selected: plan,
                 coupon_code: coupon || undefined,
             },
+            delay: false,
         });
     };
 
@@ -79,6 +81,7 @@ const useSubscriptionModalTelemetry = () => {
             dimensions: {
                 post_action_name: postAction,
             },
+            delay: false,
         });
     };
 
@@ -87,6 +90,7 @@ const useSubscriptionModalTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.subscriptionModal,
             event: TelemetrySubscriptionModalEvents.cancelledOnSameDay,
+            delay: false,
         });
     };
 

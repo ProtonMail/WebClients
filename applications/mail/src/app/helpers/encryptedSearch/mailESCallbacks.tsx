@@ -27,6 +27,7 @@ import {
     readNumContent,
     testKeywords,
 } from '@proton/encrypted-search';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
@@ -38,13 +39,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_EVENTLOOP_NAME } from '../../constants';
 import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import type {
-    ESBaseMessage,
-    ESMessage,
-    ESMessageContent,
-    MetadataRecoveryPoint,
-    NormalizedSearchParams,
-} from '../../models/encryptedSearch';
+import type { ESBaseMessage, ESMessage, ESMessageContent, MetadataRecoveryPoint } from '../../models/encryptedSearch';
 import type { Event } from '../../models/event';
 import { decryptMessage } from '../message/messageDecrypt';
 import ESdeletedConversationIdsCache from './ESDeletedConversationsCache';

@@ -40,6 +40,7 @@ const TipsAndInsightsToggle = () => {
             dimensions: {
                 state: state ? 'disabled' : 'enabled',
             },
+            delay: false,
         });
     };
 

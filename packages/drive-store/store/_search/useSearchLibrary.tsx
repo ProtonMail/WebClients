@@ -12,6 +12,7 @@ import {
     metadataIndexingProgress,
     useEncryptedSearch,
 } from '@proton/encrypted-search';
+import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -22,7 +23,7 @@ import { useDefaultShare, useShare } from '../_shares';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import useFetchShareMap from './indexing/useFetchShareMap';
 import { migrate } from './migration';
-import type { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
+import type { ESLink, EncryptedSearchFunctionsDrive } from './types';
 import { useESCallbacks } from './useESCallbacks';
 
 const SearchLibraryContext = createContext<EncryptedSearchFunctionsDrive | null>(null);
@@ -67,7 +68,6 @@ export const SearchLibraryProvider = ({ children }: Props) => {
         refreshMask: 1,
         esCallbacks,
         onMetadataIndexed: handleMetadataIndexed,
-        sendMetricsOnSearch: true,
     });
 
     const initializeESDrive = async () => {

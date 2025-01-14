@@ -14,6 +14,7 @@ import {
     readMetadataItem,
     readSortedIDs,
 } from '@proton/encrypted-search';
+import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import { getEvent, queryEventsIDs, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -41,7 +42,6 @@ import type {
     ESAttendeeModel,
     ESCalendarContent,
     ESCalendarMetadata,
-    ESCalendarSearchParams,
     ESOrganizerModel,
 } from '../../interfaces/encryptedSearch';
 import { generateEventUniqueId, getCalendarIDFromUniqueId, getEventIDFromUniqueId } from '../event';

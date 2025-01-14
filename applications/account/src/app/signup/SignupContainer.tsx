@@ -232,6 +232,7 @@ const SignupContainer = ({
                 flow,
             },
             values,
+            delay: false,
         }).catch(noop);
     };
 

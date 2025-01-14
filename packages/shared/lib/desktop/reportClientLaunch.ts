@@ -18,5 +18,6 @@ export async function reportClientLaunch(installSource: string | null, product: 
             product,
             install_source: installSource,
         },
+        delay: false,
     });
 }

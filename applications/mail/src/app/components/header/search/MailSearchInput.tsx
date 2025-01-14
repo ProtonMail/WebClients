@@ -10,16 +10,16 @@ import clsx from '@proton/utils/clsx';
 interface Props {
     onOpen: () => void;
     value: string;
-    onChange: (newValue: string) => void;
+    onClearSearch: () => void;
     loading: boolean;
     adaptWidth: boolean;
 }
 
-const MailSearchInput = ({ value, onOpen, onChange, loading, adaptWidth }: Props, ref: Ref<HTMLInputElement>) => {
+const MailSearchInput = ({ value, onOpen, onClearSearch, loading, adaptWidth }: Props, ref: Ref<HTMLInputElement>) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClear = () => {
-        onChange('');
+        onClearSearch();
         onOpen();
     };
 
