@@ -1,7 +1,9 @@
 import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Alert } from '@proton/components';
 import {
     ConfirmationPrompt,
     type ConfirmationPromptHandles,
@@ -10,20 +12,34 @@ import { ConfirmDeleteAlias } from '@proton/pass/components/Item/Actions/Confirm
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isAliasItem } from '@proton/pass/lib/items/item.predicates';
-import { selectItemSecureLinks } from '@proton/pass/store/selectors';
+import { selectItemSecureLinks, selectItemShared } from '@proton/pass/store/selectors';
 import type { ItemMoveIntent, ItemRevision } from '@proton/pass/types';
 
-export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevision }> = (props) =>
-    isAliasItem(props.item.data) ? (
+export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevision }> = (props) => {
+    const { shareId, itemId } = props.item;
+    const shared = useSelector(selectItemShared(shareId, itemId));
+
+    return isAliasItem(props.item.data) ? (
         <ConfirmDeleteAlias {...props} />
     ) : (
         <ConfirmationPrompt
             {...props}
             danger
             title={c('Title').t`Delete this item?`}
-            message={c('Warning').t`Are you sure you want to permanently delete this item?`}
+            message={
+                <div className="flex gap-y-4">
+                    {shared && (
+                        <Alert type="error">
+                            {c('Warning')
+                                .t`This item is currently shared. Deleting it will remove access for all other users.`}
+                        </Alert>
+                    )}
+                    {c('Warning').t`Are you sure you want to permanently delete this item?`}
+                </div>
+            }
         />
     );
+};
 
 export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = ({
     itemId,
@@ -33,6 +49,7 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
 }) => {
     const secureLinks = useMemoSelector(selectItemSecureLinks, [shareId, itemId]);
     const hasLinks = Boolean(secureLinks.length);
+    const shared = useSelector(selectItemShared(shareId, itemId));
 
     return (
         <WithVault shareId={shareId} onFallback={onCancel}>
@@ -42,9 +59,21 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
                     onCancel={onCancel}
                     title={c('Title').t`Move item to "${vaultName}"`}
                     message={
-                        hasLinks
-                            ? c('Info').t`Moving an item to another vault will erase its history and all secure links.`
-                            : c('Info').t`Moving an item to another vault will erase its history.`
+                        <div className="flex gap-y-4">
+                            {shared && (
+                                <Alert type="error">
+                                    {c('Warning')
+                                        .t`This item is currently shared. Moving it to another vault will remove access for all other users.`}
+                                </Alert>
+                            )}
+
+                            <span>
+                                {hasLinks
+                                    ? c('Info')
+                                          .t`Moving an item to another vault will erase its history and all secure links.`
+                                    : c('Info').t`Moving an item to another vault will erase its history.`}
+                            </span>
+                        </div>
                     }
                 />
             )}
