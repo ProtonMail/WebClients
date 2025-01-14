@@ -11,8 +11,18 @@
       ]
     },
     "Info": {
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } scan failed",
+        "${ scanErrorCount } scans failed"
+      ],
       "Free 5GB encrypted storage to get started": [
         "Free 5 GB encrypted storage to get started"
+      ],
+      "This action will delete the file you uploaded permanently.": [
+        "This action will permanently delete the file you uploaded."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
+        "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computer will stop syncing."
       ],
       "You will need to save it again from the public link page.": [
         "You will need to save it again from the public link page.",
@@ -27,6 +37,16 @@
     "new_plans: tooltip": {
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
+      ]
+    },
+    "Notification": {
+      "Public link update access failed ": [
+        "Public link update access failed"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank."
       ]
     },
     "session_recovery:available:info": {

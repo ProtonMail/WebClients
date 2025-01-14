@@ -5077,6 +5077,9 @@
       "Time zone": [
         "Часовий пояс"
       ],
+      "Time zone component ignored": [
+        "Компонент часового поясу ігнорується"
+      ],
       "To-do entry": [
         "Запис завдання"
       ],
@@ -5194,6 +5197,11 @@
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Подія від ${ timeString }, ${ rruleString }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непередбачувана помилка"
       ]
     },
     "Event invitation error": {
@@ -6325,6 +6333,50 @@
         "Немає доступних способів перевірки"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовий пояс календаря не підтримується"
+      ],
+      "Edited event not supported": [
+        "Відредагована подія не підтримується"
+      ],
+      "End time out of bounds": [
+        "Час завершення поза припустимим діапазоном"
+      ],
+      "Event validation failed": [
+        "Не вдалося перевірити подію"
+      ],
+      "Floating times not supported": [
+        "Пливучий час не підтримується"
+      ],
+      "Malformed all-day event": [
+        "Неправильна подія на цілий день"
+      ],
+      "Malformed end time": [
+        "Неправильний час завершення"
+      ],
+      "Malformed recurring event": [
+        "Неправильна повторювана подія"
+      ],
+      "Malformed start time": [
+        "Неправильний час початку"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускається тільки григоріанський календар"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має повторень"
+      ],
+      "Recurring rule not supported": [
+        "Правило повторення не підтримується"
+      ],
+      "Start time out of bounds": [
+        "Час початку поза припустимим діапазоном"
+      ],
+      "Time zone not supported": [
+        "Часовий пояс не підтримується"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
@@ -7322,6 +7374,12 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також мітки, які ви бажаєте імпортувати."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Створити захищену хмару для ${ value } учасника",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учачників"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
@@ -8535,6 +8593,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Платежі SEPA наразі недоступні. Спробуйте пізніше."
+      ],
       "Server is currently down": [
         "Наразі сервер не працює"
       ],
@@ -8666,6 +8727,9 @@
       ],
       "Swiss based": [
         "Розташовано у Швейцарії"
+      ],
+      "Switch to": [
+        "Перейти до"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -9567,6 +9631,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступна дата оплати – ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша організація користується єдиним входом (SSO). Натисніть Увійти, щоб продовжити роботу з постачальником SSO."
       ],
@@ -9587,6 +9654,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Ваша фраз для відновлення – це 12 випадково згенерованих слів у певному порядку."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."

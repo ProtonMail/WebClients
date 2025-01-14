@@ -210,9 +210,6 @@
       "Create and copy alias": [
         "उपनाम बनाएँ और कॉपी करें"
       ],
-      "Create link": [
-        "लिंक बनाएं"
-      ],
       "Create new folder": [
         "नया फोल्डर बनाएं"
       ],
@@ -772,9 +769,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "सेव करने की कोशिश वापस करें। सेव करने में असफल इस वजह से हुए: ${ saveError }"
-      ],
-      "Understood": [
-        "समझ गया"
       ],
       "Undo": [
         "अंडू करें"
@@ -3822,9 +3816,6 @@
       "Downloading": [
         "डाउनलोड हो रहा है"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DRIVE_APP_NAME } से ${ DOCS_APP_NAME } फ़ाइलें डाउनलोड करना अभी समर्थित नहीं है - ये आपके डाउनलोड में शामिल नहीं होंगे।"
-      ],
       "Drop file here to upload": [
         "अपलोड करने के लिए फ़ाइल को यहाँ छोड़ें."
       ],
@@ -4194,10 +4185,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "एक या उससे ज़्यादा आपके भरोसेमंद चाबियां मालिक ने \"समझौता हुआ\" मार्क की। हमारी सलाह है की आप इनसे भरोसेमंद का मार्क हटा दें।"
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "सिर्फ ${ MAX_CUSTOM_PASSWORD_LENGTH } वर्ण की अनुमति है",
-        "सिर्फ ${ MAX_CUSTOM_PASSWORD_LENGTH } वर्ण की अनुमति है"
-      ],
       "Only the people with the link and the password can access this file.": [
         "केवल लिंक और पासवर्ड वाले लोग ही इस फ़ाइल तक पहुंच सकते हैं।"
       ],
@@ -4245,9 +4232,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "कन्टेन्ट को डिक्रिप्ट करने और देखने के लिए कृपया पासवर्ड दर्ज करें।"
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "अगर आप इन्हें डाउनलोड करना चाहते हैं, तो कृपया उन्हें सीधे ${ DOCS_APP_NAME } एप्लिकेशन से निर्यात करें।"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "कृपया ध्यान दें कि इस समूह को सौंपे गए पतों को हटाया नहीं जाएगा।"
@@ -4403,9 +4387,6 @@
       "Share via link settings": [
         "लिंक साझाकरण सेटिंग"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "${ boldNameText } के लिए शेयर लिंक"
-      ],
       "Shared link not found": [
         "शेयर किया लिंक नहीं मिला"
       ],
@@ -4502,18 +4483,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "ये लिंक एक पुराने ड्राइव संस्करण से बनाया गया था और इसको बदला नहीं जा सकता। सेटिंग बदलने के लिए इस लिंक को मिटाएं और एक नया बनाएं।"
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "यह लिंक स्थायी रूप से अक्षम कर दिया जाएगा। इस लिंक वाला कोई भी व्यक्ति आपकी फ़ाइल तक नहीं पहुंच पाएगा। फ़ाइल को फिर से साझा करने के लिए, आपको एक नए लिंक की आवश्यकता होगी।"
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "यह लिंक स्थायी रूप से अक्षम कर दिया जाएगा। इस लिंक वाला कोई भी व्यक्ति आपकी फ़ोल्डर तक नहीं पहुंच पाएगा।। फ़ोल्डर को फिर से साझा करने के लिए, आपको एक नए लिंक की आवश्यकता होगी।"
-      ],
       "This month": [
         "इस महीने"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "ये लिंक को मिटा देगा और जिस भी व्यक्ति के पास ये लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।",
-        "ये लिंकों को मिटा देगा और जिस भी व्यक्ति के पास इनमें से कोई लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।"
       ],
       "This will replace the existing file with the folder": [
         "यह मौजूदा फ़ाइल को फ़ोल्डर के साथ बदल देगा।"
@@ -5338,9 +5309,6 @@
       "Proration": [
         "प्रोडशन"
       ],
-      "Protect with password": [
-        "पासवर्ड से सुरक्षित रखें"
-      ],
       "Public keys": [
         "सार्वजनिक चाबियां"
       ],
@@ -5881,6 +5849,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
@@ -6572,14 +6543,6 @@
         "${ numberOfItems } चीज़ सफलतापूर्वक ले गए",
         "${ numberOfItems } चीज़े सफलतापूर्वक ले गए"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "आपके चीज़ का ${ numberOfItems } लिंक मिटाने में असफल",
-        "आपके चीज़ो के ${ numberOfItems } लिंक मिटाने में असफल"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "आपके चीज़ का ${ numberOfItems } लिंक मिटाया गया",
-        "आपके चीज़ो के ${ numberOfItems } लिंक मिटाए गए"
-      ],
       "${ reason } has been disabled": [
         "${ reason } को अक्षम कर दिया गया है"
       ],
@@ -6694,12 +6657,6 @@
       ],
       "Subfolder failed to be loaded": [
         "उप-फोल्डर लोड करनें में असफल"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "\"${ name }\" का लिंक मिटाया नहीं जा सका"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "\"${ name }\" का लिंक मिटाया गया"
       ],
       "The link to your item failed to be deleted": [
         "आपके चीज़ का लिंक मिटाने में असफल"
@@ -7674,9 +7631,6 @@
       "Secure link copied": [
         "सुरक्षित लिंक कॉपी हो गया"
       ],
-      "The link to your file was successfully copied": [
-        "आपके फाइल का लिंक सफलतापूर्वक कॉपी किया गया"
-      ],
       "Undo in progress": [
         "अनडू चल रहा"
       ],
@@ -8184,9 +8138,6 @@
       "Preview": [
         "प्रिव्यू करें"
       ],
-      "Privacy settings": [
-        "निजता सेटिंग"
-      ],
       "Processing...": [
         "प्रोसेस हो रहा है..."
       ],
@@ -8265,9 +8216,6 @@
       "Share ${ name }": [
         "${ name } को साझा करें"
       ],
-      "Share via link": [
-        "लिंक के माध्यम से साझा करें"
-      ],
       "Shared": [
         "साझा"
       ],
@@ -8297,9 +8245,6 @@
       ],
       "Stop sharing": [
         "सांझा करना बंद करे"
-      ],
-      "Stop sharing with everyone?": [
-        "सबके साथ शेयर करना बंद करें?"
       ],
       "Stop sharing?": [
         "साझाकरण रोकें?"
@@ -8387,9 +8332,6 @@
       ],
       "Your changes are not synced yet": [
         "आपके बदलाव अभी तक सिंक नहीं हुए"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "आपके डाउनलोड में एक ${ DOCS_APP_NAME } फ़ाइल है"
       ],
       "Your exposed information": [
         "आपकी उजागर जानकारी"

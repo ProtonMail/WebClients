@@ -5380,6 +5380,41 @@
         "Keine Verifizierungsmethode verfügbar"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenderzeitzone wird nicht unterstützt"
+      ],
+      "Edited event not supported": [
+        "Bearbeitete Termine werden nicht unterstützt"
+      ],
+      "End time out of bounds": [
+        "Endzeit außerhalb des Bereichs"
+      ],
+      "Event validation failed": [
+        "Überprüfung der Termine fehlgeschlagen"
+      ],
+      "Floating times not supported": [
+        "Gleitzeiten werden nicht unterstützt"
+      ],
+      "Malformed all-day event": [
+        "Fehlerhafter ganztägiger Termin"
+      ],
+      "Malformed recurring event": [
+        "Fehlerhafte Terminserie"
+      ],
+      "Malformed start time": [
+        "Fehlerhafte Startzeit"
+      ],
+      "Recurring event has no occurrences": [
+        "Wiederkehrendes Ereignis enthält keine Termine"
+      ],
+      "Recurring rule not supported": [
+        "Wiederkehrende Regel nicht unterstützt"
+      ],
+      "Time zone not supported": [
+        "Zeitzone wird nicht unterstützt"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } Teilnehmer",
@@ -6136,6 +6171,10 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Erstelle eine sichere Cloud für ${ value } Mitglied",
+        "Erstelle eine sichere Cloud für ${ value } Mitglieder"
+      ],
       "Create in": [
         "Erstellen in"
       ],
@@ -6594,6 +6633,9 @@
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Nachrichten, die länger als 30 Tage im Papierkorb und Spam liegen, werden automatisch gelöscht."
+      ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Nachrichten an all deine E-Mail-Adressen werden an deinen Posteingang gehen."
       ],
       "MM/YY": [
         "MM/JJ"
@@ -7086,6 +7128,9 @@
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Dies ist als Schreibhilfe gedacht. Überprüfe den vorgeschlagenen Text auf seine Richtigkeit. ${ learnMoreResult }"
       ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Das ist nun deine ${ defaultEmailAddress } für das Senden von Nachrichten."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
       ],
@@ -7559,6 +7604,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für Lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
@@ -9694,14 +9742,6 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hol dir Mail Plus für ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -9714,6 +9754,14 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hol dir Mail Plus für ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "new_plans: tooltip": {

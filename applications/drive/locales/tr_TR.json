@@ -226,9 +226,6 @@
       "Create free account": [
         "Ücretsiz bir hesap açın"
       ],
-      "Create link": [
-        "Bağlantı oluştur"
-      ],
       "Create new folder": [
         "Yeni klasör ekle"
       ],
@@ -309,6 +306,12 @@
       "Download logs": [
         "Günlüğü indir"
       ],
+      "Download without scanning": [
+        "Taramadan indir"
+      ],
+      "Download without scanning (${ count })": [
+        "Taramadan indir (${ count })"
+      ],
       "Drive Locked": [
         "Drive kilitlendi"
       ],
@@ -353,6 +356,9 @@
       ],
       "Export contact group": [
         "Kişi grubunu dışa aktar"
+      ],
+      "Export selection as .vcf": [
+        "Seçimi .vcf olarak dışa aktar"
       ],
       "Fit to window": [
         "Pencereye sığdır"
@@ -453,6 +459,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Learn more.": [
+        "Ayrıntılı bilgi alın."
+      ],
       "Leave": [
         "Ayrıl"
       ],
@@ -500,6 +509,9 @@
       ],
       "Minimize transfers": [
         "Aktarımları küçült"
+      ],
+      "More actions": [
+        "Diğer işlemler"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -629,6 +641,9 @@
       ],
       "Replace file": [
         "Dosyayı değiştir"
+      ],
+      "Report": [
+        "Bildir"
       ],
       "Report a problem": [
         "Sorun bildirin"
@@ -812,9 +827,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
-      ],
-      "Understood": [
-        "Anladım"
       ],
       "Undo": [
         "Geri al"
@@ -3216,6 +3228,9 @@
       "Time zone": [
         "Saat dilimi"
       ],
+      "Time zone component ignored": [
+        "Saat dilimi bileşeni yok sayıldı"
+      ],
       "To-do entry": [
         "Yapılacak iş kaydı"
       ],
@@ -3278,6 +3293,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Herhangi bir görsel seçilmemiş"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Beklenmeyen bir sorun çıktı"
       ]
     },
     "Event invitation error": {
@@ -3605,6 +3625,50 @@
         "Kullanılabilecek bir doğrulama yöntemi yok"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Takvimin saat dilimi desteklenmiyor"
+      ],
+      "Edited event not supported": [
+        "Etkinliklerin düzenlenmesi desteklenmiyor"
+      ],
+      "End time out of bounds": [
+        "Bitiş zamanı sınırların dışında"
+      ],
+      "Event validation failed": [
+        "Etkinlik doğrulanamadı"
+      ],
+      "Floating times not supported": [
+        "Göreli zamanlar desteklenmiyor"
+      ],
+      "Malformed all-day event": [
+        "Tüm gün etkinliği bozulmuş"
+      ],
+      "Malformed end time": [
+        "Bitiş zamanı bozulmuş"
+      ],
+      "Malformed recurring event": [
+        "Yinelenen etkinlik bozulmuş"
+      ],
+      "Malformed start time": [
+        "Başlangıç zamanı bozulmuş"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Yalnızca Gregoryen takvimi ölçeğine izin veriliyor"
+      ],
+      "Recurring event has no occurrences": [
+        "Yinelenen etkinliğin herhangi bir yinelemesi yok"
+      ],
+      "Recurring rule not supported": [
+        "Yinelenme kuralı desteklenmiyor"
+      ],
+      "Start time out of bounds": [
+        "Başlangıç zamanı sınırların dışında"
+      ],
+      "Time zone not supported": [
+        "Saat dilimi desteklenmiyor"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
@@ -3742,11 +3806,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı kullanmayın."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı kullanmayın."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -3978,6 +4048,10 @@
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } tarama yapılamadı",
+        "${ scanErrorCount } tarama yapılamadı"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
@@ -4056,6 +4130,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
         "Tümü (${ totalFoldersCount } klasör)"
@@ -4097,6 +4174,9 @@
       ],
       "And access it from anywhere": [
         "Ve her yerden erişin"
+      ],
+      "Anonymous": [
+        "Anonim"
       ],
       "Anyone with this link can access your file.": [
         "Bu bağlantıya sahip olan herkes dosyanıza erişebilir."
@@ -4228,6 +4308,10 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } üye için bir güvenli bulut oluştur",
+        "${ value } üye için bir güvenli bulut oluştur"
+      ],
       "Create in": [
         "Şuraya ekle"
       ],
@@ -4325,9 +4409,6 @@
       "Downloading": [
         "İndiriliyor"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DRIVE_APP_NAME } üzerinden ${ DOCS_APP_NAME } dosyalarının indirilmesi şu anda desteklenmiyor. Bu dosyalar indirme işleminize katılmayacak."
-      ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
       ],
@@ -4360,6 +4441,9 @@
       ],
       "Enabling drive search": [
         "Drive arama özelliği açılıyor"
+      ],
+      "Encrypted": [
+        "Şifrelenmiş"
       ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
@@ -4715,10 +4799,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir",
-        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
@@ -4772,9 +4852,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Lütfen şifreyi çözmek ve içeriği görüntülemek için parolayı yazın."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Bunları indirmek isterseniz lütfen doğrudan ${ DOCS_APP_NAME } uygulamasından dışa aktarın."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
@@ -4943,6 +5020,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -4960,9 +5040,6 @@
       ],
       "Share via link settings": [
         "Bağlantı ayarları ile paylaş"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "${ boldNameText } için paylaşılabilir bağlantı"
       ],
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
@@ -5012,17 +5089,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Şuna geç"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Dijital imza kısmen doğrulandı. Dosya, belirli bir kullanıcı kaynağı belirtmeyen herkese açık bir sayfadan yüklendi."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Dijital imza kısmen doğrulandı. Klasör, belirli bir kullanıcı kaynağı belirtmeyen herkese açık bir sayfadan yüklendi."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
@@ -5093,18 +5167,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak kullanım dışı bırakılmış. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak kullanım dışı bırakılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
-      ],
       "This month": [
         "Bu ay"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Bu işlem, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
-        "Bu işlem, bağlantıları siler ve bağlantılara sahip olan herkesin dosyalarınıza erişimini kaldırır."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Bu işlem, eşitlenmiş ${ deviceName } aygıtını ${ DRIVE_APP_NAME } üzerinden ve tüm verilerini ${ DRIVE_APP_NAME } üzerinden kaldıracak. Bilgisayarlarım üzerine eklediğiniz klasörlerin eşitlenmesi durdurulacak."
@@ -5135,6 +5199,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilir kaynaklardan indirmeniz en iyisidir. "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
@@ -5476,6 +5543,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      ],
       "Your password was leaked:": [
         "Parolanız açığa çıkmış:"
       ],
@@ -5490,6 +5560,12 @@
       ],
       "Your previous recovery phrase": [
         "Önceki kurtarma ifadeniz"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve ${ cycle } ayda bir otomatik olarak yenilenecek."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ]
     },
     "info": {
@@ -5981,9 +6057,6 @@
       "Proration": [
         "Hesap bakiyesi"
       ],
-      "Protect with password": [
-        "Parola ile korunsun"
-      ],
       "Public keys": [
         "Herkese açık anahtarlar"
       ],
@@ -6106,6 +6179,9 @@
       ],
       "Upload your first file": [
         "İlk dosyanızı yükleyin"
+      ],
+      "Uploaded by": [
+        "Yükleyen"
       ],
       "VAT": [
         "KDV"
@@ -6601,6 +6677,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
@@ -7603,14 +7682,6 @@
         "${ numberOfItems } öge taşındı",
         "${ numberOfItems } öge taşındı"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } öge bağlantınız silinemedi",
-        "${ numberOfItems } öge bağlantınız silinemedi"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } bağlantı silindi",
-        "${ numberOfItems } bağlantı silindi"
-      ],
       "${ reason } has been disabled": [
         "${ reason } özelliği kapatıldı"
       ],
@@ -7752,12 +7823,6 @@
       ],
       "The item was successfully added to your drive": [
         "Öge Drive depolama alanınıza eklendi"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "${ name }\" bağlantısı silinemedi"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "\"${ name }\" bağlantısı silindi"
       ],
       "The link to your item failed to be deleted": [
         "Öge bağlantınız silinemedi"
@@ -9479,9 +9544,6 @@
       "Secure link copied": [
         "Güvenli bağlantı kopyalandı"
       ],
-      "The link to your file was successfully copied": [
-        "Dosya bağlantınız kopyalandı"
-      ],
       "Undo in progress": [
         "Geri alınıyor"
       ],
@@ -9721,6 +9783,9 @@
       ],
       "Change password": [
         "Parolayı değiştir"
+      ],
+      "Check for malicious files": [
+        "Kötü amaçlı dosyalar denetlensin"
       ],
       "Clearing data": [
         "Veriler temizleniyor"
@@ -10041,9 +10106,6 @@
       "Preview": [
         "Ön izleme"
       ],
-      "Privacy settings": [
-        "Gizlilik ayarları"
-      ],
       "Processing...": [
         "İşleniyor..."
       ],
@@ -10125,9 +10187,6 @@
       "Share ${ name }": [
         "${ name } paylaş"
       ],
-      "Share via link": [
-        "Bağlantı ile paylaş"
-      ],
       "Shared": [
         "Paylaşılan"
       ],
@@ -10157,9 +10216,6 @@
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
-      ],
-      "Stop sharing with everyone?": [
-        "Herkes ile paylaşımdan kaldırılsın mı?"
       ],
       "Stop sharing?": [
         "Paylaşmayı durdur?"
@@ -10256,9 +10312,6 @@
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "İndirdiğiniz dosyada bir ${ DOCS_APP_NAME } dosyası bulunuyor"
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"

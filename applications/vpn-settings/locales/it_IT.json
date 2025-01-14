@@ -5235,6 +5235,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La tua organizzazione usa single sign-on (SSO). Clicca su \"Accedi\" per continuare con il tuo fornitore SSO."
       ],
@@ -5246,6 +5249,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."

@@ -5456,6 +5456,23 @@
         "Brak dostępnych metod weryfikacji"
       ]
     },
+    "ICS event error": {
+      "Edited event not supported": [
+        "Edytowane wydarzenie nie jest obsługiwane"
+      ],
+      "End time out of bounds": [
+        "Czas zakończenia jest poza zakresem"
+      ],
+      "Malformed end time": [
+        "Czas zakończenia posiada nieprawidłowy format"
+      ],
+      "Malformed recurring event": [
+        "Wydarzenie cykliczne posiada nieprawidłowy format"
+      ],
+      "Start time out of bounds": [
+        "Czas rozpoczęcia jest poza zakresem"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } uczestnik",
@@ -7203,6 +7220,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Przełącz na konto"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -10037,14 +10057,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Wybierz plan Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -10057,6 +10069,14 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Wybierz plan Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
       ]
     },
     "new_plans: tooltip": {

@@ -302,6 +302,9 @@
       "Export contact group": [
         "連絡先グループをエクスポート"
       ],
+      "Export selection as .vcf": [
+        "選択項目を .vcf としてエクスポート"
+      ],
       "Forgot password?": [
         "パスワードを忘れましたか？"
       ],
@@ -442,6 +445,9 @@
       ],
       "Merge contacts": [
         "連絡先を統合"
+      ],
+      "More actions": [
+        "その他の操作"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -3487,6 +3493,9 @@
       "Time zone": [
         "タイムゾーン"
       ],
+      "Time zone component ignored": [
+        "タイムゾーン構成は無視されました"
+      ],
       "To-do entry": [
         "To-do のエントリー"
       ],
@@ -3571,6 +3580,11 @@
     "Event info. Organizer name": {
       "You": [
         "あなた"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "予期せぬエラー"
       ]
     },
     "Event invitation error": {
@@ -3944,6 +3958,50 @@
         "検証方法がありません"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "カレンダーのタイムゾーンはサポートされていません"
+      ],
+      "Edited event not supported": [
+        "編集された予定はサポートされていません"
+      ],
+      "End time out of bounds": [
+        "終了日時が指定可能な範囲を超えています"
+      ],
+      "Event validation failed": [
+        "予定の検証に失敗しました"
+      ],
+      "Floating times not supported": [
+        "浮動時間はサポートされていません"
+      ],
+      "Malformed all-day event": [
+        "不正な終日の予定です"
+      ],
+      "Malformed end time": [
+        "異常な終了日時です"
+      ],
+      "Malformed recurring event": [
+        "不正な定期的な予定です"
+      ],
+      "Malformed start time": [
+        "異常な開始日時です"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "グレゴリオ暦のスケールのみ許可されています"
+      ],
+      "Recurring event has no occurrences": [
+        "定期的な予定に繰り返しがありません"
+      ],
+      "Recurring rule not supported": [
+        "繰り返しルールはサポートされていません"
+      ],
+      "Start time out of bounds": [
+        "開始日時が指定可能な範囲を超えています"
+      ],
+      "Time zone not supported": [
+        "タイムゾーンはサポートされていません"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 件の予定が暗号化され、カレンダーに追加されました"
@@ -4075,11 +4133,17 @@
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "アプリのパスワードが正しいです。通常のパスワードを使用しないでください。"
+      ],
       "Your email account requires an app password to export your data.": [
         "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
       ],
       "Your email account requires one to export your data.": [
         "データをエクスポートするためにメールアカウントが必要です。"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用しないでください。"
       ],
       "Your email address and password are correct.": [
         "あなたのメールアドレスとパスワードは正しいです。"
@@ -4317,6 +4381,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
@@ -4442,6 +4509,9 @@
       ],
       "Create a new contact group": [
         "新しい連絡先グループを作成"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } 名のメンバーのために安全なクラウドを作成します"
       ],
       "Create in": [
         "作成日時"
@@ -4857,6 +4927,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPAでのお支払は現在一時的に利用できません。後で再試行してください。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -4889,6 +4962,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
+      "Switch to": [
+        "切り替え"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -5238,11 +5314,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "次回の請求日は ${ renewalTime } です。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
+      ],
       "Your password was leaked:": [
         "パスワードが漏洩しました:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
@@ -7393,7 +7478,7 @@
         "グループを無視"
       ],
       "Month": [
-        "か月"
+        "月"
       ],
       "No parent folder": [
         "親フォルダーなし"

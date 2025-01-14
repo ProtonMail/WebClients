@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Kopioi kutsulinkki"
       ],
-      "Copy link": [
-        "Kopioi linkki"
-      ],
       "Create a copy": [
         "Luo kopio"
       ],
@@ -290,6 +287,9 @@
       ],
       "Export contact group": [
         "Vie yhteystietoryhmä"
+      ],
+      "Export selection as .vcf": [
+        "Vie valinta .vcf-tiedostona"
       ],
       "Forgot password?": [
         "Unohditko salasanasi?"
@@ -395,6 +395,9 @@
       ],
       "Merge contacts": [
         "Yhdistä yhteystiedot"
+      ],
+      "More actions": [
+        "Lisää toimintoja"
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
@@ -3055,6 +3058,11 @@
         "Kuvaa ei valittu"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Odottamaton virhe"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Liitetyn ICS-tiedoston salausta ei voitu purkaa"
@@ -3366,6 +3374,44 @@
         "Vahvistustapoja ei ole"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenterin aikavyöhykettä ei tueta"
+      ],
+      "Edited event not supported": [
+        "Muokattua tapahtumaa ei tueta"
+      ],
+      "End time out of bounds": [
+        "Päättymisaika on alueen ulkopuolella"
+      ],
+      "Event validation failed": [
+        "Tapahtuman vahvistus epäonnistui"
+      ],
+      "Floating times not supported": [
+        "Vaihtuvia aikoja ei tueta"
+      ],
+      "Malformed all-day event": [
+        "Virheellinen koko päivän tapahtuma"
+      ],
+      "Malformed end time": [
+        "Virheellinen päättymisaika"
+      ],
+      "Malformed recurring event": [
+        "Virheellinen toistuva tapahtuma"
+      ],
+      "Malformed start time": [
+        "Virheellinen aloitusaika"
+      ],
+      "Recurring rule not supported": [
+        "Toistuvaa sääntöä ei tueta"
+      ],
+      "Start time out of bounds": [
+        "Aloitusaika on alueen ulkopuolella"
+      ],
+      "Time zone not supported": [
+        "Aikavyöhykettä ei tueta"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } tapahtuma salattiin ja lisättiin kalenteriisi",
@@ -3503,11 +3549,17 @@
       "Use your app password instead of your regular password if:": [
         "Käytä normaalin salasanasi sijaan sovellusalasanaa, jos:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Sovellussalasanasi on oikein. Älä käytä normaalia salasanaasi."
+      ],
       "Your email account requires an app password to export your data.": [
         "Sähköpostitilisi vaatii tietojesi vientiin sovellussalasanan."
       ],
       "Your email account requires one to export your data.": [
         "Sähköpostitilisi vaatii sovellussalasanan tietojesi vientiin."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Sähköpostiosoitteesi ja sovellussalasanasi ovat oikein. Älä käytä normaalia salasanaasi."
       ],
       "Your email address and password are correct.": [
         "Sähköpostiosoitteesi ja salasanasi ovat oikein."
@@ -3737,7 +3789,7 @@
         "(${ serverPrice }/kuukausi)"
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } tallennustilaetua"
+        "+${ bonusSpace } lisätallennustilaa"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
@@ -3764,11 +3816,17 @@
       "Account successfully updated": [
         "Tili on päivitetty"
       ],
+      "Actions": [
+        "Toiminnot"
+      ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Kaikki (${ totalFoldersCount } kansio)",
@@ -3893,6 +3951,10 @@
       ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Luo suojattu pilvi ${ value } jäsenelle",
+        "Luo suojattu pilvi ${ value } jäsenelle"
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -4147,6 +4209,9 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "Invite": [
+        "Kutsu"
+      ],
       "Invite link copied": [
         "Kutsulinkki kopioitiin"
       ],
@@ -4288,10 +4353,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Vain ${ MAX_CUSTOM_PASSWORD_LENGTH } merkki sallitaan",
-        "Vain ${ MAX_CUSTOM_PASSWORD_LENGTH } merkkiä sallitaan"
       ],
       "Only the people with the link and the password can access this file.": [
         "Tiedostoa voivat käyttää vain ne, joilla on sen linkki ja salasana."
@@ -4439,6 +4500,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
@@ -4460,8 +4524,11 @@
       "Share via link settings": [
         "Jakolinkin asetukset"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Jaettava linkki kohteeseen ${ boldNameText }"
+      "Shared by": [
+        "Jakanut"
+      ],
+      "Shared on": [
+        "Jaettu"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
@@ -4492,6 +4559,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Vaihda"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
@@ -4550,21 +4620,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Linkki on luotu vanhalla Drive-versiolla, eikä sen muokkaus ole mahdollista. Muuttaaksesi asetuksia, poista linkki ja luo uusi."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää tiedostoasi sen välityksellä. Jakaaksesi tiedoston uudelleen sinun on luotava uusi linkki."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää kansiotasi sen välityksellä. Jakaaksesi kansion uudelleen sinun on luotava uusi linkki."
-      ],
       "This message will be presented again later": [
         "Tämä viesti näytetään myöhemmin uudelleen"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Tätä julkista dokumenttia ei ehkä ole olemassa, tai sinulla ei ole lupaa tarkastella sitä. Voit yrittää ladata sivun uudelleen nähdäksesi, jatkuuko ongelma."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Tämä poistaa linkin ja tiedoston tai kansion käyttöoikeuden kaikilta, joilla on tämä linkki.",
-        "Tämä poistaa linkin ja tiedoston tai kansion käyttöoikeuden kaikilta, joilla on nämä linkit."
       ],
       "This will replace the existing file with the folder": [
         "Tämä korvaa olemassa olevan tiedoston kansiolla"
@@ -5282,9 +5342,6 @@
       ],
       "Proration": [
         "Hyvitys"
-      ],
-      "Protect with password": [
-        "Suojaa salasanalla"
       ],
       "Public keys": [
         "Julkiset avaimet"
@@ -6837,14 +6894,6 @@
         "${ numberOfItems } kohde siirrettiin",
         "${ numberOfItems } kohdetta siirrettiin"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } kohteen linkin poisto epäonnistui",
-        "${ numberOfItems } kohteen linkkien poisto epäonnistui"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } kohteen linkki poistettiin",
-        "${ numberOfItems } kohteen linkit poistettiin"
-      ],
       "${ reason } has been disabled": [
         "${ reason } poistettiin käytöstä"
       ],
@@ -6935,12 +6984,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Kohteen \"${ name }\" linkin poisto epäonnistui"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Kohteen \"${ name }\" linkki poistettiin"
       ],
       "The link to your item failed to be deleted": [
         "Kohteen linkin poisto epäonnistui"
@@ -8223,9 +8266,6 @@
       "Secure link copied": [
         "Suojattu linkki kopioitiin"
       ],
-      "The link to your file was successfully copied": [
-        "Tiedoston linkki on kopioitu"
-      ],
       "Undo in progress": [
         "Kumotaan"
       ],
@@ -8690,9 +8730,6 @@
       "Photos": [
         "Kuvat"
       ],
-      "Privacy settings": [
-        "Yksityisyysasetukset"
-      ],
       "Processing...": [
         "Käsitellään..."
       ],
@@ -8750,9 +8787,6 @@
       "Share ${ name }": [
         "Jaa ${ name }"
       ],
-      "Share via link": [
-        "Jaa linkkinä"
-      ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"
       ],
@@ -8770,9 +8804,6 @@
       ],
       "Stop sharing": [
         "Lopeta jakaminen"
-      ],
-      "Stop sharing with everyone?": [
-        "Lopetetaanko jakaminen täysin?"
       ],
       "Stop sharing?": [
         "Lopetetaanko jakaminen?"

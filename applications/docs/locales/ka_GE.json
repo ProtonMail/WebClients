@@ -187,9 +187,6 @@
       "Copy invite link": [
         "მოსაწვევის ბმულის კოპირება"
       ],
-      "Copy link": [
-        "ბმულის კოპირება"
-      ],
       "Create a copy": [
         "ასლის შექმნა"
       ],
@@ -290,6 +287,9 @@
       ],
       "Export contact group": [
         "კონტაქტების ჯგუფის გატანა"
+      ],
+      "Export selection as .vcf": [
+        "მონიშნულის გატანა .vcf ფაილში"
       ],
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
@@ -395,6 +395,9 @@
       ],
       "Merge contacts": [
         "კონტაქტების შერწყმა"
+      ],
+      "More actions": [
+        "მეტი ქმედება"
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
@@ -2996,6 +2999,9 @@
       "Time zone": [
         "დროის სარტყელი"
       ],
+      "Time zone component ignored": [
+        "დროის სარტყლის კომპონენტი გამოტოვებულია"
+      ],
       "To-do entry": [
         "გეგმის ელემენტი"
       ],
@@ -3043,6 +3049,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "გამოსახულება არჩეული არაა"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "გაუთვალისწინებელი შეცდომა"
       ]
     },
     "Event invitation error": {
@@ -3356,6 +3367,50 @@
         "შემოწმების არცერთი მეთოდი წვდომადი არაა"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "კალენდრის დროის სარტყელი მხარდაუჭერელია"
+      ],
+      "Edited event not supported": [
+        "ჩასწორებული მოვლენა მხარდაჭერილი არაა"
+      ],
+      "End time out of bounds": [
+        "დასრულების დრო საზღვრებს მიღმაა"
+      ],
+      "Event validation failed": [
+        "მოვლენის შემოწმების შეცდომა"
+      ],
+      "Floating times not supported": [
+        "მცოცავი გრაფიკი მხარდაჭერილი არაა"
+      ],
+      "Malformed all-day event": [
+        "არასწორი მთელ-დღიანი მოვლენა"
+      ],
+      "Malformed end time": [
+        "არასწორი დასასრულის დრო"
+      ],
+      "Malformed recurring event": [
+        "არასწორი გამეორებადი მოვლენა"
+      ],
+      "Malformed start time": [
+        "არასწორი საწყისი დრო"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "დაშვებულია, მხოლოდ, გრეგორიანული კალენდარი"
+      ],
+      "Recurring event has no occurrences": [
+        "განმეორებადი მოვლენა ჯერ არ მომხდარა"
+      ],
+      "Recurring rule not supported": [
+        "გამეორების წესი მხარდაუჭერელია"
+      ],
+      "Start time out of bounds": [
+        "საწყისი დრო საზღვრებს მიღმაა"
+      ],
+      "Time zone not supported": [
+        "მხარდაუჭერელი დროის სარტყელი"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში",
@@ -3493,11 +3548,17 @@
       "Use your app password instead of your regular password if:": [
         "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
       "Your email account requires an app password to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
       "Your email account requires one to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
       ],
       "Your email address and password are correct.": [
         "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
@@ -3748,11 +3809,17 @@
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
+      "Actions": [
+        "ქმედებები"
+      ],
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ],
       "All (${ totalFoldersCount } folder)": [
         "ყველა (${ totalFoldersCount } საქაღალდე)",
@@ -3877,6 +3944,10 @@
       ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
       ],
       "Create in": [
         "რაში შევქმნა"
@@ -4131,6 +4202,9 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
+      "Invite": [
+        "მოწვევა"
+      ],
       "Invite link copied": [
         "მოსაწვევის ბმული დაკოპირდა"
       ],
@@ -4272,10 +4346,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }",
-        "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }"
       ],
       "Only the people with the link and the password can access this file.": [
         "ამ ფაილთან წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
@@ -4423,6 +4493,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
@@ -4444,8 +4517,11 @@
       "Share via link settings": [
         "ბმულით გაზიარების მორგება"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "გაზიარებადი ბმული ${ boldNameText }-სთვის"
+      "Shared by": [
+        "გამზიარებელი"
+      ],
+      "Shared on": [
+        "გაზიარებულია"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
@@ -4476,6 +4552,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "გადართვა"
       ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
@@ -4534,21 +4613,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "ეს ბმული Drive-ის ძველ შეიქმნა და ვერ შეიცვლება. პარამტრების შესაცვლელად წაშალეთ ეს ბმული და შექმენით ახალი."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "ეს ბმული სამუდამოდ გაითიშება. ამ ფაილთან მოცემული ბმულით წვდომა შეუძლებელი იქნება. ფაილის თავიდან გასაზიარებლად ახალი ბმული დაგჭირდებათ."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "ეს ბმული სამუდამოდ გაითიშება. ამ საქაღალდესთან მოცემული ბმულით წვდომა შეუძლებელი იქნება. საქაღალდის თავიდან გასაზიარებლად ახალი ბმული დაგჭირდებათ."
-      ],
       "This message will be presented again later": [
         "ეს შეტყობინება მოგვენებით ისევ იქნება წარმოდგენილი"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "ეს საჯარო დოკუმენტი ან არ არსებობს, ან მისი ნახვის უფლება არ გაქვთ. შეგიძლიათ, სცადოთ თავიდან ჩატვირთოთ გვერდი, რომ ნახოთ, გაქრება თუ არა პრობლემა."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "ეს წაშლის ამ ბმულს და აუკრძალავს წვდომას ყველას, ვისაც თქვენს ფაილთან ან საქაღალდესთან ამ ბმულით ჰქონდა წვდომა.",
-        "ეს წაშლის ამ ბმულს და აუკრძალავს წვდომას ყველას, ვისაც თქვენს ფაილებთან ან საქაღალდეებთან ამ ბმულით ჰქონდა წვდომა."
       ],
       "This will replace the existing file with the folder": [
         "ეს არსებულ ფაილს საქაღალდით ჩაანაცვლებს"
@@ -4842,6 +4911,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
       ]
     },
     "info": {
@@ -5260,9 +5335,6 @@
       ],
       "Proration": [
         "პროპორცია"
-      ],
-      "Protect with password": [
-        "პაროლის დადება"
       ],
       "Public keys": [
         "საჯარო გასაღებები"
@@ -6815,14 +6887,6 @@
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია",
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
-      ],
       "${ reason } has been disabled": [
         "${ reason } გაითიშა"
       ],
@@ -6919,12 +6983,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "\"${ name }\"-მდე ბმულის წაშლის შეცდომა"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "ბმული \"${ name }\"-მდე წაიშალა"
       ],
       "The link to your item failed to be deleted": [
         "თქვენს ელემენტამდე ბმულის წაშლის შეცდომა"
@@ -8198,9 +8256,6 @@
       "Secure link copied": [
         "დაცული ბმული დაკოპირდა"
       ],
-      "The link to your file was successfully copied": [
-        "თქვენი ფაილის ბმული წარმატებით დაკოპირდა"
-      ],
       "Undo in progress": [
         "მიმდინარეობს გაუქმება"
       ],
@@ -8665,9 +8720,6 @@
       "Photos": [
         "ფოტოები"
       ],
-      "Privacy settings": [
-        "კონფიდენციალობის პარამეტრები"
-      ],
       "Processing...": [
         "დამუშავება..."
       ],
@@ -8725,9 +8777,6 @@
       "Share ${ name }": [
         "${ name }-ის გაზიარება"
       ],
-      "Share via link": [
-        "ბმულით გაზიარება"
-      ],
       "Sign in and grant access": [
         "შესვლა და წვდომის მინიჭება"
       ],
@@ -8745,9 +8794,6 @@
       ],
       "Stop sharing": [
         "გაზიარების შეწყვეტა"
-      ],
-      "Stop sharing with everyone?": [
-        "შევწყვიტოთ ყველასთვის გაზიარება?"
       ],
       "Stop sharing?": [
         "შევწყვიტო გაზიარება?"
