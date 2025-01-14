@@ -13,6 +13,7 @@ import { useNavigationActions } from '@proton/pass/components/Navigation/Navigat
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
+import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useOptimisticItem } from '@proton/pass/hooks/useItem';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
@@ -66,16 +67,17 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
         return <Redirect to={to} push={false} />;
     }
 
+    const handleDelete = () => itemActions.delete(item);
     const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', scope });
     const handleHistory = () => selectItem(shareId, itemId, { view: 'history', scope });
-    const handleRetry = () => failure !== undefined && dispatch(failure.action);
-    const handleTrash = () => itemActions.trash(item);
-    const handleRestore = () => itemActions.restore(item);
-    const handleDelete = () => itemActions.delete(item);
-    const handleSecureLink = () => setOpenSecureLinkModal(true);
     const handleItemManage = () => inviteActions.manageItemAccess(shareId, itemId);
-    const handleShareItem = () => inviteActions.createItemInvite(shareId, itemId);
     const handleLeaveItem = () => itemActions.leave(item);
+    const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
+    const handleRestore = () => itemActions.restore(item);
+    const handleRetry = () => failure !== undefined && dispatch(failure.action);
+    const handleSecureLink = () => setOpenSecureLinkModal(true);
+    const handleShareItem = () => inviteActions.createItemInvite(shareId, itemId);
+    const handleTrash = () => itemActions.trash(item);
 
     const handleDismiss = () => {
         if (failure === undefined) return;
@@ -108,15 +110,16 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 handleDismissClick={handleDismiss}
                 handleEditClick={handleEdit}
                 handleHistoryClick={handleHistory}
+                handleLeaveItemClick={handleLeaveItem}
                 handleManageClick={handleItemManage}
                 handleMoveToTrashClick={handleTrash}
+                handleMoveToVaultClick={handleMove}
                 handlePinClick={handlePinClick}
                 handleRestoreClick={handleRestore}
                 handleRetryClick={handleRetry}
                 handleSecureLinkClick={handleSecureLink}
-                handleToggleFlagsClick={handleToggleFlags}
                 handleShareItemClick={handleShareItem}
-                handleLeaveItemClick={handleLeaveItem}
+                handleToggleFlagsClick={handleToggleFlags}
             />
 
             {openSecureLinkModal && (
