@@ -3517,6 +3517,9 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ plusPlanName }."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "一鍵建立 Zoom 會議並新增加入活動的詳細資訊。"
+      ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "根據您的需要來創建多個標籤或資料夾以便您的收件匣整齊"
       ],
@@ -3724,8 +3727,20 @@
       ]
     },
     "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**協作：**線上文件編輯器"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**安全：**端到端加密"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**簡單易用：**在數分鐘內匯入您的檔案並完成設定"
+      ],
       "Advanced protection that goes beyond industry standards": [
         "超越業界標準的進階保護"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "加入已經受益於 ${ BRAND_NAME } 安全性的 50,000 多個組織的行列。"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4921,6 +4936,11 @@
         "事件開始於 ${ timeString }，${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "異常的錯誤"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "附件的 ICS 檔案無法解密"
@@ -5910,6 +5930,47 @@
         "沒有可用的驗證方法"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "不支援行事曆的時區"
+      ],
+      "Edited event not supported": [
+        "不支援已編輯的事件"
+      ],
+      "End time out of bounds": [
+        "結束時間超出限制"
+      ],
+      "Event validation failed": [
+        "事件驗證失敗"
+      ],
+      "Floating times not supported": [
+        "不支援浮動時間"
+      ],
+      "Malformed all-day event": [
+        "全日事件格式有誤"
+      ],
+      "Malformed end time": [
+        "結束時間格式有誤"
+      ],
+      "Malformed recurring event": [
+        "週期性事件格式有誤"
+      ],
+      "Malformed start time": [
+        "開始時間格式有誤"
+      ],
+      "Recurring event has no occurrences": [
+        "未發生重複事件"
+      ],
+      "Recurring rule not supported": [
+        "不支援週期性規則"
+      ],
+      "Start time out of bounds": [
+        "開始時間超出限制"
+      ],
+      "Time zone not supported": [
+        "不支援的時區"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
@@ -6476,6 +6537,9 @@
       "Affected user is on row": [
         "受影響的使用者"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
+      ],
       "Align left": [
         "靠左對齊"
       ],
@@ -6727,6 +6791,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "替成員創建一個安全${ value }雲端"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "創建並管理子帳號，並為其指派在您的自訂網域下的電郵位址。"
@@ -7781,6 +7848,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "使用 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件傳送。"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 付款目前不可用。請稍後再試。"
+      ],
       "Server is currently down": [
         "伺服器目前離線中"
       ],
@@ -7901,6 +7971,9 @@
       "Swiss based": [
         "總部設於瑞士"
       ],
+      "Switch to": [
+        "切換至"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -7954,6 +8027,9 @@
       ],
       "The format of your CSV file is incorrect.": [
         "您的 CSV 檔案格式不正確。"
+      ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "回報您並未設定 ${ BRAND_NAME } 的連結已過期。帳號已過期。請聯絡我們的支援團隊以解決此問題。"
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的使用者在登入後會看見此名稱。"
@@ -8633,6 +8709,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的組織機構使用單一登入（SSO）。按「登入」以 SSO 登入。"
       ],
@@ -8650,6 +8729,12 @@
       ],
       "Your recovery phrase": [
         "您的復原短語"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "您的方案開始於${ renewalTime }及於每月重新開始。"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
@@ -13833,6 +13918,43 @@
         "要求試用"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "進階安全功能"
+      ],
+      "Advanced sharing security": [
+        "進階分享安全性"
+      ],
+      "Apps for all devices": [
+        "適用於所有裝置的應用程式"
+      ],
+      "Built-in encryption": [
+        "內建加密"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "包含行事曆、密碼管理程式、檔案儲存空間與 VPN"
+      ],
+      "Email aliases": [
+        "電子郵件別名"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "包含電子郵件、行事曆、密碼管理程式與 VPN"
+      ],
+      "ISO 27001 certified": [
+        "ISO 27001 認證"
+      ],
+      "The only business solution that is:": [
+        "唯一符合以下所有條件的商業解決方案："
+      ],
+      "The only cloud storage with:": [
+        "唯一符合以下所有條件的雲端儲存空間："
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "符合 GDPR 與 HIPAA 規範"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "關閉"
@@ -14024,11 +14146,23 @@
       ]
     },
     "sso": {
+      "Confirmation code": [
+        "確認碼"
+      ],
       "Delete ${ n } user": [
         "刪除 ${ n } 位使用者"
       ],
+      "Share the confirmation code with your administrator": [
+        "與您的管理員分享確認碼"
+      ],
       "Sign in": [
         "登入"
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "若要確定真的是您嘗試登入 **${ email }**，請檢視確認碼，並從其他裝置批准請求。"
+      ],
+      "Use backup password instead": [
+        "改用備份密碼"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您將被重新導向至您的第三方單一登入提供者。"
@@ -15586,7 +15720,7 @@
         "取得應用程式"
       ],
       "Get Zooming faster": [
-        "更快速取得Zoom"
+        "更快速取得 Zoom"
       ],
       "Gift": [
         "禮物"

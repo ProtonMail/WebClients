@@ -5035,6 +5035,9 @@
       "Time zone": [
         "Ζώνη ώρας"
       ],
+      "Time zone component ignored": [
+        "Το στοιχείο ζώνης ώρας παραβλέπεται"
+      ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
       ],
@@ -6260,11 +6263,17 @@
       "Calendar time zone not supported": [
         "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
       ],
+      "Edited event not supported": [
+        "Η τροποποιημένη εκδήλωση δεν υποστηρίζεται"
+      ],
       "End time out of bounds": [
         "Ώρα λήξης εκτός ορίων"
       ],
       "Event validation failed": [
         "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Floating times not supported": [
+        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
       ],
       "Malformed all-day event": [
         "Δύσμορφη ολοήμερη εκδήλωση"
@@ -6272,8 +6281,23 @@
       "Malformed end time": [
         "Λανθασμένος χρόνος λήξης"
       ],
+      "Malformed recurring event": [
+        "Λάθος επαναλαμβανόμενο συμβάν"
+      ],
+      "Malformed start time": [
+        "Λάθος χρόνος έναρξης"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Επιτρέπεται μόνο η κλίμακα του Γρηγοριανού ημερολογίου"
+      ],
       "Recurring event has no occurrences": [
         "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
+      ],
+      "Recurring rule not supported": [
+        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
+      ],
+      "Start time out of bounds": [
+        "Ώρα έναρξης εκτός ορίων"
       ],
       "Time zone not supported": [
         "Μη υποστηριζόμενη ζώνη ώρας"
@@ -6416,11 +6440,17 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ο κωδικός πρόσβασης σας στην εφαρμογή είναι σωστός. Μη χρησιμοποιείτε τον σύνηθες κωδικό πρόσβασής σας."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας."
       ],
       "Your email account requires one to export your data.": [
         "Ο λογαριασμός email σας απαιτεί έναν για εξαγωγή των δεδομένων σας"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστοί. Μη χρησιμοποιήστε τον σύνηθες κωδικό πρόσβασής σας."
       ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
@@ -6900,6 +6930,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Μετά το κλείδωμα, τα μέλη του οργανισμού θα πρέπει να ξεκλειδώσουν το ${ PASS_APP_NAME } με τον κωδικό πρόσβασης ή το PIN τους κλπ."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
+      ],
       "Align left": [
         "Στοίχιση αριστερά"
       ],
@@ -7203,6 +7236,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, ένα χρονικό εύρος για αυτήν την εισαγωγή, και τις ετικέτες που θα θέλατε να εισάγετε."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
@@ -8394,6 +8431,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Στάλθηκε με <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> διασφαλισμένο ταχυδρομείο."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Οι πληρωμές SEPA δεν είναι διαθέσιμες προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
       ],
@@ -9404,6 +9444,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ο οργανισμός σας χρησιμοποιεί ενιαία πρόσβαση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
       ],
@@ -9424,6 +9467,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Η φράση ανάκτησης είναι μια σειρά από 12 τυχαία δημιουργημένες λέξεις με συγκεκριμένη σειρά."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
