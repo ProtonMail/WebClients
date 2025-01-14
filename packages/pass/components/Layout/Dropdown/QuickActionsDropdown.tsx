@@ -17,6 +17,8 @@ import {
 import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import clsx from '@proton/utils/clsx';
 
+import './QuickActionsDropdown.scss';
+
 export type QuickActionsDropdownProps = {
     children?: ReactNode | ((opened: boolean) => ReactNode);
     badge?: number;
@@ -63,10 +65,10 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     return (
         <>
             <Button
-                className={clsx(className, 'flex items-center gap-x-2', signaled && 'relative')}
+                className={clsx(className, 'pass-quickactions flex items-center gap-x-1', signaled && 'relative')}
                 color={color}
                 disabled={disabled}
-                icon
+                icon={badge === undefined}
                 onClick={(evt) => {
                     evt.stopPropagation();
                     toggle();
@@ -81,7 +83,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
                 <Icon name={icon} size={iconSize} />
                 {signaled && <NotificationDot className="absolute top-0 right-0 w-2 h-2" />}
                 {badge && (
-                    <Badge className="bg-primary ratio-square color-invert text-bold w-6 flex justify-center items-center lh120">
+                    <Badge className="pass-quickactions--badge bg-primary ratio-square color-invert text-bold flex justify-center items-center lh120">
                         {badge}
                     </Badge>
                 )}
