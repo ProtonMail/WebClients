@@ -4,11 +4,12 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { type SubscriptionModel } from '@proton/shared/lib/interfaces';
 import alias from '@proton/styles/assets/img/cancellation-flow/testimonial_alias.png';
 import darkWeb from '@proton/styles/assets/img/cancellation-flow/testimonial_dark_web.png';
 import netShield from '@proton/styles/assets/img/cancellation-flow/testimonial_net_shield.png';
 
+import { subscriptionExpires } from '../../helpers';
 import type { ConfirmationModal, PlanConfigTestimonial } from '../interface';
 
 export const getDefaultTestimonial = (): PlanConfigTestimonial => ({
@@ -52,18 +53,18 @@ export const ExpirationTime = ({
     subscription: SubscriptionModel;
     cancellablePlan?: boolean;
 }) => {
-    const latestSubscription = subscription.UpcomingSubscription?.PeriodEnd ?? subscription.PeriodEnd;
+    const subscriptionExpiryTime = subscriptionExpires(subscription, true).expirationDate ?? 0;
 
     if (cancellablePlan) {
-        const endDate = fromUnixTime(latestSubscription);
-        const formattedEndDate = format(fromUnixTime(latestSubscription), 'PP');
+        const endDate = fromUnixTime(subscriptionExpiryTime);
+        const formattedEndDate = format(fromUnixTime(subscriptionExpiryTime), 'PP');
         return (
             <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd')}>
                 {formattedEndDate}
             </time>
         );
     } else {
-        const endSubDate = fromUnixTime(latestSubscription);
+        const endSubDate = fromUnixTime(subscriptionExpiryTime);
         const dayDiff = differenceInDays(endSubDate, new Date());
         return (
             <strong>
