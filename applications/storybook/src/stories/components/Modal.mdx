@@ -6,10 +6,10 @@ import { Alert } from '@proton/components';
 
 Modals are made of multiple composite components, namely:
 
--   `ModalTwo`
--   `ModalTwoHeader`
--   `ModalTwoContent`
--   `ModalTwoFooter`
+- `ModalTwo`
+- `ModalTwoHeader`
+- `ModalTwoContent`
+- `ModalTwoFooter`
 
 <Alert>
     Please note that the old <code>Modal</code> component is deprecated and should be replaced with{' '}
@@ -19,11 +19,27 @@ Modals are made of multiple composite components, namely:
 ## How to use
 
 ```javascript
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
 ```
+
+Modals should be controlled with the useModalState hook. The hook provides:
+
+- `modalProps`: Object containing props that control the modal's state
+- `handleSetOpen`: Function to update the modal's open/closed state
+- `render`: Function that can be used to dynamically render the modal and load it only when needed
 
 <Canvas withSource="open">
     <Story id="components-modal--example" />
+</Canvas>
+
+## Modal state object
+
+For a more concise implementation, you can use the `useModalStateObject` hook instead.
+
+This hook provides the same functionality as `useModalState` but returns an object rather than an array of props, which can make implementation more straightforward.
+
+<Canvas withSource="open">
+    <Story id="components-modal--modal-state-object" />
 </Canvas>
 
 ## Variants
@@ -34,16 +50,6 @@ Modals come in four different sizes. `small`, `medium`, `large` & `full`.
 
 <Canvas>
     <Story id="components-modal--primary" />
-</Canvas>
-
-### Using `useModalState`
-
-For use-cases where one would prefer to lose the local state (e.g. form state) of a given modal after it closes/exits, you can use the `useModalState` hook.
-
-Internally, the react-node is un- & re-mounted by incrementing and passing of a `key` after each `onExit` call.
-
-<Canvas>
-    <Story id="components-modal--using-use-modal-state" />
 </Canvas>
 
 ### Title in Header
