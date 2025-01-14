@@ -311,6 +311,9 @@
       "Export contact group": [
         "Exportovat skupinu kontaktů"
       ],
+      "Export selection as .vcf": [
+        "Exportovat výběr jako .vcf"
+      ],
       "Forgot password?": [
         "Zapomenuté heslo?"
       ],
@@ -451,6 +454,9 @@
       ],
       "Merge contacts": [
         "Sloučit kontakty"
+      ],
+      "More actions": [
+        "Další akce"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -3586,6 +3592,9 @@
       "Time zone": [
         "Časové pásmo"
       ],
+      "Time zone component ignored": [
+        "Komponenta časového pásma ignorována"
+      ],
       "To-do entry": [
         "Úkoly"
       ],
@@ -3676,6 +3685,11 @@
     "Event info. Organizer name": {
       "You": [
         "Vy"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočekávaná chyba"
       ]
     },
     "Event invitation error": {
@@ -4070,6 +4084,50 @@
         "Nejsou k dispozici žádné metody ověřování"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendáře není podporováno"
+      ],
+      "Edited event not supported": [
+        "Upravená událost není podporována"
+      ],
+      "End time out of bounds": [
+        "Čas ukončení mimo hranice"
+      ],
+      "Event validation failed": [
+        "Ověření události selhalo"
+      ],
+      "Floating times not supported": [
+        "Plovoucí časy nejsou podporovány"
+      ],
+      "Malformed all-day event": [
+        "Špatný formát celodenní události"
+      ],
+      "Malformed end time": [
+        "Špatný formát času ukončení"
+      ],
+      "Malformed recurring event": [
+        "Špatný formát opakující se události"
+      ],
+      "Malformed start time": [
+        "Špatný formát času zahájení"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Povolen je pouze gregoriánský typ kalendáře"
+      ],
+      "Recurring event has no occurrences": [
+        "Opakující se událost nemá žádné výskyty"
+      ],
+      "Recurring rule not supported": [
+        "Pravidlo opakování není podporováno"
+      ],
+      "Start time out of bounds": [
+        "Čas zahájení mimo hranice"
+      ],
+      "Time zone not supported": [
+        "Časové pásmo není podporováno"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
@@ -4219,11 +4277,17 @@
       "Use your app password instead of your regular password if:": [
         "Použijte heslo aplikace místo běžného hesla, pokud:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Heslo aplikace je správné. Nepoužívejte své obvyklé heslo."
+      ],
       "Your email account requires an app password to export your data.": [
         "Váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat."
       ],
       "Your email account requires one to export your data.": [
         "Váš e-mailový účet toto vyžaduje pro export vašich dat."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Vaše e-mailová adresa a heslo do aplikace jsou správné. Nepoužívejte své obvyklé heslo."
       ],
       "Your email address and password are correct.": [
         "Vaše e-mailová adresa a heslo jsou správné."
@@ -4515,6 +4579,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -4652,6 +4719,12 @@
       ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvořte bezpečný cloud pro ${ value } člena",
+        "Vytvořte bezpečný cloud pro ${ value } členy",
+        "Vytvořte bezpečný cloud pro ${ value } členů",
+        "Vytvořte bezpečný cloud pro ${ value } členů"
       ],
       "Create in": [
         "Vytvořit v"
@@ -5085,6 +5158,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Platby přes SEPA nejsou v tuto chvíli k dispozici. Zkuste to znovu později."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
@@ -5117,6 +5193,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Přepnout na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -5472,11 +5551,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Datum příští platby je ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
+      ],
       "Your password was leaked:": [
         "Došlo k úniku vašeho hesla:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se každých ${ cycle } měsíců automaticky obnovovat."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zdá se, že se vaše systémové časové pásmo změnilo na ${ timezone }. Chcete aktualizovat nastavení časového pásma?"
