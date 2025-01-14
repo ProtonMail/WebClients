@@ -1,12 +1,16 @@
+import { type MouseEvent } from 'react';
+
 import { c } from 'ttag';
 
 import type { WasmAddressDetails, WasmApiWalletAccount } from '@proton/andromeda';
-import { Copy, useNotifications } from '@proton/components';
+import { Copy, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalState, useNotifications } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import QRCode from '@proton/components/components/image/QRCode';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store';
 
+import { CoreButtonLike } from '../../../atoms';
 import { Price } from '../../../atoms/Price';
 import { Skeleton } from '../../../atoms/Skeleton';
 import { DataListItem } from '../../DataList';
@@ -33,6 +37,11 @@ export const AddressDataListItem = ({
     loading?: boolean;
 }) => {
     const { createNotification } = useNotifications();
+    const [walletQrCodeModal, setWalletQrCodeModal, renderWalletQrCodeModal] = useModalState();
+    const handleOpenQrCode = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        setWalletQrCodeModal(true);
+    };
 
     return (
         <DataListItem
@@ -45,6 +54,17 @@ export const AddressDataListItem = ({
                                 <Icon name="brand-bitcoin" className="ml-2 color-hint" />
                             </Tooltip>
                         )}
+                        <Tooltip title={c('Label').t`Show QRCode`}>
+                            <CoreButtonLike
+                                icon
+                                disabled={!address}
+                                className={'ml-2'}
+                                title={c('Action').t`Show QRCode`}
+                                onClick={handleOpenQrCode}
+                            >
+                                <Icon name="qr-code" className="color-hint" />
+                            </CoreButtonLike>
+                        </Tooltip>
                         <Copy
                             value={address?.address ?? ''}
                             onCopy={() => {
@@ -52,6 +72,21 @@ export const AddressDataListItem = ({
                             }}
                             className={'ml-2'}
                         />
+                        {renderWalletQrCodeModal && address && (
+                            <ModalTwo size={'small'} {...walletQrCodeModal}>
+                                <ModalTwoHeader />
+                                <ModalTwoContent>
+                                    <div className="flex flex-row justify-center">
+                                        <span className="block">
+                                            <QRCode
+                                                data-testid="serialized-payment-info-qrcode"
+                                                value={address.address}
+                                            />
+                                        </span>
+                                    </div>
+                                </ModalTwoContent>
+                            </ModalTwo>
+                        )}
                     </div>
                 </Skeleton>
             }
