@@ -163,15 +163,18 @@ export const safelyWriteToIDBConditionally = async (
             : value.aesGcmCiphertext;
 
     try {
+        const oldSize = await getItemSize(value.ID, storeName, esDB);
+
         const tx = esDB.transaction(storeName, 'readwrite');
         await tx.store.put(valueToStore, value.ID);
         await tx.done;
+
         // We always update the size if we are storing to the content table.
         // If we are storing to the metadata table, we do so only if the item
         // was flagged to update the size
         if (storeName === 'content' || !value.keepSize) {
-            const oldSize = await getItemSize(value.ID, storeName, esDB);
-            await updateSize(esDB, ciphertextSize(value.aesGcmCiphertext) - oldSize);
+            const newSize = ciphertextSize(value.aesGcmCiphertext);
+            await updateSize(esDB, newSize - oldSize);
         }
 
         return inputStoringOutcome ?? STORING_OUTCOME.SUCCESS;

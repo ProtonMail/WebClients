@@ -38,6 +38,7 @@ export enum TelemetryMeasurementGroups {
     smartBanner = 'any.web.smart_banner',
     clientInstalls = 'common.any.client_installs',
     upsellModals = 'any.web.upsell_modals',
+    clientSearch = 'any.web.client_search',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
 }
@@ -71,7 +72,6 @@ export enum TelemetryMailTrial2024UpsellModal {
 
 export enum TelemetryCalendarEvents {
     change_temporary_time_zone = 'change_temporary_time_zone',
-    enable_encrypted_search = 'enable_encrypted_search',
     answer_invite = 'answer_invite',
 }
 
@@ -249,6 +249,19 @@ export enum TelemetryMailPostSubscriptionEvents {
     post_subscription_start = 'post_subscription_start',
 }
 
+export enum TelemetryEncryptedSearchEvents {
+    start_es_indexing = 'start_es_indexing',
+    end_es_indexing = 'end_es_indexing',
+    pause_es_indexing = 'pause_es_indexing',
+
+    perform_search = 'perform_search',
+    es_search_complete = 'es_search_complete',
+    clear_search_fields = 'clear_search_fields',
+
+    delete_es_data = 'delete_es_data',
+    switch_search_type = 'switch_search_type',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -278,7 +291,8 @@ export type TelemetryEvents =
     | TelemetryInboxDestkopEvents
     | TelemetryDocsEvents
     | TelemetryCalendarVideoConferencing
-    | TelemetryMailPostSubscriptionEvents;
+    | TelemetryMailPostSubscriptionEvents
+    | TelemetryEncryptedSearchEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

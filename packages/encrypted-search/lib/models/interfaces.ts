@@ -180,37 +180,6 @@ export interface ESCache<ESItemMetadata, ESItemContent> {
 }
 
 /**
- * Base type for metrics on encrypted search
- */
-interface ESMetrics {
-    indexSize: number;
-    // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
-    // it doesn't make too much sense in general to talk about "messages"
-    numMessagesIndexed: number;
-}
-
-/**
- * Type of the metrics report sent after each search
- */
-export interface ESSearchMetrics extends ESMetrics {
-    cacheSize: number;
-    isFirstSearch: boolean;
-    isCacheLimited: boolean;
-    searchTime: number;
-}
-
-/**
- * Type of the metrics report sent after indexing
- */
-export interface ESIndexMetrics extends ESMetrics {
-    numPauses: number;
-    originalEstimate: number;
-    numInterruptions: number;
-    isRefreshed: boolean;
-    indexTime: number;
-}
-
-/**
  * Required fields to correctly process events and keep IDB in sync. This object
  * instructs the code to apply Action to the item specified by ID. ItemMetadata
  * contains the metadata of the item being changed and can be omitted only in

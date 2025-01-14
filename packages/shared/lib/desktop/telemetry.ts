@@ -38,6 +38,7 @@ export const sendMailtoTelemetry = (api: Api, data: DefaultProtocol, timestamp: 
         measurementGroup: TelemetryMeasurementGroups.mailDesktopDefaultMailto,
         event: TelemetryInboxDestkopEvents.mailto_heartbeat,
         dimensions,
+        delay: false,
     });
 
     void defaultMailtoTelemetryReported(timestamp);
@@ -54,6 +55,7 @@ export const sendDailyTelemetry = (api: Api, data: DailyStatsReport, timestamp: 
         measurementGroup: TelemetryMeasurementGroups.mailDesktopDailyStats,
         event: TelemetryInboxDestkopEvents.daily_stats_heartbeat,
         ...data,
+        delay: false,
     });
 
     void dailyStatsReported(timestamp);

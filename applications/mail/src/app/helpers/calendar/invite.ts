@@ -432,6 +432,7 @@ export const sendInviteErrorTelemetryReport = async ({
         measurementGroup: TelemetryMeasurementGroups.calendarIcsSurgery,
         event: isImportPublish ? TelemetryIcsSurgeryEvents.import_publish : TelemetryIcsSurgeryEvents.invitation,
         dimensions,
+        delay: false,
     });
 };
 

@@ -13,6 +13,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -23,7 +24,6 @@ import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import type { SearchParameters } from '../../models/tools';
 import { total as totalSelector } from '../../store/elements/elementsSelectors';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';

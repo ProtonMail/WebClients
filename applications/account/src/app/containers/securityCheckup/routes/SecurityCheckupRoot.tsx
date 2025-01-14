@@ -33,6 +33,7 @@ const SecurityCheckupRoot = ({
                 initialCohort: session.initialCohort,
                 source,
             },
+            delay: false,
         });
     }, [session?.initialCohort, source]);
 
