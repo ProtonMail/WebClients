@@ -19,7 +19,7 @@ import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isItemTarget, isVaultTarget } from '@proton/pass/lib/access/access.predicates';
 import { AccessTarget } from '@proton/pass/lib/access/types';
-import { isShared } from '@proton/pass/lib/items/item.predicates';
+import { isItemShared } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectItem, selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
 import { type SelectedItem } from '@proton/pass/types';
@@ -42,20 +42,26 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
     const vaultShare = isVaultShare(share);
     const canManage = isShareManageable(share);
     const canTransfer = !itemId && share.owner && ownWritableVaults.length > 1;
+    const canItemInvite = item.data.type !== 'alias';
+    const canVaultInvite = vaultShare;
     const { limitReached } = access;
 
     const itemInvites = useMemo(() => access.invites.filter(pipe(prop('invite'), isItemTarget)), [access]);
     const itemMembers = useMemo(() => access.members.filter(isItemTarget), [access]);
-    const itemAccessCount = itemInvites.length + itemMembers.length;
+    /** If an item is part of a vault share and is also item shared, a viewer/editor cannot
+     * retrieve the item members. To avoid UX confusion: fallback to the `item.shareCount`.
+     * Item share counter will reflect the underlying members/invites either way. */
+    const itemAccessCount = Math.max(itemInvites.length + itemMembers.length, item.shareCount ?? 0);
 
     const vaultInvites = useMemo(() => access.invites.filter(pipe(prop('invite'), isVaultTarget)), [access]);
     const vaultMembers = useMemo(() => access.members.filter(isVaultTarget), [access]);
     const vaultAccessCount = vaultInvites.length + vaultMembers.length;
+    const vaultMembersCount = vaultMembers.length;
 
     /** From the perspective of the owner, the item is also
      * considered shared if the parent vault is shared even
      * if the item has not been individually shared yet. */
-    const shared = isShared(item) || vaultAccessCount > 0;
+    const shared = isItemShared(item) || vaultAccessCount > 0;
 
     const onItemInvite = useCallback(() => {
         if (limitReached) setLimitModalOpen(true);
@@ -101,12 +107,12 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                             invites={itemInvites}
                             itemId={itemId}
                             members={itemMembers}
-                            onInvite={onItemInvite}
+                            onInvite={canItemInvite ? onItemInvite : undefined}
                             shareId={shareId}
                             target={AccessTarget.Item}
                             title={c('Info').ngettext(
-                                msgid`Item sharing: ${itemAccessCount} member`,
-                                `Item sharing: ${itemAccessCount} members`,
+                                msgid`Item sharing: ${itemAccessCount} user`,
+                                `Item sharing: ${itemAccessCount} users`,
                                 itemAccessCount
                             )}
                         />
@@ -120,13 +126,13 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                             invites={vaultInvites}
                             itemId={itemId}
                             members={vaultMembers}
-                            onInvite={vaultShare ? onVaultInvite : undefined}
+                            onInvite={canVaultInvite ? onVaultInvite : undefined}
                             shareId={shareId}
                             target={AccessTarget.Vault}
                             title={c('Info').ngettext(
-                                msgid`Vault sharing: ${vaultAccessCount} member`,
-                                `Vault sharing: ${vaultAccessCount} members`,
-                                vaultAccessCount
+                                msgid`Vault sharing: ${vaultMembersCount} member`,
+                                `Vault sharing: ${vaultMembersCount} members`,
+                                vaultMembersCount
                             )}
                         />
                     )}
