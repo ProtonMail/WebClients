@@ -189,9 +189,6 @@
       "Copy invite link": [
         "Skopírovať pozývací odkaz"
       ],
-      "Copy link": [
-        "Kopírovať odkaz"
-      ],
       "Create a copy": [
         "Vytvoriť kópiu"
       ],
@@ -297,6 +294,9 @@
       "Export contact group": [
         "Exportovať skupinu kontaktov"
       ],
+      "Export selection as .vcf": [
+        "Exportovať výber ako .vcf"
+      ],
       "Forgot password?": [
         "Zabudnuté heslo?"
       ],
@@ -401,6 +401,9 @@
       ],
       "Merge contacts": [
         "Zlúčiť kontakty"
+      ],
+      "More actions": [
+        "Ďalšie akcie"
       ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
@@ -3048,6 +3051,9 @@
       "Time zone": [
         "Časové pásmo"
       ],
+      "Time zone component ignored": [
+        "Komponent časového pásma je ignorovaný"
+      ],
       "To-do entry": [
         "Položka To-do"
       ],
@@ -3095,6 +3101,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nie je vybraný žiadny obrázok"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočakávaná chyba"
       ]
     },
     "Event invitation error": {
@@ -3422,6 +3433,50 @@
         "Nie sú k dispozícii žiadne metódy overovania"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendára nie je podporované"
+      ],
+      "Edited event not supported": [
+        "Upravená udalosť nie je podporovaná"
+      ],
+      "End time out of bounds": [
+        "Čas ukončenia mimo rozsahu"
+      ],
+      "Event validation failed": [
+        "Overenie udalosti zlyhalo"
+      ],
+      "Floating times not supported": [
+        "Plávajúce časy nie sú podporované"
+      ],
+      "Malformed all-day event": [
+        "Porušená štruktúra celodenného podujatia"
+      ],
+      "Malformed end time": [
+        "Chybný čas ukončenia"
+      ],
+      "Malformed recurring event": [
+        "Chybne formulovaná opakujúca sa udalosť"
+      ],
+      "Malformed start time": [
+        "Chybný čas začiatku"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Povolená je len gregoriánska kalendárna sústava"
+      ],
+      "Recurring event has no occurrences": [
+        "Opakujúca sa udalosť nemá žiadne výskyty"
+      ],
+      "Recurring rule not supported": [
+        "Opakujúce sa pravidlo nie je podporované"
+      ],
+      "Start time out of bounds": [
+        "Čas začiatku mimo rozsahu"
+      ],
+      "Time zone not supported": [
+        "Časové pásmo nie je podporované"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } udalosti zašifrované a pridané do kalendára",
@@ -3571,11 +3626,17 @@
       "Use your app password instead of your regular password if:": [
         "Použite heslo aplikácie namiesto bežného hesla, ak:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Vaše heslo pre aplikáciu je správne. Nepoužívajte vaše bežné heslo."
+      ],
       "Your email account requires an app password to export your data.": [
         "Váš emailový účet vyžaduje heslo aplikácie pre export vašich dát."
       ],
       "Your email account requires one to export your data.": [
         "Váš emailový účet toto vyžaduje na export vašich dát."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Vaša emailová adresa a heslo aplikácie sú správne. Nepoužívajte vaše bežné heslo."
       ],
       "Your email address and password are correct.": [
         "Vaša emailová adresa a heslo sú správne."
@@ -3870,11 +3931,17 @@
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
+      "Actions": [
+        "Akcie"
+      ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Overenie adresy pomocou dôveryhodného kľúča je pre túto adresu povolené. Ak chcete posielať správy na túto adresu, najprv dôverujte verejnému kľúču, ktorý môže byť použitý na odosielanie."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Všetky (${ totalFoldersCount } zložka)",
@@ -4007,6 +4074,12 @@
       ],
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvoriť bezpečný cloud pre ${ value } člena",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov"
       ],
       "Create in": [
         "Vytvoriť v"
@@ -4263,6 +4336,9 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
+      "Invite": [
+        "Pozvať"
+      ],
       "Invite link copied": [
         "Pozývací odkaz skopírovaný"
       ],
@@ -4406,12 +4482,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znak je povolený",
-        "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znaky sú povolené",
-        "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov je povolených",
-        "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov je povolených"
       ],
       "Only the people with the link and the password can access this file.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto súboru."
@@ -4563,6 +4633,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
       ],
@@ -4584,8 +4657,11 @@
       "Share via link settings": [
         "Zdieľať cez nastavenia odkazu"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Odkaz na zdieľanie ${ boldNameText }"
+      "Shared by": [
+        "Zdieľané používateľom"
+      ],
+      "Shared on": [
+        "Zdieľané"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
@@ -4616,6 +4692,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Koniec predplatného: Znova aktivujte do ${ byDate }, aby ste si ponechali výhody ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Prepnúť na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -4674,23 +4753,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Tento odkaz bol vytvorený pomocou starej verzie Drive a nemôže byť zmenený. Na zmenu jeho nastavení vymažte tento odkaz a vytvorte nový."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Tento odkaz bude navždy deaktivovaný. Nikto s týmto odkazom nebude mať prístup k vášmu súboru. Na opätovné zdieľanie tohto súboru budete potrebovať nový odkaz."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Tento odkaz bude navždy deaktivovaný. Nikto s týmto odkazom nebude mať prístup k vášmu priečinku. Na opätovné zdieľanie tohto priečinka budete potrebovať nový odkaz."
-      ],
       "This message will be presented again later": [
         "Toto hlásenie sa objaví znova neskôr"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Tento verejný dokument nemusí existovať alebo nemáte povolenie na jeho zobrazenie. Môžete skúsiť znovu načítať stránku a zistiť, či problém pretrváva."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Týmto sa vymaže odkaz a odoberie prístup komukoľvek s odkazom k vášmu súboru alebo priečinku.",
-        "Týmto sa odstránia odkazy a odoberie prístup komukoľvek s odkazom k vašim súborom alebo priečinkom.",
-        "Týmto sa odstránia odkazy a odoberie prístup komukoľvek s odkazom k vašim súborom alebo priečinkom.",
-        "Týmto sa odstránia odkazy a odoberie prístup komukoľvek s odkazom k vašim súborom alebo priečinkom."
       ],
       "This will replace the existing file with the folder": [
         "Týmto sa existujúci súbor nahradí zvoleným priečinkom"
@@ -4989,11 +5056,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
+      ],
       "Your password was leaked:": [
         "Vaše heslo bolo prezradené:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každých ${ cycle } mesiacov."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každý mesiac."
       ]
     },
     "info": {
@@ -5418,9 +5494,6 @@
       ],
       "Proration": [
         "Pomerná časť"
-      ],
-      "Protect with password": [
-        "Chrániť heslom"
       ],
       "Public keys": [
         "Verejné kľúče"
@@ -7057,18 +7130,6 @@
         "${ numberOfItems } položiek bolo úspešne presunutých",
         "${ numberOfItems } položiek bolo úspešne presunutých"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } odkaz na vašu položku sa nepodarilo zmazať",
-        "${ numberOfItems } odkazy na vaše položky sa nepodarilo zmazať",
-        "${ numberOfItems } odkazov na vaše položky sa nepodarilo zmazať",
-        "${ numberOfItems } odkazov na vaše položky sa nepodarilo zmazať"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } odkaz na vašu položku bol zmazaný",
-        "${ numberOfItems } odkazy na vaše položky boli zmazané",
-        "${ numberOfItems } odkazov na vaše položky bolo zmazaných",
-        "${ numberOfItems } odkazy na vaše položky boli zmazané"
-      ],
       "${ reason } has been disabled": [
         "${ reason } bol zakázaný"
       ],
@@ -7167,12 +7228,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Odkaz na „${ name }“ sa nepodarilo zmazať"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Odkaz na „${ name }“ bol zmazaný"
       ],
       "The link to your item failed to be deleted": [
         "Odkaz na vašu položku sa nepodarilo zmazať"
@@ -8523,9 +8578,6 @@
       "Secure link copied": [
         "Bezpečný odkaz skopírovaný"
       ],
-      "The link to your file was successfully copied": [
-        "Odkaz na váš súbor bol úspešne skopírovaný"
-      ],
       "Undo in progress": [
         "Prebieha zrušenie"
       ],
@@ -9012,9 +9064,6 @@
       "Photos": [
         "Fotografie"
       ],
-      "Privacy settings": [
-        "Nastavenia súkromia"
-      ],
       "Processing...": [
         "Prebieha spracovanie..."
       ],
@@ -9072,9 +9121,6 @@
       "Share ${ name }": [
         "Zdieľa ${ name }"
       ],
-      "Share via link": [
-        "Zdieľať cez odkaz"
-      ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
       ],
@@ -9092,9 +9138,6 @@
       ],
       "Stop sharing": [
         "Ukončiť zdieľanie"
-      ],
-      "Stop sharing with everyone?": [
-        "Ukončiť zdieľanie so všetkými?"
       ],
       "Stop sharing?": [
         "Ukončiť zdieľanie?"

@@ -5014,6 +5014,9 @@
       "Time zone": [
         "Zona waktu"
       ],
+      "Time zone component ignored": [
+        "Komponen zona waktu diabaikan"
+      ],
       "To-do entry": [
         "Entri to-do"
       ],
@@ -6226,20 +6229,41 @@
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
       ],
+      "End time out of bounds": [
+        "Waktu akhir di luar batas"
+      ],
+      "Event validation failed": [
+        "Validasi acara gagal"
+      ],
       "Floating times not supported": [
         "Waktu desimal tidak didukung"
+      ],
+      "Malformed all-day event": [
+        "Acara seharian tidak terformat dengan benar"
       ],
       "Malformed end time": [
         "Waktu akhir tidak terformat dengan benar"
       ],
+      "Malformed recurring event": [
+        "Acara berulang tidak terformat dengan benar"
+      ],
       "Malformed start time": [
         "Waktu mulai tidak terformat dengan benar"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Hanya skala kalender Gregorian yang diizinkan"
       ],
       "Recurring event has no occurrences": [
         "Acara yang berulang tidak memiiliki keberlangsungan"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
+      ],
+      "Start time out of bounds": [
+        "Waktu mulai di luar batas"
+      ],
+      "Time zone not supported": [
+        "Zona waktu tidak didukung"
       ]
     },
     "Import calendar": {
@@ -6373,11 +6397,17 @@
       "Use your app password instead of your regular password if:": [
         "Gunakan kata sandi aplikasi Anda alih-alih kata sandi biasa apabila:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Kata sandi aplikasi Anda benar. Jangan gunakan kata sandi biasa Anda."
+      ],
       "Your email account requires an app password to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email account requires one to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Alamat email dan kata sandi aplikasi Anda benar. Jangan gunakan kata sandi biasa Anda."
       ],
       "Your email address and password are correct.": [
         "Alamat email dan kata sandi Anda benar."
@@ -7138,6 +7168,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label yang ingin Anda impor."
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Buat ruang cloud yang aman untuk ${ value } anggota"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
       ],
@@ -7772,7 +7805,7 @@
         "Pelajari cara untuk ${ staySaferOnlineLink }"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } melalui aplikasi VPN pihak ketiga."
+        "Pelajari cara untuk masuk ke ${ VPN_APP_NAME } menggunakan aplikasi VPN pihak ketiga."
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -8702,7 +8735,7 @@
         "Untuk memastikan agar Anda tidak kehilangan berbagai data penting, ${ DRIVE_APP_NAME } menyimpan versi lawas berkas seiring dengan perubahan yang dibuat oleh Anda dan rekan kerja Anda. Tentukan berapa lama ${ BRAND_NAME } akan menyimpan berkas versi lawas."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."
@@ -9164,7 +9197,7 @@
         "Anda tidak dapat mengurungkan tindakan ini."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Berhubung Anda belum mengatur metode pemulihan, akun Anda tidak akan dapat dipulihkan apabila ke depannya Anda kehilangan kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
+        "Berhubung Anda belum mengatur metode pemulihan, akun Anda tidak akan dapat dipulihkan apabila Anda sampai kehilangan kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
       ],
       "You do not have permission to perform this action": [
         "Anda tidak memiliki izin untuk melakukan tindakan ini"
@@ -9316,6 +9349,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasi Anda menggunakan single sign-on (SSO). Tekan Masuk untuk melanjutkan dengan penyedia SSO Anda."
       ],
@@ -9336,6 +9372,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
@@ -18206,7 +18248,7 @@
         "Alamat"
       ],
       "Catch-All": [
-        "Tangkap-semua"
+        "Catch-All"
       ],
       "Status": [
         "Status"

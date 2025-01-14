@@ -305,6 +305,9 @@
       "Export contact group": [
         "Vie yhteystietoryhmä"
       ],
+      "Export selection as .vcf": [
+        "Vie valinta .vcf-tiedostona"
+      ],
       "Forgot password?": [
         "Unohditko salasanasi?"
       ],
@@ -445,6 +448,9 @@
       ],
       "Merge contacts": [
         "Yhdistä yhteystiedot"
+      ],
+      "More actions": [
+        "Lisää toimintoja"
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
@@ -3100,7 +3106,7 @@
         "Virheellinen käyttäjätunnus"
       ],
       "Intended recipient does not support calendar sharing": [
-        "Tarkoitettu vastaanottaja ei tue kalenterijakoa"
+        "Tarkoitettu vastaanottaja ei tue kalenterin jakamista"
       ],
       "Interval cannot be empty": [
         "Aikaväli ei voi olla tyhjä"
@@ -3608,6 +3614,11 @@
         "Sinä"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Odottamaton virhe"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Liitetyn ICS-tiedoston salausta ei voitu purkaa"
@@ -3986,6 +3997,44 @@
         "Vahvistustapoja ei ole"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenterin aikavyöhykettä ei tueta"
+      ],
+      "Edited event not supported": [
+        "Muokattua tapahtumaa ei tueta"
+      ],
+      "End time out of bounds": [
+        "Päättymisaika on alueen ulkopuolella"
+      ],
+      "Event validation failed": [
+        "Tapahtuman vahvistus epäonnistui"
+      ],
+      "Floating times not supported": [
+        "Vaihtuvia aikoja ei tueta"
+      ],
+      "Malformed all-day event": [
+        "Virheellinen koko päivän tapahtuma"
+      ],
+      "Malformed end time": [
+        "Virheellinen päättymisaika"
+      ],
+      "Malformed recurring event": [
+        "Virheellinen toistuva tapahtuma"
+      ],
+      "Malformed start time": [
+        "Virheellinen aloitusaika"
+      ],
+      "Recurring rule not supported": [
+        "Toistuvaa sääntöä ei tueta"
+      ],
+      "Start time out of bounds": [
+        "Aloitusaika on alueen ulkopuolella"
+      ],
+      "Time zone not supported": [
+        "Aikavyöhykettä ei tueta"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } tapahtuma salattiin ja lisättiin kalenteriisi",
@@ -4123,11 +4172,17 @@
       "Use your app password instead of your regular password if:": [
         "Käytä normaalin salasanasi sijaan sovellusalasanaa, jos:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Sovellussalasanasi on oikein. Älä käytä normaalia salasanaasi."
+      ],
       "Your email account requires an app password to export your data.": [
         "Sähköpostitilisi vaatii tietojesi vientiin sovellussalasanan."
       ],
       "Your email account requires one to export your data.": [
         "Sähköpostitilisi vaatii sovellussalasanan tietojesi vientiin."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Sähköpostiosoitteesi ja sovellussalasanasi ovat oikein. Älä käytä normaalia salasanaasi."
       ],
       "Your email address and password are correct.": [
         "Sähköpostiosoitteesi ja salasanasi ovat oikein."
@@ -4341,7 +4396,7 @@
         "(${ serverPrice }/kuukausi)"
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } tallennustilaetua"
+        "+${ bonusSpace } lisätallennustilaa"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
@@ -4382,6 +4437,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Kaikki (${ totalFoldersCount } kansio)",
@@ -4512,6 +4570,10 @@
       ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Luo suojattu pilvi ${ value } jäsenelle",
+        "Luo suojattu pilvi ${ value } jäsenelle"
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -4933,6 +4995,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
@@ -4965,6 +5030,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Vaihda"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
@@ -8966,7 +9034,7 @@
         "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
       "Yearly free storage bonuses": [
-        "Vuotuiset ilmaiset tallennustilakorotukset"
+        "Ilmaista lisätallennustilaa vuosittain"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink }"

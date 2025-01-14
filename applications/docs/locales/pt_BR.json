@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Copiar link de convite"
       ],
-      "Copy link": [
-        "Copiar link"
-      ],
       "Create a copy": [
         "Criar uma cópia"
       ],
@@ -290,6 +287,9 @@
       ],
       "Export contact group": [
         "Exportar grupo de contato"
+      ],
+      "Export selection as .vcf": [
+        "Exportar seleção como .vcf"
       ],
       "Forgot password?": [
         "Esqueceu sua senha?"
@@ -3015,6 +3015,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Time zone component ignored": [
+        "Componente de fuso horário ignorado"
+      ],
       "To-do entry": [
         "Tarefas"
       ],
@@ -3413,6 +3416,9 @@
       ],
       "Malformed start time": [
         "A hora de início não é válida."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Somente escala de calendário Gregoriano é permitido"
       ],
       "Recurring event has no occurrences": [
         "Evento recorrente sem datas"
@@ -4372,10 +4378,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Apenas ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere é permitido",
-        "Apenas ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres são permitidos"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Apenas as pessoas com o link e a senha podem acessar este arquivo."
       ],
@@ -4546,9 +4548,6 @@
       "Share via link settings": [
         "Compartilhar por meio de configurações de link"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Link compartilhável para ${ boldNameText }"
-      ],
       "Shared by": [
         "Compartilhado por"
       ],
@@ -4645,21 +4644,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Este link foi criado com a versão antiga do Drive e não é possível modificá-lo. Exclua este link e crie um para alterar as configurações."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar o seu arquivo. Para compartilhar novamente o arquivo, você precisará de um novo link."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar a sua pasta. Para compartilhar novamente a pasta, você precisará de um novo link."
-      ],
       "This message will be presented again later": [
         "Esta mensagem será mostrada novamente mais tarde"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "É possível que esse documento público não exista ou que você não tenha permissão para visualizá-lo. Você pode tentar recarregar a página para ver se o problema persiste."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Este link será excluído e removeremos o acesso ao seu arquivo ou pasta para qualquer pessoa com o link.",
-        "Estes links serão excluídos e removeremos o acesso aos seus arquivos ou pastas para qualquer pessoa com os links."
       ],
       "This will replace the existing file with the folder": [
         "Isso substituirá o arquivo existente pela pasta"
@@ -4954,11 +4943,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+      ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada mês."
       ]
     },
     "info": {
@@ -5383,9 +5381,6 @@
       ],
       "Proration": [
         "Cálculo proporcional"
-      ],
-      "Protect with password": [
-        "Proteger com senha"
       ],
       "Public keys": [
         "Chaves públicas"
@@ -6998,14 +6993,6 @@
         "${ numberOfItems } item movido",
         "${ numberOfItems } itens movidos"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Erro ao excluir ${ numberOfItems } link de seu item",
-        "Erro ao excluir ${ numberOfItems } links de seus itens"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } link para seu arquivo foi deletado",
-        "${ numberOfItems } links para seus arquivos foram deletados"
-      ],
       "${ reason } has been disabled": [
         "${ reason } foi desativado"
       ],
@@ -7102,12 +7089,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Não foi possível excluir o link para \"${ name }\"."
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "O link para \"${ name }\" foi excluído"
       ],
       "The link to your item failed to be deleted": [
         "Erro ao excluir o link do seu item"
@@ -8396,9 +8377,6 @@
       "Secure link copied": [
         "Link seguro copiado"
       ],
-      "The link to your file was successfully copied": [
-        "O link para o seu arquivo foi copiado"
-      ],
       "Undo in progress": [
         "Desfazer em andamento"
       ],
@@ -8863,9 +8841,6 @@
       "Photos": [
         "Fotos"
       ],
-      "Privacy settings": [
-        "Configurações de privacidade"
-      ],
       "Processing...": [
         "Processando..."
       ],
@@ -8923,9 +8898,6 @@
       "Share ${ name }": [
         "Compartilhar ${ name }"
       ],
-      "Share via link": [
-        "Compartilhar via link"
-      ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
       ],
@@ -8943,9 +8915,6 @@
       ],
       "Stop sharing": [
         "Parar compartilhamento"
-      ],
-      "Stop sharing with everyone?": [
-        "Parar de compartilhar com todos?"
       ],
       "Stop sharing?": [
         "Parar de compartilhar?"

@@ -749,6 +749,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Om du använder en underdomän, t.ex. underdomän.domän.se, så behöver du använda ${ domainKeyExampleSubdomain } som domän istället. Det betyder att om din domän är epost.domän.se så behöver du ange ${ domainKeyExampleMail } som domän."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Om du använder Cloudflare, se till att inte välja proxyalternativet."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Håll din information mer säker och privat med dessa guider och tips."
       ],
@@ -760,6 +763,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "Vissa DNS-återförsäljare kan kräva en fullständig postsökväg, i detta fall använd ${ domain } som domänvärde istället."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "Vissa domänåterförsäljare (Namecheap, Cloudflare, etc) kan även använda @ för rotdomänen."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } är en autentiseringsmetod för e-post designat för att upptäcka förfalskade sändaradresser under leveransen av e-postmeddelandet. Konfiguration av SPF rekommenderas starkt för att minska risken för att dina e-postmeddelanden hamnar i mottagarens skräppostmapp."
@@ -2100,6 +2106,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Denna inställning är inaktiverad på organisationsnivå"
+      ],
+      "This setting is enforced by your organization": [
+        "Denna inställning tvingas av din organisation"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."

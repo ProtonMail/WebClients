@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Copiar el enlace de invitación"
       ],
-      "Copy link": [
-        "Copiar enlace"
-      ],
       "Create a copy": [
         "Crear una copia"
       ],
@@ -4366,10 +4363,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } carácter está permitido",
-        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
       ],
@@ -4540,9 +4533,6 @@
       "Share via link settings": [
         "Ajustes de uso compartido con un enlace"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Enlace compartible para ${ boldNameText }"
-      ],
       "Shared by": [
         "Compartido por"
       ],
@@ -4639,21 +4629,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Se ha creado este enlace con una versión antigua de Drive y no se puede modificar. Elimínalo y crea uno nuevo para cambiar tu configuración."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a tu archivo. Para volver a compartir el archivo, necesitas un nuevo enlace."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Se desactivará este enlace de forma permanente. Nadie con este enlace tendrá acceso a tu carpeta. Necesitas un enlace nuevo para volver a compartir la carpeta."
-      ],
       "This message will be presented again later": [
         "Este mensaje se mostrará de nuevo más tarde."
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Este documento público no existe o no tienes los permisos para verlo. Intenta recargar la página para ver si persiste el problema."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Esta acción borrará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviese.",
-        "Esta acción borrará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviese."
       ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
@@ -5384,9 +5364,6 @@
       "Proration": [
         "Prorrateo"
       ],
-      "Protect with password": [
-        "Proteger con contraseña"
-      ],
       "Public keys": [
         "Claves públicas"
       ],
@@ -6084,6 +6061,9 @@
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
       ],
+      "200 GB of storage": [
+        "200 GB de almacenamiento"
+      ],
       "24/7 account management support": [
         "Soporte de administración de cuenta 24/7"
       ],
@@ -6277,6 +6257,9 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Private photo backup": [
+        "Copia de seguridad de fotos privadas"
+      ],
       "Proofread and refine your emails": [
         "Revisa y mejora tus correos electrónicos"
       ],
@@ -6313,6 +6296,9 @@
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Almacenamiento y uso compartido seguro de archivos"
       ],
       "Secure link sharing": [
         "Uso compartido seguro de enlaces"
@@ -6938,14 +6924,6 @@
         "${ numberOfItems } elemento movido",
         "${ numberOfItems } elementos movidos"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } enlace a tu archivo",
-        "Error al eliminar ${ numberOfItems } enlaces a tus archivos"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "Se ha eliminado ${ numberOfItems } enlace a tu elemento.",
-        "Se han eliminado ${ numberOfItems } enlaces a tus elementos."
-      ],
       "${ reason } has been disabled": [
         "Se ha desactivado ${ reason }."
       ],
@@ -7042,12 +7020,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Error al eliminar el enlace a \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Se ha eliminado el enlace a \"${ name }\"."
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace a tu elemento"
@@ -8330,9 +8302,6 @@
       "Secure link copied": [
         "Se ha copiado el enlace seguro."
       ],
-      "The link to your file was successfully copied": [
-        "Se ha copiado el enlace a tu archivo ."
-      ],
       "Undo in progress": [
         "Deshacer en progreso"
       ],
@@ -8797,9 +8766,6 @@
       "Photos": [
         "Fotos"
       ],
-      "Privacy settings": [
-        "Configuración de privacidad"
-      ],
       "Processing...": [
         "Procesando..."
       ],
@@ -8857,9 +8823,6 @@
       "Share ${ name }": [
         "Compartir ${ name }"
       ],
-      "Share via link": [
-        "Compartir con un enlace"
-      ],
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
       ],
@@ -8877,9 +8840,6 @@
       ],
       "Stop sharing": [
         "Dejar de compartir"
-      ],
-      "Stop sharing with everyone?": [
-        "¿Dejar de compartir con todos?"
       ],
       "Stop sharing?": [
         "¿Dejar de compartir?"

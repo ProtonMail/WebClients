@@ -189,9 +189,6 @@
       "Copy invite link": [
         "Скапіяваць запрашальную спасылку"
       ],
-      "Copy link": [
-        "Капіяваць спасылку"
-      ],
       "Create a copy": [
         "Стварыць копію"
       ],
@@ -296,6 +293,9 @@
       ],
       "Export contact group": [
         "Экспартаваць групу кантактаў"
+      ],
+      "Export selection as .vcf": [
+        "Экспартаванне вылучэння ў фармат .vcf"
       ],
       "Forgot password?": [
         "Забылі пароль?"
@@ -404,6 +404,9 @@
       ],
       "Microsoft Word (.docx)": [
         "Microsoft Word (. docx)"
+      ],
+      "More actions": [
+        "Больш дзеянняў"
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
@@ -3046,6 +3049,9 @@
       "Time zone": [
         "Часавы пояс"
       ],
+      "Time zone component ignored": [
+        "Кампанент часавага пояса праігнараваны"
+      ],
       "To-do entry": [
         "Запіс спіса задач"
       ],
@@ -3093,6 +3099,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Відарыс не выбраны"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Нечаканая памылка"
       ]
     },
     "Event invitation error": {
@@ -3420,6 +3431,50 @@
         "Няма даступных спосабаў праверкі"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часавы пояс календара не падтрымліваецца"
+      ],
+      "Edited event not supported": [
+        "Адрэдагаваная падзея не падтрымліваецца"
+      ],
+      "End time out of bounds": [
+        "Час завяршэння па-за межамі дыяпазону"
+      ],
+      "Event validation failed": [
+        "Не ўдалося праверыць падзею"
+      ],
+      "Floating times not supported": [
+        "Плаваючы час не падтрымліваецца"
+      ],
+      "Malformed all-day event": [
+        "Няправільная падзея на ўвесь дзень"
+      ],
+      "Malformed end time": [
+        "Няправільны час завяршэння"
+      ],
+      "Malformed recurring event": [
+        "Няправільная перыядычная падзея"
+      ],
+      "Malformed start time": [
+        "Няправільны час пачатку"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Дазволена толькі шкала грыгарыянскага календара"
+      ],
+      "Recurring event has no occurrences": [
+        "Перыядычная падзея не мае паўтарэнняў"
+      ],
+      "Recurring rule not supported": [
+        "Правіла паўтарэння не падтрымліваецца"
+      ],
+      "Start time out of bounds": [
+        "Час пачатку па-за межамі дыяпазону"
+      ],
+      "Time zone not supported": [
+        "Часавы пояс не падтрымліваецца"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } падзея зашыфравана і дададзена ў ваш каляндар",
@@ -3569,11 +3624,17 @@
       "Use your app password instead of your regular password if:": [
         "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ваш пароль праграмы з'яўляецца правільным. Не выкарыстоўвайце свой звычайны пароль."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе пароль праграмы для экспартавання вашых даных."
       ],
       "Your email account requires one to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе яго для экспартавання даных."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. Не выкарыстоўвайце свой звычайны пароль."
       ],
       "Your email address and password are correct.": [
         "Вашы адрас электроннай пошты і пароль правільныя."
@@ -3868,11 +3929,17 @@
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
+      "Actions": [
+        "Дзеянні"
+      ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Уся (${ totalFoldersCount } папка)",
@@ -4005,6 +4072,12 @@
       ],
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Стварыць бяспечнае воблака для ${ value } удзельніка",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
       ],
       "Create in": [
         "Стварыць у"
@@ -4261,6 +4334,9 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
+      "Invite": [
+        "Запрасіць"
+      ],
       "Invite link copied": [
         "Запрашальная спасылка скапіявана"
       ],
@@ -4404,12 +4480,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвал",
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалы",
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалаў",
-        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалы"
       ],
       "Only the people with the link and the password can access this file.": [
         "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да гэтага файла."
@@ -4561,6 +4631,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Плацяжы SEPA у дадзены момант недаступныя. Паспрабуйце яшчэ раз пазней."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -4582,8 +4655,11 @@
       "Share via link settings": [
         "Налады для абагулення праз спасылку"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Агульнадаступная спасылка для ${ boldNameText }"
+      "Shared by": [
+        "Абагулена"
+      ],
+      "Shared on": [
+        "Абагулена"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
@@ -4614,6 +4690,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Пераключыцца на"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -4672,23 +4751,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Спасылка створана ў папярэдняй версіі Drive, таму яе немагчыма змяніць. Для змянення налад, выдаліце гэту спасылку і стварыце новую."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Гэта спасылка будзе адключана незваротна. Ніхто не зможа атрымаць доступ да вашага файла па гэтай спасылцы. Каб зноў абагуліць гэты файл, вам спатрэбіцца новая спасылка."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Гэта спасылка будзе адключана незваротна. Ніхто не зможа атрымаць доступ да вашай папкі па гэтай спасылцы. Каб зноў абагуліць гэту папку, вам спатрэбіцца новая спасылка."
-      ],
       "This message will be presented again later": [
         "Паведамленне будзе паўторна прадэманстравана пазней"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Магчыма, што ў вас недастаткова правоў для прагляду гэтага публічнага дакумента або ён проста не існуе. Паспрабуйце перазагрузіць старонку, каб паглядзець ці засталася праблема."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Гэта выдаліць спасылку і закрые доступ да вашага файла або папкі для ўсіх у каго яна ёсць.",
-        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
-        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
-        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць."
       ],
       "This will replace the existing file with the folder": [
         "Гэта заменіць існуючы файл папкай"
@@ -4987,11 +5054,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы(-аў)."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
       ]
     },
     "info": {
@@ -5417,9 +5493,6 @@
       "Proration": [
         "Прапарцыйнае размеркаванне"
       ],
-      "Protect with password": [
-        "Абараніць паролем"
-      ],
       "Public keys": [
         "Публічныя ключы"
       ],
@@ -5676,16 +5749,16 @@
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папкі) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } меткі) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як"
       ]
     },
     "mail_signup_2024: Info": {
@@ -7106,18 +7179,6 @@
         "${ numberOfItems } элементаў паспяхова перамешчаны",
         "${ numberOfItems } элементы паспяхова перамешчана"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Не ўдалося выдаліць ${ numberOfItems } спасылку на ваш элемент",
-        "Не ўдалося выдаліць ${ numberOfItems } спасылкі на вашы элементы",
-        "Не ўдалося выдаліць ${ numberOfItems } спасылак на вашы элементы",
-        "Не ўдалося выдаліць ${ numberOfItems } спасылкі на вашы элементы"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } спасылка на ваш элемент была выдалена",
-        "${ numberOfItems } спасылкі на ваш элемент былі выдалены",
-        "${ numberOfItems } спасылак на ваш элемент былі выдалены",
-        "${ numberOfItems } спасылкі на ваш элемент былі выдалены"
-      ],
       "${ reason } has been disabled": [
         "${ reason } было адключана"
       ],
@@ -7216,12 +7277,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Збой спынення абагульвання гэтага элемента"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Не ўдалося выдаліць спасылку на \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Спасылка на \"${ name }\" была выдалена"
       ],
       "The link to your item failed to be deleted": [
         "Не ўдалося выдаліць спасылку на ваш элемент"
@@ -7482,7 +7537,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } пазначыў гэты ключ як скампраментаваны. Гэты ключ нельга выкарыстоўваць для шыфравання і праверкі подпісу."
+        "${ emailAddress } пазначыў гэты ключ як скампраметаваны. Гэты ключ нельга выкарыстоўваць ні для шыфравання, ні для праверкі подпісу."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
@@ -8572,9 +8627,6 @@
       "Secure link copied": [
         "Бяспечная спасылка скапіявана"
       ],
-      "The link to your file was successfully copied": [
-        "Спасылка на ваш файл паспяхова скапіявана"
-      ],
       "Undo in progress": [
         "Выконваецца адрабленне"
       ],
@@ -9061,9 +9113,6 @@
       "Photos": [
         "Фотаграфіі"
       ],
-      "Privacy settings": [
-        "Налады прыватнасці"
-      ],
       "Processing...": [
         "Апрацоўка..."
       ],
@@ -9121,9 +9170,6 @@
       "Share ${ name }": [
         "Абагуліць ${ name }"
       ],
-      "Share via link": [
-        "Абагуліць праз спасылку"
-      ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"
       ],
@@ -9141,9 +9187,6 @@
       ],
       "Stop sharing": [
         "Спыніць абагульванне"
-      ],
-      "Stop sharing with everyone?": [
-        "Спыніць абагульванне з усімі?"
       ],
       "Stop sharing?": [
         "Спыніць абагульванне?"

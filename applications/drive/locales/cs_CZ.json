@@ -228,9 +228,6 @@
       "Create free account": [
         "Vytvořit účet zdarma"
       ],
-      "Create link": [
-        "Vytvořit odkaz"
-      ],
       "Create new folder": [
         "Vytvořit novou složku"
       ],
@@ -315,6 +312,12 @@
       "Download logs": [
         "Stáhnout logy"
       ],
+      "Download without scanning": [
+        "Stáhnout bez skenování"
+      ],
+      "Download without scanning (${ count })": [
+        "Stáhnout bez skenování (${ count })"
+      ],
       "Drive Locked": [
         "Disk uzamčen"
       ],
@@ -359,6 +362,9 @@
       ],
       "Export contact group": [
         "Exportovat skupinu kontaktů"
+      ],
+      "Export selection as .vcf": [
+        "Exportovat výběr jako .vcf"
       ],
       "Fit to window": [
         "Přizpůsobit oknu"
@@ -459,6 +465,9 @@
       "Learn more": [
         "Více informací"
       ],
+      "Learn more.": [
+        "Více informací."
+      ],
       "Leave": [
         "Opustit"
       ],
@@ -506,6 +515,9 @@
       ],
       "Minimize transfers": [
         "Minimalizovat přenosy"
+      ],
+      "More actions": [
+        "Další akce"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -635,6 +647,9 @@
       ],
       "Replace file": [
         "Nahradit soubor"
+      ],
+      "Report": [
+        "Nahlásit"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -818,9 +833,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
-      ],
-      "Understood": [
-        "Rozumím"
       ],
       "Undo": [
         "Zpět"
@@ -3258,6 +3270,9 @@
       "Time zone": [
         "Časové pásmo"
       ],
+      "Time zone component ignored": [
+        "Komponenta časového pásma ignorována"
+      ],
       "To-do entry": [
         "Úkoly"
       ],
@@ -3320,6 +3335,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Není vybrán žádný obrázek"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočekávaná chyba"
       ]
     },
     "Event invitation error": {
@@ -3663,6 +3683,50 @@
         "Nejsou k dispozici žádné metody ověřování"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendáře není podporováno"
+      ],
+      "Edited event not supported": [
+        "Upravená událost není podporována"
+      ],
+      "End time out of bounds": [
+        "Čas ukončení mimo hranice"
+      ],
+      "Event validation failed": [
+        "Ověření události selhalo"
+      ],
+      "Floating times not supported": [
+        "Plovoucí časy nejsou podporovány"
+      ],
+      "Malformed all-day event": [
+        "Špatný formát celodenní události"
+      ],
+      "Malformed end time": [
+        "Špatný formát času ukončení"
+      ],
+      "Malformed recurring event": [
+        "Špatný formát opakující se události"
+      ],
+      "Malformed start time": [
+        "Špatný formát času zahájení"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Povolen je pouze gregoriánský typ kalendáře"
+      ],
+      "Recurring event has no occurrences": [
+        "Opakující se událost nemá žádné výskyty"
+      ],
+      "Recurring rule not supported": [
+        "Pravidlo opakování není podporováno"
+      ],
+      "Start time out of bounds": [
+        "Čas zahájení mimo hranice"
+      ],
+      "Time zone not supported": [
+        "Časové pásmo není podporováno"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
@@ -3812,11 +3876,17 @@
       "Use your app password instead of your regular password if:": [
         "Použijte heslo aplikace místo běžného hesla, pokud:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Heslo aplikace je správné. Nepoužívejte své obvyklé heslo."
+      ],
       "Your email account requires an app password to export your data.": [
         "Váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat."
       ],
       "Your email account requires one to export your data.": [
         "Váš e-mailový účet toto vyžaduje pro export vašich dat."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Vaše e-mailová adresa a heslo do aplikace jsou správné. Nepoužívejte své obvyklé heslo."
       ],
       "Your email address and password are correct.": [
         "Vaše e-mailová adresa a heslo jsou správné."
@@ -4090,6 +4160,12 @@
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } skenování selhalo",
+        "${ scanErrorCount } skenování selhala",
+        "${ scanErrorCount } skenování selhalo",
+        "${ scanErrorCount } skenování selhalo"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
@@ -4186,6 +4262,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -4233,6 +4312,9 @@
       ],
       "And access it from anywhere": [
         "A přistupte k němu odkudkoli"
+      ],
+      "Anonymous": [
+        "Anonymní"
       ],
       "Anyone with this link can access your file.": [
         "Kdokoli s tímto odkazem má přístup k vašemu souboru."
@@ -4366,6 +4448,12 @@
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvořte bezpečný cloud pro ${ value } člena",
+        "Vytvořte bezpečný cloud pro ${ value } členy",
+        "Vytvořte bezpečný cloud pro ${ value } členů",
+        "Vytvořte bezpečný cloud pro ${ value } členů"
+      ],
       "Create in": [
         "Vytvořit v"
       ],
@@ -4465,9 +4553,6 @@
       "Downloading": [
         "Stahování"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Stahování souborů ${ DOCS_APP_NAME } z ${ DRIVE_APP_NAME } není momentálně podporováno — tyto soubory nebudou zahrnuty do vašeho stahování."
-      ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
       ],
@@ -4500,6 +4585,9 @@
       ],
       "Enabling drive search": [
         "Zapínání vyhledávání na disku"
+      ],
+      "Encrypted": [
+        "Šifrováno"
       ],
       "Encrypted search is here": [
         "Vyhledávání v šifrovaných datech je zde"
@@ -4861,12 +4949,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Je povolen pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znak",
-        "Jsou povoleny pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaky",
-        "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků",
-        "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Kdokoli s tímto odkazem a heslem má přístup k tomuto souboru."
       ],
@@ -4920,9 +5002,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Pokud je chcete stáhnout, exportujte je prosím přímo z aplikace ${ DOCS_APP_NAME }."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU smazány."
@@ -5095,6 +5174,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Platby přes SEPA nejsou v tuto chvíli k dispozici. Zkuste to znovu později."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
@@ -5112,9 +5194,6 @@
       ],
       "Share via link settings": [
         "Sdílet nastavení pomocí odkazu"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "Odkaz ke sdílení ${ boldNameText }"
       ],
       "Shared link not found": [
         "Sdílený odkaz nebyl nalezen"
@@ -5164,17 +5243,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Přepnout na"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Digitální podpis byl částečně ověřen. Soubor byl nahrán z veřejné stránky, na které není uveden konkrétní původ uživatele."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Digitální podpis byl částečně ověřen. Složka byla nahrána z veřejné stránky, na které není uveden konkrétní původ uživatele."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Počet stahování zahrnuje jak skutečná stažení, tak případy, kdy jsou soubory zobrazeny v náhledu."
@@ -5245,20 +5321,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Odkaz byl vytvořen v předchozí verzi aplikace a nelze jej upravit. Chcete-li změnit jeho nastavení, odkaz smažte a vytvořte nový."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Tento odkaz bude trvale deaktivován. Nikdo s tímto odkazem již nebude mít přístup k souboru. Chcete-li soubor znovu sdílet, budete potřebovat nový odkaz."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Tento odkaz bude trvale deaktivován. Nikdo s tímto odkazem nebude mít přístup k vaší složce. Chcete-li složku znovu sdílet, budete potřebovat nový odkaz."
-      ],
       "This month": [
         "Tento měsíc"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Tím odstraníte odkaz a zrušíte přístup k vašemu souboru nebo složce pro každého, kdo má tento odkaz.",
-        "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
-        "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
-        "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Tím odstraníte synchronizované zařízení ${ deviceName } z ${ DRIVE_APP_NAME } a všechna jeho data z ${ DRIVE_APP_NAME }. Složky, které jste přidali do složky Moje počítače se přestanou synchronizovat."
@@ -5289,6 +5353,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "Abyste byli chráněni, může ${ DRIVE_APP_NAME } skenovat vaše soubory způsobem, který zachovává soukromí, a blokuje škodlivé soubory. Přesto je lepší stahovat soubory pouze z důvěryhodných zdrojů. "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
@@ -5638,6 +5705,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Datum příští platby je ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
+      ],
       "Your password was leaked:": [
         "Došlo k úniku vašeho hesla:"
       ],
@@ -5652,6 +5722,12 @@
       ],
       "Your previous recovery phrase": [
         "Vaše předchozí fráze pro obnovu"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se každých ${ cycle } měsíců automaticky obnovovat."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
       ]
     },
     "info": {
@@ -6155,9 +6231,6 @@
       "Proration": [
         "Prorace"
       ],
-      "Protect with password": [
-        "Chránit heslem"
-      ],
       "Public keys": [
         "Veřejné klíče"
       ],
@@ -6280,6 +6353,9 @@
       ],
       "Upload your first file": [
         "Nahrajte svůj první soubor"
+      ],
+      "Uploaded by": [
+        "Nahrál(a)"
       ],
       "VAT": [
         "DPH"
@@ -6785,6 +6861,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Navýšit"
       ],
       "Upgrade now": [
         "Navýšit nyní"
@@ -7861,18 +7940,6 @@
         "${ numberOfItems } položek úspěšně přesunuto",
         "${ numberOfItems } položek úspěšně přesunuto"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } odkaz na vaši položku se nepodařilo odstranit",
-        "${ numberOfItems } odkazy na vaše položky se nepodařilo odstranit",
-        "${ numberOfItems } odkazů na vaše položky se nepodařilo odstranit",
-        "${ numberOfItems } odkazů na vaše položky se nepodařilo odstranit"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } odkaz na vaši položku byl odstraněn",
-        "${ numberOfItems } odkazy na vaše položky byly odstraněny",
-        "${ numberOfItems } odkazů na vaše položky bylo odstraněno",
-        "${ numberOfItems } odkazů na vaše položky bylo odstraněno"
-      ],
       "${ reason } has been disabled": [
         "${ reason } byl deaktivován"
       ],
@@ -8022,12 +8089,6 @@
       ],
       "The item was successfully added to your drive": [
         "Položka byla úspěšně přidána na váš disk"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Odkaz na \"${ name }\" se nepodařilo odstranit"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Odkaz na \"${ name }\" byl odstraněn"
       ],
       "The link to your item failed to be deleted": [
         "Odkaz na položku se nepodařilo odstranit"
@@ -9831,9 +9892,6 @@
       "Secure link copied": [
         "Bezpečný odkaz zkopírován"
       ],
-      "The link to your file was successfully copied": [
-        "Odkaz na váš soubor byl úspěšně zkopírován"
-      ],
       "Undo in progress": [
         "Probíhá zrušení"
       ],
@@ -10097,6 +10155,9 @@
       ],
       "Change password": [
         "Změnit heslo"
+      ],
+      "Check for malicious files": [
+        "Kontrola škodlivých souborů"
       ],
       "Clearing data": [
         "Mazání dat"
@@ -10425,9 +10486,6 @@
       "Preview": [
         "Náhled"
       ],
-      "Privacy settings": [
-        "Nastavení ochrany osobních údajů"
-      ],
       "Processing...": [
         "Zpracovávání..."
       ],
@@ -10509,9 +10567,6 @@
       "Share ${ name }": [
         "Sdílet ${ name }"
       ],
-      "Share via link": [
-        "Sdílet odkaz"
-      ],
       "Shared": [
         "Sdílené"
       ],
@@ -10541,9 +10596,6 @@
       ],
       "Stop sharing": [
         "Zrušit sdílení"
-      ],
-      "Stop sharing with everyone?": [
-        "Přestat sdílet se všemi?"
       ],
       "Stop sharing?": [
         "Ukončit sdílení?"
@@ -10640,9 +10692,6 @@
       ],
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Vaše stahování obsahuje soubor ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"

@@ -226,9 +226,6 @@
       "Create free account": [
         "Skapa gratis konto"
       ],
-      "Create link": [
-        "Skapa länk"
-      ],
       "Create new folder": [
         "Skapa ny mapp"
       ],
@@ -309,6 +306,12 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
+      "Download without scanning": [
+        "Ladda ner utan skanning"
+      ],
+      "Download without scanning (${ count })": [
+        "Ladda ner utan skanning (${ count })"
+      ],
       "Drive Locked": [
         "Drive låst"
       ],
@@ -353,6 +356,9 @@
       ],
       "Export contact group": [
         "Exportera kontaktgrupp"
+      ],
+      "Export selection as .vcf": [
+        "Exportera val som .vcf"
       ],
       "Fit to window": [
         "Passa till fönster"
@@ -453,6 +459,9 @@
       "Learn more": [
         "Lär dig mer"
       ],
+      "Learn more.": [
+        "Lär dig mer."
+      ],
       "Leave": [
         "Lämna"
       ],
@@ -500,6 +509,9 @@
       ],
       "Minimize transfers": [
         "Minimera överföringar"
+      ],
+      "More actions": [
+        "Fler åtgärder"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -629,6 +641,9 @@
       ],
       "Replace file": [
         "Ersätt fil"
+      ],
+      "Report": [
+        "Rapportera"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -812,9 +827,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
-      ],
-      "Understood": [
-        "Förstått"
       ],
       "Undo": [
         "Ångra"
@@ -3219,6 +3231,9 @@
       "Time zone": [
         "Tidszon"
       ],
+      "Time zone component ignored": [
+        "Tidszonskomponent ignorerad"
+      ],
       "To-do entry": [
         "Att-göra-inlägg"
       ],
@@ -3281,6 +3296,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ingen bild vald"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Oväntat fel"
       ]
     },
     "Event invitation error": {
@@ -3614,6 +3634,50 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenderns tidszon stöds inte"
+      ],
+      "Edited event not supported": [
+        "Redigerad händelse stöds inte"
+      ],
+      "End time out of bounds": [
+        "Sluttid utanför gränserna"
+      ],
+      "Event validation failed": [
+        "Validering av händelse misslyckades"
+      ],
+      "Floating times not supported": [
+        "Flytande tider stöds inte"
+      ],
+      "Malformed all-day event": [
+        "Felaktig heldagshändelse"
+      ],
+      "Malformed end time": [
+        "Felaktig sluttid"
+      ],
+      "Malformed recurring event": [
+        "Felaktig återkommande händelse"
+      ],
+      "Malformed start time": [
+        "Felaktig starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Endast den Gregorianska kalenderskalan är tillåten"
+      ],
+      "Recurring event has no occurrences": [
+        "Återkommande händelse har inga förekomster"
+      ],
+      "Recurring rule not supported": [
+        "Återkommande regel stöds inte"
+      ],
+      "Start time out of bounds": [
+        "Starttid utanför gränserna"
+      ],
+      "Time zone not supported": [
+        "Tidszon stöds inte"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } händelse krypterad och tillagd i din kalender",
@@ -3751,11 +3815,17 @@
       "Use your app password instead of your regular password if:": [
         "Använd ditt applösenord istället för ditt vanliga lösenord om:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ditt e-postkonto kräver ett applösenord för att exportera dina data."
       ],
       "Your email account requires one to export your data.": [
         "Ditt e-postkonto kräver ett för att exportera dina data."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Din e-postadress och ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
       ],
       "Your email address and password are correct.": [
         "Din e-postadress och ditt lösenord är korrekta."
@@ -3990,6 +4060,10 @@
         "${ providerFoldersNumLocalized } etikett hittades i Gmail",
         "${ providerFoldersNumLocalized } etiketter hittades i Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } skanning misslyckades",
+        "${ scanErrorCount } skanningar misslyckades"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
@@ -4068,6 +4142,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
         "Alla (${ totalFoldersCount } mappar)"
@@ -4109,6 +4186,9 @@
       ],
       "And access it from anywhere": [
         "Och kom åt det var som helst"
+      ],
+      "Anonymous": [
+        "Anonymt"
       ],
       "Anyone with this link can access your file.": [
         "Alla med denna länk kan komma åt din fil."
@@ -4240,6 +4320,10 @@
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Skapa ett säkert moln för ${ value } medlem",
+        "Skapa ett säkert moln för ${ value } medlemmar"
+      ],
       "Create in": [
         "Skapa i"
       ],
@@ -4337,9 +4421,6 @@
       "Downloading": [
         "Laddar ner"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Nedladdning av ${ DOCS_APP_NAME }-filer från ${ DRIVE_APP_NAME } stöds för närvarande inte – dessa kommer inte att inkluderas i din nedladdning."
-      ],
       "Drop file here to upload": [
         "Släpp filer här för att ladda upp"
       ],
@@ -4372,6 +4453,9 @@
       ],
       "Enabling drive search": [
         "Aktiverar sökning på lagringsenhet"
+      ],
+      "Encrypted": [
+        "Krypterad"
       ],
       "Encrypted search is here": [
         "Krypterad sökning är här"
@@ -4727,10 +4811,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtet",
-        "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtna"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Endast personer med länken och lösenordet kan komma åt denna fil."
       ],
@@ -4784,9 +4864,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Ange lösenordet för att dekryptera och visa innehåll."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Exportera dem direkt från ${ DOCS_APP_NAME }-appen istället om du vill ladda ner dem."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Observera att adresser tilldelade till dessa grupper INTE kommer att tas bort."
@@ -4955,6 +5032,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
@@ -4972,9 +5052,6 @@
       ],
       "Share via link settings": [
         "Instllningar för delning via länk"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "Delningsbar länk för ${ boldNameText }"
       ],
       "Shared link not found": [
         "Delad länk hittades inte"
@@ -5024,17 +5101,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Byt till"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontot kanske har en ny nyckel eller så har något av följande mixtrats med: ${ items }. Öppna endast om du litar på den."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Den digitala signaturen har delvis verifierats. Filen laddades upp från en offentlig sida som inte anger ett specifikt användarursprung."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Den digitala signaturen har delvis verifierats. Mappen laddades upp från en offentlig sida som inte anger ett specifikt användarursprung."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
@@ -5105,18 +5179,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Denna länk skapades med en gammal version av Drive och kan inte ändras. Ta bort denna länk och skapa en ny för att ändra inställningarna."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Denna länk kommer att inaktiveras permanent. Ingen med denna länk kommer att kunna komma åt din fil. För att dela filen igen behöver du en ny länk."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Denna länk kommer att inaktiveras permanent. Ingen med denna länk kommer att kunna komma åt din mapp. För att dela mappen igen behöver du en ny länk."
-      ],
       "This month": [
         "Denna månad"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Detta kommer att ta bort länken och ta bort åtkomst till din fil eller mapp för alla med länken.",
-        "Detta kommer att ta bort länkarna och ta bort åtkomst till dina filer eller mappar för alla med länkarna."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Detta kommer att ta bort den synkade enheten ${ deviceName } från ${ DRIVE_APP_NAME } och all dess data från ${ DRIVE_APP_NAME }. Mappar du lagt till i Mina datorer kommer att inte längre synkas."
@@ -5147,6 +5211,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
@@ -5488,6 +5555,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dit nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
       ],
@@ -5502,6 +5572,12 @@
       ],
       "Your previous recovery phrase": [
         "Din föregående återställningsfras"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ]
     },
     "info": {
@@ -5999,9 +6075,6 @@
       "Proration": [
         "Proportionell beräkning"
       ],
-      "Protect with password": [
-        "Skydda med lösenord"
-      ],
       "Public keys": [
         "Offentliga nycklar"
       ],
@@ -6124,6 +6197,9 @@
       ],
       "Upload your first file": [
         "Ladda upp din första fil"
+      ],
+      "Uploaded by": [
+        "Uppladdad av"
       ],
       "VAT": [
         "VAT"
@@ -6676,6 +6752,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
       ],
       "Upgrade now": [
         "Uppgradera nu"
@@ -7681,14 +7760,6 @@
         "${ numberOfItems } objekt har flyttats",
         "${ numberOfItems } objekt har flyttats"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } länk till ditt objekt kunde inte tas bort",
-        "${ numberOfItems } länkar till dina objekt kunde inte tas bort"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } länk till ditt objekt togs bort",
-        "${ numberOfItems } länkar till dina objekt togs bort"
-      ],
       "${ reason } has been disabled": [
         "${ reason } har inaktiverats"
       ],
@@ -7830,12 +7901,6 @@
       ],
       "The item was successfully added to your drive": [
         "Objektet lades till på din Drive"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Länken till “${ name }“ misslyckades att tas bort"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Länken till ”${ name }” togs bort"
       ],
       "The link to your item failed to be deleted": [
         "Länken till ditt objekt misslyckades att tas bort"
@@ -9563,9 +9628,6 @@
       "Secure link copied": [
         "Säker länk kopierad"
       ],
-      "The link to your file was successfully copied": [
-        "Länken till din fil kopierades"
-      ],
       "Undo in progress": [
         "Ångra pågår"
       ],
@@ -9805,6 +9867,9 @@
       ],
       "Change password": [
         "Ändra lösenord"
+      ],
+      "Check for malicious files": [
+        "Kolla efter skadliga filer"
       ],
       "Clearing data": [
         "Rensar data"
@@ -10128,9 +10193,6 @@
       "Preview": [
         "Förhandsgranska"
       ],
-      "Privacy settings": [
-        "Integritetsinställningar"
-      ],
       "Processing...": [
         "Bearbetar..."
       ],
@@ -10212,9 +10274,6 @@
       "Share ${ name }": [
         "Dela ${ name }"
       ],
-      "Share via link": [
-        "Dela via länk"
-      ],
       "Shared": [
         "Delade"
       ],
@@ -10244,9 +10303,6 @@
       ],
       "Stop sharing": [
         "Sluta dela"
-      ],
-      "Stop sharing with everyone?": [
-        "Sluta dela med alla?"
       ],
       "Stop sharing?": [
         "Sluta dela?"
@@ -10343,9 +10399,6 @@
       ],
       "Your changes are not synced yet": [
         "Dina ändringar är inte synkroniserade än"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Din nedladdning har en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Din exponerade information"

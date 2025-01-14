@@ -308,6 +308,9 @@
       "Export contact group": [
         "Exportare grup de contacte"
       ],
+      "Export selection as .vcf": [
+        "Exportare selecție ca .vcf"
+      ],
       "Forgot password?": [
         "Ați uitat parola?"
       ],
@@ -448,6 +451,9 @@
       ],
       "Merge contacts": [
         "Îmbinare contacte"
+      ],
+      "More actions": [
+        "Alte acțiuni"
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
@@ -1465,7 +1471,7 @@
         "Reactivare abonament"
       ],
       "Your subscription is ending soon": [
-        "Abonamentul va expira curând"
+        "Abonamentul va expira în curând"
       ]
     },
     "Cancellation upsell": {
@@ -3553,6 +3559,9 @@
       "Time zone": [
         "Fus orar"
       ],
+      "Time zone component ignored": [
+        "Componenta fus orar este ignorată."
+      ],
       "To-do entry": [
         "Intrare de făcut"
       ],
@@ -3641,6 +3650,11 @@
     "Event info. Organizer name": {
       "You": [
         "Dvs."
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Eroare neașteptată."
       ]
     },
     "Event invitation error": {
@@ -4028,6 +4042,50 @@
         "Nu sunt metode de verificare disponibile"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
+      ],
+      "Edited event not supported": [
+        "Evenimentul editat nu este suportat."
+      ],
+      "End time out of bounds": [
+        "Ora de sfârșit e în afara limitelor."
+      ],
+      "Event validation failed": [
+        "Validare eveniment eșuată."
+      ],
+      "Floating times not supported": [
+        "Orele flotante nu sunt suportate."
+      ],
+      "Malformed all-day event": [
+        "Evenimentul pentru întreaga zi este în format eronat."
+      ],
+      "Malformed end time": [
+        "Ora de sfârșit incorectă."
+      ],
+      "Malformed recurring event": [
+        "Format eronat eveniment repetitiv."
+      ],
+      "Malformed start time": [
+        "Ora de început eronată."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Este permisă doar scala calendarului Gregorian."
+      ],
+      "Recurring event has no occurrences": [
+        "Evenimentul recurent nu are nicio apariție."
+      ],
+      "Recurring rule not supported": [
+        "Regula recurentă nesuportată."
+      ],
+      "Start time out of bounds": [
+        "Ora de început e în afara limitelor."
+      ],
+      "Time zone not supported": [
+        "Fus orar nesuportat."
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
@@ -4171,11 +4229,17 @@
       "Use your app password instead of your regular password if:": [
         "Folosiți parola aplicației în locul parolei obișnuite dacă:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Parola aplicației este corectă. Nu folosiți parola obișnuită."
+      ],
       "Your email account requires an app password to export your data.": [
         "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
       ],
       "Your email account requires one to export your data.": [
         "Contul de e-mail necesită o parolă pentru a exporta datele."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adresa de e-mail și parola aplicației sunt corecte. Nu folosiți parola obișnuită."
       ],
       "Your email address and password are correct.": [
         "Adresa de e-mail și parola sunt corecte."
@@ -4449,6 +4513,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (Un folder)",
         "Toate (${ totalFoldersCount } foldere)",
@@ -4582,6 +4649,11 @@
       ],
       "Create a new contact group": [
         "Creare grup de contacte"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Creați un cont cloud securizat pentru ${ value } membru",
+        "Creați un cont cloud securizat pentru ${ value } membri",
+        "Creați un cont cloud securizat pentru ${ value } de membri"
       ],
       "Create in": [
         "Creare în"
@@ -5009,6 +5081,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
@@ -5041,6 +5116,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Comutare la"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -5394,11 +5472,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
       "Your password was leaked:": [
         "Parola a fost divulgată:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Fusul orar al sistemului pare să se fi schimbat la ${ timezone }. Actualizați fusul orar preferat?"

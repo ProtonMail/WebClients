@@ -187,6 +187,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue downloading": [
+        "Continuar la descarga"
+      ],
       "Continue import": [
         "Continuar la importación"
       ],
@@ -225,9 +228,6 @@
       ],
       "Create free account": [
         "Crea una cuenta gratis"
-      ],
-      "Create link": [
-        "Crear enlace"
       ],
       "Create new folder": [
         "Crear una nueva carpeta"
@@ -830,9 +830,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Error al guardar debido a: ${ saveError }. Intenta guardar de nuevo."
-      ],
-      "Understood": [
-        "Entendido"
       ],
       "Undo": [
         "Deshacer"
@@ -2467,6 +2464,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
       ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
+        "Mejora a ${ BRAND_NAME } ${ planName } para activar el intercambio de archivos públicos con acceso para editar. Continúa colaborando de manera fluida y segura."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Actualiza tu cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de última generación impulsada por inteligencia artificial con soporte dedicado de expertos las 24 horas, los 7 días de la semana."
       ],
@@ -3997,6 +3997,9 @@
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Los archivos de ${ DOCS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puedes descargar los demás archivos haciendo clic en Continuar la descarga."
+      ],
       "${ doneCount } finished": [
         "${ doneCount } finalizado",
         "${ doneCount } finalizados"
@@ -4415,9 +4418,6 @@
       "Downloading": [
         "Descargando"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "La descarga de archivos de ${ DOCS_APP_NAME } desde ${ DRIVE_APP_NAME } no está admitida actualmente y no se incluirán en la descarga."
-      ],
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
       ],
@@ -4808,10 +4808,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } carácter está permitido",
-        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
       ],
@@ -4865,9 +4861,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Introduce la contraseña para descifrar y visualizar el contenido."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Expórtalos directamente desde la aplicación de ${ DOCS_APP_NAME } si deseas descargarlos."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -5057,8 +5050,8 @@
       "Share via link settings": [
         "Ajustes de uso compartido con un enlace"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Enlace compartible para ${ boldNameText }"
+      "Shared by ${ rootLink.signatureEmail }": [
+        "Compartido por ${ rootLink.signatureEmail }"
       ],
       "Shared link not found": [
         "Enlace compartido no encontrado"
@@ -5117,11 +5110,11 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "La cuenta puede tener una nueva clave o es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
       ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "La firma digital ha sido parcialmente verificada. Se ha cargado el archivo desde una página pública que no especifica el origen de un usuario en particular."
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La firma digital ha sido verificada parcialmente. Este archivo fue cargado mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
       ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "La firma digital ha sido parcialmente verificada. Se ha cargado la carpeta desde una página pública que no especifica el origen de un usuario en particular."
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La firma digital ha sido verificada parcialmente. Esta carpeta fue cargada mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
@@ -5192,18 +5185,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Se ha creado este enlace con una versión antigua de Drive y no se puede modificar. Elimínalo y crea uno nuevo para cambiar tu configuración."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a tu archivo. Para volver a compartir el archivo, necesitas un nuevo enlace."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Se desactivará este enlace de forma permanente. Nadie con este enlace tendrá acceso a tu carpeta. Necesitas un enlace nuevo para volver a compartir la carpeta."
-      ],
       "This month": [
         "Este mes"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Esta acción borrará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviese.",
-        "Esta acción borrará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviese."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Esto eliminará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME } y todos sus datos de ${ DRIVE_APP_NAME }. Las carpetas que hayas agregado a Mis ordenadores dejarán de sincronizarse."
@@ -5225,6 +5208,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Para descargar los archivos ${ DOCS_APP_NAME }, ábrelos en ${ DOCS_APP_NAME } y expórtalos."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Para activar una búsqueda realmente privada, ${ DRIVE_APP_NAME } necesita indexar tus archivos localmente."
@@ -5557,6 +5543,9 @@
       "Your email address was exposed:": [
         "La dirección de correo electrónico fue expuesta:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Tu dirección de correo electrónico será visible como la del propietario del enlace en la página para compartir."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
@@ -5724,6 +5713,9 @@
       ],
       "Anderson": [
         "García"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Cualquiera en Internet que tenga el enlace puede editar."
       ],
       "Anyone on the Internet with the link can view": [
         "Cualquiera en Internet que tenga el enlace puede ver"
@@ -6095,9 +6087,6 @@
       "Proration": [
         "Prorrateo"
       ],
-      "Protect with password": [
-        "Proteger con contraseña"
-      ],
       "Public keys": [
         "Claves públicas"
       ],
@@ -6349,6 +6338,11 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "También incluido:"
       ]
     },
     "Loading info": {
@@ -6716,8 +6710,14 @@
       "Get started for ${ priceCoupon }": [
         "Comenzar por ${ priceCoupon }"
       ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planes desde ${ priceDrivePlus }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Mejorar"
       ],
       "Upgrade now": [
         "Mejorar ahora"
@@ -6865,6 +6865,9 @@
       ],
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
+      ],
+      "200 GB of storage": [
+        "200 GB de almacenamiento"
       ],
       "24/7 account management support": [
         "Soporte de administración de cuenta 24/7"
@@ -7059,6 +7062,9 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Private photo backup": [
+        "Copia de seguridad de fotos privadas"
+      ],
       "Proofread and refine your emails": [
         "Revisa y mejora tus correos electrónicos"
       ],
@@ -7095,6 +7101,9 @@
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Almacenamiento y uso compartido seguro de archivos"
       ],
       "Secure link sharing": [
         "Uso compartido seguro de enlaces"
@@ -7720,14 +7729,6 @@
         "${ numberOfItems } elemento movido",
         "${ numberOfItems } elementos movidos"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } enlace a tu archivo",
-        "Error al eliminar ${ numberOfItems } enlaces a tus archivos"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "Se ha eliminado ${ numberOfItems } enlace a tu elemento.",
-        "Se han eliminado ${ numberOfItems } enlaces a tus elementos."
-      ],
       "${ reason } has been disabled": [
         "Se ha desactivado ${ reason }."
       ],
@@ -7869,12 +7870,6 @@
       ],
       "The item was successfully added to your drive": [
         "Se ha añadido el elemento al drive."
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Error al eliminar el enlace a \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Se ha eliminado el enlace a \"${ name }\"."
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace a tu elemento"
@@ -9596,9 +9591,6 @@
       "Secure link copied": [
         "Se ha copiado el enlace seguro."
       ],
-      "The link to your file was successfully copied": [
-        "Se ha copiado el enlace a tu archivo ."
-      ],
       "Undo in progress": [
         "Deshacer en progreso"
       ],
@@ -10161,9 +10153,6 @@
       "Preview": [
         "Vista previa"
       ],
-      "Privacy settings": [
-        "Configuración de privacidad"
-      ],
       "Processing...": [
         "Procesando..."
       ],
@@ -10245,8 +10234,8 @@
       "Share ${ name }": [
         "Compartir ${ name }"
       ],
-      "Share via link": [
-        "Compartir con un enlace"
+      "Share files with full edit access": [
+        "Compartir archivos con acceso completo para editar"
       ],
       "Shared": [
         "Compartido"
@@ -10277,9 +10266,6 @@
       ],
       "Stop sharing": [
         "Dejar de compartir"
-      ],
-      "Stop sharing with everyone?": [
-        "¿Dejar de compartir con todos?"
       ],
       "Stop sharing?": [
         "¿Dejar de compartir?"
@@ -10377,8 +10363,8 @@
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."
       ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "La descarga tiene un archivo de ${ DOCS_APP_NAME }."
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "La descarga incluye un archivo de ${ DOCS_APP_NAME }."
       ],
       "Your exposed information": [
         "Tus datos expuestos"

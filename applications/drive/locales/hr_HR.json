@@ -155,9 +155,6 @@
       "Create a new contact group": [
         "Kreiraj novu grupu kontakata"
       ],
-      "Create link": [
-        "Stvori poveznicu"
-      ],
       "Create new folder": [
         "Stvori novu mapu"
       ],
@@ -3034,11 +3031,6 @@
       "of": [
         "od"
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znak je dozvoljen",
-        "Samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znaka je dozvoljeno",
-        "Samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znakova je dozvoljeno"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Samo osobe s poveznicom i lozinkom mogu pristupiti ovoj datoteci."
       ],
@@ -3123,16 +3115,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Ova poveznica će biti trajno onemogućena. Nitko s ovom poveznicom neće moći pristupiti vašoj datoteci. Da biste datoteku ponovno podijelili, trebat će vam nova poveznica."
-      ],
       "This month": [
         "Ovaj mjesec"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Ovo će obrisati poveznicu i ukloniti pristup do vaše datoteke ili mape za sve koji imaju poveznicu.",
-        "Ovo će obrisati poveznice i ukloniti pristup do vaših datoteka ili mapa za sve koji imaju poveznice.",
-        "Ovo će obrisati poveznice i ukloniti pristup do vaših datoteka ili mapa za sve koji imaju poveznice."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -3597,9 +3581,6 @@
       "Postal code": [
         "Poštanski broj"
       ],
-      "Protect with password": [
-        "Zaštitite pomoću lozinke"
-      ],
       "Public keys": [
         "Javni ključevi"
       ],
@@ -3850,6 +3831,9 @@
       ]
     },
     "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
       "Upgrade now": [
         "Nadogradi sada"
       ]
@@ -4066,9 +4050,6 @@
         "Premjesti ${ n } stavku",
         "Premjesti ${ n } stavke",
         "Premjesti ${ n } stavki"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Poveznica do \"${ name }\" je izbrisana."
       ],
       "Your settings have been changed successfully": [
         "Vaše postavke su promijenjene."
@@ -4624,9 +4605,6 @@
       "Recovery has started": [
         "Oporavak je započet."
       ],
-      "The link to your file was successfully copied": [
-        "Poveznica do vaše datoteke je uspješno kopirana."
-      ],
       "Verification successful": [
         "Uspješna provjera"
       ],
@@ -5068,9 +5046,6 @@
       "Settings": [
         "Postavke"
       ],
-      "Share via link": [
-        "Podijeli putem poveznice"
-      ],
       "Shared": [
         "Dijeljeno"
       ],
@@ -5094,9 +5069,6 @@
       ],
       "Stop sharing": [
         "Zaustavi dijeljenje"
-      ],
-      "Stop sharing with everyone?": [
-        "Zaustavi dijeljenje s svima?"
       ],
       "Stop sharing?": [
         "Zaustavi dijeljenje?"

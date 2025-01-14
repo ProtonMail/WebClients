@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "O aliasoch hide-my-email"
+      ],
       "Activate recovery": [
         "Aktivovať obnovu"
       ],
@@ -486,6 +489,9 @@
       "Export contact group": [
         "Exportovať skupinu kontaktov"
       ],
+      "Export selection as .vcf": [
+        "Exportovať výber ako .vcf"
+      ],
       "External encryption": [
         "Externé šifrovanie"
       ],
@@ -761,6 +767,9 @@
       ],
       "More": [
         "Viac"
+      ],
+      "More actions": [
+        "Ďalšie akcie"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Viac informácií o ${ ariaLabelTitle }"
@@ -3768,6 +3777,12 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nová správa",
+        "${ notificationsToShow.length } nové správy",
+        "${ notificationsToShow.length } nových správ",
+        "${ notificationsToShow.length } nových správ"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Od: ${ sender } - ${ Subject }"
       ]
@@ -4699,6 +4714,9 @@
       "Time zone": [
         "Časové pásmo"
       ],
+      "Time zone component ignored": [
+        "Komponent časového pásma je ignorovaný"
+      ],
       "To-do entry": [
         "Položka To-do"
       ],
@@ -4763,6 +4781,11 @@
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Nie je možné odoslať pozvánku na adresu ${ email }. ${ errorMessage }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočakávaná chyba"
       ]
     },
     "Event invitation error": {
@@ -5459,6 +5482,50 @@
         "Nie sú k dispozícii žiadne metódy overovania"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendára nie je podporované"
+      ],
+      "Edited event not supported": [
+        "Upravená udalosť nie je podporovaná"
+      ],
+      "End time out of bounds": [
+        "Čas ukončenia mimo rozsahu"
+      ],
+      "Event validation failed": [
+        "Overenie udalosti zlyhalo"
+      ],
+      "Floating times not supported": [
+        "Plávajúce časy nie sú podporované"
+      ],
+      "Malformed all-day event": [
+        "Porušená štruktúra celodenného podujatia"
+      ],
+      "Malformed end time": [
+        "Chybný čas ukončenia"
+      ],
+      "Malformed recurring event": [
+        "Chybne formulovaná opakujúca sa udalosť"
+      ],
+      "Malformed start time": [
+        "Chybný čas začiatku"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Povolená je len gregoriánska kalendárna sústava"
+      ],
+      "Recurring event has no occurrences": [
+        "Opakujúca sa udalosť nemá žiadne výskyty"
+      ],
+      "Recurring rule not supported": [
+        "Opakujúce sa pravidlo nie je podporované"
+      ],
+      "Start time out of bounds": [
+        "Čas začiatku mimo rozsahu"
+      ],
+      "Time zone not supported": [
+        "Časové pásmo nie je podporované"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } účastník",
@@ -5619,11 +5686,17 @@
       "Use your app password instead of your regular password if:": [
         "Použite heslo aplikácie namiesto bežného hesla, ak:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Vaše heslo pre aplikáciu je správne. Nepoužívajte vaše bežné heslo."
+      ],
       "Your email account requires an app password to export your data.": [
         "Váš emailový účet vyžaduje heslo aplikácie pre export vašich dát."
       ],
       "Your email account requires one to export your data.": [
         "Váš emailový účet toto vyžaduje na export vašich dát."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Vaša emailová adresa a heslo aplikácie sú správne. Nepoužívajte vaše bežné heslo."
       ],
       "Your email address and password are correct.": [
         "Vaša emailová adresa a heslo sú správne."
@@ -6094,6 +6167,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Overenie adresy pomocou dôveryhodného kľúča je pre túto adresu povolené. Ak chcete posielať správy na túto adresu, najprv dôverujte verejnému kľúču, ktorý môže byť použitý na odosielanie."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
+      ],
       "Align left": [
         "Zarovnať vľavo"
       ],
@@ -6330,6 +6406,12 @@
       ],
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvoriť bezpečný cloud pre ${ value } člena",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov"
       ],
       "Create in": [
         "Vytvoriť v"
@@ -6691,6 +6773,9 @@
       "JCB logo": [
         "JCB logo"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Pripojte sa k programu ${ PROTON_SENTINEL_NAME } a získajte najvyššiu úroveň zabezpečenia účtu a podpory."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Už len potvrďte váš výber a my urobíme zbytok."
       ],
@@ -7027,6 +7112,9 @@
       "Proofread text": [
         "Korektúra textu"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Chráňte svoj email pred únikom do mailingových zoznamov alebo spamerov pomocou hide-my-email aliasov."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
       ],
@@ -7135,6 +7223,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odoslané z bezpečného emailu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
       ],
@@ -7206,6 +7297,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Koniec predplatného: Znova aktivujte do ${ byDate }, aby ste si ponechali výhody ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Prepnúť na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -7327,6 +7421,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Táto správa bola automaticky vygenerovaná ako odpoveď na predchádzajúcu správu."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Táto správa je z aliasu v ${ PASS_APP_NAME }"
+      ],
       "This message is from a mailing list.": [
         "Správa pochádza zo zoznamu adresátov."
       ],
@@ -7410,6 +7507,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Na obnovenie vašich dát je potrebné reaktivovať šifrovací kľúč účtu použitý v čase, kedy boli dáta vytvorené. Táto akcia vyžaduje, aby ste si pamätali heslo použité v čase, kedy bol kľúč vygenerovaný."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Ak chcete odstrániť obmedzenia, môžete prejsť na platený plán."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Ak chcete odstrániť obmedzenia, môžete navštíviť ${ mailLink } a prejsť na platený plán."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Pre odhlásenie z tohto mailingového zoznamu, bude zaslaný email z ${ boldFrom } s nasledujúcimi detailmi definovanými odosielateľom noviniek:"
@@ -7572,6 +7675,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Zistili sme vytvorenie viacerých bezplatných účtov, čo porušuje naše ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Máme plány navrhnuté špeciálne pre používateľov, ako ste vy, ktorí potrebujú viac ako jednu emailovú adresu."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
@@ -7879,6 +7985,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
+      ],
       "Your password was leaked:": [
         "Vaše heslo bolo prezradené:"
       ],
@@ -7887,6 +7996,12 @@
       ],
       "Your private writing assistant": [
         "Váš súkromný asistent písania"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každých ${ cycle } mesiacov."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každý mesiac."
       ]
     },
     "info": {
@@ -8617,6 +8732,9 @@
       ],
       "Remember my choice": [
         "Zapamätať si voľbu"
+      ],
+      "Remove metadata": [
+        "Odstrániť metadáta"
       ],
       "Reveal password": [
         "Odkryť heslo"
@@ -10040,14 +10158,6 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získajte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -10060,6 +10170,14 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Získajte Mail Plus za ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "new_plans: tooltip": {
@@ -10436,6 +10554,12 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } zabráni tomu, aby sa podvodné emaily vôbec dostali do vašej schránky."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } v App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } v Play Store"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } znamená, že už vás nebudú sledovať na internete."
       ],
@@ -10448,6 +10572,9 @@
       "Advanced encryption": [
         "Pokročilé šifrovanie"
       ],
+      "Anytime, anywhere access": [
+        "Prístup kedykoľvek a odkiaľkoľvek"
+      ],
       "Auto-delete spam and trash": [
         "Automatické mazanie spamu a koša"
       ],
@@ -10457,8 +10584,17 @@
       "Dark Web Monitoring": [
         "Monitorovanie Dark Webu"
       ],
+      "Distraction-free emailing": [
+        "Emailovanie bez rozptyľovania"
+      ],
       "Download the desktop app": [
         "Stiahnite si desktopovú aplikáciu"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Vychutnajte si rýchlejšie a cielené odosielanie emailov pomocou aplikácie pre počítače."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Ak chcete mať k emailom prístup kedykoľvek a mať optimalizované mobilné prostredie, stiahnite si našu aplikáciu ${ mobileAppAppStoreLink } alebo ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Dostávajte upozornenia, ak dôjde k úniku vášho hesla."
@@ -13827,6 +13963,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Vybraný motív bude aktívny, kým je systém nastavený na „svetlý režim“"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Týmto sa zabezpečí, že nikto neuvidí informácie o polohe, zariadení a ďalšie informácie, ktoré by sa dali použiť na vašu identifikáciu alebo sledovanie."
       ],
       "This feature is only available for paid users": [
         "Táto funkcia je k dispozícii iba užívateľom s prémiovým účtom"

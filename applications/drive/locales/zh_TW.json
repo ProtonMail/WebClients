@@ -222,9 +222,6 @@
       "Create free account": [
         "建立免費帳號"
       ],
-      "Create link": [
-        "創建連結"
-      ],
       "Create new folder": [
         "創建新資料夾"
       ],
@@ -347,6 +344,9 @@
       ],
       "Export contact group": [
         "匯出聯絡人群組"
+      ],
+      "Export selection as .vcf": [
+        "以.vcf匯出選項"
       ],
       "Fit to window": [
         "貼齊視窗邊沿"
@@ -494,6 +494,9 @@
       ],
       "Minimize transfers": [
         "傳輸最小化"
+      ],
+      "More actions": [
+        "更多選項"
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
@@ -806,9 +809,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
-      ],
-      "Understood": [
-        "理解"
       ],
       "Undo": [
         "復原"
@@ -3235,6 +3235,11 @@
         "沒有選擇圖像"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "異常的錯誤"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "附件的 ICS 檔案無法解密"
@@ -3550,6 +3555,47 @@
       ],
       "No verification method available": [
         "沒有可用的驗證方法"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "不支援行事曆的時區"
+      ],
+      "Edited event not supported": [
+        "不支援已編輯的事件"
+      ],
+      "End time out of bounds": [
+        "結束時間超出限制"
+      ],
+      "Event validation failed": [
+        "事件驗證失敗"
+      ],
+      "Floating times not supported": [
+        "不支援浮動時間"
+      ],
+      "Malformed all-day event": [
+        "全日事件格式有誤"
+      ],
+      "Malformed end time": [
+        "結束時間格式有誤"
+      ],
+      "Malformed recurring event": [
+        "週期性事件格式有誤"
+      ],
+      "Malformed start time": [
+        "開始時間格式有誤"
+      ],
+      "Recurring event has no occurrences": [
+        "未發生重複事件"
+      ],
+      "Recurring rule not supported": [
+        "不支援週期性規則"
+      ],
+      "Start time out of bounds": [
+        "開始時間超出限制"
+      ],
+      "Time zone not supported": [
+        "不支援的時區"
       ]
     },
     "Import calendar": {
@@ -3967,6 +4013,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "全部 (${ totalFoldersCount } 個資料夾)"
       ],
@@ -4134,6 +4183,9 @@
       ],
       "Create a new contact group": [
         "創建新聯絡人群組"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "替成員創建一個安全${ value }雲端"
       ],
       "Create in": [
         "創建在"
@@ -4615,9 +4667,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "僅允許 ${ MAX_CUSTOM_PASSWORD_LENGTH } 個字元"
-      ],
       "Only the people with the link and the password can access this file.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
@@ -4834,6 +4883,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 付款目前不可用。請稍後再試。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -4851,9 +4903,6 @@
       ],
       "Share via link settings": [
         "請用連結設定共享"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "${ boldNameText } 的可供分享連結"
       ],
       "Shared link not found": [
         "找不到分享的連結"
@@ -4903,14 +4952,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
+      "Switch to": [
+        "切換至"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "此數位簽署以被部分驗證。此資料夾於公開頁面被未知使用者上傳。"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下載數量包含實際下載與預覽檔案時的實體。"
@@ -4978,17 +5027,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "此連結乃以舊 Drive 版本創建，無法修改。請刪除此連結並創建新的連結以變更設定。"
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "此連結將會永久停用。無人將可憑此連結存取您的檔案。若要重新分享此檔案，您將需要一個新的連結。"
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "此連結將會永久停用。無人將可憑此連結存取您的資料夾。若要重新分享此資料夾，您將需要一個新的連結。"
-      ],
       "This month": [
         "本月"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
       ],
       "This will replace the existing file with the folder": [
         "這將會使用資料夾取代既有檔案"
@@ -5350,6 +5390,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
+      ],
       "Your password was leaked:": [
         "您的密碼已外洩:"
       ],
@@ -5364,6 +5407,12 @@
       ],
       "Your previous recovery phrase": [
         "您先前的恢复短語"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "您的方案開始於${ renewalTime }及於每月重新開始。"
       ]
     },
     "info": {
@@ -5848,9 +5897,6 @@
       ],
       "Proration": [
         "按比例分配後"
-      ],
-      "Protect with password": [
-        "使用密碼保護"
       ],
       "Public keys": [
         "公開金鑰"
@@ -6464,6 +6510,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "從${ priceMailPlus }起"
+      ],
+      "Upgrade": [
+        "升級"
       ],
       "Upgrade now": [
         "立即升級"
@@ -7381,12 +7430,6 @@
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 個項目已成功移動"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "指向您的項目的 ${ numberOfItems } 個連結無法刪除"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } 個項目個連結已刪除"
-      ],
       "${ reason } has been disabled": [
         "${ reason } 已停用。"
       ],
@@ -7518,12 +7561,6 @@
       ],
       "The item was not added to your drive": [
         "此項目未被加入您的雲端磁碟"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "「${ name }」的連結無法刪除"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "「${ name }」的連結已刪除"
       ],
       "The link to your item failed to be deleted": [
         "未能刪除指向您項目的連結"
@@ -9060,9 +9097,6 @@
       "Secure link copied": [
         "安全加密鏈結已複製"
       ],
-      "The link to your file was successfully copied": [
-        "已成功複製檔案連結"
-      ],
       "Undo in progress": [
         "復原進行中"
       ],
@@ -9597,9 +9631,6 @@
       "Preview": [
         "預覽"
       ],
-      "Privacy settings": [
-        "隱私設定"
-      ],
       "Processing...": [
         "處理中..."
       ],
@@ -9681,9 +9712,6 @@
       "Share ${ name }": [
         "與 ${ name } 共享"
       ],
-      "Share via link": [
-        "透過連結分享"
-      ],
       "Shared": [
         "已分享"
       ],
@@ -9713,9 +9741,6 @@
       ],
       "Stop sharing": [
         "停止分享"
-      ],
-      "Stop sharing with everyone?": [
-        "是否停止與所有人分享？"
       ],
       "Stop sharing?": [
         "停止共用?"
@@ -9809,9 +9834,6 @@
       ],
       "Your changes are not synced yet": [
         "您的變更尚未同步"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "您下載有${ DOCS_APP_NAME }檔案"
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"

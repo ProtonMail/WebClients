@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Kopiér invitationslink"
       ],
-      "Copy link": [
-        "Kopiér link"
-      ],
       "Create a copy": [
         "Opret en kopi"
       ],
@@ -3038,6 +3035,11 @@
         "Intet billede valgt"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Uventet fejl"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
@@ -3347,6 +3349,26 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
+      ]
+    },
+    "ICS event error": {
+      "End time out of bounds": [
+        "Sluttid uden for grænserne"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagsbegivenhed"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet tilbagevendende begivenhed"
+      ],
+      "Malformed start time": [
+        "Misdannet starttid"
+      ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
       ]
     },
     "Import calendar": {
@@ -3747,6 +3769,9 @@
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
+      "Actions": [
+        "Handlinger"
+      ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
@@ -4130,6 +4155,9 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "Invite": [
+        "Invitér"
+      ],
       "Invite link copied": [
         "Invitationslink kopieret"
       ],
@@ -4271,10 +4299,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt",
-        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt"
       ],
       "Only the people with the link and the password can access this file.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne fil."
@@ -4443,8 +4467,11 @@
       "Share via link settings": [
         "Del via link-indstillinger"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Delbart link til ${ boldNameText }"
+      "Shared by": [
+        "Delt af"
+      ],
+      "Shared on": [
+        "Delt"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
@@ -4475,6 +4502,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Skift til"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
@@ -4533,21 +4563,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Linket blev oprettet i en ældre Drive-version og kan ikke ændres. Slet linket og opret et nyt for at ændre indstillingerne."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din fil. For at gendele filen, skal du bruge et nyt link."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din mappe. For at gendele mappen, skal du bruge et nyt link."
-      ],
       "This message will be presented again later": [
         "Dette besked vil blive fremlagt igen senere"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Dette offentlige dokument findes måske ikke, eller du har måske ikke ret til at se det. Du kan prøve at genindlæse siden for at se, om problemet fortsætter."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
-        "Dette vil slette linkene og fjerne adgangen til dine filer eller mapper for alle, der har linkene."
       ],
       "This will replace the existing file with the folder": [
         "Dette vil erstatte eksisterende fil med mappen"
@@ -5265,9 +5285,6 @@
       ],
       "Proration": [
         "Proration"
-      ],
-      "Protect with password": [
-        "Beskyt med adgangskode"
       ],
       "Public keys": [
         "Offentlige nøgler"
@@ -6224,7 +6241,7 @@
         "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
-        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
+        "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "TOR over VPN": [
         "Tor over VPN"
@@ -6796,14 +6813,6 @@
         "${ numberOfItems } element flyttet",
         "${ numberOfItems } elementer flyttet"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } link til dit element kunne ikke slettes",
-        "${ numberOfItems } links til dine elementer kunne ikke slettes"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } link til dit element blev slettet",
-        "${ numberOfItems } links til dine elementer blev slettet"
-      ],
       "${ reason } has been disabled": [
         "${ reason } er blevet deaktiveret"
       ],
@@ -6900,12 +6909,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Linket til \"${ name }\" kunne ikke slettes"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Linket til \"${ name }\" blev slettet"
       ],
       "The link to your item failed to be deleted": [
         "Linket til dit element kunne ikke slettes"
@@ -8152,9 +8155,6 @@
       "Secure link copied": [
         "Sikkert link kopieret"
       ],
-      "The link to your file was successfully copied": [
-        "Linket til din fil blev kopieret korrekt"
-      ],
       "Undo in progress": [
         "Annullering i gang"
       ],
@@ -8619,9 +8619,6 @@
       "Photos": [
         "Fotos"
       ],
-      "Privacy settings": [
-        "Privatlivsindstillinger"
-      ],
       "Processing...": [
         "Behandler..."
       ],
@@ -8679,9 +8676,6 @@
       "Share ${ name }": [
         "Del ${ name }"
       ],
-      "Share via link": [
-        "Del via link"
-      ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
       ],
@@ -8699,9 +8693,6 @@
       ],
       "Stop sharing": [
         "Stop deling"
-      ],
-      "Stop sharing with everyone?": [
-        "Stop deling med alle?"
       ],
       "Stop sharing?": [
         "Stop med at dele?"

@@ -1662,6 +1662,10 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
       ],
+      "Move ${ count } item": [
+        "${ count } Element verschieben",
+        "${ count } Elemente verschieben"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
@@ -1761,6 +1765,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bitte bestätige dein zusätzliches Passwort, damit die automatische Sperre mit deinem zusätzlichen Passwort aktiviert wird."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Bitte bestätige dein zusätzliches Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Bitte bestätige dein zusätzliches Passwort, um die Registrierung deiner aktuellen Sperre aufzuheben."
@@ -3281,6 +3288,10 @@
       "Default Display Name": [
         "Standardanzeigename"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount } Eintrag löschen?",
+        "${ deletedItemsCount } Einträge löschen?"
+      ],
       "Delete domain": [
         "Domain löschen"
       ],
@@ -3587,6 +3598,9 @@
         "Möchtest du ${ deletedItemsCount } Eintrag wirklich dauerhaft löschen?",
         "Möchtest du ${ deletedItemsCount } Einträge wirklich dauerhaft löschen?"
       ],
+      "Are you sure you want to permanently delete this item?": [
+        "Soll dieses Element wirklich dauerhaft gelöscht werden?"
+      ],
       "At least one email address is required": [
         "Mindestens eine E-Mail-Adresse ist erforderlich."
       ],
@@ -3678,6 +3692,9 @@
       "No results": [
         "Keine Ergebnisse"
       ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Nach der Synchronisierung werden Aliasnamen, die in ${ PASS_SHORT_APP_NAME } gelöscht werden, auch in SimpleLogin gelöscht."
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."
       ],
@@ -3692,6 +3709,9 @@
       ],
       "Please contact us to investigate the issue": [
         "Bitte kontaktiere uns, um das Problem zu untersuchen."
+      ],
+      "Please note that once deleted, aliases can't be restored": [
+        "Bitte beachte, dass einmal gelöschte Aliasnamen nicht wiederhergestellt werden können"
       ],
       "Please verify your email address in order to use email aliases": [
         "Bitte bestätige deine E-Mail-Adresse, um E-Mail-Aliasse verwenden zu können."

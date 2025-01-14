@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
+      "characters": [
+        "znaków"
+      ],
       "Chat with us": [
         "Czat z nami"
       ],
@@ -182,9 +185,6 @@
       ],
       "Copy invite link": [
         "Kopiuj link zaproszenia"
-      ],
-      "Copy link": [
-        "Kopiuj link"
       ],
       "Create a copy": [
         "Utwórz kopię"
@@ -710,6 +710,9 @@
       ],
       "Word count": [
         "Licznik słów"
+      ],
+      "words": [
+        "słowa"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt",
@@ -3407,6 +3410,23 @@
         "Brak dostępnych metod weryfikacji"
       ]
     },
+    "ICS event error": {
+      "Edited event not supported": [
+        "Edytowane wydarzenie nie jest obsługiwane"
+      ],
+      "End time out of bounds": [
+        "Czas zakończenia jest poza zakresem"
+      ],
+      "Malformed end time": [
+        "Czas zakończenia posiada nieprawidłowy format"
+      ],
+      "Malformed recurring event": [
+        "Wydarzenie cykliczne posiada nieprawidłowy format"
+      ],
+      "Start time out of bounds": [
+        "Czas rozpoczęcia jest poza zakresem"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
@@ -3855,6 +3875,9 @@
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
+      "Actions": [
+        "Akcje"
+      ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
       ],
@@ -3941,6 +3964,9 @@
       ],
       "Change your password": [
         "Zmień hasło"
+      ],
+      "characters": [
+        "znaków"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sprawdzanie kontaktów... (${ progress } z ${ max })"
@@ -4242,6 +4268,9 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
+      "Invite": [
+        "Zaproś"
+      ],
       "Invite link copied": [
         "Link został skopiowany"
       ],
@@ -4385,12 +4414,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })"
       ],
       "Only the people with the link and the password can access this file.": [
         "Tylko posiadacz linku i hasła ma dostęp do pliku."
@@ -4563,8 +4586,11 @@
       "Share via link settings": [
         "Ustawienia linku"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Link do ${ boldNameText }"
+      "Shared by": [
+        "Udostępnione przez"
+      ],
+      "Shared on": [
+        "Udostępnione"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
@@ -4595,6 +4621,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Przełącz na konto"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -4653,23 +4682,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Link został utworzony w starej wersji aplikacji i nie może zostać zmodyfikowany. Usuń link i utwórz nowy, aby zmienić jego ustawienia."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, musisz utworzyć nowy link."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, musisz utworzyć nowy link."
-      ],
       "This message will be presented again later": [
         "Wiadomość zostanie pokazana później"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Ten publiczny dokument może nie istnieć lub możesz nie mieć uprawnień do jego wyświetlenia. Spróbuj odświeżyć stronę, aby sprawdzić, czy problem nadal występuje."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto ma link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link."
       ],
       "This will replace the existing file with the folder": [
         "Spowoduje to zastąpienie obecnego pliku folderem"
@@ -4802,6 +4819,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
+      ],
+      "words": [
+        "słowa"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -5382,9 +5402,6 @@
       ],
       "Proration": [
         "Dzielenie proporcjonalne"
-      ],
-      "Protect with password": [
-        "Zabezpiecz za pomocą hasła"
       ],
       "Public keys": [
         "Klucze publiczne"
@@ -7078,18 +7095,6 @@
         "Przeniesiono ${ numberOfItems } elementów",
         "Przeniesiono ${ numberOfItems } elementów"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Usunięcie ${ numberOfItems } linku do elementu nie powiodło się",
-        "Usunięcie ${ numberOfItems } linków do elementów nie powiodło się",
-        "Usunięcie ${ numberOfItems } linków do elementów nie powiodło się",
-        "Usunięcie ${ numberOfItems } linków do elementów nie powiodło się"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "Link do elementu został usunięty",
-        "${ numberOfItems } linki do elementów zostały usunięte",
-        "${ numberOfItems } linków do elementów zostały usunięte",
-        "${ numberOfItems } linków do elementów zostały usunięte"
-      ],
       "${ reason } has been disabled": [
         "${ reason } został wyłączony"
       ],
@@ -7188,12 +7193,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Zatrzymanie udostępniania nie powiodło się"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Usunięcie linku do elementu \"${ name }\" nie powiodło się"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Link do elementu \"${ name }\" został usunięty"
       ],
       "The link to your item failed to be deleted": [
         "Usunięcie linku do elementu nie powiodło się"
@@ -8535,9 +8534,6 @@
       "Secure link copied": [
         "Link został skopiowany"
       ],
-      "The link to your file was successfully copied": [
-        "Link został skopiowany"
-      ],
       "Undo in progress": [
         "Cofnięcie jest w toku"
       ],
@@ -9024,9 +9020,6 @@
       "Photos": [
         "Zdjęcia"
       ],
-      "Privacy settings": [
-        "Ustawienia prywatności"
-      ],
       "Processing...": [
         "Przetwarzanie..."
       ],
@@ -9084,9 +9077,6 @@
       "Share ${ name }": [
         "Udostępnij ${ name }"
       ],
-      "Share via link": [
-        "Udostępnij przez link"
-      ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
       ],
@@ -9104,9 +9094,6 @@
       ],
       "Stop sharing": [
         "Zatrzymaj udostępnianie"
-      ],
-      "Stop sharing with everyone?": [
-        "Zatrzymać udostępnianie?"
       ],
       "Stop sharing?": [
         "Zatrzymać udostępnianie?"
