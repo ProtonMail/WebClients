@@ -641,6 +641,11 @@ const Step1 = ({
                         return;
                     }
 
+                    if (isPorkbunPayment) {
+                        // Don't show any offers for Porkbun
+                        return;
+                    }
+
                     const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
                         return (
                             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
