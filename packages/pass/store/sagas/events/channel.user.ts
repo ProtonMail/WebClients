@@ -31,7 +31,7 @@ import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces'
 import identity from '@proton/utils/identity';
 
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelInitWorker } from './channel.worker';
+import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
 function* onUserEvent(
@@ -122,8 +122,8 @@ export function* userChannel(api: Api, options: RootSagaOptions) {
 
     const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
     const eventsChannel = createUserChannel(api, eventID);
-    const events = fork(channelEventsWorker<UserEvent>, eventsChannel, options);
-    const wakeup = fork(channelInitWorker<UserEvent>, eventsChannel, options);
+    const events = fork(channelEvents<UserEvent>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<UserEvent>, eventsChannel, options);
 
     yield all([events, wakeup]);
 }

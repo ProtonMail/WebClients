@@ -5,6 +5,7 @@ import { call, cancel, cancelled, fork, put, select, take, takeLeading } from 'r
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { channelAcknowledge, wakeupSuccess } from '@proton/pass/store/actions';
+import { forcePoll } from '@proton/pass/store/actions/creators/polling';
 import { channelRequest } from '@proton/pass/store/actions/requests';
 import type { RequestEntry } from '@proton/pass/store/request/types';
 import { selectRequest } from '@proton/pass/store/selectors';
@@ -17,12 +18,11 @@ import noop from '@proton/utils/noop';
 
 import type { EventChannel } from './types';
 
-/* generic worker over an EventChannel : responsible for polling
- * the underlying redux-saga event channel and triggering the
- * appropriate callback generators. Closes the channel if the
- * parent task is canceled */
-export function* channelEventsWorker<T extends {}>(eventChannel: EventChannel<T>, options: RootSagaOptions): Generator {
+/** Processes events from an event channel with error handling.
+ * Closes channel on cancellation for proper cleanup. */
+export function* channelEvents<T extends {}>(eventChannel: EventChannel<T>, options: RootSagaOptions): Generator {
     const { channel, onEvent, onError, manager } = eventChannel;
+
     try {
         while (true) {
             try {
@@ -40,31 +40,46 @@ export function* channelEventsWorker<T extends {}>(eventChannel: EventChannel<T>
     }
 }
 
-/* This worker will call the event manager immediately and
- * on every wakeupSuccess action coming  from the pop-up in
- * in order to sync as quickly as possible. Take the leading
- * wakeup call in order to avoid unnecessary parallel calls */
-export function* channelInitWorker<T extends {}>(
+export function* channelInitalize<T extends {}>(
     { manager, channelId }: EventChannel<T>,
     options: RootSagaOptions
 ): Generator {
-    const init = (yield fork(function* () {
+    /** Initializes polling with smart delay for service worker context.
+     * Prevents immediate polling for background service workers by
+     * calculating delay from last poll timestamp. Falls back to
+     * immediate polling if `getPollingDelay` not configured */
+    const initTask = (yield fork(function* () {
         const request: Maybe<RequestEntry<'success'>> = yield select(selectRequest(channelRequest(channelId)));
         const interval = msToEpoch(options.getPollingInterval());
         const delay: number = options.getPollingDelay?.(interval, request?.requestedAt) ?? 0;
+
         yield wait(epochToMs(delay));
         yield manager.call().catch(noop);
     })) as Task;
 
-    yield takeLeading(
-        (action: Action) => wakeupSuccess.match(action) && action.meta.receiver.endpoint === 'popup',
-        function* () {
-            yield cancel(init);
-            yield manager.call().catch(noop);
-            /* wait the channel's interval to process
-             * the next wakeupSuccess in case user is
-             * repeatedly opening the pop-up */
-            yield wait(ACTIVE_POLLING_TIMEOUT);
-        }
-    );
+    /** Handles manual polling triggers. Cancels any pending init
+     * and executes poll immediately */
+    yield fork(function* () {
+        yield takeLeading(
+            (action: Action) => forcePoll.match(action) && action.payload === channelId,
+            function* () {
+                yield cancel(initTask);
+                yield manager.call().catch(noop);
+            }
+        );
+    });
+
+    if (EXTENSION_BUILD) {
+        /** Syncs data on popup activation for extension context.
+         * Cancels delayed init, forces immediate poll, and applies
+         * cooldown to prevent rapid re-polling on popup toggle */
+        yield takeLeading(
+            (action: Action) => wakeupSuccess.match(action) && action.meta.receiver.endpoint === 'popup',
+            function* () {
+                yield cancel(initTask);
+                yield manager.call().catch(noop);
+                yield wait(ACTIVE_POLLING_TIMEOUT);
+            }
+        );
+    }
 }

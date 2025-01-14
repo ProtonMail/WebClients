@@ -28,7 +28,7 @@ import noop from '@proton/utils/noop';
 
 import { discardDrafts } from '../items/item-drafts';
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelInitWorker } from './channel.worker';
+import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
 export type ShareEventResponse = { Events: PassEventListResponse };
@@ -137,8 +137,8 @@ export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
 export const getShareChannelForks = (api: Api, options: RootSagaOptions) => (share: Share) => {
     logger.info(`[ServerEvents::Share::${logId(share.shareId)}] start polling`);
     const eventsChannel = createShareChannel(api, share);
-    const events = fork(channelEventsWorker<ShareEventResponse>, eventsChannel, options);
-    const wakeup = fork(channelInitWorker<ShareEventResponse>, eventsChannel, options);
+    const events = fork(channelEvents<ShareEventResponse>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<ShareEventResponse>, eventsChannel, options);
     const onDelete = fork(onShareDeleted(share.shareId), eventsChannel);
 
     return [events, wakeup, onDelete];

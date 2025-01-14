@@ -11,8 +11,7 @@ import { selectAllVaults } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { InvitesGetResponse, MaybeNull, Share } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
-import { type Api } from '@proton/pass/types';
+import { type Api, ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -20,7 +19,7 @@ import { logId, logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelInitWorker } from './channel.worker';
+import { channelEvents, channelInitalize } from './channel.worker';
 
 const NAMESPACE = 'ServerEvents::Invites';
 
@@ -117,8 +116,8 @@ export function* invitesChannel(api: Api, options: RootSagaOptions) {
     logger.info(`[${NAMESPACE}] start polling`);
 
     const eventsChannel = createInvitesChannel(api);
-    const events = fork(channelEventsWorker<InvitesGetResponse>, eventsChannel, options);
-    const wakeup = fork(channelInitWorker<InvitesGetResponse>, eventsChannel, options);
+    const events = fork(channelEvents<InvitesGetResponse>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<InvitesGetResponse>, eventsChannel, options);
 
     yield all([events, wakeup]);
 }
