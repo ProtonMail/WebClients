@@ -178,9 +178,6 @@
       "Create a new contact group": [
         "Snulfu-d agraw n unermes amaynut"
       ],
-      "Create link": [
-        "Rnu aseɣwen"
-      ],
       "Create new folder": [
         "Rnu akaram amaynut"
       ],
@@ -3685,10 +3682,6 @@
       "of": [
         "si"
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Slid ${ MAX_CUSTOM_PASSWORD_LENGTH }",
-        "Slid ${ MAX_CUSTOM_PASSWORD_LENGTH }"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Anagar imdanen i yesɛan aseɣwen d wawal uffir i izemren ad kecmen ɣer ufaylu-a."
       ],
@@ -3843,18 +3836,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tettalday ara."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Aseɣwen-a dayen ad yens. Yiwen ur izemmer ad yekcem ɣer ufaylu-inek•inem s useɣwen-a. Akken ad tebḍuḍ afaylu tikkelt-nniḍen, ilaq-ak•am aseɣwen amaynut."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Aseɣwen-a dayen ad yens. Yiwen ur izemmer ad yekcem ɣer ukaram inek•inem s useɣwen-a. Akken ad tebḍuḍ akaram tikkelt-nniḍen, ilaq-ak•am aseɣwen amaynut."
-      ],
       "This month": [
         "Ayyur-a"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Ayagi ad ikkes aseɣwen yerna ad ikkes adduf ɣer afaylu-inek neɣ akaram i yal yiwen yesɛan aseɣwen-nni.",
-        "Ayagi ad ikkes aseɣwen yerna ad ikkes adduf ɣer ifuyla-inek neɣ ikaramen i yal yiwen yesɛan aseɣwen-nni."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
@@ -4506,9 +4489,6 @@
       "Proration": [
         "Asiḍen aktassaɣan"
       ],
-      "Protect with password": [
-        "Mmesten s wawal uffir"
-      ],
       "Public keys": [
         "Tisura tizuyaz"
       ],
@@ -4833,6 +4813,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ],
       "Upgrade now": [
         "Sali aswir tura"
@@ -5223,14 +5206,6 @@
         "${ numberOfItems } n uferdis imutti akken iwata",
         "${ numberOfItems } n yiferdisen muttin akken iwata"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } n useɣwen ɣer uferdis-inek•m ulamek ara yettwakkes",
-        "${ numberOfItems } n yisɣewnen ɣer yiferdisen-inek•m ulamek ara ttwakksen"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } n useɣwen ɣer uferdis-inek•m yettwakkes",
-        "${ numberOfItems } n useɣwen ɣer yiferdisen-inek•m yettwakkes"
-      ],
       "${ reason } has been disabled": [
         "${ reason } yensa"
       ],
@@ -5305,12 +5280,6 @@
       ],
       "Subfolder failed to be loaded": [
         "Akaram arnaw yegguma ad d-yali"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Aseɣwen ɣer \"${ name }\" yegguma ad yettwakkes"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Aseɣwen ɣer \"${ name }\" yettwakkes"
       ],
       "The link to your item failed to be deleted": [
         "Ulamek tukksa n uaseɣwen ɣer uferdis-inek•m"
@@ -5960,9 +5929,6 @@
       "Recovery has started": [
         "Tiririt tebda"
       ],
-      "The link to your file was successfully copied": [
-        "Aseɣwen ɣer ufaylu-inek m yettwanɣel akken iwata"
-      ],
       "Undo in progress": [
         "Asefsex iteddu"
       ],
@@ -6444,9 +6410,6 @@
       "Preview": [
         "Taskant"
       ],
-      "Privacy settings": [
-        "Iqewwaren n tbaḍnit"
-      ],
       "Processing...": [
         "Asesfer n %s..."
       ],
@@ -6513,9 +6476,6 @@
       "Settings": [
         "Iɣewwaren"
       ],
-      "Share via link": [
-        "Bḍu s useɣwen"
-      ],
       "Shared": [
         "Yettwabḍa"
       ],
@@ -6545,9 +6505,6 @@
       ],
       "Stop sharing": [
         "Ḥbes beḍḍu"
-      ],
-      "Stop sharing with everyone?": [
-        "Dayen ur beṭṭu d yiwen?"
       ],
       "Stop sharing?": [
         "Ḥbes beṭṭu?"

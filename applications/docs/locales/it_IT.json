@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Copia il link di invito"
       ],
-      "Copy link": [
-        "Copia link"
-      ],
       "Create a copy": [
         "Crea una copia"
       ],
@@ -290,6 +287,9 @@
       ],
       "Export contact group": [
         "Esporta gruppo di contatti"
+      ],
+      "Export selection as .vcf": [
+        "Esporta la selezione come .vcf"
       ],
       "Forgot password?": [
         "Hai dimenticato la password?"
@@ -3009,6 +3009,9 @@
       "Time zone": [
         "Fuso orario"
       ],
+      "Time zone component ignored": [
+        "Componente fuso orario ignorato"
+      ],
       "To-do entry": [
         "Voce da fare"
       ],
@@ -3402,6 +3405,9 @@
       "Malformed start time": [
         "Ora di inizio con un formato errato"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "È consentita solo la scala del calendario gregoriano"
+      ],
       "Recurring event has no occurrences": [
         "L'evento ricorrente non ha occorrenze"
       ],
@@ -3551,6 +3557,9 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Usa la password dell'app invece della tua password normale se:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "La password dell'app è corretta. Non usare la tua password regolare."
       ],
       "Your email account requires an app password to export your data.": [
         "Il tuo account email richiede una password dell'app per esportare i tuoi dati."
@@ -4354,10 +4363,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "È consentito solo ${ MAX_CUSTOM_PASSWORD_LENGTH } carattere",
-        "Sono consentiti solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caratteri"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Solo le persone con il link e la password possono accedere a questo file."
       ],
@@ -4528,9 +4533,6 @@
       "Share via link settings": [
         "Impostazioni per la condivisione via link"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Link condivisibile per ${ boldNameText }"
-      ],
       "Shared by": [
         "Condiviso da"
       ],
@@ -4627,21 +4629,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Questo link è stato creato con una vecchia versione di Drive e non può essere modificato. Eliminare questo link e crearne uno nuovo per modificare le impostazioni."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Questo collegamento verrà disabilitato definitivamente. Nessuno con questo link potrà accedere al tuo file. Per condividere nuovamente il file, avrai bisogno di un nuovo link."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Questo link verrà disabilitato definitivamente. Nessuno con questo link potrà accedere alla tua cartella. Per condividere nuovamente la cartella, avrai bisogno di un nuovo link."
-      ],
       "This message will be presented again later": [
         "Questo messaggio sarà mostrato nuovamente più avanti"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Questo documento pubblico potrebbe non esistere o potresti non avere l'autorizzazione per visualizzarlo. Puoi provare a ricaricare la pagina per vedere se il problema persiste."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Questo eliminerà il link e rimuoverà l'accesso al file o alla cartella per chiunque abbia il link.",
-        "Questo eliminerà i link e rimuoverà l'accesso ai file o alle cartelle per chiunque abbia i link."
       ],
       "This will replace the existing file with the folder": [
         "Questo sostituirà il file esistente con la cartella."
@@ -4936,11 +4928,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      ],
       "Your password was leaked:": [
         "La tua password è stata resa pubblica:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
       ]
     },
     "info": {
@@ -5362,9 +5363,6 @@
       ],
       "Proration": [
         "Calcolo proporzionale"
-      ],
-      "Protect with password": [
-        "Proteggi con password"
       ],
       "Public keys": [
         "Chiavi pubbliche"
@@ -6968,14 +6966,6 @@
         "${ numberOfItems } elemento spostato con successo",
         "${ numberOfItems } elementi spostati con successo"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Eliminazione di ${ numberOfItems } link al tuo elemento non riuscita",
-        "Eliminazione di ${ numberOfItems } link ai tuoi elementi non riuscita"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } link al tuo elemento è stato eliminato",
-        "${ numberOfItems } link ai tuoi elementi sono stati eliminati"
-      ],
       "${ reason } has been disabled": [
         "${ reason } è stato disabilitato"
       ],
@@ -7072,12 +7062,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "L'interruzione della condivisione di questo elemento non è riuscita"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Eliminazione del link a \"${ name }\" non riuscita"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Il link a \"${ name }\" è stato eliminato"
       ],
       "The link to your item failed to be deleted": [
         "Eliminazione del link al tuo elemento non riuscita"
@@ -8360,9 +8344,6 @@
       "Secure link copied": [
         "Link sicuro copiato"
       ],
-      "The link to your file was successfully copied": [
-        "Il link al tuo file è stato copiato correttamente"
-      ],
       "Undo in progress": [
         "Annullamento in corso"
       ],
@@ -8827,9 +8808,6 @@
       "Photos": [
         "Foto"
       ],
-      "Privacy settings": [
-        "Impostazioni privacy"
-      ],
       "Processing...": [
         "Elaborazione..."
       ],
@@ -8887,9 +8865,6 @@
       "Share ${ name }": [
         "Condividi ${ name }"
       ],
-      "Share via link": [
-        "Condividi via link"
-      ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
       ],
@@ -8907,9 +8882,6 @@
       ],
       "Stop sharing": [
         "Interrompi condivisione"
-      ],
-      "Stop sharing with everyone?": [
-        "Smettere di condividere con tutti?"
       ],
       "Stop sharing?": [
         "Vuoi interrompere la condivisione?"

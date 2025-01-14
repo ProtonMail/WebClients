@@ -5077,6 +5077,9 @@
       "Time zone": [
         "Časové pásmo"
       ],
+      "Time zone component ignored": [
+        "Komponent časového pásma je ignorovaný"
+      ],
       "To-do entry": [
         "Položka To-do"
       ],
@@ -5194,6 +5197,11 @@
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Udalosť od ${ timeString }, ${ rruleString }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočakávaná chyba"
       ]
     },
     "Event invitation error": {
@@ -6325,6 +6333,50 @@
         "Nie sú k dispozícii žiadne metódy overovania"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendára nie je podporované"
+      ],
+      "Edited event not supported": [
+        "Upravená udalosť nie je podporovaná"
+      ],
+      "End time out of bounds": [
+        "Čas ukončenia mimo rozsahu"
+      ],
+      "Event validation failed": [
+        "Overenie udalosti zlyhalo"
+      ],
+      "Floating times not supported": [
+        "Plávajúce časy nie sú podporované"
+      ],
+      "Malformed all-day event": [
+        "Porušená štruktúra celodenného podujatia"
+      ],
+      "Malformed end time": [
+        "Chybný čas ukončenia"
+      ],
+      "Malformed recurring event": [
+        "Chybne formulovaná opakujúca sa udalosť"
+      ],
+      "Malformed start time": [
+        "Chybný čas začiatku"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Povolená je len gregoriánska kalendárna sústava"
+      ],
+      "Recurring event has no occurrences": [
+        "Opakujúca sa udalosť nemá žiadne výskyty"
+      ],
+      "Recurring rule not supported": [
+        "Opakujúce sa pravidlo nie je podporované"
+      ],
+      "Start time out of bounds": [
+        "Čas začiatku mimo rozsahu"
+      ],
+      "Time zone not supported": [
+        "Časové pásmo nie je podporované"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } udalosti zašifrované a pridané do kalendára",
@@ -6474,11 +6526,17 @@
       "Use your app password instead of your regular password if:": [
         "Použite heslo aplikácie namiesto bežného hesla, ak:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Vaše heslo pre aplikáciu je správne. Nepoužívajte vaše bežné heslo."
+      ],
       "Your email account requires an app password to export your data.": [
         "Váš emailový účet vyžaduje heslo aplikácie pre export vašich dát."
       ],
       "Your email account requires one to export your data.": [
         "Váš emailový účet toto vyžaduje na export vašich dát."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Vaša emailová adresa a heslo aplikácie sú správne. Nepoužívajte vaše bežné heslo."
       ],
       "Your email address and password are correct.": [
         "Vaša emailová adresa a heslo sú správne."
@@ -7002,6 +7060,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Po uzamknutí budú musieť členovia organizácie odomknúť ${ PASS_APP_NAME } pomocou svojho hesla alebo PIN kódu, atď."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
+      ],
       "Align left": [
         "Zarovnať vľavo"
       ],
@@ -7313,6 +7374,12 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a štítky, ktoré chcete importovať."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvoriť bezpečný cloud pre ${ value } člena",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvorte a spravujte podúčty a priraďte im emailové adresy vo vlastnej doméne."
@@ -8526,6 +8593,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odoslané z bezpečného emailu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr."
+      ],
       "Server is currently down": [
         "Server je momentálne nefunkčný"
       ],
@@ -8660,6 +8730,9 @@
       ],
       "Swiss based": [
         "So sídlom vo Švajčiarsku"
+      ],
+      "Switch to": [
+        "Prepnúť na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -9561,6 +9634,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
       ],
@@ -9581,6 +9657,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Vaša obnovovacia fráza je séria 12 náhodne vygenerovaných slov v určitom poradí."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každých ${ cycle } mesiacov."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každý mesiac."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."

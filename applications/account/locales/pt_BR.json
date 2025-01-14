@@ -3689,6 +3689,9 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Você pode continuar a convidar amigos, mas não poderá ganhar mais créditos"
       ],
+      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
+        "Você pode impor regras de senha para membros da organização utilizar ao gerar uma senha no ${ PASS_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ]
@@ -5035,6 +5038,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Time zone component ignored": [
+        "Componente de fuso horário ignorado"
+      ],
       "To-do entry": [
         "Tarefas"
       ],
@@ -6292,6 +6298,9 @@
       ],
       "Malformed start time": [
         "A hora de início não é válida."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Somente escala de calendário Gregoriano é permitido"
       ],
       "Recurring event has no occurrences": [
         "Evento recorrente sem datas"
@@ -8059,6 +8068,9 @@
       "No label selected": [
         "Nenhuma marcador selecionado"
       ],
+      "No location filters are currently assigned.": [
+        "Nenhum filtro de localização selecionado no momento."
+      ],
       "No logs yet.": [
         "Ainda não há registros."
       ],
@@ -8455,6 +8467,9 @@
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
+      "Setting successfully saved": [
+        "Configuração salva com sucesso"
+      ],
       "Setting up your new address...": [
         "Configurando seu novo endereço..."
       ],
@@ -8472,6 +8487,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } compartilhado atualizado"
+      ],
+      "Shared Server Location Filters": [
+        "Filtros de Localização dos Servidores Compartilhados"
       ],
       "Shared vault deleted": [
         "Cofre compartilhado excluído"
@@ -9444,6 +9462,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
       ],
@@ -9464,6 +9485,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Sua frase de recuperação é uma sequência de 12 palavras geradas aleatoriamente em uma ordem específica."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada mês."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
@@ -15922,6 +15949,9 @@
       "Enter your backup password": [
         "Digite sua senha de backup"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Para que este usuário possa iniciar a sessão, certifique que o usuário existe no seu provedor de identidade."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Para sua segurança, você foi desconectado de todos os seus outros dispositivos ativos. Antes de acessar sua conta, você precisará digitar uma nova senha de backup."
       ],
@@ -16011,6 +16041,9 @@
       ],
       "Single sign-on removed": [
         "Autenticação única removida"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "O usuário ${ name } agora é uma conta com autenticação única (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Isso desconectará o usuário de seus outros dispositivos e ele terá que criar uma senha de backup novamente."
@@ -19436,6 +19469,18 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Se você cancelar esta importação, você não poderá retomá-la. A ${ BRAND_NAME } salvou todo o progresso na sua conta. Deseja cancelar mesmo assim?"
+      ],
+      "Maximum cannot be lower than minimum": [
+        "Máximo não pode ser menor que o mínimo"
+      ],
+      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
+        "Precisa ser entre ${ minimumNumber } e ${ maximumNumber }"
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Precisa ser maior que ou igual a ${ minimumNumber }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Precisa ser menor que ou igual a ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Adicione ao menos um destinatário."

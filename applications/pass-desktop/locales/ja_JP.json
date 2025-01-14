@@ -705,7 +705,7 @@
     },
     "Description": {
       "${ total } other login uses the same password": [
-        "${ total } 他のログインは同じパスワードを使用します"
+        "${ total } 個の他のログインは同じパスワードを使用しています"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA はログインに別のセキュリティ層を追加します。 ${ PASS_APP_NAME } は、2FA コードを保存して自動的に自動入力することで、2FA を簡単にします。"
@@ -808,7 +808,7 @@
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
-        "[Error] アイテムを解析できませんでした"
+        "[エラー] アイテムを解析できませんでした"
       ],
       "A domain ownership must be verified first.": [
         "ドメインの所有権を最初に確認しなければなりません。"
@@ -961,7 +961,7 @@
         "アイテムをごみ箱に移動できませんでした"
       ],
       "Failed to pin item": [
-        "アイテムを固定できませんでした"
+        "アイテムのピン留めに失敗しました"
       ],
       "Failed to remove user's access.": [
         "ユーザーのアクセスを削除できませんでした。"
@@ -988,7 +988,7 @@
         "この保管庫の所有権の移行に失敗しました。"
       ],
       "Failed to unpin item": [
-        "アイテムの固定を解除できませんでした"
+        "アイテムのピン留め解除に失敗しました"
       ],
       "Failed to update catch-all setting.": [
         "キャッチオール設定の更新に失敗しました。"
@@ -1003,7 +1003,7 @@
         "ドメイン名の更新に失敗しました。"
       ],
       "Failed to update monitoring settings": [
-        "監視設定の更新に失敗しました"
+        "モニタリング設定の更新に失敗しました"
       ],
       "Failed to update random prefix generation setting.": [
         "ランダムプレフィックス生成設定の更新に失敗しました。"
@@ -1302,7 +1302,7 @@
         "${ memberCount }人のメンバー"
       ],
       "${ n } item": [
-        "${ n } アイテム"
+        "${ n } 個のアイテム"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } は常にアクセス可能です"
@@ -1332,7 +1332,7 @@
         "${ repliedEmailsCount }件の送信済み"
       ],
       "${ row.breachCount } breach detected": [
-        "${ row.breachCount } 違反が検出されました"
+        "${ row.breachCount } 件の違反が検出されました"
       ],
       "(Empty)": [
         "(空)"
@@ -1452,16 +1452,16 @@
         "表示可能回数"
       ],
       "Can create, edit, delete, and export items in this vault.": [
-        "このフォルダー内のアイテムを作成、編集、削除、エクスポートすることができます。"
+        "この保管庫内のアイテムを作成、編集、削除、エクスポートすることができます。"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "このフォルダーへのアクセス権を付与したり、取り消したりすることができます。また、このフォルダーを削除することもできます。"
+        "この保管庫へのアクセス権を付与したり、取り消したりすることができます。または、削除することもできます。"
       ],
       "Can grant and revoke access to this vault.": [
-        "このフォルダーへのアクセス権を付与したり、取り消したりすることができます。"
+        "この保管庫へのアクセス権を付与したり、取り消したりすることができます。"
       ],
       "Can view items in this vault.": [
-        "このフォルダー内のアイテムを閲覧できます。"
+        "この保管庫内のアイテムを閲覧できます。"
       ],
       "Change your password": [
         "パスワードを変更"
@@ -1527,7 +1527,7 @@
         "Safariブラウザ拡張機能の制限が原因で、データをエクスポートした後、ファイル拡張子\".pgp\"がなくなってしまいます。エクスポートした後は、ファイルを .pgpを含む名前でリネームしてください。(例えば、file.pgpのように)"
       ],
       "Editor": [
-        "エディター"
+        "編集者"
       ],
       "email": [
         "メール"
@@ -1704,7 +1704,7 @@
         "アイテムが復元されました"
       ],
       "Item successfully excluded from monitoring": [
-        "アイテムが監視から正常に除外されました"
+        "アイテムがモニタリングから正常に除外されました"
       ],
       "Item successfully included in monitoring": [
         "アイテムがモニタリングに正常に含まれました"
@@ -1713,10 +1713,10 @@
         "アイテムの移動に成功"
       ],
       "Item successfully pinned": [
-        "アイテムの固定に成功しました"
+        "アイテムが正常にピン留めされました"
       ],
       "Item successfully unpinned": [
-        "アイテムの固定解除に成功しました"
+        "アイテムのピン留めが解除されました"
       ],
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate } の最新の侵害"
@@ -1737,7 +1737,7 @@
         "${ PASS_APP_NAME } を読み込み中"
       ],
       "Logging you out...": [
-        "ユーザーをログアウト中…"
+        "ログアウト中..."
       ],
       "Low Priority": [
         "優先度：低"
@@ -1752,7 +1752,7 @@
         "アカウントモニター"
       ],
       "Monitoring settings successfully updated": [
-        "監視設定が正常に更新されました"
+        "モニタリング設定が正常に更新されました"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME }は単なるパスワードマネージャーではなく、メールエイリアスを通じてあなたのパスワードと個人のメールアドレスを保護します。${ MAIL_APP_NAME }の背後にあるのと同じ技術によって支えられており、あなたのデータはエンドツーエンドで暗号化され、あなたにしかアクセスできません。"
@@ -1848,7 +1848,7 @@
         "PINコードの登録が完了しました。 それを使用して ${ PASS_APP_NAME } のロックを解除します"
       ],
       "Pinning item...": [
-        "アイテムを固定中..."
+        "アイテムをピン留め中..."
       ],
       "Please check your spam folder or try resending the code.": [
         "スパムフォルダを確認するか、コードを再送信してください。"
@@ -1935,7 +1935,7 @@
         "レコード: CNAME"
       ],
       "Record: MX": [
-        "レコード: TXT"
+        "レコード: MX"
       ],
       "Record: TXT": [
         "レコード: TXT"
@@ -2055,7 +2055,7 @@
         "${ PASS_APP_NAME } を使用するには追加パスワードが必要になります。追加パスワードは ${ BRAND_NAME } のパスワードに加えて、さらに追加して必要になるパスワードとして機能します。"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
-        "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
+        "次の ${ result.ignored.length } 個のアイテムをインポート出来ませんでした:"
       ],
       "The secure link has been removed": [
         "セキュアリンクは削除されました"
@@ -2085,7 +2085,7 @@
         "この設定は組織によって強制されています"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "このフォルダーは現在誰とも共有されていません。他の人と共有するために人々を招待してください。"
+        "この保管庫は現在誰とも共有されていません。他の人と共有するために人々を招待してください。"
       ],
       "This version will be added to the history as the newest version.": [
         "このバージョンは最新バージョンとして履歴に追加されます。"
@@ -2109,7 +2109,7 @@
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
       "Unable to copy to clipboard": [
-        "クリップボードにコピーできない"
+        "クリップボードにコピーできませんでした"
       ],
       "Unconfigured": [
         "未構成"
@@ -2133,7 +2133,7 @@
         "生体認証でロックを解除"
       ],
       "Unpinning item...": [
-        "アイテムの固定解除中..."
+        "アイテムのピン留めを解除中..."
       ],
       "Unverified": [
         "未検証"
@@ -2172,7 +2172,7 @@
         "確認コードが送信されました。"
       ],
       "Viewer": [
-        "ビューアー"
+        "閲覧者"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "ローカルストレージとのデータ同期で問題が生じています。${ PASS_SHORT_APP_NAME } の動作に必要なディスクの空き容量があることを確認してください。"
@@ -2309,7 +2309,7 @@
         "${ repliedCount }件の返信"
       ],
       "${ usageCount } login": [
-        "${ usageCount } ログイン数"
+        "${ usageCount } 件のログイン"
       ],
       "${ years } year": [
         "${ years }年"
@@ -3184,7 +3184,7 @@
     },
     "Message": {
       "${ count } item": [
-        "${ count } 件のアイテム"
+        "${ count } 個のアイテム"
       ],
       "You can drag and drop the selected item to another vault": [
         "選択したアイテムを別の保管庫にドラッグアンドドロップできます"
@@ -3467,7 +3467,7 @@
         "ランダムプレフィックス生成が有効になりました"
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
+        "保管庫には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "認証メールが送信されました。メールボックスを認証するには受信トレイを確認してください"
@@ -4027,16 +4027,19 @@
         "アイテムがありません"
       ],
       "No items in trash matching": [
-        "ごみ箱に一致するものがない"
+        "ごみ箱に一致するアイテムはありません"
       ],
       "No items matching": [
-        "一致する項目はありません"
+        "一致するアイテムはありません"
       ],
       "No password manager selected": [
         "パスワードマネージャーが選択されていない"
       ],
       "No results": [
         "結果なし"
+      ],
+      "No secure links matching": [
+        "一致するセキュアリンクがありません"
       ],
       "Offline": [
         "オフライン"

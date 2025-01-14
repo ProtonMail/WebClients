@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Kopiera inbjudningslänk"
       ],
-      "Copy link": [
-        "Kopiera länk"
-      ],
       "Create a copy": [
         "Skapa en kopia"
       ],
@@ -290,6 +287,9 @@
       ],
       "Export contact group": [
         "Exportera kontaktgrupp"
+      ],
+      "Export selection as .vcf": [
+        "Exportera val som .vcf"
       ],
       "Forgot password?": [
         "Glömt lösenord?"
@@ -395,6 +395,9 @@
       ],
       "Merge contacts": [
         "Slå ihop kontakter"
+      ],
+      "More actions": [
+        "Fler åtgärder"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -3009,6 +3012,9 @@
       "Time zone": [
         "Tidszon"
       ],
+      "Time zone component ignored": [
+        "Tidszonskomponent ignorerad"
+      ],
       "To-do entry": [
         "Att-göra-inlägg"
       ],
@@ -3056,6 +3062,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ingen bild vald"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Oväntat fel"
       ]
     },
     "Event invitation error": {
@@ -3375,6 +3386,50 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenderns tidszon stöds inte"
+      ],
+      "Edited event not supported": [
+        "Redigerad händelse stöds inte"
+      ],
+      "End time out of bounds": [
+        "Sluttid utanför gränserna"
+      ],
+      "Event validation failed": [
+        "Validering av händelse misslyckades"
+      ],
+      "Floating times not supported": [
+        "Flytande tider stöds inte"
+      ],
+      "Malformed all-day event": [
+        "Felaktig heldagshändelse"
+      ],
+      "Malformed end time": [
+        "Felaktig sluttid"
+      ],
+      "Malformed recurring event": [
+        "Felaktig återkommande händelse"
+      ],
+      "Malformed start time": [
+        "Felaktig starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Endast den Gregorianska kalenderskalan är tillåten"
+      ],
+      "Recurring event has no occurrences": [
+        "Återkommande händelse har inga förekomster"
+      ],
+      "Recurring rule not supported": [
+        "Återkommande regel stöds inte"
+      ],
+      "Start time out of bounds": [
+        "Starttid utanför gränserna"
+      ],
+      "Time zone not supported": [
+        "Tidszon stöds inte"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } händelse krypterad och tillagd i din kalender",
@@ -3512,11 +3567,17 @@
       "Use your app password instead of your regular password if:": [
         "Använd ditt applösenord istället för ditt vanliga lösenord om:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ditt e-postkonto kräver ett applösenord för att exportera dina data."
       ],
       "Your email account requires one to export your data.": [
         "Ditt e-postkonto kräver ett för att exportera dina data."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Din e-postadress och ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
       ],
       "Your email address and password are correct.": [
         "Din e-postadress och ditt lösenord är korrekta."
@@ -3776,11 +3837,17 @@
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
+      "Actions": [
+        "Åtgärder"
+      ],
       "Address copied to clipboard": [
         "Adress kopierad till urklipp"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
@@ -3905,6 +3972,10 @@
       ],
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Skapa ett säkert moln för ${ value } medlem",
+        "Skapa ett säkert moln för ${ value } medlemmar"
       ],
       "Create in": [
         "Skapa i"
@@ -4159,6 +4230,9 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "Invite": [
+        "Bjud in"
+      ],
       "Invite link copied": [
         "Inbjudningslänk kopierad"
       ],
@@ -4300,10 +4374,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtet",
-        "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtna"
       ],
       "Only the people with the link and the password can access this file.": [
         "Endast personer med länken och lösenordet kan komma åt denna fil."
@@ -4451,6 +4521,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
@@ -4472,8 +4545,11 @@
       "Share via link settings": [
         "Instllningar för delning via länk"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Delningsbar länk för ${ boldNameText }"
+      "Shared by": [
+        "Delat av"
+      ],
+      "Shared on": [
+        "Delat den"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signatur kan inte valideras på grund av nätverksfel, försök igen senare."
@@ -4504,6 +4580,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Byt till"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
@@ -4562,21 +4641,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Denna länk skapades med en gammal version av Drive och kan inte ändras. Ta bort denna länk och skapa en ny för att ändra inställningarna."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Denna länk kommer att inaktiveras permanent. Ingen med denna länk kommer att kunna komma åt din fil. För att dela filen igen behöver du en ny länk."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Denna länk kommer att inaktiveras permanent. Ingen med denna länk kommer att kunna komma åt din mapp. För att dela mappen igen behöver du en ny länk."
-      ],
       "This message will be presented again later": [
         "Detta meddelande kommer att presenteras igen senare"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Detta offentliga dokument kanske inte finns eller så har du inte behörighet att visa det. Du kan prova ladda om sidan för att se om problemet kvarstår."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Detta kommer att ta bort länken och ta bort åtkomst till din fil eller mapp för alla med länken.",
-        "Detta kommer att ta bort länkarna och ta bort åtkomst till dina filer eller mappar för alla med länkarna."
       ],
       "This will replace the existing file with the folder": [
         "Detta kommer ersätta den befintliga filen med mappen"
@@ -4871,11 +4940,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dit nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ]
     },
     "info": {
@@ -5300,9 +5378,6 @@
       ],
       "Proration": [
         "Proportionell beräkning"
-      ],
-      "Protect with password": [
-        "Skydda med lösenord"
       ],
       "Public keys": [
         "Offentliga nycklar"
@@ -6915,14 +6990,6 @@
         "${ numberOfItems } objekt har flyttats",
         "${ numberOfItems } objekt har flyttats"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } länk till ditt objekt kunde inte tas bort",
-        "${ numberOfItems } länkar till dina objekt kunde inte tas bort"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } länk till ditt objekt togs bort",
-        "${ numberOfItems } länkar till dina objekt togs bort"
-      ],
       "${ reason } has been disabled": [
         "${ reason } har inaktiverats"
       ],
@@ -7019,12 +7086,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Länken till “${ name }“ misslyckades att tas bort"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Länken till ”${ name }” togs bort"
       ],
       "The link to your item failed to be deleted": [
         "Länken till ditt objekt misslyckades att tas bort"
@@ -8313,9 +8374,6 @@
       "Secure link copied": [
         "Säker länk kopierad"
       ],
-      "The link to your file was successfully copied": [
-        "Länken till din fil kopierades"
-      ],
       "Undo in progress": [
         "Ångra pågår"
       ],
@@ -8780,9 +8838,6 @@
       "Photos": [
         "Foton"
       ],
-      "Privacy settings": [
-        "Integritetsinställningar"
-      ],
       "Processing...": [
         "Bearbetar..."
       ],
@@ -8840,9 +8895,6 @@
       "Share ${ name }": [
         "Dela ${ name }"
       ],
-      "Share via link": [
-        "Dela via länk"
-      ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"
       ],
@@ -8860,9 +8912,6 @@
       ],
       "Stop sharing": [
         "Sluta dela"
-      ],
-      "Stop sharing with everyone?": [
-        "Sluta dela med alla?"
       ],
       "Stop sharing?": [
         "Sluta dela?"

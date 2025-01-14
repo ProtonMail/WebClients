@@ -305,6 +305,9 @@
       "Export contact group": [
         "Exportera kontaktgrupp"
       ],
+      "Export selection as .vcf": [
+        "Exportera val som .vcf"
+      ],
       "Forgot password?": [
         "Glömt lösenord?"
       ],
@@ -445,6 +448,9 @@
       ],
       "Merge contacts": [
         "Slå ihop kontakter"
+      ],
+      "More actions": [
+        "Fler åtgärder"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -3523,6 +3529,9 @@
       "Time zone": [
         "Tidszon"
       ],
+      "Time zone component ignored": [
+        "Tidszonskomponent ignorerad"
+      ],
       "To-do entry": [
         "Att-göra-inlägg"
       ],
@@ -3609,6 +3618,11 @@
     "Event info. Organizer name": {
       "You": [
         "Du"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Oväntat fel"
       ]
     },
     "Event invitation error": {
@@ -3995,6 +4009,50 @@
         "SMS"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenderns tidszon stöds inte"
+      ],
+      "Edited event not supported": [
+        "Redigerad händelse stöds inte"
+      ],
+      "End time out of bounds": [
+        "Sluttid utanför gränserna"
+      ],
+      "Event validation failed": [
+        "Validering av händelse misslyckades"
+      ],
+      "Floating times not supported": [
+        "Flytande tider stöds inte"
+      ],
+      "Malformed all-day event": [
+        "Felaktig heldagshändelse"
+      ],
+      "Malformed end time": [
+        "Felaktig sluttid"
+      ],
+      "Malformed recurring event": [
+        "Felaktig återkommande händelse"
+      ],
+      "Malformed start time": [
+        "Felaktig starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Endast den Gregorianska kalenderskalan är tillåten"
+      ],
+      "Recurring event has no occurrences": [
+        "Återkommande händelse har inga förekomster"
+      ],
+      "Recurring rule not supported": [
+        "Återkommande regel stöds inte"
+      ],
+      "Start time out of bounds": [
+        "Starttid utanför gränserna"
+      ],
+      "Time zone not supported": [
+        "Tidszon stöds inte"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } händelse krypterad och tillagd i din kalender",
@@ -4132,11 +4190,17 @@
       "Use your app password instead of your regular password if:": [
         "Använd ditt applösenord istället för ditt vanliga lösenord om:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ditt e-postkonto kräver ett applösenord för att exportera dina data."
       ],
       "Your email account requires one to export your data.": [
         "Ditt e-postkonto kräver ett för att exportera dina data."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Din e-postadress och ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
       ],
       "Your email address and password are correct.": [
         "Din e-postadress och ditt lösenord är korrekta."
@@ -4395,6 +4459,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
         "Alla (${ totalFoldersCount } mappar)"
@@ -4524,6 +4591,10 @@
       ],
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Skapa ett säkert moln för ${ value } medlem",
+        "Skapa ett säkert moln för ${ value } medlemmar"
       ],
       "Create in": [
         "Skapa i"
@@ -4945,6 +5016,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
@@ -4977,6 +5051,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Byt till"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
@@ -5328,11 +5405,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dit nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszon verkar ha ändrats till ${ timezone }. Vill du uppdatera din tidszons preferens?"

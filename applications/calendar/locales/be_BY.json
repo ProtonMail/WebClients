@@ -311,6 +311,9 @@
       "Export contact group": [
         "Экспартаваць групу кантактаў"
       ],
+      "Export selection as .vcf": [
+        "Экспартаванне вылучэння ў фармат .vcf"
+      ],
       "Forgot password?": [
         "Забылі пароль?"
       ],
@@ -451,6 +454,9 @@
       ],
       "Merge contacts": [
         "Аб'яднаць кантакты"
+      ],
+      "More actions": [
+        "Больш дзеянняў"
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
@@ -3581,6 +3587,9 @@
       "Time zone": [
         "Часавы пояс"
       ],
+      "Time zone component ignored": [
+        "Кампанент часавага пояса праігнараваны"
+      ],
       "To-do entry": [
         "Запіс спіса задач"
       ],
@@ -3671,6 +3680,11 @@
     "Event info. Organizer name": {
       "You": [
         "Вы"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Нечаканая памылка"
       ]
     },
     "Event invitation error": {
@@ -4065,6 +4079,50 @@
         "Няма даступных спосабаў праверкі"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часавы пояс календара не падтрымліваецца"
+      ],
+      "Edited event not supported": [
+        "Адрэдагаваная падзея не падтрымліваецца"
+      ],
+      "End time out of bounds": [
+        "Час завяршэння па-за межамі дыяпазону"
+      ],
+      "Event validation failed": [
+        "Не ўдалося праверыць падзею"
+      ],
+      "Floating times not supported": [
+        "Плаваючы час не падтрымліваецца"
+      ],
+      "Malformed all-day event": [
+        "Няправільная падзея на ўвесь дзень"
+      ],
+      "Malformed end time": [
+        "Няправільны час завяршэння"
+      ],
+      "Malformed recurring event": [
+        "Няправільная перыядычная падзея"
+      ],
+      "Malformed start time": [
+        "Няправільны час пачатку"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Дазволена толькі шкала грыгарыянскага календара"
+      ],
+      "Recurring event has no occurrences": [
+        "Перыядычная падзея не мае паўтарэнняў"
+      ],
+      "Recurring rule not supported": [
+        "Правіла паўтарэння не падтрымліваецца"
+      ],
+      "Start time out of bounds": [
+        "Час пачатку па-за межамі дыяпазону"
+      ],
+      "Time zone not supported": [
+        "Часавы пояс не падтрымліваецца"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } падзея зашыфравана і дададзена ў ваш каляндар",
@@ -4214,11 +4272,17 @@
       "Use your app password instead of your regular password if:": [
         "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ваш пароль праграмы з'яўляецца правільным. Не выкарыстоўвайце свой звычайны пароль."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе пароль праграмы для экспартавання вашых даных."
       ],
       "Your email account requires one to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе яго для экспартавання даных."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. Не выкарыстоўвайце свой звычайны пароль."
       ],
       "Your email address and password are correct.": [
         "Вашы адрас электроннай пошты і пароль правільныя."
@@ -4510,6 +4574,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Уся (${ totalFoldersCount } папка)",
         "Усе (${ totalFoldersCount } папкі)",
@@ -4647,6 +4714,12 @@
       ],
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Стварыць бяспечнае воблака для ${ value } удзельніка",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
       ],
       "Create in": [
         "Стварыць у"
@@ -5080,6 +5153,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Плацяжы SEPA у дадзены момант недаступныя. Паспрабуйце яшчэ раз пазней."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -5112,6 +5188,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Пераключыцца на"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -5467,11 +5546,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы(-аў)."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Падобна, што ваш часавы пояс змяніўся на ${ timezone }. Вы сапраўды хочаце абнавіць налады вашага часавога пояса?"
@@ -6223,16 +6311,16 @@
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папкі) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } меткі) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як"
       ]
     },
     "mail_signup_2024: Info": {
@@ -8045,7 +8133,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } пазначыў гэты ключ як скампраментаваны. Гэты ключ нельга выкарыстоўваць для шыфравання і праверкі подпісу."
+        "${ emailAddress } пазначыў гэты ключ як скампраметаваны. Гэты ключ нельга выкарыстоўваць ні для шыфравання, ні для праверкі подпісу."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."

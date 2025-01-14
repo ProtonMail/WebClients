@@ -1130,8 +1130,17 @@
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "制限を解除するには、有料プランにアップグレードしてください。"
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "制限を解除するには、 ${ mailLink } にアクセスして有料プランにアップグレードしてください。"
+      ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "${ termsLink } に違反する複数の無料アカウントの作成が検出されました。"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "私たちには、複数のメールアドレスを必要とするあなたのようなユーザーのために特別に設計されたプランがあります。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"

@@ -1103,6 +1103,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "若您认为我们产生了一个问题，请联系 ${ contactLink }。"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
@@ -1126,6 +1129,18 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "要移除这些限制，您可以升级到付费方案。"
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "要取消限制，您可以访问 ${ mailLink } 并升级到付费计划。"
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "我们检测到您创建了多个免费账户，这违反了我们的 ${ termsLink } 。"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "我们有专门为您这样需要多个电子邮件地址的用户所设计的计划。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
@@ -1209,6 +1224,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
+      ],
       "${ n } calendar": [
         "${ n } 份日历"
       ],
@@ -1239,8 +1257,14 @@
       "${ n } message per day": [
         "每天可发 ${ n } 封邮件"
       ],
+      "${ options }-day file version history": [
+        "${ options } 天文件版本历史记录"
+      ],
       "${ size } attachment size": [
         "附件可达 ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "每位用户 ${ size } 安全存储空间"
       ],
       "${ size } storage": [
         "${ size } 存储空间"
@@ -1254,11 +1278,23 @@
       "10 more premium features": [
         "新增 10 项高级功能"
       ],
+      "10-year file version history": [
+        "10 年文件版本历史"
+      ],
       "15 GB storage": [
         "15 GB 存储空间"
       ],
       "Advanced account protection": [
         "高级账户保护"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "所有 ${ BRAND_NAME } 产品和功能"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "所有基本 ${ BRAND_NAME } 服务 ( ${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } )"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "一次轻松订阅，享受所有高级 ${ BRAND_NAME } 服务"
       ],
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和废件箱"
@@ -1281,11 +1317,17 @@
       "Catch-all": [
         "通配邮箱"
       ],
+      "Collaborate and share large files": [
+        "协作和共享大型文件"
+      ],
       "Contact groups": [
         "联系人群组"
       ],
       "Contact groups management": [
         "联系人群组管理"
+      ],
+      "Custom and secure business email": [
+        "定制和安全的商务电子邮件"
       ],
       "Custom email domains": [
         "自有域名"
@@ -1317,6 +1359,12 @@
       "HTML signatures": [
         "HTML 落款"
       ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Password health": [
+        "密码安全"
+      ],
       "Password-protected Emails": [
         "邮件密码保护"
       ],
@@ -1347,6 +1395,9 @@
       "Send & receive invitations": [
         "发送和接收邀请"
       ],
+      "Share files with no size limit": [
+        "共享文件无大小限制"
+      ],
       "SMTP submission": [
         "SMTP 投递邮件"
       ],
@@ -1355,6 +1406,9 @@
       ],
       "Support for up to 2 users": [
         "最多支持 2 位用户"
+      ],
+      "Sync and backup all your files across devices": [
+        "跨设备同步并备份所有文件"
       ],
       "Unlimited filters": [
         "筛选规则数量不限"
@@ -1390,6 +1444,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：使用加密云存储保护您的文件。包括自动同步、加密文件共享等功能。"
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名等高级功能。"
       ],
@@ -1426,6 +1483,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "与同事、亲友轻松分享日程安排"
       ],
+      "Email everyone in a group with a single email address": [
+        "使用单个电子邮件地址向群组中的每个人发送电子邮件"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
       ],
@@ -1452,6 +1512,9 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "查看参会者的空闲时间，节省会议安排时间"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "创建任意数量的联系人群组（每个群组最多可容纳 100 位联系人），便于向多人群发邮件"

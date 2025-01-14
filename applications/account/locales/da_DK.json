@@ -5054,6 +5054,11 @@
         "Begivenhed fra ${ timeString }, ${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Uventet fejl"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
@@ -5947,6 +5952,12 @@
       "Checkout": [
         "Betaling"
       ],
+      "City": [
+        "By"
+      ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Opret din konto"
       ],
@@ -6110,6 +6121,26 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
+      ]
+    },
+    "ICS event error": {
+      "End time out of bounds": [
+        "Sluttid uden for grænserne"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagsbegivenhed"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet tilbagevendende begivenhed"
+      ],
+      "Malformed start time": [
+        "Misdannet starttid"
+      ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
       ]
     },
     "Import calendar": {
@@ -8253,6 +8284,9 @@
       "Swiss based": [
         "Baseret i Schweiz"
       ],
+      "Switch to": [
+        "Skift til"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -10254,6 +10288,9 @@
       "Notifications": [
         "Notifikationer"
       ],
+      "Numbers": [
+        "Tal"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-adgangskode"
       ],
@@ -10454,6 +10491,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special characters": [
+        "Specielle tegn"
       ],
       "Starred": [
         "Stjernemarkeret"
@@ -11911,7 +11951,7 @@
         "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
-        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
+        "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "Tailored to your needs": [
         "Skræddersyet til dine behov"
@@ -14953,11 +14993,23 @@
       "Advanced sharing security": [
         "Avanceret delingssikkerhed"
       ],
+      "Apps for all devices": [
+        "Apps til alle enheder"
+      ],
       "Based in Switzerland, GDPR compliant": [
         "Baseret i Schweiz, GDPR-kompatibelt"
       ],
+      "Built-in encryption": [
+        "Indbygget kryptering"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Kalender, adgangskodeadministrator, fillagring og VPN inkluderet"
+      ],
       "Email aliases": [
         "E-mail-aliasser"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "E-mail, kalender, adgangskodeadministrator og VPN inkluderet"
       ],
       "End-to-end encryption": [
         "End-to-end kryptering"
@@ -14976,6 +15028,9 @@
       ],
       "The only business solution that is:": [
         "Den eneste erhvervsløsning, der findes:"
+      ],
+      "The only cloud storage with:": [
+        "Den eneste skylagring med:"
       ],
       "Works on all devices": [
         "Virker på alle enheder"
@@ -15200,6 +15255,9 @@
       ],
       "Confirmation code": [
         "Bekræftelseskode"
+      ],
+      "Contact administrator": [
+        "Kontakt administrator"
       ],
       "Delete ${ n } user": [
         "Slet ${ n } bruger",

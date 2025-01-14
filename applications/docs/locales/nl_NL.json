@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Uitnodigingslink kopiëren"
       ],
-      "Copy link": [
-        "Link kopiëren"
-      ],
       "Create a copy": [
         "Kopie maken"
       ],
@@ -290,6 +287,9 @@
       ],
       "Export contact group": [
         "Exporteer contactgroep"
+      ],
+      "Export selection as .vcf": [
+        "Exporteer selectie als .vcf"
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
@@ -3009,6 +3009,9 @@
       "Time zone": [
         "Tijdzone"
       ],
+      "Time zone component ignored": [
+        "Tijdzone component genegeerd"
+      ],
       "To-do entry": [
         "To-do item"
       ],
@@ -3402,6 +3405,9 @@
       "Malformed start time": [
         "Misvormde begintijd"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Alleen de Gregoriaanse agendaschaal is toegestaan"
+      ],
       "Recurring event has no occurrences": [
         "Terugkerende afspraak heeft geen voorvallen"
       ],
@@ -3552,11 +3558,17 @@
       "Use your app password instead of your regular password if:": [
         "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik uw gebruikelijke wachtwoord niet."
+      ],
       "Your email account requires an app password to export your data.": [
         "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
       ],
       "Your email account requires one to export your data.": [
         "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik niet uw gebruikelijke wachtwoord."
       ],
       "Your email address and password are correct.": [
         "Uw e-mailadres en wachtwoord zijn juist."
@@ -4351,10 +4363,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } teken toegelaten",
-        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
       ],
@@ -4525,9 +4533,6 @@
       "Share via link settings": [
         "Deel via linkinstellingen"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Deelbare koppeling voor ${ boldNameText }"
-      ],
       "Shared by": [
         "Gedeeld door"
       ],
@@ -4624,21 +4629,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Deze koppeling is gemaakt met een oude versie van Drive en kan niet worden aangepast. Verwijder deze link en creeër een nieuwe om de instellingen te wijzigen."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw bestand. Om het bestand opnieuw in te stellen heeft u een nieuwe link nodig."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw map. Om de map opnieuw in te delen heeft u een nieuwe link nodig."
-      ],
       "This message will be presented again later": [
         "Dit bericht zal later opnieuw worden gepresenteerd"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Dit openbare document bestaat mogelijk niet of u hebt geen toestemming om het te bekijken. U kunt de pagina proberen te herladen om te zien of het probleem zich blijft voordoen."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
-        "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
       ],
       "This will replace the existing file with the folder": [
         "Dit zal het bestaande bestand vervangen door de map"
@@ -4933,11 +4928,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ]
     },
     "info": {
@@ -5356,9 +5360,6 @@
       ],
       "Proration": [
         "Verrekening"
-      ],
-      "Protect with password": [
-        "Met wachtwoord beschermen"
       ],
       "Public keys": [
         "Openbare sleutels"
@@ -6911,14 +6912,6 @@
         "${ numberOfItems } item succesvol verplaatst",
         "${ numberOfItems } items succesvol verplaatst"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } link naar uw item kon niet worden verwijderd",
-        "${ numberOfItems } links naar uw items konden niet worden verwijderd"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } link naar uw item werd verwijderd",
-        "${ numberOfItems } links naar uw items werden verwijderd"
-      ],
       "${ reason } has been disabled": [
         "${ reason } is uitgezet"
       ],
@@ -7015,12 +7008,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "De link naar \"${ name }\" kon niet worden verwijderd"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "De link naar \"${ name }\" werd verwijderd"
       ],
       "The link to your item failed to be deleted": [
         "De link naar uw item kon niet worden verwijderd"
@@ -8303,9 +8290,6 @@
       "Secure link copied": [
         "Veilige link gekopieerd"
       ],
-      "The link to your file was successfully copied": [
-        "De link naar uw bestand is gekopieerd."
-      ],
       "Undo in progress": [
         "Bezig met ongedaan maken"
       ],
@@ -8770,9 +8754,6 @@
       "Photos": [
         "Foto's"
       ],
-      "Privacy settings": [
-        "Privacyinstellingen"
-      ],
       "Processing...": [
         "Wordt verwerkt..."
       ],
@@ -8830,9 +8811,6 @@
       "Share ${ name }": [
         "Deel ${ name }"
       ],
-      "Share via link": [
-        "Deel via link"
-      ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
@@ -8850,9 +8828,6 @@
       ],
       "Stop sharing": [
         "Delen stoppen"
-      ],
-      "Stop sharing with everyone?": [
-        "Stop het delen met iedereen?"
       ],
       "Stop sharing?": [
         "Delen stoppen?"

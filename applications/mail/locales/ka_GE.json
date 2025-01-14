@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
+      "About hide-my-email aliases": [
+        "hide-my-email-ის ფსევდონიმების შესახებ"
+      ],
       "Activate recovery": [
         "აღდგენის აქტივაცია"
       ],
@@ -480,6 +483,9 @@
       "Export contact group": [
         "კონტაქტების ჯგუფის გატანა"
       ],
+      "Export selection as .vcf": [
+        "მონიშნულის გატანა .vcf ფაილში"
+      ],
       "External encryption": [
         "გარე შიფრაცია"
       ],
@@ -753,6 +759,9 @@
       ],
       "More": [
         "მეტი"
+      ],
+      "More actions": [
+        "მეტი ქმედება"
       ],
       "More details about ${ ariaLabelTitle }": [
         "მეტი ინფორმაცია ${ ariaLabelTitle }-ის შესახებ"
@@ -3719,6 +3728,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } ახალიშეტყობინება",
+        "${ notificationsToShow.length } ახალიშეტყობინება"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "გამომგზავნელი: ${ sender } - ${ Subject }"
       ]
@@ -4622,6 +4635,9 @@
       "Time zone": [
         "დროის სარტყელი"
       ],
+      "Time zone component ignored": [
+        "დროის სარტყლის კომპონენტი გამოტოვებულია"
+      ],
       "To-do entry": [
         "გეგმის ელემენტი"
       ],
@@ -4686,6 +4702,11 @@
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "${ email }-თვის მოსაწვევის გაგზავნა შეუძლებელია. ${ errorMessage }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "გაუთვალისწინებელი შეცდომა"
       ]
     },
     "Event invitation error": {
@@ -5364,6 +5385,50 @@
         "შემოწმების არცერთი მეთოდი წვდომადი არაა"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "კალენდრის დროის სარტყელი მხარდაუჭერელია"
+      ],
+      "Edited event not supported": [
+        "ჩასწორებული მოვლენა მხარდაჭერილი არაა"
+      ],
+      "End time out of bounds": [
+        "დასრულების დრო საზღვრებს მიღმაა"
+      ],
+      "Event validation failed": [
+        "მოვლენის შემოწმების შეცდომა"
+      ],
+      "Floating times not supported": [
+        "მცოცავი გრაფიკი მხარდაჭერილი არაა"
+      ],
+      "Malformed all-day event": [
+        "არასწორი მთელ-დღიანი მოვლენა"
+      ],
+      "Malformed end time": [
+        "არასწორი დასასრულის დრო"
+      ],
+      "Malformed recurring event": [
+        "არასწორი გამეორებადი მოვლენა"
+      ],
+      "Malformed start time": [
+        "არასწორი საწყისი დრო"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "დაშვებულია, მხოლოდ, გრეგორიანული კალენდარი"
+      ],
+      "Recurring event has no occurrences": [
+        "განმეორებადი მოვლენა ჯერ არ მომხდარა"
+      ],
+      "Recurring rule not supported": [
+        "გამეორების წესი მხარდაუჭერელია"
+      ],
+      "Start time out of bounds": [
+        "საწყისი დრო საზღვრებს მიღმაა"
+      ],
+      "Time zone not supported": [
+        "მხარდაუჭერელი დროის სარტყელი"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } მონაწილე",
@@ -5510,11 +5575,17 @@
       "Use your app password instead of your regular password if:": [
         "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
       "Your email account requires an app password to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
       "Your email account requires one to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
       ],
       "Your email address and password are correct.": [
         "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
@@ -5894,6 +5965,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
+      ],
       "Align left": [
         "მარცხნივ სწორება"
       ],
@@ -6116,6 +6190,10 @@
       ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
       ],
       "Create in": [
         "რაში შევქმნა"
@@ -6459,6 +6537,9 @@
       "JCB logo": [
         "JCB ლოგო"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "შეუერთდით ${ PROTON_SENTINEL_NAME } პროგრამას ჩვენი უმაღლესი დონის ანგარიშის უსაფრთხოებისა და მხარდაჭერისთვის."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
       ],
@@ -6791,6 +6872,9 @@
       "Proofread text": [
         "ტექსტის კორექცია"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "დაიცავით თქვენი ელფოსტა გაჟონვისგან და სპამერებისგან hide-my-email-ის ფსევდონიმებით."
+      ],
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
@@ -6897,6 +6981,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "გაგზავნილია <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> დაცული ელფოსტით."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
@@ -6968,6 +7055,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "გადართვა"
       ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
@@ -7085,6 +7175,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "ეს შეტყობინება ავტომატურადაა შექმნილი როგორც პასუხი წინა შეტყობინებაზე."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "ეს შეტყობინება ${ PASS_APP_NAME } ფსევდონიმიდანაა."
+      ],
       "This message is from a mailing list.": [
         "ეს შეტყობინება საფოსტო სიიდანაა."
       ],
@@ -7166,6 +7259,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "თქვენი მონაცემების აღსადგენად გჭირდებათ, თავიდან გაააქტიუროთ ანგარიშის ის გასაღები, რომელიც მონაცემების შექმნის დროს იქნა გამოყენებული. ეს ასევე მოითხოვს, რომ თქვენ ამ გასაღების პაროლი გახსოვდეთ."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "შეზღუდვების მოსაცილებლად, შეგიძლიათ, ტარიფი ფასიანზე ასწიოთ."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "იმისათვის, რომ მოიხსნად შეზღუდვები, ეწვიეთ ბმულს ${ mailLink } და გადადით ფასიან ტარიფზე."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "დაგზავნიის სიის გამოწერის გასაუქმებლად ${ boldFrom }-სგან გაიგზავნება შეტყობინება დეტალებით, რომლებიც დაგზავნის ავტორმა მოითხოვა:"
@@ -7607,6 +7706,12 @@
       ],
       "Your private writing assistant": [
         "თქვენი პირადი წერის დამხმარე"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
       ]
     },
     "info": {
@@ -8325,6 +8430,9 @@
       ],
       "Remember my choice": [
         "დაიმახსოვრე ჩემი არჩევანი"
+      ],
+      "Remove metadata": [
+        "მეტამონაცემების წაშლა"
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
@@ -9684,14 +9792,6 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceMailPlus } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -9704,6 +9804,14 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceMailPlus } თვით. გაუქმება ყოველთვის შეგიძლიათ."
       ]
     },
     "new_plans: tooltip": {
@@ -10073,6 +10181,12 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } სკამერების ელფოსტებს თქვენს საფოსტო ყუთამდე მოსვლაში უშლის ხელს."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME }-ი App Store-ში"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME }-ი Play Store-ში"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } ნიშნავს, რომ ინტერნეტში ვერავინ აგედევნებათ."
       ],
@@ -10085,6 +10199,9 @@
       "Advanced encryption": [
         "დამატებითი დაშიფვრა"
       ],
+      "Anytime, anywhere access": [
+        "წვდომა ნებისმიერ დროს და ადგილიდან"
+      ],
       "Auto-delete spam and trash": [
         "სპამისა და ნაგვის ყუთის ავტოწაშლა"
       ],
@@ -10094,8 +10211,14 @@
       "Dark Web Monitoring": [
         "Dark Web-ის მონიტორინგი"
       ],
+      "Distraction-free emailing": [
+        "ელფოსტასთან ხელის შეშლის გარეშე მუშაობა"
+      ],
       "Download the desktop app": [
         "გადმოწერეთ კომპიუტერის აპები"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "ისიამოვნეთ სწრაფი ელფოსტით პირდაპირ სამუშაო მაგიდიდან."
       ],
       "Get notified if your password is compromised.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი გაჟონავს."

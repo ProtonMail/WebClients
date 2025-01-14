@@ -227,9 +227,6 @@
       "Create free account": [
         "Creare cont gratuit"
       ],
-      "Create link": [
-        "Creare legătură web"
-      ],
       "Create new folder": [
         "Creare folder"
       ],
@@ -312,6 +309,12 @@
       "Download logs": [
         "Jurnal descărcare"
       ],
+      "Download without scanning": [
+        "Descărcare fără scanare"
+      ],
+      "Download without scanning (${ count })": [
+        "Descărcare fără scanare (${ count })"
+      ],
       "Drive Locked": [
         "Unitate blocată"
       ],
@@ -356,6 +359,9 @@
       ],
       "Export contact group": [
         "Exportare grup de contacte"
+      ],
+      "Export selection as .vcf": [
+        "Exportare selecție ca .vcf"
       ],
       "Fit to window": [
         "Potrivire la fereastră"
@@ -456,6 +462,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "Learn more.": [
+        "Aflați mai multe."
+      ],
       "Leave": [
         "Lăsați"
       ],
@@ -503,6 +512,9 @@
       ],
       "Minimize transfers": [
         "Micșorare transferuri"
+      ],
+      "More actions": [
+        "Alte acțiuni"
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
@@ -632,6 +644,9 @@
       ],
       "Replace file": [
         "înlocuiți fişierul"
+      ],
+      "Report": [
+        "Raportare"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -815,9 +830,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
-      ],
-      "Understood": [
-        "Am înțeles"
       ],
       "Undo": [
         "Anulare"
@@ -1334,7 +1346,7 @@
         "Reactivare abonament"
       ],
       "Your subscription is ending soon": [
-        "Abonamentul va expira curând"
+        "Abonamentul va expira în curând"
       ]
     },
     "Cancellation upsell": {
@@ -3237,6 +3249,9 @@
       "Time zone": [
         "Fus orar"
       ],
+      "Time zone component ignored": [
+        "Componenta fus orar este ignorată."
+      ],
       "To-do entry": [
         "Intrare de făcut"
       ],
@@ -3299,6 +3314,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Imagine neselectată"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Eroare neașteptată."
       ]
     },
     "Event invitation error": {
@@ -3634,6 +3654,50 @@
         "Nu sunt metode de verificare disponibile"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
+      ],
+      "Edited event not supported": [
+        "Evenimentul editat nu este suportat."
+      ],
+      "End time out of bounds": [
+        "Ora de sfârșit e în afara limitelor."
+      ],
+      "Event validation failed": [
+        "Validare eveniment eșuată."
+      ],
+      "Floating times not supported": [
+        "Orele flotante nu sunt suportate."
+      ],
+      "Malformed all-day event": [
+        "Evenimentul pentru întreaga zi este în format eronat."
+      ],
+      "Malformed end time": [
+        "Ora de sfârșit incorectă."
+      ],
+      "Malformed recurring event": [
+        "Format eronat eveniment repetitiv."
+      ],
+      "Malformed start time": [
+        "Ora de început eronată."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Este permisă doar scala calendarului Gregorian."
+      ],
+      "Recurring event has no occurrences": [
+        "Evenimentul recurent nu are nicio apariție."
+      ],
+      "Recurring rule not supported": [
+        "Regula recurentă nesuportată."
+      ],
+      "Start time out of bounds": [
+        "Ora de început e în afara limitelor."
+      ],
+      "Time zone not supported": [
+        "Fus orar nesuportat."
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
@@ -3777,11 +3841,17 @@
       "Use your app password instead of your regular password if:": [
         "Folosiți parola aplicației în locul parolei obișnuite dacă:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Parola aplicației este corectă. Nu folosiți parola obișnuită."
+      ],
       "Your email account requires an app password to export your data.": [
         "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
       ],
       "Your email account requires one to export your data.": [
         "Contul de e-mail necesită o parolă pentru a exporta datele."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adresa de e-mail și parola aplicației sunt corecte. Nu folosiți parola obișnuită."
       ],
       "Your email address and password are correct.": [
         "Adresa de e-mail și parola sunt corecte."
@@ -4034,6 +4104,11 @@
         "S-au găsit ${ providerFoldersNumLocalized } etichete în Gmail",
         "S-au găsit ${ providerFoldersNumLocalized } de etichete în Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "Scanări eșuate: ${ scanErrorCount }",
+        "Scanări eșuate: ${ scanErrorCount }",
+        "Scanări eșuate: ${ scanErrorCount }"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
@@ -4121,6 +4196,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (Un folder)",
         "Toate (${ totalFoldersCount } foldere)",
@@ -4165,6 +4243,9 @@
       ],
       "And access it from anywhere": [
         "Și îl accesați de oriunde"
+      ],
+      "Anonymous": [
+        "Anonim"
       ],
       "Anyone with this link can access your file.": [
         "Oricine are această legătură web vă poate accesa fișierul."
@@ -4297,6 +4378,11 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Creați un cont cloud securizat pentru ${ value } membru",
+        "Creați un cont cloud securizat pentru ${ value } membri",
+        "Creați un cont cloud securizat pentru ${ value } de membri"
+      ],
       "Create in": [
         "Creare în"
       ],
@@ -4395,9 +4481,6 @@
       "Downloading": [
         "Se descarcă"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Descărcarea fișierelor ${ DOCS_APP_NAME } din ${ DRIVE_APP_NAME } nu este acceptată în prezent – ​​acestea nu vor fi incluse în descărcare."
-      ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
       ],
@@ -4430,6 +4513,9 @@
       ],
       "Enabling drive search": [
         "Se activează căutarea în unitate."
+      ],
+      "Encrypted": [
+        "Criptat"
       ],
       "Encrypted search is here": [
         "Căutarea criptată este aici"
@@ -4788,11 +4874,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Este permis doar un caracter.",
-        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere.",
-        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } de caractere."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Numai persoanele care au legătura și parola pot accesa acest fișier."
       ],
@@ -4846,9 +4927,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Introduceți parola pentru a decripta și vizualiza conținutul."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Exportați-le direct din aplicația ${ DOCS_APP_NAME } dacă doriți să le descărcați."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Rețineți că adresele atribuite acestor grupuri NU vor fi șterse."
@@ -5019,6 +5097,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
@@ -5036,9 +5117,6 @@
       ],
       "Share via link settings": [
         "Setări partajare prin legătură web"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "legătură web partajabilă pentru ${ boldNameText }"
       ],
       "Shared link not found": [
         "legătură web partajată negăsită"
@@ -5088,17 +5166,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Comutare la"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Semnătura digitală a fost parțial verificată. Fișierul a fost încărcat de pe o pagină publică în care nu se specifică o anumită origine a utilizatorului."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Semnătura digitală a fost parțial verificată. Folderul a fost încărcat de pe o pagină publică în care nu se specifică o anumită origine a utilizatorului."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
@@ -5169,19 +5244,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Această legătură web a fost creată într-o versiune Drive mai veche și nu poate fi modificată. Ștergeți-o și creați una nouă pentru a schimba setările."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Această legătură web va fi dezactivată definitiv. Oricine are această legătură web nu va mai putea accesa fişierul. Pentru a repartaja fișierul, veți avea nevoie de o legătură web nouă."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Această legătură web va fi dezactivată definitiv. Oricine are această legătură web nu va mai putea accesa folderul. Pentru a repartaja folderul, veți avea nevoie de o legătură web nouă."
-      ],
       "This month": [
         "Luna curentă"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Această operație va șterge și elimina accesul la fișier sau folder pentru oricine are legătura.",
-        "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura.",
-        "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Aceasta va elimina dispozitivul sincronizat ${ deviceName } din ${ DRIVE_APP_NAME } și toate datele sale din ${ DRIVE_APP_NAME }. Folderele pe care le-ați adăugat la „Calculator” nu se vor mai sincroniza."
@@ -5212,6 +5276,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "Pentru a vă proteja, ${ DRIVE_APP_NAME } vă poate scana fișierele într-un mod care să păstreze confidențialitatea și să blocheze fișierele rău intenționate. Totuși, cel mai bine este să descărcați fișiere numai din surse de încredere."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
@@ -5557,6 +5624,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
       "Your password was leaked:": [
         "Parola a fost divulgată:"
       ],
@@ -5571,6 +5641,12 @@
       ],
       "Your previous recovery phrase": [
         "Fraza anterioară de recuperare"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ]
     },
     "info": {
@@ -6068,9 +6144,6 @@
       "Proration": [
         "Taxe zilnice"
       ],
-      "Protect with password": [
-        "Protejare cu parolă"
-      ],
       "Public keys": [
         "Chei publice"
       ],
@@ -6193,6 +6266,9 @@
       ],
       "Upload your first file": [
         "Încărcați primul fișier"
+      ],
+      "Uploaded by": [
+        "Încărcat de"
       ],
       "VAT": [
         "TVA"
@@ -6693,6 +6769,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Începând de la ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
       ],
       "Upgrade now": [
         "Modificare"
@@ -7732,16 +7811,6 @@
         "${ numberOfItems } articole au fost mutate cu succes.",
         "${ numberOfItems } de articole au fost mutate cu succes."
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Nu s-a putut șterge ${ numberOfItems } legătură web către articol.",
-        "Nu s-au putut șterge ${ numberOfItems } legături web către element.",
-        "Nu s-au putut șterge ${ numberOfItems } de legături web către element."
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "S-a șters ${ numberOfItems } legătură web către articol.",
-        "S-au șters ${ numberOfItems } legături web către articol.",
-        "S-au șters ${ numberOfItems } de legături web către articol."
-      ],
       "${ reason } has been disabled": [
         "${ reason } a fost dezactivat"
       ],
@@ -7887,12 +7956,6 @@
       ],
       "The item was successfully added to your drive": [
         "Articolul a fost adăugat la Drive."
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Legătura către „${ name }” nu a putut fi ștearsă."
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Legătura către „${ name }” a fost ștearsă."
       ],
       "The link to your item failed to be deleted": [
         "Legătura către element nu a putut fi ștearsă."
@@ -9655,9 +9718,6 @@
       "Secure link copied": [
         "Legătura web securizată a fost copiată."
       ],
-      "The link to your file was successfully copied": [
-        "Legătura către fișier a fost copiată cu succes."
-      ],
       "Undo in progress": [
         "Anulare în desfășurare"
       ],
@@ -9909,6 +9969,9 @@
       ],
       "Change password": [
         "Schimbare parolă"
+      ],
+      "Check for malicious files": [
+        "Verificare fișiere malițioase"
       ],
       "Clearing data": [
         "Ştergere date"
@@ -10233,9 +10296,6 @@
       "Preview": [
         "Examinare"
       ],
-      "Privacy settings": [
-        "Setări de confidențialitate"
-      ],
       "Processing...": [
         "Se procesează..."
       ],
@@ -10317,9 +10377,6 @@
       "Share ${ name }": [
         "Partajare ${ name }"
       ],
-      "Share via link": [
-        "Partajare prin legătură web"
-      ],
       "Shared": [
         "Partajat"
       ],
@@ -10349,9 +10406,6 @@
       ],
       "Stop sharing": [
         "Oprire partajare"
-      ],
-      "Stop sharing with everyone?": [
-        "Opriți partajarea cu toată lumea?"
       ],
       "Stop sharing?": [
         "Opriți partajarea?"
@@ -10448,9 +10502,6 @@
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Descărcarea are un fișier ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Informații expuse"
