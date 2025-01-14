@@ -11,7 +11,7 @@ import {
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
-import { selectSecureLinksByItems } from '@proton/pass/store/selectors';
+import { selectBulkHasSecureLinks } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO } from '@proton/pass/types';
 
 export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: BulkSelectionDTO }> = ({
@@ -58,8 +58,7 @@ export const ConfirmMoveManyItems: FC<
         shareId: string;
     }
 > = ({ selected, shareId, onCancel, onConfirm }) => {
-    const secureLinks = useMemoSelector(selectSecureLinksByItems, [selected]);
-    const hasLinks = Boolean(secureLinks.length);
+    const hasSecureLinks = useMemoSelector(selectBulkHasSecureLinks, [selected]);
     const count = getBulkSelectionCount(selected);
 
     return (
@@ -74,7 +73,7 @@ export const ConfirmMoveManyItems: FC<
                         count
                     )}
                     message={
-                        hasLinks
+                        hasSecureLinks
                             ? c('Info').ngettext(
                                   msgid`Moving an item to another vault will erase its history and all secure links.`,
                                   `Moving items to another vault will erase their history and all secure links.`,
