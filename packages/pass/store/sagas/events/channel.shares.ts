@@ -19,7 +19,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
-import { channelEventsWorker, channelInitWorker } from './channel.worker';
+import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
 /** We're only interested in new shares in this effect : Deleted shares will
@@ -113,8 +113,8 @@ function* onNewShare(api: Api, options: RootSagaOptions) {
 export function* sharesChannel(api: Api, options: RootSagaOptions) {
     logger.info(`[ServerEvents::Shares] start polling for new shares`);
     const eventsChannel = createSharesChannel(api);
-    const events = fork(channelEventsWorker<SharesGetResponse>, eventsChannel, options);
-    const wakeup = fork(channelInitWorker<SharesGetResponse>, eventsChannel, options);
+    const events = fork(channelEvents<SharesGetResponse>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<SharesGetResponse>, eventsChannel, options);
     const newVault = fork(onNewShare, api, options);
 
     yield all([events, wakeup, newVault]);
