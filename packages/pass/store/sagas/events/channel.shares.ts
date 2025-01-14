@@ -5,13 +5,13 @@ import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/mana
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
-import { sharedVaultCreated, sharesEventNew, sharesEventSync, vaultCreationSuccess } from '@proton/pass/store/actions';
+import { sharesEventNew, sharesEventSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import { selectAllShares } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
-import { or, truthy } from '@proton/pass/utils/fp/predicates';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -104,7 +104,7 @@ export const createSharesChannel = (api: Api) =>
 /* when a vault is created : recreate all the necessary
  * channels to start polling for this new share's events */
 function* onNewShare(api: Api, options: RootSagaOptions) {
-    yield takeEvery(or(vaultCreationSuccess.match, sharedVaultCreated.match), function* ({ payload: { share } }) {
+    yield takeEvery(vaultCreationSuccess.match, function* ({ payload: { share } }) {
         yield all(getShareChannelForks(api, options)(share));
     });
 }
