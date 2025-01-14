@@ -18,6 +18,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/mail/forwarding/hooks';
+import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -67,7 +68,7 @@ const ForwardSection = () => {
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
 
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
