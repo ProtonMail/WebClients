@@ -97,7 +97,7 @@ export function UserSettingsProvider({
         sort,
         layout: userSettings.Layout,
         revisionRetentionDays: userSettings.RevisionRetentionDays,
-        photosEnabled: !isB2B || (userSettings.B2BPhotosEnabled && driveB2BPhotosUpload),
+        photosEnabled: !isB2B || !driveB2BPhotosUpload || (driveB2BPhotosUpload && userSettings.B2BPhotosEnabled),
         changeSort,
         changeLayout,
         changeB2BPhotosEnabled,
