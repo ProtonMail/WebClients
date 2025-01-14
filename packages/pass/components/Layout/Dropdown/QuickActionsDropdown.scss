@@ -1,0 +1,8 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-quickactions {
+	&--badge {
+		inline-size: rem(16);
+		background-color: var(--interaction-norm) !important;
+	}
+}
