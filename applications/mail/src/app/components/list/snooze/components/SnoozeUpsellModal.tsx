@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import type { ModalStateProps } from '@proton/components';
 import { NewUpsellModal, UpsellModal, useUpsellConfig } from '@proton/components';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
+import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import snoozeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/alarm-clock.svg';
@@ -14,7 +15,7 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
         feature: MAIL_UPSELL_PATHS.SNOOZE_MESSAGE,
     });
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 

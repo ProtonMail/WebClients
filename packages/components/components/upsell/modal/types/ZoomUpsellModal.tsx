@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
+import { PLANS } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
     MAIL_SHORT_APP_NAME,
@@ -31,6 +32,7 @@ const ZoomUpsellModal = ({ modalProps }: Props) => {
     const upsellConfig = useUpsellConfig({
         upsellRef,
         preventInApp: isIframe,
+        plan: PLANS.MAIL,
         ...oneDollarConfig,
     });
 

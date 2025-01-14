@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import dwmShield from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
@@ -27,7 +28,7 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: P
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
     if (displayNewUpsellModalsVariant) {
         return (

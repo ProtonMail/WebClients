@@ -58,7 +58,10 @@ const MailUpsellModal = ({ optionID, children }: { children: ReactElement; optio
 
 const MailUpsellOptionCTA = ({ url, optionID }: OptionProps) => {
     const { upsellRef } = getUpsellLink(optionID);
-    const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
+    const upsellConfig = useUpsellConfig({
+        upsellRef,
+        step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+    });
 
     if (upsellConfig.onUpgrade) {
         return (

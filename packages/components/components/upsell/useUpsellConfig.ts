@@ -7,6 +7,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { usePostSubscription } from '@proton/components/containers/payments/subscription/postSubscription/usePostSubscription';
 import useConfig from '@proton/components/hooks/useConfig';
+import type { ADDON_NAMES, PLANS } from '@proton/payments';
 import { APPS, type APP_NAMES, type CYCLE } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
@@ -21,7 +22,7 @@ interface Props {
     step?: SUBSCRIPTION_STEPS;
     coupon?: string;
     cycle?: CYCLE;
-    planIDs?: { [key: string]: number };
+    plan?: PLANS | ADDON_NAMES;
     onSubscribed?: () => void;
     submitText?: ReactNode;
     title?: ReactNode;
@@ -40,7 +41,7 @@ const useUpsellConfig = ({
     step,
     coupon,
     cycle,
-    planIDs,
+    plan,
     submitText,
     footerText,
     title,
@@ -63,7 +64,7 @@ const useUpsellConfig = ({
             cycle,
             step,
             upsellRef,
-            planIDs,
+            plan,
         });
 
         // The subscription modal will open in inbox app

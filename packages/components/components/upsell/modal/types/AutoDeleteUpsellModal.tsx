@@ -4,6 +4,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import autoDeleteImg from '@proton/styles/assets/img/illustrations/new-upsells-img/auto-delete.svg';
@@ -22,7 +23,7 @@ const AutoDeleteUpsellModal = ({ modalProps, upsellComponent }: Props) => {
         feature: MAIL_UPSELL_PATHS.AUTO_DELETE,
     });
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
