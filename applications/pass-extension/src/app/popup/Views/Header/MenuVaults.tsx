@@ -25,7 +25,6 @@ export const MenuVaults = memo(({ onAction }: Props) => {
         <VaultMenu
             dense
             onAction={onAction}
-            onSelect={vaultActions.select}
             render={(selected, menu) => (
                 <Collapsible>
                     <CollapsibleHeader
