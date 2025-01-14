@@ -228,9 +228,6 @@
       "Create free account": [
         "Utwórz darmowe konto"
       ],
-      "Create link": [
-        "Utwórz link"
-      ],
       "Create new folder": [
         "Utwórz nowy folder"
       ],
@@ -459,6 +456,9 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
+      "Learn more.": [
+        "Dowiedz się więcej."
+      ],
       "Leave": [
         "Opuść"
       ],
@@ -635,6 +635,9 @@
       ],
       "Replace file": [
         "Zastąp plik"
+      ],
+      "Report": [
+        "Raport"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -818,9 +821,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
-      ],
-      "Understood": [
-        "Rozumiem"
       ],
       "Undo": [
         "Cofnij"
@@ -3660,6 +3660,23 @@
         "Brak dostępnych metod weryfikacji"
       ]
     },
+    "ICS event error": {
+      "Edited event not supported": [
+        "Edytowane wydarzenie nie jest obsługiwane"
+      ],
+      "End time out of bounds": [
+        "Czas zakończenia jest poza zakresem"
+      ],
+      "Malformed end time": [
+        "Czas zakończenia posiada nieprawidłowy format"
+      ],
+      "Malformed recurring event": [
+        "Wydarzenie cykliczne posiada nieprawidłowy format"
+      ],
+      "Start time out of bounds": [
+        "Czas rozpoczęcia jest poza zakresem"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
@@ -4231,6 +4248,9 @@
       "And access it from anywhere": [
         "Uzyskaj do niego dostęp, gdziekolwiek jesteś"
       ],
+      "Anonymous": [
+        "Anonimowy użytkownik"
+      ],
       "Anyone with this link can access your file.": [
         "Każdy, kto ma link, ma dostęp do pliku."
       ],
@@ -4462,9 +4482,6 @@
       "Downloading": [
         "Pobieranie"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Pobieranie plików ${ DOCS_APP_NAME } z aplikacji ${ DRIVE_APP_NAME } nie jest obsługiwane — te pliki nie zostaną uwzględnione w pobieraniu."
-      ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
       ],
@@ -4497,6 +4514,9 @@
       ],
       "Enabling drive search": [
         "Włączanie wyszukiwania zawartości dysku"
+      ],
+      "Encrypted": [
+        "Szyfrowane"
       ],
       "Encrypted search is here": [
         "Wyszukiwanie zawartości jest tutaj"
@@ -4858,12 +4878,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
-        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Tylko posiadacz linku i hasła ma dostęp do pliku."
       ],
@@ -4917,9 +4931,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Wpisz hasło, aby odszyfrować zawartość."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Jeśli chcesz pobrać plik, wyeksportuj bezpośrednio z aplikacji ${ DOCS_APP_NAME }."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tych grup NIE zostaną usunięte."
@@ -5110,9 +5121,6 @@
       "Share via link settings": [
         "Ustawienia linku"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Link do ${ boldNameText }"
-      ],
       "Shared link not found": [
         "Udostępniony link nie został znaleziony"
       ],
@@ -5161,17 +5169,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Przełącz na konto"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Liczba pobrań obejmuje rzeczywiste pobrania i podgląd plików."
@@ -5242,20 +5247,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Link został utworzony w starej wersji aplikacji i nie może zostać zmodyfikowany. Usuń link i utwórz nowy, aby zmienić jego ustawienia."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do pliku. Jeśli chcesz ponownie udostępnić plik, musisz utworzyć nowy link."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Link zostanie wyłączony. Nikt, kto ma link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, musisz utworzyć nowy link."
-      ],
       "This month": [
         "Ten miesiąc"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto ma link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link.",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link",
-        "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto ma link."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Spowoduje to usunięcie synchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME } i wszystkich jego danych z ${ DRIVE_APP_NAME }. Foldery dodane do folderu Moje urządzenia przestaną być synchronizowane."
@@ -6152,9 +6145,6 @@
       "Proration": [
         "Dzielenie proporcjonalne"
       ],
-      "Protect with password": [
-        "Zabezpiecz za pomocą hasła"
-      ],
       "Public keys": [
         "Klucze publiczne"
       ],
@@ -6277,6 +6267,9 @@
       ],
       "Upload your first file": [
         "Prześlij pierwszy plik"
+      ],
+      "Uploaded by": [
+        "Przesłano przez"
       ],
       "VAT": [
         "podatku VAT"
@@ -6839,6 +6832,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
@@ -7915,18 +7911,6 @@
         "Przeniesiono ${ numberOfItems } elementów",
         "Przeniesiono ${ numberOfItems } elementów"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Usunięcie ${ numberOfItems } linku do elementu nie powiodło się",
-        "Usunięcie ${ numberOfItems } linków do elementów nie powiodło się",
-        "Usunięcie ${ numberOfItems } linków do elementów nie powiodło się",
-        "Usunięcie ${ numberOfItems } linków do elementów nie powiodło się"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "Link do elementu został usunięty",
-        "${ numberOfItems } linki do elementów zostały usunięte",
-        "${ numberOfItems } linków do elementów zostały usunięte",
-        "${ numberOfItems } linków do elementów zostały usunięte"
-      ],
       "${ reason } has been disabled": [
         "${ reason } został wyłączony"
       ],
@@ -8076,12 +8060,6 @@
       ],
       "The item was successfully added to your drive": [
         "Element został dodany do dysku"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Usunięcie linku do elementu \"${ name }\" nie powiodło się"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Link do elementu \"${ name }\" został usunięty"
       ],
       "The link to your item failed to be deleted": [
         "Usunięcie linku do elementu nie powiodło się"
@@ -9876,9 +9854,6 @@
       "Secure link copied": [
         "Link został skopiowany"
       ],
-      "The link to your file was successfully copied": [
-        "Link został skopiowany"
-      ],
       "Undo in progress": [
         "Cofnięcie jest w toku"
       ],
@@ -10142,6 +10117,9 @@
       ],
       "Change password": [
         "Zmień hasło"
+      ],
+      "Check for malicious files": [
+        "Sprawdź pod kątem złośliwych plików"
       ],
       "Clearing data": [
         "Usuwanie danych"
@@ -10467,9 +10445,6 @@
       "Preview": [
         "Podgląd"
       ],
-      "Privacy settings": [
-        "Ustawienia prywatności"
-      ],
       "Processing...": [
         "Przetwarzanie..."
       ],
@@ -10551,9 +10526,6 @@
       "Share ${ name }": [
         "Udostępnij ${ name }"
       ],
-      "Share via link": [
-        "Udostępnij przez link"
-      ],
       "Shared": [
         "Udostępnione"
       ],
@@ -10583,9 +10555,6 @@
       ],
       "Stop sharing": [
         "Zatrzymaj udostępnianie"
-      ],
-      "Stop sharing with everyone?": [
-        "Zatrzymać udostępnianie?"
       ],
       "Stop sharing?": [
         "Zatrzymać udostępnianie?"
@@ -10682,9 +10651,6 @@
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Zawiera plik ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
