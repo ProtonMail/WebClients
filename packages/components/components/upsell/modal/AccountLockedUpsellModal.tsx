@@ -109,7 +109,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
     });
     const upsellConfig = useUpsellConfig({
         upsellRef,
-        planIDs: selectedPlan ? { [selectedPlan.Name]: 1 } : undefined,
+        plan: selectedPlan ? selectedPlan.Name : undefined,
         step: SUBSCRIPTION_STEPS.CHECKOUT,
         onSubscribed: () => {
             onSubscribed();

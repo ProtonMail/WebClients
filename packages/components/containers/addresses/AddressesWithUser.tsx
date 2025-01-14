@@ -21,6 +21,7 @@ import { usePostSubscriptionTelemetry } from '@proton/components/containers/paym
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { PLANS } from '@proton/payments';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -68,7 +69,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
     });
 
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
