@@ -257,6 +257,7 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
                     initialCohort: securityCheckupSession.initialCohort,
                     ...dimensions,
                 },
+                delay: false,
             });
         },
     });

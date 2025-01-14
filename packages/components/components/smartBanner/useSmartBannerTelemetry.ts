@@ -13,6 +13,7 @@ export const useSmartBannerTelemetry = (application: SmartBannerApp) => {
             measurementGroup: TelemetryMeasurementGroups.smartBanner,
             event: TelemetrySmartBannerEvents.clickAppStoreLink,
             dimensions: { application },
+            delay: false,
         });
     };
 };

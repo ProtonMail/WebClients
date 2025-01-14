@@ -12,6 +12,7 @@ import { DENSITY } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import type { Filter } from '@proton/shared/lib/mail/search';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
@@ -29,7 +30,6 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePaging } from '../../hooks/usePaging';
 import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
 import type { Element } from '../../models/element';
-import type { Filter } from '../../models/tools';
 import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../store/elements/elementsSelectors';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';

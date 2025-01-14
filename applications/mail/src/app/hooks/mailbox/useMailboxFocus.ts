@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import type { Filter, Sort } from 'proton-mail/models/tools';
+import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 export interface MailboxFocusProps {
     elementIDs: string[];

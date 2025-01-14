@@ -1,12 +1,12 @@
 import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import type { Element } from '../../models/element';
 import type { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
-import type { SearchParameters } from '../../models/tools';
 import { eventUpdates, invalidate } from '../../store/elements/elementsActions';
 import {
     isES as isESSelector,

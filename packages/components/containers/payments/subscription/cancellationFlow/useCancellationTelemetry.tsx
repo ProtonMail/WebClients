@@ -36,6 +36,7 @@ const useCancellationTelemetry = () => {
             dimensions: {
                 ...dimensions,
             },
+            delay: false,
         });
     };
 

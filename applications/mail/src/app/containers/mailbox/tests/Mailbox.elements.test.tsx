@@ -3,10 +3,10 @@ import { fireEvent } from '@testing-library/react';
 import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import type { Sort } from '@proton/shared/lib/mail/search';
 
 import { addApiMock, api, clearAll, tick, waitForSpyCall } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
-import type { Sort } from '../../../models/tools';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
 jest.setTimeout(20000);
