@@ -223,9 +223,6 @@
       "Create free account": [
         "Ingyenes fiók létrehozása"
       ],
-      "Create link": [
-        "Hivatkozás létrehozása"
-      ],
       "Create new folder": [
         "Új mappa létrehozása"
       ],
@@ -797,9 +794,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
-      ],
-      "Understood": [
-        "Értem"
       ],
       "Undo": [
         "Visszavonás"
@@ -3838,6 +3832,9 @@
       "And access it from anywhere": [
         "Érje el bárhonnan"
       ],
+      "Anonymous": [
+        "Névtelen"
+      ],
       "Anyone with this link can access your file.": [
         "A hivatkozás birtokában bárki hozzáférhet a fájlhoz."
       ],
@@ -4066,9 +4063,6 @@
       "Downloading": [
         "Letöltés"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "A ${ DOCS_APP_NAME } fájlok letöltése a ${ DRIVE_APP_NAME } fájlokból jelenleg nem támogatott — ezek nem lesznek benne a letöltésben."
-      ],
       "Drop file here to upload": [
         "Húzza ide a fájlokat a feltöltéshez"
       ],
@@ -4101,6 +4095,9 @@
       ],
       "Enabling drive search": [
         "Felhőtárban keresés engedélyezése"
+      ],
+      "Encrypted": [
+        "Titkosított"
       ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
@@ -4450,10 +4447,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter engedélyezett",
-        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter engedélyezett"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Csak azok férhetnek hozzá a fájlhoz, akik a hivatkozást és a jelszót is ismerik."
       ],
@@ -4668,9 +4661,6 @@
       "Share via link settings": [
         "Megosztás a hivatkozás beállításain keresztül"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Megosztható hivatkozás ehhez: ${ boldNameText }"
-      ],
       "Shared link not found": [
         "A megosztott hivatkozás nem található"
       ],
@@ -4715,6 +4705,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Átállítás"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
@@ -4788,18 +4781,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "A hivatkozás egy korábbiváltozatban lett létrehozva és nem módosítható. A beállítások megváltoztatásához törölje a hivatkozást és készítsen egy újat."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a fájlhoz. A fájl újbóli megosztásához egy új hivatkozásra lesz szükség."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a mappához. A mappa újbóli megosztásához egy új hivatkozásra lesz szükség."
-      ],
       "This month": [
         "Ebben a hónapban"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Ez törli a hivatkozást és megszünteti a fájl vagy mappa elérhetőségét azok számára, akiknek elküldte.",
-        "Ez törli a hivatkozásokat és megszünteti a fájlok vagy mappák elérhetőségét azok számára, akiknek elküldte."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Ez eltávolítja a ${ deviceName } szinkronizált eszközt a ${ DRIVE_APP_NAME }-ból és az összes adatot a ${ DRIVE_APP_NAME }-ból. Mappák, amiket hozzáadott a Számítógépeimhez többé nem fognak szinkronizálódni."
@@ -5652,9 +5635,6 @@
       "Proration": [
         "Arányosítás"
       ],
-      "Protect with password": [
-        "Jelszavas védelem"
-      ],
       "Public keys": [
         "Nyilvános kulcsok"
       ],
@@ -6167,6 +6147,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
@@ -6987,14 +6970,6 @@
         "${ numberOfItems } elem sikeresen áthelyezve",
         "${ numberOfItems } elem sikeresen áthelyezve"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems }, a fájlra vonatkozó hivatkozás törlése nem sikerült",
-        "${ numberOfItems }, a fájlra vonatkozó hivatkozás törlése nem sikerült"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } hivatkozás a fájlra törlésre került",
-        "${ numberOfItems } hivatkozás a fájlra törlésre került"
-      ],
       "${ reason } has been disabled": [
         "${ reason } letiltva"
       ],
@@ -7091,12 +7066,6 @@
       ],
       "Subfolder failed to be loaded": [
         "Almappa betöltése nem sikerült"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Az alábbira: \"${ name }\" vonatkozó hivatkozás törlése nem sikerült"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Az alábbira: \"${ name }\" vonatkozó hivatkozás törölve"
       ],
       "The link to your item failed to be deleted": [
         "A fájlra vonatkozó hivatkozás törlése nem sikerült"
@@ -8411,9 +8380,6 @@
       "Secure link copied": [
         "Biztonságos hivatkozás másolva"
       ],
-      "The link to your file was successfully copied": [
-        "A fájlra mutató hivatkozás sikeresen másolva"
-      ],
       "Undo in progress": [
         "Visszavonás folyamatban"
       ],
@@ -8958,9 +8924,6 @@
       "Preview": [
         "Előnézet"
       ],
-      "Privacy settings": [
-        "Adatvédelmi beállítások"
-      ],
       "Processing...": [
         "Folyamatban..."
       ],
@@ -9036,9 +8999,6 @@
       "Share ${ name }": [
         "${ name } megosztása"
       ],
-      "Share via link": [
-        "Megosztás hivatkozással"
-      ],
       "Shared": [
         "Megosztott"
       ],
@@ -9068,9 +9028,6 @@
       ],
       "Stop sharing": [
         "Megosztás megszüntetése"
-      ],
-      "Stop sharing with everyone?": [
-        "Megszakítja a mindenkivel való megosztást?"
       ],
       "Stop sharing?": [
         "Megosztás megszüntetése?"

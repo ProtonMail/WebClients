@@ -225,9 +225,6 @@
       "Create free account": [
         "無料アカウントを作成"
       ],
-      "Create link": [
-        "リンクを作成"
-      ],
       "Create new folder": [
         "新規フォルダーを作成"
       ],
@@ -306,6 +303,12 @@
       "Download logs": [
         "ログをダウンロードする"
       ],
+      "Download without scanning": [
+        "スキャンせずにダウンロード"
+      ],
+      "Download without scanning (${ count })": [
+        "スキャンせずにダウンロード (${ count })"
+      ],
       "Drive Locked": [
         "ドライブはロックされています"
       ],
@@ -350,6 +353,9 @@
       ],
       "Export contact group": [
         "連絡先グループをエクスポート"
+      ],
+      "Export selection as .vcf": [
+        "選択項目を .vcf としてエクスポート"
       ],
       "Fit to window": [
         "ウィンドウに合わせる"
@@ -450,6 +456,9 @@
       "Learn more": [
         "詳細"
       ],
+      "Learn more.": [
+        "もっと詳しく"
+      ],
       "Leave": [
         "退出"
       ],
@@ -497,6 +506,9 @@
       ],
       "Minimize transfers": [
         "転送一覧を最小化"
+      ],
+      "More actions": [
+        "その他の操作"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -626,6 +638,9 @@
       ],
       "Replace file": [
         "ファイルを置き換え"
+      ],
+      "Report": [
+        "報告"
       ],
       "Report a problem": [
         "問題を報告"
@@ -809,9 +824,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
-      ],
-      "Understood": [
-        "理解しました"
       ],
       "Undo": [
         "取り消し"
@@ -3195,6 +3207,9 @@
       "Time zone": [
         "タイムゾーン"
       ],
+      "Time zone component ignored": [
+        "タイムゾーン構成は無視されました"
+      ],
       "To-do entry": [
         "To-do のエントリー"
       ],
@@ -3257,6 +3272,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "画像が選択されていません"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "予期せぬエラー"
       ]
     },
     "Event invitation error": {
@@ -3576,6 +3596,50 @@
         "検証方法がありません"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "カレンダーのタイムゾーンはサポートされていません"
+      ],
+      "Edited event not supported": [
+        "編集された予定はサポートされていません"
+      ],
+      "End time out of bounds": [
+        "終了日時が指定可能な範囲を超えています"
+      ],
+      "Event validation failed": [
+        "予定の検証に失敗しました"
+      ],
+      "Floating times not supported": [
+        "浮動時間はサポートされていません"
+      ],
+      "Malformed all-day event": [
+        "不正な終日の予定です"
+      ],
+      "Malformed end time": [
+        "異常な終了日時です"
+      ],
+      "Malformed recurring event": [
+        "不正な定期的な予定です"
+      ],
+      "Malformed start time": [
+        "異常な開始日時です"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "グレゴリオ暦のスケールのみ許可されています"
+      ],
+      "Recurring event has no occurrences": [
+        "定期的な予定に繰り返しがありません"
+      ],
+      "Recurring rule not supported": [
+        "繰り返しルールはサポートされていません"
+      ],
+      "Start time out of bounds": [
+        "開始日時が指定可能な範囲を超えています"
+      ],
+      "Time zone not supported": [
+        "タイムゾーンはサポートされていません"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 件の予定が暗号化され、カレンダーに追加されました"
@@ -3707,11 +3771,17 @@
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "アプリのパスワードが正しいです。通常のパスワードを使用しないでください。"
+      ],
       "Your email account requires an app password to export your data.": [
         "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
       ],
       "Your email account requires one to export your data.": [
         "データをエクスポートするためにメールアカウントが必要です。"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用しないでください。"
       ],
       "Your email address and password are correct.": [
         "あなたのメールアドレスとパスワードは正しいです。"
@@ -3922,6 +3992,9 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount }件のスキャンに失敗しました"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
@@ -3991,6 +4064,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
@@ -4029,6 +4105,9 @@
       ],
       "And access it from anywhere": [
         "どこからでもアクセスできます"
+      ],
+      "Anonymous": [
+        "匿名"
       ],
       "Anyone with this link can access your file.": [
         "このリンクを知ってる人は、誰でもこのファイルにアクセスできます。"
@@ -4159,6 +4238,9 @@
       "Create a new contact group": [
         "新しい連絡先グループを作成"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } 名のメンバーのために安全なクラウドを作成します"
+      ],
       "Create in": [
         "作成日時"
       ],
@@ -4255,9 +4337,6 @@
       "Downloading": [
         "ダウンロード中"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DRIVE_APP_NAME }からの${ DOCS_APP_NAME }ファイルのダウンロードは現在サポートされていません ー ダウンロードには含まれていません。"
-      ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
       ],
@@ -4290,6 +4369,9 @@
       ],
       "Enabling drive search": [
         "ドライブ内検索を有効にしています"
+      ],
+      "Encrypted": [
+        "暗号化済み"
       ],
       "Encrypted search is here": [
         "暗号化検索が利用できます"
@@ -4642,9 +4724,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "${ MAX_CUSTOM_PASSWORD_LENGTH }文字以内で入力してください"
-      ],
       "Only the people with the link and the password can access this file.": [
         "リンクとパスワードを知っている人のみがファイルにアクセスすることができます。"
       ],
@@ -4698,9 +4777,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "復号およびファイルの閲覧には、パスワードが必要です。"
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "ダウンロードしたい場合は、代わりに${ DOCS_APP_NAME }アプリケーションから直接エクスポートしてください。"
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "これらのグループに割り当てられたアドレスは削除されませんので、ご注意ください。"
@@ -4867,6 +4943,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPAでのお支払は現在一時的に利用できません。後で再試行してください。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -4885,14 +4964,11 @@
       "Share via link settings": [
         "リンク設定経由で共有"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "${ boldNameText }の共有リンク"
-      ],
       "Shared link not found": [
         "共有リンクが見つかりません"
       ],
       "Shared with me": [
-        "私と共有しました"
+        "私と共有中"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ネットワークエラーのため、署名の検証ができません。後ほど再度お試しください。"
@@ -4936,17 +5012,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
       ],
+      "Switch to": [
+        "切り替え"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "${ items } は改ざんされたか、アカウントに新しい鍵が設定された可能性があります。信頼できる場合のみ開いてください。"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "デジタル署名は部分的に検証されました。ファイルは特定のユーザーの出所を指定していない公開ページからアップロードされました。"
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "デジタル署名は部分的に検証されました。フォルダは特定のユーザーの出所を指定していない公開ページからアップロードされました。"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "ダウンロード数には、実際のダウンロードとファイルがプレビューされた場合の両方が含まれます。"
@@ -5017,17 +5090,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "このリンクは古いバージョンのProton Driveで作成されたため修正できません。このリンクを削除し、新しいリンクを作り直すことで設定を変更できます。"
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "このリンクは永久に無効化され、今後機能しなくなります。このファイルを再度共有した場合、新しいリンクが作成されます。"
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "このリンクは永久に無効化され、今後機能しなくなります。このフォルダーを再度共有した場合、新しいリンクが作成されます。"
-      ],
       "This month": [
         "今月"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "共有リンクは削除され、今後誰に対しても機能しなくなります。"
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "これにより${ DRIVE_APP_NAME }から同期されたデバイス${ deviceName }が削除され、${ DRIVE_APP_NAME }からすべてのデータが削除されます。マイコンピュータに追加されたフォルダは同期が停止します。"
@@ -5058,6 +5122,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "あなたの保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックします。ただし信頼できるソースからのみファイルをダウンロードすることをおすすめします。 "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
@@ -5395,6 +5462,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "次回の請求日は ${ renewalTime } です。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
+      ],
       "Your password was leaked:": [
         "パスワードが漏洩しました:"
       ],
@@ -5409,6 +5479,12 @@
       ],
       "Your previous recovery phrase": [
         "以前の回復用フレーズ"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ]
     },
     "info": {
@@ -5894,9 +5970,6 @@
       "Proration": [
         "日割り計算"
       ],
-      "Protect with password": [
-        "パスワードで保護"
-      ],
       "Public keys": [
         "公開鍵"
       ],
@@ -6020,6 +6093,9 @@
       "Upload your first file": [
         "最初のファイルをアップロード"
       ],
+      "Uploaded by": [
+        "アップロード元"
+      ],
       "VAT": [
         "付加価値税"
       ],
@@ -6132,10 +6208,10 @@
         "招待をリクエスト"
       ],
       "Shared": [
-        "共有済み"
+        "共有中"
       ],
       "Shared with me": [
-        "私と共有しました"
+        "私と共有中"
       ],
       "stay safer online": [
         "オンラインでの安全性を高める"
@@ -6509,6 +6585,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }から始めましょう"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
@@ -7474,12 +7553,6 @@
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 件のアイテムが正常に移動されました"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } 件のアイテムの共有リンクを削除できませんでした"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems }件のアイテムの共有リンクを削除しました"
-      ],
       "${ reason } has been disabled": [
         "${ reason } が無効になりました"
       ],
@@ -7617,12 +7690,6 @@
       ],
       "The item was successfully added to your drive": [
         "アイテムはドライブに正常に追加されました"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "「${ name }」のリンクの削除に失敗しました"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "「${ name }」のリンクを削除しました"
       ],
       "The link to your item failed to be deleted": [
         "アイテムのリンクが削除できませんでした"
@@ -9303,9 +9370,6 @@
       "Secure link copied": [
         "セキュアリンクがコピーされました"
       ],
-      "The link to your file was successfully copied": [
-        "ファイルへのリンクが正常にコピーされました"
-      ],
       "Undo in progress": [
         "取り消し中"
       ],
@@ -9533,6 +9597,9 @@
       ],
       "Change password": [
         "パスワードを変更"
+      ],
+      "Check for malicious files": [
+        "悪意のあるファイルを確認"
       ],
       "Clearing data": [
         "データのクリア中"
@@ -9849,9 +9916,6 @@
       "Preview": [
         "プレビュー"
       ],
-      "Privacy settings": [
-        "プライバシー設定"
-      ],
       "Processing...": [
         "処理中..."
       ],
@@ -9933,14 +9997,11 @@
       "Share ${ name }": [
         "${ name } の共有"
       ],
-      "Share via link": [
-        "リンクで共有"
-      ],
       "Shared": [
         "共有中"
       ],
       "Shared with me": [
-        "私と共有しました"
+        "私と共有中"
       ],
       "Show actions": [
         "アクションの表示"
@@ -9965,9 +10026,6 @@
       ],
       "Stop sharing": [
         "共有を停止"
-      ],
-      "Stop sharing with everyone?": [
-        "共有を停止してよろしいですか?"
       ],
       "Stop sharing?": [
         "共有を停止しますか？"
@@ -10064,9 +10122,6 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "ダウンロードには${ DOCS_APP_NAME }ファイルが含まれています"
       ],
       "Your exposed information": [
         "あなたの公開情報"

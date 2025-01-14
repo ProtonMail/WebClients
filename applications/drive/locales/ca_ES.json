@@ -187,6 +187,9 @@
       "Continue": [
         "Continua"
       ],
+      "Continue downloading": [
+        "Continua la descàrrega"
+      ],
       "Continue import": [
         "Continuar importació"
       ],
@@ -225,9 +228,6 @@
       ],
       "Create free account": [
         "Crea un compte gratuït"
-      ],
-      "Create link": [
-        "Crear enllaç"
       ],
       "Create new folder": [
         "Crea una carpeta"
@@ -831,9 +831,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
       ],
-      "Understood": [
-        "Entesos"
-      ],
       "Undo": [
         "Desfés"
       ],
@@ -1366,7 +1363,7 @@
         "Gestor de contrasenyes xifrat"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "El nostre pla bàsic i gratuït amb correu electrònic i emmagatzematge xifrats d'extrem a extrem. No s'inclouen funcions prèmium."
+        "El nostre pla bàsic i gratuït amb correu electrònic i emmagatzematge xifrats d'extrem a extrem. No s'inclouen característiques prèmium."
       ],
       "Save ${ upsellSavings }": [
         "Estalvieu el ${ upsellSavings }"
@@ -2454,13 +2451,16 @@
         "Definiu un mètode de recuperació per evitar perdre l'accés al compte."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "Per garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
+        "Per a garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
+      ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
+        "Milloreu a ${ BRAND_NAME } ${ planName } per activar el compartiment de fitxers públics amb accés per editar. Mantingueu la col·laboració fluida i segura."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
@@ -3808,7 +3808,7 @@
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
       "Your app password is correct. Do not use your regular password.": [
-        "La contrasenya de l'aplicació és correcta. No utilitzeu la contrasenya normal."
+        "La contrasenya de l'aplicació és correcta. No utilitzeu la contrasenya habitual."
       ],
       "Your email account requires an app password to export your data.": [
         "El vostre compte de correu electrònic requereix una contrasenya d'aplicació per a exportar les dades."
@@ -3991,6 +3991,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contacte",
         "${ contactsLength } contactes"
+      ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a Continua la descàrrega."
       ],
       "${ doneCount } finished": [
         "${ doneCount } finalitzat",
@@ -4410,9 +4413,6 @@
       "Downloading": [
         "S'està descarregant"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Actualment, no s'admet la descàrrega de fitxers de ${ DOCS_APP_NAME } de ${ DRIVE_APP_NAME }; aquests no s'inclouran en la descàrrega."
-      ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
       ],
@@ -4803,10 +4803,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Només es permet ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcter",
-        "Només es permeten ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcters"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
       ],
@@ -4860,9 +4856,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Exporteu-los directament des de l'aplicació ${ DOCS_APP_NAME } si voleu descarregar-los."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
@@ -5032,7 +5025,7 @@
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Els pagaments SEPA no estan disponibles en aquests moments. Proveu de nou més tard."
+        "Els pagaments SEPA no estan disponibles en aquest moment. Torneu-ho a provar més tard."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -5052,8 +5045,8 @@
       "Share via link settings": [
         "Preferències de compartició mitjançant un enllaç"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Enllaç per a compartir ${ boldNameText }"
+      "Shared by ${ rootLink.signatureEmail }": [
+        "Compartit per ${ rootLink.signatureEmail }"
       ],
       "Shared link not found": [
         "No s'ha trobat l'enllaç compartit."
@@ -5112,11 +5105,11 @@
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "És possible que el compte tingui una clau nova o que el següent hagi estat manipulat: ${ items }. Obriu-ho només si hi confieu."
       ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "La signatura digital s'ha verificat parcialment. El fitxer s'ha carregat des d'una pàgina pública que no especifica un origen d'usuari específic."
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signatura digital s'ha verificat parcialment. Aquest fitxer s'ha carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
       ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "La signatura digital s'ha verificat parcialment. La carpeta s'ha carregat des d'una pàgina pública que no especifica un origen d'usuari específic."
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signatura digital s'ha verificat parcialment. Aquesta carpeta s'ha carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
@@ -5187,18 +5180,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Aquest enllaç es va crear en una versió antiga de Drive i no es pot modificar. Elimineu l'enllaç i creeu-ne un de nou per canviar-ne la configuració."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir al fitxer amb aquest enllaç. Per a tornar a compartir-lo, necessitareu un enllaç nou."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir a la carpeta amb aquest enllaç. Per a tornar a compartir-la, necessitareu un enllaç nou."
-      ],
       "This month": [
         "Aquest mes"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Això eliminarà l'enllaç i esborrarà l'accés al vostre fitxer o carpeta per a qualsevol que el tingui.",
-        "Això eliminarà els enllaços i esborrarà l'accés als vostres fitxers o carpetes per a qualsevol que els tingui."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Això eliminarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i totes les seves dades de ${ DRIVE_APP_NAME }. Les carpetes que heu afegit a Els meus ordinadors deixaran de sincronitzar-se."
@@ -5220,6 +5203,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Per baixar els fitxers ${ DOCS_APP_NAME }, obriu-los a ${ DOCS_APP_NAME } i exporteu-los."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Per activar una cerca realment privada, ${ DRIVE_APP_NAME } necessita indexar els vostres fitxers de manera local."
@@ -5552,6 +5538,9 @@
       "Your email address was exposed:": [
         "S'ha exposat la vostra adreça de correu electrònic:"
       ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "La vostra adreça de correu electrònic serà visible com a propietari de l'enllaç a la pàgina de compartició."
+      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
@@ -5716,6 +5705,9 @@
       ],
       "Anderson": [
         "Pujol"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Qualsevol persona a Internet amb l'enllaç pot editar-ho"
       ],
       "Anyone on the Internet with the link can view": [
         "Qualsevol persona a Internet amb l'enllaç pot visualitzar-ho"
@@ -6087,9 +6079,6 @@
       "Proration": [
         "Prorrateig"
       ],
-      "Protect with password": [
-        "Protegir amb contrasenya"
-      ],
       "Public keys": [
         "Claus públiques"
       ],
@@ -6341,6 +6330,11 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "També inclòs:"
       ]
     },
     "Loading info": {
@@ -6708,8 +6702,14 @@
       "Get started for ${ priceCoupon }": [
         "Comenceu per ${ priceCoupon }"
       ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Plans a partir de ${ priceDrivePlus }"
+      ],
       "Starting from ${ priceMailPlus }": [
         "Comenceu des de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Millora"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -6857,6 +6857,9 @@
       ],
       "15 GB storage": [
         "15 GB d'emmagatzematge"
+      ],
+      "200 GB of storage": [
+        "200 GB d'emmagatzematge"
       ],
       "24/7 account management support": [
         "Suport per a la gestió de comptes 24/7"
@@ -7051,6 +7054,9 @@
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
       ],
+      "Private photo backup": [
+        "Còpia de seguretat de fotos privades"
+      ],
       "Proofread and refine your emails": [
         "Corregiu i refineu els vostres correus electrònics"
       ],
@@ -7087,6 +7093,9 @@
       ],
       "Secure Core servers": [
         "Servidors Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Emmagatzematge i ús compartit de fitxers segurs"
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
@@ -7712,14 +7721,6 @@
         "S'ha mogut ${ numberOfItems } element",
         "S'han mogut ${ numberOfItems } elements"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "No s'ha pogut eliminar ${ numberOfItems } enllaç al vostre element",
-        "No s'han pogut eliminar ${ numberOfItems } enllaços al vostre element"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "S'ha eliminat ${ numberOfItems } enllaç al vostre element",
-        "S'han eliminat ${ numberOfItems } enllaços al vostre element"
-      ],
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
       ],
@@ -7861,12 +7862,6 @@
       ],
       "The item was successfully added to your drive": [
         "L'element s'ha afegit a la vostra unitat."
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "No s'ha pogut eliminar l'enllaç a \"${ name }\"."
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "S'ha eliminat l'enllaç a «${ name }»"
       ],
       "The link to your item failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a l'element"
@@ -9140,7 +9135,7 @@
         "Entesos"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de l'App Store d'Apple i, després, seleccioneu ${ subscriptions }."
+        "Només heu d'iniciar sessió al vostre compte l'App Store d'Apple i seleccionar ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
@@ -9325,7 +9320,7 @@
         "Si supereu els límits del pla gratuït, no podreu:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Si el vostre ús supera els límits del pla gratuït, és possible que tingueu accés restringit a les funcions del producte i a les vostres dades."
+        "Si el vostre ús supera els límits del pla gratuït, és possible que tingueu accés restringit a les característiques del producte i a les vostres dades."
       ],
       "Invited members will be removed from your organization": [
         "Els membres convidats seran eliminats de l'organització"
@@ -9587,9 +9582,6 @@
       ],
       "Secure link copied": [
         "S'ha copiat l'enllaç segur."
-      ],
-      "The link to your file was successfully copied": [
-        "S’ha copiat l'enllaç al vostre fitxer"
       ],
       "Undo in progress": [
         "S'està desfent"
@@ -10153,9 +10145,6 @@
       "Preview": [
         "Vista prèvia"
       ],
-      "Privacy settings": [
-        "Configuració de privacitat"
-      ],
       "Processing...": [
         "Processant..."
       ],
@@ -10237,8 +10226,8 @@
       "Share ${ name }": [
         "Comparteix ${ name }"
       ],
-      "Share via link": [
-        "Comparteix mitjançant un enllaç"
+      "Share files with full edit access": [
+        "Comparteix fitxers amb accés complet per editar"
       ],
       "Shared": [
         "Compartit"
@@ -10269,9 +10258,6 @@
       ],
       "Stop sharing": [
         "Deixa de compartir"
-      ],
-      "Stop sharing with everyone?": [
-        "Deixar de compartir amb tothom?"
       ],
       "Stop sharing?": [
         "Voleu deixar de compartir?"
@@ -10369,8 +10355,8 @@
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "La vostra descàrrega té un fitxer de ${ DOCS_APP_NAME }"
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "La vostra descàrrega inclou un fitxer ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "La vostra informació exposada"

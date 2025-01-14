@@ -226,9 +226,6 @@
       "Create free account": [
         "უფასო ანგარიშის შექმნა"
       ],
-      "Create link": [
-        "ბმულის შექმნა"
-      ],
       "Create new folder": [
         "ახალი საქაღალდის შექმნა"
       ],
@@ -309,6 +306,12 @@
       "Download logs": [
         "ჟურნალის გადმოწერა"
       ],
+      "Download without scanning": [
+        "გამოწერა სკანირების გარეშე"
+      ],
+      "Download without scanning (${ count })": [
+        "გადმოწერა სკანირების გარეშე (${ count })"
+      ],
       "Drive Locked": [
         "საცავი ჩაკეტილია"
       ],
@@ -353,6 +356,9 @@
       ],
       "Export contact group": [
         "კონტაქტების ჯგუფის გატანა"
+      ],
+      "Export selection as .vcf": [
+        "მონიშნულის გატანა .vcf ფაილში"
       ],
       "Fit to window": [
         "ფანჯარაში ჩატევა"
@@ -453,6 +459,9 @@
       "Learn more": [
         "გაიგეთ მეტი"
       ],
+      "Learn more.": [
+        "გაიგეთ მეტი."
+      ],
       "Leave": [
         "გასვლა"
       ],
@@ -500,6 +509,9 @@
       ],
       "Minimize transfers": [
         "გადაწერების ჩაკეცვა"
+      ],
+      "More actions": [
+        "მეტი ქმედება"
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
@@ -629,6 +641,9 @@
       ],
       "Replace file": [
         "ფაილის ჩანაცვლება"
+      ],
+      "Report": [
+        "ანგარიში"
       ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
@@ -812,9 +827,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
-      ],
-      "Understood": [
-        "გასაგებია"
       ],
       "Undo": [
         "დაბრუნება"
@@ -3206,6 +3218,9 @@
       "Time zone": [
         "დროის სარტყელი"
       ],
+      "Time zone component ignored": [
+        "დროის სარტყლის კომპონენტი გამოტოვებულია"
+      ],
       "To-do entry": [
         "გეგმის ელემენტი"
       ],
@@ -3268,6 +3283,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "გამოსახულება არჩეული არაა"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "გაუთვალისწინებელი შეცდომა"
       ]
     },
     "Event invitation error": {
@@ -3595,6 +3615,50 @@
         "შემოწმების არცერთი მეთოდი წვდომადი არაა"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "კალენდრის დროის სარტყელი მხარდაუჭერელია"
+      ],
+      "Edited event not supported": [
+        "ჩასწორებული მოვლენა მხარდაჭერილი არაა"
+      ],
+      "End time out of bounds": [
+        "დასრულების დრო საზღვრებს მიღმაა"
+      ],
+      "Event validation failed": [
+        "მოვლენის შემოწმების შეცდომა"
+      ],
+      "Floating times not supported": [
+        "მცოცავი გრაფიკი მხარდაჭერილი არაა"
+      ],
+      "Malformed all-day event": [
+        "არასწორი მთელ-დღიანი მოვლენა"
+      ],
+      "Malformed end time": [
+        "არასწორი დასასრულის დრო"
+      ],
+      "Malformed recurring event": [
+        "არასწორი გამეორებადი მოვლენა"
+      ],
+      "Malformed start time": [
+        "არასწორი საწყისი დრო"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "დაშვებულია, მხოლოდ, გრეგორიანული კალენდარი"
+      ],
+      "Recurring event has no occurrences": [
+        "განმეორებადი მოვლენა ჯერ არ მომხდარა"
+      ],
+      "Recurring rule not supported": [
+        "გამეორების წესი მხარდაუჭერელია"
+      ],
+      "Start time out of bounds": [
+        "საწყისი დრო საზღვრებს მიღმაა"
+      ],
+      "Time zone not supported": [
+        "მხარდაუჭერელი დროის სარტყელი"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში",
@@ -3732,11 +3796,17 @@
       "Use your app password instead of your regular password if:": [
         "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
       "Your email account requires an app password to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
       "Your email account requires one to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
       ],
       "Your email address and password are correct.": [
         "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
@@ -3965,6 +4035,10 @@
         "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე",
         "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount }-ის სკანირება ჩავარდა",
+        "${ scanErrorCount }-ის სკანირება ჩავარდა"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
@@ -4043,6 +4117,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "ყველა (${ totalFoldersCount } საქაღალდე)",
         "ყველა (${ totalFoldersCount } საქაღალდე)"
@@ -4084,6 +4161,9 @@
       ],
       "And access it from anywhere": [
         "და იქონიეთ წვდომა ნებისმიერი ადგილიდან"
+      ],
+      "Anonymous": [
+        "ანონიმური"
       ],
       "Anyone with this link can access your file.": [
         "ფაილთან წვდომა ექნება ამ ბმულის ყველა მქონეს."
@@ -4215,6 +4295,10 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
+      ],
       "Create in": [
         "რაში შევქმნა"
       ],
@@ -4312,9 +4396,6 @@
       "Downloading": [
         "გადმოწერა"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DOCS_APP_NAME }-ის ფაილების გადმოწერა ${ DRIVE_APP_NAME }-დან, ამჟამად, მხარდაჭერილი არაა - ესენი თქვენს გადმოწერაში ჩასმული არ იქნება."
-      ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
       ],
@@ -4347,6 +4428,9 @@
       ],
       "Enabling drive search": [
         "Drive-ზე ძებნის ჩართვა"
+      ],
+      "Encrypted": [
+        "დაშიფრული"
       ],
       "Encrypted search is here": [
         "დაშიფრული ძებნა აქაა"
@@ -4702,10 +4786,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }",
-        "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }"
-      ],
       "Only the people with the link and the password can access this file.": [
         "ამ ფაილთან წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
       ],
@@ -4759,9 +4839,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "გთხოვთ, შეიყვანოთ პაროლი შინაარსის გასაშიფრად და სანახავად."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "გაიტანეთ ისინი პირდაპირ ${ DOCS_APP_NAME } აპლიკაციიდან, თუ მათი გადმოწერა გნებავთ."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "დაიმახსოვრეთ, რომ ამ ჯგუფებზე მინიჭებული მისამართები *არ* წაიშლება."
@@ -4930,6 +5007,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
@@ -4947,9 +5027,6 @@
       ],
       "Share via link settings": [
         "ბმულით გაზიარების მორგება"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "გაზიარებადი ბმული ${ boldNameText }-სთვის"
       ],
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
@@ -4999,17 +5076,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "გადართვა"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "ამ ანგარიშს შეიძლება, ახალი გასაღები ჰქონდეს, ან შეიცვალა: ${ items } არ გახსნათ, თუ არ ენდობით."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "ციფრული ხელმოწერა, მხოლოდ, ნაწილობრივაა გადამოწმებული. ფაილი ატვირთულია საჯარო გვერდიდან, რომელიც მის წყაროს არ მიუთითებს."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "ციფრული ხელმოწერა, მხოლოდ, ნაწილობრივაა გადამოწმებული. საქაღალდე ატვირთულია საჯარო გვერდიდან, რომელიც მის წყაროს არ მიუთითებს."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "გადმოწერების რიცხვი მოიცავს როგორც მიმდინარე გადმოწერებს, ასევე ფაილების წინასწარ გადახედვის შემთხვევებს."
@@ -5080,18 +5154,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "ეს ბმული Drive-ის ძველ შეიქმნა და ვერ შეიცვლება. პარამტრების შესაცვლელად წაშალეთ ეს ბმული და შექმენით ახალი."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "ეს ბმული სამუდამოდ გაითიშება. ამ ფაილთან მოცემული ბმულით წვდომა შეუძლებელი იქნება. ფაილის თავიდან გასაზიარებლად ახალი ბმული დაგჭირდებათ."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "ეს ბმული სამუდამოდ გაითიშება. ამ საქაღალდესთან მოცემული ბმულით წვდომა შეუძლებელი იქნება. საქაღალდის თავიდან გასაზიარებლად ახალი ბმული დაგჭირდებათ."
-      ],
       "This month": [
         "ამ თვეში"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "ეს წაშლის ამ ბმულს და აუკრძალავს წვდომას ყველას, ვისაც თქვენს ფაილთან ან საქაღალდესთან ამ ბმულით ჰქონდა წვდომა.",
-        "ეს წაშლის ამ ბმულს და აუკრძალავს წვდომას ყველას, ვისაც თქვენს ფაილებთან ან საქაღალდეებთან ამ ბმულით ჰქონდა წვდომა."
       ],
       "This will replace the existing file with the folder": [
         "ეს არსებულ ფაილს საქაღალდით ჩაანაცვლებს"
@@ -5471,6 +5535,12 @@
       ],
       "Your previous recovery phrase": [
         "თქვენი წინა აღდგენის ფრაზა"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
       ]
     },
     "info": {
@@ -5962,9 +6032,6 @@
       "Proration": [
         "პროპორცია"
       ],
-      "Protect with password": [
-        "პაროლის დადება"
-      ],
       "Public keys": [
         "საჯარო გასაღებები"
       ],
@@ -6087,6 +6154,9 @@
       ],
       "Upload your first file": [
         "ატვირთეთ თქვენი პირველი ფაილი"
+      ],
+      "Uploaded by": [
+        "ატვირთული ფაილის მფლობელი"
       ],
       "VAT": [
         "დღგ"
@@ -6213,6 +6283,11 @@
       ],
       "What’s this?": [
         "რა არის ეს?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "ასევე შეიცავს:"
       ]
     },
     "Loading info": {
@@ -6582,6 +6657,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "${ priceMailPlus }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
       ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
@@ -7584,14 +7662,6 @@
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია",
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
-      ],
       "${ reason } has been disabled": [
         "${ reason } გაითიშა"
       ],
@@ -7733,12 +7803,6 @@
       ],
       "The item was successfully added to your drive": [
         "ელემენტი წარმატებით დაემატა თქვენს Drive-ზე"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "\"${ name }\"-მდე ბმულის წაშლის შეცდომა"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "ბმული \"${ name }\"-მდე წაიშალა"
       ],
       "The link to your item failed to be deleted": [
         "თქვენს ელემენტამდე ბმულის წაშლის შეცდომა"
@@ -9448,9 +9512,6 @@
       "Secure link copied": [
         "დაცული ბმული დაკოპირდა"
       ],
-      "The link to your file was successfully copied": [
-        "თქვენი ფაილის ბმული წარმატებით დაკოპირდა"
-      ],
       "Undo in progress": [
         "მიმდინარეობს გაუქმება"
       ],
@@ -9690,6 +9751,9 @@
       ],
       "Change password": [
         "პაროლის შეცვლა"
+      ],
+      "Check for malicious files": [
+        "შემოწმება საეჭვო ფაილებზე"
       ],
       "Clearing data": [
         "მონაცემების გასუფთავება"
@@ -10010,9 +10074,6 @@
       "Preview": [
         "გადახედვა"
       ],
-      "Privacy settings": [
-        "კონფიდენციალობის პარამეტრები"
-      ],
       "Processing...": [
         "დამუშავება..."
       ],
@@ -10094,9 +10155,6 @@
       "Share ${ name }": [
         "${ name }-ის გაზიარება"
       ],
-      "Share via link": [
-        "ბმულით გაზიარება"
-      ],
       "Shared": [
         "გაზიარებული"
       ],
@@ -10126,9 +10184,6 @@
       ],
       "Stop sharing": [
         "გაზიარების შეწყვეტა"
-      ],
-      "Stop sharing with everyone?": [
-        "შევწყვიტოთ ყველასთვის გაზიარება?"
       ],
       "Stop sharing?": [
         "შევწყვიტო გაზიარება?"
@@ -10225,9 +10280,6 @@
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "თქვენს გადმოწერას ${ DOCS_APP_NAME } ფაილი აქვს"
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
