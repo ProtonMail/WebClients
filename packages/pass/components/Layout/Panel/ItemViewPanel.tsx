@@ -52,16 +52,20 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleDismissClick,
     handleEditClick,
     handleHistoryClick,
+    handleLeaveItemClick,
     handleManageClick,
     handleMoveToTrashClick,
+    handleMoveToVaultClick,
     handlePinClick,
     handleRestoreClick,
     handleRetryClick,
     handleSecureLinkClick,
-    handleToggleFlagsClick,
     handleShareItemClick,
-    handleLeaveItemClick,
+    handleToggleFlagsClick,
 }) => {
+    const upsell = useUpselling();
+    const { spotlight } = usePassCore();
+
     const { shareId, itemId, data, optimistic, failed, shareCount } = revision;
     const { name } = data.metadata;
     const trashed = isTrashed(revision);
@@ -73,15 +77,14 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const plan = useSelector(selectPassPlan);
     const monitored = isMonitored(revision);
 
-    const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, owner, targetMembers } = share;
     const shared = isShared(revision);
     const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
     const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
     const sharedReadOnly = shared && readOnly;
-    const upsell = useUpselling();
-    const { spotlight } = usePassCore();
+    const hasMultipleVaults = vaults.length > 1;
+    const canMove = (!shared || owner) && hasMultipleVaults;
 
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
@@ -267,6 +270,15 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 disabled={optimistic}
                                 shape="ghost"
                             >
+                                {canMove && (
+                                    <DropdownMenuButton
+                                        onClick={handleMoveToVaultClick}
+                                        label={c('Action').t`Move to another vault`}
+                                        icon="folder-arrow-in"
+                                        disabled={sharedReadOnly}
+                                    />
+                                )}
+
                                 {quickActions}
 
                                 <DropdownMenuButton
