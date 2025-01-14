@@ -15,7 +15,7 @@ import { ApplicationEvent, PostApplicationError } from '../Application/Applicati
 import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
 import { TranslatedResult } from '@proton/docs-shared'
 import type { Result } from '@proton/docs-shared'
-import { getPlatformFriendlyDateForFileName } from '../Util/PlatformFriendlyFileNameDate'
+import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
 import { MAX_DOC_SIZE } from '../Models/Constants'
 import type { GetNode } from '../UseCase/GetNode'
 import { isDocumentState, type DocumentState } from '../State/DocumentState'
