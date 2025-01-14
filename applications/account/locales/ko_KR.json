@@ -1366,7 +1366,7 @@
         "사용자당 ${ price }"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } 글쓰기 도우미 이용 권한"
+        "${ seats }명 글쓰기 도우미 이용 권한"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -5014,6 +5014,9 @@
       "Time zone": [
         "시간대"
       ],
+      "Time zone component ignored": [
+        "시간대 구성 무시됨"
+      ],
       "To-do entry": [
         "할 일 항목"
       ],
@@ -5131,6 +5134,11 @@
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "${ timeString }, ${ rruleString }에 있는 이벤트"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "예기치 않은 오류"
       ]
     },
     "Event invitation error": {
@@ -5434,7 +5442,7 @@
         "만일 사용자가 ${ BRAND_NAME } 계정을 보유한다면 여기 입력하세요. 그렇지 않다면 계정 생성이 우선 필요합니다."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
-        "초대가 취소될 것이며 사용자는 ${ organizationName }에 가입할 수 없게 됩니다."
+        "초대가 취소되며 해당 사용자가 ${ organizationName }에 가입할 수 없게 됩니다."
       ],
       "To create a new user, a configured custom domain is required.": [
         "새 계정을 생성하려면, 커스텀 도메인 구성이 필요합니다."
@@ -6214,6 +6222,50 @@
         "사용 가능한 인증 방법 없음"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "캘린더 시간대가 지원되지 않음"
+      ],
+      "Edited event not supported": [
+        "편집된 이벤트 지원되지 않음"
+      ],
+      "End time out of bounds": [
+        "범위를 벗어난 종료 시간"
+      ],
+      "Event validation failed": [
+        "이벤트이벤트 검증 실패"
+      ],
+      "Floating times not supported": [
+        "유동 시간 지원되지 않음"
+      ],
+      "Malformed all-day event": [
+        "잘못된 상시 이벤트"
+      ],
+      "Malformed end time": [
+        "잘못된 종료 시간"
+      ],
+      "Malformed recurring event": [
+        "잘못된 반복 이벤트"
+      ],
+      "Malformed start time": [
+        "잘못된 시작 시간"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "그레고리력 척도만 허용됩니다."
+      ],
+      "Recurring event has no occurrences": [
+        "반복되는 이벤트가 존재하지 않습니다"
+      ],
+      "Recurring rule not supported": [
+        "반복 규칙이 지원되지 않음"
+      ],
+      "Start time out of bounds": [
+        "범위를 벗어난 시작 시간"
+      ],
+      "Time zone not supported": [
+        "시간대 지원되지 않음"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "이벤트 ${ totalToImport }개 중 ${ totalImported }개를 암호화하고 캘린더에 추가했습니다"
@@ -6345,11 +6397,17 @@
       "Use your app password instead of your regular password if:": [
         "다음과 같은 경우 일반 비밀번호 대신 앱 비밀번호를 사용하세요:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
+      ],
       "Your email account requires an app password to export your data.": [
         "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
       ],
       "Your email account requires one to export your data.": [
         "데이터를 내보내려면 이메일 계정이 필요합니다."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "이메일 주소 및 앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
       ],
       "Your email address and password are correct.": [
         "이메일 주소 및 비밀번호가 올바릅니다."
@@ -6807,6 +6865,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "잠긴 후 조직 구성원은 비밀번호 또는 PIN 등을 사용하여 ${ PASS_APP_NAME }의 잠금을 해제해야 합니다."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ],
       "Align left": [
         "왼쪽 정렬"
       ],
@@ -7106,6 +7167,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 라벨을 만드세요."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value }명의 구성원을 위한 보안 클라우드 만들기"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "커스텀 도메인에 부계정을 만들거나 관리하고, 계정 주소를 추가하세요."
@@ -8289,6 +8353,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "안전한 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 보냈습니다."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
+      ],
       "Server is currently down": [
         "서버가 일시적으로 비활성화 상태에요"
       ],
@@ -8420,6 +8487,9 @@
       ],
       "Swiss based": [
         "스위스에 위치"
+      ],
+      "Switch to": [
+        "다음으로 전환:"
       ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
@@ -9282,6 +9352,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "다음 결제일은 ${ renewalTime } 입니다."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "사용자의 조직이 싱글 사인 온 (SSO)를 사용합니다. SSO 제공자로 로그인을 탭하세요."
       ],
@@ -9302,6 +9375,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "복구 문구는 특정 순서로 무작위로 생성된 12개의 단어입니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
@@ -16751,7 +16830,7 @@
         "매월"
       ],
       "per user per month": [
-        "사용자당 월별"
+        "매월 사용자당"
       ]
     },
     "Summary of errors during export calendar": {

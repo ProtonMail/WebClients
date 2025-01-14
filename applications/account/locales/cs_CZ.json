@@ -5077,6 +5077,9 @@
       "Time zone": [
         "Časové pásmo"
       ],
+      "Time zone component ignored": [
+        "Komponenta časového pásma ignorována"
+      ],
       "To-do entry": [
         "Úkoly"
       ],
@@ -5194,6 +5197,11 @@
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Událost od ${ timeString }, ${ rruleString }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Neočekávaná chyba"
       ]
     },
     "Event invitation error": {
@@ -6325,6 +6333,50 @@
         "Nejsou k dispozici žádné metody ověřování"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendáře není podporováno"
+      ],
+      "Edited event not supported": [
+        "Upravená událost není podporována"
+      ],
+      "End time out of bounds": [
+        "Čas ukončení mimo hranice"
+      ],
+      "Event validation failed": [
+        "Ověření události selhalo"
+      ],
+      "Floating times not supported": [
+        "Plovoucí časy nejsou podporovány"
+      ],
+      "Malformed all-day event": [
+        "Špatný formát celodenní události"
+      ],
+      "Malformed end time": [
+        "Špatný formát času ukončení"
+      ],
+      "Malformed recurring event": [
+        "Špatný formát opakující se události"
+      ],
+      "Malformed start time": [
+        "Špatný formát času zahájení"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Povolen je pouze gregoriánský typ kalendáře"
+      ],
+      "Recurring event has no occurrences": [
+        "Opakující se událost nemá žádné výskyty"
+      ],
+      "Recurring rule not supported": [
+        "Pravidlo opakování není podporováno"
+      ],
+      "Start time out of bounds": [
+        "Čas zahájení mimo hranice"
+      ],
+      "Time zone not supported": [
+        "Časové pásmo není podporováno"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
@@ -6474,11 +6526,17 @@
       "Use your app password instead of your regular password if:": [
         "Použijte heslo aplikace místo běžného hesla, pokud:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Heslo aplikace je správné. Nepoužívejte své obvyklé heslo."
+      ],
       "Your email account requires an app password to export your data.": [
         "Váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat."
       ],
       "Your email account requires one to export your data.": [
         "Váš e-mailový účet toto vyžaduje pro export vašich dat."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Vaše e-mailová adresa a heslo do aplikace jsou správné. Nepoužívejte své obvyklé heslo."
       ],
       "Your email address and password are correct.": [
         "Vaše e-mailová adresa a heslo jsou správné."
@@ -7002,6 +7060,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Po uzamčení budou muset členové organizace odemknout ${ PASS_APP_NAME } pomocí svého hesla nebo kódu PIN atd."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
+      ],
       "Align left": [
         "Zarovnat doleva"
       ],
@@ -7313,6 +7374,12 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvořte bezpečný cloud pro ${ value } člena",
+        "Vytvořte bezpečný cloud pro ${ value } členy",
+        "Vytvořte bezpečný cloud pro ${ value } členů",
+        "Vytvořte bezpečný cloud pro ${ value } členů"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvořte a spravujte podřízené účty a přiřaďte jim e-mailové adresy na vlastní doméně."
@@ -8529,6 +8596,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Platby přes SEPA nejsou v tuto chvíli k dispozici. Zkuste to znovu později."
+      ],
       "Server is currently down": [
         "Server je momentálně nefunkční"
       ],
@@ -8663,6 +8733,9 @@
       ],
       "Swiss based": [
         "Vytvořeno ve Švýcarsku"
+      ],
+      "Switch to": [
+        "Přepnout na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -9564,6 +9637,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Datum příští platby je ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
       ],
@@ -9584,6 +9660,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Vaše obnovovací fráze je série 12 náhodně vygenerovaných slov v určitém pořadí."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se každých ${ cycle } měsíců automaticky obnovovat."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."

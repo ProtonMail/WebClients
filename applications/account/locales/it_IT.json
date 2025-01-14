@@ -5035,6 +5035,9 @@
       "Time zone": [
         "Fuso orario"
       ],
+      "Time zone component ignored": [
+        "Componente fuso orario ignorato"
+      ],
       "To-do entry": [
         "Voce da fare"
       ],
@@ -6284,6 +6287,9 @@
       "Malformed start time": [
         "Ora di inizio con un formato errato"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "È consentita solo la scala del calendario gregoriano"
+      ],
       "Recurring event has no occurrences": [
         "L'evento ricorrente non ha occorrenze"
       ],
@@ -6433,6 +6439,9 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Usa la password dell'app invece della tua password normale se:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "La password dell'app è corretta. Non usare la tua password regolare."
       ],
       "Your email account requires an app password to export your data.": [
         "Il tuo account email richiede una password dell'app per esportare i tuoi dati."
@@ -9438,6 +9447,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La tua organizzazione usa single sign-on (SSO). Clicca su \"Accedi\" per continuare con il tuo fornitore SSO."
       ],
@@ -9458,6 +9470,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La tua frase di recupero è una serie di 12 parole generate casualmente in un ordine specifico."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
