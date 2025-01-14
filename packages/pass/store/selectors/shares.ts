@@ -51,7 +51,7 @@ export const selectShare =
     ({ shares }: State) =>
         (shareId ? shares?.[shareId] : undefined) as Maybe<ShareItem<T>>;
 
-export const selectIsWritableShare =
+export const selectIsWritableVault =
     (shareId: string) =>
     (state: State): boolean => {
         const share = selectShare(shareId)(state);
