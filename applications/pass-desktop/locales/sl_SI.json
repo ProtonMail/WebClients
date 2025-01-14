@@ -112,6 +112,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Copy alias address": [
+        "Kopiraj vzdevek naslova"
+      ],
       "Copy and close": [
         "Kopiraj in zapri"
       ],
@@ -138,6 +141,9 @@
       ],
       "Create card": [
         "Ustvari kartico"
+      ],
+      "Create contact": [
+        "Ustvari stik"
       ],
       "Create identity": [
         "Ustvari identiteto"
@@ -183,6 +189,9 @@
       ],
       "Deselect": [
         "Prekliči izbor"
+      ],
+      "Disable alias": [
+        "Onemogoči vzdevek"
       ],
       "Discard": [
         "Zavrzi"
@@ -292,6 +301,9 @@
       "Make admin": [
         "Naredite za skrbnika"
       ],
+      "Make default": [
+        "Nastavite na splošno"
+      ],
       "Make editor": [
         "Lahko ureja"
       ],
@@ -312,6 +324,9 @@
       ],
       "Maximum views": [
         "Največje število ogledov"
+      ],
+      "More info": [
+        "Več informacij"
       ],
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
@@ -369,6 +384,9 @@
       ],
       "Previous": [
         "Prejšnje"
+      ],
+      "Reactivate now": [
+        "Ponovno aktivirajte zdaj"
       ],
       "Refresh the page": [
         "Osveži stran"
@@ -531,6 +549,9 @@
       ],
       "Verify": [
         "Preveri"
+      ],
+      "Via secure link": [
+        "Preko varne povezave"
       ],
       "View details": [
         "Prikaži podrobnosti"
@@ -1482,6 +1503,9 @@
       "Reconnecting": [
         "Ponovno povezovanje"
       ],
+      "Record: CNAME": [
+        "Zapis: CNAME"
+      ],
       "Registering extra password...": [
         "Registracija dodatnega gesla ..."
       ],
@@ -1835,6 +1859,9 @@
       "Capital letters (A-Z)": [
         "Velike črke (A-Z)"
       ],
+      "Capitalize": [
+        "Napiši veliko začetnico"
+      ],
       "Card": [
         "Kartica"
       ],
@@ -1843,6 +1870,9 @@
       ],
       "Cards": [
         "Kartice"
+      ],
+      "Catch-All": [
+        "Ujemi vse"
       ],
       "City": [
         "Mesto"
@@ -1927,6 +1957,9 @@
       ],
       "Email": [
         "E-pošta"
+      ],
+      "Email (alias)": [
+        "E-pošta (vzdevek)"
       ],
       "Email address": [
         "E-poštni naslov"
@@ -2021,8 +2054,17 @@
       "Include numbers (0-9)": [
         "Vključi številke (0-9)"
       ],
+      "Info": [
+        "Informacija"
+      ],
       "Instagram handle": [
         "Instagram vzdevek"
+      ],
+      "Install and continue": [
+        "Namesti in nadaljuj"
+      ],
+      "Install extension": [
+        "Namestite razširitev"
       ],
       "Invitations": [
         "Vabila"
@@ -2078,6 +2120,9 @@
       "Logins": [
         "Prijave"
       ],
+      "Mailboxes": [
+        "Poštni predali"
+      ],
       "Make all admins": [
         "Omogoči vsem pravice skrbnika"
       ],
@@ -2131,6 +2176,9 @@
       ],
       "Note": [
         "Opomba"
+      ],
+      "Note • SimpleLogin": [
+        "Opomba • SimpleLogin"
       ],
       "Notes": [
         "Opombe"
@@ -2186,6 +2234,9 @@
       "Prefix": [
         "Predpona"
       ],
+      "Priority:": [
+        "Prioriteta:"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Zaščitite ${ PASS_APP_NAME } z dodatnim geslom"
       ],
@@ -2219,8 +2270,14 @@
       "Select preferred language": [
         "Izberite želeni jezik"
       ],
+      "Select theme": [
+        "Izberite temo"
+      ],
       "Select your password manager": [
         "Izberite upravitelja gesel"
+      ],
+      "Select your theme": [
+        "Izberite svojo temo"
       ],
       "Selected": [
         "Izbrano"
@@ -2270,6 +2327,9 @@
       "Today": [
         "Danes"
       ],
+      "Total items: ": [
+        "Skupaj predmetov: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2284,6 +2344,9 @@
       ],
       "Unlock with": [
         "Odkleni z"
+      ],
+      "Unlock with:": [
+        "Odkleni z:"
       ],
       "Unnamed Credit Card": [
         "Neimenovana plačilna kartica"
@@ -2305,6 +2368,9 @@
       ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "Value:": [
+        "Vrednost:"
       ],
       "Vault ID": [
         "ID trezorja"
@@ -2532,9 +2598,21 @@
     "sso": {
       "Invalid confirmation code": [
         "Neveljavna potrditvena koda"
+      ],
+      "Yes, it was me": [
+        "Da, bil sem jaz."
       ]
     },
     "sso: auth device state": {
+      "Active": [
+        "Aktivno"
+      ],
+      "Inactive": [
+        "Neaktivno"
+      ],
+      "Signed out": [
+        "Odjavljeni ste"
+      ],
       "Unknown": [
         "Neznan"
       ]
@@ -2548,6 +2626,9 @@
       ]
     },
     "Theme": {
+      "Automatic": [
+        "Samodejno"
+      ],
       "Dark": [
         "Temna"
       ],
@@ -2613,6 +2694,9 @@
       "Custom addresses": [
         "Naslovi po meri"
       ],
+      "Custom domains": [
+        "Domen po meri"
+      ],
       "Custom email monitoring": [
         "Nadzor elektronske pošte po meri"
       ],
@@ -2625,11 +2709,23 @@
       "Default": [
         "Privzeta"
       ],
+      "Delete domain": [
+        "Izbris domene"
+      ],
       "Details": [
         "Podrobnosti"
       ],
       "Discard changes?": [
         "Zavrzi spremembe?"
+      ],
+      "DKIM (Optional)": [
+        "DKIM (neobvezno)"
+      ],
+      "DMARC (Optional)": [
+        "DMARC (neobvezno)"
+      ],
+      "Domain": [
+        "Domena"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Uživate v ${ PASS_APP_NAME }?"
@@ -2676,6 +2772,9 @@
       "Last modified": [
         "Zadnjič spremenjeno"
       ],
+      "Leave vault?": [
+        "Zapuščate trezor?"
+      ],
       "Loading breaches...": [
         "Nalaganje kršitev ..."
       ],
@@ -2693,6 +2792,9 @@
       ],
       "Modified": [
         "Spremenjeno"
+      ],
+      "MX record": [
+        "Zapis MX"
       ],
       "No excluded items": [
         "Ni izključenih predmetov"
@@ -2784,6 +2886,9 @@
       "Share with": [
         "Deli z"
       ],
+      "SPF (Optional)": [
+        "SPF (neobvezno)"
+      ],
       "Status": [
         "Stanje"
       ],
@@ -2858,6 +2963,9 @@
       "Section name cannot be empty": [
         "Ime razdelka ne sme biti prazno"
       ],
+      "URL already exists": [
+        "URL že obstaja"
+      ],
       "URL cannot be empty": [
         "URL vnos ne sme biti prazen."
       ],
@@ -2884,8 +2992,14 @@
       "Could not create vault \"${ vaultName }\"": [
         "Ni bilo mogoče ustvariti trezorja »${ vaultName }«"
       ],
+      "Delete alias": [
+        "Izbriši vzdevek"
+      ],
       "Duplicate email addresses.": [
         "Podvojeni e-poštni naslovi."
+      ],
+      "Email cannot be empty": [
+        "E-pošta ne sme biti prazna."
       ],
       "Email is required": [
         "E-poštni naslov je obvezen"
@@ -2938,11 +3052,14 @@
       "Move to trash": [
         "Premakni v smetnjak"
       ],
+      "Name is required": [
+        "Zahtevano je ime"
+      ],
       "No items": [
         "Ni predmetov"
       ],
       "No items in trash matching": [
-        "Noben predmet v košu se ne ujema"
+        "Noben predmet v smeteh se ne ujema."
       ],
       "No items matching": [
         "Noben predmet se ne ujema"

@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "Про псевдоніми hide-my-email"
+      ],
       "Activate recovery": [
         "Активувати відновлення"
       ],
@@ -485,6 +488,9 @@
       ],
       "Export contact group": [
         "Експортувати групу контактів"
+      ],
+      "Export selection as .vcf": [
+        "Експортувати вибране як .vcf"
       ],
       "External encryption": [
         "Зовнішнє шифрування"
@@ -3771,6 +3777,12 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } нове повідомлення",
+        "${ notificationsToShow.length } нові повідомлення",
+        "${ notificationsToShow.length } нових повідомлень",
+        "${ notificationsToShow.length } нових повідомлень"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Від: ${ sender } - ${ Subject }"
       ]
@@ -4702,6 +4714,9 @@
       "Time zone": [
         "Часовий пояс"
       ],
+      "Time zone component ignored": [
+        "Компонент часового поясу ігнорується"
+      ],
       "To-do entry": [
         "Запис завдання"
       ],
@@ -4766,6 +4781,11 @@
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Неможливо надіслати запрошення на ${ email }. ${ errorMessage }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непередбачувана помилка"
       ]
     },
     "Event invitation error": {
@@ -5460,6 +5480,50 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовий пояс календаря не підтримується"
+      ],
+      "Edited event not supported": [
+        "Відредагована подія не підтримується"
+      ],
+      "End time out of bounds": [
+        "Час завершення поза припустимим діапазоном"
+      ],
+      "Event validation failed": [
+        "Не вдалося перевірити подію"
+      ],
+      "Floating times not supported": [
+        "Пливучий час не підтримується"
+      ],
+      "Malformed all-day event": [
+        "Неправильна подія на цілий день"
+      ],
+      "Malformed end time": [
+        "Неправильний час завершення"
+      ],
+      "Malformed recurring event": [
+        "Неправильна повторювана подія"
+      ],
+      "Malformed start time": [
+        "Неправильний час початку"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускається тільки григоріанський календар"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має повторень"
+      ],
+      "Recurring rule not supported": [
+        "Правило повторення не підтримується"
+      ],
+      "Start time out of bounds": [
+        "Час початку поза припустимим діапазоном"
+      ],
+      "Time zone not supported": [
+        "Часовий пояс не підтримується"
       ]
     },
     "ICS widget label for event details": {
@@ -6343,6 +6407,12 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Створити захищену хмару для ${ value } учасника",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учачників"
+      ],
       "Create in": [
         "Створити у"
       ],
@@ -6703,6 +6773,9 @@
       "JCB logo": [
         "Логотип JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Приєднуйтесь до програми ${ PROTON_SENTINEL_NAME }, щоб отримати найвищий рівень безпеки та підтримки облікового запису."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
       ],
@@ -7039,6 +7112,9 @@
       "Proofread text": [
         "Рецензувати текст"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Захистіть свою пошту від витоку до списків розсилки або спамерів за допомогою псевдонімів hide-my-email."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
       ],
@@ -7147,6 +7223,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Платежі SEPA наразі недоступні. Спробуйте пізніше."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -7218,6 +7297,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Перейти до"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -7339,6 +7421,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Це повідомлення автоматично створюється у відповідь на попереднє повідомлення."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Це повідомлення з псевдоніма ${ PASS_APP_NAME }"
+      ],
       "This message is from a mailing list.": [
         "Це повідомлення зі списку розсилки."
       ],
@@ -7422,6 +7507,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Для відновлення ваших даних необхідно повторно активувати ключ облікового запису, що використовувався під час створення даних. Для цього потрібен пароль, який ви використовували для генерування ключа."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Щоб зняти обмеження, ви можете перейти на платний тариф."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Щоб зняти обмеження, ви можете відвідати ${ mailLink } і перейти на платний тариф."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Щоб відмовитися від цієї розсилки, з ${ boldFrom } буде надіслано лист з такими подробицями, як визначено відправником цього листа:"
@@ -7584,6 +7675,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Ми виявили створення декількох безплатних облікових записів, що порушує наші ${ termsLink }"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "У нас є плани, розроблені спеціально для таких користувачів, як ви, яким потрібна більш ніж одна поштова адреса."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
@@ -7891,6 +7985,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступна дата оплати – ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
+      ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
       ],
@@ -7899,6 +7996,12 @@
       ],
       "Your private writing assistant": [
         "Ваш особистий письмовий асистент"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
       ]
     },
     "info": {
@@ -8629,6 +8732,9 @@
       ],
       "Remember my choice": [
         "Запамʼятати мій вибір"
+      ],
+      "Remove metadata": [
+        "Видалити метадані"
       ],
       "Reveal password": [
         "Показати пароль"
@@ -10052,14 +10158,6 @@
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Отримати Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Ціна зі знижкою ${ priceCoupon } дійсна протягом першого місяця. Потім вона буде автоматично поновлена до ${ priceMailPlus }. Ви можете скасувати в будь-який час."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -10072,6 +10170,14 @@
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Отримати Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Ціна зі знижкою ${ priceCoupon } дійсна протягом першого місяця. Потім вона буде автоматично поновлена до ${ priceMailPlus }. Ви можете скасувати в будь-який час."
       ]
     },
     "new_plans: tooltip": {
@@ -10466,6 +10572,9 @@
       "Advanced encryption": [
         "Розширене шифрування"
       ],
+      "Anytime, anywhere access": [
+        "Доступ у будь-який час і з будь-якого місця"
+      ],
       "Auto-delete spam and trash": [
         "Автоматичне видалення спаму та смітника"
       ],
@@ -10475,8 +10584,17 @@
       "Dark Web Monitoring": [
         "Відстеження Dark Web"
       ],
+      "Distraction-free emailing": [
+        "Надсилайте листи, не відволікаючись"
+      ],
       "Download the desktop app": [
         "Завантажити настільний додаток"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Насолоджуйтесь швидшою та цілеспрямованою роботою з настільним застосунком."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Щоб отримати доступ до пошти в будь-який час і оптимізувати роботу, завантажте наш ${ mobileAppAppStoreLink } або ${ mobileAppGooglePlayLink } застосунок."
       ],
       "Get notified if your password is compromised.": [
         "Отримувати сповіщення якщо ваш пароль буде скомпрометовано."
@@ -13845,6 +13963,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Це гарантує, що ніхто не зможе побачити розташування, пристрій та іншу інформацію, яка може бути використана для вашої ідентифікації або відстеження."
       ],
       "This feature is only available for paid users": [
         "Ця функція доступна лише користувачам, які мають передплату"

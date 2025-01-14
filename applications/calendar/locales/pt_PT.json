@@ -450,7 +450,7 @@
         "Unir contactos"
       ],
       "More actions": [
-        "Mais acções"
+        "Mais ações"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -735,7 +735,7 @@
         "Actualizar agora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Melhore para o plano ${ BRAND_NAME } Unlimited"
+        "Atualize para o plano ${ BRAND_NAME } Unlimited"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Atualize para o ${ MAIL_SHORT_APP_NAME } Plus"
@@ -744,7 +744,7 @@
         "Enviar imagem"
       ],
       "Use ${ label } theme": [
-        "Usar o tema ${ label }"
+        "Utilizar o tema ${ label }"
       ],
       "Use a different card": [
         "Utilizar um cartão diferente"
@@ -753,13 +753,13 @@
         "Utilizar um método de pagamento diferente"
       ],
       "Use authentication code": [
-        "Usar código de autenticação"
+        "Utilizar um código de autenticação"
       ],
       "Use for sending": [
-        "Usar para envio"
+        "Utilizar para o envio"
       ],
       "Use recovery code": [
-        "Usar código de recuperação"
+        "Utilizar um código de recuperação"
       ],
       "Verify": [
         "Verificar"
@@ -1080,7 +1080,7 @@
         "Inícios de sessão, notas e cartões de crédito ilimitados"
       ],
       "Use your own email domain": [
-        "Use o seu próprio domínio de e-mail"
+        "Utilize o seu próprio domínio de e-mail"
       ],
       "Version history": [
         "Histórico de versões"
@@ -1390,7 +1390,7 @@
         "O calendário está a sincronizar: a exibição de todos os eventos, poderá demorar vários minutos."
       ],
       "Calendar is too big": [
-        "O calendário é demasiado grande."
+        "O calendário é muito grande."
       ],
       "Calendar link is not accessible": [
         "A ligação ao calendário não está acessível."
@@ -2770,7 +2770,7 @@
         "Outra razão (comente)"
       ],
       "Subscription is too expensive": [
-        "A subscrição é demasiado cara."
+        "A subscrição é muito cara."
       ],
       "Switching to a different provider": [
         "Mudança para um fornecedor diferente"
@@ -2779,7 +2779,7 @@
         "Trata-se de um requisito pontual de que poderei vir a necessitar no futuro."
       ],
       "The VPN is too slow": [
-        "A VPN está demasiada lenta."
+        "A VPN está muita lenta."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3085,7 +3085,7 @@
         "Erro ao carregar a janela OAuth"
       ],
       "First name is too long": [
-        "O primeiro nome é demasiado longo"
+        "O primeiro nome é muito longo"
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
@@ -3157,7 +3157,7 @@
         "O nome da etiqueta não pode estar vazio."
       ],
       "Last name is too long": [
-        "O último nome é demasiado longo."
+        "O último nome é muito longo."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combine pelo menos ${ calendarsToFixCount } calendário com um calendário ${ BRAND_NAME } existente.",
@@ -3236,7 +3236,7 @@
         "Corrija os conflitos selecionados para proceder."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Por favor, forneça um primeiro nome, um último nome ou um nome de exibição"
+        "Forneça um nome próprio, um apelido ou um nome a mostrar."
       ],
       "Port is required": [
         "A porta é obrigatória."
@@ -3315,7 +3315,7 @@
         "O nome da pasta não é válido. Escolha um nome diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "O nome da pasta é demasiado longo. Escolha um nome diferente."
+        "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta não é válido. Escolha um nome diferente."
@@ -3559,7 +3559,7 @@
         "Ocorreu um erro"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
-        "Para usar o ${ MAIL_APP_NAME } ou o ${ CALENDAR_APP_NAME }, mude para a versão web."
+        "Para utilizar o ${ MAIL_APP_NAME } ou o ${ CALENDAR_APP_NAME }, mude para a versão web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não é possível carregar esta página. Atualize a página ou verifique a sua ligação à internet."
@@ -4143,19 +4143,19 @@
     },
     "Import error": {
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "${ BRAND_NAME } não consegue ligar-se à sua conta. Por favor, certifique-se de que:"
+        "${ BRAND_NAME } não consegue ligar-se à sua conta.Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } não consegue ligar-se à sua conta externa. Certifique-se de que o endereço do servidor de e-mail e o número da porta estão corretos."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } não consegue ligar-se à sua conta externa. Por favor, certifique-se de que:"
+        "${ BRAND_NAME } não consegue ligar-se à sua conta externa. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } não consegue ligar-se à sua conta Yahoo. Certifique-se de que o endereço do servidor de e-mail e o número da porta estão corretos."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } não consegue ligar-se à sua conta Yahoo. Por favor, certifique-se de que:"
+        "${ BRAND_NAME } não consegue ligar-se à sua conta Yahoo. Certifique-se de que:"
       ],
       "2-step verification is enabled in your external account.": [
         "A verificação em 2 passos está ativada na sua conta externa."
@@ -4813,7 +4813,7 @@
         "A carregar ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "A carregar o calendário, por favor aguarde. Será redirecionado para a nossa plataforma de agendamento Calendly num novo separador."
+        "A carregar o calendário. Aguarde e será redirecionado para a nossa plataforma de agendamento Calendly num novo separador."
       ],
       "Loading event": [
         "A carregar o evento"
@@ -5023,7 +5023,7 @@
         "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
       ],
       "Start sharing it with contacts and use it for online services.": [
-        "Comece a partilha-lo com contactos e use-o para serviços online."
+        "Comece a partilha-lo com contactos e utilize-o para serviços online."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
@@ -5122,7 +5122,7 @@
         "Para recuperar os seus dados, é necessário reativar a chave de conta utilizada no momento em que os dados foram criados. Isto exigirá que se lembre da senha utilizada aquando da geração da chave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
+        "Para utilizar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
       ],
       "Total email addresses": [
         "Total de endereços de e-mail"
@@ -5194,7 +5194,7 @@
         "As vistas semanal e mensal só se aplicam à área de trabalho."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+        "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
       ],
       "Which event would you like to delete?": [
         "Qual o evento que deseja eliminar?"
@@ -5218,7 +5218,7 @@
         "Deseja eliminar este evento?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+        "Deseja receber um novo código de verificação ou utilizar um método de verificação alternativo?"
       ],
       "Would you like to receive a new verification code?": [
         "Gostaria de receber um novo código de verificação?"
@@ -5283,7 +5283,7 @@
         "Esta ação não pode ser desfeita."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
+        "Tem uma subscrição de avaliação ao ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, adicione um método de pagamento."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tem uma subscrição ${ planTitle } de avaliação. Nenhum pagamento é exigido neste momento. A sua subscrição será renovada automaticamente no final do período de avaliação."
@@ -5459,7 +5459,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "Isto ocorre porque a sua palavra-passe foi redefinida recentemente sem usar um método de recuperação."
+        "Isto ocorre porque a sua palavra-passe foi redefinida recentemente sem utilizar um método de recuperação."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -6588,6 +6588,9 @@
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
+      "200 GB of storage": [
+        "200 GB de armazenamento"
+      ],
       "24/7 account management support": [
         "Suporte de gestão de conta 24/7"
       ],
@@ -6781,6 +6784,9 @@
       "Priority support & live chat": [
         "Apoio prioritário e chat em direto"
       ],
+      "Private photo backup": [
+        "Cópia de segurança de fotos privadas"
+      ],
       "Proofread and refine your emails": [
         "Revise e refine os seus e-mails"
       ],
@@ -6817,6 +6823,9 @@
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Partilha e armazenamento de ficheiros seguros"
       ],
       "Secure link sharing": [
         "Partilha segura de ligação"
@@ -7079,6 +7088,9 @@
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: proteja os seus e-mails com encriptados de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases hide-my-email ilimitados e muito mais."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Aceda a conteúdo bloqueado e navegue de forma privada. Inclui ${ serversAndCountries }, as velocidades mais altas da VPN, acesso a serviços de streaming em todo o mundo, bloqueador de malware e de anúncios, transferências rápidas de BitTorrent e muito mais."
@@ -7822,7 +7834,7 @@
         "Não foi possível autenticar o seu método de pagamento. Escolha outro método de pagamento ou tente novamente."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
+        "O seu cartão foi recusado. Tente com outro cartão ou contacte o seu banco para autorizar esta compra."
       ]
     },
     "Payments.Sepa": {
@@ -8623,6 +8635,9 @@
       ]
     },
     "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Armazenamento para os dados gerados pelo ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
+      ],
       "Up to ${ totalStorageSize } Drive storage": [
         "Até ${ totalStorageSize } de armazenamento no Drive"
       ],
@@ -8688,6 +8703,12 @@
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Perderá o acesso ao armazenamento adicional, aos endereços de e-mail, aliases, calendários, assim como o suporte prioritário."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Perderá acesso à maior velocidade de VPN, proteção para 10 dispositivos, streaming de alta velocidade, proteção contra bloqueadores de anúncios e malware, bem como suporte prioritário."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Perderá acesso a credenciais e notas ilimitadas, alias ilimitados do hide-my-email , 20 cofres, bem como suporte prioritário."
       ]
     },
     "Subscribe to calendar modal": {
@@ -8806,6 +8827,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
       ],
+      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "O ${ planName } dá-lhe acesso a todas as aplicações e funcionalidades premium. A privacidade está integrada, para poder continuar o seu trabalho sabendo que os seus dados e identidade estão seguros."
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } dá-lhe acesso a todas as aplicações, todas as funcionalidades, acesso antecipado às novas versões e tudo o que precisa para ter controlo sobre os seus dados e a sua segurança."
       ],
@@ -8823,6 +8847,12 @@
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
         "${ planName } ajuda a garantir que cada membro da sua família — e os seus dados — estejam protegidos sempre que estiverem online."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
+        "O ${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, palavras-passe e ficheiros. Também tem direito a bónus anuais de armazenamento."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "O ${ planName } oferece ${ planMaxSpace } de armazenamento para os seus ficheiros e fotos. Também tem direito a bónus anuais de armazenamento."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para e-mails, anexos, eventos e ficheiros. Também é elegível para bónus anuais de armazenamento."
@@ -9886,7 +9916,7 @@
         "Atualizar o evento recorrente"
       ],
       "Upgrade complete!": [
-        "A subscrição foi atualizada."
+        "Atualização completa!"
       ],
       "Verification failed": [
         "Erro na verificação"
@@ -9931,7 +9961,7 @@
         "As suas informações expostas"
       ],
       "Your shorter address is now ready": [
-        "O seu endereço no formato mais curto já está pronto."
+        "O seu endereço mais curto já está pronto"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10004,7 +10034,7 @@
         "Carregar a imagem"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Selecione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+        "Selecione o esquema PGP a utilizar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
       ],
       "Show side panel": [
         "Mostrar o painel lateral"
@@ -10026,6 +10056,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -10155,6 +10190,9 @@
       "Contacts could not be merged": [
         "Não foi possível unir os contactos."
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "A data de expiração não está no formato MM/AA."
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da palavra-passe, é impossível reativar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
       ],
@@ -10207,10 +10245,10 @@
         "Esta acção é irreversível. Introduza a palavra ${ boldDanger } no campo para continuar."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento actualmente disponível na sua conta ${ BRAND_NAME }. Por favor, considere a possibilidade de personalizar a sua importação."
+        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível na sua conta ${ BRAND_NAME }. Considere a possibilidade de personalizar a sua importação."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Infelizmente, não estamos online de momento. Por favor, preencha o formulário abaixo para descrever o seu problema e nós iremos analisá-lo e entraremos em contacto quando estivermos novamente online."
+        "Não estamos online de momento. Preencha o formulário abaixo para descrever o seu problema e nós iremos analisá-lo e entraremos em contacto quando estivermos novamente online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Não é possível verificar o servidor de e-mail. Se confia nele, pode saltar esta verificação."

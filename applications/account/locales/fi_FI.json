@@ -4539,7 +4539,7 @@
         "Virheellinen käyttäjätunnus"
       ],
       "Intended recipient does not support calendar sharing": [
-        "Tarkoitettu vastaanottaja ei tue kalenterijakoa"
+        "Tarkoitettu vastaanottaja ei tue kalenterin jakamista"
       ],
       "Invalid ${ name } code": [
         "Virheellinen ${ name }-koodi"
@@ -5152,6 +5152,11 @@
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Tapahtuma ajalta ${ timeString }, ${ rruleString }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Odottamaton virhe"
       ]
     },
     "Event invitation error": {
@@ -6251,6 +6256,44 @@
         "Vahvistustapoja ei ole"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenterin aikavyöhykettä ei tueta"
+      ],
+      "Edited event not supported": [
+        "Muokattua tapahtumaa ei tueta"
+      ],
+      "End time out of bounds": [
+        "Päättymisaika on alueen ulkopuolella"
+      ],
+      "Event validation failed": [
+        "Tapahtuman vahvistus epäonnistui"
+      ],
+      "Floating times not supported": [
+        "Vaihtuvia aikoja ei tueta"
+      ],
+      "Malformed all-day event": [
+        "Virheellinen koko päivän tapahtuma"
+      ],
+      "Malformed end time": [
+        "Virheellinen päättymisaika"
+      ],
+      "Malformed recurring event": [
+        "Virheellinen toistuva tapahtuma"
+      ],
+      "Malformed start time": [
+        "Virheellinen aloitusaika"
+      ],
+      "Recurring rule not supported": [
+        "Toistuvaa sääntöä ei tueta"
+      ],
+      "Start time out of bounds": [
+        "Aloitusaika on alueen ulkopuolella"
+      ],
+      "Time zone not supported": [
+        "Aikavyöhykettä ei tueta"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } tapahtuma salattiin ja lisättiin kalenteriisi",
@@ -6388,11 +6431,17 @@
       "Use your app password instead of your regular password if:": [
         "Käytä normaalin salasanasi sijaan sovellusalasanaa, jos:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Sovellussalasanasi on oikein. Älä käytä normaalia salasanaasi."
+      ],
       "Your email account requires an app password to export your data.": [
         "Sähköpostitilisi vaatii tietojesi vientiin sovellussalasanan."
       ],
       "Your email account requires one to export your data.": [
         "Sähköpostitilisi vaatii sovellussalasanan tietojesi vientiin."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Sähköpostiosoitteesi ja sovellussalasanasi ovat oikein. Älä käytä normaalia salasanaasi."
       ],
       "Your email address and password are correct.": [
         "Sähköpostiosoitteesi ja salasanasi ovat oikein."
@@ -6745,7 +6794,7 @@
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } tallennustilaetua"
+        "+${ bonusSpace } lisätallennustilaa"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
@@ -6871,6 +6920,9 @@
       ],
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Lukituksen jälkeen organisaation jäsenten on avattava ${ PASS_APP_NAME } salasanalla, PIN-koodilla, jne."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ],
       "Align left": [
         "Tasaa vasemmalle"
@@ -7172,6 +7224,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja tunnisteet, jotka haluat tuoda."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Luo suojattu pilvi ${ value } jäsenelle",
+        "Luo suojattu pilvi ${ value } jäsenelle"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
@@ -8363,6 +8419,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Lähetetty turvallisella <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> -sähköpostilla."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+      ],
       "Server is currently down": [
         "Palvelinta ei tällä hetkellä tavoiteta"
       ],
@@ -8495,6 +8554,9 @@
       ],
       "Swiss based": [
         "Sveitsiläinen"
+      ],
+      "Switch to": [
+        "Vaihda"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
@@ -16522,7 +16584,7 @@
         "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
       "Yearly free storage bonuses": [
-        "Vuotuiset ilmaiset tallennustilakorotukset"
+        "Ilmaista lisätallennustilaa vuosittain"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Voit nauttia kaikista nykyisen tilauksesi eduista ${ boldedDate } saakka."

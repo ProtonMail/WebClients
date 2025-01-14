@@ -228,9 +228,6 @@
       "Create free account": [
         "Создать бесплатный аккаунт"
       ],
-      "Create link": [
-        "Создать ссылку"
-      ],
       "Create new folder": [
         "Создать новую папку"
       ],
@@ -818,9 +815,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
-      ],
-      "Understood": [
-        "Понятно"
       ],
       "Undo": [
         "Отменить"
@@ -4465,9 +4459,6 @@
       "Downloading": [
         "Скачивание"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Скачивание файлов ${ DOCS_APP_NAME } с ${ DRIVE_APP_NAME } в настоящее время не поддерживается. Они не будут включены в ваше скачивание."
-      ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
       ],
@@ -4858,12 +4849,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Разрешен только ${ MAX_CUSTOM_PASSWORD_LENGTH } символ",
-        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символа",
-        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов",
-        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
       ],
@@ -4917,9 +4902,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Если вы хотите их скачать, экспортируйте их непосредственно из приложения ${ DOCS_APP_NAME }."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этим группам, НЕ будут удалены."
@@ -5110,9 +5092,6 @@
       "Share via link settings": [
         "Поделиться через настройки ссылки"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Доступная для обмена ссылка для ${ boldNameText }"
-      ],
       "Shared link not found": [
         "Ссылка общего доступа не найдена"
       ],
@@ -5163,12 +5142,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Акаунт может иметь новый ключ или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если вы им доверяете."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "ЭЦП была проверена частично. Файл был загружен с публичной страницы, на которой не указано происхождение конкретного пользователя."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "ЭЦП была проверена частично. Папка была загружена с публичной страницы, на которой не указано происхождение конкретного пользователя."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
@@ -5224,20 +5197,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Эта ссылка будет навсегда отключена. Никто с этой ссылкой не сможет получить доступ к вашему файлу. Чтобы повторно поделиться файлом вам потребуется новая ссылка."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Эта ссылка будет навсегда отключена. Никто с этой ссылкой не сможет получить доступ к вашей папке. Чтобы повторно поделиться папкой, вам потребуется новая ссылка."
-      ],
       "This month": [
         "Этот месяц"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Это удалит ссылку и лишит доступа к вашему файлу или папке всех, у кого есть эта ссылка.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки."
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
@@ -6131,9 +6092,6 @@
       "Proration": [
         "Пропорциональное распределение"
       ],
-      "Protect with password": [
-        "Защитить паролем"
-      ],
       "Public keys": [
         "Открытые ключи"
       ],
@@ -6761,6 +6719,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Начиная с ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
@@ -7831,18 +7792,6 @@
         "${ numberOfItems } элемента успешно перемещены",
         "${ numberOfItems } элемента успешно перемещены"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } ссылку на ваш элемент не удалось удалить",
-        "${ numberOfItems } ссылки на ваши элементы не удалось удалить",
-        "${ numberOfItems } ссылок на ваши элементы не удалось удалить",
-        "${ numberOfItems } ссылок на ваши элементы не удалось удалить"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } ссылка на ваш элемент была удалена",
-        "${ numberOfItems } ссылки на ваши элементы были удалены",
-        "${ numberOfItems } ссылок на ваши элементы были удалены",
-        "${ numberOfItems } ссылок на ваши элементы были удалены"
-      ],
       "${ reason } has been disabled": [
         "${ reason } был отключен"
       ],
@@ -7989,12 +7938,6 @@
       ],
       "The item was successfully added to your drive": [
         "Элемент был успешно добавлен в хранилище"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Не удалось удалить ссылку на \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Ссылка на \"${ name }\" была удалена"
       ],
       "The link to your item failed to be deleted": [
         "Не удалось удалить ссылку на ваш элемент"
@@ -9798,9 +9741,6 @@
       "Secure link copied": [
         "Защищенная ссылка скопирована"
       ],
-      "The link to your file was successfully copied": [
-        "Ссылка на файл была успешно скопирована"
-      ],
       "Undo in progress": [
         "Выполняется отмена"
       ],
@@ -10386,9 +10326,6 @@
       "Preview": [
         "Предварительный просмотр"
       ],
-      "Privacy settings": [
-        "Настройки конфиденциальности"
-      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -10470,9 +10407,6 @@
       "Share ${ name }": [
         "Общий ресурс ${ name }"
       ],
-      "Share via link": [
-        "Поделиться с помощью ссылки"
-      ],
       "Shared": [
         "В общем доступе"
       ],
@@ -10502,9 +10436,6 @@
       ],
       "Stop sharing": [
         "Закрыть доступ"
-      ],
-      "Stop sharing with everyone?": [
-        "Закрыть доступ всем?"
       ],
       "Stop sharing?": [
         "Прекратить доступ?"
@@ -10601,9 +10532,6 @@
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "В вашем скачивании есть файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"

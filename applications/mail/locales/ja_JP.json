@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
+      "About hide-my-email aliases": [
+        "ide-my-email エイリアスについて"
+      ],
       "Activate recovery": [
         "回復を有効にする"
       ],
@@ -477,6 +480,9 @@
       "Export contact group": [
         "連絡先グループをエクスポート"
       ],
+      "Export selection as .vcf": [
+        "選択項目を .vcf としてエクスポート"
+      ],
       "External encryption": [
         "外部への暗号化"
       ],
@@ -556,7 +562,7 @@
         "非表示"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME }Scribeライティングアシスタントを非表示"
+        "${ BRAND_NAME } Scribe 執筆アシスタントを非表示"
       ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
@@ -749,6 +755,9 @@
       ],
       "More": [
         "その他"
+      ],
+      "More actions": [
+        "その他の操作"
       ],
       "More details about ${ ariaLabelTitle }": [
         "${ ariaLabelTitle } についての詳細"
@@ -1135,7 +1144,7 @@
         "表示"
       ],
       "Show ${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME }Scribeライティングアシスタントを表示"
+        "${ BRAND_NAME } Scribe 執筆アシスタントを表示"
       ],
       "Show advanced PGP settings": [
         "拡張 PGP 設定を表示"
@@ -2314,7 +2323,7 @@
         "黒い青"
       ],
       "dark midnight blue": [
-        "かなり黒い青"
+        "ダークミッドナイトブルー"
       ],
       "dim gray": [
         "やや黒いグレー"
@@ -3628,10 +3637,10 @@
         "${ price } から"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
-        "ライティングアシスタントの使用を続けるためには、サブスクリプションを追加してください。"
+        "執筆アシスタントを引き続き使用するには、サブスクリプションを追加してください。"
       ],
       "To continue to use the writing assistant, request access from your admin.": [
-        "ライティングアシスタントの使用を続けるためには、管理者にアクセス権をリクエストしてください。"
+        "執筆アシスタントを引き続き使用するには、管理者にアクセス権をリクエストしてください。"
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "アカウントを可能な限り高度に保護するためには、回復用フレーズを設定してください。"
@@ -3714,6 +3723,9 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length }件の新着メッセージ"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "送信者: ${ sender } - ${ Subject }"
       ]
@@ -4603,6 +4615,9 @@
       "Time zone": [
         "タイムゾーン"
       ],
+      "Time zone component ignored": [
+        "タイムゾーン構成は無視されました"
+      ],
       "To-do entry": [
         "To-do のエントリー"
       ],
@@ -4667,6 +4682,11 @@
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "${ email } にメールを送信できません。${ errorMessage }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "予期せぬエラー"
       ]
     },
     "Event invitation error": {
@@ -5336,6 +5356,50 @@
         "検証方法がありません"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "カレンダーのタイムゾーンはサポートされていません"
+      ],
+      "Edited event not supported": [
+        "編集された予定はサポートされていません"
+      ],
+      "End time out of bounds": [
+        "終了日時が指定可能な範囲を超えています"
+      ],
+      "Event validation failed": [
+        "予定の検証に失敗しました"
+      ],
+      "Floating times not supported": [
+        "浮動時間はサポートされていません"
+      ],
+      "Malformed all-day event": [
+        "不正な終日の予定です"
+      ],
+      "Malformed end time": [
+        "異常な終了日時です"
+      ],
+      "Malformed recurring event": [
+        "不正な定期的な予定です"
+      ],
+      "Malformed start time": [
+        "異常な開始日時です"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "グレゴリオ暦のスケールのみ許可されています"
+      ],
+      "Recurring event has no occurrences": [
+        "定期的な予定に繰り返しがありません"
+      ],
+      "Recurring rule not supported": [
+        "繰り返しルールはサポートされていません"
+      ],
+      "Start time out of bounds": [
+        "開始日時が指定可能な範囲を超えています"
+      ],
+      "Time zone not supported": [
+        "タイムゾーンはサポートされていません"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } 人の参加者"
@@ -5475,11 +5539,17 @@
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "アプリのパスワードが正しいです。通常のパスワードを使用しないでください。"
+      ],
       "Your email account requires an app password to export your data.": [
         "メールアカウントはデータをエクスポートするためにアプリのパスワードを必要としています。"
       ],
       "Your email account requires one to export your data.": [
         "データをエクスポートするためにメールアカウントが必要です。"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用しないでください。"
       ],
       "Your email address and password are correct.": [
         "あなたのメールアドレスとパスワードは正しいです。"
@@ -5818,6 +5888,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
+      ],
       "Align left": [
         "左揃え"
       ],
@@ -6034,6 +6107,9 @@
       "Create a new contact group": [
         "新しい連絡先グループを作成"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } 名のメンバーのために安全なクラウドを作成します"
+      ],
       "Create in": [
         "作成日時"
       ],
@@ -6098,7 +6174,7 @@
         "宛先にパスワードを伝えることを忘れないでください"
       ],
       "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
-        "重要なメールに今すぐ対応する時間がないけれど、忘れたくもありませんか？受信トレイに再表示される時間を設定することができます。"
+        "後で確認したい重要なメールがありますか？受信トレイに再表示される時間を設定することができます。"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
@@ -6366,6 +6442,9 @@
       ],
       "JCB logo": [
         "JCB ロゴ"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "最高水準のアカウントセキュリティとサポートのために ${ PROTON_SENTINEL_NAME } プログラムに参加しましょう。"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -6697,6 +6776,9 @@
       "Proofread text": [
         "テキストを校正する"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "ニュースレターや迷惑メールの配信リストから、ide-my-emailで自分のアドレスを守りましょう。"
+      ],
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
       ],
@@ -6802,6 +6884,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "安全なメールシステム <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPAでのお支払は現在一時的に利用できません。後で再試行してください。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -6873,6 +6958,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
+      "Switch to": [
+        "切り替え"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -6988,6 +7076,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "このメッセージは以前のメッセージに対する自動応答です。"
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "このメッセージは ${ PASS_APP_NAME } エイリアスからのものです。"
+      ],
       "This message is from a mailing list.": [
         "これはメーリングリストからのメッセージです。"
       ],
@@ -7068,6 +7159,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "制限を解除するには、有料プランにアップグレードしてください。"
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "制限を解除するには、 ${ mailLink } にアクセスして有料プランにアップグレードしてください。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "このメーリングリストの購読を解除するには、ニュースレターの送信者によって定義された詳細とともに、${ boldFrom } からメールが送信されます。"
@@ -7230,6 +7327,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "${ termsLink } に違反する複数の無料アカウントの作成が検出されました。"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "私たちには、複数のメールアドレスを必要とするあなたのようなユーザーのために特別に設計されたプランがあります。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "お客様のお支払方法を銀行で認証する必要があります。"
@@ -7492,6 +7592,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "次回の請求日は ${ renewalTime } です。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
+      ],
       "Your password was leaked:": [
         "パスワードが漏洩しました:"
       ],
@@ -7500,6 +7603,12 @@
       ],
       "Your private writing assistant": [
         "あなたのプライベートな執筆アシスタント"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ]
     },
     "info": {
@@ -8212,6 +8321,9 @@
       ],
       "Remember my choice": [
         "選択を記憶する"
+      ],
+      "Remove metadata": [
+        "メタデータを削除"
       ],
       "Reveal password": [
         "パスワードを表示する"
@@ -9539,14 +9651,6 @@
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }でMail Plusを入手"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -9559,6 +9663,14 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }でMail Plusを入手"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
       ]
     },
     "new_plans: tooltip": {
@@ -9929,6 +10041,12 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } は、詐欺メールが受信トレイに届かないようにします。"
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store での ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store での ${ MAIL_APP_NAME }"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } は、あなたがこれ以上インターネット上で追いかけ回されないようにします。"
       ],
@@ -9941,6 +10059,9 @@
       "Advanced encryption": [
         "高度な暗号化"
       ],
+      "Anytime, anywhere access": [
+        "いつでもどこでもアクセス"
+      ],
       "Auto-delete spam and trash": [
         "迷惑メールとごみ箱を自動削除"
       ],
@@ -9950,8 +10071,17 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Distraction-free emailing": [
+        "気晴らしメール"
+      ],
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "デスクトップアプリを使って、より速く、集中したメール送信をお楽しみください。"
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "メールと最適化されたモバイルエクスペリエンスへいつでもアクセスするためには、 ${ mobileAppAppStoreLink } または ${ mobileAppGooglePlayLink } アプリをダウンロードしてください。"
       ],
       "Get notified if your password is compromised.": [
         "パスワードの安全性が損なわれた場合に通知を受け取る"
@@ -13065,6 +13195,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "これにより、あなたを特定または追跡するために使用される可能性のある場所、デバイス、およびその他の情報を誰も見ることができなくなります。"
       ],
       "This feature is only available for paid users": [
         "この機能は有料ユーザのみが利用できます。"

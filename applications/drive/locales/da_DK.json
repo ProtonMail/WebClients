@@ -226,9 +226,6 @@
       "Create free account": [
         "Opret gratis konto"
       ],
-      "Create link": [
-        "Opret link"
-      ],
       "Create new folder": [
         "Opret ny mappe"
       ],
@@ -308,6 +305,12 @@
       ],
       "Download logs": [
         "Download-logfiler"
+      ],
+      "Download without scanning": [
+        "Download uden scanning"
+      ],
+      "Download without scanning (${ count })": [
+        "Download uden scanning (${ count })"
       ],
       "Drive Locked": [
         "Drive låst"
@@ -452,6 +455,9 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "Learn more.": [
+        "Få mere at vide."
       ],
       "Leave": [
         "Forlad"
@@ -629,6 +635,9 @@
       ],
       "Replace file": [
         "Erstat fil"
+      ],
+      "Report": [
+        "Rapport"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -812,9 +821,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
-      ],
-      "Understood": [
-        "Forstået"
       ],
       "Undo": [
         "Fortryd"
@@ -3260,6 +3266,11 @@
         "Intet billede valgt"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Uventet fejl"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
@@ -3583,6 +3594,26 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
+      ]
+    },
+    "ICS event error": {
+      "End time out of bounds": [
+        "Sluttid uden for grænserne"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagsbegivenhed"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet tilbagevendende begivenhed"
+      ],
+      "Malformed start time": [
+        "Misdannet starttid"
+      ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
       ]
     },
     "Import calendar": {
@@ -3958,6 +3989,10 @@
         "${ providerFoldersNumLocalized } etiket fundet i Gmail",
         "${ providerFoldersNumLocalized } etiketter fundet i Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } scanning mislykkedes",
+        "${ scanErrorCount } scanninger mislykkedes"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
@@ -4077,6 +4112,9 @@
       ],
       "And access it from anywhere": [
         "Og få adgang til den hvor som helst"
+      ],
+      "Anonymous": [
+        "Anonym"
       ],
       "Anyone with this link can access your file.": [
         "Alle med dette link kan få adgang til din fil."
@@ -4305,9 +4343,6 @@
       "Downloading": [
         "Downloader"
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Download af ${ DOCS_APP_NAME }-filer fra ${ DRIVE_APP_NAME } understøttes i øjeblikket ikke - disse vil ikke blive medtaget i dit download."
-      ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
@@ -4340,6 +4375,9 @@
       ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
+      ],
+      "Encrypted": [
+        "Krypteret"
       ],
       "Encrypted search is here": [
         "Nu med krypteret søgning"
@@ -4695,10 +4733,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt",
-        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne fil."
       ],
@@ -4752,9 +4786,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Indtast adgangskoden for at dekryptere og se indholdet."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Eksporter dem direkte fra ${ DOCS_APP_NAME }-applikationen i stedet, hvis du ønsker at hente dem."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Bemærk at adresser tildelt til disse grupper IKKE vil blive slettet."
@@ -4941,9 +4972,6 @@
       "Share via link settings": [
         "Del via link-indstillinger"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Delbart link til ${ boldNameText }"
-      ],
       "Shared link not found": [
         "Delt link ikke fundet"
       ],
@@ -4992,17 +5020,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Skift til"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Den digitale signatur er blevet delvist verificeret. Filen blev uploadet fra en offentlig side, der ikke angiver en bestemt brugers oprindelse."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Den digitale signatur er blevet delvist verificeret. Mappen blev uploadet fra en offentlig side, der ikke angiver en bestemt brugers oprindelse."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
@@ -5073,18 +5098,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Linket blev oprettet i en ældre Drive-version og kan ikke ændres. Slet linket og opret et nyt for at ændre indstillingerne."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din fil. For at gendele filen, skal du bruge et nyt link."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din mappe. For at gendele mappen, skal du bruge et nyt link."
-      ],
       "This month": [
         "Denne måned"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
-        "Dette vil slette linkene og fjerne adgangen til dine filer eller mapper for alle, der har linkene."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Dette vil fjerne den synkroniserede enhed ${ deviceName } fra ${ DRIVE_APP_NAME } og alle dens data fra ${ DRIVE_APP_NAME }. Mapper, du har tilføjet til Mine computere, stopper med at synkronisere."
@@ -5115,6 +5130,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
+        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder. "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
@@ -5961,9 +5979,6 @@
       "Proration": [
         "Proration"
       ],
-      "Protect with password": [
-        "Beskyt med adgangskode"
-      ],
       "Public keys": [
         "Offentlige nøgler"
       ],
@@ -6086,6 +6101,9 @@
       ],
       "Upload your first file": [
         "Upload din første fil"
+      ],
+      "Uploaded by": [
+        "Uploadet af"
       ],
       "VAT": [
         "Moms"
@@ -6212,6 +6230,11 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Også inkluderet:"
       ]
     },
     "Loading info": {
@@ -6581,6 +6604,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Opgradér"
       ],
       "Upgrade now": [
         "Opgradér nu"
@@ -6987,7 +7013,7 @@
         "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
-        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
+        "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "TOR over VPN": [
         "Tor over VPN"
@@ -7559,14 +7585,6 @@
         "${ numberOfItems } element flyttet",
         "${ numberOfItems } elementer flyttet"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } link til dit element kunne ikke slettes",
-        "${ numberOfItems } links til dine elementer kunne ikke slettes"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } link til dit element blev slettet",
-        "${ numberOfItems } links til dine elementer blev slettet"
-      ],
       "${ reason } has been disabled": [
         "${ reason } er blevet deaktiveret"
       ],
@@ -7708,12 +7726,6 @@
       ],
       "The item was successfully added to your drive": [
         "Elementet blev tilføjet dit drev"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Linket til \"${ name }\" kunne ikke slettes"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Linket til \"${ name }\" blev slettet"
       ],
       "The link to your item failed to be deleted": [
         "Linket til dit element kunne ikke slettes"
@@ -9387,9 +9399,6 @@
       "Secure link copied": [
         "Sikkert link kopieret"
       ],
-      "The link to your file was successfully copied": [
-        "Linket til din fil blev kopieret korrekt"
-      ],
       "Undo in progress": [
         "Annullering i gang"
       ],
@@ -9629,6 +9638,9 @@
       ],
       "Change password": [
         "Skift adgangskode"
+      ],
+      "Check for malicious files": [
+        "Tjek efter skadelige filer"
       ],
       "Clearing data": [
         "Rydder data"
@@ -9949,9 +9961,6 @@
       "Preview": [
         "Forhåndsvisning"
       ],
-      "Privacy settings": [
-        "Privatlivsindstillinger"
-      ],
       "Processing...": [
         "Behandler..."
       ],
@@ -10033,9 +10042,6 @@
       "Share ${ name }": [
         "Del ${ name }"
       ],
-      "Share via link": [
-        "Del via link"
-      ],
       "Shared": [
         "Delt"
       ],
@@ -10065,9 +10071,6 @@
       ],
       "Stop sharing": [
         "Stop deling"
-      ],
-      "Stop sharing with everyone?": [
-        "Stop deling med alle?"
       ],
       "Stop sharing?": [
         "Stop med at dele?"
@@ -10164,9 +10167,6 @@
       ],
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Dit download har en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"

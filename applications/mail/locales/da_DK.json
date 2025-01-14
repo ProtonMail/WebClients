@@ -4681,6 +4681,11 @@
         "Kan ikke sende invitation til ${ email }. ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Uventet fejl"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
@@ -4849,6 +4854,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Konfigurér din familie-konto og invitér brugere"
+      ],
       "Set up your family": [
         "Opret din familie"
       ],
@@ -5334,6 +5342,26 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
+      ]
+    },
+    "ICS event error": {
+      "End time out of bounds": [
+        "Sluttid uden for grænserne"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagsbegivenhed"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet tilbagevendende begivenhed"
+      ],
+      "Malformed start time": [
+        "Misdannet starttid"
+      ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
       ]
     },
     "ICS widget label for event details": {
@@ -6943,6 +6971,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Skift til"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
@@ -9046,6 +9077,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
+      ],
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
@@ -9457,7 +9491,7 @@
         "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
-        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
+        "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "TOR over VPN": [
         "Tor over VPN"
@@ -9653,11 +9687,6 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Få Mail Plus for ${ priceCoupon }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -9670,6 +9699,11 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Få Mail Plus for ${ priceCoupon }"
       ]
     },
     "new_plans: tooltip": {

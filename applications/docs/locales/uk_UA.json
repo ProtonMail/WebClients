@@ -189,9 +189,6 @@
       "Copy invite link": [
         "Копіювати посилання запрошення"
       ],
-      "Copy link": [
-        "Копіювати посилання"
-      ],
       "Create a copy": [
         "Створити копію"
       ],
@@ -296,6 +293,9 @@
       ],
       "Export contact group": [
         "Експортувати групу контактів"
+      ],
+      "Export selection as .vcf": [
+        "Експортувати вибране як .vcf"
       ],
       "Forgot password?": [
         "Забули пароль?"
@@ -3051,6 +3051,9 @@
       "Time zone": [
         "Часовий пояс"
       ],
+      "Time zone component ignored": [
+        "Компонент часового поясу ігнорується"
+      ],
       "To-do entry": [
         "Запис завдання"
       ],
@@ -3098,6 +3101,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Жодного зображення не вибрано"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непередбачувана помилка"
       ]
     },
     "Event invitation error": {
@@ -3423,6 +3431,50 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовий пояс календаря не підтримується"
+      ],
+      "Edited event not supported": [
+        "Відредагована подія не підтримується"
+      ],
+      "End time out of bounds": [
+        "Час завершення поза припустимим діапазоном"
+      ],
+      "Event validation failed": [
+        "Не вдалося перевірити подію"
+      ],
+      "Floating times not supported": [
+        "Пливучий час не підтримується"
+      ],
+      "Malformed all-day event": [
+        "Неправильна подія на цілий день"
+      ],
+      "Malformed end time": [
+        "Неправильний час завершення"
+      ],
+      "Malformed recurring event": [
+        "Неправильна повторювана подія"
+      ],
+      "Malformed start time": [
+        "Неправильний час початку"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускається тільки григоріанський календар"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має повторень"
+      ],
+      "Recurring rule not supported": [
+        "Правило повторення не підтримується"
+      ],
+      "Start time out of bounds": [
+        "Час початку поза припустимим діапазоном"
+      ],
+      "Time zone not supported": [
+        "Часовий пояс не підтримується"
       ]
     },
     "Import calendar": {
@@ -4023,6 +4075,12 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Створити захищену хмару для ${ value } учасника",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учачників"
+      ],
       "Create in": [
         "Створити у"
       ],
@@ -4425,12 +4483,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Власник одного або кількох ваших довірених ключів позначив їх \"скомпрометованими\". Ми радимо вам \"скасувати довіру\" для цих ключів."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символ",
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символи",
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів",
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цього файлу."
       ],
@@ -4581,6 +4633,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Платежі SEPA наразі недоступні. Спробуйте пізніше."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -4601,9 +4656,6 @@
       ],
       "Share via link settings": [
         "Налаштування посилання для спільного доступу"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "Посилання спільного доступу для ${ boldNameText }"
       ],
       "Shared by": [
         "Поширено користувачем"
@@ -4640,6 +4692,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Перейти до"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -4698,23 +4753,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Це посилання було створено за допомогою старої версії Drive і не може бути змінене. Видаліть це посилання та створіть нове, щоб змінити налаштування."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Це посилання буде вимкнено. Ніхто не матиме доступу до вашого файлу за цим посиланням. Щоб надати спільний доступ до файлу, вам знадобиться нове посилання."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Це посилання буде вимкнено. Ніхто не матиме доступу до вашої теки за цим посиланням. Щоб надати спільний доступ до теки, вам знадобиться нове посилання."
-      ],
       "This message will be presented again later": [
         "Це повідомлення буде представлено пізніше"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Можливо, цей публічний документ не існує, або ви не маєте дозволу на перегляд. Спробуйте перезавантажити сторінку, щоб перевірити, чи проблема існує."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Це видалить посилання та вилучить доступ до вашої теки для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання."
       ],
       "This will replace the existing file with the folder": [
         "Це призведе до заміни наявного файлу текою"
@@ -5013,11 +5056,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступна дата оплати – ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
+      ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
       ]
     },
     "info": {
@@ -5442,9 +5494,6 @@
       ],
       "Proration": [
         "Розподілення"
-      ],
-      "Protect with password": [
-        "Захист паролем"
       ],
       "Public keys": [
         "Відкриті ключі"
@@ -7081,18 +7130,6 @@
         "${ numberOfItems } елементів успішно переміщено",
         "${ numberOfItems } елементів успішно переміщено"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Не вдалося видалити ${ numberOfItems } посилання на ваш елемент",
-        "Не вдалося видалити ${ numberOfItems } посилання на ваші елементи",
-        "Не вдалося видалити ${ numberOfItems } посилань на ваші елементи",
-        "Не вдалося видалити ${ numberOfItems } посилання на ваші елементи"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } посилання на ваш елемент було видалено",
-        "${ numberOfItems } посилання на ваші елементи було видалено",
-        "${ numberOfItems } посилань на ваші елементи було видалено",
-        "${ numberOfItems } посилання на ваші елементи було видалено"
-      ],
       "${ reason } has been disabled": [
         "${ reason } вимкнено"
       ],
@@ -7191,12 +7228,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Не вдалося зупинити поширення елемента"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Не вдалося видалити посилання на \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Посилання на \"${ name }\" було видалено"
       ],
       "The link to your item failed to be deleted": [
         "Не вдалося видалити посилання на ваш елемент"
@@ -8547,9 +8578,6 @@
       "Secure link copied": [
         "Захищене посилання скопійовано"
       ],
-      "The link to your file was successfully copied": [
-        "Посилання на ваш файл успішно скопійовано"
-      ],
       "Undo in progress": [
         "Скасовується"
       ],
@@ -9036,9 +9064,6 @@
       "Photos": [
         "Фото"
       ],
-      "Privacy settings": [
-        "Налаштування приватності"
-      ],
       "Processing...": [
         "Триває обробка..."
       ],
@@ -9096,9 +9121,6 @@
       "Share ${ name }": [
         "Спільний доступ ${ name }"
       ],
-      "Share via link": [
-        "Спільний доступ за посиланням"
-      ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
       ],
@@ -9116,9 +9138,6 @@
       ],
       "Stop sharing": [
         "Припинити спільний доступ"
-      ],
-      "Stop sharing with everyone?": [
-        "Перестати ділитись з усіма?"
       ],
       "Stop sharing?": [
         "Припинити спільний доступ?"

@@ -305,6 +305,9 @@
       "Export contact group": [
         "Kişi grubunu dışa aktar"
       ],
+      "Export selection as .vcf": [
+        "Seçimi .vcf olarak dışa aktar"
+      ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
       ],
@@ -445,6 +448,9 @@
       ],
       "Merge contacts": [
         "Kişileri birleştir"
+      ],
+      "More actions": [
+        "Diğer işlemler"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -3520,6 +3526,9 @@
       "Time zone": [
         "Saat dilimi"
       ],
+      "Time zone component ignored": [
+        "Saat dilimi bileşeni yok sayıldı"
+      ],
       "To-do entry": [
         "Yapılacak iş kaydı"
       ],
@@ -3606,6 +3615,11 @@
     "Event info. Organizer name": {
       "You": [
         "Siz"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Beklenmeyen bir sorun çıktı"
       ]
     },
     "Event invitation error": {
@@ -3986,6 +4000,50 @@
         "Kullanılabilecek bir doğrulama yöntemi yok"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Takvimin saat dilimi desteklenmiyor"
+      ],
+      "Edited event not supported": [
+        "Etkinliklerin düzenlenmesi desteklenmiyor"
+      ],
+      "End time out of bounds": [
+        "Bitiş zamanı sınırların dışında"
+      ],
+      "Event validation failed": [
+        "Etkinlik doğrulanamadı"
+      ],
+      "Floating times not supported": [
+        "Göreli zamanlar desteklenmiyor"
+      ],
+      "Malformed all-day event": [
+        "Tüm gün etkinliği bozulmuş"
+      ],
+      "Malformed end time": [
+        "Bitiş zamanı bozulmuş"
+      ],
+      "Malformed recurring event": [
+        "Yinelenen etkinlik bozulmuş"
+      ],
+      "Malformed start time": [
+        "Başlangıç zamanı bozulmuş"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Yalnızca Gregoryen takvimi ölçeğine izin veriliyor"
+      ],
+      "Recurring event has no occurrences": [
+        "Yinelenen etkinliğin herhangi bir yinelemesi yok"
+      ],
+      "Recurring rule not supported": [
+        "Yinelenme kuralı desteklenmiyor"
+      ],
+      "Start time out of bounds": [
+        "Başlangıç zamanı sınırların dışında"
+      ],
+      "Time zone not supported": [
+        "Saat dilimi desteklenmiyor"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
@@ -4123,11 +4181,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı kullanmayın."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı kullanmayın."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -4383,6 +4447,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
         "Tümü (${ totalFoldersCount } klasör)"
@@ -4512,6 +4579,10 @@
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } üye için bir güvenli bulut oluştur",
+        "${ value } üye için bir güvenli bulut oluştur"
       ],
       "Create in": [
         "Şuraya ekle"
@@ -4933,6 +5004,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -4965,6 +5039,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Şuna geç"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -5316,11 +5393,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      ],
       "Your password was leaked:": [
         "Parolanız açığa çıkmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve ${ cycle } ayda bir otomatik olarak yenilenecek."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sistem saat diliminiz ${ timezone } olarak değişmiş gibi görünüyor. Saat dilimi ayarınızı güncellemek ister misiniz?"

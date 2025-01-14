@@ -5056,6 +5056,9 @@
       "Time zone": [
         "Fus orar"
       ],
+      "Time zone component ignored": [
+        "Componenta fus orar este ignorată."
+      ],
       "To-do entry": [
         "Intrare de făcut"
       ],
@@ -5173,6 +5176,11 @@
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Evenimentul din ${ timeString }, ${ rruleString }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Eroare neașteptată."
       ]
     },
     "Event invitation error": {
@@ -6288,6 +6296,50 @@
         "Nu sunt metode de verificare disponibile"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
+      ],
+      "Edited event not supported": [
+        "Evenimentul editat nu este suportat."
+      ],
+      "End time out of bounds": [
+        "Ora de sfârșit e în afara limitelor."
+      ],
+      "Event validation failed": [
+        "Validare eveniment eșuată."
+      ],
+      "Floating times not supported": [
+        "Orele flotante nu sunt suportate."
+      ],
+      "Malformed all-day event": [
+        "Evenimentul pentru întreaga zi este în format eronat."
+      ],
+      "Malformed end time": [
+        "Ora de sfârșit incorectă."
+      ],
+      "Malformed recurring event": [
+        "Format eronat eveniment repetitiv."
+      ],
+      "Malformed start time": [
+        "Ora de început eronată."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Este permisă doar scala calendarului Gregorian."
+      ],
+      "Recurring event has no occurrences": [
+        "Evenimentul recurent nu are nicio apariție."
+      ],
+      "Recurring rule not supported": [
+        "Regula recurentă nesuportată."
+      ],
+      "Start time out of bounds": [
+        "Ora de început e în afara limitelor."
+      ],
+      "Time zone not supported": [
+        "Fus orar nesuportat."
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
@@ -6431,11 +6483,17 @@
       "Use your app password instead of your regular password if:": [
         "Folosiți parola aplicației în locul parolei obișnuite dacă:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Parola aplicației este corectă. Nu folosiți parola obișnuită."
+      ],
       "Your email account requires an app password to export your data.": [
         "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
       ],
       "Your email account requires one to export your data.": [
         "Contul de e-mail necesită o parolă pentru a exporta datele."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adresa de e-mail și parola aplicației sunt corecte. Nu folosiți parola obișnuită."
       ],
       "Your email address and password are correct.": [
         "Adresa de e-mail și parola sunt corecte."
@@ -6937,6 +6995,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "După ce au fost blocați, membrii organizației vor trebui să deblocheze ${ PASS_APP_NAME } cu parola sau codul PIN etc."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
+      ],
       "Align left": [
         "Aliniere la stânga"
       ],
@@ -7244,6 +7305,11 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și etichetele care trebuie importate."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Creați un cont cloud securizat pentru ${ value } membru",
+        "Creați un cont cloud securizat pentru ${ value } membri",
+        "Creați un cont cloud securizat pentru ${ value } de membri"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
@@ -8449,6 +8515,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "E-mail securizat trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
+      ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
       ],
@@ -8582,6 +8651,9 @@
       ],
       "Swiss based": [
         "Situat în Elveția"
+      ],
+      "Switch to": [
+        "Comutare la"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -9470,6 +9542,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
       ],
@@ -9490,6 +9565,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Fraza de recuperare este o serie de 12 cuvinte generate aleatoriu într-o anumită ordine."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
