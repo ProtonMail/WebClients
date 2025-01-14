@@ -885,6 +885,7 @@ export enum CLIENT_TYPES {
     VPN = 2,
     PASS = 5,
     WALLET = 6,
+    LUMO = 9,
     AUTHENTICATOR = 10,
 }
 
