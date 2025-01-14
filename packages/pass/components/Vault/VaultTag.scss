@@ -1,7 +1,3 @@
 .pass-vault-tag {
-	color: var(--text-weak);
-
-	&--shared {
-		color: var(--vault-icon-color);
-	}
+	color: var(--vault-icon-color, --text-weak);
 }
