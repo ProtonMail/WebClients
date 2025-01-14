@@ -20,7 +20,7 @@
 	}
 }
 
-/* prevents a text selection on Chrome when doing drag and drop => we rely on the style attribute on the tr: 
+/* prevents a text selection on Chrome when doing drag and drop => we rely on the style attribute on the tr:
 	when it's REALLY not empty, it means we do a drag and drop, so we prevent the user selection */
 .orderableTable:has(tr[style]:not([style=''])) {
 	// when style attribute is there AND with something inside
@@ -46,6 +46,17 @@
 					border-start-start-radius: 0;
 					border-start-end-radius: 0;
 				}
+			}
+
+			// Helper to hide an element when table is adapted for small viewports
+			// Use case: Contact merge table, first name needs to be hidden if equal to "-"
+			.isHiddenWhenStacked {
+				display: none;
+			}
+
+			// When helper is applied, remove all the paddings on the cell
+			td:has(.isHiddenWhenStacked) {
+				padding: 0;
 			}
 
 			td:first-child {
