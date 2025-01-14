@@ -183,9 +183,6 @@
       "Copy invite link": [
         "Скопировать ссылку-приглашение"
       ],
-      "Copy link": [
-        "Копировать ссылку"
-      ],
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
@@ -4359,12 +4356,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Разрешен только ${ MAX_CUSTOM_PASSWORD_LENGTH } символ",
-        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символа",
-        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов",
-        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
       ],
@@ -4524,9 +4515,6 @@
       "Share via link settings": [
         "Поделиться через настройки ссылки"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Доступная для обмена ссылка для ${ boldNameText }"
-      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
       ],
@@ -4608,23 +4596,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Эта ссылка будет навсегда отключена. Никто с этой ссылкой не сможет получить доступ к вашему файлу. Чтобы повторно поделиться файлом вам потребуется новая ссылка."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Эта ссылка будет навсегда отключена. Никто с этой ссылкой не сможет получить доступ к вашей папке. Чтобы повторно поделиться папкой, вам потребуется новая ссылка."
-      ],
       "This message will be presented again later": [
         "Это сообщение будет представлено снова позже"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Возможно, єтот публичный документ не существует или у вас нет разрешения на его просмотр. Вы можете попробовать перезагрузить страницу, чтобы увидеть, устранена ли проблема."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Это удалит ссылку и лишит доступа к вашему файлу или папке всех, у кого есть эта ссылка.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки."
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
@@ -5328,9 +5304,6 @@
       ],
       "Proration": [
         "Пропорциональное распределение"
-      ],
-      "Protect with password": [
-        "Защитить паролем"
       ],
       "Public keys": [
         "Открытые ключи"
@@ -6961,18 +6934,6 @@
         "${ numberOfItems } элемента успешно перемещены",
         "${ numberOfItems } элемента успешно перемещены"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } ссылку на ваш элемент не удалось удалить",
-        "${ numberOfItems } ссылки на ваши элементы не удалось удалить",
-        "${ numberOfItems } ссылок на ваши элементы не удалось удалить",
-        "${ numberOfItems } ссылок на ваши элементы не удалось удалить"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } ссылка на ваш элемент была удалена",
-        "${ numberOfItems } ссылки на ваши элементы были удалены",
-        "${ numberOfItems } ссылок на ваши элементы были удалены",
-        "${ numberOfItems } ссылок на ваши элементы были удалены"
-      ],
       "${ reason } has been disabled": [
         "${ reason } был отключен"
       ],
@@ -7068,12 +7029,6 @@
       ],
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Не удалось удалить ссылку на \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Ссылка на \"${ name }\" была удалена"
       ],
       "The link to your item failed to be deleted": [
         "Не удалось удалить ссылку на ваш элемент"
@@ -8421,9 +8376,6 @@
       "Secure link copied": [
         "Защищенная ссылка скопирована"
       ],
-      "The link to your file was successfully copied": [
-        "Ссылка на файл была успешно скопирована"
-      ],
       "Undo in progress": [
         "Выполняется отмена"
       ],
@@ -8904,9 +8856,6 @@
       "Photos": [
         "Фото"
       ],
-      "Privacy settings": [
-        "Настройки конфиденциальности"
-      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -8964,9 +8913,6 @@
       "Share ${ name }": [
         "Общий ресурс ${ name }"
       ],
-      "Share via link": [
-        "Поделиться с помощью ссылки"
-      ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
       ],
@@ -8984,9 +8930,6 @@
       ],
       "Stop sharing": [
         "Закрыть доступ"
-      ],
-      "Stop sharing with everyone?": [
-        "Закрыть доступ всем?"
       ],
       "Stop sharing?": [
         "Прекратить доступ?"

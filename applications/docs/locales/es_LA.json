@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Copiar enlace de invitación"
       ],
-      "Copy link": [
-        "Copiar enlace"
-      ],
       "Create a copy": [
         "Crear una copia"
       ],
@@ -3016,7 +3013,7 @@
         "Zona horaria"
       ],
       "Time zone component ignored": [
-        "Se ha ignorado el componente de zona horaria."
+        "Componente de zona horaria ignorado"
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -4369,10 +4366,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracter está permitido",
-        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
       ],
@@ -4543,9 +4536,6 @@
       "Share via link settings": [
         "Ajustes de compartir vía enlace"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "Enlace compartible para ${ boldNameText }"
-      ],
       "Shared by": [
         "Compartido por"
       ],
@@ -4642,21 +4632,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Este enlace se creó con una versión anterior de Drive y no se puede modificar. Elimine este enlace y cree uno nuevo para cambiar los ajustes."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder al archivo. Para volver a compartir el archivo, necesitará un enlace nuevo."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a la carpeta. Para volver a compartir la carpeta, necesitará un enlace nuevo."
-      ],
       "This message will be presented again later": [
         "Este mensaje se mostrará de nuevo más tarde"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Este documento público no existe o no tiene los permisos para verlo. Intente recargar la página para ver si persiste el problema."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Esto eliminará el enlace y borrará el acceso al archivo o carpeta para cualquier persona que tenga el enlace.",
-        "Esto eliminará los enlaces y borrará el acceso a los archivos o carpetas para cualquier persona que tenga los enlaces."
       ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
@@ -4952,7 +4932,7 @@
         "La próxima fecha de facturación es el ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Su próxima fecha de facturación es el ${ renewalTime }.Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
+        "Su próxima fecha de facturación es el ${ renewalTime }. Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
       ],
       "Your password was leaked:": [
         "La contraseña fue filtrada:"
@@ -5386,9 +5366,6 @@
       ],
       "Proration": [
         "Prorrateo"
-      ],
-      "Protect with password": [
-        "Proteger con contraseña"
       ],
       "Public keys": [
         "Claves públicas"
@@ -6144,6 +6121,9 @@
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
       ],
+      "200 GB of storage": [
+        "200 GB de almacenamiento"
+      ],
       "24/7 account management support": [
         "Soporte de administración de cuenta 24/7"
       ],
@@ -6337,6 +6317,9 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Private photo backup": [
+        "Copia de seguridad de fotos privadas"
+      ],
       "Proofread and refine your emails": [
         "Revise y refine sus correos electrónicos"
       ],
@@ -6373,6 +6356,9 @@
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Almacenamiento y uso compartido seguro de archivos"
       ],
       "Secure link sharing": [
         "Uso compartido de enlaces seguros"
@@ -6998,14 +6984,6 @@
         "${ numberOfItems } elemento movido",
         "${ numberOfItems } elementos movidos"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } enlace al archivo",
-        "Error al eliminar ${ numberOfItems } enlaces a los archivos"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } enlace al elemento fue eliminado.",
-        "${ numberOfItems } enlaces a los elementos fueron eliminados."
-      ],
       "${ reason } has been disabled": [
         "Se ha desactivado ${ reason }."
       ],
@@ -7102,12 +7080,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Error al eliminar el enlace a \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "El enlace a \"${ name }\" fue eliminado"
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace al elemento"
@@ -8390,9 +8362,6 @@
       "Secure link copied": [
         "Enlace seguro copiado"
       ],
-      "The link to your file was successfully copied": [
-        "El enlace al archivo se copió correctamente"
-      ],
       "Undo in progress": [
         "Deshacer en curso"
       ],
@@ -8857,9 +8826,6 @@
       "Photos": [
         "Fotos"
       ],
-      "Privacy settings": [
-        "Ajustes de privacidad"
-      ],
       "Processing...": [
         "Procesando..."
       ],
@@ -8917,9 +8883,6 @@
       "Share ${ name }": [
         "Compartir ${ name }"
       ],
-      "Share via link": [
-        "Compartir con un enlace"
-      ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
       ],
@@ -8937,9 +8900,6 @@
       ],
       "Stop sharing": [
         "Dejar de compartir"
-      ],
-      "Stop sharing with everyone?": [
-        "¿Dejar de compartir con todos?"
       ],
       "Stop sharing?": [
         "¿Dejar de compartir?"

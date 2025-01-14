@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Davet bağlantısını kopyala"
       ],
-      "Copy link": [
-        "Bağlantıyı kopyala"
-      ],
       "Create a copy": [
         "Kopya oluştur"
       ],
@@ -290,6 +287,9 @@
       ],
       "Export contact group": [
         "Kişi grubunu dışa aktar"
+      ],
+      "Export selection as .vcf": [
+        "Seçimi .vcf olarak dışa aktar"
       ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
@@ -395,6 +395,9 @@
       ],
       "Merge contacts": [
         "Kişileri birleştir"
+      ],
+      "More actions": [
+        "Diğer işlemler"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -3006,6 +3009,9 @@
       "Time zone": [
         "Saat dilimi"
       ],
+      "Time zone component ignored": [
+        "Saat dilimi bileşeni yok sayıldı"
+      ],
       "To-do entry": [
         "Yapılacak iş kaydı"
       ],
@@ -3053,6 +3059,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Herhangi bir görsel seçilmemiş"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Beklenmeyen bir sorun çıktı"
       ]
     },
     "Event invitation error": {
@@ -3366,6 +3377,50 @@
         "Kullanılabilecek bir doğrulama yöntemi yok"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Takvimin saat dilimi desteklenmiyor"
+      ],
+      "Edited event not supported": [
+        "Etkinliklerin düzenlenmesi desteklenmiyor"
+      ],
+      "End time out of bounds": [
+        "Bitiş zamanı sınırların dışında"
+      ],
+      "Event validation failed": [
+        "Etkinlik doğrulanamadı"
+      ],
+      "Floating times not supported": [
+        "Göreli zamanlar desteklenmiyor"
+      ],
+      "Malformed all-day event": [
+        "Tüm gün etkinliği bozulmuş"
+      ],
+      "Malformed end time": [
+        "Bitiş zamanı bozulmuş"
+      ],
+      "Malformed recurring event": [
+        "Yinelenen etkinlik bozulmuş"
+      ],
+      "Malformed start time": [
+        "Başlangıç zamanı bozulmuş"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Yalnızca Gregoryen takvimi ölçeğine izin veriliyor"
+      ],
+      "Recurring event has no occurrences": [
+        "Yinelenen etkinliğin herhangi bir yinelemesi yok"
+      ],
+      "Recurring rule not supported": [
+        "Yinelenme kuralı desteklenmiyor"
+      ],
+      "Start time out of bounds": [
+        "Başlangıç zamanı sınırların dışında"
+      ],
+      "Time zone not supported": [
+        "Saat dilimi desteklenmiyor"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
@@ -3503,11 +3558,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı kullanmayın."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı kullanmayın."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -3764,11 +3825,17 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
+      "Actions": [
+        "İşlemler"
+      ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
@@ -3893,6 +3960,10 @@
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } üye için bir güvenli bulut oluştur",
+        "${ value } üye için bir güvenli bulut oluştur"
       ],
       "Create in": [
         "Şuraya ekle"
@@ -4147,6 +4218,9 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
+      "Invite": [
+        "Davet et"
+      ],
       "Invite link copied": [
         "Davet bağlantısı kopyalandı"
       ],
@@ -4288,10 +4362,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir",
-        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
       ],
       "Only the people with the link and the password can access this file.": [
         "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
@@ -4439,6 +4509,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -4460,8 +4533,11 @@
       "Share via link settings": [
         "Bağlantı ayarları ile paylaş"
       ],
-      "Shareable link for ${ boldNameText }": [
-        "${ boldNameText } için paylaşılabilir bağlantı"
+      "Shared by": [
+        "Paylaşan"
+      ],
+      "Shared on": [
+        "Paylaşılma zamanı"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -4492,6 +4568,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Şuna geç"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -4550,21 +4629,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak kullanım dışı bırakılmış. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak kullanım dışı bırakılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
-      ],
       "This message will be presented again later": [
         "Bu ileti daha sonra yeniden görüntülenecek"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Bu herkese açık belge var olmayabilir veya onu görüntüleme izniniz olmayabilir. Sorun sürüyor mu anlamak için sayfayı yeniden yüklemeyi deneyebilirsiniz."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Bu işlem, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
-        "Bu işlem, bağlantıları siler ve bağlantılara sahip olan herkesin dosyalarınıza erişimini kaldırır."
       ],
       "This will replace the existing file with the folder": [
         "Bu işlem var olan dosyayı klasör ile değiştirir"
@@ -4859,11 +4928,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      ],
       "Your password was leaked:": [
         "Parolanız açığa çıkmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve ${ cycle } ayda bir otomatik olarak yenilenecek."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ]
     },
     "info": {
@@ -5282,9 +5360,6 @@
       ],
       "Proration": [
         "Hesap bakiyesi"
-      ],
-      "Protect with password": [
-        "Parola ile korunsun"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -6837,14 +6912,6 @@
         "${ numberOfItems } öge taşındı",
         "${ numberOfItems } öge taşındı"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } öge bağlantınız silinemedi",
-        "${ numberOfItems } öge bağlantınız silinemedi"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } bağlantı silindi",
-        "${ numberOfItems } bağlantı silindi"
-      ],
       "${ reason } has been disabled": [
         "${ reason } özelliği kapatıldı"
       ],
@@ -6941,12 +7008,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "${ name }\" bağlantısı silinemedi"
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "\"${ name }\" bağlantısı silindi"
       ],
       "The link to your item failed to be deleted": [
         "Öge bağlantınız silinemedi"
@@ -8229,9 +8290,6 @@
       "Secure link copied": [
         "Güvenli bağlantı kopyalandı"
       ],
-      "The link to your file was successfully copied": [
-        "Dosya bağlantınız kopyalandı"
-      ],
       "Undo in progress": [
         "Geri alınıyor"
       ],
@@ -8696,9 +8754,6 @@
       "Photos": [
         "Fotoğraflar"
       ],
-      "Privacy settings": [
-        "Gizlilik ayarları"
-      ],
       "Processing...": [
         "İşleniyor..."
       ],
@@ -8756,9 +8811,6 @@
       "Share ${ name }": [
         "${ name } paylaş"
       ],
-      "Share via link": [
-        "Bağlantı ile paylaş"
-      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
@@ -8776,9 +8828,6 @@
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
-      ],
-      "Stop sharing with everyone?": [
-        "Herkes ile paylaşımdan kaldırılsın mı?"
       ],
       "Stop sharing?": [
         "Paylaşmayı durdur?"
