@@ -60,6 +60,7 @@ import { BlockTypePlugin } from '../Plugins/BlockTypePlugin'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { YjsReadonlyPlugin } from '../Plugins/YjsReadonly/YjsReadonlyPlugin'
 import { useSyncedState } from '../Hooks/useSyncedState'
+import { FixBrokenListItemPlugin } from '../Plugins/FixBrokenListItemPlugin'
 
 const TypingBotEnabled = false
 
@@ -268,6 +269,7 @@ export function Editor({
           />
         )}
         <MergeSiblingListsPlugin />
+        <FixBrokenListItemPlugin />
         <CodeHighlightPlugin />
         <ImagesPlugin />
         <EditorReadonlyPlugin editingEnabled={!editingLocked} />
