@@ -5,7 +5,8 @@ ci
 coverage
 node_modules
 out
-src/locales
+locales/**/*.json
+src/locales/**/*.json
 assets/*.svg
 assets/windows/squirrel/template.wxs
 appConfig.json
