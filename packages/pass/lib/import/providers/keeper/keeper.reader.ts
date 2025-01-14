@@ -1,123 +1,115 @@
 import { c } from 'ttag';
 
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import {
     getEmailOrUsername,
     getImportedVaultName,
+    importCreditCardItem,
+    importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
+import { formatExpirationDateMMYYYY } from '@proton/pass/lib/validation/credit-card';
+import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
-import type { KeeperItem } from './keeper.types';
+import type { KeeperData, KeeperItem } from './keeper.types';
+import { extractKeeperExtraFields, extractKeeperIdentity } from './keeper.utils';
 
-const extractTOTP = (item: KeeperItem): string => {
-    /* the totp is the element which follows the element
-     * 'TFC:Keeper', and Keeper doesn't allow more than 1
-     * totp per item */
-    const indexBeforeTOTP = item.findIndex((element) => element === 'TFC:Keeper');
-    return indexBeforeTOTP > 0 ? item[indexBeforeTOTP + 1] : '';
-};
-
-const extractExtraFields = (item: KeeperItem): UnsafeItemExtraField[] => {
-    const customFields: UnsafeItemExtraField[] = [];
-    if (item.length > 7) {
-        for (let i = 7; i < item.length; i += 2) {
-            /* skip totp field because it was already added in extractTOTP above */
-            if (item[i] == 'TFC:Keeper') continue;
-
-            const type = item[i] === 'Hidden Field' ? 'hidden' : 'text';
-
-            customFields.push({
-                fieldName: item[i] || (type === 'hidden' ? c('Label').t`Hidden` : c('Label').t`Text`),
-                type,
-                data: {
-                    content: item[i + 1],
-                },
-            });
+const addCustomFieldsWarning = (ignored: string[], item: KeeperItem) => {
+    try {
+        if (item.custom_fields) {
+            const warning = `[${item.$type}] ${item.title}: ${c('Warning').t`item was imported without custom fields`}`;
+            switch (item.$type) {
+                case 'encryptedNotes':
+                    if (Object.keys(item.custom_fields).some((field) => field !== '$note::1')) {
+                        ignored.push(warning);
+                    }
+                    break;
+                case 'bankCard':
+                    const notCustomFields = ['$paymentCard::1', '$text:cardholderName:1', '$pinCode::1'];
+                    if (Object.keys(item.custom_fields).some((field) => !notCustomFields.includes(field))) {
+                        ignored.push(warning);
+                    }
+                    break;
+                default:
+                    return;
+            }
         }
-    }
-    return customFields;
+    } catch {}
 };
-
-/* item type is not defined in the CSV, so we import
- * as a login item if username or password or url or note
- * is not empty. ie: if an SSH key item has an username it
- * will be imported as a login item */
-const isLoginItem = (item: KeeperItem): boolean => item[2] !== '' || item[3] !== '' || item[4] !== '' || item[5] !== '';
-
-/* all fields empty except note field at index 5 */
-const isNoteItem = (item: KeeperItem): boolean =>
-    item.every((value, idx) => {
-        if (idx < 2) return true;
-        if (idx === 5) return value !== '';
-        if (idx !== 5) return !value;
-    });
 
 export const readKeeperData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
-        const result = await readCSV<KeeperItem>({
-            data,
-            onError: (error) => warnings.push(error),
-        });
+        const parsedData = JSON.parse(data) as KeeperData;
+        const items = parsedData.records;
+        const groupedByVault = groupByKey(items, (item) => lastItem(item.folders?.[0].folder?.split('\\') ?? '') ?? '');
 
-        const groupedByVault = groupByKey(
-            result.items.map(
-                ([folderName, ...rest]) => [lastItem(folderName?.split('\\')) ?? '', ...rest] as KeeperItem
-            ),
-            0
-        );
+        const vaults: ImportVault[] = groupedByVault.map((items) => {
+            return {
+                name: getImportedVaultName(lastItem(items[0]?.folders?.[0]?.folder?.split?.('\\') ?? '')),
+                shareId: null,
+                items: items
+                    .map((item): Maybe<ItemImportIntent> => {
+                        const type = item.$type ?? c('Label').t`Unknown`;
+                        const title = item.title ?? '';
 
-        const vaults: ImportVault[] = groupedByVault
-            .filter(({ length }) => length > 0)
-            .map((items) => {
-                return {
-                    name: getImportedVaultName(items?.[0][0]),
-                    shareId: null,
-                    items: items
-                        .map((item): Maybe<ItemImportIntent> => {
-                            const type = c('Label').t`Unknown`;
-                            const title = item?.[1] ?? '';
-
-                            try {
-                                if (isNoteItem(item)) {
-                                    return importNoteItem({
-                                        name: item[1],
-                                        note: item[5],
-                                    });
-                                }
-
-                                if (isLoginItem(item)) {
+                        try {
+                            switch (item.$type) {
+                                case 'login':
                                     return importLoginItem({
-                                        name: item[1],
-                                        note: item[5],
-                                        ...getEmailOrUsername(item[2]),
-                                        password: item[3],
-                                        urls: [item[4]],
-                                        totp: extractTOTP(item),
-                                        extraFields: extractExtraFields(item),
+                                        name: title,
+                                        note: item.notes,
+                                        ...getEmailOrUsername(item.login),
+                                        password: item.password,
+                                        urls: [item.login_url],
+                                        totp: item.custom_fields?.['$oneTimeCode::1'],
+                                        extraFields: extractKeeperExtraFields(item.custom_fields, ['$oneTimeCode::1']),
                                     });
-                                }
-
-                                ignored.push(`[${type}] ${title}`);
-                                return;
-                            } catch (err) {
-                                ignored.push(`[${type}] ${title}`);
-                                logger.warn('[Importer::Keeper]', err);
+                                case 'encryptedNotes':
+                                    addCustomFieldsWarning(ignored, item);
+                                    return importNoteItem({
+                                        name: title,
+                                        note: `${item.custom_fields?.['$note::1'] ?? ''}\n${item.notes ?? ''}`.trim(),
+                                    });
+                                case 'bankCard':
+                                    addCustomFieldsWarning(ignored, item);
+                                    return importCreditCardItem({
+                                        name: title,
+                                        note: item.notes,
+                                        cardholderName: item.custom_fields?.['$text:cardholderName:1'],
+                                        number: item.custom_fields?.['$paymentCard::1']?.cardNumber,
+                                        expirationDate: formatExpirationDateMMYYYY(
+                                            item.custom_fields?.['$paymentCard::1']?.cardExpirationDate ?? ''
+                                        ),
+                                        verificationNumber: item.custom_fields?.['$paymentCard::1']?.cardSecurityCode,
+                                        pin: item.custom_fields?.['$pinCode::1'],
+                                    });
+                                case 'ssnCard':
+                                case 'contact':
+                                    return importIdentityItem({
+                                        name: item.title,
+                                        note: item.notes,
+                                        ...extractKeeperIdentity(item),
+                                    });
+                                default:
+                                    ignored.push(`[${type}] ${title}`);
                             }
-                        })
-                        .filter(truthy),
-                };
-            });
+                        } catch (err) {
+                            ignored.push(`[${type}] ${title}`);
+                            logger.warn('[Importer::Keeper]', err);
+                        }
+                    })
+                    .filter(truthy),
+            };
+        });
 
         return {
             vaults,
