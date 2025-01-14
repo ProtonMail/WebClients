@@ -67,7 +67,7 @@
         "@sentry/electron": "^5.9.0",
         "@types/jest": "^29.5.14",
         "@types/lodash": "^4.17.14",
-        "@types/node": "^22.10.5",
+        "@types/node": "^22.10.6",
         "@typescript-eslint/eslint-plugin": "^7.18.0",
         "@typescript-eslint/parser": "^7.18.0",
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
@@ -84,9 +84,9 @@
         "prettier": "3.4.2",
         "style-loader": "^4.0.0",
         "ts-jest": "^29.2.5",
-        "ts-loader": "^9.5.1",
+        "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
-        "typescript": "^5.7.2"
+        "typescript": "^5.7.3"
     },
     "icon": "assets/icons/icon.png",
     "productName": "Proton Mail"
