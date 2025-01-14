@@ -202,7 +202,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     color="norm"
                                     shape="ghost"
                                     icon="users-plus"
-                                    menuClassName="flex flex-column gap-2"
+                                    menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online || optimistic}
                                     badge={shared ? shareCount : undefined}
@@ -223,7 +223,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                     subtitle={c('Label').t`Useful for permanent sharing`}
                                                 />
                                             }
-                                            icon="link"
+                                            icon="user-plus"
                                             extra={
                                                 (free && <PassPlusPromotionButton className="ml-2" />) ||
                                                 (signalItemSharing && <Badge type="info">{c('Label').t`New`}</Badge>)

@@ -147,14 +147,7 @@ export const ItemsListItem = memo(
                                 <span className="text-ellipsis">
                                     <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>
                                 </span>
-                                {shared && (
-                                    <Icon
-                                        name="users-filled"
-                                        color={`var(${bulk ? '--interaction-norm-contrast' : '--text-weak'})`}
-                                        size={3.5}
-                                        className="shrink-0"
-                                    />
-                                )}
+                                {shared && <Icon name="users-filled" size={3.5} className="shrink-0" />}
                             </span>
                             <div
                                 className={clsx([
