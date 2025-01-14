@@ -226,9 +226,6 @@
       "Create free account": [
         "Δημιουργία δωρεάν λογαριασμού"
       ],
-      "Create link": [
-        "Δημιουργία συνδέσμου"
-      ],
       "Create new folder": [
         "Δημιουργία νέου φακέλου"
       ],
@@ -309,6 +306,12 @@
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
+      "Download without scanning": [
+        "Λήψη χωρίς σάρωση"
+      ],
+      "Download without scanning (${ count })": [
+        "Λήψη χωρίς σάρωση (${ count })"
+      ],
       "Drive Locked": [
         "Δίσκος κλειδωμένος"
       ],
@@ -353,6 +356,9 @@
       ],
       "Export contact group": [
         "Εξαγωγή ομάδας επαφών"
+      ],
+      "Export selection as .vcf": [
+        "Εξαγωγή επιλογής ως .vcf"
       ],
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
@@ -821,9 +827,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
-      ],
-      "Understood": [
-        "Κατανοητό"
       ],
       "Undo": [
         "Αναίρεση"
@@ -3225,6 +3228,9 @@
       "Time zone": [
         "Ζώνη ώρας"
       ],
+      "Time zone component ignored": [
+        "Το στοιχείο ζώνης ώρας παραβλέπεται"
+      ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
       ],
@@ -3623,11 +3629,17 @@
       "Calendar time zone not supported": [
         "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
       ],
+      "Edited event not supported": [
+        "Η τροποποιημένη εκδήλωση δεν υποστηρίζεται"
+      ],
       "End time out of bounds": [
         "Ώρα λήξης εκτός ορίων"
       ],
       "Event validation failed": [
         "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Floating times not supported": [
+        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
       ],
       "Malformed all-day event": [
         "Δύσμορφη ολοήμερη εκδήλωση"
@@ -3635,8 +3647,23 @@
       "Malformed end time": [
         "Λανθασμένος χρόνος λήξης"
       ],
+      "Malformed recurring event": [
+        "Λάθος επαναλαμβανόμενο συμβάν"
+      ],
+      "Malformed start time": [
+        "Λάθος χρόνος έναρξης"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Επιτρέπεται μόνο η κλίμακα του Γρηγοριανού ημερολογίου"
+      ],
       "Recurring event has no occurrences": [
         "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
+      ],
+      "Recurring rule not supported": [
+        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
+      ],
+      "Start time out of bounds": [
+        "Ώρα έναρξης εκτός ορίων"
       ],
       "Time zone not supported": [
         "Μη υποστηριζόμενη ζώνη ώρας"
@@ -3779,11 +3806,17 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ο κωδικός πρόσβασης σας στην εφαρμογή είναι σωστός. Μη χρησιμοποιείτε τον σύνηθες κωδικό πρόσβασής σας."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας."
       ],
       "Your email account requires one to export your data.": [
         "Ο λογαριασμός email σας απαιτεί έναν για εξαγωγή των δεδομένων σας"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστοί. Μη χρησιμοποιήστε τον σύνηθες κωδικό πρόσβασής σας."
       ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
@@ -4015,6 +4048,10 @@
         "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
         "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } σάρωση απέτυχε",
+        "${ scanErrorCount } σαρώσεις απέτυχαν"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
@@ -4092,6 +4129,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Όλοι (${ totalFoldersCount } φάκελος)",
@@ -4268,6 +4308,10 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
+      ],
       "Create in": [
         "Δημιουργία σε"
       ],
@@ -4364,9 +4408,6 @@
       ],
       "Downloading": [
         "Λήψη"
-      ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Η λήψη αρχείων ${ DOCS_APP_NAME } από το ${ DRIVE_APP_NAME } δεν υποστηρίζεται προς το παρόν — αυτά δεν θα συμπεριληφθούν στη λήψη σας."
       ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
@@ -4758,10 +4799,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Επιτρέπεται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρας",
-        "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
       ],
@@ -4815,9 +4852,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Εισαγάγετε τον κωδικό πρόσβασης για να αποκρυπτογραφήσετε και να προβάλετε περιεχόμενο."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Παρακαλούμε εξάγετέ τα απευθείας από την εφαρμογή ${ DOCS_APP_NAME } εάν θέλετε να τα κατεβάσετε."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
@@ -4986,6 +5020,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Οι πληρωμές SEPA δεν είναι διαθέσιμες προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
@@ -5003,9 +5040,6 @@
       ],
       "Share via link settings": [
         "Κοινοποίηση μέσω ρυθμίσεων συνδέσμου"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "Κοινοποιήσιμος σύνδεσμος για το ${ boldNameText }"
       ],
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δεν βρέθηκε"
@@ -5063,12 +5097,6 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Ο λογαριασμός μπορεί να έχει ένα νέο κλειδί ή μπορεί τα εξής να έχουν αλλοιωθεί: ${ items }. Ανοίξτε τα μόνο αν το εμπιστεύεστε."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Η ψηφιακή υπογραφή έχει επικυρωθεί μερικώς. Το αρχείο ανέβηκε από δημόσια σελίδα που δεν ξεκαθαρίζει την προέλευση χρήστη."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Η ψηφιακή υπογραφή έχει επικυρωθεί μερικώς. Ο φάκελος ανέβηκε από δημόσια σελίδα που δεν ξεκαθαρίζει την προέλευση χρήστη."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις εμφανίσεις κατά την προεπισκόπηση αρχείων."
@@ -5139,18 +5167,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε παρωχημένη έκδοση του Drive. Για να αλλάξετε τις ρυθμίσεις, διαγράψτε τον και δημιουργήστε έναν νέο."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο αρχείο. Για επαναδιαμοιρασμό του αρχείου, θα χρειαστείτε έναν νέο σύνδεσμο."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο φάκελο. Για επαναδιαμοιρασμό του φακέλου, θα χρειαστείτε έναν νέο σύνδεσμο."
-      ],
       "This month": [
         "Αυτό το μήνα"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε διαθέτει τον σύνδεσμο.",
-        "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε διαθέτει τους συνδέσμους."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Αυτό θα αφαιρέσει την συγχρονιζόμενη συσκευή ${ deviceName } από το ${ DRIVE_APP_NAME } και όλα τα δεδομένα της από το ${ DRIVE_APP_NAME }. Οι φάκελοι που προσθέσατε στους Υπολογιστές θα πάψουν να συγχρονίζονται."
@@ -5525,6 +5543,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      ],
       "Your password was leaked:": [
         "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
@@ -5539,6 +5560,12 @@
       ],
       "Your previous recovery phrase": [
         "Η προηγούμενη φράση ανάκτησής σας"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
       ]
     },
     "info": {
@@ -6029,9 +6056,6 @@
       ],
       "Proration": [
         "Προμήθεια"
-      ],
-      "Protect with password": [
-        "Προστασία με κωδικό πρόσβασης"
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
@@ -6653,6 +6677,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Ξεκινώντας από ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
@@ -7655,14 +7682,6 @@
         "${ numberOfItems } στοιχείο μετακινήθηκε επιτυχώς",
         "${ numberOfItems } στοιχεία μετακινήθηκαν επιτυχώς"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } σύνδεσμος προς το στοιχείο σας απέτυχε να διαγραφεί",
-        "${ numberOfItems } σύνδεσμοι προς τα στοιχεία σας απέτυχαν να διαγραφούν"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "διαγράφηκε ${ numberOfItems } σύνδεσμος προς το στοιχείο σας",
-        "διαγράφηκαν ${ numberOfItems } σύνδεσμοι προς τα στοιχεία σας"
-      ],
       "${ reason } has been disabled": [
         "${ reason } έχει απενεργοποιηθεί"
       ],
@@ -7804,12 +7823,6 @@
       ],
       "The item was successfully added to your drive": [
         "Το στοιχείο προστέθηκε με επιτυχία στο δίσκο σας"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Αποτυχία διαγραφής συνδέσμου για \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Ο σύνδεσμος προς το \"${ name }\" διαγράφηκε"
       ],
       "The link to your item failed to be deleted": [
         "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
@@ -9531,9 +9544,6 @@
       "Secure link copied": [
         "Ο ασφαλής σύνδεσμος αντιγράφηκε"
       ],
-      "The link to your file was successfully copied": [
-        "Ο σύνδεσμος προς το αρχείο σας αντιγράφηκε επιτυχώς"
-      ],
       "Undo in progress": [
         "Αναίρεση σε εξέλιξη"
       ],
@@ -9773,6 +9783,9 @@
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Check for malicious files": [
+        "Ελέγξτε για κακόβουλα αρχεία"
       ],
       "Clearing data": [
         "Εκκαθάριση δεδομένων"
@@ -10093,9 +10106,6 @@
       "Preview": [
         "Προεπισκόπηση"
       ],
-      "Privacy settings": [
-        "Ρυθμίσεις ιδιωτικότητας"
-      ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
@@ -10177,9 +10187,6 @@
       "Share ${ name }": [
         "Κοινοποίηση ${ name }"
       ],
-      "Share via link": [
-        "Κοινοποίηση μέσω συνδέσμου"
-      ],
       "Shared": [
         "Κοινοποιημένα"
       ],
@@ -10209,9 +10216,6 @@
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
-      ],
-      "Stop sharing with everyone?": [
-        "Διακοπή κοινοποίησης με όλους;"
       ],
       "Stop sharing?": [
         "Διακοπή κοινής χρήσης;"
@@ -10308,9 +10312,6 @@
       ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Η λήψη σας έχει το αρχείο ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"

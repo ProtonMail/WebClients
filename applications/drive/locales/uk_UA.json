@@ -228,9 +228,6 @@
       "Create free account": [
         "Створити безплатний обліковий запис"
       ],
-      "Create link": [
-        "Створити посилання"
-      ],
       "Create new folder": [
         "Створити нову теку"
       ],
@@ -315,6 +312,12 @@
       "Download logs": [
         "Завантажити журнали"
       ],
+      "Download without scanning": [
+        "Завантажити без сканування"
+      ],
+      "Download without scanning (${ count })": [
+        "Завантажити без сканування (${ count })"
+      ],
       "Drive Locked": [
         "Сховище заблоковано"
       ],
@@ -359,6 +362,9 @@
       ],
       "Export contact group": [
         "Експортувати групу контактів"
+      ],
+      "Export selection as .vcf": [
+        "Експортувати вибране як .vcf"
       ],
       "Fit to window": [
         "Припасувати до вікна"
@@ -642,6 +648,9 @@
       "Replace file": [
         "Замінити файл"
       ],
+      "Report": [
+        "Повідомити"
+      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
@@ -824,9 +833,6 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
-      ],
-      "Understood": [
-        "Ясно"
       ],
       "Undo": [
         "Скасувати"
@@ -3264,6 +3270,9 @@
       "Time zone": [
         "Часовий пояс"
       ],
+      "Time zone component ignored": [
+        "Компонент часового поясу ігнорується"
+      ],
       "To-do entry": [
         "Запис завдання"
       ],
@@ -3326,6 +3335,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Жодного зображення не вибрано"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непередбачувана помилка"
       ]
     },
     "Event invitation error": {
@@ -3667,6 +3681,50 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовий пояс календаря не підтримується"
+      ],
+      "Edited event not supported": [
+        "Відредагована подія не підтримується"
+      ],
+      "End time out of bounds": [
+        "Час завершення поза припустимим діапазоном"
+      ],
+      "Event validation failed": [
+        "Не вдалося перевірити подію"
+      ],
+      "Floating times not supported": [
+        "Пливучий час не підтримується"
+      ],
+      "Malformed all-day event": [
+        "Неправильна подія на цілий день"
+      ],
+      "Malformed end time": [
+        "Неправильний час завершення"
+      ],
+      "Malformed recurring event": [
+        "Неправильна повторювана подія"
+      ],
+      "Malformed start time": [
+        "Неправильний час початку"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускається тільки григоріанський календар"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має повторень"
+      ],
+      "Recurring rule not supported": [
+        "Правило повторення не підтримується"
+      ],
+      "Start time out of bounds": [
+        "Час початку поза припустимим діапазоном"
+      ],
+      "Time zone not supported": [
+        "Часовий пояс не підтримується"
       ]
     },
     "Import calendar": {
@@ -4102,6 +4160,12 @@
         "${ providerFoldersNumLocalized } міток знайдено в Gmail",
         "${ providerFoldersNumLocalized } міток знайдено в Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } сканування не вдалося",
+        "${ scanErrorCount } сканування не вдалося",
+        "${ scanErrorCount } сканувань не вдалося",
+        "${ scanErrorCount } сканувань не вдалося"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
@@ -4249,6 +4313,9 @@
       "And access it from anywhere": [
         "Та отримайте до нього доступ де завгодно"
       ],
+      "Anonymous": [
+        "Анонім"
+      ],
       "Anyone with this link can access your file.": [
         "Будь-хто за цим посиланням може отримати доступ до вашого файлу."
       ],
@@ -4381,6 +4448,12 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Створити захищену хмару для ${ value } учасника",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учасників",
+        "Створити захищену хмару для ${ value } учачників"
+      ],
       "Create in": [
         "Створити у"
       ],
@@ -4479,9 +4552,6 @@
       ],
       "Downloading": [
         "Завантаження"
-      ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Завантаження файлів ${ DOCS_APP_NAME } з ${ DRIVE_APP_NAME } в цей час не підтримується. Вони не будуть додані до вашого завантаження."
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
@@ -4879,12 +4949,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Власник одного або кількох ваших довірених ключів позначив їх \"скомпрометованими\". Ми радимо вам \"скасувати довіру\" для цих ключів."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символ",
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символи",
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів",
-        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цього файлу."
       ],
@@ -4938,9 +5002,6 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Введіть пароль, щоб розшифрувати та переглянути вміст."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Експортуйте їх безпосередньо із застосунку ${ DOCS_APP_NAME }, якщо хочете завантажити їх."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Зауважте, що адреси, призначені цим групам, НЕ будуть видалені."
@@ -5113,6 +5174,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Платежі SEPA наразі недоступні. Спробуйте пізніше."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -5130,9 +5194,6 @@
       ],
       "Share via link settings": [
         "Налаштування посилання для спільного доступу"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "Посилання спільного доступу для ${ boldNameText }"
       ],
       "Shared link not found": [
         "Спільне посилання не знайдено"
@@ -5182,17 +5243,14 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Перейти до"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Цифровий підпис було частково перевірено. Файл було завантажено з публічної сторінки, на якій не вказано конкретного користувача."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Цифровий підпис було частково перевірено. Теку було завантажено з публічної сторінки, на якій не вказано конкретного користувача."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Кількість завантажень включає як фактичні завантаження, так і випадки попереднього перегляду файлів."
@@ -5263,20 +5321,8 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Це посилання було створено за допомогою старої версії Drive і не може бути змінене. Видаліть це посилання та створіть нове, щоб змінити налаштування."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Це посилання буде вимкнено. Ніхто не матиме доступу до вашого файлу за цим посиланням. Щоб надати спільний доступ до файлу, вам знадобиться нове посилання."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Це посилання буде вимкнено. Ніхто не матиме доступу до вашої теки за цим посиланням. Щоб надати спільний доступ до теки, вам знадобиться нове посилання."
-      ],
       "This month": [
         "Цього місяця"
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Це видалить посилання та вилучить доступ до вашої теки для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання.",
-        "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
         "Це призведе до вилучення синхронізованого пристрою ${ deviceName } з ${ DRIVE_APP_NAME } і всіх його даних з ${ DRIVE_APP_NAME }. Теки, які ви додали до Моїх комп'ютерів, припинять синхронізацію."
@@ -5659,6 +5705,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступна дата оплати – ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
+      ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
       ],
@@ -5673,6 +5722,12 @@
       ],
       "Your previous recovery phrase": [
         "Ваша попередня фраза відновлення"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
       ]
     },
     "info": {
@@ -6176,9 +6231,6 @@
       "Proration": [
         "Розподілення"
       ],
-      "Protect with password": [
-        "Захист паролем"
-      ],
       "Public keys": [
         "Відкриті ключі"
       ],
@@ -6301,6 +6353,9 @@
       ],
       "Upload your first file": [
         "Вивантажте свій перший файл"
+      ],
+      "Uploaded by": [
+        "Вивантажено"
       ],
       "VAT": [
         "ПДВ"
@@ -6427,6 +6482,11 @@
       ],
       "What’s this?": [
         "Що це?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Також включено:"
       ]
     },
     "Loading info": {
@@ -6806,6 +6866,9 @@
       ],
       "Starting from ${ priceMailPlus }": [
         "Починаючи з ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Покращити"
       ],
       "Upgrade now": [
         "Покращити"
@@ -7882,18 +7945,6 @@
         "${ numberOfItems } елементів успішно переміщено",
         "${ numberOfItems } елементів успішно переміщено"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "Не вдалося видалити ${ numberOfItems } посилання на ваш елемент",
-        "Не вдалося видалити ${ numberOfItems } посилання на ваші елементи",
-        "Не вдалося видалити ${ numberOfItems } посилань на ваші елементи",
-        "Не вдалося видалити ${ numberOfItems } посилання на ваші елементи"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } посилання на ваш елемент було видалено",
-        "${ numberOfItems } посилання на ваші елементи було видалено",
-        "${ numberOfItems } посилань на ваші елементи було видалено",
-        "${ numberOfItems } посилання на ваші елементи було видалено"
-      ],
       "${ reason } has been disabled": [
         "${ reason } вимкнено"
       ],
@@ -8043,12 +8094,6 @@
       ],
       "The item was successfully added to your drive": [
         "Елемент було успішно додано до вашого диску"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "Не вдалося видалити посилання на \"${ name }\""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "Посилання на \"${ name }\" було видалено"
       ],
       "The link to your item failed to be deleted": [
         "Не вдалося видалити посилання на ваш елемент"
@@ -9852,9 +9897,6 @@
       "Secure link copied": [
         "Захищене посилання скопійовано"
       ],
-      "The link to your file was successfully copied": [
-        "Посилання на ваш файл успішно скопійовано"
-      ],
       "Undo in progress": [
         "Скасовується"
       ],
@@ -10118,6 +10160,9 @@
       ],
       "Change password": [
         "Змінити пароль"
+      ],
+      "Check for malicious files": [
+        "Перевірити на наявність шкідливих файлів"
       ],
       "Clearing data": [
         "Стирання даних"
@@ -10446,9 +10491,6 @@
       "Preview": [
         "Попередній перегляд"
       ],
-      "Privacy settings": [
-        "Налаштування приватності"
-      ],
       "Processing...": [
         "Триває обробка..."
       ],
@@ -10530,9 +10572,6 @@
       "Share ${ name }": [
         "Спільний доступ ${ name }"
       ],
-      "Share via link": [
-        "Спільний доступ за посиланням"
-      ],
       "Shared": [
         "Спільний доступ"
       ],
@@ -10562,9 +10601,6 @@
       ],
       "Stop sharing": [
         "Припинити спільний доступ"
-      ],
-      "Stop sharing with everyone?": [
-        "Перестати ділитись з усіма?"
       ],
       "Stop sharing?": [
         "Припинити спільний доступ?"
@@ -10661,9 +10697,6 @@
       ],
       "Your changes are not synced yet": [
         "Ваші зміни ще не синхронізовані"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Ваше завантаження має файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Ваша викрита інформація"
