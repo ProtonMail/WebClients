@@ -116,7 +116,7 @@ export const createAuthService = ({
                 app.setStatus(AppStatus.ERROR);
                 history.replace({ search: '', pathname, state: { error } });
                 return false;
-            } else history.replace({ ...history.location, state: null });
+            } else history.replace({ ...history.location, ...redirect.data, state: null });
 
             const persistedSession = await auth.config.getPersistedSession(localID);
 
