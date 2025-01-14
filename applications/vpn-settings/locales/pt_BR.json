@@ -4366,6 +4366,9 @@
       "No Gateways yet": [
         "Sem gateways ainda"
       ],
+      "No location filters are currently assigned.": [
+        "Nenhum filtro de localização selecionado no momento."
+      ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
       ],
@@ -4634,6 +4637,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "${ vaultLink } compartilhado atualizado"
+      ],
+      "Shared Server Location Filters": [
+        "Filtros de Localização dos Servidores Compartilhados"
       ],
       "Shared vault deleted": [
         "Cofre compartilhado excluído"
@@ -5235,6 +5241,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
       ],
@@ -5246,6 +5255,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada mês."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
@@ -8914,6 +8929,9 @@
       "Enter your backup password": [
         "Digite sua senha de backup"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Para que este usuário possa iniciar a sessão, certifique que o usuário existe no seu provedor de identidade."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Para sua segurança, você foi desconectado de todos os seus outros dispositivos ativos. Antes de acessar sua conta, você precisará digitar uma nova senha de backup."
       ],
@@ -8979,6 +8997,9 @@
       ],
       "Single sign-on removed": [
         "Autenticação única removida"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "O usuário ${ name } agora é uma conta com autenticação única (SSO)."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Isso desconectará o usuário de seus outros dispositivos e ele terá que criar uma senha de backup novamente."
