@@ -89,6 +89,24 @@ describe('subscriptionExpires()', () => {
             expirationDate: null,
         });
     });
+
+    it('should ignore upcoming subscription if the current subscription is cancelled', () => {
+        expect(subscriptionExpires({ ...subscriptionMock, Renew: Renew.Disabled })).toEqual({
+            subscriptionExpiresSoon: true,
+            renewDisabled: true,
+            renewEnabled: false,
+            expirationDate: subscriptionMock.PeriodEnd,
+            planName: 'Proton Unlimited',
+        });
+
+        expect(subscriptionExpires(subscriptionMock, true)).toEqual({
+            subscriptionExpiresSoon: true,
+            renewDisabled: true,
+            renewEnabled: false,
+            expirationDate: subscriptionMock.PeriodEnd,
+            planName: 'Proton Unlimited',
+        });
+    });
 });
 
 describe('notHigherThanAvailableOnBackend', () => {
