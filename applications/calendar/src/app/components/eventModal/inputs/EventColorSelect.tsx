@@ -17,6 +17,7 @@ import {
 } from '@proton/components';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { FeatureCode } from '@proton/features';
+import { PLANS } from '@proton/payments';
 import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
@@ -78,7 +79,12 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
 
     const isIframe = getIsIframe();
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, preventInApp: isIframe, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({
+        upsellRef,
+        preventInApp: isIframe,
+        plan: PLANS.MAIL,
+        ...oneDollarConfig,
+    });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 

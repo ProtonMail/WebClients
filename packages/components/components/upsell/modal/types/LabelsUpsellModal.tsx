@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { PLANS } from '@proton/payments';
 import type { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
@@ -35,7 +36,7 @@ const LabelsUpsellModal = ({
         isSettings,
     });
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 

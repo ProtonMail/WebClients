@@ -6,6 +6,7 @@ import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsell
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { PLANS } from '@proton/payments';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import type { Optional } from '@proton/shared/lib/interfaces';
@@ -24,7 +25,7 @@ const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
     const [user] = useUser();
     const activatePmUser = `${user.Name}@pm.me`;
 
-    const upsellConfig = useUpsellConfig({ upsellRef });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 

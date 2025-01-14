@@ -30,7 +30,7 @@ const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER,
     });
-    const upsellConfig = useUpsellConfig({ upsellRef, planIDs: { [PLANS.DUO]: 1 }, cycle: CYCLE.YEARLY });
+    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.DUO, cycle: CYCLE.YEARLY });
 
     if (loadingUser || plansMapLoading) {
         return <Loader />;
