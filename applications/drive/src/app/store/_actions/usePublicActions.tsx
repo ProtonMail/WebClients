@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { type useConfirmActionModal, useNotifications } from '@proton/components';
+import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
@@ -46,6 +47,25 @@ export function usePublicActions() {
                 showErrorNotification(
                     e,
                     <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be created`}</span>
+                );
+                throw e;
+            });
+    };
+
+    const createDocument = async (abortSignal: AbortSignal, token: string, parentLinkId: string): Promise<string> => {
+        const date = getPlatformFriendlyDateForFileName();
+        // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
+        const name = c('Title').t`Untitled document ${date}`;
+        return publicLink
+            .createDocument(abortSignal, { token, parentLinkId, name })
+            .then(async (id: string) => {
+                await publicLinksListing.loadChildren(abortSignal, token, parentLinkId, false);
+                return id;
+            })
+            .catch((e) => {
+                showErrorNotification(
+                    e,
+                    <span className="text-pre-wrap">{c('Notification').t`The document failed to be created`}</span>
                 );
                 throw e;
             });
@@ -148,6 +168,7 @@ export function usePublicActions() {
     return {
         renameLink,
         createFolder,
+        createDocument,
         deleteLinks,
     };
 }

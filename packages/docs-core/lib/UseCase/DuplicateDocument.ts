@@ -5,7 +5,7 @@ import type { NodeMeta } from '@proton/drive-store'
 import type { SeedInitialCommit } from './SeedInitialCommit'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
-import { getPlatformFriendlyDateForFileName } from '../Util/PlatformFriendlyFileNameDate'
+import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
 
 export class DuplicateDocument {
   constructor(
