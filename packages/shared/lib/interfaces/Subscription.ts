@@ -107,6 +107,11 @@ export interface Subscription {
     InvoiceID: string;
     Cycle: Cycle;
     PeriodStart: number;
+    /**
+     * Be careful with using PeriodEnd property. Depending on the presense of UpcomingSubscription and depending
+     * on the Renew state, it might be not always clear when the subscription actually ends and the user is downgraded
+     * to free. Use helper {@link subscriptionExpires} to get the actual expiration date.
+     */
     PeriodEnd: number;
     CreateTime: number;
     CouponCode: null | string;
