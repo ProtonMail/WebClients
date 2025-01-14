@@ -32,7 +32,7 @@ export const VaultTag: FC<Props> = ({ title, shared = false, icon, color, count,
             {shared && count && (
                 <>
                     <span className="shrink-0">• {count}</span>
-                    <Icon className="shrink-0" name="users" size={iconSize} />
+                    <Icon className="shrink-0" name="users-filled" size={iconSize} />
                 </>
             )}
         </div>
