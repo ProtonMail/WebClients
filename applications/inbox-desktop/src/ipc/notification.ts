@@ -1,10 +1,10 @@
-import { Notification, app, nativeImage } from "electron";
+import { BrowserView, Notification, app, nativeImage } from "electron";
 import { addHashToCurrentURL } from "../utils/urls/urlHelpers";
 import { getMailView, getMainWindow, showView } from "../utils/view/viewManagement";
 import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
 import { isWindows } from "../utils/helpers";
-import sharp from "sharp";
+import { join } from "node:path";
 
 async function setBadgeCount(value: number) {
     if (isWindows) {
@@ -24,17 +24,24 @@ async function setBadgeCount(value: number) {
             const strValue = value > 99 ? "99+" : value.toString();
             const fontSize = value < 10 ? 200 : 160;
 
-            const badgeContent = `<?xml version="1.0" encoding="UTF-8"?>
-                <svg width="${size}" height="${size}" version="1.1" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="${size}" height="${size}" ry="30" fill="#c70039" />
-                    <text x="${size * 0.5}" y="${size * 0.5 + fontSize * 0.35}" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="${fontSize}px" text-align="center" text-anchor="middle" xml:space="preserve">${strValue}</text>
-                </svg>
-            `;
+            const browserView = new BrowserView();
 
-            mainWindow.setOverlayIcon(
-                nativeImage.createFromBuffer(await sharp(Buffer.from(badgeContent, "utf8")).toBuffer()),
-                `${value} notifications`,
+            await new Promise((resolve) => {
+                browserView.webContents.once("dom-ready", resolve);
+                // We need to load something on the browser view so we can
+                // now that DOM is ready to execute injected JS
+                const filePath = app.isPackaged
+                    ? join(process.resourcesPath, "blank.html")
+                    : join(app.getAppPath(), "assets/blank.html");
+                browserView.webContents.loadURL(`file://${filePath}`);
+            });
+
+            const badgeURL = await browserView.webContents.executeJavaScript(
+                `(${drawBadge})("${strValue}", {badgeSize: ${size}, fontSize: ${fontSize}});`,
+                true,
             );
+
+            mainWindow.setOverlayIcon(nativeImage.createFromDataURL(badgeURL), strValue);
         } catch (error) {
             ipcLogger.error("Could not set badge on windows", error);
         }
@@ -43,6 +50,28 @@ async function setBadgeCount(value: number) {
     }
 
     app.setBadgeCount(value);
+}
+
+function drawBadge(badgeValue: string, { badgeSize, fontSize }: { badgeSize: number; fontSize: number }) {
+    const canvas = document.createElement("canvas");
+    canvas.width = badgeSize;
+    canvas.height = badgeSize;
+    const context = canvas.getContext("2d");
+
+    if (!context) {
+        throw new Error("Canvas 2d context is not available");
+    }
+
+    context.font = `bold ${fontSize}px sans-serif`;
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillStyle = "#c70039";
+    context.roundRect(0, 0, badgeSize, badgeSize, badgeSize * 0.25);
+    context.fill();
+    context.fillStyle = "white";
+    context.fillText(badgeValue, badgeSize * 0.5, badgeSize * 0.5);
+
+    return canvas.toDataURL();
 }
 
 export const handleIPCBadge = (count: number) => {
