@@ -2,8 +2,10 @@ import { createSelector } from 'reselect';
 
 import type { ESStatus } from '@proton/encrypted-search';
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { SearchParameters } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_PLACEHOLDERS_COUNT, MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
@@ -19,8 +21,7 @@ import {
     sort as sortElements,
 } from '../../helpers/elements';
 import { expectedPageLength } from '../../helpers/paging';
-import type { ESBaseMessage, ESMessageContent, NormalizedSearchParams } from '../../models/encryptedSearch';
-import type { SearchParameters } from '../../models/tools';
+import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { MailState } from '../store';
 import type { ElementsStateParams } from './elementsTypes';
 import { getTotal } from './helpers/elementTotal';

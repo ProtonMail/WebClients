@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import type { Sort } from '../../models/tools';
 
 const TIME = 'Time';
 const SIZE = 'Size';

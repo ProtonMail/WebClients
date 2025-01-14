@@ -13,6 +13,7 @@ import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { DEFAULT_MAILSETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
@@ -21,7 +22,6 @@ import { addApiMock, minimalCache, render, triggerEvent } from '../../../helpers
 import type { ConversationLabel } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
 import type { Event } from '../../../models/event';
-import type { Filter, SearchParameters, Sort } from '../../../models/tools';
 import MailboxContainer from '../MailboxContainer';
 
 loudRejection();

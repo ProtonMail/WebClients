@@ -19,5 +19,6 @@ export const sendCalendarInviteReport = async (api: Api, options: Options) => {
         event: options.event,
         silence: true,
         ...('dimensions' in options ? { dimensions: options.dimensions } : {}),
+        delay: false,
     });
 };

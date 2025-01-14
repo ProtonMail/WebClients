@@ -12,6 +12,7 @@ import { Button } from '@proton/atoms';
 import { DateInput, Label, Option, PrimaryButton, SelectTwo } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
+import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -129,6 +130,7 @@ const AdvancedSearch = ({
     const history = useHistory();
     const [addresses = []] = useAddresses();
 
+    const { sendClearSearchFieldsReport } = useSearchTelemetry();
     const { AlmostAllMail } = useMailModel('MailSettings');
 
     const DEFAULT_MODEL: SearchModel = {
@@ -194,6 +196,7 @@ const AdvancedSearch = ({
     const handleClear = () => {
         updateModel((currentModel) => ({ ...currentModel, keyword: '' }));
         searchInputRef.current?.focus();
+        sendClearSearchFieldsReport(esEnabled);
     };
 
     const handleReset = (event: FormEvent) => {
@@ -201,6 +204,7 @@ const AdvancedSearch = ({
 
         updateModel(DEFAULT_MODEL);
         searchInputRef.current?.focus();
+        sendClearSearchFieldsReport(esEnabled);
     };
 
     const canReset = useMemo(() => {

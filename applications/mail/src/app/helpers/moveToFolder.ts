@@ -280,5 +280,6 @@ export const sendSelectAllTelemetryReport = async ({
         dimensions: {
             sourceLabelID,
         },
+        delay: false,
     });
 };

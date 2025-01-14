@@ -42,6 +42,7 @@ export const useVideoConfTelemetry = () => {
             measurementGroup: TelemetryMeasurementGroups.calendarVideoConferencing,
             event,
             dimensions: dimensions,
+            delay: false,
         });
     };
 
