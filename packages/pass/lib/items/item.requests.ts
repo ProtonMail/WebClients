@@ -7,6 +7,7 @@ import type {
     BatchItemRevisionIDs,
     BatchItemRevisions,
     CustomAliasCreateRequest,
+    EncodedItemKeyRotation,
     ImportItemBatchRequest,
     ImportItemRequest,
     ItemCreateIntent,
@@ -32,13 +33,15 @@ import { parseItemRevision } from './item.parser';
 import { batchByShareId, intoRevisionID } from './item.utils';
 
 /** FIXME: we should start caching the item keys */
-export const getLatestItemKey = async (shareId: string, itemId: string) =>
-    (
-        await api({
-            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
-            method: 'get',
-        })
-    ).Key;
+export const getLatestItemKey = async (shareId: string, itemId: string): Promise<EncodedItemKeyRotation> => {
+    const result = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`, method: 'get' });
+    return result.Key;
+};
+
+export const getItemKeys = async (shareId: string, itemId: string): Promise<EncodedItemKeyRotation[]> => {
+    const { Keys: result } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key`, method: 'get' });
+    return result.Keys;
+};
 
 /* Item creation API request for all items
  * except for alias items */
@@ -353,6 +356,3 @@ export const getItemRevisions = async (
         })
     ).Revisions;
 };
-
-export const getItemKeys = async (shareId: string, itemId: string) =>
-    (await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key`, method: 'get' })).Keys!;
