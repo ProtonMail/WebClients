@@ -27,6 +27,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
+import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
@@ -75,7 +76,6 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
-import type { Filter, SearchParameters, Sort } from '../../models/tools';
 import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useOnCompose } from '../ComposeProvider';
 import MailboxContainerPlaceholder from './MailboxContainerPlaceholder';

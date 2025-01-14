@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import useSearchTelemetry, { SEARCH_TYPE } from '@proton/encrypted-search/lib/useSearchTelemetry';
+import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
@@ -11,7 +13,6 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { isSearch } from '../../helpers/elements';
 import { parseSearchParams } from '../../helpers/encryptedSearch';
 import type { Element } from '../../models/element';
-import type { Filter, SearchParameters, Sort } from '../../models/tools';
 import {
     addESResults,
     load as loadAction,
@@ -56,6 +57,8 @@ export const useApplyEncryptedSearch = ({
     const { esStatus, encryptedSearch } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
 
+    const { sendPerformSearchReport } = useSearchTelemetry();
+
     const params = { labelID, conversationMode, sort, filter, search, esEnabled };
 
     const isES = useMailSelector((state: MailState) => isESSelector(state, { search, esStatus }));
@@ -89,9 +92,33 @@ export const useApplyEncryptedSearch = ({
                     });
                     dispatch(manualFulfilled());
                     onPage(0);
+
                     void dispatch(loadAction({ page: 0, pageSize, params, abortController: undefined }));
+                    sendPerformSearchReport({
+                        type: SEARCH_TYPE.BACKEND_SIDE,
+                        searchParams: {
+                            sort: params.sort,
+                            filter: params.filter,
+                            ...params.search,
+                            page,
+                            pageSize,
+                            labelID,
+                        },
+                        hasReachedAPILimit: true,
+                    });
                 } else {
                     void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
+                    sendPerformSearchReport({
+                        type: SEARCH_TYPE.BACKEND_SIDE,
+                        searchParams: {
+                            sort: params.sort,
+                            filter: params.filter,
+                            ...params.search,
+                            page,
+                            pageSize,
+                            labelID,
+                        },
+                    });
                 }
             }
         } catch (error: any) {

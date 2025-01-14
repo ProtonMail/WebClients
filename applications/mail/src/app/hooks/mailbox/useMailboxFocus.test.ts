@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import type { Filter, Sort } from 'proton-mail/models/tools';
+import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import { useMailboxFocus } from './useMailboxFocus';
 import type { MailboxFocusProps } from './useMailboxFocus';

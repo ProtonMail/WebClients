@@ -1,4 +1,5 @@
 import type { EncryptedSearchFunctions } from '@proton/encrypted-search';
+import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import type {
     AttendeeModel,
     CalendarEventMetadata,
@@ -23,13 +24,6 @@ export interface ESCalendarMetadata extends CalendarEventSharedData, CalendarEve
 }
 
 export interface ESCalendarContent {}
-export interface ESCalendarSearchParams {
-    keyword?: string;
-    calendarID?: string;
-    begin?: number;
-    end?: number;
-    page?: number;
-}
 
 /**
  * @var remainingCalendarIDs the calendars for which indexation has not been done yet

@@ -10,11 +10,8 @@ import {
     useEventManager,
     useGetCalendarEventRaw,
 } from '@proton/components';
-import type { IndexingMetrics } from '@proton/encrypted-search';
 import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
-import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { MINUTE_IN_SECONDS } from '@proton/shared/lib/constants';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { CalendarEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
@@ -28,7 +25,6 @@ import {
 import type {
     ESCalendarContent,
     ESCalendarMetadata,
-    ESCalendarSearchParams,
     EncryptedSearchFunctionsCalendar,
 } from '../interfaces/encryptedSearch';
 
@@ -75,22 +71,9 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
         [api, calendarIDs, history, userID, getCalendarEventRaw]
     );
 
-    const handleIndexingMetrics = (metrics: IndexingMetrics) => {
-        const { numInterruptions, numPauses, indexTime, totalItems } = metrics;
-        const roundedIndexTimeInMinutes = Math.round(indexTime / MINUTE_IN_SECONDS);
-
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.calendarEncryptedSearch,
-            event: TelemetryCalendarEvents.enable_encrypted_search,
-            values: { numInterruptions, numPauses, indexTime: roundedIndexTimeInMinutes, totalItems },
-        });
-    };
-
     const esLibraryFunctions = useEncryptedSearch<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent>({
         refreshMask: 1,
         esCallbacks,
-        onMetadataIndexed: handleIndexingMetrics,
     });
     const { isConfigFromESDBLoaded, cachedIndexKey, esEnabled } = esLibraryFunctions.esStatus;
 

@@ -3,9 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
-
-import type { Sort } from '../../models/tools';
 
 const TIME = 'Time';
 const SIZE = 'Size';

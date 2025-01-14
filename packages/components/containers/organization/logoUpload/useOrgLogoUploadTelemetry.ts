@@ -13,6 +13,7 @@ const useOrgLogoUploadTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.accountOrgLogoUpload,
             event: TelemetryAccountOrganizationLogoUploadEvents.processStart,
+            delay: false,
         });
     };
 
@@ -21,6 +22,7 @@ const useOrgLogoUploadTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.accountOrgLogoUpload,
             event: TelemetryAccountOrganizationLogoUploadEvents.processSuccess,
+            delay: false,
         });
     };
 
@@ -29,6 +31,7 @@ const useOrgLogoUploadTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.accountOrgLogoUpload,
             event: TelemetryAccountOrganizationLogoUploadEvents.processFailure,
+            delay: false,
         });
     };
 

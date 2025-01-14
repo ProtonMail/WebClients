@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useSearchTelemetry, { SEARCH_TYPE } from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { SECOND } from '@proton/shared/lib/constants';
 import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -26,6 +26,7 @@ import {
     defaultESStatus,
 } from './constants';
 import type { IndexingMetrics } from './esHelpers';
+import { estimateIndexingDuration } from './esHelpers';
 import {
     buildContentDB,
     buildMetadataDB,
@@ -43,12 +44,11 @@ import {
     requestPersistence,
     retryAPICalls,
     retryContentIndexing,
-    sendIndexingMetricsForMail,
-    sendSearchingMetrics,
     syncItemEvents,
     uncachedSearch,
 } from './esHelpers';
 import type { IndexedDBRow } from './esIDB';
+import { readSize } from './esIDB';
 import {
     checkVersionedESDB,
     contentIndexingProgress,
@@ -91,7 +91,6 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     esCallbacks: ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
     contentIndexingSuccessMessage?: string;
     onMetadataIndexed?: (metrics: IndexingMetrics) => void;
-    sendMetricsOnSearch?: boolean;
 }
 
 /**
@@ -101,7 +100,6 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
  * @param esCallbacks All the callbacks that are product-specific and therefore need to be passed
  * to the ES core functions to work
  * @param contentIndexingSuccessMessage The text that is showing in a green notification upon completing indexing
- * @param sendMetricsOnSearch Determines whether to send metrics on each single search. Only meant for Mail
  * @returns An empty instance of the ES IndexedDB
  */
 const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, ESItemContent = void>({
@@ -109,10 +107,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     esCallbacks: inputESCallbacks,
     contentIndexingSuccessMessage,
     onMetadataIndexed,
-    sendMetricsOnSearch,
 }: Props<ESItemMetadata, ESSearchParameters, ESItemContent>) => {
     const getUserKeys = useGetUserKeys();
-    const api = useApi();
     const [user] = useUser();
     const { ID: userID } = user;
     const { createNotification } = useNotifications();
@@ -122,6 +118,15 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     };
     const { getSearchParams } = esCallbacks;
     const { isSearch } = getSearchParams();
+    const {
+        sendDeleteESDataReport,
+        sendSwitchSearchTypeReport,
+        sendStartESIndexingReport,
+        sendEndESIndexingReport,
+        sendPauseESIndexingReport,
+        sendPerformSearchReport,
+        sendESSearchCompleteReport,
+    } = useSearchTelemetry();
 
     // Keep a reference to cached items, such that they can be queried at any time
     const esCacheRef = useRef<ESCache<ESItemMetadata, ESItemContent>>(defaultESCache);
@@ -194,11 +199,12 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             ...defaultESStatus,
             isConfigFromESDBLoaded: true,
         }));
+        sendDeleteESDataReport();
         return deleteESDB(userID);
     };
 
     /**
-     * Notify the user the DB is deleted. Typically this is needed if the key is no
+     * Notify the user the DB is deleted. Typically, this is needed if the key is no
      * longer usable to decrypt it
      */
     const dbCorruptError = async () => {
@@ -251,6 +257,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 esCallbacks.resetSort();
             }
         }
+        sendSwitchSearchTypeReport(!currentOption);
     };
 
     /**
@@ -259,7 +266,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      */
     const cacheIndexedDB = async () => {
         const { esEnabled, dbExists, cachedIndexKey } = esStatus;
-
         if (!dbExists || !esEnabled || esCacheRef.current.isCacheReady) {
             return;
         }
@@ -480,6 +486,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return false;
         }
 
+        sendStartESIndexingReport('metadata');
+
         setESStatus((esStatus) => ({
             ...esStatus,
             isEnablingEncryptedSearch: true,
@@ -668,6 +676,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
         if (metrics) {
             onMetadataIndexed?.(metrics);
+
+            sendEndESIndexingReport({ type: 'metadata', metrics });
         }
 
         // In case this process did not create an IDB, e.g. because it's a memory only
@@ -690,6 +700,34 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         await contentIndexingProgress.setStatus(userID, INDEXING_STATUS.PAUSED);
         await contentIndexingProgress.incrementNumPauses(userID);
         await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
+
+        sendPauseESIndexingReport();
+    };
+
+    const sendIndexingEndReport = async (userID: string) => {
+        const progressBlob = await contentIndexingProgress.read(userID);
+        if (!progressBlob) {
+            return;
+        }
+
+        const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
+        const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
+        const indexSize = (await readSize(userID)) || 0;
+
+        sendEndESIndexingReport({
+            type: 'content',
+            metrics: {
+                numInterruptions: totalInterruptions - numPauses,
+                indexSize,
+                originalEstimate,
+                indexTime,
+                // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
+                // it doesn't make too much sense in general to talk about "messages"
+                totalItems,
+                isRefreshed,
+                numPauses,
+            },
+        });
     };
 
     /**
@@ -729,6 +767,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         if (!indexKey) {
             return dbCorruptError();
         }
+
+        sendStartESIndexingReport('content');
 
         setESStatus((esStatus) => ({
             ...esStatus,
@@ -839,6 +879,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return dbCorruptError();
         }
 
+        void sendIndexingEndReport(userID);
+
         await contentIndexingProgress.setActiveStatus(userID);
         setESStatus((esStatus) => ({
             ...esStatus,
@@ -852,7 +894,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         await catchUpPromise;
 
         await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
-        void sendIndexingMetricsForMail(api, userID);
 
         if (notify && contentIndexingSuccessMessage) {
             createNotification({
@@ -861,14 +902,45 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
     };
 
+    const sendSearchReport = async ({
+        searchTime,
+        isFirstSearch,
+        isSearchPartial,
+        isCacheLimited,
+        isDBLimited,
+        itemsFound,
+        uncachedItemsFound,
+    }: {
+        searchTime: number;
+        isFirstSearch: boolean;
+        isSearchPartial: boolean;
+        isCacheLimited: boolean;
+        isDBLimited: boolean;
+        itemsFound: number;
+        uncachedItemsFound?: number;
+    }) => {
+        const indexSize = (await readSize(userID)) || 0;
+
+        sendESSearchCompleteReport({
+            searchTime,
+            isFirstSearch,
+            isSearchPartial,
+            isCacheLimited,
+            isDBLimited,
+            itemsFound,
+            indexSize,
+            cacheSize: esCacheRef.current.cacheSize,
+            uncachedItemsFound,
+        });
+    };
+
     /**
      * Execute an encrypted search
      */
     const newEncryptedSearch: EncryptedSearchExecution<ESItemMetadata, ESItemContent, ESSearchParameters> = async (
         setResultsList,
         esSearchParams,
-        minimumItems,
-        sendMetricsOnSearch
+        minimumItems
     ) => {
         const t1 = performance.now();
         const {
@@ -877,6 +949,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             isSearchPartial: wasSearchPartial,
             cachedIndexKey,
             isFirstSearch,
+            isDBLimited,
         } = esStatus;
 
         abortSearchingRef.current = new AbortController();
@@ -945,17 +1018,18 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             }));
             setResultsList(searchResults);
 
-            if (sendMetricsOnSearch) {
-                const t2 = performance.now();
-                void sendSearchingMetrics(
-                    api,
-                    userID,
-                    esCacheRef.current.cacheSize,
-                    Math.ceil(t2 - t1),
-                    isFirstSearch,
-                    esCacheRef.current.isCacheLimited
-                );
-            }
+            const t2 = performance.now();
+
+            const { isCacheLimited } = esCacheRef.current;
+
+            void sendSearchReport({
+                searchTime: Math.ceil(t2 - t1),
+                isFirstSearch,
+                isSearchPartial,
+                itemsFound: searchResults.length,
+                isCacheLimited,
+                isDBLimited,
+            });
         }
 
         return true;
@@ -970,7 +1044,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         esSearchParams,
         minimumItems
     ) => {
-        const { permanentResults, lastTimePoint, cachedIndexKey } = esStatus;
+        const { permanentResults, lastTimePoint, cachedIndexKey, isFirstSearch, isSearchPartial, isDBLimited } =
+            esStatus;
 
         const extraItems = Math.max(
             ES_EXTRA_RESULTS_LIMIT * Math.ceil(permanentResults.length / ES_EXTRA_RESULTS_LIMIT) -
@@ -989,6 +1064,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return false;
         }
 
+        const start = performance.now();
         const hasApostrophe = (esCallbacks.getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
         const { resultsArray, newLastTimePoint } = await uncachedSearch<
             ESItemMetadata,
@@ -1007,6 +1083,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         );
 
         if (!abortSearchingRef.current.signal.aborted) {
+            const end = performance.now();
             permanentResults.push(...resultsArray);
 
             setESStatus((esStatus) => ({
@@ -1017,6 +1094,18 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 isSearching: false,
             }));
             setResultsList(permanentResults);
+
+            const { isCacheLimited } = esCacheRef.current;
+
+            void sendSearchReport({
+                searchTime: Math.ceil(end - start),
+                isFirstSearch,
+                isSearchPartial,
+                itemsFound: permanentResults.length,
+                uncachedItemsFound: resultsArray.length,
+                isCacheLimited,
+                isDBLimited,
+            });
         }
 
         return true;
@@ -1033,7 +1122,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      * @returns a boolean indicating the success of the search
      */
     const encryptedSearch: EncryptedSearch<ESItemMetadata, ESItemContent> = async (setResultsList, minimumItems) => {
-        const { dbExists, esEnabled, isSearchPartial, previousESSearchParams } = esStatus;
+        const { dbExists, esEnabled, isSearchPartial, previousESSearchParams, isDBLimited } = esStatus;
 
         // In these cases no ES should be performed
         if (!dbExists || !esEnabled) {
@@ -1046,6 +1135,15 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
 
         const { isCacheLimited } = esCacheRef.current;
+
+        sendPerformSearchReport({
+            type: SEARCH_TYPE.ENCRYPTED,
+            searchParams: esSearchParams,
+            isCacheLimited,
+            isSearchPartial,
+            isDBLimited,
+        });
+
         if (
             isSearchPartial &&
             isCacheLimited &&
@@ -1060,7 +1158,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         abortSearchingRef.current.abort();
         setESStatus((esStatus) => resetSearchStatus(esStatus));
 
-        return newEncryptedSearch(setResultsList, esSearchParams, minimumItems, sendMetricsOnSearch);
+        return newEncryptedSearch(setResultsList, esSearchParams, minimumItems);
     };
 
     /**

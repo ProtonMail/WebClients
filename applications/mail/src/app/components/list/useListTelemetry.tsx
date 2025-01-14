@@ -195,6 +195,7 @@ const useListTelemetry = () => {
                     actionTime: actionTime,
                     numberMessage: numberMessage,
                 },
+                delay: false,
             });
         }
     };
