@@ -3719,6 +3719,9 @@
         "Utilizatorii afectați sunt pe rândurile",
         "Utilizatorii afectați sunt pe rândurile"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
+      ],
       "All inactive members deleted": [
         "Toți membrii inactivi au fost șterși."
       ],
@@ -3868,6 +3871,11 @@
       ],
       "Country code": [
         "Cod țară"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Creați un cont cloud securizat pentru ${ value } membru",
+        "Creați un cont cloud securizat pentru ${ value } membri",
+        "Creați un cont cloud securizat pentru ${ value } de membri"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
@@ -4644,6 +4652,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Trimiteți mesaje membrilor pentru a-i încuraja să-ți protejeze contul prin autentificarea cu doi factori."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
+      ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
       ],
@@ -4729,6 +4740,9 @@
       ],
       "Swiss based": [
         "Situat în Elveția"
+      ],
+      "Switch to": [
+        "Comutare la"
       ],
       "Thank you": [
         "Vă mulțumim"
@@ -5280,6 +5294,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
       ],
@@ -5291,6 +5308,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."

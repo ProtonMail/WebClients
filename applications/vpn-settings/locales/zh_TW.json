@@ -3501,6 +3501,9 @@
       "Affected user is on row": [
         "受影響的使用者"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
+      ],
       "All members have been added.": [
         "全部成員已添加"
       ],
@@ -3614,6 +3617,9 @@
       ],
       "Country code": [
         "國家代碼"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "替成員創建一個安全${ value }雲端"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "創建並管理子帳號，並為其指派在您的自訂網域下的電郵位址。"
@@ -4287,6 +4293,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "傳送電子郵件鼓勵成員使用雙重驗證以保護帳號"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 付款目前不可用。請稍後再試。"
+      ],
       "Server is currently down": [
         "伺服器目前離線中"
       ],
@@ -4367,6 +4376,9 @@
       ],
       "Swiss based": [
         "總部設於瑞士"
+      ],
+      "Switch to": [
+        "切換至"
       ],
       "Thank you": [
         "感謝您"
@@ -4818,6 +4830,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的組織機構使用單一登入（SSO）。按「登入」以 SSO 登入。"
       ],
@@ -4829,6 +4844,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "您的方案開始於${ renewalTime }及於每月重新開始。"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
@@ -7870,11 +7891,23 @@
       ]
     },
     "sso": {
+      "Confirmation code": [
+        "確認碼"
+      ],
       "Delete ${ n } user": [
         "刪除 ${ n } 位使用者"
       ],
+      "Share the confirmation code with your administrator": [
+        "與您的管理員分享確認碼"
+      ],
       "Sign in": [
         "登入"
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "若要確定真的是您嘗試登入 **${ email }**，請檢視確認碼，並從其他裝置批准請求。"
+      ],
+      "Use backup password instead": [
+        "改用備份密碼"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您將被重新導向至您的第三方單一登入提供者。"
