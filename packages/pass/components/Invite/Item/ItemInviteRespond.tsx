@@ -1,4 +1,5 @@
-import { type FC } from 'react';
+import { type FC, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -6,11 +7,22 @@ import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/compone
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteStepResponse';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import type { ItemInvite } from '@proton/pass/types/data/invites';
+import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
+import { ShareType } from '@proton/pass/types';
 
-export const ItemInviteRespond: FC<ItemInvite> = (invite) => {
-    const { inviterEmail } = invite;
+type Props = { token: string };
+
+export const ItemInviteRespond: FC<Props> = ({ token }) => {
     const { onInviteResponse } = useInviteActions();
+    const invite = useSelector(selectInviteByToken(token));
+    const invalid = !invite || invite.targetType !== ShareType.Item;
+
+    useEffect(() => {
+        if (invalid) onInviteResponse({ ok: false });
+    }, [invalid]);
+
+    if (invalid) return null;
+    const { inviterEmail } = invite;
 
     return (
         <PassModal
