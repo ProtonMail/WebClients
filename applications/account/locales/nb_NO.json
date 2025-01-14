@@ -4203,7 +4203,7 @@
         "Videresending er aktiv"
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Videresending til en adresse uten ende-til-ende kryptering vil deaktivere ende-til-ende kryptering for ${ boldForwarderEmail }-adressen din, men nulltilgangskryptering forblir aktivert. ${ learnMoreLink }"
+        "Videresending til en adresse uten ende-til-ende-kryptering vil deaktivere ende-til-ende-kryptering for ${ boldForwarderEmail }-adressen din, men nulltilgangskryptering forblir aktivert. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "Videresending til denne adressen blir aktiv når mottakeren godtar videresendingen."
@@ -5035,6 +5035,9 @@
       "Time zone": [
         "Tidssone"
       ],
+      "Time zone component ignored": [
+        "Tidssonekomponent ignorert"
+      ],
       "To-do entry": [
         "Gjøremålsoppføring"
       ],
@@ -5152,6 +5155,11 @@
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Hendelse fra ${ timeString }, ${ rruleString }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Uventet feil"
       ]
     },
     "Event invitation error": {
@@ -6251,6 +6259,50 @@
         "Ingen verifiseringsmetode tilgjengelig"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Tidssone for kalender ikke støttet"
+      ],
+      "Edited event not supported": [
+        "Redigert hendelse ikke støttet"
+      ],
+      "End time out of bounds": [
+        "Sluttid utenfor grensene"
+      ],
+      "Event validation failed": [
+        "Hendelsesvalidering mislyktes"
+      ],
+      "Floating times not supported": [
+        "Flytende tider ikke støttet"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagshendelse"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet gjentakende hendelse"
+      ],
+      "Malformed start time": [
+        "Misdannet starttidspunkt"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Bare den gregorianske kalenderskalaen er tillatt"
+      ],
+      "Recurring event has no occurrences": [
+        "Gjentakende hendelse har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Gjentakende regel ikke støttet"
+      ],
+      "Start time out of bounds": [
+        "Starttid utenfor grensene"
+      ],
+      "Time zone not supported": [
+        "Tidssone ikke støttet"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } hendelse kryptert og lagt til i kalenderen",
@@ -6388,11 +6440,17 @@
       "Use your app password instead of your regular password if:": [
         "Bruk app-passordet istedenfor det vanlige passordet hvis:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "App-passordet ditt er riktig. Ikke bruk ditt vanlige passord."
+      ],
       "Your email account requires an app password to export your data.": [
         "Din e-postkonto krever et app-passord for å eksportere dine data."
       ],
       "Your email account requires one to export your data.": [
         "Din e-postkonto krever ett for å eksportere dine data."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "E-postadressen og app-passordet ditt er riktig. Ikke bruk ditt vanlige passord."
       ],
       "Your email address and password are correct.": [
         "e-postadressen og passordet er riktig."
@@ -6872,6 +6930,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Etter å ha blitt låst, må organisasjonsmedlemmer låse opp ${ PASS_APP_NAME } med passord eller PIN-kode osv."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
+      ],
       "Align left": [
         "Juster til venstre"
       ],
@@ -7175,6 +7236,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Opprett en sikker sky for ${ value } medlem",
+        "Opprett en sikker sky for ${ value } medlemmer"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opprette og administrere underkontoer og tilordne dem e-postadresser på ditt egendefinerte domene."
@@ -8369,6 +8434,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-post."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
+      ],
       "Server is currently down": [
         "Tjener er for tiden nede"
       ],
@@ -8501,6 +8569,9 @@
       ],
       "Swiss based": [
         "Sveitsisk basert"
+      ],
+      "Switch to": [
+        "Bytt til"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
@@ -9376,6 +9447,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Din neste faktureringsdato er ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
       ],
@@ -9396,6 +9470,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Gjenopprettingsfrasen din er en serie på 12 tilfeldig genererte ord i en bestemt rekkefølge."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Den planlagte planen starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Den planlagte planen starter den ${ renewalTime } og fornyes automatisk hver måned."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonnementet ditt administreres av Mozilla. Kontakt Mozilla-støtte."
@@ -9505,7 +9585,7 @@
         "Satt på pause"
       ],
       "Pending": [
-        "Venter"
+        "Ventende"
       ],
       "Sending invite...": [
         "Sender invitasjon..."
@@ -16295,7 +16375,7 @@
         "${ planMaxSpace } lagringsplass per bruker"
       ],
       "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } total lagring"
+        "${ planMaxSpace } total lagringsplass"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
         "${ planName } gir deg tilgang til alle apper og premiumfunksjoner. Personvern er innebygd, slik at du kan fortsette med det, vel vitende om at dataene og identiteten din er trygge."
@@ -16322,7 +16402,7 @@
         "${ planName } tilbyr ${ planMaxSpace } lagring for dine e-poster, vedlegg, hendelser, passord og filer. Du er også kvalifisert for årlige lagringsbonuser."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
-        "${ planName } tilbyr ${ planMaxSpace } lagring for dine filer og bilder. Du er også kvalifisert for årlige lagringsbonuser."
+        "${ planName } tilbyr ${ planMaxSpace } lagringsplass for dine filer og bilder. Du er også kvalifisert for årlige lagringsbonuser."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyr ${ planMaxSpace } lagring per bruker for e-post, vedlegg, hendelser og filer. Du er også kvalifisert for årlige lagringsbonuser."
@@ -16357,7 +16437,7 @@
         "2 brukere"
       ],
       "Add any new files": [
-        "Legge til eventuelle nye filer"
+        "Legg til eventuelle nye filer"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Etter at abonnementet på ${ planName } utløper, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
