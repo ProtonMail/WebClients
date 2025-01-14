@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button, Input } from '@proton/atoms';
 import { ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 
 import { useCalendarSearch } from './CalendarSearchProvider';
 
@@ -24,6 +25,7 @@ const CalendarSearchInput = (
     ref: Ref<HTMLDivElement>
 ) => {
     const { search, searchParams } = useCalendarSearch();
+    const { sendClearSearchFieldsReport } = useSearchTelemetry();
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -41,6 +43,7 @@ const CalendarSearchInput = (
     const handleClear = () => {
         setValue('');
         inputRef.current?.focus();
+        sendClearSearchFieldsReport(true);
     };
 
     const handleSearch = () => {

@@ -3,17 +3,14 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { useHistory } from 'react-router-dom';
 
 import type { ESItem } from '@proton/encrypted-search/lib';
+import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import { useLoading } from '@proton/hooks';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { extractSearchParameters, generatePathnameWithSearchParams } from '../../../helpers/encryptedSearch/esUtils';
-import type {
-    ESCalendarContent,
-    ESCalendarMetadata,
-    ESCalendarSearchParams,
-} from '../../../interfaces/encryptedSearch';
+import type { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 import { fromUrlParams } from '../getUrlHelper';
 import type { VisualSearchItem } from './interface';

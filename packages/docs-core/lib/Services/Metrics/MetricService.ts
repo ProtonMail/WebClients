@@ -74,6 +74,7 @@ export class MetricService {
       api: this.api,
       measurementGroup: TelemetryMeasurementGroups.docsSuggestions,
       event: event,
+      delay: false,
     })
   }
 

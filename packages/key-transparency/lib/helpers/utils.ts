@@ -76,6 +76,7 @@ export const ktKeyVerificationFailureTelemetryAndMetrics = (api: Api, visible: b
         measurementGroup: TelemetryMeasurementGroups.keyTransparency,
         event: TelemetryKeyTransparencyErrorEvents.key_verification_failure,
         dimensions,
+        delay: false,
     });
 };
 

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, Href, Input } from '@proton/atoms';
 import { Icon, Spotlight, usePopperAnchor } from '@proton/components';
+import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
@@ -22,6 +23,7 @@ export const SearchField = () => {
     const indexingDropdownControl = usePopperAnchor<HTMLButtonElement>();
     const { searchSpotlight } = useSpotlight();
     const { dbExists } = useSearchResults();
+    const { sendClearSearchFieldsReport } = useSearchTelemetry();
 
     const navigation = useNavigate();
     const { searchEnabled, isEnablingEncryptedSearch, isDisabled, disabledReason, prepareSearchData } =
@@ -143,6 +145,7 @@ export const SearchField = () => {
                                     onClick={() => {
                                         setSearchParams('');
                                         handleSearch('');
+                                        sendClearSearchFieldsReport(true);
                                     }}
                                 >
                                     {c('Action').t`Clear`}

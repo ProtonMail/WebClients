@@ -10,6 +10,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+import type { Filter } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -22,7 +23,6 @@ import { getFolderName, labelIncludes } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
-import type { Filter } from '../../models/tools';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';

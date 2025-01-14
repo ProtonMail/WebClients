@@ -17,6 +17,7 @@ import {
     wrappedGetOldestInfo,
 } from '@proton/encrypted-search';
 import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useGetMessageCounts } from '@proton/mail/counts/messageCounts';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -37,7 +38,6 @@ import type {
     ESDBStatusMail,
     ESMessageContent,
     EncryptedSearchFunctionsMail,
-    NormalizedSearchParams,
 } from '../models/encryptedSearch';
 import type { Event } from '../models/event';
 
@@ -82,7 +82,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
         contentIndexingSuccessMessage,
-        sendMetricsOnSearch: true,
     });
 
     /**

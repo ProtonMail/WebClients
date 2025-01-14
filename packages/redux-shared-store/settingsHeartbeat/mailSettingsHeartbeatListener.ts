@@ -119,6 +119,7 @@ export const mailSettingsHeartbeatListener = (startListening: AppStartListening)
                             ? 'true'
                             : 'false',
                 },
+                delay: false,
             });
 
             saveHeartbeatTimestamp(mailHeartbeatKey);

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import type { PrivateKeyReference } from '@proton/crypto';
 import type { CachedItem, ESCallbacks, ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search';
 import { normalizeKeyword, readAllLastEvents, testKeywords } from '@proton/encrypted-search';
+import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
 import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Api, User } from '@proton/shared/lib/interfaces';
@@ -12,7 +13,7 @@ import { driveEventsResultToDriveEvents } from '../_api';
 import { createLinkGenerator } from './indexing/createLinkGenerator';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import type { FetchShareMap } from './indexing/useFetchShareMap';
-import type { ESDriveSearchParams, ESLink } from './types';
+import type { ESLink } from './types';
 import { extractSearchParameters } from './utils';
 
 interface Props {

@@ -106,6 +106,7 @@ export const sendTelemetryEventParsingError = (api: Api, error: IMPORT_ERROR_TYP
         dimensions: {
             parsing_error: error,
         },
+        delay: false,
     });
     icsFilesForIcsParsingTelemetry.add(filename);
 };
@@ -454,12 +455,10 @@ export const getSupportedEventsWithRecurrenceId = async ({
     prodId = '',
 }: GetSupportedEventsWithRecurrenceIdArgs) => {
     // map uid -> parent event
-    const mapParentEvents = parentEvents.reduce<
-        SimpleMap<{
-            vcalComponent: VcalVeventComponent;
-            calendarEvent: CalendarEvent;
-        }>
-    >((acc, event) => {
+    const mapParentEvents = parentEvents.reduce<SimpleMap<{
+        vcalComponent: VcalVeventComponent;
+        calendarEvent: CalendarEvent;
+    }>>((acc, event) => {
         acc[event.component.uid.value] = {
             vcalComponent: event.component,
             calendarEvent: event.response.Response.Event,

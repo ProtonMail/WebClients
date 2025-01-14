@@ -6,6 +6,7 @@ import { CacheType } from '@proton/redux-utilities';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -16,7 +17,6 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { hasAttachmentsFilter, isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
 import type { Element } from '../../models/element';
-import type { Filter, SearchParameters, Sort } from '../../models/tools';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
 import {
     load as loadAction,

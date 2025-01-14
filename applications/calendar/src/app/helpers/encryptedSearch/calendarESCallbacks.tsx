@@ -18,6 +18,7 @@ import {
     storeItemsMetadata,
     testKeywords,
 } from '@proton/encrypted-search';
+import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -25,12 +26,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import chunk from '@proton/utils/chunk';
 
-import type {
-    ESCalendarContent,
-    ESCalendarMetadata,
-    ESCalendarSearchParams,
-    MetadataRecoveryPoint,
-} from '../../interfaces/encryptedSearch';
+import type { ESCalendarContent, ESCalendarMetadata, MetadataRecoveryPoint } from '../../interfaces/encryptedSearch';
 import { generateEventUniqueId } from '../event';
 import { CALENDAR_CORE_LOOP, MAX_EVENT_BATCH, MIN_EVENT_BATCH } from './constants';
 import {

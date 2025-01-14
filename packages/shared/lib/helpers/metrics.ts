@@ -42,6 +42,12 @@ export const sendMetricsReport = async (api: Api, Log: METRICS_LOG, Title?: stri
 
 interface SendTelemetryReportArgs extends TelemetryReport {
     api: Api;
+    /**
+     * For some sensitive requests, it might be needed to add a random delay between the user action
+     * and the actual event sending. The delay is between 1s and 180s.
+     * This attribute is mandatory so that it cannot be missed by developers in case a delay would be needed.
+     */
+    delay: boolean;
     silence?: boolean;
 }
 
@@ -55,6 +61,7 @@ export const sendTelemetryReport = async ({
     values,
     dimensions,
     silence = true,
+    delay,
 }: SendTelemetryReportArgs) => {
     const possiblySilentApi = silence ? getSilentApi(api) : api;
 
@@ -63,6 +70,14 @@ export const sendTelemetryReport = async ({
     }
 
     try {
+        if (delay) {
+            // We delay sending the metrics report because this helper is used in some privacy-sensitive
+            // use-cases, e.g. encrypted search, in which we don't want the server to be able to use the
+            // metric report as a distinguisher to correlate user actions, e.g. performing an encrypted
+            // search and fetching an email shortly after
+            await randomDelay();
+        }
+
         void (await possiblySilentApi(
             sendTelemetryData({
                 MeasurementGroup: measurementGroup,
@@ -101,6 +116,7 @@ export const sendTelemetryReportWithBaseDimensions = async ({
     event,
     values,
     dimensions,
+    delay,
     silence = true,
 }: SendTelemetryReportWithBaseDimensionArgs) => {
     const subscriptionName = isFreeSubscription(subscription) ? 'free' : getPlanName(subscription);
@@ -127,6 +143,7 @@ export const sendTelemetryReportWithBaseDimensions = async ({
             audience,
             isFree: subscriptionName === 'free' ? 'true' : 'false',
         },
+        delay,
     });
 };
 
