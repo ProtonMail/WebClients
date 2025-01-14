@@ -408,3 +408,18 @@ export const selectBulkHasSecureLinks = (dto: BulkSelectionDTO) =>
             Object.keys(items).some((itemId) => Boolean(secureLinks[shareId]?.[itemId]))
         )
     );
+
+export const selectItemShared =
+    (shareId: string, itemId: string) =>
+    (state: State): boolean => {
+        const item = state.items.byShareId[shareId]?.[itemId];
+        const share = state.shares[shareId];
+        return (item.shareCount ?? 0) > 0 || share.shared;
+    };
+
+export const selectBulkHasSharedItems =
+    (dto: BulkSelectionDTO) =>
+    (state: State): boolean =>
+        Object.entries(dto).some(([shareId, items]) =>
+            Object.keys(items).some((itemId) => selectItemShared(shareId, itemId)(state))
+        );
