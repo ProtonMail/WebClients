@@ -187,9 +187,6 @@
       "Copy invite link": [
         "Copia l'enllaç d'invitació"
       ],
-      "Copy link": [
-        "Copia l'enllaç"
-      ],
       "Create a copy": [
         "Crea una còpia"
       ],
@@ -1149,7 +1146,7 @@
         "Gestor de contrasenyes xifrat"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "El nostre pla bàsic i gratuït amb correu electrònic i emmagatzematge xifrats d'extrem a extrem. No s'inclouen funcions prèmium."
+        "El nostre pla bàsic i gratuït amb correu electrònic i emmagatzematge xifrats d'extrem a extrem. No s'inclouen característiques prèmium."
       ],
       "Save ${ upsellSavings }": [
         "Estalvieu el ${ upsellSavings }"
@@ -2232,7 +2229,7 @@
         "Definiu un mètode de recuperació per evitar perdre l'accés al compte."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "Per garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
+        "Per a garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Per importar a través de fitxers CSV i VCF, assegureu-vos que el fitxer no excedeixi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
@@ -3557,7 +3554,7 @@
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
       "Your app password is correct. Do not use your regular password.": [
-        "La contrasenya de l'aplicació és correcta. No utilitzeu la contrasenya normal."
+        "La contrasenya de l'aplicació és correcta. No utilitzeu la contrasenya habitual."
       ],
       "Your email account requires an app password to export your data.": [
         "El vostre compte de correu electrònic requereix una contrasenya d'aplicació per a exportar les dades."
@@ -4361,10 +4358,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Només es permet ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcter",
-        "Només es permeten ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcters"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
       ],
@@ -4512,7 +4505,7 @@
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Els pagaments SEPA no estan disponibles en aquests moments. Proveu de nou més tard."
+        "Els pagaments SEPA no estan disponibles en aquest moment. Torneu-ho a provar més tard."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -4534,9 +4527,6 @@
       ],
       "Share via link settings": [
         "Preferències de compartició mitjançant un enllaç"
-      ],
-      "Shareable link for ${ boldNameText }": [
-        "Enllaç per a compartir ${ boldNameText }"
       ],
       "Shared by": [
         "Compartit per"
@@ -4634,21 +4624,11 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Aquest enllaç es va crear en una versió antiga de Drive i no es pot modificar. Elimineu l'enllaç i creeu-ne un de nou per canviar-ne la configuració."
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir al fitxer amb aquest enllaç. Per a tornar a compartir-lo, necessitareu un enllaç nou."
-      ],
-      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir a la carpeta amb aquest enllaç. Per a tornar a compartir-la, necessitareu un enllaç nou."
-      ],
       "This message will be presented again later": [
         "Aquest missatge es tornarà a presentar més tard"
       ],
       "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "És possible que aquest document públic no existeixi o que no tingueu permís per a veure'l. Podeu intentar tornar a carregar la pàgina per veure si el problema persisteix."
-      ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Això eliminarà l'enllaç i esborrarà l'accés al vostre fitxer o carpeta per a qualsevol que el tingui.",
-        "Això eliminarà els enllaços i esborrarà l'accés als vostres fitxers o carpetes per a qualsevol que els tingui."
       ],
       "This will replace the existing file with the folder": [
         "Això substituirà el fitxer existent per la carpeta"
@@ -5376,9 +5356,6 @@
       "Proration": [
         "Prorrateig"
       ],
-      "Protect with password": [
-        "Protegir amb contrasenya"
-      ],
       "Public keys": [
         "Claus públiques"
       ],
@@ -6076,6 +6053,9 @@
       "15 GB storage": [
         "15 GB d'emmagatzematge"
       ],
+      "200 GB of storage": [
+        "200 GB d'emmagatzematge"
+      ],
       "24/7 account management support": [
         "Suport per a la gestió de comptes 24/7"
       ],
@@ -6269,6 +6249,9 @@
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
       ],
+      "Private photo backup": [
+        "Còpia de seguretat de fotos privades"
+      ],
       "Proofread and refine your emails": [
         "Corregiu i refineu els vostres correus electrònics"
       ],
@@ -6305,6 +6288,9 @@
       ],
       "Secure Core servers": [
         "Servidors Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Emmagatzematge i ús compartit de fitxers segurs"
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
@@ -6930,14 +6916,6 @@
         "S'ha mogut ${ numberOfItems } element",
         "S'han mogut ${ numberOfItems } elements"
       ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "No s'ha pogut eliminar ${ numberOfItems } enllaç al vostre element",
-        "No s'han pogut eliminar ${ numberOfItems } enllaços al vostre element"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "S'ha eliminat ${ numberOfItems } enllaç al vostre element",
-        "S'han eliminat ${ numberOfItems } enllaços al vostre element"
-      ],
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
       ],
@@ -7034,12 +7012,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"
-      ],
-      "The link to \"${ name }\" failed to be deleted": [
-        "No s'ha pogut eliminar l'enllaç a \"${ name }\"."
-      ],
-      "The link to \"${ name }\" was deleted": [
-        "S'ha eliminat l'enllaç a «${ name }»"
       ],
       "The link to your item failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a l'element"
@@ -8125,7 +8097,7 @@
         "Entesos"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de l'App Store d'Apple i, després, seleccioneu ${ subscriptions }."
+        "Només heu d'iniciar sessió al vostre compte l'App Store d'Apple i seleccionar ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
@@ -8321,9 +8293,6 @@
       ],
       "Secure link copied": [
         "S'ha copiat l'enllaç segur."
-      ],
-      "The link to your file was successfully copied": [
-        "S’ha copiat l'enllaç al vostre fitxer"
       ],
       "Undo in progress": [
         "S'està desfent"
@@ -8789,9 +8758,6 @@
       "Photos": [
         "Fotos"
       ],
-      "Privacy settings": [
-        "Configuració de privacitat"
-      ],
       "Processing...": [
         "Processant..."
       ],
@@ -8849,9 +8815,6 @@
       "Share ${ name }": [
         "Comparteix ${ name }"
       ],
-      "Share via link": [
-        "Comparteix mitjançant un enllaç"
-      ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
       ],
@@ -8869,9 +8832,6 @@
       ],
       "Stop sharing": [
         "Deixa de compartir"
-      ],
-      "Stop sharing with everyone?": [
-        "Deixar de compartir amb tothom?"
       ],
       "Stop sharing?": [
         "Voleu deixar de compartir?"
