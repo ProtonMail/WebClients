@@ -1215,6 +1215,11 @@
         "Hold orden i din indbakke med mapper"
       ]
     },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
+      ]
+    },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
@@ -1411,7 +1416,7 @@
         "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
-        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
+        "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "Unlimited filters": [
         "Ubegrænsede filtre"

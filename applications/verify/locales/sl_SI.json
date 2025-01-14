@@ -1216,6 +1216,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } koledar",
         "${ n } koledarja",
@@ -1312,6 +1315,9 @@
       "Automatic email forwarding": [
         "Samodejno posredovanje elektronske pošte"
       ],
+      "Breach alerts": [
+        "Opozorila o uhajanju podatkov"
+      ],
       "Calendar sharing": [
         "Deljenje koledarja"
       ],
@@ -1381,11 +1387,17 @@
       "Send & receive invitations": [
         "Pošljite in prejmite povabila."
       ],
+      "Share files with no size limit": [
+        "Souporaba datotek brez omejitve velikosti"
+      ],
       "SMTP submission": [
         "Pošiljanje SMTP"
       ],
       "SMTP submission for select organizations": [
         "Oddaja SMTP za izbrane organizacije"
+      ],
+      "Sync and backup all your files across devices": [
+        "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
       "Unlimited filters": [
         "Neomejeno število filtrov"
@@ -1582,6 +1594,9 @@
       ]
     },
     "Title": {
+      "Account locked": [
+        "Račun je zaklenjen"
+      ],
       "Enter your password": [
         "Vnesite geslo"
       ],
