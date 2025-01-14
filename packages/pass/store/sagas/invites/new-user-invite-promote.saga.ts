@@ -9,6 +9,7 @@ import {
     newUserInvitePromoteIntent,
     newUserInvitePromoteSuccess,
 } from '@proton/pass/store/actions';
+import { syncAccess } from '@proton/pass/store/actions/creators/polling';
 import { selectAccessOrThrow } from '@proton/pass/store/selectors';
 import type { Maybe } from '@proton/pass/types';
 
@@ -25,7 +26,9 @@ function* promoteInviteWorker({ payload, meta: { request } }: ReturnType<typeof 
 
         yield promoteInvite({ ...payload, invitedPublicKey });
         const invites: InviteData = yield loadInvites(shareId);
+
         yield put(newUserInvitePromoteSuccess(request.id, { ...payload, ...invites }));
+        yield put(syncAccess(payload));
     } catch (err) {
         yield put(newUserInvitePromoteFailure(request.id, err));
     }

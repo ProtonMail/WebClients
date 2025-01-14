@@ -3,23 +3,19 @@ import type { Action, Reducer } from 'redux';
 import {
     bootSuccess,
     inviteAccept,
-    inviteBatchCreateSuccess,
-    newUserInvitePromoteSuccess,
     shareEvent,
     shareEventDelete,
     shareEventUpdate,
     shareLeaveSuccess,
-    sharedVaultCreated,
     sharesEventNew,
     sharesEventSync,
     syncSuccess,
     vaultCreationSuccess,
     vaultDeleteSuccess,
     vaultEditSuccess,
-    vaultTransferOwnershipSuccess,
 } from '@proton/pass/store/actions';
 import type { Share, ShareId } from '@proton/pass/types';
-import { ShareRole, type ShareType } from '@proton/pass/types';
+import { type ShareType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
@@ -41,9 +37,7 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
         return Events.LatestEventID === currentEventId
             ? state
-            : partialMerge(state, {
-                  [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID },
-              });
+            : partialMerge(state, { [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID } });
     }
 
     if (vaultCreationSuccess.match(action)) {
@@ -63,30 +57,6 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
         return objectDelete(state, action.payload.shareId);
-    }
-
-    if (vaultTransferOwnershipSuccess.match(action)) {
-        const { shareId } = action.payload;
-        return partialMerge(state, { [shareId]: { owner: false, shareRoleId: ShareRole.ADMIN } });
-    }
-
-    if (sharedVaultCreated.match(action)) {
-        const { share } = action.payload;
-        return partialMerge(state, { [share.shareId]: share });
-    }
-
-    if (inviteBatchCreateSuccess.match(action) && !action.payload.itemId) {
-        partialMerge(state, { [action.payload.shareId]: { shared: true } });
-    }
-
-    if (newUserInvitePromoteSuccess.match(action)) {
-        const { shareId } = action.payload;
-        const { newUserInvitesReady } = state[shareId];
-        return partialMerge(state, {
-            [shareId]: {
-                newUserInvitesReady: Math.max(newUserInvitesReady - 1, 0),
-            },
-        });
     }
 
     if (sharesEventSync.match(action)) {
