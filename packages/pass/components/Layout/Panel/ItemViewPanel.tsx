@@ -19,8 +19,8 @@ import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { isMonitored, isPinned, isShared, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -66,7 +66,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const upsell = useUpselling();
     const { spotlight } = usePassCore();
 
-    const { shareId, itemId, data, optimistic, failed, shareCount } = revision;
+    const { shareId, itemId, data, optimistic, failed } = revision;
     const { name } = data.metadata;
     const trashed = isTrashed(revision);
     const pinned = isPinned(revision);
@@ -78,11 +78,17 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const monitored = isMonitored(revision);
 
     const { shareRoleId, owner, targetMembers } = share;
-    const shared = isShared(revision);
+    const itemShared = isItemShared(revision);
+    /** Item is considered shared if either the revision
+     * or the share are flagged as being shared. */
+    const shared = itemShared || share.shared;
+
     const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
     const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
-    const sharedReadOnly = shared && readOnly;
+    const sharedReadOnly = shared && readOnly; /* wether vault or item share */
+    const canManage = isShareManageable(share);
+
     const hasMultipleVaults = vaults.length > 1;
     const canMove = (!shared || owner) && hasMultipleVaults;
 
@@ -91,7 +97,12 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
     const [signal, setSignalItemSharing] = useState(false);
-    const signalItemSharing = signal && !shared;
+
+    const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
+    const accessCount = (share.shared ? targetMembers : 0) + (revision.shareCount ?? 0);
+    const showSharingMenu = isOwnerOrAdmin || shared;
+    const canShare = canManage && type !== 'alias';
+    const signalItemSharing = itemSharingEnabled && signal && !itemShared && canShare;
 
     useEffect(() => {
         (async () => {
@@ -124,9 +135,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
               setSignalItemSharing(false);
               handleShareItemClick();
           };
-
-    const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
-    const showSharing = type !== 'alias' && isOwnerOrAdmin && (itemSharingEnabled || isVault);
 
     return (
         <Panel
@@ -196,16 +204,17 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             ...actions,
 
-                            showSharing && (
+                            showSharingMenu && (
                                 <QuickActionsDropdown
                                     key="share-item-button"
-                                    color="norm"
-                                    shape="ghost"
+                                    color="weak"
+                                    shape="solid"
+                                    pill
                                     icon="users-plus"
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
-                                    disabled={!online || optimistic}
-                                    badge={shared ? shareCount : undefined}
+                                    disabled={!online || optimistic || sharedReadOnly}
+                                    badge={itemSharingEnabled && accessCount > 0 ? accessCount : undefined}
                                     signaled={isOwnerOrAdmin && signalItemSharing}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
@@ -214,7 +223,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         maxWidth: '20rem',
                                     }}
                                 >
-                                    {itemSharingEnabled && (
+                                    {itemSharingEnabled && canShare && (
                                         <DropdownMenuButton
                                             onClick={onItemShare}
                                             label={
@@ -234,7 +243,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     {/** NOTE: disabling secure links for non-vault shares
                                      * until we start using the `itemKey` to encrypt the
                                      * `secureLinkKey` with */}
-                                    {isVault && (
+                                    {isVault && canShare && (
                                         <DropdownMenuButton
                                             onClick={onSecureLink}
                                             label={
@@ -248,7 +257,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         />
                                     )}
 
-                                    {shared && itemSharingEnabled && (
+                                    {itemSharingEnabled && shared && (
                                         <DropdownMenuButton
                                             onClick={onManageItem}
                                             title={c('Action').t`See members`}
@@ -306,7 +315,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                                 {monitorActions}
 
-                                {shared && !owner && (
+                                {itemShared && !owner && (
                                     <DropdownMenuButton
                                         onClick={handleLeaveItemClick}
                                         label={c('Action').t`Leave`}
@@ -317,12 +326,10 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                         ];
                     })()}
                     subtitle={
-                        isVault && owner && hasMultipleVaults ? (
+                        isVault && hasMultipleVaults ? (
                             <VaultTag
                                 title={share.content.name}
                                 color={share.content.display.color}
-                                count={targetMembers}
-                                shared={share.shared}
                                 icon={
                                     share.content.display.icon
                                         ? VAULT_ICON_MAP[share.content.display.icon]
