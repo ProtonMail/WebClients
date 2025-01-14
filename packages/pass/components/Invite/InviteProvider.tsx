@@ -102,7 +102,7 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
                     })()}
 
                     {invite?.targetType === ShareType.Vault && <VaultInviteRespond token={invite.token} />}
-                    {invite?.targetType === ShareType.Item && <ItemInviteRespond {...invite} />}
+                    {invite?.targetType === ShareType.Item && <ItemInviteRespond token={invite.token} />}
                 </InviteError>
                 {children}
             </LatestInviteContext.Provider>

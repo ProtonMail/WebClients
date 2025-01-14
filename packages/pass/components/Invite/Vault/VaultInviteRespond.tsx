@@ -15,16 +15,15 @@ import { ShareType } from '@proton/pass/types';
 type Props = { token: string };
 
 export const VaultInviteRespond: FC<Props> = ({ token }) => {
-    const invite = useSelector(selectInviteByToken(token));
     const { onInviteResponse } = useInviteActions();
-
-    const valid = invite && invite.targetType === ShareType.Vault;
+    const invite = useSelector(selectInviteByToken(token));
+    const invalid = !invite || invite.targetType !== ShareType.Vault;
 
     useEffect(() => {
-        if (!valid) onInviteResponse({ ok: false });
-    }, [valid]);
+        if (invalid) onInviteResponse({ ok: false });
+    }, [invalid]);
 
-    if (!valid) return null;
+    if (invalid) return null;
 
     const { inviterEmail, vault, fromNewUser } = invite;
     const { itemCount, memberCount } = vault;
