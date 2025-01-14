@@ -29,11 +29,11 @@ export const SharedMenuItem = memo(({ to, count, dense, selected, label, icon, u
 
     const onSelect = upsellRef
         ? () => upsell({ type: 'pass-plus', upsellRef })
-        : pipe(() => navigate(getLocalPath(to), { filters: getInitialFilters() }), onAction);
+        : () => navigate(getLocalPath(to), { filters: getInitialFilters() });
 
     return (
         <DropdownMenuButton
-            onClick={() => !selected && onSelect()}
+            onClick={pipe(() => !selected && onSelect(), onAction)}
             label={<span className="block text-ellipsis">{label}</span>}
             parentClassName={clsx('w-full', !dense && 'pass-vault-submenu-vault-item ')}
             className={clsx(selected && 'is-selected', dense ? 'pt-1.5 pb-1.5' : 'py-3')}
