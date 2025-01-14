@@ -1,12 +1,16 @@
 import { usePreventLeave } from '@proton/components';
 import { CryptoProxy } from '@proton/crypto/lib';
+import { queryPublicCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { queryPublicCreateFolder } from '@proton/shared/lib/api/drive/folder';
 import { queryPublicRenameLink } from '@proton/shared/lib/api/drive/share';
+import type { CreateDocumentResult } from '@proton/shared/lib/interfaces/drive/documents';
 import {
     encryptName,
+    generateContentKeys,
     generateLookupHash,
     generateNodeHashKey,
     generateNodeKeys,
+    sign,
 } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import getRandomString from '@proton/utils/getRandomString';
@@ -33,17 +37,10 @@ export function usePublicLinkActions() {
     const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
     const { getSharePrivateKey } = useShare();
 
-    const createFolder = async (
+    const getCreationData = async (
         abortSignal: AbortSignal,
-        {
-            token,
-            parentLinkId,
-            name,
-            modificationTime,
-            silence,
-        }: { token: string; parentLinkId: string; name: string; modificationTime?: Date; silence?: number | number[] }
+        { name, token, parentLinkId, context }: { name: string; token: string; parentLinkId: string; context: string }
     ) => {
-        // Name Hash is generated from LC, for case-insensitive duplicate detection.
         const error = validateLinkName(name);
         if (error) {
             throw new ValidationError(error);
@@ -57,75 +54,101 @@ export function usePublicLinkActions() {
 
         const signingKeys = addressKeyInfo?.privateKey || parentPrivateKey;
 
-        const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
-            await Promise.all([
-                generateLookupHash(name, parentHashKey).catch((e) =>
-                    Promise.reject(
-                        new EnrichedError('Failed to generate folder link lookup hash during folder creation', {
-                            tags: {
-                                token,
-                                parentLinkId,
-                            },
-                            extra: { e },
-                        })
-                    )
-                ),
-                generateNodeKeys(parentPrivateKey, signingKeys).catch((e) =>
-                    Promise.reject(
-                        new EnrichedError('Failed to generate folder link node keys during folder creation', {
-                            tags: {
-                                token,
-                                parentLinkId,
-                            },
-                            extra: { e },
-                        })
-                    )
-                ),
-                encryptName(name, parentPrivateKey, signingKeys).catch((e) =>
-                    Promise.reject(
-                        new EnrichedError('Failed to encrypt folder link name during folder creation', {
-                            tags: {
-                                token,
-                                parentLinkId,
-                            },
-                            extra: { e },
-                        })
-                    )
-                ),
-            ]);
+        const [hash, nodeKeys, encryptedName] = await Promise.all([
+            generateLookupHash(name, parentHashKey).catch((e) =>
+                Promise.reject(
+                    new EnrichedError(`Failed to generate ${context} link lookup hash during ${context} creation`, {
+                        tags: {
+                            token,
+                            parentLinkId,
+                        },
+                        extra: { e },
+                    })
+                )
+            ),
+            generateNodeKeys(parentPrivateKey, signingKeys).catch((e) =>
+                Promise.reject(
+                    new EnrichedError(`Failed to generate ${context} link node keys during ${context} creation`, {
+                        tags: {
+                            token,
+                            parentLinkId,
+                        },
+                        extra: { e },
+                    })
+                )
+            ),
+            encryptName(name, parentPrivateKey, signingKeys).catch((e) =>
+                Promise.reject(
+                    new EnrichedError(`Failed to encrypt ${context} link name during ${context} creation`, {
+                        tags: {
+                            token,
+                            parentLinkId,
+                        },
+                        extra: { e },
+                    })
+                )
+            ),
+        ]);
+
+        return {
+            hash,
+            signingKeys,
+            addressKeyInfo,
+            nodeKeys,
+            encryptedName,
+        };
+    };
+
+    const createFolder = async (
+        abortSignal: AbortSignal,
+        {
+            token,
+            parentLinkId,
+            name,
+            modificationTime,
+            silence,
+        }: { token: string; parentLinkId: string; name: string; modificationTime?: Date; silence?: number | number[] }
+    ) => {
+        const { hash, addressKeyInfo, nodeKeys, encryptedName } = await getCreationData(abortSignal, {
+            name,
+            token,
+            parentLinkId,
+            context: 'folder',
+        });
 
         // We use private key instead of address key to sign the hash key
         // because its internal property of the folder. We use address key for
         // name or content to have option to trust some users more or less.
-        const { NodeHashKey } = await generateNodeHashKey(privateKey, privateKey).catch((e) =>
-            Promise.reject(
-                new EnrichedError('Failed to encrypt node hash key during folder creation', {
-                    tags: {
-                        token,
-                        parentLinkId,
-                    },
-                    extra: { e },
-                })
-            )
+        const { NodeHashKey: nodeHashKey } = await generateNodeHashKey(nodeKeys.privateKey, nodeKeys.privateKey).catch(
+            (e) =>
+                Promise.reject(
+                    new EnrichedError('Failed to encrypt node hash key during folder creation', {
+                        tags: {
+                            token,
+                            parentLinkId,
+                        },
+                        extra: { e },
+                    })
+                )
         );
 
         const xattr = !modificationTime
             ? undefined
             : await encryptFolderExtendedAttributes(
                   modificationTime,
-                  privateKey,
-                  addressKeyInfo ? addressKeyInfo.privateKey : privateKey
+                  nodeKeys.privateKey,
+                  addressKeyInfo ? addressKeyInfo.privateKey : nodeKeys.privateKey
               );
 
         const { Folder, AuthorizationToken } = await preventLeave(
             publicDebouncedRequest<{ Folder: { ID: string }; AuthorizationToken: string }>({
                 ...queryPublicCreateFolder(token, {
-                    Hash,
-                    NodeHashKey,
+                    Hash: hash,
+                    NodeHashKey: nodeHashKey,
                     Name: encryptedName,
-                    NodeKey,
-                    NodePassphrase,
-                    NodePassphraseSignature,
+                    NodeKey: nodeKeys.NodeKey,
+                    NodePassphrase: nodeKeys.NodePassphrase,
+                    NodePassphraseSignature: nodeKeys.NodePassphraseSignature,
                     SignatureEmail: addressKeyInfo?.address.Email,
                     ParentLinkID: parentLinkId,
                     XAttr: xattr,
@@ -139,6 +162,46 @@ export function usePublicLinkActions() {
         }
 
         return Folder.ID;
+    };
+
+    const createDocument = async (
+        abortSignal: AbortSignal,
+        { token, parentLinkId, name }: { token: string; parentLinkId: string; name: string }
+    ) => {
+        const { hash, addressKeyInfo, nodeKeys, signingKeys, encryptedName } = await getCreationData(abortSignal, {
+            name,
+            token,
+            parentLinkId,
+            context: 'document',
+        });
+
+        const { ContentKeyPacket, ContentKeyPacketSignature } = await generateContentKeys(nodeKeys.privateKey);
+
+        // Documents do not have any blocks, so we sign an empty array.
+        const ManifestSignature = await sign(new Uint8Array([]), signingKeys);
+
+        const { Document, AuthorizationToken } = await preventLeave(
+            publicDebouncedRequest<CreateDocumentResult & { AuthorizationToken: string }>({
+                ...queryPublicCreateDocument(token, {
+                    Hash: hash,
+                    Name: encryptedName,
+                    NodeKey: nodeKeys.NodeKey,
+                    NodePassphrase: nodeKeys.NodePassphrase,
+                    NodePassphraseSignature: nodeKeys.NodePassphraseSignature,
+                    ContentKeyPacket,
+                    ContentKeyPacketSignature,
+                    ManifestSignature,
+                    SignatureEmail: addressKeyInfo?.address.Email,
+                    ParentLinkID: parentLinkId,
+                }),
+            })
+        );
+
+        if (AuthorizationToken) {
+            setUploadToken({ linkId: Document.LinkID, authorizationToken: AuthorizationToken });
+        }
+
+        return Document.LinkID;
     };
 
     const renameLink = async (
@@ -232,5 +295,6 @@ export function usePublicLinkActions() {
     return {
         renameLink,
         createFolder,
+        createDocument,
     };
 }
