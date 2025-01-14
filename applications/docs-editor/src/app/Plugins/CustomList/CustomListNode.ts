@@ -38,6 +38,7 @@ export class CustomListNode extends ListNode {
     const writable = this.getWritable()
     writable.__listStyleType = listStyleType
   }
+
   setMarker(marker: CustomListMarker) {
     this.getWritable().__listMarker = marker
   }
@@ -51,16 +52,12 @@ export class CustomListNode extends ListNode {
   }
 
   static importJSON(serializedNode: SerializedCustomListNode): ListNode {
-    const node = $createCustomListNode(
+    return $createCustomListNode(
       serializedNode.listType,
       serializedNode.start,
       serializedNode.listStyleType,
       serializedNode.listMarker,
-    )
-    node.setFormat(serializedNode.format)
-    node.setIndent(serializedNode.indent)
-    node.setDirection(serializedNode.direction)
-    return node
+    ).updateFromJSON(serializedNode)
   }
 
   createDOM(config: EditorConfig) {
@@ -91,13 +88,12 @@ export class CustomListNode extends ListNode {
 
     return dom
   }
+
   exportJSON() {
     return {
       ...super.exportJSON(),
       listStyleType: this.getListStyleType(),
       listMarker: this.getListMarker(),
-      type: 'custom-list',
-      version: 1,
     }
   }
 
