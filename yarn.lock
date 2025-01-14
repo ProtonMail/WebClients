@@ -35860,7 +35860,6 @@ __metadata:
     minimist: "npm:^1.2.8"
     node-loader: "npm:^2.1.0"
     prettier: "npm:3.4.2"
-    sharp: "npm:^0.33.5"
     style-loader: "npm:^4.0.0"
     ts-jest: "npm:^29.2.5"
     ts-loader: "npm:^9.5.1"
@@ -39691,7 +39690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.33.1, sharp@npm:^0.33.5":
+"sharp@npm:^0.33.1":
   version: 0.33.5
   resolution: "sharp@npm:0.33.5"
   dependencies:
