@@ -65,6 +65,7 @@ export const TimeZoneSelector = ({
                 measurementGroup: TelemetryMeasurementGroups.calendarTimeZoneSelector,
                 event: TelemetryCalendarEvents.change_temporary_time_zone,
                 dimensions,
+                delay: false,
             });
         }
         onChange(value);

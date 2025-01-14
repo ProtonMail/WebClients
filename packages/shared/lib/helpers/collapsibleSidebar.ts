@@ -23,11 +23,13 @@ export const sendRequestCollapsibleSidebarReport = ({
     action,
     application,
     sourceEvent,
+    delay = false,
 }: {
     api: Api;
     action: COLLAPSE_EVENTS;
     application: APP_NAMES;
     sourceEvent: SOURCE_EVENT;
+    delay?: boolean;
 }) => {
     void sendTelemetryReport({
         api,
@@ -38,6 +40,7 @@ export const sendRequestCollapsibleSidebarReport = ({
             application,
             sourceEvent,
         },
+        delay,
     });
 };
 

@@ -19,6 +19,7 @@ const useAssistantTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.show_assistant,
+            delay: false,
         });
     };
 
@@ -27,6 +28,7 @@ const useAssistantTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.free_trial_start,
+            delay: false,
         });
     };
 
@@ -38,6 +40,7 @@ const useAssistantTelemetry = () => {
             values: {
                 download_time: downloadTime,
             },
+            delay: false,
         });
     };
 
@@ -49,6 +52,7 @@ const useAssistantTelemetry = () => {
             dimensions: {
                 insertion_type: insertionType,
             },
+            delay: false,
         });
     };
 
@@ -57,6 +61,7 @@ const useAssistantTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.not_use_answer,
+            delay: false,
         });
     };
 
@@ -89,6 +94,7 @@ const useAssistantTelemetry = () => {
                 generation_type: generationType,
                 selection_type: selectionType,
             },
+            delay: false,
         });
     };
 
@@ -107,6 +113,7 @@ const useAssistantTelemetry = () => {
                 assistant_type: assistantType,
                 error_type: errorType,
             },
+            delay: false,
         });
     };
 
@@ -115,6 +122,7 @@ const useAssistantTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.send_message,
+            delay: false,
         });
     };
 
@@ -123,6 +131,7 @@ const useAssistantTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.pause_download,
+            delay: false,
         });
     };
 
@@ -134,6 +143,7 @@ const useAssistantTelemetry = () => {
             values: {
                 load_time: loadTime,
             },
+            delay: false,
         });
     };
 
@@ -142,6 +152,7 @@ const useAssistantTelemetry = () => {
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.unload_model,
+            delay: false,
         });
     };
 
@@ -157,6 +168,7 @@ const useAssistantTelemetry = () => {
             dimensions: {
                 incompatibility_type: incompatibilityType,
             },
+            delay: false,
         });
     };
 

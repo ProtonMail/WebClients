@@ -53,12 +53,14 @@ export const sendRequestUpsellModalReport = ({
     application,
     sourceEvent,
     upsellModalType,
+    delay = false,
 }: {
     api: Api;
     action?: UPSELL_MODALS;
     application: APP_NAMES;
     sourceEvent: SourceEventUpsell;
     upsellModalType: UPSELL_MODALS_TYPE;
+    delay?: boolean;
 }) => {
     void sendTelemetryReport({
         api,
@@ -70,6 +72,7 @@ export const sendRequestUpsellModalReport = ({
             sourceEvent,
             upsellModalType,
         },
+        delay,
     });
 };
 

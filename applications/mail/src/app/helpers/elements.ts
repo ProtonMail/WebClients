@@ -8,6 +8,7 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getSender, hasAttachments as messageHasAttachments } from '@proton/shared/lib/mail/messages';
+import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
@@ -15,7 +16,6 @@ import { ELEMENT_TYPES } from '../constants';
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import type { LabelIDsChanges } from '../models/event';
-import type { Filter, SearchParameters, Sort } from '../models/tools';
 import {
     getLabelIDs as conversationGetLabelIDs,
     getSenders as conversationGetSenders,

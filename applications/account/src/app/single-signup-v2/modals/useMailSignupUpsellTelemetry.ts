@@ -16,6 +16,7 @@ const useMailSignupUpsellTelemetry = (): SignupUpsellTelemetryHook => {
             api: unauthApi,
             measurementGroup: TelemetryMeasurementGroups.mailSignup,
             event,
+            delay: false,
         }).catch(noop);
     };
     return {

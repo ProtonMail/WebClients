@@ -414,6 +414,7 @@ const SingleSignupContainerV2 = ({
                 flow,
             },
             values,
+            delay: false,
         }).catch(noop);
     };
 

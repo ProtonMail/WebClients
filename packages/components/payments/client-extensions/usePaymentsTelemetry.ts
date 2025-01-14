@@ -111,6 +111,7 @@ export const usePaymentsTelemetry = ({
             event,
             dimensions,
             values,
+            delay: false,
         }).catch(noop);
     };
 

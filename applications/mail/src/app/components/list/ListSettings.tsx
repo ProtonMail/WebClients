@@ -2,8 +2,8 @@ import type { ReactElement } from 'react';
 import { memo } from 'react';
 
 import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
-import type { Filter, Sort } from '../../models/tools';
 import FilterActions from '../toolbar/FilterActions';
 import SortDropdown from '../toolbar/SortDropdown';
 

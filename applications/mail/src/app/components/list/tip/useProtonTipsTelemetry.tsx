@@ -22,6 +22,7 @@ const useProtonTipsTelemetry = () => {
             dimensions: {
                 ...dimensions,
             },
+            delay: false,
         });
     };
 

@@ -40,6 +40,7 @@ export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallb
             event,
             silence: true,
             dimensions,
+            delay: false,
         });
     };
 
