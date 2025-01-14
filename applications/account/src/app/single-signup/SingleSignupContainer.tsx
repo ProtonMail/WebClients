@@ -242,6 +242,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, onLogin, pro
                 flow: model.mode === 'signup' ? 'vpn_signup_2step' : 'vpn_signup_3step',
             },
             values,
+            delay: false,
         }).catch(noop);
     };
 

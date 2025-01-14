@@ -1,14 +1,12 @@
 import { getIsOfflineError, getIsTimeoutError, isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
-import { randomDelay, sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
+import { SECOND } from '@proton/shared/lib/constants';
+import { randomDelay } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
-import { contentIndexingProgress, readNumMetadata, readSize } from '../esIDB';
-import type { ESIndexMetrics, ESSearchMetrics } from '../models';
-import { estimateIndexingDuration } from './esBuild';
+import { readNumMetadata } from '../esIDB';
 
 export const esErrorReport = (context: string, extra?: Record<string, unknown>) => {
     traceError(extra?.error, {
@@ -99,74 +97,6 @@ export const apiHelper = async <T>(
     }
 
     return apiResponse;
-};
-
-/**
- * Send metrics about encrypted search
- */
-type SendESMetrics = {
-    (api: Api, Title: 'index', Data: ESIndexMetrics): Promise<void>;
-    (api: Api, Title: 'search', Data: ESSearchMetrics): Promise<void>;
-};
-const sendESMetrics: SendESMetrics = async (api, Title, Data) =>
-    sendMetricsReport(api, METRICS_LOG.ENCRYPTED_SEARCH, Title, Data);
-
-/**
- * Send metrics about the indexing process (only for Mail)
- * TODO: move to Mail and convert into generic callback for useEncryptedSearch
- */
-export const sendIndexingMetricsForMail = async (api: Api, userID: string): Promise<void> => {
-    const progressBlob = await contentIndexingProgress.read(userID);
-    if (!progressBlob) {
-        return;
-    }
-
-    const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
-    const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
-    const indexSize = (await readSize(userID)) || 0;
-
-    return sendESMetrics(api, 'index', {
-        numInterruptions: totalInterruptions - numPauses,
-        indexSize,
-        originalEstimate,
-        indexTime,
-        // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
-        // it doesn't make too much sense in general to talk about "messages"
-        numMessagesIndexed: totalItems,
-        isRefreshed,
-        numPauses,
-    });
-};
-
-/**
- * Send metrics about a single encrypted search
- */
-export const sendSearchingMetrics = async (
-    api: Api,
-    userID: string,
-    cacheSize: number,
-    searchTime: number,
-    isFirstSearch: boolean,
-    isCacheLimited: boolean
-) => {
-    // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
-    // it doesn't make too much sense in general to talk about "messages"
-    const numMessagesIndexed = await readNumMetadata(userID);
-    if (typeof numMessagesIndexed === 'undefined') {
-        // If this is undefined, something went wrong when accessing IDB,
-        // therefore it makes little sense to send metrics
-        return;
-    }
-    const indexSize = (await readSize(userID)) || 0;
-
-    return sendESMetrics(api, 'search', {
-        indexSize,
-        numMessagesIndexed,
-        cacheSize,
-        searchTime,
-        isFirstSearch,
-        isCacheLimited,
-    });
 };
 
 /**

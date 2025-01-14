@@ -20,6 +20,7 @@ export const usePostSubscriptionTelemetry = () => {
             measurementGroup: TelemetryMeasurementGroups.mailPostSubscriptionEvents,
             event: options.event,
             dimensions: 'dimensions' in options ? options.dimensions : undefined,
+            delay: false,
         });
 };
 

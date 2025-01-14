@@ -1,7 +1,6 @@
 import type { ESItem, ESStatus, EncryptedSearchFunctions } from '@proton/encrypted-search';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
-
-import type { Filter, SearchParameters, Sort } from './tools';
 
 export type ESBaseMessage = Pick<
     MessageMetadata,
@@ -63,14 +62,6 @@ export interface EncryptedSearchFunctionsMail
     closeDropdown: () => void;
     setTemporaryToggleOff: () => void;
     esStatus: ESDBStatusMail & ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
-}
-
-export interface NormalizedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {
-    labelID: string;
-    sort: Sort;
-    filter: Filter;
-    search: SearchParameters;
-    normalizedKeywords: string[] | undefined;
 }
 
 export type ESMessage = ESItem<ESBaseMessage, ESMessageContent>;

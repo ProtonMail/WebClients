@@ -6,9 +6,9 @@ import type { Location } from 'history';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
+import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 import { MAIN_ROUTE_PATH } from '../constants';
-import type { Filter, SearchParameters, Sort } from '../models/tools';
 import { getHumanLabelID } from './labels';
 
 // No interface to comply with generatePath argument type

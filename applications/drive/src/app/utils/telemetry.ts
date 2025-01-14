@@ -84,6 +84,7 @@ const sendTelemetryFeaturePerformance = (
             experimentGroup: treatment,
             featureName,
         },
+        delay: false,
     });
 };
 
@@ -232,6 +233,7 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1) => 
         dimensions: {
             name: action,
         },
+        delay: false,
     });
 };
 

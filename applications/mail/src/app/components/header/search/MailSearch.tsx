@@ -6,6 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { Breakpoints } from '@proton/components';
 import { TopNavbarListItemSearchButton, usePopperAnchor, useProgressiveRollout, useToggle } from '@proton/components';
+import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { FeatureCode } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail';
 import generateUID from '@proton/utils/generateUID';
@@ -39,10 +40,12 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
     const { esStatus, cacheIndexedDB, closeDropdown, esIndexingProgressState } = useEncryptedSearchContext();
-    const { dropdownOpened } = esStatus;
+    const { dropdownOpened, esEnabled } = esStatus;
     const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
+
+    const { sendClearSearchFieldsReport } = useSearchTelemetry();
 
     const loading = loadingLabels || loadingFolders || loadingAddresses;
 
@@ -89,6 +92,11 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
         };
     }, [close]);
 
+    const handleClearSearchField = () => {
+        setSearchInputValue('');
+        sendClearSearchFieldsReport(esEnabled);
+    };
+
     return (
         <>
             {breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium ? (
@@ -100,7 +108,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
                     loading={loading}
                     ref={anchorRef}
                     value={searchInputValue}
-                    onChange={setSearchInputValue}
+                    onClearSearch={handleClearSearchField}
                     onOpen={handleOpen}
                     adaptWidth={columnMode}
                 />
