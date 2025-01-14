@@ -28,14 +28,18 @@ jest.mocked(usePublicSessionUser).mockReturnValue({
 } as any);
 
 const mockNewFolderName = 'New Folder';
+const mockNewFolderId = 'folderId';
+const mockDocumentId = 'documentId';
 const mockRenameLink = jest.fn().mockResolvedValue(true);
-const mockCreateFolder = jest.fn().mockResolvedValue(mockNewFolderName);
+const mockCreateFolder = jest.fn().mockResolvedValue(mockNewFolderId);
+const mockCreateDocument = jest.fn().mockResolvedValue(mockDocumentId);
 const mockDeleteChildrenLink = jest.fn();
 
 jest.mock('../_links/usePublicLinkActions');
 jest.mocked(usePublicLinkActions).mockImplementation(() => ({
     renameLink: mockRenameLink,
     createFolder: mockCreateFolder,
+    createDocument: mockCreateDocument,
     deleteChildrenLinks: mockDeleteChildrenLink,
 }));
 
@@ -163,7 +167,7 @@ describe('usePublicActions', () => {
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 text: <span className="text-pre-wrap">"New Folder" created successfully</span>,
             });
-            expect(newFolderId).toBe(mockNewFolderName);
+            expect(newFolderId).toBe(mockNewFolderId);
         });
 
         it('should handle errors and show error notification', async () => {
@@ -183,6 +187,48 @@ describe('usePublicActions', () => {
             expect(mockShowErrorNotification).toHaveBeenCalledWith(
                 mockError,
                 <span className="text-pre-wrap">"New Folder" failed to be created</span>
+            );
+        });
+    });
+
+    describe('createDocument', () => {
+        it('should successfully create a document and return its id', async () => {
+            const { result } = renderHook(() => usePublicActions());
+
+            jest.useFakeTimers();
+            const mockDate = new Date('2024-01-01 10:30:45');
+            jest.setSystemTime(mockDate);
+
+            const documentId = await result.current.createDocument(mockAbortSignal, mockToken, mockParentLinkId);
+
+            expect(mockCreateDocument).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                parentLinkId: mockParentLinkId,
+                name: 'Untitled document 2024-01-01 10.30.45',
+            });
+            expect(mockLoadChildren).toHaveBeenCalledWith(mockAbortSignal, mockToken, mockParentLinkId, false);
+            expect(documentId).toBe(mockDocumentId);
+
+            jest.useRealTimers();
+        });
+
+        it('should handle errors and show error notification', async () => {
+            const { result } = renderHook(() => usePublicActions());
+
+            mockCreateDocument.mockRejectedValue(mockError);
+
+            await expect(result.current.createDocument(mockAbortSignal, mockToken, mockParentLinkId)).rejects.toThrow(
+                mockError
+            );
+
+            expect(mockCreateDocument).toHaveBeenCalledWith(mockAbortSignal, {
+                token: mockToken,
+                parentLinkId: mockParentLinkId,
+                name: expect.any(String),
+            });
+            expect(mockShowErrorNotification).toHaveBeenCalledWith(
+                mockError,
+                <span className="text-pre-wrap">The document failed to be created</span>
             );
         });
     });
