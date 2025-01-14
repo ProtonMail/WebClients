@@ -3692,6 +3692,9 @@
         "Berörd användare är på rad",
         "Berörda användare är på raderna"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
+      ],
       "All inactive members deleted": [
         "Alla inaktiva medlemmar borttagna"
       ],
@@ -3841,6 +3844,10 @@
       ],
       "Country code": [
         "Landskod"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Skapa ett säkert moln för ${ value } medlem",
+        "Skapa ett säkert moln för ${ value } medlemmar"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Skapa och hantera underkonton och tilldela dem e-postadresser på din anpassade domän."
@@ -4609,6 +4616,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Skicka e-post för att uppmuntra dina medlemmar att skydda sina konton med 2FA."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
+      ],
       "Server is currently down": [
         "Servern är f.n. nere"
       ],
@@ -4632,6 +4642,9 @@
       ],
       "Shared ${ vaultLink } updated": [
         "Delad ${ vaultLink } uppdaterad"
+      ],
+      "Shared Server Location Filters": [
+        "Platsfilter för delade servrar"
       ],
       "Shared vault deleted": [
         "Delat valv borttaget"
@@ -4690,6 +4703,9 @@
       ],
       "Swiss based": [
         "Baserat i Schweiz"
+      ],
+      "Switch to": [
+        "Byt till"
       ],
       "Thank you": [
         "Tack"
@@ -5230,6 +5246,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dit nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
       ],
@@ -5241,6 +5260,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."

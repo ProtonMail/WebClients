@@ -3681,6 +3681,9 @@
         "Etkilenen kullanıcı şu satırda",
         "Etkilenen kullanıcılar şu satırlarda"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
+      ],
       "All inactive members deleted": [
         "Etkin olmayan tüm üyeler silindi"
       ],
@@ -3830,6 +3833,10 @@
       ],
       "Country code": [
         "Ülke kodu"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } üye için bir güvenli bulut oluştur",
+        "${ value } üye için bir güvenli bulut oluştur"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
@@ -4595,6 +4602,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Üyelerinize hesaplarını iki adımlı doğrulama ile korumaya özendiren e-postalar gönderin."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Server is currently down": [
         "Sunucu şu anda çalışmıyor"
       ],
@@ -4679,6 +4689,9 @@
       ],
       "Swiss based": [
         "İsviçre merkezli"
+      ],
+      "Switch to": [
+        "Şuna geç"
       ],
       "Thank you": [
         "Teşekkürler"
@@ -5219,6 +5232,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Kuruluşunuz tek oturum açma (SSO) kullanıyor. Tek oturum açma hizmeti sağlayıcınızı kullanmak için Oturum aç üzerine basın."
       ],
@@ -5230,6 +5246,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve ${ cycle } ayda bir otomatik olarak yenilenecek."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
