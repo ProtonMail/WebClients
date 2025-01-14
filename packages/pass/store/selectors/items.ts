@@ -396,11 +396,9 @@ export const selectSecureLinksByShareId = (shareId: string) =>
         Object.values(secureLinks?.[shareId] ?? {}).flat()
     );
 
-export const selectSecureLinksByItems = (items: BulkSelectionDTO) =>
-    createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
-        Object.entries(items).flatMap(([shareId, item]) => {
-            const [itemId] = Object.keys(item);
-
-            return secureLinks[shareId]?.[itemId] ?? [];
-        })
+export const selectBulkHasSecureLinks = (dto: BulkSelectionDTO) =>
+    createSelector(selectSecureLinks, (secureLinks): boolean =>
+        Object.entries(dto).some(([shareId, items]) =>
+            Object.keys(items).some((itemId) => Boolean(secureLinks[shareId]?.[itemId]))
+        )
     );
