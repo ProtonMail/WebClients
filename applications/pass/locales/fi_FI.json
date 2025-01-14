@@ -708,6 +708,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Jos käytät aliverkkotunnusta, esimerkiksi subdomain.domain.com, sinun on sen sijaan käytettävä verkkotunnuksena ${ domainKeyExampleSubdomain }. Tämä tarkoittaa, että jos verkkotunnuksesi on mail.domain.com, sinun on syötettävä verkkotunnukseksi ${ domainKeyExampleMail }."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Jos käytät Cloudflarea, varmista, ettet valitse Proxy-vaihtoehtoa."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Suojaa tietosi paremmin ja vahvista niiden yksityisyyttä näillä oppailla ja vinkeillä."
       ],

@@ -717,6 +717,9 @@
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
         "Se estiver usando um subdomínio, por exemplo, subdomain.domain.com, será necessário usar ${ domainKeyExampleSubdomain } como o domínio. Isso significa que, se o seu domínio for mail.domain.com, você deverá inserir ${ domainKeyExampleMail } como o domínio."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "Se estiver usando o Cloudflare, certifique-se de não selecionar a opção Proxy."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantenha suas informações mais seguras e privadas com estes guias e dicas."
       ],
@@ -749,6 +752,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para maior segurança da sua conta."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "Para verificar a propriedade do domínio, adicione o seguinte registro TXT. Alguns registradores de domínio (Namecheap, Cloudflare, etc.) podem usar @ para o domínio raiz."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloqueie recursos avançados de segurança e registros detalhados para proteger sua presença online."
@@ -3799,7 +3805,7 @@
         "A chave secreta OTP ou o URL não funciona."
       ],
       "OTP secret or URI required": [
-        "É necessário introduzir uma chave secreta OTP ou um URL."
+        "É necessário introduzir uma chave secreta OTP ou um URI."
       ],
       "Section name cannot be empty": [
         "O nome da seção não pode estar vazio"
