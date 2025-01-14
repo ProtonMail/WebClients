@@ -23,7 +23,7 @@ const OrderableTable = ({ children = [], className = '', helperClassname, captio
     const inModalRef = useRef(false);
 
     return (
-        <div ref={wrapperRef}>
+        <div ref={wrapperRef} className="w-full">
             <OrderableContainer
                 useDragHandle
                 helperContainer={() => {
