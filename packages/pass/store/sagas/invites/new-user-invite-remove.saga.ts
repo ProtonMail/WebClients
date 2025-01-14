@@ -6,11 +6,13 @@ import {
     newUserInviteRemoveIntent,
     newUserInviteRemoveSuccess,
 } from '@proton/pass/store/actions';
+import { syncAccess } from '@proton/pass/store/actions/creators/polling';
 
 function* removeInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInviteRemoveIntent>) {
     try {
         yield removeNewUserInvite(payload);
         yield put(newUserInviteRemoveSuccess(request.id, payload));
+        yield put(syncAccess(payload));
     } catch (err) {
         yield put(newUserInviteRemoveFailure(request.id, err));
     }

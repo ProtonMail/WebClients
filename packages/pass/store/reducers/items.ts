@@ -13,8 +13,6 @@ import {
     emptyTrashProgress,
     importItemsProgress,
     inviteAccept,
-    inviteBatchCreateSuccess,
-    inviteRemoveSuccess,
     itemAutofilled,
     itemBulkDeleteProgress,
     itemBulkMoveProgress,
@@ -42,8 +40,6 @@ import {
     setItemFlags,
     shareEventDelete,
     shareLeaveSuccess,
-    shareRemoveMemberAccessIntent,
-    sharedVaultCreated,
     sharesEventNew,
     syncSuccess,
     vaultDeleteSuccess,
@@ -247,16 +243,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, pinned: false })(state);
         }
 
-        if (sharedVaultCreated.match(action) && action.payload.move) {
-            const { shareId } = action.payload.share;
-            const { before, after } = action.payload.move;
-
-            return fullMerge(
-                { ...state, [before.shareId]: objectDelete(state[before.shareId], before.itemId) },
-                { [shareId]: { [after.itemId]: after } }
-            );
-        }
-
         if (or(emptyTrashProgress.match, itemBulkDeleteProgress.match)(action)) {
             const deletedItemIds = action.payload.batch.map(prop('ItemID'));
             return objectMap(state, (shareId, items) =>
@@ -323,21 +309,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (aliasSyncPending.success.match(action)) {
             const { items, shareId } = action.payload;
             return partialMerge(state, { [shareId]: toMap(items, 'itemId') });
-        }
-
-        if (inviteBatchCreateSuccess.match(action) && action.payload.itemId) {
-            const { shareId, itemId, count } = action.payload;
-            const { shareCount = 0 } = state[shareId][itemId];
-            return updateItem({ shareId, itemId, shareCount: shareCount + count })(state);
-        }
-
-        if (
-            (inviteRemoveSuccess.match(action) || shareRemoveMemberAccessIntent.match(action)) &&
-            action.payload.itemId
-        ) {
-            const { shareId, itemId } = action.payload;
-            const { shareCount = 0 } = state[shareId][itemId];
-            return updateItem({ shareId, itemId, shareCount: Math.max(0, shareCount - 1) })(state);
         }
 
         return state;
