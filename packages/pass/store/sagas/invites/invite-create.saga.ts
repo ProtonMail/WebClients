@@ -11,6 +11,7 @@ import {
     inviteBatchCreateIntent,
     inviteBatchCreateSuccess,
 } from '@proton/pass/store/actions';
+import { syncAccess } from '@proton/pass/store/actions/creators/polling';
 import { selectAccessMembers, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
@@ -72,6 +73,7 @@ function* createInviteWorker(
         }
 
         yield put(inviteBatchCreateSuccess(request.id, { shareId, itemId, count: invitesCount }));
+        yield put(syncAccess(payload));
     } catch (error: unknown) {
         yield put(inviteBatchCreateFailure(request.id, error, count));
     }
