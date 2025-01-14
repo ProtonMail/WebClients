@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "Tentang alias hide-my-email"
+      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -476,6 +479,9 @@
       ],
       "Export contact group": [
         "Ekspor grup kontak"
+      ],
+      "Export selection as .vcf": [
+        "Ekspor pilihan sebagai .vcf"
       ],
       "External encryption": [
         "Enkripsi eksternal"
@@ -1192,7 +1198,7 @@
         "Tunda"
       ],
       "Star": [
-        "Berikan tanda bintang"
+        "Bintangi"
       ],
       "Start import": [
         "Mulai impor"
@@ -3670,7 +3676,7 @@
         "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
-        "Gunakan ${ MAIL_APP_NAME } untuk masuk ke berbagai layanan online karena (tidak seperti layanan penyedia email lainnya) kami tidak akan pernah melacak data Anda dan membagikan data ini dengan pihak ketiga."
+        "Gunakan ${ MAIL_APP_NAME } untuk masuk ke berbagai layanan online karena, tidak seperti penyedia email lainnya, kami tidak akan pernah melacak data Anda dan membagikan data ini kepada pihak ketiga."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -4609,6 +4615,9 @@
       "Time zone": [
         "Zona waktu"
       ],
+      "Time zone component ignored": [
+        "Komponen zona waktu diabaikan"
+      ],
       "To-do entry": [
         "Entri to-do"
       ],
@@ -5354,20 +5363,41 @@
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
       ],
+      "End time out of bounds": [
+        "Waktu akhir di luar batas"
+      ],
+      "Event validation failed": [
+        "Validasi acara gagal"
+      ],
       "Floating times not supported": [
         "Waktu desimal tidak didukung"
+      ],
+      "Malformed all-day event": [
+        "Acara seharian tidak terformat dengan benar"
       ],
       "Malformed end time": [
         "Waktu akhir tidak terformat dengan benar"
       ],
+      "Malformed recurring event": [
+        "Acara berulang tidak terformat dengan benar"
+      ],
       "Malformed start time": [
         "Waktu mulai tidak terformat dengan benar"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Hanya skala kalender Gregorian yang diizinkan"
       ],
       "Recurring event has no occurrences": [
         "Acara yang berulang tidak memiiliki keberlangsungan"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
+      ],
+      "Start time out of bounds": [
+        "Waktu mulai di luar batas"
+      ],
+      "Time zone not supported": [
+        "Zona waktu tidak didukung"
       ]
     },
     "ICS widget label for event details": {
@@ -5509,11 +5539,17 @@
       "Use your app password instead of your regular password if:": [
         "Gunakan kata sandi aplikasi Anda alih-alih kata sandi biasa apabila:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Kata sandi aplikasi Anda benar. Jangan gunakan kata sandi biasa Anda."
+      ],
       "Your email account requires an app password to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email account requires one to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Alamat email dan kata sandi aplikasi Anda benar. Jangan gunakan kata sandi biasa Anda."
       ],
       "Your email address and password are correct.": [
         "Alamat email dan kata sandi Anda benar."
@@ -5751,7 +5787,7 @@
         "${ numOccurrences } kecocokan ditemukan di dalam konten surat"
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "${ PASS_APP_NAME } menyediakan cara yang sederhana untuk membuat entri masuk di situs pihak ketiga yang tidak dipercayai di mana Anda tidak ingin mengekspos alamat email Anda yang asli."
+        "${ PASS_APP_NAME } menyediakan cara yang sederhana untuk membuat entri masuk pada situs pihak ketiga yang tidak terpercaya, di mana Anda tidak ingin mengekspos alamat email Anda yang asli."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
@@ -6070,6 +6106,9 @@
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Buat ruang cloud yang aman untuk ${ value } anggota"
       ],
       "Create in": [
         "Buat di"
@@ -6404,6 +6443,9 @@
       "JCB logo": [
         "Logo JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Bergabunglah dengan program ${ PROTON_SENTINEL_NAME } untuk memperoleh tingkat keamanan dan dukungan akun tertinggi yang kami sediakan."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
@@ -6734,6 +6776,9 @@
       "Proofread text": [
         "Periksa teks"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Lindungi email Anda agar tidak bocor ke milis atau pengirim spam dengan alias hide-my-email."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
       ],
@@ -6750,7 +6795,7 @@
         "Mendaftarkan langganan Anda..."
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
-        "Jangan lupa untuk memperbarui rincian ini pada pengelola kata sandi Anda atau di mana pun itu Anda menyimpan informasi akun dan entri masuk Anda."
+        "Jangan lupa untuk memperbarui alamat ini pada pengelola kata sandi Anda atau di mana pun Anda menyimpan informasi akun dan entri masuk Anda."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Menghapus seluruh data yang terhubung dengan aplikasi ini (yang meliputi pesan yang diunduh, …)"
@@ -7002,7 +7047,7 @@
         "Percakapan ini berisi pesan yang telah dibuang."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Percakapan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
+        "Percakapan ini akan ditandai sebagai spam. Apakah Anda juga ingin berhenti menerima email dari alamat ini?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Email ini tidak memenuhi syarat autentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar."
@@ -7031,6 +7076,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Pesan ini dibuat secara otomatis sebagai respon terhadap pesan sebelumnya."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Pesan ini berasal dari alias ${ PASS_APP_NAME }."
+      ],
       "This message is from a mailing list.": [
         "Pesan ini berasal dari milis."
       ],
@@ -7047,7 +7095,7 @@
         "Pesan ini akan dihapus secara otomatis pada ${ value }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Pesan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
+        "Pesan ini akan ditandai sebagai spam. Apakah Anda juga ingin berhenti menerima email dari alamat ini?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
@@ -7101,7 +7149,7 @@
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."
@@ -7111,6 +7159,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Untuk memulihkan data, Anda perlu mengaktifkan ulang kunci akun yang digunakan saat data dibuat. Ini membutuhkan Anda mengingat kata sandi yang digunakan saat kuncinya dibuat."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Untuk menghilangkan batasan yang ada, Anda dapat meningkatkan ke paket berbayar."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Untuk menghilangkan batasan yang ada, Anda dapat mengunjungi ${ mailLink } dan meningkatkan ke paket berbayar."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Untuk berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian berikut sebagaimana yang ditetapkan oleh pengirim milis:"
@@ -7273,6 +7327,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Kami mendeteksi pembuatan lebih dari satu akun gratis, yang melanggar ${ termsLink } kami."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Kami memiliki paket yang secara khusus dirancang bagi pengguna seperti Anda yang membutuhkan lebih dari satu alamat email."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
@@ -7535,6 +7592,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+      ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
       ],
@@ -7543,6 +7603,12 @@
       ],
       "Your private writing assistant": [
         "Asisten penulisan pribadi Anda"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ]
     },
     "info": {
@@ -8255,6 +8321,9 @@
       ],
       "Remember my choice": [
         "Ingat pilihan saya"
+      ],
+      "Remove metadata": [
+        "Hapus metadata"
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
@@ -9582,14 +9651,6 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -9602,6 +9663,14 @@
       ],
       "Switch plans?": [
         "Ubah paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
       ]
     },
     "new_plans: tooltip": {
@@ -9962,15 +10031,15 @@
         "Media sosial"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke layanan online demi mencegah diri Anda terlacak dan terprofil. Ubah email Anda untuk berbagai layanan populer sekarang juga. ${ learnMoreLink }"
+        "Gunakan alamat ${ MAIL_APP_NAME } Anda untuk masuk ke berbagai layanan online agar Anda tidak dilacak dan diprofilkan. Ubah email Anda untuk layanan-layanan populer di bawah ini sekarang juga. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
-        "${ advancedEncryptionTitle } memastikan bahwa hanya Anda dan para penerima yang dapat mengakses email Anda."
+        "${ advancedEncryptionTitle } memastikan bahwa email Anda hanya akan dapat diakses oleh Anda dan penerima yang dikehendaki."
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
-        "${ industryLeadingSpamProtectionTitle } mencegah email penipuan sampai di kotak masuk Anda."
+        "${ industryLeadingSpamProtectionTitle } mencegah email penipuan sampai untuk sampai ke kotak masuk Anda."
       ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } di App Store"
@@ -9990,6 +10059,9 @@
       "Advanced encryption": [
         "Enkripsi tingkat lanjut"
       ],
+      "Anytime, anywhere access": [
+        "Akses kapan dan di mana saja"
+      ],
       "Auto-delete spam and trash": [
         "Kosongkan spam dan sampah secara otomatis"
       ],
@@ -9999,8 +10071,17 @@
       "Dark Web Monitoring": [
         "Pemantauan Dark Web"
       ],
+      "Distraction-free emailing": [
+        "Email bebas gangguan"
+      ],
       "Download the desktop app": [
         "Unduh aplikasi desktop"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Nikmati pengalaman berkirim email yang lebih cepat dan terfokus dengan aplikasi desktop."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Untuk akses kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink } kami."
       ],
       "Get notified if your password is compromised.": [
         "Dapatkan notifikasi pada saat kata sandi Anda dibocorkan."
@@ -10021,7 +10102,7 @@
         "Berikutnya"
       ],
       "Protection from trackers": [
-        "Perlindungan pelacak"
+        "Perlindungan dari pelacak"
       ],
       "Replay introduction": [
         "Ulangi pengenalan"
@@ -11987,7 +12068,7 @@
         "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
       "Mail list unsubscribed": [
-        "Berhenti langganan milis"
+        "Langganan milis dihentikan"
       ],
       "Message added to ${ labelName }.": [
         "Pesan ditambahkan ke ${ labelName }."
@@ -13114,6 +13195,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Hal ini memastikan bahwa tidak ada siapa pun yang akan dapat melihat lokasi, perangkat, dan informasi lainnya yang dapat digunakan untuk mengenali atau melacak Anda."
       ],
       "This feature is only available for paid users": [
         "Fitur ini hanya tersedia untuk pengguna berbayar"

@@ -14,19 +14,19 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
@@ -5424,7 +5424,7 @@
         "L'événement récurrent est mal formaté."
       ],
       "Malformed start time": [
-        "Heure de début malformée"
+        "L'heure de début est mal formatée."
       ],
       "Only the Gregorian calendar scale is allowed": [
         "Seule l'échelle du calendrier grégorien est autorisée."
@@ -5598,7 +5598,7 @@
         "Votre compte de messagerie en nécessite un pour exporter vos données."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "Votre adresse email et le mot de passe de l'application sont corrects. N'utilisez pas votre mot de passe habituel."
+        "Votre adresse e-mail et le mot de passe de l'application sont corrects. N'utilisez pas votre mot de passe habituel."
       ],
       "Your email address and password are correct.": [
         "Votre adresse e-mail et votre mot de passe sont corrects."
@@ -6889,7 +6889,7 @@
         "Relire le texte"
       ],
       "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou les spammeurs avec alias « hide-my-email »."
+        "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou des spammeurs avec les alias « hide-my-email »."
       ],
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
@@ -6998,7 +6998,7 @@
         "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }.</a>"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Les paiements via SEPA ne sont pas disponibles pour l''instant. Réessayez ultérieurement."
+        "Les paiements via SEPA ne sont pas disponibles pour l'instant. Réessayez ultérieurement."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -9357,6 +9357,9 @@
       "15 GB storage": [
         "15 Go d'espace de stockage"
       ],
+      "200 GB of storage": [
+        "200 Go d'espace de stockage"
+      ],
       "24/7 account management support": [
         "Assistance à la gestion de compte 24h/24 et 7j/7"
       ],
@@ -9550,6 +9553,9 @@
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
       ],
+      "Private photo backup": [
+        "Sauvegarde de photos privée"
+      ],
       "Proofread and refine your emails": [
         "Relisez et peaufinez vos messages"
       ],
@@ -9586,6 +9592,9 @@
       ],
       "Secure Core servers": [
         "Serveurs Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Stockage et partage sécurisés des fichiers"
       ],
       "Secure link sharing": [
         "Partage de liens sécurisés"
@@ -9820,14 +9829,6 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Profitez de Mail Plus pour ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -9840,6 +9841,14 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Profitez de Mail Plus pour ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
       ]
     },
     "new_plans: tooltip": {
@@ -10242,6 +10251,9 @@
       "Dark Web Monitoring": [
         "Surveillance du dark web"
       ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Découvrez ${ MAIL_APP_NAME }"
+      ],
       "Distraction-free emailing": [
         "Une messagerie électronique sans distractions"
       ],
@@ -10289,6 +10301,15 @@
       ],
       "Where privacy is default.": [
         "La confidentialité par défaut"
+      ],
+      "You are all set!": [
+        "Et voilà !"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Votre domaine ${ domain } et votre abonnement ${ subscriptionName } sont prêts à être utilisés."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Votre domaine et votre abonnement sont prêts à être utilisés."
       ]
     },
     "Onboarding Proton": {
@@ -10964,13 +10985,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers. ${ learnMoreLink }"
@@ -11539,7 +11560,7 @@
         "Il s'agit désormais de votre adresse par défaut. Ouvrez le menu déroulant pour envoyer des messages à partir d'une autre adresse. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Activez la ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
+        "Activez l'option ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."

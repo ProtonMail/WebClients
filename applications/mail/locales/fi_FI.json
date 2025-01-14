@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
+      "About hide-my-email aliases": [
+        "Tietoa Hide-my-email-aliaksista"
+      ],
       "Activate recovery": [
         "Aktivoi palautus"
       ],
@@ -480,6 +483,9 @@
       "Export contact group": [
         "Vie yhteystietoryhmä"
       ],
+      "Export selection as .vcf": [
+        "Vie valinta .vcf-tiedostona"
+      ],
       "External encryption": [
         "Ulkoinen salaus"
       ],
@@ -753,6 +759,9 @@
       ],
       "More": [
         "Lisää"
+      ],
+      "More actions": [
+        "Lisää toimintoja"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Lisätietoja vastaanottajasta ${ ariaLabelTitle }"
@@ -3732,6 +3741,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } uusi viesti",
+        "${ notificationsToShow.length } uutta viestiä"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Lähettäjä: ${ sender } - ${ Subject }"
       ]
@@ -4701,6 +4714,11 @@
         "Kutsua ei voida lähettää osoitteeseen ${ email }. ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Odottamaton virhe"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Liitetyn ICS-tiedoston salausta ei voitu purkaa"
@@ -5377,6 +5395,44 @@
         "Vahvistustapoja ei ole"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenterin aikavyöhykettä ei tueta"
+      ],
+      "Edited event not supported": [
+        "Muokattua tapahtumaa ei tueta"
+      ],
+      "End time out of bounds": [
+        "Päättymisaika on alueen ulkopuolella"
+      ],
+      "Event validation failed": [
+        "Tapahtuman vahvistus epäonnistui"
+      ],
+      "Floating times not supported": [
+        "Vaihtuvia aikoja ei tueta"
+      ],
+      "Malformed all-day event": [
+        "Virheellinen koko päivän tapahtuma"
+      ],
+      "Malformed end time": [
+        "Virheellinen päättymisaika"
+      ],
+      "Malformed recurring event": [
+        "Virheellinen toistuva tapahtuma"
+      ],
+      "Malformed start time": [
+        "Virheellinen aloitusaika"
+      ],
+      "Recurring rule not supported": [
+        "Toistuvaa sääntöä ei tueta"
+      ],
+      "Start time out of bounds": [
+        "Aloitusaika on alueen ulkopuolella"
+      ],
+      "Time zone not supported": [
+        "Aikavyöhykettä ei tueta"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } osallistuja",
@@ -5523,11 +5579,17 @@
       "Use your app password instead of your regular password if:": [
         "Käytä normaalin salasanasi sijaan sovellusalasanaa, jos:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Sovellussalasanasi on oikein. Älä käytä normaalia salasanaasi."
+      ],
       "Your email account requires an app password to export your data.": [
         "Sähköpostitilisi vaatii tietojesi vientiin sovellussalasanan."
       ],
       "Your email account requires one to export your data.": [
         "Sähköpostitilisi vaatii sovellussalasanan tietojesi vientiin."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Sähköpostiosoitteesi ja sovellussalasanasi ovat oikein. Älä käytä normaalia salasanaasi."
       ],
       "Your email address and password are correct.": [
         "Sähköpostiosoitteesi ja salasanasi ovat oikein."
@@ -5874,7 +5936,7 @@
         "**${ elementsFoundCount }** tulosta kohteesta ${ labelName }"
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } tallennustilaetua"
+        "+${ bonusSpace } lisätallennustilaa"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
@@ -5909,6 +5971,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ],
       "Align left": [
         "Tasaa vasemmalle"
@@ -6132,6 +6197,10 @@
       ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Luo suojattu pilvi ${ value } jäsenelle",
+        "Luo suojattu pilvi ${ value } jäsenelle"
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -6913,6 +6982,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Lähetetty turvallisella <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> -sähköpostilla."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
@@ -6984,6 +7056,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Vaihda"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
@@ -7101,6 +7176,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Tämä viesti on luotu automaattisesti edellisen viestin vastaukseksi."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Tämä viesti on ${ PASS_APP_NAME }-aliakselta."
+      ],
       "This message is from a mailing list.": [
         "Viesti on postituslistan lähettämä."
       ],
@@ -7182,6 +7260,9 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Tietojesi palauttamiseksi, sinun on aktivoitava uudelleen se tiliavain, joka oli käytössä kun tiedot luotiin. Sinun on myös muistettava avaimen luontihetkellä käytetty salasana."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Poista rajoitukset päivittämällä maksulliseen tilaukseen."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Sähköpostitilauksen lopettamiseksi lähetetään osoitteesta ${ boldFrom } viesti, joka sisältää seuraavat näiden viestien lähettäjän määrittämät tiedot:"
@@ -8347,6 +8428,9 @@
       ],
       "Remember my choice": [
         "Muista valintani"
+      ],
+      "Remove metadata": [
+        "Poista metatiedot"
       ],
       "Reveal password": [
         "Näytä salasana"
@@ -9706,14 +9790,6 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hanki Mail Plus hintaan ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -9726,6 +9802,14 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Hanki Mail Plus hintaan ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
       ]
     },
     "new_plans: tooltip": {
@@ -10097,6 +10181,12 @@
       ],
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } pitää huijausviestit poissa postilaatikostasi."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } App Storessa"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } Play Kaupassa"
       ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } estää muista jäljittämästä sinua ympäri Internetiä."
@@ -11904,7 +11994,7 @@
         "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
       "Yearly free storage bonuses": [
-        "Vuotuiset ilmaiset tallennustilakorotukset"
+        "Ilmaista lisätallennustilaa vuosittain"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink }"

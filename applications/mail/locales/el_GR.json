@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "About hide-my-email aliases": [
+        "Περί hide-my-email ψευδώνυμα"
+      ],
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
@@ -479,6 +482,9 @@
       ],
       "Export contact group": [
         "Εξαγωγή ομάδας επαφών"
+      ],
+      "Export selection as .vcf": [
+        "Εξαγωγή επιλογής ως .vcf"
       ],
       "External encryption": [
         "Εξωτερική κρυπτογράφηση"
@@ -3735,6 +3741,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } νέο μήνυμα",
+        "${ notificationsToShow.length } νέα μηνύματα"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Από: ${ sender } - ${ Subject }"
       ]
@@ -4638,6 +4648,9 @@
       "Time zone": [
         "Ζώνη ώρας"
       ],
+      "Time zone component ignored": [
+        "Το στοιχείο ζώνης ώρας παραβλέπεται"
+      ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
       ],
@@ -5389,11 +5402,17 @@
       "Calendar time zone not supported": [
         "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
       ],
+      "Edited event not supported": [
+        "Η τροποποιημένη εκδήλωση δεν υποστηρίζεται"
+      ],
       "End time out of bounds": [
         "Ώρα λήξης εκτός ορίων"
       ],
       "Event validation failed": [
         "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Floating times not supported": [
+        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
       ],
       "Malformed all-day event": [
         "Δύσμορφη ολοήμερη εκδήλωση"
@@ -5401,8 +5420,23 @@
       "Malformed end time": [
         "Λανθασμένος χρόνος λήξης"
       ],
+      "Malformed recurring event": [
+        "Λάθος επαναλαμβανόμενο συμβάν"
+      ],
+      "Malformed start time": [
+        "Λάθος χρόνος έναρξης"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Επιτρέπεται μόνο η κλίμακα του Γρηγοριανού ημερολογίου"
+      ],
       "Recurring event has no occurrences": [
         "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
+      ],
+      "Recurring rule not supported": [
+        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
+      ],
+      "Start time out of bounds": [
+        "Ώρα έναρξης εκτός ορίων"
       ],
       "Time zone not supported": [
         "Μη υποστηριζόμενη ζώνη ώρας"
@@ -5554,11 +5588,17 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ο κωδικός πρόσβασης σας στην εφαρμογή είναι σωστός. Μη χρησιμοποιείτε τον σύνηθες κωδικό πρόσβασής σας."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας."
       ],
       "Your email account requires one to export your data.": [
         "Ο λογαριασμός email σας απαιτεί έναν για εξαγωγή των δεδομένων σας"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστοί. Μη χρησιμοποιήστε τον σύνηθες κωδικό πρόσβασής σας."
       ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
@@ -5941,6 +5981,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
+      ],
       "Align left": [
         "Στοίχιση αριστερά"
       ],
@@ -6163,6 +6206,10 @@
       ],
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
       ],
       "Create in": [
         "Δημιουργία σε"
@@ -6506,6 +6553,9 @@
       "JCB logo": [
         "Λογότυπο JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Εγγραφείτε στο πρόγραμμα ${ PROTON_SENTINEL_NAME } για το υψηλότερο επίπεδο ασφάλειας και υποστήριξης λογαριασμού μας."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
@@ -6838,6 +6888,9 @@
       "Proofread text": [
         "Διόρθωση κειμένου"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Προστατέψτε τη διεύθυνσή σας από το να διαρρεύσει σε λίστες αλληλογραφίας ή ενοχλητικούς αποστολείς, με hide-my-email ψευδώνυμα"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
@@ -6943,6 +6996,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Στάλθηκε με <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> διασφαλισμένο ταχυδρομείο."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Οι πληρωμές SEPA δεν είναι διαθέσιμες προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -7135,6 +7191,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Αυτό το μήνυμα δημιουργείται αυτόματα ως απάντηση σε ένα προηγούμενο μήνυμα."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Αυτό το μήνυμα προέρχεται από ένα ${ PASS_APP_NAME } ψευδώνυμο."
+      ],
       "This message is from a mailing list.": [
         "Αυτό το μήνυμα προέρχεται από μια λίστα αλληλογραφίας."
       ],
@@ -7216,6 +7275,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Για να ανακτήσετε τα δεδομένα σας, πρέπει να ενεργοποιήσετε ξανά το κλειδί λογαριασμού που χρησιμοποιήθηκε τη στιγμή της δημιουργίας των δεδομένων. Αυτό θα απαιτήσει από εσάς να θυμηθείτε τον κωδικό πρόσβασης που χρησιμοποιήθηκε όταν δημιουργήθηκε το κλειδί."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Για να καταργήσετε τους περιορισμούς, μπορείτε να κάνετε αναβάθμιση σε πλάνο επί πληρωμή."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Για να καταργήσετε τους περιορισμούς, μπορείτε να επισκεφτείτε το ${ mailLink } και να κάνετε αναβάθμιση σε πλάνο επί πληρωμή."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Για να διαγραφείτε από αυτή τη λίστα, ένα μήνυμα ηλεκτρονικού ταχυδρομείου θα αποσταλεί από ${ boldFrom } με τα ακόλουθα στοιχεία όπως ορίζονται από τον αποστολέα του ενημερωτικού δελτίου:"
@@ -7378,6 +7443,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Εντοπίσαμε τη δημιουργία πολλών δωρεάν λογαριασμών, η οποία παραβιάζει το ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Έχουμε πλάνα σχεδιασμένα ειδικά για χρήστες όπως εσείς που χρειάζονται περισσότερες από μία διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Πρέπει να επαληθεύσουμε τον τρόπο πληρωμής σας με την τράπεζά σας."
@@ -7655,6 +7723,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      ],
       "Your password was leaked:": [
         "Ο κωδικός πρόσβασής σας διέρρευσε:"
       ],
@@ -7663,6 +7734,12 @@
       ],
       "Your private writing assistant": [
         "Ο προσωπικός σας βοηθός γραφής"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
       ]
     },
     "info": {
@@ -8381,6 +8458,9 @@
       ],
       "Remember my choice": [
         "Απομνημόνευση της επιλογής μου"
+      ],
+      "Remove metadata": [
+        "Εκκαθάριση μετα-δεδομένων"
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
@@ -9740,14 +9820,6 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -9760,6 +9832,14 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
     },
     "new_plans: tooltip": {
@@ -10150,6 +10230,9 @@
       "Advanced encryption": [
         "Προηγμένη κρυπτογράφηση"
       ],
+      "Anytime, anywhere access": [
+        "Πρόσβαση ανά πάσα στιγμή, από οπουδήποτε"
+      ],
       "Auto-delete spam and trash": [
         "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
       ],
@@ -10159,8 +10242,17 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Distraction-free emailing": [
+        "Αποστολή email χωρίς περισπασμούς"
+      ],
       "Download the desktop app": [
         "Κατεβάστε την εφαρμογή για υπολογιστές"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Απολαύστε μια ταχύτερη, εστιασμένη εμπειρία αποστολής μηνυμάτων με την εφαρμογή για υπολογιστές."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Για πρόσβαση ανά πάσα στιγμή στο ηλεκτρονικό ταχυδρομείο και βελτιστοποιημένη εμπειρία κινητής τηλεφωνίας, κατεβάστε την εφαρμογή ${ mobileAppAppStoreLink } ή ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας έχει παραβιαστεί."
@@ -13359,6 +13451,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"λειτουργία φωτισμού\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Αυτό διασφαλίζει ότι κανείς δεν μπορεί να δει την τοποθεσία, τη συσκευή και άλλες πληροφορίες που θα μπορούσαν να χρησιμοποιηθούν για την αναγνώρισή σας ή την παρακολούθησή σας."
       ],
       "This feature is only available for paid users": [
         "Αυτή η λειτουργία είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"

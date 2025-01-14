@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "Despre aliasurile hide-my-email"
+      ],
       "Activate recovery": [
         "Activare recuperare"
       ],
@@ -483,6 +486,9 @@
       "Export contact group": [
         "Exportare grup de contacte"
       ],
+      "Export selection as .vcf": [
+        "Exportare selecție ca .vcf"
+      ],
       "External encryption": [
         "Criptare externă"
       ],
@@ -757,6 +763,9 @@
       ],
       "More": [
         "Mai multe"
+      ],
+      "More actions": [
+        "Alte acțiuni"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Mai multe detalii despre ${ ariaLabelTitle }"
@@ -2223,7 +2232,7 @@
         "Reactivare abonament"
       ],
       "Your subscription is ending soon": [
-        "Abonamentul va expira curând"
+        "Abonamentul va expira în curând"
       ]
     },
     "Cancellation upsell": {
@@ -3750,6 +3759,11 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } mesaj nou",
+        "${ notificationsToShow.length } mesaje noi",
+        "${ notificationsToShow.length } de mesaje noi"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "De la: ${ sender } - ${ Subject }"
       ]
@@ -4667,6 +4681,9 @@
       "Time zone": [
         "Fus orar"
       ],
+      "Time zone component ignored": [
+        "Componenta fus orar este ignorată."
+      ],
       "To-do entry": [
         "Intrare de făcut"
       ],
@@ -4731,6 +4748,11 @@
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Nu se poate trimite invitația către ${ email }. ${ errorMessage }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Eroare neașteptată."
       ]
     },
     "Event invitation error": {
@@ -5418,6 +5440,50 @@
         "Nu sunt metode de verificare disponibile"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
+      ],
+      "Edited event not supported": [
+        "Evenimentul editat nu este suportat."
+      ],
+      "End time out of bounds": [
+        "Ora de sfârșit e în afara limitelor."
+      ],
+      "Event validation failed": [
+        "Validare eveniment eșuată."
+      ],
+      "Floating times not supported": [
+        "Orele flotante nu sunt suportate."
+      ],
+      "Malformed all-day event": [
+        "Evenimentul pentru întreaga zi este în format eronat."
+      ],
+      "Malformed end time": [
+        "Ora de sfârșit incorectă."
+      ],
+      "Malformed recurring event": [
+        "Format eronat eveniment repetitiv."
+      ],
+      "Malformed start time": [
+        "Ora de început eronată."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Este permisă doar scala calendarului Gregorian."
+      ],
+      "Recurring event has no occurrences": [
+        "Evenimentul recurent nu are nicio apariție."
+      ],
+      "Recurring rule not supported": [
+        "Regula recurentă nesuportată."
+      ],
+      "Start time out of bounds": [
+        "Ora de început e în afara limitelor."
+      ],
+      "Time zone not supported": [
+        "Fus orar nesuportat."
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "Un participant",
@@ -5571,11 +5637,17 @@
       "Use your app password instead of your regular password if:": [
         "Folosiți parola aplicației în locul parolei obișnuite dacă:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Parola aplicației este corectă. Nu folosiți parola obișnuită."
+      ],
       "Your email account requires an app password to export your data.": [
         "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
       ],
       "Your email account requires one to export your data.": [
         "Contul de e-mail necesită o parolă pentru a exporta datele."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adresa de e-mail și parola aplicației sunt corecte. Nu folosiți parola obișnuită."
       ],
       "Your email address and password are correct.": [
         "Adresa de e-mail și parola sunt corecte."
@@ -6002,6 +6074,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
+      ],
       "Align left": [
         "Aliniere la stânga"
       ],
@@ -6231,6 +6306,11 @@
       ],
       "Create a new contact group": [
         "Creare grup de contacte"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Creați un cont cloud securizat pentru ${ value } membru",
+        "Creați un cont cloud securizat pentru ${ value } membri",
+        "Creați un cont cloud securizat pentru ${ value } de membri"
       ],
       "Create in": [
         "Creare în"
@@ -6583,6 +6663,9 @@
       "JCB logo": [
         "Logo JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Alăturați-vă programului ${ PROTON_SENTINEL_NAME } pentru cel mai înalt nivel de securitate al nostru și asistență."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
       ],
@@ -6917,6 +7000,9 @@
       "Proofread text": [
         "Corectare text"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Împiedicați divulgarea adresei e-mail către listele de mesagerie sau către cei care trimit mesaje nedorite folosind aliasurile hide-my-email."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
       ],
@@ -7024,6 +7110,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "E-mail securizat trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
@@ -7095,6 +7184,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Comutare la"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -7214,6 +7306,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Acest mesaj este generat automat ca răspuns la un mesaj anterior."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Acest mesaj este de la un alias ${ PASS_APP_NAME }."
+      ],
       "This message is from a mailing list.": [
         "Acest mesaj este de la o listă de corespondență."
       ],
@@ -7296,6 +7391,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Pentru a vă recupera datele, trebuie să reactivați cheia de criptare a contului folosită în momentul creării datelor. Va trebui să vă amintiți parola utilizată atunci când a fost generată cheia."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Pentru a elimina restricția, puteți trece la un plan cu plată."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Pentru a elimina restricția, puteți vizita ${ mailLink } și trece la un plan cu plată."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Pentru a vă dezabona de la această listă de mesaje, va fi trimis un e-mail de la ${ boldFrom } cu următoarele detalii definite de expeditorul buletinului informativ:"
@@ -7458,6 +7559,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Am detectat crearea de conturi multiple gratuite, ceea ce violează ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Avem planuri concepute special pentru utilizatorii care au nevoie de mai multe adrese de e-mail."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Trebuie să autentificăm metoda de plată cu banca dvs."
@@ -7750,6 +7854,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
       "Your password was leaked:": [
         "Parola a fost divulgată:"
       ],
@@ -7758,6 +7865,12 @@
       ],
       "Your private writing assistant": [
         "Asistentul personal privat de scriere"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ]
     },
     "info": {
@@ -8482,6 +8595,9 @@
       ],
       "Remember my choice": [
         "Memorează alegerea mea"
+      ],
+      "Remove metadata": [
+        "Eliminare metadate"
       ],
       "Reveal password": [
         "Afișare parolă"
@@ -9873,14 +9989,6 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Luați Mail Plus cu ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -9893,6 +10001,14 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Luați Mail Plus cu ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
       ]
     },
     "new_plans: tooltip": {
@@ -10267,6 +10383,12 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } vă împiedică sosirea mesajelor înșelătoare în contul de e-mail."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } în App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } în Magazinul Play"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } înseamnă că nu vi se mai poate urmări activitatea de pe internet."
       ],
@@ -10279,6 +10401,9 @@
       "Advanced encryption": [
         "Criptarea avansată"
       ],
+      "Anytime, anywhere access": [
+        "Acces oricând, oriunde"
+      ],
       "Auto-delete spam and trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
@@ -10288,8 +10413,17 @@
       "Dark Web Monitoring": [
         "Monitorizare pe internetul ascuns"
       ],
+      "Distraction-free emailing": [
+        "Mesagerie electronică fără distrageri"
+      ],
       "Download the desktop app": [
         "Descărcați aplicația pentru desktop"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Bucurați-vă de o experiență de e-mail mai rapidă și fără distrageri cu aplicația pentru desktop."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Pentru acces oricând la e-mail și experiență mobilă optimizată, descărcați aplicația ${ mobileAppAppStoreLink } sau ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Primiți notificări dacă vă este compromisă parola."
@@ -13573,6 +13707,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema selectată va fi activă când sistemul va fi setat în „modul luminos”."
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Aceasta vă asigură că nimeni nu vă poate ști poziția actuală, dispozitivul și alte informații care ar putea fi folosite pentru a vă identifica sau urmări."
       ],
       "This feature is only available for paid users": [
         "Această opțiune este valabilă doar pentru utilizatorii cu plată."

@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
+      "About hide-my-email aliases": [
+        "hide-my-email 별칭에 관하여"
+      ],
       "Activate recovery": [
         "복구 활성화"
       ],
@@ -477,6 +480,9 @@
       "Export contact group": [
         "연락처 그룹 내보내기"
       ],
+      "Export selection as .vcf": [
+        "선택한 항목을 .vcf로 내보내기"
+      ],
       "External encryption": [
         "외부 암호화"
       ],
@@ -749,6 +755,9 @@
       ],
       "More": [
         "더보기"
+      ],
+      "More actions": [
+        "더 많은 액션"
       ],
       "More details about ${ ariaLabelTitle }": [
         "${ ariaLabelTitle }에 대한 자세한 정보"
@@ -1472,7 +1481,7 @@
         "사용자당 ${ price }"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } 글쓰기 도우미 이용 권한"
+        "${ seats }명 글쓰기 도우미 이용 권한"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -4606,6 +4615,9 @@
       "Time zone": [
         "시간대"
       ],
+      "Time zone component ignored": [
+        "시간대 구성 무시됨"
+      ],
       "To-do entry": [
         "할 일 항목"
       ],
@@ -4670,6 +4682,11 @@
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "${ email } 로 초대 전송 실패. ${ errorMessage }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "예기치 않은 오류"
       ]
     },
     "Event invitation error": {
@@ -5339,6 +5356,50 @@
         "사용 가능한 인증 방법 없음"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "캘린더 시간대가 지원되지 않음"
+      ],
+      "Edited event not supported": [
+        "편집된 이벤트 지원되지 않음"
+      ],
+      "End time out of bounds": [
+        "범위를 벗어난 종료 시간"
+      ],
+      "Event validation failed": [
+        "이벤트이벤트 검증 실패"
+      ],
+      "Floating times not supported": [
+        "유동 시간 지원되지 않음"
+      ],
+      "Malformed all-day event": [
+        "잘못된 상시 이벤트"
+      ],
+      "Malformed end time": [
+        "잘못된 종료 시간"
+      ],
+      "Malformed recurring event": [
+        "잘못된 반복 이벤트"
+      ],
+      "Malformed start time": [
+        "잘못된 시작 시간"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "그레고리력 척도만 허용됩니다."
+      ],
+      "Recurring event has no occurrences": [
+        "반복되는 이벤트가 존재하지 않습니다"
+      ],
+      "Recurring rule not supported": [
+        "반복 규칙이 지원되지 않음"
+      ],
+      "Start time out of bounds": [
+        "범위를 벗어난 시작 시간"
+      ],
+      "Time zone not supported": [
+        "시간대 지원되지 않음"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "참가자 ${ totalAttendees }명"
@@ -5478,11 +5539,17 @@
       "Use your app password instead of your regular password if:": [
         "다음과 같은 경우 일반 비밀번호 대신 앱 비밀번호를 사용하세요:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
+      ],
       "Your email account requires an app password to export your data.": [
         "사용자의 이메일 계정이 데이터를 내보내기 위해 앱 패스워드가 필요합니다."
       ],
       "Your email account requires one to export your data.": [
         "데이터를 내보내려면 이메일 계정이 필요합니다."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "이메일 주소 및 앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
       ],
       "Your email address and password are correct.": [
         "이메일 주소 및 비밀번호가 올바릅니다."
@@ -5821,6 +5888,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ],
       "Align left": [
         "왼쪽 정렬"
       ],
@@ -6036,6 +6106,9 @@
       ],
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value }명의 구성원을 위한 보안 클라우드 만들기"
       ],
       "Create in": [
         "만들기"
@@ -6370,6 +6443,9 @@
       "JCB logo": [
         "JCB 로고"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "${ PROTON_SENTINEL_NAME } 프로그램에 가입하여 최고 수준의 계정 보안과 지원을 받으세요."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
       ],
@@ -6700,6 +6776,9 @@
       "Proofread text": [
         "문장 교정"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Hide-my-email 별칭으로 이메일이 메일링 리스트나 스팸 발송자에게 유출되지 않도록 보호하세요."
+      ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
@@ -6805,6 +6884,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "안전한 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 보냈습니다."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
       ],
@@ -6876,6 +6958,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "구독 종료 예정: ${ planName }의 혜택을 계속 이용하려면 ${ byDate }까지 재활성화해주세요. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "다음으로 전환:"
       ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
@@ -6991,6 +7076,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "이 메시지는 이전 메시지에 대한 응답으로 자동 생성됩니다."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "이 메시지는 ${ PASS_APP_NAME } 별칭에서 전송되었습니다."
+      ],
       "This message is from a mailing list.": [
         "이 메시지는 메일링 리스트에서 온 것입니다."
       ],
@@ -7071,6 +7159,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "사용자의 데이터를 복구하려면, 데이터가 생성되었을 때 사용된 계정 키를 다시 활성화해야 합니다. 활성화를 한 뒤 키가 생성되었을 때 사용된 비밀번호를 기억해야 합니다."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "제한을 해제하기 위해 유료 플랜 업그레이드가 가능합니다."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "제한 해제를 위해, ${ mailLink }에 방문하여 유료 플랜 업그레이드가 가능합니다."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "이 메일링 리스트의 구독을 취소하려면, ${ boldFrom } 에서 뉴스레터 발신자가 지정한 다음 세부 사항과 함께 이메일이 전송됩니다."
@@ -7233,6 +7327,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "최근 회원님께서 ${ termsLink } 위반 사유에 해당되는 다중 무료 계정 생성을 감지했습니다."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "하나 이상의 이메일 주소가 필요한 회원님과 같은 사용자를 위해 특별히 설계된 플랜이 존재합니다."
       ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
@@ -7495,6 +7592,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "다음 결제일은 ${ renewalTime } 입니다."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      ],
       "Your password was leaked:": [
         "사용자의 비밀번호가 유출되었습니다:"
       ],
@@ -7503,6 +7603,12 @@
       ],
       "Your private writing assistant": [
         "나만의 개인 글쓰기 도우미"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
       ]
     },
     "info": {
@@ -8215,6 +8321,9 @@
       ],
       "Remember my choice": [
         "내 선택 기억"
+      ],
+      "Remove metadata": [
+        "메타데이터 제거하기"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -9542,14 +9651,6 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 Mail Plus 얻기"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -9562,6 +9663,14 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "${ priceCoupon }에 Mail Plus 얻기"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
       ]
     },
     "new_plans: tooltip": {
@@ -9932,6 +10041,12 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle }가 내 받은 편지함에 날라오는 사기/피싱 이메일을 차단합니다."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store에서 ${ MAIL_APP_NAME } 받기"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store에서 ${ MAIL_APP_NAME } 받기"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle }는 인터넷을 통해 더 이상 추적되지 않음을 뜻합니다."
       ],
@@ -9944,6 +10059,9 @@
       "Advanced encryption": [
         "향상된 암호화"
       ],
+      "Anytime, anywhere access": [
+        "언제 어디서나 접근하기"
+      ],
       "Auto-delete spam and trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -9953,8 +10071,17 @@
       "Dark Web Monitoring": [
         "다크 웹 모니터링"
       ],
+      "Distraction-free emailing": [
+        "방해 없는 이메일"
+      ],
       "Download the desktop app": [
         "데스크톱 앱 다운로드"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "데스크톱 앱으로 더 빠르고 집중된 이메일 경험을 경험하세요."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ mobileAppAppStoreLink } 또는 ${ mobileAppGooglePlayLink } 앱을 다운로드하세요."
       ],
       "Get notified if your password is compromised.": [
         "비밀번호가 유출되면 알림을 받아보세요."
@@ -12073,7 +12200,7 @@
         "매월"
       ],
       "per user per month": [
-        "사용자당 월별"
+        "매월 사용자당"
       ]
     },
     "summer2023: Tooltip": {
@@ -13068,6 +13195,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "사용자의 시스템이 \"라이트 모드\"일 때 선택된 테마가 적용됩니다"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "그 누구도 사용자를 식별하거나 추적하는 데 사용될 수 있는 위치, 장치 및 기타 정보를 볼 수 없습니다."
       ],
       "This feature is only available for paid users": [
         "이 기능은 유료 사용자만 사용할 수 있습니다"

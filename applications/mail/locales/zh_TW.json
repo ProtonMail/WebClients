@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "About hide-my-email aliases": [
+        "關於 hide-my-email 別名"
+      ],
       "Activate recovery": [
         "啟動還原"
       ],
@@ -474,6 +477,9 @@
       "Export contact group": [
         "匯出聯絡人群組"
       ],
+      "Export selection as .vcf": [
+        "以.vcf匯出選項"
+      ],
       "External encryption": [
         "外部加密"
       ],
@@ -746,6 +752,9 @@
       ],
       "More": [
         "更多"
+      ],
+      "More actions": [
+        "更多選項"
       ],
       "More details about ${ ariaLabelTitle }": [
         "更多詳情有關 ${ ariaLabelTitle }"
@@ -3699,6 +3708,9 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } 封新郵件"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "來自：${ sender } - ${ Subject }"
       ]
@@ -4648,6 +4660,11 @@
         "無法將邀請函寄送至 ${ email } 。 ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "異常的錯誤"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "附件的 ICS 檔案無法解密"
@@ -5309,6 +5326,47 @@
         "沒有可用的驗證方法"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "不支援行事曆的時區"
+      ],
+      "Edited event not supported": [
+        "不支援已編輯的事件"
+      ],
+      "End time out of bounds": [
+        "結束時間超出限制"
+      ],
+      "Event validation failed": [
+        "事件驗證失敗"
+      ],
+      "Floating times not supported": [
+        "不支援浮動時間"
+      ],
+      "Malformed all-day event": [
+        "全日事件格式有誤"
+      ],
+      "Malformed end time": [
+        "結束時間格式有誤"
+      ],
+      "Malformed recurring event": [
+        "週期性事件格式有誤"
+      ],
+      "Malformed start time": [
+        "開始時間格式有誤"
+      ],
+      "Recurring event has no occurrences": [
+        "未發生重複事件"
+      ],
+      "Recurring rule not supported": [
+        "不支援週期性規則"
+      ],
+      "Start time out of bounds": [
+        "開始時間超出限制"
+      ],
+      "Time zone not supported": [
+        "不支援的時區"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } 個參與者"
@@ -5791,6 +5849,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
+      ],
       "Align left": [
         "靠左對齊"
       ],
@@ -6006,6 +6067,9 @@
       ],
       "Create a new contact group": [
         "創建新聯絡人群組"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "替成員創建一個安全${ value }雲端"
       ],
       "Create in": [
         "創建在"
@@ -6340,6 +6404,9 @@
       "JCB logo": [
         "JCB 符號"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "加入${ PROTON_SENTINEL_NAME }方案以堤升至最高帳號安全及支援。"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
       ],
@@ -6670,6 +6737,9 @@
       "Proofread text": [
         "校閱文字"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "防止您的郵件位址外洩到郵件清單或垃圾郵件發送者手上，使用 hide-my-email別名。"
+      ],
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
       ],
@@ -6775,6 +6845,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "使用 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件傳送。"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 付款目前不可用。請稍後再試。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -6846,6 +6919,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
+      ],
+      "Switch to": [
+        "切換至"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
@@ -6961,6 +7037,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "此訊息將自動產生以回覆前一個訊息。"
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "此訊息來自於${ PASS_APP_NAME }的別名。"
+      ],
       "This message is from a mailing list.": [
         "此郵件來自郵寄清單。"
       ],
@@ -7041,6 +7120,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "若要還原您的資料，您必須重新啟用在資料創建時所使用的帳號金鑰。這需要您提供金鑰產生時所使用的密碼。"
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "若要移除限制，您可升級至付費方案。"
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "若要移除限制，您可瀏覽${ mailLink }並升級至付費方案。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "如要取消訂閱此郵寄清單，將從 ${ boldFrom } 傳送一封電郵，並包含下列由電子報傳送者定義的資訊："
@@ -7203,6 +7288,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "我們偵測到創建多重免費帳號，違反我們的${ termsLink }。"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "我們有針對像您一樣需要多個電子郵件地址的使用者設計的方案。"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我們需要與您的銀行認證您的繳款方式。"
@@ -7465,6 +7553,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
+      ],
       "Your password was leaked:": [
         "您的密碼已外洩:"
       ],
@@ -7473,6 +7564,12 @@
       ],
       "Your private writing assistant": [
         "您私人的撰寫幫手"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "您的方案開始於${ renewalTime }及於每月重新開始。"
       ]
     },
     "info": {
@@ -8185,6 +8282,9 @@
       ],
       "Remember my choice": [
         "記憶我的設定選擇"
+      ],
+      "Remove metadata": [
+        "移除中繼資料"
       ],
       "Reveal password": [
         "顯示密碼"
@@ -9500,14 +9600,6 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得Mail Plus"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceMailPlus } 月的價格自動續約。您可以在任何時候取消訂閱。"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -9520,6 +9612,14 @@
       ],
       "Switch plans?": [
         "切換方案？"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得Mail Plus"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceMailPlus } 月的價格自動續約。您可以在任何時候取消訂閱。"
       ]
     },
     "new_plans: tooltip": {
