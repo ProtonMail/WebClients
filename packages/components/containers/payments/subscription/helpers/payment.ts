@@ -118,12 +118,16 @@ type SubscriptionResult = {
 );
 
 export function subscriptionExpires(): FreeSubscriptionResult;
-export function subscriptionExpires(subscription: undefined | null): FreeSubscriptionResult;
-export function subscriptionExpires(subscription: FreeSubscription): FreeSubscriptionResult;
-export function subscriptionExpires(subscription: SubscriptionModel | undefined): SubscriptionResult;
-export function subscriptionExpires(subscription: SubscriptionModel): SubscriptionResult;
+export function subscriptionExpires(subscription: undefined | null, cancelled?: boolean): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: FreeSubscription, cancelled?: boolean): FreeSubscriptionResult;
 export function subscriptionExpires(
-    subscription?: SubscriptionModel | FreeSubscription | null
+    subscription: SubscriptionModel | undefined,
+    cancelled?: boolean
+): SubscriptionResult;
+export function subscriptionExpires(subscription: SubscriptionModel, cancelled?: boolean): SubscriptionResult;
+export function subscriptionExpires(
+    subscription?: SubscriptionModel | FreeSubscription | null,
+    cancelled = false
 ): FreeSubscriptionResult | SubscriptionResult {
     if (!subscription || isFreeSubscription(subscription)) {
         return {
@@ -134,9 +138,15 @@ export function subscriptionExpires(
         };
     }
 
-    const latestSubscription = subscription.UpcomingSubscription ?? subscription;
-    const renewDisabled = latestSubscription.Renew === Renew.Disabled;
-    const renewEnabled = latestSubscription.Renew === Renew.Enabled;
+    const latestSubscription = (() => {
+        if (subscription.Renew === Renew.Disabled || cancelled) {
+            return subscription;
+        }
+
+        return subscription.UpcomingSubscription ?? subscription;
+    })();
+    const renewDisabled = latestSubscription.Renew === Renew.Disabled || cancelled;
+    const renewEnabled = !renewDisabled;
     const subscriptionExpiresSoon = renewDisabled;
 
     const planName = latestSubscription.Plans?.[0]?.Title;
