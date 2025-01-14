@@ -372,6 +372,9 @@
       "Details": [
         "Podrobnosti"
       ],
+      "Disable alias": [
+        "Onemogoči vzdevek"
+      ],
       "Discard": [
         "Zavrzi"
       ],
@@ -1173,6 +1176,9 @@
       "Start setup": [
         "Začni nastavitev"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Ostani"
       ],
@@ -1298,6 +1304,9 @@
       ],
       "Use recovery code": [
         "Uporabi kodo za obnovitev"
+      ],
+      "Use this": [
+        "Uporabi"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Uporabite miško za spreminjanje velikosti pogleda. Če uporabljate tipkovnico, lahko uporabite puščici levo in desno za spreminjanje velikosti."
@@ -1619,7 +1628,7 @@
         "6 uporabnikov"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "Več kot 8500 strežnikov v več kot 110 državah"
       ],
       "Ad-blocker and malware protection": [
         "Prepoved oglasov in zaščita pred zlonamerno programsko opremo"
@@ -1637,7 +1646,7 @@
         "Enostavno dodajte ali odstranite uporabnike"
       ],
       "High speed streaming": [
-        "Visokohitrostno pretakanje"
+        "Pretočne storitve z visoko hitrostjo"
       ],
       "Integrated 2FA authenticator": [
         "Vgrajen modul za preverjanje pristnosti 2FA"
@@ -1694,12 +1703,12 @@
         "za ${ durationDeal }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Renews after 1 month at ${ regularAmount }."
+        "Obnovitev po enem mesecu za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, visokohitrostno pretakanje, prepoved oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, pretočne storitve z visoko hitrostjo, onemogočanje oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in še več, od kjerkoli."
@@ -4540,6 +4549,11 @@
         "Povabila na ${ email } ni bilo mogoče poslati. ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Nepričakovana napaka"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Priložene datoteke ICS ni bilo mogoče dešifrirati"
@@ -5038,6 +5052,9 @@
       "For your eyes only": [
         "Samo za vaše oči"
       ],
+      "Get more storage": [
+        "Pridobite več prostora"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Prenesite mobilno aplikacijo ${ MAIL_APP_NAME }"
       ],
@@ -5162,6 +5179,9 @@
       ],
       "Security Center": [
         "Varnostno središče"
+      ],
+      "Set up the writing assistant": [
+        "Nastavi pomočnika pri pisanju"
       ]
     },
     "Hint": {
@@ -5184,6 +5204,35 @@
       ],
       "No verification method available": [
         "Način preverjanja ni na voljo"
+      ]
+    },
+    "ICS event error": {
+      "Edited event not supported": [
+        "Urejen dogodek ni podprt."
+      ],
+      "End time out of bounds": [
+        "Konec časa presega dovoljene meje."
+      ],
+      "Floating times not supported": [
+        "Plavajoči časi niso podprti."
+      ],
+      "Malformed end time": [
+        "Nepravilni končni čas."
+      ],
+      "Malformed recurring event": [
+        "Nepravilno oblikovan ponavljajoči se dogodek."
+      ],
+      "Malformed start time": [
+        "Nepravilni začetni čas"
+      ],
+      "Recurring rule not supported": [
+        "Ponavljajoče se pravilo ni podprto."
+      ],
+      "Start time out of bounds": [
+        "Začetni čas je izven dovoljenih meja."
+      ],
+      "Time zone not supported": [
+        "Časovni pas ni podprt"
       ]
     },
     "ICS widget label for event details": {
@@ -5487,6 +5536,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
@@ -5800,6 +5852,9 @@
       "Add image URL": [
         "Dodaj URL slike"
       ],
+      "Address copied to clipboard": [
+        "Naslov kopiran v odložišče"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ta naslov je omogočena potrditev naslova z zaupnimi ključi. Če želite pošiljati na ta naslov, najprej označite javne ključe, ki jih lahko uporabite za pošiljanje, kot vredne zaupanja."
       ],
@@ -5888,7 +5943,7 @@
         "Ali ste prepričani, da želite vsa sporočila s tega mesta premakniti arhiv?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Ali ste prepričani, da želite vsa sporočila s tega mesta premakniti v koš?"
+        "Ali ste prepričani, da želite vsa sporočila s tega mesta premakniti v smetnjak?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Ali ste prepričani, da želite trajno izbrisati ${ count } pogovor?",
@@ -6400,6 +6455,9 @@
       "Learn more": [
         "Več o tem"
       ],
+      "Learn more about the writing assistant": [
+        "Izvedite več o pomočniku pri pisanju"
+      ],
       "Left to Right": [
         "Z leve proti desni"
       ],
@@ -6846,6 +6904,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Konec naročnine: znova aktivirajte do ${ byDate }, da obdržite ugodnosti ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Preklopite na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."
@@ -7494,6 +7555,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
+      ],
+      "Your private writing assistant": [
+        "Vaš osebni pomočnik pri pisanju e-pošte"
       ]
     },
     "info": {
@@ -7829,6 +7893,9 @@
       "And": [
         "In"
       ],
+      "Anderson": [
+        "Novak"
+      ],
       "ANY": [
         "KATERIKOLI"
       ],
@@ -7963,6 +8030,9 @@
       ],
       "Don't like the style": [
         "Ni mi všeč slog"
+      ],
+      "Don't show again": [
+        "Ne prikaži več"
       ],
       "Don't show this again": [
         "Ne prikazuj več"
@@ -8258,6 +8328,9 @@
       "Then": [
         "Potem"
       ],
+      "Thomas": [
+        "Janek"
+      ],
       "Time": [
         "Čas"
       ],
@@ -8299,6 +8372,9 @@
       ],
       "Without attachment": [
         "Brez priponk"
+      ],
+      "Writing assistant": [
+        "Pomočnik pri pisanju"
       ],
       "Your alias": [
         "Vaš vzdevek"
@@ -8662,6 +8738,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -8944,8 +9023,14 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -8972,6 +9057,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } in ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9116,6 +9204,9 @@
       "Advanced account protection": [
         "Napredna zaščita računa"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Napredne funkcije vzdevkov (omogoča SimpleLogin)"
+      ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
       ],
@@ -9136,6 +9227,9 @@
       ],
       "Available on all platforms": [
         "Na voljo na vseh platformah."
+      ],
+      "Breach alerts": [
+        "Opozorila o uhajanju podatkov"
       ],
       "Calendar sharing": [
         "Deljenje koledarja"
@@ -9314,6 +9408,9 @@
       "Send & receive invitations": [
         "Pošljite in prejmite povabila."
       ],
+      "Share files with no size limit": [
+        "Souporaba datotek brez omejitve velikosti"
+      ],
       "Sign in as user": [
         "Prijavi se kot uporabnik"
       ],
@@ -9331,6 +9428,9 @@
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
+      ],
+      "Sync and backup all your files across devices": [
+        "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
       "TOR over VPN": [
         "Tor prek VPN"
@@ -9361,6 +9461,9 @@
       ],
       "Unlimited logins and notes": [
         "Neomejeno število prijav in beležk"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Neomejeno število prijav, beležk in bančnih kartic"
       ],
       "Unlimited messages per day": [
         "Neomejeno število sporočil na dan"
@@ -9511,6 +9614,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Brezplačen začetni račun, ki privzeto zagotavlja zasebnost vsem uporabnikom."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Neomejena zasebnost in več shrambe za do dve osebi."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če izbrišete svoj račun, boste izgubili promocijsko ceno in ta ne bo na voljo, če ustvarite nov račun."
       ],
@@ -9530,6 +9636,11 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Pridobite Mail Plus za ${ priceCoupon }"
       ]
     },
     "new_plans: tooltip": {
@@ -9867,11 +9978,23 @@
       ]
     },
     "Onboarding modal": {
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } v Play Store"
+      ],
+      "Auto-delete spam and trash": [
+        "Samodejno brisanje neželene pošte in smeti"
+      ],
       "Dark Web Monitoring": [
         "Spremljanje temnega spleta"
       ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Odkrijte ${ MAIL_APP_NAME }"
+      ],
       "Download the desktop app": [
         "Prenesi namizno aplikacijo"
+      ],
+      "Let's get started": [
+        "Pa začnimo"
       ],
       "Maybe later": [
         "Morda kasneje"
@@ -9884,6 +10007,9 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Dobrodošli v ${ MAIL_APP_NAME }"
+      ],
+      "You are all set!": [
+        "Pripravljeni ste!"
       ]
     },
     "Onboarding Proton": {
@@ -10000,6 +10126,11 @@
         "Dnevnik dejavnosti"
       ]
     },
+    "PassFamilyPlan2024": {
+      "Introducing ${ passFamilyPlanName }": [
+        "Predstavljamo ${ passFamilyPlanName }"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Ključ organizacije ne obstaja."
@@ -10015,6 +10146,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bančno nakazilo"
+      ],
       "Credit/debit card": [
         "Kreditna / debetna kartica"
       ],
@@ -10214,6 +10348,24 @@
       ],
       "Subject": [
         "Zadeva"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Povejte pomočniku pri pisanju, kaj naj napiše. Primer: \"Najavi prihajajoče dogodke v okrožnici.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Povejte pomočniku pri pisanju, kaj naj napiše. Primer: \"Odjavi mojo članarino za fitnes.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Povejte pomočniku pri pisanju, kaj naj napiše. Primer: \"Povabi Jano na mojo zabavo.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Povejte pomočniku pri pisanju, kaj naj napiše. Primer: \"Zahvali se sodelavcu za pomoč pri projektu.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Povejte pomočniku pri pisanju, kaj naj napiše. Primer: \"Napiši spremno pismo za pripravništvo.\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Povejte pomočniku pri pisanju, kaj naj napiše. Primer: \"Napiši povratno sporočilo za stranko.\""
       ],
       "Text": [
         "Besedilo"
@@ -11372,6 +11524,9 @@
       "Comprehensive privacy and security": [
         "Celovita zaščita zasebnosti in varnosti"
       ],
+      "Dark web monitoring": [
+        "Spremljanje temnega spleta"
+      ],
       "Direct contribution to our mission": [
         "Neposreden prispevek k našemu poslanstvu"
       ],
@@ -11845,6 +12000,12 @@
       "Verification successful": [
         "Preverjanje uspešno"
       ],
+      "Writing assistant disabled": [
+        "Pomočnik pri pisanju je onemogočen"
+      ],
+      "Writing assistant enabled": [
+        "Pomočnik pri pisanju je omogočen"
+      ],
       "You have successfully canceled your subscription.": [
         "Uspešno ste preklicali naročnino."
       ],
@@ -12064,6 +12225,9 @@
       "A filter with this name already exists": [
         "Filter s tem imenom že obstaja."
       ],
+      "Account locked": [
+        "Račun je zaklenjen"
+      ],
       "Account recovery": [
         "Obnovitev računa"
       ],
@@ -12126,6 +12290,9 @@
       ],
       "Attachments": [
         "Priponke"
+      ],
+      "Bad time for this email?": [
+        "Ni pravi trenutek za to sporočilo?"
       ],
       "BCC": [
         "Skp"
@@ -12976,6 +13143,9 @@
         "${ n } e-poštna naslova",
         "${ n } e-poštni naslovi",
         "${ n } e-poštnih naslovov"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin prek elektronske pošte"
       ]
     },
     "wallet_signup_2024:Wallet setup": {
@@ -12983,10 +13153,10 @@
         "Račun ${ indexStr }"
       ],
       "My imported wallet${ indexStr }": [
-        "Moja uvožena denarnica${ indexStr }"
+        "Moja uvožena denarnica ${ indexStr }"
       ],
       "My wallet${ indexStr }": [
-        "Moja denarnica${ indexStr }"
+        "Moja denarnica ${ indexStr }"
       ]
     },
     "Warning": {
@@ -13028,6 +13198,9 @@
       ],
       "Missing alias suffix": [
         "Manjka pripona vzdevka"
+      ],
+      "Name is required": [
+        "Zahtevano je ime"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
