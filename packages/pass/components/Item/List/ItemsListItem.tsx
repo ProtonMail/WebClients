@@ -136,15 +136,15 @@ export const ItemsListItem = memo(
                         />
 
                         <div className={clsx('text-left', loading && !failed && 'opacity-50')}>
-                            <span className="flex items-center gap-x-1">
+                            <span className="flex items-center gap-x-1 flex-nowrap">
                                 {search && isVault && (
                                     <VaultIcon
                                         size={3}
                                         icon={share?.content.display.icon}
-                                        className="color-weak mr-1"
+                                        className="color-weak shrink-0"
                                     />
                                 )}
-                                <span className="flex-1 text-ellipsis">
+                                <span className="text-ellipsis">
                                     <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>
                                 </span>
                                 {shared && (
@@ -152,6 +152,7 @@ export const ItemsListItem = memo(
                                         name="users-filled"
                                         color={`var(${bulk ? '--interaction-norm-contrast' : '--text-weak'})`}
                                         size={3.5}
+                                        className="shrink-0"
                                     />
                                 )}
                             </span>
