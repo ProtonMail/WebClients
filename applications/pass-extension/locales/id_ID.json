@@ -1329,10 +1329,10 @@
         "Fitur pengelolaan alias dari SimpleLogin akan segera hadir!"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias berhasil di-nonaktifkan. Kamu tidak akan menerima email yang terkirim ke ${ item.aliasEmail } lagi."
+        "Alias berhasil dinonaktifkan. Anda tidak akan lagi menerima email yang dikirim ke ${ item.aliasEmail }."
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias berhasil di aktifkan. Kamu sekarang bisa menerima email yang dikirim ke ${ item.aliasEmail }"
+        "Alias berhasil diaktifkan. Anda kini dapat menerima email yang dikirim ke ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Penyinkronan alias antara akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
@@ -3334,7 +3334,7 @@
         "Tambahkan domain khusus"
       ],
       "Add mailbox": [
-        "Tambahkan kotak surat"
+        "Tambah kotak surat"
       ],
       "Alias contacts": [
         "Kontak alias"
@@ -3801,6 +3801,9 @@
       ],
       "No results": [
         "Tidak ada hasil yang ditemukan"
+      ],
+      "No secure links matching": [
+        "Tidak ada tautan aman yang cocok"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
