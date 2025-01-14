@@ -705,6 +705,9 @@
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "თუ სუბდომენს იყენებთ, მაგ: ${ subdomainExample }, დომენად ${ dmarcExampleSubdomain } უნდა გამოიყენოთ."
       ],
+      "If you are using Cloudflare, please make sure to not select the Proxy option.": [
+        "თუ იყენებთ Cloudflare-ს, დარწმუნდით, რომ პროქსის პარამეტრი არჩეული არ გაქვთ."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "იქონიეთ თქვენი ინფორმაცია უფრო დაცული და კონფიდენციალური ამ სახელმძღვანელოებით და მინიშნებებით."
       ],
@@ -716,6 +719,9 @@
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "ზოგიერთ DNS რეგისტრატორს, შეიძლება, სრული ჩანაწერის ბილიკი დასჭირდეს. ამ შემთხვევაში დომენის მნიშვნელობად ${ domain } გამოიყენეთ."
+      ],
+      "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
+        "ზოგიერთი დომენის რეგისტრატორი (Namecheap, Cloudflare და ა.შ.) ძირითადი დომენისთვის ასევე იყენებს სიმბოლოს @."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "დაიწყეთ მონაცემების გაჟონვის მონიტორინგი თქვენი ელფოსტის მისამართებით და hide-my-email-ის ფსევდონიმებით შექმნილი ანგარიშებისთვის."
@@ -3907,6 +3913,9 @@
       ],
       "No results": [
         "შედეგების გარეშე"
+      ],
+      "No secure links matching": [
+        "დაცული ბმულები არ ემთხვევა"
       ],
       "Offline": [
         "გათიშულია"
