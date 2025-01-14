@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "About hide-my-email aliases": [
+        "Over hide-my-email aliassen"
+      ],
       "Activate recovery": [
         "Herstel activeren"
       ],
@@ -479,6 +482,9 @@
       ],
       "Export contact group": [
         "Exporteer contactgroep"
+      ],
+      "Export selection as .vcf": [
+        "Exporteer selectie als .vcf"
       ],
       "External encryption": [
         "Externe versleuteling"
@@ -4642,6 +4648,9 @@
       "Time zone": [
         "Tijdzone"
       ],
+      "Time zone component ignored": [
+        "Tijdzone component genegeerd"
+      ],
       "To-do entry": [
         "To-do item"
       ],
@@ -5417,6 +5426,9 @@
       "Malformed start time": [
         "Misvormde begintijd"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Alleen de Gregoriaanse agendaschaal is toegestaan"
+      ],
       "Recurring event has no occurrences": [
         "Terugkerende afspraak heeft geen voorvallen"
       ],
@@ -5576,11 +5588,17 @@
       "Use your app password instead of your regular password if:": [
         "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik uw gebruikelijke wachtwoord niet."
+      ],
       "Your email account requires an app password to export your data.": [
         "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
       ],
       "Your email account requires one to export your data.": [
         "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik niet uw gebruikelijke wachtwoord."
       ],
       "Your email address and password are correct.": [
         "Uw e-mailadres en wachtwoord zijn juist."
@@ -6535,6 +6553,9 @@
       "JCB logo": [
         "JCB-logo"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Doe mee aan het ${ PROTON_SENTINEL_NAME } programma voor onze hoogste niveau van gebruikersveiligheid en ondersteuning."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
       ],
@@ -6867,6 +6888,9 @@
       "Proofread text": [
         "Tekst proeflezen"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met hide-my-email aliassen."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
@@ -7167,6 +7191,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Dit bericht is automatisch aangemaakt als reactie op een voorgaand bericht."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Dit bericht komt van een ${ PASS_APP_NAME } alias."
+      ],
       "This message is from a mailing list.": [
         "Dit bericht komt van een mailinglist."
       ],
@@ -7248,6 +7275,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Om uw data te herstellen moet u de accountsleutels die u heeft gebruikt toen u de data aanmaakte heractiveren."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Om beperkingen op te heffen, kunt u upgraden naar een betaald abonnement."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Om beperkingen op te heffen, kunt u ${ mailLink } bezoeken en upgraden naar een betaald abonnement."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Om u uit te schrijven voor deze mailinglijst, wordt een e-mail verzonden van ${ boldFrom } met de volgende details zoals gedefinieerd door de afzender van de nieuwsbrief:"
@@ -7410,6 +7443,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "We hebben geconstateerd dat er meerdere gratis accounts zijn aangemaakt, wat in strijd is met onze ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "We hebben plannen speciaal ontworpen voor gebruikers zoals u die meer dan één e-mailadres nodig hebben."
       ],
       "We need to authenticate your payment method with your bank.": [
         "We moeten uw betalingsmethode authenticeren met uw bank."
@@ -7687,6 +7723,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
@@ -7695,6 +7734,12 @@
       ],
       "Your private writing assistant": [
         "Uw privé schrijfhulp"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ]
     },
     "info": {
@@ -8413,6 +8458,9 @@
       ],
       "Remember my choice": [
         "Mijn keuze onthouden"
+      ],
+      "Remove metadata": [
+        "Metadata verwijderen"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -9772,14 +9820,6 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Krijg Mail Plus voor ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -9792,6 +9832,14 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Krijg Mail Plus voor ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
       ]
     },
     "new_plans: tooltip": {
@@ -10182,6 +10230,9 @@
       "Advanced encryption": [
         "Geavanceerde versleuteling"
       ],
+      "Anytime, anywhere access": [
+        "Altijd en overal toegankelijk"
+      ],
       "Auto-delete spam and trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -10191,8 +10242,17 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Distraction-free emailing": [
+        "E-mailen zonder afleiding"
+      ],
       "Download the desktop app": [
         "Download de desktop-app"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Geniet van een snellere, doelgerichte e-mailervaring met de desktop app."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Voor altijd toegang tot e-mail en geoptimaliseerde mobiele ervaring, download onze ${ mobileAppAppStoreLink } of ${ mobileAppGooglePlayLink }-app."
       ],
       "Get notified if your password is compromised.": [
         "Ontvang een melding als uw wachtwoord is gecompromitteerd."
@@ -13391,6 +13451,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dit zorgt ervoor dat niemand locatie, apparaat en andere informatie kan zien die kan worden gebruikt om u te identificeren of te volgen."
       ],
       "This feature is only available for paid users": [
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
