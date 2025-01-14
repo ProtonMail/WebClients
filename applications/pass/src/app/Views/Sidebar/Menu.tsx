@@ -48,7 +48,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
             <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
                 <div className="flex mx-3">
-                    <VaultMenu onSelect={vaultActions.select} />
+                    <VaultMenu />
                 </div>
             </Scroll>
 
