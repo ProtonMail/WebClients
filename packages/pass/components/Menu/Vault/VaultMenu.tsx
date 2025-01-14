@@ -19,12 +19,11 @@ import './VaultMenu.scss';
 
 type Props = {
     dense?: boolean;
-    onSelect: (selected: string) => void;
     onAction?: () => void;
     render?: (selectedVaultOption: VaultMenuOption, menu: ReactElement) => ReactElement;
 };
 
-export const VaultMenu: FC<Props> = ({ dense = false, onSelect, render, onAction = noop }) => {
+export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop }) => {
     const { filters } = useNavigationFilters();
     const { selectedShareId } = filters;
     const scope = useItemScope();
@@ -70,7 +69,7 @@ export const VaultMenu: FC<Props> = ({ dense = false, onSelect, render, onAction
                 <VaultMenuTrash dense={dense} selected={scope === 'trash'} onAction={onAction} />
             </>
         );
-    }, [vaults, vaultActions, selectedShareId, scope, onSelect]);
+    }, [vaults, vaultActions, selectedShareId, scope]);
 
     return render?.(selectedVaultOption, menu) ?? menu;
 };
