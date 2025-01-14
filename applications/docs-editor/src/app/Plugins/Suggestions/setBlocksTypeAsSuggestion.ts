@@ -1,4 +1,4 @@
-import { $getRoot, $getSelection } from 'lexical'
+import { $getRoot, $getSelection, $isRangeSelection } from 'lexical'
 import type { BlockType } from '../BlockTypePlugin'
 import { $getElementBlockType, blockTypeToCreateElementFn } from '../BlockTypePlugin'
 import { GenerateUUID } from '@proton/docs-shared'
@@ -12,6 +12,7 @@ import { $getListInfo } from '../CustomList/$getListInfo'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 import type { BlockTypeChangeSuggestionProperties } from './Types'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
+import { $isEmptyListItemExceptForSuggestions } from './Utils'
 
 export function $setBlocksTypeAsSuggestion(
   blockType: BlockType,
@@ -98,6 +99,10 @@ export function $setBlocksTypeAsSuggestion(
     targetElement.setFormat(initialFormatType)
     targetElement.setIndent(initialIndent)
     node.replace(targetElement, true)
+
+    if ($isRangeSelection(selection) && selection.isCollapsed() && $isEmptyListItemExceptForSuggestions(node)) {
+      targetElement.selectEnd()
+    }
 
     const existingSuggestion = targetElement
       .getChildren()
