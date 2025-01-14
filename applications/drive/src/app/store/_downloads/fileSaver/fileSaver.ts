@@ -87,12 +87,20 @@ class FileSaver {
 
     private swFailReason?: string;
 
+    private isReady: boolean = false;
+
+    private init: Promise<void>;
+
     constructor() {
-        initDownloadSW().catch((error) => {
-            this.useBlobFallback = true;
-            console.warn('Saving file will fallback to in-memory downloads:', error.message);
-            this.swFailReason = error.message;
-        });
+        this.init = initDownloadSW()
+            .catch((error) => {
+                this.useBlobFallback = true;
+                console.warn('Saving file will fallback to in-memory downloads:', error.message);
+                this.swFailReason = error.message;
+            })
+            .finally(() => {
+                this.isReady = true;
+            });
     }
 
     // saveViaDownload uses service workers to download file without need to
@@ -209,6 +217,11 @@ class FileSaver {
     }
 
     async saveAsFile(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+        if (!this.isReady) {
+            // Always wait for Service Worker initialization to complete
+            await this.init;
+        }
+
         log(
             `Saving file. meta size: ${meta.size}, memory limit: ${MEMORY_DOWNLOAD_LIMIT}, will use blob fallback: ${this.useBlobFallback}`
         );
