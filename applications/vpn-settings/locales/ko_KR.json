@@ -792,7 +792,7 @@
         "사용자당 ${ price }"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } 글쓰기 도우미 이용 권한"
+        "${ seats }명 글쓰기 도우미 이용 권한"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -2996,7 +2996,7 @@
         "만일 사용자가 ${ BRAND_NAME } 계정을 보유한다면 여기 입력하세요. 그렇지 않다면 계정 생성이 우선 필요합니다."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
-        "초대가 취소될 것이며 사용자는 ${ organizationName }에 가입할 수 없게 됩니다."
+        "초대가 취소되며 해당 사용자가 ${ organizationName }에 가입할 수 없게 됩니다."
       ],
       "To create a new user, a configured custom domain is required.": [
         "새 계정을 생성하려면, 커스텀 도메인 구성이 필요합니다."
@@ -3643,6 +3643,9 @@
       "Affected user is on row": [
         "영향받는 사용자 목록"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ],
       "All inactive members deleted": [
         "모든 비활성 상태의 구성원이 삭제되었습니다."
       ],
@@ -3792,6 +3795,9 @@
       ],
       "Country code": [
         "국가 코드"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value }명의 구성원을 위한 보안 클라우드 만들기"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "커스텀 도메인에 부계정을 만들거나 관리하고, 계정 주소를 추가하세요."
@@ -4552,6 +4558,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "회원들이 2단계 인증으로 계정을 보호하도록 이메일을 보내세요."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
+      ],
       "Server is currently down": [
         "서버가 일시적으로 비활성화 상태에요"
       ],
@@ -4635,6 +4644,9 @@
       ],
       "Swiss based": [
         "스위스에 위치"
+      ],
+      "Switch to": [
+        "다음으로 전환:"
       ],
       "Thank you": [
         "진심으로 감사드립니다."
@@ -5164,6 +5176,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "다음 결제일은 ${ renewalTime } 입니다."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "사용자의 조직이 싱글 사인 온 (SSO)를 사용합니다. SSO 제공자로 로그인을 탭하세요."
       ],
@@ -5175,6 +5190,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
@@ -9694,7 +9715,7 @@
         "매월"
       ],
       "per user per month": [
-        "사용자당 월별"
+        "매월 사용자당"
       ]
     },
     "summer2023: Tooltip": {

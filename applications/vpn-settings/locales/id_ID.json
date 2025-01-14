@@ -3796,6 +3796,9 @@
       "Country code": [
         "Kode negara"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Buat ruang cloud yang aman untuk ${ value } anggota"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
       ],
@@ -4211,7 +4214,7 @@
         "Label:"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } melalui aplikasi VPN pihak ketiga."
+        "Pelajari cara untuk masuk ke ${ VPN_APP_NAME } menggunakan aplikasi VPN pihak ketiga."
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -4775,7 +4778,7 @@
         "untuk melanjutkan ke ${ product }"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Untuk mengikuti pengembangan terkini seputar produk ${ BRAND_NAME }, Anda dapat berlangganan ke milis kami serta ${ blogLink } dari waktu ke waktu."
@@ -5170,6 +5173,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasi Anda menggunakan single sign-on (SSO). Tekan Masuk untuk melanjutkan dengan penyedia SSO Anda."
       ],
@@ -5181,6 +5187,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
@@ -10486,7 +10498,7 @@
         "Alamat"
       ],
       "Catch-All": [
-        "Tangkap-semua"
+        "Catch-All"
       ],
       "Status": [
         "Status"

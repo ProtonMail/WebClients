@@ -3643,6 +3643,9 @@
       "Affected user is on row": [
         "影響を受けたユーザーは行にいます。"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
+      ],
       "All inactive members deleted": [
         "全ての非アクティブメンバーは削除されました"
       ],
@@ -3792,6 +3795,9 @@
       ],
       "Country code": [
         "国コード"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } 名のメンバーのために安全なクラウドを作成します"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "サブアカウントを作成・管理し、独自ドメインのメール アドレスを割り当ててください。"
@@ -4549,6 +4555,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "メンバーに2要素認証でアカウントを保護するよう促すメールを送る。"
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPAでのお支払は現在一時的に利用できません。後で再試行してください。"
+      ],
       "Server is currently down": [
         "このサーバーは現在オフラインです"
       ],
@@ -4632,6 +4641,9 @@
       ],
       "Swiss based": [
         "スイス拠点"
+      ],
+      "Switch to": [
+        "切り替え"
       ],
       "Thank you": [
         "ありがとうございます"
@@ -5161,6 +5173,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "次回の請求日は ${ renewalTime } です。"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "あなたの組織ではシングル サインオン (SSO) を使用しています。 SSO プロバイダーを続行するには、「サインイン」を押します。"
       ],
@@ -5172,6 +5187,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
