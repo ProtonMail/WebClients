@@ -3742,8 +3742,8 @@
     },
     "Desktop notification body": {
       "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nuevo mensaje",
-        "${ notificationsToShow.length } nuevos mensajes"
+        "${ notificationsToShow.length } mensaje nuevo",
+        "${ notificationsToShow.length } mensajes nuevos"
       ],
       "From: ${ sender } - ${ Subject }": [
         "De: ${ sender } - ${ Subject }"
@@ -4649,7 +4649,7 @@
         "Zona horaria"
       ],
       "Time zone component ignored": [
-        "Se ha ignorado el componente de zona horaria."
+        "Componente de zona horaria ignorado"
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -7724,7 +7724,7 @@
         "La próxima fecha de facturación es el ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Su próxima fecha de facturación es el ${ renewalTime }.Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
+        "Su próxima fecha de facturación es el ${ renewalTime }. Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
       ],
       "Your password was leaked:": [
         "La contraseña fue filtrada:"
@@ -9360,6 +9360,9 @@
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
       ],
+      "200 GB of storage": [
+        "200 GB de almacenamiento"
+      ],
       "24/7 account management support": [
         "Soporte de administración de cuenta 24/7"
       ],
@@ -9553,6 +9556,9 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Private photo backup": [
+        "Copia de seguridad de fotos privadas"
+      ],
       "Proofread and refine your emails": [
         "Revise y refine sus correos electrónicos"
       ],
@@ -9589,6 +9595,9 @@
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Almacenamiento y uso compartido seguro de archivos"
       ],
       "Secure link sharing": [
         "Uso compartido de enlaces seguros"
@@ -9823,14 +9832,6 @@
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Disfrute de Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puede cancelar en cualquier momento."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -9843,6 +9844,14 @@
       ],
       "Switch plans?": [
         "¿Quiere cambiar de plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Disfrute de Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puede cancelar en cualquier momento."
       ]
     },
     "new_plans: tooltip": {
@@ -10245,6 +10254,9 @@
       "Dark Web Monitoring": [
         "Monitoreo de la Dark Web"
       ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Descubra ${ MAIL_APP_NAME }"
+      ],
       "Distraction-free emailing": [
         "Correo electrónico sin distracciones"
       ],
@@ -10292,6 +10304,15 @@
       ],
       "Where privacy is default.": [
         "Donde la privacidad es por defecto."
+      ],
+      "You are all set!": [
+        "¡Ya está todo listo!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "El dominio ${ domain } y la suscripción ${ subscriptionName } están listos para usar."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "El dominio y la suscripción están listos para usar."
       ]
     },
     "Onboarding Proton": {

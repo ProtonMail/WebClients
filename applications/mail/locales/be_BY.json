@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "Аб псеўданімах hide-my-email"
+      ],
       "Activate recovery": [
         "Актываваць аднаўленне"
       ],
@@ -486,6 +489,9 @@
       "Export contact group": [
         "Экспартаваць групу кантактаў"
       ],
+      "Export selection as .vcf": [
+        "Экспартаванне вылучэння ў фармат .vcf"
+      ],
       "External encryption": [
         "Знешняе шыфраванне"
       ],
@@ -761,6 +767,9 @@
       ],
       "More": [
         "Больш"
+      ],
+      "More actions": [
+        "Больш дзеянняў"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Больш падрабязнасцяў аб ${ ariaLabelTitle }"
@@ -3763,6 +3772,12 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } новае паведамленне",
+        "${ notificationsToShow.length } новыя паведамленні",
+        "${ notificationsToShow.length } новых паведамленняў",
+        "${ notificationsToShow.length } новых паведамленняў"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Ад: ${ sender } - ${ Subject }"
       ]
@@ -4694,6 +4709,9 @@
       "Time zone": [
         "Часавы пояс"
       ],
+      "Time zone component ignored": [
+        "Кампанент часавага пояса праігнараваны"
+      ],
       "To-do entry": [
         "Запіс спіса задач"
       ],
@@ -4758,6 +4776,11 @@
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Немагчыма адправіць запрашэнне на ${ email }. ${ errorMessage }"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Нечаканая памылка"
       ]
     },
     "Event invitation error": {
@@ -5454,6 +5477,50 @@
         "Няма даступных спосабаў праверкі"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часавы пояс календара не падтрымліваецца"
+      ],
+      "Edited event not supported": [
+        "Адрэдагаваная падзея не падтрымліваецца"
+      ],
+      "End time out of bounds": [
+        "Час завяршэння па-за межамі дыяпазону"
+      ],
+      "Event validation failed": [
+        "Не ўдалося праверыць падзею"
+      ],
+      "Floating times not supported": [
+        "Плаваючы час не падтрымліваецца"
+      ],
+      "Malformed all-day event": [
+        "Няправільная падзея на ўвесь дзень"
+      ],
+      "Malformed end time": [
+        "Няправільны час завяршэння"
+      ],
+      "Malformed recurring event": [
+        "Няправільная перыядычная падзея"
+      ],
+      "Malformed start time": [
+        "Няправільны час пачатку"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Дазволена толькі шкала грыгарыянскага календара"
+      ],
+      "Recurring event has no occurrences": [
+        "Перыядычная падзея не мае паўтарэнняў"
+      ],
+      "Recurring rule not supported": [
+        "Правіла паўтарэння не падтрымліваецца"
+      ],
+      "Start time out of bounds": [
+        "Час пачатку па-за межамі дыяпазону"
+      ],
+      "Time zone not supported": [
+        "Часавы пояс не падтрымліваецца"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } удзельнік",
@@ -5614,11 +5681,17 @@
       "Use your app password instead of your regular password if:": [
         "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ваш пароль праграмы з'яўляецца правільным. Не выкарыстоўвайце свой звычайны пароль."
+      ],
       "Your email account requires an app password to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе пароль праграмы для экспартавання вашых даных."
       ],
       "Your email account requires one to export your data.": [
         "Ваш уліковы запіс электроннай пошты патрабуе яго для экспартавання даных."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. Не выкарыстоўвайце свой звычайны пароль."
       ],
       "Your email address and password are correct.": [
         "Вашы адрас электроннай пошты і пароль правільныя."
@@ -6089,6 +6162,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
+      ],
       "Align left": [
         "Выраўнаваць па левым краі"
       ],
@@ -6325,6 +6401,12 @@
       ],
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Стварыць бяспечнае воблака для ${ value } удзельніка",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
       ],
       "Create in": [
         "Стварыць у"
@@ -6686,6 +6768,9 @@
       "JCB logo": [
         "Лагатып JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Далучайцеся да праграмы ${ PROTON_SENTINEL_NAME } для забеспячэння найвышэйшага ўзроўню бяспекі ўліковага запісу і падтрымкі з нашага боку."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
       ],
@@ -7022,6 +7107,9 @@
       "Proofread text": [
         "Вычытаць тэкст"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Абараняйце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай псеўданімаў hide-my-email."
+      ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
@@ -7130,6 +7218,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Плацяжы SEPA у дадзены момант недаступныя. Паспрабуйце яшчэ раз пазней."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -7201,6 +7292,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Пераключыцца на"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -7322,6 +7416,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Гэта паведамленне аўтаматычна згенерыравана ў адказ на папярэдняе паведамленне."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Гэта паведамленне з псеўданіма ${ PASS_APP_NAME }."
+      ],
       "This message is from a mailing list.": [
         "Гэта паведамленне са спіса рассылкі."
       ],
@@ -7405,6 +7502,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Для аднаўлення даных неабходна паўторна актываваць ключ уліковага запісу, які выкарыстоўваўся падчас стварэння даных. Для гэтага вам спатрэбіцца ўспомніць пароль, які выкарыстоўваўся для генерацыі гэтага ключа."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Вы можаце перайсці на платны тарыфны план, каб зняць абмежаванне."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Вы можаце наведаць ${ mailLink } і перайсці на платны тарыфны план, каб зняць абмежаванне."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Для таго, каб скасаваць падпіску на гэту рассылку ад ${ boldFrom }, вам будзе накіраваны ліст з наступнымі падрабязнасцямі, якія вызначаюцца адпраўніком інфармацыйнай рассылкі:"
@@ -7567,6 +7670,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Выяўлена стварэнне мноства бясплатных уліковых запісаў, а гэта парушае нашы ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "У нас ёсць тарыфныя планы, якія распрацаваны для такіх карыстальнікаў як вы і якім неабходны больш за адзін адрас электроннай пошты."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
@@ -7874,6 +7980,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
@@ -7882,6 +7991,12 @@
       ],
       "Your private writing assistant": [
         "Ваш прыватны памочнік у напісанні"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы(-аў)."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
       ]
     },
     "info": {
@@ -8613,6 +8728,9 @@
       "Remember my choice": [
         "Запомніць мой выбар"
       ],
+      "Remove metadata": [
+        "Выдаліць метаданыя"
+      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -9070,16 +9188,16 @@
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых папак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папкі) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } папак) і пазначыць іх як"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як",
-        "Імпартаваць усе паведамленні з некаторых метак (${ selectedItemsToImportCount } з ${ itemsToImportCount }) і пазначыць іх як"
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } меткі) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } з ${ itemsToImportCount } метак) і пазначыць іх як"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10035,14 +10153,6 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -10055,6 +10165,14 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Атрымайце Mail Plus за ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: tooltip": {
@@ -10431,6 +10549,12 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle }, якая прадухіляе атрыманне падманных лістоў у вашу паштовую скрыню."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } у App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } у Play Store"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } азначае, што за вамі больш не будуць сачыць у інтэрнэце."
       ],
@@ -10443,6 +10567,9 @@
       "Advanced encryption": [
         "Дадатковае шыфраванне"
       ],
+      "Anytime, anywhere access": [
+        "Доступ у любы час і ў любым месцы"
+      ],
       "Auto-delete spam and trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
       ],
@@ -10452,8 +10579,17 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Distraction-free emailing": [
+        "Адпраўка электроннай пошты без адцягнення ўвагі"
+      ],
       "Download the desktop app": [
         "Спампоўка настольных праграм"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Атрымлівайце асалоду ад больш хуткай і мэтанакіраванай адпраўкі электроннай пошты з настольнай праграмай."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Для доступу да электроннай пошты ў любы час і аптымізацыі працы з ёй, спампуйце нашу праграму ${ mobileAppAppStoreLink } або ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Будзьце ў курсе ў выпадку, калі ваш пароль будзе скампраметаваны."
@@ -10789,7 +10925,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } пазначыў гэты ключ як скампраментаваны. Гэты ключ нельга выкарыстоўваць для шыфравання і праверкі подпісу."
+        "${ emailAddress } пазначыў гэты ключ як скампраметаваны. Гэты ключ нельга выкарыстоўваць ні для шыфравання, ні для праверкі подпісу."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
@@ -13822,6 +13958,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Гэта гарантуе, што ніхто не зможа бачыць ваша месцазнаходжанне, прыладу і іншыя звесткі, якія могуць быць выкарыстаны для вашага вызначэння або адсочвання."
       ],
       "This feature is only available for paid users": [
         "Гэта функцыя даступна толькі для карыстальнікаў з платнымі тарыфнымі планамі"

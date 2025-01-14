@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "Acima dos aliases de hide-my-email"
+      ],
       "Activate recovery": [
         "Ativar a recuperação"
       ],
@@ -479,6 +482,9 @@
       ],
       "Export contact group": [
         "Exportar grupo de contato"
+      ],
+      "Export selection as .vcf": [
+        "Exportar seleção como .vcf"
       ],
       "External encryption": [
         "Criptografia externa"
@@ -4648,6 +4654,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Time zone component ignored": [
+        "Componente de fuso horário ignorado"
+      ],
       "To-do entry": [
         "Tarefas"
       ],
@@ -5428,6 +5437,9 @@
       ],
       "Malformed start time": [
         "A hora de início não é válida."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Somente escala de calendário Gregoriano é permitido"
       ],
       "Recurring event has no occurrences": [
         "Evento recorrente sem datas"
@@ -6556,6 +6568,9 @@
       "JCB logo": [
         "Logotipo JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Participe do programa ${ PROTON_SENTINEL_NAME } para obter o mais alto nível de segurança e suporte de conta."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
       ],
@@ -7191,6 +7206,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Esta mensagem é automaticamente gerada como uma resposta a uma mensagem anterior."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Essa mensagem é de um alias do ${ PASS_APP_NAME }."
+      ],
       "This message is from a mailing list.": [
         "Esta mensagem é de uma lista de endereços."
       ],
@@ -7272,6 +7290,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Para recuperar seus dados, você precisa reativar a chave da conta usada quando os dados foram criados. Isso exigirá que você lembre a senha usada quando a chave foi gerada."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Para remover restrições, você pode fazer um upgrade para um plano pago."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Para remover restrições, você pode visitar ${ mailLink } e fazer um upgrade para um plano pago."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para cancelar a inscrição desta lista de e-mail, um e-mail será enviado de ${ boldFrom } com os seguintes detalhes definidos pelo remetente da newsletter:"
@@ -7434,6 +7458,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Detectamos a criação de várias contas gratuitas, o que viola nossos ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Nós temos planos projetados especificamente para usuários como você, que precisam de mais de um endereço de e-mail."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar seu método de pagamento com seu banco."
@@ -7711,6 +7738,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+      ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
       ],
@@ -7719,6 +7749,12 @@
       ],
       "Your private writing assistant": [
         "Seu assistente de escrita privado"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada mês."
       ]
     },
     "info": {
@@ -9805,17 +9841,6 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Obtenha Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceMailPlus } meses. Você pode cancelar a qualquer momento."
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -9828,6 +9853,17 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Obtenha Mail Plus por ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceMailPlus } meses. Você pode cancelar a qualquer momento."
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10218,6 +10254,9 @@
       "Advanced encryption": [
         "Criptografia avançada"
       ],
+      "Anytime, anywhere access": [
+        "Acesso a qualquer hora, em qualquer lugar"
+      ],
       "Auto-delete spam and trash": [
         "Exclusão automática de conteúdo de spam e da lixeira"
       ],
@@ -10227,8 +10266,17 @@
       "Dark Web Monitoring": [
         "Monitoramento da Dark Web"
       ],
+      "Distraction-free emailing": [
+        "e-mail sem distrações"
+      ],
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Para acessar seu e-mail a qualquer momento e aproveitar uma experiência otimizada no seu dispositivo móvel, faça o download do nosso aplicativo para ${ mobileAppAppStoreLink } ou ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Seja notificado se suas senhas forem comprometidas."
@@ -13433,6 +13481,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Isso garante que ninguém pode ver a localização, dispositivo, e outra informação que possa ser usada para identificar ou rastrear você."
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"

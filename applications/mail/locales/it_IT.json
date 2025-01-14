@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "Riguardo gli alias hide-my-email"
+      ],
       "Activate recovery": [
         "Attiva il ripristino"
       ],
@@ -479,6 +482,9 @@
       ],
       "Export contact group": [
         "Esporta gruppo di contatti"
+      ],
+      "Export selection as .vcf": [
+        "Esporta la selezione come .vcf"
       ],
       "External encryption": [
         "Crittografia esterna"
@@ -4642,6 +4648,9 @@
       "Time zone": [
         "Fuso orario"
       ],
+      "Time zone component ignored": [
+        "Componente fuso orario ignorato"
+      ],
       "To-do entry": [
         "Voce da fare"
       ],
@@ -5417,6 +5426,9 @@
       "Malformed start time": [
         "Ora di inizio con un formato errato"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "È consentita solo la scala del calendario gregoriano"
+      ],
       "Recurring event has no occurrences": [
         "L'evento ricorrente non ha occorrenze"
       ],
@@ -5575,6 +5587,9 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Usa la password dell'app invece della tua password normale se:"
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "La password dell'app è corretta. Non usare la tua password regolare."
       ],
       "Your email account requires an app password to export your data.": [
         "Il tuo account email richiede una password dell'app per esportare i tuoi dati."
@@ -6538,6 +6553,9 @@
       "JCB logo": [
         "Logo JCB"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Partecipa al programma ${ PROTON_SENTINEL_NAME } per ottenere il nostro livello di sicurezza più elevato dell'account e il miglior supporto."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Devi solo confermare la tua selezione e noi faremo il resto."
       ],
@@ -6870,6 +6888,9 @@
       "Proofread text": [
         "Correggi il testo"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Proteggi la tua email dalle mailing list e dagli spammer con gli alias hide-my-email"
+      ],
       "Public sharing of documents is not yet supported.": [
         "La condivisione pubblica dei documenti non è ancora supportata."
       ],
@@ -7170,6 +7191,9 @@
       "This message is automatically generated as a response to a previous message.": [
         "Questo messaggio è generato automaticamente come una risposta a un messaggio precedente."
       ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Questo messaggio è di un ${ PASS_APP_NAME } alias."
+      ],
       "This message is from a mailing list.": [
         "Questo messaggio proviene da una mailing list."
       ],
@@ -7251,6 +7275,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Per recuperare tuoi i dati, devi riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai dunque ricordare la password utilizzata quando è stata generata la chiave."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Per rimuovere le restrizioni, puoi effettuare l’upgrade e passare al piano a pagamento."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Per rimuovere le restrizioni, puoi visitare ${ mailLink } e passare a un piano a pagamento."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Per disiscriverti da questa mailing list, sarà inviata un'email da ${ boldFrom } con i seguenti dettagli come definito dal mittente della newsletter:"
@@ -7413,6 +7443,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Abbiamo rilevato la creazione di più account gratuiti, il che viola i nostri ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Abbiamo piani progettati appositamente per utenti come te che necessitano di più di un indirizzo email."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Abbiamo bisogno di verificare il tuo metodo di pagamento con la tua banca."
@@ -7690,6 +7723,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      ],
       "Your password was leaked:": [
         "La tua password è stata resa pubblica:"
       ],
@@ -7698,6 +7734,12 @@
       ],
       "Your private writing assistant": [
         "Il tuo assistente alla scrittura privato"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
       ]
     },
     "info": {
@@ -9781,17 +9823,6 @@
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Ottieni Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -9804,6 +9835,17 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Ottieni Mail Plus per ${ priceCoupon }"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10194,6 +10236,9 @@
       "Advanced encryption": [
         "Crittografia avanzata"
       ],
+      "Anytime, anywhere access": [
+        "Accesso sempre e ovunque"
+      ],
       "Auto-delete spam and trash": [
         "Eliminazione automatica del contenuto dallo spam e dal cestino"
       ],
@@ -10203,8 +10248,17 @@
       "Dark Web Monitoring": [
         "Monitoraggio del dark web"
       ],
+      "Distraction-free emailing": [
+        "Email senza distrazioni"
+      ],
       "Download the desktop app": [
         "Scarica l’app per desktop"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Goditi un'esperienza di invio email più rapida e mirata con l'app desktop."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ mobileAppAppStoreLink } o ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Ricevi una notifica se la tua password è compromessa."
@@ -13403,6 +13457,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità chiara\"."
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Ciò garantisce che nessuno possa vedere la posizione, il dispositivo e altre informazioni che potrebbero essere utilizzate per identificarti o tracciarti."
       ],
       "This feature is only available for paid users": [
         "Questa funzionalità è disponibile solo per utenti paganti"
