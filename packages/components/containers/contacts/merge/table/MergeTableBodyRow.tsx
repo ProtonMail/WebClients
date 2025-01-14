@@ -8,10 +8,9 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import type OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import TableRow from '@proton/components/components/table/TableRow';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useContact } from '@proton/mail/contacts/contactHooks';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
-import isTruthy from '@proton/utils/isTruthy';
+import clsx from '@proton/utils/clsx';
 
 import useVCardContact from '../../hooks/useVCardContact';
 import EmailsTableCell from './EmailsTableCell';
@@ -47,8 +46,6 @@ const MergeTableBodyRow = ({
     // Allow to control when we fetch contacts and avoid fetching them when the row is not visible
     const [contact] = useContact(isIntersecting ? ID : undefined);
     const { vCardContact } = useVCardContact({ contact, userKeysList });
-
-    const { viewportWidth } = useActiveBreakpoint();
 
     const deleted = beDeleted[ID];
 
@@ -93,12 +90,12 @@ const MergeTableBodyRow = ({
             greyedOut={deleted}
             onToggle={onClickCheckbox}
         />,
-        !(givenName === '-' && viewportWidth['<=medium']) && (
-            <span className="max-w-full inline-block text-ellipsis">{givenName}</span>
-        ),
-        !(familyName === '-' && viewportWidth['<=medium']) && (
-            <span className="max-w-full inline-block text-ellipsis">{familyName}</span>
-        ),
+        <span className={clsx(['max-w-full inline-block text-ellipsis', givenName === '-' && 'isHiddenWhenStacked'])}>
+            {givenName}
+        </span>,
+        <span className={clsx(['max-w-full inline-block text-ellipsis', familyName === '-' && 'isHiddenWhenStacked'])}>
+            {familyName}
+        </span>,
         <EmailsTableCell
             key="email"
             contactID={ID}
@@ -107,7 +104,7 @@ const MergeTableBodyRow = ({
             greyedOut={deleted}
         />,
         <DropdownActions key="options" size="small" list={options} data-testid="merge-model:action-button" />,
-    ].filter((cell) => (viewportWidth['<=medium'] ? isTruthy(cell) : true));
+    ];
 
     return deleted ? (
         <TableRow key={`${ID}`} cells={[null, ...cells]} />
