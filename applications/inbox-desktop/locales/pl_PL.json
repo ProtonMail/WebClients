@@ -1,0 +1,107 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "pl_PL"
+  },
+  "contexts": {
+    "App menu": {
+      "Check spelling while typing": [
+        "Sprawdź pisownię podczas pisania"
+      ],
+      "Clear application data": [
+        "Wyczyść dane aplikacji"
+      ],
+      "Force Reload": [
+        "Odśwież"
+      ],
+      "Reload": [
+        "Odśwież"
+      ],
+      "Show logs": [
+        "Pokaż logi"
+      ],
+      "Speech": [
+        "Mowa"
+      ],
+      "Start Proton Mail at login": [
+        "Uruchom Proton Mail podczas logowania"
+      ],
+      "Uninstall Proton Mail": [
+        "Odinstaluj Proton Mail"
+      ],
+      "Zoom In": [
+        "Powiększ"
+      ],
+      "Zoom Out": [
+        "Pomniejsz"
+      ]
+    },
+    "Conext menu": {
+      "Save image as…": [
+        "Zapisz obraz jako…"
+      ],
+      "Speech": [
+        "Mowa"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "Dodaj do słownika"
+      ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Emoji and Symbols": [
+        "Emoji i symbole"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "Kopiuj"
+      ]
+    },
+    "Error dialog": {
+      "Unexpected error": [
+        "Wystąpił nieoczekiwany błąd"
+      ]
+    },
+    "error screen": {
+      "Try again": [
+        "Spróbuj ponownie"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Ładowanie ${ title }..."
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Edytuj"
+      ],
+      "File": [
+        "Plik"
+      ],
+      "View": [
+        "Widok"
+      ],
+      "Window": [
+        "Okno"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Zmiany mogą nie zostać zapisane."
+      ],
+      "Leave": [
+        "Opuść"
+      ],
+      "Leave page?": [
+        "Opuścić stronę?"
+      ],
+      "Stay": [
+        "Pozostań"
+      ]
+    }
+  }
+}
