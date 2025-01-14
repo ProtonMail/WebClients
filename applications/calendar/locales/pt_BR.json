@@ -305,6 +305,9 @@
       "Export contact group": [
         "Exportar grupo de contato"
       ],
+      "Export selection as .vcf": [
+        "Exportar seleção como .vcf"
+      ],
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
@@ -3526,6 +3529,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Time zone component ignored": [
+        "Componente de fuso horário ignorado"
+      ],
       "To-do entry": [
         "Tarefas"
       ],
@@ -4030,6 +4036,9 @@
       ],
       "Malformed start time": [
         "A hora de início não é válida."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Somente escala de calendário Gregoriano é permitido"
       ],
       "Recurring event has no occurrences": [
         "Evento recorrente sem datas"
@@ -5396,11 +5405,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+      ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada mês."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "O fuso horário de seu sistema parece ter mudado para ${ timezone }. Você deseja atualizar suas preferências de fuso horário?"
