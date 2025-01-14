@@ -23,6 +23,7 @@ export const ItemsListPlaceholder = memo(() => {
             case 'secure-links':
                 return (
                     <SecureLinksLoading>
+                        {/* Secure links are searchable. So it would be "No secure links matching 'xxxxxxx'" where 'xxxxxxx' is the searched string. */}
                         <SearchableListPlaceholder
                             emptyListTitle={c('Title').t`No shared secure links`}
                             noResultsMessage={c('Warning').t`No secure links matching`}
