@@ -7,12 +7,12 @@ import * as epochUtils from '@proton/pass/utils/time/epoch';
 
 import { readKeeperData } from './keeper.reader';
 
-describe('Import Keeper CSV', () => {
+describe('Import Keeper JSON', () => {
     let payload: ImportPayload;
     const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
-        const sourceData = await fs.promises.readFile(__dirname + '/mocks/keeper.csv', 'utf8');
+        const sourceData = await fs.promises.readFile(__dirname + '/mocks/keeper.json', 'utf8');
         payload = await readKeeperData({ data: sourceData });
     });
 
@@ -23,20 +23,245 @@ describe('Import Keeper CSV', () => {
     });
 
     it('converts Keeper folders to vaults correctly', () => {
-        expect(payload.vaults.length).toEqual(3);
+        expect(payload.vaults.length).toEqual(4);
 
-        expect(payload.vaults[0].name).toEqual('Import - 27 Apr 2023');
+        expect(payload.vaults[0].name).toEqual('folder2');
         expect(payload.vaults[1].name).toEqual('folder1');
         expect(payload.vaults[2].name).toEqual('subfolder1');
+        expect(payload.vaults[3].name).toEqual('Import - 27 Apr 2023');
     });
 
     it('should correctly parse items from 1st vault', () => {
         const firstVault = payload.vaults[0];
-        expect(firstVault.items.length).toEqual(9);
+        expect(firstVault.items.length).toEqual(1);
         const { items } = firstVault;
 
+        const identityItem = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'identity'>;
+        expect(identityItem.type).toEqual('identity');
+        expect(identityItem.createTime).toBeUndefined();
+        expect(identityItem.modifyTime).toBeUndefined();
+        expect(identityItem.metadata.itemUuid).not.toBeUndefined();
+        expect(identityItem.metadata.name).toEqual('id item');
+        expect(identityItem.metadata.note).toEqual('notes');
+        expect(identityItem.content).toEqual({
+            birthdate: '',
+            city: '',
+            company: '',
+            countryOrRegion: '',
+            county: '',
+            email: 'email@custom-field.value',
+            extraAddressDetails: [],
+            extraContactDetails: [],
+            extraPersonalDetails: [],
+            extraSections: [
+                {
+                    sectionName: 'Extra fields',
+                    sectionFields: [
+                        {
+                            fieldName: '$accountNumber:identityNumber:1',
+                            type: 'text',
+                            data: {
+                                content: '123',
+                            },
+                        },
+                    ],
+                },
+            ],
+            extraWorkDetails: [],
+            facebook: '',
+            firstName: 'John',
+            floor: '',
+            fullName: '',
+            gender: '',
+            instagram: '',
+            jobTitle: '',
+            lastName: 'Doe',
+            licenseNumber: '',
+            linkedin: '',
+            middleName: 'Middle',
+            organization: '',
+            passportNumber: '',
+            personalWebsite: '',
+            phoneNumber: '',
+            reddit: '',
+            secondPhoneNumber: '',
+            socialSecurityNumber: '',
+            stateOrProvince: '',
+            streetAddress: '',
+            website: '',
+            workEmail: '',
+            workPhoneNumber: '',
+            xHandle: '',
+            yahoo: '',
+            zipOrPostalCode: '',
+        });
+        expect(identityItem.trashed).toEqual(false);
+        expect(identityItem.extraFields).toEqual([]);
+    });
+
+    it('should correctly parse items from 2nd vault', () => {
+        const secondVault = payload.vaults[1];
+        expect(secondVault.items.length).toEqual(1);
+        const { items } = secondVault;
+
+        const loginItemSubfolder = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'login'>;
+        expect(loginItemSubfolder.type).toEqual('login');
+        expect(loginItemSubfolder.createTime).toBeUndefined();
+        expect(loginItemSubfolder.modifyTime).toBeUndefined();
+        expect(loginItemSubfolder.metadata.itemUuid).not.toBeUndefined();
+        expect(loginItemSubfolder.metadata.name).toEqual('login of folder1');
+        expect(loginItemSubfolder.metadata.note).toEqual('');
+        expect(loginItemSubfolder.content).toEqual({
+            passkeys: [],
+            password: '',
+            totpUri: '',
+            urls: [],
+            itemEmail: '',
+            itemUsername: 'john',
+        });
+        expect(loginItemSubfolder.trashed).toEqual(false);
+        expect(loginItemSubfolder.extraFields).toEqual([]);
+    });
+
+    it('should correctly parse items from 3rd vault', () => {
+        const thirdVault = payload.vaults[2];
+        expect(thirdVault.items.length).toEqual(1);
+        const { items } = thirdVault;
+
+        const loginItem = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'login'>;
+        expect(loginItem.type).toEqual('login');
+        expect(loginItem.createTime).toBeUndefined();
+        expect(loginItem.modifyTime).toBeUndefined();
+        expect(loginItem.metadata.itemUuid).not.toBeUndefined();
+        expect(loginItem.metadata.name).toEqual('login of subfolder1');
+        expect(loginItem.metadata.note).toEqual('');
+        expect(loginItem.content).toEqual({
+            passkeys: [],
+            password: '',
+            totpUri: '',
+            urls: [],
+            itemEmail: '',
+            itemUsername: 'john',
+        });
+        expect(loginItem.trashed).toEqual(false);
+        expect(loginItem.extraFields).toEqual([]);
+    });
+
+    it('should correctly parse items from 4th vault', () => {
+        const fourthVault = payload.vaults[3];
+        expect(fourthVault.items.length).toEqual(10);
+        const { items } = fourthVault;
+
+        /* credit card item */
+        const creditCardItem = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem.type).toBe('creditCard');
+        expect(creditCardItem.metadata.name).toBe('a card');
+        expect(creditCardItem.metadata.note).toBe('');
+        expect(creditCardItem.content.cardholderName).toBe('First last');
+        expect(creditCardItem.content.number).toBe('4242424242424242');
+        expect(creditCardItem.content.verificationNumber).toBe('123');
+        expect(creditCardItem.content.pin).toBe('1234');
+        expect(creditCardItem.content.expirationDate).toBe('032027');
+
+        /* note with custom field */
+        const noteWithCustomField = deobfuscateItem(items[1]) as unknown as ItemImportIntent<'note'>;
+        expect(noteWithCustomField.type).toBe('note');
+        expect(noteWithCustomField.metadata.name).toBe('a note');
+        expect(noteWithCustomField.metadata.note).toBe('note content\nline 2\ncustom note');
+
+        /* contact item */
+        const contactItem = deobfuscateItem(items[2]) as unknown as ItemImportIntent<'identity'>;
+        expect(contactItem.type).toEqual('identity');
+        expect(contactItem.createTime).toBeUndefined();
+        expect(contactItem.modifyTime).toBeUndefined();
+        expect(contactItem.metadata.itemUuid).not.toBeUndefined();
+        expect(contactItem.metadata.name).toEqual('contact item');
+        expect(contactItem.metadata.note).toEqual('');
+        expect(contactItem.content).toEqual({
+            birthdate: '',
+            city: '',
+            company: 'company',
+            countryOrRegion: '',
+            county: '',
+            email: 'email@example.com',
+            extraAddressDetails: [],
+            extraContactDetails: [],
+            extraPersonalDetails: [],
+            extraSections: [
+                {
+                    sectionFields: [
+                        {
+                            data: {
+                                content: '5555555555',
+                            },
+                            fieldName: '$phone::1 - number',
+                            type: 'text',
+                        },
+                        {
+                            data: {
+                                content: 'Ext',
+                            },
+                            fieldName: '$phone::1 - ext',
+                            type: 'text',
+                        },
+                        {
+                            data: {
+                                content: '5555555556',
+                            },
+                            fieldName: '$phone::1 - number',
+                            type: 'text',
+                        },
+                        {
+                            data: {
+                                content: 'Ext2',
+                            },
+                            fieldName: '$phone::1 - ext',
+                            type: 'text',
+                        },
+                        {
+                            data: {
+                                content: 'custom field',
+                            },
+                            fieldName: '$text::1',
+                            type: 'text',
+                        },
+                    ],
+                    sectionName: 'Extra fields',
+                },
+            ],
+            extraWorkDetails: [],
+            facebook: '',
+            firstName: 'first',
+            floor: '',
+            fullName: '',
+            gender: '',
+            instagram: '',
+            jobTitle: '',
+            lastName: 'last',
+            licenseNumber: '',
+            linkedin: '',
+            middleName: '',
+            organization: '',
+            passportNumber: '',
+            personalWebsite: '',
+            phoneNumber: '',
+            reddit: '',
+            secondPhoneNumber: '',
+            socialSecurityNumber: '',
+            stateOrProvince: '',
+            streetAddress: '',
+            website: '',
+            workEmail: '',
+            workPhoneNumber: '',
+            xHandle: '',
+            yahoo: '',
+            zipOrPostalCode: '',
+        });
+        expect(contactItem.trashed).toEqual(false);
+        expect(contactItem.extraFields).toEqual([]);
+
         /* login with 2FA */
-        const loginItem2FA = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'login'>;
+        const loginItem2FA = deobfuscateItem(items[3]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2FA.type).toEqual('login');
         expect(loginItem2FA.createTime).toBeUndefined();
         expect(loginItem2FA.modifyTime).toBeUndefined();
@@ -56,7 +281,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItem2FA.extraFields).toEqual([]);
 
         /* login with broken url */
-        const loginItemBrokenUrl = deobfuscateItem(items[1]) as unknown as ItemImportIntent<'login'>;
+        const loginItemBrokenUrl = deobfuscateItem(items[4]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemBrokenUrl.type).toEqual('login');
         expect(loginItemBrokenUrl.createTime).toBeUndefined();
         expect(loginItemBrokenUrl.modifyTime).toBeUndefined();
@@ -75,7 +300,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemBrokenUrl.extraFields).toEqual([]);
 
         /* login with comma, quotes */
-        const loginItemCommaQuotes = deobfuscateItem(items[2]) as unknown as ItemImportIntent<'login'>;
+        const loginItemCommaQuotes = deobfuscateItem(items[5]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCommaQuotes.type).toEqual('login');
         expect(loginItemCommaQuotes.createTime).toBeUndefined();
         expect(loginItemCommaQuotes.modifyTime).toBeUndefined();
@@ -94,7 +319,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemCommaQuotes.extraFields).toEqual([]);
 
         /* login with custom fields */
-        const loginItemCustomFields = deobfuscateItem(items[3]) as unknown as ItemImportIntent<'login'>;
+        const loginItemCustomFields = deobfuscateItem(items[6]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCustomFields.type).toEqual('login');
         expect(loginItemCustomFields.createTime).toBeUndefined();
         expect(loginItemCustomFields.modifyTime).toBeUndefined();
@@ -112,44 +337,100 @@ describe('Import Keeper CSV', () => {
         expect(loginItemCustomFields.trashed).toEqual(false);
         expect(loginItemCustomFields.extraFields).toEqual([
             {
-                fieldName: 'Hidden Field',
-                type: 'hidden',
-                data: {
-                    content: 'this is custom field: hidden',
-                },
-            },
-            {
-                fieldName: 'Security Question & Answer',
+                fieldName: '$text:Security Question & Answer:1',
                 type: 'text',
                 data: {
                     content: 'this is custom field: security question? this is custom field: security answer',
                 },
             },
             {
-                fieldName: 'Website Address',
+                fieldName: '$text:Website Address:1',
                 type: 'text',
                 data: {
                     content: 'https://this-is-custom-field-url.example.com',
                 },
             },
             {
-                fieldName: 'Phone',
+                fieldName: '$text:Phone:1',
                 type: 'text',
                 data: {
                     content: 'Mobile US (+1) (555) 555-5555 Ex',
                 },
             },
             {
-                fieldName: 'Hidden Field with edited label',
+                fieldName: '$multiline::1',
                 type: 'text',
                 data: {
-                    content: 'this is custom field: hidden with edited label',
+                    content: 'custom field with\nmultiple\nlines',
+                },
+            },
+            {
+                fieldName: '$name:custom Name fields:1 - first',
+                type: 'text',
+                data: {
+                    content: 'custom field--first name',
+                },
+            },
+            {
+                fieldName: '$name:custom Name fields:1 - middle',
+                type: 'text',
+                data: {
+                    content: 'custom field--middle name',
+                },
+            },
+            {
+                fieldName: '$name:custom Name fields:1 - last',
+                type: 'text',
+                data: {
+                    content: 'custom field--last name',
+                },
+            },
+            {
+                fieldName: '$phone:custom Phone Number:1 - number',
+                type: 'text',
+                data: {
+                    content: '5555555555',
+                },
+            },
+            {
+                fieldName: '$phone:custom Phone Number:1 - ext',
+                type: 'text',
+                data: {
+                    content: 'ext',
+                },
+            },
+            {
+                fieldName: '$phone:custom Phone Number:1 - type',
+                type: 'text',
+                data: {
+                    content: 'Mobile',
+                },
+            },
+            {
+                fieldName: '$phone:custom Phone Number:1 - region',
+                type: 'text',
+                data: {
+                    content: 'US',
+                },
+            },
+            {
+                fieldName: '$secret:custom Hidden Field:1',
+                type: 'hidden',
+                data: {
+                    content: 'hidden vlue',
+                },
+            },
+            {
+                fieldName: '$secret:second custom hidden field:1',
+                type: 'hidden',
+                data: {
+                    content: 'hidden value',
                 },
             },
         ]);
 
         /* login with multiple lines */
-        const loginItemMultipleLines = deobfuscateItem(items[4]) as unknown as ItemImportIntent<'login'>;
+        const loginItemMultipleLines = deobfuscateItem(items[7]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleLines.type).toEqual('login');
         expect(loginItemMultipleLines.createTime).toBeUndefined();
         expect(loginItemMultipleLines.modifyTime).toBeUndefined();
@@ -168,7 +449,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemMultipleLines.extraFields).toEqual([]);
 
         /* login with multiple urls */
-        const loginItemMultipleUrls = deobfuscateItem(items[5]) as unknown as ItemImportIntent<'login'>;
+        const loginItemMultipleUrls = deobfuscateItem(items[8]) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleUrls.type).toEqual('login');
         expect(loginItemMultipleUrls.createTime).toBeUndefined();
         expect(loginItemMultipleUrls.modifyTime).toBeUndefined();
@@ -186,14 +467,14 @@ describe('Import Keeper CSV', () => {
         expect(loginItemMultipleUrls.trashed).toEqual(false);
         expect(loginItemMultipleUrls.extraFields).toEqual([
             {
-                fieldName: 'Website Address',
+                fieldName: '$text:Website Address:1',
                 type: 'text',
                 data: {
                     content: 'https://second.example.com',
                 },
             },
             {
-                fieldName: 'Website Address with edited label',
+                fieldName: '$text:Website Address with edited label:1',
                 type: 'text',
                 data: {
                     content: 'https://edited-label.example.com',
@@ -201,133 +482,25 @@ describe('Import Keeper CSV', () => {
             },
         ]);
 
-        /* login payment card */
-        const loginItemPaymentCard = deobfuscateItem(items[6]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItemPaymentCard.type).toEqual('login');
-        expect(loginItemPaymentCard.createTime).toBeUndefined();
-        expect(loginItemPaymentCard.modifyTime).toBeUndefined();
-        expect(loginItemPaymentCard.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItemPaymentCard.metadata.name).toEqual('paymentcard');
-        expect(loginItemPaymentCard.metadata.note).toEqual('foo');
-        expect(loginItemPaymentCard.content).toEqual({
-            passkeys: [],
-            password: 'b5pIs[ISaru7@)44rn,xT',
-            totpUri: '',
-            urls: ['https://example.com/'],
-            itemEmail: '',
-            itemUsername: '',
-        });
-        expect(loginItemPaymentCard.trashed).toEqual(false);
-        expect(loginItemPaymentCard.extraFields).toEqual([
-            {
-                fieldName: 'Bank Account',
-                type: 'text',
-                data: {
-                    content: 'Checking | 980',
-                },
-            },
-            {
-                fieldName: 'Hidden Field',
-                type: 'hidden',
-                data: {
-                    content: 'this is custom field: hidden',
-                },
-            },
-        ]);
-
         /* login secure note */
-        const loginItemSecureNote = deobfuscateItem(items[7]) as unknown as ItemImportIntent<'note'>;
+        const loginItemSecureNote = deobfuscateItem(items[9]) as unknown as ItemImportIntent<'note'>;
         expect(loginItemSecureNote.type).toEqual('note');
         expect(loginItemSecureNote.createTime).toBeUndefined();
         expect(loginItemSecureNote.modifyTime).toBeUndefined();
         expect(loginItemSecureNote.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemSecureNote.metadata.name).toEqual('secure note item');
-        expect(loginItemSecureNote.metadata.note).toEqual('foo');
+        expect(loginItemSecureNote.metadata.note).toEqual('secured note\nfoo');
         expect(loginItemSecureNote.content).toEqual({});
         expect(loginItemSecureNote.trashed).toEqual(false);
         expect(loginItemSecureNote.extraFields).toEqual([]);
-
-        /* login ssh key */
-        const loginItemSshKey = deobfuscateItem(items[8]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItemSshKey.type).toEqual('login');
-        expect(loginItemSshKey.createTime).toBeUndefined();
-        expect(loginItemSshKey.modifyTime).toBeUndefined();
-        expect(loginItemSshKey.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItemSshKey.metadata.name).toEqual('ssh key item');
-        expect(loginItemSshKey.metadata.note).toEqual('foo');
-        expect(loginItemSshKey.content).toEqual({
-            passkeys: [],
-            password: 'pass',
-            totpUri: '',
-            urls: [],
-            itemEmail: '',
-            itemUsername: 'john',
-        });
-        expect(loginItemSshKey.trashed).toEqual(false);
-        expect(loginItemSshKey.extraFields).toEqual([
-            {
-                fieldName: 'Key Pair',
-                type: 'text',
-                data: {
-                    content: 'privatekey | publickey',
-                },
-            },
-        ]);
-    });
-
-    it('should correctly parse items from 2nd vault', () => {
-        const secondVault = payload.vaults[1];
-        expect(secondVault.items.length).toEqual(1);
-        const { items } = secondVault;
-
-        const loginItemSecondVault = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItemSecondVault.type).toEqual('login');
-        expect(loginItemSecondVault.createTime).toBeUndefined();
-        expect(loginItemSecondVault.modifyTime).toBeUndefined();
-        expect(loginItemSecondVault.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItemSecondVault.metadata.name).toEqual('login of folder1');
-        expect(loginItemSecondVault.metadata.note).toEqual('');
-        expect(loginItemSecondVault.content).toEqual({
-            passkeys: [],
-            password: '',
-            totpUri: '',
-            urls: [],
-            itemEmail: '',
-            itemUsername: 'john',
-        });
-        expect(loginItemSecondVault.trashed).toEqual(false);
-        expect(loginItemSecondVault.extraFields).toEqual([]);
-    });
-
-    it('should correctly parse items from 3rd vault', () => {
-        const thirdVault = payload.vaults[2];
-        expect(thirdVault.items.length).toEqual(1);
-        const { items } = thirdVault;
-
-        const loginItemSecondVault = deobfuscateItem(items[0]) as unknown as ItemImportIntent<'login'>;
-        expect(loginItemSecondVault.type).toEqual('login');
-        expect(loginItemSecondVault.createTime).toBeUndefined();
-        expect(loginItemSecondVault.modifyTime).toBeUndefined();
-        expect(loginItemSecondVault.metadata.itemUuid).not.toBeUndefined();
-        expect(loginItemSecondVault.metadata.name).toEqual('login of subfolder1');
-        expect(loginItemSecondVault.metadata.note).toEqual('');
-        expect(loginItemSecondVault.content).toEqual({
-            passkeys: [],
-            password: '',
-            totpUri: '',
-            urls: [],
-            itemEmail: '',
-            itemUsername: 'john',
-        });
-        expect(loginItemSecondVault.trashed).toEqual(false);
-        expect(loginItemSecondVault.extraFields).toEqual([]);
     });
 
     test('should correctly hydrate ignored arrays', () => {
-        expect(payload.ignored.length).toEqual(4);
-        expect(payload.ignored[0]).toEqual('[Unknown] address item');
-        expect(payload.ignored[1]).toEqual('[Unknown] contact item');
-        expect(payload.ignored[2]).toEqual('[Unknown] file attachment item');
+        expect(payload.ignored.length).toEqual(5);
+        expect(payload.ignored[0]).toEqual('[file] a file');
+        expect(payload.ignored[1]).toEqual('[encryptedNotes] a note: item was imported without custom fields');
+        expect(payload.ignored[2]).toEqual('[address] Address for bank card');
         expect(payload.ignored[3]).toEqual('[Unknown] general item');
+        expect(payload.ignored[4]).toEqual('[sshKeys] ssh key item');
     });
 });
