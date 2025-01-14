@@ -302,6 +302,9 @@
       "Export contact group": [
         "Ekspor grup kontak"
       ],
+      "Export selection as .vcf": [
+        "Ekspor pilihan sebagai .vcf"
+      ],
       "Forgot password?": [
         "Lupa kata sandi?"
       ],
@@ -3490,6 +3493,9 @@
       "Time zone": [
         "Zona waktu"
       ],
+      "Time zone component ignored": [
+        "Komponen zona waktu diabaikan"
+      ],
       "To-do entry": [
         "Entri to-do"
       ],
@@ -3959,20 +3965,41 @@
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
       ],
+      "End time out of bounds": [
+        "Waktu akhir di luar batas"
+      ],
+      "Event validation failed": [
+        "Validasi acara gagal"
+      ],
       "Floating times not supported": [
         "Waktu desimal tidak didukung"
+      ],
+      "Malformed all-day event": [
+        "Acara seharian tidak terformat dengan benar"
       ],
       "Malformed end time": [
         "Waktu akhir tidak terformat dengan benar"
       ],
+      "Malformed recurring event": [
+        "Acara berulang tidak terformat dengan benar"
+      ],
       "Malformed start time": [
         "Waktu mulai tidak terformat dengan benar"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Hanya skala kalender Gregorian yang diizinkan"
       ],
       "Recurring event has no occurrences": [
         "Acara yang berulang tidak memiiliki keberlangsungan"
       ],
       "Recurring rule not supported": [
         "Aturan berulang tidak didukung"
+      ],
+      "Start time out of bounds": [
+        "Waktu mulai di luar batas"
+      ],
+      "Time zone not supported": [
+        "Zona waktu tidak didukung"
       ]
     },
     "Import calendar": {
@@ -4106,11 +4133,17 @@
       "Use your app password instead of your regular password if:": [
         "Gunakan kata sandi aplikasi Anda alih-alih kata sandi biasa apabila:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Kata sandi aplikasi Anda benar. Jangan gunakan kata sandi biasa Anda."
+      ],
       "Your email account requires an app password to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email account requires one to export your data.": [
         "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Alamat email dan kata sandi aplikasi Anda benar. Jangan gunakan kata sandi biasa Anda."
       ],
       "Your email address and password are correct.": [
         "Alamat email dan kata sandi Anda benar."
@@ -4476,6 +4509,9 @@
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Buat ruang cloud yang aman untuk ${ value } anggota"
       ],
       "Create in": [
         "Buat di"
@@ -5000,7 +5036,7 @@
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."
@@ -5278,11 +5314,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
+      ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zona waktu sistem Anda sepertinya telah diubah menjadi ${ timezone }. Apakah Anda ingin memperbarui preferensi zona waktu Anda?"

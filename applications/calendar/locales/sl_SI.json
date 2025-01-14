@@ -668,6 +668,9 @@
       "Start setup": [
         "Začni nastavitev"
       ],
+      "Starting from ${ priceUnlimited }": [
+        "Od ${ priceUnlimited }"
+      ],
       "Stay": [
         "Ostani"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Naloži sliko"
@@ -892,6 +898,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Če prekinete zdaj, dogodek ne bo shranjen."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Ne zaprite tega zavihka. Nekatere zahteve se še vedno odvijajo v ozadju."
       ]
     },
     "Apps dropdown": {
@@ -1003,7 +1012,7 @@
         "6 uporabnikov"
       ],
       "8500+ servers across 110+ countries": [
-        "8500+ servers across 110+ countries"
+        "Več kot 8500 strežnikov v več kot 110 državah"
       ],
       "Ad-blocker and malware protection": [
         "Prepoved oglasov in zaščita pred zlonamerno programsko opremo"
@@ -1021,7 +1030,7 @@
         "Enostavno dodajte ali odstranite uporabnike"
       ],
       "High speed streaming": [
-        "Visokohitrostno pretakanje"
+        "Pretočne storitve z visoko hitrostjo"
       ],
       "Integrated 2FA authenticator": [
         "Vgrajen modul za preverjanje pristnosti 2FA"
@@ -1078,12 +1087,12 @@
         "za ${ durationDeal }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "Renews after 1 month at ${ regularAmount }."
+        "Obnovitev po enem mesecu za ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, visokohitrostno pretakanje, prepoved oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, pretočne storitve z visoko hitrostjo, onemogočanje oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in še več, od kjerkoli."
@@ -2587,6 +2596,9 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organizirajte svoj dan, spremljajte porabo časa in določite prednostne naloge. Označite dogodke na koledarju z barvami po meri."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Ustvarite sestanek Zoom in dodajte podrobnosti za pridružitev vašemu dogodku z enim klikom."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
       ],
@@ -3005,11 +3017,17 @@
       "Event not found": [
         "Dogodek ni bil najden"
       ],
+      "Failed to create meeting": [
+        "Ni uspelo ustvariti sestanka."
+      ],
       "Failed to get event": [
         "Dogodka ni bilo mogoče pridobiti"
       ],
       "Failed to get original occurrence in series": [
         "Ni uspelo pridobiti prvotne ponovitve v seriji"
+      ],
+      "Failed to load OAuth modal.": [
+        "Ni bilo mogoče naložiti modal OAuth."
       ],
       "First name is too long": [
         "Ime je predolgo"
@@ -3545,6 +3563,11 @@
         "Vi"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Nepričakovana napaka"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Priložene datoteke ICS ni bilo mogoče dešifrirati"
@@ -3910,6 +3933,35 @@
         "Način preverjanja ni na voljo"
       ]
     },
+    "ICS event error": {
+      "Edited event not supported": [
+        "Urejen dogodek ni podprt."
+      ],
+      "End time out of bounds": [
+        "Konec časa presega dovoljene meje."
+      ],
+      "Floating times not supported": [
+        "Plavajoči časi niso podprti."
+      ],
+      "Malformed end time": [
+        "Nepravilni končni čas."
+      ],
+      "Malformed recurring event": [
+        "Nepravilno oblikovan ponavljajoči se dogodek."
+      ],
+      "Malformed start time": [
+        "Nepravilni začetni čas"
+      ],
+      "Recurring rule not supported": [
+        "Ponavljajoče se pravilo ni podprto."
+      ],
+      "Start time out of bounds": [
+        "Začetni čas je izven dovoljenih meja."
+      ],
+      "Time zone not supported": [
+        "Časovni pas ni podprt"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Šifriranje in dodajanje dogodkov v koledar: ${ totalImported }/${ totalToImport }",
@@ -4193,6 +4245,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
       ],
@@ -4336,6 +4391,9 @@
       ],
       "Added and removed participants will be notified.": [
         "Dodani in odstranjeni udeleženci bodo obveščeni."
+      ],
+      "Address copied to clipboard": [
+        "Naslov kopiran v odložišče"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ta naslov je omogočena potrditev naslova z zaupnimi ključi. Če želite pošiljati na ta naslov, najprej označite javne ključe, ki jih lahko uporabite za pošiljanje, kot vredne zaupanja."
@@ -4916,6 +4974,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Konec naročnine: znova aktivirajte do ${ byDate }, da obdržite ugodnosti ${ planName }. ${ reactivateLink }"
       ],
+      "Switch to": [
+        "Preklopite na"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."
       ],
@@ -5417,6 +5478,9 @@
       "All-day event notifications": [
         "Obvestila celodnevnih dogodkov"
       ],
+      "Anderson": [
+        "Novak"
+      ],
       "App password": [
         "Geslo aplikacije"
       ],
@@ -5771,6 +5835,9 @@
       "Theme": [
         "Tema"
       ],
+      "Thomas": [
+        "Janek"
+      ],
       "Time zone": [
         "Časovni pas"
       ],
@@ -6015,6 +6082,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -6305,8 +6375,14 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
       "Upgrade now": [
         "Nadgradi zdaj"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6333,6 +6409,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } in ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6477,6 +6556,9 @@
       "Advanced account protection": [
         "Napredna zaščita računa"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Napredne funkcije vzdevkov (omogoča SimpleLogin)"
+      ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Vse premijske storitve ${ BRAND_NAME }. Ena preprosta naročnina"
       ],
@@ -6497,6 +6579,9 @@
       ],
       "Available on all platforms": [
         "Na voljo na vseh platformah."
+      ],
+      "Breach alerts": [
+        "Opozorila o uhajanju podatkov"
       ],
       "Calendar sharing": [
         "Deljenje koledarja"
@@ -6675,6 +6760,9 @@
       "Send & receive invitations": [
         "Pošljite in prejmite povabila."
       ],
+      "Share files with no size limit": [
+        "Souporaba datotek brez omejitve velikosti"
+      ],
       "Sign in as user": [
         "Prijavi se kot uporabnik"
       ],
@@ -6692,6 +6780,9 @@
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"
+      ],
+      "Sync and backup all your files across devices": [
+        "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
       "TOR over VPN": [
         "Tor prek VPN"
@@ -6722,6 +6813,9 @@
       ],
       "Unlimited logins and notes": [
         "Neomejeno število prijav in beležk"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Neomejeno število prijav, beležk in bančnih kartic"
       ],
       "Unlimited messages per day": [
         "Neomejeno število sporočil na dan"
@@ -6872,6 +6966,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Brezplačen začetni račun, ki privzeto zagotavlja zasebnost vsem uporabnikom."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Neomejena zasebnost in več shrambe za do dve osebi."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če izbrišete svoj račun, boste izgubili promocijsko ceno in ta ne bo na voljo, če ustvarite nov račun."
       ],
@@ -6891,6 +6988,11 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "Pridobite Mail Plus za ${ priceCoupon }"
       ]
     },
     "new_plans: tooltip": {
@@ -7522,6 +7624,11 @@
         "Dnevnik dejavnosti"
       ]
     },
+    "PassFamilyPlan2024": {
+      "Introducing ${ passFamilyPlanName }": [
+        "Predstavljamo ${ passFamilyPlanName }"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Ključ organizacije ne obstaja."
@@ -7537,6 +7644,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bančno nakazilo"
+      ],
       "Credit/debit card": [
         "Kreditna / debetna kartica"
       ],
@@ -8379,6 +8489,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
+      ],
+      "Video conferencing is here!": [
+        "Video konferenca je na voljo!"
       ]
     },
     "sso": {
@@ -8661,6 +8774,9 @@
       "Comprehensive privacy and security": [
         "Celovita zaščita zasebnosti in varnosti"
       ],
+      "Dark web monitoring": [
+        "Spremljanje temnega spleta"
+      ],
       "Direct contribution to our mission": [
         "Neposreden prispevek k našemu poslanstvu"
       ],
@@ -8911,6 +9027,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Prstni odtis je kopiran v odložišče"
+      ],
+      "Finish Zoom authentication to save event": [
+        "Zaključi avtentikacijo Zoom, da shrani dogodek"
       ],
       "Future events deleted": [
         "Prihodnji dogodki so izbrisani"
@@ -9367,6 +9486,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Prenesite aplikacijo ${ appName[APP_NAME] }"
       ],
+      "Get Zooming faster": [
+        "Povežite se s Zoomom še hitreje"
+      ],
       "Gift": [
         "Darilo"
       ],
@@ -9820,6 +9942,9 @@
         "${ n } e-poštna naslova",
         "${ n } e-poštni naslovi",
         "${ n } e-poštnih naslovov"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin prek elektronske pošte"
       ]
     },
     "Warning": {
@@ -9861,6 +9986,9 @@
       ],
       "Missing alias suffix": [
         "Manjka pripona vzdevka"
+      ],
+      "Name is required": [
+        "Zahtevano je ime"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
@@ -10228,6 +10356,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Dodaj sestanek prek Zooma"
+      ],
+      "Adding conferencing details": [
+        "Dodajam podrobnosti konference"
       ]
     },
     "Zoom Meeting": {

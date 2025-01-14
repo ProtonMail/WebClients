@@ -305,6 +305,9 @@
       "Export contact group": [
         "Exporteer contactgroep"
       ],
+      "Export selection as .vcf": [
+        "Exporteer selectie als .vcf"
+      ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
       ],
@@ -3523,6 +3526,9 @@
       "Time zone": [
         "Tijdzone"
       ],
+      "Time zone component ignored": [
+        "Tijdzone component genegeerd"
+      ],
       "To-do entry": [
         "To-do item"
       ],
@@ -4022,6 +4028,9 @@
       "Malformed start time": [
         "Misvormde begintijd"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Alleen de Gregoriaanse agendaschaal is toegestaan"
+      ],
       "Recurring event has no occurrences": [
         "Terugkerende afspraak heeft geen voorvallen"
       ],
@@ -4172,11 +4181,17 @@
       "Use your app password instead of your regular password if:": [
         "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik uw gebruikelijke wachtwoord niet."
+      ],
       "Your email account requires an app password to export your data.": [
         "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
       ],
       "Your email account requires one to export your data.": [
         "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik niet uw gebruikelijke wachtwoord."
       ],
       "Your email address and password are correct.": [
         "Uw e-mailadres en wachtwoord zijn juist."
@@ -5378,11 +5393,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Uw systeemtijdzone lijkt te zijn veranderd naar ${ timezone }. Wilt u uw voorkeur voor uw tijdzone bijwerken?"
