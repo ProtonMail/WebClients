@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { FeatureCode } from '@proton/features';
@@ -11,6 +11,7 @@ import {
     mockUseMailSettings,
     mockUseNotifications,
     mockUseUser,
+    renderWithProviders,
 } from '@proton/testing';
 
 import MessagesSection from './MessagesSection';
@@ -18,6 +19,8 @@ import MessagesSection from './MessagesSection';
 describe('MessagesSection', () => {
     let mockedApi: jest.Mock;
     let mockedCall: jest.Mock;
+
+    const renderComponent = (props = {}) => renderWithProviders(<MessagesSection {...props} />);
 
     beforeEach(() => {
         mockedApi = jest.fn();
@@ -47,7 +50,7 @@ describe('MessagesSection', () => {
                     return { feature: { Value: true } } as any;
                 });
 
-                render(<MessagesSection />);
+                renderComponent();
 
                 expect(screen.queryByText('Exclude Spam/Trash from All mail')).not.toBeInTheDocument();
             });
@@ -59,13 +62,13 @@ describe('MessagesSection', () => {
             });
 
             it('should render AlmostAllMail toggle', () => {
-                render(<MessagesSection />);
+                renderComponent();
 
                 expect(screen.getByText('Exclude Spam/Trash from All mail')).toBeInTheDocument();
             });
 
             it('should toggle setting on click', async () => {
-                render(<MessagesSection />);
+                renderComponent();
 
                 const setting = screen.getByText('Exclude Spam/Trash from All mail');
                 await userEvent.click(setting);
@@ -107,7 +110,7 @@ describe('MessagesSection', () => {
             });
 
             it('should not display selector', () => {
-                render(<MessagesSection />);
+                renderComponent();
                 expect(screen.queryByText(/Messages per page/)).not.toBeInTheDocument();
                 expect(screen.queryByText(/Conversations per page/)).not.toBeInTheDocument();
             });
@@ -115,7 +118,7 @@ describe('MessagesSection', () => {
 
         describe('when PageSize selection is enabled', () => {
             it('should display correct label', () => {
-                render(<MessagesSection />);
+                renderComponent();
                 expect(screen.getByText(/Messages per page/));
             });
 
@@ -125,7 +128,7 @@ describe('MessagesSection', () => {
                 });
 
                 it('should display correct label', () => {
-                    render(<MessagesSection />);
+                    renderComponent();
 
                     expect(screen.getByText(/Conversations per page/));
                 });
@@ -143,7 +146,7 @@ describe('MessagesSection', () => {
                 });
 
                 it('should display correct label', async () => {
-                    render(<MessagesSection />);
+                    renderComponent();
 
                     const select = screen.getByTestId('page-size-selector');
                     await userEvent.click(select);

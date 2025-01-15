@@ -9,10 +9,10 @@ import {
     ShowMovedToggle,
     SwipeActionSelect,
     useApi,
-    useEventManager,
     useNotifications,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     updateAutoDelete,
@@ -20,6 +20,7 @@ import {
     updateSwipeLeft,
     updateSwipeRight,
 } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     NEXT_MESSAGE_ON_MOVE,
@@ -27,6 +28,7 @@ import type {
 } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
+import { useAccountDispatch } from '../../app/store/hooks';
 import MobileSection from '../components/MobileSection';
 import MobileSectionLabel from '../components/MobileSectionLabel';
 import MobileSectionRow from '../components/MobileSectionRow';
@@ -41,7 +43,7 @@ const EmailSettings = ({
     loader: React.ReactNode;
 }) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useAccountDispatch();
 
     const [loadingAutoDeleteSpamAndTrashDays, withLoadingAutoDeleteSpamAndTrashDays] = useLoading();
     const [loadingSwipeLeft, withLoadingSwipeLeft] = useLoading();
@@ -59,26 +61,26 @@ const EmailSettings = ({
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const handleChangeSwipeLeft = async (swipeAction: SWIPE_ACTION) => {
-        await api(updateSwipeLeft(swipeAction));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSwipeLeft(swipeAction));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleChangeSwipeRight = async (swipeAction: SWIPE_ACTION) => {
-        await api(updateSwipeRight(swipeAction));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSwipeRight(swipeAction));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleChangeNextMessageOnMove = async (nextMessageOnMove: NEXT_MESSAGE_ON_MOVE) => {
-        await api(updateNextMessageOnMove(nextMessageOnMove));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateNextMessageOnMove(nextMessageOnMove));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
     const handleAutoDeleteSpamAndTrashDays = async (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
-        await api(updateAutoDelete(autoDelete));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateAutoDelete(autoDelete));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
