@@ -22,6 +22,7 @@ RewriteRule ^.*$ - [NC,L]
 
 # All shared URLs pages use version with noindex meta tag
 RewriteRule ^urls\/(.*)$ /urls.html [NC,L]
+# TODO: DRVWEB-4470 Enable /photos rewrite rule RewriteRule ^photos\/(.*)$ /photos.html [NC,L]
 
 # Easy switch
 RewriteRule ^oauth/callback /oauth.html [L]

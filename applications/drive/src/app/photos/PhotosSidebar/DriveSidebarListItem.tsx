@@ -13,8 +13,8 @@ import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 
-import { useDriveEventManager } from '../../../../store';
-import { useVolumesState } from '../../../../store/_volumes';
+import { useDriveEventManager } from '../../store';
+import { useVolumesState } from '../../store/_volumes';
 
 interface Props {
     children: React.ReactNode;
@@ -41,7 +41,7 @@ const DriveSidebarListItem = ({
     style,
     onClick,
     className,
-    forceReload
+    forceReload,
 }: Props) => {
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
