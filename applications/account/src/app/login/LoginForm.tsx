@@ -81,6 +81,7 @@ interface Props {
     loginFormRef: MutableRefObject<LoginFormRef | undefined>;
     appName: APP_NAMES;
     externalRedirect?: string;
+    usernameReadOnly?: boolean;
 }
 
 const LoginForm = ({
@@ -99,6 +100,7 @@ const LoginForm = ({
     paths,
     loginFormRef,
     externalRedirect,
+    usernameReadOnly,
 }: Props) => {
     const handleError = useErrorHandler();
     const [submitting, withSubmitting] = useLoading();
@@ -367,6 +369,7 @@ const LoginForm = ({
                     onValue={setUsername}
                     ref={usernameRef}
                     onChange={() => setErrorMsg(null)}
+                    readOnly={usernameReadOnly}
                 />
                 {authType === AuthType.ExternalSSO ? null : (
                     <InputFieldTwo
@@ -496,7 +499,7 @@ const LoginForm = ({
                                 </>
                             )}
 
-                            {signUp && !modal && (
+                            {signUp && !modal && !usernameReadOnly && (
                                 <div className="text-center mt-4">
                                     {
                                         // translator: Full sentence "New to Proton? Create account"

@@ -246,6 +246,7 @@ const LoginContainer = ({
                                     </>
                                 ) : null}
                                 <LoginForm
+                                    usernameReadOnly={isPorkbun}
                                     loginFormRef={loginFormRef}
                                     api={silentApi}
                                     modal={modal || isElectronPass}
