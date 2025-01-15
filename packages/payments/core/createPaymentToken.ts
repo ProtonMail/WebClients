@@ -121,6 +121,7 @@ export function convertPaymentIntentData(paymentIntentData: BackendPaymentIntent
         currency_code: paymentIntentData.CurrencyCode,
         gateway: paymentIntentData.Gateway,
         reference_id: paymentIntentData.ReferenceID,
+        email: paymentIntentData.Email,
     };
 
     return Data;
