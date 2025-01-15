@@ -1,6 +1,6 @@
-import type { FunctionComponent } from 'react';
+import type { FC, FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, type RouteComponentProps, Switch } from 'react-router-dom';
 
 import {
     GlobalLoader,
@@ -8,14 +8,12 @@ import {
     LoaderPage,
     LocationErrorBoundary,
     ModalsChildren,
-    useDrawerWidth,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useLoading } from '@proton/hooks';
 import useFlag from '@proton/unleash/useFlag';
 
 import TransferManager from '../components/TransferManager/TransferManager';
-import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
@@ -26,23 +24,24 @@ import {
     useBookmarksActions,
     useDefaultShare,
     useDriveEventManager,
-    useSearchControl,
     useUserSettings,
 } from '../store';
-import { useDriveSharingFlags, useShareActions } from '../store/_shares';
+import { useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import { VolumeType } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
-import DevicesContainer from './DevicesContainer';
-import { FolderConntainerWrapper } from './FolderContainer';
-import NoAccessContainer from './NoAccessContainer';
-import { PhotosContainer } from './PhotosContainer';
-import { SearchContainer } from './SearchContainer';
-import SharedURLsContainer from './SharedLinksContainer';
-import SharedWithMeContainer from './SharedWithMeContainer';
-import TrashContainer from './TrashContainer';
-import { VolumeLinkContainer } from './VolumeLinkContainer';
+import DrivePhotosWindow from './DrivePhotosWindow';
+import { PhotosView } from './PhotosWithAlbums/PhotosView';
+
+const PhotosWithAlbumsContainer: FC<RouteComponentProps> = ({ match }) => {
+    return (
+        <Switch>
+            <Route path={match.url} exact component={PhotosView} />
+            <Redirect to="/photos" />
+        </Switch>
+    );
+};
 
 // Empty shared root for blurred container.
 const DEFAULT_VOLUME_INITIAL_STATE: {
@@ -56,17 +55,20 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
 };
 
 const FloatingElements = () => {
-    const drawerWidth = useDrawerWidth();
     return (
         <div
             className="flex fixed bottom-0 flex-column z-up w-full items-end right-custom max-w-custom"
-            style={{ '--right-custom': `${drawerWidth}px`, '--max-w-custom': '50em' }}
+            style={{ '--right-custom': `0px`, '--max-w-custom': '50em' }}
         >
             <GiftFloatingButton />
             <TransferManager />
         </div>
     );
 };
+
+/**
+ * TODO: Clean this up / remove useless things
+ */
 
 const InitContainer = () => {
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
@@ -75,14 +77,12 @@ const InitContainer = () => {
     const [error, setError] = useState<Error>();
     const [defaultShareRoot, setDefaultShareRoot] =
         useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
-    const { searchEnabled } = useSearchControl();
     const driveEventManager = useDriveEventManager();
-    const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
-    const { photosEnabled, photosWithAlbumsEnabled } = useUserSettings();
+    const { photosWithAlbumsEnabled } = useUserSettings();
     useActivePing();
     useReactRouterNavigationLog();
     useEffect(() => {
@@ -166,25 +166,16 @@ const InitContainer = () => {
         <ActiveShareProvider defaultShareRoot={rootShare}>
             <ModalsChildren />
             <FloatingElements />
-            <DriveWindow>
+            <DrivePhotosWindow>
                 <Switch>
-                    <Route path="/devices" component={DevicesContainer} />
-                    <Route path="/trash" component={TrashContainer} />
-                    <Route path="/no-access" component={NoAccessContainer} />
-                    <Route path="/shared-urls" component={SharedURLsContainer} />
-                    {!isDirectSharingDisabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
-                    {photosEnabled && !photosWithAlbumsEnabled && <Route path="/photos" component={PhotosContainer} />}
-                    {searchEnabled && <Route path="/search" component={SearchContainer} />}
-                    <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
-                    <Route path="/:shareId?/:type/:linkId?" component={FolderConntainerWrapper} />
-                    <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
+                    {photosWithAlbumsEnabled && <Route path="/photos" component={PhotosWithAlbumsContainer} />}
                 </Switch>
-            </DriveWindow>
+            </DrivePhotosWindow>
         </ActiveShareProvider>
     );
 };
 
-const MainContainer: FunctionComponent = () => {
+export const MainPhotosContainer: FunctionComponent = () => {
     return (
         <GlobalLoaderProvider>
             <GlobalLoader />
@@ -198,5 +189,3 @@ const MainContainer: FunctionComponent = () => {
         </GlobalLoaderProvider>
     );
 };
-
-export default MainContainer;
