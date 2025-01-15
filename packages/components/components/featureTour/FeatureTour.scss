@@ -1,0 +1,34 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.modal-two--feature-tour {
+	--size: #{rem(360)};
+
+	.modal-two-dialog-container {
+		background-color: var(--optional-background-lowered);
+	}
+
+	.modal-two-content-container {
+		background-color: var(--background-norm);
+	}
+
+	.modal-two-header {
+		margin: 0;
+
+		&-actions {
+			position: absolute;
+			margin-block-start: var(--space-3);
+			margin-inline-end: var(--space-3);
+			z-index: map.get($z-indexes, 'up');
+		}
+	}
+
+	.modal-two-illustration-container {
+		block-size: rem(192);
+	}
+
+	.modal-two-close-button--illustration-cover {
+		/* White color used for visibility over colored image */
+		color: white;
+	}
+}

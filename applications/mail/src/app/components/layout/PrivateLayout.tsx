@@ -6,6 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import type { Breakpoints } from '@proton/components';
 import {
     DrawerApp,
+    FeatureTour,
     InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
     PrivateAppContainer,
@@ -81,6 +82,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
                 />
             }
         >
+            <FeatureTour />
             {children}
         </PrivateAppContainer>
     );

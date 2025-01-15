@@ -3,6 +3,7 @@ import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useMailShortDomainPostSubscriptionComposerSpotlight from '@proton/components/hooks/mail/useMailShortDomainPostSubscriptionSpotlight';
 import { orderAddress, setupAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { type Address, type ApiResponse } from '@proton/shared/lib/interfaces';
@@ -13,6 +14,16 @@ import useApi from '../useApi';
 import useAuthentication from '../useAuthentication';
 import useEventManager from '../useEventManager';
 
+type CreateShortDomainAddress = {
+    /** Set short domain as default address after creation */
+    setDefault: boolean;
+    /**
+     * Adds signature for the address based on the default address one
+     * by reusing the default address onein the signature
+     */
+    replaceAddressSignature?: boolean;
+};
+
 const useShortDomainAddress = () => {
     const api = useApi();
     const [user, loadingUser] = useUser();
@@ -22,6 +33,7 @@ const useShortDomainAddress = () => {
     const authentication = useAuthentication();
     const { call } = useEventManager();
     const getUserKeys = useGetUserKeys();
+    const composerSpotlight = useMailShortDomainPostSubscriptionComposerSpotlight();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     return {
@@ -29,14 +41,7 @@ const useShortDomainAddress = () => {
         shortDomainAddress: shortDomain,
         hasShortDomain: (addresses: Address[]) =>
             Boolean(addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM)),
-        createShortDomainAddress: async ({
-            setDefault,
-            addressSignature,
-        }: {
-            /** Set short domain as default address after creation */
-            setDefault: boolean;
-            addressSignature?: string;
-        }) => {
+        createShortDomainAddress: async ({ setDefault, replaceAddressSignature }: CreateShortDomainAddress) => {
             const [Domain = ''] = premiumDomains;
             const addresses = await getAddresses();
 
@@ -45,13 +50,21 @@ const useShortDomainAddress = () => {
                 return;
             }
 
+            let nextAddressSignature: string | undefined;
+            if (replaceAddressSignature && addresses && addresses.length) {
+                const { Email: defaultAddressEmail, Signature: defaultAddressSignature } = addresses[0];
+                if (defaultAddressSignature) {
+                    nextAddressSignature = defaultAddressSignature.replaceAll(defaultAddressEmail, shortDomain);
+                }
+            }
+
             // Create address
             const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
             const { Address } = await api<ApiResponse & { Address: Address }>(
                 setupAddress({
                     Domain,
                     DisplayName: DisplayName || '', // DisplayName can be null
-                    Signature: addressSignature ?? Signature ?? '', // Signature can be null
+                    Signature: nextAddressSignature ?? Signature ?? '', // Signature can be null
                 })
             );
             const userKeys = await getUserKeys();
@@ -74,6 +87,9 @@ const useShortDomainAddress = () => {
 
             // Call event manager to ensure all the UI is up to date
             await call();
+
+            // Activate short domain composer spotlight
+            void composerSpotlight.setActive();
 
             // Return newly created address
             return Address;

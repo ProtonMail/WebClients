@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUserSettings } from '@proton/account/index';
 import { Button } from '@proton/atoms';
 import {
     LabelStack,

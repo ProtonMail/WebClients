@@ -28,15 +28,18 @@ const UPSELL_PATH_TO_FLOW_NAME_MAP = {
 } as const;
 
 /**
- * Determines the post-subscription flow name based on the upsell reference and plan IDs
+ * Determines the post-subscription flow name based on upsell ref or plan ID
  * @param upsellRef - The upsell reference string to check against eligible upsells
  * @param planIDs - The plan IDs to validate against eligible plans
  * @returns The post-subscription flow name if eligible, undefined otherwise
  */
-const getPostSubscriptionFlowName = (upsellRef: string, planIDs: PlanIDs): PostSubscriptionFlowName | undefined => {
+const getPostSubscriptionFlowName = (
+    upsellRef: string | undefined,
+    planIDs: PlanIDs
+): PostSubscriptionFlowName | undefined => {
     const upsellRefMatch = (
         Object.keys(UPSELL_PATH_TO_FLOW_NAME_MAP) as (keyof typeof UPSELL_PATH_TO_FLOW_NAME_MAP)[]
-    ).find((key) => upsellRef.includes(key));
+    ).find((key) => upsellRef?.includes(key));
 
     if (upsellRefMatch) {
         return UPSELL_PATH_TO_FLOW_NAME_MAP[upsellRefMatch];
@@ -98,9 +101,13 @@ export const usePostSubscription = () => {
             /** User selected plans */
             planIDs: PlanIDs;
         }) => {
-            const flowName = upsellRef ? getPostSubscriptionFlowName(upsellRef, planIDs) : undefined;
+            if (!canShowPostSubscriptionFlow) {
+                return undefined;
+            }
 
-            if (!canShowPostSubscriptionFlow || !flowName) {
+            const flowName = getPostSubscriptionFlowName(upsellRef, planIDs);
+
+            if (!flowName) {
                 return undefined;
             }
 
