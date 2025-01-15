@@ -16,7 +16,7 @@ let workerWakeupInterval: ReturnType<typeof setInterval>;
  * IOS - forces all browsers to use webkit, so same problems as safari in all browsers.
  * For them download is done in-memory using blob response.
  */
-export const isUnsupported = () => {
+export const isServiceWorkersUnsupported = () => {
     /* TODO: To be removed after test DRVWEB-4375 */
     const isSWForSafariEnabled = unleashVanillaStore.getState().isEnabled('DriveWebDownloadSWModernBrowsers');
     if (isSWForSafariEnabled) {
@@ -55,14 +55,14 @@ async function wakeUpServiceWorker(retry = true) {
         const body = await res.text();
         if (!res.ok || body !== 'pong') {
             if (!retry) {
-                throw new Error('Download worker is dead');
+                throw new Error('Download worker is not active');
             }
-            console.warn('Download worker is dead, retrying registration');
+            console.warn('Download worker is not active, retrying registration');
             await initDownloadSW();
             await wakeUpServiceWorker(false);
         }
     }
-    return worker as ServiceWorker;
+    return worker;
 }
 
 function serviceWorkerKeepAlive() {
@@ -73,10 +73,7 @@ function serviceWorkerKeepAlive() {
 }
 
 export async function initDownloadSW() {
-    if (isUnsupported()) {
-        throw new Error('Saving file via download is unsupported by this browser');
-    }
-
+    // wait Service Worker is registered
     await navigator.serviceWorker.register(
         /* webpackChunkName: "downloadSW" */
         new URL('./downloadSW', import.meta.url),
@@ -84,6 +81,16 @@ export async function initDownloadSW() {
             scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}`,
         }
     );
+
+    // wait Service Worker is in Active
+    await navigator.serviceWorker.ready;
+
+    // wait Service Worker to be claimed by current page
+    if (!navigator.serviceWorker.controller) {
+        await new Promise((resolve) => {
+            navigator.serviceWorker.addEventListener('controllerchange', resolve, { once: true });
+        });
+    }
 
     serviceWorkerKeepAlive();
 }
@@ -115,6 +122,10 @@ export async function openDownloadStream(
     }
 
     const worker = await wakeUpServiceWorker();
+
+    if (worker == null) {
+        throw new Error('Download worker is not active');
+    }
 
     // Channel to stream file contents through
     channel.port1.onmessage = ({ data }) => {
