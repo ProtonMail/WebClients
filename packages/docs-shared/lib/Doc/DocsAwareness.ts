@@ -33,7 +33,7 @@ export class DocsAwareness extends Awareness {
     const alreadyBrowsedEntries: Map<string, number> = new Map()
 
     for (const [clientId, userState] of states) {
-      const id = userState.awarenessData.userId ?? userState.name
+      const id = userState.awarenessData?.userId ?? userState.name
 
       if (alreadyBrowsedEntries.has(id)) {
         const previousClientId = alreadyBrowsedEntries.get(id) as number
