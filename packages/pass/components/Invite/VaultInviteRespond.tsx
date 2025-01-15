@@ -12,10 +12,8 @@ import { getItemsText } from '@proton/pass/components/Settings/helper';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
-import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
-
-import { UserVerificationMessage } from './UserVerificationMessage';
 
 export const VaultInviteRespond: FC<Invite> = (invite) => {
     const { inviterEmail, invitedAddressId, token, vault, fromNewUser } = invite;
@@ -30,7 +28,6 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
     const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });
 
     const loading = acceptInvite.loading || rejectInvite.loading;
-    const userVerified = useSelector(selectUserVerified);
 
     return (
         <PassModal size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
@@ -64,8 +61,7 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
             </ModalTwoContent>
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
-                {!userVerified && <UserVerificationMessage />}
-                {userVerified && vaultLimitReached && (
+                {vaultLimitReached && (
                     <Card className="mb-2 text-sm" type="primary">
                         {c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
                     </Card>
@@ -75,7 +71,7 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
                     size="large"
                     shape="solid"
                     color="norm"
-                    disabled={loading || !userVerified || vaultLimitReached}
+                    disabled={loading || vaultLimitReached}
                     loading={acceptInvite.loading}
                     onClick={handleAcceptInvite}
                 >
@@ -87,7 +83,7 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
                     size="large"
                     shape="solid"
                     color="weak"
-                    disabled={loading || !userVerified}
+                    disabled={loading}
                     loading={rejectInvite.loading}
                     onClick={handleRejectInvite}
                 >
