@@ -146,7 +146,7 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
                 const missingScope = code === PassErrorCode.MISSING_SCOPE;
-                const notAllowed = isAccessRestricted(code, options.url);
+                const restricted = isAccessRestricted(code, options.url);
                 const offline = getIsOfflineError(e) || networkError;
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
@@ -164,7 +164,7 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 if (serverTime) state.set('serverTime', updateServerTime(serverTime));
                 if (sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
                 if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive', silent });
-                if (notAllowed) pubsub.publish({ type: 'session', status: 'not-allowed', error });
+                if (restricted) pubsub.publish({ type: 'session', status: 'restricted', error });
                 if (missingScope) pubsub.publish({ type: 'session', status: 'missing-scope' });
                 if (error) pubsub.publish({ type: 'error', error, silent });
 
