@@ -23,7 +23,7 @@ const result = (env: any): webpack.Configuration => {
 
     config.entry = mergeEntry(config.entry, {
         ['urls-index']: [path.resolve('./src/app/urls.tsx'), getSupportedEntry()],
-        ['photos-index']: [path.resolve('./src/app/photos.tsx'), getSupportedEntry()],
+        ['photos-index']: [path.resolve('./src/app/photos/photos.tsx'), getSupportedEntry()],
     });
 
     if (env.appMode === 'standalone') {
