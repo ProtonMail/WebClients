@@ -5,15 +5,17 @@ import {
     RequestLinkConfirmationToggle,
     SenderImagesToggle,
     useApi,
-    useEventManager,
     useNotifications,
 } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import useLoading from '@proton/hooks/useLoading';
+import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateRemoveImageMetadata } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
+import { useAccountDispatch } from '../../app/store/hooks';
 import MobileSection from '../components/MobileSection';
 import MobileSectionLabel from '../components/MobileSectionLabel';
 import MobileSectionRow from '../components/MobileSectionRow';
@@ -28,7 +30,7 @@ const PrivacySecuritySettings = ({
     loader: React.ReactNode;
 }) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useAccountDispatch();
     const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
     const { createNotification } = useNotifications();
     const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
@@ -37,8 +39,8 @@ const PrivacySecuritySettings = ({
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const handleRemoveImageMetadata = async (value: boolean) => {
-        await api(updateRemoveImageMetadata(value));
-        await call();
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateRemoveImageMetadata(value));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
         notifyPreferenceSaved();
     };
 
