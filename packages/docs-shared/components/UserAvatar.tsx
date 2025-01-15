@@ -27,7 +27,7 @@ export const UserAvatar = forwardRef(function UserAvatar(
   ref: ForwardedRef<HTMLButtonElement>,
 ) {
   if (!name) {
-    throw new Error('UserAvatar requires a name prop')
+    name = '?'
   }
 
   const hue = useMemo(() => {
