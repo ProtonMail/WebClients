@@ -121,7 +121,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       this.commentsController.fetchAllComments()
     }
 
-    if (documentState.getProperty('userRole').isPublicViewerWithAccess()) {
+    if (documentState.getProperty('userRole').isPublicUserWithAccess()) {
       this.logger.info('Redirecting to authed document')
       this.driveCompat.redirectToAuthedDocument({
         volumeId: documentState.getProperty('documentMeta').volumeId,
