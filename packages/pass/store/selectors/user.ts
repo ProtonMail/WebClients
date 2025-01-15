@@ -57,11 +57,6 @@ export const selectTrialDaysRemaining = ({ user: { plan } }: State): MaybeNull<n
 export const selectUserTier = ({ user: { user, plan } }: State): string | undefined =>
     user?.Type === UserType.MANAGED ? 'subuser' : plan?.InternalName;
 
-export const selectAddress =
-    (addressId: string) =>
-    ({ user: { addresses } }: State): Maybe<Address> =>
-        addresses[addressId];
-
 export const selectAddresses = ({ user }: State) => user.addresses;
 export const selectAllAddresses = createSelector(selectAddresses, (addresses): Address[] => Object.values(addresses));
 
