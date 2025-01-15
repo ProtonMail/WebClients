@@ -237,7 +237,7 @@ export class LoadDocument {
 
       const role = (() => {
         if (publicEditingEnabled && getCanWrite(permissions)) {
-          return new DocumentRole('PublicEditor')
+          return new DocumentRole(doesHaveAccessToDoc ? 'PublicEditorWithAccess' : 'PublicEditor')
         }
         if (doesHaveAccessToDoc) {
           return new DocumentRole('PublicViewerWithAccess')
