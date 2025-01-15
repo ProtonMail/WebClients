@@ -1,6 +1,7 @@
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
-import type { ItemMarkAsReadRequest } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
+import { type ItemMarkAsReadRequest } from '@proton/pass/types';
 import { type B2BEvent, B2BEventName } from '@proton/pass/types/data/b2b';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import type { EventBundle } from '@proton/pass/utils/event/dispatcher';
@@ -8,7 +9,7 @@ import chunk from '@proton/utils/chunk';
 
 import { isB2BEvent } from './b2b.utils';
 
-export const sendItemReadEvents = async (events: B2BEvent<B2BEventName.ItemRead>[]) =>
+const sendItemReadEvents = async (events: B2BEvent<B2BEventName.ItemRead>[]) =>
     Promise.all(
         groupByKey(events, 'shareId').map((events) => {
             const batches = chunk(events, MAX_BATCH_PER_REQUEST);
@@ -32,6 +33,26 @@ export const sendItemReadEvents = async (events: B2BEvent<B2BEventName.ItemRead>
         })
     );
 
+const sendReportMonitor = async (events: B2BEvent<B2BEventName.ReportMonitor>) => {
+    return api({
+        url: `pass/v1/organization/report/client_data`,
+        method: 'POST',
+        data: {
+            ReusedPasswords: events.ReusedPasswords,
+            Inactive2FA: events.Inactive2FA,
+            ExcludedItems: events.ExcludedItems,
+            WeakPasswords: events.WeakPasswords,
+        },
+    });
+};
+
 export const sendB2BEventsBundle = async ({ events }: EventBundle<B2BEvent>): Promise<void> => {
     await sendItemReadEvents(events.filter(isB2BEvent(B2BEventName.ItemRead)));
+
+    const latestMonitorReport = events
+        .filter(isB2BEvent(B2BEventName.ReportMonitor))
+        .reduce<MaybeNull<B2BEvent<B2BEventName.ReportMonitor>>>((acc, curr) => {
+            return acc && acc.timestamp > curr.timestamp ? acc : curr;
+        }, null);
+    if (latestMonitorReport) await sendReportMonitor(latestMonitorReport);
 };
