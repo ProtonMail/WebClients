@@ -5,9 +5,9 @@ import ReactDOM from 'react-dom';
 
 import '@proton/polyfill';
 
+import { initializePerformanceMetrics } from '../utils/performance';
 import PhotosApp from './PhotosApp';
 import './style';
-import { initializePerformanceMetrics } from './utils/performance';
 
 initializePerformanceMetrics(false);
 
