@@ -21,9 +21,7 @@ export function mockPostV5Token({
         CurrencyCode: 'EUR',
         Gateway: 'gateway',
         ReferenceID: 'referenceID',
-        Details: {
-            Email: 'test@proton.me',
-        },
+        Email: 'test@proton.me',
     },
 }: {
     token?: string;
