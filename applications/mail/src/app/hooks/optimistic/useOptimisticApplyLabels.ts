@@ -91,7 +91,7 @@ export const useOptimisticApplyLabels = () => {
                     const isMoveToCurrentFolder = currentFolderIDs.every((folderID) => changes[folderID]);
 
                     if (isMoveToCurrentFolder) {
-                        // It's a move to the folder where the elements is already, so nothing to do or undo
+                        // It's a move to the folder where the elements already are, so nothing to do or undo
                         return;
                     }
 
@@ -115,6 +115,14 @@ export const useOptimisticApplyLabels = () => {
                     currentFolderIDs.forEach((folderID) => {
                         changes[folderID] = false;
                     });
+
+                    if (
+                        Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.TRASH) ||
+                        Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.SPAM)
+                    ) {
+                        console.log('remove almost all mail', { element });
+                        changes[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL] = false;
+                    }
                 }
 
                 rollbackChanges.push({ element, changes: computeRollbackLabelChanges(element, changes) });

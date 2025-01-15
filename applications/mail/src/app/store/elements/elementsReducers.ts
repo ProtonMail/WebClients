@@ -103,7 +103,7 @@ export const loadFulfilled = (
 };
 
 /**
- * This reducer is used to set first loaded elements while loading remaining ones in serie
+ * This reducer is used to set first loaded elements while loading remaining ones in series
  */
 export const showSerializedElements = (
     state: Draft<ElementsState>,
@@ -114,9 +114,12 @@ export const showSerializedElements = (
         page,
     } = action.payload;
 
+    console.log('serialized El Reducer', { prevState: { ...state.elements }, newEls: { ...toMap(Elements, 'ID') } });
+
     Object.assign(state, {
         total: Total,
         elements: { ...state.elements, ...toMap(Elements, 'ID') },
+        // elements: { ...toMap(Elements, 'ID') },
         pages: unique([...state.pages, page]).sort(),
     });
 };
@@ -185,6 +188,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
 
 export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAction<OptimisticUpdates>) => {
     action.payload.elements.forEach((element) => {
+        console.log('optimistic updates', { element, payload: action.payload });
         if (element.ID) {
             state.elements[element.ID] = element;
         }

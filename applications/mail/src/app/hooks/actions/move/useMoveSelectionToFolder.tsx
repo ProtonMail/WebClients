@@ -163,6 +163,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     rollback = optimisticApplyLabels(
                         authorizedToMove,
                         { [destinationLabelID]: true },
+                        // destinationLabelID === MAILBOX_LABEL_IDS.SPAM || destinationLabelID === MAILBOX_LABEL_IDS.TRASH ?
+                        //     [{ [destinationLabelID]: true }, { [ALMOST_ALL_MAIL_ID]: false }] : { [destinationLabelID]: true },
                         true,
                         [],
                         // We need to pass a "real" folder to perform optimistic on custom labels
