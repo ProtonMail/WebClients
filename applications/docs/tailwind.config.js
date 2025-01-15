@@ -21,6 +21,7 @@ export default {
     colors: {
       current: 'currentColor',
       signalInfoMinor: 'var(--signal-info-minor-2)',
+      signalInfoMinorCustom: 'var(--signal-info-minor-custom)',
       gray50: '#F9FAFB',
     },
   },

@@ -1,4 +1,4 @@
-import { Icon, UserDropdown } from '@proton/components'
+import { AppsDropdown, Icon, Logo, useActiveBreakpoint, UserDropdown } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 import DocumentTitleDropdown from '../layout/DocumentTitleDropdown'
 import { DocumentActiveUsers } from '../DocumentActiveUsers'
@@ -21,19 +21,24 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
 
   const [isReady, setIsReady] = useState(false)
 
-  const { publicContext } = useDocsContext()
-
-  const [controller, setController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
+  const [authenticatedController, setAuthenticatedController] = useState<
+    AuthenticatedDocControllerInterface | undefined
+  >(undefined)
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
+  const [showErrorHeader, setShowErrorHeader] = useState(false)
 
-  const role = useMemo(() => documentState?.getProperty('userRole'), [documentState])
+  useEffect(() => {
+    return application.userState.subscribeToEvent('BlockingInterfaceErrorDidDisplay', () => {
+      setShowErrorHeader(true)
+    })
+  }, [application.userState])
 
   useEffect(() => {
     return application.getDocLoader().addStatusObserver({
       onSuccess: (result) => {
         setIsReady(true)
-        setController(result.docController)
+        setAuthenticatedController(result.docController)
         setEditorController(result.editorController)
         setDocumentState(result.documentState)
       },
@@ -43,16 +48,70 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
     })
   }, [application])
 
-  if (application.isRunningInNativeMobileWeb || !isReady || !editorController || !documentState) {
+  if (application.isRunningInNativeMobileWeb) {
     return null
   }
+
+  if (isReady && editorController && documentState) {
+    return (
+      <DocsHeaderForDocument
+        action={action}
+        editorController={editorController}
+        documentState={documentState}
+        authenticatedController={authenticatedController}
+      />
+    )
+  }
+
+  if (showErrorHeader) {
+    return <DocsHeaderNoDocument />
+  }
+
+  return null
+}
+
+/** Header shown if there is an error loading a document */
+const DocsHeaderNoDocument = () => {
+  const { viewportWidth } = useActiveBreakpoint()
+
+  return (
+    <div className="error-header flex flex-nowrap items-center justify-between gap-2 bg-signalInfoMinorCustom px-10 pt-5">
+      <div className="flex flex-shrink-0 flex-nowrap items-center gap-2">
+        <Logo variant={viewportWidth['<=small'] ? 'glyph-only' : 'with-wordmark'} appName={APPS.PROTONDOCS} />
+        <AppsDropdown />
+      </div>
+      <div className="hidden items-center justify-center text-center md:flex">
+        <Icon name="lock-filled" className="mr-1.5" />
+        <span className="pt-0.5 text-sm">{c('Title').t`End-to-end encrypted`}</span>
+      </div>
+      <div className="no-doc-header">
+        <UserDropdown app={APPS.PROTONDOCS} />
+      </div>
+    </div>
+  )
+}
+
+/** Header shown while a document is present */
+const DocsHeaderForDocument = ({
+  action,
+  editorController,
+  documentState,
+  authenticatedController,
+}: {
+  action?: DocumentAction['mode']
+  editorController: EditorControllerInterface
+  documentState: DocumentState | PublicDocumentState
+  authenticatedController: AuthenticatedDocControllerInterface | undefined
+}) => {
+  const { publicContext } = useDocsContext()
+  const role = useMemo(() => documentState.getProperty('userRole'), [documentState])
 
   return (
     <div className="flex flex-nowrap items-center gap-2 px-3 py-2" data-testid="docs-header">
       <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
         <DocumentTitleDropdown
           action={action}
-          authenticatedController={controller}
+          authenticatedController={authenticatedController}
           editorController={editorController}
           documentState={documentState}
         />
@@ -80,7 +139,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
                 shape="ghost"
                 className="flex flex-nowrap items-center gap-2 head-max-849:!mr-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!px-[0.5em]"
                 data-testid="share-button"
-                onClick={() => controller?.openDocumentSharingModal()}
+                onClick={() => authenticatedController?.openDocumentSharingModal()}
               >
                 <Icon name="user-plus" />
                 <span className="head-max-849:!sr-only">{c('Action').t`Share`}</span>
