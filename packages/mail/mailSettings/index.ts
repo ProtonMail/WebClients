@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -31,7 +31,13 @@ const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        updateMailSettings: (state, action: PayloadAction<MailSettings>) => {
+            if (state.value) {
+                state.value = updateObject(state.value, action.payload);
+            }
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
@@ -44,3 +50,4 @@ const slice = createSlice({
 
 export const mailSettingsReducer = { [name]: slice.reducer };
 export const mailSettingsThunk = modelThunk.thunk;
+export const mailSettingsActions = slice.actions;
