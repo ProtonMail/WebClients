@@ -226,3 +226,7 @@ export type DriveDocsPublicShareMessage =
     | {
           type: DriveDocsPublicShareMessageType.READY_TO_RECEIVE_CUSTOM_PASSWORD;
       };
+
+export const DRIVE_IOS_URL = 'https://apps.apple.com/us/app/proton-drive-cloud-storage/id1509667851';
+export const DRIVE_ANDROID_URL = 'https://play.google.com/store/apps/details?id=me.proton.android.drive';
+export const DRIVE_DOWNLOAD_URL = 'https://proton.me/fr/drive/download';

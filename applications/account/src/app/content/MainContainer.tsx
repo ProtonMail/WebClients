@@ -39,6 +39,7 @@ import {
     useToggle,
     useUnprivatizeMembers,
 } from '@proton/components';
+import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
@@ -355,6 +356,7 @@ const MainContainer = () => {
     return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
             <AccountStartupModals />
+            <FeatureTour />
             <SubscriptionModalProvider app={app}>
                 <Switch>
                     <Route path={anyAccountAppRoute}>
