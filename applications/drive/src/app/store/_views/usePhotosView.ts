@@ -41,7 +41,7 @@ export function updateByEvents(
 export const usePhotosView = () => {
     const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta } = useLinksListing();
-    const { shareId, linkId, isLoading, volumeId, photos, loadPhotos, removePhotosFromCache } = usePhotos();
+    const { shareId, linkId, isPhotosLoading, volumeId, photos, loadPhotos, removePhotosFromCache } = usePhotos();
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
 
@@ -216,6 +216,6 @@ export const usePhotosView = () => {
         removePhotosFromCache,
         loadPhotoLink,
         requestDownload,
-        isLoading,
+        isPhotosLoading,
     };
 };
