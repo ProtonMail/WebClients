@@ -615,7 +615,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         await authService.lock(LockMode.SESSION, { soft: true, broadcast: true });
                     }
 
-                    if (event.status === 'not-allowed') {
+                    if (event.status === 'restricted') {
                         if (event.error?.includes('two-factor-authentication-2fa')) {
                             config.onNotification?.({
                                 text: '',
