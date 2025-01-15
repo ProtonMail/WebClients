@@ -1423,6 +1423,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Add account": [
+        "Añadir una cuenta"
+      ],
+      "Sign out of all accounts": [
+        "Cerrar la sesión de todas las cuentas"
       ]
     },
     "action": {
@@ -3736,8 +3742,8 @@
     },
     "Desktop notification body": {
       "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nuevo mensaje",
-        "${ notificationsToShow.length } nuevos mensajes"
+        "${ notificationsToShow.length } mensaje nuevo",
+        "${ notificationsToShow.length } mensajes nuevos"
       ],
       "From: ${ sender } - ${ Subject }": [
         "De: ${ sender } - ${ Subject }"
@@ -4735,6 +4741,9 @@
       ],
       "Unsupported event": [
         "Evento no compatible"
+      ],
+      "Time zone component ignored": [
+        "Componente de zona horaria ignorado"
       ]
     },
     "Error message": {
@@ -7745,7 +7754,7 @@
         "La próxima fecha de facturación es el ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Su próxima fecha de facturación es el ${ renewalTime }.Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
+        "Su próxima fecha de facturación es el ${ renewalTime }. Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
       ],
       "Your password was leaked:": [
         "La contraseña fue filtrada:"
@@ -7761,6 +7770,18 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Únese al programa ${ PROTON_SENTINEL_NAME } para disfrutar de nuestro nivel más alto en seguridad de su cuenta y soporte."
+      ],
+      "Member": [
+        "Miembro"
+      ],
+      "Switch to": [
+        "Cambiar a"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esto cerrará la sesión de todas las cuentas con la sesión activa."
       ]
     },
     "info": {
@@ -9724,6 +9745,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "200 GB of storage": [
+        "200 GB de almacenamiento"
+      ],
+      "Private photo backup": [
+        "Copia de seguridad de fotos privadas"
+      ],
+      "Secure file storage and sharing": [
+        "Almacenamiento y uso compartido seguro de archivos"
       ]
     },
     "new_plans: feature highlight": {
@@ -10313,6 +10343,18 @@
       ],
       "Where privacy is default.": [
         "Donde la privacidad es por defecto."
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Descubra ${ MAIL_APP_NAME }"
+      ],
+      "You are all set!": [
+        "¡Ya está todo listo!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "El dominio ${ domain } y la suscripción ${ subscriptionName } están listos para usar."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "El dominio y la suscripción están listos para usar."
       ]
     },
     "Onboarding Proton": {
@@ -13396,6 +13438,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Are you sure?": [
+        "¿Está seguro?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13984,6 +14029,55 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Ocurrió un error un error inesperado."
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "La zona horaria del calendario no está admitida."
+      ],
+      "Edited event not supported": [
+        "El evento editado no está admitido."
+      ],
+      "End time out of bounds": [
+        "La hora final está fuera de los límites."
+      ],
+      "Event validation failed": [
+        "Error al validar el evento"
+      ],
+      "Floating times not supported": [
+        "Los tiempos flotantes no están admitidos."
+      ],
+      "Malformed all-day event": [
+        "El formato del evento para todo el día no es válido."
+      ],
+      "Malformed end time": [
+        "El formato de la hora final no es válido."
+      ],
+      "Malformed recurring event": [
+        "El formato del evento recurrente no es válido."
+      ],
+      "Malformed start time": [
+        "El formato de la hora inicial no es válido."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Sólo se permite la escala del calendario gregoriano."
+      ],
+      "Recurring event has no occurrences": [
+        "El evento recurrente no tiene ocurrencias."
+      ],
+      "Recurring rule not supported": [
+        "La regla recurrente no está admitida."
+      ],
+      "Start time out of bounds": [
+        "La hora inicial está fuera de los límites."
+      ],
+      "Time zone not supported": [
+        "La zona horaria no está admitida."
       ]
     }
   }

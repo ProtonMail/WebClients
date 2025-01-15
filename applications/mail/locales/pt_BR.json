@@ -1417,6 +1417,21 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "About hide-my-email aliases": [
+        "Acima dos aliases de hide-my-email"
+      ],
+      "Add account": [
+        "Adicionar conta"
+      ],
+      "Export selection as .vcf": [
+        "Exportar seleção como .vcf"
+      ],
+      "More actions": [
+        "Mais ações"
+      ],
+      "Sign out of all accounts": [
+        "Encerrar sessão de todas as contas"
       ]
     },
     "action": {
@@ -4732,6 +4747,9 @@
       ],
       "Unsupported event": [
         "Evento não suportado"
+      ],
+      "Time zone component ignored": [
+        "Componente de fuso horário ignorado"
       ]
     },
     "Error message": {
@@ -5632,6 +5650,12 @@
       ],
       "Your password is correct.": [
         "Sua senha está correta."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "A senha de aplicativo está correta. Não use sua senha normal."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Seu endereço de e-mail e senha do aplicativo estão corretos. Não use sua senha normal."
       ]
     },
     "Import ICS file from Mail": {
@@ -7727,6 +7751,52 @@
       ],
       "Your private writing assistant": [
         "Seu assistente de escrita privado"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Criar uma nuvem segura para ${ value } membro",
+        "Criar uma nuvem segura para ${ value } membros"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Participe do programa ${ PROTON_SENTINEL_NAME } para obter o mais alto nível de segurança e suporte de conta."
+      ],
+      "Member": [
+        "Membro"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Proteja seu e-mail de vazamento para listas de e-mail ou spammers com aliases do hide-my-email."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "O pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
+      ],
+      "Switch to": [
+        "Alternar para"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Essa mensagem é de um alias do ${ PASS_APP_NAME }."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Isto irá te desconectar de todas as contas atualmente conectadas."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Para remover restrições, você pode fazer um upgrade para um plano pago."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Para remover restrições, você pode visitar ${ mailLink } e fazer um upgrade para um plano pago."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Nós temos planos projetados especificamente para usuários como você, que precisam de mais de um endereço de e-mail."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Seu plano começa em ${ renewalTime } e irá renovar a cada mês."
       ]
     },
     "info": {
@@ -8559,6 +8629,9 @@
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
+      ],
+      "Remove metadata": [
+        "Remover metadados"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9339,7 +9412,7 @@
         "10 endereços de e-mail/aliases"
       ],
       "10 more premium features": [
-        "10 novos recursos premium"
+        "10 recursos premium adicionais"
       ],
       "10-year file version history": [
         "Histórico de versões de arquivos por 10 anos"
@@ -9690,6 +9763,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "200 GB of storage": [
+        "200 GB de armazenamento"
+      ],
+      "Private photo backup": [
+        "Backup de fotos privado"
       ]
     },
     "new_plans: feature highlight": {
@@ -10264,6 +10343,30 @@
       ],
       "Where privacy is default.": [
         "Onde a privacidade é o padrão."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } na App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } na Play Store"
+      ],
+      "Anytime, anywhere access": [
+        "Acesso a qualquer hora, em qualquer lugar"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Descubra o ${ MAIL_APP_NAME }"
+      ],
+      "Distraction-free emailing": [
+        "e-mail sem distrações"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Para acessar seu e-mail a qualquer momento e aproveitar uma experiência otimizada no seu dispositivo móvel, faça o download do nosso aplicativo para ${ mobileAppAppStoreLink } ou ${ mobileAppGooglePlayLink }."
+      ],
+      "You are all set!": [
+        "Tudo pronto!"
       ]
     },
     "Onboarding Proton": {
@@ -13353,6 +13456,9 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Are you sure?": [
+        "Você tem certeza?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13438,6 +13544,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Isso garante que ninguém pode ver a localização, dispositivo, e outra informação que possa ser usada para identificar ou rastrear você."
       ]
     },
     "tooltip": {
@@ -13938,6 +14047,55 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Erro inesperado"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "O fuso horário do calendário não é compatível"
+      ],
+      "Edited event not supported": [
+        "Evento editado não suportado"
+      ],
+      "End time out of bounds": [
+        "Hora de término fora dos limites"
+      ],
+      "Event validation failed": [
+        "Erro na validação do evento"
+      ],
+      "Floating times not supported": [
+        "Tempos flutuantes não suportados"
+      ],
+      "Malformed all-day event": [
+        "Evento de dia inteiro mal formado"
+      ],
+      "Malformed end time": [
+        "A hora de término não é válida."
+      ],
+      "Malformed recurring event": [
+        "Evento recorrente mal formado"
+      ],
+      "Malformed start time": [
+        "A hora de início não é válida."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Somente escala de calendário Gregoriano é permitido"
+      ],
+      "Recurring event has no occurrences": [
+        "Evento recorrente sem datas"
+      ],
+      "Recurring rule not supported": [
+        "Regra recorrente não suportada"
+      ],
+      "Start time out of bounds": [
+        "Hora de início fora dos limites"
+      ],
+      "Time zone not supported": [
+        "Fuso horário não suportado"
       ]
     }
   }

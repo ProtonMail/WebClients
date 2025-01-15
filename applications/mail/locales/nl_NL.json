@@ -1414,6 +1414,21 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "About hide-my-email aliases": [
+        "Over hide-my-email aliassen"
+      ],
+      "Add account": [
+        "Account toevoegen"
+      ],
+      "Export selection as .vcf": [
+        "Exporteer selectie als .vcf"
+      ],
+      "More actions": [
+        "Meer acties"
+      ],
+      "Sign out of all accounts": [
+        "Alle accounts uitloggen"
       ]
     },
     "action": {
@@ -3728,6 +3743,10 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "Van: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nieuw bericht",
+        "${ notificationsToShow.length } nieuwe berichten"
       ]
     },
     "Desktop notification title": {
@@ -4722,6 +4741,9 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
+      ],
+      "Time zone component ignored": [
+        "Tijdzone component genegeerd"
       ]
     },
     "Error message": {
@@ -5616,6 +5638,12 @@
       ],
       "Your password is correct.": [
         "Uw wachtwoord is juist."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uw app-wachtwoord is juist. Gebruik uw gebruikelijke wachtwoord niet."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik niet uw gebruikelijke wachtwoord."
       ]
     },
     "Import ICS file from Mail": {
@@ -7708,6 +7736,52 @@
       ],
       "Your private writing assistant": [
         "Uw privé schrijfhulp"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Doe mee aan het ${ PROTON_SENTINEL_NAME } programma voor onze hoogste niveau van gebruikersveiligheid en ondersteuning."
+      ],
+      "Member": [
+        "Lid"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met hide-my-email aliassen."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
+      ],
+      "Switch to": [
+        "Wissel naar"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Dit bericht komt van een ${ PASS_APP_NAME } alias."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Om beperkingen op te heffen, kunt u upgraden naar een betaald abonnement."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Om beperkingen op te heffen, kunt u ${ mailLink } bezoeken en upgraden naar een betaald abonnement."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "We hebben plannen speciaal ontworpen voor gebruikers zoals u die meer dan één e-mailadres nodig hebben."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ]
     },
     "info": {
@@ -8534,6 +8608,9 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
+      ],
+      "Remove metadata": [
+        "Metadata verwijderen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10236,6 +10313,24 @@
       ],
       "Where privacy is default.": [
         "Waar privacy standaard is."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } in de App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } in de Play Store"
+      ],
+      "Anytime, anywhere access": [
+        "Altijd en overal toegankelijk"
+      ],
+      "Distraction-free emailing": [
+        "E-mailen zonder afleiding"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Geniet van een snellere, doelgerichte e-mailervaring met de desktop app."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Voor altijd toegang tot e-mail en geoptimaliseerde mobiele ervaring, download onze ${ mobileAppAppStoreLink } of ${ mobileAppGooglePlayLink }-app."
       ]
     },
     "Onboarding Proton": {
@@ -13319,6 +13414,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Are you sure?": [
+        "Weet u het zeker?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13404,6 +13502,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dit zorgt ervoor dat niemand locatie, apparaat en andere informatie kan zien die kan worden gebruikt om u te identificeren of te volgen."
       ]
     },
     "tooltip": {
@@ -13904,6 +14005,55 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Onverwachte fout"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Agenda-tijdzone niet ondersteund"
+      ],
+      "Edited event not supported": [
+        "Bewerkte afspraak niet ondersteund"
+      ],
+      "End time out of bounds": [
+        "Eindtijd valt buiten de grenzen"
+      ],
+      "Event validation failed": [
+        "Validatie van afspraak mislukt"
+      ],
+      "Floating times not supported": [
+        "Zwevende tijden niet ondersteund"
+      ],
+      "Malformed all-day event": [
+        "Misvormde afspraak gedurende de hele dag"
+      ],
+      "Malformed end time": [
+        "Misvormde eindtijd"
+      ],
+      "Malformed recurring event": [
+        "Misvormde periodieke afspraak"
+      ],
+      "Malformed start time": [
+        "Misvormde begintijd"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Alleen de Gregoriaanse agendaschaal is toegestaan"
+      ],
+      "Recurring event has no occurrences": [
+        "Terugkerende afspraak heeft geen voorvallen"
+      ],
+      "Recurring rule not supported": [
+        "Herhalingsvoorwaarde niet ondersteund"
+      ],
+      "Start time out of bounds": [
+        "Begintijd valt buiten de grenzen"
+      ],
+      "Time zone not supported": [
+        "Tijdzone niet ondersteund"
       ]
     }
   }

@@ -14,19 +14,19 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
@@ -974,7 +974,7 @@
         "Remplacer"
       ],
       "Replaces the selected text in your message": [
-        "Remplacer le texte sélectionné dans votre message."
+        "Remplace le texte sélectionné dans votre message"
       ],
       "Reply": [
         "Répondre"
@@ -1423,6 +1423,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add account": [
+        "Ajouter un compte"
+      ],
+      "Sign out of all accounts": [
+        "Se déconnecter de tous les comptes"
       ]
     },
     "action": {
@@ -4735,6 +4741,9 @@
       ],
       "Unsupported event": [
         "L'événement n'est pas pris en charge."
+      ],
+      "Time zone component ignored": [
+        "Le composant de fuseau horaire a été ignoré."
       ]
     },
     "Error message": {
@@ -5628,7 +5637,7 @@
         "Votre compte de messagerie en nécessite un pour exporter vos données."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "Votre adresse email et le mot de passe de l'application sont corrects. N'utilisez pas votre mot de passe habituel."
+        "Votre adresse e-mail et le mot de passe de l'application sont corrects. N'utilisez pas votre mot de passe habituel."
       ],
       "Your email address and password are correct.": [
         "Votre adresse e-mail et votre mot de passe sont corrects."
@@ -6916,7 +6925,7 @@
         "Relire le texte"
       ],
       "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou les spammeurs avec alias « hide-my-email »."
+        "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou des spammeurs avec les alias « hide-my-email »."
       ],
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
@@ -7025,7 +7034,7 @@
         "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }.</a>"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Les paiements via SEPA ne sont pas disponibles pour l''instant. Réessayez ultérieurement."
+        "Les paiements via SEPA ne sont pas disponibles pour l'instant. Réessayez ultérieurement."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -7761,6 +7770,18 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Rejoignez le programme ${ PROTON_SENTINEL_NAME } pour bénéficier de notre plus haut niveau de sécurité et de support."
+      ],
+      "Member": [
+        "Membre"
+      ],
+      "Switch to": [
+        "Basculer vers"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ]
     },
     "info": {
@@ -9721,6 +9742,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "200 GB of storage": [
+        "200 Go d'espace de stockage"
+      ],
+      "Private photo backup": [
+        "Sauvegarde de photos privée"
+      ],
+      "Secure file storage and sharing": [
+        "Stockage et partage sécurisés des fichiers"
       ]
     },
     "new_plans: feature highlight": {
@@ -10310,6 +10340,18 @@
       ],
       "Where privacy is default.": [
         "La confidentialité par défaut"
+      ],
+      "Discover ${ MAIL_APP_NAME }": [
+        "Découvrez ${ MAIL_APP_NAME }"
+      ],
+      "You are all set!": [
+        "Et voilà !"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Votre domaine ${ domain } et votre abonnement ${ subscriptionName } sont prêts à être utilisés."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Votre domaine et votre abonnement sont prêts à être utilisés."
       ]
     },
     "Onboarding Proton": {
@@ -10985,13 +11027,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers. ${ learnMoreLink }"
@@ -11560,7 +11602,7 @@
         "Il s'agit désormais de votre adresse par défaut. Ouvrez le menu déroulant pour envoyer des messages à partir d'une autre adresse. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Activez la ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
+        "Activez l'option ${ DARK_WEB_MONITORING_NAME } pour recevoir des notifications si vos données ont été divulguées par un service tiers."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
@@ -13393,6 +13435,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Are you sure?": [
+        "Êtes-vous sûr ?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13981,6 +14026,55 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Erreur inattendue"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Le fuseau horaire du calendrier n'est pas pris en charge."
+      ],
+      "Edited event not supported": [
+        "L'événement modifié n'est pas pris en charge."
+      ],
+      "End time out of bounds": [
+        "L'heure de fin est hors limites."
+      ],
+      "Event validation failed": [
+        "L'événement n'a pas pu être validé."
+      ],
+      "Floating times not supported": [
+        "Les heures variables ne sont pas prises en charge."
+      ],
+      "Malformed all-day event": [
+        "L'événement pour la journée entière est mal formaté."
+      ],
+      "Malformed end time": [
+        "L'heure de fin est mal formatée."
+      ],
+      "Malformed recurring event": [
+        "L'événement récurrent est mal formaté."
+      ],
+      "Malformed start time": [
+        "L'heure de début est mal formatée."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Seule l'échelle du calendrier grégorien est autorisée."
+      ],
+      "Recurring event has no occurrences": [
+        "L'événement récurrent n'a pas d'occurrences."
+      ],
+      "Recurring rule not supported": [
+        "La règle de répétition n'est pas prise en charge."
+      ],
+      "Start time out of bounds": [
+        "L'heure de départ est hors limites."
+      ],
+      "Time zone not supported": [
+        "Le fuseau horaire n'est pas pris en charge."
       ]
     }
   }

@@ -1424,6 +1424,21 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "About hide-my-email aliases": [
+        "O aliasach hide-my-email"
+      ],
+      "Add account": [
+        "Dodaj konto"
+      ],
+      "Export selection as .vcf": [
+        "Eksportuj selekcję jako .vcf"
+      ],
+      "More actions": [
+        "Więcej akcji"
+      ],
+      "Sign out of all accounts": [
+        "Wyloguj się ze wszystkich kont"
       ]
     },
     "action": {
@@ -3761,6 +3776,12 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "Od: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nowa wiadomość",
+        "${ notificationsToShow.length } nowych wiadomości",
+        "${ notificationsToShow.length } nowych wiadomości",
+        "${ notificationsToShow.length } nowych wiadomości"
       ]
     },
     "Desktop notification title": {
@@ -5709,6 +5730,12 @@
       ],
       "Your password is correct.": [
         "Hasło jest prawidłowe."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Hasło aplikacji jest prawidłowe. Nie używaj swojego zwykłego hasła."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adres e-mail i hasło aplikacji są prawidłowe. Nie używaj swojego zwykłego hasła."
       ]
     },
     "Import ICS file from Mail": {
@@ -7963,6 +7990,33 @@
       ],
       "Your private writing assistant": [
         "Twój prywatny asystent pisania"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Utwórz bezpieczną chmurę dla ${ value } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Dołącz do programu ${ PROTON_SENTINEL_NAME }, aby uzyskać najwyższy poziom bezpieczeństwa konta i wsparcia."
+      ],
+      "Member": [
+        "Użytkownik"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+      ],
+      "Switch to": [
+        "Przełącz na konto"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ta czynność spowoduje wylogowanie ze wszystkich kont."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Aby usunąć ograniczenia, można przejść na płatny plan."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Aby usunąć ograniczenia, można odwiedzić stronę ${ mailLink } i wykupić płatny plan."
       ]
     },
     "info": {
@@ -8801,6 +8855,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Remove metadata": [
+        "Usuń metadane"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10571,6 +10628,12 @@
       ],
       "Where privacy is default.": [
         "Gdzie prywatność jest domyślna."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } na App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } na Google Play"
       ]
     },
     "Onboarding Proton": {
@@ -10824,6 +10887,15 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
       ]
     },
     "Payments.Error": {
@@ -13815,6 +13887,9 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Are you sure?": [
+        "Czy na pewno?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13900,6 +13975,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dzięki temu nikt nie może zobaczyć lokalizacji, urządzenia i innych informacji, które mogłyby zostać wykorzystane do identyfikacji lub śledzenia użytkownika."
       ]
     },
     "tooltip": {
@@ -14484,6 +14562,40 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Niespodziewany błąd"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Strefa czasowa kalendarza nie jest obsługiwana"
+      ],
+      "Edited event not supported": [
+        "Edytowane wydarzenie nie jest obsługiwane"
+      ],
+      "End time out of bounds": [
+        "Czas zakończenia jest poza zakresem"
+      ],
+      "Event validation failed": [
+        "Weryfikacja wydarzenia nie powiodła się"
+      ],
+      "Malformed end time": [
+        "Czas zakończenia posiada nieprawidłowy format"
+      ],
+      "Malformed recurring event": [
+        "Wydarzenie cykliczne posiada nieprawidłowy format"
+      ],
+      "Malformed start time": [
+        "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Start time out of bounds": [
+        "Czas rozpoczęcia jest poza zakresem"
+      ],
+      "Time zone not supported": [
+        "Strefa czasowa nie jest obsługiwana"
       ]
     }
   }

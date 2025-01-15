@@ -1409,6 +1409,21 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "About hide-my-email aliases": [
+        "hide-my-email 별칭에 관하여"
+      ],
+      "Add account": [
+        "계정 추가"
+      ],
+      "Export selection as .vcf": [
+        "선택한 항목을 .vcf로 내보내기"
+      ],
+      "More actions": [
+        "더 많은 액션"
+      ],
+      "Sign out of all accounts": [
+        "모든 계정 로그아웃"
       ]
     },
     "action": {
@@ -1466,7 +1481,7 @@
         "사용자당 ${ price }"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } 글쓰기 도우미 이용 권한"
+        "${ seats }명 글쓰기 도우미 이용 권한"
       ],
       "${ users } user": [
         "${ users }명 사용자"
@@ -4473,7 +4488,7 @@
         "사용자 이름은 문자로 시작하여야 합니다."
       ],
       "Wrong second password": [
-        "이중 비밀번호가 옳지 않습니다."
+        "2차 비밀번호 모드가 알맞지 않습니다"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -4693,6 +4708,9 @@
       ],
       "Unsupported event": [
         "지원되지 않는 이벤트"
+      ],
+      "Time zone component ignored": [
+        "시간대 구성 무시됨"
       ]
     },
     "Error message": {
@@ -5571,6 +5589,12 @@
       ],
       "Your password is correct.": [
         "사용자의 비밀번호가 알맞습니다."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "이메일 주소 및 앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
       ]
     },
     "Import ICS file from Mail": {
@@ -5703,7 +5727,7 @@
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }의 암호화 기술은 그 누구도 당신의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
+        "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개 새 달력"
@@ -7278,7 +7302,7 @@
         "사용자"
       ],
       "Verification may take a few minutes.": [
-        "인증은 몇 분이 걸릴 수 있습니다."
+        "인증에 몇 분이 소요될 수 있습니다."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
@@ -7582,6 +7606,51 @@
       ],
       "Your private writing assistant": [
         "나만의 개인 글쓰기 도우미"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "${ PROTON_SENTINEL_NAME } 프로그램에 가입하여 최고 수준의 계정 보안과 지원을 받으세요."
+      ],
+      "Member": [
+        "회원"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Hide-my-email 별칭으로 이메일이 메일링 리스트나 스팸 발송자에게 유출되지 않도록 보호하세요."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
+      ],
+      "Switch to": [
+        "다음으로 전환:"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "이 메시지는 ${ PASS_APP_NAME } 별칭에서 전송되었습니다."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "제한을 해제하기 위해 유료 플랜 업그레이드가 가능합니다."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "제한 해제를 위해, ${ mailLink }에 방문하여 유료 플랜 업그레이드가 가능합니다."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "하나 이상의 이메일 주소가 필요한 회원님과 같은 사용자를 위해 특별히 설계된 플랜이 존재합니다."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
       ]
     },
     "info": {
@@ -8402,6 +8471,9 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Remove metadata": [
+        "메타데이터 제거하기"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10070,6 +10142,24 @@
       ],
       "Where privacy is default.": [
         "프라이버시가 기본인 곳."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store에서 ${ MAIL_APP_NAME } 받기"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store에서 ${ MAIL_APP_NAME } 받기"
+      ],
+      "Anytime, anywhere access": [
+        "언제 어디서나 접근하기"
+      ],
+      "Distraction-free emailing": [
+        "방해 없는 이메일"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "데스크톱 앱으로 더 빠르고 집중된 이메일 경험을 경험하세요."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ mobileAppAppStoreLink } 또는 ${ mobileAppGooglePlayLink } 앱을 다운로드하세요."
       ]
     },
     "Onboarding Proton": {
@@ -12077,7 +12167,7 @@
         "비밀번호 복사됨"
       ],
       "Payment method added": [
-        "결제 방법이 추가 됨"
+        "결제 수단이 추가되었습니다."
       ],
       "Payment method updated": [
         "결제 방법이 업데이트 됨"
@@ -12155,7 +12245,7 @@
         "매월"
       ],
       "per user per month": [
-        "사용자당 월별"
+        "매월 사용자당"
       ]
     },
     "summer2023: Tooltip": {
@@ -12587,7 +12677,7 @@
         "메시지 컨텐츠 검색 활성화"
       ],
       "Enter 2FA code": [
-        "2FA 코드 입력"
+        "2단계 인증 코드 입력"
       ],
       "Enter your password": [
         "비밀번호를 입력하세요"
@@ -13068,6 +13158,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Are you sure?": [
+        "확실하신가요?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13153,6 +13246,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "그 누구도 사용자를 식별하거나 추적하는 데 사용될 수 있는 위치, 장치 및 기타 정보를 볼 수 없습니다."
       ]
     },
     "tooltip": {
@@ -13611,6 +13707,55 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "예기치 않은 오류"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "캘린더 시간대가 지원되지 않음"
+      ],
+      "Edited event not supported": [
+        "편집된 이벤트 지원되지 않음"
+      ],
+      "End time out of bounds": [
+        "범위를 벗어난 종료 시간"
+      ],
+      "Event validation failed": [
+        "이벤트이벤트 검증 실패"
+      ],
+      "Floating times not supported": [
+        "유동 시간 지원되지 않음"
+      ],
+      "Malformed all-day event": [
+        "잘못된 상시 이벤트"
+      ],
+      "Malformed end time": [
+        "잘못된 종료 시간"
+      ],
+      "Malformed recurring event": [
+        "잘못된 반복 이벤트"
+      ],
+      "Malformed start time": [
+        "잘못된 시작 시간"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "그레고리력 척도만 허용됩니다."
+      ],
+      "Recurring event has no occurrences": [
+        "반복되는 이벤트가 존재하지 않습니다"
+      ],
+      "Recurring rule not supported": [
+        "반복 규칙이 지원되지 않음"
+      ],
+      "Start time out of bounds": [
+        "범위를 벗어난 시작 시간"
+      ],
+      "Time zone not supported": [
+        "시간대 지원되지 않음"
       ]
     }
   }

@@ -1417,6 +1417,21 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "About hide-my-email aliases": [
+        "Om hide-my-email-alias"
+      ],
+      "Add account": [
+        "Lägg till konto"
+      ],
+      "Export selection as .vcf": [
+        "Exportera val som .vcf"
+      ],
+      "More actions": [
+        "Fler åtgärder"
+      ],
+      "Sign out of all accounts": [
+        "Logga ut från alla konton"
       ]
     },
     "action": {
@@ -4732,6 +4747,9 @@
       ],
       "Unsupported event": [
         "Händelse stöds inte"
+      ],
+      "Time zone component ignored": [
+        "Tidszonskomponent ignorerad"
       ]
     },
     "Error message": {
@@ -5637,6 +5655,12 @@
       ],
       "Your password is correct.": [
         "Ditt lösenord är korrekt."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Din e-postadress och ditt applösenord är korrekt. Använd inte ditt vanliga lösenord."
       ]
     },
     "Import ICS file from Mail": {
@@ -6801,7 +6825,7 @@
         "Betalningar skyddas med TLS-kryptering och schweiziska integritetslagar."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline är endast kompatibelt med oformaterad text."
+        "PGP/Inline är endast kompatibelt med oformaterat textformat."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
@@ -7732,6 +7756,52 @@
       ],
       "Your private writing assistant": [
         "Din privata skrivassistent"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Skapa ett säkert moln för ${ value } medlem",
+        "Skapa ett säkert moln för ${ value } medlemmar"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Gå med i ${ PROTON_SENTINEL_NAME }-programmet för vår högsta nivå av kontosäkerhet och support."
+      ],
+      "Member": [
+        "Medlem"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Skydda din e-post från att läcka ut till e-postlistor eller skräppostare med hide-my-email-alias."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
+      ],
+      "Switch to": [
+        "Byt till"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Detta meddelande är från ett ${ PASS_APP_NAME }-alias."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "För att ta bort restriktionerna kan du uppgradera till ett betalt paket."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "För att ta bort restriktionerna kan du besöka ${ mailLink } och uppgradera till ett betalt paket."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Vi har paket designade specifikt för användare som dig som behöver mer än en e-postadress."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas var ${ cycle }:e månad."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ]
     },
     "info": {
@@ -8564,6 +8634,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Remove metadata": [
+        "Ta bort metadata"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10269,6 +10342,24 @@
       ],
       "Where privacy is default.": [
         "Där integritet är standard."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } på App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } på Play Butik"
+      ],
+      "Anytime, anywhere access": [
+        "Åtkomst när som helst, var som helst"
+      ],
+      "Distraction-free emailing": [
+        "Distraktionsfritt e-postande"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Njut av en snabbare, fokuserad e-postupplevelse med skrivbordsappen."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "För åtkomst när som helst till e-post och en optimerad mobil upplevelse ladda ner vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
       ]
     },
     "Onboarding Proton": {
@@ -11398,7 +11489,7 @@
         "Säker streaming"
       ],
       "Support online privacy": [
-        "Stöd onlineintegritet"
+        "Stöd integritet online"
       ]
     },
     "specialoffer: Footer": {
@@ -11744,7 +11835,7 @@
         "Logga bara in på ditt Apple App Store-konto och välj sedan ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Logga bara in på ditt Play Store-konto och tryck sedan på ${ subscriptions }"
+        "Logga bara in på ditt Play Butik-konto och tryck sedan på ${ subscriptions }"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Hantera din prenumeration på ${ subscriptionManager }"
@@ -11753,7 +11844,7 @@
         "Prenumeration"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Ditt paket köptes med en Android-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Google Play Store."
+        "Ditt paket köptes med en Android-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Google Play Butik."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ditt paket köptes med en iOS-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Apple App Store."
@@ -13358,6 +13449,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Are you sure?": [
+        "Är du säker?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13443,6 +13537,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Detta säkerställer att ingen kan se plats, enhet och annan information som kan användas för att identifiera eller spåra dig."
       ]
     },
     "tooltip": {
@@ -13943,6 +14040,55 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Oväntat fel"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenderns tidszon stöds inte"
+      ],
+      "Edited event not supported": [
+        "Redigerad händelse stöds inte"
+      ],
+      "End time out of bounds": [
+        "Sluttid utanför gränserna"
+      ],
+      "Event validation failed": [
+        "Validering av händelse misslyckades"
+      ],
+      "Floating times not supported": [
+        "Flytande tider stöds inte"
+      ],
+      "Malformed all-day event": [
+        "Felaktig heldagshändelse"
+      ],
+      "Malformed end time": [
+        "Felaktig sluttid"
+      ],
+      "Malformed recurring event": [
+        "Felaktig återkommande händelse"
+      ],
+      "Malformed start time": [
+        "Felaktig starttid"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Endast den Gregorianska kalenderskalan är tillåten"
+      ],
+      "Recurring event has no occurrences": [
+        "Återkommande händelse har inga förekomster"
+      ],
+      "Recurring rule not supported": [
+        "Återkommande regel stöds inte"
+      ],
+      "Start time out of bounds": [
+        "Starttid utanför gränserna"
+      ],
+      "Time zone not supported": [
+        "Tidszon stöds inte"
       ]
     }
   }

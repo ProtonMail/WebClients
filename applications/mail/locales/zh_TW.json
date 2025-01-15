@@ -1409,6 +1409,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "About hide-my-email aliases": [
+        "關於 hide-my-email 別名"
+      ],
+      "Export selection as .vcf": [
+        "以.vcf匯出選項"
+      ],
+      "More actions": [
+        "更多選項"
+      ],
+      "Sign out of all accounts": [
+        "登出所有帳號"
       ]
     },
     "action": {
@@ -1559,6 +1571,9 @@
       ],
       "Securely run on device": [
         "於裝置安全執行"
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "無日誌可以保護您的隱私；還有更快的速度。"
       ]
     },
     "Assistant toggle": {
@@ -1896,6 +1911,12 @@
       ],
       "Continue your subscription": [
         "繼續您的訂閱"
+      ],
+      "Change email address settings": [
+        "變更電子郵件地址設定"
+      ],
+      "Continue": [
+        "繼續"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3650,6 +3671,27 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME }24/7保護您的帳號包含躲避安全專家的可疑活動。"
+      ],
+      "Also included": [
+        "並包含"
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "不想現在寄出電子郵件？將它放入排程可以在對的時間點寄出。"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "取得通知當您的密碼或其他資料在第三方服務中洩漏。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，且聯絡人數不超過 ${ MAX_IMPORT_CONTACTS_STRING }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "升級至${ activatePmUser }以取得更短更好記的電子郵件地址並增加於現有的。"
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "使用聯絡人群組，您可以一件寄出電子郵件給群組中的所有人。"
       ]
     },
     "description": {
@@ -3668,6 +3710,9 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "來自：${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } 封新郵件"
       ]
     },
     "Desktop notification title": {
@@ -4841,6 +4886,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5246,6 +5294,9 @@
       ],
       "You've unlocked 1 GB": [
         "您解鎖1GB"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "在 ${ daysCount } 日內完成以下項目可以免費將儲存空間翻倍。"
       ]
     },
     "Gmail forwarding": {
@@ -7502,6 +7553,60 @@
       ],
       "Your private writing assistant": [
         "您私人的撰寫幫手"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "替成員創建一個安全${ value }雲端"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "加入${ PROTON_SENTINEL_NAME }方案以堤升至最高帳號安全及支援。"
+      ],
+      "Member": [
+        "成員"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "防止您的郵件位址外洩到郵件清單或垃圾郵件發送者手上，使用 hide-my-email別名。"
+      ],
+      "Registering your subscription...": [
+        "正在註冊您的訂閱..."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 付款目前不可用。請稍後再試。"
+      ],
+      "Switch to": [
+        "切換至"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "此訊息來自於${ PASS_APP_NAME }的別名。"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "這麼做會把您所有已登入的帳號登出。"
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "若要移除限制，您可升級至付費方案。"
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "若要移除限制，您可瀏覽${ mailLink }並升級至付費方案。"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "關閉「搜尋郵件內容」後，僅搜尋日期、名稱、電子郵件地址或主旨。若要停用郵件內容搜尋功能（以及刪除已為了此功能而下載的郵件內容），請至設定。"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "我們有針對像您一樣需要多個電子郵件地址的使用者設計的方案。"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "您的 ${ PASS_SHORT_APP_NAME } Plus 訂閱方案將被轉換成 ${ PASS_SHORT_APP_NAME } 終身方案。原訂閱中剩餘的額度將被退回您的帳戶。${ PASS_SHORT_APP_NAME } 終身方案不再需要續約，此次付費將能終身使用 ${ PASS_SHORT_APP_NAME }。"
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "您的方案開始於${ renewalTime }及於每月重新開始。"
       ]
     },
     "info": {
@@ -8322,6 +8427,9 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Remove metadata": [
+        "移除中繼資料"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9420,6 +9528,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "進階別功能(由SimpleLogin驅動)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9705,6 +9816,33 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "您可有多於一位管理員。所有管理員可新增並管理使用者，惟僅限主要管理員可控制繳款單管理。"
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：透過加密的雲端儲存保護檔案。包含自動同步、加密的檔案共享、及更多。"
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "別名自訂網域,額外電子郵件信箱,從別名傳送電子郵件的功能,即其他"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "具有專用多組 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "終身存取${ PASS_APP_NAME }+SimpleLogin頂級功能。"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 20 位或以上使用者的客戶提供電話支援"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "透過別名(轉寄至您的收件匣的隨機生成的電子郵件地址)保護您真的電子郵件地址免於洩漏"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "一按即可把您的網際網路流量繞經 Tor 網路"
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "與任何人安全地共享單獨項目(就算他們沒有使用${ PASS_APP_NAME })"
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "查看可參與會議的人員並儲存會議計畫"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9802,6 +9940,12 @@
       ],
       "Trial started": [
         "試用開始"
+      ],
+      "Meeting host copied to clipboard": [
+        "會議主持已複製到剪貼簿"
+      ],
+      "Meeting ID copied to clipboard": [
+        "會議ID已複製到剪貼簿"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9890,6 +10034,18 @@
       ],
       "Where privacy is default.": [
         "隱私是預設的。"
+      ],
+      "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
+        "${ advancedEncryptionTitle } 可以確保僅由您與預期中的收件人可以看到您的電子郵件。"
+      ],
+      "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
+        "${ industryLeadingSpamProtectionTitle }避免詐騙電子郵件達到您的收件匣。"
+      ],
+      "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
+        "${ protectionFromTrackersTitle }避免於網路上被跟蹤。"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "開始使用更短、更好記的電子郵件地址。"
       ]
     },
     "Onboarding Proton": {
@@ -11080,6 +11236,12 @@
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "此為您的預設電子郵件地址。使用下拉選單可以從不同的電子郵件地址寄信。 "
+      ],
+      "Your pm.me email is active": [
+        "您的 pm.me 郵件位置已經啟用"
       ]
     },
     "sso": {
@@ -12761,6 +12923,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Are you sure?": [
+        "您確定嗎？"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12856,6 +13021,9 @@
     "Tor out of date": {
       "stable release": [
         "穩定版本"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的 Tor 瀏覽器已經不被支援。請更新到最新版 ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13055,6 +13223,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"
+      ],
+      "Name is required": [
+        "名稱為必填"
       ]
     },
     "WeekDay": {
@@ -13292,6 +13463,60 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "異常的錯誤"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "不支援行事曆的時區"
+      ],
+      "Edited event not supported": [
+        "不支援已編輯的事件"
+      ],
+      "End time out of bounds": [
+        "結束時間超出限制"
+      ],
+      "Event validation failed": [
+        "事件驗證失敗"
+      ],
+      "Floating times not supported": [
+        "不支援浮動時間"
+      ],
+      "Malformed all-day event": [
+        "全日事件格式有誤"
+      ],
+      "Malformed end time": [
+        "結束時間格式有誤"
+      ],
+      "Malformed recurring event": [
+        "週期性事件格式有誤"
+      ],
+      "Malformed start time": [
+        "開始時間格式有誤"
+      ],
+      "Recurring event has no occurrences": [
+        "未發生重複事件"
+      ],
+      "Recurring rule not supported": [
+        "不支援週期性規則"
+      ],
+      "Start time out of bounds": [
+        "開始時間超出限制"
+      ],
+      "Time zone not supported": [
+        "不支援的時區"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ priceCoupon }": [
+        "使用${ priceCoupon }取得Mail Plus"
+      ],
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceMailPlus } 月的價格自動續約。您可以在任何時候取消訂閱。"
       ]
     }
   }

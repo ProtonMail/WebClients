@@ -1414,6 +1414,21 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "About hide-my-email aliases": [
+        "hide-my-email-ის ფსევდონიმების შესახებ"
+      ],
+      "Add account": [
+        "ანგარიშის დამატება"
+      ],
+      "Export selection as .vcf": [
+        "მონიშნულის გატანა .vcf ფაილში"
+      ],
+      "More actions": [
+        "მეტი ქმედება"
+      ],
+      "Sign out of all accounts": [
+        "ყველა ანგარიშიდან გამოსვლა"
       ]
     },
     "action": {
@@ -3715,6 +3730,10 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "გამომგზავნელი: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } ახალიშეტყობინება",
+        "${ notificationsToShow.length } ახალიშეტყობინება"
       ]
     },
     "Desktop notification title": {
@@ -4709,6 +4728,9 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ],
+      "Time zone component ignored": [
+        "დროის სარტყლის კომპონენტი გამოტოვებულია"
       ]
     },
     "Error message": {
@@ -5603,6 +5625,12 @@
       ],
       "Your password is correct.": [
         "პაროლი სწორია."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. არ გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
       ]
     },
     "Import ICS file from Mail": {
@@ -7686,6 +7714,52 @@
       ],
       "Your private writing assistant": [
         "თქვენი პირადი წერის დამხმარე"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "შეუერთდით ${ PROTON_SENTINEL_NAME } პროგრამას ჩვენი უმაღლესი დონის ანგარიშის უსაფრთხოებისა და მხარდაჭერისთვის."
+      ],
+      "Member": [
+        "წევრი"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "დაიცავით თქვენი ელფოსტა გაჟონვისგან და სპამერებისგან hide-my-email-ის ფსევდონიმებით."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
+      ],
+      "Switch to": [
+        "გადართვა"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "ეს შეტყობინება ${ PASS_APP_NAME } ფსევდონიმიდანაა."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "შეზღუდვების მოსაცილებლად, შეგიძლიათ, ტარიფი ფასიანზე ასწიოთ."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "იმისათვის, რომ მოიხსნად შეზღუდვები, ეწვიეთ ბმულს ${ mailLink } და გადადით ფასიან ტარიფზე."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "ჩვენ გვაქვს გეგმები, რომლებიც აწყობილია ზუსტად თქვენნაირი მომხმარებლებისთვის, ვისაც ერთზე მეტი ელფოსტის მისამართი სჭირდება."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
       ]
     },
     "info": {
@@ -8512,6 +8586,9 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "Remove metadata": [
+        "მეტამონაცემების წაშლა"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9999,6 +10076,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "შეგიძლიათ გყავდეთ ერთზე მეტი ადმინისტრატორი. სხვა ადმინისტრატორებს შეუძლიათ, მომხმარებლების დამატება და მართვა, მაგრამ გადახდებზე კონტროლი, მხოლოდ, ძირითადი ადმინისტრატრის ხელშია."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "ორგანიზაციის მართვის ხელსაწყო, რომელიც საშუალებას აძლევს ადმინისტრატორებს დაამატონ და წაშალონ მომხმარებლები, მართონ მათი წვდომა ${ BRAND_NAME }-ის სერვისებზე და სხვა."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10208,6 +10288,21 @@
       ],
       "Where privacy is default.": [
         "სადაც კონფიდენციალობა ნაგულისხმევია"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME }-ი App Store-ში"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME }-ი Play Store-ში"
+      ],
+      "Anytime, anywhere access": [
+        "წვდომა ნებისმიერ დროს და ადგილიდან"
+      ],
+      "Distraction-free emailing": [
+        "ელფოსტასთან ხელის შეშლის გარეშე მუშაობა"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "ისიამოვნეთ სწრაფი ელფოსტით პირდაპირ სამუშაო მაგიდიდან."
       ]
     },
     "Onboarding Proton": {
@@ -13279,6 +13374,9 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Are you sure?": [
+        "დარწმუნებული ბრძანდებით?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13364,6 +13462,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "ეს გარანტიას იძლევა, რომ არავის შეუძლია დაინახოს მდებარეობა, მოწყობილობა და სხვა ინფორმაცია, რომელიც თქვენი იდენტიფიკაციისთვის და თვალყურის დევნებისთვისაა საჭირო."
       ]
     },
     "tooltip": {
@@ -13864,6 +13965,55 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "გაუთვალისწინებელი შეცდომა"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "კალენდრის დროის სარტყელი მხარდაუჭერელია"
+      ],
+      "Edited event not supported": [
+        "ჩასწორებული მოვლენა მხარდაჭერილი არაა"
+      ],
+      "End time out of bounds": [
+        "დასრულების დრო საზღვრებს მიღმაა"
+      ],
+      "Event validation failed": [
+        "მოვლენის შემოწმების შეცდომა"
+      ],
+      "Floating times not supported": [
+        "მცოცავი გრაფიკი მხარდაჭერილი არაა"
+      ],
+      "Malformed all-day event": [
+        "არასწორი მთელ-დღიანი მოვლენა"
+      ],
+      "Malformed end time": [
+        "არასწორი დასასრულის დრო"
+      ],
+      "Malformed recurring event": [
+        "არასწორი გამეორებადი მოვლენა"
+      ],
+      "Malformed start time": [
+        "არასწორი საწყისი დრო"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "დაშვებულია, მხოლოდ, გრეგორიანული კალენდარი"
+      ],
+      "Recurring event has no occurrences": [
+        "განმეორებადი მოვლენა ჯერ არ მომხდარა"
+      ],
+      "Recurring rule not supported": [
+        "გამეორების წესი მხარდაუჭერელია"
+      ],
+      "Start time out of bounds": [
+        "საწყისი დრო საზღვრებს მიღმაა"
+      ],
+      "Time zone not supported": [
+        "მხარდაუჭერელი დროის სარტყელი"
       ]
     }
   }

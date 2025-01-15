@@ -1414,6 +1414,21 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "About hide-my-email aliases": [
+        "Tietoa Hide-my-email-aliaksista"
+      ],
+      "Add account": [
+        "Lisää tili"
+      ],
+      "Export selection as .vcf": [
+        "Vie valinta .vcf-tiedostona"
+      ],
+      "More actions": [
+        "Lisää toimintoja"
+      ],
+      "Sign out of all accounts": [
+        "Kirjaa kaikki tilit ulos"
       ]
     },
     "action": {
@@ -3728,6 +3743,10 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "Lähettäjä: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } uusi viesti",
+        "${ notificationsToShow.length } uutta viestiä"
       ]
     },
     "Desktop notification title": {
@@ -5616,6 +5635,12 @@
       ],
       "Your password is correct.": [
         "Salasanasi on oikein."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Sovellussalasanasi on oikein. Älä käytä normaalia salasanaasi."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Sähköpostiosoitteesi ja sovellussalasanasi ovat oikein. Älä käytä normaalia salasanaasi."
       ]
     },
     "Import ICS file from Mail": {
@@ -5956,7 +5981,7 @@
         "**${ elementsFoundCount }** tulosta kohteesta ${ labelName }"
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } tallennustilaetua"
+        "+${ bonusSpace } lisätallennustilaa"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
@@ -7708,6 +7733,31 @@
       ],
       "Your private writing assistant": [
         "Yksityinen kirjoittamisen avustajasi"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Luo suojattu pilvi ${ value } jäsenelle",
+        "Luo suojattu pilvi ${ value } jäsenelle"
+      ],
+      "Member": [
+        "Jäsen"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-maksut eivät ole käytettävissä tällä hetkellä. Yritä myöhemmin uudelleen."
+      ],
+      "Switch to": [
+        "Vaihda"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Tämä viesti on ${ PASS_APP_NAME }-aliakselta."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Poista rajoitukset päivittämällä maksulliseen tilaukseen."
       ]
     },
     "info": {
@@ -8534,6 +8584,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Remove metadata": [
+        "Poista metatiedot"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10236,6 +10289,12 @@
       ],
       "Where privacy is default.": [
         "Missä yksityisyys on olennaista."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } App Storessa"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } Play Kaupassa"
       ]
     },
     "Onboarding Proton": {
@@ -11986,7 +12045,7 @@
         "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
       "Yearly free storage bonuses": [
-        "Vuotuiset ilmaiset tallennustilakorotukset"
+        "Ilmaista lisätallennustilaa vuosittain"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink }"
@@ -13319,6 +13378,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Are you sure?": [
+        "Oletko varma?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13352,7 +13414,7 @@
         "Muokkaa tunnisteiden nimiä"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Sähköpostin salaus pakottaa viestien allekirjoituksen auttaakseen sinua viestien lähetyksessä"
+        "Sähköpostisalaus pakottaa sähköpostien allekirjoituksen auttamaan lähetettyjen viestien todentamisessa"
       ],
       "Encrypted data": [
         "Salattua tietoa"
@@ -13904,6 +13966,49 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Odottamaton virhe"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenterin aikavyöhykettä ei tueta"
+      ],
+      "Edited event not supported": [
+        "Muokattua tapahtumaa ei tueta"
+      ],
+      "End time out of bounds": [
+        "Päättymisaika on alueen ulkopuolella"
+      ],
+      "Event validation failed": [
+        "Tapahtuman vahvistus epäonnistui"
+      ],
+      "Floating times not supported": [
+        "Vaihtuvia aikoja ei tueta"
+      ],
+      "Malformed all-day event": [
+        "Virheellinen koko päivän tapahtuma"
+      ],
+      "Malformed end time": [
+        "Virheellinen päättymisaika"
+      ],
+      "Malformed recurring event": [
+        "Virheellinen toistuva tapahtuma"
+      ],
+      "Malformed start time": [
+        "Virheellinen aloitusaika"
+      ],
+      "Recurring rule not supported": [
+        "Toistuvaa sääntöä ei tueta"
+      ],
+      "Start time out of bounds": [
+        "Aloitusaika on alueen ulkopuolella"
+      ],
+      "Time zone not supported": [
+        "Aikavyöhykettä ei tueta"
       ]
     }
   }

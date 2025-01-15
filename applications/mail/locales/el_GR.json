@@ -1414,6 +1414,21 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "About hide-my-email aliases": [
+        "Περί hide-my-email ψευδώνυμα"
+      ],
+      "Add account": [
+        "Προσθήκη λογαριασμού"
+      ],
+      "Export selection as .vcf": [
+        "Εξαγωγή επιλογής ως .vcf"
+      ],
+      "More actions": [
+        "Περισσότερες ενέργειες"
+      ],
+      "Sign out of all accounts": [
+        "Έξοδος από όλους τους λογαριασμούς"
       ]
     },
     "action": {
@@ -3728,6 +3743,10 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "Από: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } νέο μήνυμα",
+        "${ notificationsToShow.length } νέα μηνύματα"
       ]
     },
     "Desktop notification title": {
@@ -4722,6 +4741,9 @@
       ],
       "Unsupported event": [
         "Μη υποστηριζόμενη εκδήλωση"
+      ],
+      "Time zone component ignored": [
+        "Το στοιχείο ζώνης ώρας παραβλέπεται"
       ]
     },
     "Error message": {
@@ -5616,6 +5638,12 @@
       ],
       "Your password is correct.": [
         "Ο κωδικός πρόσβασής σας είναι σωστός."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Ο κωδικός πρόσβασης σας στην εφαρμογή είναι σωστός. Μη χρησιμοποιείτε τον σύνηθες κωδικό πρόσβασής σας."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστοί. Μη χρησιμοποιήστε τον σύνηθες κωδικό πρόσβασής σας."
       ]
     },
     "Import ICS file from Mail": {
@@ -7708,6 +7736,52 @@
       ],
       "Your private writing assistant": [
         "Ο προσωπικός σας βοηθός γραφής"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Εγγραφείτε στο πρόγραμμα ${ PROTON_SENTINEL_NAME } για το υψηλότερο επίπεδο ασφάλειας και υποστήριξης λογαριασμού μας."
+      ],
+      "Member": [
+        "Μέλος"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Προστατέψτε τη διεύθυνσή σας από το να διαρρεύσει σε λίστες αλληλογραφίας ή ενοχλητικούς αποστολείς, με hide-my-email ψευδώνυμα"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Οι πληρωμές SEPA δεν είναι διαθέσιμες προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
+      "Switch to": [
+        "Αλλάξτε σε"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Αυτό το μήνυμα προέρχεται από ένα ${ PASS_APP_NAME } ψευδώνυμο."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Για να καταργήσετε τους περιορισμούς, μπορείτε να κάνετε αναβάθμιση σε πλάνο επί πληρωμή."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Για να καταργήσετε τους περιορισμούς, μπορείτε να επισκεφτείτε το ${ mailLink } και να κάνετε αναβάθμιση σε πλάνο επί πληρωμή."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Έχουμε πλάνα σχεδιασμένα ειδικά για χρήστες όπως εσείς που χρειάζονται περισσότερες από μία διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
       ]
     },
     "info": {
@@ -8534,6 +8608,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Remove metadata": [
+        "Εκκαθάριση μετα-δεδομένων"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10236,6 +10313,24 @@
       ],
       "Where privacy is default.": [
         "Όπου το απόρρητο είναι προεπιλεγμένο."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } στο App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } στο Play Store"
+      ],
+      "Anytime, anywhere access": [
+        "Πρόσβαση ανά πάσα στιγμή, από οπουδήποτε"
+      ],
+      "Distraction-free emailing": [
+        "Αποστολή email χωρίς περισπασμούς"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Απολαύστε μια ταχύτερη, εστιασμένη εμπειρία αποστολής μηνυμάτων με την εφαρμογή για υπολογιστές."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Για πρόσβαση ανά πάσα στιγμή στο ηλεκτρονικό ταχυδρομείο και βελτιστοποιημένη εμπειρία κινητής τηλεφωνίας, κατεβάστε την εφαρμογή ${ mobileAppAppStoreLink } ή ${ mobileAppGooglePlayLink }."
       ]
     },
     "Onboarding Proton": {
@@ -13319,6 +13414,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Are you sure?": [
+        "Είστε σίγουρος/η;"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13404,6 +13502,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Αυτό διασφαλίζει ότι κανείς δεν μπορεί να δει την τοποθεσία, τη συσκευή και άλλες πληροφορίες που θα μπορούσαν να χρησιμοποιηθούν για την αναγνώρισή σας ή την παρακολούθησή σας."
       ]
     },
     "tooltip": {
@@ -13904,6 +14005,55 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Μη αναμενόμενο σφάλμα"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
+      ],
+      "Edited event not supported": [
+        "Η τροποποιημένη εκδήλωση δεν υποστηρίζεται"
+      ],
+      "End time out of bounds": [
+        "Ώρα λήξης εκτός ορίων"
+      ],
+      "Event validation failed": [
+        "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Floating times not supported": [
+        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
+      ],
+      "Malformed all-day event": [
+        "Δύσμορφη ολοήμερη εκδήλωση"
+      ],
+      "Malformed end time": [
+        "Λανθασμένος χρόνος λήξης"
+      ],
+      "Malformed recurring event": [
+        "Λάθος επαναλαμβανόμενο συμβάν"
+      ],
+      "Malformed start time": [
+        "Λάθος χρόνος έναρξης"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Επιτρέπεται μόνο η κλίμακα του Γρηγοριανού ημερολογίου"
+      ],
+      "Recurring event has no occurrences": [
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει συμβάντα"
+      ],
+      "Recurring rule not supported": [
+        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
+      ],
+      "Start time out of bounds": [
+        "Ώρα έναρξης εκτός ορίων"
+      ],
+      "Time zone not supported": [
+        "Μη υποστηριζόμενη ζώνη ώρας"
       ]
     }
   }

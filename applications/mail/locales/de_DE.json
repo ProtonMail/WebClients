@@ -1411,6 +1411,18 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Add account": [
+        "Konto hinzufügen"
+      ],
+      "Expand video conferencing widget": [
+        "Videokonferenz-Widget erweitern"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Hol dir ${ MAIL_SHORT_APP_NAME } Plus für ${ priceCoupon }"
+      ],
+      "Sign out of all accounts": [
+        "Von allen Konten abmelden"
       ]
     },
     "action": {
@@ -1916,6 +1928,9 @@
       ],
       "Continue your subscription": [
         "Abonnement fortsetzen"
+      ],
+      "Change email address settings": [
+        "E-Mail-Adresseinstellungen ändern"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3695,6 +3710,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "Also included": [
+        "Ebenfalls enthalten"
       ]
     },
     "description": {
@@ -5337,6 +5355,9 @@
       ],
       "You've unlocked 1 GB": [
         "Du hast 1 GB freigeschaltet."
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Schließe diese Checkliste innerhalb von ${ daysCount } ab, um deinen Speicherplatz kostenlos zu verdoppeln."
       ]
     },
     "Gmail forwarding": {
@@ -7667,6 +7688,37 @@
       ],
       "Your private writing assistant": [
         "Dein privater Schreibassistent"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Erstelle eine sichere Cloud für ${ value } Mitglied",
+        "Erstelle eine sichere Cloud für ${ value } Mitglieder"
+      ],
+      "Member": [
+        "Mitglied"
+      ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Nachrichten an all deine E-Mail-Adressen werden an deinen Posteingang gehen."
+      ],
+      "Registering your subscription...": [
+        "Dein Abonnement wird registriert..."
+      ],
+      "Setting up your new address...": [
+        "Deine neue E-Mail-Adresse wird eingerichtet..."
+      ],
+      "Switch to": [
+        "Wechseln zu"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Das ist nun deine ${ defaultEmailAddress } für das Senden von Nachrichten."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für Lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -8493,6 +8545,9 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Account holder": [
+        "Kontoinhaber"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9136,6 +9191,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Get started for ${ priceCoupon }": [
+        "Leg los für ${ priceCoupon }"
       ]
     },
     "new_plans: action": {
@@ -9968,6 +10026,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kannst mehr als einen Administrator haben. Alle Administratoren können Benutzer hinzufügen und verwalten, aber nur der Hauptadministrator hat Zugriff auf die Abrechnung."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Eigene Domains für Aliasse, zusätzliche Postfächer, Versenden von E-Mails über Aliasse und mehr"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Lebenslanger Zugang zu den Premiumfunktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10321,6 +10385,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
+      ],
+      "Team policies": [
+        "Gruppenrichtlinien"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11431,6 +11498,12 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen."
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Das ist jetzt deine Standard-E-Mail-Adresse. Öffne das Dropdown-Menü, um von einer anderen Adresse zu versenden."
+      ],
+      "Your pm.me email is active": [
+        "Deine pm.me-E-Mail-Adresse ist aktiv"
       ]
     },
     "sso": {
@@ -11439,6 +11512,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
+      ],
+      "Sign in to your organization": [
+        "Bei deiner Organisation anmelden"
       ]
     },
     "State": {
@@ -13242,6 +13318,15 @@
       ],
       "Your free trial has ended": [
         "Deine kostenlose Testversion ist abgelaufen."
+      ],
+      "Are you sure?": [
+        "Bist du sicher?"
+      ],
+      "Upgrade complete!": [
+        "Upgrade abgeschlossen!"
+      ],
+      "Your shorter address is now ready": [
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13827,6 +13912,46 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Unerwarteter Fehler"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Kalenderzeitzone wird nicht unterstützt"
+      ],
+      "Edited event not supported": [
+        "Bearbeitete Termine werden nicht unterstützt"
+      ],
+      "End time out of bounds": [
+        "Endzeit außerhalb des Bereichs"
+      ],
+      "Event validation failed": [
+        "Überprüfung der Termine fehlgeschlagen"
+      ],
+      "Floating times not supported": [
+        "Gleitzeiten werden nicht unterstützt"
+      ],
+      "Malformed all-day event": [
+        "Fehlerhafter ganztägiger Termin"
+      ],
+      "Malformed recurring event": [
+        "Fehlerhafte Terminserie"
+      ],
+      "Malformed start time": [
+        "Fehlerhafte Startzeit"
+      ],
+      "Recurring event has no occurrences": [
+        "Wiederkehrendes Ereignis enthält keine Termine"
+      ],
+      "Recurring rule not supported": [
+        "Wiederkehrende Regel nicht unterstützt"
+      ],
+      "Time zone not supported": [
+        "Zeitzone wird nicht unterstützt"
       ]
     }
   }

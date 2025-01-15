@@ -1414,6 +1414,21 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "About hide-my-email aliases": [
+        "Hide-my-email takma adları hakkında"
+      ],
+      "Add account": [
+        "Hesap ekle"
+      ],
+      "Export selection as .vcf": [
+        "Seçimi .vcf olarak dışa aktar"
+      ],
+      "More actions": [
+        "Diğer işlemler"
+      ],
+      "Sign out of all accounts": [
+        "Tüm hesapların oturumunu kapat"
       ]
     },
     "action": {
@@ -1796,7 +1811,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-e-mail ve diğer şeyler.ide-my-email"
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -3728,6 +3743,10 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "Kimden: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } yeni ileti",
+        "${ notificationsToShow.length } yeni ileti"
       ]
     },
     "Desktop notification title": {
@@ -4722,6 +4741,9 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ],
+      "Time zone component ignored": [
+        "Saat dilimi bileşeni yok sayıldı"
       ]
     },
     "Error message": {
@@ -5616,6 +5638,12 @@
       ],
       "Your password is correct.": [
         "Parolanız doğru."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı kullanmayın."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı kullanmayın."
       ]
     },
     "Import ICS file from Mail": {
@@ -7708,6 +7736,52 @@
       ],
       "Your private writing assistant": [
         "Kişisel yazma yardımcınız"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } üye için bir güvenli bulut oluştur",
+        "${ value } üye için bir güvenli bulut oluştur"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "En yüksek düzeyde hesap güvenliği ve destek için ${ PROTON_SENTINEL_NAME } programına katılın."
+      ],
+      "Member": [
+        "Üye"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Hide-my-email takma adları ile e-posta adresinizin, e-posta listelerinin veya istenmeyen e-posta göndericilerinin eline geçmesinden korunun."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Switch to": [
+        "Şuna geç"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Bu ileti ${ PASS_APP_NAME } takma adından geliyor."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Kısıtlamaları kaldırmak için ücretli bir tarifeye geçebilirsiniz."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Kısıtlamaları kaldırmak için ${ mailLink } adresine giderek ücretli bir tarifeye yükseltebilirsiniz."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Sizin gibi birden fazla e-posta adresine gerek duyan kullanıcılar için özel olarak tasarlanmış tarifelerimiz var."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve ${ cycle } ayda bir otomatik olarak yenilenecek."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ]
     },
     "info": {
@@ -8534,6 +8608,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Remove metadata": [
+        "Üst verileri kaldır"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10236,6 +10313,24 @@
       ],
       "Where privacy is default.": [
         "Gizlilik odaklı."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store üzerinde ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store üzerinde ${ MAIL_APP_NAME }"
+      ],
+      "Anytime, anywhere access": [
+        "Her zaman her yerden erişim"
+      ],
+      "Distraction-free emailing": [
+        "Dikkat dağıtmayan e-posta"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Masaüstü uygulamasıyla daha hızlı, odaklanmış bir e-posta gönderme deneyiminin tadını çıkarın."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "E-postanıza istediğiniz zaman erişebilmek ve en iyi mobil deneyimi elde etmek için ${ mobileAppAppStoreLink } veya ${ mobileAppGooglePlayLink } uygulamamızı indirin."
       ]
     },
     "Onboarding Proton": {
@@ -13319,6 +13414,9 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Are you sure?": [
+        "Emin misiniz?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13404,6 +13502,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Böylece hiç kimse, sizin gerçekte kim olduğunuzu anlamak veya izlemek için kullanabileceği konumunuzu, aygıtınızı ve diğer bilgilerinizi göremez."
       ]
     },
     "tooltip": {
@@ -13904,6 +14005,55 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Beklenmeyen bir sorun çıktı"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Takvimin saat dilimi desteklenmiyor"
+      ],
+      "Edited event not supported": [
+        "Etkinliklerin düzenlenmesi desteklenmiyor"
+      ],
+      "End time out of bounds": [
+        "Bitiş zamanı sınırların dışında"
+      ],
+      "Event validation failed": [
+        "Etkinlik doğrulanamadı"
+      ],
+      "Floating times not supported": [
+        "Göreli zamanlar desteklenmiyor"
+      ],
+      "Malformed all-day event": [
+        "Tüm gün etkinliği bozulmuş"
+      ],
+      "Malformed end time": [
+        "Bitiş zamanı bozulmuş"
+      ],
+      "Malformed recurring event": [
+        "Yinelenen etkinlik bozulmuş"
+      ],
+      "Malformed start time": [
+        "Başlangıç zamanı bozulmuş"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Yalnızca Gregoryen takvimi ölçeğine izin veriliyor"
+      ],
+      "Recurring event has no occurrences": [
+        "Yinelenen etkinliğin herhangi bir yinelemesi yok"
+      ],
+      "Recurring rule not supported": [
+        "Yinelenme kuralı desteklenmiyor"
+      ],
+      "Start time out of bounds": [
+        "Başlangıç zamanı sınırların dışında"
+      ],
+      "Time zone not supported": [
+        "Saat dilimi desteklenmiyor"
       ]
     }
   }

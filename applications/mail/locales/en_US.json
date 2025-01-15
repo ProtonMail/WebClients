@@ -8,6 +8,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "You can't send vCard files of more than ${ maxAttachments } contact",
         "You can't send vCard files of more than ${ maxAttachments } contacts"
+      ],
+      "Display navigation bar": [
+        "Show navigation bar"
       ]
     },
     "Info": {
@@ -46,6 +49,11 @@
     "Spotlight": {
       "This is now your default address. Open the dropdown to send from a different address. ": [
         "This is now your default address. Open the dropdown to send from a different address."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank."
       ]
     }
   }

@@ -1419,6 +1419,21 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "About hide-my-email aliases": [
+        "Despre aliasurile hide-my-email"
+      ],
+      "Add account": [
+        "Adăugare cont"
+      ],
+      "Export selection as .vcf": [
+        "Exportare selecție ca .vcf"
+      ],
+      "More actions": [
+        "Alte acțiuni"
+      ],
+      "Sign out of all accounts": [
+        "Deconectare din toate conturile"
       ]
     },
     "action": {
@@ -2217,7 +2232,7 @@
         "Reactivare abonament"
       ],
       "Your subscription is ending soon": [
-        "Abonamentul va expira curând"
+        "Abonamentul va expira în curând"
       ]
     },
     "Cancellation upsell": {
@@ -3746,6 +3761,11 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "De la: ${ sender } - ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } mesaj nou",
+        "${ notificationsToShow.length } mesaje noi",
+        "${ notificationsToShow.length } de mesaje noi"
       ]
     },
     "Desktop notification title": {
@@ -4754,6 +4774,9 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ],
+      "Time zone component ignored": [
+        "Componenta fus orar este ignorată."
       ]
     },
     "Error message": {
@@ -5664,6 +5687,12 @@
       ],
       "Your password is correct.": [
         "Parola este corectă."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Parola aplicației este corectă. Nu folosiți parola obișnuită."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adresa de e-mail și parola aplicației sunt corecte. Nu folosiți parola obișnuită."
       ]
     },
     "Import ICS file from Mail": {
@@ -6952,7 +6981,7 @@
         "Spuneți-ne la ce v-ați așteptat"
       ],
       "Please try again in a few moments": [
-        "Mai încercați mai târziu."
+        "Reîncercați mai târziu."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
@@ -7837,6 +7866,53 @@
       ],
       "Your private writing assistant": [
         "Asistentul personal privat de scriere"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Creați un cont cloud securizat pentru ${ value } membru",
+        "Creați un cont cloud securizat pentru ${ value } membri",
+        "Creați un cont cloud securizat pentru ${ value } de membri"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Alăturați-vă programului ${ PROTON_SENTINEL_NAME } pentru cel mai înalt nivel de securitate al nostru și asistență."
+      ],
+      "Member": [
+        "Membru"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Împiedicați divulgarea adresei e-mail către listele de mesagerie sau către cei care trimit mesaje nedorite folosind aliasurile hide-my-email."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
+      ],
+      "Switch to": [
+        "Comutare la"
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Acest mesaj este de la un alias ${ PASS_APP_NAME }."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Aceasta vă va deconectat din toate conturile conectate acum."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Pentru a elimina restricția, puteți trece la un plan cu plată."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Pentru a elimina restricția, puteți vizita ${ mailLink } și trece la un plan cu plată."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Avem planuri concepute special pentru utilizatorii care au nevoie de mai multe adrese de e-mail."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ]
     },
     "info": {
@@ -8669,6 +8745,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Remove metadata": [
+        "Eliminare metadate"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9531,7 +9610,7 @@
         "Disponibil în toate planurile"
       ],
       "Breach alerts": [
-        "Alerte breșe"
+        "Alerte divulgări"
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -10405,6 +10484,24 @@
       ],
       "Where privacy is default.": [
         "Unde confidențialitatea este implicită."
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } în App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } în Magazinul Play"
+      ],
+      "Anytime, anywhere access": [
+        "Acces oricând, oriunde"
+      ],
+      "Distraction-free emailing": [
+        "Mesagerie electronică fără distrageri"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Bucurați-vă de o experiență de e-mail mai rapidă și fără distrageri cu aplicația pentru desktop."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Pentru acces oricând la e-mail și experiență mobilă optimizată, descărcați aplicația ${ mobileAppAppStoreLink } sau ${ mobileAppGooglePlayLink }."
       ]
     },
     "Onboarding Proton": {
@@ -13566,13 +13663,16 @@
         "Modificările nu sunt încă sincronizate"
       ],
       "Your exposed information": [
-        "Informațiile expuse"
+        "Informații expuse"
       ],
       "Your free trial has ended": [
         "Perioada de probare gratuită a expirat"
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Are you sure?": [
+        "Confirmați?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13658,6 +13758,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Aceasta vă asigură că nimeni nu vă poate ști poziția actuală, dispozitivul și alte informații care ar putea fi folosite pentru a vă identifica sau urmări."
       ]
     },
     "tooltip": {
@@ -14200,6 +14303,55 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Eroare neașteptată."
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
+      ],
+      "Edited event not supported": [
+        "Evenimentul editat nu este suportat."
+      ],
+      "End time out of bounds": [
+        "Ora de sfârșit e în afara limitelor."
+      ],
+      "Event validation failed": [
+        "Validare eveniment eșuată."
+      ],
+      "Floating times not supported": [
+        "Orele flotante nu sunt suportate."
+      ],
+      "Malformed all-day event": [
+        "Evenimentul pentru întreaga zi este în format eronat."
+      ],
+      "Malformed end time": [
+        "Ora de sfârșit incorectă."
+      ],
+      "Malformed recurring event": [
+        "Format eronat eveniment repetitiv."
+      ],
+      "Malformed start time": [
+        "Ora de început eronată."
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Este permisă doar scala calendarului Gregorian."
+      ],
+      "Recurring event has no occurrences": [
+        "Evenimentul recurent nu are nicio apariție."
+      ],
+      "Recurring rule not supported": [
+        "Regula recurentă nesuportată."
+      ],
+      "Start time out of bounds": [
+        "Ora de început e în afara limitelor."
+      ],
+      "Time zone not supported": [
+        "Fus orar nesuportat."
       ]
     }
   }

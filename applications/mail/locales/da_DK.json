@@ -1411,6 +1411,15 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Add account": [
+        "Tilføj konto"
+      ],
+      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
+        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
+      ],
+      "Sign out of all accounts": [
+        "Log ud alle konti"
       ]
     },
     "action": {
@@ -3686,6 +3695,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "Also included": [
+        "Også inkluderet"
+      ],
+      "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
+        "Opgrader for at få ${ activatePmUser } og en kortere e-mailadresse, der er nem at huske, ud over din nuværende."
       ]
     },
     "description": {
@@ -4927,6 +4942,9 @@
       ],
       "Set up your family account": [
         "Konfigurer din familie-konto"
+      ],
+      "Configure your family account and invite users": [
+        "Konfigurér din familie-konto og invitér brugere"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5581,7 +5599,7 @@
         "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+        "Udvid dropdownmenuen ved at trykke på de 3 prikker (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Generer ${ boldAppPassword }, og brug den i stedet for din almindelige adgangskode, når du bliver bedt om det af ${ BRAND_NAME }."
@@ -5653,7 +5671,7 @@
         "Gå til ${ calendarViewLink } i Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen."
+        "Hold musen over den kalender, du vil importere, og åbn dropdownmenuen."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
@@ -7655,6 +7673,18 @@
       ],
       "Your private writing assistant": [
         "Din private skriveassistent"
+      ],
+      "Member": [
+        "Medlem"
+      ],
+      "Setting up your new address...": [
+        "Konfigurerer din nye adresse..."
+      ],
+      "Switch to": [
+        "Skift til"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ]
     },
     "info": {
@@ -9124,6 +9154,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ planTitle }": [
+        "Få ${ planTitle }"
       ]
     },
     "new_plans: action": {
@@ -9524,7 +9557,7 @@
         "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
-        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
+        "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "TOR over VPN": [
         "Tor over VPN"
@@ -10120,6 +10153,21 @@
       ],
       "Where privacy is default.": [
         "Hvor privatlivsbeskyttelse er standard."
+      ],
+      "Activate premium features": [
+        "Aktivér premium-funktioner"
+      ],
+      "Activate selected": [
+        "Aktivér valgte"
+      ],
+      "Get notified if your password is compromised.": [
+        "Bliv underrettet hvis din adgangskode bliver kompromitteret."
+      ],
+      "Make the most of your paid plan.": [
+        "Få det meste ud af dit betalte abonnement."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
       ]
     },
     "Onboarding Proton": {
@@ -11341,6 +11389,12 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Dette er nu din standard-adresse. Åbn dropdownmenuen for at sende fra en anden adresse."
+      ],
+      "Your pm.me email is active": [
+        "Din pm.me e-mail er aktiv"
       ]
     },
     "sso": {
@@ -12877,7 +12931,7 @@
         "Én e-mail, mange modtagere"
       ],
       "Open actions dropdown": [
-        "Åbn handlingsrullemenu"
+        "Åbn handlings-dropdownmenuen"
       ],
       "Other information": [
         "Anden information"
@@ -13129,6 +13183,15 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode er slut"
+      ],
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
+      "Upgrade complete!": [
+        "Opgradering udført!"
+      ],
+      "Your shorter address is now ready": [
+        "Din kortere adresse er nu klar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13711,6 +13774,31 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Uventet fejl"
+      ]
+    },
+    "ICS event error": {
+      "End time out of bounds": [
+        "Sluttid uden for grænserne"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagsbegivenhed"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet tilbagevendende begivenhed"
+      ],
+      "Malformed start time": [
+        "Misdannet starttid"
+      ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
       ]
     }
   }
