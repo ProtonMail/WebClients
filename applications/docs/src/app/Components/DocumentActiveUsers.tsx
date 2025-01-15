@@ -30,7 +30,7 @@ export function DocumentActiveUsers({ className }: { className?: string }) {
       {states.map((state, index) => {
         const { name, color, focusing, awarenessData } = state
 
-        const letter = awarenessData.anonymousUserLetter
+        const letter = awarenessData?.anonymousUserLetter
 
         return (
           <Tooltip title={name} key={index}>
