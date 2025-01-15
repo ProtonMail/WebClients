@@ -1,7 +1,10 @@
 @import '~@proton/styles/scss/lib';
 
 $calendar-aside-width: rem(60) !default;
-$calendar-hour-height: rem(48) !default;
+
+// trick is we need to calculate roughly the available height = whole height - header - week bar / 24
+// then maximum between the minimal height and the one adapted for larger screens.
+$calendar-hour-height: max(#{rem(48)}, calc((100lvh - #{rem($header-height)} - #{rem(76)}) / 24)) !default;
 $calendar-grid-border: 1px solid var(--border-weak);
 $calendar-gridcell-margin: rem(10) !default;
 $calendar-gridcell-gutter: rem(3) !default;
