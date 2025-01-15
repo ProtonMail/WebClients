@@ -14,7 +14,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     useApi,
-    useEventManager,
     useFormErrors,
 } from '@proton/components';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
@@ -32,7 +31,6 @@ const EditProfileModal = ({ address, ...rest }: Props) => {
     const api = useApi();
     const [submitting, withLoading] = useLoading();
     const { onFormSubmit } = useFormErrors();
-    const { call } = useEventManager();
     const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
         {}
     );
@@ -44,7 +42,6 @@ const EditProfileModal = ({ address, ...rest }: Props) => {
                 Signature: signature,
             })
         );
-        await call();
         rest.onClose?.();
     };
     const handleClose = submitting ? undefined : rest.onClose;
