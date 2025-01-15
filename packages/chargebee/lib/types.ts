@@ -103,6 +103,7 @@ export type PaymentIntent = {
     payment_method_type: 'card' | 'paypal';
     // Present only for saved payment methods
     reference_id?: string;
+    email?: string;
 };
 
 export interface AuthorizedPaymentIntent extends PaymentIntent {
