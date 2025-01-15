@@ -1,7 +1,7 @@
 import { mergeRegister } from '@lexical/utils'
-import type { Provider } from '@lexical/yjs';
+import type { Provider } from '@lexical/yjs'
 import { setLocalStateFocus } from '@lexical/yjs'
-import type { LexicalEditor} from 'lexical';
+import type { LexicalEditor } from 'lexical'
 import { FOCUS_COMMAND, COMMAND_PRIORITY_EDITOR, BLUR_COMMAND } from 'lexical'
 import { useEffect } from 'react'
 
@@ -10,7 +10,7 @@ export function useYjsFocusTracking(
   provider: Provider,
   name: string,
   color: string,
-  awarenessData?: object,
+  awarenessData: object,
 ) {
   useEffect(() => {
     return mergeRegister(

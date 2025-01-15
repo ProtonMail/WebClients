@@ -24,7 +24,7 @@ type Props = {
   onLoadResult: EditorLoadResult
   cursorsContainer: HTMLElement | null
   editorInitializationConfig: EditorInitializationConfig | undefined
-  additionalAwarenessData?: object
+  additionalAwarenessData: object
 }
 
 export function CollaborationPlugin({
@@ -71,7 +71,7 @@ export function CollaborationPlugin({
   collabContext.clientID = binding.clientID
 
   useYjsHistory(editor, binding)
-  useYjsFocusTracking(editor, provider, name, color)
+  useYjsFocusTracking(editor, provider, name, color, additionalAwarenessData)
   useScrollToUserCursorOnEvent(binding)
 
   return null
