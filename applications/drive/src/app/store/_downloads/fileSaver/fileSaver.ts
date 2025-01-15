@@ -2,6 +2,7 @@ import type { ReadableStream } from 'web-streams-polyfill';
 
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 
@@ -60,7 +61,15 @@ const getRemovalTimeout = (size?: number): number => {
     return 4e4; // 40 seconds, same default as the file-saver package we use https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js#L106
 };
 
-export const selectMechanismForDownload = async (size?: number) => {
+export const selectMechanismForDownload = async (
+    size?: number
+): Promise<'memory' | 'opfs' | 'sw' | 'memory_fallback'> => {
+    /** For E2E usage we need to enforce a certain mechanism and test all mechanism without any limits */
+    const cookie = getCookie('DriveE2EDownloadMechanism');
+    if (cookie && ['memory', 'opfs', 'sw'].includes(cookie)) {
+        return cookie as 'memory' | 'opfs' | 'sw';
+    }
+
     const isOPFSEnabled = unleashVanillaStore.getState().isEnabled('DriveWebOPFSDownloadMechanism');
     const limit = getMemoryLimit();
     if (size && size < limit) {
