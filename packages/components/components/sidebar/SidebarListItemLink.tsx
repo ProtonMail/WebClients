@@ -9,12 +9,30 @@ export interface Props extends Omit<NavLinkProps, 'className'> {
     children: ReactNode;
     itemClassName?: string;
     className?: string;
+    forceReload?: boolean;
 }
 
 const SidebarListItemLink = forwardRef<HTMLAnchorElement, Props>(
-    ({ children, itemClassName = 'navigation-link', className, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
+    (
+        { children, itemClassName = 'navigation-link', className, forceReload, to, isActive, style, ...rest }: Props,
+        ref: Ref<HTMLAnchorElement>
+    ) => {
+        if (forceReload) {
+            return (
+                <a ref={ref} href={to.toString()} className={clsx([itemClassName, className])} {...rest}>
+                    {children}
+                </a>
+            );
+        }
         return (
-            <NavLink ref={ref} className={clsx([itemClassName, className])} {...rest}>
+            <NavLink
+                to={to}
+                style={style}
+                isActive={isActive}
+                ref={ref}
+                className={clsx([itemClassName, className])}
+                {...rest}
+            >
                 {children}
             </NavLink>
         );
