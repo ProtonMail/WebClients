@@ -3,6 +3,7 @@ import type { ReadableStream } from 'web-streams-polyfill';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 
 import type { TransferMeta } from '../../../components/TransferManager/transfer';
 import { TransferCancel } from '../../../components/TransferManager/transfer';
@@ -14,10 +15,11 @@ import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { LogCallback } from '../interface';
-import { initDownloadSW, isUnsupported, openDownloadStream } from './download';
+import { initDownloadSW, isServiceWorkersUnsupported, openDownloadStream } from './download';
 
 const isOPFSSupported = () => !!(navigator.storage && navigator.storage.getDirectory);
 
+const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
 const MB = 1024 * 1024;
 const getMemoryLimit = () => {
     const treatment = unleashVanillaStore.getState().getVariant('DriveWebDownloadMechanismParameters');
@@ -70,7 +72,7 @@ export const selectMechanismForDownload = async (size?: number) => {
         return 'opfs';
     }
 
-    if (isUnsupported()) {
+    if (isServiceWorkersUnsupported()) {
         return 'memory_fallback';
     }
 
@@ -85,23 +87,7 @@ export const selectMechanismForDownload = async (size?: number) => {
 class FileSaver {
     private useBlobFallback = false;
 
-    private swFailReason?: string;
-
-    private isReady: boolean = false;
-
-    private init: Promise<void>;
-
-    constructor() {
-        this.init = initDownloadSW()
-            .catch((error) => {
-                this.useBlobFallback = true;
-                console.warn('Saving file will fallback to in-memory downloads:', error.message);
-                this.swFailReason = error.message;
-            })
-            .finally(() => {
-                this.isReady = true;
-            });
-    }
+    private isSWReady: boolean = false;
 
     // saveViaDownload uses service workers to download file without need to
     // buffer the whole content in memory and open the download in browser as
@@ -217,24 +203,41 @@ class FileSaver {
     }
 
     async saveAsFile(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
-        if (!this.isReady) {
-            // Always wait for Service Worker initialization to complete
-            await this.init;
-        }
-
-        log(
-            `Saving file. meta size: ${meta.size}, memory limit: ${MEMORY_DOWNLOAD_LIMIT}, will use blob fallback: ${this.useBlobFallback}`
-        );
-        if (this.swFailReason) {
-            log(`Service worker fail reason: ${this.swFailReason}`);
-        }
         const mechanism = await selectMechanismForDownload(meta.size);
+
+        log(`Saving file. meta size: ${meta.size}, mechanism: ${mechanism}`);
+
         if (mechanism === 'memory' || mechanism === 'memory_fallback') {
+            if (mechanism === 'memory_fallback') {
+                void countActionWithTelemetry(Actions.DownloadFallback);
+            }
             return this.saveViaBuffer(stream, meta, log);
         }
+
         if (mechanism === 'opfs') {
             return this.saveViaOPFS(stream, meta, log);
         }
+
+        if (!this.isSWReady) {
+            // Always wait for Service Worker initialization to complete
+            try {
+                await promiseWithTimeout({
+                    timeoutMs: DOWNLOAD_SW_INIT_TIMEOUT,
+                    promise: initDownloadSW(),
+                });
+            } catch (error: unknown) {
+                this.useBlobFallback = true;
+                if (error instanceof Error) {
+                    console.warn('Saving file will fallback to in-memory downloads:', error.message);
+                    log(`Service worker fail reason: ${error.message}`);
+                } else {
+                    log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
+                }
+            } finally {
+                this.isSWReady = true;
+            }
+        }
+
         return this.saveViaDownload(stream, meta, log);
     }
 
