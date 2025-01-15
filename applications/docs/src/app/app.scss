@@ -3,6 +3,7 @@
 :root {
 	--primary-rgb: 109 74 255;
 	--docs-blue-color: #34b8ee;
+	--signal-info-minor-custom: #f6fbff;
 }
 
 *:focus,
@@ -36,6 +37,24 @@ input[type='number'] {
 	}
 }
 
+// These values are set to `inherit` originally which causes the entire element to disappear for some reason on hover.
+.no-doc-header .user-dropdown-button.interactive--no-background {
+	&:hover,
+	&:focus,
+	&:focus-visible,
+	&:focus-within,
+	&:active,
+	&.is-active,
+	&.active,
+	&[aria-expanded='true'] {
+		background-color: unset;
+
+		&:hover::after {
+			background-color: unset;
+		}
+	}
+}
+
 .drawer-sidebar-button {
 	inline-size: rem(36);
 	block-size: rem(36);
@@ -45,7 +64,7 @@ input[type='number'] {
 }
 
 /* Hide the user name and email in the header viewing a document */
-.user-dropdown-text:not(.homepage-header *) {
+.user-dropdown-text:not(.homepage-header *, .error-header *) {
 	display: none;
 }
 
