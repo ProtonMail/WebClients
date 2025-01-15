@@ -1,6 +1,6 @@
 import { BasePropertiesState } from '@proton/docs-shared'
 
-export type UserEvent = { name: string; payload: unknown }
+export type UserEvent = { name: 'BlockingInterfaceErrorDidDisplay'; payload: unknown }
 
 export interface UserStateValues {
   userAccountEmailDocTitleEnabled: boolean

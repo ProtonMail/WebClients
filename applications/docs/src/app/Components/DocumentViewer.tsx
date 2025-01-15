@@ -16,7 +16,7 @@ import {
   WebsocketConnectionEvent,
   isLocalEnvironment,
 } from '@proton/docs-core'
-import { Button, CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
 import { useApplication } from '../Containers/ApplicationProvider'
 import type {
@@ -31,10 +31,7 @@ import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal
 import { isPrivateNodeMeta, type DocumentAction, type NodeMeta, type PublicNodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
-import { useAuthentication } from '@proton/components'
 import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import WordCountOverlay from './WordCount/WordCountOverlay'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
@@ -42,6 +39,8 @@ import { useWelcomeSplashModal } from '../Apps/Public/WelcomeSplashModal/Welcome
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
+import type { DocumentError } from './DocumentErrorComponent'
+import { DocumentErrorComponent } from './DocumentErrorComponent'
 
 type Props = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -49,15 +48,8 @@ type Props = {
   action: DocumentAction['mode'] | undefined
 }
 
-type Error = {
-  message: string
-  userUnderstandableMessage: boolean
-  code?: DocsApiErrorCode
-}
-
 export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: Props) {
   const application = useApplication()
-  const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const debug = useDebug()
 
@@ -77,7 +69,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const [bridge, setBridge] = useState<ClientToEditorBridge | null>(null)
   const [initializing, setInitializing] = useState(false)
   const [ready, setReady] = useState(false)
-  const [error, setError] = useState<Error | null>(null)
+  const [error, setError] = useState<DocumentError | null>(null)
   const [didLoadTitle, setDidLoadTitle] = useState(false)
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
   /**
@@ -374,25 +366,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   }
 
   if (error) {
-    return (
-      <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
-        <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
-        <div className="mt-1 max-w-lg whitespace-pre-line text-center">
-          {error.userUnderstandableMessage
-            ? error.message
-            : c('Info')
-                .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.`}
-        </div>
-        <div className="mt-4 flex gap-2">
-          <Button onClick={() => window.open(getAppHref('/', APPS.PROTONDOCS, getLocalID()), '_self')}>
-            {c('Action').t`Create new document`}
-          </Button>
-          <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_self')}>
-            {c('Action').t`Open ${DRIVE_APP_NAME}`}
-          </Button>
-        </div>
-      </div>
-    )
+    return <DocumentErrorComponent error={error} />
   }
 
   return (
