@@ -7,28 +7,43 @@ import { Loader, NavigationControl, TopBanner, useAppTitle } from '@proton/compo
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 
-import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import { useShiftKey } from '../../../hooks/util/useShiftKey';
-import type { PhotoLink } from '../../../store';
-import { isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../../store';
-import PortalPreview from '../../PortalPreview';
-import { useDetailsModal } from '../../modals/DetailsModal';
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
-import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
-import ToolbarRow from '../ToolbarRow/ToolbarRow';
+import PortalPreview from '../../components/PortalPreview';
+import { useDetailsModal } from '../../components/modals/DetailsModal';
+import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
+import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
+import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
+import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
+import { useShiftKey } from '../../hooks/util/useShiftKey';
+import type { PhotoLink } from '../../store';
+import { isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../store';
+import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyPhotos } from './EmptyPhotos';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
-import { usePhotosSelection } from './hooks';
-import { PhotosToolbar } from './toolbar';
+import { usePhotosSelection } from './hooks/usePhotosSelection';
+import { PhotosWithAlbumsToolbar, ToolbarLeftActions } from './toolbar/PhotosWithAlbumsToolbar';
+
+/*
+    TODO:
+    - Disable upload on Albums view
+    - Split components
+*/
 
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
-
+    const [tabSelection, setTabSelection] = useState<'albums' | 'gallery'>('gallery');
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
-    const { shareId, linkId, photos, isPhotosLoading, loadPhotoLink, photoLinkIdToIndexMap, photoLinkIds, requestDownload } =
-        usePhotosView();
+    const {
+        shareId,
+        linkId,
+        photos,
+        isPhotosLoading,
+        loadPhotoLink,
+        photoLinkIdToIndexMap,
+        photoLinkIds,
+        requestDownload,
+    } = usePhotosView();
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
         photos,
         photoLinkIdToIndexMap
@@ -145,27 +160,38 @@ export const PhotosView: FC<void> = () => {
             >
                 <ToolbarRow
                     titleArea={
-                        <span className="flex items-center text-strong pl-1">
-                            {selectedCount > 0 ? (
-                                <div className="flex gap-2" data-testid="photos-selected-count">
-                                    <PhotosClearSelectionButton onClick={clearSelection} />
-                                    {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
-                                    <span aria-live="polite" aria-atomic="true">
-                                        {c('Info').ngettext(
-                                            msgid`${selectedCount} selected`,
-                                            `${selectedCount} selected`,
-                                            selectedCount
-                                        )}
-                                    </span>
-                                </div>
-                            ) : (
-                                c('Title').t`Photos`
+                        <>
+                            {selectedCount > 0 && (
+                                <span className="flex items-center text-strong pl-1">
+                                    <div className="flex gap-2" data-testid="photos-selected-count">
+                                        <PhotosClearSelectionButton onClick={clearSelection} />
+                                        {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
+                                        <span aria-live="polite" aria-atomic="true">
+                                            {c('Info').ngettext(
+                                                msgid`${selectedCount} selected`,
+                                                `${selectedCount} selected`,
+                                                selectedCount
+                                            )}
+                                        </span>
+                                    </div>
+                                </span>
                             )}
-                            {isPhotosLoading && <Loader className="ml-2 flex items-center" />}
-                        </span>
+
+                            {selectedCount === 0 && (
+                                <ToolbarLeftActions
+                                    onGalleryClick={() => {
+                                        setTabSelection('gallery');
+                                    }}
+                                    onAlbumsClick={() => {
+                                        setTabSelection('albums');
+                                    }}
+                                    isLoading={isPhotosLoading}
+                                />
+                            )}
+                        </>
                     }
                     toolbar={
-                        <PhotosToolbar
+                        <PhotosWithAlbumsToolbar
                             shareId={shareId}
                             linkId={linkId}
                             selectedItems={selectedItems}
@@ -176,22 +202,53 @@ export const PhotosView: FC<void> = () => {
                     }
                 />
 
-                {isEmpty ? (
-                    <EmptyPhotos />
-                ) : (
-                    <PhotosGrid
-                        data={photos}
-                        onItemRender={handleItemRender}
-                        onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                        isLoading={isPhotosLoading}
-                        onItemClick={setPreviewLinkId}
-                        hasSelection={selectedCount > 0}
-                        onSelectChange={(i, isSelected) =>
-                            handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
-                        }
-                        isGroupSelected={isGroupSelected}
-                        isItemSelected={isItemSelected}
-                    />
+                {/**
+                 * Gallery Tab
+                 * TODO: Split into separate component
+                 */}
+                {tabSelection === 'gallery' && (
+                    <>
+                        {isEmpty ? (
+                            <EmptyPhotos />
+                        ) : (
+                            <PhotosGrid
+                                data={photos}
+                                onItemRender={handleItemRender}
+                                onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                                isLoading={isPhotosLoading}
+                                onItemClick={setPreviewLinkId}
+                                hasSelection={selectedCount > 0}
+                                onSelectChange={(i, isSelected) =>
+                                    handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
+                                }
+                                isGroupSelected={isGroupSelected}
+                                isItemSelected={isItemSelected}
+                            />
+                        )}
+                    </>
+                )}
+
+                {/**
+                 * Albums Tab
+                 * TODO: Split into separate component
+                 */}
+                {tabSelection === 'albums' && (
+                    <>
+                        {isEmpty ? (
+                            <>
+                                {/** TODO: Empty Albums View */}
+                                <EmptyPhotos />
+                            </>
+                        ) : (
+                            <AlbumsGrid
+                                data={[]} // TODO: Get Albums
+                                onItemRender={handleItemRender}
+                                onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                                isLoading={false} // TODO: Get Albums loading status
+                                onItemClick={setPreviewLinkId}
+                            />
+                        )}
+                    </>
                 )}
             </UploadDragDrop>
         </>

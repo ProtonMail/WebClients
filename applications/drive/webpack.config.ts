@@ -23,6 +23,7 @@ const result = (env: any): webpack.Configuration => {
 
     config.entry = mergeEntry(config.entry, {
         ['urls-index']: [path.resolve('./src/app/urls.tsx'), getSupportedEntry()],
+        ['photos-index']: [path.resolve('./src/app/photos.tsx'), getSupportedEntry()],
     });
 
     if (env.appMode === 'standalone') {
@@ -57,12 +58,29 @@ const result = (env: any): webpack.Configuration => {
         })
     );
 
+    config.plugins.splice(
+        htmlIndex,
+        0,
+        new HtmlWebpackPlugin({
+            filename: 'photos.html',
+            template: `ejs-webpack-loader!src/photos.ejs`,
+            templateParameters: htmlPlugin.userOptions.templateParameters,
+            scriptLoading: 'defer',
+            inject: 'body',
+            chunks: getIndexChunks('photos-index'),
+        })
+    );
+
     if (config.devServer) {
         config.devServer.historyApiFallback = {
             rewrites: [
                 {
                     from: /^\/urls/, // Matches any path starting with `/urls`
                     to: '/urls.html', // Serves `urls.html`
+                },
+                {
+                    from: /^\/photos/, // Matches any path starting with `/photos`
+                    to: '/photos.html', // Serves `photos.html`
                 },
                 {
                     from: /./, // Matches any other route
