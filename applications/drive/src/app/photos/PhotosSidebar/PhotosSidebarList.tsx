@@ -1,28 +1,17 @@
-import { useState } from 'react';
-
 import { c, msgid } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
-import { type ShareWithKey, useDriveSharingFlags, useInvitationsView, useUserSettings } from '../../../../store';
-import DriveSidebarDevices from './DriveSidebarDevices';
-import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
+import { useDriveSharingFlags, useInvitationsView, useUserSettings } from '../../store';
 import DriveSidebarListItem from './DriveSidebarListItem';
 
-interface Props {
+interface PhotosSidebarListProps {
     shareId?: string;
-    userShares: ShareWithKey[];
 }
 
-const DriveSidebarList = ({ shareId, userShares }: Props) => {
+export const PhotosSidebarList = ({ shareId }: PhotosSidebarListProps) => {
     const { photosEnabled, photosWithAlbumsEnabled } = useUserSettings();
     const { invitations } = useInvitationsView();
-    const [sidebarWidth, setSidebarWidth] = useState('100%');
-    const setSidebarLevel = (level: number) => {
-        const extraWidth = Math.floor(level / 7) * 50;
-        setSidebarWidth(`${100 + extraWidth}%`);
-    };
-
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const showSharedWithMeSection = !isDirectSharingDisabled;
 
@@ -33,18 +22,14 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
     );
 
     return (
-        <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
-            {userShares.map((userShare) => (
-                <DriveSidebarFolders
-                    key={userShare.shareId}
-                    shareId={userShare.shareId}
-                    linkId={userShare.rootLinkId}
-                    setSidebarLevel={setSidebarLevel}
-                />
-            ))}
-            <DriveSidebarDevices setSidebarLevel={setSidebarLevel} />
+        <SidebarList style={{ width: '100%', maxWidth: '100%' }}>
             {photosEnabled && (
-                <DriveSidebarListItem to="/photos" forceReload={photosWithAlbumsEnabled} icon="image" isActive={(match) => match?.url === '/photos'}>
+                <DriveSidebarListItem
+                    to="/photos"
+                    forceReload={photosWithAlbumsEnabled}
+                    icon="image"
+                    isActive={(match) => match?.url === '/photos'}
+                >
                     <span className="text-ellipsis" title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
                     </span>
@@ -90,5 +75,3 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
         </SidebarList>
     );
 };
-
-export default DriveSidebarList;
