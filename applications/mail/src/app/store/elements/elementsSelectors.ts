@@ -58,10 +58,10 @@ export const elements = createSelector(
     [elementsMap, params, page, pageSize, pages, bypassFilter],
     (elements, params, page, pageSize, pages, bypassFilter) => {
         // Getting all params from the cache and not from scoped params
-        // To prevent any desynchronization between cache and the output of the memo
+        // To prevent any de-synchronization between cache and the output of the memo
         const { labelID, sort, filter, conversationMode } = params;
         let finalSort = { ...sort };
-        // The default sorting needs to be override when in inbox or snooze to display snoozed emails on top
+        // The default sorting needs to be overridden when in inbox or snooze to display snoozed emails on top
         const isInSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
         if (isInSnoozeOrInbox && sort.sort === 'Time') {
             finalSort = {
@@ -78,7 +78,7 @@ export const elements = createSelector(
 
         /**
          * Here we do a client-side filtering because of fake-unread:
-         * when a user click on a message, it is set as read but we don't it to disappear until page refresh
+         * when a user click on a message, it is set as read, but we don't it to disappear until page refresh
          *
          * Since the cache is only a little subset of user's messages, it is not very costly.
          */

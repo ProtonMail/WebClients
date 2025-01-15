@@ -65,6 +65,7 @@ export const load = createAsyncThunk<
             result: QueryResults;
             page: number;
         }) => {
+            console.log('seralized res', { elements: result.Elements });
             dispatch(
                 showSerializedElements({
                     queryIndex: index,
@@ -101,7 +102,9 @@ export const load = createAsyncThunk<
             throw error;
         });
 
+        console.log({ result, count, r: REFRESHES?.[count] });
         if (result.Stale === 1 && REFRESHES?.[count]) {
+            console.log('--REFRESH--');
             const ms = 1 * SECOND * REFRESHES[count];
 
             // Wait few seconds before retrying
