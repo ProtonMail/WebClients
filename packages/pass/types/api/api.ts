@@ -61,15 +61,14 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     url?: U;
 };
 
-export type ApiResult<T extends any = void, U extends string = string, M extends string = string> = T extends void
-    ? ApiResponse<`${U}`, `${M}`>
-    : T;
+export type ApiResult<T extends any = void, U extends string = string, M extends string = string> =
+    T extends void ? ApiResponse<`${U}`, `${M}`> : T;
 
 export type ApiResponseMapper<T extends any = void, U extends string = string, M extends string = string> = Maybe<
     (response: T extends void ? ApiResponse<`${U}`, `${M}`> : T) => any
 >;
 
-export type ApiSessionEvent = 'inactive' | 'locked' | 'not-allowed' | 'missing-scope';
+export type ApiSessionEvent = 'inactive' | 'locked' | 'restricted' | 'missing-scope';
 
 export type ApiSubscriptionEvent =
     | { type: 'error'; error: string; silent?: boolean }
