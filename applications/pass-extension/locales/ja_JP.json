@@ -69,7 +69,7 @@
         "ごみ箱からアイテムを一括復元"
       ],
       "Bulk select items": [
-        "項目を一括選択"
+        "アイテムを一括選択"
       ],
       "Cancel": [
         "キャンセル"
@@ -153,7 +153,7 @@
         "アカウントを作成"
       ],
       "Create card": [
-        "カードの作成"
+        "カードを作成"
       ],
       "Create contact": [
         "連絡先を作成"
@@ -255,7 +255,7 @@
         "保管庫全体"
       ],
       "Exclude from monitoring": [
-        "監視対象から除外する"
+        "モニタリング対象から除外する"
       ],
       "Export": [
         "エクスポート"
@@ -318,7 +318,7 @@
         "モニタリングに含める"
       ],
       "Invite others": [
-        "他の人に招待"
+        "他の人を招待"
       ],
       "Join shared vault": [
         "共有フォルダーに参加"
@@ -417,10 +417,10 @@
         "Android 版 Pass"
       ],
       "Pass for iOS": [
-        "Ios版Pass"
+        "iOS 版 Pass"
       ],
       "Pin item": [
-        "アイテムの固定"
+        "アイテムをピン留め"
       ],
       "Please retry": [
         "再度お試しください"
@@ -609,7 +609,7 @@
         "オフラインでパスワードを使用してアンロック"
       ],
       "Unpin item": [
-        "アイテムの固定解除"
+        "アイテムのピン留めを解除"
       ],
       "Update": [
         "更新"
@@ -1083,7 +1083,7 @@
         "アイテムの削除に失敗しました"
       ],
       "Unable to generate an OTP code for this item": [
-        "このアイテムのOTPコードを生成できない"
+        "このアイテムの OTP コードを生成できません"
       ],
       "Unable to sync": [
         "同期できません"
@@ -1401,7 +1401,7 @@
         "独自ドメインを持ち込むことで、別のメールホスティングソリューションを購入する必要がありません。"
       ],
       "Built in 2FA authenticator": [
-        "2要素認証の認証器を内蔵"
+        "2要素認証システム内蔵"
       ],
       "Can be viewed": [
         "表示可能回数"
@@ -1599,7 +1599,7 @@
         "エイリアスを生成中..."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Pass Plus に登録して、無制限のエイリアスを取得し、限定機能を利用し、サポートしてください。"
+        "Pass Plus に登録して、無制限のエイリアスを取得し、限定機能を利用し、私たちをサポートしてください。"
       ],
       "Here you will find all the necessary information to get you started.": [
         "ここでは、必要なすべての情報をご覧いただけます。"
@@ -1998,7 +1998,7 @@
         "このエイリアスからメールを送った時の表示名"
       ],
       "The export will only contain vaults that you own.": [
-        "エクスポートには、自分が所有するボールトのみが含まれます。"
+        "エクスポートには、自分が所有する保管庫のみが含まれます。"
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "エクスポートされるファイルを PGP を使用して暗号化するため、強力なパスフレーズが必要です。"
@@ -2106,7 +2106,7 @@
         "${ PASS_APP_NAME } をアップグレードします"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "今すぐアップグレードしてプレミアム機能をロック解除してください"
+        "今すぐアップグレードしてプレミアム機能をアンロックしましょう"
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "複数保管庫を作成するには有料プランへアップグレードしてください。"
@@ -2205,7 +2205,7 @@
         "作成しようとしています"
       ],
       "You're invited to a vault.": [
-        "フォルダーへの招待があります。"
+        "保管庫への招待があります。"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } セッションはロックされています"
@@ -2447,16 +2447,16 @@
         "ログイン情報を作成"
       ],
       "Create an encrypted note": [
-        "暗号化されたノートを作成"
+        "暗号化されたメモを作成"
       ],
       "Create an Identity": [
-        "ユーザー情報を作成する"
+        "ユーザー情報を作成"
       ],
       "Create lock": [
         "ロックを作成"
       ],
       "Create new vault": [
-        "新しい保管庫を作る"
+        "新しい保管庫を作成"
       ],
       "Created": [
         "作成日時"
@@ -2552,7 +2552,7 @@
         "転送先"
       ],
       "Full Name": [
-        "氏名"
+        "フルネーム"
       ],
       "Gender": [
         "性別"
@@ -2570,7 +2570,7 @@
         "付与"
       ],
       "Hidden": [
-        "隠す"
+        "非表示"
       ],
       "Hide password": [
         "パスワードを隠す"
@@ -2651,7 +2651,7 @@
         "最新のインポート"
       ],
       "Learn more": [
-        "より詳しく"
+        "もっと詳しく"
       ],
       "License": [
         "免許証"
@@ -2831,7 +2831,7 @@
         "問題を報告"
       ],
       "Restore all items": [
-        "すべての項目を復元"
+        "すべてのアイテムを復元"
       ],
       "Reveal password": [
         "パスワードを表示する"
@@ -2861,7 +2861,7 @@
         "パスワードマネージャーを選択"
       ],
       "Selected": [
-        "選択"
+        "選択済み"
       ],
       "Settings": [
         "設定"
@@ -2900,7 +2900,7 @@
         "強い"
       ],
       "Suffix": [
-        "Suffix"
+        "接尾辞"
       ],
       "Support": [
         "サポート"
@@ -3171,10 +3171,10 @@
         "サフィックスを選択"
       ],
       "Shared vault": [
-        "保管庫を共有"
+        "共有された保管庫"
       ],
       "Unknown origin": [
-        "不明な起源"
+        "オリジナル不明"
       ],
       "Untitled": [
         "無題"
@@ -3249,7 +3249,7 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "エイリアスの同期が有効になりました。シンプルログインのエイリアスは同期に時間がかかることがあります"
+        "エイリアスの同期が有効になりました。Simple Loginのエイリアスは同期に時間がかかることがあります"
       ],
       "Catch-all setting successfully disabled": [
         "キャッチオール設定は正常に無効になりました"
@@ -3511,7 +3511,7 @@
         "MX レコード"
       ],
       "No items selected": [
-        "項目が選択されていません"
+        "アイテムが選択されていません"
       ],
       "No shared secure links": [
         "共有セキュアリンクはありません"
@@ -3589,7 +3589,7 @@
         "オンラインでの安全性を高める"
       ],
       "Suggestions": [
-        "候補"
+        "提案"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } に切り替えますか?"
@@ -3628,7 +3628,7 @@
         "保管庫"
       ],
       "Vault shared with you": [
-        "あなたと共有しているフォルダー"
+        "あなたと共有している保管庫"
       ],
       "Weak password": [
         "弱いパスワード"
@@ -3797,7 +3797,7 @@
         "一致するアイテムはありません"
       ],
       "No password manager selected": [
-        "パスワードマネージャーが選択されていない"
+        "パスワードマネージャーが選択されていません"
       ],
       "No results": [
         "結果なし"
@@ -3818,7 +3818,7 @@
         "パスワードが一致しません"
       ],
       "PGP encrypted export file requires passphrase": [
-        "PGP暗号化エクスポートファイルにはパスフレーズが必要です。"
+        "PGP暗号化エクスポートファイルにはパスフレーズが必要です"
       ],
       "Please contact us to investigate the issue": [
         "この問題の調査のため、私たちにご連絡ください"
@@ -3908,7 +3908,7 @@
         "あなたのサブスクリプションではこれ以上保管庫を作成することは許可されていません。"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "あなたのサブスクリプションでは、複数のフォルダーを作成することはできません。すべてのアイテムは最初のフォルダーにインポートされます。複数のフォルダーにインポートするには、サブスクリプションをアップグレードしてください。"
+        "あなたのサブスクリプションでは、複数の保管庫を作成することはできません。すべてのアイテムは最初の保管庫にインポートされます。複数の保管庫にインポートするには、サブスクリプションをアップグレードしてください。"
       ]
     }
   }

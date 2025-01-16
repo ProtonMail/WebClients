@@ -1144,6 +1144,12 @@
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Seu navegador está com dificuldades para ativar o ${ PASS_APP_NAME }."
       ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "O seu DNS não está corretamente configurado. O registro MX que obtermos é:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "O seu DNS não está corretamente configurado. O registro TXT que obtermos é:"
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
       ]
@@ -2055,6 +2061,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Esta configuração está desativada no nível da organização"
+      ],
+      "This setting is enforced by your organization": [
+        "A configuração é imposta para a sua organização"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."
@@ -3850,6 +3859,9 @@
       ],
       "No results": [
         "Sem resultados"
+      ],
+      "No secure links matching": [
+        "Nenhum link seguro correspondente"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Após a sincronização, a exclusão de aliases no ${ PASS_SHORT_APP_NAME } também os excluirá no SimpleLogin."
