@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { type SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { type Subscription } from '@proton/shared/lib/interfaces';
 import alias from '@proton/styles/assets/img/cancellation-flow/testimonial_alias.png';
 import darkWeb from '@proton/styles/assets/img/cancellation-flow/testimonial_dark_web.png';
 import netShield from '@proton/styles/assets/img/cancellation-flow/testimonial_net_shield.png';
@@ -50,7 +50,7 @@ export const ExpirationTime = ({
     subscription,
     cancellablePlan,
 }: {
-    subscription: SubscriptionModel;
+    subscription: Subscription;
     cancellablePlan?: boolean;
 }) => {
     const subscriptionExpiryTime = subscriptionExpires(subscription, true).expirationDate ?? 0;
@@ -77,7 +77,7 @@ export const ExpirationTime = ({
 };
 
 export const getDefaultConfirmationModal = (
-    subscription: SubscriptionModel,
+    subscription: Subscription,
     planName: string,
     cancellablePlan: boolean
 ): ConfirmationModal => {

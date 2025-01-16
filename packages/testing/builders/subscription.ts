@@ -1,8 +1,8 @@
 import { PLANS, PLAN_TYPES } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
-import { External, Renew, type SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { External, Renew, type Subscription } from '@proton/shared/lib/interfaces';
 
-export const buildSubscription = (value?: Partial<SubscriptionModel>): SubscriptionModel => {
+export const buildSubscription = (value?: Partial<Subscription>): Subscription => {
     return {
         ID: 'subscriptionId123',
         InvoiceID: 'invoiceId123',
@@ -41,7 +41,6 @@ export const buildSubscription = (value?: Partial<SubscriptionModel>): Subscript
                 Offer: 'default',
             },
         ],
-        isManagedByMozilla: false,
         ...value,
     };
 };

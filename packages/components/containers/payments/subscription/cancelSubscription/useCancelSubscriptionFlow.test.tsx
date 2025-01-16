@@ -8,7 +8,7 @@ import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { renderWithProviders } from '@proton/testing';
@@ -28,7 +28,7 @@ const userModel: UserModel = {
     ID: 'user-123',
 } as UserModel;
 
-const vpnSubscription: SubscriptionModel = {
+const vpnSubscription: Subscription = {
     ...subscriptionMock,
     Plans: [
         {
@@ -38,7 +38,7 @@ const vpnSubscription: SubscriptionModel = {
     ],
 };
 
-const mailSubscription: SubscriptionModel = {
+const mailSubscription: Subscription = {
     ...subscriptionMock,
     Plans: [
         {
@@ -73,7 +73,7 @@ describe('cancel subscription', () => {
     it('should return subscription kept if free subscription', async () => {
         const { hookRef } = setup({
             preloadedState: {
-                subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as SubscriptionModel),
+                subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as Subscription),
                 user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                 organization: getOrganizationState(organization),
             },

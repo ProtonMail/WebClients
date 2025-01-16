@@ -88,11 +88,6 @@ describe('Subscription Format', () => {
         };
     });
 
-    it('should add isManagedByMozilla property', () => {
-        const result = format(subscription, undefined);
-        expect(result.isManagedByMozilla).toBeDefined();
-    });
-
     it('should not add upcoming property if it is not specified', () => {
         const result = format(subscription, undefined);
         expect(result.UpcomingSubscription).not.toBeDefined();

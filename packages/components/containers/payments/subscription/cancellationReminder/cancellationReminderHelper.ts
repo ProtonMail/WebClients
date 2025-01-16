@@ -1,5 +1,5 @@
 import type { Feature } from '@proton/features/interface';
-import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 
 export type ReminderFlag = Record<string, number>;
 
@@ -19,7 +19,7 @@ export const shouldDisplayReminder = (feature: ReminderFlag): boolean => {
 
 export const shouldOpenReminderModal = (
     subscriptionLoading: boolean,
-    subscription?: SubscriptionModel,
+    subscription?: Subscription,
     feature?: Feature<ReminderFlag>
 ) => {
     if (!feature?.Value || subscriptionLoading) {

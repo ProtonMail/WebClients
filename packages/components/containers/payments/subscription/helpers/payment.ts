@@ -10,7 +10,7 @@ import {
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS, COUPON_CODES, CYCLE, VPN_PASS_PROMOTION_COUPONS } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import type { PlansMap, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 import { Audience, Renew } from '@proton/shared/lib/interfaces';
 
 export const getVPNPlanToUse = ({
@@ -120,13 +120,10 @@ type SubscriptionResult = {
 export function subscriptionExpires(): FreeSubscriptionResult;
 export function subscriptionExpires(subscription: undefined | null, cancelled?: boolean): FreeSubscriptionResult;
 export function subscriptionExpires(subscription: FreeSubscription, cancelled?: boolean): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: Subscription | undefined, cancelled?: boolean): SubscriptionResult;
+export function subscriptionExpires(subscription: Subscription, cancelled?: boolean): SubscriptionResult;
 export function subscriptionExpires(
-    subscription: SubscriptionModel | undefined,
-    cancelled?: boolean
-): SubscriptionResult;
-export function subscriptionExpires(subscription: SubscriptionModel, cancelled?: boolean): SubscriptionResult;
-export function subscriptionExpires(
-    subscription?: SubscriptionModel | FreeSubscription | null,
+    subscription?: Subscription | FreeSubscription | null,
     cancelled = false
 ): FreeSubscriptionResult | SubscriptionResult {
     if (!subscription || isFreeSubscription(subscription)) {
