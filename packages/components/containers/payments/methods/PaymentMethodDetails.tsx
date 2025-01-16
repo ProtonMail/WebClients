@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { SepaAuthorizationText } from '@proton/components/payments/chargebee/SepaAuthorizationText';
 import { formattedShortSavedSepaDetails } from '@proton/components/payments/client-extensions';
-import { getBankSvg } from '@proton/components/payments/client-extensions/credit-card-type';
 import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/payments';
+import { getBankSvg } from '@proton/payments/ui';
 
 import Bordered from '../../../components/container/Bordered';
 import useSvgGraphicsBbox from '../../../hooks/useSvgGraphicsBbox';

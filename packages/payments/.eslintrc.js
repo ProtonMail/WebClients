@@ -5,6 +5,13 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: './tsconfig.json',
     },
-    rules: {},
+    rules: {
+        'import/no-internal-modules': [
+            'error',
+            {
+                forbid: ['@proton/payments', '@proton/payments/index'],
+            },
+        ],
+    },
     ignorePatterns: ['.eslintrc.js'],
 };

@@ -10,8 +10,14 @@ import Info from '@proton/components/components/link/Info';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
-import type { FullPlansMap, PaymentMethodStatusExtended, PlanIDs } from '@proton/payments';
-import { type Currency, PLANS } from '@proton/payments';
+import {
+    type Currency,
+    type FullPlansMap,
+    PLANS,
+    type PaymentMethodStatusExtended,
+    type PlanIDs,
+} from '@proton/payments';
+import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -36,8 +42,6 @@ import type {
 import Checkout from '../../Checkout';
 import { getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
-import type { OnBillingAddressChange } from '../../TaxCountrySelector';
-import { WrappedTaxCountrySelector } from '../../TaxCountrySelector';
 import { getTotalBillingText } from '../helpers';
 import type { CheckoutModifiers } from '../useCheckoutModifiers';
 import { AddonTooltip } from './helpers/AddonTooltip';

@@ -3,6 +3,8 @@ import { flushSync } from 'react-dom';
 
 import { errorClassName } from '../v2/field/InputField';
 
+export type FormFieldValidator = (validations: string[]) => string;
+
 const useFormErrors = () => {
     const [, rerender] = useState<any>();
     const errorsMapRef = useRef<string[]>([]);
@@ -39,11 +41,11 @@ const useFormErrors = () => {
             const oldErrors = errorsMapRef.current;
             return !oldErrors.some((value) => !!value);
         },
-        validator: (validations: string[]) => {
+        validator: ((validations: string[]) => {
             const error = validations.reduce((acc, x) => acc || x, '');
             errors.push(error);
             return isSubmittedRef.current ? error : '';
-        },
+        }) satisfies FormFieldValidator,
     };
 };
 

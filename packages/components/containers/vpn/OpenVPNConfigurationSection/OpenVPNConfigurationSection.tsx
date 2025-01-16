@@ -17,15 +17,10 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { PLANS } from '@proton/payments';
+import { type CountryOptions, correctAbbr, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import { SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import {
-    type CountryOptions,
-    correctAbbr,
-    getCountryOptions,
-    getLocalizedCountryByAbbr,
-} from '../../../helpers/countries';
 import useSortedList from '../../../hooks/useSortedList';
 import type { EnhancedLogical } from '../OpenVPNConfigurationSection/interface';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';

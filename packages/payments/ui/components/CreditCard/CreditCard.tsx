@@ -11,14 +11,14 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { requestAnimationFrameRateLimiter, default as useElementRect } from '@proton/components/hooks/useElementRect';
-import { formatCreditCardNumber, isValidNumber } from '@proton/components/payments/client-extensions/credit-card-type';
 import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
-import type { CardModel } from '@proton/payments';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import clsx from '@proton/utils/clsx';
 
-import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
+import { type CardModel } from '../../../core/cardDetails';
+import { DEFAULT_COUNTRIES_SEPARATOR, getFullList } from '../../helpers/countries-sorted';
+import { formatCreditCardNumber, isValidNumber } from './credit-card-type';
 
 import './CreditCard.scss';
 
@@ -92,7 +92,7 @@ const useAdvancer = (
     }, [currentFieldState, condition]);
 };
 
-const CreditCard = ({
+export const CreditCard = ({
     card,
     errors,
     setCardProperty: onChange,
@@ -383,7 +383,7 @@ const CreditCard = ({
                             loading
                                 ? undefined
                                 : ({ value }: SelectChangeEvent<string>) => {
-                                      if (value === DEFAULT_SEPARATOR.value) {
+                                      if (value === DEFAULT_COUNTRIES_SEPARATOR.value) {
                                           return;
                                       }
                                       onChange('country', value);
@@ -402,7 +402,7 @@ const CreditCard = ({
                                     disabled={disabled}
                                     data-testid={`country-${value}`}
                                 >
-                                    {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : label}
+                                    {value === DEFAULT_COUNTRIES_SEPARATOR.value ? <hr className="m-0" /> : label}
                                 </Option>
                             );
                         })}
@@ -435,5 +435,3 @@ const CreditCard = ({
         </div>
     );
 };
-
-export default CreditCard;

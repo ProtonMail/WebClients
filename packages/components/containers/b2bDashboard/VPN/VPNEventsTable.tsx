@@ -10,11 +10,11 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
-import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { getFlagSvg } from '../../vpn/flag';
 import { getVPNEventColor, getVPNEventIcon } from './helpers';
 import type { VPNEvent } from './interface';

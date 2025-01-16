@@ -1,8 +1,7 @@
-import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/payments';
 import { apiMock } from '@proton/testing/lib/api';
 import { MOCK_TOKEN_RESPONSE, addTokensResolver, addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
+import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import type { AmountAndCurrency, ChargeablePaymentParameters, TokenPaymentMethod } from '../interface';
 import { PaypalPaymentProcessor, PaypalWrongAmountError } from './paypalPayment';
 

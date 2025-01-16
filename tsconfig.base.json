@@ -43,6 +43,7 @@
             "@proton/pack/*": ["./packages/pack/*"],
             "@proton/pass/*": ["./packages/pass/*"],
             "@proton/payments/*": ["./packages/payments/*"],
+            "@proton/payments/ui/*": ["./packages/payments/components/*"],
             "@proton/polyfill/*": ["./packages/polyfill/*"],
             "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
             "@proton/shared/*": ["./packages/shared/*"],

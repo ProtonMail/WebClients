@@ -1,6 +1,5 @@
 import { isSEPACountry } from 'ibantools';
 
-import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/payments';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, BillingPlatform, ChargebeeUserExists, Subscription, User } from '@proton/shared/lib/interfaces';
@@ -9,7 +8,15 @@ import { isDelinquent } from '@proton/shared/lib/user/helpers';
 
 import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
-import { type ADDON_NAMES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import {
+    type ADDON_NAMES,
+    MIN_BITCOIN_AMOUNT,
+    MIN_PAYPAL_AMOUNT_CHARGEBEE,
+    MIN_PAYPAL_AMOUNT_INHOUSE,
+    MethodStorage,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+} from './constants';
 import { extendStatus, isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
