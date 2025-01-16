@@ -1,3 +1,4 @@
+import { MetricUserPlan } from '../../utils/type/MetricTypes';
 import { IntegrityMetrics, getAddressMatchingDefaultShare, getFileSize, getFromBefore2024 } from './integrityMetrics';
 
 class IntegrityMetricsForTesting extends IntegrityMetrics {
@@ -35,9 +36,9 @@ describe('IntegrityMetrics::', () => {
 
     describe('shareDecryptionError', () => {
         it('reports each share only once', () => {
-            integrityMetrics.shareDecryptionError('shareId1', 'main', { isPaid: false, createTime: 0 });
-            integrityMetrics.shareDecryptionError('shareId1', 'main', { isPaid: false, createTime: 0 });
-            integrityMetrics.shareDecryptionError('shareId2', 'device', { isPaid: false, createTime: 0 });
+            integrityMetrics.shareDecryptionError('shareId1', 'main', { plan: MetricUserPlan.Paid, createTime: 0 });
+            integrityMetrics.shareDecryptionError('shareId1', 'main', { plan: MetricUserPlan.Paid, createTime: 0 });
+            integrityMetrics.shareDecryptionError('shareId2', 'device', { plan: MetricUserPlan.Paid, createTime: 0 });
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledTimes(2);
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
                 entity: 'share',
@@ -52,21 +53,27 @@ describe('IntegrityMetrics::', () => {
         });
 
         it('does not call affected user if year is before 2024', () => {
-            integrityMetrics.shareDecryptionError('shareId1', 'main', { isPaid: false, createTime: 1704060000 });
+            integrityMetrics.shareDecryptionError('shareId1', 'main', {
+                plan: MetricUserPlan.Paid,
+                createTime: 1704060000,
+            });
             expect(mockMetricsErroringUsers).toHaveBeenCalledTimes(0);
         });
 
         it('calls also affected user if year is 2024 or newer', () => {
-            integrityMetrics.shareDecryptionError('shareId1', 'main', { isPaid: false, createTime: 1725544806 });
+            integrityMetrics.shareDecryptionError('shareId1', 'main', {
+                plan: MetricUserPlan.Paid,
+                createTime: 1725544806,
+            });
             expect(mockMetricsErroringUsers).toHaveBeenCalledTimes(1);
         });
     });
 
     describe('nodeDecryptionError', () => {
         it('reports each node only once', () => {
-            integrityMetrics.nodeDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 0 });
-            integrityMetrics.nodeDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 0 });
-            integrityMetrics.nodeDecryptionError('nodeId2', 'device', { isPaid: false, createTime: 0 });
+            integrityMetrics.nodeDecryptionError('nodeId1', 'main', { plan: MetricUserPlan.Paid, createTime: 0 });
+            integrityMetrics.nodeDecryptionError('nodeId1', 'main', { plan: MetricUserPlan.Paid, createTime: 0 });
+            integrityMetrics.nodeDecryptionError('nodeId2', 'device', { plan: MetricUserPlan.Paid, createTime: 0 });
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledTimes(2);
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
                 entity: 'node',
@@ -81,12 +88,18 @@ describe('IntegrityMetrics::', () => {
         });
 
         it('does not call affected user if year is before 2024', () => {
-            integrityMetrics.nodeDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1704060000 });
+            integrityMetrics.nodeDecryptionError('nodeId1', 'main', {
+                plan: MetricUserPlan.Paid,
+                createTime: 1704060000,
+            });
             expect(mockMetricsErroringUsers).toHaveBeenCalledTimes(0);
         });
 
         it('calls also affected user if year is 2024 or newer', () => {
-            integrityMetrics.nodeDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1725544806 });
+            integrityMetrics.nodeDecryptionError('nodeId1', 'main', {
+                plan: MetricUserPlan.Paid,
+                createTime: 1725544806,
+            });
             expect(mockMetricsErroringUsers).toHaveBeenCalledTimes(1);
         });
     });
@@ -94,17 +107,17 @@ describe('IntegrityMetrics::', () => {
     describe('signatureVerificationError', () => {
         it('reports each node only once', () => {
             integrityMetrics.signatureVerificationError('nodeId1', 'main', 'NodeKey', {
-                isPaid: false,
+                plan: MetricUserPlan.Paid,
                 createTime: 0,
                 addressMatchingDefaultShare: undefined,
             });
             integrityMetrics.signatureVerificationError('nodeId1', 'main', 'NodeKey', {
-                isPaid: false,
+                plan: MetricUserPlan.Paid,
                 createTime: 0,
                 addressMatchingDefaultShare: undefined,
             });
             integrityMetrics.signatureVerificationError('nodeId2', 'device', 'SignatureEmail', {
-                isPaid: false,
+                plan: MetricUserPlan.Paid,
                 createTime: 0,
                 addressMatchingDefaultShare: undefined,
             });
@@ -125,17 +138,17 @@ describe('IntegrityMetrics::', () => {
 
         it('does not call affected user if year is before 2024 or doesnt have matching address with default share', () => {
             integrityMetrics.signatureVerificationError('nodeId1', 'main', 'NodeKey', {
-                isPaid: false,
+                plan: MetricUserPlan.Paid,
                 createTime: 1704060000,
                 addressMatchingDefaultShare: false,
             });
             integrityMetrics.signatureVerificationError('nodeId2', 'main', 'NodeKey', {
-                isPaid: false,
+                plan: MetricUserPlan.Paid,
                 createTime: 1704060000,
                 addressMatchingDefaultShare: true,
             });
             integrityMetrics.signatureVerificationError('nodeId3', 'main', 'NodeKey', {
-                isPaid: false,
+                plan: MetricUserPlan.Paid,
                 createTime: 1725544806,
                 addressMatchingDefaultShare: false,
             });
@@ -144,7 +157,7 @@ describe('IntegrityMetrics::', () => {
 
         it('calls also affected user if year is 2024 or newer', () => {
             integrityMetrics.signatureVerificationError('nodeId1', 'main', 'NodeKey', {
-                isPaid: false,
+                plan: MetricUserPlan.Paid,
                 createTime: 1725544806,
                 addressMatchingDefaultShare: true,
             });
@@ -154,7 +167,7 @@ describe('IntegrityMetrics::', () => {
 
     describe('contentDecryptionError', () => {
         it('reports decryption error as content entity', () => {
-            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 0 });
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', { plan: MetricUserPlan.Paid, createTime: 0 });
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
                 entity: 'content',
                 shareType: 'main',
@@ -163,7 +176,10 @@ describe('IntegrityMetrics::', () => {
         });
 
         it('reports decryption error as content entity', () => {
-            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1732702046 });
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', {
+                plan: MetricUserPlan.Paid,
+                createTime: 1732702046,
+            });
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
                 entity: 'content',
                 shareType: 'main',
@@ -172,8 +188,14 @@ describe('IntegrityMetrics::', () => {
         });
 
         it('reports decryption error as content entity and do not duplicate', () => {
-            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1732702046 });
-            integrityMetrics.contentDecryptionError('nodeId1', 'main', { isPaid: false, createTime: 1732702046 });
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', {
+                plan: MetricUserPlan.Paid,
+                createTime: 1732702046,
+            });
+            integrityMetrics.contentDecryptionError('nodeId1', 'main', {
+                plan: MetricUserPlan.Paid,
+                createTime: 1732702046,
+            });
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledTimes(1);
             expect(mockMetricsDecryptionErrors).toHaveBeenCalledWith({
                 entity: 'content',
@@ -185,8 +207,11 @@ describe('IntegrityMetrics::', () => {
 
     describe('nodeBlockVerificationError', () => {
         it('reports each incident', () => {
-            integrityMetrics.nodeBlockVerificationError('main', 1234, { isPaid: false, retryHelped: true });
-            integrityMetrics.nodeBlockVerificationError('device', 1234, { isPaid: false, retryHelped: true });
+            integrityMetrics.nodeBlockVerificationError('main', 1234, { plan: MetricUserPlan.Paid, retryHelped: true });
+            integrityMetrics.nodeBlockVerificationError('device', 1234, {
+                plan: MetricUserPlan.Paid,
+                retryHelped: true,
+            });
             expect(mockMetricsBlockVerificationErrors).toHaveBeenCalledTimes(2);
             expect(mockMetricsBlockVerificationErrors).toHaveBeenCalledWith({
                 shareType: 'main',
@@ -201,12 +226,15 @@ describe('IntegrityMetrics::', () => {
         });
 
         it('does not call affected user if retry helped', () => {
-            integrityMetrics.nodeBlockVerificationError('main', 1234, { isPaid: false, retryHelped: true });
+            integrityMetrics.nodeBlockVerificationError('main', 1234, { plan: MetricUserPlan.Paid, retryHelped: true });
             expect(mockMetricsErroringUsers).toHaveBeenCalledTimes(0);
         });
 
         it('calls also affected user if retry didnt help', () => {
-            integrityMetrics.nodeBlockVerificationError('main', 1234, { isPaid: false, retryHelped: false });
+            integrityMetrics.nodeBlockVerificationError('main', 1234, {
+                plan: MetricUserPlan.Paid,
+                retryHelped: false,
+            });
             expect(mockMetricsErroringUsers).toHaveBeenCalledTimes(1);
         });
     });
