@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
+      "About hide-my-email aliases": [
+        "O aliasach hide-my-email"
+      ],
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
@@ -486,6 +489,9 @@
       "Export contact group": [
         "Eksportuj grupę kontaktów"
       ],
+      "Export selection as .vcf": [
+        "Eksportuj selekcję jako .vcf"
+      ],
       "External encryption": [
         "Szyfrowanie zewnętrzne"
       ],
@@ -761,6 +767,9 @@
       ],
       "More": [
         "Więcej"
+      ],
+      "More actions": [
+        "Więcej akcji"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Więcej szczegółów o adresie ${ ariaLabelTitle }"
@@ -3765,6 +3774,12 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nowa wiadomość",
+        "${ notificationsToShow.length } nowych wiadomości",
+        "${ notificationsToShow.length } nowych wiadomości",
+        "${ notificationsToShow.length } nowych wiadomości"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Od: ${ sender } - ${ Subject }"
       ]
@@ -4762,6 +4777,11 @@
         "Nie można wysłać zaproszenia na adres ${ email }. ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Niespodziewany błąd"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Dołączony plik ICS nie może zostać odszyfrowany"
@@ -5457,11 +5477,17 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Strefa czasowa kalendarza nie jest obsługiwana"
+      ],
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
       ],
       "End time out of bounds": [
         "Czas zakończenia jest poza zakresem"
+      ],
+      "Event validation failed": [
+        "Weryfikacja wydarzenia nie powiodła się"
       ],
       "Malformed end time": [
         "Czas zakończenia posiada nieprawidłowy format"
@@ -5469,8 +5495,14 @@
       "Malformed recurring event": [
         "Wydarzenie cykliczne posiada nieprawidłowy format"
       ],
+      "Malformed start time": [
+        "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
+      ],
+      "Time zone not supported": [
+        "Strefa czasowa nie jest obsługiwana"
       ]
     },
     "ICS widget label for event details": {
@@ -5633,11 +5665,17 @@
       "Use your app password instead of your regular password if:": [
         "Użyj hasła aplikacji, zamiast swojego zwykłego hasła, jeśli:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Hasło aplikacji jest prawidłowe. Nie używaj swojego zwykłego hasła."
+      ],
       "Your email account requires an app password to export your data.": [
         "Konto e-mail wymaga hasła aplikacji do eksportu danych."
       ],
       "Your email account requires one to export your data.": [
         "Konto e-mail wymaga tego hasła do eksportu danych."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adres e-mail i hasło aplikacji są prawidłowe. Nie używaj swojego zwykłego hasła."
       ],
       "Your email address and password are correct.": [
         "Adres e-mail i hasło są prawidłowe."
@@ -6345,6 +6383,12 @@
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Utwórz bezpieczną chmurę dla ${ value } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników"
+      ],
       "Create in": [
         "Utwórz w"
       ],
@@ -6704,6 +6748,9 @@
       ],
       "JCB logo": [
         "Logo JCB"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Dołącz do programu ${ PROTON_SENTINEL_NAME }, aby uzyskać najwyższy poziom bezpieczeństwa konta i wsparcia."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
@@ -7149,6 +7196,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
@@ -7427,6 +7477,12 @@
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "Aby odzyskać dane, musisz reaktywować klucz konta użyty podczas jego tworzenia. Wymaga to znajomości hasła użytego podczas generowania klucza."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Aby usunąć ograniczenia, można przejść na płatny plan."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Aby usunąć ograniczenia, można odwiedzić stronę ${ mailLink } i wykupić płatny plan."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "W celu anulowania subskrypcji tej listy mailingowej zostanie wysłana wiadomość z adresu ${ boldFrom } wraz z następującymi szczegółami:"
@@ -8634,6 +8690,9 @@
       ],
       "Remember my choice": [
         "Zapamiętaj wybór"
+      ],
+      "Remove metadata": [
+        "Usuń metadane"
       ],
       "Reveal password": [
         "Pokaż hasło"
@@ -10453,6 +10512,12 @@
       "${ industryLeadingSpamProtectionTitle } keeps scam emails from ever reaching your inbox.": [
         "${ industryLeadingSpamProtectionTitle } zapobiega przedostawaniu się wyłudzających wiadomości do skrzynki odbiorczej."
       ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } na App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } na Google Play"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } zapewnia koniec śledzenia w Internecie."
       ],
@@ -10756,6 +10821,15 @@
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
@@ -13835,6 +13909,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dzięki temu nikt nie może zobaczyć lokalizacji, urządzenia i innych informacji, które mogłyby zostać wykorzystane do identyfikacji lub śledzenia użytkownika."
       ],
       "This feature is only available for paid users": [
         "Ta funkcja jest dostępna tylko dla użytkowników płatnego planu"
