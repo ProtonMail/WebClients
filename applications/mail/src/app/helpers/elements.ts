@@ -194,8 +194,7 @@ export const getCurrentFolderIDs = (element: Element | undefined, customFoldersL
         [SNOOZED]: true,
     };
     const customFolders = toMap(customFoldersList, 'ID');
-    const res = Object.keys(labelIDs).filter((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
-    return res;
+    return Object.keys(labelIDs).filter((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
 };
 
 export const getSenders = (element: Element) => {

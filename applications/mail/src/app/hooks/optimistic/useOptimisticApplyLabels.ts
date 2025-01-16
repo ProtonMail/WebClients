@@ -116,11 +116,11 @@ export const useOptimisticApplyLabels = () => {
                         changes[folderID] = false;
                     });
 
+                    // If moving an element to spam or trash, we need to remove the almost all mail label too
                     if (
                         Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.TRASH) ||
                         Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.SPAM)
                     ) {
-                        console.log('remove almost all mail', { element });
                         changes[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL] = false;
                     }
                 }
