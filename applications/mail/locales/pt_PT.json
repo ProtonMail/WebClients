@@ -638,16 +638,16 @@
         "Inserir ${ totalChecked } contactos"
       ],
       "Insert contact": [
-        "Inserir contacto"
+        "Inserir um contacto"
       ],
       "Insert contacts": [
         "Inserir contactos"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir uma imagem"
       ],
       "Insert link": [
-        "Inserir hiperligação"
+        "Inserir uma ligação"
       ],
       "Italic": [
         "Itálico"
@@ -1790,6 +1790,9 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Aceda a conteúdo bloqueado e navegue com privacidade. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, streaming de alta velocidade, bloqueador de anúncios e proteção contra malware, acelerador de VPN e muito mais."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+, Prime Video e mais, de qualquer lugar."
       ],
@@ -4926,7 +4929,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Introduza uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -5400,7 +5403,7 @@
         "Fuso horário do calendário não suportado"
       ],
       "Edited event not supported": [
-        "Evento editado não suportado"
+        "O evento editado não é suportado."
       ],
       "End time out of bounds": [
         "Hora final fora dos limites"
@@ -5430,7 +5433,7 @@
         "O evento recorrente não tem ocorrências."
       ],
       "Recurring rule not supported": [
-        "Regra recorrente não suportada"
+        "A regra recorrente não é suportada."
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
@@ -6533,10 +6536,10 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir uma imagem"
       ],
       "Insert link": [
-        "Inserir hiperligação"
+        "Inserir uma ligação"
       ],
       "Internet connection lost": [
         "Ligação à Internet perdida"
@@ -6809,8 +6812,8 @@
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } crédito restante.",
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } crédito restante.",
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abra o documento para o visualizar."
@@ -7876,7 +7879,7 @@
         "Ir para Lixo"
       ],
       "Insert link": [
-        "Inserir hiperligação"
+        "Inserir uma ligação"
       ],
       "Jump to first": [
         "Ir para o primeiro"
@@ -10688,7 +10691,7 @@
         "Descreva o problema e inclua quaisquer mensagens de erro."
       ],
       "Please insert link first": [
-        "Introduza primeiro a hiperligação"
+        "Introduza primeiro a ligação"
       ],
       "Please share what you expected": [
         "Partilhe as suas expectativas."
@@ -11595,7 +11598,7 @@
     },
     "Step": {
       "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
-        "Insira o seu endereço ${ MAIL_APP_NAME } como o novo endereço e guarde, confirme ou verifique a alteração."
+        "Introduza o seu endereço ${ MAIL_APP_NAME } como o novo endereço e guarde, confirme ou verifique a alteração."
       ],
       "In the account settings, look for the option to edit or change your email address ": [
         "Nas definições da conta, procure a opção para editar ou alterar o seu endereço de email."
@@ -12906,7 +12909,7 @@
         "Ativar pesquisa de conteúdo de mensagem"
       ],
       "Enter 2FA code": [
-        "Insira o código 2FA"
+        "Introduza o código 2FA"
       ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
@@ -13337,7 +13340,7 @@
         "O pedido de cancelamento de subscrição foi enviado"
       ],
       "Upgrade complete!": [
-        "Atualização completa!"
+        "A subscrição foi atualizada."
       ],
       "Verification error": [
         "Erro de verificação"
