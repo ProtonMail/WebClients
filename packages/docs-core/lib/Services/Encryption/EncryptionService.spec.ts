@@ -63,7 +63,7 @@ describe('EncryptionService', () => {
       expect(CryptoProxy.signMessage).toHaveBeenCalledWith({
         binaryData: mockData,
         signingKeys: mockSigningKey,
-        context: { value: `docs.${mockContext}.${mockAssociatedData}`, critical: true },
+        signatureContext: { value: `docs.${mockContext}.${mockAssociatedData}`, critical: true },
         detached: true,
         format: 'binary',
       })
@@ -163,7 +163,7 @@ describe('EncryptionService', () => {
         binaryData: mockData,
         binarySignature: mockSignature,
         verificationKeys: mockVerificationKeys,
-        context: { value: `docs.${mockContext}.${mockAssociatedData}`, required: true },
+        signatureContext: { value: `docs.${mockContext}.${mockAssociatedData}`, required: true },
         format: 'binary',
       })
     })

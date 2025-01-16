@@ -126,7 +126,7 @@ export async function encryptPassphraseSessionKey({
         signingKeys: signingKey,
         detached: true,
         format: 'armored',
-        context: { critical: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
+        signatureContext: { critical: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
     });
 
     if (publicKey) {

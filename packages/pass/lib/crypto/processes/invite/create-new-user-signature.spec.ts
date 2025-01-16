@@ -29,7 +29,7 @@ describe('create new user invite signature', () => {
             binaryData: createNewUserSignatureBody({ invitedEmail, vaultKey }),
             binarySignature: base64StringToUint8Array(signature),
             verificationKeys: [addressKey.publicKey],
-            context: {
+            signatureContext: {
                 value: PassSignatureContext.VaultInviteNewUser,
                 required: true,
             },
