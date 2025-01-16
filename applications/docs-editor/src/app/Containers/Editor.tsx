@@ -240,7 +240,7 @@ export function Editor({
         <ListPlugin />
         <CheckListPlugin />
         <CustomOrderedListPlugin />
-        <TablePlugin hasCellBackgroundColor hasTabHandler />
+        <TablePlugin />
         <TableCellResizerPlugin />
         <TabIndentationPlugin />
         <ProtonLinkPlugin />
