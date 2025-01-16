@@ -124,7 +124,7 @@ const ComposerTitleBar = ({
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <span
                 className={clsx([
-                    'flex-1 flex flex-row flex-nowrap py-3 pr-4 ml-2',
+                    'flex-1 flex flex-row flex-nowrap items-center py-3 pr-4 ml-2',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}

@@ -547,7 +547,7 @@
 	}
 
 	&--is-minimized {
-		block-size: 2.5em; // title bar height
+		block-size: rem(44); // title bar height
 		// can't only use this to disable fields without putting focus on minimize button, got some side effects
 		.composer-body-container,
 		.composer-actions {
