@@ -1,6 +1,6 @@
 import { FREE_SUBSCRIPTION, type FullPlansMap, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
 import { APPS, CYCLE } from '@proton/shared/lib/constants';
-import type { Plan, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Plan, Subscription } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { getLongTestPlans, getTestPlans } from '@proton/testing/data';
 
@@ -67,7 +67,7 @@ describe('getInitialCycle', () => {
     });
 
     it('should handle upcoming subscription cycle', () => {
-        const subscriptionWithUpcoming: SubscriptionModel = {
+        const subscriptionWithUpcoming: Subscription = {
             ...mockSubscription,
             UpcomingSubscription: {
                 ...mockSubscription,
@@ -122,7 +122,7 @@ describe('getInitialCycle', () => {
     });
 
     it('should handle custom cycles', () => {
-        const subscriptionWithCustomCycle: SubscriptionModel = {
+        const subscriptionWithCustomCycle: Subscription = {
             ...mockSubscription,
             Cycle: CYCLE.FIFTEEN,
         };

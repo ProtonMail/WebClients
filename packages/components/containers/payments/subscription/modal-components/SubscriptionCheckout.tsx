@@ -28,7 +28,7 @@ import type {
     Cycle,
     FreePlanDefault,
     Plan,
-    SubscriptionModel,
+    Subscription,
     UserModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
@@ -62,13 +62,13 @@ type Props = {
     statusExtended?: PaymentMethodStatusExtended;
     showTaxCountry?: boolean;
     onBillingAddressChange?: OnBillingAddressChange;
-    subscription: SubscriptionModel;
+    subscription: Subscription;
     paymentNeeded: boolean;
     paymentMethods: MethodsHook;
     user: UserModel;
 } & CheckoutModifiers;
 
-export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscription: SubscriptionModel) => {
+export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscription: Subscription) => {
     const [user] = useUser();
     const [paymentStatus] = usePaymentStatus();
     const [plansResult] = usePlans();

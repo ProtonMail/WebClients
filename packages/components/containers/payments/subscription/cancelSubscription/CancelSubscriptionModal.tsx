@@ -5,7 +5,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Time from '@proton/components/components/time/Time';
 import { getPlanTitle } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 
 import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
 import type { CancelSubscriptionResult } from './types';
@@ -13,7 +13,7 @@ import type { CancelSubscriptionResult } from './types';
 type PromiseHandlers = ModalTwoPromiseHandlers<CancelSubscriptionResult>;
 
 export type CancelSubscriptionModalProps = ModalProps & {
-    subscription: SubscriptionModel;
+    subscription: Subscription;
 };
 
 export const CancelSubscriptionModal = ({

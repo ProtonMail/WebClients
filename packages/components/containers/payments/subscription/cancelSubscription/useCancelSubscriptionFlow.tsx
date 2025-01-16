@@ -27,7 +27,7 @@ import {
     hasPassLaunchOffer,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
@@ -245,7 +245,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
     interface CancelWithUpsellProps {
         paymentsVersionOverride: PaymentsVersion | undefined;
-        subscription: SubscriptionModel;
+        subscription: Subscription;
         upsellPlanId: PLANS | undefined;
     }
 
@@ -276,7 +276,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     interface CancelRenewProps {
         paymentsVersionOverride: PaymentsVersion | undefined;
         skipUpsell?: boolean;
-        subscription: SubscriptionModel;
+        subscription: Subscription;
         subscriptionReminderFlow: boolean | undefined;
         upsellPlanId: PLANS | undefined;
     }

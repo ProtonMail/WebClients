@@ -1,10 +1,5 @@
 import { PLAN_TYPES } from '@proton/payments';
 
-export const isManagedByMozilla = ({ CouponCode }: { CouponCode?: string | null } = {}) => {
-    const coupon = CouponCode || ''; // CouponCode can be null
-    return coupon.startsWith('MOZILLA') || coupon.startsWith('MOZTEST');
-};
-
 interface SubcriptionPlan {
     Type: PLAN_TYPES;
     Title: string;
