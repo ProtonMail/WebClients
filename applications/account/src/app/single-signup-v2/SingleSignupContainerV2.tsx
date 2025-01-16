@@ -39,6 +39,7 @@ import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { appendReturnUrlParams } from '@proton/shared/lib/authentication/returnUrl';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
@@ -47,7 +48,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { formatUser } from '@proton/shared/lib/user/helpers';
@@ -498,7 +499,33 @@ const SingleSignupContainerV2 = ({
                 api: silentApi,
                 onGetActiveSessions,
             });
+
             const resumedSession = sessionsData.session;
+
+            if (
+                !resumedSession &&
+                signupParameters.invite?.type === 'porkbun' &&
+                window.location.pathname === SSO_PATHS.PORKBUN_SIGN_IN
+            ) {
+                const url = new URL(SSO_PATHS.LOGIN, window.location.origin);
+                url.searchParams.append('partner', signupParameters.invite.type);
+                url.searchParams.append('email', signupParameters.invite.data.invitee);
+                url.searchParams.append('prompt', 'login');
+                appendReturnUrlParams(url.searchParams, {
+                    url: getPathFromLocation(
+                        new URL(
+                            getPorkbunPaymentUrl({
+                                data: signupParameters.invite.data,
+                            })
+                        )
+                    ),
+                    context: 'public',
+                    target: 'account',
+                });
+                window.location.replace(url.toString());
+                // Promise that never resolves
+                await new Promise<void>(() => {});
+            }
 
             let chargebeeEnabled = undefined;
             if (resumedSession) {
@@ -607,7 +634,8 @@ const SingleSignupContainerV2 = ({
                         data: signupParameters.invite.data,
                     })
                 );
-                await Promise.resolve(() => {});
+                // Promise that never resolves
+                await new Promise<void>(() => {});
             }
 
             const signupParametersDiff: Partial<SignupParameters2> = {};
