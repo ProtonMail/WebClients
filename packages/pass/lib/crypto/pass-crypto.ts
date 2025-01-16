@@ -344,6 +344,8 @@ export const createPassCrypto = (): PassCryptoWorker => {
             };
         },
 
+        /** New user invites does not support item sharing.
+         * Passing an item share shareId will throw. */
         async createNewUserInvite({ shareId, email, role, itemId }) {
             assertHydrated(context);
 
@@ -354,7 +356,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
             const signature = await processes.createNewUserSignature({
                 inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
                 invitedEmail: email,
-                vaultKey: manager.getVaultShareKey(rotation),
+                shareKey: itemId ? manager.getItemShareKey(rotation) : manager.getVaultShareKey(rotation),
             });
 
             return {
