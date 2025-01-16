@@ -12,7 +12,7 @@ import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import { type Address, SETTINGS_STATUS, UserType } from '@proton/shared/lib/interfaces';
+import { type Address, UserType } from '@proton/shared/lib/interfaces';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 
 import { selectDefaultVault } from './shares';
@@ -28,8 +28,7 @@ export const selectHasPendingShareAccess = ({ user }: State) => (user.waitingNew
 export const selectSentinelEligible = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Eligible ?? false);
 export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Value ?? false);
 export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
-export const selectUserVerified = ({ user }: State) =>
-    user.user?.Type !== UserType.EXTERNAL || user.userSettings?.Email?.Status === SETTINGS_STATUS.VERIFIED;
+export const selectUserType = ({ user }: State) => user.user?.Type;
 
 /* Specification for pass specific plans in `/user/access` response :
  * `business` -> Plan: Business | Trial: null | Limits: none
