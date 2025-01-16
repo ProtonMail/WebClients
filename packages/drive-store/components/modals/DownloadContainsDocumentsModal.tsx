@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import { BasicModal, PrimaryButton, useModalTwoStatic } from '@proton/components';
-import { DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
     onCancel?: () => void;
@@ -25,8 +25,8 @@ export default function DownloadContainsDocumentsModal({
     return (
         <BasicModal
             title={
-                // translator: Your download has a Proton Docs file
-                c('Title').t`Your download has a ${DOCS_APP_NAME} file`
+                // translator: Your download includes a Proton Docs file
+                c('Title').t`Your download includes a ${DOCS_APP_NAME} file`
             }
             isOpen={open === undefined ? true : open}
             onClose={handleCancel}
@@ -39,21 +39,20 @@ export default function DownloadContainsDocumentsModal({
                             onClose();
                         }}
                     >
-                        {c('Action').t`Understood`}
+                        {c('Action').t`Continue downloading`}
                     </PrimaryButton>
                 </>
             }
             {...modalProps}
         >
             <p>{
-                // translator: Downloading Proton Docs files from Proton Drive is currently not supported (...)
+                // translator: Proton Docs files cannot be downloaded directly (...)
                 c('Info')
-                    .t`Downloading ${DOCS_APP_NAME} files from ${DRIVE_APP_NAME} is currently not supported — these will not be included in your download.`
+                    .t`${DOCS_APP_NAME} files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.`
             }</p>
             <p>{
-                // translator: Please export them directly from the Proton Docs application (...)
-                c('Info')
-                    .t`Please export them directly from the ${DOCS_APP_NAME} application instead if you wish to download them.`
+                // translator: To download the Proton Docs files, open them in Proton Docs and export them.
+                c('Info').t`To download the ${DOCS_APP_NAME} files, open them in ${DOCS_APP_NAME} and export them.`
             }</p>
         </BasicModal>
     );

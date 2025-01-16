@@ -89,11 +89,11 @@ export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: 
         didQueueLoadPublicShare.current = true;
 
         loadPublicShare(abortSignal)
-            .then(({ link, token, permissions }) => {
+            .then(({ link, sharedUrlInfo }) => {
                 cache.current.set(getCacheKey(link), link);
                 setRootLink(link);
-                setToken(token);
-                setPermissions(permissions);
+                setToken(sharedUrlInfo.token);
+                setPermissions(sharedUrlInfo.permissions);
             })
             .catch(console.error);
     }, [loadPublicShare, rootLink, isDocsTokenReady, abortSignal]);

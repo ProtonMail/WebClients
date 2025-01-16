@@ -45,7 +45,6 @@ const PortalPreview = (
         false,
         revisionId
     );
-
     const signatureStatus = useMemo(() => {
         if (!link) {
             return;

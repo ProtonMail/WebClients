@@ -44,6 +44,7 @@ const SelectedFileToShareModal = ({
 
     const isSharingDisabled = !selectedFile || !selectedFile.parentLinkId;
     const actionText = c('Action').t`Share`;
+
     return (
         <ModalTwo
             onReset={onClose}

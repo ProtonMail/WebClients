@@ -74,8 +74,12 @@ export const getPhotoDimensions = ({ exif, png }: ExpandedTags): { width?: numbe
 });
 
 export const getCaptureDateTimeString = (exif?: ExifTags) => {
-    const formattedDateTime = getFormattedDateTime(exif);
-    return formattedDateTime ? new Date(formattedDateTime).toISOString() : undefined;
+    try {
+        const formattedDateTime = getFormattedDateTime(exif);
+        return formattedDateTime ? new Date(formattedDateTime).toISOString() : undefined;
+    } catch {
+        return undefined;
+    }
 };
 
 export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({

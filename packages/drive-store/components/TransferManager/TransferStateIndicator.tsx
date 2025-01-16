@@ -10,6 +10,7 @@ import {
     isTransferError,
     isTransferManuallyPaused,
     isTransferProgress,
+    isTransferScanIssue,
 } from '../../utils/transfer';
 import type { Download, Upload } from './transfer';
 import { TransferState, TransferType } from './transfer';
@@ -100,7 +101,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
                 'text-ellipsis flex *:min-size-auto items-center flex-nowrap',
                 isTransferManuallyPaused(transfer) && 'color-info',
                 isTransferDone(transfer) && 'color-success',
-                isTransferError(transfer) && 'color-danger',
+                (isTransferError(transfer) || isTransferScanIssue(transfer)) && 'color-danger',
             ])}
             id={transfer.id}
             title={transferTitle}
