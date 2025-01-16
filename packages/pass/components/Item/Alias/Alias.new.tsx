@@ -21,7 +21,7 @@ import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
-import { selectAliasLimits, selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -36,12 +36,12 @@ const FORM_ID = 'new-alias';
 const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
-    const { needsUpgrade } = useSelector(selectAliasLimits);
-    const { vaultTotalCount } = useSelector(selectVaultLimits);
-    const userVerified = useSelector(selectUserVerified);
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
     const reconciled = useRef(false);
     const { ParentPortal, openPortal } = usePortal();
+
+    const { needsUpgrade } = useSelector(selectAliasLimits);
+    const { vaultTotalCount } = useSelector(selectVaultLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const domain = url ? resolveDomain(url) : null;
@@ -130,12 +130,12 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
             reconciled.current = true;
         },
-        lazy: !userVerified,
     });
 
     const { values, touched, setFieldValue } = form;
     const { name, aliasPrefix, aliasSuffix } = values;
     const ready = !aliasOptions.loading;
+    const { unverified } = aliasOptions;
 
     useEffect(() => {
         if (reconciled.current) {
@@ -151,7 +151,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             handleCancelClick={onCancel}
             submitButton={needsUpgrade && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} />}
             type="alias"
-            valid={ready && form.isValid && userVerified && !needsUpgrade}
+            valid={ready && form.isValid && !unverified && !needsUpgrade}
             actions={ParentPortal}
         >
             {({ didEnter }) => (
@@ -163,7 +163,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                         </Card>
                     )}
 
-                    {!userVerified && (
+                    {unverified && (
                         <Card className="mb-2 text-sm" type="primary">
                             {c('Warning').t`Please verify your email address in order to use email aliases`}
                         </Card>
@@ -185,7 +185,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                     autoFocus={!draft && didEnter && ready && !needsUpgrade}
                                     key={`alias-name-${didEnter}-${ready}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
-                                    disabled={!(userVerified && ready)}
+                                    disabled={unverified || !ready}
                                 />
                             </FieldsetCluster>
 
@@ -213,7 +213,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                     component={TextAreaField}
                                     icon="note"
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
-                                    disabled={!userVerified}
+                                    disabled={unverified}
                                 />
                             </FieldsetCluster>
                         </Form>

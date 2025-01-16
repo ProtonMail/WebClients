@@ -28,8 +28,7 @@ export const createAliasService = () => {
                     case 'success':
                         return { ok: true, needsUpgrade, options: res.data };
                     case 'failure':
-                        const error = res.error instanceof Error ? (getApiErrorMessage(res.error) ?? null) : null;
-                        return { ok: false, error };
+                        return { ok: false, error: res.error.message ?? null };
                 }
             });
         })
