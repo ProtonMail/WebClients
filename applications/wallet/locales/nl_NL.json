@@ -19,6 +19,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add account": [
+        "Account toevoegen"
+      ],
       "Add credit / debit card": [
         "Krediet / debietkaart toevoegen"
       ],
@@ -75,6 +78,9 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Dismiss": [
+        "Negeren"
       ],
       "Done": [
         "Klaar"
@@ -232,6 +238,9 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Sign out of all accounts": [
+        "Alle accounts uitloggen"
+      ],
       "Submit": [
         "Versturen"
       ],
@@ -336,11 +345,14 @@
       "Receive address": [
         "Ontvangstadres"
       ],
+      "Search exact address": [
+        "Zoek exact adres"
+      ],
+      "Search for exact address": [
+        "Zoek naar exact adres"
+      ],
       "Status": [
         "Status"
-      ],
-      "Sync": [
-        "Synchroniseren"
       ],
       "Toggle keychain": [
         "Sleutelhanger aan/uit"
@@ -382,6 +394,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste ${ cycle } maanden. Daarna wordt uw abonnement automatisch vernieuwd tegen de gereduceerde prijs van ${ nextPrice } voor ${ renewalLength } maanden. U kunt op ieder moment annuleren."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ nextPrice } per maand. U kunt opzeggen wanneer u wilt."
       ]
@@ -552,6 +567,9 @@
       "${ serviceFeePercentage }% Azteco service fee": [
         "${ serviceFeePercentage }% Azteco service kosten"
       ],
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } heeft samengewerkt met ${ rampLink } ${ banxaLink } en ${ moonpayLink }, drie geregistreerde crypto-activa diensten, om de aankoop van BTC te vergemakkelijken. Vul uw regio in om de beschikbare aanbieders en betalingsmethoden te zien."
+      ],
       "1% bank transfer fee": [
         "1% bankoverschrijvingskosten"
       ],
@@ -560,6 +578,9 @@
       ],
       "Amount": [
         "Bedrag"
+      ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "Er is een fout opgetreden tijdens het bevestigen van deze quote, selecteer een andere provider en probeer het opnieuw."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
         "Als een betaalde gebruiker, bespaart u ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } op de servicekosten!"
@@ -817,11 +838,20 @@
       "Buy more bitcoin": [
         "Koop meer bitcoin"
       ],
+      "For any issues with the purchasing process, please contact ${ support }.": [
+        "Bij problemen met het aankoopproces, neem contact op met ${ support }."
+      ],
       "For any issues with the purchasing process, please contact the partner’s support team.": [
         "Neem voor problemen met het aankoopproces contact op met het ondersteuningsteam van de partner."
       ],
       "Purchase completed": [
         "Koop succesvol"
+      ],
+      "Purchase finished": [
+        "Aankoop voltooid"
+      ],
+      "Thank you for purchasing an Azteco voucher.\nWe will now redeem your voucher and Azteco will send the BTC to your wallet.\nWe will also send you an email with the purchase details.": [
+        "Bedankt voor het kopen van een Azteco voucher.\nWe zullen nu uw waardebon inwisselen en Azteco zal de BTC naar uw portemonnee sturen.\nWe sturen u ook een e-mail met de inkoopgegevens."
       ],
       "Thank you for your purchase attempt with our partner.\nYou can track the status of your order via the confirmation email sent to you by our partner.\nIf the transaction fails, you may try again or choose an alternative partner.": [
         "Bedankt voor uw inkooppoging met onze partner.\nU kunt de status van uw bestelling volgen via de bevestigingsmail die u van onze partner heeft ontvangen.\nAls de transactie mislukt, kunt u opnieuw proberen of een andere partner kiezen."
@@ -830,6 +860,15 @@
     "Buy in progress": {
       "Buy more bitcoin": [
         "Koop meer bitcoin"
+      ],
+      "For any issues with the purchasing process, please contact ${ support }.": [
+        "Bij problemen met het aankoopproces, neem contact op met ${ support }."
+      ],
+      "Purchase in progress": [
+        "Aankoop in behandeling"
+      ],
+      "Thank you for your purchase attempt for an Azteco voucher.\nAs soon as we receive your payment, we will create and redeem the voucher based on BTC price at that time.\nThen Azteco will send the BTC to your wallet.": [
+        "Dank u voor uw inkoop voor een Azteco waardebon.\nZodra we jouw betaling ontvangen zullen we de tegoedbon aanmaken en inwisselen op basis van BTC prijs op dat moment.\nVervolgens zal Azteco de BTC naar uw portemonnee sturen."
       ]
     },
     "Cancellation upsell": {
@@ -2209,6 +2248,9 @@
       "${ WALLET_APP_NAME } support": [
         "${ WALLET_APP_NAME } ondersteuning"
       ],
+      "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
+        "Zodra je betaling ontvangen is, zal ${ WALLET_APP_NAME } de voucher inwisselen op basis van de marktprijs van BTC en netwerkkosten op dat moment.\nDe ingewisselde BTC zal door ${ azteco } naar je portemonnee worden verzonden.\nVoor vragen die gerelateerd zijn aan Azteco bitcoin vouchers, neem contact op met ${ support }."
+      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -2301,14 +2343,11 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
-      "Account size": [
-        "Accountgrootte"
-      ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
-      "Additional options": [
-        "Aanvullende opties"
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -2346,9 +2385,9 @@
       "Country code": [
         "Landcode"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Maak een beveiligde cloud voor ${ n } lid",
-        "Maak een beveiligde cloud voor ${ n } leden"
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -2382,9 +2421,6 @@
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
@@ -2449,6 +2485,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Member": [
+        "Lid"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -2495,6 +2534,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-betalingen zijn momenteel niet beschikbaar. Probeer het later nogmaals."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
@@ -2513,8 +2555,17 @@
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
       ],
+      "Switch to": [
+        "Wissel naar"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
+      ],
+      "This address is for Bitcoin via Email": [
+        "Dit adres is voor Bitcoin via e-mail"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
@@ -2635,8 +2686,17 @@
       "Your next billing date is ${ renewalTime }.": [
         "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ]
     },
     "Info for cash payment method": {
@@ -2649,11 +2709,6 @@
         "Alleen bekijken"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -2661,6 +2716,9 @@
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
+      ],
+      "Account holder": [
+        "Rekeninghouder"
       ],
       "Address": [
         "Adres"
@@ -2739,9 +2797,6 @@
       ],
       "Do you have any suggestions for our team?": [
         "Heeft u suggesties voor ons team?"
-      ],
-      "Email": [
-        "E-mailadres"
       ],
       "Email address": [
         "E-mailadres"
@@ -3854,8 +3909,20 @@
       "Please select your billing state first.": [
         "Selecteer eerst uw factureringsstaat."
       ],
+      "Renews at ${ renewPrice }, cancel anytime.": [
+        "Wordt verlengd voor ${ renewPrice }, altijd opzegbaar."
+      ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLength } maand. U kunt op ieder moment annuleren."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
@@ -3933,28 +4000,9 @@
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } met ons Verkoopteam."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Selecteer het aantal IP-adressen om op te nemen in uw abonnement. Elk extra IP-adres kost ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Indien u meer dan ${ maxIPs } IP-adres nodig hebt, ",
-        "Indien u meer dan ${ maxIPs } IP-adressen nodig hebt, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "neem contact op"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selecteer het aantal gebruikers om op te nemen in uw abonnement. Elke extra gebruiker kost ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Heeft u meer dan ${ maxUsers } gebruiker nodig, ${ contact } met ons Sales team.",
-        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team."
       ]
     },
     "Price": {
@@ -4488,6 +4536,9 @@
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
+      "Are you sure?": [
+        "Weet u het zeker?"
+      ],
       "Billing cycle": [
         "Factuurperiode"
       ],
@@ -4875,6 +4926,9 @@
       ],
       "View receive addresses": [
         "Bekijk ontvangstadressen"
+      ],
+      "We are having trouble opening your wallet. Please refresh the page or try again later.": [
+        "We ondervinden problemen bij het openen van uw wallet. Ververs de pagina of probeer het later opnieuw."
       ]
     },
     "Wallet import": {
@@ -5127,8 +5181,14 @@
       "Bitcoin address signature could not be verified": [
         "De handtekening van dit Bitcoin-adres kon niet geverifieerd worden"
       ],
+      "Boost transaction": [
+        "Boost transactie"
+      ],
       "Boost transaction priority": [
         "Prioriteit van transactie verhogen"
+      ],
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "Door de netwerkkosten te verhogen, kunt u de prioriteit van uw transactie verhogen, waardoor deze sneller verwerkt en bevestigd wordt."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "QR-codescanner kan niet worden gebruikt. Controleer de browsercompatibiliteit"
@@ -5281,6 +5341,9 @@
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
+      "Browser storage cleared. Please refresh the page": [
+        "Browser opslag gewist. Vernieuw de pagina"
+      ],
       "Could not fill the pool after email address addition": [
         "Kan de pool niet invullen na de toevoeging van het e-mailadres"
       ],
@@ -5423,8 +5486,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Verhuis uw bitcoins naar een andere portemonnee voordat u deze verwijdert. Het verwijderen van deze portemonnee zal al de bijbehorende gegevens van de servers van ${ BRAND_NAME } verwijderen. U kunt deze portemonnee later herstellen met de seedphrase."
       ],
-      "Seed phrase (12-24 words)": [
-        "Seed-phrase (12-24 woorden)"
+      "Seed phrase (12 or 24 words, separated by space)": [
+        "Seed zin (12 of 24 woorden, gescheiden door spatie)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Deze 12 woorden mogen alleen als laatste redmiddel worden gebruikt om de activa van deze portemonnee te herstellen, bijvoorbeeld als u de toegang tot uw ${ BRAND_NAME } account verliest."
