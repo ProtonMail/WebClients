@@ -1,4 +1,4 @@
-import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SORT_DIRECTION } from '../../constants';
 import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
@@ -119,6 +119,7 @@ export const queryUpdateSharedLink = (shareId: string, shareUrlId: string, data:
         method: 'put',
         url: `drive/shares/${shareId}/urls/${shareUrlId}`,
         data,
+        silence: [API_CUSTOM_ERROR_CODES.MAX_PUBLIC_EDIT_MODE_FOR_FREE_USER],
     };
 };
 

@@ -135,19 +135,4 @@ describe('PermissionsDropdownMenu', () => {
 
         expect(onChangePermissions).toHaveBeenCalledWith(SHARE_MEMBER_PERMISSIONS.EDITOR);
     });
-
-    it('shows upgrade icon for editor option when public editor feature is not available', () => {
-        mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
-        render(
-            <PermissionsDropdownMenu
-                {...defaultProps}
-                publicSharingOptions={true}
-                selectedPermissions={SHARE_URL_PERMISSIONS.VIEWER}
-                havePublicEditorFeature={false}
-            />
-        );
-        expect(screen.getAllByText('Viewer').length).toEqual(2);
-        expect(screen.getByText('Editor')).toBeInTheDocument();
-        expect(screen.getByTestId('upgrade-icon')).toBeInTheDocument();
-    });
 });

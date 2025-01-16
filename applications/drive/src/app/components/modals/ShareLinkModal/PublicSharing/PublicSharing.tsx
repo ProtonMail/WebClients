@@ -2,7 +2,6 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar, Button, Input } from '@proton/atoms';
 import {
@@ -19,6 +18,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments/index';
 import { APPS, BRAND_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import drivePlusUpgrade from '@proton/styles/assets/img/drive/drive-plus-upsell-banner.svg';
@@ -61,23 +61,6 @@ export const PublicSharing = ({
     });
     const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
 
-    /* Remove that when entitlement logic will be implemented */
-    const [organization] = useOrganization();
-    const havePublicEditorFeature =
-        organization?.PlanName &&
-        [
-            PLANS.BUNDLE,
-            PLANS.BUNDLE_PRO,
-            PLANS.BUNDLE_PRO_2024,
-            PLANS.MAIL_PRO,
-            PLANS.DUO,
-            PLANS.DRIVE_BUSINESS,
-            PLANS.DRIVE,
-            PLANS.VISIONARY,
-            PLANS.MAIL_BUSINESS,
-            PLANS.FAMILY,
-        ].includes(organization.PlanName);
-
     const handleCopyURLClick = () => {
         if (contentRef.current) {
             textToClipboard(publicSharedLink, contentRef.current);
@@ -88,27 +71,32 @@ export const PublicSharing = ({
     };
 
     const handleUpdatePermissions = (permissions: SHARE_URL_PERMISSIONS) => {
-        if (!havePublicEditorFeature) {
-            const planName = PLAN_NAMES[user.isFree ? PLANS.DRIVE : PLANS.BUNDLE];
-            return showDriveUpsellModal({
-                size: 'large',
-                sourceEvent: 'BUTTON_PUBLIC_SHARING_EDITOR',
-                titleModal: c('Title').t`Share files with full edit access`,
-                // translator: We can have two different plan upgrade: "Upgrade to Proton Drive Plus" or "Upgrade to Proton Drive Unlimited"
-                description: c('Description')
-                    .t`Upgrade to ${BRAND_NAME} ${planName} to enable public file sharing with edit access. Keep collaborating seamlessly and securely.`,
-                illustration: drivePlusUpgrade,
-                closeButtonColor: 'white',
-                onUpgrade: () => {
-                    if (upsellConfig.onUpgrade) {
-                        upsellConfig.onUpgrade();
-                    } else {
-                        goToSettings(upsellConfig.upgradePath);
-                    }
-                },
-            });
-        }
-        return withPermissionsLoading(() => onChangePermissions(permissions));
+        void withPermissionsLoading(() =>
+            onChangePermissions(permissions).catch((error) => {
+                if (error.data.Code === API_CUSTOM_ERROR_CODES.MAX_PUBLIC_EDIT_MODE_FOR_FREE_USER) {
+                    const planName = PLAN_NAMES[user.isFree ? PLANS.DRIVE : PLANS.BUNDLE];
+                    return showDriveUpsellModal({
+                        size: 'large',
+                        'data-testid': 'public-sharing',
+                        sourceEvent: 'BUTTON_PUBLIC_SHARING_EDITOR',
+                        titleModal: c('Title').t`Need to share more files with edit access?`,
+                        // translator: We can have two different plan upgrade: "Upgrade to Proton Drive Plus" or "Upgrade to Proton Drive Unlimited"
+                        description: c('Description')
+                            .t`Upgrade to ${BRAND_NAME} ${planName} to keep sharing files with edit access`,
+                        illustration: drivePlusUpgrade,
+                        closeButtonColor: 'white',
+                        onUpgrade: () => {
+                            if (upsellConfig.onUpgrade) {
+                                upsellConfig.onUpgrade();
+                            } else {
+                                goToSettings(upsellConfig.upgradePath);
+                            }
+                        },
+                    });
+                }
+                throw error;
+            })
+        );
     };
 
     const handleToggle = () => {
@@ -157,7 +145,6 @@ export const PublicSharing = ({
                         selectedPermissions={publicSharedLinkPermissions}
                         onChangePermissions={handleUpdatePermissions}
                         publicSharingOptions
-                        havePublicEditorFeature={havePublicEditorFeature}
                     />
                 )}
             </div>
