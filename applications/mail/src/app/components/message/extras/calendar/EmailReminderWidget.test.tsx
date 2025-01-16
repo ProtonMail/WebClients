@@ -32,6 +32,7 @@ import {
     veventBuilder,
 } from '@proton/testing';
 import { getHandlers } from '@proton/testing/lib/handlers';
+import useFlag from '@proton/unleash/useFlag';
 
 import { authentication, getStoreWrapper, tick } from '../../../../helpers/test/render';
 import { refresh } from '../../../../store/contacts/contactsActions';
@@ -87,12 +88,15 @@ jest.mock('@proton/mail/mailSettings/hooks', () => ({
     useMailSettings: jest.fn(() => [{}, false]),
 }));
 
+jest.mock('@proton/unleash/useFlag');
+
 const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);
 const mockedUseAddresses = mocked(useAddresses);
 const mockedUseGetAddresses = mocked(useGetAddresses);
 const mockedUserSettings = mocked(useUserSettings);
+const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 
 function renderComponent(overrides?: any, preloadedState?: Parameters<typeof getStoreWrapper>[0]['preloadedState']) {
     window.history.pushState({}, 'Calendar', '/');
@@ -166,6 +170,7 @@ describe('EmailReminderWidget', () => {
             false,
             {} as Error,
         ]);
+        mockedUseFlag.mockReturnValue(false);
         server.use(
             http.get(
                 `/core/v4/features`,
