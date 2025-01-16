@@ -835,9 +835,6 @@
       "Refer a friend": [
         "Poleć znajomemu"
       ],
-      "Refresh Data": [
-        "Odśwież dane"
-      ],
       "Refresh status": [
         "Odśwież status"
       ],
@@ -5193,6 +5190,11 @@
         "Wydarzenie od ${ timeString }, ${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Niespodziewany błąd"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Dołączony plik ICS nie może zostać odszyfrowany"
@@ -6323,11 +6325,17 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Strefa czasowa kalendarza nie jest obsługiwana"
+      ],
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
       ],
       "End time out of bounds": [
         "Czas zakończenia jest poza zakresem"
+      ],
+      "Event validation failed": [
+        "Weryfikacja wydarzenia nie powiodła się"
       ],
       "Malformed end time": [
         "Czas zakończenia posiada nieprawidłowy format"
@@ -6335,8 +6343,14 @@
       "Malformed recurring event": [
         "Wydarzenie cykliczne posiada nieprawidłowy format"
       ],
+      "Malformed start time": [
+        "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
+      ],
+      "Time zone not supported": [
+        "Strefa czasowa nie jest obsługiwana"
       ]
     },
     "Import calendar": {
@@ -6488,11 +6502,17 @@
       "Use your app password instead of your regular password if:": [
         "Użyj hasła aplikacji, zamiast swojego zwykłego hasła, jeśli:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Hasło aplikacji jest prawidłowe. Nie używaj swojego zwykłego hasła."
+      ],
       "Your email account requires an app password to export your data.": [
         "Konto e-mail wymaga hasła aplikacji do eksportu danych."
       ],
       "Your email account requires one to export your data.": [
         "Konto e-mail wymaga tego hasła do eksportu danych."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adres e-mail i hasło aplikacji są prawidłowe. Nie używaj swojego zwykłego hasła."
       ],
       "Your email address and password are correct.": [
         "Adres e-mail i hasło są prawidłowe."
@@ -7328,6 +7348,12 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Utwórz etykietę dla zaimportowanych wiadomości, wybierz przedział czasowy dla tego importu oraz etykiety, które chcesz zaimportować."
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Utwórz bezpieczną chmurę dla ${ value } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Twórz subkonta i zarządzaj nimi, a także przypisuj im adresy e-mail w niestandardowej domenie."
       ],
@@ -8150,6 +8176,9 @@
       "No label selected": [
         "Nie wybrano etykiety"
       ],
+      "No location filters are currently assigned.": [
+        "Brak przypisanych filtrów lokalizacji."
+      ],
       "No logs yet.": [
         "Logi są puste."
       ],
@@ -8536,6 +8565,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
       ],
       "Server is currently down": [
         "Serwer jest obecnie wyłączony"
@@ -14395,6 +14427,15 @@
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
@@ -16178,6 +16219,9 @@
       "Enter your backup password": [
         "Wpisz hasło zapasowe"
       ],
+      "For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Aby ten użytkownik mógł się zalogować, upewnij się, że istnieje on u twojego dostawcy tożsamości."
+      ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Ze względów bezpieczeństwa zostaniesz wylogowany ze wszystkich aktywnych urządzeń. Przed uzyskaniem dostępu do konta konieczne będzie wpisanie nowego hasła zapasowego."
       ],
@@ -16267,6 +16311,9 @@
       ],
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
+      ],
+      "The user ${ name } is now a single sign-on account.": [
+        "Użytkownik ${ name } jest teraz kontem single sign-on."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Spowoduje to wylogowanie użytkownika z innych urządzeń i konieczność utworzenia nowego hasła zapasowego."

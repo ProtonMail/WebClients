@@ -337,6 +337,9 @@
       "Create link": [
         "Bağlantı oluştur"
       ],
+      "Create new policy": [
+        "Yeni ilke oluşturun"
+      ],
       "Create users": [
         "Kullanıcılar ekle"
       ],
@@ -835,7 +838,7 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Verileri yenile"
       ],
       "Refresh status": [
@@ -1854,7 +1857,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-e-mail ve diğer şeyler.ide-my-email"
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -3623,6 +3626,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Gelen kutunuzu düzenli tutmak için gerektiği kadar etiket veya klasör oluşturun."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Her ülkedeki paylaşılan sunuculara kimin bağlanabileceğine karar vermek için politikalar belirleyin."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
       ],
@@ -3634,6 +3640,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşımlı sunuculara bağlanabilir."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
@@ -3652,6 +3661,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "E-posta alt bilginizi kendinize göre ayarlayın. Bizimki yerine kendi markanızı gösterin."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Kuruluşunuzdaki hiç kimse paylaşılan sunuculara bağlanamaz."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
@@ -6627,6 +6639,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişime sahip.",
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -6974,6 +6990,9 @@
       ],
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Kullanıcıların ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden güvenli paylaşılan sunuculara bağlanmasına izin verin."
       ],
       "Already allocated": [
         "Zaten ayrılmış"
@@ -8079,6 +8098,12 @@
       ],
       "of": [
         "/"
+      ],
+      "Off": [
+        "Kapalı"
+      ],
+      "On": [
+        "Açık"
       ],
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"
@@ -11456,6 +11481,9 @@
       ],
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "Sınırlı süreli teklif: **${ name } uygulamasında 1 yıllık tarife ile ${ discount } indirimden yararlanın**"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Hesabınızı Porkbun alan adınızla kurun."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } uygulamasını denemeye davet edildiniz"

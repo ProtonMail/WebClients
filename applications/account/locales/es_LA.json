@@ -337,6 +337,9 @@
       "Create link": [
         "Crear enlace"
       ],
+      "Create new policy": [
+        "Crear una política"
+      ],
       "Create users": [
         "Crear usuarios"
       ],
@@ -835,7 +838,7 @@
       "Refer a friend": [
         "Referir una amistad"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Actualizar los datos"
       ],
       "Refresh status": [
@@ -3623,6 +3626,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Cree tantas etiquetas o carpetas como necesite para mantener ordenado su buzón."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Cree políticas para decidir quién puede conectarse a servidores compartidos en cada país."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Active ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
       ],
@@ -3634,6 +3640,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Todos los miembros de su organización pueden conectarse a servidores compartidos en todos los países."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Reciba notificaciones si la contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -3652,6 +3661,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Haga su pie de página único, muestre su marca, no la nuestra."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Nadie en su organización puede conectarse a servidores compartidos."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos de su vida con múltiples direcciones de correo y desbloquee funciones premium cuando actualiza el plan."
@@ -6630,6 +6642,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } usuario actualmente tiene acceso a servidores compartidos.",
+        "${ amountUsers }/${ totalUsers } usuarios actualmente tienen acceso a servidores compartidos."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
@@ -6977,6 +6993,9 @@
       ],
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permita que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Ya asignado"
@@ -8082,6 +8101,12 @@
       ],
       "of": [
         "de"
+      ],
+      "Off": [
+        "Desactivado"
+      ],
+      "On": [
+        "Activado"
       ],
       "Once you reset your password:": [
         "Luego de restablecer la contraseña:"
