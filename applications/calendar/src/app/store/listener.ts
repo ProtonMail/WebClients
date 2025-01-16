@@ -1,5 +1,6 @@
 import { startAccountSessionsListener, startPersistListener } from '@proton/account';
 import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
+import { calendarSettingsHeartbeatListener } from '@proton/redux-shared-store';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import { startListeningBusySlots } from './busySlots/busySlotsListeners';
@@ -22,6 +23,7 @@ export const start = ({
     startCalendarEventListener(startListening);
     startHolidaysDirectoryListener(startListening);
     startListeningBusySlots(startListening);
+    calendarSettingsHeartbeatListener(startListening);
     if (features?.accountPersist) {
         startPersistListener(startListening, getCalendarPersistedState);
     }
