@@ -28,6 +28,7 @@ import { getWebpackChunkFailedToLoadError } from '../utils/errorHandling/Webpack
 import { initDriveWorker } from '../utils/initDriveWorker';
 import { userSuccessMetrics } from '../utils/metrics/userSuccessMetrics';
 import { clearOPFS } from '../utils/opfs';
+import { MetricUserPlan } from '../utils/type/MetricTypes';
 import { unleashVanillaStore } from '../zustand/unleash/unleash.store';
 
 const getAppContainer = () =>
@@ -84,7 +85,10 @@ export const bootstrapPhotosApp = async ({ config, signal }: { config: ProtonCon
             ]);
 
             await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
-            await userSuccessMetrics.setLocalUser(authentication.getUID(), user.isPaid);
+            await userSuccessMetrics.setLocalUser(
+                authentication.getUID(),
+                user.isPaid ? MetricUserPlan.Paid : MetricUserPlan.Free
+            );
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
 

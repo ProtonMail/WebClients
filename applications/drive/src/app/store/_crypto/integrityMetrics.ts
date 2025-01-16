@@ -4,6 +4,7 @@ import metrics from '@proton/metrics';
 
 import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
+import type { MetricUserPlan } from '../../utils/type/MetricTypes';
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
 
@@ -14,16 +15,16 @@ type EntityType = 'share' | 'node' | 'content';
 export type VerificationKey = 'ShareAddress' | 'NameSignatureEmail' | 'SignatureEmail' | 'NodeKey' | 'other';
 
 type OptionsDecryptionError = {
-    isPaid: boolean;
+    plan: MetricUserPlan;
     createTime: number | undefined;
 };
 type OptionsVerificationError = {
-    isPaid: boolean;
+    plan: MetricUserPlan;
     createTime: number | undefined;
     addressMatchingDefaultShare: boolean | undefined;
 };
 type OptionsBlockVerificationError = {
-    isPaid: boolean;
+    plan: MetricUserPlan;
     retryHelped: boolean;
 };
 
@@ -56,7 +57,7 @@ export class IntegrityMetrics {
         this.reportDecryptionError('node', shareType, options);
     }
 
-    contentDecryptionError(nodeId: string, shareType: ShareTypeString, options: OptionsDecryptionError) {
+    contentDecryptionError(nodeId: string, shareType: ShareTypeStringWithPublic, options: OptionsDecryptionError) {
         if (this.checkNodeIdAlreadyReported(nodeId)) {
             return;
         }
@@ -76,13 +77,13 @@ export class IntegrityMetrics {
         });
         if (fromBefore2024 === 'no') {
             userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
-            this.reportErroringUser(shareType, options.isPaid);
+            this.reportErroringUser(shareType, options.plan);
         }
     }
 
     signatureVerificationError(
         nodeId: string,
-        shareType: ShareTypeString,
+        shareType: ShareTypeStringWithPublic,
         verificationKey: VerificationKey,
         options: OptionsVerificationError
     ) {
@@ -100,12 +101,12 @@ export class IntegrityMetrics {
         });
         if (fromBefore2024 === 'no' && addressMatchingDefaultShare === 'yes') {
             userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
-            this.reportErroringUser(shareType, options.isPaid);
+            this.reportErroringUser(shareType, options.plan);
         }
     }
 
     nodeBlockVerificationError(
-        shareType: ShareTypeString,
+        shareType: ShareTypeStringWithPublic,
         realFileSize: number,
         options: OptionsBlockVerificationError
     ) {
@@ -117,15 +118,15 @@ export class IntegrityMetrics {
         });
         if (!options.retryHelped) {
             userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
-            this.reportErroringUser(shareType, options.isPaid);
+            this.reportErroringUser(shareType, options.plan);
         }
     }
 
-    private reportErroringUser(shareType: ShareTypeStringWithPublic, isPaid: boolean) {
+    private reportErroringUser(shareType: ShareTypeStringWithPublic, plan: MetricUserPlan) {
         if (Date.now() - this.lastErroringUserReport > REPORT_ERROR_USERS_EVERY) {
             this.metricsModule.drive_integrity_erroring_users_total.increment({
                 shareType,
-                plan: isPaid ? 'paid' : 'free',
+                plan,
             });
             this.lastErroringUserReport = Date.now();
         }

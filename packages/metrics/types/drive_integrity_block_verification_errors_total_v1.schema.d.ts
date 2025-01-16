@@ -10,7 +10,7 @@
  */
 export interface HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson {
   Labels: {
-    shareType: "main" | "device" | "photo" | "shared";
+    shareType: "main" | "device" | "photo" | "shared" | "shared_public";
     retryHelped: "yes" | "no";
     fileSize: "2**10" | "2**20" | "2**22" | "2**25" | "2**30" | "xxxxl";
   };

@@ -27,7 +27,7 @@ import {
 import { type LogCallback } from '../../_downloads';
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
-import { useIsPaid } from '../../_user';
+import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import type { UploadFileControls, UploadFileItem, UploadFileList, UploadFolderControls } from '../interface';
 import type { UploadModalContainer } from './UploadModalContainer';
@@ -67,13 +67,13 @@ function useBaseUpload(
 ): [UploadProviderState, UploadModalContainer] {
     const onlineStatus = useOnline();
     const getUser = useGetUser();
-    const isPaidUser = useIsPaid();
+    const plan = useGetMetricsUserPlan();
     const isPublicContext = getIsPublicContext();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
 
-    const metrics = useUploadMetrics(isPaidUser);
+    const metrics = useUploadMetrics(plan);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
     const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));
     const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
