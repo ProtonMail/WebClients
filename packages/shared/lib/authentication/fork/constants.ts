@@ -45,6 +45,3 @@ export enum ForkSearchParameters {
 export enum ExtraSessionForkSearchParameters {
     Email = 'email',
 }
-
-export const returnUrlContextKey = 'returnUrlContext';
-export const returnUrlKey = 'returnUrl';

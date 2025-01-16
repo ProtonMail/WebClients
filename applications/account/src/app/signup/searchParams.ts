@@ -61,7 +61,12 @@ export const getProductParam = (
     return product || sanitisedProductParam;
 };
 
-export const getProductParams = (pathname: string, searchParams: URLSearchParams) => {
+export interface ProductParams {
+    product: APP_NAMES | undefined;
+    productParam: ProductParam;
+}
+
+export const getProductParams = (pathname: string, searchParams: URLSearchParams): ProductParams => {
     const maybeProductPathname = pathname.match(/\/([^/]*)/)?.[1];
     const maybeProductParam = (
         searchParams.get('service') ||
