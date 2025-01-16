@@ -460,9 +460,6 @@
       "Refer a friend": [
         "Rujuk teman"
       ],
-      "Refresh Data": [
-        "Muat Ulang Data"
-      ],
       "Refresh status": [
         "Muat ulang status"
       ],
@@ -830,7 +827,7 @@
         "Menyimpan"
       ],
       "Set as default": [
-        "Atur sebagai default"
+        "Atur sebagai bawaan"
       ]
     },
     "Address status": {
@@ -3819,6 +3816,9 @@
       ],
       "Current plan": [
         "Paket saat ini"
+      ],
+      "Custom": [
+        "Sesuaikan"
       ],
       "Custom branding": [
         "Branding khusus"
@@ -7277,10 +7277,10 @@
         "${ reason } telah diaktifkan"
       ],
       "A disabled address cannot be default": [
-        "Alamat yang dinonaktifkan tidak dapat dijadikan alamat default"
+        "Alamat yang dinonaktifkan tidak dapat dijadikan alamat bawaan"
       ],
       "An external address cannot be default": [
-        "Alamat eksternal tidak dapat dijadikan alamat default"
+        "Alamat eksternal tidak dapat dijadikan alamat bawaan"
       ],
       "Downloaded 2FA recovery codes": [
         "Kode pemulihan 2FA terunduh"

@@ -337,6 +337,9 @@
       "Create link": [
         "Crear enllaç"
       ],
+      "Create new policy": [
+        "Crea una política"
+      ],
       "Create users": [
         "Crea usuaris"
       ],
@@ -835,7 +838,7 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Actualitza les dades"
       ],
       "Refresh status": [
@@ -3618,6 +3621,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Creeu tantes etiquetes o carpetes com necessiteu per mantenir ordenada la safata d'entrada."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Creeu polítiques per decidir qui es pot connectar als servidors compartits de cada país."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
       ],
@@ -3629,6 +3635,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -3647,6 +3656,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Feu que el peu de pàgina del vostre correu electrònic sigui un reflex distintiu de la vostra marca, no de la nostra."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Ningú de la vostra organització no es pot connectar a servidors compartits."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
@@ -6622,6 +6634,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } usuari actualment ten accés als servidors compartits.",
+        "${ amountUsers }/${ totalUsers } usuari actualment tenen accés als servidors compartits."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -6969,6 +6985,9 @@
       ],
       "Allow recovery by phone": [
         "Permet recuperació per telèfon"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permet als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Ja assignat"
@@ -8074,6 +8093,12 @@
       ],
       "of": [
         "de"
+      ],
+      "Off": [
+        "Desactivat"
+      ],
+      "On": [
+        "Activat"
       ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"

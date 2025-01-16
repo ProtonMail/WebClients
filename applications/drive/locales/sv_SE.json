@@ -4845,7 +4845,7 @@
         "Ta permanent bort alla filer på din låsta lagringsenhet"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline är endast kompatibelt med oformaterad text."
+        "PGP/Inline är endast kompatibelt med oformaterat textformat."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
@@ -5556,7 +5556,7 @@
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Dit nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
       ],
       "Your password was leaked:": [
         "Ditt lösenord läcktes:"
@@ -8880,7 +8880,7 @@
         "Säker streaming"
       ],
       "Support online privacy": [
-        "Stöd onlineintegritet"
+        "Stöd integritet online"
       ]
     },
     "specialoffer: Footer": {
@@ -9183,7 +9183,7 @@
         "Logga bara in på ditt Apple App Store-konto och välj sedan ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Logga bara in på ditt Play Store-konto och tryck sedan på ${ subscriptions }"
+        "Logga bara in på ditt Play Butik-konto och tryck sedan på ${ subscriptions }"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Hantera din prenumeration på ${ subscriptionManager }"
@@ -9192,7 +9192,7 @@
         "Prenumeration"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Ditt paket köptes med en Android-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Google Play Store."
+        "Ditt paket köptes med en Android-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Google Play Butik."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ditt paket köptes med en iOS-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Apple App Store."
@@ -10340,6 +10340,9 @@
       "Unlock contacts groups": [
         "Lås upp kontaktgrupper"
       ],
+      "Untitled document ${ date }": [
+        "Dokument utan rubrik ${ date }"
+      ],
       "Upgrade complete!": [
         "Uppgradering slutförd!"
       ],
@@ -10416,6 +10419,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Idag"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Tooltip": {
@@ -10499,11 +10507,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Validation": {

@@ -738,7 +738,7 @@
         "Atualize para o plano ${ BRAND_NAME } Unlimited"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Atualize para o ${ MAIL_SHORT_APP_NAME } Plus"
+        "Melhorar para o ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -1120,6 +1120,9 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Aceda a conteúdo bloqueado e navegue com privacidade. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, streaming de alta velocidade, bloqueador de anúncios e proteção contra malware, acelerador de VPN e muito mais."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+, Prime Video e mais, de qualquer lugar."
       ],
@@ -3073,7 +3076,7 @@
         "Evento não encontrado"
       ],
       "Failed to create meeting": [
-        "Falha ao criar a reunião"
+        "Erro ao criar a reunião"
       ],
       "Failed to get event": [
         "Erro ao obter o evento"
@@ -3842,7 +3845,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Introduza uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -4002,7 +4005,7 @@
         "Fuso horário do calendário não suportado"
       ],
       "Edited event not supported": [
-        "Evento editado não suportado"
+        "O evento editado não é suportado."
       ],
       "End time out of bounds": [
         "Hora final fora dos limites"
@@ -4032,7 +4035,7 @@
         "O evento recorrente não tem ocorrências."
       ],
       "Recurring rule not supported": [
-        "Regra recorrente não suportada"
+        "A regra recorrente não é suportada."
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
@@ -4930,8 +4933,8 @@
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } crédito restante.",
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } crédito restante.",
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indique um nome e um endereço de e-mail para criar um grupo."
@@ -9663,7 +9666,7 @@
         "Evento encriptado"
       ],
       "Enter 2FA code": [
-        "Insira o código 2FA"
+        "Introduza o código 2FA"
       ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
@@ -9916,7 +9919,7 @@
         "Atualizar o evento recorrente"
       ],
       "Upgrade complete!": [
-        "Atualização completa!"
+        "A subscrição foi atualizada."
       ],
       "Verification failed": [
         "Erro na verificação"
