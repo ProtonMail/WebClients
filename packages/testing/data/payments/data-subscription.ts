@@ -2,9 +2,9 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { PLANS, PLAN_TYPES } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
-import { External, Renew, type Subscription, type SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { External, Renew, type Subscription } from '@proton/shared/lib/interfaces';
 
-export const subscriptionMock: SubscriptionModel = {
+export const subscriptionMock: Subscription = {
     ID: 'subscriptionId123',
     InvoiceID: 'invoiceId123',
     Cycle: CYCLE.YEARLY,
@@ -42,10 +42,9 @@ export const subscriptionMock: SubscriptionModel = {
             Offer: 'default',
         },
     ],
-    isManagedByMozilla: false,
 };
 
-export function getSubscriptionMock(subscription?: Partial<SubscriptionModel>) {
+export function getSubscriptionMock(subscription?: Partial<Subscription>) {
     return { ...cloneDeep(subscriptionMock), ...subscription };
 }
 

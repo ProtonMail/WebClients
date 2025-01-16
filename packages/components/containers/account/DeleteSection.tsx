@@ -11,7 +11,6 @@ import { hasMigrationDiscount, hasVisionary } from '@proton/shared/lib/helpers/s
 
 import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';
-import MozillaInfoPanel from './MozillaInfoPanel';
 import SettingsParagraph from './SettingsParagraph';
 
 const DeleteSection = () => {
@@ -42,10 +41,6 @@ const DeleteSection = () => {
                     .jt`Your ${VPN_APP_NAME} and ${MAIL_APP_NAME} accounts are linked. To delete them both, please sign in at ${loginLink} and delete your account there.`}
             </SettingsParagraph>
         );
-    }
-
-    if (subscription?.isManagedByMozilla) {
-        return <MozillaInfoPanel />;
     }
 
     return (

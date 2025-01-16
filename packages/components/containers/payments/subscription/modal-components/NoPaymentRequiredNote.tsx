@@ -2,11 +2,11 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { getPlanTitle, isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 interface Props {
     checkResult: SubscriptionCheckResponse | undefined;
-    subscription: SubscriptionModel | undefined;
+    subscription: Subscription | undefined;
     hasPaymentMethod: boolean;
 }
 

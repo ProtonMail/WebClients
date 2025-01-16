@@ -7,7 +7,7 @@ import {
     isFreeSubscription,
 } from '@proton/payments';
 
-import type { Addon, SubscriptionModel } from '../interfaces';
+import type { Addon, Subscription } from '../interfaces';
 
 type AddonOrName = Addon | ADDON_NAMES | PLANS;
 
@@ -30,7 +30,7 @@ export const isScribeAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, ADDON_PREFIXES.SCRIBE);
 };
 
-export function hasScribeAddon(subscriptionOrPlanIds: SubscriptionModel | FreeSubscription | undefined): boolean {
+export function hasScribeAddon(subscriptionOrPlanIds: Subscription | FreeSubscription | undefined): boolean {
     const subscription = subscriptionOrPlanIds;
 
     if (!subscription || isFreeSubscription(subscription)) {

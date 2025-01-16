@@ -69,8 +69,8 @@ import type {
     FreePlanDefault,
     Organization,
     Plan,
+    Subscription,
     SubscriptionCheckResponse,
-    SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -176,7 +176,7 @@ export interface SubscriptionContainerProps {
         source: Source;
     };
     render: (renderProps: RenderProps) => ReactNode;
-    subscription: SubscriptionModel;
+    subscription: Subscription;
     organization: Organization;
     plans: Plan[];
     freePlan: FreePlanDefault;

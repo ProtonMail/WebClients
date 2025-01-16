@@ -6,7 +6,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
-import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useLoad from '@proton/components/hooks/useLoad';
@@ -57,11 +56,6 @@ const YourPlanSection = ({ app }: Props) => {
 
     if (!subscription || !plans || loading) {
         return <Loader />;
-    }
-
-    const { isManagedByMozilla } = subscription;
-    if (isManagedByMozilla) {
-        return <MozillaInfoPanel />;
     }
 
     const upsells = resolveUpsellsToDisplay({

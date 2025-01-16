@@ -2,7 +2,7 @@ import { getModelState } from '@proton/account/test';
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
 import { PLANS } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
-import type { Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 import { BillingPlatform, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock, getSubscriptionState, renderWithProviders } from '@proton/testing';
@@ -10,7 +10,7 @@ import { apiMock, getSubscriptionState, renderWithProviders } from '@proton/test
 import SubscriptionsSection from './SubscriptionsSection';
 
 describe('SubscriptionsSection', () => {
-    let subscription: SubscriptionModel;
+    let subscription: Subscription;
     let upcoming: Subscription | null = null;
 
     beforeEach(() => {
@@ -53,7 +53,6 @@ describe('SubscriptionsSection', () => {
             Renew: 1,
             External: 0,
             UpcomingSubscription: null,
-            isManagedByMozilla: false,
             BillingPlatform: BillingPlatform.Chargebee,
         };
 
@@ -105,17 +104,6 @@ describe('SubscriptionsSection', () => {
         ...getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
         meta: { fetchedAt: Date.now(), fetchedEphemeral: true },
     };
-
-    it('should return MozillaInfoPanel if isManagedByMozilla is true', () => {
-        subscription.isManagedByMozilla = true;
-        const { container } = renderWithProviders(<SubscriptionsSection />, {
-            preloadedState: {
-                subscription: getSubscriptionState(subscription),
-                plans: defaultPlansState,
-            },
-        });
-        expect(container).toHaveTextContent('Your subscription is managed by Mozilla');
-    });
 
     it('should render current subscription', () => {
         const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
