@@ -1,5 +1,7 @@
 import type {
     AlgorithmInfo,
+    ContextSigningOptions,
+    ContextVerificationOptions,
     Data,
     DecryptOptionsPmcrypto,
     DecryptResultPmcrypto,
@@ -21,7 +23,7 @@ import type {
 import type { PartialConfig, enums } from 'pmcrypto/lib/openpgp';
 
 export type MaybeArray<T> = T[] | T;
-export type { enums, SessionKey, AlgorithmInfo, MIMEAttachment };
+export type { enums, SessionKey, AlgorithmInfo, MIMEAttachment, ContextSigningOptions, ContextVerificationOptions };
 
 // TODO TS: do not allow mutually exclusive properties
 export interface WorkerDecryptionOptions
@@ -124,7 +126,8 @@ export type WorkerImportPublicKeyOptions<T extends Data> = {
     checkCompatibility?: boolean;
 };
 
-export interface WorkerGenerateKeyOptions<CustomConfig extends PartialConfig | undefined> extends Omit<GenerateKeyOptions, 'format' | 'passphrase'> {
+export interface WorkerGenerateKeyOptions<CustomConfig extends PartialConfig | undefined>
+    extends Omit<GenerateKeyOptions, 'format' | 'passphrase'> {
     config?: CustomConfig; // parametrized for key version inference
 }
 

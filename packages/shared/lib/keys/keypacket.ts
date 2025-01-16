@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { ContextSigningOptions, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -29,13 +29,13 @@ export const encryptAndSignKeyPacket = async ({
     sessionKey,
     encryptionKey,
     signingKey,
-    context,
+    signatureContext,
 }: {
     sessionKey: SessionKey;
     binaryData: Uint8Array;
     encryptionKey: PublicKeyReference;
     signingKey: PrivateKeyReference;
-    context?: Parameters<typeof CryptoProxy.signMessage<any>>[0]['context'];
+    signatureContext?: ContextSigningOptions;
 }) => {
     const result = await CryptoProxy.encryptSessionKey({
         ...sessionKey,
@@ -47,7 +47,7 @@ export const encryptAndSignKeyPacket = async ({
         binaryData,
         signingKeys: [signingKey],
         detached: true,
-        context,
+        signatureContext,
     });
 
     return {

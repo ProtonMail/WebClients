@@ -35,7 +35,7 @@ export const getOrganizationKeyToken = async ({
             privateKeys,
             Token: Key.Token,
             Signature: Key.Signature,
-            context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
+            signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
         });
     }
     return keyPassword;
