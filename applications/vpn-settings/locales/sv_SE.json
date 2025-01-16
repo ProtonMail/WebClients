@@ -172,6 +172,9 @@
       "Create Gateway": [
         "Skapa gateway"
       ],
+      "Create new policy": [
+        "Skapa ny policy"
+      ],
       "Create users": [
         "Skapa användare"
       ],
@@ -460,7 +463,7 @@
       "Refer a friend": [
         "Bjud in en vän"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Uppdatera data"
       ],
       "Refresh status": [
@@ -2324,11 +2327,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Alla i din organisation kan ansluta till delade servrar i alla länder."
+      ],
       "If disabled, only admins will have access.": [
         "Om det är inaktiverat har endast administratörer åtkomst."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Håll olika delar av ditt liv åtskilda och din inkorg organiserad med ytterligare adresser."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Ingen i din organisation kan ansluta till delade servrar."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
@@ -3514,6 +3526,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delad server.",
+        "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delade servrar."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
@@ -3710,6 +3726,9 @@
       "Allocated": [
         "Tilldelad"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Tillåt användare att ansluta till säkra delade servrar från **Länder**-sektionen i ${ VPN_APP_NAME }-appen."
+      ],
       "Already allocated": [
         "Redan tilldelad"
       ],
@@ -3870,6 +3889,9 @@
       ],
       "Current plan": [
         "Nuvarande paket"
+      ],
+      "Custom": [
+        "Anpassad"
       ],
       "Custom branding": [
         "Anpassat varumärke"
@@ -4388,6 +4410,12 @@
       ],
       "of": [
         "av"
+      ],
+      "Off": [
+        "Av"
+      ],
+      "On": [
+        "På"
       ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
@@ -5247,7 +5275,7 @@
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Dit nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
@@ -8729,7 +8757,7 @@
         "Säker streaming"
       ],
       "Support online privacy": [
-        "Stöd onlineintegritet"
+        "Stöd integritet online"
       ]
     },
     "specialoffer: Footer": {
@@ -9274,7 +9302,7 @@
         "Logga bara in på ditt Apple App Store-konto och välj sedan ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Logga bara in på ditt Play Store-konto och tryck sedan på ${ subscriptions }"
+        "Logga bara in på ditt Play Butik-konto och tryck sedan på ${ subscriptions }"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Hantera din prenumeration på ${ subscriptionManager }"
@@ -9283,7 +9311,7 @@
         "Prenumeration"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Ditt paket köptes med en Android-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Google Play Store."
+        "Ditt paket köptes med en Android-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Google Play Butik."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ditt paket köptes med en iOS-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Apple App Store."
