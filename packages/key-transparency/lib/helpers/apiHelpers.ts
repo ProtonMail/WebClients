@@ -121,7 +121,7 @@ export const fetchVerifiedEpoch = async (
                 armoredSignature: Signature,
                 verificationKeys: userVerificationKeys,
                 textData: Data,
-                context: KT_VE_VERIFICATION_CONTEXT,
+                signatureContext: KT_VE_VERIFICATION_CONTEXT,
             });
             if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 console.warn(
@@ -162,7 +162,7 @@ export const uploadVerifiedEpoch = async (
                 textData: bodyData,
                 signingKeys,
                 detached: true,
-                context: KT_VE_SIGNING_CONTEXT,
+                signatureContext: KT_VE_SIGNING_CONTEXT,
             }),
         })
     );

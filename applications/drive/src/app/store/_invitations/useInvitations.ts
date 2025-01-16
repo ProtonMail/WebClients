@@ -149,7 +149,7 @@ export const useInvitations = () => {
             signingKeys: inviter.addressKey,
             detached: true,
             format: 'binary',
-            context: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_INVITER },
+            signatureContext: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_INVITER },
         });
 
         return debouncedRequest<{ Code: number; Invitation: ShareInvitationPayload }>(
@@ -213,7 +213,7 @@ export const useInvitations = () => {
             signingKeys: inviter.addressKey,
             detached: true,
             format: 'binary',
-            context: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_EXTERNAL_INVITATION },
+            signatureContext: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_EXTERNAL_INVITATION },
         });
 
         return debouncedRequest<{ Code: number; ExternalInvitation: ShareExternalInvitationPayload }>(
@@ -374,7 +374,7 @@ export const useInvitations = () => {
             signingKeys: keys?.privateKeys,
             detached: true,
             format: 'binary',
-            context: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_INVITER },
+            signatureContext: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_INVITER },
         });
 
         return debouncedRequest<{ Code: number }>(

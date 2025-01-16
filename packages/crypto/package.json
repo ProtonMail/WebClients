@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "comlink": "^4.4.2",
-        "pmcrypto": "npm:@protontech/pmcrypto@~8.1.3"
+        "pmcrypto": "npm:@protontech/pmcrypto@^8.2.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
