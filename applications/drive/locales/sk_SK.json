@@ -10633,6 +10633,9 @@
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"
       ],
+      "Untitled document ${ date }": [
+        "Dokument bez názvu ${ date }"
+      ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
       ],
@@ -10709,6 +10712,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Tooltip": {
@@ -10792,11 +10800,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Validation": {

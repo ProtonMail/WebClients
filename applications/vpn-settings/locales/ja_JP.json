@@ -460,9 +460,6 @@
       "Refer a friend": [
         "友達を招待"
       ],
-      "Refresh Data": [
-        "データを更新"
-      ],
       "Refresh status": [
         "状態を更新"
       ],
@@ -974,7 +971,7 @@
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+        "${ MAIL_SHORT_APP_NAME } Plusと${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -989,7 +986,7 @@
         "1 ユーザーアカウント"
       ],
       "10 email addresses": [
-        "10 email addresses"
+        "10個のメールアドレス"
       ],
       "2 users": [
         "2 ユーザー"
@@ -3820,6 +3817,9 @@
       "Current plan": [
         "現在のプラン"
       ],
+      "Custom": [
+        "カスタム設定"
+      ],
       "Custom branding": [
         "カスタムブランディング"
       ],
@@ -4688,7 +4688,7 @@
         "これらの設定ファイルは、サードパーティ製の VPN アプリを使用する際や、ルーターで VPN 接続を設定する際に、どの ${ VPN_APP_NAME } サーバーに接続するかを選択するためのものです。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "Translation: これらの構成は、WireGuardルーターおよび公式クライアントで動作するように提供されています。"
+        "これらの構成は、WireGuardルーターおよび公式クライアントで動作するように提供されています。"
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "これらの認証情報は、公式 ${ VPN_APP_NAME } アプリへのサインインには使用できません。 ${ learnMore }"
@@ -10459,7 +10459,7 @@
         "WireGuard 設定ファイル"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "${ planName }のフリートライアルは${ textDate }に終了します"
+        "${ planName }の無料トライアルは${ textDate }に終了します"
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"

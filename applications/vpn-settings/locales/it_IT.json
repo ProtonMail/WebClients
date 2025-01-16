@@ -172,6 +172,9 @@
       "Create Gateway": [
         "Crea Gateway"
       ],
+      "Create new policy": [
+        "Crea una nuova policy"
+      ],
       "Create users": [
         "Crea gli utenti"
       ],
@@ -460,8 +463,8 @@
       "Refer a friend": [
         "Invita un amico"
       ],
-      "Refresh Data": [
-        "Aggiorna Dati"
+      "Refresh data": [
+        "Aggiorna i dati"
       ],
       "Refresh status": [
         "Aggiorna stato"
@@ -2324,11 +2327,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Crea delle policy per decidere chi può connettersi ai server condivisi in ciascun paese."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Tutti nella tua organizzazione possono connettersi ai server condivisi in tutti i paesi."
+      ],
       "If disabled, only admins will have access.": [
         "Se disabilitato, solo gli amministratori avranno accesso."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantieni separate le diverse parti della tua vita e organizza la tua casella di posta con indirizzi aggiuntivi."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Nessuno nella tua organizzazione può connettersi ai server condivisi."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
@@ -3503,6 +3515,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } utenti attualmente hanno accesso ai server condivisi.",
+        "${ amountUsers }/${ totalUsers } utenti attualmente hanno accesso ai server condivisi."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
@@ -3699,6 +3715,9 @@
       "Allocated": [
         "Allocato"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Consenti agli utenti di connettersi a server condivisi protetti dalla sezione **Paesi** dell'app ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Già allocato"
       ],
@@ -3859,6 +3878,9 @@
       ],
       "Current plan": [
         "Piano attuale"
+      ],
+      "Custom": [
+        "Personalizzato"
       ],
       "Custom branding": [
         "Marchio personalizzato"
@@ -4377,6 +4399,12 @@
       ],
       "of": [
         "di"
+      ],
+      "Off": [
+        "Disattiva"
+      ],
+      "On": [
+        "Attiva"
       ],
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"

@@ -664,7 +664,7 @@
         "Kirim ulang undangan"
       ],
       "Reset to default": [
-        "Atur ulang ke awal"
+        "Atur ulang ke pengaturan bawaan"
       ],
       "Restart all": [
         "Ulangi semua dari awal"
@@ -2379,7 +2379,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Gunakan nilai default global (${ defaultValueText })"
+        "Gunakan nilai bawaan global (${ defaultValueText })"
       ]
     },
     "Default signing preference": {
@@ -3763,7 +3763,7 @@
         "Akses IMAP telah diaktifkan pada akun Yahoo Anda."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
+        "Terlalu banyak permintaan baru-baru ini. Silakan coba lagi dalam beberapa saat."
       ],
       "Use your app password if:": [
         "Gunakan kata sandi aplikasi Anda apabila:"
@@ -10120,6 +10120,9 @@
       "Unlock contacts groups": [
         "Buka kunci grup kontak"
       ],
+      "Untitled document ${ date }": [
+        "Dokumen tak berjudul ${ date }"
+      ],
       "Upgrade complete!": [
         "Peningkatan selesai!"
       ],
@@ -10196,6 +10199,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hari ini"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Tooltip": {
@@ -10279,11 +10287,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Kami telah mengirim undangan untuk mengakses berkas ini."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Validation": {

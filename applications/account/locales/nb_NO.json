@@ -337,6 +337,9 @@
       "Create link": [
         "Opprett kobling"
       ],
+      "Create new policy": [
+        "Opprett ny retningslinje"
+      ],
       "Create users": [
         "Opprett brukere"
       ],
@@ -835,7 +838,7 @@
       "Refer a friend": [
         "Verv en venn"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Oppdater data"
       ],
       "Refresh status": [
@@ -2509,7 +2512,7 @@
         "Avslutt import?"
       ],
       "Remove from the list?": [
-        "Fjern fra listen?"
+        "Fjerne fra listen?"
       ],
       "Undo this import?": [
         "Angre denne importen?"
@@ -3623,6 +3626,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Opprett så mange etiketter eller mapper du trenger for å holde innboksen ryddig."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
       ],
@@ -3634,6 +3640,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Alle i organisasjonen kan koble til delte tjenere i alle land."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -3652,6 +3661,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Gjør e-postbunnteksten din til din egen – vis frem din unike merkevare, ikke vår."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Ingen i organisasjonen kan koble til delte tjenere."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
@@ -4052,7 +4064,7 @@
         "Klikk på knappen nedenfor for å avslutte abonnementet på ${ categories }-e-poster."
       ],
       "Email subscriptions": [
-        "E-post abonnementer"
+        "E-post-abonnementer"
       ],
       "If you unsubscribed by accident, you are welcome to resubscribe.": [
         "Hvis du avsluttet abonnementet ved et uhell, er du velkommen til å abonnere på nytt."
@@ -4067,7 +4079,7 @@
         "Avslutt abonnement"
       ],
       "Unsubscribe?": [
-        "Avslutt abonnement?"
+        "Avslutte abonnement?"
       ],
       "Update email preferences": [
         "Oppdater preferanser for e-post"
@@ -4279,7 +4291,7 @@
     },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
-        "Ende-til-ende kryptering blir aktivert på nytt for avsenderadressen."
+        "Ende-til-ende-kryptering blir aktivert på nytt for avsenderadressen."
       ],
       "Forwarding to the destination address will end.": [
         "Videresending til destinasjonsadressen avsluttes."
@@ -6627,6 +6639,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } bruker har for øyeblikket tilgang til delte tjenere.",
+        "${ amountUsers }/${ totalUsers } brukere har for øyeblikket tilgang til delte tjenere."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
@@ -6974,6 +6990,9 @@
       ],
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
       ],
       "Already allocated": [
         "Allerede allokert"
@@ -8079,6 +8098,12 @@
       ],
       "of": [
         "av"
+      ],
+      "Off": [
+        "Av"
+      ],
+      "On": [
+        "På"
       ],
       "Once you reset your password:": [
         "Når du har tilbakestilt passordet:"
@@ -11463,6 +11488,9 @@
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "Tidsbegrenset tilbud: **Spar ${ discount } på ${ name } med en 1-års plan**"
       ],
+      "Set up your account with your Porkbun domain.": [
+        "Sett opp kontoen med Porkbun-domenet ditt."
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blitt invitert til å forsøke ${ MAIL_APP_NAME }"
       ]
@@ -12670,13 +12698,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
+        "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende-kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: sikre e-postene dine med ende-til-ende kryptering. Inkluderer støtte for egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser og mer."
+        "${ MAIL_APP_NAME }: sikre e-postene dine med ende-til-ende-kryptering. Inkluderer støtte for egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser og mer."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få tilgang til blokkert innhold og surf privat. Inkluderer ${ serversAndCountries }, høyeste VPN-hastigheter, tilgang til strømmetjenester verden over, skadevare og annonseblokkering, raske BitTorrent-nedlastinger og mer."
@@ -13692,7 +13720,7 @@
     },
     "pass_signup_2023: Header": {
       "Checkout": [
-        "Sjekk ut"
+        "Gå til kassen"
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Fortsett med din ${ BRAND_NAME }-konto"
@@ -15530,7 +15558,7 @@
         "Kryptert"
       ],
       "Strict no-logs policy": [
-        "Streng ingen-loggførings-praksis"
+        "Streng politikk om ingen logger"
       ]
     },
     "Signup: Info": {
@@ -16112,13 +16140,13 @@
     },
     "storage_split: feature": {
       "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
-        "Lagring for data generert av ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, og ${ PASS_SHORT_APP_NAME }."
+        "Lagringsplass for data generert av ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, og ${ PASS_SHORT_APP_NAME }."
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "Opptil ${ totalStorageSize } Drive-lagring"
+        "Opptil ${ totalStorageSize } lagringsplass for Drive"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
-        "Opptil ${ totalStorageSize } Mail-lagring"
+        "Opptil ${ totalStorageSize } lagringsplass for Mail"
       ]
     },
     "storage_split: info": {
@@ -17810,7 +17838,7 @@
         "Generer SMTP-token"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        "Skaff deg ${ vpnPlus } for å aksessere alle tjenere"
+        "Skaff deg ${ vpnPlus } for å få tilgang til alle tjenere"
       ],
       "Get the apps": [
         "Skaff deg appene"
@@ -19007,7 +19035,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Oppgrader til ${ passPlusPlanName } for å få ubegrensede hide-my-email-aliaser."
+        "Oppgrader til ${ passPlusPlanName } for å få ubegrenset antall hide-my-email-aliaser."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Oppgrader til ${ planName } for å koble opptil ${ n } enhet til VPN samtidig.",
@@ -19086,7 +19114,7 @@
         "Ny ${ BRAND_NAME }-epostadresse"
       ],
       "Optional": [
-        "Valgfri"
+        "Valgfritt"
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk å dele brukerens påloggingsinformasjon med dem."
@@ -19318,7 +19346,7 @@
         "${ n } lommebøker"
       ],
       "**Get ${ plan }** for early access to ${ appName }!": [
-        "**Få ${ plan }** for tidlig tilgang til ${ appName }!"
+        "**Skaff deg ${ plan }** for tidlig tilgang til ${ appName }!"
       ],
       "A safer way to hold your Bitcoin": [
         "En tryggere måte å bevare Bitcoin på"
