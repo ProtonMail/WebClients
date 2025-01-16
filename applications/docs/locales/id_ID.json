@@ -195,9 +195,6 @@
       "Create and copy alias": [
         "Buat dan salin alias"
       ],
-      "Create new document": [
-        "Buat dokumen baru"
-      ],
       "Current plan": [
         "Paket saat ini"
       ],
@@ -523,7 +520,7 @@
         "Kirim ulang undangan"
       ],
       "Reset to default": [
-        "Atur ulang ke awal"
+        "Atur ulang ke pengaturan bawaan"
       ],
       "Restore": [
         "Pulihkan"
@@ -2165,7 +2162,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Gunakan nilai default global (${ defaultValueText })"
+        "Gunakan nilai bawaan global (${ defaultValueText })"
       ]
     },
     "Default signing preference": {
@@ -3516,7 +3513,7 @@
         "Akses IMAP telah diaktifkan pada akun Yahoo Anda."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
+        "Terlalu banyak permintaan baru-baru ini. Silakan coba lagi dalam beberapa saat."
       ],
       "Use your app password if:": [
         "Gunakan kata sandi aplikasi Anda apabila:"
@@ -4548,9 +4545,6 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dokumen ini sedang memiliki banyak aktivitas. Sebagian fitur mungkin tidak akan tersedia untuk sementara waktu."
-      ],
-      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Dokumen ini tidak ada, atau Anda mungkin tidak memiliki izin untuk melihat dokumen ini. Anda dapat mencoba untuk memuat ulang halaman untuk memeriksa apakah masalah ini terus berlanjut."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
