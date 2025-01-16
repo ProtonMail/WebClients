@@ -2,6 +2,7 @@ import { apiWalletTransactionDataReducer } from './apiWalletTransactionData';
 import { apiWalletsDataReducer } from './apiWalletsData';
 import { bitcoinAddressHighestIndexReducer } from './bitcoinAddressHighestIndex';
 import { bitcoinAddressPoolReducer } from './bitcoinAddressPool';
+import { bitcoinAddressUsedIndexesReducer } from './bitcoinAddressUsedIndexes';
 import { bitcoinNetworkReducer } from './bitcoinNetwork';
 import { countriesByProviderReducer } from './countriesByProvider';
 import { exchangeRateReducer } from './exchangeRate';
@@ -21,6 +22,7 @@ export * from './apiWalletsData';
 export * from './apiWalletTransactionData';
 export * from './bitcoinAddressPool';
 export * from './bitcoinAddressHighestIndex';
+export * from './bitcoinAddressUsedIndexes';
 export * from './bitcoinNetwork';
 export * from './countriesByProvider';
 export * from './exchangeRate';
@@ -41,6 +43,7 @@ export const walletReducers = {
     ...apiWalletTransactionDataReducer,
     ...bitcoinAddressPoolReducer,
     ...bitcoinAddressHighestIndexReducer,
+    ...bitcoinAddressUsedIndexesReducer,
     ...fiatCurrenciesReducer,
     ...fiatCurrenciesByProviderReducer,
     ...countriesByProviderReducer,

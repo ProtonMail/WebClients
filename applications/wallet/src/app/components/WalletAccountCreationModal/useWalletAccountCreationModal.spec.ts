@@ -71,6 +71,7 @@ describe('useWalletAccountCreationModal', () => {
             PoolSize: 10,
             Priority: 1,
             ScriptType: WasmScriptType.Taproot,
+            StopGap: 20,
             Addresses: [],
         };
 
