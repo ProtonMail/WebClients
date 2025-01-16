@@ -165,7 +165,10 @@ export const getMailConfiguration = ({
             </SignupHeaderV2>
         );
 
-    const features = getGenericFeatures(isLargeViewport, audience);
+    let features = getGenericFeatures(isLargeViewport, audience);
+    if (invite?.type === 'porkbun') {
+        features = [];
+    }
 
     let planCards: SignupConfiguration['planCards'] = {
         [Audience.B2B]: [
