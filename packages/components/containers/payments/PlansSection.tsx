@@ -10,7 +10,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
-import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import useApi from '@proton/components/hooks/useApi';
 import useLoad from '@proton/components/hooks/useLoad';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
@@ -154,11 +153,6 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             })
         );
     }, [isLoading, subscription, app]);
-
-    // @ts-ignore
-    if (subscription.isManagedByMozilla) {
-        return <MozillaInfoPanel />;
-    }
 
     if (isLoading) {
         return <Loader />;

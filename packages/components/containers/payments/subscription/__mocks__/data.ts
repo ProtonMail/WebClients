@@ -6,7 +6,6 @@ import type {
     PendingInvitation,
     Plan,
     Subscription,
-    SubscriptionModel,
     User,
     UserSettings,
     VPNServersCountData,
@@ -528,7 +527,7 @@ export const subscriptionBundle = {
     ],
 } as Subscription;
 
-export const subscriptionBundlePro: SubscriptionModel = {
+export const subscriptionBundlePro: Subscription = {
     ID: '1hY7tDQ6-lnYVM7fjbqK5bPIW1iPeWe3UVKJ34wKdhiBv30L4uSaYUayCzd8NuF3FHmUrjIuZQi-xy3_VnnRFA==',
     InvoiceID: '',
     Cycle: 12,
@@ -568,7 +567,6 @@ export const subscriptionBundlePro: SubscriptionModel = {
     External: 0,
     BillingPlatform: 1,
     IsTrial: false,
-    isManagedByMozilla: false,
 };
 
 export const subscriptionBusiness = {

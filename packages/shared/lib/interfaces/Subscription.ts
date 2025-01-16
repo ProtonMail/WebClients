@@ -134,10 +134,6 @@ export interface Subscription {
     BillingPlatform?: BillingPlatform;
 }
 
-export interface SubscriptionModel extends Subscription {
-    isManagedByMozilla: boolean;
-}
-
 export type BasePlansMap<T extends Plan> = {
     [planName in PLANS | ADDON_NAMES]: T;
 };

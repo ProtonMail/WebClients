@@ -11,7 +11,7 @@ import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/payments
 import { type Currency, PAYMENT_METHOD_TYPES, isChargebeePaymentMethod } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
 import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
@@ -32,7 +32,7 @@ type Props = {
     paypal: PaypalProcessorHook;
     disabled?: boolean;
     noPaymentNeeded?: boolean;
-    subscription: SubscriptionModel;
+    subscription: Subscription;
     hasPaymentMethod: boolean;
     billingAddressStatus: BillingAddressStatus;
     paymentProcessorType: PaymentProcessorType | undefined;

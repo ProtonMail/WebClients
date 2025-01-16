@@ -51,7 +51,7 @@ import {
     type Plan,
     type PlansMap,
     Renew,
-    type SubscriptionModel,
+    type Subscription,
     type SubscriptionPlan,
     type UserModel,
     type VPNServersCountData,
@@ -108,7 +108,7 @@ interface Props {
     onChangeAudience: (newAudience: Audience) => void;
     selectedProductPlans: SelectedProductPlans;
     onChangeSelectedProductPlans: (newPlans: SelectedProductPlans) => void;
-    subscription?: SubscriptionModel | FreeSubscription;
+    subscription?: Subscription | FreeSubscription;
     organization?: Organization;
     filter?: Audience[];
     paymentsStatus: PaymentMethodStatusExtended;
