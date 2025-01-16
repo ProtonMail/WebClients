@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useActions } from '../_actions';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
+import { useCheckLinkSignatures } from '../_actions/useCheckLinkSignatures';
+import type { useDownload } from '../_downloads';
 import type { DecryptedLink, SignatureIssues } from '../_links';
 import { useLink } from '../_links';
 import { useShareUrl } from '../_shares';
@@ -14,8 +16,12 @@ import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
  * useLinkDetailsView loads link if not cached yet with all signature issues
  * and number of accesses to shared URL.
  */
-export default function useLinkDetailsView(shareId: string, linkId: string) {
-    const { checkLinkSignatures } = useActions();
+export default function useLinkDetailsView(
+    shareId: string,
+    linkId: string,
+    checkFirstBlockSignature: ReturnType<typeof useDownload>['checkFirstBlockSignature']
+) {
+    const { checkLinkSignatures } = useCheckLinkSignatures({ checkFirstBlockSignature });
     const { loadShareUrlNumberOfAccesses } = useShareUrl();
     const { getLink } = useLink();
     const { isSharedWithMe, getSharePermissions } = useDirectSharingInfo();
@@ -35,11 +41,15 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
     const [numberOfAccesses, setNumberOfAccesses] = useState<number>();
     const [isNumberOfAccessesLoading, withLoadingNumberOfAccesses] = useLoading();
 
+    const isPublicContext = useMemo(() => getIsPublicContext(), []);
+
     useEffect(() => {
         const abortController = new AbortController();
         void withLoadingLink(async () => {
             try {
-                await getSharePermissions(abortController.signal, shareId).then(setPermissions);
+                if (!isPublicContext) {
+                    await getSharePermissions(abortController.signal, shareId).then(setPermissions);
+                }
 
                 const link = await getLink(abortController.signal, shareId, linkId);
                 setLink(link);
@@ -50,8 +60,11 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
                             setSignatureNetworkError(true);
                         })
                 );
-                const sharedWithMe = await isSharedWithMe(abortController.signal, shareId);
-                setIsSharedWithMeLink(sharedWithMe);
+                let sharedWithMe = false;
+                if (!isPublicContext) {
+                    sharedWithMe = await isSharedWithMe(abortController.signal, shareId);
+                    setIsSharedWithMeLink(sharedWithMe);
+                }
                 if (link.shareId && !sharedWithMe) {
                     void withLoadingNumberOfAccesses(
                         loadShareUrlNumberOfAccesses(abortController.signal, shareId, linkId)

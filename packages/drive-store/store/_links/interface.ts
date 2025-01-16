@@ -1,7 +1,6 @@
 import type { VERIFICATION_STATUS } from '@proton/crypto';
 
-import type { Photo } from '../_photos';
-import type { ThumbnailType } from '../_uploads/media';
+import type { DriveFileRevision } from '../_revisions';
 
 /**
  * Link should not be used directly. It is general set of attributes
@@ -48,25 +47,7 @@ interface Link {
     rootShareId: string;
     shareUrl?: LinkShareUrl;
     sharingDetails?: LinkSharingDetails;
-    activeRevision?: {
-        id: string;
-        size: number;
-        // Address used for signature checks of blocks and xattributes.
-        signatureEmail: string;
-        // Thumbnails URL is not part of all requests, because that would be
-        // too heavy for API. For example, events do not include it.
-        thumbnail?: {
-            bareUrl: string;
-            token: string;
-        };
-        thumbnails?: {
-            id: string;
-            size: number;
-            type: ThumbnailType;
-            hash: string;
-        }[];
-        photo?: Photo;
-    };
+    activeRevision?: DriveFileRevision;
     signatureEmail?: string; // Email used for key signatures.
     nameSignatureEmail?: string; // Email used for name signature.
     // If there is no issue, the value should be undefined.
