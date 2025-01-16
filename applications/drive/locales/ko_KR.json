@@ -10063,6 +10063,9 @@
       "Unlock contacts groups": [
         "연락처 그룹 잠금 해제"
       ],
+      "Untitled document ${ date }": [
+        "무제 문서 ${ date }"
+      ],
       "Upgrade complete!": [
         "업그레이드 완료!"
       ],
@@ -10139,6 +10142,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Tooltip": {
@@ -10222,11 +10230,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Validation": {

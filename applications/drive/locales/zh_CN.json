@@ -3396,6 +3396,9 @@
       ]
     },
     "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "输入家庭群组名称以确认"
+      ],
       "Enter organization name to confirm": [
         "请输入机构名称进行确认"
       ]
@@ -3406,6 +3409,9 @@
       ]
     },
     "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "删除家庭群组？"
+      ],
       "Delete organization?": [
         "删除机构?"
       ]
@@ -6080,6 +6086,9 @@
       "click here": [
         "点击此处"
       ],
+      "How to pay with Bitcoin?": [
+        "如何使用比特币支付？"
+      ],
       "Learn more": [
         "了解详情"
       ],
@@ -6981,6 +6990,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "通过专用安全网关实现先进的网络安全和访问管理"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "为团队提供超越行业标准的高级保护。"
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "所有 ${ BRAND_NAME } 应用及其高级功能"
       ],
@@ -7029,11 +7044,17 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "通过必要的网络监控，随时随地安全上网"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的云存储，让您轻松安全地存储、同步和共享文件。"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "为有特殊安全需求的大型组织量身定制解决方案"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "专用VPN解决方案，提供安全、无限制、高速的互联网访问。"
@@ -7501,6 +7522,9 @@
       "The link to your item was deleted": [
         "共享链接已删除"
       ],
+      "This item was not removed from your list": [
+        "一些项目未能从您的列表中删除"
+      ],
       "Trash failed to be emptied": [
         "未能清空回收站"
       ],
@@ -7637,6 +7661,9 @@
       ],
       "The organization key must be activated first.": [
         "必须先激活机构密钥。"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "您需要访问组织密钥才能执行此操作。"
       ]
     },
     "Payment method option": {
@@ -7933,6 +7960,11 @@
     "Safety review": {
       "Review your account safety": [
         "检查您的帐户安全"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "登录未成功。"
       ]
     },
     "Security Center": {
@@ -8403,6 +8435,9 @@
     "sso": {
       "Sign in": [
         "登录"
+      ],
+      "Sign in to your organization": [
+        "登录到您的组织"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "您将被重定向到您的第三方SSO提供商。"
@@ -9071,6 +9106,9 @@
       "Are you sure you want to close the preview?": [
         "确定要关闭预览吗？"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "您确定要从列表中删除这些项目吗？"
+      ],
       "Are you sure?": [
         "是否确定？"
       ],
@@ -9551,6 +9589,9 @@
       "Unlock contacts groups": [
         "解锁群组功能"
       ],
+      "Untitled document ${ date }": [
+        "无标题文档 ${ date }"
+      ],
       "Upgrade complete!": [
         "升级完成！"
       ],
@@ -9624,6 +9665,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Tooltip": {
@@ -9704,11 +9750,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "我们已向他们发送了访问该项目的邀请。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Validation": {
