@@ -10,7 +10,7 @@
  */
 export interface HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson {
   Labels: {
-    plan: "free" | "paid";
+    plan: "free" | "paid" | "anonymous" | "unknown";
     shareType: "main" | "device" | "photo" | "shared" | "shared_public";
   };
   Value: number;

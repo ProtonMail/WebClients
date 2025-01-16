@@ -14,7 +14,7 @@ import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/erro
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
-import type { UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
+import type { MetricUserPlan, UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import { useSharesStore } from '../../../zustand/share/shares.store';
 import type { Share } from '../../_shares/interface';
@@ -46,7 +46,7 @@ export const getFailedUploadMetadata = (nextFileUpload: FileUploadReady, progres
     roundedUnencryptedFileSize: Math.max(Math.round(nextFileUpload.file.size / ROUND_BYTES) * ROUND_BYTES, ROUND_BYTES),
 });
 
-export default function useUploadMetrics(isPaid: boolean, metricsModule = metrics) {
+export default function useUploadMetrics(plan: MetricUserPlan, metricsModule = metrics) {
     const lastErroringUserReport = useRef(0);
 
     // Hack: ideally we should use useShare. But that adds complexity with
@@ -89,7 +89,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
 
             if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
                 metricsModule.drive_upload_erroring_users_total.increment({
-                    plan: isPaid ? 'paid' : 'free',
+                    plan,
                     shareType,
                     initiator: 'explicit',
                 });
