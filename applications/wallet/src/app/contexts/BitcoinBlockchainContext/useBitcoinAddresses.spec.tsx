@@ -14,10 +14,12 @@ import {
     apiWalletsData,
     getAddressKey,
     getMockedApi,
+    mockUseBitcoinAddressUsedIndexes,
     mockUseGetBitcoinAddressPool,
     mockUseWalletApiClients,
 } from '@proton/wallet/tests';
 
+import { mockUseBlockchainClient } from '../../tests';
 import { useBitcoinAddresses } from './useBitcoinAddresses';
 import { formatToSubset, getWalletsChainDataInit } from './useWalletsChainData';
 
@@ -68,6 +70,8 @@ describe('useBitcoinAddresses', () => {
         });
 
         mockUseGetBitcoinAddressPool(vi.fn().mockResolvedValue(bitcoinAddresses));
+        mockUseBitcoinAddressUsedIndexes(vi.fn().mockResolvedValue([]));
+        mockUseBlockchainClient();
         mockUseWalletApiClients();
 
         const address = await getAddressKey();
@@ -87,7 +91,13 @@ describe('useBitcoinAddresses', () => {
         }
 
         const { result } = renderHook(
-            () => useBitcoinAddresses({ apiWalletsData, walletsChainData, isSyncing: vi.fn() }),
+            () =>
+                useBitcoinAddresses({
+                    apiWalletsData,
+                    walletsChainData,
+                    isSyncing: vi.fn(),
+                    network: WasmNetwork.Testnet,
+                }),
             {
                 wrapper: Wrapper,
             }
@@ -131,6 +141,7 @@ describe('useBitcoinAddresses', () => {
                     ],
                     walletsChainData,
                     isSyncing: vi.fn(),
+                    network: WasmNetwork.Testnet,
                 }),
             {
                 wrapper: Wrapper,
@@ -188,6 +199,7 @@ describe('useBitcoinAddresses', () => {
                         ],
                         walletsChainData,
                         isSyncing: vi.fn(),
+                        network: WasmNetwork.Testnet,
                     }),
                 {
                     wrapper: Wrapper,

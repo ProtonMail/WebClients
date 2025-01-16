@@ -76,6 +76,7 @@ describe('apiWalletsData', () => {
                 Priority: 1,
                 LastUsedIndex: 0,
                 PoolSize: 3,
+                StopGap: 20,
             };
 
             store.dispatch(walletAccountCreation(account));

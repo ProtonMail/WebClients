@@ -38,6 +38,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         apiWalletsData,
         walletsChainData,
         isSyncing,
+        network,
     });
 
     return (
