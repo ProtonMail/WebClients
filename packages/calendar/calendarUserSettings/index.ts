@@ -7,17 +7,17 @@ import { getCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-interface State {
+const name = 'calendarUserSettings' as const;
+interface CalendarSettingState {
     calendarUserSettings: ModelState<CalendarUserSettings>;
 }
 
-const name = 'calendarUserSettings' as const;
-type SliceState = State[typeof name];
+type SliceState = CalendarSettingState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectCalendarUserSettings = (state: State) => state[name];
+export const selectCalendarUserSettings = (state: CalendarSettingState) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, CalendarSettingState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument
             .api<{ CalendarUserSettings: CalendarUserSettings }>(getCalendarUserSettings())

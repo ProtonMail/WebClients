@@ -181,8 +181,9 @@ export enum TelemetryMailComposerAssistantEvents {
     incompatible_assistant = 'incompatible_assistant',
 }
 
-export enum TelemetryMailHeartbeatEvents {
+export enum TelemetryHeartbeatEvents {
     mail_heartbeat = 'mail_heartbeat',
+    calendar_heartbeat = 'calendar_heartbeat',
 }
 
 export enum TelemetryInboxDestkopEvents {
@@ -285,7 +286,7 @@ export type TelemetryEvents =
     | TelemetryCollapsibleLeftSidebarEvents
     | TelemetryUpsellModalsEvents
     | TelemetryProtonTipsEvents
-    | TelemetryMailHeartbeatEvents
+    | TelemetryHeartbeatEvents
     | TelemetrySmartBannerEvents
     | TelemetryDesktopEvents
     | TelemetryInboxDestkopEvents
