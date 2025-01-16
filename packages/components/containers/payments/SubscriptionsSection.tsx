@@ -15,7 +15,6 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useCancellationTelemetry from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import useApi from '@proton/components/hooks/useApi';
@@ -60,10 +59,6 @@ const SubscriptionsSection = () => {
 
     if (!current || !plans || loadingSubscription || loadingPlans || plansMapLoading) {
         return <Loader />;
-    }
-
-    if (current.isManagedByMozilla) {
-        return <MozillaInfoPanel />;
     }
 
     const planTitle = getPlanTitle(current);

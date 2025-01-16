@@ -1,7 +1,7 @@
 import { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getBundleConfig } from './config/bundle';
 import { getBundleProConfig } from './config/bundlePro';
@@ -20,7 +20,7 @@ export const getReminderPageConfig = ({
     user,
 }: {
     app?: APP_NAMES;
-    subscription?: SubscriptionModel;
+    subscription?: Subscription;
     user: UserModel;
 }): PlanConfig | null => {
     const plan = getPlan(subscription);

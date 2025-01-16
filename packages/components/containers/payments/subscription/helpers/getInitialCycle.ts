@@ -3,7 +3,7 @@ import { type Currency, type FreeSubscription, type PlanIDs, isFreeSubscription 
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS, CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Cycle, Subscription } from '@proton/shared/lib/interfaces';
 
 import { getAllowedCycles } from './getAllowedCycles';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
@@ -11,7 +11,7 @@ import { notHigherThanAvailableOnBackend } from './payment';
 
 interface GetInitialCycleParams {
     cycleParam: Cycle | undefined;
-    subscription: SubscriptionModel | FreeSubscription;
+    subscription: Subscription | FreeSubscription;
     planIDs: PlanIDs;
     plansMap: FullPlansMap;
     isPlanSelection: boolean;

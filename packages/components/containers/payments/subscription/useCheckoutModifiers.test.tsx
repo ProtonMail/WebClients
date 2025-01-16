@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { PLANS } from '@proton/payments';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
-import type { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { PlansMap, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 
 import type { Model } from './SubscriptionContainer';
@@ -12,7 +12,7 @@ import { useCheckoutModifiers } from './useCheckoutModifiers';
 
 describe('useCheckoutModifiers', () => {
     let model: Model;
-    let subscriptionModel: SubscriptionModel;
+    let Subscription: Subscription;
     let checkResult: SubscriptionCheckResponse;
     const plansMap: PlansMap = {
         mail2022: {
@@ -126,7 +126,7 @@ describe('useCheckoutModifiers', () => {
             noPaymentNeeded: false,
         };
 
-        subscriptionModel = {
+        Subscription = {
             ID: 'id123',
             InvoiceID: 'id456',
             Cycle: CYCLE.MONTHLY,
@@ -139,7 +139,6 @@ describe('useCheckoutModifiers', () => {
             RenewAmount: 499,
             Discount: 0,
             RenewDiscount: 0,
-            isManagedByMozilla: false,
             External: 0,
             Renew: Renew.Enabled,
             Plans: [
@@ -178,7 +177,7 @@ describe('useCheckoutModifiers', () => {
     });
 
     it('should return isProration === true when checkResult is undefined', () => {
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isProration).toEqual(true);
     });
 
@@ -187,39 +186,39 @@ describe('useCheckoutModifiers', () => {
             [PLANS.MAIL_PRO]: 1,
         };
 
-        subscriptionModel.Plans[0].Name = PLANS.MAIL;
+        Subscription.Plans[0].Name = PLANS.MAIL;
 
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isProration).toEqual(true);
     });
 
     it('should return isProration === true if user buys the same plan but proration is undefined', () => {
         checkResult.Proration = undefined;
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isProration).toEqual(true);
     });
 
     it('should return isProration === true if Proration exists and proration !== 0', () => {
         checkResult.Proration = -450;
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isProration).toEqual(true);
     });
 
     it('should return isProration === false if Proration exists and proration === 0', () => {
         checkResult.Proration = 0;
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isProration).toEqual(false);
     });
 
     it('should return isScheduledChargedImmediately === false if checkResult is undefined', () => {
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isScheduledChargedImmediately).toEqual(false);
     });
 
     it('should return isProration true when user has trial', () => {
-        subscriptionModel.CouponCode = COUPON_CODES.REFERRAL;
+        Subscription.CouponCode = COUPON_CODES.REFERRAL;
         checkResult.Proration = 0;
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isProration).toEqual(true);
     });
 
@@ -227,54 +226,54 @@ describe('useCheckoutModifiers', () => {
         it('should return isScheduledChargedImmediately === false if UnusedCredit !== 0', () => {
             checkResult.Proration = 0;
             checkResult.UnusedCredit = -20;
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
             expect(result.current.isScheduledChargedImmediately).toEqual(false);
         });
 
         it('should return isProration === false if UnusedCredit !== 0', () => {
             checkResult.Proration = 0;
             checkResult.UnusedCredit = -20;
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
             expect(result.current.isProration).toEqual(false);
         });
 
         it('should return isCustomBilling === true if UnusedCredit !== 0', () => {
             checkResult.Proration = 0;
             checkResult.UnusedCredit = -20;
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
             expect(result.current.isCustomBilling).toEqual(true);
         });
 
         it('should return isCustomBilling === false if UnusedCredit === 0', () => {
             checkResult.Proration = 150;
             checkResult.UnusedCredit = 0;
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
             expect(result.current.isCustomBilling).toEqual(false);
         });
 
         it('should return isCustomBilling === false if UnusedCredit === 0 if Proration is 0 too', () => {
             checkResult.Proration = 0;
             checkResult.UnusedCredit = 0;
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
             expect(result.current.isCustomBilling).toEqual(false);
         });
 
         it('should return isCustomBilling === false if checkResult is undefined', () => {
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
             expect(result.current.isCustomBilling).toEqual(false);
         });
 
         it('should return isCustomBilling === false if UnusedCredit is undefined', () => {
             checkResult.Proration = 0;
             checkResult.UnusedCredit = undefined;
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
             expect(result.current.isCustomBilling).toEqual(false);
         });
     });
 
     it('should set all checkout modifiers to false if check result is optimistic', () => {
         checkResult.optimistic = true;
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        const { result } = renderHook(() => useCheckoutModifiers(model, Subscription, plansMap, checkResult));
         expect(result.current.isProration).toEqual(false);
         expect(result.current.isScheduledChargedImmediately).toEqual(false);
         expect(result.current.isCustomBilling).toEqual(false);

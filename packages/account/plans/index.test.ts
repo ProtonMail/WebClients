@@ -2,7 +2,7 @@ import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { type Currency, PLANS } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import { type Plan, type SubscriptionModel, type UserModel } from '@proton/shared/lib/interfaces';
+import { type Plan, type Subscription, type UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { paymentStatusReducer } from '../paymentStatus';
@@ -62,12 +62,12 @@ describe('plans', () => {
 
     const defaultSubscription = {
         Currency: 'USD',
-    } as SubscriptionModel;
+    } as Subscription;
 
     const setup = (
         status: PaymentMethodStatusExtended = defaultStatus,
         user: UserModel = defaultUser,
-        subscription: SubscriptionModel = defaultSubscription
+        subscription: Subscription = defaultSubscription
     ) => {
         const extraThunkArguments = {
             api: apiMock,
