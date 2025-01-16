@@ -31,14 +31,15 @@ import type {
 import {
     type Currency,
     DEFAULT_CURRENCY,
+    DisplayablePaymentError,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type PlanIDs,
+    getBillingAddressStatus,
     getPlansMap,
     isFreeSubscription,
     isOnSessionMigration,
 } from '@proton/payments';
-import { DisplayablePaymentError } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { ProrationMode, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -109,7 +110,6 @@ import { getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
-import { getBillingAddressStatus } from './helpers/payment';
 import { NoPaymentRequiredNote } from './modal-components/NoPaymentRequiredNote';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';

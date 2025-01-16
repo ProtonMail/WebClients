@@ -25,6 +25,7 @@ import {
     paymentMethodPaymentsVersion,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { CreditCard } from '@proton/payments/ui';
 import {
     getPaymentsVersion,
     setPaymentMethodV4,
@@ -36,7 +37,6 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { ChargebeeCreditCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
-import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
