@@ -134,6 +134,7 @@ export const apiWalletAccountOneA: WasmApiWalletAccount = {
     Priority: 1,
     LastUsedIndex: 0,
     PoolSize: 3,
+    StopGap: 20,
 };
 
 export const apiWalletAccountOneB: WasmApiWalletAccount = {
@@ -147,6 +148,7 @@ export const apiWalletAccountOneB: WasmApiWalletAccount = {
     Priority: 2,
     LastUsedIndex: 0,
     PoolSize: 3,
+    StopGap: 20,
 };
 
 export const apiWalletAccountTwoA: WasmApiWalletAccount = {
@@ -160,6 +162,7 @@ export const apiWalletAccountTwoA: WasmApiWalletAccount = {
     Priority: 1,
     LastUsedIndex: 0,
     PoolSize: 3,
+    StopGap: 20,
 };
 
 export const apiWalletAccountTwoB: WasmApiWalletAccount = {
@@ -173,6 +176,7 @@ export const apiWalletAccountTwoB: WasmApiWalletAccount = {
     Priority: 2,
     PoolSize: 3,
     LastUsedIndex: 0,
+    StopGap: 20,
 };
 
 export const apiWalletAccountThree: WasmApiWalletAccount = {
@@ -186,6 +190,7 @@ export const apiWalletAccountThree: WasmApiWalletAccount = {
     Priority: 1,
     LastUsedIndex: 0,
     PoolSize: 3,
+    StopGap: 20,
 };
 
 export const apiWalletsData: IWasmApiWalletData[] = [
