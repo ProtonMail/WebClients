@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import compact from 'lodash/compact';
-import keyBy from 'lodash/keyBy';
 import uniq from 'lodash/uniq';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
@@ -11,12 +10,14 @@ import {
     type WasmApiWallet,
     type WasmApiWalletAccount,
     type WasmApiWalletBitcoinAddress,
+    type WasmNetwork,
 } from '@proton/andromeda';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { SECOND } from '@proton/shared/lib/constants';
 import { type DecryptedAddressKey, type SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     type AccountWithChainData,
+    type ApiWalletWithPassphraseInput,
     type IWasmApiWalletData,
     type WalletWithChainData,
     computeAddress,
@@ -25,8 +26,10 @@ import {
     verifySignedData,
 } from '@proton/wallet';
 import { useGetBitcoinAddressPool, useWalletDispatch, walletAccountUpdate } from '@proton/wallet/store';
+import { useGetBitcoinAddressUsedIndexes } from '@proton/wallet/store/hooks/useBitcoinAddressUsedIndexes';
 
-import { getAccountWithChainDataFromManyWallets } from '../../utils';
+import { useBlockchainClient } from '../../hooks/useBlockchainClient';
+import { getAccountWithChainDataFromManyWallets, isUndefined } from '../../utils';
 import { useDebounceEffect } from '../../utils/hooks/useDebouncedEffect';
 
 interface WalletEventLoopUpdate {
@@ -34,6 +37,7 @@ interface WalletEventLoopUpdate {
         WalletBitcoinAddress: {
             WalletAccountID: string;
             BitcoinAddress?: string;
+            BitcoinAddressIndex?: number;
             Fetched: boolean;
             Used: boolean;
         };
@@ -53,17 +57,21 @@ export const useBitcoinAddresses = ({
     apiWalletsData,
     walletsChainData,
     isSyncing,
+    network,
 }: {
     apiWalletsData?: IWasmApiWalletData[];
     walletsChainData: SimpleMap<WalletWithChainData>;
     isSyncing: (walletId: string, accountId?: string | undefined) => boolean;
+    network: WasmNetwork | undefined;
 }) => {
     const api = useWalletApiClients();
+    const blockchainClient = useBlockchainClient();
     const dispatch = useWalletDispatch();
     const { subscribe } = useEventManager();
 
     const getAddressKeys = useGetAddressKeys();
     const getBitcoinAddressPool = useGetBitcoinAddressPool();
+    const getBitcoinAddressUsedIndexes = useGetBitcoinAddressUsedIndexes();
 
     const [bitcoinAddressHelperByWalletAccountId, setBitcoinAddressHelperByWalletAccountId] = useState<
         SimpleMap<BitcoinAddressHelper>
@@ -87,15 +95,34 @@ export const useBitcoinAddresses = ({
         );
     };
 
+    const isIndexUsed = async (lastUsedIndex: number, accountChainData: AccountWithChainData) => {
+        if (isUndefined(network)) {
+            return false;
+        }
+        const peekedAddress = await accountChainData.account.peekReceiveAddress(lastUsedIndex);
+        const currentAddress = await accountChainData.account.getAddress(
+            network,
+            peekedAddress.address,
+            blockchainClient
+        );
+        return !!(currentAddress?.Data.transactions && currentAddress.Data.transactions.length > 0);
+    };
+
     const getCurrentReceiveBitcoinAddress = async (
         accountId: string,
         lastUsedIndex: number,
         accountChainData: AccountWithChainData
     ) => {
         const currentHelper = bitcoinAddressHelperByWalletAccountId[accountId];
-        return currentHelper && currentHelper.receiveBitcoinAddress.index >= lastUsedIndex
-            ? currentHelper.receiveBitcoinAddress
-            : accountChainData.account.getNextReceiveAddress();
+        if (
+            currentHelper &&
+            (currentHelper.receiveBitcoinAddress.index > lastUsedIndex ||
+                (currentHelper.receiveBitcoinAddress.index === lastUsedIndex &&
+                    !(await isIndexUsed(lastUsedIndex, accountChainData))))
+        ) {
+            return currentHelper.receiveBitcoinAddress;
+        }
+        return accountChainData.account.getNextReceiveAddress();
     };
 
     const allWalletAccounts = useMemo(
@@ -110,10 +137,15 @@ export const useBitcoinAddresses = ({
         [apiWalletsData, isSyncing]
     );
 
-    const walletAccountById: SimpleMap<(typeof allWalletAccounts)[0]> = useMemo(
-        () => keyBy(allWalletAccounts, 'id'),
-        [allWalletAccounts]
-    );
+    const walletAccountById: SimpleMap<(typeof allWalletAccounts)[0]> = useMemo(() => {
+        let dataByWalletAccountId: {
+            [key: string]: { wallet: ApiWalletWithPassphraseInput; account: WasmApiWalletAccount; isSyncing: boolean };
+        } = {};
+        Object.values(allWalletAccounts).forEach((data) => {
+            dataByWalletAccountId[data.account.ID] = data;
+        });
+        return dataByWalletAccountId;
+    }, [allWalletAccounts]);
 
     const checkBitcoinAddressPool = useCallback(
         async (
@@ -326,6 +358,21 @@ export const useBitcoinAddresses = ({
                         account: data.account,
                         accountChainData,
                     });
+
+                    const walletBitcoinAddressesOfAccount = WalletBitcoinAddresses.filter(
+                        ({ WalletBitcoinAddress: b }) => b.WalletAccountID === walletAccountId
+                    );
+
+                    for (const walletBitcoinAddress of walletBitcoinAddressesOfAccount) {
+                        if (
+                            walletBitcoinAddress.WalletBitcoinAddress.Used &&
+                            walletBitcoinAddress.WalletBitcoinAddress.BitcoinAddressIndex
+                        ) {
+                            await accountChainData.account.markReceiveAddressesUsedTo(
+                                walletBitcoinAddress.WalletBitcoinAddress.BitcoinAddressIndex
+                            );
+                        }
+                    }
                 }
             }
 
@@ -346,13 +393,8 @@ export const useBitcoinAddresses = ({
                 // Naming is wrong but LastUsedIndex is actually the next index to use
                 const nextIndexToUse = walletAccount.WalletAccount.LastUsedIndex;
 
-                // Mark all addresses below in range [0, LastUsedIndex] as used to avoid reusing them
-                if (nextIndexToUse === 0) {
-                    await accountChainData.account.markReceiveAddressesUsedTo(0);
-                } else {
-                    await accountChainData.account.markReceiveAddressesUsedTo(0, nextIndexToUse);
-                    await accountChainData.account.markReceiveAddressesUsedTo(nextIndexToUse);
-                }
+                // Mark all addresses below in range [0, LastUsedIndex[ as used to avoid reusing them
+                await accountChainData.account.markReceiveAddressesUsedTo(0, nextIndexToUse);
 
                 // Check if current displayed address is still ok
                 const currentReceiveBitcoinAddress = await getCurrentReceiveBitcoinAddress(
@@ -407,19 +449,18 @@ export const useBitcoinAddresses = ({
                         await accountChainData.account.markReceiveAddressesUsedTo(0, account.LastUsedIndex);
                     }
 
-                    // If we detect higher used index from network, we mark as used until this index included
-                    const highestUsedAddressIndex = await accountChainData.account.getHighestUsedAddressIndexInOutput();
-                    const isLastUsedIndexUsed = !!(
-                        highestUsedAddressIndex && highestUsedAddressIndex >= account.LastUsedIndex
+                    // Mark all used indexes as used to avoid reusing them
+                    const usedIndexes = (await getBitcoinAddressUsedIndexes(wallet.ID, account.ID)).map((index) =>
+                        Number(index)
                     );
-                    if (isLastUsedIndexUsed) {
-                        await accountChainData.account.markReceiveAddressesUsedTo(0, highestUsedAddressIndex);
-                        await accountChainData.account.markReceiveAddressesUsedTo(highestUsedAddressIndex);
+                    for (const index of usedIndexes) {
+                        await accountChainData.account.markReceiveAddressesUsedTo(index);
                     }
 
+                    // Get next potential receive address and update LU if it changed
                     const receiveBitcoinAddress = await getCurrentReceiveBitcoinAddress(
                         account.ID,
-                        isLastUsedIndexUsed ? highestUsedAddressIndex + 1 : account.LastUsedIndex,
+                        account.LastUsedIndex,
                         accountChainData
                     );
                     if (receiveBitcoinAddress.index !== account.LastUsedIndex) {

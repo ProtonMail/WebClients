@@ -1,12 +1,12 @@
 /* tslint:disable */
 /* eslint-disable */
-export function setPanicHook(): void;
 /**
  * @param {WasmPsbt} psbt
  * @param {WasmAccount} account
  * @returns {Promise<WasmTransactionDetailsData>}
  */
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
+export function setPanicHook(): void;
 /**
  * @returns {number}
  */
@@ -191,11 +191,6 @@ export interface WasmApiBitcoinAddressCreationPayload {
     BitcoinAddressIndex: number;
 }
 
-export interface WasmApiWalletBitcoinAddressLookup {
-    BitcoinAddress: string | null;
-    BitcoinAddressSignature: string | null;
-}
-
 export interface WasmApiExchangeRate {
     ID: string;
     BitcoinUnit: WasmBitcoinUnit;
@@ -292,6 +287,7 @@ export interface WasmApiWalletAccount {
     PoolSize: number;
     Priority: number;
     ScriptType: number;
+    StopGap: number | null;
     Addresses: WasmApiEmailAddress[];
 }
 
@@ -352,6 +348,11 @@ export interface WasmPagination {
 
 export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
+export interface WasmApiWalletBitcoinAddressLookup {
+    BitcoinAddress: string | null;
+    BitcoinAddressSignature: string | null;
+}
+
 export interface WasmAddressInfo {
     index: number;
     address: string;
@@ -405,10 +406,6 @@ export class WasmAccount {
    */
   markReceiveAddressesUsedTo(from: number, to?: number): Promise<void>;
   /**
-   * @returns {Promise<number | undefined>}
-   */
-  getHighestUsedAddressIndexInOutput(): Promise<number | undefined>;
-  /**
    * @returns {Promise<WasmAddressInfo>}
    */
   getNextReceiveAddress(): Promise<WasmAddressInfo>;
@@ -450,6 +447,11 @@ export class WasmAccount {
    * @returns {Promise<WasmAddressDetailsArray>}
    */
   getAddresses(pagination: WasmPagination, client: WasmBlockchainClient, keychain: WasmKeychainKind, force_sync?: boolean): Promise<WasmAddressDetailsArray>;
+  /**
+   * @param {WasmKeychainKind} keychain
+   * @returns {Promise<number | undefined>}
+   */
+  getHighestUsedAddressIndexInOutput(keychain: WasmKeychainKind): Promise<number | undefined>;
   /**
    * @param {WasmPagination} pagination
    * @param {WasmSortOrder | undefined} [sort]
@@ -576,9 +578,17 @@ export class WasmApiWalletBitcoinAddressData {
   free(): void;
   Data: WasmApiWalletBitcoinAddress;
 }
+export class WasmApiWalletBitcoinAddressIndexes {
+  free(): void;
+  0: (WasmApiWalletBitcoinAddressUsedIndexData)[];
+}
 export class WasmApiWalletBitcoinAddressLookupData {
   free(): void;
   Data: WasmApiWalletBitcoinAddressLookup;
+}
+export class WasmApiWalletBitcoinAddressUsedIndexData {
+  free(): void;
+  Data: bigint;
 }
 export class WasmApiWalletBitcoinAddresses {
   free(): void;
@@ -635,6 +645,12 @@ export class WasmBitcoinAddressClient {
    * @returns {Promise<bigint>}
    */
   getBitcoinAddressHighestIndex(wallet_id: string, wallet_account_id: string): Promise<bigint>;
+  /**
+   * @param {string} wallet_id
+   * @param {string} wallet_account_id
+   * @returns {Promise<WasmApiWalletBitcoinAddressIndexes>}
+   */
+  getUsedIndexes(wallet_id: string, wallet_account_id: string): Promise<WasmApiWalletBitcoinAddressIndexes>;
   /**
    * @param {string} wallet_id
    * @param {string} wallet_account_id
