@@ -71,7 +71,7 @@ import type {
     UserCacheResult,
 } from '../signup/interfaces';
 import { getPlanIDsFromParams } from '../signup/searchParams';
-import { handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
+import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
@@ -1428,7 +1428,12 @@ const SingleSignupContainerV2 = ({
                                                 step: Steps.Custom,
                                             });
                                         } else {
-                                            throw new Error('Not implemented');
+                                            await handleFinalizeSignup(
+                                                handleDone({
+                                                    cache: result,
+                                                    appIntent: { app: product },
+                                                })
+                                            );
                                         }
                                     }
 
