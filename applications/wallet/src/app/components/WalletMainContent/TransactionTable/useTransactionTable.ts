@@ -129,16 +129,17 @@ export const useTransactionTable = ({
     // We display pagination if we aren't on the first page anymore OR if there are transaction
     const shouldDisplayPaginator = currentPage > 0 || canGoNext;
 
-    const [noteModalState, setNoteModalState] = useModalStateWithData<{ hashedTxId: string }>();
-    const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ hashedTxId: string }>();
+    const [noteModalState, setNoteModalState] = useModalStateWithData<{ transactionDataKey: string }>();
+    const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ transactionDataKey: string }>();
 
     const openNoteModal = useCallback(
         (transaction: TransactionData) => {
             const hashedTxId = transaction.apiData?.HashedTransactionID;
+            const accountId = transaction.apiData?.WalletAccountID;
 
             // Typeguard: here transaction should be already hashed in database
-            if (hashedTxId) {
-                setNoteModalState({ hashedTxId });
+            if (hashedTxId && accountId) {
+                setNoteModalState({ transactionDataKey: `${hashedTxId}#${accountId}` });
             }
         },
         [setNoteModalState]
@@ -147,15 +148,18 @@ export const useTransactionTable = ({
     const handleClickRow = useCallback(
         async (transaction: TransactionData) => {
             const hashedTxId = transaction.apiData?.HashedTransactionID;
+            const accountId = transaction.apiData?.WalletAccountID;
+            const transactionDataKey = `${hashedTxId}#${accountId}`;
 
             // Typeguard: here transaction should be already hashed in database
             if (hashedTxId) {
                 openDrawer({
+                    transactionDataKey: transactionDataKey,
                     theme: getThemeForWallet(apiWalletsData ?? [], wallet.Wallet.ID),
                     networkDataAndHashedTxId: [transaction.networkData, hashedTxId],
                     kind: 'transaction-data',
-                    onClickEditNote: () => setNoteModalState({ hashedTxId }),
-                    onClickEditSender: () => setUnknownSenderModal({ hashedTxId }),
+                    onClickEditNote: () => setNoteModalState({ transactionDataKey }),
+                    onClickEditSender: () => setUnknownSenderModal({ transactionDataKey }),
                 });
             }
         },

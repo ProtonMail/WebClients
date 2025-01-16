@@ -162,7 +162,7 @@ const initialState = getInitialModelState<Model>();
 
 export const updateWalletTransaction = createAction(
     'wallet-transaction/update',
-    (payload: { hashedTransactionId: string; update: Partial<DecryptedTransactionData> }) => ({ payload })
+    (payload: { transactionDataKey: string; update: Partial<DecryptedTransactionData> }) => ({ payload })
 );
 
 const slice = createSlice({
@@ -172,10 +172,10 @@ const slice = createSlice({
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(updateWalletTransaction, (state, action) => {
-            const transaction = state.value?.[action.payload.hashedTransactionId];
+            const transaction = state.value?.[action.payload.transactionDataKey];
 
             if (state.value && transaction) {
-                set(state.value, action.payload.hashedTransactionId, {
+                set(state.value, action.payload.transactionDataKey, {
                     ...transaction,
                     ...action.payload.update,
                 });

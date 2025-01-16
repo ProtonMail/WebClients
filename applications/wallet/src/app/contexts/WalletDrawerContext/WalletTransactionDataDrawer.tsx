@@ -30,6 +30,7 @@ import {
 } from './data-items';
 
 interface Props {
+    transactionDataKey: string;
     networkDataAndHashedTxId: [WasmTransactionDetails, string];
     onClickEditNote: () => void;
     onClickEditSender: () => void;
@@ -37,13 +38,14 @@ interface Props {
 }
 
 export const WalletTransactionDataDrawer = ({
-    networkDataAndHashedTxId: [networkData, hashedTxId],
+    transactionDataKey: transactionDataKey,
+    networkDataAndHashedTxId: [networkData],
     onClickEditNote,
     onClickEditSender,
     onClose,
 }: Props) => {
-    const [transactionsFromStore] = useApiWalletTransactionData(compact([hashedTxId]));
-    const apiData = transactionsFromStore?.[hashedTxId] ?? null;
+    const [transactionsFromStore] = useApiWalletTransactionData(compact([transactionDataKey]));
+    const apiData = transactionsFromStore?.[transactionDataKey] ?? null;
 
     const [showMore, setShowMore] = useState(false);
     const { network } = useBitcoinBlockchainContext();

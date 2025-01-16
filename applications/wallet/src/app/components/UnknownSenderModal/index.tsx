@@ -13,12 +13,12 @@ import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { useUnknownSenderModal } from './useUnknownSenderModal';
 
 export interface WalletCreationModalOwnProps {
-    hashedTxId: string;
+    transactionDataKey: string;
 }
 
 type Props = ModalOwnProps & WalletCreationModalOwnProps;
 
-export const UnknownSenderModal = ({ hashedTxId, ...modalProps }: Props) => {
+export const UnknownSenderModal = ({ transactionDataKey, ...modalProps }: Props) => {
     const [loadingSenderUpdate, withLoadingSenderUpdate] = useLoading();
 
     const {
@@ -33,7 +33,7 @@ export const UnknownSenderModal = ({ hashedTxId, ...modalProps }: Props) => {
         setShouldSaveAsContact,
         handleClickSaveSender,
     } = useUnknownSenderModal({
-        hashedTxId,
+        transactionDataKey,
         onClose: modalProps.onClose,
     });
 

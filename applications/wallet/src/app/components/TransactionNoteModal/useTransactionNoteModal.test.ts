@@ -35,7 +35,7 @@ describe('useTransactionNoteModal', () => {
     });
 
     it('should return correct base label', () => {
-        const { result } = renderHook(() => useTransactionNoteModal({ hashedTxId: 'xyz' }));
+        const { result } = renderHook(() => useTransactionNoteModal({ transactionDataKey: 'xyz' }));
         expect(result.current.baseLabel).toEqual('My test transaction label');
     });
 
@@ -43,7 +43,7 @@ describe('useTransactionNoteModal', () => {
         const entropy = generateKey();
         const key = await importKey(entropy);
 
-        const { result } = renderHook(() => useTransactionNoteModal({ hashedTxId: 'xyz', walletKey: key }));
+        const { result } = renderHook(() => useTransactionNoteModal({ transactionDataKey: 'xyz', walletKey: key }));
 
         await act(() => result.current.handleSaveNote('My updated test label'));
 

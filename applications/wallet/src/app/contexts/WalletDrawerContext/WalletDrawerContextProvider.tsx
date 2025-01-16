@@ -92,6 +92,7 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                 >
                     {drawerData.data.kind === 'transaction-data' && (
                         <WalletTransactionDataDrawer
+                            transactionDataKey={drawerData.data.transactionDataKey}
                             networkDataAndHashedTxId={drawerData.data.networkDataAndHashedTxId}
                             onClickEditNote={drawerData.data.onClickEditNote}
                             onClickEditSender={drawerData.data.onClickEditSender}
