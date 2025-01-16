@@ -120,7 +120,7 @@ export default function initDownload(
         start: async () => {
             const stream = controls.start();
             const size = await sizePromise.get().catch(() => undefined);
-            await fileSaver
+            await fileSaver.instance
                 .saveAsFile(
                     stream,
                     {

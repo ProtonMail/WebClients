@@ -6,7 +6,7 @@ import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHel
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveCrypto } from '../_crypto';
 import { useDownload } from '../_downloads';
-import { useLink } from '../_links';
+import { useLink, useLinksListing } from '../_links';
 import type { ParsedExtendedAttributes } from '../_links/extendedAttributes';
 import { decryptExtendedAttributes } from '../_links/extendedAttributes';
 import useRevisions from './useRevisions';
@@ -17,6 +17,7 @@ jest.mock('../_downloads', () => ({
 }));
 jest.mock('../_links', () => ({
     useLink: jest.fn(),
+    useLinksListing: jest.fn(),
 }));
 
 jest.mock('../_links/extendedAttributes');
@@ -38,6 +39,14 @@ jest.mocked(useLink).mockImplementation(() => ({
     ...jest.requireMock('../_links').useDriveCrypto,
     getLinkPrivateKey: mockedGetLinkPrivateKey,
 }));
+
+jest.mocked(useLinksListing).mockImplementation(
+    () =>
+        ({
+            loadChildren: jest.fn(),
+            getCachedChildren: jest.fn(),
+        }) as any
+);
 
 const mockedCheckFirstBlockSignature = jest.fn();
 jest.mocked(useDownload).mockImplementation(() => ({

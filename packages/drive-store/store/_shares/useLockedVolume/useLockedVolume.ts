@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { format } from 'date-fns';
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
@@ -16,6 +17,7 @@ import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces
 import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/keys/driveKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useSharesStore } from '../../../zustand/share/shares.store';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useLink } from '../../_links';
@@ -29,7 +31,6 @@ import type {
 } from './../interface';
 import useDefaultShare from './../useDefaultShare';
 import useShare from './../useShare';
-import useSharesState from './../useSharesState';
 import { getPossibleAddressPrivateKeys, prepareVolumeForRestore } from './utils';
 
 type LockedShares = {
@@ -67,7 +68,6 @@ export default function useLockedVolume() {
     }, [getAddressKeys, getAddresses]);
 
     return useLockedVolumeInner({
-        sharesState: useSharesState(),
         getShareWithKey: useShare().getShareWithKey,
         getDefaultShare: useDefaultShare().getDefaultShare,
         addressesKeys,
@@ -79,7 +79,6 @@ export default function useLockedVolume() {
 }
 
 type LockedVolumesCallbacks = {
-    sharesState: ReturnType<typeof useSharesState>;
     getShareWithKey: ReturnType<typeof useShare>['getShareWithKey'];
     addressesKeys: AddressesKeysResult;
     getDefaultShare: ReturnType<typeof useDefaultShare>['getDefaultShare'];
@@ -91,7 +90,6 @@ type LockedVolumesCallbacks = {
 
 export function useLockedVolumeInner({
     getShareWithKey,
-    sharesState,
     addressesKeys,
     getDefaultShare,
     getOwnAddressAndPrimaryKeys,
@@ -102,11 +100,19 @@ export function useLockedVolumeInner({
     const { preventLeave } = usePreventLeave();
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
+    const { getLockedShares, lockedVolumesForRestore, setLockedVolumesForRestore, removeShares } = useSharesStore(
+        useShallow((state) => ({
+            getLockedShares: state.getLockedShares,
+            lockedVolumesForRestore: state.lockedVolumesForRestore,
+            setLockedVolumesForRestore: state.setLockedVolumesForRestore,
+            removeShares: state.removeShares,
+        }))
+    );
 
     const getLoadedLockedShares = useCallback(
         async (abortSignal: AbortSignal): Promise<LockedShares> => {
             return Promise.all(
-                sharesState.getLockedShares().map(async ({ defaultShare, devices, photos }) => {
+                getLockedShares().map(async ({ defaultShare, devices, photos }) => {
                     return {
                         defaultShare: await getShareWithKey(abortSignal, defaultShare.shareId),
                         devices: await Promise.all(
@@ -117,16 +123,17 @@ export function useLockedVolumeInner({
                 })
             );
         },
-        [sharesState.getLockedShares]
+        [getLockedShares]
     );
+
     const getLockedUnpreparedShares = useCallback(
         async (lockedShares: LockedShares) => {
             return lockedShares.filter(
                 ({ defaultShare: { volumeId } }) =>
-                    !sharesState.lockedVolumesForRestore.some(({ lockedVolumeId }) => volumeId === lockedVolumeId)
+                    !lockedVolumesForRestore.some(({ lockedVolumeId }) => volumeId === lockedVolumeId)
             );
         },
-        [sharesState.lockedVolumesForRestore]
+        [lockedVolumesForRestore]
     );
 
     const getPreparedVolumes = useCallback(
@@ -147,13 +154,13 @@ export function useLockedVolumeInner({
 
     const prepareVolumesForRestore = useCallback(
         async (abortSignal: AbortSignal): Promise<LockedVolumeForRestore[]> => {
-            const { lockedVolumesForRestore } = sharesState;
             const addressPrivateKeys = getPossibleAddressPrivateKeys(addressesKeys);
             if (!addressPrivateKeys?.length) {
                 return lockedVolumesForRestore;
             }
 
-            const lockedUnpreparedShares = await getLockedUnpreparedShares(await getLoadedLockedShares(abortSignal));
+            const lockedShares = await getLoadedLockedShares(abortSignal);
+            const lockedUnpreparedShares = await getLockedUnpreparedShares(lockedShares);
             if (!lockedUnpreparedShares.length) {
                 return lockedVolumesForRestore;
             }
@@ -164,7 +171,7 @@ export function useLockedVolumeInner({
             }
 
             const volumes = [...lockedVolumesForRestore, ...newPreparedVolumes];
-            sharesState.setLockedVolumesForRestore(volumes);
+            setLockedVolumesForRestore(volumes);
             return volumes;
         },
         [
@@ -172,8 +179,8 @@ export function useLockedVolumeInner({
             getLockedUnpreparedShares,
             getPreparedVolumes,
             getLoadedLockedShares,
-            sharesState.setLockedVolumesForRestore,
-            sharesState.lockedVolumesForRestore,
+            setLockedVolumesForRestore,
+            lockedVolumesForRestore,
         ]
     );
 
@@ -302,7 +309,7 @@ export function useLockedVolumeInner({
                 lockedVolume.photos,
                 addressKeyID
             );
-            sharesState.removeShares([
+            removeShares([
                 lockedVolume.defaultShare.shareId,
                 ...lockedVolume.devices.map(({ shareId }) => shareId),
                 ...lockedVolume.photos.map(({ shareId }) => shareId),
@@ -310,11 +317,11 @@ export function useLockedVolumeInner({
         });
         await preventLeave(Promise.all(restorePromiseList));
 
-        sharesState.setLockedVolumesForRestore([]);
+        setLockedVolumesForRestore([]);
     };
 
     const deleteLockedVolumes = async () => {
-        const lockedShares = sharesState.getLockedShares();
+        const lockedShares = getLockedShares();
 
         const lockedVolumeIds = lockedShares.map(({ defaultShare: { volumeId } }) => volumeId);
         await preventLeave(
@@ -322,16 +329,16 @@ export function useLockedVolumeInner({
         );
 
         const lockedShareIds = lockedShares.map(({ defaultShare: { shareId } }) => shareId);
-        sharesState.removeShares(lockedShareIds);
+        removeShares(lockedShareIds);
     };
 
-    const lockedSharesCount = sharesState.getLockedShares().length;
+    const lockedSharesCount = getLockedShares().length;
 
     return {
         isReadyForPreparation: !!lockedSharesCount && !!addressesKeys?.length,
         lockedVolumesCount: lockedSharesCount,
         hasLockedVolumes: lockedSharesCount,
-        hasVolumesForRestore: !!sharesState.lockedVolumesForRestore?.length,
+        hasVolumesForRestore: !!lockedVolumesForRestore?.length,
         deleteLockedVolumes,
         prepareVolumesForRestore,
         restoreVolumes,
