@@ -99,7 +99,7 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
                     }
                 })()}
 
-                {invite && <VaultInviteRespond {...invite} />}
+                {invite && <VaultInviteRespond token={invite.token} />}
                 {children}
             </LatestInviteContext.Provider>
         </InviteActionsContext.Provider>
