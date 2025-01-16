@@ -399,10 +399,18 @@ export const getMailConfiguration = ({
         benefits,
         planCards,
         signupTypes: [SignupType.Username],
-        onboarding: {
-            user: false,
-            signup: true,
-        },
+        onboarding:
+            invite?.type === 'porkbun'
+                ? {
+                      user: false,
+                      // Porkbun has a special flow that redirects back to the signup page to enter the payment mode
+                      // so we disable the onboarding steps and have them in the app instead
+                      signup: false,
+                  }
+                : {
+                      user: false,
+                      signup: true,
+                  },
         generateMnemonic: false,
         defaults: {
             plan: (() => {
