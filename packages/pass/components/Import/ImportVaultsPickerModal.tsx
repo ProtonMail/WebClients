@@ -82,7 +82,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
             <ModalTwoContent>
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
-                        <Card rounded className="mb-4 text-sm">
+                        <Card rounded className="mb-4 text-sm border-weak">
                             {
                                 // translator: this is generic instruction message in import modal suggesting that user may select one or more vaults
                                 c('Info').t`Select where you want your imported vaults to be saved.`
@@ -113,7 +113,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
                                     key={`import-vault-${idx}`}
                                     background={!selected}
                                     style={{ opacity: selected ? 1 : 0.5 }}
-                                    className="mb-3"
+                                    className="mb-3 border-weak"
                                     rounded
                                 >
                                     <ImportVaultPickerOption
