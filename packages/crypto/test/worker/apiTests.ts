@@ -318,7 +318,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         const armoredSignature = await CryptoApiImplementation.signMessage({
             textData,
             signingKeys: privateKeyRef,
-            context: { value: 'test-context', critical: true },
+            signatureContext: { value: 'test-context', critical: true },
             detached: true,
         });
 
@@ -326,7 +326,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             textData,
             armoredSignature,
             verificationKeys: privateKeyRef,
-            context: { value: 'test-context', required: true },
+            signatureContext: { value: 'test-context', required: true },
         });
 
         const verificationMissingContext = await CryptoApiImplementation.verifyMessage({
@@ -348,7 +348,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
                 textData,
                 armoredSignature,
                 verificationKeys: privateKeyRef,
-                context: { value: 'unexpected-context', required: true },
+                signatureContext: { value: 'unexpected-context', required: true },
                 expectSigned: true,
             })
         ).to.be.rejectedWith(/context verification error/);
@@ -507,6 +507,60 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(decryptionResultWithEncryptedSignature.signatures).to.have.length(1);
         expect(decryptionResultWithEncryptedSignature.verificationErrors).to.not.exist;
         expect(decryptionResultWithEncryptedSignature.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+    });
+
+    it('should encrypt/sign and decrypt/verify with context', async () => {
+        const aliceKeyRef = await CryptoApiImplementation.generateKey({
+            userIDs: { name: 'alice', email: 'alice@test.com' },
+        });
+        const bobKeyRef = await CryptoApiImplementation.generateKey({
+            userIDs: { name: 'bob', email: 'bob@test.com' },
+        });
+        const plaintext = stringToUtf8Array('hello world');
+
+        const encryptionOptions = {
+            binaryData: plaintext,
+            encryptionKeys: bobKeyRef,
+            signingKeys: aliceKeyRef,
+            signatureContext: { value: 'test-context', critical: true },
+            format: 'binary' as const,
+        };
+        // ensure that signing throws if signingKeys are not provided
+        await expect(
+            CryptoApiImplementation.encryptMessage({
+                ...encryptionOptions,
+                signingKeys: [],
+            })
+        ).to.be.rejectedWith(/Unexpected `signatureContext` input without any `signingKeys` provided/);
+
+        const { message: encryptedBinaryMessage } = await CryptoApiImplementation.encryptMessage(encryptionOptions);
+
+        const decryptionOptions = {
+            binaryMessage: encryptedBinaryMessage,
+            decryptionKeys: bobKeyRef,
+            verificationKeys: aliceKeyRef,
+            signatureContext: { value: 'test-context', required: true },
+            format: 'binary' as const,
+        };
+        // ensure that verification throws if verificationKeys are not provided
+        await expect(
+            CryptoApiImplementation.decryptMessage({
+                ...decryptionOptions,
+                verificationKeys: [],
+            })
+        ).to.be.rejectedWith(/Unexpected `signatureContext` input without any `verificationKeys` provided/);
+
+        const decryptionResult = await CryptoApiImplementation.decryptMessage({
+            binaryMessage: encryptedBinaryMessage,
+            decryptionKeys: bobKeyRef,
+            verificationKeys: aliceKeyRef,
+            signatureContext: { value: 'test-context', required: true },
+            format: 'binary',
+        });
+        expect(decryptionResult.data).to.deep.equal(plaintext);
+        expect(decryptionResult.signatures).to.have.length(1);
+        expect(decryptionResult.verificationErrors).to.not.exist;
+        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('should support encrypting/decrypting using argon2', async () => {

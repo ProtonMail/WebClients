@@ -131,7 +131,7 @@ export const verifySKLSignature = async (
         armoredSignature: signedKeyListSignature,
         verificationKeys,
         textData: signedKeyListData,
-        context: KT_SKL_VERIFICATION_CONTEXT,
+        signatureContext: KT_SKL_VERIFICATION_CONTEXT,
         date: verificationTime,
     });
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
