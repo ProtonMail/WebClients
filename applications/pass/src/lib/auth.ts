@@ -37,7 +37,6 @@ import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } fro
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -206,10 +205,13 @@ export const createAuthService = ({
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
 
-            /** Re-persist session after sufficient time elapse to ensure
-             * the last used (freshest) session is loaded on reload/new tabs */
-            if (getEpoch() - authStore.getLastUsedAt() > UNIX_MINUTE) {
-                await auth.persistSession({ regenerateClientKey: false }).catch(noop);
+            const persistedSession = await auth.config.getPersistedSession(localID);
+            /** Updates session timestamp to track last login, ensuring
+             * this session loads first when opening new tabs */
+            if (persistedSession) {
+                persistedSession.lastUsedAt = getEpoch();
+                const lastUsedSession = JSON.stringify(persistedSession);
+                void auth.config.onSessionPersist?.(lastUsedSession);
             }
 
             if (app.getState().booted) app.setStatus(AppStatus.READY);
@@ -422,8 +424,15 @@ export const createAuthService = ({
                 persistedSession.RefreshTime = RefreshTime;
                 persistedSession.cookies = cookies;
 
-                localStorage.setItem(getSessionKey(localID), JSON.stringify(persistedSession));
-
+                /** Session refresh handler bypasses `auth.config.onSessionPersist` callback.
+                 * - Auth store updates AFTER session persistence, not before
+                 * - Prevents stale auth store data if persistence fails
+                 * - Order: persist -> broadcast -> auth store update
+                 * Note: This design accommodates an edge case in core auth service
+                 * related to extension handling. While this edge case doesn't impact
+                 * the web-app directly, this approach ensures data consistency. */
+                const refreshedSession = JSON.stringify(persistedSession);
+                localStorage.setItem(getSessionKey(localID), refreshedSession);
                 if (broadcast) sw?.send({ type: 'session', localID, data, broadcast });
             }
         },
