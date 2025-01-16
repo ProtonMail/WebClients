@@ -242,8 +242,6 @@ const List = (
         conversationMode,
     });
 
-    console.log({ elements });
-
     const unreads = useMemo(() => {
         const counters = conversationMode ? conversationCounts : messageCounts;
         return (counters || []).find((counter) => counter.LabelID === labelID)?.Unread || 0;

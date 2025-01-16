@@ -65,7 +65,15 @@ export const load = createAsyncThunk<
             result: QueryResults;
             page: number;
         }) => {
-            console.log('seralized res', { elements: result.Elements });
+            // When we receive Stale from the api response, we don't want to update the local state.
+            // While Stale = 1, we might receive in the element list elements that are no longer in the location,
+            // which sometimes leads in flickering UI and items re-appearing when they should not.
+            // Instead, we will rely on the cache and the optimistic logic for a while, and when Stale = 0,
+            // we can trust the api results again.
+            if (result.Stale === 1) {
+                return;
+            }
+
             dispatch(
                 showSerializedElements({
                     queryIndex: index,
@@ -102,9 +110,7 @@ export const load = createAsyncThunk<
             throw error;
         });
 
-        console.log({ result, count, r: REFRESHES?.[count] });
         if (result.Stale === 1 && REFRESHES?.[count]) {
-            console.log('--REFRESH--');
             const ms = 1 * SECOND * REFRESHES[count];
 
             // Wait few seconds before retrying
