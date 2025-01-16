@@ -8043,8 +8043,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/payments@workspace:packages/payments"
   dependencies:
+    "@proton/atoms": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-env": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.5.0"
     "@swc/jest": "npm:^0.2.37"
     "@testing-library/jest-dom": "npm:^6.6.3"
@@ -8277,11 +8280,6 @@ __metadata:
   resolution: "@proton/testing@workspace:packages/testing"
   dependencies:
     "@jackfranklin/test-data-bot": "npm:^2.1.0"
-    "@proton/account": "workspace:^"
-    "@proton/calendar": "workspace:^"
-    "@proton/mail": "workspace:^"
-    "@proton/payments": "workspace:^"
-    "@proton/shared": "workspace:^"
     cross-fetch: "npm:^4.1.0"
     eslint: "npm:^8.57.1"
     msw: "npm:^2.7.0"

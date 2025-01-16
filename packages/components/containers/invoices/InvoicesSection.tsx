@@ -6,6 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
@@ -17,7 +18,9 @@ import { InvoiceDocument } from '@proton/shared/lib/api/payments';
 import { INVOICE_OWNER } from '@proton/shared/lib/constants';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
+import isTruthy from '@proton/utils/isTruthy';
 
+import { useEditBillingAddressModal } from './EditBillingAddress/useEditBillingAddressModal';
 import InvoiceGroup from './InvoiceGroup';
 import InvoiceTextModal from './InvoiceTextModal';
 import TransactionGroup from './TransactionGroup';
@@ -33,6 +36,7 @@ enum DocumentType {
 
 const InvoicesSection = () => {
     const enableTransactions = useFlag('TransactionsView');
+    const enableBillingAddressModal = useFlag('BillingAddressModal');
 
     const [user] = useUser();
 
@@ -40,6 +44,8 @@ const InvoicesSection = () => {
     const [owner, setOwner] = useState(USER);
 
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
+    const { openBillingAddressModal, editBillingAddressModal, loadingBillingAddressModal } =
+        useEditBillingAddressModal();
 
     const invoicesHook = useInvoices({ owner, Document: InvoiceDocument.Invoice });
     const creditNotesHook = useInvoices({ owner, Document: InvoiceDocument.CreditNote });
@@ -82,6 +88,26 @@ const InvoicesSection = () => {
         void hook.request();
     }, [document, owner]);
 
+    const invoiceEditButtons = hook.type === 'invoices' && hook.invoices.length > 0 && (
+        <DropdownActions
+            size="medium"
+            list={[
+                enableBillingAddressModal &&
+                    !!user.ChargebeeUserExists && {
+                        text: c('Action').t`Edit billing address`,
+                        'data-testid': 'editBillingAddress',
+                        onClick: () => openBillingAddressModal(),
+                        loading: loadingBillingAddressModal,
+                    },
+                {
+                    text: c('Action').t`Edit invoice note`,
+                    'data-testid': 'editInvoiceNote',
+                    onClick: () => setInvoiceModalOpen(true),
+                },
+            ].filter(isTruthy)}
+        />
+    );
+
     return (
         <>
             <SettingsSectionWide>
@@ -109,7 +135,7 @@ const InvoicesSection = () => {
                 ) : null}
                 <div className="mb-4 flex justify-space-between">
                     <div>
-                        <div className="flex items-center">
+                        <div className="flex items-start">
                             <ButtonGroup className="mr-4 mb-2">
                                 <Button
                                     className={document === DocumentType.Invoice ? 'is-selected' : ''}
@@ -142,11 +168,7 @@ const InvoicesSection = () => {
                                     </Button>
                                 )}
                             </ButtonGroup>
-                            {hook.type === 'invoices' && hook.invoices.length > 0 && (
-                                <Button className="mb-2" onClick={() => setInvoiceModalOpen(true)}>
-                                    {c('Action').t`Edit invoice details`}
-                                </Button>
-                            )}
+                            {invoiceEditButtons}
                         </div>
                     </div>
                     <Pagination
@@ -166,6 +188,8 @@ const InvoicesSection = () => {
             </SettingsSectionWide>
 
             {renderInvoiceModal && <InvoiceTextModal {...invoiceModalProps} />}
+
+            {editBillingAddressModal}
         </>
     );
 };

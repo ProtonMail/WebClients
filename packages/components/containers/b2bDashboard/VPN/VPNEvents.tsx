@@ -15,12 +15,12 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { getCountryOptions } from '@proton/payments';
 import { getVPNLogDownload, getVPNLogs, getVpnEventTypes } from '@proton/shared/lib/api/b2bevents';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import { getCountryOptions } from '../../../helpers/countries';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import GenericError from '../../error/GenericError';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';

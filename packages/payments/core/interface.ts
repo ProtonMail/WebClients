@@ -19,6 +19,7 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import type { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
+import { type FullBillingAddress } from './billing-address';
 import type {
     ADDON_NAMES,
     Autopay,
@@ -332,6 +333,9 @@ export interface PaymentsApi {
     ) => void;
 
     statusExtendedAutomatic: () => Promise<PaymentMethodStatusExtended>;
+
+    getFullBillingAddress: () => Promise<FullBillingAddress>;
+    updateFullBillingAddress: (fullBillingAddress: FullBillingAddress) => Promise<void>;
 }
 
 export type ChargebeeKillSwitchData = {

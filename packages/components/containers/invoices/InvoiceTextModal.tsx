@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -20,10 +19,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 
-export interface Props {
-    onClose?: () => void;
-}
-
 const InvoiceTextModal = (props: ModalProps) => {
     const [{ InvoiceText }] = useUserSettings();
 
@@ -42,11 +37,11 @@ const InvoiceTextModal = (props: ModalProps) => {
 
     return (
         <ModalTwo as={Form} onSubmit={handleSubmit} {...props}>
-            <ModalTwoHeader title={c('Title').t`Edit invoice details`} />
+            <ModalTwoHeader title={c('Title').t`Edit invoice note`} />
             <ModalTwoContent>
                 <div className="mb-4">
                     {c('Info message for custom invoice modal')
-                        .t`Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.`}
+                        .t`Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.`}
                 </div>
                 <InputFieldTwo
                     as={TextAreaTwo}
@@ -54,7 +49,7 @@ const InvoiceTextModal = (props: ModalProps) => {
                     autoFocus
                     value={invoiceText}
                     onValue={setInvoiceText}
-                    label={c('Label').t`Name and address`}
+                    label={c('Label').t`Note`}
                 />
             </ModalTwoContent>
 
@@ -62,17 +57,13 @@ const InvoiceTextModal = (props: ModalProps) => {
                 <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>
                 <PrimaryButton
                     onClick={() => {
-                        withLoading(handleSubmit());
+                        void withLoading(handleSubmit());
                     }}
                     loading={loading}
                 >{c('Action').t`Save`}</PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
     );
-};
-
-InvoiceTextModal.propTypes = {
-    onClose: PropTypes.func,
 };
 
 export default InvoiceTextModal;

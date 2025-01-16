@@ -28,7 +28,6 @@ import {
     getProtectDevices,
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
-import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -40,13 +39,14 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/payments';
 import {
+    type Currency,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type PlanIDs,
+    getBillingAddressStatus,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';

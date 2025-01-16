@@ -17,9 +17,9 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import { MAX_IPS_ADDON } from '@proton/payments';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import range from '@proton/utils/range';
 
-import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { CountryFlagAndName } from './CountryFlagAndName';
 import type { Gateway } from './Gateway';
 import GatewayAddServersModal from './GatewayAddServersModal';

@@ -2,6 +2,7 @@ import {
     type PayloadAction,
     type ThunkAction,
     type UnknownAction,
+    createAction,
     createSlice,
     miniSerializeError,
 } from '@reduxjs/toolkit';
@@ -32,6 +33,10 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectPaymentStatus = (state: PaymentStatusState) => state.paymentStatus;
 
+export const changeBillingAddress = createAction<Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State'>>(
+    'paymentStatus/changeBillingAddress'
+);
+
 const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
@@ -50,6 +55,16 @@ const slice = createSlice({
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
         },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(changeBillingAddress, (state, { payload }) => {
+            if (!state.value) {
+                return;
+            }
+
+            state.value.CountryCode = payload.CountryCode;
+            state.value.State = payload.State;
+        });
     },
 });
 
