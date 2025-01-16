@@ -1,5 +1,5 @@
+import { getReturnUrlParameter } from '../returnUrl';
 import { ForkSearchParameters, type ForkType } from './constants';
-import { getReturnUrlParameter } from './returnUrl';
 import { getValidatedForkType, getValidatedRawKey } from './validation';
 
 export interface ConsumeForkParameters {
