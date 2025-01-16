@@ -34,7 +34,7 @@ export const createNewUserSignature = async (params: CreateNewUserSignatureProce
         signingKeys: [params.inviterPrivateKey],
         format: 'binary',
         detached: true,
-        context: {
+        signatureContext: {
             value: PassSignatureContext.VaultInviteNewUser,
             critical: true,
         },

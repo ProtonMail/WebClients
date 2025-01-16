@@ -82,7 +82,7 @@ export const generateOrganizationKeyToken = async (userKey: PrivateKeyReference)
     return encryptAddressKeyToken({
         token,
         userKey,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
 };
 
@@ -343,7 +343,7 @@ export const reencryptOrganizationToken = async ({
         binaryData: message.data,
         encryptionKey,
         signingKey,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
 };
 
@@ -360,7 +360,7 @@ export const verifyOrganizationTokenSignature = async ({
         armoredSignature,
         binaryData,
         verificationKeys,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
     });
 
     if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -397,7 +397,7 @@ export const acceptInvitation = async ({
         binaryData: message.data,
         encryptionKey: encryptionKey,
         signingKey: encryptionKey,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
 };
 
@@ -452,7 +452,7 @@ export const generatePrivateMemberInvitation = async ({
         binaryData: data.binaryData,
         encryptionKey: publicKey,
         signingKey: signer.privateKey,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
     return {
         MemberID: member.ID,
@@ -480,7 +480,7 @@ export const generatePublicMemberInvitation = async ({
         binaryData: data.binaryData,
         encryptionKey: privateKey,
         signingKey: privateKey,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
     });
     return {
         MemberID: member.ID,
@@ -501,7 +501,7 @@ export const generateOrganizationKeySignature = async ({
         signingKeys,
         detached: true,
         textData: fingerprint,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, critical: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, critical: true },
     });
     return signature;
 };
@@ -520,7 +520,7 @@ export const validateOrganizationKeySignature = async ({
         armoredSignature,
         textData: fingerprint,
         verificationKeys,
-        context: { value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, required: true },
+        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, required: true },
     });
 
     if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {

@@ -81,7 +81,7 @@ export const acceptCalendarShareInvitation = async ({
                 armoredSignature,
                 binaryData: passphraseSessionKey.data,
                 verificationKeys: verifyingPinnedKeys,
-                context: { required: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
+                signatureContext: { required: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
             });
             if (sessionKeyVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 /**
