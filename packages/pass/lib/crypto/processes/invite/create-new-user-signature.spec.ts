@@ -15,18 +15,18 @@ describe('create new user invite signature', () => {
     afterAll(async () => releaseCryptoProxy());
 
     test('should create valid detached signature payload', async () => {
-        const vaultKey = await createRandomVaultKey(0);
+        const shareKey = await createRandomVaultKey(0);
         const addressKey = await createRandomKey();
         const invitedEmail = 'test@proton.me';
 
         const signature = await createNewUserSignature({
             invitedEmail,
             inviterPrivateKey: addressKey.privateKey,
-            vaultKey,
+            shareKey,
         });
 
         const { verified } = await CryptoProxy.verifyMessage({
-            binaryData: createNewUserSignatureBody({ invitedEmail, vaultKey }),
+            binaryData: createNewUserSignatureBody({ invitedEmail, shareKey }),
             binarySignature: base64StringToUint8Array(signature),
             verificationKeys: [addressKey.publicKey],
             signatureContext: {
