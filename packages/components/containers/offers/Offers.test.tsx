@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
@@ -84,12 +84,16 @@ const getUser = ({ isFree }: { isFree: boolean }) => {
 
 describe('Offers', () => {
     describe('Offers display', () => {
-        it('Should display upgrade button for free users', () => {
+        it('Should display upgrade button for free users', async () => {
             renderWithProviders(<TopNavbarComponent />, {
                 preloadedState: {
                     user: getModelState(getUser({ isFree: true })),
                     userSettings: getModelState(getUserSettings({ offersEnabled: true })),
                 },
+            });
+
+            await waitFor(() => {
+                expect(screen.getByTestId('cta:upgrade-plan')).toBeInTheDocument();
             });
 
             const link = screen.getByTestId('cta:upgrade-plan');
@@ -120,12 +124,16 @@ describe('Offers', () => {
                 expect(screen.queryByTestId('cta:special-offer')).toBeNull();
             });
 
-            it('Should display an offer button', () => {
+            it('Should display an offer button', async () => {
                 renderWithProviders(<TopNavbarComponent />, {
                     preloadedState: {
                         user: getModelState(getUser({ isFree: false })),
                         userSettings: getModelState(getUserSettings({ offersEnabled: true })),
                     },
+                });
+
+                await waitFor(() => {
+                    expect(screen.getByTestId('cta:special-offer')).toBeInTheDocument();
                 });
 
                 expect(screen.getByTestId('cta:special-offer')?.textContent).toBe('Special offer');
