@@ -40,6 +40,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -93,6 +94,8 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const contactEmails = useContactEmails()[0] || [];
     const getCalendars = useGetCalendars();
     const getAddressKeys = useGetAddressKeys();
+
+    const hideWidgetSkeleton = useFlag('EmailWidgetSkeletonHidden');
 
     const isMounted = useIsMounted();
     // setters don't need to be listed as dependencies in a callback
@@ -319,7 +322,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     }, [vevent]);
 
     if (isLoading) {
-        return <EmailReminderWidgetSkeleton />;
+        return hideWidgetSkeleton ? null : <EmailReminderWidgetSkeleton />;
     }
 
     if (error && !messageHasDecryptionError) {
