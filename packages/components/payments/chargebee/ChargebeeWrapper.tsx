@@ -11,10 +11,10 @@ import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoint
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargeableV5PaymentToken, NonChargeableV5PaymentToken, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { CountriesDropdown } from '@proton/payments/ui';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-import CountriesDropdown from '../../containers/payments/CountriesDropdown';
 import type { ThemeCode } from '../client-extensions';
 import type { CbIframeHandles } from './ChargebeeIframe';
 import { ChargebeeIframe } from './ChargebeeIframe';

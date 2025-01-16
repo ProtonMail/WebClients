@@ -5,8 +5,8 @@ import type { SearcheableSelectProps } from '@proton/components/components/selec
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { defaultFilterFunction } from '@proton/components/components/selectTwo/helpers';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import type { CountryItem } from '@proton/components/helpers/countries';
-import { DEFAULT_SEPARATOR, getFullList } from '@proton/components/helpers/countries';
+
+import { type CountryItem, DEFAULT_COUNTRIES_SEPARATOR, getFullList } from '../helpers/countries-sorted';
 
 export const useCountries = () => {
     const countries = useMemo(() => getFullList(), []);
@@ -16,7 +16,7 @@ export const useCountries = () => {
     const getCountryByValue = (value: string) => countries.find((country) => country.value === value) ?? countries[0];
 
     const setCountry = (value: string) => {
-        if (value === DEFAULT_SEPARATOR.value) {
+        if (value === DEFAULT_COUNTRIES_SEPARATOR.value) {
             return;
         }
 
@@ -42,13 +42,13 @@ interface Props {
     disabled?: boolean;
 }
 
-const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) => {
+export const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) => {
     const { countries, getCountryByCode } = useCountries();
     const selectedCountryItem = getCountryByCode(selectedCountryCode);
 
     const searchableSelectProps: SearcheableSelectProps<CountryItem> = {
         onChange: ({ value: countryItem }: SelectChangeEvent<CountryItem>) => {
-            if (countryItem.value === DEFAULT_SEPARATOR.value) {
+            if (countryItem.value === DEFAULT_COUNTRIES_SEPARATOR.value) {
                 return;
             }
             onChange?.(countryItem.value);
@@ -72,7 +72,7 @@ const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) =>
                     disabled={disabled}
                     data-testid={`country-${value}`}
                 >
-                    {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : label}
+                    {value === DEFAULT_COUNTRIES_SEPARATOR.value ? <hr className="m-0" /> : label}
                 </Option>
             );
         }),
@@ -81,5 +81,3 @@ const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) =>
 
     return <SearchableSelect {...searchableSelectProps} />;
 };
-
-export default CountriesDropdown;

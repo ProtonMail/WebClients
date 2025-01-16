@@ -9,7 +9,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import type { CountryOptions } from '@proton/components/helpers/countries';
+import type { CountryOptions } from '@proton/payments';
 
 import { CountryFlagAndName } from './CountryFlagAndName';
 import type { GatewayLocation } from './GatewayLocation';

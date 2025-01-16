@@ -12,6 +12,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/atoms": "workspace:^",
         "@proton/shared": "workspace:^",
         "@reduxjs/toolkit": "^2.5.0",
         "react": "^18.3.1",
@@ -19,6 +20,8 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@proton/testing": "workspace:^",
         "@swc/jest": "^0.2.37",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^15.0.7",

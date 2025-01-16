@@ -1,10 +1,9 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
-
+import { DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address';
 import type { TaxCountrySelectorProps } from './TaxCountrySelector';
-import TaxCountrySelector from './TaxCountrySelector';
+import { TaxCountrySelector } from './TaxCountrySelector';
 import { useTaxCountry } from './TaxCountrySelector';
 
 const setSelectedCountry = jest.fn();
@@ -226,7 +225,9 @@ describe('useTaxCountry hook', () => {
         );
 
         // Manually update country
-        result.current.setSelectedCountry('CA');
+        act(() => {
+            result.current.setSelectedCountry('CA');
+        });
 
         rerender();
 
