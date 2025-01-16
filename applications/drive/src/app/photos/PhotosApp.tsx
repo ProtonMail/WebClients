@@ -24,12 +24,12 @@ import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/u
 import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
+import * as config from '../config';
+import type { DriveStore } from '../redux-store/store';
+import { extraThunkArguments } from '../redux-store/thunk';
+import { UserSettingsProvider } from '../store';
+import { logPerformanceMarker } from '../utils/performance';
 import { bootstrapPhotosApp } from './bootstrapPhotos';
-import * as config from './config';
-import type { DriveStore } from './redux-store/store';
-import { extraThunkArguments } from './redux-store/thunk';
-import { UserSettingsProvider } from './store';
-import { logPerformanceMarker } from './utils/performance';
 
 const defaultState: {
     initialUser?: UserModel;
@@ -51,9 +51,10 @@ const App = () => {
     useEffectOnce(() => {
         (async () => {
             try {
-                const { store, scopes, MainContainer, user, userSettings, driveUserSettings } = await bootstrapPhotosApp({
-                    config,
-                });
+                const { store, scopes, MainContainer, user, userSettings, driveUserSettings } =
+                    await bootstrapPhotosApp({
+                        config,
+                    });
                 setState({
                     MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
