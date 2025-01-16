@@ -1,3 +1,4 @@
+// sort-imports-ignore
 import type { FC, FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { Redirect, Route, type RouteComponentProps, Switch } from 'react-router-dom';
@@ -14,6 +15,7 @@ import { useLoading } from '@proton/hooks';
 import useFlag from '@proton/unleash/useFlag';
 
 import TransferManager from '../components/TransferManager/TransferManager';
+import DrivePhotosWindow from './DrivePhotosWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
@@ -31,7 +33,6 @@ import { useShareBackgroundActions } from '../store/_views/useShareBackgroundAct
 import { VolumeType } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
-import DrivePhotosWindow from './DrivePhotosWindow';
 import { PhotosView } from './PhotosWithAlbums/PhotosView';
 
 const PhotosWithAlbumsContainer: FC<RouteComponentProps> = ({ match }) => {
