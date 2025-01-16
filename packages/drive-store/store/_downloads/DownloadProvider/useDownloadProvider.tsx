@@ -18,10 +18,11 @@ import {
     isTransferPausedByConnection,
     isTransferProgress,
 } from '../../../utils/transfer';
+import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import type { SignatureIssues } from '../../_links';
 import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
-import FileSaver from '../fileSaver/fileSaver';
+import fileSaver from '../fileSaver/fileSaver';
 import type { InitDownloadCallback, LinkDownload } from '../interface';
 import type { UpdateFilter } from './interface';
 import useDownloadContainsDocument from './useDownloadContainsDocument';
@@ -48,9 +49,12 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
         queue.updateWithData,
         control.cancelDownloads
     );
-    const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
     const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
+
+    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
+
+    const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
     /**
      * download should be considered as main entry point for download files
      * in Drive app. It does all necessary checks, such as checking if the
@@ -97,7 +101,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
             const buffer = nextDownload.links.flatMap(({ buffer }) => buffer);
             const stream = bufferToStream(buffer as Uint8Array[]);
             void preventLeave(
-                FileSaver.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
+                fileSaver.instance.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
             ).catch(logError);
 
             queue.updateState(nextDownload.id, TransferState.Done);
@@ -127,7 +131,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
                     control.updateLinkSizes(nextDownload.id, linkSizes);
 
-                    if (FileSaver.isFileTooBig(size)) {
+                    if (fileSaver.instance.isFileTooBig(size)) {
                         void showDownloadIsTooBigModal({ onCancel: () => control.cancelDownloads(nextDownload.id) });
                     }
                 },
@@ -150,7 +154,9 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     link: LinkDownload,
                     signatureIssues: SignatureIssues
                 ) => {
-                    if (link.isAnonymous && hasValidAnonymousSignature(signatureIssues)) {
+                    // If we are in viewOnly mode on public page we ignore signature as we can't check
+                    // Disable signature error if anonymous view of the public page
+                    if (!user || viewOnly || (link.isAnonymous && hasValidAnonymousSignature(signatureIssues))) {
                         return;
                     }
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);

@@ -46,7 +46,6 @@ export type UpdateData = {
     error?: Error;
     signatureIssueLink?: LinkDownload;
     signatureStatus?: VERIFICATION_STATUS;
-    scanIssueError?: Error;
     retry?: boolean;
 };
 export type UpdateCallbackParams = {

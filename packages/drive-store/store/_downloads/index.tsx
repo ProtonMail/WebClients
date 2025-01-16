@@ -1,11 +1,10 @@
 import { useUser } from '@proton/account/user/hooks';
-import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import { usePublicSession } from '../_api';
+import { useLinksListing, usePublicLinksListing } from '../_links';
 import { DownloadProvider } from './DownloadProvider';
 import { ThumbnailsDownloadProvider } from './ThumbnailDownloadProvider';
 import useDownload from './useDownload';
-import usePublicDownload from './usePublicDownload';
 
 export { useDownloadProvider } from './DownloadProvider';
 export { useThumbnailsDownload } from './ThumbnailDownloadProvider';
@@ -13,7 +12,8 @@ export { default as useDownload } from './useDownload';
 export { useDownloadScanFlag } from './useDownloadScanFeatureFlag';
 
 export function DownloadsProvider({ children }: { children: React.ReactNode }) {
-    const { initDownload, downloadThumbnail } = useDownload();
+    const { getCachedChildren, loadChildren } = useLinksListing();
+    const { initDownload, downloadThumbnail } = useDownload({ loadChildren, getCachedChildren });
     const [user] = useUser();
 
     const downloadThumbnailsCb = async (
@@ -50,22 +50,31 @@ export function DownloadsProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function PublicDownloadsProvider({ children }: { children: React.ReactNode }) {
-    const { initDownload, downloadThumbnail } = usePublicDownload();
-    const { user } = usePublicSession();
+    const { user, request } = usePublicSession();
+
+    const { getCachedChildren, loadChildren } = usePublicLinksListing();
+    const { initDownload, downloadThumbnail } = useDownload({
+        customDebouncedRequest: request,
+        getCachedChildren,
+        loadChildren,
+    });
 
     const downloadThumbnailsCb = async (
         signal: AbortSignal,
-        shareId: string,
+        token: string,
         linkId: string,
         downloadUrl: string,
         downloadToken: string
     ) => {
-        const contents = downloadThumbnail(signal, shareId, linkId, {
-            BareURL: downloadUrl,
-            Token: downloadToken,
-        });
+        const { contents, verifiedPromise } = await downloadThumbnail(
+            signal,
+            token,
+            linkId,
+            downloadUrl,
+            downloadToken
+        );
 
-        return { contents, verifiedPromise: Promise.resolve(VERIFICATION_STATUS.NOT_SIGNED) };
+        return { contents, verifiedPromise };
     };
 
     return (

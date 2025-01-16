@@ -3,7 +3,6 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { SharesKeysProvider } from '../../_shares/useSharesKeys';
-import { SharesStateProvider } from '../../_shares/useSharesState';
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import type { EncryptedLink } from '../interface';
 import { LinksStateProvider } from '../useLinksState';
@@ -94,9 +93,7 @@ describe('useLinksListing', () => {
         const wrapper = ({ children }: { children: React.ReactNode }) => (
             <VolumesStateProvider>
                 <LinksStateProvider>
-                    <SharesStateProvider>
-                        <SharesKeysProvider>{children}</SharesKeysProvider>
-                    </SharesStateProvider>
+                    <SharesKeysProvider>{children}</SharesKeysProvider>
                 </LinksStateProvider>
             </VolumesStateProvider>
         );

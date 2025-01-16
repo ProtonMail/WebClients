@@ -119,6 +119,14 @@ describe('useLinksActions', () => {
         current: ReturnType<typeof useLinksActions>;
     };
 
+    beforeAll(() => {
+        // Prevent warning to be shown in the console when running tests
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
+    });
+    afterAll(() => {
+        jest.restoreAllMocks();
+    });
+
     beforeEach(() => {
         jest.resetAllMocks();
         mockRequest.mockImplementation((linkIds: string[]) => {

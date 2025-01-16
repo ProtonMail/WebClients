@@ -39,7 +39,7 @@ export const useBookmarksLinksListing = () => {
         const bookmarksWithLink = [];
         for (let bookmark of bookmarks) {
             // If the bookmark link is already loaded and decrypted, we don't need to do it again
-            const link = linksState.getLink(bookmark.token.Token, bookmark.token.LinkID);
+            const link = linksState.getLink(bookmark.sharedUrlInfo.token, bookmark.sharedUrlInfo.linkId);
 
             const { data: urlPassword } = await CryptoProxy.decryptMessage({
                 armoredMessage: bookmark.encryptedUrlPasword,
@@ -52,8 +52,8 @@ export const useBookmarksLinksListing = () => {
                 ? link.decrypted
                 : await decryptPublicShareLink(abortSignal, {
                       urlPassword,
-                      token: bookmark.token.Token,
-                      shareUrlInfo: bookmark.token,
+                      token: bookmark.sharedUrlInfo.token,
+                      sharedUrlInfo: bookmark.sharedUrlInfo,
                       publicPage: false,
                       additionnalDecryptedLinkInfo: {
                           sharedOn: bookmark.createTime,
@@ -63,7 +63,7 @@ export const useBookmarksLinksListing = () => {
 
             bookmarksWithLink.push({
                 link: decryptedLink,
-                token: bookmark.token.Token,
+                token: bookmark.sharedUrlInfo.token,
                 urlPassword,
                 createTime: bookmark.createTime,
             });

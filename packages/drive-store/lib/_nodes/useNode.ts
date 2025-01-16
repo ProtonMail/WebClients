@@ -3,7 +3,7 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { useLinkPath } from '../../store';
 import { useDownload } from '../../store/_downloads';
-import { useLink, validateLinkName } from '../../store/_links';
+import { useLink, useLinksListing, validateLinkName } from '../../store/_links';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import useUploadHelper from '../../store/_uploads/UploadProvider/useUploadHelper';
 import { useAbortSignal } from '../../store/_views/utils';
@@ -17,7 +17,11 @@ export const useNode = () => {
     const { getLink } = useLink();
     const { getPath } = useLinkPath();
     const { getSharePermissions } = useDirectSharingInfo();
-    const { downloadStream } = useDownload();
+    const { loadChildren, getCachedChildren } = useLinksListing();
+    const { downloadStream } = useDownload({
+        loadChildren,
+        getCachedChildren,
+    });
     const { findAvailableName } = useUploadHelper();
     const abortSignal = useAbortSignal([]);
 
