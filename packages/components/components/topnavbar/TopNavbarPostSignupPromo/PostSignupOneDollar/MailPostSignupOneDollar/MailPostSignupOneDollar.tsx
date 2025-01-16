@@ -56,7 +56,7 @@ export const MailPostSignupOneDollar = () => {
 
     const daysSinceOffer = differenceInDays(
         Date.now(),
-        fromUnixTime(mailOfferState?.Value.offerStartDate || Date.now())
+        fromUnixTime(mailOfferState?.Value?.offerStartDate || Date.now())
     );
 
     const [spotlightState, setSpotlightState] = useState(openSpotlight);
@@ -74,8 +74,8 @@ export const MailPostSignupOneDollar = () => {
 
         const newState = updatePostSignupOpenOfferState(mailOfferState?.Value);
         if (
-            newState.automaticOfferReminders === mailOfferState?.Value.automaticOfferReminders &&
-            newState.offerStartDate === mailOfferState.Value.offerStartDate
+            newState.automaticOfferReminders === mailOfferState?.Value?.automaticOfferReminders &&
+            newState.offerStartDate === mailOfferState?.Value?.offerStartDate
         ) {
             return;
         }
