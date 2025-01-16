@@ -9,12 +9,11 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
-import { UserVerificationMessage } from '@proton/pass/components/Invite/UserVerificationMessage';
 import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
 import { type InviteAddressValidator } from '@proton/pass/hooks/useValidateInviteAddress';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { InviteEmailsError } from '@proton/pass/lib/validation/vault-invite';
-import { selectUserVerified, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
+import { selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
 import { type InviteFormValues, ShareRole } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -47,7 +46,6 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
     const shareId = form.values.withVaultCreation ? '' : form.values.shareId;
 
     const [autocomplete, setAutocomplete] = useState('');
-    const userVerified = useSelector(selectUserVerified);
     const vaultSharedWith = useSelector(selectVaultSharedWithEmails(shareId));
 
     const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
@@ -113,7 +111,6 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
 
     return (
         <>
-            {!userVerified && <UserVerificationMessage />}
             {step === 'members' && (
                 <div className="anime-fade-in h-full flex flex-column">
                     {getVaultHeader(withVaultCreation)}
@@ -123,7 +120,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                         <Field
                             autoFocus={autoFocus}
                             component={ListField<InviteFormValues>}
-                            disabled={!userVerified || addressValidator.loading}
+                            disabled={addressValidator.loading}
                             fieldLoading={(entry) => addressValidator.loading && emailsValidating.includes(entry)}
                             fieldKey="members"
                             fieldRef={fieldRef}
