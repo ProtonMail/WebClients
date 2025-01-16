@@ -19,6 +19,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add account": [
+        "Ajouter un compte"
+      ],
       "Add credit / debit card": [
         "Ajouter une carte de paiement"
       ],
@@ -75,6 +78,9 @@
       ],
       "Delete": [
         "Supprimer"
+      ],
+      "Dismiss": [
+        "Annuler"
       ],
       "Done": [
         "Terminé"
@@ -229,8 +235,14 @@
       "Show balance": [
         "Afficher le solde"
       ],
+      "Show QRCode": [
+        "Afficher le QR code"
+      ],
       "Sign out": [
         "Se déconnecter"
+      ],
+      "Sign out of all accounts": [
+        "Se déconnecter de tous les comptes"
       ],
       "Submit": [
         "Envoyer"
@@ -344,9 +356,6 @@
       ],
       "Status": [
         "État"
-      ],
-      "Sync": [
-        "Synchroniser"
       ],
       "Toggle keychain": [
         "Afficher ou masquer le trousseau"
@@ -673,6 +682,9 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "Paiement de ${ quote.provider }"
+      ],
+      "No quote available for the requested amount": [
+        "Aucune offre n'est disponible pour le montant demandé."
       ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "La devise sélectionnée n'est pas prise en charge dans votre pays ou le montant demandé est trop faible."
@@ -2346,14 +2358,11 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
       ],
-      "Account size": [
-        "Taille du compte"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
-      "Additional options": [
-        "Options supplémentaires"
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -2391,9 +2400,9 @@
       "Country code": [
         "Indicatif du pays"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Créer un cloud sécurisé pour ${ n } membre",
-        "Créer un cloud sécurisé pour ${ n } membres"
+      "Create a secure cloud for ${ value } member": [
+        "Créer un cloud sécurisé pour ${ value } membre",
+        "Créer un cloud sécurisé pour ${ value } membres"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -2427,9 +2436,6 @@
       ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
@@ -2494,6 +2500,9 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Member": [
+        "Membre"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -2540,6 +2549,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "L'actualisation de la page ou ${ link } résoudront automatiquement la plupart des problèmes."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Les paiements via SEPA ne sont pas disponibles pour l'instant. Réessayez ultérieurement."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
@@ -2558,11 +2570,17 @@
       "Subscription auto-renews every month.": [
         "L'abonnement est renouvelé automatiquement tous les mois."
       ],
+      "Switch to": [
+        "Basculer vers"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
-      "This address is used to receive Bitcoin via Email": [
-        "Cette adresse est utilisée pour recevoir des bitcoins via e-mail."
+      "This address is for Bitcoin via Email": [
+        "Cette adresse est pour les bitcoins via e-mail."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pour finaliser votre paiement, vous devez envoyer ${ btcAmountBold } à l'adresse ci-dessous."
@@ -2683,8 +2701,17 @@
       "Your next billing date is ${ renewalTime }.": [
         "Votre prochaine date de facturation est le ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
       ]
     },
     "Info for cash payment method": {
@@ -2695,11 +2722,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Lecture seule"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
     "Label": {
@@ -2791,9 +2813,6 @@
       "Do you have any suggestions for our team?": [
         "Avez-vous des suggestions pour notre équipe ?"
       ],
-      "Email": [
-        "Adresse e-mail"
-      ],
       "Email address": [
         "Adresse e-mail"
       ],
@@ -2859,6 +2878,9 @@
       ],
       "Security code (${ codeName })": [
         "Code de sécurité (${ codeName })"
+      ],
+      "Show QRCode": [
+        "Afficher le QR code"
       ],
       "Start date": [
         "Date de début"
@@ -3996,28 +4018,9 @@
         "Dites-nous ce qui, selon vous, pourrait améliorer ${ BRAND_NAME }."
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } notre équipe commerciale."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Sélectionnez le nombre d'IP à inclure dans votre abonnement. Chaque IP supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si vous avez besoin de plus de ${ maxIPs } IP, ",
-        "Si vous avez besoin de plus de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactez"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, nous vous invitons à ${ contact } notre service client.",
-        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, nous vous invitons à ${ contact } notre service client."
       ]
     },
     "Price": {
@@ -4550,6 +4553,9 @@
       ],
       "Apply gift code": [
         "Appliquer un code-cadeau"
+      ],
+      "Are you sure?": [
+        "Êtes-vous sûr ?"
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -5498,8 +5504,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Transférez vos bitcoins vers un autre portefeuille avant la suppression. La suppression de ce portefeuille retirera toutes les données qu'il contient des serveurs ${ BRAND_NAME }. Vous pouvez récupérer ce portefeuille par la suite à l'aide de la phrase de récupération."
       ],
-      "Seed phrase (12-24 words)": [
-        "Phrase de récupération (12 à 24 mots)"
+      "Seed phrase (12 or 24 words, separated by space)": [
+        "Phrase de récupération (12 ou 24 mots séparés par un espace)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Ces 12 mots ne doivent être utilisés qu'en dernier recours pour récupérer les actifs de ce portefeuille, comme lorsque vous perdez l''accès à votre compte ${ BRAND_NAME }."
