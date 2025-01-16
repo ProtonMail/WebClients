@@ -10,12 +10,12 @@ import {
     hasMaximumCycle,
     hasVPNPassBundle,
 } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 
-export const ActionButtons = ({ user, subscription }: { user: UserModel; subscription?: SubscriptionModel }) => {
+export const ActionButtons = ({ user, subscription }: { user: UserModel; subscription?: Subscription }) => {
     const scheduledDowncycling = useFlag('ScheduledDowncycling');
     const [openSubscriptionModal] = useSubscriptionModal();
 

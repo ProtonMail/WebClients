@@ -30,7 +30,6 @@ import type {
     Pricing,
     Subscription,
     SubscriptionCheckResponse,
-    SubscriptionModel,
     SubscriptionPlan,
     UserModel,
 } from '../interfaces';
@@ -832,7 +831,7 @@ export const hasCancellablePlan = (subscription: Subscription | undefined, user:
     return cancellablePlan || chargebeeForced || splittedUser;
 };
 
-export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscription): boolean {
+export function hasMaximumCycle(subscription?: Subscription | FreeSubscription): boolean {
     return (
         subscription?.Cycle === CYCLE.TWO_YEARS ||
         subscription?.Cycle === CYCLE.THIRTY ||

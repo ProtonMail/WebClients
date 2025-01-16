@@ -5,7 +5,7 @@ import {
     getIsB2BAudienceFromSubscription,
     getPlan,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
 
@@ -88,7 +88,7 @@ export const getEligibility = ({
     eligibleBlackFridayConfigs,
 }: {
     user: UserModel;
-    subscription: SubscriptionModel | undefined;
+    subscription: Subscription | undefined;
     offer: { plan: Plan; cycle: CYCLE; coupon?: string };
     plansMap: PlansMap;
     eligibleBlackFridayConfigs: OfferConfig[];

@@ -33,7 +33,7 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { type Organization, type SubscriptionModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { type Organization, type Subscription, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
@@ -81,7 +81,7 @@ import { SubscriptionItems } from './SubscriptionItems';
 interface Props {
     app: APP_NAMES;
     user: UserModel;
-    subscription?: SubscriptionModel;
+    subscription?: Subscription;
     organization?: Organization;
     vpnServers: VPNServersCountData;
     addresses?: Address[];

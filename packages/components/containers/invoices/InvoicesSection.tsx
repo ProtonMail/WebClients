@@ -2,14 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
-import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
@@ -40,7 +38,6 @@ const InvoicesSection = () => {
 
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
-    const [{ isManagedByMozilla } = { isManagedByMozilla: false }] = useSubscription();
 
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
 
@@ -84,10 +81,6 @@ const InvoicesSection = () => {
     useEffect(() => {
         void hook.request();
     }, [document, owner]);
-
-    if (isManagedByMozilla) {
-        return <MozillaInfoPanel />;
-    }
 
     return (
         <>

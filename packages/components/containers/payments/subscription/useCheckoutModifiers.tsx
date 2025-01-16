@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { PlansMap, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 
 import type { Model } from './SubscriptionContainer';
@@ -16,7 +16,7 @@ export interface CheckoutModifiers {
 
 export const useCheckoutModifiers = (
     model: Model,
-    subscription: SubscriptionModel,
+    subscription: Subscription,
     plansMap: PlansMap,
     checkResult: SubscriptionCheckResponse
 ) => {
