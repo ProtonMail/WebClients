@@ -19,6 +19,9 @@
       "Add": [
         "Добавить"
       ],
+      "Add account": [
+        "Добавить аккаунт"
+      ],
       "Add credit / debit card": [
         "Добавить кредитную / дебетовую карту"
       ],
@@ -75,6 +78,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Dismiss": [
+        "Отклонить"
       ],
       "Done": [
         "Готово"
@@ -232,6 +238,9 @@
       "Sign out": [
         "Выйти"
       ],
+      "Sign out of all accounts": [
+        "Выйти из всех учётных записей"
+      ],
       "Submit": [
         "Отправить"
       ],
@@ -346,9 +355,6 @@
       ],
       "Status": [
         "Состояние"
-      ],
-      "Sync": [
-        "Синхронизация"
       ],
       "Toggle keychain": [
         "Переключить набор ключей"
@@ -2289,14 +2295,8 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
-      "Account size": [
-        "Размер аккаунта"
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
-      ],
-      "Additional options": [
-        "Дополнительные параметры"
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
@@ -2334,12 +2334,6 @@
       "Country code": [
         "Код страны"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Создать безопасное облако для ${ n } участника",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников",
-        "Создать безопасное облако для ${ n } участников"
-      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
       ],
@@ -2372,9 +2366,6 @@
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
@@ -2438,6 +2429,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
+      ],
+      "Member": [
+        "Член"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -2507,6 +2501,12 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
+      ],
+      "This address is for Bitcoin via Email": [
+        "Это адрес для Bitcoin по электронной почте"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
@@ -2645,11 +2645,6 @@
         "Только просмотр"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
@@ -2740,9 +2735,6 @@
       ],
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
-      ],
-      "Email": [
-        "Электронная почта"
       ],
       "Email address": [
         "Адрес эл. почты"
@@ -4004,32 +3996,9 @@
         "Поделитесь тем, что, по вашему мнению, могло бы сделать ${ BRAND_NAME } лучше."
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } нашим Отделом продаж."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, ",
-        "Если вам потребуется больше ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользователь стоит ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Если вам нужно более ${ maxUsers } аккаунта, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж."
       ]
     },
     "Price": {
@@ -4584,6 +4553,9 @@
       ],
       "Apply gift code": [
         "Применить подарочный код"
+      ],
+      "Are you sure?": [
+        "Вы уверены?"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -5532,9 +5504,6 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Перенесите ваши биткойны в другой кошелёк перед удалением. Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Вы сможете восстановить этот кошелёк позже, используя мнемоническую фразу."
-      ],
-      "Seed phrase (12-24 words)": [
-        "Мнемоническая фраза (12–24 слова)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Эти 12 слов должны использоваться только для восстановления активов этого кошелька в качестве последнего средства, например, если вы потеряете доступ к вашему аккаунту ${ BRAND_NAME }."

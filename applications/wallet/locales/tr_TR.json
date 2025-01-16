@@ -19,6 +19,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add account": [
+        "Hesap ekle"
+      ],
       "Add credit / debit card": [
         "Kredi ya da banka kartı ekle"
       ],
@@ -75,6 +78,9 @@
       ],
       "Delete": [
         "Sil"
+      ],
+      "Dismiss": [
+        "Yok say"
       ],
       "Done": [
         "Tamam"
@@ -232,6 +238,9 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Sign out of all accounts": [
+        "Tüm hesapların oturumunu kapat"
+      ],
       "Submit": [
         "Gönder"
       ],
@@ -322,7 +331,7 @@
         "Adres kopyalandı"
       ],
       "Change address": [
-        "Değiştirilen adres"
+        "Takas adresi"
       ],
       "Index": [
         "Dizin"
@@ -336,14 +345,20 @@
       "Receive address": [
         "Alıcı adresi"
       ],
+      "Search exact address": [
+        "Tam adres ara"
+      ],
+      "Search for exact address": [
+        "Tam adres ara"
+      ],
       "Status": [
         "Durum"
       ],
-      "Sync": [
-        "Eşitle"
-      ],
       "Toggle keychain": [
         "Anahtar zincirini aç/kapat"
+      ],
+      "Used": [
+        "Kullanılmış"
       ],
       "Value": [
         "Değer"
@@ -516,7 +531,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-e-mail ve diğer şeyler.ide-my-email"
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -563,6 +578,9 @@
       ],
       "Amount": [
         "Tutar"
+      ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "Bu teklif onaylanırken bir sorun çıktı. Lütfen başka bir hizmet sağlayıcı seçip yeniden deneyin."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
         "Ücretli bir kullanıcı olarak Azteco hizmet ücretinden ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } indiriminiz var!"
@@ -1937,7 +1955,7 @@
         "Tutar en az miktarın altında (${ minimumAmount })."
       ],
       "Bitcoin via Email to self is not supported": [
-        "E-posta yoluyla kendi kendine Bitcoin desteklenmiyor"
+        "Kendinize E-posta ile Bitcoin göndermeniz desteklenmiyor"
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -2325,14 +2343,11 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
       ],
-      "Account size": [
-        "Hesap boyutu"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
-      "Additional options": [
-        "Ek seçenekler"
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logosu"
@@ -2370,9 +2385,9 @@
       "Country code": [
         "Ülke kodu"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "${ n } üye için bir güvenli bulut oluştur",
-        "${ n } üye için bir güvenli bulut oluştur"
+      "Create a secure cloud for ${ value } member": [
+        "${ value } üye için bir güvenli bulut oluştur",
+        "${ value } üye için bir güvenli bulut oluştur"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -2406,9 +2421,6 @@
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
@@ -2473,6 +2485,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
       ],
+      "Member": [
+        "Üye"
+      ],
       "MM/YY": [
         "AA/YY"
       ],
@@ -2519,6 +2534,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -2537,8 +2555,17 @@
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
       ],
+      "Switch to": [
+        "Şuna geç"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
+      ],
+      "This address is for Bitcoin via Email": [
+        "Bu adres E-posta ile Bitcoin içindir"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
@@ -2659,8 +2686,17 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve ${ cycle } ayda bir otomatik olarak yenilenecek."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ]
     },
     "Info for cash payment method": {
@@ -2671,11 +2707,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Yalnızca görüntüleme"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
     "Label": {
@@ -2766,9 +2797,6 @@
       ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
-      ],
-      "Email": [
-        "E-posta"
       ],
       "Email address": [
         "E-posta adresi"
@@ -3972,28 +4000,9 @@
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "lütfen ${ contactHref } satış ekibimizle görüşün."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
-        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "görüşün"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Tarifenizde bulunacak kullanıcı sayısını seçin. Her ek kullanıcının maliyeti ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }.",
-        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }."
       ]
     },
     "Price": {
@@ -4527,6 +4536,9 @@
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
+      "Are you sure?": [
+        "Emin misiniz?"
+      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -4834,7 +4846,7 @@
     },
     "Wallet dashboard": {
       "24h change": [
-        "24 saatlik değişim"
+        "24 saat takas"
       ],
       "All accounts": [
         "Tüm hesaplar"
@@ -4910,7 +4922,7 @@
         "Bu cüzdanı kullanabilmek için bir parola ifadesi gereklidir."
       ],
       "View change addresses": [
-        "Değiştirilen adresleri görüntüle"
+        "Takas adreslerini görüntüle"
       ],
       "View receive addresses": [
         "Alıcı adreslerini görüntüle"
@@ -5169,8 +5181,14 @@
       "Bitcoin address signature could not be verified": [
         "Bitcoin adresinin imzası doğrulanamadı"
       ],
+      "Boost transaction": [
+        "Hesap işlemini hızlandır"
+      ],
       "Boost transaction priority": [
         "Hesap işlemi önceliğini artır"
+      ],
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "Ağ ücretini artırarak hesap işleminizin önceliğini artırabilir, daha hızlı işlenmesini ve onaylanmasını sağlayabilirsiniz."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "QR kod tarayıcı kullanılamıyor. Lütfen tarayıcı uyumluluğunu denetleyin"
@@ -5468,8 +5486,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Lütfen cüzdanı silmeden önce bitcoin birikiminizi başka bir cüzdana aktarın. Bu cüzdanı silmek, verilerini ${ BRAND_NAME } sunucularından kaldırır. Bu cüzdanı daha sonra tohumlama ifadesi ile kurtarabilirsiniz."
       ],
-      "Seed phrase (12-24 words)": [
-        "Tohumlama ifadesi (12-24 sözcük)"
+      "Seed phrase (12 or 24 words, separated by space)": [
+        "Tohumlama ifadesi (boşluk ile ayrılmış 12 ya da 24 sözcük)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Bu 12 sözcük yalnızca bu cüzdanın varlıklarını kurtarmak için son çare olarak kullanılmalıdır. Örneğin ${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz."

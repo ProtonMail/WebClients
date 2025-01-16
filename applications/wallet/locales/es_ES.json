@@ -19,6 +19,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add account": [
+        "Añadir una cuenta"
+      ],
       "Add credit / debit card": [
         "Añadir tarjeta de crédito / débito"
       ],
@@ -75,6 +78,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Dismiss": [
+        "Descartar"
       ],
       "Done": [
         "Hecho"
@@ -229,8 +235,14 @@
       "Show balance": [
         "Mostrar el saldo"
       ],
+      "Show QRCode": [
+        "Mostrar el código QR"
+      ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Sign out of all accounts": [
+        "Cerrar sesión en todas las cuentas"
       ],
       "Submit": [
         "Enviar"
@@ -344,9 +356,6 @@
       ],
       "Status": [
         "Estado"
-      ],
-      "Sync": [
-        "Sincronizar"
       ],
       "Toggle keychain": [
         "Activar el llavero (keychain)"
@@ -664,6 +673,9 @@
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
         "Pago de ${ quote.provider }"
+      ],
+      "No quote available for the requested amount": [
+        "No hay cuota disponible para el monto solicitado."
       ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "La moneda seleccionada no está disponible en su país o el monto solicitado es demasiado bajo."
@@ -1342,7 +1354,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "Irán (República Islámica)"
+        "República Islámica de Irán"
       ],
       "Isle of Man": [
         "Isla de Man"
@@ -2337,14 +2349,11 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
       ],
-      "Account size": [
-        "Tamaño de la cuenta"
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
-      "Additional options": [
-        "Opciones adicionales"
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ],
       "American Express SafeKey logo": [
         "Logo de American Express SafeKey"
@@ -2382,9 +2391,9 @@
       "Country code": [
         "Código de país"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Crear una nube segura para ${ n } miembro",
-        "Crear una nube segura para ${ n } miembros"
+      "Create a secure cloud for ${ value } member": [
+        "Crear una nube segura para ${ value } miembro",
+        "Crear una nube segura para ${ value } miembros"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -2418,9 +2427,6 @@
       ],
       "Edit email address": [
         "Editar dirección de correo electrónico"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
@@ -2485,6 +2491,9 @@
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
+      "Member": [
+        "Miembro"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -2513,7 +2522,7 @@
         "Autentica tu pago en la pestaña de verificación."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Por favor, ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "Please try again using a different payment method, or contact your bank.": [
@@ -2530,6 +2539,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -2549,11 +2561,17 @@
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
       ],
+      "Switch to": [
+        "Cambiar a"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
       ],
-      "This address is used to receive Bitcoin via Email": [
-        "Se usa esta dirección para recibir Bitcoin por correo electrónico."
+      "This address is for Bitcoin via Email": [
+        "Esta dirección es para los bitcoins vía correo electrónico."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
@@ -2674,8 +2692,17 @@
       "Your next billing date is ${ renewalTime }.": [
         "Tu próxima fecha de facturación es el ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Ponte en contacto con el servicio de asistencia si necesitas un cambio de plan inmediato."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ]
     },
     "Info for cash payment method": {
@@ -2686,11 +2713,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Solo lectura"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ]
     },
     "Label": {
@@ -2782,9 +2804,6 @@
       "Do you have any suggestions for our team?": [
         "¿Tienes alguna sugerencia para nuestro equipo?"
       ],
-      "Email": [
-        "Correo electrónico"
-      ],
       "Email address": [
         "Dirección de correo electrónico"
       ],
@@ -2850,6 +2869,9 @@
       ],
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
+      ],
+      "Show QRCode": [
+        "Mostrar el código QR"
       ],
       "Start date": [
         "Fecha de inicio"
@@ -3390,7 +3412,7 @@
         "Compartir la caja fuerte (hasta ${ n } personas)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+        "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
     },
     "new_plans: feature highlight": {
@@ -3461,7 +3483,7 @@
         "Popular"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Protege la información empresarial confidencial y colabora de forma segura."
+        "Protege la información sensible de tu negocio y colabora con seguridad."
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
         "Protege a tu familia con todas las características premium de ${ PASS_SHORT_APP_NAME } Plus para seis usuarios."
@@ -3987,28 +4009,9 @@
         "Comparte lo que crees que podría mejorar ${ BRAND_NAME }"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "contacta ${ contactHref } con nuestro equipo de ventas."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Elige el número de IP para incluir en tu plan. Cada IP adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Si necesitas más de ${ maxIPs } IP, ",
-        "Si necesitas más de ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactar"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Elige el número de usuarios para incluir en tu plan. Cada usuario adicional cuesta ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesitas más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
-        "Si necesitas más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
       ]
     },
     "Price": {
@@ -4541,6 +4544,9 @@
       ],
       "Apply gift code": [
         "Aplicar código de regalo"
+      ],
+      "Are you sure?": [
+        "¿Estás seguro?"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -5489,8 +5495,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Transfiere tus bitcoins a otra cartera antes de eliminarlos. Al eliminar esta cartera, se eliminarán todos sus datos de los servidores de ${ BRAND_NAME }. Puedes recuperar la cartera más tarde si tienes su frase de recuperación."
       ],
-      "Seed phrase (12-24 words)": [
-        "Frase de recuperación (de 12 a 14 palabras)"
+      "Seed phrase (12 or 24 words, separated by space)": [
+        "Frase de recuperación (12 o 24 palabras separadas por espacio)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Estas 12 palabras solo deben usarse para recuperar los activos de esta cartera como último recurso, por ejemplo, si pierdes el acceso a tu cuenta de ${ BRAND_NAME }."
