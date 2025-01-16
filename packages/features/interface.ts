@@ -83,6 +83,7 @@ export enum FeatureCode {
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
     ProtonBadge = 'ProtonBadge',
     QuickReply = 'QuickReply',
+    QuickReplySpotlight = 'QuickReplySpotlight',
     ReferralExplanationOpened = 'ReferralExplanationOpened',
     ReferralProgram = 'ReferralProgram',
     ReferralProgramSpotlight = 'ReferralProgramSpotlight',
