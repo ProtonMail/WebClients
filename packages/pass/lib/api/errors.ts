@@ -22,4 +22,9 @@ export enum PassErrorCode {
     SESSION_ERROR = 8002,
     SESSION_LOCKED = 300008,
     SRP_ERROR = 2026,
+
+    /** Custom client-side error code overrides */
+    UNVERIFIED_USER = 'UNVERIFIED_USER_DETECTED',
 }
+
+export class UnverifiedUserError extends Error {}
