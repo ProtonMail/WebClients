@@ -5,10 +5,11 @@ import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import { useSharesStore } from '../../zustand/share/shares.store';
 import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
 import { integrityMetrics, useDriveCrypto } from '../_crypto';
-import { useIsPaid } from '../_user';
+import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
 import { useDebouncedFunction } from '../_utils';
 import type { Share, ShareWithKey } from './interface';
 import { getShareTypeString } from './shareType';
@@ -16,7 +17,7 @@ import type { ShareKeys } from './useSharesKeys';
 import useSharesKeys from './useSharesKeys';
 
 export default function useShare() {
-    const isPaid = useIsPaid();
+    const userPlan = useGetMetricsUserPlan();
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
     const driveCrypto = useDriveCrypto();
@@ -108,9 +109,9 @@ export default function useShare() {
                     return decryptSharePassphrase(true);
                 }
 
-                const shareType = getShareTypeString(share);
+                const shareType = getIsPublicContext() ? 'shared_public' : getShareTypeString(share);
                 const options = {
-                    isPaid: isPaid,
+                    plan: userPlan,
                     createTime: share.createTime,
                 };
                 integrityMetrics.shareDecryptionError(shareId, shareType, options);
