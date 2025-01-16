@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
-import type { CountryOptions } from '@proton/components/helpers/countries';
+import type { CountryOptions } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 import { CountryFlagAndName } from './CountryFlagAndName';

@@ -63,6 +63,7 @@ enum PaymentsFlag {
     RegionalCurrenciesBatch2 = 'RegionalCurrenciesBatch2',
     TransactionsView = 'TransactionsView',
     ScheduledDowncycling = 'ScheduledDowncycling',
+    BillingAddressModal = 'BillingAddressModal',
 }
 
 enum CalendarFeatureFlag {

@@ -7,8 +7,8 @@ import { Button } from '@proton/atoms/index';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
-import CountriesDropdown from '@proton/components/containers/payments/CountriesDropdown';
 import { extractIBAN } from '@proton/payments';
+import { CountriesDropdown } from '@proton/payments/ui';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { type ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';

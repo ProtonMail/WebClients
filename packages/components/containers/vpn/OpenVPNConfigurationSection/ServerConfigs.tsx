@@ -2,13 +2,13 @@ import { useMemo, useState } from 'react';
 
 import groupBy from 'lodash/groupBy';
 
+import type { CountryOptions } from '@proton/payments';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import compare from '@proton/utils/compare';
 
 import Details from '../../../components/container/Details';
 import Summary from '../../../components/container/Summary';
-import type { CountryOptions } from '../../../helpers/countries';
 import CityNumber from './CityNumber';
 import ConfigsTable, { CATEGORY, P2PIcon, TorIcon } from './ConfigsTable';
 import Country from './Country';

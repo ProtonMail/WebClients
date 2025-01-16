@@ -5,8 +5,7 @@ import { PAYMENT_METHOD_TYPES, type PayPalDetails, type SavedCardDetails, type S
 
 import PaymentMethodDetails from './PaymentMethodDetails';
 
-// Mock the getBankSvg function
-jest.mock('@proton/components/payments/client-extensions/credit-card-type', () => ({
+jest.mock('@proton/payments/ui/helpers/credit-card-icons', () => ({
     getBankSvg: jest.fn(() => 'MockedBankSvg'),
 }));
 

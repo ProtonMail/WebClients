@@ -26,6 +26,8 @@ import {
     type SavedPaymentMethodInternal,
 } from '@proton/payments';
 import { type Currency, PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
+import { BILLING_ADDRESS_VALID, type BillingAddressStatus } from '@proton/payments';
+import { CreditCard } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
@@ -40,13 +42,11 @@ import {
 } from '../../payments/chargebee/ChargebeeWrapper';
 import Alert3DS from './Alert3ds';
 import Cash from './Cash';
-import CreditCard from './CreditCard';
 import PayPalView from './PayPalView';
 import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
-import { BILLING_ADDRESS_VALID, type BillingAddressStatus } from './subscription/helpers';
 
 export interface Props {
     children?: ReactNode;

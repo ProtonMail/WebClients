@@ -18,10 +18,8 @@ import {
 import Icon from '@proton/components/components/icon/Icon';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
-import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { getAllowedCycles, getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
+import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -30,13 +28,15 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } from '@proton/payments';
 import {
+    type Currency,
     PAYMENT_METHOD_TYPES,
     type PlanIDs,
+    getBillingAddressStatus,
     getPlansMap,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
+import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
