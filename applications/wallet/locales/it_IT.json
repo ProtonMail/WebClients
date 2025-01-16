@@ -19,6 +19,9 @@
       "Add": [
         "Aggiungi"
       ],
+      "Add account": [
+        "Aggiungi un account"
+      ],
       "Add credit / debit card": [
         "Aggiungi carta di credito/debito"
       ],
@@ -75,6 +78,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Dismiss": [
+        "Ignora"
       ],
       "Done": [
         "Fatto"
@@ -232,6 +238,9 @@
       "Sign out": [
         "Esci dall'account"
       ],
+      "Sign out of all accounts": [
+        "Esci da tutti gli account"
+      ],
       "Submit": [
         "Invia"
       ],
@@ -336,14 +345,20 @@
       "Receive address": [
         "Indirizzo di ricezione"
       ],
+      "Search exact address": [
+        "Cerca l'indirizzo esatto"
+      ],
+      "Search for exact address": [
+        "Cerca l'indirizzo esatto"
+      ],
       "Status": [
         "Stato"
       ],
-      "Sync": [
-        "Sincronizza"
-      ],
       "Toggle keychain": [
         "Attiva portachiavi"
+      ],
+      "Used": [
+        "Utilizzato"
       ],
       "Value": [
         "Valore"
@@ -563,6 +578,9 @@
       ],
       "Amount": [
         "Importo"
+      ],
+      "An error occurred while confirming this quote, please select another provider and try again.": [
+        "Si è verificato un errore durante la conferma del preventivo, seleziona un altro fornitore e riprova."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
         "Come utente a pagamento, stai risparmiando ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } sulla commissione di servizio Azteco!"
@@ -2325,14 +2343,11 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
       ],
-      "Account size": [
-        "Dimensione dell'account"
-      ],
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
-      "Additional options": [
-        "Opzioni aggiuntive"
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -2370,9 +2385,9 @@
       "Country code": [
         "Codice nazione"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Crea un cloud sicuro per ${ n } membro",
-        "Crea un cloud sicuro per ${ n } membri"
+      "Create a secure cloud for ${ value } member": [
+        "Crea un cloud sicuro per ${ value } membro",
+        "Crea un cloud sicuro per ${ value } membri"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -2406,9 +2421,6 @@
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
@@ -2473,6 +2485,9 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Member": [
+        "Membro"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -2519,6 +2534,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "I pagamenti SEPA non sono disponibili al momento. Si prega di riprovare più tardi."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
@@ -2537,8 +2555,17 @@
       "Subscription auto-renews every month.": [
         "L'abbonamento si rinnova automaticamente ogni mese."
       ],
+      "Switch to": [
+        "Altri account"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
+      ],
+      "This address is for Bitcoin via Email": [
+        "Questo indirizzo è per Bitcoin via email"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
@@ -2659,8 +2686,17 @@
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà usato solamente per questa verifica una tantum."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
       ]
     },
     "Info for cash payment method": {
@@ -2671,11 +2707,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Visualizza soltanto"
-      ]
-    },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
       ]
     },
     "Label": {
@@ -2766,9 +2797,6 @@
       ],
       "Do you have any suggestions for our team?": [
         "Hai qualche suggerimento per il nostro team?"
-      ],
-      "Email": [
-        "Email"
       ],
       "Email address": [
         "Indirizzo email"
@@ -3977,28 +4005,9 @@
         "Condividere cosa pensi potrebbe migliorare ${ BRAND_NAME }"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } il nostro team di vendita."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Seleziona il numero di IP da includere nel piano. Ogni IP aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Se hai bisogno di più di ${ maxIPs } IP, ",
-        "Se hai bisogno di più di ${ maxIPs } IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contatto"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita.",
-        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita."
       ]
     },
     "Price": {
@@ -4531,6 +4540,9 @@
       ],
       "Apply gift code": [
         "Applica codice regalo"
+      ],
+      "Are you sure?": [
+        "Sei sicuro?"
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
@@ -5174,8 +5186,14 @@
       "Bitcoin address signature could not be verified": [
         "La firma dell'indirizzo bitcoin non può essere verificata"
       ],
+      "Boost transaction": [
+        "Incentiva la transazione"
+      ],
       "Boost transaction priority": [
         "Aumenta la priorità della transazione"
+      ],
+      "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
+        "Aumentando la tariffa di rete, puoi dare priorità alla velocità della transazione, cosi da essere elaborata e confermata più velocemente."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "Impossibile utilizzare il lettore QRCode. Verifica la compatibilità del browser"
@@ -5473,8 +5491,8 @@
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Prima di eliminarli, trasferisci i tuoi Bitcoin su un altro portafoglio. L'eliminazione di questo portafoglio rimuoverà tutti i relativi dati dai server di ${ BRAND_NAME }. Potrai recuperarlo in una fase successiva utilizzando la frase seed."
       ],
-      "Seed phrase (12-24 words)": [
-        "Seed phrase (12-24 parole)"
+      "Seed phrase (12 or 24 words, separated by space)": [
+        "Frase seme (12 o 24 parole, separate da spazio)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Queste 12 parole dovrebbero essere utilizzate per recuperare gli asset di questo portafoglio solo come ultima risorsa, ad esempio se perdi l'accesso al tuo account ${ BRAND_NAME }."
