@@ -74,6 +74,15 @@ export const sharedBy = {
     sorting: true,
 };
 
+export const uploadedBy = {
+    type: 'uploadedBy',
+    getText: () => c('Label').t`Uploaded by`,
+    props: {
+        className: 'w-1/5',
+    },
+    sorting: true,
+};
+
 export const accessCount = {
     type: 'numAccesses',
     getText: () => c('Label').t`# of downloads`,
@@ -110,6 +119,7 @@ export default {
     creationDate,
     sharedOnDate,
     sharedBy,
+    uploadedBy,
     expirationDate,
     accessCount,
 };

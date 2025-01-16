@@ -28,7 +28,7 @@ export const useBookmarksPublicView = ({ customPassword }: Props) => {
         const abortControler = new AbortController();
         void withLoading(async () => {
             const bookmarks = await listBookmarks(abortControler.signal);
-            setBookmarksTokens(new Set(bookmarks.map((bookmark) => bookmark.token.Token)));
+            setBookmarksTokens(new Set(bookmarks.map((bookmark) => bookmark.sharedUrlInfo.token)));
         });
         return () => {
             abortControler.abort();

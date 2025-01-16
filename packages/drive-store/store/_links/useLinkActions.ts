@@ -28,7 +28,7 @@ export default function useLinkActions() {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
     const events = useDriveEventManager();
-    const { getLink, getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
+    const { getLink, getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getSharePrivateKey, getShareCreatorKeys } = useShare();
     const volumeState = useVolumesState();
 
@@ -216,30 +216,8 @@ export default function useLinkActions() {
         }
     };
 
-    /**
-     * checkLinkMetaSignatures checks for all signatures of various attributes:
-     * passphrase, hash key, name or xattributes. It does not check content,
-     * that is file blocks including thumbnail block.
-     */
-    const checkLinkMetaSignatures = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
-        const [link] = await Promise.all([
-            // Decrypts name and xattributes.
-            getLink(abortSignal, shareId, linkId),
-            // Decrypts passphrase.
-            getLinkPrivateKey(abortSignal, shareId, linkId),
-        ]);
-        if (link.isFile) {
-            await getLinkSessionKey(abortSignal, shareId, linkId);
-        } else {
-            await getLinkHashKey(abortSignal, shareId, linkId);
-        }
-        // Get latest link with signature updates.
-        return (await getLink(abortSignal, shareId, linkId)).signatureIssues;
-    };
-
     return {
         createFolder,
         renameLink,
-        checkLinkMetaSignatures,
     };
 }

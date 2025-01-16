@@ -3,19 +3,22 @@ import type { ReadableStream } from 'web-streams-polyfill';
 
 import { useApi } from '@proton/components';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
+import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
 import type {
     DriveFileBlock,
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
 } from '@proton/shared/lib/interfaces/drive/file';
+import { type SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
+import { usePublicShareStore } from '../../zustand/public/public-share.store';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import type { DecryptedLink, SignatureIssues } from '../_links';
-import { useLink, useLinksListing } from '../_links';
+import { useLink } from '../_links';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
 import useDownloadDecryptionIssue from './DownloadProvider/useDownloadDecryptionIssue';
@@ -34,18 +37,44 @@ import type {
     Pagination,
 } from './interface';
 
+export interface UseDownloadProps {
+    customDebouncedRequest?: <T>(args: object, abortSignal?: AbortSignal) => Promise<T>;
+    loadChildren: (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkId: string,
+        foldersOnly?: boolean,
+        showNotification?: boolean,
+        showAll?: boolean
+    ) => Promise<void>;
+    getCachedChildren: (
+        abortSignal: AbortSignal,
+        shareId: string,
+        parentLinkId: string,
+        foldersOnly?: boolean
+    ) => {
+        links: DecryptedLink[];
+        isDecrypting: boolean;
+    };
+}
+
 /**
  * useDownload provides pure initDownload enhanced by retrieving information
  * about user's own folders and files from the app cache. If data is missing
  * in the app cache, it is downloaded from the server.
  */
-export default function useDownload() {
-    const debouncedRequest = useDebouncedRequest();
+export default function useDownload({ customDebouncedRequest, loadChildren, getCachedChildren }: UseDownloadProps) {
+    const defaultDebouncedRequest = useDebouncedRequest();
+    const debouncedRequest = customDebouncedRequest || defaultDebouncedRequest;
     const { getVerificationKey } = useDriveCrypto();
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
-    const { loadChildren, getCachedChildren } = useLinksListing();
     const { report } = useDownloadMetrics('preview');
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
+    const { publicShare, viewOnly } = usePublicShareStore((state) => ({
+        publicShare: state.publicShare,
+        viewOnly: state.viewOnly,
+    }));
+    const isPublicContext = !!publicShare;
 
     const api = useApi();
 
@@ -64,16 +93,29 @@ export default function useDownload() {
         pagination: Pagination,
         revisionId?: string
     ): Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }> => {
-        let link = await getLink(abortSignal, shareId, linkId);
-        revisionId ||= link.activeRevision?.id;
-        if (!revisionId) {
-            throw new Error(`Invalid link metadata, expected file`);
-        }
+        let Revision: DriveFileRevisionResult['Revision'];
+        if (isPublicContext) {
+            Revision = (
+                await debouncedRequest<DriveFileRevisionResult>(
+                    querySharedURLFileRevision(shareId, linkId, pagination),
+                    abortSignal
+                )
+            ).Revision;
+        } else {
+            let link = await getLink(abortSignal, shareId, linkId);
 
-        const { Revision } = await debouncedRequest<DriveFileRevisionResult>(
-            queryFileRevision(shareId, linkId, revisionId, pagination),
-            abortSignal
-        );
+            revisionId ||= link.activeRevision?.id;
+            if (!revisionId) {
+                throw new Error(`Invalid link metadata, expected file`);
+            }
+
+            Revision = (
+                await debouncedRequest<DriveFileRevisionResult>(
+                    queryFileRevision(shareId, linkId, revisionId, pagination),
+                    abortSignal
+                )
+            ).Revision;
+        }
         return {
             blocks: Revision.Blocks,
             // We sort hashes to have the Type 1 always at first place. This is necessary for signature verification.
@@ -94,6 +136,16 @@ export default function useDownload() {
             getLinkSessionKey(abortSignal, shareId, linkId),
         ]);
 
+        // If we are in viewOnly mode on public page we ignore signature as we can't check
+        if (viewOnly) {
+            return [
+                {
+                    privateKey: privateKey,
+                    sessionKeys: sessionKey,
+                },
+            ];
+        }
+
         // Getting keys above might find signature issue. Lets get fresh link
         // after that (not in parallel) to have fresh signature issues on it.
         const link = await getLink(abortSignal, shareId, linkId);
@@ -103,7 +155,9 @@ export default function useDownload() {
         const revisionSignatureAddress =
             revisionId && revisionId !== link.activeRevision?.id
                 ? await debouncedRequest<DriveFileRevisionResult>(
-                      queryFileRevision(shareId, linkId, revisionId),
+                      isPublicContext
+                          ? querySharedURLFileRevision(shareId, linkId)
+                          : queryFileRevision(shareId, linkId, revisionId),
                       abortSignal
                   ).then(({ Revision }) => Revision.SignatureAddress)
                 : link.activeRevision?.signatureEmail;
@@ -148,11 +202,25 @@ export default function useDownload() {
         };
     };
 
+    const scanFilesHash = async (
+        abortSignal: AbortSignal,
+        { hashes }: { hashes: string[] }
+    ): Promise<SharedFileScan | undefined> => {
+        const token = publicShare?.sharedUrlInfo.token;
+        if (!token) {
+            return undefined;
+        }
+        const checkResult = await debouncedRequest<SharedFileScan>(querySharedURLSecurity(token, hashes), abortSignal);
+
+        return checkResult;
+    };
+
     const initDownload = (
         name: string,
         list: LinkDownload[],
         eventCallbacks: DownloadEventCallbacks,
-        log: LogCallback
+        log: LogCallback,
+        options?: { virusScan?: boolean }
     ): DownloadControls => {
         return initDownloadPure(
             name,
@@ -166,9 +234,11 @@ export default function useDownload() {
                     await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
                     return eventCallbacks.onSignatureIssue?.(abortSignal, link, signatureIssues);
                 },
+                scanFilesHash: (abortSignal, hashes) => scanFilesHash(abortSignal, { hashes }),
             },
             log,
-            api
+            api,
+            options
         );
     };
 
@@ -195,6 +265,7 @@ export default function useDownload() {
                 onFinish: () => {
                     report(link.shareId, TransferState.Done, link.size);
                 },
+                scanFilesHash: (abortSignal, hashes) => scanFilesHash(abortSignal, { hashes }),
             },
             api
         );
