@@ -136,6 +136,7 @@ enum MailFeatureFlag {
     MailWebListTelemetry = 'MailWebListTelemetry',
     QuickReply = 'QuickReply',
     EmailWidgetSkeletonHidden = 'EmailWidgetSkeletonHidden',
+    MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
 }
 
 enum AdminFeatureFlag {
