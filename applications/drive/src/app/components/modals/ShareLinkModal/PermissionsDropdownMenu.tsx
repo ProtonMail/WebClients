@@ -15,8 +15,6 @@ import {
 import { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-import { UpgradeIcon } from './UpgradeIcon';
-
 export const MenuItem = ({
     iconName,
     label,
@@ -51,7 +49,6 @@ interface Props {
     disabled?: boolean;
     autocompleteOptions?: boolean;
     publicSharingOptions?: boolean;
-    havePublicEditorFeature?: boolean;
 }
 
 export const PermissionsDropdownMenu = ({
@@ -65,7 +62,6 @@ export const PermissionsDropdownMenu = ({
     isLoading = false,
     autocompleteOptions = false,
     publicSharingOptions = false,
-    havePublicEditorFeature = false,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -91,12 +87,7 @@ export const PermissionsDropdownMenu = ({
 
     const publicSharingPermissionsLabels = {
         [SHARE_URL_PERMISSIONS.VIEWER]: c('Label').t`Viewer`,
-        [SHARE_URL_PERMISSIONS.EDITOR]: (
-            <>
-                {c('Label').t`Editor`}
-                {!havePublicEditorFeature && <UpgradeIcon className="ml-2" />}
-            </>
-        ),
+        [SHARE_URL_PERMISSIONS.EDITOR]: c('Label').t`Editor`,
     };
 
     const getPermissionsOptionLabel = (permissions: number) => {
