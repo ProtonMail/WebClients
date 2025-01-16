@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { ContextVerificationOptions, PrivateKeyReference, PublicKeyReference , ContextSigningOptions} from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
@@ -27,14 +27,14 @@ interface EncryptAddressKeyTokenArguments {
     token: string;
     userKey: PrivateKeyReference;
     organizationKey?: PrivateKeyReference;
-    context?: Parameters<typeof CryptoProxy.signMessage<any>>[0]['context'];
+    signatureContext?: ContextSigningOptions;
 }
 
 export const encryptAddressKeyToken = async ({
     token,
     userKey,
     organizationKey,
-    context,
+    signatureContext,
 }: EncryptAddressKeyTokenArguments) => {
     const date = serverTime(); // ensure the signed message and the encrypted one have the same creation time, otherwise verification will fail
     const textData = token;
@@ -44,7 +44,7 @@ export const encryptAddressKeyToken = async ({
             date,
             signingKeys: [userKey],
             detached: true,
-            context,
+            signatureContext,
         }),
         organizationKey
             ? CryptoProxy.signMessage({
@@ -52,7 +52,7 @@ export const encryptAddressKeyToken = async ({
                   date,
                   signingKeys: [organizationKey],
                   detached: true,
-                  context,
+                  signatureContext,
               })
             : undefined,
     ]);
@@ -74,13 +74,13 @@ export const encryptAddressKeyToken = async ({
 interface EncryptAddressKeyUsingOrgKeyTokenArguments {
     token: string;
     organizationKey: PrivateKeyReference;
-    context?: Parameters<typeof CryptoProxy.signMessage<any>>[0]['context'];
+    signatureContext?: ContextSigningOptions;
 }
 
 export const encryptAddressKeyUsingOrgKeyToken = async ({
     token,
     organizationKey,
-    context,
+    signatureContext,
 }: EncryptAddressKeyUsingOrgKeyTokenArguments) => {
     const date = serverTime(); // ensure the signed message and the encrypted one have the same creation time, otherwise verification will fail
     const textData = token;
@@ -90,7 +90,7 @@ export const encryptAddressKeyUsingOrgKeyToken = async ({
         date,
         signingKeys: [organizationKey],
         detached: true,
-        context,
+        signatureContext,
     });
 
     const { message: encryptedToken } = await CryptoProxy.encryptMessage({
@@ -111,7 +111,7 @@ interface DecryptAddressKeyTokenArguments {
     Signature: string;
     privateKeys: PrivateKeyReference | PrivateKeyReference[];
     publicKeys: PublicKeyReference | PublicKeyReference[];
-    context?: Parameters<typeof CryptoProxy.decryptMessage<any>>[0]['context'];
+    signatureContext?: ContextVerificationOptions;
 }
 
 export const decryptAddressKeyToken = async ({
@@ -119,14 +119,14 @@ export const decryptAddressKeyToken = async ({
     Signature,
     privateKeys,
     publicKeys,
-    context,
+    signatureContext,
 }: DecryptAddressKeyTokenArguments) => {
     const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
         armoredMessage: Token,
         armoredSignature: Signature,
         decryptionKeys: privateKeys,
         verificationKeys: publicKeys,
-        context,
+        signatureContext,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
