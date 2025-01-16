@@ -196,9 +196,6 @@
       "Create and copy alias": [
         "Crear y copiar el alias"
       ],
-      "Create new document": [
-        "Crear un documento"
-      ],
       "Current plan": [
         "Plan actual"
       ],
@@ -620,6 +617,9 @@
       ],
       "Submit": [
         "Enviar"
+      ],
+      "Switch accounts": [
+        "Cambiar de cuenta"
       ],
       "Switch or add account": [
         "Cambiar o añadir cuenta"
@@ -4611,8 +4611,8 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Este documento tiene mucha actividad. Algunas funciones pueden no estar disponibles temporalmente."
       ],
-      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Este documento no existe o no tienes los permisos para verlo. Intenta recargar la página para ver si persiste el problema."
+      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "Es posible que este documento no exista o que no tengas los permisos necesarios para verlo con la cuenta seleccionada. Intenta con otra cuenta o contacta al propietario para obtener acceso."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora tu ${ defaultEmailAddress } para enviar mensajes nuevos."
@@ -8644,6 +8644,9 @@
       ],
       "Enable 2FA": [
         "Activar 2FA"
+      ],
+      "End-to-end encrypted": [
+        "Cifrado de extremo a extremo"
       ],
       "Enter 2FA code": [
         "Ingresa el código 2FA"
