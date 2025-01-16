@@ -21,17 +21,17 @@ import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/u
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
-import locales from './locales';
-import { extendStore, setupStore } from './redux-store/store';
-import { sendErrorReport } from './utils/errorHandling';
-import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
-import { initDriveWorker } from './utils/initDriveWorker';
-import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
-import { clearOPFS } from './utils/opfs';
-import { unleashVanillaStore } from './zustand/unleash/unleash.store';
+import locales from '../locales';
+import { extendStore, setupStore } from '../redux-store/store';
+import { sendErrorReport } from '../utils/errorHandling';
+import { getWebpackChunkFailedToLoadError } from '../utils/errorHandling/WebpackChunkFailedToLoadError';
+import { initDriveWorker } from '../utils/initDriveWorker';
+import { userSuccessMetrics } from '../utils/metrics/userSuccessMetrics';
+import { clearOPFS } from '../utils/opfs';
+import { unleashVanillaStore } from '../zustand/unleash/unleash.store';
 
 const getAppContainer = () =>
-    import(/* webpackChunkName: "MainPhotosContainer" */ './photos/PhotosWithAlbumsContainer')
+    import(/* webpackChunkName: "MainPhotosContainer" */ './PhotosWithAlbumsContainer')
         .then(({ MainPhotosContainer }) => MainPhotosContainer)
         .catch((e) => {
             const report = getWebpackChunkFailedToLoadError(e, 'MainPhotosContainer');
