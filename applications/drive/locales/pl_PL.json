@@ -312,6 +312,12 @@
       "Download logs": [
         "Pobierz logi"
       ],
+      "Download without scanning": [
+        "Pobierz bez skanowania"
+      ],
+      "Download without scanning (${ count })": [
+        "Pobierz bez skanowania (${ count })"
+      ],
       "Drive Locked": [
         "Dysk jest zablokowany"
       ],
@@ -356,6 +362,9 @@
       ],
       "Export contact group": [
         "Eksportuj grupę kontaktów"
+      ],
+      "Export selection as .vcf": [
+        "Eksportuj selekcję jako .vcf"
       ],
       "Fit to window": [
         "Dopasuj do okna"
@@ -506,6 +515,9 @@
       ],
       "Minimize transfers": [
         "Minimalizuj listę transferów"
+      ],
+      "More actions": [
+        "Więcej akcji"
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
@@ -3319,6 +3331,11 @@
         "Nie wybrano obrazu"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Niespodziewany błąd"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Dołączony plik ICS nie może zostać odszyfrowany"
@@ -3661,11 +3678,17 @@
       ]
     },
     "ICS event error": {
+      "Calendar time zone not supported": [
+        "Strefa czasowa kalendarza nie jest obsługiwana"
+      ],
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
       ],
       "End time out of bounds": [
         "Czas zakończenia jest poza zakresem"
+      ],
+      "Event validation failed": [
+        "Weryfikacja wydarzenia nie powiodła się"
       ],
       "Malformed end time": [
         "Czas zakończenia posiada nieprawidłowy format"
@@ -3673,8 +3696,14 @@
       "Malformed recurring event": [
         "Wydarzenie cykliczne posiada nieprawidłowy format"
       ],
+      "Malformed start time": [
+        "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
+      ],
+      "Time zone not supported": [
+        "Strefa czasowa nie jest obsługiwana"
       ]
     },
     "Import calendar": {
@@ -3826,11 +3855,17 @@
       "Use your app password instead of your regular password if:": [
         "Użyj hasła aplikacji, zamiast swojego zwykłego hasła, jeśli:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Hasło aplikacji jest prawidłowe. Nie używaj swojego zwykłego hasła."
+      ],
       "Your email account requires an app password to export your data.": [
         "Konto e-mail wymaga hasła aplikacji do eksportu danych."
       ],
       "Your email account requires one to export your data.": [
         "Konto e-mail wymaga tego hasła do eksportu danych."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Adres e-mail i hasło aplikacji są prawidłowe. Nie używaj swojego zwykłego hasła."
       ],
       "Your email address and password are correct.": [
         "Adres e-mail i hasło są prawidłowe."
@@ -4382,6 +4417,12 @@
       ],
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Utwórz bezpieczną chmurę dla ${ value } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników"
       ],
       "Create in": [
         "Utwórz w"
@@ -5102,6 +5143,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -8431,6 +8475,15 @@
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
@@ -10211,6 +10264,9 @@
       "Delete ${ item.name }?": [
         "Usunąć ${ item.name }?"
       ],
+      "Delete ${ links.length } items?": [
+        "Usunąć ${ links.length } elementy?"
+      ],
       "Delete ${ value }": [
         "Usuń ${ value }"
       ],
@@ -10592,6 +10648,9 @@
       "Unlock contacts groups": [
         "Odblokuj grupy kontaktów"
       ],
+      "Untitled document ${ date }": [
+        "Dokument bez nazwy ${ date }"
+      ],
       "Upgrade complete!": [
         "Ulepszenie zakończone!"
       ],
@@ -10668,6 +10727,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dzisiaj"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Tooltip": {
@@ -10751,11 +10815,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wysłaliśmy zaproszenie do elementu."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Validation": {

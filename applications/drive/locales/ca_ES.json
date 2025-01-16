@@ -7857,6 +7857,9 @@
       "Subfolder failed to be loaded": [
         "No s'ha pogut carregar la subcarpeta."
       ],
+      "The document failed to be created": [
+        "No s'ha creat el document."
+      ],
       "The item was not added to your drive": [
         "No s'ha afegit l'element al drive."
       ],
@@ -10295,6 +10298,9 @@
       "Unlock contacts groups": [
         "Desbloqueja grups de contactes"
       ],
+      "Untitled document ${ date }": [
+        "Document sense títol ${ date }"
+      ],
       "Upgrade complete!": [
         "S'ha millorat el pla."
       ],
@@ -10374,6 +10380,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Tooltip": {
@@ -10457,11 +10468,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Validation": {

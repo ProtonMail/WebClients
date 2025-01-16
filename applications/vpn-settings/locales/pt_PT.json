@@ -172,6 +172,9 @@
       "Create Gateway": [
         "Criar uma porta de entrada"
       ],
+      "Create new policy": [
+        "Criar uma política"
+      ],
       "Create users": [
         "Criar utilizadores"
       ],
@@ -460,7 +463,7 @@
       "Refer a friend": [
         "Referencie um amigo"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Atualizar os dados"
       ],
       "Refresh status": [
@@ -1103,6 +1106,9 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Aceda a conteúdo bloqueado e navegue com privacidade. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, streaming de alta velocidade, bloqueador de anúncios e proteção contra malware, acelerador de VPN e muito mais."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+, Prime Video e mais, de qualquer lugar."
       ],
@@ -2321,11 +2327,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Crie políticas para decidir quem pode conectar-se a servidores partilhados em cada país."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Todos os membros da sua organização podem conectar-se a servidores partilhados em todos os países."
+      ],
       "If disabled, only admins will have access.": [
         "Se desativado, apenas os administradores terão acesso."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Separe as diferentes facetas da sua vida e organize a sua caixa de entrada com endereços adicionais."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Ninguém na sua organização pode conectar-se a servidores partilhados."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspetos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
@@ -2649,7 +2664,7 @@
         "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
       ],
       "Please enter a valid Entity ID URL": [
-        "Insira um URL de ID de entidade válida."
+        "Introduza um URL de ID de entidade válida."
       ],
       "Please generate keys before you try to change your password": [
         "Gere chaves antes de tentar alterar a sua palavra-passe."
@@ -3003,7 +3018,7 @@
         "Se o utilizador já tiver um endereço ${ MAIL_APP_NAME }, introduza-o aqui. Caso contrário, é necessário criar uma conta primeiro."
       ],
       "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
-        "Se o utilizador já tiver uma conta ${ BRAND_NAME }, insira-a aqui. Caso contrário, é necessário criar uma conta primeiro."
+        "Se o utilizador já tiver uma conta ${ BRAND_NAME }, Introduza-a aqui. Caso contrário, é necessário criar uma conta primeiro."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "O convite será cancelado e o utilizador não poderá aderir a ${ organizationName }."
@@ -3175,7 +3190,7 @@
         "Tem a certeza que deseja eliminar a chave de segurança ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Introduza uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira a sua chave de segurança na porta USB do seu dispositivo."
@@ -3477,6 +3492,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Adicione este registo ao seu domínio no painel de controlo do seu registador de nome de domínio."
+      ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } sugestão foi encontrada. Utilize o teclado para navegar.",
         "${ itemsCount } sugestões foram encontradas. Utilize o teclado para navegar."
@@ -3497,6 +3515,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } utilizador atualmente tem acesso a servidores partilhados.",
+        "${ amountUsers }/${ totalUsers } utilizadores atualmente têm acesso a servidores partilhados."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -3693,6 +3715,9 @@
       "Allocated": [
         "Alocado"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permita que os utilizadores se conectem para proteger os servidores partilhados na secção **Países** da aplicação do ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Já foi alocado"
       ],
@@ -3792,6 +3817,12 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configure a autenticação SAML para a sua organização através de um fornecedor de identidade. Isto irá ativar o SAML para toda a organização."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configure a autenticação SAML para a sua organização através de um fornecedor de identidade como Okta, Microsoft Azure ou Google Identity Platform. Isto irá ativar o SAML para toda a organização."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de 1 hora."
       ],
@@ -3809,6 +3840,9 @@
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copie e cole este URL no campo URL do ACS (Assertion Consumer Service) do seu fornecedor de identidade."
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copie e cole esse URL no campo ID da entidade do seu fornecedor de identidade."
@@ -3844,6 +3878,9 @@
       ],
       "Current plan": [
         "Plano atual"
+      ],
+      "Custom": [
+        "Personalizado"
       ],
       "Custom branding": [
         "Marca personalizada"
@@ -3970,6 +4007,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "A encriptação de e-mail de ponta a ponta está ativada para este grupo."
       ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL do endpoint recebido do seu fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)."
+      ],
       "Enhance your network security": [
         "Melhore a sua segurança da rede"
       ],
@@ -3989,7 +4029,7 @@
         "Introduza o código enviado para ${ email }. Se não encontrar a mensagem na sua caixa de entrada, verifique a pasta de spam."
       ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Insira o ID da entidade de uma organização **eduGAIN** para **${ domain.DomainName }**."
+        "Introduza o ID da entidade de uma organização **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduza a palavra-passe da organização para restaurar privilégios de administrador. ${ learnMore }"
@@ -4057,6 +4097,9 @@
       "Get ${ upsellPlanName }": [
         "Obtenha o ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Aceda ao seu fornecedor de identidade, obtenha os metadados SAML para o ${ appName } e importe-os aqui."
+      ],
       "Group deleted": [
         "O grupo foi eliminado."
       ],
@@ -4065,6 +4108,9 @@
       ],
       "High Priority": [
         "Prioridade alta"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Chave pública do fornecedor de identidade para assinar as afirmações de autenticação. Deve haver um local para descarregar ou copiar o hash do certificado do fornecedor de identidade. Basta colar o hash do certificado no campo de área de texto."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se outro administrador alterou esta palavra-passe, terá de lhe solicitar a nova palavra-passe da organização."
@@ -4142,7 +4188,7 @@
         "Instale um ficheiro de configuração de um servidor Free para ligar a um servidor específico numa das três localizações disponíveis."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Instale um ficheiro de configuração Secure Core para beneficiar de protecção adicional contra compromissos no ponto final da VPN."
+        "Instale um ficheiro de configuração Secure Core para beneficiar de proteção adicional contra compromissos no endpoint da VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale um ficheiro de configuração do servidor para ligar a um servidor específico num país à sua escolha."
@@ -4354,6 +4400,12 @@
       "of": [
         "de"
       ],
+      "Off": [
+        "Desativado"
+      ],
+      "On": [
+        "Ativado"
+      ],
       "Once you reset your password:": [
         "Uma vez a sua palavra-passe redefinida:"
       ],
@@ -4446,8 +4498,8 @@
         "Introduza a frase de recuperação de 12 palavras associada à sua conta."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } crédito restante.",
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } crédito restante.",
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
         "abra um pedido de suporte"
@@ -4623,6 +4675,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Especifique o domínio com permissão para a autenticação SAML SSO."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "O SPF especifica quem está autorizado a enviar e-mails em nome do seu domínio. Certifique-se de adicionar o seguinte registo TXT na sua consola DNS (localizada na plataforma onde adquiriu o domínio personalizado)."
       ],
@@ -4768,6 +4823,9 @@
       "This will remove any enabled 2FA methods.": [
         "Isto removerá quaisquer métodos de autenticação de dois fatores (A2F) ativados."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Isto irá remover a autenticação única (SSO) para ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
@@ -4851,6 +4909,9 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
+      ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID único gerado pelo seu fornecedor de identidade, geralmente na forma de um URL que contém o nome do fornecedor de identidade (por exemplo, https://idp.exemplo.pt/XXXXX)."
       ],
       "Unknown event type": [
         "Categoria de evento desconhecida"
@@ -5004,6 +5065,9 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviaremos um código de reposição para o número de telefone que forneceu para a recuperação da conta."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Ao ativar o SAML para o ${ appName } no seu fornecedor de identidade, poderá ser solicitado a utilizar o URL de callback (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu fornecedor de identidade."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Quando cancelar a sua subscrição paga atual, o saldo da sua subscrição será devolvido como créditos na conta e será alterado para o plano ${ BRAND_NAME } ${ PLANS.FREE }."
@@ -5639,6 +5703,9 @@
       ],
       "Metadata URL for ${ appName }": [
         "URL de metadados para o ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Método para importar metadados"
       ],
       "Moderate NAT": [
         "NAT moderado"
@@ -8100,7 +8167,7 @@
         "Ocorreu um erro"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
-        "O endereço de e-mail **${ email }** já existe como utilizador do ${ BRAND_NAME } . Insira o endereço de e-mail de um utilizador do seu fornecedor de identidade."
+        "O endereço de e-mail **${ email }** já existe como utilizador do ${ BRAND_NAME } . Introduza o endereço de e-mail de um utilizador do seu fornecedor de identidade."
       ]
     },
     "saml: Info": {
@@ -8111,7 +8178,7 @@
         "Detalhes"
       ],
       "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
-        "Insira o endereço de e-mail de um utilizador do seu fornecedor de identidade para **${ domainName }**."
+        "Introduza o endereço de e-mail de um utilizador do seu fornecedor de identidade para **${ domainName }**."
       ],
       "Test in progress...": [
         "Teste em curso..."
@@ -8164,10 +8231,10 @@
         "**Pré-requisito:** para ativar o provisionamento SCIM, deve verificar a propriedade do domínio **${ domainName }**. Esta verificação pode demorar até uma hora."
       ],
       "Enter the token into your identity provider": [
-        "Insira o token no seu fornecedor de identidade"
+        "Introduza o token no seu fornecedor de identidade"
       ],
       "Enter URL and token into your identity provider": [
-        "Insira o URL e o token no seu fornecedor de identidade."
+        "Introduza o URL e o token no seu fornecedor de identidade."
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
         "Por razões de segurança, o token SCIM será ocultado após guardar as suas alterações e não poderá vê-lo novamente."
@@ -8876,7 +8943,7 @@
         "Dispositivos disponíveis"
       ],
       "Enter the confirmation code we sent to this user.": [
-        "Insira o código de confirmação que enviamos para este utilizador."
+        "Introduza o código de confirmação que enviamos para este utilizador."
       ],
       "Enter your backup password": [
         "Introduza a sua palavra-passe de backup"
@@ -8963,7 +9030,7 @@
         "Para garantir que realmente é você a iniciar sessão em **${ email }**, verifique o código de confirmação e aprove a solicitação em outro dispositivo."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
-        "Para garantir que é realmente você a tentar iniciar sessão, insira a sua palavra-passe de backup."
+        "Para garantir que é realmente você a tentar iniciar sessão, Introduza a sua palavra-passe de backup."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Para garantir que realmente é você a tentar entrar na sua conta, partilhe o código de confirmação com o seu administrador **${ adminEmail }** para poder aprovar a solicitação para **${ email }**."
@@ -10248,13 +10315,16 @@
         "Ativar para todos os utilizadores"
       ],
       "Enter 2FA code": [
-        "Insira o código 2FA"
+        "Introduza o código 2FA"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Introduza os endpoints no seu fornecedor de identidade"
       ],
       "Enter SAML metadata": [
         "Introduzir os metadados SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Insira os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
+        "Introduza os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
       ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
@@ -10544,7 +10614,7 @@
         "Desbloquear os seus dados"
       ],
       "Upgrade complete!": [
-        "Atualização completa!"
+        "A subscrição foi atualizada."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Melhore a sua proteção da rede com servidores dedicados"
@@ -10683,6 +10753,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Alterne automaticamente entre os seus temas preferidos para o dia e para a noite, em sincronia com os modos diurno e noturno do seu sistema."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copie e cole este URL no campo URL do ACS (Assertion Consumer Service) do seu fornecedor de identidade."
+      ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copie e cole esse URL no campo ID da entidade do seu fornecedor de identidade."
       ],
@@ -10692,8 +10765,14 @@
       "Display name for the entity in the eduGAIN database": [
         "Nome a mostrar para a entidade no banco de dados do eduGAIN"
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL do endpoint do fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)"
+      ],
       "Feature in early access": [
         "Funcionalidade em acesso antecipado"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Chave pública do fornecedor de identidade para assinar as afirmações de autenticação. Obtenha o hash do certificado do seu fornecedor de identidade."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, introduza-o aqui."
@@ -10703,6 +10782,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Os membros que não utilizam a autenticação A2F receberão um e-mail pedindo-lhes que o ativem o mais rapidamente possível."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Especifique o domínio com permissão para a autenticação SAML SSO."
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Especifique os utilizadores da entidade eduGAIN autorizados a autenticar com a autenticação única (SSO) SAML."
@@ -10724,6 +10806,9 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Os utilizadores verão o seu logo em vez do ícone da ${ BRAND_NAME } quando estiverem conectados nas nossas aplicações web."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Geralmente um URL que contém o nome do fornecedor de identidade"
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"

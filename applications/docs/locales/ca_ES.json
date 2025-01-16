@@ -196,9 +196,6 @@
       "Create and copy alias": [
         "Crea i copia un àlies"
       ],
-      "Create new document": [
-        "Crea un nou document"
-      ],
       "Current plan": [
         "Pla actual"
       ],
@@ -620,6 +617,9 @@
       ],
       "Submit": [
         "Envia"
+      ],
+      "Switch accounts": [
+        "Canvia de compte"
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
@@ -4606,8 +4606,8 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Aquest document té molta activitat. Algunes funcions poden estar temporalment no disponibles."
       ],
-      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "És possible que aquest document no existeixi o que no tingueu permís per a veure'l. Podeu intentar tornar a carregar la pàgina per veure si el problema persisteix."
+      "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
+        "És possible que aquest document no existeixi o que no tingueu els permisos necessaris per visualitzar-lo amb el vostre compte seleccionat. Proveu amb un altre compte o contacteu amb el propietari per accedir-hi."
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
@@ -8636,6 +8636,9 @@
       ],
       "Enable 2FA": [
         "Activa l'autenticació 2FA"
+      ],
+      "End-to-end encrypted": [
+        "Xifrat d'extrem a extrem"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"
