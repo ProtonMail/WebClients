@@ -4,12 +4,12 @@ import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useS
 import type { Breakpoints } from '@proton/components';
 import { useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
-import { FeatureCode, useFeature } from '@proton/features';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash/index';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -97,7 +97,7 @@ const MessageView = (
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
-    const { feature: quickReplyFeature } = useFeature(FeatureCode.QuickReply);
+    const quickReplyFeatureEnabled = useFlag('QuickReply');
     const getInitialExpand = () => !conversationMode && !isDraft(inputMessage) && !isOutbox(inputMessage);
 
     // Actual expanded state
@@ -234,7 +234,7 @@ const MessageView = (
     const quickReplyIsFocused = hasFocus !== undefined ? hasQuickReplyFocus && hasFocus : hasQuickReplyFocus;
 
     const canShowQuickReply =
-        quickReplyFeature?.Value &&
+        quickReplyFeatureEnabled &&
         !isDraft(message.data) &&
         !isScheduled(message.data) &&
         !isOutbox(message.data) &&
