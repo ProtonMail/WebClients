@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { requestAliasOptions } from '@proton/pass/store/actions';
 import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
@@ -12,15 +13,17 @@ export type SanitizedAliasOptions = {
 };
 
 export type UseAliasOptionsParams = {
-    lazy?: boolean /* defer the alias options dispatch */;
+    /** Defers the alias options dispatch */
+    lazy?: boolean;
     shareId: string;
     onAliasOptionsLoaded?: (aliasOptions: SanitizedAliasOptions) => MaybePromise<void>;
 };
 
 export type UseAliasOptionsResult = {
     loading: boolean;
-    request: () => void;
+    unverified: boolean;
     value: MaybeNull<SanitizedAliasOptions>;
+    request: () => void;
 };
 
 export const useAliasOptions = ({
@@ -29,8 +32,10 @@ export const useAliasOptions = ({
     onAliasOptionsLoaded,
 }: UseAliasOptionsParams): UseAliasOptionsResult => {
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<SanitizedAliasOptions>>(null);
+    const [unverified, setUnverified] = useState(false);
 
     const getAliasOptions = useRequest(requestAliasOptions, {
+        onFailure: (err) => setUnverified(err.code === PassErrorCode.UNVERIFIED_USER),
         onSuccess: (options) => {
             const sanitized = {
                 suffixes: options.suffixes.map(({ suffix, signedSuffix }) => ({
@@ -52,9 +57,10 @@ export const useAliasOptions = ({
     return useMemo(
         () => ({
             loading: getAliasOptions.loading,
-            request: () => getAliasOptions.dispatch(shareId),
+            unverified,
             value: aliasOptions,
+            request: () => getAliasOptions.dispatch(shareId),
         }),
-        [aliasOptions, getAliasOptions.loading, shareId]
+        [aliasOptions, getAliasOptions.loading, unverified, shareId]
     );
 };

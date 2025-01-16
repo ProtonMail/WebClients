@@ -203,7 +203,6 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
 
     listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
     listeners.addListener(window, 'hashchange', () => iframe.close({ discard: false }));
-    listeners.addListener(window, 'unload', () => iframe.close({ discard: false }));
     listeners.addListener(window, 'beforeunload', () => iframe.close({ discard: false }));
 
     const dropdown: InjectedDropdown = {

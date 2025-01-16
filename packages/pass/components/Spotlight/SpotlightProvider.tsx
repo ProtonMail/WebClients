@@ -45,19 +45,15 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
     const [spotlightMessage, setSpotlightMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
 
-    /** When spotlight message shows `PENDING_SHARE_ACCESS` from synchronous local
-     * cache read on boot, and cache later invalidates asynchronously, the pending
-     * access modal should close after cache updates with confirmed access. */
+    /** Handle state transitions for pending share access modal:
+     * - On boot: Shows modal when local cache returns `PENDING_SHARE_ACCESS`
+     * - After boot: Closes modal when cache invalidates with confirmed access
+     * - Edge case: Also closes modal if invite arrives while modal is open */
     const pendingShareAccess = useSelector(selectHasPendingShareAccess);
-    const pendingShareAccessModalOpened = state.pendingShareAccess && pendingShareAccess;
+    const pendingShareAccessModalOpened = state.pendingShareAccess && pendingShareAccess && !latestInvite;
 
     const timer = useRef<NodeJS.Timeout>();
     const messageRef = useStatefulRef(state.message);
-
-    const closePendingShareAccess = () => {
-        void spotlight.acknowledge(SpotlightMessage.PENDING_SHARE_ACCESS);
-        setState((prev) => ({ ...prev, pendingShareAccess: false }));
-    };
 
     const setMessage = useCallback((next: MaybeNull<SpotlightMessageDefinition>) => {
         if (messageRef.current?.id !== next?.id) {
@@ -117,7 +113,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <SpotlightContext.Provider value={ctx}>
             {children}
-            <PendingShareAccessModal open={pendingShareAccessModalOpened} onClose={closePendingShareAccess} />
+            {pendingShareAccessModalOpened && <PendingShareAccessModal />}
             <PendingNewUsersApprovalModal />
         </SpotlightContext.Provider>
     );
