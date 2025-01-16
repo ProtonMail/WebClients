@@ -23,6 +23,7 @@ import noop from '@proton/utils/noop';
 
 import locales from './locales';
 import { extendStore, setupStore } from './redux-store/store';
+import { getMetricsUserPlan } from './store/_user/getMetricsUserPlan';
 import { sendErrorReport } from './utils/errorHandling';
 import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
 import { initDriveWorker } from './utils/initDriveWorker';
@@ -84,7 +85,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             ]);
 
             await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
-            await userSuccessMetrics.setLocalUser(authentication.getUID(), user.isPaid);
+            await userSuccessMetrics.setLocalUser(
+                authentication.getUID(),
+                getMetricsUserPlan({ user, isPublicContext: false })
+            );
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
 

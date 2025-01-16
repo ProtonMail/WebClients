@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
+import { MetricShareType, MetricUserPlan, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import { VerificationError } from '../worker/verifier';
@@ -177,9 +177,8 @@ describe('useUploadMetrics::', () => {
 
         beforeEach(() => {
             jest.resetAllMocks();
-            const isPaid = true;
             const { result } = renderHook(() =>
-                useUploadMetrics(isPaid, {
+                useUploadMetrics(MetricUserPlan.Paid, {
                     drive_upload_success_rate_total: { increment: mockMetricsSuccessRate },
                     drive_upload_errors_total: { increment: mockMetricsErrors },
                     drive_upload_erroring_users_total: { increment: mockMetricsErroringUsers },
@@ -230,9 +229,8 @@ describe('useUploadMetrics::', () => {
 
         beforeEach(() => {
             jest.resetAllMocks();
-            const isPaid = true;
             const { result } = renderHook(() =>
-                useUploadMetrics(isPaid, {
+                useUploadMetrics(MetricUserPlan.Paid, {
                     drive_upload_success_rate_total: { increment: mockMetricsSuccessRate },
                     drive_upload_errors_total: { increment: mockMetricsErrors },
                     drive_upload_erroring_users_total: { increment: mockMetricsErroringUsers },

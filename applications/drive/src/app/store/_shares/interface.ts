@@ -12,6 +12,7 @@ type WithSRPPayload<T extends any> = T & {
 
 // Share type string used in metrics context, do not confuse with ShareType enum.
 export type ShareTypeString = 'main' | 'device' | 'photo' | 'shared';
+export type ShareTypeStringWithPublic = ShareTypeString | 'shared_public';
 
 export enum ShareType {
     default = 1,

@@ -10,7 +10,7 @@
  */
 export interface HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson {
   Labels: {
-    plan: "free" | "paid" | "unknown";
+    plan: "free" | "paid" | "anonymous" | "unknown";
     coreFeatureError: "true" | "false";
     recoveredError: "true" | "false";
     handledError: "true" | "false";

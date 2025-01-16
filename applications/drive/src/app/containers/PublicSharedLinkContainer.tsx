@@ -21,6 +21,7 @@ import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveWebShareURLSignupModal } from '../store/_bookmarks/useDriveWebShareURLSignupModal';
 import { useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
+import { getMetricsUserPlan } from '../store/_user/getMetricsUserPlan';
 import { sendErrorReport } from '../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../utils/errorHandling/apiErrors';
 import { Actions, countActionWithTelemetry } from '../utils/telemetry';
@@ -143,7 +144,7 @@ function PublicShareLinkInitContainer() {
             const errorMetricType = getErrorMetricTypeOnPublicPage(error);
             metrics.drive_public_share_load_error_total.increment({
                 type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
-                plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
+                plan: getMetricsUserPlan({ user, isPublicContext: true }),
                 error: errorMetricType,
             });
 
@@ -166,7 +167,7 @@ function PublicShareLinkInitContainer() {
                         setLink(link);
                         metrics.drive_public_share_load_success_total.increment({
                             type: link.isFile ? 'file' : 'folder',
-                            plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
+                            plan: getMetricsUserPlan({ user, isPublicContext: true }),
                         });
                         countActionWithTelemetry(Actions.PublicLinkVisit);
                     })

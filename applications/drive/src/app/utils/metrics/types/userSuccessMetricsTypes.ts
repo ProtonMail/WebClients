@@ -1,3 +1,5 @@
+import type { MetricUserPlan } from '../../type/MetricTypes';
+
 export enum UserAvailabilityTypes {
     coreFeatureError = 'coreFeatureError',
     recoveredError = 'recoveredError',
@@ -36,9 +38,9 @@ export interface MetricSharedWorkerInterface {
      * Sets the local user information.
      * @param connectionId - The unique identifier for the ShareWorker connection (private app=localID, public app=random uuid).
      * @param uid - The user's unique identifier necessary for the backend authentification.
-     * @param plan - The user's subscription plan, either 'paid' or 'free'.
+     * @param plan - The user's subscription plan, which can 'paid', 'free', 'anonymous', 'unknown'.
      */
-    setLocalUser: (connectionId: string, uid: string, plan: 'paid' | 'free') => void;
+    setLocalUser: (connectionId: string, uid: string, plan: MetricUserPlan) => void;
 
     /**
      * Disconnects a specific connection.

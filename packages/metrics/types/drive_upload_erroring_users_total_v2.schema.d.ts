@@ -10,8 +10,8 @@
  */
 export interface HttpsProtonMeDriveUploadErroringUsersTotalV2SchemaJson {
   Labels: {
-    plan: "free" | "paid";
-    shareType: "main" | "device" | "photo" | "shared";
+    plan: "free" | "paid" | "anonymous" | "unknown";
+    shareType: "main" | "device" | "photo" | "shared" | "shared_public";
     initiator: "background" | "explicit";
   };
   Value: number;
