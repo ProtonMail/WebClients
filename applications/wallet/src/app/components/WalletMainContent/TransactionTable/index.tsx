@@ -143,14 +143,17 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
 
                 {noteModalState.data && (
                     <TransactionNoteModal
-                        hashedTxId={noteModalState.data.hashedTxId}
+                        transactionDataKey={noteModalState.data.transactionDataKey}
                         apiWalletData={wallet}
                         {...noteModalState}
                     />
                 )}
 
                 {unknownSenderModal.data && (
-                    <UnknownSenderModal hashedTxId={unknownSenderModal.data.hashedTxId} {...unknownSenderModal} />
+                    <UnknownSenderModal
+                        transactionDataKey={unknownSenderModal.data.transactionDataKey}
+                        {...unknownSenderModal}
+                    />
                 )}
             </>
         );
