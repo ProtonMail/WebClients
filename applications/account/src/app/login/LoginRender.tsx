@@ -14,6 +14,7 @@ export interface RenderProps {
     subTitle?: string;
     onBack?: () => void;
     content: ReactNode;
+    beforeMain?: ReactNode;
     toApp?: APP_NAMES;
     step: AuthStep;
 }
@@ -23,6 +24,7 @@ export type Render = (renderProps: RenderProps) => ReactNode;
 export const defaultElectronPassLoginRender = (data: RenderProps) => {
     return (
         <Layout toApp={data.toApp}>
+            {data.beforeMain}
             <Main>
                 <Header onBack={data.onBack} title={data.title} subTitle={data.subTitle} />
                 <Content>{data.content}</Content>
@@ -40,6 +42,7 @@ export const defaultLoginRender = (data: RenderProps) => {
             hasDecoration={data.step === AuthStep.LOGIN}
             bottomRight={<PublicHelpLink />}
         >
+            {data.beforeMain}
             <Main>
                 <Header onBack={data.onBack} title={data.title} subTitle={data.subTitle} />
                 <Content>{data.content}</Content>
