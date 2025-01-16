@@ -132,7 +132,7 @@ export const InboxDesktopSettingsSection = () => {
                     <DownloadButton link={macosApp.File[0]!.Url} />
                 </DownloadCard>
                 <DownloadCard version={linuxApp.Version} icon="brand-linux" platform={DESKTOP_PLATFORMS.LINUX}>
-                    <DownloadDropdown app={linuxApp} />
+                    {linuxApp.Version && <DownloadDropdown app={linuxApp} />}
                 </DownloadCard>
             </div>
         </SettingsSectionWide>
