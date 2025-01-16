@@ -172,6 +172,9 @@
       "Create Gateway": [
         "Δημιουργία Πύλης"
       ],
+      "Create new policy": [
+        "Δημιουργία νέας πολιτικής"
+      ],
       "Create users": [
         "Δημιουργία χρηστών"
       ],
@@ -460,7 +463,7 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Ανανέωση δεδομένων"
       ],
       "Refresh status": [
@@ -2324,11 +2327,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
+      ],
       "If disabled, only admins will have access.": [
         "Εάν είναι απενεργοποιημένο, μόνο οι διαχειριστές θα έχουν πρόσβαση."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Κρατήστε διαφορετικά μέρη της ζωής σας ξεχωριστά και τα εισερχόμενά σας οργανωμένα με πρόσθετες διευθύνσεις."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Κανείς στον οργανισμό σας δεν μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
@@ -3503,6 +3515,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } χρήστης διαθέτει προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές",
+        "${ amountUsers }/${ totalUsers } χρήστες διαθέτουν προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
@@ -3699,6 +3715,9 @@
       "Allocated": [
         "Κατανεμημένος"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
       ],
@@ -3859,6 +3878,9 @@
       ],
       "Current plan": [
         "Τρέχον πλάνο"
+      ],
+      "Custom": [
+        "Προσαρμοσμένο"
       ],
       "Custom branding": [
         "Προσαρμοσμένη επωνυμία"
@@ -4377,6 +4399,12 @@
       ],
       "of": [
         "από"
+      ],
+      "Off": [
+        "Ανενεργό"
+      ],
+      "On": [
+        "Ενεργό"
       ],
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
