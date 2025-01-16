@@ -7,7 +7,9 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 export const getVerificationSentText = (address: string) => {
@@ -25,14 +27,24 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
 
     const handleSendVerificationEmailClick = async () => {
         setLoading(true);
-        await api(postVerifySend({ Type: 'recovery_email' }));
+        try {
+            await api(postVerifySend({ Type: 'recovery_email' }));
 
-        createNotification({
-            type: 'success',
-            text: getVerificationSentText(email.Value),
-        });
+            createNotification({
+                type: 'success',
+                text: getVerificationSentText(email.Value),
+            });
 
-        onClose?.();
+            onClose?.();
+        } catch (error) {
+            const { code } = getApiError(error);
+
+            if (code === API_CUSTOM_ERROR_CODES.ACCOUNT_LOCKED) {
+                onClose?.();
+            } else {
+                throw error;
+            }
+        }
     };
     return (
         <Prompt
