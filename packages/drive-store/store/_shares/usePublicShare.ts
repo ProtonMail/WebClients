@@ -2,7 +2,9 @@ import { useApi } from '@proton/components';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 import type { SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { usePublicSession } from '../_api';
+import { usePublicShareStore } from '../../zustand/public/public-share.store';
+import { sharedUrlInfoPayloadToSharedUrlInfo, usePublicSession } from '../_api';
+import usePublicToken from '../../hooks/drive/usePublicToken';
 import { useLink } from '../_links';
 import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
 
@@ -11,9 +13,14 @@ import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
  */
 export default function usePublicShare() {
     const api = useApi();
+    const { token } = usePublicToken();
     const { user, request, getSessionInfo } = usePublicSession();
     const { decryptPublicShareLink } = useDecryptPublicShareLink();
-    const { getLinkPassphraseAndSessionKey } = useLink();
+    const { setPublicShare } = usePublicShareStore((state) => ({
+        publicShare: state.publicShare,
+        setPublicShare: state.setPublicShare,
+    }));
+    const { getLinkPassphraseAndSessionKey, getLink } = useLink();
 
     const loadPublicShare = async (abortSignal: AbortSignal) => {
         const sessionInfo = getSessionInfo();
@@ -21,22 +28,28 @@ export default function usePublicShare() {
             throw new Error('Unauthenticated session');
         }
 
-        const { Token } = await request<{ Token: SharedURLInfoPayload }>({
-            ...querySharedURLInformation(sessionInfo.token),
-            silence: true,
-        });
+        const { Token } = await request<{ Token: SharedURLInfoPayload }>(
+            {
+                ...querySharedURLInformation(sessionInfo.token),
+                silence: true,
+            },
+            abortSignal
+        );
+        const sharedUrlInfo = sharedUrlInfoPayloadToSharedUrlInfo(Token);
 
         const link = await decryptPublicShareLink(abortSignal, {
             token: sessionInfo.token,
             urlPassword: sessionInfo.password,
-            shareUrlInfo: Token,
+            sharedUrlInfo,
         });
 
-        return {
-            token: sessionInfo.token,
+        const publicShare = {
+            sharedUrlInfo,
             link,
-            permissions: Token.Permissions,
         };
+        setPublicShare(publicShare);
+
+        return publicShare;
     };
 
     const submitAbuseReport = async (params: {
@@ -65,9 +78,37 @@ export default function usePublicShare() {
         );
     };
 
+    const getVirusReportInfo = async ({
+        linkId,
+        errorMessage,
+        rootLinkId,
+    }: {
+        linkId?: string;
+        errorMessage?: string;
+        rootLinkId: string;
+    }) => {
+        // Fallback to rootLink if we don't have linkId (Multiple download as zip)
+        const link = await getLink(new AbortController().signal, token, linkId || rootLinkId);
+        let comment = `File "${link.name}" is detected as potential malware.`;
+        if (errorMessage) {
+            comment = `${comment} Message from scanning is "${errorMessage}"`;
+        }
+
+        return {
+            linkInfo: {
+                linkId: link.linkId,
+                name: link.name,
+                mimeType: link.mimeType,
+                size: link.size,
+            },
+            comment,
+        };
+    };
+
     return {
         loadPublicShare,
         submitAbuseReport,
+        getVirusReportInfo,
         user,
     };
 }

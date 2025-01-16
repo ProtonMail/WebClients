@@ -7,6 +7,7 @@ import type { Download, TransferType, Upload } from './transfer';
 export interface TransferProps<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;
     type: T;
+    onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
 }
 
 export interface TransferManagerButtonProps {

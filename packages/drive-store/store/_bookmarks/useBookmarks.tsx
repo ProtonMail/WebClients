@@ -6,7 +6,7 @@ import {
 } from '@proton/shared/lib/api/drive/bookmark';
 import type { BookmarkPayload } from '@proton/shared/lib/interfaces/drive/bookmark';
 
-import { useDebouncedRequest } from '../_api';
+import { sharedUrlInfoPayloadToSharedUrlInfo, useDebouncedRequest } from '../_api';
 import { useDefaultShare, useShare } from '../_shares';
 
 export const useBookmarks = () => {
@@ -20,7 +20,7 @@ export const useBookmarks = () => {
                 Bookmarks.map((bookmark) => ({
                     encryptedUrlPasword: bookmark.EncryptedUrlPassword,
                     createTime: bookmark.CreateTime,
-                    token: bookmark.Token,
+                    sharedUrlInfo: sharedUrlInfoPayloadToSharedUrlInfo(bookmark.Token),
                 }))
         );
 

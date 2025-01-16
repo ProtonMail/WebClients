@@ -13,6 +13,7 @@ import {
     isTransferDone,
     isTransferError,
     isTransferManuallyPaused,
+    isTransferScanIssue,
     isTransferSkipped,
 } from '../../utils/transfer';
 import type { Download, TransfersStats, Upload } from './transfer';
@@ -24,9 +25,10 @@ interface Props {
     minimized: boolean;
     onToggleMinimize: () => void;
     onClose: () => void;
+    theme: 'prominent' | 'standard';
 }
 
-const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimized = false }: Props) => {
+const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimized = false, theme }: Props) => {
     const [uploadsInSession, setUploadsInSession] = useState<Upload[]>([]);
     const [downloadsInSession, setDownloadsInSession] = useState<Download[]>([]);
 
@@ -41,6 +43,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
 
     const pausedTransfers = useMemo(() => transfers.filter(isTransferManuallyPaused), [transfers]);
     const failedTransfers = useMemo(() => transfers.filter(isTransferError), [transfers]);
+    const failedScanTransfers = useMemo(() => transfers.filter(isTransferScanIssue), [transfers]);
     const canceledTransfers = useMemo(() => transfers.filter(isTransferCanceled), [transfers]);
     const skippedTransfers = useMemo(() => transfers.filter(isTransferSkipped), [transfers]);
 
@@ -78,6 +81,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
         const doneCount = doneUploadsCount + doneDownloadsCount;
 
         const errorCount = failedTransfers.length;
+        const scanErrorCount = failedScanTransfers.length;
         const canceledCount = canceledTransfers.length;
         const skippedCount = skippedTransfers.length;
         const pausedCount = pausedTransfers.length;
@@ -163,6 +167,21 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
             headingElements.push(c('Info').ngettext(msgid`${errorCount} failed`, `${errorCount} failed`, errorCount));
         }
 
+        if (scanErrorCount) {
+            const scanErrorMessage = scanErrorCount === 1 && failedScanTransfers[0].error?.message;
+            if (scanErrorMessage) {
+                headingElements.push(scanErrorMessage);
+            } else {
+                headingElements.push(
+                    c('Info').ngettext(
+                        msgid`${scanErrorCount} scan failed`,
+                        `${scanErrorCount} scan failed`,
+                        errorCount
+                    )
+                );
+            }
+        }
+
         return headingElements.join(', ');
     };
 
@@ -170,7 +189,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
     const closeTitle = c('Action').t`Close transfers`;
 
     return (
-        <div className="transfers-manager-heading ui-prominent flex items-center flex-nowrap px-2">
+        <div className={`transfers-manager-heading ui-${theme} flex items-center flex-nowrap px-2`}>
             <div
                 role="presentation"
                 className="flex-1 p-2"

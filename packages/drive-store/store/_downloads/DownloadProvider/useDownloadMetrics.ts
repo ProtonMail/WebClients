@@ -19,7 +19,7 @@ import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { DownloadErrorCategoryType, MetricShareTypeWithPublic } from '../../../utils/type/MetricTypes';
 import { MetricSharePublicType } from '../../../utils/type/MetricTypes';
 import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
-import useSharesState from '../../_shares/useSharesState';
+import { useSharesStore } from '../../../zustand/share/shares.store';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
 import { selectMechanismForDownload } from '../fileSaver/fileSaver';
 import type { Download } from './interface';
@@ -56,7 +56,7 @@ export const useDownloadMetrics = (
     initiator: HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson['Labels']['initiator'],
     user?: UserModel
 ) => {
-    const { getShare } = useSharesState();
+    const getShare = useSharesStore((state) => state.getShare);
     const [processed, setProcessed] = useState<Set<string>>(new Set());
     const lastErroringUserReport = useRef(0);
 
@@ -88,11 +88,12 @@ export const useDownloadMetrics = (
         });
 
         // Web only metric
-        const mechanism = selectMechanismForDownload(size);
-        metrics.drive_download_mechanism_success_rate_total.increment({
-            status: state === TransferState.Done ? 'success' : 'failure',
-            retry: retry ? 'true' : 'false',
-            mechanism,
+        selectMechanismForDownload(size).then((mechanism) => {
+            metrics.drive_download_mechanism_success_rate_total.increment({
+                status: state === TransferState.Done ? 'success' : 'failure',
+                retry: retry ? 'true' : 'false',
+                mechanism,
+            });
         });
     };
 

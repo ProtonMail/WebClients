@@ -13,7 +13,7 @@ export const PhotosContext = createContext<{
     shareId?: string;
     linkId?: string;
     volumeId?: string;
-    isLoading: boolean;
+    isPhotosLoading: boolean;
     photos: Photo[];
     loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
     removePhotosFromCache: (linkIds: string[]) => void;
@@ -81,7 +81,7 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
                 shareId: photosShare?.shareId,
                 linkId: photosShare?.rootLinkId,
                 volumeId: photosShare?.volumeId,
-                isLoading: photosLoading,
+                isPhotosLoading: photosLoading,
                 photos,
                 loadPhotos,
                 removePhotosFromCache,

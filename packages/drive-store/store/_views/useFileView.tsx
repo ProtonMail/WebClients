@@ -9,11 +9,12 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { isIgnoredError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
+import { usePublicSession } from '../_api';
 import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
-import usePublicDownload from '../_downloads/usePublicDownload';
+import type { UseDownloadProps } from '../_downloads/useDownload';
 import type { DecryptedLink } from '../_links';
-import { useLink } from '../_links';
+import { useLink, useLinksListing, usePublicLinksListing } from '../_links';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useFileViewNavigation, usePublicFileViewNavigation } from './useFileNavigation';
 import { DEFAULT_SORT } from './usePublicFolderView';
@@ -23,7 +24,7 @@ import type { SortParams } from './utils/useSorting';
  * useFileView provides data for file preview.
  */
 export default function useFileView(shareId: string, linkId: string, useNavigation = false, revisionId?: string) {
-    const { downloadStream, getPreviewThumbnail } = useDownload();
+    const { getCachedChildren, loadChildren } = useLinksListing();
     const { downloadDocument } = useDocumentActions();
     const { getSharePermissions } = useDirectSharingInfo();
     // permissions load will be during the withLoading process, but we prefer to set owner by default,
@@ -33,9 +34,8 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
         shareId,
         linkId,
-        downloadStream,
-        revisionId,
-        getPreviewThumbnail
+        { getCachedChildren, loadChildren },
+        revisionId
     );
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
@@ -80,11 +80,12 @@ export function usePublicFileView(
     useNavigation = false,
     sortParams: SortParams = DEFAULT_SORT
 ) {
-    const { downloadStream } = usePublicDownload();
+    const { getCachedChildren, loadChildren } = usePublicLinksListing();
+    const { request } = usePublicSession();
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
         shareId,
         linkId,
-        downloadStream
+        { getCachedChildren, loadChildren, customDebouncedRequest: request }
     );
     const navigation = usePublicFileViewNavigation(useNavigation, shareId, sortParams, link?.parentLinkId, linkId);
 
@@ -112,12 +113,15 @@ export function usePublicFileView(
 function useFileViewBase(
     shareId: string,
     linkId: string,
-    downloadStream: ReturnType<typeof usePublicDownload>['downloadStream'],
-    revisionId?: string,
-    getPreviewThumbnail?: ReturnType<typeof useDownload>['getPreviewThumbnail']
+    { getCachedChildren, loadChildren, customDebouncedRequest }: UseDownloadProps,
+    revisionId?: string
 ) {
+    const { downloadStream, getPreviewThumbnail } = useDownload({
+        getCachedChildren,
+        loadChildren,
+        customDebouncedRequest,
+    });
     const { getLink } = useLink();
-
     const { download } = useDownloadProvider();
     const [isContentLoading, withContentLoading] = useLoading(true);
 
@@ -153,7 +157,7 @@ function useFileViewBase(
             // The download is done, we do not need to cancel download on abort anymore
             abortSignal.removeEventListener('abort', onAbort);
             // Fallback is only available for photos in private context
-        } else if (!!link.activeRevision?.photo && getPreviewThumbnail && !isVideo(link.mimeType)) {
+        } else if (!!link.activeRevision?.photo && !isVideo(link.mimeType)) {
             // We force jpg type as thumbnails are always jpg for photos
             setContentsMimeType(SupportedMimeTypes.jpg);
             setIsFallbackContents(true);
