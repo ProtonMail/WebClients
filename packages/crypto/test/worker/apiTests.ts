@@ -1244,6 +1244,21 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
     });
 
     it('isE2EEForwardingKey', async () => {
+        const signOnlyKey = await CryptoApiImplementation.importPublicKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEZ4evPxYJKwYBBAHaRw8BAQdAz/OfKP1cqnXkjwiYbhvkPzPV4SBpc+IK
+zc9j/limEXIAAQD7k7p8GpP5W9iMDFfNQZ/q8xFIiAQcbPXG/bcPVgYRvRAs
+zQg8YUBhLml0PsLAEQQTFgoAgwWCZ4evPwMLCQcJkIHN0wt4lUcZRRQAAAAA
+ABwAIHNhbHRAbm90YXRpb25zLm9wZW5wZ3Bqcy5vcmd4nycM2KL0cTS8Ttv0
+mQFbx8Q+4bovdfed2qSvArkmPgMVCggEFgACAQIZAQKbAwIeARYhBNF4Mj8k
+jFoxVyK1FYHN0wt4lUcZAACbsQEA+O5gxkeu+KDS1fdyNhPasqhPMbj5nEyl
+fbFd4a5yy3kBAMSHD8k0/DSw7NPfO5XzHJ5hP0nhLjSFHOc8YjITQGcM
+=0mtr
+-----END PGP PRIVATE KEY BLOCK-----
+`,
+        });
+
         const charlieKeyEncrypted = await CryptoApiImplementation.importPublicKey({
             armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
 
@@ -1302,6 +1317,7 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
             passphrase: null,
         });
 
+        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: signOnlyKey })).to.eventually.be.false;
         await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: charlieKeyEncrypted })).to.eventually.be.true;
         await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: charlieKey })).to.eventually.be.true;
         await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: bobKey })).to.eventually.be.false;
