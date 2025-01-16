@@ -1,27 +1,23 @@
 import { type FC, useCallback } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms/index';
 import { Progress } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { inviteAccept, inviteReject } from '@proton/pass/store/actions';
-import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemInvite, VaultInvite } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 import type { InviteAcceptSuccess } from '@proton/pass/types/data/invites.dto';
 
 type Props = {
     acceptText: string;
-    limitText: string;
+    disabled?: boolean;
     invite: VaultInvite | ItemInvite;
 };
 
-export const InviteStepResponse: FC<Props> = ({ acceptText, invite, limitText }) => {
-    const { vaultLimitReached } = useSelector(selectVaultLimits);
+export const InviteStepResponse: FC<Props> = ({ acceptText, disabled, invite }) => {
     const { token, inviterEmail, invitedAddressId, fromNewUser } = invite;
     const { onInviteResponse } = useInviteActions();
 
@@ -52,17 +48,12 @@ export const InviteStepResponse: FC<Props> = ({ acceptText, invite, limitText })
 
     return (
         <>
-            {vaultLimitReached && (
-                <Card className="mb-2 text-sm" type="primary">
-                    {limitText}
-                </Card>
-            )}
             <Button
                 pill
                 size="large"
                 shape="solid"
                 color="norm"
-                disabled={loading || vaultLimitReached}
+                disabled={loading || disabled}
                 loading={acceptInvite.loading}
                 onClick={handleAcceptInvite}
             >
