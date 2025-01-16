@@ -5,7 +5,7 @@ import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib
 type CreateNewUserSignatureProcessParams = {
     invitedEmail: string;
     inviterPrivateKey: PrivateKeyReference;
-    vaultKey: VaultShareKey;
+    shareKey: VaultShareKey;
 };
 
 type CreateNewUserSignatureBodyProcessParams = Omit<CreateNewUserSignatureProcessParams, 'inviterPrivateKey'>;
@@ -14,11 +14,11 @@ type CreateNewUserSignatureBodyProcessParams = Omit<CreateNewUserSignatureProces
  * the signature body payload  */
 export const createNewUserSignatureBody = ({
     invitedEmail,
-    vaultKey,
+    shareKey,
 }: CreateNewUserSignatureBodyProcessParams): Uint8Array => {
     const bEmail = stringToUint8Array(invitedEmail);
     const bSeperator = stringToUint8Array('|');
-    const bVaultKey = vaultKey.raw;
+    const bVaultKey = shareKey.raw;
 
     const binaryData = new Uint8Array(bEmail.length + bSeperator.length + bVaultKey.length);
     binaryData.set(bEmail, 0);

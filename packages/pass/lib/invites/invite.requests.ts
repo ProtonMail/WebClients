@@ -7,7 +7,7 @@ import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
 import { getItemKeys } from '@proton/pass/lib/items/item.requests';
-import type { InviteTargetKey, KeyRotationKeyPair } from '@proton/pass/types';
+import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
@@ -77,18 +77,28 @@ export const createUserInvites = async (
     users: InviteUserDTO[],
     b2b: boolean
 ): Promise<InviteBatchResult[]> => {
-    const shareManager = PassCrypto.getShareManager(shareId);
+    const manager = PassCrypto.getShareManager(shareId);
 
     const targetKeys = await (async (): Promise<InviteTargetKey[]> => {
         /** If no `itemId` is supplied then we're dealing with
          * a vault invite -> encrypt the vault keys. */
-        if (!itemId) return shareManager.getVaultShareKeys();
+        if (!itemId) return manager.getVaultShareKeys();
 
-        /** For item sharing : encrypt the items keys.
-         * We're currently not caching the item keys, as
-         * such resolve them. FIXME: use caching. */
-        const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
-        return Promise.all(encryptedItemKeys.map((key) => PassCrypto.openItemKey({ encryptedItemKey: key, shareId })));
+        /** For item sharing : encrypt the items keys */
+        switch (manager.getShare().targetType) {
+            case ShareType.Item:
+                return manager.getItemShareKeys();
+            case ShareType.Vault:
+                const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
+                return Promise.all(
+                    encryptedItemKeys.map((key) =>
+                        PassCrypto.openItemKey({
+                            encryptedItemKey: key,
+                            shareId,
+                        })
+                    )
+                );
+        }
     })();
 
     return Promise.all(
@@ -139,7 +149,12 @@ export const createNewUserInvites = async (
                     data: {
                         NewUserInvites: await Promise.all(
                             batch.map(({ email, role }) =>
-                                PassCrypto.createNewUserInvite({ email, role, shareId, itemId })
+                                PassCrypto.createNewUserInvite({
+                                    email,
+                                    role,
+                                    shareId,
+                                    itemId,
+                                })
                             )
                         ),
                     },
