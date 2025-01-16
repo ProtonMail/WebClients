@@ -4,7 +4,7 @@ import type { ProtonDispatch, ProtonThunkArguments } from 'packages/redux-shared
 import { addressesThunk, subscriptionThunk, userSettingsThunk, userThunk } from '@proton/account';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { categoriesThunk, mailSettingsThunk } from '@proton/mail';
-import { TelemetryMailHeartbeatEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { TelemetryHeartbeatEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import {
@@ -72,7 +72,7 @@ export const mailSettingsHeartbeatListener = (startListening: AppStartListening)
                 userSettings,
                 api: listenerApi.extra.api,
                 measurementGroup: TelemetryMeasurementGroups.settingsHeartBeat,
-                event: TelemetryMailHeartbeatEvents.mail_heartbeat,
+                event: TelemetryHeartbeatEvents.mail_heartbeat,
                 dimensions: {
                     lightThemeName: PROTON_THEMES_MAP[LightTheme].label,
                     darkThemeName: PROTON_THEMES_MAP[DarkTheme].label,
