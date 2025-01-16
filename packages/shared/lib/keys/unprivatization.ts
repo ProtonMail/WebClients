@@ -72,7 +72,7 @@ export const getSignedInvitationData = async (signingKey: PrivateKeyReference, t
         textData, // stripTrailingSpaces: false,
         signingKeys: [signingKey],
         detached: true,
-        context: {
+        signatureContext: {
             value: MEMBER_SIGNATURE_CONTEXT.INVITATION_DATA_SIGNATURE_CONTEXT,
             critical: true,
         },
@@ -98,7 +98,7 @@ const getDecryptedOrganizationActivationToken = async ({
         decryptionKeys,
         // No verification in Global SSO case
         verificationKeys: verificationKeys === null ? undefined : verificationKeys,
-        context: { value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT, required: true },
+        signatureContext: { value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT, required: true },
     });
 
     if (verificationKeys !== null && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -123,7 +123,7 @@ const getEncryptedOrganizationActivationToken = async ({
         textData: token,
         encryptionKeys,
         signingKeys,
-        context: { value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT, critical: true },
+        signatureContext: { value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT, critical: true },
     });
     return message;
 };
@@ -141,7 +141,7 @@ export const validateInvitationData = async ({
         armoredSignature,
         textData,
         verificationKeys,
-        context: { value: MEMBER_SIGNATURE_CONTEXT.INVITATION_DATA_SIGNATURE_CONTEXT, required: true },
+        signatureContext: { value: MEMBER_SIGNATURE_CONTEXT.INVITATION_DATA_SIGNATURE_CONTEXT, required: true },
     });
 
     if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {

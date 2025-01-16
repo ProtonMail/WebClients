@@ -124,7 +124,7 @@ export const signData = async <T extends string | Uint8Array>(
         signingKeys: keys,
         detached: true,
         format: 'armored',
-        context: { critical: true, value: context },
+        signatureContext: { critical: true, value: context },
     } as const;
 
     let signature;
@@ -152,7 +152,7 @@ export const verifySignedData = async <T extends string | Uint8Array>(
     const common = {
         armoredSignature: signature,
         verificationKeys: keys,
-        context: { required: true, value: context },
+        signatureContext: { required: true, value: context },
     } as const;
 
     if (isString(data)) {

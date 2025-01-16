@@ -37,7 +37,7 @@ describe('create invite keys crypto process', () => {
                     decryptionKeys: invitedKey.privateKey,
                     verificationKeys: inviterKey.publicKey,
                     format: 'binary',
-                    context: {
+                    signatureContext: {
                         value: PassSignatureContext.VaultInviteExistingUser,
                         required: true,
                     },
