@@ -1,3 +1,5 @@
+import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
+
 import { MESSAGE_ACTIONS } from '../../../../constants';
 import type { GeneratedKey } from '../../../../helpers/test/helper';
 import {
@@ -20,6 +22,7 @@ describe('Quick reply - Reply type', function () {
     let meKeys: GeneratedKey;
 
     beforeAll(async () => {
+        mockUseFlag().mockImplementation(() => true);
         await setupCryptoProxyForTesting();
         meKeys = await generateKeys('me', fromFields.meAddress);
     });
