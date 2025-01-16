@@ -128,10 +128,10 @@ const LoginContainer = ({
 
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
     const previousUsernameRef = useRef(
-        state?.username ||
-            defaultUsername ||
-            getDefaultUsername(searchParams) ||
-            getDefaultUsername(initialSearchParams) ||
+        state?.username ??
+            defaultUsername ??
+            getDefaultUsername(searchParams) ??
+            getDefaultUsername(initialSearchParams) ??
             ''
     );
     const [step, setStep] = useState(AuthStep.LOGIN);
