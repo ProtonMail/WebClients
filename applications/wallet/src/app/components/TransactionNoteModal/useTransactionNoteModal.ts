@@ -7,16 +7,16 @@ import { encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
 import { updateWalletTransaction, useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store';
 
 export const useTransactionNoteModal = ({
-    hashedTxId,
+    transactionDataKey,
     onClose,
     walletKey,
 }: {
-    hashedTxId: string;
+    transactionDataKey: string;
     onClose?: () => void;
     walletKey?: CryptoKey;
 }) => {
-    const [walletTransactions] = useApiWalletTransactionData([hashedTxId]);
-    const apiWalletTransaction = walletTransactions?.[hashedTxId];
+    const [walletTransactions] = useApiWalletTransactionData([transactionDataKey]);
+    const apiWalletTransaction = walletTransactions?.[transactionDataKey];
 
     const baseLabel = apiWalletTransaction?.Label ?? '';
     const dispatch = useWalletDispatch();
@@ -46,14 +46,12 @@ export const useTransactionNoteModal = ({
                             encryptedLabel ?? ''
                         );
 
-                    if (apiWalletTransaction?.HashedTransactionID) {
-                        dispatch(
-                            updateWalletTransaction({
-                                hashedTransactionId: apiWalletTransaction?.HashedTransactionID,
-                                update: { Label: label },
-                            })
-                        );
-                    }
+                    dispatch(
+                        updateWalletTransaction({
+                            transactionDataKey: transactionDataKey,
+                            update: { Label: label },
+                        })
+                    );
 
                     onClose?.();
                     createNotification({ text: c('Wallet Transaction').t`Transaction label successfully updated` });
