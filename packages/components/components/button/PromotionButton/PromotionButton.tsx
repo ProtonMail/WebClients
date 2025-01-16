@@ -25,6 +25,7 @@ interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
     loading?: boolean;
     responsive?: boolean;
     buttonGradient?: boolean;
+    fullGradient?: boolean;
 }
 
 export type PromotionButtonProps<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
@@ -46,6 +47,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         loading,
         responsive = false,
         buttonGradient = true,
+        fullGradient = false,
         ...rest
     }: PromotionButtonProps<E>,
     ref: ForwardedRef<Element>
@@ -86,6 +88,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                 'max-w-full flex items-center',
                 buttonGradient && 'button-promotion',
                 iconGradient && 'button-promotion--icon-gradient',
+                fullGradient && 'button-promotion--full-gradient',
                 upsell && 'button-promotion--upgrade',
                 size === 'small' && 'text-sm',
                 className
@@ -104,7 +107,11 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                         name={iconName}
                         className="shrink-0"
                         size={iconSize}
-                        style={buttonGradient ? { fill: `url(#${uid}) var(--text-norm)` } : { color: 'inherit' }}
+                        style={
+                            buttonGradient && !fullGradient
+                                ? { fill: `url(#${uid}) var(--text-norm)` }
+                                : { color: 'inherit' }
+                        }
                     />
                 )}
                 <span className={clsx(icon ? 'sr-only' : 'block text-ellipsis')}>{children}</span>
