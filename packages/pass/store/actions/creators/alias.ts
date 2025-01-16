@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { PassErrorCode, UnverifiedUserError } from '@proton/pass/lib/api/errors';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -43,12 +44,23 @@ import identity from '@proton/utils/identity';
 export const requestAliasOptions = requestActionsFactory<ShareId, AliasOptions>('alias::options::get')({
     key: identity,
     failure: {
-        prepare: (error, payload) =>
-            withNotification({
-                type: 'error',
-                text: c('Error').t`Requesting alias options failed`,
-                error,
-            })({ payload, error }),
+        prepare: (err, payload) => {
+            /** mutate the API error code in order to identify this
+             * specific error kind UI-side */
+            const error = getApiError(err);
+            const unverified = err instanceof UnverifiedUserError;
+            if (unverified) error.code = PassErrorCode.UNVERIFIED_USER;
+
+            /** Silence any `UnverifiedUserError` error codes to avoid any
+             * notifications on the alias creation page for unverified users */
+            return unverified
+                ? { payload, error }
+                : withNotification({
+                      type: 'error',
+                      text: c('Error').t`Requesting alias options failed`,
+                      error,
+                  })({ payload, error });
+        },
     },
 });
 
