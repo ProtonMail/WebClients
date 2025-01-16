@@ -22,6 +22,7 @@ import {
     useDefaultShare,
     useShare,
 } from '../_shares';
+import { getMetricsUserPlan } from '../_user/getMetricsUserPlan';
 import useDebouncedRequest from './useDebouncedRequest';
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -88,7 +89,10 @@ function usePublicSessionProvider() {
                 }
                 const user = formatUser(resumedSession.User);
                 setUser(user);
-                await userSuccessMetrics.setLocalUser(persistedSession.UID, user.isPaid);
+                await userSuccessMetrics.setLocalUser(
+                    persistedSession.UID,
+                    getMetricsUserPlan({ user, isPublicContext: true })
+                );
             } catch (e) {
                 // TODO: Probably getLastPersistedLocalID is the source of issue
                 // Investigate why later
