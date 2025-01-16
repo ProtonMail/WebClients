@@ -172,6 +172,9 @@
       "Create Gateway": [
         "Ağ geçidi ekle"
       ],
+      "Create new policy": [
+        "Yeni ilke oluşturun"
+      ],
       "Create users": [
         "Kullanıcılar ekle"
       ],
@@ -460,7 +463,7 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Verileri yenile"
       ],
       "Refresh status": [
@@ -1124,7 +1127,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-e-mail ve diğer şeyler.ide-my-email"
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -2324,11 +2327,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Her ülkedeki paylaşılan sunuculara kimin bağlanabileceğine karar vermek için politikalar belirleyin."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşımlı sunuculara bağlanabilir."
+      ],
       "If disabled, only admins will have access.": [
         "Kapatıldığında yalnızca yöneticiler erişebilir."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Kuruluşunuzdaki hiç kimse paylaşılan sunuculara bağlanamaz."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
@@ -3503,6 +3515,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişime sahip.",
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -3699,6 +3715,9 @@
       "Allocated": [
         "Ayrılmış"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Kullanıcıların ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden güvenli paylaşılan sunuculara bağlanmasına izin verin."
+      ],
       "Already allocated": [
         "Zaten ayrılmış"
       ],
@@ -3859,6 +3878,9 @@
       ],
       "Current plan": [
         "Geçerli tarife"
+      ],
+      "Custom": [
+        "Özel"
       ],
       "Custom branding": [
         "Özel marka"
@@ -4377,6 +4399,12 @@
       ],
       "of": [
         "/"
+      ],
+      "Off": [
+        "Kapalı"
+      ],
+      "On": [
+        "Açık"
       ],
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"

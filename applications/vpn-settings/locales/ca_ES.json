@@ -172,6 +172,9 @@
       "Create Gateway": [
         "Crea una passarel·la"
       ],
+      "Create new policy": [
+        "Crea una política"
+      ],
       "Create users": [
         "Crea usuaris"
       ],
@@ -460,7 +463,7 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Actualitza les dades"
       ],
       "Refresh status": [
@@ -2319,11 +2322,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Creeu polítiques per decidir qui es pot connectar als servidors compartits de cada país."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Tothom a la vostra organització es pot connectar a servidors compartits de tots els països."
+      ],
       "If disabled, only admins will have access.": [
         "Si està desactivat, només els administradors tenen accés."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Separeu les diferents parts de la vostra vida i organitzeu la vostra safata d'entrada amb adreces addicionals."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Ningú de la vostra organització no es pot connectar a servidors compartits."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
@@ -3498,6 +3510,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } usuari actualment ten accés als servidors compartits.",
+        "${ amountUsers }/${ totalUsers } usuari actualment tenen accés als servidors compartits."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -3694,6 +3710,9 @@
       "Allocated": [
         "Assignat"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permet als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Ja assignat"
       ],
@@ -3854,6 +3873,9 @@
       ],
       "Current plan": [
         "Pla actual"
+      ],
+      "Custom": [
+        "Personalitzat"
       ],
       "Custom branding": [
         "Marca personalitzada"
@@ -4372,6 +4394,12 @@
       ],
       "of": [
         "de"
+      ],
+      "Off": [
+        "Desactivat"
+      ],
+      "On": [
+        "Activat"
       ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"
