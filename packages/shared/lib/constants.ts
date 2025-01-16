@@ -600,14 +600,19 @@ export enum MAIL_UPSELL_PATHS {
     TRIAL_BANNER = 'trial-banner',
     TRIAL_END = 'trial-end',
     BREACH_ALERTS = 'breach-alerts',
-    SUBSCRIPTION_REMINDER_PRIVACY = 'subscription-reminder-privacy',
-    SUBSCRIPTION_REMINDER_PRODUCTIVITY = 'subscription-reminder-productivity',
     ASSISTANT_TOGGLE = 'assistant-toggle',
     ASSISTANT_TOGGLE_DOWNGRADE = 'assistant-toggle-downgrade',
     ASSISTANT_COMPOSER = 'assistant-composer',
     ZOOM_MEETING = 'zoom-meeting',
     ACCOUNT_LOCKED = 'account-locked-state',
     DARK_WEB_MONITORING = 'dark-web-monitoring',
+
+    // Permanent Offers
+    SUBSCRIPTION_REMINDER_PRIVACY = 'subscription-reminder-privacy',
+    SUBSCRIPTION_REMINDER_PRODUCTIVITY = 'subscription-reminder-productivity',
+    ONE_DOLLAR_INITIAL_REMINDER = 'one-dollar-initial-reminder',
+    ONE_DOLLAR_SECOND_REMINDER = 'one-dollar-second-reminder',
+    ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
 }
 
 export enum MAIL_UPSELL_BANNER_LINK_ID_REF_PATH {
