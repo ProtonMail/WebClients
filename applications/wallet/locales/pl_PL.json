@@ -19,6 +19,9 @@
       "Add": [
         "Dodaj"
       ],
+      "Add account": [
+        "Dodaj konto"
+      ],
       "Add credit / debit card": [
         "Dodaj kartę płatniczą"
       ],
@@ -75,6 +78,9 @@
       ],
       "Delete": [
         "Usuń"
+      ],
+      "Dismiss": [
+        "Odrzuć"
       ],
       "Done": [
         "Gotowe"
@@ -232,6 +238,9 @@
       "Sign out": [
         "Wyloguj"
       ],
+      "Sign out of all accounts": [
+        "Wyloguj się ze wszystkich kont"
+      ],
       "Submit": [
         "Prześlij"
       ],
@@ -344,14 +353,20 @@
       "Receive address": [
         "Adres do odbioru"
       ],
+      "Search exact address": [
+        "Wyszukaj dokładny adres"
+      ],
+      "Search for exact address": [
+        "Wyszukaj dokładny adres"
+      ],
       "Status": [
         "Status"
       ],
-      "Sync": [
-        "Synchronizuj"
-      ],
       "Toggle keychain": [
         "Przełącz klucz"
+      ],
+      "Used": [
+        "Używane"
       ],
       "Value": [
         "Wartość"
@@ -838,6 +853,9 @@
       "Buy more bitcoin": [
         "Kup więcej Bitcoinów"
       ],
+      "For any issues with the purchasing process, please contact ${ support }.": [
+        "W przypadku jakichkolwiek problemów z procesem zakupu skontaktuj się z ${ support }"
+      ],
       "For any issues with the purchasing process, please contact the partner’s support team.": [
         "W przypadku jakichkolwiek problemów z procesem zakupu prosimy o kontakt z zespołem pomocy technicznej partnera."
       ],
@@ -854,6 +872,9 @@
     "Buy in progress": {
       "Buy more bitcoin": [
         "Kup więcej Bitcoinów"
+      ],
+      "For any issues with the purchasing process, please contact ${ support }.": [
+        "W przypadku jakichkolwiek problemów z procesem zakupu skontaktuj się z ${ support }"
       ],
       "Purchase in progress": [
         "Zakup jest w toku"
@@ -2348,14 +2369,8 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
-      "Account size": [
-        "Rozmiar konta"
-      ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
-      ],
-      "Additional options": [
-        "Dodatkowe opcje"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -2393,11 +2408,11 @@
       "Country code": [
         "Kod kraju"
       ],
-      "Create a secure cloud for ${ n } member": [
-        "Utwórz bezpieczną chmurę dla ${ n } użytkownika",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
-        "Utwórz bezpieczną chmurę dla ${ n } użytkowników"
+      "Create a secure cloud for ${ value } member": [
+        "Utwórz bezpieczną chmurę dla ${ value } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ value } użytkowników"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu"
@@ -2431,9 +2446,6 @@
       ],
       "Edit email address": [
         "Edytuj adres e-mail"
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Poczta e-mail dla 10 niestandardowych domen za darmo. Dodatkowe domeny możesz dodać za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
@@ -2498,6 +2510,9 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Member": [
+        "Użytkownik"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -2546,6 +2561,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "Płatności SEPA nie są w tej chwili dostępne. Spróbuj ponownie później."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
@@ -2564,8 +2582,14 @@
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
+      "Switch to": [
+        "Przełącz na konto"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ta czynność spowoduje wylogowanie ze wszystkich kont."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
@@ -2704,11 +2728,6 @@
         "Tylko do odczytu"
       ]
     },
-    "Infog": {
-      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nazwa użytkownika ${ BRAND_NAME }"
@@ -2799,9 +2818,6 @@
       ],
       "Do you have any suggestions for our team?": [
         "Czy masz sugestie dla naszego zespołu?"
-      ],
-      "Email": [
-        "E-mail"
       ],
       "Email address": [
         "Adres e-mail"
@@ -3978,6 +3994,15 @@
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } jest ważna przez pierwsze ${ subscriptionLength } miesiące. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLengthCopy } miesięcy. Możesz anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } obowiązuje przez pierwszy miesiąc. Kupon jest ważny dla ${ couponRedemptions } odnowień. Potem nastąpi automatyczne odnowienie w cenie ${ renewPrice } za ${ subscriptionLength } miesiąc. Możesz anulować w dowolnym momencie."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
@@ -4054,32 +4079,9 @@
         "Napisz, jak możemy ulepszyć usługi ${ BRAND_NAME }"
       ]
     },
-    "plan customizer, ips": {
-      "please ${ contactHref } our Sales team.": [
-        "${ contactHref } z naszym zespołem sprzedaży."
-      ],
-      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Wybierz liczbę adresów IP w planie. Każdy dodatkowy adres IP kosztuje ${ price }."
-      ],
-      "Should you need more than ${ maxIPs } IP, ": [
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adres IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresy IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresów IP, ",
-        "Jeśli potrzebujesz więcej niż ${ maxIPs } adresów IP, "
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "skontaktuj się"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Wybierz liczbę użytkowników w planie. Każdy dodatkowy użytkownik kosztuje ${ price }."
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkownika, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
-        "Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży."
       ]
     },
     "Price": {
@@ -4635,6 +4637,9 @@
       "Apply gift code": [
         "Zastosuj kod podarunkowy"
       ],
+      "Are you sure?": [
+        "Czy na pewno?"
+      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -5036,6 +5041,9 @@
       ],
       "View receive addresses": [
         "Zobacz adresy do odbioru"
+      ],
+      "We are having trouble opening your wallet. Please refresh the page or try again later.": [
+        "Mamy problem z otwarciem twojego portfela. Odśwież stronę lub spróbuj ponownie później."
       ]
     },
     "Wallet import": {
@@ -5289,6 +5297,9 @@
       ],
       "Bitcoin address signature could not be verified": [
         "Nie można zweryfikować podpisu adresu Bitcoin"
+      ],
+      "Boost transaction": [
+        "Przyśpiesz transakcję"
       ],
       "Boost transaction priority": [
         "Zwiększ priorytet transakcji"
@@ -5588,9 +5599,6 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Przenieś swoje bitcoiny do innego portfela przed usunięciem. Usunięcie tego portfela usunie wszystkie jego dane z serwerów ${ BRAND_NAME }. Możesz odzyskać ten portfel na późniejszym etapie, używając frazy seed."
-      ],
-      "Seed phrase (12-24 words)": [
-        "Fraza seed (12–24 słowa)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Tych 12 słów należy użyć do odzyskania środków z tego portfela tylko w ostateczności, na przykład w przypadku utraty dostępu do konta ${ BRAND_NAME }."
