@@ -1,0 +1,21 @@
+.feature-table-layout {
+	display: grid;
+	grid-template-columns: 1fr 4rem 4rem;
+}
+
+.feature-table-item:last-child {
+	border-end-start-radius: var(--border-radius-lg);
+	border-end-end-radius: var(--border-radius-lg);
+}
+
+.feature-table-item-gradient {
+	border-start-start-radius: var(--border-radius-lg);
+	border-start-end-radius: var(--border-radius-lg);
+
+	& p {
+		/*
+		 * Create a variable of the color: #d8aaff
+		*/
+		background: linear-gradient(239.41deg, #d8aaff -8.13%, var(--primary) 115.83%);
+	}
+}

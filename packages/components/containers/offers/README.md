@@ -10,10 +10,10 @@ In order to create a new offer, few steps are needed.
 
 In `FeaturesContext.ts`, insert a new FeatureCode for the offer. **FeatureCode name must respect naming conventions**:
 
--   PascalCase
--   Prefixed by `Offer`
--   Suffixed by year
--   Ex: `OfferBlackFriday2022`
+- PascalCase
+- Prefixed by `Offer`
+- Suffixed by year
+- Ex: `OfferBlackFriday2022`
 
 ### Add an offer-id
 

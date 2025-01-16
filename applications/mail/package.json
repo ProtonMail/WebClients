@@ -6,6 +6,7 @@
     "author": "",
     "main": "index.js",
     "scripts": {
+        "analyze": "yarn build:web --analyze",
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --webpackOnCaffeine --appMode=sso --logical",
         "check-types": "tsc",
         "i18n:extract:web": "proton-i18n extract",

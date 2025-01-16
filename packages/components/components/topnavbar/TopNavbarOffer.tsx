@@ -14,10 +14,9 @@ import clsx from '@proton/utils/clsx';
 
 import OfferModal from '../../containers/offers/components/OfferModal';
 import useOfferModal from '../../containers/offers/hooks/useOfferModal';
-import type { OfferConfig } from '../../containers/offers/interface';
+import { type OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { PromotionButton } from '../button/PromotionButton';
-import TopNavbarOfferSubscriptionReminder from './TopNavBarOfferSubscriptionReminder';
 import TopNavbarListItem from './TopNavbarListItem';
 
 interface Props {
@@ -84,12 +83,6 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
             return;
         }
 
-        // The subscription reminder offer could be offered again since it runs all the time and is displayed every 6 months
-        if (offerConfig.ID === 'subscription-reminder') {
-            setOfferModalOpen(true);
-            return;
-        }
-
         const combinedIgnoreVisited = ignoreVisited || autoOffer;
         if (
             (isVisited && !combinedIgnoreVisited) ||
@@ -115,26 +108,6 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
     const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
     const upgradeIcon =
         CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.topButton?.icon || 'bag-percent';
-
-    // The subscription reminder spotlight is displayed instead of the regular offer modal
-    if (offerConfig.ID === 'subscription-reminder') {
-        return (
-            <TopNavbarOfferSubscriptionReminder
-                app={app}
-                currency={currency}
-                onChangeCurrency={onChangeCurrency}
-                offerConfig={offerConfig}
-                offer={offer}
-                modalProps={{
-                    ...offerModalProps,
-                    onClose: () => {
-                        offerModalProps.onClose?.();
-                        setFetchOffer(false);
-                    },
-                }}
-            />
-        );
-    }
 
     return (
         <>

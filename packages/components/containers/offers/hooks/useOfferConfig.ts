@@ -33,11 +33,8 @@ import { mailTrial2024Config } from '../operations/mailTrial2024/configuration';
 import { useMailTrial2024 } from '../operations/mailTrial2024/useOffer';
 import { passFamilyPlan2024YearlyConfig } from '../operations/passFamilyPlan2024Yearly/configuration';
 import { usePassFamilyPlan2024Yearly } from '../operations/passFamilyPlan2024Yearly/useOffer';
-import { subscriptionReminderConfig } from '../operations/subscriptionReminder/configuration';
-import { useSubscriptionReminder } from '../operations/subscriptionReminder/useOffer';
 
 const configs: Record<OfferId, OfferConfig> = {
-    'subscription-reminder': subscriptionReminderConfig,
     'pass-family-plan-2024-yearly': passFamilyPlan2024YearlyConfig,
     'black-friday-2024-inbox-free': blackFriday2024InboxFreeConfig,
     'black-friday-2024-pass-free': blackFriday2024PassFreeConfig,
@@ -62,8 +59,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     // Preload FF to avoid single API requests
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
 
-    const subscriptionReminder = useSubscriptionReminder();
-
+    // Other offers
     const passFamilyPlan2024Yearly = usePassFamilyPlan2024Yearly();
     const mailTrial2024 = useMailTrial2024();
     const mailTrial2023 = useMailTrial2023();
@@ -103,8 +99,6 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         mailTrial2024,
         mailTrial2023,
         goUnlimited2022,
-
-        subscriptionReminder,
     ];
 
     const validOffers: Operation[] | undefined = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
