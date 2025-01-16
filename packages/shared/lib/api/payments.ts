@@ -474,9 +474,7 @@ export type BackendPaymentIntent = {
     CurrencyCode: Currency;
     Gateway: string;
     ReferenceID: string;
-    Details?: {
-        Email: string;
-    };
+    Email?: string;
 };
 
 export type FetchPaymentIntentV5Response = {

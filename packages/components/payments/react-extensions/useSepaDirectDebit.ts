@@ -105,7 +105,7 @@ export const useSepaDirectDebit = (
             forceEnableChargebee();
 
             const paymentIntent = convertPaymentIntentData(bePaymentIntentData);
-            const sepaEmail = bePaymentIntentData?.Details?.Email;
+            const sepaEmail = bePaymentIntentData?.Email;
             if (!sepaEmail) {
                 throw new SepaEmailNotProvidedError();
             }
