@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -13,20 +13,29 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type { Invite } from '@proton/pass/types/data/invites';
+import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
 
-export const VaultInviteRespond: FC<Invite> = (invite) => {
-    const { inviterEmail, invitedAddressId, token, vault, fromNewUser } = invite;
-    const { itemCount, memberCount } = vault;
+type Props = { token: string };
+
+export const VaultInviteRespond: FC<Props> = ({ token }) => {
+    const invite = useSelector(selectInviteByToken(token));
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteActions();
 
     const acceptInvite = useActionRequest(inviteAcceptIntent, { onSuccess: onInviteResponse });
     const rejectInvite = useActionRequest(inviteRejectIntent, { onSuccess: onInviteResponse });
 
+    useEffect(() => {
+        if (!invite) onInviteResponse();
+    }, [invite]);
+
+    if (!invite) return null;
+
+    const { inviterEmail, invitedAddressId, vault, fromNewUser } = invite;
+    const { itemCount, memberCount } = vault;
+
     const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
     const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });
-
     const loading = acceptInvite.loading || rejectInvite.loading;
 
     return (
