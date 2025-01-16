@@ -236,10 +236,13 @@ export default function useShareURLView(shareId: string, linkId: string) {
         };
 
         const updatedFields = await withSaving(update()).catch((error) => {
-            createNotification({
-                type: 'error',
-                text: c('Notification').t`Public link update access failed `,
-            });
+            // No need to show notification if API is sending one
+            if (!error.data?.message) {
+                createNotification({
+                    type: 'error',
+                    text: c('Notification').t`Public link update access failed `,
+                });
+            }
             throw error;
         });
         createNotification({
