@@ -337,6 +337,9 @@
       "Create link": [
         "Δημιουργία συνδέσμου"
       ],
+      "Create new policy": [
+        "Δημιουργία νέας πολιτικής"
+      ],
       "Create users": [
         "Δημιουργία χρηστών"
       ],
@@ -835,7 +838,7 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Ανανέωση δεδομένων"
       ],
       "Refresh status": [
@@ -3623,6 +3626,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Δημιουργήστε όσες ετικέτες ή φακέλους χρειάζεστε για να διατηρήσετε τα εισερχόμενά σας τακτοποιημένα."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
       ],
@@ -3634,6 +3640,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Οποιοσδήποτε στον οργανισμό σας μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές σε οποιαδήποτε χώρα."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διαρρεύσουν από υπηρεσία τρίων."
@@ -3652,6 +3661,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Κάντε το υποσέλιδο του email σας δικό σας — προβάλετε τη μοναδική επωνυμία σας, όχι τη δική μας."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Κανείς στον οργανισμό σας δεν μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
@@ -6627,6 +6639,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } χρήστης διαθέτει προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές",
+        "${ amountUsers }/${ totalUsers } χρήστες διαθέτουν προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
@@ -6974,6 +6990,9 @@
       ],
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
@@ -8079,6 +8098,12 @@
       ],
       "of": [
         "από"
+      ],
+      "Off": [
+        "Ανενεργό"
+      ],
+      "On": [
+        "Ενεργό"
       ],
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
