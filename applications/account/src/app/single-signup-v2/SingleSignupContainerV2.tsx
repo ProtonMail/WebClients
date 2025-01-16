@@ -1118,6 +1118,8 @@ const SingleSignupContainerV2 = ({
         return <LoaderPage />;
     }
 
+    const loginModalDefaultUsername = isPorkbun ? '' : tmpLoginEmail;
+
     return (
         <PublicThemeProvider value={theme}>
             {preload}
@@ -1126,7 +1128,7 @@ const SingleSignupContainerV2 = ({
                     productParam={productParam}
                     paths={paths}
                     {...loginModalProps}
-                    defaultUsername={tmpLoginEmail}
+                    defaultUsername={loginModalDefaultUsername}
                     onLogin={async (props) => {
                         await handleSignIn(props);
                         setLoginModal(false);
