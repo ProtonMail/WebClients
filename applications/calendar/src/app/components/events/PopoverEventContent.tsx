@@ -278,7 +278,7 @@ const PopoverEventContent = ({
     return (
         <>
             {sanitizedLocation ? (
-                <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-pin">
+                <IconRow labelClassName="inline-flex pt-0.5" title={c('Label').t`Location`} icon="map-pin">
                     <span className="text-break" dangerouslySetInnerHTML={{ __html: sanitizedLocation }} />
                 </IconRow>
             ) : null}
@@ -335,7 +335,7 @@ const PopoverEventContent = ({
             )}
             <IconRow
                 className="flex-1"
-                labelClassName="inline-flex pt-1"
+                labelClassName="inline-flex pt-0.5"
                 title={c('Label').t`Calendar`}
                 icon="calendar-grid"
             >
