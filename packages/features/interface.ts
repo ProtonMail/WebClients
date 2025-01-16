@@ -59,8 +59,10 @@ export enum FeatureCode {
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
 
-    // This is a different offer than the others, it runs all the time and is used to promote paid features
-    OfferSubscriptionReminder = 'OfferSubscriptionReminder',
+    // Flags needed by the one-dollar post-signup promo
+    SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',
+    MailPostSignupOneDollarState = 'MailPostSignupOneDollarState',
+    MailPostSignupOneDollarAccountAge = 'MailPostSignupOneDollarAccountAge',
 
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
@@ -94,7 +96,6 @@ export enum FeatureCode {
     SpotlightLoadContent = 'SpotlightLoadContent',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
-    SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',
     UnreadFavicon = 'UnreadFavicon',
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',
