@@ -27,7 +27,7 @@ const useGroupCrypto = () => {
         return CryptoProxy.signMessage({
             textData: memberEmail,
             signingKeys: groupKey,
-            context: { critical: true, value: 'account.key-token.address' },
+            signatureContext: { critical: true, value: 'account.key-token.address' },
             detached: true,
         });
     };

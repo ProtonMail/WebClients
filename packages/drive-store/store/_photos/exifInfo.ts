@@ -34,7 +34,7 @@ export async function encryptExifInfo(
         encryptionKeys: nodePrivateKey,
         signingKeys: addressPrivateKey,
         compress: true,
-        context: { value: 'drive.photo.exif', critical: true },
+        signatureContext: { value: 'drive.photo.exif', critical: true },
     });
     return encodeBase64(message);
 }

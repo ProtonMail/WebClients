@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/lib';
+import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressDisabled } from '../helpers/address';
@@ -27,7 +27,7 @@ export const getSignedKeyListSignature = async (
         stripTrailingSpaces: true,
         signingKeys,
         detached: true,
-        context: KT_SKL_SIGNING_CONTEXT,
+        signatureContext: KT_SKL_SIGNING_CONTEXT,
         date,
     });
     return signature;

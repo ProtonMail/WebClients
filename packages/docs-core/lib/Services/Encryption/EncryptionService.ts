@@ -39,7 +39,7 @@ export class EncryptionService<C extends EncryptionContext> {
       const signature = await CryptoProxy.signMessage({
         binaryData: data,
         signingKeys: signingKey,
-        context: { value: contextString, critical: true },
+        signatureContext: { value: contextString, critical: true },
         detached: true,
         format: 'binary',
       })
@@ -137,7 +137,7 @@ export class EncryptionService<C extends EncryptionContext> {
         binaryData: data,
         binarySignature: signature,
         verificationKeys,
-        context: { value: contextString, required: true },
+        signatureContext: { value: contextString, required: true },
         format: 'binary',
       })
 
