@@ -21,6 +21,7 @@ export interface TransferProgresses {
 }
 
 export interface TransferMeta {
+    linkId?: string;
     filename: string;
     mimeType: string;
     size?: number;
@@ -68,7 +69,6 @@ export interface Download {
     state: TransferState;
     startDate: Date;
     error?: Error;
-    scanIssueError?: Error;
 }
 
 export type Transfer = Upload | Download;

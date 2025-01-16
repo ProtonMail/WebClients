@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { queryUserShares } from '@proton/shared/lib/api/drive/share';
 import type { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 
+import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from '../../zustand/share/shares.store';
 import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDebouncedFunction } from '../_utils';
@@ -10,16 +11,19 @@ import { useVolumesState } from '../_volumes';
 import type { Share, ShareWithKey } from './interface';
 import { ShareState } from './interface';
 import useShare from './useShare';
-import useSharesState, { findDefaultPhotosShareId, findDefaultShareId } from './useSharesState';
 import useVolume from './useVolume';
 
 /**
  * useDefaultShare provides access to main default user's share.
  */
-export default function useDefaultShare() {
+export function useDefaultShare() {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
-    const sharesState = useSharesState();
+    const sharesState = useSharesStore((state) => ({
+        setShares: state.setShares,
+        getDefaultShareId: state.getDefaultShareId,
+        getDefaultPhotosShareId: state.getDefaultPhotosShareId,
+    }));
     const { getShare, getShareWithKey } = useShare();
     const { createVolume } = useVolume();
     const volumesState = useVolumesState();
@@ -126,3 +130,5 @@ export default function useDefaultShare() {
         isShareAvailable,
     };
 }
+
+export default useDefaultShare;

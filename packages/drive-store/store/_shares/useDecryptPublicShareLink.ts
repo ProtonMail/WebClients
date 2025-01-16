@@ -1,17 +1,16 @@
 import { CryptoProxy } from '@proton/crypto/lib';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import type { SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 import { computeKeyPassword } from '@proton/srp/lib';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { useSharesStore } from '../../zustand/share/shares.store';
 import { type DecryptedLink, useLink } from './../_links';
 import useLinksState from './../_links/useLinksState';
-import { ShareState, ShareType } from './interface';
+import { ShareState, ShareType, type SharedUrlInfo } from './interface';
 import useSharesKeys from './useSharesKeys';
-import useSharesState from './useSharesState';
 
 export const useDecryptPublicShareLink = () => {
-    const { setShares } = useSharesState();
+    const setShares = useSharesStore((state) => state.setShares);
     const sharesKeys = useSharesKeys();
     const { setLinks } = useLinksState();
     const { decryptLink } = useLink();
@@ -21,22 +20,22 @@ export const useDecryptPublicShareLink = () => {
         {
             urlPassword,
             token,
-            shareUrlInfo,
+            sharedUrlInfo,
             publicPage = true,
             additionnalDecryptedLinkInfo,
         }: {
             urlPassword: string;
             token: string;
-            shareUrlInfo: SharedURLInfoPayload;
+            sharedUrlInfo: SharedUrlInfo;
             publicPage?: boolean;
             additionnalDecryptedLinkInfo?: Partial<DecryptedLink>;
         }
     ) => {
-        const computedPassword = await computeKeyPassword(urlPassword, shareUrlInfo.SharePasswordSalt).catch((e) =>
+        const computedPassword = await computeKeyPassword(urlPassword, sharedUrlInfo.sharePasswordSalt).catch((e) =>
             Promise.reject(
                 new EnrichedError('Failed to compute key password for public shared item', {
                     tags: {
-                        linkId: shareUrlInfo.LinkID,
+                        linkId: sharedUrlInfo.linkId,
                     },
                     extra: {
                         e,
@@ -47,13 +46,13 @@ export const useDecryptPublicShareLink = () => {
             )
         );
         const sharePassphrase = await CryptoProxy.decryptMessage({
-            armoredMessage: shareUrlInfo.SharePassphrase,
+            armoredMessage: sharedUrlInfo.sharePassphrase,
             passwords: [computedPassword],
         }).catch((e) =>
             Promise.reject(
                 new EnrichedError('Failed to decrypt share passphrase for public shared item', {
                     tags: {
-                        linkId: shareUrlInfo.LinkID,
+                        linkId: sharedUrlInfo.linkId,
                     },
                     extra: {
                         e,
@@ -65,13 +64,13 @@ export const useDecryptPublicShareLink = () => {
         );
 
         const sharePrivateKey = await CryptoProxy.importPrivateKey({
-            armoredKey: shareUrlInfo.ShareKey,
+            armoredKey: sharedUrlInfo.shareKey,
             passphrase: sharePassphrase.data,
         }).catch((e) =>
             Promise.reject(
                 new EnrichedError('Failed to import share private key for public shared item', {
                     tags: {
-                        linkId: shareUrlInfo.LinkID,
+                        linkId: sharedUrlInfo.linkId,
                     },
                     extra: {
                         e,
@@ -85,21 +84,22 @@ export const useDecryptPublicShareLink = () => {
         sharesKeys.set(token, sharePrivateKey);
 
         const encryptedLink = {
-            linkId: shareUrlInfo.LinkID,
+            linkId: sharedUrlInfo.linkId,
             parentLinkId: '',
-            isFile: shareUrlInfo.LinkType === LinkType.FILE,
-            name: shareUrlInfo.Name,
-            mimeType: shareUrlInfo.MIMEType,
-            size: shareUrlInfo.Size,
+            isFile: sharedUrlInfo.linkType === LinkType.FILE,
+            name: sharedUrlInfo.name,
+            mimeType: sharedUrlInfo.mimeType,
+            size: sharedUrlInfo.size,
             createTime: 0,
             metaDataModifyTime: 0,
             trashed: null,
-            hasThumbnail: shareUrlInfo.ThumbnailURLInfo !== undefined,
-            isShared: false,
-            nodeKey: shareUrlInfo.NodeKey,
-            nodeHashKey: shareUrlInfo.NodeHashKey ?? undefined,
-            nodePassphrase: shareUrlInfo.NodePassphrase,
-            contentKeyPacket: shareUrlInfo.ContentKeyPacket,
+            hasThumbnail: sharedUrlInfo.thumbnailUrlInfo !== undefined,
+            nodeKey: sharedUrlInfo.nodeKey,
+            nodeHashKey: sharedUrlInfo.nodeHashKey ?? undefined,
+            nodePassphrase: sharedUrlInfo.nodePassphrase,
+            nodePassphraseSignature: sharedUrlInfo.nodePassphraseSignature,
+            signatureEmail: sharedUrlInfo.signatureEmail,
+            contentKeyPacket: sharedUrlInfo.contentKeyPacket,
             rootShareId: token,
             xAttr: '',
             hash: '',
@@ -112,8 +112,8 @@ export const useDecryptPublicShareLink = () => {
         const share = {
             shareId: token,
             type: ShareType.standard,
-            passphrase: shareUrlInfo.SharePassphrase,
-            key: shareUrlInfo.ShareKey,
+            passphrase: sharedUrlInfo.sharePassphrase,
+            key: sharedUrlInfo.shareKey,
             passphraseSignature: '',
             creator: '',
             addressId: '',

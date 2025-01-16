@@ -27,7 +27,7 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
         const abortControler = new AbortController();
         void withLoading(async () => {
             const bookmarks = await listBookmarks(abortControler.signal);
-            setBookmarksTokens(new Set(bookmarks.map((bookmark) => bookmark.token.Token)));
+            setBookmarksTokens(new Set(bookmarks.map((bookmark) => bookmark.sharedUrlInfo.token)));
         });
         return () => {
             abortControler.abort();
@@ -43,7 +43,7 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
         const abortSignal = new AbortController().signal;
         await addBookmark(abortSignal, { token, urlPassword: urlPassword + (customPassword ?? '') });
         setBookmarksTokens((prevState) => new Set([...prevState, token]));
-        countActionWithTelemetry(Actions.AddToBookmark);
+        void countActionWithTelemetry(Actions.AddToBookmark);
     };
 
     return {

@@ -1,8 +1,5 @@
 import type { ReactNode } from 'react';
 
-import { useApi } from '@proton/components';
-import { UnleashFlagProvider } from '@proton/unleash';
-
 import { PublicSessionProvider } from './_api';
 import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
@@ -49,20 +46,17 @@ interface PublicDriveProviderProps {
 }
 
 export function PublicDriveProvider({ children }: PublicDriveProviderProps) {
-    const api = useApi();
     return (
-        <UnleashFlagProvider api={api}>
-            <VolumesProvider>
-                <SharesProvider>
-                    <PublicSessionProvider>
-                        <PublicLinksProvider>
-                            <PublicUploadProvider>
-                                <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
-                            </PublicUploadProvider>
-                        </PublicLinksProvider>
-                    </PublicSessionProvider>
-                </SharesProvider>
-            </VolumesProvider>
-        </UnleashFlagProvider>
+        <VolumesProvider>
+            <SharesProvider>
+                <PublicSessionProvider>
+                    <PublicLinksProvider>
+                        <PublicUploadProvider>
+                            <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
+                        </PublicUploadProvider>
+                    </PublicLinksProvider>
+                </PublicSessionProvider>
+            </SharesProvider>
+        </VolumesProvider>
     );
 }

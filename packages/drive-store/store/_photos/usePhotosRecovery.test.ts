@@ -5,7 +5,6 @@ import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage
 
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
-import useSharesState from '../_shares/useSharesState';
 import { usePhotos } from './PhotosProvider';
 import { usePhotosRecovery } from './usePhotosRecovery';
 
@@ -32,6 +31,11 @@ function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
             id: 'id',
             size: 323212,
             signatureEmail: 'address@gmail.com',
+            createTime: 123,
+            manifestSignature: '',
+            blocs: [],
+            state: 2,
+            thumbnails: [],
             photo: {
                 linkId: 'linkId',
                 captureTime: 321321,
@@ -46,7 +50,56 @@ jest.mock('../_links', () => {
     return { useLinksActions, useLinksListing };
 });
 
-jest.mock('../_shares/useSharesState');
+jest.mock('../../zustand/share/shares.store', () => {
+    const actual = jest.requireActual('../../zustand/share/shares.store');
+
+    return {
+        ...actual,
+        useSharesStore: (cb: any) => {
+            const state = actual.useSharesStore();
+            if (cb) {
+                return cb({
+                    ...state,
+                    getRestoredPhotosShares: () => [
+                        {
+                            addressId: 'addressId',
+                            shareId: 'shareId',
+                            rootLinkId: 'rootLinkId',
+                            volumeId: 'volumeId',
+                            creator: 'creator',
+                            isLocked: false,
+                            isDefault: false,
+                            isVolumeSoftDeleted: false,
+                            possibleKeyPackets: ['dsad'],
+                            type: 4,
+                            state: 1,
+                            createTime: 1234,
+                        },
+                    ],
+                });
+            }
+            return {
+                ...state,
+                getRestoredPhotosShares: () => [
+                    {
+                        addressId: 'addressId',
+                        shareId: 'shareId',
+                        rootLinkId: 'rootLinkId',
+                        volumeId: 'volumeId',
+                        creator: 'creator',
+                        isLocked: false,
+                        isDefault: false,
+                        isVolumeSoftDeleted: false,
+                        possibleKeyPackets: ['dsad'],
+                        type: 4,
+                        state: 1,
+                        createTime: 1234,
+                    },
+                ],
+            };
+        },
+    };
+});
 
 jest.mock('./PhotosProvider', () => {
     return {
@@ -77,7 +130,6 @@ describe('usePhotosRecovery', () => {
     const mockedUsePhotos = jest.mocked(usePhotos);
     const mockedUseLinksListing = jest.mocked(useLinksListing);
     const mockedUseLinksActions = jest.mocked(useLinksActions);
-    const mockedUseShareState = jest.mocked(useSharesState);
     const mockedGetCachedChildren = jest.fn();
     const mockedGetCachedTrashed = jest.fn();
     const mockedLoadChildren = jest.fn();
@@ -111,25 +163,6 @@ describe('usePhotosRecovery', () => {
         // @ts-ignore
         mockedUseLinksActions.mockReturnValue({
             moveLinks: mockedMoveLinks,
-        });
-        // @ts-ignore
-        mockedUseShareState.mockReturnValue({
-            getRestoredPhotosShares: () => [
-                {
-                    addressId: 'addressId',
-                    shareId: 'shareId',
-                    rootLinkId: 'rootLinkId',
-                    volumeId: 'volumeId',
-                    creator: 'creator',
-                    isLocked: false,
-                    isDefault: false,
-                    isVolumeSoftDeleted: false,
-                    possibleKeyPackets: ['dsad'],
-                    type: 4,
-                    state: 1,
-                    createTime: 1234,
-                },
-            ],
         });
     });
 
