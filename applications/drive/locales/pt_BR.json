@@ -4060,6 +4060,10 @@
         "${ providerFoldersNumLocalized } marcador encontrado no Gmail",
         "${ providerFoldersNumLocalized } marcadores encontrados no Gmail"
       ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } falha de verificação",
+        "${ scanErrorCount } falhas de verificação"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
@@ -5048,6 +5052,9 @@
       ],
       "Share via link settings": [
         "Compartilhar por meio de configurações de link"
+      ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "Compartilhado por ${ rootLink.signatureEmail }"
       ],
       "Shared link not found": [
         "Link compartilhado não encontrado"
@@ -6324,6 +6331,11 @@
         "O que é isso?"
       ]
     },
+    "List title": {
+      "Also included:": [
+        "Também incluído:"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Quase lá"
@@ -6842,6 +6854,9 @@
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
+      "200 GB of storage": [
+        "200 GB de armazenamento"
+      ],
       "24/7 account management support": [
         "Suporte de administração de conta 24/7"
       ],
@@ -7034,6 +7049,9 @@
       ],
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
+      ],
+      "Private photo backup": [
+        "Backup de fotos privado"
       ],
       "Proofread and refine your emails": [
         "Revise e otimize seus e-mails"
@@ -10279,6 +10297,9 @@
       "Unlock contacts groups": [
         "Desbloquear grupos de contato"
       ],
+      "Untitled document ${ date }": [
+        "Documento sem título ${ date }"
+      ],
       "Upgrade complete!": [
         "Upgrade concluído!"
       ],
@@ -10355,6 +10376,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Tooltip": {
@@ -10438,11 +10464,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Validation": {

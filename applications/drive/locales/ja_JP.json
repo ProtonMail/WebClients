@@ -202,7 +202,7 @@
         "アドレスをコピー"
       ],
       "Copy email to clipboard": [
-        "メールをクリップボードにコピー"
+        "メールをコピー"
       ],
       "Copy invite link": [
         "招待リンクをコピーする"
@@ -1044,7 +1044,7 @@
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+        "${ MAIL_SHORT_APP_NAME } Plusと${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -1059,7 +1059,7 @@
         "1 ユーザーアカウント"
       ],
       "10 email addresses": [
-        "10 email addresses"
+        "10個のメールアドレス"
       ],
       "2 users": [
         "2 ユーザー"
@@ -4002,7 +4002,7 @@
         "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount } 選択"
+        "${ selectedCount }個が選択済み"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
@@ -10063,6 +10063,9 @@
       "Unlock contacts groups": [
         "連絡先グループをアンロック"
       ],
+      "Untitled document ${ date }": [
+        "無題のドキュメント ${ date }"
+      ],
       "Upgrade complete!": [
         "アップグレード完了!"
       ],
@@ -10112,7 +10115,7 @@
         "まだフォルダがありません"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "${ planName }のフリートライアルは${ textDate }に終了します"
+        "${ planName }の無料トライアルは${ textDate }に終了します"
       ],
       "Your 3 GB bonus": [
         "3 GB のボーナス"
@@ -10139,6 +10142,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Tooltip": {
@@ -10222,11 +10230,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {
