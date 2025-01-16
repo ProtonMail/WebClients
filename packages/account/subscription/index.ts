@@ -20,7 +20,7 @@ import {
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSubscription } from '@proton/shared/lib/api/payments';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { Subscription, SubscriptionModel, User } from '@proton/shared/lib/interfaces';
+import type { Subscription, User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -36,7 +36,7 @@ enum ValueType {
 }
 
 export interface SubscriptionState extends UserState {
-    [name]: ModelState<SubscriptionModel> & { meta: { type: ValueType } };
+    [name]: ModelState<Subscription> & { meta: { type: ValueType } };
 }
 
 type SliceState = SubscriptionState[typeof name];
@@ -44,7 +44,7 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectSubscription = (state: SubscriptionState) => state[name];
 
-const freeSubscription = FREE_SUBSCRIPTION as unknown as SubscriptionModel;
+const freeSubscription = FREE_SUBSCRIPTION as unknown as Subscription;
 
 const canFetch = (user: User) => {
     return isAdmin(user) && isPaid(user);
@@ -97,7 +97,7 @@ const slice = createSlice({
                 }
 
                 /**
-                 * In contrast to {@link getSubscriptionModel()}, events have a different structure for the
+                 * In contrast to {@link getSubscription()}, events have a different structure for the
                  * UpcomingSubscription. For example, {@link getSubscription()} endpoint returns the both properties on the top
                  * level: { Subscription: { ... }, UpcomingSubscription: { ... }} Events make the upcoming subscription nested:
                  * { Subscription: { UpcomingSubscription: { ... }, ...} }

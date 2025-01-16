@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
-import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 import compliance from '@proton/styles/assets/img/cancellation-flow/testimonial_compliance.svg';
 import connected from '@proton/styles/assets/img/cancellation-flow/testimonial_connceted.svg';
 import standOut from '@proton/styles/assets/img/cancellation-flow/testimonial_stand_out.svg';
@@ -50,7 +50,7 @@ export const ExpirationTime = ({
     subscription,
     isChargeBeeUser,
 }: {
-    subscription: SubscriptionModel;
+    subscription: Subscription;
     isChargeBeeUser?: boolean;
 }) => {
     const subscriptionExpiryTime = subscriptionExpires(subscription, true).expirationDate ?? 0;
@@ -77,7 +77,7 @@ export const ExpirationTime = ({
 };
 
 export const getDefaultConfirmationModal = (
-    subscription: SubscriptionModel,
+    subscription: Subscription,
     planName: string,
     isChargeBeeUser?: boolean
 ): ConfirmationModal => {

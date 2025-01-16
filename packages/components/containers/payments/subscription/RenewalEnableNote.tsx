@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 
 import { subscriptionExpires } from './helpers';
 import type { CheckoutModifiers } from './useCheckoutModifiers';
 
 type Props = {
-    subscription: SubscriptionModel | undefined;
+    subscription: Subscription | undefined;
 } & CheckoutModifiers;
 
 export const RenewalEnableNote = ({ subscription, isScheduledChargedImmediately, isScheduledChargedLater }: Props) => {
