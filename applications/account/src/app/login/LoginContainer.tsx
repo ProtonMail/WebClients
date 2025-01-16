@@ -39,6 +39,7 @@ import { isElectronPass } from '@proton/shared/lib/helpers/desktop';
 import type { Paths } from '../content/helper';
 import Text from '../public/Text';
 import { getContinueToString } from '../public/helper';
+import PorkbunHeader from '../single-signup-v2/mail/PorkbunHeader';
 import { useFlowRef } from '../useFlowRef';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
@@ -115,6 +116,7 @@ const LoginContainer = ({
     const { isElectronDisabled } = useIsInboxElectronApp();
     const loginFormRef = useRef<LoginFormRef>();
     const searchParams = new URLSearchParams(location.search);
+    const isPorkbun = searchParams.get('partner') === 'porkbun';
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useMetaTags(metaTags);
@@ -222,6 +224,12 @@ const LoginContainer = ({
         return <ElectronBlockedContainer />;
     }
 
+    const beforeMainLogin = isPorkbun ? (
+        <div className="flex justify-center align-center mb-8">
+            <PorkbunHeader />
+        </div>
+    ) : undefined;
+
     return (
         <>
             <AbuseModal
@@ -298,6 +306,7 @@ const LoginContainer = ({
                                 />
                             </>
                         ),
+                        beforeMain: beforeMainLogin,
                     })}
                 </>
             )}
