@@ -10229,6 +10229,9 @@
       "Unlock contacts groups": [
         "Avaa yhteystietoryhmät"
       ],
+      "Untitled document ${ date }": [
+        "Nimetön dokumentti ${ date }"
+      ],
       "Upgrade complete!": [
         "Päivitys valmis!"
       ],
@@ -10305,6 +10308,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Tänään"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
       ]
     },
     "Tooltip": {
@@ -10388,11 +10396,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
       ]
     },
     "Validation": {

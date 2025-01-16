@@ -5521,6 +5521,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
+      ],
       "Your password was leaked:": [
         "თქვენი პაროლი გაჟონილია:"
       ],
@@ -10221,6 +10224,9 @@
       "Unlock contacts groups": [
         "განბლოკეთ კონტაქტის ჯგუფები"
       ],
+      "Untitled document ${ date }": [
+        "უსათაურო დოკუმენტი ${ date }"
+      ],
       "Upgrade complete!": [
         "განახლება დასრულებულია!"
       ],
@@ -10297,6 +10303,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "დღეს"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]
     },
     "Tooltip": {
@@ -10380,11 +10391,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]
     },
     "Validation": {

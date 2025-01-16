@@ -1179,6 +1179,9 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Aceda a conteúdo bloqueado e navegue com privacidade. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, streaming de alta velocidade, bloqueador de anúncios e proteção contra malware, acelerador de VPN e muito mais."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+, Prime Video e mais, de qualquer lugar."
       ],
@@ -3502,7 +3505,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Introduza uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -3633,7 +3636,7 @@
         "Fuso horário do calendário não suportado"
       ],
       "Edited event not supported": [
-        "Evento editado não suportado"
+        "O evento editado não é suportado."
       ],
       "End time out of bounds": [
         "Hora final fora dos limites"
@@ -3663,7 +3666,7 @@
         "O evento recorrente não tem ocorrências."
       ],
       "Recurring rule not supported": [
-        "Regra recorrente não suportada"
+        "A regra recorrente não é suportada."
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
@@ -4869,8 +4872,8 @@
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } crédito restante.",
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } crédito restante.",
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abra o documento para o visualizar."
@@ -5156,7 +5159,7 @@
         "Este navegador não suporta a antevisão de documentos PDF. Transfira o ficheiro."
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Isto NÃO pode ser desfeito. insira o nome do dispositivo para confirmar a remoção."
+        "Isto NÃO pode ser desfeito. Introduza o nome do dispositivo para confirmar a remoção."
       ],
       "This file is too large to preview": [
         "Este ficheiro é muito grande para pré-visualizar"
@@ -7859,6 +7862,9 @@
       "Subfolder failed to be loaded": [
         "Erro ao carregar a subpasta"
       ],
+      "The document failed to be created": [
+        "Não foi possível criar o documento."
+      ],
       "The item was not added to your drive": [
         "O item não foi adicionado ao seu drive."
       ],
@@ -7880,7 +7886,7 @@
         "Todos os itens foram removidos da sua lista."
       ],
       "Trash failed to be emptied": [
-        "Falha ao esvaziar o lixo"
+        "Erro ao esvaziar o lixo"
       ],
       "You stopped sharing this item": [
         "Parou de partilhar este item."
@@ -9990,7 +9996,7 @@
         "Ativar a pesquisa na unidade"
       ],
       "Enter 2FA code": [
-        "Insira o código 2FA"
+        "Introduza o código 2FA"
       ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
@@ -10297,8 +10303,11 @@
       "Unlock contacts groups": [
         "Desbloquear grupos de contactos"
       ],
+      "Untitled document ${ date }": [
+        "Documento sem título ${ date }"
+      ],
       "Upgrade complete!": [
-        "Atualização completa!"
+        "A subscrição foi atualizada."
       ],
       "Uploaded": [
         "Enviado"
@@ -10376,6 +10385,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Tooltip": {
@@ -10459,11 +10473,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviámos-lhes um convite para aceder ao item."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Validation": {

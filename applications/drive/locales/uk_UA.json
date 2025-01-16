@@ -10638,6 +10638,9 @@
       "Unlock contacts groups": [
         "Розблокувати групи контактів"
       ],
+      "Untitled document ${ date }": [
+        "Документ без назви ${ date }"
+      ],
       "Upgrade complete!": [
         "Оновлення завершено!"
       ],
@@ -10714,6 +10717,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сьогодні"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
       ]
     },
     "Tooltip": {
@@ -10797,11 +10805,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Ми надіслали їм запрошення, щоб отримати доступ до цього елементу."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
       ]
     },
     "Validation": {

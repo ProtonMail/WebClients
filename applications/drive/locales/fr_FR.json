@@ -7862,6 +7862,9 @@
       "Subfolder failed to be loaded": [
         "Le sous-dossier n'a pas pu être chargé."
       ],
+      "The document failed to be created": [
+        "Le document n'a pas été créé."
+      ],
       "The item was not added to your drive": [
         "L'élément n'a pas été ajouté à votre drive."
       ],
@@ -10300,6 +10303,9 @@
       "Unlock contacts groups": [
         "Débloquer les groupes des contacts"
       ],
+      "Untitled document ${ date }": [
+        "Document sans titre ${ date }"
+      ],
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."
       ],
@@ -10379,6 +10385,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Tooltip": {
@@ -10462,11 +10473,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Validation": {
