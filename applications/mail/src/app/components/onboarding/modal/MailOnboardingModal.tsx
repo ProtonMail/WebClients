@@ -19,6 +19,7 @@ import GetMobileAppStep from 'proton-mail/components/onboarding/modal/steps/GetM
 
 import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
 import ActivatePremiumFeaturesStep from './steps/ActivatePremiumFeaturesStep';
+import DisplayNameStep from './steps/DisplayNameStep';
 import GetDesktopAppStep from './steps/GetDesktopAppStep';
 import NewOnboardingOrganizationStep from './steps/NewOnboardingOrganizationStep';
 import NewOnboardingThemes from './steps/NewOnboardingThemes';
@@ -99,6 +100,7 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
             }}
         >
             {[
+                partnerEnabled && DisplayNameStep,
                 partnerEnabled && PartnerStep,
                 OnboardingWelcomeStep,
                 displayGetDesktopAppStep && GetDesktopAppStep,
