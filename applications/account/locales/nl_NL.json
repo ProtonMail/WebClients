@@ -337,6 +337,9 @@
       "Create link": [
         "Link aanmaken"
       ],
+      "Create new policy": [
+        "Nieuwe policy aanmaken"
+      ],
       "Create users": [
         "Gebruikers aanmaken"
       ],
@@ -835,7 +838,7 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Gegevens vernieuwen"
       ],
       "Refresh status": [
@@ -3623,6 +3626,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Maak zoveel labels of mappen als u nodig hebt om uw inbox georganiseerd te houden."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Schakel ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
       ],
@@ -3634,6 +3640,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Iedereen in uw organisatie kan verbinding maken met gedeelde servers in alle landen."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -3652,6 +3661,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Maak uw eigen voettekst — laat uw unieke merk zien, niet de onze."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Niemand in uw organisatie kan verbinding maken met gedeelde servers."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
@@ -6627,6 +6639,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } gebruikers hebben momenteel toegang tot gedeelde servers.",
+        "${ amountUsers }/${ totalUsers } gebruikers hebben momenteel toegang tot gedeelde servers."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
@@ -6974,6 +6990,9 @@
       ],
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers van de **Landen** sectie van de ${ VPN_APP_NAME } app."
       ],
       "Already allocated": [
         "Reeds toegewezen"
@@ -8079,6 +8098,12 @@
       ],
       "of": [
         "van"
+      ],
+      "Off": [
+        "Uit"
+      ],
+      "On": [
+        "Aan"
       ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
@@ -11456,6 +11481,9 @@
       ],
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "Beperkte aanbieding: **Bespaar ${ discount } op ${ name } met een 1-jarig abonnement**"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Maak je account aan met uw Porkbun domein."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"

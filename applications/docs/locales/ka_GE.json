@@ -196,9 +196,6 @@
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
-      "Create new document": [
-        "ახალი დოკუმენტის შექმნა"
-      ],
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
@@ -4595,9 +4592,6 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "ამ დოკუმენტში ძალიან ბევრი აქტივობაა. ზოგიერთი ფუნქცია, შეიძლება, დროებით ხელმიუწვდომელი იყოს."
       ],
-      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "ეს დოკუმენტი ან არ არსებობს, ან მისი ნახვის უფლება არ გაქვთ. შეგიძლიათ, სცადოთ თავიდან ჩატვირთოთ გვერდი, რომ ნახოთ, გაქრება თუ არა პრობლემა."
-      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
       ],
@@ -4905,6 +4899,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
       ],
       "Your password was leaked:": [
         "თქვენი პაროლი გაჟონილია:"

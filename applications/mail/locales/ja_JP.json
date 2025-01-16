@@ -37,7 +37,7 @@
         "${ BRAND_NAME } ショップ"
       ],
       "About hide-my-email aliases": [
-        "ide-my-email エイリアスについて"
+        "hide-my-email エイリアスについて"
       ],
       "Activate recovery": [
         "回復を有効にする"
@@ -283,7 +283,7 @@
         "アドレスをコピー"
       ],
       "Copy email to clipboard": [
-        "メールをクリップボードにコピー"
+        "メールをコピー"
       ],
       "Copy password to clipboard": [
         "パスワードをコピー"
@@ -1657,7 +1657,7 @@
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+        "${ MAIL_SHORT_APP_NAME } Plusと${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -1672,7 +1672,7 @@
         "1 ユーザーアカウント"
       ],
       "10 email addresses": [
-        "10 email addresses"
+        "10個のメールアドレス"
       ],
       "2 users": [
         "2 ユーザー"
@@ -5126,7 +5126,7 @@
         "クレジットカード不要。"
       ],
       "Start free trial": [
-        "フリートライアルを開始"
+        "無料トライアルを開始"
       ],
       "Try the new desktop app": [
         "新しいデスクトップアプリを試す"
@@ -6822,7 +6822,7 @@
         "${ dateString } に保存しました"
       ],
       "Saved yesterday": [
-        "昨日保存しました"
+        "昨日保存済み"
       ],
       "Saved: ${ dateString }": [
         "保存済み: ${ dateString }"
@@ -6879,7 +6879,7 @@
         "メッセージを送信しています..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "@pm.me から送信されたメッセージは有料プランの機能です。メッセージは既定のアドレスである ${ email } から送信されます。"
+        "@pm.me からメッセージを送信するには有料プランが必要です。メッセージは既定のアドレスの ${ email } から送信されます。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "安全なメールシステム <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信"
@@ -7026,7 +7026,7 @@
         "連絡先の詳細の検証に使われる署名にエラーがあります。おそらくパスワードリセットによって引き起こされています。"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "本来のメールアドレスを知られなければ、迷惑メールを送りつけられることもありません。Hide-my-email で受信トレイを守りましょう。"
+        "本来のメールアドレスを知られなければ、迷惑メールを送られることもありません。Hide-my-email で受信トレイを守りましょう。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
@@ -7368,7 +7368,7 @@
         "メッセージの有効期限をいつに設定しますか？"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "メールアドレスを伝える際に、本来のメールアドレスではなく専用の使い捨て hide-my-email エイリアスを使用します。"
+        "メールアドレスを伝える際には、本来のメールアドレスではなく専用の使い捨て hide-my-email エイリアスを使用しましょう。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
@@ -13100,7 +13100,7 @@
         "何をインポートしたいですか?"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "${ planName }のフリートライアルは${ textDate }に終了します"
+        "${ planName }の無料トライアルは${ textDate }に終了します"
       ],
       "Your account is protected": [
         "あなたのアカウントは保護されています"

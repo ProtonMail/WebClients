@@ -337,6 +337,9 @@
       "Create link": [
         "Criar ligação"
       ],
+      "Create new policy": [
+        "Criar uma política"
+      ],
       "Create users": [
         "Criar utilizadores"
       ],
@@ -662,10 +665,10 @@
         "Inserir"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir uma imagem"
       ],
       "Insert link": [
-        "Inserir hiperligação"
+        "Inserir uma ligação"
       ],
       "Invite": [
         "Convidar"
@@ -835,7 +838,7 @@
       "Refer a friend": [
         "Referencie um amigo"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Atualizar os dados"
       ],
       "Refresh status": [
@@ -1199,7 +1202,7 @@
         "Actualizar agora"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Atualize para o ${ MAIL_SHORT_APP_NAME } Plus"
+        "Melhorar para o ${ MAIL_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to Business": [
         "Atualizar para o Business"
@@ -1833,6 +1836,9 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Aceda a conteúdo bloqueado e navegue com privacidade. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, streaming de alta velocidade, bloqueador de anúncios e proteção contra malware, acelerador de VPN e muito mais."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+, Prime Video e mais, de qualquer lugar."
       ],
@@ -3620,6 +3626,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Crie quantas etiquetas ou pastas precisar para manter a sua caixa de entrada organizada."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Crie políticas para decidir quem pode conectar-se a servidores partilhados em cada país."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para aceder a estas funcionalidades"
       ],
@@ -3631,6 +3640,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Todos os membros da sua organização podem conectar-se a servidores partilhados em todos os países."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros."
@@ -3649,6 +3661,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Personalize o rodapé do seu e-mail — destaque a sua identidade, não a nossa."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Ninguém na sua organização pode conectar-se a servidores partilhados."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspetos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
@@ -4666,7 +4681,7 @@
         "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
       ],
       "Please enter a valid Entity ID URL": [
-        "Insira um URL de ID de entidade válida."
+        "Introduza um URL de ID de entidade válida."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito selecionado para proceder.",
@@ -5461,7 +5476,7 @@
         "Se o utilizador já tiver um endereço ${ MAIL_APP_NAME }, introduza-o aqui. Caso contrário, é necessário criar uma conta primeiro."
       ],
       "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
-        "Se o utilizador já tiver uma conta ${ BRAND_NAME }, insira-a aqui. Caso contrário, é necessário criar uma conta primeiro."
+        "Se o utilizador já tiver uma conta ${ BRAND_NAME }, Introduza-a aqui. Caso contrário, é necessário criar uma conta primeiro."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "O convite será cancelado e o utilizador não poderá aderir a ${ organizationName }."
@@ -5636,7 +5651,7 @@
         "Tem a certeza que deseja eliminar a chave de segurança ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Introduza uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira a sua chave de segurança na porta USB do seu dispositivo."
@@ -6234,6 +6249,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Adicione este registo ao seu domínio no painel de controlo do seu registador de nome de domínio."
+      ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } sugestão foi encontrada. Utilize o teclado para navegar.",
         "${ itemsCount } sugestões foram encontradas. Utilize o teclado para navegar."
@@ -6261,7 +6279,7 @@
         "Fuso horário do calendário não suportado"
       ],
       "Edited event not supported": [
-        "Evento editado não suportado"
+        "O evento editado não é suportado."
       ],
       "End time out of bounds": [
         "Hora final fora dos limites"
@@ -6291,7 +6309,7 @@
         "O evento recorrente não tem ocorrências."
       ],
       "Recurring rule not supported": [
-        "Regra recorrente não suportada"
+        "A regra recorrente não é suportada."
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
@@ -6624,6 +6642,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } utilizador atualmente tem acesso a servidores partilhados.",
+        "${ amountUsers }/${ totalUsers } utilizadores atualmente têm acesso a servidores partilhados."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -6715,7 +6737,7 @@
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas que trabalham ininterruptamente para o proteger de pessoas mal-intencionadas e ameaças à segurança."
+        "O ${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas que trabalham ininterruptamente para o proteger de pessoas mal-intencionadas e ameaças à segurança."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
@@ -6972,6 +6994,9 @@
       "Allow recovery by phone": [
         "Permitir recuperação por telefone"
       ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permita que os utilizadores se conectem para proteger os servidores partilhados na secção **Países** da aplicação do ${ VPN_APP_NAME }."
+      ],
       "Already allocated": [
         "Já foi alocado"
       ],
@@ -7179,6 +7204,12 @@
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configure a autenticação SAML para a sua organização através de um fornecedor de identidade. Isto irá ativar o SAML para toda a organização."
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Configure a autenticação SAML para a sua organização através de um fornecedor de identidade como Okta, Microsoft Azure ou Google Identity Platform. Isto irá ativar o SAML para toda a organização."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de 1 hora."
       ],
@@ -7199,6 +7230,9 @@
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copie e cole este URL no campo URL do ACS (Assertion Consumer Service) do seu fornecedor de identidade."
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copie e cole esse URL no campo ID da entidade do seu fornecedor de identidade."
@@ -7454,6 +7488,9 @@
       "End-to-end email encryption is enabled for this group.": [
         "A encriptação de e-mail de ponta a ponta está ativada para este grupo."
       ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL do endpoint recebido do seu fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)."
+      ],
       "Enhance your network security": [
         "Melhore a sua segurança da rede"
       ],
@@ -7476,7 +7513,7 @@
         "Introduza as credenciais da conta de e-mail da qual deseja importar."
       ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
-        "Insira o ID da entidade de uma organização **eduGAIN** para **${ domain.DomainName }**."
+        "Introduza o ID da entidade de uma organização **eduGAIN** para **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduza a palavra-passe da organização para restaurar privilégios de administrador. ${ learnMore }"
@@ -7583,6 +7620,9 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dê a sua chave pública aos seus amigos, ou publique-a online para que todos lhe possam enviar e-mails encriptados de ponta a ponta."
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Aceda ao seu fornecedor de identidade, obtenha os metadados SAML para o ${ appName } e importe-os aqui."
+      ],
       "Group deleted": [
         "O grupo foi eliminado."
       ],
@@ -7594,6 +7634,9 @@
       ],
       "High Priority": [
         "Prioridade alta"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Chave pública do fornecedor de identidade para assinar as afirmações de autenticação. Deve haver um local para descarregar ou copiar o hash do certificado do fornecedor de identidade. Basta colar o hash do certificado no campo de área de texto."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se outro administrador alterou esta palavra-passe, terá de lhe solicitar a nova palavra-passe da organização."
@@ -7720,7 +7763,7 @@
         "Inserir imagem"
       ],
       "Insert link": [
-        "Inserir hiperligação"
+        "Inserir uma ligação"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instale um ficheiro de configuração do país para ligar a um servidor aleatório no país à sua escolha."
@@ -7729,7 +7772,7 @@
         "Instale um ficheiro de configuração de um servidor Free para ligar a um servidor específico numa das três localizações disponíveis."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Instale um ficheiro de configuração Secure Core para beneficiar de protecção adicional contra compromissos no ponto final da VPN."
+        "Instale um ficheiro de configuração Secure Core para beneficiar de proteção adicional contra compromissos no endpoint da VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale um ficheiro de configuração do servidor para ligar a um servidor específico num país à sua escolha."
@@ -8059,6 +8102,12 @@
       "of": [
         "de"
       ],
+      "Off": [
+        "Desativado"
+      ],
+      "On": [
+        "Ativado"
+      ],
       "Once you reset your password:": [
         "Uma vez a sua palavra-passe redefinida:"
       ],
@@ -8203,8 +8252,8 @@
         "Se eliminar o filtro ${ nameDeleted }, deixaremos de processar todas as ações automatizadas que ele desencadeia."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } crédito restante.",
-        "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } crédito restante.",
+        "Ao clicar em Confirmar, a sua conta terá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
         "abra um pedido de suporte"
@@ -8488,6 +8537,9 @@
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas."
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Especifique o domínio com permissão para a autenticação SAML SSO."
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "O SPF especifica quem está autorizado a enviar e-mails em nome do seu domínio. Certifique-se de adicionar o seguinte registo TXT na sua consola DNS (localizada na plataforma onde adquiriu o domínio personalizado)."
       ],
@@ -8741,6 +8793,9 @@
       "This will remove any enabled 2FA methods.": [
         "Isto removerá quaisquer métodos de autenticação de dois fatores (A2F) ativados."
       ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Isto irá remover a autenticação única (SSO) para ${ boldDomainName }."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
@@ -8860,6 +8915,9 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
+      ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID único gerado pelo seu fornecedor de identidade, geralmente na forma de um URL que contém o nome do fornecedor de identidade (por exemplo, https://idp.exemplo.pt/XXXXX)."
       ],
       "Unknown event type": [
         "Categoria de evento desconhecida"
@@ -9100,6 +9158,9 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Ao ativar o SAML para o ${ appName } no seu fornecedor de identidade, poderá ser solicitado a utilizar o URL de callback (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu fornecedor de identidade."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Quando as notificações estão ativas, enviaremos um alerta para o seu endereço de recuperação se tiver novas mensagens na sua conta ${ MAIL_APP_NAME }."
@@ -9724,7 +9785,7 @@
         "Ir para Lixo"
       ],
       "Insert link": [
-        "Inserir hiperligação"
+        "Inserir uma ligação"
       ],
       "Jump to first": [
         "Ir para o primeiro"
@@ -10556,6 +10617,9 @@
       ],
       "Metadata URL for ${ appName }": [
         "URL de metadados para o ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Método para importar metadados"
       ],
       "Minimum number of characters": [
         "Número mínimo de caracteres"
@@ -13745,7 +13809,7 @@
         "O gestor de palavras-passe encriptado que também protege a sua identidade"
       ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Insira um nome a mostrar para **${ username }**. Este será o nome que os seus utilizadores verão ao alterar as permissões ou ao partilhar dados com eles."
+        "Introduza um nome a mostrar para **${ username }**. Este será o nome que os seus utilizadores verão ao alterar as permissões ou ao partilhar dados com eles."
       ],
       "Essential protection and secure collaboration for unlimited users": [
         "Proteção essencial e colaboração segura para um número ilimitado de utilizadores"
@@ -14306,7 +14370,7 @@
         "Descreva o problema e inclua quaisquer mensagens de erro."
       ],
       "Please insert link first": [
-        "Introduza primeiro a hiperligação"
+        "Introduza primeiro a ligação"
       ],
       "Please select a country": [
         "Selecione um país"
@@ -14688,10 +14752,10 @@
         "para recuperar automaticamente os seus dados quando aceder a um dispositivo confiável."
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Para garantir que o endereço de e-mail é seu, insira o código de verificação enviado para ${ boldEmail }."
+        "Para garantir que o endereço de e-mail é seu, Introduza o código de verificação enviado para ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Para garantir que o número de telefone é seu, insira o código de verificação enviado para ${ boldPhoneNumber }."
+        "Para garantir que o número de telefone é seu, Introduza o código de verificação enviado para ${ boldPhoneNumber }."
       ],
       "to recover your account and data if you're ever locked out": [
         "para recuperar a sua conta e os seus dados se for bloqueada"
@@ -14824,7 +14888,7 @@
         "Ocorreu um erro"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
-        "O endereço de e-mail **${ email }** já existe como utilizador do ${ BRAND_NAME } . Insira o endereço de e-mail de um utilizador do seu fornecedor de identidade."
+        "O endereço de e-mail **${ email }** já existe como utilizador do ${ BRAND_NAME } . Introduza o endereço de e-mail de um utilizador do seu fornecedor de identidade."
       ]
     },
     "saml: Info": {
@@ -14835,7 +14899,7 @@
         "Detalhes"
       ],
       "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
-        "Insira o endereço de e-mail de um utilizador do seu fornecedor de identidade para **${ domainName }**."
+        "Introduza o endereço de e-mail de um utilizador do seu fornecedor de identidade para **${ domainName }**."
       ],
       "Test in progress...": [
         "Teste em curso..."
@@ -14888,10 +14952,10 @@
         "**Pré-requisito:** para ativar o provisionamento SCIM, deve verificar a propriedade do domínio **${ domainName }**. Esta verificação pode demorar até uma hora."
       ],
       "Enter the token into your identity provider": [
-        "Insira o token no seu fornecedor de identidade"
+        "Introduza o token no seu fornecedor de identidade"
       ],
       "Enter URL and token into your identity provider": [
-        "Insira o URL e o token no seu fornecedor de identidade."
+        "Introduza o URL e o token no seu fornecedor de identidade."
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
         "Por razões de segurança, o token SCIM será ocultado após guardar as suas alterações e não poderá vê-lo novamente."
@@ -15875,10 +15939,10 @@
         "Quer remover todos os outros dispositivos, exceto o que está em uso?"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "Insira o código de confirmação que enviamos no seu outro dispositivo."
+        "Introduza o código de confirmação que enviamos no seu outro dispositivo."
       ],
       "Enter the confirmation code we sent to this user.": [
-        "Insira o código de confirmação que enviamos para este utilizador."
+        "Introduza o código de confirmação que enviamos para este utilizador."
       ],
       "Enter your backup password": [
         "Introduza a sua palavra-passe de backup"
@@ -15989,7 +16053,7 @@
         "Para garantir que realmente é você a iniciar sessão em **${ email }**, verifique o código de confirmação e aprove a solicitação em outro dispositivo."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
-        "Para garantir que é realmente você a tentar iniciar sessão, insira a sua palavra-passe de backup."
+        "Para garantir que é realmente você a tentar iniciar sessão, Introduza a sua palavra-passe de backup."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Para garantir que realmente é você a tentar entrar na sua conta, partilhe o código de confirmação com o seu administrador **${ adminEmail }** para poder aprovar a solicitação para **${ email }**."
@@ -17668,13 +17732,16 @@
         "Encriptação e chaves"
       ],
       "Enter 2FA code": [
-        "Insira o código 2FA"
+        "Introduza o código 2FA"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Introduza os endpoints no seu fornecedor de identidade"
       ],
       "Enter SAML metadata": [
         "Introduzir os metadados SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Insira os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
+        "Introduza os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
       ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
@@ -18292,7 +18359,7 @@
         "Desbloquear os seus dados"
       ],
       "Upgrade complete!": [
-        "Atualização completa!"
+        "A subscrição foi atualizada."
       ],
       "Upgrade plan": [
         "Atualizar o plano"
@@ -18534,6 +18601,9 @@
       "Click here to learn how to create a customized signature with HTML.": [
         "Clique aqui para saber como criar uma assinatura personalizada no formato HTML."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copie e cole este URL no campo URL do ACS (Assertion Consumer Service) do seu fornecedor de identidade."
+      ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copie e cole esse URL no campo ID da entidade do seu fornecedor de identidade."
       ],
@@ -18567,6 +18637,9 @@
       "Enabling detailed events records the IP address for each event.": [
         "Ao ativar os eventos detalhados, o endereço IP de cada evento é registado."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL do endpoint do fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)"
+      ],
       "Feature in early access": [
         "Funcionalidade em acesso antecipado"
       ],
@@ -18578,6 +18651,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe e-mails na mesma conversa na sua caixa de entrada ou veja-os separadamente."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Chave pública do fornecedor de identidade para assinar as afirmações de autenticação. Obtenha o hash do certificado do seu fornecedor de identidade."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, introduza-o aqui."
@@ -18614,6 +18690,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "As assinaturas produzidas por esta chave são tratadas como inválidas e a chave não pode ser utilizada para a encriptação."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Especifique o domínio com permissão para a autenticação SAML SSO."
       ],
       "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
         "Especifique os utilizadores da entidade eduGAIN autorizados a autenticar com a autenticação única (SSO) SAML."
@@ -18674,6 +18753,9 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Os utilizadores verão o seu logo em vez do ícone da ${ BRAND_NAME } quando estiverem conectados nas nossas aplicações web."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Geralmente um URL que contém o nome do fornecedor de identidade"
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"

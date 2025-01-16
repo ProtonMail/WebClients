@@ -717,7 +717,7 @@
         "Lägg till följande CNAME DNS-poster till din domän."
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
-        "Lägg till följande MX-post för din domän. Notera att det är en punkt (.) på slutet av måladresserna. Om din domänåterförsäljare inte tillåter punkter på slutet så kan du ta bort den när du lägger till DNS-posten."
+        "Lägg till följande MX DNS-post till din domän. Observera att det är en punkt (.) på slutet av måladresserna. Om din domänregistrator inte tillåter denna avslutande punkt, ta bort den när du lägger till DNS-posten."
       ],
       "Add the following TXT DNS record to your domain.": [
         "Lägg till följande TXT DNS-post till din domän."
@@ -765,7 +765,7 @@
         "Vissa DNS-återförsäljare kan kräva en fullständig postsökväg, i detta fall använd ${ domain } som domänvärde istället."
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
-        "Vissa domänåterförsäljare (Namecheap, Cloudflare, etc) kan även använda @ för rotdomänen."
+        "Vissa domänregistratorer (Namecheap, Cloudflare, etc.) kan också använda @ för rotdomänen."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } är en autentiseringsmetod för e-post designat för att upptäcka förfalskade sändaradresser under leveransen av e-postmeddelandet. Konfiguration av SPF rekommenderas starkt för att minska risken för att dina e-postmeddelanden hamnar i mottagarens skräppostmapp."
@@ -784,6 +784,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
+      ],
+      "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
+        "För att verifiera äganderätten till domänen, lägg till följande TXT-post. Vissa domänregistratorer (Namecheap, Cloudflare, etc.) kan använda @ för rotdomänen."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Lås upp avancerade säkerhetsfunktioner och detaljerade loggar för att skydda din närvaro online."
@@ -4094,6 +4097,9 @@
       ],
       "No results": [
         "Inga resultat"
+      ],
+      "No secure links matching": [
+        "Inga säkra länkar matchande"
       ],
       "Offline": [
         "Offline"

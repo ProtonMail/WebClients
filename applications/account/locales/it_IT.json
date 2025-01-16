@@ -337,6 +337,9 @@
       "Create link": [
         "Crea link"
       ],
+      "Create new policy": [
+        "Crea una nuova policy"
+      ],
       "Create users": [
         "Crea gli utenti"
       ],
@@ -835,8 +838,8 @@
       "Refer a friend": [
         "Invita un amico"
       ],
-      "Refresh Data": [
-        "Aggiorna Dati"
+      "Refresh data": [
+        "Aggiorna i dati"
       ],
       "Refresh status": [
         "Aggiorna stato"
@@ -3623,6 +3626,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Crea tutte le etichette e le cartelle che ti servono per mantenere ordinata la tua casella di posta."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Crea delle policy per decidere chi può connettersi ai server condivisi in ciascun paese."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Abilita ${ PROTON_SENTINEL_NAME } per accedere a queste funzionalità"
       ],
@@ -3634,6 +3640,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Tutti nella tua organizzazione possono connettersi ai server condivisi in tutti i paesi."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
@@ -3652,6 +3661,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Personalizza il piè di pagina della tua email: mostra il tuo marchio, non il nostro."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Nessuno nella tua organizzazione può connettersi ai server condivisi."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
@@ -6627,6 +6639,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } utenti attualmente hanno accesso ai server condivisi.",
+        "${ amountUsers }/${ totalUsers } utenti attualmente hanno accesso ai server condivisi."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
@@ -6974,6 +6990,9 @@
       ],
       "Allow recovery by phone": [
         "Consenti il recupero via telefono"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Consenti agli utenti di connettersi a server condivisi protetti dalla sezione **Paesi** dell'app ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Già allocato"
@@ -8079,6 +8098,12 @@
       ],
       "of": [
         "di"
+      ],
+      "Off": [
+        "Disattiva"
+      ],
+      "On": [
+        "Attiva"
       ],
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"
@@ -11462,6 +11487,9 @@
       ],
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "Offerta a tempo limitato: **Risparmia ${ discount } su ${ name } con un piano annuale**"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Configura il tuo account con il tuo dominio Porkbun."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
