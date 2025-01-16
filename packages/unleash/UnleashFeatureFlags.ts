@@ -135,6 +135,7 @@ enum MailFeatureFlag {
     RemoveImageMetadata = 'RemoveImageMetadata',
     MailWebListTelemetry = 'MailWebListTelemetry',
     QuickReply = 'QuickReply',
+    EmailWidgetSkeletonHidden = 'EmailWidgetSkeletonHidden',
 }
 
 enum AdminFeatureFlag {
