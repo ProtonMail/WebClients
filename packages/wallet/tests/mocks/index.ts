@@ -6,6 +6,7 @@ export * from './useContactEmailsMap';
 export * from './useFiatCurrencies';
 export * from './useGetApiWalletTransactionData';
 export * from './useGetBitcoinAddressHighestIndex';
+export * from './useGetBitcoinAddressUsedIndexes';
 export * from './useGetExchangeRate';
 export * from './useHideAmounts';
 export * from './useRemainingInvites';
