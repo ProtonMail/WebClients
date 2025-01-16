@@ -1,10 +1,9 @@
 import { type FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import type { PAYMENT_METHOD_TYPES } from '@proton/payments';
+import type { BillingAddressStatus, PAYMENT_METHOD_TYPES } from '@proton/payments';
 
 import { PaymentsNoApi } from './Payment';
-import type { BillingAddressStatus } from './subscription/helpers';
 
 export type Props = ReturnType<typeof usePaymentFacade> & {
     onPaypalCreditClick?: () => void;

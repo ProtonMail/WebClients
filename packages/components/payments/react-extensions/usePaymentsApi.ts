@@ -10,6 +10,7 @@ import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlans
 import {
     type CheckWithAutomaticOptions,
     DEFAULT_TAX_BILLING_ADDRESS,
+    type FullBillingAddress,
     type MultiCheckOptions,
     type MultiCheckSubscriptionData,
     PLANS,
@@ -19,6 +20,7 @@ import {
     type RequestOptions,
     extendStatus,
     isCheckWithAutomaticOptions,
+    isFullBillingAddress,
     isPaymentMethodStatusExtended,
     queryPaymentMethodStatus,
 } from '@proton/payments';
@@ -57,6 +59,29 @@ const checkProduct = (data: CheckSubscriptionData) => {
             },
         },
     };
+};
+
+const queryFullBillingAddress = () => ({
+    url: 'payments/v5/account/billing-information',
+    method: 'GET',
+});
+
+const putFullBillingAddress = (data: FullBillingAddress) => {
+    const { VatId, ...BillingAddress } = data;
+
+    return {
+        url: 'payments/v5/account/billing-information',
+        method: 'PUT',
+        data: {
+            VatId,
+            BillingAddress,
+        },
+    };
+};
+
+type FullBillingAddressResponse = {
+    BillingAddress: Partial<FullBillingAddress>;
+    VatId: string | null;
 };
 
 export const useReportRoutingError = () => {
@@ -360,11 +385,41 @@ export const usePaymentsApi = (
             multiCheckCache.set(data, options, result);
         };
 
+        const getFullBillingAddress = async (): Promise<FullBillingAddress> => {
+            const response = await api<FullBillingAddressResponse>(queryFullBillingAddress());
+
+            const VatId = response.VatId ?? undefined;
+            const fullBillingAddress = {
+                VatId,
+                ...response.BillingAddress,
+            };
+
+            if (isFullBillingAddress(fullBillingAddress)) {
+                return fullBillingAddress;
+            }
+
+            const status = await statusExtendedAutomatic();
+            const CountryCode = fullBillingAddress.CountryCode ?? status.CountryCode;
+            const State = fullBillingAddress.State ?? status.State ?? undefined;
+
+            return {
+                CountryCode,
+                State,
+                ...fullBillingAddress,
+            };
+        };
+
+        const updateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {
+            await api(putFullBillingAddress(fullBillingAddress));
+        };
+
         return {
             checkWithAutomaticVersion,
             multiCheck,
             cacheMultiCheck,
             statusExtendedAutomatic,
+            getFullBillingAddress,
+            updateFullBillingAddress,
         };
     };
 

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { type CountryOptions, correctAbbr, getLocalizedCountryByAbbr } from '@proton/payments';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { type CountryOptions, correctAbbr, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { getFlagSvg } from '../flag';
 
 const Country = ({

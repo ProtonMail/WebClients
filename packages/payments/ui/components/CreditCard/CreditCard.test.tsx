@@ -4,12 +4,15 @@ import userEvent from '@testing-library/user-event';
 import { useCard } from '@proton/components/payments/react-extensions/useCard';
 import { apiMock } from '@proton/testing';
 
-import type { Props } from './CreditCard';
-import CreditCard from './CreditCard';
+import { CreditCard, type Props } from './CreditCard';
 
 beforeEach(() => {
     jest.clearAllMocks();
 });
+
+jest.mock('../../helpers/credit-card-icons', () => ({
+    getBankSvg: jest.fn().mockImplementation((type) => `./cc-${type}.svg`),
+}));
 
 const TestComponent = (rest?: Partial<Props>) => {
     const cardHook = useCard(

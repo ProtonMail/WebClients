@@ -1,4 +1,3 @@
-import type { BillingAddress } from '@proton/payments';
 import {
     type Currency,
     type FreeSubscription,
@@ -204,35 +203,4 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
     const availableCycles = Object.keys(plan.Pricing) as unknown as CYCLE[];
     const maxCycle = Math.max(...availableCycles) as CYCLE;
     return Math.min(cycle, maxCycle);
-}
-
-export const countriesWithStates = Object.freeze(['US', 'CA']);
-
-export type BillingAddressStatus =
-    | {
-          valid: true;
-          reason: undefined;
-      }
-    | {
-          valid: false;
-          reason: 'missingCountry' | 'missingState';
-      };
-
-export const BILLING_ADDRESS_VALID = Object.freeze({ valid: true, reason: undefined }) as BillingAddressStatus;
-
-export function getBillingAddressStatus(billingAddress: BillingAddress): BillingAddressStatus {
-    if (!billingAddress.CountryCode) {
-        return { valid: false, reason: 'missingCountry' };
-    }
-
-    const isCountryWithState = countriesWithStates.includes(billingAddress.CountryCode);
-    if (!isCountryWithState) {
-        return BILLING_ADDRESS_VALID;
-    }
-
-    if (!billingAddress.State) {
-        return { valid: false, reason: 'missingState' };
-    }
-
-    return BILLING_ADDRESS_VALID;
 }

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
-import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import type { GatewayDto } from './GatewayDto';
 import type { GatewayLocation } from './GatewayLocation';
 import type { GatewayLogical } from './GatewayLogical';

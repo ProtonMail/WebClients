@@ -2,16 +2,13 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
-import {
-    type OnBillingAddressChange,
-    WrappedTaxCountrySelector,
-} from '@proton/components/containers/payments/TaxCountrySelector';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { Price } from '@proton/components/index';
-import { ADDON_NAMES } from '@proton/payments/core/constants';
+import { ADDON_NAMES } from '@proton/payments';
+import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import type { Plan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

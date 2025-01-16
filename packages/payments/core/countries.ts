@@ -1,26 +1,10 @@
 import { c } from 'ttag';
 
-import { localeCode } from '@proton/shared/lib/i18n';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-
-const getTopCounties = () => [
-    { value: 'US', label: c('Country name').t`United States` },
-    { value: 'GB', label: c('Country name').t`United Kingdom` },
-    { value: 'CH', label: c('Country name').t`Switzerland` },
-    { value: 'FR', label: c('Country name').t`France` },
-    { value: 'DE', label: c('Country name').t`Germany` },
-    { value: 'CA', label: c('Country name').t`Canada` },
-];
-export const DEFAULT_SEPARATOR = {
-    label: '------------------',
-    value: '',
-    disabled: true,
-    key: 'separator',
-};
 
 // It has to be wrapped in a function because otherwise the tranlsations will not be available at the time when
 // the expression is evaluated
-const getCountries = () => [
+export const getCountries = () => [
     { value: 'AF', label: c('Country name').t`Afghanistan` },
     { value: 'AL', label: c('Country name').t`Albania` },
     { value: 'DZ', label: c('Country name').t`Algeria` },
@@ -258,24 +242,111 @@ const getCountries = () => [
     { value: 'ZW', label: c('Country name').t`Zimbabwe` },
 ];
 
-const getSortedCountries = () => {
-    const countries = getCountries();
+export const getTopCounties = () => [
+    { value: 'US', label: c('Country name').t`United States` },
+    { value: 'GB', label: c('Country name').t`United Kingdom` },
+    { value: 'CH', label: c('Country name').t`Switzerland` },
+    { value: 'FR', label: c('Country name').t`France` },
+    { value: 'DE', label: c('Country name').t`Germany` },
+    { value: 'CA', label: c('Country name').t`Canada` },
+];
 
-    try {
-        countries.sort((a, b) => a.label.localeCompare(b.label, localeCode.split('_').join('-')));
-    } catch {}
+export const countriesWithStates = Object.freeze(['US', 'CA']);
 
-    return countries;
-};
+export function getStateList(countryCode: string) {
+    if (countryCode === 'US') {
+        return [
+            { stateName: 'Alabama', stateCode: 'AL' },
+            { stateName: 'Alaska', stateCode: 'AK' },
+            { stateName: 'Arizona', stateCode: 'AZ' },
+            { stateName: 'Arkansas', stateCode: 'AR' },
+            { stateName: 'California', stateCode: 'CA' },
+            { stateName: 'Colorado', stateCode: 'CO' },
+            { stateName: 'Connecticut', stateCode: 'CT' },
+            { stateName: 'Delaware', stateCode: 'DE' },
+            { stateName: 'Florida', stateCode: 'FL' },
+            { stateName: 'Georgia', stateCode: 'GA' },
+            { stateName: 'Hawaii', stateCode: 'HI' },
+            { stateName: 'Idaho', stateCode: 'ID' },
+            { stateName: 'Illinois', stateCode: 'IL' },
+            { stateName: 'Indiana', stateCode: 'IN' },
+            { stateName: 'Iowa', stateCode: 'IA' },
+            { stateName: 'Kansas', stateCode: 'KS' },
+            { stateName: 'Kentucky', stateCode: 'KY' },
+            { stateName: 'Louisiana', stateCode: 'LA' },
+            { stateName: 'Maine', stateCode: 'ME' },
+            { stateName: 'Maryland', stateCode: 'MD' },
+            { stateName: 'Massachusetts', stateCode: 'MA' },
+            { stateName: 'Michigan', stateCode: 'MI' },
+            { stateName: 'Minnesota', stateCode: 'MN' },
+            { stateName: 'Mississippi', stateCode: 'MS' },
+            { stateName: 'Missouri', stateCode: 'MO' },
+            { stateName: 'Montana', stateCode: 'MT' },
+            { stateName: 'Nebraska', stateCode: 'NE' },
+            { stateName: 'Nevada', stateCode: 'NV' },
+            { stateName: 'New Hampshire', stateCode: 'NH' },
+            { stateName: 'New Jersey', stateCode: 'NJ' },
+            { stateName: 'New Mexico', stateCode: 'NM' },
+            { stateName: 'New York', stateCode: 'NY' },
+            { stateName: 'North Carolina', stateCode: 'NC' },
+            { stateName: 'North Dakota', stateCode: 'ND' },
+            { stateName: 'Ohio', stateCode: 'OH' },
+            { stateName: 'Oklahoma', stateCode: 'OK' },
+            { stateName: 'Oregon', stateCode: 'OR' },
+            { stateName: 'Pennsylvania', stateCode: 'PA' },
+            { stateName: 'Rhode Island', stateCode: 'RI' },
+            { stateName: 'South Carolina', stateCode: 'SC' },
+            { stateName: 'South Dakota', stateCode: 'SD' },
+            { stateName: 'Tennessee', stateCode: 'TN' },
+            { stateName: 'Texas', stateCode: 'TX' },
+            { stateName: 'Utah', stateCode: 'UT' },
+            { stateName: 'Vermont', stateCode: 'VT' },
+            { stateName: 'Virginia', stateCode: 'VA' },
+            { stateName: 'Washington', stateCode: 'WA' },
+            { stateName: 'West Virginia', stateCode: 'WV' },
+            { stateName: 'Wisconsin', stateCode: 'WI' },
+            { stateName: 'Wyoming', stateCode: 'WY' },
+            { stateName: 'District of Columbia', stateCode: 'DC' },
+            { stateName: 'American Samoa', stateCode: 'AS' },
+            { stateName: 'Micronesia', stateCode: 'FM' },
+            { stateName: 'Guam', stateCode: 'GU' },
+            { stateName: 'Puerto Rico', stateCode: 'PR' },
+            { stateName: 'Virgin Islands, U.S.', stateCode: 'VI' },
+            { stateName: 'Marshall Islands', stateCode: 'MH' },
+            { stateName: 'Northern Mariana Islands', stateCode: 'MP' },
+            { stateName: 'Palau', stateCode: 'PW' },
+        ];
+    }
 
-export const getCountryByAbbrMap = () => {
+    if (countryCode === 'CA') {
+        return [
+            { stateName: 'Alberta', stateCode: 'AB' },
+            { stateName: 'British Columbia', stateCode: 'BC' },
+            { stateName: 'Manitoba', stateCode: 'MB' },
+            { stateName: 'New Brunswick', stateCode: 'NB' },
+            { stateName: 'Newfoundland and Labrador', stateCode: 'NL' },
+            { stateName: 'Northwest Territories', stateCode: 'NT' },
+            { stateName: 'Nova Scotia', stateCode: 'NS' },
+            { stateName: 'Nunavut', stateCode: 'NU' },
+            { stateName: 'Ontario', stateCode: 'ON' },
+            { stateName: 'Prince Edward Island', stateCode: 'PE' },
+            { stateName: 'Quebec', stateCode: 'QC' },
+            { stateName: 'Saskatchewan', stateCode: 'SK' },
+            { stateName: 'Yukon', stateCode: 'YT' },
+        ];
+    }
+
+    return [];
+}
+
+const getCountryByAbbrMap = () => {
     return getCountries().reduce<{ [key: string]: string }>(
         (list, country) => ({ ...list, [country.value]: country.label }),
         {}
     );
 };
 
-export type CountryAbbrMap = ReturnType<typeof getCountryByAbbrMap>;
+type CountryAbbrMap = ReturnType<typeof getCountryByAbbrMap>;
 
 const getCountryByAbbr = (abbr: string, countriesByAbbr: CountryAbbrMap) => {
     return countriesByAbbr[abbr];
@@ -327,28 +398,3 @@ export const getLocalizedCountryByAbbr = (abbr: string, options: CountryOptions)
 };
 
 export const correctAbbr = (abbr: string) => (abbr === 'UK' ? 'GB' : abbr);
-
-export interface CountryItem {
-    value: string;
-    key: string;
-    label: string;
-    disabled: boolean;
-    isTop?: boolean;
-}
-
-export const getFullList = (): CountryItem[] =>
-    getTopCounties()
-        .map(
-            (country) =>
-                ({
-                    ...country,
-                    key: `${country.value}-top`,
-                    disabled: false,
-                    isTop: true,
-                }) as CountryItem
-        )
-        .concat(
-            [DEFAULT_SEPARATOR],
-            getSortedCountries().map((country) => ({ ...country, disabled: false, key: country.value }))
-        );
-export const getFirstTop = () => getTopCounties()[0];
