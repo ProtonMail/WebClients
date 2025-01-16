@@ -13,8 +13,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApiResult from '@proton/components/hooks/useApiResult';
+import type { CountryOptions } from '@proton/payments';
 
-import type { CountryOptions } from '../../../helpers/countries';
 import AddServerConfirmationModal from './AddServerConfirmationModal';
 import type { DeletedDedicatedIp } from './DeletedDedicatedIp';
 import { GatewayCountrySelection } from './GatewayCountrySelection';

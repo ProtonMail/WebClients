@@ -13,13 +13,13 @@ import TableRow from '@proton/components/components/table/TableRow';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useApi from '@proton/components/hooks/useApi';
 import { PLANS } from '@proton/payments';
+import type { CountryOptions } from '@proton/payments';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { CountryOptions } from '../../../helpers/countries';
 import Country from './Country';
 import LoadIndicator from './LoadIndicator';
 import type { EnhancedLogical } from './interface';

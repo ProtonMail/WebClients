@@ -6,9 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Alert3ds, PayPalButton, StyledPayPalButton } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -16,7 +14,13 @@ import { useChargebeeContext } from '@proton/components/payments/client-extensio
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import type { ExtendedTokenPayment, PaymentMethodFlows, TokenPayment } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, isV5PaymentToken, v5PaymentTokenToLegacyPaymentToken } from '@proton/payments';
+import {
+    PAYMENT_METHOD_TYPES,
+    getBillingAddressStatus,
+    isV5PaymentToken,
+    v5PaymentTokenToLegacyPaymentToken,
+} from '@proton/payments';
+import { type OnBillingAddressChange } from '@proton/payments/ui';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
