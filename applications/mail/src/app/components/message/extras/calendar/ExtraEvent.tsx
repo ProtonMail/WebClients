@@ -16,6 +16,7 @@ import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/Ge
 import type { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { EventInvitation, InvitationModel } from '../../../../helpers/calendar/invite';
 import {
@@ -96,6 +97,7 @@ const ExtraEvent = ({
     const isMounted = useIsMounted();
     const api = useApi();
     const { appInView } = useDrawer();
+    const hideWidgetSkeleton = useFlag('EmailWidgetSkeletonHidden');
 
     const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs, pmData, invitationApi } = model;
     // setters don't need to be listed as dependencies in a callback
@@ -311,7 +313,7 @@ const ExtraEvent = ({
     }, [retryCount]);
 
     if (loading) {
-        return <EmailReminderWidgetSkeleton />;
+        return hideWidgetSkeleton ? null : <EmailReminderWidgetSkeleton />;
     }
 
     if (model.error && !noErrorBannerSet.has(model.error.type)) {
