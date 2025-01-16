@@ -460,9 +460,6 @@
       "Refer a friend": [
         "მიმართეთ მეგობარს"
       ],
-      "Refresh Data": [
-        "მონაცემების განახლება"
-      ],
       "Refresh status": [
         "სტატუსის განახლება"
       ],
@@ -3850,6 +3847,9 @@
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
+      "Custom": [
+        "ხელით"
+      ],
       "Custom branding": [
         "მორგებული ბრენდინგი"
       ],
@@ -5215,6 +5215,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "თქვენი ორგანიზაცია შესვლის ერთწერტილიან სისტემას (SSO) იყენებს. შედით, რომ თქვენს SSO-ის მომწოდებელზე გადახვიდეთ."
