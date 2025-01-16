@@ -42,11 +42,7 @@ export const ItemInviteRespond: FC<Props> = ({ token }) => {
             </ModalTwoContent>
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
-                <InviteStepResponse
-                    invite={invite}
-                    acceptText={c('Action').t`Accept and view the item`}
-                    limitText={c('Warning').t`You have reached the limit of shared items you can have in your plan.`}
-                />
+                <InviteStepResponse invite={invite} acceptText={c('Action').t`Accept and view the item`} />
             </ModalTwoFooter>
         </PassModal>
     );

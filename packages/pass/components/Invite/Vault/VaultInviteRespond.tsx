@@ -6,9 +6,11 @@ import { c, msgid } from 'ttag';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteStepResponse';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
+import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
 import { ShareType } from '@proton/pass/types';
 
@@ -17,6 +19,7 @@ type Props = { token: string };
 export const VaultInviteRespond: FC<Props> = ({ token }) => {
     const { onInviteResponse } = useInviteActions();
     const invite = useSelector(selectInviteByToken(token));
+    const { vaultLimitReached } = useSelector(selectVaultLimits);
     const invalid = !invite || invite.targetType !== ShareType.Vault;
 
     useEffect(() => {
@@ -60,10 +63,16 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
             </ModalTwoContent>
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
+                {vaultLimitReached && (
+                    <Card className="mb-2 text-sm" type="primary">
+                        {c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
+                    </Card>
+                )}
+
                 <InviteStepResponse
                     invite={invite}
                     acceptText={fromNewUser ? c('Action').t`Continue` : c('Action').t`Join shared vault`}
-                    limitText={c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
+                    disabled={vaultLimitReached}
                 />
             </ModalTwoFooter>
         </PassModal>
