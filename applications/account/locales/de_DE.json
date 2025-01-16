@@ -334,6 +334,9 @@
       "Create link": [
         "Link erstellen"
       ],
+      "Create new policy": [
+        "Neue Richtlinie erstellen"
+      ],
       "Create users": [
         "Benutzer erstellen"
       ],
@@ -832,7 +835,7 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
-      "Refresh Data": [
+      "Refresh data": [
         "Daten aktualisieren"
       ],
       "Refresh status": [
@@ -3617,6 +3620,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Lege so viele Etiketten oder Ordner an, wie du brauchst, um deinen Posteingang in übersichtlich zu halten."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Erstelle Richtlinien, um zu entscheiden, wer sich mit gemeinsamen Servern in jedem Land verbinden darf."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiviere ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
       ],
@@ -3628,6 +3634,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Jeder in deiner Organisation kann sich mit gemeinsamen Servern in allen Ländern verbinden."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere Daten von einem Service eines Drittanbieters preisgegeben wurden."
@@ -3646,6 +3655,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Mach deine E-Mail-Fußzeile zu deiner eigenen - präsentiere deine einzigartige Identität, nicht unsere."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Niemand in deiner Organisation kann sich mit gemeinsamen Servern verbinden."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
@@ -6593,6 +6605,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } Benutzer hat derzeit Zugang zu gemeinsamen Servern.",
+        "${ amountUsers }/${ totalUsers } Benutzer haben derzeit Zugang zu gemeinsamen Servern."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
@@ -6934,6 +6950,9 @@
       ],
       "Allow recovery by phone": [
         "Wiederherstellung per Telefon zulassen"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Erlaube Benutzern, sich mit sicheren gemeinsamen Servern aus dem Abschnitt **Länder** der ${ VPN_APP_NAME }-App zu verbinden."
       ],
       "Already allocated": [
         "Bereits zugewiesen"
@@ -8021,6 +8040,12 @@
       ],
       "of": [
         "von"
+      ],
+      "Off": [
+        "Aus"
+      ],
+      "On": [
+        "Ein"
       ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
