@@ -1,22 +1,14 @@
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import EditEmailSubscription from './EditEmailSubscription';
-import MozillaInfoPanel from './MozillaInfoPanel';
 import SettingsParagraph from './SettingsParagraph';
 import SettingsSection from './SettingsSection';
 
 const EmailSubscriptionSection = () => {
-    const [subscription] = useSubscription();
-
-    if (subscription?.isManagedByMozilla) {
-        return <MozillaInfoPanel />;
-    }
-
     const blogLink = <Href key={`link-to-blog`} href={getStaticURL('/blog')}>{c('Link').t`visit our blog`}</Href>;
 
     return (

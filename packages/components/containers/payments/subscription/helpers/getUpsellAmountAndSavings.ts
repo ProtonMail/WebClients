@@ -1,6 +1,6 @@
 import { type Currency, getPlansMap } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
-import type { Cycle, Plan, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Cycle, Plan, Subscription } from '@proton/shared/lib/interfaces';
 
 import { getAllowedCycles } from '../helpers/getAllowedCycles';
 
@@ -13,7 +13,7 @@ interface GetSavingsProps {
 interface UpsellAmountAndSavingsProps {
     currency: Currency;
     plans: Plan[];
-    subscription: SubscriptionModel;
+    subscription: Subscription;
     upsellPlan: Plan;
 }
 
