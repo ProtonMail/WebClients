@@ -4,6 +4,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { MetricUserPlan } from '../../utils/type/MetricTypes';
 import { tokenIsValid } from '../../utils/url/token';
 import type { IntegrityMetrics } from '../_crypto';
 import { ShareType } from '../_shares';
@@ -59,7 +60,7 @@ describe('useLink', () => {
     const mockIntegrityMetricsDecryptionError = jest.fn();
     const mockIntegrityMetricsSignatureVerificationError = jest.fn();
 
-    const isPaid = false;
+    const plan = MetricUserPlan.Paid;
     const abortSignal = new AbortController().signal;
 
     let hook: {
@@ -103,7 +104,7 @@ describe('useLink', () => {
                 mockGetShare,
                 mockGetDefaultShareAddressEmail,
                 mockGetDirectSharingInfo,
-                isPaid,
+                plan,
                 {
                     nodeDecryptionError: mockIntegrityMetricsDecryptionError,
                     signatureVerificationError: mockIntegrityMetricsSignatureVerificationError,

@@ -12,7 +12,7 @@ export interface HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson {
   Labels: {
     error: "unknown" | "crypto" | "4xx" | "5xx" | "does_not_exist_or_expired";
     type: "file" | "folder" | "unknown";
-    plan: "not_recognized" | "free" | "paid";
+    plan: "free" | "paid" | "anonymous" | "not_recognized" | "unknown";
   };
   Value: number;
 }

@@ -1,4 +1,4 @@
-import type { Share , ShareTypeString } from './interface';
+import type { Share, ShareTypeString } from './interface';
 import { ShareType } from './interface';
 
 export function getShareTypeString(share?: Share): ShareTypeString {

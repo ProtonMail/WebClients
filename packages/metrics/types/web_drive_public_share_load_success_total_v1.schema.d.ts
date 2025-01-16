@@ -11,7 +11,7 @@
 export interface HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson {
   Labels: {
     type: "file" | "folder";
-    plan: "not_recognized" | "free" | "paid";
+    plan: "free" | "paid" | "anonymous" | "not_recognized" | "unknown";
   };
   Value: number;
 }

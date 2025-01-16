@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import {
@@ -38,6 +37,7 @@ import type { DecryptedLink } from '../../_links';
 import { useLink, useLinksActions, validateLinkName } from '../../_links';
 import type { ShareTypeString } from '../../_shares';
 import { getShareTypeString, useShare } from '../../_shares';
+import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { useVolumesState } from '../../_volumes';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
@@ -72,7 +72,7 @@ interface FileRevision {
 }
 
 export default function useUploadFile() {
-    const [user] = useUser();
+    const userPlan = useGetMetricsUserPlan();
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
@@ -663,7 +663,7 @@ export default function useUploadFile() {
                         .catch(() => 'shared' as ShareTypeString)
                         .then((shareType: ShareTypeString) => {
                             const options = {
-                                isPaid: user ? user.isPaid : false,
+                                plan: userPlan,
                                 retryHelped,
                             };
                             integrityMetrics.nodeBlockVerificationError(shareType, file.size, options);
