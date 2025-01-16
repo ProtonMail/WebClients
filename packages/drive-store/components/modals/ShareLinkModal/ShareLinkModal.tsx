@@ -1,4 +1,3 @@
-/* eslint react-hooks/rules-of-hooks: 0 */
 import type { MouseEvent } from 'react';
 import { useMemo, useState } from 'react';
 
@@ -28,7 +27,6 @@ import {
     useShareMemberViewZustand,
     useShareURLView,
 } from '../../../store';
-import { useIsPaid } from '../../../store/_user';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
@@ -42,7 +40,33 @@ interface Props {
     linkId: string;
 }
 
-export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
+export function SharingModal(props: Props & ModalStateProps) {
+    const isZustandShareMemberListEnabled = useFlag('DriveWebZustandShareMemberList');
+    return (
+        <>
+            {isZustandShareMemberListEnabled && <SharingModalZustand {...props} />}
+            {!isZustandShareMemberListEnabled && <SharingModalLegacy {...props} />}
+        </>
+    );
+}
+
+function SharingModalLegacy(props: Props & ModalStateProps) {
+    const shareMemberList = useShareMemberView(props.shareId, props.linkId);
+    return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
+}
+
+function SharingModalZustand(props: Props & ModalStateProps) {
+    const shareMemberList = useShareMemberViewZustand(props.shareId, props.linkId);
+    return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
+}
+
+function SharingModalInner({
+    shareId: rootShareId,
+    linkId,
+    onClose,
+    shareMemberList,
+    ...modalProps
+}: Props & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
     const {
         customPassword,
         initialExpiration,
@@ -65,11 +89,6 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         isShareUrlLoading,
         isShareUrlEnabled,
     } = useShareURLView(rootShareId, linkId);
-
-    const isZustandShareMemberListEnabled = useFlag('DriveWebZustandShareMemberList');
-    const shareMemberList = isZustandShareMemberListEnabled
-        ? useShareMemberViewZustand(rootShareId, linkId)
-        : useShareMemberView(rootShareId, linkId);
 
     const {
         volumeId,
@@ -94,7 +113,6 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { isPublicEditModeEnabled } = useDrivePublicSharingFlags();
-    const isPaid = useIsPaid();
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
@@ -243,8 +261,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 <hr className="mb-0.5 min-h-px" />
                                 <ModalTwoFooter>
                                     <PublicSharing
-                                        // TODO: Implement Upgrade to drive plus modal in case user is free user
-                                        viewOnly={!isPublicEditModeEnabled || !isPaid}
+                                        viewOnly={!isPublicEditModeEnabled}
                                         createSharedLink={createSharedLink}
                                         isLoading={isShareWithAnyoneLoading}
                                         publicSharedLink={sharedLink}

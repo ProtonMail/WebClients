@@ -2,17 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Icon } from '@proton/components';
 
-import { useLinkPath } from '../../../../store';
+import { type useLinkPath } from '../../../../store';
 
 interface Props {
     shareId: string;
     parentLinkId: string;
+    getPath: ReturnType<typeof useLinkPath>['getPath'];
     isTrashed?: boolean;
 }
 
-export const LocationCell = ({ shareId, parentLinkId, isTrashed }: Props) => {
+export const LocationCell = ({ shareId, parentLinkId, isTrashed, getPath }: Props) => {
     const [location, setLocation] = useState<string>();
-    const { getPath } = useLinkPath();
 
     const abortController = useRef(new AbortController());
     const previousParentLinkId = useRef(parentLinkId);

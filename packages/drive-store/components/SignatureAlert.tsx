@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Alert, TextLoader } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/crypto';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import type { SignatureIssueLocation, SignatureIssues } from '../store';
@@ -113,9 +114,9 @@ export function SignatureAlertBody({
             <>
                 {isFile
                     ? c('Info')
-                          .jt`The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.`
+                          .jt`The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${BRAND_NAME} account, so their identity cannot be verified.`
                     : c('Info')
-                          .jt`The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.`}
+                          .jt`The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${BRAND_NAME} account, so their identity cannot be verified.`}
             </>
         );
     }

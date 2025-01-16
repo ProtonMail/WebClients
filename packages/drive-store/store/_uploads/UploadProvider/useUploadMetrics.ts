@@ -16,9 +16,9 @@ import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessM
 import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
+import { useSharesStore } from '../../../zustand/share/shares.store';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
-import useShareState from '../../_shares/useSharesState';
 import { isVerificationError } from '../worker/verifier';
 import type { FileUploadReady } from './interface';
 
@@ -53,7 +53,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
     // promises and need to handle exceptions etc. that are not essential
     // for metrics, and when file is uploading, we know the share must be
     // already in cache. (to be continued...)
-    const { getShare } = useShareState();
+    const getShare = useSharesStore((state) => state.getShare);
 
     const getShareIdType = (shareId: string): MetricShareType => {
         const share = getShare(shareId);

@@ -5,10 +5,9 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
 
 import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
+import { useSharesStore } from '../../../zustand/share/shares.store';
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import type { LockedVolumeForRestore } from '../interface';
-import type useSharesState from '../useSharesState';
-import type useLockedVolume from './useLockedVolume';
 import { useLockedVolumeInner } from './useLockedVolume';
 
 const mockRequest = jest.fn();
@@ -61,17 +60,6 @@ const LOCKED_VOLUME_MOCK_2 = {
 
 const mockGetLockedShares = jest.fn();
 const mockGetShareWithKey = jest.fn();
-const sharesStateMock: ReturnType<typeof useSharesState> = {
-    getLockedShares: mockGetLockedShares,
-    removeShares: jest.fn(),
-    setShares: jest.fn(),
-    getShare: jest.fn(),
-    getDefaultShareId: jest.fn(),
-    setLockedVolumesForRestore: jest.fn(),
-    lockedVolumesForRestore: [],
-    getDefaultPhotosShareId: jest.fn(),
-    getRestoredPhotosShares: jest.fn(),
-};
 
 const generateAddressKeys = async () => {
     const keyPassword = 'password';
@@ -92,9 +80,29 @@ const generateAddressKeys = async () => {
     ];
 };
 
+jest.mock('../../../zustand/share/shares.store', () => {
+    const actual = jest.requireActual('../../../zustand/share/shares.store');
+
+    return {
+        ...actual,
+        useSharesStore: (cb: any) => {
+            const state = actual.useSharesStore();
+            if (cb) {
+                return cb({
+                    ...state,
+                    getLockedShares: mockGetLockedShares,
+                });
+            }
+            return {
+                ...state,
+                getLockedShares: mockGetLockedShares,
+            };
+        },
+    };
+});
+
 const useHook = (props: any = {}) => {
     return useLockedVolumeInner({
-        sharesState: sharesStateMock,
         getShareWithKey: jest.fn(),
         addressesKeys: [],
         getDefaultShare: jest.fn(),
@@ -109,10 +117,6 @@ const useHook = (props: any = {}) => {
 
 describe('useLockedVolume', () => {
     const abortSignal = new AbortController().signal;
-    let hook: {
-        current: ReturnType<typeof useLockedVolume>;
-    };
-
     const wrapper = ({ children }: { children: React.ReactNode }) => (
         <VolumesStateProvider>{children}</VolumesStateProvider>
     );
@@ -127,22 +131,21 @@ describe('useLockedVolume', () => {
 
     beforeEach(() => {
         jest.resetAllMocks();
-
         mockGetLockedShares.mockImplementation(() => {
             return [];
+        });
+        const { result } = renderHook(() => useSharesStore());
+        act(() => {
+            result.current.setLockedVolumesForRestore([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
         });
     });
 
     describe('prepareVolumesForRestore', () => {
         it("should return locked volumes if there's no private keys associated with address", async () => {
             const { result } = renderHook(() => useHook(), { wrapper });
-            hook = result;
 
-            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
-            await act(async () => {
-                const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
-            });
+            const res = await result.current.prepareVolumesForRestore(abortSignal);
+            expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
         });
 
         it("should return locked volumes if there's no locked unprepared shares", async () => {
@@ -154,14 +157,9 @@ describe('useLockedVolume', () => {
                     }),
                 { wrapper }
             );
-            hook = result;
 
-            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
-
-            await act(async () => {
-                const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
-            });
+            const res = await result.current.prepareVolumesForRestore(abortSignal);
+            expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
         });
 
         it("should return locked volumes if there's no new prepared shares", async () => {
@@ -180,14 +178,9 @@ describe('useLockedVolume', () => {
                     }),
                 { wrapper }
             );
-            hook = result;
 
-            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
-
-            await act(async () => {
-                const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
-            });
+            const res = await result.current.prepareVolumesForRestore(abortSignal);
+            expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
         });
 
         it('should return extended volume list with new prepared volumes', async () => {
@@ -217,13 +210,10 @@ describe('useLockedVolume', () => {
                     }),
                 { wrapper }
             );
-            hook = result;
-
-            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
 
             await act(async () => {
-                const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2, lockedVolumeForRestore]);
+                const res = await result.current.prepareVolumesForRestore(abortSignal);
+                expect(res).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2, lockedVolumeForRestore]);
             });
         });
     });

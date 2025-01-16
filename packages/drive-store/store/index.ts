@@ -31,3 +31,4 @@ export { useSearchLibrary } from './_search';
 export { usePhotos, usePhotosRecovery, isDecryptedLink } from './_photos';
 export * from './_photos/interface';
 export { useBookmarksActions } from './_bookmarks';
+export { useDocumentActions } from './_documents';
