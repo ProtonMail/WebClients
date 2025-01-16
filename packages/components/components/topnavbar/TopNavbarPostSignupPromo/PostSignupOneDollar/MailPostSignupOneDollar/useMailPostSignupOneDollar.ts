@@ -36,7 +36,7 @@ export const useMailPostSignupOneDollar = () => {
         isEligible: getIsUserEligibleForOneDollar({
             user,
             protonConfig,
-            postSignupTimestamp: mailOfferState?.Value.offerStartDate ?? 0,
+            postSignupTimestamp: mailOfferState?.Value?.offerStartDate ?? 0,
             postSignupThreshold: postSignupThreshold?.Value,
             mailOneDollarPostSignupFlag,
         }),
