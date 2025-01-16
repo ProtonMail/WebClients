@@ -24,7 +24,7 @@ const AccountSessionsSwitcher = ({ sessions, onSignOut }: Props) => {
                     shape="ghost"
                     size="small"
                     type="button"
-                    content={<Icon name="three-dots-vertical" size={4} />}
+                    content={<Icon name="three-dots-vertical" size={4} alt={c('Action').t`More options`} />}
                     icon
                     data-testid="sessions:other-accounts:more"
                     hasCaret={false}
@@ -35,8 +35,8 @@ const AccountSessionsSwitcher = ({ sessions, onSignOut }: Props) => {
                         onClick={onSignOut}
                         data-testid="sessions:other-accounts:more:signout-all"
                     >
-                        <Icon name="arrow-out-from-rectangle" className="shrink-0" />
-                        {c('Action').t`Sign out of all accounts`}
+                        <Icon name="arrow-out-from-rectangle" className="shrink-0 mt-0.5" />
+                        <span>{c('Action').t`Sign out of all accounts`}</span>
                     </button>
                 </SimpleDropdown>
             </div>
@@ -65,6 +65,7 @@ const AccountSessionsSwitcher = ({ sessions, onSignOut }: Props) => {
                                             </span>
 
                                             <div className="flex-1 mt-custom">
+                                                <span className="sr-only">{c('Info').t`Switch to`}</span>
                                                 <div className="text-ellipsis">
                                                     <span data-testid="sessions:item-username">
                                                         {sessionDisplayData.name}
