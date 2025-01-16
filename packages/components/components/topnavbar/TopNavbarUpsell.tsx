@@ -15,7 +15,7 @@ interface Props {
 }
 
 const LazyTopNavbarUpsellInner = lazy(
-    () => import(/* webpackChunkName: TopNavbarUpsellInner */ './TopNavbarUpsellInner')
+    () => import(/* webpackChunkName: "TopNavbarUpsellInner" */ './TopNavbarUpsellInner')
 );
 
 const TopNavbarUpsell = ({ app, offerProps }: Props) => {
