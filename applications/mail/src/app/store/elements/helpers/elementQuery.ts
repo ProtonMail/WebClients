@@ -99,7 +99,6 @@ export const queryElementsInBatch = async (
 
                 const query = conversationMode ? queryConversations : queryMessageMetadata;
 
-                console.trace('query?');
                 const internalQueryParameters = {
                     ...omit(queryParameters, ['Page', 'PageSize']),
                     Limit: pageSize,
@@ -136,7 +135,6 @@ export const queryElementsInBatch = async (
                     ...pick(result, ['Stale', 'TasksRunning']),
                 };
 
-                console.log('QUERY RES', { queryResult, onSerializedResponse });
                 onSerializedResponse?.({ index, result: queryResult, page: page + index });
                 return queryResult;
             });
