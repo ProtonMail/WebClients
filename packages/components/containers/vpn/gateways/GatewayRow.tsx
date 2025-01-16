@@ -3,9 +3,9 @@ import { c, msgid } from 'ttag';
 import Copy from '@proton/components/components/button/Copy';
 import TableRow from '@proton/components/components/table/TableRow';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
-import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { CountryFlagAndName } from './CountryFlagAndName';
 import type { Gateway } from './Gateway';
 import type { GatewayLogical } from './GatewayLogical';

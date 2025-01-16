@@ -1,5 +1,3 @@
-import { type Currency } from '@proton/payments';
-
 export interface CountryEntry {
     label: string;
     value: string;
@@ -90,7 +88,7 @@ export type PaymentIntent = {
     id: string;
     status: 'inited' | 'authorized';
     amount: number;
-    currency_code: Currency;
+    currency_code: string;
     gateway_account_id: string;
     expires_at: number;
     created_at: number;

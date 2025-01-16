@@ -1,5 +1,16 @@
 export { getPaymentMethodStatus, queryPaymentMethodStatus } from './core/api';
-export { DEFAULT_TAX_BILLING_ADDRESS, type BillingAddress, type BillingAddressProperty } from './core/billing-address';
+export {
+    BILLING_ADDRESS_VALID,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    billingCountryValidator,
+    billingStateValidator,
+    getBillingAddressStatus,
+    isFullBillingAddress,
+    type BillingAddress,
+    type BillingAddressProperty,
+    type BillingAddressStatus,
+    type FullBillingAddress,
+} from './core/billing-address';
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
 export {
     ADDON_NAMES,
@@ -39,6 +50,14 @@ export {
     TransactionType,
     UNPAID_STATE,
 } from './core/constants';
+export {
+    correctAbbr,
+    countriesWithStates,
+    getCountryOptions,
+    getLocalizedCountryByAbbr,
+    getStateList,
+    type CountryOptions,
+} from './core/countries';
 export {
     convertPaymentIntentData,
     type PaymentVerificator,

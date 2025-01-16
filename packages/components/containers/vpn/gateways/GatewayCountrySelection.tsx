@@ -13,9 +13,9 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useNow } from '@proton/components/hooks/useNow';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { CountryFlagAndName } from './CountryFlagAndName';
 import type { DeletedDedicatedIp } from './DeletedDedicatedIp';

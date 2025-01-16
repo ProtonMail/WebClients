@@ -8,7 +8,12 @@ import { isChargebeePaymentProcessor } from '@proton/components/payments/react-e
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/payments';
-import { type Currency, PAYMENT_METHOD_TYPES, isChargebeePaymentMethod } from '@proton/payments';
+import {
+    type BillingAddressStatus,
+    type Currency,
+    PAYMENT_METHOD_TYPES,
+    isChargebeePaymentMethod,
+} from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
@@ -18,7 +23,6 @@ import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWra
 import EditCardModal from '../EditCardModal';
 import StyledPayPalButton from '../StyledPayPalButton';
 import type { SUBSCRIPTION_STEPS } from './constants';
-import type { BillingAddressStatus } from './helpers';
 
 type Props = {
     className?: string;

@@ -1,8 +1,7 @@
-import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/payments';
 import { createTokenV4 } from '@proton/shared/lib/api/payments';
 import { type Api } from '@proton/shared/lib/interfaces';
 
-import { PAYMENT_METHOD_TYPES } from '../constants';
+import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE, PAYMENT_METHOD_TYPES } from '../constants';
 import { type PaymentVerificator, formatToken } from '../createPaymentToken';
 import type {
     AmountAndCurrency,
