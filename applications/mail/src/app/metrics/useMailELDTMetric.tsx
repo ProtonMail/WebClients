@@ -1,10 +1,12 @@
 import { useRef } from 'react';
 
+import { getLabelNameAnonymised } from '@proton/mail/labels/helpers';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import metrics from '@proton/metrics';
 import useFlag from '@proton/unleash/useFlag';
 
-import { getLabelName, getPageSizeString } from './mailMetricsHelper';
+import type { LabelType } from './mailMetricsHelper';
+import { getPageSizeString } from './mailMetricsHelper';
 
 export const useMailELDTMetric = () => {
     const [settings] = useMailSettings();
@@ -25,7 +27,7 @@ export const useMailELDTMetric = () => {
             Value: end / 1000,
             Labels: {
                 pageSize: getPageSizeString(settings),
-                loaded: getLabelName(labelID),
+                loaded: getLabelNameAnonymised(labelID) as LabelType | 'custom',
             },
         });
     };

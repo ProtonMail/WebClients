@@ -4,11 +4,10 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { getHumanLabelID } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
-
-import { getHumanLabelID } from 'proton-mail/helpers/labels';
 
 interface Props {
     className?: string;

@@ -1,3 +1,5 @@
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: Math.pow(2, 0), // whether a message is received
     FLAG_SENT: Math.pow(2, 1), // whether a message is sent
@@ -57,3 +59,38 @@ export enum MARK_AS_STATUS {
 }
 
 export const AUTO_REPLY_CHARACTER_COUNT_LIMIT = 4000;
+
+export const LABEL_IDS_TO_HUMAN = {
+    [MAILBOX_LABEL_IDS.INBOX]: 'inbox',
+    [MAILBOX_LABEL_IDS.ALL_DRAFTS]: 'all-drafts',
+    [MAILBOX_LABEL_IDS.ALL_SENT]: 'all-sent',
+    [MAILBOX_LABEL_IDS.TRASH]: 'trash',
+    [MAILBOX_LABEL_IDS.SPAM]: 'spam',
+    [MAILBOX_LABEL_IDS.ALL_MAIL]: 'all-mail',
+    [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: 'almost-all-mail',
+    [MAILBOX_LABEL_IDS.ARCHIVE]: 'archive',
+    [MAILBOX_LABEL_IDS.SENT]: 'sent',
+    [MAILBOX_LABEL_IDS.DRAFTS]: 'drafts',
+    [MAILBOX_LABEL_IDS.STARRED]: 'starred',
+    [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
+    [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
+    [MAILBOX_LABEL_IDS.SNOOZED]: 'snoozed',
+};
+
+export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+}, Object.create(null));
+
+export const LABELS_UNMODIFIABLE_BY_USER = [
+    MAILBOX_LABEL_IDS.ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALL_SENT,
+    MAILBOX_LABEL_IDS.ALL_DRAFTS,
+    MAILBOX_LABEL_IDS.OUTBOX,
+    MAILBOX_LABEL_IDS.SCHEDULED,
+    MAILBOX_LABEL_IDS.SNOOZED,
+];
+
+// List of location where messages are marked automatically as read after moving by the API
+export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
