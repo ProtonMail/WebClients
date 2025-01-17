@@ -78,10 +78,17 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         evt.stopPropagation();
 
         const { action } = field;
-        const dropdown = ctx?.service.iframe.dropdown;
-        const visible = dropdown?.getState().visible;
+        const iframe = ctx?.service.iframe;
+        const visible = iframe?.dropdown?.getState().visible;
 
-        if (action) return visible ? dropdown?.close() : dropdown?.open({ action: action.type, field });
+        if (action) {
+            return visible
+                ? iframe?.dropdown?.close()
+                : iframe?.attachDropdown(field.getFormHandle().element)?.open({
+                      action: action.type,
+                      field,
+                  });
+        }
     });
 
     const detach = safeCall(() => {
