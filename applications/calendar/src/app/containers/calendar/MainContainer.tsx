@@ -7,11 +7,12 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { selectCalendarsBootstrap } from '@proton/calendar';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useDrawerParent } from '@proton/components';
+import { SubscriptionModalProvider, useDrawerParent } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { useInstance } from '@proton/hooks';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -133,9 +134,11 @@ const MainContainer = () => {
 const WrappedMainContainer = () => {
     useDrawerParent();
     return (
-        <QuickSettingsRemindersProvider>
-            <MainContainer />
-        </QuickSettingsRemindersProvider>
+        <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
+            <QuickSettingsRemindersProvider>
+                <MainContainer />
+            </QuickSettingsRemindersProvider>
+        </SubscriptionModalProvider>
     );
 };
 
