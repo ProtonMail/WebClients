@@ -13,6 +13,7 @@ import {
 } from '@proton/components';
 import { useGetFolders, useGetLabels } from '@proton/mail';
 import { useFilters } from '@proton/mail/filters/hooks';
+import { getFolderName } from '@proton/mail/labels/helpers';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -23,7 +24,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
-import { getFolderName } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;

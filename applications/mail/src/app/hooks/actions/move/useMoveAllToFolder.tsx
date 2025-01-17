@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 
 import { useApi, useModalTwo, useNotifications } from '@proton/components';
 import { useFolders, useGetLabels, useLabels } from '@proton/mail';
+import { isCustomLabel } from '@proton/mail/labels/helpers';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
@@ -17,7 +18,6 @@ import useListTelemetry, {
     getActionFromLabel,
 } from 'proton-mail/components/list/useListTelemetry';
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
-import { isCustomLabel } from 'proton-mail/helpers/labels';
 import {
     getCleanedFolderID,
     getNotificationTextUnauthorized,

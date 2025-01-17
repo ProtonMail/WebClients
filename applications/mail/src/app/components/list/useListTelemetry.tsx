@@ -1,11 +1,10 @@
 import useApi from '@proton/components/hooks/useApi';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
-
-import { isCustomFolder, isCustomLabel } from 'proton-mail/helpers/labels';
 
 export const enum ACTION_TYPE {
     MARK_AS_READ = 'MARK_AS_READ',

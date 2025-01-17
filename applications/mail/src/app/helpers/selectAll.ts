@@ -1,10 +1,9 @@
 import { c, msgid } from 'ttag';
 
+import { getLabelName } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-
-import { getLabelName } from 'proton-mail/helpers/labels';
 
 const { ALL_MAIL, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
 

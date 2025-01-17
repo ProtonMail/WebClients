@@ -16,6 +16,7 @@ import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -24,7 +25,6 @@ import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';

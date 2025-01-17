@@ -1,6 +1,4 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
-import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import type { Conversation } from '../models/conversation';
 import type { MessageWithOptionalBody } from '../store/messages/messagesTypes';
@@ -9,7 +7,6 @@ import {
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
     canMoveAll,
-    getLabelNames,
     getSortedChanges,
     shouldDisplayTotal,
 } from './labels';
@@ -162,28 +159,6 @@ describe('labels', () => {
 
         it('should be possible to move all', () => {
             expect(canMoveAll(SENT, TRASH, ['elementID'], [], false));
-        });
-    });
-
-    describe('getLabelNames', () => {
-        const folders: Folder[] = [
-            { ID: 'folder1', Name: 'Folder 1' } as Folder,
-            { ID: 'folder2', Name: 'Folder 2' } as Folder,
-        ];
-
-        const labels: Label[] = [
-            { ID: 'label1', Name: 'Label 1' } as Label,
-            { ID: 'label2', Name: 'Label 2' } as Label,
-        ];
-
-        it('should return undefined when no changes', () => {
-            expect(getLabelNames([], labels, folders)).toBeUndefined();
-        });
-
-        it('should return the expected name', () => {
-            expect(getLabelNames(['folder1'], labels, folders)).toEqual(['Folder 1']);
-            expect(getLabelNames(['label2'], labels, folders)).toEqual(['Label 2']);
-            expect(getLabelNames(['label2', 'label1'], labels, folders)).toEqual(['Label 2', 'Label 1']);
         });
     });
 
