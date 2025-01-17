@@ -383,12 +383,6 @@ export const buildContentDB = async <ESItemContent>(
             return STORING_OUTCOME.FAILURE;
         }
 
-        console.debug('Processing content batch', {
-            batchSize: IDs.length,
-            totalProcessed: counter,
-            isBackgroundIndexing,
-        });
-
         const infoMap = new Map(
             await readMetadataBatch(userID, IDs).then((encryptedMetadata) => {
                 if (!encryptedMetadata) {
@@ -432,11 +426,6 @@ export const buildContentDB = async <ESItemContent>(
         ).filter(isTruthy);
 
         if (itemsToAdd.length) {
-            console.debug('Storing content batch', {
-                batchSize: itemsToAdd.length,
-                totalProcessed: counter,
-            });
-
             const last = itemsToAdd[itemsToAdd.length - 1];
             recoveryPoint = { ID: last.ID, timepoint: last.timepoint };
 
