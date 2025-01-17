@@ -7,6 +7,7 @@ import onboardingSVG from '@proton/pass/assets/onboarding.svg';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { type AdapativeModalProps, AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
 import { type UpsellRef } from '@proton/pass/constants';
+import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 
 import { FreeTrialActions } from './FreeTrialActions';
 import { UpsellFeatures } from './UpsellFeatures';
@@ -52,7 +53,7 @@ const getContent = (type: UpsellType): UpsellModalContent =>
         'pass-monitor': {
             title: c('Title').t`Stay safer online`,
             description: c('Description')
-                .t`Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.`,
+                .t`${DARK_WEB_MONITORING_NAME} is available with a paid plan. Upgrade for immediate access.`,
             upgradeLabel: c('Action').t`Get Pass Plus`,
             image: monitorSVG,
         },

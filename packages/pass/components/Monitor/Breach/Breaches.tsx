@@ -12,6 +12,7 @@ import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import headerBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import headerNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found.svg';
 
@@ -29,7 +30,7 @@ export const Breaches: FC = () => {
         <>
             <div className="flex flex-nowrap mb-3">
                 <SubHeader
-                    title={c('Title').t`Dark Web Monitoring`}
+                    title={DARK_WEB_MONITORING_NAME}
                     description={
                         <>
                             {c('Description')

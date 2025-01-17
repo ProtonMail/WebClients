@@ -20,7 +20,7 @@ import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectMonitorPreview } from '@proton/pass/store/selectors';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { BreachPreviewCard } from './Breach/Card/BreachPreviewCard';
 import { useMonitor } from './MonitorContext';
@@ -52,7 +52,7 @@ export const MonitorSummary: FC = () => {
                         />
 
                         <section className="flex flex-column gap-4">
-                            <h3 className="text-lg text-semibold">{c('Title').t`Dark Web Monitoring`}</h3>
+                            <h3 className="text-lg text-semibold">{DARK_WEB_MONITORING_NAME}</h3>
                             <div className="pass-monitor-grid gap-4">
                                 {paid && (
                                     <BreachSummaryCard

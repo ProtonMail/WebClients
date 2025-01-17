@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import type { PlanFeaturesType } from '@proton/pass/components/Upsell/types';
 import { MAX_VAULT_MEMBERS } from '@proton/pass/constants';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
 export const getPlanFeatures = (): PlanFeaturesType => ({
     individuals: [
-        { icon: 'pass-shield-ok', label: c('Feature').t`Dark Web Monitoring` },
+        { icon: 'pass-shield-ok', label: DARK_WEB_MONITORING_NAME },
         { icon: 'user', label: PROTON_SENTINEL_NAME },
         { icon: 'lock', label: c('Feature').t`Integrated 2FA authenticator` },
         { icon: 'alias', label: c('Feature').t`Unlimited hide-my-email aliases` },
