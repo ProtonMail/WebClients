@@ -126,11 +126,11 @@ import type { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn
 import type { HttpsProtonMeWebCoreWebvitalsTotalV1SchemaJson } from './types/web_core_webvitals_total_v1.schema';
 import type { WebCryptoKeyTransparencyErrorsTotal } from './types/web_crypto_keytransparency_errors_total_v1.schema';
 import type { HttpsProtonMeWebDriveDownloadMechanismSuccessRateTotalV1SchemaJson } from './types/web_drive_download_mechanism_success_rate_total_v1.schema';
-import type { HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson } from './types/web_drive_performance_averagetimeperitem_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV2SchemaJson } from './types/web_drive_performance_averagetimeperitem_histogram_v2.schema';
 import type { HttpsProtonMeWebDrivePerformanceClicktobootstrappedHistogramV1SchemaJson } from './types/web_drive_performance_clicktobootstrapped_histogram_v1.schema';
-import type { HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktofirstitemrendered_histogram_v1.schema';
-import type { HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktofirstpagerendered_histogram_v1.schema';
-import type { HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktolastitemrendered_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV2SchemaJson } from './types/web_drive_performance_clicktofirstitemrendered_histogram_v2.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV2SchemaJson } from './types/web_drive_performance_clicktofirstpagerendered_histogram_v2.schema';
+import type { HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV2SchemaJson } from './types/web_drive_performance_clicktolastitemrendered_histogram_v2.schema';
 import type { HttpsProtonMeWebDrivePerformanceClicktonavrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktonavrendered_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJson } from './types/web_drive_performance_domcontentloaded_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson } from './types/web_drive_performance_load_histogram_v1.schema';
@@ -378,15 +378,15 @@ class Metrics extends MetricsBase {
 
     public drive_download_mechanism_success_rate_total: Counter<HttpsProtonMeWebDriveDownloadMechanismSuccessRateTotalV1SchemaJson>;
 
-    public drive_performance_averagetimeperitem_histogram: Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson>;
+    public drive_performance_averagetimeperitem_histogram: Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV2SchemaJson>;
 
     public drive_performance_clicktobootstrapped_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktobootstrappedHistogramV1SchemaJson>;
 
-    public drive_performance_clicktofirstitemrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV1SchemaJson>;
+    public drive_performance_clicktofirstitemrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV2SchemaJson>;
 
-    public drive_performance_clicktofirstpagerendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV1SchemaJson>;
+    public drive_performance_clicktofirstpagerendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV2SchemaJson>;
 
-    public drive_performance_clicktolastitemrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV1SchemaJson>;
+    public drive_performance_clicktolastitemrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV2SchemaJson>;
 
     public drive_performance_clicktonavrendered_histogram: Histogram<HttpsProtonMeWebDrivePerformanceClicktonavrenderedHistogramV1SchemaJson>;
 
@@ -1033,8 +1033,8 @@ class Metrics extends MetricsBase {
             );
 
         this.drive_performance_averagetimeperitem_histogram =
-            new Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV1SchemaJson>(
-                { name: 'web_drive_performance_averagetimeperitem_histogram', version: 1 },
+            new Histogram<HttpsProtonMeWebDrivePerformanceAveragetimeperitemHistogramV2SchemaJson>(
+                { name: 'web_drive_performance_averagetimeperitem_histogram', version: 2 },
                 this.requestService
             );
 
@@ -1045,20 +1045,20 @@ class Metrics extends MetricsBase {
             );
 
         this.drive_performance_clicktofirstitemrendered_histogram =
-            new Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV1SchemaJson>(
-                { name: 'web_drive_performance_clicktofirstitemrendered_histogram', version: 1 },
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstitemrenderedHistogramV2SchemaJson>(
+                { name: 'web_drive_performance_clicktofirstitemrendered_histogram', version: 2 },
                 this.requestService
             );
 
         this.drive_performance_clicktofirstpagerendered_histogram =
-            new Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV1SchemaJson>(
-                { name: 'web_drive_performance_clicktofirstpagerendered_histogram', version: 1 },
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktofirstpagerenderedHistogramV2SchemaJson>(
+                { name: 'web_drive_performance_clicktofirstpagerendered_histogram', version: 2 },
                 this.requestService
             );
 
         this.drive_performance_clicktolastitemrendered_histogram =
-            new Histogram<HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV1SchemaJson>(
-                { name: 'web_drive_performance_clicktolastitemrendered_histogram', version: 1 },
+            new Histogram<HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV2SchemaJson>(
+                { name: 'web_drive_performance_clicktolastitemrendered_histogram', version: 2 },
                 this.requestService
             );
 

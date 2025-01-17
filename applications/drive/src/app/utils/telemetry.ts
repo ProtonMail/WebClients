@@ -23,6 +23,8 @@ export enum ExperimentGroup {
 export enum Features {
     mountToFirstItemRendered = 'mountToFirstItemRendered',
     thumbnailFormat = 'thumbnailFormat',
+    globalBootstrapApp = 'globalBootstrapApp',
+    globalBootstrapAppUrls = 'globalBootstrapAppUrls',
 }
 
 /**
@@ -184,11 +186,19 @@ export const measureFeaturePerformance = (api: Api, feature: Features, experimen
                 performance.mark(startMark);
             }
         },
-        end: (additionalValues?: PerformanceTelemetryAdditionalValues) => {
+        end: (additionalValues?: PerformanceTelemetryAdditionalValues, differentApi?: Api) => {
             if (!ended && started) {
                 ended = true;
                 performance.mark(endMark);
-                measureAndReport(api, feature, experimentGroup, measureName, startMark, endMark, additionalValues);
+                measureAndReport(
+                    differentApi || api,
+                    feature,
+                    experimentGroup,
+                    measureName,
+                    startMark,
+                    endMark,
+                    additionalValues
+                );
                 clear();
             }
         },
