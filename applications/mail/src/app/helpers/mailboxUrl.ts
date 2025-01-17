@@ -3,13 +3,13 @@ import { generatePath, matchPath } from 'react-router';
 
 import type { Location } from 'history';
 
+import { getHumanLabelID } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 import { MAIN_ROUTE_PATH } from '../constants';
-import { getHumanLabelID } from './labels';
 
 // No interface to comply with generatePath argument type
 export type MailUrlParams = {

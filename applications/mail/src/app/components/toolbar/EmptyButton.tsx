@@ -5,12 +5,12 @@ import type { Breakpoints } from '@proton/components';
 import { Icon, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useLabels } from '@proton/mail';
+import { isCustomLabel, labelIncludes } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { isCustomLabel, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, ALMOST_ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } =
