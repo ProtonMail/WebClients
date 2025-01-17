@@ -2,6 +2,7 @@ import type * as H from 'history';
 
 import { PLANS } from '@proton/payments/core/constants';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
+import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CYCLE, REFERRER_CODE_MAIL_TRIAL } from '@proton/shared/lib/constants';
 
@@ -108,6 +109,19 @@ export const getSignupParameters = ({
             type: 'drive',
             data: { invitee: email, externalInvitationID, preVerifiedAddressToken },
         };
+        result.preSelectedPlan = PLANS.FREE;
+        result.noPromo = true;
+    } else if (
+        // This defaults to the free plan if the user is coming from a proton drive link (based on the return url parameter).
+        // This is a heuristic to guess that we are in the "save for later" flow with drive where product has requested to
+        // default to a simple signup flow with the free plan without any promotions
+        toApp === APPS.PROTONDRIVE &&
+        initialSearchParams &&
+        getReturnUrlParameter(initialSearchParams) &&
+        !result.noPromo &&
+        !result.preSelectedPlan
+    ) {
+        localID = -1;
         result.preSelectedPlan = PLANS.FREE;
         result.noPromo = true;
     }
