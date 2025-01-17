@@ -5,4 +5,9 @@ import type { IndexedDBRow } from '../esIDB';
  *
  * @param progress can be either a single number representing the count of indexed items OR a tuple composed of the count of indexed items and the total items to index
  */
-export type RecordProgress = (progress: number | [number, number], indexedDbRow?: IndexedDBRow) => Promise<void>;
+export type RecordProgress = (
+    progress: number | [number, number],
+    indexedDbRow?: IndexedDBRow,
+    userID?: string,
+    isResumingIndexing?: boolean
+) => Promise<void>;
