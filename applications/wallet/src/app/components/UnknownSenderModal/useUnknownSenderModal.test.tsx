@@ -38,7 +38,7 @@ describe('useUnknownSenderModal', () => {
     });
 
     it('should udpate transaction with sender', async () => {
-        const { result } = renderHook(() => useUnknownSenderModal({ hashedTxId: 'xyz' }));
+        const { result } = renderHook(() => useUnknownSenderModal({ transactionDataKey: 'xyz' }));
 
         act(() => result.current.setEmail('alex.rider@proton.me'));
         act(() => result.current.setName('Alex Rider'));
@@ -59,7 +59,7 @@ describe('useUnknownSenderModal', () => {
     });
 
     it('should save sender as contact', async () => {
-        const { result } = renderHook(() => useUnknownSenderModal({ hashedTxId: 'xyz' }));
+        const { result } = renderHook(() => useUnknownSenderModal({ transactionDataKey: 'xyz' }));
 
         act(() => result.current.setEmail('alex.rider@proton.me'));
         act(() => result.current.setName('Alex Rider'));

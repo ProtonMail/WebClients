@@ -8,6 +8,7 @@ import type { IWasmApiWalletData } from '@proton/wallet';
 import type { SubTheme } from '../../utils';
 
 export interface WalletTransactionDrawerData {
+    transactionDataKey: string;
     kind: 'transaction-data';
     networkDataAndHashedTxId: [WasmTransactionDetails, string];
     onClickEditNote: () => void;
