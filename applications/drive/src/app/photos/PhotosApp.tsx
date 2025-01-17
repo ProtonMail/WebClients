@@ -1,11 +1,9 @@
-import type { FunctionComponent } from 'react';
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import {
     ApiProvider,
     AuthenticationProvider,
-    DelinquentContainer,
     DrawerProvider,
     ErrorBoundary,
     EventManagerProvider,
@@ -28,21 +26,50 @@ import * as config from '../config';
 import type { DriveStore } from '../redux-store/store';
 import { extraThunkArguments } from '../redux-store/thunk';
 import { UserSettingsProvider } from '../store';
+import { sendErrorReport } from '../utils/errorHandling';
+import { getWebpackChunkFailedToLoadError } from '../utils/errorHandling/WebpackChunkFailedToLoadError';
 import { logPerformanceMarker } from '../utils/performance';
 import { bootstrapPhotosApp } from './bootstrapPhotos';
+
+const DelinquentContainerLazy = lazy(() =>
+    import(/* webpackChunkName: "DelinquentContainer" */ '@proton/components/containers/app/DelinquentContainer').catch(
+        (e) => {
+            const report = getWebpackChunkFailedToLoadError(e, 'DelinquentContainer');
+            console.warn(report);
+            sendErrorReport(report);
+            return Promise.reject(report);
+        }
+    )
+);
+
+const MainPhotosContainerLazy = lazy(() =>
+    import(
+        /* webpackChunkName: "MainPhotosContainer" */
+        /* webpackPrefetch: true */
+        /* webpackPreload: true */
+        /* webpackFetchPriority: "high" */
+        './PhotosWithAlbumsContainer'
+    ).catch((e) => {
+        const report = getWebpackChunkFailedToLoadError(e, 'MainPhotosContainer');
+        console.warn(report);
+        sendErrorReport(report);
+        return Promise.reject(report);
+    })
+);
 
 const defaultState: {
     initialUser?: UserModel;
     initialDriveUserSettings?: UserSettingsResponse;
     error?: { message: string } | undefined;
     showDrawerSidebar?: boolean;
-    MainContainer?: FunctionComponent;
     store?: DriveStore;
+    delinquent?: boolean;
 } = {
     initialUser: undefined,
     initialDriveUserSettings: undefined,
     error: undefined,
     showDrawerSidebar: false,
+    delinquent: undefined,
 };
 
 const App = () => {
@@ -51,12 +78,11 @@ const App = () => {
     useEffectOnce(() => {
         (async () => {
             try {
-                const { store, scopes, MainContainer, user, userSettings, driveUserSettings } =
-                    await bootstrapPhotosApp({
-                        config,
-                    });
+                const { store, scopes, user, userSettings, driveUserSettings } = await bootstrapPhotosApp({
+                    config,
+                });
                 setState({
-                    MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
+                    delinquent: scopes.delinquent,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
                     initialDriveUserSettings: driveUserSettings,
                     initialUser: user,
@@ -79,9 +105,8 @@ const App = () => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }
-                const loader = <LoaderPage />;
-                if (!state.MainContainer || !state.store || !state.initialUser || !state.initialDriveUserSettings) {
-                    return loader;
+                if (!state.store || !state.initialUser || !state.initialDriveUserSettings) {
+                    return <LoaderPage />;
                 }
                 return (
                     <ProtonStoreProvider store={state.store}>
@@ -102,7 +127,16 @@ const App = () => {
                                                             initialUser={state.initialUser}
                                                             initialDriveUserSettings={state.initialDriveUserSettings}
                                                         >
-                                                            <state.MainContainer />
+                                                            {typeof state.delinquent !== 'undefined' && (
+                                                                <Suspense fallback={<LoaderPage />}>
+                                                                    {state.delinquent === false && (
+                                                                        <MainPhotosContainerLazy />
+                                                                    )}
+                                                                    {state.delinquent === true && (
+                                                                        <DelinquentContainerLazy />
+                                                                    )}
+                                                                </Suspense>
+                                                            )}
                                                         </UserSettingsProvider>
                                                     </StandardPrivateApp>
                                                 </ErrorBoundary>

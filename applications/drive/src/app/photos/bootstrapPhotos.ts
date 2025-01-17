@@ -23,23 +23,10 @@ import noop from '@proton/utils/noop';
 
 import locales from '../locales';
 import { extendStore, setupStore } from '../redux-store/store';
-import { sendErrorReport } from '../utils/errorHandling';
-import { getWebpackChunkFailedToLoadError } from '../utils/errorHandling/WebpackChunkFailedToLoadError';
-import { initDriveWorker } from '../utils/initDriveWorker';
 import { userSuccessMetrics } from '../utils/metrics/userSuccessMetrics';
 import { clearOPFS } from '../utils/opfs';
 import { MetricUserPlan } from '../utils/type/MetricTypes';
 import { unleashVanillaStore } from '../zustand/unleash/unleash.store';
-
-const getAppContainer = () =>
-    import(/* webpackChunkName: "MainPhotosContainer" */ './PhotosWithAlbumsContainer')
-        .then(({ MainPhotosContainer }) => MainPhotosContainer)
-        .catch((e) => {
-            const report = getWebpackChunkFailedToLoadError(e, 'MainPhotosContainer');
-            console.warn(report);
-            sendErrorReport(report);
-            return Promise.reject(report);
-        });
 
 export const bootstrapPhotosApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     const appName = config.APP_NAME;
@@ -53,10 +40,8 @@ export const bootstrapPhotosApp = async ({ config, signal }: { config: ProtonCon
     setupGuestCrossStorage({ appMode, appName });
 
     initSafariFontFixClassnames();
-    initDriveWorker();
 
     const run = async () => {
-        const appContainerPromise = getAppContainer();
         const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
@@ -99,12 +84,7 @@ export const bootstrapPhotosApp = async ({ config, signal }: { config: ProtonCon
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
-        const [MainContainer, userData] = await Promise.all([
-            appContainerPromise,
-            userPromise,
-            bootstrap.loadCrypto({ appName }),
-            unleashPromise,
-        ]);
+        const [userData] = await Promise.all([userPromise, bootstrap.loadCrypto({ appName }), unleashPromise]);
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
@@ -139,7 +119,6 @@ export const bootstrapPhotosApp = async ({ config, signal }: { config: ProtonCon
             unleashClient,
             history,
             store,
-            MainContainer,
         };
     };
 
