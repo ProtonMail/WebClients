@@ -780,7 +780,15 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         const previousProgress = await contentIndexingProgress.read(userID);
         const expectedTotalIndexed = await esCallbacks.getTotalItems();
 
-        void recordProgress([esIndexingProgressState.esProgress, expectedTotalIndexed], 'content');
+        // In case the user is resuming the indexing process, we want to use the index time stored in the cache
+        const isResumingIndexing = previousProgress && previousProgress.timestamps.length > 0;
+
+        void recordProgress(
+            [esIndexingProgressState.esProgress, expectedTotalIndexed],
+            'content',
+            userID,
+            isResumingIndexing
+        );
 
         let totalItems = 0;
         let recoveryPoint: ESTimepoint | undefined;
