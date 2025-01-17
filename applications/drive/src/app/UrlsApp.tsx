@@ -32,6 +32,7 @@ import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { logPerformanceMarker } from './utils/performance';
+import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 const bootstrapApp = async () => {
@@ -57,17 +58,22 @@ const bootstrapApp = async () => {
 
 const UrlsApp = () => {
     const [state, setState] = useState<{ error?: string; store?: DriveStore }>({});
-
+    const feature = measureFeaturePerformance(extraThunkArguments.api, Features.globalBootstrapAppUrls);
     useEffectOnce(() => {
         (async () => {
             try {
+                feature.start();
                 const { store } = await bootstrapApp();
+                // we have to pass the new api now it's extended by the bootstrap
+                feature.end(undefined, extraThunkArguments.api);
                 setState({ store });
                 logPerformanceMarker('drive_performance_clicktobootstrapped_histogram');
             } catch (error: any) {
                 setState({
                     error: getNonEmptyErrorMessage(error),
                 });
+            } finally {
+                feature.clear();
             }
         })().catch(noop);
     });

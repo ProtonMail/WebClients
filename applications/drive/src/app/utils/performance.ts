@@ -89,6 +89,16 @@ export const initializePerformanceMetrics = (isPublic: boolean) => {
     reportWebVitals(isPublic ? 'public' : 'private');
 };
 
+// If returns undefined, that means it's a first page load (that includes bootstrap) and there has been no react-router navigations
+const getLastNavigationEntry = () => {
+    const reactRouterNavigationEntries = performance
+        .getEntriesByType('mark')
+        .filter((entry) => entry.name === NAVIGATION_MARK);
+
+    const lastEntry = reactRouterNavigationEntries.at(-1);
+    return lastEntry;
+};
+
 const getNavigationStart = () => {
     // By default we use the browser navigation
     const perfEntries = performance.getEntriesByType('navigation');
@@ -97,11 +107,7 @@ const getNavigationStart = () => {
         let startTime = navigationEntry.startTime;
 
         // If however, we had a react-router navigation, we use this navigation as the beginning of the navigation
-        const reactRouterNavigationEntries = performance
-            .getEntriesByType('mark')
-            .filter((entry) => entry.name === NAVIGATION_MARK);
-
-        const lastEntry = reactRouterNavigationEntries.at(-1);
+        const lastEntry = getLastNavigationEntry();
         if (lastEntry) {
             startTime = lastEntry.startTime;
         }
@@ -132,11 +138,19 @@ const getTimeFromNavigationStart = (key: string): number | undefined => {
  * to the mark (or uses a provided time), and records the metric to observability.
  *
  * @param key - The key of the performance marker, which should correspond to a key in the Metrics type (your observability metric).
- * @param view - Optional parameter specifying the view type ('list' or 'grid'), used for certain metrics.
- * @param timeInMs - Optional parameter to provide a specific time in milliseconds instead of measuring from navigation start.
+ * @param params - Optional configuration object for the performance marker.
+ * @param params.view - Optional view type ('list' or 'grid'), used for certain metrics.
+ * @param params.timeInMs - Optional specific time in milliseconds instead of measuring from navigation start.
+ * @param params.includeLoadType - Optional flag to include load type information in the metric ('subsequent' or 'first').
  * @returns The time recorded for the performance marker in milliseconds.
  */
-export const logPerformanceMarker = (key: keyof Metrics, view?: 'list' | 'grid', timeInMs?: number) => {
+
+export const logPerformanceMarker = (
+    key: keyof Metrics,
+    params?: { view: 'list' | 'grid'; timeInMs?: number; includeLoadType?: boolean }
+) => {
+    const { timeInMs, view, includeLoadType } = params || {};
+
     performance.mark(key);
     const time = timeInMs !== undefined ? timeInMs : getTimeFromNavigationStart(key);
     const pageType = getCurrentPageType();
@@ -146,6 +160,9 @@ export const logPerformanceMarker = (key: keyof Metrics, view?: 'list' | 'grid',
             Labels: {
                 pageType,
                 ...(view && { view }),
+                ...(includeLoadType && {
+                    listType: getLastNavigationEntry() ? 'subsequent' : 'first',
+                }),
             },
             Value: time / 1000,
         });

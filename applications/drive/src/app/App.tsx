@@ -30,6 +30,7 @@ import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { UserSettingsProvider } from './store';
 import { logPerformanceMarker } from './utils/performance';
+import { Features, measureFeaturePerformance } from './utils/telemetry';
 
 const defaultState: {
     initialUser?: UserModel;
@@ -47,13 +48,17 @@ const defaultState: {
 
 const App = () => {
     const [state, setState] = useState(defaultState);
-
+    const feature = measureFeaturePerformance(extraThunkArguments.api, Features.globalBootstrapApp);
     useEffectOnce(() => {
         (async () => {
             try {
+                feature.start();
                 const { store, scopes, MainContainer, user, userSettings, driveUserSettings } = await bootstrapApp({
                     config,
                 });
+                // we have to pass the new api now it's extended by the bootstrap
+                feature.end(undefined, extraThunkArguments.api);
+
                 setState({
                     MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
@@ -61,6 +66,7 @@ const App = () => {
                     initialUser: user,
                     store,
                 });
+
                 logPerformanceMarker('drive_performance_clicktobootstrapped_histogram');
             } catch (error: any) {
                 setState({
@@ -68,6 +74,8 @@ const App = () => {
                         message: getNonEmptyErrorMessage(error),
                     },
                 });
+            } finally {
+                feature.clear();
             }
         })().catch(noop);
     });
