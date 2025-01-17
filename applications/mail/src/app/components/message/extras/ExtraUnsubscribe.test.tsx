@@ -34,6 +34,7 @@ jest.mock('@proton/shared/lib/helpers/browser', () => ({
     isMobile: jest.fn(),
     isFirefoxLessThan55: jest.fn(),
     getIsIframe: jest.fn(() => false),
+    isLinux: jest.fn(() => false),
 }));
 
 // Mock idb library

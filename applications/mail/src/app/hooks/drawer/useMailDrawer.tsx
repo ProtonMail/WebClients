@@ -5,6 +5,7 @@ import {
     WalletDrawerAppButton,
     useDrawer,
 } from '@proton/components';
+import useDisplayFeatureTourDrawerButton from '@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -12,8 +13,11 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
+import FeaturesTourDrawerButton from '../../components/drawer/FeaturesTourDrawerButton';
+
 const useMailDrawer = () => {
     const { appInView, showDrawerSidebar } = useDrawer();
+    const canShowFeatureTourDrawerButton = useDisplayFeatureTourDrawerButton();
 
     // TODO: add UserSettings."WalletAccess" condition once available
     const canShowWalletRightSidebarLink = useFlag('WalletRightSidebarLink');
@@ -23,6 +27,7 @@ const useMailDrawer = () => {
         <CalendarDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)} />,
         canShowWalletRightSidebarLink && !isElectronApp && <WalletDrawerAppButton />,
         <SecurityCenterDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.SECURITY_CENTER, appInView)} />,
+        canShowFeatureTourDrawerButton && <FeaturesTourDrawerButton />,
     ].filter(isTruthy);
 
     return { drawerSidebarButtons, showDrawerSidebar };
