@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import type { Breakpoints } from '@proton/components';
 import { FloatingButton, Icon, PrivateHeader, UserDropdown } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
+import { getLabelName } from '@proton/mail/labels/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -12,7 +13,6 @@ import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { getLabelName } from '../../helpers/labels';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';

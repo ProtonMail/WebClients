@@ -2,6 +2,7 @@ import { defaultESContext } from '@proton/encrypted-search';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import type { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
@@ -37,42 +38,6 @@ export const ELEMENT_TYPES = {
     MESSAGE: 'message',
     CONVERSATION: 'conversation',
 };
-
-export const LABEL_IDS_TO_HUMAN = {
-    [MAILBOX_LABEL_IDS.INBOX]: 'inbox',
-    [MAILBOX_LABEL_IDS.ALL_DRAFTS]: 'all-drafts',
-    [MAILBOX_LABEL_IDS.ALL_SENT]: 'all-sent',
-    [MAILBOX_LABEL_IDS.TRASH]: 'trash',
-    [MAILBOX_LABEL_IDS.SPAM]: 'spam',
-    [MAILBOX_LABEL_IDS.ALL_MAIL]: 'all-mail',
-    [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: 'almost-all-mail',
-    [MAILBOX_LABEL_IDS.ARCHIVE]: 'archive',
-    [MAILBOX_LABEL_IDS.SENT]: 'sent',
-    [MAILBOX_LABEL_IDS.DRAFTS]: 'drafts',
-    [MAILBOX_LABEL_IDS.STARRED]: 'starred',
-    [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
-    [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
-    [MAILBOX_LABEL_IDS.SNOOZED]: 'snoozed',
-};
-
-export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
-    acc[value] = key;
-    return acc;
-}, Object.create(null));
-
-// List of location where messages are marked automatically as read after moving by the API
-export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
-
-// List of location that cannot be change by user interaction
-export const LABELS_UNMODIFIABLE_BY_USER = [
-    MAILBOX_LABEL_IDS.ALL_MAIL,
-    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-    MAILBOX_LABEL_IDS.ALL_SENT,
-    MAILBOX_LABEL_IDS.ALL_DRAFTS,
-    MAILBOX_LABEL_IDS.OUTBOX,
-    MAILBOX_LABEL_IDS.SCHEDULED,
-    MAILBOX_LABEL_IDS.SNOOZED,
-];
 
 export enum ENCRYPTED_STATUS {
     PGP_MIME = 8, // Used for attachment

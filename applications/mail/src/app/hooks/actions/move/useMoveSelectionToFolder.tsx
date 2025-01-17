@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useApi, useEventManager, useModalTwo, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useGetFolders, useGetLabels } from '@proton/mail';
+import { isCustomLabel } from '@proton/mail/labels/helpers';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
@@ -18,7 +19,6 @@ import MoveToSpamModal from 'proton-mail/components/message/modals/MoveToSpamMod
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
-import { isCustomLabel } from 'proton-mail/helpers/labels';
 import {
     askToUnsubscribe,
     getNotificationTextMoved,

@@ -4,12 +4,12 @@ import type { IndexingMetrics } from '@proton/encrypted-search/lib/esHelpers';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
+import { getLabelNameAnonymised } from '@proton/mail/labels/helpers';
 import { TelemetryEncryptedSearchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { getLabelName } from '@proton/shared/lib/mail/label';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 export const enum SEARCH_TYPE {
@@ -92,7 +92,7 @@ const getSearchParams = (app: APP_NAMES, searchArgs: SearchArgs) => {
                 hasAddress: (!!address).toString(),
                 hasFrom: (!!from).toString(),
                 hasTo: (!!to).toString(),
-                labelID: getLabelName(labelID),
+                labelID: getLabelNameAnonymised(labelID),
             };
         } else if (app === APPS.PROTONCALENDAR) {
             const { begin, end, keyword, calendarID, page } = searchParams as ESCalendarSearchParams;
@@ -136,7 +136,7 @@ const getSearchParams = (app: APP_NAMES, searchArgs: SearchArgs) => {
                 hasAddress: (!!address).toString(),
                 hasFrom: (!!from).toString(),
                 hasTo: (!!to).toString(),
-                labelID: getLabelName(labelID),
+                labelID: getLabelNameAnonymised(labelID),
             };
         }
 
