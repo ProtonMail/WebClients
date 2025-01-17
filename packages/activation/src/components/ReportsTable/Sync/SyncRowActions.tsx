@@ -62,7 +62,7 @@ const SyncRowActions = ({ syncId }: Props) => {
             onClick: () => showDeleteModal(true),
         };
 
-        if (feature?.Value.GoogleMailSync) {
+        if (feature?.Value?.GoogleMailSync) {
             return [
                 {
                     text: c('account').t`Reconnect`,
