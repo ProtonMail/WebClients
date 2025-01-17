@@ -4,18 +4,12 @@ import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
-import {
-    APPS,
-    type APP_NAMES,
-    SECURITY_CHECKUP_PATHS,
-    SETUP_ADDRESS_PATH,
-    SSO_PATHS,
-    VPN_TV_PATHS,
-} from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, SSO_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 
 import type { ProductParams } from '../signup/searchParams';
 import { UNAUTHENTICATED_ROUTES } from './helper';
+import { getRoutesWithoutSlug } from './routesWithoutSlug';
 
 const getContinueToUrl = (searchParams: URLSearchParams) => {
     const continueTo = searchParams.get('continueTo') || '';
@@ -95,7 +89,8 @@ export const getLocalRedirect = (location: H.Location, productParams: ProductPar
     }
     let toApp = getAppFromPathname(cleanUrl.pathname);
     // Special case to not add the app slug and skip the app switcher for these routes
-    if ([SETUP_ADDRESS_PATH, SECURITY_CHECKUP_PATHS.ROOT].some((p) => cleanUrl.pathname.includes(p))) {
+    const routesWithoutSlug = Object.values(getRoutesWithoutSlug());
+    if (routesWithoutSlug.some((p) => cleanUrl.pathname.includes(p))) {
         toApp = DEFAULT_APP;
     }
     return {
