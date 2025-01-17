@@ -6,9 +6,9 @@ import { Prompt } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { useMessageCounts } from '@proton/mail/counts/messageCounts';
+import { getLabelName } from '@proton/mail/labels/helpers';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
-import { getLabelName } from 'proton-mail/helpers/labels';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 

@@ -1,11 +1,10 @@
+import { isCustomLabelOrFolder, isStringHumanLabelID } from '@proton/mail/labels/helpers';
 import type { EmailListDisplayTime } from '@proton/metrics/types/web_mail_performance_email_list_display_time_histogram_v1.schema';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getHumanLabelID, isCustomLabelOrFolder, isStringHumanLabelID } from '../helpers/labels';
-
-type LabelType = EmailListDisplayTime['Labels']['loaded'];
+export type LabelType = EmailListDisplayTime['Labels']['loaded'];
 
 export const getPageSizeString = (settings: MailSettings | undefined) => {
     const { PageSize } = settings || {};
@@ -27,14 +26,6 @@ export const getLabelID = (labelID: string) => {
     }
 
     return labelID as MAILBOX_LABEL_IDS;
-};
-
-export const getLabelName = (labelID: string) => {
-    const humanLabel = getHumanLabelID(labelID);
-    if (humanLabel !== labelID) {
-        return humanLabel as LabelType;
-    }
-    return 'custom';
 };
 
 export const pathnameToLabelName = (pathname: string) => {
