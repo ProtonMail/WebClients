@@ -19,6 +19,7 @@ import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { PLANS } from '@proton/payments';
 import { type CountryOptions, correctAbbr, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import { SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
+import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
 import useSortedList from '../../../hooks/useSortedList';
@@ -162,7 +163,6 @@ const OpenVPNConfigurationSection = ({
     const plusVpnConnections = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
     const vpnPlus = vpnPlan?.Title;
-    const planName = vpnPlus;
 
     return (
         <SettingsSectionWide>
@@ -412,10 +412,7 @@ const OpenVPNConfigurationSection = ({
                                         color="norm"
                                         path={`/dashboard?plan=${PLANS.VPN2024}`}
                                     >
-                                        {
-                                            // translator: ${planName} is "VPN Plus" (taken from plan title)
-                                            c('Action').t`Get ${planName}`
-                                        }
+                                        {getPlanOrAppNameText(vpnPlus)}
                                     </ButtonLike>
                                 </div>
                             </div>
