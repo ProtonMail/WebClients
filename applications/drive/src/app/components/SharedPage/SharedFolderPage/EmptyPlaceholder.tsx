@@ -4,6 +4,7 @@ import { ButtonLike } from '@proton/atoms';
 import { EmptyViewContainer } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_LANDING_PAGE } from '@proton/shared/lib/drive/urls';
+import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import noContentSvg from '@proton/styles/assets/img/illustrations/shared-page-empty-list.svg';
 
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
@@ -27,7 +28,7 @@ export const EmptyPlaceholder = () => {
                         </p>
                         <div className="flex justify-center">
                             <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_LANDING_PAGE} target="_blank">
-                                {c('Action').t`Get ${DRIVE_APP_NAME}`}
+                                {getPlanOrAppNameText(DRIVE_APP_NAME)}
                             </ButtonLike>
                         </div>
                     </>
