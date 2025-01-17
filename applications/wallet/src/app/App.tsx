@@ -27,7 +27,6 @@ import {
     StandardErrorPage,
     StandardLoadErrorPage,
     StandardPrivateApp,
-    SubscriptionModalProvider,
     useNotifications,
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
@@ -109,9 +108,7 @@ const AppInner = () => {
                                             hasMemberKeyMigration
                                             hasPrivateMemberKeyGeneration
                                         >
-                                            <SubscriptionModalProvider app={config.APP_NAME}>
-                                                <state.MainContainer />
-                                            </SubscriptionModalProvider>
+                                            <state.MainContainer />
                                         </StandardPrivateApp>
                                     </ErrorBoundary>
                                 </ExtendedApiProvider>
