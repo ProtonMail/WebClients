@@ -223,7 +223,7 @@ const MainContainer = () => {
     const isLocal = [APPS.PROTONVPN_SETTINGS].includes(app as any);
     const toApp = isLocal ? APPS.PROTONACCOUNT : app;
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
-    const prefixPath = `/${appSlug}`;
+    const pathPrefix = `/${appSlug}`;
 
     const hasPassB2bPlan = getHasPassB2BPlan(subscription);
 
@@ -268,14 +268,14 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
-            userDropdown={<UserDropdown app={app} />}
+            userDropdown={<UserDropdown app={app} sessionOptions={{ path: pathPrefix }} />}
             // No onboarding in account
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
-            actionArea={viewportWidth['>=large'] && <SettingsSearch routes={routes} path={prefixPath} app={app} />}
+            actionArea={viewportWidth['>=large'] && <SettingsSearch routes={routes} path={pathPrefix} app={app} />}
             app={app}
         />
     );
@@ -294,9 +294,9 @@ const MainContainer = () => {
     // Switch can't reasonably traverse Router childrens. However we do want to place them in their own components
     // and still have redirects working. This is a trick to short-circuit matches of these paths to specific routers.
     // A better idea would be to use a prefix for account and org. /mail/account/dashboard etc.
-    const anyAccountAppRoute = getRoutePaths(prefixPath, Object.values(routes.account.routes));
+    const anyAccountAppRoute = getRoutePaths(pathPrefix, Object.values(routes.account.routes));
     const anyOrganizationAppRoute = getRoutePaths(
-        prefixPath,
+        pathPrefix,
         Object.values(routes.organization.routes).filter((section) => {
             // Filter out the domains section, the route clashes with the _same_ route in the mail router when
             // it's not available and would take precedence in the routing. (E.g. for free users).
@@ -332,7 +332,7 @@ const MainContainer = () => {
 
     if (
         getRequiresAddressSetup(app, user) &&
-        location.pathname !== `${prefixPath}${routes.account.routes.password.to}`
+        location.pathname !== `${pathPrefix}${routes.account.routes.password.to}`
     ) {
         const toPath = `/${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname))}`;
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
@@ -362,7 +362,7 @@ const MainContainer = () => {
                     <Route path={anyAccountAppRoute}>
                         <AccountSettingsRouter
                             app={app}
-                            path={prefixPath}
+                            path={pathPrefix}
                             accountAppRoutes={routes.account}
                             redirect={redirect}
                         />
@@ -370,7 +370,7 @@ const MainContainer = () => {
                     <Route path={anyOrganizationAppRoute}>
                         <OrganizationSettingsRouter
                             app={app}
-                            path={prefixPath}
+                            path={pathPrefix}
                             organizationAppRoutes={routes.organization}
                             redirect={redirect}
                         />

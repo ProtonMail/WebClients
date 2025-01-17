@@ -80,9 +80,10 @@ interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onCli
     onOpenChat?: () => void;
     app: APP_NAMES;
     hasAppLinks?: boolean;
+    sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
 }
 
-const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...rest }: Props) => {
+const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessionOptions, ...rest }: Props) => {
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
@@ -470,6 +471,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                     {showSwitchAccountButton && accountSessions.hasList && (
                         <div className="mb-4">
                             <AccountSessionsSwitcher
+                                sessionOptions={sessionOptions}
                                 sessions={accountSessions.state.value}
                                 onSignOut={() => {
                                     close();

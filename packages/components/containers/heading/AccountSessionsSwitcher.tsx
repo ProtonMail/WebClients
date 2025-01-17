@@ -11,9 +11,12 @@ interface Props {
     sessions: ActiveSessionLite[];
     onSignOut: () => void;
     className?: string;
+    sessionOptions?: {
+        path?: string;
+    };
 }
 
-const AccountSessionsSwitcher = ({ sessions, onSignOut }: Props) => {
+const AccountSessionsSwitcher = ({ sessions, onSignOut, sessionOptions }: Props) => {
     const [, ...sessionsExceptSelf] = sessions;
     return (
         <div className="relative">
@@ -49,7 +52,7 @@ const AccountSessionsSwitcher = ({ sessions, onSignOut }: Props) => {
                                 return (
                                     <li className="unstyled my-0" key={sessionDisplayData.localID}>
                                         <a
-                                            href={sessionDisplayData.path}
+                                            href={`${sessionDisplayData.path}${sessionOptions?.path || ''}`}
                                             type="button"
                                             target="_blank"
                                             className="color-inherit px-4 py-1.5 flex gap-2 items-start items-center w-full text-left relative interactive-pseudo-inset text-no-decoration"
