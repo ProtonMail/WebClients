@@ -176,7 +176,7 @@ const InitContainer = () => {
     );
 };
 
-export const MainPhotosContainer: FunctionComponent = () => {
+const MainPhotosContainer: FunctionComponent = () => {
     return (
         <GlobalLoaderProvider>
             <GlobalLoader />
@@ -190,3 +190,5 @@ export const MainPhotosContainer: FunctionComponent = () => {
         </GlobalLoaderProvider>
     );
 };
+
+export default MainPhotosContainer;
