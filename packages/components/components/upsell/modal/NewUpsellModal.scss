@@ -25,4 +25,9 @@
 	.modal-two-illustration-container {
 		inset-block-start: rem(-24);
 	}
+
+	.modal-two-close-button--illustration-cover {
+		/* White color used for visibility over colored image */
+		color: white;
+	}
 }

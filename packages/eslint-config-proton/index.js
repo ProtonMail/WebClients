@@ -106,7 +106,7 @@ module.exports = {
             'error',
             {
                 selector:
-                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton\\b(?!\\s+(Account|Mail|Drive|Calendar|VPN|Verify))/i]',
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton\\b(?!\\s+(Account|Mail|Drive|Calendar|VPN|Verify|Sentinel))/i]',
                 message: 'Use `BRAND_NAME` instead to avoid possible translation.',
             },
             {
@@ -138,6 +138,16 @@ module.exports = {
                 selector:
                     'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Verify\\b/i]',
                 message: 'Use `VERIFY_APP_NAME` instead to avoid possible translation.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Dark Web Monitoring\\b/i]',
+                message: 'Use `DARK_WEB_MONITORING_NAME` instead to avoid possible translation.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Proton Sentinel\\b/i]',
+                message: 'Use `PROTON_SENTINEL_NAME` instead to avoid possible translation.',
             },
         ],
         'no-shadow': 'off',
