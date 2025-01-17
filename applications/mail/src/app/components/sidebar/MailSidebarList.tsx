@@ -18,6 +18,7 @@ import {
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { useMessageCounts } from '@proton/mail/counts/messageCounts';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
@@ -25,13 +26,12 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { isCustomFolder, isCustomLabel } from 'proton-mail/helpers/labels';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { getCounterMap } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';

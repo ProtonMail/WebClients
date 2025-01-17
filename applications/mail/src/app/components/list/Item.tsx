@@ -3,6 +3,7 @@ import { memo, useMemo, useRef } from 'react';
 
 import type { Breakpoints } from '@proton/components';
 import { ItemCheckbox } from '@proton/components';
+import { isCustomLabel } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -16,7 +17,6 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { isMessage, isUnread } from '../../helpers/elements';
-import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
