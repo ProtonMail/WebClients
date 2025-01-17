@@ -2,6 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { isCustomFolder } from '@proton/mail/labels/helpers';
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import type { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -13,8 +14,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { isCustomFolder } from 'proton-mail/helpers/labels';
 
 import type { MoveScheduledModalProps } from '../components/message/modals/MoveScheduledModal';
 import type { MoveToSpamModalProps, MoveToSpamModalResolveProps } from '../components/message/modals/MoveToSpamModal';

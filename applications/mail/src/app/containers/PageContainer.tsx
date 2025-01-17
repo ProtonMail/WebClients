@@ -8,6 +8,7 @@ import { MailShortcutsModal, useModalState, useOpenDrawerOnLoad } from '@proton/
 import { useFolders, useLabels } from '@proton/mail';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
+import { HUMAN_TO_LABEL_IDS } from '@proton/shared/lib/mail/constants';
 
 import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -15,7 +16,6 @@ import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
-import { HUMAN_TO_LABEL_IDS } from '../constants';
 import type { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
 import { useConversationsEvent } from '../hooks/events/useConversationsEvents';

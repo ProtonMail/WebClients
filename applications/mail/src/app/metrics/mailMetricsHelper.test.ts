@@ -1,7 +1,8 @@
+import { getLabelNameAnonymised } from '@proton/mail/labels/helpers';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getLabelID, getLabelName, getPageSizeString, pathnameToLabelName } from './mailMetricsHelper';
+import { getLabelID, getPageSizeString, pathnameToLabelName } from './mailMetricsHelper';
 
 describe('mailMetrisHelper', () => {
     it.each([
@@ -56,7 +57,7 @@ describe('mailMetrisHelper', () => {
             expected: 'custom',
         },
     ])('should return appropriate label name for $value', ({ value, expected }) => {
-        expect(getLabelName(value)).toBe(expected);
+        expect(getLabelNameAnonymised(value)).toBe(expected);
     });
 
     it.each([
