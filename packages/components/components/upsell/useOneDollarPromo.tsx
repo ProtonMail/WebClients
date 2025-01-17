@@ -12,6 +12,7 @@ import { useLoading } from '@proton/hooks/index';
 import { PLANS, PLAN_NAMES, getPlanByName } from '@proton/payments';
 import { BRAND_NAME, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import { useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 const OFFER_DEFAULT_AMOUNT_DUE = 100;
 
@@ -93,7 +94,7 @@ const useOneDollarConfig = () => {
         return {
             submitText: user.isFree
                 ? c('Action').jt`Get ${planName} for ${priceCoupon}`
-                : c('Action').jt`Get ${planName}`,
+                : getPlanOrAppNameText(planName),
             footerText: user.isFree
                 ? c('new_plans: Subtext')
                       .jt`The discounted price of ${priceCoupon} is valid for the first month. Then it will automatically be renewed at ${priceMailPlus}. You can cancel at any time.`
@@ -110,8 +111,8 @@ const useOneDollarConfig = () => {
     return {
         submitText: user.isFree
             ? c('new_plans: Action').jt`Get started for ${priceCoupon}`
-            : c('new_plans: Action').jt`Upgrade`,
-        title: user.isFree ? c('Action').jt`Get ${planName} for ${priceCoupon}` : c('Action').jt`Get ${planName}`,
+            : c('new_plans: Action').t`Upgrade`,
+        title: user.isFree ? c('Action').jt`Get ${planName} for ${priceCoupon}` : getPlanOrAppNameText(planName),
         cycle,
         coupon: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
         planIDs: {
