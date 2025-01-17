@@ -1,7 +1,6 @@
 import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
 
-import { type ReturnUrlContext } from '../authentication/fork';
-import { returnUrlContextKey, returnUrlKey } from '../authentication/fork/constants';
+import { type ReturnUrlContext, type ReturnUrlTarget, appendReturnUrlParams } from '../authentication/returnUrl';
 import type { APP_NAMES } from '../constants';
 import { VPN_HOSTNAME } from '../constants';
 import { APPS, APPS_CONFIGURATION, DOH_DOMAINS, LINK_TYPES } from '../constants';
@@ -449,13 +448,11 @@ export const getUrlWithReturnUrl = (
     {
         returnUrl = getPathFromLocation(window.location),
         context,
-    }: { returnUrl?: string; context?: ReturnUrlContext } = {}
+        target,
+    }: { returnUrl?: string; context?: ReturnUrlContext; target?: ReturnUrlTarget } = {}
 ) => {
     const urlWithReturnUrl = new URL(url);
-    urlWithReturnUrl.searchParams.append(returnUrlKey, returnUrl);
-    if (context) {
-        urlWithReturnUrl.searchParams.append(returnUrlContextKey, context);
-    }
+    appendReturnUrlParams(urlWithReturnUrl.searchParams, { url: returnUrl, context, target });
     return urlWithReturnUrl.toString();
 };
 

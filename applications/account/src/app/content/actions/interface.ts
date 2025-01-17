@@ -1,3 +1,5 @@
+import type { LocationDescriptor } from 'history';
+
 import type { AuthSession } from '@proton/components/containers/login/interface';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
@@ -7,7 +9,7 @@ import type { ProduceForkData, SSOType } from '../fork/interface';
 
 type LoginLocationStateData<Type, State> = {
     type: Type;
-    pathname: string;
+    location: LocationDescriptor;
     payload: State;
 };
 

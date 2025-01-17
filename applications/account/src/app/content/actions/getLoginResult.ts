@@ -5,7 +5,8 @@ import { getOrganization as getOrganizationConfig } from '@proton/shared/lib/api
 import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
-import { getCanUserReAuth, getReturnUrl, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
+import { getCanUserReAuth, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
+import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -19,7 +20,6 @@ import type { ReAuthState } from '../../public/ReAuthContainer';
 import { type ProduceForkData, SSOType } from '../fork/interface';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
-import { getLocalRedirect } from './getLocalRedirect';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
 import type { LoginResult } from './interface';
 
@@ -37,8 +37,63 @@ export const addSignupSearchParams = (searchParams: URLSearchParams, { appIntent
     }
 };
 
+const getLocalRedirectWithApp = ({
+    localRedirect: maybeLocalRedirect,
+    session,
+    toApp,
+}: {
+    localRedirect?: LocalRedirect;
+    session: AuthSession;
+    toApp: APP_NAMES;
+}): LocalRedirect | undefined => {
+    if (maybeLocalRedirect?.toApp) {
+        return maybeLocalRedirect;
+    }
+
+    if (maybeLocalRedirect) {
+        return {
+            ...maybeLocalRedirect,
+            location: {
+                ...maybeLocalRedirect.location,
+                pathname: joinPaths(getSlugFromApp(toApp), maybeLocalRedirect.location.pathname),
+            },
+            toApp: toApp,
+        };
+    }
+
+    // Handle special case going for internal vpn on account settings.
+    if (toApp === APPS.PROTONVPN_SETTINGS) {
+        const url = new URL(session.flow === 'signup' ? '/vpn-apps?prompt=true' : '/', window.location.origin);
+        return {
+            location: {
+                pathname: joinPaths(getSlugFromApp(toApp), url.pathname),
+                hash: url.hash,
+                search: url.search,
+            },
+            toApp: toApp,
+        };
+    }
+};
+
+const getUrlFromLocation = ({
+    location,
+    toApp,
+    context,
+    localID,
+}: {
+    location: LocalRedirect['location'];
+    toApp: APP_NAMES;
+    context: LocalRedirect['context'];
+    localID: number;
+}) => {
+    const url = new URL(getAppHref(location.pathname, toApp, context === 'public' ? undefined : localID));
+    url.search = location.search;
+    url.hash = location.hash;
+    return url;
+};
+
 const getRedirectUrl = ({
-    localRedirect,
+    localRedirect: maybeLocalRedirect,
     session,
     initialSearchParams,
     toApp,
@@ -48,25 +103,25 @@ const getRedirectUrl = ({
     initialSearchParams: URLSearchParams;
     toApp: APP_NAMES;
 }) => {
-    const LocalID = session.LocalID;
+    const localID = session.LocalID;
 
+    const localRedirect = getLocalRedirectWithApp({ localRedirect: maybeLocalRedirect, session, toApp });
     if (localRedirect) {
-        const path = localRedirect.path || '/';
-        return new URL(getAppHref(path, APPS.PROTONACCOUNT, LocalID));
+        return getUrlFromLocation({
+            location: localRedirect.location,
+            toApp: APPS.PROTONACCOUNT,
+            context: localRedirect.context,
+            localID,
+        });
     }
 
     const returnUrl = getReturnUrl(initialSearchParams);
     if (returnUrl) {
-        const url = new URL(
-            getAppHref(returnUrl.pathname, toApp, returnUrl.context === 'private' ? LocalID : undefined)
-        );
-        url.search = returnUrl.search;
-        url.hash = returnUrl.hash;
-        return url;
+        return getUrlFromLocation({ location: returnUrl.location, toApp, context: returnUrl.context, localID });
     }
 
     const path = getDefaultPath(toApp);
-    const url = new URL(getAppHref(path, toApp, LocalID));
+    const url = new URL(getAppHref(path, toApp, localID));
     if (session.flow === 'signup') {
         addSignupSearchParams(url.searchParams, { appIntent: session.appIntent });
     }
@@ -114,7 +169,7 @@ export const getLoginResult = async ({
         };
         return {
             type: 'app-switcher',
-            pathname: paths.appSwitcher,
+            location: { pathname: paths.appSwitcher },
             payload: appSwitcherState,
         };
     }
@@ -135,15 +190,18 @@ export const getLoginResult = async ({
         };
         return {
             type: 'reauth',
-            pathname: paths.reauth,
+            location: { pathname: paths.reauth },
             payload: reAuthState,
         };
     }
 
     const toApp = getToApp(maybeToApp, user);
-    const localRedirect = getLocalRedirect({ localRedirect: maybeLocalRedirect, session, toApp });
 
-    if (getRequiresAddressSetup(toApp, user) && !localRedirect?.path.includes(SETUP_ADDRESS_PATH)) {
+    if (
+        getRequiresAddressSetup(toApp, user) &&
+        !maybeLocalRedirect?.location.pathname.includes(SETUP_ADDRESS_PATH) &&
+        maybeLocalRedirect?.context !== 'public'
+    ) {
         const blob =
             loginPassword && clientKey ? await getEncryptedSetupBlob(clientKey, loginPassword).catch(noop) : undefined;
         const params = new URLSearchParams();
@@ -217,7 +275,12 @@ export const getLoginResult = async ({
         });
     }
 
-    const url = getRedirectUrl({ localRedirect, session, initialSearchParams, toApp });
+    const url = getRedirectUrl({
+        localRedirect: maybeLocalRedirect,
+        session,
+        initialSearchParams,
+        toApp,
+    });
 
     return {
         type: 'done',

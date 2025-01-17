@@ -22,7 +22,6 @@ import {
     consumeFork,
     getConsumeForkParameters,
     getEmailSessionForkSearchParameter,
-    getReturnUrlParameter,
     removeHashParameters,
 } from '@proton/shared/lib/authentication/fork';
 import { getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
@@ -34,6 +33,7 @@ import {
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

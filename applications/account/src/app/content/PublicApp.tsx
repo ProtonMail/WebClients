@@ -15,7 +15,6 @@ import {
     StandardErrorPage,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
-    useAuthentication,
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import type { AuthSession } from '@proton/components/containers/login/interface';
@@ -71,7 +70,7 @@ import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
-import { getProductParams, getThemeFromLocation } from '../signup/searchParams';
+import { type ProductParams, getProductParams, getThemeFromLocation } from '../signup/searchParams';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import { extendStore, setupStore } from '../store/public-store';
@@ -84,7 +83,6 @@ import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
 import { getActiveSessionLoginResult } from './actions/getActiveSessionLoginResult';
 import { getLoginResult } from './actions/getLoginResult';
 import { getProduceForkLoginResult } from './actions/getProduceForkLoginResult';
-import { handleRedirectLogin } from './actions/handleRedirectLogin';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { handleOAuthFork } from './fork/handleOAuthFork';
 import { handleProtonFork } from './fork/handleProtonFork';
@@ -109,7 +107,7 @@ const bootstrapApp = () => {
     };
 };
 
-export const getSearchParams = (location: H.Location, searchParams: URLSearchParams) => {
+export const getProductParamsFromLocation = (location: H.Location, searchParams: URLSearchParams): ProductParams => {
     const { product, productParam } = getProductParams(location.pathname, searchParams);
     return { product, productParam };
 };
@@ -170,7 +168,6 @@ const BasePublicApp = () => {
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const history = useHistory();
-    const authentication = useAuthentication();
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
@@ -183,23 +180,24 @@ const BasePublicApp = () => {
 
     const [
         {
-            data: { product: maybeQueryAppIntent, productParam },
+            productParams: { product: maybeQueryAppIntent, productParam },
             initialSearchParams,
             maybeLocalRedirect,
         },
     ] = useState(() => {
+        const productParams = getProductParamsFromLocation(location, searchParams);
         return {
-            data: getSearchParams(location, searchParams),
+            productParams,
             initialLocation: location,
             initialSearchParams: searchParams,
-            maybeLocalRedirect: getLocalRedirect(location),
+            maybeLocalRedirect: getLocalRedirect(location, productParams),
         };
     });
 
     const [hasInitialSessionBlockingLoading, setHasInitialSessionBlockingLoading] = useState(() => {
         return (
             maybeHasActiveSessions &&
-            ((maybeLocalRedirect && maybeLocalRedirect.type !== 'post-login') ||
+            ((maybeLocalRedirect && maybeLocalRedirect.type !== 'prompt-login') ||
                 location.pathname === '/' ||
                 [...loginPaths, ...ephemeralLoginPaths].some((pathname) => location.pathname === pathname))
         );
@@ -219,12 +217,13 @@ const BasePublicApp = () => {
 
     const handleLoginResult = async (result: LoginResult) => {
         if (result.type === 'done') {
-            await handleRedirectLogin({ result, authentication });
+            const url = result.payload.url;
+            replaceUrl(url.toString());
             return completeResult;
         }
         setLocationState(result);
-        if (result.pathname) {
-            history.push(result.pathname);
+        if (result.location) {
+            history.push(result.location);
         }
         const payload = result.payload;
         if (payload && 'session' in payload) {
