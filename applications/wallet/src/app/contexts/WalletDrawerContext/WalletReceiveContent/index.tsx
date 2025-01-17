@@ -8,7 +8,6 @@ import QRCode from '@proton/components/components/image/QRCode';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Info from '@proton/components/components/link/Info';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
@@ -30,14 +29,14 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
 
     const { walletsChainData, bitcoinAddressHelperByWalletAccountId } = useBitcoinBlockchainContext();
 
-    const isIndexAboveGap = true;
-
     const bitcoinAddressHelper = selectedAccount?.ID
         ? bitcoinAddressHelperByWalletAccountId[selectedAccount.ID]
         : undefined;
 
     const bitcoinAddress = bitcoinAddressHelper?.receiveBitcoinAddress.address;
     const bitcoinAddressIndex = bitcoinAddressHelper?.receiveBitcoinAddress.index;
+
+    const isDisabled = !bitcoinAddress || bitcoinAddressHelper?.isLoading;
 
     return (
         <div className="block">
@@ -115,7 +114,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         fullWidth
                         shape="solid"
                         color="norm"
-                        disabled={!bitcoinAddress || bitcoinAddressHelper.isLoading}
+                        disabled={isDisabled}
                         size="large"
                         onClick={() => {
                             if (bitcoinAddress) {
@@ -127,33 +126,39 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         }}
                     >{c('Wallet receive').t`Copy Bitcoin address`}</Button>
 
-                    {(() => {
-                        const button = (
-                            <Button
-                                fullWidth
-                                className="mt-2"
-                                shape="ghost"
-                                size="large"
-                                onClick={() => {
-                                    void bitcoinAddressHelper?.generateNewReceiveAddress();
-                                }}
-                                disabled={!bitcoinAddress || bitcoinAddressHelper.isLoading}
-                            >{c('Wallet receive').t`Generate new address`}</Button>
-                        );
-
-                        return (
-                            <Tooltip
-                                title={
-                                    isIndexAboveGap
-                                        ? c('Wallet receive')
-                                              .t`Gap between next address and last used one is too large. Please use one of the address you generate before`
-                                        : null
-                                }
-                            >
-                                {button}
-                            </Tooltip>
-                        );
-                    })()}
+                    <Button
+                        data-testid={'generate-new-address-button'}
+                        fullWidth
+                        className="mt-2"
+                        shape="ghost"
+                        size="large"
+                        onClick={() => {
+                            void bitcoinAddressHelper?.generateNewReceiveAddress();
+                        }}
+                        disabled={isDisabled || bitcoinAddressHelper?.hasReachedStopGap}
+                        style={{ pointerEvents: 'auto' }}
+                    >
+                        <span className="flex gap-2 items-center text-center justify-center">
+                            {c('Wallet Receive').t`Generate new address`}
+                            {bitcoinAddressHelper?.willReachStopGap && ' '}
+                            {bitcoinAddressHelper?.willReachStopGap && !bitcoinAddressHelper?.hasReachedStopGap && (
+                                <Info
+                                    className="color-norm"
+                                    title={c('Wallet Receive')
+                                        .t`To prevent a large gap, you should either use this address or a previously generated one`}
+                                    data-testid={'generate-new-address-button-warning'}
+                                />
+                            )}
+                            {bitcoinAddressHelper?.hasReachedStopGap && (
+                                <Info
+                                    className="color-norm"
+                                    title={c('Wallet Receive')
+                                        .t`To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one`}
+                                    data-testid={'generate-new-address-button-error'}
+                                />
+                            )}
+                        </span>
+                    </Button>
                 </div>
             </div>
         </div>
