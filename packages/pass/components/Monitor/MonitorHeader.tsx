@@ -7,7 +7,7 @@ import { Icon } from '@proton/components';
 import { Breadcrumb } from '@proton/pass/components/Layout/Breadcrumbs/Breadcrumb';
 import { type BreadcrumbRoute, BreadcrumbSwitch } from '@proton/pass/components/Layout/Breadcrumbs/BreadcrumbSwitch';
 import { getLocalPath, subPath } from '@proton/pass/components/Navigation/routing';
-import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 const getMonitorBreadcrumbs = (): BreadcrumbRoute[] => [
     { path: 'duplicates', label: c('Title').t`Reused passwords`, active: true },
@@ -16,7 +16,7 @@ const getMonitorBreadcrumbs = (): BreadcrumbRoute[] => [
     { path: 'excluded', label: c('Title').t`Excluded items`, active: true },
     {
         path: 'dark-web',
-        label: c('Title').t`Dark Web Monitoring`,
+        label: DARK_WEB_MONITORING_NAME,
         sub: [
             { path: 'custom', label: c('Title').t`Custom addresses` },
             { path: 'alias', label: c('Title').t`Hide-my-email aliases` },
