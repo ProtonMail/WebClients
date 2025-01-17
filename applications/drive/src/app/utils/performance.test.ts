@@ -99,7 +99,7 @@ describe('Web Performance Metrics', () => {
     });
 
     it('logPerformanceMarker: should log performance marker and record metrics', () => {
-        const result = logPerformanceMarker('drive_performance_clicktofirstpagerendered_histogram', 'list');
+        const result = logPerformanceMarker('drive_performance_clicktofirstpagerendered_histogram', { view: 'list' });
 
         expect(performance.mark).toHaveBeenCalledWith('drive_performance_clicktofirstpagerendered_histogram');
         expect(performance.measure).toHaveBeenCalled();
@@ -108,7 +108,10 @@ describe('Web Performance Metrics', () => {
     });
 
     it('logPerformanceMarker: should use provided time if given', () => {
-        const result = logPerformanceMarker('drive_performance_clicktofirstpagerendered_histogram', 'grid', 200);
+        const result = logPerformanceMarker('drive_performance_clicktofirstpagerendered_histogram', {
+            view: 'grid',
+            timeInMs: 200,
+        });
 
         expect(performance.measure).not.toHaveBeenCalled();
         expect(metrics.drive_performance_clicktofirstpagerendered_histogram.observe).toHaveBeenCalled();
