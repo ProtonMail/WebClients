@@ -15,6 +15,7 @@ import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { POPOVER_SUPPORTED, getPopoverModal, isPopoverChild } from '@proton/pass/utils/dom/popover';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
@@ -30,10 +31,10 @@ export interface IFrameService {
     dropdown: MaybeNull<InjectedDropdown>;
     notification: MaybeNull<InjectedNotification>;
     root: ProtonPassRoot;
-    attachDropdown: () => MaybeNull<InjectedDropdown>;
+    attachDropdown: (anchor: HTMLElement) => MaybeNull<InjectedDropdown>;
     attachNotification: () => MaybeNull<InjectedNotification>;
     destroy: () => void;
-    init: () => ProtonPassRoot;
+    init: (rootAnchor?: HTMLElement) => ProtonPassRoot;
     setTheme: (theme?: PassThemeOption) => void;
 }
 
@@ -79,10 +80,10 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             return state.root ?? service.init();
         },
 
-        init: () => {
+        init: (target) => {
             if (state.root) return state.root;
 
-            state.root = createIframeRoot(elements.root);
+            state.root = createIframeRoot(elements.root, target);
             if (state.apps.dropdown) onAttached(state.apps.dropdown);
             if (state.apps.notification) onAttached(state.apps.notification);
 
@@ -115,8 +116,24 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             state.root = null; /* reset in-case we recycle the content-script */
         },
 
-        attachDropdown: withContext((ctx) => {
+        attachDropdown: withContext((ctx, anchor) => {
             if (!ctx) return null;
+
+            if (POPOVER_SUPPORTED) {
+                const root = state.root;
+                const popoverChild = isPopoverChild(anchor);
+                const target = popoverChild ? anchor : document.body;
+
+                /** If the dropdown anchor is within a popover, the root must be injected
+                 * in the same subtree to maintain proper positioning and interactivity
+                 * in the top-layer. Moving a DOM node invalidates custom-elements,
+                 * so we need to re-initialize the service with the new anchor target. */
+                if (root && root.parentElement !== target) {
+                    service.destroy();
+                    root.parentElement?.removeChild(root);
+                    service.init(anchor);
+                }
+            }
 
             if (state.apps.dropdown === null) {
                 logger.info(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
@@ -133,6 +150,21 @@ export const createIFrameService = (elements: PassElementsConfig) => {
 
         attachNotification: withContext((ctx) => {
             if (!ctx) return null;
+
+            if (POPOVER_SUPPORTED) {
+                const root = state.root;
+                const target = getPopoverModal() ?? document.body;
+
+                /** If a modal dialog is active, inject the root in its subtree to maintain
+                 * interactivity. Unlike dropdowns, notifications don't need anchor positioning
+                 * but still need to handle top-layer modal capturing. Moving a DOM node
+                 * invalidates custom-elements, so we need to re-initialize the service. */
+                if (root && root.parentElement !== target) {
+                    service.destroy();
+                    root.parentElement?.removeChild(root);
+                    service.init(target);
+                }
+            }
 
             if (state.apps.notification === null) {
                 logger.info(`[ContentScript::${ctx.scriptId}] attaching notification iframe`);

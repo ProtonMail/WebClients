@@ -28,6 +28,9 @@ export class ProtonPassRoot extends ProtonPassElement {
 
     connectedCallback() {
         super.connectedCallback();
+
+        /** Enable popover API for the root element */
         this.setAttribute(PASS_ELEMENT_ROLE, 'root');
+        this.setAttribute('popover', 'manual');
     }
 }
