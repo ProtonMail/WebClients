@@ -16,7 +16,7 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
-import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import protonPassIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 
 import { dismissFirstLaunch } from '../../firstLaunch';
@@ -72,7 +72,7 @@ export const WelcomeScreen: FC = () => {
             },
             {
                 image: onboarding6,
-                title: c('Label').t`Dark Web Monitoring`,
+                title: DARK_WEB_MONITORING_NAME,
                 description: c('Label')
                     .t`Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.`,
             },
