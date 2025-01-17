@@ -118,8 +118,7 @@ export const getSignupParameters = ({
         toApp === APPS.PROTONDRIVE &&
         initialSearchParams &&
         getReturnUrlParameter(initialSearchParams) &&
-        !result.noPromo &&
-        !result.preSelectedPlan
+        (!result.preSelectedPlan || result.preSelectedPlan === 'free')
     ) {
         localID = -1;
         result.preSelectedPlan = PLANS.FREE;
