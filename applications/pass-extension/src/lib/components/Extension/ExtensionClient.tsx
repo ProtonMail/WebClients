@@ -7,7 +7,6 @@ import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionS
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
@@ -44,7 +43,6 @@ type Props = {
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const { endpoint, setCurrentTabUrl, onTelemetry } = usePassCore();
     const config = usePassConfig();
-    const { authorized } = useAppState();
 
     const dispatch = useDispatch();
     const { tabId, url, port } = useExtensionContext();
@@ -92,13 +90,10 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
         }
     }, []);
 
-    useVisibleEffect(
-        (visible) => {
-            if (authorized && visible) activityProbe.start();
-            else activityProbe.cancel();
-        },
-        [authorized]
-    );
+    useVisibleEffect((visible) => {
+        if (visible) activityProbe.start();
+        else activityProbe.cancel();
+    }, []);
 
     const context = useMemo<ExtensionClientContextValue>(
         () => ({
