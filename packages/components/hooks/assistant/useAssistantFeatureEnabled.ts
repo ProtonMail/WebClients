@@ -1,27 +1,21 @@
 import { selectOrganization, selectUser } from '@proton/account';
-import useScribePaymentsEnabled from '@proton/components/containers/payments/subscription/assistant/useScribePaymentsEnabled';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash';
 
 const useAssistantFeatureEnabled = () => {
     const accessToAssistant = useFlag('ComposerAssistant');
-    const scribePaymentsEnabled = useScribePaymentsEnabled();
 
     const user = baseUseSelector(selectUser)?.value;
-    const userHasScribeSeat = !!user?.NumAI;
 
     const organization = baseUseSelector(selectOrganization)?.value;
     const organizationScribeEnabled = !!organization?.Settings.ShowScribeWritingAssistant || !!user?.isAdmin;
     const planSupportsScribe = isScribeSupported(organization, user);
 
-    const paymentsEnabled = accessToAssistant && scribePaymentsEnabled;
+    const paymentsEnabled = accessToAssistant;
 
     const enabled =
         accessToAssistant &&
-        // you can't see anything Scribe related if the payments can't support you buying it
-        // but if you have a seat you can still use it
-        (scribePaymentsEnabled || userHasScribeSeat) &&
         // user can't enter scribe trial if the organization plan doesn't support it
         planSupportsScribe &&
         // If org admin disabled scribe to sub users, do not show the feature
