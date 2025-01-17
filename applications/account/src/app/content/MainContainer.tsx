@@ -22,6 +22,7 @@ import {
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainAreaLoading,
+    SubscriptionModalProvider,
     TVContainer,
     TopBanners,
     TopNavbarUpsell,
@@ -38,10 +39,10 @@ import {
     useToggle,
     useUnprivatizeMembers,
 } from '@proton/components';
+import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
-import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { FeatureCode, useFeatures } from '@proton/features';
@@ -353,9 +354,10 @@ const MainContainer = () => {
     }
 
     return (
-        <SubscriptionModalProvider app={app}>
-            <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-                <AccountStartupModals />
+        <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+            <AccountStartupModals />
+            <FeatureTour />
+            <SubscriptionModalProvider app={app}>
                 <Switch>
                     <Route path={anyAccountAppRoute}>
                         <AccountSettingsRouter
@@ -420,8 +422,8 @@ const MainContainer = () => {
                     </Route>
                     {redirect}
                 </Switch>
-            </PrivateAppContainer>
-        </SubscriptionModalProvider>
+            </SubscriptionModalProvider>
+        </PrivateAppContainer>
     );
 };
 

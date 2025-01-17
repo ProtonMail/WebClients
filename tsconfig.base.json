@@ -46,6 +46,7 @@
             "@proton/payments/ui/*": ["./packages/payments/components/*"],
             "@proton/polyfill/*": ["./packages/polyfill/*"],
             "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
+            "@proton/redux-shared-store/*": ["./packages/redux-shared-store/*"],
             "@proton/shared/*": ["./packages/shared/*"],
             "@proton/sieve/*": ["./packages/sieve/*"],
             "@proton/srp/*": ["./packages/srp/*"],

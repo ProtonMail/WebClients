@@ -25,13 +25,14 @@ import { useBreaches } from '@proton/components/containers/credentialLeak/useBre
 import GenericError from '@proton/components/containers/error/GenericError';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
-import { DARK_WEB_MONITORING_NAME, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, DARK_WEB_MONITORING_NAME, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 import { useFlag } from '@proton/unleash';
@@ -62,7 +63,8 @@ const BreachAlertsSecurityCenter = () => {
     const [error, setError] = useState<{ message: string } | null>(null);
     const api = useApi();
     const [selectedBreachID, setSelectedBreachID] = useState<string | null>(null);
-    const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(userSettings.BreachAlerts.Value === 1);
+    const { call } = useEventManager();
+    const hasAlertsEnabled = userSettings.BreachAlerts.Value === 1;
     const [sample, setSample] = useState<SampleBreach | null>(null);
     // upsellCount is the Count returned from reponse that represents the number of breaches a free user has
     const [upsellCount, setUpsellCount] = useState<number | null>(null);
@@ -124,7 +126,7 @@ const BreachAlertsSecurityCenter = () => {
         try {
             await withToggleLoading(api(enableBreachAlert()));
             createNotification({ text: getEnabledString(DARK_WEB_MONITORING_NAME) });
-            setHasAlertsEnabled(true);
+            await call();
         } catch (e) {
             handleError(e);
         }
@@ -279,6 +281,7 @@ const BreachAlertsSecurityCenter = () => {
                 <DWMUpsellModal
                     modalProps={dwmUpsellModal.modalProps}
                     upsellComponent={UPSELL_COMPONENT.TOGGLE}
+                    upsellApp={APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}
                     onUpgrade={() => enableBreachAlerts()}
                 />
             )}

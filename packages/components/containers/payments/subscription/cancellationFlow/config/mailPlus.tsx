@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 
@@ -45,7 +45,7 @@ export const getMailPlusConfig = ({ plan, subscription, user }: ConfigProps): Pl
             },
             {
                 icon: 'shield-2-bolt',
-                text: c('Subscription reminder').t`Dark web monitoring`,
+                text: DARK_WEB_MONITORING_NAME,
             },
             {
                 icon: 'life-ring',
