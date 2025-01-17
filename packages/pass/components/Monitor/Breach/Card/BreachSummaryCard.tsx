@@ -8,6 +8,7 @@ import { ButtonCard, type ButtonCardProps } from '@proton/pass/components/Layout
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
+import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 
 type Props = { className?: string; onClick: () => void };
 
@@ -51,7 +52,7 @@ export const BreachSummaryCard: FC<Props> = ({ className, onClick }) => {
             };
         })();
 
-        return <ButtonCard className={className} title={c('Title').t`Dark Web Monitoring`} {...props} />;
+        return <ButtonCard className={className} title={DARK_WEB_MONITORING_NAME} {...props} />;
     }
 
     return (
