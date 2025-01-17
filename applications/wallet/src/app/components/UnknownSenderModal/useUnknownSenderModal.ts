@@ -29,9 +29,15 @@ const senderEmail = (apiData?: DecryptedTransactionData) => {
     }
 };
 
-export const useUnknownSenderModal = ({ hashedTxId, onClose }: { hashedTxId: string; onClose?: () => void }) => {
-    const [walletTransactions] = useApiWalletTransactionData([hashedTxId]);
-    const apiWalletTransaction = walletTransactions?.[hashedTxId];
+export const useUnknownSenderModal = ({
+    transactionDataKey,
+    onClose,
+}: {
+    transactionDataKey: string;
+    onClose?: () => void;
+}) => {
+    const [walletTransactions] = useApiWalletTransactionData([transactionDataKey]);
+    const apiWalletTransaction = walletTransactions?.[transactionDataKey];
 
     const [contacts] = useContactEmails();
     const [shouldSaveAsContact, setShouldSaveAsContact] = useState(false);
@@ -128,15 +134,12 @@ export const useUnknownSenderModal = ({ hashedTxId, onClose }: { hashedTxId: str
                 await createContact();
             }
 
-            // Typeguard
-            if (apiWalletTransaction.HashedTransactionID) {
-                dispatch(
-                    updateWalletTransaction({
-                        hashedTransactionId: apiWalletTransaction.HashedTransactionID,
-                        update: { Sender: parsedSender },
-                    })
-                );
-            }
+            dispatch(
+                updateWalletTransaction({
+                    transactionDataKey: transactionDataKey,
+                    update: { Sender: parsedSender },
+                })
+            );
 
             onClose?.();
             createNotification({ text: c('Unknown sender').t`Transaction sender has been updated successfully` });
