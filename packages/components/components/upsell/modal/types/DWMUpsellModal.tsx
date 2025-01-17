@@ -2,7 +2,12 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { PLANS } from '@proton/payments';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    type APP_UPSELL_REF_PATH,
+    DARK_WEB_MONITORING_NAME,
+    MAIL_UPSELL_PATHS,
+    type UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import dwmShield from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
@@ -14,15 +19,15 @@ import UpsellModal from '../UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
-    upsellApp?: APP_UPSELL_REF_PATH;
-    upsellComponent?: UPSELL_COMPONENT;
+    upsellApp: APP_UPSELL_REF_PATH;
+    upsellComponent: UPSELL_COMPONENT;
     onUpgrade?: () => void;
 }
 
 const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: Props) => {
     const upsellRef = getUpsellRef({
-        app: upsellApp ?? APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
+        app: upsellApp,
+        component: upsellComponent,
         feature: MAIL_UPSELL_PATHS.DARK_WEB_MONITORING,
     });
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
@@ -33,7 +38,7 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: P
     if (displayNewUpsellModalsVariant) {
         return (
             <NewUpsellModal
-                titleModal={c('Title').t`Dark Web Monitoring`}
+                titleModal={DARK_WEB_MONITORING_NAME}
                 description={
                     <>
                         <p className="text-wrap-balance color-weak mt-0 mb-6">
@@ -68,7 +73,7 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: P
 
     return (
         <UpsellModal
-            title={c('Title').t`Dark Web Monitoring`}
+            title={DARK_WEB_MONITORING_NAME}
             description={c('Description')
                 .t`Get notified if your password or other data was leaked from a third-party service.`}
             modalProps={modalProps}

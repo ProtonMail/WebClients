@@ -21,3 +21,5 @@ declare module 'punycode.js';
 declare module '*.raw.scss';
 
 declare module '*.csv';
+
+declare module '*.webp';
