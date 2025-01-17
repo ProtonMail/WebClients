@@ -1,32 +1,28 @@
 import type { FunctionComponent } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { SECURITY_CHECKUP_PATHS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
-
 import PartnerClaimContainer from '../containers/PartnerClaimContainer';
 import SetupAddressContainer from '../containers/SetupAddressContainer';
 import SecurityCheckupContainer from '../containers/securityCheckup/SecurityCheckupContainer';
 import MainContainer from './MainContainer';
+import { getRoutesWithoutSlug } from './routesWithoutSlug';
 
 const SetupMainContainer: FunctionComponent = () => {
-    const isPartnerEnabled = true;
-
+    const routes = getRoutesWithoutSlug();
     return (
         <Switch>
-            <Route path={SETUP_ADDRESS_PATH}>
+            <Route path={routes.setup}>
                 <SetupAddressContainer />
             </Route>
-            <Route path={SECURITY_CHECKUP_PATHS.ROOT}>
+            <Route path={routes.securityCheckup}>
                 <SecurityCheckupContainer />
             </Route>
-            <Route path="/security-checkup">
-                <Redirect to={`${SECURITY_CHECKUP_PATHS.ROOT}${location.search}`} />
+            <Route path={routes.legacySecurityCheckup}>
+                <Redirect to={`${routes.securityCheckup}${location.search}`} />
             </Route>
-            {isPartnerEnabled && (
-                <Route path="/partner/porkbun/claim">
-                    <PartnerClaimContainer />
-                </Route>
-            )}
+            <Route path={routes.porkbunClaim}>
+                <PartnerClaimContainer />
+            </Route>
             <Route path="*">
                 <MainContainer />
             </Route>
