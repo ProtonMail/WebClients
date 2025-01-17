@@ -27,6 +27,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
+import { hidePopover, showPopover } from '@proton/pass/utils/dom/popover';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -85,7 +86,7 @@ export const createIFrameApp = <A>({
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
         classNames,
-        attributes: { src },
+        attributes: { src, popover: '' },
         parent: root,
         shadow: true,
     });
@@ -169,6 +170,7 @@ export const createIFrameApp = <A>({
         activeListeners.removeAll();
 
         if (state.visible) {
+            hidePopover(root);
             const target = (options?.event?.target ?? null) as MaybeNull<HTMLElement>;
 
             if (!target || !backdropExclude?.().includes(target)) {
@@ -186,6 +188,7 @@ export const createIFrameApp = <A>({
 
     const open = (action: A, scrollRef?: HTMLElement) => {
         if (!state.visible) {
+            showPopover(root);
             state.action = action;
             state.visible = true;
 
