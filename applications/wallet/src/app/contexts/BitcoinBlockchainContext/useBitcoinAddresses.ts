@@ -10,6 +10,7 @@ import {
     type WasmApiWallet,
     type WasmApiWalletAccount,
     type WasmApiWalletBitcoinAddress,
+    WasmKeychainKind,
     type WasmNetwork,
 } from '@proton/andromeda';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -50,6 +51,8 @@ interface WalletEventLoopUpdate {
 export interface BitcoinAddressHelper {
     receiveBitcoinAddress: WasmAddressInfo;
     generateNewReceiveAddress: () => Promise<void>;
+    hasReachedStopGap: boolean;
+    willReachStopGap: boolean;
     isLoading: boolean;
 }
 
@@ -478,6 +481,9 @@ export const useBitcoinAddresses = ({
                         unusedAddresses,
                     });
 
+                    const highestUsedAddressIndexInOutput =
+                        await accountChainData.account.getHighestUsedAddressIndexInOutput(WasmKeychainKind.External);
+
                     const generateNewReceiveAddress = async () => {
                         if (isSyncing) {
                             return;
@@ -503,6 +509,14 @@ export const useBitcoinAddresses = ({
                         [account.ID]: {
                             receiveBitcoinAddress: finalReceiveBitcoinAddress,
                             generateNewReceiveAddress,
+                            hasReachedStopGap: !!(
+                                highestUsedAddressIndexInOutput &&
+                                highestUsedAddressIndexInOutput + 20 <= account.LastUsedIndex
+                            ),
+                            willReachStopGap: !!(
+                                highestUsedAddressIndexInOutput &&
+                                highestUsedAddressIndexInOutput + 10 <= account.LastUsedIndex
+                            ),
                             isLoading: false,
                         },
                     }));
