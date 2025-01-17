@@ -13,6 +13,7 @@ import { DateInput, Label, Option, PrimaryButton, SelectTwo } from '@proton/comp
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { getHumanLabelID } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -25,7 +26,6 @@ import AddressInput from 'proton-mail/components/composer/addresses/AddressInput
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { getHumanLabelID } from '../../../helpers/labels';
 import { extractSearchParameters, keywordToString } from '../../../helpers/mailboxUrl';
 import AddressesInput from '../../composer/addresses/AddressesInput';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';

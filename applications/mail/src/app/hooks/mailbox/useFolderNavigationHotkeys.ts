@@ -4,12 +4,11 @@ import type { HotkeyTuple } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
-
-import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
 const { DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL, ALMOST_ALL_MAIL } =
     MAILBOX_LABEL_IDS;

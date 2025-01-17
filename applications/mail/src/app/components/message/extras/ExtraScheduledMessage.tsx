@@ -9,13 +9,14 @@ import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications 
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { LABEL_IDS_TO_HUMAN, PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
+import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';

@@ -1,15 +1,12 @@
-import { c } from 'ttag';
-
-import type { IconName } from '@proton/components';
+import type { FolderInfo } from '@proton/mail/labels/helpers';
+import { getStandardFolders, labelIncludes } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN } from '../constants';
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import type { MessageWithOptionalBody } from '../store/messages/messagesTypes';
@@ -35,146 +32,6 @@ const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, O
 
 export type LabelChanges = { [labelID: string]: boolean };
 
-export interface FolderInfo {
-    icon: IconName;
-    name: string;
-    to: string;
-    color?: string;
-    parentID?: string | number;
-}
-
-interface FolderMap {
-    [id: string]: FolderInfo;
-}
-
-const alwaysMessageLabels = [DRAFTS, ALL_DRAFTS, SENT, ALL_SENT];
-const SYSTEM_LABELS = [STARRED, SNOOZED, ALL_MAIL, ALMOST_ALL_MAIL, SCHEDULED, ALL_SENT, ALL_DRAFTS, OUTBOX, INBOX];
-
-export const isSystemLabel = (labelID: string) => SYSTEM_LABELS.includes(labelID as MAILBOX_LABEL_IDS);
-
-export const getHumanLabelID = (labelID: string) => LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] || labelID;
-
-export const isStringHumanLabelID = (labelID: string) => {
-    const humanLabels = Object.values(LABEL_IDS_TO_HUMAN);
-    return humanLabels.includes(labelID);
-};
-
-export const isCustomLabelOrFolder = (labelID: string) =>
-    !Object.values(MAILBOX_LABEL_IDS).includes(labelID as MAILBOX_LABEL_IDS);
-
-export const isAlwaysMessageLabels = (labelID: string) => alwaysMessageLabels.includes(labelID as MAILBOX_LABEL_IDS);
-
-export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
-    labels.includes(labelID as MAILBOX_LABEL_IDS);
-
-export const isCustomLabel = (labelID: string, labels: Label[] = []) => labels.some((label) => label.ID === labelID);
-
-export const isLabel = (labelID: string, labels: Label[] = []) =>
-    labelIncludes(labelID, STARRED) || isCustomLabel(labelID, labels);
-
-export const isCustomFolder = (labelID: string, folders: Folder[] = []) =>
-    folders.some((folder) => folder.ID === labelID);
-
-export const getStandardFolders = (): FolderMap => ({
-    [INBOX]: {
-        icon: 'inbox',
-        name: c('Link').t`Inbox`,
-        to: '/inbox',
-    },
-    [TRASH]: {
-        icon: 'trash',
-        name: c('Link').t`Trash`,
-        to: '/trash',
-    },
-    [SPAM]: {
-        icon: 'fire',
-        name: c('Link').t`Spam`,
-        to: '/spam',
-    },
-    [ARCHIVE]: {
-        icon: 'archive-box',
-        name: c('Link').t`Archive`,
-        to: '/archive',
-    },
-    [SENT]: {
-        icon: 'paper-plane',
-        name: c('Link').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[SENT]}`,
-    },
-    [ALL_SENT]: {
-        icon: 'paper-plane',
-        name: c('Link').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`,
-    },
-    [DRAFTS]: {
-        icon: 'file-lines',
-        name: c('Link').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`,
-    },
-    [ALL_DRAFTS]: {
-        icon: 'file-lines',
-        name: c('Link').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
-    },
-    [SCHEDULED]: {
-        icon: 'paper-plane-clock',
-        name: c('Link').t`Scheduled`,
-        to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
-    },
-    [STARRED]: {
-        icon: 'star',
-        name: c('Link').t`Starred`,
-        to: `/${LABEL_IDS_TO_HUMAN[STARRED]}`,
-    },
-    [SNOOZED]: {
-        icon: 'clock',
-        name: c('Link').t`Snooze`,
-        to: `/${LABEL_IDS_TO_HUMAN[SNOOZED]}`,
-    },
-    [ALL_MAIL]: {
-        icon: 'envelopes',
-        name: c('Link').t`All mail`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_MAIL]}`,
-    },
-    [ALMOST_ALL_MAIL]: {
-        icon: 'envelopes',
-        name: c('Link').t`All mail`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALMOST_ALL_MAIL]}`,
-    },
-    // [OUTBOX]: {
-    //     icon: 'inbox-out',
-    //     name: c('Mailbox').t`Outbox`,
-    //     to: `/${LABEL_IDS_TO_HUMAN[OUTBOX]}`,
-    // },
-});
-
-export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
-    if (labelID in LABEL_IDS_TO_HUMAN) {
-        const folders = getStandardFolders();
-        return folders[labelID].name;
-    }
-
-    const labelsMap = toMap(labels, 'ID');
-    if (labelID in labelsMap) {
-        return labelsMap[labelID]?.Name || labelID;
-    }
-
-    const foldersMap = toMap(folders, 'ID');
-    if (labelID in foldersMap) {
-        return foldersMap[labelID]?.Name || labelID;
-    }
-
-    return labelID;
-};
-
-export const getLabelNames = (changes: string[], labels: Label[], folders: Folder[]) => {
-    if (!changes || changes.length === 0) {
-        return;
-    }
-
-    return changes.map((ID) => getLabelName(ID, labels, folders));
-};
-
 export const getCurrentFolders = (
     element: Element | undefined,
     labelID: string,
@@ -194,7 +51,7 @@ export const getCurrentFolders = (
             if ([DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS)) {
                 return (hasBit(ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS) === labelID;
             }
-            // We don't want to show the All mail folder in the details
+            // We don't want to show "All mail" folder in the details
             if ([ALL_MAIL, ALMOST_ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS)) {
                 return false;
             }
@@ -223,23 +80,8 @@ export const getCurrentFolders = (
 
 export const getCurrentFolderID = (labelIDs: string[] = [], customFoldersList: Folder[] = []): string => {
     const allFolderIDs = [...DEFAULT_FOLDERS, ...customFoldersList.map(({ ID }) => ID)];
-    return labelIDs.find((labeID) => allFolderIDs.includes(labeID)) || '';
+    return labelIDs.find((labelID) => allFolderIDs.includes(labelID)) || '';
 };
-
-export const getFolderName = (labelID: string, customFoldersList: Folder[] = []): string => {
-    const standardFolders = getStandardFolders();
-    if (standardFolders[labelID]) {
-        return standardFolders[labelID].name;
-    }
-    const { Name = '' } = customFoldersList.find(({ ID }) => ID === labelID) || {};
-    return Name;
-};
-
-export const isAutoRead = (labelID: MAILBOX_LABEL_IDS | string) =>
-    LABELS_AUTO_READ.includes(labelID as MAILBOX_LABEL_IDS);
-
-export const isUnmodifiableByUser = (labelID: MAILBOX_LABEL_IDS | string) =>
-    LABELS_UNMODIFIABLE_BY_USER.includes(labelID as MAILBOX_LABEL_IDS);
 
 export interface UnreadStatus {
     id: string;
@@ -300,7 +142,7 @@ export const applyLabelChangesOnConversation = (
         } else if (index >= 0) {
             // When the conversation has been received through the event manager it will not have a Time field
             // By removing the label, we are losing the context time associated
-            // If we rollback that change, both label time and fallback on conversation will be missing
+            // If we roll back that change, both label time and fallback on conversation will be missing
             // By filling the conversation time at label removal, we ensure there will be a time on rollback
             if (Time === undefined) {
                 Time = Labels[index].ContextTime;
@@ -344,7 +186,7 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
             if (numMessages <= 1) {
                 // When the conversation has been received through the event manager it will not have a Time field
                 // By removing the label, we are losing the context time associated
-                // If we rollback that change, both label time and fallback on conversation will be missing
+                // If we roll back that change, both label time and fallback on conversation will be missing
                 // By filling the conversation time at label removal, we ensure there will be a time on rollback
                 if (Time === undefined) {
                     Time = Labels[index].ContextTime;
@@ -361,7 +203,7 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
     return { updatedConversation: { ...conversation, Time, Labels }, conversationChanges };
 };
 
-// For some locations, we want to display the total number of messages instead of the number of unreads (e.g. Scheduled folder)
+// For some locations, we want to display the total number of messages instead of the number of unread (e.g. Scheduled folder)
 export const shouldDisplayTotal = (labelID: string) => {
     const needsDisplayTotalLabels = [SCHEDULED, SNOOZED];
 

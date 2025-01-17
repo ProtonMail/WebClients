@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { Breakpoints } from '@proton/components';
 import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
+import { labelIncludes } from '@proton/mail/labels/helpers';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -11,7 +12,7 @@ import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { canMoveAll, labelIncludes } from '../../helpers/labels';
+import { canMoveAll } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';

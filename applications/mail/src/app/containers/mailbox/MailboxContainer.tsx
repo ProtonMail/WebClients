@@ -19,12 +19,14 @@ import {
     useModalState,
 } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
+import { getFolderName } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
@@ -48,9 +50,8 @@ import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
 import Toolbar from '../../components/toolbar/Toolbar';
-import { LABEL_IDS_TO_HUMAN, MESSAGE_ACTIONS } from '../../constants';
+import { MESSAGE_ACTIONS } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
-import { getFolderName } from '../../helpers/labels';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
 import {
     extractSearchParameters,
