@@ -150,6 +150,8 @@ const SharingSettingsModal = ({
                                         .t`Public link expiration date`}</span>
                                 </Label>
                                 <div className="flex items-center justify-space-between gap-2 ">
+                                    {/* This hack is used to prevent firefox showing autocomplete on the time date picker field */}
+                                    <input className="hidden" type="email" />
                                     <ExpirationTimeDatePicker
                                         className="w-custom max-w-custom"
                                         containerProps={{
@@ -163,6 +165,7 @@ const SharingSettingsModal = ({
                                         placeholder={c('Placeholder').t`Set date`}
                                         data-testid="expiration-data-input"
                                     />
+
                                     <Toggle
                                         disabled={!havePublicSharedLink}
                                         id="toggleExpiration"
