@@ -162,7 +162,6 @@ const OpenVPNConfigurationSection = ({
     const plusVpnConnections = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
     const vpnPlus = vpnPlan?.Title;
-    const planName = vpnPlus;
 
     return (
         <SettingsSectionWide>
@@ -413,8 +412,8 @@ const OpenVPNConfigurationSection = ({
                                         path={`/dashboard?plan=${PLANS.VPN2024}`}
                                     >
                                         {
-                                            // translator: ${planName} is "VPN Plus" (taken from plan title)
-                                            c('Action').t`Get ${planName}`
+                                            // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
+                                            c('Action').t`Get ${vpnPlus}`
                                         }
                                     </ButtonLike>
                                 </div>
