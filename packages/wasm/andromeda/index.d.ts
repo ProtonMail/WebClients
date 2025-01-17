@@ -1,21 +1,21 @@
 /* tslint:disable */
 /* eslint-disable */
+export function setPanicHook(): void;
+/**
+ * @param {string} word_start
+ * @returns {(string)[]}
+ */
+export function getWordsAutocomplete(word_start: string): (string)[];
+/**
+ * @returns {number}
+ */
+export function getDefaultStopGap(): number;
 /**
  * @param {WasmPsbt} psbt
  * @param {WasmAccount} account
  * @returns {Promise<WasmTransactionDetailsData>}
  */
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
-export function setPanicHook(): void;
-/**
- * @returns {number}
- */
-export function getDefaultStopGap(): number;
-/**
- * @param {string} word_start
- * @returns {(string)[]}
- */
-export function getWordsAutocomplete(word_start: string): (string)[];
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
@@ -93,6 +93,13 @@ export enum WasmWordCount {
   Words21 = 3,
   Words24 = 4,
 }
+export interface WasmApiWalletBitcoinAddressLookup {
+    BitcoinAddress: string | null;
+    BitcoinAddressSignature: string | null;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
 export type WasmGatewayProvider = "Banxa" | "Ramp" | "MoonPay" | "Azteco" | "Unsupported";
 
 export interface WasmApiCountry {
@@ -137,11 +144,54 @@ export interface WasmQuotes {
     data: WasmQuote[];
 }
 
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+}
+
+export interface WasmBroadcastMessage {
+    data_packet: string;
+    key_packets: Record<string, string>;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    body: string | null;
+    message: WasmBroadcastMessage | null;
+    recipients: Record<string, string> | null;
+    is_anonymous: number | null;
+}
+
 export interface WasmAddressDetails {
     index: number;
     address: string;
     transactions: WasmTransactionDetails[];
     balance: WasmBalance;
+}
+
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
+
+export interface WasmAddressInfo {
+    index: number;
+    address: string;
+    keychain: WasmKeychainKind;
+}
+
+export interface WasmBalance {
+    immature: number;
+    trusted_pending: number;
+    untrusted_pending: number;
+    confirmed: number;
 }
 
 export interface WasmTxOut {
@@ -341,56 +391,6 @@ export interface WasmMigratedWalletTransaction {
     Label: string | null;
 }
 
-export interface WasmPagination {
-    skip: number;
-    take: number;
-}
-
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
-
-export interface WasmApiWalletBitcoinAddressLookup {
-    BitcoinAddress: string | null;
-    BitcoinAddressSignature: string | null;
-}
-
-export interface WasmAddressInfo {
-    index: number;
-    address: string;
-    keychain: WasmKeychainKind;
-}
-
-export interface WasmBalance {
-    immature: number;
-    trusted_pending: number;
-    untrusted_pending: number;
-    confirmed: number;
-}
-
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-}
-
-export interface WasmBroadcastMessage {
-    data_packet: string;
-    key_packets: Record<string, string>;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    body: string | null;
-    message: WasmBroadcastMessage | null;
-    recipients: Record<string, string> | null;
-    is_anonymous: number | null;
-}
-
 export class WasmAccount {
   free(): void;
   /**
@@ -467,11 +467,6 @@ export class WasmAccount {
    * @returns {Promise<boolean>}
    */
   hasSyncData(): Promise<boolean>;
-  /**
-   * @param {WasmPsbt} psbt
-   * @returns {Promise<void>}
-   */
-  insertUnconfirmedTransaction(psbt: WasmPsbt): Promise<void>;
   /**
    * @param {WasmNetwork} network
    * @param {string} txid
