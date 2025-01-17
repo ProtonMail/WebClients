@@ -86,8 +86,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
     const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
-    const sharedReadOnly = shared && readOnly; /* wether vault or item share */
-    const canManage = isShareManageable(share);
 
     const hasMultipleVaults = vaults.length > 1;
     const canMove = (!shared || owner) && hasMultipleVaults;
@@ -96,13 +94,22 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
-    const [signal, setSignalItemSharing] = useState(false);
-
     const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
+
     const accessCount = (share.shared ? targetMembers : 0) + (revision.shareCount ?? 0);
-    const showSharingMenu = isOwnerOrAdmin || shared;
+
+    const canManage = isShareManageable(share);
     const canShare = canManage && type !== 'alias';
+    const canLinkShare = isVault && canShare;
+    const canItemShare = itemSharingEnabled && canShare;
+    const canManageAccess = itemSharingEnabled && shared && !readOnly;
+    const canLeave = !isVault && !owner;
+    const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
+
+    const [signal, setSignalItemSharing] = useState(false);
     const signalItemSharing = itemSharingEnabled && signal && !itemShared && canShare;
+    const disabledSharing = !(canItemShare || canLinkShare || canManageAccess);
+    const showSharing = (owner || shared) && !readOnly;
 
     useEffect(() => {
         (async () => {
@@ -111,7 +118,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
         })().catch(noop);
     }, []);
 
-    const monitorActions = !EXTENSION_BUILD && !trashed && data.type === 'login' && (
+    const monitorActions = canMonitor && (
         <DropdownMenuButton
             disabled={optimistic}
             onClick={handleToggleFlagsClick}
@@ -173,14 +180,14 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         onClick={handleRestoreClick}
                                         label={c('Action').t`Restore item`}
                                         icon="arrows-rotate"
-                                        disabled={sharedReadOnly}
+                                        disabled={readOnly}
                                     />
 
                                     <DropdownMenuButton
                                         onClick={handleDeleteClick}
                                         label={c('Action').t`Delete permanently`}
                                         icon="trash-cross"
-                                        disabled={sharedReadOnly}
+                                        disabled={readOnly}
                                     />
 
                                     {monitorActions}
@@ -204,7 +211,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             ...actions,
 
-                            showSharingMenu && (
+                            showSharing && (
                                 <QuickActionsDropdown
                                     key="share-item-button"
                                     color="weak"
@@ -213,7 +220,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     icon="users-plus"
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
-                                    disabled={!online || optimistic || sharedReadOnly}
+                                    disabled={!online || optimistic || disabledSharing}
                                     badge={itemSharingEnabled && accessCount > 0 ? accessCount : undefined}
                                     signaled={isOwnerOrAdmin && signalItemSharing}
                                     dropdownSize={{
@@ -223,7 +230,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         maxWidth: '20rem',
                                     }}
                                 >
-                                    {itemSharingEnabled && canShare && (
+                                    {canItemShare && (
                                         <DropdownMenuButton
                                             onClick={onItemShare}
                                             label={
@@ -243,7 +250,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     {/** NOTE: disabling secure links for non-vault shares
                                      * until we start using the `itemKey` to encrypt the
                                      * `secureLinkKey` with */}
-                                    {isVault && canShare && (
+                                    {canLinkShare && (
                                         <DropdownMenuButton
                                             onClick={onSecureLink}
                                             label={
@@ -257,7 +264,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         />
                                     )}
 
-                                    {itemSharingEnabled && shared && (
+                                    {canManageAccess && (
                                         <DropdownMenuButton
                                             onClick={onManageItem}
                                             title={c('Action').t`See members`}
@@ -284,7 +291,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         onClick={handleMoveToVaultClick}
                                         label={c('Action').t`Move to another vault`}
                                         icon="folder-arrow-in"
-                                        disabled={sharedReadOnly}
+                                        disabled={readOnly}
                                     />
                                 )}
 
@@ -310,12 +317,12 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     onClick={handleMoveToTrashClick}
                                     label={c('Action').t`Move to Trash`}
                                     icon="trash"
-                                    disabled={sharedReadOnly}
+                                    disabled={readOnly}
                                 />
 
                                 {monitorActions}
 
-                                {itemShared && !owner && (
+                                {canLeave && (
                                     <DropdownMenuButton
                                         onClick={handleLeaveItemClick}
                                         label={c('Action').t`Leave`}
