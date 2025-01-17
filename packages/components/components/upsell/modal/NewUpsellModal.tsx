@@ -13,8 +13,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import useApi from '@proton/components/hooks/useApi';
-import { type Currency, PLANS } from '@proton/payments';
-import { APPS, type APP_NAMES, CYCLE, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { type Currency, PLANS, PLAN_NAMES, getPlanByName } from '@proton/payments';
+import { APPS, type APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
 import {
     type SourceEventUpsell,
     UPSELL_MODALS_TYPE,
@@ -84,18 +84,25 @@ const NewUpsellModal = ({
     const currency: Currency = user?.Currency || 'USD';
 
     const [plansResult] = usePlans();
-    const mailPlus = plansResult?.plans?.find(({ Name }) => Name === PLANS.MAIL);
 
-    const amount = (mailPlus?.DefaultPricing?.[CYCLE.YEARLY] || 0) / CYCLE.YEARLY;
+    let planName = PLAN_NAMES[PLANS.MAIL];
+    let planID: PLANS = PLANS.MAIL;
+    if (user.isPaid) {
+        planID = PLANS.BUNDLE;
+        planName = PLAN_NAMES[PLANS.BUNDLE];
+    }
+    const plan = getPlanByName(plansResult?.plans ?? [], planID, currency);
+    const cycle = user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY;
+    const planPricePerMonth = (plan?.Pricing?.[cycle] || 0) / cycle;
 
-    const priceMailPlus = (
+    const pricing = (
         <Price
             key="monthly-price"
             currency={currency}
             suffix={c('specialoffer: Offers').t`/month`}
             isDisplayedInSentence
         >
-            {amount}
+            {planPricePerMonth}
         </Price>
     );
 
@@ -109,11 +116,11 @@ const NewUpsellModal = ({
             shape="solid"
             fullWidth
         >
-            {submitText || c('new_plans: Action').t`Upgrade to ${MAIL_SHORT_APP_NAME} Plus`}
+            {submitText || c('new_plans: Action').t`Upgrade to ${planName}`}
         </ButtonLike>
     );
 
-    const footerTextModal = footerText || c('new_plans: Action').jt`Starting from ${priceMailPlus}`;
+    const footerTextModal = footerText || c('new_plans: Action').jt`Starting from ${pricing}`;
 
     return (
         <ModalTwo
