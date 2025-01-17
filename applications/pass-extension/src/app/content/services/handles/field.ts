@@ -47,7 +47,7 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
             if (shouldClose) dropdown?.close();
             if (shouldOpen) {
-                ctx?.service.iframe.attachDropdown()?.open({
+                ctx?.service.iframe.attachDropdown(field.getFormHandle().element)?.open({
                     action: action.type,
                     autofocused: true,
                     field,
