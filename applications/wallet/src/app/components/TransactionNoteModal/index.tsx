@@ -9,13 +9,13 @@ import { TextAreaModal } from '../TextAreaModal';
 import { useTransactionNoteModal } from './useTransactionNoteModal';
 
 interface Props extends ModalOwnProps {
-    hashedTxId: string;
+    transactionDataKey: string;
     apiWalletData: IWasmApiWalletData;
 }
 
-export const TransactionNoteModal = ({ apiWalletData, hashedTxId, ...modalProps }: Props) => {
+export const TransactionNoteModal = ({ apiWalletData, transactionDataKey, ...modalProps }: Props) => {
     const { baseLabel, handleSaveNote } = useTransactionNoteModal({
-        hashedTxId,
+        transactionDataKey: transactionDataKey,
         onClose: modalProps.onClose,
         walletKey: apiWalletData.WalletKey?.DecryptedKey,
     });
