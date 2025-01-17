@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { createContext, useCallback, useContext, useRef, useState } from 'react';
 
-import { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -40,7 +39,6 @@ export interface OpenCallbackProps
     onClose?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
-    renderCustomStepModal?: (step: SubscriptionOverridableStep, modalProps: ModalStateProps) => ReactNode;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;

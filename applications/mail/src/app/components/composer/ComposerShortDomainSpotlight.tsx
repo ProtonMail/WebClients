@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Spotlight, useSpotlightShow } from '@proton/components';
-import useMailShortDomainPostSubscriptionSpotlight from '@proton/components/containers/payments/subscription/postSubscription/mail-short-domain/useMailShortDomainPostSubscriptionSpotlight';
+import useMailShortDomainPostSubscriptionComposerSpotlight from '@proton/components/hooks/mail/useMailShortDomainPostSubscriptionSpotlight';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 const ComposerShortDomainSpotlight = ({ children }: Props) => {
     const [manualClose, setManualClose] = useState(false);
-    const shortDomainSpotlight = useMailShortDomainPostSubscriptionSpotlight();
+    const shortDomainSpotlight = useMailShortDomainPostSubscriptionComposerSpotlight();
     const canDisplaySpotlight = useMemo(() => {
         if (shortDomainSpotlight.loading) {
             return false;
@@ -47,7 +47,7 @@ const ComposerShortDomainSpotlight = ({ children }: Props) => {
                     <div className="shrink-0 mr-4">
                         <img src={spotlightImg} alt="" style={{ '--w-custom': '2.75rem' }} />
                     </div>
-                    <div className="text-wrap-balance text-break">
+                    <div className="text-break">
                         <p className="mt-0 mb-1 text-bold">{c('Spotlight').t`Your pm.me email is active`}</p>
                         <p className="m-0">{c('Spotlight')
                             .t`This is now your default address. Open the dropdown to send from a different address. `}</p>

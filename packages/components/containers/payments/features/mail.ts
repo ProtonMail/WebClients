@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { PLANS } from '@proton/payments';
-import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CALENDAR_APP_NAME, DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { PlansMap } from '@proton/shared/lib/interfaces';
@@ -132,13 +132,9 @@ export const getDesktopAppFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getDarkWebMonitoringText = () => {
-    return c('BF2024: Deal details').t`Dark Web Monitoring`;
-};
-
 export const getDarkWebMonitoringFeature = (): PlanCardFeatureDefinition => {
     return {
-        text: getDarkWebMonitoringText(),
+        text: DARK_WEB_MONITORING_NAME,
         icon: 'eye',
         included: true,
     };

@@ -49,7 +49,14 @@ import BreachMonitoringToggle from './BreachMonitoringToggle';
 import BreachesList from './BreachesList';
 import EmptyBreachListCard from './EmptyBreachListCard';
 import NoBreachesView from './NoBreachesView';
-import { BREACH_API_ERROR, getEnableString, getUpsellText, toCamelCase } from './helpers';
+import {
+    BREACH_API_ERROR,
+    getDisabledString,
+    getEnableString,
+    getEnabledString,
+    getUpsellText,
+    toCamelCase,
+} from './helpers';
 import type { ListType, SampleBreach } from './models';
 import { BREACH_STATE } from './models';
 import { useBreaches } from './useBreaches';
@@ -185,8 +192,8 @@ const CredentialLeakSection = () => {
         }
         try {
             const [action, notification] = newToggleState
-                ? [enableBreachAlert, c('Notification').t`Dark Web Monitoring has been enabled`]
-                : [disableBreachAlert, c('Notification').t`Dark Web Monitoring has been disabled`];
+                ? [enableBreachAlert, getEnabledString(DARK_WEB_MONITORING_NAME)]
+                : [disableBreachAlert, getDisabledString(DARK_WEB_MONITORING_NAME)];
 
             await withToggleLoading(api(action()));
             createNotification({ text: notification });

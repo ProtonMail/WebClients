@@ -1,0 +1,44 @@
+import { c } from 'ttag';
+
+import { userSettingsThunk } from '@proton/account';
+import { ButtonLike } from '@proton/atoms';
+import useInboxDesktopVersion from '@proton/components/containers/desktop/useInboxDesktopVersion';
+import { isDesktopInboxUser } from '@proton/shared/lib/helpers/usedClientsFlags';
+import desktopAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-desktop-app-background.svg';
+
+import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepsContent from './components/FeatureTourStepsContent';
+
+export const shouldDisplayDesktopAppTourStep: ShouldDisplayTourStep = async (dispatch) => {
+    const [userSettings] = await Promise.all([dispatch(userSettingsThunk())]);
+    return !isDesktopInboxUser(BigInt(userSettings.UsedClientFlags));
+};
+
+export const DesktopAppTourStep = (props: FeatureTourStepProps) => {
+    const { desktopAppLink, loading } = useInboxDesktopVersion();
+
+    return (
+        <FeatureTourStepsContent
+            title={c('Title').t`Distraction-free emailing`}
+            description={c('Info').t`Enjoy a faster, focused emailing experience with the desktop app.`}
+            illustrationSize="full"
+            illustration={desktopAppBackground}
+            descriptionClassName="mb-12"
+            titleClassName="pt-12"
+            primaryButton={
+                <ButtonLike
+                    as={'a'}
+                    className="mb-2"
+                    loading={loading}
+                    color="norm"
+                    fullWidth
+                    href={desktopAppLink}
+                    download
+                >{c('Action').t`Download the desktop app`}</ButtonLike>
+            }
+            {...props}
+        />
+    );
+};
+
+export default DesktopAppTourStep;

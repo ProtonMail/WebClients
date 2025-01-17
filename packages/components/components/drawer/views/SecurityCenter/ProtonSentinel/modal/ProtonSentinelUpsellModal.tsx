@@ -11,6 +11,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import useApi from '@proton/components/hooks/useApi';
 import { type Currency, PLANS } from '@proton/payments';
 import {
@@ -45,6 +46,15 @@ const ProtonSentinelUpsellModal = ({ modalProps, upsellComponent }: Props) => {
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
+    const upsellConfig = useUpsellConfig({
+        upsellRef: getUpsellRef({
+            app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+            component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
+            feature: MAIL_UPSELL_PATHS.PROTON_SENTINEL,
+        }),
+        plan: PLANS.BUNDLE,
+    });
+
     const currency: Currency = user?.Currency || 'USD';
     const [plansResult] = usePlans();
     const mailUnlimited = plansResult?.plans?.find(({ Name }) => Name === PLANS.BUNDLE);
@@ -74,14 +84,7 @@ const ProtonSentinelUpsellModal = ({ modalProps, upsellComponent }: Props) => {
                 submitText={c('Action').t`Upgrade to ${BRAND_NAME} Unlimited`}
                 footerText={c('Action').jt`Starting from ${priceUnlimited}`}
                 sourceEvent="BUTTON_SENTINEL"
-                upgradePath={addUpsellPath(
-                    getUpgradePath({ user }),
-                    getUpsellRef({
-                        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-                        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
-                        feature: MAIL_UPSELL_PATHS.PROTON_SENTINEL,
-                    })
-                )}
+                {...upsellConfig}
             />
         );
     }

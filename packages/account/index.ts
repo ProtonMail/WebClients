@@ -12,6 +12,7 @@ export * from './inactiveKeys/hooks';
 export * from './userSettings';
 export * from './userSettings/hooks';
 export * from './userSettings/listener';
+export * from './featuresTour';
 export * from './protonDomains';
 export * from './organization';
 export * from './organization/theme';

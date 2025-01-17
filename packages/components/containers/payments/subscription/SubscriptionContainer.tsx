@@ -146,6 +146,7 @@ interface RenderProps {
     footer?: ReactNode;
     onSubmit: (e: FormEvent) => void;
     step: SUBSCRIPTION_STEPS;
+    planIDs: PlanIDs;
 }
 
 export interface SubscriptionContainerProps {
@@ -1246,6 +1247,7 @@ const SubscriptionContainer = ({
                 content,
                 footer,
                 step: model.step,
+                planIDs: model.planIDs,
             })}
         </>
     );

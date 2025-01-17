@@ -3,17 +3,14 @@ import type { ReactElement } from 'react';
 import { c, msgid } from 'ttag';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
-import {
-    getDarkWebMonitoringText,
-    getDesktopAppText,
-    getOwnDomainText,
-} from '@proton/components/containers/payments/features/mail';
+import { getDesktopAppText, getOwnDomainText } from '@proton/components/containers/payments/features/mail';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
     CALENDAR_SHORT_APP_NAME,
     CYCLE,
+    DARK_WEB_MONITORING_NAME,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
@@ -114,7 +111,7 @@ const getPremiumVPNFeature = () => ({
 const getPremiumPasswordManagerFeature = () => ({
     name: PLAN_NAMES[PLANS.PASS],
     tooltip: c('BF2024: Tooltip')
-        .t`Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.`,
+        .t`Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${DARK_WEB_MONITORING_NAME} and more.`,
 });
 
 const getPremiumDriveFeature = () => ({
@@ -188,7 +185,7 @@ export const getMailPlus2024InboxFeatures = (): { name: string }[] => {
         { name: c('BF2024: Deal details').t`Unlimited folders, labels and filters` },
         { name: getOwnDomainText() },
         { name: getDesktopAppText() },
-        { name: getDarkWebMonitoringText() },
+        { name: DARK_WEB_MONITORING_NAME },
     ];
 };
 
@@ -200,7 +197,7 @@ export const getPassPlusFeatures = () => {
         { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
         { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
         { name: c('BF2024: Deal details').t`Password health alerts` },
-        { name: getDarkWebMonitoringText() },
+        { name: DARK_WEB_MONITORING_NAME },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
     ];
 };
@@ -217,7 +214,7 @@ export const getLifetimePassFeatures = () => {
         { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
         { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
         { name: c('BF2024: Deal details').t`Password health alerts` },
-        { name: getDarkWebMonitoringText() },
+        { name: DARK_WEB_MONITORING_NAME },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
     ];
 };
@@ -230,7 +227,7 @@ export const getFamilyPassFeatures = () => {
         { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
         { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
         { name: c('BF2024: Deal details').t`Password health alerts` },
-        { name: getDarkWebMonitoringText() },
+        { name: DARK_WEB_MONITORING_NAME },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
         { name: c('BF2024: Deal details').t`Admin panel to manage your family` },
         { name: c('BF2024: Deal details').t`Easily add or remove users` },

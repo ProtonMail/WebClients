@@ -17,6 +17,7 @@ import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import {
     ADDRESS_TYPE,
     BRAND_NAME,
+    DARK_WEB_MONITORING_NAME,
     DRIVE_APP_NAME,
     MAILBOX_LABEL_IDS,
     PASS_APP_NAME,
@@ -247,7 +248,7 @@ const useTips = () => {
                 cta: (
                     <ProtonTipCTA
                         actionType={TipActionType.EnableDarkWebMonitoring}
-                        ctaText={c('Tip Action').t`Enable Dark Web Monitoring`}
+                        ctaText={c('Tip Action').t`Enable ${DARK_WEB_MONITORING_NAME}`}
                         settingsUrl="/security#breaches"
                     />
                 ),

@@ -1,9 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import type { IconName } from '@proton/components/components/icon/Icon';
-import { getDarkWebMonitoringText } from '@proton/components/containers/payments/features/mail';
 import { PLANS } from '@proton/payments';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Plan } from '@proton/shared/lib/interfaces';
 
@@ -52,7 +51,7 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace) => {
 
     const darkWebMonitoring: Feature = {
         icon: 'shield-2-bolt',
-        text: getDarkWebMonitoringText(),
+        text: DARK_WEB_MONITORING_NAME,
     };
 
     const emailAddress: Feature = {
