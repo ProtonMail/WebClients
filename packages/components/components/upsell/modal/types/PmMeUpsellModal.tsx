@@ -7,7 +7,7 @@ import UpsellFeatureList from '@proton/components/components/upsell/modal/Upsell
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { PLANS } from '@proton/payments';
-import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { CYCLE, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
@@ -25,7 +25,11 @@ const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
     const [user] = useUser();
     const activatePmUser = `${user.Name}@pm.me`;
 
-    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL });
+    const upsellConfig = useUpsellConfig({
+        upsellRef,
+        plan: PLANS.MAIL,
+        cycle: user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY,
+    });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
