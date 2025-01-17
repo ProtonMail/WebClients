@@ -1,7 +1,7 @@
 import { stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
 import type { APP_NAMES } from '../constants';
 import { APPS, APPS_CONFIGURATION } from '../constants';
-import { stripLeadingAndTrailingSlash } from '../helpers/string';
+import { stripLeadingAndTrailingSlash, stripLeadingSlash } from '../helpers/string';
 
 export const DEFAULT_APP = APPS.PROTONMAIL;
 
@@ -20,10 +20,13 @@ export const ALLOWED_APPS = [
 export const getSlugFromApp = (app: APP_NAMES) => APPS_CONFIGURATION[app].settingsSlug;
 
 export const getAppFromPathname = (pathname: string): APP_NAMES | undefined => {
+    const trimmedPathname = stripLeadingSlash(pathname);
     return ALLOWED_APPS.find((appName) => {
         const slug = getSlugFromApp(appName);
-        // Expects a trimmed string
-        return pathname.match(`^${slug}(/|$)`);
+        if (!slug) {
+            return null;
+        }
+        return trimmedPathname.match(`^${slug}(/|$)`);
     });
 };
 

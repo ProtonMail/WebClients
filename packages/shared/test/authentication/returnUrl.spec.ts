@@ -1,4 +1,4 @@
-import { getReturnUrlParameter } from '../../lib/authentication/fork/returnUrl';
+import { getReturnUrlParameter } from '../../lib/authentication/returnUrl';
 
 describe('returnUrl parameter', () => {
     [

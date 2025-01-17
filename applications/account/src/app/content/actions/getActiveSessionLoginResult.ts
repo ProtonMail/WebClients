@@ -39,7 +39,7 @@ export const getActiveSessionLoginResult = async ({
         if (forkParameters.forkType === ForkType.SIGNUP) {
             return {
                 type: 'signup',
-                pathname: paths.signup,
+                location: { pathname: paths.signup },
                 payload: null,
             };
         }
@@ -47,7 +47,7 @@ export const getActiveSessionLoginResult = async ({
         if (forkParameters.forkType === ForkType.LOGIN) {
             return {
                 type: 'login',
-                pathname: paths.login,
+                location: { pathname: paths.login },
                 payload: null,
             };
         }
@@ -61,7 +61,7 @@ export const getActiveSessionLoginResult = async ({
                 return {
                     type: 'reauth',
                     payload: reAuthState,
-                    pathname: paths.reauth,
+                    location: { pathname: paths.reauth },
                 };
             }
 
@@ -79,14 +79,14 @@ export const getActiveSessionLoginResult = async ({
         return {
             type: 'sessions-switcher',
             payload: null,
-            pathname: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
+            location: { pathname: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login },
         };
     }
 
     if (initialSearchParams.get('prompt') === 'login') {
         return {
             type: 'login',
-            pathname: paths.login,
+            location: { pathname: paths.login, search: initialSearchParams.toString() },
             payload: null,
         };
     }
@@ -106,6 +106,6 @@ export const getActiveSessionLoginResult = async ({
     return {
         type: 'sessions-switcher',
         payload: null,
-        pathname: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
+        location: { pathname: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login },
     };
 };
