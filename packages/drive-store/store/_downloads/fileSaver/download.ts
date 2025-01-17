@@ -1,29 +1,14 @@
 import { WritableStream } from 'web-streams-polyfill';
 
-import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
 import type { TransferMeta } from '../../../components/TransferManager/transfer';
-import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 
 let workerWakeupInterval: ReturnType<typeof setInterval>;
 
-/**
- * Safari and Edge don't support returning stream as a response.
- * Safari - has everything but fails to stream a response from SW.
- * Edge - doesn't support ReadableStream() constructor, but supports it in chromium version.
- * IOS - forces all browsers to use webkit, so same problems as safari in all browsers.
- * For them download is done in-memory using blob response.
- */
 export const isServiceWorkersUnsupported = () => {
-    /* TODO: To be removed after test DRVWEB-4375 */
-    const isSWForSafariEnabled = unleashVanillaStore.getState().isEnabled('DriveWebDownloadSWModernBrowsers');
-    if (isSWForSafariEnabled) {
-        return !('serviceWorker' in navigator);
-    }
-    // Original
-    return !('serviceWorker' in navigator) || isSafari() || isIos();
+    return !('serviceWorker' in navigator);
 };
 
 // createDownloadIframe opens download URL created in service worker to
