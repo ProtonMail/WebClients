@@ -134,17 +134,6 @@ export const getOrganizationAppRoutes = ({
         available: canHaveOrganization && app !== APPS.PROTONWALLET,
         header: sectionTitle,
         routes: {
-            videoConf: <SectionConfig>{
-                text: c('Title').t`Video conferencing`,
-                to: '/video-conferencing',
-                icon: 'camera',
-                available: canShowVideoConferenceSection,
-                subsections: [
-                    {
-                        id: 'enable-zoom',
-                    },
-                ],
-            },
             users: <SectionConfig>{
                 text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
@@ -319,6 +308,17 @@ export const getOrganizationAppRoutes = ({
                     (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
+            },
+            videoConf: <SectionConfig>{
+                text: c('Title').t`Video conferencing`,
+                to: '/video-conferencing',
+                icon: 'camera',
+                available: canShowVideoConferenceSection,
+                subsections: [
+                    {
+                        id: 'enable-zoom',
+                    },
+                ],
             },
             scribe: <SectionConfig>{
                 text: c('Title').t`${BRAND_NAME} Scribe`,
