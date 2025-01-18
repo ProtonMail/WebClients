@@ -3,11 +3,12 @@ import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolki
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { EnhancedMember, UserModel } from '@proton/shared/lib/interfaces';
+import type { Domain, EnhancedMember, UserModel } from '@proton/shared/lib/interfaces';
 import type { MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import { AuthDeviceState, getPendingMemberAuthDevices } from '@proton/shared/lib/keys/device';
 
 import type { AddressKeysState } from '../addressKeys';
+import { type DomainsState, domainsThunk } from '../domains';
 import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
@@ -19,7 +20,12 @@ import type { UserKeysState } from '../userKeys';
 
 const name = 'memberAuthDevices' as const;
 
-export interface MemberAuthDevicesState extends UserKeysState, AddressKeysState, OrganizationKeyState, MembersState {
+export interface MemberAuthDevicesState
+    extends UserKeysState,
+        AddressKeysState,
+        OrganizationKeyState,
+        MembersState,
+        DomainsState {
     [name]: ModelState<MemberAuthDeviceOutput[]>;
 }
 
@@ -71,14 +77,16 @@ export type PendingAdminActivations = ReturnType<
 >['pendingAdminActivationsWithMembers'];
 export type PendingAdminActivation = PendingAdminActivations[0];
 
-const canFetch = (user: UserModel, isFlagEnabled: boolean) => {
-    return user.isAdmin && isFlagEnabled;
+const canFetch = (user: UserModel, domains: Domain[], flagEnabled: boolean) => {
+    // If the user is admin and there is at least one domain with sso-intent flag, assume that this is an SSO enabled
+    // organization that should fetch member devices.
+    return user.isAdmin && domains.some((domain) => domain.Flags['sso-intent']) && flagEnabled;
 };
 
 const modelThunk = createAsyncModelThunk<Model, MemberAuthDevicesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
-        const user = await dispatch(userThunk());
-        if (!canFetch(user, extraArgument.unleashClient.isEnabled('GlobalSSO'))) {
+        const [user, domains] = await Promise.all([dispatch(userThunk()), dispatch(domainsThunk())]);
+        if (!canFetch(user, domains, extraArgument.unleashClient.isEnabled('GlobalSSO'))) {
             return [];
         }
         return getPendingMemberAuthDevices({ api: extraArgument.api }).catch(() => {
