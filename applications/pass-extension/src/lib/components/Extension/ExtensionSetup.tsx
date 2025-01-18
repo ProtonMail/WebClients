@@ -10,7 +10,6 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
-import noop from '@proton/utils/noop';
 
 type Props = { children: ReactNode; recycle?: boolean };
 
@@ -42,7 +41,6 @@ export const ExtensionSetup: FC<Props> = ({ children, recycle = false }) => {
                     if (!recycle) reloadManager.appReload();
                     return { recycle };
                 },
-                onRecycle: noop,
             });
 
             setReady(true);
