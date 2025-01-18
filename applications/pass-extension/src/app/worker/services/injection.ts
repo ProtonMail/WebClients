@@ -118,15 +118,6 @@ export const createInjectionService = () => {
         )
     );
 
-    WorkerMessageBroker.registerMessage(
-        WorkerMessageType.START_CONTENT_SCRIPT,
-        withTabEffect((tabId, frameId) =>
-            browser.tabs.sendMessage(tabId, backgroundMessage({ type: WorkerMessageType.START_CONTENT_SCRIPT }), {
-                frameId,
-            })
-        )
-    );
-
     WorkerMessageBroker.registerMessage(WorkerMessageType.SENTRY_CS_EVENT, ({ payload }) => {
         sentryCaptureMessage(payload.message, { extra: payload });
         return true;
