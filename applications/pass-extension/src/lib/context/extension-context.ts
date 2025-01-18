@@ -8,7 +8,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
+import { logger } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -65,15 +65,6 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
                 return onRecycle(await setupExtensionContext(options));
             }
         });
-
-        registerLoggerEffect((...logs) =>
-            sendMessage(
-                resolveMessageFactory(endpoint)({
-                    type: WorkerMessageType.LOG_EVENT,
-                    payload: { log: logs.join(' ') },
-                })
-            )
-        );
 
         logger.info('[Context::Extension] tabId resolved & port opened');
         return ctx;
