@@ -15,11 +15,9 @@ import {
     StandardErrorPage,
     StandardLoadErrorPage,
     StandardPrivateApp,
-    SubscriptionModalProvider,
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
-import { APPS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash';
@@ -43,7 +41,7 @@ const App = () => {
     const [state, setState] = useState(defaultState);
 
     useEffectOnce(() => {
-        (async () => {
+        void (async () => {
             try {
                 const { MainContainer, scopes, userSettings, store } = await bootstrapApp({ config });
                 setState({
@@ -79,23 +77,21 @@ const App = () => {
                                     <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                         <ApiProvider api={extraThunkArguments.api}>
                                             <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                                <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
-                                                    <CalendarModelEventManagerProvider
-                                                        calendarModelEventManager={
-                                                            extraThunkArguments.calendarModelEventManager
-                                                        }
-                                                    >
-                                                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                            <StandardPrivateApp
-                                                                hasReadableMemberKeyActivation
-                                                                hasMemberKeyMigration
-                                                                hasPrivateMemberKeyGeneration
-                                                            >
-                                                                <state.MainContainer />
-                                                            </StandardPrivateApp>
-                                                        </ErrorBoundary>
-                                                    </CalendarModelEventManagerProvider>
-                                                </SubscriptionModalProvider>
+                                                <CalendarModelEventManagerProvider
+                                                    calendarModelEventManager={
+                                                        extraThunkArguments.calendarModelEventManager
+                                                    }
+                                                >
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp
+                                                            hasReadableMemberKeyActivation
+                                                            hasMemberKeyMigration
+                                                            hasPrivateMemberKeyGeneration
+                                                        >
+                                                            <state.MainContainer />
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
+                                                </CalendarModelEventManagerProvider>
                                             </DrawerProvider>
                                         </ApiProvider>
                                     </EventManagerProvider>
