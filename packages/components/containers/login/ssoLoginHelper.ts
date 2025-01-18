@@ -1,5 +1,7 @@
 import { syncAddresses, syncUser } from '@proton/components/containers/login/syncCache';
 import { activateAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import {
@@ -234,13 +236,22 @@ export const getSSOSetupData = async ({
 }): Promise<SSOSetupData | null> => {
     const { api, verifyOutboundPublicKeys, appName } = cache;
 
-    // Temporary to get the feature flag in this user-context. Remove when fully enabled.
-    const { toggles } = await api<{ toggles: { name: string; enabled: boolean }[] }>({
-        url: `feature/v2/frontend`,
-        method: 'get',
+    const unprivatizationContextData = await getUnprivatizationContextData({ api }).catch((error) => {
+        const { code } = getApiError(error);
+        if (
+            // Fixme (awussler): This should only be UNPRIVATIZATION_NOT_ALLOWED. To be changed in a few months 2025-01-14
+            [API_CUSTOM_ERROR_CODES.UNPRIVATIZATION_NOT_ALLOWED, API_CUSTOM_ERROR_CODES.NOT_FOUND].some(
+                (expectedCode) => expectedCode === code
+            )
+        ) {
+            // Expected error, unprivatization is not yet allowed for this organization.
+            // Fall back to vpn sso login.
+            return null;
+        }
+        throw error;
     });
 
-    if (!toggles.some((toggle) => toggle.name === 'GlobalSSO' && toggle.enabled)) {
+    if (!unprivatizationContextData) {
         return null;
     }
 
@@ -248,14 +259,7 @@ export const getSSOSetupData = async ({
         throw new Error('Invalid requirements');
     }
 
-    const [unprivatizationContextData, deviceData] = await Promise.all([
-        getUnprivatizationContextData({ api }).catch(noop),
-        createAuthDevice({ api }),
-    ]);
-
-    if (!unprivatizationContextData) {
-        return null;
-    }
+    const deviceData = await createAuthDevice({ api });
 
     await setPersistedAuthDeviceDataByUser({ user, deviceData });
 
@@ -469,6 +473,7 @@ export const handlePrepareSSOData = async ({ cache }: { cache: AuthCacheResult }
 
     if (user.Keys.length === 0) {
         const ssoData = await getSSOSetupData({ user, cache });
+        // When ssoData is null, it means that the organization is not yet setup for global SSO, and it proceeds with the regular VPN SSO flow
         if (ssoData === null) {
             return finalizeLogin({ cache, loginPassword: '' });
         }
