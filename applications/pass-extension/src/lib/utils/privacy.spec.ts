@@ -1,4 +1,4 @@
-import browser from 'proton-pass-extension/__mocks__/webextension-polyfill';
+import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
 
 import * as privacy from './privacy';
 
@@ -7,8 +7,7 @@ const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value)
 describe('Privacy', () => {
     beforeEach(() => {
         setBuildTarget('chrome');
-        browser.permissions.contains.mockClear();
-        browser.permissions.request.mockClear();
+        clearBrowserMocks();
     });
 
     describe('`BROWSER_AUTOFILL_SETTINGS`', () => {
@@ -76,8 +75,8 @@ describe('Privacy', () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
 
             const details = { levelOfControl: 'controlled_by_this_extension', value: false };
-            (browser.privacy.services.autofillAddressEnabled.get as jest.Mock).mockResolvedValue(details);
-            (browser.privacy.services.passwordSavingEnabled.get as jest.Mock).mockResolvedValue(details);
+            browser.privacy.services.autofillAddressEnabled.get.mockResolvedValue(details);
+            browser.privacy.services.passwordSavingEnabled.get.mockResolvedValue(details);
 
             expect(await privacy.checkBrowserAutofillCapabilities()).toBe(true);
         });
@@ -87,8 +86,8 @@ describe('Privacy', () => {
 
             const detailsActive = { levelOfControl: 'controlled_by_this_extension', value: false };
             const detailsInactive = { levelOfControl: 'not_controllable', value: false };
-            (browser.privacy.services.autofillAddressEnabled.get as jest.Mock).mockResolvedValue(detailsActive);
-            (browser.privacy.services.passwordSavingEnabled.get as jest.Mock).mockResolvedValue(detailsInactive);
+            browser.privacy.services.autofillAddressEnabled.get.mockResolvedValue(detailsActive);
+            browser.privacy.services.passwordSavingEnabled.get.mockResolvedValue(detailsInactive);
 
             expect(await privacy.checkBrowserAutofillCapabilities()).toBe(false);
         });
@@ -101,8 +100,9 @@ describe('Privacy', () => {
         const reload = jest.fn();
         jest.spyOn(window, 'location', 'get').mockImplementation(() => ({ reload }) as unknown as Location);
 
-        afterAll(() => (window.location = location));
-        beforeEach(() => (browser.privacy = privacyAPI));
+        afterEach(() => {
+            window.location = location;
+        });
 
         test('should set all settings and return the input value', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
@@ -124,12 +124,11 @@ describe('Privacy', () => {
 
         test('should early return if "privacy" permission not granted and user rejects', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
-            browser.permissions.contains.mockResolvedValueOnce(false);
             browser.permissions.request.mockResolvedValueOnce(false);
             const result = await privacy.setBrowserAutofillCapabilities(true);
 
-            expect(browser.privacy.services.autofillAddressEnabled.set).toHaveBeenCalledWith({ value: false });
-            expect(browser.privacy.services.passwordSavingEnabled.set).toHaveBeenCalledWith({ value: false });
+            expect(browser.privacy.services.autofillAddressEnabled.set).not.toHaveBeenCalled();
+            expect(browser.privacy.services.passwordSavingEnabled.set).not.toHaveBeenCalledWith();
             expect(result).toBe(false);
         });
 
@@ -143,11 +142,13 @@ describe('Privacy', () => {
 
             expect(result).toBe(false);
             expect(reload).toHaveBeenCalled();
+
+            browser.privacy = privacyAPI;
         });
 
         test('should handle errors gracefully', async () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
-            (browser.privacy.services.autofillAddressEnabled.set as jest.Mock).mockRejectedValue(new Error());
+            browser.privacy.services.autofillAddressEnabled.set.mockRejectedValue(new Error());
 
             const result = await privacy.setBrowserAutofillCapabilities(false);
             expect(browser.privacy.services.autofillAddressEnabled.set).toHaveBeenCalledWith({ value: true });
