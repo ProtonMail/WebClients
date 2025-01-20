@@ -54,5 +54,6 @@ export const sendB2BEventsBundle = async ({ events }: EventBundle<B2BEvent>): Pr
         .reduce<MaybeNull<B2BEvent<B2BEventName.ReportMonitor>>>((acc, curr) => {
             return acc && acc.timestamp > curr.timestamp ? acc : curr;
         }, null);
+
     if (latestMonitorReport) await sendReportMonitor(latestMonitorReport);
 };
