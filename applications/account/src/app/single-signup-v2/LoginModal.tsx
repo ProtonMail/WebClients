@@ -10,9 +10,10 @@ interface Props extends ModalProps {
     defaultUsername?: string;
     paths: Paths;
     productParam: ProductParam;
+    onStartAuth: () => Promise<void>;
 }
 
-const LoginModal = ({ productParam, paths, onLogin, defaultUsername, ...rest }: Props) => {
+const LoginModal = ({ productParam, paths, onLogin, onStartAuth, defaultUsername, ...rest }: Props) => {
     return (
         <ModalTwo size="small" {...rest}>
             <LoginContainer
@@ -24,6 +25,7 @@ const LoginModal = ({ productParam, paths, onLogin, defaultUsername, ...rest }: 
                 paths={paths}
                 modal
                 hasRemember={false}
+                onStartAuth={onStartAuth}
                 render={(data) => {
                     return (
                         <>

@@ -14,7 +14,6 @@ import {
     InputFieldTwo,
     Label,
     PasswordInputTwo,
-    startUnAuthFlow,
     useErrorHandler,
     useFormErrors,
     useLocalState,
@@ -63,6 +62,7 @@ interface Props {
         path?: string;
     }) => Promise<void>;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
     signInText?: string;
     externalSSO: {
         enabled?: boolean;
@@ -92,6 +92,7 @@ const LoginForm = ({
     onChangeAuthType,
     onSubmit,
     onPreSubmit,
+    onStartAuth,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
@@ -182,7 +183,7 @@ const LoginForm = ({
         let ssoInfoResponse: SSOInfoResponse | undefined;
         try {
             await onPreSubmit?.();
-            await startUnAuthFlow();
+            await onStartAuth();
             ssoInfoResponse = await api<SSOInfoResponse>(getInfo({ username, intent: 'SSO' }));
         } catch (e) {
             const { code } = getApiError(e);
@@ -235,7 +236,7 @@ const LoginForm = ({
 
         try {
             await onPreSubmit?.();
-            await startUnAuthFlow();
+            await onStartAuth();
             result = await handleLogin({
                 username,
                 persistent,
@@ -328,7 +329,7 @@ const LoginForm = ({
         // 2) Being on the unlock/2fa screen and hitting the browser back button e.g. ending up on signup and then
         // going back here
         // And preemptively starting it before user interaction
-        startUnAuthFlow().catch(noop);
+        onStartAuth().catch(noop);
         return () => {
             externalSSOState?.abortController.abort();
         };

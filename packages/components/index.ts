@@ -1,7 +1,6 @@
 import './typings/css.d';
 import './typings/index.d';
 
-export { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';
@@ -393,7 +392,8 @@ export type {
 } from './containers/api/humanVerification/interface';
 export { default as RequestNewCodeModal } from './containers/api/humanVerification/RequestNewCodeModal';
 export { default as VerifyCodeForm } from './containers/api/humanVerification/VerifyCodeForm';
-export { default as UnAuthenticatedApiProvider } from './containers/api/UnAuthenticatedApiProvider';
+export { default as UnauthenticatedApiChallenge } from './containers/api/UnauthenticatedApiChallenge';
+export { default as UnauthenticatedApiProvider } from './containers/api/UnauthenticatedApiProvider';
 export { default as AppsDropdown, UnAuthenticatedAppsDropdown } from './containers/app/AppsDropdown';
 export { default as DelinquentContainer } from './containers/app/DelinquentContainer';
 export { default as EmptyViewContainer } from './containers/app/EmptyViewContainer';
