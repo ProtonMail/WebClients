@@ -196,6 +196,9 @@
       "Create and copy alias": [
         "Tallenna ja kopioi alias"
       ],
+      "Create folder": [
+        "Luo kansio"
+      ],
       "Current plan": [
         "Nykyinen tilaus"
       ],
@@ -293,9 +296,6 @@
       ],
       "Forward as attachment": [
         "Välitä liitteenä"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Hanki ${ MAIL_SHORT_APP_NAME } Plus hintaan ${ priceCoupon }"
       ],
       "Get in touch": [
         "Ota yhteyttä"
@@ -398,6 +398,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
+      ],
+      "More options": [
+        "Lisää asetuksia"
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
@@ -632,9 +635,6 @@
       ],
       "Try another method": [
         "Kokeile toista tapaa"
-      ],
-      "Understood": [
-        "Ymmärrän"
       ],
       "Undo": [
         "Kumoa"
@@ -887,9 +887,6 @@
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
-      ],
       "Easily add or remove users": [
         "Lisää tai poista käyttäjiä helposti"
       ],
@@ -975,9 +972,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Suojaa kirjautumisesi kaikilla laitteillasi. Sisältää rajattomasti Hide-my-email-aliaksia, jakamisen, sisäänrakennetun 2FA:n, pimeän verkon valvonnan ja muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
@@ -1106,12 +1100,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Muuta sähköpostiosoitteen asetuksia"
-      ],
-      "Continue": [
-        "Jatka"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
       ],
@@ -3006,6 +2994,9 @@
       "Time zone": [
         "Aikavyöhyke"
       ],
+      "Time zone component ignored": [
+        "Aikavyöhykekomponentti ohitettu"
+      ],
       "To-do entry": [
         "Tehtävämerkintä"
       ],
@@ -3398,6 +3389,9 @@
       ],
       "Malformed start time": [
         "Virheellinen aloitusaika"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Ainoastaan gregoriaaninen kalenteri on sallittu"
       ],
       "Recurring rule not supported": [
         "Toistuvaa sääntöä ei tueta"
@@ -4028,9 +4022,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DOCS_APP_NAME } -tiedostojen latausta ${ DRIVE_APP_NAME }esta ei tällä hetkellä tueta — näitä ei sisällytetä lataukseesi."
-      ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
       ],
@@ -4402,9 +4393,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Vie kopio nykyisistä muutoksista päävalikosta ja lataa sivu uudelleen."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Jos haluat ladata niitä, vie ne suoraan ${ DOCS_APP_NAME } -sovelluksesta."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Huomioi, että ryhmiin lisättyjä osoitteita EI poisteta."
       ],
@@ -4470,9 +4458,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
-      "Registering your subscription...": [
-        "Rekisteröidään tilaustasi..."
-      ],
       "Restored version to": [
         "Palautettu versioon"
       ],
@@ -4508,9 +4493,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
-      ],
-      "Setting up your new address...": [
-        "Määritetään uutta osoitettasi..."
       ],
       "Settings update failed": [
         "Asetusmuutos epäonnistui"
@@ -4571,12 +4553,6 @@
       ],
       "The Beginning": [
         "Aloitus"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Digitaalinen allekirjoitus on osittain vahvistettu. Tiedosto lähetettiin julkiselta sivulta, joka ei määritä tiettyä käyttäjälähdettä."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Digitaalinen allekirjoitus on osittain vahvistettu. Kansio lähetettiin julkiselta sivulta, joka ei määritä tiettyä käyttäjälähdettä."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
@@ -5884,14 +5860,11 @@
       "Get started for ${ priceCoupon }": [
         "Aloita hintaan ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
+      "Upgrade": [
+        "Päivitä tilaus"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: action": {
@@ -6495,14 +6468,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hanki Mail Plus hintaan ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
       ]
     },
     "new_plans: title": {
@@ -8511,9 +8476,6 @@
       "Customize your mail import": [
         "Mukauta viestien tuontia"
       ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
-      ],
       "Data recovery": [
         "Tietojen palautus"
       ],
@@ -8855,9 +8817,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokumenttiasi ei vo ladata"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Latauksesi sisältää ${ DOCS_APP_NAME } -tiedoston"
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"

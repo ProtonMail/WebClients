@@ -196,6 +196,9 @@
       "Create and copy alias": [
         "Opret og kopier et alias"
       ],
+      "Create folder": [
+        "Opret mappe"
+      ],
       "Current plan": [
         "Nuværende abonnement"
       ],
@@ -290,9 +293,6 @@
       ],
       "Forward as attachment": [
         "Videresend som vedhæftning"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -395,6 +395,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
+      ],
+      "More options": [
+        "Flere muligheder"
       ],
       "Move to trash": [
         "Flyt til papirkurv"
@@ -629,9 +632,6 @@
       ],
       "Try another method": [
         "Prøv en anden metode"
-      ],
-      "Understood": [
-        "Forstået"
       ],
       "Undo": [
         "Fortryd"
@@ -881,9 +881,6 @@
       "Advanced account protection": [
         "Avanceret program til beskyttelse af konto"
       ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
-      ],
       "Easily add or remove users": [
         "Tilsæt eller fjern brugere nemt"
       ],
@@ -960,9 +957,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, Monitorering af det mørke net og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
@@ -1091,9 +1085,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Forsæt"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -3775,6 +3766,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } mappe)",
         "Alle (${ totalFoldersCount } mapper)"
@@ -3973,9 +3967,6 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Hent din yndlingsapp i dag, og tag privatsfæren med dig overalt."
-      ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Download af ${ DOCS_APP_NAME }-filer fra ${ DRIVE_APP_NAME } understøttes i øjeblikket ikke - disse vil ikke blive medtaget i dit download."
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -4348,9 +4339,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Eksporter en kopi af dine aktuelle ændringer fra hovedmenuen, og genindlæs siden."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Eksporter dem direkte fra ${ DOCS_APP_NAME }-applikationen i stedet, hvis du ønsker at hente dem."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Bemærk at adresser tildelt til disse grupper IKKE vil blive slettet."
       ],
@@ -4416,9 +4404,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
-      "Registering your subscription...": [
-        "Registrerer dit abonnement..."
-      ],
       "Restored version to": [
         "Gendannet version til"
       ],
@@ -4451,9 +4436,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
-      ],
-      "Setting up your new address...": [
-        "Konfigurerer din nye adresse..."
       ],
       "Settings update failed": [
         "Opdatering af indstillinger mislykkedes"
@@ -4514,12 +4496,6 @@
       ],
       "The Beginning": [
         "Begyndelsen"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Den digitale signatur er blevet delvist verificeret. Filen blev uploadet fra en offentlig side, der ikke angiver en bestemt brugers oprindelse."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Den digitale signatur er blevet delvist verificeret. Mappen blev uploadet fra en offentlig side, der ikke angiver en bestemt brugers oprindelse."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
@@ -4855,6 +4831,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
       ],
       "Your password was leaked:": [
         "Din adgangskode er blevet lækket:"
@@ -5462,6 +5441,11 @@
         "Hvad er dette?"
       ]
     },
+    "List title": {
+      "Also included:": [
+        "Også inkluderet:"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Næsten færdig"
@@ -5827,14 +5811,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Fra ${ priceMailPlus }"
+      "Upgrade": [
+        "Opgradér"
       ],
       "Upgrade now": [
         "Opgradér nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6429,11 +6410,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Få Mail Plus for ${ priceCoupon }"
       ]
     },
     "new_plans: title": {
@@ -8400,9 +8376,6 @@
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
-      ],
       "Data recovery": [
         "Datagendannelse"
       ],
@@ -8744,9 +8717,6 @@
       ],
       "Your document cannot be loaded": [
         "Dit dokument kan ikke indlæses"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Dit download har en ${ DOCS_APP_NAME }-fil"
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"

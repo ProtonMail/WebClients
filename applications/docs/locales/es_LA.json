@@ -169,6 +169,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue downloading": [
+        "Continuar la descarga"
+      ],
       "Continue import": [
         "Continuar importación"
       ],
@@ -195,6 +198,9 @@
       ],
       "Create and copy alias": [
         "Crear y copiar alias"
+      ],
+      "Create folder": [
+        "Crear carpeta"
       ],
       "Current plan": [
         "Plan actual"
@@ -294,8 +300,11 @@
       "Forward as attachment": [
         "Reenviar como adjunto"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Disfrute de ${ MAIL_SHORT_APP_NAME } Plus por ${ priceCoupon }"
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Obtenga ${ planName } por ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Obtenga ${ planOrAppName }"
       ],
       "Get in touch": [
         "Contáctenos"
@@ -401,6 +410,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
+      ],
+      "More options": [
+        "Más opciones"
       ],
       "Move to trash": [
         "Mover a la papelera"
@@ -627,6 +639,9 @@
       "Switch or add account": [
         "Cambiar o añadir cuenta"
       ],
+      "Take a tour": [
+        "Explore ahora"
+      ],
       "Take out of trash": [
         "Restaurar de la papelera"
       ],
@@ -638,9 +653,6 @@
       ],
       "Try another method": [
         "Intente otro método"
-      ],
-      "Understood": [
-        "Entendido"
       ],
       "Undo": [
         "Deshacer"
@@ -893,9 +905,6 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
-      "Dark Web Monitoring": [
-        "Monitoreo de la Dark Web"
-      ],
       "Easily add or remove users": [
         "Agregar o borrar usuarios fácilmente"
       ],
@@ -982,8 +991,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ o Prime Video, entre otros."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicios de sesión seguros en todos los dispositivos. Incluye alias de hide-my-email ilimitados, uso compartido, 2FA integrada, Monitoreo de Dark Web y más."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Inicios de sesión seguros en todos sus dispositivos. Incluye un número ilimitado de alias de hide-my-email, uso compartido, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } y mucho más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más.",
@@ -1112,12 +1121,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Cambiar los ajustes de la dirección de correo electrónico"
-      ],
-      "Continue": [
-        "Continuar"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -1126,6 +1129,21 @@
       ],
       "Continue your subscription": [
         "Continuar con la suscripción"
+      ],
+      "Create label": [
+        "Cree una etiqueta"
+      ],
+      "Discover and set up features": [
+        "Descubra y configure las funcionalidades"
+      ],
+      "Remind me later": [
+        "Recordarme más tarde"
+      ],
+      "Set up other features": [
+        "Configure otras funciones"
+      ],
+      "Take a tour": [
+        "Explore ahora"
       ]
     },
     "Cancellation upsell": {
@@ -2245,6 +2263,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
+        "Mejore a ${ BRAND_NAME } ${ planName } para activar el intercambio de archivos públicos con acceso para editar. Continúe colaborando de manera fluida y segura."
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Mejore la cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de vanguardia basada en IA con soporte experto dedicado las 24 horas, los 7 días de la semana."
       ],
@@ -2715,6 +2736,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Proporcione al menos un nombre, apellido o nombre a mostrar"
+      ],
+      "Please select a country": [
+        "Seleccione un país"
+      ],
+      "Please select a state": [
+        "Seleccione un estado"
       ],
       "Port is required": [
         "Puerto requerido"
@@ -3736,6 +3763,9 @@
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Los archivos de ${ DOCS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puede descargar los demás archivos haciendo clic en Continuar la descarga."
+      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } le permite colaborar en tiempo real con cifrado de extremo a extremo para una completa privacidad. Cree una copia para empezar a editar o pida acceso de edición al propietario."
       ],
@@ -3754,6 +3784,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado de actividades sospechosas."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta encontrada",
@@ -4010,6 +4043,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Esta carpeta fue cargada de forma segura por ${ emailAddress }."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Descubra las nuevas funciones desbloqueadas y empiece a usarlas de inmediato."
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Descubra las nuevas funciones desbloqueadas con ${ planTitle } y empiece a usarlas de inmediato."
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -4043,9 +4082,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descargue hoy la aplicación favorita y lleve la privacidad con usted dondequiera que vaya."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "La descarga de archivos de ${ DOCS_APP_NAME } desde ${ DRIVE_APP_NAME } no está admitida actualmente y no se incluirán en la descarga."
-      ],
       "Drop file here to upload": [
         "Suelte los archivos aquí para cargarlos"
       ],
@@ -4069,6 +4105,12 @@
       ],
       "Emails are automatically signed": [
         "Los correos son firmados automáticamente"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Los correos electrónicos movidos a las carpetas Papelera y Spam hace más de 30 días se eliminarán automáticamente."
+      ],
+      "Enabling auto-deletion…": [
+        "Activando la eliminación automática…"
       ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -4375,6 +4417,9 @@
       "Opening...": [
         "Abriendo..."
       ],
+      "or discover other features:": [
+        "o descubra otras funciones:"
+      ],
       "Organization size": [
         "Tamaño de la organización"
       ],
@@ -4416,9 +4461,6 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporte una copia de sus cambios actuales desde el menú principal y vuelva a cargar la página."
-      ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Expórtelos directamente desde la aplicación de ${ DOCS_APP_NAME } si desea descargarlos."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tome en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -4485,8 +4527,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
-      "Registering your subscription...": [
-        "Registrando su suscripción..."
+      "Registering your subscription…": [
+        "Registrando su suscripción…"
       ],
       "Restored version to": [
         "Versión restaurada a"
@@ -4521,11 +4563,14 @@
       "Session timed out": [
         "Sesión agotada"
       ],
+      "Setting up ${ feature }…": [
+        "Configurando ${ feature }"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
       ],
-      "Setting up your new address...": [
-        "Configurando su nueva dirección..."
+      "Setting up your new address…": [
+        "Configurando su nueva dirección…"
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -4587,11 +4632,11 @@
       "The Beginning": [
         "Inicio"
       ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "La firma digital ha sido parcialmente verificada. Se ha cargado el archivo desde una página pública que no especifica el origen de un usuario en particular."
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La firma digital ha sido verificada parcialmente. Este archivo fue cargado mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
       ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "La firma digital ha sido parcialmente verificada. Se ha cargado la carpeta desde una página pública que no especifica el origen de un usuario en particular."
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La firma digital ha sido verificada parcialmente. Esta carpeta fue cargada mediante un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que no se puede verificar su identidad."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
@@ -4655,6 +4700,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar el pago, envíe ${ btcAmountBold } a la dirección de abajo."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Para descargar los archivos ${ DOCS_APP_NAME }, ábralos en ${ DOCS_APP_NAME } y expórtelos."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -4815,6 +4863,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puede fusionar calendarios importados con calendarios existentes de ${ BRAND_NAME }."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Puede cambiar esto en cualquier momento en ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Puede verificar el progreso ${ importProgressLink }."
       ],
@@ -4840,6 +4891,9 @@
       ],
       "You cannot undo this action.": [
         "No puede deshacer esta acción."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, añada un método de pago."
@@ -4915,6 +4969,9 @@
       ],
       "Your email address was exposed:": [
         "La dirección de correo electrónico fue expuesta:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "Tu dirección de correo electrónico será visible como la del propietario del enlace en la página para compartir."
       ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
@@ -5054,6 +5111,9 @@
       ],
       "Anderson": [
         "García"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "Cualquiera en Internet que tenga el enlace puede editar."
       ],
       "Anyone on the Internet with the link can view": [
         "Cualquiera en internet que tenga el enlace puede ver"
@@ -5412,6 +5472,9 @@
       "Start date": [
         "Fecha inicial"
       ],
+      "State": [
+        "Estado"
+      ],
       "Stop sharing": [
         "Dejar de compartir"
       ],
@@ -5542,11 +5605,19 @@
       "Request an invite": [
         "Solicitar una invitación"
       ],
+      "settings": [
+        "ajustes"
+      ],
       "stay safer online": [
         "mantener su seguridad en línea"
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "También incluido:"
       ]
     },
     "Loading info": {
@@ -5971,14 +6042,20 @@
       "Get started for ${ priceCoupon }": [
         "Comenzar por ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "A partir de ${ priceMailPlus }"
+      "Plans starting from ${ priceDrivePlus }": [
+        "Planes desde ${ priceDrivePlus }"
+      ],
+      "Starting from ${ pricing }": [
+        "Desde ${ pricing }"
+      ],
+      "Upgrade": [
+        "Mejorar"
       ],
       "Upgrade now": [
         "Mejorar ahora"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6593,12 +6670,12 @@
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Disfrute de Mail Plus por ${ priceCoupon }"
-      ],
+    "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
         "El precio con descuento de ${ priceCoupon } es válido durante el primer mes. Luego se renovará automáticamente a ${ priceMailPlus }. Puede cancelar en cualquier momento."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Desbloquee todos los productos y funciones premium de ${ BRAND_NAME } por solo ${ priceMailPlus }. Cancele en cualquier momento."
       ]
     },
     "new_plans: title": {
@@ -7118,6 +7195,52 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Seleccione a lo que ${ BRAND_NAME } puede acceder: ver los correos y ajustes, ver y descargar los contactos, ver y descargar todas las agendas a las que usted accede en Google Calendar."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "¡La oferta de ${ pricingTitle } vence hoy!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Obtenga Drive Plus por solo ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Obtenga Mail Plus por solo ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Aprovéchese de la oferta"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Oferta por tiempo limitado"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
+      ],
+      "Save 80% on your first month.": [
+        "Ahorre un 80 % en su primer mes."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 funciones premium más"
+      ],
+      "Custom email domain": [
+        "Dominio de correo electrónico personalizado"
+      ],
+      "Email Addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Free": [
+        "Gratuito"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ]
     },
     "Option": {
@@ -7891,6 +8014,9 @@
       ],
       "Upgrade": [
         "Mejorar"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Mejore por ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -8507,6 +8633,9 @@
         "${ emailsCount } dirección de correo",
         "${ emailsCount } direcciones de correo"
       ],
+      "${ feature } is now active": [
+        "La funcionalidad ${ feature } ya está activada."
+      ],
       "Account recovery": [
         "Recuperación de cuenta"
       ],
@@ -8540,6 +8669,9 @@
       ],
       "Are you sure?": [
         "¿Está seguro?"
+      ],
+      "Auto-deletion is active": [
+        "La eliminación automática está activa."
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -8612,9 +8744,6 @@
       ],
       "Customize your mail import": [
         "Personalice la importación del correo"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoreo de la Dark Web"
       ],
       "Data recovery": [
         "Recuperación de datos"
@@ -8886,6 +9015,9 @@
       "Share ${ name }": [
         "Compartir ${ name }"
       ],
+      "Share files with full edit access": [
+        "Compartir archivos con acceso completo para editar"
+      ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
       ],
@@ -8952,6 +9084,9 @@
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "Está a punto de rechazar la invitación a un elemento compartido. No podrá volver a acceder a él hasta que el propietario lo comparta con usted nuevamente."
       ],
+      "You can now create unlimited folders and labels": [
+        "Ahora puede crear carpetas y etiquetas ilimitadas."
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La prueba gratuita de ${ planName } termina el ${ textDate }."
       ],
@@ -8961,8 +9096,8 @@
       "Your document cannot be loaded": [
         "Su documento no se puede cargar"
       ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Su descarga tiene un archivo de ${ DOCS_APP_NAME }"
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "La descarga incluye un archivo de ${ DOCS_APP_NAME }."
       ],
       "Your exposed information": [
         "Sus datos expuestos"
