@@ -244,8 +244,8 @@
       "Edit vault": [
         "Edita la caixa forta"
       ],
-      "Enable Dark Web Monitoring": [
-        "Activa el monitoratge del web fosc"
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Activeu aquest àlies per rebre correus electrònics enviats a aquest àlies"
@@ -674,6 +674,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } està disponible amb un pla de pagament. Milloreu per accedir-hi immediatament."
+      ],
       "${ total } other login uses the same password": [
         "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
         "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
@@ -698,9 +701,6 @@
       ],
       "Create unique passwords": [
         "Creeu contrasenyes úniques"
-      ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "El monitoratge del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "El protocol DKIM ${ WIKIPEDIA_LINK_DKIM } és un mètode d'autenticació de correu electrònic dissenyat per evitar la falsificació de correu electrònic. Es recomana configurar DKIM per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
@@ -1171,9 +1171,6 @@
       ]
     },
     "Feature": {
-      "Dark Web Monitoring": [
-        "Monitoratge del web fosc"
-      ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrat"
       ],
@@ -3475,9 +3472,6 @@
       "Custom emails": [
         "Correus electrònics personalitzats"
       ],
-      "Dark Web Monitoring": [
-        "Monitoratge del web fosc"
-      ],
       "Default": [
         "Per defecte"
       ],
@@ -3985,9 +3979,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició d'àlies de correu electrònic."
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició de caixa forta."
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Eliminar la vostra contrasenya extra us desconnectarà de tots els dispositius i finalitzarà totes les sessions actives."

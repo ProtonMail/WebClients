@@ -208,9 +208,6 @@
       "Edit vault": [
         "Uredi trezor"
       ],
-      "Enable Dark Web Monitoring": [
-        "Omogoči nadzor temnega spleta"
-      ],
       "Exclude from monitoring": [
         "Izključi iz spremljanja"
       ],
@@ -457,6 +454,9 @@
       "Select": [
         "Izberi"
       ],
+      "Send email": [
+        "Pošlji e-pošto"
+      ],
       "Send invite": [
         "Pošlji povabilo"
       ],
@@ -599,9 +599,6 @@
       ],
       "Create unique passwords": [
         "Ustvarite edinstvena gesla"
-      ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Spremljanje temnega spleta je na voljo v plačljivem paketu. Nadgradite za takojšen dostop."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Prejmite obvestilo, če so bili e-poštni naslov, geslo ali drugi osebni podatki razkriti."
@@ -942,9 +939,6 @@
       ]
     },
     "Feature": {
-      "Dark Web Monitoring": [
-        "Spremljanje temnega spleta"
-      ],
       "Integrated 2FA authenticator": [
         "Vgrajen modul za preverjanje pristnosti 2FA"
       ],
@@ -1074,6 +1068,9 @@
         "${ row.breachCount } zaznani kršitvi",
         "${ row.breachCount } zaznane kršitve",
         "${ row.breachCount } zaznanih kršitev"
+      ],
+      "(Empty)": [
+        "(Prazno)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Sedem dni, da brezplačno preizkusite premijske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
@@ -1473,6 +1470,12 @@
       ],
       "Record: CNAME": [
         "Zapis: CNAME"
+      ],
+      "Record: MX": [
+        "Zapis: MX"
+      ],
+      "Record: TXT": [
+        "Zapis: TXT"
       ],
       "Registering extra password...": [
         "Registracija dodatnega gesla ..."
@@ -1985,6 +1988,9 @@
       ],
       "Generic CSV": [
         "Generični CSV"
+      ],
+      "Get Started": [
+        "Začnite"
       ],
       "Grant": [
         "Odobri"
@@ -2639,9 +2645,6 @@
       "Custom emails": [
         "E-poštni naslovi po meri"
       ],
-      "Dark Web Monitoring": [
-        "Spremljanje temnega spleta"
-      ],
       "Default": [
         "Privzeta"
       ],
@@ -2846,6 +2849,9 @@
       "Unlock ${ brandNameJSX }": [
         "Odkleni ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "Nepotrjeno"
+      ],
       "Update available": [
         "Na voljo je posodobitev."
       ],
@@ -3023,9 +3029,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati skupno rabo trezorja"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Če odstranite dodatno geslo, se boste odjavili iz vseh naprav in končali vse aktivne seje."
