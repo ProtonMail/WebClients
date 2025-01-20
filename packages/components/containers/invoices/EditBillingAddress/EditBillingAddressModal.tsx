@@ -24,7 +24,7 @@ type Props = ModalProps & {
     initialFullBillingAddress: FullBillingAddress;
 };
 
-const zipCodeValidator = (countryCode: string, zipCode: string | undefined) => {
+const zipCodeValidator = (countryCode: string, zipCode: string | null) => {
     if (countryCode === 'US' && !zipCode) {
         return c('Error').t`ZIP code is required`;
     }
@@ -65,7 +65,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         autoFocus
                         name="company"
                         data-testid="billing-address-company"
-                        value={fullBillingAddress.Company}
+                        value={fullBillingAddress.Company ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, Company: value }))}
                     />
                     <InputFieldTwo
@@ -74,7 +74,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         autoFocus
                         name="vat"
                         data-testid="billing-address-vat"
-                        value={fullBillingAddress.VatId}
+                        value={fullBillingAddress.VatId ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, VatId: value }))}
                     />
                     <InputFieldTwo
@@ -82,7 +82,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         placeholder={c('Placeholder').t`Thomas`}
                         name="firstname"
                         data-testid="billing-address-firstname"
-                        value={fullBillingAddress.FirstName}
+                        value={fullBillingAddress.FirstName ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, FirstName: value }))}
                     />
                     <InputFieldTwo
@@ -90,7 +90,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         placeholder={c('Placeholder').t`Anderson`}
                         name="lastname"
                         data-testid="billing-address-lastname"
-                        value={fullBillingAddress.LastName}
+                        value={fullBillingAddress.LastName ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, LastName: value }))}
                     />
                     <InputFieldTwo
@@ -98,7 +98,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         placeholder={c('Placeholder').t`Main street 12`}
                         name="address"
                         data-testid="billing-address-address"
-                        value={fullBillingAddress.Address}
+                        value={fullBillingAddress.Address ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, Address: value }))}
                     />
                     <InputFieldTwo
@@ -106,7 +106,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         placeholder={c('Placeholder').t`Anytown`}
                         name="city"
                         data-testid="billing-address-city"
-                        value={fullBillingAddress.City}
+                        value={fullBillingAddress.City ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, City: value }))}
                     />
                     <InputFieldTwo
@@ -116,7 +116,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
                         placeholder="12345"
                         name="zipcode"
                         data-testid="billing-address-zipcode"
-                        value={fullBillingAddress.ZipCode}
+                        value={fullBillingAddress.ZipCode ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, ZipCode: value }))}
                         error={validator([
                             zipCodeValidator(fullBillingAddress.CountryCode, fullBillingAddress.ZipCode),
