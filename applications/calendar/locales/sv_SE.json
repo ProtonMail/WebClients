@@ -213,6 +213,9 @@
       "Create event": [
         "Skapa händelse"
       ],
+      "Create folder": [
+        "Skapa mapp"
+      ],
       "Create new contact": [
         "Skapa ny kontakt"
       ],
@@ -313,9 +316,6 @@
       ],
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Skaffa ${ MAIL_SHORT_APP_NAME } Plus för ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakta oss"
@@ -543,7 +543,7 @@
         "Återställ data"
       ],
       "Refer a friend": [
-        "Bjud in en vän"
+        "Hänvisa en vän"
       ],
       "Refresh the page": [
         "Uppdatera sidan"
@@ -675,7 +675,7 @@
         "Starta import"
       ],
       "Start setup": [
-        "Kom igång"
+        "Starta inställning"
       ],
       "Starting from ${ priceUnlimited }": [
         "Startar från ${ priceUnlimited }"
@@ -728,10 +728,10 @@
       "Upgrade": [
         "Uppgradera"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Uppgradera nu"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Uppgradera nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1037,9 +1037,6 @@
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
-      "Dark Web Monitoring": [
-        "Övervakning av mörka webben"
-      ],
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
       ],
@@ -1125,9 +1122,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade hide-my-email-alias, delning, integrerad 2FA, övervakning av mörka webben och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
@@ -1256,12 +1250,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Ändra e-postadressinställningarna"
-      ],
-      "Continue": [
-        "Fortsätt"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
       ],
@@ -2616,11 +2604,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2707,13 +2690,18 @@
         "Du kan markera de kontakter som du varken vill slå ihop eller behålla för borttagning. Borttagning kommer endast ske efter att ha klickat på knappen ”Slå ihop”"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Dina konto- och dataåterställningsmetoder är konfigurerade och 2FA är aktiverat."
+        "Ditt konto- och dataåterställningsmetoder är inställda och 2FA är aktiverat."
       ],
       "Your account and data recovery methods are set.": [
-        "Dina konto- och dataåterställningsmetoder är konfigurerade."
+        "Ditt konto och dataåterställningsmetoder är inställda."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4873,7 +4861,7 @@
         "Ny"
       ],
       "No contacts added yet": [
-        "Inga kontakter tillagda än"
+        "Inga kontakter tillagda ännu"
       ],
       "No email address": [
         "Ingen e-postadress"
@@ -4921,7 +4909,7 @@
         "lösenord"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Betalningar skyddas med TLS-kryptering och schweiziska integritetslagar."
+        "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline är endast kompatibelt med oformaterat textformat."
@@ -4994,9 +4982,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
-      "Registering your subscription...": [
-        "Registrerar din prenumeration..."
-      ],
       "Removed participants will be notified.": [
         "Borttagna deltagare kommer att meddelas."
       ],
@@ -5027,9 +5012,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
-      ],
-      "Setting up your new address...": [
-        "Konfigurerar din nya adress..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
@@ -5134,7 +5116,7 @@
         "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln skapades."
+        "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln genererades."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
@@ -6040,6 +6022,12 @@
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
+      "All mail": [
+        "All e-post"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
       "Calendars": [
         "Kalendrar"
       ],
@@ -6049,8 +6037,14 @@
       "click here": [
         "klicka här"
       ],
+      "Drafts": [
+        "Utkast"
+      ],
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
+      ],
+      "Inbox": [
+        "Inkorg"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -6070,8 +6064,26 @@
       "Request an invite": [
         "Begär en inbjudan"
       ],
+      "Scheduled": [
+        "Schemalagd"
+      ],
+      "Sent": [
+        "Skickat"
+      ],
+      "Snooze": [
+        "Snooza"
+      ],
+      "Spam": [
+        "Skräppost"
+      ],
+      "Starred": [
+        "Stjärnmärkt"
+      ],
       "stay safer online": [
         "var säkrare online"
+      ],
+      "Trash": [
+        "Papperskorg"
       ],
       "What’s this?": [
         "Vad är detta?"
@@ -6459,14 +6471,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom igång för ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
+      "Upgrade": [
+        "Uppgradera"
       ],
       "Upgrade now": [
         "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7087,12 +7096,6 @@
       ]
     },
     "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaffa Mail Plus för ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceCoupon } är giltigt den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Dun kan säga upp när som helst."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -8828,6 +8831,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -8936,9 +8980,6 @@
       ],
       "Comprehensive privacy and security": [
         "Omfattande integritet och säkerhet"
-      ],
-      "Dark web monitoring": [
-        "Mörka webben-övervakning"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
@@ -9089,47 +9130,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -9614,9 +9614,6 @@
       ],
       "Customize your mail import": [
         "Anpassa din e-postimport"
-      ],
-      "Dark Web Monitoring": [
-        "Övervakning av mörka webben"
       ],
       "Data recovery": [
         "Dataåterställning"
@@ -10227,7 +10224,7 @@
         "Alias-suffix saknas"
       ],
       "Name is required": [
-        "Namn krävs"
+        "Namn är obligatoriskt"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"

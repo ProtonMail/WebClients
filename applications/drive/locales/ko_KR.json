@@ -222,6 +222,9 @@
       "Create and copy alias": [
         "별칭 생성 및 복사"
       ],
+      "Create folder": [
+        "폴더 생성"
+      ],
       "Create free account": [
         "무료 계정 생성"
       ],
@@ -365,12 +368,6 @@
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } 받기"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 ${ MAIL_SHORT_APP_NAME } 받기"
       ],
       "Get in touch": [
         "연락하기"
@@ -1085,9 +1082,6 @@
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
-      "Dark Web Monitoring": [
-        "다크 웹 모니터링"
-      ],
       "Easily add or remove users": [
         "쉬운 사용자 추가 및 제거"
       ],
@@ -1173,9 +1167,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "무제한 hide-my-email 별칭, 공유, 통합된 2단계 인증기, 다크 웹 모니터링 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
@@ -1302,12 +1293,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "이메일 주소 설정 변경"
-      ],
-      "Continue": [
-        "계속"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -4883,9 +4868,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
-      "Registering your subscription...": [
-        "구독 등록 중"
-      ],
       "Report has been sent": [
         "신고를 제출했습니다"
       ],
@@ -4954,9 +4936,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
-      ],
-      "Setting up your new address...": [
-        "새 주소 준비 중"
       ],
       "Share files with links": [
         "링크로 파일 공유"
@@ -6183,14 +6162,26 @@
       "Add a gift code": [
         "기프트 코드 추가"
       ],
+      "All mail": [
+        "모든 메일"
+      ],
+      "Archive": [
+        "보관 편지함"
+      ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
       ],
       "click here": [
         "여기를 클릭"
       ],
+      "Drafts": [
+        "임시 보관함"
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
+      ],
+      "Inbox": [
+        "받은 편지함"
       ],
       "Learn more": [
         "더 알아보기"
@@ -6207,11 +6198,26 @@
       "Request an invite": [
         "가입 요청하기"
       ],
+      "Scheduled": [
+        "시간대 설정됨"
+      ],
+      "Sent": [
+        "보낸 편지함"
+      ],
       "Shared": [
         "공유"
       ],
       "Shared with me": [
         "나와 공유됨"
+      ],
+      "Snooze": [
+        "방해 금지"
+      ],
+      "Spam": [
+        "스팸함"
+      ],
+      "Starred": [
+        "별표 표시됨"
       ],
       "stay safer online": [
         "온라인 상에서 안전하게"
@@ -6583,17 +6589,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon }에 시작하기"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
-      ],
       "Upgrade": [
         "업그레이드"
       ],
       "Upgrade now": [
         "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: action": {
@@ -7187,14 +7187,6 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 Mail Plus 얻기"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
       ]
     },
     "new_plans: tooltip": {
@@ -9068,9 +9060,6 @@
       "Comprehensive privacy and security": [
         "종합적인 프라이버시와 보안"
       ],
-      "Dark web monitoring": [
-        "다크 웹 모니터링"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "데스크톱 앱 및 이메일 클라이언트 지원 (IMAP 기반)"
       ],
@@ -9660,9 +9649,6 @@
       ],
       "Customize your mail import": [
         "사용자 메일 가져오기"
-      ],
-      "Dark Web Monitoring": [
-        "다크 웹 모니터링"
       ],
       "Data recovery": [
         "데이터 복구"

@@ -169,6 +169,9 @@
       "Create": [
         "Стварыць"
       ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
       "Create Gateway": [
         "Стварыць шлюз"
       ],
@@ -262,9 +265,6 @@
       "Edit group": [
         "Рэдагаваць групу"
       ],
-      "Edit invoice details": [
-        "Рэдагаваць падрабязнасці рахунка"
-      ],
       "Edit name": [
         "Рэдагаваць назву"
       ],
@@ -312,12 +312,6 @@
       ],
       "Forgot recovery method?": [
         "Забылі спосаб аднаўлення?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Атрымайце ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Атрымаць ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Атрымаць новы зашыфраваны адрас электроннай пошты"
@@ -459,6 +453,9 @@
       ],
       "Refer a friend": [
         "Запрасіць сябра"
+      ],
+      "Refresh data": [
+        "Абнавіць даныя"
       ],
       "Refresh status": [
         "Абнавіць статус"
@@ -1022,9 +1019,6 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Лёгкае дадаванне або выдаленне карыстальнікаў"
       ],
@@ -1110,9 +1104,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, Dark Web Monitoring і іншыя функцыі."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1256,12 +1247,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Змяніць налады адраса электроннай пошты"
-      ],
-      "Continue": [
-        "Працягнуць"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ],
@@ -3315,6 +3300,11 @@
         "тэрабайтаў"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } абноўлена"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Дазволеныя:"
@@ -4238,6 +4228,9 @@
       "Increase your account security by verifying your email address.": [
         "Павялічце бяспеку свайго ўліковага запісу з дапамогай праверкі адраса электроннай пошты."
       ],
+      "Inherited from parent folder": [
+        "Унаследавана ад бацькоўскай папкі"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
       ],
@@ -4423,6 +4416,9 @@
       ],
       "Must start with a letter.": [
         "Назва павінна пачынацца з літары."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New user invited to organization": [
         "Новы карыстальнік запрошаны ў арганізацыю"
@@ -4625,9 +4621,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
-      "Registering your subscription...": [
-        "Рэгістрацыя вашай падпіскі..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
       ],
@@ -4705,9 +4698,6 @@
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
-      ],
-      "Setting up your new address...": [
-        "Наладжванне вашага новага адраса..."
       ],
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
@@ -5237,6 +5227,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Толькі адзін экзэмпляр чата можа быць адкрыты адначасова. Закрыйце папярэднюю размову перад тым, як пачаць новую."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падключэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
       ],
@@ -5366,14 +5359,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "У вас будзе магчымасць неадкладна дадаць гэтыя серверы ў іншы шлюз."
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info for cash payment method": {
@@ -5395,11 +5390,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можаце дадаць спосаб аплаты, каб ваша падпіска падаўжалася аўтаматычна. Таксама даступны іншыя спосабы аплаты."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Увядзіце сваё імя і адрас або рэквізіты сваёй арганізацыі. Гэтыя падрабязнасці будуць дадзены да асабістых рахункаў, а таксама рахункаў арганізацыі."
       ]
     },
     "Info subscription": {
@@ -5627,11 +5617,20 @@
       "Choose a name for the generated certificate file": [
         "Выберыце назву для згенерыраванага файла сертыфіката"
       ],
+      "City": [
+        "Горад"
+      ],
       "Code": [
         "Код"
       ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
+      ],
+      "Colors": [
+        "Колеры"
+      ],
+      "Company": [
+        "Кампанія"
       ],
       "Company name": [
         "Назва кампаніі"
@@ -5741,6 +5740,9 @@
       "First name": [
         "Імя"
       ],
+      "Folder location": [
+        "Размяшчэнне папкі"
+      ],
       "Gateway name": [
         "Назва шлюза"
       ],
@@ -5801,9 +5803,6 @@
       "Name": [
         "Назва"
       ],
-      "Name and address": [
-        "Імя і адрас"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (перанакіраванне партоў)"
       ],
@@ -5833,6 +5832,12 @@
       ],
       "Non-standard ports": [
         "Нестандартныя парты"
+      ],
+      "Note": [
+        "Нататка"
+      ],
+      "Notification": [
+        "Апавяшчэнне"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -5962,6 +5967,9 @@
       ],
       "Start date": [
         "Дата пачатку"
+      ],
+      "Street address": [
+        "Вуліца"
       ],
       "Strong": [
         "Надзейны"
@@ -6094,6 +6102,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Паштовы індэкс"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Стварыць папку"
+      ],
+      "Create label": [
+        "Стварыць метку"
+      ],
+      "Edit folder": [
+        "Рэдагаванне папкі"
+      ],
+      "Edit label": [
+        "Рэдагаваць метку"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } створана"
       ]
     },
     "Lable": {
@@ -6400,6 +6427,17 @@
         "Спам"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Колер"
+      ],
+      "Folder name": [
+        "Назва папкі"
+      ],
+      "Label name": [
+        "Назва меткі"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Найвышэйшая хуткасць VPN"
@@ -6424,17 +6462,11 @@
       "Get started for ${ priceCoupon }": [
         "Пачніце за ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Палепшыць"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7154,12 +7186,6 @@
       "${ shortPlan.title } Trial": [
         "Выпрабавальны перыяд ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
-      ],
       "Your account's usage": [
         "Выкарыстанне вашага ўліковага запісу"
       ]
@@ -7624,6 +7650,9 @@
       ],
       "My reason isn't listed": [
         "Нічога з пералічанага"
+      ],
+      "No parent folder": [
+        "Адсутнічае бацькоўская папка"
       ],
       "No permission": [
         "Няма дазволу"
@@ -8145,6 +8174,9 @@
       ],
       "Search for an email or IP address": [
         "Пошук па адрасе электроннай пошты або IP"
+      ],
+      "Search parent folder": [
+        "Пошук бацькоўскай папкі"
       ],
       "Search users": [
         "Пошук карыстальнікаў"
@@ -9659,9 +9691,6 @@
       "Comprehensive privacy and security": [
         "Комплексная прыватнасць і бяспека"
       ],
-      "Dark web monitoring": [
-        "Назіранне за Dark Web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
       ],
@@ -10533,9 +10562,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Рэдагаваць шлюз з назвай ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Рэдагаваць падрабязнасці рахунка"
       ],
       "Edit servers": [
         "Рэдагаваць серверы"

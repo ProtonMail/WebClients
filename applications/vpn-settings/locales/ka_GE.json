@@ -169,8 +169,14 @@
       "Create": [
         "შექმნა"
       ],
+      "Create folder": [
+        "საქაღალდის შექმნა"
+      ],
       "Create Gateway": [
         "რაუტერის შექმნა"
+      ],
+      "Create new policy": [
+        "ახალი პოლიტიკის შექმნა"
       ],
       "Create users": [
         "მომხმარებლების შექმნა"
@@ -262,9 +268,6 @@
       "Edit group": [
         "ჯგუფის ჩასწორება"
       ],
-      "Edit invoice details": [
-        "ინვოისის დეტალების ჩასწორება"
-      ],
       "Edit name": [
         "სახელის ჩასწორება"
       ],
@@ -312,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "მიიღეთ ${ MAIL_SHORT_APP_NAME } Plus ფასად ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus }-ის მიღება"
       ],
       "Get a new encrypted email address": [
         "მიიღეთ ახალი დაშიფრული ელფოსტის მისამართი"
@@ -459,6 +456,9 @@
       ],
       "Refer a friend": [
         "მიმართეთ მეგობარს"
+      ],
+      "Refresh data": [
+        "მონაცემების განახლება"
       ],
       "Refresh status": [
         "სტატუსის განახლება"
@@ -1014,9 +1014,6 @@
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვა"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-ის მონიტორინგი"
-      ],
       "Easily add or remove users": [
         "ადვილად დაამატეთ ან წაშალეთ მომხმარებლები"
       ],
@@ -1102,9 +1099,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, Dark Web-ის მონიტორინგს და სხვ."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
@@ -1238,12 +1232,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "ელფოსტის მისამართის პარამეტრების შეცვლა"
-      ],
-      "Continue": [
-        "გაგრძელება"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -2314,11 +2302,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
+      ],
       "If disabled, only admins will have access.": [
         "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "იქონიეთ თქვენი ცხოვრების ნაწილები ცალ-ცალკე და საფოსტო ყუთი კი - დალაგებული, დამატებითი მისამართებით."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება არავის შეუძლია."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
@@ -3267,6 +3264,11 @@
         "ტერაბაიტი"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } განახლდა"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "დაშვება:"
@@ -3493,6 +3495,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "ამჟამად ${ amountUsers }/${ totalUsers } მომხმარებელს აქვს წვდომა გაზიარებულ სერვერებთნ.",
+        "ამჟამად ${ amountUsers }/${ totalUsers } მომხმარებელს აქვს წვდომა გაზიარებულ სერვერებთნ."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
@@ -3685,6 +3691,9 @@
       ],
       "Allocated": [
         "გამოყოფილი"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "მიეცით უფლება მომხმარებლებს, დაუკავშირდნენ დაცულ გაზიარებულ სერვერებს ${ VPN_APP_NAME } აპლიკაციის **ქვეყნების** სექციიდან."
       ],
       "Already allocated": [
         "გამოყოფილია"
@@ -4149,6 +4158,9 @@
       "Increase your account security by verifying your email address.": [
         "გაზარდეთ თქვენი ანგარიშის უსაფრთხოება თქვენი ელფოსტის მისამართის გადამოწმებით."
       ],
+      "Inherited from parent folder": [
+        "მემკვიდრეობით მშობელი საქაღალდისგან"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "მითითებულ ქვეყანაში შემთხვევით სერვერთან დასაკავშირებლად საჭიროა ქვეყნისთვის სპეციფიკური კონფიგურაციის ფაილის დაყენება."
       ],
@@ -4335,6 +4347,9 @@
       "Must start with a letter.": [
         "უნდა იწყებოდეს ანბანის ასოთი."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
+      ],
       "New user invited to organization": [
         "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
       ],
@@ -4367,6 +4382,12 @@
       ],
       "of": [
         "-დან"
+      ],
+      "Off": [
+        "გამორთული"
+      ],
+      "On": [
+        "ჩართ"
       ],
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
@@ -4526,9 +4547,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
       ],
-      "Registering your subscription...": [
-        "თქვენი გამოწერის რეგისტრაცია..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."
       ],
@@ -4606,9 +4624,6 @@
       ],
       "Session timed out": [
         "სესიის დრო გავიდა"
-      ],
-      "Setting up your new address...": [
-        "თქვენი ახალი მისამართის მორგება..."
       ],
       "Setting up your organization": [
         "ორგანიზაციის მორგება"
@@ -5115,6 +5130,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "ჩატის, მხოლოდ, ერთი ფანჯარა შეიძლება, გქონდეთ ღია. ახლის დასაწყებად გთხოვთ, ჯერ წინა ფანჯარა დახუროთ."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "${ VPN_APP_NAME }-ის სერვერთან მესამე პირების დაწერილი VPN აპებით, როგორიცაა Tunnelblick-ი macOS-სთვის ან OpenVPN-ი GNU/Linux-სთვის, გამოიყენეთ ეს მომხმარებელი და პაროლი."
       ],
@@ -5237,14 +5255,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "ამ სერვერების სხვა კარიბჭეში ჩამატება დაუყოვნებლივ შეგეძლებათ."
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "არჩეული ფერი:"
       ]
     },
     "Info for cash payment method": {
@@ -5266,11 +5286,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "თქვენ შეგიძლიათ დაამატოთ გადახდის მეთოდი, რომ თქვენი გამოწერა ავტომატურად განახლდეს. ასევე ხელმისაწვდომია გადახდის სხვა მეთოდებიც."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "შეიყვანეთ თქვენი ან თქვენი ორგანიზაციის სახელი და მისამართი. ეს დეტალები, ორივე, პირად და ორგანიზაციის ინვოისებში ჩაემატება."
       ]
     },
     "Info subscription": {
@@ -5492,11 +5507,20 @@
       "Choose a name for the generated certificate file": [
         "შეიყვანეთ გენერირებული სერტიფიკატის ფაილის სახელი"
       ],
+      "City": [
+        "ქალაქი"
+      ],
       "Code": [
         "კოდი"
       ],
       "Code is 6 digits without spaces": [
         "კოდი წარმოადგენს 6 ციფრს გამოტოვებების გარეშე"
+      ],
+      "Colors": [
+        "ფერები"
+      ],
+      "Company": [
+        "კომპანია"
       ],
       "Company name": [
         "კომპანიის სახელი"
@@ -5606,6 +5630,9 @@
       "First name": [
         "სახელი"
       ],
+      "Folder location": [
+        "საქაღალდის მდებარეობა"
+      ],
       "Gateway name": [
         "რაუტერის სახელი"
       ],
@@ -5666,9 +5693,6 @@
       "Name": [
         "სახელი"
       ],
-      "Name and address": [
-        "სახელი და მისამართი"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (პორტის გადამისამართება)"
       ],
@@ -5698,6 +5722,12 @@
       ],
       "Non-standard ports": [
         "არასტანდარტული პორტები"
+      ],
+      "Note": [
+        "შენიშვნა"
+      ],
+      "Notification": [
+        "შეტყობინება"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 -ის პაროლი"
@@ -5825,6 +5855,9 @@
       ],
       "Start date": [
         "საწყისი თარიღი"
+      ],
+      "Street address": [
+        "ქუჩის მისამართი"
       ],
       "Strong": [
         "ძლიერი"
@@ -5957,6 +5990,25 @@
     "Label, credit card": {
       "ZIP code": [
         "საფოსტო კოდი"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "საქაღალდის შექმნა"
+      ],
+      "Create label": [
+        "ჭდის შექმნა"
+      ],
+      "Edit folder": [
+        "საქაღალდის ჩასწორება"
+      ],
+      "Edit label": [
+        "ჭდის ჩასწორება"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } შეიქმნა"
       ]
     },
     "Lable": {
@@ -6119,6 +6171,9 @@
       ],
       "for ${ price }": [
         "${ price }-თვის"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "მოირგეთ თქვენი ანგარიში Porkbun-ის დომენთან ერთად."
       ]
     },
     "mailtrial2024: Action": {
@@ -6261,6 +6316,17 @@
         "სპამი"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "ფერი"
+      ],
+      "Folder name": [
+        "საქაღალდის სახელი"
+      ],
+      "Label name": [
+        "ჭდის სახელი"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "უსწრაფესი VPN"
@@ -6285,17 +6351,11 @@
       "Get started for ${ priceCoupon }": [
         "დაწყება ${ priceCoupon }-დან"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }-დან"
-      ],
       "Upgrade": [
         "ტარიფის აწევა"
       ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: action": {
@@ -6965,12 +7025,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } საცდელი"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceMailPlus } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
       "Your account's usage": [
         "თქვენი ანგარიშის გამოყენება"
       ]
@@ -7432,6 +7486,9 @@
       "My reason isn't listed": [
         "ჩემი მიზეზი სიაში არაა"
       ],
+      "No parent folder": [
+        "მშობელი საქაღალდის გარეშე"
+      ],
       "No permission": [
         "წვდომის გარეშე"
       ],
@@ -7616,6 +7673,9 @@
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "გადაიხდით წლიურად ${ yearlyPrice }-ს. დაზოგეთ ${ yearlySavedPrice } ${ passFamilyPlanName }-ით (vs 6 ცალკე ${ passPlusPlanName } გამოწერა)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "ექსკლუზიური შემოთავზება ხელმისაწვდომია, მხოლოდ, ${ PASS_APP_NAME }-ის ადრეული მხარდამჭერებისთვის."
@@ -7932,6 +7992,9 @@
       "Search for an email or IP address": [
         "ელფოსტის ან IP მისამართის ძებნა"
       ],
+      "Search parent folder": [
+        "მშობელ საქაღალდეში ძებნა"
+      ],
       "Search users": [
         "მომხმარებლების ძებნა"
       ],
@@ -8091,6 +8154,9 @@
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "ელფოსტის მისამართი **${ email }** უკვე არსებობს ${ BRAND_NAME }-ის მომხმარებლის სახით. შეიყვანეთ ელფოსტის მისამართი მომხმარებლისთვის, რომელიც თქვენი იდენტიფიკატორის მომწოდებელშია."
       ]
     },
     "saml: Info": {
@@ -8800,6 +8866,9 @@
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ.",
         "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO-ის მომხმარებლები (მოწოდებული თქვენი იდენტიფიკატორის პროვაიდერის მიერ) წაიშლება** და მათი შექმნა ხელით მოგიწევთ, თუ მათ დაბრუნებას გადაწყვეტთ."
+      ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
         "**SSO მომხმარებლები მოიხსნება თქვენი იდენტიფიკატორის მომწოდებლისგან** და არა-SSO მომხმარებლებად გადაკეთდება."
       ],
@@ -8915,6 +8984,9 @@
       ],
       "Remove single sign-on for your organization?": [
         "წავშალო SSO თქვენი ორგანიზაციისთვის?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "დააყენეთ მარქაფი პაროლი, რომ დაცვის კიდევ ერთი ფენა დაამატოთ. ის საშუალებას გაძლევთ, შეხვიდეთ სისტემაში მაშინაც კი, როცა ანგარიში დაგებლოკებათ. ასე რომ, დარწმუნდით, რომ ის უსაფრთხო ადგილას ინახება."
       ],
       "Set your backup password": [
         "დააყენეთ თქვენი მარქაფი პაროლი"
@@ -9334,9 +9406,6 @@
       ],
       "Comprehensive privacy and security": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
-      ],
-      "Dark web monitoring": [
-        "Dark Web-ის მონიტორინგი"
       ],
       "Desktop app and email client support (via IMAP)": [
         "კომპიუტერის აპი და ელფოსტის კლიენტის მხარდაჭერა (IMAP-ით)"
@@ -10200,9 +10269,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } რაუტერის ჩასწორება"
-      ],
-      "Edit invoice details": [
-        "ინვოისის დეტალების ჩასწორება"
       ],
       "Edit servers": [
         "სერვერების ჩასწორება"

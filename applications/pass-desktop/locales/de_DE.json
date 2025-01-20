@@ -244,9 +244,6 @@
       "Edit vault": [
         "Tresor bearbeiten"
       ],
-      "Enable Dark Web Monitoring": [
-        "Dark Web-Überwachung aktivieren"
-      ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktiviere diesen Alias, um E-Mails zu empfangen, die an diesen Alias gesendet werden"
       ],
@@ -605,6 +602,10 @@
       "Unblock contact": [
         "Kontakt entsperren"
       ],
+      "Understood, I will never need it": [
+        "Verstanden, ich werde es nie brauchen",
+        "Verstanden, ich werde sie nie brauchen"
+      ],
       "Unlock": [
         "Entsperren"
       ],
@@ -726,9 +727,6 @@
       ],
       "Create unique passwords": [
         "Erstelle einzigartige Passwörter"
-      ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Dark Web-Überwachung ist mit einem kostenpflichtigen Abonnement verfügbar. Upgrade für sofortigen Zugriff."
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } ist eine E-Mail-Authentifizierungsmethode, die dazu dient, E-Mail-Spoofing zu verhindern. Die Einrichtung von DKIM wird dringend empfohlen, um die Wahrscheinlichkeit zu verringern, dass deine E-Mails im Spam-Ordner des Empfängers landen."
@@ -1193,9 +1191,6 @@
       ]
     },
     "Feature": {
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
-      ],
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
       ],
@@ -1720,6 +1715,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history.": [
+        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf.",
+        "Das Verschieben von Einträgen in einen anderen Tresor löscht ihre Verläufe."
+      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2125,6 +2124,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kannst die Postfächer für diesen Alias nicht ändern."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Du hast ${ aliasCount } Alias, der in SimpleLogin vorhanden ist, aber in ${ PASS_APP_NAME } fehlt. Möchtest du ihn synchronisieren?",
+        "Du hast ${ aliasCount } Aliasse, die in SimpleLogin vorhanden sind, aber in ${ PASS_APP_NAME } fehlen. Möchtest du sie synchronisieren?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du hast noch ${ daysRemaining } Tag, um diese und andere Premium-Funktionen auszuprobieren.",
         "Du hast noch ${ daysRemaining } Tage, um diese und andere Premium-Funktionen auszuprobieren."
@@ -2434,9 +2437,6 @@
       ],
       "Custom text field": [
         "Benutzerdefiniertes Textfeld"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
       ],
       "Date": [
         "Datum"
@@ -3105,6 +3105,10 @@
         "${ count } Eintrag",
         "${ count } Einträge"
       ],
+      "You can drag and drop the selected item to another vault": [
+        "Du kannst das ausgewählte Element in einen anderen Tresor ziehen und ablegen.",
+        "Du kannst die ausgewählten Elemente in einen anderen Tresor ziehen und ablegen."
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Du hast ${ semiboldText } in diesem Tresor ausgewählt."
       ]
@@ -3474,9 +3478,6 @@
       "Custom emails": [
         "Eigene E-Mails"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
-      ],
       "Default": [
         "Standard"
       ],
@@ -3588,6 +3589,10 @@
       ],
       "Modified": [
         "Geändert"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count } Element nach ${ vaultName } verschieben",
+        "${ count } Elemente nach ${ vaultName } verschieben"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount } Eintrag in den Papierkorb verschieben?",
@@ -3968,9 +3973,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Bitte bestätige deine E-Mail-Adresse, um E-Mail-Aliasse verwenden zu können."
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Bitte bestätige deine E-Mail-Adresse, um Tresore teilen zu können."
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Durch das Entfernen deines zusätzlichen Passworts wirst du von allen Geräten abgemeldet und alle aktiven Sitzungen werden beendet."

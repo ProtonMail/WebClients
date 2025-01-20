@@ -36,6 +36,12 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
+      "About hide-my-email aliases": [
+        "О псевдонимах hide-my-email"
+      ],
+      "Activate": [
+        "Активировать"
+      ],
       "Activate recovery": [
         "Активировать восстановление"
       ],
@@ -486,6 +492,9 @@
       "Export contact group": [
         "Экспорт группы контактов"
       ],
+      "Export selection as .vcf": [
+        "Экспортировать выбор как .vcf"
+      ],
       "External encryption": [
         "Внешнее шифрование"
       ],
@@ -515,9 +524,6 @@
       ],
       "Get ${ BRAND_NAME } Duo": [
         "Оформить ${ BRAND_NAME } Duo"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Связаться с нами"
@@ -762,11 +768,17 @@
       "More": [
         "Подробнее"
       ],
+      "More actions": [
+        "Больше действий"
+      ],
       "More details about ${ ariaLabelTitle }": [
         "Больше информации о ${ ariaLabelTitle }"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
+      ],
+      "More options": [
+        "Дополнительные параметры"
       ],
       "More refine actions": [
         "Более точные действия"
@@ -1320,10 +1332,10 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Улучшить сейчас"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Улучшить сейчас"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1716,9 +1728,6 @@
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
-      "Dark Web Monitoring": [
-        "Мониторинг даркнета"
-      ],
       "Easily add or remove users": [
         "Легко добавлять или удалять участников"
       ],
@@ -1804,9 +1813,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Защитите свои входы на всех ваших устройствах. Включает неограниченное количество псевдонимов hide-my-email, обмен файлами, встроенную двухфакторную аутентификацию, мониторинг даркнета и многое другое."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -1939,12 +1945,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Изменить настройки адреса электронной почты"
-      ],
-      "Continue": [
-        "Продолжить"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3765,6 +3765,12 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } новое сообщение",
+        "${ notificationsToShow.length } новых сообщения",
+        "${ notificationsToShow.length } новых сообщений",
+        "${ notificationsToShow.length } новых сообщений"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "От: ${ sender } - ${ Subject }"
       ]
@@ -4762,6 +4768,11 @@
         "Не могу отправить уведомление на ${ email }. ${ errorMessage }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Невозможно расшифровать вложенный файл ICS"
@@ -5456,6 +5467,50 @@
         "Нет доступных способов проверки"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовой пояс календаря не поддерживается"
+      ],
+      "Edited event not supported": [
+        "Отредактированное событие не поддерживается"
+      ],
+      "End time out of bounds": [
+        "Время окончания находится вне границ"
+      ],
+      "Event validation failed": [
+        "Проверка события не удалась"
+      ],
+      "Floating times not supported": [
+        "Плавающие значения времени не поддерживаются"
+      ],
+      "Malformed all-day event": [
+        "Неправильный формат события на весь день"
+      ],
+      "Malformed end time": [
+        "Неправильный формат времени окончания"
+      ],
+      "Malformed recurring event": [
+        "Неправильное повторяющееся событие"
+      ],
+      "Malformed start time": [
+        "Неправильный формат времени начала"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускается только григорианский календарь"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторяющееся событие не имеет повторений"
+      ],
+      "Recurring rule not supported": [
+        "Правило для повторения не поддерживается"
+      ],
+      "Start time out of bounds": [
+        "Время начала находится вне границ"
+      ],
+      "Time zone not supported": [
+        "Часовой пояс не поддерживается"
+      ]
+    },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } участник",
@@ -6091,6 +6146,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
+      ],
       "Align left": [
         "Выровнять по левому краю"
       ],
@@ -6327,6 +6385,12 @@
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
+        "Создать безопасное облако для ${ value } участника"
       ],
       "Create in": [
         "Создать в"
@@ -6805,6 +6869,9 @@
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Сообщения, находящиеся в корзине и спаме более 30 дней, будут автоматически удалены."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -7033,9 +7100,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
-      "Registering your subscription...": [
-        "Регистрация вашей подписки..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудьте обновить это в менеджере паролей или где бы вы ни хранили учетную запись и регистрационные данные."
       ],
@@ -7129,6 +7193,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Отправлено с помощью защищённой почты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -7140,9 +7207,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
-      ],
-      "Setting up your new address...": [
-        "Настройка нового адреса..."
       ],
       "Shorten selection": [
         "Свернуть выбранное"
@@ -7171,6 +7235,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "К сожалению, это сообщение не существует, либо срок его действия уже истек."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Начните делиться им с контактами и использовать его для онлайн-сервисов."
+      ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Возможности хранения не поддерживаются в этом браузере, нам нужна эта поддержка для включения поиска по содержимому сообщений."
       ],
@@ -7197,6 +7264,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Переключиться на"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -8606,6 +8676,9 @@
       "Remember my choice": [
         "Запомнить мой выбор"
       ],
+      "Remove metadata": [
+        "Удалить метаданные"
+      ],
       "Reveal password": [
         "Показать пароль"
       ],
@@ -9367,14 +9440,11 @@
       "Get started for ${ priceCoupon }": [
         "Начните с ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Начиная с ${ priceMailPlus }"
+      "Upgrade": [
+        "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Улучшить до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -10042,14 +10112,6 @@
         "Сменить тариф?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Оформите Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
@@ -10441,9 +10503,6 @@
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Очистить удаленные письма и спам через 30 дней."
-      ],
-      "Dark Web Monitoring": [
-        "Мониторинг даркнета"
       ],
       "Download the desktop app": [
         "Скачать приложение для настольных компьютеров"
@@ -11546,6 +11605,11 @@
         "Подписать"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Отображаемое имя"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Быстрее в приложении"
@@ -12171,9 +12235,6 @@
       ],
       "Comprehensive privacy and security": [
         "Комплексная защита конфиденциальности и безопасности"
-      ],
-      "Dark web monitoring": [
-        "Мониторинг Темной паутины"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Поддержка приложений для настольных компьютеров и почтовых клиентов (через IMAP)"
@@ -12922,9 +12983,6 @@
       "Download Desktop app": [
         "Скачать приложение для компьютера"
       ],
-      "Enable Dark Web Monitoring": [
-        "Включить мониторинг Темной паутины"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Получить свой адрес «@${ PM_DOMAIN }»"
       ],
@@ -13130,9 +13188,6 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
-      ],
-      "Dark Web Monitoring": [
-        "Мониторинг Темной паутины"
       ],
       "Data recovery": [
         "Восстановление данных"
@@ -13743,6 +13798,11 @@
         "Сегодня"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
@@ -13821,11 +13881,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Tor out of date": {

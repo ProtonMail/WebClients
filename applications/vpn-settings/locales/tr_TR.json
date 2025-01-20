@@ -169,11 +169,14 @@
       "Create": [
         "Ekle"
       ],
+      "Create folder": [
+        "Klasör ekle"
+      ],
       "Create Gateway": [
         "Ağ geçidi ekle"
       ],
       "Create new policy": [
-        "Yeni ilke oluşturun"
+        "Yeni ilke oluştur"
       ],
       "Create users": [
         "Kullanıcılar ekle"
@@ -265,9 +268,6 @@
       "Edit group": [
         "Grubu düzenle"
       ],
-      "Edit invoice details": [
-        "Fatura ayrıntılarını düzenle"
-      ],
       "Edit name": [
         "Adı düzenle"
       ],
@@ -315,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon } ile ${ MAIL_SHORT_APP_NAME } Plus edinin"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } alın"
       ],
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi edinin"
@@ -1023,9 +1017,6 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
-      "Dark Web Monitoring": [
-        "Karanlık ağ izleme"
-      ],
       "Easily add or remove users": [
         "Kullanıcıları kolayca ekleme ve çıkarma"
       ],
@@ -1111,9 +1102,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Tüm aygıtlarınızda güvenli oturum açma. Sınırsız sayıda hide-my-email takma adı, paylaşım, bütünleşik iki adımlı doğrulama, karanlık ağ izleme ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -1251,12 +1239,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "E-posta adresi ayarlarını değiştir"
-      ],
-      "Continue": [
-        "İlerle"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ],
@@ -2328,10 +2310,10 @@
     },
     "Description": {
       "Create policies to decide who can connect to shared servers in each country.": [
-        "Her ülkedeki paylaşılan sunuculara kimin bağlanabileceğine karar vermek için politikalar belirleyin."
+        "Her ülkedeki paylaşılan sunuculara kimin bağlanabileceğine karar vermek için ilkeler oluşturun."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
-        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşımlı sunuculara bağlanabilir."
+        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşılan sunuculara bağlanabilir."
       ],
       "If disabled, only admins will have access.": [
         "Kapatıldığında yalnızca yöneticiler erişebilir."
@@ -3289,6 +3271,11 @@
         "Terabayt"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } güncellendi"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "İzin verilen:"
@@ -3516,7 +3503,7 @@
     },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişime sahip.",
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor.",
         "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -3716,7 +3703,7 @@
         "Ayrılmış"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Kullanıcıların ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden güvenli paylaşılan sunuculara bağlanmasına izin verin."
+        "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
       ],
       "Already allocated": [
         "Zaten ayrılmış"
@@ -4181,6 +4168,9 @@
       "Increase your account security by verifying your email address.": [
         "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
       ],
+      "Inherited from parent folder": [
+        "Üst klasörden devralındı"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Seçtiğiniz ülkedeki rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
       ],
@@ -4366,6 +4356,9 @@
       ],
       "Must start with a letter.": [
         "Bir harf ile başlamalıdır."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
       "New user invited to organization": [
         "Kuruluşa yeni kullanıcı davet edildi"
@@ -4564,9 +4557,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
-      "Registering your subscription...": [
-        "Abonelik kaydınız oluşturuluyor..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
       ],
@@ -4644,9 +4634,6 @@
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
-      ],
-      "Setting up your new address...": [
-        "Yeni adresiniz ayarlanıyor..."
       ],
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
@@ -5156,6 +5143,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
       ],
@@ -5281,14 +5271,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Bu sunucuları hemen başka bir ağ geçidine ekleyebileceksiniz."
       ],
       "Zoom meeting": [
         "Zoom toplantısı"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Seçilmiş renk:"
       ]
     },
     "Info for cash payment method": {
@@ -5310,11 +5302,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Başka ödeme yöntemleri de kullanılabilir."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Kendiniz veya kuruluşunuz için bir ad ve adres yazın. Bu bilgiler hem kişisel hem de kurumsal faturalara eklenecek."
       ]
     },
     "Info subscription": {
@@ -5536,11 +5523,20 @@
       "Choose a name for the generated certificate file": [
         "Oluşturulan sertifika dosyasının adını yazın"
       ],
+      "City": [
+        "İl"
+      ],
       "Code": [
         "Kod"
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Colors": [
+        "Renkler"
+      ],
+      "Company": [
+        "Kuruluş"
       ],
       "Company name": [
         "Kuruluş adı"
@@ -5650,6 +5646,9 @@
       "First name": [
         "Ad"
       ],
+      "Folder location": [
+        "Klasör konumu"
+      ],
       "Gateway name": [
         "Ağ geçidi adı"
       ],
@@ -5710,9 +5709,6 @@
       "Name": [
         "Ad"
       ],
-      "Name and address": [
-        "Ad ve adres"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (bağlantı noktası yönlendirme)"
       ],
@@ -5742,6 +5738,12 @@
       ],
       "Non-standard ports": [
         "Standart olmayan bağlantı noktaları"
+      ],
+      "Note": [
+        "Not"
+      ],
+      "Notification": [
+        "Bildirim"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
@@ -5869,6 +5871,9 @@
       ],
       "Start date": [
         "Başlangıç tarihi"
+      ],
+      "Street address": [
+        "Sokak adresi"
       ],
       "Strong": [
         "Güçlü"
@@ -6001,6 +6006,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Posta kodu"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Klasör ekle"
+      ],
+      "Create label": [
+        "Etiket ekle"
+      ],
+      "Edit folder": [
+        "Klasörü düzenle"
+      ],
+      "Edit label": [
+        "Etiketi düzenle"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } eklendi"
       ]
     },
     "Lable": {
@@ -6163,6 +6187,9 @@
       ],
       "for ${ price }": [
         "${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Hesabınızı Porkbun etki alanınızla kurun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6305,6 +6332,17 @@
         "İstenmeyen"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Renk"
+      ],
+      "Folder name": [
+        "Klasör adı"
+      ],
+      "Label name": [
+        "Etiket adı"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "En yüksek VPN hızı"
@@ -6329,17 +6367,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon } ile başlayın"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus } tutarından başlayan fiyatlarla"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: action": {
@@ -7009,12 +7041,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } deneme"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon } ile Mail Plus edinin"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "Your account's usage": [
         "Hesap kullanımınız"
       ]
@@ -7475,6 +7501,9 @@
       ],
       "My reason isn't listed": [
         "Gerekçem listede yok"
+      ],
+      "No parent folder": [
+        "Üst klasör yok"
       ],
       "No permission": [
         "İzin verilmemiş"
@@ -7984,6 +8013,9 @@
       ],
       "Search for an email or IP address": [
         "Bir e-posta adresi ya da IP adresi arayın"
+      ],
+      "Search parent folder": [
+        "Üst klasörü ara"
       ],
       "Search users": [
         "Kullanıcı arama"
@@ -9400,9 +9432,6 @@
       "Comprehensive privacy and security": [
         "Kapsamlı gizlilik ve güvenlik"
       ],
-      "Dark web monitoring": [
-        "Karanlık ağ izleme"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Masaüstü uygulaması ve e-posta istemcisi desteği (IMAP ile)"
       ],
@@ -10268,9 +10297,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
-      ],
-      "Edit invoice details": [
-        "Fatura ayrıntılarını düzenle"
       ],
       "Edit servers": [
         "Sunucuları düzenle"

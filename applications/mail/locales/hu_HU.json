@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
+      "Activate": [
+        "Aktiválás"
+      ],
       "Activate recovery": [
         "Helyreállítás aktiválása"
       ],
@@ -715,6 +718,9 @@
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
       ],
+      "More options": [
+        "További lehetőségek"
+      ],
       "More search options": [
         "További keresési beállítások"
       ],
@@ -1228,10 +1234,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
       "Upload picture": [
@@ -1574,9 +1580,6 @@
       "Advanced account protection": [
         "Fejlett fiókvédelmi program"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Figyelés"
-      ],
       "Easily add or remove users": [
         "Felhasználók egyszerű hozzáadása vagy eltávolítása"
       ],
@@ -1647,9 +1650,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Hozzáférjen videós szolgáltatásokhoz, mint Netflix, Disney+, Prime Video és továbbiak, akárhonnan."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Biztonságos bejelentkezések az összes eszközén. Korlátlan számú hide-my-email álnév, megosztás, beépített 2FA, Dark Web Figyelés és további lehetőségek."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket.",
@@ -1774,9 +1774,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Folytatás"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ],
@@ -8522,11 +8519,11 @@
       "Get ${ planTitle }": [
         "${ planTitle } beszerzése"
       ],
-      "Upgrade now": [
+      "Upgrade": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: action": {
@@ -9313,9 +9310,6 @@
       ]
     },
     "Onboarding modal": {
-      "Dark Web Monitoring": [
-        "Dark Web Figyelés"
-      ],
       "Download the desktop app": [
         "Asztali alkalmazás letöltése"
       ],
@@ -10203,6 +10197,11 @@
       ],
       "Sign": [
         "Aláírás"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Megjelenített név"
       ]
     },
     "Sort option": {
@@ -11208,9 +11207,6 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } letöltése"
       ],
-      "Enable Dark Web Monitoring": [
-        "Dark web figyelés bekapcsolása"
-      ],
       "Open ": [
         "Megnyitás "
       ],
@@ -11395,9 +11391,6 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
-      ],
-      "Dark Web Monitoring": [
-        "Dark web figyelés"
       ],
       "Data recovery": [
         "Adat helyreállítás"
@@ -12098,6 +12091,9 @@
       ]
     },
     "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Haladó VPN beállítások"
+      ],
       "No ads": [
         "Nincsenek hirdetések"
       ]

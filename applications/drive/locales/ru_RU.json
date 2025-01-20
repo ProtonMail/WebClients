@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Создать и скопировать псевдоним"
       ],
+      "Create folder": [
+        "Создать папку"
+      ],
       "Create free account": [
         "Создать бесплатный аккаунт"
       ],
@@ -357,6 +360,9 @@
       "Export contact group": [
         "Экспорт группы контактов"
       ],
+      "Export selection as .vcf": [
+        "Экспортировать выбор как .vcf"
+      ],
       "Fit to window": [
         "Вписать в окно"
       ],
@@ -365,12 +371,6 @@
       ],
       "Forward as attachment": [
         "Переслать как вложение"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Получить ${ DRIVE_APP_NAME }"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Связаться с нами"
@@ -503,6 +503,9 @@
       ],
       "Minimize transfers": [
         "Свернуть окно передач"
+      ],
+      "More actions": [
+        "Больше действий"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -1091,9 +1094,6 @@
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
-      "Dark Web Monitoring": [
-        "Мониторинг даркнета"
-      ],
       "Easily add or remove users": [
         "Легко добавлять или удалять участников"
       ],
@@ -1179,9 +1179,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Защитите свои входы на всех ваших устройствах. Включает неограниченное количество псевдонимов hide-my-email, обмен файлами, встроенную двухфакторную аутентификацию, мониторинг даркнета и многое другое."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -1314,12 +1311,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Изменить настройки адреса электронной почты"
-      ],
-      "Continue": [
-        "Продолжить"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3316,6 +3307,11 @@
         "Изображение не выбрано"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Невозможно расшифровать вложенный файл ICS"
@@ -3655,6 +3651,50 @@
       ],
       "No verification method available": [
         "Нет доступных способов проверки"
+      ]
+    },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовой пояс календаря не поддерживается"
+      ],
+      "Edited event not supported": [
+        "Отредактированное событие не поддерживается"
+      ],
+      "End time out of bounds": [
+        "Время окончания находится вне границ"
+      ],
+      "Event validation failed": [
+        "Проверка события не удалась"
+      ],
+      "Floating times not supported": [
+        "Плавающие значения времени не поддерживаются"
+      ],
+      "Malformed all-day event": [
+        "Неправильный формат события на весь день"
+      ],
+      "Malformed end time": [
+        "Неправильный формат времени окончания"
+      ],
+      "Malformed recurring event": [
+        "Неправильное повторяющееся событие"
+      ],
+      "Malformed start time": [
+        "Неправильный формат времени начала"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускается только григорианский календарь"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторяющееся событие не имеет повторений"
+      ],
+      "Recurring rule not supported": [
+        "Правило для повторения не поддерживается"
+      ],
+      "Start time out of bounds": [
+        "Время начала находится вне границ"
+      ],
+      "Time zone not supported": [
+        "Часовой пояс не поддерживается"
       ]
     },
     "Import calendar": {
@@ -4180,6 +4220,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Всё (${ totalFoldersCount } папка)",
         "Всё (${ totalFoldersCount } папки)",
@@ -4359,6 +4402,12 @@
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
+        "Создать безопасное облако для ${ value } участника"
       ],
       "Create in": [
         "Создать в"
@@ -4774,6 +4823,9 @@
       "Merged": [
         "Объединённые"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -5014,9 +5066,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
-      "Registering your subscription...": [
-        "Регистрация вашей подписки..."
-      ],
       "Report has been sent": [
         "Отчет был отправлен"
       ],
@@ -5074,6 +5123,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -5082,9 +5134,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
-      ],
-      "Setting up your new address...": [
-        "Настройка нового адреса..."
       ],
       "Share files with links": [
         "Делитесь файлами с помощью ссылок"
@@ -5125,6 +5174,9 @@
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Начните делиться им с контактами и использовать его для онлайн-сервисов."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
@@ -5136,6 +5188,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
+      ],
+      "Switch to": [
+        "Переключиться на"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -6302,14 +6357,26 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
+      "All mail": [
+        "Вся почта"
+      ],
+      "Archive": [
+        "Архив"
+      ],
       "clearing your browser cache": [
         "очистка кеша браузера"
       ],
       "click here": [
         "нажмите здесь"
       ],
+      "Drafts": [
+        "Черновики"
+      ],
       "How to pay with Bitcoin?": [
         "Как оплатить с помощью Bitcoin?"
+      ],
+      "Inbox": [
+        "Входящие"
       ],
       "Learn more": [
         "Подробнее"
@@ -6326,11 +6393,26 @@
       "Request an invite": [
         "Запросить приглашение"
       ],
+      "Scheduled": [
+        "Запланированные"
+      ],
+      "Sent": [
+        "Отправленные"
+      ],
       "Shared": [
         "В общем доступе"
       ],
       "Shared with me": [
         "Поделись со мной"
+      ],
+      "Snooze": [
+        "Отложить"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Starred": [
+        "Отмеченные *"
       ],
       "stay safer online": [
         "будьте в большей безопасности в Интернете"
@@ -6717,17 +6799,11 @@
       "Get started for ${ priceCoupon }": [
         "Начните с ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Начиная с ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Улучшить до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7393,14 +7469,6 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Оформите Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
       ]
     },
     "new_plans: tooltip": {
@@ -9427,9 +9495,6 @@
       "Comprehensive privacy and security": [
         "Комплексная защита конфиденциальности и безопасности"
       ],
-      "Dark web monitoring": [
-        "Мониторинг Темной паутины"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Поддержка приложений для настольных компьютеров и почтовых клиентов (через IMAP)"
       ],
@@ -10064,9 +10129,6 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
-      ],
-      "Dark Web Monitoring": [
-        "Мониторинг Темной паутины"
       ],
       "Data recovery": [
         "Восстановление данных"

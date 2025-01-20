@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -463,9 +463,6 @@
       "Edit group": [
         "Rediger gruppe"
       ],
-      "Edit invoice details": [
-        "Rediger fakturadetaljer"
-      ],
       "Edit label": [
         "Redigér etikette"
       ],
@@ -555,12 +552,6 @@
       ],
       "Generate token": [
         "Generér token"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Få ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
@@ -1716,9 +1707,6 @@
       "Advanced account protection": [
         "Avanceret program til beskyttelse af konto"
       ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
-      ],
       "Easily add or remove users": [
         "Tilsæt eller fjern brugere nemt"
       ],
@@ -1795,9 +1783,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, Monitorering af det mørke net og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
@@ -1947,9 +1932,6 @@
     "Button": {
       "Add link to your email footer": [
         "Tilføj link til bunden af din e-mail"
-      ],
-      "Continue": [
-        "Forsæt"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
@@ -6755,6 +6737,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Når den er låst, skal organisationsmedlemmerne åbne ${ PASS_APP_NAME } med deres adgangskode eller pinkode osv."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
+      ],
       "Align left": [
         "Venstrestil"
       ],
@@ -8079,9 +8064,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
-      "Registering your subscription...": [
-        "Registrerer dit abonnement..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med vedkommende."
       ],
@@ -8171,9 +8153,6 @@
       ],
       "Set recovery phrase": [
         "Indstil gendannelsessætning"
-      ],
-      "Setting up your new address...": [
-        "Konfigurerer din nye adresse..."
       ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
@@ -9121,6 +9100,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation bruger single sign-on (SSO). Tryk på Log ind for at fortsætte med din SSO-udbyder."
       ],
@@ -9141,9 +9123,6 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Din gendannelsessætning er en serie af 12 tilfældigt genererede ord i en bestemt rækkefølge."
-      ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Din supportsag er blevet lukket. Tak for at kontakte ${ BRAND_NAME } support."
@@ -9187,11 +9166,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan tilføje en betalingsmetode for at få dit abonnement fornyet automatisk. Andre betalingsmetoder er også tilgængelige."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Indtast et navn og en adresse for dig selv eller din organisation. Disse oplysninger vil blive tilføjet til både personlige og organisatoriske fakturaer."
       ]
     },
     "Info on errors": {
@@ -9832,6 +9806,9 @@
       "Choose a name for the generated certificate file": [
         "Vælg et navn til den genererede certifikatfil"
       ],
+      "City": [
+        "By"
+      ],
       "Code": [
         "Kode"
       ],
@@ -9846,6 +9823,9 @@
       ],
       "Colors": [
         "Farver"
+      ],
+      "Company": [
+        "Selskab"
       ],
       "Company name": [
         "Firmanavn"
@@ -10246,9 +10226,6 @@
       "Name": [
         "Navn"
       ],
-      "Name and address": [
-        "Navn og adresse"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Videresendelse af port)"
       ],
@@ -10281,6 +10258,9 @@
       ],
       "Non-standard ports": [
         "Ikke-standard porte"
+      ],
+      "Note": [
+        "Note"
       ],
       "Notification": [
         "Notifikation"
@@ -10515,6 +10495,9 @@
       ],
       "Sticky labels": [
         "Klæbende etiketter"
+      ],
+      "Street address": [
+        "Adresse"
       ],
       "Strong": [
         "Stærk"
@@ -11500,17 +11483,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Fra ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Opgradér"
       ],
       "Upgrade now": [
         "Opgradér nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12231,9 +12208,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prøveversion"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Få Mail Plus for ${ priceCoupon }"
-      ],
       "Your account's usage": [
         "Din kontos forbrug"
       ]
@@ -12625,12 +12599,6 @@
       ],
       "An external address cannot be default": [
         "En ekstern adresse kan ikke være standard"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Monitorering af det mørke net er blevet deaktiveret"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Monitorering af det mørke net er blevet aktiveret"
       ],
       "Downloaded 2FA recovery codes": [
         "Hentede 2FA-gendannelseskoder"
@@ -15647,6 +15615,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -15755,9 +15764,6 @@
       ],
       "Comprehensive privacy and security": [
         "Omfattende privatlivs- og sikkerhedsbeskyttelse"
-      ],
-      "Dark web monitoring": [
-        "Overvågning af det mørke net"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Understøtter skrivebordsapp og e-mailklient (via IMAP)"
@@ -15923,47 +15929,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -16768,9 +16733,6 @@
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
-      ],
       "Dashboard": [
         "Kontrolpanel"
       ],
@@ -16894,9 +16856,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigér gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Rediger fakturadetaljer"
       ],
       "Edit profile": [
         "Rediger profil"

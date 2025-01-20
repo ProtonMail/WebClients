@@ -169,8 +169,14 @@
       "Create": [
         "생성"
       ],
+      "Create folder": [
+        "폴더 생성"
+      ],
       "Create Gateway": [
         "게이트웨이 생성"
+      ],
+      "Create new policy": [
+        "새 정책 추가"
       ],
       "Create users": [
         "사용자 만들기"
@@ -262,9 +268,6 @@
       "Edit group": [
         "그룹 편집"
       ],
-      "Edit invoice details": [
-        "신용 청구서 세부 정보 편집"
-      ],
       "Edit name": [
         "이름 편집"
       ],
@@ -312,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 ${ MAIL_SHORT_APP_NAME } 받기"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } 사용하기"
       ],
       "Get a new encrypted email address": [
         "새로운 암호화된 이메일 주소를 얻으세요"
@@ -459,6 +456,9 @@
       ],
       "Refer a friend": [
         "친구 초대"
+      ],
+      "Refresh data": [
+        "데이터 새로 고침"
       ],
       "Refresh status": [
         "상태 새로고침"
@@ -1012,9 +1012,6 @@
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
-      "Dark Web Monitoring": [
-        "다크 웹 모니터링"
-      ],
       "Easily add or remove users": [
         "쉬운 사용자 추가 및 제거"
       ],
@@ -1100,9 +1097,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "무제한 hide-my-email 별칭, 공유, 통합된 2단계 인증기, 다크 웹 모니터링 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
@@ -1237,12 +1231,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "이메일 주소 설정 변경"
-      ],
-      "Continue": [
-        "계속"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -2311,11 +2299,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "각 국가에서 공유된 서버에 연결할 수 있는 구성원을 결정할 수 있도록 정책을 추가하세요."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "조직 내의 전체 구성원이 모든 국가에서 공유된 서버에 접근할 수 있습니다."
+      ],
       "If disabled, only admins will have access.": [
         "비활성화시 관리자만 접근 가능합니다."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "내 삶의 다른 부분을 분리하고 당신의 받은 편지함을 추가 주소로 정리하세요."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "조직 내에 공유된 서버에 연결할 수 있는 구성원이 없습니다."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
@@ -3251,6 +3248,11 @@
         "테라바이트"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } 업데이트됨"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "허용:"
@@ -3475,6 +3477,9 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }명/${ totalUsers }명이 현재 공유된 서버 접근 권한을 소유하고 있습니다."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
@@ -3657,6 +3662,9 @@
       ],
       "Allocated": [
         "할당 됨"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
       ],
       "Already allocated": [
         "이미 할당 됨"
@@ -4117,6 +4125,9 @@
       "Increase your account security by verifying your email address.": [
         "이메일 인증을 통해 계정 보안을 한차원 더 끌어올리세요."
       ],
+      "Inherited from parent folder": [
+        "상위폴더에 상속되어 있습니다"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "선택한 국가의 무작위 서버에 접속하려면 국가 설정 파일을 설치하세요."
       ],
@@ -4303,6 +4314,9 @@
       "Must start with a letter.": [
         "문자로 시작해야 합니다."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
+      ],
       "New user invited to organization": [
         "새 사용자가 조직에 초대되었습니다."
       ],
@@ -4335,6 +4349,12 @@
       ],
       "of": [
         "의"
+      ],
+      "Off": [
+        "끔"
+      ],
+      "On": [
+        "켬"
       ],
       "Once you reset your password:": [
         "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
@@ -4492,9 +4512,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
-      "Registering your subscription...": [
-        "구독 등록 중"
-      ],
       "Remember to share the user's sign in details with them.": [
         "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
       ],
@@ -4572,9 +4589,6 @@
       ],
       "Session timed out": [
         "세션 시간 초과됨"
-      ],
-      "Setting up your new address...": [
-        "새 주소 준비 중"
       ],
       "Setting up your organization": [
         "조직을 설정하세요"
@@ -5074,6 +5088,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "한 번에 하나의 채팅 인스턴스만 열 수 있습니다. 새 대화를 시작하기 전에 이전 대화를 닫으십시오."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "다음 자격 증명을 사용하여 macOS의 Tunnelblick, GNU/Linux의 OpenVPN 등 오픈 소스 서드 파티 VPN 앱에서 ${ VPN_APP_NAME } 서버에 접속할 수 있습니다."
       ],
@@ -5197,14 +5214,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "해당 서버들을 다른 게이트웨이로 즉시 추가할 수 있게 됩니다."
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "선택한 색상:"
       ]
     },
     "Info for cash payment method": {
@@ -5226,11 +5245,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "구독을 자동으로 갱신하기 위해 결제 방법을 추가할 수 있습니다. 다른 지불 방법도 사용할 수 있습니다."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "내 자신 및 조직의 이름 및 주소를 입력하세요. 이 사항들은 개인 및 조직 청구서 양쪽에 추가됩니다."
       ]
     },
     "Info subscription": {
@@ -5449,11 +5463,20 @@
       "Choose a name for the generated certificate file": [
         "인증서 파일을 생성하려면 이름을 선택하세요"
       ],
+      "City": [
+        "시/군/구"
+      ],
       "Code": [
         "코드"
       ],
       "Code is 6 digits without spaces": [
         "코드는 공백 없이 6자리에요."
+      ],
+      "Colors": [
+        "색상"
+      ],
+      "Company": [
+        "회사"
       ],
       "Company name": [
         "회사명"
@@ -5563,6 +5586,9 @@
       "First name": [
         "이름"
       ],
+      "Folder location": [
+        "폴더 위치"
+      ],
       "Gateway name": [
         "게이트웨이 이름"
       ],
@@ -5623,9 +5649,6 @@
       "Name": [
         "이름"
       ],
-      "Name and address": [
-        "이름 및 주소"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (포트 포워딩)"
       ],
@@ -5655,6 +5678,12 @@
       ],
       "Non-standard ports": [
         "비표준 포트"
+      ],
+      "Note": [
+        "메모"
+      ],
+      "Notification": [
+        "알림"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 비밀번호"
@@ -5781,6 +5810,9 @@
       ],
       "Start date": [
         "시작일"
+      ],
+      "Street address": [
+        "도로명 주소"
       ],
       "Strong": [
         "강함"
@@ -5916,6 +5948,25 @@
     "Label, credit card": {
       "ZIP code": [
         "우편번호"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "폴더 생성"
+      ],
+      "Create label": [
+        "라벨 만들기"
+      ],
+      "Edit folder": [
+        "폴더 편집"
+      ],
+      "Edit label": [
+        "라벨 수정"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } 생성됨"
       ]
     },
     "Lable": {
@@ -6077,6 +6128,9 @@
       ],
       "for ${ price }": [
         "${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Porkbun 도메인으로 계정을 설정하세요."
       ]
     },
     "mailtrial2024: Action": {
@@ -6219,6 +6273,17 @@
         "스팸"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "색상"
+      ],
+      "Folder name": [
+        "폴더 이름"
+      ],
+      "Label name": [
+        "라벨 이름"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "빠른 VPN 속도"
@@ -6243,17 +6308,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon }에 시작하기"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
-      ],
       "Upgrade": [
         "업그레이드"
       ],
       "Upgrade now": [
         "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: action": {
@@ -6898,12 +6957,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } 체험"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 Mail Plus 얻기"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
-      ],
       "Your account's usage": [
         "계정 사용량"
       ]
@@ -7374,6 +7427,9 @@
       ],
       "My reason isn't listed": [
         "기타 사유"
+      ],
+      "No parent folder": [
+        "상위 폴더 없음"
       ],
       "No permission": [
         "권한 없음"
@@ -7886,6 +7942,9 @@
       ],
       "Search for an email or IP address": [
         "이메일 또는 IP 주소 검색하기"
+      ],
+      "Search parent folder": [
+        "상위 폴더 검색"
       ],
       "Search users": [
         "사용자 검색"
@@ -9253,9 +9312,6 @@
       "Comprehensive privacy and security": [
         "종합적인 프라이버시와 보안"
       ],
-      "Dark web monitoring": [
-        "다크 웹 모니터링"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "데스크톱 앱 및 이메일 클라이언트 지원 (IMAP 기반)"
       ],
@@ -10115,9 +10171,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } 게이트웨이 편집"
-      ],
-      "Edit invoice details": [
-        "신용 청구서 세부 정보 편집"
       ],
       "Edit servers": [
         "서버 편집"

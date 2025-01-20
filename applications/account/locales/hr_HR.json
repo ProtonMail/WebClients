@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -298,9 +298,6 @@
       "Edit group": [
         "Uredi grupu"
       ],
-      "Edit invoice details": [
-        "Uredite detalje fakture"
-      ],
       "Edit label": [
         "Uredi oznaku"
       ],
@@ -363,9 +360,6 @@
       ],
       "Generate token": [
         "Stvori token"
-      ],
-      "Get ${ vpnPlus }": [
-        "Nabavite ${ vpnPlus }"
       ],
       "Get more": [
         "Nabavi više"
@@ -1099,9 +1093,6 @@
       "Advanced account protection": [
         "Napredna zaštita korisničkog računa"
       ],
-      "Dark Web Monitoring": [
-        "Praćenje Tamnog Weba"
-      ],
       "Easily add or remove users": [
         "Jednostavno dodajte ili uklonite korisnike"
       ],
@@ -1172,9 +1163,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Pristupite sadržaju na streaming uslugama uključujući Netflix, Disney+, Prime Video i još mnogo toga, s bilo kojeg mjesta."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Osigurajte sigurne prijave na svim svojim uređajima. Uključuje neograničene hide-my-email aliasa, dijeljenje, integrirani 2FA, Praćenje tamnog weba i još mnogo toga."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Osigurajte svoje e-pošte i raspored s end-to-end šifriranjem. Uključuje ${ addresses } e-poštu adrese, podršku za prilagođene e-poštne domene, ${ BRAND_NAME } Scribe pomoćnika za pisanje, neograničene hide-my-email alias i još mnogo toga.",
@@ -4682,9 +4670,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Vašom pretplatom upravlja Mozilla. Molimo kontaktirajte Mozilla podršku."
       ]
     },
     "Info - folder colouring feature": {
@@ -5214,6 +5199,9 @@
       "Category": [
         "Kategorija"
       ],
+      "City": [
+        "Grad"
+      ],
       "Code": [
         "Kôd"
       ],
@@ -5225,6 +5213,9 @@
       ],
       "Colors": [
         "Boje"
+      ],
+      "Company": [
+        "Tvrtka"
       ],
       "Composer": [
         "Prozor za novu poruku"
@@ -5481,9 +5472,6 @@
       "Name": [
         "Naziv"
       ],
-      "Name and address": [
-        "Ime i adresa"
-      ],
       "Navigation": [
         "Navigacija"
       ],
@@ -5501,6 +5489,9 @@
       ],
       "No label found": [
         "Nema pronađene oznake"
+      ],
+      "Note": [
+        "Bilješka"
       ],
       "Notification": [
         "Obavijest"
@@ -5648,6 +5639,9 @@
       ],
       "Sticky labels": [
         "Automatske oznake"
+      ],
+      "Street address": [
+        "Adresa"
       ],
       "Sync with system": [
         "Sinkroniziraj s operativnim sistemom"
@@ -7553,6 +7547,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -7577,17 +7582,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -8143,9 +8137,6 @@
       ],
       "Edit filter": [
         "Uredi filtar"
-      ],
-      "Edit invoice details": [
-        "Uredite detalje fakture"
       ],
       "Edit servers": [
         "Uredi poslužitelje"

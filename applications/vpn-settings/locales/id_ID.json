@@ -169,8 +169,14 @@
       "Create": [
         "Buat"
       ],
+      "Create folder": [
+        "Buat folder"
+      ],
       "Create Gateway": [
         "Buat Gateway"
+      ],
+      "Create new policy": [
+        "Buat kebijakan baru"
       ],
       "Create users": [
         "Buat pengguna"
@@ -262,9 +268,6 @@
       "Edit group": [
         "Sunting grup"
       ],
-      "Edit invoice details": [
-        "Sunting rincian faktur"
-      ],
       "Edit name": [
         "Sunting nama"
       ],
@@ -312,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Lupa metode pemulihan?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Dapatkan ${ MAIL_SHORT_APP_NAME } Plus dengan harga ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Dapatkan ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Dapatkan alamat email terenkripsi baru"
@@ -459,6 +456,9 @@
       ],
       "Refer a friend": [
         "Rujuk teman"
+      ],
+      "Refresh data": [
+        "Segarkan data"
       ],
       "Refresh status": [
         "Muat ulang status"
@@ -1012,9 +1012,6 @@
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
       ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
-      ],
       "Easily add or remove users": [
         "Tambah atau kurangi pengguna secara mudah"
       ],
@@ -1100,9 +1097,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, dan masih banyak lagi."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -1237,12 +1231,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Ubah pengaturan alamat email"
-      ],
-      "Continue": [
-        "Lanjutkan"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -2311,11 +2299,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Semua orang dalam organisasi Anda dapat menghubungkan ke server terbagi dalam semua negara."
+      ],
       "If disabled, only admins will have access.": [
         "Apabila dinonaktifkan, hanya admin yang akan memiliki akses."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Pisahkan aspek kehidupan Anda dan rapikan kotak masuk Anda dengan alamat tambahan."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Tidak ada siapa pun dalam organisasi Anda yang dapat menghubungkan ke server terbagi."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
@@ -3251,6 +3248,11 @@
         "Terabyte"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } berhasil diperbarui"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Izin:"
@@ -3475,6 +3477,9 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } pengguna saat ini memiliki akses ke server terbagi."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -3657,6 +3662,9 @@
       ],
       "Allocated": [
         "Dialokasikan"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Perbolehkan pengguna untuk menghubungkan ke server terbagi aman dari bagian **Negara** dalam aplikasi ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Telah dialokasikan"
@@ -3869,13 +3877,13 @@
         "JANGAN lupakan kata sandi ini. Apabila Anda lupa, Anda tidak lagi akan dapat mengelola organisasi Anda."
       ],
       "Domain ownership failed verification.": [
-        "Kemilikan domain tidak berhasil diverifikasi."
+        "Kepemilikan domain gagal diverifikasi."
       ],
       "Domain ownership not verified.": [
-        "Kemilikan domain tidak diverifikasi."
+        "Kepemilikan domain tidak terverifikasi."
       ],
       "Domain ownership verified.": [
-        "Kemilikan domain diverifikasi."
+        "Kepemilikan domain terverifikasi."
       ],
       "domain used": [
         "domain digunakan"
@@ -4117,6 +4125,9 @@
       "Increase your account security by verifying your email address.": [
         "Tingkatkan keamanan akun Anda dengan memverifikasi alamat email Anda."
       ],
+      "Inherited from parent folder": [
+        "Diwariskan dari folder induk"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
       ],
@@ -4303,6 +4314,9 @@
       "Must start with a letter.": [
         "Nama gateway harus diawali dengan huruf."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
+      ],
       "New user invited to organization": [
         "Pengguna baru diundang ke organisasi"
       ],
@@ -4335,6 +4349,12 @@
       ],
       "of": [
         "dari"
+      ],
+      "Off": [
+        "Mati"
+      ],
+      "On": [
+        "Nyala"
       ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
@@ -4489,9 +4509,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
-      "Registering your subscription...": [
-        "Mendaftarkan langganan Anda..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Jangan lupa untuk membagikan rincian masuk ini kepada masing-masing pengguna."
       ],
@@ -4569,9 +4586,6 @@
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
-      ],
-      "Setting up your new address...": [
-        "Menyiapkan alamat baru Anda..."
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
@@ -5071,6 +5085,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Mohon tutup jendela lainnya yang terbuka sebelum memulai percakapan baru."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk terhubung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga, seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
       ],
@@ -5194,14 +5211,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Anda akan dapat menambahkan server berikut ke Gateway lain dengan segera."
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info for cash payment method": {
@@ -5223,11 +5242,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Anda dapat menambahkan metode pembayaran agar langganan Anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Masukkan nama dan alamat untuk Anda sendiri atau organisasi Anda. Detail ini akan ditambahkan ke faktur personal dan organisasi."
       ]
     },
     "Info subscription": {
@@ -5446,11 +5460,20 @@
       "Choose a name for the generated certificate file": [
         "Pilih nama untuk berkas sertifikat yang dihasilkan"
       ],
+      "City": [
+        "Kota"
+      ],
       "Code": [
         "Kode"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
+      "Colors": [
+        "Warna"
+      ],
+      "Company": [
+        "Perusahaan"
       ],
       "Company name": [
         "Nama perusahaan"
@@ -5560,6 +5583,9 @@
       "First name": [
         "Nama depan"
       ],
+      "Folder location": [
+        "Lokasi folder"
+      ],
       "Gateway name": [
         "Nama Gateway"
       ],
@@ -5620,9 +5646,6 @@
       "Name": [
         "Nama"
       ],
-      "Name and address": [
-        "Nama dan alamat"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Penerusan Port)"
       ],
@@ -5652,6 +5675,12 @@
       ],
       "Non-standard ports": [
         "Port non-standar"
+      ],
+      "Note": [
+        "Catatan"
+      ],
+      "Notification": [
+        "Pemberitahuan"
       ],
       "OpenVPN / IKEv2 password": [
         "Kata sandi OpenVPN / IKEv2"
@@ -5778,6 +5807,9 @@
       ],
       "Start date": [
         "Tanggal mulai"
+      ],
+      "Street address": [
+        "Alamat jalan"
       ],
       "Strong": [
         "Kuat"
@@ -5910,6 +5942,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Kode pos"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Buat folder"
+      ],
+      "Create label": [
+        "Buat label"
+      ],
+      "Edit folder": [
+        "Sunting folder"
+      ],
+      "Edit label": [
+        "Sunting label"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } dibuat"
       ]
     },
     "Lable": {
@@ -6068,6 +6119,9 @@
       ],
       "for ${ price }": [
         "untuk ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Atur akun Anda dengan domain Porkbun Anda."
       ]
     },
     "mailtrial2024: Action": {
@@ -6210,6 +6264,17 @@
         "Spam"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Warna"
+      ],
+      "Folder name": [
+        "Nama folder"
+      ],
+      "Label name": [
+        "Nama label"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
@@ -6234,17 +6299,11 @@
       "Get started for ${ priceCoupon }": [
         "Mulai dengan harga ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6889,12 +6948,6 @@
       "${ shortPlan.title } Trial": [
         "Uji Coba ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
-      ],
       "Your account's usage": [
         "Penggunaan akun Anda"
       ]
@@ -7353,6 +7406,9 @@
       ],
       "My reason isn't listed": [
         "Alasan saya tidak ada di daftar"
+      ],
+      "No parent folder": [
+        "Tidak ada folder induk"
       ],
       "No permission": [
         "Tidak ada izin"
@@ -7856,6 +7912,9 @@
       ],
       "Search for an email or IP address": [
         "Cari alamat email atau IP"
+      ],
+      "Search parent folder": [
+        "Cari pada folder induk"
       ],
       "Search users": [
         "Cari pengguna"
@@ -9223,9 +9282,6 @@
       "Comprehensive privacy and security": [
         "Privasi dan keamanan yang komprehensif"
       ],
-      "Dark web monitoring": [
-        "Pemantauan dark web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Dukungan aplikasi desktop dan klien email (melalui IMAP)"
       ],
@@ -10088,9 +10144,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Sunting Gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Sunting rincian faktur"
       ],
       "Edit servers": [
         "Sunting server"
