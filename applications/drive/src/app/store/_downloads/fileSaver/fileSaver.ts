@@ -1,7 +1,7 @@
 import type { ReadableStream } from 'web-streams-polyfill';
 
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
@@ -18,7 +18,9 @@ import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { LogCallback } from '../interface';
 import { initDownloadSW, isServiceWorkersUnsupported, openDownloadStream } from './download';
 
-const isOPFSSupported = () => !!(navigator.storage && navigator.storage.getDirectory);
+const isOPFSSupported = () => {
+    return !isSafari() && !isMobile() && !!(navigator.storage && navigator.storage.getDirectory);
+};
 
 const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
 const MB = 1024 * 1024;
