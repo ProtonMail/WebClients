@@ -66,24 +66,12 @@ export function billingStateValidator(billingAddress: BillingAddress) {
 
 export type FullBillingAddress = {
     CountryCode: string;
-    State?: string | null;
-    Company?: string;
-    Address?: string;
-    ZipCode?: string;
-    City?: string;
-    FirstName?: string;
-    LastName?: string;
-    VatId?: string;
+    State: string | null;
+    Company: string | null;
+    Address: string | null;
+    ZipCode: string | null;
+    City: string | null;
+    FirstName: string | null;
+    LastName: string | null;
+    VatId: string | null;
 };
-
-export function isFullBillingAddress(obj: any): obj is FullBillingAddress {
-    if (!obj || !obj.CountryCode) {
-        return false;
-    }
-
-    if (countriesWithStates.includes(obj.CountryCode)) {
-        return !!obj.State;
-    }
-
-    return true;
-}
