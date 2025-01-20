@@ -154,6 +154,7 @@ const MainContainer = () => {
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
+    const canDisplayPassReports = useFlag('PassB2BReports');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -192,6 +193,7 @@ const MainContainer = () => {
         assistantKillSwitch,
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
+        canDisplayPassReports,
         memberships,
         groups,
         isUserGroupsMembershipFeatureEnabled,
