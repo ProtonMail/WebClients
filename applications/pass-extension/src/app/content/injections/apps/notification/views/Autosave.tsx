@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
@@ -40,7 +40,20 @@ export const Autosave: FC<Props> = ({ data }) => {
     const { createNotification } = useNotifications();
 
     const [busy, setBusy] = useMountedState(false);
-    const shouldUpdate = usePrevious(data) !== data;
+
+    const prev = usePrevious(data);
+
+    const shouldUpdate = useMemo(() => {
+        /** The autosave data may get revalidated in certain cases :
+         * - during password autosuggesting with auto-prompt on regenerate
+         * - if the autosave reconciliation re-triggers (can happen on resize) */
+        return Boolean(
+            prev &&
+                (data.password !== prev?.password ||
+                    data.type !== prev?.type ||
+                    data.userIdentifier !== prev?.userIdentifier)
+        );
+    }, [data]);
 
     /** if the autosave prompt was shown before an actual form
      * submission : do not discard the form data */
