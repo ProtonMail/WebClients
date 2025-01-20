@@ -24,6 +24,8 @@ import {
   DropdownMenu,
   DropdownMenuButton,
   DropdownMenuLink,
+  ButtonGroup,
+  SimpleDropdown,
 } from '@proton/components'
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { useSignupFlowModal } from '../SignupFlowModal/SignupFlowModal'
@@ -119,63 +121,69 @@ export const HeaderPublicOptions = ({
     <div className="flex flex-nowrap items-center gap-2">
       <DocumentActiveUsers className="mr-2 hidden md:flex" />
 
+      <ButtonGroup className="!py-0 head-max-849:![display:none]">
+        <Spotlight
+          show={shouldShowMakeCopyTooltip && role.isPublicViewer()}
+          content={c('Spotlight').t`To edit this document, create a copy that you can modify.`}
+          originalPlacement="bottom-end"
+        >
+          <Button
+            color="weak"
+            size="small"
+            className="flex items-center gap-2 !border-0"
+            data-testid="make-a-copy-button"
+            onClick={handleMakeCopyClick}
+          >
+            <Icon name="squares" />
+            <span>{c('Action').t`Create a copy`}</span>
+          </Button>
+        </Spotlight>
+        <SimpleDropdown data-testid="public-options-dropdown-button">
+          {!isLoading && (
+            <Spotlight
+              show={showSpotlight}
+              content={c('Spotlight')
+                .t`A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.`}
+              originalPlacement="bottom-end"
+            >
+              <Tooltip
+                title={
+                  isAlreadyBookmarked
+                    ? ''
+                    : c('Tooltip').t`Add this shared file to your ${DRIVE_APP_NAME} for easy access later.`
+                }
+              >
+                <ButtonLike
+                  as={DropdownButton}
+                  size="small"
+                  loading={isLoading || isAdding}
+                  className="flex items-center gap-2 !border-0 head-max-849:!min-h-7"
+                  onClick={handleSaveToDriveClick}
+                  color="weak"
+                  data-testid="save-in-drive-button"
+                >
+                  {!isAdding && <Icon name="folder-arrow-in" />}
+                  <span className="head-max-849:!sr-only">
+                    {isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}
+                  </span>
+                </ButtonLike>
+              </Tooltip>
+            </Spotlight>
+          )}
+        </SimpleDropdown>
+      </ButtonGroup>
+
       {!user && (
         <ButtonLike
           className="flex head-max-849:![display:none]"
           as="a"
           href={DOCS_SIGNUP_FREE}
           target="_blank"
-          color="weak"
+          color="norm"
           size="small"
           data-testid="public-view-sign-up-link"
         >{c('Action').t`Sign up`}</ButtonLike>
       )}
-
-      {!isLoading && (
-        <Spotlight
-          show={showSpotlight}
-          content={c('Spotlight')
-            .t`A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.`}
-          originalPlacement="bottom-end"
-        >
-          <Tooltip
-            title={
-              isAlreadyBookmarked
-                ? ''
-                : c('Tooltip').t`Add this shared file to your ${DRIVE_APP_NAME} for easy access later.`
-            }
-          >
-            <Button
-              size="small"
-              loading={isLoading || isAdding}
-              className="flex items-center gap-2 head-max-849:!min-h-7"
-              onClick={handleSaveToDriveClick}
-              color="weak"
-              data-testid="save-in-drive-button"
-            >
-              {!isAdding && <Icon name="folder-arrow-in" />}
-              <span className="head-max-849:!sr-only">{isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}</span>
-            </Button>
-          </Tooltip>
-        </Spotlight>
-      )}
-
-      <Spotlight
-        show={shouldShowMakeCopyTooltip && role.isPublicViewer()}
-        content={c('Spotlight').t`To edit this document, create a copy that you can modify.`}
-        originalPlacement="bottom-end"
-      >
-        <Button
-          color={user ? 'weak' : 'norm'}
-          size="small"
-          className="flex items-center gap-2 head-max-849:![display:none]"
-          data-testid="make-a-copy-button"
-          onClick={handleMakeCopyClick}
-        >
-          <Icon name="squares" />
-          <span>{c('Action').t`Create a copy`}</span>
-        </Button>
-      </Spotlight>
 
       {user && (
         <>
