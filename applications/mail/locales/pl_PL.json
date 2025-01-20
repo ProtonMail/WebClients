@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "O aliasach hide-my-email"
       ],
+      "Activate": [
+        "Aktywuj"
+      ],
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
@@ -522,9 +525,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Wybierz plan ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Wybierz plan ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -776,6 +776,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
+      ],
+      "More options": [
+        "Więcej opcji"
       ],
       "More refine actions": [
         "Więcej akcji"
@@ -1329,10 +1332,10 @@
       "Upgrade": [
         "Ulepsz"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Ulepsz teraz"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Ulepsz teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1722,9 +1725,6 @@
       "Advanced account protection": [
         "Zaawansowana ochrona konta"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Easily add or remove users": [
         "Łatwo dodawaj lub usuwaj użytkowników"
       ],
@@ -1810,9 +1810,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów hide-my-email, udostępnianie, zintegrowaną aplikację uwierzytelniającą 2FA, Monitoring dark web i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje ${ addresses } adres e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej.",
@@ -1945,12 +1942,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Zmień ustawienia adresu e-mail"
-      ],
-      "Continue": [
-        "Kontynuuj"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -7100,9 +7091,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
-      "Registering your subscription...": [
-        "Rejestrowanie subskrypcji..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Pamiętaj, aby zaktualizować adres w menedżerze haseł lub miejscu, gdzie przechowujesz swoje konto i dane logowania."
       ],
@@ -7210,9 +7198,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
-      ],
-      "Setting up your new address...": [
-        "Konfiguracja nowego adresu..."
       ],
       "Shorten selection": [
         "Skróć zaznaczenie"
@@ -9455,14 +9440,11 @@
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
+      "Upgrade": [
+        "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -10130,14 +10112,6 @@
         "Zmienić plany?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Wybierz plan Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpiecz swój harmonogram dzięki szyfrowaniu end-to-end. Zawiera obsługę niestandardowych kalendarzy, udostępnianie kalendarzy i wiele więcej."
@@ -10535,9 +10509,6 @@
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
-      ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
       ],
       "Download the desktop app": [
         "Pobierz aplikację desktopową"
@@ -11640,6 +11611,11 @@
         "Podpisz"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Nazwa wyświetlana"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Szybciej w aplikacji"
@@ -12265,9 +12241,6 @@
       ],
       "Comprehensive privacy and security": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo"
-      ],
-      "Dark web monitoring": [
-        "Monitoring dark web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Wsparcie dla aplikacji desktopowych i pocztowych (przez IMAP)"
@@ -13016,9 +12989,6 @@
       "Download Desktop app": [
         "Pobierz aplikację desktopową"
       ],
-      "Enable Dark Web Monitoring": [
-        "Włącz Monitoring dark web"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Uzyskaj adres “@${ PM_DOMAIN }“"
       ],
@@ -13224,9 +13194,6 @@
       ],
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
       ],
       "Data recovery": [
         "Odzyskiwanie danych"
@@ -13837,6 +13804,11 @@
         "Dzisiaj"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
@@ -13918,11 +13890,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Tor out of date": {

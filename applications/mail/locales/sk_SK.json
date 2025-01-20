@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "O aliasoch hide-my-email"
       ],
+      "Activate": [
+        "Aktivovať"
+      ],
       "Activate recovery": [
         "Aktivovať obnovu"
       ],
@@ -522,9 +525,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Získajte ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Získajte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Skontaktovať sa"
       ],
@@ -776,6 +776,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
+      ],
+      "More options": [
+        "Ďalšie možnosti"
       ],
       "More refine actions": [
         "Ďalšie spresnenie akcií"
@@ -1329,11 +1332,11 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
-      "Upgrade Now": [
-        "Inovovať teraz"
-      ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade Now": [
+        "Inovovať teraz"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšiť na ${ BRAND_NAME } Unlimited"
@@ -1725,9 +1728,6 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
-      ],
       "Easily add or remove users": [
         "Jednoduché pridanie alebo odstránenie používateľov"
       ],
@@ -1813,9 +1813,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpečné prihlásenie na všetkých vašich zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, monitorovanie Dark Webu a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
@@ -1948,12 +1945,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Zmena nastavení emailovej adresy"
-      ],
-      "Continue": [
-        "Pokračovať"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
       ],
@@ -7127,9 +7118,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
       ],
-      "Registering your subscription...": [
-        "Registrácia vášho predplatného..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Nezabudnite ho aktualizovať v správcovi hesiel alebo kdekoľvek, kde máte uložené údaje o svojom účte a prihlasovacie údaje."
       ],
@@ -7237,9 +7225,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavenie PGP vám umožní odosielať end-to-end šifrované emaily používateľom, ktorí nemajú ${ BRAND_NAME } a používajú službu kompatibilnú s PGP."
-      ],
-      "Setting up your new address...": [
-        "Nastavovanie vašej novej adresy..."
       ],
       "Shorten selection": [
         "Skrátiť výber"
@@ -9497,14 +9482,11 @@
       "Get started for ${ priceCoupon }": [
         "Začnite teraz za ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
+      "Upgrade": [
+        "Upgradovať"
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -10172,14 +10154,6 @@
         "Zmeniť plán?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získajte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
@@ -10580,9 +10554,6 @@
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Vymazanie odstránených a nevyžiadaných emailov po 30 dňoch."
-      ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
       ],
       "Distraction-free emailing": [
         "Emailovanie bez rozptyľovania"
@@ -11694,6 +11665,11 @@
         "Podpísať"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Zobrazované meno"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Rýchlejší v aplikácii"
@@ -12319,9 +12295,6 @@
       ],
       "Comprehensive privacy and security": [
         "Komplexná ochrana súkromia a zabezpečenia"
-      ],
-      "Dark web monitoring": [
-        "Monitorovanie Dark webu"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Podpora desktopovej aplikácie a emailového klienta (cez IMAP)"
@@ -13070,9 +13043,6 @@
       "Download Desktop app": [
         "Stiahnuť desktopovú aplikáciu"
       ],
-      "Enable Dark Web Monitoring": [
-        "Zapnúť monitorovanie Dark Webu"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Získať adresu “@${ PM_DOMAIN }“"
       ],
@@ -13278,9 +13248,6 @@
       ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
-      ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
       ],
       "Data recovery": [
         "Obnovenie údajov"
@@ -13891,6 +13858,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editore bude použitý na odoslanie užívateľovi. Jednoduchý text znamená, že správa bude pri odoslaní vždy prevedená na obyčajný text."
@@ -13972,11 +13944,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Tor out of date": {
