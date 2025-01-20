@@ -169,6 +169,9 @@
       "Create": [
         "Skapa"
       ],
+      "Create folder": [
+        "Skapa mapp"
+      ],
       "Create Gateway": [
         "Skapa gateway"
       ],
@@ -265,9 +268,6 @@
       "Edit group": [
         "Redigera grupp"
       ],
-      "Edit invoice details": [
-        "Redigera fakturadetaljer"
-      ],
       "Edit name": [
         "Redigera namn"
       ],
@@ -315,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Skaffa ${ MAIL_SHORT_APP_NAME } Plus för ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Skaffa ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Skaffa en ny krypterad e-postadress"
@@ -461,7 +455,7 @@
         "Återställ data"
       ],
       "Refer a friend": [
-        "Bjud in en vän"
+        "Hänvisa en vän"
       ],
       "Refresh data": [
         "Uppdatera data"
@@ -1023,9 +1017,6 @@
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
-      "Dark Web Monitoring": [
-        "Övervakning av mörka webben"
-      ],
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
       ],
@@ -1111,9 +1102,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade hide-my-email-alias, delning, integrerad 2FA, övervakning av mörka webben och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
@@ -1251,12 +1239,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Ändra e-postadressinställningarna"
-      ],
-      "Continue": [
-        "Fortsätt"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
       ],
@@ -3289,6 +3271,11 @@
         "Terabyte"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } uppdaterad"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Tillåt:"
@@ -4192,6 +4179,9 @@
       "Increase your account security by verifying your email address.": [
         "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
       ],
+      "Inherited from parent folder": [
+        "Ärvd från överordnad mapp"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installera en landskonfigurationsfil för att ansluta till en slumpmässig server i det land du väljer."
       ],
@@ -4328,7 +4318,7 @@
         "Läser in förhandsgranskning"
       ],
       "Loading...": [
-        "Läser in..."
+        "Laddar in …"
       ],
       "Low Priority": [
         "Låg prioritet"
@@ -4377,6 +4367,9 @@
       ],
       "Must start with a letter.": [
         "Måste börja med en bokstav."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
       "New user invited to organization": [
         "Ny användare inbjuden till organisation"
@@ -4468,7 +4461,7 @@
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Betalningar skyddas med TLS-kryptering och schweiziska integritetslagar."
+        "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
       "per month": [
         "per månad"
@@ -4578,9 +4571,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
-      "Registering your subscription...": [
-        "Registrerar din prenumeration..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Kom ihåg att dela användarens inloggningsinformation med dem."
       ],
@@ -4658,9 +4648,6 @@
       ],
       "Session timed out": [
         "Session timeout"
-      ],
-      "Setting up your new address...": [
-        "Konfigurerar din nya adress..."
       ],
       "Setting up your organization": [
         "Ställer in din organisation"
@@ -5170,6 +5157,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan bara ha en chattinstans öppen åt gången. Stäng tidigare konversationer innan du startar en ny."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan använda följande inloggningsuppgifter för att ansluta till en ${ VPN_APP_NAME }-server med en tredje parts VPN-app med öppen källkod, såsom Tunnelblick för macOS eller OpenVPN för GNU/Linux."
       ],
@@ -5284,7 +5274,7 @@
         "Din organisations e-post skyddas med end-to-end-kryptering genom organisationsnyckeln. Detta fingeravtryck kan användas för att verifiera att alla administratörer på ditt konto har samma nyckel."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Dina betalningsuppgifter skyddas med TLS-kryptering och schweiziska integritetslagar."
+        "Dina betalningsuppgifter är skyddade med TLS-kryptering och schweiziska integritetslagar."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
@@ -5295,14 +5285,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du kommer att kunna lägga till dessa servrar till en annan gateway omedelbart."
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info for cash payment method": {
@@ -5324,11 +5316,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan lägga till en betalningsmetod så att din prenumeration förnyas automatiskt. Andra betalningsmetoder är också tillgängliga."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Ange ett namn och adress för dig själv eller din organisation. Dessa detaljer kommer att läggas till på både personliga och organisationsfakturor."
       ]
     },
     "Info subscription": {
@@ -5550,11 +5537,20 @@
       "Choose a name for the generated certificate file": [
         "Välj ett namn för den genererade certifikatfilen"
       ],
+      "City": [
+        "Ort"
+      ],
       "Code": [
         "Kod"
       ],
       "Code is 6 digits without spaces": [
         "Kod är 6 siffror utan mellanslag"
+      ],
+      "Colors": [
+        "Färger"
+      ],
+      "Company": [
+        "Företag"
       ],
       "Company name": [
         "Företagsnamn"
@@ -5664,6 +5660,9 @@
       "First name": [
         "Förnamn"
       ],
+      "Folder location": [
+        "Mappens plats"
+      ],
       "Gateway name": [
         "Gatewaynamn"
       ],
@@ -5724,9 +5723,6 @@
       "Name": [
         "Namn"
       ],
-      "Name and address": [
-        "Namn och adress"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (vidarebefordran av port)"
       ],
@@ -5756,6 +5752,12 @@
       ],
       "Non-standard ports": [
         "Icke-standardiserade portar"
+      ],
+      "Note": [
+        "Anteckning"
+      ],
+      "Notification": [
+        "Avisering"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN-/IKEv2-lösenord"
@@ -5883,6 +5885,9 @@
       ],
       "Start date": [
         "Startdatum"
+      ],
+      "Street address": [
+        "Gatuadress"
       ],
       "Strong": [
         "Starkt"
@@ -6018,6 +6023,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Postnummer"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Skapa mapp"
+      ],
+      "Create label": [
+        "Skapa etikett"
+      ],
+      "Edit folder": [
+        "Redigera mapp"
+      ],
+      "Edit label": [
+        "Redigera etikett"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } skapad"
       ]
     },
     "Lable": {
@@ -6180,6 +6204,9 @@
       ],
       "for ${ price }": [
         "för ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Konfigurera ditt konto med din Porkbun-domän."
       ]
     },
     "mailtrial2024: Action": {
@@ -6322,6 +6349,17 @@
         "Skräppost"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Färg"
+      ],
+      "Folder name": [
+        "Mappnamn"
+      ],
+      "Label name": [
+        "Etikettnamn"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Högsta VPN-hastighet"
@@ -6346,17 +6384,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom igång för ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Uppgradera"
       ],
       "Upgrade now": [
         "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7026,12 +7058,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } provperiod"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaffa Mail Plus för ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceCoupon } är giltigt den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Dun kan säga upp när som helst."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ],
@@ -7507,6 +7533,9 @@
       ],
       "My reason isn't listed": [
         "Min anledning är inte listad"
+      ],
+      "No parent folder": [
+        "Ingen överordnad mapp"
       ],
       "No permission": [
         "Ingen behörighet"
@@ -8031,6 +8060,9 @@
       ],
       "Search for an email or IP address": [
         "Sök efter en e-post eller IP-adress"
+      ],
+      "Search parent folder": [
+        "Sök överordnad mapp"
       ],
       "Search users": [
         "Sök användare"
@@ -9447,9 +9479,6 @@
       "Comprehensive privacy and security": [
         "Omfattande integritet och säkerhet"
       ],
-      "Dark web monitoring": [
-        "Mörka webben-övervakning"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
       ],
@@ -10315,9 +10344,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigera gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Redigera fakturadetaljer"
       ],
       "Edit servers": [
         "Redigera servrar"

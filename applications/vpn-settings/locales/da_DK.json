@@ -160,6 +160,9 @@
       "Create": [
         "Opret"
       ],
+      "Create folder": [
+        "Opret mappe"
+      ],
       "Create Gateway": [
         "Opret gateway"
       ],
@@ -250,9 +253,6 @@
       "Edit group": [
         "Rediger gruppe"
       ],
-      "Edit invoice details": [
-        "Rediger fakturadetaljer"
-      ],
       "Edit name": [
         "Rediger navn"
       ],
@@ -300,12 +300,6 @@
       ],
       "Forgot recovery method?": [
         "Glemt gendannelsesmetoden?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Få ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
@@ -992,9 +986,6 @@
       "Advanced account protection": [
         "Avanceret program til beskyttelse af konto"
       ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
-      ],
       "Easily add or remove users": [
         "Tilsæt eller fjern brugere nemt"
       ],
@@ -1071,9 +1062,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, Monitorering af det mørke net og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
@@ -1211,9 +1199,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Forsæt"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -3194,6 +3179,11 @@
         "Terabyte"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } opdateret"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Tillad:"
@@ -3594,6 +3584,9 @@
       "Affected user is on row": [
         "Berørt bruger er på række",
         "Berørt brugere er på række"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ],
       "All inactive members deleted": [
         "Alle inaktive brugere er slettet"
@@ -4033,6 +4026,9 @@
       "Increase your account security by verifying your email address.": [
         "Forøg din kontosikkerhed, ved at verificere din e-mailadresse"
       ],
+      "Inherited from parent folder": [
+        "Nedarvet fra overordnet mappe"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installer en landekonfigurationsfil for at oprette forbindelse til en tilfældig server i et land af dit eget valg."
       ],
@@ -4213,6 +4209,9 @@
       "Must start with a letter.": [
         "Skal begynde med et bogstav"
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
+      ],
       "New user invited to organization": [
         "Ny bruger inviteret til organisation"
       ],
@@ -4387,9 +4386,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
-      "Registering your subscription...": [
-        "Registrerer dit abonnement..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med vedkommende."
       ],
@@ -4452,9 +4448,6 @@
       ],
       "Session timed out": [
         "Session er udløbet"
-      ],
-      "Setting up your new address...": [
-        "Konfigurerer din nye adresse..."
       ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
@@ -4946,6 +4939,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan kun have en chatinstans åben ad gangen. Luk venligst tidligere samtaler, før du starter en ny."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
       ],
@@ -5040,6 +5036,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation bruger single sign-on (SSO). Tryk på Log ind for at fortsætte med din SSO-udbyder."
       ],
@@ -5052,11 +5051,13 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
-      ],
       "Zoom meeting": [
         "Zoom-møde"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info for cash payment method": {
@@ -5078,11 +5079,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan tilføje en betalingsmetode for at få dit abonnement fornyet automatisk. Andre betalingsmetoder er også tilgængelige."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Indtast et navn og en adresse for dig selv eller din organisation. Disse oplysninger vil blive tilføjet til både personlige og organisatoriske fakturaer."
       ]
     },
     "Info subscription": {
@@ -5301,11 +5297,20 @@
       "Choose a name for the generated certificate file": [
         "Vælg et navn til den genererede certifikatfil"
       ],
+      "City": [
+        "By"
+      ],
       "Code": [
         "Kode"
       ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
+      ],
+      "Colors": [
+        "Farver"
+      ],
+      "Company": [
+        "Selskab"
       ],
       "Company name": [
         "Firmanavn"
@@ -5412,6 +5417,9 @@
       "First name": [
         "Fornavn"
       ],
+      "Folder location": [
+        "Mappeplacering"
+      ],
       "Gateway name": [
         "Gateway-navn"
       ],
@@ -5472,9 +5480,6 @@
       "Name": [
         "Navn"
       ],
-      "Name and address": [
-        "Navn og adresse"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Videresendelse af port)"
       ],
@@ -5504,6 +5509,12 @@
       ],
       "Non-standard ports": [
         "Ikke-standard porte"
+      ],
+      "Note": [
+        "Note"
+      ],
+      "Notification": [
+        "Notifikation"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-adgangskode"
@@ -5624,6 +5635,9 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "Street address": [
+        "Adresse"
       ],
       "Strong": [
         "Stærk"
@@ -5750,6 +5764,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Postnummer"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Opret mappe"
+      ],
+      "Create label": [
+        "Opret etiket"
+      ],
+      "Edit folder": [
+        "Redigér mappe"
+      ],
+      "Edit label": [
+        "Redigér etiket"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } oprettet"
       ]
     },
     "Link": {
@@ -6043,6 +6076,17 @@
         "Spam"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Farve"
+      ],
+      "Folder name": [
+        "Mappenavn"
+      ],
+      "Label name": [
+        "Etiketnavn"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
@@ -6067,17 +6111,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Fra ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Opgradér"
       ],
       "Upgrade now": [
         "Opgradér nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6738,9 +6776,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prøveversion"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Få Mail Plus for ${ priceCoupon }"
-      ],
       "Your account's usage": [
         "Din kontos forbrug"
       ]
@@ -7183,6 +7218,9 @@
       ],
       "My reason isn't listed": [
         "Min grund er ikke angivet"
+      ],
+      "No parent folder": [
+        "Ingen overordnet mappe"
       ],
       "No permission": [
         "Ingen tilladelse"
@@ -7652,6 +7690,9 @@
       ],
       "Search for a user or address": [
         "Søg efter en bruger eller adresse"
+      ],
+      "Search parent folder": [
+        "Søg i overordnet mappe"
       ],
       "Search users": [
         "Søg brugere"
@@ -8912,9 +8953,6 @@
       "Comprehensive privacy and security": [
         "Omfattende privatlivs- og sikkerhedsbeskyttelse"
       ],
-      "Dark web monitoring": [
-        "Overvågning af det mørke net"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Understøtter skrivebordsapp og e-mailklient (via IMAP)"
       ],
@@ -9730,9 +9768,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigér gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Rediger fakturadetaljer"
       ],
       "Edit servers": [
         "Redigér servere"
