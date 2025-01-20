@@ -5,7 +5,13 @@ import { getHasMigratedAddressKeys } from './keyMigration';
 
 export const getAddressesWithKeysToGenerate = (user: tsUserModel, addresses: Address[]) => {
     // If signed in as subuser, or not a private user
-    if (!user || !addresses || user.OrganizationPrivateKey || user.Private !== MEMBER_PRIVATE.UNREADABLE) {
+    if (
+        !user ||
+        !addresses ||
+        user.OrganizationPrivateKey ||
+        user.Private !== MEMBER_PRIVATE.UNREADABLE ||
+        !user.Keys.length
+    ) {
         return [];
     }
     // Any enabled address without keys
@@ -38,12 +44,13 @@ export const generateAllPrivateMemberKeys = async ({
     if (getHasMigratedAddressKeys(addresses)) {
         return Promise.all(
             addressesToGenerate.map((address) => {
-                return createAddressKeyV2({ // only v4 key generated for now
+                return createAddressKeyV2({
+                    // only v4 key generated for now
                     api,
                     userKeys,
                     address,
                     activeKeys: { v4: [], v6: [] },
-                    keyTransparencyVerify
+                    keyTransparencyVerify,
                 });
             })
         );
