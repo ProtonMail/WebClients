@@ -196,6 +196,9 @@
       "Create and copy alias": [
         "Takma ad ekle ve kopyala"
       ],
+      "Create folder": [
+        "Klasör ekle"
+      ],
       "Current plan": [
         "Geçerli tarife"
       ],
@@ -293,9 +296,6 @@
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon } ile ${ MAIL_SHORT_APP_NAME } Plus edinin"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -398,6 +398,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
+      "More options": [
+        "Diğer seçenekler"
       ],
       "Move to trash": [
         "Çöpe at"
@@ -632,9 +635,6 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
-      ],
-      "Understood": [
-        "Anladım"
       ],
       "Undo": [
         "Geri al"
@@ -887,9 +887,6 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
-      "Dark Web Monitoring": [
-        "Karanlık ağ izleme"
-      ],
       "Easily add or remove users": [
         "Kullanıcıları kolayca ekleme ve çıkarma"
       ],
@@ -975,9 +972,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Tüm aygıtlarınızda güvenli oturum açma. Sınırsız sayıda hide-my-email takma adı, paylaşım, bütünleşik iki adımlı doğrulama, karanlık ağ izleme ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -1106,12 +1100,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "E-posta adresi ayarlarını değiştir"
-      ],
-      "Continue": [
-        "İlerle"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ],
@@ -4037,9 +4025,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DRIVE_APP_NAME } üzerinden ${ DOCS_APP_NAME } dosyalarının indirilmesi şu anda desteklenmiyor. Bu dosyalar indirme işleminize katılmayacak."
-      ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
       ],
@@ -4411,9 +4396,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Lütfen yaptığınız değişikliklerin kopyasını ana menüden dışa aktarın ve sayfayı yeniden yükleyin."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Bunları indirmek isterseniz lütfen doğrudan ${ DOCS_APP_NAME } uygulamasından dışa aktarın."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
       ],
@@ -4479,9 +4461,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
-      "Registering your subscription...": [
-        "Abonelik kaydınız oluşturuluyor..."
-      ],
       "Restored version to": [
         "Şu sürüm geri yüklendi"
       ],
@@ -4517,9 +4496,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
-      ],
-      "Setting up your new address...": [
-        "Yeni adresiniz ayarlanıyor..."
       ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
@@ -4580,12 +4556,6 @@
       ],
       "The Beginning": [
         "Başlangıç"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Dijital imza kısmen doğrulandı. Dosya, belirli bir kullanıcı kaynağı belirtmeyen herkese açık bir sayfadan yüklendi."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Dijital imza kısmen doğrulandı. Klasör, belirli bir kullanıcı kaynağı belirtmeyen herkese açık bir sayfadan yüklendi."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
@@ -5902,14 +5872,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon } ile başlayın"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      "Upgrade": [
+        "Yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: action": {
@@ -6513,14 +6480,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon } ile Mail Plus edinin"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "new_plans: title": {
@@ -8535,9 +8494,6 @@
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
       ],
-      "Dark Web Monitoring": [
-        "Karanlık ağ izleme"
-      ],
       "Data recovery": [
         "Veri kurtarma"
       ],
@@ -8879,9 +8835,6 @@
       ],
       "Your document cannot be loaded": [
         "Belgeniz yüklenemedi"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "İndirdiğiniz dosyada bir ${ DOCS_APP_NAME } dosyası bulunuyor"
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"

@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -460,9 +460,6 @@
       "Edit group": [
         "Csoport szerkesztése"
       ],
-      "Edit invoice details": [
-        "Számlázási adatok szerkesztése"
-      ],
       "Edit label": [
         "Címke szerkesztése"
       ],
@@ -549,9 +546,6 @@
       ],
       "Generate token": [
         "Token létrehozása"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } választása"
       ],
       "Get a new encrypted email address": [
         "Szerezzen egy új, titkosított email címet"
@@ -1651,9 +1645,6 @@
       "Advanced account protection": [
         "Fejlett fiókvédelmi program"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Figyelés"
-      ],
       "Easily add or remove users": [
         "Felhasználók egyszerű hozzáadása vagy eltávolítása"
       ],
@@ -1724,9 +1715,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Hozzáférjen videós szolgáltatásokhoz, mint Netflix, Disney+, Prime Video és továbbiak, akárhonnan."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Biztonságos bejelentkezések az összes eszközén. Korlátlan számú hide-my-email álnév, megosztás, beépített 2FA, Dark Web Figyelés és további lehetőségek."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket.",
@@ -1872,9 +1860,6 @@
     "Button": {
       "Add link to your email footer": [
         "Hivatkozás hozzáadása az e-mail láblécéhez"
-      ],
-      "Continue": [
-        "Folytatás"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
@@ -8671,9 +8656,6 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "A helyreállító jelmondat egy 12, véletlenszerűen előállított szóból álló sorozat, megadott sorrendben."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Az ügyfélszolgálati megkeresése lezárásra került. Köszönjük, hogy felvette a kapcsolatot a ${ BRAND_NAME } ügyfélszolgálattal."
       ],
@@ -8713,11 +8695,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Az előfizetés automatikus megújításához megadhat egy fizetési módot. Más fizetési módok is elérhetők."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Adja meg saját vagy a szervezet nevét és címét. Mind a személyes, mind a szervezeti számlák ezekkel az adatokkal kerülnek kiállításra."
       ]
     },
     "Info on errors": {
@@ -9329,6 +9306,9 @@
       "Choose a name for the generated certificate file": [
         "Válasszon nevet a létrehozott tanúsítvány fájlnak"
       ],
+      "City": [
+        "Település"
+      ],
       "Code": [
         "Kód"
       ],
@@ -9343,6 +9323,9 @@
       ],
       "Colors": [
         "Színek"
+      ],
+      "Company": [
+        "Cég"
       ],
       "Composer": [
         "Szerkesztő"
@@ -9722,9 +9705,6 @@
       "Name": [
         "Név"
       ],
-      "Name and address": [
-        "Név és cím"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port Forwardolás)"
       ],
@@ -9757,6 +9737,9 @@
       ],
       "Non-standard ports": [
         "Nem szabványos portok"
+      ],
+      "Note": [
+        "Megjegyzés"
       ],
       "Notification": [
         "Értesítés"
@@ -9976,6 +9959,9 @@
       ],
       "Sticky labels": [
         "Ragadós címkék"
+      ],
+      "Street address": [
+        "Utca, házszám"
       ],
       "Strong": [
         "Erős"
@@ -10918,9 +10904,6 @@
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
       ]
     },
     "new_plans: action": {
@@ -11870,12 +11853,6 @@
       ],
       "An external address cannot be default": [
         "Egy külső cím nem lehet alapértelmezett"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Dark web figyelés kikapcsolva"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Dark web figyelés bekapcsolva"
       ],
       "Downloaded 2FA recovery codes": [
         "Kétlépcsős helyreállító kódok letöltve"
@@ -14025,6 +14002,9 @@
       "Advanced sharing security": [
         "Fejlett megosztási biztonság"
       ],
+      "Apps for all devices": [
+        "Alkalmazások minden eszközre"
+      ],
       "Based in Switzerland, GDPR compliant": [
         "Svájci székhely, a GDPR-nak megfelelő"
       ],
@@ -14036,6 +14016,9 @@
       ],
       "Email aliases": [
         "E-mail álnevek"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "Email, naptár, jelszókezelő és VPN is tartozik hozzá"
       ],
       "End-to-end encryption": [
         "Végpontok közti titkosítás"
@@ -14057,6 +14040,9 @@
       ],
       "The only business solution that is:": [
         "Az egyetlen üzleti megoldás ami:"
+      ],
+      "The only cloud storage with:": [
+        "Az egyetlen felhőalapú tárhely:"
       ],
       "Works on all devices": [
         "Minden eszközön működik"
@@ -14372,6 +14358,9 @@
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Ezzel kijelentkezik a többi eszközéről, és új biztonsági jelszót kell létrehoznia."
       ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Hogy megbizonyosodjon arról, hogy valóban Ön próbál bejelentkezni a **${ email }** címre, nézze át a megerősítő kódot, és hagyja jóvá a kérelmet egy másik eszközről."
+      ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Hogy megbizonyosodjon arról, hogy valóban Ön próbál bejelentkezni, kérjük, adja meg a biztonsági jelszavát."
       ],
@@ -14621,6 +14610,29 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -14795,29 +14807,6 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -15583,9 +15572,6 @@
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
       ],
-      "Dark Web Monitoring": [
-        "Dark web figyelés"
-      ],
       "Dashboard": [
         "Vezérlőpult"
       ],
@@ -15709,9 +15695,6 @@
       ],
       "Edit filter": [
         "Szűrő szerkesztése"
-      ],
-      "Edit invoice details": [
-        "Számlázási adatok szerkesztése"
       ],
       "Edit profile": [
         "Profil szerkesztése"
@@ -17061,6 +17044,9 @@
       ]
     },
     "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Haladó VPN beállítások"
+      ],
       "No ads": [
         "Nincsenek hirdetések"
       ]

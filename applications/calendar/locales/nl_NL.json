@@ -213,6 +213,9 @@
       "Create event": [
         "Afspraak aanmaken"
       ],
+      "Create folder": [
+        "Map maken"
+      ],
       "Create new contact": [
         "Nieuwe contactpersoon aanmaken"
       ],
@@ -313,9 +316,6 @@
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Krijg ${ MAIL_SHORT_APP_NAME } Plus voor ${ priceCoupon }"
       ],
       "Get in touch": [
         "Neem contact op"
@@ -728,11 +728,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade Now": [
-        "Upgrade Nu"
-      ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade Now": [
+        "Upgrade Nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
@@ -1037,9 +1037,6 @@
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Eenvoudig gebruikers toevoegen of verwijderen"
       ],
@@ -1125,9 +1122,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, Dark Web Monitoring en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
@@ -1256,12 +1250,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Wijzig de instellingen van het e-mailadres"
-      ],
-      "Continue": [
-        "Ga verder"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ],
@@ -2613,11 +2601,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2711,6 +2694,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4982,9 +4970,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
-      "Registering your subscription...": [
-        "Uw abonnement wordt geregistreerd..."
-      ],
       "Removed participants will be notified.": [
         "Verwijderde deelnemers zullen op de hoogte worden gebracht."
       ],
@@ -5015,9 +5000,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
-      ],
-      "Setting up your new address...": [
-        "Uw nieuwe adres wordt ingesteld..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -6022,6 +6004,12 @@
       "Add a gift code": [
         "Voeg een geschenkcode toe"
       ],
+      "All mail": [
+        "Alle e-mail"
+      ],
+      "Archive": [
+        "Archief"
+      ],
       "Calendars": [
         "Agenda's"
       ],
@@ -6031,8 +6019,14 @@
       "click here": [
         "klik hier"
       ],
+      "Drafts": [
+        "Concepten"
+      ],
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
+      ],
+      "Inbox": [
+        "Inbox"
       ],
       "Learn more": [
         "Meer informatie"
@@ -6052,8 +6046,26 @@
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
+      "Scheduled": [
+        "Gepland"
+      ],
+      "Sent": [
+        "Verzonden"
+      ],
+      "Snooze": [
+        "Snoozen"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Met ster"
+      ],
       "stay safer online": [
         "blijf veilig online"
+      ],
+      "Trash": [
+        "Prullenbak"
       ],
       "What’s this?": [
         "Wat is dit?"
@@ -6441,14 +6453,11 @@
       "Get started for ${ priceCoupon }": [
         "Aan de slag voor ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Vanaf ${ priceMailPlus }"
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upgrade now": [
         "Upgrade nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7066,14 +7075,6 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Krijg Mail Plus voor ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
       ]
     },
     "new_plans: tooltip": {
@@ -8801,6 +8802,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -8909,9 +8951,6 @@
       ],
       "Comprehensive privacy and security": [
         "Uitgebreide privacy en beveiliging."
-      ],
-      "Dark web monitoring": [
-        "Dark web monitoring"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Desktopapp en e-mailclientondersteuning (via IMAP)"
@@ -9062,47 +9101,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -9587,9 +9585,6 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Dataherstel"

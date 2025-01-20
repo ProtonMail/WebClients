@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
       "Create free account": [
         "Стварыць бясплатны ўліковы запіс"
       ],
@@ -374,12 +377,6 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Атрымаць ${ DRIVE_APP_NAME }"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Атрымайце ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -1104,9 +1101,6 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Лёгкае дадаванне або выдаленне карыстальнікаў"
       ],
@@ -1192,9 +1186,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, Dark Web Monitoring і іншыя функцыі."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1327,12 +1318,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Змяніць налады адраса электроннай пошты"
-      ],
-      "Continue": [
-        "Працягнуць"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ],
@@ -5109,9 +5094,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
-      "Registering your subscription...": [
-        "Рэгістрацыя вашай падпіскі..."
-      ],
       "Report has been sent": [
         "Скарга была адпраўлена"
       ],
@@ -5180,9 +5162,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
-      ],
-      "Setting up your new address...": [
-        "Наладжванне вашага новага адраса..."
       ],
       "Share files with links": [
         "Абагуліць файлы з дапамогай спасылак"
@@ -6439,14 +6418,26 @@
       "Add a gift code": [
         "Дадаць падарункавы код"
       ],
+      "All mail": [
+        "Уся пошта"
+      ],
+      "Archive": [
+        "Архіў"
+      ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
       ],
       "click here": [
         "націсніце тут"
       ],
+      "Drafts": [
+        "Чарнавікі"
+      ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
+      ],
+      "Inbox": [
+        "Уваходныя"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -6463,11 +6454,26 @@
       "Request an invite": [
         "Запытаць запрашэнне"
       ],
+      "Scheduled": [
+        "Запланавана"
+      ],
+      "Sent": [
+        "Адпраўленыя"
+      ],
       "Shared": [
         "Абагулены"
       ],
       "Shared with me": [
         "Абагулена са мной"
+      ],
+      "Snooze": [
+        "Адкласці"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Starred": [
+        "З зорачкай"
       ],
       "stay safer online": [
         "застацца абароненым у інтэрнэце"
@@ -6905,17 +6911,11 @@
       "Get started for ${ priceCoupon }": [
         "Пачніце за ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Палепшыць"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7581,14 +7581,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: tooltip": {
@@ -9624,9 +9616,6 @@
       "Comprehensive privacy and security": [
         "Комплексная прыватнасць і бяспека"
       ],
-      "Dark web monitoring": [
-        "Назіранне за Dark Web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
       ],
@@ -10264,9 +10253,6 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Аднаўленне даных"

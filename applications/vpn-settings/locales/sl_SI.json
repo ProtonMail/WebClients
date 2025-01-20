@@ -160,6 +160,9 @@
       "Create": [
         "Ustvari"
       ],
+      "Create folder": [
+        "Ustvari mapo"
+      ],
       "Create Gateway": [
         "Ustvari prehod"
       ],
@@ -253,9 +256,6 @@
       "Edit group": [
         "Uredi skupino"
       ],
-      "Edit invoice details": [
-        "Uredite podrobnosti računa"
-      ],
       "Edit name": [
         "Uredi ime"
       ],
@@ -303,9 +303,6 @@
       ],
       "Forgot recovery method?": [
         "Ste pozabili način obnovitve?"
-      ],
-      "Get ${ vpnPlus }": [
-        "Pridobi ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Pridobite nov šifriran e-poštni naslov"
@@ -649,6 +646,9 @@
       "Switch or add account": [
         "Preklopi ali dodaj račun"
       ],
+      "Take a tour": [
+        "Oglejte si"
+      ],
       "Test": [
         "Preizkusi"
       ],
@@ -991,9 +991,6 @@
       "Advanced account protection": [
         "Napredni program za zaščito računa"
       ],
-      "Dark Web Monitoring": [
-        "Spremljanje Dark Web"
-      ],
       "Easily add or remove users": [
         "Enostavno dodajte ali odstranite uporabnike"
       ],
@@ -1064,9 +1061,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in še več, od kjerkoli."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Varne prijave na vseh vaših napravah. Vključuje neomejeno število vzdevkov hide-my-email, skupno rabo, integriran 2FA, spremljanje Dark Web in še več."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
@@ -1145,6 +1139,9 @@
       "Custom domain problem": [
         "Težava z domeno po meri"
       ],
+      "Docs problem": [
+        "Težava s Docs"
+      ],
       "Drive problem": [
         "Težava z Drive"
       ],
@@ -1201,9 +1198,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Nadaljuj"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -1212,6 +1206,15 @@
       ],
       "Continue your subscription": [
         "Podaljšajte naročnino"
+      ],
+      "Create label": [
+        "Ustvarite oznako"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ]
     },
     "Cancellation upsell": {
@@ -2793,6 +2796,9 @@
       "customer support": [
         "podporo strankam"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
       ],
@@ -3157,6 +3163,11 @@
         "Terabajta",
         "Terabajti",
         "Terabajtov"
+      ]
+    },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } je posodobljen"
       ]
     },
     "FilterSettings": {
@@ -3566,6 +3577,9 @@
       ],
       "All members have been added.": [
         "Vsi člani so bili dodani."
+      ],
+      "All users": [
+        "Vsi uporabniki"
       ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
@@ -3981,6 +3995,9 @@
       "Increase your account security by verifying your email address.": [
         "Povečajte varnost svojega računa s potrditvijo svojega e-poštnega naslova."
       ],
+      "Inherited from parent folder": [
+        "Podedovano od nadrejene mape"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Namestite konfiguracijsko datoteko Country configuration, če se želite povezati na naključen strežnik v izbrani državi."
       ],
@@ -4089,6 +4106,9 @@
       "Must start with a letter.": [
         "Začeti se mora s črko."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
+      ],
       "No addresses exist": [
         "Naslovi ne obstajajo"
       ],
@@ -4109,6 +4129,12 @@
       ],
       "of": [
         "od"
+      ],
+      "Off": [
+        "Izklopljeno"
+      ],
+      "On": [
+        "Vklopljeno"
       ],
       "Once you reset your password:": [
         "Ko ponovno nastavite geslo:"
@@ -4773,6 +4799,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Naenkrat je lahko odprt samo eno okno klepeta. Pred začetkom novega pogovora zaprite prejšnje pogovore."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Uporabite lahko naslednje poverilnice, da se povežete v strežnik ${ VPN_APP_NAME } z uporabo zunanje odprtokodne VPN aplikacije, kot je Tunnelblick za macOS ali OpenVPN za GNU/Linux."
       ],
@@ -4863,11 +4892,13 @@
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Vašo naročnino upravlja Mozilla. Prosimo, obrnite se na podporo Mozilla."
-      ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Izberi barvo:"
       ]
     },
     "Info for cash payment method": {
@@ -4889,11 +4920,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Lahko dodate način plačila, da se vam naročnina samodejno obnovi. Na voljo so tudi drugi načini plačila."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Vnesite ime in naslov zase ali za svojo organizacijo. Ti podatki bodo dodani osebnim in organizacijskim računom."
       ]
     },
     "Info subscription": {
@@ -5107,11 +5133,20 @@
       "Choose a name for the generated certificate file": [
         "Izberite ime za ustvarjeno datoteko potrdila."
       ],
+      "City": [
+        "Mesto"
+      ],
       "Code": [
         "Koda"
       ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
+      ],
+      "Colors": [
+        "Barve"
+      ],
+      "Company": [
+        "Podjetje"
       ],
       "Company name": [
         "Ime podjetja"
@@ -5215,6 +5250,9 @@
       "First name": [
         "Ime"
       ],
+      "Folder location": [
+        "Mesto mape"
+      ],
       "Gateway name": [
         "Ime prehoda"
       ],
@@ -5275,9 +5313,6 @@
       "Name": [
         "Ime"
       ],
-      "Name and address": [
-        "Ime in naslov"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Posredovanje vrat)"
       ],
@@ -5307,6 +5342,12 @@
       ],
       "Non-standard ports": [
         "Nestandardna vrata"
+      ],
+      "Note": [
+        "Opomba"
+      ],
+      "Notification": [
+        "Obvestilo"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 geslo"
@@ -5428,6 +5469,12 @@
       "Start date": [
         "Začetni datum"
       ],
+      "State": [
+        "Država"
+      ],
+      "Street address": [
+        "Ulica"
+      ],
       "Strong": [
         "Močno"
       ],
@@ -5496,6 +5543,9 @@
       ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
+      ],
+      "ZIP code": [
+        "Poštna številka"
       ]
     },
     "label": {
@@ -5553,6 +5603,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Poštna številka"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Ustvari mapo"
+      ],
+      "Create label": [
+        "Ustvarite oznako"
+      ],
+      "Edit folder": [
+        "Uredi mapo"
+      ],
+      "Edit label": [
+        "Uredi oznako"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } ustvarjeno"
       ]
     },
     "Link": {
@@ -5833,6 +5902,17 @@
         "Neželena pošta"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Barva"
+      ],
+      "Folder name": [
+        "Ime mape"
+      ],
+      "Label name": [
+        "Ime oznake"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Najvišja hitrost VPN"
@@ -5854,17 +5934,11 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Nadgradnja"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6524,9 +6598,6 @@
       "${ shortPlan.title } Trial": [
         "Preizkus ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Pridobite Mail Plus za ${ priceCoupon }"
-      ],
       "Your account's usage": [
         "Uporaba vašega računa"
       ]
@@ -6683,6 +6754,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Ponastavi gesla uporabnika in ponastavi dvojno preverjanje pristnosti za uporabnike"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Z enim klikom preusmerite internetni promet prek omrežja Tor."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
@@ -6929,6 +7003,25 @@
         "Nekatere slike niso bile naložene zaradi podvojenih imen datotek v trenutnem izboru."
       ]
     },
+    "Offer": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Brezplačno"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Shramba"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Dobrodošli v ${ appName }"
@@ -6955,6 +7048,9 @@
       ],
       "My reason isn't listed": [
         "Moj razlog ni naveden"
+      ],
+      "No parent folder": [
+        "Ni nadrejene mape"
       ],
       "No permission": [
         "Ni dovoljenja"
@@ -7314,11 +7410,17 @@
       "Address": [
         "Naslov"
       ],
+      "Anderson": [
+        "Novak"
+      ],
       "Choose a name": [
         "Izberite ime"
       ],
       "Choose display name": [
         "Izberi prikazno ime"
+      ],
+      "Company name": [
+        "Ime podjetja"
       ],
       "Confirm": [
         "Potrdi"
@@ -7371,6 +7473,9 @@
       "Search for a user or address": [
         "Išči uporabnika ali naslov."
       ],
+      "Search parent folder": [
+        "Iskanje nadrejene mape"
+      ],
       "Search users": [
         "Iskanje uporabnikov"
       ],
@@ -7388,6 +7493,9 @@
       ],
       "Start date": [
         "Začetni datum"
+      ],
+      "Thomas": [
+        "Janek"
       ],
       "yourdomain.com": [
         "vašadomena.com"
@@ -8496,6 +8604,9 @@
       "Got it": [
         "Razumem"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Samo prijavite se v svoj račun v Apple App Store in nato izberite ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Samo prijavite se v svoj račun v Trgovini Play in nato pritisnite ${ subscriptions }."
       ],
@@ -8607,9 +8718,6 @@
       ],
       "Comprehensive privacy and security": [
         "Celovita zaščita zasebnosti in varnosti"
-      ],
-      "Dark web monitoring": [
-        "Spremljanje temnega spleta"
       ],
       "Direct contribution to our mission": [
         "Neposreden prispevek k našemu poslanstvu"
@@ -9328,9 +9436,6 @@
       "Edit Gateway ${ currentName }": [
         "Uredi prehod ${ currentName }"
       ],
-      "Edit invoice details": [
-        "Uredite podrobnosti računa"
-      ],
       "Edit servers": [
         "Uredi strežnike"
       ],
@@ -9816,6 +9921,9 @@
     "Tor out of date": {
       "stable release": [
         "izdajno različico"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta različica brskalnika Tor ni podprta. Posodobite na najnovejšo ${ stableRelease }"
       ]
     },
     "Transaction state display as badge": {
@@ -9841,6 +9949,9 @@
       ],
       "Credit": [
         "Dobroimetje"
+      ],
+      "Migration": [
+        "Migracija"
       ],
       "Payment": [
         "Plačilo"

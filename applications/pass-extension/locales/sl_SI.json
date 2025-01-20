@@ -455,6 +455,9 @@
       "Select": [
         "Izberi"
       ],
+      "Send email": [
+        "Pošlji e-pošto"
+      ],
       "Send invite": [
         "Pošlji povabilo"
       ],
@@ -597,9 +600,6 @@
       ],
       "A checked box means the feature is disabled.": [
         "Potrjeno polje pomeni, da je funkcija onemogočena."
-      ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Spremljanje temnega spleta je na voljo v plačljivem paketu. Nadgradite za takojšen dostop."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Seznam domen, kjer se nekatere samodejne funkcije v ${ PASS_SHORT_APP_NAME } (samodejno izpolnjevanje, samodejni predlogi, samodejno shranjevanje) ne smejo izvajati.${ infoText }"
@@ -1068,6 +1068,9 @@
         "Še ${ trialDaysLeft } dni",
         "Še ${ trialDaysLeft } dni"
       ],
+      "(Empty)": [
+        "(Prazno)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Sedem dni, da brezplačno preizkusite premijske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
       ],
@@ -1454,6 +1457,12 @@
       ],
       "Record: CNAME": [
         "Zapis: CNAME"
+      ],
+      "Record: MX": [
+        "Zapis: MX"
+      ],
+      "Record: TXT": [
+        "Zapis: TXT"
       ],
       "Registering extra password...": [
         "Registracija dodatnega gesla ..."
@@ -2744,6 +2753,9 @@
       "Unlock ${ brandNameJSX }": [
         "Odkleni ${ brandNameJSX }"
       ],
+      "Unverified": [
+        "Nepotrjeno"
+      ],
       "Update available": [
         "Na voljo je posodobitev."
       ],
@@ -2903,9 +2915,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati skupno rabo trezorja"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Če odstranite dodatno geslo, se boste odjavili iz vseh naprav in končali vse aktivne seje."

@@ -196,6 +196,9 @@
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
+      "Create folder": [
+        "საქაღალდის შექმნა"
+      ],
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
@@ -293,9 +296,6 @@
       ],
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "მიიღეთ ${ MAIL_SHORT_APP_NAME } Plus ფასად ${ priceCoupon }"
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
@@ -398,6 +398,9 @@
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
+      ],
+      "More options": [
+        "მეტი პარამეტრი"
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
@@ -632,9 +635,6 @@
       ],
       "Try another method": [
         "სხვა მეთოდის ცდა"
-      ],
-      "Understood": [
-        "გასაგებია"
       ],
       "Undo": [
         "დაბრუნება"
@@ -884,9 +884,6 @@
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვა"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-ის მონიტორინგი"
-      ],
       "Easily add or remove users": [
         "ადვილად დაამატეთ ან წაშალეთ მომხმარებლები"
       ],
@@ -972,9 +969,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, Dark Web-ის მონიტორინგს და სხვ."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
@@ -1099,12 +1093,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "ელფოსტის მისამართის პარამეტრების შეცვლა"
-      ],
-      "Continue": [
-        "გაგრძელება"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -2181,6 +2169,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
       ],
@@ -4021,9 +4012,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "გადმოწერეთ თქვენი რჩეული აპლიკაცია დღეს და გქონდეთ თქვენი კონფიდენციალობა თან, სადაც უნდა წახვიდეთ."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DOCS_APP_NAME }-ის ფაილების გადმოწერა ${ DRIVE_APP_NAME }-დან, ამჟამად, მხარდაჭერილი არაა - ესენი თქვენს გადმოწერაში ჩასმული არ იქნება."
-      ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
       ],
@@ -4395,9 +4383,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "გადაიტანეთ თქვენი მიმდინარე ცვლილებების ასლი მთავარი მენიუდან და თავიდან ჩატვირთეთ ეს გვერდი."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "გაიტანეთ ისინი პირდაპირ ${ DOCS_APP_NAME } აპლიკაციიდან, თუ მათი გადმოწერა გნებავთ."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "დაიმახსოვრეთ, რომ ამ ჯგუფებზე მინიჭებული მისამართები *არ* წაიშლება."
       ],
@@ -4463,9 +4448,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
       ],
-      "Registering your subscription...": [
-        "თქვენი გამოწერის რეგისტრაცია..."
-      ],
       "Restored version to": [
         "ვერსია აღდგენილია მნიშვნელობაზე"
       ],
@@ -4501,9 +4483,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP-ის აწყობა საშუალებას მოგცემთ, გააგზავნოთ დაშიფრული ელფოსტები არა${ BRAND_NAME }-ის მომხმარებლებთან, რომლებიც ასევე იყენებენ PGP-სთან თავსებად სერვისს."
-      ],
-      "Setting up your new address...": [
-        "თქვენი ახალი მისამართის მორგება..."
       ],
       "Settings update failed": [
         "პარამეტრების განახლება ჩავარდა"
@@ -4564,12 +4543,6 @@
       ],
       "The Beginning": [
         "დასაწყისი"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "ციფრული ხელმოწერა, მხოლოდ, ნაწილობრივაა გადამოწმებული. ფაილი ატვირთულია საჯარო გვერდიდან, რომელიც მის წყაროს არ მიუთითებს."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "ციფრული ხელმოწერა, მხოლოდ, ნაწილობრივაა გადამოწმებული. საქაღალდე ატვირთულია საჯარო გვერდიდან, რომელიც მის წყაროს არ მიუთითებს."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "გაჟონილი ინფორმაცია მესამე პირების მიერ იქნა გავრცელებული. თქვენი ${ BRAND_NAME }-ის ანგარიშის ინფორმაცია დაცულად და დაშიფრულად რჩება. ${ learnMoreLink }"
@@ -5515,6 +5488,11 @@
         "რა არის ეს?"
       ]
     },
+    "List title": {
+      "Also included:": [
+        "ასევე შეიცავს:"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "თითქმის მივედით"
@@ -5880,14 +5858,11 @@
       "Get started for ${ priceCoupon }": [
         "დაწყება ${ priceCoupon }-დან"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }-დან"
+      "Upgrade": [
+        "ტარიფის აწევა"
       ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: action": {
@@ -6493,14 +6468,6 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "მიიღეთ Mail Plus ფასით ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "დაკლებული ფასი ${ priceCoupon }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ priceMailPlus } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -7084,6 +7051,9 @@
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "გადაიხდით წლიურად ${ yearlyPrice }-ს. დაზოგეთ ${ yearlySavedPrice } ${ passFamilyPlanName }-ით (vs 6 ცალკე ${ passPlusPlanName } გამოწერა)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "ექსკლუზიური შემოთავზება ხელმისაწვდომია, მხოლოდ, ${ PASS_APP_NAME }-ის ადრეული მხარდამჭერებისთვის."
@@ -8504,9 +8474,6 @@
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Data recovery": [
         "მონაცემების აღდგენა"
       ],
@@ -8848,9 +8815,6 @@
       ],
       "Your document cannot be loaded": [
         "თქვენი დოკუმენტის ჩატვირთვა შეუძლებელია"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "თქვენს გადმოწერას ${ DOCS_APP_NAME } ფაილი აქვს"
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"

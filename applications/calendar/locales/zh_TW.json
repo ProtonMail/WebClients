@@ -209,6 +209,9 @@
       "Create event": [
         "創建事件"
       ],
+      "Create folder": [
+        "創建資料夾"
+      ],
       "Create new contact": [
         "創建新聯絡人"
       ],
@@ -307,9 +310,6 @@
       ],
       "Forward as attachment": [
         "以附件形式轉寄"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得${ MAIL_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "保持聯絡"
@@ -722,11 +722,11 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade Now": [
-        "請升級"
-      ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Upgrade Now": [
+        "請升級"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "升級至${ BRAND_NAME }無限版"
@@ -960,6 +960,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "享受特惠折扣 ${ discountedPrice } ${ cycle } 個月。而後將以每 ${ renewalLength } 月 ${ nextPrice } 的優惠價格自動續約。您可以在任何時候取消訂閱。"
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "${ discountedPrice } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ nextPrice } 續約。您可以在任何時候取消。"
       ]
@@ -1019,9 +1022,6 @@
       ],
       "Advanced account protection": [
         "高端的帳號保護"
-      ],
-      "Dark Web Monitoring": [
-        "暗網監測"
       ],
       "Easily add or remove users": [
         "輕鬆添加或移除使用者"
@@ -1108,9 +1108,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "在世界各地暢享串流服務的影音內容，包含Netflix、Disney+、Prime Video等平台。"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "在您所有的裝置安全登入。包含無限hide-my-email別名、共享、整合的2FA、黑暗網路監測等功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護您的電子郵件。包含 ${ addresses } 電子郵件位址、支援自訂電子郵件網域、${ BRAND_NAME } Scribe 寫作助手、無限的 hide-my-email 別名等更多功能。"
@@ -1234,12 +1231,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "變更電子郵件地址設定"
-      ],
-      "Continue": [
-        "繼續"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
       ],
@@ -2581,11 +2572,6 @@
         "逾期帳單"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }24/7保護您的帳號包含躲避安全專家的可疑活動。"
@@ -2678,6 +2664,11 @@
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "另外，我們已將 CSV 自動轉換為 vCard 信息，您可以查看並修改對應關係。"
@@ -2761,6 +2752,9 @@
       ],
       "Remove discount": [
         "移除折扣"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "您的${ PLAN_NAMES[PLANS.PASS] }訂閱為特殊價格${ price }每年。若降級為免費方案，您將永久失去此折扣，就算未來再次升級。"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3259,6 +3253,9 @@
       "The address might be misspelled": [
         "位址可能拼錯了"
       ],
+      "The amount due has changed. Please try again.": [
+        "應付金額已變更。請再試一次。"
+      ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
       ],
@@ -3471,6 +3468,9 @@
       ],
       "Time zone": [
         "時區"
+      ],
+      "Time zone component ignored": [
+        "忽略時區元件"
       ],
       "To-do entry": [
         "待辦事項"
@@ -3962,6 +3962,9 @@
       "Malformed start time": [
         "開始時間格式有誤"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "僅允許使用公曆刻度"
+      ],
       "Recurring event has no occurrences": [
         "未發生重複事件"
       ],
@@ -4106,11 +4109,17 @@
       "Use your app password instead of your regular password if:": [
         "使用您的應用程式密碼而非一般密碼，如果："
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "您的 App 密碼正確無誤。請勿使用您常使用的密碼。"
+      ],
       "Your email account requires an app password to export your data.": [
         "您的電子郵件帳號要求應用程式密碼來匯出您的資料。"
       ],
       "Your email account requires one to export your data.": [
         "您的電子郵件帳號要求一個方式來匯出您的資料。"
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "您的電子郵件位址和應用程式密碼均為正確。 請勿使用您的一般密碼。"
       ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
@@ -4873,9 +4882,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
-      "Registering your subscription...": [
-        "正在註冊您的訂閱..."
-      ],
       "Removed participants will be notified.": [
         "已移除的參與者將獲通知。"
       ],
@@ -4905,9 +4911,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
-      ],
-      "Setting up your new address...": [
-        "設定您的新地址..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
@@ -5905,6 +5908,12 @@
       "Add a gift code": [
         "加入禮品代碼"
       ],
+      "All mail": [
+        "所有郵件"
+      ],
+      "Archive": [
+        "封存"
+      ],
       "Calendars": [
         "行事曆"
       ],
@@ -5914,8 +5923,14 @@
       "click here": [
         "按一下此處"
       ],
+      "Drafts": [
+        "草稿"
+      ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
+      ],
+      "Inbox": [
+        "收件匣"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -5935,8 +5950,26 @@
       "Request an invite": [
         "需求邀請"
       ],
+      "Scheduled": [
+        "已排程"
+      ],
+      "Sent": [
+        "寄件備份"
+      ],
+      "Snooze": [
+        "延後"
+      ],
+      "Spam": [
+        "垃圾郵件"
+      ],
+      "Starred": [
+        "已加星號"
+      ],
       "stay safer online": [
         "保持在線安全"
+      ],
+      "Trash": [
+        "垃圾桶"
       ],
       "What’s this?": [
         "這是什麼？"
@@ -6316,14 +6349,11 @@
       "Get started for ${ priceCoupon }": [
         "使用${ priceCoupon }取得"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "從${ priceMailPlus }起"
+      "Upgrade": [
+        "升級"
       ],
       "Upgrade now": [
         "立即升級"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6841,6 +6871,9 @@
       "Encrypted email and calendar to get you started.": [
         "開始使用安全加密電郵和行事曆。"
       ],
+      "Enhanced security and premium features for teams.": [
+        "為團隊增強安全及頂級功能"
+      ],
       "For next-level password management and identity protection.": [
         "用於下一個層級的密碼管理與身份保護。"
       ],
@@ -6886,6 +6919,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "完全免費的新手版帳號，旨在提供所有人以隱私權為首要使命的服務。"
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "無限隱私與更多儲存空間，最多提供給至多 2 人使用。"
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "你正在當前的方案中享受促銷價格。若你刪除你的帳號，你將會永遠失去此促銷價，即使你決定創建一個新帳號也是。"
       ],
@@ -6905,14 +6941,6 @@
       ],
       "Switch plans?": [
         "切換方案？"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "使用${ priceCoupon }取得Mail Plus"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "於第一個月享受${ priceCoupon }優惠折扣。而後將以每 ${ priceMailPlus } 月的價格自動續約。您可以在任何時候取消訂閱。"
       ]
     },
     "new_plans: tooltip": {
@@ -7327,6 +7355,11 @@
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "選取 ${ BRAND_NAME } 可以存取的內容：檢視您的電子郵件與設定、檢視與下載您的聯絡人、檢視與下載來自 Google 日曆您可存取的所有議程。"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "歡迎來到 ${ appName }"
@@ -7477,6 +7510,12 @@
       "All premium features. 6 users. 1 easy subscription.": [
         "全部頂級質子版功能。6位用戶。一個簡單的訂購。"
       ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "每年以 ${ yearlyPrice } 繳費。使用 ${ passFamilyPlanName } 可節省${ yearlySavedPrice } 。(相對於 6 個人 ${ passPlusPlanName } 訂閱)。"
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "獨家優惠只提供給 ${ PASS_APP_NAME } 早期支持者。"
+      ],
       "Get it for ${ monthlyPrice }": [
         "只需${ monthlyPrice }"
       ],
@@ -7560,6 +7599,12 @@
       "Select billing country to pay": [
         "選取繳款國家以付款"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。此優惠券對${ couponRedemptions }續約為有效。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
+        "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
@@ -7585,6 +7630,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "地址，郵政區碼，及城市"
       ]
     },
     "PGP key encryption warning": {
@@ -8313,6 +8363,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
+      ],
+      "Video conferencing is here!": [
+        "會議於此!"
       ]
     },
     "sso": {
@@ -8499,6 +8552,47 @@
         "${ totalPrice } 版"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -8521,8 +8615,20 @@
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName }提供無限隱私及更多儲存給至多兩人。"
       ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName }提供您的團隊存取全部${ BRAND_NAME }應用程式和頂級版功能，以更有效率及整理工作。"
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName }提供您的團隊提升生產力，整理，管控們的收件匣，計畫，及更多所需工具。"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName }協助確保您的家庭成員及他們的資料於線上時為被保護的"
+      ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } 提供每位使用者 ${ planMaxSpace } 儲存空間用於電子郵件、其附件、行事曆與檔案。您還有資格獲得年度儲存空間獎勵。"
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 提供每位使用者 ${ planMaxSpace } 儲存空間用於電子郵件、其附件、行事曆、檔案與密碼。您還有資格獲得年度儲存空間獎勵。"
       ],
       "${ planNumberOfCalendars } calendar per user": [
         "每位用戶${ planNumberOfCalendars }個行事曆"
@@ -8569,9 +8675,6 @@
       "Catch-all email address": [
         "跟上電子郵件地址"
       ],
-      "Dark web monitoring": [
-        "黑暗網路監測"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "桌面應用程式和電子郵件用戶端支援(透過 IMAP)"
       ],
@@ -8593,11 +8696,23 @@
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
       ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "當 ${ BRAND_NAME } 遭到咄咄逼人的封鎖時，我們如何反擊。"
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "當隱私權和言論自由受到威脅時，我們如何支持當地的活動人士。"
+      ],
       "If you exceed free plan limits, you won't be able to:": [
         "若你碰到使用免費帳戶使用限制，你將不能："
       ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "如果您的使用量超過免費方案的限制，您可能會在使用產品功能和資料時受到限制。"
+      ],
       "Invited members will be removed from your organization": [
         "邀請的成員將被從組織移除"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "使用我們適用於網頁、iOS、Android、Windows、Mac 和 Linux 的應用程式，讓您的團隊隨時保持安全。"
       ],
       "Learn more": [
         "了解更多"
@@ -8650,6 +8765,9 @@
       "Upload any new files": [
         "上載任何新文件"
       ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "使用者訂閱是 ${ BRAND_NAME } 的唯一收入來源。您的支持可維持我們的獨立性，促進我們對線上隱私權的使命，並協助為自由而戰的活動家和組織。"
+      ],
       "Users won’t be able to manage their calendars": [
         "使用者將無法管理行事曆"
       ],
@@ -8671,6 +8789,9 @@
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "當您的 ${ planName } 訂閱於 ${ expiryDate } 結束時，您將會降級至 ${ BRAND_NAME } 免費方案。"
+      ],
       "Yearly free storage bonuses": [
         "年度免費儲存加成"
       ],
@@ -8682,47 +8803,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -9196,9 +9276,6 @@
       ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
-      ],
-      "Dark Web Monitoring": [
-        "暗網監控"
       ],
       "Data recovery": [
         "資料救援"

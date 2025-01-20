@@ -169,8 +169,14 @@
       "Create": [
         "Creare"
       ],
+      "Create folder": [
+        "Creare folder"
+      ],
       "Create Gateway": [
         "Creare poartă de acces"
+      ],
+      "Create new policy": [
+        "Creare regulă"
       ],
       "Create users": [
         "Creare utilizatori"
@@ -262,9 +268,6 @@
       "Edit group": [
         "Editare grup"
       ],
-      "Edit invoice details": [
-        "Editare detalii factură"
-      ],
       "Edit name": [
         "Editare nume"
       ],
@@ -312,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Luați ${ MAIL_SHORT_APP_NAME } Plus cu ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Obțineți ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Obțineți o adresă de e-mail criptată"
@@ -459,6 +456,9 @@
       ],
       "Refer a friend": [
         "Recomandați pe cineva"
+      ],
+      "Refresh data": [
+        "Împrospătare date"
       ],
       "Refresh status": [
         "Actualizare stare"
@@ -663,6 +663,9 @@
       ],
       "Switch or add account": [
         "Schimbare sau adăugare cont"
+      ],
+      "Take a tour": [
+        "Faceți un tur"
       ],
       "Test": [
         "Test"
@@ -1022,9 +1025,6 @@
       "Advanced account protection": [
         "Protecție avansată a contului"
       ],
-      "Dark Web Monitoring": [
-        "Monitorizare pe internetul ascuns"
-      ],
       "Easily add or remove users": [
         "Adăugare și eliminare ușoară utilizatori"
       ],
@@ -1111,8 +1111,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, monitorizare internet ascuns și altele."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
@@ -1253,12 +1253,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modificare setări adresă de e-mail"
-      ],
-      "Continue": [
-        "Continuare"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
       ],
@@ -1267,6 +1261,15 @@
       ],
       "Continue your subscription": [
         "Păstrare abonament"
+      ],
+      "Create label": [
+        "Creare etichetă"
+      ],
+      "Remind me later": [
+        "Amintește-mi mai târziu"
+      ],
+      "Take a tour": [
+        "Faceți un tur"
       ]
     },
     "Cancellation upsell": {
@@ -2331,11 +2334,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Oricine din organizație se poate conecta la serverele partajate din toate țările."
+      ],
       "If disabled, only admins will have access.": [
         "Dacă e dezactivată, doar administratorii vor avea acces."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Păstrați diferite părți ale vieții separate și contul de e-mail organizat cu adrese suplimentare."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Nu se poate conecta nimeni din organizație la serverele partajate."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
@@ -3297,6 +3309,11 @@
         "Terabaiți"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } actualizată"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Permise:"
@@ -3525,6 +3542,11 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
+        "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
+        "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
@@ -3733,6 +3755,9 @@
       ],
       "Allocated": [
         "Alocat"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Permite utilizatorilor să se conecteze la serverele securizate partajate din secțiunea **Țări** a aplicației ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Deja alocat"
@@ -4201,6 +4226,9 @@
       "Increase your account security by verifying your email address.": [
         "Măriți securitatea contului prin verificarea adresei de e-mail."
       ],
+      "Inherited from parent folder": [
+        "Moştenit de la folderul părinte"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instalați un fișier de configurare al țării pentru a vă conecta la un server aleatoriu din țara aleasă."
       ],
@@ -4387,6 +4415,9 @@
       "Must start with a letter.": [
         "Trebuie să înceapă cu o literă."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
+      ],
       "New user invited to organization": [
         "Utilizator nou invitat în organizație."
       ],
@@ -4419,6 +4450,12 @@
       ],
       "of": [
         "din"
+      ],
+      "Off": [
+        "Dezactivat"
+      ],
+      "On": [
+        "Activat"
       ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
@@ -4586,9 +4623,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
-      "Registering your subscription...": [
-        "Se înregistrează abonamentul..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
       ],
@@ -4666,9 +4700,6 @@
       ],
       "Session timed out": [
         "Sesiunea a expirat"
-      ],
-      "Setting up your new address...": [
-        "Vi se configurează noile adrese..."
       ],
       "Setting up your organization": [
         "Setare organizație"
@@ -5188,6 +5219,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Puteți avea o singură fereastră de conversații deschisă. Închideți conversațiile anterioare înainte de a deschide alta nouă."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
       ],
@@ -5315,14 +5349,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Veți putea adăuga aceste servere la o altă poartă de acces imediat."
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info for cash payment method": {
@@ -5344,11 +5380,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Puteți adăuga o metodă de plată pentru a avea abonamentul reînnoit automat. Sunt disponibile și alte metode de plată."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Introduceți un nume și o adresă pentru dvs. sau organizația proprie. Aceste detalii vor fi adăugate atât pe facturile personale, cât și pe cele ale organizației."
       ]
     },
     "Info subscription": {
@@ -5573,11 +5604,20 @@
       "Choose a name for the generated certificate file": [
         "Alegeți un nume pentru fișierul certificatului generat"
       ],
+      "City": [
+        "Oraş"
+      ],
       "Code": [
         "Cod"
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
+      ],
+      "Colors": [
+        "Culori"
+      ],
+      "Company": [
+        "Compania"
       ],
       "Company name": [
         "Nume companie"
@@ -5687,6 +5727,9 @@
       "First name": [
         "Prenume"
       ],
+      "Folder location": [
+        "Amplasare folder"
+      ],
       "Gateway name": [
         "Nume poartă de acces"
       ],
@@ -5747,9 +5790,6 @@
       "Name": [
         "Nume"
       ],
-      "Name and address": [
-        "Nume și adresă"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port redirecționare)"
       ],
@@ -5779,6 +5819,12 @@
       ],
       "Non-standard ports": [
         "Porturi nonstandard"
+      ],
+      "Note": [
+        "Notiță"
+      ],
+      "Notification": [
+        "Notificare"
       ],
       "OpenVPN / IKEv2 password": [
         "Parola OpenVPN/IKEv2"
@@ -5908,6 +5954,12 @@
       "Start date": [
         "Dată început"
       ],
+      "State": [
+        "Județ/Stat"
+      ],
+      "Street address": [
+        "Strada"
+      ],
       "Strong": [
         "Puternică"
       ],
@@ -5985,6 +6037,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "label": {
@@ -6042,6 +6097,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Cod poștal"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Creare folder"
+      ],
+      "Create label": [
+        "Creare etichetă"
+      ],
+      "Edit folder": [
+        "Editare folder"
+      ],
+      "Edit label": [
+        "Editare etichetă"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } creată"
       ]
     },
     "Lable": {
@@ -6205,6 +6279,9 @@
       ],
       "for ${ price }": [
         "cu ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Setați-vă contul cu domeniul Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6347,6 +6424,17 @@
         "Nedorite"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Culoare"
+      ],
+      "Folder name": [
+        "Nume folder"
+      ],
+      "Label name": [
+        "Nume etichetă"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Viteză VPN maximă"
@@ -6371,17 +6459,11 @@
       "Get started for ${ priceCoupon }": [
         "Începeți cu ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Modificare"
       ],
       "Upgrade now": [
         "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7076,12 +7158,6 @@
       "${ shortPlan.title } Trial": [
         "Probare ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Luați Mail Plus cu ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
-      ],
       "Your account's usage": [
         "Utilizare cont"
       ]
@@ -7518,6 +7594,25 @@
         "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
       ]
     },
+    "Offer": {
+      "Get the deal": [
+        "Luați oferta"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
+      ]
+    },
+    "Offer feature": {
+      "Email Addresses": [
+        "Adrese de e-mail"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
@@ -7556,6 +7651,9 @@
       ],
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
+      ],
+      "No parent folder": [
+        "Fără folder părinte"
       ],
       "No permission": [
         "Fără permisiune"
@@ -8027,6 +8125,9 @@
       "Choose display name": [
         "Alegere nume afișat"
       ],
+      "Company name": [
+        "Nume companie"
+      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -8080,6 +8181,9 @@
       ],
       "Search for an email or IP address": [
         "Căutare după e-mail sau adresă IP"
+      ],
+      "Search parent folder": [
+        "Căutare în folder părinte"
       ],
       "Search users": [
         "Căutare utilizatori"
@@ -9545,9 +9649,6 @@
       "Comprehensive privacy and security": [
         "Confidențialitate și securitate cuprinzătoare"
       ],
-      "Dark web monitoring": [
-        "Monitorizare pe internetul ascuns"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Suport pentru clienți de e-mail și aplicații desktop (prin IMAP)"
       ],
@@ -10416,9 +10517,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Editare poartă de acces ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Editare detalii factură"
       ],
       "Edit servers": [
         "Editare servere"

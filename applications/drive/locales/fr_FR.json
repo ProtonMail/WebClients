@@ -226,6 +226,9 @@
       "Create and copy alias": [
         "Créer et copier l'alias"
       ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
       "Create free account": [
         "Créer un compte gratuit"
       ],
@@ -372,11 +375,11 @@
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
       ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Obtenir ${ DRIVE_APP_NAME }"
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Profitez de ${ MAIL_SHORT_APP_NAME } Plus pour ${ priceCoupon }"
+      "Get ${ planOrAppName }": [
+        "Je choisis ${ planOrAppName }"
       ],
       "Get in touch": [
         "Nous contacter"
@@ -810,6 +813,9 @@
       "Switch or add account": [
         "Basculer vers ou ajouter un compte"
       ],
+      "Take a tour": [
+        "Laissez-vous guider"
+      ],
       "Toggle Calendar app": [
         "Basculer vers l'application Calendar"
       ],
@@ -1096,9 +1102,6 @@
       "Advanced account protection": [
         "Protection avancée des comptes"
       ],
-      "Dark Web Monitoring": [
-        "Surveillance du dark web"
-      ],
       "Easily add or remove users": [
         "Ajoutez ou retirez facilement des utilisateurs"
       ],
@@ -1185,8 +1188,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration d'A2F, la surveillance du dark web et plus encore."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
@@ -1315,12 +1318,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modifier les paramètres de l'adresse e-mail"
-      ],
-      "Continue": [
-        "Continuer"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ],
@@ -1329,6 +1326,21 @@
       ],
       "Continue your subscription": [
         "Poursuivre votre abonnement"
+      ],
+      "Create label": [
+        "Créez un label"
+      ],
+      "Discover and set up features": [
+        "Découvrez et configurez les fonctionnalités"
+      ],
+      "Remind me later": [
+        "Me le rappeler plus tard"
+      ],
+      "Set up other features": [
+        "Configurez d'autres fonctionnalités"
+      ],
+      "Take a tour": [
+        "Laissez-vous guider"
       ]
     },
     "Cancellation reminder": {
@@ -2464,8 +2476,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "Passez à l'abonnement ${ BRAND_NAME } ${ planName } pour activer le partage de fichiers public avec accès en modification. Continuez à collaborer de manière fluide et sécurisée."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Passez à l'abonnement ${ BRAND_NAME } ${ planName } pour continuer à partager des fichiers avec droits d'écriture."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe reposant sur l'IA et une assistance d'experts dédiée 24h/24 et 7j/7."
@@ -2940,6 +2952,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Indiquez un prénom, un nom de famille ou un nom d'affichage."
+      ],
+      "Please select a country": [
+        "Sélectionnez un pays"
+      ],
+      "Please select a state": [
+        "Selectionnez un état"
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -4049,6 +4067,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée des activités suspectes."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
         "${ providerFoldersNumLocalized } dossiers trouvés"
@@ -4373,6 +4394,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "La signature numérique a été vérifiée. Ce dossier a été chargé de manière sécurisée par ${ emailAddress }."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Découvrez les nouvelles fonctionnalités auxquelles vous avez accès et utilisez-les dès maintenant !"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Découvrez les nouvelles fonctionnalités incluses dans ${ planTitle } et utilisez-les dès maintenant !"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -4445,8 +4472,14 @@
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Les e-mails déplacés vers le dossier Corbeille ou Indésirables/spam de plus de 30 jours seront supprimés automatiquement."
+      ],
       "Empty folder": [
         "Le dossier est vide."
+      ],
+      "Enabling auto-deletion…": [
+        "Activation de la suppression automatique…"
       ],
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
@@ -4814,6 +4847,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
       ],
+      "or discover other features:": [
+        "ou découvrez de nouvelles fonctionnalités :"
+      ],
       "Or use the \"+ New\" button": [
         "Ou utilisez le bouton « + Nouveau »."
       ],
@@ -4969,7 +5005,7 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
-      "Registering your subscription...": [
+      "Registering your subscription…": [
         "Enregistrement de votre abonnement…"
       ],
       "Report has been sent": [
@@ -5038,11 +5074,14 @@
       "Session timed out": [
         "La session a expiré."
       ],
+      "Setting up ${ feature }…": [
+        "Configuration de ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d'envoyer des messages chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
-      "Setting up your new address...": [
-        "Configuration de votre nouvelle adresse..."
+      "Setting up your new address…": [
+        "Configuration de votre nouvelle adresse…"
       ],
       "Share files with links": [
         "Partagez des fichiers avec des liens."
@@ -5443,6 +5482,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Vous pouvez aussi fusionner des calendriers importés avec des calendriers ${ BRAND_NAME } existants."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Vous pouvez modifier cela à tout moment dans ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez suivre la progression ${ importProgressLink }."
       ],
@@ -5468,6 +5510,9 @@
       ],
       "You cannot undo this action.": [
         "Vous ne pouvez pas annuler cette action."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Il vous reste ${ expiresInDays } jour pour bénéficier de votre bonus de bienvenue de 3 Go et ",
@@ -6153,6 +6198,9 @@
       "Start date": [
         "Date de début"
       ],
+      "State": [
+        "État"
+      ],
       "Stolen data": [
         "Données volées"
       ],
@@ -6297,14 +6345,26 @@
       "Add a gift code": [
         "Ajouter un code-cadeau"
       ],
+      "All mail": [
+        "Tous les messages"
+      ],
+      "Archive": [
+        "Archives"
+      ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
       ],
       "click here": [
         "cliquez ici"
       ],
+      "Drafts": [
+        "Brouillons"
+      ],
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
+      ],
+      "Inbox": [
+        "Boite de réception"
       ],
       "Learn more": [
         "En savoir plus"
@@ -6321,11 +6381,29 @@
       "Request an invite": [
         "Demander une invitation"
       ],
+      "Scheduled": [
+        "Programmé"
+      ],
+      "Sent": [
+        "Envoyés"
+      ],
+      "settings": [
+        "paramètres"
+      ],
       "Shared": [
         "Partagé"
       ],
       "Shared with me": [
         "Partagé avec moi"
+      ],
+      "Snooze": [
+        "Mettre en attente"
+      ],
+      "Spam": [
+        "Indésirables/spam"
+      ],
+      "Starred": [
+        "Favoris"
       ],
       "stay safer online": [
         "améliorer votre sécurité en ligne"
@@ -6710,8 +6788,8 @@
       "Plans starting from ${ priceDrivePlus }": [
         "Abonnement à parti de ${ priceDrivePlus }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "À partir de ${ priceMailPlus }"
+      "Starting from ${ pricing }": [
+        "À partir de ${ pricing }"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -6719,8 +6797,8 @@
       "Upgrade now": [
         "Changer d'abonnement"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7335,6 +7413,14 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceMailPlus } avec possibilité de résiliation à tout moment."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -7347,14 +7433,6 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Profitez de Mail Plus pour ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
       ]
     },
     "new_plans: tooltip": {
@@ -7919,6 +7997,52 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Calendar."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "L'offre ${ pricingTitle } expire aujourd'hui !"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Profitez de Drive Plus pour seulement ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Profitez de Mail Plus pour seulement ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Je profite de l'offre"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Dernière chance pour profiter de 80 % de réduction sur le premier mois pour ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Offre à durée limitée"
+      ],
+      "Maybe later": [
+        "Peut-être plus tard"
+      ],
+      "Save 80% on your first month.": [
+        "Économisez 80 % sur votre premier mois"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 fonctionnalités premium en plus"
+      ],
+      "Custom email domain": [
+        "Domaine de messagerie personnalisé"
+      ],
+      "Email Addresses": [
+        "Adresses e-mail"
+      ],
+      "Free": [
+        "Gratuit"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Espace de stockage"
       ]
     },
     "Onboarding": {
@@ -8857,6 +8981,9 @@
       ],
       "Upgrade": [
         "Passez à Premium"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Passez à un abonnement supérieur pour ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9284,9 +9411,6 @@
       ],
       "Comprehensive privacy and security": [
         "Protection de la vie privée et sécurité"
-      ],
-      "Dark web monitoring": [
-        "Surveillance du dark web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Prise en charge de clients de messagerie et applications de bureau (par IMAP)"
@@ -9739,6 +9863,9 @@
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
       ],
+      "${ feature } is now active": [
+        "La fonction ${ feature } est maintenant active."
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } téléchargement n'a pas abouti.",
         "${ numberOfFailedTransfer.total } téléchargements n'ont pas abouti."
@@ -9800,6 +9927,9 @@
       ],
       "Are you sure?": [
         "Êtes-vous sûr ?"
+      ],
+      "Auto-deletion is active": [
+        "La suppression automatique est active."
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -9893,9 +10023,6 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
-      ],
-      "Dark Web Monitoring": [
-        "Surveillance du dark web"
       ],
       "Data recovery": [
         "Récupération de données"
@@ -10099,6 +10226,9 @@
       "Need more aliases?": [
         "Besoin de plus d'alias ?"
       ],
+      "Need to share more files with edit access?": [
+        "Vous avez besoin de partager plus de fichiers avec droits d'écriture ?"
+      ],
       "Network error": [
         "Erreur réseau"
       ],
@@ -10234,9 +10364,6 @@
       "Share ${ name }": [
         "Partager ${ name }"
       ],
-      "Share files with full edit access": [
-        "Partager des fichiers avec droits de modification complets"
-      ],
       "Shared": [
         "Partagé"
       ],
@@ -10344,6 +10471,9 @@
       ],
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "Vous êtes sur le point de refuser l'invitation à l'élément partagé. Vous ne pourrez plus y accéder jusqu'à ce que le propriétaire le partage à nouveau avec vous."
+      ],
+      "You can now create unlimited folders and labels": [
+        "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."
       ],
       "You have inaccessible files": [
         "Vous avez des fichiers inaccessibles."

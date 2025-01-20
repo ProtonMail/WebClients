@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -475,9 +475,6 @@
       "Edit group": [
         "Редактировать группу"
       ],
-      "Edit invoice details": [
-        "Изменение информации счета-фактуры"
-      ],
       "Edit label": [
         "Изменить ярлык"
       ],
@@ -567,12 +564,6 @@
       ],
       "Generate token": [
         "Сгенерировать токен"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Получить ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Получите новый адрес зашифрованной электронной почты"
@@ -1757,9 +1748,6 @@
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
-      "Dark Web Monitoring": [
-        "Мониторинг даркнета"
-      ],
       "Easily add or remove users": [
         "Легко добавлять или удалять участников"
       ],
@@ -1845,9 +1833,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Защитите свои входы на всех ваших устройствах. Включает неограниченное количество псевдонимов hide-my-email, обмен файлами, встроенную двухфакторную аутентификацию, мониторинг даркнета и многое другое."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -2003,12 +1988,6 @@
     "Button": {
       "Add link to your email footer": [
         "Добавить ссылку в нижний колонтитул электронной почты"
-      ],
-      "Change email address settings": [
-        "Изменить настройки адреса электронной почты"
-      ],
-      "Continue": [
-        "Продолжить"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
@@ -5181,6 +5160,11 @@
         "Событие с ${ timeString }, ${ rruleString }"
       ]
     },
+    "Event invistation error": {
+      "Unexpected error": [
+        "Непредвиденная ошибка"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Невозможно расшифровать вложенный файл ICS"
@@ -6299,6 +6283,50 @@
         "Нет доступных способов проверки"
       ]
     },
+    "ICS event error": {
+      "Calendar time zone not supported": [
+        "Часовой пояс календаря не поддерживается"
+      ],
+      "Edited event not supported": [
+        "Отредактированное событие не поддерживается"
+      ],
+      "End time out of bounds": [
+        "Время окончания находится вне границ"
+      ],
+      "Event validation failed": [
+        "Проверка события не удалась"
+      ],
+      "Floating times not supported": [
+        "Плавающие значения времени не поддерживаются"
+      ],
+      "Malformed all-day event": [
+        "Неправильный формат события на весь день"
+      ],
+      "Malformed end time": [
+        "Неправильный формат времени окончания"
+      ],
+      "Malformed recurring event": [
+        "Неправильное повторяющееся событие"
+      ],
+      "Malformed start time": [
+        "Неправильный формат времени начала"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Допускается только григорианский календарь"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторяющееся событие не имеет повторений"
+      ],
+      "Recurring rule not supported": [
+        "Правило для повторения не поддерживается"
+      ],
+      "Start time out of bounds": [
+        "Время начала находится вне границ"
+      ],
+      "Time zone not supported": [
+        "Часовой пояс не поддерживается"
+      ]
+    },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } событие зашифровано и импортировано в ваш календарь",
@@ -6976,6 +7004,9 @@
       "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "После блокировки члены организации должны будут разблокировать ${ PASS_APP_NAME } с помощью своего пароля, PIN-кода и т. д."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
+      ],
       "Align left": [
         "Выровнять по левому краю"
       ],
@@ -7284,6 +7315,12 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и ярлыки, которые вы хотите импортировать."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
+        "Создать безопасное облако для ${ value } участника"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными аккаунтами, назначайте им адреса электронной почты на вашем домене."
@@ -8029,6 +8066,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Сообщения папок Отправленные или Черновики будут отображаться в этих папках, даже если вы переместите их в другую папку."
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -8395,9 +8435,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
-      "Registering your subscription...": [
-        "Регистрация вашей подписки..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
       ],
@@ -8482,6 +8519,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Отправлено с помощью защищённой почты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
+      ],
       "Server is currently down": [
         "Сервер сейчас не работает"
       ],
@@ -8499,9 +8539,6 @@
       ],
       "Setting successfully saved": [
         "Настройка успешно сохранена"
-      ],
-      "Setting up your new address...": [
-        "Настройка нового адреса..."
       ],
       "Setting up your organization": [
         "Настройка вашей организации"
@@ -8553,6 +8590,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF уточняет, кому разрешено отправлять электронные письма на ваш домен. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
       "Stay tuned for future promotions.": [
         "Следите за будущими акциями."
@@ -8607,6 +8647,9 @@
       ],
       "Swiss based": [
         "Расположен в Швейцарии"
+      ],
+      "Switch to": [
+        "Переключиться на"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -9526,9 +9569,6 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Ваша фраза для восстановления — это набор из 12 случайных слов в определенном порядке."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваша заявка в службу поддержки была закрыта. Благодарим вас за обращение в службу поддержки ${ BRAND_NAME }."
       ],
@@ -9574,11 +9614,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можете добавить способ оплаты, чтобы ваша подписка обновилась автоматически. Другие способы оплаты также доступны."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Введите имя и адрес для себя или своей организации. Эти данные будут добавлены в личные и организационные счета-фактуры."
       ]
     },
     "Info on errors": {
@@ -10243,6 +10278,9 @@
       "Choose a name for the generated certificate file": [
         "Выберите имя для сгенерированного файла сертификата"
       ],
+      "City": [
+        "Город"
+      ],
       "Code": [
         "Код"
       ],
@@ -10257,6 +10295,9 @@
       ],
       "Colors": [
         "Цвета"
+      ],
+      "Company": [
+        "Компания"
       ],
       "Company name": [
         "Название компании"
@@ -10672,9 +10713,6 @@
       "Name": [
         "Имя"
       ],
-      "Name and address": [
-        "Имя и адрес"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Переадресация портов)"
       ],
@@ -10707,6 +10745,9 @@
       ],
       "Non-standard ports": [
         "Нестандартные порты"
+      ],
+      "Note": [
+        "Заметка"
       ],
       "Notification": [
         "Уведомление"
@@ -10947,6 +10988,9 @@
       ],
       "Sticky labels": [
         "Липкие ярлыки"
+      ],
+      "Street address": [
+        "Адрес"
       ],
       "Strong": [
         "Надежный"
@@ -11953,17 +11997,11 @@
       "Get started for ${ priceCoupon }": [
         "Начните с ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Начиная с ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Улучшить до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12743,12 +12781,6 @@
       "${ shortPlan.title } Trial": [
         "Пробная версия ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Оформите Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
-      ],
       "Your account's usage": [
         "Использование вашего аккаунта"
       ]
@@ -13138,12 +13170,6 @@
       ],
       "An external address cannot be default": [
         "Внешний адрес не может быть адресом по умолчанию"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Мониторинг Темной Паутины отключен"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Мониторинг Темной Паутины включен"
       ],
       "Downloaded 2FA recovery codes": [
         "Скачать коды восстановления двухфакторной аутентификации"
@@ -16485,6 +16511,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -16611,9 +16678,6 @@
       ],
       "Comprehensive privacy and security": [
         "Комплексная защита конфиденциальности и безопасности"
-      ],
-      "Dark web monitoring": [
-        "Мониторинг Темной паутины"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Поддержка приложений для настольных компьютеров и почтовых клиентов (через IMAP)"
@@ -16782,47 +16846,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -17681,9 +17704,6 @@
       "Customize your mail import": [
         "Настройка импорта вашей почты"
       ],
-      "Dark Web Monitoring": [
-        "Мониторинг Темной паутины"
-      ],
       "Dashboard": [
         "Панель управления"
       ],
@@ -17812,9 +17832,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Изменить Шлюз ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Изменение информации счета-фактуры"
       ],
       "Edit profile": [
         "Изменить профиль"

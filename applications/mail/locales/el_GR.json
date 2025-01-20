@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "Περί hide-my-email ψευδώνυμα"
       ],
+      "Activate": [
+        "Ενεργοποίηση"
+      ],
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
@@ -516,9 +519,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Αποκτήστε το ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Απκτήστε το ${ MAIL_SHORT_APP_NAME } Plus για ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Επικοινωνήστε"
       ],
@@ -768,6 +768,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
+      "More options": [
+        "Περισσότερες επιλογές"
       ],
       "More refine actions": [
         "Περισσότερες ενέργειες βελτίωσης"
@@ -1321,11 +1324,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
@@ -1707,9 +1710,6 @@
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Εύκολη προσθήκη ή αφαίρεση χρηστών"
       ],
@@ -1795,9 +1795,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+, Prime Video και άλλων, από οπουδήποτε."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονική διεύθυνση, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
@@ -1926,12 +1923,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Αλλαγή ρυθμίσεων διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Continue": [
-        "Συνέχεια"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
       ],
@@ -6903,9 +6894,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
-      "Registering your subscription...": [
-        "Εγγραφή της συνδρομής σας..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Θυμηθείτε να το ενημερώσετε στον διαχειριστή κωδικών πρόσβασής σας ή οπουδήποτε διατηρείτε τον λογαριασμό και τα στοιχεία σύνδεσής σας."
       ],
@@ -7011,9 +6999,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
-      ],
-      "Setting up your new address...": [
-        "Ρύθμιση της νέας διεύθυνσής σας..."
       ],
       "Shorten selection": [
         "Συντόμευση επιλογής"
@@ -9207,14 +9192,11 @@
       "Get started for ${ priceCoupon }": [
         "Ξεκινήστε με ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Ξεκινώντας από ${ priceMailPlus }"
+      "Upgrade": [
+        "Αναβάθμιση"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9834,14 +9816,6 @@
         "Αλλαγή προγράμματος;"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
@@ -10238,9 +10212,6 @@
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Διαγράψτε τα διαγραμμένα και ανεπιθύμητα μηνύματα ηλεκτρονικού ταχυδρομείου μετά από 30 ημέρες."
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Distraction-free emailing": [
         "Αποστολή email χωρίς περισπασμούς"
@@ -11304,6 +11275,11 @@
         "Υπογράψτε"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Πιο γρήγορα στην εφαρμογή"
@@ -11893,9 +11869,6 @@
       ],
       "Comprehensive privacy and security": [
         "Ολοκληρωμένο απόρρητο και ασφάλεια"
-      ],
-      "Dark web monitoring": [
-        "Dark web monitoring"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Υποστήριξη εφαρμογών επιφάνειας εργασίας και προγραμμάτων-πελατών ηλεκτρονικού ταχυδρομείου (μέσω IMAP)"
@@ -12580,9 +12553,6 @@
       "Download Desktop app": [
         "Λήψη εφαρμογής Υπολογιστή"
       ],
-      "Enable Dark Web Monitoring": [
-        "Ενεργοποιήστε την Παρακολούθηση Dark Web"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Λήψη της “@${ PM_DOMAIN }“ διεύθυνσής μου"
       ],
@@ -12782,9 +12752,6 @@
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Ανάκτηση δεδομένων"
@@ -13379,6 +13346,11 @@
         "Σήμερα"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
@@ -13460,11 +13432,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Tor out of date": {

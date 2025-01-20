@@ -169,6 +169,9 @@
       "Create": [
         "Utwórz"
       ],
+      "Create folder": [
+        "Utwórz folder"
+      ],
       "Create Gateway": [
         "Utwórz bramę"
       ],
@@ -262,9 +265,6 @@
       "Edit group": [
         "Edytuj grupę"
       ],
-      "Edit invoice details": [
-        "Edytuj szczegóły faktury"
-      ],
       "Edit name": [
         "Edytuj nazwę"
       ],
@@ -312,12 +312,6 @@
       ],
       "Forgot recovery method?": [
         "Nie pamiętasz metody odzyskiwania?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Wybierz plan ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Wybierz plan ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Uzyskaj nowy szyfrowany adres e-mail"
@@ -459,6 +453,9 @@
       ],
       "Refer a friend": [
         "Poleć znajomemu"
+      ],
+      "Refresh data": [
+        "Odśwież dane"
       ],
       "Refresh status": [
         "Odśwież status"
@@ -1024,9 +1021,6 @@
       "Advanced account protection": [
         "Zaawansowana ochrona konta"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Easily add or remove users": [
         "Łatwo dodawaj lub usuwaj użytkowników"
       ],
@@ -1112,9 +1106,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów hide-my-email, udostępnianie, zintegrowaną aplikację uwierzytelniającą 2FA, Monitoring dark web i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje ${ addresses } adres e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej.",
@@ -1258,12 +1249,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Zmień ustawienia adresu e-mail"
-      ],
-      "Continue": [
-        "Kontynuuj"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -3317,6 +3302,11 @@
         "terabajtów"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "Etykieta ${ Label.Name } została zaktualizowana"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Dozwolone:"
@@ -4237,6 +4227,9 @@
       "Increase your account security by verifying your email address.": [
         "Zwiększ bezpieczeństwo konta, weryfikując adres pomocniczy."
       ],
+      "Inherited from parent folder": [
+        "Zastosowano z folderu nadrzędnego"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Zainstaluj plik konfiguracyjny kraju, aby połączyć się z losowym serwerem w wybranym przez Ciebie kraju."
       ],
@@ -4423,6 +4416,9 @@
       "Must start with a letter.": [
         "Nazwa musi rozpoczynać się literą."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
+      ],
       "New user invited to organization": [
         "Zaproszenie nowego użytkownika do organizacji"
       ],
@@ -4455,6 +4451,12 @@
       ],
       "of": [
         "z"
+      ],
+      "Off": [
+        "Wył."
+      ],
+      "On": [
+        "Wł."
       ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
@@ -4624,9 +4626,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
-      "Registering your subscription...": [
-        "Rejestrowanie subskrypcji..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
       ],
@@ -4704,9 +4703,6 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
-      ],
-      "Setting up your new address...": [
-        "Konfiguracja nowego adresu..."
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -5236,6 +5232,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Możesz otworzyć jeden czat jednocześnie. Najpierw zamknij poprzedni wątek."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Możesz użyć następujących danych logowania do połączenia się z serwerem ${ VPN_APP_NAME }, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
       ],
@@ -5356,14 +5355,16 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Możliwość dodania serwerów do innej bramy będzie możliwa natychmiast."
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info for cash payment method": {
@@ -5385,11 +5386,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Możesz dodać metodę płatności, aby subskrypcja odnawiała się automatycznie. Dostępne są również inne metody płatności."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Wpisz nazwę i adres organizacji. Te szczegóły zostaną dodane do faktur."
       ]
     },
     "Info subscription": {
@@ -5617,11 +5613,20 @@
       "Choose a name for the generated certificate file": [
         "Wybierz nazwę pliku dla wygenerowanego certyfikatu"
       ],
+      "City": [
+        "Miasto"
+      ],
       "Code": [
         "Kod"
       ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
+      ],
+      "Colors": [
+        "Kolory"
+      ],
+      "Company": [
+        "Firma"
       ],
       "Company name": [
         "Nazwa firmy"
@@ -5731,6 +5736,9 @@
       "First name": [
         "Imię"
       ],
+      "Folder location": [
+        "Lokalizacja folderu"
+      ],
       "Gateway name": [
         "Nazwa bramy"
       ],
@@ -5791,9 +5799,6 @@
       "Name": [
         "Nazwa"
       ],
-      "Name and address": [
-        "Nazwa i adres"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (przekierowanie portów)"
       ],
@@ -5823,6 +5828,12 @@
       ],
       "Non-standard ports": [
         "Niestandardowe porty"
+      ],
+      "Note": [
+        "Notatka"
+      ],
+      "Notification": [
+        "Powiadomienie"
       ],
       "OpenVPN / IKEv2 password": [
         "Hasło OpenVPN / IKEv2"
@@ -5952,6 +5963,9 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "Street address": [
+        "Ulica"
       ],
       "Strong": [
         "Silne"
@@ -6084,6 +6098,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Kod pocztowy"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Utwórz folder"
+      ],
+      "Create label": [
+        "Utwórz etykietę"
+      ],
+      "Edit folder": [
+        "Edytuj folder"
+      ],
+      "Edit label": [
+        "Edytuj etykietę"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "Utworzono \"${ Label.Name }\""
       ]
     },
     "Lable": {
@@ -6390,6 +6423,17 @@
         "Spam"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Kolor"
+      ],
+      "Folder name": [
+        "Nazwa folderu"
+      ],
+      "Label name": [
+        "Nazwa etykiety"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
@@ -6414,17 +6458,11 @@
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7144,12 +7182,6 @@
       "${ shortPlan.title } Trial": [
         "Wersja próbna planu ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Wybierz plan Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
-      ],
       "Your account's usage": [
         "Użycie konta"
       ]
@@ -7614,6 +7646,9 @@
       ],
       "My reason isn't listed": [
         "Inna, niewymieniona wyżej przyczyna"
+      ],
+      "No parent folder": [
+        "Brak folderu nadrzędnego"
       ],
       "No permission": [
         "Brak uprawnienia"
@@ -8135,6 +8170,9 @@
       ],
       "Search for an email or IP address": [
         "Szukaj adresu e-mail lub adresu IP"
+      ],
+      "Search parent folder": [
+        "Przeszukaj folder nadrzędny"
       ],
       "Search users": [
         "Szukaj użytkowników"
@@ -9649,9 +9687,6 @@
       "Comprehensive privacy and security": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo"
       ],
-      "Dark web monitoring": [
-        "Monitoring dark web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Wsparcie dla aplikacji desktopowych i pocztowych (przez IMAP)"
       ],
@@ -10523,9 +10558,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Edytuj bramę ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Edytuj szczegóły faktury"
       ],
       "Edit servers": [
         "Edytuj serwery"
