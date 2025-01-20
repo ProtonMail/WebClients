@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -460,9 +460,6 @@
       "Edit group": [
         "Uredi skupino"
       ],
-      "Edit invoice details": [
-        "Uredite podrobnosti računa"
-      ],
       "Edit label": [
         "Uredi oznako"
       ],
@@ -552,9 +549,6 @@
       ],
       "Generate token": [
         "Ustvari žeton"
-      ],
-      "Get ${ vpnPlus }": [
-        "Pridobi ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Pridobite nov šifriran e-poštni naslov"
@@ -1116,6 +1110,9 @@
       ],
       "Switch or add account": [
         "Preklopi ali dodaj račun"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ],
       "Test": [
         "Preizkusi"
@@ -1700,9 +1697,6 @@
       "Advanced account protection": [
         "Napredni program za zaščito računa"
       ],
-      "Dark Web Monitoring": [
-        "Spremljanje Dark Web"
-      ],
       "Easily add or remove users": [
         "Enostavno dodajte ali odstranite uporabnike"
       ],
@@ -1773,9 +1767,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in še več, od kjerkoli."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Varne prijave na vseh vaših napravah. Vključuje neomejeno število vzdevkov hide-my-email, skupno rabo, integriran 2FA, spremljanje Dark Web in še več."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
@@ -1864,6 +1855,9 @@
       "Custom domain problem": [
         "Težava z domeno po meri"
       ],
+      "Docs problem": [
+        "Težava s Docs"
+      ],
       "Drive problem": [
         "Težava z Drive"
       ],
@@ -1923,9 +1917,6 @@
       "Add link to your email footer": [
         "Dodajte povezavo v podpis svojega e-poštnega sporočila."
       ],
-      "Continue": [
-        "Nadaljuj"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -1938,11 +1929,26 @@
       "Copy": [
         "Kopiraj"
       ],
+      "Create label": [
+        "Ustvarite oznako"
+      ],
       "Invite": [
         "Povabi"
       ],
+      "Maybe later": [
+        "Morda kasneje"
+      ],
+      "Next": [
+        "Naslednji"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
       "Send": [
         "Pošljite"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ],
       "Tweet": [
         "Tweetaj"
@@ -3542,6 +3548,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Pridobite do ${ credits } v dobroimetju tako, da povabite prijatelje v ${ BRAND_NAME }."
       ],
@@ -5126,6 +5135,9 @@
       "customer support": [
         "podporo strankam"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
       ],
@@ -6620,6 +6632,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivirajte vsaj en način za obnovitev podatkov, da lahko v primeru izgube gesla še naprej dostopate do vsebine računa ${ BRAND_NAME }."
       ],
+      "Active": [
+        "Aktivno"
+      ],
       "active": [
         "aktivno"
       ],
@@ -6709,6 +6724,9 @@
       ],
       "All members have been added.": [
         "Vsi člani so bili dodani."
+      ],
+      "All users": [
+        "Vsi uporabniki"
       ],
       "All your changes will be lost.": [
         "Vse vaše spremembe bodo izgubljene."
@@ -7259,6 +7277,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Pridobite dostop z ustvarjanjem računa ${ BRAND_NAME } in s sprejetjem povabila."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Prejmite obvestilo v primeru razkritja vašega gesla in drugih osebnih podatkov. ${ learnMoreLinkNoBreach }"
       ],
@@ -7648,6 +7669,12 @@
       ],
       "of": [
         "od"
+      ],
+      "Off": [
+        "Izklopljeno"
+      ],
+      "On": [
+        "Vklopljeno"
       ],
       "Once you reset your password:": [
         "Ko ponovno nastavite geslo:"
@@ -8870,9 +8897,6 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Vaša obnovitvena fraza je niz 12 naključno ustvarjenih besed v določenem vrstnem redu."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Vašo naročnino upravlja Mozilla. Prosimo, obrnite se na podporo Mozilla."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaš zahtevek za podporo je bil zaprt. Hvala, ker ste se obrnili na podporo ${ BRAND_NAME }."
       ],
@@ -8915,11 +8939,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Lahko dodate način plačila, da se vam naročnina samodejno obnovi. Na voljo so tudi drugi načini plačila."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Vnesite ime in naslov zase ali za svojo organizacijo. Ti podatki bodo dodani osebnim in organizacijskim računom."
       ]
     },
     "Info on errors": {
@@ -9564,6 +9583,9 @@
       "Choose a name for the generated certificate file": [
         "Izberite ime za ustvarjeno datoteko potrdila."
       ],
+      "City": [
+        "Mesto"
+      ],
       "Code": [
         "Koda"
       ],
@@ -9578,6 +9600,9 @@
       ],
       "Colors": [
         "Barve"
+      ],
+      "Company": [
+        "Podjetje"
       ],
       "Company name": [
         "Ime podjetja"
@@ -9966,9 +9991,6 @@
       "Name": [
         "Ime"
       ],
-      "Name and address": [
-        "Ime in naslov"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Posredovanje vrat)"
       ],
@@ -10001,6 +10023,9 @@
       ],
       "Non-standard ports": [
         "Nestandardna vrata"
+      ],
+      "Note": [
+        "Opomba"
       ],
       "Notification": [
         "Obvestilo"
@@ -10227,11 +10252,17 @@
       "Start weekday": [
         "Začetek delovnega tedna"
       ],
+      "State": [
+        "Država"
+      ],
       "Statement": [
         "Izjava"
       ],
       "Sticky labels": [
         "Nalepke"
+      ],
+      "Street address": [
+        "Ulica"
       ],
       "Strong": [
         "Močno"
@@ -10358,6 +10389,9 @@
       ],
       "Your referral link": [
         "Povezava za priporočilo"
+      ],
+      "ZIP code": [
+        "Poštna številka"
       ]
     },
     "label": {
@@ -11197,17 +11231,11 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Nadgradnja"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -11921,9 +11949,6 @@
       "${ shortPlan.title } Trial": [
         "Preizkus ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Pridobite Mail Plus za ${ priceCoupon }"
-      ],
       "Your account's usage": [
         "Uporaba vašega računa"
       ]
@@ -12086,6 +12111,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Ponastavi gesla uporabnika in ponastavi dvojno preverjanje pristnosti za uporabnike"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Z enim klikom preusmerite internetni promet prek omrežja Tor."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
@@ -12305,12 +12333,6 @@
       "An external address cannot be default": [
         "Zunanji naslov ne more biti privzeti."
       ],
-      "Dark Web Monitoring has been disabled": [
-        "Pregledovanje temnega spletaje je bilo onemogočeno."
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Pregledovanje temnega spletaje omogočeno."
-      ],
       "Invalid code": [
         "Neveljavna koda"
       ],
@@ -12454,9 +12476,33 @@
         "Izberite, do česa lahko ${ BRAND_NAME } dostopa: ogled e-poštnih sporočil in nastavitev, ogled in prenos stikov, ogled in prenos vseh dnevnih redov, do katerih dostopate iz storitve Google Koledar."
       ]
     },
+    "Offer": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Brezplačno"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Shramba"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Dobrodošli v ${ appName }"
+      ]
+    },
+    "Onboarding modal": {
+      "browser": [
+        "brskalnik"
       ]
     },
     "Option": {
@@ -13391,11 +13437,17 @@
       "Address": [
         "Naslov"
       ],
+      "Anderson": [
+        "Novak"
+      ],
       "Choose a name": [
         "Izberite ime"
       ],
       "Choose display name": [
         "Izberi prikazno ime"
+      ],
+      "Company name": [
+        "Ime podjetja"
       ],
       "Confirm": [
         "Potrdi"
@@ -13492,6 +13544,9 @@
       ],
       "Text": [
         "Besedilo"
+      ],
+      "Thomas": [
+        "Janek"
       ],
       "Type text or keyword": [
         "Vnesite besedilo ali ključno besedo"
@@ -14498,6 +14553,9 @@
       ]
     },
     "signup: Feature": {
+      "Encrypted": [
+        "Šifrirano"
+      ],
       "Strict no-logs policy": [
         "Strogo brez hrambe dnevniških zapisov"
       ]
@@ -15087,6 +15145,9 @@
       "Got it": [
         "Razumem"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Samo prijavite se v svoj račun v Apple App Store in nato izberite ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Samo prijavite se v svoj račun v Trgovini Play in nato pritisnite ${ subscriptions }."
       ],
@@ -15106,6 +15167,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription reminder": {
@@ -15198,9 +15300,6 @@
       ],
       "Comprehensive privacy and security": [
         "Celovita zaščita zasebnosti in varnosti"
-      ],
-      "Dark web monitoring": [
-        "Spremljanje temnega spleta"
       ],
       "Direct contribution to our mission": [
         "Neposreden prispevek k našemu poslanstvu"
@@ -15297,47 +15396,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -16098,6 +16156,9 @@
       "Currency": [
         "Valuta"
       ],
+      "Custom domains:": [
+        "Domen po meri:"
+      ],
       "Custom filters": [
         "Filtri po meri"
       ],
@@ -16118,9 +16179,6 @@
       ],
       "Customize your mail import": [
         "Prilagodite uvoz pošte."
-      ],
-      "Dark Web Monitoring": [
-        "Spremljanje temnega spleta"
       ],
       "Dashboard": [
         "Nadzorna plošča"
@@ -16250,9 +16308,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Uredi prehod ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Uredite podrobnosti računa"
       ],
       "Edit profile": [
         "Urejanje profila"
@@ -16794,6 +16849,9 @@
       "SMTP submission": [
         "Pošiljanje SMTP"
       ],
+      "Snooze:": [
+        "Dremež:"
+      ],
       "Sort folders alphabetically": [
         "Razvrsti mape po abecednem redu"
       ],
@@ -17302,6 +17360,9 @@
     "Tor out of date": {
       "stable release": [
         "izdajno različico"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta različica brskalnika Tor ni podprta. Posodobite na najnovejšo ${ stableRelease }"
       ]
     },
     "Transaction state display as badge": {
@@ -17327,6 +17388,9 @@
       ],
       "Credit": [
         "Dobroimetje"
+      ],
+      "Migration": [
+        "Migracija"
       ],
       "Payment": [
         "Plačilo"

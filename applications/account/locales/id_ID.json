@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -337,6 +337,9 @@
       "Create link": [
         "Buat tautan"
       ],
+      "Create new policy": [
+        "Buat kebijakan baru"
+      ],
       "Create users": [
         "Buat pengguna"
       ],
@@ -475,9 +478,6 @@
       "Edit group": [
         "Sunting grup"
       ],
-      "Edit invoice details": [
-        "Sunting rincian faktur"
-      ],
       "Edit label": [
         "Sunting label"
       ],
@@ -567,12 +567,6 @@
       ],
       "Generate token": [
         "Hasilkan token"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Dapatkan ${ MAIL_SHORT_APP_NAME } Plus dengan harga ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Dapatkan ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Dapatkan alamat email terenkripsi baru"
@@ -834,6 +828,9 @@
       ],
       "Refer a friend": [
         "Rujuk teman"
+      ],
+      "Refresh data": [
+        "Segarkan data"
       ],
       "Refresh status": [
         "Muat ulang status"
@@ -1742,9 +1739,6 @@
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
       ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
-      ],
       "Easily add or remove users": [
         "Tambah atau kurangi pengguna secara mudah"
       ],
@@ -1830,9 +1824,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, dan masih banyak lagi."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -1979,12 +1970,6 @@
     "Button": {
       "Add link to your email footer": [
         "Tambahkan tautan pada footer email Anda"
-      ],
-      "Change email address settings": [
-        "Ubah pengaturan alamat email"
-      ],
-      "Continue": [
-        "Lanjutkan"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
@@ -3605,6 +3590,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Buat label atau folder sebanyak yang Anda butuh demi menjaga kotak masuk Anda tetap rapi."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
@@ -3616,6 +3604,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Semua orang dalam organisasi Anda dapat menghubungkan ke server terbagi dalam semua negara."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dapatkan pemberitahuan jika kata sandi atau data lain Anda bocor dari layanan pihak ketiga."
@@ -3634,6 +3625,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Buat footer email milik Anda — tampilkan merek Anda, bukan merek kami."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Tidak ada siapa pun dalam organisasi Anda yang dapat menghubungkan ke server terbagi."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
@@ -6580,6 +6574,9 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } pengguna saat ini memiliki akses ke server terbagi."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -6903,6 +6900,9 @@
       ],
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Perbolehkan pengguna untuk menghubungkan ke server terbagi aman dari bagian **Negara** dalam aplikasi ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Telah dialokasikan"
@@ -7280,13 +7280,13 @@
         "Apakah Anda ingin mencabut seluruh sesi kecuali sesi ini?"
       ],
       "Domain ownership failed verification.": [
-        "Kemilikan domain tidak berhasil diverifikasi."
+        "Kepemilikan domain gagal diverifikasi."
       ],
       "Domain ownership not verified.": [
-        "Kemilikan domain tidak diverifikasi."
+        "Kepemilikan domain tidak terverifikasi."
       ],
       "Domain ownership verified.": [
-        "Kemilikan domain diverifikasi."
+        "Kepemilikan domain terverifikasi."
       ],
       "domain used": [
         "domain digunakan"
@@ -8002,6 +8002,12 @@
       "of": [
         "dari"
       ],
+      "Off": [
+        "Mati"
+      ],
+      "On": [
+        "Nyala"
+      ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
       ],
@@ -8257,9 +8263,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
-      "Registering your subscription...": [
-        "Mendaftarkan langganan Anda..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Jangan lupa untuk membagikan rincian masuk ini kepada masing-masing pengguna."
       ],
@@ -8367,9 +8370,6 @@
       ],
       "Setting successfully saved": [
         "Pengaturan berhasil disimpan"
-      ],
-      "Setting up your new address...": [
-        "Menyiapkan alamat baru Anda..."
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
@@ -9376,9 +9376,6 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tiket layanan dukungan Anda telah ditutup. Terima kasih telah menghubungi layanan dukungan ${ BRAND_NAME }."
       ],
@@ -9424,11 +9421,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Anda dapat menambahkan metode pembayaran agar langganan Anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Masukkan nama dan alamat untuk Anda sendiri atau organisasi Anda. Detail ini akan ditambahkan ke faktur personal dan organisasi."
       ]
     },
     "Info on errors": {
@@ -10078,6 +10070,9 @@
       "Choose a name for the generated certificate file": [
         "Pilih nama untuk berkas sertifikat yang dihasilkan"
       ],
+      "City": [
+        "Kota"
+      ],
       "Code": [
         "Kode"
       ],
@@ -10092,6 +10087,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Company": [
+        "Perusahaan"
       ],
       "Company name": [
         "Nama perusahaan"
@@ -10507,9 +10505,6 @@
       "Name": [
         "Nama"
       ],
-      "Name and address": [
-        "Nama dan alamat"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Penerusan Port)"
       ],
@@ -10542,6 +10537,9 @@
       ],
       "Non-standard ports": [
         "Port non-standar"
+      ],
+      "Note": [
+        "Catatan"
       ],
       "Notification": [
         "Pemberitahuan"
@@ -10782,6 +10780,9 @@
       ],
       "Sticky labels": [
         "Label lekat"
+      ],
+      "Street address": [
+        "Alamat jalan"
       ],
       "Strong": [
         "Kuat"
@@ -11343,6 +11344,9 @@
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "Penawaran waktu terbatas: **Hemat ${ discount } di ${ name } dengan paket 1 tahun**"
       ],
+      "Set up your account with your Porkbun domain.": [
+        "Atur akun Anda dengan domain Porkbun Anda."
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
       ]
@@ -11773,17 +11777,11 @@
       "Get started for ${ priceCoupon }": [
         "Mulai dengan harga ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12488,12 +12486,6 @@
       "${ shortPlan.title } Trial": [
         "Uji Coba ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
-      ],
       "Your account's usage": [
         "Penggunaan akun Anda"
       ]
@@ -12895,12 +12887,6 @@
       ],
       "An external address cannot be default": [
         "Alamat eksternal tidak dapat dijadikan alamat bawaan"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Pemantauan Dark Web telah dinonaktifkan"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Pemantauan Dark Web telah diaktifkan"
       ],
       "Downloaded 2FA recovery codes": [
         "Kode pemulihan 2FA terunduh"
@@ -16129,6 +16115,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -16237,9 +16264,6 @@
       ],
       "Comprehensive privacy and security": [
         "Privasi dan keamanan yang komprehensif"
-      ],
-      "Dark web monitoring": [
-        "Pemantauan dark web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Dukungan aplikasi desktop dan klien email (melalui IMAP)"
@@ -16414,47 +16438,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -17292,9 +17275,6 @@
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
       ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
-      ],
       "Dashboard": [
         "Dasbor"
       ],
@@ -17420,9 +17400,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Sunting Gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Sunting rincian faktur"
       ],
       "Edit profile": [
         "Sunting profil"
