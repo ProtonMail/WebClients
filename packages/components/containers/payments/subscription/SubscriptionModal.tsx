@@ -112,6 +112,16 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             modalState.onClose();
         };
 
+        const handleSubscribed = () => {
+            handleClose();
+            onSubscribed?.();
+        };
+
+        const handleUnsubscribed = () => {
+            handleClose();
+            onUnsubscribed?.();
+        };
+
         let blurBackdrop = true;
         let rootClassName: string | undefined;
         if (getHas2024OfferCoupon(rest.coupon)) {
@@ -135,14 +145,8 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                 plans={plans}
                 freePlan={freePlan}
                 organization={organization}
-                onSubscribed={() => {
-                    handleClose();
-                    onSubscribed?.();
-                }}
-                onUnsubscribed={() => {
-                    handleClose();
-                    onUnsubscribed?.();
-                }}
+                onSubscribed={handleSubscribed}
+                onUnsubscribed={handleUnsubscribed}
                 onCancel={handleClose}
                 mode={mode}
                 currency={currency}
@@ -183,10 +187,8 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                             postSubscriptionProps.renderCustomStepModal({
                                 modalProps: {
                                     ...modalState,
-                                    // Override onClose to close the modal and call onSubscribed
-                                    onClose: handleClose,
+                                    onClose: handleSubscribed,
                                 },
-                                onSubscribed,
                                 planIDs,
                                 step,
                                 upsellRef,
