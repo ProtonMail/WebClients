@@ -20,7 +20,6 @@ import {
     type RequestOptions,
     extendStatus,
     isCheckWithAutomaticOptions,
-    isFullBillingAddress,
     isPaymentMethodStatusExtended,
     queryPaymentMethodStatus,
 } from '@proton/payments';
@@ -80,7 +79,7 @@ const putFullBillingAddress = (data: FullBillingAddress) => {
 };
 
 type FullBillingAddressResponse = {
-    BillingAddress: Partial<FullBillingAddress>;
+    BillingAddress: FullBillingAddress;
     VatId: string | null;
 };
 
@@ -388,25 +387,12 @@ export const usePaymentsApi = (
         const getFullBillingAddress = async (): Promise<FullBillingAddress> => {
             const response = await api<FullBillingAddressResponse>(queryFullBillingAddress());
 
-            const VatId = response.VatId ?? undefined;
-            const fullBillingAddress = {
-                VatId,
+            const fullBillingAddress: FullBillingAddress = {
                 ...response.BillingAddress,
+                VatId: response.VatId ?? null,
             };
 
-            if (isFullBillingAddress(fullBillingAddress)) {
-                return fullBillingAddress;
-            }
-
-            const status = await statusExtendedAutomatic();
-            const CountryCode = fullBillingAddress.CountryCode ?? status.CountryCode;
-            const State = fullBillingAddress.State ?? status.State ?? undefined;
-
-            return {
-                CountryCode,
-                State,
-                ...fullBillingAddress,
-            };
+            return fullBillingAddress;
         };
 
         const updateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {
