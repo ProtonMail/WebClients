@@ -179,7 +179,7 @@ export const HeaderPublicOptions = ({
 
       {user && (
         <>
-          <UserInfo user={user} />
+          <UserInfo user={user} data-testid="public-view-user-info" />
         </>
       )}
 
