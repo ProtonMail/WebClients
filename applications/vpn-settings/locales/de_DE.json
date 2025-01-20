@@ -166,6 +166,9 @@
       "Create": [
         "Erstellen"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
       "Create Gateway": [
         "Gateway erstellen"
       ],
@@ -262,9 +265,6 @@
       "Edit group": [
         "Gruppe bearbeiten"
       ],
-      "Edit invoice details": [
-        "Rechnungsdetails bearbeiten"
-      ],
       "Edit name": [
         "Name bearbeiten"
       ],
@@ -312,12 +312,6 @@
       ],
       "Forgot recovery method?": [
         "Wiederherstellungsmethode vergessen?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Hol dir ${ MAIL_SHORT_APP_NAME } Plus für ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } holen"
       ],
       "Get a new encrypted email address": [
         "Erhalte eine neue verschlüsselte E-Mail-Adresse"
@@ -1017,9 +1011,6 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
-      ],
       "Easily add or remove users": [
         "Benutzer einfach hinzufügen oder entfernen"
       ],
@@ -1105,9 +1096,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
@@ -1245,12 +1233,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "E-Mail-Adresseinstellungen ändern"
-      ],
-      "Continue": [
-        "Fortfahren"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ],
@@ -1259,6 +1241,12 @@
       ],
       "Continue your subscription": [
         "Abonnement fortsetzen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Remind me later": [
+        "Später erneut fragen"
       ]
     },
     "Cancellation upsell": {
@@ -2660,6 +2648,9 @@
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ],
+      "Please select a country": [
+        "Bitte wähle ein Land"
+      ],
       "Please set a recovery email first": [
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail-Adresse fest."
       ],
@@ -3204,6 +3195,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bestätige deine Identität mit einem physischen U2F oder FIDO2 Sicherheitsschlüssel"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Du hast das Maximum von ${ maxSecurityKeyLength } Sicherheitsschlüssel erreicht.",
+        "Du hast das Maximum von ${ maxSecurityKeyLength } Sicherheitsschlüsseln erreicht."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Dein Zwei-Faktor-Authentifizierungsschlüssel ist jetzt einsatzbereit."
       ]
@@ -3274,6 +3269,11 @@
       "Terabyte": [
         "Terabyte",
         "Terabyte"
+      ]
+    },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } aktualisiert"
       ]
     },
     "FilterSettings": {
@@ -3544,6 +3544,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } lebenslanges Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung Ihres Abonnements ${ planTitle } bleiben unverändert."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -3828,6 +3831,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
+      ],
       "Copy the suggested password to clipboard": [
         "Vorgeschlagenes Passwort in die Zwischenablage kopieren"
       ],
@@ -3979,6 +3985,9 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Aktiviert am ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Die End-to-End E-Mail-Verschlüsselung ist für diese Gruppe aufgrund externer Adressen deaktiviert."
+      ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "E-Mail Ende-zu-Ende-Verschlüsselung ist für diese Gruppe deaktiviert. Sie kann aktiviert werden."
       ],
@@ -4005,6 +4014,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Gib den an „${ email }” gesendeten Code ein. Solltest du die Nachricht nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Gib die Entitäts-ID einer **eduGAIN**-Organisation für **${ domain.DomainName }** ein."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Gib das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
@@ -4155,6 +4167,9 @@
       ],
       "Increase your account security by verifying your email address.": [
         "Erhöhe die Sicherheit deines Kontos, indem du deine E-Mail-Adresse verifizierst"
+      ],
+      "Inherited from parent folder": [
+        "Von übergeordnetem Ordner übernommen"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installiere eine Länderkonfigurationsdatei, um eine Verbindung zu einem zufälligen Server in dem Land deiner Wahl herzustellen."
@@ -4341,6 +4356,9 @@
       ],
       "Must start with a letter.": [
         "Muss mit einem Buchstaben beginnen."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
       "New user invited to organization": [
         "Neuen Benutzer zur Organisation eingeladen"
@@ -4539,9 +4557,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
-      "Registering your subscription...": [
-        "Dein Abonnement wird registriert..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
@@ -4605,6 +4620,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Versende E-Mails, um deine Mitglieder zu ermutigen, ihre Konten mit 2FA zu schützen."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+      ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
       ],
@@ -4616,9 +4634,6 @@
       ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
-      ],
-      "Setting up your new address...": [
-        "Deine neue E-Mail-Adresse wird eingerichtet..."
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
@@ -4646,6 +4661,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF klärt, wer berechtigt ist, E-Mails über deine Domain zu senden. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
       "Step ${ step }": [
         "Schritt ${ step }",
@@ -5119,6 +5137,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kannst jeweils nur eine Chat-Instanz offen haben. Bitte schließe vorherige Unterhaltungen, bevor du eine neue beginnst."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
       ],
@@ -5223,6 +5244,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Deine Organisation verwendet Single Sign-on (SSO). Klicke auf \"Anmelden\", um mit deinem SSO-Anbieter fortzufahren."
       ],
@@ -5235,14 +5259,22 @@
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du kannst diese Server sofort zu einem anderen Gateway hinzufügen."
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info for cash payment method": {
@@ -5264,11 +5296,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kannst eine Zahlungsmethode hinzufügen, um dein Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Gib einen Namen und eine Adresse für dich oder deine Organisation ein. Diese Angaben werden sowohl den persönlichen als auch den Organisationsrechnungen hinzugefügt."
       ]
     },
     "Info subscription": {
@@ -5490,11 +5517,20 @@
       "Choose a name for the generated certificate file": [
         "Wähle einen Namen für die erzeugte Zertifikatsdatei"
       ],
+      "City": [
+        "Stadt"
+      ],
       "Code": [
         "Code"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
+      "Colors": [
+        "Farben"
+      ],
+      "Company": [
+        "Unternehmen"
       ],
       "Company name": [
         "Unternehmensname"
@@ -5604,6 +5640,9 @@
       "First name": [
         "Vorname"
       ],
+      "Folder location": [
+        "Pfad des Ordners"
+      ],
       "Gateway name": [
         "Gateway-Name"
       ],
@@ -5664,9 +5703,6 @@
       "Name": [
         "Name"
       ],
-      "Name and address": [
-        "Name und Adresse"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port-Weiterleitung)"
       ],
@@ -5696,6 +5732,12 @@
       ],
       "Non-standard ports": [
         "Nicht standardisierte Ports"
+      ],
+      "Note": [
+        "Notiz"
+      ],
+      "Notification": [
+        "Benachrichtigung"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN‐/IKEv2‐Passwort"
@@ -5823,6 +5865,9 @@
       ],
       "Start date": [
         "Anfangsdatum"
+      ],
+      "Street address": [
+        "Straße und Hausnummer"
       ],
       "Strong": [
         "Stark"
@@ -5955,6 +6000,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Postleitzahl"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Ordner erstellen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Edit folder": [
+        "Ordner bearbeiten"
+      ],
+      "Edit label": [
+        "Kategorie bearbeiten"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } erstellt"
       ]
     },
     "Lable": {
@@ -6259,6 +6323,17 @@
         "Spam"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Farbe"
+      ],
+      "Folder name": [
+        "Ordnername"
+      ],
+      "Label name": [
+        "Name der Kategorie"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
@@ -6283,17 +6358,11 @@
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Ab ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6432,6 +6501,9 @@
       ],
       "15 GB storage": [
         "15 GB Speicherplatz"
+      ],
+      "200 GB of storage": [
+        "200 GB Speicherplatz"
       ],
       "24/7 account management support": [
         "24/7-Kundenbetreuung"
@@ -6957,12 +7029,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-Testversion"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hol dir Mail Plus für ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
-      ],
       "Your account's usage": [
         "Verbrauch deines Kontos"
       ]
@@ -7391,6 +7457,22 @@
         "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
       ]
     },
+    "Offer": {
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ]
+    },
+    "Offer feature": {
+      "Custom email domain": [
+        "Eigene E-Mail-Domain"
+      ],
+      "Email Addresses": [
+        "E-Mail-Adressen"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
@@ -7417,6 +7499,9 @@
       ],
       "My reason isn't listed": [
         "Mein Grund ist nicht aufgeführt"
+      ],
+      "No parent folder": [
+        "Kein übergeordneter Ordner"
       ],
       "No permission": [
         "Keine Berechtigung"
@@ -7864,6 +7949,9 @@
       "Choose display name": [
         "Anzeigename auswählen"
       ],
+      "Company name": [
+        "Unternehmensname"
+      ],
       "Confirm": [
         "Bestätigen"
       ],
@@ -7897,6 +7985,9 @@
       "Group name": [
         "Name der Gruppe"
       ],
+      "Main street 12": [
+        "Hauptstraße 12"
+      ],
       "Other": [
         "Weitere"
       ],
@@ -7918,6 +8009,9 @@
       "Search for an email or IP address": [
         "Nach einer E-Mail-Adresse oder IP-Adresse suchen"
       ],
+      "Search parent folder": [
+        "Übergeordneten Ordner durchsuchen"
+      ],
       "Search users": [
         "Benutzer suchen"
       ],
@@ -7935,6 +8029,9 @@
       ],
       "Start date": [
         "Startdatum"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "yourdomain.com": [
         "ihredomain.com"
@@ -8256,6 +8353,9 @@
       ],
       "to be created": [
         "wird erstellt"
+      ],
+      "to be deleted": [
+        "zu löschen"
       ]
     },
     "session_recovery:available:action": {
@@ -8753,6 +8853,10 @@
       ]
     },
     "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } Mitglied hat dich um Hilfe gebeten, sich anzumelden.",
+        "${ n } Mitglieder haben dich um Hilfe gebeten, sich anzumelden."
+      ],
       "${ n } user converted to SSO": [
         "${ n } Benutzer zu SSO umgewandelt.",
         "${ n } Benutzer zu SSO umgewandelt."
@@ -9301,9 +9405,6 @@
       ],
       "Comprehensive privacy and security": [
         "Umfassender Datenschutz und Sicherheit"
-      ],
-      "Dark web monitoring": [
-        "Dark Web-Überwachung"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Unterstützung für Desktop-App und E-Mail-Client (über IMAP)"
@@ -10165,9 +10266,6 @@
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } bearbeiten"
       ],
-      "Edit invoice details": [
-        "Rechnungsdetails bearbeiten"
-      ],
       "Edit servers": [
         "Server bearbeiten"
       ],
@@ -10741,6 +10839,9 @@
       ],
       "Success": [
         "Erfolgreich"
+      ],
+      "Timeout": [
+        "Zeitüberschreitung"
       ],
       "Voided": [
         "Storniert"

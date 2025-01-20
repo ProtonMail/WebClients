@@ -169,8 +169,14 @@
       "Create": [
         "Luo"
       ],
+      "Create folder": [
+        "Luo kansio"
+      ],
       "Create Gateway": [
         "Luo yhdyskäytävä"
+      ],
+      "Create new policy": [
+        "Luo uusi käytäntö"
       ],
       "Create users": [
         "Luo käyttäjiä"
@@ -262,9 +268,6 @@
       "Edit group": [
         "Muokkaa ryhmää"
       ],
-      "Edit invoice details": [
-        "Muokkaa laskun tietoja"
-      ],
       "Edit name": [
         "Muokkaa nimeä"
       ],
@@ -312,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Unohditko palautustavan?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Hanki ${ MAIL_SHORT_APP_NAME } Plus hintaan ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Hanki ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Hanki uusi salattu sähköpostiosoite"
@@ -459,6 +456,9 @@
       ],
       "Refer a friend": [
         "Kerro kaverille"
+      ],
+      "Refresh data": [
+        "Päivitä tiedot"
       ],
       "Refresh status": [
         "Päivitä tila"
@@ -1017,9 +1017,6 @@
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
-      ],
       "Easily add or remove users": [
         "Lisää tai poista käyttäjiä helposti"
       ],
@@ -1105,9 +1102,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Suojaa kirjautumisesi kaikilla laitteillasi. Sisältää rajattomasti Hide-my-email-aliaksia, jakamisen, sisäänrakennetun 2FA:n, pimeän verkon valvonnan ja muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
@@ -1245,12 +1239,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Muuta sähköpostiosoitteen asetuksia"
-      ],
-      "Continue": [
-        "Jatka"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
       ],
@@ -3274,6 +3262,11 @@
         "Teratavua"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } päivitettiin"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Sallitut:"
@@ -3500,6 +3493,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } käyttäjällä on tällä hetkellä pääsy jaettuihin palvelimiin.",
+        "${ amountUsers }/${ totalUsers } käyttäjällä on tällä hetkellä pääsy jaettuihin palvelimiin."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -4156,6 +4153,9 @@
       "Increase your account security by verifying your email address.": [
         "Paranna tilisi suojausta vahvistamalla sähköpostiosoitteesi."
       ],
+      "Inherited from parent folder": [
+        "Peritty yläkansiosta"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Asenna maakohtainen määritystiedosto yhdistääksesi satunnaiseen palvelimeen valitsemassasi maassa."
       ],
@@ -4342,6 +4342,9 @@
       "Must start with a letter.": [
         "Täytyy alkaa kirjaimella."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
+      ],
       "New user invited to organization": [
         "Uusi käyttäjä kutsuttiin organisaatioon"
       ],
@@ -4374,6 +4377,12 @@
       ],
       "of": [
         "/"
+      ],
+      "Off": [
+        "Pois"
+      ],
+      "On": [
+        "Päällä"
       ],
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
@@ -4533,9 +4542,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
-      "Registering your subscription...": [
-        "Rekisteröidään tilaustasi..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
       ],
@@ -4613,9 +4619,6 @@
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
-      ],
-      "Setting up your new address...": [
-        "Määritetään uutta osoitettasi..."
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
@@ -5125,6 +5128,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Vain yksi keskustelu voi olla avoinna kerrallaan. Sulje edellinen keskustelu ennen uuden aloittamista."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin muiden tahojen kehittämillä avoimen lähdekoodin VPN-sovelluksilla. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
@@ -5241,14 +5247,16 @@
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info for cash payment method": {
@@ -5270,11 +5278,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Voit lisätä maksutavan, jolla tilauksesi uudistetaan automaattisesti. Myös muut maksutavat ovat käytettävissä."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Anna itsesi tai organisaatiosi nimi ja osoite. Nämä tiedot lisätään sekä henkilökohtaisiin että organisaation laskuihin."
       ]
     },
     "Info subscription": {
@@ -5496,11 +5499,20 @@
       "Choose a name for the generated certificate file": [
         "Valitse luodulle varmennetiedostolle nimi"
       ],
+      "City": [
+        "Kaupunki"
+      ],
       "Code": [
         "Koodi"
       ],
       "Code is 6 digits without spaces": [
         "Koodi sisältää 6 numeroa ilman välilyöntejä"
+      ],
+      "Colors": [
+        "Värit"
+      ],
+      "Company": [
+        "Yritys"
       ],
       "Company name": [
         "Yrityksen nimi"
@@ -5610,6 +5622,9 @@
       "First name": [
         "Etunimi"
       ],
+      "Folder location": [
+        "Kansion sijainti"
+      ],
       "Gateway name": [
         "Yhdyskäytävän nimi"
       ],
@@ -5670,9 +5685,6 @@
       "Name": [
         "Nimi"
       ],
-      "Name and address": [
-        "Nimi ja osoite"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (porttiohjaus)"
       ],
@@ -5702,6 +5714,12 @@
       ],
       "Non-standard ports": [
         "Epätyypilliset portit"
+      ],
+      "Note": [
+        "Muistiinpano"
+      ],
+      "Notification": [
+        "Ilmoitus"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN/IKEv2-salasana"
@@ -5829,6 +5847,9 @@
       ],
       "Start date": [
         "Aloituspäivä"
+      ],
+      "Street address": [
+        "Katuosoite"
       ],
       "Strong": [
         "Vahva"
@@ -5961,6 +5982,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Postinumero"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Luo kansio"
+      ],
+      "Create label": [
+        "Luo tunniste"
+      ],
+      "Edit folder": [
+        "Muokkaa kansiota"
+      ],
+      "Edit label": [
+        "Muokkaa tunnistetta"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } luotiin"
       ]
     },
     "Lable": {
@@ -6265,6 +6305,17 @@
         "Roskaposti"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Väri"
+      ],
+      "Folder name": [
+        "Kansion nimi"
+      ],
+      "Label name": [
+        "Tunnisteen nimi"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
@@ -6289,17 +6340,11 @@
       "Get started for ${ priceCoupon }": [
         "Aloita hintaan ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Päivitä tilaus"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: action": {
@@ -6969,12 +7014,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-kokeilu"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hanki Mail Plus hintaan ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
-      ],
       "Your account's usage": [
         "Tilisi käyttö"
       ]
@@ -7435,6 +7474,9 @@
       ],
       "My reason isn't listed": [
         "Syytäni ei ole listattu"
+      ],
+      "No parent folder": [
+        "Ei yläkansiota"
       ],
       "No permission": [
         "Ei käyttöoikeutta"
@@ -7944,6 +7986,9 @@
       ],
       "Search for an email or IP address": [
         "Etsi käyttäjää tai IP-osoitetta"
+      ],
+      "Search parent folder": [
+        "Etsi yläkansiosta"
       ],
       "Search users": [
         "Etsi käyttäjiä"
@@ -9357,9 +9402,6 @@
       "Comprehensive privacy and security": [
         "Kattava yksityisyys ja suojaus"
       ],
-      "Dark web monitoring": [
-        "Pimeän verkon valvonta"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Työpöytäsovellus- ja sähköpostiohjelmatuki (IMAPin kautta)"
       ],
@@ -10225,9 +10267,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Muokkaa yhdyskäytävää ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Muokkaa laskun tietoja"
       ],
       "Edit servers": [
         "Muokkaa palvelimia"

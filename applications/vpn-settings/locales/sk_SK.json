@@ -169,8 +169,14 @@
       "Create": [
         "Vytvoriť"
       ],
+      "Create folder": [
+        "Vytvoriť priečinok"
+      ],
       "Create Gateway": [
         "Vytvoriť bránu"
+      ],
+      "Create new policy": [
+        "Vytvoriť novú politiku"
       ],
       "Create users": [
         "Vytvoriť používateľov"
@@ -262,9 +268,6 @@
       "Edit group": [
         "Upraviť skupinu"
       ],
-      "Edit invoice details": [
-        "Upraviť fakturačné údaje"
-      ],
       "Edit name": [
         "Upraviť názov"
       ],
@@ -312,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Zabudli ste metódu obnovenia?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Získajte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Získať ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Získať novú šifrovanú emailovú adresu"
@@ -459,6 +456,9 @@
       ],
       "Refer a friend": [
         "Odporučiť priateľa"
+      ],
+      "Refresh data": [
+        "Obnoviť údaje"
       ],
       "Refresh status": [
         "Obnoviť stav"
@@ -1027,9 +1027,6 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
-      ],
       "Easily add or remove users": [
         "Jednoduché pridanie alebo odstránenie používateľov"
       ],
@@ -1115,9 +1112,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpečné prihlásenie na všetkých vašich zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, monitorovanie Dark Webu a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
@@ -1261,12 +1255,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Zmena nastavení emailovej adresy"
-      ],
-      "Continue": [
-        "Pokračovať"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
       ],
@@ -2341,11 +2329,20 @@
       ]
     },
     "Description": {
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Vytvorte pravidlá na určenie toho, kto sa môže pripojiť k zdieľaným serverom v jednotlivých krajinách."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Každý člen vašej organizácie sa môže pripojiť k zdieľaným serverom vo všetkých krajinách."
+      ],
       "If disabled, only admins will have access.": [
         "Ak je zakázané, prístup budú mať len administrátori."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Oddeľte rôzne časti svojho života a usporiadajte si doručenú poštu s ďalšími adresami."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Nikto vo vašej organizácie sa nemôže pripojiť k zdieľaným serverom."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
@@ -3320,6 +3317,11 @@
         "terabajtov"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "Štítok ${ Label.Name } bol aktualizovaný"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Povolené:"
@@ -3550,6 +3552,12 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } používateľ má v súčasnosti prístup k zdieľaným serverom.",
+        "${ amountUsers }/${ totalUsers } používatelia majú v súčasnosti prístup k zdieľaným serverom.",
+        "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
+        "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -3771,6 +3779,9 @@
       ],
       "Allocated": [
         "Pridelené"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Umožniť používateľom pripojiť sa k zabezpečeným zdieľaným serverom v položke **Krajiny** v aplikácii ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Už pridelené"
@@ -4243,6 +4254,9 @@
       "Increase your account security by verifying your email address.": [
         "Zvýšte bezpečnosť svojho účtu overením svojej emailovej adresy."
       ],
+      "Inherited from parent folder": [
+        "Zdedené z nadradeného priečinka"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Nainštalujte konfiguračný súbor krajiny a pripojte sa k náhodnému serveru v krajine podľa vašeho výberu."
       ],
@@ -4429,6 +4443,9 @@
       "Must start with a letter.": [
         "Musí začínať písmenom."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
+      ],
       "New user invited to organization": [
         "Do organizácie bol pozvaný nový používateľ"
       ],
@@ -4461,6 +4478,12 @@
       ],
       "of": [
         "z"
+      ],
+      "Off": [
+        "Vyp."
+      ],
+      "On": [
+        "Zap."
       ],
       "Once you reset your password:": [
         "Po resete vašeho hesla:"
@@ -4630,9 +4653,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
       ],
-      "Registering your subscription...": [
-        "Registrácia vášho predplatného..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."
       ],
@@ -4710,9 +4730,6 @@
       ],
       "Session timed out": [
         "Relácia vypršala"
-      ],
-      "Setting up your new address...": [
-        "Nastavovanie vašej novej adresy..."
       ],
       "Setting up your organization": [
         "Nastavovanie organizácie"
@@ -5242,6 +5259,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Môžete mať otvorený iba jeden chat. Prosím, zatvorte predošlé konverzácie pred začatím novej."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Na pripojenie k serveru ${ VPN_APP_NAME } pomocou aplikácie VPN s otvoreným zdrojovým kódom tretej strany, napríklad Tunnelblick pre macOS alebo OpenVPN pre GNU/Linux, môžete použiť nasledujúce prihlasovacie údaje."
       ],
@@ -5371,14 +5391,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každý mesiac."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tieto servery budete môcť okamžite pridať do inej brány."
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Vybraná farba:"
       ]
     },
     "Info for cash payment method": {
@@ -5400,11 +5422,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Môžete pridať spôsob platby, aby sa vaše predplatné automaticky obnovovalo. K dispozícii sú aj iné spôsoby platby."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Zadajte vaše meno a adresu alebo adresu vašej organizácie. Tieto údaje sa pridajú do faktúr pre osoby aj organizácie."
       ]
     },
     "Info subscription": {
@@ -5632,11 +5649,20 @@
       "Choose a name for the generated certificate file": [
         "Vyberte názov vygenerovaného súboru certifikátu"
       ],
+      "City": [
+        "Mesto"
+      ],
       "Code": [
         "Kód"
       ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
+      ],
+      "Colors": [
+        "Farby"
+      ],
+      "Company": [
+        "Spoločnosť"
       ],
       "Company name": [
         "Názov spoločnosti"
@@ -5746,6 +5772,9 @@
       "First name": [
         "Krstné meno"
       ],
+      "Folder location": [
+        "Umiestnenie priečinka"
+      ],
       "Gateway name": [
         "Názov brány"
       ],
@@ -5806,9 +5835,6 @@
       "Name": [
         "Meno"
       ],
-      "Name and address": [
-        "Meno a adresa"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (presmerovanie portov)"
       ],
@@ -5838,6 +5864,12 @@
       ],
       "Non-standard ports": [
         "Neštandardné porty"
+      ],
+      "Note": [
+        "Poznámka"
+      ],
+      "Notification": [
+        "Notifikácia"
       ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
@@ -5967,6 +5999,9 @@
       ],
       "Start date": [
         "Dátum začiatku"
+      ],
+      "Street address": [
+        "Ulica a č."
       ],
       "Strong": [
         "Silné"
@@ -6099,6 +6134,25 @@
     "Label, credit card": {
       "ZIP code": [
         "PSČ"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Vytvoriť priečinok"
+      ],
+      "Create label": [
+        "Vytvoriť štítok"
+      ],
+      "Edit folder": [
+        "Upraviť priečinok"
+      ],
+      "Edit label": [
+        "Upraviť štítok"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "Štítok ${ Label.Name } bol vytvorený"
       ]
     },
     "Lable": {
@@ -6263,6 +6317,9 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Nastavte si účet s doménou Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6405,6 +6462,17 @@
         "Spam"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Farba"
+      ],
+      "Folder name": [
+        "Názov priečinka"
+      ],
+      "Label name": [
+        "Názov štítku"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Vysoká VPN rýchlosť"
@@ -6429,17 +6497,11 @@
       "Get started for ${ priceCoupon }": [
         "Začnite teraz za ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Upgradovať"
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7159,12 +7221,6 @@
       "${ shortPlan.title } Trial": [
         "Skúšobná verzia ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získajte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
-      ],
       "Your account's usage": [
         "Využitie vášho účtu"
       ]
@@ -7629,6 +7685,9 @@
       ],
       "My reason isn't listed": [
         "Môj dôvod nie je na zozname"
+      ],
+      "No parent folder": [
+        "Žiadny nadradený priečinok"
       ],
       "No permission": [
         "Žiadne oprávnenie"
@@ -8150,6 +8209,9 @@
       ],
       "Search for an email or IP address": [
         "Hľadať email alebo IP adresu"
+      ],
+      "Search parent folder": [
+        "Prehľadať nadradenú zložku"
       ],
       "Search users": [
         "Vyhľadať používateľa"
@@ -9664,9 +9726,6 @@
       "Comprehensive privacy and security": [
         "Komplexná ochrana súkromia a zabezpečenia"
       ],
-      "Dark web monitoring": [
-        "Monitorovanie Dark webu"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Podpora desktopovej aplikácie a emailového klienta (cez IMAP)"
       ],
@@ -10538,9 +10597,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Upraviť bránu ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Upraviť fakturačné údaje"
       ],
       "Edit servers": [
         "Upraviť servery"

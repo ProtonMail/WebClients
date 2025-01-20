@@ -104,6 +104,9 @@
       "Create": [
         "Stvori"
       ],
+      "Create folder": [
+        "Stvori mapu"
+      ],
       "Create Gateway": [
         "Stvori pristupnik"
       ],
@@ -173,9 +176,6 @@
       "Edit group": [
         "Uredi grupu"
       ],
-      "Edit invoice details": [
-        "Uredite detalje fakture"
-      ],
       "Edit name": [
         "Uredi ime"
       ],
@@ -214,9 +214,6 @@
       ],
       "Forgot password?": [
         "Zaboravili ste lozinku?"
-      ],
-      "Get ${ vpnPlus }": [
-        "Nabavite ${ vpnPlus }"
       ],
       "Get more": [
         "Nabavi više"
@@ -673,9 +670,6 @@
       "Advanced account protection": [
         "Napredna zaštita korisničkog računa"
       ],
-      "Dark Web Monitoring": [
-        "Praćenje Tamnog Weba"
-      ],
       "Easily add or remove users": [
         "Jednostavno dodajte ili uklonite korisnike"
       ],
@@ -746,9 +740,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Pristupite sadržaju na streaming uslugama uključujući Netflix, Disney+, Prime Video i još mnogo toga, s bilo kojeg mjesta."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Osigurajte sigurne prijave na svim svojim uređajima. Uključuje neograničene hide-my-email aliasa, dijeljenje, integrirani 2FA, Praćenje tamnog weba i još mnogo toga."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Osigurajte svoje e-pošte i raspored s end-to-end šifriranjem. Uključuje ${ addresses } e-poštu adrese, podršku za prilagođene e-poštne domene, ${ BRAND_NAME } Scribe pomoćnika za pisanje, neograničene hide-my-email alias i još mnogo toga.",
@@ -2116,6 +2107,11 @@
         "Terabajta"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } ažurirano"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Dopusti:"
@@ -2498,6 +2494,9 @@
       "inactive": [
         "neaktivano"
       ],
+      "Inherited from parent folder": [
+        "Nasljedno iz roditeljske mape"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instalirajte konfiguracijsku datoteku za državu da biste se povezali sa nasumičnim poslužiteljem u državi vašeg izbora."
       ],
@@ -2548,6 +2547,9 @@
       ],
       "Multi-user support not enabled.": [
         "Višekorisnička podrška nije omogućena."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
       ],
       "No addresses exist": [
         "Ne postoji ni jedna adresa e-pošte"
@@ -2755,6 +2757,9 @@
       "You already have a free account": [
         "Već imate besplatan račun"
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
+      ],
       "You have no invoices.": [
         "Nemate faktura."
       ],
@@ -2796,9 +2801,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Vašom pretplatom upravlja Mozilla. Molimo kontaktirajte Mozilla podršku."
       ]
     },
     "Info for cash payment method": {
@@ -2966,11 +2968,20 @@
       "Category": [
         "Kategorija"
       ],
+      "City": [
+        "Grad"
+      ],
       "Code": [
         "Kôd"
       ],
       "Code is 6 digits without spaces": [
         "Kod se sastoji od 6 znamenki bez razmaka."
+      ],
+      "Colors": [
+        "Boje"
+      ],
+      "Company": [
+        "Tvrtka"
       ],
       "Confirm login password": [
         "Potvrdi lozinku za prijavu"
@@ -3032,6 +3043,9 @@
       "First name": [
         "Ime"
       ],
+      "Folder location": [
+        "Lokacija mape"
+      ],
       "Gift code": [
         "Darovni kôd"
       ],
@@ -3059,9 +3073,6 @@
       "Name": [
         "Naziv"
       ],
-      "Name and address": [
-        "Ime i adresa"
-      ],
       "Navigation": [
         "Navigacija"
       ],
@@ -3076,6 +3087,12 @@
       ],
       "New password": [
         "Nova lozinka"
+      ],
+      "Note": [
+        "Bilješka"
+      ],
+      "Notification": [
+        "Obavijest"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 lozinka"
@@ -3139,6 +3156,9 @@
       ],
       "Start date": [
         "Početni datum"
+      ],
+      "Street address": [
+        "Adresa"
       ],
       "Sync with system": [
         "Sinkroniziraj s operativnim sistemom"
@@ -3225,6 +3245,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Poštanski broj"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Stvori mapu"
+      ],
+      "Create label": [
+        "Stvori oznaku"
+      ],
+      "Edit folder": [
+        "Uredi mapu"
+      ],
+      "Edit label": [
+        "Uredi oznaku"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } stvoreno"
       ]
     },
     "Link": {
@@ -3363,6 +3402,17 @@
       ],
       "Spam": [
         "Neželjena pošta"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Boja"
+      ],
+      "Folder name": [
+        "Naziv mape"
+      ],
+      "Label name": [
+        "Naziv oznake"
       ]
     },
     "new_plans": {
@@ -3609,6 +3659,9 @@
       ],
       "My reason isn't listed": [
         "Moj razlog nije naveden"
+      ],
+      "No parent folder": [
+        "Nema roditeljske mape"
       ],
       "Router": [
         "Usmjerivač (Router)"
@@ -4564,9 +4617,6 @@
       ],
       "Edit email address": [
         "Uredi adresu e-pošte"
-      ],
-      "Edit invoice details": [
-        "Uredite detalje fakture"
       ],
       "Edit servers": [
         "Uredi poslužitelje"
