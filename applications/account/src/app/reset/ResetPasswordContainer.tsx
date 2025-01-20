@@ -7,7 +7,6 @@ import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
 import {
     GenericError,
-    startUnAuthFlow,
     useApi,
     useConfig,
     useErrorHandler,
@@ -62,9 +61,19 @@ interface Props {
     metaTags: MetaTags;
     productParam: ProductParam;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
 }
 
-const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVPN, loginUrl, productParam }: Props) => {
+const ResetPasswordContainer = ({
+    onPreSubmit,
+    onStartAuth,
+    toApp,
+    metaTags,
+    onLogin,
+    setupVPN,
+    loginUrl,
+    productParam,
+}: Props) => {
     const { APP_NAME } = useConfig();
 
     useMetaTags(metaTags);
@@ -145,7 +154,7 @@ const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVP
     };
 
     useEffect(() => {
-        startUnAuthFlow().catch(noop);
+        onStartAuth().catch(noop);
     }, []);
 
     /**
@@ -192,7 +201,7 @@ const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVP
 
                 const validateFlow = createFlow();
                 await onPreSubmit?.();
-                await startUnAuthFlow();
+                await onStartAuth();
                 const result = await handleRequestToken({
                     cache: cacheRef.current,
                     value,
@@ -225,7 +234,7 @@ const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVP
 
                     const validateFlow = createFlow();
                     await onPreSubmit?.();
-                    await startUnAuthFlow();
+                    await onStartAuth();
                     const resetResponse = await silentApi<ValidateResetTokenResponse>(
                         validateResetToken(username, token)
                     );
@@ -314,7 +323,7 @@ const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVP
                                 try {
                                     const validateFlow = createFlow();
                                     await onPreSubmit?.();
-                                    await startUnAuthFlow();
+                                    await onStartAuth();
                                     const result = await handleRequestRecoveryMethods({
                                         setupVPN,
                                         appName: APP_NAME,
