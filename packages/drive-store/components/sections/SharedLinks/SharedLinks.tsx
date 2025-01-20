@@ -11,7 +11,6 @@ import type { EncryptedLink, LinkShareUrl, SignatureIssues, useSharedLinksView }
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import { sendErrorReport } from '../../../utils/errorHandling';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
@@ -95,7 +94,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
-    const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(
         sharedLinksView.layout,
         sharedLinksView.isLoading
@@ -119,24 +118,19 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
             document.getSelection()?.removeAllRanges();
 
             if (isProtonDocument(item.mimeType)) {
-                void canUseDocs(item.rootShareId)
-                    .then((canUse) => {
-                        if (!canUse) {
-                            return;
-                        }
+                if (isDocsEnabled) {
+                    return openDocument({
+                        linkId: item.linkId,
+                        shareId: item.rootShareId,
+                        openBehavior: 'tab',
+                    });
+                }
 
-                        return openDocument({
-                            linkId: item.linkId,
-                            shareId: item.rootShareId,
-                            openBehavior: 'tab',
-                        });
-                    })
-                    .catch(sendErrorReport);
                 return;
             }
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
-        [navigateToLink, browserItems]
+        [navigateToLink, browserItems, isDocsEnabled, openDocument]
     );
 
     const handleItemRender = useCallback(

@@ -31,11 +31,6 @@ export interface DriveCompat {
     isDocsEnabled: boolean;
 
     /**
-     * Gets whether or not Docs can be used, with awareness of the context.
-     */
-    canUseDocs: (meta: NodeMeta) => Promise<boolean>;
-
-    /**
      * Gets a node, either from cache or fetched.
      */
     getNode: (meta: NodeMeta) => Promise<DecryptedNode>;
@@ -144,7 +139,7 @@ export const useDriveCompat = (): DriveCompat => {
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
-    const { isDocsEnabled, canUseDocs } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
@@ -162,7 +157,6 @@ export const useDriveCompat = (): DriveCompat => {
 
     return {
         isDocsEnabled,
-        canUseDocs: withResolveShareId(({ shareId }) => canUseDocs(shareId)),
         createDocumentNode: withResolveShareId(createDocumentNode),
         getDocumentKeys: withResolveShareId(getDocumentKeys),
         getNodePaths,
