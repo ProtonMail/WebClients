@@ -8,7 +8,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
+import { logger } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -24,61 +24,70 @@ export type ExtensionContextType = {
 
 export type ExtensionContextOptions = {
     endpoint: ClientEndpoint;
-    onDisconnect: (previousCtx?: ExtensionContextType) => { recycle: boolean };
-    onRecycle: (nextCtx: ExtensionContextType) => void;
+    /** Called when extension context setup fails critically,
+     * typically during service worker invalidation and the
+     * current extension context is invalidated */
+    onError?: (error: unknown) => void;
+    /** Called with new extension context after successful recycling */
+    onRecycle?: (ctx: ExtensionContextType) => void;
+    /** Called on port disconnect. Return whether to attempt recycling */
+    onDisconnect: () => { recycle: boolean };
 };
 
 export const ExtensionContext = contextHandlerFactory<ExtensionContextType>('extension');
 
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
-    const { endpoint, onDisconnect, onRecycle } = options;
-    const message = resolveMessageFactory(endpoint);
+    const message = resolveMessageFactory(options.endpoint);
 
     try {
         const { tabId, url } = await sendMessage.on(
-            message({ type: WorkerMessageType.TABS_QUERY, payload: { current: endpoint === 'popup' } }),
+            message({
+                type: WorkerMessageType.TABS_QUERY,
+                payload: { current: options.endpoint === 'popup' },
+            }),
             (res) => {
                 if (res.type === 'error') return { tabId: -1, url: null };
                 return { tabId: res.tabId, url: res.url };
             }
         );
 
-        const name = generatePortName(endpoint, tabId);
+        const name = generatePortName(options.endpoint, tabId);
         const port = browser.runtime.connect(browser.runtime.id, { name });
-        const disconnectPort = safeCall(() => port.disconnect());
-        const destroy = pipe(disconnectPort, ExtensionContext.clear);
 
-        const ctx = ExtensionContext.set({ endpoint, port, tabId, url, destroy });
+        logger.info('[Context::Extension] tabId resolved & port opened');
 
-        ctx.port.onDisconnect.addListener(async () => {
-            const { recycle } = onDisconnect?.(ExtensionContext.read());
+        const onPortDisconnect = async () => {
+            const { recycle } = options.onDisconnect();
             logger.info(`[Context::Extension] port disconnected [reconnect=${recycle}]`);
 
             if (recycle) {
-                /** When disconnection is triggered by the service worker unregistering,
-                 * we need to allow time for the new service worker to fully claim the
-                 * current extension runtime before proceeding. Without this delay, runtime
-                 * API calls during context setup may fail with "receiving end does not exist"
-                 * errors when trying to communicate with the incoming service worker. */
-                await wait(250);
+                try {
+                    /** When disconnection is triggered by the service worker unregistering,
+                     * we need to allow time for the new service worker to fully claim the
+                     * current extension runtime before proceeding. Without this delay, runtime
+                     * API calls during context setup may fail with "receiving end does not exist"
+                     * errors when trying to communicate with the incoming service worker. */
+                    await wait(250);
 
-                return onRecycle(await setupExtensionContext(options));
+                    const ctx = await setupExtensionContext(options);
+                    return options.onRecycle?.(ctx);
+                } catch {
+                    logger.info(`[Context::Extension] Recycling context failed`);
+                }
             }
-        });
+        };
 
-        registerLoggerEffect((...logs) =>
-            sendMessage(
-                resolveMessageFactory(endpoint)({
-                    type: WorkerMessageType.LOG_EVENT,
-                    payload: { log: logs.join(' ') },
-                })
-            )
-        );
+        const disconnectPort = safeCall(() => port.disconnect());
+        const destroy = pipe(disconnectPort, ExtensionContext.clear);
+        port.onDisconnect.addListener(onPortDisconnect);
 
-        logger.info('[Context::Extension] tabId resolved & port opened');
-        return ctx;
-    } catch (e) {
-        logger.warn('[Context::Extension]', e);
-        throw new Error('Initalization failed');
+        return ExtensionContext.set({ endpoint: options.endpoint, port, tabId, url, destroy });
+    } catch (error) {
+        logger.info('[Context::Extension]', error);
+
+        ExtensionContext.clear();
+        options.onError?.(error);
+
+        throw error;
     }
 };
