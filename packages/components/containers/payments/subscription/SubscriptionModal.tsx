@@ -181,11 +181,15 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                     if (isOverridablableStep(step)) {
                         return (
                             postSubscriptionProps.renderCustomStepModal({
-                                step,
-                                modalProps: modalState,
-                                upsellRef,
+                                modalProps: {
+                                    ...modalState,
+                                    // Override onClose to close the modal and call onSubscribed
+                                    onClose: handleClose,
+                                },
                                 onSubscribed,
                                 planIDs,
+                                step,
+                                upsellRef,
                             }) || modal
                         );
                     }
