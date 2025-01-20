@@ -8,7 +8,6 @@ import {
     GenericError,
     InputFieldTwo,
     PasswordInputTwo,
-    useApi,
     useConfig,
     useErrorHandler,
     useFormErrors,
@@ -44,6 +43,7 @@ import {
 } from '@proton/shared/lib/keys/unprivatization';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
+import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
 import { getTerms } from '../signup/terms';
 import ExpiredError from './ExpiredError';
@@ -66,11 +66,20 @@ interface Props {
     toApp?: APP_NAMES;
     onPreSubmit?: () => Promise<void>;
     onPreload?: () => void;
+    api: Api;
+    unauthenticatedApi: UnauthenticatedApi;
 }
 
-const JoinMagicLinkContainer = ({ onPreload, onPreSubmit, onLogin, onUsed, toApp, productParam }: Props) => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+const JoinMagicLinkContainer = ({
+    api,
+    unauthenticatedApi,
+    onPreload,
+    onPreSubmit,
+    onLogin,
+    onUsed,
+    toApp,
+    productParam,
+}: Props) => {
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const { APP_NAME: appName } = useConfig();
     const { validator, onFormSubmit } = useFormErrors();
@@ -103,6 +112,7 @@ const JoinMagicLinkContainer = ({ onPreload, onPreSubmit, onLogin, onUsed, toApp
                 return;
             }
 
+            const silentApi = getSilentApi(api);
             const { UID, AccessToken } = await silentApi<{
                 UID: string;
                 AccessToken: string;
@@ -216,18 +226,20 @@ const JoinMagicLinkContainer = ({ onPreload, onPreSubmit, onLogin, onUsed, toApp
             persistent: false,
         };
 
+        await unauthenticatedApi.startUnAuthFlow();
+        const api = getSilentApi(unauthenticatedApi.apiCallback);
         const initialLoginResult = await handleLogin({
             username: data.username,
             persistent: data.persistent,
             payload: undefined,
             password: data.password,
-            api: silentApi,
+            api,
         });
 
-        await preAuthKTVerifier.preAuthKTCommit(user.ID, silentApi);
+        await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
 
         const result = await handleNextLogin({
-            api: silentApi,
+            api,
             appName: APPS.PROTONACCOUNT,
             toApp,
             ignoreUnlock: false,

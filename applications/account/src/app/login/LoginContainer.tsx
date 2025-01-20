@@ -70,6 +70,7 @@ export interface Props {
     testflight?: 'vpn';
     externalRedirect?: string;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
 }
 
 const getDefaultUsername = (searchParams?: URLSearchParams) => {
@@ -99,6 +100,7 @@ const LoginContainer = ({
     testflight,
     externalRedirect,
     onPreSubmit,
+    onStartAuth,
 }: Props) => {
     const { state } = useLocation<
         | {
@@ -276,6 +278,7 @@ const LoginContainer = ({
                                         setAuthType(authType);
                                     }}
                                     onPreSubmit={onPreSubmit}
+                                    onStartAuth={onStartAuth}
                                     onSubmit={async (data) => {
                                         try {
                                             const validateFlow = createFlow();
