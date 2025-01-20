@@ -5,7 +5,6 @@ export {
     billingCountryValidator,
     billingStateValidator,
     getBillingAddressStatus,
-    isFullBillingAddress,
     type BillingAddress,
     type BillingAddressProperty,
     type BillingAddressStatus,
