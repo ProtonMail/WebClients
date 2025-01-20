@@ -33,6 +33,7 @@ export interface SelectTwoProps<V> extends SelectProps<V> {
      * that instance of the Select.
      */
     size?: DropdownProps['size'];
+    availablePlacements?: PopperPlacement[];
     originalPlacement?: PopperPlacement;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     getSearchableValue?: (value: V) => string;
@@ -58,6 +59,7 @@ const SelectTwo = <V extends any>({
     clearSearchAfter = 500,
     size = defaultSize,
     originalPlacement,
+    availablePlacements,
     anchorRef: maybeAnchorRef,
     onClose,
     onOpen,
@@ -217,6 +219,7 @@ const SelectTwo = <V extends any>({
                 noCaret
                 size={size}
                 originalPlacement={originalPlacement}
+                availablePlacements={availablePlacements}
                 disableDefaultArrowNavigation
                 className={clsx([
                     'select-dropdown',

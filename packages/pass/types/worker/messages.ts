@@ -119,7 +119,6 @@ export enum WorkerMessageType {
     SPOTLIGHT_ACK = 'SPOTLIGHT_ACK',
     SPOTLIGHT_CHECK = 'SPOTLIGHT_CHECK',
     SPOTLIGHT_REQUEST = 'SPOTLIGHT_REQUEST',
-    START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
     STORE_DISPATCH = 'STORE_DISPATCH',
     TABS_QUERY = 'TABS_QUERY',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
@@ -190,7 +189,6 @@ export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTEN
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
-export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
 export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
@@ -262,7 +260,6 @@ export type WorkerMessage =
     | ResolveUserDataMessage
     | SentryCSEventMessage
     | SettingsUpdateMessage
-    | StartContentScriptMessage
     | StoreActionMessage
     | TabsQueryMessage
     | TelemetryEventMessage
@@ -320,17 +317,16 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.VAULTS_QUERY]: { vaults: VaultShareItem[]; defaultShareId: ShareId };
 };
 
-export type WorkerMessageResponse<MessageType> = MessageType extends keyof WorkerMessageResponseMap
-    ? WorkerMessageResponseMap[MessageType]
-    : boolean;
+export type WorkerMessageResponse<MessageType> =
+    MessageType extends keyof WorkerMessageResponseMap ? WorkerMessageResponseMap[MessageType] : boolean;
 
-export type WorkerResponse<T extends Maybe<WorkerMessage | WorkerMessageWithSender>> = T extends undefined
-    ? MessageFailure
-    : T extends WorkerMessage
-      ? T['type'] extends infer MessageType
-          ? MaybeMessage<WorkerMessageResponse<MessageType>>
-          : never
-      : never;
+export type WorkerResponse<T extends Maybe<WorkerMessage | WorkerMessageWithSender>> =
+    T extends undefined ? MessageFailure
+    : T extends WorkerMessage ?
+        T['type'] extends infer MessageType ?
+            MaybeMessage<WorkerMessageResponse<MessageType>>
+        :   never
+    :   never;
 
 export type WorkerSendResponse<T extends Maybe<WorkerMessage> = Maybe<WorkerMessage>> = (
     response: WorkerResponse<T>

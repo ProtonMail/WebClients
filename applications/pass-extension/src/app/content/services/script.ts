@@ -1,18 +1,8 @@
-/* This file defines the core client code for the browser extension's content script.
- * The client sets up the context, manages the state and provides functions to start and destroy
- * the content script service. It listens to messages from the background script,
- * and registers or unregisters the content script service based on state changes / errors.
- *
- * Sequences:
- * - Normal start: client is registered with the background script and starts normally.
- * - Unregister request: background requests to unregister -> client destroys itself.
- * - Successful recovery: extension context change with successful recovery (i.e., port disconnected).
- * - Failed recovery: extension context change with failed recovery -> destroy.
- * - Error during setup: client encounters an error during setup -> destroy.
- */
+import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { CSContext } from 'proton-pass-extension/app/content/context/context';
 import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
 import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup';
+import { NotificationAction } from 'proton-pass-extension/app/content/types/notification';
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
@@ -23,19 +13,22 @@ import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, WorkerMessageType } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
-
-import { CLIENT_SCRIPT_READY_EVENT } from '../constants.static';
-import { NotificationAction } from '../types';
 
 type CreateContentScriptOptions = {
     scriptId: string;
     mainFrame: boolean;
+    /** Current content-script custom elements unique hashes */
     elements: PassElementsConfig;
+    /** Called when content script fails to start or recycle. Passed
+     * to the `ExtensionContext` to handle invalidation cases where
+     * unload events can't be caught, like during SW termination */
+    onError: (error: unknown) => void;
 };
 
-export const createContentScriptClient = ({ scriptId, mainFrame, elements }: CreateContentScriptOptions) => {
+export const createContentScriptClient = ({ scriptId, mainFrame, elements, onError }: CreateContentScriptOptions) => {
     const context = createContentScriptContext({
         elements,
         mainFrame,
@@ -44,10 +37,10 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
             context.setState({ stale: true });
 
-            DOMCleanUp(elements);
             context.service.formManager.destroy();
             context.service.iframe.destroy();
             context.service.webauthn?.destroy();
+            DOMCleanUp(elements);
 
             ExtensionContext.read()?.destroy();
         },
@@ -98,22 +91,24 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         }
     };
 
-    const handleStart = async ({ tabId, port }: ExtensionContextType) => {
-        /** init the webauthn service optimistically even if the
-         * initialization of the content-script fails. As we are injecting
-         * the webauthn interceptors in the main-world on `document_start` we
-         * need to avoid missing on events of the MessageBridge */
-        context.service.iframe.init();
-        context.service.webauthn?.init();
+    const handleStart = asyncLock(async ({ tabId, port }: ExtensionContextType) => {
+        try {
+            /** init the webauthn service optimistically even if the
+             * initialization of the content-script fails. As we are injecting
+             * the webauthn interceptors in the main-world on `document_start` we
+             * need to avoid missing on events of the `MessageBridge` */
+            context.service.iframe.init();
+            context.service.webauthn?.init();
 
-        const res = await sendMessage(
-            contentScriptMessage({
-                type: WorkerMessageType.WORKER_WAKEUP,
-                payload: { endpoint: 'contentscript', tabId },
-            })
-        );
+            const res = await sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.WORKER_WAKEUP,
+                    payload: { endpoint: 'contentscript', tabId },
+                })
+            );
 
-        if (res.type === 'success') {
+            if (res.type === 'error') throw new Error();
+
             context.setState({ ...res.state, ready: true, stale: false });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
@@ -141,8 +136,11 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
                 await context.service.detector.init();
                 await context.service.formManager.detect({ reason: 'InitialLoad' }).catch(noop);
             }
-        } else context.destroy({ reason: 'Start failure' });
-    };
+        } catch (err) {
+            context.destroy({ reason: 'startup failure' });
+            onError(err);
+        }
+    });
 
     return {
         /** Connects the content-script service to the extension context.
@@ -156,15 +154,13 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
                         context.destroy({ reason: 'port disconnected' });
                         return { recycle: true };
                     },
+                    onError,
                     onRecycle: handleStart,
                 });
 
                 logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
-                return await handleStart(extensionContext);
-            } catch (e) {
-                logger.debug(`[ContentScript::${scriptId}] Setup error`, e);
-                context.destroy({ reason: 'setup error' });
-            }
+                await handleStart(extensionContext);
+            } catch {}
         },
         /** Full destruction of the content-script and extension
          * context. Should only be called if we are unloading */

@@ -104,7 +104,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     }, [state.connectionID]);
 
     useEffect(() => {
-        if (state.visible && AppStateManager.getState().authorized) activityProbe.start();
+        if (state.visible) activityProbe.start();
         else activityProbe.cancel();
     }, [state.visible]);
 
