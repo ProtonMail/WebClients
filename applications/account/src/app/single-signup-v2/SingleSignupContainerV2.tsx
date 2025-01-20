@@ -10,7 +10,6 @@ import {
     LoaderPage,
     StandardLoadErrorPage,
     UnAuthenticated,
-    startUnAuthFlow,
     useActiveBreakpoint,
     useApi,
     useConfig,
@@ -161,6 +160,7 @@ interface Props {
     metaTags: MetaTags;
     paths: Paths;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
     initialSessionsLength: boolean;
 }
 
@@ -178,6 +178,7 @@ const SingleSignupContainerV2 = ({
     productParam,
     clientType,
     onPreSubmit,
+    onStartAuth,
     initialSessionsLength,
 }: Props) => {
     const ktActivation = useKTActivation();
@@ -490,7 +491,7 @@ const SingleSignupContainerV2 = ({
 
     useEffect(() => {
         const fetchDependencies = async () => {
-            await startUnAuthFlow().catch(noop);
+            await onStartAuth().catch(noop);
             let silentApi = getSilentApi(unauthApi);
 
             const sessionsData = await getSessionsData({
@@ -746,7 +747,7 @@ const SingleSignupContainerV2 = ({
 
         try {
             accountRef.current.signingOut = true;
-            await startUnAuthFlow();
+            await onStartAuth();
 
             // Override the silentApi to not use the one with the UID as we prepare the state
             const silentApi = getSilentApi(unauthApi);
@@ -1155,6 +1156,7 @@ const SingleSignupContainerV2 = ({
                 <LoginModal
                     productParam={productParam}
                     paths={paths}
+                    onStartAuth={onStartAuth}
                     {...loginModalProps}
                     defaultUsername={loginModalDefaultUsername}
                     onLogin={async (props) => {
@@ -1328,7 +1330,7 @@ const SingleSignupContainerV2 = ({
                                 const { accountData, subscriptionData } = data;
 
                                 await onPreSubmit?.();
-                                await startUnAuthFlow().catch(noop);
+                                await onStartAuth().catch(noop);
 
                                 const cache: SignupCacheResult = {
                                     type: 'signup',
@@ -1477,7 +1479,7 @@ const SingleSignupContainerV2 = ({
                                         })
                                     );
 
-                                    await startUnAuthFlow().catch(noop);
+                                    await onStartAuth().catch(noop);
                                     handleError(error);
                                     setModelDiff({
                                         cache: undefined,

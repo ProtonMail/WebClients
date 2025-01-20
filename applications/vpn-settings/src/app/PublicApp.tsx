@@ -12,18 +12,27 @@ import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupIn
 import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
-import { loadCrypto } from '@proton/account/bootstrap';
-import type { OnLoginCallbackResult, ProtonLoginCallback } from '@proton/components';
-import { NotificationsChildren, UnAuthenticated, UnAuthenticatedApiProvider, useApi } from '@proton/components';
-import { ModalsChildren } from '@proton/components';
+import { createUnleash, loadCrypto } from '@proton/account/bootstrap';
+import {
+    ModalsChildren,
+    NotificationsChildren,
+    type OnLoginCallbackResult,
+    type ProtonLoginCallback,
+    UnAuthenticated,
+    UnauthenticatedApiProvider,
+} from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
+import useInstance from '@proton/hooks/useInstance';
 import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
+import type { Api } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { UnleashFlagProvider } from '@proton/unleash';
+import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
+import { FlagProvider } from '@proton/unleash';
+import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../pages/forgot-username';
 import loginPage from '../pages/login';
@@ -56,15 +65,11 @@ const Effect = ({ onEffect, children }: { onEffect: () => void; children: ReactN
 const completeResult: OnLoginCallbackResult = { state: 'complete' };
 
 interface InnerPublicAppProps {
+    api: Api;
     onLogin: ProtonLoginCallback;
     loader: ReactNode;
     location: ReturnType<typeof useLocationWithoutLocale>;
 }
-
-const UnleashFlagProviderWrapper = ({ children }: { children: ReactNode }) => {
-    const api = useApi();
-    return <UnleashFlagProvider api={api}>{children}</UnleashFlagProvider>;
-};
 
 let cryptoWorkerPromise: Promise<void> | undefined;
 
@@ -82,7 +87,16 @@ const handlePreSubmit = async () => {
     await cryptoWorkerPromise;
 };
 
-const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
+const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps) => {
+    const { unauthenticatedApi, unleashClient } = useInstance(() => {
+        const unauthenticatedApi = createUnauthenticatedApi(api);
+        const unleashClient = createUnleash({ api: unauthenticatedApi.apiCallback });
+        unleashClient.start().catch(noop);
+        return {
+            unauthenticatedApi,
+            unleashClient,
+        };
+    });
     const history = useHistory();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
@@ -90,12 +104,16 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
 
     const paths = getPaths(location.localePrefix);
 
+    const handleStartAuth = () => {
+        return unauthenticatedApi.startUnAuthFlow();
+    };
+
     return (
         <>
             <NotificationsChildren />
             <ModalsChildren />
-            <UnAuthenticatedApiProvider>
-                <UnleashFlagProviderWrapper>
+            <UnauthenticatedApiProvider unauthenticatedApi={unauthenticatedApi}>
+                <FlagProvider unleashClient={unleashClient} startClient={false}>
                     <PublicAppSetup>
                         <ForceRefreshContext.Provider value={refresh}>
                             <UnAuthenticated>
@@ -109,6 +127,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 toApp={APPS.PROTONVPN_SETTINGS}
                                                 productParam={APPS.PROTONVPN_SETTINGS}
                                                 onPreSubmit={handlePreSubmit}
+                                                onStartAuth={handleStartAuth}
                                                 onLogin={async (...args) => {
                                                     onLogin(...args);
                                                     return completeResult;
@@ -120,6 +139,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 toApp={APPS.PROTONVPN_SETTINGS}
                                                 metaTags={forgotUsernamePage()}
                                                 loginUrl={paths.login}
+                                                onStartAuth={handleStartAuth}
                                             />
                                         </Route>
                                         <Route path="/pre-invite/:selector/:token">
@@ -150,6 +170,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                     });
                                                     return completeResult;
                                                 }}
+                                                onStartAuth={handleStartAuth}
                                             />
                                         </Route>
                                         <Route path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}>
@@ -180,6 +201,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 }}
                                                 onPreSubmit={handlePreSubmit}
                                                 paths={paths}
+                                                onStartAuth={handleStartAuth}
                                             />
                                         </Route>
                                         <Route path="*">
@@ -196,8 +218,8 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                             </UnAuthenticated>
                         </ForceRefreshContext.Provider>
                     </PublicAppSetup>
-                </UnleashFlagProviderWrapper>
-            </UnAuthenticatedApiProvider>
+                </FlagProvider>
+            </UnauthenticatedApiProvider>
         </>
     );
 };
@@ -205,10 +227,11 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
 interface PublicAppProps {
     onLogin: ProtonLoginCallback;
     locales: TtagLocaleMap;
+    api: Api;
 }
 
 // Wrap public app in VPN public app to ensure that translations are loaded before the inner child is loaded (meta tags)
-const PublicApp = ({ onLogin, locales }: PublicAppProps) => {
+const PublicApp = ({ api, onLogin, locales }: PublicAppProps) => {
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const loader = <AccountLoaderPage />;
 
@@ -220,7 +243,7 @@ const PublicApp = ({ onLogin, locales }: PublicAppProps) => {
             locales={locales}
             onPreload={handlePreload}
         >
-            <InnerPublicApp onLogin={onLogin} loader={loader} location={location} />
+            <InnerPublicApp api={api} onLogin={onLogin} loader={loader} location={location} />
         </VPNPublicApp>
     );
 };

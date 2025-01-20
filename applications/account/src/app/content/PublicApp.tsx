@@ -1,9 +1,9 @@
-import { type ReactNode, useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
 
-import { createAuthentication, init, loadCrypto } from '@proton/account/bootstrap';
+import { createAuthentication, createUnleash, init, loadCrypto } from '@proton/account/bootstrap';
 import type { OnLoginCallback, OnLoginCallbackResult } from '@proton/components';
 import {
     ApiProvider,
@@ -14,7 +14,7 @@ import {
     ProtonApp,
     StandardErrorPage,
     UnAuthenticated,
-    UnAuthenticatedApiProvider,
+    UnauthenticatedApiProvider,
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import type { AuthSession } from '@proton/components/containers/login/interface';
@@ -42,7 +42,9 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
-import { UnleashFlagProvider } from '@proton/unleash';
+import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
+import { FlagProvider } from '@proton/unleash';
+import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';
 import resetPasswordPage from '../../pages/reset-password';
@@ -74,6 +76,7 @@ import { type ProductParams, getProductParams, getThemeFromLocation } from '../s
 import { getSignupMeta } from '../signup/signupPagesJson';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import { extendStore, setupStore } from '../store/public-store';
+import { extraThunkArguments } from '../store/public-thunk';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountEffect from './AccountAutoLogin';
 import AccountLoaderPage from './AccountLoaderPage';
@@ -98,7 +101,9 @@ const bootstrapApp = () => {
     initMainHost();
     initElectronClassnames();
     initSafariFontFixClassnames();
-    extendStore({ config, api, authentication });
+    const unauthenticatedApi = createUnauthenticatedApi(api);
+    const unleashClient = createUnleash({ api: unauthenticatedApi.apiCallback });
+    extendStore({ config, api, authentication, unleashClient, unauthenticatedApi });
     const store = setupStore();
     return {
         authentication,
@@ -122,15 +127,33 @@ const handlePreload = () => {
     }
 };
 
+let started = false;
+
+const handleStartFlags = () => {
+    if (!started) {
+        extraThunkArguments.unleashClient.start().catch(noop);
+        started = true;
+    }
+};
+
+// Feature flags are not needed in these routes. That allows us to prevent creating an unauth session if only these routes would be requested.
+const UnleashFlagStarter = ({ location }: { location: H.Location }) => {
+    useEffect(() => {
+        if (![SSO_PATHS.JOIN_MAGIC_LINK, SSO_PATHS.SWITCH].some((pathname) => pathname === location.pathname)) {
+            handleStartFlags();
+        }
+    }, [location.pathname]);
+    return null;
+};
+
 const handlePreSubmit = async () => {
     handlePreload();
     // The crypto worked must be loaded when signup/login/reset are performed
     await cryptoWorkerPromise;
 };
 
-const UnleashFlagProviderWrapper = ({ children }: { children: ReactNode }) => {
-    const api = useApi();
-    return <UnleashFlagProvider api={api}>{children}</UnleashFlagProvider>;
+const handleStartAuth = () => {
+    return extraThunkArguments.unauthenticatedApi.startUnAuthFlow();
 };
 
 const completeResult: OnLoginCallbackResult = { state: 'complete' };
@@ -423,11 +446,11 @@ const BasePublicApp = () => {
                     </UnAuthenticated>
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.CLOSE_TICKET}>
-                    <UnAuthenticatedApiProvider>
-                        <UnAuthenticated>
+                    <UnAuthenticated>
+                        <UnauthenticatedApiProvider unauthenticatedApi={extraThunkArguments.unauthenticatedApi}>
                             <CloseTicketContainer />
-                        </UnAuthenticated>
-                    </UnAuthenticatedApiProvider>
+                        </UnauthenticatedApiProvider>
+                    </UnAuthenticated>
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.VERIFY_EMAIL}>
                     <UnAuthenticated>
@@ -477,8 +500,8 @@ const BasePublicApp = () => {
                     </Route>
                 )}
                 <Route path="*">
-                    <UnAuthenticatedApiProvider>
-                        <UnleashFlagProviderWrapper>
+                    <UnauthenticatedApiProvider unauthenticatedApi={extraThunkArguments.unauthenticatedApi}>
+                        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                             <PaymentSwitcher>
                                 <PublicAppSetup>
                                     <ForceRefreshContext.Provider value={refresh}>
@@ -489,10 +512,13 @@ const BasePublicApp = () => {
                                             onPreload={handlePreload}
                                             loader={loader}
                                         >
+                                            <UnleashFlagStarter location={location} />
                                             <Switch location={location}>
                                                 <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
                                                     <UnAuthenticated>
                                                         <JoinMagicLinkContainer
+                                                            api={extraThunkArguments.api}
+                                                            unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
                                                             onPreload={handlePreload}
                                                             onPreSubmit={handlePreSubmit}
                                                             onLogin={handleLogin}
@@ -512,6 +538,7 @@ const BasePublicApp = () => {
                                                 <Route path={SSO_PATHS.SWITCH}>
                                                     <UnAuthenticated>
                                                         <SwitchAccountContainer
+                                                            api={extraThunkArguments.api}
                                                             metaTags={getLoginMeta(maybePreAppIntent)}
                                                             initialSessionsLength={initialSessionsLength}
                                                             onGetActiveSessions={handleGetActiveSessions}
@@ -570,6 +597,7 @@ const BasePublicApp = () => {
                                                                 : undefined
                                                         }
                                                         onPreSubmit={handlePreSubmit}
+                                                        onStartAuth={handleStartAuth}
                                                     />
                                                 </Route>
                                                 <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
@@ -587,6 +615,7 @@ const BasePublicApp = () => {
                                                                 : undefined
                                                         }
                                                         onPreSubmit={handlePreSubmit}
+                                                        onStartAuth={handleStartAuth}
                                                     />
                                                 </Route>
                                                 <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
@@ -615,6 +644,7 @@ const BasePublicApp = () => {
                                                             loginUrl={paths.login}
                                                             productParam={productParam}
                                                             onPreSubmit={handlePreSubmit}
+                                                            onStartAuth={handleStartAuth}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
@@ -624,6 +654,7 @@ const BasePublicApp = () => {
                                                             toApp={maybePreAppIntent}
                                                             metaTags={forgotUsernamePage()}
                                                             loginUrl={paths.login}
+                                                            onStartAuth={handleStartAuth}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
@@ -645,6 +676,7 @@ const BasePublicApp = () => {
                                                             setupVPN={setupVPN}
                                                             paths={paths}
                                                             onPreSubmit={handlePreSubmit}
+                                                            onStartAuth={handleStartAuth}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
@@ -723,8 +755,8 @@ const BasePublicApp = () => {
                                     </ForceRefreshContext.Provider>
                                 </PublicAppSetup>
                             </PaymentSwitcher>
-                        </UnleashFlagProviderWrapper>
-                    </UnAuthenticatedApiProvider>
+                        </FlagProvider>
+                    </UnauthenticatedApiProvider>
                 </Route>
             </Switch>
         </>

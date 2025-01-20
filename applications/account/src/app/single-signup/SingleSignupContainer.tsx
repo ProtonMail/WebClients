@@ -7,7 +7,6 @@ import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
     UnAuthenticated,
-    startUnAuthFlow,
     useActiveBreakpoint,
     useApi,
     useConfig,
@@ -89,6 +88,7 @@ interface Props {
     clientType: CLIENT_TYPES;
     metaTags: MetaTags;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
 }
 
 interface CheckPlansArgs {
@@ -119,7 +119,7 @@ const getSignupMode = (coupon: string | undefined, currency: Currency | undefine
     return 'pricing' as const;
 };
 
-const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, onLogin, productParam }: Props) => {
+const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType, onLogin, productParam }: Props) => {
     const ktActivation = useKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -449,7 +449,7 @@ const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, onLogin, pro
 
     useEffect(() => {
         const fetchDependencies = async () => {
-            await startUnAuthFlow().catch(noop);
+            await onStartAuth().catch(noop);
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
