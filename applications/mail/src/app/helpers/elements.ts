@@ -1,13 +1,14 @@
-import { format, formatRelative } from 'date-fns';
+import { format, formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getSender, hasAttachments as messageHasAttachments } from '@proton/shared/lib/mail/messages';
+import { getSender, hasAttachments as messageHasAttachments, getRecipients as messageGetRecipients, } from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -204,6 +205,13 @@ export const getSenders = (element: Element) => {
     return conversationGetSenders(element as Conversation);
 };
 
+export const getRecipients = (element: Element) => {
+    if (isMessage(element)) {
+        return messageGetRecipients(element as Message);
+    }
+    return (element as Conversation).Recipients || [];
+};
+
 export const getFirstSenderAddress = (element: Element) => {
     const senders = getSenders(element);
     const [sender] = senders;
@@ -223,4 +231,28 @@ export const getLocationElementsCount = (
         return messagesCount.find((messageCount) => labelID === messageCount.LabelID)?.Total || 0;
     }
     return 0;
+};
+
+export const matchFrom = (element: Element, from: string) => {
+    const senders = getSenders(element);
+    return senders.some((sender) => canonicalizeEmailByGuess(sender?.Address || '') === canonicalizeEmailByGuess(from));
+};
+
+export const matchTo = (element: Element, to: string) => {
+    const recipients = getRecipients(element);
+    return recipients.some(
+        (recipient) => canonicalizeEmailByGuess(recipient?.Address || '') === canonicalizeEmailByGuess(to)
+    );
+};
+
+export const matchBegin = (element: Element, labelID: string, begin: number) => {
+    return getDate(element, labelID) >= fromUnixTime(begin);
+};
+
+export const matchEnd = (element: Element, labelID: string, end: number) => {
+    return getDate(element, labelID) <= fromUnixTime(end);
+};
+
+export const matchEmailAddress = (element: Element, emailAddress: string) => {
+    return matchFrom(element, emailAddress) || matchTo(element, emailAddress);
 };
