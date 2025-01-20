@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
+      "Activate": [
+        "सक्रिय"
+      ],
       "Activate recovery": [
         "पुनर्प्राप्ति सक्रिय करें"
       ],
@@ -666,6 +669,9 @@
       "More info: ${ safeTitle }": [
         "और जानकारी: ${ safeTitle }"
       ],
+      "More options": [
+        "अधिक विकल्प"
+      ],
       "More search options": [
         "अधिक खोज विकल्प"
       ],
@@ -1167,10 +1173,10 @@
       "Upgrade": [
         "अपग्रेड करें"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "अभी अपग्रेड करें"
       ],
       "Upload picture": [
@@ -1490,9 +1496,6 @@
       "Advanced account protection": [
         "उन्नत खाता सुरक्षा"
       ],
-      "Dark Web Monitoring": [
-        "डार्क वेब मॉनिटरिंग"
-      ],
       "Easily add or remove users": [
         "उपयोगकर्ताओं को आसानी से जोड़ें या हटाएं"
       ],
@@ -1563,9 +1566,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix, Disney+, Prime Video, और अन्य स्ट्रीमिंग सेवाओं पर सामग्री तक पहुँचें, चाहे आप जहाँ भी हों।"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "अपने सभी उपकरणों पर सुरक्षित लॉगिन। इसमें असीमित hide-my-email नकली-नाम, साझाकरण, एकीकृत 2-एफए, डार्क वेब मॉनिटरिंग और बहुत कुछ शामिल है।"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "${ addresses } ईमेल पते के साथ अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन के लिए समर्थन, ${ BRAND_NAME } Scribe लेखन सहायक, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।",
@@ -1682,9 +1682,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "जारी रखें"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } का उपयोग करते रहें।"
       ],
@@ -7701,11 +7698,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } पे डाउनग्रेड करें"
       ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus पे अपग्रेड करें"
       ]
     },
     "new_plans: action": {
@@ -9073,6 +9070,11 @@
         "हस्ताक्षर"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "प्रदर्शित नाम"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "सबसे बड़ा पहला"
@@ -9883,9 +9885,6 @@
       "Download Desktop app": [
         "डेस्कटॉप ऐप डाउनलोड करें"
       ],
-      "Enable Dark Web Monitoring": [
-        "Dark Web Monitoring सक्षम करें"
-      ],
       "Open ": [
         "अनिर्णित "
       ]
@@ -10052,9 +10051,6 @@
       ],
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
-      ],
-      "Dark Web Monitoring": [
-        "डार्क वेब मॉनिटरिंग"
       ],
       "Data recovery": [
         "डेटा पुनर्प्राप्ति"

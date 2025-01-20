@@ -37,7 +37,10 @@
         "Loja ${ BRAND_NAME }"
       ],
       "About hide-my-email aliases": [
-        "Acima dos aliases de hide-my-email"
+        "Sobre aliases hide-my-email"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate recovery": [
         "Ativar a recuperação"
@@ -144,6 +147,9 @@
       ],
       "Authenticate": [
         "Autenticar"
+      ],
+      "Auto-delete spam and trash": [
+        "Exclusão automática de conteúdo de spam e da lixeira"
       ],
       "Back": [
         "Voltar"
@@ -405,6 +411,9 @@
       "Download now": [
         "Baixar agora"
       ],
+      "Download the desktop app": [
+        "Baixe o aplicativo para computador"
+      ],
       "Downloading": [
         "Baixando"
       ],
@@ -446,6 +455,9 @@
       ],
       "Enable": [
         "Ativar"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Ative o ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
@@ -516,8 +528,11 @@
       "Get ${ BRAND_NAME } Duo": [
         "Obter ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Obtenha ${ MAIL_SHORT_APP_NAME } Plus por ${ priceCoupon }"
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Obtenha o ${ planName } por ${ priceCoupon }"
+      ],
+      "Get ${ planOrAppName }": [
+        "Obtenha o ${ planOrAppName }"
       ],
       "Get in touch": [
         "Entre em contato"
@@ -531,11 +546,17 @@
       "Get started": [
         "Começar"
       ],
+      "Get the browser extension": [
+        "Obtenha a extensão do navegador"
+      ],
       "Get the writing assistant": [
         "Obter assistente de escrita"
       ],
       "Get verification code": [
         "Obter código de verificação"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Acesse o ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Ir para marcador"
@@ -651,6 +672,9 @@
       ],
       "Insert link": [
         "Inserir link"
+      ],
+      "Invite members": [
+        "Convidar membros"
       ],
       "Italic": [
         "Itálico"
@@ -771,6 +795,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
+      ],
+      "More options": [
+        "Mais opções"
       ],
       "More refine actions": [
         "Ações mais refinadas"
@@ -1234,6 +1261,9 @@
       "Switch or add account": [
         "Mudar ou adicionar conta"
       ],
+      "Take a tour": [
+        "Faça um tour"
+      ],
       "This message contains embedded images.": [
         "Esta mensagem contém imagens incorporadas."
       ],
@@ -1324,11 +1354,11 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
-      "Upgrade Now": [
-        "Fazer upgrade agora"
-      ],
       "Upgrade now": [
         "Atualizar agora"
+      ],
+      "Upgrade Now": [
+        "Fazer upgrade agora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Faça upgrade para ${ BRAND_NAME } Unlimited"
@@ -1710,9 +1740,6 @@
       "Advanced account protection": [
         "Proteção avançada de conta"
       ],
-      "Dark Web Monitoring": [
-        "Monitoramento da Dark Web"
-      ],
       "Easily add or remove users": [
         "Adicione ou remova usuários facilmente"
       ],
@@ -1799,8 +1826,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acesse conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Logins seguros em todos os seus dispositivos. Inclui aliases ide-my-email ilimitados, compartilhamento, 2FA integrado, monitoramento da Dark Web e muito mais."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Logins seguros em todos os seus dispositivos. Inclui aliases ide-my-email ilimitados, compartilhamento, 2FA integrado, ${ DARK_WEB_MONITORING_NAME } e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais.",
@@ -1929,12 +1956,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Alterar configurações do endereço de e-mail"
-      ],
-      "Continue": [
-        "Continuar"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
       ],
@@ -1943,6 +1964,27 @@
       ],
       "Continue your subscription": [
         "Continuar sua assinatura"
+      ],
+      "Create label": [
+        "Criar marcador"
+      ],
+      "Discover and set up features": [
+        "Descubra e configure os recursos"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
+      ],
+      "Next": [
+        "Próximo"
+      ],
+      "Remind me later": [
+        "Lembre-me mais tarde"
+      ],
+      "Set up other features": [
+        "Configure outros recursos"
+      ],
+      "Take a tour": [
+        "Faça um tour"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4276,6 +4318,12 @@
       "Please select a category and what went wrong with the generated text": [
         "Por favor, selecione uma categoria e o que deu errado com o texto gerado"
       ],
+      "Please select a country": [
+        "Selecione um país"
+      ],
+      "Please select a state": [
+        "Selecione um estado"
+      ],
       "Please try again or refresh the page.": [
         "Tente novamente ou atualize a página."
       ],
@@ -5421,7 +5469,7 @@
         "Hora de término fora dos limites"
       ],
       "Event validation failed": [
-        "Erro na validação do evento"
+        "Falha na validação do evento"
       ],
       "Floating times not supported": [
         "Tempos flutuantes não suportados"
@@ -5430,13 +5478,13 @@
         "Evento de dia inteiro mal formado"
       ],
       "Malformed end time": [
-        "A hora de término não é válida."
+        "A hora de término não é válida"
       ],
       "Malformed recurring event": [
         "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        "A hora de início não é válida."
+        "A hora de início não é válida"
       ],
       "Only the Gregorian calendar scale is allowed": [
         "Somente escala de calendário Gregoriano é permitido"
@@ -5880,6 +5928,9 @@
         "${ numOccurrences } ocorrência encontrada no conteúdo do e-mail",
         "${ numOccurrences } ocorrências encontradas no conteúdo do e-mail"
       ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "O ${ PASS_APP_NAME } permite que você armazene senhas, notas e outras informações confidenciais com criptografia de ponta a ponta. Disponível em ${ ios }, ${ android } e no seu ${ browser }."
+      ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "O ${ PASS_APP_NAME } fornece uma maneira simples de se cadastrar em sites de terceiros não confiáveis, onde você não deseja expor seu endereço de e-mail real."
       ],
@@ -5891,6 +5942,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "O ${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado de atividades suspeitas."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
@@ -5978,6 +6032,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Um usuário é uma conta associada com um único nome de usuário, caixa de correio e pessoa"
       ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Acesse mais de 6.500 servidores de alta velocidade em até 10 dispositivos para manter seus dados de navegação seguros. Disponível em ${ ios }, ${ android }, ${ appleTV } e ${ desktop }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
       ],
@@ -5986,6 +6043,9 @@
       ],
       "Activation in progress": [
         "Ativação em progresso"
+      ],
+      "Active": [
+        "Ativo"
       ],
       "Add image URL": [
         "Adicionar a URL da imagem"
@@ -6109,6 +6169,9 @@
       ],
       "Attention required": [
         "Atenção necessária"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Limpe automaticamente os e-mails movidos para a Lixeira e Spam há mais de 30 dias."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Exclua automaticamente as mensagens que estão na lixeira e no spam há mais de 30 dias."
@@ -6274,6 +6337,12 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Você sabia? Reservamos um endereço de e-mail mais curto só para você. É o seu nome de usuário seguido de “@${ PM_DOMAIN }”."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Descubra novos recursos desbloqueados e comece a usá-los agora mesmo!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Descubra novos recursos desbloqueados com o ${ planTitle } e comece a usá-los agora mesmo!"
+      ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
@@ -6301,6 +6370,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
+      ],
+      "Download on the App Store": [
+        "Baixe na App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
@@ -6368,6 +6440,9 @@
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Os e-mails movidos para a Lixeira e Spam há mais de 30 dias serão excluídos automaticamente."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Os e-mails marcados com o marcador ${ nameDeleted } não serão excluídos e ainda podem ser encontrados na respectiva pasta."
       ],
@@ -6375,8 +6450,14 @@
         "imagem incorporada",
         "imagens incorporadas"
       ],
+      "Enabling auto-deletion…": [
+        "Ativando a exclusão automática…"
+      ],
       "Encrypt message": [
         "Criptografar mensagem"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Curta uma experiência de e-mail mais rápida e focada com o aplicativo para desktop."
       ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo autenticador"
@@ -6439,6 +6520,9 @@
       "Folder": [
         "Pasta"
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Para acessar seu e-mail a qualquer momento e aproveitar uma experiência otimizada no seu dispositivo móvel, faça o download do nosso aplicativo para ${ androidAppLink } ou ${ iosAppLink }."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais novas que ${ oldestDate }"
       ],
@@ -6454,6 +6538,12 @@
       ],
       "Generate text": [
         "Gerar texto"
+      ],
+      "Get it on Google Play": [
+        "Baixar no Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Dê às contas recebidas um marcador com código de cores, como “${ suggestedLabelName }”. Depois que elas forem pagas, altere o marcador para “${ suggestedPaidLabelName }”."
@@ -6564,6 +6654,12 @@
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Convide membros da família e coloque tudo em funcionamento."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Convide seu parceiro, amigo ou qualquer pessoa com quem você esteja compartilhando seu plano ${ protonDuoPlanName }."
       ],
       "JCB logo": [
         "Logotipo JCB"
@@ -6772,6 +6868,9 @@
       "Open shortcut cheat sheet": [
         "Abrir o mapa de atalhos"
       ],
+      "or discover other features:": [
+        "ou descubra outros recursos:"
+      ],
       "Organization size": [
         "Tamanho da organização"
       ],
@@ -6909,6 +7008,9 @@
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
       ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Entre em contato conosco para obter ajuda sobre qualquer coisa relacionada a ${ BRAND_NAME }."
+      ],
       "Recipient: ": [
         "Destinatário: "
       ],
@@ -6918,8 +7020,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
-      "Registering your subscription...": [
-        "Registrando sua assinatura..."
+      "Registering your subscription…": [
+        "Registrando sua assinatura…"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Lembre-se de atualizar isso em seu gerenciador de senhas ou onde quer que você mantenha suas informações de conta e login."
@@ -6997,6 +7099,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar uma mensagem criptografada protegida com senha para um endereço de e-mail ${ boldText }."
       ],
+      "Send messages at just the right now": [
+        "Envie mensagens no momento certo."
+      ],
       "Sender has been blocked.": [
         "O remetente foi bloqueado."
       ],
@@ -7013,7 +7118,7 @@
         "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "O pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
+        "Os pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -7024,11 +7129,14 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Define o ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão para este navegador. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
+      "Setting up ${ feature }…": [
+        "Configurando ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
-      "Setting up your new address...": [
-        "Configurando seu novo endereço..."
+      "Setting up your new address…": [
+        "Configurando seu novo endereço…"
       ],
       "Shorten selection": [
         "Encurtar seleção"
@@ -7041,6 +7149,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Adie as mensagens para mais tarde para que elas estejam no topo da sua caixa de entrada quando você quiser"
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
         "Adiado até ${ dateString } às ${ formattedTime }"
@@ -7059,6 +7170,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Comece a usar a versão mais curta e atraente de seu endereço de e-mail."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Os recursos de armazenamento não são suportados neste navegador. Precisamos desse suporte para habilitar a pesquisa de conteúdo de mensagens."
@@ -7088,7 +7202,10 @@
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
       ],
       "Switch to": [
-        "Alternar para"
+        "Mudar para"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Sincronize e gerencie arquivos com o aplicativo ${ DRIVE_APP_NAME }. Crie e compartilhe documentos no ${ DOCS_APP_NAME } e armazene-os com segurança. Tudo no ${ ios }, ${ android } e ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -7295,7 +7412,7 @@
         "Para remover restrições, você pode fazer um upgrade para um plano pago."
       ],
       "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
-        "Para remover restrições, você pode visitar ${ mailLink } e fazer um upgrade para um plano pago."
+        "Para remover restrições, você pode acessar ${ mailLink } e fazer um upgrade para um plano pago."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para cancelar a inscrição desta lista de e-mail, um e-mail será enviado de ${ boldFrom } com os seguintes detalhes definidos pelo remetente da newsletter:"
@@ -7546,8 +7663,14 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "Você pode adicioná-la como anexo ou exibi-la no corpo do e-mail."
       ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Você pode adicionar seu próprio domínio personalizado ao ${ MAIL_APP_NAME }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Você pode mesclar calendários importados com calendários existentes da ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Você pode alterar isso a qualquer momento em ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
@@ -7586,6 +7709,9 @@
       ],
       "You do not have any messages here": [
         "Você não tem mensagens aqui"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Você será notificado se sua senha ou outros dados vazarem de um serviço de terceiros."
       ],
       "You have ${ unread } in your inbox.": [
         "Você tem ${ unread } na sua caixa de entrada."
@@ -7751,10 +7877,10 @@
         "Seu assistente de escrita privado"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Seu plano começa em ${ renewalTime } e irá renovar a cada ${ cycle } meses."
+        "Seu plano começa em ${ renewalTime } e será renovado automaticamente a cada ${ cycle } meses."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Seu plano começa em ${ renewalTime } e irá renovar a cada mês."
+        "Seu plano começa em ${ renewalTime } e será renovado automaticamente todo mês."
       ]
     },
     "info": {
@@ -8513,6 +8639,9 @@
       "Start date": [
         "Data de início"
       ],
+      "State": [
+        "Estado"
+      ],
       "Statement": [
         "Instrução"
       ],
@@ -8797,6 +8926,9 @@
       ],
       "Sent": [
         "Enviados"
+      ],
+      "settings": [
+        "configurações"
       ],
       "Sign up for free": [
         "Cadastre-se gratuitamente"
@@ -9228,14 +9360,17 @@
       "Get started for ${ priceCoupon }": [
         "Comece por ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Iniciando a partir de ${ priceMailPlus }"
+      "Starting from ${ pricing }": [
+        "A partir de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
       ],
       "Upgrade now": [
         "Fazer upgrade agora"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -9614,6 +9749,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Secure file storage and sharing": [
+        "Armazenamento e compartilhamento de arquivos seguros"
+      ],
       "Secure link sharing": [
         "Compartilhamento de link seguro"
       ],
@@ -9847,6 +9985,14 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceMailPlus } meses. Você pode cancelar a qualquer momento."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceMailPlus }. Cancele a qualquer momento."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -9862,12 +10008,6 @@
       ]
     },
     "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Obtenha Mail Plus por ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceMailPlus } meses. Você pode cancelar a qualquer momento."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -10215,6 +10355,52 @@
         "Selecione o que a ${ BRAND_NAME } pode acessar: visualizar suas mensagens e configurações de e-mail, visualizar e baixar seus contatos, visualizar e baixar todas as agendas que você acessa no Google Agenda."
       ]
     },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "A oferta ${ pricingTitle } expira hoje!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Obtenha o Drive Plus por apenas ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Obtenha o Mail Plus por apenas ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Oferta por tempo limitado"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
+      ],
+      "Save 80% on your first month.": [
+        "Economize 80% no seu primeiro mês"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 recursos premium adicionais"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado"
+      ],
+      "Email Addresses": [
+        "Endereços de e-mail"
+      ],
+      "Free": [
+        "Gratuito"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ]
+    },
     "Onboarding List Placeholder": {
       "Finance": [
         "Finanças"
@@ -10266,17 +10452,23 @@
       "Auto-delete spam and trash": [
         "Exclusão automática de conteúdo de spam e da lixeira"
       ],
+      "browser": [
+        "navegador"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Limpar os e-mails excluídos e de spam após 30 dias."
       ],
-      "Dark Web Monitoring": [
-        "Monitoramento da Dark Web"
+      "Continue": [
+        "Continuar"
+      ],
+      "Desktop": [
+        "Área de trabalho"
       ],
       "Discover ${ MAIL_APP_NAME }": [
         "Descubra o ${ MAIL_APP_NAME }"
       ],
       "Distraction-free emailing": [
-        "e-mail sem distrações"
+        "E-mail sem distrações"
       ],
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
@@ -10311,11 +10503,17 @@
       "Replay introduction": [
         "Repetir introdução"
       ],
+      "Set a display name": [
+        "Definir um nome da exibição"
+      ],
       "Start using ${ BRAND_NAME }": [
         "Comece a usar a ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Comece a usar a versão mais curta e atraente de seu endereço de e-mail."
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Para começar, escolha um nome de exibição. É isso que as pessoas verão quando você enviar um e-mail, convidá-las para um evento ou compartilhar um arquivo."
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Boas-vindas ao ${ MAIL_APP_NAME }"
@@ -10325,6 +10523,12 @@
       ],
       "You are all set!": [
         "Tudo pronto!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Seu domínio ${ domain } e a assinatura ao ${ subscriptionName } estão prontos para uso."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Seu domínio e assinatura estão prontos para uso."
       ]
     },
     "Onboarding Proton": {
@@ -11346,6 +11550,11 @@
         "Assinar"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Nome de exibição"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Mais rápido no aplicativo"
@@ -11468,6 +11677,9 @@
       ],
       "Upgrade": [
         "Fazer upgrade"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Faza upgrade para o ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -11565,6 +11777,12 @@
       ]
     },
     "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Descubra o que está incluso na sua assinatura e comece a aproveitar os benefícios."
+      ],
+      "Discover your subscription benefits": [
+        "Descubra os benefícios da sua assinatura"
+      ],
       "Email tracking protection": [
         "Proteção de rastreamento de e-mail"
       ],
@@ -11935,9 +12153,6 @@
       ],
       "Comprehensive privacy and security": [
         "Privacidade e segurança abrangentes"
-      ],
-      "Dark web monitoring": [
-        "Monitoramento da Dark Web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicativo de desktop e suporte ao cliente de e-mail (via IMAP)"
@@ -12622,8 +12837,8 @@
       "Download Desktop app": [
         "Baixar aplicativo para computador"
       ],
-      "Enable Dark Web Monitoring": [
-        "Ativar monitoramento da Dark Web"
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Ative o ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Obter meu endereço “@${ PM_DOMAIN }“"
@@ -12639,6 +12854,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
+      ],
+      "${ feature } is now active": [
+        "O recurso ${ feature } agora está ativo."
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atalhos do teclado do ${ MAIL_APP_NAME }"
@@ -12702,6 +12920,9 @@
       "Amount due": [
         "Valor a pagar"
       ],
+      "Anytime, anywhere access": [
+        "Acesso a qualquer hora, em qualquer lugar"
+      ],
       "Apply gift code": [
         "Adicionar código de vale-presente"
       ],
@@ -12719,6 +12940,9 @@
       ],
       "Attachments": [
         "Anexos"
+      ],
+      "Auto-deletion is active": [
+        "A exclusão automática está ativa."
       ],
       "Bad time for this email?": [
         "É um momento ruim para este e-mail?"
@@ -12816,6 +13040,9 @@
       "Currency": [
         "Moeda"
       ],
+      "Custom domains:": [
+        "Domínios personalizados:"
+      ],
       "Customize and confirm": [
         "Personalize e confirme"
       ],
@@ -12824,9 +13051,6 @@
       ],
       "Customize your mail import": [
         "Personalize sua importação de e-mail"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoramento da Dark Web"
       ],
       "Data recovery": [
         "Recuperação de dados"
@@ -12883,6 +13107,12 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Discover your subscription benefits": [
+        "Descubra os benefícios da sua assinatura"
+      ],
+      "Distraction-free emailing": [
+        "E-mail sem distrações"
       ],
       "Don't give spam a chance": [
         "Não dê chance ao spam"
@@ -13158,6 +13388,9 @@
       "Open actions dropdown": [
         "Abrir menu de ações"
       ],
+      "Other features included in your plan": [
+        "Outros recursos incluídos no seu plano"
+      ],
       "Other information": [
         "Outra informação"
       ],
@@ -13184,6 +13417,9 @@
       ],
       "Previous message": [
         "Mensagem anterior"
+      ],
+      "Priority support:": [
+        "Suporte prioritário:"
       ],
       "Processing...": [
         "Processando..."
@@ -13242,6 +13478,9 @@
       "Schedule send": [
         "Agendar envio"
       ],
+      "Schedule send:": [
+        "Agendar envio:"
+      ],
       "Security center": [
         "Central de segurança"
       ],
@@ -13290,6 +13529,12 @@
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
+      "Set up ${ protonDuoPlanName }": [
+        "Configure o ${ protonDuoPlanName }"
+      ],
+      "Set up your family account": [
+        "Configure sua conta familiar"
+      ],
       "Set your own schedule": [
         "Defina sua própria agenda"
       ],
@@ -13307,6 +13552,9 @@
       ],
       "Snooze message": [
         "Adiar mensagem"
+      ],
+      "Snooze:": [
+        "Adiar:"
       ],
       "Sort conversations": [
         "Ordenar conversas"
@@ -13397,6 +13645,9 @@
       "What would you like to import?": [
         "O que você gostaria de importar?"
       ],
+      "You can now create unlimited folders and labels": [
+        "Agora você pode criar pastas e etiquetas ilimitadas."
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
       ],
@@ -13419,6 +13670,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Tooltip": {
@@ -13504,17 +13760,12 @@
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "versão estável"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Esta versão do navegador Tor não é suportada. Atualize-o para a última ${ stableRelease }."
+        "Esta versão do navegador Tor não é suportada. Atualize-o para a mais recente ${ stableRelease }."
       ]
     },
     "Update font modal": {
