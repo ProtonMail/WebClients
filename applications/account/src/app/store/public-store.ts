@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { paymentStatusReducer, plansReducer } from '@proton/account';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
-import { type AccountThunkArguments, extraThunkArguments } from './thunk';
+import { type AccountThunkPublicArguments, extraThunkArguments } from './public-thunk';
 
 export const setupStore = () => {
     return configureStore({
@@ -20,6 +20,6 @@ export const setupStore = () => {
     });
 };
 
-export const extendStore = (newThunkArguments: Partial<AccountThunkArguments>) => {
+export const extendStore = (newThunkArguments: Partial<AccountThunkPublicArguments>) => {
     Object.assign(extraThunkArguments, newThunkArguments);
 };

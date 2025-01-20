@@ -44,6 +44,7 @@ const App = () => {
                                     <PrivateApp store={store} locales={locales} />
                                 ) : (
                                     <PublicApp
+                                        api={extraThunkArguments.api}
                                         onLogin={(args) => {
                                             const url = extraThunkArguments.authentication.login(args);
                                             replaceUrl(url);

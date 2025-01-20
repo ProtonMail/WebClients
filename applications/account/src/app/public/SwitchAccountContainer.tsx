@@ -5,18 +5,11 @@ import { c } from 'ttag';
 import { Button, CircleLoader, InlineLinkButton, Scroll } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
 import { SkeletonLoader } from '@proton/components';
-import {
-    ConfirmSignOutModal,
-    Icon,
-    startUnAuthFlow,
-    useApi,
-    useErrorHandler,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { ConfirmSignOutModal, Icon, useErrorHandler, useModalState, useNotifications } from '@proton/components';
 import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
 import { useLoading } from '@proton/hooks';
 import { revoke } from '@proton/shared/lib/api/auth';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import {
@@ -140,6 +133,7 @@ const AccountItem = ({
 };
 
 interface Props {
+    api: Api;
     onLogin: OnLoginCallback;
     toApp?: APP_NAMES;
     toAppName?: string;
@@ -153,6 +147,7 @@ interface Props {
 }
 
 const SwitchAccountContainer = ({
+    api,
     metaTags,
     toApp,
     toAppName,
@@ -164,8 +159,7 @@ const SwitchAccountContainer = ({
     onActiveSessions,
     onEmptySessions,
 }: Props) => {
-    const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+    const silentApi = getSilentApi(api);
     const errorHandler = useErrorHandler();
 
     useMetaTags(metaTags);
@@ -179,10 +173,6 @@ const SwitchAccountContainer = ({
     const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
     const [confirmSignoutModal, setConfirmSignoutModal, renderConfirmSignoutModal] = useModalState();
     const [tmpSessions, setTmpSessions] = useState<ActiveSession[]>([]);
-
-    useEffect(() => {
-        startUnAuthFlow().catch(noop);
-    }, []);
 
     useEffect(() => {
         if (!activeSessions) {
