@@ -5,6 +5,7 @@ import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, requestAllItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import {
+    getOrganizationReports,
     getOrganizationSettings,
     setOrganizationSettings,
     setPasswordGeneratorPolicySettings,
@@ -117,6 +118,9 @@ export const createPassBridge = (api: Api): PassBridge => {
                         get: getOrganizationSettings,
                         set: (key, value) => setOrganizationSettings({ [key]: value }),
                         setPasswordGeneratorPolicy: setPasswordGeneratorPolicySettings,
+                    },
+                    reports: {
+                        get: getOrganizationReports,
                     },
                 },
             };
