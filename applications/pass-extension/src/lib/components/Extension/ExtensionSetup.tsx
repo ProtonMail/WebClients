@@ -7,8 +7,9 @@ import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { MaybeNull } from '@proton/pass/types';
-import noop from '@proton/utils/noop';
+import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { registerLoggerEffect } from '@proton/pass/utils/logger';
 
 type Props = { children: ReactNode; recycle?: boolean };
 
@@ -24,6 +25,15 @@ export const ExtensionSetup: FC<Props> = ({ children, recycle = false }) => {
     const { endpoint } = usePassCore();
 
     useEffect(() => {
+        registerLoggerEffect((...logs) =>
+            sendMessage(
+                resolveMessageFactory(endpoint)({
+                    type: WorkerMessageType.LOG_EVENT,
+                    payload: { log: logs.join(' ') },
+                })
+            )
+        );
+
         const setup = async () => {
             ctx.current = await setupExtensionContext({
                 endpoint,
@@ -31,7 +41,6 @@ export const ExtensionSetup: FC<Props> = ({ children, recycle = false }) => {
                     if (!recycle) reloadManager.appReload();
                     return { recycle };
                 },
-                onRecycle: noop,
             });
 
             setReady(true);

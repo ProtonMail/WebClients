@@ -75,9 +75,9 @@ export const createIFrameApp = <A>({
         visible: false,
     };
 
-    const ensureStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
-    const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: ensureStale }, 50);
-    const ensureReady = () => waitUntil({ check: () => state.ready, cancel: ensureStale }, 50);
+    const checkStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
+    const ensureLoaded = () => waitUntil({ check: () => state.loaded, cancel: checkStale }, 50);
+    const ensureReady = () => waitUntil({ check: () => state.ready, cancel: checkStale }, 50);
 
     const listeners = createListenerStore();
     const activeListeners = createListenerStore();
