@@ -72,22 +72,27 @@ export const truncatePossiblyQuotedString = (string: string, charsToDisplay: num
 };
 
 export const getInitials = (fullName = '') => {
-    const [first, ...rest] = fullName
-        .replace(/\s{2,}/g, ' ')
-        .split(' ')
-        .filter((word = '') => !/^[.,/#!$@%^&*;:{}=\-_`~()]/g.test(word));
-    const last = rest[rest.length - 1];
-
-    const initials = [first, last]
-        .filter(Boolean)
-        .map((letter = '') => [...letter.toUpperCase()][0]) // We use the spread operator to support Unicode characters
-        .join('');
-
-    if (!initials) {
+    if (!fullName) {
         return '?';
     }
 
-    return initials;
+    const words = fullName
+        .replace(/\s{2,}/g, ' ') // Remove multiple spaces
+        .replace(/[\u{1F300}-\u{1F9FF}]/gu, '') // Remove emoji characters
+        .replace(/[.,/#!$@%^&*;:{}=\-_`~()]/g, '') // Remove special chars
+        .trim()
+        .split(' ')
+        .filter(Boolean);
+
+    if (!words.length) {
+        return '?';
+    }
+
+    if (words.length === 1) {
+        return words[0].charAt(0).toUpperCase();
+    }
+
+    return (words[0].charAt(0) + words[words.length - 1].charAt(0)).toUpperCase();
 };
 
 export const hasProtonDomain = (email = '') => {
