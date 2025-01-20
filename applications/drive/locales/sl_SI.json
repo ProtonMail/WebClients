@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Ustvari in kopiraj vzdevek"
       ],
+      "Create folder": [
+        "Ustvari mapo"
+      ],
       "Create free account": [
         "Ustvari brezplačni račun"
       ],
@@ -372,9 +375,6 @@
       "Forward as attachment": [
         "Posreduj kot priponko"
       ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Pridobi ${ DRIVE_APP_NAME }."
-      ],
       "Get in touch": [
         "Oglasite se nam!"
       ],
@@ -509,6 +509,9 @@
       ],
       "Minimize transfers": [
         "Pomanjšaj seznam prenosov"
+      ],
+      "More actions": [
+        "Več dejanj"
       ],
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
@@ -804,6 +807,9 @@
       "Switch or add account": [
         "Preklopi ali dodaj račun"
       ],
+      "Take a tour": [
+        "Oglejte si"
+      ],
       "Toggle Calendar app": [
         "Prikaži/skrij aplikacijo Koledar"
       ],
@@ -1085,9 +1091,6 @@
       "Advanced account protection": [
         "Napredni program za zaščito računa"
       ],
-      "Dark Web Monitoring": [
-        "Spremljanje Dark Web"
-      ],
       "Easily add or remove users": [
         "Enostavno dodajte ali odstranite uporabnike"
       ],
@@ -1159,9 +1162,6 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Dostopajte do vsebin na pretočnih storitvah, kot so Netflix, Disney+, Prime Video in še več, od kjerkoli."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Varne prijave na vseh vaših napravah. Vključuje neomejeno število vzdevkov hide-my-email, skupno rabo, integriran 2FA, spremljanje Dark Web in še več."
-      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
         "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
@@ -1228,6 +1228,9 @@
       "Custom domain problem": [
         "Težava z domeno po meri"
       ],
+      "Docs problem": [
+        "Težava s Docs"
+      ],
       "Drive problem": [
         "Težava z Drive"
       ],
@@ -1284,9 +1287,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Nadaljuj"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nadaljuj z uporabo ${ MAIL_APP_NAME }a."
       ],
@@ -1295,6 +1295,15 @@
       ],
       "Continue your subscription": [
         "Podaljšajte naročnino"
+      ],
+      "Create label": [
+        "Ustvarite oznako"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ]
     },
     "Cancellation reminder": {
@@ -2383,6 +2392,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Zagotovite si neomejeno število vzdevkov in 500 GB prostora za shranjevanje z ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -3316,6 +3328,9 @@
       ],
       "customer support": [
         "podporo strankam"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
@@ -6051,6 +6066,9 @@
       "Start date": [
         "Začetni datum"
       ],
+      "State": [
+        "Država"
+      ],
       "Stolen data": [
         "Ukradeni podatki"
       ],
@@ -6195,14 +6213,26 @@
       "Add a gift code": [
         "Dodaj darilno kodo"
       ],
+      "All mail": [
+        "Vsa pošta"
+      ],
+      "Archive": [
+        "Arhiv"
+      ],
       "clearing your browser cache": [
         "izpraznitev predpomnilnika brskalnika"
       ],
       "click here": [
         "kliknite tukaj"
       ],
+      "Drafts": [
+        "Osnutki"
+      ],
       "How to pay with Bitcoin?": [
         "Kako plačati z Bitcoinom?"
+      ],
+      "Inbox": [
+        "Prejeto"
       ],
       "Learn more": [
         "Več o tem"
@@ -6219,11 +6249,26 @@
       "Request an invite": [
         "Zahtevaj povabilo"
       ],
+      "Scheduled": [
+        "Načrtovano"
+      ],
+      "Sent": [
+        "Poslano"
+      ],
       "Shared": [
         "V skupni rabi"
       ],
       "Shared with me": [
         "Deljeno z menoj"
+      ],
+      "Snooze": [
+        "Dremež"
+      ],
+      "Spam": [
+        "Neželena pošta"
+      ],
+      "Starred": [
+        "Z zvezdico"
       ],
       "stay safer online": [
         "izboljšajte svojo spletno varnost"
@@ -6607,17 +6652,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Nadgradnja"
       ],
       "Upgrade now": [
         "Nadgradi zdaj"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7225,11 +7264,6 @@
         "Zamenjaj paket?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Pridobite Mail Plus za ${ priceCoupon }"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zaščitite vaša dnevna opravila s celovitim šifriranjem. Vključuje podporo za koledarje po meri, delitev koledarjev in drugo."
@@ -7368,6 +7402,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Ponastavi gesla uporabnika in ponastavi dvojno preverjanje pristnosti za uporabnike"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Z enim klikom preusmerite internetni promet prek omrežja Tor."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
@@ -7788,6 +7825,25 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Izberite, do česa lahko ${ BRAND_NAME } dostopa: ogled e-poštnih sporočil in nastavitev, ogled in prenos stikov, ogled in prenos vseh dnevnih redov, do katerih dostopate iz storitve Google Koledar."
+      ]
+    },
+    "Offer": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Brezplačno"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Shramba"
       ]
     },
     "Onboarding": {
@@ -8888,6 +8944,9 @@
       "Got it": [
         "Razumem"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Samo prijavite se v svoj račun v Apple App Store in nato izberite ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Samo prijavite se v svoj račun v Trgovini Play in nato pritisnite ${ subscriptions }."
       ],
@@ -8993,9 +9052,6 @@
       ],
       "Comprehensive privacy and security": [
         "Celovita zaščita zasebnosti in varnosti"
-      ],
-      "Dark web monitoring": [
-        "Spremljanje temnega spleta"
       ],
       "Direct contribution to our mission": [
         "Neposreden prispevek k našemu poslanstvu"
@@ -9553,9 +9609,6 @@
       ],
       "Customize your mail import": [
         "Prilagodite uvoz pošte."
-      ],
-      "Dark Web Monitoring": [
-        "Spremljanje temnega spleta"
       ],
       "Data recovery": [
         "Obnovitev podatkov"
