@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Vytvoriť a kopírovať alias"
       ],
+      "Create folder": [
+        "Vytvoriť priečinok"
+      ],
       "Create free account": [
         "Vytvoriť účet zadarmo"
       ],
@@ -374,12 +377,6 @@
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Získať ${ DRIVE_APP_NAME }"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Získajte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get in touch": [
         "Skontaktovať sa"
@@ -1109,9 +1106,6 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
-      ],
       "Easily add or remove users": [
         "Jednoduché pridanie alebo odstránenie používateľov"
       ],
@@ -1197,9 +1191,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpečné prihlásenie na všetkých vašich zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, monitorovanie Dark Webu a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
@@ -1332,12 +1323,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Zmena nastavení emailovej adresy"
-      ],
-      "Continue": [
-        "Pokračovať"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
       ],
@@ -5114,9 +5099,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
       ],
-      "Registering your subscription...": [
-        "Registrácia vášho predplatného..."
-      ],
       "Report has been sent": [
         "Hlásenie bolo odoslané"
       ],
@@ -5185,9 +5167,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavenie PGP vám umožní odosielať end-to-end šifrované emaily používateľom, ktorí nemajú ${ BRAND_NAME } a používajú službu kompatibilnú s PGP."
-      ],
-      "Setting up your new address...": [
-        "Nastavovanie vašej novej adresy..."
       ],
       "Share files with links": [
         "Zdieľajte súbory pomocou odkazov"
@@ -6444,14 +6423,26 @@
       "Add a gift code": [
         "Vložiť darčekový kód"
       ],
+      "All mail": [
+        "Všetky správy"
+      ],
+      "Archive": [
+        "Archív"
+      ],
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
       ],
       "click here": [
         "kliknite sem"
       ],
+      "Drafts": [
+        "Koncepty"
+      ],
       "How to pay with Bitcoin?": [
         "Ako platiť Bitcoinom?"
+      ],
+      "Inbox": [
+        "Doručená pošta"
       ],
       "Learn more": [
         "Zistiť viac"
@@ -6468,11 +6459,26 @@
       "Request an invite": [
         "Požiadať o pozvánku"
       ],
+      "Scheduled": [
+        "Naplánované"
+      ],
+      "Sent": [
+        "Odoslané"
+      ],
       "Shared": [
         "Zdieľané"
       ],
       "Shared with me": [
         "Zdieľané so mnou"
+      ],
+      "Snooze": [
+        "Odložiť"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "S hviezdičkou"
       ],
       "stay safer online": [
         "zostať bezpečnejší online"
@@ -6859,17 +6865,11 @@
       "Get started for ${ priceCoupon }": [
         "Začnite teraz za ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Upgradovať"
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7535,14 +7535,6 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získajte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zľavnená cena ${ priceCoupon } platí prvý mesiac. Potom sa automaticky obnoví za ${ priceMailPlus }. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "new_plans: tooltip": {
@@ -9578,9 +9570,6 @@
       "Comprehensive privacy and security": [
         "Komplexná ochrana súkromia a zabezpečenia"
       ],
-      "Dark web monitoring": [
-        "Monitorovanie Dark webu"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Podpora desktopovej aplikácie a emailového klienta (cez IMAP)"
       ],
@@ -10218,9 +10207,6 @@
       ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
-      ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
       ],
       "Data recovery": [
         "Obnovenie údajov"
