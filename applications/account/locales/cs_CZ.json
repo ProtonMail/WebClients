@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -337,6 +337,9 @@
       "Create link": [
         "Vytvořit odkaz"
       ],
+      "Create new policy": [
+        "Vytvořit novou zásadu"
+      ],
       "Create users": [
         "Vytvořit uživatele"
       ],
@@ -475,9 +478,6 @@
       "Edit group": [
         "Upravit skupinu"
       ],
-      "Edit invoice details": [
-        "Upravit fakturační údaje"
-      ],
       "Edit label": [
         "Upravit štítek"
       ],
@@ -567,12 +567,6 @@
       ],
       "Generate token": [
         "Vygenerovat token"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Získejte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Získejte ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Získat novou šifrovanou e-mailovou adresu"
@@ -834,6 +828,9 @@
       ],
       "Refer a friend": [
         "Doporučit přátelům"
+      ],
+      "Refresh data": [
+        "Obnovit data"
       ],
       "Refresh status": [
         "Obnovit stav"
@@ -1757,9 +1754,6 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "Dark Web Monitoring": [
-        "Sledování Dark webu"
-      ],
       "Easily add or remove users": [
         "Snadné přidávání a odebírání uživatelů"
       ],
@@ -1845,9 +1839,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování Dark webu a další funkce."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
@@ -2003,12 +1994,6 @@
     "Button": {
       "Add link to your email footer": [
         "Přidání odkazu do zápatí e-mailu"
-      ],
-      "Change email address settings": [
-        "Změna nastavení e-mailové adresy"
-      ],
-      "Continue": [
-        "Pokračovat"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
@@ -3650,6 +3635,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Vytvořte si tolik štítků nebo složek, kolik potřebujete, abyste měli ve schránce pořádek."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Vytvořte zásady, určující kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
       ],
@@ -3661,6 +3649,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Každý člen vaší organizace se může připojit ke sdíleným serverům ve všech zemích."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -3679,6 +3670,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Vytvořte si vlastní zápatí e-mailu — prezentujte svou jedinečnou značku, ne naši."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Nikdo ve vaší organizaci se nemůže připojit ke sdíleným serverům."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
@@ -6712,6 +6706,12 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů mají aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -7107,6 +7107,9 @@
       ],
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Již bylo přiděleno"
@@ -8227,6 +8230,12 @@
       "of": [
         "z"
       ],
+      "Off": [
+        "Vyp."
+      ],
+      "On": [
+        "Zap."
+      ],
       "Once you reset your password:": [
         "Po resetu vašeho hesla:"
       ],
@@ -8503,9 +8512,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
-      "Registering your subscription...": [
-        "Registrace vašeho předplatného..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
       ],
@@ -8613,9 +8619,6 @@
       ],
       "Setting successfully saved": [
         "Nastavení úspěšně uloženo"
-      ],
-      "Setting up your new address...": [
-        "Nastavování nové adresy..."
       ],
       "Setting up your organization": [
         "Nastavení vaší organizace"
@@ -9664,9 +9667,6 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
       ],
@@ -9712,11 +9712,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Můžete přidat platební metodu, která umožní automatické obnovení předplatného. Další platební metody jsou také dostupné."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Zadejte své jméno a adresu nebo vaši organizaci. Tyto údaje budou přidány do osobních faktur i faktur organizace."
       ]
     },
     "Info on errors": {
@@ -10384,6 +10379,9 @@
       "Choose a name for the generated certificate file": [
         "Zvolte název vygenerovaného souboru certifikátu"
       ],
+      "City": [
+        "Město"
+      ],
       "Code": [
         "Kód"
       ],
@@ -10398,6 +10396,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Company": [
+        "Společnost"
       ],
       "Company name": [
         "Název společnosti"
@@ -10813,9 +10814,6 @@
       "Name": [
         "Jméno"
       ],
-      "Name and address": [
-        "Jméno a adresa"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (přesměrování portů)"
       ],
@@ -10848,6 +10846,9 @@
       ],
       "Non-standard ports": [
         "Nestandardní porty"
+      ],
+      "Note": [
+        "Poznámka"
       ],
       "Notification": [
         "Oznámení"
@@ -11091,6 +11092,9 @@
       ],
       "Sticky labels": [
         "Připnuté štítky"
+      ],
+      "Street address": [
+        "Ulice a č. p."
       ],
       "Strong": [
         "Silné"
@@ -11676,6 +11680,9 @@
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "Časově omezená nabídka: **Ušetřete ${ discount } na ${ name } s ročním předplatným**"
       ],
+      "Set up your account with your Porkbun domain.": [
+        "Nastavte svůj účet s doménou Porkbun."
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Byli jste pozváni k vyzkoušení ${ MAIL_APP_NAME }"
       ]
@@ -12121,17 +12128,11 @@
       "Get started for ${ priceCoupon }": [
         "Začněte za ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Navýšit"
       ],
       "Upgrade now": [
         "Navýšit nyní"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12911,12 +12912,6 @@
       "${ shortPlan.title } Trial": [
         "Zkušební verze ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získejte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
-      ],
       "Your account's usage": [
         "Využití vašeho účtu"
       ]
@@ -13324,12 +13319,6 @@
       ],
       "An external address cannot be default": [
         "Externí adresa nemůže být výchozí"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Sledování Dark webu bylo deaktivováno"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Sledování Dark webu bylo povoleno"
       ],
       "Downloaded 2FA recovery codes": [
         "Stažené obnovovací kódy 2FA"
@@ -16744,6 +16733,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -16870,9 +16900,6 @@
       ],
       "Comprehensive privacy and security": [
         "Komplexní ochrana soukromí a zabezpečení"
-      ],
-      "Dark web monitoring": [
-        "Sledování Dark webu"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplikace pro desktop a podpora e-mailových klientů (přes IMAP)"
@@ -17047,47 +17074,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -17949,9 +17935,6 @@
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
       ],
-      "Dark Web Monitoring": [
-        "Sledování Dark webu"
-      ],
       "Dashboard": [
         "Ovládací panel"
       ],
@@ -18080,9 +18063,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Upravit bránu ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Upravit fakturační údaje"
       ],
       "Edit profile": [
         "Upravit profil"

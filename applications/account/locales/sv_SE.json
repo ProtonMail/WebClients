@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -478,9 +478,6 @@
       "Edit group": [
         "Redigera grupp"
       ],
-      "Edit invoice details": [
-        "Redigera fakturadetaljer"
-      ],
       "Edit label": [
         "Redigera etikett"
       ],
@@ -570,12 +567,6 @@
       ],
       "Generate token": [
         "Generera token"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Skaffa ${ MAIL_SHORT_APP_NAME } Plus för ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Skaffa ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Skaffa en ny krypterad e-postadress"
@@ -836,7 +827,7 @@
         "Återställ data"
       ],
       "Refer a friend": [
-        "Bjud in en vän"
+        "Hänvisa en vän"
       ],
       "Refresh data": [
         "Uppdatera data"
@@ -1753,9 +1744,6 @@
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
-      "Dark Web Monitoring": [
-        "Övervakning av mörka webben"
-      ],
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
       ],
@@ -1841,9 +1829,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade hide-my-email-alias, delning, integrerad 2FA, övervakning av mörka webben och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
@@ -1993,12 +1978,6 @@
     "Button": {
       "Add link to your email footer": [
         "Lägg till länk i sidfoten för din e-post"
-      ],
-      "Change email address settings": [
-        "Ändra e-postadressinställningarna"
-      ],
-      "Continue": [
-        "Fortsätt"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
@@ -7982,7 +7961,7 @@
         "Läser in förhandsgranskning"
       ],
       "Loading...": [
-        "Läser in..."
+        "Laddar in …"
       ],
       "Low Priority": [
         "Låg prioritet"
@@ -8213,7 +8192,7 @@
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Betalningar skyddas med TLS-kryptering och schweiziska integritetslagar."
+        "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
       "per month": [
         "per månad"
@@ -8389,9 +8368,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
-      "Registering your subscription...": [
-        "Registrerar din prenumeration..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Kom ihåg att dela användarens inloggningsinformation med dem."
       ],
@@ -8499,9 +8475,6 @@
       ],
       "Setting successfully saved": [
         "Inställning sparad"
-      ],
-      "Setting up your new address...": [
-        "Konfigurerar din nya adress..."
       ],
       "Setting up your organization": [
         "Ställer in din organisation"
@@ -9502,7 +9475,7 @@
         "Din organisations e-post skyddas med end-to-end-kryptering genom organisationsnyckeln. Detta fingeravtryck kan användas för att verifiera att alla administratörer på ditt konto har samma nyckel."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Dina betalningsuppgifter skyddas med TLS-kryptering och schweiziska integritetslagar."
+        "Dina betalningsuppgifter är skyddade med TLS-kryptering och schweiziska integritetslagar."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
@@ -9521,9 +9494,6 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
-      ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ditt supportärende har stängts. Tack för att du kontaktade supporten för ${ BRAND_NAME }."
@@ -9570,11 +9540,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan lägga till en betalningsmetod så att din prenumeration förnyas automatiskt. Andra betalningsmetoder är också tillgängliga."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Ange ett namn och adress för dig själv eller din organisation. Dessa detaljer kommer att läggas till på både personliga och organisationsfakturor."
       ]
     },
     "Info on errors": {
@@ -10126,7 +10091,7 @@
         "Applösenord"
       ],
       "Apply filter to existing emails": [
-        "Tillämpa filter på all befintlig e-post"
+        "Tillämpa filter till all befintlig e-post"
       ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service-URL"
@@ -10230,6 +10195,9 @@
       "Choose a name for the generated certificate file": [
         "Välj ett namn för den genererade certifikatfilen"
       ],
+      "City": [
+        "Ort"
+      ],
       "Code": [
         "Kod"
       ],
@@ -10244,6 +10212,9 @@
       ],
       "Colors": [
         "Färger"
+      ],
+      "Company": [
+        "Företag"
       ],
       "Company name": [
         "Företagsnamn"
@@ -10659,9 +10630,6 @@
       "Name": [
         "Namn"
       ],
-      "Name and address": [
-        "Namn och adress"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (vidarebefordran av port)"
       ],
@@ -10694,6 +10662,9 @@
       ],
       "Non-standard ports": [
         "Icke-standardiserade portar"
+      ],
+      "Note": [
+        "Anteckning"
       ],
       "Notification": [
         "Avisering"
@@ -10935,6 +10906,9 @@
       ],
       "Sticky labels": [
         "Klistra etiketter"
+      ],
+      "Street address": [
+        "Gatuadress"
       ],
       "Strong": [
         "Starkt"
@@ -11949,17 +11923,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom igång för ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Uppgradera"
       ],
       "Upgrade now": [
         "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12689,12 +12657,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } provperiod"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaffa Mail Plus för ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceCoupon } är giltigt den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Dun kan säga upp när som helst."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ],
@@ -13101,12 +13063,6 @@
       ],
       "An external address cannot be default": [
         "En extern adress kan inte vara standard"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Övervakning av mörka webben har inaktiverats"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Övervakning av mörka webben har aktiverats"
       ],
       "Downloaded 2FA recovery codes": [
         "Laddade ner 2FA-återställningskoder"
@@ -16417,6 +16373,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -16531,9 +16528,6 @@
       ],
       "Comprehensive privacy and security": [
         "Omfattande integritet och säkerhet"
-      ],
-      "Dark web monitoring": [
-        "Mörka webben-övervakning"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
@@ -16708,47 +16702,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -17597,9 +17550,6 @@
       "Customize your mail import": [
         "Anpassa din e-postimport"
       ],
-      "Dark Web Monitoring": [
-        "Övervakning av mörka webben"
-      ],
       "Dashboard": [
         "Adminpanel"
       ],
@@ -17726,9 +17676,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigera gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Redigera fakturadetaljer"
       ],
       "Edit profile": [
         "Redigera profil"

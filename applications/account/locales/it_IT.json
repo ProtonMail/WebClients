@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -478,9 +478,6 @@
       "Edit group": [
         "Modifica il gruppo"
       ],
-      "Edit invoice details": [
-        "Modifica i dettagli delle fatture"
-      ],
       "Edit label": [
         "Modifica dell'etichetta"
       ],
@@ -570,12 +567,6 @@
       ],
       "Generate token": [
         "Genera un token"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Ottieni ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Ottieni ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Ottieni un nuovo indirizzo email crittografato"
@@ -1753,9 +1744,6 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
-      "Dark Web Monitoring": [
-        "Monitoraggio del dark web"
-      ],
       "Easily add or remove users": [
         "Aggiungi o rimuovi utenti facilmente"
       ],
@@ -1841,9 +1829,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, monitoraggio del dark web e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
@@ -1993,12 +1978,6 @@
     "Button": {
       "Add link to your email footer": [
         "Aggiungi un link al piè di pagina della tua email"
-      ],
-      "Change email address settings": [
-        "Modifica le impostazioni dell'indirizzo email"
-      ],
-      "Continue": [
-        "Continua"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
@@ -8369,9 +8348,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
-      "Registering your subscription...": [
-        "Registrazione dell'abbonamento..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."
       ],
@@ -8479,9 +8455,6 @@
       ],
       "Setting successfully saved": [
         "Impostazioni salvate correttamente"
-      ],
-      "Setting up your new address...": [
-        "Configurazione del tuo nuovo indirizzo..."
       ],
       "Setting up your organization": [
         "Configurazione della tua organizzazione in corso..."
@@ -9502,9 +9475,6 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Il tuo ticket di supporto è stato chiuso. Grazie per aver contattato l'assistenza di ${ BRAND_NAME }."
       ],
@@ -9550,11 +9520,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Puoi aggiungere un metodo di pagamento per rinnovare automaticamente il tuo abbonamento. Sono disponibili anche altri metodi di pagamento."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Inserisci un nome e un indirizzo per te o per la tua organizzazione. Questi dati verranno aggiunti sia alle fatture personali sia a quelle dell'organizzazione."
       ]
     },
     "Info on errors": {
@@ -10210,6 +10175,9 @@
       "Choose a name for the generated certificate file": [
         "Scegli un nome per il file"
       ],
+      "City": [
+        "Città"
+      ],
       "Code": [
         "Codice"
       ],
@@ -10224,6 +10192,9 @@
       ],
       "Colors": [
         "Colori"
+      ],
+      "Company": [
+        "Azienda"
       ],
       "Company name": [
         "Nome dell'azienda"
@@ -10639,9 +10610,6 @@
       "Name": [
         "Nome"
       ],
-      "Name and address": [
-        "Nome e indirizzo"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port forwarding)"
       ],
@@ -10674,6 +10642,9 @@
       ],
       "Non-standard ports": [
         "Porte non standard"
+      ],
+      "Note": [
+        "Nota"
       ],
       "Notification": [
         "Notifica"
@@ -10915,6 +10886,9 @@
       ],
       "Sticky labels": [
         "Etichette adesive"
+      ],
+      "Street address": [
+        "Indirizzo"
       ],
       "Strong": [
         "Sicura"
@@ -11926,17 +11900,11 @@
       "Get started for ${ priceCoupon }": [
         "Inizia per ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "A partire da ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Effettua l'upgrade"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12666,12 +12634,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prova"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Ottieni Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ],
@@ -13078,12 +13040,6 @@
       ],
       "An external address cannot be default": [
         "Un indirizzo esterno non può essere l'indirizzo predefinito."
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Il monitoraggio del Dark Web è stato disabilitato"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Il monitoraggio del Dark Web è stato abilitato"
       ],
       "Downloaded 2FA recovery codes": [
         "Codici di ripristino A2F scaricati"
@@ -16388,6 +16344,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -16502,9 +16499,6 @@
       ],
       "Comprehensive privacy and security": [
         "Privacy e sicurezza complete"
-      ],
-      "Dark web monitoring": [
-        "Monitoraggio del dark web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "App desktop e supporto per client email (tramite IMAP)"
@@ -16679,47 +16673,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
@@ -17565,9 +17518,6 @@
       "Customize your mail import": [
         "Personalizza l'importazione della tua mail"
       ],
-      "Dark Web Monitoring": [
-        "Monitoraggio del Dark Web"
-      ],
       "Dashboard": [
         "Pannello di controllo"
       ],
@@ -17694,9 +17644,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Modifica Gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Modifica i dettagli delle fatture"
       ],
       "Edit profile": [
         "Modifica profilo"

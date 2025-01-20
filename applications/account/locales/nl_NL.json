@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -478,9 +478,6 @@
       "Edit group": [
         "Groep bewerken"
       ],
-      "Edit invoice details": [
-        "Factuurgegevens wijzigen"
-      ],
       "Edit label": [
         "Label bewerken"
       ],
@@ -570,12 +567,6 @@
       ],
       "Generate token": [
         "Sleutel genereren"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Krijg ${ MAIL_SHORT_APP_NAME } Plus voor ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Krijg ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Verkrijg een nieuw versleuteld e-mailadres"
@@ -1753,9 +1744,6 @@
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Eenvoudig gebruikers toevoegen of verwijderen"
       ],
@@ -1841,9 +1829,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, Dark Web Monitoring en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
@@ -1993,12 +1978,6 @@
     "Button": {
       "Add link to your email footer": [
         "Link toevoegen aan uw e-mailvoet"
-      ],
-      "Change email address settings": [
-        "Wijzig de instellingen van het e-mailadres"
-      ],
-      "Continue": [
-        "Ga verder"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
@@ -6992,7 +6971,7 @@
         "Herstellen via telefoon toestaan"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers van de **Landen** sectie van de ${ VPN_APP_NAME } app."
+        "Sta gebruikers toe om verbinding te maken met beveiligde gedeelde servers van de **Landen** sectie van de ${ VPN_APP_NAME }-app."
       ],
       "Already allocated": [
         "Reeds toegewezen"
@@ -8366,9 +8345,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
-      "Registering your subscription...": [
-        "Uw abonnement wordt geregistreerd..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
       ],
@@ -8476,9 +8452,6 @@
       ],
       "Setting successfully saved": [
         "Instellingen succesvol bijgewerkt"
-      ],
-      "Setting up your new address...": [
-        "Uw nieuwe adres wordt ingesteld..."
       ],
       "Setting up your organization": [
         "Uw organisatie wordt aangemaakt"
@@ -9499,9 +9472,6 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Uw supportticket werd afgesloten. Bedankt om contact op te nemen met ${ BRAND_NAME }-ondersteuning."
       ],
@@ -9547,11 +9517,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Voer een naam en adres in voor uzelf of uw organisatie. Deze gegevens worden toegevoegd aan zowel persoonlijke als zakelijke facturen."
       ]
     },
     "Info on errors": {
@@ -10207,6 +10172,9 @@
       "Choose a name for the generated certificate file": [
         "Kies een naam voor het gegenereerde certifcaatbestand"
       ],
+      "City": [
+        "Stad"
+      ],
       "Code": [
         "Code"
       ],
@@ -10221,6 +10189,9 @@
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Company": [
+        "Bedrijf"
       ],
       "Company name": [
         "Bedrijfsnaam"
@@ -10636,9 +10607,6 @@
       "Name": [
         "Naam"
       ],
-      "Name and address": [
-        "Naam en adres"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port Forwarding)"
       ],
@@ -10671,6 +10639,9 @@
       ],
       "Non-standard ports": [
         "Niet-standaard poorten"
+      ],
+      "Note": [
+        "Notitie"
       ],
       "Notification": [
         "Notificatie"
@@ -10912,6 +10883,9 @@
       ],
       "Sticky labels": [
         "Sticky labels"
+      ],
+      "Street address": [
+        "Adres"
       ],
       "Strong": [
         "Sterk"
@@ -11483,7 +11457,7 @@
         "Beperkte aanbieding: **Bespaar ${ discount } op ${ name } met een 1-jarig abonnement**"
       ],
       "Set up your account with your Porkbun domain.": [
-        "Maak je account aan met uw Porkbun domein."
+        "Maak uw account aan met uw Porkbun domein."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
@@ -11920,17 +11894,11 @@
       "Get started for ${ priceCoupon }": [
         "Aan de slag voor ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Vanaf ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Upgrade now": [
         "Upgrade nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12660,12 +12628,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Proefversie"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Krijg Mail Plus voor ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
-      ],
       "Your account's usage": [
         "Verbruik van uw account"
       ]
@@ -13069,12 +13031,6 @@
       ],
       "An external address cannot be default": [
         "Een extern adres kan niet primair zijn"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Dark Web Monitoring is uitgeschakeld"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Dark Web Monitoring is ingeschakeld"
       ],
       "Downloaded 2FA recovery codes": [
         "Herstelcodes van 2FA gedownload"
@@ -16358,6 +16314,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -16472,9 +16469,6 @@
       ],
       "Comprehensive privacy and security": [
         "Uitgebreide privacy en beveiliging."
-      ],
-      "Dark web monitoring": [
-        "Dark web monitoring"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Desktopapp en e-mailclientondersteuning (via IMAP)"
@@ -16649,47 +16643,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -17535,9 +17488,6 @@
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Dashboard": [
         "Dashboard"
       ],
@@ -17664,9 +17614,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } aanpassen"
-      ],
-      "Edit invoice details": [
-        "Factuurgegevens wijzigen"
       ],
       "Edit profile": [
         "Profiel bewerken"
