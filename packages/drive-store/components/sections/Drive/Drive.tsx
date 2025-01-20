@@ -12,7 +12,6 @@ import type { EncryptedLink, LinkShareUrl, SignatureIssues, useFolderView } from
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, {
     Cells,
     GridHeader,
@@ -94,7 +93,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
-    const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(folderView.layout, folderView.isLoading);
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
@@ -158,19 +157,14 @@ function Drive({ activeFolder, folderView }: Props) {
             document.getSelection()?.removeAllRanges();
 
             if (isProtonDocument(item.mimeType)) {
-                void canUseDocs(shareId)
-                    .then((canUse) => {
-                        if (!canUse) {
-                            return;
-                        }
+                if (isDocsEnabled) {
+                    return openDocument({
+                        linkId: id,
+                        shareId,
+                        openBehavior: 'tab',
+                    });
+                }
 
-                        return openDocument({
-                            linkId: id,
-                            shareId,
-                            openBehavior: 'tab',
-                        });
-                    })
-                    .catch(sendErrorReport);
                 return;
             }
 
@@ -180,7 +174,7 @@ function Drive({ activeFolder, folderView }: Props) {
             }
             navigateToLink(shareId, id, item.isFile);
         },
-        [navigateToLink, shareId, browserItems]
+        [navigateToLink, shareId, browserItems, isDocsEnabled, openDocument]
     );
 
     const handleScroll = () => {
