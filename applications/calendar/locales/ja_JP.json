@@ -212,6 +212,9 @@
       "Create event": [
         "予定を作成"
       ],
+      "Create folder": [
+        "フォルダーの作成"
+      ],
       "Create new contact": [
         "新しい連絡先を作成"
       ],
@@ -310,9 +313,6 @@
       ],
       "Forward as attachment": [
         "添付ファイルとして転送"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon }で${ MAIL_SHORT_APP_NAME }Plusを獲得"
       ],
       "Get in touch": [
         "連絡する"
@@ -725,10 +725,10 @@
       "Upgrade": [
         "アップグレード"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "今すぐアップグレード"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "今すぐアップグレード"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1029,9 +1029,6 @@
       "Advanced account protection": [
         "高度なアカウント保護"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "簡単にユーザーを追加または削除できます"
       ],
@@ -1117,9 +1114,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "すべてのデバイスで安全なログインを実現します。 無制限の hide-my-email エイリアス、共有、統合 2FA、Dark Web Monitoring などが含まれます。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "${ addresses } メールアドレスを含む、エンドツーエンド暗号化によってメールや予定を安全に保つことができます。 カスタムメールドメインのサポート、${ BRAND_NAME } Scribe 書き込みアシスタント、無制限の hide-my-email エイリアスなどが含まれます。"
@@ -1246,12 +1240,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "メールアドレス設定を変更"
-      ],
-      "Continue": [
-        "続ける"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
       ],
@@ -2593,11 +2581,6 @@
         "未払いの請求"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2691,6 +2674,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4906,9 +4894,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
-      "Registering your subscription...": [
-        "サブスクリプションを登録中…"
-      ],
       "Removed participants will be notified.": [
         "削除した参加者には通知されます。"
       ],
@@ -4938,9 +4923,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
-      ],
-      "Setting up your new address...": [
-        "新しいアドレスを設定中…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -5938,6 +5920,12 @@
       "Add a gift code": [
         "ギフトコードを追加"
       ],
+      "All mail": [
+        "すべてのメール"
+      ],
+      "Archive": [
+        "アーカイブ"
+      ],
       "Calendars": [
         "カレンダー"
       ],
@@ -5947,8 +5935,14 @@
       "click here": [
         "ここをクリック"
       ],
+      "Drafts": [
+        "下書き"
+      ],
       "How to pay with Bitcoin?": [
         "ビットコインで支払うには？"
+      ],
+      "Inbox": [
+        "受信トレイ"
       ],
       "Learn more": [
         "詳細"
@@ -5968,8 +5962,26 @@
       "Request an invite": [
         "招待をリクエスト"
       ],
+      "Scheduled": [
+        "送信予約"
+      ],
+      "Sent": [
+        "送信済み"
+      ],
+      "Snooze": [
+        "スヌーズ"
+      ],
+      "Spam": [
+        "迷惑メール"
+      ],
+      "Starred": [
+        "スター付き"
+      ],
       "stay safer online": [
         "オンラインでの安全性を高める"
+      ],
+      "Trash": [
+        "ごみ箱"
       ],
       "What’s this?": [
         "これは何ですか?"
@@ -6349,14 +6361,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon }で開始"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }から始めましょう"
+      "Upgrade": [
+        "アップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME }Plusへアップグレード"
       ]
     },
     "new_plans: action": {
@@ -6950,14 +6959,6 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }でMail Plusを入手"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
       ]
     },
     "new_plans: tooltip": {
@@ -8628,6 +8629,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -8730,9 +8772,6 @@
       ],
       "Comprehensive privacy and security": [
         "総合的なプライバシーとセキュリティ"
-      ],
-      "Dark web monitoring": [
-        "ダークウェブモニタリング"
       ],
       "Desktop app and email client support (via IMAP)": [
         "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
@@ -8883,47 +8922,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -9397,9 +9395,6 @@
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
-      ],
-      "Dark Web Monitoring": [
-        "ダークウェブモニタリング"
       ],
       "Data recovery": [
         "データの回復"

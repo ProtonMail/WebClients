@@ -210,6 +210,9 @@
       "Create event": [
         "Esemény létrehozása"
       ],
+      "Create folder": [
+        "Mappa létrehozása"
+      ],
       "Create new contact": [
         "Új névjegy létrehozása"
       ],
@@ -695,10 +698,10 @@
       "Upgrade": [
         "Csomagváltás"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Váltás nagyobb csomagra"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
@@ -984,9 +987,6 @@
       "Advanced account protection": [
         "Fejlett fiókvédelmi program"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Figyelés"
-      ],
       "Easily add or remove users": [
         "Felhasználók egyszerű hozzáadása vagy eltávolítása"
       ],
@@ -1057,9 +1057,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Hozzáférjen videós szolgáltatásokhoz, mint Netflix, Disney+, Prime Video és továbbiak, akárhonnan."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Biztonságos bejelentkezések az összes eszközén. Korlátlan számú hide-my-email álnév, megosztás, beépített 2FA, Dark Web Figyelés és további lehetőségek."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket.",
@@ -1184,9 +1181,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Folytatás"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ],
@@ -2490,11 +2484,6 @@
         "Lejárt számla"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "használja az Easy Switch importálási asszisztenst"
-      ]
-    },
     "Description": {
       "Availability unknown": [
         "Elérhetőség ismeretlen"
@@ -2546,6 +2535,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5663,6 +5657,12 @@
       "Add a gift code": [
         "Ajándék kód hozzáadása"
       ],
+      "All mail": [
+        "Összes levél"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
       "Calendars": [
         "Naptárak"
       ],
@@ -5672,8 +5672,14 @@
       "click here": [
         "kattintson ide"
       ],
+      "Drafts": [
+        "Piszkozatok"
+      ],
       "How to pay with Bitcoin?": [
         "Hogy lehet Bitcoinnal fizetni?"
+      ],
+      "Inbox": [
+        "Beérkezett üzenetek"
       ],
       "Learn more": [
         "További információk"
@@ -5693,8 +5699,26 @@
       "Request an invite": [
         "Meghívó kérése"
       ],
+      "Scheduled": [
+        "Ütemezés"
+      ],
+      "Sent": [
+        "Elküldött"
+      ],
+      "Snooze": [
+        "Szüneteltetés"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "Starred": [
+        "Csillagozott"
+      ],
       "stay safer online": [
         "legyen biztonságosabb online"
+      ],
+      "Trash": [
+        "Lomtár"
       ],
       "What’s this?": [
         "Mi ez?"
@@ -6061,11 +6085,11 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Váltás kisebb csomagra: ${ downgradedPlanName }"
       ],
-      "Upgrade now": [
+      "Upgrade": [
         "Váltás nagyobb csomagra"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: action": {
@@ -8037,6 +8061,29 @@
         "${ totalPrice } áron"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -8187,29 +8234,6 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -8670,9 +8694,6 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
-      ],
-      "Dark Web Monitoring": [
-        "Dark web figyelés"
       ],
       "Data recovery": [
         "Adat helyreállítás"
@@ -9182,6 +9203,9 @@
       ]
     },
     "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Haladó VPN beállítások"
+      ],
       "No ads": [
         "Nincsenek hirdetések"
       ]
