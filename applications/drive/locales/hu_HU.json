@@ -220,6 +220,9 @@
       "Create and copy alias": [
         "E-mail álnév létrehozása és másolása"
       ],
+      "Create folder": [
+        "Mappa létrehozása"
+      ],
       "Create free account": [
         "Ingyenes fiók létrehozása"
       ],
@@ -356,9 +359,6 @@
       ],
       "Forward as attachment": [
         "Továbbítás mellékletként"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } beszerzése"
       ],
       "Get in touch": [
         "Lépjen velünk kapcsolatba"
@@ -1040,9 +1040,6 @@
       "Advanced account protection": [
         "Fejlett fiókvédelmi program"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Figyelés"
-      ],
       "Easily add or remove users": [
         "Felhasználók egyszerű hozzáadása vagy eltávolítása"
       ],
@@ -1113,9 +1110,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Hozzáférjen videós szolgáltatásokhoz, mint Netflix, Disney+, Prime Video és továbbiak, akárhonnan."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Biztonságos bejelentkezések az összes eszközén. Korlátlan számú hide-my-email álnév, megosztás, beépített 2FA, Dark Web Figyelés és további lehetőségek."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket.",
@@ -1240,9 +1234,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Folytatás"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ],
@@ -5836,14 +5827,26 @@
       "Add a gift code": [
         "Ajándék kód hozzáadása"
       ],
+      "All mail": [
+        "Összes levél"
+      ],
+      "Archive": [
+        "Archívum"
+      ],
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
       ],
       "click here": [
         "kattintson ide"
       ],
+      "Drafts": [
+        "Piszkozatok"
+      ],
       "How to pay with Bitcoin?": [
         "Hogy lehet Bitcoinnal fizetni?"
+      ],
+      "Inbox": [
+        "Beérkezett üzenetek"
       ],
       "Learn more": [
         "További információk"
@@ -5860,11 +5863,26 @@
       "Request an invite": [
         "Meghívó kérése"
       ],
+      "Scheduled": [
+        "Ütemezés"
+      ],
+      "Sent": [
+        "Elküldött"
+      ],
       "Shared": [
         "Megosztott"
       ],
       "Shared with me": [
         "Velem megosztva"
+      ],
+      "Snooze": [
+        "Szüneteltetés"
+      ],
+      "Spam": [
+        "Levélszemét"
+      ],
+      "Starred": [
+        "Csillagozott"
       ],
       "stay safer online": [
         "legyen biztonságosabb online"
@@ -6153,9 +6171,6 @@
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
       ]
     },
     "new_plans: action": {
@@ -8674,9 +8689,6 @@
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
       ],
-      "Dark Web Monitoring": [
-        "Dark web figyelés"
-      ],
       "Data recovery": [
         "Adat helyreállítás"
       ],
@@ -9263,6 +9275,9 @@
       ]
     },
     "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Haladó VPN beállítások"
+      ],
       "No ads": [
         "Nincsenek hirdetések"
       ]

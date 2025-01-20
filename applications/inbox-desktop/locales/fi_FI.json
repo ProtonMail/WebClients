@@ -64,6 +64,9 @@
       ]
     },
     "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Sovellus sulkeutuu virheen takia. Yritä käynnistää se uudelleen, ja jos ongelma jatkuu, ota meihin yhteyttä. Virheen tiedot löytyvät sovelluslokista."
+      ],
       "Unexpected error": [
         "Odottamaton virhe"
       ]
@@ -71,6 +74,9 @@
     "error screen": {
       "Cannot establish connection": [
         "Yhteyttä ei voi muodostaa"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Tarkista Internet-yhteytesi tai verkkoasetuksesi. Jos ongelma jatkuu, ota yhteyttä asiakastukeen."
       ],
       "Try again": [
         "Yritä uudelleen"

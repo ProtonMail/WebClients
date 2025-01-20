@@ -244,9 +244,6 @@
       "Edit vault": [
         "Edytuj sejf"
       ],
-      "Enable Dark Web Monitoring": [
-        "Włącz monitoring dark web"
-      ],
       "Enable this alias to receive emails sent to this alias": [
         "Włącz alias, aby otrzymywać wiadomości wysłane na ten adres"
       ],
@@ -725,9 +722,6 @@
       "Create unique passwords": [
         "Utwórz unikalne hasła"
       ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Monitoring dark web jest dostępny w płatnym planie. Ulepsz konto, aby uzyskać do niego dostęp."
-      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Otrzymaj powiadomienie o wycieku swojego adresu e-mail, hasła i innych danych osobowych."
       ],
@@ -1168,9 +1162,6 @@
       ]
     },
     "Feature": {
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca"
       ],
@@ -1343,6 +1334,9 @@
         "Wykryto ${ row.breachCount } wycieków",
         "Wykryto ${ row.breachCount } wycieków"
       ],
+      "(Empty)": [
+        "(Pusty)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
       ],
@@ -1420,6 +1414,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Automatyczna blokada została wyłączona."
+      ],
+      "automatically": [
+        "automatycznie"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Przed wyeksportowaniem danych w tym formacie otwórz ustawienia Safari -> zakładka \"Ogólne\" -> wyłącz opcję \"Otwieraj bezpieczne pliki po pobraniu\". Zapobiegnie to nieprawidłowemu przetworzeniu wyeksportowanego pliku przez przeglądarkę Safari."
@@ -2252,6 +2249,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu braku wymaganego uwierzytelniania dwustopniowego. Włącz uwierzytelnianie dwustopniowe w ustawieniach kontach lub skontaktuj się z administratorem."
       ],
+      "your domain": [
+        "twoja domena"
+      ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
@@ -2541,9 +2541,6 @@
       ],
       "Custom text field": [
         "Tekstowe pole niestandardowe"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
       ],
       "Date": [
         "Data"
@@ -3039,6 +3036,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synchronizuj aliasy z SimpleLogin"
+      ],
+      "Target:": [
+        "Cel:"
       ],
       "Tax number": [
         "NIP"
@@ -3587,9 +3587,6 @@
       "Custom emails": [
         "Niestandardowe adresy e-mail"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Default Display Name": [
         "Domyślna nazwa wyświetlana"
       ],
@@ -4109,9 +4106,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Zweryfikuj adres e-mail, aby użyć aliasów"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Zweryfikuj adres e-mail, aby udostępnić sejf"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Usunięcie dodatkowego hasła spowoduje wylogowanie ze wszystkich urządzeń i zakończy wszystkie aktywne sesje."

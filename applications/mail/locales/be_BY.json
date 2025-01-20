@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "Аб псеўданімах hide-my-email"
       ],
+      "Activate": [
+        "Актываваць"
+      ],
       "Activate recovery": [
         "Актываваць аднаўленне"
       ],
@@ -522,9 +525,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Атрымаць ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Атрымайце ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Звязацца з намі"
       ],
@@ -776,6 +776,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "More options": [
+        "Дадатковыя параметры"
       ],
       "More refine actions": [
         "Больш дзеянняў па ўдасканаленні"
@@ -1329,11 +1332,11 @@
       "Upgrade": [
         "Палепшыць"
       ],
-      "Upgrade Now": [
-        "Палепшыць"
-      ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade Now": [
+        "Палепшыць"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Палепшыць да ${ BRAND_NAME } Unlimited"
@@ -1720,9 +1723,6 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Лёгкае дадаванне або выдаленне карыстальнікаў"
       ],
@@ -1808,9 +1808,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, Dark Web Monitoring і іншыя функцыі."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1943,12 +1940,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Змяніць налады адраса электроннай пошты"
-      ],
-      "Continue": [
-        "Працягнуць"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ],
@@ -7122,9 +7113,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
-      "Registering your subscription...": [
-        "Рэгістрацыя вашай падпіскі..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудзьцеся абнавіць яго ў менеджары пароляў або ў тым месцы, дзе вы захоўваеце ўліковы запіс і звесткі для яго ўваходу."
       ],
@@ -7232,9 +7220,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
-      ],
-      "Setting up your new address...": [
-        "Наладжванне вашага новага адраса..."
       ],
       "Shorten selection": [
         "Скараціць выбар"
@@ -9492,14 +9477,11 @@
       "Get started for ${ priceCoupon }": [
         "Пачніце за ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
+      "Upgrade": [
+        "Палепшыць"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -10167,14 +10149,6 @@
         "Змяніць тарыфны план?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
@@ -10575,9 +10549,6 @@
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Выдаленне перамешчаных у сметніцу лістоў і спаму пасля 30 дзён."
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Distraction-free emailing": [
         "Адпраўка электроннай пошты без адцягнення ўвагі"
@@ -11689,6 +11660,11 @@
         "Падпісаць"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Бачнае імя"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Хутчэй у праграме"
@@ -12314,9 +12290,6 @@
       ],
       "Comprehensive privacy and security": [
         "Комплексная прыватнасць і бяспека"
-      ],
-      "Dark web monitoring": [
-        "Назіранне за Dark Web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
@@ -13065,9 +13038,6 @@
       "Download Desktop app": [
         "Спампаваць настольную праграму"
       ],
-      "Enable Dark Web Monitoring": [
-        "Уключыць Dark Web Monitoring"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Атрымаць мой адрас “@${ PM_DOMAIN }“"
       ],
@@ -13273,9 +13243,6 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Data recovery": [
         "Аднаўленне даных"
@@ -13886,6 +13853,11 @@
         "Сёння"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“Аўтаматычна” азначае, што для адпраўкі гэтаму карыстальніку выкарыстоўваецца фармат рэдактара. “Звычайны тэкст” азначае, што пры адпраўцы паведамленне заўсёды будзе ператварацца ў звычайны тэкст."
@@ -13967,11 +13939,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
     "Tor out of date": {

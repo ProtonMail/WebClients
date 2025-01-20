@@ -684,6 +684,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "O ${ DARK_WEB_MONITORING_NAME } está disponível com um plano pago. Faça upgrade para acesso imediato."
+      ],
       "${ total } other login uses the same password": [
         "${ total } outro início de sessão usa a mesma senha",
         "${ total } outros inícios de sessão usam a mesma senha"
@@ -699,9 +702,6 @@
       ],
       "Add the following TXT DNS record to your domain.": [
         "Adicione o seguinte registro DNS TXT ao seu domínio."
-      ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "O monitoramento da Dark Web está disponível com um plano pago. Faça upgrade para acesso imediato."
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } é um método de autenticação de e-mail criado para evitar falsificação de e-mail. É altamente recomendável configurar o DKIM para reduzir a chance de seus e-mails acabarem na pasta Spam do destinatário."
@@ -3886,9 +3886,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique seu endereço de e-mail para usar os aliases de e-mail"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Verifique seu endereço de e-mail para utilizar o compartilhamento de cofre"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "A remoção da sua senha adicional fará o encerramento da sessão de todos os dispositivos e encerrará todas as sessões ativas."

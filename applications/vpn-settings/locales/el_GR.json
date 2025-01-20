@@ -169,6 +169,9 @@
       "Create": [
         "Δημιουργία"
       ],
+      "Create folder": [
+        "Δημιουργία φακέλου"
+      ],
       "Create Gateway": [
         "Δημιουργία Πύλης"
       ],
@@ -265,9 +268,6 @@
       "Edit group": [
         "Επεξεργασία ομάδας"
       ],
-      "Edit invoice details": [
-        "Επεξεργασία στοιχείων τιμολογίου"
-      ],
       "Edit name": [
         "Επεξεργασία ονόματος"
       ],
@@ -315,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Απκτήστε το ${ MAIL_SHORT_APP_NAME } Plus για ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Λήψη ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Λάβετε μια νέα κρυπτογραφημένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -1023,9 +1017,6 @@
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Εύκολη προσθήκη ή αφαίρεση χρηστών"
       ],
@@ -1111,9 +1102,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+, Prime Video και άλλων, από οπουδήποτε."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονική διεύθυνση, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
@@ -1251,12 +1239,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Αλλαγή ρυθμίσεων διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Continue": [
-        "Συνέχεια"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
       ],
@@ -3289,6 +3271,11 @@
         "Terabytes"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } ενημερώθηκε"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Επιτρέπεται:"
@@ -4181,6 +4168,9 @@
       "Increase your account security by verifying your email address.": [
         "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
+      "Inherited from parent folder": [
+        "Κληρονoμήθηκαν από το γονικό φάκελο"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Εγκαταστήστε ένα αρχείο διαμόρφωσης χώρας για να συνδεθείτε σε έναν τυχαίο διακομιστή στη χώρα της επιλογής σας."
       ],
@@ -4366,6 +4356,9 @@
       ],
       "Must start with a letter.": [
         "Πρέπει να ξεκινάει με γράμμα."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
       "New user invited to organization": [
         "Νέος χρήστης προσκλήθηκε στον οργανισμό"
@@ -4564,9 +4557,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
-      "Registering your subscription...": [
-        "Εγγραφή της συνδρομής σας..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
       ],
@@ -4644,9 +4634,6 @@
       ],
       "Session timed out": [
         "Η συνεδρία έληξε"
-      ],
-      "Setting up your new address...": [
-        "Ρύθμιση της νέας διεύθυνσής σας..."
       ],
       "Setting up your organization": [
         "Γίνεται ρύθμιση του οργανισμού σας"
@@ -5156,6 +5143,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Μπορείτε να έχετε μόνο μία παρουσία συνομιλίας ανοιχτή κάθε φορά. Κλείστε τις προηγούμενες συνομιλίες πριν ξεκινήσετε μια νέα."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Για σύνδεση σε διακομιστή ${ VPN_APP_NAME } με χρήση εφαρμογής VPN ανοικτού κώδικα τρίτων, όπως το Tunnelblick για macOS ή το OpenVPN για GNU/Linux, μπορείτε να χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια."
       ],
@@ -5281,14 +5271,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Θα μπορείτε να προσθέσετε αυτούς τους διακομιστές σε άλλη πύλη αμέσως."
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info for cash payment method": {
@@ -5310,11 +5302,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Μπορείτε να προσθέσετε μια μέθοδο πληρωμής για να ανανεώνεται αυτόματα η συνδρομή σας. Διατίθενται επίσης και άλλες μέθοδοι πληρωμής."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Εισαγάγετε ένα όνομα και μια διεύθυνση για εσάς ή τον οργανισμό σας. Αυτές οι λεπτομέρειες θα προστεθούν τόσο στα προσωπικά όσο και στα εταιρικά τιμολόγια."
       ]
     },
     "Info subscription": {
@@ -5536,11 +5523,20 @@
       "Choose a name for the generated certificate file": [
         "Επιλέξτε όνομα για το παραγόμενο αρχείο διαμόρφωσης"
       ],
+      "City": [
+        "Πόλη"
+      ],
       "Code": [
         "Κωδικός"
       ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
+      ],
+      "Colors": [
+        "Χρώματα"
+      ],
+      "Company": [
+        "Εταιρεια"
       ],
       "Company name": [
         "Όνομα εταιρείας"
@@ -5650,6 +5646,9 @@
       "First name": [
         "Όνομα"
       ],
+      "Folder location": [
+        "Τοποθεσία φακέλου"
+      ],
       "Gateway name": [
         "Όνομα πύλης"
       ],
@@ -5710,9 +5709,6 @@
       "Name": [
         "Όνομα"
       ],
-      "Name and address": [
-        "Όνομα και διεύθυνση"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Προώθηση θυρών)"
       ],
@@ -5742,6 +5738,12 @@
       ],
       "Non-standard ports": [
         "Μη τυποποιημένες θύρες"
+      ],
+      "Note": [
+        "Σημείωση"
+      ],
+      "Notification": [
+        "Ειδοποίηση"
       ],
       "OpenVPN / IKEv2 password": [
         "Κωδικός πρόσβασης OpenVPN / IKEv2"
@@ -5869,6 +5871,9 @@
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
+      ],
+      "Street address": [
+        "Οδός"
       ],
       "Strong": [
         "Δυνατό"
@@ -6001,6 +6006,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Δημιουργία φακέλου"
+      ],
+      "Create label": [
+        "Δημιουργία ετικέτας"
+      ],
+      "Edit folder": [
+        "Επεξεργασία φακέλου"
+      ],
+      "Edit label": [
+        "Επεξεργασία ετικέτας"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } δημιουργήθηκε"
       ]
     },
     "Lable": {
@@ -6163,6 +6187,9 @@
       ],
       "for ${ price }": [
         "για ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Ρυθμίστε τον λογαριασμό σας με τον τομέα Porkbun σας."
       ]
     },
     "mailtrial2024: Action": {
@@ -6305,6 +6332,17 @@
         "Ανεπιθύμητα"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Χρώμα"
+      ],
+      "Folder name": [
+        "Όνομα φακέλου"
+      ],
+      "Label name": [
+        "Όνομα ετικέτας"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
@@ -6329,17 +6367,11 @@
       "Get started for ${ priceCoupon }": [
         "Ξεκινήστε με ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Ξεκινώντας από ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7009,12 +7041,6 @@
       "${ shortPlan.title } Trial": [
         "Δοκιμή ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
       "Your account's usage": [
         "Η κατανάλωση του λογαριασμού σας"
       ]
@@ -7475,6 +7501,9 @@
       ],
       "My reason isn't listed": [
         "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
+      ],
+      "No parent folder": [
+        "Δεν υπάρχει γονικός φάκελος"
       ],
       "No permission": [
         "Χωρίς δικαίωμα"
@@ -7984,6 +8013,9 @@
       ],
       "Search for an email or IP address": [
         "Αναζήτηση διεύθυνσης ηλεκτρονικού ταχυδρομείου ή IP"
+      ],
+      "Search parent folder": [
+        "Αναζήτηση σε γονικό φάκελο"
       ],
       "Search users": [
         "Αναζήτηση χρηστών"
@@ -9400,9 +9432,6 @@
       "Comprehensive privacy and security": [
         "Ολοκληρωμένο απόρρητο και ασφάλεια"
       ],
-      "Dark web monitoring": [
-        "Dark web monitoring"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Υποστήριξη εφαρμογών επιφάνειας εργασίας και προγραμμάτων-πελατών ηλεκτρονικού ταχυδρομείου (μέσω IMAP)"
       ],
@@ -10265,9 +10294,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Επεξεργασία Πύλης ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Επεξεργασία στοιχείων τιμολογίου"
       ],
       "Edit servers": [
         "Επεξεργασία διακομιστών"

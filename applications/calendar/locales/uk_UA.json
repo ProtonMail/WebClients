@@ -215,6 +215,9 @@
       "Create event": [
         "Створити подію"
       ],
+      "Create folder": [
+        "Створити теку"
+      ],
       "Create new contact": [
         "Створити новий контакт"
       ],
@@ -319,9 +322,6 @@
       ],
       "Forward as attachment": [
         "Переслати як вкладення"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Отримати ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Зв'яжіться з нами"
@@ -734,11 +734,11 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade Now": [
-        "Передплатити"
-      ],
       "Upgrade now": [
         "Покращити"
+      ],
+      "Upgrade Now": [
+        "Передплатити"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Оновити до ${ BRAND_NAME } Необмежено"
@@ -1053,9 +1053,6 @@
       "Advanced account protection": [
         "Розширена програма захисту облікового запису"
       ],
-      "Dark Web Monitoring": [
-        "Відстеження Dark Web"
-      ],
       "Easily add or remove users": [
         "Легко додавати або вилучати користувачів"
       ],
@@ -1141,9 +1138,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Отримуйте доступ до контенту на потокових сервісах, включаючи Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Безпечний вхід на всіх ваших пристроях. Підтримує необмежену кількість псевдонімів hide-my-email, спільний доступ, інтегрований 2FA, Відстеження Dark Web та інші можливості."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреса електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
@@ -1276,12 +1270,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Змінити налаштування адреси електронної пошти"
-      ],
-      "Continue": [
-        "Продовжити"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ],
@@ -2653,11 +2641,6 @@
         "Протермінований рахунок"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скористайтеся помічником з імпортування Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } захищає ваш обліковий запис із виділеним цілодобовим моніторингом підозрілої діяльності, включно з ескалацією до фахівців з безпеки."
@@ -2751,6 +2734,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скористайтеся помічником з імпортування Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5134,9 +5122,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
-      "Registering your subscription...": [
-        "Реєстрація підписки..."
-      ],
       "Removed participants will be notified.": [
         "Вилучені учасники отримають сповіщення."
       ],
@@ -5169,9 +5154,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
-      ],
-      "Setting up your new address...": [
-        "Налаштування вашої нової адреси..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
@@ -6190,6 +6172,12 @@
       "Add a gift code": [
         "Додати подарунковий код"
       ],
+      "All mail": [
+        "Уся пошта"
+      ],
+      "Archive": [
+        "Архів"
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -6199,8 +6187,14 @@
       "click here": [
         "клацніть тут"
       ],
+      "Drafts": [
+        "Чернетки"
+      ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
+      ],
+      "Inbox": [
+        "Вхідні"
       ],
       "Learn more": [
         "Докладніше"
@@ -6220,8 +6214,26 @@
       "Request an invite": [
         "Запитати запрошення"
       ],
+      "Scheduled": [
+        "Заплановані"
+      ],
+      "Sent": [
+        "Надіслані"
+      ],
+      "Snooze": [
+        "Відкласти"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Starred": [
+        "Із зірочкою"
+      ],
       "stay safer online": [
         "бути в безпеці онлайн"
+      ],
+      "Trash": [
+        "Смітник"
       ],
       "What’s this?": [
         "Що це?"
@@ -6625,14 +6637,11 @@
       "Get started for ${ priceCoupon }": [
         "Розпочати з ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Починаючи з ${ priceMailPlus }"
+      "Upgrade": [
+        "Покращити"
       ],
       "Upgrade now": [
         "Покращити"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7298,14 +7307,6 @@
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Отримати Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Ціна зі знижкою ${ priceCoupon } дійсна протягом першого місяця. Потім вона буде автоматично поновлена до ${ priceMailPlus }. Ви можете скасувати в будь-який час."
       ]
     },
     "new_plans: tooltip": {
@@ -9147,6 +9148,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -9267,9 +9309,6 @@
       ],
       "Comprehensive privacy and security": [
         "Комплексна приватність та безпека"
-      ],
-      "Dark web monitoring": [
-        "Відстеження Dark Web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Підтримка додатків робочого стола та поштового клієнта (через IMAP)"
@@ -9420,47 +9459,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -9967,9 +9965,6 @@
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
-      ],
-      "Dark Web Monitoring": [
-        "Моніторинг Темного Вебу"
       ],
       "Data recovery": [
         "Відновлення даних"

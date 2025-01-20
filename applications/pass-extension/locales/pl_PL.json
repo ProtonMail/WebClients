@@ -694,9 +694,6 @@
       "A checked box means the feature is disabled.": [
         "Zaznaczone pole oznacza włączoną funkcję."
       ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Monitoring dark web jest dostępny w płatnym planie. Ulepsz konto, aby uzyskać do niego dostęp."
-      ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane.${ infoText }"
       ],
@@ -1301,6 +1298,9 @@
         "Pozostało ${ trialDaysLeft } dni",
         "Pozostało ${ trialDaysLeft } dnia"
       ],
+      "(Empty)": [
+        "(Pusty)"
+      ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
       ],
@@ -1375,6 +1375,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Automatyczna blokada została wyłączona."
+      ],
+      "automatically": [
+        "automatycznie"
       ],
       "Automatically copy the generated password to the clipboard": [
         "Automatycznie kopiuj wygenerowane hasło do schowka"
@@ -2210,6 +2213,9 @@
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu braku wymaganego uwierzytelniania dwustopniowego. Włącz uwierzytelnianie dwustopniowe w ustawieniach kontach lub skontaktuj się z administratorem."
       ],
+      "your domain": [
+        "twoja domena"
+      ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
@@ -2928,6 +2934,9 @@
       ],
       "Sync aliases with SimpleLogin": [
         "Synchronizuj aliasy z SimpleLogin"
+      ],
+      "Target:": [
+        "Cel:"
       ],
       "Tax number": [
         "NIP"
@@ -3858,9 +3867,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Zweryfikuj adres e-mail, aby użyć aliasów"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Zweryfikuj adres e-mail, aby udostępnić sejf"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Usunięcie dodatkowego hasła spowoduje wylogowanie ze wszystkich urządzeń i zakończy wszystkie aktywne sesje."

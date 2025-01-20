@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "Activate": [
+        "Aktivér"
+      ],
       "Activate recovery": [
         "Aktiver gendannelse"
       ],
@@ -510,9 +513,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Få ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Få ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Kontakt os"
       ],
@@ -759,6 +759,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
+      ],
+      "More options": [
+        "Flere muligheder"
       ],
       "More refine actions": [
         "Mere præcise handlinger"
@@ -1312,11 +1315,11 @@
       "Upgrade": [
         "Opgradér"
       ],
-      "Upgrade Now": [
-        "Opgradere nu"
-      ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade Now": [
+        "Opgradere nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Opgrader til ${ BRAND_NAME } Unlimited"
@@ -1695,9 +1698,6 @@
       "Advanced account protection": [
         "Avanceret program til beskyttelse af konto"
       ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
-      ],
       "Easily add or remove users": [
         "Tilsæt eller fjern brugere nemt"
       ],
@@ -1774,9 +1774,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, Monitorering af det mørke net og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
@@ -1905,9 +1902,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Forsæt"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
@@ -5897,6 +5891,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
+      ],
       "Align left": [
         "Venstrestil"
       ],
@@ -6806,9 +6803,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
-      "Registering your subscription...": [
-        "Registrerer dit abonnement..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Husk at opdatere dette i din adgangskodeadministrator, eller hvor du opbevarer dine konto- og loginoplysninger."
       ],
@@ -6911,9 +6905,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
-      ],
-      "Setting up your new address...": [
-        "Konfigurerer din nye adresse..."
       ],
       "Shorten selection": [
         "Forkort udvælgelse"
@@ -7173,6 +7164,12 @@
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "For at gendanne dine data skal du genaktivere den konto-nøgle, der blev brugt på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
       ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "For at fjerne restriktioner, kan du opgradere til et betalt abonnement"
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "For at fjerne restriktioner, kan du besøge ${ mailLink } og opgradere til et betalt abonnement."
+      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "For at afmelde dig fra denne mailingliste, vil en e-mail blive sendt fra ${ boldFrom } med følgende detaljer som defineret af afsenderen af nyhedsbrevet:"
       ],
@@ -7334,6 +7331,9 @@
       ],
       "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
         "Vi har registreret oprettelsen af adskillige gratis konti, hvilket er i strid med vores ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Vi har abonnementer, der er designet specifikt til brugere som dig, der har brug for mere end én e-mailadresse."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Vi skal have bekræftet din betalingsmetode hos din bank."
@@ -7610,6 +7610,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
       ],
       "Your password was leaked:": [
         "Din adgangskode er blevet lækket:"
@@ -9083,14 +9086,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Fra ${ priceMailPlus }"
+      "Upgrade": [
+        "Opgradér"
       ],
       "Upgrade now": [
         "Opgradér nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9701,11 +9701,6 @@
         "Skift abonnement?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Få Mail Plus for ${ priceCoupon }"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
@@ -10063,9 +10058,6 @@
       ],
       "Auto-delete spam and trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
-      ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
       ],
       "Download the desktop app": [
         "Download skrivebords-appen"
@@ -11081,6 +11073,11 @@
         "Signér"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Vist navn"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Hurtigere på appen"
@@ -11650,9 +11647,6 @@
       ],
       "Comprehensive privacy and security": [
         "Omfattende privatlivs- og sikkerhedsbeskyttelse"
-      ],
-      "Dark web monitoring": [
-        "Overvågning af det mørke net"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Understøtter skrivebordsapp og e-mailklient (via IMAP)"
@@ -12331,9 +12325,6 @@
       "Download Desktop app": [
         "Hent skrivebordsappen"
       ],
-      "Enable Dark Web Monitoring": [
-        "Aktivér monitorering af det mørke net"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Få min \"@${ PM_DOMAIN }\"-adresse"
       ],
@@ -12533,9 +12524,6 @@
       ],
       "Customize your mail import": [
         "Tilpas din mail-import"
-      ],
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
       ],
       "Data recovery": [
         "Datagendannelse"
@@ -13130,6 +13118,11 @@
         "I dag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
@@ -13208,11 +13201,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Tor out of date": {
