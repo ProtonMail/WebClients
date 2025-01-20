@@ -25,5 +25,9 @@ export const AutosaveVaultPicker: FC<Props> = ({ fallback, ...props }) => {
 
     /** Only render the Vault picker in case there are 2 or more vaults
      * to select. Otherwise, render the required fallback node. */
-    return vaults?.length > 1 ? <VaultPicker vaults={vaults} {...props} /> : fallback;
+    return vaults?.length > 1 ? (
+        <VaultPicker vaults={vaults} availablePlacements={['bottom-start']} {...props} />
+    ) : (
+        fallback
+    );
 };
