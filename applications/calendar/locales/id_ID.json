@@ -212,6 +212,9 @@
       "Create event": [
         "Buat acara"
       ],
+      "Create folder": [
+        "Buat folder"
+      ],
       "Create new contact": [
         "Buat kontak baru"
       ],
@@ -310,9 +313,6 @@
       ],
       "Forward as attachment": [
         "Teruskan sebagai lampiran"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Dapatkan ${ MAIL_SHORT_APP_NAME } Plus dengan harga ${ priceCoupon }"
       ],
       "Get in touch": [
         "Hubungi kami"
@@ -725,11 +725,11 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade Now": [
-        "Tingkatkan Sekarang"
-      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Tingkatkan ke ${ BRAND_NAME } Unlimited"
@@ -1029,9 +1029,6 @@
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
       ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
-      ],
       "Easily add or remove users": [
         "Tambah atau kurangi pengguna secara mudah"
       ],
@@ -1117,9 +1114,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, dan masih banyak lagi."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -1246,12 +1240,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Ubah pengaturan alamat email"
-      ],
-      "Continue": [
-        "Lanjutkan"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -2593,11 +2581,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2691,6 +2674,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4906,9 +4894,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
-      "Registering your subscription...": [
-        "Mendaftarkan langganan Anda..."
-      ],
       "Removed participants will be notified.": [
         "Peserta yang dihapus akan diberi tahu."
       ],
@@ -4938,9 +4923,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
-      ],
-      "Setting up your new address...": [
-        "Menyiapkan alamat baru Anda..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
@@ -5938,6 +5920,12 @@
       "Add a gift code": [
         "Tambah kode hadiah"
       ],
+      "All mail": [
+        "Semua surat"
+      ],
+      "Archive": [
+        "Arsip"
+      ],
       "Calendars": [
         "Kalender"
       ],
@@ -5947,8 +5935,14 @@
       "click here": [
         "klik di sini"
       ],
+      "Drafts": [
+        "Draf"
+      ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
+      ],
+      "Inbox": [
+        "Kotak masuk"
       ],
       "Learn more": [
         "Lebih lanjut"
@@ -5968,8 +5962,26 @@
       "Request an invite": [
         "Minta undangan"
       ],
+      "Scheduled": [
+        "Dijadwalkan"
+      ],
+      "Sent": [
+        "Terkirim"
+      ],
+      "Snooze": [
+        "Tunda"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Dibintangi"
+      ],
       "stay safer online": [
         "beraktivitas online secara lebih aman"
+      ],
+      "Trash": [
+        "Sampah"
       ],
       "What’s this?": [
         "Apa ini?"
@@ -6349,14 +6361,11 @@
       "Get started for ${ priceCoupon }": [
         "Mulai dengan harga ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
+      "Upgrade": [
+        "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6950,14 +6959,6 @@
       ],
       "Switch plans?": [
         "Ubah paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
       ]
     },
     "new_plans: tooltip": {
@@ -8628,6 +8629,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -8730,9 +8772,6 @@
       ],
       "Comprehensive privacy and security": [
         "Privasi dan keamanan yang komprehensif"
-      ],
-      "Dark web monitoring": [
-        "Pemantauan dark web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Dukungan aplikasi desktop dan klien email (melalui IMAP)"
@@ -8883,47 +8922,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -9397,9 +9395,6 @@
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
-      ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
       ],
       "Data recovery": [
         "Pemulihan data"
