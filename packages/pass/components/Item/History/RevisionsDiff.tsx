@@ -19,7 +19,7 @@ import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatch
 import { getItemHistoryRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
+import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { itemEdit } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
@@ -44,7 +44,7 @@ export const RevisionDiff: FC = () => {
     const { item: currentItem, revisions } = useItemHistory();
     const { shareId, itemId } = currentItem;
     const share = useSelector(selectShare(shareId));
-    const canRestore = share && isShareManageable(share);
+    const canRestore = share && isShareWritable(share);
 
     const current = currentItem.revision;
     const previous = parseInt(params.revision, 10);
