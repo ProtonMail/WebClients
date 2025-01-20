@@ -213,6 +213,9 @@
       "Create event": [
         "Opprett hendelse"
       ],
+      "Create folder": [
+        "Opprett mappe"
+      ],
       "Create new contact": [
         "Opprett ny kontakt"
       ],
@@ -313,9 +316,6 @@
       ],
       "Forward as attachment": [
         "Videresend som vedlegg"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Skaff deg ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
       ],
       "Get in touch": [
         "Ta kontakt"
@@ -728,10 +728,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1037,9 +1037,6 @@
       "Advanced account protection": [
         "Avansert kontobeskyttelse"
       ],
-      "Dark Web Monitoring": [
-        "Overvåking av det mørke nettet"
-      ],
       "Easily add or remove users": [
         "Legg til eller fjern brukere enkelt"
       ],
@@ -1125,9 +1122,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset hide-my-email-aliaser, deling, integrert 2FA, overvåking av det mørke nettet og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
@@ -1256,12 +1250,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Endre innstillinger for e-postadresse"
-      ],
-      "Continue": [
-        "Fortsett"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
       ],
@@ -2613,11 +2601,6 @@
         "Forfalt faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -2711,6 +2694,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4982,9 +4970,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
-      "Registering your subscription...": [
-        "Registrerer abonnementet ditt..."
-      ],
       "Removed participants will be notified.": [
         "Fjernede deltakere vil bli varslet."
       ],
@@ -5015,9 +5000,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
-      ],
-      "Setting up your new address...": [
-        "Konfigurerer den nye adressen din ..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -6022,6 +6004,12 @@
       "Add a gift code": [
         "Legg til gavekode"
       ],
+      "All mail": [
+        "All e-post"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
       "Calendars": [
         "Kalendere"
       ],
@@ -6031,8 +6019,14 @@
       "click here": [
         "klikk her"
       ],
+      "Drafts": [
+        "Utkast"
+      ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
+      ],
+      "Inbox": [
+        "Innboks"
       ],
       "Learn more": [
         "Lær mer"
@@ -6052,8 +6046,26 @@
       "Request an invite": [
         "Be om en invitasjon"
       ],
+      "Scheduled": [
+        "Planlagt"
+      ],
+      "Sent": [
+        "Sendt"
+      ],
+      "Snooze": [
+        "Slumre"
+      ],
+      "Spam": [
+        "Søppelpost"
+      ],
+      "Starred": [
+        "Stjernemerket"
+      ],
       "stay safer online": [
         "vær sikrere på nettet"
+      ],
+      "Trash": [
+        "Papirkurv"
       ],
       "What’s this?": [
         "Hva er det der?"
@@ -6441,14 +6453,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Starter fra ${ priceMailPlus }"
+      "Upgrade": [
+        "Oppgrader"
       ],
       "Upgrade now": [
         "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7066,14 +7075,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaff deg Mail Plus for ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
       ]
     },
     "new_plans: tooltip": {
@@ -8801,6 +8802,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -8909,9 +8951,6 @@
       ],
       "Comprehensive privacy and security": [
         "Omfattende personvern og sikkerhet"
-      ],
-      "Dark web monitoring": [
-        "Overvåking av det mørke nettet"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Støtte for skrivebordsapp og e-postklient (via IMAP)"
@@ -9062,47 +9101,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -9587,9 +9585,6 @@
       ],
       "Customize your mail import": [
         "Tilpass e-postimporten din"
-      ],
-      "Dark Web Monitoring": [
-        "Overvåking av det mørke nettet"
       ],
       "Data recovery": [
         "Datagjenoppretting"
