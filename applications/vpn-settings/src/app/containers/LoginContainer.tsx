@@ -15,9 +15,10 @@ interface Props {
     metaTags: MetaTags;
     initialLocation?: H.Location;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
 }
 
-const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit }: Props) => {
+const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit, onStartAuth }: Props) => {
     const location = useLocation<{ from?: H.Location }>();
     const searchParams = new URLSearchParams(location.search);
     const vpnTestflight = searchParams.get('redirect') === 'ios-beta';
@@ -34,6 +35,7 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit
             hasRemember={false}
             externalRedirect={initialLocation?.pathname || ''}
             onPreSubmit={onPreSubmit}
+            onStartAuth={onStartAuth}
             onLogin={async (data) => {
                 if (vpnTestflight) {
                     document.location.assign('https://testflight.apple.com/join/3yl2MSbw');
