@@ -4,7 +4,16 @@ import { useCallback, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { type ADDON_NAMES, AddonKey, AddonLimit, type Currency, type PlanIDs, SelectedPlan } from '@proton/payments';
+import {
+    type ADDON_NAMES,
+    AddonKey,
+    AddonLimit,
+    type Currency,
+    type FreeSubscription,
+    type PlanIDs,
+    SelectedPlan,
+    isFreeSubscription,
+} from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
 import {
@@ -51,7 +60,7 @@ interface AddonCustomizerProps {
     currentPlan: Plan;
     loading?: boolean;
     showUsersTooltip?: boolean;
-    latestSubscription?: Subscription;
+    latestSubscription?: Subscription | FreeSubscription;
     supportedAddons: SupportedAddons;
     scribeAddonEnabled: boolean;
     lumoAddonEnabled: boolean;
@@ -88,43 +97,25 @@ const AddonCustomizer = ({
     const addonNameKey = addon.Name as ADDON_NAMES;
     const quantity = planIDs[addon.Name] ?? 0;
 
-    const isSupported = !!supportedAddons[addonNameKey];
     const addonMaxKey = AddonKey[addonNameKey];
 
     const addonMultiplier = getAddonMultiplier(addonMaxKey, addon);
 
-    const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
-
     const min: number = getMaxValue(currentPlan, addonMaxKey);
 
-    // Member addon comes with MaxSpace + MaxAddresses
-    const value = isSupported
-        ? min + quantity * addonMultiplier
-        : Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
-              const multiplier: number = getMaxValue(plansMap[planName], addonMaxKey);
-              return acc + quantity * multiplier;
-          }, 0);
-
-    const addonPricePerCycle = addon.Pricing[cycle] || 0;
-    const addonPriceInline = (
-        <Price
-            key={`${addon.Name}-1`}
-            currency={currency}
-            suffix={
-                isScribeAddon(addonNameKey)
-                    ? c('Suffix for price').t`per user per month`
-                    : c('Suffix for price').t`per month`
-            }
-        >
-            {addonPricePerCycle / cycle}
-        </Price>
-    );
+    const value = min + quantity * addonMultiplier;
 
     const subscriptionPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
 
     const decreaseBlockedReasons: DecreaseBlockedReason[] = [];
 
     const applyForbiddenModificationLimitation = (value: number) => {
+        // The check for the free subscription here is just a type guard. In practice,
+        // the free subscription can't be cancelled.
+        if (isFreeSubscription(latestSubscription)) {
+            return value;
+        }
+
         // If user disabled subscription renewal then it counts like a scheduled modification.
         // At the same time, the addon downgrading will also create scheduled modification
         // The system can't process /check if user wants to schedule another modification.
@@ -140,15 +131,6 @@ const AddonCustomizer = ({
     };
 
     const displayMin = (() => {
-        // Minimum is 0 for the AI assistant addon.
-        // If seats are already assigned, they will be removed at the end of the
-        // billing cycle.
-        // Crucial for multi-account plans that do not have multi users enabled.
-        // This is currently the only way for them to unassign their own seat
-        if (isScribeAddon(addonNameKey)) {
-            return applyForbiddenModificationLimitation(0);
-        }
-
         // Existing users of VPN Business can't downgrade the number of IP addons, it must be done by contacting
         // customer support.
         if (
@@ -181,10 +163,12 @@ const AddonCustomizer = ({
         value,
         min: displayMin,
         max,
-        disabled: loading || !isSupported,
+        disabled: loading,
         onChange: (newQuantity) => {
             const newValue = (newQuantity - min) / addonMultiplier;
             let newPlanIDs = setQuantity(planIDs, addon.Name, newValue);
+            const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
+
             if (isMemberAddon(addonNameKey) && scribeAddonKey) {
                 const membersValue = value;
                 const scribeValue = planIDs[scribeAddonKey];
@@ -254,6 +238,21 @@ const AddonCustomizer = ({
         return <IPsNumberCustomiser key={`${addon.Name}-ips`} {...sharedNumberCustomizerProps} />;
     }
 
+    const addonPricePerCycle = addon.Pricing[cycle] || 0;
+    const addonPriceInline = (
+        <Price
+            key={`${addon.Name}-1`}
+            currency={currency}
+            suffix={
+                isScribeAddon(addonNameKey)
+                    ? c('Suffix for price').t`per user per month`
+                    : c('Suffix for price').t`per month`
+            }
+        >
+            {addonPricePerCycle / cycle}
+        </Price>
+    );
+
     if (isScribeAddon(addonNameKey) && scribeAddonEnabled) {
         return (
             <ScribeAddon
@@ -287,7 +286,7 @@ const AddonCustomizer = ({
     return null;
 };
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
+export interface Props extends ComponentPropsWithoutRef<'div'> {
     cycle: Cycle;
     currency: Currency;
     currentPlan: Plan;
@@ -297,7 +296,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     loading?: boolean;
     mode?: CustomiserMode;
     showUsersTooltip?: boolean;
-    latestSubscription?: Subscription;
+    latestSubscription?: Subscription | FreeSubscription;
     allowedAddonTypes?: AddonGuard[];
     audience?: Audience;
     scribeAddonEnabled?: boolean;
