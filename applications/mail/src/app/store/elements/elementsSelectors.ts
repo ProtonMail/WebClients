@@ -89,10 +89,11 @@ export const elements = createSelector(
          *
          * Since the cache is only a little subset of user's messages, it is not very costly.
          */
+        const bypassFilterSet = new Set(bypassFilter);
         const address = search.address ? addresses.value?.find((address) => address.ID === search.address) : undefined;
         const filtered = elementsArray.filter((element) => {
             // Check ID and label first (cheapest operations)
-            if (bypassFilter.length > 0 && !bypassFilter.includes(element.ID || '')) {
+            if (bypassFilter.length > 0 && !bypassFilterSet.has(element.ID || '')) {
                 return false;
             }
             if (!hasLabel(element, labelID)) {
