@@ -766,7 +766,7 @@ const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
  * There is no dedicated field for that in the API.
  * That's a hack that counts the number of IP addons.
  */
-export const getVPNDedicatedIPs = (subscription: Subscription | undefined) => {
+export const getVPNDedicatedIPs = (subscription: Subscription | FreeSubscription | undefined) => {
     const planName = getPlanName(subscription, PLAN_SERVICES.VPN);
 
     // If you have other VPN plans, they don't have dedicated IPs
