@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "Tietoa Hide-my-email-aliaksista"
       ],
+      "Activate": [
+        "Aktivoi"
+      ],
       "Activate recovery": [
         "Aktivoi palautus"
       ],
@@ -516,9 +519,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Hanki ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Hanki ${ MAIL_SHORT_APP_NAME } Plus hintaan ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Ota yhteyttä"
       ],
@@ -768,6 +768,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
+      ],
+      "More options": [
+        "Lisää asetuksia"
       ],
       "More refine actions": [
         "Lisää parannusehdotuksia"
@@ -1321,10 +1324,10 @@
       "Upgrade": [
         "Päivitä tilaus"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Päivitä tilaus nyt"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Päivitä tilaus nyt"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1707,9 +1710,6 @@
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
-      ],
       "Easily add or remove users": [
         "Lisää tai poista käyttäjiä helposti"
       ],
@@ -1795,9 +1795,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Suojaa kirjautumisesi kaikilla laitteillasi. Sisältää rajattomasti Hide-my-email-aliaksia, jakamisen, sisäänrakennetun 2FA:n, pimeän verkon valvonnan ja muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
@@ -1926,12 +1923,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Muuta sähköpostiosoitteen asetuksia"
-      ],
-      "Continue": [
-        "Jatka"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
       ],
@@ -4648,6 +4639,9 @@
       "Time zone": [
         "Aikavyöhyke"
       ],
+      "Time zone component ignored": [
+        "Aikavyöhykekomponentti ohitettu"
+      ],
       "To-do entry": [
         "Tehtävämerkintä"
       ],
@@ -5422,6 +5416,9 @@
       ],
       "Malformed start time": [
         "Virheellinen aloitusaika"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Ainoastaan gregoriaaninen kalenteri on sallittu"
       ],
       "Recurring rule not supported": [
         "Toistuvaa sääntöä ei tueta"
@@ -6888,9 +6885,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
-      "Registering your subscription...": [
-        "Rekisteröidään tilaustasi..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Muista päivittää nämä tiedot salasanahallintaasi tai missä tahansa säilytätkin tili- ja kirjautumistietojasi."
       ],
@@ -6996,9 +6990,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
-      ],
-      "Setting up your new address...": [
-        "Määritetään uutta osoitettasi..."
       ],
       "Shorten selection": [
         "Lyhennä valinta"
@@ -7263,6 +7254,9 @@
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Poista rajoitukset päivittämällä maksulliseen tilaukseen."
+      ],
+      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
+        "Poistaaksesi rajoitukset siirry sivustolle ${ mailLink } ja päivitä maksulliseen tilaukseen."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Sähköpostitilauksen lopettamiseksi lähetetään osoitteesta ${ boldFrom } viesti, joka sisältää seuraavat näiden viestien lähettäjän määrittämät tiedot:"
@@ -9177,14 +9171,11 @@
       "Get started for ${ priceCoupon }": [
         "Aloita hintaan ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
+      "Upgrade": [
+        "Päivitä tilaus"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: action": {
@@ -9804,14 +9795,6 @@
         "Vaihdetaanko tilaus?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hanki Mail Plus hintaan ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
@@ -10200,14 +10183,17 @@
       "Advanced encryption": [
         "Edistynyt salaus"
       ],
+      "Anytime, anywhere access": [
+        "Käytettävissä milloin ja missä tahansa"
+      ],
       "Auto-delete spam and trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Tyhjennä roskaposti ja roskakori automaattisesti 30 päivän kuluttua."
       ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
+      "Distraction-free emailing": [
+        "Häiriötön sähköpostittelu"
       ],
       "Download the desktop app": [
         "Lataa työpöytäsovellus"
@@ -11262,6 +11248,11 @@
         "Allekirjoita"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Näyttönimi"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Nopeampi sovelluksella"
@@ -11851,9 +11842,6 @@
       ],
       "Comprehensive privacy and security": [
         "Kattava yksityisyys ja suojaus"
-      ],
-      "Dark web monitoring": [
-        "Pimeän verkon valvonta"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Työpöytäsovellus- ja sähköpostiohjelmatuki (IMAPin kautta)"
@@ -12538,9 +12526,6 @@
       "Download Desktop app": [
         "Lataa työpöytäsovellus"
       ],
-      "Enable Dark Web Monitoring": [
-        "Käytä Pimeän verkon valvontaa"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Hanki oma \"@${ PM_DOMAIN }\"-osoite"
       ],
@@ -12740,9 +12725,6 @@
       ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
-      ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
       ],
       "Data recovery": [
         "Tietojen palautus"
@@ -13337,6 +13319,11 @@
         "Tänään"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automaattiasetuksella viestit lähetetään tälle käyttäjälle käyttäen kirjoituksessa käytettyä muotoilua. Käytettäessä pelkkä teksti -asetusta poistetaan viestistä lähetettäessä mahdolliset muotoilut."
@@ -13415,11 +13402,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
       ]
     },
     "Tor out of date": {

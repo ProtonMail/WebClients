@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "Om hide-my-email-aliaser"
       ],
+      "Activate": [
+        "Aktiver"
+      ],
       "Activate recovery": [
         "Aktiver gjennoppretting"
       ],
@@ -516,9 +519,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Skaff deg ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Skaff deg ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Ta kontakt"
       ],
@@ -768,6 +768,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
+      ],
+      "More options": [
+        "Flere valg"
       ],
       "More refine actions": [
         "Flere finjusteringshandlinger"
@@ -1321,10 +1324,10 @@
       "Upgrade": [
         "Oppgrader"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Oppgrader nå"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Oppgrader nå"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1707,9 +1710,6 @@
       "Advanced account protection": [
         "Avansert kontobeskyttelse"
       ],
-      "Dark Web Monitoring": [
-        "Overvåking av det mørke nettet"
-      ],
       "Easily add or remove users": [
         "Legg til eller fjern brukere enkelt"
       ],
@@ -1795,9 +1795,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset hide-my-email-aliaser, deling, integrert 2FA, overvåking av det mørke nettet og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
@@ -1926,12 +1923,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Endre innstillinger for e-postadresse"
-      ],
-      "Continue": [
-        "Fortsett"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
       ],
@@ -6903,9 +6894,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
-      "Registering your subscription...": [
-        "Registrerer abonnementet ditt..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Husk å oppdatere dette i passordbehandleren din eller der du oppbevarer konto- og påloggingsinformasjonen din."
       ],
@@ -7011,9 +6999,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
-      ],
-      "Setting up your new address...": [
-        "Konfigurerer den nye adressen din ..."
       ],
       "Shorten selection": [
         "Forkort utvalget"
@@ -9207,14 +9192,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom i gang for ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Starter fra ${ priceMailPlus }"
+      "Upgrade": [
+        "Oppgrader"
       ],
       "Upgrade now": [
         "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9834,14 +9816,6 @@
         "Bytte plan?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaff deg Mail Plus for ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Den rabatterte prisen på ${ priceCoupon } er gyldig den første måneden. Deretter blir den automatisk fornyet til ${ priceMailPlus }. Du kan avbryte når som helst."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende-kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
@@ -10238,9 +10212,6 @@
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Fjern slettede e-poster og søppelpost-e-poster etter 30 dager."
-      ],
-      "Dark Web Monitoring": [
-        "Overvåking av det mørke nettet"
       ],
       "Distraction-free emailing": [
         "Distraksjonsfri e-post"
@@ -11304,6 +11275,11 @@
         "Signér"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Visningsnavn"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Raskere på appen"
@@ -11893,9 +11869,6 @@
       ],
       "Comprehensive privacy and security": [
         "Omfattende personvern og sikkerhet"
-      ],
-      "Dark web monitoring": [
-        "Overvåking av det mørke nettet"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Støtte for skrivebordsapp og e-postklient (via IMAP)"
@@ -12580,9 +12553,6 @@
       "Download Desktop app": [
         "Last ned skrivebordsapp"
       ],
-      "Enable Dark Web Monitoring": [
-        "Aktiver overvåking av det mørke nettet"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Få min \"@${ PM_DOMAIN }\"-adresse"
       ],
@@ -12782,9 +12752,6 @@
       ],
       "Customize your mail import": [
         "Tilpass e-postimporten din"
-      ],
-      "Dark Web Monitoring": [
-        "Overvåking av det mørke nettet"
       ],
       "Data recovery": [
         "Datagjenoppretting"
@@ -13379,6 +13346,11 @@
         "I dag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk angir at formatet i skrivevinduet brukes til å sende til denne brukeren. Ren tekst indikerer at meldingen alltid konverteres til ren tekst ved sending."
@@ -13460,11 +13432,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ]
     },
     "Tor out of date": {
