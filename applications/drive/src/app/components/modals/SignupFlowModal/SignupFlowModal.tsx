@@ -23,7 +23,6 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { DRIVE_SIGNIN } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url';
 
@@ -43,7 +42,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
 
     useEffect(() => {
         deleteStoredUrlPassword();
-        countActionWithTelemetry(Actions.ViewSignUpFlowModal);
+        void countActionWithTelemetry(Actions.ViewSignUpFlowModal);
     }, []);
 
     const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,7 +56,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
      */
     const handleSubmit = async () => {
         try {
-            countActionWithTelemetry(Actions.SubmitSignUpFlowModal);
+            void countActionWithTelemetry(Actions.SubmitSignUpFlowModal);
             const { Code } = await api({
                 ...queryCheckEmailAvailability(email),
                 silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
@@ -80,7 +79,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 url.searchParams.append('email', email);
                 url.searchParams.append('plan', PLANS.FREE);
                 url.searchParams.append('product', 'drive');
-                replaceUrl(
+                document.location.assign(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
                         context: 'private',
@@ -102,7 +101,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 // This autofill the sign-in email input
                 url.searchParams.append('username', email);
                 url.searchParams.append('product', 'drive');
-                replaceUrl(
+                document.location.assign(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
                         context: 'private',
@@ -121,7 +120,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
             onSubmit={handleSubmit}
             enableCloseWhenClickOutside
             onClose={() => {
-                countActionWithTelemetry(Actions.DismissSignUpFlowModal);
+                void countActionWithTelemetry(Actions.DismissSignUpFlowModal);
                 onClose();
             }}
             size="small"
