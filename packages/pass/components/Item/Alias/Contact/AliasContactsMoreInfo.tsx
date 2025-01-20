@@ -13,6 +13,8 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import './AliasContactsMoreInfo.scss';
+
 type AliasContactStep = { description: ReactNode; img?: string; alt?: string };
 
 const getSteps = (): AliasContactStep[] => {
@@ -65,7 +67,7 @@ export const AliasContactsMoreInfo: FC<Pick<ModalStateProps, 'onClose'>> = ({ on
                         </Button>,
                         <div
                             key="image-stamped-letter"
-                            className="w-full h-custom overflow-hidden"
+                            className="pass-alias-contacts--image w-full h-custom overflow-hidden"
                             style={{
                                 '--h-custom': '10rem',
                                 'background-image': `url("${stampedLetter}")`,
