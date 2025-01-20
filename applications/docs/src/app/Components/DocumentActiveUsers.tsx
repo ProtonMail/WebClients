@@ -17,7 +17,10 @@ export function DocumentActiveUsers({ className }: { className?: string }) {
           state.name = '?'
         }
       }
-      setStates(data.states)
+      const deduped = data.states.filter((state, index, self) => {
+        return self.findIndex((t) => t.awarenessData.userId === state.awarenessData.userId) === index
+      })
+      setStates(deduped)
     }, DocAwarenessEvent.AwarenessStateChange)
   }, [application.eventBus])
 
