@@ -140,6 +140,9 @@
       "Create event": [
         "Stvori događaj"
       ],
+      "Create folder": [
+        "Stvori mapu"
+      ],
       "Create new contact": [
         "Stvori novi kontakt"
       ],
@@ -540,10 +543,10 @@
       "Upgrade": [
         "Nadogradnja"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadogradi sada"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadogradi sada"
       ],
       "Upload picture": [
@@ -743,9 +746,6 @@
       "Advanced account protection": [
         "Napredna zaštita korisničkog računa"
       ],
-      "Dark Web Monitoring": [
-        "Praćenje Tamnog Weba"
-      ],
       "Easily add or remove users": [
         "Jednostavno dodajte ili uklonite korisnike"
       ],
@@ -816,9 +816,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Pristupite sadržaju na streaming uslugama uključujući Netflix, Disney+, Prime Video i još mnogo toga, s bilo kojeg mjesta."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Osigurajte sigurne prijave na svim svojim uređajima. Uključuje neograničene hide-my-email aliasa, dijeljenje, integrirani 2FA, Praćenje tamnog weba i još mnogo toga."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Osigurajte svoje e-pošte i raspored s end-to-end šifriranjem. Uključuje ${ addresses } e-poštu adrese, podršku za prilagođene e-poštne domene, ${ BRAND_NAME } Scribe pomoćnika za pisanje, neograničene hide-my-email alias i još mnogo toga.",
@@ -3895,6 +3892,12 @@
       "Add a gift code": [
         "Dodaj darovni kôd"
       ],
+      "All mail": [
+        "Sva pošta"
+      ],
+      "Archive": [
+        "Arhiva"
+      ],
       "Calendars": [
         "Kalendari"
       ],
@@ -3903,6 +3906,12 @@
       ],
       "click here": [
         "kliknite ovdje"
+      ],
+      "Drafts": [
+        "Skice"
+      ],
+      "Inbox": [
+        "Pristigla pošta"
       ],
       "Learn more": [
         "Saznajte više"
@@ -3918,6 +3927,24 @@
       ],
       "Request an invite": [
         "Zatraži pozivnicu"
+      ],
+      "Scheduled": [
+        "Zakazano"
+      ],
+      "Sent": [
+        "Poslano"
+      ],
+      "Snooze": [
+        "Odgodi"
+      ],
+      "Spam": [
+        "Neželjena pošta"
+      ],
+      "Starred": [
+        "Sa zvjezdicom"
+      ],
+      "Trash": [
+        "Otpad"
       ],
       "What’s this?": [
         "Što je ovo?"
@@ -4163,6 +4190,9 @@
       ]
     },
     "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
       "Upgrade now": [
         "Nadogradi sada"
       ]
@@ -5058,6 +5088,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -5070,17 +5111,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
