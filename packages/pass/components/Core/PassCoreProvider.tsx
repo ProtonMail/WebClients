@@ -19,6 +19,7 @@ import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
 import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
+import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import noop from '@proton/utils/noop';
 
@@ -69,7 +70,7 @@ export type PassCoreContextValue = {
         platform?: TelemetryPlatform
     ) => void;
     /** Processes an event for B2B users only */
-    onB2BEvent: (event: B2BEvent) => void;
+    onB2BEvent: EventDispatcher<B2BEvent>['push'];
     /* Will get called when user tries to update a client manually */
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */
