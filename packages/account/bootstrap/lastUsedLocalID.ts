@@ -8,6 +8,7 @@ export const setLastUsedLocalID = (localID: number | undefined) => {
     }
 };
 
+/** Returns the last used local ID or -1 if it's not set */
 export const getLastUsedLocalID = () => {
     const lastUsedLocalID = parseInt(getItem(LAST_USED_LOCAL_ID_KEY) ?? '', 10);
     return !isNaN(lastUsedLocalID) ? lastUsedLocalID : -1;
