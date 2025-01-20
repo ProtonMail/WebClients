@@ -187,7 +187,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.callbacks.handleAwarenessStateUpdate(statesArray)
 
     if (changes.added.length === 0 && changes.removed.length === 0 && !changes.updated.includes(this.doc.clientID)) {
-      this.logger.debug('Not broadcasting our awareness state because was not our state that was changed')
+      this.logger.info('Not broadcasting our awareness state because was not our state that was changed')
       return
     }
 
@@ -203,6 +203,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
       this.lastEmittedMyState && JSON.stringify(myState) === JSON.stringify(this.lastEmittedMyState)
 
     if (!isYjsRefreshingOwnStateToKeepCurrentClientLookingAlive && noChangeInClientIds && noChangeInState) {
+      this.logger.info('Not broadcasting our awareness state because no change in state or client ids')
       return
     }
 

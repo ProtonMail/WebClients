@@ -66,7 +66,7 @@ import noop from '@proton/utils/noop';
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
 import { getLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 
-class InvalidSessionError extends Error {
+export class InvalidSessionError extends Error {
     public extra: ExtraSessionForkData = {};
 
     constructor(message: string, extra: ExtraSessionForkData) {
@@ -138,6 +138,7 @@ export interface SessionPayloadData {
     session: ResumedSessionResult | undefined;
     basename: string | undefined;
     url?: string;
+    reloadDocument?: boolean;
 }
 
 export const loadSession = async ({
@@ -185,6 +186,7 @@ export const loadSession = async ({
                         session: result.session,
                         basename: authentication.basename,
                         url: result.forkState.url,
+                        reloadDocument: result.forkState.reloadDocument,
                     };
                 }
             }
@@ -265,7 +267,7 @@ export const loadDrawerSession = async ({
 };
 
 export const createHistory = ({
-    sessionResult: { basename, url },
+    sessionResult: { basename, url, reloadDocument },
     pathname,
 }: {
     sessionResult: SessionPayloadData;
@@ -279,6 +281,10 @@ export const createHistory = ({
         const safePath = `/${getParsedPathWithoutLocalIDBasename(path || '')}`;
         // Important that there's a history event even if no path is set so that basename gets properly set
         history.replace(safePath);
+    }
+
+    if (reloadDocument) {
+        window.location.reload();
     }
 
     return history;
