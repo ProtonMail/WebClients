@@ -23,6 +23,7 @@ export const getParsedCurrentUrl = (value: string) => {
 export interface ForkState {
     url: string;
     returnUrl?: string;
+    reloadDocument?: boolean;
 }
 
 export const setForkStateData = (stateKey: string, data?: ForkState) => {
@@ -33,6 +34,7 @@ export const getForkStateData = (stateKey: string, parameters: ConsumeForkParame
     const defaultForkState: ForkState = {
         url: parameters.returnUrl || '',
         returnUrl: '',
+        reloadDocument: false,
     };
 
     try {
@@ -42,10 +44,11 @@ export const getForkStateData = (stateKey: string, parameters: ConsumeForkParame
         if (!data) {
             return defaultForkState;
         }
-        const { url, returnUrl } = JSON.parse(data);
+        const { url, returnUrl, reloadDocument } = JSON.parse(data);
         return {
             url,
             returnUrl,
+            reloadDocument,
         };
     } catch (e: any) {
         return defaultForkState;
