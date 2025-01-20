@@ -37,8 +37,10 @@ describe('string', () => {
             expect(getInitials('Lorem ipsum dolor sit amet')).toEqual('LA');
         });
 
-        it('should handle emoji', () => {
-            expect(getInitials('🐼 Dog')).toEqual('🐼D');
+        it('should remove emoji', () => {
+            expect(getInitials('🐼 Panda')).toEqual('P');
+            expect(getInitials('Panda 🐼')).toEqual('P');
+            expect(getInitials('🐼 Panda 🐼')).toEqual('P');
         });
 
         it('should keep only character and number', () => {
@@ -46,7 +48,11 @@ describe('string', () => {
         });
 
         it('should remove undesired characters', () => {
-            expect(getInitials('Thomas Anderson (@neo)')).toEqual('TA');
+            expect(getInitials('Thomas Anderson (@neo)')).toEqual('TN');
+        });
+
+        it('should work also with email address', () => {
+            expect(getInitials('invitation2@pm.gg')).toEqual('I');
         });
     });
 
