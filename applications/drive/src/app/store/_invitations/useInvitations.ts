@@ -374,7 +374,7 @@ export const useInvitations = () => {
             signingKeys: keys?.privateKeys,
             detached: true,
             format: 'binary',
-            signatureContext: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_INVITER },
+            signatureContext: { critical: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_MEMBER },
         });
 
         return debouncedRequest<{ Code: number }>(
