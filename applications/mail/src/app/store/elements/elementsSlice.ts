@@ -28,6 +28,7 @@ import {
     reset,
     retry,
     setPageSize,
+    setParams,
     showSerializedElements as showSerializedElementsAction,
     updatePage,
 } from './elementsActions';
@@ -56,6 +57,7 @@ import {
     retry as retryReducer,
     selectAllFulfilled,
     setPageSize as setPageSizeReducer,
+    setParams as setParamsReducer,
     showSerializedElements as showSerializedElementsReducer,
     updatePage as updatePageReducer,
 } from './elementsReducers';
@@ -145,6 +147,8 @@ const elementsSlice = createSlice({
         builder.addCase(expireMessages.rejected, expireElementsRejected);
 
         builder.addCase(showSerializedElementsAction, showSerializedElementsReducer);
+
+        builder.addCase(setParams, setParamsReducer);
     },
 });
 

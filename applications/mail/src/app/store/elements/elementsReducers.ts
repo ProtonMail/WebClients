@@ -17,6 +17,7 @@ import { newElementsState } from './elementsSlice';
 import type {
     ESResults,
     ElementsState,
+    ElementsStateParams,
     EventUpdates,
     NewStateParams,
     OptimisticDelete,
@@ -342,4 +343,8 @@ export const expireElementsRejected = (
             delete previousExpiration[ID];
         }
     });
+};
+
+export const setParams = (state: Draft<ElementsState>, action: PayloadAction<ElementsStateParams>) => {
+    state.params = action.payload;
 };
