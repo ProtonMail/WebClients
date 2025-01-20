@@ -17,7 +17,6 @@ import {
 } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, {
     type BrowserItemId,
     Cells,
@@ -98,7 +97,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
-    const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { openBookmark } = useBookmarksActions();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(
         sharedWithMeView.layout,
@@ -128,24 +127,19 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
             document.getSelection()?.removeAllRanges();
 
             if (isProtonDocument(item.mimeType)) {
-                void canUseDocs(item.rootShareId)
-                    .then((canUse) => {
-                        if (!canUse) {
-                            return;
-                        }
+                if (isDocsEnabled) {
+                    return openDocument({
+                        linkId: item.linkId,
+                        shareId: item.rootShareId,
+                        openBehavior: 'tab',
+                    });
+                }
 
-                        return openDocument({
-                            linkId: item.linkId,
-                            shareId: item.rootShareId,
-                            openBehavior: 'tab',
-                        });
-                    })
-                    .catch(sendErrorReport);
                 return;
             }
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
-        [navigateToLink, items]
+        [navigateToLink, items, isDocsEnabled, openDocument]
     );
 
     const handleItemRender = useCallback(
