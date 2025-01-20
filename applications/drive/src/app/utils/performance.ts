@@ -161,7 +161,7 @@ export const logPerformanceMarker = (
                 pageType,
                 ...(view && { view }),
                 ...(includeLoadType && {
-                    listType: getLastNavigationEntry() ? 'subsequent' : 'first',
+                    loadType: getLastNavigationEntry() ? 'subsequent' : 'first',
                 }),
             },
             Value: time / 1000,
