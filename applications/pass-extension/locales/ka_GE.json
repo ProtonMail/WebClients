@@ -697,9 +697,6 @@
       "Add the following TXT DNS record to your domain.": [
         "დაამატეთ შემდეგი DNS TXT ჩანაწერი თქვენს დომენს."
       ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Dark Web Monitoring ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
-      ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "თუ სუბდომენს იყენებთ, მაგ: ${ subdomainExample }, დომენად ${ dmarcExampleSubdomain } უნდა გამოიყენოთ."
       ],
@@ -2187,6 +2184,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "მიაღწიეთ მაქსიმალურად დაშვებულ ${ maxLength } სიმბოლოს."
+      ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "თქვენი დომენის პარამეტრების (ყველას ჩაჭერის ელფოსტის ფსევდონიმები, ნაგულისხმევი საჩვენებელი სახელი ფსევდონიმებისთვის და ა.შ.) მისი გადამოწმების შემდეგ შეგეძლებათ."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "თქვენ ახლა გახვალთ და უნდა თავიდან შემოსვლა მოგიწევთ ყველა თქვენი სხვა მოწყობილობიდან."
@@ -3847,9 +3847,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "საცავის გასაზიარებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "დამატებითი პაროლის წაშლა გაგიყვანთ ყველა მოწყობილობიდან და დაასრულებს ყველა აქტიურ სესიას."
