@@ -110,6 +110,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             onClose?.();
             subscriptionPropsOnClose?.();
             modalState.onClose();
+            subscriptionPropsRef.current = null;
         };
 
         const handleSubscribed = () => {
