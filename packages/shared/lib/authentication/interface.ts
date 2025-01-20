@@ -104,4 +104,5 @@ export interface ExtraSessionForkData {
     email?: string | null;
     returnUrl?: string;
     pathname?: string;
+    reloadDocument?: boolean;
 }

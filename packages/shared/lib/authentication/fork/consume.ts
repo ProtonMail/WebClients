@@ -89,6 +89,7 @@ export const requestFork = ({
     setForkStateData(state, {
         url: getCurrentUrl({ forkType, fromApp }),
         returnUrl: extra?.returnUrl,
+        reloadDocument: extra?.reloadDocument,
     });
 
     return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));

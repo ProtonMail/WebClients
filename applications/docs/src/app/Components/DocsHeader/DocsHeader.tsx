@@ -16,6 +16,10 @@ import { HeaderPublicOptions } from '../../Apps/Public/Header/HeaderPublicOption
 import type { EditorControllerInterface } from '@proton/docs-core'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 
+function getWindowLocationExcludingDomain() {
+  return window.location.pathname + window.location.search + window.location.hash
+}
+
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
 
@@ -85,7 +89,13 @@ const DocsHeaderNoDocument = () => {
         <span className="pt-0.5 text-sm">{c('Title').t`End-to-end encrypted`}</span>
       </div>
       <div className="no-doc-header">
-        <UserDropdown app={APPS.PROTONDOCS} />
+        <UserDropdown
+          app={APPS.PROTONDOCS}
+          sessionOptions={{
+            path: getWindowLocationExcludingDomain(),
+            target: '_self',
+          }}
+        />
       </div>
     </div>
   )
@@ -154,7 +164,10 @@ const DocsHeaderForDocument = ({
           <>
             <div className="w-2" />
 
-            <UserDropdown app={APPS.PROTONDOCS} />
+            <UserDropdown
+              app={APPS.PROTONDOCS}
+              sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
+            />
           </>
         )}
       </div>
