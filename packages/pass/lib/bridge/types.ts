@@ -3,6 +3,7 @@ import type {
     AliasMailbox,
     AliasOptions,
     ItemRevision,
+    MemberMonitorReportList,
     OrganizationGetResponse,
     OrganizationUpdatePasswordPolicyRequest,
     Share,
@@ -12,6 +13,8 @@ import type { OrganizationSettings } from '@proton/pass/types/data/organization'
 import type { MaxAgeMemoizedFn } from '@proton/pass/utils/fp/memo';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { Address, User } from '@proton/shared/lib/interfaces';
+
+import type { OrganizationReportDTO } from '../organization/types';
 
 export type PassBridgeInitOptions = {
     addresses: Address[];
@@ -68,6 +71,9 @@ export interface PassBridge {
             setPasswordGeneratorPolicy: (
                 value: OrganizationUpdatePasswordPolicyRequest
             ) => Promise<OrganizationGetResponse>;
+        };
+        reports: {
+            get: (params: OrganizationReportDTO) => Promise<MemberMonitorReportList>;
         };
     };
 }

@@ -63,6 +63,17 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, canDis
                     },
                 ],
             },
+            reports: <SectionConfig>{
+                text: c('Title').t`Reports`,
+                to: '/reports',
+                icon: 'chart-line',
+                available: (hasOrganizationKey || hasOrganization) && isAdmin && hasPassOrBundleB2B,
+                subsections: [
+                    {
+                        id: 'reports',
+                    },
+                ],
+            },
         },
     };
 };
