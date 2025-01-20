@@ -196,6 +196,9 @@
       "Create and copy alias": [
         "Δημιουργία και αντιγραφή ψευδωνύμου"
       ],
+      "Create folder": [
+        "Δημιουργία φακέλου"
+      ],
       "Current plan": [
         "Τρέχον πρόγραμμα"
       ],
@@ -293,9 +296,6 @@
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Απκτήστε το ${ MAIL_SHORT_APP_NAME } Plus για ${ priceCoupon }"
       ],
       "Get in touch": [
         "Επικοινωνήστε"
@@ -398,6 +398,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
+      "More options": [
+        "Περισσότερες επιλογές"
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
@@ -632,9 +635,6 @@
       ],
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
-      ],
-      "Understood": [
-        "Κατανοητό"
       ],
       "Undo": [
         "Αναίρεση"
@@ -887,9 +887,6 @@
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Εύκολη προσθήκη ή αφαίρεση χρηστών"
       ],
@@ -975,9 +972,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+, Prime Video και άλλων, από οπουδήποτε."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονική διεύθυνση, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
@@ -1106,12 +1100,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Αλλαγή ρυθμίσεων διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Continue": [
-        "Συνέχεια"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
       ],
@@ -4037,9 +4025,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Η λήψη αρχείων ${ DOCS_APP_NAME } από το ${ DRIVE_APP_NAME } δεν υποστηρίζεται προς το παρόν — αυτά δεν θα συμπεριληφθούν στη λήψη σας."
-      ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
       ],
@@ -4411,9 +4396,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Παρακαλούμε εξαγάγετε ένα αντίγραφο των τρεχουσών αλλαγών σας από το κύριο μενού και φορτώστε ξανά τη σελίδα."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Παρακαλούμε εξάγετέ τα απευθείας από την εφαρμογή ${ DOCS_APP_NAME } εάν θέλετε να τα κατεβάσετε."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
       ],
@@ -4479,9 +4461,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
-      "Registering your subscription...": [
-        "Εγγραφή της συνδρομής σας..."
-      ],
       "Restored version to": [
         "Έγινε επαναφορά στην έκδοση"
       ],
@@ -4517,9 +4496,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
-      ],
-      "Setting up your new address...": [
-        "Ρύθμιση της νέας διεύθυνσής σας..."
       ],
       "Settings update failed": [
         "Αποτυχία ενημέρωσης ρυθμίσεων"
@@ -4580,12 +4556,6 @@
       ],
       "The Beginning": [
         "Η Αρχή"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Η ψηφιακή υπογραφή έχει επικυρωθεί μερικώς. Το αρχείο ανέβηκε από δημόσια σελίδα που δεν ξεκαθαρίζει την προέλευση χρήστη."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Η ψηφιακή υπογραφή έχει επικυρωθεί μερικώς. Ο φάκελος ανέβηκε από δημόσια σελίδα που δεν ξεκαθαρίζει την προέλευση χρήστη."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
@@ -5902,14 +5872,11 @@
       "Get started for ${ priceCoupon }": [
         "Ξεκινήστε με ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Ξεκινώντας από ${ priceMailPlus }"
+      "Upgrade": [
+        "Αναβάθμιση"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6513,14 +6480,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Αποκτήστε το Mail Plus για ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Η μειωμένη τιμή του ${ priceCoupon } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ priceMailPlus }. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
     },
     "new_plans: title": {
@@ -8535,9 +8494,6 @@
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Data recovery": [
         "Ανάκτηση δεδομένων"
       ],
@@ -8879,9 +8835,6 @@
       ],
       "Your document cannot be loaded": [
         "Δεν είναι δυνατή η φόρτωση του εγγράφου σας"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Η λήψη σας έχει το αρχείο ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"

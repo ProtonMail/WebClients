@@ -160,6 +160,9 @@
       "Create": [
         "Létrehozás"
       ],
+      "Create folder": [
+        "Mappa létrehozása"
+      ],
       "Create users": [
         "Felhasználók létrehozása"
       ],
@@ -247,9 +250,6 @@
       "Edit group": [
         "Csoport szerkesztése"
       ],
-      "Edit invoice details": [
-        "Számlázási adatok szerkesztése"
-      ],
       "Edit name": [
         "Név szerkesztése"
       ],
@@ -294,9 +294,6 @@
       ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } választása"
       ],
       "Get a new encrypted email address": [
         "Szerezzen egy új, titkosított email címet"
@@ -939,9 +936,6 @@
       "Advanced account protection": [
         "Fejlett fiókvédelmi program"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Figyelés"
-      ],
       "Easily add or remove users": [
         "Felhasználók egyszerű hozzáadása vagy eltávolítása"
       ],
@@ -1012,9 +1006,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Hozzáférjen videós szolgáltatásokhoz, mint Netflix, Disney+, Prime Video és továbbiak, akárhonnan."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Biztonságos bejelentkezések az összes eszközén. Korlátlan számú hide-my-email álnév, megosztás, beépített 2FA, Dark Web Figyelés és további lehetőségek."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket.",
@@ -1148,9 +1139,6 @@
       ]
     },
     "Button": {
-      "Continue": [
-        "Folytatás"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ],
@@ -2985,6 +2973,11 @@
         "Terabájt"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } frissítve"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Engedélyezés:"
@@ -3732,6 +3725,9 @@
       "Increase your account security by verifying your email address.": [
         "Növelje fiókja biztonságát azzal, hogy hitelesíti e-mail címét."
       ],
+      "Inherited from parent folder": [
+        "Örökölve a tartalmazó mappáról"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Telepítsen egy országkonfigurációs fájlt, ha véletlenszerű szerverhez szeretne kapcsolódni a választott országban."
       ],
@@ -3896,6 +3892,9 @@
       ],
       "Multi-user support not enabled.": [
         "Többfelhasználós mód nem engedélyezett."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
       "New user invited to organization": [
         "Új felhasználó meghívva a szervezetbe"
@@ -4571,6 +4570,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Egyszerre csak egy csevegés-ablakot tud megnyitni. Zárja be előző beszélgetéseit, mielőtt belekezd egy újba."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
       ],
@@ -4667,11 +4669,13 @@
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
-      ],
       "Zoom meeting": [
         "Zoom találkozót"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "A kiválasztott szín:"
       ]
     },
     "Info for cash payment method": {
@@ -4690,11 +4694,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Az előfizetés automatikus megújításához megadhat egy fizetési módot. Más fizetési módok is elérhetők."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Adja meg saját vagy a szervezet nevét és címét. Mind a személyes, mind a szervezeti számlák ezekkel az adatokkal kerülnek kiállításra."
       ]
     },
     "Info when deleting payment method": {
@@ -4899,11 +4898,20 @@
       "Choose a name for the generated certificate file": [
         "Válasszon nevet a létrehozott tanúsítvány fájlnak"
       ],
+      "City": [
+        "Település"
+      ],
       "Code": [
         "Kód"
       ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
+      ],
+      "Colors": [
+        "Színek"
+      ],
+      "Company": [
+        "Cég"
       ],
       "Config to connect to ${ serverName }": [
         "Beállítás a csatlakozáshoz: ${ serverName }"
@@ -5004,6 +5012,9 @@
       "First name": [
         "Keresztnév"
       ],
+      "Folder location": [
+        "Mappa helye"
+      ],
       "Gift code": [
         "Ajándék kód"
       ],
@@ -5049,9 +5060,6 @@
       "Name": [
         "Név"
       ],
-      "Name and address": [
-        "Név és cím"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port Forwardolás)"
       ],
@@ -5081,6 +5089,12 @@
       ],
       "Non-standard ports": [
         "Nem szabványos portok"
+      ],
+      "Note": [
+        "Megjegyzés"
+      ],
+      "Notification": [
+        "Értesítés"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 jelszó"
@@ -5189,6 +5203,9 @@
       ],
       "Start date": [
         "Kezdő dátum"
+      ],
+      "Street address": [
+        "Utca, házszám"
       ],
       "Strong": [
         "Erős"
@@ -5312,6 +5329,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Irányítószám"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Mappa létrehozása"
+      ],
+      "Create label": [
+        "Címke létrehozása"
+      ],
+      "Edit folder": [
+        "Mappa szerkesztése"
+      ],
+      "Edit label": [
+        "Címke szerkesztése"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } létrehozva"
       ]
     },
     "Link": {
@@ -5549,6 +5585,17 @@
         "Levélszemét"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Szín"
+      ],
+      "Folder name": [
+        "Mappa neve"
+      ],
+      "Label name": [
+        "Cimke neve"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Legnagyobb VPN sebesség"
@@ -5575,9 +5622,6 @@
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
       ]
     },
     "new_plans: action": {
@@ -6518,6 +6562,9 @@
       ],
       "My reason isn't listed": [
         "Más okból"
+      ],
+      "No parent folder": [
+        "Nincs szülő-mappa"
       ],
       "No permission": [
         "Nincs engedélye"
@@ -7694,6 +7741,9 @@
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Ezzel kijelentkezik a többi eszközéről, és új biztonsági jelszót kell létrehoznia."
       ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Hogy megbizonyosodjon arról, hogy valóban Ön próbál bejelentkezni a **${ email }** címre, nézze át a megerősítő kódot, és hagyja jóvá a kérelmet egy másik eszközről."
+      ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Hogy megbizonyosodjon arról, hogy valóban Ön próbál bejelentkezni, kérjük, adja meg a biztonsági jelszavát."
       ],
@@ -8670,9 +8720,6 @@
       "Edit email address": [
         "E-mail cím szerkesztése"
       ],
-      "Edit invoice details": [
-        "Számlázási adatok szerkesztése"
-      ],
       "Edit user": [
         "Felhasználó szerkesztése"
       ],
@@ -9390,6 +9437,9 @@
       ]
     },
     "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Haladó VPN beállítások"
+      ],
       "No ads": [
         "Nincsenek hirdetések"
       ]

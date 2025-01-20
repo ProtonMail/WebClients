@@ -169,6 +169,9 @@
       "Create": [
         "Создать"
       ],
+      "Create folder": [
+        "Создать папку"
+      ],
       "Create Gateway": [
         "Создать Шлюз"
       ],
@@ -262,9 +265,6 @@
       "Edit group": [
         "Редактировать группу"
       ],
-      "Edit invoice details": [
-        "Изменение информации счета-фактуры"
-      ],
       "Edit name": [
         "Изменить имя"
       ],
@@ -312,12 +312,6 @@
       ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Оформите ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Получить ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Получите новый адрес зашифрованной электронной почты"
@@ -1027,9 +1021,6 @@
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
-      "Dark Web Monitoring": [
-        "Мониторинг даркнета"
-      ],
       "Easily add or remove users": [
         "Легко добавлять или удалять участников"
       ],
@@ -1115,9 +1106,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Защитите свои входы на всех ваших устройствах. Включает неограниченное количество псевдонимов hide-my-email, обмен файлами, встроенную двухфакторную аутентификацию, мониторинг даркнета и многое другое."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -1261,12 +1249,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Изменить настройки адреса электронной почты"
-      ],
-      "Continue": [
-        "Продолжить"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3308,6 +3290,11 @@
         "Терабайтов"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } обновлён"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Разрешить:"
@@ -3739,6 +3726,9 @@
         "Затронутые пользователи находятся на строках",
         "Затронутые пользователи находятся на строках"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
+      ],
       "All inactive members deleted": [
         "Все неактивные участники удалены"
       ],
@@ -3885,6 +3875,12 @@
       ],
       "Country code": [
         "Код страны"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
+        "Создать безопасное облако для ${ value } участника"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными аккаунтами, назначайте им адреса электронной почты на вашем домене."
@@ -4213,6 +4209,9 @@
       "Increase your account security by verifying your email address.": [
         "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
       ],
+      "Inherited from parent folder": [
+        "Унаследовано от родительской папки"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Установите конфигурационный файл страны для подключения к случайно выбранному серверу в выбранной стране."
       ],
@@ -4375,6 +4374,9 @@
       "Member": [
         "Член"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -4395,6 +4397,9 @@
       ],
       "Must start with a letter.": [
         "Должно начинаться с буквы."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
       "New user invited to organization": [
         "Новый пользователь приглашен в организацию"
@@ -4591,9 +4596,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
-      "Registering your subscription...": [
-        "Регистрация вашей подписки..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
       ],
@@ -4654,6 +4656,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Отправьте электронные письма, чтобы убедить ваших пользователей защитить свои аккаунты двухфакторной аутентификацией (2FA)."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
+      ],
       "Server is currently down": [
         "Сервер сейчас не работает"
       ],
@@ -4665,9 +4670,6 @@
       ],
       "Session timed out": [
         "Время сеанса истекло"
-      ],
-      "Setting up your new address...": [
-        "Настройка нового адреса..."
       ],
       "Setting up your organization": [
         "Настройка вашей организации"
@@ -4695,6 +4697,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF уточняет, кому разрешено отправлять электронные письма на ваш домен. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
       "Step ${ step }": [
         "Шаг ${ step }",
@@ -4734,6 +4739,9 @@
       ],
       "Swiss based": [
         "Расположен в Швейцарии"
+      ],
+      "Switch to": [
+        "Переключиться на"
       ],
       "Thank you": [
         "Спасибо"
@@ -5185,6 +5193,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Одновременно может быть открыт только один чат. Пожалуйста, закройте предыдущие беседы, прежде чем начинать новую."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можете использовать следующие учетные данные для подключения к серверу ${ VPN_APP_NAME } с помощью стороннего приложения VPN с открытым исходным кодом, например, Tunnelblick для macOS или OpenVPN для GNU/Linux."
       ],
@@ -5305,14 +5316,16 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Вы сможете сразу добавить эти серверы на другой шлюз."
       ],
       "Zoom meeting": [
         "Конференция в Zoom "
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Выбранный цвет"
       ]
     },
     "Info for cash payment method": {
@@ -5334,11 +5347,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можете добавить способ оплаты, чтобы ваша подписка обновилась автоматически. Другие способы оплаты также доступны."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Введите имя и адрес для себя или своей организации. Эти данные будут добавлены в личные и организационные счета-фактуры."
       ]
     },
     "Info subscription": {
@@ -5563,11 +5571,20 @@
       "Choose a name for the generated certificate file": [
         "Выберите имя для сгенерированного файла сертификата"
       ],
+      "City": [
+        "Город"
+      ],
       "Code": [
         "Код"
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
+      ],
+      "Colors": [
+        "Цвета"
+      ],
+      "Company": [
+        "Компания"
       ],
       "Company name": [
         "Название компании"
@@ -5677,6 +5694,9 @@
       "First name": [
         "Имя"
       ],
+      "Folder location": [
+        "Размещение папки"
+      ],
       "Gateway name": [
         "Имя Шлюза"
       ],
@@ -5737,9 +5757,6 @@
       "Name": [
         "Имя"
       ],
-      "Name and address": [
-        "Имя и адрес"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Переадресация портов)"
       ],
@@ -5769,6 +5786,12 @@
       ],
       "Non-standard ports": [
         "Нестандартные порты"
+      ],
+      "Note": [
+        "Заметка"
+      ],
+      "Notification": [
+        "Уведомление"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -5895,6 +5918,9 @@
       ],
       "Start date": [
         "Дата начала"
+      ],
+      "Street address": [
+        "Адрес"
       ],
       "Strong": [
         "Надежный"
@@ -6027,6 +6053,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Индекс"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Создать папку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Edit folder": [
+        "Изменить папку"
+      ],
+      "Edit label": [
+        "Изменить ярлык"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } создан"
       ]
     },
     "Lable": {
@@ -6318,6 +6363,17 @@
         "Спам"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Цвет"
+      ],
+      "Folder name": [
+        "Имя папки"
+      ],
+      "Label name": [
+        "Название ярлыка"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Максимальная скорость VPN"
@@ -6342,17 +6398,11 @@
       "Get started for ${ priceCoupon }": [
         "Начните с ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Начиная с ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Улучшить до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7072,12 +7122,6 @@
       "${ shortPlan.title } Trial": [
         "Пробная версия ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Оформите Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceCoupon } действует в течение первых месяца. Затем она будет автоматически продлена по цене ${ priceMailPlus }. Вы можете отменить подписку в любое время."
-      ],
       "Your account's usage": [
         "Использование вашего аккаунта"
       ]
@@ -7524,6 +7568,9 @@
       ],
       "My reason isn't listed": [
         "Другая причина"
+      ],
+      "No parent folder": [
+        "Без родительской папки"
       ],
       "No permission": [
         "Нет разрешения"
@@ -8045,6 +8092,9 @@
       ],
       "Search for an email or IP address": [
         "Поиск по электронной почте или адресу IP"
+      ],
+      "Search parent folder": [
+        "Искать родительскую папку"
       ],
       "Search users": [
         "Поиск пользователей"
@@ -9538,9 +9588,6 @@
       "Comprehensive privacy and security": [
         "Комплексная защита конфиденциальности и безопасности"
       ],
-      "Dark web monitoring": [
-        "Мониторинг Темной паутины"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Поддержка приложений для настольных компьютеров и почтовых клиентов (через IMAP)"
       ],
@@ -10403,9 +10450,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Изменить Шлюз ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Изменение информации счета-фактуры"
       ],
       "Edit servers": [
         "Изменить серверы"

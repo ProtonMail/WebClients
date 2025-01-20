@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -337,6 +337,9 @@
       "Create link": [
         "リンクを作成"
       ],
+      "Create new policy": [
+        "新しいポリシーを作成"
+      ],
       "Create users": [
         "ユーザーを作成"
       ],
@@ -475,9 +478,6 @@
       "Edit group": [
         "グループを編集"
       ],
-      "Edit invoice details": [
-        "請求書の詳細を編集する"
-      ],
       "Edit label": [
         "ラベルを編集"
       ],
@@ -567,12 +567,6 @@
       ],
       "Generate token": [
         "トークンを生成"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon }で${ MAIL_SHORT_APP_NAME }Plusを獲得"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } を入手"
       ],
       "Get a new encrypted email address": [
         "新しい暗号化メールアドレスを取得する"
@@ -834,6 +828,9 @@
       ],
       "Refer a friend": [
         "友達を招待"
+      ],
+      "Refresh data": [
+        "データを更新"
       ],
       "Refresh status": [
         "状態を更新"
@@ -1742,9 +1739,6 @@
       "Advanced account protection": [
         "高度なアカウント保護"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "簡単にユーザーを追加または削除できます"
       ],
@@ -1830,9 +1824,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "すべてのデバイスで安全なログインを実現します。 無制限の hide-my-email エイリアス、共有、統合 2FA、Dark Web Monitoring などが含まれます。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "${ addresses } メールアドレスを含む、エンドツーエンド暗号化によってメールや予定を安全に保つことができます。 カスタムメールドメインのサポート、${ BRAND_NAME } Scribe 書き込みアシスタント、無制限の hide-my-email エイリアスなどが含まれます。"
@@ -1979,12 +1970,6 @@
     "Button": {
       "Add link to your email footer": [
         "リンクをメールフッターに追加"
-      ],
-      "Change email address settings": [
-        "メールアドレス設定を変更"
-      ],
-      "Continue": [
-        "続ける"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
@@ -3605,6 +3590,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "受信トレイを整理するために、必要なだけラベルやフォルダを作成しましょう。"
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "各国の共有サーバーに誰が接続できるかを決定するポリシーを作成します。"
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
       ],
@@ -3616,6 +3604,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "組織内の誰もが、すべての国の共有サーバーに接続できます。"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知します。"
@@ -3634,6 +3625,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "自分だけのメールフッターを作る ー 私たちのものでなく、独自のブランドをお見せください"
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "組織内の誰も共有サーバーに接続することはできません。"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
@@ -6580,6 +6574,9 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } ユーザーは現在共有サーバーにアクセスできます。"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -6903,6 +6900,9 @@
       ],
       "Allow recovery by phone": [
         "電話番号での回復を許可"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
       ],
       "Already allocated": [
         "割り当て済み"
@@ -8002,6 +8002,12 @@
       "of": [
         " / "
       ],
+      "Off": [
+        "オフ"
+      ],
+      "On": [
+        "オン"
+      ],
       "Once you reset your password:": [
         "パスワードをリセットしたら:"
       ],
@@ -8257,9 +8263,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
-      "Registering your subscription...": [
-        "サブスクリプションを登録中…"
-      ],
       "Remember to share the user's sign in details with them.": [
         "ユーザーのサインイン情報を共有することを忘れないでください。"
       ],
@@ -8367,9 +8370,6 @@
       ],
       "Setting successfully saved": [
         "設定が正常に保存されました。"
-      ],
-      "Setting up your new address...": [
-        "新しいアドレスを設定中…"
       ],
       "Setting up your organization": [
         "組織の設定"
@@ -9376,9 +9376,6 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "サポート チケットは終了しました。 ${ BRAND_NAME } サポートにお問い合わせいただきありがとうございます。"
       ],
@@ -9424,11 +9421,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "自動的にサブスクリプションを更新するための支払い方法を追加することができます。その他のお支払方法も同様に利用可能です。"
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "あなた自身またはあなたの組織の名前と住所を入力します。 これらの詳細は、個人と組織の両方の請求書に追加されます。"
       ]
     },
     "Info on errors": {
@@ -10078,6 +10070,9 @@
       "Choose a name for the generated certificate file": [
         "生成する設定ファイルの名前を選択"
       ],
+      "City": [
+        "市区町村"
+      ],
       "Code": [
         "コード"
       ],
@@ -10092,6 +10087,9 @@
       ],
       "Colors": [
         "色"
+      ],
+      "Company": [
+        "会社"
       ],
       "Company name": [
         "会社名"
@@ -10507,9 +10505,6 @@
       "Name": [
         "名前"
       ],
-      "Name and address": [
-        "名前とアドレス"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (ポート転送)"
       ],
@@ -10542,6 +10537,9 @@
       ],
       "Non-standard ports": [
         "標準的ではないポート"
+      ],
+      "Note": [
+        "メモ"
       ],
       "Notification": [
         "通知"
@@ -10782,6 +10780,9 @@
       ],
       "Sticky labels": [
         "スティッキーラベル"
+      ],
+      "Street address": [
+        "番地"
       ],
       "Strong": [
         "強い"
@@ -11346,6 +11347,9 @@
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "限定オファー：**1 年間プランで${ name }が${ discount }お得**"
       ],
+      "Set up your account with your Porkbun domain.": [
+        "Porkbunドメインでアカウントを設定します。"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } の試用に招待されました"
       ]
@@ -11776,17 +11780,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon }で開始"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }から始めましょう"
-      ],
       "Upgrade": [
         "アップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME }Plusへアップグレード"
       ]
     },
     "new_plans: action": {
@@ -12491,12 +12489,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }トライアル"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }でMail Plusを入手"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
-      ],
       "Your account's usage": [
         "アカウントの使用率"
       ]
@@ -12898,12 +12890,6 @@
       ],
       "An external address cannot be default": [
         "外部のアドレスは既定にすることができません"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Dark Web Monitoring が無効になりました"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Dark Web Monitoring が有効になりました"
       ],
       "Downloaded 2FA recovery codes": [
         "2要素認証回復コードをダウンロードしました"
@@ -16132,6 +16118,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -16240,9 +16267,6 @@
       ],
       "Comprehensive privacy and security": [
         "総合的なプライバシーとセキュリティ"
-      ],
-      "Dark web monitoring": [
-        "ダークウェブモニタリング"
       ],
       "Desktop app and email client support (via IMAP)": [
         "デスクトップアプリとメールクライアントのサポート (IMAP 経由)"
@@ -16417,47 +16441,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -17295,9 +17278,6 @@
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
       ],
-      "Dark Web Monitoring": [
-        "ダークウェブモニタリング"
-      ],
       "Dashboard": [
         "ダッシュボード"
       ],
@@ -17423,9 +17403,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "ゲートウェイ ${ currentName } を編集します"
-      ],
-      "Edit invoice details": [
-        "請求書の詳細を編集する"
       ],
       "Edit profile": [
         "プロフィールを編集"

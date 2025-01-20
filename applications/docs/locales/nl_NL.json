@@ -196,6 +196,9 @@
       "Create and copy alias": [
         "Maak en kopieer alias"
       ],
+      "Create folder": [
+        "Map maken"
+      ],
       "Current plan": [
         "Huidig abonnement"
       ],
@@ -293,9 +296,6 @@
       ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Krijg ${ MAIL_SHORT_APP_NAME } Plus voor ${ priceCoupon }"
       ],
       "Get in touch": [
         "Neem contact op"
@@ -398,6 +398,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
+      ],
+      "More options": [
+        "Meer opties"
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
@@ -632,9 +635,6 @@
       ],
       "Try another method": [
         "Andere methode proberen"
-      ],
-      "Understood": [
-        "Begrepen"
       ],
       "Undo": [
         "Ongedaan maken"
@@ -887,9 +887,6 @@
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Eenvoudig gebruikers toevoegen of verwijderen"
       ],
@@ -975,9 +972,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, Dark Web Monitoring en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
@@ -1106,12 +1100,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Wijzig de instellingen van het e-mailadres"
-      ],
-      "Continue": [
-        "Ga verder"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ],
@@ -4037,9 +4025,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Downloaden van ${ DOCS_APP_NAME } bestanden van ${ DRIVE_APP_NAME } wordt momenteel niet ondersteund - deze worden niet opgenomen in uw download."
-      ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
       ],
@@ -4411,9 +4396,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporteer een kopie van de huidige wijzigingen vanuit het hoofdmenu en laad de pagina opnieuw."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Exporteer ze rechtstreeks vanuit de ${ DOCS_APP_NAME }-applicatie als je ze wilt downloaden."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
       ],
@@ -4479,9 +4461,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
-      "Registering your subscription...": [
-        "Uw abonnement wordt geregistreerd..."
-      ],
       "Restored version to": [
         "Versie hersteld naar"
       ],
@@ -4517,9 +4496,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
-      ],
-      "Setting up your new address...": [
-        "Uw nieuwe adres wordt ingesteld..."
       ],
       "Settings update failed": [
         "Bijwerken instellingen mislukt"
@@ -4580,12 +4556,6 @@
       ],
       "The Beginning": [
         "Het begin"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "De digitale handtekening is gedeeltelijk geverifieerd. Het bestand is geüpload vanaf een openbare pagina zonder specifieke herkomst van de gebruiker."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "De digitale handtekening is gedeeltelijk geverifieerd. De map is geüpload vanaf een openbare pagina zonder specifieke herkomst van de gebruiker."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
@@ -5537,6 +5507,11 @@
         "Wat is dit?"
       ]
     },
+    "List title": {
+      "Also included:": [
+        "Ook inbegrepen:"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Bijna daar"
@@ -5902,14 +5877,11 @@
       "Get started for ${ priceCoupon }": [
         "Aan de slag voor ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Vanaf ${ priceMailPlus }"
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upgrade now": [
         "Upgrade nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6513,14 +6485,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Krijg Mail Plus voor ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "De kortingsprijs van ${ priceCoupon } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ priceMailPlus }. U kunt op ieder moment annuleren."
       ]
     },
     "new_plans: title": {
@@ -8535,9 +8499,6 @@
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Data recovery": [
         "Dataherstel"
       ],
@@ -8879,9 +8840,6 @@
       ],
       "Your document cannot be loaded": [
         "Uw document kan niet worden geladen"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Uw download bevat een ${ DOCS_APP_NAME }-bestand"
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"

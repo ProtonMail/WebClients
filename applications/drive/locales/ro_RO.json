@@ -224,6 +224,9 @@
       "Create and copy alias": [
         "Creare și copiere alias"
       ],
+      "Create folder": [
+        "Creare folder"
+      ],
       "Create free account": [
         "Creare cont gratuit"
       ],
@@ -371,12 +374,6 @@
       ],
       "Forward as attachment": [
         "Redirecționare ca atașament"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Luați ${ DRIVE_APP_NAME }"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Luați ${ MAIL_SHORT_APP_NAME } Plus cu ${ priceCoupon }"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -810,6 +807,9 @@
       "Switch or add account": [
         "Schimbare sau adăugare cont"
       ],
+      "Take a tour": [
+        "Faceți un tur"
+      ],
       "Toggle Calendar app": [
         "Comutare la aplicație Calendar"
       ],
@@ -1101,9 +1101,6 @@
       "Advanced account protection": [
         "Protecție avansată a contului"
       ],
-      "Dark Web Monitoring": [
-        "Monitorizare pe internetul ascuns"
-      ],
       "Easily add or remove users": [
         "Adăugare și eliminare ușoară utilizatori"
       ],
@@ -1190,8 +1187,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, monitorizare internet ascuns și altele."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
@@ -1322,12 +1319,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modificare setări adresă de e-mail"
-      ],
-      "Continue": [
-        "Continuare"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
       ],
@@ -1336,6 +1327,15 @@
       ],
       "Continue your subscription": [
         "Păstrare abonament"
+      ],
+      "Create label": [
+        "Creare etichetă"
+      ],
+      "Remind me later": [
+        "Amintește-mi mai târziu"
+      ],
+      "Take a tour": [
+        "Faceți un tur"
       ]
     },
     "Cancellation reminder": {
@@ -5037,9 +5037,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
-      "Registering your subscription...": [
-        "Se înregistrează abonamentul..."
-      ],
       "Report has been sent": [
         "Raportul a fost trimis."
       ],
@@ -5108,9 +5105,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
-      ],
-      "Setting up your new address...": [
-        "Vi se configurează noile adrese..."
       ],
       "Share files with links": [
         "Partajare fișiere prin legături web"
@@ -6213,6 +6207,9 @@
       "Start date": [
         "Dată început"
       ],
+      "State": [
+        "Județ/Stat"
+      ],
       "Stolen data": [
         "Date furate"
       ],
@@ -6357,14 +6354,26 @@
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
+      "All mail": [
+        "Toate mesajele"
+      ],
+      "Archive": [
+        "Arhivă"
+      ],
       "clearing your browser cache": [
         "golind bufferul navigatorului"
       ],
       "click here": [
         "apăsați aici"
       ],
+      "Drafts": [
+        "Ciorne"
+      ],
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
+      ],
+      "Inbox": [
+        "Primite"
       ],
       "Learn more": [
         "Detalii"
@@ -6381,11 +6390,26 @@
       "Request an invite": [
         "Solicitați o invitație"
       ],
+      "Scheduled": [
+        "Programate"
+      ],
+      "Sent": [
+        "Trimise"
+      ],
       "Shared": [
         "Partajat"
       ],
       "Shared with me": [
         "Partajate cu mine"
+      ],
+      "Snooze": [
+        "Amânare"
+      ],
+      "Spam": [
+        "Nedorite"
+      ],
+      "Starred": [
+        "Cu stea"
       ],
       "stay safer online": [
         "rămâneți în siguranță online"
@@ -6767,17 +6791,11 @@
       "Get started for ${ priceCoupon }": [
         "Începeți cu ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Modificare"
       ],
       "Upgrade now": [
         "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7421,14 +7439,6 @@
         "Schimbare planuri?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Luați Mail Plus cu ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Prețul cu reducere de ${ priceCoupon } este valabil pentru prima lună. Apoi se va efectua reînnoirea automată cu ${ priceMailPlus }. Puteți anula oricând."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
@@ -8007,6 +8017,25 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje primite pe e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Calendar."
+      ]
+    },
+    "Offer": {
+      "Get the deal": [
+        "Luați oferta"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
+      ]
+    },
+    "Offer feature": {
+      "Email Addresses": [
+        "Adrese de e-mail"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ]
     },
     "Onboarding": {
@@ -9408,9 +9437,6 @@
       "Comprehensive privacy and security": [
         "Confidențialitate și securitate cuprinzătoare"
       ],
-      "Dark web monitoring": [
-        "Monitorizare pe internetul ascuns"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Suport pentru clienți de e-mail și aplicații desktop (prin IMAP)"
       ],
@@ -10032,9 +10058,6 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
-      ],
-      "Dark Web Monitoring": [
-        "Monitorizare pe internetul ascuns"
       ],
       "Data recovery": [
         "Recuperare date"

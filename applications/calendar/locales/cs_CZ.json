@@ -215,6 +215,9 @@
       "Create event": [
         "Vytvořit událost"
       ],
+      "Create folder": [
+        "Vytvořit složku"
+      ],
       "Create new contact": [
         "Vytvořit nový kontakt"
       ],
@@ -319,9 +322,6 @@
       ],
       "Forward as attachment": [
         "Přeposlat jako přílohu"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Získejte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontaktujte nás"
@@ -734,10 +734,10 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Navýšit nyní"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Navýšit nyní"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1053,9 +1053,6 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "Dark Web Monitoring": [
-        "Sledování Dark webu"
-      ],
       "Easily add or remove users": [
         "Snadné přidávání a odebírání uživatelů"
       ],
@@ -1141,9 +1138,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování Dark webu a další funkce."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
@@ -1276,12 +1270,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Změna nastavení e-mailové adresy"
-      ],
-      "Continue": [
-        "Pokračovat"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
       ],
@@ -2653,11 +2641,6 @@
         "Faktura po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2751,6 +2734,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5134,9 +5122,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
-      "Registering your subscription...": [
-        "Registrace vašeho předplatného..."
-      ],
       "Removed participants will be notified.": [
         "Odebraní účastníci budou upozorněni."
       ],
@@ -5169,9 +5154,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
-      ],
-      "Setting up your new address...": [
-        "Nastavování nové adresy..."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -6190,6 +6172,12 @@
       "Add a gift code": [
         "Přidat dárkový kód"
       ],
+      "All mail": [
+        "Všechna pošta"
+      ],
+      "Archive": [
+        "Archiv"
+      ],
       "Calendars": [
         "Kalendáře"
       ],
@@ -6199,8 +6187,14 @@
       "click here": [
         "klikněte zde"
       ],
+      "Drafts": [
+        "Koncepty"
+      ],
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
+      ],
+      "Inbox": [
+        "Doručená pošta"
       ],
       "Learn more": [
         "Zjistit více"
@@ -6220,8 +6214,26 @@
       "Request an invite": [
         "Požádat o pozvánku"
       ],
+      "Scheduled": [
+        "Naplánováno"
+      ],
+      "Sent": [
+        "Odeslané"
+      ],
+      "Snooze": [
+        "Odložit"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "S hvězdičkou"
+      ],
       "stay safer online": [
         "zůstaňte v bezpečí online"
+      ],
+      "Trash": [
+        "Koš"
       ],
       "What’s this?": [
         "Co je to?"
@@ -6625,14 +6637,11 @@
       "Get started for ${ priceCoupon }": [
         "Začněte za ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
+      "Upgrade": [
+        "Navýšit"
       ],
       "Upgrade now": [
         "Navýšit nyní"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7298,14 +7307,6 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získejte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
       ]
     },
     "new_plans: tooltip": {
@@ -9150,6 +9151,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
@@ -9270,9 +9312,6 @@
       ],
       "Comprehensive privacy and security": [
         "Komplexní ochrana soukromí a zabezpečení"
-      ],
-      "Dark web monitoring": [
-        "Sledování Dark webu"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplikace pro desktop a podpora e-mailových klientů (přes IMAP)"
@@ -9423,47 +9462,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -9970,9 +9968,6 @@
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
-      ],
-      "Dark Web Monitoring": [
-        "Sledování Dark webu"
       ],
       "Data recovery": [
         "Obnovení dat"

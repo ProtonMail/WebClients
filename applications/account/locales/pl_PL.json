@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -475,9 +475,6 @@
       "Edit group": [
         "Edytuj grupę"
       ],
-      "Edit invoice details": [
-        "Edytuj szczegóły faktury"
-      ],
       "Edit label": [
         "Edytuj etykietę"
       ],
@@ -567,12 +564,6 @@
       ],
       "Generate token": [
         "Generuj token"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Wybierz plan ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Wybierz plan ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Uzyskaj nowy szyfrowany adres e-mail"
@@ -834,6 +825,9 @@
       ],
       "Refer a friend": [
         "Poleć znajomemu"
+      ],
+      "Refresh data": [
+        "Odśwież dane"
       ],
       "Refresh status": [
         "Odśwież status"
@@ -1754,9 +1748,6 @@
       "Advanced account protection": [
         "Zaawansowana ochrona konta"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Easily add or remove users": [
         "Łatwo dodawaj lub usuwaj użytkowników"
       ],
@@ -1842,9 +1833,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów hide-my-email, udostępnianie, zintegrowaną aplikację uwierzytelniającą 2FA, Monitoring dark web i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje ${ addresses } adres e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej.",
@@ -2000,12 +1988,6 @@
     "Button": {
       "Add link to your email footer": [
         "Dodaj link do stopki wiadomości"
-      ],
-      "Change email address settings": [
-        "Zmień ustawienia adresu e-mail"
-      ],
-      "Continue": [
-        "Kontynuuj"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
@@ -8203,6 +8185,12 @@
       "of": [
         "z"
       ],
+      "Off": [
+        "Wył."
+      ],
+      "On": [
+        "Wł."
+      ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
       ],
@@ -8476,9 +8464,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
-      "Registering your subscription...": [
-        "Rejestrowanie subskrypcji..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
       ],
@@ -8586,9 +8571,6 @@
       ],
       "Setting successfully saved": [
         "Ustawienia zostały zapisane"
-      ],
-      "Setting up your new address...": [
-        "Konfiguracja nowego adresu..."
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -9628,9 +9610,6 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Hasłem odzyskiwania jest seria 12 słów w określonej kolejności."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Zgłoszenie zostało zamknięte. Dziękujemy za kontakt ze wsparciem technicznym ${ BRAND_NAME }."
       ],
@@ -9676,11 +9655,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Możesz dodać metodę płatności, aby subskrypcja odnawiała się automatycznie. Dostępne są również inne metody płatności."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Wpisz nazwę i adres organizacji. Te szczegóły zostaną dodane do faktur."
       ]
     },
     "Info on errors": {
@@ -10348,6 +10322,9 @@
       "Choose a name for the generated certificate file": [
         "Wybierz nazwę pliku dla wygenerowanego certyfikatu"
       ],
+      "City": [
+        "Miasto"
+      ],
       "Code": [
         "Kod"
       ],
@@ -10362,6 +10339,9 @@
       ],
       "Colors": [
         "Kolory"
+      ],
+      "Company": [
+        "Firma"
       ],
       "Company name": [
         "Nazwa firmy"
@@ -10777,9 +10757,6 @@
       "Name": [
         "Nazwa"
       ],
-      "Name and address": [
-        "Nazwa i adres"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (przekierowanie portów)"
       ],
@@ -10812,6 +10789,9 @@
       ],
       "Non-standard ports": [
         "Niestandardowe porty"
+      ],
+      "Note": [
+        "Notatka"
       ],
       "Notification": [
         "Powiadomienie"
@@ -11055,6 +11035,9 @@
       ],
       "Sticky labels": [
         "Automatyczne etykiety"
+      ],
+      "Street address": [
+        "Ulica"
       ],
       "Strong": [
         "Silne"
@@ -12082,17 +12065,11 @@
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -12872,12 +12849,6 @@
       "${ shortPlan.title } Trial": [
         "Wersja próbna planu ${ shortPlan.title }"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Wybierz plan Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
-      ],
       "Your account's usage": [
         "Użycie konta"
       ]
@@ -13285,12 +13256,6 @@
       ],
       "An external address cannot be default": [
         "Zewnętrzny adres nie może zostać domyślnym adresem"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Monitoring dark web został wyłączony"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Monitoring dark web został włączony"
       ],
       "Downloaded 2FA recovery codes": [
         "Pobrane kody odzyskiwania"
@@ -16684,6 +16649,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -16810,9 +16816,6 @@
       ],
       "Comprehensive privacy and security": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo"
-      ],
-      "Dark web monitoring": [
-        "Monitoring dark web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Wsparcie dla aplikacji desktopowych i pocztowych (przez IMAP)"
@@ -16987,47 +16990,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -17889,9 +17851,6 @@
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Dashboard": [
         "Pulpit"
       ],
@@ -18020,9 +17979,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Edytuj bramę ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Edytuj szczegóły faktury"
       ],
       "Edit profile": [
         "Edytuj profil"

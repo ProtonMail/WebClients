@@ -195,6 +195,9 @@
       "Create and copy alias": [
         "Buat dan salin alias"
       ],
+      "Create folder": [
+        "Buat folder"
+      ],
       "Current plan": [
         "Paket saat ini"
       ],
@@ -290,9 +293,6 @@
       ],
       "Forward as attachment": [
         "Teruskan sebagai lampiran"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Dapatkan ${ MAIL_SHORT_APP_NAME } Plus dengan harga ${ priceCoupon }"
       ],
       "Get in touch": [
         "Hubungi kami"
@@ -395,6 +395,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
+      ],
+      "More options": [
+        "Opsi lainnya"
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
@@ -629,9 +632,6 @@
       ],
       "Try another method": [
         "Coba metode lain"
-      ],
-      "Understood": [
-        "Mengerti"
       ],
       "Undo": [
         "Urungkan"
@@ -879,9 +879,6 @@
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
       ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
-      ],
       "Easily add or remove users": [
         "Tambah atau kurangi pengguna secara mudah"
       ],
@@ -967,9 +964,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, dan masih banyak lagi."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -1096,12 +1090,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Ubah pengaturan alamat email"
-      ],
-      "Continue": [
-        "Lanjutkan"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -3979,9 +3967,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Pengunduhan ${ DOCS_APP_NAME } berkas dari ${ DRIVE_APP_NAME } saat ini belum didukung — rangkaian berkas ini tidak akan disertakan dalam unduhan Anda"
-      ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
       ],
@@ -4351,9 +4336,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Silakan ekspor salinan perubahan Anda saat ini dari menu utama dan muat ulang halaman ini."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Silakan ekspor rangkaian berkas ini secara langsung dari aplikasi ${ DOCS_APP_NAME } apabila Anda ingin mengunduh."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Harap diperhatikan bahwa alamat yang terhubung ke grup ini TIDAK akan dihapus."
       ],
@@ -4417,9 +4399,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
-      "Registering your subscription...": [
-        "Mendaftarkan langganan Anda..."
-      ],
       "Restored version to": [
         "Versi dipulihkan ke"
       ],
@@ -4455,9 +4434,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
-      ],
-      "Setting up your new address...": [
-        "Menyiapkan alamat baru Anda..."
       ],
       "Settings update failed": [
         "Pembaruan pengaturan gagal"
@@ -4518,12 +4494,6 @@
       ],
       "The Beginning": [
         "Awal"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Tanda tangan digital telah sebagian diverifikasi. Berkas telah diunggah dari laman publik yang tidak menentukan asal pengguna yang spesifik."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Tanda tangan digital telah sebagian diverifikasi. Folder telah diunggah dari laman publik yang tidak menentukan asal pengguna yang spesifik."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
@@ -5887,14 +5857,11 @@
       "Get started for ${ priceCoupon }": [
         "Mulai dengan harga ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
+      "Upgrade": [
+        "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6474,14 +6441,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
       ]
     },
     "new_plans: title": {
@@ -8440,9 +8399,6 @@
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
       ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
-      ],
       "Data recovery": [
         "Pemulihan data"
       ],
@@ -8781,9 +8737,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokumen Anda tidak dapat dimuat"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Unduhan Anda memiliki berkas ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"

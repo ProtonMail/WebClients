@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
+      "Create folder": [
+        "Skapa mapp"
+      ],
       "Create free account": [
         "Skapa gratis konto"
       ],
@@ -368,12 +371,6 @@
       ],
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Skaffa ${ DRIVE_APP_NAME }"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Skaffa ${ MAIL_SHORT_APP_NAME } Plus för ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakta oss"
@@ -610,7 +607,7 @@
         "Återställ data"
       ],
       "Refer a friend": [
-        "Bjud in en vän"
+        "Hänvisa en vän"
       ],
       "Refresh the page": [
         "Uppdatera sidan"
@@ -1093,9 +1090,6 @@
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
-      "Dark Web Monitoring": [
-        "Övervakning av mörka webben"
-      ],
       "Easily add or remove users": [
         "Lägg till eller ta bort användare enkelt"
       ],
@@ -1181,9 +1175,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade hide-my-email-alias, delning, integrerad 2FA, övervakning av mörka webben och mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
@@ -1312,12 +1303,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Ändra e-postadressinställningarna"
-      ],
-      "Continue": [
-        "Fortsätt"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
       ],
@@ -2480,10 +2465,10 @@
         "Du kan markera de kontakter som du varken vill slå ihop eller behålla för borttagning. Borttagning kommer endast ske efter att ha klickat på knappen ”Slå ihop”"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Dina konto- och dataåterställningsmetoder är konfigurerade och 2FA är aktiverat."
+        "Ditt konto- och dataåterställningsmetoder är inställda och 2FA är aktiverat."
       ],
       "Your account and data recovery methods are set.": [
-        "Dina konto- och dataåterställningsmetoder är konfigurerade."
+        "Ditt konto och dataåterställningsmetoder är inställda."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -4709,7 +4694,7 @@
         "Läser in förhandsgranskning"
       ],
       "Loading...": [
-        "Läser in..."
+        "Laddar in …"
       ],
       "Low Priority": [
         "Låg prioritet"
@@ -4767,7 +4752,7 @@
         "Nej"
       ],
       "No contacts added yet": [
-        "Inga kontakter tillagda än"
+        "Inga kontakter tillagda ännu"
       ],
       "No email address": [
         "Ingen e-postadress"
@@ -4836,7 +4821,7 @@
         "Pausad"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Betalningar skyddas med TLS-kryptering och schweiziska integritetslagar."
+        "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
       "People with access": [
         "Personer med åtkomst"
@@ -4972,9 +4957,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
-      "Registering your subscription...": [
-        "Registrerar din prenumeration..."
-      ],
       "Report has been sent": [
         "Rapport har skickats"
       ],
@@ -5043,9 +5025,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
-      ],
-      "Setting up your new address...": [
-        "Konfigurerar din nya adress..."
       ],
       "Share files with links": [
         "Dela filer med länkar"
@@ -5213,7 +5192,7 @@
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor."
+        "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor. "
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
@@ -5222,7 +5201,7 @@
         "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln skapades."
+        "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln genererades."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
@@ -6288,14 +6267,26 @@
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
+      "All mail": [
+        "All e-post"
+      ],
+      "Archive": [
+        "Arkiv"
+      ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
       ],
       "click here": [
         "klicka här"
       ],
+      "Drafts": [
+        "Utkast"
+      ],
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
+      ],
+      "Inbox": [
+        "Inkorg"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -6312,11 +6303,26 @@
       "Request an invite": [
         "Begär en inbjudan"
       ],
+      "Scheduled": [
+        "Schemalagd"
+      ],
+      "Sent": [
+        "Skickat"
+      ],
       "Shared": [
         "Delade"
       ],
       "Shared with me": [
         "Delat med mig"
+      ],
+      "Snooze": [
+        "Snooza"
+      ],
+      "Spam": [
+        "Skräppost"
+      ],
+      "Starred": [
+        "Stjärnmärkt"
       ],
       "stay safer online": [
         "var säkrare online"
@@ -6750,17 +6756,11 @@
       "Get started for ${ priceCoupon }": [
         "Kom igång för ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Uppgradera"
       ],
       "Upgrade now": [
         "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7381,12 +7381,6 @@
       ]
     },
     "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Skaffa Mail Plus för ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Det rabatterade priset på ${ priceCoupon } är giltigt den första månaden. Därefter kommer det förnyas automatiskt med ${ priceMailPlus }. Dun kan säga upp när som helst."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -9322,9 +9316,6 @@
       "Comprehensive privacy and security": [
         "Omfattande integritet och säkerhet"
       ],
-      "Dark web monitoring": [
-        "Mörka webben-övervakning"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Skrivbordsapp och stöd för e-postklienter (via IMAP)"
       ],
@@ -9930,9 +9921,6 @@
       ],
       "Customize your mail import": [
         "Anpassa din e-postimport"
-      ],
-      "Dark Web Monitoring": [
-        "Övervakning av mörka webben"
       ],
       "Data recovery": [
         "Dataåterställning"
@@ -10645,7 +10633,7 @@
         "Alias-suffix saknas"
       ],
       "Name is required": [
-        "Namn krävs"
+        "Namn är obligatoriskt"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"
