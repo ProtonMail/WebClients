@@ -91,21 +91,49 @@ export const elements = createSelector(
          */
         const address = search.address ? addresses.value?.find((address) => address.ID === search.address) : undefined;
         const filtered = elementsArray.filter((element) => {
-            const elementUnread = isUnread(element, labelID);
-            const conditions = [
-                hasLabel(element, labelID),
-                conversationMode ? isConversation(element) : isMessage(element),
-                filter.Attachments === 1 ? hasAttachments(element) : true,
-                bypassFilter.length > 0 ? bypassFilter.includes(element.ID || '') : true,
-                filter.Unread ? (filter.Unread === 1 ? elementUnread : !elementUnread) : true,
-                search.from ? matchFrom(element, search.from) : true,
-                search.to ? matchTo(element, search.to) : true,
-                search.end ? matchEnd(element, labelID, search.end) : true,
-                search.begin ? matchBegin(element, labelID, search.begin) : true,
-                address ? matchEmailAddress(element, address.Email) : true,
-            ];
+            // Check ID and label first (cheapest operations)
+            if (bypassFilter.length > 0 && !bypassFilter.includes(element.ID || '')) {
+                return false;
+            }
+            if (!hasLabel(element, labelID)) {
+                return false;
+            }
 
-            return conditions.every(isTruthy);
+            // Check element type (cheap operation)
+            if (conversationMode ? !isConversation(element) : !isMessage(element)) {
+                return false;
+            }
+
+            // Check simple filters
+            if (filter.Attachments === 1 && !hasAttachments(element)) {
+                return false;
+            }
+
+            const elementUnread = isUnread(element, labelID);
+            if (filter.Unread && (filter.Unread === 1 ? !elementUnread : elementUnread)) {
+                return false;
+            }
+
+            // More expensive email address checks
+            if (search.from && !matchFrom(element, search.from)) {
+                return false;
+            }
+            if (search.to && !matchTo(element, search.to)) {
+                return false;
+            }
+            if (address && !matchEmailAddress(element, address.Email)) {
+                return false;
+            }
+
+            // Date checks last (usually most expensive due to date operations)
+            if (search.end && !matchEnd(element, labelID, search.end)) {
+                return false;
+            }
+            if (search.begin && !matchBegin(element, labelID, search.begin)) {
+                return false;
+            }
+
+            return true;
         });
 
         const sorted = sortElements(filtered, finalSort, labelID);
