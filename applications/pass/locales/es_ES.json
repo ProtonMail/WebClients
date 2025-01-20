@@ -244,8 +244,8 @@
       "Edit vault": [
         "Editar la caja fuerte"
       ],
-      "Enable Dark Web Monitoring": [
-        "Activar el monitoreo de la Dark Web"
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Activa ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Activar este alias para recibir correos enviados al mismo"
@@ -674,6 +674,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } está disponible con un plan de pago. Mejora para obtener acceso inmediato."
+      ],
       "${ total } other login uses the same password": [
         "${ total } otro inicio de sesión usa la misma contraseña.",
         "Otros ${ total } inicios de sesión usan la misma contraseña."
@@ -698,9 +701,6 @@
       ],
       "Create unique passwords": [
         "Crea contraseñas únicas"
-      ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "El monitoreo de la Dark Web está disponible con un plan de pago. Mejora el plan para un acceso inmediato."
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "El protocolo DKIM ${ WIKIPEDIA_LINK_DKIM } es un método de autenticación de correo electrónico diseñado para evitar la suplantación de identidad. Se recomienda encarecidamente configurar DKIM para reducir las posibilidades de que tus correos electrónicos terminen en la carpeta de spam del destinatario."
@@ -1171,9 +1171,6 @@
       ]
     },
     "Feature": {
-      "Dark Web Monitoring": [
-        "Monitoreo de la Dark Web"
-      ],
       "Integrated 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
@@ -3475,9 +3472,6 @@
       "Custom emails": [
         "Correos electrónicos personalizados"
       ],
-      "Dark Web Monitoring": [
-        "Monitoreo de la Dark Web"
-      ],
       "Default": [
         "Por defecto"
       ],
@@ -3985,9 +3979,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifica tu dirección de correo electrónico para poder utilizar alias de correo electrónico."
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Verifica tu dirección de correo electrónico para poder utilizar el intercambio de caja fuerte."
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Al borrar la contraseña adicional, se cerrará la sesión en todos tus dispositivos y terminarán todas las sesiones activas."

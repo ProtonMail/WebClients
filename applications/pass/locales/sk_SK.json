@@ -244,9 +244,6 @@
       "Edit vault": [
         "Upraviť trezor"
       ],
-      "Enable Dark Web Monitoring": [
-        "Zapnúť monitorovanie Dark Webu"
-      ],
       "Enable this alias to receive emails sent to this alias": [
         "Zapnite tento alias, ak chcete prijímať emaily zasielané na tento alias"
       ],
@@ -705,9 +702,6 @@
       "Create unique passwords": [
         "Vytvorte jedinečné heslá"
       ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "K dispozícii je platený plán monitorovania Dark Webu. Aktualizujte si ho pre okamžitý prístup."
-      ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "DKIM ${ WIKIPEDIA_LINK_DKIM } je metóda overovania elektronickej pošty navrhnutá na zabránenie falšovania emailov. Nastavenie DKIM sa dôrazne odporúča, aby ste znížili pravdepodobnosť, že vaše emaily skončia v priečinku nevyžiadanej pošty príjemcu."
       ],
@@ -1160,10 +1154,10 @@
         "Momentálne ste offline. Obnovte, prosím, pripojenie, aby ste mohli odomknúť ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
-        "Váš systém DNS nie je správne nastavený. Záznam MX, ktorý sme získali, je:"
+        "Váš DNS nie je správne nastavený. MX záznam, ktorý sme získali, je:"
       ],
       "Your DNS is not correctly set. The TXT record we obtain is:": [
-        "Váš systém DNS nie je správne nastavený. Záznam TXT, ktorý sme získali, je:"
+        "Váš DNS nie je správne nastavený. TXT záznam, ktorý sme získali, je:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
@@ -1181,9 +1175,6 @@
       ]
     },
     "Feature": {
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
-      ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
       ],
@@ -3571,9 +3562,6 @@
       "Custom emails": [
         "Vlastné emaily"
       ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
-      ],
       "Default": [
         "Predvolená"
       ],
@@ -4099,9 +4087,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Ak chcete používať emailové aliasy, overte svoju emailovú adresu, prosím"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Aby ste mohli využívať zdieľanie trezoru, overte svoju emailovú adresu, prosím"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Odstránením dodatočného hesla dôjde k odhláseniu zo všetkých zariadení a ukončeniu všetkých aktívnych relácií."
