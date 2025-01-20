@@ -198,6 +198,9 @@
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
       "Current plan": [
         "Бягучы тарыфны план"
       ],
@@ -299,9 +302,6 @@
       ],
       "Forward as attachment": [
         "Пераслаць як далучэнне"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Атрымайце ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -407,6 +407,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "More options": [
+        "Дадатковыя параметры"
       ],
       "Move to trash": [
         "Перамясціць у сметніцу"
@@ -641,9 +644,6 @@
       ],
       "Try another method": [
         "Паспрабуйце іншы спосаб"
-      ],
-      "Understood": [
-        "Зразумела"
       ],
       "Undo": [
         "Адрабіць"
@@ -901,9 +901,6 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Лёгкае дадаванне або выдаленне карыстальнікаў"
       ],
@@ -989,9 +986,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, Dark Web Monitoring і іншыя функцыі."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
@@ -1124,12 +1118,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Змяніць налады адраса электроннай пошты"
-      ],
-      "Continue": [
-        "Працягнуць"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ],
@@ -4151,9 +4139,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Спампоўванне файлаў ${ DOCS_APP_NAME } з ${ DRIVE_APP_NAME } часова не падтрымліваецца. Яны не будуць уключаны ў ваша спампоўванне."
-      ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
       ],
@@ -4529,9 +4514,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Экспартуйце копію сваіх бягучых змяненняў з галоўнага меню і перазагрузіце старонку."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Экспартуйце іх наўпрост з праграмы ${ DOCS_APP_NAME }, калі хочаце спампаваць."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
       ],
@@ -4601,9 +4583,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
-      "Registering your subscription...": [
-        "Рэгістрацыя вашай падпіскі..."
-      ],
       "Restored version to": [
         "Версія адноўлена да"
       ],
@@ -4639,9 +4618,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць лісты зашыфраваныя скразным метадам карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя службы PGP."
-      ],
-      "Setting up your new address...": [
-        "Наладжванне вашага новага адраса..."
       ],
       "Settings update failed": [
         "Збой абнаўлення налад"
@@ -4702,12 +4678,6 @@
       ],
       "The Beginning": [
         "Пачатак"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Лічбавы подпіс быў правераны часткова. Файл запампаваны з агульнадаступнай старонкі, дзе не пазначана канкрэтнае паходжанне карыстальніка."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Лічбавы подпіс быў правераны часткова. Папка запампавана з агульнадаступнай старонкі, дзе не пазначана канкрэтнае паходжанне карыстальніка."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
@@ -6095,14 +6065,11 @@
       "Get started for ${ priceCoupon }": [
         "Пачніце за ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
+      "Upgrade": [
+        "Палепшыць"
       ],
       "Upgrade now": [
         "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6754,14 +6721,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Атрымайце Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Зніжаны кошт у памеры ${ priceCoupon } сапраўдны на працягу першага месяца. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ priceMailPlus }. Скасаваць можна ў любы момант."
       ]
     },
     "new_plans: title": {
@@ -8888,9 +8847,6 @@
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Data recovery": [
         "Аднаўленне даных"
       ],
@@ -9238,9 +9194,6 @@
       ],
       "Your document cannot be loaded": [
         "Немагчыма загрузіць ваш дакумент"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Ваша спампоўванне мае файл ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
