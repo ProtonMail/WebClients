@@ -41,6 +41,7 @@ export const NumberCustomiser = ({
             <ButtonNumberInput
                 key={`${addon.Name}-input`}
                 id={inputId}
+                data-testid={`${addon.Name}-customizer`}
                 value={value}
                 min={min}
                 max={max}
