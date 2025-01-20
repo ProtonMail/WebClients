@@ -196,6 +196,9 @@
       "Create and copy alias": [
         "Erstellen und Alias kopieren"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
       "Current plan": [
         "Aktuelles Abonnement"
       ],
@@ -285,14 +288,14 @@
       "Export contact group": [
         "Kontaktgruppe exportieren"
       ],
+      "Export selection as .vcf": [
+        "Auswahl im .vcf-Format exportieren"
+      ],
       "Forgot password?": [
         "Passwort vergessen?"
       ],
       "Forward as attachment": [
         "Als Anhang weiterleiten"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Hol dir ${ MAIL_SHORT_APP_NAME } Plus für ${ priceCoupon }"
       ],
       "Get in touch": [
         "Kontakt aufnehmen"
@@ -395,6 +398,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
+      ],
+      "More options": [
+        "Weitere Optionen"
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"
@@ -615,6 +621,9 @@
       "Submit": [
         "Senden"
       ],
+      "Switch accounts": [
+        "Konto wechseln"
+      ],
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
       ],
@@ -629,9 +638,6 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
-      ],
-      "Understood": [
-        "Verstanden"
       ],
       "Undo": [
         "Rückgängig"
@@ -881,9 +887,6 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
-      ],
       "Easily add or remove users": [
         "Benutzer einfach hinzufügen oder entfernen"
       ],
@@ -969,9 +972,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
@@ -1100,12 +1100,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "E-Mail-Adresseinstellungen ändern"
-      ],
-      "Continue": [
-        "Fortfahren"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ],
@@ -1114,6 +1108,12 @@
       ],
       "Continue your subscription": [
         "Abonnement fortsetzen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Remind me later": [
+        "Später erneut fragen"
       ]
     },
     "Cancellation upsell": {
@@ -2704,6 +2704,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Bitte gib entweder einen Vornamen, Nachnamen oder Anzeigenamen ein."
       ],
+      "Please select a country": [
+        "Bitte wähle ein Land"
+      ],
       "Port is required": [
         "Port ist erforderlich"
       ],
@@ -2999,6 +3002,9 @@
       ],
       "Time zone": [
         "Zeitzone"
+      ],
+      "Time zone component ignored": [
+        "Zeitzonenkomponente ignoriert"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen“"
@@ -3384,17 +3390,26 @@
       "Malformed all-day event": [
         "Fehlerhafter ganztägiger Termin"
       ],
+      "Malformed end time": [
+        "Fehlerhafte Endzeit"
+      ],
       "Malformed recurring event": [
         "Fehlerhafte Terminserie"
       ],
       "Malformed start time": [
         "Fehlerhafte Startzeit"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Nur die Skala des Gregorianischen Kalenders ist erlaubt"
+      ],
       "Recurring event has no occurrences": [
         "Wiederkehrendes Ereignis enthält keine Termine"
       ],
       "Recurring rule not supported": [
         "Wiederkehrende Regel nicht unterstützt"
+      ],
+      "Start time out of bounds": [
+        "Startzeit außerhalb des Bereichs"
       ],
       "Time zone not supported": [
         "Zeitzone wird nicht unterstützt"
@@ -3537,11 +3552,17 @@
       "Use your app password instead of your regular password if:": [
         "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Dein App-Passwort ist korrekt. Verwende nicht dein reguläres Passwort."
+      ],
       "Your email account requires an app password to export your data.": [
         "Dein E-Mail-Konto erfordert ein App-Passwort, um deine Daten zu exportieren."
       ],
       "Your email account requires one to export your data.": [
         "Dein E-Mail-Konto erfordert ein solches, um deine Daten zu exportieren."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Deine E-Mail-Adresse und App-Passwort sind korrekt. Verwende nicht dein reguläres Passwort."
       ],
       "Your email address and password are correct.": [
         "Deine E-Mail-Adresse und dein Passwort korrekt sind."
@@ -3718,6 +3739,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } lebenslanges Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung Ihres Abonnements ${ planTitle } bleiben unverändert."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -4006,9 +4030,6 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lade noch heute diese großartige App herunter und nimm deine Privatsphäre überall hin mit."
-      ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Das Herunterladen von ${ DOCS_APP_NAME }-Dateien aus ${ DRIVE_APP_NAME } wird derzeit nicht unterstützt – diese werden nicht in deinem Download enthalten sein."
       ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
@@ -4378,9 +4399,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Bitte exportiere eine Kopie deiner aktuellen Änderungen aus dem Hauptmenü und lade die Seite neu."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Bitte exportiere sie stattdessen direkt aus der ${ DOCS_APP_NAME }-Anwendung, wenn du sie herunterladen möchtest."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Bitte beachte, dass die diesen Gruppen zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
       ],
@@ -4443,9 +4461,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
-      "Registering your subscription...": [
-        "Dein Abonnement wird registriert..."
-      ],
       "Restored version to": [
         "Wiederhergestellte Version zu"
       ],
@@ -4470,6 +4485,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
@@ -4478,9 +4496,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
-      ],
-      "Setting up your new address...": [
-        "Deine neue E-Mail-Adresse wird eingerichtet..."
       ],
       "Settings update failed": [
         "Fehler beim Aktualisieren der Einstellungen."
@@ -4512,6 +4527,9 @@
       "Something went wrong": [
         "Etwas ist schiefgelaufen"
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
@@ -4538,12 +4556,6 @@
       ],
       "The Beginning": [
         "Der Anfang"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Die digitale Signatur wurde teilweise verifiziert. Die Datei wurde von einer öffentlichen Seite hochgeladen, die keinen spezifischen Benutzerursprung angibt."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Die digitale Signatur wurde teilweise verifiziert. Die Datei wurde von einer öffentlichen Seite hochgeladen, die keinen spezifischen Benutzerursprung angibt."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
@@ -4877,11 +4889,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      ],
       "Your password was leaked:": [
         "Dein Passwort wurde offengelegt"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
       ]
     },
     "info": {
@@ -5483,6 +5504,11 @@
         "Was ist das?"
       ]
     },
+    "List title": {
+      "Also included:": [
+        "Ebenfalls enthalten:"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Fast geschafft"
@@ -5905,14 +5931,11 @@
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Ab ${ priceMailPlus }"
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6051,6 +6074,9 @@
       ],
       "15 GB storage": [
         "15 GB Speicherplatz"
+      ],
+      "200 GB of storage": [
+        "200 GB Speicherplatz"
       ],
       "24/7 account management support": [
         "24/7-Kundenbetreuung"
@@ -6510,14 +6536,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hol dir Mail Plus für ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
       ]
     },
     "new_plans: title": {
@@ -7034,6 +7052,22 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Wähle aus, worauf ${ BRAND_NAME } zugreifen kann: Deine E-Mail-Nachrichten und -Einstellungen ansehen, deine Kontakte ansehen und herunterladen, alle Termine ansehen und herunterladen, auf die du über Google Calendar zugreifst."
+      ]
+    },
+    "Offer": {
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ]
+    },
+    "Offer feature": {
+      "Custom email domain": [
+        "Eigene E-Mail-Domain"
+      ],
+      "Email Addresses": [
+        "E-Mail-Adressen"
       ]
     },
     "Option": {
@@ -8517,9 +8551,6 @@
       "Customize your mail import": [
         "Mail-Import anpassen"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
-      ],
       "Data recovery": [
         "Datenwiederherstellung"
       ],
@@ -8862,7 +8893,7 @@
       "Your document cannot be loaded": [
         "Dein Dokument kann nicht geladen werden"
       ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
+      "Your download includes a ${ DOCS_APP_NAME } file": [
         "Dein Download beinhaltet eine ${ DOCS_APP_NAME }-Datei."
       ],
       "Your exposed information": [
