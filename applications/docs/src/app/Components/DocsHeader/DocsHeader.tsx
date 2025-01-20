@@ -158,6 +158,8 @@ const DocsHeaderForDocument = ({
           </>
         )}
 
+        {publicContext && <div className="w-2" />}
+
         {documentState.getProperty('userRole').canComment() && <CommentsButton editorController={editorController} />}
 
         {!publicContext && (
