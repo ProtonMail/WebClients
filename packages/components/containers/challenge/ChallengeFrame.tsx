@@ -60,7 +60,7 @@ const ChallengeFrame = ({
     useLayoutEffect(() => {
         let isMounted = true;
         let mutationObserver: MutationObserver | undefined;
-        let domHandle: ReturnType<typeof setTimeout>;
+        let domHandle: number | undefined;
 
         let stage: Stage = 'initialize';
         const setStage = (newStage: Stage) => {
@@ -106,6 +106,7 @@ const ChallengeFrame = ({
 
         let challengeResolve: ((data: { [key: string]: string }) => void) | undefined;
         let challengeReject: ((error: any) => void) | undefined;
+        let challengeTimeoutHandle: number | undefined;
 
         const startDOMUpdates = () => {
             const contentWindow = iframeRef.current?.contentWindow;
@@ -169,7 +170,7 @@ const ChallengeFrame = ({
             }
             startDOMUpdates();
             // Small timeout to ensure the iframe has received the html
-            domHandle = setTimeout(() => {
+            domHandle = window.setTimeout(() => {
                 onSuccess?.();
                 setIsRendered(true);
             }, 33);
@@ -263,6 +264,7 @@ const ChallengeFrame = ({
                 if (!messageData || !challengeResolve) {
                     return;
                 }
+                clearTimeout(challengeTimeoutHandle);
                 challengeResolve({
                     [messageData.id]: messageData.fingerprint,
                 });
@@ -291,13 +293,14 @@ const ChallengeFrame = ({
                 if (challengeReject) {
                     challengeReject(new Error('Challenge abandoned'));
                 }
+                clearTimeout(challengeTimeoutHandle);
                 return new Promise<ChallengeResult | undefined>((resolve, reject) => {
                     challengeResolve = resolve;
                     challengeReject = reject;
                     if (stage === 'loaded') {
                         requestChallenge();
                     }
-                    errorTimeoutHandle = window.setTimeout(() => {
+                    challengeTimeoutHandle = window.setTimeout(() => {
                         reject(new Error('Challenge timeout'));
                     }, challengeTimeout);
                 });
@@ -310,6 +313,7 @@ const ChallengeFrame = ({
         return () => {
             window.removeEventListener('message', cb);
             clearTimeout(errorTimeoutHandle);
+            clearTimeout(challengeTimeoutHandle);
             clearTimeout(domHandle);
             isMounted = false;
             mutationObserver?.disconnect();
