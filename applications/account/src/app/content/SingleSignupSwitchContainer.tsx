@@ -33,6 +33,7 @@ interface Props {
     paths: Paths;
     onBack?: () => void;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
     initialSessionsLength: boolean;
 }
 
@@ -69,6 +70,7 @@ const SingleSignupSwitchContainer = ({
     paths,
     onBack,
     onPreSubmit,
+    onStartAuth,
     initialSessionsLength,
 }: Props) => {
     const location = useLocation();
@@ -97,6 +99,7 @@ const SingleSignupSwitchContainer = ({
                 fork={fork}
                 onBack={onBack}
                 onPreSubmit={onPreSubmit}
+                onStartAuth={onStartAuth}
                 initialSessionsLength={initialSessionsLength}
             />
         );
@@ -114,6 +117,7 @@ const SingleSignupSwitchContainer = ({
                 onLogin={onLogin}
                 onBack={onBack}
                 onPreSubmit={onPreSubmit}
+                onStartAuth={onStartAuth}
             />
         </UnAuthenticated>
     );

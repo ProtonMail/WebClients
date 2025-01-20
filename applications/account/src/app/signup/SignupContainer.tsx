@@ -9,7 +9,6 @@ import { Step, Stepper } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
 import {
     HumanVerificationSteps,
-    startUnAuthFlow,
     useApi,
     useConfig,
     useErrorHandler,
@@ -122,6 +121,7 @@ interface Props {
     loginUrl: string;
     metaTags: MetaTags;
     onPreSubmit?: () => Promise<void>;
+    onStartAuth: () => Promise<void>;
 }
 
 const SignupContainer = ({
@@ -135,6 +135,7 @@ const SignupContainer = ({
     productParam,
     loginUrl,
     onPreSubmit,
+    onStartAuth,
 }: Props) => {
     const { APP_NAME } = useConfig();
 
@@ -275,7 +276,7 @@ const SignupContainer = ({
         const fetchDependencies = async () => {
             const { referrer, invite } = signupParameters;
 
-            await startUnAuthFlow().catch(noop);
+            await onStartAuth().catch(noop);
 
             getVPNServersCountData(silentApi)
                 .then((vpnServersCountData) => setModelDiff({ vpnServersCountData }))
@@ -698,7 +699,7 @@ const SignupContainer = ({
                         try {
                             const validateFlow = createFlow();
                             await onPreSubmit?.();
-                            await startUnAuthFlow();
+                            await onStartAuth();
                             const signupActionResponse = await handleCreateAccount({
                                 cache,
                                 api: ignoreHumanApi,

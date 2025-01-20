@@ -8,7 +8,6 @@ import {
     InputFieldTwo,
     PhoneInput,
     Tabs,
-    startUnAuthFlow,
     useApi,
     useErrorHandler,
     useFormErrors,
@@ -136,9 +135,10 @@ interface Props {
     loginUrl: string;
     metaTags: MetaTags;
     toApp?: APP_NAMES;
+    onStartAuth: () => Promise<void>;
 }
 
-const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl }: Props) => {
+const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl, onStartAuth }: Props) => {
     useMetaTags(metaTags);
     const history = useHistory();
     const normalApi = useApi();
@@ -171,7 +171,7 @@ const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl }: Props) =
                     onSubmit={async (data) => {
                         try {
                             const validateFlow = createFlow();
-                            await startUnAuthFlow();
+                            await onStartAuth();
                             const config = data.method === 'email' ? { Email: data.email } : { Phone: data.phone };
                             await silentApi(requestUsername(config));
                             if (validateFlow()) {

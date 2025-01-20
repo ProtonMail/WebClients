@@ -8,7 +8,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -269,9 +268,17 @@ interface Props {
     footer?: ReactNode;
     hasChallenge?: boolean;
     ignoreUnlock?: boolean;
+    onStartAuth: () => Promise<void>;
 }
 
-const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = false, needHelp, footer }: Props) => {
+const MinimalLoginContainer = ({
+    onLogin,
+    onStartAuth,
+    hasChallenge = false,
+    ignoreUnlock = false,
+    needHelp,
+    footer,
+}: Props) => {
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -338,7 +345,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                     hasChallenge={hasChallenge}
                     onSubmit={async (username, password, payload) => {
                         try {
-                            await startUnAuthFlow();
+                            await onStartAuth();
                             const loginResult = await handleLogin({
                                 username,
                                 persistent: false,
