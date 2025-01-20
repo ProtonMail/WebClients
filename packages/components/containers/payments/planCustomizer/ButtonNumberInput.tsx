@@ -21,6 +21,7 @@ export const ButtonNumberInput = ({
     step = 1,
     disabled = false,
     decreaseBlockedReasons,
+    ...rest
 }: {
     step?: number;
     id: string;
@@ -30,7 +31,7 @@ export const ButtonNumberInput = ({
     disabled?: boolean;
     onChange?: (newValue: number) => void;
     decreaseBlockedReasons: DecreaseBlockedReason[];
-}) => {
+} & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'>) => {
     const [tmpValue, setTmpValue] = useState<number | null | undefined>(undefined);
 
     const handleOnChange = (value: number) => {
@@ -67,6 +68,7 @@ export const ButtonNumberInput = ({
                 onClick={() => {
                     handleAddition(-1);
                 }}
+                data-testid={`decrease-addon-${id}`}
             >
                 {!decreaseBlockedReason && <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />}
             </button>
@@ -76,6 +78,7 @@ export const ButtonNumberInput = ({
                     style={{
                         '--ml-custom': 'calc(var(--space-1) * -1)',
                     }}
+                    data-testid="decrease-blocked-reason"
                 >
                     <Info title={reasonText} className="mt-1" />
                 </span>
@@ -86,6 +89,7 @@ export const ButtonNumberInput = ({
                 max={max}
                 value={tmpValue === null ? '' : currentValue}
                 id={id}
+                data-testid={`${id}-input`}
                 type="number"
                 className="my-2 w-custom border-left border-right text-center invisible-number-input-arrow"
                 style={{ '--w-custom': '6em' }}
@@ -101,6 +105,7 @@ export const ButtonNumberInput = ({
                     const newIntValue = parseInt(newValue, 10);
                     handleOnChange(newIntValue);
                 }}
+                {...rest}
             />
             <button
                 type="button"
@@ -110,6 +115,7 @@ export const ButtonNumberInput = ({
                 onClick={() => {
                     handleAddition(1);
                 }}
+                data-testid={`increase-addon-${id}`}
             >
                 <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
             </button>
