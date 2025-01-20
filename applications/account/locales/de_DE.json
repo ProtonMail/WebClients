@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -457,6 +457,9 @@
       "Download the ${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool herunterladen"
       ],
+      "Download the desktop app": [
+        "Desktop-App herunterladen"
+      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -474,9 +477,6 @@
       ],
       "Edit group": [
         "Gruppe bearbeiten"
-      ],
-      "Edit invoice details": [
-        "Rechnungsdetails bearbeiten"
       ],
       "Edit label": [
         "Kategorie bearbeiten"
@@ -568,12 +568,6 @@
       "Generate token": [
         "Token generieren"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Hol dir ${ MAIL_SHORT_APP_NAME } Plus für ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } holen"
-      ],
       "Get a new encrypted email address": [
         "Erhalte eine neue verschlüsselte E-Mail-Adresse"
       ],
@@ -609,6 +603,9 @@
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Gehe zu ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Zu Kategorie wechseln"
@@ -1747,9 +1744,6 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
-      ],
       "Easily add or remove users": [
         "Benutzer einfach hinzufügen oder entfernen"
       ],
@@ -1835,9 +1829,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
@@ -1988,12 +1979,6 @@
       "Add link to your email footer": [
         "Füge den Link zur Fußzeile deiner E-Mail hinzu"
       ],
-      "Change email address settings": [
-        "E-Mail-Adresseinstellungen ändern"
-      ],
-      "Continue": [
-        "Fortfahren"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ],
@@ -2006,8 +1991,20 @@
       "Copy": [
         "Kopieren"
       ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
       "Invite": [
         "Einladen"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "Remind me later": [
+        "Später erneut fragen"
       ],
       "Send": [
         "Senden"
@@ -3869,7 +3866,7 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**Kollaborativ:** Online-Dokumenteditor"
+        "**Kollaborativ:** Online-Dokumentenbearbeitung"
       ],
       "**GDPR** and **HIPAA** compliant": [
         "**DSGVO** und **HIPAA** konform"
@@ -3881,13 +3878,13 @@
         "**Sicher:** Ende-zu-Ende-Verschlüsselung"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Einfach und benutzerfreundlich:** Importiere deine Dateien und richte es in wenigen Minuten ein"
+        "**Einfach und benutzerfreundlich:** In wenigen Minuten deine Dateien importieren und die Einrichtung abschließen"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Fortschrittlicher Schutz, der über die Branchenstandards hinausgeht"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "Werde Teil der 50.000+ Organisationen die bereits von ${ BRAND_NAME }s Sicherheit profitieren"
+        "Werde eine von 50.000+ Organisationen die bereits von ${ BRAND_NAME }s Sicherheitsangebot profitieren"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Schütze sensible Geschäftsinformationen und sichere die Zusammenarbeit"
@@ -4678,6 +4675,9 @@
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ],
+      "Please select a country": [
+        "Bitte wähle ein Land"
+      ],
       "Please set a recovery email first": [
         "Bitte lege zunächst eine Wiederherstellungs-E-Mail-Adresse fest."
       ],
@@ -5034,6 +5034,9 @@
       ],
       "Time zone": [
         "Zeitzone"
+      ],
+      "Time zone component ignored": [
+        "Zeitzonenkomponente ignoriert"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen“"
@@ -5659,6 +5662,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bestätige deine Identität mit einem physischen U2F oder FIDO2 Sicherheitsschlüssel"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Du hast das Maximum von ${ maxSecurityKeyLength } Sicherheitsschlüssel erreicht.",
+        "Du hast das Maximum von ${ maxSecurityKeyLength } Sicherheitsschlüsseln erreicht."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Dein Zwei-Faktor-Authentifizierungsschlüssel ist jetzt einsatzbereit."
       ]
@@ -6271,17 +6278,26 @@
       "Malformed all-day event": [
         "Fehlerhafter ganztägiger Termin"
       ],
+      "Malformed end time": [
+        "Fehlerhafte Endzeit"
+      ],
       "Malformed recurring event": [
         "Fehlerhafte Terminserie"
       ],
       "Malformed start time": [
         "Fehlerhafte Startzeit"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Nur die Skala des Gregorianischen Kalenders ist erlaubt"
+      ],
       "Recurring event has no occurrences": [
         "Wiederkehrendes Ereignis enthält keine Termine"
       ],
       "Recurring rule not supported": [
         "Wiederkehrende Regel nicht unterstützt"
+      ],
+      "Start time out of bounds": [
+        "Startzeit außerhalb des Bereichs"
       ],
       "Time zone not supported": [
         "Zeitzone wird nicht unterstützt"
@@ -6424,11 +6440,17 @@
       "Use your app password instead of your regular password if:": [
         "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Dein App-Passwort ist korrekt. Verwende nicht dein reguläres Passwort."
+      ],
       "Your email account requires an app password to export your data.": [
         "Dein E-Mail-Konto erfordert ein App-Passwort, um deine Daten zu exportieren."
       ],
       "Your email account requires one to export your data.": [
         "Dein E-Mail-Konto erfordert ein solches, um deine Daten zu exportieren."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Deine E-Mail-Adresse und App-Passwort sind korrekt. Verwende nicht dein reguläres Passwort."
       ],
       "Your email address and password are correct.": [
         "Deine E-Mail-Adresse und dein Passwort korrekt sind."
@@ -6689,6 +6711,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } lebenslanges Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung Ihres Abonnements ${ planTitle } bleiben unverändert."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -7185,6 +7210,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
+      ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
       ],
@@ -7352,6 +7380,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
       ],
+      "Download on the App Store": [
+        "Aus dem App Store herunterladen"
+      ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Lade unsere CSV-Vorlage herunter, gib die Benutzerdaten ein und lade dann deine fertige CSV-Datei hoch, um Konten für diese Benutzer zu erstellen."
       ],
@@ -7427,6 +7458,9 @@
       "Encryption setting updated": [
         "Verschlüsselungseinstellung aktualisiert"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Die End-to-End E-Mail-Verschlüsselung ist für diese Gruppe aufgrund externer Adressen deaktiviert."
+      ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "E-Mail Ende-zu-Ende-Verschlüsselung ist für diese Gruppe deaktiviert. Sie kann aktiviert werden."
       ],
@@ -7456,6 +7490,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
+      ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Gib die Entitäts-ID einer **eduGAIN**-Organisation für **${ domain.DomainName }** ein."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Gib das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
@@ -7552,6 +7589,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Erhalte Zugang, indem du ein Konto bei ${ BRAND_NAME } erstellst und die Einladung annimmst."
+      ],
+      "Get it on Google Play": [
+        "Auf Google Play holen"
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Lass dich benachrichtigen, wenn dein Passwort oder andere persönliche Daten bekannt geworden sind. ${ learnMoreLinkNoBreach }"
@@ -8308,9 +8348,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
-      "Registering your subscription...": [
-        "Dein Abonnement wird registriert..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
@@ -8398,6 +8435,9 @@
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+      ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
       ],
@@ -8415,9 +8455,6 @@
       ],
       "Setting successfully saved": [
         "Einstellungen erfolgreich gespeichert"
-      ],
-      "Setting up your new address...": [
-        "Deine neue E-Mail-Adresse wird eingerichtet..."
       ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
@@ -8472,6 +8509,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF klärt, wer berechtigt ist, E-Mails über deine Domain zu senden. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
       "Stay tuned for future promotions.": [
         "Bleibe auf dem Laufenden für zukünftige Werbeaktionen."
@@ -9393,6 +9433,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Deine Organisation verwendet Single Sign-on (SSO). Klicke auf \"Anmelden\", um mit deinem SSO-Anbieter fortzufahren."
       ],
@@ -9414,8 +9457,11 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Deine Wiederherstellungsphrase besteht aus einer Reihe von 12 zufällig generierten Wörtern in einer bestimmten Reihenfolge."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Dein Support-Ticket wurde geschlossen. Vielen Dank, dass du den Support von ${ BRAND_NAME } kontaktiert hast."
@@ -9462,11 +9508,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kannst eine Zahlungsmethode hinzufügen, um dein Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Gib einen Namen und eine Adresse für dich oder deine Organisation ein. Diese Angaben werden sowohl den persönlichen als auch den Organisationsrechnungen hinzugefügt."
       ]
     },
     "Info on errors": {
@@ -10122,6 +10163,9 @@
       "Choose a name for the generated certificate file": [
         "Wähle einen Namen für die erzeugte Zertifikatsdatei"
       ],
+      "City": [
+        "Stadt"
+      ],
       "Code": [
         "Code"
       ],
@@ -10136,6 +10180,9 @@
       ],
       "Colors": [
         "Farben"
+      ],
+      "Company": [
+        "Unternehmen"
       ],
       "Company name": [
         "Unternehmensname"
@@ -10551,9 +10598,6 @@
       "Name": [
         "Name"
       ],
-      "Name and address": [
-        "Name und Adresse"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port-Weiterleitung)"
       ],
@@ -10586,6 +10630,9 @@
       ],
       "Non-standard ports": [
         "Nicht standardisierte Ports"
+      ],
+      "Note": [
+        "Notiz"
       ],
       "Notification": [
         "Benachrichtigung"
@@ -10827,6 +10874,9 @@
       ],
       "Sticky labels": [
         "Angeheftete Kategorien"
+      ],
+      "Street address": [
+        "Straße und Hausnummer"
       ],
       "Strong": [
         "Stark"
@@ -11832,17 +11882,11 @@
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Ab ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -11987,6 +12031,9 @@
       ],
       "15 GB storage": [
         "15 GB Speicherplatz"
+      ],
+      "200 GB of storage": [
+        "200 GB Speicherplatz"
       ],
       "24/7 account management support": [
         "24/7-Kundenbetreuung"
@@ -12566,12 +12613,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-Testversion"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hol dir Mail Plus für ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceCoupon } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ priceMailPlus } verlängert. Du kannst jederzeit kündigen."
-      ],
       "Your account's usage": [
         "Verbrauch deines Kontos"
       ]
@@ -12970,12 +13011,6 @@
       "An external address cannot be default": [
         "Eine externe Adresse kann nicht als Standardadresse verwendet werden."
       ],
-      "Dark Web Monitoring has been disabled": [
-        "Dark Web-Überwachung wurde deaktiviert"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Dark Web-Überwachung wurde aktiviert"
-      ],
       "Downloaded 2FA recovery codes": [
         "2FA-Wiederherstellungscodes heruntergeladen."
       ],
@@ -13125,6 +13160,22 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Wähle aus, worauf ${ BRAND_NAME } zugreifen kann: Deine E-Mail-Nachrichten und -Einstellungen ansehen, deine Kontakte ansehen und herunterladen, alle Termine ansehen und herunterladen, auf die du über Google Calendar zugreifst."
+      ]
+    },
+    "Offer": {
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ]
+    },
+    "Offer feature": {
+      "Custom email domain": [
+        "Eigene E-Mail-Domain"
+      ],
+      "Email Addresses": [
+        "E-Mail-Adressen"
       ]
     },
     "Onboarding": {
@@ -14182,6 +14233,9 @@
       "Choose display name": [
         "Anzeigename auswählen"
       ],
+      "Company name": [
+        "Unternehmensname"
+      ],
       "Confirm": [
         "Bestätigen"
       ],
@@ -14220,6 +14274,9 @@
       ],
       "Link": [
         "Link"
+      ],
+      "Main street 12": [
+        "Hauptstraße 12"
       ],
       "Name": [
         "Name"
@@ -14280,6 +14337,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Type text or keyword": [
         "Text oder Schlüsselwort eingeben"
@@ -14946,6 +15006,14 @@
       ],
       "to be created": [
         "wird erstellt"
+      ],
+      "to be deleted": [
+        "zu löschen"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Ermöglicht das Hinzufügen einer Zoom-Videokonferenz zu deinen Kalenderereignissen"
       ]
     },
     "session_recovery:available:action": {
@@ -15428,16 +15496,16 @@
         "Sitz in der Schweiz, DSGVO-konform"
       ],
       "Built-in encryption": [
-        "Integrierte Verschlüsselung"
+        "Eingebaute Verschlüsselung"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "Kalender, Passwortmanager, Dateispeicher und VPN inklusive"
+        "Kalender, Passwortmanager, Speicherplatz und VPN inklusive"
       ],
       "Device sync": [
         "Gerätesynchronisation"
       ],
       "Email aliases": [
-        "E-Mail-Aliasse"
+        "E-Mail-Aliase"
       ],
       "Email, calendar, password manager, and VPN included": [
         "E-Mail, Kalender, Passwort-Manager und VPN enthalten"
@@ -15470,7 +15538,7 @@
         "Selbstverwahrung - nur du hast Zugriff auf deine Wallet-Schlüssel"
       ],
       "The only business solution that is:": [
-        "Die einzige geschäftliche Lösung, die es gibt:"
+        "Die einzigartige Lösung für Firmen:"
       ],
       "The only cloud storage with:": [
         "Der einzige Cloudspeicher mit:"
@@ -15687,6 +15755,10 @@
       ]
     },
     "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } Mitglied hat dich um Hilfe gebeten, sich anzumelden.",
+        "${ n } Mitglieder haben dich um Hilfe gebeten, sich anzumelden."
+      ],
       "${ n } user converted to SSO": [
         "${ n } Benutzer zu SSO umgewandelt.",
         "${ n } Benutzer zu SSO umgewandelt."
@@ -16213,6 +16285,47 @@
         "Für ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -16327,9 +16440,6 @@
       ],
       "Comprehensive privacy and security": [
         "Umfassender Datenschutz und Sicherheit"
-      ],
-      "Dark web monitoring": [
-        "Dark Web-Überwachung"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Unterstützung für Desktop-App und E-Mail-Client (über IMAP)"
@@ -16504,47 +16614,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -17363,6 +17432,9 @@
       "Currency": [
         "Währung"
       ],
+      "Custom domains:": [
+        "Eigene Domains:"
+      ],
       "Custom filters": [
         "Benutzerdefinierte Filter"
       ],
@@ -17383,9 +17455,6 @@
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
       ],
       "Dashboard": [
         "Dashboard"
@@ -17513,9 +17582,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } bearbeiten"
-      ],
-      "Edit invoice details": [
-        "Rechnungsdetails bearbeiten"
       ],
       "Edit profile": [
         "Profil bearbeiten"
@@ -17669,7 +17735,7 @@
         "Apps herunterladen"
       ],
       "Get Zooming faster": [
-        "Zoom schneller bekommen"
+        "Zoom schneller nutzen"
       ],
       "Gift": [
         "Geschenk"
@@ -17902,6 +17968,9 @@
       ],
       "Previous": [
         "Zurück"
+      ],
+      "Priority support:": [
+        "Vorrangiger Support:"
       ],
       "Privacy and data collection": [
         "Privatsphäre und Datenerfassung"
@@ -18687,6 +18756,9 @@
       ],
       "Success": [
         "Erfolgreich"
+      ],
+      "Timeout": [
+        "Zeitüberschreitung"
       ],
       "Voided": [
         "Storniert"

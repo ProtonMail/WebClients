@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -338,7 +338,7 @@
         "Bağlantı oluştur"
       ],
       "Create new policy": [
-        "Yeni ilke oluşturun"
+        "Yeni ilke oluştur"
       ],
       "Create users": [
         "Kullanıcılar ekle"
@@ -478,9 +478,6 @@
       "Edit group": [
         "Grubu düzenle"
       ],
-      "Edit invoice details": [
-        "Fatura ayrıntılarını düzenle"
-      ],
       "Edit label": [
         "Etiketi düzenle"
       ],
@@ -570,12 +567,6 @@
       ],
       "Generate token": [
         "Kod oluştur"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon } ile ${ MAIL_SHORT_APP_NAME } Plus edinin"
-      ],
-      "Get ${ vpnPlus }": [
-        "${ vpnPlus } alın"
       ],
       "Get a new encrypted email address": [
         "Yeni bir şifrelenmiş e-posta adresi edinin"
@@ -1753,9 +1744,6 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
-      "Dark Web Monitoring": [
-        "Karanlık ağ izleme"
-      ],
       "Easily add or remove users": [
         "Kullanıcıları kolayca ekleme ve çıkarma"
       ],
@@ -1841,9 +1829,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Tüm aygıtlarınızda güvenli oturum açma. Sınırsız sayıda hide-my-email takma adı, paylaşım, bütünleşik iki adımlı doğrulama, karanlık ağ izleme ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
@@ -1993,12 +1978,6 @@
     "Button": {
       "Add link to your email footer": [
         "E-postalarınıza alt bilgi bağlantısı ekleyin"
-      ],
-      "Change email address settings": [
-        "E-posta adresi ayarlarını değiştir"
-      ],
-      "Continue": [
-        "İlerle"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
@@ -3627,7 +3606,7 @@
         "Gelen kutunuzu düzenli tutmak için gerektiği kadar etiket veya klasör oluşturun."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
-        "Her ülkedeki paylaşılan sunuculara kimin bağlanabileceğine karar vermek için politikalar belirleyin."
+        "Her ülkedeki paylaşılan sunuculara kimin bağlanabileceğine karar vermek için ilkeler oluşturun."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
@@ -3642,7 +3621,7 @@
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
-        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşımlı sunuculara bağlanabilir."
+        "Kuruluşunuzdaki herkes tüm ülkelerdeki paylaşılan sunuculara bağlanabilir."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın."
@@ -6640,7 +6619,7 @@
     },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişime sahip.",
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor.",
         "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -6992,7 +6971,7 @@
         "Telefon ile hesap kurtarılabilsin"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Kullanıcıların ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden güvenli paylaşılan sunuculara bağlanmasına izin verin."
+        "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
       ],
       "Already allocated": [
         "Zaten ayrılmış"
@@ -8366,9 +8345,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
-      "Registering your subscription...": [
-        "Abonelik kaydınız oluşturuluyor..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
       ],
@@ -8476,9 +8452,6 @@
       ],
       "Setting successfully saved": [
         "Ayar kaydedildi"
-      ],
-      "Setting up your new address...": [
-        "Yeni adresiniz ayarlanıyor..."
       ],
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
@@ -9499,9 +9472,6 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Destek kaydınız kapatıldı. ${ BRAND_NAME } destek ekibiyle görüştüğünüz için teşekkür ederiz."
       ],
@@ -9547,11 +9517,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Başka ödeme yöntemleri de kullanılabilir."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Kendiniz veya kuruluşunuz için bir ad ve adres yazın. Bu bilgiler hem kişisel hem de kurumsal faturalara eklenecek."
       ]
     },
     "Info on errors": {
@@ -10207,6 +10172,9 @@
       "Choose a name for the generated certificate file": [
         "Oluşturulan sertifika dosyasının adını yazın"
       ],
+      "City": [
+        "İl"
+      ],
       "Code": [
         "Kod"
       ],
@@ -10221,6 +10189,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Company": [
+        "Kuruluş"
       ],
       "Company name": [
         "Kuruluş adı"
@@ -10636,9 +10607,6 @@
       "Name": [
         "Ad"
       ],
-      "Name and address": [
-        "Ad ve adres"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (bağlantı noktası yönlendirme)"
       ],
@@ -10671,6 +10639,9 @@
       ],
       "Non-standard ports": [
         "Standart olmayan bağlantı noktaları"
+      ],
+      "Note": [
+        "Not"
       ],
       "Notification": [
         "Bildirim"
@@ -10912,6 +10883,9 @@
       ],
       "Sticky labels": [
         "Etiketler sabitlensin"
+      ],
+      "Street address": [
+        "Sokak adresi"
       ],
       "Strong": [
         "Güçlü"
@@ -11483,7 +11457,7 @@
         "Sınırlı süreli teklif: **${ name } uygulamasında 1 yıllık tarife ile ${ discount } indirimden yararlanın**"
       ],
       "Set up your account with your Porkbun domain.": [
-        "Hesabınızı Porkbun alan adınızla kurun."
+        "Hesabınızı Porkbun etki alanınızla kurun."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } uygulamasını denemeye davet edildiniz"
@@ -11920,17 +11894,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon } ile başlayın"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus } tutarından başlayan fiyatlarla"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: action": {
@@ -12660,12 +12628,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } deneme"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon } ile Mail Plus edinin"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "İndirimli fiyat olan ${ priceCoupon } ilk ay için geçerlidir. Daha sonra aylık ${ priceMailPlus } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
       "Your account's usage": [
         "Hesap kullanımınız"
       ]
@@ -13069,12 +13031,6 @@
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Karanlık ağ izleme kapatıldı"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Karanlık ağ izleme açıldı"
       ],
       "Downloaded 2FA recovery codes": [
         "İki adımlı doğrulama kodları indirildi"
@@ -16358,6 +16314,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -16472,9 +16469,6 @@
       ],
       "Comprehensive privacy and security": [
         "Kapsamlı gizlilik ve güvenlik"
-      ],
-      "Dark web monitoring": [
-        "Karanlık ağ izleme"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Masaüstü uygulaması ve e-posta istemcisi desteği (IMAP ile)"
@@ -16649,47 +16643,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -17535,9 +17488,6 @@
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
       ],
-      "Dark Web Monitoring": [
-        "Karanlık ağ izleme"
-      ],
       "Dashboard": [
         "Pano"
       ],
@@ -17664,9 +17614,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
-      ],
-      "Edit invoice details": [
-        "Fatura ayrıntılarını düzenle"
       ],
       "Edit profile": [
         "Profili düzenle"

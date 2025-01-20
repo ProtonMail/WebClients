@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -451,9 +451,6 @@
       ],
       "Generate token": [
         "Sirew ajutun"
-      ],
-      "Get ${ vpnPlus }": [
-        "Awi ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Awi tansa n yimayl yettwawgelhen"
@@ -1360,9 +1357,6 @@
       "Advanced account protection": [
         "Advanced amiḍan protection"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Easily rnu neɣ kkes imiḍanen"
       ],
@@ -1433,9 +1427,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Access content ɣef streaming services including Netflix, Disney+, Prime Video, d more, seg yixef ɣer yixef."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Secure logins ɣef all your devices. Includes unlimited hide-my-email mefferisem, share, integrated 2FA, Dark Web Monitoring d more."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Secure your emails d schedule ɣef end-to-end awgelhen. Includes ${ addresses } tansa n yimayl, support ɣef udmawan email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email mefferisem d more.",
@@ -6097,9 +6088,6 @@
       ],
       "Your recovery phrase": [
         "Tafyirt-ik·im n tririt"
-      ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
       ]
     },
     "info": {
@@ -6672,6 +6660,9 @@
       "Choose a name for the generated certificate file": [
         "Fren isem i ufaylu n uselkin yettusirwen"
       ],
+      "City": [
+        "Aɣrem"
+      ],
       "Code": [
         "Tangalt"
       ],
@@ -7026,6 +7017,9 @@
       "Non-standard ports": [
         "Tiwwura ur nelli d tiqburin"
       ],
+      "Note": [
+        "Tamawt"
+      ],
       "Notification": [
         "Ilɣa"
       ],
@@ -7211,6 +7205,9 @@
       ],
       "Sticky labels": [
         "Tibzimin tiwurmanin"
+      ],
+      "Street address": [
+        "Tansa n uxxam"
       ],
       "Subscription options": [
         "Tixtiṛiyin n umulteɣ"
@@ -9600,6 +9597,14 @@
         "Imultaɣen"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -9631,14 +9636,6 @@
       ],
       "Version history": [
         "Azray n lqem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
       ]
     },
     "Subscription renewal state": {

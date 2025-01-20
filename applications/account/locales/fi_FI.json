@@ -40,7 +40,7 @@
         "Poista välitys"
       ],
       "You will stop the mail forwarding.": [
-        "Pysäytät edelleenlähetyksen."
+        "Pysäytät sähköpostien välityksen."
       ]
     },
     "Account Settings - Info": {
@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "activate": [
-        "aktivoi"
-      ],
       "Activate": [
         "Aktivoi"
+      ],
+      "activate": [
+        "aktivoi"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -337,6 +337,9 @@
       "Create link": [
         "Luo linkki"
       ],
+      "Create new policy": [
+        "Luo uusi käytäntö"
+      ],
       "Create users": [
         "Luo käyttäjiä"
       ],
@@ -475,9 +478,6 @@
       "Edit group": [
         "Muokkaa ryhmää"
       ],
-      "Edit invoice details": [
-        "Muokkaa laskun tietoja"
-      ],
       "Edit label": [
         "Muokkaa tunnistetta"
       ],
@@ -567,12 +567,6 @@
       ],
       "Generate token": [
         "Luo tunniste"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Hanki ${ MAIL_SHORT_APP_NAME } Plus hintaan ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Hanki ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Hanki uusi salattu sähköpostiosoite"
@@ -834,6 +828,9 @@
       ],
       "Refer a friend": [
         "Kerro kaverille"
+      ],
+      "Refresh data": [
+        "Päivitä tiedot"
       ],
       "Refresh status": [
         "Päivitä tila"
@@ -1747,9 +1744,6 @@
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
-      ],
       "Easily add or remove users": [
         "Lisää tai poista käyttäjiä helposti"
       ],
@@ -1835,9 +1829,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Suojaa kirjautumisesi kaikilla laitteillasi. Sisältää rajattomasti Hide-my-email-aliaksia, jakamisen, sisäänrakennetun 2FA:n, pimeän verkon valvonnan ja muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
@@ -1987,12 +1978,6 @@
     "Button": {
       "Add link to your email footer": [
         "Lisää linkki viestisi alatunnisteeseen"
-      ],
-      "Change email address settings": [
-        "Muuta sähköpostiosoitteen asetuksia"
-      ],
-      "Continue": [
-        "Jatka"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
@@ -4194,13 +4179,13 @@
         "Ohjaa viestit automaattisesti toiseen sähköpostiosoitteeseen."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Ohjauksen vastaanottaja kutsutaan ja heidän on hyväksyttävä tai kieltäydyttävä kutsusta, tai päivitettävä"
+        "Välityksen vastaanottaja kutsutaan ja heidän on hyväksyttävä tai kieltäydyttävä kutsusta, tai päivitettävä"
       ],
       "Forwarding is active": [
         "Ohjaus on käytössä"
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Ohjaus osoitteeseen, joka ei tue päästä päähän -salausta, poistaa ${ boldForwarderEmail }-osoitteesi päästä päähän -salauksen. Zero Access -salaus kuitenkin säilyy. ${ learnMoreLink }"
+        "Välitys osoitteeseen, joka ei tue päästä päähän -salausta, poistaa ${ boldForwarderEmail }-osoitteesi päästä päähän -salauksen. Zero Access -salaus kuitenkin säilyy. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "Ohjaus tähän osoitteeseen alkaa, kun vastaanottaja hyväksyy ohjauksen."
@@ -5031,6 +5016,9 @@
       ],
       "Time zone": [
         "Aikavyöhyke"
+      ],
+      "Time zone component ignored": [
+        "Aikavyöhykekomponentti ohitettu"
       ],
       "To-do entry": [
         "Tehtävämerkintä"
@@ -6281,6 +6269,9 @@
       "Malformed start time": [
         "Virheellinen aloitusaika"
       ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Ainoastaan gregoriaaninen kalenteri on sallittu"
+      ],
       "Recurring rule not supported": [
         "Toistuvaa sääntöä ei tueta"
       ],
@@ -6615,6 +6606,10 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } käyttäjällä on tällä hetkellä pääsy jaettuihin palvelimiin.",
+        "${ amountUsers }/${ totalUsers } käyttäjällä on tällä hetkellä pääsy jaettuihin palvelimiin."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -7156,7 +7151,7 @@
         "Vaihda salasanasi"
       ],
       "Check the status of imports and forwarding.": [
-        "Tarkista tuontien ja edelleenlähetyksen tila."
+        "Tarkista tuontien ja välitysten tila."
       ],
       "Choose an app to get started": [
         "Aloita valitsemalla sovellus"
@@ -8065,6 +8060,12 @@
       "of": [
         "/"
       ],
+      "Off": [
+        "Pois"
+      ],
+      "On": [
+        "Päällä"
+      ],
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
       ],
@@ -8326,9 +8327,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
-      "Registering your subscription...": [
-        "Rekisteröidään tilaustasi..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
       ],
@@ -8436,9 +8434,6 @@
       ],
       "Setting successfully saved": [
         "Asetus tallennettiin"
-      ],
-      "Setting up your new address...": [
-        "Määritetään uutta osoitettasi..."
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
@@ -9450,9 +9445,6 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Palautuslauseesi on sarja 12 satunnaisesti luotua sanaa tietyssä järjestyksessä."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
-      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tukipyyntösi on suljettu. Kiitos, että otit yhteyttä ${ BRAND_NAME } -tukeen."
       ],
@@ -9498,11 +9490,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Voit lisätä maksutavan, jolla tilauksesi uudistetaan automaattisesti. Myös muut maksutavat ovat käytettävissä."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Anna itsesi tai organisaatiosi nimi ja osoite. Nämä tiedot lisätään sekä henkilökohtaisiin että organisaation laskuihin."
       ]
     },
     "Info on errors": {
@@ -10158,6 +10145,9 @@
       "Choose a name for the generated certificate file": [
         "Valitse luodulle varmennetiedostolle nimi"
       ],
+      "City": [
+        "Kaupunki"
+      ],
       "Code": [
         "Koodi"
       ],
@@ -10172,6 +10162,9 @@
       ],
       "Colors": [
         "Värit"
+      ],
+      "Company": [
+        "Yritys"
       ],
       "Company name": [
         "Yrityksen nimi"
@@ -10587,9 +10580,6 @@
       "Name": [
         "Nimi"
       ],
-      "Name and address": [
-        "Nimi ja osoite"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (porttiohjaus)"
       ],
@@ -10622,6 +10612,9 @@
       ],
       "Non-standard ports": [
         "Epätyypilliset portit"
+      ],
+      "Note": [
+        "Muistiinpano"
       ],
       "Notification": [
         "Ilmoitus"
@@ -10863,6 +10856,9 @@
       ],
       "Sticky labels": [
         "Tarttuvat tunnisteet"
+      ],
+      "Street address": [
+        "Katuosoite"
       ],
       "Strong": [
         "Vahva"
@@ -11868,17 +11864,11 @@
       "Get started for ${ priceCoupon }": [
         "Aloita hintaan ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Päivitä tilaus"
       ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: action": {
@@ -12608,12 +12598,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }-kokeilu"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Hanki Mail Plus hintaan ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceMailPlus } kuukausihintaan. Voit perua milloin tahansa."
-      ],
       "Your account's usage": [
         "Tilisi käyttö"
       ]
@@ -13017,12 +13001,6 @@
       ],
       "An external address cannot be default": [
         "Ulkoinen osoite ei voi olla oletusosoite"
-      ],
-      "Dark Web Monitoring has been disabled": [
-        "Pimeän verkon valvonta poistettiin käytöstä"
-      ],
-      "Dark Web Monitoring has been enabled": [
-        "Pimeän verkon valvonta otettiin käyttöön"
       ],
       "Downloaded 2FA recovery codes": [
         "Lataa 2FA-palautuskoodit"
@@ -15340,7 +15318,7 @@
     },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
-        "Viimeistele siirtyminen yksityisyyteen turvallisilla tuonti- ja ohjaustyökaluillamme."
+        "Viimeistele siirtyminen yksityisyyteen turvallisilla tuonti- ja välitystyökaluillamme."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Pidä postilaatikkosi järjestyksessä kansioiden ja tunnisteiden avulla. ${ learnMoreLink }"
@@ -16303,6 +16281,47 @@
         "Hintaan ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
@@ -16417,9 +16436,6 @@
       ],
       "Comprehensive privacy and security": [
         "Kattava yksityisyys ja suojaus"
-      ],
-      "Dark web monitoring": [
-        "Pimeän verkon valvonta"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Työpöytäsovellus- ja sähköpostiohjelmatuki (IMAPin kautta)"
@@ -16594,47 +16610,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
@@ -17480,9 +17455,6 @@
       "Customize your mail import": [
         "Mukauta viestien tuontia"
       ],
-      "Dark Web Monitoring": [
-        "Pimeän verkon valvonta"
-      ],
       "Dashboard": [
         "Hallintapaneeli"
       ],
@@ -17609,9 +17581,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Muokkaa yhdyskäytävää ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Muokkaa laskun tietoja"
       ],
       "Edit profile": [
         "Muokkaa profiilia"
