@@ -12,7 +12,6 @@ import type { EncryptedLink, LinkShareUrl, useSearchView } from '../../../store'
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
@@ -81,7 +80,7 @@ export const Search = ({ shareId, searchView }: Props) => {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
-    const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     const { layout, items, sortParams, setSorting, isLoading } = searchView;
 
@@ -130,26 +129,21 @@ export const Search = ({ shareId, searchView }: Props) => {
             }
 
             if (isProtonDocument(item.mimeType)) {
-                void canUseDocs(shareId)
-                    .then((canUse) => {
-                        if (!canUse) {
-                            return;
-                        }
+                if (isDocsEnabled) {
+                    return openDocument({
+                        linkId: id,
+                        shareId,
+                        openBehavior: 'tab',
+                    });
+                }
 
-                        return openDocument({
-                            linkId: id,
-                            shareId,
-                            openBehavior: 'tab',
-                        });
-                    })
-                    .catch(sendErrorReport);
                 return;
             }
 
             document.getSelection()?.removeAllRanges();
             navigateToLink(shareId, item.linkId, item.isFile);
         },
-        [navigateToLink, shareId, browserItems]
+        [navigateToLink, shareId, browserItems, isDocsEnabled, openDocument]
     );
 
     const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
