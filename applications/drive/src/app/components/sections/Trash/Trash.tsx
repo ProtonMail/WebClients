@@ -12,7 +12,6 @@ import { useThumbnailsDownload } from '../../../store';
 import type { useTrashView } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
@@ -85,7 +84,7 @@ function Trash({ trashView, shareId }: Props) {
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
-    const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { openDocument } = useDocumentActions();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(trashView.layout, trashView.isLoading);
 
@@ -108,19 +107,13 @@ function Trash({ trashView, shareId }: Props) {
             document.getSelection()?.removeAllRanges();
 
             if (isProtonDocument(item.mimeType)) {
-                void canUseDocs(shareId)
-                    .then((canUse) => {
-                        if (!canUse) {
-                            return;
-                        }
-
-                        return openDocument({
-                            linkId: id,
-                            shareId,
-                            openBehavior: 'tab',
-                        });
-                    })
-                    .catch(sendErrorReport);
+                if (isDocsEnabled) {
+                    return openDocument({
+                        linkId: id,
+                        shareId,
+                        openBehavior: 'tab',
+                    });
+                }
                 return;
             }
 
@@ -129,7 +122,7 @@ function Trash({ trashView, shareId }: Props) {
             }
             navigateToLink(item.rootShareId, id, item.isFile);
         },
-        [navigateToLink, browserItems]
+        [navigateToLink, browserItems, isDocsEnabled, openDocument]
     );
 
     const handleItemRender = useCallback(
