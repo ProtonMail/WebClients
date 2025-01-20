@@ -169,6 +169,9 @@
       "Create": [
         "Crear"
       ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
       "Create Gateway": [
         "Crea una passarel·la"
       ],
@@ -250,6 +253,9 @@
       "Edit": [
         "Edita"
       ],
+      "Edit billing address": [
+        "Edita l'adreça de la factura"
+      ],
       "Edit billing cycle": [
         "Edita el cicle de facturació"
       ],
@@ -265,8 +271,8 @@
       "Edit group": [
         "Edita el grup"
       ],
-      "Edit invoice details": [
-        "Edita les dades de la factura"
+      "Edit invoice note": [
+        "Edita la nota de la factura"
       ],
       "Edit name": [
         "Edita el nom"
@@ -316,11 +322,11 @@
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Obteniu ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Obteniu ${ planName } per ${ priceCoupon }."
       ],
-      "Get ${ vpnPlus }": [
-        "Obtenir ${ vpnPlus }"
+      "Get ${ planOrAppName }": [
+        "Obtingueu ${ planOrAppName }"
       ],
       "Get a new encrypted email address": [
         "Obteniu una nova adreça de correu xifrada"
@@ -670,6 +676,9 @@
       "Switch or add account": [
         "Canvia o afegeix un compte"
       ],
+      "Take a tour": [
+        "Feu una visita guiada"
+      ],
       "Test": [
         "Prova"
       ],
@@ -1018,9 +1027,6 @@
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
-      "Dark Web Monitoring": [
-        "Monitoratge del web fosc"
-      ],
       "Easily add or remove users": [
         "Afegiu o elimineu usuaris fàcilment"
       ],
@@ -1107,8 +1113,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge del web fosc i més."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més.",
@@ -1246,12 +1252,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modifica les preferències de l'adreça de correu electrònic"
-      ],
-      "Continue": [
-        "Continua"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
@@ -1260,6 +1260,21 @@
       ],
       "Continue your subscription": [
         "Continueu amb la vostra subscripció"
+      ],
+      "Create label": [
+        "Creu una etiqueta"
+      ],
+      "Discover and set up features": [
+        "Descobriu i configureu les característiques"
+      ],
+      "Remind me later": [
+        "Recorda-m'ho més tard"
+      ],
+      "Set up other features": [
+        "Configureu altres característiques"
+      ],
+      "Take a tour": [
+        "Feu una visita guiada"
       ]
     },
     "Cancellation upsell": {
@@ -2462,6 +2477,11 @@
         "Suport prioritari"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "S'ha afegit ${ name }"
@@ -2664,6 +2684,12 @@
       "Please generate keys before you try to change your password": [
         "Genereu les claus abans d’intentar canviar la vostra contrasenya."
       ],
+      "Please select a country": [
+        "Seleccioneu un país"
+      ],
+      "Please select a state": [
+        "Seleccioneu un estat"
+      ],
       "Please set a recovery email first": [
         "Establiu primer un número de telèfon de recuperació."
       ],
@@ -2777,6 +2803,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "El vostre compte o organització té una factura vençuda. Pagueu totes les factures pendents."
+      ],
+      "ZIP code is required": [
+        "Es requereix el codi postal."
       ]
     },
     "error": {
@@ -3284,6 +3313,11 @@
         "Terabytes"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } actualitzat"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Adreces permeses:"
@@ -3558,6 +3592,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Encara s'està configurant ${ provisioningCounter } servidor. Això triga normalment al voltant de ${ provisioningDuration }.",
@@ -3911,6 +3948,12 @@
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Si desactiveu l'autenticació de dos factors, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Descobriu les noves característiques desbloquejades i comenceu a utilitzar-les de seguida!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Descobriu les noves característiques desbloquejades amb ${ planTitle } i comenceu a utilitzar-les de seguida!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -3987,11 +4030,17 @@
       "Emailing preference saved": [
         "Preferència de correu desada"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Els correus electrònics moguts a la paperera i el correu brossa fa més de 30 dies se suprimiran automàticament."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Activació el ${ formattedDateAndTime }"
+      ],
+      "Enabling auto-deletion…": [
+        "S'està activant la supressió automàtica…"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "El xifratge de correu electrònic d'extrem a extrem està desactivat per a aquest grup a causa d'adreces externes."
@@ -4175,6 +4224,9 @@
       ],
       "Increase your account security by verifying your email address.": [
         "Augmenteu la seguretat del vostre compte verificant la vostra adreça electrònica."
+      ],
+      "Inherited from parent folder": [
+        "Heretat d'una carpeta principal"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de país per connectar a un servidor a l'atzar al país que trieu."
@@ -4362,6 +4414,9 @@
       "Must start with a letter.": [
         "Ha de començar amb una lletra."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
+      ],
       "New user invited to organization": [
         "S'ha convidat el nou usuari a l'organització."
       ],
@@ -4417,6 +4472,9 @@
       "or assign to any country in ${ availableAgainAfterHours } hour": [
         "o assignar a qualsevol país en ${ availableAgainAfterHours } hora.",
         "o assignar a qualsevol país en ${ availableAgainAfterHours } hores."
+      ],
+      "or discover other features:": [
+        "o descobriu altres característiques:"
       ],
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
@@ -4559,8 +4617,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
-      "Registering your subscription...": [
-        "Registrant la vostra subscripció..."
+      "Registering your subscription…": [
+        "S'està registrant la vostra subscripció…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
@@ -4640,8 +4698,11 @@
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
-      "Setting up your new address...": [
-        "S'està configurant la vostra nova adreça..."
+      "Setting up ${ feature }…": [
+        "S'està configurant ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "S'està configurant la vostra nova adreça…"
       ],
       "Setting up your organization": [
         "S'està configurant la vostra organització."
@@ -5131,6 +5192,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Esteu utilitzant més emmagatzematge del que hi ha inclòs al pla ${ downgradedPlanName }. Elimineu o traieu dades per a poder degradar."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Podeu canviar-ho en qualsevol moment a ${ settingsLink }."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
       ],
@@ -5151,8 +5215,14 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Només podeu tenir una instància de xat oberta a la vegada. Tanqueu les converses anteriors abans d'iniciar-ne una de nova."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Podeu utilitzar les credencials següents per connectar-vos a un servidor ${ VPN_APP_NAME } utilitzant una aplicació VPN de codi obert de tercers, com ara Tunnelblick per a macOS o OpenVPN per a GNU/Linux."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
       ],
       "You have ${ availableCount } new server available.": [
         "Teniu ${ availableCount } nou servidor disponible.",
@@ -5276,14 +5346,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podreu afegir aquests servidors a una altra passarel·la immediatament."
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info for cash payment method": {
@@ -5308,8 +5380,8 @@
       ]
     },
     "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Introduïu un nom i una adreça pròpia o de la vostra organització. Aquestes dades s'afegiran tant a les factures personals com a les organitzatives."
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Introduïu una nota per a les factures. Aquests detalls s'afegiran tant a les factures personals com a les organitzacionals. Apareixeran només a les factures emeses en el futur."
       ]
     },
     "Info subscription": {
@@ -5531,11 +5603,20 @@
       "Choose a name for the generated certificate file": [
         "Trieu un nom per al fitxer de certificat generat"
       ],
+      "City": [
+        "Ciutat"
+      ],
       "Code": [
         "Codi"
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
+      ],
+      "Colors": [
+        "Colors"
+      ],
+      "Company": [
+        "Empresa"
       ],
       "Company name": [
         "Nom de l'empresa"
@@ -5645,6 +5726,9 @@
       "First name": [
         "Nom"
       ],
+      "Folder location": [
+        "Ubicació de la carpeta"
+      ],
       "Gateway name": [
         "Nom de la passarel·la"
       ],
@@ -5705,9 +5789,6 @@
       "Name": [
         "Nom"
       ],
-      "Name and address": [
-        "Nom i adreça"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (redirecció de ports)"
       ],
@@ -5737,6 +5818,12 @@
       ],
       "Non-standard ports": [
         "Ports no estàndard"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Notification": [
+        "Notificació"
       ],
       "OpenVPN / IKEv2 password": [
         "Contrasenya OpenVPN / IKEv2"
@@ -5865,6 +5952,12 @@
       "Start date": [
         "Data d'inici"
       ],
+      "State": [
+        "Estat"
+      ],
+      "Street address": [
+        "Adreça de carrer"
+      ],
       "Strong": [
         "Forta"
       ],
@@ -5904,6 +5997,9 @@
       "VAT": [
         "IVA"
       ],
+      "VAT identification number": [
+        "Número d’identificació de l’IVA"
+      ],
       "Verification code": [
         "Codi de verificació"
       ],
@@ -5939,6 +6035,9 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ],
+      "ZIP code": [
+        "Codi postal"
       ]
     },
     "label": {
@@ -5996,6 +6095,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Codi postal"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Edit folder": [
+        "Edita la carpeta"
+      ],
+      "Edit label": [
+        "Edita l'etiqueta"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } creada"
       ]
     },
     "Lable": {
@@ -6072,6 +6190,9 @@
       ],
       "Request an invite": [
         "Demana una invitació"
+      ],
+      "settings": [
+        "preferències"
       ],
       "Sign in": [
         "Inicia la sessió"
@@ -6158,6 +6279,9 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Configureu el vostre compte amb el vostre domini de Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6300,6 +6424,17 @@
         "Correu brossa"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Color"
+      ],
+      "Folder name": [
+        "Nom de carpeta"
+      ],
+      "Label name": [
+        "Nom de etiqueta"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Velocitat VPN màxima"
@@ -6324,8 +6459,8 @@
       "Get started for ${ priceCoupon }": [
         "Comenceu per ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Comenceu des de ${ priceMailPlus }"
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
       ],
       "Upgrade": [
         "Millora"
@@ -6333,8 +6468,8 @@
       "Upgrade now": [
         "Millora ara"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
+      "Upgrade to ${ planName }": [
+        "Milloreu a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7009,15 +7144,17 @@
         "termes i condicions"
       ]
     },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu en qualsevol moment."
+      ]
+    },
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Prova de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Obteniu Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
       ],
       "Your account's usage": [
         "Ús del vostre compte"
@@ -7453,6 +7590,52 @@
         "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
       ]
     },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "L'oferta de ${ pricingTitle } caduca avui!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Obteniu Drive Plus per només ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Obteniu Mail Plus per només ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Última oportunitat d'aconseguir un 80% de descompte al primer mes de ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Oferta per temps limitat"
+      ],
+      "Maybe later": [
+        "Potser després"
+      ],
+      "Save 80% on your first month.": [
+        "Estalvieu un 80% en el vostre primer mes."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 característiques prèmium més"
+      ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email Addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Free": [
+        "Gratuït"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Us donem la benvinguda a ${ appName }"
@@ -7479,6 +7662,9 @@
       ],
       "My reason isn't listed": [
         "La meva raó no apareix"
+      ],
+      "No parent folder": [
+        "No hi ha la carpeta pare"
       ],
       "No permission": [
         "Sense permís"
@@ -7929,11 +8115,20 @@
       "Address": [
         "Adreça"
       ],
+      "Anderson": [
+        "Pujol"
+      ],
+      "Anytown": [
+        "Castellvent"
+      ],
       "Choose a name": [
         "Seleccioneu un nom"
       ],
       "Choose display name": [
         "Trieu el nom a mostrar"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
       ],
       "Confirm": [
         "Confirma"
@@ -7968,6 +8163,9 @@
       "Group name": [
         "Nom del grup"
       ],
+      "Main street 12": [
+        "Plaça dels Estels, 12"
+      ],
       "Other": [
         "Altres"
       ],
@@ -7989,6 +8187,9 @@
       "Search for an email or IP address": [
         "Busqueu un correu electrònic o una adreça IP"
       ],
+      "Search parent folder": [
+        "Cerca la carpeta principal"
+      ],
       "Search users": [
         "Cercar usuaris"
       ],
@@ -8006,6 +8207,12 @@
       ],
       "Start date": [
         "Data d'inici"
+      ],
+      "Thomas": [
+        "Adrià"
+      ],
+      "VAT number": [
+        "Núm. IVA"
       ],
       "yourdomain.com": [
         "elteudomini.com"
@@ -8728,6 +8935,9 @@
       ],
       "Upgrade": [
         "Millora"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Milloreu per ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9404,9 +9614,6 @@
       "Comprehensive privacy and security": [
         "Privacitat i seguretat integrals"
       ],
-      "Dark web monitoring": [
-        "Monitoratge del web fosc"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
       ],
@@ -9679,6 +9886,9 @@
       ],
       "Backup password updated": [
         "S'ha actualitzat la contrasenya de recuperació."
+      ],
+      "Billing details updated": [
+        "S'han actualitzat els detalls de facturació."
       ],
       "Catch-all address updated": [
         "S'ha actualitzat l'adreça d'arreplega"
@@ -9967,6 +10177,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "${ feature } is now active": [
+        "La característica ${ feature } està ara activa."
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clients ${ VPN_APP_NAME }"
       ],
@@ -10081,6 +10294,9 @@
       ],
       "Authentication security": [
         "Seguretat de l'autenticació"
+      ],
+      "Auto-deletion is active": [
+        "La supressió automàtica està activada."
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -10258,6 +10474,9 @@
       "Downloads": [
         "Descàrregues"
       ],
+      "Edit billing address": [
+        "Edita l'adreça de la factura"
+      ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
       ],
@@ -10273,8 +10492,8 @@
       "Edit Gateway ${ currentName }": [
         "Edita la passarel·la ${ currentName }"
       ],
-      "Edit invoice details": [
-        "Edita les dades de la factura"
+      "Edit invoice note": [
+        "Edita la nota de la factura"
       ],
       "Edit servers": [
         "Edita els servidors"
@@ -10640,6 +10859,9 @@
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Ara podeu crear carpetes i etiquetes il·limitades."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"

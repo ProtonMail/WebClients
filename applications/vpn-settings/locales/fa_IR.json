@@ -95,6 +95,9 @@
       "Create": [
         "ایجاد"
       ],
+      "Create folder": [
+        "ایجاد پوشه"
+      ],
       "Current plan": [
         "طرح فعلی"
       ],
@@ -187,9 +190,6 @@
       ],
       "Forgot password?": [
         "فراموشی گذرواژه?"
-      ],
-      "Get ${ vpnPlus }": [
-        "دریافت ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
@@ -2046,6 +2046,11 @@
         "ترابایت"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } بروز شد"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "اجازه بده:"
@@ -2457,6 +2462,9 @@
       "inactive": [
         "غیرفعال"
       ],
+      "Inherited from parent folder": [
+        "عاریت از پوشه اصلی"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "یک فایل پیکربندی کشور نصب کنید تا به یک سرور تصادفی در کشور مورد نظر خود متصل شوید."
       ],
@@ -2513,6 +2521,9 @@
       ],
       "Multi-user support not enabled.": [
         "پشتیبانی چند کاربره فعال نیست."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "پوشه جدید خود را نام‌گذاری کرده و پوشه اصلی که می‌خواهید پوشه جدید در آن قرار بگیرد را انتخاب کنید. اگر پوشه اصلی را انتخاب نکنید، این پوشه جدید به عنوان یک پوشه سطح بالا ایجاد می‌شود."
       ],
       "No addresses exist": [
         "نشانی‌ای وجود ندارد"
@@ -2805,6 +2816,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "شما فقط میتوانید یک گفت و گو باز داشته باشید. لطفا قبل شروع گفت و گو جدید، قبلی را ببندید."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "شما می‌توانید برای دریافت هشدار هنگام ورود پیام‌های رایانامه جدید به این پوشه، اعلان‌ها را فعال کنید."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "میتوانید با استفاده از اطلاعات ذیل به یک سرور ${ VPN_APP_NAME } با استفاده از برنامه های VPN متن باز دیگر مانند Tunnelblick برای macOS یا OpenVPN برای لینوکس/GNU متصل شوید."
       ],
@@ -2849,9 +2863,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "از شماره تلفن شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
-      ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "اشتراک شما توسط موزیلا مدیریت می‌شود. لطفا با پشتیبانی موزیلا تماس بگیرید."
       ]
     },
     "Info for cash payment method": {
@@ -3022,6 +3033,9 @@
       "Choose a name for the generated certificate file": [
         "انتخاب نام برای فایل گواهی تولید شده"
       ],
+      "City": [
+        "شهر"
+      ],
       "Code": [
         "کد"
       ],
@@ -3109,6 +3123,9 @@
       "Expires": [
         "تاریخ انقضا"
       ],
+      "Folder location": [
+        "مکان پوشه"
+      ],
       "Gift code": [
         "کد هدیه"
       ],
@@ -3165,6 +3182,12 @@
       ],
       "Non-standard ports": [
         "درگاه‌های غیر استاندارد"
+      ],
+      "Note": [
+        "توجه"
+      ],
+      "Notification": [
+        "اعلان‌"
       ],
       "OpenVPN / IKEv2 password": [
         "گذرواژه OpenVPN / IKEv2"
@@ -3240,6 +3263,9 @@
       ],
       "Start date": [
         "تاریخ شروع"
+      ],
+      "Street address": [
+        "نشانی خیابان"
       ],
       "Strong": [
         "قوی"
@@ -3340,6 +3366,25 @@
     "Label, credit card": {
       "ZIP code": [
         "کد پستی"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "ایجاد پوشه"
+      ],
+      "Create label": [
+        "ایجاد برچسب"
+      ],
+      "Edit folder": [
+        "ويرايش پوشه"
+      ],
+      "Edit label": [
+        "ویرایش برچسب"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } ایجاد شد"
       ]
     },
     "Link": {
@@ -3493,6 +3538,17 @@
       ],
       "Spam": [
         "هرزنامه"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "رنگ"
+      ],
+      "Folder name": [
+        "نام پوشه"
+      ],
+      "Label name": [
+        "نام برچسب"
       ]
     },
     "new_plans": {
@@ -4018,6 +4074,9 @@
       ],
       "My reason isn't listed": [
         "دلیل من فهرست نشده است"
+      ],
+      "No parent folder": [
+        "پوشه اصلی‌ای وجود ندارد"
       ],
       "Router": [
         "روتر"

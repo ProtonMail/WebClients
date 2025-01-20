@@ -169,6 +169,9 @@
       "Create": [
         "Créer"
       ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
       "Create Gateway": [
         "Créer une Passerelle"
       ],
@@ -250,6 +253,9 @@
       "Edit": [
         "Modifier"
       ],
+      "Edit billing address": [
+        "Modifier l'adresse de la facture"
+      ],
       "Edit billing cycle": [
         "Modifier le cycle de facturation"
       ],
@@ -265,8 +271,8 @@
       "Edit group": [
         "Modifier le groupe"
       ],
-      "Edit invoice details": [
-        "Modifier les informations de la facture"
+      "Edit invoice note": [
+        "Modifier la note de la facture"
       ],
       "Edit name": [
         "Modifier le nom"
@@ -316,11 +322,11 @@
       "Forgot recovery method?": [
         "Méthode de récupération oubliée ?"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Profitez de ${ MAIL_SHORT_APP_NAME } Plus pour ${ priceCoupon }"
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
-      "Get ${ vpnPlus }": [
-        "Obtenir ${ vpnPlus }"
+      "Get ${ planOrAppName }": [
+        "Je choisis ${ planOrAppName }"
       ],
       "Get a new encrypted email address": [
         "Obtenir une nouvelle adresse e-mail chiffrée"
@@ -669,6 +675,9 @@
       ],
       "Switch or add account": [
         "Basculer vers ou ajouter un compte"
+      ],
+      "Take a tour": [
+        "Laissez-vous guider"
       ],
       "Test": [
         "Test"
@@ -1023,9 +1032,6 @@
       "Advanced account protection": [
         "Protection avancée des comptes"
       ],
-      "Dark Web Monitoring": [
-        "Surveillance du dark web"
-      ],
       "Easily add or remove users": [
         "Ajoutez ou retirez facilement des utilisateurs"
       ],
@@ -1112,8 +1118,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration d'A2F, la surveillance du dark web et plus encore."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
@@ -1251,12 +1257,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modifier les paramètres de l'adresse e-mail"
-      ],
-      "Continue": [
-        "Continuer"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ],
@@ -1265,6 +1265,21 @@
       ],
       "Continue your subscription": [
         "Poursuivre votre abonnement"
+      ],
+      "Create label": [
+        "Créez un label"
+      ],
+      "Discover and set up features": [
+        "Découvrez et configurez les fonctionnalités"
+      ],
+      "Remind me later": [
+        "Me le rappeler plus tard"
+      ],
+      "Set up other features": [
+        "Configurez d'autres fonctionnalités"
+      ],
+      "Take a tour": [
+        "Laissez-vous guider"
       ]
     },
     "Cancellation upsell": {
@@ -2467,6 +2482,11 @@
         "Assistance prioritaire"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Les champs de texte sont facultatifs. Les informations fournies dans ce formulaire apparaîtront uniquement sur les factures émises à l’avenir et n’affecteront pas les factures existantes."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } a été ajouté."
@@ -2669,6 +2689,12 @@
       "Please generate keys before you try to change your password": [
         "Générez des clés avant d'essayer de changer votre mot de passe."
       ],
+      "Please select a country": [
+        "Sélectionnez un pays"
+      ],
+      "Please select a state": [
+        "Selectionnez un état"
+      ],
       "Please set a recovery email first": [
         "Définissez d'abord une adresse e-mail de récupération."
       ],
@@ -2782,6 +2808,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
+      ],
+      "ZIP code is required": [
+        "Le code postal est nécessaire."
       ]
     },
     "error": {
@@ -3289,6 +3318,11 @@
         "Téraoctets"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } a été mis à jour."
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Adresses autorisées :"
@@ -3516,8 +3550,8 @@
     },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } utilisateur a actuellement accès aux serveurs partagés.",
-        "${ amountUsers }/${ totalUsers } utilisateurs ont actuellement accès aux serveurs partagés."
+        "${ amountUsers }/${ totalUsers } utilisateur(s) a (ont) actuellement accès aux serveurs partagés.",
+        "${ amountUsers }/${ totalUsers } utilisateur(s) a (ont) actuellement accès aux serveurs partagés."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -3563,6 +3597,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée des activités suspectes."
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement ${ provisioningDuration }.",
@@ -3916,6 +3953,12 @@
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "La désactivation de l'authentification à deux facteurs rendra votre compte moins sécurisé. Ne procédez que si c'est absolument nécessaire."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Découvrez les nouvelles fonctionnalités auxquelles vous avez accès et utilisez-les dès maintenant !"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Découvrez les nouvelles fonctionnalités incluses dans ${ planTitle } et utilisez-les dès maintenant !"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -3992,11 +4035,17 @@
       "Emailing preference saved": [
         "Votre sélection est enregistrée."
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Les e-mails déplacés vers le dossier Corbeille ou Indésirables/spam de plus de 30 jours seront supprimés automatiquement."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Activez l'authentification unique afin d'assurer la sécurité de votre organisation."
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Activation le ${ formattedDateAndTime }"
+      ],
+      "Enabling auto-deletion…": [
+        "Activation de la suppression automatique…"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Le chiffrement de bout en bout des e-mails est désactivé pour ce groupe en raison d'adresses externes."
@@ -4180,6 +4229,9 @@
       ],
       "Increase your account security by verifying your email address.": [
         "Renforcez la sécurité de votre compte en vérifiant votre adresse e-mail."
+      ],
+      "Inherited from parent folder": [
+        "Similaire au dossier principal"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installez un fichier de configuration de pays pour vous connecter à un serveur aléatoire dans le pays de votre choix."
@@ -4367,6 +4419,9 @@
       "Must start with a letter.": [
         "Le premier caractère doit être une lettre."
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
+      ],
       "New user invited to organization": [
         "Le nouvel utilisateur a été invité à rejoindre l'organisation."
       ],
@@ -4422,6 +4477,9 @@
       "or assign to any country in ${ availableAgainAfterHours } hour": [
         "ou les assigner à un pays dans ${ availableAgainAfterHours } heure.",
         "ou les assigner à un pays dans ${ availableAgainAfterHours } heures."
+      ],
+      "or discover other features:": [
+        "ou découvrez de nouvelles fonctionnalités :"
       ],
       "Or select a particular server:": [
         "Ou sélectionnez un serveur spécifique :"
@@ -4564,7 +4622,7 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
-      "Registering your subscription...": [
+      "Registering your subscription…": [
         "Enregistrement de votre abonnement…"
       ],
       "Remember to share the user's sign in details with them.": [
@@ -4645,8 +4703,11 @@
       "Session timed out": [
         "La session a expiré."
       ],
-      "Setting up your new address...": [
-        "Configuration de votre nouvelle adresse..."
+      "Setting up ${ feature }…": [
+        "Configuration de ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Configuration de votre nouvelle adresse…"
       ],
       "Setting up your organization": [
         "Configuration de votre organisation"
@@ -5136,6 +5197,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Vous utilisez plus d'espace de stockage que ce qui est prévu dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à supprimer ou à retirer des données pour pouvoir passer à un abonnement inférieur."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Vous pouvez modifier cela à tout moment dans ${ settingsLink }."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
       ],
@@ -5156,8 +5220,14 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Vous ne pouvez avoir qu'une seule session de chat ouverte à la fois. Nous vous invitons à fermer les conversations précédentes avant d'en entamer une nouvelle."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application VPN open source tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
       "You have ${ availableCount } new server available.": [
         "Vous avez ${ availableCount } nouveau serveur disponible.",
@@ -5281,14 +5351,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Vous pourrez ajouter immédiatement ces serveurs à une autre passerelle."
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info for cash payment method": {
@@ -5313,8 +5385,8 @@
       ]
     },
     "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Saisissez un nom et une adresse pour vous ou votre organisation. Ces informations seront ajoutées aux factures personnelles et à celles de l'organisation."
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Saisissez une note pour les factures. Ces informations seront ajoutées à vos factures et à celle de l'organisation. Elles apparaîtront uniquement sur les factures émises à l’avenir."
       ]
     },
     "Info subscription": {
@@ -5536,11 +5608,20 @@
       "Choose a name for the generated certificate file": [
         "Choisissez un nom pour le fichier de certificat à générer."
       ],
+      "City": [
+        "Ville"
+      ],
       "Code": [
         "Code"
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
+      ],
+      "Colors": [
+        "Couleurs"
+      ],
+      "Company": [
+        "Entreprise"
       ],
       "Company name": [
         "Nom de l'entreprise"
@@ -5650,6 +5731,9 @@
       "First name": [
         "Prénom"
       ],
+      "Folder location": [
+        "Emplacement du dossier"
+      ],
       "Gateway name": [
         "Nom de la Passerelle"
       ],
@@ -5710,9 +5794,6 @@
       "Name": [
         "Nom"
       ],
-      "Name and address": [
-        "Nom et adresse"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (transfert de port)"
       ],
@@ -5742,6 +5823,12 @@
       ],
       "Non-standard ports": [
         "Ports non standards"
+      ],
+      "Note": [
+        "Note"
+      ],
+      "Notification": [
+        "Notification"
       ],
       "OpenVPN / IKEv2 password": [
         "Mot de passe OpenVPN/IKEv2"
@@ -5870,6 +5957,12 @@
       "Start date": [
         "Date de début"
       ],
+      "State": [
+        "État"
+      ],
+      "Street address": [
+        "Adresse postale"
+      ],
       "Strong": [
         "Fort"
       ],
@@ -5909,6 +6002,9 @@
       "VAT": [
         "TVA"
       ],
+      "VAT identification number": [
+        "Numéro d'identification à la TVA"
+      ],
       "Verification code": [
         "Code de vérification"
       ],
@@ -5944,6 +6040,9 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ],
+      "ZIP code": [
+        "Code postal"
       ]
     },
     "label": {
@@ -6001,6 +6100,25 @@
     "Label, credit card": {
       "ZIP code": [
         "Code postal"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Créer un dossier"
+      ],
+      "Create label": [
+        "Créer un label"
+      ],
+      "Edit folder": [
+        "Modifier le dossier"
+      ],
+      "Edit label": [
+        "Modifier le label"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } a été créé."
       ]
     },
     "Lable": {
@@ -6077,6 +6195,9 @@
       ],
       "Request an invite": [
         "Demander une invitation"
+      ],
+      "settings": [
+        "paramètres"
       ],
       "Sign in": [
         "Se connecter"
@@ -6163,6 +6284,9 @@
       ],
       "for ${ price }": [
         "pour ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Configurez votre compte avec votre domaine Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6305,6 +6429,17 @@
         "Indésirables/spam"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Couleur"
+      ],
+      "Folder name": [
+        "Nom du dossier"
+      ],
+      "Label name": [
+        "Nom du label"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Vitesse VPN maximale"
@@ -6329,8 +6464,8 @@
       "Get started for ${ priceCoupon }": [
         "Commencez pour ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "À partir de ${ priceMailPlus }"
+      "Starting from ${ pricing }": [
+        "À partir de ${ pricing }"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -6338,8 +6473,8 @@
       "Upgrade now": [
         "Changer d'abonnement"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
+      "Upgrade to ${ planName }": [
+        "Passer à ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7014,15 +7149,17 @@
         "conditions générales d'utilisation"
       ]
     },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Accédez à tous les produits et toutes les fonctions premium de ${ BRAND_NAME } pour seulement ${ priceMailPlus } avec possibilité de résiliation à tout moment."
+      ]
+    },
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Essai de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Profitez de Mail Plus pour ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Le prix réduit de ${ priceCoupon } est valable le premier mois. Ensuite, il sera automatiquement renouvelé à ${ priceMailPlus }. Vous pouvez annuler à tout moment."
       ],
       "Your account's usage": [
         "Utilisation de votre compte"
@@ -7458,6 +7595,52 @@
         "Certaines images n'ont pas été importées car la sélection en cours contient des noms de fichier dupliqués."
       ]
     },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "L'offre ${ pricingTitle } expire aujourd'hui !"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Profitez de Drive Plus pour seulement ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Profitez de Mail Plus pour seulement ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Je profite de l'offre"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Dernière chance pour profiter de 80 % de réduction sur le premier mois pour ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Offre à durée limitée"
+      ],
+      "Maybe later": [
+        "Peut-être plus tard"
+      ],
+      "Save 80% on your first month.": [
+        "Économisez 80 % sur votre premier mois"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 fonctionnalités premium en plus"
+      ],
+      "Custom email domain": [
+        "Domaine de messagerie personnalisé"
+      ],
+      "Email Addresses": [
+        "Adresses e-mail"
+      ],
+      "Free": [
+        "Gratuit"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Espace de stockage"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bienvenue dans ${ appName }"
@@ -7484,6 +7667,9 @@
       ],
       "My reason isn't listed": [
         "Ma raison n'est pas proposée ici."
+      ],
+      "No parent folder": [
+        "Aucun dossier parent"
       ],
       "No permission": [
         "Aucune autorisation"
@@ -7934,11 +8120,20 @@
       "Address": [
         "Adresse"
       ],
+      "Anderson": [
+        "Durant"
+      ],
+      "Anytown": [
+        "Boisclair"
+      ],
       "Choose a name": [
         "Choisissez un nom."
       ],
       "Choose display name": [
         "Choisissez un nom d'affichage."
+      ],
+      "Company name": [
+        "Nom de l'entreprise"
       ],
       "Confirm": [
         "Confirmer"
@@ -7973,6 +8168,9 @@
       "Group name": [
         "Nom du groupe"
       ],
+      "Main street 12": [
+        "12, boulevard de la liberté"
+      ],
       "Other": [
         "Autre"
       ],
@@ -7994,6 +8192,9 @@
       "Search for an email or IP address": [
         "Rechercher un e-mail ou une adresse IP"
       ],
+      "Search parent folder": [
+        "Rechercher le dossier principal"
+      ],
       "Search users": [
         "Recherchez des utilisateurs."
       ],
@@ -8011,6 +8212,12 @@
       ],
       "Start date": [
         "Date de début"
+      ],
+      "Thomas": [
+        "Camille"
+      ],
+      "VAT number": [
+        "Numéro de TVA"
       ],
       "yourdomain.com": [
         "votredomaine.fr"
@@ -8733,6 +8940,9 @@
       ],
       "Upgrade": [
         "Passez à Premium"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Passez à un abonnement supérieur pour ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -9409,9 +9619,6 @@
       "Comprehensive privacy and security": [
         "Protection de la vie privée et sécurité"
       ],
-      "Dark web monitoring": [
-        "Surveillance du dark web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Prise en charge de clients de messagerie et applications de bureau (par IMAP)"
       ],
@@ -9684,6 +9891,9 @@
       ],
       "Backup password updated": [
         "Le mot de passe de secours a été mis à jour."
+      ],
+      "Billing details updated": [
+        "Les informations de facturation ont été mises à jour."
       ],
       "Catch-all address updated": [
         "L'adresse catch-all a été mise à jour."
@@ -9972,6 +10182,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
+      "${ feature } is now active": [
+        "La fonction ${ feature } est maintenant active."
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clients ${ VPN_APP_NAME }"
       ],
@@ -10086,6 +10299,9 @@
       ],
       "Authentication security": [
         "Sécurité de l'authentification"
+      ],
+      "Auto-deletion is active": [
+        "La suppression automatique est active."
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -10263,6 +10479,9 @@
       "Downloads": [
         "Téléchargements"
       ],
+      "Edit billing address": [
+        "Modifier l'adresse de la facture"
+      ],
       "Edit credit/debit card": [
         "Modifier la carte de paiement"
       ],
@@ -10278,8 +10497,8 @@
       "Edit Gateway ${ currentName }": [
         "Modifier la Passerelle ${ currentName }"
       ],
-      "Edit invoice details": [
-        "Modifier les informations de la facture"
+      "Edit invoice note": [
+        "Modifier la note de la facture"
       ],
       "Edit servers": [
         "Modifier les serveurs"
@@ -10645,6 +10864,9 @@
       ],
       "WireGuard configuration": [
         "Configuration WireGuard"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."

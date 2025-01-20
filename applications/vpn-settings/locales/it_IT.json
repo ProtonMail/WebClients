@@ -169,6 +169,9 @@
       "Create": [
         "Crea"
       ],
+      "Create folder": [
+        "Crea cartella"
+      ],
       "Create Gateway": [
         "Crea Gateway"
       ],
@@ -265,9 +268,6 @@
       "Edit group": [
         "Modifica il gruppo"
       ],
-      "Edit invoice details": [
-        "Modifica i dettagli delle fatture"
-      ],
       "Edit name": [
         "Modifica nome"
       ],
@@ -315,12 +315,6 @@
       ],
       "Forgot recovery method?": [
         "Hai dimenticato il metodo di recupero?"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Ottieni ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
-      ],
-      "Get ${ vpnPlus }": [
-        "Ottieni ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
         "Ottieni un nuovo indirizzo email crittografato"
@@ -1023,9 +1017,6 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
-      "Dark Web Monitoring": [
-        "Monitoraggio del dark web"
-      ],
       "Easily add or remove users": [
         "Aggiungi o rimuovi utenti facilmente"
       ],
@@ -1111,9 +1102,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, monitoraggio del dark web e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
@@ -1251,12 +1239,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modifica le impostazioni dell'indirizzo email"
-      ],
-      "Continue": [
-        "Continua"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
       ],
@@ -3289,6 +3271,11 @@
         "Terabyte"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } aggiornato"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "Consenti:"
@@ -4181,6 +4168,9 @@
       "Increase your account security by verifying your email address.": [
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
       ],
+      "Inherited from parent folder": [
+        "Preso dalla cartella principale"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installa un file di configurazione di un paese per connetterti a un server casuale nel paese di tua scelta."
       ],
@@ -4366,6 +4356,9 @@
       ],
       "Must start with a letter.": [
         "Deve iniziare con una lettera."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
       "New user invited to organization": [
         "Nuovo utente invitato all'organizzazione"
@@ -4567,9 +4560,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
-      "Registering your subscription...": [
-        "Registrazione dell'abbonamento..."
-      ],
       "Remember to share the user's sign in details with them.": [
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."
       ],
@@ -4647,9 +4637,6 @@
       ],
       "Session timed out": [
         "Sessione scaduta"
-      ],
-      "Setting up your new address...": [
-        "Configurazione del tuo nuovo indirizzo..."
       ],
       "Setting up your organization": [
         "Configurazione della tua organizzazione in corso..."
@@ -5159,6 +5146,9 @@
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Puoi avere solamente una chat aperta alla volta. Chiudi le conversazioni precedenti prima di avviarne una nuova."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puoi usare le seguenti credenziali per connetterti a un server ${ VPN_APP_NAME } usando un'app VPN open source di terze parti, come Tunnelblick per macOS o OpenVPN per GNU/Linux."
       ],
@@ -5284,14 +5274,16 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
       ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
-      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Potrai aggiungere immediatamente questi server a un altro Gateway."
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info for cash payment method": {
@@ -5313,11 +5305,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Puoi aggiungere un metodo di pagamento per rinnovare automaticamente il tuo abbonamento. Sono disponibili anche altri metodi di pagamento."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Inserisci un nome e un indirizzo per te o per la tua organizzazione. Questi dati verranno aggiunti sia alle fatture personali sia a quelle dell'organizzazione."
       ]
     },
     "Info subscription": {
@@ -5539,11 +5526,20 @@
       "Choose a name for the generated certificate file": [
         "Scegli un nome per il file"
       ],
+      "City": [
+        "Città"
+      ],
       "Code": [
         "Codice"
       ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
+      ],
+      "Colors": [
+        "Colori"
+      ],
+      "Company": [
+        "Azienda"
       ],
       "Company name": [
         "Nome dell'azienda"
@@ -5653,6 +5649,9 @@
       "First name": [
         "Nome"
       ],
+      "Folder location": [
+        "Percorso cartella"
+      ],
       "Gateway name": [
         "Nome del gateway"
       ],
@@ -5713,9 +5712,6 @@
       "Name": [
         "Nome"
       ],
-      "Name and address": [
-        "Nome e indirizzo"
-      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port forwarding)"
       ],
@@ -5745,6 +5741,12 @@
       ],
       "Non-standard ports": [
         "Porte non standard"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Notification": [
+        "Notifica"
       ],
       "OpenVPN / IKEv2 password": [
         "Password OpenVPN / IKEv2"
@@ -5872,6 +5874,9 @@
       ],
       "Start date": [
         "Data di inizio"
+      ],
+      "Street address": [
+        "Indirizzo"
       ],
       "Strong": [
         "Sicura"
@@ -6007,6 +6012,25 @@
     "Label, credit card": {
       "ZIP code": [
         "CAP"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Crea cartella"
+      ],
+      "Create label": [
+        "Crea etichetta"
+      ],
+      "Edit folder": [
+        "Modifica cartella"
+      ],
+      "Edit label": [
+        "Modifica etichetta"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } creato"
       ]
     },
     "Lable": {
@@ -6169,6 +6193,9 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Configura il tuo account con il tuo dominio Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6311,6 +6338,17 @@
         "Spam"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Colore"
+      ],
+      "Folder name": [
+        "Nome cartella"
+      ],
+      "Label name": [
+        "Nome etichetta"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Massima velocità della VPN"
@@ -6335,17 +6373,11 @@
       "Get started for ${ priceCoupon }": [
         "Inizia per ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "A partire da ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Effettua l'upgrade"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7015,12 +7047,6 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } Prova"
       ],
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Ottieni Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ],
@@ -7496,6 +7522,9 @@
       ],
       "My reason isn't listed": [
         "Il motivo non è elencato"
+      ],
+      "No parent folder": [
+        "Nessuna cartella principale"
       ],
       "No permission": [
         "Nessuna autorizzazione"
@@ -8014,6 +8043,9 @@
       ],
       "Search for an email or IP address": [
         "Cerca per email o indirizzo IP"
+      ],
+      "Search parent folder": [
+        "Cerca nella cartella principale"
       ],
       "Search users": [
         "Ricerca utenti"
@@ -9430,9 +9462,6 @@
       "Comprehensive privacy and security": [
         "Privacy e sicurezza complete"
       ],
-      "Dark web monitoring": [
-        "Monitoraggio del dark web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "App desktop e supporto per client email (tramite IMAP)"
       ],
@@ -10298,9 +10327,6 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Modifica Gateway ${ currentName }"
-      ],
-      "Edit invoice details": [
-        "Modifica i dettagli delle fatture"
       ],
       "Edit servers": [
         "Modifica server"
