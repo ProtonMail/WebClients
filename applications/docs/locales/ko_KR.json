@@ -195,6 +195,9 @@
       "Create and copy alias": [
         "별칭 생성 및 복사"
       ],
+      "Create folder": [
+        "폴더 생성"
+      ],
       "Current plan": [
         "현재 플랜"
       ],
@@ -290,9 +293,6 @@
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 ${ MAIL_SHORT_APP_NAME } 받기"
       ],
       "Get in touch": [
         "연락하기"
@@ -395,6 +395,9 @@
       ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
+      ],
+      "More options": [
+        "더 많은 옵션"
       ],
       "Move to trash": [
         "휴지통으로 이동"
@@ -629,9 +632,6 @@
       ],
       "Try another method": [
         "다른 방법 시도"
-      ],
-      "Understood": [
-        "이해했습니다"
       ],
       "Undo": [
         "되돌리기"
@@ -879,9 +879,6 @@
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
-      "Dark Web Monitoring": [
-        "다크 웹 모니터링"
-      ],
       "Easily add or remove users": [
         "쉬운 사용자 추가 및 제거"
       ],
@@ -967,9 +964,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "무제한 hide-my-email 별칭, 공유, 통합된 2단계 인증기, 다크 웹 모니터링 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
@@ -1096,12 +1090,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "이메일 주소 설정 변경"
-      ],
-      "Continue": [
-        "계속"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
@@ -3979,9 +3967,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "${ DOCS_APP_NAME } 파일을 ${ DRIVE_APP_NAME }에서 다운로드 하는 것을 아직 지원하지 않습니다. 이것들은 다운로드에 포함되지 않을 것입니다."
-      ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
       ],
@@ -4351,9 +4336,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "매인 매뉴에서 현재 변경 사항에 대한 복사본을 내보낸 뒤 페이지를 새로고침 해주세요."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "해당 파일을 다운로드하길 희망하신다면 ${ DOCS_APP_NAME } 애플리케이션에서 대신 직접 내보내 주세요."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "이 그룹에 할당된 주소는 삭제되지 않는다는 점에 유의하세요."
       ],
@@ -4417,9 +4399,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
-      "Registering your subscription...": [
-        "구독 등록 중"
-      ],
       "Restored version to": [
         "다음 버전으로 복구됨:"
       ],
@@ -4455,9 +4434,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
-      ],
-      "Setting up your new address...": [
-        "새 주소 준비 중"
       ],
       "Settings update failed": [
         "설정 업데이트 실패"
@@ -4518,12 +4494,6 @@
       ],
       "The Beginning": [
         "시작"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "디지털 서명이 부분적으로 검증되었습니다. 파일이 특정할 수 없는 사용자에 의해 공개 페이지로 업로드되었습니다."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "디지털 서명이 부분적으로 검증되었습니다. 폴더가 특정할 수 없는 사용자에 의해 공개 페이지로 업로드되었습니다."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
@@ -5830,14 +5800,11 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon }에 시작하기"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
+      "Upgrade": [
+        "업그레이드"
       ],
       "Upgrade now": [
         "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: action": {
@@ -6417,14 +6384,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "${ priceCoupon }에 Mail Plus 얻기"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
       ]
     },
     "new_plans: title": {
@@ -8383,9 +8342,6 @@
       "Customize your mail import": [
         "사용자 메일 가져오기"
       ],
-      "Dark Web Monitoring": [
-        "다크 웹 모니터링"
-      ],
       "Data recovery": [
         "데이터 복구"
       ],
@@ -8724,9 +8680,6 @@
       ],
       "Your document cannot be loaded": [
         "문서를 불러오는데 실패했습니다."
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "다운로드에 ${ DOCS_APP_NAME } 파일이 있습니다"
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"

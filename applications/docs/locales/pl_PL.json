@@ -195,6 +195,9 @@
       "Create and copy alias": [
         "Utwórz i skopiuj alias"
       ],
+      "Create folder": [
+        "Utwórz folder"
+      ],
       "Current plan": [
         "Obecny plan"
       ],
@@ -297,9 +300,6 @@
       "Forward as attachment": [
         "Przekaż jako załącznik"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Wybierz plan ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -401,6 +401,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
+      ],
+      "More options": [
+        "Więcej opcji"
       ],
       "Move to trash": [
         "Przenieś do Kosza"
@@ -635,9 +638,6 @@
       ],
       "Try another method": [
         "Użyj innej metody"
-      ],
-      "Understood": [
-        "Rozumiem"
       ],
       "Undo": [
         "Cofnij"
@@ -894,9 +894,6 @@
       "Advanced account protection": [
         "Zaawansowana ochrona konta"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Easily add or remove users": [
         "Łatwo dodawaj lub usuwaj użytkowników"
       ],
@@ -982,9 +979,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów hide-my-email, udostępnianie, zintegrowaną aplikację uwierzytelniającą 2FA, Monitoring dark web i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje ${ addresses } adres e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej.",
@@ -1117,12 +1111,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Zmień ustawienia adresu e-mail"
-      ],
-      "Continue": [
-        "Kontynuuj"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ],
@@ -4120,9 +4108,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Pobieranie plików ${ DOCS_APP_NAME } z aplikacji ${ DRIVE_APP_NAME } nie jest obsługiwane — te pliki nie zostaną uwzględnione w pobieraniu."
-      ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
       ],
@@ -4498,9 +4483,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Wyeksportuj kopię obecnych zmian z menu głównego i odśwież stronę."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Jeśli chcesz pobrać plik, wyeksportuj bezpośrednio z aplikacji ${ DOCS_APP_NAME }."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tych grup NIE zostaną usunięte."
       ],
@@ -4570,9 +4552,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
-      "Registering your subscription...": [
-        "Rejestrowanie subskrypcji..."
-      ],
       "Restored version to": [
         "Przywrócono wersję do"
       ],
@@ -4608,9 +4587,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
-      ],
-      "Setting up your new address...": [
-        "Konfiguracja nowego adresu..."
       ],
       "Settings update failed": [
         "Aktualizacja ustawień nie powiodła się"
@@ -4671,12 +4647,6 @@
       ],
       "The Beginning": [
         "Początek"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Podpis cyfrowy został częściowo zweryfikowany. Folder został przesłany ze strony publicznej, która nie określa pochodzenia konkretnego użytkownika."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
@@ -6049,14 +6019,11 @@
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
+      "Upgrade": [
+        "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6708,14 +6675,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Wybierz plan Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Obniżona cena ${ priceCoupon } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ priceMailPlus }. Możesz anulować w dowolnym momencie."
       ]
     },
     "new_plans: title": {
@@ -8842,9 +8801,6 @@
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Data recovery": [
         "Odzyskiwanie danych"
       ],
@@ -9192,9 +9148,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokument nie może zostać załadowany"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Zawiera plik ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"

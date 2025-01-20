@@ -198,6 +198,9 @@
       "Create and copy alias": [
         "Vytvořit a kopírovat alias"
       ],
+      "Create folder": [
+        "Vytvořit složku"
+      ],
       "Current plan": [
         "Aktuální tarif"
       ],
@@ -300,9 +303,6 @@
       "Forward as attachment": [
         "Přeposlat jako přílohu"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Získejte ${ MAIL_SHORT_APP_NAME } Plus za ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Kontaktujte nás"
       ],
@@ -404,6 +404,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
+      ],
+      "More options": [
+        "Více možností"
       ],
       "Move to trash": [
         "Přesunout do koše"
@@ -638,9 +641,6 @@
       ],
       "Try another method": [
         "Zkuste jinou metodu"
-      ],
-      "Understood": [
-        "Rozumím"
       ],
       "Undo": [
         "Zpět"
@@ -903,9 +903,6 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "Dark Web Monitoring": [
-        "Sledování Dark webu"
-      ],
       "Easily add or remove users": [
         "Snadné přidávání a odebírání uživatelů"
       ],
@@ -991,9 +988,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování Dark webu a další funkce."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
@@ -1126,12 +1120,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Změna nastavení e-mailové adresy"
-      ],
-      "Continue": [
-        "Pokračovat"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
       ],
@@ -4153,9 +4141,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
       ],
-      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Stahování souborů ${ DOCS_APP_NAME } z ${ DRIVE_APP_NAME } není momentálně podporováno — tyto soubory nebudou zahrnuty do vašeho stahování."
-      ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
       ],
@@ -4531,9 +4516,6 @@
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Vyexportujte prosím kopii vašich aktuálních změn z hlavní nabídky a znovu načtěte stránku."
       ],
-      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
-        "Pokud je chcete stáhnout, exportujte je prosím přímo z aplikace ${ DOCS_APP_NAME }."
-      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU smazány."
       ],
@@ -4603,9 +4585,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
-      "Registering your subscription...": [
-        "Registrace vašeho předplatného..."
-      ],
       "Restored version to": [
         "Obnovena verze na"
       ],
@@ -4641,9 +4620,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
-      ],
-      "Setting up your new address...": [
-        "Nastavování nové adresy..."
       ],
       "Settings update failed": [
         "Aktualizace nastavení selhala"
@@ -4704,12 +4680,6 @@
       ],
       "The Beginning": [
         "Začátek"
-      ],
-      "The digital signature has been partially verified. The file was uploaded from a public page that does not specify a specific user origin.": [
-        "Digitální podpis byl částečně ověřen. Soubor byl nahrán z veřejné stránky, na které není uveden konkrétní původ uživatele."
-      ],
-      "The digital signature has been partially verified. The folder was uploaded from a public page that does not specify a specific user origin.": [
-        "Digitální podpis byl částečně ověřen. Složka byla nahrána z veřejné stránky, na které není uveden konkrétní původ uživatele."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
@@ -6046,14 +6016,11 @@
       "Get started for ${ priceCoupon }": [
         "Začněte za ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
+      "Upgrade": [
+        "Navýšit"
       ],
       "Upgrade now": [
         "Navýšit nyní"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6705,14 +6672,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Získejte Mail Plus za ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Zvýhodněná cena ${ priceCoupon } platí první měsíc. Poté dojde k automatickému obnovení za cenu ${ priceMailPlus }. Službu můžete kdykoli zrušit."
       ]
     },
     "new_plans: title": {
@@ -8839,9 +8798,6 @@
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
       ],
-      "Dark Web Monitoring": [
-        "Sledování Dark webu"
-      ],
       "Data recovery": [
         "Obnovení dat"
       ],
@@ -9189,9 +9145,6 @@
       ],
       "Your document cannot be loaded": [
         "Dokument nelze načíst"
-      ],
-      "Your download has a ${ DOCS_APP_NAME } file": [
-        "Vaše stahování obsahuje soubor ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
