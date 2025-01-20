@@ -21,10 +21,10 @@ export const reencryptInviteKeys = async ({
 }: ReencryptInviteKeysProcessParams): Promise<KeyRotationKeyPair[]> =>
     Promise.all(
         inviteKeys.map(async (inviteKey): Promise<KeyRotationKeyPair> => {
-            const vaultKey = await openInviteKey({ inviteKey, invitedPrivateKey, inviterPublicKeys });
+            const shareKey = await openInviteKey({ inviteKey, invitedPrivateKey, inviterPublicKeys });
 
             const { message: encryptedVaultKey } = await CryptoProxy.encryptMessage({
-                binaryData: vaultKey,
+                binaryData: shareKey,
                 encryptionKeys: userKey.privateKey,
                 signingKeys: userKey.privateKey,
                 format: 'binary',
