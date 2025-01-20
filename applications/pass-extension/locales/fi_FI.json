@@ -697,9 +697,6 @@
       "Add the following TXT DNS record to your domain.": [
         "Lisää seuraava TXT DNS -tietue verkkotunnukseesi."
       ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Pimeän verkon valvonta sisältyy maksullisiin tilauksiin. Hanki se heti käyttöösi päivitämällä tilauksesi."
-      ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Jos käytät aliverkkotunnusta, esimerkiksi ${ subdomainExample }, sinun on käytettävä sen sijaan verkkotunnuksena ${ dmarcExampleSubdomain }."
       ],
@@ -3833,6 +3830,9 @@
       "No results": [
         "Tuloksia ei löytynyt"
       ],
+      "No secure links matching": [
+        "Ei vastaavia suojattuja linkkejä"
+      ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Synkronoinnin jälkeen aliasten poistaminen ${ PASS_SHORT_APP_NAME }ista poistaa ne myös SimpleLoginista."
       ],
@@ -3856,9 +3856,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Käytä hovijakoa vahvistamalla sähköpostiosoitteesi."
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Lisäsalasanan poistaminen kirjaa sinut ulos kaikista laitteista katkaisten kaikki aktiiviset istunnot."
