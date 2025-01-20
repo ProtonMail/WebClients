@@ -17,6 +17,7 @@ import type { Element } from '../../models/element';
 import type { MailState, MailThunkExtra } from '../store';
 import type {
     ESResults,
+    ElementsStateParams,
     EventUpdates,
     NewStateParams,
     OptimisticDelete,
@@ -34,6 +35,8 @@ export const reset = createAction<NewStateParams>('elements/reset');
 export const updatePage = createAction<number>('elements/updatePage');
 
 export const setPageSize = createAction<number>('elements/setPageSize');
+
+export const setParams = createAction<ElementsStateParams>('elements/setParams');
 
 export const retry = createAction<{
     queryParameters: unknown;
@@ -82,6 +85,8 @@ export const load = createAsyncThunk<
                 })
             );
         };
+
+        dispatch(setParams(params));
 
         const result = await queryElementsInBatch(
             {

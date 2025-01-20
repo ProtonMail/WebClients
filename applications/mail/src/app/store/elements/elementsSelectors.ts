@@ -18,6 +18,11 @@ import {
     isMessage,
     isSearch,
     isUnread,
+    matchBegin,
+    matchEmailAddress,
+    matchEnd,
+    matchFrom,
+    matchTo,
     sort as sortElements,
 } from '../../helpers/elements';
 import { expectedPageLength, isPageConsecutive } from '../../helpers/paging';
@@ -39,9 +44,11 @@ const retry = (state: MailState) => state.elements.retry;
 const invalidated = (state: MailState) => state.elements.invalidated;
 export const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
+export const addresses = (state: MailState) => state.addresses;
 
 const currentPage = (_: MailState, { page }: { page: number }) => page;
 const currentSearch = (_: MailState, { search }: { search: SearchParameters }) => search;
+// currentParams corresponds to the parameters set by the user from the interface
 const currentParams = (_: MailState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (
     _: MailState,
@@ -55,11 +62,11 @@ const currentCounts = (_: MailState, { counts }: { counts: { counts: LabelCount[
 const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => labelID;
 
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, pages, bypassFilter],
-    (elements, params, page, pageSize, pages, bypassFilter) => {
+    [elementsMap, params, page, pageSize, pages, bypassFilter, addresses],
+    (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
-        const { labelID, sort, filter, conversationMode } = params;
+        const { labelID, sort, filter, conversationMode, search } = params;
         let finalSort = { ...sort };
         // The default sorting needs to be overridden when in inbox or snooze to display snoozed emails on top
         const isInSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
@@ -82,28 +89,25 @@ export const elements = createSelector(
          *
          * Since the cache is only a little subset of user's messages, it is not very costly.
          */
+        const address = search.address ? addresses.value?.find((address) => address.ID === search.address) : undefined;
         const filtered = elementsArray.filter((element) => {
-            if (!hasLabel(element, labelID)) {
-                return false;
-            }
-            if (conversationMode && !isConversation(element)) {
-                return false;
-            }
-            if (!conversationMode && !isMessage(element)) {
-                return false;
-            }
-            if (isEmpty(filter)) {
-                return true;
-            }
-            if (filter.Attachments) {
-                return hasAttachments(element);
-            }
-            if (bypassFilter.includes(element.ID || '')) {
-                return true;
-            }
             const elementUnread = isUnread(element, labelID);
-            return filter.Unread ? elementUnread : !elementUnread;
+            const conditions = [
+                hasLabel(element, labelID),
+                conversationMode ? isConversation(element) : isMessage(element),
+                filter.Attachments === 1 ? hasAttachments(element) : true,
+                bypassFilter.length > 0 ? bypassFilter.includes(element.ID || '') : true,
+                filter.Unread ? (filter.Unread === 1 ? elementUnread : !elementUnread) : true,
+                search.from ? matchFrom(element, search.from) : true,
+                search.to ? matchTo(element, search.to) : true,
+                search.end ? matchEnd(element, labelID, search.end) : true,
+                search.begin ? matchBegin(element, labelID, search.begin) : true,
+                address ? matchEmailAddress(element, address.Email) : true,
+            ];
+
+            return conditions.every(isTruthy);
         });
+
         const sorted = sortElements(filtered, finalSort, labelID);
 
         // We only keep a slice of the cached elements: the ones we want to display in the current List view
@@ -187,9 +191,13 @@ export const pageIsConsecutive = createSelector([pages, currentPage], (pages, cu
  * It should be `true` whenever one of the search params changes or when a page jump occurs (e.g: users from page 2 to page 7)
  */
 export const shouldResetElementsState = createSelector(
-    [paramsChanged, pageIsConsecutive],
-    (paramsChanged, pageIsConsecutive) => {
-        return paramsChanged || !pageIsConsecutive;
+    [params, currentParams, pageIsConsecutive],
+    (params, currentParams, pageIsConsecutive) => {
+        return (
+            currentParams.search.keyword !== params.search.keyword || // Reset the cache since we do not support client search (filtering)
+            (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search)) ||
+            !pageIsConsecutive
+        );
     }
 );
 
@@ -198,10 +206,10 @@ export const shouldResetElementsState = createSelector(
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [shouldResetElementsState, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
-    (shouldResetElementsState, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
+    [paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
+    (paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
         return (
-            shouldResetElementsState ||
+            paramsChanged ||
             (!pendingRequest &&
                 retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
                 (needsMoreElements || invalidated || !pageCached))
