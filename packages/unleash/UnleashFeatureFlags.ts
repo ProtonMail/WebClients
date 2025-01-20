@@ -105,7 +105,6 @@ enum DriveFeatureFlag {
 
 enum DocsFeatureFlag {
     // General
-    DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',
     DocsAppSwitcher = 'DocsAppSwitcher',
     DocsPublicEditing = 'DocsPublicEditing',
@@ -117,7 +116,6 @@ enum DocsFeatureFlag {
     DriveDocsPublicSharing = 'DriveDocsPublicSharing',
     DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
     // Suggestions
-    DriveDocsSuggestionModeEnabled = 'DriveDocsSuggestionModeEnabled',
     DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
 }
 
