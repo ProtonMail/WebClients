@@ -165,8 +165,8 @@ export const intoRevisionID = <T extends SelectedRevision>(item: T): ItemRevisio
     Revision: item.revision,
 });
 
+/** Returns the username in priority if not empty, otherwise the email. This priority matters for autofill. */
 export const intoUserIdentifier = (item: ItemRevision<'login'>): string =>
-    /** For autofill we use the username if not empty, otherwise the email */
     deobfuscate(item.data.content.itemUsername) || deobfuscate(item.data.content.itemEmail);
 
 export const intoLoginItemPreview = (item: ItemRevision<'login'>): LoginItemPreview => ({
