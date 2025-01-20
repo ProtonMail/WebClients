@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Створити й копіювати псевдонім"
       ],
+      "Create folder": [
+        "Створити теку"
+      ],
       "Create free account": [
         "Створити безплатний обліковий запис"
       ],
@@ -374,12 +377,6 @@
       ],
       "Forward as attachment": [
         "Переслати як вкладення"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Отримати ${ DRIVE_APP_NAME }"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Отримати ${ MAIL_SHORT_APP_NAME } Plus за ${ priceCoupon }"
       ],
       "Get in touch": [
         "Зв'яжіться з нами"
@@ -1109,9 +1106,6 @@
       "Advanced account protection": [
         "Розширена програма захисту облікового запису"
       ],
-      "Dark Web Monitoring": [
-        "Відстеження Dark Web"
-      ],
       "Easily add or remove users": [
         "Легко додавати або вилучати користувачів"
       ],
@@ -1197,9 +1191,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Отримуйте доступ до контенту на потокових сервісах, включаючи Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Безпечний вхід на всіх ваших пристроях. Підтримує необмежену кількість псевдонімів hide-my-email, спільний доступ, інтегрований 2FA, Відстеження Dark Web та інші можливості."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреса електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
@@ -1332,12 +1323,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Змінити налаштування адреси електронної пошти"
-      ],
-      "Continue": [
-        "Продовжити"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ],
@@ -5114,9 +5099,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
-      "Registering your subscription...": [
-        "Реєстрація підписки..."
-      ],
       "Report has been sent": [
         "Звіт надіслано"
       ],
@@ -5185,9 +5167,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
-      ],
-      "Setting up your new address...": [
-        "Налаштування вашої нової адреси..."
       ],
       "Share files with links": [
         "Поділіться файлами за допомогою посилань"
@@ -6444,14 +6423,26 @@
       "Add a gift code": [
         "Додати подарунковий код"
       ],
+      "All mail": [
+        "Уся пошта"
+      ],
+      "Archive": [
+        "Архів"
+      ],
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
       "click here": [
         "клацніть тут"
       ],
+      "Drafts": [
+        "Чернетки"
+      ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
+      ],
+      "Inbox": [
+        "Вхідні"
       ],
       "Learn more": [
         "Докладніше"
@@ -6468,11 +6459,26 @@
       "Request an invite": [
         "Запитати запрошення"
       ],
+      "Scheduled": [
+        "Заплановані"
+      ],
+      "Sent": [
+        "Надіслані"
+      ],
       "Shared": [
         "Спільний доступ"
       ],
       "Shared with me": [
         "Поширено для мене"
+      ],
+      "Snooze": [
+        "Відкласти"
+      ],
+      "Spam": [
+        "Спам"
+      ],
+      "Starred": [
+        "Із зірочкою"
       ],
       "stay safer online": [
         "бути в безпеці онлайн"
@@ -6864,17 +6870,11 @@
       "Get started for ${ priceCoupon }": [
         "Розпочати з ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Починаючи з ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Покращити"
       ],
       "Upgrade now": [
         "Покращити"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Покращити до ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7540,14 +7540,6 @@
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Отримати Mail Plus за ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Ціна зі знижкою ${ priceCoupon } дійсна протягом першого місяця. Потім вона буде автоматично поновлена до ${ priceMailPlus }. Ви можете скасувати в будь-який час."
       ]
     },
     "new_plans: tooltip": {
@@ -9583,9 +9575,6 @@
       "Comprehensive privacy and security": [
         "Комплексна приватність та безпека"
       ],
-      "Dark web monitoring": [
-        "Відстеження Dark Web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "Підтримка додатків робочого стола та поштового клієнта (через IMAP)"
       ],
@@ -10223,9 +10212,6 @@
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
-      ],
-      "Dark Web Monitoring": [
-        "Моніторинг Темного Вебу"
       ],
       "Data recovery": [
         "Відновлення даних"

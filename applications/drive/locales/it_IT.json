@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Crea e copia l'alias"
       ],
+      "Create folder": [
+        "Crea cartella"
+      ],
       "Create free account": [
         "Crea un account gratuito"
       ],
@@ -368,12 +371,6 @@
       ],
       "Forward as attachment": [
         "Inoltra come allegato"
-      ],
-      "Get ${ DRIVE_APP_NAME }": [
-        "Ottieni ${ DRIVE_APP_NAME }"
-      ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Ottieni ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
       ],
       "Get in touch": [
         "Mettiti in contatto"
@@ -1093,9 +1090,6 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
-      "Dark Web Monitoring": [
-        "Monitoraggio del dark web"
-      ],
       "Easily add or remove users": [
         "Aggiungi o rimuovi utenti facilmente"
       ],
@@ -1181,9 +1175,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, monitoraggio del dark web e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
@@ -1312,12 +1303,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modifica le impostazioni dell'indirizzo email"
-      ],
-      "Continue": [
-        "Continua"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
       ],
@@ -4960,9 +4945,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
-      "Registering your subscription...": [
-        "Registrazione dell'abbonamento..."
-      ],
       "Report has been sent": [
         "La segnalazione è stata inviata"
       ],
@@ -5031,9 +5013,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
-      ],
-      "Setting up your new address...": [
-        "Configurazione del tuo nuovo indirizzo..."
       ],
       "Share files with links": [
         "File condivisi con link"
@@ -6273,14 +6252,26 @@
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
+      "All mail": [
+        "Tutta la posta"
+      ],
+      "Archive": [
+        "Archivio"
+      ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
       ],
       "click here": [
         "clicca qui"
       ],
+      "Drafts": [
+        "Bozze"
+      ],
       "How to pay with Bitcoin?": [
         "Come pagare con Bitcoin?"
+      ],
+      "Inbox": [
+        "Posta in arrivo"
       ],
       "Learn more": [
         "Scopri di più"
@@ -6297,11 +6288,26 @@
       "Request an invite": [
         "Richiedi un invito"
       ],
+      "Scheduled": [
+        "Programmata"
+      ],
+      "Sent": [
+        "Inviata"
+      ],
       "Shared": [
         "Condivisi"
       ],
       "Shared with me": [
         "Condiviso con me"
+      ],
+      "Snooze": [
+        "Posticipa"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Importante"
       ],
       "stay safer online": [
         "stai più sicuro online"
@@ -6731,17 +6737,11 @@
       "Get started for ${ priceCoupon }": [
         "Inizia per ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "A partire da ${ priceMailPlus }"
-      ],
       "Upgrade": [
         "Effettua l'upgrade"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -7362,12 +7362,6 @@
       ]
     },
     "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Ottieni Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceCoupon } è valido per il primo mese. Successivamente verrà rinnovato automaticamente a ${ priceMailPlus }. Puoi annullare in qualsiasi momento."
-      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -9297,9 +9291,6 @@
       "Comprehensive privacy and security": [
         "Privacy e sicurezza complete"
       ],
-      "Dark web monitoring": [
-        "Monitoraggio del dark web"
-      ],
       "Desktop app and email client support (via IMAP)": [
         "App desktop e supporto per client email (tramite IMAP)"
       ],
@@ -9905,9 +9896,6 @@
       ],
       "Customize your mail import": [
         "Personalizza l'importazione della tua mail"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoraggio del Dark Web"
       ],
       "Data recovery": [
         "Recupero dei dati"
