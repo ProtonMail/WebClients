@@ -13,6 +13,9 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Rmed"
+      ],
       "Activate recovery": [
         "Sermed tiririt"
       ],
@@ -631,6 +634,9 @@
       "More info: ${ safeTitle }": [
         "Ugar n telɣut: ${ safeTitle }"
       ],
+      "More options": [
+        "Ugar n textiriyin"
+      ],
       "More search options": [
         "Ugar n textiṛiyin n unadi"
       ],
@@ -1108,11 +1114,11 @@
       "Upgrade": [
         "Lqem"
       ],
-      "Upgrade Now": [
-        "Sgerrzet amiḍan tura"
-      ],
       "Upgrade now": [
         "Sali aswir tura"
+      ],
+      "Upgrade Now": [
+        "Sgerrzet amiḍan tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -1406,9 +1412,6 @@
       "Advanced account protection": [
         "Advanced amiḍan protection"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Easily rnu neɣ kkes imiḍanen"
       ],
@@ -1479,9 +1482,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Access content ɣef streaming services including Netflix, Disney+, Prime Video, d more, seg yixef ɣer yixef."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Secure logins ɣef all your devices. Includes unlimited hide-my-email mefferisem, share, integrated 2FA, Dark Web Monitoring d more."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Secure your emails d schedule ɣef end-to-end awgelhen. Includes ${ addresses } tansa n yimayl, support ɣef udmawan email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email mefferisem d more.",
@@ -6968,6 +6968,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Sader aswir ɣer ${ downgradedPlanName }"
       ],
+      "Upgrade": [
+        "Leqqem"
+      ],
       "Upgrade now": [
         "Sali aswir tura"
       ]
@@ -7908,6 +7911,11 @@
       ],
       "Sign": [
         "Zmel"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Isem n uskan"
       ]
     },
     "Sort option": {

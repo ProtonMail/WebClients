@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "Tentang alias hide-my-email"
       ],
+      "Activate": [
+        "Aktifkan"
+      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -513,9 +516,6 @@
       "Get ${ BRAND_NAME } Duo": [
         "Dapatkan ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Dapatkan ${ MAIL_SHORT_APP_NAME } Plus dengan harga ${ priceCoupon }"
-      ],
       "Get in touch": [
         "Hubungi kami"
       ],
@@ -764,6 +764,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
+      ],
+      "More options": [
+        "Opsi lainnya"
       ],
       "More refine actions": [
         "Tindakan perbaikan lainnya"
@@ -1317,11 +1320,11 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade Now": [
-        "Tingkatkan Sekarang"
-      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Tingkatkan ke ${ BRAND_NAME } Unlimited"
@@ -1698,9 +1701,6 @@
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
       ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
-      ],
       "Easily add or remove users": [
         "Tambah atau kurangi pengguna secara mudah"
       ],
@@ -1786,9 +1786,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, dan masih banyak lagi."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
@@ -1915,12 +1912,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Ubah pengaturan alamat email"
-      ],
-      "Continue": [
-        "Lanjutkan"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -6791,9 +6782,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
-      "Registering your subscription...": [
-        "Mendaftarkan langganan Anda..."
-      ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Jangan lupa untuk memperbarui alamat ini pada pengelola kata sandi Anda atau di mana pun Anda menyimpan informasi akun dan entri masuk Anda."
       ],
@@ -6898,9 +6886,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
-      ],
-      "Setting up your new address...": [
-        "Menyiapkan alamat baru Anda..."
       ],
       "Shorten selection": [
         "Persingkat pilihan"
@@ -9062,14 +9047,11 @@
       "Get started for ${ priceCoupon }": [
         "Mulai dengan harga ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
+      "Upgrade": [
+        "Tingkatkan"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9665,14 +9647,6 @@
         "Ubah paket?"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Dapatkan Mail Plus dengan harga ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "Harga diskon ${ priceCoupon } valid untuk bulan pertama. Lalu akan diperbarui seharga ${ priceMailPlus }. Anda dapat membatalkan kapan pun."
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
@@ -10067,9 +10041,6 @@
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "Singkirkan email yang telah dihapus dan email spam setelah 30 hari."
-      ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
       ],
       "Distraction-free emailing": [
         "Email bebas gangguan"
@@ -11109,6 +11080,11 @@
         "Tandatangani"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Nama tampilan"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Lebih cepat di aplikasi"
@@ -11680,9 +11656,6 @@
       ],
       "Comprehensive privacy and security": [
         "Privasi dan keamanan yang komprehensif"
-      ],
-      "Dark web monitoring": [
-        "Pemantauan dark web"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Dukungan aplikasi desktop dan klien email (melalui IMAP)"
@@ -12335,9 +12308,6 @@
       "Download Desktop app": [
         "Unduh aplikasi Desktop"
       ],
-      "Enable Dark Web Monitoring": [
-        "Aktifkan Pemantauan Dark Web"
-      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Dapatkan alamat \"@${ PM_DOMAIN }\" saya"
       ],
@@ -12534,9 +12504,6 @@
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
-      ],
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
       ],
       "Data recovery": [
         "Pemulihan data"
@@ -13123,6 +13090,11 @@
         "Hari ini"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -13204,11 +13176,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Tor out of date": {

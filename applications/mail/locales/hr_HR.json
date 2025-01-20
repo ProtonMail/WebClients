@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Activate": [
+        "Aktiviraj"
+      ],
       "Activate recovery": [
         "Aktivirajte oporavak"
       ],
@@ -569,6 +572,9 @@
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
       ],
+      "More options": [
+        "Više opcija"
+      ],
       "More search options": [
         "Više opcija pretraživanja"
       ],
@@ -974,10 +980,10 @@
       "Upgrade": [
         "Nadogradnja"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Nadogradi sada"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Nadogradi sada"
       ],
       "Upload picture": [
@@ -1226,9 +1232,6 @@
       "Advanced account protection": [
         "Napredna zaštita korisničkog računa"
       ],
-      "Dark Web Monitoring": [
-        "Praćenje Tamnog Weba"
-      ],
       "Easily add or remove users": [
         "Jednostavno dodajte ili uklonite korisnike"
       ],
@@ -1299,9 +1302,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Pristupite sadržaju na streaming uslugama uključujući Netflix, Disney+, Prime Video i još mnogo toga, s bilo kojeg mjesta."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Osigurajte sigurne prijave na svim svojim uređajima. Uključuje neograničene hide-my-email aliasa, dijeljenje, integrirani 2FA, Praćenje tamnog weba i još mnogo toga."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Osigurajte svoje e-pošte i raspored s end-to-end šifriranjem. Uključuje ${ addresses } e-poštu adrese, podršku za prilagođene e-poštne domene, ${ BRAND_NAME } Scribe pomoćnika za pisanje, neograničene hide-my-email alias i još mnogo toga.",
@@ -5735,6 +5735,9 @@
       ]
     },
     "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
       "Upgrade now": [
         "Nadogradi sada"
       ]
@@ -6461,6 +6464,11 @@
     "Signing preference for emails": {
       "Sign": [
         "Potpiši"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Zaslonski naziv"
       ]
     },
     "Sort option": {

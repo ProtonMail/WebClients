@@ -39,6 +39,9 @@
       "About hide-my-email aliases": [
         "Sobre els àlies de hide-my-email"
       ],
+      "Activate": [
+        "Activa"
+      ],
       "Activate recovery": [
         "Activa la recuperació"
       ],
@@ -144,6 +147,9 @@
       ],
       "Authenticate": [
         "Autentica"
+      ],
+      "Auto-delete spam and trash": [
+        "Supressió automàtica del correu brossa i de la paperera"
       ],
       "Back": [
         "Torna"
@@ -405,6 +411,9 @@
       "Download now": [
         "Descarrega"
       ],
+      "Download the desktop app": [
+        "Descarregueu l'aplicació d'escriptori"
+      ],
       "Downloading": [
         "S'està descarregant"
       ],
@@ -447,6 +456,9 @@
       "Enable": [
         "Activar"
       ],
+      "Enable ${ darkWebMonitoring }": [
+        "Activa ${ darkWebMonitoring }"
+      ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
       ],
@@ -484,7 +496,7 @@
         "Exporta el grup de contactes"
       ],
       "Export selection as .vcf": [
-        "Exporteu la selecció al format *.vcf"
+        "Exporta la selecció com a .vcf"
       ],
       "External encryption": [
         "Xifrat extern"
@@ -516,8 +528,11 @@
       "Get ${ BRAND_NAME } Duo": [
         "Obtingueu ${ BRAND_NAME } Duo"
       ],
-      "Get ${ MAIL_SHORT_APP_NAME } Plus for ${ priceCoupon }": [
-        "Obteniu ${ MAIL_SHORT_APP_NAME } Plus per ${ priceCoupon }"
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Obteniu ${ planName } per ${ priceCoupon }."
+      ],
+      "Get ${ planOrAppName }": [
+        "Obtingueu ${ planOrAppName }"
       ],
       "Get in touch": [
         "Contacte"
@@ -531,11 +546,17 @@
       "Get started": [
         "Comença"
       ],
+      "Get the browser extension": [
+        "Obtingueu l'extensió del navegador"
+      ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Aneu a ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -648,6 +669,9 @@
       ],
       "Insert link": [
         "Insereix un enllaç"
+      ],
+      "Invite members": [
+        "Convideu membres"
       ],
       "Italic": [
         "Cursiva"
@@ -768,6 +792,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
+      ],
+      "More options": [
+        "Més opcions"
       ],
       "More refine actions": [
         "Accions més optimitzades"
@@ -1231,6 +1258,9 @@
       "Switch or add account": [
         "Canvia o afegeix un compte"
       ],
+      "Take a tour": [
+        "Feu una visita guiada"
+      ],
       "This message contains embedded images.": [
         "Aquest missatge conté imatges incrustades."
       ],
@@ -1295,7 +1325,7 @@
         "Llista no ordenada"
       ],
       "Unsnooze": [
-        "Deixa de posar en pausa"
+        "Desactiva la pausa"
       ],
       "Unstar": [
         "No destaquis"
@@ -1321,10 +1351,10 @@
       "Upgrade": [
         "Millora"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Millora ara"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Millora ara"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -1702,9 +1732,6 @@
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
-      "Dark Web Monitoring": [
-        "Monitoratge del web fosc"
-      ],
       "Easily add or remove users": [
         "Afegiu o elimineu usuaris fàcilment"
       ],
@@ -1791,8 +1818,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge del web fosc i més."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més.",
@@ -1921,12 +1948,6 @@
       ]
     },
     "Button": {
-      "Change email address settings": [
-        "Modifica les preferències de l'adreça de correu electrònic"
-      ],
-      "Continue": [
-        "Continua"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ],
@@ -1935,6 +1956,27 @@
       ],
       "Continue your subscription": [
         "Continueu amb la vostra subscripció"
+      ],
+      "Create label": [
+        "Creu una etiqueta"
+      ],
+      "Discover and set up features": [
+        "Descobriu i configureu les característiques"
+      ],
+      "Maybe later": [
+        "Potser després"
+      ],
+      "Next": [
+        "Següent"
+      ],
+      "Remind me later": [
+        "Recorda-m'ho més tard"
+      ],
+      "Set up other features": [
+        "Configureu altres característiques"
+      ],
+      "Take a tour": [
+        "Feu una visita guiada"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3571,7 +3613,7 @@
         "${ manageBlockedAddressesSettingsLink } a les preferències."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
-        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa l'escalada a especialistes en seguretat."
+        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
@@ -3580,7 +3622,7 @@
         "També inclòs"
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Suprimíeu automàticament el correu brossa i els missatges enviats a la paperera i desbloqueja més funcions prèmium quan milloreu."
+        "Suprimiu automàticament el correu brossa i els missatges enviats a la paperera i desbloquegeu més funcions prèmium quan milloreu el pla."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Esborra automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
@@ -3635,7 +3677,7 @@
         "Cap etiqueta"
       ],
       "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "Estalvieu temps enviant correus electrònics a tothom alhora amb grups de contactes. Desbloquegeu aquesta i altres funcions prèmium quan milloreu."
+        "Estalvieu temps enviant correus electrònics a tothom alhora amb grups de contactes. Desbloquegeu aquesta i altres funcions prèmium quan milloreu el pla."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
@@ -3683,7 +3725,7 @@
         "Desbloquegeu carpetes i etiquetes il·limitades i més característiques prèmium quan milloreu el vostre pla."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "Milloreu el vostre pla per obtenir ${ activatePmUser } per una adreça de correu electrònic més curta i fàcil de recordar, a més de la vostra actual."
+        "Milloreu el vostre pla per a obtenir ${ activatePmUser } a fi de disposar d'una adreça de correu electrònic més curta i fàcil de recordar, a més de la vostra actual."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Milloreu el compte per activar ${ PROTON_SENTINEL_NAME }, la nostra solució de seguretat d'avantguarda impulsada per IA amb suport expert dedicat 24/7."
@@ -4264,6 +4306,12 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Seleccioneu una categoria i el que no ha funcionat amb el text generat."
+      ],
+      "Please select a country": [
+        "Seleccioneu un país"
+      ],
+      "Please select a state": [
+        "Seleccioneu un estat"
       ],
       "Please try again or refresh the page.": [
         "Torneu-ho a provar o actualitzeu la pàgina."
@@ -5410,7 +5458,7 @@
         "Els temps flotants no són compatibles."
       ],
       "Malformed all-day event": [
-        "El format de l'esdeveniment para tot el dia és incorrecte."
+        "El format de l'esdeveniment per a tot el dia és incorrecte."
       ],
       "Malformed end time": [
         "El format de l'hora de finalització és incorrecte."
@@ -5860,6 +5908,9 @@
         "S'ha trobat ${ numOccurrences } ocurrència al contingut del correu",
         "S'han trobat ${ numOccurrences } ocurrències al contingut del correu"
       ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "${ PASS_APP_NAME } us permet emmagatzemar contrasenyes, notes i altres informacions sensibles amb xifratge de punta a punta. Disponible a ${ ios }, ${ android } i al vostre ${ browser }."
+      ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } proporciona una forma fàcil de crear inicis de sessió a llocs de tercers no confiables on no voleu revelar la vostra adreça de correu electrònic real."
       ],
@@ -5871,6 +5922,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
@@ -5958,6 +6012,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
       ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Accediu a més de 6,500 servidors d'alta velocitat en fins a 10 dispositius per mantenir les vostres dades de navegació segures. Disponible a ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
@@ -5966,6 +6023,9 @@
       ],
       "Activation in progress": [
         "Activació en procés"
+      ],
+      "Active": [
+        "Actiu"
       ],
       "Add image URL": [
         "Afegeix l'URL de la imatge"
@@ -6089,6 +6149,9 @@
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Elimineu automàticament els missatges que han estat a la paperera i al correu brossa durant més de 30 dies."
@@ -6254,6 +6317,12 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Ho sabíeu? Us hem reservat una adreça electrònica més curta. És el vostre nom d'usuari seguit de “@${ PM_DOMAIN }”."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Descobriu les noves característiques desbloquejades i comenceu a utilitzar-les de seguida!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Descobriu les noves característiques desbloquejades amb ${ planTitle } i comenceu a utilitzar-les de seguida!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -6281,6 +6350,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
+      ],
+      "Download on the App Store": [
+        "Descarregau-lo a l'App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
@@ -6348,6 +6420,9 @@
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Els correus electrònics moguts a la paperera i el correu brossa fa més de 30 dies se suprimiran automàticament."
+      ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Els correus electrònics amb l'etiqueta ${ nameDeleted } no s'eliminaran i continuaran trobant-se a la carpeta respectiva."
       ],
@@ -6355,8 +6430,14 @@
         "imatge integrade",
         "imatges integrades"
       ],
+      "Enabling auto-deletion…": [
+        "S'està activant la supressió automàtica…"
+      ],
       "Encrypt message": [
         "Xifrar el missatge"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Gaudiu d'una experiència de correu electrònic més ràpida i centrada en l'aplicació d'escriptori."
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació"
@@ -6419,6 +6500,9 @@
       "Folder": [
         "Carpeta"
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Per missatges més nous que ${ oldestDate }"
       ],
@@ -6434,6 +6518,12 @@
       ],
       "Generate text": [
         "Genera text"
+      ],
+      "Get it on Google Play": [
+        "Obteniu-lo a Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Apliqueu als rebuts entrants una etiqueta amb codi de color, com ara «${ suggestedLabelName }». Un cop pagats, canvieu l'etiqueta a «${ suggestedPaidLabelName }»."
@@ -6544,6 +6634,12 @@
       ],
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Convideu a altres membres de la vostra família i comenceu de manera immediata."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Convideu la vostra parella, amics o qui sigui amb qui estiguis compartint el vostre pla ${ protonDuoPlanName }."
       ],
       "JCB logo": [
         "Logotip de JCB"
@@ -6752,6 +6848,9 @@
       "Open shortcut cheat sheet": [
         "Obre el resum de dreceres"
       ],
+      "or discover other features:": [
+        "o descobriu altres característiques:"
+      ],
       "Organization size": [
         "Mida de l'organització"
       ],
@@ -6884,10 +6983,13 @@
         "Revisa el text"
       ],
       "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Protegiu el vostre correu electrònic de filtracions a llistes de correu o generadors de correu brossa amb hide-my-email."
+        "Protegiu el vostre correu electrònic de filtracions a llistes de correu o generadors de correu brossa amb àlies de hide-my-email."
       ],
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
+      ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -6898,8 +7000,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
-      "Registering your subscription...": [
-        "Registrant la vostra subscripció..."
+      "Registering your subscription…": [
+        "S'està registrant la vostra subscripció…"
       ],
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Recordeu actualitzar aquesta informació al gestor de contrasenyes o a qualsevol lloc on guardeu les vostres dades d'accés."
@@ -6977,6 +7079,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envieu un correu xifrat i protegit amb contrasenya a una adreça de correu de ${ boldText }."
       ],
+      "Send messages at just the right now": [
+        "Envieu missatges en el moment just."
+      ],
       "Sender has been blocked.": [
         "S'ha bloquejat el remitent."
       ],
@@ -7004,11 +7109,14 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte en aquest navegador. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
       ],
+      "Setting up ${ feature }…": [
+        "S'està configurant ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
-      "Setting up your new address...": [
-        "S'està configurant la vostra nova adreça..."
+      "Setting up your new address…": [
+        "S'està configurant la vostra nova adreça…"
       ],
       "Shorten selection": [
         "Escurça la selecció"
@@ -7021,6 +7129,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Posposeu els missatges per més tard perquè estiguin a la part superior de la vostra bústia quan ho vulgueu."
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
         "En pausa fins al ${ dateString } a les ${ formattedTime }"
@@ -7039,6 +7150,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
@@ -7069,6 +7183,9 @@
       ],
       "Switch to": [
         "Canvia a"
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creu i compartiu documents a ${ DOCS_APP_NAME } i deseu'ls de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
@@ -7440,7 +7557,7 @@
         "Hem detectat la creació de diversos comptes gratuïts, cosa que infringeix els nostres ${ termsLink }."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
-        "Tenim plans dissenyats específicament per a usuaris com vós que necessiten més d'una adreça de correu electrònic."
+        "Si necessiteu més d'una adreça de correu electrònic, tenim plans dissenyats específicament a la vostra mida."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Hem d'autenticar el vostre mètode de pagament amb el banc."
@@ -7526,8 +7643,14 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "Podeu afegir-ho com un adjunt o mostrar-ho incrustat en el cos del missatge."
       ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Podeu afegir el vostre propi domini personalitzat a ${ MAIL_APP_NAME }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "També podeu combinar els calendaris importats amb calendaris ${ BRAND_NAME } existents."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Podeu canviar-ho en qualsevol moment a ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
@@ -7566,6 +7689,9 @@
       ],
       "You do not have any messages here": [
         "No teniu cap missatge aquí."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
       ],
       "You have ${ unread } in your inbox.": [
         "Teniu ${ unread } a la safata d'entrada."
@@ -8487,6 +8613,9 @@
       "Start date": [
         "Data d'inici"
       ],
+      "State": [
+        "Estat"
+      ],
       "Statement": [
         "Declaració"
       ],
@@ -8771,6 +8900,9 @@
       ],
       "Sent": [
         "Enviats"
+      ],
+      "settings": [
+        "preferències"
       ],
       "Sign up for free": [
         "Registreu-vos gratuïtament"
@@ -9202,14 +9334,17 @@
       "Get started for ${ priceCoupon }": [
         "Comenceu per ${ priceCoupon }"
       ],
-      "Starting from ${ priceMailPlus }": [
-        "Comenceu des de ${ priceMailPlus }"
+      "Starting from ${ pricing }": [
+        "Des de ${ pricing }"
+      ],
+      "Upgrade": [
+        "Millora"
       ],
       "Upgrade now": [
         "Millora ara"
       ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
+      "Upgrade to ${ planName }": [
+        "Milloreu a ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -9824,6 +9959,14 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "Desbloquegeu tots els productes i característiques premium de ${ BRAND_NAME } per només ${ priceMailPlus }. Cancel·leu en qualsevol moment."
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -9836,14 +9979,6 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ priceCoupon }": [
-        "Obteniu Mail Plus per ${ priceCoupon }"
-      ],
-      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
-        "El preu amb descompte de ${ priceCoupon } és vàlid durant el primer mes. Aleshores es renovarà automàticament a ${ priceMailPlus }. Podeu cancel·lar en qualsevol moment."
       ]
     },
     "new_plans: tooltip": {
@@ -10189,6 +10324,52 @@
         "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "L'oferta de ${ pricingTitle } caduca avui!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Obteniu Drive Plus per només ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Obteniu Mail Plus per només ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Aconseguiu l'oferta"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Última oportunitat d'aconseguir un 80% de descompte al primer mes de ${ plan } Plus."
+      ],
+      "Limited-time offer": [
+        "Oferta per temps limitat"
+      ],
+      "Maybe later": [
+        "Potser després"
+      ],
+      "Save 80% on your first month.": [
+        "Estalvieu un 80% en el vostre primer mes."
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 característiques prèmium més"
+      ],
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
+      ],
+      "Email Addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Free": [
+        "Gratuït"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ]
+    },
     "Onboarding List Placeholder": {
       "Finance": [
         "Finances"
@@ -10240,11 +10421,17 @@
       "Auto-delete spam and trash": [
         "Neteja automàticament el correu brossa i la paperera"
       ],
+      "browser": [
+        "navegador"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Esborreu els correus electrònics suprimits i de correu brossa després de 30 dies."
       ],
-      "Dark Web Monitoring": [
-        "Monitoratge del web fosc"
+      "Continue": [
+        "Continuï"
+      ],
+      "Desktop": [
+        "Escriptori"
       ],
       "Discover ${ MAIL_APP_NAME }": [
         "Descobriu ${ MAIL_APP_NAME }"
@@ -10285,11 +10472,17 @@
       "Replay introduction": [
         "Veure de nou la introducció"
       ],
+      "Set a display name": [
+        "Estableix un nom per a mostrar"
+      ],
       "Start using ${ BRAND_NAME }": [
         "Comenceu a utilitzar ${ BRAND_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Us donem la benvinguda a ${ MAIL_APP_NAME }"
@@ -11320,6 +11513,11 @@
         "Signa"
       ]
     },
+    "Signup label": {
+      "Display name": [
+        "Nom a mostrar"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "Més ràpid a l'aplicació"
@@ -11442,6 +11640,9 @@
       ],
       "Upgrade": [
         "Millora"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "Milloreu per ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -11539,6 +11740,12 @@
       ]
     },
     "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Consulteu el que està inclòs a la vostra subscripció i comenceu a gaudir dels avantatges."
+      ],
+      "Discover your subscription benefits": [
+        "Descobriu els avantatges de la vostra subscripció"
+      ],
       "Email tracking protection": [
         "Protecció de seguiment de correu electrònic"
       ],
@@ -11909,9 +12116,6 @@
       ],
       "Comprehensive privacy and security": [
         "Privacitat i seguretat integrals"
-      ],
-      "Dark web monitoring": [
-        "Monitoratge del web fosc"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
@@ -12596,8 +12800,8 @@
       "Download Desktop app": [
         "Descarregueu l'aplicació d'escriptori"
       ],
-      "Enable Dark Web Monitoring": [
-        "Activa el monitoratge del web fosc"
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Obtingueu la vostra adreça @${ PM_DOMAIN }"
@@ -12613,6 +12817,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } adreça de correu electrònic",
         "${ emailsCount } adreces de correu electrònic"
+      ],
+      "${ feature } is now active": [
+        "La característica ${ feature } està ara activa."
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ MAIL_APP_NAME }"
@@ -12676,6 +12883,9 @@
       "Amount due": [
         "Import a deure"
       ],
+      "Anytime, anywhere access": [
+        "Accés en qualsevol moment i des de qualsevol lloc"
+      ],
       "Apply gift code": [
         "Aplicar el codi regal"
       ],
@@ -12693,6 +12903,9 @@
       ],
       "Attachments": [
         "Adjunts"
+      ],
+      "Auto-deletion is active": [
+        "La supressió automàtica està activada."
       ],
       "Bad time for this email?": [
         "És un mal moment per aquest correu electrònic?"
@@ -12790,6 +13003,9 @@
       "Currency": [
         "Moneda"
       ],
+      "Custom domains:": [
+        "Dominis personalitzats:"
+      ],
       "Customize and confirm": [
         "Personalitzeu i confirmeu"
       ],
@@ -12798,9 +13014,6 @@
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoratge del web fosc"
       ],
       "Data recovery": [
         "Recuperació de dades"
@@ -12857,6 +13070,12 @@
       ],
       "Details": [
         "Detalls"
+      ],
+      "Discover your subscription benefits": [
+        "Descobriu els avantatges de la vostra subscripció"
+      ],
+      "Distraction-free emailing": [
+        "Correu electrònic sense distraccions"
       ],
       "Don't give spam a chance": [
         "No li doneu cap oportunitat al correu brossa."
@@ -13132,6 +13351,9 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
+      "Other features included in your plan": [
+        "Altres característiques incloses en el vostre pla"
+      ],
       "Other information": [
         "Altres dades"
       ],
@@ -13158,6 +13380,9 @@
       ],
       "Previous message": [
         "Missatge anterior"
+      ],
+      "Priority support:": [
+        "Suport prioritari:"
       ],
       "Processing...": [
         "Processant..."
@@ -13216,6 +13441,9 @@
       "Schedule send": [
         "Programar enviament"
       ],
+      "Schedule send:": [
+        "Programeu l'enviament:"
+      ],
       "Security center": [
         "Centre de seguretat"
       ],
@@ -13264,6 +13492,12 @@
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
+      "Set up ${ protonDuoPlanName }": [
+        "Configureu ${ protonDuoPlanName }"
+      ],
+      "Set up your family account": [
+        "Configureu el vostre compte familiar"
+      ],
       "Set your own schedule": [
         "Establiu el vostre propi horari"
       ],
@@ -13281,6 +13515,9 @@
       ],
       "Snooze message": [
         "Posa en pausa el missatge"
+      ],
+      "Snooze:": [
+        "Posposa:"
       ],
       "Sort conversations": [
         "Ordenar converses"
@@ -13371,6 +13608,9 @@
       "What would you like to import?": [
         "Què li agradaria importar?"
       ],
+      "You can now create unlimited folders and labels": [
+        "Ara podeu crear carpetes i etiquetes il·limitades."
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
       ],
@@ -13393,6 +13633,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Tooltip": {
@@ -13476,11 +13721,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Tor out of date": {
