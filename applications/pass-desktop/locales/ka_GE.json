@@ -244,9 +244,6 @@
       "Edit vault": [
         "საცავის ჩასწორება"
       ],
-      "Enable Dark Web Monitoring": [
-        "Dark Web-ის მონიტორინგის ჩართვა"
-      ],
       "Enable this alias to receive emails sent to this alias": [
         "ჩართეთ ეს ფსევდონიმი, რომ მიიღოთ მისთვის გაგზავნილი ელფოსტები"
       ],
@@ -728,9 +725,6 @@
       "Create unique passwords": [
         "უნიკალური პაროლების შექმნა"
       ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "Dark Web Monitoring ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
-      ],
       "Get notified if your email, password or other personal data was leaked.": [
         "მიიღეთ შეტყობინება, თუ თქვენი ელფოსტა, პაროლი ან რამე თქვენ შესახებ გაიჟონება."
       ],
@@ -1188,9 +1182,6 @@
       ]
     },
     "Feature": {
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
@@ -2224,6 +2215,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "მიაღწიეთ მაქსიმალურად დაშვებულ ${ maxLength } სიმბოლოს."
       ],
+      "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
+        "თქვენი დომენის პარამეტრების (ყველას ჩაჭერის ელფოსტის ფსევდონიმები, ნაგულისხმევი საჩვენებელი სახელი ფსევდონიმებისთვის და ა.შ.) მისი გადამოწმების შემდეგ შეგეძლებათ."
+      ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "თქვენ ახლა გახვალთ და უნდა თავიდან შემოსვლა მოგიწევთ ყველა თქვენი სხვა მოწყობილობიდან."
       ],
@@ -2516,9 +2510,6 @@
       ],
       "Custom text field": [
         "მორგებული ტექსტური ველი"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web-ის მონიტორინგი"
       ],
       "Date": [
         "თარიღი"
@@ -3566,9 +3557,6 @@
       "Custom emails": [
         "მორგებული ელფოსტები"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Default": [
         "ნაგულისხმევი"
       ],
@@ -4076,9 +4064,6 @@
       ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "საცავის გასაზიარებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "დამატებითი პაროლის წაშლა გაგიყვანთ ყველა მოწყობილობიდან და დაასრულებს ყველა აქტიურ სესიას."
