@@ -12,6 +12,7 @@ import type {
     TypedOpenedShare,
 } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { entriesMap } from '@proton/pass/utils/object/map';
@@ -77,7 +78,9 @@ export const createPassCrypto = (): PassCryptoWorker => {
 
     /** Resolves the decrypted address key reference */
     const getPrimaryAddressKeyById = async (addressId: string): Promise<DecryptedAddressKey> => {
-        const [primaryAddressKey] = await getDecryptedAddressKeys(addressId);
+        const primaryAddressKey = first(await getDecryptedAddressKeys(addressId));
+        if (!primaryAddressKey) throw new PassCryptoError(`No primary address key`);
+
         return primaryAddressKey;
     };
 

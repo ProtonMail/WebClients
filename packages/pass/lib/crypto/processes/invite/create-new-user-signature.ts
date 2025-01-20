@@ -18,12 +18,12 @@ export const createNewUserSignatureBody = ({
 }: CreateNewUserSignatureBodyProcessParams): Uint8Array => {
     const bEmail = stringToUint8Array(invitedEmail);
     const bSeperator = stringToUint8Array('|');
-    const bVaultKey = shareKey.raw;
+    const bShareKey = shareKey.raw;
 
-    const binaryData = new Uint8Array(bEmail.length + bSeperator.length + bVaultKey.length);
+    const binaryData = new Uint8Array(bEmail.length + bSeperator.length + bShareKey.length);
     binaryData.set(bEmail, 0);
     binaryData.set(bSeperator, bEmail.length);
-    binaryData.set(bVaultKey, bEmail.length + bSeperator.length);
+    binaryData.set(bShareKey, bEmail.length + bSeperator.length);
 
     return binaryData;
 };
