@@ -1,7 +1,6 @@
 import { Button } from '@proton/atoms/index';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -42,9 +41,7 @@ export const UserInfo = ({ user }: Props) => {
             onClick={() => {
                 // Save password before going to account switch page
                 saveUrlPasswordForRedirection(urlPassword);
-                // We replace the url to prevent any bad action from the user,
-                // like returning back into the history after signout all sessions
-                replaceUrl(urlWithReturnUrl);
+                document.location.assign(urlWithReturnUrl);
             }}
             className="user-info border-none max-w-full flex items-center flex-nowrap gap-3 user-info relative interactive-pseudo-protrude rounded interactive--no-background"
         >
