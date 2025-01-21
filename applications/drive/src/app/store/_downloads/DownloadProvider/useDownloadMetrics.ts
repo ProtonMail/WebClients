@@ -22,7 +22,7 @@ import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
 import { useSharesStore } from '../../../zustand/share/shares.store';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
 import { getMetricsUserPlan } from '../../_user/getMetricsUserPlan';
-import { selectMechanismForDownload } from '../fileSaver/fileSaver';
+import fileSaver from '../fileSaver/fileSaver';
 import type { Download } from './interface';
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes
@@ -89,7 +89,7 @@ export const useDownloadMetrics = (
         });
 
         // Web only metric
-        void selectMechanismForDownload(size).then((mechanism) => {
+        void fileSaver.instance.selectMechanismForDownload(size).then((mechanism) => {
             metrics.drive_download_mechanism_success_rate_total.increment({
                 status: state === TransferState.Done ? 'success' : 'failure',
                 retry: retry ? 'true' : 'false',
