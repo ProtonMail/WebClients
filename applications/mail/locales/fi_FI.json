@@ -5420,6 +5420,9 @@
       "Only the Gregorian calendar scale is allowed": [
         "Ainoastaan gregoriaaninen kalenteri on sallittu"
       ],
+      "Recurring event has no occurrences": [
+        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
+      ],
       "Recurring rule not supported": [
         "Toistuvaa sääntöä ei tueta"
       ],
@@ -6541,6 +6544,9 @@
       "JCB logo": [
         "JCB-logo"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Liity ${ PROTON_SENTINEL_NAME } -ohjelmaan saadaksesi korkeimman tason tiliturvan ja tuen."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
       ],
@@ -7255,9 +7261,6 @@
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Poista rajoitukset päivittämällä maksulliseen tilaukseen."
       ],
-      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
-        "Poistaaksesi rajoitukset siirry sivustolle ${ mailLink } ja päivitä maksulliseen tilaukseen."
-      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Sähköpostitilauksen lopettamiseksi lähetetään osoitteesta ${ boldFrom } viesti, joka sisältää seuraavat näiden viestien lähettäjän määrittämät tiedot:"
       ],
@@ -7416,9 +7419,6 @@
       ],
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
-      ],
-      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
-        "Havaitsimme useamman ilmaisen tilin luomisen, joka rikkoo ${ termsLink }."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
@@ -7696,6 +7696,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+      ],
       "Your password was leaked:": [
         "Salasanasi paljastui:"
       ],
@@ -7704,6 +7707,12 @@
       ],
       "Your private writing assistant": [
         "Yksityinen kirjoittamisen avustajasi"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
       ]
     },
     "info": {
@@ -12557,9 +12566,6 @@
       "A filter with this name already exists": [
         "Tämän niminen suodatin on jo olemassa"
       ],
-      "Account locked": [
-        "Tili on lukittu"
-      ],
       "Account recovery": [
         "Tilin palautus"
       ],
@@ -13396,6 +13402,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Tämä varmistaa, ettei kukaan näe sijaintia, laitetta tai muita tietoja, joilla sinua voitaisiin tunnistaa tai seurata."
       ],
       "This feature is only available for paid users": [
         "Ominaisuus on vain maksavien käyttäjien käytettävissä"
