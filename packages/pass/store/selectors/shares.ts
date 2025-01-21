@@ -2,17 +2,20 @@ import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
 import { isActive } from '@proton/pass/lib/items/item.predicates';
-import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isItemShare, isShareWritable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import {
     hasNewUserInvitesReady,
+    isOwnReadonlyVault,
     isOwnVault,
-    isSharedVault,
+    isOwnWritableVault,
+    isWritableSharedVault,
     isWritableVault,
 } from '@proton/pass/lib/vaults/vault.predicates';
+import { sortVaults } from '@proton/pass/lib/vaults/vault.utils';
 import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { and, not } from '@proton/pass/utils/fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 import type { ShareItem, VaultShareItem } from '../reducers';
@@ -21,27 +24,15 @@ import { SelectorError } from './errors';
 import { selectAllItems, selectItems } from './items';
 
 export const selectShares = ({ shares }: State) => shares;
-
-export const selectAllShares = createSelector(selectShares, (shares) => Object.values(shares));
-
-/* vaults returned from this selector are always
- * sorted alphabetically by ascending vault name  */
-export const selectAllVaults = createSelector([selectAllShares], (shares) =>
-    shares.filter(isVaultShare).sort((a, b) => a.content.name.localeCompare(b.content.name))
-);
-
-export const selectWritableVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isWritableVault));
-export const selectNonOwnedVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(not(isOwnVault)));
-export const selectOwnWritableVaults = createSelector([selectAllVaults], (vaults) =>
-    vaults.filter(and(isWritableVault, isOwnVault))
-);
-export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (vaults) =>
-    vaults.filter(and(not(isWritableVault), isOwnVault))
-);
-
-export const selectWritableSharedVaults = createSelector([selectAllVaults], (vaults) =>
-    vaults.filter(and(isWritableVault, isSharedVault))
-);
+export const selectAllShares = createSelector(selectShares, (s) => Object.values(s));
+export const selectItemShares = createSelector([selectAllShares], (s) => s.filter(isItemShare));
+export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter(isVaultShare).sort(sortVaults));
+export const selectWritableShares = createSelector([selectAllShares], (v) => v.filter(isShareWritable));
+export const selectWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableVault));
+export const selectNonOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(not(isOwnVault)));
+export const selectOwnWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnWritableVault));
+export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnReadonlyVault));
+export const selectWritableSharedVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableSharedVault));
 
 const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShareItem[]>) =>
     createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
@@ -60,7 +51,7 @@ export const selectShare =
     ({ shares }: State) =>
         (shareId ? shares?.[shareId] : undefined) as Maybe<ShareItem<T>>;
 
-export const selectIsWritableShare =
+export const selectIsWritableVault =
     (shareId: string) =>
     (state: State): boolean => {
         const share = selectShare(shareId)(state);
@@ -82,17 +73,6 @@ export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
         selectItems,
         (share, itemsByShareId): MaybeNull<number> =>
             share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(isActive).length : null
-    );
-
-export const selectVaultSharedWithEmails = (shareId: string) =>
-    createSelector(
-        selectShare<ShareType.Vault>(shareId),
-        (vault): Set<string> =>
-            new Set(
-                (vault?.members?.map(prop('email')) ?? [])
-                    .concat(vault?.invites?.map(prop('invitedEmail')) ?? [])
-                    .concat(vault?.newUserInvites?.map(prop('invitedEmail')) ?? [])
-            )
     );
 
 /* The default vault should be the oldest vault I own and can write to */

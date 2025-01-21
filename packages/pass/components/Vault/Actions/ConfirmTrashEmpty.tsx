@@ -8,10 +8,11 @@ import {
     ConfirmationPrompt,
     type ConfirmationPromptHandles,
 } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { selectTrashedAliasCount } from '@proton/pass/store/selectors';
+import { selectHasTrashedSharedItems, selectTrashedAliasCount } from '@proton/pass/store/selectors';
 
 export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ onCancel, onConfirm }) => {
     const aliasCount = useSelector(selectTrashedAliasCount);
+    const hasSharedItems = useSelector(selectHasTrashedSharedItems);
 
     return (
         <ConfirmationPrompt
@@ -21,9 +22,16 @@ export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ onCancel, onC
             title={c('Title').t`Permanently remove all items?`}
             confirmText={c('Action').t`Delete all`}
             message={
-                <>
+                <div className="flex gap-y-4">
+                    {hasSharedItems && (
+                        <Alert type="error">
+                            {c('Warning')
+                                .t`Some items are currently shared. Deleting them will remove access for all other users.`}
+                        </Alert>
+                    )}
+
                     {aliasCount > 0 && (
-                        <Alert className="mb-4" type="error">
+                        <Alert type="error">
                             {c('Title').ngettext(
                                 msgid`You’re about to permanently delete ${aliasCount} alias.`,
                                 `You’re about to permanently delete ${aliasCount} aliases.`,
@@ -41,7 +49,7 @@ export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ onCancel, onC
                         {c('Warning')
                             .t`All your trashed items will be permanently deleted. You cannot undo this action.`}
                     </span>
-                </>
+                </div>
             }
         />
     );

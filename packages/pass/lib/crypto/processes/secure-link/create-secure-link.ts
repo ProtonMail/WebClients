@@ -1,7 +1,11 @@
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { type ItemKey, PassEncryptionTag, type VaultKey } from '@proton/pass/types';
+import type { ShareKey } from '@proton/pass/types';
+import { type ItemKey, PassEncryptionTag } from '@proton/pass/types';
 
-type CreateSecureLinkProcessParams = { itemKey: ItemKey; vaultKey: VaultKey };
+type CreateSecureLinkProcessParams = {
+    itemKey: ItemKey;
+    shareKey: ShareKey;
+};
 
 export type CreateSecureLinkData = {
     encryptedItemKey: Uint8Array;
@@ -9,9 +13,13 @@ export type CreateSecureLinkData = {
     secureLinkKey: Uint8Array;
 };
 
+/** Note: for secure-links created from shared items,
+ * itemKey == shareKey. As such we're encrypting the
+ * secure-link key with the key being encrypted with
+ * the secure-link. */
 export const createSecureLink = async ({
     itemKey,
-    vaultKey,
+    shareKey,
 }: CreateSecureLinkProcessParams): Promise<CreateSecureLinkData> => {
     const secureLinkKey = generateKey();
 
@@ -21,7 +29,7 @@ export const createSecureLink = async ({
         PassEncryptionTag.ItemKey
     );
 
-    const encryptedLinkKey = await encryptData(vaultKey.key, secureLinkKey, PassEncryptionTag.LinkKey);
+    const encryptedLinkKey = await encryptData(shareKey.key, secureLinkKey, PassEncryptionTag.LinkKey);
 
     return { encryptedItemKey, encryptedLinkKey, secureLinkKey };
 };

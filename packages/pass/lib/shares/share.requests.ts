@@ -1,7 +1,12 @@
 import { api } from '@proton/pass/lib/api/api';
-import { type ShareGetResponse, type ShareKeyResponse, type ShareRole } from '@proton/pass/types';
+import {
+    type ActiveShareGetResponse,
+    type ShareGetResponse,
+    type ShareKeyResponse,
+    type ShareRole,
+} from '@proton/pass/types';
+import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
 import { type ShareMember } from '@proton/pass/types/data/invites';
-import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/shares.dto';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */
 export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse[]> => {
@@ -32,13 +37,8 @@ export const requestShares = async (): Promise<ShareGetResponse[]> =>
 
 export const deleteShare = async (shareId: string) => api({ url: `pass/v1/share/${shareId}`, method: 'delete' });
 
-export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> => {
-    const { Shares: members } = await api({
-        url: `pass/v1/share/${shareId}/user`,
-        method: 'get',
-    });
-
-    return members.map((member) => ({
+const mapShareMembers = (response: ActiveShareGetResponse[]) =>
+    response.map((member) => ({
         shareId: member.ShareID,
         name: member.UserName,
         email: member.UserEmail,
@@ -49,7 +49,12 @@ export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> 
         expireTime: member.ExpireTime,
         createTime: member.CreateTime,
     }));
-};
+
+export const loadShareItemMembers = async (shareId: string, itemId: string): Promise<ShareMember[]> =>
+    api({ url: `pass/v1/share/${shareId}/user/item/${itemId}`, method: 'get' }).then((r) => mapShareMembers(r.Shares));
+
+export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> =>
+    api({ url: `pass/v1/share/${shareId}/user`, method: 'get' }).then((r) => mapShareMembers(r.Shares));
 
 export const removeUserAccess = async ({ shareId, userShareId }: ShareRemoveMemberAccessIntent) =>
     api({

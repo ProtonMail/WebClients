@@ -11,12 +11,15 @@ import { secureLinkCreate } from '@proton/pass/store/actions';
 import type { SecureLink, SecureLinkOptions, UniqueItem } from '@proton/pass/types';
 
 type Props = UniqueItem & { onLinkGenerated: (data: SecureLink) => void };
+type SecureLinkState = Omit<SecureLinkOptions, 'type'>;
+
+const getDefaultSecureLinkState = (): SecureLinkState => ({
+    expirationTime: ExpireTime.OneWeek,
+    maxReadCount: null,
+});
 
 export const SecureLinkGenerate: FC<Props> = ({ shareId, itemId, onLinkGenerated }) => {
-    const [{ expirationTime, maxReadCount }, setOptions] = useState<SecureLinkOptions>({
-        expirationTime: ExpireTime.OneWeek,
-        maxReadCount: null,
-    });
+    const [{ expirationTime, maxReadCount }, setOptions] = useState(getDefaultSecureLinkState);
 
     const { dispatch, loading } = useRequest(secureLinkCreate, {
         initial: { shareId, itemId },

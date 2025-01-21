@@ -15,10 +15,9 @@ import { Dropdown, DropdownMenu, DropdownSizeUnit, usePopperAnchor } from '@prot
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
+import { SharedMenuContent } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getInitialFilters, getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
 import { AccountPath } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
@@ -40,7 +39,6 @@ export const MenuDropdown: FC = () => {
     const { lock, logout } = useExtensionClient();
     const { interactive, expanded } = usePopupContext();
 
-    const navigate = useNavigate();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const canLock = useSelector(selectLockEnabled);
 
@@ -113,16 +111,7 @@ export const MenuDropdown: FC = () => {
                         <hr className="mb-2 mx-4" aria-hidden="true" />
 
                         <MenuVaults onAction={close} />
-
-                        <SecureLinkButton
-                            active={false}
-                            className="pt-1.5 pb-1.5"
-                            onClick={withClose(() =>
-                                navigate(getLocalPath('secure-links'), {
-                                    filters: getInitialFilters(),
-                                })
-                            )}
-                        />
+                        <SharedMenuContent onAction={close} dense />
 
                         <DropdownMenuButton
                             onClick={withClose(() => onLink(getPassWebUrl(API_URL, 'monitor')))}

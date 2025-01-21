@@ -12,7 +12,7 @@ import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationIt
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import type { ItemScope } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
-import { selectIsWritableShare } from '@proton/pass/store/selectors';
+import { selectIsWritableVault } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type ItemRevision } from '@proton/pass/types';
 
@@ -35,7 +35,7 @@ export const ItemsList = memo(() => {
     const handleSelect = useCallback(
         (item: ItemRevision, metaKey: boolean) => {
             if (canBulk(scope) && (metaKey || bulkEnabled)) {
-                if (selectIsWritableShare(item.shareId)(store.getState())) {
+                if (selectIsWritableVault(item.shareId)(store.getState())) {
                     if (!bulkEnabled) bulk.enable();
                     bulk.toggle(item);
                 }

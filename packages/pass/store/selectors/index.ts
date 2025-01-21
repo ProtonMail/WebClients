@@ -1,5 +1,7 @@
 export * from '@proton/pass/store/request/selectors';
+export * from './access';
 export * from './alias';
+export * from './autofill';
 export * from './export';
 export * from './filters';
 export * from './import';
@@ -11,5 +13,6 @@ export * from './onboarding';
 export * from './organization';
 export * from './password';
 export * from './settings';
+export * from './shared';
 export * from './shares';
 export * from './user';

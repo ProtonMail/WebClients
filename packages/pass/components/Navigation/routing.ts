@@ -29,6 +29,8 @@ export const ItemScopes = [
     'monitor/duplicates',
     'monitor/2fa',
     'monitor/excluded',
+    'shared-with-me',
+    'shared-by-me',
 ] as const;
 
 /** Route segments that should only be accessible

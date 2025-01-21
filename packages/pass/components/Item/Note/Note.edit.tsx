@@ -17,7 +17,8 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-note';
 
-export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ vault: { shareId }, revision, onSubmit, onCancel }) => {
+export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSubmit, onCancel }) => {
+    const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, ...uneditable } = item;
     const note = useDeobfuscatedValue(metadata.note);

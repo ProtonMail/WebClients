@@ -9,17 +9,11 @@ import { c } from 'ttag';
 import { Button, Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
-import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
+import { SharedMenu } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { RouteMatch } from '@proton/pass/components/Navigation/RouteMatch';
-import {
-    getInitialFilters,
-    getLocalPath,
-    getMonitorRoute,
-    getSecureLinksRoute,
-} from '@proton/pass/components/Navigation/routing';
+import { getMonitorRoute } from '@proton/pass/components/Navigation/routing';
 import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
@@ -29,39 +23,35 @@ import { MenuActions } from './MenuActions';
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
-    const navigate = useNavigate();
 
     return (
-        <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto gap-2">
-            <Button
-                icon
-                size="medium"
-                color="norm"
-                onClick={vaultActions.create}
-                shape="ghost"
-                title={c('Action').t`Create a new vault`}
-                className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 mx-3"
-            >
-                <div className="flex text-ellipsis">{c('Label').t`Vaults`}</div>
-                <Icon name="plus" alt={c('Action').t`Create a new vault`} />
-            </Button>
-
+        <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
             <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
-                <div className="flex mx-3">
-                    <VaultMenu />
+                <div className="flex mx-3 gap-5 pb-2">
+                    <div className="flex flex-column gap-2 w-full">
+                        <Button
+                            icon
+                            size="medium"
+                            color="norm"
+                            onClick={vaultActions.create}
+                            shape="ghost"
+                            title={c('Action').t`Create a new vault`}
+                            className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 w-full"
+                        >
+                            <div className="flex text-ellipsis">{c('Label').t`Vaults`}</div>
+                            <Icon name="plus" alt={c('Action').t`Create a new vault`} />
+                        </Button>
+                        <VaultMenu />
+                    </div>
+
+                    <SharedMenu />
                 </div>
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-2">
-                <OnboardingActions />
+                <hr className="mb-2 mx-4" aria-hidden="true" />
 
-                <RouteMatch
-                    path={getSecureLinksRoute()}
-                    component={SecureLinkButton}
-                    className="rounded"
-                    parentClassName="mx-3"
-                    onClick={() => navigate(getLocalPath('secure-links'), { filters: getInitialFilters() })}
-                />
+                <OnboardingActions />
 
                 <RouteMatch path={getMonitorRoute()} component={MonitorButton} />
 

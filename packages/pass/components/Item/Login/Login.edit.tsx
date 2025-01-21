@@ -40,13 +40,13 @@ import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 const FORM_ID = 'edit-login';
 
-export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
+export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share, onSubmit, onCancel }) => {
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
     const showUsernameField = useSelector(selectShowUsernameField);
 
     const domain = url ? resolveDomain(url) : null;
-    const { shareId } = vault;
+    const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
     const { email, username } = getSanitizedUserIdentifiers(content);
