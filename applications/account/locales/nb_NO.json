@@ -463,6 +463,9 @@
       "Edit": [
         "Rediger"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit billing cycle": [
         "Rediger faktureringssyklus"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "Rediger gruppe"
+      ],
+      "Edit invoice note": [
+        "Rediger fakturanota"
       ],
       "Edit label": [
         "Rediger etikett"
@@ -3909,6 +3915,11 @@
         "90 minutter"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet vil bare vises på fakturaer som utstedes i fremtiden og vil ikke påvirke eksisterende fakturaer."
+      ]
+    },
     "Email": {
       "Email verified": [
         "E-post bekreftet"
@@ -4906,6 +4917,9 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ],
+      "ZIP code is required": [
+        "Postnummer kreves"
       ]
     },
     "error": {
@@ -9522,6 +9536,11 @@
         "Du kan legge til en betalingsmåte for å få abonnementet fornyet automatisk. Andre betalingsmåter er også tilgjengelige."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Angi en merknad for fakturaene. Disse detaljene vil bli lagt til både personlige og organisatoriske fakturaer. De vises bare på fakturaer som utstedes i fremtiden."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klikk for detaljer"
@@ -10971,6 +10990,9 @@
       "VAT": [
         "MVA"
       ],
+      "VAT identification number": [
+        "MVA-identifikasjonsnummer"
+      ],
       "Verification code": [
         "Verifiseringskode"
       ],
@@ -11027,6 +11049,9 @@
       ],
       "Your referral link": [
         "Din vervekobling"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "label": {
@@ -14268,11 +14293,20 @@
       "Address": [
         "Adresse"
       ],
+      "Anderson": [
+        "Andersen"
+      ],
+      "Anytown": [
+        "By"
+      ],
       "Choose a name": [
         "Velg et navn"
       ],
       "Choose display name": [
         "Velg visningsnavn"
+      ],
+      "Company name": [
+        "Foretaksnavn"
       ],
       "Confirm": [
         "Bekreft"
@@ -14312,6 +14346,9 @@
       ],
       "Link": [
         "Kobling"
+      ],
+      "Main street 12": [
+        "Gatenavn 12"
       ],
       "Name": [
         "Navn"
@@ -14373,8 +14410,14 @@
       "Text": [
         "Tekst"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "Type text or keyword": [
         "Skriv inn tekst eller nøkkelord"
+      ],
+      "VAT number": [
+        "MVA-nummer"
       ],
       "yourdomain.com": [
         "dittdomene.no"
@@ -16738,6 +16781,9 @@
       "Backup password updated": [
         "Reservepassord oppdatert"
       ],
+      "Billing details updated": [
+        "Faktureringsinformasjon oppdatert"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender lagt til. Det kan ta noen minutter å synkronisere."
       ],
@@ -17621,6 +17667,9 @@
       "Download the mobile apps": [
         "Last ned mobilappene"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit credit/debit card": [
         "Rediger kreditt-/debetkort"
       ],
@@ -17638,6 +17687,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Rediger porttjener ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Rediger fakturanota"
       ],
       "Edit profile": [
         "Rediger profil"
