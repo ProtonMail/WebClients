@@ -3,7 +3,9 @@ import { useLocation } from 'react-router';
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useMessageCounts } from '@proton/mail/counts';
 import { domIsBusy } from '@proton/shared/lib/busy';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
 import type { PostSubscriptionOneDollarOfferState } from '../components/interface';
@@ -17,7 +19,10 @@ export const useMailPostSignupOneDollar = () => {
     // The offer should not be opened if the user has selected a conversation / message.
     // Only when in the root of a folder, regardless of the folder
     const { pathname } = useLocation();
-    const isNotInFolder = pathname.slice(1, pathname.length).split('/').length === 1;
+    const isInFolder = pathname.slice(1, pathname.length).split('/').length === 1;
+
+    const [messageCount, loadingMessageCount] = useMessageCounts();
+    const totalMessage = messageCount?.find((label) => label.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL)?.Total || 0;
 
     // One flag to control the feature, and another to manage the progressive rollout of existing users
     const mailOneDollarPostSignupFlag = useFlag('MailPostSignupOneDollarPromo');
@@ -39,8 +44,9 @@ export const useMailPostSignupOneDollar = () => {
             postSignupTimestamp: mailOfferState?.Value?.offerStartDate ?? 0,
             postSignupThreshold: postSignupThreshold?.Value,
             mailOneDollarPostSignupFlag,
+            totalMessage,
         }),
-        loading: userLoading || postSignupDateLoading || postSignupThresholdLoading,
-        openSpotlight: isNotInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
+        loading: userLoading || postSignupDateLoading || postSignupThresholdLoading || loadingMessageCount,
+        openSpotlight: isInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
     };
 };
