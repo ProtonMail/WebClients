@@ -10,7 +10,7 @@ import { addApiContact } from '../../../helpers/test/contact';
 import {
     fromGeneratedKeysToMessageKeys,
     getAddressKeyCache,
-    getStoredKey,
+    getStoredUserKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
@@ -23,6 +23,7 @@ import {
     clearAll,
     encryptMessage,
     generateKeys,
+    getCompleteAddress,
 } from '../../../helpers/test/helper';
 import { X_PM_HEADERS } from '../../../models/crypto';
 import type { MessageKeys } from '../../../store/messages/messagesTypes';
@@ -80,7 +81,7 @@ describe('MessageView encryption', () => {
                 { conversationMode: true },
                 {
                     preloadedState: {
-                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                        addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
                     },
                 }
             );
@@ -113,7 +114,7 @@ describe('MessageView encryption', () => {
                 {},
                 {
                     preloadedState: {
-                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                        addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
                     },
                 }
             );
@@ -156,7 +157,7 @@ describe('MessageView encryption', () => {
                 {},
                 {
                     preloadedState: {
-                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                        addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
                     },
                 }
             );
@@ -198,7 +199,7 @@ describe('MessageView encryption', () => {
                 {},
                 {
                     preloadedState: {
-                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                        addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
                     },
                 }
             );
@@ -241,8 +242,8 @@ describe('MessageView encryption', () => {
                 {},
                 {
                     preloadedState: {
-                        userKeys: getModelState(getStoredKey(toKeys)),
-                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                        userKeys: getModelState(getStoredUserKey(toKeys)),
+                        addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
                     },
                 }
             );
@@ -294,8 +295,8 @@ describe('MessageView encryption', () => {
                 {},
                 {
                     preloadedState: {
-                        userKeys: getModelState(getStoredKey(toKeys)),
-                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                        userKeys: getModelState(getStoredUserKey(toKeys)),
+                        addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
                     },
                 }
             );
@@ -338,8 +339,8 @@ describe('MessageView encryption', () => {
                 {},
                 {
                     preloadedState: {
-                        userKeys: getModelState(getStoredKey(toKeys)),
-                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                        userKeys: getModelState(getStoredUserKey(toKeys)),
+                        addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
                     },
                 }
             );

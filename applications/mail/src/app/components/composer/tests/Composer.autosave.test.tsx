@@ -71,10 +71,11 @@ describe('Composer autosave', () => {
     };
 
     const setup = async (resolved = true) => {
+        const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
         const { container, store, ...renderResult } = await renderComposer({
             preloadedState: {
-                addresses: getModelState([getCompleteAddress({ ID: AddressID, Email: fromAddress })]),
-                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                addresses: getModelState([address]),
+                addressKeys: getAddressKeyCache(address, [fromKeys]),
             },
             message: {
                 data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT },
@@ -151,7 +152,7 @@ describe('Composer autosave', () => {
             jest.advanceTimersByTime(1500);
             await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
             expect(sendSpy).not.toHaveBeenCalled();
-            createResolve({ Message: { ID, Attachments: [] } });
+            createResolve({ Message: { ID, AddressID, Attachments: [] } });
             await waitForSpyCall({ spy: sendSpy, disableFakeTimers: true });
         });
     });
