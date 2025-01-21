@@ -253,6 +253,9 @@
       "Edit": [
         "Upravit"
       ],
+      "Edit billing address": [
+        "Upravit fakturační adresu"
+      ],
       "Edit billing cycle": [
         "Upravit fakturační cyklus"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Upravit skupinu"
+      ],
+      "Edit invoice note": [
+        "Upravit poznámku faktury"
       ],
       "Edit name": [
         "Upravit název"
@@ -2469,6 +2475,11 @@
         "Prioritní podpora"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "E-mailová adresa ${ name } přidána"
@@ -2784,6 +2795,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizace jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
+      ],
+      "ZIP code is required": [
+        "PSČ je potřeba vyplnit"
       ]
     },
     "error": {
@@ -5427,6 +5441,11 @@
         "Můžete přidat platební metodu, která umožní automatické obnovení předplatného. Další platební metody jsou také dostupné."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Zadejte poznámku k fakturám. Tyto detaily budou přidány do osobních i organizačních faktur. Budou se zobrazovat pouze na fakturách vystavených v budoucnu."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Vypršení platnosti můžete zabránit opětovnou aktivací předplatného"
@@ -6045,6 +6064,9 @@
       "VAT": [
         "DPH"
       ],
+      "VAT identification number": [
+        "DIČ"
+      ],
       "Verification code": [
         "Ověřovací kód"
       ],
@@ -6083,6 +6105,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "label": {
@@ -8177,11 +8202,20 @@
       "Address": [
         "Adresa"
       ],
+      "Anderson": [
+        "Příjmení"
+      ],
+      "Anytown": [
+        "Město"
+      ],
       "Choose a name": [
         "Zvolte název"
       ],
       "Choose display name": [
         "Vyberte jméno, které chcete zobrazovat"
+      ],
+      "Company name": [
+        "Název společnosti"
       ],
       "Confirm": [
         "Potvrdit"
@@ -8215,6 +8249,9 @@
       ],
       "Group name": [
         "Název skupiny"
+      ],
+      "Main street 12": [
+        "Ulice a číslo popisné"
       ],
       "Other": [
         "Ostatní"
@@ -8257,6 +8294,12 @@
       ],
       "Start date": [
         "Datum zahájení"
+      ],
+      "Thomas": [
+        "Jméno"
+      ],
+      "VAT number": [
+        "DIČ"
       ],
       "yourdomain.com": [
         "vasedomena.cz"
@@ -10026,6 +10069,9 @@
       "Backup password updated": [
         "Záložní heslo bylo aktualizováno"
       ],
+      "Billing details updated": [
+        "Fakturační údaje aktualizovány"
+      ],
       "Catch-all address updated": [
         "Záchytná adresa aktualizována"
       ],
@@ -10610,6 +10656,9 @@
       "Downloads": [
         "Stahování"
       ],
+      "Edit billing address": [
+        "Úprava fakturační adresy"
+      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -10624,6 +10673,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Upravit bránu ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Úprava poznámky faktury"
       ],
       "Edit servers": [
         "Upravit servery"

@@ -1085,6 +1085,9 @@
       "Country code": [
         "Codi de país"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Els nostres ${ termsLink } no permeten la creació de diversos comptes gratuïts."
+      ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
       ],
@@ -1102,6 +1105,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Per obtenir informació addicional i eliminar restriccions, inicieu sessió a ${ mailLink }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
@@ -1135,12 +1141,6 @@
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Per eliminar les restriccions, podeu millorar a un pla de pagament."
-      ],
-      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
-        "Per eliminar les restriccions, podeu visitar ${ mailLink } i millorar a un pla de pagament."
-      ],
-      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
-        "Hem detectat la creació de diversos comptes gratuïts, cosa que infringeix els nostres ${ termsLink }."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Si necessiteu més d'una adreça de correu electrònic, tenim plans dissenyats específicament a la vostra mida."
@@ -1638,8 +1638,8 @@
       ]
     },
     "Title": {
-      "Account locked": [
-        "S'ha bloquejat el compte."
+      "Account restricted": [
+        "Compte restringit"
       ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"
