@@ -21,7 +21,10 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
     private logger: LoggerInterface,
   ) {}
 
-  async execute(nodeMeta: NodeMeta | PublicNodeMeta, options: { useCache: boolean }): Promise<Result<GetNodeResult>> {
+  async execute(
+    nodeMeta: NodeMeta | PublicNodeMeta,
+    options: { useCache: boolean; forceFetch?: boolean },
+  ): Promise<Result<GetNodeResult>> {
     try {
       if (options.useCache && this.cacheService) {
         const cachedResult = await this.cacheService.getCachedValue({
@@ -40,9 +43,14 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
     }
 
     try {
-      const node = isPublicNodeMeta(nodeMeta)
-        ? await this.compatWrapper.getPublicCompat().getNode(nodeMeta)
-        : await this.compatWrapper.getUserCompat().getNode(nodeMeta)
+      let node: DecryptedNode
+      if (isPublicNodeMeta(nodeMeta)) {
+        node = await this.compatWrapper.getPublicCompat().getNode(nodeMeta)
+      } else if (options.forceFetch) {
+        node = await this.compatWrapper.getUserCompat().getLatestNode(nodeMeta)
+      } else {
+        node = await this.compatWrapper.getUserCompat().getNode(nodeMeta)
+      }
 
       if (!node) {
         return Result.fail('Incorrect compat used; node not found')
