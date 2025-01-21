@@ -253,6 +253,9 @@
       "Edit": [
         "ჩასწორება"
       ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
+      ],
       "Edit billing cycle": [
         "გადახდის ციკლის ჩასწორება"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "ჯგუფის ჩასწორება"
+      ],
+      "Edit invoice note": [
+        "ინვოისის შენიშვნის ჩასწორება"
       ],
       "Edit name": [
         "სახელის ჩასწორება"
@@ -2757,6 +2763,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "ანგარიშს ან ორგანიზაციას გადაცილებული ინვოისი აქვს. საჭიროა ყველა ინვოისის გადახდა."
+      ],
+      "ZIP code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ]
     },
     "error": {
@@ -5898,6 +5907,9 @@
       "VAT": [
         "დღგ"
       ],
+      "VAT identification number": [
+        "დღგ იდენტიფიკატორი ნომერი"
+      ],
       "Verification code": [
         "შემოწმების კოდი"
       ],
@@ -5933,6 +5945,9 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "ZIP code": [
+        "საფოსტო კოდი"
       ]
     },
     "label": {
@@ -7932,11 +7947,20 @@
       "Address": [
         "მისამართი"
       ],
+      "Anderson": [
+        "ღობეგლეჯიაშვილი"
+      ],
+      "Anytown": [
+        "თბილისი"
+      ],
       "Choose a name": [
         "აირჩიეთ სახელი"
       ],
       "Choose display name": [
         "აირჩიეთ საჩვენებელი სახელი"
+      ],
+      "Company name": [
+        "კომპანიის სახელი"
       ],
       "Confirm": [
         "დასტური"
@@ -7970,6 +7994,9 @@
       ],
       "Group name": [
         "ჯგუფის სახელი"
+      ],
+      "Main street 12": [
+        "ევას შესახვევი 13"
       ],
       "Other": [
         "სხვა"
@@ -8012,6 +8039,12 @@
       ],
       "Start date": [
         "საწყისი თარიღი"
+      ],
+      "Thomas": [
+        "მზევინარ"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -9677,6 +9710,9 @@
       "Backup password updated": [
         "მარქაფი პაროლი განახლდა"
       ],
+      "Billing details updated": [
+        "გადახდის დეტალები განახლდა"
+      ],
       "Catch-all address updated": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი განახლებულია"
       ],
@@ -10255,6 +10291,9 @@
       "Downloads": [
         "გადმოწერები"
       ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
+      ],
       "Edit credit/debit card": [
         "საკრედიტო/სადებეტო ბარათის ჩასწორება"
       ],
@@ -10269,6 +10308,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } რაუტერის ჩასწორება"
+      ],
+      "Edit invoice note": [
+        "ინვოისის შენიშვნის ჩასწორება"
       ],
       "Edit servers": [
         "სერვერების ჩასწორება"

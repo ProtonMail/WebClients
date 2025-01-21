@@ -253,6 +253,9 @@
       "Edit": [
         "Sunting"
       ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
+      ],
       "Edit billing cycle": [
         "Sunting siklus tagihan"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Sunting grup"
+      ],
+      "Edit invoice note": [
+        "Sunting catatan faktur"
       ],
       "Edit name": [
         "Sunting nama"
@@ -2439,6 +2445,11 @@
         "Dukungan prioritas"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } ditambahkan"
@@ -2754,6 +2765,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Akun atau organisasi Anda memiliki tagihan yang tertunggak. Mohon lunasi seluruh tagihan yang belum dibayar."
+      ],
+      "ZIP code is required": [
+        "Kode pos diperlukan"
       ]
     },
     "error": {
@@ -5242,6 +5256,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Anda dapat menambahkan metode pembayaran agar langganan Anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Masukkan catatan untuk ditambahkan kepada faktur. Catatan ini akan ditambahkan kepada faktur personal dan organisasi Anda. Segala catatan hanya akan muncul pada faktur yang diterbitkan ke depannya."
       ]
     },
     "Info subscription": {
@@ -9555,6 +9574,9 @@
       "Backup password updated": [
         "Kata sandi cadangan diperbarui"
       ],
+      "Billing details updated": [
+        "Rincian penagihan diperbarui"
+      ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
       ],
@@ -10130,6 +10152,9 @@
       "Downloads": [
         "Unduhan"
       ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
+      ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
       ],
@@ -10144,6 +10169,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Sunting Gateway ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Sunting catatan faktur"
       ],
       "Edit servers": [
         "Sunting server"
