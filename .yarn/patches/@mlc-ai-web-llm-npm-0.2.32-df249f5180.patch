@@ -1,0 +1,18 @@
+diff --git a/lib/index.js b/lib/index.js
+index 1feab057fb0f1af11e043e6db4b50bdb6153bbec..42456819c6e3bd34c05b8062f88d83255ca4098c 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -1258,7 +1258,12 @@ var browser = function () {
+                 if (adapter.features.has("shader-f16")) {
+                     requiredFeatures.push("shader-f16");
+                 }
+-                const adapterInfo = yield adapter.requestAdapterInfo();
++                const adapterInfo = {
++                    vendor: "Polyfilled",
++                    architecture: "Polyfilled",
++                    device: "Polyfilled",
++                    description: "Polyfilled"
++                };
+                 const device = yield adapter.requestDevice({
+                     requiredLimits: {
+                         maxBufferSize: requiredMaxBufferSize,
