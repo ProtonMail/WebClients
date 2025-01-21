@@ -99,13 +99,14 @@ function SharedPagePreviewContainer({
                 }
                 onClose={onClose}
                 onDownload={isDocument ? undefined : onDownload}
-                onDetails={() =>
-                    !viewOnly &&
-                    loadedLink &&
-                    showPublicDetailsModal({
-                        token,
-                        linkId: loadedLink?.linkId,
-                    })
+                onDetails={
+                    !viewOnly && loadedLink
+                        ? () =>
+                              showPublicDetailsModal({
+                                  token,
+                                  linkId: loadedLink.linkId,
+                              })
+                        : undefined
                 }
                 isPublicDocsAvailable={isDocsPublicSharingEnabled}
                 onOpenInDocs={openInDocs && loadedLink && isDocument ? () => openInDocs(loadedLink.linkId) : undefined}
