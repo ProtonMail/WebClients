@@ -37,7 +37,7 @@ export const MailPostSignupDollarContent = ({ daysSinceOffer, onClose, pricingTi
             free: hasFinishedChecklist ? '1 GB' : '500 MB',
             plus: '15 GB',
         },
-        { id: 'addresses', title: c('Offer feature').t`Email Addresses`, free: '1', plus: '10' },
+        { id: 'addresses', title: c('Offer feature').t`Email addresses`, free: '1', plus: '10' },
         { id: 'domain', title: c('Offer feature').t`Custom email domain`, free: '–', plus: PostSignupOneDollarCheck },
         {
             id: 'dwm',
