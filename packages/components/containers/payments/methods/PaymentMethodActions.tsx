@@ -17,10 +17,9 @@ import {
     isExpired,
     paymentMethodPaymentsVersion,
 } from '@proton/payments';
+import { EditCardModal } from '@proton/payments/ui';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
-
-import EditCardModal from '../../payments/EditCardModal';
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
     return {

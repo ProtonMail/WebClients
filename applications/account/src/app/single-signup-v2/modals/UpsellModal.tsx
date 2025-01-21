@@ -12,7 +12,7 @@ import { getShortPlan } from '@proton/components/containers/payments/features/pl
 import { getVPNAppFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import type {
     FreePlanDefault,

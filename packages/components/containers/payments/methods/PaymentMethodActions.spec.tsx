@@ -36,7 +36,10 @@ jest.mock('../../../components/dropdown/DropdownActions', () =>
     jest.fn().mockImplementation(({ list }) => list.map(({ text }: any) => <span>{text}</span>))
 );
 
-jest.mock('../EditCardModal', () => jest.fn().mockImplementation(() => <span>Edit Card Modal</span>));
+jest.mock('@proton/payments/ui', () => ({
+    __esModule: true,
+    EditCardModal: jest.fn().mockImplementation(() => <span>Edit Card Modal</span>),
+}));
 jest.mock('../../../components/modal/Confirm', () =>
     jest.fn().mockImplementation(({ onConfirm }) => (
         <button onClick={onConfirm} data-testid="confirm-deletion">

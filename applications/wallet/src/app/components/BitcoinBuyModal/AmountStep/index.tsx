@@ -19,7 +19,7 @@ import { DropdownSizeUnit, Icon, useModalState } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import useLoading from '@proton/hooks/useLoading';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import aztecoLogo from '@proton/styles/assets/img/brand/azteco.svg';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
 import moonpayLogo from '@proton/styles/assets/img/brand/moonpay.svg';
