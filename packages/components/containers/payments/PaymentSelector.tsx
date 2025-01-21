@@ -7,8 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type Currency, type PaymentMethodStatusExtended } from '@proton/payments';
-import { getCurrencyRate } from '@proton/payments/core/helpers';
+import { type Currency, type PaymentMethodStatusExtended, getCurrencyRate } from '@proton/payments';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 import AmountButton from './AmountButton';

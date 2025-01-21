@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useConfig from '@proton/components/hooks/useConfig';
-import { PLANS, type PlanIDs } from '@proton/payments/index';
+import { PLANS, type PlanIDs } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES, MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';

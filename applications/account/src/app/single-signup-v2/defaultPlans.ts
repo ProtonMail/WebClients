@@ -1,5 +1,5 @@
-import type { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
-import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import type { ADDON_NAMES, PLANS } from '@proton/payments';
+import { getPlansMap } from '@proton/payments';
 import type { Plan } from '@proton/shared/lib/interfaces';
 
 export const cachedPlans: Plan[] = [
