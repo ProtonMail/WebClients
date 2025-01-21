@@ -10,7 +10,14 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import { addApiKeys, clearAll, generateKeys, getDropdown, render } from '../../../helpers/test/helper';
+import {
+    addApiKeys,
+    clearAll,
+    generateKeys,
+    getCompleteAddress,
+    getDropdown,
+    render,
+} from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
@@ -36,16 +43,16 @@ describe('Composer expiration', () => {
         const fromKeys = await generateKeys('me', fromAddress);
         addApiKeys(false, toAddress, []);
 
-        const result = await render(<Composer {...props} composerID={composerID} />, {
+        const view = await render(<Composer {...props} composerID={composerID} />, {
             preloadedState: {
-                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                addressKeys: getAddressKeyCache(getCompleteAddress({ ID: AddressID }), [fromKeys]),
             },
             onStore: (store) => {
                 prepareMessage(store, message, composerID);
             },
         });
 
-        return result;
+        return view;
     };
 
     it('should open expiration modal with default values', async () => {
