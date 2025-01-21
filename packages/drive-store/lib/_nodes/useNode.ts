@@ -14,7 +14,7 @@ import type { DecryptedNode } from './interface';
 import { decryptedLinkToNode } from './utils';
 
 export const useNode = () => {
-    const { getLink } = useLink();
+    const { getLink, loadFreshLink } = useLink();
     const { getPath } = useLinkPath();
     const { getSharePermissions } = useDirectSharingInfo();
     const { loadChildren, getCachedChildren } = useLinksListing();
@@ -28,6 +28,11 @@ export const useNode = () => {
     const getNode = async ({ shareId, linkId, volumeId }: LegacyNodeMeta): Promise<DecryptedNode> => {
         const link = await getLink(abortSignal, shareId, linkId);
 
+        return decryptedLinkToNode(link, volumeId);
+    };
+
+    const getLatestNode = async ({ shareId, linkId, volumeId }: LegacyNodeMeta): Promise<DecryptedNode> => {
+        const link = await loadFreshLink(abortSignal, shareId, linkId);
         return decryptedLinkToNode(link, volumeId);
     };
 
@@ -83,6 +88,7 @@ export const useNode = () => {
 
     return {
         getNode,
+        getLatestNode,
         getNodePath,
         getNodeContents,
         getNodePermissions,

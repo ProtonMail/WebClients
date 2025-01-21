@@ -34,6 +34,7 @@ export interface DriveCompat {
      * Gets a node, either from cache or fetched.
      */
     getNode: (meta: NodeMeta) => Promise<DecryptedNode>;
+    getLatestNode: (meta: NodeMeta) => Promise<DecryptedNode>;
 
     getNodes: (ids: { linkId: string; shareId: string }[]) => Promise<DecryptedNode[]>;
 
@@ -134,7 +135,7 @@ export const useDriveCompat = (): DriveCompat => {
 
     const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
         useDocuments();
-    const { getNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
+    const { getNode, getLatestNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
     const { getNodes, getNodePaths, getNodesAreShared } = useNodes();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
@@ -162,6 +163,7 @@ export const useDriveCompat = (): DriveCompat => {
         getNodePaths,
         getNodesAreShared,
         getNode: withResolveShareId(getNode),
+        getLatestNode: withResolveShareId(getLatestNode),
         getNodeContents: withResolveShareId(getNodeContents),
         getNodePermissions: withResolveShareId(getNodePermissions),
         getNodes,
