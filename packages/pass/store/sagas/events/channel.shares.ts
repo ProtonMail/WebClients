@@ -4,14 +4,13 @@ import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { hasShareAccessChanged } from '@proton/pass/lib/shares/share.predicates';
-import { shareAccessChange, sharedVaultCreated, sharesSync, vaultCreationSuccess } from '@proton/pass/store/actions';
+import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
+import { sharesEventNew, sharesEventSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import { selectAllShares } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
-import { or, truthy } from '@proton/pass/utils/fp/predicates';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -19,7 +18,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
-import { channelEventsWorker, channelInitWorker } from './channel.worker';
+import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
 /** We're only interested in new shares in this effect : Deleted shares will
@@ -34,20 +33,14 @@ function* onSharesEvent(
 
     const localShares: Share[] = yield select(selectAllShares);
     const localShareIds = localShares.map(({ shareId }) => shareId);
-
     const remoteShares = event.Shares;
-
     const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
 
     if (newShares.length) {
         logger.info(`[ServerEvents::Shares]`, `${newShares.length} remote share(s) not in cache`);
 
         const activeNewShares = (
-            (yield Promise.all(
-                newShares
-                    .filter((share) => share.TargetType === ShareType.Vault)
-                    .map((encryptedShare) => parseShareResponse(encryptedShare))
-            )) as Maybe<Share>[]
+            (yield Promise.all(newShares.map((encryptedShare) => parseShareResponse(encryptedShare)))) as Maybe<Share>[]
         ).filter(truthy);
 
         if (activeNewShares.length > 0) {
@@ -59,7 +52,7 @@ function* onSharesEvent(
                 )) as ItemsByShareId[]
             ).reduce(diadic(merge));
 
-            yield put(sharesSync({ shares: toMap(activeNewShares, 'shareId'), items }));
+            yield put(sharesEventNew({ shares: toMap(activeNewShares, 'shareId'), items }));
             yield all(activeNewShares.map(getShareChannelForks(api, options)).flat());
         }
     }
@@ -69,9 +62,10 @@ function* onSharesEvent(
             const shareId = share.ShareID;
             const localShare = localShares.find((localShare) => localShare.shareId === shareId);
 
-            if (localShare && hasShareAccessChanged(localShare, share)) {
+            if (localShare && hasShareChanged(localShare, share)) {
                 yield put(
-                    shareAccessChange({
+                    sharesEventSync({
+                        canAutofill: share.CanAutoFill,
                         newUserInvitesReady: share.NewUserInvitesReady,
                         owner: share.Owner,
                         shared: share.Shared,
@@ -105,7 +99,7 @@ export const createSharesChannel = (api: Api) =>
 /* when a vault is created : recreate all the necessary
  * channels to start polling for this new share's events */
 function* onNewShare(api: Api, options: RootSagaOptions) {
-    yield takeEvery(or(vaultCreationSuccess.match, sharedVaultCreated.match), function* ({ payload: { share } }) {
+    yield takeEvery(vaultCreationSuccess.match, function* ({ payload: { share } }) {
         yield all(getShareChannelForks(api, options)(share));
     });
 }
@@ -113,8 +107,8 @@ function* onNewShare(api: Api, options: RootSagaOptions) {
 export function* sharesChannel(api: Api, options: RootSagaOptions) {
     logger.info(`[ServerEvents::Shares] start polling for new shares`);
     const eventsChannel = createSharesChannel(api);
-    const events = fork(channelEventsWorker<SharesGetResponse>, eventsChannel, options);
-    const wakeup = fork(channelInitWorker<SharesGetResponse>, eventsChannel, options);
+    const events = fork(channelEvents<SharesGetResponse>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<SharesGetResponse>, eventsChannel, options);
     const newVault = fork(onNewShare, api, options);
 
     yield all([events, wakeup, newVault]);

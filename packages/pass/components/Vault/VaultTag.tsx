@@ -11,30 +11,17 @@ import './VaultTag.scss';
 
 type Props = {
     title: string;
-    shared?: boolean;
     icon: IconName;
     color?: VaultColor;
-    count?: number;
     iconSize?: IconSize;
 };
 
-export const VaultTag: FC<Props> = ({ title, shared = false, icon, color, count, iconSize = 3 }) => {
-    return (
-        <div
-            className={clsx(
-                'pass-vault-tag flex items-center text-sm gap-x-1 flex-nowrap lh100',
-                shared && 'pass-vault-tag--shared'
-            )}
-            style={shared ? { '--vault-icon-color': `rgb(${VAULT_COLOR_MAP[color ?? VaultColor.COLOR1]})` } : undefined}
-        >
-            {<Icon className="shrink-0 mr-1" name={icon} size={iconSize} />}
-            <span className="text-ellipsis">{title}</span>
-            {shared && count && (
-                <>
-                    <span className="shrink-0">• {count}</span>
-                    <Icon className="shrink-0" name="users" size={iconSize} />
-                </>
-            )}
-        </div>
-    );
-};
+export const VaultTag: FC<Props> = ({ title, icon, color, iconSize = 3 }) => (
+    <div
+        className={clsx('pass-vault-tag flex items-center text-sm gap-x-1 flex-nowrap lh100')}
+        style={{ '--vault-icon-color': `rgb(${VAULT_COLOR_MAP[color ?? VaultColor.COLOR1]})` }}
+    >
+        {<Icon className="shrink-0 mr-1" name={icon} size={iconSize} />}
+        <span className="text-ellipsis">{title}</span>
+    </div>
+);

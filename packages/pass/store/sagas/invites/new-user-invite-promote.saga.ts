@@ -1,5 +1,6 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
+import type { AccessItem } from '@proton/pass/lib/access/types';
 import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { loadInvites, promoteInvite } from '@proton/pass/lib/invites/invite.requests';
@@ -8,25 +9,26 @@ import {
     newUserInvitePromoteIntent,
     newUserInvitePromoteSuccess,
 } from '@proton/pass/store/actions';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { ShareType } from '@proton/pass/types';
-import { type Maybe } from '@proton/pass/types';
+import { syncAccess } from '@proton/pass/store/actions/creators/polling';
+import { selectAccessOrThrow } from '@proton/pass/store/selectors';
+import type { Maybe } from '@proton/pass/types';
 
 function* promoteInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInvitePromoteIntent>) {
     try {
         const { newUserInviteId, shareId } = payload;
-        const share: ShareItem<ShareType.Vault> = yield select(selectShareOrThrow(shareId));
+        const access: AccessItem = yield select(selectAccessOrThrow(shareId));
 
-        const newUserInvite = (share.newUserInvites ?? []).find((invite) => newUserInviteId === invite.newUserInviteId);
+        const newUserInvite = access.newUserInvites.find((invite) => newUserInviteId === invite.newUserInviteId);
         if (!newUserInvite) throw new Error();
 
         const invitedPublicKey: Maybe<string> = yield getPrimaryPublicKeyForEmail(newUserInvite.invitedEmail);
         if (!invitedPublicKey) throw new Error();
 
-        yield promoteInvite({ invitedPublicKey, newUserInviteId, shareId });
+        yield promoteInvite({ ...payload, invitedPublicKey });
         const invites: InviteData = yield loadInvites(shareId);
-        yield put(newUserInvitePromoteSuccess(request.id, shareId, invites));
+
+        yield put(newUserInvitePromoteSuccess(request.id, { ...payload, ...invites }));
+        yield put(syncAccess(payload));
     } catch (err) {
         yield put(newUserInvitePromoteFailure(request.id, err));
     }

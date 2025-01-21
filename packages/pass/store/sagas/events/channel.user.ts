@@ -31,7 +31,7 @@ import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces'
 import identity from '@proton/utils/identity';
 
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelInitWorker } from './channel.worker';
+import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
 function* onUserEvent(
@@ -74,14 +74,14 @@ function* onUserEvent(
     if (user) {
         const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
         const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
+        const keyPassword = getAuthStore().getPassword();
 
         const keysUpdated =
             activeUserKeys.length !== localUserKeyIds.length ||
             activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
 
-        if (keysUpdated) {
+        if (keysUpdated && keyPassword) {
             logger.info(`[ServerEvents::User] Detected user keys update`);
-            const keyPassword = getAuthStore().getPassword() ?? '';
             const addresses = (yield select(selectAllAddresses)) as Address[];
             yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
             yield put(syncIntent(SyncType.FULL)); /* trigger a full data sync */
@@ -122,8 +122,8 @@ export function* userChannel(api: Api, options: RootSagaOptions) {
 
     const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
     const eventsChannel = createUserChannel(api, eventID);
-    const events = fork(channelEventsWorker<UserEvent>, eventsChannel, options);
-    const wakeup = fork(channelInitWorker<UserEvent>, eventsChannel, options);
+    const events = fork(channelEvents<UserEvent>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<UserEvent>, eventsChannel, options);
 
     yield all([events, wakeup]);
 }

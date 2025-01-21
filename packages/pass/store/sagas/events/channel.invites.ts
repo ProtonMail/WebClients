@@ -10,8 +10,8 @@ import type { InviteState } from '@proton/pass/store/reducers';
 import { selectAllVaults } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { InvitesGetResponse, MaybeNull, Share, ShareType } from '@proton/pass/types';
-import { type Api } from '@proton/pass/types';
+import type { InvitesGetResponse, MaybeNull, Share } from '@proton/pass/types';
+import { type Api, ShareType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -19,7 +19,7 @@ import { logId, logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
-import { channelEventsWorker, channelInitWorker } from './channel.worker';
+import { channelEvents, channelInitalize } from './channel.worker';
 
 const NAMESPACE = 'ServerEvents::Invites';
 
@@ -52,20 +52,25 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
             const cachedInvite = cachedInvites[invite.InviteToken];
             if (cachedInvite) return cachedInvite;
 
-            /* FIXME: support item invites */
             const encryptedVault = invite.VaultData;
-            if (!encryptedVault) return null;
+            if (!encryptedVault && invite.TargetType !== ShareType.Item) return null;
 
-            const inviteKey = invite.Keys.find((key) => key.KeyRotation === encryptedVault.ContentKeyRotation);
+            const inviteKey =
+                invite.TargetType === ShareType.Item
+                    ? invite.Keys[0]
+                    : invite.Keys.find((key) => key.KeyRotation === encryptedVault!.ContentKeyRotation);
             if (!inviteKey) return null;
 
             try {
-                const encodedVault = await PassCrypto.readVaultInvite({
-                    encryptedVaultContent: encryptedVault.Content,
-                    invitedAddressId: invite.InvitedAddressID!,
-                    inviteKey: inviteKey,
-                    inviterPublicKeys: await getPublicKeysForEmail(invite.InviterEmail),
-                });
+                const encodedVault =
+                    invite.TargetType === ShareType.Vault
+                        ? await PassCrypto.readVaultInvite({
+                              encryptedVaultContent: encryptedVault!.Content,
+                              invitedAddressId: invite.InvitedAddressID!,
+                              inviteKey: inviteKey,
+                              inviterPublicKeys: await getPublicKeysForEmail(invite.InviterEmail),
+                          })
+                        : null;
 
                 return {
                     createTime: invite.CreateTime,
@@ -78,11 +83,13 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
                     targetId: invite.TargetID,
                     targetType: invite.TargetType,
                     token: invite.InviteToken,
-                    vault: {
-                        content: decodeVaultContent(encodedVault),
-                        memberCount: encryptedVault.MemberCount!,
-                        itemCount: encryptedVault.ItemCount!,
-                    },
+                    vault: encodedVault
+                        ? {
+                              content: decodeVaultContent(encodedVault),
+                              memberCount: encryptedVault!.MemberCount,
+                              itemCount: encryptedVault!.ItemCount,
+                          }
+                        : null,
                 };
             } catch (err: unknown) {
                 logger.warn(`[${NAMESPACE}] Could not decrypt invite "${logId(invite.InviteToken)}"`, err);
@@ -109,8 +116,8 @@ export function* invitesChannel(api: Api, options: RootSagaOptions) {
     logger.info(`[${NAMESPACE}] start polling`);
 
     const eventsChannel = createInvitesChannel(api);
-    const events = fork(channelEventsWorker<InvitesGetResponse>, eventsChannel, options);
-    const wakeup = fork(channelInitWorker<InvitesGetResponse>, eventsChannel, options);
+    const events = fork(channelEvents<InvitesGetResponse>, eventsChannel, options);
+    const wakeup = fork(channelInitalize<InvitesGetResponse>, eventsChannel, options);
 
     yield all([events, wakeup]);
 }

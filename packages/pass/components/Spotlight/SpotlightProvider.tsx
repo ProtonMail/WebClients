@@ -6,13 +6,13 @@ import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteActions, useLatestInvite } from '@proton/pass/components/Invite/InviteProvider';
-import { PendingNewUsersApprovalModal } from '@proton/pass/components/Share/PendingNewUsersApprovalModal';
-import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
+import { PendingNewUsersApprovalModal } from '@proton/pass/components/Invite/Member/PendingNewUsersApprovalModal';
+import { PendingShareAccessModal } from '@proton/pass/components/Invite/Member/PendingShareAccessModal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { selectHasPendingShareAccess } from '@proton/pass/store/selectors';
-import { type MaybeNull, SpotlightMessage } from '@proton/pass/types';
+import { type MaybeNull, ShareType, SpotlightMessage } from '@proton/pass/types';
 
 import { InviteIcon } from './SpotlightIcon';
 
@@ -80,27 +80,41 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         [state]
     );
 
-    const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
-        () =>
-            latestInvite && !latestInvite.fromNewUser
-                ? {
-                      type: SpotlightMessage.NOOP,
-                      mode: 'default',
-                      id: latestInvite.token,
-                      weak: true,
-                      dense: false,
-                      title: c('Title').t`Vault shared with you`,
-                      message: c('Info').t`You're invited to a vault.`,
-                      icon: InviteIcon,
-                      action: {
-                          label: c('Label').t`View details`,
-                          type: 'button',
-                          onClick: () => setInvite(latestInvite),
-                      },
-                  }
-                : null,
-        [latestInvite]
-    );
+    const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(() => {
+        if (!latestInvite || latestInvite.fromNewUser) return null;
+
+        const [title, message] = (() => {
+            const { inviterEmail } = latestInvite;
+
+            switch (latestInvite.targetType) {
+                case ShareType.Vault:
+                    return [c('Title').t`Vault shared with you`, c('Info').t`You're invited to a vault.`] as const;
+                case ShareType.Item:
+                    return [
+                        c('Title').t`Shared item invitation`,
+                        c('Info').t`${inviterEmail} wants to share an item with you.`,
+                    ] as const;
+            }
+        })();
+
+        return latestInvite && !latestInvite.fromNewUser
+            ? {
+                  type: SpotlightMessage.NOOP,
+                  mode: 'default',
+                  id: latestInvite.token,
+                  weak: true,
+                  dense: false,
+                  title,
+                  message,
+                  icon: InviteIcon,
+                  action: {
+                      label: c('Label').t`View details`,
+                      type: 'button',
+                      onClick: () => setInvite(latestInvite),
+                  },
+              }
+            : null;
+    }, [latestInvite]);
 
     useEffect(() => () => clearTimeout(timer.current), []);
 

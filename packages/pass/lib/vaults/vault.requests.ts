@@ -22,7 +22,7 @@ export const createVault = async (data: {
         })
     ).Share!;
 
-    const share = await parseShareResponse(encryptedShare);
+    const share = await parseShareResponse<ShareType.Vault>(encryptedShare);
     if (!share) throw new Error(c('Error').t`Could not open created vault`);
 
     return share;
@@ -48,7 +48,7 @@ export const editVault = async (
         })
     ).Share!;
 
-    const share = await parseShareResponse(encryptedShare, { shareKeys });
+    const share = await parseShareResponse<ShareType.Vault>(encryptedShare, { shareKeys });
     if (!share) throw new Error(c('Error').t`Could not open updated vault`);
 
     return share;

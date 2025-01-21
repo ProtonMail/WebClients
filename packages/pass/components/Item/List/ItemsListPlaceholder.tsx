@@ -20,6 +20,7 @@ export const ItemsListPlaceholder = memo(() => {
                         noResultsMessage={c('Warning').t`No items in trash matching`}
                     />
                 );
+
             case 'secure-links':
                 return (
                     <SecureLinksLoading>
@@ -29,6 +30,15 @@ export const ItemsListPlaceholder = memo(() => {
                             noResultsMessage={c('Warning').t`No secure links matching`}
                         />
                     </SecureLinksLoading>
+                );
+
+            case 'shared-by-me':
+            case 'shared-with-me':
+                return (
+                    <SearchableListPlaceholder
+                        emptyListTitle={c('Title').t`No shared items`}
+                        noResultsMessage={c('Warning').t`No shared items matching`}
+                    />
                 );
 
             default:

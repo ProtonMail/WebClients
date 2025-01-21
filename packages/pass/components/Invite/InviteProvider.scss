@@ -1,0 +1,15 @@
+.pass-invite {
+	&--members {
+		.pass-panel--content > .scroll-inner > .scroll-child {
+			block-size: 100%;
+
+			> div {
+				block-size: 100%;
+
+				> form {
+					block-size: 100%;
+				}
+			}
+		}
+	}
+}

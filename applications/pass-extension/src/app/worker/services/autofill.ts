@@ -15,16 +15,15 @@ import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutofillIdentityCandidates,
     selectAutofillLoginCandidates,
+    selectAutofillableShareIDs,
     selectAutosuggestCopyToClipboard,
     selectItem,
     selectOrganizationPasswordGeneratorPolicy,
     selectPasswordOptions,
     selectVaultLimits,
-    selectWritableVaults,
 } from '@proton/pass/store/selectors';
 import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
@@ -60,19 +59,14 @@ export const createAutoFillService = () => {
         }
     );
 
-    /* if user has exceeded his vault count limit - this likely means has downgraded
-     * to a free plan : only allow him to autofill from his writable vaults */
     const getAutofillOptions = withContext<
-        (writable?: boolean) => { needsUpgrade: boolean; shareIds: Maybe<string[]> }
-    >((ctx, writable) => {
+        (writableOnly?: boolean) => { needsUpgrade: boolean; shareIds: Maybe<string[]> }
+    >((ctx, writableOnly) => {
         const state = ctx.service.store.getState();
+        const shareIds = selectAutofillableShareIDs(state, writableOnly);
+        const needsUpgrade = selectVaultLimits(state).didDowngrade;
 
-        /* if user has exceeded his vault count limit - this likely means has downgraded
-         * to a free plan : only allow him to autofill from his writable vaults */
-        const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
-        const { didDowngrade: needsUpgrade } = selectVaultLimits(state);
-
-        return { needsUpgrade, shareIds: needsUpgrade || writable ? writableShareIds : undefined };
+        return { needsUpgrade, shareIds };
     });
 
     const sync = withContext(({ status }) => {

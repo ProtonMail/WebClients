@@ -27,6 +27,7 @@ export const mockShare: ShareItem = {
     targetMembers: 1,
     targetType: ShareType.Vault,
     vaultId: uniqueId(),
+    canAutofill: true,
 };
 
 export const getMockItemRevision = (revision: Partial<ItemRevision> = {}): ItemRevision =>
@@ -45,6 +46,7 @@ export const getMockItemRevision = (revision: Partial<ItemRevision> = {}): ItemR
             revisionTime: 0,
             shareId: mockShareId,
             state: ItemState.Active,
+            shareCount: 0,
         },
         revision
     );

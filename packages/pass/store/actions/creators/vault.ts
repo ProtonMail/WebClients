@@ -16,7 +16,7 @@ import {
     withRequestProgress,
     withRequestSuccess,
 } from '@proton/pass/store/request/enhancers';
-import type { BatchItemRevisions, ItemMoveDTO, ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -191,9 +191,4 @@ export const vaultTransferOwnershipFailure = createAction(
             error,
         })({ payload: {} })
     )
-);
-
-export const sharedVaultCreated = createAction(
-    'vault::shared::created',
-    (payload: { share: Share<ShareType.Vault>; move?: ItemMoveDTO }) => withCache({ payload })
 );

@@ -123,8 +123,8 @@ export const PrivateApp: FC = () => {
                     <OrganizationProvider>
                         <BulkSelectProvider>
                             <ItemActionsProvider>
-                                <InviteProvider>
-                                    <VaultActionsProvider>
+                                <VaultActionsProvider>
+                                    <InviteProvider>
                                         <PasswordProvider>
                                             <UpsellingProvider>
                                                 <SpotlightProvider>
@@ -140,8 +140,8 @@ export const PrivateApp: FC = () => {
                                                 </SpotlightProvider>
                                             </UpsellingProvider>
                                         </PasswordProvider>
-                                    </VaultActionsProvider>
-                                </InviteProvider>
+                                    </InviteProvider>
+                                </VaultActionsProvider>
                             </ItemActionsProvider>
                         </BulkSelectProvider>
                     </OrganizationProvider>

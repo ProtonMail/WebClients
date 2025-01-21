@@ -13,9 +13,10 @@ import type { DraggableItem } from '@proton/pass/hooks/useItemDrag';
 import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
+import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare } from '@proton/pass/store/selectors';
-import type { ItemRevision, ShareType } from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
@@ -52,12 +53,14 @@ export const ItemsListItem = memo(
         const { data, shareId, itemId } = item;
         const { heading, subheading } = presentListItem(item);
 
-        const vault = useSelector(selectShare<ShareType.Vault>(shareId));
+        const share = useSelector(selectShare(shareId));
         const { failed, optimistic } = useItemOptimisticState(shareId, itemId);
 
         const loading = useItemLoading(item) || optimistic;
-        const writable = (vault && isWritableVault(vault)) ?? false;
+        const writable = (share && isWritableVault(share)) ?? false;
         const aliasDisabled = isDisabledAliasItem(item);
+        const shared = Boolean(item.shareCount);
+        const isVault = share && isVaultShare(share);
 
         return (
             <div className={clsx(bulk && 'px-1 py-0.5')}>
@@ -133,17 +136,18 @@ export const ItemsListItem = memo(
                         />
 
                         <div className={clsx('text-left', loading && !failed && 'opacity-50')}>
-                            <span className="flex items-center">
-                                {search && (
+                            <span className="flex items-center gap-x-1 flex-nowrap">
+                                {search && isVault && (
                                     <VaultIcon
                                         size={3}
-                                        icon={vault?.content.display.icon}
-                                        className="color-weak mr-1"
+                                        icon={share?.content.display.icon}
+                                        className="color-weak shrink-0"
                                     />
                                 )}
-                                <span className="flex-1 text-ellipsis">
+                                <span className="text-ellipsis">
                                     <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>
                                 </span>
+                                {shared && <Icon name="users-filled" size={3.5} className="shrink-0" />}
                             </span>
                             <div
                                 className={clsx([

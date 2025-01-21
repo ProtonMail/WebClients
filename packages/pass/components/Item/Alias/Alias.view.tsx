@@ -17,9 +17,9 @@ import { epochToDateTime } from '@proton/pass/utils/time/format';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const navigate = useNavigate();
-    const { revision, vault, handleHistoryClick } = itemViewProps;
+    const { revision, share, handleHistoryClick } = itemViewProps;
     const { createTime, modifyTime, revision: revisionNumber, optimistic } = revision;
-    const { shareId } = vault;
+    const { shareId } = share;
     const aliasEmail = revision.aliasEmail!;
     const trashed = isTrashed(revision);
     const modifiedCount = revisionNumber - 1;

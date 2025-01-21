@@ -48,6 +48,10 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
                     return c('Label').t`Trash`;
                 case 'secure-links':
                     return c('Action').t`Secure links`;
+                case 'shared-by-me':
+                    return c('Label').t`Shared by me`;
+                case 'shared-with-me':
+                    return c('Label').t`Shared with me`;
                 default:
                     return vault?.content.name.trim();
             }
@@ -55,14 +59,12 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
 
         switch (type) {
             case '*':
-                return vaultName
-                    ? c('Placeholder').t`Search in ${vaultName}`
-                    : c('Placeholder').t`Search in all vaults`;
+                return vaultName ? c('Placeholder').t`Search in ${vaultName}` : c('Placeholder').t`Search in all items`;
             default: {
                 // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
                 return vaultName
                     ? c('Placeholder').t`Search ${pluralItemType} in ${vaultName}`
-                    : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
+                    : c('Placeholder').t`Search ${pluralItemType} in all items`;
             }
         }
     }, [vault, type, scope]);

@@ -39,8 +39,11 @@ export type Invite = InviteBase & {
     keys: KeyRotationKeyPair[];
     remindersSent: number;
     token: string;
-    vault: InviteVaultData;
-};
+} & ({ targetType: ShareType.Vault; vault: InviteVaultData } | { targetType: ShareType.Item; vault: null });
+
+export type VaultInvite = Invite & { targetType: ShareType.Vault };
+
+export type ItemInvite = Invite & { targetType: ShareType.Item };
 
 export type ShareMember = {
     createTime: number;
