@@ -110,6 +110,17 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             onClose?.();
             subscriptionPropsOnClose?.();
             modalState.onClose();
+            subscriptionPropsRef.current = null;
+        };
+
+        const handleSubscribed = () => {
+            handleClose();
+            onSubscribed?.();
+        };
+
+        const handleUnsubscribed = () => {
+            handleClose();
+            onUnsubscribed?.();
         };
 
         let blurBackdrop = true;
@@ -135,14 +146,8 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                 plans={plans}
                 freePlan={freePlan}
                 organization={organization}
-                onSubscribed={() => {
-                    handleClose();
-                    onSubscribed?.();
-                }}
-                onUnsubscribed={() => {
-                    handleClose();
-                    onUnsubscribed?.();
-                }}
+                onSubscribed={handleSubscribed}
+                onUnsubscribed={handleUnsubscribed}
                 onCancel={handleClose}
                 mode={mode}
                 currency={currency}
@@ -181,11 +186,13 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                     if (isOverridablableStep(step)) {
                         return (
                             postSubscriptionProps.renderCustomStepModal({
-                                step,
-                                modalProps: modalState,
-                                upsellRef,
-                                onSubscribed,
+                                modalProps: {
+                                    ...modalState,
+                                    onClose: handleSubscribed,
+                                },
                                 planIDs,
+                                step,
+                                upsellRef,
                             }) || modal
                         );
                     }

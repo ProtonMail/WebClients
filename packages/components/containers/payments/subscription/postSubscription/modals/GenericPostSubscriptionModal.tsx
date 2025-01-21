@@ -13,14 +13,19 @@ import {
     PostSubscriptionModalWrapper,
 } from './PostSubscriptionModalsComponents';
 
-const GenericPostSubscriptionModal = (props: PostSubscriptionModalComponentProps) => {
+const GenericPostSubscriptionModal = ({
+    modalProps,
+    onDisplayFeatureTour,
+    onRemindMeLater,
+    step,
+}: PostSubscriptionModalComponentProps) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { planTitle } = getSubscriptionPlanTitle(user, subscription);
-    const canCloseModal = props.step === SUBSCRIPTION_STEPS.THANKS;
+    const canCloseModal = step === SUBSCRIPTION_STEPS.THANKS;
 
     return (
-        <PostSubscriptionModalWrapper {...props.modalProps} canClose={canCloseModal}>
+        <PostSubscriptionModalWrapper {...modalProps} canClose={canCloseModal}>
             {canCloseModal ? (
                 <PostSubscriptionModalContent
                     title={c('Title').t`Upgrade complete!`}
@@ -32,9 +37,9 @@ const GenericPostSubscriptionModal = (props: PostSubscriptionModalComponentProps
                     }
                     illustration={illustration}
                     primaryButtonText={c('Button').t`Discover and set up features`}
-                    primaryButtonCallback={props.onDisplayFeatureTour}
+                    primaryButtonCallback={onDisplayFeatureTour}
                     secondaryButtonText={c('Button').t`Remind me later`}
-                    secondaryButtonCallback={props.onRemindMeLater}
+                    secondaryButtonCallback={onRemindMeLater}
                 />
             ) : (
                 <PostSubscriptionModalLoadingContent title={c('Info').t`Registering your subscription…`} />

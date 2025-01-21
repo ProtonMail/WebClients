@@ -15,7 +15,6 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';
-import useSubscriptionModalTelemetry from '../../useSubscriptionModalTelemetry';
 import type { PostSubscriptionModalComponentProps } from '../interface';
 import {
     PostSubscriptionModalContentWrapper,
@@ -31,9 +30,7 @@ const ConfirmationModalContent = ({
     shortDomainAddress,
     onDisplayFeatureTour,
     onRemindMeLater,
-    modalProps,
 }: ConfirmationModalContentProps) => {
-    const { reportPostAction } = useSubscriptionModalTelemetry();
     const { createNotification } = useNotifications();
     const { APP_NAME } = useConfig();
 
@@ -54,13 +51,6 @@ const ConfirmationModalContent = ({
             text: c('Info').t`Messages to all your email addresses will go to your inbox.`,
         },
     ] as const;
-
-    const handleClickRemindMeLater = () => {
-        // TODO: Telemetry - update this tracking
-        void reportPostAction({ postAction: 'continue' });
-        onDisplayFeatureTour?.();
-        modalProps.onClose();
-    };
 
     const settingsLink = (
         <SettingsLink key="id-address-settings-link" path="/identity-addresses" app={APPS.PROTONMAIL}>{c('Link')
@@ -104,7 +94,7 @@ const ConfirmationModalContent = ({
                     }</p>
                 )}
                 <div>
-                    <Button className="mb-2" color="norm" fullWidth onClick={handleClickRemindMeLater}>
+                    <Button className="mb-2" color="norm" fullWidth onClick={onDisplayFeatureTour}>
                         {c('Button').t`Set up other features`}
                     </Button>
                     <Button fullWidth onClick={onRemindMeLater}>{c('Button').t`Remind me later`}</Button>
