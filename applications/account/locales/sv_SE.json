@@ -463,6 +463,9 @@
       "Edit": [
         "Redigera"
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Edit billing cycle": [
         "Byt faktureringsperiod"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "Redigera grupp"
+      ],
+      "Edit invoice note": [
+        "Redigera fakturaanteckning"
       ],
       "Edit label": [
         "Redigera etikett"
@@ -3912,6 +3918,11 @@
         "90 minuter"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
+      ]
+    },
     "Email": {
       "Email verified": [
         "E-post verifierad"
@@ -4909,6 +4920,9 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "ZIP code is required": [
+        "Postnummer är obligatoriskt"
       ]
     },
     "error": {
@@ -7768,7 +7782,7 @@
         "Installera en gratis serverkonfigurationsfil för att ansluta till en specifik server i en av de tre gratis platserna."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Installera en Secure Core-konfigurationsfil för att dra nytta av ytterligare ett skydd mot äventyrelse av VPN-slutpunkt."
+        "Installera en Secure Core-konfigurationsfil för att dra nytta av ytterligare ett skydd mot en VPN-slutpunkt som har äventyrats."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installera en serverkonfigurationsfil för att ansluta till en specifik server i det land du väljer."
@@ -9542,6 +9556,11 @@
         "Du kan lägga till en betalningsmetod så att din prenumeration förnyas automatiskt. Andra betalningsmetoder är också tillgängliga."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Ange en anteckning för fakturorna. Dessa uppgifter kommer att läggas till på både personliga och organisationsfakturor. De kommer endast att synas på fakturor skapade i framtiden."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klicka för detaljer"
@@ -10991,6 +11010,9 @@
       "VAT": [
         "VAT"
       ],
+      "VAT identification number": [
+        "Momsregistreringsnummer"
+      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -11047,6 +11069,9 @@
       ],
       "Your referral link": [
         "Din inbjudningslänk"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "label": {
@@ -11483,7 +11508,7 @@
         "Tidsbegränsat erbjudande: **Spara ${ discount } på ${ name } med ett 1-årigt paket**"
       ],
       "Set up your account with your Porkbun domain.": [
-        "Konfigurera ditt konto med din Porkbun-domän."
+        "Ställ in ditt konto med din Porkbun-domän."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du har blivit inbjuden att prova ${ MAIL_APP_NAME }"
@@ -11592,7 +11617,7 @@
         "Alla filteråtgärder kommer att tillämpas på alla meddelanden i ditt ${ MAIL_APP_NAME }-konto. Inget autosvar för e-post kommer att skickas."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Anslut din anpassade domän till ${ BRAND_NAME } för att konfigurera anpassade e-postadresser (t.ex. dittnamn@dittföretag.se). Vår guide kommer att guida dig genom processen."
+        "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -14300,11 +14325,20 @@
       "Address": [
         "Adress"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Alingsås"
+      ],
       "Choose a name": [
         "Välj ett namn"
       ],
       "Choose display name": [
         "Välj visningsnamn"
+      ],
+      "Company name": [
+        "Företagsnamn"
       ],
       "Confirm": [
         "Bekräfta"
@@ -14344,6 +14378,9 @@
       ],
       "Link": [
         "Länk"
+      ],
+      "Main street 12": [
+        "Storgatan 12"
       ],
       "Name": [
         "Namn"
@@ -14405,8 +14442,14 @@
       "Text": [
         "Text"
       ],
+      "Thomas": [
+        "Tomas"
+      ],
       "Type text or keyword": [
         "Skriv text eller nyckelord"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "yourdomain.com": [
         "dindomän.com"
@@ -16770,6 +16813,9 @@
       "Backup password updated": [
         "Säkerhetslösenord uppdaterat"
       ],
+      "Billing details updated": [
+        "Faktureringsuppgifterna har uppdaterats"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender har lagts till. Det kan ta några minuter att synkronisera."
       ],
@@ -17659,6 +17705,9 @@
       "Download the mobile apps": [
         "Ladda ner mobilapparna"
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Edit credit/debit card": [
         "Redigera kredit-/betalkort"
       ],
@@ -17676,6 +17725,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigera gateway ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Redigera fakturaanteckning"
       ],
       "Edit profile": [
         "Redigera profil"

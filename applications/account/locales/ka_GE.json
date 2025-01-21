@@ -463,6 +463,9 @@
       "Edit": [
         "ჩასწორება"
       ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
+      ],
       "Edit billing cycle": [
         "გადახდის ციკლის ჩასწორება"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "ჯგუფის ჩასწორება"
+      ],
+      "Edit invoice note": [
+        "ინვოისის შენიშვნის ჩასწორება"
       ],
       "Edit label": [
         "ჭდის ჩასწორება"
@@ -4899,6 +4905,9 @@
       ],
       "Zero keys reactivated": [
         "თავიდან გააქტიურდა 0 გასაღები"
+      ],
+      "ZIP code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ]
     },
     "error": {
@@ -10949,6 +10958,9 @@
       "VAT": [
         "დღგ"
       ],
+      "VAT identification number": [
+        "დღგ იდენტიფიკატორი ნომერი"
+      ],
       "Verification code": [
         "შემოწმების კოდი"
       ],
@@ -11002,6 +11014,9 @@
       ],
       "Your referral link": [
         "თქვენი მოწვევის ბმული"
+      ],
+      "ZIP code": [
+        "საფოსტო კოდი"
       ]
     },
     "label": {
@@ -14216,11 +14231,20 @@
       "Address": [
         "მისამართი"
       ],
+      "Anderson": [
+        "ღობეგლეჯიაშვილი"
+      ],
+      "Anytown": [
+        "თბილისი"
+      ],
       "Choose a name": [
         "აირჩიეთ სახელი"
       ],
       "Choose display name": [
         "აირჩიეთ საჩვენებელი სახელი"
+      ],
+      "Company name": [
+        "კომპანიის სახელი"
       ],
       "Confirm": [
         "დასტური"
@@ -14260,6 +14284,9 @@
       ],
       "Link": [
         "ბმული"
+      ],
+      "Main street 12": [
+        "ევას შესახვევი 13"
       ],
       "Name": [
         "სახელი"
@@ -14321,8 +14348,14 @@
       "Text": [
         "ტექსტი"
       ],
+      "Thomas": [
+        "მზევინარ"
+      ],
       "Type text or keyword": [
         "შეიყვანეთ ტექსტი ან საკვანძო სიტყვა"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -16680,6 +16713,9 @@
       "Backup password updated": [
         "მარქაფი პაროლი განახლდა"
       ],
+      "Billing details updated": [
+        "გადახდის დეტალები განახლდა"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "კალენდარი დაემატა. სინქრონიზაციას რამდენიმე წუთი შეიძლება დასჭირდეს."
       ],
@@ -17566,6 +17602,9 @@
       "Download the mobile apps": [
         "გადმოწერეთ მობილური აპები"
       ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
+      ],
       "Edit credit/debit card": [
         "საკრედიტო/სადებეტო ბარათის ჩასწორება"
       ],
@@ -17583,6 +17622,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } რაუტერის ჩასწორება"
+      ],
+      "Edit invoice note": [
+        "ინვოისის შენიშვნის ჩასწორება"
       ],
       "Edit profile": [
         "პროფილის შეცვლა"
