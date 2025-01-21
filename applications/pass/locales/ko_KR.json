@@ -244,6 +244,9 @@
       "Edit vault": [
         "금고 편집"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 활성화"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "이 이메일 주소로 수신하려면 이 별칭을 활성화하십시오."
       ],
@@ -669,6 +672,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME }은 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
+      ],
       "${ total } other login uses the same password": [
         "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
       ],
