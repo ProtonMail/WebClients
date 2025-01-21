@@ -244,6 +244,9 @@
       "Edit vault": [
         "Redigera valv"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktivera ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktivera detta alias för att ta emot e-post skickat till detta alias"
       ],
@@ -703,6 +706,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
+      ],
       "${ total } other login uses the same password": [
         "${ total } annan inloggning använder samma lösenord",
         "${ total } andra inloggningar använder samma lösenord"
@@ -2884,7 +2890,7 @@
         "Passkey"
       ],
       "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
-        "Passkeys är ett enkelt och säkert alternativ till traditionella lösenord som förhindrar phishingattacker och gör din onlineupplevelse bekvämare. ${ PASS_APP_NAME } stödjer passkeys på alla plattformar."
+        "Passkeys är ett enkelt och säkert alternativ till traditionella lösenord som förhindrar nätfiskeattacker och gör din upplevelse online smidigare. ${ PASS_APP_NAME } stöder passkeys på alla plattformar."
       ],
       "Passphrase": [
         "Lösenfras"

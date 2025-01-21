@@ -244,6 +244,9 @@
       "Edit vault": [
         "Rediger hvelv"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktiver ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktiver dette aliaset for å motta e-poster sendt til dette aliaset"
       ],
@@ -703,6 +706,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
+      ],
       "${ total } other login uses the same password": [
         "${ total } annen pålogging bruker det samme passordet",
         "${ total } andre pålogginger bruker det samme passordet"
