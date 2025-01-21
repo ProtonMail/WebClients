@@ -56,7 +56,7 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { NOOP_LIST_SELECTOR } from './utils';
+import { NOOP_LIST_SELECTOR, selectState } from './utils';
 
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 
@@ -423,3 +423,8 @@ export const selectBulkHasSharedItems =
         Object.entries(dto).some(([shareId, items]) =>
             Object.keys(items).some((itemId) => selectItemShared(shareId, itemId)(state))
         );
+
+export const selectHasTrashedSharedItems = createSelector(
+    [selectState, selectTrashedItems],
+    (state, items) => items.filter(({ shareId, itemId }) => selectItemShared(shareId, itemId)(state)).length > 0
+);
