@@ -6,7 +6,9 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
-import type { MessageState } from 'proton-mail/store/messages/messagesTypes';
+// mock useGetMessageKeys on-the-fly when needed
+import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
+import type { MessageState, PublicPrivateKey } from 'proton-mail/store/messages/messagesTypes';
 
 import {
     addApiKeys,
@@ -15,7 +17,6 @@ import {
     clearAll,
     mockConsole,
     render,
-    tick,
     waitForSpyCall,
 } from '../../helpers/test/helper';
 import type { Conversation } from '../../models/conversation';
@@ -27,6 +28,13 @@ import type { ConversationState } from '../../store/conversations/conversationsT
 import * as messageDraftActions from '../../store/messages/draft/messagesDraftActions';
 import { initialize as initializeMessage } from '../../store/messages/read/messagesReadActions';
 import ConversationView from './ConversationView';
+
+jest.mock('proton-mail/hooks/message/useGetMessageKeys');
+const mockUseGetMessageKeys = () => {
+    // empty return value since the result is not used in these tests; if this were to change,
+    // this mock should be dropped a valid key setup should be put in place.
+    jest.mocked(useGetMessageKeys).mockReturnValue(async () => ({}) as PublicPrivateKey);
+};
 
 jest.setTimeout(20000);
 
@@ -371,6 +379,7 @@ describe('ConversationView', () => {
             const senderEmail = 'sender@email.com';
             addApiKeys(false, senderEmail, []);
 
+            mockUseGetMessageKeys(); // opening the conversation will trigger message initialization calls
             const messageMock = jest.fn(() => ({
                 Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: senderEmail } },
             }));
@@ -381,9 +390,7 @@ describe('ConversationView', () => {
             down();
             enter();
 
-            await tick();
-
-            expect(messageMock).toHaveBeenCalled();
+            await waitFor(() => expect(messageMock).toHaveBeenCalled());
         });
     });
 });

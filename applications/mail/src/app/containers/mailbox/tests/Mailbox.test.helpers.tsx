@@ -17,6 +17,8 @@ import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/sea
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
+import type { MailState } from 'proton-mail/store/rootReducer';
+
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
 import { addApiMock, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
 import type { ConversationLabel } from '../../../models/conversation';
@@ -47,6 +49,7 @@ export interface SetupArgs extends PropsArgs {
     mockConversations?: boolean;
     Component?: typeof MailboxContainer;
     mailSettings?: MailSettings;
+    preloadedState?: Partial<MailState>;
 }
 
 export const props = {
@@ -131,6 +134,7 @@ export const setup = async ({
     mockMessages = true,
     mockConversations = true,
     Component = MailboxContainer,
+    preloadedState = {},
     ...propsArgs
 }: SetupArgs = {}) => {
     minimalCache();
@@ -159,6 +163,7 @@ export const setup = async ({
                     Unread: totalConversations,
                 },
             ]),
+            ...preloadedState, // TODO merge object instead of overwriting, if needed for new test-cases
         },
         initialPath,
     });

@@ -4,7 +4,7 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Address, Key } from '@proton/shared/lib/interfaces';
+import type { AddressKey } from '@proton/shared/lib/interfaces';
 import type { AttachmentFullMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { arrayToBase64 } from '../../../helpers/base64';
@@ -37,8 +37,16 @@ loudRejection();
 let address1Keys: GeneratedKey;
 let address2Keys: GeneratedKey;
 
-const address1 = { ID: 'AddressID1', Email: 'email1@home.net', Keys: [{ ID: 'KeyID1' } as Key] } as Address;
-const address2 = { ID: 'AddressID2', Email: 'email2@home.net', Keys: [{ ID: 'KeyID2' } as Key] } as Address;
+const address1 = getCompleteAddress({
+    ID: 'AddressID1',
+    Email: 'email1@home.net',
+    Keys: [{ ID: 'KeyID1', Primary: 1 } as AddressKey],
+});
+const address2 = getCompleteAddress({
+    ID: 'AddressID2',
+    Email: 'email2@home.net',
+    Keys: [{ ID: 'KeyID2', Primary: 1 } as AddressKey],
+});
 
 const fileName = 'file.png';
 const fileType = 'image/png';
@@ -87,10 +95,10 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
             prepareMessage(store, message, composerID);
         },
         preloadedState: {
-            addresses: getModelState([getCompleteAddress(address1), getCompleteAddress(address2)]),
+            addresses: getModelState([address1, address2]),
             addressKeys: {
-                ...getAddressKeyCache(address1.ID, address1Keys),
-                ...getAddressKeyCache(address2.ID, address2Keys),
+                ...getAddressKeyCache(address1, [address1Keys]),
+                ...getAddressKeyCache(address2, [address2Keys]),
             },
         },
     });
@@ -127,7 +135,7 @@ interface VerifyAttachmentProps {
     updateSpy: jest.Mock;
 }
 const verifyAttachment = async ({ resolveAttachment, updateSpy }: VerifyAttachmentProps) => {
-    const attachmentName = screen.getByRole('button', { name: `Preview ${fileName}` });
+    const attachmentName = await screen.findByRole('button', { name: `Preview ${fileName}` });
     expect(attachmentName).not.toBe(null);
 
     resolveAttachment();
