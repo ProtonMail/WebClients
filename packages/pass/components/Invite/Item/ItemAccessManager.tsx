@@ -41,7 +41,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
 
     const vaultShare = isVaultShare(share);
     const canManage = isShareManageable(share);
-    const canTransfer = !itemId && share.owner && ownWritableVaults.length > 1;
+    const canTransfer = share.owner && ownWritableVaults.length > 1;
     const canItemInvite = item.data.type !== 'alias';
     const canVaultInvite = vaultShare;
     const { limitReached } = access;
