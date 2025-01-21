@@ -49,9 +49,9 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
                 case 'secure-links':
                     return c('Action').t`Secure links`;
                 case 'shared-by-me':
-                    return c('Label').t`Shared with me`;
-                case 'shared-with-me':
                     return c('Label').t`Shared by me`;
+                case 'shared-with-me':
+                    return c('Label').t`Shared with me`;
                 default:
                     return vault?.content.name.trim();
             }
