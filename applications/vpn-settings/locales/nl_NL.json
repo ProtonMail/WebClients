@@ -253,6 +253,9 @@
       "Edit": [
         "Bewerken"
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Edit billing cycle": [
         "Wijzig de facturatiecyclus"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Groep bewerken"
+      ],
+      "Edit invoice note": [
+        "Factuurnota bewerken"
       ],
       "Edit name": [
         "Naam bewerken"
@@ -2449,6 +2455,11 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } toegevoegd"
@@ -2764,6 +2775,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "error": {
@@ -5304,6 +5318,11 @@
         "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Voeg een notitie voor de facturen toe. Deze gegevens worden toegevoegd aan zowel persoonlijke als organisatorische facturen. Ze zullen alleen verschijnen op in de toekomst uitgegeven facturen."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
@@ -5914,6 +5933,9 @@
       "VAT": [
         "BTW"
       ],
+      "VAT identification number": [
+        "BTW-identificatienummer"
+      ],
       "Verification code": [
         "Verificatiecode"
       ],
@@ -5949,6 +5971,9 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "label": {
@@ -7954,11 +7979,20 @@
       "Address": [
         "Adres"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
       "Choose a name": [
         "Kies een naam"
       ],
       "Choose display name": [
         "Kies weergavenaam"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "Confirm": [
         "Bevestig"
@@ -7992,6 +8026,9 @@
       ],
       "Group name": [
         "Groepsnaam"
+      ],
+      "Main street 12": [
+        "Hoofd straat 12"
       ],
       "Other": [
         "Anders"
@@ -8034,6 +8071,12 @@
       ],
       "Start date": [
         "Begindatum"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ],
       "yourdomain.com": [
         "uwdomein.com"
@@ -9705,6 +9748,9 @@
       "Backup password updated": [
         "Backup-wachtwoord bijgewerkt"
       ],
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
       ],
@@ -10283,6 +10329,9 @@
       "Downloads": [
         "Downloads"
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
       ],
@@ -10297,6 +10346,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } aanpassen"
+      ],
+      "Edit invoice note": [
+        "Factuurnota bewerken"
       ],
       "Edit servers": [
         "Servers bewerken"

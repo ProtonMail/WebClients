@@ -244,6 +244,9 @@
       "Edit vault": [
         "Kasayı düzenle"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } özelliğini aç"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Bu takma adı kullanıma alarak bu takma ada gönderilen e-postaları alın"
       ],
@@ -703,6 +706,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } ücretli bir tarife kullanılabilir. Hemen erişmek için tarifenizi yükseltin."
+      ],
       "${ total } other login uses the same password": [
         "${ total } oturum açma kaydı aynı parolayı kullanıyor",
         "${ total } oturum açma kaydı aynı parolayı kullanıyor"

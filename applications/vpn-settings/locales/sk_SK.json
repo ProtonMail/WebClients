@@ -253,6 +253,9 @@
       "Edit": [
         "Upraviť"
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Edit billing cycle": [
         "Upraviť fakturačné obdobie"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Upraviť skupinu"
+      ],
+      "Edit invoice note": [
+        "Upraviť poznámku k faktúre"
       ],
       "Edit name": [
         "Upraviť názov"
@@ -2469,6 +2475,11 @@
         "Prioritná podpora"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } pridaný"
@@ -2784,6 +2795,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Vo vašom účte alebo organizácii sú vedené faktúry po splatnosti. Zaplaťte prosím všetky neuhradené faktúry."
+      ],
+      "ZIP code is required": [
+        "PSČ je povinné"
       ]
     },
     "error": {
@@ -5424,6 +5438,11 @@
         "Môžete pridať spôsob platby, aby sa vaše predplatné automaticky obnovovalo. K dispozícii sú aj iné spôsoby platby."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Zadajte poznámku k faktúram. Tieto údaje sa pridajú k osobným aj firemným faktúram. Budú sa zobrazovať len na faktúrach vystavených v budúcnosti."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Vypršaniu platnosti môžete zabrániť opätovnou aktiváciou predplatného"
@@ -6042,6 +6061,9 @@
       "VAT": [
         "DPH"
       ],
+      "VAT identification number": [
+        "DIČ"
+      ],
       "Verification code": [
         "Overovací kód"
       ],
@@ -6077,6 +6099,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "label": {
@@ -8150,11 +8175,20 @@
       "Address": [
         "Adresa"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Niekdetam"
+      ],
       "Choose a name": [
         "Zvoľte názov"
       ],
       "Choose display name": [
         "Vyberte zobrazované meno"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
       ],
       "Confirm": [
         "Potvrdiť"
@@ -8188,6 +8222,9 @@
       ],
       "Group name": [
         "Názov skupiny"
+      ],
+      "Main street 12": [
+        "Hlavná ulica 12"
       ],
       "Other": [
         "Iné"
@@ -8230,6 +8267,12 @@
       ],
       "Start date": [
         "Dátum zahájenia"
+      ],
+      "Thomas": [
+        "Tomáš"
+      ],
+      "VAT number": [
+        "IČ DPH"
       ],
       "yourdomain.com": [
         "vasadomena.com"
@@ -9999,6 +10042,9 @@
       "Backup password updated": [
         "Záložné heslo aktualizované"
       ],
+      "Billing details updated": [
+        "Fakturačné údaje aktualizované"
+      ],
       "Catch-all address updated": [
         "Adresa doménového koša aktualizovaná"
       ],
@@ -10583,6 +10629,9 @@
       "Downloads": [
         "Na stiahnutie"
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Edit credit/debit card": [
         "Upraviť platobnú kartu"
       ],
@@ -10597,6 +10646,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Upraviť bránu ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Upraviť poznámku k faktúre"
       ],
       "Edit servers": [
         "Upraviť servery"

@@ -463,6 +463,9 @@
       "Edit": [
         "Düzenle"
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Edit billing cycle": [
         "Fatura dönemini düzenle"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "Grubu düzenle"
+      ],
+      "Edit invoice note": [
+        "Fatura notunu düzenle"
       ],
       "Edit label": [
         "Etiketi düzenle"
@@ -3909,6 +3915,11 @@
         "90 dakika"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+      ]
+    },
     "Email": {
       "Email verified": [
         "E-posta doğrulandı"
@@ -4906,6 +4917,9 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "ZIP code is required": [
+        "Posta kodunun yazılması zorunludur"
       ]
     },
     "error": {
@@ -9519,6 +9533,11 @@
         "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Başka ödeme yöntemleri de kullanılabilir."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Faturalar için bir not yazın. Bu bilgiler hem kişisel hem de kurumsal faturalara eklenir. Bunlar yalnızca gelecekte düzenlenecek faturalarda görüntülenir."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Bilgiler için tıklayın"
@@ -10968,6 +10987,9 @@
       "VAT": [
         "KDV"
       ],
+      "VAT identification number": [
+        "Vergi kimlik numarası"
+      ],
       "Verification code": [
         "Doğrulama kodu"
       ],
@@ -11021,6 +11043,9 @@
       ],
       "Your referral link": [
         "Öneri bağlantınız"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "label": {
@@ -14241,11 +14266,20 @@
       "Address": [
         "Adres"
       ],
+      "Anderson": [
+        "Kaya"
+      ],
+      "Anytown": [
+        "İl"
+      ],
       "Choose a name": [
         "Bir ad yazın"
       ],
       "Choose display name": [
         "Görüntülenecek adı yazın"
+      ],
+      "Company name": [
+        "Kuruluş adı"
       ],
       "Confirm": [
         "Onayla"
@@ -14285,6 +14319,9 @@
       ],
       "Link": [
         "Bağlantı"
+      ],
+      "Main street 12": [
+        "12. cadde"
       ],
       "Name": [
         "Ad"
@@ -14346,8 +14383,14 @@
       "Text": [
         "Metin"
       ],
+      "Thomas": [
+        "Ali"
+      ],
       "Type text or keyword": [
         "Metin ya da anahtar sözcük yazın"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ],
       "yourdomain.com": [
         "etkialaniniz.com"
@@ -16711,6 +16754,9 @@
       "Backup password updated": [
         "Yedek parola güncellendi"
       ],
+      "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Takvim eklendi. Eşitlenmesi birkaç dakika sürebilir."
       ],
@@ -17597,6 +17643,9 @@
       "Download the mobile apps": [
         "Mobil uygulamaları indirin"
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Edit credit/debit card": [
         "Kredi ya da banka kartını düzenle"
       ],
@@ -17614,6 +17663,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
+      ],
+      "Edit invoice note": [
+        "Fatura notunu düzenle"
       ],
       "Edit profile": [
         "Profili düzenle"
