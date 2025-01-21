@@ -463,6 +463,9 @@
       "Edit": [
         "Upraviť"
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Edit billing cycle": [
         "Upraviť fakturačné obdobie"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "Upraviť skupinu"
+      ],
+      "Edit invoice note": [
+        "Upraviť poznámku k faktúre"
       ],
       "Edit label": [
         "Upraviť štítok"
@@ -3939,6 +3945,11 @@
         "90 minút"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
+      ]
+    },
     "Email": {
       "Email verified": [
         "Email bol overený"
@@ -4946,6 +4957,9 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "ZIP code is required": [
+        "PSČ je povinné"
       ]
     },
     "error": {
@@ -9711,6 +9725,11 @@
         "Môžete pridať spôsob platby, aby sa vaše predplatné automaticky obnovovalo. K dispozícii sú aj iné spôsoby platby."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Zadajte poznámku k faktúram. Tieto údaje sa pridajú k osobným aj firemným faktúram. Budú sa zobrazovať len na faktúrach vystavených v budúcnosti."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Kliknite pre podrobnosti"
@@ -11174,6 +11193,9 @@
       "VAT": [
         "DPH"
       ],
+      "VAT identification number": [
+        "DIČ"
+      ],
       "Verification code": [
         "Overovací kód"
       ],
@@ -11227,6 +11249,9 @@
       ],
       "Your referral link": [
         "Váš odkaz na odporúčanie"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "label": {
@@ -14545,11 +14570,20 @@
       "Address": [
         "Adresa"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Niekdetam"
+      ],
       "Choose a name": [
         "Zvoľte názov"
       ],
       "Choose display name": [
         "Vyberte zobrazované meno"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
       ],
       "Confirm": [
         "Potvrdiť"
@@ -14589,6 +14623,9 @@
       ],
       "Link": [
         "Odkaz"
+      ],
+      "Main street 12": [
+        "Hlavná ulica 12"
       ],
       "Name": [
         "Meno"
@@ -14650,8 +14687,14 @@
       "Text": [
         "Text"
       ],
+      "Thomas": [
+        "Tomáš"
+      ],
       "Type text or keyword": [
         "Zadajte text alebo kľúčové slovo"
+      ],
+      "VAT number": [
+        "IČ DPH"
       ],
       "yourdomain.com": [
         "vasadomena.com"
@@ -17115,6 +17158,9 @@
       "Backup password updated": [
         "Záložné heslo aktualizované"
       ],
+      "Billing details updated": [
+        "Fakturačné údaje aktualizované"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendár je pridaný. Synchronizácia zaberie pár minút."
       ],
@@ -18019,6 +18065,9 @@
       "Download the mobile apps": [
         "Stiahnuť mobilné aplikácie"
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Edit credit/debit card": [
         "Upraviť platobnú kartu"
       ],
@@ -18036,6 +18085,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Upraviť bránu ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Upraviť poznámku k faktúre"
       ],
       "Edit profile": [
         "Upraviť profil"

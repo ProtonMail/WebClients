@@ -463,6 +463,9 @@
       "Edit": [
         "Sunting"
       ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
+      ],
       "Edit billing cycle": [
         "Sunting siklus tagihan"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "Sunting grup"
+      ],
+      "Edit invoice note": [
+        "Sunting catatan faktur"
       ],
       "Edit label": [
         "Sunting label"
@@ -3894,6 +3900,11 @@
         "90 menit"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
+      ]
+    },
     "Email": {
       "Email verified": [
         "Email terverifikasi"
@@ -4886,6 +4897,9 @@
       ],
       "Zero keys reactivated": [
         "Tidak ada kunci yang diaktifkan ulang"
+      ],
+      "ZIP code is required": [
+        "Kode pos diperlukan"
       ]
     },
     "error": {
@@ -9421,6 +9435,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Anda dapat menambahkan metode pembayaran agar langganan Anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Masukkan catatan untuk ditambahkan kepada faktur. Catatan ini akan ditambahkan kepada faktur personal dan organisasi Anda. Segala catatan hanya akan muncul pada faktur yang diterbitkan ke depannya."
       ]
     },
     "Info on errors": {
@@ -16506,6 +16525,9 @@
       "Backup password updated": [
         "Kata sandi cadangan diperbarui"
       ],
+      "Billing details updated": [
+        "Rincian penagihan diperbarui"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender ditambahkan. Proses sinkronisasi dapat memakan waktu hingga beberapa menit."
       ],
@@ -17383,6 +17405,9 @@
       "Download the mobile apps": [
         "Unduh aplikasi seluler kami"
       ],
+      "Edit billing address": [
+        "Sunting alamat penagihan"
+      ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
       ],
@@ -17400,6 +17425,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Sunting Gateway ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Sunting catatan faktur"
       ],
       "Edit profile": [
         "Sunting profil"
