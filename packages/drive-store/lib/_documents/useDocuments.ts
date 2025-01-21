@@ -150,12 +150,6 @@ export const useDocuments = () => {
 
     const renameDocument = async ({ shareId, linkId }: LegacyNodeMeta, newName: string): Promise<void> => {
         await renameLink(abortSignal, shareId, linkId, newName);
-
-        // Remove the link from cache, as we don't currently handle events.
-        removeLinkForDriveCompat(shareId, linkId);
-
-        // Refetch it in the background to avoid waiting next time it is used.
-        void getLink(abortSignal, shareId, linkId);
     };
 
     const trashDocument = async ({ shareId, linkId }: LegacyNodeMeta, parentLinkId: string): Promise<void> => {
