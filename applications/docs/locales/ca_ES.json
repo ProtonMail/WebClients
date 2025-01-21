@@ -840,7 +840,7 @@
     },
     "bf2023: renew": {
       "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant els primers ${ cycle } mesos. Després es renovarà automàticament al preu rebaixat de ${ nextPrice } durant ${ renewalLength } mesos. Podeu cancel·lar en qualsevol moment."
+        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant els primers ${ cycle } mesos. Després es renovarà automàticament al preu rebaixat de ${ nextPrice } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ discountedPrice } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ nextPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -945,13 +945,13 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "L'oferta de tota la vida de ${ PASS_SHORT_APP_NAME } Plus no té preu de renovació, és un pagament únic per accedir a Pass Plus de per vida."
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } Plus no té preu de renovació, és un pagament únic per a l'accés de per vida a Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Els descomptes es basen en els preus mensuals estàndard."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compreu Pass Family o Unlimited, la vostra subscripció es renovarà automàticament a la tarifa i la durada amb descompte estàndard al final del vostre cicle de facturació."
+        "Si compreu Pass Family o Unlimited, la vostra subscripció es renovarà automàticament a la tarifa amb descompte i la durada estàndard al final del vostre cicle de facturació."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
@@ -1179,7 +1179,7 @@
         "Proveu ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Proveu ${ upsellPlanName } i manteniu l'accés a totes les funcions de correu electrònic i calendari prèmium."
+        "Proveu ${ upsellPlanName } i manteniu l'accés a totes les funcions prèmium de correu electrònic i calendari."
       ],
       "Ultra fast and private VPN": [
         "VPN ultraràpida i privada"
@@ -2353,7 +2353,7 @@
         "Suprimeix el descompte"
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
-        "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar en el futur."
+        "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar el pla en el futur."
       ]
     },
     "drive:action": {
@@ -3070,7 +3070,7 @@
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quan s'ha activat una contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
+        "Quan s'ha activat la contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -4256,7 +4256,7 @@
         "S'ha restaurat la connexió a Internet."
       ],
       "Invite": [
-        "Invita"
+        "Convida"
       ],
       "Invite link copied": [
         "S'ha copiat l'enllaç de la invitació."
@@ -6678,7 +6678,7 @@
         "Dominis personalitzats per a àlies, bústies de correu addicionals, la possibilitat d'enviar correus electrònics des d'àlies i molt més"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreces IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
+        "Es poden afegir servidors dedicats amb adreces IP dedicades a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -7336,13 +7336,13 @@
         "Seleccioneu el país de facturació per pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. Després es renovarà automàticament al preu de ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. Després es renovarà automàticament al preu de ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLength } mes. Podeu cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLength } mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
