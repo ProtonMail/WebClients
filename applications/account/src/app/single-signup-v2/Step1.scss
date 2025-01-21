@@ -1,0 +1,7 @@
+@import '~@proton/styles/scss/lib';
+
+.single-signup-discount-banner {
+	color: var(--promotion-text-weak);
+	background: var(--promotion-background-start, rgb(109 74 255 / 0.3));
+	line-height: rem(24);
+}

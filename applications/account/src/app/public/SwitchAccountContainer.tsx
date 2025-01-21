@@ -271,15 +271,7 @@ const SwitchAccountContainer = ({
             return (
                 <div className="flex flex-column gap-2">
                     {new Array(clamp(initialSessionsLength, 1, 4)).fill(0).map((_, idx) => {
-                        return (
-                            <SkeletonLoader
-                                key={idx}
-                                width="100%"
-                                className="h-custom"
-                                style={{ '--h-custom': '6em' }}
-                                index={0}
-                            />
-                        );
+                        return <SkeletonLoader key={idx} width="100%" height="6em" index={0} />;
                     })}
                 </div>
             );
