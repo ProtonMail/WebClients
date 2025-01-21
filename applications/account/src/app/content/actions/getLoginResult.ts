@@ -1,6 +1,6 @@
 import type { OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
 import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import { UNPAID_STATE } from '@proton/payments/core/constants';
+import { UNPAID_STATE } from '@proton/payments';
 import { getOrganization as getOrganizationConfig } from '@proton/shared/lib/api/organization';
 import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
