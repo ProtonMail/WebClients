@@ -44,7 +44,6 @@ export const useMailPostSignupOneDollarTelemetry = () => {
             measurementGroup: TelemetryMeasurementGroups.mailPostSignupOneDollar,
             event,
             dimensions,
-            delay: false,
         });
     };
 
