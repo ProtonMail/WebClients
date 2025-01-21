@@ -28,7 +28,7 @@ import {
 import { isConversationMode } from './mailSettings';
 import { getSnoozeDate } from './snooze';
 
-const { INBOX, TRASH, SPAM, SENT, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, SENT, DRAFTS, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
 export interface TypeParams {
     labelID?: string;
@@ -190,6 +190,7 @@ export const getCurrentFolderIDs = (element: Element | undefined, customFoldersL
         [TRASH]: true,
         [SPAM]: true,
         [SENT]: true,
+        [DRAFTS]: true,
         [ARCHIVE]: true,
         [SCHEDULED]: true,
         [SNOOZED]: true,
