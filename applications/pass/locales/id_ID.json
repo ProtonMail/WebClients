@@ -244,6 +244,9 @@
       "Edit vault": [
         "Sunting brankas"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Aktifkan alias ini untuk menerima email yang terkirim ke alias ini"
       ],
@@ -669,6 +672,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
+      ],
       "${ total } other login uses the same password": [
         "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
       ],
