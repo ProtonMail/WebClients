@@ -98,7 +98,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   async refreshNodeAndDocMeta(options: { imposeTrashState: 'trashed' | 'not_trashed' | undefined }): Promise<void> {
     const { nodeMeta } = this.documentState.getProperty('entitlements')
 
-    const result = await this._getNode.execute(nodeMeta, { useCache: false })
+    const result = await this._getNode.execute(nodeMeta, { useCache: false, forceFetch: true })
     if (result.isFailed()) {
       this.logger.error('Failed to get node', result.getError())
       return
