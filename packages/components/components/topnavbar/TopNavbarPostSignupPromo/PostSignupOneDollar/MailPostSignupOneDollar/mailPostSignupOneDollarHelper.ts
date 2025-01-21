@@ -9,10 +9,12 @@ interface Props {
     postSignupTimestamp: number;
     postSignupThreshold: number;
     mailOneDollarPostSignupFlag: boolean;
+    totalMessage: number;
 }
 
-const POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE = 7;
-export const POST_SIGNUP_ONE_DOLLAR_DURATION = 30;
+const POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE = 7 as const;
+export const POST_SIGNUP_ONE_DOLLAR_DURATION = 30 as const;
+const POST_SIGNUP_REQUIRED_EMAILS = 10 as const;
 
 export const getIsUserEligibleForOneDollar = ({
     user,
@@ -20,6 +22,7 @@ export const getIsUserEligibleForOneDollar = ({
     postSignupTimestamp,
     postSignupThreshold,
     mailOneDollarPostSignupFlag,
+    totalMessage,
 }: Props) => {
     // Global offer flag
     if (!mailOneDollarPostSignupFlag) {
@@ -43,7 +46,8 @@ export const getIsUserEligibleForOneDollar = ({
     const isOfferStillValid =
         !postSignupTimestamp || differenceInDays(today, offerExpirationDate) <= POST_SIGNUP_ONE_DOLLAR_DURATION;
 
-    const basicEligibility = user.isFree && !user.isDelinquent && hasValidApp;
+    const basicEligibility =
+        user.isFree && !user.isDelinquent && hasValidApp && totalMessage >= POST_SIGNUP_REQUIRED_EMAILS;
 
     return isAccountCreatedAfterThreshold && basicEligibility && isOfferStillValid && isAccountOldEnough;
 };

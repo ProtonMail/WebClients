@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -31,6 +31,7 @@ import { updatePostSignupOpenOfferState } from '../components/postSignupOffersHe
 import { usePostSignupOneDollarPromotionPrice } from '../components/usePostSignupOneDollarPromotionPrice';
 import { MailPostSignupDollarContent } from './MailPostSignupOneDollarContent';
 import { useMailPostSignupOneDollar } from './useMailPostSignupOneDollar';
+import { useMailPostSignupOneDollarTelemetry } from './useMailPostSignupOneDollarTelemetry';
 
 const getUpsellFeature = (daysSinceOffer: number) => {
     if (daysSinceOffer >= LAST_REMINDER_DAY) {
@@ -47,6 +48,14 @@ export const MailPostSignupOneDollar = () => {
 
     const { viewportWidth } = useActiveBreakpoint();
     const { openSpotlight } = useMailPostSignupOneDollar();
+
+    const {
+        sendReportClickTopNavbar,
+        sendReportClickUpsellButton,
+        sendReportCloseOffer,
+        sendReportAutomaticModalOpen,
+        sendReportUserSubscribed,
+    } = useMailPostSignupOneDollarTelemetry();
 
     const [openSubscriptionModal] = useSubscriptionModal();
 
@@ -65,6 +74,12 @@ export const MailPostSignupOneDollar = () => {
     const { pricingTitle } = usePostSignupOneDollarPromotionPrice({
         offerProduct: 'mail',
     });
+
+    useEffect(() => {
+        if (openSpotlight) {
+            sendReportAutomaticModalOpen(daysSinceOffer);
+        }
+    }, []);
 
     const upgradeText = c('specialoffer: Link').jt`Upgrade for ${pricingTitle}`;
     const upgradeIcon = upgradeText.length > 15 && viewportWidth['>=large'] ? undefined : 'upgrade';
@@ -85,6 +100,7 @@ export const MailPostSignupOneDollar = () => {
 
     const handleUpsellClick = () => {
         handleClose();
+        sendReportClickUpsellButton(daysSinceOffer);
 
         const upsellRef = getUpsellRef({
             app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -103,6 +119,9 @@ export const MailPostSignupOneDollar = () => {
             metrics: {
                 source: 'upsells',
             },
+            onSubscribed: () => {
+                sendReportUserSubscribed(daysSinceOffer);
+            },
         });
     };
 
@@ -111,11 +130,17 @@ export const MailPostSignupOneDollar = () => {
             anchorRef={buttonRef}
             innerClassName={clsx(daysSinceOffer >= LAST_REMINDER_DAY ? undefined : 'p-0')}
             show={show || spotlightState}
-            onClose={handleClose}
+            onClose={() => {
+                handleClose();
+                sendReportCloseOffer(daysSinceOffer);
+            }}
             content={
                 <MailPostSignupDollarContent
                     pricingTitle={pricingTitle}
-                    onClose={handleClose}
+                    onClose={() => {
+                        handleClose();
+                        sendReportCloseOffer(daysSinceOffer);
+                    }}
                     onUpsellClick={handleUpsellClick}
                     daysSinceOffer={daysSinceOffer}
                 />
@@ -129,6 +154,7 @@ export const MailPostSignupOneDollar = () => {
                         if (daysSinceOffer >= LAST_REMINDER_DAY) {
                             handleUpsellClick();
                         } else {
+                            sendReportClickTopNavbar(daysSinceOffer);
                             setSpotlightState(true);
                         }
                     }}

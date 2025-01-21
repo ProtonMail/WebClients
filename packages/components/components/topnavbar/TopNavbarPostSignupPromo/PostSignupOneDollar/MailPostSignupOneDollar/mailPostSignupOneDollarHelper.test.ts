@@ -23,8 +23,28 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: 0,
                     postSignupThreshold: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    totalMessage: 10,
                 })
             ).toBeTruthy();
+        });
+
+        it('should not be eligible, account 7 days old but 5 messages', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subDays(today, 7).getTime() / 1000,
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    postSignupTimestamp: 0,
+                    postSignupThreshold: subDays(today.getTime(), 14).getTime() / 1000,
+                    mailOneDollarPostSignupFlag: true,
+                    totalMessage: 5,
+                })
+            ).toBeFalsy();
         });
 
         it('should not be eligible, account 6 days old', () => {
@@ -41,6 +61,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: 0,
                     postSignupThreshold: subDays(today.getTime(), 14).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    totalMessage: 10,
                 })
             ).toBeFalsy();
         });
@@ -59,6 +80,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: subDays(today, 30).getTime() / 1000,
                     postSignupThreshold: subDays(today.getTime(), 60).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    totalMessage: 10,
                 })
             ).toBeTruthy();
         });
@@ -77,6 +99,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: subDays(today, 31).getTime() / 1000,
                     postSignupThreshold: subDays(today.getTime(), 60).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
+                    totalMessage: 10,
                 })
             ).toBeFalsy();
         });
@@ -97,6 +120,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: 0,
                     postSignupThreshold: today.getTime(),
                     mailOneDollarPostSignupFlag: false,
+                    totalMessage: 10,
                 })
             ).toBeFalsy();
         });
@@ -115,6 +139,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: 0,
                     postSignupThreshold: today.getTime(),
                     mailOneDollarPostSignupFlag: true,
+                    totalMessage: 10,
                 })
             ).toBeFalsy();
         });
@@ -133,6 +158,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: 0,
                     postSignupThreshold: today.getTime(),
                     mailOneDollarPostSignupFlag: true,
+                    totalMessage: 10,
                 })
             ).toBeFalsy();
         });
@@ -151,6 +177,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     postSignupTimestamp: 0,
                     postSignupThreshold: today.getTime(),
                     mailOneDollarPostSignupFlag: true,
+                    totalMessage: 10,
                 })
             ).toBeFalsy();
         });
