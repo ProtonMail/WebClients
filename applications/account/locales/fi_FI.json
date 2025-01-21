@@ -6272,6 +6272,9 @@
       "Only the Gregorian calendar scale is allowed": [
         "Ainoastaan gregoriaaninen kalenteri on sallittu"
       ],
+      "Recurring event has no occurrences": [
+        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
+      ],
       "Recurring rule not supported": [
         "Toistuvaa sääntöä ei tueta"
       ],
@@ -6957,6 +6960,9 @@
       ],
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Salli käyttäjien yhdistää suojattuihin jaettuihin palvelimiin ${ VPN_APP_NAME } -sovelluksen **Maat**-osiosta."
       ],
       "Already allocated": [
         "Jo varattu"
@@ -9424,6 +9430,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
       ],
@@ -9444,6 +9453,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Palautuslauseesi on sarja 12 satunnaisesti luotua sanaa tietyssä järjestyksessä."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tukipyyntösi on suljettu. Kiitos, että otit yhteyttä ${ BRAND_NAME } -tukeen."
@@ -11428,6 +11443,9 @@
       ],
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "Aikarajoitettu tarjous: **Säästä ${ discount } yksivuotisella ${ name }-tilauksella**"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Määritä tilisi Porkbun-verkkotunnuksellasi."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sinut on kutsuttu kokeilemaan ${ MAIL_APP_NAME }ia"

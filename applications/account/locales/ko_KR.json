@@ -463,6 +463,9 @@
       "Edit": [
         "편집"
       ],
+      "Edit billing address": [
+        "청구 주소 수정"
+      ],
       "Edit billing cycle": [
         "결제일 편집하기"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "그룹 편집"
+      ],
+      "Edit invoice note": [
+        "청구서 메모 수정"
       ],
       "Edit label": [
         "라벨 편집"
@@ -3894,6 +3900,11 @@
         "90분"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
+      ]
+    },
     "Email": {
       "Email verified": [
         "이메일 인증됨"
@@ -4886,6 +4897,9 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ],
+      "ZIP code is required": [
+        "우편번호가 필요합니다"
       ]
     },
     "error": {
@@ -9426,6 +9440,11 @@
         "구독을 자동으로 갱신하기 위해 결제 방법을 추가할 수 있습니다. 다른 지불 방법도 사용할 수 있습니다."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "청구서에 대한 메모를 입력하세요. 이 세부 사항은 개인 및 조직 청구서 모두에 추가됩니다. 추후 발행되는 청구서에 표시됩니다."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "자세한 내용을 보려면 클릭하세요"
@@ -10868,6 +10887,9 @@
       "VAT": [
         "부가세"
       ],
+      "VAT identification number": [
+        "부가가치세 식별 번호"
+      ],
       "Verification code": [
         "인증 코드"
       ],
@@ -10924,6 +10946,9 @@
       ],
       "Your referral link": [
         "리퍼럴 코드"
+      ],
+      "ZIP code": [
+        "우편번호"
       ]
     },
     "label": {
@@ -14116,11 +14141,20 @@
       "Address": [
         "주소"
       ],
+      "Anderson": [
+        "길동"
+      ],
+      "Anytown": [
+        "낙원구"
+      ],
       "Choose a name": [
         "이름을 선택하세요"
       ],
       "Choose display name": [
         "표시 이름 선택"
+      ],
+      "Company name": [
+        "법인 이름"
       ],
       "Confirm": [
         "확인"
@@ -14160,6 +14194,9 @@
       ],
       "Link": [
         "링크"
+      ],
+      "Main street 12": [
+        "행복동 12번지"
       ],
       "Name": [
         "이름"
@@ -14221,8 +14258,14 @@
       "Text": [
         "텍스트"
       ],
+      "Thomas": [
+        "홍"
+      ],
       "Type text or keyword": [
         "텍스트 및 키워드 입력"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -16533,6 +16576,9 @@
       "Backup password updated": [
         "백업 비밀번호 업데이트됨"
       ],
+      "Billing details updated": [
+        "청구 상세 정보가 업데이트되었습니다."
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "캘린더가 생성되었습니다. 동기화 되는데 시간이 걸릴 수 있습니다."
       ],
@@ -17407,6 +17453,9 @@
       "Download the mobile apps": [
         "모바일 앱 다운로드"
       ],
+      "Edit billing address": [
+        "청구 주소 수정"
+      ],
       "Edit credit/debit card": [
         "신용/체크카드 편집"
       ],
@@ -17424,6 +17473,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } 게이트웨이 편집"
+      ],
+      "Edit invoice note": [
+        "청구서 메모 수정"
       ],
       "Edit profile": [
         "프로필 편집"
