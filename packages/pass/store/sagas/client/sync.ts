@@ -11,8 +11,8 @@ import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import type { Maybe, ShareType } from '@proton/pass/types';
+import { type Share, type ShareGetResponse } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -68,17 +68,12 @@ export function* synchronize(type: SyncType) {
      * it means the decryption failed and as such is considered inactive. */
     const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
 
-    /** FIXME: remove `targetType` check when supporting item shares
-     * This filter is done to avoid detecting a falsely inactive share
-     * when trying to decrypt an item share */
-    const inactiveVaultShares = inactiveRemoteShares.filter(({ share, type }) => !share && type === ShareType.Vault);
-
     /* In the case of a partial sync : inactive shares should
      * be resolved for both remote and local shares. */
     const totalInactiveShares =
         type === SyncType.FULL
-            ? inactiveVaultShares.length
-            : inactiveVaultShares.length + inactiveCachedShareIds.length;
+            ? inactiveRemoteShares.length
+            : inactiveRemoteShares.length + inactiveCachedShareIds.length;
 
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
