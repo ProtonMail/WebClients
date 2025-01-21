@@ -253,6 +253,9 @@
       "Edit": [
         "Rediger"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit billing cycle": [
         "Rediger faktureringssyklus"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Rediger gruppe"
+      ],
+      "Edit invoice note": [
+        "Rediger fakturanota"
       ],
       "Edit name": [
         "Rediger navn"
@@ -2449,6 +2455,11 @@
         "Prioritert brukerstøtte"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet vil bare vises på fakturaer som utstedes i fremtiden og vil ikke påvirke eksisterende fakturaer."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } lagt til"
@@ -2764,6 +2775,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisasjon har en forfalt faktura. Betal alle ubetalte fakturaer."
+      ],
+      "ZIP code is required": [
+        "Postnummer kreves"
       ]
     },
     "error": {
@@ -5307,6 +5321,11 @@
         "Du kan legge til en betalingsmåte for å få abonnementet fornyet automatisk. Andre betalingsmåter er også tilgjengelige."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Angi en merknad for fakturaene. Disse detaljene vil bli lagt til både personlige og organisatoriske fakturaer. De vises bare på fakturaer som utstedes i fremtiden."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Du kan forhindre utløp ved å aktivere abonnementet på nytt"
@@ -5917,6 +5936,9 @@
       "VAT": [
         "MVA"
       ],
+      "VAT identification number": [
+        "MVA-identifikasjonsnummer"
+      ],
       "Verification code": [
         "Verifiseringskode"
       ],
@@ -5955,6 +5977,9 @@
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "label": {
@@ -7981,11 +8006,20 @@
       "Address": [
         "Adresse"
       ],
+      "Anderson": [
+        "Andersen"
+      ],
+      "Anytown": [
+        "By"
+      ],
       "Choose a name": [
         "Velg et navn"
       ],
       "Choose display name": [
         "Velg visningsnavn"
+      ],
+      "Company name": [
+        "Foretaksnavn"
       ],
       "Confirm": [
         "Bekreft"
@@ -8019,6 +8053,9 @@
       ],
       "Group name": [
         "Gruppenavn"
+      ],
+      "Main street 12": [
+        "Gatenavn 12"
       ],
       "Other": [
         "Annet"
@@ -8061,6 +8098,12 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "Thomas": [
+        "Thomas"
+      ],
+      "VAT number": [
+        "MVA-nummer"
       ],
       "yourdomain.com": [
         "dittdomene.no"
@@ -9732,6 +9775,9 @@
       "Backup password updated": [
         "Reservepassord oppdatert"
       ],
+      "Billing details updated": [
+        "Faktureringsinformasjon oppdatert"
+      ],
       "Catch-all address updated": [
         "Catch-all-adresse oppdatert"
       ],
@@ -10307,6 +10353,9 @@
       "Downloads": [
         "Nedlastinger"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit credit/debit card": [
         "Rediger kreditt-/debetkort"
       ],
@@ -10321,6 +10370,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Rediger porttjener ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Rediger fakturanota"
       ],
       "Edit servers": [
         "Rediger tjenere"
