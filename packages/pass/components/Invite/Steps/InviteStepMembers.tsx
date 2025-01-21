@@ -104,6 +104,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                             const hasDuplicates = errors.includes(InviteEmailsError.DUPLICATE);
                             const hasInvalid = errors.includes(InviteEmailsError.INVALID_EMAIL);
                             const hasOrganizationLimits = errors.includes(InviteEmailsError.INVALID_ORG);
+                            const hasExcluded = errors.includes(InviteEmailsError.EXCLUDED);
 
                             return (
                                 <>
@@ -111,6 +112,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                                         c('Warning').t`Inviting email addresses outside organization is not allowed.`}
                                     {hasDuplicates && c('Warning').t`Duplicate email addresses.` + ` `}
                                     {hasInvalid && c('Warning').t`Invalid email addresses.`}
+                                    {hasExcluded && c('Warning').t`Addresses already invited.`}
                                 </>
                             );
                         }}
