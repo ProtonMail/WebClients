@@ -15,7 +15,7 @@ import {
     useUpsellConfig,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { PLANS, PLAN_NAMES } from '@proton/payments/index';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { APPS, BRAND_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

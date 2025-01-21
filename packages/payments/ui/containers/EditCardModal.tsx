@@ -11,21 +11,14 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import RenewToggle, { useRenewToggle } from '@proton/components/containers/payments/RenewToggle';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { ChargebeeCreditCardWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
-import type { CardModel, PaymentMethodCardDetails } from '@proton/payments';
-import {
-    Autopay,
-    PAYMENT_METHOD_TYPES,
-    isV5PaymentToken,
-    paymentMethodPaymentsVersion,
-    v5PaymentTokenToLegacyPaymentToken,
-} from '@proton/payments';
-import { CreditCard } from '@proton/payments/ui';
 import {
     getPaymentsVersion,
     setPaymentMethodV4,
@@ -36,8 +29,12 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { ChargebeeCreditCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
-import RenewToggle, { useRenewToggle } from './RenewToggle';
+import type { CardModel } from '../../core/cardDetails';
+import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
+import type { PaymentMethodCardDetails } from '../../core/interface';
+import { isV5PaymentToken } from '../../core/type-guards';
+import { paymentMethodPaymentsVersion, v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
+import { CreditCard } from '../components/CreditCard/CreditCard';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card?: CardModel;

@@ -11,7 +11,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode, useFeature } from '@proton/features';
-import { PLANS } from '@proton/payments/index';
+import { PLANS } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
     COUPON_CODES,

@@ -1,6 +1,6 @@
 import type * as H from 'history';
 
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
