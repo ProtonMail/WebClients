@@ -3,7 +3,8 @@ import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, Se
 import { CryptoProxy } from '@proton/crypto';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import type { MessageKeys } from 'proton-mail/store/messages/messagesTypes';
 
@@ -83,7 +84,6 @@ export const fromGeneratedKeysToMessageKeys = (generatedKeys: GeneratedKey): Mes
     type: 'publicPrivate',
     encryptionKeys: [generatedKeys.privateKeys[0]],
     signingKeys: [generatedKeys.privateKeys[0]],
-    verificationKeys: generatedKeys.publicKeys,
     decryptionKeys: generatedKeys.privateKeys,
 });
 
@@ -121,15 +121,31 @@ export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey
     };
 };
 
-export const getStoredKey = (key: GeneratedKey | undefined): DecryptedAddressKey[] => {
-    return key
-        ? [{ ID: '123', publicKey: key.publicKeys[0], privateKey: key.privateKeys[0], Flags: 0, Primary: 0 }]
-        : [];
+export const getStoredUserKey = (key: GeneratedKey | undefined): DecryptedKey[] => {
+    return key ? [{ ID: '123', publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }] : [];
 };
 
-export const getAddressKeyCache = (id: string, key: Parameters<typeof getStoredKey>[0]) => {
+export const getStoredAddressKey = (address: Address, keys: GeneratedKey[] | undefined): DecryptedAddressKey[] => {
+    if (!keys) {
+        return [];
+    }
+
+    if (address.Keys.length < keys.length) {
+        throw new Error('Missing address.Keys entry');
+    }
+
+    return keys.map((key, index) => ({
+        ID: address.Keys[index].ID,
+        publicKey: key.publicKeys[0],
+        privateKey: key.privateKeys[0],
+        Flags: address.Keys[index].Flags ?? getDefaultKeyFlags(address),
+        Primary: address.Keys[index].Primary ?? 0,
+    }));
+};
+
+export const getAddressKeyCache = (address: Address, keys: GeneratedKey[] | undefined) => {
     return {
-        [id]: getModelState(getStoredKey(key)),
+        [address.ID]: getModelState(getStoredAddressKey(address, keys)),
     };
 };
 

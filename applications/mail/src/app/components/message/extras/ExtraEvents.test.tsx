@@ -287,17 +287,16 @@ const getSetup = async ({
 
     // mock address keys to encrypt ICS attachment
     minimalCache();
+    const address = getCompleteAddress({
+        ID: userPrimaryAddressID,
+        Email: userEmailAddress,
+        Status: userAddressEnabled ? ADDRESS_STATUS.STATUS_ENABLED : ADDRESS_STATUS.STATUS_DISABLED,
+    });
 
     return {
         preloadedState: {
-            addresses: getModelState([
-                getCompleteAddress({
-                    ID: userPrimaryAddressID,
-                    Email: userEmailAddress,
-                    Status: userAddressEnabled ? ADDRESS_STATUS.STATUS_ENABLED : ADDRESS_STATUS.STATUS_DISABLED,
-                }),
-            ]),
-            addressKeys: getAddressKeyCache(userPrimaryAddressID, addressKey),
+            addresses: getModelState([address]),
+            addressKeys: getAddressKeyCache(address, [addressKey]),
             calendars: getModelState(userCalendars),
             calendarUserSettings: getModelState(userCalendarSettings),
         },

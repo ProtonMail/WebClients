@@ -5,7 +5,7 @@ import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import type { WorkerDecryptionResult } from '@proton/crypto/lib';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import type { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
@@ -18,7 +18,7 @@ import {
     addApiKeys,
     generateKeys,
     getAddressKeyCache,
-    getStoredKey,
+    getStoredUserKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
@@ -32,6 +32,7 @@ import {
     decryptMessage,
     decryptMessageMultipart,
     decryptSessionKey,
+    getCompleteAddress,
     minimalCache,
     readSessionKey,
 } from '../../../helpers/test/helper';
@@ -68,11 +69,14 @@ describe('Composer sending', () => {
         clearAll();
     });
 
-    const getPreloadedState = () => {
+    const getPreloadedState = (addressID: string = AddressID) => {
+        const address = getCompleteAddress({ ID: addressID, Email: fromAddress });
+
         return {
             mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
-            userKeys: getModelState(getStoredKey(fromKeys)),
-            addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            userKeys: getModelState(getStoredUserKey(fromKeys)),
+            addressKeys: getAddressKeyCache(address, [fromKeys]),
+            addresses: getModelState([address]),
         };
     };
 
@@ -91,14 +95,10 @@ describe('Composer sending', () => {
                 messageDocument: { plainText: 'test' },
                 data: { MIMEType: MIME_TYPES.PLAINTEXT },
             });
-            const preloadedState = getPreloadedState();
-            const { sendRequest } = await helper(message, {
-                ...preloadedState,
-                addressKeys: {
-                    ...preloadedState.addressKeys,
-                    ...getAddressKeyCache(message.data.AddressID, fromKeys),
-                },
-            });
+
+            const preloadedState = getPreloadedState(message.data.AddressID);
+
+            const { sendRequest } = await helper(message, preloadedState);
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -124,27 +124,23 @@ describe('Composer sending', () => {
             const preloadedState = getPreloadedState();
             minimalCache();
 
+            const selfAddress = getCompleteAddress({
+                ID: message.data.AddressID,
+                Email: fromAddress,
+                Receive: 1,
+                HasKeys: 1,
+                Keys: [
+                    {
+                        Primary: 1,
+                        PrivateKey: fromKeys.privateKeyArmored,
+                        PublicKey: fromKeys.publicKeyArmored,
+                    } as AddressKey,
+                ],
+            });
             const { sendRequest } = await helper(message, {
                 ...preloadedState,
-                addresses: getModelState([
-                    {
-                        ID: message.data.AddressID,
-                        Email: fromAddress,
-                        Receive: 1,
-                        HasKeys: true,
-                        Keys: [
-                            {
-                                Primary: 1,
-                                PrivateKey: fromKeys.privateKeyArmored,
-                                PublicKey: fromKeys.publicKeyArmored,
-                            },
-                        ],
-                    },
-                ] as any),
-                addressKeys: {
-                    ...getAddressKeyCache(AddressID, fromKeys),
-                    ...getAddressKeyCache(message.data.AddressID, fromKeys),
-                },
+                addresses: getModelState([selfAddress]),
+                addressKeys: getAddressKeyCache(selfAddress, [fromKeys]),
             });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
@@ -152,9 +148,9 @@ describe('Composer sending', () => {
 
             const packages = sendRequest.data.Packages;
             const pack = packages['text/plain'];
-            const address = pack.Addresses[fromAddress];
+            const fromAddressPackage = pack.Addresses[fromAddress];
 
-            const sessionKey = await decryptSessionKey(address.BodyKeyPacket, fromKeys.privateKeys);
+            const sessionKey = await decryptSessionKey(fromAddressPackage.BodyKeyPacket, fromKeys.privateKeys);
 
             expect(sessionKey).toBeDefined();
 
@@ -559,12 +555,18 @@ describe('Composer sending', () => {
 
         addApiKeys(true, toAddress, [toKeys]);
 
+        const addressWithTwoKeys = getCompleteAddress({
+            ID: message.data.AddressID,
+            Email: fromAddress,
+            Keys: [{ ID: '1', Primary: 1 } as AddressKey, { ID: '2', Primary: 0 } as AddressKey],
+        });
+
         const preloadedState = getPreloadedState();
         const { sendRequest } = await helper(message, {
             ...preloadedState,
             addressKeys: {
                 ...preloadedState.addressKeys,
-                ...getAddressKeyCache(message.data.AddressID, secondFromKeys),
+                ...getAddressKeyCache(addressWithTwoKeys, [fromKeys, secondFromKeys]),
             },
         });
 
