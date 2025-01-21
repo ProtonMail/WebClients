@@ -10,7 +10,6 @@ import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import { selectAllShares } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -41,11 +40,7 @@ function* onSharesEvent(
         logger.info(`[ServerEvents::Shares]`, `${newShares.length} remote share(s) not in cache`);
 
         const activeNewShares = (
-            (yield Promise.all(
-                newShares
-                    .filter((share) => share.TargetType === ShareType.Vault)
-                    .map((encryptedShare) => parseShareResponse(encryptedShare))
-            )) as Maybe<Share>[]
+            (yield Promise.all(newShares.map((encryptedShare) => parseShareResponse(encryptedShare)))) as Maybe<Share>[]
         ).filter(truthy);
 
         if (activeNewShares.length > 0) {

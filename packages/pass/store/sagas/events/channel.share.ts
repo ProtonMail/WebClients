@@ -20,7 +20,6 @@ import type { ShareItem } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, ItemRevision, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -56,8 +55,8 @@ const onShareEvent = (shareId: string) =>
             yield put(shareEvent({ ...event, shareId }));
         }
 
-        if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
-            const share: Maybe<Share<ShareType.Vault>> = yield parseShareResponse(UpdatedShare, { eventId });
+        if (UpdatedShare) {
+            const share: Maybe<Share> = yield parseShareResponse(UpdatedShare, { eventId });
             if (share) yield put(shareEventUpdate(share));
         }
 
