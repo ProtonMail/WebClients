@@ -14,13 +14,13 @@ import {
     PAYMENT_METHOD_TYPES,
     isChargebeePaymentMethod,
 } from '@proton/payments';
+import { EditCardModal } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
 import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
-import EditCardModal from '../EditCardModal';
 import StyledPayPalButton from '../StyledPayPalButton';
 import type { SUBSCRIPTION_STEPS } from './constants';
 
