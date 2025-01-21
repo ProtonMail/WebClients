@@ -354,12 +354,13 @@ export const createPassCrypto = (): PassCryptoWorker => {
 
             const manager = getShareManager(shareId);
             const share = manager.getShare();
+            const sharedItem = itemId && share.targetType === ShareType.Item;
             const rotation = manager.getLatestRotation();
 
             const signature = await processes.createNewUserSignature({
                 inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
                 invitedEmail: email,
-                shareKey: itemId ? manager.getItemShareKey(rotation) : manager.getVaultShareKey(rotation),
+                shareKey: sharedItem ? manager.getItemShareKey(rotation) : manager.getVaultShareKey(rotation),
             });
 
             return {
