@@ -304,13 +304,19 @@ async function renderCreditCardForm() {
             countryCode: string;
             zip?: string;
         };
+        email: string;
     };
 
-    function getAdditionalData({ countryCode, zip }: ThreeDsAdditionalData['billingAddress']): ThreeDsAdditionalData {
+    function getAdditionalData({
+        countryCode,
+        zip,
+        paymentIntent,
+    }: ThreeDsAdditionalData['billingAddress'] & { paymentIntent: PaymentIntent }): ThreeDsAdditionalData {
         const additionalData: ThreeDsAdditionalData = {
             billingAddress: {
                 countryCode,
             },
+            email: paymentIntent.email ?? 'fallback@payments.protontech.ch',
         };
 
         const countiesWithZip = ['US'];
@@ -332,7 +338,7 @@ async function renderCreditCardForm() {
             return;
         }
 
-        const additionalData = getAdditionalData({ countryCode, zip });
+        const additionalData = getAdditionalData({ countryCode, zip, paymentIntent });
 
         cardComponent
             .authorizeWith3ds(paymentIntent, additionalData, {
