@@ -244,6 +244,9 @@
       "Edit vault": [
         "Upravit trezor"
       ],
+      "Enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Povolit ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Povolte tento alias pro příjem e-mailů odesílaných na tento alias"
       ],
@@ -675,6 +678,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } je k dispozici s placeným tarifem. Navyšte tarif pro okamžitý přístup."
+      ],
       "${ total } other login uses the same password": [
         "${ total } jiné přihlášení používá stejné heslo",
         "${ total } jiná přihlášení používají stejné heslo",

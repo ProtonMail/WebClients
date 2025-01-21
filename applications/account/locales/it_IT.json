@@ -463,6 +463,9 @@
       "Edit": [
         "Modifica"
       ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
+      ],
       "Edit billing cycle": [
         "Modifica ciclo di fatturazione"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "Modifica il gruppo"
+      ],
+      "Edit invoice note": [
+        "Modifica nota fattura"
       ],
       "Edit label": [
         "Modifica dell'etichetta"
@@ -3909,6 +3915,11 @@
         "90 minuti"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
+      ]
+    },
     "Email": {
       "Email verified": [
         "Email verificata"
@@ -4906,6 +4917,9 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "ZIP code is required": [
+        "Il codice postale è obbligatorio"
       ]
     },
     "error": {
@@ -9522,6 +9536,11 @@
         "Puoi aggiungere un metodo di pagamento per rinnovare automaticamente il tuo abbonamento. Sono disponibili anche altri metodi di pagamento."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Inserisci una nota per le fatture. Queste informazioni verranno aggiungi sia alle fatture personali e sia alle fatture aziendali. Verranno utilizzate solo sulle fatture emesse in futuro."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Clicca per maggiori dettagli"
@@ -10971,6 +10990,9 @@
       "VAT": [
         "IVA"
       ],
+      "VAT identification number": [
+        "Numero d'identificazione IVA"
+      ],
       "Verification code": [
         "Codice di verifica"
       ],
@@ -11027,6 +11049,9 @@
       ],
       "Your referral link": [
         "Il tuo link di riferimento"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "label": {
@@ -14271,11 +14296,20 @@
       "Address": [
         "Indirizzo"
       ],
+      "Anderson": [
+        "Rossi"
+      ],
+      "Anytown": [
+        "Roma"
+      ],
       "Choose a name": [
         "Scegli un nome"
       ],
       "Choose display name": [
         "Scegli il nome visualizzato"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
       ],
       "Confirm": [
         "Conferma"
@@ -14315,6 +14349,9 @@
       ],
       "Link": [
         "Link"
+      ],
+      "Main street 12": [
+        "Via Mario Greppi 12"
       ],
       "Name": [
         "Nome"
@@ -14376,8 +14413,14 @@
       "Text": [
         "Testo"
       ],
+      "Thomas": [
+        "Mario"
+      ],
       "Type text or keyword": [
         "Inserisci testo o parola chiave"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ],
       "yourdomain.com": [
         "tuodominio.com"
@@ -16741,6 +16784,9 @@
       "Backup password updated": [
         "Password di backup aggiornata"
       ],
+      "Billing details updated": [
+        "Informazioni di fatturazione aggiornati"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario aggiunto. Potrebbe volerci qualche minuto per sincronizzarlo."
       ],
@@ -17627,6 +17673,9 @@
       "Download the mobile apps": [
         "Scarica le app per dispositivi mobili"
       ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
+      ],
       "Edit credit/debit card": [
         "Modifica carta di credito/debito"
       ],
@@ -17644,6 +17693,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Modifica Gateway ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Modifica nota fattura"
       ],
       "Edit profile": [
         "Modifica profilo"

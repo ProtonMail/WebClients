@@ -253,6 +253,9 @@
       "Edit": [
         "Modifica"
       ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
+      ],
       "Edit billing cycle": [
         "Modifica ciclo di fatturazione"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Modifica il gruppo"
+      ],
+      "Edit invoice note": [
+        "Modifica nota fattura"
       ],
       "Edit name": [
         "Modifica nome"
@@ -2449,6 +2455,11 @@
         "Supporto prioritario"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } aggiunto"
@@ -2764,6 +2775,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Il tuo account o la tua organizzazione ha una fattura scaduta. Paga tutte le fatture non pagate."
+      ],
+      "ZIP code is required": [
+        "Il codice postale è obbligatorio"
       ]
     },
     "error": {
@@ -5307,6 +5321,11 @@
         "Puoi aggiungere un metodo di pagamento per rinnovare automaticamente il tuo abbonamento. Sono disponibili anche altri metodi di pagamento."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Inserisci una nota per le fatture. Queste informazioni verranno aggiungi sia alle fatture personali e sia alle fatture aziendali. Verranno utilizzate solo sulle fatture emesse in futuro."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Puoi prevenire la scadenza riattivando l'abbonamento"
@@ -5917,6 +5936,9 @@
       "VAT": [
         "IVA"
       ],
+      "VAT identification number": [
+        "Numero d'identificazione IVA"
+      ],
       "Verification code": [
         "Codice di verifica"
       ],
@@ -5955,6 +5977,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "label": {
@@ -7984,11 +8009,20 @@
       "Address": [
         "Indirizzo"
       ],
+      "Anderson": [
+        "Rossi"
+      ],
+      "Anytown": [
+        "Roma"
+      ],
       "Choose a name": [
         "Scegli un nome"
       ],
       "Choose display name": [
         "Scegli il nome visualizzato"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
       ],
       "Confirm": [
         "Conferma"
@@ -8022,6 +8056,9 @@
       ],
       "Group name": [
         "Nome gruppo"
+      ],
+      "Main street 12": [
+        "Via Mario Greppi 12"
       ],
       "Other": [
         "Altro"
@@ -8064,6 +8101,12 @@
       ],
       "Start date": [
         "Data d'inizio"
+      ],
+      "Thomas": [
+        "Mario"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ],
       "yourdomain.com": [
         "tuodominio.com"
@@ -9735,6 +9778,9 @@
       "Backup password updated": [
         "Password di backup aggiornata"
       ],
+      "Billing details updated": [
+        "Informazioni di fatturazione aggiornati"
+      ],
       "Catch-all address updated": [
         "Indirizzo catch-all aggiornato"
       ],
@@ -10313,6 +10359,9 @@
       "Downloads": [
         "Download"
       ],
+      "Edit billing address": [
+        "Modifica indirizzo di fatturazione"
+      ],
       "Edit credit/debit card": [
         "Modifica carta di credito/debito"
       ],
@@ -10327,6 +10376,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Modifica Gateway ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Modifica nota fattura"
       ],
       "Edit servers": [
         "Modifica server"

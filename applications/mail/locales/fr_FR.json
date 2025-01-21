@@ -6277,6 +6277,9 @@
       "Create in": [
         "Créer dans"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "La création de plusieurs comptes gratuits n'est pas autorisée par nos ${ termsLink }."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
       ],
@@ -6504,6 +6507,9 @@
       ],
       "Folder": [
         "Dossier"
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Pour plus d'informations et pour supprimer les restrictions, veuillez vous connecter à ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Pour un accès à vos e-mails à tout moment et une expérience mobile optimisée, téléchargez notre ${ androidAppLink } ou ${ iosAppLink }."
@@ -7396,9 +7402,6 @@
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Pour lever ces restrictions, vous pouvez passer à un abonnement payant."
       ],
-      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
-        "Pour lever ces restrictions, vous pouvez consulter ${ mailLink } et passer à un abonnement payant."
-      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Pour vous désinscrire de cette liste de diffusion, un message sera envoyé à partir de ${ boldFrom } avec les détails suivants comme définis par l'expéditeur de la newsletter :"
       ],
@@ -7557,9 +7560,6 @@
       ],
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
-      ],
-      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
-        "Nous avons détecté la création de plusieurs comptes gratuits, ce qui constitue une violation de nos ${ termsLink }."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Nous avons des abonnements conçus spécifiquement pour les utilisateurs comme vous ayant besoin de plusieurs adresses e-mail."
@@ -12842,11 +12842,11 @@
       "A filter with this name already exists": [
         "Un filtre portant ce nom existe déjà."
       ],
-      "Account locked": [
-        "Le compte est verrouillé."
-      ],
       "Account recovery": [
         "Récupération du compte"
+      ],
+      "Account restricted": [
+        "Compte restreint"
       ],
       "Account security": [
         "Sécurité du compte"

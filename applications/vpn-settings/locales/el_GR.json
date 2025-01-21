@@ -253,6 +253,9 @@
       "Edit": [
         "Επεξεργασία"
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Edit billing cycle": [
         "Επεξεργασία κύκλου χρέωσης"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Επεξεργασία ομάδας"
+      ],
+      "Edit invoice note": [
+        "Επεξεργασία στοιχείων τιμολογίου"
       ],
       "Edit name": [
         "Επεξεργασία ονόματος"
@@ -2449,6 +2455,11 @@
         "Υποστήριξη με προτεραιότητα"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτή τη φόρμα θα εμφανίζονται σε μελλοντικά τιμολόγια και δεν θα επηρεάσουν τα τιμολόγια που ήδη έχουν εκδοθεί."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } προστέθηκαν"
@@ -2764,6 +2775,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
+      ],
+      "ZIP code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
     "error": {
@@ -5304,6 +5318,11 @@
         "Μπορείτε να προσθέσετε μια μέθοδο πληρωμής για να ανανεώνεται αυτόματα η συνδρομή σας. Διατίθενται επίσης και άλλες μέθοδοι πληρωμής."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Καταχωρίστε μια σημείωση για τα τιμολόγια. Αυτές οι λεπτομέρειες θα προστεθούν τόσο στα προσωπικά όσο και στα εταιρικά τιμολόγια. Θα εμφανίζονται μόνο σε τιμολόγια που θα εκδοθούν στο μέλλον."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Μπορείτε να αποτρέψετε τη λήξη ενεργοποιώντας ξανά τη συνδρομή"
@@ -5914,6 +5933,9 @@
       "VAT": [
         "ΦΠΑ"
       ],
+      "VAT identification number": [
+        "ΑΦΜ"
+      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
@@ -5949,6 +5971,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "ZIP code": [
+        "Τ.Κ."
       ]
     },
     "label": {
@@ -7954,11 +7979,20 @@
       "Address": [
         "Διεύθυνση"
       ],
+      "Anderson": [
+        "Καρανικολής"
+      ],
+      "Anytown": [
+        "Αθήνα"
+      ],
       "Choose a name": [
         "Επιλέξτε ένα όνομα"
       ],
       "Choose display name": [
         "Επιλέξτε εμφανιζόμενο όνομα"
+      ],
+      "Company name": [
+        "Όνομα εταιρείας"
       ],
       "Confirm": [
         "Επιβεβαίωση"
@@ -7992,6 +8026,9 @@
       ],
       "Group name": [
         "Όνομα ομάδας"
+      ],
+      "Main street 12": [
+        "Ονησίμου 12"
       ],
       "Other": [
         "Άλλο"
@@ -8034,6 +8071,12 @@
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
+      ],
+      "Thomas": [
+        "Θωμάς"
+      ],
+      "VAT number": [
+        "Α.Φ.Μ."
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -9705,6 +9748,9 @@
       "Backup password updated": [
         "Ο εφεδρικός κωδικός πρόσβασης ενημερώθηκε"
       ],
+      "Billing details updated": [
+        "Τα στοιχεία χρέωσης ενημερώθηκαν"
+      ],
       "Catch-all address updated": [
         "Έγινε ενημέρωση της διεύθυνσης catch-all"
       ],
@@ -10280,6 +10326,9 @@
       "Downloads": [
         "Λήψεις"
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Edit credit/debit card": [
         "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -10294,6 +10343,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Επεξεργασία Πύλης ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Επεξεργασία στοιχείων τιμολογίου"
       ],
       "Edit servers": [
         "Επεξεργασία διακομιστών"

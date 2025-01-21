@@ -3393,6 +3393,9 @@
       "Only the Gregorian calendar scale is allowed": [
         "Ainoastaan gregoriaaninen kalenteri on sallittu"
       ],
+      "Recurring event has no occurrences": [
+        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
+      ],
       "Recurring rule not supported": [
         "Toistuvaa sääntöä ei tueta"
       ],
@@ -4889,11 +4892,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Seuraava laskutuspäivä on ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+      ],
       "Your password was leaked:": [
         "Salasanasi paljastui:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
       ]
     },
     "info": {
