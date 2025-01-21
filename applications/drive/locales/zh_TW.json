@@ -303,6 +303,9 @@
       "Download logs": [
         "下載日誌"
       ],
+      "Download without scanning": [
+        "無掃描下載"
+      ],
       "Download without scanning (${ count })": [
         "無掃描的下載(${ count })"
       ],
@@ -446,6 +449,9 @@
       ],
       "Learn more": [
         "瞭解詳情"
+      ],
+      "Learn more.": [
+        "了解更多."
       ],
       "Leave": [
         "離開"
@@ -626,6 +632,9 @@
       ],
       "Replace file": [
         "取代檔案"
+      ],
+      "Report": [
+        "回報"
       ],
       "Report a problem": [
         "回報問題"
@@ -6048,6 +6057,9 @@
       "Upload your first file": [
         "上傳您的第一個檔案"
       ],
+      "Uploaded by": [
+        "上傳者"
+      ],
       "VAT": [
         "增值稅"
       ],
@@ -7410,11 +7422,17 @@
       "\"${ name }\" created successfully": [
         "「${ name }」已成功創建"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\"已刪除"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "檔案 \"${ name }\" 已經從垃圾桶被永久刪除"
       ],
       "\"${ name }\" failed to be created": [
         "「${ name }」創建失敗"
+      ],
+      "\"${ name }\" failed to be deleted": [
+        "\"${ name }\"創建失敗"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "檔案 \"${ name }\" 未能從垃圾桶中被永久刪除。"
@@ -7614,6 +7632,9 @@
       "The item was not added to your drive": [
         "此項目未被加入您的雲端磁碟"
       ],
+      "The item was successfully added to your drive": [
+        "此項目成功加入您的雲端磁碟"
+      ],
       "The link to your item failed to be deleted": [
         "未能刪除指向您項目的連結"
       ],
@@ -7772,6 +7793,9 @@
       "Manage access": [
         "管理存取權限"
       ],
+      "Organize files right from your desktop": [
+        "從桌面整理檔案"
+      ],
       "Scan the QR code to install the mobile app": [
         "掃描QR代碼以安裝移動裝置應用程式。"
       ],
@@ -7911,6 +7935,9 @@
       ],
       "Card number": [
         "卡號"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "目前自動續訂為關閉。若現在變更訂閱，自動續訂將重新啟用。"
       ],
       "CVC": [
         "CVC"
@@ -9426,6 +9453,9 @@
       "Change password": [
         "更改密碼"
       ],
+      "Check for malicious files": [
+        "檢察可疑檔案"
+      ],
       "Clearing data": [
         "清除資料中"
       ],
@@ -9503,6 +9533,12 @@
       ],
       "Delete ${ count } contact group": [
         "刪除 ${ count } 個聯絡人群組"
+      ],
+      "Delete ${ item.name }?": [
+        "刪除 ${ item.name }?"
+      ],
+      "Delete ${ links.length } items?": [
+        "刪除${ links.length }項目?"
       ],
       "Delete ${ value }": [
         "刪除 ${ value }"
@@ -9918,6 +9954,9 @@
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
+      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "您將拒絕共享項目的邀請。您將無法存取直到擁有者在此與您共享。"
+      ],
       "You have inaccessible files": [
         "您有部份檔案無法存取"
       ],
@@ -9963,6 +10002,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "添加此共享檔案至您的${ DRIVE_APP_NAME }以方便未來存取"
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
@@ -10007,6 +10049,9 @@
       ],
       "Load image": [
         "載入圖像"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "當包含於此電子郵件訊息和檔案名稱以零存取加密儲存"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
