@@ -1,8 +1,12 @@
 import type { MutableRefObject, RefObject } from 'react';
 
 import { type FormikErrors } from 'formik';
+import type { Store } from 'redux';
 
+import { AccessTarget } from '@proton/pass/lib/access/types';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import { selectAccessMembers } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import type { InviteFormValues, Maybe } from '@proton/pass/types';
 
 export enum InviteEmailsError {
@@ -10,19 +14,25 @@ export enum InviteEmailsError {
     EMPTY = 'EMPTY' /* empty members */,
     INVALID_EMAIL = 'INVALID_EMAIL' /* invalid email string */,
     INVALID_ORG = 'INVALID_ORG' /* invalid organization member */,
+    EXCLUDED = 'EXCLUDED' /* member is already either invited or in the share */,
 }
 
 type ValidateShareInviteOptions = {
     emailField: RefObject<HTMLInputElement>;
     emailValidationResults: Maybe<MutableRefObject<Map<string, boolean>>>;
+    store: Store<State>;
 };
 
 export const validateInvite =
-    ({ emailField, emailValidationResults }: ValidateShareInviteOptions) =>
+    ({ emailField, emailValidationResults, store }: ValidateShareInviteOptions) =>
     (values: InviteFormValues) => {
         let errors: FormikErrors<InviteFormValues> = {};
 
         if (values.step === 'members') {
+            const { shareId } = values;
+            const itemId = values.target === AccessTarget.Item ? values.itemId : undefined;
+            const excluded = selectAccessMembers(shareId, itemId)(store.getState());
+
             const emails = values.members.reduce<{
                 errors: string[];
                 pass: boolean;
@@ -37,6 +47,9 @@ export const validateInvite =
                         acc.errors.push(InviteEmailsError.INVALID_EMAIL);
                     } else if (emailValidationResults?.current.get(value.email) === false) {
                         acc.errors.push(InviteEmailsError.INVALID_ORG);
+                        acc.pass = false;
+                    } else if (excluded.has(value.email)) {
+                        acc.errors.push(InviteEmailsError.EXCLUDED);
                         acc.pass = false;
                     } else acc.errors.push('');
 
