@@ -7130,9 +7130,6 @@
       "To remove restrictions, you can upgrade to a paid plan.": [
         "若要移除限制，您可升級至付費方案。"
       ],
-      "To remove restrictions, you can visit ${ mailLink } and upgrade to a paid plan.": [
-        "若要移除限制，您可瀏覽${ mailLink }並升級至付費方案。"
-      ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "如要取消訂閱此郵寄清單，將從 ${ boldFrom } 傳送一封電郵，並包含下列由電子報傳送者定義的資訊："
       ],
@@ -7291,9 +7288,6 @@
       ],
       "We couldn’t process your payment.": [
         "我們未能處理您的付款。"
-      ],
-      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
-        "我們偵測到創建多重免費帳號，違反我們的${ termsLink }。"
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "我們有針對像您一樣需要多個電子郵件地址的使用者設計的方案。"
@@ -10229,6 +10223,9 @@
       "Card number": [
         "卡號"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "目前自動續訂為關閉。若現在變更訂閱，自動續訂將重新啟用。"
+      ],
       "CVC": [
         "CVC"
       ],
@@ -12208,9 +12205,6 @@
       ],
       "A filter with this name already exists": [
         "該篩選名稱已經存在"
-      ],
-      "Account locked": [
-        "帳號已鎖定"
       ],
       "Account recovery": [
         "帳號救援"

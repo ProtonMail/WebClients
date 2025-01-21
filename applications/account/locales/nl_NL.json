@@ -463,6 +463,9 @@
       "Edit": [
         "Bewerken"
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Edit billing cycle": [
         "Wijzig de facturatiecyclus"
       ],
@@ -477,6 +480,9 @@
       ],
       "Edit group": [
         "Groep bewerken"
+      ],
+      "Edit invoice note": [
+        "Factuurnota bewerken"
       ],
       "Edit label": [
         "Label bewerken"
@@ -3909,6 +3915,11 @@
         "90 minuten"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
+      ]
+    },
     "Email": {
       "Email verified": [
         "E-mailadres geverifieerd"
@@ -4906,6 +4917,9 @@
       ],
       "Zero keys reactivated": [
         "Nul sleutels gereactiveerd"
+      ],
+      "ZIP code is required": [
+        "Postcode is vereist"
       ]
     },
     "error": {
@@ -9519,6 +9533,11 @@
         "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Voeg een notitie voor de facturen toe. Deze gegevens worden toegevoegd aan zowel persoonlijke als organisatorische facturen. Ze zullen alleen verschijnen op in de toekomst uitgegeven facturen."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klik voor details"
@@ -10968,6 +10987,9 @@
       "VAT": [
         "BTW"
       ],
+      "VAT identification number": [
+        "BTW-identificatienummer"
+      ],
       "Verification code": [
         "Verificatiecode"
       ],
@@ -11021,6 +11043,9 @@
       ],
       "Your referral link": [
         "Uw doorverwijslink"
+      ],
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "label": {
@@ -14241,11 +14266,20 @@
       "Address": [
         "Adres"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Anytown": [
+        "Willekeurige stad"
+      ],
       "Choose a name": [
         "Kies een naam"
       ],
       "Choose display name": [
         "Kies weergavenaam"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "Confirm": [
         "Bevestig"
@@ -14285,6 +14319,9 @@
       ],
       "Link": [
         "Koppeling"
+      ],
+      "Main street 12": [
+        "Hoofd straat 12"
       ],
       "Name": [
         "Naam"
@@ -14346,8 +14383,14 @@
       "Text": [
         "Tekst"
       ],
+      "Thomas": [
+        "Thomas"
+      ],
       "Type text or keyword": [
         "Voer tekst of trefwoord in"
+      ],
+      "VAT number": [
+        "BTW-nummer"
       ],
       "yourdomain.com": [
         "uwdomein.com"
@@ -16711,6 +16754,9 @@
       "Backup password updated": [
         "Backup-wachtwoord bijgewerkt"
       ],
+      "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Agenda toegevoegd. Het kan een paar minuten duren om te synchroniseren."
       ],
@@ -17597,6 +17643,9 @@
       "Download the mobile apps": [
         "Download de mobiele apps"
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
       ],
@@ -17614,6 +17663,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } aanpassen"
+      ],
+      "Edit invoice note": [
+        "Factuurnota bewerken"
       ],
       "Edit profile": [
         "Profiel bewerken"

@@ -253,6 +253,9 @@
       "Edit": [
         "Redigera"
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Edit billing cycle": [
         "Byt faktureringsperiod"
       ],
@@ -267,6 +270,9 @@
       ],
       "Edit group": [
         "Redigera grupp"
+      ],
+      "Edit invoice note": [
+        "Redigera fakturaanteckning"
       ],
       "Edit name": [
         "Redigera namn"
@@ -2449,6 +2455,11 @@
         "Prioriterad support"
       ]
     },
+    "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } har lagts till"
@@ -2764,6 +2775,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ditt konto eller organisation har en förfallen faktura. Vänligen betala alla obetalda fakturor."
+      ],
+      "ZIP code is required": [
+        "Postnummer är obligatoriskt"
       ]
     },
     "error": {
@@ -4189,7 +4203,7 @@
         "Installera en gratis serverkonfigurationsfil för att ansluta till en specifik server i en av de tre gratis platserna."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Installera en Secure Core-konfigurationsfil för att dra nytta av ytterligare ett skydd mot äventyrelse av VPN-slutpunkt."
+        "Installera en Secure Core-konfigurationsfil för att dra nytta av ytterligare ett skydd mot en VPN-slutpunkt som har äventyrats."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installera en serverkonfigurationsfil för att ansluta till en specifik server i det land du väljer."
@@ -5318,6 +5332,11 @@
         "Du kan lägga till en betalningsmetod så att din prenumeration förnyas automatiskt. Andra betalningsmetoder är också tillgängliga."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Ange en anteckning för fakturorna. Dessa uppgifter kommer att läggas till på både personliga och organisationsfakturor. De kommer endast att synas på fakturor skapade i framtiden."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Du kan förhindra utgången genom att återaktivera prenumerationen"
@@ -5928,6 +5947,9 @@
       "VAT": [
         "VAT"
       ],
+      "VAT identification number": [
+        "Momsregistreringsnummer"
+      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -5966,6 +5988,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "label": {
@@ -6206,7 +6231,7 @@
         "för ${ price }"
       ],
       "Set up your account with your Porkbun domain.": [
-        "Konfigurera ditt konto med din Porkbun-domän."
+        "Ställ in ditt konto med din Porkbun-domän."
       ]
     },
     "mailtrial2024: Action": {
@@ -6275,7 +6300,7 @@
     },
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Anslut din anpassade domän till ${ BRAND_NAME } för att konfigurera anpassade e-postadresser (t.ex. dittnamn@dittföretag.se). Vår guide kommer att guida dig genom processen."
+        "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
@@ -8001,11 +8026,20 @@
       "Address": [
         "Adress"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
+      "Anytown": [
+        "Alingsås"
+      ],
       "Choose a name": [
         "Välj ett namn"
       ],
       "Choose display name": [
         "Välj visningsnamn"
+      ],
+      "Company name": [
+        "Företagsnamn"
       ],
       "Confirm": [
         "Bekräfta"
@@ -8039,6 +8073,9 @@
       ],
       "Group name": [
         "Gruppnamn"
+      ],
+      "Main street 12": [
+        "Storgatan 12"
       ],
       "Other": [
         "Annat"
@@ -8081,6 +8118,12 @@
       ],
       "Start date": [
         "Startdatum"
+      ],
+      "Thomas": [
+        "Tomas"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "yourdomain.com": [
         "dindomän.com"
@@ -9752,6 +9795,9 @@
       "Backup password updated": [
         "Säkerhetslösenord uppdaterat"
       ],
+      "Billing details updated": [
+        "Faktureringsuppgifterna har uppdaterats"
+      ],
       "Catch-all address updated": [
         "Catch-all-adress uppdaterad"
       ],
@@ -10330,6 +10376,9 @@
       "Downloads": [
         "Nedladdningar"
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Edit credit/debit card": [
         "Redigera kredit-/betalkort"
       ],
@@ -10344,6 +10393,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigera gateway ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Redigera fakturaanteckning"
       ],
       "Edit servers": [
         "Redigera servrar"
