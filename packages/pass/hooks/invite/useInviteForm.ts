@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
+import { useStore } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
@@ -7,6 +8,7 @@ import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { validateInvite } from '@proton/pass/lib/validation/invite';
 import type { inviteBatchCreateFailure, inviteBatchCreateSuccess } from '@proton/pass/store/actions';
 import { inviteBatchCreateIntent } from '@proton/pass/store/actions';
+import type { State } from '@proton/pass/store/types';
 import type { InviteFormValues } from '@proton/pass/types';
 import type { InviteBatchCreateSuccess } from '@proton/pass/types/data/invites.dto';
 import noop from '@proton/utils/noop';
@@ -19,6 +21,7 @@ type InviteFormOptions<V extends InviteFormValues> = {
 };
 
 export const useInviteForm = <V extends InviteFormValues>({ initialValues, onSuccess }: InviteFormOptions<V>) => {
+    const store = useStore<State>();
     const validator = useAddressValidator(initialValues.shareId);
     const emailFieldRef = useRef<HTMLInputElement>(null);
 
@@ -35,6 +38,7 @@ export const useInviteForm = <V extends InviteFormValues>({ initialValues, onSuc
         validate: validateInvite({
             emailField: emailFieldRef,
             emailValidationResults: validator?.emails,
+            store,
         }),
         onSubmit: (values, { setFieldValue }) => {
             if (!validator?.loading) {
