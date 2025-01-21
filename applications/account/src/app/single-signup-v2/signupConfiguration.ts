@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import { getIsLumoApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

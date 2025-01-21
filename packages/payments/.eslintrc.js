@@ -9,7 +9,7 @@ module.exports = {
         'import/no-internal-modules': [
             'error',
             {
-                forbid: ['@proton/payments', '@proton/payments/index'],
+                forbid: ['@proton/payments', '@proton/payments/**'],
             },
         ],
     },

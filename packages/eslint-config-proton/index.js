@@ -99,6 +99,18 @@ module.exports = {
                         message:
                             'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
                     },
+                    {
+                        group: ['@proton/payments/index'],
+                        message: 'You should import from `@proton/payments` instead.',
+                    },
+                    {
+                        group: ['@proton/payments/core/*'],
+                        message: 'You should import from `@proton/payments` instead.',
+                    },
+                    {
+                        group: ['@proton/payments/ui/*'],
+                        message: 'You should import from `@proton/payments/ui` instead.',
+                    },
                 ],
             },
         ],

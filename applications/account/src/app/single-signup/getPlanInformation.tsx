@@ -31,7 +31,7 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { SkeletonLoader, VpnLogo } from '@proton/components/index';
 import type { IconSize } from '@proton/icons';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments';
 import { APPS, BRAND_NAME, PASS_APP_NAME, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
