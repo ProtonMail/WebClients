@@ -9,7 +9,7 @@ import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
-import { selectIsWritableShare } from '@proton/pass/store/selectors';
+import { selectIsWritableVault } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemFilters, ItemRevision, SelectedItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
@@ -29,7 +29,7 @@ type Props = {
 /** Block trashed or non-writable items from being dragged */
 const assertDraggable = (item: ItemRevision, state: State) => {
     if (isTrashed(item)) return false;
-    const writable = selectIsWritableShare(item.shareId)(state);
+    const writable = selectIsWritableVault(item.shareId)(state);
     if (!writable) return false;
     return true;
 };

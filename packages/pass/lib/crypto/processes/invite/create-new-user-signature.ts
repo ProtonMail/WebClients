@@ -1,11 +1,11 @@
 import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto/lib';
-import { PassSignatureContext, type VaultKey } from '@proton/pass/types';
+import { PassSignatureContext, type VaultShareKey } from '@proton/pass/types';
 import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateNewUserSignatureProcessParams = {
     invitedEmail: string;
     inviterPrivateKey: PrivateKeyReference;
-    vaultKey: VaultKey;
+    shareKey: VaultShareKey;
 };
 
 type CreateNewUserSignatureBodyProcessParams = Omit<CreateNewUserSignatureProcessParams, 'inviterPrivateKey'>;
@@ -14,16 +14,16 @@ type CreateNewUserSignatureBodyProcessParams = Omit<CreateNewUserSignatureProces
  * the signature body payload  */
 export const createNewUserSignatureBody = ({
     invitedEmail,
-    vaultKey,
+    shareKey,
 }: CreateNewUserSignatureBodyProcessParams): Uint8Array => {
     const bEmail = stringToUint8Array(invitedEmail);
     const bSeperator = stringToUint8Array('|');
-    const bVaultKey = vaultKey.raw;
+    const bShareKey = shareKey.raw;
 
-    const binaryData = new Uint8Array(bEmail.length + bSeperator.length + bVaultKey.length);
+    const binaryData = new Uint8Array(bEmail.length + bSeperator.length + bShareKey.length);
     binaryData.set(bEmail, 0);
     binaryData.set(bSeperator, bEmail.length);
-    binaryData.set(bVaultKey, bEmail.length + bSeperator.length);
+    binaryData.set(bShareKey, bEmail.length + bSeperator.length);
 
     return binaryData;
 };

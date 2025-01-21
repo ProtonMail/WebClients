@@ -1,8 +1,13 @@
+import { c } from 'ttag';
+
 import { MAX_BATCH_ADDRESS_REQUEST, MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
+import { getItemKeys } from '@proton/pass/lib/items/item.requests';
+import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
@@ -15,6 +20,8 @@ import type {
     NewUserInvitePromoteIntent,
     NewUserInviteRemoveIntent,
 } from '@proton/pass/types/data/invites.dto';
+import type { Maybe } from '@proton/pass/types/utils';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
@@ -55,56 +62,113 @@ export const loadInvites = async (shareId: string): Promise<InviteData> => {
     };
 };
 
-const limitExceededCatch =
-    <T>(catchFn: () => T) =>
-    (error: unknown) => {
-        const { code } = getApiError(error);
-        if (code === PassErrorCode.RESOURCE_LIMIT_EXCEEDED) throw error;
-        else return catchFn();
-    };
+const getInviteErrorMessage = (error: unknown, b2b: boolean): string => {
+    if (b2b && getApiError(error).code === PassErrorCode.RESOURCE_LIMIT_EXCEEDED) {
+        return c('Warning').t`Please contact us to investigate the issue`;
+    }
+
+    return getErrorMessage(error);
+};
 
 /** Returns the list of emails which could not be invited successfully  */
-export const createUserInvites = async (shareId: string, users: InviteUserDTO[]): Promise<string[]> =>
-    (
-        await Promise.all(
-            chunk(users, MAX_BATCH_PER_REQUEST).map(async (batch) =>
+export const createUserInvites = async (
+    shareId: string,
+    itemId: Maybe<string>,
+    users: InviteUserDTO[],
+    b2b: boolean
+): Promise<InviteBatchResult[]> => {
+    const manager = PassCrypto.getShareManager(shareId);
+
+    const targetKeys = await (async (): Promise<InviteTargetKey[]> => {
+        /** If no `itemId` is supplied then we're dealing with
+         * a vault invite -> encrypt the vault keys. */
+        if (!itemId) return manager.getVaultShareKeys();
+
+        /** For item sharing : encrypt the items keys */
+        switch (manager.getShare().targetType) {
+            case ShareType.Item:
+                return manager.getItemShareKeys();
+            case ShareType.Vault:
+                const encryptedItemKeys = (await getItemKeys(shareId, itemId))?.Keys || [];
+                return Promise.all(
+                    encryptedItemKeys.map((key) =>
+                        PassCrypto.openItemKey({
+                            encryptedItemKey: key,
+                            shareId,
+                        })
+                    )
+                );
+        }
+    })();
+
+    return Promise.all(
+        chunk(users, MAX_BATCH_PER_REQUEST).map(
+            async (batch): Promise<InviteBatchResult> =>
                 api({
                     url: `pass/v1/share/${shareId}/invite/batch`,
                     method: 'post',
                     data: {
                         Invites: await Promise.all(
                             batch.map(({ email, role, publicKey }) =>
-                                PassCrypto.createVaultInvite({ shareId, email, role, invitedPublicKey: publicKey })
+                                PassCrypto.createInvite({
+                                    shareId,
+                                    email,
+                                    role,
+                                    invitedPublicKey: publicKey,
+                                    itemId,
+                                    targetKeys,
+                                })
                             )
                         ),
                     },
                 })
-                    .then<string[]>(() => [])
-                    .catch(limitExceededCatch(() => batch.map(prop('email'))))
-            )
+                    .then<InviteBatchResult>(() => ({ ok: true }))
+                    .catch(
+                        (err): InviteBatchResult => ({
+                            ok: false,
+                            failed: batch.map(prop('email')),
+                            error: getInviteErrorMessage(err, b2b),
+                        })
+                    )
         )
-    ).flat();
+    );
+};
 
-export const createNewUserInvites = async (shareId: string, newUsers: InviteNewUserDTO[]) =>
-    (
-        await Promise.all(
-            chunk(newUsers, MAX_BATCH_PER_REQUEST).map(async (batch) =>
+export const createNewUserInvites = async (
+    shareId: string,
+    itemId: Maybe<string>,
+    newUsers: InviteNewUserDTO[],
+    b2b: boolean
+): Promise<InviteBatchResult[]> =>
+    Promise.all(
+        chunk(newUsers, MAX_BATCH_PER_REQUEST).map(
+            async (batch): Promise<InviteBatchResult> =>
                 api({
                     url: `pass/v1/share/${shareId}/invite/new_user/batch`,
                     method: 'post',
                     data: {
                         NewUserInvites: await Promise.all(
                             batch.map(({ email, role }) =>
-                                PassCrypto.createNewUserVaultInvite({ email, role, shareId })
+                                PassCrypto.createNewUserInvite({
+                                    email,
+                                    role,
+                                    shareId,
+                                    itemId,
+                                })
                             )
                         ),
                     },
                 })
-                    .then<string[]>(() => [])
-                    .catch(limitExceededCatch(() => batch.map(prop('email'))))
-            )
+                    .then<InviteBatchResult>(() => ({ ok: true }))
+                    .catch(
+                        (err): InviteBatchResult => ({
+                            ok: false,
+                            failed: batch.map(prop('email')),
+                            error: getInviteErrorMessage(err, b2b),
+                        })
+                    )
         )
-    ).flat();
+    );
 
 export const promoteInvite = async ({
     invitedPublicKey,
@@ -135,7 +199,10 @@ export const removeNewUserInvite = async ({ shareId, newUserInviteId }: NewUserI
         method: 'delete',
     });
 
-export const acceptInvite = async ({ inviteToken, inviterEmail, invitedAddressId, inviteKeys }: InviteAcceptIntent) => {
+export const acceptInvite = async (
+    { inviteToken, inviterEmail, invitedAddressId }: InviteAcceptIntent,
+    inviteKeys: KeyRotationKeyPair[]
+) => {
     return (
         await api({
             url: `pass/v1/invite/${inviteToken}`,

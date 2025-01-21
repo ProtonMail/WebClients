@@ -10,8 +10,8 @@ import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
 import type { IdentityItemFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
-export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ vault, revision, onSubmit, onCancel }) => {
-    const { shareId } = vault;
+export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revision, onSubmit, onCancel }) => {
+    const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content } = useDeobfuscatedItem(item);
 

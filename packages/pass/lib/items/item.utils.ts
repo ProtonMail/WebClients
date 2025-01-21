@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
@@ -215,3 +215,5 @@ export const getBulkSelectionCount = (selected: BulkSelectionDTO) =>
     Object.values(selected).reduce((acc, items) => acc + Object.keys(items).length, 0);
 
 export const formatDisplayNameWithEmail = (name: string, email: string) => `${name} <${email}>`;
+
+export const formatItemsCount = (n: number) => c('Info').ngettext(msgid`${n} item`, `${n} items`, n);

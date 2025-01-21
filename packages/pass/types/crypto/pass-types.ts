@@ -30,11 +30,16 @@ export type RotationKey = {
     rotation: Rotation;
 };
 
-export type VaultKey = RotationKey & { userKeyId: Maybe<string> };
+export type ShareKey = RotationKey & { userKeyId: Maybe<string> };
+
 export type ItemKey = RotationKey;
+export type VaultShareKey = ShareKey;
+export type ItemShareKey = ShareKey;
+export type InviteTargetKey = ItemKey | VaultShareKey;
 
 type OpenedShareBase = {
     addressId: string;
+    canAutofill: Maybe<boolean>;
     createTime: number;
     expireTime?: MaybeNull<number>;
     newUserInvitesReady: number;
@@ -80,4 +85,7 @@ export type OpenedItem = {
     revision: number;
     revisionTime: number;
     state: ItemState;
+    /* New property on the item - keeping it as an optional
+     * to avoid undefined behaviour when booting from cache */
+    shareCount: Maybe<number>;
 };

@@ -32,6 +32,7 @@ import type {
 } from '@proton/pass/lib/search/types';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
+import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import type { State } from '@proton/pass/store/types';
 import {
@@ -55,7 +56,7 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { NOOP_LIST_SELECTOR } from './utils';
+import { NOOP_LIST_SELECTOR, selectState } from './utils';
 
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 
@@ -109,10 +110,13 @@ export const selectBulkSelectionAliasCount = (dto: BulkSelectionDTO) =>
         }, 0)
     );
 
+export const itemsFromSelection =
+    (selection: SelectedItem[]) =>
+    (items: ItemsByShareId): ItemRevision[] =>
+        selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy);
+
 export const selectSelectedItems = (selection: SelectedItem[]) =>
-    createSelector([selectItemsState], (items): ItemRevision[] =>
-        selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy)
-    );
+    createSelector([selectItemsState], (items) => itemsFromSelection(selection)(items));
 
 export const selectItemsByShareId = (shareId?: string) =>
     createSelector(selectItems, (items): ItemRevision[] =>
@@ -355,6 +359,8 @@ export const selectAllSecureLinks = createSelector(selectSecureLinks, (byShareId
     Object.values(byShareId).flatMap((byItemId) => Object.values(byItemId).flat())
 );
 
+export const selectSecureLinksCount = createSelector(selectAllSecureLinks, (links) => links.length);
+
 export const selectInactiveSecureLinks = createSelector(selectAllSecureLinks, (links) =>
     links.filter(not(prop('active')))
 );
@@ -372,7 +378,7 @@ const selectSortedSecureLinkItems = createSelector([selectItems, selectSecureLin
         { totalCount: 0, selection: <SelectedItem[]>[] }
     );
 
-    const secureLinkItems = selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy);
+    const secureLinkItems = itemsFromSelection(selection)(items);
     const sorted = sortItems('recent')(secureLinkItems);
     return { sorted, totalCount };
 });
@@ -402,3 +408,23 @@ export const selectBulkHasSecureLinks = (dto: BulkSelectionDTO) =>
             Object.keys(items).some((itemId) => Boolean(secureLinks[shareId]?.[itemId]))
         )
     );
+
+export const selectItemShared =
+    (shareId: string, itemId: string) =>
+    (state: State): boolean => {
+        const item = state.items.byShareId[shareId]?.[itemId];
+        const share = state.shares[shareId];
+        return (item.shareCount ?? 0) > 0 || share.shared;
+    };
+
+export const selectBulkHasSharedItems =
+    (dto: BulkSelectionDTO) =>
+    (state: State): boolean =>
+        Object.entries(dto).some(([shareId, items]) =>
+            Object.keys(items).some((itemId) => selectItemShared(shareId, itemId)(state))
+        );
+
+export const selectHasTrashedSharedItems = createSelector(
+    [selectState, selectTrashedItems],
+    (state, items) => items.filter(({ shareId, itemId }) => selectItemShared(shareId, itemId)(state)).length > 0
+);

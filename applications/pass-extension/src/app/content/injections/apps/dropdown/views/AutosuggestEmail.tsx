@@ -93,7 +93,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                             onTelemetry(TelemetryEventName.AutosuggestAliasCreated, {}, {});
 
                             controller.close({ refocus: false });
-                        } else setError(response.error);
+                        } else setError(response.error ?? null);
                     }
                 );
             } catch {

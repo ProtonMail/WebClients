@@ -298,14 +298,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 return { ok: true, locked };
             } catch {
-                return { ok: false, error: null };
+                return { ok: false };
             }
         }
     );
 
     const handlePasswordConfirm: MessageHandlerCallback<WorkerMessageType.AUTH_CONFIRM_PASSWORD> = async (message) => {
         const confirmed = await authService.confirmPassword(message.payload.password);
-        return confirmed ? { ok: true } : { ok: false, error: null };
+        return { ok: confirmed };
     };
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);

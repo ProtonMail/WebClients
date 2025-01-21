@@ -1,15 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
-import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
-    inviteAcceptRequest,
     inviteAddressesValidateRequest,
     inviteCreateRequest,
     inviteRecommendationsRequest,
-    inviteRejectRequest,
     inviteRemoveRequest,
     inviteResendRequest,
     newUserInvitePromoteRequest,
@@ -17,9 +14,11 @@ import {
 } from '@proton/pass/store/actions/requests';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import type { InviteFormValues } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
+    InviteAcceptSuccess,
     InviteBatchCreateSuccess,
     InviteRecommendationsIntent,
     InviteRecommendationsSuccess,
@@ -27,7 +26,10 @@ import type {
     InviteRemoveIntent,
     InviteResendIntent,
     NewUserInvitePromoteIntent,
+    NewUserInvitePromoteSuccess,
+    NewUserInviteRemoveIntent,
 } from '@proton/pass/types/data/invites.dto';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -39,15 +41,15 @@ export const inviteBatchCreateIntent = createAction('invite::batch::create::inte
 
 export const inviteBatchCreateSuccess = createAction(
     'invite::batch::create::success',
-    withRequestSuccess((payload: InviteBatchCreateSuccess, count: number) =>
+    withRequestSuccess((payload: InviteBatchCreateSuccess) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').ngettext(
-                    msgid`${count} invite successfully sent`,
-                    `${count} invites successfully sent`,
-                    count
+                    msgid`${payload.count} invite successfully sent`,
+                    `${payload.count} invites successfully sent`,
+                    payload.count
                 ),
             })
         )({ payload })
@@ -77,14 +79,14 @@ export const newUserInvitePromoteIntent = createAction(
 
 export const newUserInvitePromoteSuccess = createAction(
     'new-user-invite::promote::success',
-    withRequestSuccess((shareId: string, shareInvites: InviteData) =>
+    withRequestSuccess((payload: NewUserInvitePromoteSuccess) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Access successfully confirmed`,
             })
-        )({ payload: { shareId, ...shareInvites } })
+        )({ payload })
     )
 );
 
@@ -99,51 +101,35 @@ export const newUserInvitePromoteFailure = createAction(
     )
 );
 
-export const inviteAcceptIntent = createAction(
-    'invite::accept::intent',
-    (payload: Omit<InviteAcceptIntent, 'inviteKeys'>) =>
-        withRequest({ status: 'start', id: inviteAcceptRequest(payload.inviteToken) })({ payload })
-);
+export const inviteAccept = requestActionsFactory<InviteAcceptIntent, InviteAcceptSuccess>('invite::accept')({
+    key: prop('inviteToken'),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be accepted`,
+                error,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) => withCache({ payload }),
+    },
+});
 
-export const inviteAcceptSuccess = createAction(
-    'invite::accept::success',
-    withRequestSuccess((token: string, share: Share<ShareType.Vault>, items: ItemRevision[]) =>
-        withCache({
-            payload: { share, items, token },
-        })
-    )
-);
-
-export const inviteAcceptFailure = createAction(
-    'invite::accept::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Invitation could not be accepted`,
-            error,
-        })({ payload: {} })
-    )
-);
-
-export const inviteRejectIntent = createAction('invite::reject::intent', (payload: InviteRejectIntent) =>
-    withRequest({ status: 'start', id: inviteRejectRequest(payload.inviteToken) })({ payload })
-);
-
-export const inviteRejectSuccess = createAction(
-    'invite::reject::success',
-    withRequestSuccess((token: string) => withCache({ payload: { token } }))
-);
-
-export const inviteRejectFailure = createAction(
-    'invite::reject::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Invitation could not be rejected`,
-            error,
-        })({ payload: {} })
-    )
-);
+export const inviteReject = requestActionsFactory<InviteRejectIntent, { inviteToken: string }>('invite::reject')({
+    key: prop('inviteToken'),
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be rejected`,
+                error,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) => withCache({ payload }),
+    },
+});
 
 export const inviteResendIntent = createAction('invite::resend::intent', (payload: InviteResendIntent) =>
     withRequest({ status: 'start', id: inviteResendRequest(payload.inviteId) })({ payload })
@@ -151,14 +137,14 @@ export const inviteResendIntent = createAction('invite::resend::intent', (payloa
 
 export const inviteResendSuccess = createAction(
     'invite::resend::success',
-    withRequestSuccess((shareId: string, inviteId: string) =>
+    withRequestSuccess((payload: InviteResendIntent) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Invite successfully resent`,
             })
-        )({ payload: { shareId, inviteId } })
+        )({ payload })
     )
 );
 
@@ -179,14 +165,14 @@ export const inviteRemoveIntent = createAction('invite::remove::intent', (payloa
 
 export const inviteRemoveSuccess = createAction(
     'invite::remove::success',
-    withRequestSuccess((shareId: string, inviteId: string) =>
+    withRequestSuccess((payload: InviteRemoveIntent) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Invite successfully removed`,
             })
-        )({ payload: { shareId, inviteId } })
+        )({ payload })
     )
 );
 
@@ -203,20 +189,20 @@ export const inviteRemoveFailure = createAction(
 
 export const newUserInviteRemoveIntent = createAction(
     'new-user-invite::remove::intent',
-    (payload: NewUserInvitePromoteIntent) =>
+    (payload: NewUserInviteRemoveIntent) =>
         withRequest({ status: 'start', id: newUserInviteRemoveRequest(payload.newUserInviteId) })({ payload })
 );
 
 export const newUserInviteRemoveSuccess = createAction(
     'new-user-invite::remove::success',
-    withRequestSuccess((shareId: string, newUserInviteId: string) =>
+    withRequestSuccess((payload: NewUserInviteRemoveIntent) =>
         pipe(
             withCache,
             withNotification({
                 type: 'info',
                 text: c('Info').t`Invite successfully removed`,
             })
-        )({ payload: { shareId, newUserInviteId } })
+        )({ payload })
     )
 );
 

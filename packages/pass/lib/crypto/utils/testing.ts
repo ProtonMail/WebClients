@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import type { ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultKey } from '@proton/pass/types';
+import type { ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, ShareType } from '@proton/pass/types';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
@@ -145,7 +145,7 @@ export const createRandomShare = <T extends ShareType>(targetType: T): TypedOpen
     }
 };
 
-export const createRandomVaultKey = async (rotation: number): Promise<VaultKey> => {
+export const createRandomVaultKey = async (rotation: number): Promise<VaultShareKey> => {
     const raw = generateKey();
     const key = await importSymmetricKey(raw);
     return { key, raw, rotation, userKeyId: undefined };

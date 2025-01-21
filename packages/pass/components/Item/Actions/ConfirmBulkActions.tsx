@@ -11,7 +11,7 @@ import {
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
-import { selectBulkHasSecureLinks } from '@proton/pass/store/selectors';
+import { selectBulkHasSecureLinks, selectBulkHasSharedItems } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO } from '@proton/pass/types';
 
 export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: BulkSelectionDTO }> = ({
@@ -33,20 +33,19 @@ export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: B
                 trashedItemsCount
             )}
             message={
-                <>
+                <div className="flex gap-y-4">
                     {aliasCount > 0 && (
                         <Alert className="mb-4" type="error">
                             {c('Warning').t`Aliases in trash will continue forwarding emails.`}
                         </Alert>
                     )}
-                    <span>
-                        {c('Warning').ngettext(
-                            msgid`Are you sure you want to move ${trashedItemsCount} item to trash?`,
-                            `Are you sure you want to move ${trashedItemsCount} items to trash?`,
-                            trashedItemsCount
-                        )}
-                    </span>
-                </>
+
+                    {c('Warning').ngettext(
+                        msgid`Are you sure you want to move ${trashedItemsCount} item to trash?`,
+                        `Are you sure you want to move ${trashedItemsCount} items to trash?`,
+                        trashedItemsCount
+                    )}
+                </div>
             }
         />
     );
@@ -59,6 +58,7 @@ export const ConfirmMoveManyItems: FC<
     }
 > = ({ selected, shareId, onCancel, onConfirm }) => {
     const hasSecureLinks = useMemoSelector(selectBulkHasSecureLinks, [selected]);
+    const hasSharedItems = useMemoSelector(selectBulkHasSharedItems, [selected]);
     const count = getBulkSelectionCount(selected);
 
     return (
@@ -73,17 +73,26 @@ export const ConfirmMoveManyItems: FC<
                         count
                     )}
                     message={
-                        hasSecureLinks
-                            ? c('Info').ngettext(
-                                  msgid`Moving an item to another vault will erase its history and all secure links.`,
-                                  `Moving items to another vault will erase their history and all secure links.`,
-                                  count
-                              )
-                            : c('Info').ngettext(
-                                  msgid`Moving an item to another vault will erase its history.`,
-                                  `Moving items to another vault will erase their history.`,
-                                  count
-                              )
+                        <div className="flex gap-y-4">
+                            {hasSharedItems && (
+                                <Alert type="error">
+                                    {c('Warning')
+                                        .t`Some items are currently shared. Moving them to another vault will remove access for all other users.`}
+                                </Alert>
+                            )}
+
+                            {hasSecureLinks
+                                ? c('Info').ngettext(
+                                      msgid`Moving an item to another vault will erase its history and all secure links.`,
+                                      `Moving items to another vault will erase their history and all secure links.`,
+                                      count
+                                  )
+                                : c('Info').ngettext(
+                                      msgid`Moving an item to another vault will erase its history.`,
+                                      `Moving items to another vault will erase their history.`,
+                                      count
+                                  )}
+                        </div>
                     }
                 />
             )}
@@ -98,6 +107,7 @@ export const ConfirmDeleteManyItems: FC<ConfirmationPromptHandles & { selected: 
 }) => {
     const deletedItemsCount = getBulkSelectionCount(selected);
     const aliasCount = useBulkSelectionAliasCount();
+    const hasSharedItems = useMemoSelector(selectBulkHasSharedItems, [selected]);
 
     return (
         <ConfirmationPrompt
@@ -110,9 +120,16 @@ export const ConfirmDeleteManyItems: FC<ConfirmationPromptHandles & { selected: 
                 deletedItemsCount
             )}
             message={
-                <>
+                <div className="flex gap-y-4">
+                    {hasSharedItems && (
+                        <Alert type="error">
+                            {c('Warning')
+                                .t`Some items are currently shared. Deleting them will remove access for all other users.`}
+                        </Alert>
+                    )}
+
                     {aliasCount > 0 && (
-                        <Alert className="mb-4" type="error">
+                        <Alert type="error">
                             {c('Title').ngettext(
                                 msgid`You’re about to permanently delete ${aliasCount} alias.`,
                                 `You’re about to permanently delete ${aliasCount} aliases.`,
@@ -125,14 +142,13 @@ export const ConfirmDeleteManyItems: FC<ConfirmationPromptHandles & { selected: 
                             )}
                         </Alert>
                     )}
-                    <span>
-                        {c('Warning').ngettext(
-                            msgid`Are you sure you want to permanently delete ${deletedItemsCount} item?`,
-                            `Are you sure you want to permanently delete ${deletedItemsCount} items?`,
-                            deletedItemsCount
-                        )}
-                    </span>
-                </>
+
+                    {c('Warning').ngettext(
+                        msgid`Are you sure you want to permanently delete ${deletedItemsCount} item?`,
+                        `Are you sure you want to permanently delete ${deletedItemsCount} items?`,
+                        deletedItemsCount
+                    )}
+                </div>
             }
             confirmText={c('Action').ngettext(
                 msgid`Understood, I will never need it`,

@@ -6,11 +6,10 @@ import { c } from 'ttag';
 import { Checkbox, Icon, Option, SelectTwo } from '@proton/components';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import { type ImportVault } from '@proton/pass/lib/import/types';
+import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-
-import { getItemsText } from '../Settings/helper';
 
 type VaultsPickerOptionProps = {
     data: ImportVault;
@@ -38,7 +37,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
             <Checkbox checked={selected} onChange={(e) => onToggle(e.target.checked)}>
                 <div className="w-custom" style={{ '--w-custom': '6.25rem' }}>
                     <strong className="text-sm block text-ellipsis">{name}</strong>
-                    <span className="text-sm text-weak">{getItemsText(count)}</span>
+                    <span className="text-sm text-weak">{formatItemsCount(count)}</span>
                 </div>
             </Checkbox>
             <Icon name="arrow-right" />

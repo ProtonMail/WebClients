@@ -1,5 +1,5 @@
 import { type FC, memo, useCallback, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -12,12 +12,15 @@ import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Them
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import type { ItemScope } from '@proton/pass/components/Navigation/routing';
 import { getInitialFilters } from '@proton/pass/components/Navigation/routing';
 import { useResponsiveHorizontalList } from '@proton/pass/hooks/useResponsiveHorizontalList';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
-import { selectPinnedItems } from '@proton/pass/store/selectors';
+import { isItemShare } from '@proton/pass/lib/shares/share.predicates';
+import { selectPinnedItems, selectShare } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, ItemSortFilter } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -96,6 +99,7 @@ const PinnedItemBarContent = memo(({ sort, onSelect }: Props) => {
 PinnedItemBarContent.displayName = 'PinnedItemBarContentMemo';
 
 export const PinnedItemsBar: FC = () => {
+    const store = useStore<State>();
     const selectItem = useSelectItem();
     const { filters } = useNavigationFilters();
     const filtersRef = useStatefulRef(filters);
@@ -105,13 +109,24 @@ export const PinnedItemsBar: FC = () => {
      * Regular items -> share view with preserved/updated shareId filter */
     const onSelect = useCallback((item: ItemRevision) => {
         const { shareId, itemId } = item;
+        const share = selectShare(shareId)(store.getState());
+        if (!share) return;
+
         const trashed = isTrashed(item);
+        const sharedWithMe = isItemShare(share);
+
+        const scope = ((): ItemScope => {
+            if (sharedWithMe) return 'shared-with-me';
+            if (trashed) return 'trash';
+            return 'share';
+        })();
 
         selectItem(shareId, itemId, {
-            scope: trashed ? 'trash' : 'share',
-            filters: trashed
-                ? getInitialFilters()
-                : { search: '', selectedShareId: filtersRef.current.selectedShareId !== null ? shareId : null },
+            scope,
+            filters:
+                trashed || sharedWithMe
+                    ? getInitialFilters()
+                    : { search: '', selectedShareId: filtersRef.current.selectedShareId !== null ? shareId : null },
         });
     }, []);
 

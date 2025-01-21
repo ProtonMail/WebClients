@@ -9,7 +9,7 @@ import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatch
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
+import { selectItemShares, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -34,13 +34,15 @@ export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop })
 
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
     const vaultActions = useVaultActions();
+    const sharedWithMe = useSelector(selectItemShares);
 
     const menu = useMemo(() => {
-        const totalItemCount = vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0);
+        const totalItemCount =
+            vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0) + sharedWithMe.length;
         const ownedVaultCount = vaults.filter(isOwnVault).length;
 
         return (
-            <>
+            <div>
                 <VaultMenuAll
                     count={totalItemCount}
                     dense={dense}
@@ -67,9 +69,9 @@ export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop })
                 ))}
 
                 <VaultMenuTrash dense={dense} selected={scope === 'trash'} onAction={onAction} />
-            </>
+            </div>
         );
-    }, [vaults, vaultActions, selectedShareId, scope]);
+    }, [vaults, vaultActions, selectedShareId, scope, sharedWithMe]);
 
     return render?.(selectedVaultOption, menu) ?? menu;
 };

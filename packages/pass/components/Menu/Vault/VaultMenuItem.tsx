@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
@@ -12,10 +13,11 @@ import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvi
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { UpsellRef } from '@proton/pass/constants';
 import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
+import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
 import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
-import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { selectAccess, selectPassPlan } from '@proton/pass/store/selectors';
 import type { UniqueItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -61,16 +63,18 @@ export const VaultMenuItem = memo(
         onAction = noop,
     }: Props) => {
         const vaultActions = useVaultActions();
+        const inviteActions = useInviteActions();
         const { moveMany } = useItemsActions();
 
         const upsell = useUpselling();
         const plan = useSelector(selectPassPlan);
+        const access = useSelector(selectAccess(vault.shareId));
 
         const withActions = canEdit || canDelete || canInvite || canManage || canLeave || canMove;
 
-        const onManage = pipe(() => vaultActions.manage(vault), onAction);
+        const onManage = pipe(() => inviteActions.manageVaultAccess(vault.shareId), onAction);
         const onEdit = pipe(() => vaultActions.edit(vault), onAction);
-        const onInvite = pipe(() => vaultActions.invite(vault), onAction);
+        const onInvite = pipe(() => inviteActions.createVaultInvite(vault.shareId), onAction);
         const onLeave = pipe(() => vaultActions.leave(vault), onAction);
         const onMove = pipe(() => vaultActions.moveItems(vault), onAction);
         const onDelete = pipe(() => vaultActions.delete(vault), onAction);
@@ -169,7 +173,7 @@ export const VaultMenuItem = memo(
                                       icon="user-plus"
                                       label={c('Action').t`Share`}
                                       onClick={
-                                          plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
+                                          plan === UserPassPlan.FREE && isMemberLimitReached(vault, access)
                                               ? () =>
                                                     upsell({
                                                         type: 'pass-plus',

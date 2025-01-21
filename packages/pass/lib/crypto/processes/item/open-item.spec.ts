@@ -1,11 +1,12 @@
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
-import type { ItemRevisionContentsResponse, VaultKey } from '@proton/pass/types';
+import type { ItemRevisionContentsResponse, VaultShareKey } from '@proton/pass/types';
 import { ItemState } from '@proton/pass/types';
 
 import { createItem } from './create-item';
 import { openItem } from './open-item';
+import { openItemKey } from './open-item-key';
 
 describe('openItem crypto process', () => {
     const key = generateKey();
@@ -14,7 +15,7 @@ describe('openItem crypto process', () => {
     const itemId = `itemId-${Math.random()}`;
 
     test('should decrypt item accordingly', async () => {
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             key: await importSymmetricKey(key),
             raw: key,
             rotation: 1,
@@ -40,7 +41,12 @@ describe('openItem crypto process', () => {
             State: ItemState.Active,
         };
 
-        const item = await openItem({ encryptedItem, vaultKey });
+        const itemKey = await openItemKey({
+            encryptedItemKey: { Key: encryptedItem.ItemKey!, KeyRotation: encryptedItem.KeyRotation },
+            shareKey: vaultKey,
+        });
+
+        const item = await openItem({ encryptedItem, itemKey });
 
         expect(item.itemId).toEqual(itemId);
         expect(item.contentFormatVersion).toEqual(createItemRequest.ContentFormatVersion);
@@ -50,7 +56,7 @@ describe('openItem crypto process', () => {
     });
 
     test('should throw if provided with an incorrect share key rotation', async () => {
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             key: await importSymmetricKey(key),
             raw: key,
             rotation: 1,
@@ -58,6 +64,11 @@ describe('openItem crypto process', () => {
         };
 
         const createItemRequest = await createItem({ content, vaultKey });
+
+        const itemKey = await openItemKey({
+            encryptedItemKey: { Key: createItemRequest.ItemKey!, KeyRotation: 1 },
+            shareKey: vaultKey,
+        });
 
         const encryptedItem: ItemRevisionContentsResponse = {
             Content: createItemRequest.Content,
@@ -76,6 +87,6 @@ describe('openItem crypto process', () => {
             State: ItemState.Active,
         };
 
-        await expect(openItem({ encryptedItem, vaultKey })).rejects.toThrow(PassCryptoItemError);
+        await expect(openItem({ encryptedItem, itemKey })).rejects.toThrow(PassCryptoItemError);
     });
 });

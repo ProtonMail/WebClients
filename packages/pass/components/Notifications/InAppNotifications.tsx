@@ -1,6 +1,6 @@
 import { type FC, useMemo } from 'react';
 
-import { withFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
+import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import type { InAppNotificationRenderProps } from '@proton/pass/components/Notifications/WithInAppNotification';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { selectNextNotification } from '@proton/pass/store/selectors';
@@ -20,7 +20,7 @@ const getNotificationComponent = (displayType: InAppNotificationDisplayType): FC
     }
 };
 
-export const InAppNotifications: FC = withFeatureFlag(() => {
+export const InAppNotifications: FC = WithFeatureFlag(() => {
     const now = useMemo(() => getEpoch(), []);
     const notification = useMemoSelector(selectNextNotification, [now]);
 

@@ -175,3 +175,9 @@ export const createSSOChangeLockRule = () =>
         message: SpotlightMessage.SSO_CHANGE_LOCK,
         when: (previous) => !previous,
     });
+
+export const createItemSharingRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.ITEM_SHARING,
+        when: (previous) => !previous,
+    });
