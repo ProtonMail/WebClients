@@ -86,15 +86,12 @@ export const usePostSubscription = () => {
         ...(canShowPostSubscriptionFlow ? { disableThanksStep: false } : {}),
         renderCustomStepModal: ({
             modalProps,
-            onSubscribed,
             step,
             upsellRef,
             planIDs,
         }: {
             /** Subscription modal props we reuse wit our modal overrides */
             modalProps: ModalStateProps;
-            /** Subscription modal props */
-            onSubscribed: (() => void) | undefined;
             /** Subscription flow step we're in */
             step: SubscriptionOverridableStep;
             upsellRef: string | undefined;
@@ -116,7 +113,6 @@ export const usePostSubscription = () => {
                     {...modalProps}
                     onClose={() => {
                         modalProps.onClose?.();
-                        onSubscribed?.();
                         userIsFreeRef.current = false;
                     }}
                     step={step}
