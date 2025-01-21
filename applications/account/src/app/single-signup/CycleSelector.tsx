@@ -136,12 +136,7 @@ const CycleItemView = ({
                                 <>
                                     {loading ? (
                                         <div className="flex">
-                                            <SkeletonLoader
-                                                width="10em"
-                                                className="h-custom"
-                                                style={{ '--h-custom': '1.5em' }}
-                                                index={1}
-                                            />
+                                            <SkeletonLoader width="10em" height="1.5em" index={1} />
                                         </div>
                                     ) : (
                                         <div className="flex gap-1">
