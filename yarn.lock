@@ -5278,6 +5278,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mlc-ai/web-llm@patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch":
+  version: 0.2.32
+  resolution: "@mlc-ai/web-llm@patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch::version=0.2.32&hash=79e778"
+  checksum: 10c0/c6715bbe2327c58baee546c256d224e7db6ad15d878a20429ce539914ec719dfbdedb5fb37e107ab173ef0c1b6a2c12bb1792da5e9d2074a0fd7b4aa5d179ce1
+  languageName: node
+  linkType: hard
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -7307,7 +7314,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/ai-assistant@workspace:packages/ai-assistant"
   dependencies:
-    "@mlc-ai/web-llm": "npm:0.2.32"
+    "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch"
     "@proton/jest-env": "workspace:^"
     "@proton/llm": "workspace:^"
     "@proton/shared": "workspace:^"
@@ -7893,7 +7900,7 @@ __metadata:
     "@babel/core": "npm:^7.26.0"
     "@babel/preset-env": "npm:^7.26.0"
     "@jest/globals": "npm:^29.7.0"
-    "@mlc-ai/web-llm": "npm:0.2.32"
+    "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch"
     "@proton/components": "workspace:^"
     "@proton/shared": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.6.3"
