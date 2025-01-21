@@ -97,8 +97,15 @@ const getDecryptedOrganizationActivationToken = async ({
         armoredMessage,
         decryptionKeys,
         // No verification in Global SSO case
-        verificationKeys: verificationKeys === null ? undefined : verificationKeys,
-        signatureContext: { value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT, required: true },
+        ...(verificationKeys
+            ? {
+                  verificationKeys,
+                  signatureContext: {
+                      value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT,
+                      required: true,
+                  },
+              }
+            : {}),
     });
 
     if (verificationKeys !== null && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
