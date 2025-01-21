@@ -1,7 +1,7 @@
 import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
-import type { VaultKey } from '@proton/pass/types';
+import type { VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -12,7 +12,7 @@ describe('createItem crypto process', () => {
     const content = randomContents();
 
     test('should encrypt item content with item key and encrypt item key with vault key', async () => {
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             raw: key,
             key: await importSymmetricKey(key),
             rotation: 1,
@@ -39,7 +39,7 @@ describe('createItem crypto process', () => {
     });
 
     test('should throw when provided with empty content', async () => {
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             raw: key,
             key: await importSymmetricKey(key),
             rotation: 1,
@@ -50,7 +50,7 @@ describe('createItem crypto process', () => {
     });
 
     test('should throw if base64 content is over MAX_ITEM_CONTENT_B64_LENGTH', async () => {
-        const vaultKey: VaultKey = {
+        const vaultKey: VaultShareKey = {
             raw: key,
             key: await importSymmetricKey(key),
             rotation: 1,

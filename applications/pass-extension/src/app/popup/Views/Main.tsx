@@ -20,6 +20,7 @@ import { OrganizationProvider } from '@proton/pass/components/Organization/Organ
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { selectIsSSO, selectLockSetupRequired } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 
@@ -69,23 +70,25 @@ export const Main: FC = () => {
     return (
         <OrganizationProvider>
             <BulkSelectProvider>
-                <ItemActionsProvider>
-                    <InviteProvider>
-                        <PasswordProvider>
-                            <UpsellingProvider>
-                                <SpotlightProvider>
-                                    <InAppNotificationProvider>
-                                        {lockSetup ? (
-                                            <LockOnboarding onCancel={() => logout({ soft: true })} />
-                                        ) : (
-                                            <MainSwitch />
-                                        )}
-                                    </InAppNotificationProvider>
-                                </SpotlightProvider>
-                            </UpsellingProvider>
-                        </PasswordProvider>
-                    </InviteProvider>
-                </ItemActionsProvider>
+                <VaultActionsProvider>
+                    <ItemActionsProvider>
+                        <InviteProvider>
+                            <PasswordProvider>
+                                <UpsellingProvider>
+                                    <SpotlightProvider>
+                                        <InAppNotificationProvider>
+                                            {lockSetup ? (
+                                                <LockOnboarding onCancel={() => logout({ soft: true })} />
+                                            ) : (
+                                                <MainSwitch />
+                                            )}
+                                        </InAppNotificationProvider>
+                                    </SpotlightProvider>
+                                </UpsellingProvider>
+                            </PasswordProvider>
+                        </InviteProvider>
+                    </ItemActionsProvider>
+                </VaultActionsProvider>
             </BulkSelectProvider>
         </OrganizationProvider>
     );

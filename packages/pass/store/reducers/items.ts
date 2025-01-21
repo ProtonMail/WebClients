@@ -12,7 +12,7 @@ import {
     draftsGarbageCollect,
     emptyTrashProgress,
     importItemsProgress,
-    inviteAcceptSuccess,
+    inviteAccept,
     itemAutofilled,
     itemBulkDeleteProgress,
     itemBulkMoveProgress,
@@ -38,10 +38,9 @@ import {
     secureLinksGet,
     secureLinksRemoveInactive,
     setItemFlags,
-    shareDeleteSync,
+    shareEventDelete,
     shareLeaveSuccess,
-    sharedVaultCreated,
-    sharesSync,
+    sharesEventNew,
     syncSuccess,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
@@ -127,7 +126,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     (state = {}, action: Action) => {
         if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
         if (syncSuccess.match(action)) return action.payload.items;
-        if (sharesSync.match(action)) return fullMerge(state, action.payload.items);
+        if (sharesEventNew.match(action)) return fullMerge(state, action.payload.items);
 
         if (itemCreate.intent.match(action)) {
             const { shareId, optimisticId, optimisticTime, ...item } = action.payload;
@@ -156,6 +155,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         revisionTime: now,
                         shareId: shareId,
                         state: ItemState.Active,
+                        shareCount: 0,
                     },
                 },
             });
@@ -243,16 +243,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, pinned: false })(state);
         }
 
-        if (sharedVaultCreated.match(action) && action.payload.move) {
-            const { shareId } = action.payload.share;
-            const { before, after } = action.payload.move;
-
-            return fullMerge(
-                { ...state, [before.shareId]: objectDelete(state[before.shareId], before.itemId) },
-                { [shareId]: { [after.itemId]: after } }
-            );
-        }
-
         if (or(emptyTrashProgress.match, itemBulkDeleteProgress.match)(action)) {
             const deletedItemIds = action.payload.batch.map(prop('ItemID'));
             return objectMap(state, (shareId, items) =>
@@ -278,12 +268,13 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, lastUseTime: getEpoch() })(state);
         }
 
-        if (or(vaultDeleteSuccess.match, shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
+        if (or(vaultDeleteSuccess.match, shareEventDelete.match, shareLeaveSuccess.match)(action)) {
             return objectDelete(state, action.payload.shareId);
         }
 
-        if (inviteAcceptSuccess.match(action)) {
-            return fullMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
+        if (inviteAccept.success.match(action)) {
+            const { share, items } = action.payload;
+            return fullMerge(state, { [share.shareId]: toMap(items, 'itemId') });
         }
 
         if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match)(action)) {

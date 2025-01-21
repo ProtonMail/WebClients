@@ -33,8 +33,8 @@ import { AliasSLNoteLabel } from './AliasSLNoteLabel';
 
 const FORM_ID = 'edit-alias';
 
-export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onCancel, onSubmit }) => {
-    const { shareId } = vault;
+export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onCancel, onSubmit }) => {
+    const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, ...uneditable } = item;
     const aliasEmail = revision.aliasEmail!;
@@ -64,7 +64,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
             name: metadata.name,
             note,
             mailboxes: [],
-            shareId: vault.shareId,
+            shareId,
             displayName: aliasDetails?.name ?? '',
             slNote: aliasDetails?.slNote ?? '',
         },
@@ -88,7 +88,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     );
 
     const aliasOptions = useAliasOptions({
-        shareId: vault.shareId,
+        shareId,
         lazy: true,
         onAliasOptionsLoaded: async ({ mailboxes }) => {
             await aliasDetailsLoaded;
@@ -127,7 +127,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     useItemDraft<EditAliasFormValues>(form, {
         mode: 'edit',
         itemId: itemId,
-        shareId: vault.shareId,
+        shareId,
         revision: lastRevision,
         onHydrated: draftHydrated.resolve,
     });
