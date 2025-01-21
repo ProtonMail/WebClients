@@ -907,12 +907,7 @@ const Step1 = ({
                     <div className="p-2 flex gap-1 items-center">
                         <Toggle checked={false} id="toggle-upsell-plan" className="mx-1" />
                         <label htmlFor="toggle-upsell-plan" className="flex-1 text-sm">
-                            <SkeletonLoader
-                                width="100%"
-                                className="h-custom"
-                                style={{ '--h-custom': '2em' }}
-                                index={0}
-                            />
+                            <SkeletonLoader width="100%" height="2em" index={0} />
                         </label>
                     </div>
                 );

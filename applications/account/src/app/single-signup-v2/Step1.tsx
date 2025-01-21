@@ -963,14 +963,7 @@ const Step1 = ({
                             const accountStep = willHaveSingleStep ? undefined : step++;
 
                             if (hasUserStepOptimistic && signupParameters.invite?.type === 'porkbun') {
-                                return (
-                                    <SkeletonLoader
-                                        width="100%"
-                                        className="h-custom"
-                                        style={{ '--h-custom': '18rem' }}
-                                        index={1}
-                                    />
-                                );
+                                return <SkeletonLoader width="100%" height="18rem" index={1} />;
                             }
 
                             if (hasUserStep) {
@@ -987,12 +980,7 @@ const Step1 = ({
                                                     {(() => {
                                                         if (hasUserStepOptimistic) {
                                                             return (
-                                                                <SkeletonLoader
-                                                                    width="100%"
-                                                                    className="h-custom"
-                                                                    style={{ '--h-custom': '4.5rem' }}
-                                                                    index={1}
-                                                                />
+                                                                <SkeletonLoader width="100%" height="4.5em" index={1} />
                                                             );
                                                         }
                                                         if (user) {
