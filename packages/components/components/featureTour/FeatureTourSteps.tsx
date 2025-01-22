@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { completedFeatureTourAction } from '@proton/account/featuresTour/actions';
-import Loader from '@proton/components/components/loader/Loader';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { useDispatch } from '@proton/redux-shared-store';
 
-import FeatureTourStepsBullet from './FeatureTourStepsBullet';
+import FeatureTourLoader from './FeatureTourLoader';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';
 import type { FeatureTourStepId } from './interface';
 
@@ -13,6 +11,25 @@ export type TourStep = {
     id: FeatureTourStepId;
     isActive: boolean;
 };
+
+interface StepBulletProps {
+    steps: TourStep[];
+    onClick: (stepIdx: FeatureTourStepId) => void;
+}
+
+const StepsBullet = ({ steps, onClick }: StepBulletProps) => (
+    <div className="flex justify-center">
+        {steps.map(({ id, isActive }) => (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+            <div
+                key={id}
+                data-testid={`step-bullet-${id}`}
+                className={`w-2 h-2 rounded-full mx-1 ${isActive ? 'bg-primary' : 'bg-weak'}`}
+                onClick={() => onClick(id)}
+            />
+        ))}
+    </div>
+);
 
 const FeatureTourSteps = ({
     onFinishTour,
@@ -83,21 +100,14 @@ const FeatureTourSteps = ({
             <StepComponent
                 onNext={handleNextStep}
                 isActive={true}
-                bullets={<FeatureTourStepsBullet steps={steps} onClick={handleBulletClick} />}
+                bullets={<StepsBullet steps={steps} onClick={handleBulletClick} />}
             />
         );
     };
 
     return (
         <>
-            {isLoading && (
-                <ModalContent
-                    className="m-8 text-center min-h-custom flex items-center justify-center"
-                    style={{ '--min-h-custom': '32rem' }}
-                >
-                    <Loader size="small" className="color-primary" />
-                </ModalContent>
-            )}
+            {isLoading && <FeatureTourLoader />}
             <ActiveStepComponent />
         </>
     );
