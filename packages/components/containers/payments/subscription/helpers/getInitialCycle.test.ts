@@ -34,7 +34,7 @@ describe('getInitialCycle', () => {
         expect(result).toBe(CYCLE.YEARLY);
     });
 
-    it('should return the provided cycle parameter if present', () => {
+    it('should return lower cycle if 2 years is not available', () => {
         const result = getInitialCycle({
             cycleParam: CYCLE.TWO_YEARS,
             subscription: mockSubscription,
@@ -47,7 +47,23 @@ describe('getInitialCycle', () => {
             currency: 'USD',
             allowDowncycling: false,
         });
-        expect(result).toBe(CYCLE.TWO_YEARS);
+        expect(result).toBe(CYCLE.YEARLY);
+    });
+
+    it('should return the provided cycle parameter if present', () => {
+        const result = getInitialCycle({
+            cycleParam: CYCLE.YEARLY,
+            subscription: mockSubscription,
+            planIDs: defaultPlanIDs,
+            plansMap: mockPlansMap,
+            isPlanSelection: true,
+            app: APPS.PROTONMAIL,
+            minimumCycle: undefined,
+            maximumCycle: undefined,
+            currency: 'USD',
+            allowDowncycling: false,
+        });
+        expect(result).toBe(CYCLE.YEARLY);
     });
 
     it('should return DEFAULT_CYCLE for free subscriptions', () => {
