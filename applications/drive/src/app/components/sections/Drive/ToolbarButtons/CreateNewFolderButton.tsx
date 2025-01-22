@@ -2,14 +2,17 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
-import { useActions } from '../../../../store';
+import type { DriveFolder } from '../../../../hooks/drive/useActiveShare';
+import type { useActions } from '../../../../store';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 
-const CreateNewFolderButton = () => {
+export interface CreateNewFolderButtonProps {
+    activeFolder: DriveFolder;
+    createFolder: ReturnType<typeof useActions>['createFolder'];
+}
+
+const CreateNewFolderButton = ({ activeFolder, createFolder }: CreateNewFolderButtonProps) => {
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
-    const { createFolder } = useActions();
-    const { activeFolder } = useActiveShare();
 
     return (
         <>

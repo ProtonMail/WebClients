@@ -8,8 +8,7 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import generateUID from '@proton/utils/generateUID';
 
-import type { DecryptedLink } from '../../../../store';
-import { useActions } from '../../../../store';
+import type { DecryptedLink, useActions } from '../../../../store';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
@@ -20,9 +19,11 @@ interface Props {
     shareId: string;
     selectedLinks: DecryptedLink[];
     permissions: SHARE_MEMBER_PERMISSIONS;
+    trashLinks: ReturnType<typeof useActions>['trashLinks'];
+    renameLink: ReturnType<typeof useActions>['renameLink'];
 }
 
-const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
+const ActionsDropdown = ({ shareId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -32,8 +33,6 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
-
-    const { trashLinks, renameLink } = useActions();
 
     const hasFoldersSelected = selectedLinks.some((item) => !item.isFile);
     const isMultiSelect = selectedLinks.length > 1;
