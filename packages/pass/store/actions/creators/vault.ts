@@ -123,7 +123,7 @@ export const vaultDeleteSuccess = createAction(
 
 export const vaultMoveAllItemsIntent = createAction(
     'vault::move::items::intent',
-    (payload: { shareId: string; content: ShareContent<ShareType.Vault>; destinationShareId: string }) =>
+    (payload: { shareId: string; content: ShareContent<ShareType.Vault>; targetShareId: string }) =>
         pipe(
             withRequest({ status: 'start', id: vaultMoveAllItemsRequest(payload.shareId) }),
             withNotification({
@@ -137,7 +137,7 @@ export const vaultMoveAllItemsIntent = createAction(
 
 export const vaultMoveAllItemsProgress = createAction(
     'vault::move::items::progress',
-    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string }) =>
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) =>
         withCache({ payload })
     )
 );
