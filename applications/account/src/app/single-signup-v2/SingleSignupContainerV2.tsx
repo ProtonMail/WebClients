@@ -52,7 +52,7 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
-import { useFlag, useFlagsReady } from '@proton/unleash';
+import { useFlag, useFlagsStatus } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -186,8 +186,7 @@ const SingleSignupContainerV2 = ({
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const lumoSignupEnabled = useFlag('LumoSignupAvailable');
 
-    const [flagsReady, setFlagsReady] = useState(false);
-    const flagsReadyPromise = useFlagsReady();
+    const { flagsReady } = useFlagsStatus();
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -333,10 +332,6 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = signupConfiguration;
-
-    useEffect(() => {
-        void flagsReadyPromise.finally(() => setFlagsReady(true));
-    }, []);
 
     useEffect(() => {
         const run = async () => {
