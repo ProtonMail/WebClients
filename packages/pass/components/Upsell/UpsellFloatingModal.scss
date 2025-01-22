@@ -4,7 +4,7 @@
 	}
 
 	&--content {
-		background-color: var(--primary-contrast);
+		background-color: var(--background-invert);
 	}
 
 	&--label {
@@ -13,11 +13,11 @@
 	}
 
 	&--button {
-		color: var(--primary-contrast) !important;
+		color: var(--background-invert) !important;
 		background-color: var(--upsell-modal-button-color);
 
 		&:hover {
-			background-color: var(--primary)
+			background-color: var(--primary);
 		}
 	}
 }
