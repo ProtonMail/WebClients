@@ -1,28 +1,36 @@
-import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
-import type { ItemMoveSingleToShareRequest, VaultShareKey } from '@proton/pass/types';
-
-import { createItem } from './create-item';
+import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import type {
+    EncodedItemKeyRotation,
+    ItemKey,
+    ItemMoveIndividualToShareRequest,
+    VaultShareKey,
+} from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type MoveItemProcessParams = {
-    destinationShareId: string;
-    destinationVaultKey: VaultShareKey;
-    content: Uint8Array;
+    itemId: string;
+    itemKeys: ItemKey[];
+    targetVaultKey: VaultShareKey;
 };
 
 export const moveItem = async ({
-    destinationShareId,
-    destinationVaultKey,
-    content,
-}: MoveItemProcessParams): Promise<ItemMoveSingleToShareRequest> => {
-    if (content.length === 0) {
-        throw new PassCryptoItemError('Item content cannot be empty');
-    }
+    itemId,
+    itemKeys,
+    targetVaultKey,
+}: MoveItemProcessParams): Promise<ItemMoveIndividualToShareRequest> => {
+    const vaultKey = targetVaultKey.key;
 
-    return {
-        Item: await createItem({ vaultKey: destinationVaultKey, content }),
-        ShareID: destinationShareId,
-        /* TODO: support adding an array of revisions to not lose history
-         * after moving an item to another vault */
-        History: [],
-    };
+    const encryptedItemKeys = await Promise.all(
+        itemKeys.map<Promise<EncodedItemKeyRotation>>(async ({ raw, rotation }) => {
+            const encryptedKey = await encryptData(vaultKey, raw, PassEncryptionTag.ItemKey);
+
+            return {
+                Key: uint8ArrayToBase64String(encryptedKey),
+                KeyRotation: rotation,
+            };
+        })
+    );
+
+    return { ItemKeys: encryptedItemKeys, ItemID: itemId };
 };
