@@ -9,16 +9,18 @@ import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/Sh
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
+import type { AccessTarget } from '@proton/pass/lib/access/types';
 import { type InviteFormMemberValue, ShareRole } from '@proton/pass/types';
 
 export type InviteMemberProps = ListFieldValue<InviteFormMemberValue> & {
+    target: AccessTarget;
     onRemove?: () => void;
     onRoleChange?: (role: ShareRole) => void;
 };
 
-export const InviteMember: FC<InviteMemberProps> = ({ value, onRemove, onRoleChange }) => {
+export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, onRoleChange }) => {
     const { role, email } = value;
-    const { title: roleLabel } = useMemo(() => getShareRoleDefinition()[role], [role]);
+    const { title: roleLabel } = useMemo(() => getShareRoleDefinition(target)[role], [role]);
 
     return (
         <div className="flex gap-3 flex-nowrap items-center  py-3 w-full">
