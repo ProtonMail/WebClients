@@ -8,7 +8,7 @@ import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/Invi
 import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import type { AccessKeys } from '@proton/pass/lib/access/types';
+import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
 import type { ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
 
@@ -44,6 +44,7 @@ export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoF
             {step === 'permissions' && (
                 <InviteStepPermissions
                     members={members}
+                    target={AccessTarget.Item}
                     onUpdate={(next) => form.setFieldValue('members', next)}
                     onStep={(next) => form.setFieldValue('step', next)}
                 />
@@ -54,6 +55,7 @@ export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoF
                     heading={<ItemInviteHeader shareId={shareId} itemId={itemId} />}
                     members={members}
                     title={c('Title').t`Item`}
+                    target={AccessTarget.Item}
                 />
             )}
         </>
