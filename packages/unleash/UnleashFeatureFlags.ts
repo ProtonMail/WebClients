@@ -93,8 +93,6 @@ enum DriveFeatureFlag {
     DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',
     // B2B
     DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
-    // Refactor
-    DriveWebZustandShareMemberList = 'DriveWebZustandShareMemberList',
     // Experiment
     DriveThumbnailWebP = 'DriveThumbnailWebP',
     DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
