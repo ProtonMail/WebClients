@@ -9,6 +9,7 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessDTO } from '@proton/pass/lib/access/types';
+import { AccessTarget } from '@proton/pass/lib/access/types';
 import {
     shareEditMemberAccessIntent,
     shareRemoveMemberAccessIntent,
@@ -31,13 +32,16 @@ type Props = AccessDTO & {
     userShareId: string;
 };
 
-const getDefinition = (owner: boolean, role: ShareRole) =>
+const getDefinition = (owner: boolean, target: AccessTarget, role: ShareRole) =>
     owner
         ? {
               title: c('Info').t`Owner`,
-              description: c('Info').t`Can grant and revoke access to this vault, and delete it.`,
+              description:
+                  target === AccessTarget.Vault
+                      ? c('Info').t`Can grant and revoke access to this vault, and delete it.`
+                      : c('Info').t`Can grant and revoke access to this item, and delete it.`,
           }
-        : getShareRoleDefinition()[role];
+        : getShareRoleDefinition(target)[role];
 
 export const ShareMember: FC<Props> = ({
     canManage,
@@ -53,7 +57,7 @@ export const ShareMember: FC<Props> = ({
     userShareId,
 }) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
-    const { title, description } = getDefinition(owner, role);
+    const { title, description } = getDefinition(owner, target, role);
 
     const removeAccess = useActionRequest(shareRemoveMemberAccessIntent);
     const editRole = useActionRequest(shareEditMemberAccessIntent);

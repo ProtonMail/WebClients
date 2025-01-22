@@ -5,16 +5,18 @@ import { c } from 'ttag';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { AccessRoleToggle } from '@proton/pass/components/Invite/Access/AccessRoleToggle';
 import { InviteMember } from '@proton/pass/components/Invite/Steps/InviteMember';
+import type { AccessTarget } from '@proton/pass/lib/access/types';
 import type { InviteFormMemberValue, InviteFormStep } from '@proton/pass/types';
 
 type Props = {
     heading?: ReactNode;
     members: ListFieldValue<InviteFormMemberValue>[];
-    onUpdate: (members: ListFieldValue<InviteFormMemberValue>[]) => void;
+    target: AccessTarget;
     onStep: (step: InviteFormStep) => void;
+    onUpdate: (members: ListFieldValue<InviteFormMemberValue>[]) => void;
 };
 
-export const InviteStepPermissions = ({ heading, members, onStep, onUpdate }: Props) => (
+export const InviteStepPermissions = ({ heading, members, target, onStep, onUpdate }: Props) => (
     <div className="anime-fade-in h-full flex flex-column gap-y-3">
         {heading}
         <h2 className="text-xl text-bold">{c('Title').t`Set access level`}</h2>
@@ -34,6 +36,7 @@ export const InviteStepPermissions = ({ heading, members, onStep, onUpdate }: Pr
             {members.map((member) => (
                 <InviteMember
                     {...member}
+                    target={target}
                     key={`member-${member.id}`}
                     onRemove={() => {
                         const update = members.filter(({ id }) => id !== member.id);
