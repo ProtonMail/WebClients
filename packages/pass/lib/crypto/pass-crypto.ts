@@ -317,14 +317,27 @@ export const createPassCrypto = (): PassCryptoWorker => {
             return processes.updateItem({ itemKey, content, lastRevision });
         },
 
-        async moveItem({ destinationShareId, content }) {
+        async moveItem({ targetShareId, itemId, shareId, encryptedItemKeys }) {
             assertHydrated(context);
 
-            const manager = getShareManager(destinationShareId);
-            const latestRotation = manager.getLatestRotation();
-            const destinationVaultKey = manager.getVaultShareKey(latestRotation);
+            const manager = getShareManager(shareId);
+            const rotation = manager.getLatestRotation();
+            const shareKey = manager.getVaultShareKey(rotation);
 
-            return processes.moveItem({ destinationShareId, destinationVaultKey, content });
+            const itemKeys = await Promise.all(
+                encryptedItemKeys.map((key) =>
+                    processes.openItemKey({
+                        encryptedItemKey: key,
+                        shareKey,
+                    })
+                )
+            );
+
+            const targetManager = getShareManager(targetShareId);
+            const targetRotation = targetManager.getLatestRotation();
+            const targetVaultKey = targetManager.getVaultShareKey(targetRotation);
+
+            return processes.moveItem({ itemId, itemKeys, targetVaultKey });
         },
 
         async createInvite({ shareId, itemId, invitedPublicKey, email, role, targetKeys }) {

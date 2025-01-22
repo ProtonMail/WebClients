@@ -4,7 +4,7 @@ import type {
     InviteAcceptRequest,
     InviteCreateRequest,
     ItemCreateRequest,
-    ItemMoveSingleToShareRequest,
+    ItemMoveIndividualToShareRequest,
     ItemRevisionContentsResponse,
     ItemUpdateRequest,
     KeyRotationKeyPair,
@@ -67,7 +67,12 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     openItem: (data: { shareId: string; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
     createItem: (data: { shareId: string; content: Uint8Array }) => Promise<ItemCreateRequest>;
     updateItem: (data: { content: Uint8Array; lastRevision: number; itemKey: ItemKey }) => Promise<ItemUpdateRequest>;
-    moveItem: (data: { destinationShareId: string; content: Uint8Array }) => Promise<ItemMoveSingleToShareRequest>;
+    moveItem: (data: {
+        encryptedItemKeys: EncodedItemKeyRotation[];
+        itemId: string;
+        shareId: string;
+        targetShareId: string;
+    }) => Promise<ItemMoveIndividualToShareRequest>;
     createInvite: (data: {
         email: string;
         invitedPublicKey: string;

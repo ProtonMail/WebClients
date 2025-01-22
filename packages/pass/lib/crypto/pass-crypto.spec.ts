@@ -535,38 +535,5 @@ describe('PassCrypto', () => {
         test('should throw if PassCrypto not hydrated', async () => {
             await expect(PassCrypto.moveItem({} as any)).rejects.toThrow(PassCryptoNotHydratedError);
         });
-
-        test('should re-encrypt item and create new item key with correct destination vault key', async () => {
-            await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
-
-            const content = randomContents();
-            const [targetShare, targetVaultShareKey] = await createRandomShareResponses(userKey, address.ID);
-            await PassCrypto.openShare({ encryptedShare: targetShare, shareKeys: [targetVaultShareKey] });
-
-            const { Item } = await PassCrypto.moveItem({ content, destinationShareId: targetShare.ShareID });
-
-            expect(Item.ContentFormatVersion).toEqual(ContentFormatVersion.Item);
-            expect(Item.KeyRotation).toEqual(targetVaultShareKey.KeyRotation);
-
-            const encryptedItem: ItemRevisionContentsResponse = {
-                Content: Item.Content,
-                ContentFormatVersion: ContentFormatVersion.Item,
-                CreateTime: 0,
-                Flags: 0,
-                ItemID: `itemId-${Math.random()}`,
-                ItemKey: Item.ItemKey,
-                KeyRotation: 1,
-                LastUseTime: 0,
-                ModifyTime: 0,
-                Pinned: false,
-                Revision: 1,
-                RevisionTime: 0,
-                ShareCount: 0,
-                State: ItemState.Active,
-            };
-
-            const movedItem = await PassCrypto.openItem({ shareId: targetShare.ShareID, encryptedItem });
-            expect(movedItem.content).toEqual(content);
-        });
     });
 });
