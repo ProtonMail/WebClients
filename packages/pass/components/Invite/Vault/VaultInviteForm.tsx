@@ -8,7 +8,7 @@ import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/Invi
 import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
 import { type InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import type { AccessKeys } from '@proton/pass/lib/access/types';
+import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { type VaultInviteFormValues } from '@proton/pass/types';
@@ -47,8 +47,9 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
                 <InviteStepPermissions
                     heading={<VaultHeading shareId={shareId} />}
                     members={members}
-                    onUpdate={(next) => form.setFieldValue('members', next)}
+                    target={AccessTarget.Vault}
                     onStep={(next) => form.setFieldValue('step', next)}
+                    onUpdate={(next) => form.setFieldValue('members', next)}
                 />
             )}
 
@@ -56,6 +57,7 @@ export const VaultInviteForm = forwardRef<HTMLInputElement, Props>(({ form, auto
                 <InviteStepReview
                     heading={<VaultHeading shareId={shareId} />}
                     members={members}
+                    target={AccessTarget.Vault}
                     title={c('Title').t`Vault`}
                 />
             )}
