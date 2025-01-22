@@ -17,16 +17,9 @@ import {
     useToggle,
 } from '@proton/components';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import useFlag from '@proton/unleash/useFlag';
 
 import type { ShareMember } from '../../../store';
-import {
-    useDrivePublicSharingFlags,
-    useDriveSharingFlags,
-    useShareMemberView,
-    useShareMemberViewZustand,
-    useShareURLView,
-} from '../../../store';
+import { useDrivePublicSharingFlags, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
@@ -41,22 +34,7 @@ interface Props {
 }
 
 export function SharingModal(props: Props & ModalStateProps) {
-    const isZustandShareMemberListEnabled = useFlag('DriveWebZustandShareMemberList');
-    return (
-        <>
-            {isZustandShareMemberListEnabled && <SharingModalZustand {...props} />}
-            {!isZustandShareMemberListEnabled && <SharingModalLegacy {...props} />}
-        </>
-    );
-}
-
-function SharingModalLegacy(props: Props & ModalStateProps) {
     const shareMemberList = useShareMemberView(props.shareId, props.linkId);
-    return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
-}
-
-function SharingModalZustand(props: Props & ModalStateProps) {
-    const shareMemberList = useShareMemberViewZustand(props.shareId, props.linkId);
     return <SharingModalInner {...props} shareMemberList={shareMemberList} />;
 }
 
