@@ -129,30 +129,11 @@ export const editItem = async (
     return (await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data })).Item;
 };
 
-export const moveItem = async (
-    item: ItemRevision,
-    shareId: string,
-    destinationShareId: string
-): Promise<ItemRevision> => {
-    const content = serializeItemContent(item.data);
-    const data = await PassCrypto.moveItem({ destinationShareId, content });
-
-    const encryptedItem = (
-        await api({
-            url: `pass/v1/share/${shareId}/item/${item.itemId}/share`,
-            method: 'put',
-            data,
-        })
-    ).Item;
-
-    return parseItemRevision(destinationShareId, encryptedItem);
-};
-
 export const moveItems = async (
     items: ItemRevision[],
-    destinationShareId: string,
+    targetShareId: string,
     onBatch?: (
-        data: BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string },
+        data: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string },
         progress: number
     ) => void,
     progress: number = 0
@@ -161,27 +142,26 @@ export const moveItems = async (
         await Promise.all(
             batchByShareId(items, identity).map(async ({ shareId, items }) => {
                 const data: ItemMoveMultipleToShareRequest = {
-                    ShareID: destinationShareId,
+                    ShareID: targetShareId,
                     Items: await Promise.all(
                         items.map<Promise<ItemMoveIndividualToShareRequest>>(async (item) => {
-                            const content = serializeItemContent(item.data);
+                            const encryptedItemKeys = await getItemKeys(shareId, item.itemId);
 
-                            return {
-                                ItemID: item.itemId,
-                                Item: (await PassCrypto.moveItem({ destinationShareId, content })).Item,
-                                /* TODO: add array of revisions to not lose history
-                                 * after moving an item to another vault */
-                                History: [],
-                            };
+                            return PassCrypto.moveItem({
+                                encryptedItemKeys,
+                                itemId: item.itemId,
+                                shareId,
+                                targetShareId,
+                            });
                         })
                     ),
                 };
 
                 const { Items = [] } = await api({ url: `pass/v1/share/${shareId}/item/share`, method: 'put', data });
-                const decryptedItems = Items!.map((encrypted) => parseItemRevision(destinationShareId, encrypted));
+                const decryptedItems = Items!.map((encrypted) => parseItemRevision(targetShareId, encrypted));
                 const movedItems = await Promise.all(decryptedItems);
 
-                onBatch?.({ batch: items, movedItems, shareId, destinationShareId }, (progress += movedItems.length));
+                onBatch?.({ batch: items, movedItems, shareId, targetShareId }, (progress += movedItems.length));
                 return movedItems;
             })
         )

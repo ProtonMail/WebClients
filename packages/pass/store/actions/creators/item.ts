@@ -176,7 +176,7 @@ export const itemBulkMoveFailure = createAction(
 
 export const itemBulkMoveProgress = createAction(
     'item::bulk::move::progress',
-    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string }) =>
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) =>
         withCache({ payload })
     )
 );

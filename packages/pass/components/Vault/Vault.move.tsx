@@ -14,15 +14,15 @@ import { ConfirmVaultMove } from './Actions/ConfirmVaultMove';
 import { VaultSelect, VaultSelectMode } from './VaultSelect';
 
 type Props = { vault: VaultShareItem; onClose: () => void };
-type VaultMoveSteps = { view: 'select' | 'confirm'; destinationShareId: MaybeNull<string> };
+type VaultMoveSteps = { view: 'select' | 'confirm'; targetShareId: MaybeNull<string> };
 
 export const VaultMove: FC<Props> = ({ vault, onClose }) => {
     const dispatch = useDispatch();
-    const [step, setStep] = useState<VaultMoveSteps>({ view: 'select', destinationShareId: null });
+    const [step, setStep] = useState<VaultMoveSteps>({ view: 'select', targetShareId: null });
 
     const vaultMove = useConfirm(
         useCallback(
-            (options: { destinationShareId: string }) => {
+            (options: { targetShareId: string }) => {
                 const { shareId, content } = vault;
                 dispatch(vaultMoveAllItemsIntent({ ...options, content, shareId }));
             },
@@ -41,9 +41,9 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
                 open={step.view === 'select'}
                 title={c('Info').t`Select destination vault`}
                 onClose={onClose}
-                onSubmit={(destinationShareId) => {
-                    setStep({ view: 'confirm', destinationShareId });
-                    vaultMove.prompt({ destinationShareId });
+                onSubmit={(targetShareId) => {
+                    setStep({ view: 'confirm', targetShareId });
+                    vaultMove.prompt({ targetShareId });
                 }}
                 downgradeMessage={c('Info')
                     .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`}
@@ -51,7 +51,7 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
 
             {vaultMove.pending && (
                 <ConfirmVaultMove
-                    destinationShareId={vaultMove.param.destinationShareId}
+                    targetShareId={vaultMove.param.targetShareId}
                     shareId={vault.shareId}
                     onConfirm={onConfirm}
                     onCancel={onCancel}
