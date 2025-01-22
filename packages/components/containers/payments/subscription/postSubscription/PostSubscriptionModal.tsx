@@ -1,38 +1,25 @@
-import { useEffect } from 'react';
-
 import { featureTourActions } from '@proton/account/featuresTour';
 import { remindMeLaterAboutFeatureTourAction } from '@proton/account/featuresTour/actions';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
 import type { PostSubscriptionFlowName } from './interface';
 import postSubscriptionConfig from './postSubscriptionConfig';
-import { usePostSubscriptionTelemetry } from './usePostSubscriptionTelemetry';
 
 interface PostSubscriptionModalProps extends ModalStateProps {
     name: PostSubscriptionFlowName;
     step: SubscriptionOverridableStep;
+    upsellRef?: string;
 }
 
-const PostSubscriptionModal = ({ name, step, ...modalProps }: PostSubscriptionModalProps) => {
+const PostSubscriptionModal = ({ name, step, upsellRef, ...modalProps }: PostSubscriptionModalProps) => {
     const config = name ? postSubscriptionConfig[name] : null;
-    const sendTelemetryEvent = usePostSubscriptionTelemetry();
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (config) {
-            // TODO: TELEMETRY: Check if this event is still relevant
-            void sendTelemetryEvent({
-                event: TelemetryMailPostSubscriptionEvents.post_subscription_start,
-                dimensions: {
-                    modal: name,
-                },
-            });
-        }
-    }, []);
+    const postSubscriptionTourTelemetry = usePostSubscriptionTourTelemetry();
 
     if (!config) {
         return null;
@@ -41,24 +28,60 @@ const PostSubscriptionModal = ({ name, step, ...modalProps }: PostSubscriptionMo
     const handleDisplayFeatureTour = async () => {
         modalProps.onClose();
 
+        void postSubscriptionTourTelemetry({
+            event: TelemetryPostSubscriptionTourEvents.post_subscription_action,
+            dimensions: {
+                flow: name,
+                postSubscriptionAction: 'startFeatureTour',
+                upsellRef,
+            },
+        });
+
         // Let post subscription modal close animation happen
         await wait(150);
 
         // Then display feature tour modal
-        dispatch(featureTourActions.display({ steps: config.featureTourSteps }));
+        dispatch(featureTourActions.display({ steps: config.featureTourSteps, origin: 'postSubscription' }));
     };
 
     const handleRemindMeLater = () => {
         modalProps.onClose();
+
+        void postSubscriptionTourTelemetry({
+            event: TelemetryPostSubscriptionTourEvents.post_subscription_action,
+            dimensions: {
+                postSubscriptionAction: 'remindMeLater',
+                flow: name,
+                upsellRef,
+            },
+        });
+
         void dispatch(remindMeLaterAboutFeatureTourAction());
+    };
+
+    const handleClose = () => {
+        modalProps.onClose();
+        void postSubscriptionTourTelemetry({
+            event: TelemetryPostSubscriptionTourEvents.post_subscription_action,
+            dimensions: {
+                postSubscriptionAction: 'closeModal',
+                flow: name,
+                upsellRef,
+            },
+        });
     };
 
     return (
         <config.modal
-            modalProps={modalProps}
+            modalProps={{
+                ...modalProps,
+                onClose: handleClose,
+            }}
             onDisplayFeatureTour={handleDisplayFeatureTour}
             onRemindMeLater={handleRemindMeLater}
             step={step}
+            upsellRef={upsellRef}
+            flowName={name}
         />
     );
 };

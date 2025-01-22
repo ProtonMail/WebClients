@@ -2,11 +2,13 @@ import { c } from 'ttag';
 
 import { addressesThunk } from '@proton/account/addresses';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { featureTourActions } from '@proton/account/featuresTour';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import useToggle from '@proton/components/hooks/useToggle';
 import { PLANS } from '@proton/payments';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
@@ -25,6 +27,7 @@ export const shouldDisplayShortDomainTourStep: ShouldDisplayTourStep = async (di
 };
 
 const ShortDomainTourStep = (props: FeatureTourStepProps) => {
+    const dispatch = useDispatch();
     const [addresses] = useAddresses();
     const { hasShortDomain, shortDomainAddress, createShortDomainAddress } = useShortDomainAddress();
     const { state: isToggleChecked, toggle } = useToggle(true);
@@ -34,6 +37,7 @@ const ShortDomainTourStep = (props: FeatureTourStepProps) => {
         if (isToggleChecked && !isFeatureEnabled) {
             try {
                 await createShortDomainAddress({ setDefault: true, replaceAddressSignature: true });
+                dispatch(featureTourActions.activateFeature({ feature: 'short-domain' }));
             } catch (error) {
                 traceError(error, { tags: { initiative: SentryMailInitiatives.MAIL_ONBOARDING } });
             }

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { featureTourActions } from '@proton/account/featuresTour';
 import useApi from '@proton/components/hooks/useApi';
 import useToggle from '@proton/components/hooks/useToggle';
 import { mailSettingsActions } from '@proton/mail/mailSettings';
@@ -31,6 +32,7 @@ const AutoDeleteTourStep = (props: FeatureTourStepProps) => {
                     updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)
                 );
                 dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+                dispatch(featureTourActions.activateFeature({ feature: 'auto-delete' }));
             } catch (error) {
                 traceError(error, { tags: { initiative: SentryMailInitiatives.MAIL_ONBOARDING } });
             }

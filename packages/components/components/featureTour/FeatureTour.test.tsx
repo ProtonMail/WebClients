@@ -9,7 +9,6 @@ import { renderWithProviders } from '@proton/testing/lib/context/renderWithProvi
 import * as useFlagModule from '@proton/unleash/useFlag';
 
 import FeatureTour from './FeatureTour';
-import type { FeatureTourStepId } from './interface';
 
 jest.mock('@proton/features/useFeature', () => ({
     __esModule: true,
@@ -33,7 +32,9 @@ describe('FeatureTour', () => {
             preloadedState: {
                 featureTour: {
                     display: true,
-                    steps: ['short-domain', 'auto-delete'] as FeatureTourStepId[],
+                    steps: ['short-domain', 'auto-delete'],
+                    activatedFeatures: [],
+                    origin: 'postSubscription',
                     ...preloadedState,
                 },
                 mailSettings: getModelState({} as MailSettings),

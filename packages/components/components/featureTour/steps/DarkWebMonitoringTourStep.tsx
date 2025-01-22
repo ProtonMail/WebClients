@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUserSettings, userSettingsActions } from '@proton/account';
+import { featureTourActions } from '@proton/account/featuresTour';
 import useApi from '@proton/components/hooks/useApi';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -28,6 +29,7 @@ const DarkWebMonitoringTourStep = (props: FeatureTourStepProps) => {
             try {
                 const { UserSettings } = await api<{ UserSettings: UserSettings }>(enableBreachAlert());
                 dispatch(userSettingsActions.update({ UserSettings }));
+                dispatch(featureTourActions.activateFeature({ feature: 'dark-web-monitoring' }));
             } catch (error) {
                 traceError(error, { tags: { initiative: SentryMailInitiatives.MAIL_ONBOARDING } });
             }

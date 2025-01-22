@@ -11,7 +11,7 @@ const FeatureTourDrawerButton = ({ ...rest }: Optional<Omit<Props, 'tooltipText'
     const dispatch = useMailDispatch();
 
     const handleClick = () => {
-        dispatch(featureTourActions.display({ steps: FEATURE_TOUR_STEPS }));
+        dispatch(featureTourActions.display({ steps: FEATURE_TOUR_STEPS, origin: 'drawer' }));
     };
 
     const tooltipText = c('Title').t`Discover your subscription benefits`;
