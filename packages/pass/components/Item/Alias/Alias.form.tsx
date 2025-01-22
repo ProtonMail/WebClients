@@ -1,10 +1,9 @@
-import { type FC, type PropsWithChildren, useEffect, useState } from 'react';
+import { type FC, type PropsWithChildren, useEffect } from 'react';
 
 import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, Option } from '@proton/components';
+import { Option } from '@proton/components';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
@@ -18,6 +17,7 @@ type AliasFormProps<V extends AliasFormValues> = {
     disabled?: boolean;
     form: FormikContextType<V>;
     loading: boolean;
+    showAdvanced: boolean;
 };
 
 const AliasFormBase: FC<
@@ -25,19 +25,10 @@ const AliasFormBase: FC<
         disabled: boolean;
         loading: boolean;
         mailboxes: AliasMailbox[];
-        toggleShowAdvanced: () => void;
     }>
-> = ({ children, disabled, loading, mailboxes, toggleShowAdvanced }) => {
+> = ({ children, disabled, loading, mailboxes }) => {
     return (
         <>
-            <div className="flex justify-end mb-2">
-                <Button shape="ghost" onClick={toggleShowAdvanced}>
-                    <span className="flex items-center color-weak text-sm">
-                        <Icon name="cog-wheel" className="mr-1" />
-                        {c('Action').t`Advanced options`}
-                    </span>
-                </Button>
-            </div>
             {children}
             <FieldsetCluster>
                 <Field
@@ -61,16 +52,19 @@ const AliasFormBase: FC<
     );
 };
 
-export const AliasForm = <V extends AliasFormValues>({ form, loading, aliasOptions, disabled }: AliasFormProps<V>) => {
-    const [showAdvanced, setShowAdvanced] = useState(false);
-    const toggleShowAdvanced = () => setShowAdvanced((state) => !state);
+export const AliasForm = <V extends AliasFormValues>({
+    form,
+    loading,
+    aliasOptions,
+    disabled,
+    showAdvanced,
+}: AliasFormProps<V>) => {
     const disabledForm = disabled || loading || aliasOptions === null;
 
     const wrapperProps = {
         disabled: disabledForm,
         loading,
         mailboxes: aliasOptions?.mailboxes ?? [],
-        toggleShowAdvanced,
     };
 
     useEffect(() => {
