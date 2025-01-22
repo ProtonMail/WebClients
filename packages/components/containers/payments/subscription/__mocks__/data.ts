@@ -60,7 +60,7 @@ export const mailPlusUpsell = {
     ],
     otherCtas: [],
     price: {
-        value: 349,
+        value: 399,
         currency: 'EUR',
     },
 };
@@ -139,7 +139,7 @@ export const unlimitedUpsell = {
     ],
     otherCtas: [],
     price: {
-        value: 799,
+        value: 999,
         currency: 'EUR',
     },
 };
@@ -207,7 +207,7 @@ export const familyUpsell = {
         },
     ],
     otherCtas: [],
-    price: { value: 1999, currency: 'EUR' },
+    price: { value: 2399, currency: 'EUR' },
 };
 
 export const duoUpsell = {
@@ -272,7 +272,7 @@ export const duoUpsell = {
         },
     ],
     otherCtas: [],
-    price: { value: 1199, currency: 'EUR' },
+    price: { value: 1499, currency: 'EUR' },
 };
 
 export const businessUpsell = {
