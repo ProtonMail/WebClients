@@ -6,7 +6,8 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import type { DecryptedLink } from '../../../store';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
+import { type DecryptedLink, useActions } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -44,6 +45,8 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
+    const { createFolder, trashLinks, renameLink } = useActions();
+    const { activeFolder } = useActiveShare();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -64,7 +67,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                 <>
                     {isEditor && !isLinkReadOnly ? (
                         <>
-                            <CreateNewFolderButton />
+                            <CreateNewFolderButton createFolder={createFolder} activeFolder={activeFolder} />
                             {isEditEnabled && <CreateNewFileButton />}
                             <Vr />
                             {isDesktop && <UploadFolderButton />}
@@ -84,7 +87,13 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                 <OpenInDocsButton selectedBrowserItems={selectedItems} />
                 <DownloadButton selectedBrowserItems={selectedItems} />
                 {viewportWidth['<=small'] ? (
-                    <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} permissions={permissions} />
+                    <ActionsDropdown
+                        shareId={shareId}
+                        selectedLinks={selectedItems}
+                        permissions={permissions}
+                        renameLink={renameLink}
+                        trashLinks={trashLinks}
+                    />
                 ) : (
                     <>
                         {isAdmin && (
@@ -96,7 +105,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                         {isEditor && !isLinkReadOnly ? (
                             <>
                                 <MoveToFolderButton shareId={shareId} selectedLinks={selectedItems} />
-                                <RenameButton selectedLinks={selectedItems} />
+                                <RenameButton selectedLinks={selectedItems} renameLink={renameLink} />
                             </>
                         ) : null}
                         <DetailsButton selectedBrowserItems={selectedItems} />
@@ -104,7 +113,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                         {isEditor && (
                             <>
                                 <Vr />
-                                <MoveToTrashButton selectedLinks={selectedItems} />
+                                <MoveToTrashButton selectedLinks={selectedItems} trashLinks={trashLinks} />
                             </>
                         )}
                     </>

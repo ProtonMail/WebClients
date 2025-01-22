@@ -4,15 +4,15 @@ import { Icon, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
 import type { DecryptedLink } from '../../../../store';
-import { useActions } from '../../../../store';
+import type { useActions } from '../../../../store';
 
-interface Props {
+interface MoveToTrashButtonProps {
     selectedLinks: DecryptedLink[];
+    trashLinks: ReturnType<typeof useActions>['trashLinks'];
 }
 
-const MoveToTrashButton = ({ selectedLinks }: Props) => {
+const MoveToTrashButton = ({ selectedLinks, trashLinks }: MoveToTrashButtonProps) => {
     const [isLoading, withLoading] = useLoading();
-    const { trashLinks } = useActions();
 
     return (
         <ToolbarButton
