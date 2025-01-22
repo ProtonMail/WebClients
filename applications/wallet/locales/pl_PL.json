@@ -70,6 +70,9 @@
       "Copy version number to clipboard": [
         "Kopiuj numer wersji do schowka"
       ],
+      "Create folder": [
+        "Utwórz folder"
+      ],
       "Current plan": [
         "Obecny plan"
       ],
@@ -457,9 +460,6 @@
       "Advanced account protection": [
         "Zaawansowana ochrona konta"
       ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
-      ],
       "Easily add or remove users": [
         "Łatwo dodawaj lub usuwaj użytkowników"
       ],
@@ -520,9 +520,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów hide-my-email, udostępnianie, zintegrowaną aplikację uwierzytelniającą 2FA, Monitoring dark web i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje ${ addresses } adres e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej.",
@@ -2244,6 +2241,11 @@
         "terabajtów"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "Etykieta ${ Label.Name } została zaktualizowana"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Domyślna systemu"
@@ -2372,6 +2374,9 @@
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
+      "Address copied to clipboard": [
+        "Adres został skopiowany do schowka"
+      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -2425,6 +2430,9 @@
       ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "default email address": [
+        "domyślny adres e-mail"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -2489,6 +2497,9 @@
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
+      "Inherited from parent folder": [
+        "Zastosowano z folderu nadrzędnego"
+      ],
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
@@ -2513,8 +2524,14 @@
       "Member": [
         "Użytkownik"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
       ],
       "New": [
         "Nowe"
@@ -2573,6 +2590,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
@@ -2587,6 +2607,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
@@ -2675,6 +2698,9 @@
       "You can now return to the application to continue": [
         "Możesz wrócić do aplikacji, aby kontynuować"
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Masz wersję próbną subskrypcji ${ planTitle }. Jeśli chcesz kontynuować subskrypcję po zakończeniu wersji próbnej, dodaj metodę płatności."
       ],
@@ -2716,6 +2742,11 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info for cash payment method": {
@@ -2789,6 +2820,9 @@
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
+      "Colors": [
+        "Kolory"
+      ],
       "Company name": [
         "Nazwa firmy"
       ],
@@ -2831,6 +2865,9 @@
       "First name": [
         "Imię"
       ],
+      "Folder location": [
+        "Lokalizacja folderu"
+      ],
       "Hide password": [
         "Ukryj hasło"
       ],
@@ -2845,6 +2882,9 @@
       ],
       "Navigation": [
         "Nawigacja"
+      ],
+      "Notification": [
+        "Powiadomienie"
       ],
       "Operating system": [
         "System operacyjny"
@@ -2918,6 +2958,25 @@
         "Kod pocztowy"
       ]
     },
+    "Label/folder modal": {
+      "Create folder": [
+        "Utwórz folder"
+      ],
+      "Create label": [
+        "Utwórz etykietę"
+      ],
+      "Edit folder": [
+        "Edytuj folder"
+      ],
+      "Edit label": [
+        "Edytuj etykietę"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "Utworzono \"${ Label.Name }\""
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Dodaj kod podarunkowy"
@@ -2972,6 +3031,17 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Kolor"
+      ],
+      "Folder name": [
+        "Nazwa folderu"
+      ],
+      "Label name": [
+        "Nazwa etykiety"
       ]
     },
     "new_plans": {
@@ -3878,6 +3948,11 @@
         "Niektóre obrazy nie zostały przesłane z powodu powtarzających się nazw zaznaczonych plików."
       ]
     },
+    "Option": {
+      "No parent folder": [
+        "Brak folderu nadrzędnego"
+      ]
+    },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
         "Bezpieczne udostępnianie sejfu i linków"
@@ -4065,6 +4140,9 @@
       ],
       "Search": [
         "Szukaj"
+      ],
+      "Search parent folder": [
+        "Przeszukaj folder nadrzędny"
       ],
       "Select": [
         "Wybierz"
@@ -4730,6 +4808,9 @@
       "Summary": [
         "Podsumowanie"
       ],
+      "Upgrade complete!": [
+        "Ulepszenie zakończone!"
+      ],
       "Verification failed": [
         "Weryfikacja nie powiodła się"
       ],
@@ -4741,6 +4822,9 @@
       ],
       "Wallet": [
         "Portfel"
+      ],
+      "Your shorter address is now ready": [
+        "Krótszy adres jest już gotowy"
       ]
     },
     "Tooltip": {
@@ -5265,12 +5349,6 @@
       ],
       "Copy Bitcoin address": [
         "Kopiuj adres Bitcoin"
-      ],
-      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
-        "Luka między kolejnym a ostatnio używanym adresem jest zbyt duża. Użyj jednego z wcześniej wygenerowanych adresów"
-      ],
-      "Generate new address": [
-        "Generuj nowy adres"
       ]
     },
     "Wallet send": {
