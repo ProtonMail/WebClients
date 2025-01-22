@@ -14,7 +14,13 @@ export type TourStep = {
     isActive: boolean;
 };
 
-const FeatureTourSteps = ({ onClose, stepsList }: { onClose: () => void; stepsList: FeatureTourStepId[] }) => {
+const FeatureTourSteps = ({
+    onFinishTour,
+    stepsList,
+}: {
+    onFinishTour: () => void;
+    stepsList: FeatureTourStepId[];
+}) => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
     const [steps, setSteps] = useState<TourStep[]>([]);
@@ -45,7 +51,7 @@ const FeatureTourSteps = ({ onClose, stepsList }: { onClose: () => void; stepsLi
         const isLastStep = steps[steps.length - 1].id === activeStepId;
 
         if (isLastStep) {
-            onClose();
+            onFinishTour();
             void dispatch(completedFeatureTourAction());
         } else {
             const activeStepIdx = steps.findIndex(({ isActive }) => isActive);
