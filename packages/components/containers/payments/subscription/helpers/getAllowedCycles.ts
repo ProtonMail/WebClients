@@ -1,11 +1,10 @@
 import {
-    ADDON_NAMES,
+    type ADDON_NAMES,
     type Currency,
     type FreeSubscription,
     PLANS,
     type PlanIDs,
     hasCycle,
-    isRegionalCurrency,
 } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -15,42 +14,43 @@ import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
+export type PlanCapRule = {
+    plan: PLANS | ADDON_NAMES;
+    cycle: CYCLE;
+    currencyPredicate?: Currency | ((currency: Currency) => boolean);
+};
+
+const defaultRules: PlanCapRule[] = [
+    { plan: PLANS.MAIL, cycle: CYCLE.YEARLY },
+    { plan: PLANS.VPN, cycle: CYCLE.YEARLY },
+    { plan: PLANS.VPN2024, cycle: CYCLE.YEARLY },
+    { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
+    { plan: PLANS.WALLET, cycle: CYCLE.YEARLY },
+    { plan: PLANS.LUMO, cycle: CYCLE.YEARLY },
+    { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
+    { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },
+
+    { plan: PLANS.BUNDLE, cycle: CYCLE.YEARLY },
+    { plan: PLANS.DUO, cycle: CYCLE.YEARLY },
+    { plan: PLANS.FAMILY, cycle: CYCLE.YEARLY },
+    { plan: PLANS.VISIONARY, cycle: CYCLE.YEARLY },
+
+    { plan: PLANS.PASS_PRO, cycle: CYCLE.YEARLY },
+    { plan: PLANS.PASS_BUSINESS, cycle: CYCLE.YEARLY },
+    // { plan: PLANS.MAIL_PRO, cycle: CYCLE.YEARLY },
+    { plan: PLANS.MAIL_BUSINESS, cycle: CYCLE.YEARLY },
+    { plan: PLANS.BUNDLE_PRO, cycle: CYCLE.YEARLY },
+    { plan: PLANS.BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
+];
+
 function capMaximumCycle(
     maximumCycle: CYCLE,
     planIDs: PlanIDs,
     currency: Currency,
     plansMap: PlansMap,
-    subscription: Subscription | FreeSubscription | undefined
+    subscription: Subscription | FreeSubscription | undefined,
+    rules = defaultRules
 ): CYCLE {
-    type PlanCapRule = {
-        plan: PLANS | ADDON_NAMES;
-        cycle: CYCLE;
-        currencyPredicate?: Currency | ((currency: Currency) => boolean);
-    };
-
-    const rules: PlanCapRule[] = [
-        { plan: ADDON_NAMES.MEMBER_MAIL_BUSINESS, cycle: CYCLE.YEARLY },
-
-        { plan: ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS, cycle: CYCLE.YEARLY },
-        { plan: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO, cycle: CYCLE.YEARLY },
-        { plan: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, cycle: CYCLE.YEARLY },
-        { plan: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
-
-        { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
-
-        { plan: PLANS.PASS_PRO, cycle: CYCLE.YEARLY },
-        { plan: PLANS.PASS_BUSINESS, cycle: CYCLE.YEARLY },
-        // { plan: PLANS.MAIL_PRO, cycle: CYCLE.YEARLY },
-        { plan: PLANS.MAIL_BUSINESS, cycle: CYCLE.YEARLY },
-        { plan: PLANS.BUNDLE_PRO, cycle: CYCLE.YEARLY },
-        { plan: PLANS.BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
-
-        { plan: PLANS.MAIL, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
-        { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
-        { plan: PLANS.DUO, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
-        { plan: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
-    ];
-
     const currencyMatches = (rule: PlanCapRule) => {
         if (!rule.currencyPredicate) {
             return true;
@@ -88,6 +88,7 @@ export const getAllowedCycles = ({
     plansMap,
     disableUpcomingCycleCheck,
     allowDowncycling,
+    rules,
 }: {
     subscription: Subscription | FreeSubscription | undefined;
     minimumCycle?: CYCLE;
@@ -98,6 +99,7 @@ export const getAllowedCycles = ({
     plansMap: PlansMap;
     disableUpcomingCycleCheck?: boolean;
     allowDowncycling?: boolean;
+    rules?: PlanCapRule[];
 }): CYCLE[] => {
     const plan = getPlanFromIDs(planIDs, plansMap);
     if (!plan) {
@@ -113,7 +115,7 @@ export const getAllowedCycles = ({
 
     const isSamePlan = isSamePlanCheckout(subscription, planIDs);
 
-    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, currency, plansMap, subscription);
+    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, currency, plansMap, subscription, rules);
 
     const result = availableCycles.filter((cycle) => {
         const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);
