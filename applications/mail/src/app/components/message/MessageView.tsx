@@ -5,6 +5,7 @@ import type { Breakpoints } from '@proton/components';
 import { useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -251,8 +252,21 @@ const MessageView = (
              * Composer will load it if we open it
              */
             labelID !== MAILBOX_LABEL_IDS.DRAFTS &&
-            labelID !== MAILBOX_LABEL_IDS.ALL_DRAFTS
+            labelID !== MAILBOX_LABEL_IDS.ALL_DRAFTS &&
+            /**
+             * When a Quick reply is deleted, the draft is not filtered from the conversation thread for a few ms.
+             * This condition is being triggered with the message being "empty", we have no data on Redux.
+             * Using the inputMessage label ids, we can add the same check as above, so that we do not load draft.
+             */
+            !inputMessage.LabelIDs?.some((labelID) =>
+                [MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS)
+            )
         ) {
+            // After spending some time on investigations and debugging, we're not sure that this condition is still triggered in the app.
+            // Instead of removing it completely, we want to track on Sentry if it is being triggered
+            captureMessage('Load message call from message view', {
+                extra: { labelID, loading, messageLoaded, bodyLoaded },
+            });
             void load();
         }
 
