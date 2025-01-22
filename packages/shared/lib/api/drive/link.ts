@@ -99,7 +99,7 @@ export const queryPublicCheckAvailableHashes = (
     return {
         method: 'post',
         timeout: EXPENSIVE_REQUEST_TIMEOUT,
-        url: `/drive/urls/${token}/files/${linkId}/checkAvailableHashes`,
+        url: `drive/urls/${token}/files/${linkId}/checkAvailableHashes`,
         suppress: suppressErrors,
         data,
     };
