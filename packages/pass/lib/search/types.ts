@@ -24,4 +24,4 @@ export type SelectItemsByDomainOptions = {
 
 export type SelectAutofillCandidatesOptions = ParsedUrl & { shareIds?: string[]; strict?: boolean };
 export type SelectOTPAutofillCandidateOptions = ParsedUrl & { submission?: FormSubmission };
-export type SelectAutosaveCandidatesOptions = { domain: string; userIdentifier: string; shareIds?: string[] };
+export type SelectAutosaveCandidatesOptions = { domain: string; userIdentifier?: string; shareIds?: string[] };
