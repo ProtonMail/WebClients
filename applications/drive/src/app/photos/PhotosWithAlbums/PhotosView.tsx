@@ -3,7 +3,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Loader, NavigationControl, TopBanner, useAppTitle } from '@proton/components';
+import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 
@@ -15,19 +15,21 @@ import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDr
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../store';
-import { isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../store';
+import { isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { useCreateAlbum } from '../PhotosActions/Albums';
+import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
+import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyPhotos } from './EmptyPhotos';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
-import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
+// import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActions } from './toolbar/PhotosWithAlbumsToolbar';
 
 /*
     TODO:
-    - Disable upload on Albums view
-    - Split components
+    - Split file into multiple components
 */
 
 export const PhotosView: FC<void> = () => {
@@ -38,23 +40,27 @@ export const PhotosView: FC<void> = () => {
         shareId,
         linkId,
         photos,
+        albums,
         isPhotosLoading,
         loadPhotoLink,
         photoLinkIdToIndexMap,
         photoLinkIds,
         requestDownload,
-    } = usePhotosView();
+        refreshAlbums,
+    } = usePhotosWithAlbumsView();
+
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
         photos,
         photoLinkIdToIndexMap
     );
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const [detailsModal, showDetailsModal] = useDetailsModal();
+    const createAlbumModal = useModalStateObject();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const createAlbum = useCreateAlbum();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
-
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
             incrementItemRenderedCounter();
@@ -94,9 +100,23 @@ export const PhotosView: FC<void> = () => {
         [setPreviewLinkId, photoLinkIds]
     );
 
-    const isEmpty = photos.length === 0;
+    const onCreateAlbum = async (name: string) => {
+        if (!shareId || !linkId) {
+            return;
+        }
+        try {
+            const abortSignal = new AbortController().signal;
+            await createAlbum(abortSignal, shareId, linkId, name);
+            refreshAlbums();
+        } catch (e) {
+            console.error('album creation failed', e);
+        }
+    };
 
-    if (isPhotosLoading && isEmpty) {
+    const isPhotosEmpty = photos.length === 0;
+    const isAlbumsEmpty = albums.length === 0;
+
+    if (isPhotosLoading && isPhotosEmpty && isAlbumsEmpty) {
         return <Loader />;
     }
 
@@ -150,9 +170,9 @@ export const PhotosView: FC<void> = () => {
                     onExit={() => setPreviewLinkId(undefined)}
                 />
             )}
-            <PhotosRecoveryBanner />
+            {/* TODO: Add it back <PhotosRecoveryBanner />*/}
             <UploadDragDrop
-                disabled={isUploadDisabled}
+                disabled={isUploadDisabled || tabSelection === 'albums'}
                 isForPhotos
                 shareId={shareId}
                 linkId={linkId}
@@ -198,6 +218,8 @@ export const PhotosView: FC<void> = () => {
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
                             uploadDisabled={isUploadDisabled}
+                            tabSelection={tabSelection}
+                            createAlbumModal={createAlbumModal}
                         />
                     }
                 />
@@ -208,7 +230,7 @@ export const PhotosView: FC<void> = () => {
                  */}
                 {tabSelection === 'gallery' && (
                     <>
-                        {isEmpty ? (
+                        {isPhotosEmpty ? (
                             <EmptyPhotos />
                         ) : (
                             <PhotosGrid
@@ -234,14 +256,14 @@ export const PhotosView: FC<void> = () => {
                  */}
                 {tabSelection === 'albums' && (
                     <>
-                        {isEmpty ? (
+                        {isAlbumsEmpty ? (
                             <>
                                 {/** TODO: Empty Albums View */}
                                 <EmptyPhotos />
                             </>
                         ) : (
                             <AlbumsGrid
-                                data={[]} // TODO: Get Albums
+                                data={albums} // TODO: Get Albums
                                 onItemRender={handleItemRender}
                                 onItemRenderLoadedLink={handleItemRenderLoadedLink}
                                 isLoading={false} // TODO: Get Albums loading status
@@ -251,6 +273,7 @@ export const PhotosView: FC<void> = () => {
                     </>
                 )}
             </UploadDragDrop>
+            <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} />
         </>
     );
 };

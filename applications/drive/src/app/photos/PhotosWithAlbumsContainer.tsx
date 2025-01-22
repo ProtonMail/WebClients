@@ -1,5 +1,5 @@
 // sort-imports-ignore
-import type { FC, FunctionComponent } from 'react';
+import type { FC, FunctionComponent, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { Redirect, Route, type RouteComponentProps, Switch } from 'react-router-dom';
 
@@ -20,20 +20,21 @@ import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
-import {
-    DriveProvider,
-    useActivePing,
-    useBookmarksActions,
-    useDefaultShare,
-    useDriveEventManager,
-    useUserSettings,
-} from '../store';
-import { useShareActions } from '../store/_shares';
+import { useActivePing, useBookmarksActions, useDefaultShare, useDriveEventManager, useUserSettings } from '../store';
+import { SharesProvider, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
-import { VolumeType } from '../store/_volumes';
+import { VolumesProvider, VolumeType } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import { PhotosView } from './PhotosWithAlbums/PhotosView';
+import { DriveEventManagerProvider } from '../store/_events';
+import { LinksProvider } from '../store/_links';
+import { DevicesProvider } from '../store/_devices';
+import { DownloadsProvider } from '../store/_downloads';
+import { UploadProvider } from '../store/_uploads';
+import { SearchProvider } from '../store/_search';
+import { InvitationsStateProvider } from '../store/_invitations/useInvitationsState';
+import { PhotosWithAlbumsProvider } from './PhotosStore/PhotosWithAlbumsProvider';
 
 const PhotosWithAlbumsContainer: FC<RouteComponentProps> = ({ match }) => {
     return (
@@ -176,16 +177,40 @@ const InitContainer = () => {
     );
 };
 
+function DriveWithAlbumsProvider({ children }: { children: ReactNode }) {
+    return (
+        <DriveEventManagerProvider>
+            <VolumesProvider>
+                <SharesProvider>
+                    <LinksProvider>
+                        <DevicesProvider>
+                            <DownloadsProvider>
+                                <UploadProvider>
+                                    <SearchProvider>
+                                        <PhotosWithAlbumsProvider>
+                                            <InvitationsStateProvider>{children}</InvitationsStateProvider>
+                                        </PhotosWithAlbumsProvider>
+                                    </SearchProvider>
+                                </UploadProvider>
+                            </DownloadsProvider>
+                        </DevicesProvider>
+                    </LinksProvider>
+                </SharesProvider>
+            </VolumesProvider>
+        </DriveEventManagerProvider>
+    );
+}
+
 const MainPhotosContainer: FunctionComponent = () => {
     return (
         <GlobalLoaderProvider>
             <GlobalLoader />
             <LocationErrorBoundary>
-                <DriveProvider>
+                <DriveWithAlbumsProvider>
                     <QuickSettingsRemindersProvider>
                         <InitContainer />
                     </QuickSettingsRemindersProvider>
-                </DriveProvider>
+                </DriveWithAlbumsProvider>
             </LocationErrorBoundary>
         </GlobalLoaderProvider>
     );
