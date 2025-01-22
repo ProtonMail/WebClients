@@ -1,10 +1,12 @@
-import { type FC, useEffect, useMemo, useRef } from 'react';
+import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/index';
+import { Icon } from '@proton/components/index';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -36,6 +38,9 @@ const FORM_ID = 'new-alias';
 const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
+    const [showAdvanced, setShowAdvanced] = useState(false);
+    const toggleShowAdvanced = () => setShowAdvanced((state) => !state);
+
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
     const reconciled = useRef(false);
     const { ParentPortal, openPortal } = usePortal();
@@ -198,12 +203,27 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                         Object.keys(form.touched).length > 0 &&
                                             (form.errors.aliasPrefix || form.errors.aliasSuffix)
                                     )}
+                                    actions={
+                                        <Button
+                                            shape="ghost"
+                                            icon
+                                            onClick={toggleShowAdvanced}
+                                            title={c('Action').t`Show advanced options`}
+                                        >
+                                            <Icon name="cog-wheel"></Icon>
+                                        </Button>
+                                    }
                                 >
                                     {`${aliasPrefix}${aliasSuffix?.value ?? ''}`}
                                 </ValueControl>
                             </FieldsetCluster>
 
-                            <AliasForm aliasOptions={aliasOptions.value} loading={!ready} form={form} />
+                            <AliasForm
+                                aliasOptions={aliasOptions.value}
+                                loading={!ready}
+                                form={form}
+                                showAdvanced={showAdvanced}
+                            />
 
                             <FieldsetCluster>
                                 <Field
