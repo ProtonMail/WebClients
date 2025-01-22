@@ -22,6 +22,10 @@ export interface PostSubscriptionModalComponentProps {
     onDisplayFeatureTour: () => void;
     /** Close modal and execute remind me later action */
     onRemindMeLater: () => void;
+    /** Ref of the upsell that triggered the post subscription modal */
+    upsellRef?: string;
+    /** Name of the post subscription flow user is currently in */
+    flowName: PostSubscriptionFlowName;
 }
 
 export type PostSubscriptionModalConfig = {

@@ -29,9 +29,9 @@ jest.mock('@proton/components/components/upsell/useUpsellConfig.ts', () => ({
     default: () => null,
 }));
 
-jest.mock('@proton/components/containers/payments/subscription/postSubscription/usePostSubscriptionTelemetry', () => ({
+jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () => ({
     __esModule: true,
-    usePostSubscriptionTelemetry: () => {
+    usePostSubscriptionTourTelemetry: () => {
         return () => undefined;
     },
 }));
