@@ -47,6 +47,7 @@ export const SIMPLELOGIN_DOMAIN_SETTINGS_URL = 'https://app.simplelogin.io/dashb
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
 export const PASS_DOWNLOAD_URL = 'https://proton.me/pass/download';
 export const PASS_TROUBLESHOOT_URL = 'https://proton.me/support/pass-troubleshooting';
+export const PASS_HOWTO_URL = 'https://proton.me/support/pass/using-proton-pass';
 
 export const WEBSITE_RULES_SUPPORTED_VERSION = '1';
 

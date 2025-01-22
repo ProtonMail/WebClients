@@ -22,10 +22,9 @@ import { AccountPath } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import browser from '@proton/pass/lib/globals/browser';
 import { selectLockEnabled } from '@proton/pass/store/selectors';
 import { withTap } from '@proton/pass/utils/fp/pipe';
-import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
@@ -62,13 +61,6 @@ export const MenuDropdown: FC = () => {
                               },
                           ]
                         : [],
-                    feedback: [
-                        {
-                            icon: 'life-ring',
-                            label: c('Action').t`How to use ${PASS_APP_NAME}`,
-                            url: browser.runtime.getURL('/onboarding.html#/welcome'),
-                        },
-                    ],
                 },
             }),
             [expanded, expandPopup, close]
@@ -150,7 +142,6 @@ export const MenuDropdown: FC = () => {
 
                         <hr className="my-2 mx-4" aria-hidden="true" />
 
-                        <Submenu icon="bug" label={c('Action').t`Feedback & Help`} items={menu.feedback} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
                         <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />
                     </DropdownMenu>
