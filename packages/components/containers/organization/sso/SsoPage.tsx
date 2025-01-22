@@ -371,8 +371,6 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     // Domain addons are not currently supported on vpn or pass b2b plans, so ignoring any addon upsell here.
     const canAddSsoDomain = customDomains.length !== organization.MaxDomains;
 
-    const ssoConfigIsEdugain = samlSSO.configs[0]?.Type === IDP_TYPE.EDUGAIN;
-
     return (
         <>
             {renderSetupSSODomainModal && (
@@ -473,16 +471,14 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                 </SettingsSectionWide>
             </SubSettingsSection>
 
-            {!ssoConfigIsEdugain && (
-                <SCIMSettingsSection
-                    domain={domain}
-                    hasSsoConfig={hasSsoConfig}
-                    scimInfo={samlSSO.scimInfo}
-                    onShowVerifyDomain={() => {
-                        setVerifySSODomainModalOpen(true);
-                    }}
-                />
-            )}
+            <SCIMSettingsSection
+                domain={domain}
+                hasSsoConfig={hasSsoConfig}
+                scimInfo={samlSSO.scimInfo}
+                onShowVerifyDomain={() => {
+                    setVerifySSODomainModalOpen(true);
+                }}
+            />
 
             {hasSsoDomain && hasSsoConfig && <RemoveSSOSettingsSection domain={domain} ssoConfigs={samlSSO.configs} />}
         </>
