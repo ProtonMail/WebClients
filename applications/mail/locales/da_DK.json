@@ -1420,6 +1420,12 @@
       ],
       "Sign out of all accounts": [
         "Log ud alle konti"
+      ],
+      "Activate": [
+        "Aktivér"
+      ],
+      "More options": [
+        "Flere muligheder"
       ]
     },
     "action": {
@@ -4525,6 +4531,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "Please select a country": [
+        "Vælg venligst et land"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7685,6 +7694,18 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "For at fjerne restriktioner, kan du opgradere til et betalt abonnement"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Vi har abonnementer, der er designet specifikt til brugere som dig, der har brug for mere end én e-mailadresse."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
       ]
     },
     "info": {
@@ -9157,6 +9178,9 @@
       ],
       "Get ${ planTitle }": [
         "Få ${ planTitle }"
+      ],
+      "Upgrade": [
+        "Opgradér"
       ]
     },
     "new_plans: action": {
@@ -13799,6 +13823,11 @@
       ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Vist navn"
       ]
     }
   }

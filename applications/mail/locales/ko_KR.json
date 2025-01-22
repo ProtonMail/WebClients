@@ -1424,6 +1424,12 @@
       ],
       "Sign out of all accounts": [
         "모든 계정 로그아웃"
+      ],
+      "Activate": [
+        "활성화"
+      ],
+      "More options": [
+        "더 많은 옵션"
       ]
     },
     "action": {
@@ -4522,6 +4528,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "Please select a country": [
+        "국가를 선택해주세요"
+      ],
+      "Please select a state": [
+        "주를 선택해주세요"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7651,6 +7663,63 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
+      ],
+      "Active": [
+        "활성"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "30일 이상 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "여러개의 무료 계정을 만드는 것은 저희의 ${ termsLink } 에 따라 허용되지 않습니다."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "${ planTitle }로 잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "휴지통 및 스팸함으로 이동된지 30일이 경과한 이메일이 자동으로 삭제됩니다."
+      ],
+      "Enabling auto-deletion…": [
+        "자동 삭제 활성화 중…"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "데스크탑 앱으로 더 빠르고 집중된 이메일 경험을 즐기세요."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "추가적인 정보와 제한을 없애기 위해 ${ mailLink } 에서 로그인 해주세요."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
+      ],
+      "Invite family members and get everything up and running.": [
+        "가족을 초대하고 모두 완료하세요."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "같이 ${ protonDuoPlanName } 플랜을 공유할 동료, 친구 등 초대하세요."
+      ],
+      "or discover other features:": [
+        "혹은 다른 기능 살펴보기:"
+      ],
+      "Registering your subscription…": [
+        "구독 등록하는 중…"
+      ],
+      "Setting up ${ feature }…": [
+        "${ feature } 설정 중…"
+      ],
+      "Setting up your new address…": [
+        "새 주소를 설정하는 중…"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "언제든지 ${ settingsLink } 에서 변경하실 수 있습니다."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
       ]
     },
     "info": {
@@ -9112,6 +9181,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
+      ],
+      "Upgrade": [
+        "업그레이드"
       ]
     },
     "new_plans: action": {
@@ -13756,6 +13828,11 @@
       ],
       "Time zone not supported": [
         "시간대 지원되지 않음"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "표시되는 이름"
       ]
     }
   }

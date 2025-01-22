@@ -1385,6 +1385,18 @@
       ],
       "Use this": [
         "Uporabi"
+      ],
+      "Activate": [
+        "Aktiviraj"
+      ],
+      "More actions": [
+        "Več dejanj"
+      ],
+      "More options": [
+        "Več možnosti"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ]
     },
     "action": {
@@ -1835,6 +1847,9 @@
       ],
       "Website access problem": [
         "Težava z dostopom do spletnega mesta"
+      ],
+      "Docs problem": [
+        "Težava s Docs"
       ]
     },
     "Button": {
@@ -1849,6 +1864,21 @@
       ],
       "Continue": [
         "Nadaljuj"
+      ],
+      "Create label": [
+        "Ustvarite oznako"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ],
+      "Next": [
+        "Naslednji"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ]
     },
     "Calendar attachment tooltip": {
@@ -3567,6 +3597,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
       ]
     },
     "description": {
@@ -4751,6 +4784,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7601,6 +7637,15 @@
       ],
       "Your private writing assistant": [
         "Vaš osebni pomočnik pri pisanju e-pošte"
+      ],
+      "Active": [
+        "Aktivno"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Nadgradite naročniški paket za samodejno brisanje sporočil, ki so v smetnjaku ali neželeni pošti več kot 30 dni."
       ]
     },
     "info": {
@@ -8424,6 +8469,9 @@
       ],
       "Writing assistant": [
         "Pomočnik pri pisanju"
+      ],
+      "State": [
+        "Država"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9074,6 +9122,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Nadgradite na ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
       ]
     },
     "new_plans: action": {
@@ -9876,6 +9927,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Lahko imate več kot enega skrbnika. Vsi skrbniki lahko dodajajo in upravljajo uporabnike, vendar ima samo glavni skrbnik nadzor nad plačili."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Z enim klikom preusmerite internetni promet prek omrežja Tor."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10048,6 +10102,15 @@
       ],
       "You are all set!": [
         "Pripravljeni ste!"
+      ],
+      "browser": [
+        "brskalnik"
+      ],
+      "Continue": [
+        "Nadaljuj"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Za začetek izberite prikazno ime. To je ime, ki ga bodo uporabniki videli, ko jim pošljete sporočilo, jih povabite na dogodek ali z njimi delite datoteko."
       ]
     },
     "Onboarding Proton": {
@@ -11468,6 +11531,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Vaš paket je bil kupljen preko iOS aplikacije. Zato boste za spremembe na vašem paketu ali posodobitve podatkov o plačilu morali iti v trgovino Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Samo prijavite se v svoj račun v Apple App Store in nato izberite ${ subscriptions }."
       ]
     },
     "Subscription price": {
@@ -12998,6 +13064,12 @@
       ],
       "Bad time for this email?": [
         "Ni pravi trenutek za to sporočilo?"
+      ],
+      "Custom domains:": [
+        "Domen po meri:"
+      ],
+      "Snooze:": [
+        "Dremež:"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13093,6 +13165,9 @@
     "Tor out of date": {
       "stable release": [
         "izdajno različico"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta različica brskalnika Tor ni podprta. Posodobite na najnovejšo ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13665,6 +13740,30 @@
     "PassFamilyPlan2024": {
       "Introducing ${ passFamilyPlanName }": [
         "Predstavljamo ${ passFamilyPlanName }"
+      ]
+    },
+    "Offer": {
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Brezplačno"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Shramba"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Prikazno ime"
       ]
     }
   }

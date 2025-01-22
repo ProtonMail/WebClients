@@ -1429,6 +1429,12 @@
       ],
       "Sign out of all accounts": [
         "Kirjaa kaikki tilit ulos"
+      ],
+      "Activate": [
+        "Aktivoi"
+      ],
+      "More options": [
+        "Lisää asetuksia"
       ]
     },
     "action": {
@@ -4741,6 +4747,9 @@
       ],
       "Unsupported event": [
         "Tapahtumaa ei tueta"
+      ],
+      "Time zone component ignored": [
+        "Aikavyöhykekomponentti ohitettu"
       ]
     },
     "Error message": {
@@ -7758,6 +7767,18 @@
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Poista rajoitukset päivittämällä maksulliseen tilaukseen."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Liity ${ PROTON_SENTINEL_NAME } -ohjelmaan saadaksesi korkeimman tason tiliturvan ja tuen."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Ota yhteyttä asiakastukeen, jos tarvitset välitöntä muutosta tilaukseen."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti ${ cycle } kuukauden välein."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uusitaan utomaattisesti kuukausittain."
       ]
     },
     "info": {
@@ -9233,6 +9254,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
       ]
     },
     "new_plans: action": {
@@ -10295,6 +10319,12 @@
       ],
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } Play Kaupassa"
+      ],
+      "Anytime, anywhere access": [
+        "Käytettävissä milloin ja missä tahansa"
+      ],
+      "Distraction-free emailing": [
+        "Häiriötön sähköpostittelu"
       ]
     },
     "Onboarding Proton": {
@@ -13466,6 +13496,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Tämä varmistaa, ettei kukaan näe sijaintia, laitetta tai muita tietoja, joilla sinua voitaisiin tunnistaa tai seurata."
       ]
     },
     "tooltip": {
@@ -14009,6 +14042,17 @@
       ],
       "Time zone not supported": [
         "Aikavyöhykettä ei tueta"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Ainoastaan gregoriaaninen kalenteri on sallittu"
+      ],
+      "Recurring event has no occurrences": [
+        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Näyttönimi"
       ]
     }
   }

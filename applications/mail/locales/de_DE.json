@@ -1423,6 +1423,24 @@
       ],
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
+      ],
+      "About hide-my-email aliases": [
+        "Über Hide-my-email-Aliasse"
+      ],
+      "Activate": [
+        "Aktivieren"
+      ],
+      "Download the desktop app": [
+        "Desktop-App herunterladen"
+      ],
+      "Export selection as .vcf": [
+        "Auswahl im .vcf-Format exportieren"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Gehe zu ${ DRIVE_APP_NAME }"
+      ],
+      "More options": [
+        "Weitere Optionen"
       ]
     },
     "action": {
@@ -1931,6 +1949,18 @@
       ],
       "Change email address settings": [
         "E-Mail-Adresseinstellungen ändern"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "Remind me later": [
+        "Später erneut fragen"
       ]
     },
     "Calendar attachment tooltip": {
@@ -4541,6 +4571,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Please select a country": [
+        "Bitte wähle ein Land"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4729,6 +4762,9 @@
       ],
       "Unsupported event": [
         "Nicht unterstützter Termin"
+      ],
+      "Time zone component ignored": [
+        "Zeitzonenkomponente ignoriert"
       ]
     },
     "Error message": {
@@ -5358,6 +5394,9 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Schließe diese Checkliste innerhalb von ${ daysCount } ab, um deinen Speicherplatz kostenlos zu verdoppeln."
+      ],
+      "Tasks to complete count": [
+        "Zähler für zu erledigende Aufgaben"
       ]
     },
     "Gmail forwarding": {
@@ -5620,6 +5659,12 @@
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
+      ],
+      "Your app password is correct. Do not use your regular password.": [
+        "Dein App-Passwort ist korrekt. Verwende nicht dein reguläres Passwort."
+      ],
+      "Your email address and app password are correct. Do not use your regular password.": [
+        "Deine E-Mail-Adresse und App-Passwort sind korrekt. Verwende nicht dein reguläres Passwort."
       ]
     },
     "Import ICS file from Mail": {
@@ -7719,6 +7764,48 @@
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für Lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } lebenslanges Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung Ihres Abonnements ${ planTitle } bleiben unverändert."
+      ],
+      "Download on the App Store": [
+        "Aus dem App Store herunterladen"
+      ],
+      "Get it on Google Play": [
+        "Auf Google Play holen"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Trete dem ${ PROTON_SENTINEL_NAME }-Programm bei, um das höchste Maß an Kontosicherheit und Unterstützung zu erhalten."
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
+        "Schützen deine E-Mail vor Mailinglisten oder Spammern mit versteckten Hide-my-email-Aliassen."
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
+      ],
+      "This message is from a ${ PASS_APP_NAME } alias.": [
+        "Diese Nachricht stammt von einem ${ PASS_APP_NAME }-Alias."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Um die Einschränkungen aufzuheben, kannst du auf ein kostenpflichtiges Abonnement upgraden."
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Wir können in diesem Browser nicht auf Speicherfunktionen zugreifen, benötigen diesen Zugriff aber, um die Suche nach Nachrichteninhalten zu ermöglichen."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Wir haben Abonnemente, die speziell für Benutzer wie dich entwickelt wurden, die mehr als eine E-Mail-Adresse benötigen."
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
       ]
     },
     "info": {
@@ -9194,6 +9281,9 @@
       ],
       "Get started for ${ priceCoupon }": [
         "Leg los für ${ priceCoupon }"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "new_plans: action": {
@@ -9673,6 +9763,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+      ],
+      "200 GB of storage": [
+        "200 GB Speicherplatz"
       ]
     },
     "new_plans: feature highlight": {
@@ -10250,6 +10343,21 @@
       ],
       "Where privacy is default.": [
         "Wo Privatsphäre der Standard ist."
+      ],
+      "Anytime, anywhere access": [
+        "Jederzeit und überall Zugang"
+      ],
+      "Distraction-free emailing": [
+        "Ablenkungsfreier E-Mail-Verkehr"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Genieße ein schnelleres, konzentriertes E-Mail-Erlebnis mit der Desktop-App."
+      ],
+      "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
+        "Lade unsere ${ mobileAppAppStoreLink } oder ${ mobileAppGooglePlayLink } App herunter, um jederzeit auf deine E-Mails zugreifen zu können und ein optimiertes mobiles Erlebnis zu haben."
+      ],
+      "Set a display name": [
+        "Anzeigename festlegen"
       ]
     },
     "Onboarding Proton": {
@@ -13327,6 +13435,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig."
+      ],
+      "Custom domains:": [
+        "Eigene Domains:"
+      ],
+      "Priority support:": [
+        "Vorrangiger Support:"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13952,6 +14066,33 @@
       ],
       "Time zone not supported": [
         "Zeitzone wird nicht unterstützt"
+      ],
+      "Malformed end time": [
+        "Fehlerhafte Endzeit"
+      ],
+      "Only the Gregorian calendar scale is allowed": [
+        "Nur die Skala des Gregorianischen Kalenders ist erlaubt"
+      ],
+      "Start time out of bounds": [
+        "Startzeit außerhalb des Bereichs"
+      ]
+    },
+    "Offer": {
+      "Limited-time offer": [
+        "Zeitlich begrenztes Angebot"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
+      ]
+    },
+    "Offer feature": {
+      "Custom email domain": [
+        "Eigene E-Mail-Domain"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Anzeigename"
       ]
     }
   }

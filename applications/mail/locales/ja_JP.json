@@ -1424,6 +1424,12 @@
       ],
       "Sign out of all accounts": [
         "すべてのアカウントからサインアウト"
+      ],
+      "Activate": [
+        "有効化"
+      ],
+      "More options": [
+        "詳細設定を表示"
       ]
     },
     "action": {
@@ -9112,6 +9118,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "${ MAIL_SHORT_APP_NAME }Plusへアップグレード"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "new_plans: action": {
@@ -10361,7 +10370,7 @@
         "現在、サブスクリプションの自動更新は無効になっています。今すぐサブスクリプションを変更すると、自動更新が再び有効になります。"
       ],
       "CVC": [
-        "セキュリティコード"
+        "CVC"
       ],
       "Got it": [
         "わかった"
@@ -13751,6 +13760,11 @@
       ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "表示名"
       ]
     }
   }

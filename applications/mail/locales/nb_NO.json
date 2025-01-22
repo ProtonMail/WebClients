@@ -1429,6 +1429,12 @@
       ],
       "Sign out of all accounts": [
         "Logg av alle kontoer"
+      ],
+      "Activate": [
+        "Aktiver"
+      ],
+      "More options": [
+        "Flere valg"
       ]
     },
     "action": {
@@ -4553,6 +4559,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Please select a country": [
+        "Velg et land"
+      ],
+      "Please select a state": [
+        "Velg en stat"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7782,6 +7794,96 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Den planlagte planen starter den ${ renewalTime } og fornyes automatisk hver måned."
+      ],
+      "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
+        "${ PASS_APP_NAME } lar deg lagre passord, notater og annen sensitiv informasjon med ende-til-ende-kryptering. Tilgjengelig på ${ ios }, ${ android } og i din ${ browser }."
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert overvåking av mistenkelig aktivitet."
+      ],
+      "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
+        "Få tilgang til 6,500+ høyhastighetstjenere på opptil 10 enheter for å holde nettleserdataene dine trygge. Tilgjengelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Å opprette flere gratis kontoer er ikke tillatt etter våre ${ termsLink }."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Oppdag nye opplåste funksjoner og begynn å bruke dem med en gang!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Oppdag nye funksjoner låst opp med ${ planTitle } og begynn å bruke dem med en gang!"
+      ],
+      "Download on the App Store": [
+        "Last ned på App Store"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-poster flyttet til papirkurv og søppelpost for mer enn 30 dager siden, blir slettet automatisk."
+      ],
+      "Enabling auto-deletion…": [
+        "Aktiverer automatisk sletting…"
+      ],
+      "Enjoy a faster, focused emailing experience with the desktop app.": [
+        "Gled deg over en raskere, fokusert e-postopplevelse med skrivebordsappen."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "For ytterligere informasjon og for å fjerne restriksjoner, logg inn på ${ mailLink }."
+      ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ androidAppLink } eller ${ iosAppLink }."
+      ],
+      "Get it on Google Play": [
+        "Hent den på Google Play"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Bli varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
+      ],
+      "Invite family members and get everything up and running.": [
+        "Inviter familiemedlemmer og få alt i gang."
+      ],
+      "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
+        "Inviter partneren, en venn eller den du deler ${ protonDuoPlanName }-planen din med."
+      ],
+      "or discover other features:": [
+        "eller oppdag andre funksjoner:"
+      ],
+      "Reach out to us for help on anything ${ BRAND_NAME }.": [
+        "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
+      ],
+      "Registering your subscription…": [
+        "Registrerer abonnementet ditt…"
+      ],
+      "Send messages at just the right now": [
+        "Send meldinger akkurat nå"
+      ],
+      "Setting up ${ feature }…": [
+        "Konfigurerer ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Konfigurerer den nye adressen din…"
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Slumre meldinger til senere, slik at de er øverst i innboksen din når du vil"
+      ],
+      "Start using the shorter, catchier version of your email address.": [
+        "Begynn å bruke den kortere, mer fengende versjonen av e-postadressen din."
+      ],
+      "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
+        "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opprett og del dokumenter i ${ DOCS_APP_NAME } og oppbevar dem sikkert. Alt på ${ ios }, ${ android } og ${ desktop }."
+      ],
+      "You can add your own custom domain to ${ MAIL_APP_NAME }": [
+        "Du kan legge til ditt eget egendefinerte domene i ${ MAIL_APP_NAME }"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Du kan endre dette når som helst i ${ settingsLink }."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ]
     },
     "info": {
@@ -9257,6 +9359,9 @@
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade": [
+        "Oppgrader"
       ]
     },
     "new_plans: action": {
@@ -14054,6 +14159,11 @@
       ],
       "Time zone not supported": [
         "Tidssone ikke støttet"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Visningsnavn"
       ]
     }
   }
