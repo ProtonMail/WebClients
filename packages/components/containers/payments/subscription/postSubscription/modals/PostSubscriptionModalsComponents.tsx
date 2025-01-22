@@ -8,6 +8,8 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import checkoutLoader from '@proton/styles/assets/img/post-subscription/checkout-loader.svg';
 import clsx from '@proton/utils/clsx';
 
+import { POST_SUBSCRIPTION_MODAL_CLOSE_BUTTON_ID } from '../constants';
+
 export const PostSubscriptionModalWrapper = ({
     children,
     canClose,
@@ -28,7 +30,7 @@ export const PostSubscriptionModalWrapper = ({
 
 export const PostSubscriptionModalHeader = ({ illustration }: { illustration: string }) => (
     <>
-        <ModalHeader />
+        <ModalHeader closeButtonProps={{ id: POST_SUBSCRIPTION_MODAL_CLOSE_BUTTON_ID }} />
         <div className="modal-two-illustration-container relative text-center fade-in-up">
             <img src={illustration} alt="" width="128" height="128" />
         </div>

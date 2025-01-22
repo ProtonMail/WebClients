@@ -17,13 +17,13 @@ import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal'
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import { usePostSubscriptionTelemetry } from '@proton/components/containers/payments/subscription/postSubscription/usePostSubscriptionTelemetry';
+import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { PLANS } from '@proton/payments';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
-import { TelemetryMailPostSubscriptionEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
     ADDRESS_TYPE,
     APP_UPSELL_REF_PATH,
@@ -59,7 +59,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
-    const sendTelemetryEvent = usePostSubscriptionTelemetry();
+    const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -125,9 +125,9 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
                     newList[0].Type !== ADDRESS_TYPE.TYPE_PREMIUM
                 ) {
                     void sendTelemetryEvent({
-                        event: TelemetryMailPostSubscriptionEvents.replaced_default_short_domain_address,
+                        event: TelemetryPostSubscriptionTourEvents.replaced_default_short_domain_address,
                         dimensions: {
-                            isForCustomDomain: newList[0].Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN ? 'true' : 'false',
+                            isForCustomDomain: newList[0].Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN ? 'yes' : 'no',
                         },
                     });
                 }
