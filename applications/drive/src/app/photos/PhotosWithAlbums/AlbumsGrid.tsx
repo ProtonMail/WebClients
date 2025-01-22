@@ -3,10 +3,10 @@ import React from 'react';
 
 import { Loader } from '@proton/components';
 
-import type { PhotoGridItem } from '../../store';
+import type { Album } from '../PhotosStore/PhotosWithAlbumsProvider';
 
 type AlbumsGridProps = {
-    data: PhotoGridItem[];
+    data: Album[];
     onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     isLoading: boolean;
@@ -14,7 +14,7 @@ type AlbumsGridProps = {
 };
 
 export const AlbumsGrid: FC<AlbumsGridProps> = ({
-    // data,
+    data,
     // onItemRender,
     // onItemRenderLoadedLink,
     isLoading,
@@ -25,6 +25,11 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     return (
         <div className="p-4 overflow-auto outline-none--at-all">
             <div className="relative w-full">Albums Items</div>
+            {data.map((album) => (
+                <div>
+                    LinkID: {album.LinkID} Photo Count: {album.PhotoCount}
+                </div>
+            ))}
             {isLoading && <Loader />}
         </div>
     );

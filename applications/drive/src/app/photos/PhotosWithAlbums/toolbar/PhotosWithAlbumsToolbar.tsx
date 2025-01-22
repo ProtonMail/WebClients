@@ -7,6 +7,8 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
+    Icon,
+    type ModalStateReturnObj,
     Toolbar,
     usePopperAnchor,
 } from '@proton/components';
@@ -18,21 +20,6 @@ import { PhotosPreviewButton } from './PhotosPreviewButton';
 import PhotosShareLinkButton from './PhotosShareLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
 import { PhotosUploadButton } from './PhotosUploadButton';
-
-interface PhotosWithAlbumToolbarProps {
-    shareId: string;
-    linkId: string;
-    selectedItems: PhotoLink[];
-    onPreview: () => void;
-    requestDownload: (linkIds: string[]) => Promise<void>;
-    uploadDisabled: boolean;
-}
-
-interface ToolbarRightActionsProps {
-    uploadDisabled: boolean;
-    shareId: string;
-    linkId: string;
-}
 
 const VideoDropdownButton = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -112,7 +99,38 @@ export const ToolbarLeftActions = ({ isLoading, onGalleryClick, onAlbumsClick }:
     );
 };
 
-const ToolbarRightActions = ({ uploadDisabled, shareId, linkId }: ToolbarRightActionsProps) => {
+interface ToolbarRightActionsAlbumsProps {
+    createAlbumModal: ModalStateReturnObj;
+}
+
+const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbumsProps) => {
+    const { openModal } = createAlbumModal;
+    return (
+        <>
+            <ButtonGroup shape="ghost">
+                <Button>All</Button>
+                <Button>My album</Button>
+                <Button>Shared with me</Button>
+                <Button
+                    icon={true}
+                    onClick={() => {
+                        openModal(true);
+                    }}
+                >
+                    <Icon name="plus" alt={'Create album'} />
+                </Button>
+            </ButtonGroup>
+        </>
+    );
+};
+
+interface ToolbarRightActionsGalleryProps {
+    uploadDisabled: boolean;
+    shareId: string;
+    linkId: string;
+}
+
+const ToolbarRightActionsGallery = ({ uploadDisabled, shareId, linkId }: ToolbarRightActionsGalleryProps) => {
     return (
         <>
             <ButtonGroup shape="ghost">
@@ -126,6 +144,17 @@ const ToolbarRightActions = ({ uploadDisabled, shareId, linkId }: ToolbarRightAc
     );
 };
 
+interface PhotosWithAlbumToolbarProps {
+    shareId: string;
+    linkId: string;
+    selectedItems: PhotoLink[];
+    onPreview: () => void;
+    requestDownload: (linkIds: string[]) => Promise<void>;
+    uploadDisabled: boolean;
+    tabSelection: 'albums' | 'gallery';
+    createAlbumModal: ModalStateReturnObj;
+}
+
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     shareId,
     linkId,
@@ -133,6 +162,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onPreview,
     requestDownload,
     uploadDisabled,
+    tabSelection,
+    createAlbumModal,
 }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
@@ -140,7 +171,10 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
             <div className="gap-2 flex">
-                <ToolbarRightActions uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
+                {tabSelection === 'gallery' && (
+                    <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
+                )}
+                {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
 
                 {/* Some photos are selected */}
                 {hasSelection && (
