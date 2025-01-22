@@ -41,7 +41,7 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
         await writeToClipboard(ReverseAlias);
         createNotification({
             text: c('Info')
-                .t`Reverse alias address copied to clipboard. Send an email to this address and ${Email} will receive it.`,
+                .t`Forwarding address copied to clipboard. Send an email to this address and ${Email} will receive it.`,
         });
     };
 
@@ -74,8 +74,9 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                         )}
                         <div className="text-sm color-weak">{c('Label').t`Contact created ${time} ago.`}</div>
                         <div className="text-sm color-weak">{
-                           // translator: full sentence is: <x> forwarded, <x> sent, <x> blocked, in the last 14 days. (plural included in substrings)
-                           c('Label').t`${forwardedEmails}, ${repliedEmails}, ${blockedEmails}, in the last 14 days.`}</div>
+                            // translator: full sentence is: <x> forwarded, <x> sent, <x> blocked, in the last 14 days. (plural included in substrings)
+                            c('Label').t`${forwardedEmails}, ${repliedEmails}, ${blockedEmails}, in the last 14 days.`
+                        }</div>
                         <Button
                             className="mt-2"
                             pill
@@ -113,7 +114,10 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                             iconSize={4}
                             disabled={deleteContact.loading}
                         >
-                            <DropdownMenuButton label={c('Action').t`Copy alias address`} onClick={handleCopyAddress} />
+                            <DropdownMenuButton
+                                label={c('Action').t`Copy forwarding address`}
+                                onClick={handleCopyAddress}
+                            />
                             <DropdownMenuButton
                                 label={Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
                                 onClick={() =>
