@@ -15,6 +15,20 @@ export const queryPhotos = (
         ...params,
     },
 });
+
+export const queryAlbums = (
+    volumeId: string,
+    params?: {
+        AnchorID?: string;
+    }
+) => ({
+    method: 'get',
+    url: `drive/photos/volumes/${volumeId}/albums`,
+    params: {
+        ...params,
+    },
+});
+
 export const queryDeletePhotosShare = (volumeId: string, shareId: string) => ({
     method: 'delete',
     url: `drive/volumes/${volumeId}/photos/share/${shareId}`,
@@ -26,4 +40,11 @@ export const queryPhotosDuplicates = (volumeId: string, { nameHashes }: { nameHa
     data: {
         NameHashes: nameHashes,
     },
+});
+
+// TODO: Type data properly
+export const queryCreateAlbum = (volumeId: string, data: any) => ({
+    method: 'post',
+    url: `drive/photos/volumes/${volumeId}/albums`,
+    data,
 });

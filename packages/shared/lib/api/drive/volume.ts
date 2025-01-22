@@ -1,9 +1,19 @@
 import { FOLDER_PAGE_SIZE } from '../../drive/constants';
-import type { CreateDriveVolume, RestoreDriveVolume } from '../../interfaces/drive/volume';
+import type {
+    CreateDrivePhotosWithAlbumsVolume,
+    CreateDriveVolume,
+    RestoreDriveVolume,
+} from '../../interfaces/drive/volume';
 
 export const queryCreateDriveVolume = (data: CreateDriveVolume) => ({
     method: 'post',
     url: 'drive/volumes',
+    data,
+});
+
+export const queryCreatePhotosWithAlbumsVolume = (data: CreateDrivePhotosWithAlbumsVolume) => ({
+    method: 'post',
+    url: `drive/photos/volume`,
     data,
 });
 
