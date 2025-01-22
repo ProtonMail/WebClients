@@ -70,6 +70,9 @@
       "Copy version number to clipboard": [
         "Kopieer versienummer naar klembord"
       ],
+      "Create folder": [
+        "Map maken"
+      ],
       "Current plan": [
         "Huidig abonnement"
       ],
@@ -452,9 +455,6 @@
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
-      ],
       "Easily add or remove users": [
         "Eenvoudig gebruikers toevoegen of verwijderen"
       ],
@@ -515,9 +515,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, Dark Web Monitoring en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
@@ -2219,6 +2216,11 @@
         "Terabytes"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } bijgewerkt"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systeem standaard"
@@ -2346,6 +2348,9 @@
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
+      "Address copied to clipboard": [
+        "Adres gekopieerd naar het klembord"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
@@ -2400,6 +2405,9 @@
       ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "default email address": [
+        "standaard e-mailadres"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -2464,6 +2472,9 @@
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
+      "Inherited from parent folder": [
+        "Overgenomen van bovenliggende map"
+      ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
@@ -2488,8 +2499,14 @@
       "Member": [
         "Lid"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Berichten naar al uw e-mailadressen gaan naar uw inbox."
+      ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
       "New": [
         "Nieuw"
@@ -2546,6 +2563,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Begin het te delen met contacten en gebruik het voor online diensten."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
@@ -2563,6 +2583,9 @@
       ],
       "This address is for Bitcoin via Email": [
         "Dit adres is voor Bitcoin via e-mail"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
@@ -2647,6 +2670,9 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
       ],
@@ -2697,6 +2723,11 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info for cash payment method": {
@@ -2768,6 +2799,9 @@
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
+      "Colors": [
+        "Kleuren"
+      ],
       "Company name": [
         "Bedrijfsnaam"
       ],
@@ -2810,6 +2844,9 @@
       "First name": [
         "Voornaam"
       ],
+      "Folder location": [
+        "Map locatie"
+      ],
       "Hide password": [
         "Wachtwoord verbergen"
       ],
@@ -2824,6 +2861,9 @@
       ],
       "Navigation": [
         "Navigatie"
+      ],
+      "Notification": [
+        "Notificatie"
       ],
       "Operating system": [
         "Besturingssysteem"
@@ -2897,6 +2937,25 @@
         "Postcode"
       ]
     },
+    "Label/folder modal": {
+      "Create folder": [
+        "Map maken"
+      ],
+      "Create label": [
+        "Label maken"
+      ],
+      "Edit folder": [
+        "Map bewerken"
+      ],
+      "Edit label": [
+        "Label bewerken"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } aangemaakt"
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Voeg een geschenkcode toe"
@@ -2951,6 +3010,17 @@
       ],
       "for ${ price }": [
         "voor ${ price }"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Kleur"
+      ],
+      "Folder name": [
+        "Mapnaam"
+      ],
+      "Label name": [
+        "Labelnaam"
       ]
     },
     "new_plans": {
@@ -3805,6 +3875,11 @@
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
+    "Option": {
+      "No parent folder": [
+        "Geen bovenliggende map"
+      ]
+    },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
         "Veilige kluis en het delen van links"
@@ -3986,6 +4061,9 @@
       ],
       "Search": [
         "Zoeken"
+      ],
+      "Search parent folder": [
+        "Zoek in bovenliggende map"
       ],
       "Select": [
         "Selecteer"
@@ -4629,6 +4707,9 @@
       "Summary": [
         "Overzicht"
       ],
+      "Upgrade complete!": [
+        "Upgrade voltooid!"
+      ],
       "Verification failed": [
         "Verificatie mislukt"
       ],
@@ -4640,6 +4721,9 @@
       ],
       "Wallet": [
         "Portemonnee"
+      ],
+      "Your shorter address is now ready": [
+        "Uw kortere adres is nu klaar"
       ]
     },
     "Tooltip": {
@@ -5148,12 +5232,6 @@
       ],
       "Copy Bitcoin address": [
         "Bitcoinadres kopiëren"
-      ],
-      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
-        "Opening tussen het volgende adres en het laatst gebruikte adres is te groot. Gebruik één van de adressen die u eerder heeft gegenereerd"
-      ],
-      "Generate new address": [
-        "Nieuw adres genereren"
       ]
     },
     "Wallet send": {
