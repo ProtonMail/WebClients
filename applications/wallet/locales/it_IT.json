@@ -70,6 +70,9 @@
       "Copy version number to clipboard": [
         "Copia il numero di versione negli appunti"
       ],
+      "Create folder": [
+        "Crea cartella"
+      ],
       "Current plan": [
         "Piano attuale"
       ],
@@ -235,6 +238,9 @@
       "Show balance": [
         "Mostra il saldo"
       ],
+      "Show QRCode": [
+        "Mostra il codice QR"
+      ],
       "Sign out": [
         "Esci dall'account"
       ],
@@ -246,6 +252,9 @@
       ],
       "Switch or add account": [
         "Cambia o aggiungi account"
+      ],
+      "Take a tour": [
+        "Fai un tour"
       ],
       "Try again": [
         "Riprova"
@@ -452,9 +461,6 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
-      "Dark Web Monitoring": [
-        "Monitoraggio del dark web"
-      ],
       "Easily add or remove users": [
         "Aggiungi o rimuovi utenti facilmente"
       ],
@@ -516,8 +522,8 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
       ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, monitoraggio del dark web e molto altro."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, ${ DARK_WEB_MONITORING_NAME } e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
@@ -832,6 +838,23 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ]
+    },
+    "Button": {
+      "Create label": [
+        "Crea un'etichetta"
+      ],
+      "Discover and set up features": [
+        "Scopri e configura le funzionalità"
+      ],
+      "Remind me later": [
+        "Ricordamelo più tardi"
+      ],
+      "Set up other features": [
+        "Configura altre funzionalità"
+      ],
+      "Take a tour": [
+        "Fai un tour"
       ]
     },
     "Buy confirm": {
@@ -2020,6 +2043,12 @@
       "Payment process not supported": [
         "Processo di pagamento non supportato"
       ],
+      "Please select a country": [
+        "Seleziona un paese"
+      ],
+      "Please select a state": [
+        "Per favore seleziona uno stato"
+      ],
       "Process aborted": [
         "Processo interrotto"
       ],
@@ -2219,6 +2248,11 @@
         "Terabyte"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } aggiornato"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Predefinito di sistema"
@@ -2317,6 +2351,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } protegge il tuo account con uno scrupoloso monitoraggio delle attività sospette."
+      ],
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
@@ -2345,6 +2382,9 @@
       ],
       "Account successfully updated": [
         "Account aggiornato con successo"
+      ],
+      "Address copied to clipboard": [
+        "Indirizzo copiato negli appunti"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente basato sull'intelligenza artificiale per aiutarti a creare email migliori, in modo rapido e semplice."
@@ -2401,6 +2441,15 @@
       "Dedicated servers": [
         "Server dedicati"
       ],
+      "default email address": [
+        "indirizzo email predefinito"
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Scopri le nuove funzionalità sbloccate e inizia a usarle subito!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Scopri le nuove funzionalità sbloccate con ${ planTitle } e inizia a usarle subito!"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -2424,6 +2473,12 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Le email spostate in Cestino e Spam verranno cancellate automaticamente dopo 30 giorni."
+      ],
+      "Enabling auto-deletion…": [
+        "Attivazione dell'eliminazione automatica…"
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione"
@@ -2464,6 +2519,9 @@
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluso il ${ formattedTaxRate }% di ${ taxName }: ${ price }"
       ],
+      "Inherited from parent folder": [
+        "Preso dalla cartella principale"
+      ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
@@ -2488,8 +2546,14 @@
       "Member": [
         "Membro"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
         "Nuovo"
@@ -2502,6 +2566,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
+      ],
+      "or discover other features:": [
+        "o scopri altre funzionalità:"
       ],
       "Organization size": [
         "Dimensione dell'organizzazione"
@@ -2534,6 +2601,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "Registering your subscription…": [
+        "Registrazione dell'abbonamento…"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "I pagamenti SEPA non sono disponibili al momento. Si prega di riprovare più tardi."
       ],
@@ -2543,8 +2613,17 @@
       "Session timed out": [
         "Sessione scaduta"
       ],
+      "Setting up ${ feature }…": [
+        "Configurazione di ${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "Configurazione del tuo nuovo indirizzo…"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
@@ -2563,6 +2642,9 @@
       ],
       "This address is for Bitcoin via Email": [
         "Questo indirizzo è per Bitcoin via email"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Questo ora è il tuo ${ defaultEmailAddress } per l'invio di nuovi messaggi."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
@@ -2636,6 +2718,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Stai utilizzando più spazio di archiviazione rispetto a quello incluso in un piano ${ downgradedPlanName }. Elimina o rimuovi dei dati per effettuare il downgrade."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Puoi cambiarlo in qualunque momento nelle ${ settingsLink }."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
@@ -2646,6 +2731,12 @@
       ],
       "You can now return to the application to continue": [
         "Ora puoi tornare all'applicazione per continuare"
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Hai un abbonamento di prova a ${ planTitle }. Se desideri continuare l'abbonamento dopo il periodo di prova, aggiungi un metodo di pagamento."
@@ -2697,6 +2788,11 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info for cash payment method": {
@@ -2768,6 +2864,9 @@
       "Code is 6 digits without spaces": [
         "Il codice è di 6 cifre senza spazi"
       ],
+      "Colors": [
+        "Colori"
+      ],
       "Company name": [
         "Nome dell'azienda"
       ],
@@ -2810,6 +2909,9 @@
       "First name": [
         "Nome"
       ],
+      "Folder location": [
+        "Percorso cartella"
+      ],
       "Hide password": [
         "Nascondi la password"
       ],
@@ -2824,6 +2926,9 @@
       ],
       "Navigation": [
         "Navigazione"
+      ],
+      "Notification": [
+        "Notifica"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -2864,8 +2969,14 @@
       "Security code (${ codeName })": [
         "Codice di sicurezza (${ codeName })"
       ],
+      "Show QRCode": [
+        "Mostra il codice QR"
+      ],
       "Start date": [
         "Data di inizio"
+      ],
+      "State": [
+        "Stato"
       ],
       "Subscription options": [
         "Opzioni di abbonamento"
@@ -2897,6 +3008,25 @@
         "CAP"
       ]
     },
+    "Label/folder modal": {
+      "Create folder": [
+        "Crea cartella"
+      ],
+      "Create label": [
+        "Crea etichetta"
+      ],
+      "Edit folder": [
+        "Modifica cartella"
+      ],
+      "Edit label": [
+        "Modifica etichetta"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } creato"
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Aggiungi un codice regalo"
@@ -2915,6 +3045,9 @@
       ],
       "Request an invite": [
         "Richiedi un invito"
+      ],
+      "settings": [
+        "impostazioni"
       ],
       "View on blockchain": [
         "Visualizza sulla blockchain"
@@ -2951,6 +3084,17 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Colore"
+      ],
+      "Folder name": [
+        "Nome cartella"
+      ],
+      "Label name": [
+        "Nome etichetta"
       ]
     },
     "new_plans": {
@@ -3810,6 +3954,11 @@
         "Alcune immagini non sono state caricate a causa di nomi di file duplicati nell'attuale selezione."
       ]
     },
+    "Option": {
+      "No parent folder": [
+        "Nessuna cartella principale"
+      ]
+    },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
         "Cassaforte sicura e condivisione dei collegamenti"
@@ -3991,6 +4140,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Search parent folder": [
+        "Cerca nella cartella principale"
       ],
       "Select": [
         "Seleziona"
@@ -4532,6 +4684,9 @@
       ]
     },
     "Title": {
+      "${ feature } is now active": [
+        "${ feature } è adesso attivo"
+      ],
       "Add credit/debit card": [
         "Aggiungi carta di credito/debito"
       ],
@@ -4543,6 +4698,9 @@
       ],
       "Are you sure?": [
         "Sei sicuro?"
+      ],
+      "Auto-deletion is active": [
+        "L'eliminazione automatica é attiva."
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
@@ -4634,6 +4792,9 @@
       "Summary": [
         "Riepilogo"
       ],
+      "Upgrade complete!": [
+        "Aggiornamento completato!"
+      ],
       "Verification failed": [
         "Verifica non riuscita"
       ],
@@ -4645,6 +4806,12 @@
       ],
       "Wallet": [
         "Portafoglio"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Adesso puoi creare cartelle ed etichette illimitate"
+      ],
+      "Your shorter address is now ready": [
+        "Il tuo indirizzo breve ora è pronto"
       ]
     },
     "Tooltip": {
@@ -5143,6 +5310,9 @@
       "For better privacy, generate a new address for each transaction.": [
         "Per una migliore privacy, genera un nuovo indirizzo per ogni transazione."
       ],
+      "Generate new address": [
+        "Genera nuovo indirizzo"
+      ],
       "Receive to": [
         "Ricevi a"
       ]
@@ -5153,12 +5323,6 @@
       ],
       "Copy Bitcoin address": [
         "Copia l'indirizzo Bitcoin"
-      ],
-      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
-        "La differenza tra l'indirizzo successivo e l'ultimo utilizzato è troppo grande. Utilizza uno degli indirizzi generati in precedenza"
-      ],
-      "Generate new address": [
-        "Genera nuovo indirizzo"
       ]
     },
     "Wallet send": {

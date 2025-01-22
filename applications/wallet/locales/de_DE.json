@@ -70,6 +70,9 @@
       "Copy version number to clipboard": [
         "Versionsnummer in die Zwischenablage kopieren"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
       "Current plan": [
         "Aktuelles Abonnement"
       ],
@@ -443,9 +446,6 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
-      "Dark Web Monitoring": [
-        "Dark Web-Überwachung"
-      ],
       "Easily add or remove users": [
         "Benutzer einfach hinzufügen oder entfernen"
       ],
@@ -506,9 +506,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
@@ -832,6 +829,14 @@
       ],
       "Website access problem": [
         "Zugriffsproblem auf eine Website"
+      ]
+    },
+    "Button": {
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Remind me later": [
+        "Später erneut fragen"
       ]
     },
     "Buy confirm": {
@@ -2014,6 +2019,9 @@
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
       ],
+      "Please select a country": [
+        "Bitte wähle ein Land"
+      ],
       "Process aborted": [
         "Prozess abgebrochen"
       ],
@@ -2213,6 +2221,11 @@
         "Terabyte"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } aktualisiert"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systemstandard"
@@ -2305,6 +2318,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } lebenslanges Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung Ihres Abonnements ${ planTitle } bleiben unverändert."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
@@ -2336,6 +2352,9 @@
       ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
+      ],
+      "Address copied to clipboard": [
+        "Adresse in die Zwischenablage kopiert"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
@@ -2391,6 +2410,9 @@
       ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "default email address": [
+        "standard E-Mail-Adresse"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
@@ -2455,6 +2477,9 @@
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Einschließlich ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
+      "Inherited from parent folder": [
+        "Von übergeordnetem Ordner übernommen"
+      ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
@@ -2479,8 +2504,14 @@
       "Member": [
         "Mitglied"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Nachrichten an all deine E-Mail-Adressen werden an deinen Posteingang gehen."
+      ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
       "New": [
         "Neu"
@@ -2525,6 +2556,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
@@ -2533,6 +2567,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -2551,6 +2588,9 @@
       ],
       "This address is for Bitcoin via Email": [
         "Diese Adresse ist für Bitcoin per E-Mail"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Das ist nun deine ${ defaultEmailAddress } für das Senden von Nachrichten."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
@@ -2635,6 +2675,9 @@
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
       ],
@@ -2674,8 +2717,22 @@
       "Your next billing date is ${ renewalTime }.": [
         "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info for cash payment method": {
@@ -2747,6 +2804,9 @@
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
+      "Colors": [
+        "Farben"
+      ],
       "Company name": [
         "Unternehmensname"
       ],
@@ -2789,6 +2849,9 @@
       "First name": [
         "Vorname"
       ],
+      "Folder location": [
+        "Pfad des Ordners"
+      ],
       "Hide password": [
         "Passwort verbergen"
       ],
@@ -2803,6 +2866,9 @@
       ],
       "Navigation": [
         "Navigation"
+      ],
+      "Notification": [
+        "Benachrichtigung"
       ],
       "Operating system": [
         "Betriebssystem"
@@ -2876,6 +2942,25 @@
         "Postleitzahl"
       ]
     },
+    "Label/folder modal": {
+      "Create folder": [
+        "Ordner erstellen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Edit folder": [
+        "Ordner bearbeiten"
+      ],
+      "Edit label": [
+        "Kategorie bearbeiten"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } erstellt"
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Gutscheincode hinzufügen"
@@ -2930,6 +3015,17 @@
       ],
       "for ${ price }": [
         "für ${ price }"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Farbe"
+      ],
+      "Folder name": [
+        "Ordnername"
+      ],
+      "Label name": [
+        "Name der Kategorie"
       ]
     },
     "new_plans": {
@@ -3781,6 +3877,11 @@
         "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
       ]
     },
+    "Option": {
+      "No parent folder": [
+        "Kein übergeordneter Ordner"
+      ]
+    },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
         "Sichere Tresor- und Linkfreigabe"
@@ -3953,6 +4054,9 @@
       ],
       "Search": [
         "Suchen"
+      ],
+      "Search parent folder": [
+        "Übergeordneten Ordner durchsuchen"
       ],
       "Select": [
         "Auswählen"
@@ -4596,6 +4700,9 @@
       "Summary": [
         "Zusammenfassung"
       ],
+      "Upgrade complete!": [
+        "Upgrade abgeschlossen!"
+      ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"
       ],
@@ -4607,6 +4714,9 @@
       ],
       "Wallet": [
         "Wallet"
+      ],
+      "Your shorter address is now ready": [
+        "Deine kürzere E-Mail-Adresse ist jetzt fertig."
       ]
     },
     "Tooltip": {
@@ -5112,12 +5222,6 @@
       ],
       "Copy Bitcoin address": [
         "Bitcoin-Adresse kopieren"
-      ],
-      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
-        "Die Lücke zwischen der nächsten und der zuletzt verwendeten Adresse ist zu groß. Bitte verwende eine der Adressen, die du vorher generiert hast"
-      ],
-      "Generate new address": [
-        "Neue Adresse erzeugen"
       ]
     },
     "Wallet send": {
