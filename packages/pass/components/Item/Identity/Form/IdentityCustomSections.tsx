@@ -17,7 +17,7 @@ import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
 import { selectPassPlan } from '@proton/pass/store/selectors';
-import type { ExtraFieldType, IdentityItemFormValues, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ExtraFieldType, IdentityItemFormValues, Maybe } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
 
@@ -47,7 +47,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                 });
             }
 
-            helpers.push<UnsafeItemExtraField>(createExtraField(type));
+            helpers.push<DeobfuscatedItemExtraField>(createExtraField(type));
             autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
 

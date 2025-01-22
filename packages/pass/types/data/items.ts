@@ -1,5 +1,6 @@
 import type { ItemIDRevision } from '@proton/pass/types/api/pass';
 import type { OpenedItem } from '@proton/pass/types/crypto';
+import type { Deobfuscate, DeobfuscateMode, Obfuscate } from '@proton/pass/types/data/obfuscation';
 import type {
     ExtraFieldType,
     ItemType,
@@ -13,33 +14,20 @@ import type {
 import type { ExtraField, ExtraHiddenField, ExtraTotp, PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
 import type { MaybeNull, TypeMapper } from '@proton/pass/types/utils';
 import type { SanitizedBuffers } from '@proton/pass/utils/buffer/sanitization';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
-
-type Obfuscate<T, K extends keyof T> = Omit<T, K> & { [Obf in K]: XorObfuscation };
-
-type Deobfuscate<T> = {
-    [K in keyof T]: T[K] extends XorObfuscation ? string
-    : T[K] extends ArrayBuffer ? T[K]
-    : T[K] extends (infer U)[] ? Deobfuscate<U>[]
-    : T[K] extends {} ? Deobfuscate<T[K]>
-    : T[K];
-};
 
 type ExtraFieldContent<T extends ExtraFieldType> = {
-    totp: Obfuscate<ExtraTotp, 'totpUri'>;
-    text: Obfuscate<ExtraHiddenField, 'content'>;
-    hidden: Obfuscate<ExtraHiddenField, 'content'>;
+    totp: Obfuscate<ExtraTotp, 'totpUri', never>;
+    text: Obfuscate<ExtraHiddenField, 'content', never>;
+    hidden: Obfuscate<ExtraHiddenField, 'content', never>;
 }[T];
 
 export type ItemContent<T extends ItemType> = {
     alias: ProtobufItemAlias;
     note: ProtobufItemNote;
-    login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'password' | 'totpUri'>;
-    creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
-    identity: TypeMapper<ProtobufItemIdentity, [[ExtraField, UnsafeItemExtraField]]>;
+    login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'totpUri', 'password'>;
+    creditCard: Obfuscate<ProtobufItemCreditCard, never, 'number' | 'verificationNumber' | 'pin'>;
+    identity: TypeMapper<ProtobufItemIdentity, [[ExtraField, DeobfuscatedItemExtraField]]>;
 }[T];
-
-export type UnsafeItemContent<T extends ItemType = ItemType> = Deobfuscate<ItemContent<T>>;
 
 export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
     [Key in T]: {
@@ -48,8 +36,6 @@ export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
         data: ExtraFieldContent<Key>;
     };
 }[T];
-
-export type UnsafeItemExtraField<T extends ExtraFieldType = ExtraFieldType> = Deobfuscate<ItemExtraField<T>>;
 
 /**
  * Derives a generic "distributive object type" over all possible
@@ -67,11 +53,9 @@ export type Item<T extends ItemType = ItemType, ExtraData extends { [K in T]?: a
         content: ItemContent<Key>;
         platformSpecific?: PlatformSpecific;
         extraFields: ItemExtraField[];
-        metadata: Obfuscate<Metadata, 'note'>;
+        metadata: Obfuscate<Metadata, 'note', never>;
     } & (ExtraData[Key] extends never ? {} : { extraData: ExtraData[Key] });
 }[T];
-
-export type UnsafeItem<T extends ItemType = ItemType> = Deobfuscate<Item<T>>;
 
 export enum ItemState {
     Active = 1,
@@ -83,12 +67,13 @@ export type ItemRevision<T extends ItemType = ItemType> = Omit<OpenedItem, 'cont
     shareId: string;
 };
 
+export type AliasItem = ItemRevision<'alias'>;
+export type CCItem = ItemRevision<'creditCard'>;
+export type IdentiyItem = ItemRevision<'identity'>;
 export type LoginItem = ItemRevision<'login'>;
+export type NoteItem = ItemRevision<'note'>;
 
 export type ItemRevisionID = ItemIDRevision;
-
-export type UnsafeItemRevision<T extends ItemType = ItemType> = Deobfuscate<ItemRevision<T>>;
-
 export type ItemOptimisticState = { optimistic: boolean; failed: boolean };
 
 /**
@@ -120,7 +105,6 @@ export type ItemFilters = {
 };
 
 export type IndexedByShareIdAndItemId<T> = { [shareId: string]: { [itemId: string]: T } };
-
 export type BatchItemRevisionIDs = { shareId: string; batch: ItemRevisionID[] };
 export type BatchItemRevisions = { shareId: string; batch: ItemRevision[] };
 
@@ -129,3 +113,23 @@ export enum ItemFlag {
     EmailBreached = 1 << 1,
     AliasDisabled = 1 << 2,
 }
+
+export type DeobfuscatedItemRevision<
+    T extends ItemType = ItemType,
+    Mode extends DeobfuscateMode = DeobfuscateMode,
+> = Deobfuscate<ItemRevision<T>, Mode>;
+
+export type DeobfuscatedItem<
+    T extends ItemType = ItemType,
+    Mode extends DeobfuscateMode = DeobfuscateMode,
+> = Deobfuscate<Item<T>, Mode>;
+
+export type DeobfuscatedItemContent<
+    T extends ItemType = ItemType,
+    Mode extends DeobfuscateMode = DeobfuscateMode,
+> = Deobfuscate<ItemContent<T>, Mode>;
+
+export type DeobfuscatedItemExtraField<
+    T extends ExtraFieldType = ExtraFieldType,
+    Mode extends DeobfuscateMode = DeobfuscateMode,
+> = Deobfuscate<ItemExtraField<T>, Mode>;

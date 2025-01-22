@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName, ItemContent, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '@proton/pass/types';
 
 import type { BitwardenCCItem, BitwardenCustomField, BitwardenLoginItem } from './bitwarden.types';
 import { BitwardenCustomFieldType, type BitwardenIdentityItem } from './bitwarden.types';
@@ -60,7 +60,7 @@ export const formatBitwardenCCExpirationDate = (item: BitwardenCCItem) => {
     return `${String(expMonth).padStart(2, '0')}${expYear}`;
 };
 
-const bitwardenCustomFieldToExtraField = (customField: BitwardenCustomField): UnsafeItemExtraField => {
+const bitwardenCustomFieldToExtraField = (customField: BitwardenCustomField): DeobfuscatedItemExtraField => {
     switch (customField.type) {
         case BitwardenCustomFieldType.TEXT:
             return {

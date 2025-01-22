@@ -20,11 +20,11 @@ import { usePortal } from '@proton/pass/hooks/usePortal';
 import type { ExtraFieldErrors } from '@proton/pass/lib/validation/extra-field';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type {
+    DeobfuscatedItemExtraField,
     ExtraFieldType,
     IdentityFieldName,
     IdentityItemFormValues,
     Maybe,
-    UnsafeItemExtraField,
 } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
@@ -57,7 +57,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
                 });
             }
 
-            helpers.push<UnsafeItemExtraField>(createExtraField(type));
+            helpers.push<DeobfuscatedItemExtraField>(createExtraField(type));
             autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
 

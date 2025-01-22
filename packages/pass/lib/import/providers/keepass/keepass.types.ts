@@ -1,4 +1,4 @@
-import type { MaybeArray, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, MaybeArray } from '@proton/pass/types';
 
 export type KeePassEntryValue = { _ProtectInMemory: string; __text: string } | string;
 
@@ -41,5 +41,5 @@ export type KeePassItem = {
     otpauth?: string;
     totpSeed?: string;
     totpSettings?: string;
-    customFields: UnsafeItemExtraField[];
+    customFields: DeobfuscatedItemExtraField[];
 };

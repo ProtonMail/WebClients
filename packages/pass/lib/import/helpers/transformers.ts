@@ -3,7 +3,14 @@ import { c } from 'ttag';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import type { Item, ItemContent, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
+import type {
+    DeobfuscatedItemExtraField,
+    Item,
+    ItemContent,
+    ItemImportIntent,
+    Maybe,
+    MaybeNull,
+} from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -35,7 +42,7 @@ export const importLoginItem = (options: {
     password?: MaybeNull<string>;
     urls?: Maybe<string>[];
     totp?: MaybeNull<string>;
-    extraFields?: UnsafeItemExtraField[];
+    extraFields?: DeobfuscatedItemExtraField[];
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
