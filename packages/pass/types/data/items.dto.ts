@@ -55,7 +55,7 @@ export type ItemEditIntent<T extends ItemType = ItemType> = Item<T, ItemEditInte
     lastRevision: number;
 };
 
-export type ItemMoveIntent = SelectedItem & { destinationShareId: ShareId };
+export type ItemMoveIntent = SelectedItem & { targetShareId: ShareId };
 
 export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImportIntentDTO> & {
     trashed: boolean;
