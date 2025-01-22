@@ -43,7 +43,7 @@ describe('FeatureTourSteps', () => {
     });
 
     const renderComponent = () => {
-        return renderWithProviders(<FeatureTourSteps onClose={mockOnClose} stepsList={stepsList} />);
+        return renderWithProviders(<FeatureTourSteps onFinishTour={mockOnClose} stepsList={stepsList} />);
     };
 
     it('should show loader while initializing steps', () => {

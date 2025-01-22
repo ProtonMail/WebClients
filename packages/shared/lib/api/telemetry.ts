@@ -23,7 +23,7 @@ export enum TelemetryMeasurementGroups {
     mailSignup = 'mail.web.signup',
     mailComposerAssistant = 'mail.web.composer_assistant',
     mailProtonTips = 'mail.web.proton_tips',
-    mailPostSubscriptionEvents = 'any.web.post_subscription_events',
+    postSubscriptionTourEvents = 'any.web.post_subscription_tour_events',
     mailDesktopDefaultMailto = 'mail.desktop.default_mailto',
     mailDesktopDailyStats = 'mail.desktop.daily_stats',
     mailActions = 'mail.web.clicks_mail_actions',
@@ -60,7 +60,6 @@ export enum TelemetryMailOnboardingEvents {
 export enum TelemetrySubscriptionModalEvents {
     initialization = 'initialization',
     payment = 'payment',
-    postAction = 'post_action',
     cancelledOnSameDay = 'cancelled_on_same_day',
 }
 
@@ -252,10 +251,12 @@ export enum TelemetryDocsEvents {
     suggestion_commented = 'suggestion.comment',
 }
 
-export enum TelemetryMailPostSubscriptionEvents {
+export enum TelemetryPostSubscriptionTourEvents {
+    post_subscription_action = 'post_subscription_action',
+    start_feature_tour = 'start_feature_tour',
+    quit_feature_tour = 'quit_feature_tour',
+    finish_feature_tour = 'finish_feature_tour',
     replaced_default_short_domain_address = 'replaced_default_short_domain_address',
-    modal_engagement = 'modal_engagement',
-    post_subscription_start = 'post_subscription_start',
 }
 
 export type TelemetryEvents =
@@ -288,7 +289,7 @@ export type TelemetryEvents =
     | TelemetryInboxDestkopEvents
     | TelemetryDocsEvents
     | TelemetryCalendarVideoConferencing
-    | TelemetryMailPostSubscriptionEvents;
+    | TelemetryPostSubscriptionTourEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

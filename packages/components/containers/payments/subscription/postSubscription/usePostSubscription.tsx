@@ -63,6 +63,7 @@ export const usePostSubscription = () => {
     const userIsFreeRef = useRef<boolean>(user.isFree);
     const isPostSubscriptionFlowEnabled = useFlag('InboxWebPostSubscriptionFlow');
     const { APP_NAME } = useConfig();
+
     /**
      * Post subscription flow is displayed only if:
      * - User is on an allowed app (app settings included)
@@ -117,6 +118,7 @@ export const usePostSubscription = () => {
                     }}
                     step={step}
                     name={flowName}
+                    upsellRef={upsellRef}
                 />
             );
         },

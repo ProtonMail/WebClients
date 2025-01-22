@@ -71,17 +71,6 @@ const useSubscriptionModalTelemetry = () => {
         });
     };
 
-    const reportPostAction = ({ postAction }: { postAction: 'continue' | 'go_to_settings' }) => {
-        return sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.subscriptionModal,
-            event: TelemetrySubscriptionModalEvents.postAction,
-            dimensions: {
-                post_action_name: postAction,
-            },
-        });
-    };
-
     const reportCancellationOnSameDay = () => {
         return sendTelemetryReport({
             api,
@@ -93,7 +82,6 @@ const useSubscriptionModalTelemetry = () => {
     return {
         reportSubscriptionModalInitialization,
         reportSubscriptionModalPayment,
-        reportPostAction,
         reportCancellationOnSameDay,
     };
 };
