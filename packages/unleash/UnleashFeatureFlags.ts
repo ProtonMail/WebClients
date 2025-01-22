@@ -79,7 +79,6 @@ export enum CommonFeatureFlag {
 }
 
 enum AccountFlag {
-    AccountSessions = 'AccountSessions',
     AccountSettingsUserDisableFE = 'AccountSettingsUserDisableFE',
     MagicLink = 'MagicLink',
     MailTrialOffer = 'MailTrialOffer',
