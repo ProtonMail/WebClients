@@ -21,48 +21,77 @@ export const createAutoSaveService = () => {
     const resolve = withContext<(entry: FormEntry) => AutosavePrompt>((ctx, options) => {
         const { type, data, domain } = options;
 
-        /* If credentials are not valid for the form type : exit early */
+        /* Validate form data completeness before processing */
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
 
         const { userIdentifier, password } = data;
         const state = ctx.service.store.getState();
-        const shareIds = selectWritableShares(state).map(prop('shareId'));
+        const writableShareIds = selectWritableShares(state).map(prop('shareId'));
 
         if (type === 'register') {
-            const candidates = selectAutosaveCandidate({ domain, userIdentifier: '', shareIds })(state);
-            const pwMatch = candidates.filter(matchesLoginPassword(password));
+            /** For registration forms, search for matching entries in the
+             * current domain without specifying a `userIdentifier`. This
+             * will allow detecting partial matches. */
+            const candidates = selectAutosaveCandidate({ domain, shareIds: writableShareIds })(state);
+            const pwMatches = candidates.filter(matchesLoginPassword(password));
 
-            /** Full match must account for userIdentifier & current URL */
-            const fullMatch =
+            /** A complete match requires both:
+             * - A matching `userIdentifier`
+             * - A matching URL (including protocol and port) */
+            const exactMatch =
                 Boolean(userIdentifier) &&
-                pwMatch.some(and(hasUserIdentifier(userIdentifier), matchesLoginURL(options)));
+                pwMatches.some(and(hasUserIdentifier(userIdentifier), matchesLoginURL(options)));
 
-            /* The credentials may have been saved during the password-autosuggest autosave
-             * sequence - as such ensure we don't have an exact username/password match */
-            if (fullMatch) return { shouldPrompt: false };
-            if (pwMatch.length > 0) {
+            /** Skip if exact credentials already exist to prevent duplicates.
+             * This can occur when password autosuggest triggers an autosave
+             * request before this autosave request is processed. */
+            if (exactMatch) return { shouldPrompt: false };
+
+            /** If we found entries that match only by password but not
+             * by full credentials, suggest updating those entries. */
+            if (pwMatches.length > 0) {
                 return {
                     shouldPrompt: true,
-                    data: { type: AutosaveMode.UPDATE, candidates: pwMatch.map(intoLoginItemPreview) },
+                    data: {
+                        type: AutosaveMode.UPDATE,
+                        candidates: pwMatches.map(intoLoginItemPreview),
+                    },
                 };
-            } else return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
+            }
+
+            /** No candidates found - prompt to save as new credentials  */
+            return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
         }
 
-        /* If no login items found for the current domain & the
-         * current username - prompt for autosaving a new entry */
-        const candidates = selectAutosaveCandidate({ domain, userIdentifier, shareIds })(state);
+        /** First check for existing login items across all shares(including
+         * read-only). This will ensure we don't create duplicates when credentials
+         * exist in a read-only vault that the user is currently accessing */
+        const candidates = selectAutosaveCandidate({ domain, userIdentifier })(state);
+
+        /** No candidates found - prompt to save as new credentials */
         if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
 
-        /* If we cannot find an entry which also matches the current submission's
-         * password then we should prompt for update */
-        const match = candidates.some(and(matchesLoginPassword(password), matchesLoginURL(options)));
+        /** If any share (writable or read-only) contains an exact credential
+         * match, skip the autosave prompt to prevent duplicates. */
+        const exactMatch = candidates.some(and(matchesLoginPassword(password), matchesLoginURL(options)));
+        if (exactMatch) return { shouldPrompt: false };
 
-        return match
-            ? { shouldPrompt: false }
-            : {
-                  shouldPrompt: true,
-                  data: { type: AutosaveMode.UPDATE, candidates: candidates.map(intoLoginItemPreview) },
-              };
+        /** Filter on only writable shares for potential updates */
+        const writableCandidates = candidates
+            .filter(({ shareId }) => writableShareIds.includes(shareId))
+            .map(intoLoginItemPreview);
+
+        /* If matching entries were found but passwords or full url differ,
+         * prompt the user to update the existing entries. */
+        if (writableCandidates.length > 0) {
+            return {
+                shouldPrompt: true,
+                data: { type: AutosaveMode.UPDATE, candidates: writableCandidates },
+            };
+        }
+
+        /** No candidates found - prompt to save as new credentials */
+        return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
     });
 
     WorkerMessageBroker.registerMessage(
