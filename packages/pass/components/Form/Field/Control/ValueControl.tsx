@@ -1,5 +1,5 @@
 import type { ComponentType, ElementType, ReactElement } from 'react';
-import { type ReactNode, useMemo, useState } from 'react';
+import { type ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,10 +20,10 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     children?: E extends ComponentType<infer U> ? (U extends { children?: infer C } ? C : never) : ReactNode;
     className?: string;
     clickToCopy?: boolean;
-    clipboardValue?: string;
+    clipboardValue?: string | (() => string);
     disabled?: boolean;
-    error?: boolean;
     ellipsis?: boolean;
+    error?: boolean;
     extra?: ReactNode;
     hidden?: boolean;
     hiddenValue?: string;
@@ -32,6 +32,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     loading?: boolean;
     value?: string;
     valueClassName?: string;
+    onHide?: (hide: boolean) => void;
 };
 
 const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void }) => (
@@ -47,6 +48,8 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
         <Icon size={5} name={hidden ? 'eye' : 'eye-slash'} />
     </Button>
 );
+
+const DEFAULT_HIDDEN_VALUE = '••••••••••••';
 
 /* When passed both children and a value prop:
  * children will be rendered, value will be passed
@@ -68,9 +71,10 @@ export const ValueControl = <E extends ElementType = 'div'>({
     icon,
     label,
     loading = false,
-    onClick,
     value,
     valueClassName,
+    onClick,
+    onHide,
 }: ValueControlProps<E>) => {
     /* we're leveraging type-safety at the consumer level - we're recasting
      * the `as` prop as a generic `ElementType` to avoid switching over all
@@ -80,14 +84,14 @@ export const ValueControl = <E extends ElementType = 'div'>({
     const intrinsicEl = isIntrinsicElement(ValueContainer);
 
     const [hide, setHide] = useState(hidden);
-    const defaultHiddenValue = '••••••••••••';
+    useEffect(() => onHide?.(hide), [onHide, hide]);
 
     const displayValue = useMemo(() => {
         /* intrinsinc elements support nesting custom DOM structure */
         if (intrinsicEl && loading) return <div className="pass-skeleton pass-skeleton--value" />;
         if (intrinsicEl && !value && !children) return <div className="color-weak">{c('Info').t`None`}</div>;
 
-        if (hide) return hiddenValue ?? defaultHiddenValue;
+        if (hide) return hiddenValue ?? DEFAULT_HIDDEN_VALUE;
 
         /* if children are passed: display them - when working with
          * a `ValueContainer` component, we leverage the inherited prop
