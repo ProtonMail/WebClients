@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 
 import { type FeatureTourTelemetryFeature, featureTourActions, selectFeatureTour } from '@proton/account/featuresTour';
 import { remindMeLaterAboutFeatureTourAction } from '@proton/account/featuresTour/actions';
@@ -11,9 +11,11 @@ import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/tele
 import useFlag from '@proton/unleash/useFlag';
 
 import { useModalStateObject } from '../modalTwo/useModalState';
-import FeatureTourSteps from './FeatureTourSteps';
+import FeatureTourLoader from './FeatureTourLoader';
 
 import './FeatureTour.scss';
+
+const FeatureTourSteps = lazy(() => import(/* webpackChunkName: "FeatureTourSteps" */ './FeatureTourSteps'));
 
 const FeatureTour = () => {
     const dispatch = useDispatch();
@@ -84,9 +86,11 @@ const FeatureTour = () => {
     };
 
     return (
-        <Modal {...modalState.modalProps} className="modal-two--feature-tour">
-            <FeatureTourSteps stepsList={featureTourState.steps} onFinishTour={handleFinishFeatureTour} />
-        </Modal>
+        <Suspense fallback={<FeatureTourLoader />}>
+            <Modal {...modalState.modalProps} className="modal-two--feature-tour">
+                <FeatureTourSteps stepsList={featureTourState.steps} onFinishTour={handleFinishFeatureTour} />
+            </Modal>
+        </Suspense>
     );
 };
 
