@@ -70,6 +70,9 @@
       "Copy version number to clipboard": [
         "Скопировать номер версии в буфер обмена"
       ],
+      "Create folder": [
+        "Создать папку"
+      ],
       "Current plan": [
         "Текущий тариф"
       ],
@@ -451,9 +454,6 @@
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
-      "Dark Web Monitoring": [
-        "Мониторинг даркнета"
-      ],
       "Easily add or remove users": [
         "Легко добавлять или удалять участников"
       ],
@@ -514,9 +514,6 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Защитите свои входы на всех ваших устройствах. Включает неограниченное количество псевдонимов hide-my-email, обмен файлами, встроенную двухфакторную аутентификацию, мониторинг даркнета и многое другое."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
@@ -2176,6 +2173,11 @@
         "Терабайтов"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } обновлён"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
@@ -2298,6 +2300,12 @@
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
+      "Address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
+      ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
       ],
@@ -2334,6 +2342,12 @@
       "Country code": [
         "Код страны"
       ],
+      "Create a secure cloud for ${ value } member": [
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
+        "Создать безопасное облако для ${ value } участника"
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
       ],
@@ -2345,6 +2359,9 @@
       ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "default email address": [
+        "адрес эл. почты по умолчанию"
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -2409,6 +2426,9 @@
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
+      "Inherited from parent folder": [
+        "Унаследовано от родительской папки"
+      ],
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
       ],
@@ -2433,8 +2453,14 @@
       "Member": [
         "Член"
       ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "Сообщения на все ваши адреса электронной почты окажутся во Входящих."
+      ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
       "New": [
         "Новый"
@@ -2481,6 +2507,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA-платежи сейчас недоступны. Пожалуйста, попробуйте позже."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -2490,6 +2519,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Начните делиться им с контактами и использовать его для онлайн-сервисов."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
@@ -2498,6 +2530,9 @@
       ],
       "Subscription auto-renews every month.": [
         "Подписка автоматически обновляется каждый месяц."
+      ],
+      "Switch to": [
+        "Переключиться на"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
@@ -2592,6 +2627,9 @@
       "You can now return to the application to continue": [
         "Теперь вы можете вернуться в приложение, чтобы продолжить"
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас пробная подписка на ${ planTitle }. Если вы хотите продолжить подписку после пробного периода, добавьте способ оплаты."
       ],
@@ -2633,6 +2671,11 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Выбранный цвет"
       ]
     },
     "Info for cash payment method": {
@@ -2706,6 +2749,9 @@
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],
+      "Colors": [
+        "Цвета"
+      ],
       "Company name": [
         "Название компании"
       ],
@@ -2748,6 +2794,9 @@
       "First name": [
         "Имя"
       ],
+      "Folder location": [
+        "Размещение папки"
+      ],
       "Hide password": [
         "Скрыть пароль"
       ],
@@ -2762,6 +2811,9 @@
       ],
       "Navigation": [
         "Панель навигации"
+      ],
+      "Notification": [
+        "Уведомление"
       ],
       "Operating system": [
         "Операционная система"
@@ -2835,6 +2887,25 @@
         "Индекс"
       ]
     },
+    "Label/folder modal": {
+      "Create folder": [
+        "Создать папку"
+      ],
+      "Create label": [
+        "Создать ярлык"
+      ],
+      "Edit folder": [
+        "Изменить папку"
+      ],
+      "Edit label": [
+        "Изменить ярлык"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } создан"
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Добавить подарочный код"
@@ -2889,6 +2960,17 @@
       ],
       "for ${ price }": [
         "за ${ price }"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Цвет"
+      ],
+      "Folder name": [
+        "Имя папки"
+      ],
+      "Label name": [
+        "Название ярлыка"
       ]
     },
     "new_plans": {
@@ -3795,6 +3877,11 @@
         "Некоторые изображения не были загружены из-за дублирования имён файлов в текущей выборке."
       ]
     },
+    "Option": {
+      "No parent folder": [
+        "Без родительской папки"
+      ]
+    },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
         "Защищенное хранилище и обмен ссылками"
@@ -3982,6 +4069,9 @@
       ],
       "Search": [
         "Поиск"
+      ],
+      "Search parent folder": [
+        "Искать родительскую папку"
       ],
       "Select": [
         "Выбрать"
@@ -4647,6 +4737,9 @@
       "Summary": [
         "Сводка"
       ],
+      "Upgrade complete!": [
+        "Улучшение выполнено!"
+      ],
       "Verification failed": [
         "Проверка не удалась"
       ],
@@ -4658,6 +4751,9 @@
       ],
       "Wallet": [
         "Кошелёк"
+      ],
+      "Your shorter address is now ready": [
+        "Ваш укороченный адрес готов"
       ]
     },
     "Tooltip": {
@@ -5179,12 +5275,6 @@
       ],
       "Copy Bitcoin address": [
         "Скопировать адрес Bitcoin"
-      ],
-      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
-        "Слишком большая разница между следующим адресом и последним использованным. Используйте один из адресов, созданных ранее"
-      ],
-      "Generate new address": [
-        "Создать новый адрес"
       ]
     },
     "Wallet send": {
