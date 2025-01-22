@@ -27,6 +27,7 @@ export function DriveProvider({ children }: DriveProviderProps) {
                             <DownloadsProvider>
                                 <UploadProvider>
                                     <SearchProvider>
+                                        {/**TODO: Remove provider if albums enabled as useless */}
                                         <PhotosProvider>
                                             <InvitationsStateProvider>{children}</InvitationsStateProvider>
                                         </PhotosProvider>
