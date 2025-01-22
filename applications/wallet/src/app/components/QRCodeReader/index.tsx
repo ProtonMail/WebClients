@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import type { QRCode } from 'jsqr';
 import jsQR from 'jsqr';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
-import { useNotifications } from '@proton/components';
+import { Button, CircleLoader } from '@proton/atoms';
+import { Icon, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 
 interface Props {
@@ -16,9 +16,18 @@ interface Props {
 
 const QRCodeReader = ({ onScan, onError }: Props) => {
     const { createNotification } = useNotifications();
+    const [facingMode, setFacingMode] = useState<'environment' | 'user'>('environment');
     const [loadingCam, withLoadingCam] = useLoading();
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
+
+    const handleSwitchCamera = () => {
+        if (facingMode === 'environment') {
+            setFacingMode('user');
+        } else {
+            setFacingMode('environment');
+        }
+    };
 
     useEffect(() => {
         const video = videoRef.current;
@@ -77,7 +86,7 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
 
         void withLoadingCam(
             navigator.mediaDevices
-                .getUserMedia({ video: { facingMode: 'user' } })
+                .getUserMedia({ video: { facingMode: facingMode } })
                 .then(handleSuccess)
                 .catch(handleError)
         );
@@ -92,7 +101,7 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
                 tracks.forEach((track) => track.stop());
             }
         };
-    }, [createNotification, onError, onScan, withLoadingCam]);
+    }, [createNotification, onError, onScan, withLoadingCam, facingMode]);
 
     return (
         <div>
@@ -105,6 +114,14 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
 
             <video ref={videoRef} autoPlay playsInline className="w-full" />
             <canvas ref={canvasRef} className="hidden" />
+            {!loadingCam && (
+                <Button icon shape="solid" onClick={() => handleSwitchCamera()}>
+                    <span>
+                        <Icon name={'camera'} size={5} />
+                        <Icon name={'arrows-switch'} className={'ml-2'} size={5} />
+                    </span>
+                </Button>
+            )}
         </div>
     );
 };
