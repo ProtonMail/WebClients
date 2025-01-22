@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import type { IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityValues } from '@proton/pass/types';
 
 import type { IdentityFormField } from './useIdentityForm';
 import { getIdentityFields, getInitialSections } from './utils';
@@ -8,7 +8,7 @@ import { getIdentityFields, getInitialSections } from './utils';
 type IdentitySectionContent = { name: string; fields: IdentitySectionField[] };
 type IdentitySectionField = Omit<IdentityFormField, 'name' | 'placeholder'> & { value: string; hidden?: boolean };
 
-const presentExtraField = (field: UnsafeItemExtraField): IdentitySectionField => ({
+const presentExtraField = (field: DeobfuscatedItemExtraField): IdentitySectionField => ({
     label: field.fieldName,
     value: field.type !== 'totp' ? field.data.content : '',
     hidden: field.type === 'hidden',

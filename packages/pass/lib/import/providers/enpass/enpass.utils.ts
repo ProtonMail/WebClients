@@ -1,6 +1,6 @@
 import type { EnpassCategory, EnpassItem } from '@proton/pass/lib/import/providers/enpass/enpass.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName, ItemContent, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '@proton/pass/types';
 
 import type { EnpassField } from './enpass.types';
 
@@ -66,7 +66,7 @@ export const extractEnpassFactory = <K extends string>(keys: readonly K[]) => {
 export const extractEnpassLogin = extractEnpassFactory(ENPASS_FIELD_TYPES.login);
 export const extractEnpassCC = extractEnpassFactory(ENPASS_FIELD_TYPES.creditCard);
 
-export const extractEnpassExtraFields = (fields: EnpassField[]): UnsafeItemExtraField[] =>
+export const extractEnpassExtraFields = (fields: EnpassField[]): DeobfuscatedItemExtraField[] =>
     fields.map(({ value, label, sensitive }) => ({
         data: { content: value },
         fieldName: label,

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button, type ButtonProps } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
-import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ExtraFieldType } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import clsx from '@proton/utils/clsx';
 
@@ -23,12 +23,12 @@ type ExtraFieldOption = {
     placeholder: string;
 };
 
-type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<UnsafeItemExtraField<T>>;
+type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<DeobfuscatedItemExtraField<T>>;
 
 export type ExtraFieldProps = FieldBoxProps &
     Omit<BaseTextFieldProps & BaseTextAreaFieldProps, 'field' | 'placeholder' | 'error'> & {
         type: ExtraFieldType;
-        field: FieldInputProps<UnsafeItemExtraField>;
+        field: FieldInputProps<DeobfuscatedItemExtraField>;
         error?: ExtraFieldError<ExtraFieldType>;
         touched?: boolean;
         showIcon?: boolean;
@@ -78,7 +78,9 @@ export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
     const { icon, placeholder } = getExtraFieldOption(type);
 
     const onChangeHandler =
-        (merge: (evt: ChangeEvent<HTMLInputElement>, field: UnsafeItemExtraField) => UnsafeItemExtraField) =>
+        (
+            merge: (evt: ChangeEvent<HTMLInputElement>, field: DeobfuscatedItemExtraField) => DeobfuscatedItemExtraField
+        ) =>
         (evt: ChangeEvent<HTMLInputElement>) => {
             void rest.form.setFieldValue(field.name, merge(evt, field.value));
         };

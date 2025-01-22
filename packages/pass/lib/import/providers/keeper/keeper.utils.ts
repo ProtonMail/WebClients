@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ItemContent } from '@proton/pass/types';
 
 import type { KeeperCustomFieldValue, KeeperCustomFields, KeeperItem } from './keeper.types';
 
 const keeperCustomFieldToExtraField = (
     customField: [string, KeeperCustomFieldValue]
-): UnsafeItemExtraField | UnsafeItemExtraField[] => {
+): DeobfuscatedItemExtraField | DeobfuscatedItemExtraField[] => {
     const [label, value] = customField;
     const isHidden = label.startsWith('$secret:');
     const isObject = typeof value === 'object';

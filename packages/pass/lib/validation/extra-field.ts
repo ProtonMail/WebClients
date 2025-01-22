@@ -3,10 +3,10 @@ import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import type { ExtraFieldGroupValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
-export type ExtraFieldErrors = FormikErrors<UnsafeItemExtraField>;
+export type ExtraFieldErrors = FormikErrors<DeobfuscatedItemExtraField>;
 
 export const validateExtraFields = <T extends ExtraFieldGroupValues>(values: T) => {
     const errors = values.extraFields.map((field) => {
