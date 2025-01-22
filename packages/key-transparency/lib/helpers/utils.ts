@@ -80,13 +80,21 @@ export const ktKeyVerificationFailureTelemetryAndMetrics = (api: Api, visible: b
     });
 };
 
+const sanitizeErrorMessage = (errorMessage: string) => {
+    // This sanitizes the error message when it includes the key fingerprint. That causes issues because it disables sentry grouping since it's unique.
+    // For example:
+    //   [KeyTransparency] Error: Error signing message: Could not find valid self-signature in key f754fe8c2a2cc64f: Signature creation time is in the future
+    const stripRegex = / in key [^:]+/;
+    return errorMessage.replace(stripRegex, '');
+};
+
 /**
  * Helper to send KT-related sentry reports
  */
 export const ktSentryReport = (errorMessage: string, extra?: { [key: string]: any }) => {
     const isoServerTime = serverTime().toISOString();
     const extraWithServerTime = { ...extra, server_time: isoServerTime };
-    captureMessage(`[KeyTransparency] ${errorMessage}`, { extra: extraWithServerTime });
+    captureMessage(`[KeyTransparency] ${sanitizeErrorMessage(errorMessage)}`, { extra: extraWithServerTime });
 };
 
 /**
