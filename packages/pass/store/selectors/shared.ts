@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { searchItems } from '@proton/pass/lib/search/match-items';
+import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import type { State } from '@proton/pass/store/types';
 import { type SelectedItem } from '@proton/pass/types';
 
@@ -30,7 +31,7 @@ const selectSharedByMe = createSelector([selectAllItems, selectShares], (items, 
     const sharedByMe = items.filter(({ shareId, shareCount = 0 }) => {
         if (shareCount <= 0) return false;
         const share = shares?.[shareId];
-        return share && share.owner;
+        return share && isShareManageable(share);
     });
 
     return sortItems('recent')(sharedByMe);
