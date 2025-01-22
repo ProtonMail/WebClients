@@ -2,16 +2,16 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { type DecryptedLink, useActions } from '../../../store';
+import type { DecryptedLink, useActions } from '../../../store';
 import { useRenameModal } from '../../modals/RenameModal';
 import { isMultiSelect, noSelection } from './utils';
 
-interface Props {
+interface RenameButtonProps {
     selectedLinks: DecryptedLink[];
+    renameLink: ReturnType<typeof useActions>['renameLink'];
 }
 
-const RenameButton = ({ selectedLinks }: Props) => {
-    const { renameLink } = useActions();
+const RenameButton = ({ selectedLinks, renameLink }: RenameButtonProps) => {
     const [renameModal, showRenameModal] = useRenameModal();
 
     if (noSelection(selectedLinks) || isMultiSelect(selectedLinks)) {

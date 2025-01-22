@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
-import type { DecryptedLink } from '../../../store';
+import { type DecryptedLink, useActions } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -25,6 +25,7 @@ interface Props {
 
 const SharedLinksToolbar = ({ shareId, items }: Props) => {
     const selectionControls = useSelection()!;
+    const { renameLink } = useActions();
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds),
         [items, selectionControls!.selectedItemIds]
@@ -46,7 +47,7 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                 <OpenInDocsButton selectedBrowserItems={selectedItems} />
                 <DownloadButton selectedBrowserItems={selectedItems} />
                 <Vr />
-                <RenameButton selectedLinks={selectedItems} />
+                <RenameButton selectedLinks={selectedItems} renameLink={renameLink} />
                 <DetailsButton selectedBrowserItems={selectedItems} />
                 {isOnlyOneItem && <Vr />}
                 <ShareLinkButton selectedLinks={selectedItems} />
