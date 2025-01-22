@@ -5,6 +5,7 @@ import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
     BulkSelectionDTO,
+    DeobfuscatedItem,
     IdentityItemPreview,
     ItemRevision,
     ItemRevisionID,
@@ -16,7 +17,6 @@ import type {
     SelectedItem,
     SelectedRevision,
     UniqueItem,
-    UnsafeItem,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
@@ -187,7 +187,7 @@ export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): Identit
 export const getSanitizedUserIdentifiers = ({
     itemEmail,
     itemUsername,
-}: Pick<UnsafeItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
+}: Pick<DeobfuscatedItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
     const validEmail = PassCoreUI.is_email_valid(itemEmail);
     const emailUsername = PassCoreUI.is_email_valid(itemUsername);
 

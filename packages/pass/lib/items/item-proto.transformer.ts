@@ -1,14 +1,14 @@
 import { parsePasskey } from '@proton/pass/lib/passkeys/utils';
 import { formatExpirationDateYYYYMM } from '@proton/pass/lib/validation/credit-card';
 import type {
+    DeobfuscatedItem,
+    DeobfuscatedItemExtraField,
     ExtraField,
     Item,
     ItemRevision,
     OpenedItem,
     SafeProtobufExtraField,
     SafeProtobufItem,
-    UnsafeItem,
-    UnsafeItemExtraField,
 } from '@proton/pass/types';
 import { ProtobufItem } from '@proton/pass/types';
 import type { ItemCreditCard, ItemIdentity } from '@proton/pass/types/protobuf/item-v1';
@@ -17,7 +17,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 
-const protobufSafeToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): UnsafeItemExtraField => {
+const protobufSafeToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): DeobfuscatedItemExtraField => {
     switch (field.content.oneofKind) {
         case 'text':
             return {
@@ -42,7 +42,7 @@ const protobufSafeToExtraField = ({ fieldName, ...field }: SafeProtobufExtraFiel
     }
 };
 
-const protobufToCreditCardContent = (creditCard: ItemCreditCard): UnsafeItem<'creditCard'>['content'] => ({
+const protobufToCreditCardContent = (creditCard: ItemCreditCard): DeobfuscatedItem<'creditCard'>['content'] => ({
     ...creditCard,
     number: creditCard.number,
     verificationNumber: creditCard.verificationNumber,
@@ -51,10 +51,10 @@ const protobufToCreditCardContent = (creditCard: ItemCreditCard): UnsafeItem<'cr
 });
 
 const parseUnsafeExtraField =
-    (converter: (s: SafeProtobufExtraField) => UnsafeItemExtraField) => (extraField: ExtraField) =>
+    (converter: (s: SafeProtobufExtraField) => DeobfuscatedItemExtraField) => (extraField: ExtraField) =>
         converter(extraField as SafeProtobufExtraField);
 
-const protobufToIdentityContent = (identity: ItemIdentity): UnsafeItem<'identity'>['content'] => ({
+const protobufToIdentityContent = (identity: ItemIdentity): DeobfuscatedItem<'identity'>['content'] => ({
     ...identity,
     extraAddressDetails: identity.extraAddressDetails.map(parseUnsafeExtraField(protobufSafeToExtraField)),
     extraContactDetails: identity.extraContactDetails.map(parseUnsafeExtraField(protobufSafeToExtraField)),
@@ -66,7 +66,7 @@ const protobufToIdentityContent = (identity: ItemIdentity): UnsafeItem<'identity
     })),
 });
 
-export const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
+export const protobufToItem = (item: SafeProtobufItem): DeobfuscatedItem => {
     const { platformSpecific, metadata, content: itemContent } = item;
 
     const base = {
@@ -97,7 +97,7 @@ export const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
     }
 };
 
-const extraFieldToProtobuf = ({ fieldName, ...extraField }: UnsafeItemExtraField): SafeProtobufExtraField => {
+const extraFieldToProtobuf = ({ fieldName, ...extraField }: DeobfuscatedItemExtraField): SafeProtobufExtraField => {
     switch (extraField.type) {
         case 'text':
             return {
@@ -128,7 +128,7 @@ const extraFieldToProtobuf = ({ fieldName, ...extraField }: UnsafeItemExtraField
     }
 };
 
-const creditCardContentToProtobuf = (creditCard: UnsafeItem<'creditCard'>['content']): ItemCreditCard => ({
+const creditCardContentToProtobuf = (creditCard: DeobfuscatedItem<'creditCard'>['content']): ItemCreditCard => ({
     ...creditCard,
     expirationDate: formatExpirationDateYYYYMM(creditCard.expirationDate),
     number: creditCard.number,
@@ -136,7 +136,7 @@ const creditCardContentToProtobuf = (creditCard: UnsafeItem<'creditCard'>['conte
     pin: creditCard.pin,
 });
 
-const identityContentToProtobuf = (identity: UnsafeItem<'identity'>['content']): ItemIdentity => ({
+const identityContentToProtobuf = (identity: DeobfuscatedItem<'identity'>['content']): ItemIdentity => ({
     ...identity,
     extraAddressDetails: identity.extraAddressDetails.map(extraFieldToProtobuf),
     extraContactDetails: identity.extraContactDetails.map(extraFieldToProtobuf),
@@ -148,7 +148,7 @@ const identityContentToProtobuf = (identity: UnsafeItem<'identity'>['content']):
     })),
 });
 
-const itemToProtobuf = (item: UnsafeItem): SafeProtobufItem => {
+const itemToProtobuf = (item: DeobfuscatedItem): SafeProtobufItem => {
     const { platformSpecific, metadata } = item;
 
     const base = {
