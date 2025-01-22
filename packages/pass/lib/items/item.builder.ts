@@ -1,11 +1,11 @@
 import type {
+    DeobfuscatedItem,
+    DeobfuscatedItemContent,
+    DeobfuscatedItemExtraField,
     Item,
     ItemType,
     MaybeNull,
     Metadata,
-    UnsafeItem,
-    UnsafeItemContent,
-    UnsafeItemExtraField,
 } from '@proton/pass/types';
 import { CardType, type PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
 import { type ObjectHandler, objectHandler } from '@proton/pass/utils/object/handler';
@@ -16,13 +16,13 @@ import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 export const itemMetaFactory = (): ObjectHandler<Metadata> =>
     objectHandler({ name: '', note: '', itemUuid: uniqueId() });
 
-export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<UnsafeItemContent<T>>>(type: T): R => {
+export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<DeobfuscatedItemContent<T>>>(type: T): R => {
     switch (type) {
         case 'alias': {
-            return objectHandler<UnsafeItemContent<'alias'>>({}) as R;
+            return objectHandler<DeobfuscatedItemContent<'alias'>>({}) as R;
         }
         case 'creditCard': {
-            return objectHandler<UnsafeItemContent<'creditCard'>>({
+            return objectHandler<DeobfuscatedItemContent<'creditCard'>>({
                 cardholderName: '',
                 cardType: CardType.Unspecified,
                 number: '',
@@ -32,7 +32,7 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<UnsafeI
             }) as R;
         }
         case 'login': {
-            return objectHandler<UnsafeItemContent<'login'>>({
+            return objectHandler<DeobfuscatedItemContent<'login'>>({
                 urls: [],
                 passkeys: [],
                 itemEmail: '',
@@ -42,10 +42,10 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<UnsafeI
             }) as R;
         }
         case 'note': {
-            return objectHandler<UnsafeItemContent<'note'>>({}) as R;
+            return objectHandler<DeobfuscatedItemContent<'note'>>({}) as R;
         }
         case 'identity': {
-            return objectHandler<UnsafeItemContent<'identity'>>({
+            return objectHandler<DeobfuscatedItemContent<'identity'>>({
                 fullName: '',
                 email: '',
                 phoneNumber: '',
@@ -93,15 +93,15 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<UnsafeI
 type ItemBuilderInterface<T extends ItemType = ItemType> = {
     [K in T]: {
         type: K;
-        content: ObjectHandler<UnsafeItemContent<K>>;
+        content: ObjectHandler<DeobfuscatedItemContent<K>>;
         metadata: ObjectHandler<Metadata>;
-        extraFields: UnsafeItemExtraField[];
+        extraFields: DeobfuscatedItemExtraField[];
         platformSpecific?: PlatformSpecific;
     };
 }[T];
 
 export const itemBuilder = <T extends ItemType>(type: T, from?: Item<T>) => {
-    const init = (from ? deobfuscateItem(from as Item) : null) as MaybeNull<UnsafeItem>;
+    const init = (from ? deobfuscateItem(from as Item) : null) as MaybeNull<DeobfuscatedItem>;
 
     return objectHandler<ItemBuilderInterface<T>, Item<T>>(
         {
@@ -116,7 +116,7 @@ export const itemBuilder = <T extends ItemType>(type: T, from?: Item<T>) => {
                 ...item,
                 content: item.content.data,
                 metadata: item.metadata.data,
-            } as UnsafeItem)
+            } as DeobfuscatedItem)
     );
 };
 

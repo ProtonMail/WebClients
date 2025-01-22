@@ -4,7 +4,7 @@ import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
-import type { ExtraFieldGroupValues, ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues, ExtraFieldType } from '@proton/pass/types';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 import { Field } from '../Field';
@@ -14,7 +14,7 @@ import { ExtraFieldComponent } from './ExtraField';
 
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
 
-export const createExtraField = <T extends ExtraFieldType>(type: T): UnsafeItemExtraField => {
+export const createExtraField = <T extends ExtraFieldType>(type: T): DeobfuscatedItemExtraField => {
     switch (type) {
         case 'text':
         case 'hidden':
@@ -51,7 +51,9 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
                                         type={type}
                                         /* Formik TS type are wrong for FormikTouched */
                                         touched={(form.touched.extraFields as unknown as boolean[])?.[index]}
-                                        error={form.errors.extraFields?.[index] as FormikErrors<UnsafeItemExtraField>}
+                                        error={
+                                            form.errors.extraFields?.[index] as FormikErrors<DeobfuscatedItemExtraField>
+                                        }
                                     />
                                 ))}
                             </FieldsetCluster>

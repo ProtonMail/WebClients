@@ -6,7 +6,7 @@ export enum DeobfuscateMode {
     MANUAL,
 }
 
-export type ObfuscatedItemProperty<Mode extends DeobfuscateMode> = Tagged<XorObfuscation, Mode>;
+export type ObfuscatedItemProperty<Mode extends DeobfuscateMode = DeobfuscateMode> = Tagged<XorObfuscation, Mode>;
 
 export type Obfuscate<T, Auto extends keyof T, Manual extends keyof T> = Omit<T, Auto | Manual> & {
     [Obf in Auto]: ObfuscatedItemProperty<DeobfuscateMode.AUTO>;

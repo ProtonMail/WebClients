@@ -1,15 +1,16 @@
-import type { Item, ItemExtraField, ItemType, UnsafeItem, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItem, DeobfuscatedItemExtraField, Item, ItemExtraField, ItemType } from '@proton/pass/types';
+import type { DeobfuscateMode } from '@proton/pass/types/data/obfuscation';
 import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
-export const obfuscateExtraFields = (extraFields?: UnsafeItemExtraField[]): ItemExtraField[] =>
+export const obfuscateExtraFields = (extraFields?: DeobfuscatedItemExtraField[]): ItemExtraField[] =>
     extraFields?.map((field) =>
         field.type === 'totp'
             ? { ...field, data: { totpUri: obfuscate(field.data.totpUri) } }
             : { ...field, data: { content: obfuscate(field.data.content) } }
     ) ?? [];
 
-export const deobfuscateExtraFields = (extraFields?: ItemExtraField[]): UnsafeItemExtraField[] =>
-    extraFields?.map((extraField): UnsafeItemExtraField => {
+export const deobfuscateExtraFields = (extraFields?: ItemExtraField[]): DeobfuscatedItemExtraField[] =>
+    extraFields?.map((extraField): DeobfuscatedItemExtraField => {
         switch (extraField.type) {
             case 'totp':
                 return {
@@ -24,7 +25,7 @@ export const deobfuscateExtraFields = (extraFields?: ItemExtraField[]): UnsafeIt
         }
     }) ?? [];
 
-export const obfuscateItem = <T extends ItemType = ItemType>(item: UnsafeItem): Item<T> => {
+export const obfuscateItem = <T extends ItemType = ItemType>(item: DeobfuscatedItem): Item<T> => {
     const base = {
         metadata: { ...item.metadata, note: obfuscate(item.metadata.note) },
         extraFields: obfuscateExtraFields(item.extraFields),
@@ -64,7 +65,7 @@ export const obfuscateItem = <T extends ItemType = ItemType>(item: UnsafeItem): 
     }
 };
 
-export const deobfuscateItem = <T extends ItemType>(item: Item): UnsafeItem<T> => {
+export const deobfuscateItem = <T extends ItemType>(item: Item): DeobfuscatedItem<T> => {
     const base = {
         metadata: { ...item.metadata, note: deobfuscate(item.metadata.note) },
         extraFields: deobfuscateExtraFields(item.extraFields),
@@ -82,7 +83,7 @@ export const deobfuscateItem = <T extends ItemType>(item: Item): UnsafeItem<T> =
                     password: deobfuscate(item.content.password),
                     totpUri: deobfuscate(item.content.totpUri),
                 },
-            } satisfies UnsafeItem<'login'> as UnsafeItem<T>;
+            } satisfies DeobfuscatedItem<'login'> as DeobfuscatedItem<T>;
         case 'creditCard':
             return {
                 ...item,
@@ -93,13 +94,44 @@ export const deobfuscateItem = <T extends ItemType>(item: Item): UnsafeItem<T> =
                     verificationNumber: deobfuscate(item.content.verificationNumber),
                     pin: deobfuscate(item.content.pin),
                 },
-            } satisfies UnsafeItem<'creditCard'> as UnsafeItem<T>;
+            } satisfies DeobfuscatedItem<'creditCard'> as DeobfuscatedItem<T>;
 
         case 'note':
-            return { ...item, ...base } satisfies UnsafeItem<'note'> as UnsafeItem<T>;
+            return { ...item, ...base } satisfies DeobfuscatedItem<'note'> as DeobfuscatedItem<T>;
         case 'alias':
-            return { ...item, ...base } satisfies UnsafeItem<'alias'> as UnsafeItem<T>;
+            return { ...item, ...base } satisfies DeobfuscatedItem<'alias'> as DeobfuscatedItem<T>;
         case 'identity':
-            return { ...item, ...base } satisfies UnsafeItem<'identity'> as UnsafeItem<T>;
+            return { ...item, ...base } satisfies DeobfuscatedItem<'identity'> as DeobfuscatedItem<T>;
+    }
+};
+
+export const deobfuscateItemPartial = <T extends ItemType, R = DeobfuscatedItem<T, DeobfuscateMode.AUTO>>(
+    item: Item
+): R => {
+    const base = {
+        metadata: { ...item.metadata, note: deobfuscate(item.metadata.note) },
+        extraFields: deobfuscateExtraFields(item.extraFields),
+    };
+
+    switch (item.type) {
+        case 'login':
+            return {
+                ...item,
+                ...base,
+                content: {
+                    ...item.content,
+                    itemEmail: deobfuscate(item.content.itemEmail),
+                    itemUsername: deobfuscate(item.content.itemUsername),
+                    totpUri: deobfuscate(item.content.totpUri),
+                },
+            } satisfies DeobfuscatedItem<'login', DeobfuscateMode.AUTO> as R;
+        case 'creditCard':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'creditCard', DeobfuscateMode.AUTO> as R;
+        case 'note':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'note', DeobfuscateMode.AUTO> as R;
+        case 'alias':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'alias', DeobfuscateMode.AUTO> as R;
+        case 'identity':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'identity', DeobfuscateMode.AUTO> as R;
     }
 };

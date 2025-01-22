@@ -11,7 +11,7 @@ import {
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { extractFirst } from '@proton/pass/utils/array/extract-first';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -44,7 +44,7 @@ const processLoginItem = (
 ): ItemImportIntent<'login'> => {
     const [totp, extraFields] = extractFirst(
         extract1PasswordExtraFields(item),
-        (extraField): extraField is UnsafeItemExtraField<'totp'> => extraField.type === 'totp'
+        (extraField): extraField is DeobfuscatedItemExtraField<'totp'> => extraField.type === 'totp'
     );
 
     return importLoginItem({

@@ -2,7 +2,7 @@ import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { validateItemErrors } from '@proton/pass/lib/validation/item';
-import type { IdentityItemFormValues, IdentitySectionFormValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, IdentityItemFormValues, IdentitySectionFormValues } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import type { ExtraFieldErrors } from './extra-field';
@@ -14,7 +14,7 @@ const EXTRA_FIELD_KEYS = [
     'extraWorkDetails',
 ] as const;
 
-const validateExtraField = ({ fieldName }: UnsafeItemExtraField): ExtraFieldErrors => {
+const validateExtraField = ({ fieldName }: DeobfuscatedItemExtraField): ExtraFieldErrors => {
     const errors: ExtraFieldErrors = {};
     if (isEmptyString(fieldName)) errors.fieldName = c('Validation').t`Field name is required`;
     return errors;
