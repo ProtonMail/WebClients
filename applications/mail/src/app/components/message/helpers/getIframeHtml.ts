@@ -66,7 +66,7 @@ const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVar
           ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''}
           <div ${
               isPrint ? 'class="proton-print-content reset4print"' : ''
-          } style="display: flex !important; width: 100% !important;">
+          } style="display: block !important; width: 100% !important;">
           <div style="width: 100% !important;padding-bottom:10px;!important">
             ${bodyStyles || bodyClasses ? `<div class="${bodyClasses}" style="${bodyStyles}">` : ''}
             ${emailContent}
