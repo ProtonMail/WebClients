@@ -204,3 +204,35 @@ export const generateDriveBootstrap = async (addressPrivateKey: PrivateKeyRefere
         folderPrivateKey,
     };
 };
+
+export const generateAlbumsBootstrap = async (addressPrivateKey: PrivateKeyReference) => {
+    const {
+        NodeKey: ShareKey,
+        NodePassphrase: SharePassphrase,
+        privateKey: sharePrivateKey,
+        NodePassphraseSignature: SharePassphraseSignature,
+    } = await generateNodeKeys(addressPrivateKey);
+
+    const {
+        NodeKey: AlbumKey,
+        NodePassphrase: FolderPassphrase,
+        privateKey: albumPrivateKey,
+        NodePassphraseSignature: FolderPassphraseSignature,
+    } = await generateNodeKeys(sharePrivateKey, addressPrivateKey);
+
+    const AlbumName = await encryptName('PhotosRoot', sharePrivateKey, addressPrivateKey);
+
+    return {
+        bootstrap: {
+            SharePassphrase,
+            SharePassphraseSignature,
+            FolderPassphrase,
+            FolderPassphraseSignature,
+            ShareKey,
+            AlbumKey,
+            AlbumName,
+        },
+        sharePrivateKey,
+        albumPrivateKey,
+    };
+};

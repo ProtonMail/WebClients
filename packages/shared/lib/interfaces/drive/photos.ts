@@ -18,3 +18,18 @@ export interface DuplicatePhotosHash {
     LinkID: string;
     RevisionID: number;
 }
+
+export interface CreateAlbum {
+    Locked: boolean;
+    Link: {
+        Name: string;
+        Hash: string;
+        ParentLinkID: string;
+        NodePassphrase: string;
+        NodePassphraseSignature: string;
+        SignatureAddress: string;
+        NodeKey: string;
+        NodeHashKey: string;
+        XAttr?: string;
+    };
+}

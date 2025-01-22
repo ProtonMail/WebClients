@@ -60,3 +60,20 @@ export interface ListDriveVolumeSharedLinksPayload {
         LinkIDs: string[];
     }[];
 }
+
+export interface CreateDrivePhotosWithAlbumsVolume {
+    Share: {
+        AddressID: string;
+        AddressKeyID: string;
+        Key: string;
+        Passphrase: string;
+        PassphraseSignature: string;
+    };
+    Link: {
+        Name: string;
+        NodeKey: string;
+        NodePassphrase: string;
+        NodePassphraseSignature: string;
+        NodeHashKey: string;
+    };
+}
