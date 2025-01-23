@@ -15,6 +15,29 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
   const searchParams = new URLSearchParams(search)
   const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams))
 
+  /**
+   * Changes the URL of the page only visually, without causing any navigation or changing
+   * state that is read by other components
+   */
+  const changeURLVisually = useCallback((action: DocumentAction) => {
+    if (action.mode !== 'open' && action.mode !== 'open-url') {
+      return
+    }
+    const newURL = new URL(location.href)
+    newURL.search = ''
+    newURL.hash = ''
+    newURL.searchParams.set('linkId', action.linkId)
+    if (action.mode === 'open') {
+      newURL.searchParams.set('mode', 'open')
+      newURL.searchParams.set('volumeId', action.volumeId)
+    } else if (action.mode === 'open-url') {
+      newURL.searchParams.set('mode', 'open-url')
+      newURL.searchParams.set('token', action.token)
+      newURL.hash = action.urlPassword
+    }
+    history.replaceState(null, '', newURL)
+  }, [])
+
   const updateParameters = useCallback((params: { newVolumeId: string; newLinkId: string; pathname?: 'doc' }) => {
     setOpenAction({
       mode: 'open',
@@ -88,5 +111,6 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
     removeActionFromUrl,
     navigateToAction,
     linkId: openAction && 'linkId' in openAction ? openAction.linkId : undefined,
+    changeURLVisually,
   }
 }
