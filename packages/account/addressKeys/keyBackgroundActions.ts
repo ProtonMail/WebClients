@@ -1,17 +1,11 @@
-import { useEffect } from 'react';
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetOrganization } from '@proton/account/organization/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useGetKTActivation } from '@proton/components/containers/keyTransparency/useKTActivation';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
+import { createKTVerifier, createKeyMigrationKTVerifier } from '@proton/key-transparency';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import { createKeyMigrationKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     activateMemberAddressKeys,
     generateAllPrivateMemberKeys,
@@ -24,47 +18,50 @@ import {
     migrateUser,
     updateActiveKeys,
 } from '@proton/shared/lib/keys';
-import { useGetFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import useApi from '../../hooks/useApi';
+import { type AddressesState, addressesThunk } from '../addresses';
+import type { KtState } from '../kt';
+import { getKTActivation } from '../kt/actions';
+import { type OrganizationState, organizationThunk } from '../organization';
+import { type UserState, userThunk } from '../user';
+import { type UserKeysState, userKeysThunk } from '../userKeys';
+import { type AddressKeysState, addressKeysThunk } from './index';
 
-interface Props {
-    hasPrivateMemberKeyGeneration?: boolean;
-    hasReadableMemberKeyActivation?: boolean;
-    hasMemberKeyMigration?: boolean;
-}
+export const runKeyBackgroundManager = (): ThunkAction<
+    Promise<void>,
+    UserState & KtState & AddressesState & AddressKeysState & UserKeysState & OrganizationState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, _, extra) => {
+        const authentication = extra.authentication;
+        const api = extra.api;
+        const silentApi = getSilentApi(api);
 
-const KeyBackgroundManager = ({
-    hasPrivateMemberKeyGeneration = false,
-    hasReadableMemberKeyActivation = false,
-    hasMemberKeyMigration = false,
-}: Props) => {
-    const getUser = useGetUser();
-    const getUserKeys = useGetUserKeys();
-    const getAddresses = useGetAddresses();
-    const getAddressKeys = useGetAddressKeys();
-    const getOrganization = useGetOrganization();
-    const authentication = useAuthentication();
-    const { call } = useEventManager();
-    const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
-    const getKTActivation = useGetKTActivation();
-    const getFlag = useGetFlag();
+        if (extra.config.APP_NAME === APPS.PROTONVPN_SETTINGS) {
+            return;
+        }
 
-    useEffect(() => {
+        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
+            ktActivation: dispatch(getKTActivation()),
+            api,
+            config: extra.config,
+        });
+
         const run = async () => {
-            const [user, userKeys, addresses] = await Promise.all([getUser(), getUserKeys(), getAddresses()]);
+            const [user, userKeys, addresses] = await Promise.all([
+                dispatch(userThunk()),
+                dispatch(userKeysThunk()),
+                dispatch(addressesThunk()),
+            ]);
             const keyPassword = authentication.getPassword();
 
-            const addressesWithKeysToActivate = hasReadableMemberKeyActivation
-                ? getAddressesWithKeysToActivate(user, addresses)
-                : [];
+            const addressesWithKeysToActivate = getAddressesWithKeysToActivate(user, addresses);
             const activationPromise = addressesWithKeysToActivate.length
                 ? Promise.all(
                       addressesWithKeysToActivate.map(async (address) => {
-                          const addressKeys = await getAddressKeys(address.ID);
+                          const addressKeys = await dispatch(addressKeysThunk({ addressID: address.ID }));
                           return activateMemberAddressKeys({
                               address,
                               addresses,
@@ -77,15 +74,13 @@ const KeyBackgroundManager = ({
                       })
                   )
                       .then(async () => {
-                          await keyTransparencyCommit(userKeys);
-                          await call();
+                          await keyTransparencyCommit(user, userKeys);
+                          await extra.eventManager.call();
                       })
                       .catch(traceError)
                 : undefined;
 
-            const addressesWithKeysToGenerate = hasPrivateMemberKeyGeneration
-                ? getAddressesWithKeysToGenerate(user, addresses)
-                : [];
+            const addressesWithKeysToGenerate = getAddressesWithKeysToGenerate(user, addresses);
             const generationPromise = addressesWithKeysToGenerate.length
                 ? generateAllPrivateMemberKeys({
                       addresses,
@@ -96,8 +91,8 @@ const KeyBackgroundManager = ({
                       keyTransparencyVerify,
                   })
                       .then(async () => {
-                          await keyTransparencyCommit(userKeys);
-                          await call();
+                          await keyTransparencyCommit(user, userKeys);
+                          await extra.eventManager.call();
                       })
                       .catch(traceError)
                 : undefined;
@@ -106,10 +101,10 @@ const KeyBackgroundManager = ({
 
         const runMigration = async () => {
             const [user, organization, addresses, userKeys] = await Promise.all([
-                getUser(),
-                getOrganization(),
-                getAddresses(),
-                getUserKeys(),
+                dispatch(userThunk()),
+                dispatch(organizationThunk()),
+                dispatch(addressesThunk()),
+                dispatch(userKeysThunk()),
             ]);
 
             if (!(user.ToMigrate === 1 || organization.ToMigrate === 1)) {
@@ -118,7 +113,7 @@ const KeyBackgroundManager = ({
 
             const keyPassword = authentication.getPassword();
             let hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
-            const ktActivation = await getKTActivation();
+            const ktActivation = dispatch(getKTActivation());
             const keyMigrationKTVerifier = createKeyMigrationKTVerifier(ktActivation);
 
             const hasDoneMigration = await migrateUser({
@@ -131,9 +126,9 @@ const KeyBackgroundManager = ({
             });
 
             if (hasDoneMigration) {
-                await keyTransparencyCommit(userKeys);
+                await keyTransparencyCommit(user, userKeys);
                 // Force a refresh directly so they're good to be used
-                await call();
+                await extra.eventManager.call();
                 hasMigratedAddressKeys = true;
             }
 
@@ -147,22 +142,22 @@ const KeyBackgroundManager = ({
                     keyMigrationKTVerifier,
                 });
 
-                if (typeof hasDoneAddressKeysMigration === 'undefined') {
-                    await keyTransparencyCommit(userKeys);
+                if (hasDoneAddressKeysMigration) {
+                    await keyTransparencyCommit(user, userKeys);
                 }
             }
         };
 
         const runActiveKeysCheck = async () => {
-            const runActiveKeysCheckFlag = getFlag('CryptoDisableUndecryptableKeys');
+            const runActiveKeysCheckFlag = extra.unleashClient.isEnabled('CryptoDisableUndecryptableKeys');
             if (!runActiveKeysCheckFlag) {
                 return;
             }
             try {
-                const addresses = await getAddresses();
+                const addresses = await dispatch(addressesThunk());
                 const updatesHappened = await Promise.all(
                     addresses.map(async (address) => {
-                        const addressKeys = await getAddressKeys(address.ID);
+                        const addressKeys = await dispatch(addressKeysThunk({ addressID: address.ID }));
                         if (!hasActiveKeysMismatch(address, addressKeys)) {
                             return false;
                         }
@@ -171,8 +166,9 @@ const KeyBackgroundManager = ({
                     })
                 );
                 if (updatesHappened.some(Boolean)) {
-                    const userKeys = await getUserKeys();
-                    await keyTransparencyCommit(userKeys);
+                    const user = await dispatch(userThunk());
+                    const userKeys = await dispatch(userKeysThunk());
+                    await keyTransparencyCommit(user, userKeys);
                 }
             } catch (error) {
                 const sentryError = getSentryError(error);
@@ -185,29 +181,18 @@ const KeyBackgroundManager = ({
             }
         };
 
-        if (!(hasMemberKeyMigration || hasPrivateMemberKeyGeneration || hasReadableMemberKeyActivation)) {
-            void runActiveKeysCheck().catch(noop);
-            return;
-        }
-
-        void run()
+        run()
             .then(() =>
-                hasMemberKeyMigration
-                    ? runMigration().catch((e) => {
-                          const error = getSentryError(e);
-                          if (error) {
-                              captureMessage('Key migration error', {
-                                  extra: { error, serverTime: serverTime(), isServerTime: wasServerTimeEverUpdated() },
-                              });
-                          }
-                      })
-                    : undefined
+                runMigration().catch((e) => {
+                    const error = getSentryError(e);
+                    if (error) {
+                        captureMessage('Key migration error', {
+                            extra: { error, serverTime: serverTime(), isServerTime: wasServerTimeEverUpdated() },
+                        });
+                    }
+                })
             )
             .then(() => runActiveKeysCheck())
             .catch(noop);
-    }, []);
-
-    return <>{null}</>;
+    };
 };
-
-export default KeyBackgroundManager;

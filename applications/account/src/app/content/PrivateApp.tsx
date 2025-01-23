@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import {
-    AccountSpotlightsProvider,
     ApiProvider,
     AuthenticationProvider,
     CalendarModelEventManagerProvider,
@@ -12,7 +11,6 @@ import {
     ProtonApp,
     StandardErrorPage,
     StandardLoadErrorPage,
-    StandardPrivateApp,
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
@@ -70,17 +68,9 @@ const PrivateApp = () => {
                                             calendarModelEventManager={extraThunkArguments.calendarModelEventManager}
                                         >
                                             <ApiProvider api={extraThunkArguments.api}>
-                                                <AccountSpotlightsProvider>
-                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                        <StandardPrivateApp
-                                                            hasReadableMemberKeyActivation
-                                                            hasMemberKeyMigration
-                                                            hasPrivateMemberKeyGeneration
-                                                        >
-                                                            <state.MainContainer />
-                                                        </StandardPrivateApp>
-                                                    </ErrorBoundary>
-                                                </AccountSpotlightsProvider>
+                                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    <state.MainContainer />
+                                                </ErrorBoundary>
                                             </ApiProvider>
                                         </CalendarModelEventManagerProvider>
                                     </EventManagerProvider>

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { addressesThunk } from '@proton/account/addresses';
 import { convertExternalAddress } from '@proton/account/organizationKey/convertAddresses';
-import { useGetUser } from '@proton/account/user/hooks';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { StandardLoadErrorPage, useApi, useErrorHandler, useKTVerifier } from '@proton/components/index';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -19,9 +18,8 @@ const PartnerClaimContainer = () => {
     const api = useApi();
     const silentApi = getSilentApi(api);
     const dispatch = useDispatch();
-    const getUser = useGetUser();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, getUser);
     const errorHandler = useErrorHandler();
+    const createKtVerifier = useKTVerifier();
     const [error, setError] = useState<{ message?: string } | null>(null);
     const authentication = useAuthentication();
 
@@ -39,6 +37,7 @@ const PartnerClaimContainer = () => {
             if (!address) {
                 throw new Error('Address not found');
             }
+            const { keyTransparencyVerify, keyTransparencyCommit } = await createKtVerifier();
             if (address.Type === ADDRESS_TYPE.TYPE_EXTERNAL) {
                 await dispatch(
                     convertExternalAddress({

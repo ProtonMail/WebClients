@@ -363,7 +363,6 @@ const MinimalLoginContainer = ({
                                 username,
                                 password,
                                 api: silentApi,
-                                verifyOutboundPublicKeys: null,
                                 ignoreUnlock,
                                 persistent: false,
                                 setupVPN: false,

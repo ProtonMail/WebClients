@@ -10,11 +10,9 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useKTActivation,
     useLocalState,
     useMyCountry,
     useNotifications,
-    useResetSelfAudit,
     useSearchParamsEffect,
 } from '@proton/components';
 import type {
@@ -36,6 +34,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import SetPasswordForm from '../login/SetPasswordForm';
@@ -47,6 +46,7 @@ import PublicHelpLink from '../public/PublicHelpLink';
 import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
+import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
@@ -87,8 +87,7 @@ const ResetPasswordContainer = ({
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
     const [persistent] = useLocalState(false, defaultPersistentKey);
-    const ktActivation = useKTActivation();
-    const resetSelfAudit = useResetSelfAudit();
+    const getKtActivation = useGetAccountKTActivation();
 
     const defaultCountry = useMyCountry();
 
@@ -102,7 +101,7 @@ const ResetPasswordContainer = ({
 
     const handleCancel = () => {
         createFlow.reset();
-        const { username, persistent } = cacheRef.current || {};
+        const { username, persistent, ktActivation } = cacheRef.current || {};
         cacheRef.current = undefined;
         cacheRef.current = {
             setupVPN,
@@ -112,8 +111,7 @@ const ResetPasswordContainer = ({
             username: username ?? '',
             type: 'internal',
             Methods: [],
-            ktActivation,
-            resetSelfAudit,
+            ktActivation: ktActivation ?? KeyTransparencyActivation.DISABLED,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
@@ -195,8 +193,7 @@ const ResetPasswordContainer = ({
                     username: username ?? '',
                     Methods: [],
                     type: 'internal',
-                    ktActivation,
-                    resetSelfAudit,
+                    ktActivation: await getKtActivation(),
                 };
 
                 const validateFlow = createFlow();
@@ -248,8 +245,7 @@ const ResetPasswordContainer = ({
                             type: 'internal',
                             Methods: [],
                             persistent,
-                            ktActivation,
-                            resetSelfAudit,
+                            ktActivation: await getKtActivation(),
                         },
                         token,
                     });
@@ -328,11 +324,10 @@ const ResetPasswordContainer = ({
                                         setupVPN,
                                         appName: APP_NAME,
                                         productParam,
-                                        ktActivation,
+                                        ktActivation: await getKtActivation(),
                                         username,
                                         persistent,
                                         api: silentApi,
-                                        resetSelfAudit,
                                     });
                                     if (validateFlow()) {
                                         return await handleResult(result);

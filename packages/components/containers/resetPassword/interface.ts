@@ -1,13 +1,7 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type {
-    Address,
-    Api,
-    DecryptedKey,
-    KeyTransparencyActivation,
-    ResetSelfAudit,
-} from '@proton/shared/lib/interfaces';
+import type { Address, Api, DecryptedKey, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from '../login/interface';
 
@@ -53,7 +47,6 @@ export interface ResetCacheResult {
     mnemonicData?: MnemonicData;
     ktActivation: KeyTransparencyActivation;
     setupVPN: boolean;
-    resetSelfAudit: ResetSelfAudit;
 }
 
 export type ResetActionResponse =

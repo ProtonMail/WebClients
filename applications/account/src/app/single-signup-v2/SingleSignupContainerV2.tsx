@@ -14,7 +14,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useKTActivation,
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
@@ -73,6 +72,7 @@ import type {
 import { getPlanIDsFromParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
@@ -181,11 +181,10 @@ const SingleSignupContainerV2 = ({
     onStartAuth,
     initialSessionsLength,
 }: Props) => {
-    const ktActivation = useKTActivation();
+    const getKtActivation = useGetAccountKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const lumoSignupEnabled = useFlag('LumoSignupAvailable');
-
     const { flagsReady } = useFlagsStatus();
 
     const history = useHistory();
@@ -1341,7 +1340,7 @@ const SingleSignupContainerV2 = ({
                                     persistent: false,
                                     trusted: false,
                                     clientType,
-                                    ktActivation,
+                                    ktActivation: await getKtActivation(),
                                 };
 
                                 if (data.type === 'signup-token') {

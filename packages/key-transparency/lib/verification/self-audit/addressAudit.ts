@@ -24,7 +24,7 @@ import {
 import { KeyTransparencyError, throwKTError } from '../../helpers/utils';
 import type { AddressAuditResult, Epoch, VerifiedEpoch } from '../../interfaces';
 import { AddressAuditStatus, AddressAuditWarningReason } from '../../interfaces';
-import { saveSKLToLS } from '../../storage';
+import { saveSKLToLS } from '../../storage/saveSKLToLS';
 import { checkKeysInSKL, verifySKLSignature } from '../verifyKeys';
 import {
     verifyProofOfAbsenceForAllRevision,
@@ -176,12 +176,12 @@ const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: Pr
  * in the UI.
  */
 const checkAddressWithNoKeys = async ({
-    userContext,
+    ktUserContext,
     epoch,
     address,
     api,
 }: {
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     epoch: Epoch;
     address: Address;
     api: Api;
@@ -206,7 +206,7 @@ const checkAddressWithNoKeys = async ({
             });
         }
         await saveSKLToLS({
-            userContext,
+            ktUserContext,
             email: address.Email,
             data: inputSKL.ObsolescenceToken!,
             revision: inputSKL.Revision!,
@@ -230,9 +230,9 @@ const auditAddressImplementation = async ({
     addressKeys,
     epoch,
     api,
-    userContext,
+    ktUserContext,
 }: {
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     address: Address;
     userKeys: KeyPair[];
     addressKeys: DecryptedAddressKey[];
@@ -242,7 +242,7 @@ const auditAddressImplementation = async ({
     const inputSKL = address.SignedKeyList;
     const email = address.Email;
     if (address.Keys.length === 0) {
-        await checkAddressWithNoKeys({ epoch, address, api, userContext });
+        await checkAddressWithNoKeys({ epoch, address, api, ktUserContext });
         return {
             email,
             status: AddressAuditStatus.Warning,
@@ -252,7 +252,7 @@ const auditAddressImplementation = async ({
         };
     }
     if (inputSKL === null) {
-        await uploadMissingSKL({ address, epoch, api, userContext });
+        await uploadMissingSKL({ address, addressKeys, epoch, api, ktUserContext });
         return {
             email,
             status: AddressAuditStatus.Success,
@@ -325,7 +325,7 @@ const auditAddressImplementation = async ({
             // only SKL with v4 keys were generated in the future
             const primaryAddressKeyV4 = addressKeys[0].privateKey;
             if (!primaryAddressKeyV4.isPrivateKeyV4()) {
-                throw new Error('Unexpected v6 key')
+                throw new Error('Unexpected v6 key');
             }
             await checkAndFixSKLInTheFuture(address, primaryAddressKeyV4, api);
             signatureWasInTheFuture = true;
@@ -345,7 +345,7 @@ const auditAddressImplementation = async ({
             return throwKTError('Input SKL has not minEpochID or expectedMinEpochID', { email, inputSKL });
         }
         await saveSKLToLS({
-            userContext,
+            ktUserContext,
             email,
             data: inputSKL.Data,
             revision: inputSKL.Revision,
@@ -372,14 +372,14 @@ const auditAddressImplementation = async ({
 };
 
 export const auditAddress = async ({
-    userContext,
+    ktUserContext,
     address,
     addressKeys,
     api,
     userKeys,
     epoch,
 }: {
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     address: Address;
     userKeys: KeyPair[];
     addressKeys: DecryptedAddressKey[];
@@ -388,7 +388,7 @@ export const auditAddress = async ({
 }): Promise<AddressAuditResult> => {
     try {
         return await auditAddressImplementation({
-            userContext,
+            ktUserContext,
             address,
             userKeys,
             addressKeys,

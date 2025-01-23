@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
+import { verifyOutboundPublicKeys } from '@proton/key-transparency/lib/helpers/verifyOutboundPublicKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { API_KEY_SOURCE } from '../../constants';
@@ -8,7 +9,6 @@ import type {
     KTUserContext,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
-    VerifyOutboundPublicKeys,
 } from '../../interfaces';
 import { getAllPublicKeys } from '../keys';
 
@@ -60,18 +60,15 @@ export const getAndVerifyApiKeys = async ({
     api,
     email,
     internalKeysOnly,
-    verifyOutboundPublicKeys,
     skipVerificationOfExternalDomains = false,
     silence = false,
     noCache = false,
-    userContext,
+    ktUserContext,
 }: {
     api: Api;
     email: string;
     internalKeysOnly: boolean;
-    /** KT verification function, or `null` for legacy use-case where KT is disabled */
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
-    userContext?: KTUserContext;
+    ktUserContext: KTUserContext;
     /** Optimisations _only_ for apps where users with external domains do not have valid keys (e.g. Mail) */
     skipVerificationOfExternalDomains?: boolean;
     silence?: boolean;
@@ -101,16 +98,14 @@ export const getAndVerifyApiKeys = async ({
     const addressKeys = await importKeys(Address.Keys);
     const unverifiedKeys = Unverified ? await importKeys(Unverified.Keys, true) : undefined;
     const catchAllKeys = CatchAll ? await importKeys(CatchAll.Keys) : undefined;
-    const ktResult = verifyOutboundPublicKeys
-        ? await verifyOutboundPublicKeys({
-              userContext,
-              api,
-              email,
-              skipVerificationOfExternalDomains,
-              address: { keyList: addressKeys, signedKeyList: Address.SignedKeyList },
-              catchAll: CatchAll ? { keyList: catchAllKeys!, signedKeyList: CatchAll.SignedKeyList } : undefined,
-          })
-        : {};
+    const ktResult = await verifyOutboundPublicKeys({
+        ktUserContext,
+        api,
+        email,
+        skipVerificationOfExternalDomains,
+        address: { keyList: addressKeys, signedKeyList: Address.SignedKeyList },
+        catchAll: CatchAll ? { keyList: catchAllKeys!, signedKeyList: CatchAll.SignedKeyList } : undefined,
+    });
     return {
         Address,
         addressKeys,

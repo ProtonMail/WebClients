@@ -4,6 +4,7 @@ import { MAX_CHARS_API } from '@proton/account';
 import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { VerificationModel } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
+import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { V5PaymentToken } from '@proton/payments';
 import { isTokenPayment, isWrappedPaymentsVersion } from '@proton/payments';
 import type { generatePDFKit } from '@proton/recovery-kit';
@@ -51,7 +52,6 @@ import type {
     Organization,
     User,
 } from '@proton/shared/lib/interfaces';
-import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     generateKeySaltAndPassphrase,
     generatePasswordlessOrganizationKey,

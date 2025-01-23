@@ -119,8 +119,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     }, [contactEmails]);
     const api = useApi();
     const getUser = useGetUser();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
+    const createKtVerifier = useKTVerifier();
     const authentication = useAuthentication();
     const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const getAddressKeys = useGetAddressKeys();
@@ -151,6 +150,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
         }
 
         const userKeys = await getUserKeys();
+        const { keyTransparencyVerify, keyTransparencyCommit } = await createKtVerifier();
         const [newKey] = await addAddressKeysProcess({
             api,
             userKeys,
@@ -164,7 +164,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
         const { privateKey: forwarderKey } = newKey;
         const [forwarderAddressKeys] = await Promise.all([
             getAddressKeys(model.addressID),
-            keyTransparencyCommit(userKeys),
+            keyTransparencyCommit(await getUser(), userKeys),
         ]);
 
         return {

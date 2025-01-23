@@ -22,8 +22,8 @@ import type {
     Api,
     CachedOrganizationKey,
     EnhancedMember,
+    KTUserContext,
     Member,
-    VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
 import { MEMBER_ORG_KEY_STATE } from '@proton/shared/lib/interfaces';
 import {
@@ -50,6 +50,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
+import type { KtState } from '../kt';
+import { getKTUserContext } from '../kt/actions';
 import { getMemberAddresses, membersThunk } from '../members';
 import { userKeysThunk } from '../userKeys';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
@@ -128,7 +130,7 @@ export const getMemberKeyPayload = async ({
     mode:
         | {
               type: 'email';
-              verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+              ktUserContext: KTUserContext;
           }
         | {
               type: 'org-key';
@@ -181,10 +183,8 @@ export const getMemberKeyPayload = async ({
     const memberPublicKey = (
         await getVerifiedPublicKeys({
             api,
-            verifyOutboundPublicKeys: mode.verifyOutboundPublicKeys,
             email,
-            // In app context, can use default
-            userContext: undefined,
+            ktUserContext: mode.ktUserContext,
         })
     )[0]?.publicKey;
     if (!memberPublicKey) {
@@ -298,18 +298,21 @@ type ConfirmDemotionMemberAction = {
 export type MemberPromptAction = ConfirmPromotionMemberAction | ConfirmDemotionMemberAction;
 
 export const getMemberEditPayload = ({
-    verifyOutboundPublicKeys,
     member,
     memberDiff,
     api,
 }: {
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     member: EnhancedMember;
     memberDiff: Partial<{
         role: MEMBER_ROLE;
     }>;
     api: Api;
-}): ThunkAction<Promise<MemberPromptAction | null>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<MemberPromptAction | null>,
+    KtState & OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
         const organizationKey = await dispatch(organizationKeyThunk());
         const passwordlessMode = getIsPasswordless(organizationKey?.Key);
@@ -326,7 +329,7 @@ export const getMemberEditPayload = ({
                 organizationKey,
                 mode: {
                     type: 'email',
-                    verifyOutboundPublicKeys,
+                    ktUserContext: await dispatch(getKTUserContext()),
                 },
                 api,
                 member,
@@ -444,14 +447,17 @@ export const getPublicMembersToReEncryptPayload = (): ThunkAction<
 };
 
 export const getKeyRotationPayload = ({
-    verifyOutboundPublicKeys,
     api,
     ignorePasswordlessValidation,
 }: {
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     api: Api;
     ignorePasswordlessValidation?: boolean;
-}): ThunkAction<Promise<OrganizationKeyRotationPayload>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<OrganizationKeyRotationPayload>,
+    KtState & OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
         const userKeys = await dispatch(userKeysThunk());
         const organizationKey = await dispatch(organizationKeyThunk());
@@ -481,7 +487,7 @@ export const getKeyRotationPayload = ({
                     api,
                     mode: {
                         type: 'email',
-                        verifyOutboundPublicKeys,
+                        ktUserContext: await dispatch(getKTUserContext()),
                     },
                     members: otherAdminMembers,
                     ignorePasswordlessValidation,
@@ -754,15 +760,13 @@ export type AcceptOrganizationKeyInvitePayload =
       };
 export const prepareAcceptOrganizationKeyInvite = ({
     adminEmail,
-    verifyOutboundPublicKeys,
     api,
 }: {
     adminEmail: string;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     api: Api;
 }): ThunkAction<
     Promise<AcceptOrganizationKeyInvitePayload>,
-    OrganizationKeyState,
+    KtState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -792,9 +796,7 @@ export const prepareAcceptOrganizationKeyInvite = ({
             await getVerifiedPublicKeys({
                 api,
                 email: adminEmail,
-                verifyOutboundPublicKeys,
-                // In app context, can use default
-                userContext: undefined,
+                ktUserContext: await dispatch(getKTUserContext()),
             })
         ).map(({ publicKey }) => publicKey);
         if (!adminEmailPublicKeys.length) {

@@ -207,6 +207,9 @@ export const getStoreWrapper = ({
         },
     });
     extendStore({
+        config: {
+            APP_NAME: APPS.PROTONMAIL,
+        } as ProtonConfig,
         authentication: {
             getPassword: () => '',
         } as any,

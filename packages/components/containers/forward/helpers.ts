@@ -13,10 +13,11 @@ import type {
     ApiKeysConfig,
     DecryptedKey,
     IncomingAddressForwarding,
+    KTUserContext,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     OutgoingAddressForwarding,
-    VerifyOutboundPublicKeys,
+    UserModel,
 } from '@proton/shared/lib/interfaces';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
 import {
@@ -288,22 +289,24 @@ interface AcceptIncomingForwardingParameters {
     api: Api;
     address: Address;
     addressKeys: DecryptedKey[];
+    user: UserModel;
     userKeys: DecryptedKey[];
     forward: IncomingAddressForwarding;
     keyTransparencyVerify: KeyTransparencyVerify;
     keyTransparencyCommit: KeyTransparencyCommit;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    ktUserContext: KTUserContext;
 }
 
 export const acceptIncomingForwarding = async ({
     api,
     address,
     addressKeys: forwardeeAddressKeys,
+    user,
     userKeys,
     forward,
     keyTransparencyVerify,
     keyTransparencyCommit,
-    verifyOutboundPublicKeys,
+    ktUserContext,
 }: AcceptIncomingForwardingParameters) => {
     if (!address) {
         throw new Error('No address');
@@ -328,7 +331,7 @@ export const acceptIncomingForwarding = async ({
     const { addressKeys: forwarderAddressKeys } = await getAndVerifyApiKeys({
         api,
         email: forward.ForwarderEmail,
-        verifyOutboundPublicKeys,
+        ktUserContext,
         internalKeysOnly: true,
     });
 
@@ -383,7 +386,7 @@ export const acceptIncomingForwarding = async ({
             activeKeys,
             privateKey: privateKey as PrivateKeyReferenceV4,
         });
-        await keyTransparencyCommit(userKeys);
+        await keyTransparencyCommit(user, userKeys);
         activeKeys = updatedActiveKeys;
     }
 };

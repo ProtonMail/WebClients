@@ -11,13 +11,12 @@ import {
     useConfig,
     useErrorHandler,
     useFormErrors,
-    useKTActivation,
     useNotifications,
 } from '@proton/components';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
 import useLoading from '@proton/hooks/useLoading';
+import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -32,8 +31,7 @@ import {
     getMinPasswordLengthMessage,
     passwordLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import type { Address, Api, Organization, User } from '@proton/shared/lib/interfaces';
-import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
+import type { Address, Api, KeyTransparencyActivation, Organization, User } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/shared/lib/keys';
 import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys/unprivatization';
 import {
@@ -46,6 +44,7 @@ import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivati
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
 import { getTerms } from '../signup/terms';
+import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import ExpiredError from './ExpiredError';
 import JoinOrganizationAdminItem from './JoinOrganizationAdminItem';
 import Layout from './Layout';
@@ -84,8 +83,6 @@ const JoinMagicLinkContainer = ({
     const { APP_NAME: appName } = useConfig();
     const { validator, onFormSubmit } = useFormErrors();
     const handleError = useErrorHandler();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
-    const ktActivation = useKTActivation();
     const dataRef = useRef<{
         user: User;
         organization: Organization;
@@ -93,12 +90,14 @@ const JoinMagicLinkContainer = ({
         authApi: Api;
         addresses: Address[];
         parsedUnprivatizationData: ParsedUnprivatizationData;
+        ktActivation: KeyTransparencyActivation;
     } | null>(null);
     const [loading, setLoading] = useState(true);
     const [submitting, withSubmitting] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
     const { createNotification } = useNotifications();
+    const getKtActivation = useGetAccountKTActivation();
 
     useEffect(() => {
         const init = async () => {
@@ -134,15 +133,15 @@ const JoinMagicLinkContainer = ({
                     getUnprivatizationContextData({ api: authApi }),
                 ]);
                 const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
+                const ktActivation = await getKtActivation();
                 await validateUnprivatizationData({
-                    userContext: {
+                    ktUserContext: {
+                        ktActivation,
                         appName,
                         getUser: async () => user,
                         getUserKeys: async () => [], // User keys do not exist in this case
-                        getAddressKeys: async () => [], // Address keys do not exist in this context
                     },
                     api: authApi,
-                    verifyOutboundPublicKeys,
                     parsedUnprivatizationData,
                     options: {
                         validateRevision: true,
@@ -156,6 +155,7 @@ const JoinMagicLinkContainer = ({
                     addresses,
                     parsedUnprivatizationData,
                     authApi,
+                    ktActivation,
                 };
             };
 
@@ -193,7 +193,7 @@ const JoinMagicLinkContainer = ({
         if (!dataRef.current) {
             throw new Error('missing data');
         }
-        const { user, authApi, addresses, parsedUnprivatizationData } = dataRef.current;
+        const { user, authApi, addresses, parsedUnprivatizationData, ktActivation } = dataRef.current;
         const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation);
 
         const { passphrase, salt } = await generateKeySaltAndPassphrase(newPassword);
@@ -225,7 +225,6 @@ const JoinMagicLinkContainer = ({
             password: newPassword,
             persistent: false,
         };
-
         await unauthenticatedApi.startUnAuthFlow();
         const api = getSilentApi(unauthenticatedApi.apiCallback);
         const initialLoginResult = await handleLogin({
@@ -252,7 +251,6 @@ const JoinMagicLinkContainer = ({
             authResponse: initialLoginResult.authResult.result,
             authVersion: initialLoginResult.authResult.authVersion,
             productParam,
-            verifyOutboundPublicKeys,
         });
         if (result.to === AuthStep.DONE) {
             const subscribedToApp = toApp || getToAppFromSubscribed(user);
