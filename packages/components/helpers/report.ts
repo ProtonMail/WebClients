@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { APP_NAMES} from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS_CONFIGURATION, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getAllAppVersions } from '@proton/shared/lib/desktop/version';
 import { getBrowser, getDevice, getOS } from '@proton/shared/lib/helpers/browser';

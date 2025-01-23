@@ -14,7 +14,9 @@ const useAuthLogsFilter = (initialStartDate = undefined, initialEndDate = undefi
     });
 
     const handleStartDateChange = (start: Date | undefined) => {
-        if (!start) {return;}
+        if (!start) {
+            return;
+        }
         if (!filter.end || isBefore(start, filter.end)) {
             setFilter({ ...filter, start });
         } else {
@@ -23,7 +25,9 @@ const useAuthLogsFilter = (initialStartDate = undefined, initialEndDate = undefi
     };
 
     const handleEndDateChange = (end: Date | undefined) => {
-        if (!end) {return;}
+        if (!end) {
+            return;
+        }
         if (!filter.start || isAfter(end, filter.start)) {
             setFilter({ ...filter, end });
         } else {

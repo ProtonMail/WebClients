@@ -29,6 +29,6 @@ export const getMinScheduleTime = (date: Date) => {
     return limit <= nextIntervals[0]
         ? nextIntervals[0]
         : limit <= nextIntervals[1]
-        ? nextIntervals[1]
-        : nextIntervals[2];
+          ? nextIntervals[1]
+          : nextIntervals[2];
 };

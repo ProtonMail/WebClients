@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { ORIGINAL_MESSAGE } from "@proton/shared/lib/mail/messages";
+import { ORIGINAL_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 /**
  * Mails extracted by us
