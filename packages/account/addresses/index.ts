@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
@@ -6,6 +6,8 @@ import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
+import { removeById } from '@proton/utils/removeById';
+import { upsertById } from '@proton/utils/upsertById';
 
 import { serverEvent } from '../eventLoop';
 import { initEvent } from '../init';
@@ -35,7 +37,20 @@ const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        deleteAddress: (state, action: PayloadAction<{ ID: string }>) => {
+            if (!state.value) {
+                return;
+            }
+            state.value = sortAddresses(removeById(state.value, action.payload));
+        },
+        upsertAddress: (state, action: PayloadAction<Address>) => {
+            if (!state.value) {
+                return;
+            }
+            state.value = sortAddresses(upsertById(state.value, action.payload));
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder
@@ -60,3 +75,4 @@ const slice = createSlice({
 
 export const addressesReducer = { [name]: slice.reducer };
 export const addressesThunk = modelThunk.thunk;
+export const addressActions = slice.actions;
