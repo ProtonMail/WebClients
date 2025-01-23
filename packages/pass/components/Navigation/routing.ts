@@ -113,22 +113,22 @@ export const getRouteError = (search: string) => new URLSearchParams(search).get
 
 export const getBootRedirection = (bootLocation: Location) => {
     const searchParams = new URLSearchParams(bootLocation.search);
-    const { search } = bootLocation;
+    const { search, hash } = bootLocation;
     const pathname = stripLocalBasenameFromPathname(bootLocation.pathname);
 
     /** Initial filters could be passed on initial boot by
      * a redirection from the proton mail security center */
-    if (searchParams.get('filters') !== null) return { pathname, search };
+    if (searchParams.get('filters') !== null) return { pathname, search, hash };
 
     /** The admin/b2b panels may redirect to a specific share or item */
     const [, shareId, itemId] = bootLocation.pathname.match('share/([^/]+)(/item/([^/]+))?') || [];
     if (shareId || itemId) {
         const filters = partialMerge(getInitialFilters(), { selectedShareId: shareId });
         searchParams.set('filters', encodeFilters(filters));
-        return { pathname, search: searchParams.toString() };
+        return { pathname, search: searchParams.toString(), hash };
     }
 
-    return { pathname, search };
+    return { pathname, search, hash };
 };
 
 const extractPathWithoutFragment = (path: string): string => {
