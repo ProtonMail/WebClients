@@ -104,7 +104,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                 fileSaver.instance.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
             ).catch(logError);
 
-            queue.updateState(nextDownload.id, TransferState.Done);
+            queue.updateWithData(nextDownload.id, TransferState.Done, { hasFullBuffer: true });
             return;
         }
 

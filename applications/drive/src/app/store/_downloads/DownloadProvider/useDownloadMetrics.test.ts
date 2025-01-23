@@ -383,4 +383,44 @@ describe('useDownloadMetrics', () => {
         });
         expect(metrics.drive_download_erroring_users_total.increment).toHaveBeenCalledTimes(2);
     });
+
+    it('should not process downloads with hasFullBuffer to true', () => {
+        mockGetShare.mockReturnValue({ type: ShareType.default });
+
+        const { result } = renderHook(() => useDownloadMetrics('download'));
+
+        const testDownloads: Download[] = [
+            {
+                id: '8',
+                state: TransferState.Done,
+                links: [{ shareId: 'share8' }],
+                error: null,
+                hasFullBuffer: true,
+                meta: {
+                    size: 10,
+                },
+            },
+            {
+                id: '9',
+                state: TransferState.Done,
+                links: [{ shareId: 'share9' }],
+                error: null,
+                hasFullBuffer: false,
+                meta: {
+                    size: 10,
+                },
+            },
+        ] as unknown as Download[];
+
+        act(() => {
+            result.current.observe(testDownloads);
+        });
+
+        expect(metrics.drive_download_success_rate_total.increment).toHaveBeenCalledTimes(1);
+        expect(metrics.drive_download_success_rate_total.increment).toHaveBeenCalledWith({
+            status: 'success',
+            retry: 'false',
+            shareType: 'main',
+        });
+    });
 });
