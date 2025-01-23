@@ -3,12 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { getMemberAddresses } from '@proton/account';
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetOrganization } from '@proton/account/organization/hooks';
-import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { createMissingKeys } from '@proton/account/addresses/actions';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -22,30 +17,17 @@ import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import type { Address, Member } from '@proton/shared/lib/interfaces';
-import {
-    getShouldSetupMemberKeys,
-    missingKeysMemberProcess,
-    missingKeysSelfProcess,
-    setupMemberKeys,
-} from '@proton/shared/lib/keys';
-import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
-import noop from '@proton/utils/noop';
+import { getShouldSetupMemberKeys } from '@proton/shared/lib/keys';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
@@ -85,129 +67,31 @@ export const updateAddress = (oldAddresses: AddressState, ID: string, diff: Stat
     };
 };
 
-const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
-
 const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }: Props) => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
-    const authentication = useAuthentication();
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const getOrganization = useGetOrganization();
-    const getOrganizationKey = useGetOrganizationKey();
-    const getUserKeys = useGetUserKeys();
-    const getAddresses = useGetAddresses();
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
     const [, setFormattedAddresses] = useState<AddressState>({});
 
     const shouldSetupMemberKeys = getShouldSetupMemberKeys(member);
 
-    const processMember = async (member: Member) => {
-        try {
-            const [organization, organizationKey, memberAddresses, addresses, userKeys] = await Promise.all([
-                getOrganization(),
-                getOrganizationKey(),
-                dispatch(getMemberAddresses({ member, retry: true })),
-                getAddresses(),
-                getUserKeys(),
-            ]);
-
-            const error = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
-            if (error) {
-                createNotification({ text: error, type: 'error' });
-                return;
-            }
-            if (!organizationKey?.privateKey) {
-                throw new Error('Missing key');
-            }
-
-            const handleUpdate = (
-                addressID: string,
-                event: { status: 'loading' | 'ok' | 'error'; result?: string }
-            ) => {
-                setFormattedAddresses((oldState) => {
-                    return updateAddress(oldState, addressID, {
-                        type: getStatus(event.status),
-                        tooltip: event.result,
-                    });
+    const handleSubmit = async () => {
+        const handleUpdate = (addressID: string, event: { status: 'loading' | 'ok' | 'error'; result?: string }) => {
+            setFormattedAddresses((oldState) => {
+                return updateAddress(oldState, addressID, {
+                    type: getStatus(event.status),
+                    tooltip: event.result,
                 });
-            };
-
-            if (shouldSetupMemberKeys && password) {
-                await setupMemberKeys({
-                    ownerAddresses: addresses,
-                    keyGenConfig,
-                    organizationKey: organizationKey.privateKey,
-                    member,
-                    memberAddresses,
-                    password,
-                    api: silentApi,
-                    keyTransparencyVerify,
-                });
-                addressesToGenerate.forEach((address) => handleUpdate(address.ID, { status: 'ok' }));
-            } else {
-                await missingKeysMemberProcess({
-                    api: silentApi,
-                    keyGenConfig,
-                    ownerAddresses: addresses,
-                    memberAddressesToGenerate: addressesToGenerate,
-                    member,
-                    memberAddresses,
-                    onUpdate: handleUpdate,
-                    organizationKey: organizationKey.privateKey,
-                    keyTransparencyVerify,
-                });
-            }
-            await keyTransparencyCommit(userKeys);
-            await call();
-            createNotification({ text: c('Info').t`User activated` });
-        } catch (e: any) {
-            handleError(e);
-        }
-    };
-
-    const processSelf = async () => {
-        try {
-            const [userKeys, addresses] = await Promise.all([getUserKeys(), getAddresses()]);
-            await missingKeysSelfProcess({
-                api: silentApi,
-                userKeys,
-                addresses,
-                addressesToGenerate,
-                password: authentication.getPassword(),
-                keyGenConfig,
-                onUpdate: (addressID, event) => {
-                    setFormattedAddresses((oldState) => {
-                        return updateAddress(oldState, addressID, {
-                            type: getStatus(event.status),
-                            tooltip: event.result,
-                        });
-                    });
-                },
-                keyTransparencyVerify,
             });
-            await keyTransparencyCommit(userKeys);
-            await call();
-            createNotification({ text: c('Info').t`Keys created` });
-        } catch (e: any) {
-            handleError(e);
-        }
-    };
-
-    const handleSubmit = () => {
-        return (
-            !member || (member.Self && member.Private === MEMBER_PRIVATE.UNREADABLE)
-                ? processSelf()
-                : processMember(member)
-        )
-            .catch(noop)
-            .then(rest.onClose);
+        };
+        const result = await dispatch(
+            createMissingKeys({ member, password, addressesToGenerate, onUpdate: handleUpdate })
+        );
+        createNotification({ text: result });
     };
 
     return (
@@ -220,7 +104,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                 if (!onFormSubmit()) {
                     return;
                 }
-                withLoading(handleSubmit());
+                withLoading(handleSubmit()).catch(handleError);
             }}
         >
             <ModalTwoHeader

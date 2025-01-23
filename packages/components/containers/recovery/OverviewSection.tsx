@@ -1,6 +1,4 @@
-import { useInactiveKeys } from '@proton/account';
-import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
-import { useAddresses } from '@proton/account/addresses/hooks';
+import { addressKeysThunk, addressesThunk, useInactiveKeys, userKeysThunk } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -9,6 +7,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -31,13 +30,12 @@ export const OverviewSection = ({ ids }: Props) => {
     const authentication = useAuthentication();
     const api = useApi();
     const [User] = useUser();
-    const [Addresses] = useAddresses();
-    const [addressesKeys] = useAddressesKeys();
     const [userKeys] = useUserKeys();
+    const dispatch = useDispatch();
 
     const keyReactivationRequests = useInactiveKeys();
 
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => User);
+    const createKTVerifier = useKTVerifier();
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
     const [confirmProps, setDismissConfirmModalOpen, renderConfirm] = useModalState();
@@ -63,23 +61,31 @@ export const OverviewSection = ({ ids }: Props) => {
                     userKeys={userKeys || []}
                     keyReactivationRequests={keyReactivationRequests}
                     onProcess={async (keyReactivationRecords, onReactivation) => {
-                        if (!userKeys || !Addresses || !addressesKeys) {
-                            throw new Error('Missing keys');
-                        }
                         try {
                             stop();
+                            const [userKeys, addresses] = await Promise.all([
+                                dispatch(userKeysThunk()),
+                                dispatch(addressesThunk()),
+                            ]);
+                            const addressesKeys = await Promise.all(
+                                addresses.map(async (address) => ({
+                                    address,
+                                    keys: await dispatch(addressKeysThunk({ addressID: address.ID })),
+                                }))
+                            );
+                            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
                             await reactivateKeysProcess({
                                 api,
                                 user: User,
                                 userKeys,
-                                addresses: Addresses,
+                                addresses,
                                 addressesKeys,
                                 keyReactivationRecords,
                                 keyPassword: authentication.getPassword(),
                                 onReactivation,
                                 keyTransparencyVerify,
                             });
-                            await keyTransparencyCommit(userKeys).catch(noop);
+                            await keyTransparencyCommit(User, userKeys).catch(noop);
                             return await call();
                         } finally {
                             start();

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
+import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '@proton/key-transparency';
 import { auth2FA, getInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -15,11 +16,9 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
     Api,
     KeyTransparencyActivation,
-    VerifyOutboundPublicKeys,
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import { getRequiresPasswordSetup, getSentryError, migrateUser } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
@@ -331,7 +330,6 @@ export const handleNextLogin = async ({
     setupVPN,
     ktActivation,
     productParam,
-    verifyOutboundPublicKeys,
 }: {
     authType: AuthType;
     authVersion: AuthVersion;
@@ -346,7 +344,6 @@ export const handleNextLogin = async ({
     setupVPN: boolean;
     ktActivation: KeyTransparencyActivation;
     productParam: ProductParam;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
 }): Promise<AuthActionResponse> => {
     const cache: AuthCacheResult = {
         authType,
@@ -357,8 +354,8 @@ export const handleNextLogin = async ({
         productParam,
         data: {},
         api,
-        verifyOutboundPublicKeys,
         authTypes: getAuthTypes(authResponse, appName),
+        ktActivation,
         username,
         persistent,
         loginPassword: password,

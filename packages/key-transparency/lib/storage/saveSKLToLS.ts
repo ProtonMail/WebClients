@@ -1,8 +1,8 @@
 import { CryptoProxy, serverTime } from '@proton/crypto';
-import type { KTBlobContent } from '@proton/key-transparency/lib';
 import { encodeBase64URL, stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import type { SaveSKLToLS } from '@proton/shared/lib/interfaces';
 
+import type { KTBlobContent } from '../interfaces';
 import { getKTLocalStorage } from './ktStorageAPI';
 import { commitSKLToLS } from './storageHelpers';
 
@@ -18,7 +18,7 @@ const generateID = async (userID: string, email: string) => {
 };
 
 export const saveSKLToLS: SaveSKLToLS = async ({
-    userContext: { appName, getUser, getUserKeys },
+    ktUserContext: { appName, getUser, getUserKeys },
     email,
     data,
     revision,

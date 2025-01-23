@@ -58,10 +58,8 @@ import {
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
-    useConvertExternalAddresses,
     useModalState,
     useToggle,
-    useUnprivatizeMembers,
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -119,8 +117,6 @@ const MainContainer: FunctionComponent = () => {
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
     });
-    useConvertExternalAddresses();
-    useUnprivatizeMembers();
 
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();

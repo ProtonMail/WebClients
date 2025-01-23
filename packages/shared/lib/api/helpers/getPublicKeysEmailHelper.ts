@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
-import { ktKeyVerificationFailureTelemetryAndMetrics, ktSentryReport } from '@proton/key-transparency/lib';
+import {
+    ktKeyVerificationFailureTelemetryAndMetrics,
+    ktSentryReport,
+} from '@proton/key-transparency/lib/helpers/utils';
 
-import type { Api, ApiKeysConfig, VerifyOutboundPublicKeys } from '../../interfaces';
+import type { Api, ApiKeysConfig, KTUserContext } from '../../interfaces';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '../../interfaces';
 import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';
 
@@ -18,16 +21,14 @@ const getPublicKeysEmailHelper = async ({
     internalKeysOnly = false,
     includeInternalKeysWithE2EEDisabledForMail = false,
     api,
-    ktActivation,
-    verifyOutboundPublicKeys,
+    ktUserContext,
     silence,
     noCache,
 }: {
     email: string;
     internalKeysOnly?: boolean;
     api: Api;
-    ktActivation: KeyTransparencyActivation;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    ktUserContext: KTUserContext;
     /**
      * Whether to return internal keys which cannot be used for email encryption, as the owner has disabled E2EE.
      * These keys may still be used for e.g. calendar sharing or message verification.
@@ -36,13 +37,13 @@ const getPublicKeysEmailHelper = async ({
     silence?: boolean;
     noCache?: boolean;
 }): Promise<ApiKeysConfig> => {
-    if (ktActivation === KeyTransparencyActivation.DISABLED) {
+    if (ktUserContext.ktActivation === KeyTransparencyActivation.DISABLED) {
         const { ktVerificationResult, ...resultWithoutKT } = await getPublicKeysEmailHelperWithKT({
             email,
             internalKeysOnly,
             includeInternalKeysWithE2EEDisabledForMail,
             api,
-            verifyOutboundPublicKeys: null, // skip KT verification
+            ktUserContext,
             silence,
             noCache,
         });
@@ -54,12 +55,12 @@ const getPublicKeysEmailHelper = async ({
         internalKeysOnly,
         includeInternalKeysWithE2EEDisabledForMail,
         api,
-        verifyOutboundPublicKeys,
+        ktUserContext,
         silence,
         noCache,
     });
     if (result.ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
-        const visible = ktActivation === KeyTransparencyActivation.SHOW_UI;
+        const visible = ktUserContext.ktActivation === KeyTransparencyActivation.SHOW_UI;
         ktSentryReport('Key verification error', { email });
         await ktKeyVerificationFailureTelemetryAndMetrics(api, visible);
         if (visible) {
@@ -70,7 +71,7 @@ const getPublicKeysEmailHelper = async ({
             };
         }
     }
-    if (ktActivation === KeyTransparencyActivation.LOG_ONLY) {
+    if (ktUserContext.ktActivation === KeyTransparencyActivation.LOG_ONLY) {
         return {
             ...result,
             ktVerificationResult: undefined,

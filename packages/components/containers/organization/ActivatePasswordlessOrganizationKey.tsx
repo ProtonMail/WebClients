@@ -24,8 +24,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
-
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {
     onResetKeys?: () => void;
 }
@@ -38,7 +36,6 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
     const errorHandler = useErrorHandler();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const [payload, setPayload] = useState<AcceptOrganizationKeyInvitePayload | null>(null);
     const silentApi = getSilentApi(useApi());
 
@@ -51,7 +48,6 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
                 prepareAcceptOrganizationKeyInvite({
                     api: silentApi,
                     adminEmail,
-                    verifyOutboundPublicKeys,
                 })
             )
                 .then(setPayload)

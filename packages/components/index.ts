@@ -595,7 +595,6 @@ export {
 } from './containers/keyTransparency/useKeyTransparencyContext';
 export { default as useKTActivation } from './containers/keyTransparency/useKTActivation';
 export { default as useKTVerifier } from './containers/keyTransparency/useKTVerifier';
-export { default as useResetSelfAudit } from './containers/keyTransparency/useResetSelfAudit';
 export { default as FolderIcon } from './containers/labels/FolderIcon';
 export { default as FoldersSection } from './containers/labels/FoldersSection';
 export { default as LabelsSection } from './containers/labels/LabelsSection';
@@ -725,8 +724,6 @@ export { default as OrganizationTwoFAHeader } from './containers/organization/Or
 export { default as OrganizationTwoFARemindersSection } from './containers/organization/OrganizationTwoFARemindersSection';
 export { default as PassPolicies } from './containers/organization/PassPolicies';
 export { default as SsoPage } from './containers/organization/sso/SsoPage';
-export { default as useConvertExternalAddresses } from './containers/organization/useConvertExternalAddresses';
-export { default as useUnprivatizeMembers } from './containers/organization/useUnprivatizeMembers';
 export { OtherMailPreferencesSection } from './containers/otherMailPreferences/OtherMailPreferencesSection';
 export { default as IndexSection } from './containers/overview/IndexSection';
 export { default as SummarySection } from './containers/overview/SummarySection';

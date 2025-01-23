@@ -131,7 +131,11 @@ let started = false;
 
 const handleStartFlags = () => {
     if (!started) {
-        extraThunkArguments.unleashClient.start().catch(noop);
+        const unleashClient = extraThunkArguments.unleashClient;
+        if (unleashClient.isReady() || unleashClient.getError()) {
+            return;
+        }
+        unleashClient.start().catch(noop);
         started = true;
     }
 };
@@ -139,7 +143,7 @@ const handleStartFlags = () => {
 // Feature flags are not needed in these routes. That allows us to prevent creating an unauth session if only these routes would be requested.
 const UnleashFlagStarter = ({ location }: { location: H.Location }) => {
     useEffect(() => {
-        if (![SSO_PATHS.JOIN_MAGIC_LINK, SSO_PATHS.SWITCH].some((pathname) => pathname === location.pathname)) {
+        if (![SSO_PATHS.SWITCH].some((pathname) => pathname === location.pathname)) {
             handleStartFlags();
         }
     }, [location.pathname]);

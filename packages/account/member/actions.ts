@@ -10,14 +10,7 @@ import {
     deleteMemberUnprivatizationInfo,
     queryMemberUnprivatizationInfo,
 } from '@proton/shared/lib/api/members';
-import type {
-    Address,
-    Api,
-    InactiveKey,
-    Member,
-    Organization,
-    VerifyOutboundPublicKeys,
-} from '@proton/shared/lib/interfaces';
+import type { Address, Api, InactiveKey, Member, Organization } from '@proton/shared/lib/interfaces';
 import { type MemberUnprivatizationOutput } from '@proton/shared/lib/interfaces';
 import {
     type ParsedUnprivatizationData,
@@ -30,6 +23,8 @@ import {
 import { addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';
 import { type InactiveKeysState, selectInactiveKeys } from '../inactiveKeys';
+import type { KtState } from '../kt';
+import { getKTUserContext } from '../kt/actions';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
@@ -37,10 +32,8 @@ import { type MemberState, updateMember } from './index';
 
 export const getPendingUnprivatizationRequest = ({
     member,
-    verifyOutboundPublicKeys,
 }: {
     member: Member;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
 }): ThunkAction<
     Promise<
         | {
@@ -49,7 +42,7 @@ export const getPendingUnprivatizationRequest = ({
           }
         | undefined
     >,
-    MemberState & OrganizationState,
+    KtState & MemberState & OrganizationState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -69,9 +62,7 @@ export const getPendingUnprivatizationRequest = ({
         const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
         await validateUnprivatizationData({
             api: silentApi,
-            verifyOutboundPublicKeys,
-            // In app, can use default context
-            userContext: undefined,
+            ktUserContext: await dispatch(getKTUserContext()),
             parsedUnprivatizationData,
             // For unprivatization (subuser side) it's not necessary to validate revision
             options: {

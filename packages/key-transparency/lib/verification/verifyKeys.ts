@@ -1,6 +1,5 @@
 import type { KeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { saveSKLToLS } from '@proton/key-transparency/lib';
 import type {
     Api,
     FetchedSignedKeyList,
@@ -13,11 +12,12 @@ import type {
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
-import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
+import { KT_SKL_VERIFICATION_CONTEXT } from '../constants/constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
 import { fetchProof } from '../helpers/apiHelpers';
 import { KeyTransparencyError, StaleEpochError, getEmailDomain, throwKTError } from '../helpers/utils';
 import type { Proof } from '../interfaces';
+import { saveSKLToLS } from '../storage/saveSKLToLS';
 import {
     verifyProofOfAbsenceForAllRevision,
     verifyProofOfAbsenceForRevision,
@@ -144,7 +144,7 @@ export const verifySKLSignature = async (
  * Verify that public keys associated to an email address are correctly stored in KT
  */
 const verifyPublicKeys = async ({
-    userContext,
+    ktUserContext,
     apiKeys,
     email,
     api,
@@ -153,7 +153,7 @@ const verifyPublicKeys = async ({
     skipVerificationOfExternalDomains,
     isCatchall,
 }: {
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     apiKeys: ProcessedApiKey[];
     email: string;
     signedKeyList: FetchedSignedKeyList | null;
@@ -206,7 +206,7 @@ const verifyPublicKeys = async ({
             }
             await sklVerificationPromise;
             await saveSKLToLS({
-                userContext,
+                ktUserContext,
                 email,
                 data,
                 revision: signedKeyList.Revision,
@@ -221,7 +221,7 @@ const verifyPublicKeys = async ({
             }
         }
 
-        let epoch = await getLatestEpoch();
+        let epoch = await getLatestEpoch({ api });
         // Fetch proofs with cached epoch.
         // If the fetch fails with StaleEpochError retry with a freshly fetched epoch.
         const fetchProofs = async (retry: boolean = true): Promise<{ proof: Proof; nextRevisionProof?: Proof }> => {
@@ -238,7 +238,7 @@ const verifyPublicKeys = async ({
                 }
             } catch (error) {
                 if (error instanceof StaleEpochError && retry) {
-                    epoch = await getLatestEpoch(true);
+                    epoch = await getLatestEpoch({ api, forceRefresh: true });
                     return fetchProofs(false);
                 }
                 throw error;
@@ -287,10 +287,10 @@ export const verifyPublicKeysAddressAndCatchall = async ({
     address,
     email,
     catchAll,
-    userContext,
+    ktUserContext,
     skipVerificationOfExternalDomains,
 }: {
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     api: Api;
     getLatestEpoch: GetLatestEpoch;
     email: string;
@@ -308,7 +308,7 @@ export const verifyPublicKeysAddressAndCatchall = async ({
     catchAllKTResult?: KeyTransparencyVerificationResult;
 }> => {
     const addressKTStatusPromise = verifyPublicKeys({
-        userContext,
+        ktUserContext,
         apiKeys: address.keyList,
         email,
         signedKeyList: address.signedKeyList,
@@ -320,7 +320,7 @@ export const verifyPublicKeysAddressAndCatchall = async ({
     let catchAllKTStatusPromise: Promise<KeyTransparencyVerificationResult> | undefined;
     if (address.keyList.length == 0 || catchAll) {
         catchAllKTStatusPromise = verifyPublicKeys({
-            userContext,
+            ktUserContext,
             apiKeys: catchAll?.keyList ?? [],
             email,
             signedKeyList: catchAll?.signedKeyList ?? null,

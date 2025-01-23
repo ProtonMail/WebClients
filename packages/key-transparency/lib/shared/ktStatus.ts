@@ -1,12 +1,16 @@
 import { serverTime } from '@proton/crypto';
-import { KT_DATA_VALIDITY_PERIOD, KT_DOMAINS, ctLogs, getBaseDomain } from '@proton/key-transparency';
 import { HOUR } from '@proton/shared/lib/constants';
+
+import { KT_DATA_VALIDITY_PERIOD, ctLogs } from '../constants/certificates';
+import { KT_DOMAINS } from '../constants/constants';
+import { getBaseDomain } from '../helpers/utils';
 
 export enum KtFeatureEnum {
     DISABLE,
     ENABLE_CORE,
     ENABLE_UI,
 }
+
 export type KT_FF = KtFeatureEnum | undefined;
 
 export const isKTActive = (feature: KT_FF) => {

@@ -87,8 +87,6 @@ export const eventManager = {
     subscribe: jest.fn(),
 } as any;
 
-extendStore({ api: apiMock as unknown as any, eventManager });
-
 const TestProvider = ({ children }: { children: ReactNode }) => {
     const history = createMemoryHistory();
     return (
@@ -135,6 +133,18 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             importerConfig: getModelState({} as ApiEnvironmentConfig),
             ...preloadedState,
         },
+    });
+
+    extendStore({
+        config: {
+            APP_NAME: APPS.PROTONMAIL,
+        } as ProtonConfig,
+        authentication: {
+            getPassword: () => '',
+        } as any,
+        api: apiMock as any,
+        eventManager: jest.fn() as any,
+        history: createMemoryHistory(),
     });
 
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
