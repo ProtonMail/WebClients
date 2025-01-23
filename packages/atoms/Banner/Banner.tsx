@@ -130,8 +130,10 @@ const Banner = ({
     return (
         <div
             className={clsx(
-                `banner banner--${variant} border border-weak w-full`,
-                !BannerVariantsBordered.includes(variant as BannerVariants) && 'banner--no-border',
+                `banner banner--${variant} w-full`,
+                BannerVariantsBordered.includes(variant as BannerVariants)
+                    ? 'border border-weak'
+                    : 'banner--no-border',
                 largeRadius ? 'rounded-lg' : 'rounded',
                 className
             )}
