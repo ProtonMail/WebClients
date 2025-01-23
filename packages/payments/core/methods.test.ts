@@ -234,7 +234,7 @@ describe('getNewMethods()', () => {
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
     });
 
-    it.each(['signup', 'signup-pass', 'signup-pass-upgrade'] as PaymentMethodFlows[])(
+    it.each(['signup', 'signup-pass', 'signup-pass-upgrade', 'signup-wallet'] as PaymentMethodFlows[])(
         'should not include Cash when Cash is not available due to flow %s',
         (flow) => {
             const methods = new PaymentMethods({
@@ -2041,6 +2041,7 @@ describe('SEPA', () => {
         'signup-pass-upgrade',
         'signup-v2-upgrade',
         'signup-vpn',
+        'signup-wallet',
     ] as PaymentMethodFlows[])('should not offer SEPA for %s flow', (flow) => {
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
