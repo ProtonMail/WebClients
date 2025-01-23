@@ -6,15 +6,19 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms/index';
 import Price from '@proton/components/components/price/Price';
+import { useRegionalPricing } from '@proton/components/hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { useLoading } from '@proton/hooks/index';
-import { PLANS, PLAN_NAMES, getPlanByName } from '@proton/payments';
+import { useLoading } from '@proton/hooks';
+import { PLANS, PLAN_NAMES, getPlanByName, isMainCurrency } from '@proton/payments';
 import { BRAND_NAME, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
-import { useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 const OFFER_DEFAULT_AMOUNT_DUE = 100;
+
+interface Props {
+    newUpsellModalVariant?: boolean;
+}
 
 /**
  * Offers a $1 promo to free users
@@ -22,48 +26,43 @@ const OFFER_DEFAULT_AMOUNT_DUE = 100;
  * We can't offer $1 Mail Plus to paid users as it might override their existing
  * subscription (e.g. VPN Plus).
  */
-const useOneDollarConfig = () => {
+const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
     const [user] = useUser();
     const [currency, loadingCurrency] = useAutomaticCurrency();
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
-    const { paymentsApi } = usePaymentsApi();
     const [loading, withLoading] = useLoading(true);
     const [amountDue, setAmountDue] = useState<number>();
 
+    const { fetchPrice } = useRegionalPricing();
+
     const [plansResult] = usePlans();
 
-    let planName = PLAN_NAMES[PLANS.MAIL];
-    let planID: PLANS = PLANS.MAIL;
-    if (user.isPaid) {
-        planID = PLANS.BUNDLE;
-        planName = PLAN_NAMES[PLANS.BUNDLE];
-    }
+    const planID = user.isPaid ? PLANS.BUNDLE : PLANS.MAIL;
+    const planName = user.isPaid ? PLAN_NAMES[PLANS.BUNDLE] : PLAN_NAMES[PLANS.MAIL];
     const plan = getPlanByName(plansResult?.plans ?? [], planID, currency);
     const cycle = user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY;
-    const planPricePerMonth = (plan?.Pricing?.[cycle] || 0) / cycle;
+    const planPricePerMonth = getPricePerCycle(plan, cycle) ?? 0;
 
     useEffect(() => {
         const handleGetPlanAmount = async () => {
             if (plan && currency && !loadingCurrency && !amountDue) {
                 // For USD, CHF and EUR, default value is "1 dollar"
-                const isDefaultAmountDue = ['USD', 'CHF', 'EUR'].includes(currency);
-                if (isDefaultAmountDue) {
+                if (isMainCurrency(currency)) {
                     setAmountDue(user.isFree ? OFFER_DEFAULT_AMOUNT_DUE : planPricePerMonth);
                     return;
                 }
 
-                try {
-                    const { AmountDue } = await paymentsApi.checkWithAutomaticVersion({
+                const result = await fetchPrice({
+                    data: {
                         Plans: { [planID]: 1 },
                         Currency: currency,
                         Cycle: CYCLE.MONTHLY,
                         CouponCode: user.isFree ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
-                    });
-                    setAmountDue(AmountDue);
-                } catch (e) {
-                    // If request fails, default on plan full price
-                    setAmountDue(planPricePerMonth);
-                }
+                    },
+                    defaultPrice: planPricePerMonth,
+                    currency,
+                });
+
+                setAmountDue(result);
             }
         };
 
@@ -90,7 +89,7 @@ const useOneDollarConfig = () => {
             <CircleLoader size="small" />
         );
 
-    if (displayNewUpsellModalsVariant) {
+    if (newUpsellModalVariant) {
         return {
             submitText: user.isFree
                 ? c('Action').jt`Get ${planName} for ${priceCoupon}`
