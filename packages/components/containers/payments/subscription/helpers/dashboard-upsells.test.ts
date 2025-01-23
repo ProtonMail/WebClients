@@ -71,7 +71,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -118,7 +118,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -156,7 +156,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[0].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -194,7 +194,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[0].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -206,7 +206,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -253,7 +253,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[0].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -265,7 +265,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -297,7 +297,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -328,7 +328,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[0].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -340,7 +340,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -372,7 +372,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -403,7 +403,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[0].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -415,7 +415,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -471,7 +471,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,

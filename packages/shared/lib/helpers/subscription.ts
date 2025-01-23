@@ -509,6 +509,10 @@ export const allCycles = Object.freeze(
 export const regularCycles = Object.freeze([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]);
 export const customCycles = Object.freeze(allCycles.filter((cycle) => !regularCycles.includes(cycle)));
 
+export const isRegularCycle = (cycle: CYCLE) => {
+    return regularCycles.includes(cycle);
+};
+
 export const getValidCycle = (cycle: number): CYCLE | undefined => {
     return allCycles.includes(cycle) ? cycle : undefined;
 };
