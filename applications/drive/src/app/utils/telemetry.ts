@@ -25,6 +25,14 @@ export enum Features {
     thumbnailFormat = 'thumbnailFormat',
     globalBootstrapApp = 'globalBootstrapApp',
     globalBootstrapAppUrls = 'globalBootstrapAppUrls',
+    globalBootstrapAppUserSettings = 'globalBootstrapAppUserSettings',
+    globalBootstrapAppUserInit = 'globalBootstrapAppUserInit',
+    globalBootstrapAppLoadUser = 'globalBootstrapAppLoadUser',
+    globalBootstrapAppUnleash = 'globalBootstrapAppUnleash',
+    globalBootstrapAppCrypto = 'globalBootstrapAppCrypto',
+    globalBootstrapAppUserData = 'globalBootstrapAppUserData',
+    globalBootstrapAppPostLoad = 'globalBootstrapAppPostLoad',
+    globalBootstrapAppUserSettingsAddress = 'globalBootstrapAppUserSettingsAddress',
 }
 
 /**
