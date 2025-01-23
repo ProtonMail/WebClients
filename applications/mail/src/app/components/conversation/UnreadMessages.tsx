@@ -2,6 +2,7 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
 import { getNUnreadMessagesText } from 'proton-mail/helpers/text';
+
 interface Props {
     messagesIDs?: string[];
     onClick: (messageID: string) => void;
