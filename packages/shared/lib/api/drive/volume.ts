@@ -13,7 +13,7 @@ export const queryCreateDriveVolume = (data: CreateDriveVolume) => ({
 
 export const queryCreatePhotosWithAlbumsVolume = (data: CreateDrivePhotosWithAlbumsVolume) => ({
     method: 'post',
-    url: `drive/photos/volume`,
+    url: `drive/photos/volumes`,
     data,
 });
 
