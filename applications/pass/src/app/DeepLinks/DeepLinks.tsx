@@ -4,7 +4,7 @@ import { Redirect, type RouteChildrenProps, useParams } from 'react-router-dom';
 import { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 
-import { deepLinkConfig, fallback, getURLPrefix } from './configuration';
+import { DEEPLINK_CONFIG, fallback, getURLPrefix } from './configuration';
 import type { DeepLinkRoutes } from './types';
 
 export const DeepLinks: FC<RouteChildrenProps> = ({ match, location }) => {
@@ -17,7 +17,7 @@ export const DeepLinks: FC<RouteChildrenProps> = ({ match, location }) => {
 
     const targetUrl = useMemo(() => {
         const params = new URLSearchParams(location.search);
-        const config = deepLinkConfig[key] || fallback;
+        const config = DEEPLINK_CONFIG[key] || fallback;
         return `${getURLPrefix(path)}${config(params)}`;
     }, [key, location, match]);
 
