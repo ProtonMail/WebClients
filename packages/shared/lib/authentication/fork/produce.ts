@@ -206,9 +206,10 @@ export const getCanUserReAuth = (user: User) => {
     if (user.OrganizationPrivateKey) {
         return false;
     }
-    // Global SSO accounts are supported by entering the backup password
+    // Global SSO accounts are supported by entering the backup password - currently disabled
+    // due to bad UX, and Pass is using something else for e.g. export feature.
     if (getIsGlobalSSOAccount(user)) {
-        return true;
+        return false;
     }
     // Not supported for a standard SSO account without keys
     if (getIsSSOAccount(user)) {
