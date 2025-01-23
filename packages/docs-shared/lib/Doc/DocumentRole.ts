@@ -78,4 +78,8 @@ export class DocumentRole {
   isPublicViewerOrEditor(): boolean {
     return this.isPublicViewer() || this.isPublicEditor()
   }
+
+  canReadPublicShareUrl(): boolean {
+    return this.isAdmin()
+  }
 }
