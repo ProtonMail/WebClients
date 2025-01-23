@@ -17,27 +17,18 @@ export const setAddressFlags = async ({
     address,
     keyTransparencyVerify,
     api,
-    addressesKeys,
+    addressKeys,
 }: {
     encryptionDisabled: boolean;
     expectSignatureDisabled: boolean;
     address: Address;
     keyTransparencyVerify: KeyTransparencyVerify;
     api: Api;
-    addressesKeys?: {
-        address: Address;
-        keys: DecryptedAddressKey[];
-    }[];
+    addressKeys: DecryptedAddressKey[];
 }): Promise<void> => {
-    const { ID: addressID, SignedKeyList: currentSignedKeyList, Keys: currentKeys } = address;
-    const addressWithKeys = addressesKeys?.find(({ address: { ID } }) => ID === addressID);
-    if (addressWithKeys === undefined) {
-        throw new Error('addressWithKeys is undefined!');
-    }
+    const { SignedKeyList: currentSignedKeyList, Keys: currentKeys } = address;
 
-    const { keys } = addressWithKeys;
-
-    const activeKeys = await getActiveAddressKeys(address, currentSignedKeyList, currentKeys, keys);
+    const activeKeys = await getActiveAddressKeys(address, currentSignedKeyList, currentKeys, addressKeys);
 
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => ({
         ...activeKey,

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { acceptMembership, declineOrLeaveMembership } from '@proton/account';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { getKTUserContext } from '@proton/account/kt/actions';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
@@ -12,7 +13,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReferenceV4 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { baseUseDispatch } from '@proton/react-redux-store';
+import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroupMember } from '@proton/shared/lib/api/groups';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
@@ -28,7 +29,6 @@ import {
 import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 import { generateForwardingAddressKey as generateGroupMemberAddressKey } from '../../forward/helpers';
-import useVerifyOutboundPublicKeys from '../../keyTransparency/useVerifyOutboundPublicKeys';
 
 const useGroupActions = () => {
     const api = useApi();
@@ -36,13 +36,11 @@ const useGroupActions = () => {
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const getUser = useGetUser();
-    const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
-    const dispatch = baseUseDispatch();
+    const createKtVerifier = useKTVerifier();
+    const dispatch = useDispatch();
 
     const acceptInvitation = async (membership: GroupMembership) => {
         try {
@@ -94,8 +92,8 @@ const useGroupActions = () => {
             const { addressKeys: forwarderAddressKeys } = await getAndVerifyApiKeys({
                 api,
                 email: membership.Address,
-                verifyOutboundPublicKeys,
                 internalKeysOnly: true,
+                ktUserContext: await dispatch(getKTUserContext()),
             });
 
             const publicKeys = await Promise.all(
@@ -132,6 +130,7 @@ const useGroupActions = () => {
                 privateKey,
                 passphrase: decryptedPrimaryAddressKeyToken,
             });
+            const { keyTransparencyVerify, keyTransparencyCommit } = await createKtVerifier();
             await generateGroupMemberAddressKey({
                 api,
                 address,
@@ -143,7 +142,7 @@ const useGroupActions = () => {
                 activeKeys,
                 privateKey,
             });
-            await keyTransparencyCommit(userKeys);
+            await keyTransparencyCommit(await getUser(), userKeys);
             dispatch(acceptMembership(membership));
             createNotification({ text: c('group_invitation: Success').t`Group invitation accepted` });
         } catch (error) {

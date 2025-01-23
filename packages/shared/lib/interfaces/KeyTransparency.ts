@@ -1,5 +1,5 @@
 import type { PublicKeyReference } from '@proton/crypto';
-import type { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
+import type { Epoch, SelfAuditResult } from '@proton/key-transparency';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { PrimaryAddressKeysForSigning } from '../keys';
@@ -42,7 +42,7 @@ export type KeyTransparencyVerify = (
     publicKeys: PublicKeyReference[]
 ) => Promise<void>;
 export type PreAuthKTVerify = (userKeys: DecryptedKey[]) => KeyTransparencyVerify;
-export type KeyTransparencyCommit = (userKeys: DecryptedKey[]) => Promise<void>;
+export type KeyTransparencyCommit = (user: User, userKeys: DecryptedKey[]) => Promise<void>;
 
 export interface PreAuthKTVerifier {
     preAuthKTVerify: PreAuthKTVerify;
@@ -50,14 +50,14 @@ export interface PreAuthKTVerifier {
 }
 
 export interface KTUserContext {
+    ktActivation: KeyTransparencyActivation;
     appName: APP_NAMES;
     getUser: () => Promise<User>;
     getUserKeys: () => Promise<DecryptedKey[]>;
-    getAddressKeys: (addressID: string) => Promise<DecryptedKey[]>;
 }
 
 export type VerifyOutboundPublicKeys = (data: {
-    userContext?: KTUserContext;
+    ktUserContext: KTUserContext;
     email: string;
     /**
      * Optimisations for apps where users with external domains do not have valid keys (e.g. Mail)
@@ -78,7 +78,7 @@ export type VerifyOutboundPublicKeys = (data: {
 }>;
 
 export type SaveSKLToLS = (data: {
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     email: string;
     data: string;
     revision: number;
@@ -99,7 +99,7 @@ export enum KeyTransparencyActivation {
     SHOW_UI,
 }
 
-export type GetLatestEpoch = (forceRefresh?: boolean) => Promise<Epoch>;
+export type GetLatestEpoch = ({ api, forceRefresh }: { api: Api; forceRefresh?: boolean }) => Promise<Epoch>;
 
 export enum KT_VERIFICATION_STATUS {
     VERIFIED_KEYS,
@@ -114,14 +114,23 @@ export interface KeyTransparencyVerificationResult {
 
 export type UploadMissingSKL = (data: {
     address: Address;
+    addressKeys: DecryptedAddressKey[];
     epoch: Epoch;
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     api: Api;
 }) => Promise<void>;
 
-export type ResetSelfAudit = (user: User, keyPassword: string, addressesBeforeReset: Address[]) => Promise<void>;
+export type ResetSelfAudit = (options: {
+    api: Api;
+    ktActivation: KeyTransparencyActivation;
+    user: User;
+    keyPassword: string;
+    addressesBeforeReset: Address[];
+}) => Promise<void>;
 
 export interface ResignSKLWithPrimaryKeyArguments {
+    api: Api;
+    ktActivation: KeyTransparencyActivation;
     address: Address;
     newPrimaryKeys: PrimaryAddressKeysForSigning;
     formerPrimaryKeys: PrimaryAddressKeysForSigning;

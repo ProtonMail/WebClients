@@ -1,6 +1,7 @@
 import type { Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
-import { fetchProof, throwKTError } from '../helpers';
+import { fetchProof } from '../helpers/apiHelpers';
+import { throwKTError } from '../helpers/utils';
 import type { Epoch } from '../interfaces';
 import {
     verifyProofOfAbsenceForAllRevision,

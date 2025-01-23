@@ -19,7 +19,6 @@ import type {
     Member,
     OrganizationKey,
     PasswordlessOrganizationKey,
-    VerifyOutboundPublicKeys,
 } from '../interfaces';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
 import { getPrimaryKey } from './getPrimaryKey';
@@ -404,13 +403,11 @@ export const acceptInvitation = async ({
 export const getVerifiedPublicKeys = async ({
     api,
     email,
-    verifyOutboundPublicKeys,
-    userContext,
+    ktUserContext,
 }: {
     email: string;
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    userContext: KTUserContext | undefined;
+    ktUserContext: KTUserContext;
 }) => {
     if (!email) {
         throw new Error('Missing email');
@@ -419,8 +416,7 @@ export const getVerifiedPublicKeys = async ({
     const { addressKeys } = await getAndVerifyApiKeys({
         api,
         email,
-        verifyOutboundPublicKeys,
-        userContext,
+        ktUserContext,
         internalKeysOnly: false,
         noCache: true,
     });
@@ -501,7 +497,10 @@ export const generateOrganizationKeySignature = async ({
         signingKeys,
         detached: true,
         textData: fingerprint,
-        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, critical: true },
+        signatureContext: {
+            value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT,
+            critical: true,
+        },
     });
     return signature;
 };
@@ -520,7 +519,10 @@ export const validateOrganizationKeySignature = async ({
         armoredSignature,
         textData: fingerprint,
         verificationKeys,
-        signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT, required: true },
+        signatureContext: {
+            value: ORGANIZATION_SIGNATURE_CONTEXT.ORG_KEY_FINGERPRINT_SIGNATURE_CONTEXT,
+            required: true,
+        },
     });
 
     if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -540,13 +542,13 @@ export const validateOrganizationSignatureHelper = async ({
     email,
     privateKey,
     armoredSignature,
-    verifyOutboundPublicKeys,
+    ktUserContext,
     api,
 }: {
     email: string;
     privateKey: PrivateKeyReference;
     armoredSignature: string;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    ktUserContext: KTUserContext;
     api: Api;
 }) => {
     const silentApi = getSilentApi(api);
@@ -555,9 +557,7 @@ export const validateOrganizationSignatureHelper = async ({
         await getVerifiedPublicKeys({
             api: silentApi,
             email,
-            verifyOutboundPublicKeys,
-            // In app context, can use default
-            userContext: undefined,
+            ktUserContext,
         })
     ).map(({ publicKey }) => publicKey);
 

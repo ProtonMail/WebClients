@@ -7,7 +7,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { selectCalendarsBootstrap } from '@proton/calendar';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { SubscriptionModalProvider, useDrawerParent } from '@proton/components';
+import { KeyTransparencyManager, SubscriptionModalProvider, useDrawerParent } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { useInstance } from '@proton/hooks';
@@ -135,9 +135,11 @@ const WrappedMainContainer = () => {
     useDrawerParent();
     return (
         <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
-            <QuickSettingsRemindersProvider>
-                <MainContainer />
-            </QuickSettingsRemindersProvider>
+            <KeyTransparencyManager appName={APPS.PROTONCALENDAR}>
+                <QuickSettingsRemindersProvider>
+                    <MainContainer />
+                </QuickSettingsRemindersProvider>
+            </KeyTransparencyManager>
         </SubscriptionModalProvider>
     );
 };

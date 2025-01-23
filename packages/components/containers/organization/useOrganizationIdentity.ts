@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { getKTUserContext } from '@proton/account/kt/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import type { IconName } from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
+import { useDispatch } from '@proton/redux-shared-store';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 import { OrganizationSignatureState, validateOrganizationSignatureHelper } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 
 export interface OrganizationIdentityState {
     state: 'loading' | 'complete';
@@ -45,11 +45,11 @@ const getResult = (result: Unwrap<ReturnType<typeof validateOrganizationSignatur
 
 const useOrganizationIdentity = () => {
     const [organizationKey] = useOrganizationKey();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const [state, setState] = useState(defaultState);
     const signature = organizationKey?.Key.FingerprintSignature || '';
     const signatureAddress = organizationKey?.Key.FingerprintSignatureAddress || '';
     const api = useApi();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (!organizationKey?.privateKey || !signature || !signatureAddress) {
@@ -60,9 +60,9 @@ const useOrganizationIdentity = () => {
             const result = await validateOrganizationSignatureHelper({
                 email: signatureAddress,
                 armoredSignature: signature,
-                verifyOutboundPublicKeys,
                 privateKey: organizationKey.privateKey,
                 api,
+                ktUserContext: await dispatch(getKTUserContext()),
             }).catch(noop);
             setState({
                 state: 'complete',

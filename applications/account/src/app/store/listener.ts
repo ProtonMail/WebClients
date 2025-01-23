@@ -1,9 +1,11 @@
 import {
     authenticationListener,
+    convertAddressesListener,
     organizationKeysManagementListener,
     startAccountSessionsListener,
     startListeningToPlanNameChange,
     startPersistListener,
+    unprivatizeMembersListener,
 } from '@proton/account';
 import { startHostAccountSessionsListener } from '@proton/account/accountSessions/hostListener';
 import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
@@ -28,6 +30,8 @@ export const start = ({
         startListeningToPlanNameChange(startListening);
         startHostAccountSessionsListener(startListening);
         startAccountSessionsListener(startListening);
+        convertAddressesListener(startListening);
+        unprivatizeMembersListener(startListening);
     }
 
     if (mode === 'lite') {
