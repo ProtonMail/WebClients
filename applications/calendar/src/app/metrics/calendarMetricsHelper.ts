@@ -23,4 +23,4 @@ export const converViewToString = (view: VIEWS) => {
         default:
             return 'custom';
     }
-}
+};
