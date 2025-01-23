@@ -578,6 +578,7 @@ const SubscriptionContainer = ({
             planIDs,
             plansMap,
             allowDowncycling: scheduledDowncycling,
+            cycleParam: maybeCycle,
         });
 
     const runAdditionalChecks = async (
