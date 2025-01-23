@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
-import { useUser } from '@proton/account/user/hooks';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -22,9 +21,8 @@ const useAddressFlags: UseAddressFlags = (address) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [User] = useUser();
-    const [addressesKeys] = useAddressesKeys();
-    const { keyTransparencyVerify } = useKTVerifier(api, async () => User);
+    const getAddressKeys = useGetAddressKeys();
+    const createKTVerifier = useKTVerifier();
 
     if (!address || address.Flags === undefined) {
         return null;
@@ -34,10 +32,11 @@ const useAddressFlags: UseAddressFlags = (address) => {
         encryptionDisabled: boolean,
         expectSignatureDisabled: boolean
     ): Promise<void> => {
+        const { keyTransparencyVerify } = await createKTVerifier();
         await setAddressFlags({
             encryptionDisabled,
             expectSignatureDisabled,
-            addressesKeys,
+            addressKeys: await getAddressKeys(address.ID),
             address,
             keyTransparencyVerify,
             api,

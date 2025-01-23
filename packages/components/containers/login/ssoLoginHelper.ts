@@ -234,7 +234,7 @@ export const getSSOSetupData = async ({
     user: User;
     cache: AuthCacheResult;
 }): Promise<SSOSetupData | null> => {
-    const { api, verifyOutboundPublicKeys, appName } = cache;
+    const { api, ktActivation, appName } = cache;
 
     const unprivatizationContextData = await getUnprivatizationContextData({ api }).catch((error) => {
         const { code } = getApiError(error);
@@ -255,10 +255,6 @@ export const getSSOSetupData = async ({
         return null;
     }
 
-    if (!verifyOutboundPublicKeys) {
-        throw new Error('Invalid requirements');
-    }
-
     const deviceData = await createAuthDevice({ api });
 
     await setPersistedAuthDeviceDataByUser({ user, deviceData });
@@ -269,14 +265,13 @@ export const getSSOSetupData = async ({
     });
 
     await validateUnprivatizationData({
-        userContext: {
+        ktUserContext: {
+            ktActivation,
             appName,
             getUser: async () => user,
             getUserKeys: async () => [],
-            getAddressKeys: async () => [],
         },
         api,
-        verifyOutboundPublicKeys,
         parsedUnprivatizationData,
         options: {
             newMemberCreation: false,
@@ -428,11 +423,7 @@ export const getSSOInactiveData = async ({
 };
 
 export const getSSOUnlockData = async ({ cache }: { cache: AuthCacheResult }): Promise<SSOUnlockData> => {
-    const { api, verifyOutboundPublicKeys } = cache;
-
-    if (!verifyOutboundPublicKeys) {
-        throw new Error('Invalid requirements');
-    }
+    const { api } = cache;
 
     let [user, addresses, organizationData] = await Promise.all([
         cache.data.user || syncUser(cache),
