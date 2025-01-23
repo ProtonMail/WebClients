@@ -4,13 +4,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
-import mailOfferImage from '@proton/styles/assets/img/permanent-offer/mail_offer_image.svg';
 import mailOfferSpotlight from '@proton/styles/assets/img/permanent-offer/mail_offer_spotlight.svg';
 
 import { OfferContent } from '../components/OfferContent';
 import { OfferLastReminderSpotlight } from '../components/OfferLastReminderSpotlight';
 import { PostSignupOneDollarCheck } from '../components/PostSignupOneDollarCheck';
-import { EXTENDED_REMINDER_DAY, LAST_REMINDER_DAY } from '../components/interface';
+import { LAST_REMINDER_DAY } from '../components/interface';
 
 interface Props {
     pricingTitle: ReactNode;
@@ -52,14 +51,5 @@ export const MailPostSignupDollarContent = ({ daysSinceOffer, onClose, pricingTi
         },
     ];
 
-    return (
-        <OfferContent
-            product="mail"
-            features={features}
-            imgSrc={mailOfferImage}
-            onClose={onClose}
-            extended={daysSinceOffer >= EXTENDED_REMINDER_DAY}
-            onUpsellClick={onUpsellClick}
-        />
-    );
+    return <OfferContent product="mail" features={features} onClose={onClose} onUpsellClick={onUpsellClick} />;
 };
