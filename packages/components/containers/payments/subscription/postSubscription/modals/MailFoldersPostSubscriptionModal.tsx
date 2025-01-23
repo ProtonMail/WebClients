@@ -17,8 +17,14 @@ import {
     PostSubscriptionModalWrapper,
 } from './PostSubscriptionModalsComponents';
 
-const MailFoldersPostSubscriptionModal = (props: PostSubscriptionModalComponentProps) => {
-    const { modalProps, step, onRemindMeLater, flowName, upsellRef } = props;
+const MailFoldersPostSubscriptionModal = ({
+    modalProps,
+    step,
+    onRemindMeLater,
+    flowName,
+    upsellRef,
+    onDisplayFeatureTour,
+}: PostSubscriptionModalComponentProps) => {
     const [displayFoldersModal, setDisplayFoldersModal] = useState(false);
 
     const postSubscriptionTourTelemetry = usePostSubscriptionTourTelemetry();
@@ -68,7 +74,7 @@ const MailFoldersPostSubscriptionModal = (props: PostSubscriptionModalComponentP
                                 // translator: complete sentence: <Action>create folder</Action> or discover other features: <Action>Take a tour</Action>
                                 c('Info').t`or discover other features:`
                             }</p>
-                            <Button fullWidth onClick={onRemindMeLater}>{c('Action').t`Take a tour`}</Button>
+                            <Button fullWidth onClick={onDisplayFeatureTour}>{c('Action').t`Take a tour`}</Button>
                         </div>
                     </PostSubscriptionModalContentWrapper>
                 </>
