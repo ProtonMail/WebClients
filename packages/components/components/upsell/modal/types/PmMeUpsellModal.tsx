@@ -5,12 +5,12 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { PLANS } from '@proton/payments';
 import { CYCLE, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
+
+import { useMailUpsellConfig } from '../../useMailUpsellConfig';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -25,13 +25,10 @@ const PmMeUpsellModal = ({ modalProps, upsellRefOptions }: Props) => {
     const [user] = useUser();
     const activatePmUser = `${user.Name}@pm.me`;
 
-    const upsellConfig = useUpsellConfig({
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({
         upsellRef,
-        plan: PLANS.MAIL,
         cycle: user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY,
     });
-
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
     if (displayNewUpsellModalsVariant) {
         return (
