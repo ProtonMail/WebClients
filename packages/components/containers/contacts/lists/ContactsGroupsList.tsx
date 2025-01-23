@@ -21,14 +21,7 @@ interface Props {
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
 }
 
-const ContactsGroupsList = ({
-    groups,
-    groupsEmailsMap,
-    onCheckOne,
-    checkedIDs,
-    onClick,
-    onCompose,
-}: Props) => {
+const ContactsGroupsList = ({ groups, groupsEmailsMap, onCheckOne, checkedIDs, onClick, onCompose }: Props) => {
     const listRef = useRef<List>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
 
