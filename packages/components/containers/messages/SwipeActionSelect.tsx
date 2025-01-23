@@ -11,17 +11,21 @@ export interface SwipeActionSelectProps {
     loading?: boolean;
 }
 
-const SwipeActionSelect = ({ onChange, ...rest }: SwipeActionSelectProps) => {
-    const options = [
+const getSwipeOptions = () =>
+    Object.freeze([
+        { title: c('Option').t`None`, value: SWIPE_ACTION.None },
         { title: c('Option').t`Trash`, value: SWIPE_ACTION.Trash },
         { title: c('Option').t`Spam`, value: SWIPE_ACTION.Spam },
         { title: c('Option').t`Star`, value: SWIPE_ACTION.Star },
         { title: c('Option').t`Archive`, value: SWIPE_ACTION.Archive },
         { title: c('Option').t`Mark as read`, value: SWIPE_ACTION.MarkAsRead },
-    ];
+    ]);
+
+const SwipeActionSelect = ({ onChange, ...rest }: SwipeActionSelectProps) => {
+    const swipeOptions = getSwipeOptions();
     return (
         <SelectTwo onChange={({ value }) => onChange(value)} {...rest}>
-            {options.map(({ title, value }) => (
+            {swipeOptions.map(({ title, value }) => (
                 <Option key={value} title={title} value={value} />
             ))}
         </SelectTwo>

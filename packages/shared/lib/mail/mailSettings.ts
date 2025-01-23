@@ -145,6 +145,7 @@ export enum SPAM_ACTION {
 }
 
 export enum SWIPE_ACTION {
+    None = -1,
     Trash = 0,
     Spam = 1,
     Star = 2,
