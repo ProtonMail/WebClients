@@ -197,11 +197,13 @@ export const PaymentsNoApi = ({
 
     const isSignupPass = type === 'signup-pass' || type === 'signup-pass-upgrade';
     const isSignupVpn = type === 'signup-vpn';
-    const isSingleSignup = isSignupPass || isSignupVpn;
+    const isSignupWallet = type === 'signup-wallet';
+    const isSingleSignup = isSignupPass || isSignupVpn || isSignupWallet;
     const showAlert3ds = !(
         type === 'signup' ||
         isSignupPass ||
         isSignupVpn ||
+        isSignupWallet ||
         type === 'signup-v2' ||
         type === 'signup-v2-upgrade'
     );
