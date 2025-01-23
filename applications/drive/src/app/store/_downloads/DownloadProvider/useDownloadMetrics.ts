@@ -129,7 +129,8 @@ export const useDownloadMetrics = (
      */
     const observe = (downloads: Download[]) => {
         for (const download of downloads) {
-            if (isAbortError(download.error)) {
+            // Ignore metrics in case we passed the buffer to the download as we already validated the download process
+            if (isAbortError(download.error) || download.hasFullBuffer) {
                 continue;
             }
             // shareType is infered from the download rootShareId (each links are LinkDownload type)
