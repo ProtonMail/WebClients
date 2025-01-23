@@ -1,6 +1,6 @@
 import { TidyURL } from '@protontech/tidy-url';
 
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 export const getUTMTrackersFromURL = (originalURL: string) => {
@@ -46,8 +46,12 @@ export const getUTMTrackersFromURL = (originalURL: string) => {
         }
 
         return { url: originalURL, info, utmTracker: undefined };
-    } catch {
-        captureMessage('Failed to parse URL with trackers');
+    } catch (error: any) {
+        traceError(error, {
+            tags: {
+                initiative: SentryMailInitiatives.REMOVE_EMAIL_TRACKERS,
+            },
+        });
         return undefined;
     }
 };
