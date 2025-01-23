@@ -1,20 +1,19 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { serverTime } from '@proton/crypto';
-import { ktSentryReportError } from '@proton/key-transparency/lib';
+import { ktSentryReportError } from '@proton/key-transparency';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import useOnline from '../../hooks/useOnline';
 import type { KTContext } from './ktContext';
+import useKTActivation from './useKTActivation';
 import useKTState from './useKTState';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
 import useRunSelfAudit from './useRunSelfAudit';
-import useVerifyOutboundPublicKeys from './useVerifyOutboundPublicKeys';
 
 interface Props {
     children: ReactNode;
@@ -27,8 +26,6 @@ const KeyTransparencyManager = ({ children }: Props) => {
     const [ktStateLoaded, ktState, setKTState] = useKTState();
 
     const [selfAuditPending, setSelfAuditPending] = useState(false);
-
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     const runSelfAudit = useRunSelfAudit();
 
@@ -71,7 +68,6 @@ const KeyTransparencyManager = ({ children }: Props) => {
     const ktFunctions: KTContext = {
         ktState,
         ktActivation,
-        verifyOutboundPublicKeys,
     };
 
     return <KeyTransparencyContext.Provider value={ktFunctions}>{children}</KeyTransparencyContext.Provider>;

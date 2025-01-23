@@ -3,9 +3,9 @@ import type { Certificate, GeneralName } from 'pkijs';
 import { hexStringToArray } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import type { KT_CERTIFICATE_ISSUER } from '../constants';
-import { SCT_THRESHOLD, epochChainVersion } from '../constants';
 import { ctLogs, rootCertificates } from '../constants/certificates';
+import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
+import { SCT_THRESHOLD, epochChainVersion } from '../constants/constants';
 import { getBaseDomain, throwKTError } from '../helpers/utils';
 
 const importPkijs = () =>

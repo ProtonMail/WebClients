@@ -1,6 +1,5 @@
 import { ThemeColor } from '@proton/colors/types';
-import type { SelfAuditResult } from '@proton/key-transparency/lib';
-import { AddressAuditStatus, AddressAuditWarningReason } from '@proton/key-transparency/lib';
+import { AddressAuditStatus, AddressAuditWarningReason, type SelfAuditResult } from '@proton/key-transparency';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useKeyTransparencyContext } from '../containers/keyTransparency/useKeyTransparencyContext';

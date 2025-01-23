@@ -11,7 +11,6 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store';
@@ -55,7 +54,6 @@ const useOrganizationUnprivatizationModals = () => {
     const joinedUnprivatizationState = useSelector(selectJoinedUnprivatizationState);
     const disabledMembers = useSelector(selectDisabledMembers);
     const dispatch = useDispatch();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const [loadingDelete, withLoadingDelete] = useLoading();
     const { createNotification } = useNotifications();
 
@@ -119,7 +117,6 @@ const useOrganizationUnprivatizationModals = () => {
                         onClick={() => {
                             dispatch(
                                 unprivatizeMembersBackground({
-                                    verifyOutboundPublicKeys,
                                     target: {
                                         type: 'action',
                                         members: membersToUnprivatize,

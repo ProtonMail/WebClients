@@ -3,12 +3,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
+import { createAddress } from '@proton/account/addresses/actions';
 import { useCustomDomains } from '@proton/account/domains/hooks';
-import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, CircleLoader } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -21,15 +19,10 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { createAddress } from '@proton/shared/lib/api/addresses';
-import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
-import { ADDRESS_TYPE, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
@@ -38,18 +31,9 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import type { Address, Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
-import {
-    getCanGenerateMemberKeys,
-    getShouldSetupMemberKeys,
-    missingKeysMemberProcess,
-    missingKeysSelfProcess,
-    setupMemberKeys,
-} from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
-
-const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
+import { getCanGenerateMemberKeys, getShouldSetupMemberKeys } from '@proton/shared/lib/keys';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
@@ -58,18 +42,13 @@ interface Props extends ModalProps<'form'> {
 }
 
 const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
-    const { call } = useEventManager();
     const [user] = useUser();
-    const [addresses] = useAddresses();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [{ premiumDomains, protonDomains }, loadingProtonDomains] = useProtonDomains();
     const loadingDomains = loadingCustomDomains || loadingProtonDomains;
-    const [premiumDomain = ''] = premiumDomains;
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const api = useApi();
     const initialMember = member || members[0];
-    const authentication = useAuthentication();
     const [model, setModel] = useState(() => {
         return {
             id: initialMember.ID,
@@ -81,8 +60,8 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
     const [submitting, withLoading] = useLoading();
-    const hasPremium = addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
-    const getOrganizationKey = useGetOrganizationKey();
+    const errorHandler = useErrorHandler();
+    const dispatch = useDispatch();
 
     const selectedMember = members.find((otherMember) => otherMember.ID === model.id);
     const addressDomains = getAvailableAddressDomains({
@@ -94,8 +73,6 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
     });
     const domainOptions = addressDomains.map((DomainName) => ({ text: DomainName, value: DomainName }));
     const selectedDomain = model.domain || domainOptions[0]?.text;
-    const getUserKeys = useGetUserKeys();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const shouldGenerateKeys =
         !selectedMember || Boolean(selectedMember.Self) || getCanGenerateMemberKeys(selectedMember);
@@ -118,86 +95,18 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
     const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
 
     const handleSubmit = async () => {
-        if (!selectedMember || !addresses) {
+        if (!selectedMember) {
             throw new Error('Missing member');
         }
-        const organizationKey = await getOrganizationKey();
-        const DisplayName = model.name;
 
-        if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === emailAddress.toLowerCase()) {
-            return createNotification({
-                text: c('Error')
-                    .t`${user.Name} is your username. To create ${emailAddress}, please go to Settings > Messages and composing > Short domain (pm.me)`,
-                type: 'error',
-            });
-        }
-
-        const shouldGenerateSelfKeys =
-            Boolean(selectedMember.Self) && selectedMember.Private === MEMBER_PRIVATE.UNREADABLE;
-        const shouldGenerateMemberKeys = !shouldGenerateSelfKeys;
-        if (shouldGenerateKeys && shouldGenerateMemberKeys && !organizationKey?.privateKey) {
-            createNotification({ text: c('Error').t`Organization key is not decrypted`, type: 'error' });
-            return;
-        }
-
-        const { Address } = await api<{ Address: Address }>(
+        await dispatch(
             createAddress({
-                MemberID: selectedMember.ID,
-                Local: emailAddressParts.Local,
-                Domain: emailAddressParts.Domain,
-                DisplayName,
+                member: selectedMember,
+                emailAddressParts,
+                displayName: model.name,
+                password,
             })
         );
-
-        if (shouldGenerateKeys) {
-            const userKeys = await getUserKeys();
-
-            if (shouldGenerateSelfKeys) {
-                await missingKeysSelfProcess({
-                    api,
-                    userKeys,
-                    addresses,
-                    addressesToGenerate: [Address],
-                    password: authentication.getPassword(),
-                    keyGenConfig,
-                    onUpdate: noop,
-                    keyTransparencyVerify,
-                });
-            } else {
-                if (!organizationKey?.privateKey) {
-                    throw new Error('Missing org key');
-                }
-                const memberAddresses = await getAllMemberAddresses(api, selectedMember.ID);
-                if (shouldSetupMemberKeys && password) {
-                    await setupMemberKeys({
-                        ownerAddresses: addresses,
-                        keyGenConfig,
-                        organizationKey: organizationKey.privateKey,
-                        member: selectedMember,
-                        memberAddresses,
-                        password,
-                        api,
-                        keyTransparencyVerify,
-                    });
-                } else {
-                    await missingKeysMemberProcess({
-                        api,
-                        keyGenConfig,
-                        ownerAddresses: addresses,
-                        memberAddressesToGenerate: [Address],
-                        member: selectedMember,
-                        memberAddresses,
-                        onUpdate: noop,
-                        organizationKey: organizationKey.privateKey,
-                        keyTransparencyVerify,
-                    });
-                }
-            }
-
-            await keyTransparencyCommit(userKeys);
-        }
-
-        await call();
 
         rest.onClose?.();
         createNotification({ text: c('Success').t`Address added` });
@@ -219,7 +128,7 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                 if (!onFormSubmit()) {
                     return;
                 }
-                withLoading(handleSubmit());
+                withLoading(handleSubmit()).catch(errorHandler);
             }}
             onClose={handleClose}
         >

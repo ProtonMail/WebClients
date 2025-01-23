@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useInactiveKeys } from '@proton/account';
+import { addressKeysThunk, addressesThunk, useInactiveKeys, userKeysThunk } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { getKTActivation } from '@proton/account/kt/actions';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
@@ -19,6 +20,8 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
 import type { AlgorithmInfo } from '@proton/crypto';
+import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
+import { useDispatch } from '@proton/redux-shared-store';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
@@ -32,7 +35,6 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
@@ -58,9 +60,9 @@ const AddressKeysSection = () => {
     const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const [loadingKeyID, setLoadingKeyID] = useState<string>('');
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => User);
-    const resignSKLWithPrimaryKey = useResignSKLWithPrimaryKey();
+    const createKTVerifier = useKTVerifier();
     const keyReactivationRequests = useInactiveKeys();
+    const dispatch = useDispatch();
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
@@ -101,6 +103,7 @@ const AddressKeysSection = () => {
 
         try {
             setLoadingKeyID(ID);
+            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
             const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(
                 api,
                 Address,
@@ -110,12 +113,14 @@ const AddressKeysSection = () => {
             );
             await Promise.all([
                 resignSKLWithPrimaryKey({
+                    api,
+                    ktActivation: dispatch(getKTActivation()),
                     address: Address,
                     newPrimaryKeys: getPrimaryAddressKeysForSigning(newActiveKeys, true),
                     formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
                     userKeys,
                 }),
-                keyTransparencyCommit(userKeys),
+                keyTransparencyCommit(User, userKeys),
             ]);
             await call();
         } finally {
@@ -135,6 +140,7 @@ const AddressKeysSection = () => {
 
         try {
             setLoadingKeyID(ID);
+            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
             await setAddressKeyFlags(
                 api,
                 Address,
@@ -143,7 +149,7 @@ const AddressKeysSection = () => {
                 getNewKeyFlags(addressDisplayKey.flags, flagAction),
                 keyTransparencyVerify
             );
-            await keyTransparencyCommit(userKeys);
+            await keyTransparencyCommit(User, userKeys);
             await call();
         } finally {
             setLoadingKeyID('');
@@ -168,8 +174,9 @@ const AddressKeysSection = () => {
         const privateKey = addressKey?.privateKey;
 
         const onDelete = async (): Promise<void> => {
+            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
             await deleteAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
-            await keyTransparencyCommit(userKeys);
+            await keyTransparencyCommit(User, userKeys);
             await call();
         };
 
@@ -214,6 +221,7 @@ const AddressKeysSection = () => {
         }
         try {
             stop();
+            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
             const [newKey, updatedActiveKeys, formerActiveKeys] = await addAddressKeysProcess({
                 api,
                 userKeys,
@@ -226,12 +234,14 @@ const AddressKeysSection = () => {
             });
             await Promise.all([
                 resignSKLWithPrimaryKey({
+                    api,
+                    ktActivation: dispatch(getKTActivation()),
                     address: Address,
                     newPrimaryKeys: getPrimaryAddressKeysForSigning(updatedActiveKeys, true),
                     formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
                     userKeys,
                 }),
-                keyTransparencyCommit(userKeys),
+                keyTransparencyCommit(User, userKeys),
             ]);
             await call();
             return newKey.fingerprint;
@@ -257,6 +267,7 @@ const AddressKeysSection = () => {
         }
         try {
             stop();
+            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
             await importKeysProcess({
                 api,
                 address: Address,
@@ -268,7 +279,7 @@ const AddressKeysSection = () => {
                 onImport: cb,
                 keyTransparencyVerify,
             });
-            await keyTransparencyCommit(userKeys);
+            await keyTransparencyCommit(User, userKeys);
             return await call();
         } finally {
             start();
@@ -386,23 +397,31 @@ const AddressKeysSection = () => {
                     userKeys={userKeys || []}
                     keyReactivationRequests={keyReactivationRequests}
                     onProcess={async (keyReactivationRecords, onReactivation) => {
-                        if (!userKeys || !Addresses || !addressesKeys) {
-                            throw new Error('Missing dependencies');
-                        }
                         try {
                             stop();
+                            const [userKeys, addresses] = await Promise.all([
+                                dispatch(userKeysThunk()),
+                                dispatch(addressesThunk()),
+                            ]);
+                            const addressesKeys = await Promise.all(
+                                addresses.map(async (address) => ({
+                                    address,
+                                    keys: await dispatch(addressKeysThunk({ addressID: address.ID })),
+                                }))
+                            );
+                            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
                             await reactivateKeysProcess({
                                 api,
                                 user: User,
                                 userKeys,
-                                addresses: Addresses,
+                                addresses,
                                 addressesKeys,
                                 keyReactivationRecords,
                                 keyPassword: authentication.getPassword(),
                                 onReactivation,
                                 keyTransparencyVerify,
                             });
-                            await keyTransparencyCommit(userKeys).catch(noop);
+                            await keyTransparencyCommit(User, userKeys).catch(noop);
                             return await call();
                         } finally {
                             start();

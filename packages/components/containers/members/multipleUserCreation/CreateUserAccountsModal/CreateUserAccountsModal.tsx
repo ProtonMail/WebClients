@@ -9,8 +9,6 @@ import validateAddUser from '@proton/account/members/validateAddUser';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -25,7 +23,6 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import Marks from '@proton/components/components/text/Marks';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -49,7 +46,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import removeIndex from '@proton/utils/removeIndex';
 
-import useVerifyOutboundPublicKeys from '../../../keyTransparency/useVerifyOutboundPublicKeys';
 import type { CsvConfig } from '../csv';
 import type { UserTemplate } from '../types';
 import OrganizationCapacityErrorModal from './OrganizationCapacityErrorModal';
@@ -129,10 +125,6 @@ const CreateUserAccountsModal = ({
     const getOrganization = useGetOrganization();
     const getOrganizationKey = useGetOrganizationKey();
     const [organizationCapacityError, setOrganizationCapacityError] = useState<OrganizationCapacityError>();
-    const getUserKeys = useGetUserKeys();
-    const getUser = useGetUser();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => getUser());
 
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
@@ -337,9 +329,6 @@ const CreateUserAccountsModal = ({
                             disableDomainValidation,
                             disableAddressValidation,
                         },
-                        keyTransparencyCommit,
-                        keyTransparencyVerify,
-                        verifyOutboundPublicKeys,
                     })
                 );
 
@@ -378,8 +367,6 @@ const CreateUserAccountsModal = ({
 
         if (localSuccessfullyCreatedUsers.length) {
             const callPromise = call().catch(noop);
-            const userKeys = await getUserKeys();
-            await keyTransparencyCommit(userKeys);
             await callPromise;
         }
 

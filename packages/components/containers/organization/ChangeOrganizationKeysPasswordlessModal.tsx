@@ -20,7 +20,6 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AdministratorList from './AdministratorList';
 
 interface ChangeProps extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {
@@ -32,7 +31,6 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
     const [config, setConfig] = useState<any>();
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const api = useApi();
     const silentApi = getSilentApi(api);
     const { call } = useEventManager();
@@ -44,7 +42,7 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
     useEffect(() => {
         const run = async () => {
             setResult(null);
-            const result = await dispatch(getKeyRotationPayload({ verifyOutboundPublicKeys, api: silentApi }));
+            const result = await dispatch(getKeyRotationPayload({ api: silentApi }));
             setResult(result);
         };
         withLoadingInit(run()).catch(errorHandler);

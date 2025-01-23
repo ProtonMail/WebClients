@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { fetchSignedKeyLists } from '@proton/key-transparency/lib';
+import { fetchSignedKeyLists } from '@proton/key-transparency/lib/helpers/apiHelpers';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
@@ -26,7 +26,6 @@ import type {
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
     Unwrap,
-    VerifyOutboundPublicKeys,
 } from '../interfaces';
 import { MemberUnprivatizationState } from '../interfaces';
 import { srpVerify } from '../srp';
@@ -254,14 +253,12 @@ export type ParsedUnprivatizationData = Unwrap<ReturnType<typeof parseUnprivatiz
 
 export const validateUnprivatizationData = async ({
     api,
-    verifyOutboundPublicKeys,
-    userContext,
+    ktUserContext,
     parsedUnprivatizationData,
     options,
 }: {
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    userContext: KTUserContext | undefined;
+    ktUserContext: KTUserContext;
     parsedUnprivatizationData: ParsedUnprivatizationData;
     options: Parameters<typeof validateInvitationDataValues>[0]['options'];
 }) => {
@@ -276,9 +273,8 @@ export const validateUnprivatizationData = async ({
     } = parsedUnprivatizationData.payload;
     const verifiedPublicKeysResult = await getVerifiedPublicKeys({
         api,
-        verifyOutboundPublicKeys,
         email: AdminEmail,
-        userContext,
+        ktUserContext,
     }).catch(noop);
     if (!verifiedPublicKeysResult) {
         throw new Error('Unable to fetch public keys of admin');
@@ -580,11 +576,11 @@ export const unprivatizeMemberHelper = async ({
 export class UnprivatizationRevisionError extends Error {}
 
 export const getUnprivatizeMemberPayload = async ({
-    verifyOutboundPublicKeys,
     api,
     member,
     memberAddresses,
     organizationKey,
+    ktUserContext,
     options = {
         ignoreRevisionCheck: false,
     },
@@ -593,7 +589,7 @@ export const getUnprivatizeMemberPayload = async ({
     member: MemberReadyForUnprivatization;
     memberAddresses: Address[];
     organizationKey?: PrivateKeyReference;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    ktUserContext: KTUserContext;
     options?: {
         ignoreRevisionCheck: boolean;
     };
@@ -613,7 +609,7 @@ export const getUnprivatizeMemberPayload = async ({
     const verifiedApiKeys = await getAndVerifyApiKeys({
         api,
         email: data.Address,
-        verifyOutboundPublicKeys,
+        ktUserContext,
         internalKeysOnly: false,
         noCache: true,
     }).catch(noop);

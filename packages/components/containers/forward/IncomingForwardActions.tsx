@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { getKTUserContext } from '@proton/account/kt/actions';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -9,6 +10,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store';
 import { deleteForwarding, rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
@@ -16,7 +18,6 @@ import { ForwardingState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys, getReplacedAddressKeyTokens, splitKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { acceptIncomingForwarding } from './helpers';
 
 interface Props {
@@ -31,9 +32,8 @@ const IncomingForwardActions = ({ forward, addresses }: Props) => {
     const { createNotification } = useNotifications();
     const getUserKeys = useGetUserKeys();
     const getUser = useGetUser();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
+    const dispatch = useDispatch();
+    const createKtVerifier = useKTVerifier();
     const address = addresses.find(({ ID }) => ID === forward.ForwardeeAddressID);
     const getAddressKeys = useGetAddressKeys();
     const isPending = forward.State === ForwardingState.Pending;
@@ -66,15 +66,17 @@ const IncomingForwardActions = ({ forward, addresses }: Props) => {
 
         const addressKeys = await getAddressKeys(address.ID);
 
+        const { keyTransparencyCommit, keyTransparencyVerify } = await createKtVerifier();
         await acceptIncomingForwarding({
             api,
+            user: await getUser(),
             userKeys,
             addressKeys,
             address,
             forward,
             keyTransparencyVerify,
             keyTransparencyCommit,
-            verifyOutboundPublicKeys,
+            ktUserContext: await dispatch(getKTUserContext()),
         });
         await call();
         createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding accepted` });

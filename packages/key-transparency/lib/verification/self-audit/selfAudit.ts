@@ -8,7 +8,7 @@ import type {
     SelfAuditState,
 } from '@proton/shared/lib/interfaces';
 
-import { getSelfAuditInterval } from '../../helpers';
+import { getSelfAuditInterval } from '../../helpers/utils';
 import type { SelfAuditResult } from '../../interfaces';
 import { auditAddress } from './addressAudit';
 import { checkLSBlobs } from './verifyLocalStorage';
@@ -18,25 +18,25 @@ import { checkLSBlobs } from './verifyLocalStorage';
  * to send messages to
  */
 export const selfAudit = async ({
-    userContext,
+    ktUserContext,
     getLatestEpoch,
     api,
     ktLSAPI,
     state,
 }: {
-    userContext: KTUserContext;
+    ktUserContext: KTUserContext;
     state: SelfAuditState;
     api: Api;
     ktLSAPI: KTLocalStorageAPI;
     getLatestEpoch: GetLatestEpoch;
 }): Promise<SelfAuditResult> => {
-    const epoch = await getLatestEpoch(true);
+    const epoch = await getLatestEpoch({ api, forceRefresh: true });
 
     const userPrivateKeys = state.userKeys.map(({ privateKey }) => privateKey);
 
     const ownEmails = state.addresses.map(({ address }) => address.Email);
 
-    const userID = (await userContext.getUser()).ID;
+    const userID = (await ktUserContext.getUser()).ID;
     const localStorageAuditResults = await checkLSBlobs(userID, userPrivateKeys, ktLSAPI, epoch, api);
 
     const localStorageAuditResultsOwnAddress = localStorageAuditResults.filter(({ email }) =>
@@ -51,7 +51,7 @@ export const selfAudit = async ({
             .filter(({ address }) => !getIsAddressDisabled(address))
             .map((address) => {
                 return auditAddress({
-                    userContext,
+                    ktUserContext,
                     address: address.address,
                     userKeys: state.userKeys,
                     addressKeys: address.addressKeys,

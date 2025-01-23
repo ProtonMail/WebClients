@@ -13,7 +13,6 @@ import {
 } from '@proton/account';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
@@ -30,7 +29,6 @@ import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -64,7 +62,6 @@ import { useFlag } from '@proton/unleash';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
@@ -128,7 +125,6 @@ const SubUserCreateModal = ({
     const storageSizeUnit = sizeUnits.GB;
     const storageRange = getStorageRange({}, organization);
     const errorHandler = useErrorHandler();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     const [subscription] = useSubscription();
@@ -165,7 +161,6 @@ const SubUserCreateModal = ({
         storage: clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
     });
 
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, useGetUser());
     const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -221,9 +216,6 @@ const SubUserCreateModal = ({
                         disableDomainValidation,
                         disableAddressValidation,
                     },
-                    keyTransparencyCommit,
-                    keyTransparencyVerify,
-                    verifyOutboundPublicKeys,
                 })
             );
         } catch (error) {

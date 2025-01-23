@@ -28,7 +28,6 @@ import {
     TopNavbarUpsell,
     UserDropdown,
     useActiveBreakpoint,
-    useConvertExternalAddresses,
     useDeviceRecovery,
     useDrivePlan,
     useIsDataRecoveryAvailable,
@@ -37,7 +36,6 @@ import {
     useRecoveryNotification,
     useShowThemeSelection,
     useToggle,
-    useUnprivatizeMembers,
 } from '@proton/components';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
@@ -212,8 +210,6 @@ const MainContainer = () => {
     }, [location.pathname, location.hash]);
 
     useDeviceRecovery();
-    useConvertExternalAddresses();
-    useUnprivatizeMembers();
 
     /*
      * There's no logical app to return/go to from VPN settings since the
