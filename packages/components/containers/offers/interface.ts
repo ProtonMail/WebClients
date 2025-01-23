@@ -8,23 +8,7 @@ import { type Currency } from '@proton/payments';
 import type { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-export type OfferId =
-    | 'go-unlimited-2022'
-    | 'mail-trial-2023'
-    | 'mail-trial-2024'
-    | 'pass-family-plan-2024-yearly'
-    | 'black-friday-2024-inbox-free'
-    | 'black-friday-2024-pass-free'
-    | 'black-friday-2024-drive-free'
-    | 'black-friday-2024-vpn-free'
-    | 'black-friday-2024-inbox-free-yearly'
-    | 'black-friday-2024-drive-free-yearly'
-    | 'black-friday-2024-vpn-free-yearly'
-    | 'black-friday-2024-pass-plus'
-    | 'black-friday-2024-plus'
-    | 'black-friday-2024-vpn-monthly'
-    | 'black-friday-2024-unlimited'
-    | 'black-friday-2024-duo';
+export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'mail-trial-2024' | 'pass-family-plan-2024-yearly';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
