@@ -19,6 +19,8 @@ export const getSwipeAction = (swipeAction: SWIPE_ACTION) => {
             return 'star';
         case SWIPE_ACTION.Trash:
             return 'trash';
+        default:
+            return 'none';
     }
 };
 export const getPageSize = (pageSize: MAIL_PAGE_SIZE) => {
