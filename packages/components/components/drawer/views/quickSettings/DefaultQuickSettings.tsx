@@ -84,6 +84,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                         .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
                                 />
                             }
+                            labelProps={{ htmlFor: 'themeSyncToggle' }}
                             action={
                                 <Toggle
                                     id="themeSyncToggle"
