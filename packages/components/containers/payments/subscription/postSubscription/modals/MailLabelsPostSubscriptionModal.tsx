@@ -20,6 +20,7 @@ import {
 const MailLabelsPostSubscriptionModal = ({
     modalProps,
     step,
+    onDisplayFeatureTour,
     onRemindMeLater,
     flowName,
     upsellRef,
@@ -70,7 +71,7 @@ const MailLabelsPostSubscriptionModal = ({
                             </Button>
                             <p className="my-4 text-center color-weak text-sm">{c('Info')
                                 .t`or discover other features:`}</p>
-                            <Button fullWidth onClick={onRemindMeLater}>{c('Button').t`Take a tour`}</Button>
+                            <Button fullWidth onClick={onDisplayFeatureTour}>{c('Button').t`Take a tour`}</Button>
                         </div>
                     </PostSubscriptionModalContentWrapper>
                 </>
