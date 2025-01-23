@@ -54,7 +54,7 @@ export default function useDownloadQueue(log: LogCallback) {
         (
             idOrFilter: UpdateFilter,
             newStateOrCallback: UpdateState,
-            { size, error, signatureIssueLink, signatureStatus, retry }: UpdateData = {},
+            { size, error, signatureIssueLink, signatureStatus, retry, hasFullBuffer }: UpdateData = {},
             callback?: UpdateCallback
         ) => {
             const filter = convertFilterToFunction(idOrFilter);
@@ -90,6 +90,7 @@ export default function useDownloadQueue(log: LogCallback) {
                     download.signatureStatus = signatureStatus;
                     // download is always marked as retried after being set to true once
                     download.retries = downloadIsARetry ? (download.retries || 0) + 1 : download.retries || 0;
+                    download.hasFullBuffer = hasFullBuffer;
 
                     log(
                         download.id,
