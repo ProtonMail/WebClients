@@ -47,17 +47,13 @@ export function* hydrate(
         const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
         const cacheKey: Maybe<CryptoKey> = yield getCacheKey(encryptedCache, authStore);
 
-        const cache: Maybe<PassCache> =
-            cacheKey ?
-                yield decryptCache(cacheKey, encryptedCache).catch((err) =>
-                    allowFailure ? undefined : throwError(err)
-                )
-            :   undefined;
+        const cache: Maybe<PassCache> = cacheKey
+            ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
+            : undefined;
 
-        const cachedState =
-            cache?.state ?
-                migrate(cache.state, { from: encryptedCache.version, to: getConfig().APP_VERSION })
-            :   undefined;
+        const cachedState = cache?.state
+            ? migrate(cache.state, { from: encryptedCache.version, to: getConfig().APP_VERSION })
+            : undefined;
 
         const cachedUser = cachedState?.user;
         const snapshot = cache?.snapshot;
@@ -67,9 +63,9 @@ export function* hydrate(
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const organization =
-            userState.plan.Type === PlanType.BUSINESS ?
-                (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
-            :   null;
+            userState.plan.Type === PlanType.BUSINESS
+                ? (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
+                : null;
 
         /** Note: Settings may have been modified offline, thus they might not align
          * with the cached state settings. Since caching requests cannot be triggered
@@ -94,20 +90,24 @@ export function* hydrate(
          * haven't touched the `offlineEnabled` setting yet */
         if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
             const supported = DESKTOP_BUILD || (userState.features.PassWebOfflineMode ?? false);
+            const isSSO = Boolean(user.Flags.sso);
             const plan = getPassPlan(userState.plan);
-            const paid = isPaidPlan(plan);
+
+            /** FIXME: re-enable for SSO when supported */
+            const validUserType = isPaidPlan(plan) && !isSSO;
             const hasOfflinePassword = authStore.hasOfflinePassword();
-            const autoEnableOffline = settings.offlineEnabled === undefined && supported && paid && hasOfflinePassword;
-            settings.offlineEnabled = autoEnableOffline || (paid && settings.offlineEnabled);
+            const untouched = settings.offlineEnabled === undefined;
+
+            const autoSetup = untouched && supported && validUserType && hasOfflinePassword;
+            settings.offlineEnabled = autoSetup || (validUserType && settings.offlineEnabled);
         }
 
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
 
-        const state: State =
-            cachedState ?
-                config.merge(currentState, partialMerge(cachedState, incoming))
-            :   partialMerge(currentState, incoming);
+        const state: State = cachedState
+            ? config.merge(currentState, partialMerge(cachedState, incoming))
+            : partialMerge(currentState, incoming);
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
