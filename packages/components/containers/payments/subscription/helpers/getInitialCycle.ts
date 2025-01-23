@@ -5,7 +5,7 @@ import { APPS, CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle, Subscription } from '@proton/shared/lib/interfaces';
 
-import { getAllowedCycles } from './getAllowedCycles';
+import { getAllowedCycles, isSupportedCycle } from './getAllowedCycles';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
@@ -36,19 +36,21 @@ export function getInitialCycle({
     allowDowncycling,
     defaultCycles,
 }: GetInitialCycleParams): Cycle {
+    if (cycleParam && isSupportedCycle({ cycle: cycleParam, planIDs, plansMap })) {
+        return cycleParam;
+    }
+
     let cycle = (() => {
+        if (cycleParam) {
+            return cycleParam;
+        }
+
         if (isPlanSelection) {
             if (app === APPS.PROTONPASS) {
                 return CYCLE.YEARLY;
             }
-            if (cycleParam) {
-                return cycleParam;
-            }
-            return DEFAULT_CYCLE;
-        }
 
-        if (cycleParam) {
-            return cycleParam;
+            return DEFAULT_CYCLE;
         }
 
         if (isFreeSubscription(subscription)) {

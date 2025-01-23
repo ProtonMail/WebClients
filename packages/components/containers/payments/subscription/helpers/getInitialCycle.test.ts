@@ -7,7 +7,11 @@ import { getLongTestPlans, getTestPlans } from '@proton/testing/data';
 import { getInitialCycle } from './getInitialCycle';
 
 describe('getInitialCycle', () => {
-    const mockPlansMap: FullPlansMap = getPlansMap(getLongTestPlans(), 'USD', false);
+    let mockPlansMap: FullPlansMap;
+
+    beforeEach(() => {
+        mockPlansMap = getPlansMap(getLongTestPlans(), 'USD', false);
+    });
 
     const mockSubscription = buildSubscription({
         Cycle: CYCLE.MONTHLY,
@@ -35,6 +39,11 @@ describe('getInitialCycle', () => {
     });
 
     it('should return lower cycle if 2 years is not available', () => {
+        mockPlansMap[PLANS.MAIL].Pricing = {
+            1: mockPlansMap[PLANS.MAIL].Pricing[1],
+            12: mockPlansMap[PLANS.MAIL].Pricing[12],
+        };
+
         const result = getInitialCycle({
             cycleParam: CYCLE.TWO_YEARS,
             subscription: mockSubscription,
@@ -99,38 +108,6 @@ describe('getInitialCycle', () => {
             app: APPS.PROTONMAIL,
             minimumCycle: undefined,
             maximumCycle: undefined,
-            currency: 'USD',
-            allowDowncycling: false,
-        });
-        expect(result).toBe(CYCLE.YEARLY);
-    });
-
-    it('should respect minimum cycle', () => {
-        const result = getInitialCycle({
-            cycleParam: CYCLE.MONTHLY,
-            subscription: mockSubscription,
-            planIDs: defaultPlanIDs,
-            plansMap: mockPlansMap,
-            isPlanSelection: false,
-            app: APPS.PROTONMAIL,
-            minimumCycle: CYCLE.YEARLY,
-            maximumCycle: undefined,
-            currency: 'USD',
-            allowDowncycling: false,
-        });
-        expect(result).toBe(CYCLE.YEARLY);
-    });
-
-    it('should respect maximum cycle', () => {
-        const result = getInitialCycle({
-            cycleParam: CYCLE.TWO_YEARS,
-            subscription: mockSubscription,
-            planIDs: defaultPlanIDs,
-            plansMap: mockPlansMap,
-            isPlanSelection: false,
-            app: APPS.PROTONMAIL,
-            minimumCycle: undefined,
-            maximumCycle: CYCLE.YEARLY,
             currency: 'USD',
             allowDowncycling: false,
         });

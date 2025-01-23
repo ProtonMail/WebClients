@@ -13,7 +13,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useFeature } from '@proton/features';
 import { PLANS, type PaymentMethodStatusExtended } from '@proton/payments';
-import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { APPS, CYCLE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { renderWithProviders } from '@proton/testing';
 import { getLongTestPlans } from '@proton/testing/data';
@@ -138,7 +138,7 @@ describe('YourPlanSection', () => {
 
             await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
             expect(mockOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: 24,
+                cycle: CYCLE.YEARLY,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,

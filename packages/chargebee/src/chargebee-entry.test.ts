@@ -256,6 +256,44 @@ describe('Credit card', () => {
             paymentIntent: {
                 data: '123',
                 object_type: 'payment_intent',
+                email: 'test@example.com',
+            },
+            countryCode: 'US',
+            zip: '97531',
+        });
+
+        expect(authorizeWith3dsMock).toHaveBeenCalledTimes(1);
+        // the first arg must be the payment intent
+        expect(authorizeWith3dsMock.mock.calls[0][0]).toEqual({
+            data: '123',
+            object_type: 'payment_intent',
+            email: 'test@example.com',
+        });
+        // the second one must be the billing details
+        expect(authorizeWith3dsMock.mock.calls[0][1]).toEqual({
+            billingAddress: {
+                countryCode: 'US',
+                zip: '97531',
+            },
+            email: 'test@example.com',
+        });
+
+        const { challengeCallback, thenCallback, catchCallback } = extractAuthorizeWith3dsCallbacks();
+
+        expect(challengeCallback).toBeDefined();
+        expect(thenCallback).toBeDefined();
+        expect(catchCallback).toBeDefined();
+    });
+
+    it('should submit the form (no email)', async () => {
+        await initChargebee();
+
+        sendEventToChargebee({
+            type: 'chargebee-submit',
+            correlationId: 'id-3',
+            paymentIntent: {
+                data: '123',
+                object_type: 'payment_intent',
             },
             countryCode: 'US',
             zip: '97531',
@@ -273,6 +311,7 @@ describe('Credit card', () => {
                 countryCode: 'US',
                 zip: '97531',
             },
+            email: 'fallback@payments.protontech.ch',
         });
 
         const { challengeCallback, thenCallback, catchCallback } = extractAuthorizeWith3dsCallbacks();
