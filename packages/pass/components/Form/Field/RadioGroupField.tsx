@@ -12,13 +12,21 @@ export type RadioValue = string | number | readonly string[];
 
 type RadioGroupProps<T extends RadioValue> = {
     className?: string;
+    disabled?: boolean;
     name: string;
+    options: { label: ReactNode; value: T; disabled?: boolean }[];
     value?: T;
     onChange?: (value: T) => void;
-    options: { label: ReactNode; value: T; disabled?: boolean }[];
 };
 
-const RadioGroup = <T extends RadioValue>({ name, options, value, className, onChange }: RadioGroupProps<T>) => {
+const RadioGroup = <T extends RadioValue>({
+    className,
+    disabled,
+    name,
+    options,
+    value,
+    onChange,
+}: RadioGroupProps<T>) => {
     const handleChange = (value: T) => () => onChange?.(value);
 
     return (
@@ -31,7 +39,7 @@ const RadioGroup = <T extends RadioValue>({ name, options, value, className, onC
                     checked={value === option.value}
                     name={name}
                     className={clsx(['mr-8', 'mb-2', 'flex', className])}
-                    disabled={option.disabled}
+                    disabled={disabled || option.disabled}
                 >
                     {option.label}
                 </Radio>
