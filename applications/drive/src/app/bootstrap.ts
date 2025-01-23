@@ -26,6 +26,7 @@ import { extendStore, setupStore } from './redux-store/store';
 import { getMetricsUserPlan } from './store/_user/getMetricsUserPlan';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { clearOPFS } from './utils/opfs';
+import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
@@ -56,18 +57,22 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         }
 
         const loadUser = async () => {
+            const userFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserSettings);
             const [user, userSettings, features] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(userSettingsThunk()),
                 dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
             ]);
+            userFeature.end();
 
             dispatch(welcomeFlagsActions.initial(userSettings));
 
+            const userInitFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserInit);
             const [scopes] = await Promise.all([
                 bootstrap.initUser({ appName, user, userSettings }),
                 bootstrap.loadLocales({ userSettings, locales }),
             ]);
+            userInitFeature.end();
 
             await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
             await userSuccessMetrics.setLocalUser(
@@ -77,18 +82,39 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
 
-        const loadPreload = () => {
-            return Promise.all([api<UserSettingsResponse>(queryUserSettings()), dispatch(addressesThunk())]);
-        };
+        const loadUserFeature = measureFeaturePerformance(api, Features.globalBootstrapAppLoadUser);
+        const userPromise = loadUser().finally(() => {
+            loadUserFeature.end();
+        });
+        const unleashFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUnleash);
+        const unleashPromise = bootstrap
+            .unleashReady({ unleashClient })
+            .catch(noop)
+            .finally(() => {
+                unleashFeature.end();
+            });
+        const cryptoFeature = measureFeaturePerformance(api, Features.globalBootstrapAppCrypto);
+        const cryptoPromise = bootstrap.loadCrypto({ appName }).finally(() => {
+            cryptoFeature.end();
+        });
 
-        const userPromise = loadUser();
-        const preloadPromise = loadPreload();
-        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
-        const [userData] = await Promise.all([userPromise, bootstrap.loadCrypto({ appName }), unleashPromise]);
+        const userDataFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserData);
+        const [userData] = await Promise.all([userPromise, cryptoPromise, unleashPromise]);
+        userDataFeature.end();
+
+        const postLoadFeature = measureFeaturePerformance(api, Features.globalBootstrapAppPostLoad);
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
+        postLoadFeature.end();
+
+        const userSettingFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserSettingsAddress);
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
-        const [driveUserSettings] = await preloadPromise;
+        const [driveUserSettings] = await Promise.all([
+            api<UserSettingsResponse>(queryUserSettings()),
+            dispatch(addressesThunk()),
+        ]).finally(() => {
+            userSettingFeature.end();
+        });
 
         const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });
