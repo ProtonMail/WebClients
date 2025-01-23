@@ -111,6 +111,7 @@ export const createAuthService = ({
             if (error !== null) {
                 redirect.set('pathname', '/');
                 redirect.set('search', '');
+                redirect.set('hash', '');
                 const pathname = pathLocalID ? `/u/${pathLocalID}` : '/';
                 app.setStatus(AppStatus.ERROR);
                 history.replace({ search: '', pathname, state: { error } });
@@ -217,8 +218,14 @@ export const createAuthService = ({
             if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {
                 const route = stripLocalBasenameFromPathname(redirect.get('pathname'));
-                const search = redirect.get('search');
-                history.replace({ ...history.location, pathname: (getBasename(localID) ?? '/') + route, search });
+
+                history.replace({
+                    ...history.location,
+                    pathname: (getBasename(localID) ?? '/') + route,
+                    search: redirect.get('search'),
+                    hash: redirect.get('hash'),
+                });
+
                 app.setStatus(AppStatus.AUTHORIZED);
                 store.dispatch(bootIntent());
             }
@@ -269,9 +276,11 @@ export const createAuthService = ({
                 const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
                 if ('pathname' in data && typeof data.pathname === 'string') redirect.set('pathname', data.pathname);
                 if ('search' in data && typeof data.search === 'string') redirect.set('search', data.search);
+                if ('hash' in data && typeof data.hash === 'string') redirect.set('hash', data.hash);
             } catch {
                 redirect.set('pathname', '/');
                 redirect.set('search', '');
+                redirect.set('hash', '');
             }
 
             /** If any on-going persisted sessions are present for the forked
