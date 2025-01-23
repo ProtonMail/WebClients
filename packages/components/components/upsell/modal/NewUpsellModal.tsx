@@ -85,12 +85,8 @@ const NewUpsellModal = ({
 
     const [plansResult] = usePlans();
 
-    let planName = PLAN_NAMES[PLANS.MAIL];
-    let planID: PLANS = PLANS.MAIL;
-    if (user.isPaid) {
-        planID = PLANS.BUNDLE;
-        planName = PLAN_NAMES[PLANS.BUNDLE];
-    }
+    const planName = user.isPaid ? PLAN_NAMES[PLANS.BUNDLE] : PLAN_NAMES[PLANS.MAIL];
+    const planID = user.isPaid ? PLANS.BUNDLE : PLANS.MAIL;
     const plan = getPlanByName(plansResult?.plans ?? [], planID, currency);
     const cycle = user.isFree ? CYCLE.MONTHLY : CYCLE.YEARLY;
     const planPricePerMonth = (plan?.Pricing?.[cycle] || 0) / cycle;

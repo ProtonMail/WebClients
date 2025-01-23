@@ -2,14 +2,12 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { PLANS } from '@proton/payments';
 import type { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import labelsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/labels.svg';
 
-import useOneDollarConfig from '../../useOneDollarPromo';
+import { useMailUpsellConfig } from '../../useMailUpsellConfig';
 import NewUpsellModal from '../NewUpsellModal';
 
 interface Props {
@@ -35,10 +33,8 @@ const LabelsUpsellModal = ({
         feature,
         isSettings,
     });
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
 
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
     if (displayNewUpsellModalsVariant) {
         return (

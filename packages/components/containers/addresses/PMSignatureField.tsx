@@ -5,17 +5,15 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Toggle from '@proton/components/components/toggle/Toggle';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
-import { PLANS } from '@proton/payments';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
@@ -25,6 +23,13 @@ interface Props {
     mailSettings?: Partial<MailSettings>;
     userSettings?: Partial<UserSettings>;
 }
+
+const upsellRef = getUpsellRef({
+    app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+    component: UPSELL_COMPONENT.MODAL,
+    feature: MAIL_UPSELL_PATHS.MAIL_FOOTER,
+    isSettings: true,
+});
 
 const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     const { call } = useEventManager();
@@ -36,13 +41,6 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
 
     const hasPaidMail = user.hasPaidMail;
 
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
-        feature: MAIL_UPSELL_PATHS.MAIL_FOOTER,
-        isSettings: true,
-    });
-
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const handleChange = async (checked: number) => {
@@ -52,10 +50,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
-
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
     const modal = displayNewUpsellModalsVariant ? (
         <NewUpsellModal
