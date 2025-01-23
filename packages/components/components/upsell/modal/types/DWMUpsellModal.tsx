@@ -1,18 +1,16 @@
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { PLANS } from '@proton/payments';
 import {
     type APP_UPSELL_REF_PATH,
     DARK_WEB_MONITORING_NAME,
     MAIL_UPSELL_PATHS,
     type UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import dwmShield from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
-import useOneDollarConfig from '../../useOneDollarPromo';
-import useUpsellConfig from '../../useUpsellConfig';
+import { useMailUpsellConfig } from '../../useMailUpsellConfig';
 import NewUpsellModal from '../NewUpsellModal';
 import UpsellFeatureList from '../UpsellFeatureList';
 import UpsellModal from '../UpsellModal';
@@ -30,10 +28,8 @@ const DWMUpsellModal = ({ modalProps, upsellApp, upsellComponent, onUpgrade }: P
         component: upsellComponent,
         feature: MAIL_UPSELL_PATHS.DARK_WEB_MONITORING,
     });
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
     if (displayNewUpsellModalsVariant) {
         return (

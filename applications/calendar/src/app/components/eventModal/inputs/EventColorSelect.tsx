@@ -10,17 +10,15 @@ import {
     NewUpsellModal,
     Spotlight,
     UpsellModal,
+    useMailUpsellConfig,
     useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
-    useUpsellConfig,
 } from '@proton/components';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { FeatureCode } from '@proton/features';
-import { PLANS } from '@proton/payments';
 import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paint.svg';
 
@@ -30,6 +28,12 @@ interface Props {
     isSmallViewport: boolean;
     isDrawerApp?: boolean;
 }
+
+const upsellRef = getUpsellRef({
+    app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+    component: UPSELL_COMPONENT.MODAL,
+    feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
+});
 
 const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Props) => {
     const [user] = useUser();
@@ -71,22 +75,8 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
         }
     };
 
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
-        feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
-    });
-
     const isIframe = getIsIframe();
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({
-        upsellRef,
-        preventInApp: isIframe,
-        plan: PLANS.MAIL,
-        ...oneDollarConfig,
-    });
-
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
 
     const modal = displayNewUpsellModalsVariant ? (
         <NewUpsellModal

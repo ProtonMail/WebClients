@@ -10,7 +10,7 @@ export const useRegionalPricing = () => {
         data,
         defaultPrice,
         currency,
-        expectedPrice,
+        expectedPrice = defaultPrice,
         requestOptions,
         options,
     }: {
@@ -20,18 +20,17 @@ export const useRegionalPricing = () => {
         expectedPrice?: number;
         requestOptions?: RequestOptions;
         options?: CheckWithAutomaticOptions;
-    }) => {
-        const isDefaultAmountDue = isMainCurrency(currency);
-        if (isDefaultAmountDue) {
-            return expectedPrice || defaultPrice;
+    }): Promise<number> => {
+        if (isMainCurrency(currency)) {
+            return expectedPrice ?? defaultPrice;
         }
 
-        const result = await paymentsApi.checkWithAutomaticVersion(data, requestOptions, options);
-        if (result.AmountDue) {
-            return result.AmountDue;
+        try {
+            const result = await paymentsApi.checkWithAutomaticVersion(data, requestOptions, options);
+            return result.AmountDue ?? defaultPrice;
+        } catch (e) {
+            return defaultPrice;
         }
-
-        return defaultPrice;
     };
 
     return {

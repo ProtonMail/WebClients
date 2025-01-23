@@ -1,8 +1,6 @@
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
-import { PLANS } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
     MAIL_SHORT_APP_NAME,
@@ -13,28 +11,22 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import zoomUpsellSvg from '@proton/styles/assets/img/illustrations/upsell-zoom-header.svg';
 
-import useUpsellConfig from '../../useUpsellConfig';
+import { useMailUpsellConfig } from '../../useMailUpsellConfig';
 import NewUpsellModal from '../NewUpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;
 }
 
-const ZoomUpsellModal = ({ modalProps }: Props) => {
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
-        feature: MAIL_UPSELL_PATHS.ZOOM_MEETING,
-    });
+const upsellRef = getUpsellRef({
+    app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+    component: UPSELL_COMPONENT.MODAL,
+    feature: MAIL_UPSELL_PATHS.ZOOM_MEETING,
+});
 
+const ZoomUpsellModal = ({ modalProps }: Props) => {
     const isIframe = getIsIframe();
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({
-        upsellRef,
-        preventInApp: isIframe,
-        plan: PLANS.MAIL,
-        ...oneDollarConfig,
-    });
+    const { upsellConfig } = useMailUpsellConfig({ upsellRef, preventInApp: isIframe });
 
     return (
         <NewUpsellModal

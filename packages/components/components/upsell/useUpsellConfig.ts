@@ -34,7 +34,9 @@ interface Props {
 
 const appsWithInApp = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);
 
-// Return config properties to inject in the subscription modal
+/**
+ * Return config properties to inject in the subscription modal
+ */
 const useUpsellConfig = ({
     upsellRef,
     step,
