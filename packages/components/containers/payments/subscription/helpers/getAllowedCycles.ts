@@ -8,7 +8,7 @@ import {
 } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
+import { isRegularCycle, isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
@@ -43,14 +43,44 @@ const defaultRules: PlanCapRule[] = [
     { plan: PLANS.BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
 ];
 
-function capMaximumCycle(
-    maximumCycle: CYCLE,
-    planIDs: PlanIDs,
-    currency: Currency,
-    plansMap: PlansMap,
-    subscription: Subscription | FreeSubscription | undefined,
-    rules = defaultRules
-): CYCLE {
+export const isSupportedCycle = ({
+    cycle,
+    planIDs,
+    plansMap,
+}: {
+    cycle: CYCLE;
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+}): boolean => {
+    if (!isRegularCycle(cycle)) {
+        return false;
+    }
+
+    const plan = getPlanFromIDs(planIDs, plansMap);
+    if (!plan) {
+        return false;
+    }
+
+    return hasCycle(plan, cycle);
+};
+
+function capMaximumCycle({
+    maximumCycle,
+    planIDs,
+    currency,
+    plansMap,
+    subscription,
+    cycleParam,
+    rules = defaultRules,
+}: {
+    maximumCycle: CYCLE;
+    planIDs: PlanIDs;
+    currency: Currency;
+    plansMap: PlansMap;
+    subscription: Subscription | FreeSubscription | undefined;
+    cycleParam?: CYCLE;
+    rules?: PlanCapRule[];
+}): CYCLE {
     const currencyMatches = (rule: PlanCapRule) => {
         if (!rule.currencyPredicate) {
             return true;
@@ -72,7 +102,19 @@ function capMaximumCycle(
     }
 
     // if user already has a subscription or upcoming subscription with higher cycle, then we let user see it
-    result = Math.max(result, subscription?.Cycle ?? 0, subscription?.UpcomingSubscription?.Cycle ?? 0);
+    result = Math.max(
+        result,
+        subscription?.Cycle ?? 0,
+        subscription?.UpcomingSubscription?.Cycle ?? 0,
+        cycleParam &&
+            isSupportedCycle({
+                cycle: cycleParam,
+                planIDs,
+                plansMap,
+            })
+            ? cycleParam
+            : 0
+    );
 
     // however no matter what happens, we can't show a higher cycle than actually exist on the backend
     return notHigherThanAvailableOnBackend(planIDs, plansMap, result);
@@ -89,6 +131,7 @@ export const getAllowedCycles = ({
     disableUpcomingCycleCheck,
     allowDowncycling,
     rules,
+    cycleParam,
 }: {
     subscription: Subscription | FreeSubscription | undefined;
     minimumCycle?: CYCLE;
@@ -100,6 +143,7 @@ export const getAllowedCycles = ({
     disableUpcomingCycleCheck?: boolean;
     allowDowncycling?: boolean;
     rules?: PlanCapRule[];
+    cycleParam?: CYCLE;
 }): CYCLE[] => {
     const plan = getPlanFromIDs(planIDs, plansMap);
     if (!plan) {
@@ -115,7 +159,15 @@ export const getAllowedCycles = ({
 
     const isSamePlan = isSamePlanCheckout(subscription, planIDs);
 
-    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, currency, plansMap, subscription, rules);
+    const adjustedMaximumCycle = capMaximumCycle({
+        maximumCycle,
+        planIDs,
+        currency,
+        plansMap,
+        subscription,
+        rules,
+        cycleParam,
+    });
 
     const result = availableCycles.filter((cycle) => {
         const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);
