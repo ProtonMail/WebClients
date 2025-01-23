@@ -10,6 +10,7 @@ import { requestFork } from '@proton/shared/lib/authentication/fork'
 import { APPS } from '@proton/shared/lib/constants'
 import { getLocalID } from '@proton/drive-store/utils/url/localid'
 import { getLastUsedLocalID } from '@proton/account/bootstrap/lastUsedLocalID'
+import { readAccountSessions } from '@proton/account/accountSessions/storage'
 
 export const bootstrapPublicApp = async ({ config }: { config: ProtonConfig }) => {
   const authentication = bootstrap.createAuthentication()
@@ -24,9 +25,10 @@ export const bootstrapPublicApp = async ({ config }: { config: ProtonConfig }) =
   const searchParams = new URLSearchParams(location.search)
   await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' })
 
-  const localId = getLocalID() ?? getLastUsedLocalID()
+  const localId = Number(getLocalID() ?? getLastUsedLocalID())
+  const accountSessions = readAccountSessions()
 
-  if (localId != undefined && localId !== -1) {
+  if (localId >= 0 && accountSessions?.some((value) => value.localID === localId)) {
     try {
       await bootstrap.loadSession({ authentication, api, pathname: location.pathname, searchParams })
       // Session loaded fine
