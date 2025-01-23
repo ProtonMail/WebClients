@@ -16,8 +16,8 @@ import noop from '@proton/utils/noop';
 
 import { getAllAddresses } from '../api/addresses';
 import { updateUsername } from '../api/settings';
-import { getUser, queryCheckUsernameAvailability } from '../api/user';
-import type { Address, Api, PreAuthKTVerify, User as tsUser } from '../interfaces';
+import { queryCheckUsernameAvailability } from '../api/user';
+import type { Address, Api, PreAuthKTVerify, User, User as tsUser } from '../interfaces';
 import { UserType } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
@@ -188,20 +188,20 @@ export const handleCreateAddressAndKey = async ({
     api,
     passphrase,
     preAuthKTVerify,
+    addresses,
+    user,
 }: {
     username: string;
     domain: string;
     api: Api;
     passphrase: string;
     preAuthKTVerify: PreAuthKTVerify;
+    user: User;
+    addresses: Address[];
 }) => {
     if (!passphrase) {
         throw new Error('Password required to generate keys');
     }
-    const [user, addresses] = await Promise.all([
-        api<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        getAllAddresses(api),
-    ]);
     const [address] = await handleSetupUsernameAndAddress({ api, username, user, domain });
     const userKeys = await getDecryptedUserKeysHelper(user, passphrase);
     const hasV6UserKeys = userKeys.some((key) => key.privateKey.isPrivateKeyV6());
@@ -246,6 +246,8 @@ export const handleSetupAddressAndKey = async ({
     password,
     preAuthKTVerify,
     productParam,
+    user,
+    addresses,
 }: {
     username: string;
     domain: string;
@@ -253,14 +255,12 @@ export const handleSetupAddressAndKey = async ({
     password: string;
     preAuthKTVerify: PreAuthKTVerify;
     productParam: ProductParam;
+    user: User;
+    addresses: Address[];
 }) => {
     if (!password) {
         throw new Error('Password required to setup keys');
     }
-    const [user, addresses] = await Promise.all([
-        api<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        getAllAddresses(api),
-    ]);
     const createdAddresses = await handleSetupUsernameAndAddress({ api, username, user, domain });
     const addressesToSetup = [...addresses, ...createdAddresses];
     return handleSetupKeys({

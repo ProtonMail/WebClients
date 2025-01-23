@@ -50,7 +50,6 @@ import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
@@ -136,7 +135,6 @@ const SubUserEditModal = ({
     const lumoAddonAvailable = useFlag('LumoAddonAvailable');
     const dispatch = useDispatch();
     const storageSizeUnit = sizeUnits.GB;
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { validator, onFormSubmit } = useFormErrors();
     const [confirmUnprivatizationProps, setConfirmUnprivatizationModal, renderConfirmUnprivatization] = useModalState();
     const [
@@ -213,7 +211,6 @@ const SubUserEditModal = ({
                 memberDiff,
                 memberKeyPacketPayload,
                 api: silentApi,
-                verifyOutboundPublicKeys,
             })
         );
         if (result.member) {
@@ -503,7 +500,6 @@ const SubUserEditModal = ({
                                             const run = async (memberDiff: { role: MEMBER_ROLE }) => {
                                                 const result = await dispatch(
                                                     getMemberEditPayload({
-                                                        verifyOutboundPublicKeys,
                                                         member,
                                                         memberDiff,
                                                         api: silentApi,

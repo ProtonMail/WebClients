@@ -1,29 +1,29 @@
 import { useCallback } from 'react';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { addressKeysThunk } from '@proton/account/addressKeys';
+import { addressesThunk } from '@proton/account/addresses';
+import { getKTUserContext } from '@proton/account/kt/actions';
+import { userKeysThunk } from '@proton/account/userKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { CryptoProxy, serverTime } from '@proton/crypto';
-import type { SelfAuditResult } from '@proton/key-transparency/lib';
 import {
+    type SelfAuditResult,
     StaleEpochError,
     getKTLocalStorage,
+    getLatestEpoch,
     getSelfAuditInterval,
     ktSentryReportError,
+    reportSelfAuditErrors,
     selfAudit,
-} from '@proton/key-transparency/lib';
+} from '@proton/key-transparency';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
-
-import useGetLatestEpoch from './useGetLatestEpoch';
-import useReportSelfAuditErrors from './useReportSelfAuditErrors';
 
 const SELF_AUDIT_MAX_TRIALS = 6;
 
@@ -38,18 +38,13 @@ const reportError = (error: any, tooManyRetries: boolean) => {
 };
 
 const useRunSelfAudit = () => {
-    const getUser = useGetUser();
-    const getAddresses = useGetAddresses();
-    const getUserKeys = useGetUserKeys();
-    const getLatestEpoch = useGetLatestEpoch();
     const normalApi = useApi();
     const { APP_NAME: appName } = useConfig();
-    const reportSelfAuditErrors = useReportSelfAuditErrors();
-    const getAddressKeys = useGetAddressKeys();
     const { subscribe } = useEventManager();
+    const dispatch = useDispatch();
 
     const createSelfAuditStateUserKeys = useCallback(async (): Promise<KeyPair[]> => {
-        const userKeys = await getUserKeys();
+        const userKeys = await dispatch(userKeysThunk());
         const exportedUserKeys = await Promise.all(
             userKeys.map((key) =>
                 CryptoProxy.exportPrivateKey({
@@ -96,8 +91,10 @@ const useRunSelfAudit = () => {
         };
 
         await waitForAddressUpdates();
-        const addressesWithoutKeys = await getAddresses();
-        const addressesKeys = await Promise.all(addressesWithoutKeys.map((address) => getAddressKeys(address.ID)));
+        const addressesWithoutKeys = await dispatch(addressesThunk());
+        const addressesKeys = await Promise.all(
+            addressesWithoutKeys.map((address) => dispatch(addressKeysThunk({ addressID: address.ID })))
+        );
         const exportedAddressesKeys = await Promise.all(
             addressesKeys.map(async (keys) =>
                 Promise.all(
@@ -182,14 +179,11 @@ const useRunSelfAudit = () => {
         if (state.userKeys.length === 0) {
             throw new Error('User has no user keys');
         }
+        const ktUserContext = await dispatch(getKTUserContext());
+        const ktActivation = ktUserContext.ktActivation;
         try {
             const selfAuditResult = await selfAudit({
-                userContext: {
-                    getUser,
-                    getUserKeys,
-                    getAddressKeys,
-                    appName,
-                },
+                ktUserContext,
                 state,
                 api: getSilentApi(normalApi),
                 ktLSAPI,
@@ -205,7 +199,7 @@ const useRunSelfAudit = () => {
                 })
             );
 
-            await reportSelfAuditErrors(selfAuditResult);
+            await reportSelfAuditErrors({ selfAuditResult, api: normalApi, ktActivation });
             return { selfAuditResult };
         } catch (error: any) {
             const failedTrials = (state.lastSelfAudit?.error?.failedTrials ?? 0) + 1;
@@ -224,7 +218,7 @@ const useRunSelfAudit = () => {
                 error: { failedTrials: tooManyRetries ? 0 : failedTrials, tooManyRetries },
             };
             reportError(error, tooManyRetries);
-            await reportSelfAuditErrors(selfAuditResult);
+            await reportSelfAuditErrors({ selfAuditResult, api: normalApi, ktActivation });
             return { selfAuditResult };
         }
     }, []);

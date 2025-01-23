@@ -365,6 +365,7 @@ export async function migrateMemberAddressKeys({
                     onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
                 )
             );
+            return true;
         }
     }
 }

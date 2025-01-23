@@ -222,7 +222,6 @@ const useTipConfig = ({ actionType }: Props) => {
 
     const activateProtonSubdomainAddress = async () => {
         const Address = await createShortDomainAddress({ setDefault: false });
-        await call();
         createNotification({
             text: `${Address?.Email}` + c('Success notification').t` is now active`,
         });

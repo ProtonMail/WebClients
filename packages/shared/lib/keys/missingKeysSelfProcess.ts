@@ -11,7 +11,7 @@ interface MissingKeysSelfProcessArguments {
     addresses: Address[];
     addressesToGenerate: Address[];
     password: string;
-    onUpdate: OnUpdateCallback;
+    onUpdate?: OnUpdateCallback;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
@@ -30,7 +30,7 @@ export const missingKeysSelfProcess = ({
     return Promise.all(
         addressesToGenerate.map(async (address) => {
             try {
-                onUpdate(address.ID, { status: 'loading' });
+                onUpdate?.(address.ID, { status: 'loading' });
 
                 if (hasMigratedAddressKeys) {
                     await createAddressKeyV2({
@@ -51,10 +51,13 @@ export const missingKeysSelfProcess = ({
                         keyTransparencyVerify,
                     });
                 }
+                onUpdate?.(address.ID, { status: 'ok' });
 
-                onUpdate(address.ID, { status: 'ok' });
+                return { type: 'success' };
             } catch (e: any) {
-                onUpdate(address.ID, { status: 'error', result: e.message });
+                onUpdate?.(address.ID, { status: 'error', result: e.message });
+
+                return { type: 'error', e };
             }
         })
     );

@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { setupExternalUserForProton } from '@proton/account/addresses/actions';
 import { useGetUser } from '@proton/account/user/hooks';
 import {
     AuthenticatedBugModal,
@@ -13,28 +14,20 @@ import {
     useAuthentication,
     useErrorHandler,
     useEventManager,
-    useKTActivation,
     useModalState,
     useTheme,
 } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { getValidatedApp } from '@proton/shared/lib/authentication/fork/validation';
-import mutatePassword from '@proton/shared/lib/authentication/mutate';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { User } from '@proton/shared/lib/interfaces';
-import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
-import {
-    getAddressGenerationSetup,
-    getDecryptedSetupBlob,
-    getRequiresAddressSetup,
-    handleCreateAddressAndKey,
-    handleSetupAddressAndKey,
-} from '@proton/shared/lib/keys';
+import { getAddressGenerationSetup, getDecryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import AccountLoaderPage from '../content/AccountLoaderPage';
@@ -135,7 +128,7 @@ const SetupAddressContainer = () => {
     const { stop } = useEventManager();
     const getUser = useGetUser();
     const { setThemeSetting } = useTheme();
-    const ktActivation = useKTActivation();
+    const dispatch = useDispatch();
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
@@ -269,41 +262,7 @@ const SetupAddressContainer = () => {
                     data={generateAddress}
                     onSubmit={async (payload) => {
                         try {
-                            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
-
-                            const user = await getUser();
-
-                            if (payload.setup.mode === 'setup') {
-                                const keyPassword = await handleSetupAddressAndKey({
-                                    username: payload.username,
-                                    domain: payload.domain,
-                                    api: silentApi,
-                                    password: payload.setup.loginPassword,
-                                    preAuthKTVerify,
-                                    productParam: toApp,
-                                });
-
-                                await mutatePassword({
-                                    authentication,
-                                    keyPassword,
-                                    clearKeyPassword: payload.setup.loginPassword,
-                                    User: user,
-                                    api: silentApi,
-                                });
-                            }
-
-                            if (payload.setup.mode === 'create') {
-                                await handleCreateAddressAndKey({
-                                    username: payload.username,
-                                    domain: payload.domain,
-                                    api: silentApi,
-                                    passphrase: payload.setup.keyPassword,
-                                    preAuthKTVerify,
-                                });
-                            }
-
-                            await preAuthKTCommit(user.ID, silentApi);
-
+                            await dispatch(setupExternalUserForProton({ payload, app: toApp }));
                             handleToApp();
                         } catch (e: any) {
                             errorHandler(e);

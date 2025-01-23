@@ -1,4 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
+import { createPreAuthKTVerifier } from '@proton/key-transparency';
+import { resetSelfAudit } from '@proton/key-transparency';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -13,14 +15,7 @@ import type { AuthResponse, InfoResponse } from '@proton/shared/lib/authenticati
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type {
-    Api,
-    KeyTransparencyActivation,
-    ResetSelfAudit,
-    UserSettings,
-    User as tsUser,
-} from '@proton/shared/lib/interfaces';
-import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
+import type { Api, KeyTransparencyActivation, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
@@ -58,7 +53,7 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse, persistent, appName, ktActivation, resetSelfAudit } = cache;
+    const { username, token, resetResponse, persistent, appName, ktActivation } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
@@ -175,7 +170,7 @@ export const handleNewPassword = async ({
     });
 
     await preAuthKTCommit(user.ID, api);
-    await resetSelfAudit(user, keyPassword, addresses);
+    await resetSelfAudit({ api, ktActivation, user, keyPassword, addressesBeforeReset: addresses });
 
     return {
         to: STEPS.DONE,
@@ -391,7 +386,6 @@ export const handleRequestRecoveryMethods = async ({
     persistent,
     api,
     ktActivation,
-    resetSelfAudit,
 }: {
     setupVPN: boolean;
     productParam: ProductParam;
@@ -400,7 +394,6 @@ export const handleRequestRecoveryMethods = async ({
     persistent: boolean;
     api: Api;
     ktActivation: KeyTransparencyActivation;
-    resetSelfAudit: ResetSelfAudit;
 }): Promise<ResetActionResponse> => {
     try {
         const { Type, Methods }: { Type: AccountType; Methods: RecoveryMethod[] } = await api(
@@ -420,7 +413,6 @@ export const handleRequestRecoveryMethods = async ({
                     Methods,
                     type: Type,
                     ktActivation,
-                    resetSelfAudit,
                 },
                 to: STEPS.VALIDATE_RESET_TOKEN,
             };
@@ -443,7 +435,6 @@ export const handleRequestRecoveryMethods = async ({
                 Methods,
                 type: Type,
                 ktActivation,
-                resetSelfAudit,
             },
             to: STEPS.REQUEST_RESET_TOKEN,
         };

@@ -6,8 +6,8 @@ import type {
     Address,
     Api,
     KeyMigrationKTVerifier,
+    KeyTransparencyActivation,
     PreAuthKTVerifier,
-    VerifyOutboundPublicKeys,
     Address as tsAddress,
     KeySalt as tsKeySalt,
     User as tsUser,
@@ -104,6 +104,7 @@ export interface SSOInactiveData {
 }
 
 export interface AuthCacheResult {
+    ktActivation: KeyTransparencyActivation;
     appName: APP_NAMES;
     toApp: APP_NAMES | undefined;
     productParam: ProductParam;
@@ -112,7 +113,6 @@ export interface AuthCacheResult {
     authVersion: AuthVersion;
     authResponse: AuthResponse;
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
     data: {
         user?: tsUser;
         salts?: tsKeySalt[];
