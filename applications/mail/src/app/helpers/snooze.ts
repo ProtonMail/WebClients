@@ -113,6 +113,6 @@ export const isElementSnoozed = (element: Element | undefined, conversationMode:
 export const isElementReminded = (element: Element | undefined) => {
     const isElementOrConversation = isMessage(element) || isConversation(element);
     return element && isElementOrConversation
-        ? (element as Message | Conversation).DisplaySnoozedReminder ?? false
+        ? ((element as Message | Conversation).DisplaySnoozedReminder ?? false)
         : false;
 };
