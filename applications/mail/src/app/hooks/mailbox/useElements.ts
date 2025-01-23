@@ -13,7 +13,7 @@ import noop from '@proton/utils/noop';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { hasAttachmentsFilter, isSearch } from '../../helpers/elements';
+import { isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
 import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
@@ -251,7 +251,7 @@ export const useElements: UseElements = ({
                         search,
                         conversationMode,
                     },
-                    beforeFirstLoad: !esEnabled && (isSearch(search) || hasAttachmentsFilter(filter)),
+                    beforeFirstLoad: !esEnabled && !!search.keyword,
                 })
             );
         }

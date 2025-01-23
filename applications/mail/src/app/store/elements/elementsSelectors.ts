@@ -251,7 +251,7 @@ export const shouldLoadElements = createSelector(
  */
 export const shouldInvalidateElementsState = createSelector(
     [params, pages],
-    (params, pages) => isSearch(params.search) || hasAttachmentsFilter(params.filter) || !pages.includes(0)
+    (params, pages) => !!params.search.keyword || !pages.includes(0)
 );
 
 export const shouldUpdatePage = createSelector(
