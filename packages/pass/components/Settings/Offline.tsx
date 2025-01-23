@@ -11,7 +11,7 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineToggle } from '@proton/pass/store/actions';
-import { selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
+import { selectIsSSO, selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
@@ -26,7 +26,12 @@ export const Offline: FC = () => {
     const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const freeUser = !isPaidPlan(plan);
     const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
-    const canEnableOffline = !freeUser && (!twoPwdMode || (authStore?.hasOfflinePassword() ?? false));
+    const isSSO = useSelector(selectIsSSO);
+
+    /** FIXME: Re-enable SSO offline mode when supported */
+    const validUserType = !freeUser && !isSSO;
+    const validPasswordMode = !twoPwdMode || (authStore?.hasOfflinePassword() ?? false);
+    const canEnableOffline = validUserType && validPasswordMode;
     const disabled = !canEnableOffline;
 
     const toggle = useRequest(offlineToggle, { initial: true });

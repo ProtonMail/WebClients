@@ -11,7 +11,7 @@ import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
-import { selectNonOwnedVaults } from '@proton/pass/store/selectors';
+import { selectIsSSO, selectNonOwnedVaults } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
@@ -19,8 +19,13 @@ type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boole
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
+    const isSSO = useSelector(selectIsSSO);
+
     const org = useOrganization({ sync: true });
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
+
+    /** FIXME: Re-enable SSO exporting when supported */
+    const disabled = orgExportDisabled || isSSO;
 
     const warnings = useMemo(
         () =>
@@ -77,7 +82,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         ]}
                         checked={form.values.format}
                         label={c('Label').t`File format`}
-                        disabled={orgExportDisabled}
+                        disabled={disabled}
                     />
                 </div>
 
@@ -113,7 +118,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     </>
                 )}
 
-                {orgExportDisabled && (
+                {disabled && (
                     <Card className="mb-4 p-1 text-sm" type="primary">
                         <div>{c('Info').t`This setting is disabled on the organization level`}</div>
                     </Card>
@@ -123,7 +128,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     type="submit"
                     color="norm"
                     loading={loading}
-                    disabled={!form.isValid || loading || orgExportDisabled}
+                    disabled={!form.isValid || loading || disabled}
                     className="mt-5 w-full"
                 >
                     {c('Action').t`Export`}
