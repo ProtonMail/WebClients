@@ -1,5 +1,4 @@
-import type { AddressAuditWarningDetails } from '@proton/key-transparency/lib';
-import { AddressAuditWarningReason } from '@proton/key-transparency/lib';
+import { type AddressAuditWarningDetails, AddressAuditWarningReason } from '../interfaces';
 
 export const getWarningReason = (warningDetails?: AddressAuditWarningDetails) => {
     if (!warningDetails) {

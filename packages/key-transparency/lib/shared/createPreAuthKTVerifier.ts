@@ -1,15 +1,24 @@
 import { serverTime } from '@proton/crypto';
-import { commitSKLToLS, fetchSignedKeyLists, ktSentryReport, ktSentryReportError } from '@proton/key-transparency';
+import type {
+    Address,
+    DecryptedKey,
+    PreAuthKTVerifier,
+    PreAuthKTVerify,
+    SignedKeyList,
+} from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import type { Address, DecryptedKey, PreAuthKTVerifier, PreAuthKTVerify, SignedKeyList } from '../interfaces';
-import { KeyTransparencyActivation } from '../interfaces';
+import { fetchSignedKeyLists } from '../helpers/apiHelpers';
+import { ktSentryReport } from '../helpers/utils';
+import { ktSentryReportError } from '../helpers/utils';
+import { commitSKLToLS } from '../storage/storageHelpers';
 import { getDefaultKTLS } from './defaults';
 
 /**
  * Return a KT verifier for when getSignedKeyList is called before apps are properly mounted,
  * e.g. signup or login, such that self audit couldn't have run and user keys are not directly accessible
  */
-const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation): PreAuthKTVerifier => {
+export const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation): PreAuthKTVerifier => {
     interface CreatedSKL {
         address: Address;
         revision?: number;
@@ -75,5 +84,3 @@ const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation): PreAu
         preAuthKTCommit,
     };
 };
-
-export default createPreAuthKTVerifier;

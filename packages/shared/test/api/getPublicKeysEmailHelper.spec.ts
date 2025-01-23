@@ -1,23 +1,25 @@
 import getPublicKeysEmailHelper from '../../lib/api/helpers/getPublicKeysEmailHelper';
 import { KEY_FLAG, RECIPIENT_TYPES } from '../../lib/constants';
-import { KeyTransparencyActivation } from '../../lib/interfaces';
+import { type KTUserContext, KeyTransparencyActivation } from '../../lib/interfaces';
 
-const getApiError = ({ message, response = { headers: { get: () => '' } }, data, status }) => {
-    const error = new Error(message);
+const getApiError = ({ message, response = { headers: { get: () => '' } }, data, status }: any) => {
+    const error: any = new Error(message);
     error.status = status;
     error.data = data;
     error.response = response;
     return error;
 };
 
-const getMockedApi = (mockApiResponse, isError) => {
+const getMockedApi = (mockApiResponse: any, isError = false) => {
     const response = isError ? Promise.reject(mockApiResponse) : Promise.resolve(mockApiResponse);
     return jasmine.createSpy('api').and.returnValue(response);
 };
 
 // `internalKeysOnly` is not being tested atm as it only affects the API returned data
 describe('getPublicKeysEmailHelper', () => {
-    const ktActivation = KeyTransparencyActivation.DISABLED;
+    const ktUserContext: KTUserContext = {
+        ktActivation: KeyTransparencyActivation.DISABLED,
+    } as unknown as KTUserContext;
     const testKeyA = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: email is aaa@test.com
 
@@ -66,7 +68,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
                 ProtonMX: false,
             };
             const api = getMockedApi(mockApiResponse);
-            const result = await getPublicKeysEmailHelper({ api, ktActivation, email: 'internal@proton.me' });
+            const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'internal@proton.me' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_INTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
             expect(result.publicKeys).toHaveSize(1);
@@ -89,7 +91,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
                 ProtonMX: true,
             };
             const api = getMockedApi(mockApiResponse);
-            const result = await getPublicKeysEmailHelper({ api, ktActivation, email: 'internal@proton.me' });
+            const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'internal@proton.me' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(true);
             expect(result.publicKeys).toHaveSize(0);
@@ -119,7 +121,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
                 ProtonMX: false,
             };
             const api = getMockedApi(mockApiResponse);
-            const result = await getPublicKeysEmailHelper({ api, ktActivation, email: 'external@example.com' });
+            const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'external@example.com' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
             expect(result.publicKeys).toHaveSize(1);
@@ -142,7 +144,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
                 ProtonMX: false,
             };
             const api = getMockedApi(mockApiResponse);
-            const result = await getPublicKeysEmailHelper({ api, ktActivation, email: 'external@example.com' });
+            const result = await getPublicKeysEmailHelper({ api, ktUserContext, email: 'external@example.com' });
             expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
             expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
             expect(result.publicKeys).toHaveSize(1);
@@ -165,7 +167,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const api = getMockedApi(mockApiResponse);
             const result = await getPublicKeysEmailHelper({
                 api,
-                ktActivation,
+                ktUserContext,
                 email: 'internal@proton.me',
                 includeInternalKeysWithE2EEDisabledForMail: true,
             });
@@ -197,7 +199,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const api = getMockedApi(mockApiResponse);
             const result = await getPublicKeysEmailHelper({
                 api,
-                ktActivation,
+                ktUserContext,
                 email: 'internal@proton.me',
                 includeInternalKeysWithE2EEDisabledForMail: true,
             });
@@ -224,7 +226,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const api = getMockedApi(mockApiResponse);
             const result = await getPublicKeysEmailHelper({
                 api,
-                ktActivation,
+                ktUserContext,
                 email: 'internal@proton.me',
                 includeInternalKeysWithE2EEDisabledForMail: true,
             });
@@ -259,7 +261,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const api = getMockedApi(mockApiResponse);
             const result = await getPublicKeysEmailHelper({
                 api,
-                ktActivation,
+                ktUserContext,
                 email: 'external@example.com',
                 includeInternalKeysWithE2EEDisabledForMail: true,
             });
@@ -285,7 +287,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const api = getMockedApi(mockApiResponse, true);
             const result = await getPublicKeysEmailHelper({
                 api,
-                ktActivation,
+                ktUserContext,
                 email: 'external@example.com',
                 internalKeysOnly: true,
             });

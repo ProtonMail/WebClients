@@ -1,16 +1,11 @@
-import {
-    KeyTransparencyError,
-    fetchLatestEpoch,
-    ktSentryReport,
-    ktSentryReportError,
-    verifyAddressIsAbsent,
-    verifyAddressIsObsolete,
-} from '@proton/key-transparency/lib';
+import type { KeyMigrationKTVerifier } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import type { KeyMigrationKTVerifier } from '../interfaces';
-import { KeyTransparencyActivation } from '../interfaces';
+import { fetchLatestEpoch } from '../helpers/apiHelpers';
+import { KeyTransparencyError, ktSentryReport, ktSentryReportError } from '../helpers/utils';
+import { verifyAddressIsAbsent, verifyAddressIsObsolete } from '../verification/verifyAddress';
 
-const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation): KeyMigrationKTVerifier => {
+export const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation): KeyMigrationKTVerifier => {
     return async ({ email, signedKeyList, api }) => {
         if (ktActivation === KeyTransparencyActivation.DISABLED) {
             return;
@@ -31,5 +26,3 @@ const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation): 
         }
     };
 };
-
-export default createKeyMigrationKTVerifier;

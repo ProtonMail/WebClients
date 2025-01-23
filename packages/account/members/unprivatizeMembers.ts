@@ -11,10 +11,10 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
     Api,
     EnhancedMember,
+    KTUserContext,
     Member,
     MemberReadyForUnprivatization,
     MemberReadyForUnprivatizationApproval,
-    VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
 import {
     UnprivatizationRevisionError,
@@ -25,6 +25,8 @@ import {
     unprivatizeMemberHelper,
 } from '@proton/shared/lib/keys';
 
+import type { KtState } from '../kt';
+import { getKTUserContext } from '../kt/actions';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
 import { getMember } from './getMember';
@@ -276,12 +278,12 @@ const getMembersToUnprivatize = ({
 
 export const unprivatizeMember = ({
     member,
-    verifyOutboundPublicKeys,
+    ktUserContext,
     options,
     api,
 }: {
     member: MemberReadyForUnprivatization;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    ktUserContext: KTUserContext;
     options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
     api: Api;
 }): ThunkAction<Promise<void>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
@@ -295,7 +297,7 @@ export const unprivatizeMember = ({
             member,
             memberAddresses,
             organizationKey: organizationKey.privateKey,
-            verifyOutboundPublicKeys,
+            ktUserContext,
             options,
         });
         await api(unprivatizeMemberKeysRoute(member.ID, payload));
@@ -304,18 +306,16 @@ export const unprivatizeMember = ({
 
 export const unprivatizeMembersBackgroundHelper = ({
     membersToUnprivatize,
-    verifyOutboundPublicKeys,
     options,
 }: {
     membersToUnprivatize: MemberReadyForUnprivatization[];
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
 }): ThunkAction<
     Promise<{
         membersToUpdate: Member[];
         membersToError: { member: Member; error: any }[];
     }>,
-    MembersState & OrganizationKeyState,
+    KtState & MembersState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -325,6 +325,7 @@ export const unprivatizeMembersBackgroundHelper = ({
 
         extra.eventManager.stop();
         const api = getSilentApi(extra.api);
+        const ktUserContext = await dispatch(getKTUserContext());
         for (const member of membersToUnprivatize) {
             try {
                 await dispatch(
@@ -332,7 +333,7 @@ export const unprivatizeMembersBackgroundHelper = ({
                         member,
                         api,
                         options,
-                        verifyOutboundPublicKeys,
+                        ktUserContext,
                     })
                 );
                 const newMember = await getMember(api, member.ID);
@@ -347,11 +348,9 @@ export const unprivatizeMembersBackgroundHelper = ({
 };
 
 export const unprivatizeMembersBackground = ({
-    verifyOutboundPublicKeys,
     options,
     target,
 }: {
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     options?: Parameters<typeof getUnprivatizeMemberPayload>[0]['options'];
     target:
         | {
@@ -362,7 +361,7 @@ export const unprivatizeMembersBackground = ({
               type: 'action';
               members: MemberReadyForUnprivatization[];
           };
-}): ThunkAction<Promise<void>, MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<void>, KtState & MembersState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState) => {
         if (!target.members.length) {
             return;
@@ -406,7 +405,6 @@ export const unprivatizeMembersBackground = ({
         const { membersToError, membersToUpdate } = await dispatch(
             unprivatizeMembersBackgroundHelper({
                 membersToUnprivatize,
-                verifyOutboundPublicKeys,
                 options,
             })
         );

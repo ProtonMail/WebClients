@@ -1,33 +1,22 @@
 import type { ChangeEvent } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import noop from 'lodash/noop';
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
+import { createAddress } from '@proton/account/addresses/actions';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useMembers } from '@proton/account/members/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { CircleLoader } from '@proton/atoms';
-import type { ModalOwnProps } from '@proton/components';
-import {
-    DropdownSizeUnit,
-    Option,
-    SelectTwo,
-    useApi,
-    useAuthentication,
-    useKTVerifier,
-    useNotifications,
-} from '@proton/components';
+import { DropdownSizeUnit, type ModalOwnProps, Option, SelectTwo } from '@proton/components';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { createAddress } from '@proton/shared/lib/api/addresses';
-import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';
-import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 
 import { Button, Input, Modal } from '../../atoms';
 
@@ -35,27 +24,20 @@ interface Props extends ModalOwnProps {
     onAddressCreated?: (address: Address) => void;
 }
 
-const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
-
 export const EmailAddressCreationModal = ({ onAddressCreated, ...modalProps }: Props) => {
     const [user] = useUser();
     const [members, loadingMembers] = useMembers();
     const [customDomains] = useCustomDomains();
     const [{ premiumDomains, protonDomains }] = useProtonDomains();
 
-    const api = useApi();
     const { createNotification } = useNotifications();
-
-    const [userKeys] = useUserKeys();
-    const [addresses] = useAddresses();
-    const authentication = useAuthentication();
-
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const [local, setLocal] = useState('');
     const [selectedDomain, setSelectedDomain] = useState('');
     const [displayName, setDisplayName] = useState('');
     const [error, setError] = useState<string | null>(null);
+    const dispatch = useDispatch();
+    const errorHandler = useErrorHandler();
 
     const [loadingAddressCreation, withLoadingAddressCreation] = useLoading();
 
@@ -101,36 +83,22 @@ export const EmailAddressCreationModal = ({ onAddressCreated, ...modalProps }: P
     }, [checkData, error]);
 
     const handleCreateEmail = async () => {
-        if (!checkData() || !member || !userKeys || !addresses) {
+        if (!checkData() || !member) {
             return;
         }
 
         try {
-            const { Address } = await api<{ Address: Address }>(
+            const address = await dispatch(
                 createAddress({
-                    MemberID: member.ID,
-                    Local: local,
-                    Domain: selectedDomain,
-                    DisplayName: displayName,
+                    member,
+                    emailAddressParts: { Local: local, Domain: selectedDomain },
+                    displayName,
                 })
             );
-
-            await missingKeysSelfProcess({
-                api,
-                userKeys,
-                addresses,
-                addressesToGenerate: [Address],
-                password: authentication.getPassword(),
-                keyGenConfig,
-                onUpdate: noop,
-                keyTransparencyVerify,
-            });
-
-            await keyTransparencyCommit(userKeys);
-
-            onAddressCreated?.(Address);
-        } catch {
+            onAddressCreated?.(address);
             createNotification({ text: c('Wallet preference').t`Email address created` });
+        } catch (e) {
+            errorHandler(e);
         }
     };
 

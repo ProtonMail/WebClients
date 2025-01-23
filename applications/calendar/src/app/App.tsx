@@ -83,11 +83,7 @@ const App = () => {
                                                     }
                                                 >
                                                     <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                        <StandardPrivateApp
-                                                            hasReadableMemberKeyActivation
-                                                            hasMemberKeyMigration
-                                                            hasPrivateMemberKeyGeneration
-                                                        >
+                                                        <StandardPrivateApp>
                                                             <state.MainContainer />
                                                         </StandardPrivateApp>
                                                     </ErrorBoundary>

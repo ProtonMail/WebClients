@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
+import { getKTUserContext } from '@proton/account/kt/actions';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
@@ -24,6 +25,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
 import type { CONTACT_MIME_TYPES } from '@proton/shared/lib/constants';
@@ -46,7 +48,6 @@ import {
 import clsx from '@proton/utils/clsx';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 import ContactMIMETypeSelect from './ContactMIMETypeSelect';
 import ContactPGPSettings from './ContactPGPSettings';
@@ -75,10 +76,9 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
+    const dispatch = useDispatch();
 
     const supportV6Keys = userSettings.Flags.SupportPgpV6Keys === 1;
-
-    const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
 
     const saveVCardContact = useSaveVCardContact();
 
@@ -100,8 +100,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             email: emailAddress,
             includeInternalKeysWithE2EEDisabledForMail: true, // the keys are used in the context of calendar sharing, thus users may want to pin them
             api,
-            ktActivation,
-            verifyOutboundPublicKeys,
+            ktUserContext: await dispatch(getKTUserContext()),
             silence: true,
         });
         const apiKeysSourceMap = apiKeysConfig.publicKeys.reduce<

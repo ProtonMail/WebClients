@@ -11,7 +11,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useKTActivation,
 } from '@proton/components';
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -63,6 +62,7 @@ import { getPlanCardSubscriptionData, getSubscriptionData, swapCurrency } from '
 import type { SignupDefaults, SubscriptionDataCycleMappingByCurrency } from '../single-signup-v2/interface';
 import { Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
+import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
@@ -120,7 +120,7 @@ const getSignupMode = (coupon: string | undefined, currency: Currency | undefine
 };
 
 const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType, onLogin, productParam }: Props) => {
-    const ktActivation = useKTActivation();
+    const getKtActivation = useGetAccountKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
     const { paymentsApi } = usePaymentsApi(silentApi);
@@ -650,7 +650,7 @@ const SingleSignupContainer = ({ onPreSubmit, onStartAuth, metaTags, clientType,
                                     persistent: false,
                                     trusted: false,
                                     clientType,
-                                    ktActivation,
+                                    ktActivation: await getKtActivation(),
                                 };
 
                                 await onPreSubmit?.();

@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { memberThunk } from '@proton/account/member';
 import { getPendingUnprivatizationRequest } from '@proton/account/member/actions';
 import { InlineLinkButton } from '@proton/atoms';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useDispatch } from '@proton/redux-shared-store';
 import { type Member } from '@proton/shared/lib/interfaces';
 import { type ParsedUnprivatizationData } from '@proton/shared/lib/keys';
@@ -16,7 +15,6 @@ import MemberUnprivatizationModal from './MemberUnprivatizationModal';
 
 const UnprivatizationRequestTopBanner = () => {
     const dispatch = useDispatch();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const [data, setData] = useState<{
         member: Member;
         orgName: string;
@@ -29,7 +27,7 @@ const UnprivatizationRequestTopBanner = () => {
         const initialSearchParams = new URLSearchParams(window.location.search);
         const run = async () => {
             const member = await dispatch(memberThunk());
-            const result = await dispatch(getPendingUnprivatizationRequest({ member, verifyOutboundPublicKeys }));
+            const result = await dispatch(getPendingUnprivatizationRequest({ member }));
             if (result) {
                 const { organization, parsedUnprivatizationData } = result;
                 setData({ member, orgName: organization.Name || '', parsedUnprivatizationData });

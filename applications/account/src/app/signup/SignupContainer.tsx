@@ -12,7 +12,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useKTActivation,
     useLocalState,
     useMyCountry,
 } from '@proton/components';
@@ -59,6 +58,7 @@ import { defaultPersistentKey, getContinueToString } from '../public/helper';
 import { getSubscriptionData } from '../single-signup-v2/helper';
 import { getSignupTelemetryData } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
+import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
@@ -148,7 +148,7 @@ const SignupContainer = ({
     const normalApi = useApi();
     const history = useHistory();
 
-    const ktActivation = useKTActivation();
+    const getKtActivation = useGetAccountKTActivation();
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
 
@@ -690,7 +690,7 @@ const SignupContainer = ({
                             persistent,
                             trusted: false,
                             clientType,
-                            ktActivation,
+                            ktActivation: await getKtActivation(),
                             humanVerificationInline: true,
                         };
 

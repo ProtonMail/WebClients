@@ -1,6 +1,7 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
+import { createKTVerifier } from '@proton/key-transparency';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { addressType } from '@proton/shared/lib/api/addresses';
@@ -31,7 +32,10 @@ import {
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';
 import type { DomainsState } from '../domains';
+import type { KtState } from '../kt';
+import { getKTActivation } from '../kt/actions';
 import { type MembersState, getMemberAddresses, membersThunk } from '../members';
+import { userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
 
@@ -86,15 +90,11 @@ const getVerifiedMailDomains = (domains: Domain[]) => {
 
 export const convertMemberExternalAddresses = ({
     domains,
-    keyTransparencyVerify,
-    keyTransparencyCommit,
 }: {
     domains?: Domain[];
-    keyTransparencyVerify: KeyTransparencyVerify;
-    keyTransparencyCommit: KeyTransparencyCommit;
 }): ThunkAction<
     Promise<void>,
-    OrganizationKeyState & MembersState & DomainsState & UserKeysState,
+    KtState & OrganizationKeyState & MembersState & DomainsState & UserKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -140,6 +140,12 @@ export const convertMemberExternalAddresses = ({
 
         const silentApi = getSilentApi(extra.api);
 
+        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
+            ktActivation: dispatch(getKTActivation()),
+            api: extra.api,
+            config: extra.config,
+        });
+
         const result = await Promise.all(
             membersWithExternalAddresses.map(async ({ member, memberAddresses }) => {
                 const fullMemberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
@@ -180,23 +186,20 @@ export const convertMemberExternalAddresses = ({
             return;
         }
 
+        const user = await dispatch(userThunk());
         const userKeys = await dispatch(userKeysThunk());
-        await keyTransparencyCommit(userKeys);
+        await keyTransparencyCommit(user, userKeys);
         await dispatch(membersThunk({ cache: CacheType.None }));
     };
 };
 
 export const convertExternalAddresses = ({
     domains,
-    keyTransparencyVerify,
-    keyTransparencyCommit,
 }: {
     domains?: Domain[];
-    keyTransparencyVerify: KeyTransparencyVerify;
-    keyTransparencyCommit: KeyTransparencyCommit;
 }): ThunkAction<
     Promise<void>,
-    DomainsState & AddressesState & AddressKeysState & UserKeysState,
+    KtState & DomainsState & AddressesState & AddressKeysState & UserKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -220,6 +223,12 @@ export const convertExternalAddresses = ({
 
         const silentApi = getSilentApi(extra.api);
 
+        const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
+            ktActivation: dispatch(getKTActivation()),
+            api: extra.api,
+            config: extra.config,
+        });
+
         const result = await Promise.all(
             externalAddresses.map(async (externalAddress) => {
                 try {
@@ -240,8 +249,9 @@ export const convertExternalAddresses = ({
             return;
         }
 
+        const user = await dispatch(userThunk());
         const userKeys = await dispatch(userKeysThunk());
-        await keyTransparencyCommit(userKeys);
+        await keyTransparencyCommit(user, userKeys);
         await dispatch(addressesThunk({ cache: CacheType.None }));
     };
 };
@@ -268,8 +278,9 @@ export const convertExternalAddress = ({
             api: silentApi,
             keyTransparencyVerify,
         });
+        const user = await dispatch(userThunk());
         const userKeys = await dispatch(userKeysThunk());
-        await keyTransparencyCommit(userKeys);
+        await keyTransparencyCommit(user, userKeys);
         await dispatch(addressesThunk({ cache: CacheType.None }));
     };
 };

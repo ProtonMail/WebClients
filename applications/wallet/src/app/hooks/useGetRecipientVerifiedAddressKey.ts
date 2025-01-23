@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
+import { getKTUserContext } from '@proton/account/kt/actions';
 import useApi from '@proton/components/hooks/useApi';
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto/lib';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { type ProcessedApiKey } from '@proton/shared/lib/interfaces';
 import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
@@ -45,8 +46,8 @@ const getVerifiedAddressKey = async (
 };
 
 export const useGetRecipientVerifiedAddressKey = () => {
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const api = useApi();
+    const dispatch = useDispatch();
 
     return useCallback(
         async (
@@ -61,13 +62,13 @@ export const useGetRecipientVerifiedAddressKey = () => {
                 api,
                 email,
                 internalKeysOnly: true,
-                verifyOutboundPublicKeys,
+                ktUserContext: await dispatch(getKTUserContext()),
             });
 
             const addressKey = await getVerifiedAddressKey(addressKeys, btc);
 
             return addressKey;
         },
-        [api, verifyOutboundPublicKeys]
+        [api]
     );
 };
