@@ -202,6 +202,23 @@ function Content({
     }
   }, [emailTitleEnabled, emailNotificationsEnabled, openEmailOptInModal, isNotificationsReady, emailFeatureEnabled])
 
+  // creating a node meta object after the early returns causes too many downstream re-renders since it is not stable
+  // so we memoize it beforehand and early-return if the memoized object is not available.
+  const nodeMeta = useMemo((): NodeMeta | null => {
+    if (!openAction) {
+      return null
+    }
+    const hasVolumeId = 'volumeId' in openAction
+    const hasLinkId = 'linkId' in openAction
+    if (hasLinkId && hasVolumeId) {
+      return {
+        volumeId: openAction.volumeId,
+        linkId: openAction.linkId,
+      }
+    }
+    return null
+  }, [openAction])
+
   if (isCreatingNewDocument || openAction?.mode === 'new') {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center gap-4">
@@ -229,17 +246,13 @@ function Content({
     openAction.mode === 'create' ||
     openAction.mode === 'open-url' ||
     !openAction.volumeId ||
-    !openAction.linkId
+    !openAction.linkId ||
+    !nodeMeta
   ) {
     return (
       <div className="m-auto">{c('Info')
         .jt`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`}</div>
     )
-  }
-
-  const nodeMeta: NodeMeta = {
-    volumeId: openAction.volumeId,
-    linkId: openAction.linkId,
   }
 
   if (openAction.mode === 'convert') {
