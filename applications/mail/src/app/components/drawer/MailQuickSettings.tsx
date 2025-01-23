@@ -331,6 +331,7 @@ const MailQuickSettings = () => {
                             data-testid="mail-quick-settings:keyboard-shortcuts-info"
                         />
                     }
+                    labelProps={{ htmlFor: 'toggle-shortcuts' }}
                     action={
                         <ShortcutsToggle
                             id="toggle-shortcuts"
@@ -352,6 +353,7 @@ const MailQuickSettings = () => {
                                 />
                             ) : undefined
                         }
+                        labelProps={{ htmlFor: 'assistantSelect' }}
                         action={
                             <ToggleAssistant
                                 id="assistantSelect"
