@@ -17,8 +17,8 @@ import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Domain, User } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import remove from '@proton/utils/remove';
-import replace from '@proton/utils/replace';
+import { removeById } from '@proton/utils/removeById';
+import { upsertById } from '@proton/utils/upsertById';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
@@ -73,25 +73,17 @@ const slice = createSlice({
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
         },
-        upsertDomain: (state, action: PayloadAction<Domain>) => {
-            if (!state.value) {
-                return;
-            }
-            const currentDomain = state.value.find(({ ID }) => ID === action.payload.ID);
-            if (!currentDomain) {
-                state.value.push(action.payload);
-            } else {
-                state.value = replace(state.value, currentDomain, action.payload);
-            }
-        },
         removeDomain: (state, action: PayloadAction<Domain>) => {
             if (!state.value) {
                 return;
             }
-            const currentDomain = state.value.find(({ ID }) => ID === action.payload.ID);
-            if (currentDomain) {
-                state.value = remove(state.value, currentDomain);
+            state.value = removeById(state.value, action.payload);
+        },
+        upsertDomain: (state, action: PayloadAction<Domain>) => {
+            if (!state.value) {
+                return;
             }
+            state.value = upsertById(state.value, action.payload);
         },
     },
     extraReducers: (builder) => {
