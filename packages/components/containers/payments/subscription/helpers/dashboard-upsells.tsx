@@ -100,7 +100,7 @@ import { SUBSCRIPTION_STEPS } from '../constants';
 import VpnEnterpriseAction from './VpnEnterpriseAction';
 import { getAllowedCycles } from './getAllowedCycles';
 
-const defaultUpsellCycleB2C = CYCLE.TWO_YEARS;
+const defaultUpsellCycleB2C = CYCLE.YEARLY;
 const defaultUpsellCycleB2B = CYCLE.YEARLY;
 
 export interface UpsellFeature extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
