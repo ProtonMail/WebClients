@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { MemberKeyPayload } from '@proton/account';
 import { getMemberKeyPayloads, setAdminRoles } from '@proton/account';
+import { getKTUserContext } from '@proton/account/kt/actions';
 import { Button, CircleLoader } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -21,7 +22,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AdministratorList, { AdministratorItem } from './AdministratorList';
 
 interface Props extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {
@@ -41,7 +41,6 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
         map: { [id: string]: MemberKeyPayload };
     }>(null);
     const errorHandler = useErrorHandler();
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useEffect(() => {
         const run = async () => {
@@ -50,7 +49,7 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                 getMemberKeyPayloads({
                     mode: {
                         type: 'email',
-                        verifyOutboundPublicKeys,
+                        ktUserContext: await dispatch(getKTUserContext()),
                     },
                     members,
                     api: silentApi,

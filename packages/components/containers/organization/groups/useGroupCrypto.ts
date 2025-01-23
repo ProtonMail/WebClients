@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { setNoEncryptFlag } from '@proton/account';
-import { useGetUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { setAddressFlags } from '@proton/components/hooks/helpers/addressFlagsHelper';
 import useApi from '@proton/components/hooks/useApi';
@@ -17,9 +16,7 @@ import useGroupKeys from './useGroupKeys';
 const useGroupCrypto = () => {
     const { createNotification } = useNotifications();
     const api = useApi();
-    const getUser = useGetUser();
-    const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
-    const { keyTransparencyVerify } = useKTVerifier(silentApi, getUser);
+    const createKTVerifier = useKTVerifier();
     const { getGroupAddressKey } = useGroupKeys();
     const dispatch = baseUseDispatch();
 
@@ -42,16 +39,12 @@ const useGroupCrypto = () => {
             forwarderKey = await getGroupAddressKey(forwarderAddress);
         }
 
+        const { keyTransparencyVerify } = await createKTVerifier();
         await setAddressFlags({
             encryptionDisabled: flagState,
             expectSignatureDisabled: expectSignatureDisabled(forwarderAddress),
             address: forwarderAddress,
-            addressesKeys: [
-                {
-                    address: forwarderAddress,
-                    keys: [forwarderKey],
-                },
-            ],
+            addressKeys: [forwarderKey],
             keyTransparencyVerify,
             api,
         });

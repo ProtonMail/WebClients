@@ -19,15 +19,17 @@ const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 const useGroupKeys = () => {
     const getUserKeys = useGetUserKeys();
     const api = useApi();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
+    const getUser = useGetUser();
     const authentication = useAuthentication();
     const [addresses = []] = useAddresses();
     const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const { createNotification } = useNotifications();
     const getOrganizationKey = useGetOrganizationKey();
+    const createKTVerifier = useKTVerifier();
 
     const addNewGroupAddressMemberKey = async (groupAddress: Address, groupAddressKey: DecryptedAddressKey) => {
         const userKeys = await getUserKeys();
+        const { keyTransparencyCommit, keyTransparencyVerify } = await createKTVerifier();
         const [newKey] = await addAddressKeysProcess({
             api,
             userKeys,
@@ -39,7 +41,7 @@ const useGroupKeys = () => {
             keyTransparencyVerify,
         });
         const { privateKey: groupKey } = newKey;
-        await keyTransparencyCommit(userKeys);
+        await keyTransparencyCommit(await getUser(), userKeys);
 
         return {
             groupKey,

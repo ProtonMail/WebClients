@@ -2,7 +2,7 @@ import { Integer as asn1jsInteger } from 'asn1js';
 
 import { HOUR, SECOND, YEAR } from '@proton/shared/lib/constants';
 
-import { KT_CERTIFICATE_ISSUER } from '../lib';
+import { KT_CERTIFICATE_ISSUER } from '../lib/constants/constants';
 import {
     parseCertChain,
     parseCertificate,

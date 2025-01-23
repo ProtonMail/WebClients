@@ -36,7 +36,6 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
-import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, {
     getInitialStorage,
     getStorageRange,
@@ -59,7 +58,6 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
 
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const dispatch = useDispatch();
     const [members = [], loadingMembers] = useMembers();
     const [loading, withLoading] = useLoading();
@@ -119,7 +117,6 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const handleOrgKeyCreation = async () => {
         const result = await dispatch(
             getKeyRotationPayload({
-                verifyOutboundPublicKeys,
                 api: silentApi,
                 ignorePasswordlessValidation: true,
             })

@@ -4,16 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import type { OnLoginCallback } from '@proton/components';
-import {
-    AbuseModal,
-    useApi,
-    useConfig,
-    useErrorHandler,
-    useIsInboxElectronApp,
-    useKTActivation,
-} from '@proton/components';
+import { AbuseModal, useApi, useConfig, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import type {
     AuthActionResponse,
     AuthCacheResult,
@@ -41,6 +33,7 @@ import Text from '../public/Text';
 import { getContinueToString } from '../public/helper';
 import PorkbunHeader from '../single-signup-v2/mail/PorkbunHeader';
 import { useFlowRef } from '../useFlowRef';
+import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import type { LoginFormRef } from './LoginForm';
@@ -119,13 +112,12 @@ const LoginContainer = ({
     const loginFormRef = useRef<LoginFormRef>();
     const searchParams = new URLSearchParams(location.search);
     const isPorkbun = searchParams.get('partner') === 'porkbun';
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useMetaTags(metaTags);
 
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
-    const ktActivation = useKTActivation();
+    const getKtActivation = useGetAccountKTActivation();
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -288,8 +280,7 @@ const LoginContainer = ({
                                                 toApp,
                                                 ignoreUnlock: false,
                                                 setupVPN,
-                                                ktActivation,
-                                                verifyOutboundPublicKeys,
+                                                ktActivation: await getKtActivation(),
                                                 username: data.username,
                                                 password: data.password,
                                                 persistent: data.persistent,

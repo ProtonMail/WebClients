@@ -69,8 +69,11 @@ export const missingKeysMemberProcess = async ({
                 }
 
                 onUpdate(memberAddress.ID, { status: 'ok' });
+
+                return { type: 'ok' };
             } catch (e: any) {
                 onUpdate(memberAddress.ID, { status: 'error', result: e.message });
+                return { type: 'error', e };
             }
         })
     );

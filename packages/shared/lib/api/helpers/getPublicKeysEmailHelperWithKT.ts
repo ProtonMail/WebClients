@@ -1,6 +1,6 @@
 import { RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
-import type { Api, ApiKeysConfig, VerifyOutboundPublicKeys } from '../../interfaces';
+import type { Api, ApiKeysConfig, KTUserContext } from '../../interfaces';
 import { KT_VERIFICATION_STATUS } from '../../interfaces';
 import { getExternalKeys, getInternalKeys, getMailCapableKeys, supportsMail } from '../../keys';
 import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
@@ -22,7 +22,7 @@ const getPublicKeysEmailHelperWithKT = async ({
     internalKeysOnly,
     includeInternalKeysWithE2EEDisabledForMail,
     api,
-    verifyOutboundPublicKeys,
+    ktUserContext,
     silence,
     noCache,
 }: {
@@ -30,7 +30,7 @@ const getPublicKeysEmailHelperWithKT = async ({
     internalKeysOnly: boolean;
     includeInternalKeysWithE2EEDisabledForMail: boolean;
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
+    ktUserContext: KTUserContext;
     silence?: boolean;
     noCache?: boolean;
 }): Promise<ApiKeysConfig> => {
@@ -47,7 +47,7 @@ const getPublicKeysEmailHelperWithKT = async ({
             api,
             email,
             internalKeysOnly,
-            verifyOutboundPublicKeys,
+            ktUserContext,
             skipVerificationOfExternalDomains: !includeInternalKeysWithE2EEDisabledForMail, // as we know we are in a Mail context
             silence,
             noCache,

@@ -4,16 +4,15 @@ import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/sh
 
 import { fetchProof, updateSignedKeyList } from '../../helpers/apiHelpers';
 import { throwKTError } from '../../helpers/utils';
-import { saveSKLToLS } from '../../storage';
+import { saveSKLToLS } from '../../storage/saveSKLToLS';
 import { verifyProofOfAbsenceForAllRevision } from '../verifyProofs';
 
-export const uploadMissingSKL: UploadMissingSKL = async ({ userContext, address, epoch, api }) => {
+export const uploadMissingSKL: UploadMissingSKL = async ({ ktUserContext, address, addressKeys, epoch, api }) => {
     const proof = await fetchProof(epoch.EpochID, address.Email, 1, api);
     await verifyProofOfAbsenceForAllRevision(proof, address.Email, epoch.TreeHash);
-    const decryptedKeys = await userContext.getAddressKeys(address.ID);
     const activeKeys = getNormalizedActiveAddressKeys(
         address,
-        await getActiveAddressKeys(address, null, address.Keys, decryptedKeys)
+        await getActiveAddressKeys(address, null, address.Keys, addressKeys)
     );
     const skl = await getSignedKeyList(activeKeys, address, async () => {});
     const { Revision, ExpectedMinEpochID } = await updateSignedKeyList(api, address.ID, skl);
@@ -21,7 +20,7 @@ export const uploadMissingSKL: UploadMissingSKL = async ({ userContext, address,
         return throwKTError('Returned SKL has no ExpectedMinEpochID', { addressID: address.ID });
     }
     await saveSKLToLS({
-        userContext,
+        ktUserContext,
         email: address.Email,
         data: skl.Data,
         revision: Revision,

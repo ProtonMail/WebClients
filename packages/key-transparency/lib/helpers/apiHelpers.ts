@@ -10,9 +10,9 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address, Api, FetchedSignedKeyList, SignedKeyList } from '@proton/shared/lib/interfaces';
 
-import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants';
+import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants/constants';
 import type { Epoch, Proof, VerifiedEpoch } from '../interfaces';
-import { verifyEpoch } from '../verification';
+import { verifyEpoch } from '../verification/verifyEpochs';
 import { getEpochsRoute, getLatestVerifiedEpochRoute, getProofRoute, uploadVerifiedEpochRoute } from './api';
 import { StaleEpochError, isTimestampTooOld, throwKTError } from './utils';
 
@@ -23,6 +23,9 @@ import { StaleEpochError, isTimestampTooOld, throwKTError } from './utils';
  */
 export const fetchLatestEpoch = async (api: Api, verify: boolean = true): Promise<Epoch> => {
     const { Epochs } = await api<{ Epochs: Epoch[] }>(getEpochsRoute({}));
+    if (!Epochs?.length) {
+        throw new Error('No epochs returned');
+    }
     const [lastEpoch] = Epochs;
     if (verify) {
         const certificateTimestamp = await verifyEpoch(lastEpoch);

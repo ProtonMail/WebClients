@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { setupUser } from '@proton/account/addresses/actions';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -22,25 +22,19 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import AuthModal, { type AuthModalResult } from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { useDispatch } from '@proton/redux-shared-store';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getHasMemberCapablePlan, hasDuo, hasFamily, hasPassFamily } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
-import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
-import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
-import noop from '@proton/utils/noop';
 
 import DomainModal from '../domains/DomainModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
@@ -63,18 +57,16 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const { APP_NAME } = useConfig();
     const [organizationKey] = useOrganizationKey();
     const [user] = useUser();
-    const getAddresses = useGetAddresses();
-    const api = useApi();
+    const dispatch = useDispatch();
     const [customDomains] = useCustomDomains();
     const [subscription] = useSubscription();
     const [loading, withLoading] = useLoading();
-    const ktActivation = useKTActivation();
-    const authentication = useAuthentication();
     const [editOrganizationIdentityProps, setEditOrganizationIdentityModal, renderEditOrganizationIdentityModal] =
         useModalState();
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const [setupOrganizationModalProps, setSetupOrganizationModal, renderSetupOrganizationModal] = useModalState();
+    const errorHandler = useErrorHandler();
 
     const [authModal, showAuthModal] = useModalTwoPromise<undefined, AuthModalResult>();
 
@@ -234,36 +226,15 @@ const OrganizationSection = ({ app, organization }: Props) => {
 
                                         // VPN username only users might arrive here through the VPN business plan in protonvpn.com
                                         if (user.isPrivate && !user.Keys.length && authResult.type === 'srp') {
-                                            const [addresses, domains] = await Promise.all([
-                                                getAddresses(),
-                                                api<{
-                                                    Domains: string[];
-                                                }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
-                                            ]);
-                                            const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation);
-                                            const passphrase = await handleSetupAddressKeys({
-                                                addresses,
-                                                api,
-                                                username: user.Name,
-                                                password: authResult.credentials.password,
-                                                domains,
-                                                preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
-                                                productParam: app,
-                                            });
-                                            await innerMutatePassword({
-                                                api,
-                                                authentication,
-                                                keyPassword: passphrase,
-                                                clearKeyPassword: authResult.credentials.password,
-                                                User: user,
-                                            });
-                                            await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
+                                            await dispatch(
+                                                setupUser({ password: authResult.credentials.password, app })
+                                            );
                                         }
 
                                         setSetupOrganizationModal(true);
                                     };
 
-                                    withLoading(run().catch(noop));
+                                    withLoading(run().catch(errorHandler));
                                 }}
                             >{c('Action').t`Enable multi-user support`}</PrimaryButton>
                         </>

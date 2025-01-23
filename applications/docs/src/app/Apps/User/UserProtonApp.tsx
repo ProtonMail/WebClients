@@ -109,11 +109,7 @@ const UserApp = () => {
                       <ApiProvider api={extraThunkArguments.api}>
                         <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                           <ErrorBoundary big component={<StandardErrorPage big />}>
-                            <StandardPrivateApp
-                              hasReadableMemberKeyActivation
-                              hasMemberKeyMigration
-                              hasPrivateMemberKeyGeneration
-                            >
+                            <StandardPrivateApp>
                               <state.MainContainer />
                             </StandardPrivateApp>
                           </ErrorBoundary>

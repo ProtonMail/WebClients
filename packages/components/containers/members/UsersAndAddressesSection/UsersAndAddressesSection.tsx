@@ -34,7 +34,6 @@ import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
-import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import {
     getInvitationAcceptLimit,
     getInvitationLimit,
@@ -123,7 +122,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const dispatch = useDispatch();
     const accessToAssistant = useAssistantFeatureEnabled();
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
-    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
     const hasSetupActiveOrganizationWithKeys =
@@ -263,7 +261,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     };
 
     const handleAttachSSO = wrapError(async (member: EnhancedMember) => {
-        await dispatch(attachMemberSSO({ api, member, verifyOutboundPublicKeys }));
+        await dispatch(attachMemberSSO({ api, member }));
         const n = 1;
         createNotification({
             text: c('sso').ngettext(msgid`${n} user converted to SSO`, `${n} users converted to SSO`, n),

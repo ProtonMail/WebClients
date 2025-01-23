@@ -11,12 +11,13 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useConfig from '@proton/components/hooks/useConfig';
-import type {
-    AddressAuditWarningDetails,
-    LocalStorageAuditResult,
-    SelfAuditResult,
-} from '@proton/key-transparency/lib';
-import { AddressAuditStatus, AddressAuditWarningReason } from '@proton/key-transparency/lib';
+import {
+    AddressAuditStatus,
+    type AddressAuditWarningDetails,
+    AddressAuditWarningReason,
+    type LocalStorageAuditResult,
+    type SelfAuditResult,
+} from '@proton/key-transparency';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';

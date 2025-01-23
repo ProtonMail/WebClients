@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import {
     ApiModalsHVUpsell,
     DrawerThemeInjector,
+    KeyTransparencyManager,
     ModalsChildren,
     SubscriptionModalProvider,
     useActiveBreakpoint,
@@ -14,6 +15,7 @@ import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
 import { FeatureCode, useFeatures } from '@proton/features';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
+import { APPS } from '@proton/shared/lib/constants';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 import { useFlag } from '@proton/unleash';
 import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
@@ -91,33 +93,35 @@ const MainContainer: FunctionComponent = () => {
     }, [featureSw, loadingSw]);
 
     return (
-        <AssistantProvider>
-            <QuickSettingsRemindersProvider>
-                <DrawerThemeInjector />
-                <EncryptedSearchProvider>
-                    <MailContentRefProvider mailContentRef={mailContentRef}>
-                        <ChecklistsProvider>
-                            <SubscriptionModalProvider app={APP_NAME}>
-                                <ComposerContainer breakpoints={breakpoints}>
-                                    <CheckAllRefProvider>
-                                        <ModalsChildren />
-                                        <ApiModalsHVUpsell api={extraThunkArguments.api} />
-                                        <Switch>
-                                            <Route
-                                                path={MAIN_ROUTE_PATH}
-                                                render={() => (
-                                                    <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                                )}
-                                            />
-                                        </Switch>
-                                    </CheckAllRefProvider>
-                                </ComposerContainer>
-                            </SubscriptionModalProvider>
-                        </ChecklistsProvider>
-                    </MailContentRefProvider>
-                </EncryptedSearchProvider>
-            </QuickSettingsRemindersProvider>
-        </AssistantProvider>
+        <KeyTransparencyManager appName={APPS.PROTONMAIL}>
+            <AssistantProvider>
+                <QuickSettingsRemindersProvider>
+                    <DrawerThemeInjector />
+                    <EncryptedSearchProvider>
+                        <MailContentRefProvider mailContentRef={mailContentRef}>
+                            <ChecklistsProvider>
+                                <SubscriptionModalProvider app={APP_NAME}>
+                                    <ComposerContainer breakpoints={breakpoints}>
+                                        <CheckAllRefProvider>
+                                            <ModalsChildren />
+                                            <ApiModalsHVUpsell api={extraThunkArguments.api} />
+                                            <Switch>
+                                                <Route
+                                                    path={MAIN_ROUTE_PATH}
+                                                    render={() => (
+                                                        <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                                    )}
+                                                />
+                                            </Switch>
+                                        </CheckAllRefProvider>
+                                    </ComposerContainer>
+                                </SubscriptionModalProvider>
+                            </ChecklistsProvider>
+                        </MailContentRefProvider>
+                    </EncryptedSearchProvider>
+                </QuickSettingsRemindersProvider>
+            </AssistantProvider>
+        </KeyTransparencyManager>
     );
 };
 

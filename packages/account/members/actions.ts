@@ -1,6 +1,8 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { createKTVerifier } from '@proton/key-transparency';
+import type { MailSettingState } from '@proton/mail';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -30,16 +32,7 @@ import {
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type {
-    Address,
-    Api,
-    Domain,
-    KeyTransparencyCommit,
-    KeyTransparencyVerify,
-    Member,
-    Organization,
-    VerifyOutboundPublicKeys,
-} from '@proton/shared/lib/interfaces';
+import type { Address, Api, Domain, Member, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import {
     getInvitationData,
@@ -54,6 +47,8 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import { addressesThunk } from '../addresses';
+import type { KtState } from '../kt';
+import { getKTActivation, getKTUserContext } from '../kt/actions';
 import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
 import { organizationThunk } from '../organization';
@@ -65,6 +60,7 @@ import {
     getPrivateAdminError,
     setAdminRoles,
 } from '../organizationKey/actions';
+import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
@@ -182,16 +178,14 @@ export const requestUnprivatization = ({
 export const unprivatizeSelf = ({
     api,
     member: initialMember,
-    verifyOutboundPublicKeys,
     upsert,
 }: {
     api: Api;
     member: Member;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     upsert: boolean;
 }): ThunkAction<
     Promise<void>,
-    MemberState & MembersState & OrganizationKeyState,
+    KtState & MemberState & MembersState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -219,12 +213,7 @@ export const unprivatizeSelf = ({
 
             if (getIsMemberInManualAcceptState(member)) {
                 // Fetch the unprivatization data (self) and accept it
-                const pendingData = await dispatch(
-                    getPendingUnprivatizationRequest({
-                        member,
-                        verifyOutboundPublicKeys,
-                    })
-                );
+                const pendingData = await dispatch(getPendingUnprivatizationRequest({ member }));
 
                 if (!pendingData) {
                     throw new Error('Unable to get pending unprivatization for self');
@@ -243,13 +232,9 @@ export const unprivatizeSelf = ({
             }
 
             if (getIsMemberInAutomaticApproveState(member)) {
-                await dispatch(
-                    unprivatizeMember({
-                        member,
-                        api,
-                        verifyOutboundPublicKeys,
-                    })
-                );
+                const ktUserContext = await dispatch(getKTUserContext());
+
+                await dispatch(unprivatizeMember({ member, api, ktUserContext }));
             } else {
                 throw new Error('Unable to finalize self unprivatization');
             }
@@ -335,16 +320,14 @@ export const editMember = ({
     memberDiff,
     memberKeyPacketPayload,
     api,
-    verifyOutboundPublicKeys,
 }: {
     member: Member;
     memberDiff: Partial<CreateMemberPayload>;
     memberKeyPacketPayload: MemberKeyPayload | null;
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
 }): ThunkAction<
     Promise<{ diff: true; member: Member } | { diff: false; member: null }>,
-    MemberState & MembersState & OrganizationKeyState,
+    KtState & MemberState & MembersState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -387,7 +370,7 @@ export const editMember = ({
             }
             if (member.Private === MEMBER_PRIVATE.UNREADABLE && memberDiff.private === MEMBER_PRIVATE.READABLE) {
                 if (member.Self) {
-                    await dispatch(unprivatizeSelf({ member, api, upsert: false, verifyOutboundPublicKeys }));
+                    await dispatch(unprivatizeSelf({ member, api, upsert: false }));
                 } else {
                     await dispatch(requestUnprivatization({ member, api, upsert: false }));
                 }
@@ -439,9 +422,6 @@ export const createMember = ({
     member: originalModel,
     single,
     verifiedDomains,
-    keyTransparencyVerify,
-    keyTransparencyCommit,
-    verifyOutboundPublicKeys,
     api,
     validationOptions,
 }: {
@@ -453,13 +433,16 @@ export const createMember = ({
         disableDomainValidation?: boolean;
         disableAddressValidation?: boolean;
     };
-    keyTransparencyVerify: KeyTransparencyVerify;
-    keyTransparencyCommit: KeyTransparencyCommit;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     api: Api;
-}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        let [userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
+}): ThunkAction<
+    Promise<void>,
+    KtState & OrganizationKeyState & MailSettingState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, _, extra) => {
+        let [user, userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
+            dispatch(userThunk()),
             dispatch(userKeysThunk()),
             dispatch(addressesThunk()),
             dispatch(organizationKeyThunk()),
@@ -657,6 +640,11 @@ export const createMember = ({
         let memberWithKeys: Member | undefined;
         organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
         if (!model.private && organizationKey?.privateKey) {
+            const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
+                config: extra.config,
+                api,
+                ktActivation: dispatch(getKTActivation()),
+            });
             const result = await setupMemberKeys({
                 api,
                 ownerAddresses,
@@ -668,7 +656,7 @@ export const createMember = ({
                 keyTransparencyVerify,
             });
             memberWithKeys = result.Member;
-            await keyTransparencyCommit(userKeys);
+            await keyTransparencyCommit(user, userKeys);
         }
 
         if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
@@ -681,7 +669,7 @@ export const createMember = ({
                         memberAddresses,
                         mode: {
                             type: 'email',
-                            verifyOutboundPublicKeys,
+                            ktUserContext: await dispatch(getKTUserContext()),
                         },
                         api,
                     });
@@ -740,14 +728,12 @@ export const detachMemberSSO = ({
 export const attachMemberSSO = ({
     api,
     member,
-    verifyOutboundPublicKeys,
 }: {
     member: Member;
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
 }): ThunkAction<
     Promise<void>,
-    MemberState & MembersState & OrganizationKeyState,
+    KtState & MemberState & MembersState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -757,7 +743,7 @@ export const attachMemberSSO = ({
             member.Self &&
             member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN
         ) {
-            await dispatch(unprivatizeSelf({ member, api, verifyOutboundPublicKeys, upsert: true }));
+            await dispatch(unprivatizeSelf({ member, api, upsert: true }));
         }
         await api(addSSOSamlMember(member.ID));
         dispatch(upsertMember({ member: await getMember(api, member.ID) }));

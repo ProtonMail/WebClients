@@ -10,7 +10,6 @@ import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useMembers } from '@proton/account/members/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useAddGroupMember from '@proton/components/containers/organization/groups/useAddGroupMember';
 import useApi from '@proton/components/hooks/useApi';
@@ -18,7 +17,6 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Address, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
@@ -50,7 +48,6 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [members] = useMembers();
     const [groups, loadingGroups] = useGroups();
     const api = useApi();
-    const silentApi = getSilentApi(api);
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [selectedGroup, setSelectedGroup] = useState<Group | undefined>(undefined);
@@ -99,8 +96,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         setSelectedDomain(suggestedAddressDomainPart);
     }, [suggestedAddressDomainPart]);
 
-    const getUser = useGetUser();
-    const { keyTransparencyVerify } = useKTVerifier(silentApi, getUser);
+    const createKTVerifier = useKTVerifier();
 
     const [groupMembers, loadingGroupMembers] = useGroupMembers(selectedGroup?.ID);
 
@@ -171,6 +167,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
         const apiEndpoint = isNewGroup ? createGroup : editGroup;
 
+        const { keyTransparencyVerify } = await createKTVerifier();
         const Group = await dispatch(
             apiEndpoint({
                 api: api,
