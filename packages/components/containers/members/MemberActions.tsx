@@ -3,15 +3,8 @@ import { c } from 'ttag';
 import type { getSSODomainsSet } from '@proton/account/samlSSO/helper';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
-import type {
-    APP_NAMES} from '@proton/shared/lib/constants';
-import {
-    APPS,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-    MEMBER_TYPE,
-    ORGANIZATION_STATE,
-} from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type {

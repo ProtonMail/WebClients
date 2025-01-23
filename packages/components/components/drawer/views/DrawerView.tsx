@@ -4,6 +4,7 @@ import DrawerHeaderTitleDropdown from '@proton/components/components/drawer/view
 import DrawerAppFooter from '@proton/components/containers/drawer/DrawerAppFooter';
 import DrawerAppHeader from '@proton/components/containers/drawer/DrawerAppHeader';
 import clsx from '@proton/utils/clsx';
+
 import DrawerHeaderTitleTabs from './DrawerHeaderTitleTabs';
 
 export interface SelectedDrawerOption {
@@ -32,10 +33,13 @@ const DrawerView = ({
     isUsingTabs = false,
     ...rest
 }: Props) => {
-    const drawerHeaderTitle = options ?
-        isUsingTabs ? <DrawerHeaderTitleTabs title={tab.text} options={options} onClickOption={onSelectDrawerOption} /> : 
-        <DrawerHeaderTitleDropdown title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
-     : (
+    const drawerHeaderTitle = options ? (
+        isUsingTabs ? (
+            <DrawerHeaderTitleTabs title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
+        ) : (
+            <DrawerHeaderTitleDropdown title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
+        )
+    ) : (
         tab.text
     );
 

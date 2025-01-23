@@ -13,9 +13,10 @@ import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
-import '@proton/styles/scss/_proton-account.scss';
 import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
+
+import '@proton/styles/scss/_proton-account.scss';
 
 const config = { APP_NAME: APPS.PROTONACCOUNT, APP_VERSION: '5.0.999.999', API_URL: '/api' } as ProtonConfig;
 const api = createApi({ config });
