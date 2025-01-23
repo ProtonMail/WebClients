@@ -57,8 +57,7 @@ const AccountLockedUpsellForm = ({
                 <h1 className="h3 text-bold mb-4">
                     {c('Title').t`Account restricted`}
                     <div className="text-sm mt-1">
-                        {c('Info')
-                            .jt`Creating multiple free accounts is not permitted by our ${termsLink}.`}
+                        {c('Info').jt`Creating multiple free accounts is not permitted by our ${termsLink}.`}
                     </div>
                 </h1>
                 <div className="mb-4">
@@ -66,7 +65,8 @@ const AccountLockedUpsellForm = ({
                         .t`We have plans designed specifically for users like you who need more than one email address.`}
                     {enableUpgrade
                         ? c('Info').t`To remove restrictions, you can upgrade to a paid plan.`
-                        : c('Info').jt`For additional information and to remove restrictions, please login at ${mailLink}.`}
+                        : c('Info')
+                              .jt`For additional information and to remove restrictions, please login at ${mailLink}.`}
                 </div>
                 {enableUpgrade && renderPlanSelect && <div className="py-2">{renderPlanSelect()}</div>}
             </div>

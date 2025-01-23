@@ -8,10 +8,11 @@ import 'codemirror/mode/sieve/sieve';
 
 import { normalize } from '../../utils';
 
-import './SieveEditor.scss';
 import 'codemirror/addon/lint/lint.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/base16-dark.css';
+
+import './SieveEditor.scss';
 
 interface Props {
     value: string;
