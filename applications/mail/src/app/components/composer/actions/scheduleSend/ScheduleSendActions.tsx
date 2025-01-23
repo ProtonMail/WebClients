@@ -11,14 +11,12 @@ import {
     NewUpsellModal,
     SimpleDropdown,
     UpsellModal,
+    useMailUpsellConfig,
     useModalState,
-    useUpsellConfig,
 } from '@proton/components';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
-import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import scheduleSendImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paperplane-clock.svg';
@@ -151,6 +149,12 @@ const ScheduleSendActions = ({
     );
 };
 
+const upsellRef = getUpsellRef({
+    app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+    component: UPSELL_COMPONENT.MODAL,
+    feature: MAIL_UPSELL_PATHS.SCHEDULE_SEND,
+});
+
 const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
     (
         {
@@ -171,16 +175,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
 
         const composer = useMailSelector((store) => selectComposer(store, composerID));
 
-        const upsellRef = getUpsellRef({
-            app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-            component: UPSELL_COMPONENT.MODAL,
-            feature: MAIL_UPSELL_PATHS.SCHEDULE_SEND,
-        });
-
-        const oneDollarConfig = useOneDollarConfig();
-        const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
-
-        const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+        const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
         const modal = displayNewUpsellModalsVariant ? (
             <NewUpsellModal

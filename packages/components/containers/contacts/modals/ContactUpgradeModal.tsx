@@ -3,12 +3,10 @@ import { c } from 'ttag';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import useConfig from '@proton/components/hooks/useConfig';
-import { PLANS } from '@proton/payments';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import contactGroupsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/book-contact-groups.svg';
 
 const ContactUpgradeModal = (modalProps: ModalStateProps) => {
@@ -21,10 +19,7 @@ const ContactUpgradeModal = (modalProps: ModalStateProps) => {
             component: UPSELL_COMPONENT.MODAL,
         }) || '';
 
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
-
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
     if (displayNewUpsellModalsVariant) {
         return (
