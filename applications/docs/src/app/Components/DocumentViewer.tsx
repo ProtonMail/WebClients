@@ -41,6 +41,7 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import type { DocumentError } from './DocumentErrorComponent'
 import { DocumentErrorComponent } from './DocumentErrorComponent'
+import { useAppendPublicShareKeyMaterialToTitle } from '../Hooks/usePublicShareUrlKeyMaterial'
 
 type Props = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -333,6 +334,12 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       createBridge(docOrchestrator, editorFrame, editorController)
     }
   }, [docOrchestrator, editorFrame, createBridge, bridge, editorController])
+
+  useAppendPublicShareKeyMaterialToTitle(
+    application,
+    nodeMeta,
+    documentState?.getProperty('userRole').canReadPublicShareUrl(),
+  )
 
   const onInviteAutoAcceptResult = useCallback((result: boolean) => {
     if (result) {
