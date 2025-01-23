@@ -1,6 +1,8 @@
 import './typings/css.d';
 import './typings/index.d';
 
+export { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
+export { default as useOneDollarPromo } from '@proton/components/components/upsell/useOneDollarPromo';
 export { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
@@ -8,8 +10,6 @@ export * from './components/addressesAutocomplete/helper';
 export { default as AddressesInput, AddressesInputItem } from './components/addressesInput/AddressesInput';
 export { default as Alert } from './components/alert/Alert';
 export type { AlertType } from './components/alert/Alert';
-export { mailTrial2024Config } from './containers/offers/operations/mailTrial2024/configuration';
-export { getCTAContent, getRenews } from './containers/offers/operations/mailTrial2024/text';
 export { default as AttachedFile } from './components/attachedFile/AttachedFile';
 export { default as Autocomplete } from './components/autocomplete/Autocomplete';
 export {
@@ -240,7 +240,7 @@ export { allPopperPlacements, cornerPopperPlacements, verticalPopperPlacements }
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
-export { default as Meter, getMeterColor } from './components/progress/Meter';
+export { getMeterColor, default as Meter } from './components/progress/Meter';
 export type { MeterValue } from './components/progress/Meter';
 export { default as Progress } from './components/progress/Progress';
 export { default as Prompt } from './components/prompt/Prompt';
@@ -526,8 +526,6 @@ export { default as TextPreview } from './containers/filePreview/TextPreview';
 export { default as ZoomControl } from './containers/filePreview/ZoomControl';
 export {
     COMPARATORS,
-    OPERATORS,
-    TYPES,
     getComparatorLabels,
     getConditionTypeLabels,
     getDefaultFolderOptions,
@@ -535,6 +533,8 @@ export {
     getOperatorLabels,
     noFolderOption,
     noFolderValue,
+    OPERATORS,
+    TYPES,
 } from './containers/filters/constants';
 export { default as FiltersSection } from './containers/filters/FiltersSection';
 export { ConditionComparator, ConditionType, FilterStatement } from './containers/filters/interfaces';
@@ -632,9 +632,9 @@ export { default as MemberAddresses } from './containers/members/MemberAddresses
 export { default as MemberFeatures } from './containers/members/MemberFeatures';
 export { default as MemberRole } from './containers/members/MemberRole';
 export {
-    default as MemberStorageSelector,
     getInitialStorage,
     getStorageRange,
+    default as MemberStorageSelector,
 } from './containers/members/MemberStorageSelector';
 export { default as MultiUserCreationSection } from './containers/members/multipleUserCreation/MultiUserCreationSection';
 export { default as SubUserCreateModal } from './containers/members/SubUserCreateModal';
@@ -700,6 +700,8 @@ export { isBlackFridayPeriod, isCyberWeekPeriod } from './containers/offers/help
 export { default as useFetchOffer } from './containers/offers/hooks/useFetchOffer';
 export { default as useOfferConfig } from './containers/offers/hooks/useOfferConfig';
 export { default as useOfferModal } from './containers/offers/hooks/useOfferModal';
+export { mailTrial2024Config } from './containers/offers/operations/mailTrial2024/configuration';
+export { getCTAContent, getRenews } from './containers/offers/operations/mailTrial2024/text';
 export { ONBOARDING_THEMES } from './containers/onboarding/constants';
 export type { OnboardingStepProps, OnboardingStepRenderCallback } from './containers/onboarding/interface';
 export { default as OnboardingContent } from './containers/onboarding/OnboardingContent';
@@ -798,7 +800,7 @@ export { default as FreeUserLiveChatModal } from './containers/support/FreeUserL
 export { default as ThemeCard } from './containers/themes/ThemeCard';
 export { default as ThemeCards } from './containers/themes/ThemeCards';
 export { DrawerThemeInjector } from './containers/themes/ThemeInjector';
-export { default as ThemeProvider, getThemeStyle, useTheme } from './containers/themes/ThemeProvider';
+export { getThemeStyle, default as ThemeProvider, useTheme } from './containers/themes/ThemeProvider';
 export { default as ThemesModal } from './containers/themes/ThemesModal';
 export { default as ThemesSection } from './containers/themes/ThemesSection';
 export { default as ThemeSvg } from './containers/themes/ThemeSvg';
@@ -818,12 +820,12 @@ export { default as TopBanners } from './containers/topBanners/TopBanners';
 export { default as EmbeddedVerification } from './containers/verification/EmbeddedVerification';
 export { getFlagSvg } from './containers/vpn/flag';
 export { default as GatewaysSection } from './containers/vpn/gateways/GatewaysSection';
-export { default as SharedServersSection } from './containers/vpn/sharedServers/SharedServersSection';
 export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as OpenVPNCredentialsSection } from './containers/vpn/OpenVPNCredentialsSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
 export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
+export { default as SharedServersSection } from './containers/vpn/sharedServers/SharedServersSection';
 export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { getAppVersion } from './helpers/appVersion';
