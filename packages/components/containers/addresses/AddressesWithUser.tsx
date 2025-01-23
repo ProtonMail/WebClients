@@ -14,14 +14,12 @@ import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PLANS } from '@proton/payments';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -33,7 +31,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
@@ -52,6 +50,13 @@ interface Props {
     allowAddressDeletion: boolean;
 }
 
+const upsellRef = getUpsellRef({
+    app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+    component: UPSELL_COMPONENT.MODAL,
+    feature: MAIL_UPSELL_PATHS.UNLIMITED_ADDRESSES,
+    isSettings: true,
+});
+
 const AddressesUser = ({ user, organizationKey, member, hasDescription = true, allowAddressDeletion }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -61,17 +66,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true, a
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
 
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
-        feature: MAIL_UPSELL_PATHS.UNLIMITED_ADDRESSES,
-        isSettings: true,
-    });
-
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
-
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
