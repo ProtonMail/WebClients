@@ -77,12 +77,21 @@ export const cacheOfflineAssets = async (clear: boolean) => {
     }
 };
 
+/** Asset caching strategy based on environment:
+ * - Production: Cache-first with version query params (?version=x.y.z)
+ * - Development: Network-first to ensure latest assets during development
+ * Cache invalidation occurs on service worker upgrades in both modes */
 export const handleAsset = fetchController.register(
     async (event) => {
         const { request } = event;
         const cache = await getOfflineCache();
 
         try {
+            if (ENV !== 'development') {
+                const cachedResponse = await cache?.match(request).catch(noop);
+                if (cachedResponse) return cachedResponse;
+            }
+
             const response = await fetchController.fetch(request);
             const status = response.status;
 
@@ -93,8 +102,12 @@ export const handleAsset = fetchController.register(
 
             return response;
         } catch (err) {
-            const match = await cache?.match(request).catch(noop);
-            return match ?? createNetworkError();
+            if (ENV === 'development') {
+                const cachedResponse = await cache?.match(request).catch(noop);
+                if (cachedResponse) return cachedResponse;
+            }
+
+            return createNetworkError();
         }
     },
     { unauthenticated: true }
