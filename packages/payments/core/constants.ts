@@ -24,6 +24,7 @@ export const signupFlows: readonly PaymentMethodFlows[] = Object.freeze([
     'signup',
     'signup-pass',
     'signup-pass-upgrade',
+    'signup-wallet',
     'signup-vpn',
     'signup-v2',
     'signup-v2-upgrade',

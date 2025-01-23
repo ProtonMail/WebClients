@@ -344,7 +344,13 @@ export class PaymentMethods {
     }
 
     private commonBtcConditions() {
-        const btcEnabledFlows: PaymentMethodFlows[] = ['signup-pass', 'signup-pass-upgrade', 'credit', 'subscription'];
+        const btcEnabledFlows: PaymentMethodFlows[] = [
+            'signup-pass',
+            'signup-pass-upgrade',
+            'signup-wallet',
+            'credit',
+            'subscription',
+        ];
 
         const flowSupportsBtc = btcEnabledFlows.includes(this.flow);
 
