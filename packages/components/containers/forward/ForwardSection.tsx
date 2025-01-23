@@ -12,15 +12,13 @@ import Tabs from '@proton/components/components/tabs/Tabs';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import NewUpsellModal from '@proton/components/components/upsell/modal/NewUpsellModal';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
-import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
+import { useMailUpsellConfig } from '@proton/components/components/upsell/useMailUpsellConfig';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/mail/forwarding/hooks';
-import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/forward.svg';
 import isTruthy from '@proton/utils/isTruthy';
@@ -29,6 +27,13 @@ import ForwardModal from './ForwardModal';
 import IncomingForwardTable from './IncomingForwardTable';
 import OutgoingForwardTable from './OutgoingForwardTable';
 import { getChainedForwardingEmails } from './helpers';
+
+const upsellRef = getUpsellRef({
+    app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+    component: UPSELL_COMPONENT.MODAL,
+    feature: MAIL_UPSELL_PATHS.FORWARD_EMAILS,
+    isSettings: true,
+});
 
 const ForwardSection = () => {
     const location = useLocation();
@@ -52,12 +57,6 @@ const ForwardSection = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
     const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
-    const upsellRef = getUpsellRef({
-        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
-        feature: MAIL_UPSELL_PATHS.FORWARD_EMAILS,
-        isSettings: true,
-    });
 
     // Focus incoming tab if hash is #forward
     useEffect(() => {
@@ -67,10 +66,7 @@ const ForwardSection = () => {
         }
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
 
-    const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, plan: PLANS.MAIL, ...oneDollarConfig });
-
-    const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
+    const { upsellConfig, displayNewUpsellModalsVariant } = useMailUpsellConfig({ upsellRef });
 
     const modal = displayNewUpsellModalsVariant ? (
         <NewUpsellModal
