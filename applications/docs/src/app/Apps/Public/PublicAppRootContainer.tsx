@@ -52,7 +52,7 @@ const RenderApplicationWhenReady = () => {
         <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
         <div className="mt-1 max-w-lg whitespace-pre-line text-center">
           {c('Info')
-            .t`This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.`}
+            .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.`}
         </div>
         <div className="mt-4 flex gap-2">
           <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE), '_self')}>

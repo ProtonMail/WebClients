@@ -3,16 +3,19 @@ import { type ReactNode, useCallback } from 'react';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useAuthentication } from '@proton/components/index';
-import type { PublicKeyReference } from '@proton/crypto/lib';
+import type { PublicKeyReference, SessionKey } from '@proton/crypto/lib';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
+import type { ShareURL } from '../store';
+import { useShareUrl } from '../store';
 import { useDriveCrypto } from '../store/_crypto';
 import type { DocumentAction } from '../store/_documents';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
+import { getSharedLink } from '../store/_shares';
 import type { PathItem } from '../store/_views/useLinkPath';
 import type { CacheConfig } from './CacheConfig';
 import type { NodeMeta } from './NodeMeta';
@@ -39,6 +42,18 @@ export interface DriveCompat {
     getNodes: (ids: { linkId: string; shareId: string }[]) => Promise<DecryptedNode[]>;
 
     getShareId: (meta: NodeMeta) => Promise<string>;
+
+    getPublicShareUrlInfo: (signal: AbortSignal) => (id: NodeMeta) => Promise<
+        | {
+              shareUrl: ShareURL;
+              keyInfo: {
+                  shareSessionKey: SessionKey;
+                  sharePasswordSalt: string;
+              };
+          }
+        | undefined
+    >;
+    getSharedLinkFromShareUrl: (shareUrl: ShareURL | undefined) => string | undefined;
 
     /**
      * Gets the contents of a node.
@@ -143,6 +158,7 @@ export const useDriveCompat = (): DriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { loadShareUrl } = useShareUrl();
 
     const openDocument = (meta: NodeMeta) =>
         openDocumentWindow({ ...meta, mode: 'open', window: getNewWindow().handle });
@@ -168,6 +184,9 @@ export const useDriveCompat = (): DriveCompat => {
         getNodePermissions: withResolveShareId(getNodePermissions),
         getNodes,
         getShareId: withResolveShareId(({ shareId }) => shareId),
+        getPublicShareUrlInfo: (signal: AbortSignal) =>
+            withResolveShareId(({ shareId, linkId }) => loadShareUrl(signal, shareId, linkId)),
+        getSharedLinkFromShareUrl: getSharedLink,
         findAvailableNodeName: withResolveShareId(findAvailableNodeName),
         renameDocument: withResolveShareId(renameDocument),
         trashDocument: withResolveShareId(trashDocument),
