@@ -1,4 +1,6 @@
-import { useRef } from 'react';
+import { Suspense, lazy, useRef } from 'react';
+
+import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
@@ -10,8 +12,15 @@ import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import useFlag from '@proton/unleash/useFlag';
 
 import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
-import PostSubscriptionModal from './PostSubscriptionModal';
 import type { PostSubscriptionFlowName } from './interface';
+import {
+    PostSubscriptionModalLoadingContent,
+    PostSubscriptionModalWrapper,
+} from './modals/PostSubscriptionModalsComponents';
+
+const PostSubscriptionModal = lazy(
+    () => import(/* webpackChunkName: "PostSubscriptionModals" */ './PostSubscriptionModal')
+);
 
 const ALLOWED_APPS: APP_NAMES[] = [APPS.PROTONMAIL];
 
@@ -110,16 +119,24 @@ export const usePostSubscription = () => {
             }
 
             return (
-                <PostSubscriptionModal
-                    {...modalProps}
-                    onClose={() => {
-                        modalProps.onClose?.();
-                        userIsFreeRef.current = false;
-                    }}
-                    step={step}
-                    name={flowName}
-                    upsellRef={upsellRef}
-                />
+                <Suspense
+                    fallback={
+                        <PostSubscriptionModalWrapper {...modalProps} canClose={false}>
+                            <PostSubscriptionModalLoadingContent title={c('Info').t`Registering your subscription…`} />
+                        </PostSubscriptionModalWrapper>
+                    }
+                >
+                    <PostSubscriptionModal
+                        {...modalProps}
+                        onClose={() => {
+                            modalProps.onClose?.();
+                            userIsFreeRef.current = false;
+                        }}
+                        step={step}
+                        name={flowName}
+                        upsellRef={upsellRef}
+                    />
+                </Suspense>
             );
         },
     };
