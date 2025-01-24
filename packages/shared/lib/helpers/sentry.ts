@@ -291,6 +291,7 @@ export enum SentryMailInitiatives {
     ASSISTANT = 'assistant',
     MAIL_ONBOARDING = 'mail-onboarding',
     LIST_ACTIONS_TELEMETRY = 'list-actions-telemetry',
+    REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
 }
 
 export enum SentryCommonInitiatives {
