@@ -1,5 +1,4 @@
 import { type FC, type ReactElement, useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
 
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -25,24 +24,9 @@ import './Login.edit.credentials.scss';
 
 type Props = {
     form: FormikContextType<LoginItemFormValues>;
-    isNew?: boolean;
 };
 
-/**
- *
- * @param param0 If only email or username is available or nothing available at all:
-No expansion
-Populate the value under "Email or username" label
-If both email and username are available:
-Expand to separate "Email" and "Username" by default
-Populate email under "Email" label
-Populate username under "Username" label
- * @returns
- */
-
-export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
-    const history = useHistory();
-    const { search } = useLocation();
+export const LoginEditCredentials: FC<Props> = ({ form }) => {
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
     const passwordHistory = usePasswordHistoryActions();
 
@@ -78,14 +62,6 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                 },
             });
         }
-
-        return () => {
-            if (isNew) {
-                const searchParams = new URLSearchParams(search);
-                searchParams.delete('email');
-                history.replace({ search: searchParams.toString() });
-            }
-        };
     }, []);
 
     return (
