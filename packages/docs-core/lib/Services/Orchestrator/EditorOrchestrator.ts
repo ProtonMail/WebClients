@@ -1,4 +1,4 @@
-import type { DocsUserState } from '@proton/docs-shared'
+import type { SafeDocsUserState } from '@proton/docs-shared'
 import {
   type CommentInterface,
   type CommentThreadInterface,
@@ -215,7 +215,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.deleteThread(id)
   }
 
-  async handleAwarenessStateUpdate(states: DocsUserState[]): Promise<void> {
+  async handleAwarenessStateUpdate(states: SafeDocsUserState[]): Promise<void> {
     this.participantTracker.updateParticipantsFromUserStates(states)
 
     this.eventBus.publish<DocsAwarenessStateChangeData>({
