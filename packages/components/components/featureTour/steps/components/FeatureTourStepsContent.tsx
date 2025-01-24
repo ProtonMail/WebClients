@@ -68,7 +68,7 @@ const FeatureTourStepsContent = ({
                             <div className="text-center color-weak w-full">{children}</div>
                         </div>
 
-                        <div className="flex flex-column gap-2 mt-6 mb-3">
+                        <div className="flex flex-column gap-2 mt-6 mb-2">
                             {mainCTA}
                             {extraCTA}
                         </div>
