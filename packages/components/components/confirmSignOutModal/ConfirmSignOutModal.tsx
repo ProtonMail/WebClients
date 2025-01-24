@@ -56,12 +56,12 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
             <div className="flex flex-row items-start">
                 <Checkbox
                     id="delete-recovery-storage"
-                    className="mt-2 mr-2"
+                    className="mr-2"
                     checked={clearData}
                     onChange={() => setClearData(!clearData)}
                 />
                 <div className="flex-1">
-                    <Label htmlFor="delete-recovery-storage" className="block">
+                    <Label htmlFor="delete-recovery-storage" className="block pt-0">
                         {c('Label').jt`Delete recovery-related information.`}{' '}
                         <Href href={getKnowledgeBaseUrl('/device-data-recovery')}>{c('Link').t`What’s this?`}</Href>
                     </Label>
