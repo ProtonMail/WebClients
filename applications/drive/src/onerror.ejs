@@ -1,0 +1,57 @@
+<script>
+    const showError = () => {
+      const style = document.createElement('style');
+      style.textContent = `
+        body {
+          font-family: InterVariable, system-ui, sans-serif;
+        }
+        .h-full { height: 100%; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .pb-14 { padding-bottom: 3.5rem; }
+        .overflow-auto { overflow: auto; }
+        .m-auto { margin: auto; }
+        .text-center { text-align: center; }
+        .max-w-custom { max-width: var(--max-w-custom); }
+        .mb-8 { margin-bottom: 2rem; }
+        .text-bold { font-weight: bold; }
+        .text-4xl { 
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+        }
+        .link {
+          color: blue;
+          text-decoration: underline;
+          cursor: pointer;
+          background: none;
+          border: none;
+        }
+        .align-baseline { vertical-align: baseline; }
+      `;
+      document.head.appendChild(style);
+
+      document.body.innerHTML = `
+        <div class='h-full flex items-center pb-14 overflow-auto'>
+          <div class='m-auto text-center max-w-custom' style='--max-w-custom: 30em'>
+            <div class='mb-8'>
+              <img src='/assets/error-generic.svg' alt='Error'/>
+            </div>
+            <h1 class='text-bold text-4xl'>Oops, something went wrong</h1>
+            <p>
+              Please <button id='refresh' class='link align-baseline'>refresh the page</button> or try again later.
+            </p>
+          </div>
+        </div>
+      `;
+      document.querySelector('#refresh')?.addEventListener('click', () => {
+        window.location.reload();
+      });
+      document.title = 'Oops, something went wrong';
+    };
+
+    const scriptNode = document.querySelector('script[src*="/index"]') || 
+                      document.querySelector('script[src*="-index"]');
+    if (scriptNode) {
+      scriptNode.onerror = showError;
+    }
+</script>
