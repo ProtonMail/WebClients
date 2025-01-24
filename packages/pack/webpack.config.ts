@@ -50,6 +50,7 @@ const getConfig = (env: any): Configuration => {
         overlayRuntimeErrors: env.overlayRuntimeErrors || false,
         logical: env.logical || false,
         analyze: env.analyze || false,
+        handleSupportAndErrors: env.handleSupportAndErrors || false,
     };
 
     const version = options.buildData.version;
@@ -75,7 +76,7 @@ const getConfig = (env: any): Configuration => {
             },
         },
         experiments: { asyncWebAssembly: true },
-        entry: getEntries(),
+        entry: getEntries(options.handleSupportAndErrors),
         output: {
             filename: isProduction
                 ? `${assetsFolder}/[name].[contenthash:8].js?v=${version}`
