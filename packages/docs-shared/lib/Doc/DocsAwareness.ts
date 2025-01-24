@@ -1,23 +1,42 @@
-import { Awareness } from 'y-protocols/awareness'
 import type { UserState } from '@lexical/yjs'
+import { Awareness } from 'y-protocols/awareness'
+import type { RelativePosition } from 'yjs'
 
-export type DocsUserState = UserState & {
+/**
+ * This type is unsafe because it states that awarenessData is always defined.
+ * Yet in production we do find some cases where it is undefined.
+ */
+export type UnsafeDocsUserState = UserState & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   awarenessData: Record<string, any> & {
     anonymousUserLetter?: string
     userId: string
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any
 }
 
-export class DocsAwareness extends Awareness {
-  getLocalState(): DocsUserState | null {
-    return super.getLocalState() as DocsUserState
+/** Like UnsafeDocsUserState but with awarenessData able to be undefined. */
+export type SafeDocsUserState = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  awarenessData:
+    | (Record<string, any> & {
+        anonymousUserLetter?: string
+        userId: string
+      })
+    | undefined
+  anchorPos: null | RelativePosition
+  color: string
+  focusing: boolean
+  focusPos: null | RelativePosition
+  name: string
+}
+
+export class DocsAwareness<T extends UnsafeDocsUserState | SafeDocsUserState = SafeDocsUserState> extends Awareness {
+  getLocalState(): T | null {
+    return super.getLocalState() as T
   }
 
-  getStates(): Map<number, DocsUserState> {
-    return super.getStates() as Map<number, DocsUserState>
+  getStates(): Map<number, T> {
+    return super.getStates() as Map<number, T>
   }
 
   /**
