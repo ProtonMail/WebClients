@@ -62,17 +62,19 @@ const ExtraErrors = ({ message }: Props) => {
                         variant="norm-outline"
                         icon={<Icon name="exclamation-triangle-filled" className="color-danger" />}
                         action={
-                            <ButtonGroup>
-                                {showReload && (
-                                    <Button onClick={handleReload} data-testid="errors-banner:reload">{c('Action')
-                                        .t`Try again`}</Button>
-                                )}
-                                {showKeysLink && (
-                                    <ButtonLike as={SettingsLink} path="/encryption-keys" app={APPS.PROTONMAIL}>
-                                        {c('Action').t`View keys`}
-                                    </ButtonLike>
-                                )}
-                            </ButtonGroup>
+                            showReload || showKeysLink ? (
+                                <ButtonGroup>
+                                    {showReload && (
+                                        <Button onClick={handleReload} data-testid="errors-banner:reload">{c('Action')
+                                            .t`Try again`}</Button>
+                                    )}
+                                    {showKeysLink && (
+                                        <ButtonLike as={SettingsLink} path="/encryption-keys" app={APPS.PROTONMAIL}>
+                                            {c('Action').t`View keys`}
+                                        </ButtonLike>
+                                    )}
+                                </ButtonGroup>
+                            ) : undefined
                         }
                         data-testid="errors-banner"
                     >
