@@ -261,3 +261,24 @@ export const formatImage = (value = '') => {
 
     return `data:image/png;base64,${value}`;
 };
+
+/**
+ * Preloads an image and returns a Promise
+ * @param {string} src - The source URL of the image
+ * @returns {Promise<HTMLImageElement>} - Promise that resolves with the loaded image
+ */
+export const preloadImage = (src: string): Promise<HTMLImageElement> => {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+
+        img.onload = () => {
+            resolve(img);
+        };
+
+        img.onerror = () => {
+            reject(new Error(`Failed to load image: ${src}`));
+        };
+
+        img.src = src;
+    });
+};

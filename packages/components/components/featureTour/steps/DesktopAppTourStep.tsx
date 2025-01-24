@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { userSettingsThunk } from '@proton/account';
 import { ButtonLike } from '@proton/atoms';
 import useInboxDesktopVersion from '@proton/components/containers/desktop/useInboxDesktopVersion';
+import { preloadImage } from '@proton/shared/lib/helpers/image';
 import { isDesktopInboxUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import desktopAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-desktop-app-background.svg';
 
@@ -12,7 +13,10 @@ import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayDesktopAppTourStep: ShouldDisplayTourStep = async (dispatch) => {
     const [userSettings] = await Promise.all([dispatch(userSettingsThunk())]);
-    return !isDesktopInboxUser(BigInt(userSettings.UsedClientFlags));
+    return {
+        canDisplay: !isDesktopInboxUser(BigInt(userSettings.UsedClientFlags)),
+        preloadIllustration: () => preloadImage(desktopAppBackground),
+    };
 };
 
 export const DesktopAppTourStep = (props: FeatureTourStepProps) => {
