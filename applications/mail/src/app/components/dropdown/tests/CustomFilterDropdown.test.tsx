@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 
 import { ConditionType } from '@proton/components';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
