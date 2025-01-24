@@ -858,13 +858,6 @@ Z3SSOseslp6+4nnQ3zOqnisO
         expect(await CryptoApiImplementation.canKeyEncrypt({ key: keyRef, date: now })).to.be.true;
     });
 
-    it('getSHA256Fingerprints - it returns the expected fingerprints', async () => {
-        const key = await openpgp_readKey({ armoredKey: ecc25519Key });
-        const keyReference = await CryptoApiImplementation.importPublicKey({ armoredKey: ecc25519Key });
-        const sha256Fingerprings = await CryptoApiImplementation.getSHA256Fingerprints({ key: keyReference });
-        expect(sha256Fingerprings).to.deep.equal(await getSHA256Fingerprints(key));
-    });
-
     it('getAlgorithmInfo - it returns the expected values', async () => {
         const keyReference = await CryptoApiImplementation.importPublicKey({
             armoredKey: keyWithP256AndCurve25519Subkeys,
@@ -1052,6 +1045,7 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
         expect(updatedKeyRef.getUserIDs()).to.deep.equal(['<new1@pm.me>', '<new2@pm.me>']);
         expect(updatedKeyRef.getUserIDs()).to.not.deep.equal(sourceKeyRef.getUserIDs());
         expect(updatedKeyRef.getFingerprint()).to.deep.equal(sourceKeyRef.getFingerprint());
+        expect(updatedKeyRef.getSHA256Fingerprints()).to.deep.equal(await getSHA256Fingerprints(sourceKey));
 
         const exportedSourceKey = await openpgp_readKey({
             armoredKey: await CryptoApiImplementation.exportPublicKey({ key: sourceKeyRef }),
@@ -1692,6 +1686,13 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
 
             const keyReference = await CryptoApiImplementation.importPublicKey({ armoredKey: ecc25519Key });
             expect(keyReference.isWeak()).to.be.false;
+        });
+
+        it('getSHA256Fingerprints - it returns the expected fingerprints', async () => {
+            const key = await openpgp_readKey({ armoredKey: ecc25519Key });
+            const keyReference = await CryptoApiImplementation.importPublicKey({ armoredKey: ecc25519Key });
+            const sha256Fingerprings = keyReference.getSHA256Fingerprints();
+            expect(sha256Fingerprings).to.deep.equal(await getSHA256Fingerprints(key));
         });
 
         it('equals - returns true for equal public keys', async () => {
