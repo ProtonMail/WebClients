@@ -30,4 +30,6 @@ export type FeatureTourStepId =
     | 'proton-drive'
     | 'other-features';
 
-export type ShouldDisplayTourStep = (dispatch: SharedStore['dispatch']) => Promise<boolean>;
+export type ShouldDisplayTourStep = (
+    dispatch: SharedStore['dispatch']
+) => Promise<{ canDisplay: boolean; preloadIllustration: () => Promise<HTMLImageElement | void> }>;

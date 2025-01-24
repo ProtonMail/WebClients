@@ -5,6 +5,7 @@ import { ButtonLike, Href } from '@proton/atoms';
 import { PLANS } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isLinux, isMac, isMobile } from '@proton/shared/lib/helpers/browser';
+import { preloadImage } from '@proton/shared/lib/helpers/image';
 import {
     VPN_ANDROID_URL,
     VPN_APPLE_TV_URL,
@@ -25,7 +26,10 @@ const VPN_DESKTOP_URL = isMac() ? VPN_DESKTOP_MAC_URL : isLinux() ? VPN_DESKTOP_
 
 export const shouldDisplayProtonVPNTourStep: ShouldDisplayTourStep = async (dispatch) => {
     const [organization] = await Promise.all([dispatch(organizationThunk())]);
-    return [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName);
+    return {
+        canDisplay: [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName),
+        preloadIllustration: () => preloadImage(vpnAppBackground),
+    };
 };
 
 const ProtonVPNTourStep = (props: FeatureTourStepProps) => {
