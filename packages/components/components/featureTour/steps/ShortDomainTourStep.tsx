@@ -9,7 +9,6 @@ import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainA
 import useToggle from '@proton/components/hooks/useToggle';
 import { PLANS } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { preloadImage } from '@proton/shared/lib/helpers/image';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
@@ -28,7 +27,7 @@ export const shouldDisplayShortDomainTourStep: ShouldDisplayTourStep = async (di
     return {
         canDisplay:
             addresses !== undefined && addresses.length > 0 && (isTrial(subscription, PLANS.MAIL) || user.hasPaidMail),
-        preloadIllustration: () => preloadImage(shortDomainImg),
+        preloadUrls: [shortDomainImg],
     };
 };
 

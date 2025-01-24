@@ -7,7 +7,6 @@ import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import { preloadImage } from '@proton/shared/lib/helpers/image';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
@@ -18,9 +17,10 @@ import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 import FeatureTourToggle from './components/FeatureTourToggle';
 
-export const shouldDisplayAutoDeleteTourStep: ShouldDisplayTourStep = async () => {
-    return { canDisplay: true, preloadIllustration: () => preloadImage(autoDeleteIllustration) };
-};
+export const shouldDisplayAutoDeleteTourStep: ShouldDisplayTourStep = async () => ({
+    canDisplay: true,
+    preloadUrls: [autoDeleteIllustration],
+});
 
 const AutoDeleteTourStep = (props: FeatureTourStepProps) => {
     const api = useApi();

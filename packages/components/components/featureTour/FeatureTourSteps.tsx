@@ -17,30 +17,31 @@ const FeatureTourSteps = ({
 }) => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
+    const [preloadUrls, setPreloadUrls] = useState<string[]>([]);
     const [steps, setSteps] = useState<FeatureTourStep[]>([]);
 
     useEffect(() => {
         const initSteps = async () => {
-            const preloadPromises: Promise<HTMLImageElement | void>[] = [];
+            const urlsToPreload: Set<string> = new Set();
             const initializedSteps = await Promise.all(
                 stepsList.map(async (id) => {
                     const shouldDisplay = FEATURE_TOUR_STEPS_MAP[id].shouldDisplay;
-                    const result = await shouldDisplay(dispatch);
-                    const isVisible = result.canDisplay;
-                    if (isVisible) {
-                        preloadPromises.push(result.preloadIllustration());
+                    const { canDisplay, preloadUrls } = await shouldDisplay(dispatch);
+
+                    if (canDisplay && preloadUrls) {
+                        preloadUrls.forEach((url) => urlsToPreload.add(url));
                     }
-                    return { id, isVisible };
+
+                    return { id, isVisible: canDisplay };
                 })
             );
-
-            void Promise.all(preloadPromises);
 
             const steps: FeatureTourStep[] = initializedSteps
                 .filter(({ isVisible }) => isVisible)
                 .map((step, index) => ({ ...step, isActive: index === 0 }));
 
             setSteps(steps);
+            setPreloadUrls(Array.from(urlsToPreload));
             setIsLoading(false);
         };
 
@@ -94,6 +95,9 @@ const FeatureTourSteps = ({
         <>
             {isLoading && <FeatureTourLoader />}
             <ActiveStepComponent />
+            {preloadUrls.map((url) => (
+                <link key={url} rel="prefetch" href={url} as="image" />
+            ))}
         </>
     );
 };

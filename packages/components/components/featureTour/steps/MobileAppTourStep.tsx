@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { userSettingsThunk } from '@proton/account';
 import { Href } from '@proton/atoms';
 import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/constants';
-import { preloadImage } from '@proton/shared/lib/helpers/image';
 import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import { isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import downloadOniOS from '@proton/styles/assets/img/onboarding/feature_tour-app_store.svg';
@@ -20,7 +19,7 @@ export const shouldDisplayMobileAppTourStep: ShouldDisplayTourStep = async (disp
     const hasUsedMobileApp = isMailMobileAppUser(BigInt(userSettings.UsedClientFlags));
     return {
         canDisplay: !hasUsedMobileApp,
-        preloadIllustration: () => preloadImage(mobileAppBackground),
+        preloadUrls: [mobileAppBackground, downloadOniOS, downloadOnGooglePlay],
     };
 };
 
