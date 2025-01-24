@@ -3,7 +3,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 import getConfig from '@proton/pack/webpack.config';
-import { addDevEntry, getIndexChunks, getSupportedEntry, mergeEntry } from '@proton/pack/webpack/entries';
+import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
 
 /**
  * There are some specific references to Buffer in the drive application,
@@ -21,9 +21,9 @@ const result = (env: any): webpack.Configuration => {
         throw new Error('Missing html plugin');
     }
 
-    config.entry = mergeEntry(config.entry, {
-        ['urls-index']: [path.resolve('./src/app/urls.tsx'), getSupportedEntry()],
-        ['photos-index']: [path.resolve('./src/app/photos/photos.tsx'), getSupportedEntry()],
+    config.entry = Object.assign({}, config.entry, {
+        ['urls-index']: [path.resolve('./src/app/urls.tsx')],
+        ['photos-index']: [path.resolve('./src/app/photos/photos.tsx')],
     });
 
     if (env.appMode === 'standalone') {
@@ -40,8 +40,8 @@ const result = (env: any): webpack.Configuration => {
             template: 'ejs-webpack-loader!src/app.ejs',
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
-            inject: 'body',
-            chunks: getIndexChunks('index'),
+            inject: true,
+            chunks: getIndexChunks('index', true),
         })
     );
 
@@ -53,8 +53,8 @@ const result = (env: any): webpack.Configuration => {
             template: `ejs-webpack-loader!src/urls.ejs`,
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
-            inject: 'body',
-            chunks: getIndexChunks('urls-index'),
+            inject: true,
+            chunks: getIndexChunks('urls-index', true),
         })
     );
 
@@ -66,8 +66,8 @@ const result = (env: any): webpack.Configuration => {
             template: `ejs-webpack-loader!src/photos.ejs`,
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
-            inject: 'body',
-            chunks: getIndexChunks('photos-index'),
+            inject: true,
+            chunks: getIndexChunks('photos-index', true),
         })
     );
 
