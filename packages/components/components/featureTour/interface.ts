@@ -31,4 +31,4 @@ export type FeatureTourStepId =
 
 export type ShouldDisplayTourStep = (
     dispatch: SharedStore['dispatch']
-) => Promise<{ canDisplay: boolean; preloadIllustration: () => Promise<HTMLImageElement | void> }>;
+) => Promise<{ canDisplay: boolean; preloadUrls?: string[] }>;

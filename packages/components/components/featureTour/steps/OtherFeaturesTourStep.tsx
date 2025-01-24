@@ -15,7 +15,6 @@ export const shouldDisplayOtherFeaturesTourStep: ShouldDisplayTourStep = async (
     const [organization] = await Promise.all([dispatch(organizationThunk())]);
     return {
         canDisplay: [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(organization.PlanName),
-        preloadIllustration: () => Promise.resolve(),
     };
 };
 
