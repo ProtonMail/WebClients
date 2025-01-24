@@ -5,10 +5,10 @@ import type {
   EditorRequiresClientMethods,
   InternalEventBusInterface,
   RtsMessagePayload,
+  SafeDocsUserState,
   SuggestionSummaryType,
 } from '@proton/docs-shared'
 import type { WordCountInfoCollection } from '@proton/docs-shared'
-import type { UserState } from '@lexical/yjs'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import type { ErrorInfo } from 'react'
 import { ApplicationEvent } from '../Application/ApplicationEvent'
@@ -103,7 +103,7 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     return this.docOrchestrator.markThreadAsRead(id)
   }
 
-  async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
+  async handleAwarenessStateUpdate(states: SafeDocsUserState[]): Promise<void> {
     return this.docOrchestrator.handleAwarenessStateUpdate(states)
   }
 
