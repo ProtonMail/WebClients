@@ -10,7 +10,7 @@ import type {
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
-import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
+import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants/constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
@@ -112,7 +112,7 @@ interface KeyWithFlags {
  * Check that the given keys mirror what's inside the given SKL Data.
  */
 export const checkKeysInSKL = async (email: string, apiKeys: KeyWithFlags[], sklData: string) => {
-    const parsedSKL = getParsedSignedKeyList(sklData);
+    const parsedSKL = new ParsedSignedKeyList(sklData).getParsedSignedKeyList();
     if (!parsedSKL) {
         return throwKTError('SignedKeyList data parsing failed', { sklData });
     }
