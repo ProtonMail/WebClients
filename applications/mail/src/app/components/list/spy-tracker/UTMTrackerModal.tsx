@@ -46,7 +46,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                 <span className="color-weak text-sm">{c('Label').t`Original link`}</span>
                                 <div
                                     className="flex flex-nowrap group-hover-opacity-container max-w-full items-center"
-                                    style={{ 'margin-block': '-0.25em' }}
+                                    style={{ marginBlock: '-0.25em' }}
                                 >
                                     <div className="text-ellipsis w-full flex-1 py-1" title={tracker.originalURL}>
                                         {tracker.originalURL}
@@ -70,7 +70,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                 <span className="color-primary text-sm">{c('Label').t`Cleaned`}</span>
                                 <div
                                     className="flex flex-nowrap group-hover-opacity-container max-w-full items-center"
-                                    style={{ 'margin-block': '-0.25em' }}
+                                    style={{ marginBlock: '-0.25em' }}
                                 >
                                     <div className="text-ellipsis w-full flex-1 py-1" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}

@@ -44,7 +44,6 @@ const addApiKeysMock = () => {
                 ProtonMX: apiKey.isInternal,
             };
         }
-        console.log('api keys', args, email);
         return { Address: { Keys: [] } };
     });
 };

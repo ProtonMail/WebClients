@@ -1,3 +1,5 @@
+import { act } from '@testing-library/react';
+
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import { clearAll } from '../../../helpers/test/helper';
@@ -44,7 +46,10 @@ describe('Mailbox performance loss check', () => {
                 { ID: SomeNonMatchingID, Action: EVENT_ACTIONS.CREATE, Conversation: { ID: SomeNonMatchingID } },
             ],
         });
-        history.push('/elsewhere');
+
+        act(() => {
+            history.push('/elsewhere');
+        });
 
         // There will be a few more call but it has to be in limited amount
         expect(useStar.mock.calls.length).toBeLessThan(callsAfterInitialization + 6);

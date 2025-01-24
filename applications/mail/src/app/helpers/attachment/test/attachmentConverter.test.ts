@@ -53,9 +53,7 @@ describe('getHeaders', () => {
 
 describe('convertSingle', () => {
     it('should convert a single parsed attachment to an attachment', () => {
-        const spy = jest.fn((ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
-            console.log(ID, attachment);
-        });
+        const spy = jest.fn();
 
         const attachment = convertSingle(message, mimeAttachment, 1, 0, spy);
 
@@ -81,9 +79,7 @@ describe('convertSingle', () => {
 
 describe('convert', () => {
     it('should convert multiple parsed attachments to attachment', function () {
-        const spy = jest.fn((ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
-            console.log(ID, attachment);
-        });
+        const spy = jest.fn();
 
         const mimeAttachment2 = {
             contentId: `${contentID}-2`,
