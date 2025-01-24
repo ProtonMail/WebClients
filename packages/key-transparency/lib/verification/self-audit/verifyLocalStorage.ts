@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@proton/crypto';
 import type { Api, KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
-import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
+import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { fetchProof, fetchSignedKeyList } from '../../helpers/apiHelpers';
 import {
@@ -40,7 +40,7 @@ const fetchSKLWithRevision = async (api: Api, email: string, revision: number, d
 };
 
 const getPrimaryKeyFingerprint = (blob: KTBlobContent) => {
-    const sklItems = getParsedSignedKeyList(blob.data);
+    const sklItems = new ParsedSignedKeyList(blob.data).getParsedSignedKeyList();
     if (sklItems?.length) {
         return sklItems[0].Fingerprint;
     }
