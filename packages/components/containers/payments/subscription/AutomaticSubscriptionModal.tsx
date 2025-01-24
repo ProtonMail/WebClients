@@ -16,7 +16,6 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useConfig from '@proton/components/hooks/useConfig';
 import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
@@ -34,30 +33,6 @@ import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscript
 import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { blackFriday2024DuoConfig } from '../../offers/operations/blackFriday2024Duo/configuration';
-import { getIsEligible as blackFriday2024DuoEligibility } from '../../offers/operations/blackFriday2024Duo/eligibility';
-import { blackFriday2024PlusConfig } from '../../offers/operations/blackFriday2024Plus/configuration';
-import { getIsEligible as blackFriday2024PlusEligibility } from '../../offers/operations/blackFriday2024Plus/eligibility';
-import { blackFriday2024UnlimitedConfig } from '../../offers/operations/blackFriday2024Unlimited/configuration';
-import { getIsEligible as blackFriday2024UnlimitedEligibility } from '../../offers/operations/blackFriday2024Unlimited/eligibility';
-import { blackFriday2024DriveFreeConfig } from '../../offers/operations/blackFridayDrive2024Free/configuration';
-import { getIsEligible as blackFriday2024DriveFreeEligibility } from '../../offers/operations/blackFridayDrive2024Free/eligibility';
-import { blackFriday2024DriveFreeYearlyConfig } from '../../offers/operations/blackFridayDrive2024FreeYearly/configuration';
-import { getIsEligible as blackFriday2024DriveFreeYearlyEligibility } from '../../offers/operations/blackFridayDrive2024FreeYearly/eligibility';
-import { blackFriday2024InboxFreeConfig } from '../../offers/operations/blackFridayInbox2024Free/configuration';
-import { getIsEligible as blackFriday2024InboxFreeEligibility } from '../../offers/operations/blackFridayInbox2024Free/eligibility';
-import { blackFriday2024InboxFreeYearlyConfig } from '../../offers/operations/blackFridayInbox2024FreeYearly/configuration';
-import { getIsEligible as blackFriday2024InboxFreeYearlyEligibility } from '../../offers/operations/blackFridayInbox2024FreeYearly/eligibility';
-import { blackFriday2024PassFreeConfig } from '../../offers/operations/blackFridayPass2024Free/configuration';
-import { getIsEligible as blackFriday2024PassFreeEligibility } from '../../offers/operations/blackFridayPass2024Free/eligibility';
-import { blackFriday2024PassPlusConfig } from '../../offers/operations/blackFridayPass2024Plus/configuration';
-import { getIsEligible as blackFriday2024PassPlusEligibility } from '../../offers/operations/blackFridayPass2024Plus/eligibility';
-import { blackFriday2024VPNFreeConfig } from '../../offers/operations/blackFridayVPN2024Free/configuration';
-import { getIsEligible as blackFriday2024VPNFreeEligibility } from '../../offers/operations/blackFridayVPN2024Free/eligibility';
-import { blackFriday2024VPNFreeYearlyConfig } from '../../offers/operations/blackFridayVPN2024FreeYearly/configuration';
-import { getIsEligible as blackFriday2024VPNFreeYearlyEligibility } from '../../offers/operations/blackFridayVPN2024FreeYearly/eligibility';
-import { blackFriday2024VPNMonthlyConfig } from '../../offers/operations/blackFridayVPN2024Monthly/configuration';
-import { getIsEligible as blackFriday2024VPNMonthlyEligibility } from '../../offers/operations/blackFridayVPN2024Monthly/eligibility';
 import type { Eligibility, PlanCombination } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
 
@@ -192,20 +167,20 @@ const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, .
 const AutomaticSubscriptionModal = () => {
     const history = useHistory();
     const location = useLocation();
-    const protonConfig = useConfig();
+    //const protonConfig = useConfig();
 
     const [openSubscriptionModal, loadingModal] = useSubscriptionModal();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
-    const [lastSubscriptionEnd, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
+    const [loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
     const [user] = useUser();
     const tmpProps = useRef<{ props: OpenCallbackProps; eligibility: Eligibility } | undefined>(undefined);
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
     const { getPreferredCurrency } = useCurrencies();
-    const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
+    const [loadingCurrency] = useAutomaticCurrency();
     const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
 
     const goToApp = useAppLink();
@@ -234,27 +209,14 @@ const AutomaticSubscriptionModal = () => {
             return;
         }
 
-        const options = {
+        /*const options = {
             subscription,
             protonConfig,
             user,
             lastSubscriptionEnd,
             preferredCurrency,
-        };
-        const eligibleBlackFridayConfigs = [
-            blackFriday2024InboxFreeEligibility(options) && blackFriday2024InboxFreeConfig,
-            blackFriday2024DriveFreeEligibility(options) && blackFriday2024DriveFreeConfig,
-            blackFriday2024VPNFreeEligibility(options) && blackFriday2024VPNFreeConfig,
-            blackFriday2024InboxFreeYearlyEligibility(options) && blackFriday2024InboxFreeYearlyConfig,
-            blackFriday2024DriveFreeYearlyEligibility(options) && blackFriday2024DriveFreeYearlyConfig,
-            blackFriday2024VPNFreeYearlyEligibility(options) && blackFriday2024VPNFreeYearlyConfig,
-            blackFriday2024PlusEligibility(options) && blackFriday2024PlusConfig,
-            blackFriday2024VPNMonthlyEligibility(options) && blackFriday2024VPNMonthlyConfig,
-            blackFriday2024UnlimitedEligibility(options) && blackFriday2024UnlimitedConfig,
-            blackFriday2024DuoEligibility(options) && blackFriday2024DuoConfig,
-            blackFriday2024PassPlusEligibility(options) && blackFriday2024PassPlusConfig,
-            blackFriday2024PassFreeEligibility(options) && blackFriday2024PassFreeConfig,
-        ].filter(isTruthy);
+        };*/
+        const eligibleBlackFridayConfigs = [].filter(isTruthy);
 
         const eligibility = getEligibility({
             plansMap,
