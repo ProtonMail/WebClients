@@ -7,6 +7,7 @@ import { isDesktopInboxUser } from '@proton/shared/lib/helpers/usedClientsFlags'
 import desktopAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-desktop-app-background.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayDesktopAppTourStep: ShouldDisplayTourStep = async (dispatch) => {
@@ -19,25 +20,23 @@ export const DesktopAppTourStep = (props: FeatureTourStepProps) => {
 
     return (
         <FeatureTourStepsContent
+            bullets={props.bullets}
             title={c('Title').t`Distraction-free emailing`}
-            description={c('Info').t`Enjoy a faster, focused emailing experience with the desktop app.`}
             illustrationSize="full"
             illustration={desktopAppBackground}
-            descriptionClassName="mb-12"
-            titleClassName="pt-12"
-            primaryButton={
-                <ButtonLike
-                    as={'a'}
-                    className="mb-2"
-                    loading={loading}
-                    color="norm"
-                    fullWidth
-                    href={desktopAppLink}
-                    download
-                >{c('Action').t`Download the desktop app`}</ButtonLike>
+            mainCTA={
+                <ButtonLike as={'a'} loading={loading} color="norm" fullWidth href={desktopAppLink} download>{c(
+                    'Action'
+                ).t`Download the desktop app`}</ButtonLike>
             }
-            {...props}
-        />
+            extraCTA={
+                <FeatureTourStepCTA type="secondary" onClick={props.onNext}>
+                    {c('Button').t`Maybe later`}
+                </FeatureTourStepCTA>
+            }
+        >
+            <p className="m-0">{c('Info').t`Enjoy a faster, focused emailing experience with the desktop app.`}</p>
+        </FeatureTourStepsContent>
     );
 };
 

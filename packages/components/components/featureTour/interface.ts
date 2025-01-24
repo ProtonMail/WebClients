@@ -9,8 +9,13 @@ export interface FeatureTourStepProps {
     onNext: () => void;
     children?: ReactNode;
     isActive: boolean;
-    bullets?: ReactNode;
+    bullets: JSX.Element;
 }
+
+export type FeatureTourStep = {
+    id: FeatureTourStepId;
+    isActive: boolean;
+};
 
 export type FeatureTourStepId =
     | 'short-domain'
