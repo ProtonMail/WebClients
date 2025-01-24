@@ -2,6 +2,7 @@ import { WebContents, shell } from "electron";
 import {
     isAccount,
     isAccountAuthorize,
+    isAccountLogin,
     isAccountSwitch,
     isAccoutLite,
     isCalendar,
