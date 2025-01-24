@@ -1,4 +1,3 @@
-import type { UserState } from '@lexical/yjs'
 import type {
   CommentInterface,
   CommentThreadInterface,
@@ -9,6 +8,7 @@ import type {
   SuggestionSummaryType,
   EditorEvent,
   EditorEventData,
+  SafeDocsUserState,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
@@ -45,7 +45,7 @@ export interface EditorOrchestratorInterface {
   deleteThread(id: string): Promise<boolean>
   markThreadAsRead(id: string): Promise<void>
 
-  handleAwarenessStateUpdate(states: UserState[]): Promise<void>
+  handleAwarenessStateUpdate(states: SafeDocsUserState[]): Promise<void>
 
   fetchExternalImageAsBase64(url: string): Promise<string | undefined>
 }

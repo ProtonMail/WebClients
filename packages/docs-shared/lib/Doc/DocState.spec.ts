@@ -1,7 +1,7 @@
 import type { LoggerInterface } from '@proton/utils/logs'
 import { DocState, DocUpdateOrigin, PRESENCE_UPDATE_REPEAT_INTERVAL } from './DocState'
 import type { DocStateCallbacks } from './DocStateCallbacks'
-import type { DocsUserState } from './DocsAwareness'
+import type { UnsafeDocsUserState } from './DocsAwareness'
 import { BroadcastSource } from '../Bridge/BroadcastSource'
 import { decodeUpdate } from 'yjs'
 
@@ -76,7 +76,7 @@ describe('DocState', () => {
 
   describe('handleAwarenessUpdateOrChange', () => {
     it('should invoke removeDuplicateClients', () => {
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as DocsUserState]]))
+      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
 
       const removeDuplicateClientsSpy = jest.spyOn(state.awareness, 'removeDuplicateClients')
 
@@ -86,7 +86,7 @@ describe('DocState', () => {
     })
 
     it('should notify callbacks about the change', () => {
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as DocsUserState]]))
+      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
 
       const callbackSpy = jest.spyOn(state.callbacks, 'handleAwarenessStateUpdate')
 
@@ -97,13 +97,13 @@ describe('DocState', () => {
 
     it('should not broadcast awareness state if there is no change', () => {
       state.lastEmittedClients = [1]
-      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as DocsUserState
+      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
       const broadcastCurrentAwarenessStateSpy = jest.spyOn(state, 'broadcastCurrentAwarenessState')
 
       state.awareness.getClientIds = jest.fn(() => [1])
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as DocsUserState]]))
+      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
       state.awareness.meta = new Map([[1, { lastUpdated: 0, clock: 0 }]])
 
       state.handleAwarenessUpdateOrChange(
@@ -120,7 +120,7 @@ describe('DocState', () => {
 
     it('should broadcast awareness state if there is a change', () => {
       state.lastEmittedClients = [1, 2]
-      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as DocsUserState
+      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
       const spy = jest.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
@@ -136,9 +136,9 @@ describe('DocState', () => {
                 awarenessData: {
                   foo: 'bar',
                 },
-              } as DocsUserState,
+              } as UnsafeDocsUserState,
             ],
-            [2, { name: 'user2', awarenessData: {} } as DocsUserState],
+            [2, { name: 'user2', awarenessData: {} } as UnsafeDocsUserState],
           ]),
       )
       state.awareness.meta = new Map([
@@ -160,7 +160,7 @@ describe('DocState', () => {
 
     it("should not broadcast awareness state if the change is someone else's", () => {
       state.lastEmittedClients = [1, 2]
-      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as DocsUserState
+      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
       const spy = jest.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
@@ -176,9 +176,9 @@ describe('DocState', () => {
                 awarenessData: {
                   foo: 'bar',
                 },
-              } as DocsUserState,
+              } as UnsafeDocsUserState,
             ],
-            [2, { name: 'user2', awarenessData: {} } as DocsUserState],
+            [2, { name: 'user2', awarenessData: {} } as UnsafeDocsUserState],
           ]),
       )
       state.awareness.meta = new Map([
@@ -200,13 +200,13 @@ describe('DocState', () => {
 
     it('should always broadcast if origin is local regardless of whether there are changes', () => {
       state.lastEmittedClients = [1]
-      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as DocsUserState
+      state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
       const spy = jest.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
 
       state.awareness.getClientIds = jest.fn(() => [1])
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as DocsUserState]]))
+      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
       state.awareness.meta = new Map([[1, { lastUpdated: 0, clock: 0 }]])
 
       state.handleAwarenessUpdateOrChange(

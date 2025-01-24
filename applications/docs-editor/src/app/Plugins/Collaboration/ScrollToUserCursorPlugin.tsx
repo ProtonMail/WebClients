@@ -3,6 +3,7 @@ import { useApplication } from '../../Containers/ApplicationProvider'
 import { useEffect } from 'react'
 import type { Binding } from '@lexical/yjs'
 import { getAnchorAndFocusCollabNodesForUserState } from '@lexical/yjs'
+import type { UnsafeDocsUserState } from '@proton/docs-shared'
 
 /**
  * On a `ScrollToUserCursorData` event call, it will use the passed
@@ -25,7 +26,10 @@ export function useScrollToUserCursorOnEvent(binding: Binding) {
 
   useEffect(() => {
     return application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
-      const { anchorCollabNode, focusCollabNode } = getAnchorAndFocusCollabNodesForUserState(binding, data.state)
+      const { anchorCollabNode, focusCollabNode } = getAnchorAndFocusCollabNodesForUserState(
+        binding,
+        data.state as UnsafeDocsUserState,
+      )
 
       if (anchorCollabNode !== null && focusCollabNode !== null) {
         const anchorKey = anchorCollabNode.getKey()
