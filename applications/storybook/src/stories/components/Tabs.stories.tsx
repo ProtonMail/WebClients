@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import type { IconName } from '@proton/components';
 import { Checkbox, Option, SelectTwo, type Tab, Tabs } from '@proton/components';
 
 import bulbasaur from '../../assets/bulbasaur.png';
@@ -34,7 +35,8 @@ export const Basic = () => {
         },
         {
             title: 'Charmander',
-            icon: 'fire',
+            icon: 'fire' as IconName,
+            iconPosition: 'trailing' as const,
             content: (
                 <>
                     <img src={charmander} alt="Charmander" />
@@ -110,6 +112,8 @@ export const Sandbox = () => {
     const tabs = [
         {
             title: 'Bulbasaur',
+            icon: 'exclamation-circle-filled' as IconName,
+            iconPosition: 'leading' as const,
             content: (
                 <>
                     <p>
