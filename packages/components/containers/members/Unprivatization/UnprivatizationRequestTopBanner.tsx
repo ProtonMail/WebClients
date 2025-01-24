@@ -53,6 +53,7 @@ const UnprivatizationRequestTopBanner = () => {
                     {c('unprivatization')
                         .t`An administrator of ${orgName} wants to enable admin access for your account.`}{' '}
                     <InlineLinkButton
+                        data-testid="unprivatization:request-button"
                         key="button"
                         onClick={() => {
                             setModal(true);
