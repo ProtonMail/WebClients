@@ -4,17 +4,17 @@ import { CryptoProxy } from '@proton/crypto';
 import { ADDRESS_TYPE, KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
 import {
+    type ActiveAddressKeysByVersion,
     type ActiveKey,
     type ActiveKeyWithVersion,
     type Address,
-    type ActiveAddressKeysByVersion,
     type DecryptedKey,
     type Key,
     type SignedKeyList,
     isActiveKeyV6,
 } from '../interfaces';
 import { getDefaultKeyFlags, setExternalFlags } from './keyFlags';
-import { getParsedSignedKeyList, getSignedKeyListMap } from './signedKeyList';
+import { ParsedSignedKeyList } from './signedKeyList';
 
 export const getPrimaryFlag = (keys: ActiveKey[]): 1 | 0 => {
     return !keys.length ? 1 : 0;
@@ -54,7 +54,15 @@ export const getActiveAddressKeys = async (
         return { v4: [], v6: [] };
     }
 
-    const signedKeyListMap = getSignedKeyListMap(getParsedSignedKeyList(signedKeyList?.Data));
+    const parsedSignedKeyList = new ParsedSignedKeyList(signedKeyList?.Data);
+    const decryptedKeysWithFingerprints = await Promise.all(
+        decryptedKeys.map(async (decryptedKey) => ({
+            ...decryptedKey,
+            sha256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: decryptedKey.privateKey }),
+        }))
+    );
+    const keyIDsToSKLItemsMap = parsedSignedKeyList.mapAddressKeysToSKLItems(decryptedKeysWithFingerprints);
+
     const keysMap = keys.reduce<{ [key: string]: Key | undefined }>((acc, key) => {
         acc[key.ID] = key;
         return acc;
@@ -81,9 +89,8 @@ export const getActiveAddressKeys = async (
         { ID, privateKey }: DecryptedKey<KeyVersion>,
         index: number
     ): Promise<ActiveKey<KeyVersion>> => {
-        const fingerprint = privateKey.getFingerprint();
         const Key = keysMap[ID];
-        const signedKeyListItem = signedKeyListMap[fingerprint];
+        const signedKeyListItem = keyIDsToSKLItemsMap[ID];
         const defaultPrimaryValue = privateKey.isPrivateKeyV6() ? 0 : index === 0 ? 1 : 0; // there might not be any v6 primary key
         return getActiveKeyObject(privateKey, {
             ID,
