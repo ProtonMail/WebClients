@@ -5,8 +5,10 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import clsx from '@proton/utils/clsx'
 import { ProtonContentEditable } from '../ContentEditable/ProtonContentEditable'
 import { DefaultFont } from '../Shared/Fonts'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditorSystemMode, type DocumentRole } from '@proton/docs-shared'
-import { useEffect } from 'react'
+import type { MouseEventHandler } from 'react'
+import { useCallback, useEffect } from 'react'
 import Toolbar from '../Toolbar/Toolbar'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import type { EditorState } from 'lexical'
@@ -14,16 +16,36 @@ import { $unwrapAllCommentThreadMarks } from '../Tools/removeCommentThreadMarks'
 import { $rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestions'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { setScrollableTablesActive } from '@lexical/table'
+import { isHTMLElement } from '../Utils/guard'
 
 export function PreviewModeEditor({
   clonedEditorState,
   role,
   onUserModeChange,
+  clientInvoker,
 }: {
   clonedEditorState: EditorState
   role: DocumentRole
   onUserModeChange: (mode: EditorUserMode) => void
+  clientInvoker: EditorRequiresClientMethods
 }) {
+  const handlePreviewModeLinkClick: MouseEventHandler = useCallback(
+    (event) => {
+      const target = event.target
+      if (!isHTMLElement(target)) {
+        return
+      }
+      const parentLink = target.closest('a')
+      if (!parentLink) {
+        return
+      }
+      event.preventDefault()
+      const link = parentLink.href
+      clientInvoker.openLink(link).catch(console.error)
+    },
+    [clientInvoker],
+  )
+
   return (
     <SafeLexicalComposer
       initialConfig={BuildInitialEditorConfig({
@@ -72,6 +94,7 @@ export function PreviewModeEditor({
               }}
               isSuggestionMode={false}
               data-testid="preview-mode-editor"
+              onClick={handlePreviewModeLinkClick}
             />
           </div>
         }
