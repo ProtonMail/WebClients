@@ -29,6 +29,12 @@ export const setupStore = ({
                     ignoredActions,
                     ignoredPaths: [...ignoredPaths, ...mailIgnoredPaths],
                     ignoredActionPaths: mailIgnoredActionPaths,
+                    // This is made to prevent warning in tests which polute logs
+                    warnAfter: process.env.NODE_ENV === 'production' ? 32 : 100,
+                },
+                immutableCheck: {
+                    // This is made to prevent warning in tests which polute logs
+                    warnAfter: process.env.NODE_ENV === 'production' ? 32 : 100,
                 },
                 thunk: { extraArgument: extraThunkArguments },
             }).prepend(listenerMiddleware.middleware),

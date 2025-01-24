@@ -1,5 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -119,38 +118,40 @@ describe('ConversationView', () => {
 
     describe('Store / State management', () => {
         it('should return store value', async () => {
-            const { getByText } = await setup({
+            await setup({
                 conversationStates: [conversationState],
                 messageState: { localID: message.ID, data: message },
             });
-            getByText(conversation.Subject as string);
+            screen.getByText(conversation.Subject as string);
         });
 
         it('should update value if store is updated', async () => {
-            const { getByText, rerender, store } = await setup({
+            const { rerender, store } = await setup({
                 conversationStates: [conversationState],
                 messageState: { localID: message.ID, data: message },
             });
-            getByText(conversation.Subject as string);
+            screen.getByText(conversation.Subject as string);
 
             const newSubject = 'other subject';
 
-            store.dispatch(
-                updateConversation({
-                    ID: conversation.ID,
-                    updates: { Conversation: { Subject: newSubject, ID: conversation.ID } },
-                })
-            );
+            act(() => {
+                store.dispatch(
+                    updateConversation({
+                        ID: conversation.ID,
+                        updates: { Conversation: { Subject: newSubject, ID: conversation.ID } },
+                    })
+                );
+            });
 
             await rerender();
-            getByText(newSubject);
+            screen.getByText(newSubject);
         });
 
         it('should launch api request when needed', async () => {
             const response = { Conversation: conversation, Messages: [message] };
             addApiMock(`mail/v4/conversations/${conversation.ID}`, () => response);
-            const { getByText } = await setup({});
-            getByText(conversation.Subject as string);
+            await setup({});
+            screen.getByText(conversation.Subject as string);
         });
 
         it('should change conversation when id change', async () => {
@@ -162,13 +163,13 @@ describe('ConversationView', () => {
                 errors: {},
             } as ConversationState;
 
-            const { getByText, rerender } = await setup({
+            const { rerender } = await setup({
                 conversationStates: [conversationState, conversationState2],
             });
-            getByText(conversation.Subject as string);
+            screen.getByText(conversation.Subject as string);
 
             await rerender({ conversationID: conversation2.ID });
-            getByText(conversation2.Subject as string);
+            screen.getByText(conversation2.Subject as string);
         });
 
         it('should reorder by date when old conversation draft is sent', async () => {
@@ -194,20 +195,24 @@ describe('ConversationView', () => {
                 errors: {},
             };
 
-            const { getAllByText, store } = await setup({ conversationStates: [conversationState] });
+            const { store } = await setup({ conversationStates: [conversationState] });
 
-            const elements = getAllByText('test-message', { exact: false });
+            const elements = screen.getAllByText('test-message', { exact: false });
             expect(elements[0].textContent).toContain('test-message 1');
             expect(elements[1].textContent).toContain('test-message 2');
             expect(elements[2].textContent).toContain('test-message 3');
 
-            // Consider message 2 is a draft and user sends it later
-            store.dispatch(messageDraftActions.sent(makeMessage('test-message 2', new Date('2020-01-04').getTime())));
+            act(() => {
+                // Consider message 2 is a draft and user sends it later
+                store.dispatch(
+                    messageDraftActions.sent(makeMessage('test-message 2', new Date('2020-01-04').getTime()))
+                );
+            });
             // Wait for react to reflect store update
             await wait(50);
 
             // List order should change after draft is sent because of the date change
-            const elementsReordered = getAllByText('test-message ', { exact: false });
+            const elementsReordered = screen.getAllByText('test-message ', { exact: false });
             expect(elementsReordered[0].textContent).toContain('test-message 1');
             expect(elementsReordered[1].textContent).toContain('test-message 3');
             expect(elementsReordered[2].textContent).toContain('test-message 2');
@@ -229,9 +234,9 @@ describe('ConversationView', () => {
             });
             addApiMock(`mail/v4/conversations/${conversation.ID}`, getSpy);
 
-            const { getByTestId, getByText, rerender } = await setup({});
+            const { rerender } = await setup({});
 
-            const header = getByTestId('conversation-header') as HTMLHeadingElement;
+            const header = screen.getByTestId('conversation-header') as HTMLHeadingElement;
             expect(header.getAttribute('class')).toContain('is-loading');
 
             await wait(3002);
@@ -241,7 +246,7 @@ describe('ConversationView', () => {
             await rerender();
 
             expect(header.getAttribute('class')).not.toContain('is-loading');
-            getByText(conversation.Subject as string);
+            screen.getByText(conversation.Subject as string);
             expect(getSpy).toHaveBeenCalledTimes(2);
         });
 
@@ -256,7 +261,7 @@ describe('ConversationView', () => {
             });
             addApiMock(`mail/v4/conversations/${conversation.ID}`, getSpy);
 
-            const { getByText } = await setup({});
+            await setup({});
 
             await act(async () => {
                 jest.advanceTimersByTime(5000);
@@ -271,8 +276,8 @@ describe('ConversationView', () => {
             });
             await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: false });
 
-            getByText('Network error', { exact: false });
-            getByText('Try again');
+            screen.getByText('Network error', { exact: false });
+            screen.getByText('Try again');
             expect(getSpy).toHaveBeenCalledTimes(4);
 
             jest.runAllTimers();
@@ -289,14 +294,14 @@ describe('ConversationView', () => {
             const response = { Conversation: conversation, Messages: [message] };
             addApiMock(`mail/v4/conversations/${conversation.ID}`, () => response);
 
-            const { getByText, rerender } = await setup({ conversationStates: [conversationState] });
+            const { rerender } = await setup({ conversationStates: [conversationState] });
 
-            const tryAgain = getByText('Try again');
+            const tryAgain = screen.getByText('Try again');
             fireEvent.click(tryAgain);
 
             await rerender();
 
-            getByText(conversation.Subject as string);
+            screen.getByText(conversation.Subject as string);
         });
     });
 

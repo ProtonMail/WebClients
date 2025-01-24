@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
