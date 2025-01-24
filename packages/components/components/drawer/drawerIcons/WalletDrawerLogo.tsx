@@ -1,6 +1,14 @@
+import { useState } from 'react';
+
+import generateUID from '@proton/utils/generateUID';
+
+import LogoBase from '../../logo/LogoBase';
+
 const WalletDrawerLogo = () => {
+    const [uid] = useState(generateUID('wallet-logo'));
+
     return (
-        <svg viewBox="0 0 28 28" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <LogoBase logoWidth={28} logoHeight={28} variant="with-wordmark" uid={uid} focusable="false" aria-hidden="true">
             <defs>
                 <linearGradient
                     id="paint0_linear_3283_254"
@@ -53,7 +61,7 @@ const WalletDrawerLogo = () => {
                     fill="#FFBB93"
                 />
             </g>
-        </svg>
+        </LogoBase>
     );
 };
 
