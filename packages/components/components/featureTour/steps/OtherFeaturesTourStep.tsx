@@ -13,8 +13,10 @@ import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayOtherFeaturesTourStep: ShouldDisplayTourStep = async (dispatch) => {
     const [organization] = await Promise.all([dispatch(organizationThunk())]);
-
-    return [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(organization.PlanName);
+    return {
+        canDisplay: [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(organization.PlanName),
+        preloadIllustration: () => Promise.resolve(),
+    };
 };
 
 const OtherFeaturesTourStep = (props: FeatureTourStepProps) => {

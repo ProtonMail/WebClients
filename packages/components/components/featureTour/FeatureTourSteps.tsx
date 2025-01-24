@@ -21,13 +21,20 @@ const FeatureTourSteps = ({
 
     useEffect(() => {
         const initSteps = async () => {
+            const preloadPromises: Promise<HTMLImageElement | void>[] = [];
             const initializedSteps = await Promise.all(
                 stepsList.map(async (id) => {
                     const shouldDisplay = FEATURE_TOUR_STEPS_MAP[id].shouldDisplay;
-                    const isVisible = await shouldDisplay(dispatch);
+                    const result = await shouldDisplay(dispatch);
+                    const isVisible = result.canDisplay;
+                    if (isVisible) {
+                        preloadPromises.push(result.preloadIllustration());
+                    }
                     return { id, isVisible };
                 })
             );
+
+            void Promise.all(preloadPromises);
 
             const steps: FeatureTourStep[] = initializedSteps
                 .filter(({ isVisible }) => isVisible)
