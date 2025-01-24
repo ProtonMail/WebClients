@@ -1,11 +1,11 @@
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { BasePropertiesState } from './BasePropertiesState'
-import type { UserState } from '@lexical/yjs'
+import type { SafeDocsUserState } from '../Doc/DocsAwareness'
 
 export type SyncedEditorEvent = {
   name: 'ScrollToUserCursorData'
   payload: {
-    state: UserState
+    state: SafeDocsUserState
   }
 }
 

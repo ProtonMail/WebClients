@@ -1,7 +1,6 @@
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods, SafeDocsUserState } from '@proton/docs-shared'
 import { createContext, useContext } from 'react'
 import type { LexicalNode, NodeKey, RangeSelection } from 'lexical'
-import type { UserState } from '@lexical/yjs'
 import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 
 type CommentsContextValue = {
@@ -13,7 +12,7 @@ type CommentsContextValue = {
   getMarkNodes: (id: string) => LexicalNode[] | null
   threadToFocus: string | null
   setThreadToFocus: (id: string | null) => void
-  awarenessStates: UserState[]
+  awarenessStates: SafeDocsUserState[]
   showConfirmModal: ReturnType<typeof useConfirmActionModal>[1]
 
   commentInputSelection: RangeSelection | undefined

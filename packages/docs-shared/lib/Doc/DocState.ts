@@ -6,7 +6,7 @@ import * as encoding from 'lib0/encoding'
 import * as decoding from 'lib0/decoding'
 import * as syncProtocol from 'y-protocols/sync'
 import * as awarenessProtocol from 'y-protocols/awareness'
-import type { DocsUserState } from './DocsAwareness'
+import type { SafeDocsUserState } from './DocsAwareness'
 import { DocsAwareness } from './DocsAwareness'
 import type { DocStateInterface } from './DocStateInterface'
 import type { DocStateCallbacks } from './DocStateCallbacks'
@@ -26,7 +26,7 @@ export const PRESENCE_UPDATE_REPEAT_INTERVAL = 75
 export class DocState extends Observable<string> implements DocStateInterface {
   public readonly doc: Doc
   public readonly awareness: DocsAwareness
-  lastEmittedMyState?: DocsUserState = undefined
+  lastEmittedMyState?: SafeDocsUserState = undefined
   lastEmittedClients?: number[] = undefined
 
   private resyncInterval: ReturnType<typeof setInterval> | null = null
