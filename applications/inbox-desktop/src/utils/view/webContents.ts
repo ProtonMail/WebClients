@@ -67,7 +67,7 @@ export function handleWebContents(contents: WebContents) {
         //
         // So the fix is basically reset all views when user reaches account switch, so none of
         // them is in the previous user home page after login.
-        if (getCurrentViewID() === "account" && isAccountSwitch(url)) {
+        if (getCurrentViewID() === "account" && (isAccountSwitch(url) || isAccountLogin(url))) {
             resetHiddenViews({ toHomepage: false });
         }
 

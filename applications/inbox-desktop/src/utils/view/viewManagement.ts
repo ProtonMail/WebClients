@@ -10,7 +10,7 @@ import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
-import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
+import { getLocalID, isAccountLogin, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
@@ -223,7 +223,7 @@ const debouncedUpdateViewsBounds = debounce(() => {
 }, 0);
 
 async function updateLocalID(urlString: string) {
-    if (!isHostAllowed(urlString) || isAccountSwitch(urlString)) {
+    if (!isHostAllowed(urlString) || isAccountSwitch(urlString) || isAccountLogin(urlString)) {
         return urlString;
     }
 

@@ -119,6 +119,20 @@ export const isAccountSwitch = (urlString: string) => {
     }
 };
 
+export const isAccountLogin = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+
+        if (getAppURL().account !== url.origin) {
+            return false;
+        }
+
+        return /^\/login\/?$/i.test(url.pathname);
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isAccoutLite = (host: string) => {
     try {
         const hostURl = new URL(host);
