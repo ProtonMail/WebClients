@@ -55,7 +55,10 @@ export const requestFork = ({
     searchParams.append(ForkSearchParameters.Independent, '0');
     if (prompt === 'login') {
         searchParams.append(ForkSearchParameters.Prompt, 'login'); /* force re-auth */
-        searchParams.append(ForkSearchParameters.PromptType, 'offline'); /* compute offline params */
+        searchParams.append(
+            ForkSearchParameters.PromptType,
+            'offline-bypass'
+        ); /* compute offline params (if non-existant) */
     }
     if (payloadType === 'offline') {
         searchParams.append(ForkSearchParameters.PayloadType, payloadType); /* offline payload */
