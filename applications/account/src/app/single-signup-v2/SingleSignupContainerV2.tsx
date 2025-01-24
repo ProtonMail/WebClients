@@ -184,6 +184,7 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const lumoSignupEnabled = useFlag('LumoSignupAvailable');
+
     const { flagsReady } = useFlagsStatus();
 
     const history = useHistory();
@@ -385,6 +386,9 @@ const SingleSignupContainerV2 = ({
                     return 'mail_signup_b2b';
                 }
                 return 'mail_signup';
+            }
+            if (toApp === APPS.PROTONWALLET) {
+                return 'wallet_signup';
             }
             if (getIsPassApp(toApp)) {
                 if (audience === Audience.B2B) {
