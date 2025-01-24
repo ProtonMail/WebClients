@@ -180,8 +180,15 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
 
     useEffect(
         () => () => {
-            searchParams.delete('email');
-            history.replace({ search: searchParams.toString() });
+            if (searchParams.has('email')) {
+                searchParams.delete('email');
+                history.replace({
+                    search: searchParams.toString(),
+                    /* preserve hash on web/desktop app, e.g when clicking on "Add mailbox" from alias spotlight
+                    /* which redirects to settings page with the hash #aliases */
+                    ...(!EXTENSION_BUILD ? { hash: window.location.hash } : {}),
+                });
+            }
         },
         []
     );
@@ -215,7 +222,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                             </FieldsetCluster>
 
                             <FieldsetCluster>
-                                <LoginEditCredentials form={form} isNew />
+                                <LoginEditCredentials form={form} />
 
                                 {
                                     /* only allow adding a new TOTP code if user
