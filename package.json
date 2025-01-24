@@ -27,6 +27,7 @@
         "@types/prettier": "^3.0.0",
         "electron-winstaller": "^5.4.0",
         "json5": "^2.2.3",
+        "lexical@npm:0.23.1": "patch:lexical@npm%3A0.23.1#~/.yarn/patches/lexical-npm-0.23.1-b61e3ad789.patch",
         "merge": "^2.1.1",
         "node-gyp": "^11.0.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
