@@ -47,7 +47,7 @@
     "@proton/utils": "workspace:^",
     "docx": "^8.5.0",
     "docx-preview-cjs": "0.3.7",
-    "lexical": "0.23.1",
+    "lexical": "patch:lexical@npm%3A0.23.1#~/.yarn/patches/lexical-npm-0.23.1-b61e3ad789.patch",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
