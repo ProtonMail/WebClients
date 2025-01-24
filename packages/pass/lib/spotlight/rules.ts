@@ -181,3 +181,27 @@ export const createItemSharingRule = () =>
         message: SpotlightMessage.ITEM_SHARING,
         when: (previous) => !previous,
     });
+
+export const createAliasDiscoveryCustomizeRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE,
+        when: (previous) => !previous,
+    });
+
+export const createAliasDiscoveryMailboxRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.ALIAS_DISCOVERY_MAILBOX,
+        when: (previous) => !previous,
+    });
+
+export const createAliasDiscoveryDomainRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.ALIAS_DISCOVERY_DOMAIN,
+        when: (previous) => !previous,
+    });
+
+export const createAliasDiscoveryContactRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.ALIAS_DISCOVERY_CONTACT,
+        when: (previous) => !previous,
+    });
