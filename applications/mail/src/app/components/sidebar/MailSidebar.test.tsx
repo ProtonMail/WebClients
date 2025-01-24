@@ -1,6 +1,4 @@
-import { act } from 'react-dom/test-utils';
-
-import { fireEvent, getAllByText, screen } from '@testing-library/react';
+import { act, fireEvent, getAllByText, screen } from '@testing-library/react';
 import { addDays, subDays } from 'date-fns';
 import type { Location } from 'history';
 import loudRejection from 'loud-rejection';

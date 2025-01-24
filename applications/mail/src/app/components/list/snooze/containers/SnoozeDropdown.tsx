@@ -63,7 +63,6 @@ const SnoozeDropdown = ({ elements, size, labelID, labels, folders }: Props) => 
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {
         event.stopPropagation();
-        console.log(elements);
         void snooze({ elements, duration, snoozeTime }, SOURCE_ACTION.HOVER_BUTTONS, displayedFolder);
         onClose();
     };

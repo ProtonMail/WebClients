@@ -1,6 +1,4 @@
-import { act } from 'react-dom/test-utils';
-
-import { fireEvent } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import type { RenderResult } from '@testing-library/react';
 import { queryByTestId } from '@testing-library/react';
 
@@ -108,7 +106,9 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
     );
 
     // Load manually incoming defaults
-    await container.store.dispatch(load());
+    await act(async () => {
+        await container.store.dispatch(load());
+    });
 
     const dropdown = await openDropdown(container, sender);
 
