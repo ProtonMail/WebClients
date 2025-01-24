@@ -8,7 +8,6 @@ import type { SharedStore } from '@proton/redux-shared-store/sharedStore';
 export interface FeatureTourStepProps {
     onNext: () => void;
     children?: ReactNode;
-    isActive: boolean;
     bullets: JSX.Element;
 }
 

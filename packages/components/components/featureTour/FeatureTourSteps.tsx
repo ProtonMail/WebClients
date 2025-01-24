@@ -75,15 +75,16 @@ const FeatureTourSteps = ({
 
     const ActiveStepComponent = () => {
         const activeStepId = steps.find(({ isActive }) => isActive)?.id;
+
         if (!activeStepId) {
             return null;
         }
 
         const StepComponent = FEATURE_TOUR_STEPS_MAP[activeStepId].component;
+
         return (
             <StepComponent
                 onNext={handleNextStep}
-                isActive={true}
                 bullets={<FeatureTourStepBullets steps={steps} onClick={handleBulletClick} />}
             />
         );
