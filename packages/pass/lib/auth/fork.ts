@@ -54,11 +54,11 @@ export const requestFork = ({
     searchParams.append(ForkSearchParameters.State, state);
     searchParams.append(ForkSearchParameters.Independent, '0');
     if (prompt === 'login') {
-        searchParams.append(ForkSearchParameters.Prompt, 'login'); /* force re-auth */
-        searchParams.append(
-            ForkSearchParameters.PromptType,
-            'offline-bypass'
-        ); /* compute offline params (if non-existant) */
+        searchParams.append(ForkSearchParameters.Prompt, 'login'); /* Force re-auth */
+        /* Compute offline params. Only allow by-pass for web. Extension does
+         * not support password locking yet, as such we must force re-auth. */
+        const promptType = EXTENSION_BUILD || DESKTOP_BUILD ? 'offline' : 'offline-bypass';
+        searchParams.append(ForkSearchParameters.PromptType, promptType);
     }
     if (payloadType === 'offline') {
         searchParams.append(ForkSearchParameters.PayloadType, payloadType); /* offline payload */
