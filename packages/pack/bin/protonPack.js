@@ -33,6 +33,7 @@ const addGlobalOptions = (program) => {
         .option('--no-api-proxy', '')
         .option('--inline-icons', false)
         .option('--webpackOnCaffeine', '', false)
+        .option('--handleSupportAndErrors', '', false)
         .option('--logical', '', false)
         .option(
             '--publicPath <publicPath>',
@@ -63,6 +64,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         overlayRuntimeErrors: options.overlayRuntimeErrors,
         logical: Boolean(options.logical),
         webpackOnCaffeine: Boolean(options.webpackOnCaffeine),
+        handleSupportAndErrors: Boolean(options.handleSupportAndErrors),
         analyze: options.analyze,
         ...buildData,
     };
