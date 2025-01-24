@@ -410,6 +410,7 @@ export function App({ systemMode, bridgeState }: AppProps) {
             clonedEditorState={clonedEditorState}
             role={application.getRole()}
             onUserModeChange={onUserModeChange}
+            clientInvoker={bridge.getClientInvoker()}
           />
         </div>
       )}
