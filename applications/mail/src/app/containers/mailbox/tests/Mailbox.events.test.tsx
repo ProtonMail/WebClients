@@ -271,7 +271,10 @@ describe('Mailbox elements list reacting to events', () => {
 
         resolve = addApiResolver('mail/v4/messages').resolve;
         const { initialPath: rerenderInitialPath, ...rerenderProps } = getProps({ search: { keyword: 'changed' } });
-        history.push(rerenderInitialPath);
+        act(() => {
+            history.push(rerenderInitialPath);
+        });
+
         await rerender(<MailboxContainer {...rerenderProps} />);
 
         // Params has changed, cache is reset

@@ -234,7 +234,7 @@ export const render = async (
 
     const history = createMemoryHistory({ initialEntries });
     const { Wrapper, store } = getStoreWrapper({ preloadedState, history });
-    await onStore?.(store);
+    onStore?.(store);
 
     if (initialPath) {
         history.push(initialPath);

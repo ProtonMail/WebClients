@@ -1,7 +1,6 @@
 import type { MutableRefObject } from 'react';
 
-import { findByTestId, fireEvent, waitFor } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { act, findByTestId, fireEvent, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -77,7 +76,6 @@ export const setup = async (
         ref.current = refValue;
     };
 
-    // console.log(props)
     const renderResult = await render(<MessageView ref={refCallback} {...props} />, {
         ...renderOptions,
         onStore: (store) => {
@@ -113,7 +111,7 @@ export const setup = async (
 
     const rerender = async (specificProps: Partial<MessageViewProps> = {}) => {
         const props = { ...defaultProps, ...specificProps };
-        await renderResult.rerender(<MessageView ref={refCallback} {...props} />);
+        await renderResult.rerender(<MessageView ref={refCallback} {...props} key={props.key} />);
         await tick();
     };
 
