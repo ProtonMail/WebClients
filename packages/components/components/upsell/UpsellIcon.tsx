@@ -11,6 +11,7 @@ const UpsellIcon = forwardRef<HTMLImageElement, React.HTMLProps<HTMLImageElement
         ref={ref}
         src={upsellIconSvg}
         alt={c('Description').t`Available with ${MAIL_APP_NAME} Plus`}
+        style={{ inlineSize: '2.8125rem' }}
     />
 ));
 UpsellIcon.displayName = 'UpsellIcon';
