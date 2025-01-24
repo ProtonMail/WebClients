@@ -1,9 +1,13 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { featureTourActions } from '@proton/account/featuresTour';
 import { DrawerAppButton, FEATURE_TOUR_STEPS, FeatureTourDrawerSpotlight } from '@proton/components';
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import LogoBase from '@proton/components/components/logo/LogoBase';
 import type { Optional } from '@proton/shared/lib/interfaces';
+import generateUID from '@proton/utils/generateUID';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -16,6 +20,8 @@ const FeatureTourDrawerButton = ({ ...rest }: Optional<Omit<Props, 'tooltipText'
 
     const tooltipText = c('Title').t`Discover your subscription benefits`;
 
+    const [uid] = useState(generateUID('feature-tour-logo'));
+
     return (
         <FeatureTourDrawerSpotlight>
             <DrawerAppButton
@@ -24,8 +30,14 @@ const FeatureTourDrawerButton = ({ ...rest }: Optional<Omit<Props, 'tooltipText'
                 aria-controls="drawer-features-tour-button"
                 data-testid="drawer-features-tour-button"
                 buttonContent={
-                    // eslint-disable-next-line custom-rules/deprecate-sizing-classes
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <LogoBase
+                        logoWidth={28}
+                        logoHeight={28}
+                        variant="with-wordmark"
+                        focusable="false"
+                        aria-hidden="true"
+                        uid={uid}
+                    >
                         <g clipPath="url(#clip0_44822_36749)">
                             <path
                                 d="M11 20H17V21.3455C17 21.4402 16.9465 21.5268 16.8618 21.5691L16.4472 21.7764C16.263 21.8685 16.263 22.1315 16.4472 22.2236L16.5528 22.2764C16.737 22.3685 16.737 22.6315 16.5528 22.7236L16.4472 22.7764C16.263 22.8685 16.263 23.1315 16.4472 23.2236L16.5528 23.2764C16.737 23.3685 16.737 23.6315 16.5528 23.7236L16.1382 23.9309C16.0535 23.9732 16 24.0598 16 24.1545V24.75C16 24.8881 15.8881 25 15.75 25H14H12.25C12.1119 25 12 24.8881 12 24.75V24.1545C12 24.0598 11.9465 23.9732 11.8618 23.9309L11.4472 23.7236C11.263 23.6315 11.263 23.3685 11.4472 23.2764L11.5528 23.2236C11.737 23.1315 11.737 22.8685 11.5528 22.7764L11.4472 22.7236C11.263 22.6315 11.263 22.3685 11.4472 22.2764L11.5528 22.2236C11.737 22.1315 11.737 21.8685 11.5528 21.7764L11.1382 21.5691C11.0535 21.5268 11 21.4402 11 21.3455V20Z"
@@ -88,7 +100,7 @@ const FeatureTourDrawerButton = ({ ...rest }: Optional<Omit<Props, 'tooltipText'
                                 <rect width="28" height="28" fill="white" />
                             </clipPath>
                         </defs>
-                    </svg>
+                    </LogoBase>
                 }
                 onClick={handleClick}
                 {...rest}
