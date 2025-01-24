@@ -6,6 +6,7 @@ import { PASS_ANDROID_URL, PASS_DOWNLOAD_URL, PASS_IOS_URL, PASS_WEB_APP_URL } f
 import { PLANS } from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isMobile } from '@proton/shared/lib/helpers/browser';
+import { preloadImage } from '@proton/shared/lib/helpers/image';
 import logoPass from '@proton/styles/assets/img/onboarding/feature_tour-logo-pass.svg';
 import passAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-pass-background.svg';
 
@@ -16,7 +17,10 @@ import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayProtonPassTourStep: ShouldDisplayTourStep = async (dispatch) => {
     const [organization] = await Promise.all([dispatch(organizationThunk())]);
-    return [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName);
+    return {
+        canDisplay: [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName),
+        preloadIllustration: () => preloadImage(passAppBackground),
+    };
 };
 
 const ProtonPassTourStep = (props: FeatureTourStepProps) => {
