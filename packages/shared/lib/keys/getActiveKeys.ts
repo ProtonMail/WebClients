@@ -39,7 +39,7 @@ export const getActiveKeyObject = async <
         publicKey,
         primary: 0,
         fingerprint: privateKey.getFingerprint(),
-        sha256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: privateKey }),
+        sha256Fingerprints: privateKey.getSHA256Fingerprints(),
         ...partial,
     } as ActiveKey<PrivateKeyReferenceWithVersion>;
 };
@@ -55,13 +55,13 @@ export const getActiveAddressKeys = async (
     }
 
     const parsedSignedKeyList = new ParsedSignedKeyList(signedKeyList?.Data);
-    const decryptedKeysWithFingerprints = await Promise.all(
+    const decryptedKeysIDsWithFingerprints = await Promise.all(
         decryptedKeys.map(async (decryptedKey) => ({
-            ...decryptedKey,
-            sha256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: decryptedKey.privateKey }),
+            ID: decryptedKey.ID,
+            sha256Fingerprints: decryptedKey.privateKey.getSHA256Fingerprints(),
         }))
     );
-    const keyIDsToSKLItemsMap = parsedSignedKeyList.mapAddressKeysToSKLItems(decryptedKeysWithFingerprints);
+    const keyIDsToSKLItemsMap = parsedSignedKeyList.mapAddressKeysToSKLItems(decryptedKeysIDsWithFingerprints);
 
     const keysMap = keys.reduce<{ [key: string]: Key | undefined }>((acc, key) => {
         acc[key.ID] = key;

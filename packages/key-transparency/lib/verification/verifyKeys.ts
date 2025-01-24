@@ -38,7 +38,7 @@ export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyLi
     Promise.all(
         keyList.map(async ({ key, flags, primary }, index) => ({
             Fingerprint: key.getFingerprint(),
-            SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key }),
+            SHA256Fingerprints: key.getSHA256Fingerprints(),
             Primary: (primary ?? index === 0) ? 1 : 0,
             Flags: flags,
         }))
