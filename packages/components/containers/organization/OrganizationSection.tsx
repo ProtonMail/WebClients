@@ -310,7 +310,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                 >
                                                     {organizationIdentity.signatureAddress}
                                                 </div>
-                                                <div className="ml-0.5 shrink-0">
+                                                <div className="inline-flex ml-0.5 shrink-0">
                                                     {organizationIdentity.state.result ? (
                                                         <Tooltip
                                                             openDelay={0}
@@ -375,15 +375,17 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                 <Button
                                                     id="organization-logo-edit-button"
                                                     onClick={() => setOrganizationLogoModal(true)}
+                                                    className="inline-flex items-center"
                                                 >
-                                                    <Icon name="pen" /> {c('Action').t`Change`}
+                                                    <Icon name="pen" className="mr-1" /> {c('Action').t`Change`}
                                                 </Button>
 
                                                 <Button
                                                     id="organization-logo-remove-button"
                                                     onClick={() => setOrganizationLogoRemovalModal(true)}
+                                                    className="inline-flex items-center"
                                                 >
-                                                    <Icon name="trash" /> {c('Action').t`Remove`}
+                                                    <Icon name="trash" className="mr-1" /> {c('Action').t`Remove`}
                                                 </Button>
                                             </ButtonGroup>
                                         </div>
