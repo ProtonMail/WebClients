@@ -21,18 +21,8 @@ export const mailTrial2023Config: OfferConfig = {
                 [PLANS.MAIL]: 1,
             },
             cycle: CYCLE.YEARLY,
-            features: getMailPlusInboxFeatures,
-            getCTAContent: () => c('Action').t`Upgrade now`,
-        },
-        {
-            ref: 'plus_referral_trial-modal-u2',
-            dealName: PLAN_NAMES[PLANS.BUNDLE],
-            planIDs: {
-                [PLANS.BUNDLE]: 1,
-            },
-            cycle: CYCLE.TWO_YEARS,
             popular: 1,
-            features: getUnlimitedFeatures,
+            features: getMailPlusInboxFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
         },
         {
