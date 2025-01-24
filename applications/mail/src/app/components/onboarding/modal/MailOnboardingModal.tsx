@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
+import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { OnboardingModal } from '@proton/components';
 import { PLANS } from '@proton/payments';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import {
@@ -14,6 +16,7 @@ import {
     getIsB2BAudienceFromSubscription,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
+import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import GetMobileAppStep from 'proton-mail/components/onboarding/modal/steps/GetMobileAppStep';
@@ -36,30 +39,41 @@ export interface MailOnboardingProps {
     open?: boolean;
 }
 
-const useUserInfos = (): Record<'isB2B' | 'isLoading' | 'isMailPaidPlan', boolean> => {
+const useUserInfos = () => {
     const [user, loadingUser] = useUser();
     const [subscription, loadingSub] = useSubscription();
     const [organization, loadingOrg] = useOrganization();
+    const [member, loadingMember] = useMember();
 
-    let isB2B = false;
-    const isLoading = loadingUser || loadingSub || loadingOrg;
+    let canDisplayPremiumFeaturesStep = false;
+    const isLoading = loadingUser || loadingSub || loadingOrg || loadingMember;
     const isUserWithB2BPlan = getIsB2BAudienceFromSubscription(subscription);
     const isSubUserWithB2BPlan = organization && getIsB2BAudienceFromPlan(organization.PlanName);
+    const isVisionarySubUser = (() => {
+        const isMainAdmin = member?.Subscriber === MEMBER_SUBSCRIBER.PAYER;
+        if (isMainAdmin) {
+            return false;
+        }
 
-    if (isUserWithB2BPlan || isSubUserWithB2BPlan) {
-        isB2B = true;
-    }
+        return (organization && organization.PlanName === PLANS.VISIONARY) || hasVisionary(subscription);
+    })();
 
     const isMailPaidPlan = isTrial(subscription, PLANS.MAIL) || user.hasPaidMail;
 
-    return { isB2B, isLoading, isMailPaidPlan };
+    if (isUserWithB2BPlan || isSubUserWithB2BPlan || isVisionarySubUser) {
+        canDisplayPremiumFeaturesStep = false;
+    } else if (isMailPaidPlan) {
+        canDisplayPremiumFeaturesStep = true;
+    }
+
+    return { isLoading, canDisplayPremiumFeaturesStep };
 };
 
 const MailOnboardingModal = (props: MailOnboardingProps) => {
     const { endReplay } = useWelcomeFlags();
     const [sendMailOnboardingTelemetry, loadingTelemetryDeps] = useMailOnboardingTelemetry();
-    const { isLoading, isB2B, isMailPaidPlan } = useUserInfos();
-    const displayPremiumFeaturesSteps = isMailPaidPlan && !isB2B;
+    const { isLoading, canDisplayPremiumFeaturesStep } = useUserInfos();
+
     const displayGetDesktopAppStep = !isMobile() && !isElectronApp;
     const partnerEnabled = new URLSearchParams(window.location.search).get('partner') === 'true';
 
@@ -92,7 +106,7 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
             modalContentClassname="mx-12 mt-12 mb-6"
             modalClassname="onboarding-modal--larger onboarding-modal--new"
             showGenericSteps={false}
-            extraProductStep={displayPremiumFeaturesSteps ? [ActivatePremiumFeaturesStep] : undefined}
+            extraProductStep={canDisplayPremiumFeaturesStep ? [ActivatePremiumFeaturesStep] : undefined}
             stepDotClassName="mt-4"
             data-testid="new-onboarding-variant"
             genericSteps={{
