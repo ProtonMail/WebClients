@@ -1,5 +1,4 @@
 import { type ErrorInfo } from 'react'
-import type { UserState } from '@lexical/yjs'
 import type { CommentInterface } from '../CommentInterface'
 import type { CommentThreadInterface } from '../CommentThreadInterface'
 import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
@@ -7,6 +6,7 @@ import type { BroadcastSource } from './BroadcastSource'
 import type { WordCountInfoCollection } from '../WordCount/WordCountTypes'
 import type { SuggestionSummaryType } from '../SuggestionType'
 import type { EditorEvent, EditorEventData } from './EditorEvent'
+import type { SafeDocsUserState } from '../Doc/DocsAwareness'
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
@@ -41,7 +41,7 @@ export interface EditorRequiresClientMethods {
   deleteThread(id: string): Promise<boolean>
   markThreadAsRead(id: string): Promise<void>
 
-  handleAwarenessStateUpdate(states: UserState[]): Promise<void>
+  handleAwarenessStateUpdate(states: SafeDocsUserState[]): Promise<void>
 
   openLink(url: string): Promise<void>
 
