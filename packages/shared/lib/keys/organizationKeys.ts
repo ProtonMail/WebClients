@@ -492,7 +492,7 @@ export const generateOrganizationKeySignature = async ({
     signingKeys: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
 }) => {
-    const [fingerprint] = await CryptoProxy.getSHA256Fingerprints({ key: organizationKey });
+    const [fingerprint] = organizationKey.getSHA256Fingerprints();
     const signature = await CryptoProxy.signMessage({
         signingKeys,
         detached: true,
@@ -514,7 +514,7 @@ export const validateOrganizationKeySignature = async ({
     verificationKeys: PublicKeyReference[];
     organizationKey: PublicKeyReference;
 }) => {
-    const [fingerprint] = await CryptoProxy.getSHA256Fingerprints({ key: organizationKey });
+    const [fingerprint] = organizationKey.getSHA256Fingerprints();
     const result = await CryptoProxy.verifyMessage({
         armoredSignature,
         textData: fingerprint,
