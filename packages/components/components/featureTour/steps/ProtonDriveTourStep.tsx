@@ -10,6 +10,7 @@ import driveAppBackground from '@proton/styles/assets/img/onboarding/feature_tou
 import logoDrive from '@proton/styles/assets/img/onboarding/feature_tour-logo-drive.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayProtonDriveTourStep: ShouldDisplayTourStep = async (dispatch) => {
@@ -36,25 +37,23 @@ const ProtonDriveTourStep = (props: FeatureTourStepProps) => {
 
     return (
         <FeatureTourStepsContent
+            bullets={props.bullets}
             title={<img src={logoDrive} alt={DRIVE_APP_NAME} />}
-            description={description}
             illustration={driveAppBackground}
             illustrationSize="full"
-            titleClassName="pt-3"
-            descriptionClassName="mb-8"
-            primaryButton={
-                <ButtonLike
-                    as={AppLink}
-                    className="mb-2"
-                    to="/"
-                    color="norm"
-                    fullWidth
-                    toApp={APPS.PROTONDRIVE}
-                    target="_blank"
-                >{c('Action').t`Go to ${DRIVE_APP_NAME}`}</ButtonLike>
+            mainCTA={
+                <ButtonLike as={AppLink} to="/" color="norm" fullWidth toApp={APPS.PROTONDRIVE} target="_blank">{c(
+                    'Action'
+                ).t`Go to ${DRIVE_APP_NAME}`}</ButtonLike>
             }
-            {...props}
-        />
+            extraCTA={
+                <FeatureTourStepCTA type="secondary" onClick={props.onNext}>
+                    {c('Button').t`Maybe later`}
+                </FeatureTourStepCTA>
+            }
+        >
+            <p className="m-0">{description}</p>
+        </FeatureTourStepsContent>
     );
 };
 
