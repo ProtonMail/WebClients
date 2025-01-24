@@ -10,6 +10,18 @@ import { ID, prepareMessage, props } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
 
+jest.mock('proton-mail/hooks/usePromise', () => ({
+    usePromise: () => {
+        return {
+            promise: Promise.resolve(),
+            resolver: jest.fn(),
+            rejecter: jest.fn(),
+            renew: jest.fn(),
+            isPending: false,
+        };
+    },
+}));
+
 // In this test, switching from plaintext to html will trigger autosave
 // But encryption and save requests are not the point of this test so it's easier and faster to mock that logic
 jest.mock('../../../hooks/message/useSaveDraft', () => {

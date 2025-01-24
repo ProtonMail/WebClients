@@ -62,10 +62,12 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     return (
         <Table responsive="cards">
             <TableHeader>
-                <TableHeaderCell>{c('Table header').t`Fingerprint`}</TableHeaderCell>
-                <TableHeaderCell className="w-1/5">{c('Table header').t`Created`}</TableHeaderCell>
-                <TableHeaderCell className="w-1/6">{c('Table header').t`Expires`}</TableHeaderCell>
-                <TableHeaderCell className="w-1/6">{c('Table header').t`Type`}</TableHeaderCell>
+                <TableRow>
+                    <TableHeaderCell>{c('Table header').t`Fingerprint`}</TableHeaderCell>
+                    <TableHeaderCell className="w-1/5">{c('Table header').t`Created`}</TableHeaderCell>
+                    <TableHeaderCell className="w-1/6">{c('Table header').t`Expires`}</TableHeaderCell>
+                    <TableHeaderCell className="w-1/6">{c('Table header').t`Type`}</TableHeaderCell>
+                </TableRow>
             </TableHeader>
             <TableBody>
                 <TableRow key={fingerprint}>
