@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import type { Action } from 'redux';
-import { all, fork, put, select, take } from 'redux-saga/effects';
+import type { Task } from 'redux-saga';
+import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
@@ -91,7 +92,7 @@ const onShareEvent = (shareId: string) =>
         if (itemsMutated) onItemsUpdated?.();
     };
 
-const onShareEventError = (shareId: string) =>
+const onShareEventError = (shareId: string, tasks: () => Task) =>
     function* (error: unknown, { channel }: EventChannel<ShareEventResponse>, { onItemsUpdated }: RootSagaOptions) {
         const { code } = getApiError(error);
 
@@ -99,28 +100,31 @@ const onShareEventError = (shareId: string) =>
         if (code === PassErrorCode.DISABLED_SHARE || code === PassErrorCode.NOT_EXIST_SHARE) {
             logger.info(`[ServerEvents::Share::${logId(shareId)}] share disabled`);
             channel.close();
-
             const share: Maybe<Share> = yield select(selectShare(shareId));
+
             if (share) {
                 onItemsUpdated?.();
                 yield discardDrafts(shareId);
                 yield put(shareEventDelete(share));
             }
+
+            yield cancel(tasks());
         }
     };
 
-const onShareDeleted = (shareId: string) =>
+const onShareDeleted = (shareId: string, tasks: () => Task) =>
     function* ({ channel }: EventChannel<ShareEventResponse>): Generator {
         yield take((action: Action) => vaultDeleteSuccess.match(action) && action.payload.shareId === shareId);
         logger.info(`[ServerEvents::Share::${logId(shareId)}] share deleted`);
         channel.close();
         yield discardDrafts(shareId);
+        yield cancel(tasks());
     };
 
 /* We need to lift the response to the correct data
  * structure by leveraging ApiOptions::mapResponse
  * (see type definition and create-api.ts for specs) */
-export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
+export const createShareChannel = (api: Api, { shareId, eventId }: Share, tasks: () => Task) =>
     eventChannelFactory<ShareEventResponse>({
         api,
         channelId: `share::${shareId}`,
@@ -130,20 +134,27 @@ export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
         getLatestEventID: () => getShareLatestEventId(shareId),
         onClose: () => logger.info(`[ServerEvents::Share::${logId(shareId)}] closing channel`),
         onEvent: onShareEvent(shareId),
-        onError: onShareEventError(shareId),
+        onError: onShareEventError(shareId, tasks),
     });
 
-export const getShareChannelForks = (api: Api, options: RootSagaOptions) => (share: Share) => {
-    logger.info(`[ServerEvents::Share::${logId(share.shareId)}] start polling`);
-    const eventsChannel = createShareChannel(api, share);
-    const events = fork(channelEvents<ShareEventResponse>, eventsChannel, options);
-    const wakeup = fork(channelInitalize<ShareEventResponse>, eventsChannel, options);
-    const onDelete = fork(onShareDeleted(share.shareId), eventsChannel);
+export const getShareChannelForks = (api: Api, options: RootSagaOptions) =>
+    function* (share: Share) {
+        logger.info(`[ServerEvents::Share::${logId(share.shareId)}] start polling`);
 
-    return [events, wakeup, onDelete];
-};
+        const tasks: Task = yield fork(function* () {
+            const self = () => tasks;
+            const eventsChannel = createShareChannel(api, share, self);
+            const events = fork(channelEvents<ShareEventResponse>, eventsChannel, options);
+            const wakeup = fork(channelInitalize<ShareEventResponse>, eventsChannel, options);
+            const onDelete = fork(onShareDeleted(share.shareId, self), eventsChannel);
+
+            yield all([events, wakeup, onDelete]);
+        });
+
+        return tasks;
+    };
 
 export function* shareChannels(api: Api, options: RootSagaOptions) {
     const shares = (yield select(selectAllShares)) as Share[];
-    yield all(shares.map(getShareChannelForks(api, options)).flat());
+    yield all(shares.map(getShareChannelForks(api, options)));
 }

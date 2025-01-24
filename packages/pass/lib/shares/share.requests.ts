@@ -7,6 +7,7 @@ import {
 } from '@proton/pass/types';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
 import { type ShareMember } from '@proton/pass/types/data/invites';
+import { logId, logger } from '@proton/pass/utils/logger';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */
 export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse[]> => {
@@ -25,7 +26,10 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
         method: 'get',
     })
         .then(({ EventID }) => EventID!)
-        .catch(() => '');
+        .catch(() => {
+            logger.info(`[Share] Failed getting latest eventID for share ${logId(shareId)}`);
+            return '';
+        });
 
 export const requestShares = async (): Promise<ShareGetResponse[]> =>
     (
