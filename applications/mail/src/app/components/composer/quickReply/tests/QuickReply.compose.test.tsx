@@ -14,6 +14,18 @@ import { getStateMessageFromParentID, setupQuickReplyTests } from './QuickReply.
 
 jest.setTimeout(20000);
 
+jest.mock('proton-mail/hooks/usePromise', () => ({
+    usePromise: () => {
+        return {
+            promise: Promise.resolve(),
+            resolver: jest.fn(),
+            rejecter: jest.fn(),
+            renew: jest.fn(),
+            isPending: false,
+        };
+    },
+}));
+
 describe('Quick reply - Compose', () => {
     let meKeys: GeneratedKey;
 

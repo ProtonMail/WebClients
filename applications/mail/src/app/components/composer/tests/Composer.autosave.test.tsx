@@ -1,5 +1,4 @@
-import { fireEvent, getByTestId } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { act, fireEvent, getByTestId } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
@@ -65,7 +64,9 @@ describe('Composer autosave', () => {
         const editor = iframe.contentDocument?.getElementById(ROOSTER_EDITOR_ID);
 
         if (editor) {
-            fireEvent.input(editor, 'hello');
+            act(() => {
+                fireEvent.input(editor, 'hello');
+            });
         }
     };
 
@@ -96,11 +97,11 @@ describe('Composer autosave', () => {
 
         await act(async () => {
             triggerRoosterInput(container);
-            jest.advanceTimersByTime(1500);
-            expect(createSpy).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1500);
-            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
         });
+        jest.advanceTimersByTime(1500);
+        expect(createSpy).not.toHaveBeenCalled();
+        jest.advanceTimersByTime(1500);
+        await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
     });
 
     it('should wait 2s after the last change before saving a change', async () => {

@@ -164,7 +164,11 @@ export const setup = async ({
     });
     const rerender = (propsArgs: PropsArgs) => {
         const { initialPath, ...props } = getProps(propsArgs);
-        result.history.push(initialPath);
+
+        act(() => {
+            result.history.push(initialPath);
+        });
+
         return result.rerender(<Component {...props} />);
     };
     const getItems = () => result.getAllByTestId('message-item', { exact: false });
