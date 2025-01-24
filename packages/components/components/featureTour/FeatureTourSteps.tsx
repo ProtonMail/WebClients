@@ -5,31 +5,8 @@ import { useDispatch } from '@proton/redux-shared-store';
 
 import FeatureTourLoader from './FeatureTourLoader';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';
-import type { FeatureTourStepId } from './interface';
-
-export type TourStep = {
-    id: FeatureTourStepId;
-    isActive: boolean;
-};
-
-interface StepBulletProps {
-    steps: TourStep[];
-    onClick: (stepIdx: FeatureTourStepId) => void;
-}
-
-const StepsBullet = ({ steps, onClick }: StepBulletProps) => (
-    <div className="flex justify-center">
-        {steps.map(({ id, isActive }) => (
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-            <div
-                key={id}
-                data-testid={`step-bullet-${id}`}
-                className={`w-2 h-2 rounded-full mx-1 ${isActive ? 'bg-primary' : 'bg-weak'}`}
-                onClick={() => onClick(id)}
-            />
-        ))}
-    </div>
-);
+import type { FeatureTourStep, FeatureTourStepId } from './interface';
+import FeatureTourStepBullets from './steps/components/FeatureTourStepBullets';
 
 const FeatureTourSteps = ({
     onFinishTour,
@@ -40,7 +17,7 @@ const FeatureTourSteps = ({
 }) => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
-    const [steps, setSteps] = useState<TourStep[]>([]);
+    const [steps, setSteps] = useState<FeatureTourStep[]>([]);
 
     useEffect(() => {
         const initSteps = async () => {
@@ -52,7 +29,7 @@ const FeatureTourSteps = ({
                 })
             );
 
-            const steps: TourStep[] = initializedSteps
+            const steps: FeatureTourStep[] = initializedSteps
                 .filter(({ isVisible }) => isVisible)
                 .map((step, index) => ({ ...step, isActive: index === 0 }));
 
@@ -81,7 +58,7 @@ const FeatureTourSteps = ({
         }
     };
 
-    const handleBulletClick = (stepId: TourStep['id']) => {
+    const handleBulletClick = (stepId: FeatureTourStep['id']) => {
         const nextSteps = steps.map((step) => {
             const isActive = step.id === stepId;
             return { ...step, isActive };
@@ -100,7 +77,7 @@ const FeatureTourSteps = ({
             <StepComponent
                 onNext={handleNextStep}
                 isActive={true}
-                bullets={<StepsBullet steps={steps} onClick={handleBulletClick} />}
+                bullets={<FeatureTourStepBullets steps={steps} onClick={handleBulletClick} />}
             />
         );
     };

@@ -14,6 +14,7 @@ import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
+import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 import FeatureTourToggle from './components/FeatureTourToggle';
 
@@ -46,26 +47,35 @@ const ShortDomainTourStep = (props: FeatureTourStepProps) => {
 
     return (
         <FeatureTourStepsContent
+            bullets={props.bullets}
             illustrationSize="small"
             illustration={shortDomainImg}
             title={c('Title').t`Same inbox, shorter email address`}
-            description={c('Info').t`Start using the shorter, catchier version of your email address.`}
-            {...props}
-            onNext={() => {
-                void handleEnableFeature();
-                props.onNext();
-            }}
+            mainCTA={
+                <FeatureTourStepCTA
+                    type="primary"
+                    onClick={() => {
+                        void handleEnableFeature();
+                        props.onNext();
+                    }}
+                >
+                    {c('Action').t`Next`}
+                </FeatureTourStepCTA>
+            }
         >
+            <p className="mt-0 mb-4">{c('Info').t`Start using the shorter, catchier version of your email address.`}</p>
             <FeatureTourToggle
                 isFeatureEnabled={isFeatureEnabled}
                 checked={isToggleChecked}
                 onToggle={toggle}
                 title={
-                    <>
+                    <div className="text-left flex flex-col">
                         {/* translator: Sentense is "Activate myshortDomain@pm.me" if short domain feature is not active. */}
                         {!isFeatureEnabled ? <div className="color-weak">{c('Action').t`Activate`}</div> : null}
-                        <strong>{shortDomainAddress}</strong>
-                    </>
+                        <strong className="text-ellipsis pr-4" title={shortDomainAddress}>
+                            {shortDomainAddress}
+                        </strong>
+                    </div>
                 }
             />
         </FeatureTourStepsContent>
