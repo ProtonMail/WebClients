@@ -5,17 +5,32 @@ export const getSupportedEntry = () => {
     return require.resolve('@proton/shared/lib/supported/supported.ts');
 };
 
-export const getIndexChunks = (target: string) => {
+export const getIndexChunks = (target: string, handleSupportAndErrors: boolean = false) => {
     // The pre chunk sets up a query selector for -index suffixed script files
     if (!target.includes('index')) {
         throw new Error(
             'pre and unsupported chunks rely on the naming of the main chunk file starting with index or containing a -index suffix'
         );
     }
+
+    if (handleSupportAndErrors) {
+        return [target];
+    }
+
     return ['pre', target, 'unsupported'];
 };
 
-export const getEntries = () => {
+export const getEntries = (
+    handleSupportAndErrors: boolean = false
+): { index: string[] } | { pre: string[]; index: string[]; unsupported: string[] } => {
+    // The client handle the supported browser and the script errors itself
+    // We do not interfer with this client
+    if (handleSupportAndErrors) {
+        return {
+            index: [path.resolve('./src/app/index.tsx')],
+        };
+    }
+
     return {
         // The order is important. The pre.js listens to index.js, and supported.js file sets a global variable that is used by unsupported.js to detect if the main bundle could be parsed.
         pre: [require.resolve('@proton/shared/lib/supported/pre.ts')],
