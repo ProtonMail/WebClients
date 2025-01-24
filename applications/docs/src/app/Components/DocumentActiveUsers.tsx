@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 import { Tooltip } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 import { useApplication } from '../Containers/ApplicationProvider'
-import type { DocsAwarenessStateChangeData, DocsUserState } from '@proton/docs-shared'
+import type { DocsAwarenessStateChangeData, SafeDocsUserState } from '@proton/docs-shared'
 import { DocAwarenessEvent, UserAvatar } from '@proton/docs-shared'
 
 export function DocumentActiveUsers({ className }: { className?: string }) {
   const application = useApplication()
-  const [states, setStates] = useState<DocsUserState[]>([])
+  const [states, setStates] = useState<SafeDocsUserState[]>([])
 
   useEffect(() => {
     return application.eventBus.addEventCallback<DocsAwarenessStateChangeData>((data) => {
@@ -18,7 +18,7 @@ export function DocumentActiveUsers({ className }: { className?: string }) {
         }
       }
       const deduped = data.states.filter((state, index, self) => {
-        return self.findIndex((t) => t.awarenessData.userId === state.awarenessData.userId) === index
+        return self.findIndex((t) => t.awarenessData?.userId === state.awarenessData?.userId) === index
       })
       setStates(deduped)
     }, DocAwarenessEvent.AwarenessStateChange)
