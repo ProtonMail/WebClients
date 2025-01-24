@@ -10,7 +10,15 @@ import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
-import { getLocalID, isAccountLogin, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
+import {
+    getLocalID,
+    isAccountLogin,
+    isAccountSwitch,
+    isHomePage,
+    isHostAllowed,
+    isSameURL,
+    trimLocalID,
+} from "../urls/urlTests";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
@@ -245,12 +253,10 @@ async function updateLocalID(urlString: string) {
     return url.toString();
 }
 
-export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "") {
+export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     if (!mainWindow || mainWindow.isDestroyed()) {
         return;
     }
-
-    const url = targetURL ? await updateLocalID(targetURL) : targetURL;
 
     const view = browserViewMap[viewID]!;
     updateViewBounds(view, viewID);
@@ -298,6 +304,11 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
     const view = browserViewMap[viewID]!;
     const viewURL = await getViewURL(viewID);
 
+    const currentLocalID = getLocalID(viewURL);
+    const targetLocalID = getLocalID(url);
+
+    const isAccountSwitching = isHomePage(url) && currentLocalID !== targetLocalID;
+
     // NOTE isSameURL will ignore `#mailto` arguments, but we want to load even if it's
     // same. In some cases this might cause a view reload.
     if (urlHasMailto(url)) {
@@ -308,7 +319,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
             );
             await view.webContents.loadURL(defURL);
         }
-    } else if (isSameURL(viewURL, url) && !force) {
+    } else if (!isAccountSwitching && isSameURL(viewURL, url) && !force) {
         viewLogger(viewID).info("loadURL already in given url", url);
         return;
     }
