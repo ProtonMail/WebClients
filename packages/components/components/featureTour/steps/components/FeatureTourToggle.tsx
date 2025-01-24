@@ -1,4 +1,4 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -34,9 +34,8 @@ const FeatureTourToggle = ({
             </Label>
             <div className="mr-4">
                 {isFeatureEnabled ? (
-                    <div className="rounded-sm color-white bg-success px-1.5 py-0.5 text-sm text-uppercase text-bold">{c(
-                        'Info'
-                    ).t`Active`}</div>
+                    <div className="rounded-sm bg-success px-1.5 py-0.5 text-sm text-uppercase text-bold">{c('Info')
+                        .t`Active`}</div>
                 ) : (
                     <Toggle id={id} checked={checked} onClick={onToggle} className="block" />
                 )}

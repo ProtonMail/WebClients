@@ -1,4 +1,6 @@
 import type { FeatureTourStep, FeatureTourStepId } from '@proton/components/components/featureTour/interface';
+import StepDot from '@proton/components/components/stepDot/StepDot';
+import StepDots from '@proton/components/components/stepDots/StepDots';
 
 export interface FeatureTourStepBulletProps {
     steps: FeatureTourStep[];
@@ -6,17 +8,11 @@ export interface FeatureTourStepBulletProps {
 }
 
 const FeatureTourStepBullets = ({ steps, onClick }: FeatureTourStepBulletProps) => (
-    <div className="flex justify-center">
+    <StepDots ulClassName="m-0" className="text-center">
         {steps.map(({ id, isActive }) => (
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-            <div
-                key={id}
-                data-testid={`step-bullet-${id}`}
-                className={`w-2 h-2 rounded-full mx-1 ${isActive ? 'bg-primary' : 'bg-weak'}`}
-                onClick={() => onClick(id)}
-            />
+            <StepDot key={id} active={isActive} data-testid={`step-bullet-${id}`} onClick={() => onClick(id)} />
         ))}
-    </div>
+    </StepDots>
 );
 
 export default FeatureTourStepBullets;
