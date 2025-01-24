@@ -13,7 +13,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import FeaturesTourDrawerButton from '../../components/drawer/FeaturesTourDrawerButton';
+import FeatureTourDrawerButton from 'proton-mail/components/drawer/FeatureTourDrawerButton';
 
 const useMailDrawer = () => {
     const { appInView, showDrawerSidebar } = useDrawer();
@@ -27,7 +27,7 @@ const useMailDrawer = () => {
         <CalendarDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)} />,
         canShowWalletRightSidebarLink && !isElectronApp && <WalletDrawerAppButton />,
         <SecurityCenterDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.SECURITY_CENTER, appInView)} />,
-        canShowFeatureTourDrawerButton && <FeaturesTourDrawerButton />,
+        canShowFeatureTourDrawerButton && <FeatureTourDrawerButton />,
     ].filter(isTruthy);
 
     return { drawerSidebarButtons, showDrawerSidebar };
