@@ -6,7 +6,6 @@ import { PASS_ANDROID_URL, PASS_DOWNLOAD_URL, PASS_IOS_URL, PASS_WEB_APP_URL } f
 import { PLANS } from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isMobile } from '@proton/shared/lib/helpers/browser';
-import { preloadImage } from '@proton/shared/lib/helpers/image';
 import logoPass from '@proton/styles/assets/img/onboarding/feature_tour-logo-pass.svg';
 import passAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-pass-background.svg';
 
@@ -19,7 +18,7 @@ export const shouldDisplayProtonPassTourStep: ShouldDisplayTourStep = async (dis
     const [organization] = await Promise.all([dispatch(organizationThunk())]);
     return {
         canDisplay: [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName),
-        preloadIllustration: () => preloadImage(passAppBackground),
+        preloadUrls: [logoPass, passAppBackground],
     };
 };
 
@@ -66,6 +65,7 @@ const ProtonPassTourStep = (props: FeatureTourStepProps) => {
                 </FeatureTourStepCTA>
             }
         >
+            {/* translator: complete sentence: Proton Pass allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on iOS, Android and in your browser. */}
             <p className="m-0">{c('Info')
                 .jt`${PASS_APP_NAME} allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ios}, ${android} and in your ${browser}.`}</p>
         </FeatureTourStepsContent>
