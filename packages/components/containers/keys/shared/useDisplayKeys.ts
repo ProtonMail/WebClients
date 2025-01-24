@@ -46,7 +46,7 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                         (await CryptoProxy.importPublicKey({ armoredKey: Key.PrivateKey }));
                     return {
                         Key,
-                        fingerprint: maybePrivateKey?.getFingerprint() || '',
+                        fingerprint: maybePrivateKey.getFingerprint(),
                         algorithmInfos: [
                             maybePrivateKey.getAlgorithmInfo(),
                             ...maybePrivateKey.subkeys.map((key) => key.getAlgorithmInfo()),
@@ -54,9 +54,7 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                         isDecrypted: maybePrivateKey.isPrivate(),
                         isWeak: maybePrivateKey.isWeak(),
                         isE2EEForwardingKey: await CryptoProxy.isE2EEForwardingKey({ key: maybePrivateKey }),
-                        // if this operation is too slow and affects UX, we could consider precomputing sha256Fingerprints on key import,
-                        // including the value in KeyReferences.
-                        sha256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: maybePrivateKey }),
+                        sha256Fingerprints: maybePrivateKey.getSHA256Fingerprints(),
                     };
                 })
             );
