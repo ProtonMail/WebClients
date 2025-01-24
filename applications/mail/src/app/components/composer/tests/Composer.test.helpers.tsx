@@ -142,7 +142,6 @@ export const send = async (findByTestId: Parameters<typeof clickSend>[0]) => {
 
         return await clickSend(findByTestId);
     } catch (error: any) {
-        console.log('Error in sending helper', error);
         throw error;
     }
 };

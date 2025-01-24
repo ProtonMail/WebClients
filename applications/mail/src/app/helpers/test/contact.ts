@@ -24,7 +24,6 @@ const addApiContactMock = () => {
             const contactMock = apiContacts.get(email) as ContactMock;
             return { ContactEmails: [{ ContactID: contactMock.contactID }] as ContactEmail[] };
         }
-        // console.log('api contact email', args, email);
         return {};
     });
 };

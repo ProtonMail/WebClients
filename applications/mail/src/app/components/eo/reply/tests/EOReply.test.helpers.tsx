@@ -43,7 +43,6 @@ export const send = async () => {
 
         return { sendRequest: await clickSend(renderResult), renderResult };
     } catch (error: any) {
-        console.log('Error in sending helper', error);
         throw error;
     }
 };

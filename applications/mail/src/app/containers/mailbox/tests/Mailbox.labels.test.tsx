@@ -1,5 +1,4 @@
-import type { Matcher } from '@testing-library/react';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -54,11 +53,11 @@ describe('Mailbox labels actions', () => {
     beforeEach(clearAll);
 
     describe('labels action', () => {
-        const useLabelDropdown = (getByTestId: (text: Matcher) => HTMLElement, labelsToClick: string[]) => {
-            const labelDropdownButton = getByTestId('toolbar:labelas');
+        const useLabelDropdown = (labelsToClick: string[]) => {
+            const labelDropdownButton = screen.getByTestId('toolbar:labelas');
             fireEvent.click(labelDropdownButton);
 
-            const labelDropdownList = getByTestId('label-dropdown-list');
+            const labelDropdownList = screen.getByTestId('label-dropdown-list');
 
             labelsToClick.forEach((labelToClick) => {
                 const labelCheckbox = labelDropdownList.querySelector(`[id$=${labelToClick}]`);
@@ -67,7 +66,7 @@ describe('Mailbox labels actions', () => {
                 }
             });
 
-            const labelDropdownApply = getByTestId('label-dropdown:apply');
+            const labelDropdownApply = screen.getByTestId('label-dropdown:apply');
             fireEvent.click(labelDropdownApply);
         };
 
@@ -95,13 +94,13 @@ describe('Mailbox labels actions', () => {
             const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
+            const { getItems } = await setup({ conversations, labelID: label1.ID });
 
-            const checkboxes = getAllByTestId('item-checkbox');
+            const checkboxes = screen.getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
             fireEvent.click(checkboxes[1]);
 
-            useLabelDropdown(getByTestId, [label3.ID]);
+            useLabelDropdown([label3.ID]);
 
             await waitForSpyCall({ spy: labelRequestSpy });
 
@@ -125,13 +124,13 @@ describe('Mailbox labels actions', () => {
             const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/unlabel`, labelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
+            const { getItems } = await setup({ conversations, labelID: label1.ID });
 
-            const checkboxes = getAllByTestId('item-checkbox');
+            const checkboxes = screen.getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[1]);
             fireEvent.click(checkboxes[2]);
 
-            useLabelDropdown(getByTestId, [label2.ID]);
+            useLabelDropdown([label2.ID]);
 
             await waitForSpyCall({ spy: labelRequestSpy });
 
@@ -157,12 +156,12 @@ describe('Mailbox labels actions', () => {
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
             addApiMock(`mail/v4/conversations/unlabel`, unlabelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
+            const { getItems } = await setup({ conversations, labelID: label1.ID });
 
-            const checkboxes = getAllByTestId('item-checkbox');
+            const checkboxes = screen.getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
 
-            useLabelDropdown(getByTestId, [label2.ID, label3.ID]);
+            useLabelDropdown([label2.ID, label3.ID]);
 
             await waitForSpyCall({ spy: labelRequestSpy });
             await waitForSpyCall({ spy: unlabelRequestSpy });
@@ -185,18 +184,18 @@ describe('Mailbox labels actions', () => {
     });
 
     describe('folders action', () => {
-        const useMoveDropdown = (getByTestId: (text: Matcher) => HTMLElement, folderID: string) => {
-            const moveDropdownButton = getByTestId('toolbar:moveto');
+        const useMoveDropdown = (folderID: string) => {
+            const moveDropdownButton = screen.getByTestId('toolbar:moveto');
             fireEvent.click(moveDropdownButton);
 
-            const moveDropdownList = getByTestId('move-dropdown-list');
+            const moveDropdownList = screen.getByTestId('move-dropdown-list');
 
             const folderButton = moveDropdownList.querySelector(`[id$=${folderID}]`);
             if (folderButton) {
                 fireEvent.click(folderButton);
             }
 
-            const moveDropdownApply = getByTestId('move-dropdown:apply');
+            const moveDropdownApply = screen.getByTestId('move-dropdown:apply');
             fireEvent.click(moveDropdownApply);
         };
 
@@ -204,18 +203,18 @@ describe('Mailbox labels actions', () => {
             const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId, getItems, store } = await setup({
+            const { getItems, store } = await setup({
                 conversations,
                 labelID: folder1.ID,
             });
 
-            const checkboxes = getAllByTestId('item-checkbox');
+            const checkboxes = screen.getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
             fireEvent.click(checkboxes[1]);
 
             addApiMock('mail/v4/conversations', () => ({ Total: 1, Conversations: [conversation3] }));
 
-            useMoveDropdown(getByTestId, folder2.ID);
+            useMoveDropdown(folder2.ID);
 
             await sendEvent(store, { ConversationCounts: [{ LabelID: folder1.ID, Total: 1, Unread: 0 }] });
 
@@ -231,7 +230,7 @@ describe('Mailbox labels actions', () => {
             const emptyRequestSpy = jest.fn();
             addApiMock(`mail/v4/messages/empty`, emptyRequestSpy, 'delete');
 
-            const { getByTestId, getItems, findByTestId, queryAllByTestId } = await setup({
+            const { getItems } = await setup({
                 conversations,
                 labelID: folder1.ID,
             });
@@ -241,40 +240,32 @@ describe('Mailbox labels actions', () => {
 
             addApiMock('mail/v4/conversations', () => ({ Total: 0, Conversations: [] }));
 
-            const moreDropdown = getByTestId('toolbar:more-dropdown');
+            const moreDropdown = screen.getByTestId('toolbar:more-dropdown');
             fireEvent.click(moreDropdown);
 
-            const emptyButton = await findByTestId('toolbar:more-empty');
+            const emptyButton = await screen.findByTestId('toolbar:more-empty');
             fireEvent.click(emptyButton);
 
-            const confirmButton = await findByTestId('confirm-empty-folder');
+            const confirmButton = await screen.findByTestId('confirm-empty-folder');
             fireEvent.click(confirmButton);
 
             await waitForSpyCall({ spy: emptyRequestSpy });
 
-            items = queryAllByTestId('message-item', { exact: false });
+            items = screen.queryAllByTestId('message-item', { exact: false });
             expect(items.length).toBe(0);
         });
     });
 
     describe('delete elements', () => {
-        const deleteFirstTwo = async ({
-            getAllByTestId,
-            getByTestId,
-            deleteRequestSpy,
-        }: {
-            getAllByTestId: (text: Matcher) => HTMLElement[];
-            getByTestId: (text: Matcher) => HTMLElement;
-            deleteRequestSpy: jest.Mock;
-        }) => {
-            const checkboxes = getAllByTestId('item-checkbox');
+        const deleteFirstTwo = async ({ deleteRequestSpy }: { deleteRequestSpy: jest.Mock }) => {
+            const checkboxes = screen.getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
             fireEvent.click(checkboxes[1]);
 
-            const deleteButton = getByTestId('toolbar:deletepermanently');
+            const deleteButton = screen.getByTestId('toolbar:deletepermanently');
             fireEvent.click(deleteButton);
 
-            const submitButton = getByTestId('permanent-delete-modal:submit');
+            const submitButton = screen.getByTestId('permanent-delete-modal:submit');
             fireEvent.click(submitButton);
 
             await waitForSpyCall({ spy: deleteRequestSpy });
@@ -291,14 +282,14 @@ describe('Mailbox labels actions', () => {
                 };
             });
 
-            const { getAllByTestId, getByTestId, getItems } = await setup({
+            const { getItems } = await setup({
                 conversations: trashedConversations,
                 labelID: MAILBOX_LABEL_IDS.TRASH,
             });
 
             addApiMock('mail/v4/conversations', () => ({ Total: 1, Conversations: [trashedConversations[2]] }));
 
-            await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
+            await deleteFirstTwo({ deleteRequestSpy });
 
             const items = getItems();
             expect(items.length).toBe(1);
@@ -312,7 +303,7 @@ describe('Mailbox labels actions', () => {
                 return { ...conversation, ConversationID: 'id', LabelIDs: [MAILBOX_LABEL_IDS.TRASH] };
             });
 
-            const { getByTestId, getAllByTestId, getItems } = await setup({
+            const { getItems } = await setup({
                 mailSettings: { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.SINGLE } as MailSettings,
                 messages: trashedMessages,
                 labelID: MAILBOX_LABEL_IDS.TRASH,
@@ -320,7 +311,7 @@ describe('Mailbox labels actions', () => {
 
             addApiMock('mail/v4/messages', () => ({ Total: 1, Messages: [trashedMessages[2]] }));
 
-            await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
+            await deleteFirstTwo({ deleteRequestSpy });
 
             const items = getItems();
             expect(items.length).toBe(1);
@@ -339,12 +330,12 @@ describe('Mailbox labels actions', () => {
                 };
             });
 
-            const { getByTestId, getAllByTestId, getItems } = await setup({
+            const { getItems } = await setup({
                 conversations: trashedConversations,
                 labelID: MAILBOX_LABEL_IDS.TRASH,
             });
 
-            await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
+            await deleteFirstTwo({ deleteRequestSpy });
 
             const items = getItems();
             expect(items.length).toBe(3);
