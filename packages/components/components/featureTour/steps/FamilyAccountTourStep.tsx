@@ -5,7 +5,6 @@ import { userThunk } from '@proton/account/user';
 import { ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { PLANS } from '@proton/payments';
-import { preloadImage } from '@proton/shared/lib/helpers/image';
 import familyPlanBackground from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
@@ -16,7 +15,7 @@ export const shouldDisplayFamilyAccountTourStep: ShouldDisplayTourStep = async (
     const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
     return {
         canDisplay: user.isAdmin && organization.PlanName === PLANS.FAMILY && organization.UsedMembers <= 1,
-        preloadIllustration: () => preloadImage(familyPlanBackground),
+        preloadUrls: [familyPlanBackground],
     };
 };
 

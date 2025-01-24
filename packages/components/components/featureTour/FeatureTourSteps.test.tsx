@@ -109,7 +109,7 @@ describe('FeatureTourSteps', () => {
         // Mock one step to not be displayed
         jest.mocked(FEATURE_TOUR_STEPS_MAP['auto-delete'].shouldDisplay).mockResolvedValue({
             canDisplay: false,
-            preloadIllustration: () => Promise.resolve(),
+            preloadUrls: [],
         });
 
         renderComponent();

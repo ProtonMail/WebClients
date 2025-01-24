@@ -7,7 +7,6 @@ import useToggle from '@proton/components/hooks/useToggle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
-import { preloadImage } from '@proton/shared/lib/helpers/image';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import { DARK_WEB_MONITORING_STATE, type UserSettings } from '@proton/shared/lib/interfaces';
 import darkWebMonitoringIllustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
@@ -17,12 +16,10 @@ import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 import FeatureTourToggle from './components/FeatureTourToggle';
 
-export const shouldDisplayDarkWebMonitoringTourStep: ShouldDisplayTourStep = async () => {
-    return {
-        canDisplay: true,
-        preloadIllustration: () => preloadImage(darkWebMonitoringIllustration),
-    };
-};
+export const shouldDisplayDarkWebMonitoringTourStep: ShouldDisplayTourStep = async () => ({
+    canDisplay: true,
+    preloadUrls: [darkWebMonitoringIllustration],
+});
 
 const DarkWebMonitoringTourStep = (props: FeatureTourStepProps) => {
     const api = useApi();

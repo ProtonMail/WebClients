@@ -5,7 +5,6 @@ import { ButtonLike, Href } from '@proton/atoms';
 import { PLANS } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isLinux, isMac, isMobile } from '@proton/shared/lib/helpers/browser';
-import { preloadImage } from '@proton/shared/lib/helpers/image';
 import {
     VPN_ANDROID_URL,
     VPN_APPLE_TV_URL,
@@ -28,7 +27,7 @@ export const shouldDisplayProtonVPNTourStep: ShouldDisplayTourStep = async (disp
     const [organization] = await Promise.all([dispatch(organizationThunk())]);
     return {
         canDisplay: [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName),
-        preloadIllustration: () => preloadImage(vpnAppBackground),
+        preloadUrls: [logoVpn, vpnAppBackground],
     };
 };
 
@@ -76,6 +75,7 @@ const ProtonVPNTourStep = (props: FeatureTourStepProps) => {
                 </FeatureTourStepCTA>
             }
         >
+            {/* translator: complete sentence: Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on iOS, Android, Apple TV and Desktop. */}
             <p className="m-0">{c('Info')
                 .jt`Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ios}, ${android}, ${appleTV}, and ${desktop}.`}</p>
         </FeatureTourStepsContent>
