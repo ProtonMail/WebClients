@@ -100,7 +100,7 @@ export const createSharesChannel = (api: Api) =>
  * channels to start polling for this new share's events */
 function* onNewShare(api: Api, options: RootSagaOptions) {
     yield takeEvery(vaultCreationSuccess.match, function* ({ payload: { share } }) {
-        yield all(getShareChannelForks(api, options)(share));
+        yield getShareChannelForks(api, options)(share);
     });
 }
 
