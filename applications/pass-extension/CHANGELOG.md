@@ -1,3 +1,11 @@
+### Version 1.29.0
+
+- Add support for item sharing
+- Revamp vault sharing
+- Fix SSO specific authentication flow
+- Fix autosave prompt for read-only vaults/items
+- Fix advanced alias management copy
+
 ### Version 1.28.0
 
 - Improve react app performance
