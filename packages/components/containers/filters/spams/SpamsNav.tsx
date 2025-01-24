@@ -23,14 +23,15 @@ const SpamFiltersNav = ({ selected, onChange }: Props) => (
         {getNav().map(([type, getName]) => (
             <li
                 key={type}
-                onClick={() => onChange(type)}
                 className={clsx([
-                    'cursor-pointer inline-block border-bottom padding p-4 text-center',
+                    'relative inline-block border-bottom padding p-4 text-center',
                     selected !== type && 'color-weak',
                     selected === type && 'border-primary text-bold color-norm',
                 ])}
             >
-                {getName()}
+                <button type="button" className="expand-click-area" onClick={() => onChange(type)}>
+                    {getName()}
+                </button>
             </li>
         ))}
     </ul>
