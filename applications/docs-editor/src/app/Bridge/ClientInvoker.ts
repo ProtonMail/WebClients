@@ -10,9 +10,9 @@ import type {
   RtsMessagePayload,
   BroadcastSource,
   SuggestionSummaryType,
+  SafeDocsUserState,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
-import type { UserState } from '@lexical/yjs'
 import { GenerateUUID } from '@proton/docs-shared'
 import type { ErrorInfo } from 'react'
 import type { WordCountInfoCollection } from '@proton/docs-shared'
@@ -107,7 +107,7 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('markThreadAsRead', [id])
   }
 
-  async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
+  async handleAwarenessStateUpdate(states: SafeDocsUserState[]): Promise<void> {
     return this.invokeClientMethod('handleAwarenessStateUpdate', [states])
   }
 
