@@ -1,0 +1,20 @@
+.pass-spotlight-gradient {
+	// All colors are hardcoded because this component is not themable
+	background: radial-gradient(51.04% 51.04% at 85.42% 18.75%, #9251eb 0%, #5b53ed 100%);
+
+	&--text {
+		color: white;
+	}
+
+	&--button {
+		background-color: white;
+
+		--button-default-text-color: black;
+		--button-hover-text-color: black;
+		--button-hover-background-color: rgb(255 255 255 / 0.5);
+	}
+
+	&--close-icon {
+		color: white !important;
+	}
+}

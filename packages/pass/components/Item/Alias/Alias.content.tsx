@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import spotlightBackground from '@proton/pass/assets/alias/alias-contact-spotlight.svg';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { AliasSLNoteLabel } from '@proton/pass/components/Item/Alias/AliasSLNoteLabel';
 import { AliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContacts';
+import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGradient';
+import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
@@ -18,6 +21,7 @@ import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails, selectAliasMailboxes } from '@proton/pass/store/selectors';
+import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 import { AliasStatusToggle } from './AliasStatusToggle';
@@ -146,6 +150,26 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     <FieldsetCluster mode="read" as="div">
                         <AliasContacts shareId={shareId} itemId={itemId} />
                     </FieldsetCluster>
+                    {
+                        <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_CONTACT}>
+                            {({ closeAndAcknowledge }) => (
+                                <SpotlightGradient
+                                    title={c('Title').t`Did you know?`}
+                                    message={
+                                        <span className="flex mr-8">
+                                            {c('Info')
+                                                .t`Every time your alias receives an email from someone, a new contact is automatically created.`}
+                                        </span>
+                                    }
+                                    className="mb-2"
+                                    onClose={closeAndAcknowledge}
+                                    style={{
+                                        background: `url('${spotlightBackground}') no-repeat right top, radial-gradient(51.04% 51.04% at 85.42% 18.75%, #9251eb 0%, #5b53ed 100%)`,
+                                    }}
+                                />
+                            )}
+                        </WithSpotlight>
+                    }
                     <div className="color-weak mb-4">{c('Info')
                         .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
 
