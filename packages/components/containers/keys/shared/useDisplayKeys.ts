@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { AlgorithmInfo, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
-import { getParsedSignedKeyList, getSignedKeyListMap } from '@proton/shared/lib/keys';
+import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { getDisplayKey } from './getDisplayKey';
 
@@ -22,6 +22,7 @@ interface ParsedKey {
     isDecrypted: boolean;
     isWeak: boolean;
     isE2EEForwardingKey: boolean;
+    sha256Fingerprints: string[];
 }
 
 const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props) => {
@@ -45,7 +46,7 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                         (await CryptoProxy.importPublicKey({ armoredKey: Key.PrivateKey }));
                     return {
                         Key,
-                        fingerprint: maybePrivateKey?.getFingerprint() || '',
+                        fingerprint: maybePrivateKey.getFingerprint(),
                         algorithmInfos: [
                             maybePrivateKey.getAlgorithmInfo(),
                             ...maybePrivateKey.subkeys.map((key) => key.getAlgorithmInfo()),
@@ -53,6 +54,7 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                         isDecrypted: maybePrivateKey.isPrivate(),
                         isWeak: maybePrivateKey.isWeak(),
                         isE2EEForwardingKey: await CryptoProxy.isE2EEForwardingKey({ key: maybePrivateKey }),
+                        sha256Fingerprints: maybePrivateKey.getSHA256Fingerprints(),
                     };
                 })
             );
@@ -72,7 +74,10 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
     }, [maybeKeys]);
 
     return useMemo(() => {
-        const signedKeyListMap = getSignedKeyListMap(getParsedSignedKeyList(Address?.SignedKeyList?.Data));
+        const parsedSignedKeyList = new ParsedSignedKeyList(Address?.SignedKeyList?.Data);
+        const signedKeyListMap = parsedSignedKeyList.mapAddressKeysToSKLItems(
+            state.map(({ Key: { ID }, sha256Fingerprints }) => ({ ID, sha256Fingerprints }))
+        );
         return state.map((data) => {
             return getDisplayKey({
                 User,
