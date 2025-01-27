@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
+import { memberThunk, organizationThunk, subscriptionThunk, useUserSettings, userThunk } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms';
 import {
@@ -17,11 +17,18 @@ import {
     useShortDomainAddress,
 } from '@proton/components';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
+import { PLANS } from '@proton/payments';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import {
+    getIsB2BAudienceFromPlan,
+    getIsB2BAudienceFromSubscription,
+    hasVisionary,
+    isTrial,
+} from '@proton/shared/lib/helpers/subscription';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import aliasesIcon from '@proton/styles/assets/img/onboarding/mail_onboarding_aliases.svg';
@@ -31,6 +38,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
 type FeatureID = 'aliases' | 'monitoring' | 'autoDelete';
@@ -100,6 +108,40 @@ const FeatureItem = ({ checked, description, icon, id, isActivated, onToggle, ti
             )}
         </div>
     );
+};
+
+export const isActivatePremiumFeaturesStepEligible: OnboardingStepEligibleCallback = async (dispatch) => {
+    const [user, subscription, organization, member] = await Promise.all([
+        dispatch(userThunk()),
+        dispatch(subscriptionThunk()),
+        dispatch(organizationThunk()),
+        dispatch(memberThunk()),
+    ]);
+
+    let canDisplayPremiumFeaturesStep = false;
+    const isUserWithB2BPlan = getIsB2BAudienceFromSubscription(subscription);
+    const isSubUserWithB2BPlan = organization && getIsB2BAudienceFromPlan(organization.PlanName);
+    const isVisionarySubUser = (() => {
+        const isMainAdmin = member?.Subscriber === MEMBER_SUBSCRIBER.PAYER;
+        if (isMainAdmin) {
+            return false;
+        }
+
+        return (organization && organization.PlanName === PLANS.VISIONARY) || hasVisionary(subscription);
+    })();
+
+    const isMailPaidPlan = isTrial(subscription, PLANS.MAIL) || user.hasPaidMail;
+
+    if (isUserWithB2BPlan || isSubUserWithB2BPlan || isVisionarySubUser) {
+        canDisplayPremiumFeaturesStep = false;
+    } else if (isMailPaidPlan) {
+        canDisplayPremiumFeaturesStep = true;
+    }
+
+    return {
+        canDisplay: canDisplayPremiumFeaturesStep,
+        preload: [aliasesIcon, autoDeleteIcon, monitoringIcon],
+    };
 };
 
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {

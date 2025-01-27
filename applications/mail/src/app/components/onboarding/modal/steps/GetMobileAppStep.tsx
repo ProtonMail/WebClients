@@ -15,6 +15,15 @@ import clsx from '@proton/utils/clsx';
 
 import OnboardingContent from 'proton-mail/components/onboarding/modal/layout/OnboardingContent';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
+
+export const isGetMobileAppStepEligible: OnboardingStepEligibleCallback = async () => {
+    return {
+        canDisplay: true,
+        preload: [mobileAppImg1x, mobileAppImg2x],
+    };
+};
+
 const GetMobileAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const { viewportWidth } = useActiveBreakpoint();
 
