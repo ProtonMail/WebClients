@@ -11,6 +11,7 @@ export {
     type FullBillingAddress,
 } from './core/billing-address';
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
+export { getCheckoutModifiers, type CheckoutModifiers } from './core/checkout-modifiers';
 export {
     ADDON_NAMES,
     ADDON_PREFIXES,

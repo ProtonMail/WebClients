@@ -33,7 +33,12 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
-import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import {
+    type Api,
+    ChargebeeEnabled,
+    type SubscriptionCheckResponse,
+    SubscriptionMode,
+} from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
@@ -450,6 +455,7 @@ export const usePaymentsApiWithCheckFallback = () => {
             AmountDue: amount,
             Coupon: null,
             PeriodEnd: Math.floor(+addMonths(new Date(), Cycle) / 1000),
+            SubscriptionMode: SubscriptionMode.Regular,
             __fallback: true,
         };
 
