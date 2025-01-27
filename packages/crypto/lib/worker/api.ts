@@ -646,6 +646,7 @@ export class Api extends KeyManagementApi {
 
         const serialisedResult = {
             ...decryptionResultWithoutSignatures,
+            // TODO once more apps opt-into v6-PQC support: consider returning a single signature by concatenating the serialized ones.
             signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
         };
 

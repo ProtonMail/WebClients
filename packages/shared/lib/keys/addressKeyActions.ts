@@ -1,23 +1,17 @@
 import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
-import type {
-    ActiveKeyWithVersion} from '../interfaces';
-import {
-    type Address,
-    type Api,
-    type DecryptedKey,
-    type KeyTransparencyVerify,
-} from '../interfaces';
+import type { ActiveKeyWithVersion, DecryptedAddressKey } from '../interfaces';
+import { type Address, type Api, type KeyTransparencyVerify } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 export const setPrimaryAddressKey = async (
     api: Api,
     address: Address,
-    keys: DecryptedKey[],
+    keys: DecryptedAddressKey[],
     ID: string,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => ID === otherID);
     const oldActiveKeyV6 = oldActiveKeyV4 ? undefined : activeKeys.v6.find(({ ID: otherID }) => ID === otherID);
 
@@ -54,11 +48,11 @@ export const setPrimaryAddressKey = async (
 export const deleteAddressKey = async (
     api: Api,
     address: Address,
-    keys: DecryptedKey[],
+    keys: DecryptedAddressKey[],
     ID: string,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => ID === otherID);
     const oldActiveKeyV6 = oldActiveKeyV4 ? undefined : activeKeys.v6.find(({ ID: otherID }) => ID === otherID);
 
@@ -81,12 +75,12 @@ export const deleteAddressKey = async (
 export const setAddressKeyFlags = async (
     api: Api,
     address: Address,
-    keys: DecryptedKey[],
+    keys: DecryptedAddressKey[],
     ID: string,
     flags: number,
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => {
         if (activeKey.ID === ID) {
             return {

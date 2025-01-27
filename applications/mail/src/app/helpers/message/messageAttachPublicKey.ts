@@ -39,7 +39,8 @@ const fileFromKeyInfo = (message: MessageState, { publicKeyArmored, fingerprint 
 export const attachPublicKey = async (message: MessageStateWithData, messageKeys: PublicPrivateKey, uid: string) => {
     const attachments = message.data?.Attachments || [];
 
-    const privateKey = messageKeys.privateKeys?.[0];
+    // we always attach the v4 key, since the v6-PQC one is not standardized (TODO update logic to attach the v6 key if it's standardized)
+    const privateKey = messageKeys.signingKeys[0];
     const info = {
         fingerprint: privateKey.getFingerprint(),
         publicKeyArmored: await CryptoProxy.exportPublicKey({ key: privateKey }),

@@ -11,7 +11,7 @@ import { MEMBER_PRIVATE } from '../constants';
 import type {
     Api,
     CachedOrganizationKey,
-    DecryptedKey,
+    DecryptedAddressKey,
     KeyGenConfig,
     KeyPair,
     KeyTransparencyVerify,
@@ -191,7 +191,7 @@ interface CreateMemberAddressKeysLegacyArguments {
     api: Api;
     member: tsMember;
     memberAddress: tsAddress;
-    memberAddressKeys: DecryptedKey[];
+    memberAddressKeys: DecryptedAddressKey[];
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
     keyGenConfig: KeyGenConfig;
@@ -216,12 +216,7 @@ export const createMemberAddressKeysLegacy = async ({
             keyGenConfig,
         });
 
-    const activeKeys = await getActiveAddressKeys(
-        memberAddress,
-        memberAddress.SignedKeyList,
-        memberAddress.Keys,
-        memberAddressKeys
-    );
+    const activeKeys = await getActiveAddressKeys(memberAddress.SignedKeyList, memberAddressKeys);
     const newActiveKey = await getActiveKeyObject(privateKey, {
         ID: 'tmp',
         primary: getPrimaryFlag(activeKeys.v4),
@@ -263,7 +258,7 @@ interface CreateMemberAddressKeysV2Arguments {
     api: Api;
     member: tsMember;
     memberAddress: tsAddress;
-    memberAddressKeys: DecryptedKey[];
+    memberAddressKeys: DecryptedAddressKey[];
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
     keyGenConfig: KeyGenConfig;
@@ -291,12 +286,7 @@ export const createMemberAddressKeysV2 = async ({
         keyGenConfig,
     });
 
-    const activeKeys = await getActiveAddressKeys(
-        memberAddress,
-        memberAddress.SignedKeyList,
-        memberAddress.Keys,
-        memberAddressKeys
-    );
+    const activeKeys = await getActiveAddressKeys(memberAddress.SignedKeyList, memberAddressKeys);
     const newActiveKey = await getActiveKeyObject(addressPrivateKey, {
         ID: 'tmp',
         primary: getPrimaryFlag(activeKeys.v4),

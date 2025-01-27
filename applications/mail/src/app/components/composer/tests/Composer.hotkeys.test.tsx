@@ -14,6 +14,7 @@ import {
     clearCache,
     createDocument,
     generateKeys,
+    getCompleteAddress,
     minimalCache,
     waitForNotification,
 } from '../../../helpers/test/helper';
@@ -53,12 +54,14 @@ describe('Composer hotkeys', () => {
 
         addApiKeys(false, toAddress, []);
 
+        const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
         const { container, ...rest } = await renderComposer({
             preloadedState: {
                 mailSettings: getModelState({
                     Shortcuts: hasShortcutsEnabled ? SHORTCUTS.ENABLED : SHORTCUTS.DISABLED,
                 } as MailSettings),
-                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                addressKeys: getAddressKeyCache(address, [fromKeys]),
+                addresses: getModelState([address]),
             },
             message: {
                 messageDocument: { document: createDocument('test') },

@@ -6,7 +6,7 @@ import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces
 
 import { addApiMock } from '../../../helpers/test/api';
 import type { GeneratedKey } from '../../../helpers/test/crypto';
-import { generateKeys, getStoredKey } from '../../../helpers/test/crypto';
+import { generateKeys, getStoredUserKey } from '../../../helpers/test/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { clearAll, waitForNotification } from '../../../helpers/test/helper';
 import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
@@ -50,7 +50,7 @@ describe('Trust public key modal', () => {
 
         const { getByText, getByTestId } = await setup(senderKeys, true, {
             preloadedState: {
-                userKeys: getModelState(getStoredKey(receiverKeys)),
+                userKeys: getModelState(getStoredUserKey(receiverKeys)),
             },
         });
 
@@ -83,7 +83,7 @@ describe('Trust public key modal', () => {
 
         const { getByText, getByTestId } = await setup(senderKeys, false, {
             preloadedState: {
-                userKeys: getModelState(getStoredKey(receiverKeys)),
+                userKeys: getModelState(getStoredUserKey(receiverKeys)),
             },
         });
 
@@ -115,7 +115,7 @@ describe('Trust public key modal', () => {
 
         const { getByText, getByTestId } = await setup(senderKeys, false, {
             preloadedState: {
-                userKeys: getModelState(getStoredKey(receiverKeys)),
+                userKeys: getModelState(getStoredUserKey(receiverKeys)),
             },
         });
 
