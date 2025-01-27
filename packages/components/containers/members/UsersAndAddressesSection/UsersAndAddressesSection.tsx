@@ -38,6 +38,7 @@ import {
     getInvitationAcceptLimit,
     getInvitationLimit,
 } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
+import { isB2bPlanSupportingScribe } from '@proton/components/helpers/assistant';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -143,7 +144,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const allowStorageConfiguration = (!hasExternalMemberCapableB2BPlan && !hasPassFamilyPlan) || hasDriveB2BPlan;
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
-    const allowAIAssistantConfiguration = accessToAssistant.enabled;
+    const allowAIAssistantConfiguration = accessToAssistant.enabled && isB2bPlanSupportingScribe(organization, user);
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
