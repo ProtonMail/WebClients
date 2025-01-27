@@ -34,16 +34,16 @@ const ResizeObserverMock = jest.fn(() => ({
     unobserve: jest.fn(),
 }));
 
-const locationMock = {
-    pathname: '/urls/mockpath',
-    hash: '#mockhash',
-    search: '',
-};
-
 describe('SignupFlowModal', () => {
     let assignMock = jest.fn();
     const originalWindowLocation = window.location;
     const originalResizeObserver = window.ResizeObserver;
+    const locationMock = {
+        pathname: '/urls/mockpath',
+        hash: '#mockhash',
+        search: '',
+        assign: assignMock,
+    };
 
     beforeAll(() => {
         Object.defineProperty(window, 'ResizeObserver', {
