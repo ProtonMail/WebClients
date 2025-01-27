@@ -20,7 +20,7 @@ import OnboardingContent from '../layout/OnboardingContent';
 
 const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const { viewportWidth } = useActiveBreakpoint();
-    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
 
     const { desktopAppLink } = useInboxDesktopVersion();
 

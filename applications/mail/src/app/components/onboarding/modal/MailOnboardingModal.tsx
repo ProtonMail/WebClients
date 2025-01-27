@@ -71,7 +71,7 @@ const useUserInfos = () => {
 
 const MailOnboardingModal = (props: MailOnboardingProps) => {
     const { endReplay } = useWelcomeFlags();
-    const [sendMailOnboardingTelemetry, loadingTelemetryDeps] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const { isLoading, canDisplayPremiumFeaturesStep } = useUserInfos();
 
     const displayGetDesktopAppStep = !isMobile() && !isElectronApp;
@@ -82,14 +82,9 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
         props.onDone?.();
     };
 
-    // Specific for Telemetry
     useEffect(() => {
-        if (loadingTelemetryDeps) {
-            return;
-        }
-
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.start_onboarding_modals, {});
-    }, [loadingTelemetryDeps]);
+    }, []);
 
     if (isLoading) {
         return null;
