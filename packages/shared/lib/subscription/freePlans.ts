@@ -1,7 +1,7 @@
 import { type Currency, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '@proton/payments';
 
 import { CYCLE, DEFAULT_CYCLE } from '../constants';
-import type { Cycle, FreePlanDefault, SubscriptionCheckResponse } from '../interfaces';
+import { type Cycle, type FreePlanDefault, type SubscriptionCheckResponse, SubscriptionMode } from '../interfaces';
 
 export const FREE_PLAN: FreePlanDefault = {
     ID: 'free',
@@ -59,5 +59,6 @@ export const getFreeCheckResult = (
         Coupon: null,
         PeriodEnd: 0,
         optimistic: true,
+        SubscriptionMode: SubscriptionMode.Regular,
     };
 };
