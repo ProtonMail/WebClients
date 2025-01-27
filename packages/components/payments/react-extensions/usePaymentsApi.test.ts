@@ -5,7 +5,7 @@ import { PLANS } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
     apiMock,
@@ -217,6 +217,7 @@ describe('usePaymentsApi', () => {
             Currency: 'EUR',
             Cycle: 12,
             PeriodEnd: +addMonths(Date.now(), 1) / 1000,
+            SubscriptionMode: SubscriptionMode.Regular,
         };
 
         const { result } = renderHook(() => usePaymentsApi(undefined, () => fallbackValue), {
