@@ -114,6 +114,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                             }
                             component={PasswordField}
                             autoComplete="new-password"
+                            disabled={disabled}
                         />
                     </>
                 )}
