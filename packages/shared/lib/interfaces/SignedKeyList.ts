@@ -5,6 +5,8 @@ export interface SignedKeyList {
 }
 
 // Metadata of a public key included in the SKL's Data property
+// NB: some old users have duplicate keys (same fingerprints) which result in duplicate,
+// potentially identical SignedKeyListItems.
 export interface SignedKeyListItem {
     Primary: 0 | 1;
     Flags: number;

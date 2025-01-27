@@ -156,7 +156,6 @@ export const CryptoProxy: CryptoProxyInterface = {
     isRevokedKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).isRevokedKey({ ...opts, date }),
     isExpiredKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).isExpiredKey({ ...opts, date }),
     canKeyEncrypt: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).canKeyEncrypt({ ...opts, date }),
-    getSHA256Fingerprints: async (opts) => assertNotNull(endpoint).getSHA256Fingerprints(opts),
     computeHash: async (opts) => assertNotNull(endpoint).computeHash(opts),
     computeHashStream: async (opts) => assertNotNull(endpoint).computeHashStream(opts),
     computeArgon2: (opts) => assertNotNull(endpoint).computeArgon2(opts),

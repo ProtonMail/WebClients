@@ -189,7 +189,6 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         isExpiredKey: (opts) => getWorker().isExpiredKey(opts).catch(errorReporter),
         isRevokedKey: (opts) => getWorker().isRevokedKey(opts).catch(errorReporter),
         canKeyEncrypt: (opts) => getWorker().canKeyEncrypt(opts).catch(errorReporter),
-        getSHA256Fingerprints: (opts) => getWorker().getSHA256Fingerprints(opts),
         getMessageInfo: (opts) => getWorker().getMessageInfo(opts).catch(errorReporter),
         getKeyInfo: (opts) => getWorker().getKeyInfo(opts).catch(errorReporter),
         getSignatureInfo: (opts) => getWorker().getSignatureInfo(opts).catch(errorReporter),

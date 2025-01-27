@@ -17,7 +17,7 @@ interface Arguments {
     isLoading: boolean;
     Key: Key;
     algorithmInfos: AlgorithmInfo[];
-    signedKeyListMap: SimpleMap<SignedKeyListItem>;
+    signedKeyListMap: SimpleMap<SignedKeyListItem | undefined>;
     isWeak: boolean;
     isE2EEForwardingKey: boolean;
 }
@@ -35,12 +35,12 @@ export const getDisplayKey = ({
     isE2EEForwardingKey,
 }: Arguments): KeyDisplay => {
     const { isPrivate, isSelf } = User;
-    const signedKeyListItem = signedKeyListMap[fingerprint];
+    const signedKeyListItem = signedKeyListMap[Key.ID];
 
     const { ID, Flags, Primary, AddressForwardingID, GroupMemberID } = Key;
 
     const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(Address);
-    const primary = signedKeyListItem?.Primary ?? Primary ?? 0;
+    const primary = signedKeyListItem?.Primary ?? Primary;
 
     const isAddressKey = !!Address;
     const isAddressDisabled = Address?.Status === 0;
