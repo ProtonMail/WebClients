@@ -94,7 +94,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                  * in-memory. When refreshing a page, the authentication
                  * store will be re-hydrated. */
                 const session = authStore.getSession();
-                const forceLock = !authStore.validSession(session);
+                const forceLock = !(authStore.validSession(session) && online.current);
                 return authService.init({ forceLock, forcePersist: true });
             }
         };
