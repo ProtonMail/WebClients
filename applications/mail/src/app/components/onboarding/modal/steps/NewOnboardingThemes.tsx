@@ -19,7 +19,7 @@ import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/us
 import OnboardingContent from '../layout/OnboardingContent';
 
 const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
-    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const mobile = isMobile();
     const theme = useTheme();
     const largeSizeProps = getThemeCardSize('large');
