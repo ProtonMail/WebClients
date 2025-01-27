@@ -44,7 +44,7 @@ const OnboardingChecklistSidebar = () => {
 
     const [user] = useUser();
     const [isOpened, toggleChecklist] = useLocalState(true, `sidebar-checklist-opened-${user.ID}`);
-    const [sendOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const { items, changeChecklistDisplay, isChecklistFinished, isUserPaid, expiresAt, createdAt } =
         useGetStartedChecklist();
 
@@ -72,7 +72,7 @@ const OnboardingChecklistSidebar = () => {
                 itemsToCompleteCount={CHECKLIST_ITEMS_TO_COMPLETE.length}
                 onCloseChecklist={() => {
                     changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN);
-                    void sendOnboardingTelemetry(TelemetryMailOnboardingEvents.close_checklist, {
+                    void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.close_checklist, {
                         checklist_step_import_completed: items.has('Import') ? 'yes' : 'no',
                         checklist_step_mobile_app_completed: items.has('MobileApp') ? 'yes' : 'no',
                         checklist_step_privacy_completed: items.has('ProtectInbox') ? 'yes' : 'no',
