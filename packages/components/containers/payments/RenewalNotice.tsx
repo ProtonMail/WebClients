@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Time from '@proton/components/components/time/Time';
+import type { CheckoutModifiers } from '@proton/payments';
 import { type Currency, PLANS, type PlanIDs } from '@proton/payments';
 import { CYCLE, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { type SubscriptionCheckoutData, getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -17,8 +18,6 @@ import {
     isLifetimePlan,
 } from '@proton/shared/lib/helpers/subscription';
 import type { Coupon, PlansMap, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-
-import type { CheckoutModifiers } from './subscription/useCheckoutModifiers';
 
 type RenewalNoticeProps = {
     cycle: number;
@@ -111,16 +110,18 @@ const getRegularRenewalNoticeText = ({
 };
 
 const getSpecialLengthRenewNoticeText = ({
-    cycle,
     planIDs,
     plansMap,
     currency,
+    subscription,
+    ...renewalNoticeProps
 }: {
-    cycle: CYCLE;
     planIDs: PlanIDs;
     plansMap: PlansMap;
     currency: Currency;
-}) => {
+} & RenewalNoticeProps) => {
+    const { cycle } = renewalNoticeProps;
+
     const { renewPrice: renewAmount, renewalLength } = getOptimisticRenewCycleAndPrice({
         planIDs,
         plansMap,
@@ -129,18 +130,43 @@ const getSpecialLengthRenewNoticeText = ({
     });
 
     if (renewalLength === CYCLE.YEARLY) {
-        // translator: typically cycle is 1, 12, or 24 months.
-        const first = c('vpn_2024: renew').ngettext(
-            msgid`Your subscription will automatically renew in ${cycle} month.`,
-            `Your subscription will automatically renew in ${cycle} months.`,
-            cycle
-        );
+        let scheduledChangeText: string | string[] | null = null;
+        if (subscription && renewalNoticeProps.isScheduled) {
+            const renewalTime = (
+                <Time format="P" key="auto-renewal-time">
+                    {subscription.PeriodEnd}
+                </Time>
+            );
+            scheduledChangeText = c('vpn_2024: renew').jt`Your scheduled plan starts on ${renewalTime}.`;
+        }
+
+        const renewLengthText = (() => {
+            if (renewalNoticeProps.isScheduled) {
+                return c('vpn_2024: renew').ngettext(
+                    msgid`Your new subscription will automatically renew in ${cycle} month.`,
+                    `Your new subscription will automatically renew in ${cycle} months.`,
+                    cycle
+                );
+            }
+
+            // translator: typically cycle is 1, 12, or 24 months.
+            return c('vpn_2024: renew').ngettext(
+                msgid`Your subscription will automatically renew in ${cycle} month.`,
+                `Your subscription will automatically renew in ${cycle} months.`,
+                cycle
+            );
+        })();
 
         const renewPrice = getSimplePriceString(currency, renewAmount);
 
-        const second = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
+        const renewPriceText = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
 
-        return [first, ' ', second];
+        let result = [renewLengthText, ' ', renewPriceText];
+        if (scheduledChangeText) {
+            result = [scheduledChangeText, ' ', ...result];
+        }
+
+        return result;
     }
 };
 
@@ -271,6 +297,7 @@ export const getCheckoutRenewNoticeText = ({
             planIDs,
             plansMap,
             currency,
+            ...renewalNoticeProps,
         });
 
         if (specialLengthRenewNotice) {

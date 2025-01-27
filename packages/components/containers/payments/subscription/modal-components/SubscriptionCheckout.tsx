@@ -10,6 +10,7 @@ import Info from '@proton/components/components/link/Info';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
+import type { CheckoutModifiers } from '@proton/payments';
 import {
     type Currency,
     type FullPlansMap,
@@ -43,7 +44,6 @@ import Checkout from '../../Checkout';
 import { getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../helpers';
-import type { CheckoutModifiers } from '../useCheckoutModifiers';
 import { AddonTooltip } from './helpers/AddonTooltip';
 import { BilledCycleText } from './helpers/BilledCycleText';
 import CheckoutRow from './helpers/CheckoutRow';
@@ -105,18 +105,17 @@ const SubscriptionCheckout = ({
     showTaxCountry,
     onBillingAddressChange,
     subscription,
-    isScheduledChargedImmediately,
-    isScheduledChargedLater,
-    isProration,
-    isCustomBilling,
     paymentNeeded,
     paymentMethods,
     user,
-}: Props) => {
+    ...checkoutModifiers
+}: Props & CheckoutModifiers) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    const planIDsForDiscount = isCustomBilling ? planIDsPositiveDifference(getPlanIDs(subscription), planIDs) : planIDs;
+    const planIDsForDiscount = checkoutModifiers.isCustomBilling
+        ? planIDsPositiveDifference(getPlanIDs(subscription), planIDs)
+        : planIDs;
     const { discountPercent } = getCheckout({
         planIDs: planIDsForDiscount,
         plansMap,
@@ -179,11 +178,8 @@ const SubscriptionCheckout = ({
                           checkout,
                           currency,
                           subscription,
-                          isCustomBilling,
-                          isScheduledChargedImmediately,
-                          isScheduledChargedLater,
-                          isProration,
                           coupon: checkResult.Coupon,
+                          ...checkoutModifiers,
                       })
                     : undefined
             }
@@ -274,7 +270,7 @@ const SubscriptionCheckout = ({
                     data-testid="coupon-discount"
                 />
             )}
-            {isProration && proration !== 0 && (
+            {checkoutModifiers.isProration && proration !== 0 && (
                 <CheckoutRow
                     title={
                         <span className="inline-flex items-center">
@@ -307,9 +303,7 @@ const SubscriptionCheckout = ({
                 />
             )}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
-            {(isScheduledChargedImmediately || isScheduledChargedLater) && (
-                <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />
-            )}
+            {checkoutModifiers.isScheduled && <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />}
 
             <div className="mb-4">
                 <hr />

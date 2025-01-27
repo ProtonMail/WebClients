@@ -184,7 +184,7 @@ export interface SubscriptionCheckResponse {
     PeriodEnd: number;
     Taxes?: Tax[];
     TaxInclusive?: TaxInclusive;
-    SubscriptionMode?: SubscriptionMode;
+    SubscriptionMode: SubscriptionMode;
     optimistic?: boolean;
     ProrationMode?: ProrationMode;
 }
