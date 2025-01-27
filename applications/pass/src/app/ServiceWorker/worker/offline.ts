@@ -12,6 +12,7 @@ const OFFLINE_CACHE_KEY = 'Pass::Offline::Cache';
 const OFFLINE_ASSET_MANIFEST = '/assets/offline.json';
 const EXCLUDED_OFFLINE_ASSETS_RE = /(offline|version)\.json/;
 const ASSET_ROUTE = globToRegExp('/assets/*');
+const ONLINE_ONLY_ROUTES = ['/secure-link'];
 
 export const getOfflineCache = async (): Promise<Maybe<Cache>> =>
     getCacheStorage()?.open(OFFLINE_CACHE_KEY).catch(noop);
@@ -23,12 +24,18 @@ export const matchAssetRoute = (pathname: string): boolean => {
     return ASSET_ROUTE.test(pathname);
 };
 
-/** If the browser is online, we avoid matching the index route to ensure
- * that an updated version is served, preventing the delivery of potentially
- * stale files that reference outdated assets. */
-export const matchNavigate = (pathname: string): boolean => {
+/** Conditions for offline private-app handler :
+ * - Offline support must be enabled
+ * - Must be a navigation request to a document
+ * - URL pathname must not match any online-only routes */
+export const matchPrivateAppNavigate = (
+    pathname: string,
+    mode: RequestMode,
+    destination: RequestDestination
+): boolean => {
     if (!OFFLINE_SUPPORTED) return false;
-    return pathname === '/' || pathname.startsWith('/u/');
+    if (mode !== 'navigate' || destination !== 'document') return false;
+    return !ONLINE_ONLY_ROUTES.some((route) => pathname.startsWith(route));
 };
 
 /** Clears the entire offline cache. This should be called whenever a new service

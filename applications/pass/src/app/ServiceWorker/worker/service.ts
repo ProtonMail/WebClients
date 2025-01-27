@@ -8,7 +8,7 @@ import noop from '@proton/utils/noop';
 import { ServiceWorkerMessageBroker } from './channel';
 import { fetchController } from './fetch-controller';
 import { handleImage, matchImageRoute } from './image';
-import { cacheOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchNavigate } from './offline';
+import { cacheOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchPrivateAppNavigate } from './offline';
 import { handlePolling, matchPollingRoute } from './polling';
 import {
     handleLock,
@@ -59,10 +59,10 @@ self.addEventListener('activate', async (event) =>
 );
 
 self.addEventListener('fetch', async (event) => {
-    const { url, mode } = event.request;
+    const { url, mode, destination } = event.request;
     const { pathname } = new URL(url);
 
-    if (mode === 'navigate' && matchNavigate(pathname)) return handleIndex(event);
+    if (matchPrivateAppNavigate(pathname, mode, destination)) return handleIndex(event);
     if (matchLockRoute(pathname)) return handleLock(event);
     if (matchSetLocalKeyRoute(pathname)) return handleSetLocalKey(event);
     if (matchRefreshRoute(pathname)) return handleRefresh(event);
