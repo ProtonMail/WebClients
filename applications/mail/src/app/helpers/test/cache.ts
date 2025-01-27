@@ -26,7 +26,7 @@ export const minimalCache = () => {};
 export const getCompleteAddress = (inputAddress: Partial<Address>) => {
     return {
         ID: 'AddressID',
-        Keys: [{ ID: 'KeyID' } as Key],
+        Keys: [{ ID: 'KeyID', Primary: 1 } as Key],
         Status: ADDRESS_STATUS.STATUS_ENABLED,
         Send: 1,
         Receive: 1,

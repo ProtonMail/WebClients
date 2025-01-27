@@ -339,7 +339,7 @@ export const getESCallbacks = ({
 
                         if (shouldReindex) {
                             const keys = await getMessageKeys(contentMessage);
-                            const decryptionResult = await decryptMessage(contentMessage, keys.privateKeys);
+                            const decryptionResult = await decryptMessage(contentMessage, keys.decryptionKeys);
 
                             let decryptedSubject: string | undefined;
                             let decryptedBody: string | undefined;

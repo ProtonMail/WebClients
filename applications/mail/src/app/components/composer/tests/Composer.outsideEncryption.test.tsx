@@ -2,6 +2,7 @@ import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/r
 import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
@@ -12,6 +13,7 @@ import {
     addApiMock,
     clearAll,
     generateKeys,
+    getCompleteAddress,
     getDropdown,
     render,
     tick,
@@ -44,16 +46,18 @@ describe('Composer outside encryption', () => {
         const fromKeys = await generateKeys('me', fromAddress);
         addApiKeys(false, toAddress, []);
 
-        const result = await render(<Composer {...props} composerID={composerID} />, {
+        const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
+        const view = await render(<Composer {...props} composerID={composerID} />, {
             preloadedState: {
-                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                addressKeys: getAddressKeyCache(address, [fromKeys]),
+                addresses: getModelState([address]),
             },
             onStore: (store) => {
                 prepareMessage(store, message, composerID);
             },
         });
 
-        return result;
+        return view;
     };
 
     it('should set outside encryption and display the expiration banner', async () => {

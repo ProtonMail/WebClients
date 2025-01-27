@@ -49,7 +49,8 @@ export interface DecryptedKey<PrivateKeyReferenceWithVersion extends PrivateKeyR
     ID: string;
 }
 
-export interface DecryptedAddressKey extends KeyPair {
+export interface DecryptedAddressKey<PrivateKeyReferenceWithVersion extends PrivateKeyReference = PrivateKeyReference>
+extends KeyPair<PrivateKeyReferenceWithVersion> {
     ID: string;
     Flags: number;
     Primary: 1 | 0;

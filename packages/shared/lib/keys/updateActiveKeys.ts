@@ -1,6 +1,6 @@
 import type { ActiveAddressKeyPayload } from '../api/keys';
 import { AddressActiveStatus, updateAddressActiveKeysRoute } from '../api/keys';
-import type { ActiveKey, Address, AddressKey, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
+import type { ActiveKey, Address, AddressKey, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getInactiveKeys } from './getInactiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
@@ -10,7 +10,7 @@ import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
  * address key.
  * A key is considered migrated if it has a Token and a Signature associated with it.
  */
-function filterMigratedDecryptedKeys(decryptedKeys: DecryptedKey[], addressKeys: AddressKey[]) {
+function filterMigratedDecryptedKeys(decryptedKeys: DecryptedAddressKey[], addressKeys: AddressKey[]) {
     return decryptedKeys.filter(({ ID }) => {
         const matchingAddressKey = addressKeys.find((addressKey) => ID === addressKey.ID);
         return matchingAddressKey && matchingAddressKey.Token && matchingAddressKey.Signature;
@@ -21,7 +21,7 @@ function filterMigratedDecryptedKeys(decryptedKeys: DecryptedKey[], addressKeys:
  * Checks if there is a mismatch between active keys reported by the server
  * and decrypted keys of the client.
  */
-export const hasActiveKeysMismatch = (address: Address, decryptedKeys: DecryptedKey[]): Boolean => {
+export const hasActiveKeysMismatch = (address: Address, decryptedKeys: DecryptedAddressKey[]): Boolean => {
     if (!decryptedKeys.length || !address.SignedKeyList) {
         // If there are no decrypted keys or no skl, do not update.
         return false;
@@ -39,13 +39,13 @@ export const hasActiveKeysMismatch = (address: Address, decryptedKeys: Decrypted
 export const updateActiveKeys = async (
     api: Api,
     address: Address,
-    decryptedKeys: DecryptedKey[],
+    decryptedKeys: DecryptedAddressKey[],
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
     // Only consider migrated keys as active.
     const migratedDecryptedKeys = filterMigratedDecryptedKeys(decryptedKeys, address.Keys);
     const [activeKeys, inactiveKeys] = await Promise.all([
-        getActiveAddressKeys(address, address.SignedKeyList, address.Keys, migratedDecryptedKeys),
+        getActiveAddressKeys(address.SignedKeyList, migratedDecryptedKeys),
         getInactiveKeys(address.Keys, migratedDecryptedKeys),
     ]);
     const normalizedActiveKeysByVersion = getNormalizedActiveAddressKeys(address, activeKeys);

@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import { addApiMock, clearApiMocks } from '../../../helpers/test/api';
 import { getCompleteAddress } from '../../../helpers/test/cache';
-import { getStoredKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getStoredUserKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
 import { render, tick } from '../../../helpers/test/render';
 import ContactResignModal from './ContactResignModal';
@@ -55,7 +55,7 @@ describe('Contact resign modal', () => {
             </ContactResignModal>,
             {
                 preloadedState: {
-                    userKeys: getModelState(getStoredKey(receiverKeys)),
+                    userKeys: getModelState(getStoredUserKey(receiverKeys)),
                     addresses: getModelState([getCompleteAddress({ Email: receiver.Address })]),
                 },
             }

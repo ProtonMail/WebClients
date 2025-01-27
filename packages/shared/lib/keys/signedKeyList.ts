@@ -7,7 +7,7 @@ import type {
     ActiveAddressKeysByVersion,
     Address,
     Api,
-    DecryptedKey,
+    DecryptedAddressKey,
     KeyMigrationKTVerifier,
     KeyTransparencyVerify,
     SignedKeyList,
@@ -112,7 +112,7 @@ export const createSignedKeyListForMigration = async ({
 }: {
     api: Api;
     address: Address;
-    decryptedKeys: DecryptedKey[];
+    decryptedKeys: DecryptedAddressKey[];
     keyTransparencyVerify: KeyTransparencyVerify;
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }): Promise<[SignedKeyList | undefined, OnSKLPublishSuccess | undefined]> => {
@@ -124,7 +124,7 @@ export const createSignedKeyListForMigration = async ({
         await keyMigrationKTVerifier({ email: address.Email, signedKeyList: address.SignedKeyList, api });
         const activeKeys = getNormalizedActiveAddressKeys(
             address,
-            await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
+            await getActiveAddressKeys(address.SignedKeyList, decryptedKeys)
         );
         if (activeKeys.v4.length > 0) {
             // v4 keys always presents, no need to check for v6 ones

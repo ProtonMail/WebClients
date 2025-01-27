@@ -5,7 +5,12 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
 import { addApiMock, api } from '../../test/api';
 import type { GeneratedKey } from '../../test/crypto';
-import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
+import {
+    fromGeneratedKeysToMessageKeys,
+    generateKeys,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../test/crypto';
 import { get, getAndVerify, getDecryptedAttachment, getRequest } from '../attachmentLoader';
 
 const me = 'me@pm.me';
@@ -39,11 +44,7 @@ describe('getRequest', () => {
 
         toKeys = await generateKeys('me', me);
 
-        messageKeys = {
-            type: 'publicPrivate',
-            publicKeys: toKeys.publicKeys,
-            privateKeys: toKeys.privateKeys,
-        };
+        messageKeys = fromGeneratedKeysToMessageKeys(toKeys);
     });
 
     afterAll(async () => {
@@ -78,11 +79,7 @@ describe('getDecryptedAttachment', () => {
 
         toKeys = await generateKeys('me', me);
 
-        messageKeys = {
-            type: 'publicPrivate',
-            publicKeys: toKeys.publicKeys,
-            privateKeys: toKeys.privateKeys,
-        };
+        messageKeys = fromGeneratedKeysToMessageKeys(toKeys);
     });
 
     afterAll(async () => {
@@ -116,11 +113,7 @@ describe('getAndVerify', () => {
 
         toKeys = await generateKeys('me', me);
 
-        messageKeys = {
-            type: 'publicPrivate',
-            publicKeys: toKeys.publicKeys,
-            privateKeys: toKeys.privateKeys,
-        };
+        messageKeys = fromGeneratedKeysToMessageKeys(toKeys);
     });
 
     afterAll(async () => {
@@ -155,11 +148,7 @@ describe('get + reverify', () => {
 
         toKeys = await generateKeys('me', me);
 
-        messageKeys = {
-            type: 'publicPrivate',
-            publicKeys: toKeys.publicKeys,
-            privateKeys: toKeys.privateKeys,
-        };
+        messageKeys = fromGeneratedKeysToMessageKeys(toKeys);
     });
 
     afterAll(async () => {

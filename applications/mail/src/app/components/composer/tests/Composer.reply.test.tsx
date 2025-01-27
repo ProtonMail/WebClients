@@ -19,6 +19,7 @@ import {
     createDocument,
     decryptMessage,
     decryptSessionKey,
+    getCompleteAddress,
     minimalCache,
 } from '../../../helpers/test/helper';
 import { ID, clickSend, renderComposer, send } from './Composer.test.helpers';
@@ -44,6 +45,7 @@ describe('Composer reply and forward', () => {
 
     let fromKeys: GeneratedKey;
     let toKeys: GeneratedKey;
+    const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
 
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
@@ -69,8 +71,9 @@ describe('Composer reply and forward', () => {
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
         const renderResult = await renderComposer({
             preloadedState: {
-                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                addressKeys: getAddressKeyCache(address, [fromKeys]),
                 mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
+                addresses: getModelState([address]),
             },
             message: {
                 messageDocument: { document: createDocument(content) },
@@ -82,8 +85,8 @@ describe('Composer reply and forward', () => {
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];
-        const address = pack.Addresses[toAddress];
-        const sessionKey = await decryptSessionKey(address.BodyKeyPacket, toKeys.privateKeys);
+        const toAddressPackage = pack.Addresses[toAddress];
+        const sessionKey = await decryptSessionKey(toAddressPackage.BodyKeyPacket, toKeys.privateKeys);
         const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
         expect(decryptResult.data).toContain(bodyContent);
@@ -96,8 +99,9 @@ describe('Composer reply and forward', () => {
 
         const renderResult = await renderComposer({
             preloadedState: {
-                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                addressKeys: getAddressKeyCache(address, [fromKeys]),
                 mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
+                addresses: getModelState([address]),
             },
             message: {
                 messageDocument: { document: createDocument(content) },
@@ -120,8 +124,8 @@ describe('Composer reply and forward', () => {
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];
-        const address = pack.Addresses[toAddress];
-        const sessionKey = await decryptSessionKey(address.BodyKeyPacket, toKeys.privateKeys);
+        const toAddressPackage = pack.Addresses[toAddress];
+        const sessionKey = await decryptSessionKey(toAddressPackage.BodyKeyPacket, toKeys.privateKeys);
         const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
         expect(decryptResult.data).toContain(bodyContent);

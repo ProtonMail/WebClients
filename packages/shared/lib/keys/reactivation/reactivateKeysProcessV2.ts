@@ -5,10 +5,7 @@ import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
-import type {
-    ActiveKeyWithVersion,
-    ActiveAddressKeysByVersion
-} from '../../interfaces';
+import type { ActiveAddressKeysByVersion, ActiveKeyWithVersion } from '../../interfaces';
 import {
     type ActiveKey,
     type Address,
@@ -358,12 +355,7 @@ const reactivateKeysProcessV2 = async ({
             }
 
             const addressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, '');
-            const activeAddressKeys = await getActiveAddressKeys(
-                address,
-                address.SignedKeyList,
-                address.Keys,
-                addressKeys
-            );
+            const activeAddressKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
 
             await reactivateAddressKeysV2({
                 api,
