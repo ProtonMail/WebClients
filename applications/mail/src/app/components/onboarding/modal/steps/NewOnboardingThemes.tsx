@@ -16,7 +16,12 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
+
+export const isNewOnboardingThemesStepEligible: OnboardingStepEligibleCallback = async () => ({
+    canDisplay: true,
+});
 
 const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();

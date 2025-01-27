@@ -6,7 +6,15 @@ import { OnboardingStep, type OnboardingStepRenderCallback, useSettingsLink } fr
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
+import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
+
+export const isNewOnboardingOrganizationStepEligible: OnboardingStepEligibleCallback = async () => {
+    return {
+        canDisplay: true,
+        preload: [onboardingFamilyPlan],
+    };
+};
 
 const NewOnboardingOrganizationStep = (props: OnboardingStepRenderCallback) => {
     const [organization] = useOrganization();
