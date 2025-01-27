@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type SubscriptionCheckResponse, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
@@ -30,6 +30,7 @@ describe('SubscriptionCheckout', () => {
             Currency: 'CHF',
             Cycle: CYCLE.MONTHLY,
             PeriodEnd: Math.floor(Date.now() / 1000 + 30 * 24 * 60 * 60),
+            SubscriptionMode: SubscriptionMode.Regular,
         };
     });
 
@@ -53,6 +54,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -81,6 +83,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -109,6 +112,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -137,6 +141,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={true}
                 isScheduledChargedLater={false}
+                isScheduled={true}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -179,6 +184,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -228,6 +234,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -277,6 +284,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription({
                     PeriodEnd: 1668868986,
                 })}
@@ -306,6 +314,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -332,6 +341,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -358,6 +368,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -384,6 +395,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -410,6 +422,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
@@ -436,6 +449,7 @@ describe('SubscriptionCheckout', () => {
                 isCustomBilling={false}
                 isScheduledChargedImmediately={false}
                 isScheduledChargedLater={false}
+                isScheduled={false}
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}

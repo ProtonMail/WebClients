@@ -1,7 +1,7 @@
 import type { ExtendedTokenPayment } from '@proton/payments';
 import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { APPS, CLIENT_TYPES, CYCLE } from '@proton/shared/lib/constants';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { type HumanVerificationMethodType, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import type { SignupCacheResult, SubscriptionData } from '../interfaces';
@@ -39,6 +39,7 @@ describe('signupActions', () => {
                     Currency: 'EUR',
                     Cycle: CYCLE.MONTHLY,
                     PeriodEnd: 999,
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
             };
@@ -98,6 +99,7 @@ describe('signupActions', () => {
                     Currency: 'EUR',
                     Cycle: CYCLE.MONTHLY,
                     PeriodEnd: 999,
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 payment,
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
@@ -166,6 +168,7 @@ describe('signupActions', () => {
                     Currency: 'EUR',
                     Cycle: CYCLE.MONTHLY,
                     PeriodEnd: 999,
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 payment,
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
@@ -227,6 +230,7 @@ describe('signupActions', () => {
                     Currency: 'EUR',
                     Cycle: CYCLE.MONTHLY,
                     PeriodEnd: 999,
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 payment,
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,

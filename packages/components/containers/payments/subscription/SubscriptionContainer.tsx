@@ -36,6 +36,7 @@ import {
     PLANS,
     type PlanIDs,
     getBillingAddressStatus,
+    getCheckoutModifiers,
     getPlansMap,
     isFreeSubscription,
     isOnSessionMigration,
@@ -113,7 +114,6 @@ import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import { NoPaymentRequiredNote } from './modal-components/NoPaymentRequiredNote';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
-import { useCheckoutModifiers } from './useCheckoutModifiers';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
 import './SubscriptionContainer.scss';
@@ -379,7 +379,7 @@ const SubscriptionContainer = ({
         application,
     };
 
-    const checkoutModifiers = useCheckoutModifiers(model, subscription, plansMap, checkResult);
+    const checkoutModifiers = getCheckoutModifiers(checkResult);
 
     const amountDue = checkResult?.AmountDue || 0;
     const couponCode = checkResult?.Coupon?.Code;

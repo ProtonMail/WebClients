@@ -11,7 +11,14 @@ import {
 } from '@proton/payments';
 
 import { CYCLE, DEFAULT_CYCLE, LUMO_APP_NAME, VPN_PASS_PROMOTION_COUPONS } from '../constants';
-import type { Plan, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
+import {
+    type Plan,
+    type PlansMap,
+    type Pricing,
+    type Subscription,
+    type SubscriptionCheckResponse,
+    SubscriptionMode,
+} from '../interfaces';
 import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
 import { getPlanFromPlanIDs } from './planIDs';
 import {
@@ -111,6 +118,7 @@ export type RequiredCheckResponse = Pick<
     | 'TaxInclusive'
     | 'optimistic'
     | 'Currency'
+    | 'SubscriptionMode'
 >;
 
 export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
@@ -298,6 +306,7 @@ export const getOptimisticCheckResult = ({
         Gift: 0,
         optimistic: true,
         Currency: currency,
+        SubscriptionMode: SubscriptionMode.Regular,
     };
 };
 
@@ -323,6 +332,7 @@ export const getCheckResultFromSubscription = (
         Coupon: null,
         Gift: 0,
         Currency,
+        SubscriptionMode: SubscriptionMode.Regular,
     };
 };
 

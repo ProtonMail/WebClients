@@ -3,7 +3,7 @@ import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getUsersAndAddons } from '@proton/shared/lib/helpers/checkout';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import type { Plan } from '../../lib/interfaces';
+import { type Plan, SubscriptionMode } from '../../lib/interfaces';
 
 const getPlan = (data: Partial<Plan>) => {
     return { ...data, Type: PLAN_TYPES.PLAN } as Plan;
@@ -115,6 +115,7 @@ describe('should get checkout result', () => {
                     Cycle: CYCLE.MONTHLY,
                     Coupon: null,
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VPN]: getPlan(vpnPlan),
@@ -150,6 +151,7 @@ describe('should get checkout result', () => {
                     Cycle: CYCLE.MONTHLY,
                     Coupon: null,
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VPN]: {
@@ -205,6 +207,7 @@ describe('should get checkout result', () => {
                     Cycle: CYCLE.MONTHLY,
                     Coupon: null,
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VPN]: {
@@ -263,6 +266,7 @@ describe('should get checkout result', () => {
                         MaximumRedemptionsPerUser: null,
                     },
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),
@@ -303,6 +307,7 @@ describe('should get checkout result', () => {
                         MaximumRedemptionsPerUser: null,
                     },
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VPN]: getPlan(vpnPlan),
@@ -341,6 +346,7 @@ describe('should get checkout result', () => {
                     Cycle: CYCLE.TWO_YEARS,
                     Coupon: null,
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.BUNDLE_PRO]: getPlan(bundleProPlan),
@@ -401,6 +407,7 @@ describe('should get checkout result', () => {
                     Cycle: CYCLE.TWO_YEARS,
                     Coupon: null,
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VPN_PRO]: getPlan(vpnProPlan),
@@ -449,6 +456,7 @@ describe('should get checkout result', () => {
                     Cycle: CYCLE.TWO_YEARS,
                     Coupon: null,
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VPN_BUSINESS]: getPlan(vpnBusinessPlan),
@@ -500,6 +508,7 @@ describe('should get checkout result', () => {
                         MaximumRedemptionsPerUser: null,
                     },
                     Currency: 'USD',
+                    SubscriptionMode: SubscriptionMode.Regular,
                 },
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),
