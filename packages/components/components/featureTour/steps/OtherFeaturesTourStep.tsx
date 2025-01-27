@@ -54,7 +54,7 @@ const OtherFeaturesTourStep = (props: FeatureTourStepProps) => {
         >
             <div className="mt-4">
                 {features.map(({ icon, title, content }, index) => (
-                    <div key={title} className="flex flex-nowrap items-start justify-left">
+                    <div key={title} className="text-left flex flex-nowrap items-start justify-left">
                         <div className="rounded-full bg-weak shrink-0 flex items-center justify-center p-2 mr-3">
                             <Icon name={icon} />
                         </div>
