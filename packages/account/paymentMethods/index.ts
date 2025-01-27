@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { SavedPaymentMethod } from '@proton/payments';
+import { type SavedPaymentMethod, formatPaymentMethod, formatPaymentMethods } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
@@ -28,7 +28,7 @@ const modelThunk = createAsyncModelThunk<Model, PaymentMethodsState, ProtonThunk
                 PaymentMethods: SavedPaymentMethod[];
             }>(queryPaymentMethods())
             .then(({ PaymentMethods }) => {
-                return sortCollection('Order', [...PaymentMethods]);
+                return sortCollection('Order', formatPaymentMethods(PaymentMethods));
             });
     },
     previous: previousSelector(selectPaymentMethods),
@@ -47,8 +47,9 @@ const slice = createSlice({
                     'Order',
                     updateCollection({
                         model: state.value,
-                        events: action.payload.PaymentMethods,
                         itemKey: 'PaymentMethod',
+                        events: action.payload.PaymentMethods,
+                        create: formatPaymentMethod,
                     })
                 );
             }
