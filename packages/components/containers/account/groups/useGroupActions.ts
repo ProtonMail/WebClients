@@ -100,7 +100,7 @@ const useGroupActions = () => {
                 forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
             );
 
-            let activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+            let activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
 
             const forwardingKey = membership.Keys;
             const decryptedToken = await decryptMemberToken(

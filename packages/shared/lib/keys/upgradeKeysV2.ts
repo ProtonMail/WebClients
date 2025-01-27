@@ -10,6 +10,7 @@ import { toMap } from '../helpers/object';
 import type {
     Api,
     CachedOrganizationKey,
+    DecryptedAddressKey,
     DecryptedKey,
     Key,
     KeyMigrationKTVerifier,
@@ -79,7 +80,7 @@ const getReEncryptedKeys = (keys: DecryptedKey[], Keys: Key[], email: string, pa
 };
 
 const getReformattedAddressKeysV2 = (
-    keys: DecryptedKey[],
+    addressKeys: DecryptedAddressKey[],
     Keys: Key[],
     email: string,
     userKey: PrivateKeyReference
@@ -89,7 +90,7 @@ const getReformattedAddressKeysV2 = (
         return acc;
     }, {});
     return Promise.all(
-        keys.map(async ({ ID, privateKey: originalPrivateKey }) => {
+        addressKeys.map(async ({ ID, privateKey: originalPrivateKey, Flags, Primary }) => {
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
             const { privateKey, privateKeyArmored } = await reEncryptOrReformatKey(
                 originalPrivateKey,
@@ -105,6 +106,8 @@ const getReformattedAddressKeysV2 = (
                     ID,
                     privateKey,
                     publicKey,
+                    Flags,
+                    Primary
                 },
                 Key: {
                     ID,
@@ -127,7 +130,7 @@ interface UpgradeV2KeysLegacyArgs {
     organizationKey?: CachedOrganizationKey;
     addressesKeys: {
         address: tsAddress;
-        keys: DecryptedKey[];
+        keys: DecryptedAddressKey[];
     }[];
 }
 
@@ -216,7 +219,7 @@ export const upgradeV2KeysV2 = async ({
                 primaryUserKey
             );
             const [decryptedKeys, addressKeys] = reformattedAddressKeys.reduce<
-                [DecryptedKey[], UpgradeAddressKeyPayload[]]
+                [DecryptedAddressKey[], UpgradeAddressKeyPayload[]]
             >(
                 (acc, cur) => {
                     acc[0].push(cur.decryptedKey);

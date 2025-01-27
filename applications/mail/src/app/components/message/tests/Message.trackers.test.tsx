@@ -8,7 +8,7 @@ import { addApiMock } from '@proton/testing/lib/api';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
-import { minimalCache } from '../../../helpers/test/cache';
+import { getCompleteAddress, minimalCache } from '../../../helpers/test/cache';
 import type { GeneratedKey } from '../../../helpers/test/crypto';
 import {
     generateKeys,
@@ -100,7 +100,7 @@ describe('message trackers', () => {
         await render(<MessageView {...props} />, {
             preloadedState: {
                 mailSettings: getModelState(mailSettings),
-                addressKeys: getAddressKeyCache(addressID, toKeys),
+                addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
             },
             onStore: (store) => {
                 store.dispatch(

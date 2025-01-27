@@ -35,6 +35,7 @@ export const getAddressKeyHelper = async <V extends PrivateKeyReference>(
     ID: string,
     userKey: PrivateKeyReference,
     privateKey: V,
+    primary: boolean = false,
     version = 3
 ) => {
     const result = await generateAddressKeyTokens(userKey);
@@ -55,6 +56,7 @@ export const getAddressKeyHelper = async <V extends PrivateKeyReference>(
             Token: result.encryptedToken,
             Version: version,
             Flags: 3,
+            Primary: primary ? 1 : 0,
         } as Key,
     };
 };
@@ -63,6 +65,7 @@ export const getAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6 = Ke
     ID: string,
     userKey: PrivateKeyReference,
     email: string,
+    primary: boolean = false,
     version?: number,
     keyGenConfig: C = defaultKeyGenConfig as C
 ) => {
@@ -71,13 +74,14 @@ export const getAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6 = Ke
         passphrase: 'tmp',
         keyGenConfig,
     });
-    return getAddressKeyHelper(ID, userKey, key.privateKey, version);
+    return getAddressKeyHelper(ID, userKey, key.privateKey, primary, version);
 };
 
 export const getAddressKeyForE2EEForwarding = async (
     ID: string,
     userKey: PrivateKeyReference,
     email: string,
+    primary: boolean = false,
     version?: number
 ) => {
     const forwarderKey = await CryptoProxy.generateKey({
@@ -88,8 +92,11 @@ export const getAddressKeyForE2EEForwarding = async (
         userIDsForForwardeeKey: { email },
         passphrase: '123',
     });
-    const forwardeeKey = await CryptoProxy.importPrivateKey({ armoredKey, passphrase: '123' }) as PrivateKeyReferenceV4;
-    return getAddressKeyHelper(ID, userKey, forwardeeKey, version);
+    const forwardeeKey = (await CryptoProxy.importPrivateKey({
+        armoredKey,
+        passphrase: '123',
+    })) as PrivateKeyReferenceV4;
+    return getAddressKeyHelper(ID, userKey, forwardeeKey, primary, version);
 };
 
 export const getLegacyAddressKey = async (ID: string, password: string, email: string) => {

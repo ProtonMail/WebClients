@@ -33,7 +33,7 @@ import { setupForwarding, updateForwardingFilter } from '@proton/shared/lib/api/
 import { ADDRESS_RECEIVE, KEYGEN_CONFIGS, KEYGEN_TYPES, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, DecryptedKey, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
@@ -65,7 +65,7 @@ interface Model {
     forwardeeEmail: string;
     forwardeePublicKey?: PublicKeyReference;
     forwarderKey?: PrivateKeyReference;
-    forwarderAddressKeys?: DecryptedKey[];
+    forwarderAddressKeys?: DecryptedAddressKey[];
     keySupportE2EEForwarding?: boolean;
     keyErrors?: string[];
     statement: FilterStatement;

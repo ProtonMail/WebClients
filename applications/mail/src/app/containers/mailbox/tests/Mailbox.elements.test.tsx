@@ -1,11 +1,21 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 
+import { CryptoProxy } from '@proton/crypto';
 import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 
-import { addApiMock, api, clearAll, tick, waitForSpyCall } from '../../../helpers/test/helper';
+import {
+    addApiMock,
+    api,
+    clearAll,
+    generateKeys,
+    getAddressKeyCache,
+    getCompleteAddress,
+    setupCryptoProxyForTesting,
+    waitForSpyCall,
+} from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
@@ -217,44 +227,53 @@ describe('Mailbox element list', () => {
             expect(items.length).toBe(2);
         });
 
-        it('should keep in view the conversations when opened while filter is on', async () => {
-            const conversations = [element1, element2, element3];
-            const message = {
-                ID: 'messageID1',
-                AddressID: 'AddressID',
-                Sender: {},
-                ConversationID: element1.ID,
-                Flag: MESSAGE_FLAGS.FLAG_RECEIVED,
-                LabelIDs: [labelID],
-                Attachments: [],
-            };
+        fit('should keep in view the conversations when opened while filter is on', async () => {
+            await setupCryptoProxyForTesting();
 
-            const { rerender, getItems } = await setup({
-                conversations,
-                filter: { Unread: 1 },
-                totalConversations: 2,
-            });
+            try {
+                const keys = await generateKeys('key', 'someone@somewhere.com');
+                const address = getCompleteAddress({ ID: 'addressID' });
 
-            // A bit complex but the point is to simulate opening the conversation
-            addApiMock(`mail/v4/conversations/${element1.ID}`, () => ({
-                Conversation: element1,
-                Messages: [message],
-            }));
-            addApiMock(`mail/v4/messages/messageID1`, () => ({
-                Message: message,
-            }));
-            addApiMock(`mail/v4/messages/read`, () => ({
-                UndoToken: { Token: 'Token' },
-            }));
-            await rerender({ elementID: element1.ID });
+                const conversations = [element1, element2, element3];
+                const message = {
+                    ID: 'messageID1',
+                    AddressID: address.ID,
+                    Sender: {},
+                    ConversationID: element1.ID,
+                    Flag: MESSAGE_FLAGS.FLAG_RECEIVED,
+                    LabelIDs: [labelID],
+                    Attachments: [],
+                };
 
-            const items = getItems();
-            expect(items.length).toBe(2);
-            expect(items[1].classList.contains('read')).toBe(true);
-            expect(items[0].classList.contains('read')).toBe(false);
+                const { rerender, getItems } = await setup({
+                    conversations,
+                    filter: { Unread: 1 },
+                    totalConversations: 2,
+                    preloadedState: {
+                        addressKeys: getAddressKeyCache(address, [keys]),
+                    },
+                });
 
-            // Needed because of the message images double render
-            await tick();
+                // A bit complex but the point is to simulate opening the conversation
+                addApiMock(`mail/v4/conversations/${element1.ID}`, () => ({
+                    Conversation: element1,
+                    Messages: [message],
+                }));
+                addApiMock(`mail/v4/messages/messageID1`, () => ({
+                    Message: message,
+                }));
+                addApiMock(`mail/v4/messages/read`, () => ({
+                    UndoToken: { Token: 'Token' },
+                }));
+                await rerender({ elementID: element1.ID });
+
+                const items = getItems();
+                expect(items.length).toBe(2);
+                await waitFor(() => expect(items[1].classList.contains('read')).toBe(true));
+                expect(items[0].classList.contains('read')).toBe(false);
+            } finally {
+                await CryptoProxy.releaseEndpoint();
+            }
         });
     });
 

@@ -1,4 +1,4 @@
-import { fireEvent, within } from '@testing-library/react';
+import { fireEvent, waitFor, within } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -6,7 +6,7 @@ import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Mes
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { assertIcon } from '../../../helpers/test/assertion';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import type { GeneratedKey } from '../../../helpers/test/helper';
 import {
     addApiKeys,
@@ -16,7 +16,7 @@ import {
     createMessageImages,
     encryptMessage,
     generateKeys,
-    tick,
+    getCompleteAddress,
 } from '../../../helpers/test/helper';
 import { addressID, body, messageID, setup, subject } from './Message.test.helpers';
 
@@ -60,8 +60,20 @@ describe('Message attachments', () => {
     const totalSize = Attachments.map((attachment) => attachment.Size).reduce((acc, size) => acc + size, 0);
     const embeddedImage = createEmbeddedImage(attachment1);
     const messageImages = createMessageImages([embeddedImage]);
+    const fromAddress = 'someone@somewhere.net';
 
-    afterEach(clearAll);
+    let fromKeys: GeneratedKey;
+
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
+        fromKeys = await generateKeys('someone', fromAddress);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+        clearAll();
+    });
 
     it('should show attachments with their correct icon', async () => {
         const { getAllByTestId } = await setup({ data: { NumAttachments, Attachments } });
@@ -94,19 +106,24 @@ describe('Message attachments', () => {
     it('should open preview when clicking', async () => {
         window.URL.createObjectURL = jest.fn();
 
-        const { getAllByTestId } = await setup({ data: { NumAttachments, Attachments } });
+        const { getAllByTestId, getByTestId } = await setup({ data: { NumAttachments, Attachments } }, undefined, {
+            preloadedState: {
+                addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [fromKeys]),
+            },
+        });
 
         const items = getAllByTestId('attachment-item');
         const itemButton = items[2].querySelectorAll('button')[1];
 
         fireEvent.click(itemButton);
-        await tick();
 
-        const preview = document.querySelector('.file-preview');
-
+        const preview = getByTestId('file-preview');
         expect(preview).toBeDefined();
         expect(preview?.textContent).toMatch(new RegExp(attachment3.Name));
         expect(preview?.textContent).toMatch(/3of3/);
+
+        // wait for preview to finish loading to ensure there's no pending operations using the CryptoProxy
+        await waitFor(() => expect(preview.querySelector('.file-preview-image')).toBeVisible());
     });
 });
 
@@ -149,7 +166,15 @@ describe('NumAttachments from message initialization', () => {
             } as Message,
         }));
 
-        const { store, open } = await setup(undefined, { conversationMode: true });
+        const { store, open } = await setup(
+            undefined,
+            { conversationMode: true },
+            {
+                preloadedState: {
+                    addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [fromKeys]),
+                },
+            }
+        );
         await open();
 
         const messageFromCache = store.getState().messages[messageID];
@@ -178,7 +203,15 @@ describe('NumAttachments from message initialization', () => {
             } as Message,
         }));
 
-        const { store, open } = await setup(undefined, { conversationMode: true });
+        const { store, open } = await setup(
+            undefined,
+            { conversationMode: true },
+            {
+                preloadedState: {
+                    addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [fromKeys]),
+                },
+            }
+        );
         await open();
 
         const messageFromCache = store.getState().messages[messageID];
