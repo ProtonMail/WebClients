@@ -26,12 +26,10 @@ interface App {
 export const getExploreApps = ({
     subscribed,
     user,
-    isWalletAppSwitcherNewBadgeEnabled,
     isLumoAvailable,
 }: {
     subscribed?: User['Subscribed'];
     user: User | undefined;
-    isWalletAppSwitcherNewBadgeEnabled: boolean;
     isLumoAvailable: boolean;
 }) => {
     const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
@@ -78,7 +76,6 @@ export const getExploreApps = ({
             description: () => {
                 return c('wallet_signup_2024:app-switcher').t`A safer way to hold Bitcoin`;
             },
-            isNew: isWalletAppSwitcherNewBadgeEnabled,
         },
         isLumoAvailable && {
             name: APPS.PROTONLUMO,
