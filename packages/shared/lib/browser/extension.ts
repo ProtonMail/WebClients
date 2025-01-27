@@ -11,12 +11,16 @@ export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload
 export type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
 export type PassInstalledMessage = { type: 'pass-installed' };
 export type PassOnboardingMessage = { type: 'pass-onboarding' };
+export type PassLoadAutofillMessage = { type: 'LOAD_CONTENT_SCRIPT_EXTERNAL' };
+export type PassUnloadAutofillMessage = { type: 'UNLOAD_CONTENT_SCRIPT_EXTERNAL' };
 
 export type ExtensionMessage =
     | ExtensionForkMessage
     | ExtensionAuthenticatedMessage
     | PassInstalledMessage
-    | PassOnboardingMessage;
+    | PassOnboardingMessage
+    | PassLoadAutofillMessage
+    | PassUnloadAutofillMessage;
 
 export type ExtensionApp = keyof typeof EXTENSIONS;
 
