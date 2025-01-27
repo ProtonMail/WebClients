@@ -1,34 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
-import { useMember } from '@proton/account/member/hook';
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { OnboardingModal } from '@proton/components';
-import { PLANS } from '@proton/payments';
+import type { OnboardingStepComponent } from '@proton/components/containers/onboarding/interface';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import {
-    getIsB2BAudienceFromPlan,
-    getIsB2BAudienceFromSubscription,
-    isTrial,
-} from '@proton/shared/lib/helpers/subscription';
-import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
-import GetMobileAppStep from 'proton-mail/components/onboarding/modal/steps/GetMobileAppStep';
+import GetMobileAppStep, {
+    isGetMobileAppStepEligible,
+} from 'proton-mail/components/onboarding/modal/steps/GetMobileAppStep';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
-import ActivatePremiumFeaturesStep from './steps/ActivatePremiumFeaturesStep';
-import DisplayNameStep from './steps/DisplayNameStep';
-import GetDesktopAppStep from './steps/GetDesktopAppStep';
-import NewOnboardingOrganizationStep from './steps/NewOnboardingOrganizationStep';
-import NewOnboardingThemes from './steps/NewOnboardingThemes';
-import OnboardingWelcomeStep from './steps/OnboardingWelcomeStep';
-import PartnerStep from './steps/PartnerStep';
+import type { OnboardingStepEligibleCallback } from './interface';
+import ActivatePremiumFeaturesStep, {
+    isActivatePremiumFeaturesStepEligible,
+} from './steps/ActivatePremiumFeaturesStep';
+import DisplayNameStep, { isDisplayNameStepEligible } from './steps/DisplayNameStep';
+import GetDesktopAppStep, { isGetDesktopAppStepEligible } from './steps/GetDesktopAppStep';
+import NewOnboardingOrganizationStep, {
+    isNewOnboardingOrganizationStepEligible,
+} from './steps/NewOnboardingOrganizationStep';
+import NewOnboardingThemes, { isNewOnboardingThemesStepEligible } from './steps/NewOnboardingThemes';
+import OnboardingWelcomeStep, { isOnboardingWelcomeStepEligible } from './steps/OnboardingWelcomeStep';
+import PartnerStep, { isPartnerStepEligible } from './steps/PartnerStep';
 
 export interface MailOnboardingProps {
     hideDiscoverApps?: boolean;
@@ -39,43 +34,69 @@ export interface MailOnboardingProps {
     open?: boolean;
 }
 
-const useUserInfos = () => {
-    const [user, loadingUser] = useUser();
-    const [subscription, loadingSub] = useSubscription();
-    const [organization, loadingOrg] = useOrganization();
-    const [member, loadingMember] = useMember();
+type StepId =
+    | 'onboarding-welcome'
+    | 'new-onboarding-themes'
+    | 'new-onboarding-organization'
+    | 'get-mobile-app'
+    | 'get-desktop-app'
+    | 'activate-premium-features'
+    | 'partner'
+    | 'display-name';
 
-    let canDisplayPremiumFeaturesStep = false;
-    const isLoading = loadingUser || loadingSub || loadingOrg || loadingMember;
-    const isUserWithB2BPlan = getIsB2BAudienceFromSubscription(subscription);
-    const isSubUserWithB2BPlan = organization && getIsB2BAudienceFromPlan(organization.PlanName);
-    const isVisionarySubUser = (() => {
-        const isMainAdmin = member?.Subscriber === MEMBER_SUBSCRIBER.PAYER;
-        if (isMainAdmin) {
-            return false;
-        }
-
-        return (organization && organization.PlanName === PLANS.VISIONARY) || hasVisionary(subscription);
-    })();
-
-    const isMailPaidPlan = isTrial(subscription, PLANS.MAIL) || user.hasPaidMail;
-
-    if (isUserWithB2BPlan || isSubUserWithB2BPlan || isVisionarySubUser) {
-        canDisplayPremiumFeaturesStep = false;
-    } else if (isMailPaidPlan) {
-        canDisplayPremiumFeaturesStep = true;
+const STEPS: Record<
+    StepId,
+    {
+        eligible: OnboardingStepEligibleCallback;
+        component: OnboardingStepComponent;
     }
-
-    return { isLoading, canDisplayPremiumFeaturesStep };
+> = {
+    'onboarding-welcome': {
+        eligible: isOnboardingWelcomeStepEligible,
+        component: OnboardingWelcomeStep,
+    },
+    'new-onboarding-themes': {
+        eligible: isNewOnboardingThemesStepEligible,
+        component: NewOnboardingThemes,
+    },
+    'new-onboarding-organization': {
+        eligible: isNewOnboardingOrganizationStepEligible,
+        component: NewOnboardingOrganizationStep,
+    },
+    'get-mobile-app': {
+        eligible: isGetMobileAppStepEligible,
+        component: GetMobileAppStep,
+    },
+    'get-desktop-app': {
+        eligible: isGetDesktopAppStepEligible,
+        component: GetDesktopAppStep,
+    },
+    'activate-premium-features': {
+        eligible: isActivatePremiumFeaturesStepEligible,
+        component: ActivatePremiumFeaturesStep,
+    },
+    partner: {
+        eligible: isPartnerStepEligible,
+        component: PartnerStep,
+    },
+    'display-name': {
+        eligible: isDisplayNameStepEligible,
+        component: DisplayNameStep,
+    },
 };
 
 const MailOnboardingModal = (props: MailOnboardingProps) => {
     const { endReplay } = useWelcomeFlags();
+    const dispatch = useMailDispatch();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
-    const { isLoading, canDisplayPremiumFeaturesStep } = useUserInfos();
+    const [loading, setLoading] = useState(true);
+    const [imgsToPreload, setImgsToPreload] = useState<string[]>([]);
+    const [steps, setSteps] = useState<Set<StepId>>(new Set());
 
-    const displayGetDesktopAppStep = !isMobile() && !isElectronApp;
-    const partnerEnabled = new URLSearchParams(window.location.search).get('partner') === 'true';
+    const getStepComponent = (id: StepId) => {
+        const step = steps.has(id);
+        return step ? STEPS[id].component : undefined;
+    };
 
     const handleDone = () => {
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_onboarding_modals, {});
@@ -83,40 +104,72 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
     };
 
     useEffect(() => {
+        // Send telemetry onboarding start event
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.start_onboarding_modals, {});
+
+        const init = async () => {
+            const toPreload = new Set<string>();
+            const stepsToDisplay = new Set<StepId>();
+
+            // Get eligible steps
+            await Promise.all(
+                Object.entries(STEPS).map<void>(async ([id, step]) => {
+                    const { canDisplay, preload } = await step.eligible(dispatch);
+
+                    if (canDisplay) {
+                        stepsToDisplay.add(id as StepId);
+                    }
+
+                    if (canDisplay && preload) {
+                        preload.forEach((img) => toPreload.add(img));
+                    }
+                })
+            );
+
+            setImgsToPreload(Array.from(toPreload));
+            setSteps(stepsToDisplay);
+            setLoading(false);
+        };
+
+        void init();
     }, []);
 
-    if (isLoading) {
+    if (loading || !steps) {
         return null;
     }
 
     return (
-        <OnboardingModal
-            {...props}
-            onClose={() => {
-                endReplay();
-                props.onClose?.();
-            }}
-            onDone={handleDone}
-            modalContentClassname="mx-12 mt-12 mb-6"
-            modalClassname="onboarding-modal--larger onboarding-modal--new"
-            showGenericSteps={false}
-            extraProductStep={canDisplayPremiumFeaturesStep ? [ActivatePremiumFeaturesStep] : undefined}
-            stepDotClassName="mt-4"
-            data-testid="new-onboarding-variant"
-            genericSteps={{
-                setupThemeStep: NewOnboardingThemes,
-                organizationStep: NewOnboardingOrganizationStep,
-            }}
-        >
-            {[
-                partnerEnabled && DisplayNameStep,
-                partnerEnabled && PartnerStep,
-                OnboardingWelcomeStep,
-                displayGetDesktopAppStep && GetDesktopAppStep,
-                GetMobileAppStep,
-            ].filter(isTruthy)}
-        </OnboardingModal>
+        <>
+            <OnboardingModal
+                {...props}
+                onClose={() => {
+                    endReplay();
+                    props.onClose?.();
+                }}
+                onDone={handleDone}
+                modalContentClassname="mx-12 mt-12 mb-6"
+                modalClassname="onboarding-modal--larger onboarding-modal--new"
+                showGenericSteps={false}
+                extraProductStep={getStepComponent('activate-premium-features')}
+                stepDotClassName="mt-4"
+                data-testid="new-onboarding-variant"
+                genericSteps={{
+                    setupThemeStep: getStepComponent('new-onboarding-themes'),
+                    organizationStep: getStepComponent('new-onboarding-organization'),
+                }}
+            >
+                {[
+                    getStepComponent('display-name'),
+                    getStepComponent('partner'),
+                    getStepComponent('onboarding-welcome'),
+                    getStepComponent('get-desktop-app'),
+                    getStepComponent('get-mobile-app'),
+                ].filter(isTruthy)}
+            </OnboardingModal>
+            {imgsToPreload.map((imgUrl) => (
+                <link key={imgUrl} rel="prefetch" href={imgUrl} as="image" />
+            ))}
+        </>
     );
 };
 
