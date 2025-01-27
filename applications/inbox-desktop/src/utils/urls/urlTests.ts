@@ -119,6 +119,20 @@ export const isAccountSwitch = (urlString: string) => {
     }
 };
 
+export const isAccountLogin = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+
+        if (getAppURL().account !== url.origin) {
+            return false;
+        }
+
+        return /^\/login\/?$/i.test(url.pathname);
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isAccoutLite = (host: string) => {
     try {
         const hostURl = new URL(host);
@@ -174,6 +188,16 @@ export const isHostAllowed = (host: string) => {
     }
 };
 
+export const isHomePage = (url: string) => {
+    if (isMailHome(url)) {
+        return true;
+    }
+
+    if (isCalendarHome(url)) {
+        return true;
+    }
+};
+
 export const isSameURL = (urlA: string, urlB: string) => {
     if (urlA === urlB) {
         return true;
@@ -183,13 +207,5 @@ export const isSameURL = (urlA: string, urlB: string) => {
         return true;
     }
 
-    if (isMailHome(urlA) && isMailHome(urlB)) {
-        return true;
-    }
-
-    if (isCalendarHome(urlA) && isCalendarHome(urlB)) {
-        return true;
-    }
-
-    return false;
+    return isHomePage(urlA) && isHomePage(urlB);
 };
