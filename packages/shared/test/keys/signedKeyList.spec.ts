@@ -3,7 +3,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 
 import { getSignedKeyList } from '../../lib/keys';
 import { getActiveAddressKeys, getActiveKeyObject } from '../../lib/keys/getActiveKeys';
-import { getAddressKey, getAddressKeyForE2EEForwarding, getUserKey } from './keyDataHelper';
+import { getAddressKey, getAddressKeyForE2EEForwarding, getAddressKeyHelper, getUserKey } from './keyDataHelper';
 
 describe('active keys', () => {
     it('should get active keys without a signed key list', async () => {
@@ -53,11 +53,17 @@ describe('active keys', () => {
     it('should get active keys with a signed key list', async () => {
         const keyPassword = '123';
         const userKey = await getUserKey('123', keyPassword);
-        const addressKeysFull = await Promise.all([
+        const someAddressKeys = await Promise.all([
             getAddressKey('a', userKey.key.privateKey, 'a@a.com'),
             getAddressKey('b', userKey.key.privateKey, 'a@a.com'),
             getAddressKey('c', userKey.key.privateKey, 'a@a.com'),
         ]);
+        const addressKeysFull = [
+            ...someAddressKeys,
+            // there exist some old users that have duplicate keys (exact same key material, different DB entries), hence we test this edge-case
+            await getAddressKeyHelper('d', userKey.key.privateKey, someAddressKeys[0].key.privateKey),
+            await getAddressKeyHelper('e', userKey.key.privateKey, someAddressKeys[0].key.privateKey),
+        ];
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
         const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
         const signedKeyList = await getSignedKeyList(
@@ -66,6 +72,8 @@ describe('active keys', () => {
                     getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', flags: 3 }),
                     getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
                     getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 2 }),
+                    getActiveKeyObject(addressKeysFull[3].key.privateKey, { ID: 'd', primary: 0, flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[4].key.privateKey, { ID: 'e', primary: 0, flags: 0 }),
                 ]),
                 v6: [],
             },
@@ -100,6 +108,24 @@ describe('active keys', () => {
                 ID: 'c',
                 primary: 0,
                 flags: 2,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+            {
+                ID: 'd',
+                primary: 0,
+                flags: 3,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+            {
+                ID: 'e',
+                primary: 0,
+                flags: 0,
                 privateKey: jasmine.any(Object),
                 publicKey: jasmine.any(Object),
                 fingerprint: jasmine.any(String),
