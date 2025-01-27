@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Spotlight, Tooltip } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
+import * as storage from '@proton/shared/lib/helpers/storage';
 import clsx from '@proton/utils/clsx';
 
 import { usePublicSessionUser } from '../../../store';
@@ -18,6 +19,7 @@ import {
 } from '../../../utils/publicRedirectSpotlight';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useSignupFlowModal } from '../../modals/SignupFlowModal/SignupFlowModal';
+import { SaveForLaterSpotlight, SaveForLaterSpotlightVersion } from './SaveForLaterSpotlight';
 
 interface Props {
     onClick: () => Promise<void>;
@@ -26,28 +28,33 @@ interface Props {
     loading?: boolean;
     customPassword?: string;
 }
-export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword, loading, onClick }: Props) => {
+
+export const PUBLIC_SHARE_BOOKMARK_SPOTLIGHT_KEY = 'public-share-bookmark-spotlight';
+
+export const SaveForLaterButton = ({ className, alreadyBookmarked, customPassword, loading, onClick }: Props) => {
     const [isAdding, withAdding] = useLoading();
     const [signupFlowModal, showSignupFlowModal] = useSignupFlowModal();
-    const [showSpotlight, setShowSpotlight] = useState(needPublicRedirectSpotlight());
     const { user } = usePublicSessionUser();
+    const [spotlightVersion, setSpotlightVersion] = useState(SaveForLaterSpotlightVersion.HIDE);
     const buttonText = alreadyBookmarked
         ? c('drive:action').t`Open in ${DRIVE_SHORT_APP_NAME}`
         : c('drive:action').t`Save for later`;
 
     useEffect(() => {
-        if (showSpotlight) {
-            setPublicRedirectSpotlightToShown();
+        if (!!user) {
+            if (needPublicRedirectSpotlight()) {
+                setSpotlightVersion(SaveForLaterSpotlightVersion.BOOKMARKED);
+                setPublicRedirectSpotlightToShown();
+            }
+        } else if (!storage.getItem(PUBLIC_SHARE_BOOKMARK_SPOTLIGHT_KEY)) {
+            setSpotlightVersion(SaveForLaterSpotlightVersion.UPSELL);
+            storage.setItem(PUBLIC_SHARE_BOOKMARK_SPOTLIGHT_KEY, 'true');
         }
-    }, [showSpotlight]);
+    }, [user]);
+
     return (
         <>
-            <Spotlight
-                show={showSpotlight}
-                content={c('Spotlight')
-                    .t`A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.`}
-                originalPlacement="bottom-end"
-            >
+            <SaveForLaterSpotlight spotlightVersion={spotlightVersion}>
                 <Tooltip
                     title={
                         alreadyBookmarked
@@ -63,15 +70,15 @@ export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword
                         )}
                         onClick={async () => {
                             if (!user) {
-                                countActionWithTelemetry(Actions.AddToBookmarkTriggeredModal);
+                                void countActionWithTelemetry(Actions.AddToBookmarkTriggeredModal);
                                 showSignupFlowModal({ customPassword });
                             } else if (alreadyBookmarked) {
                                 openNewTab(getAppHref('/shared-with-me', APPS.PROTONDRIVE));
                             } else {
                                 await withAdding(onClick);
                                 if (!publicRedirectSpotlightWasShown()) {
-                                    setShowSpotlight(true);
                                     setPublicRedirectSpotlightToShown();
+                                    setSpotlightVersion(SaveForLaterSpotlightVersion.BOOKMARKED);
                                 }
                             }
                         }}
@@ -82,7 +89,7 @@ export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword
                         {isAdding ? c('Info').t`Saving...` : buttonText}
                     </Button>
                 </Tooltip>
-            </Spotlight>
+            </SaveForLaterSpotlight>
             {signupFlowModal}
         </>
     );
