@@ -18,6 +18,7 @@ const CRITICAL_OFFLINE_ASSETS = [
 
     /* workers */
     'core.worker.js',
+    'pass-core.ui.js',
     'crypto-worker.js',
 
     /* icons */
