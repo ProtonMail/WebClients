@@ -61,7 +61,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 60,
-                    y: 30,
+                    y: 23,
                 },
                 width: 127.33,
                 height: 6.73,
@@ -76,7 +76,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 60,
-                    y: 24,
+                    y: 31,
                 },
                 width: 127.33,
                 height: 5.68,
@@ -85,12 +85,13 @@ const exportedTemplate = {
                 characterSpacing: 0,
                 lineHeight: 1,
                 fontColor: '#706d6b',
+                fontName: 'interRegular',
             },
             'recovery phrase line 1': {
                 type: 'text',
                 position: {
                     x: 35,
-                    y: 77,
+                    y: 75,
                 },
                 width: 139,
                 height: 6,
@@ -103,7 +104,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 35,
-                    y: 83,
+                    y: 81,
                 },
                 width: 139,
                 height: 6,
