@@ -23,6 +23,7 @@ import {
     getSHA256Fingerprints,
     init as initPmcrypto,
     isExpiredKey,
+    isForwardingKey,
     isRevokedKey,
     processMIME,
     readCleartextMessage,
@@ -40,8 +41,8 @@ import {
 } from 'pmcrypto';
 import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
 import { ARGON2_PARAMS } from 'pmcrypto/lib/constants';
-import type { Subkey, UserID } from 'pmcrypto/lib/openpgp';
-import { SecretKeyPacket, config as defaultConfig, enums } from 'pmcrypto/lib/openpgp';
+import type { UserID } from 'pmcrypto/lib/openpgp';
+import { enums } from 'pmcrypto/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import type {
@@ -715,8 +716,8 @@ export class Api extends KeyManagementApi {
     }
 
     /**
-     * Whether a key is a E2EE forwarding recipient key, where all its encryption-capable (sub)keys are setup
-     * for forwarding.
+     * Whether a key is a E2EE forwarding recipient key, where all its decryption-capable (sub)keys are setup
+     * as forwardee keys.
      * NB: this function also accepts `PublicKeyReference`s in order to determine the status of inactive (undecryptable)
      * private keys. Such keys can only be imported using `importPublicKey`, but it's important that the encrypted
      * private key is imported (not the corresponding public key).
@@ -730,40 +731,7 @@ export class Api extends KeyManagementApi {
             throw new Error('Unexpected public key');
         }
 
-        // Temporary fix (to be included in pmcrypto 8.2.1):
-        const isValidForwardingKey = async (candidateForwardingKey: PrivateKey) => {
-            const curveName = 'curve25519Legacy';
-
-            const allDecryptionKeys = await candidateForwardingKey
-                .getDecryptionKeys(undefined, date, undefined, {
-                    ...defaultConfig,
-                    allowForwardedMessages: true,
-                })
-                .catch(() => []); // throws if no valid decryption keys are found
-
-            const hasForwardingKeyFlag = (maybeForwardingSubkey: Subkey) => {
-                const flags = maybeForwardingSubkey.bindingSignatures[0].keyFlags?.[0];
-                if (!flags) {
-                    return false;
-                }
-                return (flags & enums.keyFlags.forwardedCommunication) !== 0;
-            };
-            const anyInvalidKey = allDecryptionKeys.some(
-                (maybeForwardingSubkey) =>
-                    maybeForwardingSubkey === null ||
-                    !(maybeForwardingSubkey.keyPacket instanceof SecretKeyPacket) || // SecretSubkeyPacket is a subclass
-                    maybeForwardingSubkey.keyPacket.isDummy() ||
-                    maybeForwardingSubkey.keyPacket.version !== 4 || // TODO add support for v6
-                    maybeForwardingSubkey.getAlgorithmInfo().algorithm !== 'ecdh' ||
-                    maybeForwardingSubkey.getAlgorithmInfo().curve !== curveName ||
-                    // an ECDH key can only be a subkey
-                    !hasForwardingKeyFlag(maybeForwardingSubkey as Subkey)
-            );
-
-            return allDecryptionKeys.length > 0 && !anyInvalidKey;
-        };
-
-        const forForwarding = await isValidForwardingKey(key);
+        const forForwarding = await isForwardingKey(key, date);
         return forForwarding;
     }
 
