@@ -104,7 +104,7 @@ const FeatureItem = ({ checked, description, icon, id, isActivated, onToggle, ti
 
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const api = useApi();
-    const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
+    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const [addresses, addressesLoading] = useAddresses();
     const [userSettings, userSettingsLoading] = useUserSettings();
     const [mailSettings, mailSettingsLoading] = useMailSettings();
