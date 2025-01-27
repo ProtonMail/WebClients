@@ -115,6 +115,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     const fingerprint = publicKey.getFingerprint();
     const hexKeyID = publicKey.getKeyID().toHex();
     const hexKeyIDs = publicKey.getKeyIDs().map((id) => id.toHex());
+    const sha256Fingerprings = await getSHA256Fingerprints(publicKey);
     const algorithmInfo = publicKey.getAlgorithmInfo();
     const creationTime = publicKey.getCreationTime();
     const expirationTime = await publicKey.getExpirationTime();
@@ -149,6 +150,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         isPrivateKeyV6: () => false,
         getVersion: () => version,
         getFingerprint: () => fingerprint,
+        getSHA256Fingerprints: () => sha256Fingerprings,
         getKeyID: () => hexKeyID,
         getKeyIDs: () => hexKeyIDs,
         getAlgorithmInfo: () => algorithmInfo,
@@ -949,14 +951,6 @@ export class Api extends KeyManagementApi {
         const key = this.keyStore.get(keyReference._idx);
         const canEncrypt = await canKeyEncrypt(key, date);
         return canEncrypt;
-    }
-
-    async getSHA256Fingerprints({ key: keyReference }: { key: KeyReference }) {
-        const key = this.keyStore.get(keyReference._idx);
-        // this is quite slow since it hashes the key packets, even for v5 keys, instead of reusing the fingerprint.
-        // once v5 keys are more widespread and this function can be made more efficient, we could include `sha256Fingerprings` in `KeyReference` or `KeyInfo`.
-        const sha256Fingerprints = await getSHA256Fingerprints(key);
-        return sha256Fingerprints;
     }
 
     async computeHash({
