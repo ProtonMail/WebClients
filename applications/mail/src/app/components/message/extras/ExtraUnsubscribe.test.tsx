@@ -100,16 +100,12 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            await act(async () => {
-                fireEvent.click(button);
-            });
+            fireEvent.click(button);
         }
 
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            await act(async () => {
-                fireEvent.click(submitButton);
-            });
+            fireEvent.click(submitButton);
         }
 
         await waitForEventManagerCall();
@@ -121,8 +117,9 @@ describe('Unsubscribe banner', () => {
     it('should show the unsubscribe banner with mailto method', async () => {
         const mailto = 'to@address.com';
         const keys = await generateKeys('me', toAddress);
+        const address = getCompleteAddress({ ID: toAddressID, Email: toAddress });
 
-        const createCall = jest.fn(() => ({ Message: { ID: messageID, Attachments: [] } }));
+        const createCall = jest.fn(() => ({ Message: { ID: messageID, AddressID: address.ID, Attachments: [] } }));
         const sendCall = jest.fn(() => ({ Sent: {} }));
         const markUnsubscribedCall = jest.fn();
 
@@ -134,18 +131,19 @@ describe('Unsubscribe banner', () => {
 
         const message = mergeMessages(defaultMessage, {
             data: {
+                AddressID: address.ID,
                 UnsubscribeMethods: { Mailto: { ToList: [mailto], Body: 'body', Subject: 'subject' } },
             },
         }) as MessageStateWithData;
 
         await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
-                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
-                addressKeys: getAddressKeyCache(toAddressID, keys),
+                addresses: getModelState([address]),
+                addressKeys: getAddressKeyCache(address, [keys]),
             },
         });
 
-        const button = screen.getByTestId('unsubscribe-banner');
+        const button = await screen.findByTestId('unsubscribe-banner');
 
         expect(button.textContent).toMatch(/Unsubscribe/);
 
@@ -232,17 +230,13 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            await act(async () => {
-                fireEvent.click(button);
-            });
+            fireEvent.click(button);
         }
 
         // Submit first modal
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            await act(async () => {
-                fireEvent.click(submitButton);
-            });
+            fireEvent.click(submitButton);
         }
 
         // Second modal should be opened
@@ -275,17 +269,13 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            await act(async () => {
-                fireEvent.click(button);
-            });
+            fireEvent.click(button);
         }
 
         // Submit first modal
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            await act(async () => {
-                fireEvent.click(submitButton);
-            });
+            fireEvent.click(submitButton);
         }
 
         // Second modal should not be opened

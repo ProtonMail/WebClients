@@ -13,7 +13,6 @@ import type {
     Address,
     Api,
     DecryptedAddressKey,
-    DecryptedKey,
     Domain,
     EnhancedMember,
     KeyTransparencyCommit,
@@ -46,11 +45,11 @@ const convertToInternalAddress = async ({
     keyTransparencyVerify,
 }: {
     address: Address;
-    keys: DecryptedKey[];
+    keys: DecryptedAddressKey[];
     api: Api;
     keyTransparencyVerify: KeyTransparencyVerify;
 }) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, keys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
     const internalAddress = {
         ...address,
         // Reset type to an internal address with a custom domain

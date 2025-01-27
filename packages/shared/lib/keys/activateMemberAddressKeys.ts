@@ -2,7 +2,14 @@ import { CryptoProxy } from '@proton/crypto';
 
 import { activateKeyRoute, activateKeyRouteV2 } from '../api/keys';
 import { MEMBER_PRIVATE } from '../constants';
-import type { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
+import type {
+    Address,
+    Api,
+    DecryptedAddressKey,
+    DecryptedKey,
+    KeyTransparencyVerify,
+    UserModel as tsUserModel,
+} from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { getPrimaryKey } from './getPrimaryKey';
@@ -22,7 +29,7 @@ export const getAddressesWithKeysToActivate = (user: tsUserModel, addresses: Add
 interface Args {
     address: Address;
     addresses: Address[];
-    addressKeys: DecryptedKey[];
+    addressKeys: DecryptedAddressKey[];
     userKeys: DecryptedKey[];
     keyPassword: string;
     api: Api;
@@ -47,7 +54,7 @@ export const activateMemberAddressKeys = async ({
 
     const activeKeys = getNormalizedActiveAddressKeys(
         address,
-        await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys)
+        await getActiveAddressKeys(address.SignedKeyList, addressKeys)
     );
 
     const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;

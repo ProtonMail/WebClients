@@ -3,7 +3,7 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { Address, Recipient, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, AddressKey, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 
 import { minimalCache } from '../../../helpers/test/cache';
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
@@ -33,6 +33,7 @@ const addresses: Address[] = [
         Receive: 1,
         Status: 1,
         Order: 1,
+        Keys: [{ ID: 'KeyID', Primary: 1 } as AddressKey],
     } as Address,
     {
         DisplayName: name2,
@@ -42,6 +43,7 @@ const addresses: Address[] = [
         Receive: 0,
         Status: 0,
         Order: 2,
+        Keys: [{ ID: 'KeyID', Primary: 1 } as AddressKey],
     } as Address,
 ];
 
@@ -83,7 +85,7 @@ describe('Composer verify sender', () => {
             preloadedState: {
                 user: getModelState(user),
                 addresses: getModelState(addresses),
-                addressKeys: getAddressKeyCache(addressID1, fromKeys),
+                addressKeys: getAddressKeyCache(addresses[0], [fromKeys]),
             },
             onStore: (store) => {
                 prepareMessage(

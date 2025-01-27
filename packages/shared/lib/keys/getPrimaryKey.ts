@@ -6,6 +6,8 @@ export const getPrimaryKey = <T extends KeyPair>(keys: T[] = []): T | undefined 
     return keys[0];
 };
 
+// For conveniency, a PrivateKeyReference is used for the encryption key here just to retain
+// the key version TS information, and avoid introducing a versioned PublicKeyReference
 export type PrimaryAddressKeyForEncryption = PrivateKeyReferenceV4 | PrivateKeyReferenceV6;
 export const getPrimaryActiveAddressKeyForEncryption = (
     keys: ActiveAddressKeysByVersion,

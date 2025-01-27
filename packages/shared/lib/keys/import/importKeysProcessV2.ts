@@ -7,7 +7,7 @@ import {
     type ActiveKeyWithVersion,
     type Address,
     type Api,
-    type DecryptedKey,
+    type DecryptedAddressKey,
     type KeyTransparencyVerify,
     isActiveKeyV6,
 } from '../../interfaces';
@@ -30,7 +30,7 @@ export interface ImportKeysProcessV2Arguments {
     onImport: OnKeyImportCallback;
     keyPassword: string;
     address: Address;
-    addressKeys: DecryptedKey[];
+    addressKeys: DecryptedAddressKey[];
     userKey: PrivateKeyReference;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
@@ -44,7 +44,7 @@ const importKeysProcessV2 = async ({
     userKey,
     keyTransparencyVerify,
 }: ImportKeysProcessV2Arguments) => {
-    const activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
     const activeKeysList = [...activeKeys.v4, ...activeKeys.v6];
     const inactiveKeys = await getInactiveKeys(address.Keys, activeKeysList);
 

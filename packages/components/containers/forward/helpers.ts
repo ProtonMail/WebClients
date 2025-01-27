@@ -11,6 +11,7 @@ import type {
     Address,
     Api,
     ApiKeysConfig,
+    DecryptedAddressKey,
     DecryptedKey,
     IncomingAddressForwarding,
     KTUserContext,
@@ -288,7 +289,7 @@ export const getInternalParameters = async (
 interface AcceptIncomingForwardingParameters {
     api: Api;
     address: Address;
-    addressKeys: DecryptedKey[];
+    addressKeys: DecryptedAddressKey[];
     user: UserModel;
     userKeys: DecryptedKey[];
     forward: IncomingAddressForwarding;
@@ -339,7 +340,7 @@ export const acceptIncomingForwarding = async ({
         forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
     );
 
-    let activeKeys = await getActiveAddressKeys(address, address.SignedKeyList, address.Keys, forwardeeAddressKeys);
+    let activeKeys = await getActiveAddressKeys(address.SignedKeyList, forwardeeAddressKeys);
 
     // Multiple ForwardingKeys objects are present if e.g. the forwarder changed their primary key and updated/re-enabled
     // the forwarding request while it was still pending (yet to be accepted by the forwardee).

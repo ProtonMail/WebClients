@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { addressKeysThunk, addressesThunk, useInactiveKeys, userKeysThunk } from '@proton/account';
+import { addressesThunk, useInactiveKeys, userKeysThunk } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getKTActivation } from '@proton/account/kt/actions';
@@ -403,19 +403,12 @@ const AddressKeysSection = () => {
                                 dispatch(userKeysThunk()),
                                 dispatch(addressesThunk()),
                             ]);
-                            const addressesKeys = await Promise.all(
-                                addresses.map(async (address) => ({
-                                    address,
-                                    keys: await dispatch(addressKeysThunk({ addressID: address.ID })),
-                                }))
-                            );
                             const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
                             await reactivateKeysProcess({
                                 api,
                                 user: User,
                                 userKeys,
                                 addresses,
-                                addressesKeys,
                                 keyReactivationRecords,
                                 keyPassword: authentication.getPassword(),
                                 onReactivation,

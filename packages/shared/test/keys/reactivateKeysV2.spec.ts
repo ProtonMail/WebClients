@@ -259,22 +259,14 @@ const getSetup3 = async () => {
 
 describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys', async () => {
-        const {
-            keyPassword,
-            keyReactivationRecords,
-            User,
-            Addresses,
-            userKeys,
-            addressesKeys,
-            expectedAddressKeysReactivated,
-        } = await getSetup1();
+        const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
+            await getSetup1();
         const onReactivation = jasmine.createSpy('on reactivation');
         const api = jasmine.createSpy('api').and.returnValues(Promise.resolve(), Promise.resolve());
         await reactivateKeysProcess({
             api,
             user: User,
             userKeys,
-            addressesKeys,
             addresses: Addresses,
             keyReactivationRecords,
             keyPassword,
@@ -306,22 +298,14 @@ describe('reactivate keys', () => {
     });
 
     it('reactivate user keys and the connected address keys, and legacy address keys', async () => {
-        const {
-            keyPassword,
-            keyReactivationRecords,
-            User,
-            Addresses,
-            addressesKeys,
-            userKeys,
-            expectedAddressKeysReactivated,
-        } = await getSetup2();
+        const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
+            await getSetup2();
         const onReactivation = jasmine.createSpy('on reactivation');
         const api = jasmine.createSpy('api').and.returnValues(Promise.resolve(), Promise.resolve());
         await reactivateKeysProcess({
             api,
             user: User,
             userKeys,
-            addressesKeys,
             addresses: Addresses,
             keyReactivationRecords,
             keyPassword,
@@ -391,15 +375,8 @@ describe('reactivate keys', () => {
     });
 
     it('reactivate user keys and the connected address keys', async () => {
-        const {
-            keyPassword,
-            keyReactivationRecords,
-            User,
-            Addresses,
-            userKeys,
-            addressesKeys,
-            expectedAddressKeysReactivated,
-        } = await getSetup3();
+        const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
+            await getSetup3();
         const onReactivation = jasmine.createSpy('on reactivation');
         const api = jasmine.createSpy('api').and.callFake(() => Promise.resolve());
         await reactivateKeysProcess({
@@ -407,7 +384,6 @@ describe('reactivate keys', () => {
             user: User,
             userKeys,
             addresses: Addresses,
-            addressesKeys,
             keyReactivationRecords,
             keyPassword,
             onReactivation,

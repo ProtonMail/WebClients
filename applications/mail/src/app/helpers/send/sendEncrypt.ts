@@ -110,9 +110,6 @@ const encryptBodyPackage = async (
 ) => {
     const cleanPublicKeys = publicKeys.filter(isTruthy);
 
-    // Always encrypt with a single private key
-    const privateKeys = messageKeys.privateKeys.slice(0, 1);
-
     const containsEmbeddedAttachments = pack.MIMEType === MIME_TYPES.MIME && getAttachments(message.data).length > 0; // NB: `Message.NumAttachments` is a server-controlled value, so we cannot rely on it here
     // We enable compression for MIME messages that include attachments to reduce the size of the inlined base64 attachment data,
     // when the body is larger than 1MB. This is also to avoid enabling compression when the attached data is just the sender's public key,
@@ -130,7 +127,7 @@ const encryptBodyPackage = async (
     const { message: encryptedData } = await CryptoProxy.encryptMessage({
         [dataType]: data,
         sessionKey,
-        signingKeys: privateKeys,
+        signingKeys: messageKeys.signingKeys,
         date: scheduledTime ? new Date(scheduledTime) : undefined,
         format: 'binary',
         compress: shouldCompress,
@@ -161,11 +158,8 @@ const encryptDraftBodyPackage = async (
     publicKeys: (PublicKeyReference | undefined)[],
     scheduledTime?: number
 ) => {
-    const cleanPublicAndMessageKeys = [...messageKeys.publicKeys, ...publicKeys].filter(isTruthy);
+    const cleanPublicAndMessageKeys = [...messageKeys.encryptionKeys, ...publicKeys].filter(isTruthy);
     const cleanPublicKeys = publicKeys.filter(isTruthy);
-
-    // Always encrypt with a single private key
-    const privateKeys = messageKeys.privateKeys.slice(0, 1);
 
     // pass both messageKeys and publicKeys to make sure the generated session key is compatible with them all
     const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicAndMessageKeys });
@@ -177,7 +171,7 @@ const encryptDraftBodyPackage = async (
     const { message: encryptedData } = await CryptoProxy.encryptMessage({
         [dataType]: data,
         sessionKey,
-        signingKeys: privateKeys,
+        signingKeys: messageKeys.signingKeys,
         date: scheduledTime ? new Date(scheduledTime) : undefined,
         format: 'binary',
     });
@@ -266,7 +260,7 @@ const getAttachmentKeys = async (message: MessageState, messageKeys: PublicPriva
     Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             Attachment: attachment,
-            SessionKey: await getSessionKey(attachment, messageKeys.privateKeys),
+            SessionKey: await getSessionKey(attachment, messageKeys.decryptionKeys),
         }))
     );
 

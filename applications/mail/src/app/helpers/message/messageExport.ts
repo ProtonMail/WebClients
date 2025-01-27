@@ -56,14 +56,11 @@ export const prepareExport = (message: MessageState) => {
 };
 
 const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
-    const publicKeys = messageKeys.publicKeys.slice(0, 1);
-    const privateKeys = messageKeys.privateKeys.slice(0, 1);
-
     const { message: data } = await CryptoProxy.encryptMessage({
         textData: content,
         stripTrailingSpaces: true,
-        encryptionKeys: publicKeys,
-        signingKeys: privateKeys,
+        encryptionKeys: messageKeys.encryptionKeys,
+        signingKeys: messageKeys.signingKeys,
     });
 
     return data;
@@ -77,22 +74,20 @@ export const prepareAndEncryptBody = async (message: MessageState, messageKeys: 
 
 export const encryptAttachmentKeyPackets = async (
     attachments: Attachment[],
-    previousAddressPrivateKeys: PrivateKeyReference[] = [],
-    newAddressPublicKeys: PublicKeyReference[] = [],
+    previousAddressDecryptionKeys: PrivateKeyReference[] = [],
+    newAddressEncryptionKeys: PublicKeyReference[] = [],
     messageFlags?: number
 ) => {
-    // Only need the first key for encryption (the primary key)
-    const [primaryEncryptionKey] = newAddressPublicKeys;
     return Object.fromEntries(
         await Promise.all(
             attachments
                 .filter(({ ID = '' }) => ID.indexOf('PGPAttachment'))
                 .map(async (attachment) => {
-                    const sessionKey = await getSessionKey(attachment, previousAddressPrivateKeys, messageFlags);
+                    const sessionKey = await getSessionKey(attachment, previousAddressDecryptionKeys, messageFlags);
                     const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
                         data: sessionKey.data,
                         algorithm: sessionKey.algorithm,
-                        encryptionKeys: primaryEncryptionKey,
+                        encryptionKeys: newAddressEncryptionKeys,
                         format: 'binary',
                     });
                     return [attachment.ID || '', encodeBase64(arrayToBinaryString(encryptedSessionKey))];
@@ -117,8 +112,8 @@ export const createMessage = async (
         });
         AttachmentKeyPackets = await encryptAttachmentKeyPackets(
             attachments,
-            originalMessageKeys.privateKeys,
-            messageKeys.publicKeys,
+            originalMessageKeys.decryptionKeys,
+            messageKeys.encryptionKeys,
             message.draftFlags?.originalMessageFlags
         );
     }
@@ -164,8 +159,8 @@ export const updateMessage = async (
         const previousMessageKeys = await getMessageKeys({ AddressID: previousAddressID });
         AttachmentKeyPackets = await encryptAttachmentKeyPackets(
             attachments,
-            previousMessageKeys.privateKeys,
-            messageKeys.publicKeys
+            previousMessageKeys.decryptionKeys,
+            messageKeys.encryptionKeys
         );
     }
     const { Message: updatedMessage } = await api({

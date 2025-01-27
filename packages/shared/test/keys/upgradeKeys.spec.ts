@@ -36,9 +36,9 @@ describe('upgrade keys v2', () => {
                 Keys: [userKey1.Key, userKey2.Key],
             } as tsUser;
             const keys = await Promise.all([
-                getAddressKey('c', userKey1.key.privateKey, 'test@test.com', 2),
-                getAddressKey('d', userKey1.key.privateKey, 'test@test.com', 2),
-                getAddressKey('e', userKey2.key.privateKey, 'test2@test.com', 2),
+                getAddressKey('c', userKey1.key.privateKey, 'test@test.com', false, 2),
+                getAddressKey('d', userKey1.key.privateKey, 'test@test.com', false, 2),
+                getAddressKey('e', userKey2.key.privateKey, 'test2@test.com', false, 2),
             ]);
 
             const Addresses = [

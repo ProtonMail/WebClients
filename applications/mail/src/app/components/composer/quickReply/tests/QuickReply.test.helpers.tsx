@@ -14,6 +14,7 @@ import type { MailStore } from 'proton-mail/store/store';
 import { MESSAGE_ACTIONS } from '../../../../constants';
 import { addApiMock } from '../../../../helpers/test/api';
 import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
+import type { GeneratedKey } from '../../../../helpers/test/crypto';
 import { addApiKeys, getAddressKeyCache } from '../../../../helpers/test/crypto';
 import { getDropdown, waitForSpyCall } from '../../../../helpers/test/helper';
 import { addressID, setup } from '../../../message/tests/Message.test.helpers';
@@ -31,7 +32,7 @@ export const getStateMessageFromParentID = (store: MailStore, parentMessageID: s
 };
 
 interface QuickReplyTestConfig {
-    meKeys: any;
+    meKeys: GeneratedKey;
     referenceMessageBody?: string;
     isPlainText?: boolean;
     isSender?: boolean;
@@ -53,21 +54,20 @@ export const setupQuickReplyTests = async ({
 
     const expectedDefaultPlainTextContent = getExpectedDefaultPlainTextContent(referenceMessageBody);
 
+    const address = getCompleteAddress({
+        ID: addressID,
+        Email: fromFields.meAddress,
+        Receive: 1,
+        Status: 1,
+        Send: 1,
+    });
     const container = await setup(
         message,
         { conversationMode: true, message: message.data },
         {
             preloadedState: {
-                addresses: getModelState([
-                    getCompleteAddress({
-                        ID: addressID,
-                        Email: fromFields.meAddress,
-                        Receive: 1,
-                        Status: 1,
-                        Send: 1,
-                    }),
-                ]),
-                addressKeys: getAddressKeyCache(addressID, meKeys),
+                addresses: getModelState([address]),
+                addressKeys: getAddressKeyCache(address, [meKeys]),
                 mailSettings: getModelState({
                     PMSignature: PM_SIGNATURE.ENABLED,
                     DraftMIMEType: MIME_TYPES.DEFAULT,

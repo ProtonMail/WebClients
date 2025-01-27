@@ -75,6 +75,7 @@ const setup = async (
         AttachmentsMetadata: attachmentsMetadata,
     } as Conversation;
 
+    const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
     return render(
         <ItemColumnLayout
             labelID={MAILBOX_LABEL_IDS.INBOX}
@@ -92,8 +93,8 @@ const setup = async (
         />,
         {
             preloadedState: {
-                addresses: getModelState([getCompleteAddress({ ID: AddressID, Email: fromAddress })]),
-                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                addresses: getModelState([address]),
+                addressKeys: getAddressKeyCache(address, [fromKeys]),
             },
         }
     );

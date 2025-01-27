@@ -58,12 +58,7 @@ const useGetEncryptionPreferences = () => {
             if (selfAddress) {
                 // we do not trust the public keys in ownAddress (they will be deprecated in the API response soon anyway)
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
-                const activeAddressKeys = await getActiveAddressKeys(
-                    selfAddress,
-                    selfAddress.SignedKeyList,
-                    selfAddress.Keys,
-                    selfAddressKeys
-                );
+                const activeAddressKeys = await getActiveAddressKeys(selfAddress.SignedKeyList, selfAddressKeys);
                 const primaryAddressKey = getPrimaryActiveAddressKeyForEncryption(activeAddressKeys, preferV6Keys);
 
                 const selfPublicKey = primaryAddressKey.publicKey;
