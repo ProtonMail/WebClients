@@ -202,7 +202,16 @@ export interface KeyReference {
     readonly _keyContentHash: [string, string];
 
     getVersion(): number;
+    /**
+     * Get primary key hex fingerprint (size depends on key version).
+     */
     getFingerprint(): string;
+    /**
+     * Get list of SHA256 fingerprints for primary key and subkeys in hex format.
+     * This is needed for specific use-cases, e.g. SKLs.
+     * If in doubt, you should probably use `getFingerprint()` instead.
+     */
+    getSHA256Fingerprints(): string[];
     /**
      * Key ID of primary key in hex format.
      */
