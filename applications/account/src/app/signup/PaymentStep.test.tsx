@@ -4,6 +4,7 @@ import * as paymentsDataUtilsModule from '@proton/components/payments/client-ext
 import type { PaymentMethodStatus } from '@proton/payments';
 import { DEFAULT_TAX_BILLING_ADDRESS, PLANS, PLAN_TYPES } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
     applyHOCs,
@@ -111,6 +112,7 @@ beforeEach(() => {
                 Cycle: CYCLE.MONTHLY,
                 Gift: 0,
                 PeriodEnd: 1622505600,
+                SubscriptionMode: SubscriptionMode.Regular,
             },
             billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
         },

@@ -5,7 +5,7 @@ import { ADDON_NAMES, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import { type PlansMap, type Subscription, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import { getCheckoutRenewNoticeText } from './RenewalNotice';
@@ -644,6 +644,7 @@ describe('<RenewalNotice />', () => {
                                     },
                                 ],
                                 Currency: 'CHF',
+                                SubscriptionMode: SubscriptionMode.Regular,
                             },
                         })}
                         cycle={cycle}
@@ -683,6 +684,7 @@ describe('<RenewalNotice />', () => {
                                 },
                             ],
                             Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.Regular,
                         },
                     })}
                     cycle={CYCLE.YEARLY}
@@ -721,6 +723,7 @@ describe('<RenewalNotice />', () => {
                                 },
                             ],
                             Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.Regular,
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
