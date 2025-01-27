@@ -164,7 +164,7 @@ export { PaymentProcessor } from './core/payment-processors/paymentProcessor';
 export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
-export { extractIBAN } from './core/sepa';
+export { extractIBAN, formatPaymentMethod, formatPaymentMethods } from './core/sepa';
 export {
     getScribeAddonNameByPlan,
     getSubscriptionPlanTitle as getSubscriptionPlanTitleAndName,
