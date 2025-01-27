@@ -79,7 +79,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 url.searchParams.append('email', email);
                 url.searchParams.append('plan', PLANS.FREE);
                 url.searchParams.append('product', 'drive');
-                document.location.assign(
+                window.location.assign(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
                         context: 'private',
@@ -101,7 +101,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 // This autofill the sign-in email input
                 url.searchParams.append('username', email);
                 url.searchParams.append('product', 'drive');
-                document.location.assign(
+                window.location.assign(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
                         context: 'private',

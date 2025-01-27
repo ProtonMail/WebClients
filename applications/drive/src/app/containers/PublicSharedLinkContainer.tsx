@@ -8,12 +8,10 @@ import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
-import * as storage from '@proton/shared/lib/helpers/storage';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
-import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupFlowModal';
 import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import { usePartialPublicView } from '../hooks/util/usePartialPublicView';
@@ -85,10 +83,8 @@ function PublicShareLinkInitContainer() {
     const [link, setLink] = useState<DecryptedLink>();
     const { loadPublicShare, user } = usePublicShare();
     const bookmarksPublicView = useBookmarksPublicView({ customPassword });
-    const [signUpFlowModal, showSignUpFlowModal] = useSignupFlowModal();
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
 
-    const isLoggedIn = !!user;
     const error: ErrorTuple[0] = authError || publicShareError;
     const errorMessage: ErrorTuple[1] = authErrorMessage || publicShareErrorMessage;
 
@@ -186,21 +182,6 @@ function PublicShareLinkInitContainer() {
         };
     }, [token, isLoading, authErrorMessage, isPasswordNeeded]);
 
-    useEffect(() => {
-        const modalHasBeenShown = !!storage.getItem(PUBLIC_SHARE_SIGNUP_MODAL_KEY);
-        /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
-        if (
-            !bookmarksFeatureDisabled &&
-            !isLoggedIn &&
-            !isLoading &&
-            !modalHasBeenShown &&
-            isDriveWebShareUrlSignupModalEnabled
-        ) {
-            showSignUpFlowModal({ customPassword });
-            storage.setItem(PUBLIC_SHARE_SIGNUP_MODAL_KEY, 'true');
-        }
-    }, [isDriveWebShareUrlSignupModalEnabled, isLoggedIn, isLoading, customPassword]);
-
     if (isPasswordNeeded) {
         return <PasswordPage submitPassword={submitPassword} isPartialView={isPartialView} />;
     }
@@ -230,9 +211,7 @@ function PublicShareLinkInitContainer() {
     return (
         <>
             {link.isFile ? <SharedFilePage {...props} /> : <SharedFolderPage {...props} />}
-            {!bookmarksFeatureDisabled && isDriveWebShareUrlSignupModalEnabled
-                ? signUpFlowModal
-                : renderUpsellFloatingModal}
+            {!bookmarksFeatureDisabled && isDriveWebShareUrlSignupModalEnabled ? null : renderUpsellFloatingModal}
         </>
     );
 }
