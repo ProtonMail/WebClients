@@ -173,14 +173,14 @@ const AutomaticSubscriptionModal = () => {
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
-    const [loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
+    const [, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
     const [user] = useUser();
     const tmpProps = useRef<{ props: OpenCallbackProps; eligibility: Eligibility } | undefined>(undefined);
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
     const { getPreferredCurrency } = useCurrencies();
-    const [loadingCurrency] = useAutomaticCurrency();
+    const [, loadingCurrency] = useAutomaticCurrency();
     const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
 
     const goToApp = useAppLink();
