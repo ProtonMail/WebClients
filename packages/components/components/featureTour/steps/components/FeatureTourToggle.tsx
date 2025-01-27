@@ -32,7 +32,7 @@ const FeatureTourToggle = ({
             <Label className="color-norm pt-0 ml-4 flex-auto" htmlFor={id}>
                 {title}
             </Label>
-            <div className="mr-4">
+            <div className="mr-4 shrink-0">
                 {isFeatureEnabled ? (
                     <div className="rounded-sm bg-success px-1.5 py-0.5 text-sm text-uppercase text-bold">{c('Info')
                         .t`Active`}</div>
