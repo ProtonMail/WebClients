@@ -93,9 +93,17 @@ export const elements = createSelector(
         const address = search.address ? addresses.value?.find((address) => address.ID === search.address) : undefined;
         const filtered = elementsArray.filter((element) => {
             // Check ID and label first (cheapest operations)
-            if (bypassFilter.length > 0 && !bypassFilterSet.has(element.ID || '')) {
+
+            // If unread status is correct OR the element can bypass filters, continue
+            // Else, we can filter out the item
+            const elementUnread = isUnread(element, labelID);
+            const elementCorrectUnreadStatus =
+                filter.Unread === undefined || (filter.Unread === 1 ? elementUnread : !elementUnread);
+            const elementCanBypassFilter = bypassFilterSet.has(element.ID || '');
+            if (!(elementCorrectUnreadStatus || elementCanBypassFilter)) {
                 return false;
             }
+
             if (!hasLabel(element, labelID)) {
                 return false;
             }
@@ -107,11 +115,6 @@ export const elements = createSelector(
 
             // Check simple filters
             if (filter.Attachments === 1 && !hasAttachments(element)) {
-                return false;
-            }
-
-            const elementUnread = isUnread(element, labelID);
-            if (filter.Unread && (filter.Unread === 1 ? !elementUnread : elementUnread)) {
                 return false;
             }
 
