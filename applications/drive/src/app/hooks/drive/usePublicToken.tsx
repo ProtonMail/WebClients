@@ -12,7 +12,7 @@ export default function usePublicToken() {
         }
         return '';
     }, [pathname]);
-    const urlPassword = getUrlPassword();
+    const urlPassword = useMemo(() => getUrlPassword(), []);
 
     return {
         token,
