@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
+import { formatPaymentMethods } from '@proton/payments';
 import type {
     BillingAddress,
     FullPlansMap,
@@ -486,7 +487,9 @@ export const getUserInfo = async ({
 
     const [paymentMethods, subscription, organization] = await Promise.all([
         state.payable
-            ? api(queryPaymentMethods(forcePaymentsVersion)).then(({ PaymentMethods }) => PaymentMethods)
+            ? api(queryPaymentMethods(forcePaymentsVersion)).then(({ PaymentMethods }) =>
+                  formatPaymentMethods(PaymentMethods)
+              )
             : [],
         state.payable && state.admin && state.subscribed
             ? api(getSubscription(forcePaymentsVersion)).then(
