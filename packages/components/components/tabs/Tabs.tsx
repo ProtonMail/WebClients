@@ -17,6 +17,7 @@ export type Tab = {
     title: string;
     content?: ReactNode;
     icon?: IconName;
+    iconPosition?: 'leading' | 'trailing';
 };
 
 interface Props {
@@ -136,7 +137,7 @@ export const Tabs = ({
                         ref={containerRef}
                         style={{ '--translate': translate, '--scale': scale, '--width': width }}
                     >
-                        {tabList.map(({ title, icon }, index) => {
+                        {tabList.map(({ title, icon, iconPosition = 'trailing' }, index) => {
                             const key = toKey(index, 'key_');
                             const label = toKey(index, 'label_');
                             const selected = value === index;
@@ -175,6 +176,9 @@ export const Tabs = ({
                                         aria-selected={selected}
                                         data-testid={`tab-header-${title.replace(/\s+/, '-').toLowerCase()}-button`}
                                     >
+                                        {icon && iconPosition === 'leading' && (
+                                            <Icon name={icon} className="shrink-0" />
+                                        )}
                                         <span
                                             className={clsx(
                                                 (variant === 'modern' || icon) && 'text-ellipsis flex flex-column'
@@ -183,7 +187,9 @@ export const Tabs = ({
                                         >
                                             {title}
                                         </span>
-                                        {icon && <Icon name={icon} className="shrink-0" />}
+                                        {icon && iconPosition === 'trailing' && (
+                                            <Icon name={icon} className="shrink-0" />
+                                        )}
                                     </button>
                                 </li>
                             );
