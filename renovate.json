@@ -23,7 +23,7 @@
     "packageRules": [
         {
             "groupName": "Playwright",
-            "matchPackageNames": ["playwright", "@playwright/test", "mcr.microsoft.com/playwright"]
+            "matchPackagePatterns": ["playwright"]
         },
         {
             "groupName": "lexical",
