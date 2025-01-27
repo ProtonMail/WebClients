@@ -31,6 +31,7 @@ import type {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
 } from './interface';
+import { formatPaymentMethods } from './sepa';
 import { isFreeSubscription } from './type-guards';
 import { isOnSessionMigration, isSplittedUser } from './utils';
 
@@ -462,7 +463,7 @@ export class PaymentMethods {
 
 async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
     const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods());
-    return response.PaymentMethods ?? [];
+    return formatPaymentMethods(response.PaymentMethods ?? []);
 }
 
 /**
