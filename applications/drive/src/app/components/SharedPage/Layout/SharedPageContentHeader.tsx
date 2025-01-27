@@ -10,7 +10,7 @@ import { type useBookmarksPublicView } from '../../../store';
 import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
-import { SaveToDriveButton } from '../Bookmarks/SaveToDriveButton';
+import { SaveForLaterButton } from '../Bookmarks/SaveForLaterButton';
 import DetailsButton from '../DetailsButton';
 import { CreateButton } from '../EditActions/CreateButton';
 import { UploadButton } from '../EditActions/UploadButton';
@@ -102,7 +102,7 @@ export function SharedPageContentHeader({
                     </>
                 )}
                 {!hideSaveToDrive && !isPartialView && (
-                    <SaveToDriveButton
+                    <SaveForLaterButton
                         loading={isLoading}
                         onClick={addBookmark}
                         alreadyBookmarked={isAlreadyBookmarked}
