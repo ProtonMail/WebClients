@@ -32,7 +32,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const session = state.session;
     const { User, Organization } = session;
 
-    const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
 
     const subscribed = User.Subscribed;
@@ -68,7 +67,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                         apps={getExploreApps({
                             subscribed,
                             user: User,
-                            isWalletAppSwitcherNewBadgeEnabled,
                             isLumoAvailable,
                         })}
                         onExplore={async (app) => {
