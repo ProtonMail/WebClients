@@ -130,9 +130,6 @@
       "Continue offline": [
         "Продолжить оффлайн"
       ],
-      "Copy alias address": [
-        "Копировать адрес псевдонима"
-      ],
       "Copy and close": [
         "Скопировать и закрыть"
       ],
@@ -150,9 +147,6 @@
       ],
       "Create a new vault": [
         "Создать новое хранилище"
-      ],
-      "Create a new vault to share": [
-        "Создать новое хранилище для совместного использования"
       ],
       "Create alias": [
         "Создать псевдоним"
@@ -183,9 +177,6 @@
       ],
       "Custom section": [
         "Пользовательский раздел"
-      ],
-      "Customize": [
-        "Настроить"
       ],
       "Delete": [
         "Удалить"
@@ -237,9 +228,6 @@
       ],
       "Enable this alias to receive emails sent to this alias": [
         "Включите этот псевдоним, чтобы получать электронные письма, на него отправленные."
-      ],
-      "Entire vault": [
-        "Все хранилище"
       ],
       "Exclude from monitoring": [
         "Исключить из мониторинга"
@@ -346,9 +334,6 @@
       "Manage access": [
         "Управление доступом"
       ],
-      "Manage vault access": [
-        "Управление доступом к хранилищу"
-      ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
       ],
@@ -372,9 +357,6 @@
       ],
       "Move all items": [
         "Перенести все элементы"
-      ],
-      "Move to a shared vault": [
-        "Переместите в общее хранилище"
       ],
       "Move to another vault": [
         "Переместить в другое хранилище"
@@ -529,11 +511,11 @@
       "Share": [
         "Поделиться"
       ],
+      "Share item": [
+        "Поделиться элементом"
+      ],
       "Share secure link": [
         "Поделиться защищенной ссылкой"
-      ],
-      "Share this vault": [
-        "Поделитесь этим хранилищем"
       ],
       "Share vault": [
         "Поделиться хранилищем"
@@ -606,9 +588,6 @@
       ],
       "Update": [
         "Обновить"
-      ],
-      "Update vault": [
-        "Обновить хранилище"
       ],
       "Upgrade": [
         "Улучшить"
@@ -1436,9 +1415,6 @@
       "Can be viewed": [
         "Можно просмотреть"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Может представлять и отзывать доступ к этому хранилищу, и удалять его."
       ],
@@ -1943,9 +1919,6 @@
       "Restoring trashed items...": [
         "Восстановление элементов из корзины..."
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Обратный адрес псевдонима скопирован в буфер обмена. Отправьте письмо на этот адрес, и ${ Email } получит его."
-      ],
       "Secure links": [
         "Защищенные ссылки"
       ],
@@ -2113,9 +2086,6 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Перейдите на платный план, чтобы создать несколько хранилищ."
-      ],
-      "Use vaults to share this item with others.": [
-        "Используйте хранилища, чтобы поделиться этим элементом с другими."
       ],
       "User's access removed": [
         "Доступ пользователя удален"
@@ -2395,9 +2365,6 @@
       "All": [
         "Все"
       ],
-      "All vaults": [
-        "Все хранилища"
-      ],
       "Alphabetical": [
         "По алфавиту"
       ],
@@ -2604,9 +2571,6 @@
       ],
       "General": [
         "Общие"
-      ],
-      "Generate a secure link for this item": [
-        "Создать защищенную ссылку для этого элемента"
       ],
       "Generic CSV": [
         "Общий CSV"
@@ -2929,9 +2893,6 @@
       "Share": [
         "Поделиться"
       ],
-      "Share this vault or create a new vault": [
-        "Поделиться этим хранилищем или создать новое хранилище"
-      ],
       "Shared link": [
         "Общая ссылка"
       ],
@@ -2979,12 +2940,6 @@
       ],
       "Text": [
         "Текст"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } человека",
-        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } людей",
-        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } людей",
-        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } людей"
       ],
       "The URL has been copied to the clipboard": [
         "URL был скопирован в буфер обмена"
@@ -3257,23 +3212,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Искать ${ pluralItemType } в ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Искать ${ pluralItemType } во всех хранилищах"
-      ],
       "Search in ${ vaultName }": [
         "Поиск в ${ vaultName }"
-      ],
-      "Search in all vaults": [
-        "Искать во всех хранилищах"
       ],
       "Search in Trash": [
         "Искать в корзине"
       ],
       "Select a suffix": [
         "Выберите суффикс"
-      ],
-      "Shared vault": [
-        "Общее хранилище"
       ],
       "Unknown origin": [
         "Неизвестное происхождение"
@@ -3417,12 +3363,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Генерация случайных префиксов успешно включена"
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователя.",
-        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
-        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
-        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Письмо с подтверждением отправлено. Проверьте свой почтовый ящик, чтобы подтвердить его подлинность."

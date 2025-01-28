@@ -72,7 +72,7 @@
         "Adicionar grupo"
       ],
       "Add new group": [
-        "Adicionar novo grupo"
+        "Adicionar um grupo"
       ],
       "Add note": [
         "Adicionar nota"
@@ -202,7 +202,7 @@
         "Criar"
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contato"
+        "Criar um grupo de contatos"
       ],
       "Create and copy alias": [
         "Criar e copiar alias"
@@ -217,7 +217,7 @@
         "Criar pasta"
       ],
       "Create new contact": [
-        "Criar novo contato"
+        "Criar um contato"
       ],
       "Current plan": [
         "Plano atual"
@@ -995,11 +995,6 @@
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
@@ -1092,34 +1087,9 @@
         "Histórico de versões"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } Plus não tem preço de renovação, ou seja, é um pagamento único para acesso vitalício ao Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Os descontos são baseados no preço mensal padrão."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Se você adquirir o Pass Family ou Unlimited, sua assinatura será renovada automaticamente pela taxa com desconto e duração padrão ao final de seu ciclo de faturamento."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "forever": [
-        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
@@ -1165,9 +1135,6 @@
       ],
       "12 months": [
         "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
       ],
       "Annually": [
         "Anualmente"
@@ -2965,6 +2932,9 @@
         "${ list } não tem contatos",
         "Alguns dos grupos não têm contatos: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Mensagens e composição > Domínio curto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -3227,6 +3197,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Um dos grupos não tem contatos: ${ noContactGroupList }",
         "Alguns dos grupos não tem contatos: ${ noContactGroupList } "
+      ],
+      "Organization key is not decrypted": [
+        "A chave de organização não está descriptografada"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -3801,7 +3774,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "Você entrou com sucesso no grupo familiar"
+        "Você entrou no grupo familiar"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Você tem faturas não pagas. Você deve pagá-las antes de aderir a um plano familiar."
@@ -4604,8 +4577,8 @@
         "Código do país"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Criar ${ calendarsToBeCreatedCount } novo calendário",
-        "Criar ${ calendarsToBeCreatedCount } novos calendários"
+        "Criar ${ calendarsToBeCreatedCount } calendário",
+        "Criar ${ calendarsToBeCreatedCount } calendários"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
@@ -4614,7 +4587,7 @@
         "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a new contact group": [
-        "Criar novo grupo de contato"
+        "Criar um grupo de contatos"
       ],
       "Create a secure cloud for ${ value } member": [
         "Criar uma nuvem segura para ${ value } membro",
@@ -4836,6 +4809,9 @@
       "Key fingerprint": [
         "Chave de impressão digital"
       ],
+      "Keys created": [
+        "Chave criada"
+      ],
       "Label all imported messages as": [
         "Marcar todas as mensagens importadas como"
       ],
@@ -5004,7 +4980,7 @@
         "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please try again in a few moments": [
-        "Por favor, tente novamente em alguns instantes"
+        "Tente novamente em alguns instantes"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
@@ -5056,7 +5032,7 @@
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Os pagamentos SEPA não estão disponíveis no momento. Por favor, tente novamente mais tarde."
+        "Os pagamentos SEPA não estão disponíveis no momento. Tente novamente mais tarde."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -5199,6 +5175,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
+      "User activated": [
+        "Usuário ativado"
+      ],
       "username": [
         "Nome de usuário"
       ],
@@ -5212,7 +5191,7 @@
         "O processo de verificação abrirá uma nova guia. Desative os bloqueadores de pop-ups. Você não será cobrado. Qualquer quantia usada para verificar seu cartão será reembolsada imediatamente."
       ],
       "Version number successfully copied to clipboard": [
-        "Número da versão copiada com sucesso para a área de transferência"
+        "O número da versão foi copiado para a área de transferência."
       ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
@@ -5454,7 +5433,7 @@
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A data da sua próxima renovação será em ${ renewalTime }. Favor entrar em contato com o suporte se você precisa de uma mudança de plano imediata."
+        "A data da sua próxima renovação será em ${ renewalTime }.Entre em contato com o suporte se você precisa de uma mudança de plano imediata."
       ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
@@ -6078,7 +6057,7 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para adicionar um novo calendário, remova um existente."
+        "Para adicionar um calendário, remova um existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
         "Para adicionar um calendário, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
@@ -7692,7 +7671,7 @@
       "Custom email domain": [
         "Domínio de e-mail personalizado"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Endereços de e-mail"
       ],
       "Free": [
@@ -7755,7 +7734,7 @@
         "Automático (${ value })"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Custom": [
         "Personalizada"
@@ -7806,7 +7785,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Criar novo calendário"
+        "Criar um calendário"
       ],
       "Merge with calendar": [
         "Mesclar com o calendário"
@@ -7943,7 +7922,7 @@
         "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Por favor, reative sua assinatura primeiro para diminuir o número de complementos."
+        "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
       "Please select billing country": [
         "Selecione o país de cobrança"
@@ -7996,7 +7975,7 @@
         "Ocorreu um erro. Tente novamente mais tarde."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Não conseguimos autenticar seu método de pagamento. Por favor, escolha um método de pagamento diferente ou tente novamente."
+        "Não conseguimos autenticar seu método de pagamento. Escolha um método de pagamento diferente ou tente novamente."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
@@ -8646,6 +8625,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Esta assinatura será renovada automaticamente a cada 2 anos com a mesma taxa até que seja cancelada."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Sua assinatura será renovada pelo mesmo preço todos os anos."
       ]
     },
     "specialoffer: Link": {
@@ -9096,7 +9078,7 @@
         "2 usuários"
       ],
       "Add any new files": [
-        "Adicionar qualquer novo arquivo"
+        "Adicionar qualquer arquivo"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura ${ planName } expirar, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamento concedidos anteriormente."
@@ -9474,10 +9456,10 @@
         "Desfazer em andamento"
       ],
       "Verification successful": [
-        "Verificado com sucesso"
+        "A verificação é terminada."
       ],
       "You have successfully canceled your subscription.": [
-        "Você cancelou sua assinatura com sucesso."
+        "Você cancelou sua assinatura."
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
@@ -9745,7 +9727,7 @@
         "Criar contato"
       ],
       "Create new group": [
-        "Criar novo grupo"
+        "Criar um grupo"
       ],
       "Create public link": [
         "Criar link público"
@@ -10289,6 +10271,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Sua nova assinatura será renovada automaticamente em ${ cycle } mês.",
+        "Sua nova assinatura será renovada automaticamente em ${ cycle } meses."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Seu plano agendado começa em ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Sua assinatura será renovada automaticamente em ${ cycle } mês.",

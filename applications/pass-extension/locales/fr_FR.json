@@ -8,6 +8,9 @@
       "Accept": [
         "Accepter"
       ],
+      "Accept and view the item": [
+        "Accepter et afficher l'élément"
+      ],
       "Account": [
         "Compte"
       ],
@@ -122,11 +125,11 @@
       "Continue without pinning": [
         "Continuer sans épingler"
       ],
-      "Copy alias address": [
-        "Copier l'adresse de l'alias"
-      ],
       "Copy and close": [
         "Copier et fermer"
+      ],
+      "Copy forwarding address": [
+        "Copier l'adresse de transfert"
       ],
       "Copy link": [
         "Copier le lien"
@@ -142,9 +145,6 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
-      ],
-      "Create a new vault to share": [
-        "Créer un nouveau coffre-fort à partager"
       ],
       "Create alias": [
         "Créer un alias"
@@ -181,9 +181,6 @@
       ],
       "Custom section": [
         "Section personnalisée"
-      ],
-      "Customize": [
-        "Personnaliser"
       ],
       "Delete": [
         "Supprimer"
@@ -251,9 +248,6 @@
       "Enable this alias to receive emails sent to this alias": [
         "Activez cet alias pour recevoir les messages qui lui sont adressés."
       ],
-      "Entire vault": [
-        "Tout le coffre-fort"
-      ],
       "Exclude from monitoring": [
         "Exclure de la surveillance"
       ],
@@ -317,6 +311,9 @@
       "Include in monitoring": [
         "Inclure dans la surveillance"
       ],
+      "Invite more...": [
+        "Invitez plus de personnes…"
+      ],
       "Invite others": [
         "Inviter d'autres personnes"
       ],
@@ -356,9 +353,6 @@
       "Manage access": [
         "Gérer l'accès"
       ],
-      "Manage vault access": [
-        "Gérer l'accès au coffre-fort"
-      ],
       "Manually sync your data": [
         "Synchroniser manuellement vos données"
       ],
@@ -379,9 +373,6 @@
       ],
       "Move all items": [
         "Déplacer tous les éléments"
-      ],
-      "Move to a shared vault": [
-        "Déplacer vers un coffre-fort partagé"
       ],
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
@@ -536,11 +527,11 @@
       "Share": [
         "Partager"
       ],
+      "Share item": [
+        "Partager l'élément"
+      ],
       "Share secure link": [
         "Partager un lien sécurisé"
-      ],
-      "Share this vault": [
-        "Partager ce coffre-fort"
       ],
       "Share vault": [
         "Partager le coffre-fort"
@@ -619,9 +610,6 @@
       "Update this login": [
         "Mettre à jour cet identifiant"
       ],
-      "Update vault": [
-        "Mettre à jour le coffre-fort"
-      ],
       "Updating": [
         "Mettre à jour"
       ],
@@ -654,6 +642,9 @@
       ],
       "View older history": [
         "Afficher l'historique plus ancien"
+      ],
+      "With other ${ BRAND_NAME } users": [
+        "Avec d'autres utilisateurs de ${ BRAND_NAME }"
       ],
       "Write us on Reddit": [
         "Écrivez-nous sur Reddit"
@@ -785,6 +776,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Cette invitation n'a pu être confirmée pour le moment."
+      ],
+      "Could not leave item.": [
+        "Vous n'avez pas pu quitter l'élément."
       ],
       "Could not leave vault.": [
         "Impossible de quitter le coffre-fort."
@@ -1238,10 +1232,6 @@
         "${ blockedEmailsCount } bloqué",
         "${ blockedEmailsCount } bloqués"
       ],
-      "${ count } invite successfully sent": [
-        "${ count } invitation a été envoyée.",
-        "${ count } invitations ont été envoyées."
-      ],
       "${ count } time": [
         "${ count } fois",
         "${ count } fois"
@@ -1256,6 +1246,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } transféré",
         "${ forwardedEmailsCount } transférés"
+      ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "${ inviterEmail } souhaite partager un élément avec vous."
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1297,6 +1290,10 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } suggérera de sauvegarder les clés d'accès."
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } invitation a été envoyée.",
+        "${ payload.count } invitations ont été envoyées."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } a été desactivé."
@@ -1426,8 +1423,17 @@
       "Can be viewed": [
         "Peut être vu "
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Permet de créer, modifier, supprimer et exporter des éléments dans ce coffre-fort."
+      "Can create, edit, and delete items in this vault.": [
+        "Peut créer, modifier et supprimer les éléments dans ce coffre-fort."
+      ],
+      "Can create, edit, and delete this item.": [
+        "Peut créer, modifier et supprimer cet élément."
+      ],
+      "Can grant and revoke access to this item, and delete it.": [
+        "Permet d'accorder et de révoquer l'accès à cet élément, ainsi que de le supprimer."
+      ],
+      "Can grant and revoke access to this item.": [
+        "Peut accorder et révoquer l'accès à cet élément."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Permet d'accorder et de révoquer l'accès à ce coffre-fort, ainsi que de le supprimer."
@@ -1437,6 +1443,9 @@
       ],
       "Can view items in this vault.": [
         "Permet de consulter les éléments de ce coffre-fort."
+      ],
+      "Can view this item.": [
+        "Peut afficher cet élément."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Choisir une clé d'accès enregistrée pour la connexion à ${ domain }"
@@ -1613,6 +1622,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
       ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "L'adresse de transfert a été copiée dans le presse-papiers. Envoyez un e-mail à cette adresse et ${ Email } le recevra."
+      ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Les mots de passe générés seront stockés pendant ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaine.",
         "Les mots de passe générés seront stockés pendant ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaines."
@@ -1688,6 +1700,10 @@
       "Item restored": [
         "L'élément a été restauré."
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Partage d'élément : ${ itemAccessCount } utilisateur",
+        "Partage d'élément : ${ itemAccessCount } utilisateurs"
+      ],
       "Item successfully excluded from monitoring": [
         "L'élément a été exclu de la surveillance."
       ],
@@ -1702,6 +1718,9 @@
       ],
       "Item successfully unpinned": [
         "L'élément a été désépinglé."
+      ],
+      "Leaving item...": [
+        "Vous quittez l'élément..."
       ],
       "Leaving vault...": [
         "Vous quittez le coffre-fort…"
@@ -1941,9 +1960,6 @@
       "Restoring trashed items...": [
         "Restauration des éléments mis à la corbeille en cours"
       ],
-      "Reverse alias address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "L'adresse de l'alias inversé a été copiée dans le presse-papiers. Envoyez un e-mail à cette adresse et ${ Email } le recevra."
-      ],
       "Save login": [
         "Enregistrer l'identifiant"
       ],
@@ -1989,6 +2005,9 @@
       "Share your logins and secure notes, with up to 10 people": [
         "Partagez vos identifiants et notes sécurisées avec jusqu'à 10 personnes"
       ],
+      "Shared item invitation": [
+        "Invitation à un élément partagé"
+      ],
       "Sign in or create an account to continue.": [
         "Connectez-vous ou créez un compte pour continuer."
       ],
@@ -2006,6 +2025,9 @@
       ],
       "Successfully exported all your items": [
         "Tous vos éléments ont été exportés."
+      ],
+      "Successfully left the item": [
+        "Vous avez quitté l'élément."
       ],
       "Successfully left the vault": [
         "Vous avez quitté le coffre-fort."
@@ -2049,6 +2071,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Cette exportation ne sera pas chiffrée et toute personne ayant accès au fichier exporté pourra voir vos mots de passe. Pour des raisons de sécurité, supprimez ce fichier après l'avoir utilisé."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Cet élément n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
       "This operation is irreversible.": [
         "Cette opération est irréversible."
@@ -2140,9 +2165,6 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Passez à un abonnement payant pour créer plusieurs coffres-forts."
       ],
-      "Use vaults to share this item with others.": [
-        "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
-      ],
       "User's access removed": [
         "L'accès de l'utilisateur a été retiré."
       ],
@@ -2160,6 +2182,10 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Le coffre-fort « ${ share.content.name } » a été retiré."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Partage de coffres-forts : ${ vaultMembersCount } utilisateur",
+        "Partage de coffres-forts : ${ vaultMembersCount } utilisateurs"
       ],
       "Verification code": [
         "Code de vérification"
@@ -2390,8 +2416,8 @@
       "All": [
         "Tout"
       ],
-      "All vaults": [
-        "Tous les coffres-forts"
+      "All items": [
+        "Tous les éléments"
       ],
       "Alphabetical": [
         "Ordre alphabétique"
@@ -2591,6 +2617,9 @@
       "Floor, apartment, building": [
         "Étage, appartement, immeuble"
       ],
+      "For a one-off sharing": [
+        "Pour un partage unique"
+      ],
       "Forwards to": [
         "Transfert vers"
       ],
@@ -2602,9 +2631,6 @@
       ],
       "General": [
         "Général"
-      ],
-      "Generate a secure link for this item": [
-        "Créer un lien sécurisé pour cet élément"
       ],
       "Generic CSV": [
         "CSV générique"
@@ -2753,6 +2779,9 @@
       "Need help?": [
         "Besoin d'aide ?"
       ],
+      "New": [
+        "Nouveau"
+      ],
       "New vault": [
         "Nouveau coffre-fort"
       ],
@@ -2888,6 +2917,9 @@
       "Security code": [
         "Code de sécurité"
       ],
+      "See member and permission overview": [
+        "Affichez l'ensemble des membres et des autorisations"
+      ],
       "Select a domain": [
         "Sélectionner un domaine"
       ],
@@ -2912,11 +2944,17 @@
       "Share": [
         "Partager"
       ],
-      "Share this vault or create a new vault": [
-        "Partager ce coffre-fort ou en créer un nouveau"
+      "Shared": [
+        "Partagé"
+      ],
+      "Shared by me": [
+        "Partagé par moi"
       ],
       "Shared link": [
         "Lien partagé"
+      ],
+      "Shared with me": [
+        "Partagé avec moi"
       ],
       "Show website favicons": [
         "Afficher les favicônes des sites internet"
@@ -2959,10 +2997,6 @@
       ],
       "Text": [
         "Texte"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Le coffre-fort de l'élément est actuellement partagé avec ${ targetMembers } personne.",
-        "Le coffre-fort de l'élément est actuellement partagé avec ${ targetMembers } personnes"
       ],
       "The URL has been copied to the clipboard": [
         "L'URL a été copiée dans le presse-papiers."
@@ -3023,6 +3057,9 @@
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Utiliser ${ PASS_APP_NAME } comme le gestionnaire de mots de passe par défaut de votre navigateur"
+      ],
+      "Useful for permanent sharing": [
+        "Utile pour un partage permanent"
       ],
       "Username": [
         "Nom d'utilisateur"
@@ -3201,23 +3238,20 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Recherchez les ${ pluralItemType } dans ${ vaultName }."
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Recherchez les ${ pluralItemType } dans tous les coffres-forts."
+      "Search ${ pluralItemType } in all items": [
+        "Rechercher ${ pluralItemType } dans tous les éléments"
       ],
       "Search in ${ vaultName }": [
         "Rechercher dans ${ vaultName }"
       ],
-      "Search in all vaults": [
-        "Recherchez dans tous les coffres-forts."
+      "Search in all items": [
+        "Rechercher dans tous les éléments"
       ],
       "Search in Trash": [
         "Recherchez dans la corbeille."
       ],
       "Select a suffix": [
         "Sélectionnez un suffixe."
-      ],
-      "Shared vault": [
-        "Coffre-fort partagé"
       ],
       "Unknown origin": [
         "Origine inconnue"
@@ -3333,6 +3367,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Le domaine a été vérifié. Votre domaine peut commencer à recevoir des e-mails et créer des alias."
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Les éléments ne peuvent pas compter plus de ${ share.targetMaxMembers } utilisateur.",
+        "Les éléments ne peuvent pas compter plus de ${ share.targetMaxMembers } utilisateurs."
+      ],
       "Mailbox successfully deleted": [
         "La messagerie a été supprimée."
       ],
@@ -3348,9 +3386,9 @@
       "Random prefix generation successfully enabled": [
         "La génération de préfixe aléatoire a été activée."
       ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateur.",
-        "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateurs."
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Les coffres-forts ne peuvent pas compter plus de ${ targetMaxMembers } utilisateur.",
+        "Les coffres-forts ne peuvent pas compter plus de ${ targetMaxMembers } utilisateurs."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "L'e-mail de vérification a été envoyé. Veuillez vérifier votre boite de réception pour confirmer votre messagerie."
@@ -3516,11 +3554,17 @@
       "Import to vault(s)": [
         "Importer dans les coffres-forts"
       ],
+      "Item": [
+        "Élément"
+      ],
       "Last autofill": [
         "Dernier remplissage automatique"
       ],
       "Last modified": [
         "Dernière modification"
+      ],
+      "Leave this item?": [
+        "Voulez-vous quitter cet élément ?"
       ],
       "Leave vault?": [
         "Quitter le coffre-fort ?"
@@ -3562,6 +3606,9 @@
       ],
       "No items selected": [
         "Aucun élément n'est sélectionné."
+      ],
+      "No shared items": [
+        "Aucun élément partagé"
       ],
       "No shared secure links": [
         "Aucun lien sécurisé partagé"
@@ -3629,6 +3676,12 @@
       ],
       "Share with": [
         "Partager avec"
+      ],
+      "Shared item invitation": [
+        "Invitation à un élément partagé"
+      ],
+      "Shared via": [
+        "Partagé via"
       ],
       "SPF (Optional)": [
         "SPF (facultatif)"
@@ -3742,6 +3795,9 @@
       ],
       "A description of the problem is required": [
         "Une description du problème est nécessaire."
+      ],
+      "Addresses already invited.": [
+        "Les adresses ont déjà été invitées."
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Les alias dans la corbeille continueront de rediriger les e-mails."
@@ -3860,6 +3916,9 @@
       "No secure links matching": [
         "Aucun lien sécurisé ne correspond."
       ],
+      "No shared items matching": [
+        "Aucune correspondance pour les éléments partagés"
+      ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Une fois synchronisés, la suppression d'alias dans ${ PASS_SHORT_APP_NAME } les supprimera également dans SimpleLogin."
       ],
@@ -3890,6 +3949,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Certains éléments sont actuellement partagés. Leur suppression retirera également leur accès aux autres utilisateurs."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Certains éléments sont actuellement partagés. Leur déplacement vers un autre coffre-fort retirera également leur accès aux autres utilisateurs."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Une erreur s'est produite pendant le démarrage de ${ PASS_APP_NAME }. Actualisez ou rechargez l'extension."
       ],
@@ -3898,6 +3963,12 @@
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
         "Cet alias « ${ aliasEmail } » est actuellement utilisé dans l'identifiant « ${ relatedLoginName } »."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Cet élément est actuellement partagé. Sa suppression retirera également son accès aux autres utilisateurs."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "L'élément est actuellement partagé. Son déplacement vers un autre coffre-fort retirera également son accès aux autres utilisateurs."
       ],
       "Title is required": [
         "Le titre est nécessaire."
@@ -3920,8 +3991,14 @@
       "Verification code is required": [
         "Le code de vérification est nécessaire."
       ],
+      "You have reached the limit of members who can access this item.": [
+        "Vous avez atteint le nombre limite de membres qui peuvent accéder à cet élément."
+      ],
       "You have reached the limit of members who can access this vault.": [
         "Vous avez atteint le nombre limite de membres qui peuvent accéder à ce coffre-fort."
+      ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Vous avez atteint le nombre maximum d'utilisateurs pour cet élément. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Vous avez atteint le nombre maximum d'utilisateurs dans ce coffre-fort. ${ upgradeLink }"
@@ -3934,6 +4011,9 @@
       ],
       "You must select at least one mailbox": [
         "Vous devez sélectionner au moins une messagerie."
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Vous n'aurez plus accès à cet élément et à ses informations. Voulez-vous continuer ?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Vous n'aurez plus accès à ce coffre-fort. Pour le rejoindre à nouveau, il vous faudra une nouvelle invitation."

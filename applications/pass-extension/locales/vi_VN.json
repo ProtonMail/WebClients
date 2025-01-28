@@ -113,9 +113,6 @@
       "Create a ${ BRAND_NAME } account": [
         "Tạo một tài khoản ${ BRAND_NAME }"
       ],
-      "Create a new vault to share": [
-        "Tạo một kho lưu trữ mới để chia sẻ"
-      ],
       "Create alias": [
         "Tạo bí danh"
       ],
@@ -142,9 +139,6 @@
       ],
       "Custom section": [
         "Mục tùy chỉnh"
-      ],
-      "Customize": [
-        "Tuỳ chỉnh"
       ],
       "Delete": [
         "Xóa"
@@ -305,9 +299,6 @@
       "Move all items": [
         "Chuyển tất cả nội dung"
       ],
-      "Move to a shared vault": [
-        "Chuyển đến một kho lưu trữ được chia sẻ"
-      ],
       "Move to another vault": [
         "Chuyển đến kho lưu trữ khác"
       ],
@@ -425,9 +416,6 @@
       "Share": [
         "Chia sẻ"
       ],
-      "Share this vault": [
-        "Chia sẽ kho lưu trữ này"
-      ],
       "Share vault": [
         "Chia sẽ kho lưu trữ"
       ],
@@ -478,9 +466,6 @@
       ],
       "Update": [
         "Cập nhật"
-      ],
-      "Update vault": [
-        "Cập nhật kho lưu trữ"
       ],
       "Updating": [
         "Đang cập nhật"
@@ -1012,9 +997,6 @@
       "Can be viewed": [
         "Có thể được xem"
       ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Cho phép tạo, chỉnh sửa, xóa và xuất nội dung trong kho lưu trữ này."
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Cho phép cấp, thu hồi quyền truy cập và xóa kho lưu trữ này."
       ],
@@ -1489,9 +1471,6 @@
       "Upgrade Now to Unlock Premium Features": [
         "Nâng cấp bây giờ để mở khóa các tính năng cao cấp"
       ],
-      "Use vaults to share this item with others.": [
-        "Dùng kho lưu trữ để chia sẻ nội dung này với những người khác."
-      ],
       "User's access removed": [
         "Đã gỡ quyền truy cập của người dùng"
       ],
@@ -1661,9 +1640,6 @@
       ],
       "All": [
         "Tất cả"
-      ],
-      "All vaults": [
-        "Tất cả kho lưu trữ"
       ],
       "Alphabetical": [
         "Thứ tự chữ cái"
@@ -2100,9 +2076,6 @@
       "Text": [
         "Văn bản"
       ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "Kho lưu trữ của nội dung hiện được chia sẽ với ${ targetMembers } người dùng"
-      ],
       "Theme": [
         "Chủ đề"
       ],
@@ -2276,23 +2249,14 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Tìm ${ pluralItemType } trong ${ vaultName }"
       ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Tìm ${ pluralItemType } trong tất cả kho lưu trữ"
-      ],
       "Search in ${ vaultName }": [
         "Tìm trong ${ vaultName }"
-      ],
-      "Search in all vaults": [
-        "Tìm trong tất cả kho lưu trữ"
       ],
       "Search in Trash": [
         "Tìm trong thùng rác"
       ],
       "Select a suffix": [
         "Chọn một hậu tố"
-      ],
-      "Shared vault": [
-        "Kho lưu trữ được chia sẻ"
       ],
       "Unknown origin": [
         "Không rõ nguồn"
@@ -2310,9 +2274,6 @@
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Đồng bộ bí danh đã hoàn tất! Bí danh SimpleLogin của bạn sẽ được cập nhật trong vài phút nữa."
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Kho lưu trữ không thể có hơn ${ vault.targetMaxMembers } thành viên."
       ]
     },
     "Title": {

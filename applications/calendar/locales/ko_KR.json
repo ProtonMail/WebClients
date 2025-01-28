@@ -314,6 +314,12 @@
       "Forward as attachment": [
         "첨부 파일로 전달"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "${ planName }을(를) ${ priceCoupon }로 구매하기"
+      ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } 받기"
+      ],
       "Get in touch": [
         "연락하기"
       ],
@@ -686,6 +692,9 @@
       "Switch or add account": [
         "계정 전환 및 추가"
       ],
+      "Take a tour": [
+        "둘러보기"
+      ],
       "Today": [
         "오늘"
       ],
@@ -978,11 +987,6 @@
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크톱 앱"
@@ -1075,34 +1079,9 @@
         "버전 기록"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus 평생 딜은 갱신 가격이 없으며, Pass Plus의 평생 이용권의 일회성 결제입니다."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "할인은 표준 월별 가격을 기본으로 합니다."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Pass Family나 Unlimited를 구매하면 구독이 결제일에 표준 할인율로 자동 갱신됩니다."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "구독은 결제 주기가 끝날 때 표준 할인율을 적용한 요금으로 자동 갱신됩니다."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "가장 인기"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } 1회 청구"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal }간"
-      ],
-      "forever": [
-        "평생"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }(으)로 1개월 후 갱신됩니다."
@@ -1114,6 +1093,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "모든 기기의 로그인 항목을 보호하세요. 무제한 hide-my-email 별칭 공유, 통합된 2단계 인증기, ${ DARK_WEB_MONITORING_NAME } 등 기능이 포함되어 있습니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
@@ -1143,9 +1125,6 @@
       ],
       "12 months": [
         "12개월"
-      ],
-      "24 months": [
-        "24개월"
       ],
       "Annually": [
         "연간"
@@ -1248,6 +1227,21 @@
       ],
       "Continue your subscription": [
         "내 구독 유지하기"
+      ],
+      "Create label": [
+        "라벨 생성"
+      ],
+      "Discover and set up features": [
+        "기능 알아보고 설정하기"
+      ],
+      "Remind me later": [
+        "나중에 확인하기"
+      ],
+      "Set up other features": [
+        "다른 기능 설정하기"
+      ],
+      "Take a tour": [
+        "둘러보기"
       ]
     },
     "Calendar access select label": {
@@ -2486,7 +2480,7 @@
         "나중에…"
       ],
       "Never": [
-        "절대"
+        "안 함"
       ],
       "On date…": [
         "해당 일에..."
@@ -2911,6 +2905,9 @@
       "${ list } has no contacts": [
         "그룹에 연락처가 없습니다: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }을(를) 생성하려면, 일반 > 메시지 및 작성 > 짧은 도메인 (pm.me)로 이동하세요."
+      ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
@@ -3169,6 +3166,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "그룹 중 하나에 연락처가 없어요 : ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "조직 키는 해독되지 않았습니다"
+      ],
       "Password is required": [
         "비밀번호가 필요함"
       ],
@@ -3198,6 +3198,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "성, 이름 및 표시되는 이름을 입력하십시오."
+      ],
+      "Please select a country": [
+        "국가를 선택해주세요"
+      ],
+      "Please select a state": [
+        "주를 선택해주세요"
       ],
       "Port is required": [
         "포트가 필요함"
@@ -4297,6 +4303,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized }개 폴더 찾음"
       ],
@@ -4543,6 +4552,12 @@
       "Discard changes?": [
         "변경 사항 취소"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "${ planTitle }로 잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
@@ -4584,6 +4599,12 @@
       ],
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "휴지통 및 스팸함으로 이동된지 30일이 경과한 이메일이 자동으로 삭제됩니다."
+      ],
+      "Enabling auto-deletion…": [
+        "자동 삭제 활성화 중…"
       ],
       "Enter the code from your authenticator app": [
         "인증 앱의 코드를 입력하세요"
@@ -4702,6 +4723,9 @@
       "Key fingerprint": [
         "지문 키"
       ],
+      "Keys created": [
+        "키 생성됨"
+      ],
       "Label all imported messages as": [
         "가져온 모든 메시지에 라벨 지정:"
       ],
@@ -4810,6 +4834,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
+      "or discover other features:": [
+        "혹은 다른 기능 살펴보기:"
+      ],
       "Organization size": [
         "조직 크기"
       ],
@@ -4894,6 +4921,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
+      "Registering your subscription…": [
+        "구독 등록하는 중…"
+      ],
       "Removed participants will be notified.": [
         "삭제된 참가자들에게 알림이 전송됩니다."
       ],
@@ -4921,8 +4951,14 @@
       "Session timed out": [
         "세션 시간 초과됨"
       ],
+      "Setting up ${ feature }…": [
+        "${ feature } 설정 중…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
+      ],
+      "Setting up your new address…": [
+        "새 주소를 설정하는 중…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
@@ -5050,6 +5086,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
+      "User activated": [
+        "사용자 활성화됨"
+      ],
       "username": [
         "사용자 이름"
       ],
@@ -5164,6 +5203,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "기존 ${ BRAND_NAME } 캘린더에 불러온 캘린더를 병합할 수도 있습니다."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "언제든지 ${ settingsLink }(에)서 변경하실 수 있습니다."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "진행 상황을 ${ importProgressLink } 에서 확인하실 수 있습니다."
       ],
@@ -5187,6 +5229,9 @@
       ],
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "내 비밀번호나 다른 데이터가 제 3자 서비스에서 유출되면 알림받으세요."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "체험판 ${ planTitle } 구독이 있습니다. 체험 기간 이후로도 계속 구독을 사용하려면, 결제 수단을 추가해 주세요."
@@ -5597,7 +5642,7 @@
         "이메일 암호화"
       ],
       "Ends": [
-        "끝"
+        "종료"
       ],
       "Event duration": [
         "이벤트 기간"
@@ -5797,6 +5842,9 @@
       "Start date": [
         "시작일"
       ],
+      "State": [
+        "시/도"
+      ],
       "Street address": [
         "도로명 주소"
       ],
@@ -5967,6 +6015,9 @@
       ],
       "Sent": [
         "보낸 편지함"
+      ],
+      "settings": [
+        "설정"
       ],
       "Snooze": [
         "방해 금지"
@@ -6361,11 +6412,17 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon }에 시작하기"
       ],
+      "Starting from ${ pricing }": [
+        "${ pricing }부터 시작"
+      ],
       "Upgrade": [
         "업그레이드"
       ],
       "Upgrade now": [
         "지금 업그레이드"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }(으)로 업그레이드"
       ]
     },
     "new_plans: action": {
@@ -6490,6 +6547,9 @@
       ],
       "15 GB storage": [
         "저장 공간 15GB"
+      ],
+      "200 GB of storage": [
+        "200GB 저장공간"
       ],
       "24/7 account management support": [
         "24/7 계정 관리 지원"
@@ -6683,6 +6743,9 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Private photo backup": [
+        "안전한 사진 백업"
+      ],
       "Proofread and refine your emails": [
         "이메일 교정 및 수정하기"
       ],
@@ -6718,6 +6781,9 @@
       ],
       "Secure Core servers": [
         "Secure Core 서버"
+      ],
+      "Secure file storage and sharing": [
+        "안전한 파일 저장 공간 및 공유"
       ],
       "Secure link sharing": [
         "안전한 링크 공유"
@@ -6945,6 +7011,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고나서, 자동으로 ${ priceMailPlus }에 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "단 ${ priceMailPlus }(으)로 모든 ${ BRAND_NAME } 프리미엄 제품과 기능들을 잠금 해제하세요. 언제든지 취소할 수 있습니다."
       ]
     },
     "new_plans: title": {
@@ -7400,6 +7474,52 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Calendar에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } 할인이 오늘 만료됩니다!"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "단 ${ pricingTitle }(으)로 Drive Plus 구매"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "단 ${ pricingTitle }(으)로 Mail Plus 구매"
+      ],
+      "Get the deal": [
+        "특가 받기"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "${ plan } Plus의 첫 달 80% 할인 받을 마지막 기회입니다."
+      ],
+      "Limited-time offer": [
+        "기간 한정 할인"
+      ],
+      "Maybe later": [
+        "나중에"
+      ],
+      "Save 80% on your first month.": [
+        "첫 달에 80% 할인 받기"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "그 외 10개 더 많은 프리미엄 기능들"
+      ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
+      ],
+      "Email addresses": [
+        "이메일 주소"
+      ],
+      "Free": [
+        "무료"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "저장 공간"
       ]
     },
     "Onboarding": {
@@ -8310,6 +8430,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "이 구독은 취소되기 전까지 매 2년마다 같은 요율로 갱신됩니다."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "귀하의 구독은 매년 같은 요율로 갱신됩니다."
       ]
     },
     "specialoffer: Link": {
@@ -8318,6 +8441,9 @@
       ],
       "Upgrade": [
         "업그레이드"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "${ pricingTitle }(으)로 업그레이드"
       ]
     },
     "specialoffer: Offers": {
@@ -9258,6 +9384,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount }개 이메일 주소"
       ],
+      "${ feature } is now active": [
+        "${ feature }이(가) 이제 활성 상태입니다"
+      ],
       "Account recovery": [
         "계정 복구"
       ],
@@ -9311,6 +9440,9 @@
       ],
       "Are you sure?": [
         "확실하신가요?"
+      ],
+      "Auto-deletion is active": [
+        "자동 삭제가 이제 활성 상태입니다."
       ],
       "Billing cycle": [
         "결제 주기"
@@ -9741,6 +9873,9 @@
       "What would you like to import?": [
         "무엇을 가져오시겠어요?"
       ],
+      "You can now create unlimited folders and labels": [
+        "무제한 폴더 및 라벨을 생성할 수 있습니다."
+      ],
       "You have invited participants with equivalent emails": [
         "같은 이메일로 참가자들을 초대했습니다"
       ],
@@ -9908,6 +10043,12 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "12개월마다 ${ renewPrice }가 결제됩니다."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "귀하의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "귀하의 요금제가 ${ renewalTime }에 시작합니다."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "사용자의 구독이 ${ cycle }개월 뒤에 자동으로 갱신됩니다."

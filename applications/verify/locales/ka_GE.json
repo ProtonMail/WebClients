@@ -1085,6 +1085,9 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "ერთზე მეტი უფასო ანგარიშის შექმნა თქვენი ${ termsLink }-სთვის მხარდაჭერილი არაა."
+      ],
       "Each code can only be used once": [
         "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
       ],
@@ -1102,6 +1105,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "დამატებითი ინფორმაციისთვის და შეზღუდვების მოსაცილებლად შედით ბმულზე ${ mailLink }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
@@ -1292,6 +1298,9 @@
       "15 GB storage": [
         "15 გბ საცავი"
       ],
+      "200 GB of storage": [
+        "200 გბ საცავი"
+      ],
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვა"
       ],
@@ -1376,6 +1385,9 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
+      "Private photo backup": [
+        "კონფიდენციალური სურათების მარქაფი"
+      ],
       "Proofread and refine your emails": [
         "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
       ],
@@ -1396,6 +1408,9 @@
       ],
       "Search message content": [
         "შეტყობინების შიგთავსში ძებნა"
+      ],
+      "Secure file storage and sharing": [
+        "დაცული ფაილების საცავი და გაზიარება"
       ],
       "See team's availability": [
         "გუნდის ხელმისაწვდომობის ნახვა"
@@ -1623,6 +1638,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "ანგარიში შეზღუდულია"
+      ],
       "Enter 2FA code": [
         "შეიყვანეთ 2FA კოდი"
       ],

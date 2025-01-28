@@ -587,7 +587,7 @@
         "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
       "Get ${ planOrAppName }": [
-        "Je choisis ${ planOrAppName }"
+        "Essayez ${ planOrAppName }"
       ],
       "Get a new encrypted email address": [
         "Obtenir une nouvelle adresse e-mail chiffrée"
@@ -1172,7 +1172,7 @@
         "Basculer vers ou ajouter un compte"
       ],
       "Take a tour": [
-        "Laissez-vous guider"
+        "Visite guidée"
       ],
       "Test": [
         "Test"
@@ -1726,11 +1726,6 @@
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Application de bureau ${ MAIL_APP_NAME }"
@@ -1823,34 +1818,9 @@
         "Historique des versions"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "L'offre à vie de ${ PASS_SHORT_APP_NAME } Plus n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Les réductions sont calculées sur les prix mensuels habituels."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si vous achetez Pass Family ou Unlimited, votre abonnement sera automatiquement renouvelé au tarif et à la durée standard à la fin de votre cycle de facturation."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Le plus populaire"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
-      ],
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
-      ],
-      "forever": [
-        "pour toujours"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
@@ -1864,7 +1834,7 @@
         "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
+        "Connexions sécurisées sur tous vos appareils. Comprends un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
@@ -1905,9 +1875,6 @@
       ],
       "12 months": [
         "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
       ],
       "Annually": [
         "Annuel"
@@ -2052,7 +2019,7 @@
         "Configurez d'autres fonctionnalités"
       ],
       "Take a tour": [
-        "Laissez-vous guider"
+        "Visite guidée"
       ],
       "Tweet": [
         "Tweeter"
@@ -4735,7 +4702,7 @@
         "Sélectionnez un pays"
       ],
       "Please select a state": [
-        "Selectionnez un état"
+        "Sélectionnez une région"
       ],
       "Please set a recovery email first": [
         "Définissez d'abord une adresse e-mail de récupération."
@@ -6734,6 +6701,9 @@
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
+      "${ checkout.discountPercent }% discount": [
+        "${ checkout.discountPercent } % de réduction"
+      ],
       "${ current } of ${ total }": [
         "${ current } sur ${ total }"
       ],
@@ -7424,7 +7394,7 @@
         "Réduction"
       ],
       "Discover new features unlocked and start using them right away!": [
-        "Découvrez les nouvelles fonctionnalités auxquelles vous avez accès et utilisez-les dès maintenant !"
+        "Découvrez les nouvelles fonctionnalités disponibles et utilisez-les dès maintenant !"
       ],
       "Discover new features unlocked with ${ planTitle } and start using them right away!": [
         "Découvrez les nouvelles fonctionnalités incluses dans ${ planTitle } et utilisez-les dès maintenant !"
@@ -7476,7 +7446,7 @@
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
       ],
       "Download on the App Store": [
-        "Téléchargez-le sur l'App Store"
+        "Télécharger sur l'App Store"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Téléchargez notre modèle CSV, renseignez les informations sur l'utilisateur, puis téléchargez votre fichier CSV complété pour créer des comptes pour ces utilisateurs."
@@ -7698,7 +7668,7 @@
         "Pour y accéder, créez un compte ${ BRAND_NAME } et acceptez l'invitation."
       ],
       "Get it on Google Play": [
-        "Obtenez-le sur Google Play"
+        "Télécharger sur Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -8642,7 +8612,7 @@
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "Mettez vos messages en pause pour les consulter plus tard, afin qu'ils apparaissent en tête de votre boîte de réception au moment voulu."
+        "Mettez vos messages en attente pour les consulter plus tard, afin qu'ils apparaissent en tête de votre boîte de réception au moment voulu."
       ],
       "Some keys successfully reactivated": [
         "Certaines clés ont été réactivées."
@@ -9532,6 +9502,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Vous ne pourrez pas récupérer les données verrouillées en utilisant les fichiers de récupération que vous avez téléchargés. Cela désactivera aussi la récupération depuis un appareil."
+      ],
+      "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
+        "Votre ${ boldDiscountPercent } pour ${ boldPlanTitle } a été appliqué."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Votre compte ${ BRAND_NAME } est associé avec ${ externalEmailAddress }."
@@ -12651,6 +12624,17 @@
         "Gestion de l'équipe"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ trialPlanName } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Votre essai se termine le ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -12759,17 +12743,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ trialPlanName } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -13414,7 +13387,7 @@
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Adresses e-mail"
       ],
       "Free": [
@@ -13593,6 +13566,9 @@
       ],
       "No permission": [
         "Aucune autorisation"
+      ],
+      "None": [
+        "Aucun"
       ],
       "Normal": [
         "Normal"
@@ -15926,6 +15902,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Votre abonnement sera renouvelé au même tarif chaque année."
       ]
     },
     "specialoffer: Link": {
@@ -19472,6 +19451,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé ${ renewPrice } tous les 12 mois."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Votre abonnement prévu commence le ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",

@@ -304,7 +304,7 @@
         "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
       "Get ${ planOrAppName }": [
-        "Je choisis ${ planOrAppName }"
+        "Essayez ${ planOrAppName }"
       ],
       "Get in touch": [
         "Nous contacter"
@@ -637,7 +637,7 @@
         "Basculer vers ou ajouter un compte"
       ],
       "Take a tour": [
-        "Laissez-vous guider"
+        "Visite guidée"
       ],
       "Take out of trash": [
         "Retirer de la corbeille"
@@ -851,11 +851,6 @@
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Application de bureau ${ MAIL_APP_NAME }"
@@ -948,34 +943,9 @@
         "Historique des versions"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "L'offre à vie de ${ PASS_SHORT_APP_NAME } Plus n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Les réductions sont calculées sur les prix mensuels habituels."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si vous achetez Pass Family ou Unlimited, votre abonnement sera automatiquement renouvelé au tarif et à la durée standard à la fin de votre cycle de facturation."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Le plus populaire"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
-      ],
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
-      ],
-      "forever": [
-        "pour toujours"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
@@ -989,7 +959,7 @@
         "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
+        "Connexions sécurisées sur tous vos appareils. Comprends un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
@@ -1021,9 +991,6 @@
       ],
       "12 months": [
         "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
       ],
       "Annually": [
         "Annuel"
@@ -1140,7 +1107,7 @@
         "Configurez d'autres fonctionnalités"
       ],
       "Take a tour": [
-        "Laissez-vous guider"
+        "Visite guidée"
       ]
     },
     "Cancellation upsell": {
@@ -2208,6 +2175,11 @@
         "Facture impayée"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2286,11 +2258,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2475,6 +2442,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -2706,6 +2676,9 @@
         "L'un des groupes n'a aucun contact : ${ noContactGroupList }",
         "Certains groupes n'ont aucun contact : ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "La clé de l'organisation n'est pas déchiffrée."
+      ],
       "Password is required": [
         "Le mot de passe est nécessaire."
       ],
@@ -2738,7 +2711,7 @@
         "Sélectionnez un pays"
       ],
       "Please select a state": [
-        "Selectionnez un état"
+        "Sélectionnez une région"
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -3761,7 +3734,7 @@
         "${ contactsLength } contacts"
       ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
-        "Les fichiers ${ DOCS_APP_NAME } ne peuvent pas être téléchargés directement et ne seront pas inclus dans ce téléchargement. Vous pouvez télécharger les autres fichiers en cliquant sur Continuer le téléchargement."
+        "Les fichiers ${ DOCS_APP_NAME } ne peuvent pas être téléchargés directement et ne seront pas inclus dans ce téléchargement. Vous pouvez télécharger les autres fichiers en cliquant sur « Continuer le téléchargement »."
       ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } vous permet de collaborer en temps réel avec un chiffrement de bout en bout pour une confidentialité totale. Créez une copie pour la modifier ou demander au propriétaire d'y accéder."
@@ -4041,7 +4014,7 @@
         "La signature numérique a été vérifiée. Ce dossier a été chargé de manière sécurisée par ${ emailAddress }."
       ],
       "Discover new features unlocked and start using them right away!": [
-        "Découvrez les nouvelles fonctionnalités auxquelles vous avez accès et utilisez-les dès maintenant !"
+        "Découvrez les nouvelles fonctionnalités disponibles et utilisez-les dès maintenant !"
       ],
       "Discover new features unlocked with ${ planTitle } and start using them right away!": [
         "Découvrez les nouvelles fonctionnalités incluses dans ${ planTitle } et utilisez-les dès maintenant !"
@@ -4280,6 +4253,9 @@
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
+      ],
+      "Keys created": [
+        "Les clés ont été créées."
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
@@ -4656,6 +4632,9 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Ce document comporte un nombre important d'activités. Certaines fonctionnalités peuvent être temporairement indisponibles."
       ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
+        "Il se peut que ce document n'existe pas ou que vous ne soyez pas autorisé à le consulter. Vous pouvez essayer de recharger la page pour voir si le problème persiste ou contacter le propriétaire pour en obtenir l'accès."
+      ],
       "This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Il se peut que ce document n'existe pas ou que vous n'ayez pas les autorisations nécessaires pour le consulter avec le compte que vous avez sélectionné. Essayez un autre compte ou contactez le propriétaire pour y accéder."
       ],
@@ -4676,9 +4655,6 @@
       ],
       "This message will be presented again later": [
         "Ce message sera de nouveau présenté plus tard."
-      ],
-      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Il se peut que ce document public n'existe pas ou que vous ne soyez pas autorisé à le consulter. Vous pouvez essayer de recharger la page pour voir si le problème persiste."
       ],
       "This will replace the existing file with the folder": [
         "Cela remplacera le fichier existant par le dossier."
@@ -4754,6 +4730,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Le téléchargement de centaines de fichiers en même temps peut réduire les performances."
+      ],
+      "User activated": [
+        "L'utilisateur a été activé."
       ],
       "username": [
         "nom d'utilisateur"
@@ -4968,7 +4947,7 @@
         "Votre adresse e-mail a été exposée :"
       ],
       "Your email address will be visible as the link's owner on the share page": [
-        "Votre adresse e-mail sera visible en tant que propriétaire du lien sur cette page partagée."
+        "Votre adresse e-mail sera visible en tant que propriétaire du lien sur la page partagée."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
@@ -5107,7 +5086,7 @@
         "Durant"
       ],
       "Anyone on the Internet with the link can edit": [
-        "Toute personne ayant accès à internet et à ce lien peut apporter des modifications."
+        "Toute personne ayant accès à internet et avec ce lien peut apporter des modifications."
       ],
       "Anyone on the Internet with the link can view": [
         "Toute personne ayant accès à internet et à ce lien peut consulter."
@@ -5980,7 +5959,7 @@
         "Commencez pour ${ priceCoupon }"
       ],
       "Plans starting from ${ priceDrivePlus }": [
-        "Abonnement à parti de ${ priceDrivePlus }"
+        "Abonnement à partir de ${ priceDrivePlus }"
       ],
       "Starting from ${ pricing }": [
         "À partir de ${ pricing }"
@@ -7167,7 +7146,7 @@
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
       ],
-      "Email Addresses": [
+      "Email addresses": [
         "Adresses e-mail"
       ],
       "Free": [
@@ -7943,6 +7922,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Votre abonnement sera renouvelé au même tarif chaque année."
       ]
     },
     "specialoffer: Link": {
@@ -8261,6 +8243,25 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'espace de stockage par utilisateur"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domaine de messagerie personnalisé",
+        "${ planNumberOfDomains } domaines de messagerie personnalisés"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresse e-mail",
+        "${ planNumberOfEmails } adresses e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Dossiers, labels et filtres personnalisés"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Go d'espace de stockage"
@@ -8300,25 +8301,6 @@
       ],
       "Your privacy is our mission": [
         "La protection de votre vie privée est notre priorité."
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'espace de stockage par utilisateur"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domaine de messagerie personnalisé",
-        "${ planNumberOfDomains } domaines de messagerie personnalisés"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresse e-mail",
-        "${ planNumberOfEmails } adresses e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Dossiers, labels et filtres personnalisés"
       ]
     },
     "Subscription renewal state": {
@@ -9048,6 +9030,11 @@
         "Aujourd'hui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Ajoutez ce fichier partagé à votre ${ DRIVE_APP_NAME } pour y accéder facilement plus tard."
@@ -9125,11 +9112,6 @@
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
@@ -9178,6 +9160,13 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Vous serez ensuite facturé ${ renewPrice } tous les 12 mois."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois.",
+        "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Votre abonnement prévu commence le ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Votre abonnement sera automatiquement renouvelé dans ${ cycle } mois.",

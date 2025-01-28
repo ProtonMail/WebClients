@@ -1030,11 +1030,6 @@
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
@@ -1124,29 +1119,7 @@
         "Versionshistorik"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatter er baseret på månedlig standardpris."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Mest populær"
-      ]
-    },
     "BF2024: Offers": {
-      "for ${ durationDeal }": [
-        "til ${ durationDeal }"
-      ],
-      "forever": [
-        "for evigt"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
       ]
@@ -1188,9 +1161,6 @@
       ],
       "12 months": [
         "12 måneder"
-      ],
-      "24 months": [
-        "24 måneder"
       ],
       "Annually": [
         "Årlig"
@@ -2371,11 +2341,6 @@
         "Forfalden faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2451,6 +2416,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2643,6 +2613,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
@@ -2871,6 +2844,9 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "Organisationsnøgle er ikke dekrypteret"
+      ],
       "Password is required": [
         "Adgangskode er påkrævet."
       ],
@@ -2901,6 +2877,9 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Angiv enten et fornavn, et efternavn eller et visningsnavn"
+      ],
+      "Please select a country": [
+        "Vælg venligst et land"
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -3969,6 +3948,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } beskytter din konto med dedikeret overvågning af mistænkelig aktivitet."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
         "${ providerFoldersNumLocalized } mapper fundet"
@@ -4361,6 +4343,9 @@
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden, slettes automatisk."
+      ],
       "Empty folder": [
         "Tom mappe"
       ],
@@ -4578,6 +4563,9 @@
       ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
+      ],
+      "Keys created": [
+        "Nøgler oprettet"
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
@@ -4885,6 +4873,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
+      "Registering your subscription…": [
+        "Registrerer dit abonnement…"
+      ],
       "Report has been sent": [
         "Anmeldelse sendt"
       ],
@@ -4948,8 +4939,14 @@
       "Session timed out": [
         "Session er udløbet"
       ],
+      "Setting up ${ feature }…": [
+        "Konfigurerer ${ feature }…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
+      ],
+      "Setting up your new address…": [
+        "Konfigurerer din nye adresse…"
       ],
       "Share files with links": [
         "Del filer med links"
@@ -5212,6 +5209,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
+      "User activated": [
+        "Bruger aktiveret"
+      ],
       "username": [
         "brugernavn"
       ],
@@ -5338,6 +5338,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også flette importerede kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Du kan ændre dette når som helst i ${ settingsLink }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -5363,6 +5366,9 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Du har ${ expiresInDays } dag tilbage til at få dine 3 GB velkomstbonus og ",
@@ -5476,6 +5482,9 @@
       ],
       "Your previous recovery phrase": [
         "Din forrige gendannelsessætning"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Dit planlagte abonnement starter på ${ renewalTime } og fornyes automatisk hver måned."
       ]
     },
     "info": {
@@ -7779,6 +7788,14 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Calendar."
+      ]
+    },
+    "Offer feature": {
+      "Free": [
+        "Gratis"
+      ],
+      "Plus": [
+        "Plus"
       ]
     },
     "Onboarding": {
@@ -10187,11 +10204,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tilføj denne delte fil på din ${ DRIVE_APP_NAME } til nem adgang senere."
@@ -10273,6 +10285,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Validation": {

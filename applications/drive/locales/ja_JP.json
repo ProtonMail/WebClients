@@ -186,6 +186,9 @@
       "Continue": [
         "続行"
       ],
+      "Continue downloading": [
+        "ダウンロードを続行"
+      ],
       "Continue import": [
         "インポートを続行"
       ],
@@ -368,6 +371,12 @@
       ],
       "Forward as attachment": [
         "添付ファイルとして転送"
+      ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "${ planName } で ${ priceCoupon }を入手"
+      ],
+      "Get ${ planOrAppName }": [
+        "${ planOrAppName } を入手"
       ],
       "Get in touch": [
         "連絡する"
@@ -801,6 +810,9 @@
       "Switch or add account": [
         "アカウントを切り替え・追加"
       ],
+      "Take a tour": [
+        "ツアーを開始"
+      ],
       "Toggle Calendar app": [
         "カレンダーアプリを切り替え"
       ],
@@ -1031,11 +1043,6 @@
         "1 件の独自メールドメイン対応、10 のメールアドレス、10 の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -1128,34 +1135,9 @@
         "バージョン履歴"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus生涯契約には更新価格はなく、　一回限りの支払いで Pass Plusに生涯アクセスできます。"
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "割引は標準の月額料金に基づいて計算されます。"
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Pass Family または Unlimited を購入した場合、サブスクリプションは請求サイクルの終了時に標準の割引料金と期間で自動的に更新されます。"
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "あなたのサブスクリプションは、支払い間隔の終了時に標準の割引価格と期間で自動的に更新されます。"
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "最も人気"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "一度に${ amount }が請求されます"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal } の場合"
-      ],
-      "forever": [
-        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renews after 1 month at ${ regularAmount }."
@@ -1167,6 +1149,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Netflix、Disney+、Prime Videoをはじめとする各種ストリーミングサービスのコンテンツに、どこからでもアクセスできます。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "すべてのデバイスでセキュアなログイン。無制限のhide-my-email エイリアス、共有、統合2FA、 ${ DARK_WEB_MONITORING_NAME } などが含まれています。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "${ addresses } メールアドレスを含む、エンドツーエンド暗号化によってメールや予定を安全に保つことができます。 カスタムメールドメインのサポート、${ BRAND_NAME } Scribe 書き込みアシスタント、無制限の hide-my-email エイリアスなどが含まれます。"
@@ -1196,9 +1181,6 @@
       ],
       "12 months": [
         "12 か月"
-      ],
-      "24 months": [
-        "24 か月"
       ],
       "Annually": [
         "1年払い"
@@ -1301,6 +1283,21 @@
       ],
       "Continue your subscription": [
         "サブスクリプションを継続する"
+      ],
+      "Create label": [
+        "ラベルを作成"
+      ],
+      "Discover and set up features": [
+        "機能の発見と設定"
+      ],
+      "Remind me later": [
+        "後で通知する"
+      ],
+      "Set up other features": [
+        "他の機能を設定"
+      ],
+      "Take a tour": [
+        "ツアーを開始"
       ]
     },
     "Cancellation reminder": {
@@ -2377,11 +2374,6 @@
         "未払いの請求"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2434,6 +2426,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }で、GoogleやOutlookから連絡先をインポート"
       ],
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "編集権限でファイルを共有するには、 ${ BRAND_NAME } ${ planName } にアップグレードしてください"
+      ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
       ],
@@ -2457,6 +2452,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2649,6 +2649,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } はあなたのユーザー名です。 ${ emailAddress } を作成するには、[設定] > [メッセージと作成] > [短いドメイン (pm.me)] に移動してください。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -2872,6 +2875,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
+      "Organization key is not decrypted": [
+        "組織の鍵が復号されていません"
+      ],
       "Password is required": [
         "パスワードは必須です"
       ],
@@ -2901,6 +2907,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "名前、姓、または表示名のいずれかを入力してください。"
+      ],
+      "Please select a country": [
+        "国を選択してください"
+      ],
+      "Please select a state": [
+        "州を選択してください"
       ],
       "Port is required": [
         "ポートは必須です"
@@ -3929,6 +3941,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 件の連絡先"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } ファイルは直接ダウンロードできず、ダウンロードに含まれません。「ダウンロードを続ける」をクリックして他のファイルをダウンロードできます。"
+      ],
       "${ doneCount } finished": [
         "完了 ${ doneCount } 件"
       ],
@@ -3970,6 +3985,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } は、疑わしいアクティビティの専用モニタリングでアカウントを保護します。"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
@@ -4277,6 +4295,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "デジタル署名が検証されました。このフォルダーは ${ emailAddress } によって安全にアップロードされました。"
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "アンロックされた新機能を見つけて、すぐに使い始めましょう！"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "${ planTitle } でアンロックされた新機能を見つけて、すぐに使い始めましょう！"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
       ],
@@ -4349,8 +4373,14 @@
       "Emails are automatically signed": [
         "メールは自動的に署名されます"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "30 日以上前にゴミ箱とスパムに移動したメールは自動的にクリアされます。"
+      ],
       "Empty folder": [
         "空のフォルダ"
+      ],
+      "Enabling auto-deletion…": [
+        "自動消去を有効にしています…"
       ],
       "Enabling drive search": [
         "ドライブ内検索を有効にしています"
@@ -4565,6 +4595,9 @@
       "Key fingerprint": [
         "鍵のフィンガープリント"
       ],
+      "Keys created": [
+        "作成されたキー"
+      ],
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
@@ -4714,6 +4747,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "リンクとパスワードを知っている人のみがフォルダーにアクセスすることができます。"
+      ],
+      "or discover other features:": [
+        "または他の機能を発見することもできます:"
       ],
       "Or use the \"+ New\" button": [
         "または「+新規」ボタンを使用します"
@@ -4868,6 +4904,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
+      "Registering your subscription…": [
+        "サブスクリプションを登録中…"
+      ],
       "Report has been sent": [
         "レポートは送信されました"
       ],
@@ -4934,14 +4973,23 @@
       "Session timed out": [
         "セッションがタイムアウトしました"
       ],
+      "Setting up ${ feature }…": [
+        "${ feature }を設定しています…"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
+      ],
+      "Setting up your new address…": [
+        "新しいアドレスを設定中…"
       ],
       "Share files with links": [
         "リンクでファイルを共有"
       ],
       "Share via link settings": [
         "リンク設定経由で共有"
+      ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "${ rootLink.signatureEmail }が共有しました"
       ],
       "Shared link not found": [
         "共有リンクが見つかりません"
@@ -4999,6 +5047,12 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "${ items } は改ざんされたか、アカウントに新しい鍵が設定された可能性があります。信頼できる場合のみ開いてください。"
+      ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "デジタル署名が部分的に検証されました。 このファイルは、 ${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用してアップロードされました。そのため、本人確認はできません。"
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "デジタル署名が部分的に検証されました。 このフォルダは、 ${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用してアップロードされました。そのため、本人確認はできません。"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "ダウンロード数には、実際のダウンロードとファイルがプレビューされた場合の両方が含まれます。"
@@ -5092,6 +5146,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "${ DOCS_APP_NAME } ファイルをダウンロードするには、 ${ DOCS_APP_NAME } で開いてエクスポートしてください。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
@@ -5197,6 +5254,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "このフォームを使うことで、不適切であったり違法である共有ファイル、およびその他の悪意ある共有ファイルを報告することができます。レポートする内容:"
+      ],
+      "User activated": [
+        "ユーザーがアクティブ化"
       ],
       "username": [
         "ユーザー名"
@@ -5324,6 +5384,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "${ settingsLink } でいつでも変更できます。"
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
@@ -5347,6 +5410,9 @@
       ],
       "You cannot undo this action.": [
         "この操作は取り消すことができません。"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "${ expiresInDays } 日以内に、3 GB のウェルカムボーナスを受け取り "
@@ -5419,6 +5485,9 @@
       ],
       "Your email address was exposed:": [
         "メールアドレスが漏洩しました:"
+      ],
+      "Your email address will be visible as the link's owner on the share page": [
+        "あなたのメールアドレスはリンクの所有者として共有ページに表示されます"
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
@@ -5579,6 +5648,9 @@
       ],
       "Anderson": [
         "アンダーソン"
+      ],
+      "Anyone on the Internet with the link can edit": [
+        "このリンクを知っていれば、インターネット上の誰でも編集できます"
       ],
       "Anyone on the Internet with the link can view": [
         "このリンクを知っていれば、インターネット上の誰でも閲覧できます"
@@ -6018,6 +6090,9 @@
       "Start date": [
         "開始日"
       ],
+      "State": [
+        "状態"
+      ],
       "Stolen data": [
         "盗難されたデータ"
       ],
@@ -6204,6 +6279,9 @@
       "Sent": [
         "送信済み"
       ],
+      "settings": [
+        "設定"
+      ],
       "Shared": [
         "共有中"
       ],
@@ -6227,6 +6305,11 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "含まれています:"
       ]
     },
     "Loading info": {
@@ -6589,11 +6672,20 @@
       "Get started for ${ priceCoupon }": [
         "${ priceCoupon }で開始"
       ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "プランは${ priceDrivePlus }から始まります"
+      ],
+      "Starting from ${ pricing }": [
+        "${ pricing }から始める"
+      ],
       "Upgrade": [
         "アップグレード"
       ],
       "Upgrade now": [
         "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
       ]
     },
     "new_plans: action": {
@@ -6718,6 +6810,9 @@
       ],
       "15 GB storage": [
         "15 GB のストレージ"
+      ],
+      "200 GB of storage": [
+        "200 GBストレージ"
       ],
       "24/7 account management support": [
         "24時間365日のアカウント管理サポート"
@@ -6911,6 +7006,9 @@
       "Priority support & live chat": [
         "優先サポートとライブチャット"
       ],
+      "Private photo backup": [
+        "プライベート写真のバックアップ"
+      ],
       "Proofread and refine your emails": [
         "メールを校正し、洗練させる"
       ],
@@ -6946,6 +7044,9 @@
       ],
       "Secure Core servers": [
         "Secure Core サーバー"
+      ],
+      "Secure file storage and sharing": [
+        "安全なファイルストレージと共有"
       ],
       "Secure link sharing": [
         "セキュアリンク共有"
@@ -7173,6 +7274,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: Subtext": {
+      "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceMailPlus }. You can cancel at any time.": [
+        "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceMailPlus }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceMailPlus }. Cancel anytime.": [
+        "全ての ${ BRAND_NAME } プレミアム製品と機能を ${ priceMailPlus }だけでアンロックできます。いつでもキャンセルできます。"
       ]
     },
     "new_plans: title": {
@@ -7648,7 +7757,7 @@
         "${ n } 件のファイルの移動"
       ],
       "Move ${ n } folder": [
-        "${ n } 件のフォルダーを移動"
+        "${ n } 件のフォルダを移動"
       ],
       "Move ${ n } item": [
         "${ n } 件のアイテムの移動"
@@ -7676,6 +7785,9 @@
       ],
       "Subfolder failed to be loaded": [
         "サブフォルダーの読み込みに失敗しました"
+      ],
+      "The document failed to be created": [
+        "ドキュメントの作成に失敗しました"
       ],
       "The item was not added to your drive": [
         "アイテムはドライブに追加されませんでした"
@@ -7729,6 +7841,49 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
         "${ BRAND_NAME } がアクセスできるものを選択してください：あなたのメールメッセージと設定を表示、連絡先の表示とダウンロード、Google カレンダーからアクセスするすべての予定表の表示とダウンロード。"
+      ]
+    },
+    "Offer": {
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } オファーの有効期限は今日までです！"
+      ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "たった${ pricingTitle }でDrive Plusを入手"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "たった${ pricingTitle }でMail Plusを入手"
+      ],
+      "Get the deal": [
+        "割引を入手"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
+      ],
+      "Limited-time offer": [
+        "期間限定オファー"
+      ],
+      "Maybe later": [
+        "またあとで"
+      ],
+      "Save 80% on your first month.": [
+        "最初の月は 80 %割引。"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+10 以上のプレミアム機能"
+      ],
+      "Custom email domain": [
+        "独自メールドメイン"
+      ],
+      "Free": [
+        "無料"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "ストレージ"
       ]
     },
     "Onboarding": {
@@ -8003,7 +8158,7 @@
         "現在、サブスクリプションの自動更新は無効になっています。今すぐサブスクリプションを変更すると、自動更新が再び有効になります。"
       ],
       "CVC": [
-        "セキュリティコード"
+        "CVC"
       ],
       "Got it": [
         "わかった"
@@ -8645,6 +8800,9 @@
       ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade for ${ pricingTitle }": [
+        "${ pricingTitle } へアップグレード"
       ]
     },
     "specialoffer: Offers": {
@@ -9500,6 +9658,9 @@
       "${ emailsCount } email address": [
         "${ emailsCount } 件のメールアドレス"
       ],
+      "${ feature } is now active": [
+        "${ feature } は現在アクティブです"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total }件のダウンロードに失敗"
       ],
@@ -9556,6 +9717,9 @@
       ],
       "Are you sure?": [
         "本当によろしいですか？"
+      ],
+      "Auto-deletion is active": [
+        "自動削除が有効です"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -9848,6 +10012,9 @@
       "Need more aliases?": [
         "もっとエイリアスが必要ですか？"
       ],
+      "Need to share more files with edit access?": [
+        "編集権限でさらにファイルを共有する必要がありますか？"
+      ],
       "Network error": [
         "ネットワークエラー"
       ],
@@ -10091,6 +10258,9 @@
       "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
         "共有アイテムの招待を拒否しようとしています。拒否すると、所有者が再度共有するまでアクセスできなくなります。"
       ],
+      "You can now create unlimited folders and labels": [
+        "無制限のフォルダとラベルを作成できるようになりました"
+      ],
       "You have inaccessible files": [
         "利用できないファイルがあります"
       ],
@@ -10112,6 +10282,9 @@
       "Your changes are not synced yet": [
         "変更は同期されていません"
       ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "ダウンロードには${ DOCS_APP_NAME }ファイルが含まれています"
+      ],
       "Your exposed information": [
         "あなたの公開情報"
       ],
@@ -10128,11 +10301,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Tooltip": {
@@ -10216,6 +10384,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {

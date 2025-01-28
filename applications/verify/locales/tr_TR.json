@@ -1085,6 +1085,9 @@
       "Country code": [
         "Ülke kodu"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "${ termsLink } birden fazla ücretsiz hesap oluşturulmasına izin vermez."
+      ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
       ],
@@ -1102,6 +1105,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Ayrıntılı bilgi almak ve sınırlamaları kaldırmak için lütfen ${ mailLink } ile oturum açın."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -1292,6 +1298,9 @@
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
+      "200 GB of storage": [
+        "200 GB depolama alanı"
+      ],
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
@@ -1376,6 +1385,9 @@
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
+      "Private photo backup": [
+        "Gizli fotoğraf yedekleme"
+      ],
       "Proofread and refine your emails": [
         "E-postalarınızı düzeltin ve düzenleyin"
       ],
@@ -1396,6 +1408,9 @@
       ],
       "Search message content": [
         "İleti içeriğinde arama"
+      ],
+      "Secure file storage and sharing": [
+        "Güvenli dosya depolama alanı ve paylaşımı"
       ],
       "See team's availability": [
         "Ekibin uygunluğuna bakın"
@@ -1623,6 +1638,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Hesap kısıtlandı"
+      ],
       "Enter 2FA code": [
         "İki adımlı doğrulama kodunu yazın"
       ],
