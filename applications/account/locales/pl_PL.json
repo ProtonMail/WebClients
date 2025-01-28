@@ -187,6 +187,9 @@
       "Authenticating": [
         "Uwierzytelnianie"
       ],
+      "Auto-delete spam and trash": [
+        "Automatyczne usuwanie Spamu i Kosza"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -457,6 +460,9 @@
       "Download the ${ MAIL_APP_NAME } Export Tool": [
         "Pobierz ${ MAIL_APP_NAME } Export Tool"
       ],
+      "Download the desktop app": [
+        "Pobierz aplikację desktopową"
+      ],
       "Edit": [
         "Edytuj"
       ],
@@ -507,6 +513,9 @@
       ],
       "Emoji": [
         "Emoji"
+      ],
+      "Enable ${ darkWebMonitoring }": [
+        "Włącz ${ darkWebMonitoring }"
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
@@ -600,6 +609,9 @@
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Przejdź do ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Przejdź do etykiety"
@@ -1137,6 +1149,9 @@
       ],
       "Switch or add account": [
         "Przełącz lub dodaj konto"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ],
       "Test": [
         "Testuj"
@@ -1697,11 +1712,6 @@
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ]
     },
-    "BF2024: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
@@ -1794,34 +1804,9 @@
         "Historia wersji"
       ]
     },
-    "BF2024: Footer": {
-      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do planu Pass Plus."
-      ],
-      "Discounts are based on standard monthly pricing.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
-      ],
-      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Jeśli zakupisz plan Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie, na standardowy okres na koniec cyklu rozliczeniowego."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
-      ]
-    },
-    "BF2024: Info": {
-      "Most popular": [
-        "Najpopularniejsze"
-      ]
-    },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Płatne ${ amount } jednorazowo"
-      ],
-      "for ${ durationDeal }": [
-        "za ${ durationDeal }"
-      ],
-      "forever": [
-        "na zawsze"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Odnawia się po 1 miesiącu za ${ regularAmount }."
@@ -1879,9 +1864,6 @@
       ],
       "12 months": [
         "12 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
       ],
       "Annually": [
         "Rocznie"
@@ -2001,11 +1983,29 @@
       "Copy": [
         "Kopiuj"
       ],
+      "Create label": [
+        "Utwórz etykietę"
+      ],
       "Invite": [
         "Zaproś"
       ],
+      "Maybe later": [
+        "Może później"
+      ],
+      "Next": [
+        "Dalej"
+      ],
+      "Remind me later": [
+        "Przypomnij mi później"
+      ],
       "Send": [
         "Wyślij"
+      ],
+      "Set up other features": [
+        "Skonfiguruj inne funkcje"
+      ],
+      "Take a tour": [
+        "Otwórz przewodnik"
       ],
       "Tweet": [
         "Tweet"
@@ -4692,6 +4692,9 @@
       "Please generate keys before you try to change your password": [
         "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
       ],
+      "Please select a country": [
+        "Wybierz kraj"
+      ],
       "Please set a recovery email first": [
         "Ustaw adres pomocniczy"
       ],
@@ -6322,6 +6325,9 @@
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
       ],
+      "Malformed all-day event": [
+        "Czas wydarzenia całodniowego posiada nieprawidłowy format"
+      ],
       "Malformed end time": [
         "Czas zakończenia posiada nieprawidłowy format"
       ],
@@ -6330,6 +6336,9 @@
       ],
       "Malformed start time": [
         "Czas rozpoczęcia posiada nieprawidłowy format"
+      ],
+      "Recurring rule not supported": [
+        "Reguła powtórzeń nie jest obsługiwana"
       ],
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
@@ -7177,6 +7186,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Autoresponder jest zawsze aktywny w wybranych dniach tygodnia i godzinach."
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatyczne usuwanie wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
+      ],
       "Available on macOS, Windows, and Linux.": [
         "Aplikacja dostępna na macOS, Windowsa i Linuksa."
       ],
@@ -7486,6 +7498,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
       ],
+      "Download on the App Store": [
+        "Pobierz z App Store"
+      ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Pobierz szablon CSV, wpisz szczegóły użytkownika i prześlij plik CSV, aby utworzyć konta użytkowników."
       ],
@@ -7554,6 +7569,9 @@
       ],
       "Enabled on ${ formattedDateAndTime }": [
         "Włączono w dniu: ${ formattedDateAndTime }"
+      ],
+      "Enabling auto-deletion…": [
+        "Włącz automatyczne usuwanie..."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
@@ -7692,6 +7710,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Utwórz konto ${ BRAND_NAME } i zaakceptuj zaproszenie."
+      ],
+      "Get it on Google Play": [
+        "Pobierz z Google Play"
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych osobowych. ${ learnMoreLinkNoBreach }"
@@ -8467,6 +8488,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji..."
+      ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
       ],
@@ -8574,6 +8598,9 @@
       ],
       "Setting successfully saved": [
         "Ustawienia zostały zapisane"
+      ],
+      "Setting up your new address…": [
+        "Konfiguracja nowego adresu..."
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -11447,6 +11474,9 @@
       "Set email address": [
         "Ustaw adres e-mail"
       ],
+      "settings": [
+        "ustawienia"
+      ],
       "Sign in": [
         "Zaloguj się"
       ],
@@ -12071,11 +12101,17 @@
       "Get started for ${ priceCoupon }": [
         "Od ${ priceCoupon }"
       ],
+      "Starting from ${ pricing }": [
+        "Od ${ pricing }"
+      ],
       "Upgrade": [
         "Ulepsz"
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to ${ planName }": [
+        "Ulepsz do planu ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -12257,6 +12293,9 @@
       ],
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB of storage": [
+        "200 GB przestrzeni dyskowej"
       ],
       "24/7 account management support": [
         "Wsparcie zarządzania kontem 24/7"
@@ -12477,6 +12516,9 @@
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
       ],
+      "Private photo backup": [
+        "Prywatna kopia zapasowa zdjęć"
+      ],
       "Proofread and refine your emails": [
         "Sprawdzaj i poprawiaj teksty"
       ],
@@ -12688,6 +12730,17 @@
         "Zarządzanie zespołem"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -12796,17 +12849,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13424,9 +13466,42 @@
         "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
       ]
     },
+    "Offer": {
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Wybierz plan Mail Plus za jedynie ${ pricingTitle }"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Limited-time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Maybe later": [
+        "Może później"
+      ]
+    },
+    "Offer feature": {
+      "Custom email domain": [
+        "Niestandardowa domena"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Witaj w ${ appName }"
+      ]
+    },
+    "Onboarding modal": {
+      "browser": [
+        "przeglądarka"
+      ],
+      "Desktop": [
+        "Komputer"
       ]
     },
     "Option": {
@@ -14494,11 +14569,20 @@
       "Address": [
         "Adres"
       ],
+      "Anderson": [
+        "Nowak"
+      ],
+      "Anytown": [
+        "Kraków"
+      ],
       "Choose a name": [
         "Wybierz nazwę"
       ],
       "Choose display name": [
         "Wpisz nazwę wyświetlaną"
+      ],
+      "Company name": [
+        "Nazwa firmy"
       ],
       "Confirm": [
         "Potwierdź"
@@ -14538,6 +14622,9 @@
       ],
       "Link": [
         "Link"
+      ],
+      "Main street 12": [
+        "Główna 12"
       ],
       "Name": [
         "Nazwa"
@@ -14598,6 +14685,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Thomas": [
+        "Jan"
       ],
       "Type text or keyword": [
         "Wpisz tekst lub słowo kluczowe"
@@ -16287,7 +16377,7 @@
         "Logowanie SSO zostało usunięte"
       ],
       "The user ${ name } is now a single sign-on account.": [
-        "Użytkownik ${ name } jest teraz kontem single sign-on."
+        "Użytkownik ${ name } jest teraz kontem z logowaniem SSO."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Spowoduje to wylogowanie użytkownika z innych urządzeń i konieczność utworzenia nowego hasła zapasowego."
@@ -17680,6 +17770,9 @@
       "Authentication security": [
         "Bezpieczeństwo uwierzytelniania"
       ],
+      "Auto-deletion is active": [
+        "Automatyczne usuwanie jest aktywne"
+      ],
       "Auto-reply": [
         "Autoresponder"
       ],
@@ -17839,6 +17932,9 @@
       "Currency": [
         "Waluta"
       ],
+      "Custom domains:": [
+        "Niestandardowe domeny:"
+      ],
       "Custom filters": [
         "Filtry niestandardowe"
       ],
@@ -17970,6 +18066,9 @@
       ],
       "Download the mobile apps": [
         "Pobierz aplikacje mobilne"
+      ],
+      "Edit billing address": [
+        "Edytuj adres rozliczeniowy"
       ],
       "Edit credit/debit card": [
         "Edytuj kartę płatniczą"
@@ -18379,6 +18478,9 @@
       "Previous": [
         "Wstecz"
       ],
+      "Priority support:": [
+        "Priorytetowe wsparcie:"
+      ],
       "Privacy and data collection": [
         "Prywatność i zbieranie danych"
       ],
@@ -18475,6 +18577,9 @@
       "Save time with email filters": [
         "Zaoszczędź czas dzięki filtrom"
       ],
+      "Schedule send:": [
+        "Zaplanuj wysłanie:"
+      ],
       "Secure email based in Switzerland": [
         "Bezpieczna poczta e-mail ulokowana w Szwajcarii"
       ],
@@ -18535,6 +18640,9 @@
       "Set up two-factor authentication": [
         "Ustaw uwierzytelnianie dwustopniowe"
       ],
+      "Set up your family account": [
+        "Skonfiguruj konto rodzinne"
+      ],
       "Set your password": [
         "Ustaw hasło"
       ],
@@ -18573,6 +18681,9 @@
       ],
       "SMTP submission": [
         "Poświadczenia SMTP"
+      ],
+      "Snooze:": [
+        "Odłóż:"
       ],
       "Sort folders alphabetically": [
         "Sortuj foldery alfabetycznie"
