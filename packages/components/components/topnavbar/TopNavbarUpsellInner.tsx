@@ -7,6 +7,8 @@ import useOfferConfig from '../../containers/offers/hooks/useOfferConfig';
 import TopNavbarOffer from './TopNavbarOffer';
 import { MailSubscriptionReminder } from './TopNavbarPostSignupPromo/MailSubscriptionReminder/MailSubscriptionReminder';
 import { useMailSubscriptionReminder } from './TopNavbarPostSignupPromo/MailSubscriptionReminder/useMailSubscriptionReminder';
+import { DrivePostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/DrivePostSignupOneDollar';
+import { useDrivePostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar';
 import { MailPostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/MailPostSignupOneDollar/MailPostSignupOneDollar';
 import { useMailPostSignupOneDollar } from './TopNavbarPostSignupPromo/PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
@@ -23,6 +25,9 @@ const TopNavbarUpsellInner = ({ offerProps, app }: Props) => {
 
     const { isEligible: isEligibleMailSubscriptionReminder, loading: loadingSubscriptionReminder } =
         useMailSubscriptionReminder();
+
+    const { isEligible: isEligibleDrivePostSignupOneDollar, loading: loadingDrivePostSignup } =
+        useDrivePostSignupOneDollar();
 
     if (loadingOffer) {
         return null;
@@ -46,6 +51,10 @@ const TopNavbarUpsellInner = ({ offerProps, app }: Props) => {
 
     if (isEligibleMailSubscriptionReminder && !loadingSubscriptionReminder) {
         return <MailSubscriptionReminder app={app} />;
+    }
+
+    if (isEligibleDrivePostSignupOneDollar && !loadingDrivePostSignup) {
+        return <DrivePostSignupOneDollar />;
     }
 
     return <TopNavbarUpgradeButton app={app} />;
