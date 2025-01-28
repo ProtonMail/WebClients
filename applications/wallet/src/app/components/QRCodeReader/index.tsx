@@ -78,6 +78,10 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
                     text: c('QRCode Reader')
                         .t`You need to grant camera permission to be able to activate QRCode scanner`,
                 });
+            } else if (error.name === 'NotFoundError') {
+                createNotification({
+                    text: c('QRCode Reader').t`Could not find an available camera on your device`,
+                });
             } else {
                 createNotification({ text: c('QRCode Reader').t`Could not run QR code reader` });
             }
