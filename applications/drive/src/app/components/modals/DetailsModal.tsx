@@ -187,6 +187,7 @@ const DetailsModalContent = ({
                     signatureEmail={signatureIssuesEmail}
                     isAnonymous={isAnonymous}
                     corruptedLink={corruptedLink}
+                    mimeType={mimeType}
                     isFile={isFile}
                     name={name}
                     className="mb-4"

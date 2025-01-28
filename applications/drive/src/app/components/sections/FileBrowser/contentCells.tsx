@@ -47,6 +47,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
                 signatureIssues={item.signatureIssues}
                 isAnonymous={item.isAnonymous}
                 isFile={item.isFile}
+                mimeType={item.mimeType}
                 className="mr-2 shrink-0"
             />
             <NameCellBase name={item.name} />
